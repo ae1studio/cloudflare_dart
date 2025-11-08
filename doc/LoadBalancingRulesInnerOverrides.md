@@ -1,0 +1,27 @@
+# cloudflare_dart.model.LoadBalancingRulesInnerOverrides
+
+## Load the model package
+```dart
+import 'package:cloudflare_dart/api.dart';
+```
+
+## Properties
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**adaptiveRouting** | [**LoadBalancingAdaptiveRouting**](LoadBalancingAdaptiveRouting.md) |  | [optional] 
+**countryPools** | [**BuiltMap&lt;String, BuiltList&lt;String&gt;&gt;**](BuiltList.md) | A mapping of country codes to a list of pool IDs (ordered by their failover priority) for the given country. Any country not explicitly defined will fall back to using the corresponding region_pool mapping if it exists else to default_pools. | [optional] 
+**defaultPools** | **BuiltList&lt;String&gt;** | A list of pool IDs ordered by their failover priority. Pools defined here are used by default, or when region_pools are not configured for a given region. | [optional] 
+**fallbackPool** | **String** | The pool ID to use when all other pools are detected as unhealthy. | [optional] 
+**locationStrategy** | [**LoadBalancingLocationStrategy**](LoadBalancingLocationStrategy.md) |  | [optional] 
+**popPools** | [**BuiltMap&lt;String, BuiltList&lt;String&gt;&gt;**](BuiltList.md) | Enterprise only: A mapping of Cloudflare PoP identifiers to a list of pool IDs (ordered by their failover priority) for the PoP (datacenter). Any PoPs not explicitly defined will fall back to using the corresponding country_pool, then region_pool mapping if it exists else to default_pools. | [optional] 
+**randomSteering** | [**LoadBalancingRandomSteering**](LoadBalancingRandomSteering.md) |  | [optional] 
+**regionPools** | [**BuiltMap&lt;String, BuiltList&lt;String&gt;&gt;**](BuiltList.md) | A mapping of region codes to a list of pool IDs (ordered by their failover priority) for the given region. Any regions not explicitly defined will fall back to using default_pools. | [optional] 
+**sessionAffinity** | [**LoadBalancingSessionAffinity**](LoadBalancingSessionAffinity.md) |  | [optional] 
+**sessionAffinityAttributes** | [**LoadBalancingSessionAffinityAttributes**](LoadBalancingSessionAffinityAttributes.md) |  | [optional] 
+**sessionAffinityTtl** | **num** | Time, in seconds, until a client's session expires after being created. Once the expiry time has been reached, subsequent requests may get sent to a different origin server. The accepted ranges per `session_affinity` policy are: - `\"cookie\"` / `\"ip_cookie\"`: The current default of 23 hours will be used unless explicitly set. The accepted range of values is between [1800, 604800]. - `\"header\"`: The current default of 1800 seconds will be used unless explicitly set. The accepted range of values is between [30, 3600]. Note: With session affinity by header, sessions only expire after they haven't been used for the number of seconds specified. | [optional] 
+**steeringPolicy** | [**LoadBalancingSteeringPolicy**](LoadBalancingSteeringPolicy.md) |  | [optional] 
+**ttl** | **num** | Time to live (TTL) of the DNS entry for the IP address returned by this load balancer. This only applies to gray-clouded (unproxied) load balancers. | [optional] 
+
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
+

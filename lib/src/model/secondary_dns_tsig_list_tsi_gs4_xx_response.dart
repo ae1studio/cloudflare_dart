@@ -1,0 +1,176 @@
+//
+// AUTO-GENERATED FILE, DO NOT MODIFY!
+//
+
+// ignore_for_file: unused_element
+import 'package:cloudflare_dart/src/model/secondary_dns_response_collection.dart';
+import 'package:cloudflare_dart/src/model/access_api_response_collection_all_of_result_info.dart';
+import 'package:built_collection/built_collection.dart';
+import 'package:cloudflare_dart/src/model/secondary_dns_api_response_common_failure.dart';
+import 'package:cloudflare_dart/src/model/access_messages_inner.dart';
+import 'package:built_value/json_object.dart';
+import 'package:built_value/built_value.dart';
+import 'package:built_value/serializer.dart';
+
+part 'secondary_dns_tsig_list_tsi_gs4_xx_response.g.dart';
+
+/// SecondaryDnsTsigListTsiGs4XXResponse
+///
+/// Properties:
+/// * [errors] 
+/// * [messages] 
+/// * [success] - Whether the API call was successful.
+/// * [resultInfo] 
+/// * [result] 
+@BuiltValue()
+abstract class SecondaryDnsTsigListTsiGs4XXResponse implements SecondaryDnsApiResponseCommonFailure, SecondaryDnsResponseCollection, Built<SecondaryDnsTsigListTsiGs4XXResponse, SecondaryDnsTsigListTsiGs4XXResponseBuilder> {
+  SecondaryDnsTsigListTsiGs4XXResponse._();
+
+  factory SecondaryDnsTsigListTsiGs4XXResponse([void updates(SecondaryDnsTsigListTsiGs4XXResponseBuilder b)]) = _$SecondaryDnsTsigListTsiGs4XXResponse;
+
+  @BuiltValueHook(initializeBuilder: true)
+  static void _defaults(SecondaryDnsTsigListTsiGs4XXResponseBuilder b) => b;
+
+  @BuiltValueSerializer(custom: true)
+  static Serializer<SecondaryDnsTsigListTsiGs4XXResponse> get serializer => _$SecondaryDnsTsigListTsiGs4XXResponseSerializer();
+}
+
+class _$SecondaryDnsTsigListTsiGs4XXResponseSerializer implements PrimitiveSerializer<SecondaryDnsTsigListTsiGs4XXResponse> {
+  @override
+  final Iterable<Type> types = const [SecondaryDnsTsigListTsiGs4XXResponse, _$SecondaryDnsTsigListTsiGs4XXResponse];
+
+  @override
+  final String wireName = r'SecondaryDnsTsigListTsiGs4XXResponse';
+
+  Iterable<Object?> _serializeProperties(
+    Serializers serializers,
+    SecondaryDnsTsigListTsiGs4XXResponse object, {
+    FullType specifiedType = FullType.unspecified,
+  }) sync* {
+    if (object.result != null) {
+      yield r'result';
+      yield serializers.serialize(
+        object.result,
+        specifiedType: const FullType(BuiltList, [FullType(SecondaryDnsTsig)]),
+      );
+    }
+    yield r'messages';
+    yield serializers.serialize(
+      object.messages,
+      specifiedType: const FullType(BuiltList, [FullType(AccessMessagesInner)]),
+    );
+    yield r'success';
+    yield serializers.serialize(
+      object.success,
+      specifiedType: const FullType(bool),
+    );
+    yield r'errors';
+    yield serializers.serialize(
+      object.errors,
+      specifiedType: const FullType(BuiltList, [FullType(AccessMessagesInner)]),
+    );
+    if (object.resultInfo != null) {
+      yield r'result_info';
+      yield serializers.serialize(
+        object.resultInfo,
+        specifiedType: const FullType(AccessApiResponseCollectionAllOfResultInfo),
+      );
+    }
+  }
+
+  @override
+  Object serialize(
+    Serializers serializers,
+    SecondaryDnsTsigListTsiGs4XXResponse object, {
+    FullType specifiedType = FullType.unspecified,
+  }) {
+    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+  }
+
+  void _deserializeProperties(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+    required List<Object?> serializedList,
+    required SecondaryDnsTsigListTsiGs4XXResponseBuilder result,
+    required List<Object?> unhandled,
+  }) {
+    for (var i = 0; i < serializedList.length; i += 2) {
+      final key = serializedList[i] as String;
+      final value = serializedList[i + 1];
+      switch (key) {
+        case r'result':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BuiltList, [FullType(SecondaryDnsTsig)]),
+          ) as BuiltList<SecondaryDnsTsig>;
+          result.result.replace(valueDes);
+          break;
+        case r'messages':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BuiltList, [FullType(AccessMessagesInner)]),
+          ) as BuiltList<AccessMessagesInner>;
+          result.messages.replace(valueDes);
+          break;
+        case r'success':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(bool),
+          ) as bool;
+          result.success = valueDes;
+          break;
+        case r'errors':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BuiltList, [FullType(AccessMessagesInner)]),
+          ) as BuiltList<AccessMessagesInner>;
+          result.errors.replace(valueDes);
+          break;
+        case r'result_info':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(AccessApiResponseCollectionAllOfResultInfo),
+          ) as AccessApiResponseCollectionAllOfResultInfo;
+          result.resultInfo.replace(valueDes);
+          break;
+        default:
+          unhandled.add(key);
+          unhandled.add(value);
+          break;
+      }
+    }
+  }
+
+  @override
+  SecondaryDnsTsigListTsiGs4XXResponse deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) {
+    final result = SecondaryDnsTsigListTsiGs4XXResponseBuilder();
+    final serializedList = (serialized as Iterable<Object?>).toList();
+    final unhandled = <Object?>[];
+    _deserializeProperties(
+      serializers,
+      serialized,
+      specifiedType: specifiedType,
+      serializedList: serializedList,
+      unhandled: unhandled,
+      result: result,
+    );
+    return result.build();
+  }
+}
+
+class SecondaryDnsTsigListTsiGs4XXResponseResultEnum extends EnumClass {
+
+
+  static Serializer<SecondaryDnsTsigListTsiGs4XXResponseResultEnum> get serializer => _$secondaryDnsTsigListTsiGs4XXResponseResultSerializer;
+
+  const SecondaryDnsTsigListTsiGs4XXResponseResultEnum._(String name): super(name);
+
+  static BuiltSet<SecondaryDnsTsigListTsiGs4XXResponseResultEnum> get values => _$secondaryDnsTsigListTsiGs4XXResponseResultValues;
+  static SecondaryDnsTsigListTsiGs4XXResponseResultEnum valueOf(String name) => _$secondaryDnsTsigListTsiGs4XXResponseResultValueOf(name);
+}
+

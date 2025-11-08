@@ -1,0 +1,144 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+part of 'radar_get_ranking_internet_services_timeseries200_response.dart';
+
+// **************************************************************************
+// BuiltValueGenerator
+// **************************************************************************
+
+class _$RadarGetRankingInternetServicesTimeseries200Response
+    extends RadarGetRankingInternetServicesTimeseries200Response {
+  @override
+  final RadarGetRankingInternetServicesTimeseries200ResponseResult result;
+  @override
+  final bool success;
+
+  factory _$RadarGetRankingInternetServicesTimeseries200Response(
+          [void Function(
+                  RadarGetRankingInternetServicesTimeseries200ResponseBuilder)?
+              updates]) =>
+      (RadarGetRankingInternetServicesTimeseries200ResponseBuilder()
+            ..update(updates))
+          ._build();
+
+  _$RadarGetRankingInternetServicesTimeseries200Response._(
+      {required this.result, required this.success})
+      : super._();
+  @override
+  RadarGetRankingInternetServicesTimeseries200Response rebuild(
+          void Function(
+                  RadarGetRankingInternetServicesTimeseries200ResponseBuilder)
+              updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  RadarGetRankingInternetServicesTimeseries200ResponseBuilder toBuilder() =>
+      RadarGetRankingInternetServicesTimeseries200ResponseBuilder()
+        ..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is RadarGetRankingInternetServicesTimeseries200Response &&
+        result == other.result &&
+        success == other.success;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, result.hashCode);
+    _$hash = $jc(_$hash, success.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(
+            r'RadarGetRankingInternetServicesTimeseries200Response')
+          ..add('result', result)
+          ..add('success', success))
+        .toString();
+  }
+}
+
+class RadarGetRankingInternetServicesTimeseries200ResponseBuilder
+    implements
+        Builder<RadarGetRankingInternetServicesTimeseries200Response,
+            RadarGetRankingInternetServicesTimeseries200ResponseBuilder> {
+  _$RadarGetRankingInternetServicesTimeseries200Response? _$v;
+
+  RadarGetRankingInternetServicesTimeseries200ResponseResultBuilder? _result;
+  RadarGetRankingInternetServicesTimeseries200ResponseResultBuilder
+      get result => _$this._result ??=
+          RadarGetRankingInternetServicesTimeseries200ResponseResultBuilder();
+  set result(
+          RadarGetRankingInternetServicesTimeseries200ResponseResultBuilder?
+              result) =>
+      _$this._result = result;
+
+  bool? _success;
+  bool? get success => _$this._success;
+  set success(bool? success) => _$this._success = success;
+
+  RadarGetRankingInternetServicesTimeseries200ResponseBuilder() {
+    RadarGetRankingInternetServicesTimeseries200Response._defaults(this);
+  }
+
+  RadarGetRankingInternetServicesTimeseries200ResponseBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _result = $v.result.toBuilder();
+      _success = $v.success;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(RadarGetRankingInternetServicesTimeseries200Response other) {
+    _$v = other as _$RadarGetRankingInternetServicesTimeseries200Response;
+  }
+
+  @override
+  void update(
+      void Function(
+              RadarGetRankingInternetServicesTimeseries200ResponseBuilder)?
+          updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  RadarGetRankingInternetServicesTimeseries200Response build() => _build();
+
+  _$RadarGetRankingInternetServicesTimeseries200Response _build() {
+    _$RadarGetRankingInternetServicesTimeseries200Response _$result;
+    try {
+      _$result = _$v ??
+          _$RadarGetRankingInternetServicesTimeseries200Response._(
+            result: result.build(),
+            success: BuiltValueNullFieldError.checkNotNull(
+                success,
+                r'RadarGetRankingInternetServicesTimeseries200Response',
+                'success'),
+          );
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'result';
+        result.build();
+      } catch (e) {
+        throw BuiltValueNestedFieldError(
+            r'RadarGetRankingInternetServicesTimeseries200Response',
+            _$failedField,
+            e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+// ignore_for_file: deprecated_member_use_from_same_package,type=lint

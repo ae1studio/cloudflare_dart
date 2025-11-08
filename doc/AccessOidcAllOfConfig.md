@@ -1,0 +1,23 @@
+# cloudflare_dart.model.AccessOidcAllOfConfig
+
+## Load the model package
+```dart
+import 'package:cloudflare_dart/api.dart';
+```
+
+## Properties
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**clientId** | **String** | Your OAuth Client ID | [optional] 
+**clientSecret** | **String** | Your OAuth Client Secret | [optional] 
+**claims** | **BuiltList&lt;String&gt;** | Custom claims | [optional] 
+**emailClaimName** | **String** | The claim name for email in the id_token response. | [optional] 
+**authUrl** | **String** | The authorization_endpoint URL of your IdP | [optional] 
+**certsUrl** | **String** | The jwks_uri endpoint of your IdP to allow the IdP keys to sign the tokens | [optional] 
+**pkceEnabled** | **bool** | Enable Proof Key for Code Exchange (PKCE) | [optional] 
+**scopes** | **BuiltList&lt;String&gt;** | OAuth scopes | [optional] 
+**tokenUrl** | **String** | The token_endpoint URL of your IdP | [optional] 
+
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
+

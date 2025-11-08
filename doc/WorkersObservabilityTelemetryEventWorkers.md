@@ -1,0 +1,27 @@
+# cloudflare_dart.model.WorkersObservabilityTelemetryEventWorkers
+
+## Load the model package
+```dart
+import 'package:cloudflare_dart/api.dart';
+```
+
+## Properties
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**entrypoint** | **String** |  | [optional] 
+**event** | [**BuiltMap&lt;String, AigConfigListDataset200ResponseResultInnerFiltersInnerValueInner&gt;**](AigConfigListDataset200ResponseResultInnerFiltersInnerValueInner.md) |  | [optional] 
+**eventType** | **String** |  | 
+**executionModel** | **String** |  | [optional] 
+**outcome** | **String** |  | 
+**requestId** | **String** |  | 
+**scriptName** | **String** |  | 
+**scriptVersion** | [**WorkersObservabilityTelemetryEventWorkersAnyOfScriptVersion**](WorkersObservabilityTelemetryEventWorkersAnyOfScriptVersion.md) |  | [optional] 
+**truncated** | **bool** |  | [optional] 
+**cpuTimeMs** | **num** |  | 
+**diagnosticsChannelEvents** | [**BuiltList&lt;WorkersObservabilityTelemetryEventWorkersAnyOf1DiagnosticsChannelEventsInner&gt;**](WorkersObservabilityTelemetryEventWorkersAnyOf1DiagnosticsChannelEventsInner.md) |  | [optional] 
+**dispatchNamespace** | **String** |  | [optional] 
+**wallTimeMs** | **num** |  | 
+
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
+

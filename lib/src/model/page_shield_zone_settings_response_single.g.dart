@@ -1,0 +1,182 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+part of 'page_shield_zone_settings_response_single.dart';
+
+// **************************************************************************
+// BuiltValueGenerator
+// **************************************************************************
+
+abstract class PageShieldZoneSettingsResponseSingleBuilder
+    implements PageShieldApiResponseSingleBuilder {
+  void replace(covariant PageShieldZoneSettingsResponseSingle other);
+  void update(
+      void Function(PageShieldZoneSettingsResponseSingleBuilder) updates);
+  PageShieldApiResponseSingleAllOfResultBuilder get result;
+  set result(covariant PageShieldApiResponseSingleAllOfResultBuilder? result);
+
+  ListBuilder<AaaMessagesInner> get errors;
+  set errors(covariant ListBuilder<AaaMessagesInner>? errors);
+
+  ListBuilder<AaaMessagesInner> get messages;
+  set messages(covariant ListBuilder<AaaMessagesInner>? messages);
+
+  bool? get success;
+  set success(covariant bool? success);
+}
+
+class _$$PageShieldZoneSettingsResponseSingle
+    extends $PageShieldZoneSettingsResponseSingle {
+  @override
+  final PageShieldApiResponseSingleAllOfResult? result;
+  @override
+  final BuiltList<AaaMessagesInner>? errors;
+  @override
+  final BuiltList<AaaMessagesInner>? messages;
+  @override
+  final bool success;
+
+  factory _$$PageShieldZoneSettingsResponseSingle(
+          [void Function($PageShieldZoneSettingsResponseSingleBuilder)?
+              updates]) =>
+      ($PageShieldZoneSettingsResponseSingleBuilder()..update(updates))
+          ._build();
+
+  _$$PageShieldZoneSettingsResponseSingle._(
+      {this.result, this.errors, this.messages, required this.success})
+      : super._();
+  @override
+  $PageShieldZoneSettingsResponseSingle rebuild(
+          void Function($PageShieldZoneSettingsResponseSingleBuilder)
+              updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  $PageShieldZoneSettingsResponseSingleBuilder toBuilder() =>
+      $PageShieldZoneSettingsResponseSingleBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is $PageShieldZoneSettingsResponseSingle &&
+        result == other.result &&
+        errors == other.errors &&
+        messages == other.messages &&
+        success == other.success;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, result.hashCode);
+    _$hash = $jc(_$hash, errors.hashCode);
+    _$hash = $jc(_$hash, messages.hashCode);
+    _$hash = $jc(_$hash, success.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(
+            r'$PageShieldZoneSettingsResponseSingle')
+          ..add('result', result)
+          ..add('errors', errors)
+          ..add('messages', messages)
+          ..add('success', success))
+        .toString();
+  }
+}
+
+class $PageShieldZoneSettingsResponseSingleBuilder
+    implements
+        Builder<$PageShieldZoneSettingsResponseSingle,
+            $PageShieldZoneSettingsResponseSingleBuilder>,
+        PageShieldZoneSettingsResponseSingleBuilder {
+  _$$PageShieldZoneSettingsResponseSingle? _$v;
+
+  PageShieldApiResponseSingleAllOfResultBuilder? _result;
+  PageShieldApiResponseSingleAllOfResultBuilder get result =>
+      _$this._result ??= PageShieldApiResponseSingleAllOfResultBuilder();
+  set result(covariant PageShieldApiResponseSingleAllOfResultBuilder? result) =>
+      _$this._result = result;
+
+  ListBuilder<AaaMessagesInner>? _errors;
+  ListBuilder<AaaMessagesInner> get errors =>
+      _$this._errors ??= ListBuilder<AaaMessagesInner>();
+  set errors(covariant ListBuilder<AaaMessagesInner>? errors) =>
+      _$this._errors = errors;
+
+  ListBuilder<AaaMessagesInner>? _messages;
+  ListBuilder<AaaMessagesInner> get messages =>
+      _$this._messages ??= ListBuilder<AaaMessagesInner>();
+  set messages(covariant ListBuilder<AaaMessagesInner>? messages) =>
+      _$this._messages = messages;
+
+  bool? _success;
+  bool? get success => _$this._success;
+  set success(covariant bool? success) => _$this._success = success;
+
+  $PageShieldZoneSettingsResponseSingleBuilder() {
+    $PageShieldZoneSettingsResponseSingle._defaults(this);
+  }
+
+  $PageShieldZoneSettingsResponseSingleBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _result = $v.result?.toBuilder();
+      _errors = $v.errors?.toBuilder();
+      _messages = $v.messages?.toBuilder();
+      _success = $v.success;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(covariant $PageShieldZoneSettingsResponseSingle other) {
+    _$v = other as _$$PageShieldZoneSettingsResponseSingle;
+  }
+
+  @override
+  void update(
+      void Function($PageShieldZoneSettingsResponseSingleBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  $PageShieldZoneSettingsResponseSingle build() => _build();
+
+  _$$PageShieldZoneSettingsResponseSingle _build() {
+    _$$PageShieldZoneSettingsResponseSingle _$result;
+    try {
+      _$result = _$v ??
+          _$$PageShieldZoneSettingsResponseSingle._(
+            result: _result?.build(),
+            errors: _errors?.build(),
+            messages: _messages?.build(),
+            success: BuiltValueNullFieldError.checkNotNull(
+                success, r'$PageShieldZoneSettingsResponseSingle', 'success'),
+          );
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'result';
+        _result?.build();
+        _$failedField = 'errors';
+        _errors?.build();
+        _$failedField = 'messages';
+        _messages?.build();
+      } catch (e) {
+        throw BuiltValueNestedFieldError(
+            r'$PageShieldZoneSettingsResponseSingle',
+            _$failedField,
+            e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+// ignore_for_file: deprecated_member_use_from_same_package,type=lint

@@ -1,0 +1,20 @@
+# cloudflare_dart.model.OrganizationsApiOrganization
+
+## Load the model package
+```dart
+import 'package:cloudflare_dart/api.dart';
+```
+
+## Properties
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**createTime** | [**DateTime**](DateTime.md) |  | 
+**id** | **String** |  | 
+**meta** | [**OrganizationsApiOrganizationMeta**](OrganizationsApiOrganizationMeta.md) |  | 
+**name** | **String** |  | 
+**parent** | [**OrganizationsApiOrganizationParent**](OrganizationsApiOrganizationParent.md) |  | [optional] 
+**profile** | [**OrganizationsApiProfile**](OrganizationsApiProfile.md) |  | [optional] 
+
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
+

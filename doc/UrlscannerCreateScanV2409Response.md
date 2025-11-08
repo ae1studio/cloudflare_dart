@@ -1,0 +1,18 @@
+# cloudflare_dart.model.UrlscannerCreateScanV2409Response
+
+## Load the model package
+```dart
+import 'package:cloudflare_dart/api.dart';
+```
+
+## Properties
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**description** | **String** |  | [optional] 
+**errors** | [**BuiltList&lt;UrlscannerCreateScanBulkV2429ResponseErrorsInner&gt;**](UrlscannerCreateScanBulkV2429ResponseErrorsInner.md) |  | 
+**message** | **String** |  | 
+**status** | **num** |  | 
+
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
+

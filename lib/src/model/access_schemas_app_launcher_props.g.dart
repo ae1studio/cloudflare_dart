@@ -1,0 +1,200 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+part of 'access_schemas_app_launcher_props.dart';
+
+// **************************************************************************
+// BuiltValueGenerator
+// **************************************************************************
+
+abstract class AccessSchemasAppLauncherPropsBuilder
+    implements AccessSchemasFeatureAppPropsBuilder {
+  void replace(covariant AccessSchemasAppLauncherProps other);
+  void update(void Function(AccessSchemasAppLauncherPropsBuilder) updates);
+  ListBuilder<String> get allowedIdps;
+  set allowedIdps(covariant ListBuilder<String>? allowedIdps);
+
+  bool? get autoRedirectToIdentity;
+  set autoRedirectToIdentity(covariant bool? autoRedirectToIdentity);
+
+  String? get domain;
+  set domain(covariant String? domain);
+
+  String? get name;
+  set name(covariant String? name);
+
+  String? get sessionDuration;
+  set sessionDuration(covariant String? sessionDuration);
+
+  AccessComponentsSchemasType? get type;
+  set type(covariant AccessComponentsSchemasType? type);
+}
+
+class _$$AccessSchemasAppLauncherProps extends $AccessSchemasAppLauncherProps {
+  @override
+  final BuiltList<String>? allowedIdps;
+  @override
+  final bool? autoRedirectToIdentity;
+  @override
+  final String? domain;
+  @override
+  final String? name;
+  @override
+  final String? sessionDuration;
+  @override
+  final AccessComponentsSchemasType type;
+
+  factory _$$AccessSchemasAppLauncherProps(
+          [void Function($AccessSchemasAppLauncherPropsBuilder)? updates]) =>
+      ($AccessSchemasAppLauncherPropsBuilder()..update(updates))._build();
+
+  _$$AccessSchemasAppLauncherProps._(
+      {this.allowedIdps,
+      this.autoRedirectToIdentity,
+      this.domain,
+      this.name,
+      this.sessionDuration,
+      required this.type})
+      : super._();
+  @override
+  $AccessSchemasAppLauncherProps rebuild(
+          void Function($AccessSchemasAppLauncherPropsBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  $AccessSchemasAppLauncherPropsBuilder toBuilder() =>
+      $AccessSchemasAppLauncherPropsBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is $AccessSchemasAppLauncherProps &&
+        allowedIdps == other.allowedIdps &&
+        autoRedirectToIdentity == other.autoRedirectToIdentity &&
+        domain == other.domain &&
+        name == other.name &&
+        sessionDuration == other.sessionDuration &&
+        type == other.type;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, allowedIdps.hashCode);
+    _$hash = $jc(_$hash, autoRedirectToIdentity.hashCode);
+    _$hash = $jc(_$hash, domain.hashCode);
+    _$hash = $jc(_$hash, name.hashCode);
+    _$hash = $jc(_$hash, sessionDuration.hashCode);
+    _$hash = $jc(_$hash, type.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'$AccessSchemasAppLauncherProps')
+          ..add('allowedIdps', allowedIdps)
+          ..add('autoRedirectToIdentity', autoRedirectToIdentity)
+          ..add('domain', domain)
+          ..add('name', name)
+          ..add('sessionDuration', sessionDuration)
+          ..add('type', type))
+        .toString();
+  }
+}
+
+class $AccessSchemasAppLauncherPropsBuilder
+    implements
+        Builder<$AccessSchemasAppLauncherProps,
+            $AccessSchemasAppLauncherPropsBuilder>,
+        AccessSchemasAppLauncherPropsBuilder {
+  _$$AccessSchemasAppLauncherProps? _$v;
+
+  ListBuilder<String>? _allowedIdps;
+  ListBuilder<String> get allowedIdps =>
+      _$this._allowedIdps ??= ListBuilder<String>();
+  set allowedIdps(covariant ListBuilder<String>? allowedIdps) =>
+      _$this._allowedIdps = allowedIdps;
+
+  bool? _autoRedirectToIdentity;
+  bool? get autoRedirectToIdentity => _$this._autoRedirectToIdentity;
+  set autoRedirectToIdentity(covariant bool? autoRedirectToIdentity) =>
+      _$this._autoRedirectToIdentity = autoRedirectToIdentity;
+
+  String? _domain;
+  String? get domain => _$this._domain;
+  set domain(covariant String? domain) => _$this._domain = domain;
+
+  String? _name;
+  String? get name => _$this._name;
+  set name(covariant String? name) => _$this._name = name;
+
+  String? _sessionDuration;
+  String? get sessionDuration => _$this._sessionDuration;
+  set sessionDuration(covariant String? sessionDuration) =>
+      _$this._sessionDuration = sessionDuration;
+
+  AccessComponentsSchemasType? _type;
+  AccessComponentsSchemasType? get type => _$this._type;
+  set type(covariant AccessComponentsSchemasType? type) => _$this._type = type;
+
+  $AccessSchemasAppLauncherPropsBuilder() {
+    $AccessSchemasAppLauncherProps._defaults(this);
+  }
+
+  $AccessSchemasAppLauncherPropsBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _allowedIdps = $v.allowedIdps?.toBuilder();
+      _autoRedirectToIdentity = $v.autoRedirectToIdentity;
+      _domain = $v.domain;
+      _name = $v.name;
+      _sessionDuration = $v.sessionDuration;
+      _type = $v.type;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(covariant $AccessSchemasAppLauncherProps other) {
+    _$v = other as _$$AccessSchemasAppLauncherProps;
+  }
+
+  @override
+  void update(void Function($AccessSchemasAppLauncherPropsBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  $AccessSchemasAppLauncherProps build() => _build();
+
+  _$$AccessSchemasAppLauncherProps _build() {
+    _$$AccessSchemasAppLauncherProps _$result;
+    try {
+      _$result = _$v ??
+          _$$AccessSchemasAppLauncherProps._(
+            allowedIdps: _allowedIdps?.build(),
+            autoRedirectToIdentity: autoRedirectToIdentity,
+            domain: domain,
+            name: name,
+            sessionDuration: sessionDuration,
+            type: BuiltValueNullFieldError.checkNotNull(
+                type, r'$AccessSchemasAppLauncherProps', 'type'),
+          );
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'allowedIdps';
+        _allowedIdps?.build();
+      } catch (e) {
+        throw BuiltValueNestedFieldError(
+            r'$AccessSchemasAppLauncherProps', _$failedField, e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+// ignore_for_file: deprecated_member_use_from_same_package,type=lint

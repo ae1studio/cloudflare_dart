@@ -1,0 +1,17 @@
+# cloudflare_dart.model.WorkersWorkerObservabilityLogs
+
+## Load the model package
+```dart
+import 'package:cloudflare_dart/api.dart';
+```
+
+## Properties
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**enabled** | **bool** | Whether logs are enabled for the Worker. | [optional] [default to false]
+**headSamplingRate** | **num** | The sampling rate for logs. From 0 to 1 (1 = 100%, 0.1 = 10%). | [optional] [default to 1]
+**invocationLogs** | **bool** | Whether [invocation logs](https://developers.cloudflare.com/workers/observability/logs/workers-logs/#invocation-logs) are enabled for the Worker. | [optional] [default to true]
+
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
+

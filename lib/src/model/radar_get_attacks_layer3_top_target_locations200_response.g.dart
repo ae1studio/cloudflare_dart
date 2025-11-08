@@ -1,0 +1,143 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+part of 'radar_get_attacks_layer3_top_target_locations200_response.dart';
+
+// **************************************************************************
+// BuiltValueGenerator
+// **************************************************************************
+
+class _$RadarGetAttacksLayer3TopTargetLocations200Response
+    extends RadarGetAttacksLayer3TopTargetLocations200Response {
+  @override
+  final RadarGetAttacksLayer3TopTargetLocations200ResponseResult result;
+  @override
+  final bool success;
+
+  factory _$RadarGetAttacksLayer3TopTargetLocations200Response(
+          [void Function(
+                  RadarGetAttacksLayer3TopTargetLocations200ResponseBuilder)?
+              updates]) =>
+      (RadarGetAttacksLayer3TopTargetLocations200ResponseBuilder()
+            ..update(updates))
+          ._build();
+
+  _$RadarGetAttacksLayer3TopTargetLocations200Response._(
+      {required this.result, required this.success})
+      : super._();
+  @override
+  RadarGetAttacksLayer3TopTargetLocations200Response rebuild(
+          void Function(
+                  RadarGetAttacksLayer3TopTargetLocations200ResponseBuilder)
+              updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  RadarGetAttacksLayer3TopTargetLocations200ResponseBuilder toBuilder() =>
+      RadarGetAttacksLayer3TopTargetLocations200ResponseBuilder()
+        ..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is RadarGetAttacksLayer3TopTargetLocations200Response &&
+        result == other.result &&
+        success == other.success;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, result.hashCode);
+    _$hash = $jc(_$hash, success.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(
+            r'RadarGetAttacksLayer3TopTargetLocations200Response')
+          ..add('result', result)
+          ..add('success', success))
+        .toString();
+  }
+}
+
+class RadarGetAttacksLayer3TopTargetLocations200ResponseBuilder
+    implements
+        Builder<RadarGetAttacksLayer3TopTargetLocations200Response,
+            RadarGetAttacksLayer3TopTargetLocations200ResponseBuilder> {
+  _$RadarGetAttacksLayer3TopTargetLocations200Response? _$v;
+
+  RadarGetAttacksLayer3TopTargetLocations200ResponseResultBuilder? _result;
+  RadarGetAttacksLayer3TopTargetLocations200ResponseResultBuilder get result =>
+      _$this._result ??=
+          RadarGetAttacksLayer3TopTargetLocations200ResponseResultBuilder();
+  set result(
+          RadarGetAttacksLayer3TopTargetLocations200ResponseResultBuilder?
+              result) =>
+      _$this._result = result;
+
+  bool? _success;
+  bool? get success => _$this._success;
+  set success(bool? success) => _$this._success = success;
+
+  RadarGetAttacksLayer3TopTargetLocations200ResponseBuilder() {
+    RadarGetAttacksLayer3TopTargetLocations200Response._defaults(this);
+  }
+
+  RadarGetAttacksLayer3TopTargetLocations200ResponseBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _result = $v.result.toBuilder();
+      _success = $v.success;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(RadarGetAttacksLayer3TopTargetLocations200Response other) {
+    _$v = other as _$RadarGetAttacksLayer3TopTargetLocations200Response;
+  }
+
+  @override
+  void update(
+      void Function(RadarGetAttacksLayer3TopTargetLocations200ResponseBuilder)?
+          updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  RadarGetAttacksLayer3TopTargetLocations200Response build() => _build();
+
+  _$RadarGetAttacksLayer3TopTargetLocations200Response _build() {
+    _$RadarGetAttacksLayer3TopTargetLocations200Response _$result;
+    try {
+      _$result = _$v ??
+          _$RadarGetAttacksLayer3TopTargetLocations200Response._(
+            result: result.build(),
+            success: BuiltValueNullFieldError.checkNotNull(
+                success,
+                r'RadarGetAttacksLayer3TopTargetLocations200Response',
+                'success'),
+          );
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'result';
+        result.build();
+      } catch (e) {
+        throw BuiltValueNestedFieldError(
+            r'RadarGetAttacksLayer3TopTargetLocations200Response',
+            _$failedField,
+            e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+// ignore_for_file: deprecated_member_use_from_same_package,type=lint

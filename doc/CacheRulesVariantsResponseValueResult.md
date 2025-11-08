@@ -1,0 +1,17 @@
+# cloudflare_dart.model.CacheRulesVariantsResponseValueResult
+
+## Load the model package
+```dart
+import 'package:cloudflare_dart/api.dart';
+```
+
+## Properties
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**id** | **String** | ID of the zone setting. | 
+**modifiedOn** | [**DateTime**](DateTime.md) | Last time this setting was modified. | [optional] 
+**value** | [**CacheRulesVariantsValue**](CacheRulesVariantsValue.md) |  | 
+
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
+

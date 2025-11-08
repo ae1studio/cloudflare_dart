@@ -1,0 +1,20 @@
+# cloudflare_dart.model.McnResourcePreview
+
+## Load the model package
+```dart
+import 'package:cloudflare_dart/api.dart';
+```
+
+## Properties
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**cloudType** | [**McnCloudType**](McnCloudType.md) |  | 
+**detail** | **String** |  | 
+**id** | **String** |  | 
+**name** | **String** |  | 
+**resourceType** | [**McnResourceType**](McnResourceType.md) |  | 
+**title** | **String** |  | 
+
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
+

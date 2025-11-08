@@ -1,0 +1,250 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+part of 'access_feature_app_props.dart';
+
+// **************************************************************************
+// BuiltValueGenerator
+// **************************************************************************
+
+abstract class AccessFeatureAppPropsBuilder {
+  void replace(AccessFeatureAppProps other);
+  void update(void Function(AccessFeatureAppPropsBuilder) updates);
+  ListBuilder<String> get allowedIdps;
+  set allowedIdps(ListBuilder<String>? allowedIdps);
+
+  bool? get autoRedirectToIdentity;
+  set autoRedirectToIdentity(bool? autoRedirectToIdentity);
+
+  String? get customDenyUrl;
+  set customDenyUrl(String? customDenyUrl);
+
+  String? get customNonIdentityDenyUrl;
+  set customNonIdentityDenyUrl(String? customNonIdentityDenyUrl);
+
+  ListBuilder<String> get customPages;
+  set customPages(ListBuilder<String>? customPages);
+
+  String? get domain;
+  set domain(String? domain);
+
+  String? get name;
+  set name(String? name);
+
+  String? get sessionDuration;
+  set sessionDuration(String? sessionDuration);
+
+  AccessType? get type;
+  set type(AccessType? type);
+}
+
+class _$$AccessFeatureAppProps extends $AccessFeatureAppProps {
+  @override
+  final BuiltList<String>? allowedIdps;
+  @override
+  final bool? autoRedirectToIdentity;
+  @override
+  final String? customDenyUrl;
+  @override
+  final String? customNonIdentityDenyUrl;
+  @override
+  final BuiltList<String>? customPages;
+  @override
+  final String? domain;
+  @override
+  final String? name;
+  @override
+  final String? sessionDuration;
+  @override
+  final AccessType type;
+
+  factory _$$AccessFeatureAppProps(
+          [void Function($AccessFeatureAppPropsBuilder)? updates]) =>
+      ($AccessFeatureAppPropsBuilder()..update(updates))._build();
+
+  _$$AccessFeatureAppProps._(
+      {this.allowedIdps,
+      this.autoRedirectToIdentity,
+      this.customDenyUrl,
+      this.customNonIdentityDenyUrl,
+      this.customPages,
+      this.domain,
+      this.name,
+      this.sessionDuration,
+      required this.type})
+      : super._();
+  @override
+  $AccessFeatureAppProps rebuild(
+          void Function($AccessFeatureAppPropsBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  $AccessFeatureAppPropsBuilder toBuilder() =>
+      $AccessFeatureAppPropsBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is $AccessFeatureAppProps &&
+        allowedIdps == other.allowedIdps &&
+        autoRedirectToIdentity == other.autoRedirectToIdentity &&
+        customDenyUrl == other.customDenyUrl &&
+        customNonIdentityDenyUrl == other.customNonIdentityDenyUrl &&
+        customPages == other.customPages &&
+        domain == other.domain &&
+        name == other.name &&
+        sessionDuration == other.sessionDuration &&
+        type == other.type;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, allowedIdps.hashCode);
+    _$hash = $jc(_$hash, autoRedirectToIdentity.hashCode);
+    _$hash = $jc(_$hash, customDenyUrl.hashCode);
+    _$hash = $jc(_$hash, customNonIdentityDenyUrl.hashCode);
+    _$hash = $jc(_$hash, customPages.hashCode);
+    _$hash = $jc(_$hash, domain.hashCode);
+    _$hash = $jc(_$hash, name.hashCode);
+    _$hash = $jc(_$hash, sessionDuration.hashCode);
+    _$hash = $jc(_$hash, type.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'$AccessFeatureAppProps')
+          ..add('allowedIdps', allowedIdps)
+          ..add('autoRedirectToIdentity', autoRedirectToIdentity)
+          ..add('customDenyUrl', customDenyUrl)
+          ..add('customNonIdentityDenyUrl', customNonIdentityDenyUrl)
+          ..add('customPages', customPages)
+          ..add('domain', domain)
+          ..add('name', name)
+          ..add('sessionDuration', sessionDuration)
+          ..add('type', type))
+        .toString();
+  }
+}
+
+class $AccessFeatureAppPropsBuilder
+    implements
+        Builder<$AccessFeatureAppProps, $AccessFeatureAppPropsBuilder>,
+        AccessFeatureAppPropsBuilder {
+  _$$AccessFeatureAppProps? _$v;
+
+  ListBuilder<String>? _allowedIdps;
+  ListBuilder<String> get allowedIdps =>
+      _$this._allowedIdps ??= ListBuilder<String>();
+  set allowedIdps(covariant ListBuilder<String>? allowedIdps) =>
+      _$this._allowedIdps = allowedIdps;
+
+  bool? _autoRedirectToIdentity;
+  bool? get autoRedirectToIdentity => _$this._autoRedirectToIdentity;
+  set autoRedirectToIdentity(covariant bool? autoRedirectToIdentity) =>
+      _$this._autoRedirectToIdentity = autoRedirectToIdentity;
+
+  String? _customDenyUrl;
+  String? get customDenyUrl => _$this._customDenyUrl;
+  set customDenyUrl(covariant String? customDenyUrl) =>
+      _$this._customDenyUrl = customDenyUrl;
+
+  String? _customNonIdentityDenyUrl;
+  String? get customNonIdentityDenyUrl => _$this._customNonIdentityDenyUrl;
+  set customNonIdentityDenyUrl(covariant String? customNonIdentityDenyUrl) =>
+      _$this._customNonIdentityDenyUrl = customNonIdentityDenyUrl;
+
+  ListBuilder<String>? _customPages;
+  ListBuilder<String> get customPages =>
+      _$this._customPages ??= ListBuilder<String>();
+  set customPages(covariant ListBuilder<String>? customPages) =>
+      _$this._customPages = customPages;
+
+  String? _domain;
+  String? get domain => _$this._domain;
+  set domain(covariant String? domain) => _$this._domain = domain;
+
+  String? _name;
+  String? get name => _$this._name;
+  set name(covariant String? name) => _$this._name = name;
+
+  String? _sessionDuration;
+  String? get sessionDuration => _$this._sessionDuration;
+  set sessionDuration(covariant String? sessionDuration) =>
+      _$this._sessionDuration = sessionDuration;
+
+  AccessType? _type;
+  AccessType? get type => _$this._type;
+  set type(covariant AccessType? type) => _$this._type = type;
+
+  $AccessFeatureAppPropsBuilder() {
+    $AccessFeatureAppProps._defaults(this);
+  }
+
+  $AccessFeatureAppPropsBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _allowedIdps = $v.allowedIdps?.toBuilder();
+      _autoRedirectToIdentity = $v.autoRedirectToIdentity;
+      _customDenyUrl = $v.customDenyUrl;
+      _customNonIdentityDenyUrl = $v.customNonIdentityDenyUrl;
+      _customPages = $v.customPages?.toBuilder();
+      _domain = $v.domain;
+      _name = $v.name;
+      _sessionDuration = $v.sessionDuration;
+      _type = $v.type;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(covariant $AccessFeatureAppProps other) {
+    _$v = other as _$$AccessFeatureAppProps;
+  }
+
+  @override
+  void update(void Function($AccessFeatureAppPropsBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  $AccessFeatureAppProps build() => _build();
+
+  _$$AccessFeatureAppProps _build() {
+    _$$AccessFeatureAppProps _$result;
+    try {
+      _$result = _$v ??
+          _$$AccessFeatureAppProps._(
+            allowedIdps: _allowedIdps?.build(),
+            autoRedirectToIdentity: autoRedirectToIdentity,
+            customDenyUrl: customDenyUrl,
+            customNonIdentityDenyUrl: customNonIdentityDenyUrl,
+            customPages: _customPages?.build(),
+            domain: domain,
+            name: name,
+            sessionDuration: sessionDuration,
+            type: BuiltValueNullFieldError.checkNotNull(
+                type, r'$AccessFeatureAppProps', 'type'),
+          );
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'allowedIdps';
+        _allowedIdps?.build();
+
+        _$failedField = 'customPages';
+        _customPages?.build();
+      } catch (e) {
+        throw BuiltValueNestedFieldError(
+            r'$AccessFeatureAppProps', _$failedField, e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+// ignore_for_file: deprecated_member_use_from_same_package,type=lint
