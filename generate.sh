@@ -3,12 +3,35 @@
 set -e
 
 OPENAPI_JSON_URL="https://raw.githubusercontent.com/cloudflare/api-schemas/main/openapi.json"
+COMMON_YAML_URL="https://raw.githubusercontent.com/cloudflare/api-schemas/main/common.yaml"
 OUTPUT_DIR="."
-TEMP_FILE="/tmp/cloudflare-openapi.json"
+TEMP_DIR="/tmp/cloudflare-openapi"
+BUNDLED_FILE="/tmp/cloudflare-openapi-bundled.json"
 
-echo "Downloading OpenAPI specification..."
-curl -L -f -o "$TEMP_FILE" "$OPENAPI_JSON_URL"
-INPUT_FILE="$TEMP_FILE"
+echo "Setting up temporary directory..."
+rm -rf "$TEMP_DIR"
+mkdir -p "$TEMP_DIR"
+
+echo "Downloading OpenAPI specification and common.yaml..."
+curl -L -f -o "$TEMP_DIR/openapi.json" "$OPENAPI_JSON_URL"
+curl -L -f -o "$TEMP_DIR/common.yaml" "$COMMON_YAML_URL"
+
+echo "Checking if Redocly CLI is available..."
+if ! command -v redocly &> /dev/null; then
+  echo "Redocly CLI not found. Installing via npx..."
+  npx --yes @redocly/cli bundle "$TEMP_DIR/openapi.json" -o "$BUNDLED_FILE" || {
+    echo "Warning: Failed to bundle with Redocly CLI. Attempting to use openapi.json directly..."
+    BUNDLED_FILE="$TEMP_DIR/openapi.json"
+  }
+else
+  echo "Bundling OpenAPI specification with common.yaml..."
+  redocly bundle "$TEMP_DIR/openapi.json" -o "$BUNDLED_FILE" || {
+    echo "Warning: Failed to bundle with Redocly CLI. Attempting to use openapi.json directly..."
+    BUNDLED_FILE="$TEMP_DIR/openapi.json"
+  }
+fi
+
+INPUT_FILE="$BUNDLED_FILE"
 
 echo "Generating Dart code from OpenAPI specification..."
 echo "This may take several minutes due to the large specification..."
@@ -23,8 +46,9 @@ openapi-generator generate \
   --additional-properties=pubName=cloudflare_dart,pubVersion=1.0.0,pubAuthor=ae1.dev,pubHomepage=https://github.com/ae1studio/cloudflare_dart
 
 echo "Generation complete! Output directory: $OUTPUT_DIR"
-echo "Cleaning up temporary file..."
-rm -f "$TEMP_FILE"
+echo "Cleaning up temporary files..."
+rm -f "$BUNDLED_FILE"
+rm -rf "$TEMP_DIR"
 
 echo "Deduplicating enums..."
 python3 scripts/deduplicate_enums.py
