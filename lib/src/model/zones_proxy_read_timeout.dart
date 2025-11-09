@@ -155,11 +155,11 @@ class ZonesProxyReadTimeoutIdEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'proxy_read_timeout')
   static const ZonesProxyReadTimeoutIdEnum proxyReadTimeout = _$zonesProxyReadTimeoutIdEnum_proxyReadTimeout;
 
-  static Serializer<ZonesProxyReadTimeoutIdEnum> get serializer => _$zonesProxyReadTimeoutIdSerializer;
+  static Serializer<ZonesProxyReadTimeoutIdEnum> get serializer => _$zonesProxyReadTimeoutIdEnumSerializer;
 
   const ZonesProxyReadTimeoutIdEnum._(String name): super(name);
 
-  static BuiltSet<ZonesProxyReadTimeoutIdEnum> get values => _$zonesProxyReadTimeoutIdValues;
-  static ZonesProxyReadTimeoutIdEnum valueOf(String name) => _$zonesProxyReadTimeoutIdValueOf(name);
+  static BuiltSet<ZonesProxyReadTimeoutIdEnum> get values => _$zonesProxyReadTimeoutIdEnumValues;
+  static ZonesProxyReadTimeoutIdEnum valueOf(String name) => _$zonesProxyReadTimeoutIdEnumValueOf(name);
 }
 

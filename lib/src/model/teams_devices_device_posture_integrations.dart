@@ -3,8 +3,8 @@
 //
 
 // ignore_for_file: unused_element
+import 'package:cloudflare_dart/src/model/teams_devices_workspace_one_config_response.dart';
 import 'package:cloudflare_dart/src/model/teams_devices_schemas_type.dart';
-import 'package:cloudflare_dart/src/model/teams_devices_config_response.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
@@ -21,7 +21,7 @@ part 'teams_devices_device_posture_integrations.g.dart';
 @BuiltValue()
 abstract class TeamsDevicesDevicePostureIntegrations implements Built<TeamsDevicesDevicePostureIntegrations, TeamsDevicesDevicePostureIntegrationsBuilder> {
   @BuiltValueField(wireName: r'config')
-  TeamsDevicesConfigResponse? get config;
+  TeamsDevicesWorkspaceOneConfigResponse? get config;
 
   /// API UUID.
   @BuiltValueField(wireName: r'id')
@@ -66,7 +66,7 @@ class _$TeamsDevicesDevicePostureIntegrationsSerializer implements PrimitiveSeri
       yield r'config';
       yield serializers.serialize(
         object.config,
-        specifiedType: const FullType(TeamsDevicesConfigResponse),
+        specifiedType: const FullType(TeamsDevicesWorkspaceOneConfigResponse),
       );
     }
     if (object.id != null) {
@@ -123,8 +123,8 @@ class _$TeamsDevicesDevicePostureIntegrationsSerializer implements PrimitiveSeri
         case r'config':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(TeamsDevicesConfigResponse),
-          ) as TeamsDevicesConfigResponse;
+            specifiedType: const FullType(TeamsDevicesWorkspaceOneConfigResponse),
+          ) as TeamsDevicesWorkspaceOneConfigResponse;
           result.config.replace(valueDes);
           break;
         case r'id':

@@ -3,7 +3,6 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:cloudflare_dart/src/model/spectrum_analytics_query_response_aggregate_all_of_app_id.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
@@ -12,15 +11,16 @@ part 'spectrum_analytics_query_response_aggregate_all_of_result.g.dart';
 /// SpectrumAnalyticsQueryResponseAggregateAllOfResult
 ///
 /// Properties:
-/// * [appID] 
+/// * [appID] - Application identifier.
 /// * [bytesEgress] - Number of bytes sent
 /// * [bytesIngress] - Number of bytes received
 /// * [connections] - Number of connections
 /// * [durationAvg] - Average duration of connections
 @BuiltValue()
 abstract class SpectrumAnalyticsQueryResponseAggregateAllOfResult implements Built<SpectrumAnalyticsQueryResponseAggregateAllOfResult, SpectrumAnalyticsQueryResponseAggregateAllOfResultBuilder> {
+  /// Application identifier.
   @BuiltValueField(wireName: r'appID')
-  SpectrumAnalyticsQueryResponseAggregateAllOfAppID get appID;
+  String get appID;
 
   /// Number of bytes sent
   @BuiltValueField(wireName: r'bytesEgress')
@@ -64,7 +64,7 @@ class _$SpectrumAnalyticsQueryResponseAggregateAllOfResultSerializer implements 
     yield r'appID';
     yield serializers.serialize(
       object.appID,
-      specifiedType: const FullType(SpectrumAnalyticsQueryResponseAggregateAllOfAppID),
+      specifiedType: const FullType(String),
     );
     yield r'bytesEgress';
     yield serializers.serialize(
@@ -112,9 +112,9 @@ class _$SpectrumAnalyticsQueryResponseAggregateAllOfResultSerializer implements 
         case r'appID':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(SpectrumAnalyticsQueryResponseAggregateAllOfAppID),
-          ) as SpectrumAnalyticsQueryResponseAggregateAllOfAppID;
-          result.appID.replace(valueDes);
+            specifiedType: const FullType(String),
+          ) as String;
+          result.appID = valueDes;
           break;
         case r'bytesEgress':
           final valueDes = serializers.deserialize(

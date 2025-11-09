@@ -36,7 +36,7 @@ abstract class RealtimekitTranscriptionConfig implements Built<RealtimekitTransc
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(RealtimekitTranscriptionConfigBuilder b) => b
-      ..language = const RealtimekitTranscriptionConfigLanguageEnum._('en-US')
+      ..language = RealtimekitTranscriptionConfigLanguageEnum.valueOf('en-US')
       ..profanityFilter = false;
 
   @BuiltValueSerializer(custom: true)
@@ -182,11 +182,11 @@ class RealtimekitTranscriptionConfigLanguageEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'nl')
   static const RealtimekitTranscriptionConfigLanguageEnum nl = _$realtimekitTranscriptionConfigLanguageEnum_nl;
 
-  static Serializer<RealtimekitTranscriptionConfigLanguageEnum> get serializer => _$realtimekitTranscriptionConfigLanguageSerializer;
+  static Serializer<RealtimekitTranscriptionConfigLanguageEnum> get serializer => _$realtimekitTranscriptionConfigLanguageEnumSerializer;
 
   const RealtimekitTranscriptionConfigLanguageEnum._(String name): super(name);
 
-  static BuiltSet<RealtimekitTranscriptionConfigLanguageEnum> get values => _$realtimekitTranscriptionConfigLanguageValues;
-  static RealtimekitTranscriptionConfigLanguageEnum valueOf(String name) => _$realtimekitTranscriptionConfigLanguageValueOf(name);
+  static BuiltSet<RealtimekitTranscriptionConfigLanguageEnum> get values => _$realtimekitTranscriptionConfigLanguageEnumValues;
+  static RealtimekitTranscriptionConfigLanguageEnum valueOf(String name) => _$realtimekitTranscriptionConfigLanguageEnumValueOf(name);
 }
 

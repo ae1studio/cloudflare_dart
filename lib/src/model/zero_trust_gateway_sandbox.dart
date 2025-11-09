@@ -138,11 +138,11 @@ class ZeroTrustGatewaySandboxFallbackActionEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'block')
   static const ZeroTrustGatewaySandboxFallbackActionEnum block = _$zeroTrustGatewaySandboxFallbackActionEnum_block;
 
-  static Serializer<ZeroTrustGatewaySandboxFallbackActionEnum> get serializer => _$zeroTrustGatewaySandboxFallbackActionSerializer;
+  static Serializer<ZeroTrustGatewaySandboxFallbackActionEnum> get serializer => _$zeroTrustGatewaySandboxFallbackActionEnumSerializer;
 
   const ZeroTrustGatewaySandboxFallbackActionEnum._(String name): super(name);
 
-  static BuiltSet<ZeroTrustGatewaySandboxFallbackActionEnum> get values => _$zeroTrustGatewaySandboxFallbackActionValues;
-  static ZeroTrustGatewaySandboxFallbackActionEnum valueOf(String name) => _$zeroTrustGatewaySandboxFallbackActionValueOf(name);
+  static BuiltSet<ZeroTrustGatewaySandboxFallbackActionEnum> get values => _$zeroTrustGatewaySandboxFallbackActionEnumValues;
+  static ZeroTrustGatewaySandboxFallbackActionEnum valueOf(String name) => _$zeroTrustGatewaySandboxFallbackActionEnumValueOf(name);
 }
 

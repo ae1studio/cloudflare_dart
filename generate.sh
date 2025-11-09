@@ -19,13 +19,14 @@ curl -L -f -o "$TEMP_DIR/common.yaml" "$COMMON_YAML_URL"
 echo "Checking if Redocly CLI is available..."
 if ! command -v redocly &> /dev/null; then
   echo "Redocly CLI not found. Installing via npx..."
-  npx --yes @redocly/cli bundle "$TEMP_DIR/openapi.json" -o "$BUNDLED_FILE" || {
+  echo "Bundling OpenAPI specification with common.yaml (using --force to ignore discriminator mapping errors)..."
+  npx --yes @redocly/cli bundle "$TEMP_DIR/openapi.json" -o "$BUNDLED_FILE" --force || {
     echo "Warning: Failed to bundle with Redocly CLI. Attempting to use openapi.json directly..."
     BUNDLED_FILE="$TEMP_DIR/openapi.json"
   }
 else
-  echo "Bundling OpenAPI specification with common.yaml..."
-  redocly bundle "$TEMP_DIR/openapi.json" -o "$BUNDLED_FILE" || {
+  echo "Bundling OpenAPI specification with common.yaml (using --force to ignore discriminator mapping errors)..."
+  redocly bundle "$TEMP_DIR/openapi.json" -o "$BUNDLED_FILE" --force || {
     echo "Warning: Failed to bundle with Redocly CLI. Attempting to use openapi.json directly..."
     BUNDLED_FILE="$TEMP_DIR/openapi.json"
   }

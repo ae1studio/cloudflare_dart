@@ -165,11 +165,11 @@ class _$ZeroTrustCertificatesListZeroTrustCertificates4XXResponseSerializer impl
 class ZeroTrustCertificatesListZeroTrustCertificates4XXResponseResultEnum extends EnumClass {
 
 
-  static Serializer<ZeroTrustCertificatesListZeroTrustCertificates4XXResponseResultEnum> get serializer => _$zeroTrustCertificatesListZeroTrustCertificates4XXResponseResultSerializer;
+  static Serializer<ZeroTrustCertificatesListZeroTrustCertificates4XXResponseResultEnum> get serializer => _$zeroTrustCertificatesListZeroTrustCertificates4XXResponseResultEnumSerializer;
 
   const ZeroTrustCertificatesListZeroTrustCertificates4XXResponseResultEnum._(String name): super(name);
 
-  static BuiltSet<ZeroTrustCertificatesListZeroTrustCertificates4XXResponseResultEnum> get values => _$zeroTrustCertificatesListZeroTrustCertificates4XXResponseResultValues;
-  static ZeroTrustCertificatesListZeroTrustCertificates4XXResponseResultEnum valueOf(String name) => _$zeroTrustCertificatesListZeroTrustCertificates4XXResponseResultValueOf(name);
+  static BuiltSet<ZeroTrustCertificatesListZeroTrustCertificates4XXResponseResultEnum> get values => _$zeroTrustCertificatesListZeroTrustCertificates4XXResponseResultEnumValues;
+  static ZeroTrustCertificatesListZeroTrustCertificates4XXResponseResultEnum valueOf(String name) => _$zeroTrustCertificatesListZeroTrustCertificates4XXResponseResultEnumValueOf(name);
 }
 

@@ -194,11 +194,11 @@ class _$$LoadBalancingApiResponseCommonFailureSerializer implements PrimitiveSer
 class LoadBalancingApiResponseCommonFailureResultEnum extends EnumClass {
 
 
-  static Serializer<LoadBalancingApiResponseCommonFailureResultEnum> get serializer => _$loadBalancingApiResponseCommonFailureResultSerializer;
+  static Serializer<LoadBalancingApiResponseCommonFailureResultEnum> get serializer => _$loadBalancingApiResponseCommonFailureResultEnumSerializer;
 
   const LoadBalancingApiResponseCommonFailureResultEnum._(String name): super(name);
 
-  static BuiltSet<LoadBalancingApiResponseCommonFailureResultEnum> get values => _$loadBalancingApiResponseCommonFailureResultValues;
-  static LoadBalancingApiResponseCommonFailureResultEnum valueOf(String name) => _$loadBalancingApiResponseCommonFailureResultValueOf(name);
+  static BuiltSet<LoadBalancingApiResponseCommonFailureResultEnum> get values => _$loadBalancingApiResponseCommonFailureResultEnumValues;
+  static LoadBalancingApiResponseCommonFailureResultEnum valueOf(String name) => _$loadBalancingApiResponseCommonFailureResultEnumValueOf(name);
 }
 

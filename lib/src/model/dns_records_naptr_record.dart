@@ -248,11 +248,11 @@ class DnsRecordsNAPTRRecordTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'NAPTR')
   static const DnsRecordsNAPTRRecordTypeEnum NAPTR = _$dnsRecordsNAPTRRecordTypeEnum_NAPTR;
 
-  static Serializer<DnsRecordsNAPTRRecordTypeEnum> get serializer => _$dnsRecordsNAPTRRecordTypeSerializer;
+  static Serializer<DnsRecordsNAPTRRecordTypeEnum> get serializer => _$dnsRecordsNAPTRRecordTypeEnumSerializer;
 
   const DnsRecordsNAPTRRecordTypeEnum._(String name): super(name);
 
-  static BuiltSet<DnsRecordsNAPTRRecordTypeEnum> get values => _$dnsRecordsNAPTRRecordTypeValues;
-  static DnsRecordsNAPTRRecordTypeEnum valueOf(String name) => _$dnsRecordsNAPTRRecordTypeValueOf(name);
+  static BuiltSet<DnsRecordsNAPTRRecordTypeEnum> get values => _$dnsRecordsNAPTRRecordTypeEnumValues;
+  static DnsRecordsNAPTRRecordTypeEnum valueOf(String name) => _$dnsRecordsNAPTRRecordTypeEnumValueOf(name);
 }
 

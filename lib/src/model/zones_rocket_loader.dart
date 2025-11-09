@@ -135,12 +135,12 @@ class ZonesRocketLoaderIdEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'rocket_loader')
   static const ZonesRocketLoaderIdEnum rocketLoader = _$zonesRocketLoaderIdEnum_rocketLoader;
 
-  static Serializer<ZonesRocketLoaderIdEnum> get serializer => _$zonesRocketLoaderIdSerializer;
+  static Serializer<ZonesRocketLoaderIdEnum> get serializer => _$zonesRocketLoaderIdEnumSerializer;
 
   const ZonesRocketLoaderIdEnum._(String name): super(name);
 
-  static BuiltSet<ZonesRocketLoaderIdEnum> get values => _$zonesRocketLoaderIdValues;
-  static ZonesRocketLoaderIdEnum valueOf(String name) => _$zonesRocketLoaderIdValueOf(name);
+  static BuiltSet<ZonesRocketLoaderIdEnum> get values => _$zonesRocketLoaderIdEnumValues;
+  static ZonesRocketLoaderIdEnum valueOf(String name) => _$zonesRocketLoaderIdEnumValueOf(name);
 }
 
 class ZonesRocketLoaderValueEnum extends EnumClass {
@@ -152,11 +152,11 @@ class ZonesRocketLoaderValueEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'off')
   static const ZonesRocketLoaderValueEnum off = _$zonesRocketLoaderValueEnum_off;
 
-  static Serializer<ZonesRocketLoaderValueEnum> get serializer => _$zonesRocketLoaderValueSerializer;
+  static Serializer<ZonesRocketLoaderValueEnum> get serializer => _$zonesRocketLoaderValueEnumSerializer;
 
   const ZonesRocketLoaderValueEnum._(String name): super(name);
 
-  static BuiltSet<ZonesRocketLoaderValueEnum> get values => _$zonesRocketLoaderValueValues;
-  static ZonesRocketLoaderValueEnum valueOf(String name) => _$zonesRocketLoaderValueValueOf(name);
+  static BuiltSet<ZonesRocketLoaderValueEnum> get values => _$zonesRocketLoaderValueEnumValues;
+  static ZonesRocketLoaderValueEnum valueOf(String name) => _$zonesRocketLoaderValueEnumValueOf(name);
 }
 

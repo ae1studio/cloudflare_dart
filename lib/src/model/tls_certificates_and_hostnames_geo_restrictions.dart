@@ -117,11 +117,11 @@ class TlsCertificatesAndHostnamesGeoRestrictionsLabelEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'highest_security')
   static const TlsCertificatesAndHostnamesGeoRestrictionsLabelEnum highestSecurity = _$tlsCertificatesAndHostnamesGeoRestrictionsLabelEnum_highestSecurity;
 
-  static Serializer<TlsCertificatesAndHostnamesGeoRestrictionsLabelEnum> get serializer => _$tlsCertificatesAndHostnamesGeoRestrictionsLabelSerializer;
+  static Serializer<TlsCertificatesAndHostnamesGeoRestrictionsLabelEnum> get serializer => _$tlsCertificatesAndHostnamesGeoRestrictionsLabelEnumSerializer;
 
   const TlsCertificatesAndHostnamesGeoRestrictionsLabelEnum._(String name): super(name);
 
-  static BuiltSet<TlsCertificatesAndHostnamesGeoRestrictionsLabelEnum> get values => _$tlsCertificatesAndHostnamesGeoRestrictionsLabelValues;
-  static TlsCertificatesAndHostnamesGeoRestrictionsLabelEnum valueOf(String name) => _$tlsCertificatesAndHostnamesGeoRestrictionsLabelValueOf(name);
+  static BuiltSet<TlsCertificatesAndHostnamesGeoRestrictionsLabelEnum> get values => _$tlsCertificatesAndHostnamesGeoRestrictionsLabelEnumValues;
+  static TlsCertificatesAndHostnamesGeoRestrictionsLabelEnum valueOf(String name) => _$tlsCertificatesAndHostnamesGeoRestrictionsLabelEnumValueOf(name);
 }
 

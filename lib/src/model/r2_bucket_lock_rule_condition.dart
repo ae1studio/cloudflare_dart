@@ -83,11 +83,11 @@ class R2BucketLockRuleConditionTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'Indefinite')
   static const R2BucketLockRuleConditionTypeEnum indefinite = _$r2BucketLockRuleConditionTypeEnum_indefinite;
 
-  static Serializer<R2BucketLockRuleConditionTypeEnum> get serializer => _$r2BucketLockRuleConditionTypeSerializer;
+  static Serializer<R2BucketLockRuleConditionTypeEnum> get serializer => _$r2BucketLockRuleConditionTypeEnumSerializer;
 
   const R2BucketLockRuleConditionTypeEnum._(String name): super(name);
 
-  static BuiltSet<R2BucketLockRuleConditionTypeEnum> get values => _$r2BucketLockRuleConditionTypeValues;
-  static R2BucketLockRuleConditionTypeEnum valueOf(String name) => _$r2BucketLockRuleConditionTypeValueOf(name);
+  static BuiltSet<R2BucketLockRuleConditionTypeEnum> get values => _$r2BucketLockRuleConditionTypeEnumValues;
+  static R2BucketLockRuleConditionTypeEnum valueOf(String name) => _$r2BucketLockRuleConditionTypeEnumValueOf(name);
 }
 

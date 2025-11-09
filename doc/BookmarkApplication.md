@@ -9,9 +9,9 @@ import 'package:cloudflare_dart/api.dart';
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **aud** | **String** | Audience tag. | [optional] 
-**createdAt** | [**AccessCreatedAt**](AccessCreatedAt.md) |  | [optional] 
+**createdAt** | [**JsonObject**](JsonObject.md) |  | [optional] 
 **id** | **String** | UUID. | [optional] 
-**updatedAt** | [**AccessUpdatedAt**](AccessUpdatedAt.md) |  | [optional] 
+**updatedAt** | [**JsonObject**](JsonObject.md) |  | [optional] 
 **appLauncherVisible** | **bool** | Displays the application in the App Launcher. | [optional] [default to true]
 **domain** | **String** | The URL or domain of the bookmark. | [optional] 
 **logoUrl** | **String** | The image URL for the logo shown in the App Launcher dashboard. | [optional] 

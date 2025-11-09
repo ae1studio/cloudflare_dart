@@ -9,7 +9,7 @@ part of 'workers_kv_namespace_read_the_metadata_for_a_key200_response.dart';
 class _$WorkersKvNamespaceReadTheMetadataForAKey200Response
     extends WorkersKvNamespaceReadTheMetadataForAKey200Response {
   @override
-  final WorkersKvListMetadata? result;
+  final JsonObject? result;
   @override
   final BuiltSet<WorkersKvMessagesInner> errors;
   @override
@@ -83,11 +83,9 @@ class WorkersKvNamespaceReadTheMetadataForAKey200ResponseBuilder
         WorkersKvApiResponseCommonBuilder {
   _$WorkersKvNamespaceReadTheMetadataForAKey200Response? _$v;
 
-  WorkersKvListMetadataBuilder? _result;
-  WorkersKvListMetadataBuilder get result =>
-      _$this._result ??= WorkersKvListMetadataBuilder();
-  set result(covariant WorkersKvListMetadataBuilder? result) =>
-      _$this._result = result;
+  JsonObject? _result;
+  JsonObject? get result => _$this._result;
+  set result(covariant JsonObject? result) => _$this._result = result;
 
   SetBuilder<WorkersKvMessagesInner>? _errors;
   SetBuilder<WorkersKvMessagesInner> get errors =>
@@ -112,7 +110,7 @@ class WorkersKvNamespaceReadTheMetadataForAKey200ResponseBuilder
   WorkersKvNamespaceReadTheMetadataForAKey200ResponseBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _result = $v.result?.toBuilder();
+      _result = $v.result;
       _errors = $v.errors.toBuilder();
       _messages = $v.messages.toBuilder();
       _success = $v.success;
@@ -142,7 +140,7 @@ class WorkersKvNamespaceReadTheMetadataForAKey200ResponseBuilder
     try {
       _$result = _$v ??
           _$WorkersKvNamespaceReadTheMetadataForAKey200Response._(
-            result: _result?.build(),
+            result: result,
             errors: errors.build(),
             messages: messages.build(),
             success: BuiltValueNullFieldError.checkNotNull(
@@ -153,8 +151,6 @@ class WorkersKvNamespaceReadTheMetadataForAKey200ResponseBuilder
     } catch (_) {
       late String _$failedField;
       try {
-        _$failedField = 'result';
-        _result?.build();
         _$failedField = 'errors';
         errors.build();
         _$failedField = 'messages';

@@ -268,12 +268,12 @@ class AbuseReportsRegistrarWhoisReportActEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'abuse_registrar_whois')
   static const AbuseReportsRegistrarWhoisReportActEnum abuseRegistrarWhois = _$abuseReportsRegistrarWhoisReportActEnum_abuseRegistrarWhois;
 
-  static Serializer<AbuseReportsRegistrarWhoisReportActEnum> get serializer => _$abuseReportsRegistrarWhoisReportActSerializer;
+  static Serializer<AbuseReportsRegistrarWhoisReportActEnum> get serializer => _$abuseReportsRegistrarWhoisReportActEnumSerializer;
 
   const AbuseReportsRegistrarWhoisReportActEnum._(String name): super(name);
 
-  static BuiltSet<AbuseReportsRegistrarWhoisReportActEnum> get values => _$abuseReportsRegistrarWhoisReportActValues;
-  static AbuseReportsRegistrarWhoisReportActEnum valueOf(String name) => _$abuseReportsRegistrarWhoisReportActValueOf(name);
+  static BuiltSet<AbuseReportsRegistrarWhoisReportActEnum> get values => _$abuseReportsRegistrarWhoisReportActEnumValues;
+  static AbuseReportsRegistrarWhoisReportActEnum valueOf(String name) => _$abuseReportsRegistrarWhoisReportActEnumValueOf(name);
 }
 
 class AbuseReportsRegistrarWhoisReportOwnerNotificationEnum extends EnumClass {
@@ -288,11 +288,11 @@ class AbuseReportsRegistrarWhoisReportOwnerNotificationEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'none')
   static const AbuseReportsRegistrarWhoisReportOwnerNotificationEnum none = _$abuseReportsRegistrarWhoisReportOwnerNotificationEnum_none;
 
-  static Serializer<AbuseReportsRegistrarWhoisReportOwnerNotificationEnum> get serializer => _$abuseReportsRegistrarWhoisReportOwnerNotificationSerializer;
+  static Serializer<AbuseReportsRegistrarWhoisReportOwnerNotificationEnum> get serializer => _$abuseReportsRegistrarWhoisReportOwnerNotificationEnumSerializer;
 
   const AbuseReportsRegistrarWhoisReportOwnerNotificationEnum._(String name): super(name);
 
-  static BuiltSet<AbuseReportsRegistrarWhoisReportOwnerNotificationEnum> get values => _$abuseReportsRegistrarWhoisReportOwnerNotificationValues;
-  static AbuseReportsRegistrarWhoisReportOwnerNotificationEnum valueOf(String name) => _$abuseReportsRegistrarWhoisReportOwnerNotificationValueOf(name);
+  static BuiltSet<AbuseReportsRegistrarWhoisReportOwnerNotificationEnum> get values => _$abuseReportsRegistrarWhoisReportOwnerNotificationEnumValues;
+  static AbuseReportsRegistrarWhoisReportOwnerNotificationEnum valueOf(String name) => _$abuseReportsRegistrarWhoisReportOwnerNotificationEnumValueOf(name);
 }
 

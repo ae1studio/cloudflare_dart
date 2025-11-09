@@ -135,11 +135,11 @@ class ZonesSslRecommenderIdEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'ssl_recommender')
   static const ZonesSslRecommenderIdEnum sslRecommender = _$zonesSslRecommenderIdEnum_sslRecommender;
 
-  static Serializer<ZonesSslRecommenderIdEnum> get serializer => _$zonesSslRecommenderIdSerializer;
+  static Serializer<ZonesSslRecommenderIdEnum> get serializer => _$zonesSslRecommenderIdEnumSerializer;
 
   const ZonesSslRecommenderIdEnum._(String name): super(name);
 
-  static BuiltSet<ZonesSslRecommenderIdEnum> get values => _$zonesSslRecommenderIdValues;
-  static ZonesSslRecommenderIdEnum valueOf(String name) => _$zonesSslRecommenderIdValueOf(name);
+  static BuiltSet<ZonesSslRecommenderIdEnum> get values => _$zonesSslRecommenderIdEnumValues;
+  static ZonesSslRecommenderIdEnum valueOf(String name) => _$zonesSslRecommenderIdEnumValueOf(name);
 }
 

@@ -159,11 +159,11 @@ class SpeedCloudflareFontsIdEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'fonts')
   static const SpeedCloudflareFontsIdEnum fonts = _$speedCloudflareFontsIdEnum_fonts;
 
-  static Serializer<SpeedCloudflareFontsIdEnum> get serializer => _$speedCloudflareFontsIdSerializer;
+  static Serializer<SpeedCloudflareFontsIdEnum> get serializer => _$speedCloudflareFontsIdEnumSerializer;
 
   const SpeedCloudflareFontsIdEnum._(String name): super(name);
 
-  static BuiltSet<SpeedCloudflareFontsIdEnum> get values => _$speedCloudflareFontsIdValues;
-  static SpeedCloudflareFontsIdEnum valueOf(String name) => _$speedCloudflareFontsIdValueOf(name);
+  static BuiltSet<SpeedCloudflareFontsIdEnum> get values => _$speedCloudflareFontsIdEnumValues;
+  static SpeedCloudflareFontsIdEnum valueOf(String name) => _$speedCloudflareFontsIdEnumValueOf(name);
 }
 

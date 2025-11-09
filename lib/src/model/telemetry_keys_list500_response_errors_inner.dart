@@ -129,11 +129,11 @@ class TelemetryKeysList500ResponseErrorsInnerMessageEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'Internal error')
   static const TelemetryKeysList500ResponseErrorsInnerMessageEnum internalError = _$telemetryKeysList500ResponseErrorsInnerMessageEnum_internalError;
 
-  static Serializer<TelemetryKeysList500ResponseErrorsInnerMessageEnum> get serializer => _$telemetryKeysList500ResponseErrorsInnerMessageSerializer;
+  static Serializer<TelemetryKeysList500ResponseErrorsInnerMessageEnum> get serializer => _$telemetryKeysList500ResponseErrorsInnerMessageEnumSerializer;
 
   const TelemetryKeysList500ResponseErrorsInnerMessageEnum._(String name): super(name);
 
-  static BuiltSet<TelemetryKeysList500ResponseErrorsInnerMessageEnum> get values => _$telemetryKeysList500ResponseErrorsInnerMessageValues;
-  static TelemetryKeysList500ResponseErrorsInnerMessageEnum valueOf(String name) => _$telemetryKeysList500ResponseErrorsInnerMessageValueOf(name);
+  static BuiltSet<TelemetryKeysList500ResponseErrorsInnerMessageEnum> get values => _$telemetryKeysList500ResponseErrorsInnerMessageEnumValues;
+  static TelemetryKeysList500ResponseErrorsInnerMessageEnum valueOf(String name) => _$telemetryKeysList500ResponseErrorsInnerMessageEnumValueOf(name);
 }
 

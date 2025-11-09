@@ -157,7 +157,7 @@ abstract class WaitingroomWaitingroom implements Built<WaitingroomWaitingroom, W
       ..customPageHtml = ''
       ..description = ''
       ..disableSessionRenewal = false
-      ..enabledOriginCommands = ListBuilder()
+      ..enabledOriginCommands = 
       ..jsonResponseEnabled = false
       ..path = '/'
       ..queueAll = false
@@ -596,5 +596,18 @@ class _$WaitingroomWaitingroomSerializer implements PrimitiveSerializer<Waitingr
     );
     return result.build();
   }
+}
+
+class WaitingroomWaitingroomEnabledOriginCommandsEnum extends EnumClass {
+
+  @BuiltValueEnumConst(wireName: r'revoke')
+  static const WaitingroomWaitingroomEnabledOriginCommandsEnum revoke = _$waitingroomWaitingroomEnabledOriginCommandsEnum_revoke;
+
+  static Serializer<WaitingroomWaitingroomEnabledOriginCommandsEnum> get serializer => _$waitingroomWaitingroomEnabledOriginCommandsEnumSerializer;
+
+  const WaitingroomWaitingroomEnabledOriginCommandsEnum._(String name): super(name);
+
+  static BuiltSet<WaitingroomWaitingroomEnabledOriginCommandsEnum> get values => _$waitingroomWaitingroomEnabledOriginCommandsEnumValues;
+  static WaitingroomWaitingroomEnabledOriginCommandsEnum valueOf(String name) => _$waitingroomWaitingroomEnabledOriginCommandsEnumValueOf(name);
 }
 

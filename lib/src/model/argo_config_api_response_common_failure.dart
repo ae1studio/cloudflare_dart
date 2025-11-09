@@ -161,11 +161,11 @@ class _$ArgoConfigApiResponseCommonFailureSerializer implements PrimitiveSeriali
 class ArgoConfigApiResponseCommonFailureResultEnum extends EnumClass {
 
 
-  static Serializer<ArgoConfigApiResponseCommonFailureResultEnum> get serializer => _$argoConfigApiResponseCommonFailureResultSerializer;
+  static Serializer<ArgoConfigApiResponseCommonFailureResultEnum> get serializer => _$argoConfigApiResponseCommonFailureResultEnumSerializer;
 
   const ArgoConfigApiResponseCommonFailureResultEnum._(String name): super(name);
 
-  static BuiltSet<ArgoConfigApiResponseCommonFailureResultEnum> get values => _$argoConfigApiResponseCommonFailureResultValues;
-  static ArgoConfigApiResponseCommonFailureResultEnum valueOf(String name) => _$argoConfigApiResponseCommonFailureResultValueOf(name);
+  static BuiltSet<ArgoConfigApiResponseCommonFailureResultEnum> get values => _$argoConfigApiResponseCommonFailureResultEnumValues;
+  static ArgoConfigApiResponseCommonFailureResultEnum valueOf(String name) => _$argoConfigApiResponseCommonFailureResultEnumValueOf(name);
 }
 

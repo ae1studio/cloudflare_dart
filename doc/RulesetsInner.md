@@ -9,10 +9,10 @@ import 'package:cloudflare_dart/api.dart';
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **description** | **String** | An informative description of the ruleset. | [optional] [default to '']
-**id** | **String** |  | 
+**id** | **String** | The unique ID of the ruleset. | 
 **lastUpdated** | [**DateTime**](DateTime.md) | The timestamp of when the ruleset was last modified. | 
 **name** | **String** | The human-readable name of the ruleset. | 
-**version** | **String** |  | 
+**version** | **String** | The version of the ruleset. | 
 **kind** | [**RulesetsRulesetKind**](RulesetsRulesetKind.md) |  | 
 **phase** | [**RulesetsRulesetPhase**](RulesetsRulesetPhase.md) |  | 
 

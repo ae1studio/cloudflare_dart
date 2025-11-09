@@ -148,11 +148,11 @@ class _$MagicIpsecTunnelsDeleteIpsecTunnel4XXResponseSerializer implements Primi
 class MagicIpsecTunnelsDeleteIpsecTunnel4XXResponseResultEnum extends EnumClass {
 
 
-  static Serializer<MagicIpsecTunnelsDeleteIpsecTunnel4XXResponseResultEnum> get serializer => _$magicIpsecTunnelsDeleteIpsecTunnel4XXResponseResultSerializer;
+  static Serializer<MagicIpsecTunnelsDeleteIpsecTunnel4XXResponseResultEnum> get serializer => _$magicIpsecTunnelsDeleteIpsecTunnel4XXResponseResultEnumSerializer;
 
   const MagicIpsecTunnelsDeleteIpsecTunnel4XXResponseResultEnum._(String name): super(name);
 
-  static BuiltSet<MagicIpsecTunnelsDeleteIpsecTunnel4XXResponseResultEnum> get values => _$magicIpsecTunnelsDeleteIpsecTunnel4XXResponseResultValues;
-  static MagicIpsecTunnelsDeleteIpsecTunnel4XXResponseResultEnum valueOf(String name) => _$magicIpsecTunnelsDeleteIpsecTunnel4XXResponseResultValueOf(name);
+  static BuiltSet<MagicIpsecTunnelsDeleteIpsecTunnel4XXResponseResultEnum> get values => _$magicIpsecTunnelsDeleteIpsecTunnel4XXResponseResultEnumValues;
+  static MagicIpsecTunnelsDeleteIpsecTunnel4XXResponseResultEnum valueOf(String name) => _$magicIpsecTunnelsDeleteIpsecTunnel4XXResponseResultEnumValueOf(name);
 }
 

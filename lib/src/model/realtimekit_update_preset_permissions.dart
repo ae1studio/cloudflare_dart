@@ -120,7 +120,7 @@ abstract class RealtimekitUpdatePresetPermissions implements Built<RealtimekitUp
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(RealtimekitUpdatePresetPermissionsBuilder b) => b
       ..isRecorder = false
-      ..recorderType = const RealtimekitUpdatePresetPermissionsRecorderTypeEnum._('NONE');
+      ..recorderType = RealtimekitUpdatePresetPermissionsRecorderTypeEnum.valueOf('NONE');
 
   @BuiltValueSerializer(custom: true)
   static Serializer<RealtimekitUpdatePresetPermissions> get serializer => _$RealtimekitUpdatePresetPermissionsSerializer();
@@ -510,12 +510,12 @@ class RealtimekitUpdatePresetPermissionsRecorderTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'NONE')
   static const RealtimekitUpdatePresetPermissionsRecorderTypeEnum NONE = _$realtimekitUpdatePresetPermissionsRecorderTypeEnum_NONE;
 
-  static Serializer<RealtimekitUpdatePresetPermissionsRecorderTypeEnum> get serializer => _$realtimekitUpdatePresetPermissionsRecorderTypeSerializer;
+  static Serializer<RealtimekitUpdatePresetPermissionsRecorderTypeEnum> get serializer => _$realtimekitUpdatePresetPermissionsRecorderTypeEnumSerializer;
 
   const RealtimekitUpdatePresetPermissionsRecorderTypeEnum._(String name): super(name);
 
-  static BuiltSet<RealtimekitUpdatePresetPermissionsRecorderTypeEnum> get values => _$realtimekitUpdatePresetPermissionsRecorderTypeValues;
-  static RealtimekitUpdatePresetPermissionsRecorderTypeEnum valueOf(String name) => _$realtimekitUpdatePresetPermissionsRecorderTypeValueOf(name);
+  static BuiltSet<RealtimekitUpdatePresetPermissionsRecorderTypeEnum> get values => _$realtimekitUpdatePresetPermissionsRecorderTypeEnumValues;
+  static RealtimekitUpdatePresetPermissionsRecorderTypeEnum valueOf(String name) => _$realtimekitUpdatePresetPermissionsRecorderTypeEnumValueOf(name);
 }
 
 class RealtimekitUpdatePresetPermissionsWaitingRoomTypeEnum extends EnumClass {
@@ -530,11 +530,11 @@ class RealtimekitUpdatePresetPermissionsWaitingRoomTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'SKIP_ON_ACCEPT')
   static const RealtimekitUpdatePresetPermissionsWaitingRoomTypeEnum SKIP_ON_ACCEPT = _$realtimekitUpdatePresetPermissionsWaitingRoomTypeEnum_SKIP_ON_ACCEPT;
 
-  static Serializer<RealtimekitUpdatePresetPermissionsWaitingRoomTypeEnum> get serializer => _$realtimekitUpdatePresetPermissionsWaitingRoomTypeSerializer;
+  static Serializer<RealtimekitUpdatePresetPermissionsWaitingRoomTypeEnum> get serializer => _$realtimekitUpdatePresetPermissionsWaitingRoomTypeEnumSerializer;
 
   const RealtimekitUpdatePresetPermissionsWaitingRoomTypeEnum._(String name): super(name);
 
-  static BuiltSet<RealtimekitUpdatePresetPermissionsWaitingRoomTypeEnum> get values => _$realtimekitUpdatePresetPermissionsWaitingRoomTypeValues;
-  static RealtimekitUpdatePresetPermissionsWaitingRoomTypeEnum valueOf(String name) => _$realtimekitUpdatePresetPermissionsWaitingRoomTypeValueOf(name);
+  static BuiltSet<RealtimekitUpdatePresetPermissionsWaitingRoomTypeEnum> get values => _$realtimekitUpdatePresetPermissionsWaitingRoomTypeEnumValues;
+  static RealtimekitUpdatePresetPermissionsWaitingRoomTypeEnum valueOf(String name) => _$realtimekitUpdatePresetPermissionsWaitingRoomTypeEnumValueOf(name);
 }
 

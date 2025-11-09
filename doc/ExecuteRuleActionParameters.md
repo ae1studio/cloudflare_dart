@@ -8,7 +8,7 @@ import 'package:cloudflare_dart/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | [**ExecuteRuleActionParametersId**](ExecuteRuleActionParametersId.md) |  | 
+**id** | **String** | The ID of the ruleset to execute. | 
 **matchedData** | [**RulesetsExecuteMatchedData**](RulesetsExecuteMatchedData.md) |  | [optional] 
 **overrides** | [**RulesetsExecuteOverrides**](RulesetsExecuteOverrides.md) |  | [optional] 
 

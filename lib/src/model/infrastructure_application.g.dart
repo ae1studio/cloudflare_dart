@@ -12,7 +12,7 @@ class _$InfrastructureApplication extends InfrastructureApplication {
   @override
   final String? name;
   @override
-  final AccessInfraPropsAllOfType type;
+  final AccessType type;
   @override
   final BuiltList<AccessTargetCriteriaInfraApp>? targetCriteria;
 
@@ -81,11 +81,9 @@ class InfrastructureApplicationBuilder
   String? get name => _$this._name;
   set name(covariant String? name) => _$this._name = name;
 
-  AccessInfraPropsAllOfTypeBuilder? _type;
-  AccessInfraPropsAllOfTypeBuilder get type =>
-      _$this._type ??= AccessInfraPropsAllOfTypeBuilder();
-  set type(covariant AccessInfraPropsAllOfTypeBuilder? type) =>
-      _$this._type = type;
+  AccessType? _type;
+  AccessType? get type => _$this._type;
+  set type(covariant AccessType? type) => _$this._type = type;
 
   ListBuilder<AccessTargetCriteriaInfraApp>? _targetCriteria;
   ListBuilder<AccessTargetCriteriaInfraApp> get targetCriteria =>
@@ -104,7 +102,7 @@ class InfrastructureApplicationBuilder
     if ($v != null) {
       _policies = $v.policies?.toBuilder();
       _name = $v.name;
-      _type = $v.type.toBuilder();
+      _type = $v.type;
       _targetCriteria = $v.targetCriteria?.toBuilder();
       _$v = null;
     }
@@ -132,7 +130,8 @@ class InfrastructureApplicationBuilder
           _$InfrastructureApplication._(
             policies: _policies?.build(),
             name: name,
-            type: type.build(),
+            type: BuiltValueNullFieldError.checkNotNull(
+                type, r'InfrastructureApplication', 'type'),
             targetCriteria: _targetCriteria?.build(),
           );
     } catch (_) {
@@ -141,8 +140,6 @@ class InfrastructureApplicationBuilder
         _$failedField = 'policies';
         _policies?.build();
 
-        _$failedField = 'type';
-        type.build();
         _$failedField = 'targetCriteria';
         _targetCriteria?.build();
       } catch (e) {

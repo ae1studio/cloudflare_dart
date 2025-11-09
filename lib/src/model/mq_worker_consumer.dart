@@ -224,11 +224,11 @@ class MqWorkerConsumerTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'worker')
   static const MqWorkerConsumerTypeEnum worker = _$mqWorkerConsumerTypeEnum_worker;
 
-  static Serializer<MqWorkerConsumerTypeEnum> get serializer => _$mqWorkerConsumerTypeSerializer;
+  static Serializer<MqWorkerConsumerTypeEnum> get serializer => _$mqWorkerConsumerTypeEnumSerializer;
 
   const MqWorkerConsumerTypeEnum._(String name): super(name);
 
-  static BuiltSet<MqWorkerConsumerTypeEnum> get values => _$mqWorkerConsumerTypeValues;
-  static MqWorkerConsumerTypeEnum valueOf(String name) => _$mqWorkerConsumerTypeValueOf(name);
+  static BuiltSet<MqWorkerConsumerTypeEnum> get values => _$mqWorkerConsumerTypeEnumValues;
+  static MqWorkerConsumerTypeEnum valueOf(String name) => _$mqWorkerConsumerTypeEnumValueOf(name);
 }
 

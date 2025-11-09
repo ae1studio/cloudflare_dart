@@ -165,11 +165,11 @@ class _$DeviceManagedNetworksListDeviceManagedNetworks4XXResponseSerializer impl
 class DeviceManagedNetworksListDeviceManagedNetworks4XXResponseResultEnum extends EnumClass {
 
 
-  static Serializer<DeviceManagedNetworksListDeviceManagedNetworks4XXResponseResultEnum> get serializer => _$deviceManagedNetworksListDeviceManagedNetworks4XXResponseResultSerializer;
+  static Serializer<DeviceManagedNetworksListDeviceManagedNetworks4XXResponseResultEnum> get serializer => _$deviceManagedNetworksListDeviceManagedNetworks4XXResponseResultEnumSerializer;
 
   const DeviceManagedNetworksListDeviceManagedNetworks4XXResponseResultEnum._(String name): super(name);
 
-  static BuiltSet<DeviceManagedNetworksListDeviceManagedNetworks4XXResponseResultEnum> get values => _$deviceManagedNetworksListDeviceManagedNetworks4XXResponseResultValues;
-  static DeviceManagedNetworksListDeviceManagedNetworks4XXResponseResultEnum valueOf(String name) => _$deviceManagedNetworksListDeviceManagedNetworks4XXResponseResultValueOf(name);
+  static BuiltSet<DeviceManagedNetworksListDeviceManagedNetworks4XXResponseResultEnum> get values => _$deviceManagedNetworksListDeviceManagedNetworks4XXResponseResultEnumValues;
+  static DeviceManagedNetworksListDeviceManagedNetworks4XXResponseResultEnum valueOf(String name) => _$deviceManagedNetworksListDeviceManagedNetworks4XXResponseResultEnumValueOf(name);
 }
 

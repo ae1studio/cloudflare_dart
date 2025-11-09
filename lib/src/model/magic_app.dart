@@ -6,7 +6,6 @@
 import 'package:built_collection/built_collection.dart';
 import 'package:cloudflare_dart/src/model/magic_managed_app.dart';
 import 'package:cloudflare_dart/src/model/magic_account_app.dart';
-import 'package:built_value/json_object.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 import 'package:one_of/one_of.dart';

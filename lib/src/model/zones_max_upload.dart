@@ -156,11 +156,11 @@ class ZonesMaxUploadIdEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'max_upload')
   static const ZonesMaxUploadIdEnum maxUpload = _$zonesMaxUploadIdEnum_maxUpload;
 
-  static Serializer<ZonesMaxUploadIdEnum> get serializer => _$zonesMaxUploadIdSerializer;
+  static Serializer<ZonesMaxUploadIdEnum> get serializer => _$zonesMaxUploadIdEnumSerializer;
 
   const ZonesMaxUploadIdEnum._(String name): super(name);
 
-  static BuiltSet<ZonesMaxUploadIdEnum> get values => _$zonesMaxUploadIdValues;
-  static ZonesMaxUploadIdEnum valueOf(String name) => _$zonesMaxUploadIdValueOf(name);
+  static BuiltSet<ZonesMaxUploadIdEnum> get values => _$zonesMaxUploadIdEnumValues;
+  static ZonesMaxUploadIdEnum valueOf(String name) => _$zonesMaxUploadIdEnumValueOf(name);
 }
 

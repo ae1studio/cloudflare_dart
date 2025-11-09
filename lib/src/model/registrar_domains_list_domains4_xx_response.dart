@@ -164,11 +164,11 @@ class _$RegistrarDomainsListDomains4XXResponseSerializer implements PrimitiveSer
 class RegistrarDomainsListDomains4XXResponseResultEnum extends EnumClass {
 
 
-  static Serializer<RegistrarDomainsListDomains4XXResponseResultEnum> get serializer => _$registrarDomainsListDomains4XXResponseResultSerializer;
+  static Serializer<RegistrarDomainsListDomains4XXResponseResultEnum> get serializer => _$registrarDomainsListDomains4XXResponseResultEnumSerializer;
 
   const RegistrarDomainsListDomains4XXResponseResultEnum._(String name): super(name);
 
-  static BuiltSet<RegistrarDomainsListDomains4XXResponseResultEnum> get values => _$registrarDomainsListDomains4XXResponseResultValues;
-  static RegistrarDomainsListDomains4XXResponseResultEnum valueOf(String name) => _$registrarDomainsListDomains4XXResponseResultValueOf(name);
+  static BuiltSet<RegistrarDomainsListDomains4XXResponseResultEnum> get values => _$registrarDomainsListDomains4XXResponseResultEnumValues;
+  static RegistrarDomainsListDomains4XXResponseResultEnum valueOf(String name) => _$registrarDomainsListDomains4XXResponseResultEnumValueOf(name);
 }
 

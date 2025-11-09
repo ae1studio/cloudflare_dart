@@ -149,11 +149,11 @@ class _$CustomOriginTrustStoreCreate4XXResponseSerializer implements PrimitiveSe
 class CustomOriginTrustStoreCreate4XXResponseResultEnum extends EnumClass {
 
 
-  static Serializer<CustomOriginTrustStoreCreate4XXResponseResultEnum> get serializer => _$customOriginTrustStoreCreate4XXResponseResultSerializer;
+  static Serializer<CustomOriginTrustStoreCreate4XXResponseResultEnum> get serializer => _$customOriginTrustStoreCreate4XXResponseResultEnumSerializer;
 
   const CustomOriginTrustStoreCreate4XXResponseResultEnum._(String name): super(name);
 
-  static BuiltSet<CustomOriginTrustStoreCreate4XXResponseResultEnum> get values => _$customOriginTrustStoreCreate4XXResponseResultValues;
-  static CustomOriginTrustStoreCreate4XXResponseResultEnum valueOf(String name) => _$customOriginTrustStoreCreate4XXResponseResultValueOf(name);
+  static BuiltSet<CustomOriginTrustStoreCreate4XXResponseResultEnum> get values => _$customOriginTrustStoreCreate4XXResponseResultEnumValues;
+  static CustomOriginTrustStoreCreate4XXResponseResultEnum valueOf(String name) => _$customOriginTrustStoreCreate4XXResponseResultEnumValueOf(name);
 }
 

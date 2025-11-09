@@ -155,11 +155,11 @@ class ZonesSchemasAutomaticPlatformOptimizationIdEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'automatic_platform_optimization')
   static const ZonesSchemasAutomaticPlatformOptimizationIdEnum automaticPlatformOptimization = _$zonesSchemasAutomaticPlatformOptimizationIdEnum_automaticPlatformOptimization;
 
-  static Serializer<ZonesSchemasAutomaticPlatformOptimizationIdEnum> get serializer => _$zonesSchemasAutomaticPlatformOptimizationIdSerializer;
+  static Serializer<ZonesSchemasAutomaticPlatformOptimizationIdEnum> get serializer => _$zonesSchemasAutomaticPlatformOptimizationIdEnumSerializer;
 
   const ZonesSchemasAutomaticPlatformOptimizationIdEnum._(String name): super(name);
 
-  static BuiltSet<ZonesSchemasAutomaticPlatformOptimizationIdEnum> get values => _$zonesSchemasAutomaticPlatformOptimizationIdValues;
-  static ZonesSchemasAutomaticPlatformOptimizationIdEnum valueOf(String name) => _$zonesSchemasAutomaticPlatformOptimizationIdValueOf(name);
+  static BuiltSet<ZonesSchemasAutomaticPlatformOptimizationIdEnum> get values => _$zonesSchemasAutomaticPlatformOptimizationIdEnumValues;
+  static ZonesSchemasAutomaticPlatformOptimizationIdEnum valueOf(String name) => _$zonesSchemasAutomaticPlatformOptimizationIdEnumValueOf(name);
 }
 

@@ -190,11 +190,11 @@ class PostV4AccountsByAccountIdPipelinesV1SinksRequestTypeEnum extends EnumClass
   @BuiltValueEnumConst(wireName: r'r2_data_catalog')
   static const PostV4AccountsByAccountIdPipelinesV1SinksRequestTypeEnum r2DataCatalog = _$postV4AccountsByAccountIdPipelinesV1SinksRequestTypeEnum_r2DataCatalog;
 
-  static Serializer<PostV4AccountsByAccountIdPipelinesV1SinksRequestTypeEnum> get serializer => _$postV4AccountsByAccountIdPipelinesV1SinksRequestTypeSerializer;
+  static Serializer<PostV4AccountsByAccountIdPipelinesV1SinksRequestTypeEnum> get serializer => _$postV4AccountsByAccountIdPipelinesV1SinksRequestTypeEnumSerializer;
 
   const PostV4AccountsByAccountIdPipelinesV1SinksRequestTypeEnum._(String name): super(name);
 
-  static BuiltSet<PostV4AccountsByAccountIdPipelinesV1SinksRequestTypeEnum> get values => _$postV4AccountsByAccountIdPipelinesV1SinksRequestTypeValues;
-  static PostV4AccountsByAccountIdPipelinesV1SinksRequestTypeEnum valueOf(String name) => _$postV4AccountsByAccountIdPipelinesV1SinksRequestTypeValueOf(name);
+  static BuiltSet<PostV4AccountsByAccountIdPipelinesV1SinksRequestTypeEnum> get values => _$postV4AccountsByAccountIdPipelinesV1SinksRequestTypeEnumValues;
+  static PostV4AccountsByAccountIdPipelinesV1SinksRequestTypeEnum valueOf(String name) => _$postV4AccountsByAccountIdPipelinesV1SinksRequestTypeEnumValueOf(name);
 }
 

@@ -149,11 +149,11 @@ class _$Web3HostnameDeleteWeb3Hostname5XXResponseSerializer implements Primitive
 class Web3HostnameDeleteWeb3Hostname5XXResponseResultEnum extends EnumClass {
 
 
-  static Serializer<Web3HostnameDeleteWeb3Hostname5XXResponseResultEnum> get serializer => _$web3HostnameDeleteWeb3Hostname5XXResponseResultSerializer;
+  static Serializer<Web3HostnameDeleteWeb3Hostname5XXResponseResultEnum> get serializer => _$web3HostnameDeleteWeb3Hostname5XXResponseResultEnumSerializer;
 
   const Web3HostnameDeleteWeb3Hostname5XXResponseResultEnum._(String name): super(name);
 
-  static BuiltSet<Web3HostnameDeleteWeb3Hostname5XXResponseResultEnum> get values => _$web3HostnameDeleteWeb3Hostname5XXResponseResultValues;
-  static Web3HostnameDeleteWeb3Hostname5XXResponseResultEnum valueOf(String name) => _$web3HostnameDeleteWeb3Hostname5XXResponseResultValueOf(name);
+  static BuiltSet<Web3HostnameDeleteWeb3Hostname5XXResponseResultEnum> get values => _$web3HostnameDeleteWeb3Hostname5XXResponseResultEnumValues;
+  static Web3HostnameDeleteWeb3Hostname5XXResponseResultEnum valueOf(String name) => _$web3HostnameDeleteWeb3Hostname5XXResponseResultEnumValueOf(name);
 }
 

@@ -140,11 +140,11 @@ class VectorizeListMetadataIndexResponseMetadataIndexesInnerIndexTypeEnum extend
   @BuiltValueEnumConst(wireName: r'boolean')
   static const VectorizeListMetadataIndexResponseMetadataIndexesInnerIndexTypeEnum boolean = _$vectorizeListMetadataIndexResponseMetadataIndexesInnerIndexTypeEnum_boolean;
 
-  static Serializer<VectorizeListMetadataIndexResponseMetadataIndexesInnerIndexTypeEnum> get serializer => _$vectorizeListMetadataIndexResponseMetadataIndexesInnerIndexTypeSerializer;
+  static Serializer<VectorizeListMetadataIndexResponseMetadataIndexesInnerIndexTypeEnum> get serializer => _$vectorizeListMetadataIndexResponseMetadataIndexesInnerIndexTypeEnumSerializer;
 
   const VectorizeListMetadataIndexResponseMetadataIndexesInnerIndexTypeEnum._(String name): super(name);
 
-  static BuiltSet<VectorizeListMetadataIndexResponseMetadataIndexesInnerIndexTypeEnum> get values => _$vectorizeListMetadataIndexResponseMetadataIndexesInnerIndexTypeValues;
-  static VectorizeListMetadataIndexResponseMetadataIndexesInnerIndexTypeEnum valueOf(String name) => _$vectorizeListMetadataIndexResponseMetadataIndexesInnerIndexTypeValueOf(name);
+  static BuiltSet<VectorizeListMetadataIndexResponseMetadataIndexesInnerIndexTypeEnum> get values => _$vectorizeListMetadataIndexResponseMetadataIndexesInnerIndexTypeEnumValues;
+  static VectorizeListMetadataIndexResponseMetadataIndexesInnerIndexTypeEnum valueOf(String name) => _$vectorizeListMetadataIndexResponseMetadataIndexesInnerIndexTypeEnumValueOf(name);
 }
 

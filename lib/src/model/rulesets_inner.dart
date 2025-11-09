@@ -6,7 +6,6 @@
 import 'package:cloudflare_dart/src/model/rulesets_ruleset_phase.dart';
 import 'package:cloudflare_dart/src/model/rulesets_ruleset_kind.dart';
 import 'package:cloudflare_dart/src/model/rulesets_ruleset.dart';
-import 'package:built_value/json_object.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
@@ -16,10 +15,10 @@ part 'rulesets_inner.g.dart';
 ///
 /// Properties:
 /// * [description] - An informative description of the ruleset.
-/// * [id] 
+/// * [id] - The unique ID of the ruleset.
 /// * [lastUpdated] - The timestamp of when the ruleset was last modified.
 /// * [name] - The human-readable name of the ruleset.
-/// * [version] 
+/// * [version] - The version of the ruleset.
 /// * [kind] 
 /// * [phase] 
 @BuiltValue()

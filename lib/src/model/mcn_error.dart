@@ -477,11 +477,11 @@ class McnErrorCodeEnum extends EnumClass {
   @BuiltValueEnumConst(wireNumber: 103008)
   static const McnErrorCodeEnum number103008 = _$mcnErrorCodeEnum_number103008;
 
-  static Serializer<McnErrorCodeEnum> get serializer => _$mcnErrorCodeSerializer;
+  static Serializer<McnErrorCodeEnum> get serializer => _$mcnErrorCodeEnumSerializer;
 
   const McnErrorCodeEnum._(String name): super(name);
 
-  static BuiltSet<McnErrorCodeEnum> get values => _$mcnErrorCodeValues;
-  static McnErrorCodeEnum valueOf(String name) => _$mcnErrorCodeValueOf(name);
+  static BuiltSet<McnErrorCodeEnum> get values => _$mcnErrorCodeEnumValues;
+  static McnErrorCodeEnum valueOf(String name) => _$mcnErrorCodeEnumValueOf(name);
 }
 

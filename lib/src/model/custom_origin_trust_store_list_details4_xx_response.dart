@@ -165,11 +165,11 @@ class _$CustomOriginTrustStoreListDetails4XXResponseSerializer implements Primit
 class CustomOriginTrustStoreListDetails4XXResponseResultEnum extends EnumClass {
 
 
-  static Serializer<CustomOriginTrustStoreListDetails4XXResponseResultEnum> get serializer => _$customOriginTrustStoreListDetails4XXResponseResultSerializer;
+  static Serializer<CustomOriginTrustStoreListDetails4XXResponseResultEnum> get serializer => _$customOriginTrustStoreListDetails4XXResponseResultEnumSerializer;
 
   const CustomOriginTrustStoreListDetails4XXResponseResultEnum._(String name): super(name);
 
-  static BuiltSet<CustomOriginTrustStoreListDetails4XXResponseResultEnum> get values => _$customOriginTrustStoreListDetails4XXResponseResultValues;
-  static CustomOriginTrustStoreListDetails4XXResponseResultEnum valueOf(String name) => _$customOriginTrustStoreListDetails4XXResponseResultValueOf(name);
+  static BuiltSet<CustomOriginTrustStoreListDetails4XXResponseResultEnum> get values => _$customOriginTrustStoreListDetails4XXResponseResultEnumValues;
+  static CustomOriginTrustStoreListDetails4XXResponseResultEnum valueOf(String name) => _$customOriginTrustStoreListDetails4XXResponseResultEnumValueOf(name);
 }
 

@@ -136,11 +136,11 @@ class RealtimekitPresetConfigMediaVideoQualityEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'qvga')
   static const RealtimekitPresetConfigMediaVideoQualityEnum qvga = _$realtimekitPresetConfigMediaVideoQualityEnum_qvga;
 
-  static Serializer<RealtimekitPresetConfigMediaVideoQualityEnum> get serializer => _$realtimekitPresetConfigMediaVideoQualitySerializer;
+  static Serializer<RealtimekitPresetConfigMediaVideoQualityEnum> get serializer => _$realtimekitPresetConfigMediaVideoQualityEnumSerializer;
 
   const RealtimekitPresetConfigMediaVideoQualityEnum._(String name): super(name);
 
-  static BuiltSet<RealtimekitPresetConfigMediaVideoQualityEnum> get values => _$realtimekitPresetConfigMediaVideoQualityValues;
-  static RealtimekitPresetConfigMediaVideoQualityEnum valueOf(String name) => _$realtimekitPresetConfigMediaVideoQualityValueOf(name);
+  static BuiltSet<RealtimekitPresetConfigMediaVideoQualityEnum> get values => _$realtimekitPresetConfigMediaVideoQualityEnumValues;
+  static RealtimekitPresetConfigMediaVideoQualityEnum valueOf(String name) => _$realtimekitPresetConfigMediaVideoQualityEnumValueOf(name);
 }
 

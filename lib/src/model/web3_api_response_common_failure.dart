@@ -194,11 +194,11 @@ class _$$Web3ApiResponseCommonFailureSerializer implements PrimitiveSerializer<$
 class Web3ApiResponseCommonFailureResultEnum extends EnumClass {
 
 
-  static Serializer<Web3ApiResponseCommonFailureResultEnum> get serializer => _$web3ApiResponseCommonFailureResultSerializer;
+  static Serializer<Web3ApiResponseCommonFailureResultEnum> get serializer => _$web3ApiResponseCommonFailureResultEnumSerializer;
 
   const Web3ApiResponseCommonFailureResultEnum._(String name): super(name);
 
-  static BuiltSet<Web3ApiResponseCommonFailureResultEnum> get values => _$web3ApiResponseCommonFailureResultValues;
-  static Web3ApiResponseCommonFailureResultEnum valueOf(String name) => _$web3ApiResponseCommonFailureResultValueOf(name);
+  static BuiltSet<Web3ApiResponseCommonFailureResultEnum> get values => _$web3ApiResponseCommonFailureResultEnumValues;
+  static Web3ApiResponseCommonFailureResultEnum valueOf(String name) => _$web3ApiResponseCommonFailureResultEnumValueOf(name);
 }
 

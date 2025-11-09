@@ -307,12 +307,12 @@ class AigConfigCreateGatewayRequestLogManagementStrategyEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'DELETE_OLDEST')
   static const AigConfigCreateGatewayRequestLogManagementStrategyEnum DELETE_OLDEST = _$aigConfigCreateGatewayRequestLogManagementStrategyEnum_DELETE_OLDEST;
 
-  static Serializer<AigConfigCreateGatewayRequestLogManagementStrategyEnum> get serializer => _$aigConfigCreateGatewayRequestLogManagementStrategySerializer;
+  static Serializer<AigConfigCreateGatewayRequestLogManagementStrategyEnum> get serializer => _$aigConfigCreateGatewayRequestLogManagementStrategyEnumSerializer;
 
   const AigConfigCreateGatewayRequestLogManagementStrategyEnum._(String name): super(name);
 
-  static BuiltSet<AigConfigCreateGatewayRequestLogManagementStrategyEnum> get values => _$aigConfigCreateGatewayRequestLogManagementStrategyValues;
-  static AigConfigCreateGatewayRequestLogManagementStrategyEnum valueOf(String name) => _$aigConfigCreateGatewayRequestLogManagementStrategyValueOf(name);
+  static BuiltSet<AigConfigCreateGatewayRequestLogManagementStrategyEnum> get values => _$aigConfigCreateGatewayRequestLogManagementStrategyEnumValues;
+  static AigConfigCreateGatewayRequestLogManagementStrategyEnum valueOf(String name) => _$aigConfigCreateGatewayRequestLogManagementStrategyEnumValueOf(name);
 }
 
 class AigConfigCreateGatewayRequestRateLimitingTechniqueEnum extends EnumClass {
@@ -322,11 +322,11 @@ class AigConfigCreateGatewayRequestRateLimitingTechniqueEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'sliding')
   static const AigConfigCreateGatewayRequestRateLimitingTechniqueEnum sliding = _$aigConfigCreateGatewayRequestRateLimitingTechniqueEnum_sliding;
 
-  static Serializer<AigConfigCreateGatewayRequestRateLimitingTechniqueEnum> get serializer => _$aigConfigCreateGatewayRequestRateLimitingTechniqueSerializer;
+  static Serializer<AigConfigCreateGatewayRequestRateLimitingTechniqueEnum> get serializer => _$aigConfigCreateGatewayRequestRateLimitingTechniqueEnumSerializer;
 
   const AigConfigCreateGatewayRequestRateLimitingTechniqueEnum._(String name): super(name);
 
-  static BuiltSet<AigConfigCreateGatewayRequestRateLimitingTechniqueEnum> get values => _$aigConfigCreateGatewayRequestRateLimitingTechniqueValues;
-  static AigConfigCreateGatewayRequestRateLimitingTechniqueEnum valueOf(String name) => _$aigConfigCreateGatewayRequestRateLimitingTechniqueValueOf(name);
+  static BuiltSet<AigConfigCreateGatewayRequestRateLimitingTechniqueEnum> get values => _$aigConfigCreateGatewayRequestRateLimitingTechniqueEnumValues;
+  static AigConfigCreateGatewayRequestRateLimitingTechniqueEnum valueOf(String name) => _$aigConfigCreateGatewayRequestRateLimitingTechniqueEnumValueOf(name);
 }
 

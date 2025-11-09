@@ -204,11 +204,11 @@ class RadarGetDnsAs112TopLocations200ResponseResultMetaNormalizationEnum extends
   @BuiltValueEnumConst(wireName: r'RATIO')
   static const RadarGetDnsAs112TopLocations200ResponseResultMetaNormalizationEnum RATIO = _$radarGetDnsAs112TopLocations200ResponseResultMetaNormalizationEnum_RATIO;
 
-  static Serializer<RadarGetDnsAs112TopLocations200ResponseResultMetaNormalizationEnum> get serializer => _$radarGetDnsAs112TopLocations200ResponseResultMetaNormalizationSerializer;
+  static Serializer<RadarGetDnsAs112TopLocations200ResponseResultMetaNormalizationEnum> get serializer => _$radarGetDnsAs112TopLocations200ResponseResultMetaNormalizationEnumSerializer;
 
   const RadarGetDnsAs112TopLocations200ResponseResultMetaNormalizationEnum._(String name): super(name);
 
-  static BuiltSet<RadarGetDnsAs112TopLocations200ResponseResultMetaNormalizationEnum> get values => _$radarGetDnsAs112TopLocations200ResponseResultMetaNormalizationValues;
-  static RadarGetDnsAs112TopLocations200ResponseResultMetaNormalizationEnum valueOf(String name) => _$radarGetDnsAs112TopLocations200ResponseResultMetaNormalizationValueOf(name);
+  static BuiltSet<RadarGetDnsAs112TopLocations200ResponseResultMetaNormalizationEnum> get values => _$radarGetDnsAs112TopLocations200ResponseResultMetaNormalizationEnumValues;
+  static RadarGetDnsAs112TopLocations200ResponseResultMetaNormalizationEnum valueOf(String name) => _$radarGetDnsAs112TopLocations200ResponseResultMetaNormalizationEnumValueOf(name);
 }
 

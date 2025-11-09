@@ -147,12 +147,12 @@ class _$ListZoneSnippets4XXResponseSerializer implements PrimitiveSerializer<Lis
 class ListZoneSnippets4XXResponseResultEnum extends EnumClass {
 
 
-  static Serializer<ListZoneSnippets4XXResponseResultEnum> get serializer => _$listZoneSnippets4XXResponseResultSerializer;
+  static Serializer<ListZoneSnippets4XXResponseResultEnum> get serializer => _$listZoneSnippets4XXResponseResultEnumSerializer;
 
   const ListZoneSnippets4XXResponseResultEnum._(String name): super(name);
 
-  static BuiltSet<ListZoneSnippets4XXResponseResultEnum> get values => _$listZoneSnippets4XXResponseResultValues;
-  static ListZoneSnippets4XXResponseResultEnum valueOf(String name) => _$listZoneSnippets4XXResponseResultValueOf(name);
+  static BuiltSet<ListZoneSnippets4XXResponseResultEnum> get values => _$listZoneSnippets4XXResponseResultEnumValues;
+  static ListZoneSnippets4XXResponseResultEnum valueOf(String name) => _$listZoneSnippets4XXResponseResultEnumValueOf(name);
 }
 
 class ListZoneSnippets4XXResponseSuccessEnum extends EnumClass {
@@ -160,11 +160,11 @@ class ListZoneSnippets4XXResponseSuccessEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'false')
   static const ListZoneSnippets4XXResponseSuccessEnum false_ = _$listZoneSnippets4XXResponseSuccessEnum_false_;
 
-  static Serializer<ListZoneSnippets4XXResponseSuccessEnum> get serializer => _$listZoneSnippets4XXResponseSuccessSerializer;
+  static Serializer<ListZoneSnippets4XXResponseSuccessEnum> get serializer => _$listZoneSnippets4XXResponseSuccessEnumSerializer;
 
   const ListZoneSnippets4XXResponseSuccessEnum._(String name): super(name);
 
-  static BuiltSet<ListZoneSnippets4XXResponseSuccessEnum> get values => _$listZoneSnippets4XXResponseSuccessValues;
-  static ListZoneSnippets4XXResponseSuccessEnum valueOf(String name) => _$listZoneSnippets4XXResponseSuccessValueOf(name);
+  static BuiltSet<ListZoneSnippets4XXResponseSuccessEnum> get values => _$listZoneSnippets4XXResponseSuccessEnumValues;
+  static ListZoneSnippets4XXResponseSuccessEnum valueOf(String name) => _$listZoneSnippets4XXResponseSuccessEnumValueOf(name);
 }
 

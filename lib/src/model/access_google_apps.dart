@@ -206,11 +206,11 @@ class AccessGoogleAppsTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'yandex')
   static const AccessGoogleAppsTypeEnum yandex = _$accessGoogleAppsTypeEnum_yandex;
 
-  static Serializer<AccessGoogleAppsTypeEnum> get serializer => _$accessGoogleAppsTypeSerializer;
+  static Serializer<AccessGoogleAppsTypeEnum> get serializer => _$accessGoogleAppsTypeEnumSerializer;
 
   const AccessGoogleAppsTypeEnum._(String name): super(name);
 
-  static BuiltSet<AccessGoogleAppsTypeEnum> get values => _$accessGoogleAppsTypeValues;
-  static AccessGoogleAppsTypeEnum valueOf(String name) => _$accessGoogleAppsTypeValueOf(name);
+  static BuiltSet<AccessGoogleAppsTypeEnum> get values => _$accessGoogleAppsTypeEnumValues;
+  static AccessGoogleAppsTypeEnum valueOf(String name) => _$accessGoogleAppsTypeEnumValueOf(name);
 }
 

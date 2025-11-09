@@ -414,11 +414,11 @@ class McpPortalsApiFetchGateways200ResponseResultServersInnerAuthTypeEnum extend
   @BuiltValueEnumConst(wireName: r'unauthenticated')
   static const McpPortalsApiFetchGateways200ResponseResultServersInnerAuthTypeEnum unauthenticated = _$mcpPortalsApiFetchGateways200ResponseResultServersInnerAuthTypeEnum_unauthenticated;
 
-  static Serializer<McpPortalsApiFetchGateways200ResponseResultServersInnerAuthTypeEnum> get serializer => _$mcpPortalsApiFetchGateways200ResponseResultServersInnerAuthTypeSerializer;
+  static Serializer<McpPortalsApiFetchGateways200ResponseResultServersInnerAuthTypeEnum> get serializer => _$mcpPortalsApiFetchGateways200ResponseResultServersInnerAuthTypeEnumSerializer;
 
   const McpPortalsApiFetchGateways200ResponseResultServersInnerAuthTypeEnum._(String name): super(name);
 
-  static BuiltSet<McpPortalsApiFetchGateways200ResponseResultServersInnerAuthTypeEnum> get values => _$mcpPortalsApiFetchGateways200ResponseResultServersInnerAuthTypeValues;
-  static McpPortalsApiFetchGateways200ResponseResultServersInnerAuthTypeEnum valueOf(String name) => _$mcpPortalsApiFetchGateways200ResponseResultServersInnerAuthTypeValueOf(name);
+  static BuiltSet<McpPortalsApiFetchGateways200ResponseResultServersInnerAuthTypeEnum> get values => _$mcpPortalsApiFetchGateways200ResponseResultServersInnerAuthTypeEnumValues;
+  static McpPortalsApiFetchGateways200ResponseResultServersInnerAuthTypeEnum valueOf(String name) => _$mcpPortalsApiFetchGateways200ResponseResultServersInnerAuthTypeEnumValueOf(name);
 }
 

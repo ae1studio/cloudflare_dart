@@ -35,7 +35,7 @@ abstract class IamCreateMemberWithRoles implements Built<IamCreateMemberWithRole
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(IamCreateMemberWithRolesBuilder b) => b
-      ..status = const IamCreateMemberWithRolesStatusEnum._('pending');
+      ..status = IamCreateMemberWithRolesStatusEnum.valueOf('pending');
 
   @BuiltValueSerializer(custom: true)
   static Serializer<IamCreateMemberWithRoles> get serializer => _$IamCreateMemberWithRolesSerializer();
@@ -150,11 +150,11 @@ class IamCreateMemberWithRolesStatusEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'pending')
   static const IamCreateMemberWithRolesStatusEnum pending = _$iamCreateMemberWithRolesStatusEnum_pending;
 
-  static Serializer<IamCreateMemberWithRolesStatusEnum> get serializer => _$iamCreateMemberWithRolesStatusSerializer;
+  static Serializer<IamCreateMemberWithRolesStatusEnum> get serializer => _$iamCreateMemberWithRolesStatusEnumSerializer;
 
   const IamCreateMemberWithRolesStatusEnum._(String name): super(name);
 
-  static BuiltSet<IamCreateMemberWithRolesStatusEnum> get values => _$iamCreateMemberWithRolesStatusValues;
-  static IamCreateMemberWithRolesStatusEnum valueOf(String name) => _$iamCreateMemberWithRolesStatusValueOf(name);
+  static BuiltSet<IamCreateMemberWithRolesStatusEnum> get values => _$iamCreateMemberWithRolesStatusEnumValues;
+  static IamCreateMemberWithRolesStatusEnum valueOf(String name) => _$iamCreateMemberWithRolesStatusEnumValueOf(name);
 }
 

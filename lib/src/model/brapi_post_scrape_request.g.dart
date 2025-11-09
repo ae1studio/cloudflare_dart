@@ -16,7 +16,7 @@ class _$BrapiPostScrapeRequest extends BrapiPostScrapeRequest {
   @override
   final BuiltList<String>? allowRequestPattern;
   @override
-  final BuiltList<BrapiPostContentRequestAllOfAllowResourceTypesInner>?
+  final BuiltList<BrapiPostScrapeRequestAllOfAllowResourceTypes>?
       allowResourceTypes;
   @override
   final BrapiPostContentRequestAllOfAuthenticate? authenticate;
@@ -35,7 +35,7 @@ class _$BrapiPostScrapeRequest extends BrapiPostScrapeRequest {
   @override
   final BuiltList<String>? rejectRequestPattern;
   @override
-  final BuiltList<BrapiPostContentRequestAllOfAllowResourceTypesInner>?
+  final BuiltList<BrapiPostScrapeRequestAllOfRejectResourceTypes>?
       rejectResourceTypes;
   @override
   final BuiltMap<String, String>? setExtraHTTPHeaders;
@@ -204,13 +204,13 @@ class BrapiPostScrapeRequestBuilder
   set allowRequestPattern(ListBuilder<String>? allowRequestPattern) =>
       _$this._allowRequestPattern = allowRequestPattern;
 
-  ListBuilder<BrapiPostContentRequestAllOfAllowResourceTypesInner>?
+  ListBuilder<BrapiPostScrapeRequestAllOfAllowResourceTypes>?
       _allowResourceTypes;
-  ListBuilder<BrapiPostContentRequestAllOfAllowResourceTypesInner>
+  ListBuilder<BrapiPostScrapeRequestAllOfAllowResourceTypes>
       get allowResourceTypes => _$this._allowResourceTypes ??=
-          ListBuilder<BrapiPostContentRequestAllOfAllowResourceTypesInner>();
+          ListBuilder<BrapiPostScrapeRequestAllOfAllowResourceTypes>();
   set allowResourceTypes(
-          ListBuilder<BrapiPostContentRequestAllOfAllowResourceTypesInner>?
+          ListBuilder<BrapiPostScrapeRequestAllOfAllowResourceTypes>?
               allowResourceTypes) =>
       _$this._allowResourceTypes = allowResourceTypes;
 
@@ -263,13 +263,13 @@ class BrapiPostScrapeRequestBuilder
   set rejectRequestPattern(ListBuilder<String>? rejectRequestPattern) =>
       _$this._rejectRequestPattern = rejectRequestPattern;
 
-  ListBuilder<BrapiPostContentRequestAllOfAllowResourceTypesInner>?
+  ListBuilder<BrapiPostScrapeRequestAllOfRejectResourceTypes>?
       _rejectResourceTypes;
-  ListBuilder<BrapiPostContentRequestAllOfAllowResourceTypesInner>
+  ListBuilder<BrapiPostScrapeRequestAllOfRejectResourceTypes>
       get rejectResourceTypes => _$this._rejectResourceTypes ??=
-          ListBuilder<BrapiPostContentRequestAllOfAllowResourceTypesInner>();
+          ListBuilder<BrapiPostScrapeRequestAllOfRejectResourceTypes>();
   set rejectResourceTypes(
-          ListBuilder<BrapiPostContentRequestAllOfAllowResourceTypesInner>?
+          ListBuilder<BrapiPostScrapeRequestAllOfRejectResourceTypes>?
               rejectResourceTypes) =>
       _$this._rejectResourceTypes = rejectResourceTypes;
 

@@ -222,11 +222,11 @@ class TelemetryValuesListRequestTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'number')
   static const TelemetryValuesListRequestTypeEnum number = _$telemetryValuesListRequestTypeEnum_number;
 
-  static Serializer<TelemetryValuesListRequestTypeEnum> get serializer => _$telemetryValuesListRequestTypeSerializer;
+  static Serializer<TelemetryValuesListRequestTypeEnum> get serializer => _$telemetryValuesListRequestTypeEnumSerializer;
 
   const TelemetryValuesListRequestTypeEnum._(String name): super(name);
 
-  static BuiltSet<TelemetryValuesListRequestTypeEnum> get values => _$telemetryValuesListRequestTypeValues;
-  static TelemetryValuesListRequestTypeEnum valueOf(String name) => _$telemetryValuesListRequestTypeValueOf(name);
+  static BuiltSet<TelemetryValuesListRequestTypeEnum> get values => _$telemetryValuesListRequestTypeEnumValues;
+  static TelemetryValuesListRequestTypeEnum valueOf(String name) => _$telemetryValuesListRequestTypeEnumValueOf(name);
 }
 

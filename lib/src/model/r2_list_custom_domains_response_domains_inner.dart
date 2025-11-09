@@ -232,11 +232,11 @@ class R2ListCustomDomainsResponseDomainsInnerMinTLSEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'1.3')
   static const R2ListCustomDomainsResponseDomainsInnerMinTLSEnum n1period3 = _$r2ListCustomDomainsResponseDomainsInnerMinTLSEnum_n1period3;
 
-  static Serializer<R2ListCustomDomainsResponseDomainsInnerMinTLSEnum> get serializer => _$r2ListCustomDomainsResponseDomainsInnerMinTLSSerializer;
+  static Serializer<R2ListCustomDomainsResponseDomainsInnerMinTLSEnum> get serializer => _$r2ListCustomDomainsResponseDomainsInnerMinTLSEnumSerializer;
 
   const R2ListCustomDomainsResponseDomainsInnerMinTLSEnum._(String name): super(name);
 
-  static BuiltSet<R2ListCustomDomainsResponseDomainsInnerMinTLSEnum> get values => _$r2ListCustomDomainsResponseDomainsInnerMinTLSValues;
-  static R2ListCustomDomainsResponseDomainsInnerMinTLSEnum valueOf(String name) => _$r2ListCustomDomainsResponseDomainsInnerMinTLSValueOf(name);
+  static BuiltSet<R2ListCustomDomainsResponseDomainsInnerMinTLSEnum> get values => _$r2ListCustomDomainsResponseDomainsInnerMinTLSEnumValues;
+  static R2ListCustomDomainsResponseDomainsInnerMinTLSEnum valueOf(String name) => _$r2ListCustomDomainsResponseDomainsInnerMinTLSEnumValueOf(name);
 }
 

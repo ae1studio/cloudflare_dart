@@ -9,7 +9,7 @@ part of 'teams_devices_device_posture_integrations.dart';
 class _$TeamsDevicesDevicePostureIntegrations
     extends TeamsDevicesDevicePostureIntegrations {
   @override
-  final TeamsDevicesConfigResponse? config;
+  final TeamsDevicesWorkspaceOneConfigResponse? config;
   @override
   final String? id;
   @override
@@ -80,10 +80,10 @@ class TeamsDevicesDevicePostureIntegrationsBuilder
             TeamsDevicesDevicePostureIntegrationsBuilder> {
   _$TeamsDevicesDevicePostureIntegrations? _$v;
 
-  TeamsDevicesConfigResponseBuilder? _config;
-  TeamsDevicesConfigResponseBuilder get config =>
-      _$this._config ??= TeamsDevicesConfigResponseBuilder();
-  set config(TeamsDevicesConfigResponseBuilder? config) =>
+  TeamsDevicesWorkspaceOneConfigResponseBuilder? _config;
+  TeamsDevicesWorkspaceOneConfigResponseBuilder get config =>
+      _$this._config ??= TeamsDevicesWorkspaceOneConfigResponseBuilder();
+  set config(TeamsDevicesWorkspaceOneConfigResponseBuilder? config) =>
       _$this._config = config;
 
   String? _id;

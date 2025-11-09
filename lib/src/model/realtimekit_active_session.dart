@@ -361,12 +361,12 @@ class RealtimekitActiveSessionStatusEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'ENDED')
   static const RealtimekitActiveSessionStatusEnum ENDED = _$realtimekitActiveSessionStatusEnum_ENDED;
 
-  static Serializer<RealtimekitActiveSessionStatusEnum> get serializer => _$realtimekitActiveSessionStatusSerializer;
+  static Serializer<RealtimekitActiveSessionStatusEnum> get serializer => _$realtimekitActiveSessionStatusEnumSerializer;
 
   const RealtimekitActiveSessionStatusEnum._(String name): super(name);
 
-  static BuiltSet<RealtimekitActiveSessionStatusEnum> get values => _$realtimekitActiveSessionStatusValues;
-  static RealtimekitActiveSessionStatusEnum valueOf(String name) => _$realtimekitActiveSessionStatusValueOf(name);
+  static BuiltSet<RealtimekitActiveSessionStatusEnum> get values => _$realtimekitActiveSessionStatusEnumValues;
+  static RealtimekitActiveSessionStatusEnum valueOf(String name) => _$realtimekitActiveSessionStatusEnumValueOf(name);
 }
 
 class RealtimekitActiveSessionTypeEnum extends EnumClass {
@@ -381,11 +381,11 @@ class RealtimekitActiveSessionTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'participant')
   static const RealtimekitActiveSessionTypeEnum participant = _$realtimekitActiveSessionTypeEnum_participant;
 
-  static Serializer<RealtimekitActiveSessionTypeEnum> get serializer => _$realtimekitActiveSessionTypeSerializer;
+  static Serializer<RealtimekitActiveSessionTypeEnum> get serializer => _$realtimekitActiveSessionTypeEnumSerializer;
 
   const RealtimekitActiveSessionTypeEnum._(String name): super(name);
 
-  static BuiltSet<RealtimekitActiveSessionTypeEnum> get values => _$realtimekitActiveSessionTypeValues;
-  static RealtimekitActiveSessionTypeEnum valueOf(String name) => _$realtimekitActiveSessionTypeValueOf(name);
+  static BuiltSet<RealtimekitActiveSessionTypeEnum> get values => _$realtimekitActiveSessionTypeEnumValues;
+  static RealtimekitActiveSessionTypeEnum valueOf(String name) => _$realtimekitActiveSessionTypeEnumValueOf(name);
 }
 

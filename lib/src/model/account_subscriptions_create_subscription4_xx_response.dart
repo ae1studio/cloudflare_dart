@@ -148,11 +148,11 @@ class _$AccountSubscriptionsCreateSubscription4XXResponseSerializer implements P
 class AccountSubscriptionsCreateSubscription4XXResponseResultEnum extends EnumClass {
 
 
-  static Serializer<AccountSubscriptionsCreateSubscription4XXResponseResultEnum> get serializer => _$accountSubscriptionsCreateSubscription4XXResponseResultSerializer;
+  static Serializer<AccountSubscriptionsCreateSubscription4XXResponseResultEnum> get serializer => _$accountSubscriptionsCreateSubscription4XXResponseResultEnumSerializer;
 
   const AccountSubscriptionsCreateSubscription4XXResponseResultEnum._(String name): super(name);
 
-  static BuiltSet<AccountSubscriptionsCreateSubscription4XXResponseResultEnum> get values => _$accountSubscriptionsCreateSubscription4XXResponseResultValues;
-  static AccountSubscriptionsCreateSubscription4XXResponseResultEnum valueOf(String name) => _$accountSubscriptionsCreateSubscription4XXResponseResultValueOf(name);
+  static BuiltSet<AccountSubscriptionsCreateSubscription4XXResponseResultEnum> get values => _$accountSubscriptionsCreateSubscription4XXResponseResultEnumValues;
+  static AccountSubscriptionsCreateSubscription4XXResponseResultEnum valueOf(String name) => _$accountSubscriptionsCreateSubscription4XXResponseResultEnumValueOf(name);
 }
 

@@ -59,7 +59,7 @@ abstract class MagicWan implements Built<MagicWan, MagicWanBuilder> {
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(MagicWanBuilder b) => b
-      ..healthCheckRate = const MagicWanHealthCheckRateEnum._('mid');
+      ..healthCheckRate = MagicWanHealthCheckRateEnum.valueOf('mid');
 
   @BuiltValueSerializer(custom: true)
   static Serializer<MagicWan> get serializer => _$MagicWanSerializer();
@@ -253,11 +253,11 @@ class MagicWanHealthCheckRateEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'high')
   static const MagicWanHealthCheckRateEnum high = _$magicWanHealthCheckRateEnum_high;
 
-  static Serializer<MagicWanHealthCheckRateEnum> get serializer => _$magicWanHealthCheckRateSerializer;
+  static Serializer<MagicWanHealthCheckRateEnum> get serializer => _$magicWanHealthCheckRateEnumSerializer;
 
   const MagicWanHealthCheckRateEnum._(String name): super(name);
 
-  static BuiltSet<MagicWanHealthCheckRateEnum> get values => _$magicWanHealthCheckRateValues;
-  static MagicWanHealthCheckRateEnum valueOf(String name) => _$magicWanHealthCheckRateValueOf(name);
+  static BuiltSet<MagicWanHealthCheckRateEnum> get values => _$magicWanHealthCheckRateEnumValues;
+  static MagicWanHealthCheckRateEnum valueOf(String name) => _$magicWanHealthCheckRateEnumValueOf(name);
 }
 

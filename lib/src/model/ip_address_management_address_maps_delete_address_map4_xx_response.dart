@@ -165,11 +165,11 @@ class _$IpAddressManagementAddressMapsDeleteAddressMap4XXResponseSerializer impl
 class IpAddressManagementAddressMapsDeleteAddressMap4XXResponseResultEnum extends EnumClass {
 
 
-  static Serializer<IpAddressManagementAddressMapsDeleteAddressMap4XXResponseResultEnum> get serializer => _$ipAddressManagementAddressMapsDeleteAddressMap4XXResponseResultSerializer;
+  static Serializer<IpAddressManagementAddressMapsDeleteAddressMap4XXResponseResultEnum> get serializer => _$ipAddressManagementAddressMapsDeleteAddressMap4XXResponseResultEnumSerializer;
 
   const IpAddressManagementAddressMapsDeleteAddressMap4XXResponseResultEnum._(String name): super(name);
 
-  static BuiltSet<IpAddressManagementAddressMapsDeleteAddressMap4XXResponseResultEnum> get values => _$ipAddressManagementAddressMapsDeleteAddressMap4XXResponseResultValues;
-  static IpAddressManagementAddressMapsDeleteAddressMap4XXResponseResultEnum valueOf(String name) => _$ipAddressManagementAddressMapsDeleteAddressMap4XXResponseResultValueOf(name);
+  static BuiltSet<IpAddressManagementAddressMapsDeleteAddressMap4XXResponseResultEnum> get values => _$ipAddressManagementAddressMapsDeleteAddressMap4XXResponseResultEnumValues;
+  static IpAddressManagementAddressMapsDeleteAddressMap4XXResponseResultEnum valueOf(String name) => _$ipAddressManagementAddressMapsDeleteAddressMap4XXResponseResultEnumValueOf(name);
 }
 

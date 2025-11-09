@@ -194,11 +194,11 @@ class _$$FirewallApiResponseCommonFailureSerializer implements PrimitiveSerializ
 class FirewallApiResponseCommonFailureResultEnum extends EnumClass {
 
 
-  static Serializer<FirewallApiResponseCommonFailureResultEnum> get serializer => _$firewallApiResponseCommonFailureResultSerializer;
+  static Serializer<FirewallApiResponseCommonFailureResultEnum> get serializer => _$firewallApiResponseCommonFailureResultEnumSerializer;
 
   const FirewallApiResponseCommonFailureResultEnum._(String name): super(name);
 
-  static BuiltSet<FirewallApiResponseCommonFailureResultEnum> get values => _$firewallApiResponseCommonFailureResultValues;
-  static FirewallApiResponseCommonFailureResultEnum valueOf(String name) => _$firewallApiResponseCommonFailureResultValueOf(name);
+  static BuiltSet<FirewallApiResponseCommonFailureResultEnum> get values => _$firewallApiResponseCommonFailureResultEnumValues;
+  static FirewallApiResponseCommonFailureResultEnum valueOf(String name) => _$firewallApiResponseCommonFailureResultEnumValueOf(name);
 }
 

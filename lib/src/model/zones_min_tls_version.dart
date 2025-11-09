@@ -156,11 +156,11 @@ class ZonesMinTlsVersionIdEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'min_tls_version')
   static const ZonesMinTlsVersionIdEnum minTlsVersion = _$zonesMinTlsVersionIdEnum_minTlsVersion;
 
-  static Serializer<ZonesMinTlsVersionIdEnum> get serializer => _$zonesMinTlsVersionIdSerializer;
+  static Serializer<ZonesMinTlsVersionIdEnum> get serializer => _$zonesMinTlsVersionIdEnumSerializer;
 
   const ZonesMinTlsVersionIdEnum._(String name): super(name);
 
-  static BuiltSet<ZonesMinTlsVersionIdEnum> get values => _$zonesMinTlsVersionIdValues;
-  static ZonesMinTlsVersionIdEnum valueOf(String name) => _$zonesMinTlsVersionIdValueOf(name);
+  static BuiltSet<ZonesMinTlsVersionIdEnum> get values => _$zonesMinTlsVersionIdEnumValues;
+  static ZonesMinTlsVersionIdEnum valueOf(String name) => _$zonesMinTlsVersionIdEnumValueOf(name);
 }
 

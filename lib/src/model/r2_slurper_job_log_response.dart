@@ -215,11 +215,11 @@ class R2SlurperJobLogResponseLogTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'importSkippedRequiresRetrieval')
   static const R2SlurperJobLogResponseLogTypeEnum importSkippedRequiresRetrieval = _$r2SlurperJobLogResponseLogTypeEnum_importSkippedRequiresRetrieval;
 
-  static Serializer<R2SlurperJobLogResponseLogTypeEnum> get serializer => _$r2SlurperJobLogResponseLogTypeSerializer;
+  static Serializer<R2SlurperJobLogResponseLogTypeEnum> get serializer => _$r2SlurperJobLogResponseLogTypeEnumSerializer;
 
   const R2SlurperJobLogResponseLogTypeEnum._(String name): super(name);
 
-  static BuiltSet<R2SlurperJobLogResponseLogTypeEnum> get values => _$r2SlurperJobLogResponseLogTypeValues;
-  static R2SlurperJobLogResponseLogTypeEnum valueOf(String name) => _$r2SlurperJobLogResponseLogTypeValueOf(name);
+  static BuiltSet<R2SlurperJobLogResponseLogTypeEnum> get values => _$r2SlurperJobLogResponseLogTypeEnumValues;
+  static R2SlurperJobLogResponseLogTypeEnum valueOf(String name) => _$r2SlurperJobLogResponseLogTypeEnumValueOf(name);
 }
 

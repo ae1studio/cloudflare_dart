@@ -156,11 +156,11 @@ class ZonesIpv6IdEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'ipv6')
   static const ZonesIpv6IdEnum ipv6 = _$zonesIpv6IdEnum_ipv6;
 
-  static Serializer<ZonesIpv6IdEnum> get serializer => _$zonesIpv6IdSerializer;
+  static Serializer<ZonesIpv6IdEnum> get serializer => _$zonesIpv6IdEnumSerializer;
 
   const ZonesIpv6IdEnum._(String name): super(name);
 
-  static BuiltSet<ZonesIpv6IdEnum> get values => _$zonesIpv6IdValues;
-  static ZonesIpv6IdEnum valueOf(String name) => _$zonesIpv6IdValueOf(name);
+  static BuiltSet<ZonesIpv6IdEnum> get values => _$zonesIpv6IdEnumValues;
+  static ZonesIpv6IdEnum valueOf(String name) => _$zonesIpv6IdEnumValueOf(name);
 }
 

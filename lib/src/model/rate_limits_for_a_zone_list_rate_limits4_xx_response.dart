@@ -164,11 +164,11 @@ class _$RateLimitsForAZoneListRateLimits4XXResponseSerializer implements Primiti
 class RateLimitsForAZoneListRateLimits4XXResponseResultEnum extends EnumClass {
 
 
-  static Serializer<RateLimitsForAZoneListRateLimits4XXResponseResultEnum> get serializer => _$rateLimitsForAZoneListRateLimits4XXResponseResultSerializer;
+  static Serializer<RateLimitsForAZoneListRateLimits4XXResponseResultEnum> get serializer => _$rateLimitsForAZoneListRateLimits4XXResponseResultEnumSerializer;
 
   const RateLimitsForAZoneListRateLimits4XXResponseResultEnum._(String name): super(name);
 
-  static BuiltSet<RateLimitsForAZoneListRateLimits4XXResponseResultEnum> get values => _$rateLimitsForAZoneListRateLimits4XXResponseResultValues;
-  static RateLimitsForAZoneListRateLimits4XXResponseResultEnum valueOf(String name) => _$rateLimitsForAZoneListRateLimits4XXResponseResultValueOf(name);
+  static BuiltSet<RateLimitsForAZoneListRateLimits4XXResponseResultEnum> get values => _$rateLimitsForAZoneListRateLimits4XXResponseResultEnumValues;
+  static RateLimitsForAZoneListRateLimits4XXResponseResultEnum valueOf(String name) => _$rateLimitsForAZoneListRateLimits4XXResponseResultEnumValueOf(name);
 }
 

@@ -111,11 +111,11 @@ class BoolTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'bool')
   static const BoolTypeEnum bool_ = _$boolTypeEnum_bool_;
 
-  static Serializer<BoolTypeEnum> get serializer => _$boolTypeSerializer;
+  static Serializer<BoolTypeEnum> get serializer => _$boolTypeEnumSerializer;
 
   const BoolTypeEnum._(String name): super(name);
 
-  static BuiltSet<BoolTypeEnum> get values => _$boolTypeValues;
-  static BoolTypeEnum valueOf(String name) => _$boolTypeValueOf(name);
+  static BuiltSet<BoolTypeEnum> get values => _$boolTypeEnumValues;
+  static BoolTypeEnum valueOf(String name) => _$boolTypeEnumValueOf(name);
 }
 

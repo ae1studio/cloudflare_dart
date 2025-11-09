@@ -3,8 +3,7 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:cloudflare_dart/src/model/access_updated_at.dart';
-import 'package:cloudflare_dart/src/model/access_created_at.dart';
+import 'package:built_value/json_object.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
@@ -19,14 +18,14 @@ part 'access_tag_without_app_count.g.dart';
 @BuiltValue()
 abstract class AccessTagWithoutAppCount implements Built<AccessTagWithoutAppCount, AccessTagWithoutAppCountBuilder> {
   @BuiltValueField(wireName: r'created_at')
-  AccessCreatedAt? get createdAt;
+  JsonObject? get createdAt;
 
   /// The name of the tag
   @BuiltValueField(wireName: r'name')
   String get name;
 
   @BuiltValueField(wireName: r'updated_at')
-  AccessUpdatedAt? get updatedAt;
+  JsonObject? get updatedAt;
 
   AccessTagWithoutAppCount._();
 
@@ -55,7 +54,7 @@ class _$AccessTagWithoutAppCountSerializer implements PrimitiveSerializer<Access
       yield r'created_at';
       yield serializers.serialize(
         object.createdAt,
-        specifiedType: const FullType(AccessCreatedAt),
+        specifiedType: const FullType(JsonObject),
       );
     }
     yield r'name';
@@ -67,7 +66,7 @@ class _$AccessTagWithoutAppCountSerializer implements PrimitiveSerializer<Access
       yield r'updated_at';
       yield serializers.serialize(
         object.updatedAt,
-        specifiedType: const FullType(AccessUpdatedAt),
+        specifiedType: const FullType(JsonObject),
       );
     }
   }
@@ -96,8 +95,8 @@ class _$AccessTagWithoutAppCountSerializer implements PrimitiveSerializer<Access
         case r'created_at':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(AccessCreatedAt),
-          ) as AccessCreatedAt;
+            specifiedType: const FullType(JsonObject),
+          ) as JsonObject;
           result.createdAt.replace(valueDes);
           break;
         case r'name':
@@ -110,8 +109,8 @@ class _$AccessTagWithoutAppCountSerializer implements PrimitiveSerializer<Access
         case r'updated_at':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(AccessUpdatedAt),
-          ) as AccessUpdatedAt;
+            specifiedType: const FullType(JsonObject),
+          ) as JsonObject;
           result.updatedAt.replace(valueDes);
           break;
         default:

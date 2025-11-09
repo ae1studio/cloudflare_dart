@@ -207,11 +207,11 @@ class CustomEntryTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'custom')
   static const CustomEntryTypeEnum custom = _$customEntryTypeEnum_custom;
 
-  static Serializer<CustomEntryTypeEnum> get serializer => _$customEntryTypeSerializer;
+  static Serializer<CustomEntryTypeEnum> get serializer => _$customEntryTypeEnumSerializer;
 
   const CustomEntryTypeEnum._(String name): super(name);
 
-  static BuiltSet<CustomEntryTypeEnum> get values => _$customEntryTypeValues;
-  static CustomEntryTypeEnum valueOf(String name) => _$customEntryTypeValueOf(name);
+  static BuiltSet<CustomEntryTypeEnum> get values => _$customEntryTypeEnumValues;
+  static CustomEntryTypeEnum valueOf(String name) => _$customEntryTypeEnumValueOf(name);
 }
 

@@ -46,7 +46,7 @@ abstract class MagicAcl implements Built<MagicAcl, MagicAclBuilder> {
   String? get name;
 
   @BuiltValueField(wireName: r'protocols')
-  BuiltList<MagicAclsAddSingleRequestProtocolsEnum>? get protocols;
+  BuiltList<MagicAclProtocolsEnum>? get protocols;
   // enum protocolsEnum {  tcp,  udp,  icmp,  };
 
   /// The desired traffic direction for this ACL policy. If set to \"false\", the policy will allow bidirectional traffic. If set to \"true\", the policy will only allow traffic in one direction. If not included in request, will default to false.
@@ -122,7 +122,7 @@ class _$MagicAclSerializer implements PrimitiveSerializer<MagicAcl> {
       yield r'protocols';
       yield serializers.serialize(
         object.protocols,
-        specifiedType: const FullType(BuiltList, [FullType(MagicAclsAddSingleRequestProtocolsEnum)]),
+        specifiedType: const FullType(BuiltList, [FullType(MagicAclProtocolsEnum)]),
       );
     }
     if (object.unidirectional != null) {
@@ -200,8 +200,8 @@ class _$MagicAclSerializer implements PrimitiveSerializer<MagicAcl> {
         case r'protocols':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(BuiltList, [FullType(MagicAclsAddSingleRequestProtocolsEnum)]),
-          ) as BuiltList<MagicAclsAddSingleRequestProtocolsEnum>;
+            specifiedType: const FullType(BuiltList, [FullType(MagicAclProtocolsEnum)]),
+          ) as BuiltList<MagicAclProtocolsEnum>;
           result.protocols.replace(valueDes);
           break;
         case r'unidirectional':
@@ -238,5 +238,25 @@ class _$MagicAclSerializer implements PrimitiveSerializer<MagicAcl> {
     );
     return result.build();
   }
+}
+
+class MagicAclProtocolsEnum extends EnumClass {
+
+  /// Array of allowed communication protocols between configured LANs. If no protocols are provided, all protocols are allowed.
+  @BuiltValueEnumConst(wireName: r'tcp')
+  static const MagicAclProtocolsEnum tcp = _$magicAclProtocolsEnum_tcp;
+  /// Array of allowed communication protocols between configured LANs. If no protocols are provided, all protocols are allowed.
+  @BuiltValueEnumConst(wireName: r'udp')
+  static const MagicAclProtocolsEnum udp = _$magicAclProtocolsEnum_udp;
+  /// Array of allowed communication protocols between configured LANs. If no protocols are provided, all protocols are allowed.
+  @BuiltValueEnumConst(wireName: r'icmp')
+  static const MagicAclProtocolsEnum icmp = _$magicAclProtocolsEnum_icmp;
+
+  static Serializer<MagicAclProtocolsEnum> get serializer => _$magicAclProtocolsEnumSerializer;
+
+  const MagicAclProtocolsEnum._(String name): super(name);
+
+  static BuiltSet<MagicAclProtocolsEnum> get values => _$magicAclProtocolsEnumValues;
+  static MagicAclProtocolsEnum valueOf(String name) => _$magicAclProtocolsEnumValueOf(name);
 }
 

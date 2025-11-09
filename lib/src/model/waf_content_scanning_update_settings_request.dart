@@ -116,11 +116,11 @@ class WafContentScanningUpdateSettingsRequestValueEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'disabled')
   static const WafContentScanningUpdateSettingsRequestValueEnum disabled = _$wafContentScanningUpdateSettingsRequestValueEnum_disabled;
 
-  static Serializer<WafContentScanningUpdateSettingsRequestValueEnum> get serializer => _$wafContentScanningUpdateSettingsRequestValueSerializer;
+  static Serializer<WafContentScanningUpdateSettingsRequestValueEnum> get serializer => _$wafContentScanningUpdateSettingsRequestValueEnumSerializer;
 
   const WafContentScanningUpdateSettingsRequestValueEnum._(String name): super(name);
 
-  static BuiltSet<WafContentScanningUpdateSettingsRequestValueEnum> get values => _$wafContentScanningUpdateSettingsRequestValueValues;
-  static WafContentScanningUpdateSettingsRequestValueEnum valueOf(String name) => _$wafContentScanningUpdateSettingsRequestValueValueOf(name);
+  static BuiltSet<WafContentScanningUpdateSettingsRequestValueEnum> get values => _$wafContentScanningUpdateSettingsRequestValueEnumValues;
+  static WafContentScanningUpdateSettingsRequestValueEnum valueOf(String name) => _$wafContentScanningUpdateSettingsRequestValueEnumValueOf(name);
 }
 

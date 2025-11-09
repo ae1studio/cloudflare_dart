@@ -176,11 +176,11 @@ class IamUpdateMemberWithRolesStatusEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'pending')
   static const IamUpdateMemberWithRolesStatusEnum pending = _$iamUpdateMemberWithRolesStatusEnum_pending;
 
-  static Serializer<IamUpdateMemberWithRolesStatusEnum> get serializer => _$iamUpdateMemberWithRolesStatusSerializer;
+  static Serializer<IamUpdateMemberWithRolesStatusEnum> get serializer => _$iamUpdateMemberWithRolesStatusEnumSerializer;
 
   const IamUpdateMemberWithRolesStatusEnum._(String name): super(name);
 
-  static BuiltSet<IamUpdateMemberWithRolesStatusEnum> get values => _$iamUpdateMemberWithRolesStatusValues;
-  static IamUpdateMemberWithRolesStatusEnum valueOf(String name) => _$iamUpdateMemberWithRolesStatusValueOf(name);
+  static BuiltSet<IamUpdateMemberWithRolesStatusEnum> get values => _$iamUpdateMemberWithRolesStatusEnumValues;
+  static IamUpdateMemberWithRolesStatusEnum valueOf(String name) => _$iamUpdateMemberWithRolesStatusEnumValueOf(name);
 }
 

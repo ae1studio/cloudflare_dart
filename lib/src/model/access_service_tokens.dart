@@ -3,8 +3,6 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:cloudflare_dart/src/model/access_updated_at.dart';
-import 'package:cloudflare_dart/src/model/access_created_at.dart';
 import 'package:built_value/json_object.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
@@ -18,7 +16,7 @@ part 'access_service_tokens.g.dart';
 /// * [createdAt] 
 /// * [duration] - The duration for how long the service token will be valid. Must be in the format `300ms` or `2h45m`. Valid time units are: ns, us (or µs), ms, s, m, h. The default is 1 year in hours (8760h).
 /// * [expiresAt] 
-/// * [id] 
+/// * [id] - The ID of the service token.
 /// * [lastSeenAt] 
 /// * [name] - The name of the service token.
 /// * [updatedAt] 
@@ -29,7 +27,7 @@ abstract class AccessServiceTokens implements Built<AccessServiceTokens, AccessS
   String? get clientId;
 
   @BuiltValueField(wireName: r'created_at')
-  AccessCreatedAt? get createdAt;
+  JsonObject? get createdAt;
 
   /// The duration for how long the service token will be valid. Must be in the format `300ms` or `2h45m`. Valid time units are: ns, us (or µs), ms, s, m, h. The default is 1 year in hours (8760h).
   @BuiltValueField(wireName: r'duration')
@@ -38,18 +36,19 @@ abstract class AccessServiceTokens implements Built<AccessServiceTokens, AccessS
   @BuiltValueField(wireName: r'expires_at')
   DateTime? get expiresAt;
 
+  /// The ID of the service token.
   @BuiltValueField(wireName: r'id')
-  JsonObject? get id;
+  String? get id;
 
   @BuiltValueField(wireName: r'last_seen_at')
-  JsonObject? get lastSeenAt;
+  DateTime? get lastSeenAt;
 
   /// The name of the service token.
   @BuiltValueField(wireName: r'name')
   String? get name;
 
   @BuiltValueField(wireName: r'updated_at')
-  AccessUpdatedAt? get updatedAt;
+  JsonObject? get updatedAt;
 
   AccessServiceTokens._();
 
@@ -86,7 +85,7 @@ class _$AccessServiceTokensSerializer implements PrimitiveSerializer<AccessServi
       yield r'created_at';
       yield serializers.serialize(
         object.createdAt,
-        specifiedType: const FullType(AccessCreatedAt),
+        specifiedType: const FullType(JsonObject),
       );
     }
     if (object.duration != null) {
@@ -107,14 +106,14 @@ class _$AccessServiceTokensSerializer implements PrimitiveSerializer<AccessServi
       yield r'id';
       yield serializers.serialize(
         object.id,
-        specifiedType: const FullType(JsonObject),
+        specifiedType: const FullType(String),
       );
     }
     if (object.lastSeenAt != null) {
       yield r'last_seen_at';
       yield serializers.serialize(
         object.lastSeenAt,
-        specifiedType: const FullType(JsonObject),
+        specifiedType: const FullType(DateTime),
       );
     }
     if (object.name != null) {
@@ -128,7 +127,7 @@ class _$AccessServiceTokensSerializer implements PrimitiveSerializer<AccessServi
       yield r'updated_at';
       yield serializers.serialize(
         object.updatedAt,
-        specifiedType: const FullType(AccessUpdatedAt),
+        specifiedType: const FullType(JsonObject),
       );
     }
   }
@@ -164,8 +163,8 @@ class _$AccessServiceTokensSerializer implements PrimitiveSerializer<AccessServi
         case r'created_at':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(AccessCreatedAt),
-          ) as AccessCreatedAt;
+            specifiedType: const FullType(JsonObject),
+          ) as JsonObject;
           result.createdAt.replace(valueDes);
           break;
         case r'duration':
@@ -185,16 +184,16 @@ class _$AccessServiceTokensSerializer implements PrimitiveSerializer<AccessServi
         case r'id':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(JsonObject),
-          ) as JsonObject;
-          result.id.replace(valueDes);
+            specifiedType: const FullType(String),
+          ) as String;
+          result.id = valueDes;
           break;
         case r'last_seen_at':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(JsonObject),
-          ) as JsonObject;
-          result.lastSeenAt.replace(valueDes);
+            specifiedType: const FullType(DateTime),
+          ) as DateTime;
+          result.lastSeenAt = valueDes;
           break;
         case r'name':
           final valueDes = serializers.deserialize(
@@ -206,8 +205,8 @@ class _$AccessServiceTokensSerializer implements PrimitiveSerializer<AccessServi
         case r'updated_at':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(AccessUpdatedAt),
-          ) as AccessUpdatedAt;
+            specifiedType: const FullType(JsonObject),
+          ) as JsonObject;
           result.updatedAt.replace(valueDes);
           break;
         default:

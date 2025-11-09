@@ -156,11 +156,11 @@ class ZonesTls12OnlyIdEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'tls_1_2_only')
   static const ZonesTls12OnlyIdEnum tls12Only = _$zonesTls12OnlyIdEnum_tls12Only;
 
-  static Serializer<ZonesTls12OnlyIdEnum> get serializer => _$zonesTls12OnlyIdSerializer;
+  static Serializer<ZonesTls12OnlyIdEnum> get serializer => _$zonesTls12OnlyIdEnumSerializer;
 
   const ZonesTls12OnlyIdEnum._(String name): super(name);
 
-  static BuiltSet<ZonesTls12OnlyIdEnum> get values => _$zonesTls12OnlyIdValues;
-  static ZonesTls12OnlyIdEnum valueOf(String name) => _$zonesTls12OnlyIdValueOf(name);
+  static BuiltSet<ZonesTls12OnlyIdEnum> get values => _$zonesTls12OnlyIdEnumValues;
+  static ZonesTls12OnlyIdEnum valueOf(String name) => _$zonesTls12OnlyIdEnumValueOf(name);
 }
 

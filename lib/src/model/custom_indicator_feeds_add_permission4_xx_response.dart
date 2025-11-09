@@ -150,11 +150,11 @@ class _$CustomIndicatorFeedsAddPermission4XXResponseSerializer implements Primit
 class CustomIndicatorFeedsAddPermission4XXResponseResultEnum extends EnumClass {
 
 
-  static Serializer<CustomIndicatorFeedsAddPermission4XXResponseResultEnum> get serializer => _$customIndicatorFeedsAddPermission4XXResponseResultSerializer;
+  static Serializer<CustomIndicatorFeedsAddPermission4XXResponseResultEnum> get serializer => _$customIndicatorFeedsAddPermission4XXResponseResultEnumSerializer;
 
   const CustomIndicatorFeedsAddPermission4XXResponseResultEnum._(String name): super(name);
 
-  static BuiltSet<CustomIndicatorFeedsAddPermission4XXResponseResultEnum> get values => _$customIndicatorFeedsAddPermission4XXResponseResultValues;
-  static CustomIndicatorFeedsAddPermission4XXResponseResultEnum valueOf(String name) => _$customIndicatorFeedsAddPermission4XXResponseResultValueOf(name);
+  static BuiltSet<CustomIndicatorFeedsAddPermission4XXResponseResultEnum> get values => _$customIndicatorFeedsAddPermission4XXResponseResultEnumValues;
+  static CustomIndicatorFeedsAddPermission4XXResponseResultEnum valueOf(String name) => _$customIndicatorFeedsAddPermission4XXResponseResultEnumValueOf(name);
 }
 

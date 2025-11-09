@@ -248,11 +248,11 @@ class DnsRecordsLOCRecordTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'LOC')
   static const DnsRecordsLOCRecordTypeEnum LOC = _$dnsRecordsLOCRecordTypeEnum_LOC;
 
-  static Serializer<DnsRecordsLOCRecordTypeEnum> get serializer => _$dnsRecordsLOCRecordTypeSerializer;
+  static Serializer<DnsRecordsLOCRecordTypeEnum> get serializer => _$dnsRecordsLOCRecordTypeEnumSerializer;
 
   const DnsRecordsLOCRecordTypeEnum._(String name): super(name);
 
-  static BuiltSet<DnsRecordsLOCRecordTypeEnum> get values => _$dnsRecordsLOCRecordTypeValues;
-  static DnsRecordsLOCRecordTypeEnum valueOf(String name) => _$dnsRecordsLOCRecordTypeValueOf(name);
+  static BuiltSet<DnsRecordsLOCRecordTypeEnum> get values => _$dnsRecordsLOCRecordTypeEnumValues;
+  static DnsRecordsLOCRecordTypeEnum valueOf(String name) => _$dnsRecordsLOCRecordTypeEnumValueOf(name);
 }
 

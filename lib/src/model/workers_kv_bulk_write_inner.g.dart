@@ -16,7 +16,7 @@ class _$WorkersKvBulkWriteInner extends WorkersKvBulkWriteInner {
   @override
   final String key;
   @override
-  final WorkersKvListMetadata? metadata;
+  final JsonObject? metadata;
   @override
   final String value;
 
@@ -101,11 +101,9 @@ class WorkersKvBulkWriteInnerBuilder
   String? get key => _$this._key;
   set key(String? key) => _$this._key = key;
 
-  WorkersKvListMetadataBuilder? _metadata;
-  WorkersKvListMetadataBuilder get metadata =>
-      _$this._metadata ??= WorkersKvListMetadataBuilder();
-  set metadata(WorkersKvListMetadataBuilder? metadata) =>
-      _$this._metadata = metadata;
+  JsonObject? _metadata;
+  JsonObject? get metadata => _$this._metadata;
+  set metadata(JsonObject? metadata) => _$this._metadata = metadata;
 
   String? _value;
   String? get value => _$this._value;
@@ -122,7 +120,7 @@ class WorkersKvBulkWriteInnerBuilder
       _expiration = $v.expiration;
       _expirationTtl = $v.expirationTtl;
       _key = $v.key;
-      _metadata = $v.metadata?.toBuilder();
+      _metadata = $v.metadata;
       _value = $v.value;
       _$v = null;
     }
@@ -143,30 +141,17 @@ class WorkersKvBulkWriteInnerBuilder
   WorkersKvBulkWriteInner build() => _build();
 
   _$WorkersKvBulkWriteInner _build() {
-    _$WorkersKvBulkWriteInner _$result;
-    try {
-      _$result = _$v ??
-          _$WorkersKvBulkWriteInner._(
-            base64: base64,
-            expiration: expiration,
-            expirationTtl: expirationTtl,
-            key: BuiltValueNullFieldError.checkNotNull(
-                key, r'WorkersKvBulkWriteInner', 'key'),
-            metadata: _metadata?.build(),
-            value: BuiltValueNullFieldError.checkNotNull(
-                value, r'WorkersKvBulkWriteInner', 'value'),
-          );
-    } catch (_) {
-      late String _$failedField;
-      try {
-        _$failedField = 'metadata';
-        _metadata?.build();
-      } catch (e) {
-        throw BuiltValueNestedFieldError(
-            r'WorkersKvBulkWriteInner', _$failedField, e.toString());
-      }
-      rethrow;
-    }
+    final _$result = _$v ??
+        _$WorkersKvBulkWriteInner._(
+          base64: base64,
+          expiration: expiration,
+          expirationTtl: expirationTtl,
+          key: BuiltValueNullFieldError.checkNotNull(
+              key, r'WorkersKvBulkWriteInner', 'key'),
+          metadata: metadata,
+          value: BuiltValueNullFieldError.checkNotNull(
+              value, r'WorkersKvBulkWriteInner', 'value'),
+        );
     replace(_$result);
     return _$result;
   }

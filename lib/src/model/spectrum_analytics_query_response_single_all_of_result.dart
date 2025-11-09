@@ -5,10 +5,7 @@
 // ignore_for_file: unused_element
 import 'package:cloudflare_dart/src/model/spectrum_analytics_column.dart';
 import 'package:built_collection/built_collection.dart';
-import 'package:cloudflare_dart/src/model/spectrum_analytics_query_response_single_all_of_result_totals.dart';
 import 'package:cloudflare_dart/src/model/spectrum_analytics_query.dart';
-import 'package:cloudflare_dart/src/model/spectrum_analytics_query_response_single_all_of_result_min.dart';
-import 'package:cloudflare_dart/src/model/spectrum_analytics_query_response_single_all_of_result_max.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
@@ -19,12 +16,12 @@ part 'spectrum_analytics_query_response_single_all_of_result.g.dart';
 /// Properties:
 /// * [data] - List of columns returned by the analytics query.
 /// * [dataLag] - Number of seconds between current time and last processed event, i.e. how many seconds of data could be missing.
-/// * [max] 
-/// * [min] 
+/// * [max] - Maximum result for each selected metrics across all data.
+/// * [min] - Minimum result for each selected metrics across all data.
 /// * [query] 
 /// * [rows] - Total number of rows in the result.
 /// * [timeIntervals] - List of time interval buckets: [start, end]
-/// * [totals] 
+/// * [totals] - Total result for each selected metrics across all data.
 @BuiltValue()
 abstract class SpectrumAnalyticsQueryResponseSingleAllOfResult implements Built<SpectrumAnalyticsQueryResponseSingleAllOfResult, SpectrumAnalyticsQueryResponseSingleAllOfResultBuilder> {
   /// List of columns returned by the analytics query.
@@ -35,11 +32,13 @@ abstract class SpectrumAnalyticsQueryResponseSingleAllOfResult implements Built<
   @BuiltValueField(wireName: r'data_lag')
   num get dataLag;
 
+  /// Maximum result for each selected metrics across all data.
   @BuiltValueField(wireName: r'max')
-  SpectrumAnalyticsQueryResponseSingleAllOfResultMax get max;
+  BuiltMap<String, num> get max;
 
+  /// Minimum result for each selected metrics across all data.
   @BuiltValueField(wireName: r'min')
-  SpectrumAnalyticsQueryResponseSingleAllOfResultMin get min;
+  BuiltMap<String, num> get min;
 
   @BuiltValueField(wireName: r'query')
   SpectrumAnalyticsQuery get query;
@@ -52,8 +51,9 @@ abstract class SpectrumAnalyticsQueryResponseSingleAllOfResult implements Built<
   @BuiltValueField(wireName: r'time_intervals')
   BuiltList<BuiltList<DateTime>>? get timeIntervals;
 
+  /// Total result for each selected metrics across all data.
   @BuiltValueField(wireName: r'totals')
-  SpectrumAnalyticsQueryResponseSingleAllOfResultTotals get totals;
+  BuiltMap<String, num> get totals;
 
   SpectrumAnalyticsQueryResponseSingleAllOfResult._();
 
@@ -91,12 +91,12 @@ class _$SpectrumAnalyticsQueryResponseSingleAllOfResultSerializer implements Pri
     yield r'max';
     yield serializers.serialize(
       object.max,
-      specifiedType: const FullType(SpectrumAnalyticsQueryResponseSingleAllOfResultMax),
+      specifiedType: const FullType(BuiltMap, [FullType(String), FullType(num)]),
     );
     yield r'min';
     yield serializers.serialize(
       object.min,
-      specifiedType: const FullType(SpectrumAnalyticsQueryResponseSingleAllOfResultMin),
+      specifiedType: const FullType(BuiltMap, [FullType(String), FullType(num)]),
     );
     yield r'query';
     yield serializers.serialize(
@@ -118,7 +118,7 @@ class _$SpectrumAnalyticsQueryResponseSingleAllOfResultSerializer implements Pri
     yield r'totals';
     yield serializers.serialize(
       object.totals,
-      specifiedType: const FullType(SpectrumAnalyticsQueryResponseSingleAllOfResultTotals),
+      specifiedType: const FullType(BuiltMap, [FullType(String), FullType(num)]),
     );
   }
 
@@ -160,15 +160,15 @@ class _$SpectrumAnalyticsQueryResponseSingleAllOfResultSerializer implements Pri
         case r'max':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(SpectrumAnalyticsQueryResponseSingleAllOfResultMax),
-          ) as SpectrumAnalyticsQueryResponseSingleAllOfResultMax;
+            specifiedType: const FullType(BuiltMap, [FullType(String), FullType(num)]),
+          ) as BuiltMap<String, num>;
           result.max.replace(valueDes);
           break;
         case r'min':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(SpectrumAnalyticsQueryResponseSingleAllOfResultMin),
-          ) as SpectrumAnalyticsQueryResponseSingleAllOfResultMin;
+            specifiedType: const FullType(BuiltMap, [FullType(String), FullType(num)]),
+          ) as BuiltMap<String, num>;
           result.min.replace(valueDes);
           break;
         case r'query':
@@ -195,8 +195,8 @@ class _$SpectrumAnalyticsQueryResponseSingleAllOfResultSerializer implements Pri
         case r'totals':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(SpectrumAnalyticsQueryResponseSingleAllOfResultTotals),
-          ) as SpectrumAnalyticsQueryResponseSingleAllOfResultTotals;
+            specifiedType: const FullType(BuiltMap, [FullType(String), FullType(num)]),
+          ) as BuiltMap<String, num>;
           result.totals.replace(valueDes);
           break;
         default:

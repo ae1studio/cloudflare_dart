@@ -128,11 +128,11 @@ class R2LifecycleStorageTransitionStorageClassEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'InfrequentAccess')
   static const R2LifecycleStorageTransitionStorageClassEnum infrequentAccess = _$r2LifecycleStorageTransitionStorageClassEnum_infrequentAccess;
 
-  static Serializer<R2LifecycleStorageTransitionStorageClassEnum> get serializer => _$r2LifecycleStorageTransitionStorageClassSerializer;
+  static Serializer<R2LifecycleStorageTransitionStorageClassEnum> get serializer => _$r2LifecycleStorageTransitionStorageClassEnumSerializer;
 
   const R2LifecycleStorageTransitionStorageClassEnum._(String name): super(name);
 
-  static BuiltSet<R2LifecycleStorageTransitionStorageClassEnum> get values => _$r2LifecycleStorageTransitionStorageClassValues;
-  static R2LifecycleStorageTransitionStorageClassEnum valueOf(String name) => _$r2LifecycleStorageTransitionStorageClassValueOf(name);
+  static BuiltSet<R2LifecycleStorageTransitionStorageClassEnum> get values => _$r2LifecycleStorageTransitionStorageClassEnumValues;
+  static R2LifecycleStorageTransitionStorageClassEnum valueOf(String name) => _$r2LifecycleStorageTransitionStorageClassEnumValueOf(name);
 }
 

@@ -148,11 +148,11 @@ class _$WafRulesGetAWafRule4XXResponseSerializer implements PrimitiveSerializer<
 class WafRulesGetAWafRule4XXResponseResultEnum extends EnumClass {
 
 
-  static Serializer<WafRulesGetAWafRule4XXResponseResultEnum> get serializer => _$wafRulesGetAWafRule4XXResponseResultSerializer;
+  static Serializer<WafRulesGetAWafRule4XXResponseResultEnum> get serializer => _$wafRulesGetAWafRule4XXResponseResultEnumSerializer;
 
   const WafRulesGetAWafRule4XXResponseResultEnum._(String name): super(name);
 
-  static BuiltSet<WafRulesGetAWafRule4XXResponseResultEnum> get values => _$wafRulesGetAWafRule4XXResponseResultValues;
-  static WafRulesGetAWafRule4XXResponseResultEnum valueOf(String name) => _$wafRulesGetAWafRule4XXResponseResultValueOf(name);
+  static BuiltSet<WafRulesGetAWafRule4XXResponseResultEnum> get values => _$wafRulesGetAWafRule4XXResponseResultEnumValues;
+  static WafRulesGetAWafRule4XXResponseResultEnum valueOf(String name) => _$wafRulesGetAWafRule4XXResponseResultEnumValueOf(name);
 }
 

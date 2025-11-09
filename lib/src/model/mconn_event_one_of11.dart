@@ -130,11 +130,11 @@ class MconnEventOneOf11KEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'StartUpgrade')
   static const MconnEventOneOf11KEnum startUpgrade = _$mconnEventOneOf11KEnum_startUpgrade;
 
-  static Serializer<MconnEventOneOf11KEnum> get serializer => _$mconnEventOneOf11KSerializer;
+  static Serializer<MconnEventOneOf11KEnum> get serializer => _$mconnEventOneOf11KEnumSerializer;
 
   const MconnEventOneOf11KEnum._(String name): super(name);
 
-  static BuiltSet<MconnEventOneOf11KEnum> get values => _$mconnEventOneOf11KValues;
-  static MconnEventOneOf11KEnum valueOf(String name) => _$mconnEventOneOf11KValueOf(name);
+  static BuiltSet<MconnEventOneOf11KEnum> get values => _$mconnEventOneOf11KEnumValues;
+  static MconnEventOneOf11KEnum valueOf(String name) => _$mconnEventOneOf11KEnumValueOf(name);
 }
 

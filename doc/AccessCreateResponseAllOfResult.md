@@ -10,11 +10,11 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **clientId** | **String** | The Client ID for the service token. Access will check for this value in the `CF-Access-Client-ID` request header. | [optional] 
 **clientSecret** | **String** | The Client Secret for the service token. Access will check for this value in the `CF-Access-Client-Secret` request header. | [optional] 
-**createdAt** | [**AccessCreatedAt**](AccessCreatedAt.md) |  | [optional] 
+**createdAt** | [**JsonObject**](JsonObject.md) |  | [optional] 
 **duration** | **String** | The duration for how long the service token will be valid. Must be in the format `300ms` or `2h45m`. Valid time units are: ns, us (or µs), ms, s, m, h. The default is 1 year in hours (8760h). | [optional] [default to '8760h']
 **id** | **String** | The ID of the service token. | [optional] 
 **name** | **String** | The name of the service token. | [optional] 
-**updatedAt** | [**AccessUpdatedAt**](AccessUpdatedAt.md) |  | [optional] 
+**updatedAt** | [**JsonObject**](JsonObject.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

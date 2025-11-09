@@ -320,11 +320,11 @@ class CustomIndicatorFeedsIndicatorFeedMetadataLatestUploadStatusEnum extends En
   @BuiltValueEnumConst(wireName: r'Error')
   static const CustomIndicatorFeedsIndicatorFeedMetadataLatestUploadStatusEnum error = _$customIndicatorFeedsIndicatorFeedMetadataLatestUploadStatusEnum_error;
 
-  static Serializer<CustomIndicatorFeedsIndicatorFeedMetadataLatestUploadStatusEnum> get serializer => _$customIndicatorFeedsIndicatorFeedMetadataLatestUploadStatusSerializer;
+  static Serializer<CustomIndicatorFeedsIndicatorFeedMetadataLatestUploadStatusEnum> get serializer => _$customIndicatorFeedsIndicatorFeedMetadataLatestUploadStatusEnumSerializer;
 
   const CustomIndicatorFeedsIndicatorFeedMetadataLatestUploadStatusEnum._(String name): super(name);
 
-  static BuiltSet<CustomIndicatorFeedsIndicatorFeedMetadataLatestUploadStatusEnum> get values => _$customIndicatorFeedsIndicatorFeedMetadataLatestUploadStatusValues;
-  static CustomIndicatorFeedsIndicatorFeedMetadataLatestUploadStatusEnum valueOf(String name) => _$customIndicatorFeedsIndicatorFeedMetadataLatestUploadStatusValueOf(name);
+  static BuiltSet<CustomIndicatorFeedsIndicatorFeedMetadataLatestUploadStatusEnum> get values => _$customIndicatorFeedsIndicatorFeedMetadataLatestUploadStatusEnumValues;
+  static CustomIndicatorFeedsIndicatorFeedMetadataLatestUploadStatusEnum valueOf(String name) => _$customIndicatorFeedsIndicatorFeedMetadataLatestUploadStatusEnumValueOf(name);
 }
 

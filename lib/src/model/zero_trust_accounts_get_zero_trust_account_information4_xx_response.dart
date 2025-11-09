@@ -149,11 +149,11 @@ class _$ZeroTrustAccountsGetZeroTrustAccountInformation4XXResponseSerializer imp
 class ZeroTrustAccountsGetZeroTrustAccountInformation4XXResponseResultEnum extends EnumClass {
 
 
-  static Serializer<ZeroTrustAccountsGetZeroTrustAccountInformation4XXResponseResultEnum> get serializer => _$zeroTrustAccountsGetZeroTrustAccountInformation4XXResponseResultSerializer;
+  static Serializer<ZeroTrustAccountsGetZeroTrustAccountInformation4XXResponseResultEnum> get serializer => _$zeroTrustAccountsGetZeroTrustAccountInformation4XXResponseResultEnumSerializer;
 
   const ZeroTrustAccountsGetZeroTrustAccountInformation4XXResponseResultEnum._(String name): super(name);
 
-  static BuiltSet<ZeroTrustAccountsGetZeroTrustAccountInformation4XXResponseResultEnum> get values => _$zeroTrustAccountsGetZeroTrustAccountInformation4XXResponseResultValues;
-  static ZeroTrustAccountsGetZeroTrustAccountInformation4XXResponseResultEnum valueOf(String name) => _$zeroTrustAccountsGetZeroTrustAccountInformation4XXResponseResultValueOf(name);
+  static BuiltSet<ZeroTrustAccountsGetZeroTrustAccountInformation4XXResponseResultEnum> get values => _$zeroTrustAccountsGetZeroTrustAccountInformation4XXResponseResultEnumValues;
+  static ZeroTrustAccountsGetZeroTrustAccountInformation4XXResponseResultEnum valueOf(String name) => _$zeroTrustAccountsGetZeroTrustAccountInformation4XXResponseResultEnumValueOf(name);
 }
 

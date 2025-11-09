@@ -150,11 +150,11 @@ class _$DeviceDexTestDeleteDeviceDexTest4XXResponseSerializer implements Primiti
 class DeviceDexTestDeleteDeviceDexTest4XXResponseResultEnum extends EnumClass {
 
 
-  static Serializer<DeviceDexTestDeleteDeviceDexTest4XXResponseResultEnum> get serializer => _$deviceDexTestDeleteDeviceDexTest4XXResponseResultSerializer;
+  static Serializer<DeviceDexTestDeleteDeviceDexTest4XXResponseResultEnum> get serializer => _$deviceDexTestDeleteDeviceDexTest4XXResponseResultEnumSerializer;
 
   const DeviceDexTestDeleteDeviceDexTest4XXResponseResultEnum._(String name): super(name);
 
-  static BuiltSet<DeviceDexTestDeleteDeviceDexTest4XXResponseResultEnum> get values => _$deviceDexTestDeleteDeviceDexTest4XXResponseResultValues;
-  static DeviceDexTestDeleteDeviceDexTest4XXResponseResultEnum valueOf(String name) => _$deviceDexTestDeleteDeviceDexTest4XXResponseResultValueOf(name);
+  static BuiltSet<DeviceDexTestDeleteDeviceDexTest4XXResponseResultEnum> get values => _$deviceDexTestDeleteDeviceDexTest4XXResponseResultEnumValues;
+  static DeviceDexTestDeleteDeviceDexTest4XXResponseResultEnum valueOf(String name) => _$deviceDexTestDeleteDeviceDexTest4XXResponseResultEnumValueOf(name);
 }
 

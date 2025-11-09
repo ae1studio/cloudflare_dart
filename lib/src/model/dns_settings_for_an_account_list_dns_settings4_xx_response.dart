@@ -149,11 +149,11 @@ class _$DnsSettingsForAnAccountListDnsSettings4XXResponseSerializer implements P
 class DnsSettingsForAnAccountListDnsSettings4XXResponseResultEnum extends EnumClass {
 
 
-  static Serializer<DnsSettingsForAnAccountListDnsSettings4XXResponseResultEnum> get serializer => _$dnsSettingsForAnAccountListDnsSettings4XXResponseResultSerializer;
+  static Serializer<DnsSettingsForAnAccountListDnsSettings4XXResponseResultEnum> get serializer => _$dnsSettingsForAnAccountListDnsSettings4XXResponseResultEnumSerializer;
 
   const DnsSettingsForAnAccountListDnsSettings4XXResponseResultEnum._(String name): super(name);
 
-  static BuiltSet<DnsSettingsForAnAccountListDnsSettings4XXResponseResultEnum> get values => _$dnsSettingsForAnAccountListDnsSettings4XXResponseResultValues;
-  static DnsSettingsForAnAccountListDnsSettings4XXResponseResultEnum valueOf(String name) => _$dnsSettingsForAnAccountListDnsSettings4XXResponseResultValueOf(name);
+  static BuiltSet<DnsSettingsForAnAccountListDnsSettings4XXResponseResultEnum> get values => _$dnsSettingsForAnAccountListDnsSettings4XXResponseResultEnumValues;
+  static DnsSettingsForAnAccountListDnsSettings4XXResponseResultEnum valueOf(String name) => _$dnsSettingsForAnAccountListDnsSettings4XXResponseResultEnumValueOf(name);
 }
 

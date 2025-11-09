@@ -134,11 +134,11 @@ class FirewallIpv6ConfigurationTargetEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'ip6')
   static const FirewallIpv6ConfigurationTargetEnum ip6 = _$firewallIpv6ConfigurationTargetEnum_ip6;
 
-  static Serializer<FirewallIpv6ConfigurationTargetEnum> get serializer => _$firewallIpv6ConfigurationTargetSerializer;
+  static Serializer<FirewallIpv6ConfigurationTargetEnum> get serializer => _$firewallIpv6ConfigurationTargetEnumSerializer;
 
   const FirewallIpv6ConfigurationTargetEnum._(String name): super(name);
 
-  static BuiltSet<FirewallIpv6ConfigurationTargetEnum> get values => _$firewallIpv6ConfigurationTargetValues;
-  static FirewallIpv6ConfigurationTargetEnum valueOf(String name) => _$firewallIpv6ConfigurationTargetValueOf(name);
+  static BuiltSet<FirewallIpv6ConfigurationTargetEnum> get values => _$firewallIpv6ConfigurationTargetEnumValues;
+  static FirewallIpv6ConfigurationTargetEnum valueOf(String name) => _$firewallIpv6ConfigurationTargetEnumValueOf(name);
 }
 

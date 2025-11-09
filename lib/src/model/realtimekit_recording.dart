@@ -357,11 +357,11 @@ class RealtimekitRecordingStatusEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'PAUSED')
   static const RealtimekitRecordingStatusEnum PAUSED = _$realtimekitRecordingStatusEnum_PAUSED;
 
-  static Serializer<RealtimekitRecordingStatusEnum> get serializer => _$realtimekitRecordingStatusSerializer;
+  static Serializer<RealtimekitRecordingStatusEnum> get serializer => _$realtimekitRecordingStatusEnumSerializer;
 
   const RealtimekitRecordingStatusEnum._(String name): super(name);
 
-  static BuiltSet<RealtimekitRecordingStatusEnum> get values => _$realtimekitRecordingStatusValues;
-  static RealtimekitRecordingStatusEnum valueOf(String name) => _$realtimekitRecordingStatusValueOf(name);
+  static BuiltSet<RealtimekitRecordingStatusEnum> get values => _$realtimekitRecordingStatusEnumValues;
+  static RealtimekitRecordingStatusEnum valueOf(String name) => _$realtimekitRecordingStatusEnumValueOf(name);
 }
 

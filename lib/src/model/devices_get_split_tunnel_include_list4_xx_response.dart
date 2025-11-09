@@ -165,11 +165,11 @@ class _$DevicesGetSplitTunnelIncludeList4XXResponseSerializer implements Primiti
 class DevicesGetSplitTunnelIncludeList4XXResponseResultEnum extends EnumClass {
 
 
-  static Serializer<DevicesGetSplitTunnelIncludeList4XXResponseResultEnum> get serializer => _$devicesGetSplitTunnelIncludeList4XXResponseResultSerializer;
+  static Serializer<DevicesGetSplitTunnelIncludeList4XXResponseResultEnum> get serializer => _$devicesGetSplitTunnelIncludeList4XXResponseResultEnumSerializer;
 
   const DevicesGetSplitTunnelIncludeList4XXResponseResultEnum._(String name): super(name);
 
-  static BuiltSet<DevicesGetSplitTunnelIncludeList4XXResponseResultEnum> get values => _$devicesGetSplitTunnelIncludeList4XXResponseResultValues;
-  static DevicesGetSplitTunnelIncludeList4XXResponseResultEnum valueOf(String name) => _$devicesGetSplitTunnelIncludeList4XXResponseResultValueOf(name);
+  static BuiltSet<DevicesGetSplitTunnelIncludeList4XXResponseResultEnum> get values => _$devicesGetSplitTunnelIncludeList4XXResponseResultEnumValues;
+  static DevicesGetSplitTunnelIncludeList4XXResponseResultEnum valueOf(String name) => _$devicesGetSplitTunnelIncludeList4XXResponseResultEnumValueOf(name);
 }
 

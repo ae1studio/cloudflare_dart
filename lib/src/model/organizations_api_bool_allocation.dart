@@ -127,11 +127,11 @@ class OrganizationsApiBoolAllocationTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'bool')
   static const OrganizationsApiBoolAllocationTypeEnum bool_ = _$organizationsApiBoolAllocationTypeEnum_bool_;
 
-  static Serializer<OrganizationsApiBoolAllocationTypeEnum> get serializer => _$organizationsApiBoolAllocationTypeSerializer;
+  static Serializer<OrganizationsApiBoolAllocationTypeEnum> get serializer => _$organizationsApiBoolAllocationTypeEnumSerializer;
 
   const OrganizationsApiBoolAllocationTypeEnum._(String name): super(name);
 
-  static BuiltSet<OrganizationsApiBoolAllocationTypeEnum> get values => _$organizationsApiBoolAllocationTypeValues;
-  static OrganizationsApiBoolAllocationTypeEnum valueOf(String name) => _$organizationsApiBoolAllocationTypeValueOf(name);
+  static BuiltSet<OrganizationsApiBoolAllocationTypeEnum> get values => _$organizationsApiBoolAllocationTypeEnumValues;
+  static OrganizationsApiBoolAllocationTypeEnum valueOf(String name) => _$organizationsApiBoolAllocationTypeEnumValueOf(name);
 }
 

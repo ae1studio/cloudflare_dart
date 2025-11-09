@@ -149,11 +149,11 @@ class _$WorkerDomainAttachToDomain4XXResponseSerializer implements PrimitiveSeri
 class WorkerDomainAttachToDomain4XXResponseResultEnum extends EnumClass {
 
 
-  static Serializer<WorkerDomainAttachToDomain4XXResponseResultEnum> get serializer => _$workerDomainAttachToDomain4XXResponseResultSerializer;
+  static Serializer<WorkerDomainAttachToDomain4XXResponseResultEnum> get serializer => _$workerDomainAttachToDomain4XXResponseResultEnumSerializer;
 
   const WorkerDomainAttachToDomain4XXResponseResultEnum._(String name): super(name);
 
-  static BuiltSet<WorkerDomainAttachToDomain4XXResponseResultEnum> get values => _$workerDomainAttachToDomain4XXResponseResultValues;
-  static WorkerDomainAttachToDomain4XXResponseResultEnum valueOf(String name) => _$workerDomainAttachToDomain4XXResponseResultValueOf(name);
+  static BuiltSet<WorkerDomainAttachToDomain4XXResponseResultEnum> get values => _$workerDomainAttachToDomain4XXResponseResultEnumValues;
+  static WorkerDomainAttachToDomain4XXResponseResultEnum valueOf(String name) => _$workerDomainAttachToDomain4XXResponseResultEnumValueOf(name);
 }
 

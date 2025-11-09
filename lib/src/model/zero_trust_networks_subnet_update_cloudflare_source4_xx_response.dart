@@ -148,11 +148,11 @@ class _$ZeroTrustNetworksSubnetUpdateCloudflareSource4XXResponseSerializer imple
 class ZeroTrustNetworksSubnetUpdateCloudflareSource4XXResponseResultEnum extends EnumClass {
 
 
-  static Serializer<ZeroTrustNetworksSubnetUpdateCloudflareSource4XXResponseResultEnum> get serializer => _$zeroTrustNetworksSubnetUpdateCloudflareSource4XXResponseResultSerializer;
+  static Serializer<ZeroTrustNetworksSubnetUpdateCloudflareSource4XXResponseResultEnum> get serializer => _$zeroTrustNetworksSubnetUpdateCloudflareSource4XXResponseResultEnumSerializer;
 
   const ZeroTrustNetworksSubnetUpdateCloudflareSource4XXResponseResultEnum._(String name): super(name);
 
-  static BuiltSet<ZeroTrustNetworksSubnetUpdateCloudflareSource4XXResponseResultEnum> get values => _$zeroTrustNetworksSubnetUpdateCloudflareSource4XXResponseResultValues;
-  static ZeroTrustNetworksSubnetUpdateCloudflareSource4XXResponseResultEnum valueOf(String name) => _$zeroTrustNetworksSubnetUpdateCloudflareSource4XXResponseResultValueOf(name);
+  static BuiltSet<ZeroTrustNetworksSubnetUpdateCloudflareSource4XXResponseResultEnum> get values => _$zeroTrustNetworksSubnetUpdateCloudflareSource4XXResponseResultEnumValues;
+  static ZeroTrustNetworksSubnetUpdateCloudflareSource4XXResponseResultEnum valueOf(String name) => _$zeroTrustNetworksSubnetUpdateCloudflareSource4XXResponseResultEnumValueOf(name);
 }
 

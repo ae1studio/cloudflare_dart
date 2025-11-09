@@ -148,11 +148,11 @@ class _$IpAccessRulesForAUserCreateAnIpAccessRule4XXResponseSerializer implement
 class IpAccessRulesForAUserCreateAnIpAccessRule4XXResponseResultEnum extends EnumClass {
 
 
-  static Serializer<IpAccessRulesForAUserCreateAnIpAccessRule4XXResponseResultEnum> get serializer => _$ipAccessRulesForAUserCreateAnIpAccessRule4XXResponseResultSerializer;
+  static Serializer<IpAccessRulesForAUserCreateAnIpAccessRule4XXResponseResultEnum> get serializer => _$ipAccessRulesForAUserCreateAnIpAccessRule4XXResponseResultEnumSerializer;
 
   const IpAccessRulesForAUserCreateAnIpAccessRule4XXResponseResultEnum._(String name): super(name);
 
-  static BuiltSet<IpAccessRulesForAUserCreateAnIpAccessRule4XXResponseResultEnum> get values => _$ipAccessRulesForAUserCreateAnIpAccessRule4XXResponseResultValues;
-  static IpAccessRulesForAUserCreateAnIpAccessRule4XXResponseResultEnum valueOf(String name) => _$ipAccessRulesForAUserCreateAnIpAccessRule4XXResponseResultValueOf(name);
+  static BuiltSet<IpAccessRulesForAUserCreateAnIpAccessRule4XXResponseResultEnum> get values => _$ipAccessRulesForAUserCreateAnIpAccessRule4XXResponseResultEnumValues;
+  static IpAccessRulesForAUserCreateAnIpAccessRule4XXResponseResultEnum valueOf(String name) => _$ipAccessRulesForAUserCreateAnIpAccessRule4XXResponseResultEnumValueOf(name);
 }
 

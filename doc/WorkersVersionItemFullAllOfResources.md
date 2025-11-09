@@ -8,7 +8,7 @@ import 'package:cloudflare_dart/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**bindings** | [**WorkersVersionItemFullAllOfResourcesBindings**](WorkersVersionItemFullAllOfResourcesBindings.md) |  | [optional] 
+**bindings** | [**BuiltList&lt;WorkersBindingItem&gt;**](WorkersBindingItem.md) | List of bindings attached to a Worker. You can find more about bindings on our docs: https://developers.cloudflare.com/workers/configuration/multipart-upload-metadata/#bindings. | [optional] 
 **script** | [**WorkersVersionItemFullAllOfResourcesScript**](WorkersVersionItemFullAllOfResourcesScript.md) |  | [optional] 
 **scriptRuntime** | [**WorkersVersionItemFullAllOfResourcesScriptRuntime**](WorkersVersionItemFullAllOfResourcesScriptRuntime.md) |  | [optional] 
 

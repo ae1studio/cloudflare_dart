@@ -156,11 +156,11 @@ class ZonesSchemasPolishIdEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'polish')
   static const ZonesSchemasPolishIdEnum polish = _$zonesSchemasPolishIdEnum_polish;
 
-  static Serializer<ZonesSchemasPolishIdEnum> get serializer => _$zonesSchemasPolishIdSerializer;
+  static Serializer<ZonesSchemasPolishIdEnum> get serializer => _$zonesSchemasPolishIdEnumSerializer;
 
   const ZonesSchemasPolishIdEnum._(String name): super(name);
 
-  static BuiltSet<ZonesSchemasPolishIdEnum> get values => _$zonesSchemasPolishIdValues;
-  static ZonesSchemasPolishIdEnum valueOf(String name) => _$zonesSchemasPolishIdValueOf(name);
+  static BuiltSet<ZonesSchemasPolishIdEnum> get values => _$zonesSchemasPolishIdEnumValues;
+  static ZonesSchemasPolishIdEnum valueOf(String name) => _$zonesSchemasPolishIdEnumValueOf(name);
 }
 

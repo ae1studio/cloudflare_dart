@@ -32,10 +32,10 @@ abstract class MagicTunnelHealthCheck implements MagicHealthCheckBase, Built<Mag
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(MagicTunnelHealthCheckBuilder b) => b
-      ..type = const MagicHealthCheckBaseTypeEnum._('reply')
-      ..rate = const MagicHealthCheckBaseRateEnum._('mid')
+      ..type = MagicHealthCheckBaseTypeEnum.valueOf('reply')
+      ..rate = MagicHealthCheckBaseRateEnum.valueOf('mid')
       ..enabled = true
-      ..direction = const MagicTunnelHealthCheckDirectionEnum._('unidirectional');
+      ..direction = MagicTunnelHealthCheckDirectionEnum.valueOf('unidirectional');
 
   @BuiltValueSerializer(custom: true)
   static Serializer<MagicTunnelHealthCheck> get serializer => _$MagicTunnelHealthCheckSerializer();
@@ -187,12 +187,12 @@ class MagicTunnelHealthCheckRateEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'high')
   static const MagicTunnelHealthCheckRateEnum high = _$magicTunnelHealthCheckRateEnum_high;
 
-  static Serializer<MagicTunnelHealthCheckRateEnum> get serializer => _$magicTunnelHealthCheckRateSerializer;
+  static Serializer<MagicTunnelHealthCheckRateEnum> get serializer => _$magicTunnelHealthCheckRateEnumSerializer;
 
   const MagicTunnelHealthCheckRateEnum._(String name): super(name);
 
-  static BuiltSet<MagicTunnelHealthCheckRateEnum> get values => _$magicTunnelHealthCheckRateValues;
-  static MagicTunnelHealthCheckRateEnum valueOf(String name) => _$magicTunnelHealthCheckRateValueOf(name);
+  static BuiltSet<MagicTunnelHealthCheckRateEnum> get values => _$magicTunnelHealthCheckRateEnumValues;
+  static MagicTunnelHealthCheckRateEnum valueOf(String name) => _$magicTunnelHealthCheckRateEnumValueOf(name);
 }
 
 class MagicTunnelHealthCheckTypeEnum extends EnumClass {
@@ -204,12 +204,12 @@ class MagicTunnelHealthCheckTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'request')
   static const MagicTunnelHealthCheckTypeEnum request = _$magicTunnelHealthCheckTypeEnum_request;
 
-  static Serializer<MagicTunnelHealthCheckTypeEnum> get serializer => _$magicTunnelHealthCheckTypeSerializer;
+  static Serializer<MagicTunnelHealthCheckTypeEnum> get serializer => _$magicTunnelHealthCheckTypeEnumSerializer;
 
   const MagicTunnelHealthCheckTypeEnum._(String name): super(name);
 
-  static BuiltSet<MagicTunnelHealthCheckTypeEnum> get values => _$magicTunnelHealthCheckTypeValues;
-  static MagicTunnelHealthCheckTypeEnum valueOf(String name) => _$magicTunnelHealthCheckTypeValueOf(name);
+  static BuiltSet<MagicTunnelHealthCheckTypeEnum> get values => _$magicTunnelHealthCheckTypeEnumValues;
+  static MagicTunnelHealthCheckTypeEnum valueOf(String name) => _$magicTunnelHealthCheckTypeEnumValueOf(name);
 }
 
 class MagicTunnelHealthCheckDirectionEnum extends EnumClass {
@@ -221,11 +221,11 @@ class MagicTunnelHealthCheckDirectionEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'bidirectional')
   static const MagicTunnelHealthCheckDirectionEnum bidirectional = _$magicTunnelHealthCheckDirectionEnum_bidirectional;
 
-  static Serializer<MagicTunnelHealthCheckDirectionEnum> get serializer => _$magicTunnelHealthCheckDirectionSerializer;
+  static Serializer<MagicTunnelHealthCheckDirectionEnum> get serializer => _$magicTunnelHealthCheckDirectionEnumSerializer;
 
   const MagicTunnelHealthCheckDirectionEnum._(String name): super(name);
 
-  static BuiltSet<MagicTunnelHealthCheckDirectionEnum> get values => _$magicTunnelHealthCheckDirectionValues;
-  static MagicTunnelHealthCheckDirectionEnum valueOf(String name) => _$magicTunnelHealthCheckDirectionValueOf(name);
+  static BuiltSet<MagicTunnelHealthCheckDirectionEnum> get values => _$magicTunnelHealthCheckDirectionEnumValues;
+  static MagicTunnelHealthCheckDirectionEnum valueOf(String name) => _$magicTunnelHealthCheckDirectionEnumValueOf(name);
 }
 

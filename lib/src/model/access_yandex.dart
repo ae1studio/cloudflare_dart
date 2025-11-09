@@ -206,11 +206,11 @@ class AccessYandexTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'yandex')
   static const AccessYandexTypeEnum yandex = _$accessYandexTypeEnum_yandex;
 
-  static Serializer<AccessYandexTypeEnum> get serializer => _$accessYandexTypeSerializer;
+  static Serializer<AccessYandexTypeEnum> get serializer => _$accessYandexTypeEnumSerializer;
 
   const AccessYandexTypeEnum._(String name): super(name);
 
-  static BuiltSet<AccessYandexTypeEnum> get values => _$accessYandexTypeValues;
-  static AccessYandexTypeEnum valueOf(String name) => _$accessYandexTypeValueOf(name);
+  static BuiltSet<AccessYandexTypeEnum> get values => _$accessYandexTypeEnumValues;
+  static AccessYandexTypeEnum valueOf(String name) => _$accessYandexTypeEnumValueOf(name);
 }
 

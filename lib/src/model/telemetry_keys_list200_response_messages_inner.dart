@@ -111,11 +111,11 @@ class TelemetryKeysList200ResponseMessagesInnerMessageEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'Successful request')
   static const TelemetryKeysList200ResponseMessagesInnerMessageEnum successfulRequest = _$telemetryKeysList200ResponseMessagesInnerMessageEnum_successfulRequest;
 
-  static Serializer<TelemetryKeysList200ResponseMessagesInnerMessageEnum> get serializer => _$telemetryKeysList200ResponseMessagesInnerMessageSerializer;
+  static Serializer<TelemetryKeysList200ResponseMessagesInnerMessageEnum> get serializer => _$telemetryKeysList200ResponseMessagesInnerMessageEnumSerializer;
 
   const TelemetryKeysList200ResponseMessagesInnerMessageEnum._(String name): super(name);
 
-  static BuiltSet<TelemetryKeysList200ResponseMessagesInnerMessageEnum> get values => _$telemetryKeysList200ResponseMessagesInnerMessageValues;
-  static TelemetryKeysList200ResponseMessagesInnerMessageEnum valueOf(String name) => _$telemetryKeysList200ResponseMessagesInnerMessageValueOf(name);
+  static BuiltSet<TelemetryKeysList200ResponseMessagesInnerMessageEnum> get values => _$telemetryKeysList200ResponseMessagesInnerMessageEnumValues;
+  static TelemetryKeysList200ResponseMessagesInnerMessageEnum valueOf(String name) => _$telemetryKeysList200ResponseMessagesInnerMessageEnumValueOf(name);
 }
 

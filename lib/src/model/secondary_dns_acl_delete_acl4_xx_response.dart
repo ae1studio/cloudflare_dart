@@ -150,11 +150,11 @@ class _$SecondaryDnsAclDeleteAcl4XXResponseSerializer implements PrimitiveSerial
 class SecondaryDnsAclDeleteAcl4XXResponseResultEnum extends EnumClass {
 
 
-  static Serializer<SecondaryDnsAclDeleteAcl4XXResponseResultEnum> get serializer => _$secondaryDnsAclDeleteAcl4XXResponseResultSerializer;
+  static Serializer<SecondaryDnsAclDeleteAcl4XXResponseResultEnum> get serializer => _$secondaryDnsAclDeleteAcl4XXResponseResultEnumSerializer;
 
   const SecondaryDnsAclDeleteAcl4XXResponseResultEnum._(String name): super(name);
 
-  static BuiltSet<SecondaryDnsAclDeleteAcl4XXResponseResultEnum> get values => _$secondaryDnsAclDeleteAcl4XXResponseResultValues;
-  static SecondaryDnsAclDeleteAcl4XXResponseResultEnum valueOf(String name) => _$secondaryDnsAclDeleteAcl4XXResponseResultValueOf(name);
+  static BuiltSet<SecondaryDnsAclDeleteAcl4XXResponseResultEnum> get values => _$secondaryDnsAclDeleteAcl4XXResponseResultEnumValues;
+  static SecondaryDnsAclDeleteAcl4XXResponseResultEnum valueOf(String name) => _$secondaryDnsAclDeleteAcl4XXResponseResultEnumValueOf(name);
 }
 

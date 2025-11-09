@@ -5,8 +5,8 @@
 // ignore_for_file: unused_element
 import 'package:built_collection/built_collection.dart';
 import 'package:cloudflare_dart/src/model/access_target_criteria_infra_app.dart';
+import 'package:cloudflare_dart/src/model/access_type.dart';
 import 'package:cloudflare_dart/src/model/access_app_resp_embedded_target_criteria_infra.dart';
-import 'package:cloudflare_dart/src/model/access_infra_props_all_of_type.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
@@ -25,7 +25,8 @@ abstract class AccessInfraProps implements AccessAppRespEmbeddedTargetCriteriaIn
   String? get name;
 
   @BuiltValueField(wireName: r'type')
-  AccessInfraPropsAllOfType get type;
+  AccessType get type;
+  // enum typeEnum {  self_hosted,  saas,  ssh,  vnc,  app_launcher,  warp,  biso,  bookmark,  dash_sso,  infrastructure,  rdp,  mcp,  mcp_portal,  };
 
   @BuiltValueSerializer(custom: true)
   static Serializer<AccessInfraProps> get serializer => _$AccessInfraPropsSerializer();
@@ -53,7 +54,7 @@ class _$AccessInfraPropsSerializer implements PrimitiveSerializer<AccessInfraPro
     yield r'type';
     yield serializers.serialize(
       object.type,
-      specifiedType: const FullType(AccessInfraPropsAllOfType),
+      specifiedType: const FullType(AccessType),
     );
     if (object.targetCriteria != null) {
       yield r'target_criteria';
@@ -135,9 +136,9 @@ class _$$AccessInfraPropsSerializer implements PrimitiveSerializer<$AccessInfraP
         case r'type':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(AccessInfraPropsAllOfType),
-          ) as AccessInfraPropsAllOfType;
-          result.type.replace(valueDes);
+            specifiedType: const FullType(AccessType),
+          ) as AccessType;
+          result.type = valueDes;
           break;
         case r'target_criteria':
           final valueDes = serializers.deserialize(

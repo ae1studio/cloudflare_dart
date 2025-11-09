@@ -222,11 +222,11 @@ class ZeroTrustGatewayProxyEndpointIpKindEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'ip')
   static const ZeroTrustGatewayProxyEndpointIpKindEnum ip = _$zeroTrustGatewayProxyEndpointIpKindEnum_ip;
 
-  static Serializer<ZeroTrustGatewayProxyEndpointIpKindEnum> get serializer => _$zeroTrustGatewayProxyEndpointIpKindSerializer;
+  static Serializer<ZeroTrustGatewayProxyEndpointIpKindEnum> get serializer => _$zeroTrustGatewayProxyEndpointIpKindEnumSerializer;
 
   const ZeroTrustGatewayProxyEndpointIpKindEnum._(String name): super(name);
 
-  static BuiltSet<ZeroTrustGatewayProxyEndpointIpKindEnum> get values => _$zeroTrustGatewayProxyEndpointIpKindValues;
-  static ZeroTrustGatewayProxyEndpointIpKindEnum valueOf(String name) => _$zeroTrustGatewayProxyEndpointIpKindValueOf(name);
+  static BuiltSet<ZeroTrustGatewayProxyEndpointIpKindEnum> get values => _$zeroTrustGatewayProxyEndpointIpKindEnumValues;
+  static ZeroTrustGatewayProxyEndpointIpKindEnum valueOf(String name) => _$zeroTrustGatewayProxyEndpointIpKindEnumValueOf(name);
 }
 

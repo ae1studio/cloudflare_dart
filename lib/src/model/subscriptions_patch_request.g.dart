@@ -8,7 +8,7 @@ part of 'subscriptions_patch_request.dart';
 
 class _$SubscriptionsPatchRequest extends SubscriptionsPatchRequest {
   @override
-  final MqEventDestination? destination;
+  final MqEventDestinationQueue? destination;
   @override
   final bool? enabled;
   @override
@@ -69,10 +69,10 @@ class SubscriptionsPatchRequestBuilder
         Builder<SubscriptionsPatchRequest, SubscriptionsPatchRequestBuilder> {
   _$SubscriptionsPatchRequest? _$v;
 
-  MqEventDestinationBuilder? _destination;
-  MqEventDestinationBuilder get destination =>
-      _$this._destination ??= MqEventDestinationBuilder();
-  set destination(MqEventDestinationBuilder? destination) =>
+  MqEventDestinationQueueBuilder? _destination;
+  MqEventDestinationQueueBuilder get destination =>
+      _$this._destination ??= MqEventDestinationQueueBuilder();
+  set destination(MqEventDestinationQueueBuilder? destination) =>
       _$this._destination = destination;
 
   bool? _enabled;

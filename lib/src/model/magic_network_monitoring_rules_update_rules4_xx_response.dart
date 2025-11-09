@@ -148,11 +148,11 @@ class _$MagicNetworkMonitoringRulesUpdateRules4XXResponseSerializer implements P
 class MagicNetworkMonitoringRulesUpdateRules4XXResponseResultEnum extends EnumClass {
 
 
-  static Serializer<MagicNetworkMonitoringRulesUpdateRules4XXResponseResultEnum> get serializer => _$magicNetworkMonitoringRulesUpdateRules4XXResponseResultSerializer;
+  static Serializer<MagicNetworkMonitoringRulesUpdateRules4XXResponseResultEnum> get serializer => _$magicNetworkMonitoringRulesUpdateRules4XXResponseResultEnumSerializer;
 
   const MagicNetworkMonitoringRulesUpdateRules4XXResponseResultEnum._(String name): super(name);
 
-  static BuiltSet<MagicNetworkMonitoringRulesUpdateRules4XXResponseResultEnum> get values => _$magicNetworkMonitoringRulesUpdateRules4XXResponseResultValues;
-  static MagicNetworkMonitoringRulesUpdateRules4XXResponseResultEnum valueOf(String name) => _$magicNetworkMonitoringRulesUpdateRules4XXResponseResultValueOf(name);
+  static BuiltSet<MagicNetworkMonitoringRulesUpdateRules4XXResponseResultEnum> get values => _$magicNetworkMonitoringRulesUpdateRules4XXResponseResultEnumValues;
+  static MagicNetworkMonitoringRulesUpdateRules4XXResponseResultEnum valueOf(String name) => _$magicNetworkMonitoringRulesUpdateRules4XXResponseResultEnumValueOf(name);
 }
 

@@ -149,11 +149,11 @@ class _$CustomPagesForAnAccountGetACustomPage4xxResponseSerializer implements Pr
 class CustomPagesForAnAccountGetACustomPage4xxResponseResultEnum extends EnumClass {
 
 
-  static Serializer<CustomPagesForAnAccountGetACustomPage4xxResponseResultEnum> get serializer => _$customPagesForAnAccountGetACustomPage4xxResponseResultSerializer;
+  static Serializer<CustomPagesForAnAccountGetACustomPage4xxResponseResultEnum> get serializer => _$customPagesForAnAccountGetACustomPage4xxResponseResultEnumSerializer;
 
   const CustomPagesForAnAccountGetACustomPage4xxResponseResultEnum._(String name): super(name);
 
-  static BuiltSet<CustomPagesForAnAccountGetACustomPage4xxResponseResultEnum> get values => _$customPagesForAnAccountGetACustomPage4xxResponseResultValues;
-  static CustomPagesForAnAccountGetACustomPage4xxResponseResultEnum valueOf(String name) => _$customPagesForAnAccountGetACustomPage4xxResponseResultValueOf(name);
+  static BuiltSet<CustomPagesForAnAccountGetACustomPage4xxResponseResultEnum> get values => _$customPagesForAnAccountGetACustomPage4xxResponseResultEnumValues;
+  static CustomPagesForAnAccountGetACustomPage4xxResponseResultEnum valueOf(String name) => _$customPagesForAnAccountGetACustomPage4xxResponseResultEnumValueOf(name);
 }
 

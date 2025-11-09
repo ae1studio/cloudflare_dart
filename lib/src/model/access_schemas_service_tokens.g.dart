@@ -16,7 +16,7 @@ class _$AccessSchemasServiceTokens extends AccessSchemasServiceTokens {
   @override
   final DateTime? expiresAt;
   @override
-  final JsonObject? id;
+  final String? id;
   @override
   final DateTime? lastSeenAt;
   @override
@@ -112,9 +112,9 @@ class AccessSchemasServiceTokensBuilder
   DateTime? get expiresAt => _$this._expiresAt;
   set expiresAt(DateTime? expiresAt) => _$this._expiresAt = expiresAt;
 
-  JsonObject? _id;
-  JsonObject? get id => _$this._id;
-  set id(JsonObject? id) => _$this._id = id;
+  String? _id;
+  String? get id => _$this._id;
+  set id(String? id) => _$this._id = id;
 
   DateTime? _lastSeenAt;
   DateTime? get lastSeenAt => _$this._lastSeenAt;

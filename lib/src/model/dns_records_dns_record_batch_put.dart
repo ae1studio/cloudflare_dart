@@ -16,7 +16,6 @@ part 'dns_records_dns_record_batch_put.g.dart';
 /// DnsRecordsDnsRecordBatchPut
 ///
 /// Properties:
-/// * [id] - Identifier.
 /// * [comment] - Comments or notes about the DNS record. This field has no effect on DNS responses.
 /// * [name] - Complete DNS record name, including the zone name, in Punycode.
 /// * [proxied] - Whether the record is receiving the performance and security benefits of Cloudflare.
@@ -27,6 +26,7 @@ part 'dns_records_dns_record_batch_put.g.dart';
 /// * [type] - Record type.
 /// * [priority] - Required for MX, SRV and URI records; unused by other record types. Records with lower priorities are preferred.
 /// * [data] 
+/// * [id] - Identifier.
 @BuiltValue()
 abstract class DnsRecordsDnsRecordBatchPut implements DnsRecordsDnsRecordPost, Built<DnsRecordsDnsRecordBatchPut, DnsRecordsDnsRecordBatchPutBuilder> {
   /// Identifier.
@@ -268,11 +268,11 @@ class DnsRecordsDnsRecordBatchPutTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'URI')
   static const DnsRecordsDnsRecordBatchPutTypeEnum URI = _$dnsRecordsDnsRecordBatchPutTypeEnum_URI;
 
-  static Serializer<DnsRecordsDnsRecordBatchPutTypeEnum> get serializer => _$dnsRecordsDnsRecordBatchPutTypeSerializer;
+  static Serializer<DnsRecordsDnsRecordBatchPutTypeEnum> get serializer => _$dnsRecordsDnsRecordBatchPutTypeEnumSerializer;
 
   const DnsRecordsDnsRecordBatchPutTypeEnum._(String name): super(name);
 
-  static BuiltSet<DnsRecordsDnsRecordBatchPutTypeEnum> get values => _$dnsRecordsDnsRecordBatchPutTypeValues;
-  static DnsRecordsDnsRecordBatchPutTypeEnum valueOf(String name) => _$dnsRecordsDnsRecordBatchPutTypeValueOf(name);
+  static BuiltSet<DnsRecordsDnsRecordBatchPutTypeEnum> get values => _$dnsRecordsDnsRecordBatchPutTypeEnumValues;
+  static DnsRecordsDnsRecordBatchPutTypeEnum valueOf(String name) => _$dnsRecordsDnsRecordBatchPutTypeEnumValueOf(name);
 }
 

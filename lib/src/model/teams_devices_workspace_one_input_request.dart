@@ -136,11 +136,11 @@ class TeamsDevicesWorkspaceOneInputRequestComplianceStatusEnum extends EnumClass
   @BuiltValueEnumConst(wireName: r'unknown')
   static const TeamsDevicesWorkspaceOneInputRequestComplianceStatusEnum unknown = _$teamsDevicesWorkspaceOneInputRequestComplianceStatusEnum_unknown;
 
-  static Serializer<TeamsDevicesWorkspaceOneInputRequestComplianceStatusEnum> get serializer => _$teamsDevicesWorkspaceOneInputRequestComplianceStatusSerializer;
+  static Serializer<TeamsDevicesWorkspaceOneInputRequestComplianceStatusEnum> get serializer => _$teamsDevicesWorkspaceOneInputRequestComplianceStatusEnumSerializer;
 
   const TeamsDevicesWorkspaceOneInputRequestComplianceStatusEnum._(String name): super(name);
 
-  static BuiltSet<TeamsDevicesWorkspaceOneInputRequestComplianceStatusEnum> get values => _$teamsDevicesWorkspaceOneInputRequestComplianceStatusValues;
-  static TeamsDevicesWorkspaceOneInputRequestComplianceStatusEnum valueOf(String name) => _$teamsDevicesWorkspaceOneInputRequestComplianceStatusValueOf(name);
+  static BuiltSet<TeamsDevicesWorkspaceOneInputRequestComplianceStatusEnum> get values => _$teamsDevicesWorkspaceOneInputRequestComplianceStatusEnumValues;
+  static TeamsDevicesWorkspaceOneInputRequestComplianceStatusEnum valueOf(String name) => _$teamsDevicesWorkspaceOneInputRequestComplianceStatusEnumValueOf(name);
 }
 

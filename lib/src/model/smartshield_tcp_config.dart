@@ -31,7 +31,7 @@ abstract class SmartshieldTcpConfig implements Built<SmartshieldTcpConfig, Smart
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(SmartshieldTcpConfigBuilder b) => b
-      ..method = const SmartshieldTcpConfigMethodEnum._('connection_established')
+      ..method = SmartshieldTcpConfigMethodEnum.valueOf('connection_established')
       ..port = 80;
 
   @BuiltValueSerializer(custom: true)
@@ -136,11 +136,11 @@ class SmartshieldTcpConfigMethodEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'connection_established')
   static const SmartshieldTcpConfigMethodEnum connectionEstablished = _$smartshieldTcpConfigMethodEnum_connectionEstablished;
 
-  static Serializer<SmartshieldTcpConfigMethodEnum> get serializer => _$smartshieldTcpConfigMethodSerializer;
+  static Serializer<SmartshieldTcpConfigMethodEnum> get serializer => _$smartshieldTcpConfigMethodEnumSerializer;
 
   const SmartshieldTcpConfigMethodEnum._(String name): super(name);
 
-  static BuiltSet<SmartshieldTcpConfigMethodEnum> get values => _$smartshieldTcpConfigMethodValues;
-  static SmartshieldTcpConfigMethodEnum valueOf(String name) => _$smartshieldTcpConfigMethodValueOf(name);
+  static BuiltSet<SmartshieldTcpConfigMethodEnum> get values => _$smartshieldTcpConfigMethodEnumValues;
+  static SmartshieldTcpConfigMethodEnum valueOf(String name) => _$smartshieldTcpConfigMethodEnumValueOf(name);
 }
 

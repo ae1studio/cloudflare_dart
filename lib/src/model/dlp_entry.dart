@@ -106,11 +106,11 @@ class DlpEntryTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'word_list')
   static const DlpEntryTypeEnum wordList = _$dlpEntryTypeEnum_wordList;
 
-  static Serializer<DlpEntryTypeEnum> get serializer => _$dlpEntryTypeSerializer;
+  static Serializer<DlpEntryTypeEnum> get serializer => _$dlpEntryTypeEnumSerializer;
 
   const DlpEntryTypeEnum._(String name): super(name);
 
-  static BuiltSet<DlpEntryTypeEnum> get values => _$dlpEntryTypeValues;
-  static DlpEntryTypeEnum valueOf(String name) => _$dlpEntryTypeValueOf(name);
+  static BuiltSet<DlpEntryTypeEnum> get values => _$dlpEntryTypeEnumValues;
+  static DlpEntryTypeEnum valueOf(String name) => _$dlpEntryTypeEnumValueOf(name);
 }
 

@@ -115,11 +115,11 @@ class R2SlurperConnectivityResponseConnectivityStatusEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'error')
   static const R2SlurperConnectivityResponseConnectivityStatusEnum error = _$r2SlurperConnectivityResponseConnectivityStatusEnum_error;
 
-  static Serializer<R2SlurperConnectivityResponseConnectivityStatusEnum> get serializer => _$r2SlurperConnectivityResponseConnectivityStatusSerializer;
+  static Serializer<R2SlurperConnectivityResponseConnectivityStatusEnum> get serializer => _$r2SlurperConnectivityResponseConnectivityStatusEnumSerializer;
 
   const R2SlurperConnectivityResponseConnectivityStatusEnum._(String name): super(name);
 
-  static BuiltSet<R2SlurperConnectivityResponseConnectivityStatusEnum> get values => _$r2SlurperConnectivityResponseConnectivityStatusValues;
-  static R2SlurperConnectivityResponseConnectivityStatusEnum valueOf(String name) => _$r2SlurperConnectivityResponseConnectivityStatusValueOf(name);
+  static BuiltSet<R2SlurperConnectivityResponseConnectivityStatusEnum> get values => _$r2SlurperConnectivityResponseConnectivityStatusEnumValues;
+  static R2SlurperConnectivityResponseConnectivityStatusEnum valueOf(String name) => _$r2SlurperConnectivityResponseConnectivityStatusEnumValueOf(name);
 }
 

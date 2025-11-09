@@ -156,11 +156,11 @@ class ZonesImageResizingIdEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'image_resizing')
   static const ZonesImageResizingIdEnum imageResizing = _$zonesImageResizingIdEnum_imageResizing;
 
-  static Serializer<ZonesImageResizingIdEnum> get serializer => _$zonesImageResizingIdSerializer;
+  static Serializer<ZonesImageResizingIdEnum> get serializer => _$zonesImageResizingIdEnumSerializer;
 
   const ZonesImageResizingIdEnum._(String name): super(name);
 
-  static BuiltSet<ZonesImageResizingIdEnum> get values => _$zonesImageResizingIdValues;
-  static ZonesImageResizingIdEnum valueOf(String name) => _$zonesImageResizingIdValueOf(name);
+  static BuiltSet<ZonesImageResizingIdEnum> get values => _$zonesImageResizingIdEnumValues;
+  static ZonesImageResizingIdEnum valueOf(String name) => _$zonesImageResizingIdEnumValueOf(name);
 }
 

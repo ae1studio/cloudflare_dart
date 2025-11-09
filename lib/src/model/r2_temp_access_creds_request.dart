@@ -212,11 +212,11 @@ class R2TempAccessCredsRequestPermissionEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'object-read-only')
   static const R2TempAccessCredsRequestPermissionEnum objectReadOnly = _$r2TempAccessCredsRequestPermissionEnum_objectReadOnly;
 
-  static Serializer<R2TempAccessCredsRequestPermissionEnum> get serializer => _$r2TempAccessCredsRequestPermissionSerializer;
+  static Serializer<R2TempAccessCredsRequestPermissionEnum> get serializer => _$r2TempAccessCredsRequestPermissionEnumSerializer;
 
   const R2TempAccessCredsRequestPermissionEnum._(String name): super(name);
 
-  static BuiltSet<R2TempAccessCredsRequestPermissionEnum> get values => _$r2TempAccessCredsRequestPermissionValues;
-  static R2TempAccessCredsRequestPermissionEnum valueOf(String name) => _$r2TempAccessCredsRequestPermissionValueOf(name);
+  static BuiltSet<R2TempAccessCredsRequestPermissionEnum> get values => _$r2TempAccessCredsRequestPermissionEnumValues;
+  static R2TempAccessCredsRequestPermissionEnum valueOf(String name) => _$r2TempAccessCredsRequestPermissionEnumValueOf(name);
 }
 

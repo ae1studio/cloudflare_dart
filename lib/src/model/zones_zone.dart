@@ -523,11 +523,11 @@ class ZonesZoneStatusEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'moved')
   static const ZonesZoneStatusEnum moved = _$zonesZoneStatusEnum_moved;
 
-  static Serializer<ZonesZoneStatusEnum> get serializer => _$zonesZoneStatusSerializer;
+  static Serializer<ZonesZoneStatusEnum> get serializer => _$zonesZoneStatusEnumSerializer;
 
   const ZonesZoneStatusEnum._(String name): super(name);
 
-  static BuiltSet<ZonesZoneStatusEnum> get values => _$zonesZoneStatusValues;
-  static ZonesZoneStatusEnum valueOf(String name) => _$zonesZoneStatusValueOf(name);
+  static BuiltSet<ZonesZoneStatusEnum> get values => _$zonesZoneStatusEnumValues;
+  static ZonesZoneStatusEnum valueOf(String name) => _$zonesZoneStatusEnumValueOf(name);
 }
 

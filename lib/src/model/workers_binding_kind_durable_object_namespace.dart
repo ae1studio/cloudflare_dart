@@ -205,11 +205,11 @@ class WorkersBindingKindDurableObjectNamespaceTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'durable_object_namespace')
   static const WorkersBindingKindDurableObjectNamespaceTypeEnum durableObjectNamespace = _$workersBindingKindDurableObjectNamespaceTypeEnum_durableObjectNamespace;
 
-  static Serializer<WorkersBindingKindDurableObjectNamespaceTypeEnum> get serializer => _$workersBindingKindDurableObjectNamespaceTypeSerializer;
+  static Serializer<WorkersBindingKindDurableObjectNamespaceTypeEnum> get serializer => _$workersBindingKindDurableObjectNamespaceTypeEnumSerializer;
 
   const WorkersBindingKindDurableObjectNamespaceTypeEnum._(String name): super(name);
 
-  static BuiltSet<WorkersBindingKindDurableObjectNamespaceTypeEnum> get values => _$workersBindingKindDurableObjectNamespaceTypeValues;
-  static WorkersBindingKindDurableObjectNamespaceTypeEnum valueOf(String name) => _$workersBindingKindDurableObjectNamespaceTypeValueOf(name);
+  static BuiltSet<WorkersBindingKindDurableObjectNamespaceTypeEnum> get values => _$workersBindingKindDurableObjectNamespaceTypeEnumValues;
+  static WorkersBindingKindDurableObjectNamespaceTypeEnum valueOf(String name) => _$workersBindingKindDurableObjectNamespaceTypeEnumValueOf(name);
 }
 

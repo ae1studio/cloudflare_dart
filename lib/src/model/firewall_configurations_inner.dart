@@ -78,11 +78,11 @@ class FirewallConfigurationsInnerTargetEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'ip_range')
   static const FirewallConfigurationsInnerTargetEnum ipRange = _$firewallConfigurationsInnerTargetEnum_ipRange;
 
-  static Serializer<FirewallConfigurationsInnerTargetEnum> get serializer => _$firewallConfigurationsInnerTargetSerializer;
+  static Serializer<FirewallConfigurationsInnerTargetEnum> get serializer => _$firewallConfigurationsInnerTargetEnumSerializer;
 
   const FirewallConfigurationsInnerTargetEnum._(String name): super(name);
 
-  static BuiltSet<FirewallConfigurationsInnerTargetEnum> get values => _$firewallConfigurationsInnerTargetValues;
-  static FirewallConfigurationsInnerTargetEnum valueOf(String name) => _$firewallConfigurationsInnerTargetValueOf(name);
+  static BuiltSet<FirewallConfigurationsInnerTargetEnum> get values => _$firewallConfigurationsInnerTargetEnumValues;
+  static FirewallConfigurationsInnerTargetEnum valueOf(String name) => _$firewallConfigurationsInnerTargetEnumValueOf(name);
 }
 

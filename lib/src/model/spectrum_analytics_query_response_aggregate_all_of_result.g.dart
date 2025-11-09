@@ -9,7 +9,7 @@ part of 'spectrum_analytics_query_response_aggregate_all_of_result.dart';
 class _$SpectrumAnalyticsQueryResponseAggregateAllOfResult
     extends SpectrumAnalyticsQueryResponseAggregateAllOfResult {
   @override
-  final SpectrumAnalyticsQueryResponseAggregateAllOfAppID appID;
+  final String appID;
   @override
   final num bytesEgress;
   @override
@@ -88,12 +88,9 @@ class SpectrumAnalyticsQueryResponseAggregateAllOfResultBuilder
             SpectrumAnalyticsQueryResponseAggregateAllOfResultBuilder> {
   _$SpectrumAnalyticsQueryResponseAggregateAllOfResult? _$v;
 
-  SpectrumAnalyticsQueryResponseAggregateAllOfAppIDBuilder? _appID;
-  SpectrumAnalyticsQueryResponseAggregateAllOfAppIDBuilder get appID =>
-      _$this._appID ??=
-          SpectrumAnalyticsQueryResponseAggregateAllOfAppIDBuilder();
-  set appID(SpectrumAnalyticsQueryResponseAggregateAllOfAppIDBuilder? appID) =>
-      _$this._appID = appID;
+  String? _appID;
+  String? get appID => _$this._appID;
+  set appID(String? appID) => _$this._appID = appID;
 
   num? _bytesEgress;
   num? get bytesEgress => _$this._bytesEgress;
@@ -118,7 +115,7 @@ class SpectrumAnalyticsQueryResponseAggregateAllOfResultBuilder
   SpectrumAnalyticsQueryResponseAggregateAllOfResultBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _appID = $v.appID.toBuilder();
+      _appID = $v.appID;
       _bytesEgress = $v.bytesEgress;
       _bytesIngress = $v.bytesIngress;
       _connections = $v.connections;
@@ -144,41 +141,27 @@ class SpectrumAnalyticsQueryResponseAggregateAllOfResultBuilder
   SpectrumAnalyticsQueryResponseAggregateAllOfResult build() => _build();
 
   _$SpectrumAnalyticsQueryResponseAggregateAllOfResult _build() {
-    _$SpectrumAnalyticsQueryResponseAggregateAllOfResult _$result;
-    try {
-      _$result = _$v ??
-          _$SpectrumAnalyticsQueryResponseAggregateAllOfResult._(
-            appID: appID.build(),
-            bytesEgress: BuiltValueNullFieldError.checkNotNull(
-                bytesEgress,
-                r'SpectrumAnalyticsQueryResponseAggregateAllOfResult',
-                'bytesEgress'),
-            bytesIngress: BuiltValueNullFieldError.checkNotNull(
-                bytesIngress,
-                r'SpectrumAnalyticsQueryResponseAggregateAllOfResult',
-                'bytesIngress'),
-            connections: BuiltValueNullFieldError.checkNotNull(
-                connections,
-                r'SpectrumAnalyticsQueryResponseAggregateAllOfResult',
-                'connections'),
-            durationAvg: BuiltValueNullFieldError.checkNotNull(
-                durationAvg,
-                r'SpectrumAnalyticsQueryResponseAggregateAllOfResult',
-                'durationAvg'),
-          );
-    } catch (_) {
-      late String _$failedField;
-      try {
-        _$failedField = 'appID';
-        appID.build();
-      } catch (e) {
-        throw BuiltValueNestedFieldError(
-            r'SpectrumAnalyticsQueryResponseAggregateAllOfResult',
-            _$failedField,
-            e.toString());
-      }
-      rethrow;
-    }
+    final _$result = _$v ??
+        _$SpectrumAnalyticsQueryResponseAggregateAllOfResult._(
+          appID: BuiltValueNullFieldError.checkNotNull(appID,
+              r'SpectrumAnalyticsQueryResponseAggregateAllOfResult', 'appID'),
+          bytesEgress: BuiltValueNullFieldError.checkNotNull(
+              bytesEgress,
+              r'SpectrumAnalyticsQueryResponseAggregateAllOfResult',
+              'bytesEgress'),
+          bytesIngress: BuiltValueNullFieldError.checkNotNull(
+              bytesIngress,
+              r'SpectrumAnalyticsQueryResponseAggregateAllOfResult',
+              'bytesIngress'),
+          connections: BuiltValueNullFieldError.checkNotNull(
+              connections,
+              r'SpectrumAnalyticsQueryResponseAggregateAllOfResult',
+              'connections'),
+          durationAvg: BuiltValueNullFieldError.checkNotNull(
+              durationAvg,
+              r'SpectrumAnalyticsQueryResponseAggregateAllOfResult',
+              'durationAvg'),
+        );
     replace(_$result);
     return _$result;
   }

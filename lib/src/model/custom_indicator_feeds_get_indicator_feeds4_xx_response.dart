@@ -150,11 +150,11 @@ class _$CustomIndicatorFeedsGetIndicatorFeeds4XXResponseSerializer implements Pr
 class CustomIndicatorFeedsGetIndicatorFeeds4XXResponseResultEnum extends EnumClass {
 
 
-  static Serializer<CustomIndicatorFeedsGetIndicatorFeeds4XXResponseResultEnum> get serializer => _$customIndicatorFeedsGetIndicatorFeeds4XXResponseResultSerializer;
+  static Serializer<CustomIndicatorFeedsGetIndicatorFeeds4XXResponseResultEnum> get serializer => _$customIndicatorFeedsGetIndicatorFeeds4XXResponseResultEnumSerializer;
 
   const CustomIndicatorFeedsGetIndicatorFeeds4XXResponseResultEnum._(String name): super(name);
 
-  static BuiltSet<CustomIndicatorFeedsGetIndicatorFeeds4XXResponseResultEnum> get values => _$customIndicatorFeedsGetIndicatorFeeds4XXResponseResultValues;
-  static CustomIndicatorFeedsGetIndicatorFeeds4XXResponseResultEnum valueOf(String name) => _$customIndicatorFeedsGetIndicatorFeeds4XXResponseResultValueOf(name);
+  static BuiltSet<CustomIndicatorFeedsGetIndicatorFeeds4XXResponseResultEnum> get values => _$customIndicatorFeedsGetIndicatorFeeds4XXResponseResultEnumValues;
+  static CustomIndicatorFeedsGetIndicatorFeeds4XXResponseResultEnum valueOf(String name) => _$customIndicatorFeedsGetIndicatorFeeds4XXResponseResultEnumValueOf(name);
 }
 

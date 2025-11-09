@@ -465,12 +465,12 @@ class AigConfigListGateway200ResponseResultInnerLogManagementStrategyEnum extend
   @BuiltValueEnumConst(wireName: r'DELETE_OLDEST')
   static const AigConfigListGateway200ResponseResultInnerLogManagementStrategyEnum DELETE_OLDEST = _$aigConfigListGateway200ResponseResultInnerLogManagementStrategyEnum_DELETE_OLDEST;
 
-  static Serializer<AigConfigListGateway200ResponseResultInnerLogManagementStrategyEnum> get serializer => _$aigConfigListGateway200ResponseResultInnerLogManagementStrategySerializer;
+  static Serializer<AigConfigListGateway200ResponseResultInnerLogManagementStrategyEnum> get serializer => _$aigConfigListGateway200ResponseResultInnerLogManagementStrategyEnumSerializer;
 
   const AigConfigListGateway200ResponseResultInnerLogManagementStrategyEnum._(String name): super(name);
 
-  static BuiltSet<AigConfigListGateway200ResponseResultInnerLogManagementStrategyEnum> get values => _$aigConfigListGateway200ResponseResultInnerLogManagementStrategyValues;
-  static AigConfigListGateway200ResponseResultInnerLogManagementStrategyEnum valueOf(String name) => _$aigConfigListGateway200ResponseResultInnerLogManagementStrategyValueOf(name);
+  static BuiltSet<AigConfigListGateway200ResponseResultInnerLogManagementStrategyEnum> get values => _$aigConfigListGateway200ResponseResultInnerLogManagementStrategyEnumValues;
+  static AigConfigListGateway200ResponseResultInnerLogManagementStrategyEnum valueOf(String name) => _$aigConfigListGateway200ResponseResultInnerLogManagementStrategyEnumValueOf(name);
 }
 
 class AigConfigListGateway200ResponseResultInnerRateLimitingTechniqueEnum extends EnumClass {
@@ -480,11 +480,11 @@ class AigConfigListGateway200ResponseResultInnerRateLimitingTechniqueEnum extend
   @BuiltValueEnumConst(wireName: r'sliding')
   static const AigConfigListGateway200ResponseResultInnerRateLimitingTechniqueEnum sliding = _$aigConfigListGateway200ResponseResultInnerRateLimitingTechniqueEnum_sliding;
 
-  static Serializer<AigConfigListGateway200ResponseResultInnerRateLimitingTechniqueEnum> get serializer => _$aigConfigListGateway200ResponseResultInnerRateLimitingTechniqueSerializer;
+  static Serializer<AigConfigListGateway200ResponseResultInnerRateLimitingTechniqueEnum> get serializer => _$aigConfigListGateway200ResponseResultInnerRateLimitingTechniqueEnumSerializer;
 
   const AigConfigListGateway200ResponseResultInnerRateLimitingTechniqueEnum._(String name): super(name);
 
-  static BuiltSet<AigConfigListGateway200ResponseResultInnerRateLimitingTechniqueEnum> get values => _$aigConfigListGateway200ResponseResultInnerRateLimitingTechniqueValues;
-  static AigConfigListGateway200ResponseResultInnerRateLimitingTechniqueEnum valueOf(String name) => _$aigConfigListGateway200ResponseResultInnerRateLimitingTechniqueValueOf(name);
+  static BuiltSet<AigConfigListGateway200ResponseResultInnerRateLimitingTechniqueEnum> get values => _$aigConfigListGateway200ResponseResultInnerRateLimitingTechniqueEnumValues;
+  static AigConfigListGateway200ResponseResultInnerRateLimitingTechniqueEnum valueOf(String name) => _$aigConfigListGateway200ResponseResultInnerRateLimitingTechniqueEnumValueOf(name);
 }
 

@@ -133,11 +133,11 @@ class AccessResponseCollectionAllOfResultTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'yandex')
   static const AccessResponseCollectionAllOfResultTypeEnum yandex = _$accessResponseCollectionAllOfResultTypeEnum_yandex;
 
-  static Serializer<AccessResponseCollectionAllOfResultTypeEnum> get serializer => _$accessResponseCollectionAllOfResultTypeSerializer;
+  static Serializer<AccessResponseCollectionAllOfResultTypeEnum> get serializer => _$accessResponseCollectionAllOfResultTypeEnumSerializer;
 
   const AccessResponseCollectionAllOfResultTypeEnum._(String name): super(name);
 
-  static BuiltSet<AccessResponseCollectionAllOfResultTypeEnum> get values => _$accessResponseCollectionAllOfResultTypeValues;
-  static AccessResponseCollectionAllOfResultTypeEnum valueOf(String name) => _$accessResponseCollectionAllOfResultTypeValueOf(name);
+  static BuiltSet<AccessResponseCollectionAllOfResultTypeEnum> get values => _$accessResponseCollectionAllOfResultTypeEnumValues;
+  static AccessResponseCollectionAllOfResultTypeEnum valueOf(String name) => _$accessResponseCollectionAllOfResultTypeEnumValueOf(name);
 }
 

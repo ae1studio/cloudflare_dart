@@ -164,11 +164,11 @@ class _$DomainIntelligenceGetMultipleDomainDetails4XXResponseSerializer implemen
 class DomainIntelligenceGetMultipleDomainDetails4XXResponseResultEnum extends EnumClass {
 
 
-  static Serializer<DomainIntelligenceGetMultipleDomainDetails4XXResponseResultEnum> get serializer => _$domainIntelligenceGetMultipleDomainDetails4XXResponseResultSerializer;
+  static Serializer<DomainIntelligenceGetMultipleDomainDetails4XXResponseResultEnum> get serializer => _$domainIntelligenceGetMultipleDomainDetails4XXResponseResultEnumSerializer;
 
   const DomainIntelligenceGetMultipleDomainDetails4XXResponseResultEnum._(String name): super(name);
 
-  static BuiltSet<DomainIntelligenceGetMultipleDomainDetails4XXResponseResultEnum> get values => _$domainIntelligenceGetMultipleDomainDetails4XXResponseResultValues;
-  static DomainIntelligenceGetMultipleDomainDetails4XXResponseResultEnum valueOf(String name) => _$domainIntelligenceGetMultipleDomainDetails4XXResponseResultValueOf(name);
+  static BuiltSet<DomainIntelligenceGetMultipleDomainDetails4XXResponseResultEnum> get values => _$domainIntelligenceGetMultipleDomainDetails4XXResponseResultEnumValues;
+  static DomainIntelligenceGetMultipleDomainDetails4XXResponseResultEnum valueOf(String name) => _$domainIntelligenceGetMultipleDomainDetails4XXResponseResultEnumValueOf(name);
 }
 

@@ -149,11 +149,11 @@ class _$DevicesCreateDeviceSettingsPolicy4XXResponseSerializer implements Primit
 class DevicesCreateDeviceSettingsPolicy4XXResponseResultEnum extends EnumClass {
 
 
-  static Serializer<DevicesCreateDeviceSettingsPolicy4XXResponseResultEnum> get serializer => _$devicesCreateDeviceSettingsPolicy4XXResponseResultSerializer;
+  static Serializer<DevicesCreateDeviceSettingsPolicy4XXResponseResultEnum> get serializer => _$devicesCreateDeviceSettingsPolicy4XXResponseResultEnumSerializer;
 
   const DevicesCreateDeviceSettingsPolicy4XXResponseResultEnum._(String name): super(name);
 
-  static BuiltSet<DevicesCreateDeviceSettingsPolicy4XXResponseResultEnum> get values => _$devicesCreateDeviceSettingsPolicy4XXResponseResultValues;
-  static DevicesCreateDeviceSettingsPolicy4XXResponseResultEnum valueOf(String name) => _$devicesCreateDeviceSettingsPolicy4XXResponseResultValueOf(name);
+  static BuiltSet<DevicesCreateDeviceSettingsPolicy4XXResponseResultEnum> get values => _$devicesCreateDeviceSettingsPolicy4XXResponseResultEnumValues;
+  static DevicesCreateDeviceSettingsPolicy4XXResponseResultEnum valueOf(String name) => _$devicesCreateDeviceSettingsPolicy4XXResponseResultEnumValueOf(name);
 }
 

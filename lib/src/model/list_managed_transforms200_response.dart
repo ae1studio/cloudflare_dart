@@ -150,12 +150,12 @@ class ListManagedTransforms200ResponseErrorsEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'[]')
   static const ListManagedTransforms200ResponseErrorsEnum leftSquareBracketRightSquareBracket = _$listManagedTransforms200ResponseErrorsEnum_leftSquareBracketRightSquareBracket;
 
-  static Serializer<ListManagedTransforms200ResponseErrorsEnum> get serializer => _$listManagedTransforms200ResponseErrorsSerializer;
+  static Serializer<ListManagedTransforms200ResponseErrorsEnum> get serializer => _$listManagedTransforms200ResponseErrorsEnumSerializer;
 
   const ListManagedTransforms200ResponseErrorsEnum._(String name): super(name);
 
-  static BuiltSet<ListManagedTransforms200ResponseErrorsEnum> get values => _$listManagedTransforms200ResponseErrorsValues;
-  static ListManagedTransforms200ResponseErrorsEnum valueOf(String name) => _$listManagedTransforms200ResponseErrorsValueOf(name);
+  static BuiltSet<ListManagedTransforms200ResponseErrorsEnum> get values => _$listManagedTransforms200ResponseErrorsEnumValues;
+  static ListManagedTransforms200ResponseErrorsEnum valueOf(String name) => _$listManagedTransforms200ResponseErrorsEnumValueOf(name);
 }
 
 class ListManagedTransforms200ResponseSuccessEnum extends EnumClass {
@@ -163,11 +163,11 @@ class ListManagedTransforms200ResponseSuccessEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'true')
   static const ListManagedTransforms200ResponseSuccessEnum true_ = _$listManagedTransforms200ResponseSuccessEnum_true_;
 
-  static Serializer<ListManagedTransforms200ResponseSuccessEnum> get serializer => _$listManagedTransforms200ResponseSuccessSerializer;
+  static Serializer<ListManagedTransforms200ResponseSuccessEnum> get serializer => _$listManagedTransforms200ResponseSuccessEnumSerializer;
 
   const ListManagedTransforms200ResponseSuccessEnum._(String name): super(name);
 
-  static BuiltSet<ListManagedTransforms200ResponseSuccessEnum> get values => _$listManagedTransforms200ResponseSuccessValues;
-  static ListManagedTransforms200ResponseSuccessEnum valueOf(String name) => _$listManagedTransforms200ResponseSuccessValueOf(name);
+  static BuiltSet<ListManagedTransforms200ResponseSuccessEnum> get values => _$listManagedTransforms200ResponseSuccessEnumValues;
+  static ListManagedTransforms200ResponseSuccessEnum valueOf(String name) => _$listManagedTransforms200ResponseSuccessEnumValueOf(name);
 }
 

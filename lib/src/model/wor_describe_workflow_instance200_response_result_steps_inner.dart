@@ -99,11 +99,11 @@ class WorDescribeWorkflowInstance200ResponseResultStepsInnerTypeEnum extends Enu
   @BuiltValueEnumConst(wireName: r'waitForEvent')
   static const WorDescribeWorkflowInstance200ResponseResultStepsInnerTypeEnum waitForEvent = _$worDescribeWorkflowInstance200ResponseResultStepsInnerTypeEnum_waitForEvent;
 
-  static Serializer<WorDescribeWorkflowInstance200ResponseResultStepsInnerTypeEnum> get serializer => _$worDescribeWorkflowInstance200ResponseResultStepsInnerTypeSerializer;
+  static Serializer<WorDescribeWorkflowInstance200ResponseResultStepsInnerTypeEnum> get serializer => _$worDescribeWorkflowInstance200ResponseResultStepsInnerTypeEnumSerializer;
 
   const WorDescribeWorkflowInstance200ResponseResultStepsInnerTypeEnum._(String name): super(name);
 
-  static BuiltSet<WorDescribeWorkflowInstance200ResponseResultStepsInnerTypeEnum> get values => _$worDescribeWorkflowInstance200ResponseResultStepsInnerTypeValues;
-  static WorDescribeWorkflowInstance200ResponseResultStepsInnerTypeEnum valueOf(String name) => _$worDescribeWorkflowInstance200ResponseResultStepsInnerTypeValueOf(name);
+  static BuiltSet<WorDescribeWorkflowInstance200ResponseResultStepsInnerTypeEnum> get values => _$worDescribeWorkflowInstance200ResponseResultStepsInnerTypeEnumValues;
+  static WorDescribeWorkflowInstance200ResponseResultStepsInnerTypeEnum valueOf(String name) => _$worDescribeWorkflowInstance200ResponseResultStepsInnerTypeEnumValueOf(name);
 }
 

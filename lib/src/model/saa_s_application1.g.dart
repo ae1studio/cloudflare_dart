@@ -12,11 +12,11 @@ class _$SaaSApplication1 extends SaaSApplication1 {
   @override
   final String? aud;
   @override
-  final AccessCreatedAt? createdAt;
+  final JsonObject? createdAt;
   @override
   final String? id;
   @override
-  final AccessUpdatedAt? updatedAt;
+  final JsonObject? updatedAt;
   @override
   final BuiltList<String>? allowedIdps;
   @override
@@ -150,20 +150,18 @@ class SaaSApplication1Builder
   String? get aud => _$this._aud;
   set aud(covariant String? aud) => _$this._aud = aud;
 
-  AccessCreatedAtBuilder? _createdAt;
-  AccessCreatedAtBuilder get createdAt =>
-      _$this._createdAt ??= AccessCreatedAtBuilder();
-  set createdAt(covariant AccessCreatedAtBuilder? createdAt) =>
+  JsonObject? _createdAt;
+  JsonObject? get createdAt => _$this._createdAt;
+  set createdAt(covariant JsonObject? createdAt) =>
       _$this._createdAt = createdAt;
 
   String? _id;
   String? get id => _$this._id;
   set id(covariant String? id) => _$this._id = id;
 
-  AccessUpdatedAtBuilder? _updatedAt;
-  AccessUpdatedAtBuilder get updatedAt =>
-      _$this._updatedAt ??= AccessUpdatedAtBuilder();
-  set updatedAt(covariant AccessUpdatedAtBuilder? updatedAt) =>
+  JsonObject? _updatedAt;
+  JsonObject? get updatedAt => _$this._updatedAt;
+  set updatedAt(covariant JsonObject? updatedAt) =>
       _$this._updatedAt = updatedAt;
 
   ListBuilder<String>? _allowedIdps;
@@ -225,9 +223,9 @@ class SaaSApplication1Builder
     if ($v != null) {
       _policies = $v.policies?.toBuilder();
       _aud = $v.aud;
-      _createdAt = $v.createdAt?.toBuilder();
+      _createdAt = $v.createdAt;
       _id = $v.id;
-      _updatedAt = $v.updatedAt?.toBuilder();
+      _updatedAt = $v.updatedAt;
       _allowedIdps = $v.allowedIdps?.toBuilder();
       _appLauncherVisible = $v.appLauncherVisible;
       _autoRedirectToIdentity = $v.autoRedirectToIdentity;
@@ -264,9 +262,9 @@ class SaaSApplication1Builder
           _$SaaSApplication1._(
             policies: _policies?.build(),
             aud: aud,
-            createdAt: _createdAt?.build(),
+            createdAt: createdAt,
             id: id,
-            updatedAt: _updatedAt?.build(),
+            updatedAt: updatedAt,
             allowedIdps: _allowedIdps?.build(),
             appLauncherVisible: appLauncherVisible,
             autoRedirectToIdentity: autoRedirectToIdentity,
@@ -284,11 +282,6 @@ class SaaSApplication1Builder
         _$failedField = 'policies';
         _policies?.build();
 
-        _$failedField = 'createdAt';
-        _createdAt?.build();
-
-        _$failedField = 'updatedAt';
-        _updatedAt?.build();
         _$failedField = 'allowedIdps';
         _allowedIdps?.build();
 

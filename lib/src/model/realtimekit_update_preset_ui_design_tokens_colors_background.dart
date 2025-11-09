@@ -11,16 +11,13 @@ part 'realtimekit_update_preset_ui_design_tokens_colors_background.g.dart';
 /// RealtimekitUpdatePresetUiDesignTokensColorsBackground
 ///
 /// Properties:
-/// * [n1000] 
 /// * [n600] 
 /// * [n700] 
 /// * [n800] 
 /// * [n900] 
+/// * [n1000] 
 @BuiltValue()
 abstract class RealtimekitUpdatePresetUiDesignTokensColorsBackground implements Built<RealtimekitUpdatePresetUiDesignTokensColorsBackground, RealtimekitUpdatePresetUiDesignTokensColorsBackgroundBuilder> {
-  @BuiltValueField(wireName: r'1000')
-  String? get n1000;
-
   @BuiltValueField(wireName: r'600')
   String? get n600;
 
@@ -33,17 +30,20 @@ abstract class RealtimekitUpdatePresetUiDesignTokensColorsBackground implements 
   @BuiltValueField(wireName: r'900')
   String? get n900;
 
+  @BuiltValueField(wireName: r'1000')
+  String? get n1000;
+
   RealtimekitUpdatePresetUiDesignTokensColorsBackground._();
 
   factory RealtimekitUpdatePresetUiDesignTokensColorsBackground([void updates(RealtimekitUpdatePresetUiDesignTokensColorsBackgroundBuilder b)]) = _$RealtimekitUpdatePresetUiDesignTokensColorsBackground;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(RealtimekitUpdatePresetUiDesignTokensColorsBackgroundBuilder b) => b
-      ..n1000 = '#141414'
       ..n600 = '#222222'
       ..n700 = '#1f1f1f'
       ..n800 = '#1b1b1b'
-      ..n900 = '#181818';
+      ..n900 = '#181818'
+      ..n1000 = '#141414';
 
   @BuiltValueSerializer(custom: true)
   static Serializer<RealtimekitUpdatePresetUiDesignTokensColorsBackground> get serializer => _$RealtimekitUpdatePresetUiDesignTokensColorsBackgroundSerializer();
@@ -61,13 +61,6 @@ class _$RealtimekitUpdatePresetUiDesignTokensColorsBackgroundSerializer implemen
     RealtimekitUpdatePresetUiDesignTokensColorsBackground object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
-    if (object.n1000 != null) {
-      yield r'1000';
-      yield serializers.serialize(
-        object.n1000,
-        specifiedType: const FullType(String),
-      );
-    }
     if (object.n600 != null) {
       yield r'600';
       yield serializers.serialize(
@@ -96,6 +89,13 @@ class _$RealtimekitUpdatePresetUiDesignTokensColorsBackgroundSerializer implemen
         specifiedType: const FullType(String),
       );
     }
+    if (object.n1000 != null) {
+      yield r'1000';
+      yield serializers.serialize(
+        object.n1000,
+        specifiedType: const FullType(String),
+      );
+    }
   }
 
   @override
@@ -119,13 +119,6 @@ class _$RealtimekitUpdatePresetUiDesignTokensColorsBackgroundSerializer implemen
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'1000':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.n1000 = valueDes;
-          break;
         case r'600':
           final valueDes = serializers.deserialize(
             value,
@@ -153,6 +146,13 @@ class _$RealtimekitUpdatePresetUiDesignTokensColorsBackgroundSerializer implemen
             specifiedType: const FullType(String),
           ) as String;
           result.n900 = valueDes;
+          break;
+        case r'1000':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.n1000 = valueDes;
           break;
         default:
           unhandled.add(key);

@@ -113,11 +113,11 @@ class MconnEventOneOf8KEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'StartRotatePki')
   static const MconnEventOneOf8KEnum startRotatePki = _$mconnEventOneOf8KEnum_startRotatePki;
 
-  static Serializer<MconnEventOneOf8KEnum> get serializer => _$mconnEventOneOf8KSerializer;
+  static Serializer<MconnEventOneOf8KEnum> get serializer => _$mconnEventOneOf8KEnumSerializer;
 
   const MconnEventOneOf8KEnum._(String name): super(name);
 
-  static BuiltSet<MconnEventOneOf8KEnum> get values => _$mconnEventOneOf8KValues;
-  static MconnEventOneOf8KEnum valueOf(String name) => _$mconnEventOneOf8KValueOf(name);
+  static BuiltSet<MconnEventOneOf8KEnum> get values => _$mconnEventOneOf8KEnumValues;
+  static MconnEventOneOf8KEnum valueOf(String name) => _$mconnEventOneOf8KEnumValueOf(name);
 }
 

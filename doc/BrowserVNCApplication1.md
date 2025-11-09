@@ -9,9 +9,9 @@ import 'package:cloudflare_dart/api.dart';
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **aud** | **String** | Audience tag. | [optional] 
-**createdAt** | [**AccessCreatedAt**](AccessCreatedAt.md) |  | [optional] 
+**createdAt** | [**JsonObject**](JsonObject.md) |  | [optional] 
 **id** | **String** | UUID. | [optional] 
-**updatedAt** | [**AccessUpdatedAt**](AccessUpdatedAt.md) |  | [optional] 
+**updatedAt** | [**JsonObject**](JsonObject.md) |  | [optional] 
 **allowAuthenticateViaWarp** | **bool** | When set to true, users can authenticate to this application using their WARP session.  When set to false this application will always require direct IdP authentication. This setting always overrides the organization setting for WARP authentication. | [optional] 
 **allowIframe** | **bool** | Enables loading application content in an iFrame. | [optional] 
 **allowedIdps** | **BuiltList&lt;String&gt;** | The identity providers your users can select when connecting to this application. Defaults to all IdPs configured in your account. | [optional] 
@@ -38,7 +38,7 @@ Name | Type | Description | Notes
 **sessionDuration** | **String** | The amount of time that tokens issued for this application will be valid. Must be in the format `300ms` or `2h45m`. Valid time units are: ns, us (or µs), ms, s, m, h. Note: unsupported for infrastructure type applications. | [optional] [default to '24h']
 **skipInterstitial** | **bool** | Enables automatic authentication through cloudflared. | [optional] 
 **tags** | **BuiltList&lt;String&gt;** | The tags you want assigned to an application. Tags are used to filter applications in the App Launcher dashboard. | [optional] [default to ListBuilder()]
-**type** | [**AccessVncPropsAllOfType**](AccessVncPropsAllOfType.md) |  | 
+**type** | [**AccessType**](AccessType.md) |  | 
 **policies** | [**BuiltList&lt;AccessAppPolicyResponse&gt;**](AccessAppPolicyResponse.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

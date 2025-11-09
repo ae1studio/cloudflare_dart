@@ -22,7 +22,7 @@ part 'rulesets_log_custom_field_rule.g.dart';
 /// * [actionParameters] 
 /// * [categories] - The categories of the rule.
 /// * [description] 
-/// * [enabled] 
+/// * [enabled] - Whether the rule should be executed.
 /// * [exposedCredentialCheck] 
 /// * [expression] - The expression defining which traffic will match the rule.
 /// * [id] - The unique ID of the rule.
@@ -40,6 +40,7 @@ abstract class RulesetsLogCustomFieldRule implements RulesetsRule, Built<Ruleset
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(RulesetsLogCustomFieldRuleBuilder b) => b
       ..description = ''
+      ..enabled = true
       ..actionParameters = {};
 
   @BuiltValueSerializer(custom: true)
@@ -293,11 +294,11 @@ class RulesetsLogCustomFieldRuleActionEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'log_custom_field')
   static const RulesetsLogCustomFieldRuleActionEnum logCustomField = _$rulesetsLogCustomFieldRuleActionEnum_logCustomField;
 
-  static Serializer<RulesetsLogCustomFieldRuleActionEnum> get serializer => _$rulesetsLogCustomFieldRuleActionSerializer;
+  static Serializer<RulesetsLogCustomFieldRuleActionEnum> get serializer => _$rulesetsLogCustomFieldRuleActionEnumSerializer;
 
   const RulesetsLogCustomFieldRuleActionEnum._(String name): super(name);
 
-  static BuiltSet<RulesetsLogCustomFieldRuleActionEnum> get values => _$rulesetsLogCustomFieldRuleActionValues;
-  static RulesetsLogCustomFieldRuleActionEnum valueOf(String name) => _$rulesetsLogCustomFieldRuleActionValueOf(name);
+  static BuiltSet<RulesetsLogCustomFieldRuleActionEnum> get values => _$rulesetsLogCustomFieldRuleActionEnumValues;
+  static RulesetsLogCustomFieldRuleActionEnum valueOf(String name) => _$rulesetsLogCustomFieldRuleActionEnumValueOf(name);
 }
 

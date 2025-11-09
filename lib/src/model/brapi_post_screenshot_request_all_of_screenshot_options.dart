@@ -3,9 +3,7 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:cloudflare_dart/src/model/brapi_post_screenshot_request_all_of_screenshot_options_type.dart';
 import 'package:cloudflare_dart/src/model/brapi_post_screenshot_request_all_of_screenshot_options_clip.dart';
-import 'package:cloudflare_dart/src/model/brapi_post_screenshot_request_all_of_screenshot_options_encoding.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
@@ -32,7 +30,8 @@ abstract class BrapiPostScreenshotRequestAllOfScreenshotOptions implements Built
   BrapiPostScreenshotRequestAllOfScreenshotOptionsClip? get clip;
 
   @BuiltValueField(wireName: r'encoding')
-  BrapiPostScreenshotRequestAllOfScreenshotOptionsEncoding? get encoding;
+  EncodingEnum? get encoding;
+  // enum encodingEnum {  binary,  base64,  };
 
   @BuiltValueField(wireName: r'fromSurface')
   bool? get fromSurface;
@@ -50,14 +49,17 @@ abstract class BrapiPostScreenshotRequestAllOfScreenshotOptions implements Built
   num? get quality;
 
   @BuiltValueField(wireName: r'type')
-  BrapiPostScreenshotRequestAllOfScreenshotOptionsType? get type;
+  TypeEnum? get type;
+  // enum typeEnum {  png,  jpeg,  webp,  };
 
   BrapiPostScreenshotRequestAllOfScreenshotOptions._();
 
   factory BrapiPostScreenshotRequestAllOfScreenshotOptions([void updates(BrapiPostScreenshotRequestAllOfScreenshotOptionsBuilder b)]) = _$BrapiPostScreenshotRequestAllOfScreenshotOptions;
 
   @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(BrapiPostScreenshotRequestAllOfScreenshotOptionsBuilder b) => b;
+  static void _defaults(BrapiPostScreenshotRequestAllOfScreenshotOptionsBuilder b) => b
+      ..encoding = EncodingEnum.valueOf('binary')
+      ..type = TypeEnum.valueOf('png');
 
   @BuiltValueSerializer(custom: true)
   static Serializer<BrapiPostScreenshotRequestAllOfScreenshotOptions> get serializer => _$BrapiPostScreenshotRequestAllOfScreenshotOptionsSerializer();
@@ -93,7 +95,7 @@ class _$BrapiPostScreenshotRequestAllOfScreenshotOptionsSerializer implements Pr
       yield r'encoding';
       yield serializers.serialize(
         object.encoding,
-        specifiedType: const FullType(BrapiPostScreenshotRequestAllOfScreenshotOptionsEncoding),
+        specifiedType: const FullType(EncodingEnum),
       );
     }
     if (object.fromSurface != null) {
@@ -135,7 +137,7 @@ class _$BrapiPostScreenshotRequestAllOfScreenshotOptionsSerializer implements Pr
       yield r'type';
       yield serializers.serialize(
         object.type,
-        specifiedType: const FullType(BrapiPostScreenshotRequestAllOfScreenshotOptionsType),
+        specifiedType: const FullType(TypeEnum),
       );
     }
   }
@@ -178,9 +180,9 @@ class _$BrapiPostScreenshotRequestAllOfScreenshotOptionsSerializer implements Pr
         case r'encoding':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(BrapiPostScreenshotRequestAllOfScreenshotOptionsEncoding),
-          ) as BrapiPostScreenshotRequestAllOfScreenshotOptionsEncoding;
-          result.encoding.replace(valueDes);
+            specifiedType: const FullType(EncodingEnum),
+          ) as EncodingEnum;
+          result.encoding = valueDes;
           break;
         case r'fromSurface':
           final valueDes = serializers.deserialize(
@@ -220,9 +222,9 @@ class _$BrapiPostScreenshotRequestAllOfScreenshotOptionsSerializer implements Pr
         case r'type':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(BrapiPostScreenshotRequestAllOfScreenshotOptionsType),
-          ) as BrapiPostScreenshotRequestAllOfScreenshotOptionsType;
-          result.type.replace(valueDes);
+            specifiedType: const FullType(TypeEnum),
+          ) as TypeEnum;
+          result.type = valueDes;
           break;
         default:
           unhandled.add(key);

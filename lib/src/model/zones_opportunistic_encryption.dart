@@ -135,12 +135,12 @@ class ZonesOpportunisticEncryptionIdEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'opportunistic_encryption')
   static const ZonesOpportunisticEncryptionIdEnum opportunisticEncryption = _$zonesOpportunisticEncryptionIdEnum_opportunisticEncryption;
 
-  static Serializer<ZonesOpportunisticEncryptionIdEnum> get serializer => _$zonesOpportunisticEncryptionIdSerializer;
+  static Serializer<ZonesOpportunisticEncryptionIdEnum> get serializer => _$zonesOpportunisticEncryptionIdEnumSerializer;
 
   const ZonesOpportunisticEncryptionIdEnum._(String name): super(name);
 
-  static BuiltSet<ZonesOpportunisticEncryptionIdEnum> get values => _$zonesOpportunisticEncryptionIdValues;
-  static ZonesOpportunisticEncryptionIdEnum valueOf(String name) => _$zonesOpportunisticEncryptionIdValueOf(name);
+  static BuiltSet<ZonesOpportunisticEncryptionIdEnum> get values => _$zonesOpportunisticEncryptionIdEnumValues;
+  static ZonesOpportunisticEncryptionIdEnum valueOf(String name) => _$zonesOpportunisticEncryptionIdEnumValueOf(name);
 }
 
 class ZonesOpportunisticEncryptionValueEnum extends EnumClass {
@@ -152,11 +152,11 @@ class ZonesOpportunisticEncryptionValueEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'off')
   static const ZonesOpportunisticEncryptionValueEnum off = _$zonesOpportunisticEncryptionValueEnum_off;
 
-  static Serializer<ZonesOpportunisticEncryptionValueEnum> get serializer => _$zonesOpportunisticEncryptionValueSerializer;
+  static Serializer<ZonesOpportunisticEncryptionValueEnum> get serializer => _$zonesOpportunisticEncryptionValueEnumSerializer;
 
   const ZonesOpportunisticEncryptionValueEnum._(String name): super(name);
 
-  static BuiltSet<ZonesOpportunisticEncryptionValueEnum> get values => _$zonesOpportunisticEncryptionValueValues;
-  static ZonesOpportunisticEncryptionValueEnum valueOf(String name) => _$zonesOpportunisticEncryptionValueValueOf(name);
+  static BuiltSet<ZonesOpportunisticEncryptionValueEnum> get values => _$zonesOpportunisticEncryptionValueEnumValues;
+  static ZonesOpportunisticEncryptionValueEnum valueOf(String name) => _$zonesOpportunisticEncryptionValueEnumValueOf(name);
 }
 

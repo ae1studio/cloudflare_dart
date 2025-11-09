@@ -149,11 +149,11 @@ class _$MagicGreTunnelsListGreTunnelDetails4XXResponseSerializer implements Prim
 class MagicGreTunnelsListGreTunnelDetails4XXResponseResultEnum extends EnumClass {
 
 
-  static Serializer<MagicGreTunnelsListGreTunnelDetails4XXResponseResultEnum> get serializer => _$magicGreTunnelsListGreTunnelDetails4XXResponseResultSerializer;
+  static Serializer<MagicGreTunnelsListGreTunnelDetails4XXResponseResultEnum> get serializer => _$magicGreTunnelsListGreTunnelDetails4XXResponseResultEnumSerializer;
 
   const MagicGreTunnelsListGreTunnelDetails4XXResponseResultEnum._(String name): super(name);
 
-  static BuiltSet<MagicGreTunnelsListGreTunnelDetails4XXResponseResultEnum> get values => _$magicGreTunnelsListGreTunnelDetails4XXResponseResultValues;
-  static MagicGreTunnelsListGreTunnelDetails4XXResponseResultEnum valueOf(String name) => _$magicGreTunnelsListGreTunnelDetails4XXResponseResultValueOf(name);
+  static BuiltSet<MagicGreTunnelsListGreTunnelDetails4XXResponseResultEnum> get values => _$magicGreTunnelsListGreTunnelDetails4XXResponseResultEnumValues;
+  static MagicGreTunnelsListGreTunnelDetails4XXResponseResultEnum valueOf(String name) => _$magicGreTunnelsListGreTunnelDetails4XXResponseResultEnumValueOf(name);
 }
 

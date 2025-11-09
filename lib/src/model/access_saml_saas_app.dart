@@ -3,10 +3,9 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:cloudflare_dart/src/model/access_updated_at.dart';
 import 'package:built_collection/built_collection.dart';
-import 'package:cloudflare_dart/src/model/access_created_at.dart';
 import 'package:cloudflare_dart/src/model/access_saml_saas_app_custom_attributes_inner.dart';
+import 'package:built_value/json_object.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
@@ -40,7 +39,7 @@ abstract class AccessSamlSaasApp implements Built<AccessSamlSaasApp, AccessSamlS
   String? get consumerServiceUrl;
 
   @BuiltValueField(wireName: r'created_at')
-  AccessCreatedAt? get createdAt;
+  JsonObject? get createdAt;
 
   @BuiltValueField(wireName: r'custom_attributes')
   BuiltList<AccessSamlSaasAppCustomAttributesInner>? get customAttributes;
@@ -79,7 +78,7 @@ abstract class AccessSamlSaasApp implements Built<AccessSamlSaasApp, AccessSamlS
   String? get ssoEndpoint;
 
   @BuiltValueField(wireName: r'updated_at')
-  AccessUpdatedAt? get updatedAt;
+  JsonObject? get updatedAt;
 
   AccessSamlSaasApp._();
 
@@ -122,7 +121,7 @@ class _$AccessSamlSaasAppSerializer implements PrimitiveSerializer<AccessSamlSaa
       yield r'created_at';
       yield serializers.serialize(
         object.createdAt,
-        specifiedType: const FullType(AccessCreatedAt),
+        specifiedType: const FullType(JsonObject),
       );
     }
     if (object.customAttributes != null) {
@@ -192,7 +191,7 @@ class _$AccessSamlSaasAppSerializer implements PrimitiveSerializer<AccessSamlSaa
       yield r'updated_at';
       yield serializers.serialize(
         object.updatedAt,
-        specifiedType: const FullType(AccessUpdatedAt),
+        specifiedType: const FullType(JsonObject),
       );
     }
   }
@@ -235,8 +234,8 @@ class _$AccessSamlSaasAppSerializer implements PrimitiveSerializer<AccessSamlSaa
         case r'created_at':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(AccessCreatedAt),
-          ) as AccessCreatedAt;
+            specifiedType: const FullType(JsonObject),
+          ) as JsonObject;
           result.createdAt.replace(valueDes);
           break;
         case r'custom_attributes':
@@ -305,8 +304,8 @@ class _$AccessSamlSaasAppSerializer implements PrimitiveSerializer<AccessSamlSaa
         case r'updated_at':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(AccessUpdatedAt),
-          ) as AccessUpdatedAt;
+            specifiedType: const FullType(JsonObject),
+          ) as JsonObject;
           result.updatedAt.replace(valueDes);
           break;
         default:
@@ -347,12 +346,12 @@ class AccessSamlSaasAppAuthTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'oidc')
   static const AccessSamlSaasAppAuthTypeEnum oidc = _$accessSamlSaasAppAuthTypeEnum_oidc;
 
-  static Serializer<AccessSamlSaasAppAuthTypeEnum> get serializer => _$accessSamlSaasAppAuthTypeSerializer;
+  static Serializer<AccessSamlSaasAppAuthTypeEnum> get serializer => _$accessSamlSaasAppAuthTypeEnumSerializer;
 
   const AccessSamlSaasAppAuthTypeEnum._(String name): super(name);
 
-  static BuiltSet<AccessSamlSaasAppAuthTypeEnum> get values => _$accessSamlSaasAppAuthTypeValues;
-  static AccessSamlSaasAppAuthTypeEnum valueOf(String name) => _$accessSamlSaasAppAuthTypeValueOf(name);
+  static BuiltSet<AccessSamlSaasAppAuthTypeEnum> get values => _$accessSamlSaasAppAuthTypeEnumValues;
+  static AccessSamlSaasAppAuthTypeEnum valueOf(String name) => _$accessSamlSaasAppAuthTypeEnumValueOf(name);
 }
 
 class AccessSamlSaasAppNameIdFormatEnum extends EnumClass {
@@ -364,11 +363,11 @@ class AccessSamlSaasAppNameIdFormatEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'email')
   static const AccessSamlSaasAppNameIdFormatEnum email = _$accessSamlSaasAppNameIdFormatEnum_email;
 
-  static Serializer<AccessSamlSaasAppNameIdFormatEnum> get serializer => _$accessSamlSaasAppNameIdFormatSerializer;
+  static Serializer<AccessSamlSaasAppNameIdFormatEnum> get serializer => _$accessSamlSaasAppNameIdFormatEnumSerializer;
 
   const AccessSamlSaasAppNameIdFormatEnum._(String name): super(name);
 
-  static BuiltSet<AccessSamlSaasAppNameIdFormatEnum> get values => _$accessSamlSaasAppNameIdFormatValues;
-  static AccessSamlSaasAppNameIdFormatEnum valueOf(String name) => _$accessSamlSaasAppNameIdFormatValueOf(name);
+  static BuiltSet<AccessSamlSaasAppNameIdFormatEnum> get values => _$accessSamlSaasAppNameIdFormatEnumValues;
+  static AccessSamlSaasAppNameIdFormatEnum valueOf(String name) => _$accessSamlSaasAppNameIdFormatEnumValueOf(name);
 }
 

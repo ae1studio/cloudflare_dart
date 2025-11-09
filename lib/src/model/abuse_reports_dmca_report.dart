@@ -423,12 +423,12 @@ class AbuseReportsDMCAReportActEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'abuse_dmca')
   static const AbuseReportsDMCAReportActEnum abuseDmca = _$abuseReportsDMCAReportActEnum_abuseDmca;
 
-  static Serializer<AbuseReportsDMCAReportActEnum> get serializer => _$abuseReportsDMCAReportActSerializer;
+  static Serializer<AbuseReportsDMCAReportActEnum> get serializer => _$abuseReportsDMCAReportActEnumSerializer;
 
   const AbuseReportsDMCAReportActEnum._(String name): super(name);
 
-  static BuiltSet<AbuseReportsDMCAReportActEnum> get values => _$abuseReportsDMCAReportActValues;
-  static AbuseReportsDMCAReportActEnum valueOf(String name) => _$abuseReportsDMCAReportActValueOf(name);
+  static BuiltSet<AbuseReportsDMCAReportActEnum> get values => _$abuseReportsDMCAReportActEnumValues;
+  static AbuseReportsDMCAReportActEnum valueOf(String name) => _$abuseReportsDMCAReportActEnumValueOf(name);
 }
 
 class AbuseReportsDMCAReportAgreeEnum extends EnumClass {
@@ -437,12 +437,12 @@ class AbuseReportsDMCAReportAgreeEnum extends EnumClass {
   @BuiltValueEnumConst(wireNumber: 1)
   static const AbuseReportsDMCAReportAgreeEnum number1 = _$abuseReportsDMCAReportAgreeEnum_number1;
 
-  static Serializer<AbuseReportsDMCAReportAgreeEnum> get serializer => _$abuseReportsDMCAReportAgreeSerializer;
+  static Serializer<AbuseReportsDMCAReportAgreeEnum> get serializer => _$abuseReportsDMCAReportAgreeEnumSerializer;
 
   const AbuseReportsDMCAReportAgreeEnum._(String name): super(name);
 
-  static BuiltSet<AbuseReportsDMCAReportAgreeEnum> get values => _$abuseReportsDMCAReportAgreeValues;
-  static AbuseReportsDMCAReportAgreeEnum valueOf(String name) => _$abuseReportsDMCAReportAgreeValueOf(name);
+  static BuiltSet<AbuseReportsDMCAReportAgreeEnum> get values => _$abuseReportsDMCAReportAgreeEnumValues;
+  static AbuseReportsDMCAReportAgreeEnum valueOf(String name) => _$abuseReportsDMCAReportAgreeEnumValueOf(name);
 }
 
 class AbuseReportsDMCAReportHostNotificationEnum extends EnumClass {
@@ -451,12 +451,12 @@ class AbuseReportsDMCAReportHostNotificationEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'send')
   static const AbuseReportsDMCAReportHostNotificationEnum send = _$abuseReportsDMCAReportHostNotificationEnum_send;
 
-  static Serializer<AbuseReportsDMCAReportHostNotificationEnum> get serializer => _$abuseReportsDMCAReportHostNotificationSerializer;
+  static Serializer<AbuseReportsDMCAReportHostNotificationEnum> get serializer => _$abuseReportsDMCAReportHostNotificationEnumSerializer;
 
   const AbuseReportsDMCAReportHostNotificationEnum._(String name): super(name);
 
-  static BuiltSet<AbuseReportsDMCAReportHostNotificationEnum> get values => _$abuseReportsDMCAReportHostNotificationValues;
-  static AbuseReportsDMCAReportHostNotificationEnum valueOf(String name) => _$abuseReportsDMCAReportHostNotificationValueOf(name);
+  static BuiltSet<AbuseReportsDMCAReportHostNotificationEnum> get values => _$abuseReportsDMCAReportHostNotificationEnumValues;
+  static AbuseReportsDMCAReportHostNotificationEnum valueOf(String name) => _$abuseReportsDMCAReportHostNotificationEnumValueOf(name);
 }
 
 class AbuseReportsDMCAReportOwnerNotificationEnum extends EnumClass {
@@ -465,11 +465,11 @@ class AbuseReportsDMCAReportOwnerNotificationEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'send')
   static const AbuseReportsDMCAReportOwnerNotificationEnum send = _$abuseReportsDMCAReportOwnerNotificationEnum_send;
 
-  static Serializer<AbuseReportsDMCAReportOwnerNotificationEnum> get serializer => _$abuseReportsDMCAReportOwnerNotificationSerializer;
+  static Serializer<AbuseReportsDMCAReportOwnerNotificationEnum> get serializer => _$abuseReportsDMCAReportOwnerNotificationEnumSerializer;
 
   const AbuseReportsDMCAReportOwnerNotificationEnum._(String name): super(name);
 
-  static BuiltSet<AbuseReportsDMCAReportOwnerNotificationEnum> get values => _$abuseReportsDMCAReportOwnerNotificationValues;
-  static AbuseReportsDMCAReportOwnerNotificationEnum valueOf(String name) => _$abuseReportsDMCAReportOwnerNotificationValueOf(name);
+  static BuiltSet<AbuseReportsDMCAReportOwnerNotificationEnum> get values => _$abuseReportsDMCAReportOwnerNotificationEnumValues;
+  static AbuseReportsDMCAReportOwnerNotificationEnum valueOf(String name) => _$abuseReportsDMCAReportOwnerNotificationEnumValueOf(name);
 }
 

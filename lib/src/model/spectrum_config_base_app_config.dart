@@ -3,9 +3,7 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:cloudflare_dart/src/model/spectrum_config_modified.dart';
-import 'package:cloudflare_dart/src/model/spectrum_config_app_identifier.dart';
-import 'package:cloudflare_dart/src/model/spectrum_config_created.dart';
+import 'package:built_value/json_object.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
@@ -20,13 +18,13 @@ part 'spectrum_config_base_app_config.g.dart';
 @BuiltValue(instantiable: false)
 abstract class SpectrumConfigBaseAppConfig  {
   @BuiltValueField(wireName: r'created_on')
-  SpectrumConfigCreated get createdOn;
+  JsonObject get createdOn;
 
   @BuiltValueField(wireName: r'id')
-  SpectrumConfigAppIdentifier get id;
+  JsonObject get id;
 
   @BuiltValueField(wireName: r'modified_on')
-  SpectrumConfigModified get modifiedOn;
+  JsonObject get modifiedOn;
 
   @BuiltValueSerializer(custom: true)
   static Serializer<SpectrumConfigBaseAppConfig> get serializer => _$SpectrumConfigBaseAppConfigSerializer();
@@ -47,17 +45,17 @@ class _$SpectrumConfigBaseAppConfigSerializer implements PrimitiveSerializer<Spe
     yield r'created_on';
     yield serializers.serialize(
       object.createdOn,
-      specifiedType: const FullType(SpectrumConfigCreated),
+      specifiedType: const FullType(JsonObject),
     );
     yield r'id';
     yield serializers.serialize(
       object.id,
-      specifiedType: const FullType(SpectrumConfigAppIdentifier),
+      specifiedType: const FullType(JsonObject),
     );
     yield r'modified_on';
     yield serializers.serialize(
       object.modifiedOn,
-      specifiedType: const FullType(SpectrumConfigModified),
+      specifiedType: const FullType(JsonObject),
     );
   }
 
@@ -125,22 +123,22 @@ class _$$SpectrumConfigBaseAppConfigSerializer implements PrimitiveSerializer<$S
         case r'created_on':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(SpectrumConfigCreated),
-          ) as SpectrumConfigCreated;
+            specifiedType: const FullType(JsonObject),
+          ) as JsonObject;
           result.createdOn.replace(valueDes);
           break;
         case r'id':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(SpectrumConfigAppIdentifier),
-          ) as SpectrumConfigAppIdentifier;
+            specifiedType: const FullType(JsonObject),
+          ) as JsonObject;
           result.id.replace(valueDes);
           break;
         case r'modified_on':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(SpectrumConfigModified),
-          ) as SpectrumConfigModified;
+            specifiedType: const FullType(JsonObject),
+          ) as JsonObject;
           result.modifiedOn.replace(valueDes);
           break;
         default:

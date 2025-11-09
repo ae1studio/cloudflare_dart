@@ -169,12 +169,12 @@ class AigConfigListDataset200ResponseResultInnerFiltersInnerKeyEnum extends Enum
   @BuiltValueEnumConst(wireName: r'feedback')
   static const AigConfigListDataset200ResponseResultInnerFiltersInnerKeyEnum feedback = _$aigConfigListDataset200ResponseResultInnerFiltersInnerKeyEnum_feedback;
 
-  static Serializer<AigConfigListDataset200ResponseResultInnerFiltersInnerKeyEnum> get serializer => _$aigConfigListDataset200ResponseResultInnerFiltersInnerKeySerializer;
+  static Serializer<AigConfigListDataset200ResponseResultInnerFiltersInnerKeyEnum> get serializer => _$aigConfigListDataset200ResponseResultInnerFiltersInnerKeyEnumSerializer;
 
   const AigConfigListDataset200ResponseResultInnerFiltersInnerKeyEnum._(String name): super(name);
 
-  static BuiltSet<AigConfigListDataset200ResponseResultInnerFiltersInnerKeyEnum> get values => _$aigConfigListDataset200ResponseResultInnerFiltersInnerKeyValues;
-  static AigConfigListDataset200ResponseResultInnerFiltersInnerKeyEnum valueOf(String name) => _$aigConfigListDataset200ResponseResultInnerFiltersInnerKeyValueOf(name);
+  static BuiltSet<AigConfigListDataset200ResponseResultInnerFiltersInnerKeyEnum> get values => _$aigConfigListDataset200ResponseResultInnerFiltersInnerKeyEnumValues;
+  static AigConfigListDataset200ResponseResultInnerFiltersInnerKeyEnum valueOf(String name) => _$aigConfigListDataset200ResponseResultInnerFiltersInnerKeyEnumValueOf(name);
 }
 
 class AigConfigListDataset200ResponseResultInnerFiltersInnerOperator_Enum extends EnumClass {
@@ -188,11 +188,11 @@ class AigConfigListDataset200ResponseResultInnerFiltersInnerOperator_Enum extend
   @BuiltValueEnumConst(wireName: r'gt')
   static const AigConfigListDataset200ResponseResultInnerFiltersInnerOperator_Enum gt = _$aigConfigListDataset200ResponseResultInnerFiltersInnerOperatorEnum_gt;
 
-  static Serializer<AigConfigListDataset200ResponseResultInnerFiltersInnerOperator_Enum> get serializer => _$aigConfigListDataset200ResponseResultInnerFiltersInnerOperatorSerializer;
+  static Serializer<AigConfigListDataset200ResponseResultInnerFiltersInnerOperator_Enum> get serializer => _$aigConfigListDataset200ResponseResultInnerFiltersInnerOperatorEnumSerializer;
 
   const AigConfigListDataset200ResponseResultInnerFiltersInnerOperator_Enum._(String name): super(name);
 
-  static BuiltSet<AigConfigListDataset200ResponseResultInnerFiltersInnerOperator_Enum> get values => _$aigConfigListDataset200ResponseResultInnerFiltersInnerOperatorValues;
-  static AigConfigListDataset200ResponseResultInnerFiltersInnerOperator_Enum valueOf(String name) => _$aigConfigListDataset200ResponseResultInnerFiltersInnerOperatorValueOf(name);
+  static BuiltSet<AigConfigListDataset200ResponseResultInnerFiltersInnerOperator_Enum> get values => _$aigConfigListDataset200ResponseResultInnerFiltersInnerOperatorEnumValues;
+  static AigConfigListDataset200ResponseResultInnerFiltersInnerOperator_Enum valueOf(String name) => _$aigConfigListDataset200ResponseResultInnerFiltersInnerOperatorEnumValueOf(name);
 }
 

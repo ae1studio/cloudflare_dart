@@ -190,11 +190,11 @@ class WorkersVersionItemFullAllOfResourcesScriptRuntimeUsageModelEnum extends En
   @BuiltValueEnumConst(wireName: r'standard')
   static const WorkersVersionItemFullAllOfResourcesScriptRuntimeUsageModelEnum standard = _$workersVersionItemFullAllOfResourcesScriptRuntimeUsageModelEnum_standard;
 
-  static Serializer<WorkersVersionItemFullAllOfResourcesScriptRuntimeUsageModelEnum> get serializer => _$workersVersionItemFullAllOfResourcesScriptRuntimeUsageModelSerializer;
+  static Serializer<WorkersVersionItemFullAllOfResourcesScriptRuntimeUsageModelEnum> get serializer => _$workersVersionItemFullAllOfResourcesScriptRuntimeUsageModelEnumSerializer;
 
   const WorkersVersionItemFullAllOfResourcesScriptRuntimeUsageModelEnum._(String name): super(name);
 
-  static BuiltSet<WorkersVersionItemFullAllOfResourcesScriptRuntimeUsageModelEnum> get values => _$workersVersionItemFullAllOfResourcesScriptRuntimeUsageModelValues;
-  static WorkersVersionItemFullAllOfResourcesScriptRuntimeUsageModelEnum valueOf(String name) => _$workersVersionItemFullAllOfResourcesScriptRuntimeUsageModelValueOf(name);
+  static BuiltSet<WorkersVersionItemFullAllOfResourcesScriptRuntimeUsageModelEnum> get values => _$workersVersionItemFullAllOfResourcesScriptRuntimeUsageModelEnumValues;
+  static WorkersVersionItemFullAllOfResourcesScriptRuntimeUsageModelEnum valueOf(String name) => _$workersVersionItemFullAllOfResourcesScriptRuntimeUsageModelEnumValueOf(name);
 }
 

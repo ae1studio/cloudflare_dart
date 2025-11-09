@@ -147,11 +147,11 @@ class WorkersBindingKindMtlsCertificateTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'mtls_certificate')
   static const WorkersBindingKindMtlsCertificateTypeEnum mtlsCertificate = _$workersBindingKindMtlsCertificateTypeEnum_mtlsCertificate;
 
-  static Serializer<WorkersBindingKindMtlsCertificateTypeEnum> get serializer => _$workersBindingKindMtlsCertificateTypeSerializer;
+  static Serializer<WorkersBindingKindMtlsCertificateTypeEnum> get serializer => _$workersBindingKindMtlsCertificateTypeEnumSerializer;
 
   const WorkersBindingKindMtlsCertificateTypeEnum._(String name): super(name);
 
-  static BuiltSet<WorkersBindingKindMtlsCertificateTypeEnum> get values => _$workersBindingKindMtlsCertificateTypeValues;
-  static WorkersBindingKindMtlsCertificateTypeEnum valueOf(String name) => _$workersBindingKindMtlsCertificateTypeValueOf(name);
+  static BuiltSet<WorkersBindingKindMtlsCertificateTypeEnum> get values => _$workersBindingKindMtlsCertificateTypeEnumValues;
+  static WorkersBindingKindMtlsCertificateTypeEnum valueOf(String name) => _$workersBindingKindMtlsCertificateTypeEnumValueOf(name);
 }
 

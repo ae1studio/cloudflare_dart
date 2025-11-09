@@ -143,11 +143,11 @@ class ZarazStringVariableTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'string')
   static const ZarazStringVariableTypeEnum string = _$zarazStringVariableTypeEnum_string;
 
-  static Serializer<ZarazStringVariableTypeEnum> get serializer => _$zarazStringVariableTypeSerializer;
+  static Serializer<ZarazStringVariableTypeEnum> get serializer => _$zarazStringVariableTypeEnumSerializer;
 
   const ZarazStringVariableTypeEnum._(String name): super(name);
 
-  static BuiltSet<ZarazStringVariableTypeEnum> get values => _$zarazStringVariableTypeValues;
-  static ZarazStringVariableTypeEnum valueOf(String name) => _$zarazStringVariableTypeValueOf(name);
+  static BuiltSet<ZarazStringVariableTypeEnum> get values => _$zarazStringVariableTypeEnumValues;
+  static ZarazStringVariableTypeEnum valueOf(String name) => _$zarazStringVariableTypeEnumValueOf(name);
 }
 

@@ -290,3 +290,24 @@ class _$EmailSecurityUpdateDomainRequestSerializer implements PrimitiveSerialize
   }
 }
 
+class EmailSecurityUpdateDomainRequestRegionsEnum extends EnumClass {
+
+  @BuiltValueEnumConst(wireName: r'GLOBAL')
+  static const EmailSecurityUpdateDomainRequestRegionsEnum GLOBAL = _$emailSecurityUpdateDomainRequestRegionsEnum_GLOBAL;
+  @BuiltValueEnumConst(wireName: r'AU')
+  static const EmailSecurityUpdateDomainRequestRegionsEnum AU = _$emailSecurityUpdateDomainRequestRegionsEnum_AU;
+  @BuiltValueEnumConst(wireName: r'DE')
+  static const EmailSecurityUpdateDomainRequestRegionsEnum DE = _$emailSecurityUpdateDomainRequestRegionsEnum_DE;
+  @BuiltValueEnumConst(wireName: r'IN')
+  static const EmailSecurityUpdateDomainRequestRegionsEnum IN = _$emailSecurityUpdateDomainRequestRegionsEnum_IN;
+  @BuiltValueEnumConst(wireName: r'US')
+  static const EmailSecurityUpdateDomainRequestRegionsEnum US = _$emailSecurityUpdateDomainRequestRegionsEnum_US;
+
+  static Serializer<EmailSecurityUpdateDomainRequestRegionsEnum> get serializer => _$emailSecurityUpdateDomainRequestRegionsEnumSerializer;
+
+  const EmailSecurityUpdateDomainRequestRegionsEnum._(String name): super(name);
+
+  static BuiltSet<EmailSecurityUpdateDomainRequestRegionsEnum> get values => _$emailSecurityUpdateDomainRequestRegionsEnumValues;
+  static EmailSecurityUpdateDomainRequestRegionsEnum valueOf(String name) => _$emailSecurityUpdateDomainRequestRegionsEnumValueOf(name);
+}
+

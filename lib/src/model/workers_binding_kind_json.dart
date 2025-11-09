@@ -147,11 +147,11 @@ class WorkersBindingKindJsonTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'json')
   static const WorkersBindingKindJsonTypeEnum json = _$workersBindingKindJsonTypeEnum_json;
 
-  static Serializer<WorkersBindingKindJsonTypeEnum> get serializer => _$workersBindingKindJsonTypeSerializer;
+  static Serializer<WorkersBindingKindJsonTypeEnum> get serializer => _$workersBindingKindJsonTypeEnumSerializer;
 
   const WorkersBindingKindJsonTypeEnum._(String name): super(name);
 
-  static BuiltSet<WorkersBindingKindJsonTypeEnum> get values => _$workersBindingKindJsonTypeValues;
-  static WorkersBindingKindJsonTypeEnum valueOf(String name) => _$workersBindingKindJsonTypeValueOf(name);
+  static BuiltSet<WorkersBindingKindJsonTypeEnum> get values => _$workersBindingKindJsonTypeEnumValues;
+  static WorkersBindingKindJsonTypeEnum valueOf(String name) => _$workersBindingKindJsonTypeEnumValueOf(name);
 }
 

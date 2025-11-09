@@ -130,11 +130,11 @@ class WorkersBindingKindAiTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'ai')
   static const WorkersBindingKindAiTypeEnum ai = _$workersBindingKindAiTypeEnum_ai;
 
-  static Serializer<WorkersBindingKindAiTypeEnum> get serializer => _$workersBindingKindAiTypeSerializer;
+  static Serializer<WorkersBindingKindAiTypeEnum> get serializer => _$workersBindingKindAiTypeEnumSerializer;
 
   const WorkersBindingKindAiTypeEnum._(String name): super(name);
 
-  static BuiltSet<WorkersBindingKindAiTypeEnum> get values => _$workersBindingKindAiTypeValues;
-  static WorkersBindingKindAiTypeEnum valueOf(String name) => _$workersBindingKindAiTypeValueOf(name);
+  static BuiltSet<WorkersBindingKindAiTypeEnum> get values => _$workersBindingKindAiTypeEnumValues;
+  static WorkersBindingKindAiTypeEnum valueOf(String name) => _$workersBindingKindAiTypeEnumValueOf(name);
 }
 

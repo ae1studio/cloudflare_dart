@@ -6,6 +6,105 @@ part of 'zero_trust_gateway_rules_create_zero_trust_gateway_rule_request.dart';
 // BuiltValueGenerator
 // **************************************************************************
 
+const ZeroTrustGatewayRulesCreateZeroTrustGatewayRuleRequestFiltersEnum
+    _$zeroTrustGatewayRulesCreateZeroTrustGatewayRuleRequestFiltersEnum_http =
+    const ZeroTrustGatewayRulesCreateZeroTrustGatewayRuleRequestFiltersEnum._(
+        'http');
+const ZeroTrustGatewayRulesCreateZeroTrustGatewayRuleRequestFiltersEnum
+    _$zeroTrustGatewayRulesCreateZeroTrustGatewayRuleRequestFiltersEnum_dns =
+    const ZeroTrustGatewayRulesCreateZeroTrustGatewayRuleRequestFiltersEnum._(
+        'dns');
+const ZeroTrustGatewayRulesCreateZeroTrustGatewayRuleRequestFiltersEnum
+    _$zeroTrustGatewayRulesCreateZeroTrustGatewayRuleRequestFiltersEnum_l4 =
+    const ZeroTrustGatewayRulesCreateZeroTrustGatewayRuleRequestFiltersEnum._(
+        'l4');
+const ZeroTrustGatewayRulesCreateZeroTrustGatewayRuleRequestFiltersEnum
+    _$zeroTrustGatewayRulesCreateZeroTrustGatewayRuleRequestFiltersEnum_egress =
+    const ZeroTrustGatewayRulesCreateZeroTrustGatewayRuleRequestFiltersEnum._(
+        'egress');
+const ZeroTrustGatewayRulesCreateZeroTrustGatewayRuleRequestFiltersEnum
+    _$zeroTrustGatewayRulesCreateZeroTrustGatewayRuleRequestFiltersEnum_dnsResolver =
+    const ZeroTrustGatewayRulesCreateZeroTrustGatewayRuleRequestFiltersEnum._(
+        'dnsResolver');
+
+ZeroTrustGatewayRulesCreateZeroTrustGatewayRuleRequestFiltersEnum
+    _$zeroTrustGatewayRulesCreateZeroTrustGatewayRuleRequestFiltersEnumValueOf(
+        String name) {
+  switch (name) {
+    case 'http':
+      return _$zeroTrustGatewayRulesCreateZeroTrustGatewayRuleRequestFiltersEnum_http;
+    case 'dns':
+      return _$zeroTrustGatewayRulesCreateZeroTrustGatewayRuleRequestFiltersEnum_dns;
+    case 'l4':
+      return _$zeroTrustGatewayRulesCreateZeroTrustGatewayRuleRequestFiltersEnum_l4;
+    case 'egress':
+      return _$zeroTrustGatewayRulesCreateZeroTrustGatewayRuleRequestFiltersEnum_egress;
+    case 'dnsResolver':
+      return _$zeroTrustGatewayRulesCreateZeroTrustGatewayRuleRequestFiltersEnum_dnsResolver;
+    default:
+      throw ArgumentError(name);
+  }
+}
+
+final BuiltSet<
+        ZeroTrustGatewayRulesCreateZeroTrustGatewayRuleRequestFiltersEnum>
+    _$zeroTrustGatewayRulesCreateZeroTrustGatewayRuleRequestFiltersEnumValues =
+    BuiltSet<
+        ZeroTrustGatewayRulesCreateZeroTrustGatewayRuleRequestFiltersEnum>(const <ZeroTrustGatewayRulesCreateZeroTrustGatewayRuleRequestFiltersEnum>[
+  _$zeroTrustGatewayRulesCreateZeroTrustGatewayRuleRequestFiltersEnum_http,
+  _$zeroTrustGatewayRulesCreateZeroTrustGatewayRuleRequestFiltersEnum_dns,
+  _$zeroTrustGatewayRulesCreateZeroTrustGatewayRuleRequestFiltersEnum_l4,
+  _$zeroTrustGatewayRulesCreateZeroTrustGatewayRuleRequestFiltersEnum_egress,
+  _$zeroTrustGatewayRulesCreateZeroTrustGatewayRuleRequestFiltersEnum_dnsResolver,
+]);
+
+Serializer<ZeroTrustGatewayRulesCreateZeroTrustGatewayRuleRequestFiltersEnum>
+    _$zeroTrustGatewayRulesCreateZeroTrustGatewayRuleRequestFiltersEnumSerializer =
+    _$ZeroTrustGatewayRulesCreateZeroTrustGatewayRuleRequestFiltersEnumSerializer();
+
+class _$ZeroTrustGatewayRulesCreateZeroTrustGatewayRuleRequestFiltersEnumSerializer
+    implements
+        PrimitiveSerializer<
+            ZeroTrustGatewayRulesCreateZeroTrustGatewayRuleRequestFiltersEnum> {
+  static const Map<String, Object> _toWire = const <String, Object>{
+    'http': 'http',
+    'dns': 'dns',
+    'l4': 'l4',
+    'egress': 'egress',
+    'dnsResolver': 'dns_resolver',
+  };
+  static const Map<Object, String> _fromWire = const <Object, String>{
+    'http': 'http',
+    'dns': 'dns',
+    'l4': 'l4',
+    'egress': 'egress',
+    'dns_resolver': 'dnsResolver',
+  };
+
+  @override
+  final Iterable<Type> types = const <Type>[
+    ZeroTrustGatewayRulesCreateZeroTrustGatewayRuleRequestFiltersEnum
+  ];
+  @override
+  final String wireName =
+      'ZeroTrustGatewayRulesCreateZeroTrustGatewayRuleRequestFiltersEnum';
+
+  @override
+  Object serialize(
+          Serializers serializers,
+          ZeroTrustGatewayRulesCreateZeroTrustGatewayRuleRequestFiltersEnum
+              object,
+          {FullType specifiedType = FullType.unspecified}) =>
+      _toWire[object.name] ?? object.name;
+
+  @override
+  ZeroTrustGatewayRulesCreateZeroTrustGatewayRuleRequestFiltersEnum deserialize(
+          Serializers serializers, Object serialized,
+          {FullType specifiedType = FullType.unspecified}) =>
+      ZeroTrustGatewayRulesCreateZeroTrustGatewayRuleRequestFiltersEnum.valueOf(
+          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+}
+
 class _$ZeroTrustGatewayRulesCreateZeroTrustGatewayRuleRequest
     extends ZeroTrustGatewayRulesCreateZeroTrustGatewayRuleRequest {
   @override
@@ -19,7 +118,9 @@ class _$ZeroTrustGatewayRulesCreateZeroTrustGatewayRuleRequest
   @override
   final ZeroTrustGatewayExpiration? expiration;
   @override
-  final BuiltList<dynamic>? filters;
+  final BuiltList<
+          ZeroTrustGatewayRulesCreateZeroTrustGatewayRuleRequestFiltersEnum>?
+      filters;
   @override
   final String? identity;
   @override
@@ -153,10 +254,17 @@ class ZeroTrustGatewayRulesCreateZeroTrustGatewayRuleRequestBuilder
   set expiration(ZeroTrustGatewayExpirationBuilder? expiration) =>
       _$this._expiration = expiration;
 
-  ListBuilder<dynamic>? _filters;
-  ListBuilder<dynamic> get filters =>
-      _$this._filters ??= ListBuilder<dynamic>();
-  set filters(ListBuilder<dynamic>? filters) => _$this._filters = filters;
+  ListBuilder<
+          ZeroTrustGatewayRulesCreateZeroTrustGatewayRuleRequestFiltersEnum>?
+      _filters;
+  ListBuilder<ZeroTrustGatewayRulesCreateZeroTrustGatewayRuleRequestFiltersEnum>
+      get filters => _$this._filters ??= ListBuilder<
+          ZeroTrustGatewayRulesCreateZeroTrustGatewayRuleRequestFiltersEnum>();
+  set filters(
+          ListBuilder<
+                  ZeroTrustGatewayRulesCreateZeroTrustGatewayRuleRequestFiltersEnum>?
+              filters) =>
+      _$this._filters = filters;
 
   String? _identity;
   String? get identity => _$this._identity;

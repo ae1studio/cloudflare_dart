@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **modifiedOn** | [**DateTime**](DateTime.md) | The timestamp of when the Page Rule was last modified. | 
 **priority** | **int** | The priority of the rule, used to define which Page Rule is processed over another. A higher number indicates a higher priority. For example, if you have a catch-all Page Rule (rule A: `/images/_*`) but want a more specific Page Rule to take precedence (rule B: `/images/special/_*`), specify a higher priority for rule B so it overrides rule A.  | [default to 1]
 **status** | [**ZonesStatus**](ZonesStatus.md) |  | 
-**targets** | [**BuiltList&lt;ZonesTarget&gt;**](ZonesTarget.md) | The rule targets to evaluate on each request. | 
+**targets** | [**BuiltList&lt;ZonesUrlTarget&gt;**](ZonesUrlTarget.md) | The rule targets to evaluate on each request. | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

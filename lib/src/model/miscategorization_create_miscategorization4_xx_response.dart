@@ -149,11 +149,11 @@ class _$MiscategorizationCreateMiscategorization4XXResponseSerializer implements
 class MiscategorizationCreateMiscategorization4XXResponseResultEnum extends EnumClass {
 
 
-  static Serializer<MiscategorizationCreateMiscategorization4XXResponseResultEnum> get serializer => _$miscategorizationCreateMiscategorization4XXResponseResultSerializer;
+  static Serializer<MiscategorizationCreateMiscategorization4XXResponseResultEnum> get serializer => _$miscategorizationCreateMiscategorization4XXResponseResultEnumSerializer;
 
   const MiscategorizationCreateMiscategorization4XXResponseResultEnum._(String name): super(name);
 
-  static BuiltSet<MiscategorizationCreateMiscategorization4XXResponseResultEnum> get values => _$miscategorizationCreateMiscategorization4XXResponseResultValues;
-  static MiscategorizationCreateMiscategorization4XXResponseResultEnum valueOf(String name) => _$miscategorizationCreateMiscategorization4XXResponseResultValueOf(name);
+  static BuiltSet<MiscategorizationCreateMiscategorization4XXResponseResultEnum> get values => _$miscategorizationCreateMiscategorization4XXResponseResultEnumValues;
+  static MiscategorizationCreateMiscategorization4XXResponseResultEnum valueOf(String name) => _$miscategorizationCreateMiscategorization4XXResponseResultEnumValueOf(name);
 }
 

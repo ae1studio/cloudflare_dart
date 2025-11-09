@@ -3,7 +3,6 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:built_value/json_object.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
@@ -12,12 +11,13 @@ part 'dls_regional_hostname_response.g.dart';
 /// DlsRegionalHostnameResponse
 ///
 /// Properties:
-/// * [createdOn] 
+/// * [createdOn] - When the regional hostname was created
 /// * [hostname] - DNS hostname to be regionalized, must be a subdomain of the zone. Wildcards are supported for one level, e.g `*.example.com`
 /// * [regionKey] - Identifying key for the region
 /// * [routing] - Configure which routing method to use for the regional hostname
 @BuiltValue()
 abstract class DlsRegionalHostnameResponse implements Built<DlsRegionalHostnameResponse, DlsRegionalHostnameResponseBuilder> {
+  /// When the regional hostname was created
   @BuiltValueField(wireName: r'created_on')
   DateTime get createdOn;
 
@@ -107,7 +107,7 @@ class _$DlsRegionalHostnameResponseSerializer implements PrimitiveSerializer<Dls
             value,
             specifiedType: const FullType(DateTime),
           ) as DateTime;
-          result.createdOn.replace(valueDes);
+          result.createdOn = valueDes;
           break;
         case r'hostname':
           final valueDes = serializers.deserialize(

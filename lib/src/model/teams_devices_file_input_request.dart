@@ -193,11 +193,11 @@ class TeamsDevicesFileInputRequestOperatingSystemEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'mac')
   static const TeamsDevicesFileInputRequestOperatingSystemEnum mac = _$teamsDevicesFileInputRequestOperatingSystemEnum_mac;
 
-  static Serializer<TeamsDevicesFileInputRequestOperatingSystemEnum> get serializer => _$teamsDevicesFileInputRequestOperatingSystemSerializer;
+  static Serializer<TeamsDevicesFileInputRequestOperatingSystemEnum> get serializer => _$teamsDevicesFileInputRequestOperatingSystemEnumSerializer;
 
   const TeamsDevicesFileInputRequestOperatingSystemEnum._(String name): super(name);
 
-  static BuiltSet<TeamsDevicesFileInputRequestOperatingSystemEnum> get values => _$teamsDevicesFileInputRequestOperatingSystemValues;
-  static TeamsDevicesFileInputRequestOperatingSystemEnum valueOf(String name) => _$teamsDevicesFileInputRequestOperatingSystemValueOf(name);
+  static BuiltSet<TeamsDevicesFileInputRequestOperatingSystemEnum> get values => _$teamsDevicesFileInputRequestOperatingSystemEnumValues;
+  static TeamsDevicesFileInputRequestOperatingSystemEnum valueOf(String name) => _$teamsDevicesFileInputRequestOperatingSystemEnumValueOf(name);
 }
 

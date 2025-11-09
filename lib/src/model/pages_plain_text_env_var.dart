@@ -128,11 +128,11 @@ class PagesPlainTextEnvVarTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'plain_text')
   static const PagesPlainTextEnvVarTypeEnum plainText = _$pagesPlainTextEnvVarTypeEnum_plainText;
 
-  static Serializer<PagesPlainTextEnvVarTypeEnum> get serializer => _$pagesPlainTextEnvVarTypeSerializer;
+  static Serializer<PagesPlainTextEnvVarTypeEnum> get serializer => _$pagesPlainTextEnvVarTypeEnumSerializer;
 
   const PagesPlainTextEnvVarTypeEnum._(String name): super(name);
 
-  static BuiltSet<PagesPlainTextEnvVarTypeEnum> get values => _$pagesPlainTextEnvVarTypeValues;
-  static PagesPlainTextEnvVarTypeEnum valueOf(String name) => _$pagesPlainTextEnvVarTypeValueOf(name);
+  static BuiltSet<PagesPlainTextEnvVarTypeEnum> get values => _$pagesPlainTextEnvVarTypeEnumValues;
+  static PagesPlainTextEnvVarTypeEnum valueOf(String name) => _$pagesPlainTextEnvVarTypeEnumValueOf(name);
 }
 

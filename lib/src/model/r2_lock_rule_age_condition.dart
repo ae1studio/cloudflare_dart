@@ -127,11 +127,11 @@ class R2LockRuleAgeConditionTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'Age')
   static const R2LockRuleAgeConditionTypeEnum age = _$r2LockRuleAgeConditionTypeEnum_age;
 
-  static Serializer<R2LockRuleAgeConditionTypeEnum> get serializer => _$r2LockRuleAgeConditionTypeSerializer;
+  static Serializer<R2LockRuleAgeConditionTypeEnum> get serializer => _$r2LockRuleAgeConditionTypeEnumSerializer;
 
   const R2LockRuleAgeConditionTypeEnum._(String name): super(name);
 
-  static BuiltSet<R2LockRuleAgeConditionTypeEnum> get values => _$r2LockRuleAgeConditionTypeValues;
-  static R2LockRuleAgeConditionTypeEnum valueOf(String name) => _$r2LockRuleAgeConditionTypeValueOf(name);
+  static BuiltSet<R2LockRuleAgeConditionTypeEnum> get values => _$r2LockRuleAgeConditionTypeEnumValues;
+  static R2LockRuleAgeConditionTypeEnum valueOf(String name) => _$r2LockRuleAgeConditionTypeEnumValueOf(name);
 }
 

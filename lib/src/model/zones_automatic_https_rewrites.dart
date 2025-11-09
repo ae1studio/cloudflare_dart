@@ -135,12 +135,12 @@ class ZonesAutomaticHttpsRewritesIdEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'automatic_https_rewrites')
   static const ZonesAutomaticHttpsRewritesIdEnum automaticHttpsRewrites = _$zonesAutomaticHttpsRewritesIdEnum_automaticHttpsRewrites;
 
-  static Serializer<ZonesAutomaticHttpsRewritesIdEnum> get serializer => _$zonesAutomaticHttpsRewritesIdSerializer;
+  static Serializer<ZonesAutomaticHttpsRewritesIdEnum> get serializer => _$zonesAutomaticHttpsRewritesIdEnumSerializer;
 
   const ZonesAutomaticHttpsRewritesIdEnum._(String name): super(name);
 
-  static BuiltSet<ZonesAutomaticHttpsRewritesIdEnum> get values => _$zonesAutomaticHttpsRewritesIdValues;
-  static ZonesAutomaticHttpsRewritesIdEnum valueOf(String name) => _$zonesAutomaticHttpsRewritesIdValueOf(name);
+  static BuiltSet<ZonesAutomaticHttpsRewritesIdEnum> get values => _$zonesAutomaticHttpsRewritesIdEnumValues;
+  static ZonesAutomaticHttpsRewritesIdEnum valueOf(String name) => _$zonesAutomaticHttpsRewritesIdEnumValueOf(name);
 }
 
 class ZonesAutomaticHttpsRewritesValueEnum extends EnumClass {
@@ -152,11 +152,11 @@ class ZonesAutomaticHttpsRewritesValueEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'off')
   static const ZonesAutomaticHttpsRewritesValueEnum off = _$zonesAutomaticHttpsRewritesValueEnum_off;
 
-  static Serializer<ZonesAutomaticHttpsRewritesValueEnum> get serializer => _$zonesAutomaticHttpsRewritesValueSerializer;
+  static Serializer<ZonesAutomaticHttpsRewritesValueEnum> get serializer => _$zonesAutomaticHttpsRewritesValueEnumSerializer;
 
   const ZonesAutomaticHttpsRewritesValueEnum._(String name): super(name);
 
-  static BuiltSet<ZonesAutomaticHttpsRewritesValueEnum> get values => _$zonesAutomaticHttpsRewritesValueValues;
-  static ZonesAutomaticHttpsRewritesValueEnum valueOf(String name) => _$zonesAutomaticHttpsRewritesValueValueOf(name);
+  static BuiltSet<ZonesAutomaticHttpsRewritesValueEnum> get values => _$zonesAutomaticHttpsRewritesValueEnumValues;
+  static ZonesAutomaticHttpsRewritesValueEnum valueOf(String name) => _$zonesAutomaticHttpsRewritesValueEnumValueOf(name);
 }
 

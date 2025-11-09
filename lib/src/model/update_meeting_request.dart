@@ -282,12 +282,12 @@ class UpdateMeetingRequestPreferredRegionEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'eu-central-1')
   static const UpdateMeetingRequestPreferredRegionEnum euCentral1 = _$updateMeetingRequestPreferredRegionEnum_euCentral1;
 
-  static Serializer<UpdateMeetingRequestPreferredRegionEnum> get serializer => _$updateMeetingRequestPreferredRegionSerializer;
+  static Serializer<UpdateMeetingRequestPreferredRegionEnum> get serializer => _$updateMeetingRequestPreferredRegionEnumSerializer;
 
   const UpdateMeetingRequestPreferredRegionEnum._(String name): super(name);
 
-  static BuiltSet<UpdateMeetingRequestPreferredRegionEnum> get values => _$updateMeetingRequestPreferredRegionValues;
-  static UpdateMeetingRequestPreferredRegionEnum valueOf(String name) => _$updateMeetingRequestPreferredRegionValueOf(name);
+  static BuiltSet<UpdateMeetingRequestPreferredRegionEnum> get values => _$updateMeetingRequestPreferredRegionEnumValues;
+  static UpdateMeetingRequestPreferredRegionEnum valueOf(String name) => _$updateMeetingRequestPreferredRegionEnumValueOf(name);
 }
 
 class UpdateMeetingRequestStatusEnum extends EnumClass {
@@ -299,11 +299,11 @@ class UpdateMeetingRequestStatusEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'INACTIVE')
   static const UpdateMeetingRequestStatusEnum INACTIVE = _$updateMeetingRequestStatusEnum_INACTIVE;
 
-  static Serializer<UpdateMeetingRequestStatusEnum> get serializer => _$updateMeetingRequestStatusSerializer;
+  static Serializer<UpdateMeetingRequestStatusEnum> get serializer => _$updateMeetingRequestStatusEnumSerializer;
 
   const UpdateMeetingRequestStatusEnum._(String name): super(name);
 
-  static BuiltSet<UpdateMeetingRequestStatusEnum> get values => _$updateMeetingRequestStatusValues;
-  static UpdateMeetingRequestStatusEnum valueOf(String name) => _$updateMeetingRequestStatusValueOf(name);
+  static BuiltSet<UpdateMeetingRequestStatusEnum> get values => _$updateMeetingRequestStatusEnumValues;
+  static UpdateMeetingRequestStatusEnum valueOf(String name) => _$updateMeetingRequestStatusEnumValueOf(name);
 }
 

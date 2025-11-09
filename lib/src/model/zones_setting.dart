@@ -141,11 +141,11 @@ class ZonesSettingIdEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'websockets')
   static const ZonesSettingIdEnum websockets = _$zonesSettingIdEnum_websockets;
 
-  static Serializer<ZonesSettingIdEnum> get serializer => _$zonesSettingIdSerializer;
+  static Serializer<ZonesSettingIdEnum> get serializer => _$zonesSettingIdEnumSerializer;
 
   const ZonesSettingIdEnum._(String name): super(name);
 
-  static BuiltSet<ZonesSettingIdEnum> get values => _$zonesSettingIdValues;
-  static ZonesSettingIdEnum valueOf(String name) => _$zonesSettingIdValueOf(name);
+  static BuiltSet<ZonesSettingIdEnum> get values => _$zonesSettingIdEnumValues;
+  static ZonesSettingIdEnum valueOf(String name) => _$zonesSettingIdEnumValueOf(name);
 }
 

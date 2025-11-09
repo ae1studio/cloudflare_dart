@@ -149,11 +149,11 @@ class _$ListWorkers500ResponseSerializer implements PrimitiveSerializer<ListWork
 class ListWorkers500ResponseResultEnum extends EnumClass {
 
 
-  static Serializer<ListWorkers500ResponseResultEnum> get serializer => _$listWorkers500ResponseResultSerializer;
+  static Serializer<ListWorkers500ResponseResultEnum> get serializer => _$listWorkers500ResponseResultEnumSerializer;
 
   const ListWorkers500ResponseResultEnum._(String name): super(name);
 
-  static BuiltSet<ListWorkers500ResponseResultEnum> get values => _$listWorkers500ResponseResultValues;
-  static ListWorkers500ResponseResultEnum valueOf(String name) => _$listWorkers500ResponseResultValueOf(name);
+  static BuiltSet<ListWorkers500ResponseResultEnum> get values => _$listWorkers500ResponseResultEnumValues;
+  static ListWorkers500ResponseResultEnum valueOf(String name) => _$listWorkers500ResponseResultEnumValueOf(name);
 }
 

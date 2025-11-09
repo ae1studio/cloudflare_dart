@@ -116,11 +116,11 @@ class CacheRulesSmartTieredCachePatchValueEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'off')
   static const CacheRulesSmartTieredCachePatchValueEnum off = _$cacheRulesSmartTieredCachePatchValueEnum_off;
 
-  static Serializer<CacheRulesSmartTieredCachePatchValueEnum> get serializer => _$cacheRulesSmartTieredCachePatchValueSerializer;
+  static Serializer<CacheRulesSmartTieredCachePatchValueEnum> get serializer => _$cacheRulesSmartTieredCachePatchValueEnumSerializer;
 
   const CacheRulesSmartTieredCachePatchValueEnum._(String name): super(name);
 
-  static BuiltSet<CacheRulesSmartTieredCachePatchValueEnum> get values => _$cacheRulesSmartTieredCachePatchValueValues;
-  static CacheRulesSmartTieredCachePatchValueEnum valueOf(String name) => _$cacheRulesSmartTieredCachePatchValueValueOf(name);
+  static BuiltSet<CacheRulesSmartTieredCachePatchValueEnum> get values => _$cacheRulesSmartTieredCachePatchValueEnumValues;
+  static CacheRulesSmartTieredCachePatchValueEnum valueOf(String name) => _$cacheRulesSmartTieredCachePatchValueEnumValueOf(name);
 }
 

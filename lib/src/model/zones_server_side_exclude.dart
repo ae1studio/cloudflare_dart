@@ -156,11 +156,11 @@ class ZonesServerSideExcludeIdEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'server_side_exclude')
   static const ZonesServerSideExcludeIdEnum serverSideExclude = _$zonesServerSideExcludeIdEnum_serverSideExclude;
 
-  static Serializer<ZonesServerSideExcludeIdEnum> get serializer => _$zonesServerSideExcludeIdSerializer;
+  static Serializer<ZonesServerSideExcludeIdEnum> get serializer => _$zonesServerSideExcludeIdEnumSerializer;
 
   const ZonesServerSideExcludeIdEnum._(String name): super(name);
 
-  static BuiltSet<ZonesServerSideExcludeIdEnum> get values => _$zonesServerSideExcludeIdValues;
-  static ZonesServerSideExcludeIdEnum valueOf(String name) => _$zonesServerSideExcludeIdValueOf(name);
+  static BuiltSet<ZonesServerSideExcludeIdEnum> get values => _$zonesServerSideExcludeIdEnumValues;
+  static ZonesServerSideExcludeIdEnum valueOf(String name) => _$zonesServerSideExcludeIdEnumValueOf(name);
 }
 

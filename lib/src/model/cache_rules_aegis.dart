@@ -144,11 +144,11 @@ class CacheRulesAegisIdEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'aegis')
   static const CacheRulesAegisIdEnum aegis = _$cacheRulesAegisIdEnum_aegis;
 
-  static Serializer<CacheRulesAegisIdEnum> get serializer => _$cacheRulesAegisIdSerializer;
+  static Serializer<CacheRulesAegisIdEnum> get serializer => _$cacheRulesAegisIdEnumSerializer;
 
   const CacheRulesAegisIdEnum._(String name): super(name);
 
-  static BuiltSet<CacheRulesAegisIdEnum> get values => _$cacheRulesAegisIdValues;
-  static CacheRulesAegisIdEnum valueOf(String name) => _$cacheRulesAegisIdValueOf(name);
+  static BuiltSet<CacheRulesAegisIdEnum> get values => _$cacheRulesAegisIdEnumValues;
+  static CacheRulesAegisIdEnum valueOf(String name) => _$cacheRulesAegisIdEnumValueOf(name);
 }
 

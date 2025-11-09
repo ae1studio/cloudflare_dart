@@ -359,12 +359,12 @@ class RadarGetCertificateLogDetails200ResponseResultCertificateLogApiEnum extend
   @BuiltValueEnumConst(wireName: r'STATIC')
   static const RadarGetCertificateLogDetails200ResponseResultCertificateLogApiEnum STATIC = _$radarGetCertificateLogDetails200ResponseResultCertificateLogApiEnum_STATIC;
 
-  static Serializer<RadarGetCertificateLogDetails200ResponseResultCertificateLogApiEnum> get serializer => _$radarGetCertificateLogDetails200ResponseResultCertificateLogApiSerializer;
+  static Serializer<RadarGetCertificateLogDetails200ResponseResultCertificateLogApiEnum> get serializer => _$radarGetCertificateLogDetails200ResponseResultCertificateLogApiEnumSerializer;
 
   const RadarGetCertificateLogDetails200ResponseResultCertificateLogApiEnum._(String name): super(name);
 
-  static BuiltSet<RadarGetCertificateLogDetails200ResponseResultCertificateLogApiEnum> get values => _$radarGetCertificateLogDetails200ResponseResultCertificateLogApiValues;
-  static RadarGetCertificateLogDetails200ResponseResultCertificateLogApiEnum valueOf(String name) => _$radarGetCertificateLogDetails200ResponseResultCertificateLogApiValueOf(name);
+  static BuiltSet<RadarGetCertificateLogDetails200ResponseResultCertificateLogApiEnum> get values => _$radarGetCertificateLogDetails200ResponseResultCertificateLogApiEnumValues;
+  static RadarGetCertificateLogDetails200ResponseResultCertificateLogApiEnum valueOf(String name) => _$radarGetCertificateLogDetails200ResponseResultCertificateLogApiEnumValueOf(name);
 }
 
 class RadarGetCertificateLogDetails200ResponseResultCertificateLogStateEnum extends EnumClass {
@@ -388,11 +388,11 @@ class RadarGetCertificateLogDetails200ResponseResultCertificateLogStateEnum exte
   @BuiltValueEnumConst(wireName: r'REJECTED')
   static const RadarGetCertificateLogDetails200ResponseResultCertificateLogStateEnum REJECTED = _$radarGetCertificateLogDetails200ResponseResultCertificateLogStateEnum_REJECTED;
 
-  static Serializer<RadarGetCertificateLogDetails200ResponseResultCertificateLogStateEnum> get serializer => _$radarGetCertificateLogDetails200ResponseResultCertificateLogStateSerializer;
+  static Serializer<RadarGetCertificateLogDetails200ResponseResultCertificateLogStateEnum> get serializer => _$radarGetCertificateLogDetails200ResponseResultCertificateLogStateEnumSerializer;
 
   const RadarGetCertificateLogDetails200ResponseResultCertificateLogStateEnum._(String name): super(name);
 
-  static BuiltSet<RadarGetCertificateLogDetails200ResponseResultCertificateLogStateEnum> get values => _$radarGetCertificateLogDetails200ResponseResultCertificateLogStateValues;
-  static RadarGetCertificateLogDetails200ResponseResultCertificateLogStateEnum valueOf(String name) => _$radarGetCertificateLogDetails200ResponseResultCertificateLogStateValueOf(name);
+  static BuiltSet<RadarGetCertificateLogDetails200ResponseResultCertificateLogStateEnum> get values => _$radarGetCertificateLogDetails200ResponseResultCertificateLogStateEnumValues;
+  static RadarGetCertificateLogDetails200ResponseResultCertificateLogStateEnum valueOf(String name) => _$radarGetCertificateLogDetails200ResponseResultCertificateLogStateEnumValueOf(name);
 }
 

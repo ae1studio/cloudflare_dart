@@ -135,12 +135,12 @@ class ZonesBrowserCheckIdEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'browser_check')
   static const ZonesBrowserCheckIdEnum browserCheck = _$zonesBrowserCheckIdEnum_browserCheck;
 
-  static Serializer<ZonesBrowserCheckIdEnum> get serializer => _$zonesBrowserCheckIdSerializer;
+  static Serializer<ZonesBrowserCheckIdEnum> get serializer => _$zonesBrowserCheckIdEnumSerializer;
 
   const ZonesBrowserCheckIdEnum._(String name): super(name);
 
-  static BuiltSet<ZonesBrowserCheckIdEnum> get values => _$zonesBrowserCheckIdValues;
-  static ZonesBrowserCheckIdEnum valueOf(String name) => _$zonesBrowserCheckIdValueOf(name);
+  static BuiltSet<ZonesBrowserCheckIdEnum> get values => _$zonesBrowserCheckIdEnumValues;
+  static ZonesBrowserCheckIdEnum valueOf(String name) => _$zonesBrowserCheckIdEnumValueOf(name);
 }
 
 class ZonesBrowserCheckValueEnum extends EnumClass {
@@ -152,11 +152,11 @@ class ZonesBrowserCheckValueEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'off')
   static const ZonesBrowserCheckValueEnum off = _$zonesBrowserCheckValueEnum_off;
 
-  static Serializer<ZonesBrowserCheckValueEnum> get serializer => _$zonesBrowserCheckValueSerializer;
+  static Serializer<ZonesBrowserCheckValueEnum> get serializer => _$zonesBrowserCheckValueEnumSerializer;
 
   const ZonesBrowserCheckValueEnum._(String name): super(name);
 
-  static BuiltSet<ZonesBrowserCheckValueEnum> get values => _$zonesBrowserCheckValueValues;
-  static ZonesBrowserCheckValueEnum valueOf(String name) => _$zonesBrowserCheckValueValueOf(name);
+  static BuiltSet<ZonesBrowserCheckValueEnum> get values => _$zonesBrowserCheckValueEnumValues;
+  static ZonesBrowserCheckValueEnum valueOf(String name) => _$zonesBrowserCheckValueEnumValueOf(name);
 }
 

@@ -3,9 +3,9 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:cloudflare_dart/src/model/infra_service_config.dart';
 import 'package:built_collection/built_collection.dart';
 import 'package:cloudflare_dart/src/model/access_messages_inner.dart';
+import 'package:cloudflare_dart/src/model/infra_http_service_config.dart';
 import 'package:cloudflare_dart/src/model/infra_api_response_single.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
@@ -22,7 +22,7 @@ part 'connectivity_services_post200_response.g.dart';
 @BuiltValue()
 abstract class ConnectivityServicesPost200Response implements InfraApiResponseSingle, Built<ConnectivityServicesPost200Response, ConnectivityServicesPost200ResponseBuilder> {
   @BuiltValueField(wireName: r'result')
-  InfraServiceConfig? get result;
+  InfraHttpServiceConfig? get result;
 
   ConnectivityServicesPost200Response._();
 
@@ -51,7 +51,7 @@ class _$ConnectivityServicesPost200ResponseSerializer implements PrimitiveSerial
       yield r'result';
       yield serializers.serialize(
         object.result,
-        specifiedType: const FullType(InfraServiceConfig),
+        specifiedType: const FullType(InfraHttpServiceConfig),
       );
     }
     yield r'messages';
@@ -95,8 +95,8 @@ class _$ConnectivityServicesPost200ResponseSerializer implements PrimitiveSerial
         case r'result':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(InfraServiceConfig),
-          ) as InfraServiceConfig;
+            specifiedType: const FullType(InfraHttpServiceConfig),
+          ) as InfraHttpServiceConfig;
           result.result.replace(valueDes);
           break;
         case r'messages':

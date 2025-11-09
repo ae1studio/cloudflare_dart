@@ -161,11 +161,11 @@ class _$SpectrumConfigApiResponseCommonFailureSerializer implements PrimitiveSer
 class SpectrumConfigApiResponseCommonFailureResultEnum extends EnumClass {
 
 
-  static Serializer<SpectrumConfigApiResponseCommonFailureResultEnum> get serializer => _$spectrumConfigApiResponseCommonFailureResultSerializer;
+  static Serializer<SpectrumConfigApiResponseCommonFailureResultEnum> get serializer => _$spectrumConfigApiResponseCommonFailureResultEnumSerializer;
 
   const SpectrumConfigApiResponseCommonFailureResultEnum._(String name): super(name);
 
-  static BuiltSet<SpectrumConfigApiResponseCommonFailureResultEnum> get values => _$spectrumConfigApiResponseCommonFailureResultValues;
-  static SpectrumConfigApiResponseCommonFailureResultEnum valueOf(String name) => _$spectrumConfigApiResponseCommonFailureResultValueOf(name);
+  static BuiltSet<SpectrumConfigApiResponseCommonFailureResultEnum> get values => _$spectrumConfigApiResponseCommonFailureResultEnumValues;
+  static SpectrumConfigApiResponseCommonFailureResultEnum valueOf(String name) => _$spectrumConfigApiResponseCommonFailureResultEnumValueOf(name);
 }
 

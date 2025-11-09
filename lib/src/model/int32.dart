@@ -111,11 +111,11 @@ class Int32TypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'int32')
   static const Int32TypeEnum int32 = _$int32TypeEnum_int32;
 
-  static Serializer<Int32TypeEnum> get serializer => _$int32TypeSerializer;
+  static Serializer<Int32TypeEnum> get serializer => _$int32TypeEnumSerializer;
 
   const Int32TypeEnum._(String name): super(name);
 
-  static BuiltSet<Int32TypeEnum> get values => _$int32TypeValues;
-  static Int32TypeEnum valueOf(String name) => _$int32TypeValueOf(name);
+  static BuiltSet<Int32TypeEnum> get values => _$int32TypeEnumValues;
+  static Int32TypeEnum valueOf(String name) => _$int32TypeEnumValueOf(name);
 }
 

@@ -67,7 +67,7 @@ abstract class ZeroTrustGatewayRules implements Built<ZeroTrustGatewayRules, Zer
 
   /// Specify the protocol or layer to evaluate the traffic, identity, and device posture expressions. Can only contain a single value.
   @BuiltValueField(wireName: r'filters')
-  BuiltList<ZeroTrustGatewayRulesCreateZeroTrustGatewayRuleRequestFiltersEnum> get filters;
+  BuiltList<ZeroTrustGatewayRulesFiltersEnum> get filters;
   // enum filtersEnum {  http,  dns,  l4,  egress,  dns_resolver,  };
 
   /// Identify the API resource with a UUID.
@@ -194,7 +194,7 @@ class _$ZeroTrustGatewayRulesSerializer implements PrimitiveSerializer<ZeroTrust
     yield r'filters';
     yield serializers.serialize(
       object.filters,
-      specifiedType: const FullType(BuiltList, [FullType(ZeroTrustGatewayRulesCreateZeroTrustGatewayRuleRequestFiltersEnum)]),
+      specifiedType: const FullType(BuiltList, [FullType(ZeroTrustGatewayRulesFiltersEnum)]),
     );
     if (object.id != null) {
       yield r'id';
@@ -358,8 +358,8 @@ class _$ZeroTrustGatewayRulesSerializer implements PrimitiveSerializer<ZeroTrust
         case r'filters':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(BuiltList, [FullType(ZeroTrustGatewayRulesCreateZeroTrustGatewayRuleRequestFiltersEnum)]),
-          ) as BuiltList<ZeroTrustGatewayRulesCreateZeroTrustGatewayRuleRequestFiltersEnum>;
+            specifiedType: const FullType(BuiltList, [FullType(ZeroTrustGatewayRulesFiltersEnum)]),
+          ) as BuiltList<ZeroTrustGatewayRulesFiltersEnum>;
           result.filters.replace(valueDes);
           break;
         case r'id':
@@ -484,29 +484,29 @@ class _$ZeroTrustGatewayRulesSerializer implements PrimitiveSerializer<ZeroTrust
   }
 }
 
-class ZeroTrustGatewayRulesCreateZeroTrustGatewayRuleRequestFiltersEnum extends EnumClass {
+class ZeroTrustGatewayRulesFiltersEnum extends EnumClass {
 
   /// Specify the protocol or layer to use.
   @BuiltValueEnumConst(wireName: r'http')
-  static const ZeroTrustGatewayRulesCreateZeroTrustGatewayRuleRequestFiltersEnum http = _\$zeroTrustGatewayRulesCreateZeroTrustGatewayRuleRequestFilters_http;
+  static const ZeroTrustGatewayRulesFiltersEnum http = _$zeroTrustGatewayRulesFiltersEnum_http;
   /// Specify the protocol or layer to use.
   @BuiltValueEnumConst(wireName: r'dns')
-  static const ZeroTrustGatewayRulesCreateZeroTrustGatewayRuleRequestFiltersEnum dns = _\$zeroTrustGatewayRulesCreateZeroTrustGatewayRuleRequestFilters_dns;
+  static const ZeroTrustGatewayRulesFiltersEnum dns = _$zeroTrustGatewayRulesFiltersEnum_dns;
   /// Specify the protocol or layer to use.
   @BuiltValueEnumConst(wireName: r'l4')
-  static const ZeroTrustGatewayRulesCreateZeroTrustGatewayRuleRequestFiltersEnum l4 = _\$zeroTrustGatewayRulesCreateZeroTrustGatewayRuleRequestFilters_l4;
+  static const ZeroTrustGatewayRulesFiltersEnum l4 = _$zeroTrustGatewayRulesFiltersEnum_l4;
   /// Specify the protocol or layer to use.
   @BuiltValueEnumConst(wireName: r'egress')
-  static const ZeroTrustGatewayRulesCreateZeroTrustGatewayRuleRequestFiltersEnum egress = _\$zeroTrustGatewayRulesCreateZeroTrustGatewayRuleRequestFilters_egress;
+  static const ZeroTrustGatewayRulesFiltersEnum egress = _$zeroTrustGatewayRulesFiltersEnum_egress;
   /// Specify the protocol or layer to use.
   @BuiltValueEnumConst(wireName: r'dns_resolver')
-  static const ZeroTrustGatewayRulesCreateZeroTrustGatewayRuleRequestFiltersEnum dnsResolver = _\$zeroTrustGatewayRulesCreateZeroTrustGatewayRuleRequestFilters_dnsResolver;
+  static const ZeroTrustGatewayRulesFiltersEnum dnsResolver = _$zeroTrustGatewayRulesFiltersEnum_dnsResolver;
 
-  static Serializer<ZeroTrustGatewayRulesCreateZeroTrustGatewayRuleRequestFiltersEnum> get serializer => _$zeroTrustGatewayRulesCreateZeroTrustGatewayRuleRequestFiltersSerializer;
+  static Serializer<ZeroTrustGatewayRulesFiltersEnum> get serializer => _$zeroTrustGatewayRulesFiltersEnumSerializer;
 
-  const ZeroTrustGatewayRulesCreateZeroTrustGatewayRuleRequestFiltersEnum._(String name): super(name);
+  const ZeroTrustGatewayRulesFiltersEnum._(String name): super(name);
 
-  static BuiltSet<ZeroTrustGatewayRulesCreateZeroTrustGatewayRuleRequestFiltersEnum> get values => _$zeroTrustGatewayRulesCreateZeroTrustGatewayRuleRequestFiltersValues;
-  static ZeroTrustGatewayRulesCreateZeroTrustGatewayRuleRequestFiltersEnum valueOf(String name) => _$zeroTrustGatewayRulesCreateZeroTrustGatewayRuleRequestFiltersValueOf(name);
+  static BuiltSet<ZeroTrustGatewayRulesFiltersEnum> get values => _$zeroTrustGatewayRulesFiltersEnumValues;
+  static ZeroTrustGatewayRulesFiltersEnum valueOf(String name) => _$zeroTrustGatewayRulesFiltersEnumValueOf(name);
 }
 

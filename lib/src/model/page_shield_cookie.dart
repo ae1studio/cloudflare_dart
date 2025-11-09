@@ -341,12 +341,12 @@ class PageShieldCookieSameSiteAttributeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'none')
   static const PageShieldCookieSameSiteAttributeEnum none = _$pageShieldCookieSameSiteAttributeEnum_none;
 
-  static Serializer<PageShieldCookieSameSiteAttributeEnum> get serializer => _$pageShieldCookieSameSiteAttributeSerializer;
+  static Serializer<PageShieldCookieSameSiteAttributeEnum> get serializer => _$pageShieldCookieSameSiteAttributeEnumSerializer;
 
   const PageShieldCookieSameSiteAttributeEnum._(String name): super(name);
 
-  static BuiltSet<PageShieldCookieSameSiteAttributeEnum> get values => _$pageShieldCookieSameSiteAttributeValues;
-  static PageShieldCookieSameSiteAttributeEnum valueOf(String name) => _$pageShieldCookieSameSiteAttributeValueOf(name);
+  static BuiltSet<PageShieldCookieSameSiteAttributeEnum> get values => _$pageShieldCookieSameSiteAttributeEnumValues;
+  static PageShieldCookieSameSiteAttributeEnum valueOf(String name) => _$pageShieldCookieSameSiteAttributeEnumValueOf(name);
 }
 
 class PageShieldCookieTypeEnum extends EnumClass {
@@ -356,11 +356,11 @@ class PageShieldCookieTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'unknown')
   static const PageShieldCookieTypeEnum unknown = _$pageShieldCookieTypeEnum_unknown;
 
-  static Serializer<PageShieldCookieTypeEnum> get serializer => _$pageShieldCookieTypeSerializer;
+  static Serializer<PageShieldCookieTypeEnum> get serializer => _$pageShieldCookieTypeEnumSerializer;
 
   const PageShieldCookieTypeEnum._(String name): super(name);
 
-  static BuiltSet<PageShieldCookieTypeEnum> get values => _$pageShieldCookieTypeValues;
-  static PageShieldCookieTypeEnum valueOf(String name) => _$pageShieldCookieTypeValueOf(name);
+  static BuiltSet<PageShieldCookieTypeEnum> get values => _$pageShieldCookieTypeEnumValues;
+  static PageShieldCookieTypeEnum valueOf(String name) => _$pageShieldCookieTypeEnumValueOf(name);
 }
 

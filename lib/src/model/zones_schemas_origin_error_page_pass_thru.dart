@@ -156,11 +156,11 @@ class ZonesSchemasOriginErrorPagePassThruIdEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'origin_error_page_pass_thru')
   static const ZonesSchemasOriginErrorPagePassThruIdEnum originErrorPagePassThru = _$zonesSchemasOriginErrorPagePassThruIdEnum_originErrorPagePassThru;
 
-  static Serializer<ZonesSchemasOriginErrorPagePassThruIdEnum> get serializer => _$zonesSchemasOriginErrorPagePassThruIdSerializer;
+  static Serializer<ZonesSchemasOriginErrorPagePassThruIdEnum> get serializer => _$zonesSchemasOriginErrorPagePassThruIdEnumSerializer;
 
   const ZonesSchemasOriginErrorPagePassThruIdEnum._(String name): super(name);
 
-  static BuiltSet<ZonesSchemasOriginErrorPagePassThruIdEnum> get values => _$zonesSchemasOriginErrorPagePassThruIdValues;
-  static ZonesSchemasOriginErrorPagePassThruIdEnum valueOf(String name) => _$zonesSchemasOriginErrorPagePassThruIdValueOf(name);
+  static BuiltSet<ZonesSchemasOriginErrorPagePassThruIdEnum> get values => _$zonesSchemasOriginErrorPagePassThruIdEnumValues;
+  static ZonesSchemasOriginErrorPagePassThruIdEnum valueOf(String name) => _$zonesSchemasOriginErrorPagePassThruIdEnumValueOf(name);
 }
 

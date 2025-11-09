@@ -22,7 +22,7 @@ part 'rulesets_score_rule.g.dart';
 /// * [actionParameters] 
 /// * [categories] - The categories of the rule.
 /// * [description] 
-/// * [enabled] 
+/// * [enabled] - Whether the rule should be executed.
 /// * [exposedCredentialCheck] 
 /// * [expression] - The expression defining which traffic will match the rule.
 /// * [id] - The unique ID of the rule.
@@ -40,6 +40,7 @@ abstract class RulesetsScoreRule implements RulesetsRule, Built<RulesetsScoreRul
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(RulesetsScoreRuleBuilder b) => b
       ..description = ''
+      ..enabled = true
       ..actionParameters = {};
 
   @BuiltValueSerializer(custom: true)
@@ -293,11 +294,11 @@ class RulesetsScoreRuleActionEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'score')
   static const RulesetsScoreRuleActionEnum score = _$rulesetsScoreRuleActionEnum_score;
 
-  static Serializer<RulesetsScoreRuleActionEnum> get serializer => _$rulesetsScoreRuleActionSerializer;
+  static Serializer<RulesetsScoreRuleActionEnum> get serializer => _$rulesetsScoreRuleActionEnumSerializer;
 
   const RulesetsScoreRuleActionEnum._(String name): super(name);
 
-  static BuiltSet<RulesetsScoreRuleActionEnum> get values => _$rulesetsScoreRuleActionValues;
-  static RulesetsScoreRuleActionEnum valueOf(String name) => _$rulesetsScoreRuleActionValueOf(name);
+  static BuiltSet<RulesetsScoreRuleActionEnum> get values => _$rulesetsScoreRuleActionEnumValues;
+  static RulesetsScoreRuleActionEnum valueOf(String name) => _$rulesetsScoreRuleActionEnumValueOf(name);
 }
 

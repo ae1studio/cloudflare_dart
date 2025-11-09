@@ -147,11 +147,11 @@ class WorkersBindingKindSecretTextTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'secret_text')
   static const WorkersBindingKindSecretTextTypeEnum secretText = _$workersBindingKindSecretTextTypeEnum_secretText;
 
-  static Serializer<WorkersBindingKindSecretTextTypeEnum> get serializer => _$workersBindingKindSecretTextTypeSerializer;
+  static Serializer<WorkersBindingKindSecretTextTypeEnum> get serializer => _$workersBindingKindSecretTextTypeEnumSerializer;
 
   const WorkersBindingKindSecretTextTypeEnum._(String name): super(name);
 
-  static BuiltSet<WorkersBindingKindSecretTextTypeEnum> get values => _$workersBindingKindSecretTextTypeValues;
-  static WorkersBindingKindSecretTextTypeEnum valueOf(String name) => _$workersBindingKindSecretTextTypeValueOf(name);
+  static BuiltSet<WorkersBindingKindSecretTextTypeEnum> get values => _$workersBindingKindSecretTextTypeEnumValues;
+  static WorkersBindingKindSecretTextTypeEnum valueOf(String name) => _$workersBindingKindSecretTextTypeEnumValueOf(name);
 }
 

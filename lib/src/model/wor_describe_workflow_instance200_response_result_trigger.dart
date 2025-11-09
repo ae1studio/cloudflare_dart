@@ -119,11 +119,11 @@ class WorDescribeWorkflowInstance200ResponseResultTriggerSource_Enum extends Enu
   @BuiltValueEnumConst(wireName: r'cron')
   static const WorDescribeWorkflowInstance200ResponseResultTriggerSource_Enum cron = _$worDescribeWorkflowInstance200ResponseResultTriggerSourceEnum_cron;
 
-  static Serializer<WorDescribeWorkflowInstance200ResponseResultTriggerSource_Enum> get serializer => _$worDescribeWorkflowInstance200ResponseResultTriggerSourceSerializer;
+  static Serializer<WorDescribeWorkflowInstance200ResponseResultTriggerSource_Enum> get serializer => _$worDescribeWorkflowInstance200ResponseResultTriggerSourceEnumSerializer;
 
   const WorDescribeWorkflowInstance200ResponseResultTriggerSource_Enum._(String name): super(name);
 
-  static BuiltSet<WorDescribeWorkflowInstance200ResponseResultTriggerSource_Enum> get values => _$worDescribeWorkflowInstance200ResponseResultTriggerSourceValues;
-  static WorDescribeWorkflowInstance200ResponseResultTriggerSource_Enum valueOf(String name) => _$worDescribeWorkflowInstance200ResponseResultTriggerSourceValueOf(name);
+  static BuiltSet<WorDescribeWorkflowInstance200ResponseResultTriggerSource_Enum> get values => _$worDescribeWorkflowInstance200ResponseResultTriggerSourceEnumValues;
+  static WorDescribeWorkflowInstance200ResponseResultTriggerSource_Enum valueOf(String name) => _$worDescribeWorkflowInstance200ResponseResultTriggerSourceEnumValueOf(name);
 }
 

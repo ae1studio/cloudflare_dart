@@ -136,7 +136,7 @@ import 'package:cloudflare_dart/api.dart';
 
 final api = CloudflareDart().getConnectivityServicesApi();
 final String accountId = accountId_example; // String | 
-final String type = type_example; // String | 
+final InfraServiceType type = ; // InfraServiceType | 
 final int page = 56; // int | Current page in the response
 final int perPage = 56; // int | Max amount of entries returned per page
 
@@ -153,7 +153,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **accountId** | **String**|  | 
- **type** | **String**|  | [optional] 
+ **type** | [**InfraServiceType**](.md)|  | [optional] 
  **page** | **int**| Current page in the response | [optional] [default to 1]
  **perPage** | **int**| Max amount of entries returned per page | [optional] [default to 1000]
 
@@ -173,7 +173,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **connectivityServicesPost**
-> ConnectivityServicesPost200Response connectivityServicesPost(accountId, infraServiceConfig)
+> ConnectivityServicesPost200Response connectivityServicesPost(accountId, body)
 
 Create connectivity service
 
@@ -191,10 +191,10 @@ import 'package:cloudflare_dart/api.dart';
 
 final api = CloudflareDart().getConnectivityServicesApi();
 final String accountId = accountId_example; // String | 
-final InfraServiceConfig infraServiceConfig = {"host":{"hostname":"api.example.com","resolver_network":{"tunnel_id":"0191dce4-9ab4-7fce-b660-8e5dec5172da"}},"name":"web-server","type":"http"}; // InfraServiceConfig | 
+final InfraHttpServiceConfig body = {"host":{"hostname":"api.example.com","resolver_network":{"tunnel_id":"0191dce4-9ab4-7fce-b660-8e5dec5172da"}},"name":"web-server","type":"http"}; // InfraHttpServiceConfig | 
 
 try {
-    final response = api.connectivityServicesPost(accountId, infraServiceConfig);
+    final response = api.connectivityServicesPost(accountId, body);
     print(response);
 } catch on DioException (e) {
     print('Exception when calling ConnectivityServicesApi->connectivityServicesPost: $e\n');
@@ -206,7 +206,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **accountId** | **String**|  | 
- **infraServiceConfig** | [**InfraServiceConfig**](InfraServiceConfig.md)|  | 
+ **body** | **InfraHttpServiceConfig**|  | 
 
 ### Return type
 
@@ -224,7 +224,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **connectivityServicesPut**
-> ConnectivityServicesPost200Response connectivityServicesPut(accountId, serviceId, infraServiceConfig)
+> ConnectivityServicesPost200Response connectivityServicesPut(accountId, serviceId, body)
 
 Update connectivity service
 
@@ -243,10 +243,10 @@ import 'package:cloudflare_dart/api.dart';
 final api = CloudflareDart().getConnectivityServicesApi();
 final String accountId = accountId_example; // String | 
 final String serviceId = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
-final InfraServiceConfig infraServiceConfig = ; // InfraServiceConfig | 
+final InfraHttpServiceConfig body = ; // InfraHttpServiceConfig | 
 
 try {
-    final response = api.connectivityServicesPut(accountId, serviceId, infraServiceConfig);
+    final response = api.connectivityServicesPut(accountId, serviceId, body);
     print(response);
 } catch on DioException (e) {
     print('Exception when calling ConnectivityServicesApi->connectivityServicesPut: $e\n');
@@ -259,7 +259,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **accountId** | **String**|  | 
  **serviceId** | **String**|  | 
- **infraServiceConfig** | [**InfraServiceConfig**](InfraServiceConfig.md)|  | 
+ **body** | **InfraHttpServiceConfig**|  | 
 
 ### Return type
 

@@ -156,11 +156,11 @@ class ZonesOrangeToOrangeIdEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'orange_to_orange')
   static const ZonesOrangeToOrangeIdEnum orangeToOrange = _$zonesOrangeToOrangeIdEnum_orangeToOrange;
 
-  static Serializer<ZonesOrangeToOrangeIdEnum> get serializer => _$zonesOrangeToOrangeIdSerializer;
+  static Serializer<ZonesOrangeToOrangeIdEnum> get serializer => _$zonesOrangeToOrangeIdEnumSerializer;
 
   const ZonesOrangeToOrangeIdEnum._(String name): super(name);
 
-  static BuiltSet<ZonesOrangeToOrangeIdEnum> get values => _$zonesOrangeToOrangeIdValues;
-  static ZonesOrangeToOrangeIdEnum valueOf(String name) => _$zonesOrangeToOrangeIdValueOf(name);
+  static BuiltSet<ZonesOrangeToOrangeIdEnum> get values => _$zonesOrangeToOrangeIdEnumValues;
+  static ZonesOrangeToOrangeIdEnum valueOf(String name) => _$zonesOrangeToOrangeIdEnumValueOf(name);
 }
 

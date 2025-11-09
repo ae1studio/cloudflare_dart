@@ -9,7 +9,7 @@ part of 'connectivity_services_list200_response.dart';
 class _$ConnectivityServicesList200Response
     extends ConnectivityServicesList200Response {
   @override
-  final BuiltList<InfraServiceConfig>? result;
+  final BuiltList<InfraHttpServiceConfig>? result;
   @override
   final AccessApiResponseCollectionAllOfResultInfo? resultInfo;
   @override
@@ -82,10 +82,10 @@ class ConnectivityServicesList200ResponseBuilder
         InfraApiResponseCollectionBuilder {
   _$ConnectivityServicesList200Response? _$v;
 
-  ListBuilder<InfraServiceConfig>? _result;
-  ListBuilder<InfraServiceConfig> get result =>
-      _$this._result ??= ListBuilder<InfraServiceConfig>();
-  set result(covariant ListBuilder<InfraServiceConfig>? result) =>
+  ListBuilder<InfraHttpServiceConfig>? _result;
+  ListBuilder<InfraHttpServiceConfig> get result =>
+      _$this._result ??= ListBuilder<InfraHttpServiceConfig>();
+  set result(covariant ListBuilder<InfraHttpServiceConfig>? result) =>
       _$this._result = result;
 
   AccessApiResponseCollectionAllOfResultInfoBuilder? _resultInfo;

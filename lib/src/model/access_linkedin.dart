@@ -206,11 +206,11 @@ class AccessLinkedinTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'yandex')
   static const AccessLinkedinTypeEnum yandex = _$accessLinkedinTypeEnum_yandex;
 
-  static Serializer<AccessLinkedinTypeEnum> get serializer => _$accessLinkedinTypeSerializer;
+  static Serializer<AccessLinkedinTypeEnum> get serializer => _$accessLinkedinTypeEnumSerializer;
 
   const AccessLinkedinTypeEnum._(String name): super(name);
 
-  static BuiltSet<AccessLinkedinTypeEnum> get values => _$accessLinkedinTypeValues;
-  static AccessLinkedinTypeEnum valueOf(String name) => _$accessLinkedinTypeValueOf(name);
+  static BuiltSet<AccessLinkedinTypeEnum> get values => _$accessLinkedinTypeEnumValues;
+  static AccessLinkedinTypeEnum valueOf(String name) => _$accessLinkedinTypeEnumValueOf(name);
 }
 

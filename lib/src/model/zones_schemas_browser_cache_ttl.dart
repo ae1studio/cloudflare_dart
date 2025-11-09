@@ -155,11 +155,11 @@ class ZonesSchemasBrowserCacheTtlIdEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'browser_cache_ttl')
   static const ZonesSchemasBrowserCacheTtlIdEnum browserCacheTtl = _$zonesSchemasBrowserCacheTtlIdEnum_browserCacheTtl;
 
-  static Serializer<ZonesSchemasBrowserCacheTtlIdEnum> get serializer => _$zonesSchemasBrowserCacheTtlIdSerializer;
+  static Serializer<ZonesSchemasBrowserCacheTtlIdEnum> get serializer => _$zonesSchemasBrowserCacheTtlIdEnumSerializer;
 
   const ZonesSchemasBrowserCacheTtlIdEnum._(String name): super(name);
 
-  static BuiltSet<ZonesSchemasBrowserCacheTtlIdEnum> get values => _$zonesSchemasBrowserCacheTtlIdValues;
-  static ZonesSchemasBrowserCacheTtlIdEnum valueOf(String name) => _$zonesSchemasBrowserCacheTtlIdValueOf(name);
+  static BuiltSet<ZonesSchemasBrowserCacheTtlIdEnum> get values => _$zonesSchemasBrowserCacheTtlIdEnumValues;
+  static ZonesSchemasBrowserCacheTtlIdEnum valueOf(String name) => _$zonesSchemasBrowserCacheTtlIdEnumValueOf(name);
 }
 

@@ -251,11 +251,11 @@ class DnsRecordsDnsRecordScanBatchAcceptTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'URI')
   static const DnsRecordsDnsRecordScanBatchAcceptTypeEnum URI = _$dnsRecordsDnsRecordScanBatchAcceptTypeEnum_URI;
 
-  static Serializer<DnsRecordsDnsRecordScanBatchAcceptTypeEnum> get serializer => _$dnsRecordsDnsRecordScanBatchAcceptTypeSerializer;
+  static Serializer<DnsRecordsDnsRecordScanBatchAcceptTypeEnum> get serializer => _$dnsRecordsDnsRecordScanBatchAcceptTypeEnumSerializer;
 
   const DnsRecordsDnsRecordScanBatchAcceptTypeEnum._(String name): super(name);
 
-  static BuiltSet<DnsRecordsDnsRecordScanBatchAcceptTypeEnum> get values => _$dnsRecordsDnsRecordScanBatchAcceptTypeValues;
-  static DnsRecordsDnsRecordScanBatchAcceptTypeEnum valueOf(String name) => _$dnsRecordsDnsRecordScanBatchAcceptTypeValueOf(name);
+  static BuiltSet<DnsRecordsDnsRecordScanBatchAcceptTypeEnum> get values => _$dnsRecordsDnsRecordScanBatchAcceptTypeEnumValues;
+  static DnsRecordsDnsRecordScanBatchAcceptTypeEnum valueOf(String name) => _$dnsRecordsDnsRecordScanBatchAcceptTypeEnumValueOf(name);
 }
 

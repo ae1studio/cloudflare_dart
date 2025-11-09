@@ -150,11 +150,11 @@ class _$DnsRecordsForAZoneCreateDnsRecord4XXResponseSerializer implements Primit
 class DnsRecordsForAZoneCreateDnsRecord4XXResponseResultEnum extends EnumClass {
 
 
-  static Serializer<DnsRecordsForAZoneCreateDnsRecord4XXResponseResultEnum> get serializer => _$dnsRecordsForAZoneCreateDnsRecord4XXResponseResultSerializer;
+  static Serializer<DnsRecordsForAZoneCreateDnsRecord4XXResponseResultEnum> get serializer => _$dnsRecordsForAZoneCreateDnsRecord4XXResponseResultEnumSerializer;
 
   const DnsRecordsForAZoneCreateDnsRecord4XXResponseResultEnum._(String name): super(name);
 
-  static BuiltSet<DnsRecordsForAZoneCreateDnsRecord4XXResponseResultEnum> get values => _$dnsRecordsForAZoneCreateDnsRecord4XXResponseResultValues;
-  static DnsRecordsForAZoneCreateDnsRecord4XXResponseResultEnum valueOf(String name) => _$dnsRecordsForAZoneCreateDnsRecord4XXResponseResultValueOf(name);
+  static BuiltSet<DnsRecordsForAZoneCreateDnsRecord4XXResponseResultEnum> get values => _$dnsRecordsForAZoneCreateDnsRecord4XXResponseResultEnumValues;
+  static DnsRecordsForAZoneCreateDnsRecord4XXResponseResultEnum valueOf(String name) => _$dnsRecordsForAZoneCreateDnsRecord4XXResponseResultEnumValueOf(name);
 }
 

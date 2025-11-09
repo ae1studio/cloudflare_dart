@@ -135,12 +135,12 @@ class ZonesOriginErrorPagePassThruIdEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'origin_error_page_pass_thru')
   static const ZonesOriginErrorPagePassThruIdEnum originErrorPagePassThru = _$zonesOriginErrorPagePassThruIdEnum_originErrorPagePassThru;
 
-  static Serializer<ZonesOriginErrorPagePassThruIdEnum> get serializer => _$zonesOriginErrorPagePassThruIdSerializer;
+  static Serializer<ZonesOriginErrorPagePassThruIdEnum> get serializer => _$zonesOriginErrorPagePassThruIdEnumSerializer;
 
   const ZonesOriginErrorPagePassThruIdEnum._(String name): super(name);
 
-  static BuiltSet<ZonesOriginErrorPagePassThruIdEnum> get values => _$zonesOriginErrorPagePassThruIdValues;
-  static ZonesOriginErrorPagePassThruIdEnum valueOf(String name) => _$zonesOriginErrorPagePassThruIdValueOf(name);
+  static BuiltSet<ZonesOriginErrorPagePassThruIdEnum> get values => _$zonesOriginErrorPagePassThruIdEnumValues;
+  static ZonesOriginErrorPagePassThruIdEnum valueOf(String name) => _$zonesOriginErrorPagePassThruIdEnumValueOf(name);
 }
 
 class ZonesOriginErrorPagePassThruValueEnum extends EnumClass {
@@ -152,11 +152,11 @@ class ZonesOriginErrorPagePassThruValueEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'off')
   static const ZonesOriginErrorPagePassThruValueEnum off = _$zonesOriginErrorPagePassThruValueEnum_off;
 
-  static Serializer<ZonesOriginErrorPagePassThruValueEnum> get serializer => _$zonesOriginErrorPagePassThruValueSerializer;
+  static Serializer<ZonesOriginErrorPagePassThruValueEnum> get serializer => _$zonesOriginErrorPagePassThruValueEnumSerializer;
 
   const ZonesOriginErrorPagePassThruValueEnum._(String name): super(name);
 
-  static BuiltSet<ZonesOriginErrorPagePassThruValueEnum> get values => _$zonesOriginErrorPagePassThruValueValues;
-  static ZonesOriginErrorPagePassThruValueEnum valueOf(String name) => _$zonesOriginErrorPagePassThruValueValueOf(name);
+  static BuiltSet<ZonesOriginErrorPagePassThruValueEnum> get values => _$zonesOriginErrorPagePassThruValueEnumValues;
+  static ZonesOriginErrorPagePassThruValueEnum valueOf(String name) => _$zonesOriginErrorPagePassThruValueEnumValueOf(name);
 }
 

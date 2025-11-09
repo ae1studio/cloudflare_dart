@@ -165,11 +165,11 @@ class _$IpAccessRulesForAUserListIpAccessRules4XXResponseSerializer implements P
 class IpAccessRulesForAUserListIpAccessRules4XXResponseResultEnum extends EnumClass {
 
 
-  static Serializer<IpAccessRulesForAUserListIpAccessRules4XXResponseResultEnum> get serializer => _$ipAccessRulesForAUserListIpAccessRules4XXResponseResultSerializer;
+  static Serializer<IpAccessRulesForAUserListIpAccessRules4XXResponseResultEnum> get serializer => _$ipAccessRulesForAUserListIpAccessRules4XXResponseResultEnumSerializer;
 
   const IpAccessRulesForAUserListIpAccessRules4XXResponseResultEnum._(String name): super(name);
 
-  static BuiltSet<IpAccessRulesForAUserListIpAccessRules4XXResponseResultEnum> get values => _$ipAccessRulesForAUserListIpAccessRules4XXResponseResultValues;
-  static IpAccessRulesForAUserListIpAccessRules4XXResponseResultEnum valueOf(String name) => _$ipAccessRulesForAUserListIpAccessRules4XXResponseResultValueOf(name);
+  static BuiltSet<IpAccessRulesForAUserListIpAccessRules4XXResponseResultEnum> get values => _$ipAccessRulesForAUserListIpAccessRules4XXResponseResultEnumValues;
+  static IpAccessRulesForAUserListIpAccessRules4XXResponseResultEnum valueOf(String name) => _$ipAccessRulesForAUserListIpAccessRules4XXResponseResultEnumValueOf(name);
 }
 

@@ -149,11 +149,11 @@ class _$ListsUpdateAllListItems4XXResponseSerializer implements PrimitiveSeriali
 class ListsUpdateAllListItems4XXResponseResultEnum extends EnumClass {
 
 
-  static Serializer<ListsUpdateAllListItems4XXResponseResultEnum> get serializer => _$listsUpdateAllListItems4XXResponseResultSerializer;
+  static Serializer<ListsUpdateAllListItems4XXResponseResultEnum> get serializer => _$listsUpdateAllListItems4XXResponseResultEnumSerializer;
 
   const ListsUpdateAllListItems4XXResponseResultEnum._(String name): super(name);
 
-  static BuiltSet<ListsUpdateAllListItems4XXResponseResultEnum> get values => _$listsUpdateAllListItems4XXResponseResultValues;
-  static ListsUpdateAllListItems4XXResponseResultEnum valueOf(String name) => _$listsUpdateAllListItems4XXResponseResultValueOf(name);
+  static BuiltSet<ListsUpdateAllListItems4XXResponseResultEnum> get values => _$listsUpdateAllListItems4XXResponseResultEnumValues;
+  static ListsUpdateAllListItems4XXResponseResultEnum valueOf(String name) => _$listsUpdateAllListItems4XXResponseResultEnumValueOf(name);
 }
 

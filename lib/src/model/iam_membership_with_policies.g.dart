@@ -104,9 +104,10 @@ class IamMembershipWithPoliciesBuilder
   String? get id => _$this._id;
   set id(String? id) => _$this._id = id;
 
-  IamPermissions? _permissions;
-  IamPermissions? get permissions => _$this._permissions;
-  set permissions(IamPermissions? permissions) =>
+  IamPermissionsBuilder? _permissions;
+  IamPermissionsBuilder get permissions =>
+      _$this._permissions ??= IamPermissionsBuilder();
+  set permissions(IamPermissionsBuilder? permissions) =>
       _$this._permissions = permissions;
 
   ListBuilder<IamListMemberPolicy>? _policies;
@@ -133,7 +134,7 @@ class IamMembershipWithPoliciesBuilder
       _account = $v.account?.toBuilder();
       _apiAccessEnabled = $v.apiAccessEnabled;
       _id = $v.id;
-      _permissions = $v.permissions;
+      _permissions = $v.permissions?.toBuilder();
       _policies = $v.policies?.toBuilder();
       _roles = $v.roles?.toBuilder();
       _status = $v.status;
@@ -163,7 +164,7 @@ class IamMembershipWithPoliciesBuilder
             account: _account?.build(),
             apiAccessEnabled: apiAccessEnabled,
             id: id,
-            permissions: permissions,
+            permissions: _permissions?.build(),
             policies: _policies?.build(),
             roles: _roles?.build(),
             status: status,
@@ -174,6 +175,8 @@ class IamMembershipWithPoliciesBuilder
         _$failedField = 'account';
         _account?.build();
 
+        _$failedField = 'permissions';
+        _permissions?.build();
         _$failedField = 'policies';
         _policies?.build();
         _$failedField = 'roles';

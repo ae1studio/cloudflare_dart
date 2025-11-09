@@ -196,11 +196,11 @@ class PostCommandsRequestCommandsInnerCommandArgsInterfacesEnum extends EnumClas
   @BuiltValueEnumConst(wireName: r'tunnel')
   static const PostCommandsRequestCommandsInnerCommandArgsInterfacesEnum tunnel = _$postCommandsRequestCommandsInnerCommandArgsInterfacesEnum_tunnel;
 
-  static Serializer<PostCommandsRequestCommandsInnerCommandArgsInterfacesEnum> get serializer => _$postCommandsRequestCommandsInnerCommandArgsInterfacesSerializer;
+  static Serializer<PostCommandsRequestCommandsInnerCommandArgsInterfacesEnum> get serializer => _$postCommandsRequestCommandsInnerCommandArgsInterfacesEnumSerializer;
 
   const PostCommandsRequestCommandsInnerCommandArgsInterfacesEnum._(String name): super(name);
 
-  static BuiltSet<PostCommandsRequestCommandsInnerCommandArgsInterfacesEnum> get values => _$postCommandsRequestCommandsInnerCommandArgsInterfacesValues;
-  static PostCommandsRequestCommandsInnerCommandArgsInterfacesEnum valueOf(String name) => _$postCommandsRequestCommandsInnerCommandArgsInterfacesValueOf(name);
+  static BuiltSet<PostCommandsRequestCommandsInnerCommandArgsInterfacesEnum> get values => _$postCommandsRequestCommandsInnerCommandArgsInterfacesEnumValues;
+  static PostCommandsRequestCommandsInnerCommandArgsInterfacesEnum valueOf(String name) => _$postCommandsRequestCommandsInnerCommandArgsInterfacesEnumValueOf(name);
 }
 

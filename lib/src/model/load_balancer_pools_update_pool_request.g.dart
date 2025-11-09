@@ -6,10 +6,171 @@ part of 'load_balancer_pools_update_pool_request.dart';
 // BuiltValueGenerator
 // **************************************************************************
 
+const LoadBalancerPoolsUpdatePoolRequestCheckRegionsEnum
+    _$loadBalancerPoolsUpdatePoolRequestCheckRegionsEnum_WNAM =
+    const LoadBalancerPoolsUpdatePoolRequestCheckRegionsEnum._('WNAM');
+const LoadBalancerPoolsUpdatePoolRequestCheckRegionsEnum
+    _$loadBalancerPoolsUpdatePoolRequestCheckRegionsEnum_ENAM =
+    const LoadBalancerPoolsUpdatePoolRequestCheckRegionsEnum._('ENAM');
+const LoadBalancerPoolsUpdatePoolRequestCheckRegionsEnum
+    _$loadBalancerPoolsUpdatePoolRequestCheckRegionsEnum_WEU =
+    const LoadBalancerPoolsUpdatePoolRequestCheckRegionsEnum._('WEU');
+const LoadBalancerPoolsUpdatePoolRequestCheckRegionsEnum
+    _$loadBalancerPoolsUpdatePoolRequestCheckRegionsEnum_EEU =
+    const LoadBalancerPoolsUpdatePoolRequestCheckRegionsEnum._('EEU');
+const LoadBalancerPoolsUpdatePoolRequestCheckRegionsEnum
+    _$loadBalancerPoolsUpdatePoolRequestCheckRegionsEnum_NSAM =
+    const LoadBalancerPoolsUpdatePoolRequestCheckRegionsEnum._('NSAM');
+const LoadBalancerPoolsUpdatePoolRequestCheckRegionsEnum
+    _$loadBalancerPoolsUpdatePoolRequestCheckRegionsEnum_SSAM =
+    const LoadBalancerPoolsUpdatePoolRequestCheckRegionsEnum._('SSAM');
+const LoadBalancerPoolsUpdatePoolRequestCheckRegionsEnum
+    _$loadBalancerPoolsUpdatePoolRequestCheckRegionsEnum_OC =
+    const LoadBalancerPoolsUpdatePoolRequestCheckRegionsEnum._('OC');
+const LoadBalancerPoolsUpdatePoolRequestCheckRegionsEnum
+    _$loadBalancerPoolsUpdatePoolRequestCheckRegionsEnum_ME =
+    const LoadBalancerPoolsUpdatePoolRequestCheckRegionsEnum._('ME');
+const LoadBalancerPoolsUpdatePoolRequestCheckRegionsEnum
+    _$loadBalancerPoolsUpdatePoolRequestCheckRegionsEnum_NAF =
+    const LoadBalancerPoolsUpdatePoolRequestCheckRegionsEnum._('NAF');
+const LoadBalancerPoolsUpdatePoolRequestCheckRegionsEnum
+    _$loadBalancerPoolsUpdatePoolRequestCheckRegionsEnum_SAF =
+    const LoadBalancerPoolsUpdatePoolRequestCheckRegionsEnum._('SAF');
+const LoadBalancerPoolsUpdatePoolRequestCheckRegionsEnum
+    _$loadBalancerPoolsUpdatePoolRequestCheckRegionsEnum_SAS =
+    const LoadBalancerPoolsUpdatePoolRequestCheckRegionsEnum._('SAS');
+const LoadBalancerPoolsUpdatePoolRequestCheckRegionsEnum
+    _$loadBalancerPoolsUpdatePoolRequestCheckRegionsEnum_SEAS =
+    const LoadBalancerPoolsUpdatePoolRequestCheckRegionsEnum._('SEAS');
+const LoadBalancerPoolsUpdatePoolRequestCheckRegionsEnum
+    _$loadBalancerPoolsUpdatePoolRequestCheckRegionsEnum_NEAS =
+    const LoadBalancerPoolsUpdatePoolRequestCheckRegionsEnum._('NEAS');
+const LoadBalancerPoolsUpdatePoolRequestCheckRegionsEnum
+    _$loadBalancerPoolsUpdatePoolRequestCheckRegionsEnum_ALL_REGIONS =
+    const LoadBalancerPoolsUpdatePoolRequestCheckRegionsEnum._('ALL_REGIONS');
+
+LoadBalancerPoolsUpdatePoolRequestCheckRegionsEnum
+    _$loadBalancerPoolsUpdatePoolRequestCheckRegionsEnumValueOf(String name) {
+  switch (name) {
+    case 'WNAM':
+      return _$loadBalancerPoolsUpdatePoolRequestCheckRegionsEnum_WNAM;
+    case 'ENAM':
+      return _$loadBalancerPoolsUpdatePoolRequestCheckRegionsEnum_ENAM;
+    case 'WEU':
+      return _$loadBalancerPoolsUpdatePoolRequestCheckRegionsEnum_WEU;
+    case 'EEU':
+      return _$loadBalancerPoolsUpdatePoolRequestCheckRegionsEnum_EEU;
+    case 'NSAM':
+      return _$loadBalancerPoolsUpdatePoolRequestCheckRegionsEnum_NSAM;
+    case 'SSAM':
+      return _$loadBalancerPoolsUpdatePoolRequestCheckRegionsEnum_SSAM;
+    case 'OC':
+      return _$loadBalancerPoolsUpdatePoolRequestCheckRegionsEnum_OC;
+    case 'ME':
+      return _$loadBalancerPoolsUpdatePoolRequestCheckRegionsEnum_ME;
+    case 'NAF':
+      return _$loadBalancerPoolsUpdatePoolRequestCheckRegionsEnum_NAF;
+    case 'SAF':
+      return _$loadBalancerPoolsUpdatePoolRequestCheckRegionsEnum_SAF;
+    case 'SAS':
+      return _$loadBalancerPoolsUpdatePoolRequestCheckRegionsEnum_SAS;
+    case 'SEAS':
+      return _$loadBalancerPoolsUpdatePoolRequestCheckRegionsEnum_SEAS;
+    case 'NEAS':
+      return _$loadBalancerPoolsUpdatePoolRequestCheckRegionsEnum_NEAS;
+    case 'ALL_REGIONS':
+      return _$loadBalancerPoolsUpdatePoolRequestCheckRegionsEnum_ALL_REGIONS;
+    default:
+      throw ArgumentError(name);
+  }
+}
+
+final BuiltSet<LoadBalancerPoolsUpdatePoolRequestCheckRegionsEnum>
+    _$loadBalancerPoolsUpdatePoolRequestCheckRegionsEnumValues = BuiltSet<
+        LoadBalancerPoolsUpdatePoolRequestCheckRegionsEnum>(const <LoadBalancerPoolsUpdatePoolRequestCheckRegionsEnum>[
+  _$loadBalancerPoolsUpdatePoolRequestCheckRegionsEnum_WNAM,
+  _$loadBalancerPoolsUpdatePoolRequestCheckRegionsEnum_ENAM,
+  _$loadBalancerPoolsUpdatePoolRequestCheckRegionsEnum_WEU,
+  _$loadBalancerPoolsUpdatePoolRequestCheckRegionsEnum_EEU,
+  _$loadBalancerPoolsUpdatePoolRequestCheckRegionsEnum_NSAM,
+  _$loadBalancerPoolsUpdatePoolRequestCheckRegionsEnum_SSAM,
+  _$loadBalancerPoolsUpdatePoolRequestCheckRegionsEnum_OC,
+  _$loadBalancerPoolsUpdatePoolRequestCheckRegionsEnum_ME,
+  _$loadBalancerPoolsUpdatePoolRequestCheckRegionsEnum_NAF,
+  _$loadBalancerPoolsUpdatePoolRequestCheckRegionsEnum_SAF,
+  _$loadBalancerPoolsUpdatePoolRequestCheckRegionsEnum_SAS,
+  _$loadBalancerPoolsUpdatePoolRequestCheckRegionsEnum_SEAS,
+  _$loadBalancerPoolsUpdatePoolRequestCheckRegionsEnum_NEAS,
+  _$loadBalancerPoolsUpdatePoolRequestCheckRegionsEnum_ALL_REGIONS,
+]);
+
+Serializer<LoadBalancerPoolsUpdatePoolRequestCheckRegionsEnum>
+    _$loadBalancerPoolsUpdatePoolRequestCheckRegionsEnumSerializer =
+    _$LoadBalancerPoolsUpdatePoolRequestCheckRegionsEnumSerializer();
+
+class _$LoadBalancerPoolsUpdatePoolRequestCheckRegionsEnumSerializer
+    implements
+        PrimitiveSerializer<
+            LoadBalancerPoolsUpdatePoolRequestCheckRegionsEnum> {
+  static const Map<String, Object> _toWire = const <String, Object>{
+    'WNAM': 'WNAM',
+    'ENAM': 'ENAM',
+    'WEU': 'WEU',
+    'EEU': 'EEU',
+    'NSAM': 'NSAM',
+    'SSAM': 'SSAM',
+    'OC': 'OC',
+    'ME': 'ME',
+    'NAF': 'NAF',
+    'SAF': 'SAF',
+    'SAS': 'SAS',
+    'SEAS': 'SEAS',
+    'NEAS': 'NEAS',
+    'ALL_REGIONS': 'ALL_REGIONS',
+  };
+  static const Map<Object, String> _fromWire = const <Object, String>{
+    'WNAM': 'WNAM',
+    'ENAM': 'ENAM',
+    'WEU': 'WEU',
+    'EEU': 'EEU',
+    'NSAM': 'NSAM',
+    'SSAM': 'SSAM',
+    'OC': 'OC',
+    'ME': 'ME',
+    'NAF': 'NAF',
+    'SAF': 'SAF',
+    'SAS': 'SAS',
+    'SEAS': 'SEAS',
+    'NEAS': 'NEAS',
+    'ALL_REGIONS': 'ALL_REGIONS',
+  };
+
+  @override
+  final Iterable<Type> types = const <Type>[
+    LoadBalancerPoolsUpdatePoolRequestCheckRegionsEnum
+  ];
+  @override
+  final String wireName = 'LoadBalancerPoolsUpdatePoolRequestCheckRegionsEnum';
+
+  @override
+  Object serialize(Serializers serializers,
+          LoadBalancerPoolsUpdatePoolRequestCheckRegionsEnum object,
+          {FullType specifiedType = FullType.unspecified}) =>
+      _toWire[object.name] ?? object.name;
+
+  @override
+  LoadBalancerPoolsUpdatePoolRequestCheckRegionsEnum deserialize(
+          Serializers serializers, Object serialized,
+          {FullType specifiedType = FullType.unspecified}) =>
+      LoadBalancerPoolsUpdatePoolRequestCheckRegionsEnum.valueOf(
+          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+}
+
 class _$LoadBalancerPoolsUpdatePoolRequest
     extends LoadBalancerPoolsUpdatePoolRequest {
   @override
-  final BuiltList<dynamic>? checkRegions;
+  final BuiltList<LoadBalancerPoolsUpdatePoolRequestCheckRegionsEnum>?
+      checkRegions;
   @override
   final String? description;
   @override
@@ -147,10 +308,14 @@ class LoadBalancerPoolsUpdatePoolRequestBuilder
             LoadBalancerPoolsUpdatePoolRequestBuilder> {
   _$LoadBalancerPoolsUpdatePoolRequest? _$v;
 
-  ListBuilder<dynamic>? _checkRegions;
-  ListBuilder<dynamic> get checkRegions =>
-      _$this._checkRegions ??= ListBuilder<dynamic>();
-  set checkRegions(ListBuilder<dynamic>? checkRegions) =>
+  ListBuilder<LoadBalancerPoolsUpdatePoolRequestCheckRegionsEnum>?
+      _checkRegions;
+  ListBuilder<LoadBalancerPoolsUpdatePoolRequestCheckRegionsEnum>
+      get checkRegions => _$this._checkRegions ??=
+          ListBuilder<LoadBalancerPoolsUpdatePoolRequestCheckRegionsEnum>();
+  set checkRegions(
+          ListBuilder<LoadBalancerPoolsUpdatePoolRequestCheckRegionsEnum>?
+              checkRegions) =>
       _$this._checkRegions = checkRegions;
 
   String? _description;

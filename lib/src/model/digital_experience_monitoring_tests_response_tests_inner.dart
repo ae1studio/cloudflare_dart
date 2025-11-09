@@ -385,11 +385,11 @@ class DigitalExperienceMonitoringTestsResponseTestsInnerKindEnum extends EnumCla
   @BuiltValueEnumConst(wireName: r'traceroute')
   static const DigitalExperienceMonitoringTestsResponseTestsInnerKindEnum traceroute = _$digitalExperienceMonitoringTestsResponseTestsInnerKindEnum_traceroute;
 
-  static Serializer<DigitalExperienceMonitoringTestsResponseTestsInnerKindEnum> get serializer => _$digitalExperienceMonitoringTestsResponseTestsInnerKindSerializer;
+  static Serializer<DigitalExperienceMonitoringTestsResponseTestsInnerKindEnum> get serializer => _$digitalExperienceMonitoringTestsResponseTestsInnerKindEnumSerializer;
 
   const DigitalExperienceMonitoringTestsResponseTestsInnerKindEnum._(String name): super(name);
 
-  static BuiltSet<DigitalExperienceMonitoringTestsResponseTestsInnerKindEnum> get values => _$digitalExperienceMonitoringTestsResponseTestsInnerKindValues;
-  static DigitalExperienceMonitoringTestsResponseTestsInnerKindEnum valueOf(String name) => _$digitalExperienceMonitoringTestsResponseTestsInnerKindValueOf(name);
+  static BuiltSet<DigitalExperienceMonitoringTestsResponseTestsInnerKindEnum> get values => _$digitalExperienceMonitoringTestsResponseTestsInnerKindEnumValues;
+  static DigitalExperienceMonitoringTestsResponseTestsInnerKindEnum valueOf(String name) => _$digitalExperienceMonitoringTestsResponseTestsInnerKindEnumValueOf(name);
 }
 

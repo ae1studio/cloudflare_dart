@@ -16,12 +16,12 @@ part 'access_infra_policy_req.g.dart';
 /// AccessInfraPolicyReq
 ///
 /// Properties:
-/// * [connectionRules] 
 /// * [decision] 
 /// * [exclude] - Rules evaluated with a NOT logical operator. To match the policy, a user cannot meet any of the Exclude rules.
 /// * [include] - Rules evaluated with an OR logical operator. A user needs to meet only one of the Include rules.
 /// * [name] - The name of the Access policy.
 /// * [require] - Rules evaluated with an AND logical operator. To match the policy, a user must meet all of the Require rules.
+/// * [connectionRules] 
 @BuiltValue()
 abstract class AccessInfraPolicyReq implements AccessBasePolicyReq, Built<AccessInfraPolicyReq, AccessInfraPolicyReqBuilder> {
   @BuiltValueField(wireName: r'connection_rules')

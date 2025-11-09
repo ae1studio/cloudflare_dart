@@ -134,11 +134,11 @@ class FirewallCountryConfigurationTargetEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'country')
   static const FirewallCountryConfigurationTargetEnum country = _$firewallCountryConfigurationTargetEnum_country;
 
-  static Serializer<FirewallCountryConfigurationTargetEnum> get serializer => _$firewallCountryConfigurationTargetSerializer;
+  static Serializer<FirewallCountryConfigurationTargetEnum> get serializer => _$firewallCountryConfigurationTargetEnumSerializer;
 
   const FirewallCountryConfigurationTargetEnum._(String name): super(name);
 
-  static BuiltSet<FirewallCountryConfigurationTargetEnum> get values => _$firewallCountryConfigurationTargetValues;
-  static FirewallCountryConfigurationTargetEnum valueOf(String name) => _$firewallCountryConfigurationTargetValueOf(name);
+  static BuiltSet<FirewallCountryConfigurationTargetEnum> get values => _$firewallCountryConfigurationTargetEnumValues;
+  static FirewallCountryConfigurationTargetEnum valueOf(String name) => _$firewallCountryConfigurationTargetEnumValueOf(name);
 }
 

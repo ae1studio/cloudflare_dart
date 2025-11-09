@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **expiration** | **num** | Expires the key at a certain time, measured in number of seconds since the UNIX epoch. | [optional] 
 **expirationTtl** | **num** | Expires the key after a number of seconds. Must be at least 60. | [optional] 
 **key** | **String** | A key's name. The name may be at most 512 bytes. All printable, non-whitespace characters are valid. | 
-**metadata** | [**WorkersKvListMetadata**](WorkersKvListMetadata.md) |  | [optional] 
+**metadata** | [**JsonObject**](JsonObject.md) |  | [optional] 
 **value** | **String** | A UTF-8 encoded string to be stored, up to 25 MiB in length. | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

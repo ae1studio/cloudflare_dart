@@ -6,6 +6,96 @@ part of 'email_security_get_domain200_response_all_of_result.dart';
 // BuiltValueGenerator
 // **************************************************************************
 
+const EmailSecurityGetDomain200ResponseAllOfResultRegionsEnum
+    _$emailSecurityGetDomain200ResponseAllOfResultRegionsEnum_GLOBAL =
+    const EmailSecurityGetDomain200ResponseAllOfResultRegionsEnum._('GLOBAL');
+const EmailSecurityGetDomain200ResponseAllOfResultRegionsEnum
+    _$emailSecurityGetDomain200ResponseAllOfResultRegionsEnum_AU =
+    const EmailSecurityGetDomain200ResponseAllOfResultRegionsEnum._('AU');
+const EmailSecurityGetDomain200ResponseAllOfResultRegionsEnum
+    _$emailSecurityGetDomain200ResponseAllOfResultRegionsEnum_DE =
+    const EmailSecurityGetDomain200ResponseAllOfResultRegionsEnum._('DE');
+const EmailSecurityGetDomain200ResponseAllOfResultRegionsEnum
+    _$emailSecurityGetDomain200ResponseAllOfResultRegionsEnum_IN =
+    const EmailSecurityGetDomain200ResponseAllOfResultRegionsEnum._('IN');
+const EmailSecurityGetDomain200ResponseAllOfResultRegionsEnum
+    _$emailSecurityGetDomain200ResponseAllOfResultRegionsEnum_US =
+    const EmailSecurityGetDomain200ResponseAllOfResultRegionsEnum._('US');
+
+EmailSecurityGetDomain200ResponseAllOfResultRegionsEnum
+    _$emailSecurityGetDomain200ResponseAllOfResultRegionsEnumValueOf(
+        String name) {
+  switch (name) {
+    case 'GLOBAL':
+      return _$emailSecurityGetDomain200ResponseAllOfResultRegionsEnum_GLOBAL;
+    case 'AU':
+      return _$emailSecurityGetDomain200ResponseAllOfResultRegionsEnum_AU;
+    case 'DE':
+      return _$emailSecurityGetDomain200ResponseAllOfResultRegionsEnum_DE;
+    case 'IN':
+      return _$emailSecurityGetDomain200ResponseAllOfResultRegionsEnum_IN;
+    case 'US':
+      return _$emailSecurityGetDomain200ResponseAllOfResultRegionsEnum_US;
+    default:
+      throw ArgumentError(name);
+  }
+}
+
+final BuiltSet<EmailSecurityGetDomain200ResponseAllOfResultRegionsEnum>
+    _$emailSecurityGetDomain200ResponseAllOfResultRegionsEnumValues = BuiltSet<
+        EmailSecurityGetDomain200ResponseAllOfResultRegionsEnum>(const <EmailSecurityGetDomain200ResponseAllOfResultRegionsEnum>[
+  _$emailSecurityGetDomain200ResponseAllOfResultRegionsEnum_GLOBAL,
+  _$emailSecurityGetDomain200ResponseAllOfResultRegionsEnum_AU,
+  _$emailSecurityGetDomain200ResponseAllOfResultRegionsEnum_DE,
+  _$emailSecurityGetDomain200ResponseAllOfResultRegionsEnum_IN,
+  _$emailSecurityGetDomain200ResponseAllOfResultRegionsEnum_US,
+]);
+
+Serializer<EmailSecurityGetDomain200ResponseAllOfResultRegionsEnum>
+    _$emailSecurityGetDomain200ResponseAllOfResultRegionsEnumSerializer =
+    _$EmailSecurityGetDomain200ResponseAllOfResultRegionsEnumSerializer();
+
+class _$EmailSecurityGetDomain200ResponseAllOfResultRegionsEnumSerializer
+    implements
+        PrimitiveSerializer<
+            EmailSecurityGetDomain200ResponseAllOfResultRegionsEnum> {
+  static const Map<String, Object> _toWire = const <String, Object>{
+    'GLOBAL': 'GLOBAL',
+    'AU': 'AU',
+    'DE': 'DE',
+    'IN': 'IN',
+    'US': 'US',
+  };
+  static const Map<Object, String> _fromWire = const <Object, String>{
+    'GLOBAL': 'GLOBAL',
+    'AU': 'AU',
+    'DE': 'DE',
+    'IN': 'IN',
+    'US': 'US',
+  };
+
+  @override
+  final Iterable<Type> types = const <Type>[
+    EmailSecurityGetDomain200ResponseAllOfResultRegionsEnum
+  ];
+  @override
+  final String wireName =
+      'EmailSecurityGetDomain200ResponseAllOfResultRegionsEnum';
+
+  @override
+  Object serialize(Serializers serializers,
+          EmailSecurityGetDomain200ResponseAllOfResultRegionsEnum object,
+          {FullType specifiedType = FullType.unspecified}) =>
+      _toWire[object.name] ?? object.name;
+
+  @override
+  EmailSecurityGetDomain200ResponseAllOfResultRegionsEnum deserialize(
+          Serializers serializers, Object serialized,
+          {FullType specifiedType = FullType.unspecified}) =>
+      EmailSecurityGetDomain200ResponseAllOfResultRegionsEnum.valueOf(
+          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+}
+
 class _$EmailSecurityGetDomain200ResponseAllOfResult
     extends EmailSecurityGetDomain200ResponseAllOfResult {
   @override
@@ -41,7 +131,8 @@ class _$EmailSecurityGetDomain200ResponseAllOfResult
   @override
   final String? o365TenantId;
   @override
-  final BuiltList<dynamic> regions;
+  final BuiltList<EmailSecurityGetDomain200ResponseAllOfResultRegionsEnum>
+      regions;
   @override
   final bool? requireTlsInbound;
   @override
@@ -259,10 +350,15 @@ class EmailSecurityGetDomain200ResponseAllOfResultBuilder
   String? get o365TenantId => _$this._o365TenantId;
   set o365TenantId(String? o365TenantId) => _$this._o365TenantId = o365TenantId;
 
-  ListBuilder<dynamic>? _regions;
-  ListBuilder<dynamic> get regions =>
-      _$this._regions ??= ListBuilder<dynamic>();
-  set regions(ListBuilder<dynamic>? regions) => _$this._regions = regions;
+  ListBuilder<EmailSecurityGetDomain200ResponseAllOfResultRegionsEnum>?
+      _regions;
+  ListBuilder<EmailSecurityGetDomain200ResponseAllOfResultRegionsEnum>
+      get regions => _$this._regions ??= ListBuilder<
+          EmailSecurityGetDomain200ResponseAllOfResultRegionsEnum>();
+  set regions(
+          ListBuilder<EmailSecurityGetDomain200ResponseAllOfResultRegionsEnum>?
+              regions) =>
+      _$this._regions = regions;
 
   bool? _requireTlsInbound;
   bool? get requireTlsInbound => _$this._requireTlsInbound;

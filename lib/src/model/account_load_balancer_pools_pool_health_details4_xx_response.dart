@@ -149,11 +149,11 @@ class _$AccountLoadBalancerPoolsPoolHealthDetails4XXResponseSerializer implement
 class AccountLoadBalancerPoolsPoolHealthDetails4XXResponseResultEnum extends EnumClass {
 
 
-  static Serializer<AccountLoadBalancerPoolsPoolHealthDetails4XXResponseResultEnum> get serializer => _$accountLoadBalancerPoolsPoolHealthDetails4XXResponseResultSerializer;
+  static Serializer<AccountLoadBalancerPoolsPoolHealthDetails4XXResponseResultEnum> get serializer => _$accountLoadBalancerPoolsPoolHealthDetails4XXResponseResultEnumSerializer;
 
   const AccountLoadBalancerPoolsPoolHealthDetails4XXResponseResultEnum._(String name): super(name);
 
-  static BuiltSet<AccountLoadBalancerPoolsPoolHealthDetails4XXResponseResultEnum> get values => _$accountLoadBalancerPoolsPoolHealthDetails4XXResponseResultValues;
-  static AccountLoadBalancerPoolsPoolHealthDetails4XXResponseResultEnum valueOf(String name) => _$accountLoadBalancerPoolsPoolHealthDetails4XXResponseResultValueOf(name);
+  static BuiltSet<AccountLoadBalancerPoolsPoolHealthDetails4XXResponseResultEnum> get values => _$accountLoadBalancerPoolsPoolHealthDetails4XXResponseResultEnumValues;
+  static AccountLoadBalancerPoolsPoolHealthDetails4XXResponseResultEnum valueOf(String name) => _$accountLoadBalancerPoolsPoolHealthDetails4XXResponseResultEnumValueOf(name);
 }
 

@@ -113,11 +113,11 @@ class MconnEventOneOf5KEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'StartRotateCryptKey')
   static const MconnEventOneOf5KEnum startRotateCryptKey = _$mconnEventOneOf5KEnum_startRotateCryptKey;
 
-  static Serializer<MconnEventOneOf5KEnum> get serializer => _$mconnEventOneOf5KSerializer;
+  static Serializer<MconnEventOneOf5KEnum> get serializer => _$mconnEventOneOf5KEnumSerializer;
 
   const MconnEventOneOf5KEnum._(String name): super(name);
 
-  static BuiltSet<MconnEventOneOf5KEnum> get values => _$mconnEventOneOf5KValues;
-  static MconnEventOneOf5KEnum valueOf(String name) => _$mconnEventOneOf5KValueOf(name);
+  static BuiltSet<MconnEventOneOf5KEnum> get values => _$mconnEventOneOf5KEnumValues;
+  static MconnEventOneOf5KEnum valueOf(String name) => _$mconnEventOneOf5KEnumValueOf(name);
 }
 

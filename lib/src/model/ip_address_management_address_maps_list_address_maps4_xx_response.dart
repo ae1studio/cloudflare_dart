@@ -165,11 +165,11 @@ class _$IpAddressManagementAddressMapsListAddressMaps4XXResponseSerializer imple
 class IpAddressManagementAddressMapsListAddressMaps4XXResponseResultEnum extends EnumClass {
 
 
-  static Serializer<IpAddressManagementAddressMapsListAddressMaps4XXResponseResultEnum> get serializer => _$ipAddressManagementAddressMapsListAddressMaps4XXResponseResultSerializer;
+  static Serializer<IpAddressManagementAddressMapsListAddressMaps4XXResponseResultEnum> get serializer => _$ipAddressManagementAddressMapsListAddressMaps4XXResponseResultEnumSerializer;
 
   const IpAddressManagementAddressMapsListAddressMaps4XXResponseResultEnum._(String name): super(name);
 
-  static BuiltSet<IpAddressManagementAddressMapsListAddressMaps4XXResponseResultEnum> get values => _$ipAddressManagementAddressMapsListAddressMaps4XXResponseResultValues;
-  static IpAddressManagementAddressMapsListAddressMaps4XXResponseResultEnum valueOf(String name) => _$ipAddressManagementAddressMapsListAddressMaps4XXResponseResultValueOf(name);
+  static BuiltSet<IpAddressManagementAddressMapsListAddressMaps4XXResponseResultEnum> get values => _$ipAddressManagementAddressMapsListAddressMaps4XXResponseResultEnumValues;
+  static IpAddressManagementAddressMapsListAddressMaps4XXResponseResultEnum valueOf(String name) => _$ipAddressManagementAddressMapsListAddressMaps4XXResponseResultEnumValueOf(name);
 }
 

@@ -161,11 +161,11 @@ class _$MagicVisibilityPcapsApiResponseCommonFailureSerializer implements Primit
 class MagicVisibilityPcapsApiResponseCommonFailureResultEnum extends EnumClass {
 
 
-  static Serializer<MagicVisibilityPcapsApiResponseCommonFailureResultEnum> get serializer => _$magicVisibilityPcapsApiResponseCommonFailureResultSerializer;
+  static Serializer<MagicVisibilityPcapsApiResponseCommonFailureResultEnum> get serializer => _$magicVisibilityPcapsApiResponseCommonFailureResultEnumSerializer;
 
   const MagicVisibilityPcapsApiResponseCommonFailureResultEnum._(String name): super(name);
 
-  static BuiltSet<MagicVisibilityPcapsApiResponseCommonFailureResultEnum> get values => _$magicVisibilityPcapsApiResponseCommonFailureResultValues;
-  static MagicVisibilityPcapsApiResponseCommonFailureResultEnum valueOf(String name) => _$magicVisibilityPcapsApiResponseCommonFailureResultValueOf(name);
+  static BuiltSet<MagicVisibilityPcapsApiResponseCommonFailureResultEnum> get values => _$magicVisibilityPcapsApiResponseCommonFailureResultEnumValues;
+  static MagicVisibilityPcapsApiResponseCommonFailureResultEnum valueOf(String name) => _$magicVisibilityPcapsApiResponseCommonFailureResultEnumValueOf(name);
 }
 

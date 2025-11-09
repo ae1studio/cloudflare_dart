@@ -130,11 +130,11 @@ class AlgorithmNameEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'zstd')
   static const AlgorithmNameEnum zstd = _$algorithmNameEnum_zstd;
 
-  static Serializer<AlgorithmNameEnum> get serializer => _$algorithmNameSerializer;
+  static Serializer<AlgorithmNameEnum> get serializer => _$algorithmNameEnumSerializer;
 
   const AlgorithmNameEnum._(String name): super(name);
 
-  static BuiltSet<AlgorithmNameEnum> get values => _$algorithmNameValues;
-  static AlgorithmNameEnum valueOf(String name) => _$algorithmNameValueOf(name);
+  static BuiltSet<AlgorithmNameEnum> get values => _$algorithmNameEnumValues;
+  static AlgorithmNameEnum valueOf(String name) => _$algorithmNameEnumValueOf(name);
 }
 

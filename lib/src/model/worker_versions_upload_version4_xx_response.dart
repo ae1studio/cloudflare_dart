@@ -149,11 +149,11 @@ class _$WorkerVersionsUploadVersion4XXResponseSerializer implements PrimitiveSer
 class WorkerVersionsUploadVersion4XXResponseResultEnum extends EnumClass {
 
 
-  static Serializer<WorkerVersionsUploadVersion4XXResponseResultEnum> get serializer => _$workerVersionsUploadVersion4XXResponseResultSerializer;
+  static Serializer<WorkerVersionsUploadVersion4XXResponseResultEnum> get serializer => _$workerVersionsUploadVersion4XXResponseResultEnumSerializer;
 
   const WorkerVersionsUploadVersion4XXResponseResultEnum._(String name): super(name);
 
-  static BuiltSet<WorkerVersionsUploadVersion4XXResponseResultEnum> get values => _$workerVersionsUploadVersion4XXResponseResultValues;
-  static WorkerVersionsUploadVersion4XXResponseResultEnum valueOf(String name) => _$workerVersionsUploadVersion4XXResponseResultValueOf(name);
+  static BuiltSet<WorkerVersionsUploadVersion4XXResponseResultEnum> get values => _$workerVersionsUploadVersion4XXResponseResultEnumValues;
+  static WorkerVersionsUploadVersion4XXResponseResultEnum valueOf(String name) => _$workerVersionsUploadVersion4XXResponseResultEnumValueOf(name);
 }
 

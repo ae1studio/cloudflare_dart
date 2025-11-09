@@ -149,11 +149,11 @@ class _$MagicIpsecTunnelsUpdateIpsecTunnel4XXResponseSerializer implements Primi
 class MagicIpsecTunnelsUpdateIpsecTunnel4XXResponseResultEnum extends EnumClass {
 
 
-  static Serializer<MagicIpsecTunnelsUpdateIpsecTunnel4XXResponseResultEnum> get serializer => _$magicIpsecTunnelsUpdateIpsecTunnel4XXResponseResultSerializer;
+  static Serializer<MagicIpsecTunnelsUpdateIpsecTunnel4XXResponseResultEnum> get serializer => _$magicIpsecTunnelsUpdateIpsecTunnel4XXResponseResultEnumSerializer;
 
   const MagicIpsecTunnelsUpdateIpsecTunnel4XXResponseResultEnum._(String name): super(name);
 
-  static BuiltSet<MagicIpsecTunnelsUpdateIpsecTunnel4XXResponseResultEnum> get values => _$magicIpsecTunnelsUpdateIpsecTunnel4XXResponseResultValues;
-  static MagicIpsecTunnelsUpdateIpsecTunnel4XXResponseResultEnum valueOf(String name) => _$magicIpsecTunnelsUpdateIpsecTunnel4XXResponseResultValueOf(name);
+  static BuiltSet<MagicIpsecTunnelsUpdateIpsecTunnel4XXResponseResultEnum> get values => _$magicIpsecTunnelsUpdateIpsecTunnel4XXResponseResultEnumValues;
+  static MagicIpsecTunnelsUpdateIpsecTunnel4XXResponseResultEnum valueOf(String name) => _$magicIpsecTunnelsUpdateIpsecTunnel4XXResponseResultEnumValueOf(name);
 }
 

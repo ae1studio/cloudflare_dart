@@ -11,9 +11,9 @@ class _$WorkersKvBulkGetResultWithMetadataValuesValue
   @override
   final num? expiration;
   @override
-  final JsonObject metadata;
+  final JsonObject? metadata;
   @override
-  final JsonObject value;
+  final JsonObject? value;
 
   factory _$WorkersKvBulkGetResultWithMetadataValuesValue(
           [void Function(WorkersKvBulkGetResultWithMetadataValuesValueBuilder)?
@@ -22,7 +22,7 @@ class _$WorkersKvBulkGetResultWithMetadataValuesValue
           ._build();
 
   _$WorkersKvBulkGetResultWithMetadataValuesValue._(
-      {this.expiration, required this.metadata, required this.value})
+      {this.expiration, this.metadata, this.value})
       : super._();
   @override
   WorkersKvBulkGetResultWithMetadataValuesValue rebuild(
@@ -116,10 +116,8 @@ class WorkersKvBulkGetResultWithMetadataValuesValueBuilder
     final _$result = _$v ??
         _$WorkersKvBulkGetResultWithMetadataValuesValue._(
           expiration: expiration,
-          metadata: BuiltValueNullFieldError.checkNotNull(metadata,
-              r'WorkersKvBulkGetResultWithMetadataValuesValue', 'metadata'),
-          value: BuiltValueNullFieldError.checkNotNull(
-              value, r'WorkersKvBulkGetResultWithMetadataValuesValue', 'value'),
+          metadata: metadata,
+          value: value,
         );
     replace(_$result);
     return _$result;

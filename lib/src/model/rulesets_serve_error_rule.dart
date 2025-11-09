@@ -22,7 +22,7 @@ part 'rulesets_serve_error_rule.g.dart';
 /// * [actionParameters] 
 /// * [categories] - The categories of the rule.
 /// * [description] 
-/// * [enabled] 
+/// * [enabled] - Whether the rule should be executed.
 /// * [exposedCredentialCheck] 
 /// * [expression] - The expression defining which traffic will match the rule.
 /// * [id] - The unique ID of the rule.
@@ -40,6 +40,7 @@ abstract class RulesetsServeErrorRule implements RulesetsRule, Built<RulesetsSer
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(RulesetsServeErrorRuleBuilder b) => b
       ..description = ''
+      ..enabled = true
       ..actionParameters = {};
 
   @BuiltValueSerializer(custom: true)
@@ -293,11 +294,11 @@ class RulesetsServeErrorRuleActionEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'serve_error')
   static const RulesetsServeErrorRuleActionEnum serveError = _$rulesetsServeErrorRuleActionEnum_serveError;
 
-  static Serializer<RulesetsServeErrorRuleActionEnum> get serializer => _$rulesetsServeErrorRuleActionSerializer;
+  static Serializer<RulesetsServeErrorRuleActionEnum> get serializer => _$rulesetsServeErrorRuleActionEnumSerializer;
 
   const RulesetsServeErrorRuleActionEnum._(String name): super(name);
 
-  static BuiltSet<RulesetsServeErrorRuleActionEnum> get values => _$rulesetsServeErrorRuleActionValues;
-  static RulesetsServeErrorRuleActionEnum valueOf(String name) => _$rulesetsServeErrorRuleActionValueOf(name);
+  static BuiltSet<RulesetsServeErrorRuleActionEnum> get values => _$rulesetsServeErrorRuleActionEnumValues;
+  static RulesetsServeErrorRuleActionEnum valueOf(String name) => _$rulesetsServeErrorRuleActionEnumValueOf(name);
 }
 

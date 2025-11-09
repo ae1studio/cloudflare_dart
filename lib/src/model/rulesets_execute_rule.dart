@@ -22,7 +22,7 @@ part 'rulesets_execute_rule.g.dart';
 /// * [actionParameters] 
 /// * [categories] - The categories of the rule.
 /// * [description] 
-/// * [enabled] 
+/// * [enabled] - Whether the rule should be executed.
 /// * [exposedCredentialCheck] 
 /// * [expression] - The expression defining which traffic will match the rule.
 /// * [id] - The unique ID of the rule.
@@ -40,6 +40,7 @@ abstract class RulesetsExecuteRule implements RulesetsRule, Built<RulesetsExecut
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(RulesetsExecuteRuleBuilder b) => b
       ..description = ''
+      ..enabled = true
       ..actionParameters = {};
 
   @BuiltValueSerializer(custom: true)
@@ -293,11 +294,11 @@ class RulesetsExecuteRuleActionEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'execute')
   static const RulesetsExecuteRuleActionEnum execute = _$rulesetsExecuteRuleActionEnum_execute;
 
-  static Serializer<RulesetsExecuteRuleActionEnum> get serializer => _$rulesetsExecuteRuleActionSerializer;
+  static Serializer<RulesetsExecuteRuleActionEnum> get serializer => _$rulesetsExecuteRuleActionEnumSerializer;
 
   const RulesetsExecuteRuleActionEnum._(String name): super(name);
 
-  static BuiltSet<RulesetsExecuteRuleActionEnum> get values => _$rulesetsExecuteRuleActionValues;
-  static RulesetsExecuteRuleActionEnum valueOf(String name) => _$rulesetsExecuteRuleActionValueOf(name);
+  static BuiltSet<RulesetsExecuteRuleActionEnum> get values => _$rulesetsExecuteRuleActionEnumValues;
+  static RulesetsExecuteRuleActionEnum valueOf(String name) => _$rulesetsExecuteRuleActionEnumValueOf(name);
 }
 

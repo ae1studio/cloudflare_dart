@@ -156,11 +156,11 @@ class ZonesSchemasEdgeCacheTtlIdEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'edge_cache_ttl')
   static const ZonesSchemasEdgeCacheTtlIdEnum edgeCacheTtl = _$zonesSchemasEdgeCacheTtlIdEnum_edgeCacheTtl;
 
-  static Serializer<ZonesSchemasEdgeCacheTtlIdEnum> get serializer => _$zonesSchemasEdgeCacheTtlIdSerializer;
+  static Serializer<ZonesSchemasEdgeCacheTtlIdEnum> get serializer => _$zonesSchemasEdgeCacheTtlIdEnumSerializer;
 
   const ZonesSchemasEdgeCacheTtlIdEnum._(String name): super(name);
 
-  static BuiltSet<ZonesSchemasEdgeCacheTtlIdEnum> get values => _$zonesSchemasEdgeCacheTtlIdValues;
-  static ZonesSchemasEdgeCacheTtlIdEnum valueOf(String name) => _$zonesSchemasEdgeCacheTtlIdValueOf(name);
+  static BuiltSet<ZonesSchemasEdgeCacheTtlIdEnum> get values => _$zonesSchemasEdgeCacheTtlIdEnumValues;
+  static ZonesSchemasEdgeCacheTtlIdEnum valueOf(String name) => _$zonesSchemasEdgeCacheTtlIdEnumValueOf(name);
 }
 

@@ -133,11 +133,11 @@ class WafRulesUpdateAWafRuleRequestModeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'off')
   static const WafRulesUpdateAWafRuleRequestModeEnum off = _$wafRulesUpdateAWafRuleRequestModeEnum_off;
 
-  static Serializer<WafRulesUpdateAWafRuleRequestModeEnum> get serializer => _$wafRulesUpdateAWafRuleRequestModeSerializer;
+  static Serializer<WafRulesUpdateAWafRuleRequestModeEnum> get serializer => _$wafRulesUpdateAWafRuleRequestModeEnumSerializer;
 
   const WafRulesUpdateAWafRuleRequestModeEnum._(String name): super(name);
 
-  static BuiltSet<WafRulesUpdateAWafRuleRequestModeEnum> get values => _$wafRulesUpdateAWafRuleRequestModeValues;
-  static WafRulesUpdateAWafRuleRequestModeEnum valueOf(String name) => _$wafRulesUpdateAWafRuleRequestModeValueOf(name);
+  static BuiltSet<WafRulesUpdateAWafRuleRequestModeEnum> get values => _$wafRulesUpdateAWafRuleRequestModeEnumValues;
+  static WafRulesUpdateAWafRuleRequestModeEnum valueOf(String name) => _$wafRulesUpdateAWafRuleRequestModeEnumValueOf(name);
 }
 

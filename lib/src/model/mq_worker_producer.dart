@@ -131,11 +131,11 @@ class MqWorkerProducerTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'worker')
   static const MqWorkerProducerTypeEnum worker = _$mqWorkerProducerTypeEnum_worker;
 
-  static Serializer<MqWorkerProducerTypeEnum> get serializer => _$mqWorkerProducerTypeSerializer;
+  static Serializer<MqWorkerProducerTypeEnum> get serializer => _$mqWorkerProducerTypeEnumSerializer;
 
   const MqWorkerProducerTypeEnum._(String name): super(name);
 
-  static BuiltSet<MqWorkerProducerTypeEnum> get values => _$mqWorkerProducerTypeValues;
-  static MqWorkerProducerTypeEnum valueOf(String name) => _$mqWorkerProducerTypeValueOf(name);
+  static BuiltSet<MqWorkerProducerTypeEnum> get values => _$mqWorkerProducerTypeEnumValues;
+  static MqWorkerProducerTypeEnum valueOf(String name) => _$mqWorkerProducerTypeEnumValueOf(name);
 }
 

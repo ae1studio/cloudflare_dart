@@ -206,11 +206,11 @@ class AccessPingoneTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'yandex')
   static const AccessPingoneTypeEnum yandex = _$accessPingoneTypeEnum_yandex;
 
-  static Serializer<AccessPingoneTypeEnum> get serializer => _$accessPingoneTypeSerializer;
+  static Serializer<AccessPingoneTypeEnum> get serializer => _$accessPingoneTypeEnumSerializer;
 
   const AccessPingoneTypeEnum._(String name): super(name);
 
-  static BuiltSet<AccessPingoneTypeEnum> get values => _$accessPingoneTypeValues;
-  static AccessPingoneTypeEnum valueOf(String name) => _$accessPingoneTypeValueOf(name);
+  static BuiltSet<AccessPingoneTypeEnum> get values => _$accessPingoneTypeEnumValues;
+  static AccessPingoneTypeEnum valueOf(String name) => _$accessPingoneTypeEnumValueOf(name);
 }
 

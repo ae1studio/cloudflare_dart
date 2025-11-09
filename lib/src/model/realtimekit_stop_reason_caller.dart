@@ -156,11 +156,11 @@ class RealtimekitStopReasonCallerTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'USER')
   static const RealtimekitStopReasonCallerTypeEnum USER = _$realtimekitStopReasonCallerTypeEnum_USER;
 
-  static Serializer<RealtimekitStopReasonCallerTypeEnum> get serializer => _$realtimekitStopReasonCallerTypeSerializer;
+  static Serializer<RealtimekitStopReasonCallerTypeEnum> get serializer => _$realtimekitStopReasonCallerTypeEnumSerializer;
 
   const RealtimekitStopReasonCallerTypeEnum._(String name): super(name);
 
-  static BuiltSet<RealtimekitStopReasonCallerTypeEnum> get values => _$realtimekitStopReasonCallerTypeValues;
-  static RealtimekitStopReasonCallerTypeEnum valueOf(String name) => _$realtimekitStopReasonCallerTypeValueOf(name);
+  static BuiltSet<RealtimekitStopReasonCallerTypeEnum> get values => _$realtimekitStopReasonCallerTypeEnumValues;
+  static RealtimekitStopReasonCallerTypeEnum valueOf(String name) => _$realtimekitStopReasonCallerTypeEnumValueOf(name);
 }
 

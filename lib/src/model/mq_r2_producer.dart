@@ -131,11 +131,11 @@ class MqR2ProducerTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'r2_bucket')
   static const MqR2ProducerTypeEnum r2Bucket = _$mqR2ProducerTypeEnum_r2Bucket;
 
-  static Serializer<MqR2ProducerTypeEnum> get serializer => _$mqR2ProducerTypeSerializer;
+  static Serializer<MqR2ProducerTypeEnum> get serializer => _$mqR2ProducerTypeEnumSerializer;
 
   const MqR2ProducerTypeEnum._(String name): super(name);
 
-  static BuiltSet<MqR2ProducerTypeEnum> get values => _$mqR2ProducerTypeValues;
-  static MqR2ProducerTypeEnum valueOf(String name) => _$mqR2ProducerTypeValueOf(name);
+  static BuiltSet<MqR2ProducerTypeEnum> get values => _$mqR2ProducerTypeEnumValues;
+  static MqR2ProducerTypeEnum valueOf(String name) => _$mqR2ProducerTypeEnumValueOf(name);
 }
 

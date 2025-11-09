@@ -135,11 +135,11 @@ class TelemetryQueryRequestParametersOrderByOrderEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'desc')
   static const TelemetryQueryRequestParametersOrderByOrderEnum desc = _$telemetryQueryRequestParametersOrderByOrderEnum_desc;
 
-  static Serializer<TelemetryQueryRequestParametersOrderByOrderEnum> get serializer => _$telemetryQueryRequestParametersOrderByOrderSerializer;
+  static Serializer<TelemetryQueryRequestParametersOrderByOrderEnum> get serializer => _$telemetryQueryRequestParametersOrderByOrderEnumSerializer;
 
   const TelemetryQueryRequestParametersOrderByOrderEnum._(String name): super(name);
 
-  static BuiltSet<TelemetryQueryRequestParametersOrderByOrderEnum> get values => _$telemetryQueryRequestParametersOrderByOrderValues;
-  static TelemetryQueryRequestParametersOrderByOrderEnum valueOf(String name) => _$telemetryQueryRequestParametersOrderByOrderValueOf(name);
+  static BuiltSet<TelemetryQueryRequestParametersOrderByOrderEnum> get values => _$telemetryQueryRequestParametersOrderByOrderEnumValues;
+  static TelemetryQueryRequestParametersOrderByOrderEnum valueOf(String name) => _$telemetryQueryRequestParametersOrderByOrderEnumValueOf(name);
 }
 

@@ -156,11 +156,11 @@ class ZonesReplaceInsecureJsIdEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'replace_insecure_js')
   static const ZonesReplaceInsecureJsIdEnum replaceInsecureJs = _$zonesReplaceInsecureJsIdEnum_replaceInsecureJs;
 
-  static Serializer<ZonesReplaceInsecureJsIdEnum> get serializer => _$zonesReplaceInsecureJsIdSerializer;
+  static Serializer<ZonesReplaceInsecureJsIdEnum> get serializer => _$zonesReplaceInsecureJsIdEnumSerializer;
 
   const ZonesReplaceInsecureJsIdEnum._(String name): super(name);
 
-  static BuiltSet<ZonesReplaceInsecureJsIdEnum> get values => _$zonesReplaceInsecureJsIdValues;
-  static ZonesReplaceInsecureJsIdEnum valueOf(String name) => _$zonesReplaceInsecureJsIdValueOf(name);
+  static BuiltSet<ZonesReplaceInsecureJsIdEnum> get values => _$zonesReplaceInsecureJsIdEnumValues;
+  static ZonesReplaceInsecureJsIdEnum valueOf(String name) => _$zonesReplaceInsecureJsIdEnumValueOf(name);
 }
 

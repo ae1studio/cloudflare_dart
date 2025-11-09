@@ -156,11 +156,11 @@ class SmartshieldSmartShieldSettingsCacheReserveValueEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'off')
   static const SmartshieldSmartShieldSettingsCacheReserveValueEnum off = _$smartshieldSmartShieldSettingsCacheReserveValueEnum_off;
 
-  static Serializer<SmartshieldSmartShieldSettingsCacheReserveValueEnum> get serializer => _$smartshieldSmartShieldSettingsCacheReserveValueSerializer;
+  static Serializer<SmartshieldSmartShieldSettingsCacheReserveValueEnum> get serializer => _$smartshieldSmartShieldSettingsCacheReserveValueEnumSerializer;
 
   const SmartshieldSmartShieldSettingsCacheReserveValueEnum._(String name): super(name);
 
-  static BuiltSet<SmartshieldSmartShieldSettingsCacheReserveValueEnum> get values => _$smartshieldSmartShieldSettingsCacheReserveValueValues;
-  static SmartshieldSmartShieldSettingsCacheReserveValueEnum valueOf(String name) => _$smartshieldSmartShieldSettingsCacheReserveValueValueOf(name);
+  static BuiltSet<SmartshieldSmartShieldSettingsCacheReserveValueEnum> get values => _$smartshieldSmartShieldSettingsCacheReserveValueEnumValues;
+  static SmartshieldSmartShieldSettingsCacheReserveValueEnum valueOf(String name) => _$smartshieldSmartShieldSettingsCacheReserveValueEnumValueOf(name);
 }
 

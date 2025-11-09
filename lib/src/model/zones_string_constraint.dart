@@ -175,11 +175,11 @@ class ZonesStringConstraintOperator_Enum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'not_contain')
   static const ZonesStringConstraintOperator_Enum notContain = _$zonesStringConstraintOperatorEnum_notContain;
 
-  static Serializer<ZonesStringConstraintOperator_Enum> get serializer => _$zonesStringConstraintOperatorSerializer;
+  static Serializer<ZonesStringConstraintOperator_Enum> get serializer => _$zonesStringConstraintOperatorEnumSerializer;
 
   const ZonesStringConstraintOperator_Enum._(String name): super(name);
 
-  static BuiltSet<ZonesStringConstraintOperator_Enum> get values => _$zonesStringConstraintOperatorValues;
-  static ZonesStringConstraintOperator_Enum valueOf(String name) => _$zonesStringConstraintOperatorValueOf(name);
+  static BuiltSet<ZonesStringConstraintOperator_Enum> get values => _$zonesStringConstraintOperatorEnumValues;
+  static ZonesStringConstraintOperator_Enum valueOf(String name) => _$zonesStringConstraintOperatorEnumValueOf(name);
 }
 

@@ -137,12 +137,12 @@ class RulesetsUrlNormalizationScopeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'none')
   static const RulesetsUrlNormalizationScopeEnum none = _$rulesetsUrlNormalizationScopeEnum_none;
 
-  static Serializer<RulesetsUrlNormalizationScopeEnum> get serializer => _$rulesetsUrlNormalizationScopeSerializer;
+  static Serializer<RulesetsUrlNormalizationScopeEnum> get serializer => _$rulesetsUrlNormalizationScopeEnumSerializer;
 
   const RulesetsUrlNormalizationScopeEnum._(String name): super(name);
 
-  static BuiltSet<RulesetsUrlNormalizationScopeEnum> get values => _$rulesetsUrlNormalizationScopeValues;
-  static RulesetsUrlNormalizationScopeEnum valueOf(String name) => _$rulesetsUrlNormalizationScopeValueOf(name);
+  static BuiltSet<RulesetsUrlNormalizationScopeEnum> get values => _$rulesetsUrlNormalizationScopeEnumValues;
+  static RulesetsUrlNormalizationScopeEnum valueOf(String name) => _$rulesetsUrlNormalizationScopeEnumValueOf(name);
 }
 
 class RulesetsUrlNormalizationTypeEnum extends EnumClass {
@@ -154,11 +154,11 @@ class RulesetsUrlNormalizationTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'rfc3986')
   static const RulesetsUrlNormalizationTypeEnum rfc3986 = _$rulesetsUrlNormalizationTypeEnum_rfc3986;
 
-  static Serializer<RulesetsUrlNormalizationTypeEnum> get serializer => _$rulesetsUrlNormalizationTypeSerializer;
+  static Serializer<RulesetsUrlNormalizationTypeEnum> get serializer => _$rulesetsUrlNormalizationTypeEnumSerializer;
 
   const RulesetsUrlNormalizationTypeEnum._(String name): super(name);
 
-  static BuiltSet<RulesetsUrlNormalizationTypeEnum> get values => _$rulesetsUrlNormalizationTypeValues;
-  static RulesetsUrlNormalizationTypeEnum valueOf(String name) => _$rulesetsUrlNormalizationTypeValueOf(name);
+  static BuiltSet<RulesetsUrlNormalizationTypeEnum> get values => _$rulesetsUrlNormalizationTypeEnumValues;
+  static RulesetsUrlNormalizationTypeEnum valueOf(String name) => _$rulesetsUrlNormalizationTypeEnumValueOf(name);
 }
 

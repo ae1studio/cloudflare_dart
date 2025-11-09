@@ -115,11 +115,11 @@ class MqEventSourceVectorizeTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'vectorize')
   static const MqEventSourceVectorizeTypeEnum vectorize = _$mqEventSourceVectorizeTypeEnum_vectorize;
 
-  static Serializer<MqEventSourceVectorizeTypeEnum> get serializer => _$mqEventSourceVectorizeTypeSerializer;
+  static Serializer<MqEventSourceVectorizeTypeEnum> get serializer => _$mqEventSourceVectorizeTypeEnumSerializer;
 
   const MqEventSourceVectorizeTypeEnum._(String name): super(name);
 
-  static BuiltSet<MqEventSourceVectorizeTypeEnum> get values => _$mqEventSourceVectorizeTypeValues;
-  static MqEventSourceVectorizeTypeEnum valueOf(String name) => _$mqEventSourceVectorizeTypeValueOf(name);
+  static BuiltSet<MqEventSourceVectorizeTypeEnum> get values => _$mqEventSourceVectorizeTypeEnumValues;
+  static MqEventSourceVectorizeTypeEnum valueOf(String name) => _$mqEventSourceVectorizeTypeEnumValueOf(name);
 }
 

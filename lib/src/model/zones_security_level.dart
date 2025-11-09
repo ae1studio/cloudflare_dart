@@ -134,12 +134,12 @@ class ZonesSecurityLevelIdEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'security_level')
   static const ZonesSecurityLevelIdEnum securityLevel = _$zonesSecurityLevelIdEnum_securityLevel;
 
-  static Serializer<ZonesSecurityLevelIdEnum> get serializer => _$zonesSecurityLevelIdSerializer;
+  static Serializer<ZonesSecurityLevelIdEnum> get serializer => _$zonesSecurityLevelIdEnumSerializer;
 
   const ZonesSecurityLevelIdEnum._(String name): super(name);
 
-  static BuiltSet<ZonesSecurityLevelIdEnum> get values => _$zonesSecurityLevelIdValues;
-  static ZonesSecurityLevelIdEnum valueOf(String name) => _$zonesSecurityLevelIdValueOf(name);
+  static BuiltSet<ZonesSecurityLevelIdEnum> get values => _$zonesSecurityLevelIdEnumValues;
+  static ZonesSecurityLevelIdEnum valueOf(String name) => _$zonesSecurityLevelIdEnumValueOf(name);
 }
 
 class ZonesSecurityLevelValueEnum extends EnumClass {
@@ -157,11 +157,11 @@ class ZonesSecurityLevelValueEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'under_attack')
   static const ZonesSecurityLevelValueEnum underAttack = _$zonesSecurityLevelValueEnum_underAttack;
 
-  static Serializer<ZonesSecurityLevelValueEnum> get serializer => _$zonesSecurityLevelValueSerializer;
+  static Serializer<ZonesSecurityLevelValueEnum> get serializer => _$zonesSecurityLevelValueEnumSerializer;
 
   const ZonesSecurityLevelValueEnum._(String name): super(name);
 
-  static BuiltSet<ZonesSecurityLevelValueEnum> get values => _$zonesSecurityLevelValueValues;
-  static ZonesSecurityLevelValueEnum valueOf(String name) => _$zonesSecurityLevelValueValueOf(name);
+  static BuiltSet<ZonesSecurityLevelValueEnum> get values => _$zonesSecurityLevelValueEnumValues;
+  static ZonesSecurityLevelValueEnum valueOf(String name) => _$zonesSecurityLevelValueEnumValueOf(name);
 }
 

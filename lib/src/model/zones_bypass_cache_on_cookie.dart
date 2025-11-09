@@ -134,11 +134,11 @@ class ZonesBypassCacheOnCookieIdEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'bypass_cache_on_cookie')
   static const ZonesBypassCacheOnCookieIdEnum bypassCacheOnCookie = _$zonesBypassCacheOnCookieIdEnum_bypassCacheOnCookie;
 
-  static Serializer<ZonesBypassCacheOnCookieIdEnum> get serializer => _$zonesBypassCacheOnCookieIdSerializer;
+  static Serializer<ZonesBypassCacheOnCookieIdEnum> get serializer => _$zonesBypassCacheOnCookieIdEnumSerializer;
 
   const ZonesBypassCacheOnCookieIdEnum._(String name): super(name);
 
-  static BuiltSet<ZonesBypassCacheOnCookieIdEnum> get values => _$zonesBypassCacheOnCookieIdValues;
-  static ZonesBypassCacheOnCookieIdEnum valueOf(String name) => _$zonesBypassCacheOnCookieIdValueOf(name);
+  static BuiltSet<ZonesBypassCacheOnCookieIdEnum> get values => _$zonesBypassCacheOnCookieIdEnumValues;
+  static ZonesBypassCacheOnCookieIdEnum valueOf(String name) => _$zonesBypassCacheOnCookieIdEnumValueOf(name);
 }
 

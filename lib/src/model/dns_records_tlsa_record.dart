@@ -248,11 +248,11 @@ class DnsRecordsTLSARecordTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'TLSA')
   static const DnsRecordsTLSARecordTypeEnum TLSA = _$dnsRecordsTLSARecordTypeEnum_TLSA;
 
-  static Serializer<DnsRecordsTLSARecordTypeEnum> get serializer => _$dnsRecordsTLSARecordTypeSerializer;
+  static Serializer<DnsRecordsTLSARecordTypeEnum> get serializer => _$dnsRecordsTLSARecordTypeEnumSerializer;
 
   const DnsRecordsTLSARecordTypeEnum._(String name): super(name);
 
-  static BuiltSet<DnsRecordsTLSARecordTypeEnum> get values => _$dnsRecordsTLSARecordTypeValues;
-  static DnsRecordsTLSARecordTypeEnum valueOf(String name) => _$dnsRecordsTLSARecordTypeValueOf(name);
+  static BuiltSet<DnsRecordsTLSARecordTypeEnum> get values => _$dnsRecordsTLSARecordTypeEnumValues;
+  static DnsRecordsTLSARecordTypeEnum valueOf(String name) => _$dnsRecordsTLSARecordTypeEnumValueOf(name);
 }
 

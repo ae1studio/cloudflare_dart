@@ -259,11 +259,11 @@ class _$AsnIntelligenceGetAsnSubnets4XXResponseSerializer implements PrimitiveSe
 class AsnIntelligenceGetAsnSubnets4XXResponseResultEnum extends EnumClass {
 
 
-  static Serializer<AsnIntelligenceGetAsnSubnets4XXResponseResultEnum> get serializer => _$asnIntelligenceGetAsnSubnets4XXResponseResultSerializer;
+  static Serializer<AsnIntelligenceGetAsnSubnets4XXResponseResultEnum> get serializer => _$asnIntelligenceGetAsnSubnets4XXResponseResultEnumSerializer;
 
   const AsnIntelligenceGetAsnSubnets4XXResponseResultEnum._(String name): super(name);
 
-  static BuiltSet<AsnIntelligenceGetAsnSubnets4XXResponseResultEnum> get values => _$asnIntelligenceGetAsnSubnets4XXResponseResultValues;
-  static AsnIntelligenceGetAsnSubnets4XXResponseResultEnum valueOf(String name) => _$asnIntelligenceGetAsnSubnets4XXResponseResultValueOf(name);
+  static BuiltSet<AsnIntelligenceGetAsnSubnets4XXResponseResultEnum> get values => _$asnIntelligenceGetAsnSubnets4XXResponseResultEnumValues;
+  static AsnIntelligenceGetAsnSubnets4XXResponseResultEnum valueOf(String name) => _$asnIntelligenceGetAsnSubnets4XXResponseResultEnumValueOf(name);
 }
 

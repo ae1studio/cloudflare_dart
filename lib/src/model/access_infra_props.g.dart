@@ -13,8 +13,8 @@ abstract class AccessInfraPropsBuilder
   String? get name;
   set name(covariant String? name);
 
-  AccessInfraPropsAllOfTypeBuilder get type;
-  set type(covariant AccessInfraPropsAllOfTypeBuilder? type);
+  AccessType? get type;
+  set type(covariant AccessType? type);
 
   ListBuilder<AccessTargetCriteriaInfraApp> get targetCriteria;
   set targetCriteria(
@@ -25,7 +25,7 @@ class _$$AccessInfraProps extends $AccessInfraProps {
   @override
   final String? name;
   @override
-  final AccessInfraPropsAllOfType type;
+  final AccessType type;
   @override
   final BuiltList<AccessTargetCriteriaInfraApp>? targetCriteria;
 
@@ -82,11 +82,9 @@ class $AccessInfraPropsBuilder
   String? get name => _$this._name;
   set name(covariant String? name) => _$this._name = name;
 
-  AccessInfraPropsAllOfTypeBuilder? _type;
-  AccessInfraPropsAllOfTypeBuilder get type =>
-      _$this._type ??= AccessInfraPropsAllOfTypeBuilder();
-  set type(covariant AccessInfraPropsAllOfTypeBuilder? type) =>
-      _$this._type = type;
+  AccessType? _type;
+  AccessType? get type => _$this._type;
+  set type(covariant AccessType? type) => _$this._type = type;
 
   ListBuilder<AccessTargetCriteriaInfraApp>? _targetCriteria;
   ListBuilder<AccessTargetCriteriaInfraApp> get targetCriteria =>
@@ -104,7 +102,7 @@ class $AccessInfraPropsBuilder
     final $v = _$v;
     if ($v != null) {
       _name = $v.name;
-      _type = $v.type.toBuilder();
+      _type = $v.type;
       _targetCriteria = $v.targetCriteria?.toBuilder();
       _$v = null;
     }
@@ -130,14 +128,13 @@ class $AccessInfraPropsBuilder
       _$result = _$v ??
           _$$AccessInfraProps._(
             name: name,
-            type: type.build(),
+            type: BuiltValueNullFieldError.checkNotNull(
+                type, r'$AccessInfraProps', 'type'),
             targetCriteria: _targetCriteria?.build(),
           );
     } catch (_) {
       late String _$failedField;
       try {
-        _$failedField = 'type';
-        type.build();
         _$failedField = 'targetCriteria';
         _targetCriteria?.build();
       } catch (e) {

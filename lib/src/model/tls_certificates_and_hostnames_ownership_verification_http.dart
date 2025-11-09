@@ -3,22 +3,25 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:cloudflare_dart/src/model/tls_certificates_and_hostnames_ownership_verification_http_one_of.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
-import 'package:one_of/one_of.dart';
 
 part 'tls_certificates_and_hostnames_ownership_verification_http.g.dart';
 
-/// This presents the token to be served by the given http url to activate a hostname.
+/// TlsCertificatesAndHostnamesOwnershipVerificationHttp
 ///
 /// Properties:
 /// * [httpBody] - Token to be served.
 /// * [httpUrl] - The HTTP URL that will be checked during custom hostname verification and where the customer should host the token.
 @BuiltValue()
 abstract class TlsCertificatesAndHostnamesOwnershipVerificationHttp implements Built<TlsCertificatesAndHostnamesOwnershipVerificationHttp, TlsCertificatesAndHostnamesOwnershipVerificationHttpBuilder> {
-  /// One Of [TlsCertificatesAndHostnamesOwnershipVerificationHttpOneOf]
-  OneOf get oneOf;
+  /// Token to be served.
+  @BuiltValueField(wireName: r'http_body')
+  String? get httpBody;
+
+  /// The HTTP URL that will be checked during custom hostname verification and where the customer should host the token.
+  @BuiltValueField(wireName: r'http_url')
+  String? get httpUrl;
 
   TlsCertificatesAndHostnamesOwnershipVerificationHttp._();
 
@@ -43,6 +46,20 @@ class _$TlsCertificatesAndHostnamesOwnershipVerificationHttpSerializer implement
     TlsCertificatesAndHostnamesOwnershipVerificationHttp object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    if (object.httpBody != null) {
+      yield r'http_body';
+      yield serializers.serialize(
+        object.httpBody,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.httpUrl != null) {
+      yield r'http_url';
+      yield serializers.serialize(
+        object.httpUrl,
+        specifiedType: const FullType(String),
+      );
+    }
   }
 
   @override
@@ -51,8 +68,41 @@ class _$TlsCertificatesAndHostnamesOwnershipVerificationHttpSerializer implement
     TlsCertificatesAndHostnamesOwnershipVerificationHttp object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    final oneOf = object.oneOf;
-    return serializers.serialize(oneOf.value, specifiedType: FullType(oneOf.valueType))!;
+    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+  }
+
+  void _deserializeProperties(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+    required List<Object?> serializedList,
+    required TlsCertificatesAndHostnamesOwnershipVerificationHttpBuilder result,
+    required List<Object?> unhandled,
+  }) {
+    for (var i = 0; i < serializedList.length; i += 2) {
+      final key = serializedList[i] as String;
+      final value = serializedList[i + 1];
+      switch (key) {
+        case r'http_body':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.httpBody = valueDes;
+          break;
+        case r'http_url':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.httpUrl = valueDes;
+          break;
+        default:
+          unhandled.add(key);
+          unhandled.add(value);
+          break;
+      }
+    }
   }
 
   @override
@@ -62,10 +112,16 @@ class _$TlsCertificatesAndHostnamesOwnershipVerificationHttpSerializer implement
     FullType specifiedType = FullType.unspecified,
   }) {
     final result = TlsCertificatesAndHostnamesOwnershipVerificationHttpBuilder();
-    Object? oneOfDataSrc;
-    final targetType = const FullType(OneOf, [FullType(TlsCertificatesAndHostnamesOwnershipVerificationHttpOneOf), ]);
-    oneOfDataSrc = serialized;
-    result.oneOf = serializers.deserialize(oneOfDataSrc, specifiedType: targetType) as OneOf;
+    final serializedList = (serialized as Iterable<Object?>).toList();
+    final unhandled = <Object?>[];
+    _deserializeProperties(
+      serializers,
+      serialized,
+      specifiedType: specifiedType,
+      serializedList: serializedList,
+      unhandled: unhandled,
+      result: result,
+    );
     return result.build();
   }
 }

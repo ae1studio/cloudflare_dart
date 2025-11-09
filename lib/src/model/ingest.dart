@@ -147,11 +147,11 @@ class IngestActionEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'ingest')
   static const IngestActionEnum ingest = _$ingestActionEnum_ingest;
 
-  static Serializer<IngestActionEnum> get serializer => _$ingestActionSerializer;
+  static Serializer<IngestActionEnum> get serializer => _$ingestActionEnumSerializer;
 
   const IngestActionEnum._(String name): super(name);
 
-  static BuiltSet<IngestActionEnum> get values => _$ingestActionValues;
-  static IngestActionEnum valueOf(String name) => _$ingestActionValueOf(name);
+  static BuiltSet<IngestActionEnum> get values => _$ingestActionEnumValues;
+  static IngestActionEnum valueOf(String name) => _$ingestActionEnumValueOf(name);
 }
 

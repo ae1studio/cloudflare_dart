@@ -156,11 +156,11 @@ class R2CorsRuleAllowedMethodsEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'HEAD')
   static const R2CorsRuleAllowedMethodsEnum HEAD = _$r2CorsRuleAllowedMethodsEnum_HEAD;
 
-  static Serializer<R2CorsRuleAllowedMethodsEnum> get serializer => _$r2CorsRuleAllowedMethodsSerializer;
+  static Serializer<R2CorsRuleAllowedMethodsEnum> get serializer => _$r2CorsRuleAllowedMethodsEnumSerializer;
 
   const R2CorsRuleAllowedMethodsEnum._(String name): super(name);
 
-  static BuiltSet<R2CorsRuleAllowedMethodsEnum> get values => _$r2CorsRuleAllowedMethodsValues;
-  static R2CorsRuleAllowedMethodsEnum valueOf(String name) => _$r2CorsRuleAllowedMethodsValueOf(name);
+  static BuiltSet<R2CorsRuleAllowedMethodsEnum> get values => _$r2CorsRuleAllowedMethodsEnumValues;
+  static R2CorsRuleAllowedMethodsEnum valueOf(String name) => _$r2CorsRuleAllowedMethodsEnumValueOf(name);
 }
 

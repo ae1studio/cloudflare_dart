@@ -144,11 +144,11 @@ class ParquetTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'parquet')
   static const ParquetTypeEnum parquet = _$parquetTypeEnum_parquet;
 
-  static Serializer<ParquetTypeEnum> get serializer => _$parquetTypeSerializer;
+  static Serializer<ParquetTypeEnum> get serializer => _$parquetTypeEnumSerializer;
 
   const ParquetTypeEnum._(String name): super(name);
 
-  static BuiltSet<ParquetTypeEnum> get values => _$parquetTypeValues;
-  static ParquetTypeEnum valueOf(String name) => _$parquetTypeValueOf(name);
+  static BuiltSet<ParquetTypeEnum> get values => _$parquetTypeEnumValues;
+  static ParquetTypeEnum valueOf(String name) => _$parquetTypeEnumValueOf(name);
 }
 

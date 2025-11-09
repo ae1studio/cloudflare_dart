@@ -3,11 +3,11 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:cloudflare_dart/src/model/access_rdp_props_all_of_type.dart';
 import 'package:cloudflare_dart/src/model/access_scim_config.dart';
 import 'package:cloudflare_dart/src/model/access_destinations_inner.dart';
 import 'package:cloudflare_dart/src/model/access_target_criteria_self_hosted_app.dart';
 import 'package:built_collection/built_collection.dart';
+import 'package:cloudflare_dart/src/model/access_type.dart';
 import 'package:cloudflare_dart/src/model/access_app_req_embedded_policies.dart';
 import 'package:cloudflare_dart/src/model/access_cors_headers.dart';
 import 'package:cloudflare_dart/src/model/access_rdp_props.dart';
@@ -121,7 +121,7 @@ class _$BrowserRDPApplicationSerializer implements PrimitiveSerializer<BrowserRD
     yield r'type';
     yield serializers.serialize(
       object.type,
-      specifiedType: const FullType(AccessRdpPropsAllOfType),
+      specifiedType: const FullType(AccessType),
     );
     if (object.corsHeaders != null) {
       yield r'cors_headers';
@@ -343,9 +343,9 @@ class _$BrowserRDPApplicationSerializer implements PrimitiveSerializer<BrowserRD
         case r'type':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(AccessRdpPropsAllOfType),
-          ) as AccessRdpPropsAllOfType;
-          result.type.replace(valueDes);
+            specifiedType: const FullType(AccessType),
+          ) as AccessType;
+          result.type = valueDes;
           break;
         case r'cors_headers':
           final valueDes = serializers.deserialize(

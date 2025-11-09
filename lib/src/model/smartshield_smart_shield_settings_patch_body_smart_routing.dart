@@ -118,11 +118,11 @@ class SmartshieldSmartShieldSettingsPatchBodySmartRoutingValueEnum extends EnumC
   @BuiltValueEnumConst(wireName: r'off')
   static const SmartshieldSmartShieldSettingsPatchBodySmartRoutingValueEnum off = _$smartshieldSmartShieldSettingsPatchBodySmartRoutingValueEnum_off;
 
-  static Serializer<SmartshieldSmartShieldSettingsPatchBodySmartRoutingValueEnum> get serializer => _$smartshieldSmartShieldSettingsPatchBodySmartRoutingValueSerializer;
+  static Serializer<SmartshieldSmartShieldSettingsPatchBodySmartRoutingValueEnum> get serializer => _$smartshieldSmartShieldSettingsPatchBodySmartRoutingValueEnumSerializer;
 
   const SmartshieldSmartShieldSettingsPatchBodySmartRoutingValueEnum._(String name): super(name);
 
-  static BuiltSet<SmartshieldSmartShieldSettingsPatchBodySmartRoutingValueEnum> get values => _$smartshieldSmartShieldSettingsPatchBodySmartRoutingValueValues;
-  static SmartshieldSmartShieldSettingsPatchBodySmartRoutingValueEnum valueOf(String name) => _$smartshieldSmartShieldSettingsPatchBodySmartRoutingValueValueOf(name);
+  static BuiltSet<SmartshieldSmartShieldSettingsPatchBodySmartRoutingValueEnum> get values => _$smartshieldSmartShieldSettingsPatchBodySmartRoutingValueEnumValues;
+  static SmartshieldSmartShieldSettingsPatchBodySmartRoutingValueEnum valueOf(String name) => _$smartshieldSmartShieldSettingsPatchBodySmartRoutingValueEnumValueOf(name);
 }
 

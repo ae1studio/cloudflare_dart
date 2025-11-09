@@ -37,8 +37,8 @@ abstract class RealtimekitSummarizationConfig implements Built<RealtimekitSummar
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(RealtimekitSummarizationConfigBuilder b) => b
-      ..summaryType = const RealtimekitSummarizationConfigSummaryTypeEnum._('general')
-      ..textFormat = const RealtimekitSummarizationConfigTextFormatEnum._('markdown')
+      ..summaryType = RealtimekitSummarizationConfigSummaryTypeEnum.valueOf('general')
+      ..textFormat = RealtimekitSummarizationConfigTextFormatEnum.valueOf('markdown')
       ..wordLimit = 500;
 
   @BuiltValueSerializer(custom: true)
@@ -181,12 +181,12 @@ class RealtimekitSummarizationConfigSummaryTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'code_review')
   static const RealtimekitSummarizationConfigSummaryTypeEnum codeReview = _$realtimekitSummarizationConfigSummaryTypeEnum_codeReview;
 
-  static Serializer<RealtimekitSummarizationConfigSummaryTypeEnum> get serializer => _$realtimekitSummarizationConfigSummaryTypeSerializer;
+  static Serializer<RealtimekitSummarizationConfigSummaryTypeEnum> get serializer => _$realtimekitSummarizationConfigSummaryTypeEnumSerializer;
 
   const RealtimekitSummarizationConfigSummaryTypeEnum._(String name): super(name);
 
-  static BuiltSet<RealtimekitSummarizationConfigSummaryTypeEnum> get values => _$realtimekitSummarizationConfigSummaryTypeValues;
-  static RealtimekitSummarizationConfigSummaryTypeEnum valueOf(String name) => _$realtimekitSummarizationConfigSummaryTypeValueOf(name);
+  static BuiltSet<RealtimekitSummarizationConfigSummaryTypeEnum> get values => _$realtimekitSummarizationConfigSummaryTypeEnumValues;
+  static RealtimekitSummarizationConfigSummaryTypeEnum valueOf(String name) => _$realtimekitSummarizationConfigSummaryTypeEnumValueOf(name);
 }
 
 class RealtimekitSummarizationConfigTextFormatEnum extends EnumClass {
@@ -198,11 +198,11 @@ class RealtimekitSummarizationConfigTextFormatEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'markdown')
   static const RealtimekitSummarizationConfigTextFormatEnum markdown = _$realtimekitSummarizationConfigTextFormatEnum_markdown;
 
-  static Serializer<RealtimekitSummarizationConfigTextFormatEnum> get serializer => _$realtimekitSummarizationConfigTextFormatSerializer;
+  static Serializer<RealtimekitSummarizationConfigTextFormatEnum> get serializer => _$realtimekitSummarizationConfigTextFormatEnumSerializer;
 
   const RealtimekitSummarizationConfigTextFormatEnum._(String name): super(name);
 
-  static BuiltSet<RealtimekitSummarizationConfigTextFormatEnum> get values => _$realtimekitSummarizationConfigTextFormatValues;
-  static RealtimekitSummarizationConfigTextFormatEnum valueOf(String name) => _$realtimekitSummarizationConfigTextFormatValueOf(name);
+  static BuiltSet<RealtimekitSummarizationConfigTextFormatEnum> get values => _$realtimekitSummarizationConfigTextFormatEnumValues;
+  static RealtimekitSummarizationConfigTextFormatEnum valueOf(String name) => _$realtimekitSummarizationConfigTextFormatEnumValueOf(name);
 }
 

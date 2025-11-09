@@ -134,11 +134,11 @@ class AccessIdentityProvidersTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'yandex')
   static const AccessIdentityProvidersTypeEnum yandex = _$accessIdentityProvidersTypeEnum_yandex;
 
-  static Serializer<AccessIdentityProvidersTypeEnum> get serializer => _$accessIdentityProvidersTypeSerializer;
+  static Serializer<AccessIdentityProvidersTypeEnum> get serializer => _$accessIdentityProvidersTypeEnumSerializer;
 
   const AccessIdentityProvidersTypeEnum._(String name): super(name);
 
-  static BuiltSet<AccessIdentityProvidersTypeEnum> get values => _$accessIdentityProvidersTypeValues;
-  static AccessIdentityProvidersTypeEnum valueOf(String name) => _$accessIdentityProvidersTypeValueOf(name);
+  static BuiltSet<AccessIdentityProvidersTypeEnum> get values => _$accessIdentityProvidersTypeEnumValues;
+  static AccessIdentityProvidersTypeEnum valueOf(String name) => _$accessIdentityProvidersTypeEnumValueOf(name);
 }
 

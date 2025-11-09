@@ -148,11 +148,11 @@ class _$ListsGetBulkOperationStatus4XXResponseSerializer implements PrimitiveSer
 class ListsGetBulkOperationStatus4XXResponseResultEnum extends EnumClass {
 
 
-  static Serializer<ListsGetBulkOperationStatus4XXResponseResultEnum> get serializer => _$listsGetBulkOperationStatus4XXResponseResultSerializer;
+  static Serializer<ListsGetBulkOperationStatus4XXResponseResultEnum> get serializer => _$listsGetBulkOperationStatus4XXResponseResultEnumSerializer;
 
   const ListsGetBulkOperationStatus4XXResponseResultEnum._(String name): super(name);
 
-  static BuiltSet<ListsGetBulkOperationStatus4XXResponseResultEnum> get values => _$listsGetBulkOperationStatus4XXResponseResultValues;
-  static ListsGetBulkOperationStatus4XXResponseResultEnum valueOf(String name) => _$listsGetBulkOperationStatus4XXResponseResultValueOf(name);
+  static BuiltSet<ListsGetBulkOperationStatus4XXResponseResultEnum> get values => _$listsGetBulkOperationStatus4XXResponseResultEnumValues;
+  static ListsGetBulkOperationStatus4XXResponseResultEnum valueOf(String name) => _$listsGetBulkOperationStatus4XXResponseResultEnumValueOf(name);
 }
 

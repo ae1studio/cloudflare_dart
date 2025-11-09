@@ -150,11 +150,11 @@ class _$DomainIntelligenceGetDomainDetails4XXResponseSerializer implements Primi
 class DomainIntelligenceGetDomainDetails4XXResponseResultEnum extends EnumClass {
 
 
-  static Serializer<DomainIntelligenceGetDomainDetails4XXResponseResultEnum> get serializer => _$domainIntelligenceGetDomainDetails4XXResponseResultSerializer;
+  static Serializer<DomainIntelligenceGetDomainDetails4XXResponseResultEnum> get serializer => _$domainIntelligenceGetDomainDetails4XXResponseResultEnumSerializer;
 
   const DomainIntelligenceGetDomainDetails4XXResponseResultEnum._(String name): super(name);
 
-  static BuiltSet<DomainIntelligenceGetDomainDetails4XXResponseResultEnum> get values => _$domainIntelligenceGetDomainDetails4XXResponseResultValues;
-  static DomainIntelligenceGetDomainDetails4XXResponseResultEnum valueOf(String name) => _$domainIntelligenceGetDomainDetails4XXResponseResultValueOf(name);
+  static BuiltSet<DomainIntelligenceGetDomainDetails4XXResponseResultEnum> get values => _$domainIntelligenceGetDomainDetails4XXResponseResultEnumValues;
+  static DomainIntelligenceGetDomainDetails4XXResponseResultEnum valueOf(String name) => _$domainIntelligenceGetDomainDetails4XXResponseResultEnumValueOf(name);
 }
 

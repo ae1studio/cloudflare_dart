@@ -150,11 +150,11 @@ class _$AsnIntelligenceGetAsnOverview4XXResponseSerializer implements PrimitiveS
 class AsnIntelligenceGetAsnOverview4XXResponseResultEnum extends EnumClass {
 
 
-  static Serializer<AsnIntelligenceGetAsnOverview4XXResponseResultEnum> get serializer => _$asnIntelligenceGetAsnOverview4XXResponseResultSerializer;
+  static Serializer<AsnIntelligenceGetAsnOverview4XXResponseResultEnum> get serializer => _$asnIntelligenceGetAsnOverview4XXResponseResultEnumSerializer;
 
   const AsnIntelligenceGetAsnOverview4XXResponseResultEnum._(String name): super(name);
 
-  static BuiltSet<AsnIntelligenceGetAsnOverview4XXResponseResultEnum> get values => _$asnIntelligenceGetAsnOverview4XXResponseResultValues;
-  static AsnIntelligenceGetAsnOverview4XXResponseResultEnum valueOf(String name) => _$asnIntelligenceGetAsnOverview4XXResponseResultValueOf(name);
+  static BuiltSet<AsnIntelligenceGetAsnOverview4XXResponseResultEnum> get values => _$asnIntelligenceGetAsnOverview4XXResponseResultEnumValues;
+  static AsnIntelligenceGetAsnOverview4XXResponseResultEnum valueOf(String name) => _$asnIntelligenceGetAsnOverview4XXResponseResultEnumValueOf(name);
 }
 

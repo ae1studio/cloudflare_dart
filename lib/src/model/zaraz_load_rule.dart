@@ -177,11 +177,11 @@ class ZarazLoadRuleOpEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'LESS_THAN_OR_EQUAL')
   static const ZarazLoadRuleOpEnum LESS_THAN_OR_EQUAL = _$zarazLoadRuleOpEnum_LESS_THAN_OR_EQUAL;
 
-  static Serializer<ZarazLoadRuleOpEnum> get serializer => _$zarazLoadRuleOpSerializer;
+  static Serializer<ZarazLoadRuleOpEnum> get serializer => _$zarazLoadRuleOpEnumSerializer;
 
   const ZarazLoadRuleOpEnum._(String name): super(name);
 
-  static BuiltSet<ZarazLoadRuleOpEnum> get values => _$zarazLoadRuleOpValues;
-  static ZarazLoadRuleOpEnum valueOf(String name) => _$zarazLoadRuleOpValueOf(name);
+  static BuiltSet<ZarazLoadRuleOpEnum> get values => _$zarazLoadRuleOpEnumValues;
+  static ZarazLoadRuleOpEnum valueOf(String name) => _$zarazLoadRuleOpEnumValueOf(name);
 }
 

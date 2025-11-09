@@ -201,11 +201,11 @@ class R2SlurperS3SourceSchemaVendorEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r's3')
   static const R2SlurperS3SourceSchemaVendorEnum s3 = _$r2SlurperS3SourceSchemaVendorEnum_s3;
 
-  static Serializer<R2SlurperS3SourceSchemaVendorEnum> get serializer => _$r2SlurperS3SourceSchemaVendorSerializer;
+  static Serializer<R2SlurperS3SourceSchemaVendorEnum> get serializer => _$r2SlurperS3SourceSchemaVendorEnumSerializer;
 
   const R2SlurperS3SourceSchemaVendorEnum._(String name): super(name);
 
-  static BuiltSet<R2SlurperS3SourceSchemaVendorEnum> get values => _$r2SlurperS3SourceSchemaVendorValues;
-  static R2SlurperS3SourceSchemaVendorEnum valueOf(String name) => _$r2SlurperS3SourceSchemaVendorValueOf(name);
+  static BuiltSet<R2SlurperS3SourceSchemaVendorEnum> get values => _$r2SlurperS3SourceSchemaVendorEnumValues;
+  static R2SlurperS3SourceSchemaVendorEnum valueOf(String name) => _$r2SlurperS3SourceSchemaVendorEnumValueOf(name);
 }
 

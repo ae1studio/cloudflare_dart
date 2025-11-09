@@ -118,11 +118,11 @@ class SmartshieldSmartShieldSettingsPatchBodySmartTieredCacheValueEnum extends E
   @BuiltValueEnumConst(wireName: r'off')
   static const SmartshieldSmartShieldSettingsPatchBodySmartTieredCacheValueEnum off = _$smartshieldSmartShieldSettingsPatchBodySmartTieredCacheValueEnum_off;
 
-  static Serializer<SmartshieldSmartShieldSettingsPatchBodySmartTieredCacheValueEnum> get serializer => _$smartshieldSmartShieldSettingsPatchBodySmartTieredCacheValueSerializer;
+  static Serializer<SmartshieldSmartShieldSettingsPatchBodySmartTieredCacheValueEnum> get serializer => _$smartshieldSmartShieldSettingsPatchBodySmartTieredCacheValueEnumSerializer;
 
   const SmartshieldSmartShieldSettingsPatchBodySmartTieredCacheValueEnum._(String name): super(name);
 
-  static BuiltSet<SmartshieldSmartShieldSettingsPatchBodySmartTieredCacheValueEnum> get values => _$smartshieldSmartShieldSettingsPatchBodySmartTieredCacheValueValues;
-  static SmartshieldSmartShieldSettingsPatchBodySmartTieredCacheValueEnum valueOf(String name) => _$smartshieldSmartShieldSettingsPatchBodySmartTieredCacheValueValueOf(name);
+  static BuiltSet<SmartshieldSmartShieldSettingsPatchBodySmartTieredCacheValueEnum> get values => _$smartshieldSmartShieldSettingsPatchBodySmartTieredCacheValueEnumValues;
+  static SmartshieldSmartShieldSettingsPatchBodySmartTieredCacheValueEnum valueOf(String name) => _$smartshieldSmartShieldSettingsPatchBodySmartTieredCacheValueEnumValueOf(name);
 }
 

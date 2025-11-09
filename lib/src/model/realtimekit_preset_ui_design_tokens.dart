@@ -195,12 +195,12 @@ class RealtimekitPresetUiDesignTokensBorderRadiusEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'rounded')
   static const RealtimekitPresetUiDesignTokensBorderRadiusEnum rounded = _$realtimekitPresetUiDesignTokensBorderRadiusEnum_rounded;
 
-  static Serializer<RealtimekitPresetUiDesignTokensBorderRadiusEnum> get serializer => _$realtimekitPresetUiDesignTokensBorderRadiusSerializer;
+  static Serializer<RealtimekitPresetUiDesignTokensBorderRadiusEnum> get serializer => _$realtimekitPresetUiDesignTokensBorderRadiusEnumSerializer;
 
   const RealtimekitPresetUiDesignTokensBorderRadiusEnum._(String name): super(name);
 
-  static BuiltSet<RealtimekitPresetUiDesignTokensBorderRadiusEnum> get values => _$realtimekitPresetUiDesignTokensBorderRadiusValues;
-  static RealtimekitPresetUiDesignTokensBorderRadiusEnum valueOf(String name) => _$realtimekitPresetUiDesignTokensBorderRadiusValueOf(name);
+  static BuiltSet<RealtimekitPresetUiDesignTokensBorderRadiusEnum> get values => _$realtimekitPresetUiDesignTokensBorderRadiusEnumValues;
+  static RealtimekitPresetUiDesignTokensBorderRadiusEnum valueOf(String name) => _$realtimekitPresetUiDesignTokensBorderRadiusEnumValueOf(name);
 }
 
 class RealtimekitPresetUiDesignTokensBorderWidthEnum extends EnumClass {
@@ -208,12 +208,12 @@ class RealtimekitPresetUiDesignTokensBorderWidthEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'thin')
   static const RealtimekitPresetUiDesignTokensBorderWidthEnum thin = _$realtimekitPresetUiDesignTokensBorderWidthEnum_thin;
 
-  static Serializer<RealtimekitPresetUiDesignTokensBorderWidthEnum> get serializer => _$realtimekitPresetUiDesignTokensBorderWidthSerializer;
+  static Serializer<RealtimekitPresetUiDesignTokensBorderWidthEnum> get serializer => _$realtimekitPresetUiDesignTokensBorderWidthEnumSerializer;
 
   const RealtimekitPresetUiDesignTokensBorderWidthEnum._(String name): super(name);
 
-  static BuiltSet<RealtimekitPresetUiDesignTokensBorderWidthEnum> get values => _$realtimekitPresetUiDesignTokensBorderWidthValues;
-  static RealtimekitPresetUiDesignTokensBorderWidthEnum valueOf(String name) => _$realtimekitPresetUiDesignTokensBorderWidthValueOf(name);
+  static BuiltSet<RealtimekitPresetUiDesignTokensBorderWidthEnum> get values => _$realtimekitPresetUiDesignTokensBorderWidthEnumValues;
+  static RealtimekitPresetUiDesignTokensBorderWidthEnum valueOf(String name) => _$realtimekitPresetUiDesignTokensBorderWidthEnumValueOf(name);
 }
 
 class RealtimekitPresetUiDesignTokensThemeEnum extends EnumClass {
@@ -221,11 +221,11 @@ class RealtimekitPresetUiDesignTokensThemeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'dark')
   static const RealtimekitPresetUiDesignTokensThemeEnum dark = _$realtimekitPresetUiDesignTokensThemeEnum_dark;
 
-  static Serializer<RealtimekitPresetUiDesignTokensThemeEnum> get serializer => _$realtimekitPresetUiDesignTokensThemeSerializer;
+  static Serializer<RealtimekitPresetUiDesignTokensThemeEnum> get serializer => _$realtimekitPresetUiDesignTokensThemeEnumSerializer;
 
   const RealtimekitPresetUiDesignTokensThemeEnum._(String name): super(name);
 
-  static BuiltSet<RealtimekitPresetUiDesignTokensThemeEnum> get values => _$realtimekitPresetUiDesignTokensThemeValues;
-  static RealtimekitPresetUiDesignTokensThemeEnum valueOf(String name) => _$realtimekitPresetUiDesignTokensThemeValueOf(name);
+  static BuiltSet<RealtimekitPresetUiDesignTokensThemeEnum> get values => _$realtimekitPresetUiDesignTokensThemeEnumValues;
+  static RealtimekitPresetUiDesignTokensThemeEnum valueOf(String name) => _$realtimekitPresetUiDesignTokensThemeEnumValueOf(name);
 }
 

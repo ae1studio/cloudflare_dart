@@ -213,11 +213,11 @@ class WorkersDeploymentStrategyEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'percentage')
   static const WorkersDeploymentStrategyEnum percentage = _$workersDeploymentStrategyEnum_percentage;
 
-  static Serializer<WorkersDeploymentStrategyEnum> get serializer => _$workersDeploymentStrategySerializer;
+  static Serializer<WorkersDeploymentStrategyEnum> get serializer => _$workersDeploymentStrategyEnumSerializer;
 
   const WorkersDeploymentStrategyEnum._(String name): super(name);
 
-  static BuiltSet<WorkersDeploymentStrategyEnum> get values => _$workersDeploymentStrategyValues;
-  static WorkersDeploymentStrategyEnum valueOf(String name) => _$workersDeploymentStrategyValueOf(name);
+  static BuiltSet<WorkersDeploymentStrategyEnum> get values => _$workersDeploymentStrategyEnumValues;
+  static WorkersDeploymentStrategyEnum valueOf(String name) => _$workersDeploymentStrategyEnumValueOf(name);
 }
 

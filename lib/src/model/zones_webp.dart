@@ -156,11 +156,11 @@ class ZonesWebpIdEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'webp')
   static const ZonesWebpIdEnum webp = _$zonesWebpIdEnum_webp;
 
-  static Serializer<ZonesWebpIdEnum> get serializer => _$zonesWebpIdSerializer;
+  static Serializer<ZonesWebpIdEnum> get serializer => _$zonesWebpIdEnumSerializer;
 
   const ZonesWebpIdEnum._(String name): super(name);
 
-  static BuiltSet<ZonesWebpIdEnum> get values => _$zonesWebpIdValues;
-  static ZonesWebpIdEnum valueOf(String name) => _$zonesWebpIdValueOf(name);
+  static BuiltSet<ZonesWebpIdEnum> get values => _$zonesWebpIdEnumValues;
+  static ZonesWebpIdEnum valueOf(String name) => _$zonesWebpIdEnumValueOf(name);
 }
 

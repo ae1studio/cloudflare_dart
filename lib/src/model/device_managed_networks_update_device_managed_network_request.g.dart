@@ -9,7 +9,7 @@ part of 'device_managed_networks_update_device_managed_network_request.dart';
 class _$DeviceManagedNetworksUpdateDeviceManagedNetworkRequest
     extends DeviceManagedNetworksUpdateDeviceManagedNetworkRequest {
   @override
-  final TeamsDevicesSchemasConfigRequest? config;
+  final TeamsDevicesTlsConfigRequest? config;
   @override
   final String? name;
   @override
@@ -74,10 +74,10 @@ class DeviceManagedNetworksUpdateDeviceManagedNetworkRequestBuilder
             DeviceManagedNetworksUpdateDeviceManagedNetworkRequestBuilder> {
   _$DeviceManagedNetworksUpdateDeviceManagedNetworkRequest? _$v;
 
-  TeamsDevicesSchemasConfigRequestBuilder? _config;
-  TeamsDevicesSchemasConfigRequestBuilder get config =>
-      _$this._config ??= TeamsDevicesSchemasConfigRequestBuilder();
-  set config(TeamsDevicesSchemasConfigRequestBuilder? config) =>
+  TeamsDevicesTlsConfigRequestBuilder? _config;
+  TeamsDevicesTlsConfigRequestBuilder get config =>
+      _$this._config ??= TeamsDevicesTlsConfigRequestBuilder();
+  set config(TeamsDevicesTlsConfigRequestBuilder? config) =>
       _$this._config = config;
 
   String? _name;

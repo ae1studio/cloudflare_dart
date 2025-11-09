@@ -164,11 +164,11 @@ class _$ZeroTrustNetworksRouteHostnameList4XXResponseSerializer implements Primi
 class ZeroTrustNetworksRouteHostnameList4XXResponseResultEnum extends EnumClass {
 
 
-  static Serializer<ZeroTrustNetworksRouteHostnameList4XXResponseResultEnum> get serializer => _$zeroTrustNetworksRouteHostnameList4XXResponseResultSerializer;
+  static Serializer<ZeroTrustNetworksRouteHostnameList4XXResponseResultEnum> get serializer => _$zeroTrustNetworksRouteHostnameList4XXResponseResultEnumSerializer;
 
   const ZeroTrustNetworksRouteHostnameList4XXResponseResultEnum._(String name): super(name);
 
-  static BuiltSet<ZeroTrustNetworksRouteHostnameList4XXResponseResultEnum> get values => _$zeroTrustNetworksRouteHostnameList4XXResponseResultValues;
-  static ZeroTrustNetworksRouteHostnameList4XXResponseResultEnum valueOf(String name) => _$zeroTrustNetworksRouteHostnameList4XXResponseResultValueOf(name);
+  static BuiltSet<ZeroTrustNetworksRouteHostnameList4XXResponseResultEnum> get values => _$zeroTrustNetworksRouteHostnameList4XXResponseResultEnumValues;
+  static ZeroTrustNetworksRouteHostnameList4XXResponseResultEnum valueOf(String name) => _$zeroTrustNetworksRouteHostnameList4XXResponseResultEnumValueOf(name);
 }
 

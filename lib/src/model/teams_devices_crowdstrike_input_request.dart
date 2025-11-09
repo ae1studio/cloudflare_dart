@@ -279,12 +279,12 @@ class TeamsDevicesCrowdstrikeInputRequestOperator_Enum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'==')
   static const TeamsDevicesCrowdstrikeInputRequestOperator_Enum equalEqual = _$teamsDevicesCrowdstrikeInputRequestOperatorEnum_equalEqual;
 
-  static Serializer<TeamsDevicesCrowdstrikeInputRequestOperator_Enum> get serializer => _$teamsDevicesCrowdstrikeInputRequestOperatorSerializer;
+  static Serializer<TeamsDevicesCrowdstrikeInputRequestOperator_Enum> get serializer => _$teamsDevicesCrowdstrikeInputRequestOperatorEnumSerializer;
 
   const TeamsDevicesCrowdstrikeInputRequestOperator_Enum._(String name): super(name);
 
-  static BuiltSet<TeamsDevicesCrowdstrikeInputRequestOperator_Enum> get values => _$teamsDevicesCrowdstrikeInputRequestOperatorValues;
-  static TeamsDevicesCrowdstrikeInputRequestOperator_Enum valueOf(String name) => _$teamsDevicesCrowdstrikeInputRequestOperatorValueOf(name);
+  static BuiltSet<TeamsDevicesCrowdstrikeInputRequestOperator_Enum> get values => _$teamsDevicesCrowdstrikeInputRequestOperatorEnumValues;
+  static TeamsDevicesCrowdstrikeInputRequestOperator_Enum valueOf(String name) => _$teamsDevicesCrowdstrikeInputRequestOperatorEnumValueOf(name);
 }
 
 class TeamsDevicesCrowdstrikeInputRequestStateEnum extends EnumClass {
@@ -299,12 +299,12 @@ class TeamsDevicesCrowdstrikeInputRequestStateEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'unknown')
   static const TeamsDevicesCrowdstrikeInputRequestStateEnum unknown = _$teamsDevicesCrowdstrikeInputRequestStateEnum_unknown;
 
-  static Serializer<TeamsDevicesCrowdstrikeInputRequestStateEnum> get serializer => _$teamsDevicesCrowdstrikeInputRequestStateSerializer;
+  static Serializer<TeamsDevicesCrowdstrikeInputRequestStateEnum> get serializer => _$teamsDevicesCrowdstrikeInputRequestStateEnumSerializer;
 
   const TeamsDevicesCrowdstrikeInputRequestStateEnum._(String name): super(name);
 
-  static BuiltSet<TeamsDevicesCrowdstrikeInputRequestStateEnum> get values => _$teamsDevicesCrowdstrikeInputRequestStateValues;
-  static TeamsDevicesCrowdstrikeInputRequestStateEnum valueOf(String name) => _$teamsDevicesCrowdstrikeInputRequestStateValueOf(name);
+  static BuiltSet<TeamsDevicesCrowdstrikeInputRequestStateEnum> get values => _$teamsDevicesCrowdstrikeInputRequestStateEnumValues;
+  static TeamsDevicesCrowdstrikeInputRequestStateEnum valueOf(String name) => _$teamsDevicesCrowdstrikeInputRequestStateEnumValueOf(name);
 }
 
 class TeamsDevicesCrowdstrikeInputRequestVersionOperatorEnum extends EnumClass {
@@ -325,11 +325,11 @@ class TeamsDevicesCrowdstrikeInputRequestVersionOperatorEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'==')
   static const TeamsDevicesCrowdstrikeInputRequestVersionOperatorEnum equalEqual = _$teamsDevicesCrowdstrikeInputRequestVersionOperatorEnum_equalEqual;
 
-  static Serializer<TeamsDevicesCrowdstrikeInputRequestVersionOperatorEnum> get serializer => _$teamsDevicesCrowdstrikeInputRequestVersionOperatorSerializer;
+  static Serializer<TeamsDevicesCrowdstrikeInputRequestVersionOperatorEnum> get serializer => _$teamsDevicesCrowdstrikeInputRequestVersionOperatorEnumSerializer;
 
   const TeamsDevicesCrowdstrikeInputRequestVersionOperatorEnum._(String name): super(name);
 
-  static BuiltSet<TeamsDevicesCrowdstrikeInputRequestVersionOperatorEnum> get values => _$teamsDevicesCrowdstrikeInputRequestVersionOperatorValues;
-  static TeamsDevicesCrowdstrikeInputRequestVersionOperatorEnum valueOf(String name) => _$teamsDevicesCrowdstrikeInputRequestVersionOperatorValueOf(name);
+  static BuiltSet<TeamsDevicesCrowdstrikeInputRequestVersionOperatorEnum> get values => _$teamsDevicesCrowdstrikeInputRequestVersionOperatorEnumValues;
+  static TeamsDevicesCrowdstrikeInputRequestVersionOperatorEnum valueOf(String name) => _$teamsDevicesCrowdstrikeInputRequestVersionOperatorEnumValueOf(name);
 }
 

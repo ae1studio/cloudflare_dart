@@ -79,11 +79,11 @@ class RealtimekitPresetPermissionsPluginsConfigAccessControlEnum extends EnumCla
   @BuiltValueEnumConst(wireName: r'VIEW_ONLY')
   static const RealtimekitPresetPermissionsPluginsConfigAccessControlEnum VIEW_ONLY = _$realtimekitPresetPermissionsPluginsConfigAccessControlEnum_VIEW_ONLY;
 
-  static Serializer<RealtimekitPresetPermissionsPluginsConfigAccessControlEnum> get serializer => _$realtimekitPresetPermissionsPluginsConfigAccessControlSerializer;
+  static Serializer<RealtimekitPresetPermissionsPluginsConfigAccessControlEnum> get serializer => _$realtimekitPresetPermissionsPluginsConfigAccessControlEnumSerializer;
 
   const RealtimekitPresetPermissionsPluginsConfigAccessControlEnum._(String name): super(name);
 
-  static BuiltSet<RealtimekitPresetPermissionsPluginsConfigAccessControlEnum> get values => _$realtimekitPresetPermissionsPluginsConfigAccessControlValues;
-  static RealtimekitPresetPermissionsPluginsConfigAccessControlEnum valueOf(String name) => _$realtimekitPresetPermissionsPluginsConfigAccessControlValueOf(name);
+  static BuiltSet<RealtimekitPresetPermissionsPluginsConfigAccessControlEnum> get values => _$realtimekitPresetPermissionsPluginsConfigAccessControlEnumValues;
+  static RealtimekitPresetPermissionsPluginsConfigAccessControlEnum valueOf(String name) => _$realtimekitPresetPermissionsPluginsConfigAccessControlEnumValueOf(name);
 }
 

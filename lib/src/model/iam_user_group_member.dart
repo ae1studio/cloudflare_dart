@@ -154,11 +154,11 @@ class IamUserGroupMemberStatusEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'pending')
   static const IamUserGroupMemberStatusEnum pending = _$iamUserGroupMemberStatusEnum_pending;
 
-  static Serializer<IamUserGroupMemberStatusEnum> get serializer => _$iamUserGroupMemberStatusSerializer;
+  static Serializer<IamUserGroupMemberStatusEnum> get serializer => _$iamUserGroupMemberStatusEnumSerializer;
 
   const IamUserGroupMemberStatusEnum._(String name): super(name);
 
-  static BuiltSet<IamUserGroupMemberStatusEnum> get values => _$iamUserGroupMemberStatusValues;
-  static IamUserGroupMemberStatusEnum valueOf(String name) => _$iamUserGroupMemberStatusValueOf(name);
+  static BuiltSet<IamUserGroupMemberStatusEnum> get values => _$iamUserGroupMemberStatusEnumValues;
+  static IamUserGroupMemberStatusEnum valueOf(String name) => _$iamUserGroupMemberStatusEnumValueOf(name);
 }
 

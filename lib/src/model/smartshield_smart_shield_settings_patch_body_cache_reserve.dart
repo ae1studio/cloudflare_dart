@@ -118,11 +118,11 @@ class SmartshieldSmartShieldSettingsPatchBodyCacheReserveValueEnum extends EnumC
   @BuiltValueEnumConst(wireName: r'off')
   static const SmartshieldSmartShieldSettingsPatchBodyCacheReserveValueEnum off = _$smartshieldSmartShieldSettingsPatchBodyCacheReserveValueEnum_off;
 
-  static Serializer<SmartshieldSmartShieldSettingsPatchBodyCacheReserveValueEnum> get serializer => _$smartshieldSmartShieldSettingsPatchBodyCacheReserveValueSerializer;
+  static Serializer<SmartshieldSmartShieldSettingsPatchBodyCacheReserveValueEnum> get serializer => _$smartshieldSmartShieldSettingsPatchBodyCacheReserveValueEnumSerializer;
 
   const SmartshieldSmartShieldSettingsPatchBodyCacheReserveValueEnum._(String name): super(name);
 
-  static BuiltSet<SmartshieldSmartShieldSettingsPatchBodyCacheReserveValueEnum> get values => _$smartshieldSmartShieldSettingsPatchBodyCacheReserveValueValues;
-  static SmartshieldSmartShieldSettingsPatchBodyCacheReserveValueEnum valueOf(String name) => _$smartshieldSmartShieldSettingsPatchBodyCacheReserveValueValueOf(name);
+  static BuiltSet<SmartshieldSmartShieldSettingsPatchBodyCacheReserveValueEnum> get values => _$smartshieldSmartShieldSettingsPatchBodyCacheReserveValueEnumValues;
+  static SmartshieldSmartShieldSettingsPatchBodyCacheReserveValueEnum valueOf(String name) => _$smartshieldSmartShieldSettingsPatchBodyCacheReserveValueEnumValueOf(name);
 }
 

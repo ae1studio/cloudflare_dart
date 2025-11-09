@@ -229,11 +229,11 @@ class DnsRecordsCNAMERecordTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'CNAME')
   static const DnsRecordsCNAMERecordTypeEnum CNAME = _$dnsRecordsCNAMERecordTypeEnum_CNAME;
 
-  static Serializer<DnsRecordsCNAMERecordTypeEnum> get serializer => _$dnsRecordsCNAMERecordTypeSerializer;
+  static Serializer<DnsRecordsCNAMERecordTypeEnum> get serializer => _$dnsRecordsCNAMERecordTypeEnumSerializer;
 
   const DnsRecordsCNAMERecordTypeEnum._(String name): super(name);
 
-  static BuiltSet<DnsRecordsCNAMERecordTypeEnum> get values => _$dnsRecordsCNAMERecordTypeValues;
-  static DnsRecordsCNAMERecordTypeEnum valueOf(String name) => _$dnsRecordsCNAMERecordTypeValueOf(name);
+  static BuiltSet<DnsRecordsCNAMERecordTypeEnum> get values => _$dnsRecordsCNAMERecordTypeEnumValues;
+  static DnsRecordsCNAMERecordTypeEnum valueOf(String name) => _$dnsRecordsCNAMERecordTypeEnumValueOf(name);
 }
 

@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **createdAt** | [**DateTime**](DateTime.md) |  | [optional] 
 **duration** | **String** | The duration for how long the service token will be valid. Must be in the format `300ms` or `2h45m`. Valid time units are: ns, us (or µs), ms, s, m, h. The default is 1 year in hours (8760h). | [optional] [default to '8760h']
 **expiresAt** | [**DateTime**](DateTime.md) |  | [optional] 
-**id** | [**JsonObject**](JsonObject.md) |  | [optional] 
+**id** | **String** | The ID of the service token. | [optional] 
 **lastSeenAt** | [**DateTime**](DateTime.md) |  | [optional] 
 **name** | **String** | The name of the service token. | [optional] 
 **updatedAt** | [**DateTime**](DateTime.md) |  | [optional] 

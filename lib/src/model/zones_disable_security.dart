@@ -115,11 +115,11 @@ class ZonesDisableSecurityIdEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'disable_security')
   static const ZonesDisableSecurityIdEnum disableSecurity = _$zonesDisableSecurityIdEnum_disableSecurity;
 
-  static Serializer<ZonesDisableSecurityIdEnum> get serializer => _$zonesDisableSecurityIdSerializer;
+  static Serializer<ZonesDisableSecurityIdEnum> get serializer => _$zonesDisableSecurityIdEnumSerializer;
 
   const ZonesDisableSecurityIdEnum._(String name): super(name);
 
-  static BuiltSet<ZonesDisableSecurityIdEnum> get values => _$zonesDisableSecurityIdValues;
-  static ZonesDisableSecurityIdEnum valueOf(String name) => _$zonesDisableSecurityIdValueOf(name);
+  static BuiltSet<ZonesDisableSecurityIdEnum> get values => _$zonesDisableSecurityIdEnumValues;
+  static ZonesDisableSecurityIdEnum valueOf(String name) => _$zonesDisableSecurityIdEnumValueOf(name);
 }
 

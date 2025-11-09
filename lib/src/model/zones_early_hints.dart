@@ -156,11 +156,11 @@ class ZonesEarlyHintsIdEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'early_hints')
   static const ZonesEarlyHintsIdEnum earlyHints = _$zonesEarlyHintsIdEnum_earlyHints;
 
-  static Serializer<ZonesEarlyHintsIdEnum> get serializer => _$zonesEarlyHintsIdSerializer;
+  static Serializer<ZonesEarlyHintsIdEnum> get serializer => _$zonesEarlyHintsIdEnumSerializer;
 
   const ZonesEarlyHintsIdEnum._(String name): super(name);
 
-  static BuiltSet<ZonesEarlyHintsIdEnum> get values => _$zonesEarlyHintsIdValues;
-  static ZonesEarlyHintsIdEnum valueOf(String name) => _$zonesEarlyHintsIdValueOf(name);
+  static BuiltSet<ZonesEarlyHintsIdEnum> get values => _$zonesEarlyHintsIdEnumValues;
+  static ZonesEarlyHintsIdEnum valueOf(String name) => _$zonesEarlyHintsIdEnumValueOf(name);
 }
 

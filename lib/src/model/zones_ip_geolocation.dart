@@ -135,12 +135,12 @@ class ZonesIpGeolocationIdEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'ip_geolocation')
   static const ZonesIpGeolocationIdEnum ipGeolocation = _$zonesIpGeolocationIdEnum_ipGeolocation;
 
-  static Serializer<ZonesIpGeolocationIdEnum> get serializer => _$zonesIpGeolocationIdSerializer;
+  static Serializer<ZonesIpGeolocationIdEnum> get serializer => _$zonesIpGeolocationIdEnumSerializer;
 
   const ZonesIpGeolocationIdEnum._(String name): super(name);
 
-  static BuiltSet<ZonesIpGeolocationIdEnum> get values => _$zonesIpGeolocationIdValues;
-  static ZonesIpGeolocationIdEnum valueOf(String name) => _$zonesIpGeolocationIdValueOf(name);
+  static BuiltSet<ZonesIpGeolocationIdEnum> get values => _$zonesIpGeolocationIdEnumValues;
+  static ZonesIpGeolocationIdEnum valueOf(String name) => _$zonesIpGeolocationIdEnumValueOf(name);
 }
 
 class ZonesIpGeolocationValueEnum extends EnumClass {
@@ -152,11 +152,11 @@ class ZonesIpGeolocationValueEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'off')
   static const ZonesIpGeolocationValueEnum off = _$zonesIpGeolocationValueEnum_off;
 
-  static Serializer<ZonesIpGeolocationValueEnum> get serializer => _$zonesIpGeolocationValueSerializer;
+  static Serializer<ZonesIpGeolocationValueEnum> get serializer => _$zonesIpGeolocationValueEnumSerializer;
 
   const ZonesIpGeolocationValueEnum._(String name): super(name);
 
-  static BuiltSet<ZonesIpGeolocationValueEnum> get values => _$zonesIpGeolocationValueValues;
-  static ZonesIpGeolocationValueEnum valueOf(String name) => _$zonesIpGeolocationValueValueOf(name);
+  static BuiltSet<ZonesIpGeolocationValueEnum> get values => _$zonesIpGeolocationValueEnumValues;
+  static ZonesIpGeolocationValueEnum valueOf(String name) => _$zonesIpGeolocationValueEnumValueOf(name);
 }
 

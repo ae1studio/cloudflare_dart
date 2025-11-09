@@ -149,11 +149,11 @@ class _$DnssecDnssecDetails4XXResponseSerializer implements PrimitiveSerializer<
 class DnssecDnssecDetails4XXResponseResultEnum extends EnumClass {
 
 
-  static Serializer<DnssecDnssecDetails4XXResponseResultEnum> get serializer => _$dnssecDnssecDetails4XXResponseResultSerializer;
+  static Serializer<DnssecDnssecDetails4XXResponseResultEnum> get serializer => _$dnssecDnssecDetails4XXResponseResultEnumSerializer;
 
   const DnssecDnssecDetails4XXResponseResultEnum._(String name): super(name);
 
-  static BuiltSet<DnssecDnssecDetails4XXResponseResultEnum> get values => _$dnssecDnssecDetails4XXResponseResultValues;
-  static DnssecDnssecDetails4XXResponseResultEnum valueOf(String name) => _$dnssecDnssecDetails4XXResponseResultValueOf(name);
+  static BuiltSet<DnssecDnssecDetails4XXResponseResultEnum> get values => _$dnssecDnssecDetails4XXResponseResultEnumValues;
+  static DnssecDnssecDetails4XXResponseResultEnum valueOf(String name) => _$dnssecDnssecDetails4XXResponseResultEnumValueOf(name);
 }
 

@@ -165,11 +165,11 @@ class _$ZeroTrustListsZeroTrustListItems4XXResponseSerializer implements Primiti
 class ZeroTrustListsZeroTrustListItems4XXResponseResultEnum extends EnumClass {
 
 
-  static Serializer<ZeroTrustListsZeroTrustListItems4XXResponseResultEnum> get serializer => _$zeroTrustListsZeroTrustListItems4XXResponseResultSerializer;
+  static Serializer<ZeroTrustListsZeroTrustListItems4XXResponseResultEnum> get serializer => _$zeroTrustListsZeroTrustListItems4XXResponseResultEnumSerializer;
 
   const ZeroTrustListsZeroTrustListItems4XXResponseResultEnum._(String name): super(name);
 
-  static BuiltSet<ZeroTrustListsZeroTrustListItems4XXResponseResultEnum> get values => _$zeroTrustListsZeroTrustListItems4XXResponseResultValues;
-  static ZeroTrustListsZeroTrustListItems4XXResponseResultEnum valueOf(String name) => _$zeroTrustListsZeroTrustListItems4XXResponseResultValueOf(name);
+  static BuiltSet<ZeroTrustListsZeroTrustListItems4XXResponseResultEnum> get values => _$zeroTrustListsZeroTrustListItems4XXResponseResultEnumValues;
+  static ZeroTrustListsZeroTrustListItems4XXResponseResultEnum valueOf(String name) => _$zeroTrustListsZeroTrustListItems4XXResponseResultEnumValueOf(name);
 }
 

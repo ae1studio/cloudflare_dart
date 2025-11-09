@@ -113,11 +113,11 @@ class MconnEventOneOf4KEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'FinishAttestationFailure')
   static const MconnEventOneOf4KEnum finishAttestationFailure = _$mconnEventOneOf4KEnum_finishAttestationFailure;
 
-  static Serializer<MconnEventOneOf4KEnum> get serializer => _$mconnEventOneOf4KSerializer;
+  static Serializer<MconnEventOneOf4KEnum> get serializer => _$mconnEventOneOf4KEnumSerializer;
 
   const MconnEventOneOf4KEnum._(String name): super(name);
 
-  static BuiltSet<MconnEventOneOf4KEnum> get values => _$mconnEventOneOf4KValues;
-  static MconnEventOneOf4KEnum valueOf(String name) => _$mconnEventOneOf4KValueOf(name);
+  static BuiltSet<MconnEventOneOf4KEnum> get values => _$mconnEventOneOf4KEnumValues;
+  static MconnEventOneOf4KEnum valueOf(String name) => _$mconnEventOneOf4KEnumValueOf(name);
 }
 

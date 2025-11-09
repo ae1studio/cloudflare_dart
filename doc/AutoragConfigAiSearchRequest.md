@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **filters** | [**AutoragConfigAiSearchRequestFilters**](AutoragConfigAiSearchRequestFilters.md) |  | [optional] 
 **maxNumResults** | **int** |  | [optional] [default to 10]
-**model** | [**AutoragConfigAiSearchRequestModel**](AutoragConfigAiSearchRequestModel.md) |  | [optional] 
+**model** | **String** |  | [optional] 
 **query** | **String** |  | 
 **rankingOptions** | [**AutoragConfigAiSearchRequestRankingOptions**](AutoragConfigAiSearchRequestRankingOptions.md) |  | [optional] 
 **reranking** | [**AutoragConfigAiSearchRequestReranking**](AutoragConfigAiSearchRequestReranking.md) |  | [optional] 

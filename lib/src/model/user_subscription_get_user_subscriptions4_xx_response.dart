@@ -164,11 +164,11 @@ class _$UserSubscriptionGetUserSubscriptions4XXResponseSerializer implements Pri
 class UserSubscriptionGetUserSubscriptions4XXResponseResultEnum extends EnumClass {
 
 
-  static Serializer<UserSubscriptionGetUserSubscriptions4XXResponseResultEnum> get serializer => _$userSubscriptionGetUserSubscriptions4XXResponseResultSerializer;
+  static Serializer<UserSubscriptionGetUserSubscriptions4XXResponseResultEnum> get serializer => _$userSubscriptionGetUserSubscriptions4XXResponseResultEnumSerializer;
 
   const UserSubscriptionGetUserSubscriptions4XXResponseResultEnum._(String name): super(name);
 
-  static BuiltSet<UserSubscriptionGetUserSubscriptions4XXResponseResultEnum> get values => _$userSubscriptionGetUserSubscriptions4XXResponseResultValues;
-  static UserSubscriptionGetUserSubscriptions4XXResponseResultEnum valueOf(String name) => _$userSubscriptionGetUserSubscriptions4XXResponseResultValueOf(name);
+  static BuiltSet<UserSubscriptionGetUserSubscriptions4XXResponseResultEnum> get values => _$userSubscriptionGetUserSubscriptions4XXResponseResultEnumValues;
+  static UserSubscriptionGetUserSubscriptions4XXResponseResultEnum valueOf(String name) => _$userSubscriptionGetUserSubscriptions4XXResponseResultEnumValueOf(name);
 }
 

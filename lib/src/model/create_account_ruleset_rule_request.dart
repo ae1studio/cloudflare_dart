@@ -23,7 +23,7 @@ part 'create_account_ruleset_rule_request.g.dart';
 /// * [actionParameters] 
 /// * [categories] - The categories of the rule.
 /// * [description] 
-/// * [enabled] 
+/// * [enabled] - Whether the rule should be executed.
 /// * [exposedCredentialCheck] 
 /// * [expression] - The expression defining which traffic will match the rule.
 /// * [id] - The unique ID of the rule.
@@ -43,7 +43,8 @@ abstract class CreateAccountRulesetRuleRequest implements RulesetsRequestRule, B
   factory CreateAccountRulesetRuleRequest([void updates(CreateAccountRulesetRuleRequestBuilder b)]) = _$CreateAccountRulesetRuleRequest;
 
   @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(CreateAccountRulesetRuleRequestBuilder b) => b..action=b.discriminatorValue;
+  static void _defaults(CreateAccountRulesetRuleRequestBuilder b) => b..action=b.discriminatorValue
+      ..enabled = true;
 
   @BuiltValueSerializer(custom: true)
   static Serializer<CreateAccountRulesetRuleRequest> get serializer => _$CreateAccountRulesetRuleRequestSerializer();
@@ -311,11 +312,11 @@ class CreateAccountRulesetRuleRequestActionEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'skip')
   static const CreateAccountRulesetRuleRequestActionEnum skip = _$createAccountRulesetRuleRequestActionEnum_skip;
 
-  static Serializer<CreateAccountRulesetRuleRequestActionEnum> get serializer => _$createAccountRulesetRuleRequestActionSerializer;
+  static Serializer<CreateAccountRulesetRuleRequestActionEnum> get serializer => _$createAccountRulesetRuleRequestActionEnumSerializer;
 
   const CreateAccountRulesetRuleRequestActionEnum._(String name): super(name);
 
-  static BuiltSet<CreateAccountRulesetRuleRequestActionEnum> get values => _$createAccountRulesetRuleRequestActionValues;
-  static CreateAccountRulesetRuleRequestActionEnum valueOf(String name) => _$createAccountRulesetRuleRequestActionValueOf(name);
+  static BuiltSet<CreateAccountRulesetRuleRequestActionEnum> get values => _$createAccountRulesetRuleRequestActionEnumValues;
+  static CreateAccountRulesetRuleRequestActionEnum valueOf(String name) => _$createAccountRulesetRuleRequestActionEnumValueOf(name);
 }
 

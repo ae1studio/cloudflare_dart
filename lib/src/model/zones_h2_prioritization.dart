@@ -156,11 +156,11 @@ class ZonesH2PrioritizationIdEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'h2_prioritization')
   static const ZonesH2PrioritizationIdEnum h2Prioritization = _$zonesH2PrioritizationIdEnum_h2Prioritization;
 
-  static Serializer<ZonesH2PrioritizationIdEnum> get serializer => _$zonesH2PrioritizationIdSerializer;
+  static Serializer<ZonesH2PrioritizationIdEnum> get serializer => _$zonesH2PrioritizationIdEnumSerializer;
 
   const ZonesH2PrioritizationIdEnum._(String name): super(name);
 
-  static BuiltSet<ZonesH2PrioritizationIdEnum> get values => _$zonesH2PrioritizationIdValues;
-  static ZonesH2PrioritizationIdEnum valueOf(String name) => _$zonesH2PrioritizationIdValueOf(name);
+  static BuiltSet<ZonesH2PrioritizationIdEnum> get values => _$zonesH2PrioritizationIdEnumValues;
+  static ZonesH2PrioritizationIdEnum valueOf(String name) => _$zonesH2PrioritizationIdEnumValueOf(name);
 }
 

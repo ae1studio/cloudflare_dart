@@ -206,11 +206,11 @@ class AccessCentrifyTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'yandex')
   static const AccessCentrifyTypeEnum yandex = _$accessCentrifyTypeEnum_yandex;
 
-  static Serializer<AccessCentrifyTypeEnum> get serializer => _$accessCentrifyTypeSerializer;
+  static Serializer<AccessCentrifyTypeEnum> get serializer => _$accessCentrifyTypeEnumSerializer;
 
   const AccessCentrifyTypeEnum._(String name): super(name);
 
-  static BuiltSet<AccessCentrifyTypeEnum> get values => _$accessCentrifyTypeValues;
-  static AccessCentrifyTypeEnum valueOf(String name) => _$accessCentrifyTypeValueOf(name);
+  static BuiltSet<AccessCentrifyTypeEnum> get values => _$accessCentrifyTypeEnumValues;
+  static AccessCentrifyTypeEnum valueOf(String name) => _$accessCentrifyTypeEnumValueOf(name);
 }
 

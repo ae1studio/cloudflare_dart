@@ -194,11 +194,11 @@ class _$$WafProductApiBundleApiResponseCommonFailureSerializer implements Primit
 class WafProductApiBundleApiResponseCommonFailureResultEnum extends EnumClass {
 
 
-  static Serializer<WafProductApiBundleApiResponseCommonFailureResultEnum> get serializer => _$wafProductApiBundleApiResponseCommonFailureResultSerializer;
+  static Serializer<WafProductApiBundleApiResponseCommonFailureResultEnum> get serializer => _$wafProductApiBundleApiResponseCommonFailureResultEnumSerializer;
 
   const WafProductApiBundleApiResponseCommonFailureResultEnum._(String name): super(name);
 
-  static BuiltSet<WafProductApiBundleApiResponseCommonFailureResultEnum> get values => _$wafProductApiBundleApiResponseCommonFailureResultValues;
-  static WafProductApiBundleApiResponseCommonFailureResultEnum valueOf(String name) => _$wafProductApiBundleApiResponseCommonFailureResultValueOf(name);
+  static BuiltSet<WafProductApiBundleApiResponseCommonFailureResultEnum> get values => _$wafProductApiBundleApiResponseCommonFailureResultEnumValues;
+  static WafProductApiBundleApiResponseCommonFailureResultEnum valueOf(String name) => _$wafProductApiBundleApiResponseCommonFailureResultEnumValueOf(name);
 }
 

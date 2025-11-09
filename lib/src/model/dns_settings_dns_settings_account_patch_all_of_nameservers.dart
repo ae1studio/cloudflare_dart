@@ -124,11 +124,11 @@ class DnsSettingsDnsSettingsAccountPatchAllOfNameserversTypeEnum extends EnumCla
   @BuiltValueEnumConst(wireName: r'custom.tenant')
   static const DnsSettingsDnsSettingsAccountPatchAllOfNameserversTypeEnum customPeriodTenant = _$dnsSettingsDnsSettingsAccountPatchAllOfNameserversTypeEnum_customPeriodTenant;
 
-  static Serializer<DnsSettingsDnsSettingsAccountPatchAllOfNameserversTypeEnum> get serializer => _$dnsSettingsDnsSettingsAccountPatchAllOfNameserversTypeSerializer;
+  static Serializer<DnsSettingsDnsSettingsAccountPatchAllOfNameserversTypeEnum> get serializer => _$dnsSettingsDnsSettingsAccountPatchAllOfNameserversTypeEnumSerializer;
 
   const DnsSettingsDnsSettingsAccountPatchAllOfNameserversTypeEnum._(String name): super(name);
 
-  static BuiltSet<DnsSettingsDnsSettingsAccountPatchAllOfNameserversTypeEnum> get values => _$dnsSettingsDnsSettingsAccountPatchAllOfNameserversTypeValues;
-  static DnsSettingsDnsSettingsAccountPatchAllOfNameserversTypeEnum valueOf(String name) => _$dnsSettingsDnsSettingsAccountPatchAllOfNameserversTypeValueOf(name);
+  static BuiltSet<DnsSettingsDnsSettingsAccountPatchAllOfNameserversTypeEnum> get values => _$dnsSettingsDnsSettingsAccountPatchAllOfNameserversTypeEnumValues;
+  static DnsSettingsDnsSettingsAccountPatchAllOfNameserversTypeEnum valueOf(String name) => _$dnsSettingsDnsSettingsAccountPatchAllOfNameserversTypeEnumValueOf(name);
 }
 

@@ -206,11 +206,11 @@ class AccessSchemasOktaTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'yandex')
   static const AccessSchemasOktaTypeEnum yandex = _$accessSchemasOktaTypeEnum_yandex;
 
-  static Serializer<AccessSchemasOktaTypeEnum> get serializer => _$accessSchemasOktaTypeSerializer;
+  static Serializer<AccessSchemasOktaTypeEnum> get serializer => _$accessSchemasOktaTypeEnumSerializer;
 
   const AccessSchemasOktaTypeEnum._(String name): super(name);
 
-  static BuiltSet<AccessSchemasOktaTypeEnum> get values => _$accessSchemasOktaTypeValues;
-  static AccessSchemasOktaTypeEnum valueOf(String name) => _$accessSchemasOktaTypeValueOf(name);
+  static BuiltSet<AccessSchemasOktaTypeEnum> get values => _$accessSchemasOktaTypeEnumValues;
+  static AccessSchemasOktaTypeEnum valueOf(String name) => _$accessSchemasOktaTypeEnumValueOf(name);
 }
 

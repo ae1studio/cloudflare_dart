@@ -140,11 +140,11 @@ class RealtimekitStopReasonReasonEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'ALL_PEERS_LEFT')
   static const RealtimekitStopReasonReasonEnum ALL_PEERS_LEFT = _$realtimekitStopReasonReasonEnum_ALL_PEERS_LEFT;
 
-  static Serializer<RealtimekitStopReasonReasonEnum> get serializer => _$realtimekitStopReasonReasonSerializer;
+  static Serializer<RealtimekitStopReasonReasonEnum> get serializer => _$realtimekitStopReasonReasonEnumSerializer;
 
   const RealtimekitStopReasonReasonEnum._(String name): super(name);
 
-  static BuiltSet<RealtimekitStopReasonReasonEnum> get values => _$realtimekitStopReasonReasonValues;
-  static RealtimekitStopReasonReasonEnum valueOf(String name) => _$realtimekitStopReasonReasonValueOf(name);
+  static BuiltSet<RealtimekitStopReasonReasonEnum> get values => _$realtimekitStopReasonReasonEnumValues;
+  static RealtimekitStopReasonReasonEnum valueOf(String name) => _$realtimekitStopReasonReasonEnumValueOf(name);
 }
 

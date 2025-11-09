@@ -158,11 +158,11 @@ class ZonesPrivacyPassIdEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'privacy_pass')
   static const ZonesPrivacyPassIdEnum privacyPass = _$zonesPrivacyPassIdEnum_privacyPass;
 
-  static Serializer<ZonesPrivacyPassIdEnum> get serializer => _$zonesPrivacyPassIdSerializer;
+  static Serializer<ZonesPrivacyPassIdEnum> get serializer => _$zonesPrivacyPassIdEnumSerializer;
 
   const ZonesPrivacyPassIdEnum._(String name): super(name);
 
-  static BuiltSet<ZonesPrivacyPassIdEnum> get values => _$zonesPrivacyPassIdValues;
-  static ZonesPrivacyPassIdEnum valueOf(String name) => _$zonesPrivacyPassIdValueOf(name);
+  static BuiltSet<ZonesPrivacyPassIdEnum> get values => _$zonesPrivacyPassIdEnumValues;
+  static ZonesPrivacyPassIdEnum valueOf(String name) => _$zonesPrivacyPassIdEnumValueOf(name);
 }
 

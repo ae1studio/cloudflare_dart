@@ -4,14 +4,12 @@
 
 // ignore_for_file: unused_element
 import 'package:cloudflare_dart/src/model/access_footer_links_inner.dart';
-import 'package:cloudflare_dart/src/model/access_updated_at.dart';
 import 'package:built_collection/built_collection.dart';
 import 'package:cloudflare_dart/src/model/access_app_policy_response.dart';
+import 'package:cloudflare_dart/src/model/access_type.dart';
 import 'package:cloudflare_dart/src/model/access_app_resp_embedded_policies.dart';
 import 'package:cloudflare_dart/src/model/access_landing_page_design.dart';
-import 'package:cloudflare_dart/src/model/access_created_at.dart';
 import 'package:cloudflare_dart/src/model/access_app_launcher_props.dart';
-import 'package:cloudflare_dart/src/model/access_app_launcher_props_all_of_type.dart';
 import 'package:cloudflare_dart/src/model/access_basic_app_response_props.dart';
 import 'package:built_value/json_object.dart';
 import 'package:built_value/built_value.dart';
@@ -123,7 +121,7 @@ class _$AppLauncherApplication1Serializer implements PrimitiveSerializer<AppLaun
     yield r'type';
     yield serializers.serialize(
       object.type,
-      specifiedType: const FullType(AccessAppLauncherPropsAllOfType),
+      specifiedType: const FullType(AccessType),
     );
     if (object.customNonIdentityDenyUrl != null) {
       yield r'custom_non_identity_deny_url';
@@ -143,7 +141,7 @@ class _$AppLauncherApplication1Serializer implements PrimitiveSerializer<AppLaun
       yield r'created_at';
       yield serializers.serialize(
         object.createdAt,
-        specifiedType: const FullType(AccessCreatedAt),
+        specifiedType: const FullType(JsonObject),
       );
     }
     if (object.bgColor != null) {
@@ -206,7 +204,7 @@ class _$AppLauncherApplication1Serializer implements PrimitiveSerializer<AppLaun
       yield r'updated_at';
       yield serializers.serialize(
         object.updatedAt,
-        specifiedType: const FullType(AccessUpdatedAt),
+        specifiedType: const FullType(JsonObject),
       );
     }
   }
@@ -284,9 +282,9 @@ class _$AppLauncherApplication1Serializer implements PrimitiveSerializer<AppLaun
         case r'type':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(AccessAppLauncherPropsAllOfType),
-          ) as AccessAppLauncherPropsAllOfType;
-          result.type.replace(valueDes);
+            specifiedType: const FullType(AccessType),
+          ) as AccessType;
+          result.type = valueDes;
           break;
         case r'custom_non_identity_deny_url':
           final valueDes = serializers.deserialize(
@@ -305,8 +303,8 @@ class _$AppLauncherApplication1Serializer implements PrimitiveSerializer<AppLaun
         case r'created_at':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(AccessCreatedAt),
-          ) as AccessCreatedAt;
+            specifiedType: const FullType(JsonObject),
+          ) as JsonObject;
           result.createdAt.replace(valueDes);
           break;
         case r'bg_color':
@@ -370,8 +368,8 @@ class _$AppLauncherApplication1Serializer implements PrimitiveSerializer<AppLaun
         case r'updated_at':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(AccessUpdatedAt),
-          ) as AccessUpdatedAt;
+            specifiedType: const FullType(JsonObject),
+          ) as JsonObject;
           result.updatedAt.replace(valueDes);
           break;
         default:

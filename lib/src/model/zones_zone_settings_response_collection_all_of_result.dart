@@ -140,11 +140,11 @@ class ZonesZoneSettingsResponseCollectionAllOfResultIdEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'websockets')
   static const ZonesZoneSettingsResponseCollectionAllOfResultIdEnum websockets = _$zonesZoneSettingsResponseCollectionAllOfResultIdEnum_websockets;
 
-  static Serializer<ZonesZoneSettingsResponseCollectionAllOfResultIdEnum> get serializer => _$zonesZoneSettingsResponseCollectionAllOfResultIdSerializer;
+  static Serializer<ZonesZoneSettingsResponseCollectionAllOfResultIdEnum> get serializer => _$zonesZoneSettingsResponseCollectionAllOfResultIdEnumSerializer;
 
   const ZonesZoneSettingsResponseCollectionAllOfResultIdEnum._(String name): super(name);
 
-  static BuiltSet<ZonesZoneSettingsResponseCollectionAllOfResultIdEnum> get values => _$zonesZoneSettingsResponseCollectionAllOfResultIdValues;
-  static ZonesZoneSettingsResponseCollectionAllOfResultIdEnum valueOf(String name) => _$zonesZoneSettingsResponseCollectionAllOfResultIdValueOf(name);
+  static BuiltSet<ZonesZoneSettingsResponseCollectionAllOfResultIdEnum> get values => _$zonesZoneSettingsResponseCollectionAllOfResultIdEnumValues;
+  static ZonesZoneSettingsResponseCollectionAllOfResultIdEnum valueOf(String name) => _$zonesZoneSettingsResponseCollectionAllOfResultIdEnumValueOf(name);
 }
 

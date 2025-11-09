@@ -231,12 +231,12 @@ class RadarGetBgpIpsTimeseries200ResponseResultMetaAggIntervalEnum extends EnumC
   @BuiltValueEnumConst(wireName: r'ONE_MONTH')
   static const RadarGetBgpIpsTimeseries200ResponseResultMetaAggIntervalEnum ONE_MONTH = _$radarGetBgpIpsTimeseries200ResponseResultMetaAggIntervalEnum_ONE_MONTH;
 
-  static Serializer<RadarGetBgpIpsTimeseries200ResponseResultMetaAggIntervalEnum> get serializer => _$radarGetBgpIpsTimeseries200ResponseResultMetaAggIntervalSerializer;
+  static Serializer<RadarGetBgpIpsTimeseries200ResponseResultMetaAggIntervalEnum> get serializer => _$radarGetBgpIpsTimeseries200ResponseResultMetaAggIntervalEnumSerializer;
 
   const RadarGetBgpIpsTimeseries200ResponseResultMetaAggIntervalEnum._(String name): super(name);
 
-  static BuiltSet<RadarGetBgpIpsTimeseries200ResponseResultMetaAggIntervalEnum> get values => _$radarGetBgpIpsTimeseries200ResponseResultMetaAggIntervalValues;
-  static RadarGetBgpIpsTimeseries200ResponseResultMetaAggIntervalEnum valueOf(String name) => _$radarGetBgpIpsTimeseries200ResponseResultMetaAggIntervalValueOf(name);
+  static BuiltSet<RadarGetBgpIpsTimeseries200ResponseResultMetaAggIntervalEnum> get values => _$radarGetBgpIpsTimeseries200ResponseResultMetaAggIntervalEnumValues;
+  static RadarGetBgpIpsTimeseries200ResponseResultMetaAggIntervalEnum valueOf(String name) => _$radarGetBgpIpsTimeseries200ResponseResultMetaAggIntervalEnumValueOf(name);
 }
 
 class RadarGetBgpIpsTimeseries200ResponseResultMetaNormalizationEnum extends EnumClass {
@@ -266,11 +266,11 @@ class RadarGetBgpIpsTimeseries200ResponseResultMetaNormalizationEnum extends Enu
   @BuiltValueEnumConst(wireName: r'RATIO')
   static const RadarGetBgpIpsTimeseries200ResponseResultMetaNormalizationEnum RATIO = _$radarGetBgpIpsTimeseries200ResponseResultMetaNormalizationEnum_RATIO;
 
-  static Serializer<RadarGetBgpIpsTimeseries200ResponseResultMetaNormalizationEnum> get serializer => _$radarGetBgpIpsTimeseries200ResponseResultMetaNormalizationSerializer;
+  static Serializer<RadarGetBgpIpsTimeseries200ResponseResultMetaNormalizationEnum> get serializer => _$radarGetBgpIpsTimeseries200ResponseResultMetaNormalizationEnumSerializer;
 
   const RadarGetBgpIpsTimeseries200ResponseResultMetaNormalizationEnum._(String name): super(name);
 
-  static BuiltSet<RadarGetBgpIpsTimeseries200ResponseResultMetaNormalizationEnum> get values => _$radarGetBgpIpsTimeseries200ResponseResultMetaNormalizationValues;
-  static RadarGetBgpIpsTimeseries200ResponseResultMetaNormalizationEnum valueOf(String name) => _$radarGetBgpIpsTimeseries200ResponseResultMetaNormalizationValueOf(name);
+  static BuiltSet<RadarGetBgpIpsTimeseries200ResponseResultMetaNormalizationEnum> get values => _$radarGetBgpIpsTimeseries200ResponseResultMetaNormalizationEnumValues;
+  static RadarGetBgpIpsTimeseries200ResponseResultMetaNormalizationEnum valueOf(String name) => _$radarGetBgpIpsTimeseries200ResponseResultMetaNormalizationEnumValueOf(name);
 }
 

@@ -173,11 +173,11 @@ class WorCreateNewWorkflowInstance200ResponseResultStatusEnum extends EnumClass 
   @BuiltValueEnumConst(wireName: r'waiting')
   static const WorCreateNewWorkflowInstance200ResponseResultStatusEnum waiting = _$worCreateNewWorkflowInstance200ResponseResultStatusEnum_waiting;
 
-  static Serializer<WorCreateNewWorkflowInstance200ResponseResultStatusEnum> get serializer => _$worCreateNewWorkflowInstance200ResponseResultStatusSerializer;
+  static Serializer<WorCreateNewWorkflowInstance200ResponseResultStatusEnum> get serializer => _$worCreateNewWorkflowInstance200ResponseResultStatusEnumSerializer;
 
   const WorCreateNewWorkflowInstance200ResponseResultStatusEnum._(String name): super(name);
 
-  static BuiltSet<WorCreateNewWorkflowInstance200ResponseResultStatusEnum> get values => _$worCreateNewWorkflowInstance200ResponseResultStatusValues;
-  static WorCreateNewWorkflowInstance200ResponseResultStatusEnum valueOf(String name) => _$worCreateNewWorkflowInstance200ResponseResultStatusValueOf(name);
+  static BuiltSet<WorCreateNewWorkflowInstance200ResponseResultStatusEnum> get values => _$worCreateNewWorkflowInstance200ResponseResultStatusEnumValues;
+  static WorCreateNewWorkflowInstance200ResponseResultStatusEnum valueOf(String name) => _$worCreateNewWorkflowInstance200ResponseResultStatusEnumValueOf(name);
 }
 

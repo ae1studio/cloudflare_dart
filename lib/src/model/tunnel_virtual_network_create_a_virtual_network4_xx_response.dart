@@ -148,11 +148,11 @@ class _$TunnelVirtualNetworkCreateAVirtualNetwork4XXResponseSerializer implement
 class TunnelVirtualNetworkCreateAVirtualNetwork4XXResponseResultEnum extends EnumClass {
 
 
-  static Serializer<TunnelVirtualNetworkCreateAVirtualNetwork4XXResponseResultEnum> get serializer => _$tunnelVirtualNetworkCreateAVirtualNetwork4XXResponseResultSerializer;
+  static Serializer<TunnelVirtualNetworkCreateAVirtualNetwork4XXResponseResultEnum> get serializer => _$tunnelVirtualNetworkCreateAVirtualNetwork4XXResponseResultEnumSerializer;
 
   const TunnelVirtualNetworkCreateAVirtualNetwork4XXResponseResultEnum._(String name): super(name);
 
-  static BuiltSet<TunnelVirtualNetworkCreateAVirtualNetwork4XXResponseResultEnum> get values => _$tunnelVirtualNetworkCreateAVirtualNetwork4XXResponseResultValues;
-  static TunnelVirtualNetworkCreateAVirtualNetwork4XXResponseResultEnum valueOf(String name) => _$tunnelVirtualNetworkCreateAVirtualNetwork4XXResponseResultValueOf(name);
+  static BuiltSet<TunnelVirtualNetworkCreateAVirtualNetwork4XXResponseResultEnum> get values => _$tunnelVirtualNetworkCreateAVirtualNetwork4XXResponseResultEnumValues;
+  static TunnelVirtualNetworkCreateAVirtualNetwork4XXResponseResultEnum valueOf(String name) => _$tunnelVirtualNetworkCreateAVirtualNetwork4XXResponseResultEnumValueOf(name);
 }
 

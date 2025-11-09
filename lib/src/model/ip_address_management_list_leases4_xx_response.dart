@@ -166,11 +166,11 @@ class _$IpAddressManagementListLeases4XXResponseSerializer implements PrimitiveS
 class IpAddressManagementListLeases4XXResponseResultEnum extends EnumClass {
 
 
-  static Serializer<IpAddressManagementListLeases4XXResponseResultEnum> get serializer => _$ipAddressManagementListLeases4XXResponseResultSerializer;
+  static Serializer<IpAddressManagementListLeases4XXResponseResultEnum> get serializer => _$ipAddressManagementListLeases4XXResponseResultEnumSerializer;
 
   const IpAddressManagementListLeases4XXResponseResultEnum._(String name): super(name);
 
-  static BuiltSet<IpAddressManagementListLeases4XXResponseResultEnum> get values => _$ipAddressManagementListLeases4XXResponseResultValues;
-  static IpAddressManagementListLeases4XXResponseResultEnum valueOf(String name) => _$ipAddressManagementListLeases4XXResponseResultValueOf(name);
+  static BuiltSet<IpAddressManagementListLeases4XXResponseResultEnum> get values => _$ipAddressManagementListLeases4XXResponseResultEnumValues;
+  static IpAddressManagementListLeases4XXResponseResultEnum valueOf(String name) => _$ipAddressManagementListLeases4XXResponseResultEnumValueOf(name);
 }
 

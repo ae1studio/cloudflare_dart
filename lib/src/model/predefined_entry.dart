@@ -197,11 +197,11 @@ class PredefinedEntryTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'predefined')
   static const PredefinedEntryTypeEnum predefined = _$predefinedEntryTypeEnum_predefined;
 
-  static Serializer<PredefinedEntryTypeEnum> get serializer => _$predefinedEntryTypeSerializer;
+  static Serializer<PredefinedEntryTypeEnum> get serializer => _$predefinedEntryTypeEnumSerializer;
 
   const PredefinedEntryTypeEnum._(String name): super(name);
 
-  static BuiltSet<PredefinedEntryTypeEnum> get values => _$predefinedEntryTypeValues;
-  static PredefinedEntryTypeEnum valueOf(String name) => _$predefinedEntryTypeValueOf(name);
+  static BuiltSet<PredefinedEntryTypeEnum> get values => _$predefinedEntryTypeEnumValues;
+  static PredefinedEntryTypeEnum valueOf(String name) => _$predefinedEntryTypeEnumValueOf(name);
 }
 

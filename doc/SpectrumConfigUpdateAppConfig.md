@@ -8,9 +8,9 @@ import 'package:cloudflare_dart/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**createdOn** | [**SpectrumConfigCreated**](SpectrumConfigCreated.md) |  | 
-**id** | [**SpectrumConfigAppIdentifier**](SpectrumConfigAppIdentifier.md) |  | 
-**modifiedOn** | [**SpectrumConfigModified**](SpectrumConfigModified.md) |  | 
+**createdOn** | [**JsonObject**](JsonObject.md) |  | 
+**id** | [**JsonObject**](JsonObject.md) |  | 
+**modifiedOn** | [**JsonObject**](JsonObject.md) |  | 
 **argoSmartRouting** | **bool** | Enables Argo Smart Routing for this application. Notes: Only available for TCP applications with traffic_type set to \"direct\". | [optional] [default to false]
 **dns** | [**SpectrumConfigDns**](SpectrumConfigDns.md) |  | 
 **edgeIps** | [**SpectrumConfigEdgeIps**](SpectrumConfigEdgeIps.md) |  | [optional] 

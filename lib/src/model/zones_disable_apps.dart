@@ -115,11 +115,11 @@ class ZonesDisableAppsIdEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'disable_apps')
   static const ZonesDisableAppsIdEnum disableApps = _$zonesDisableAppsIdEnum_disableApps;
 
-  static Serializer<ZonesDisableAppsIdEnum> get serializer => _$zonesDisableAppsIdSerializer;
+  static Serializer<ZonesDisableAppsIdEnum> get serializer => _$zonesDisableAppsIdEnumSerializer;
 
   const ZonesDisableAppsIdEnum._(String name): super(name);
 
-  static BuiltSet<ZonesDisableAppsIdEnum> get values => _$zonesDisableAppsIdValues;
-  static ZonesDisableAppsIdEnum valueOf(String name) => _$zonesDisableAppsIdValueOf(name);
+  static BuiltSet<ZonesDisableAppsIdEnum> get values => _$zonesDisableAppsIdEnumValues;
+  static ZonesDisableAppsIdEnum valueOf(String name) => _$zonesDisableAppsIdEnumValueOf(name);
 }
 

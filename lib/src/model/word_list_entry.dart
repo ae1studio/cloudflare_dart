@@ -208,11 +208,11 @@ class WordListEntryTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'word_list')
   static const WordListEntryTypeEnum wordList = _$wordListEntryTypeEnum_wordList;
 
-  static Serializer<WordListEntryTypeEnum> get serializer => _$wordListEntryTypeSerializer;
+  static Serializer<WordListEntryTypeEnum> get serializer => _$wordListEntryTypeEnumSerializer;
 
   const WordListEntryTypeEnum._(String name): super(name);
 
-  static BuiltSet<WordListEntryTypeEnum> get values => _$wordListEntryTypeValues;
-  static WordListEntryTypeEnum valueOf(String name) => _$wordListEntryTypeValueOf(name);
+  static BuiltSet<WordListEntryTypeEnum> get values => _$wordListEntryTypeEnumValues;
+  static WordListEntryTypeEnum valueOf(String name) => _$wordListEntryTypeEnumValueOf(name);
 }
 

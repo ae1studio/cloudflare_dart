@@ -149,11 +149,11 @@ class _$ZeroTrustGetAuditSshSettings4XXResponseSerializer implements PrimitiveSe
 class ZeroTrustGetAuditSshSettings4XXResponseResultEnum extends EnumClass {
 
 
-  static Serializer<ZeroTrustGetAuditSshSettings4XXResponseResultEnum> get serializer => _$zeroTrustGetAuditSshSettings4XXResponseResultSerializer;
+  static Serializer<ZeroTrustGetAuditSshSettings4XXResponseResultEnum> get serializer => _$zeroTrustGetAuditSshSettings4XXResponseResultEnumSerializer;
 
   const ZeroTrustGetAuditSshSettings4XXResponseResultEnum._(String name): super(name);
 
-  static BuiltSet<ZeroTrustGetAuditSshSettings4XXResponseResultEnum> get values => _$zeroTrustGetAuditSshSettings4XXResponseResultValues;
-  static ZeroTrustGetAuditSshSettings4XXResponseResultEnum valueOf(String name) => _$zeroTrustGetAuditSshSettings4XXResponseResultValueOf(name);
+  static BuiltSet<ZeroTrustGetAuditSshSettings4XXResponseResultEnum> get values => _$zeroTrustGetAuditSshSettings4XXResponseResultEnumValues;
+  static ZeroTrustGetAuditSshSettings4XXResponseResultEnum valueOf(String name) => _$zeroTrustGetAuditSshSettings4XXResponseResultEnumValueOf(name);
 }
 

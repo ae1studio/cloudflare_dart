@@ -209,11 +209,11 @@ class SpeedBaseValueEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'off')
   static const SpeedBaseValueEnum off = _$speedBaseValueEnum_off;
 
-  static Serializer<SpeedBaseValueEnum> get serializer => _$speedBaseValueSerializer;
+  static Serializer<SpeedBaseValueEnum> get serializer => _$speedBaseValueEnumSerializer;
 
   const SpeedBaseValueEnum._(String name): super(name);
 
-  static BuiltSet<SpeedBaseValueEnum> get values => _$speedBaseValueValues;
-  static SpeedBaseValueEnum valueOf(String name) => _$speedBaseValueValueOf(name);
+  static BuiltSet<SpeedBaseValueEnum> get values => _$speedBaseValueEnumValues;
+  static SpeedBaseValueEnum valueOf(String name) => _$speedBaseValueEnumValueOf(name);
 }
 

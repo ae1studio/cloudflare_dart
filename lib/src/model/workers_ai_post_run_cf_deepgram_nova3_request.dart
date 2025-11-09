@@ -784,12 +784,12 @@ class WorkersAiPostRunCfDeepgramNova3RequestCustomIntentModeEnum extends EnumCla
   @BuiltValueEnumConst(wireName: r'strict')
   static const WorkersAiPostRunCfDeepgramNova3RequestCustomIntentModeEnum strict = _$workersAiPostRunCfDeepgramNova3RequestCustomIntentModeEnum_strict;
 
-  static Serializer<WorkersAiPostRunCfDeepgramNova3RequestCustomIntentModeEnum> get serializer => _$workersAiPostRunCfDeepgramNova3RequestCustomIntentModeSerializer;
+  static Serializer<WorkersAiPostRunCfDeepgramNova3RequestCustomIntentModeEnum> get serializer => _$workersAiPostRunCfDeepgramNova3RequestCustomIntentModeEnumSerializer;
 
   const WorkersAiPostRunCfDeepgramNova3RequestCustomIntentModeEnum._(String name): super(name);
 
-  static BuiltSet<WorkersAiPostRunCfDeepgramNova3RequestCustomIntentModeEnum> get values => _$workersAiPostRunCfDeepgramNova3RequestCustomIntentModeValues;
-  static WorkersAiPostRunCfDeepgramNova3RequestCustomIntentModeEnum valueOf(String name) => _$workersAiPostRunCfDeepgramNova3RequestCustomIntentModeValueOf(name);
+  static BuiltSet<WorkersAiPostRunCfDeepgramNova3RequestCustomIntentModeEnum> get values => _$workersAiPostRunCfDeepgramNova3RequestCustomIntentModeEnumValues;
+  static WorkersAiPostRunCfDeepgramNova3RequestCustomIntentModeEnum valueOf(String name) => _$workersAiPostRunCfDeepgramNova3RequestCustomIntentModeEnumValueOf(name);
 }
 
 class WorkersAiPostRunCfDeepgramNova3RequestCustomTopicModeEnum extends EnumClass {
@@ -801,12 +801,12 @@ class WorkersAiPostRunCfDeepgramNova3RequestCustomTopicModeEnum extends EnumClas
   @BuiltValueEnumConst(wireName: r'strict')
   static const WorkersAiPostRunCfDeepgramNova3RequestCustomTopicModeEnum strict = _$workersAiPostRunCfDeepgramNova3RequestCustomTopicModeEnum_strict;
 
-  static Serializer<WorkersAiPostRunCfDeepgramNova3RequestCustomTopicModeEnum> get serializer => _$workersAiPostRunCfDeepgramNova3RequestCustomTopicModeSerializer;
+  static Serializer<WorkersAiPostRunCfDeepgramNova3RequestCustomTopicModeEnum> get serializer => _$workersAiPostRunCfDeepgramNova3RequestCustomTopicModeEnumSerializer;
 
   const WorkersAiPostRunCfDeepgramNova3RequestCustomTopicModeEnum._(String name): super(name);
 
-  static BuiltSet<WorkersAiPostRunCfDeepgramNova3RequestCustomTopicModeEnum> get values => _$workersAiPostRunCfDeepgramNova3RequestCustomTopicModeValues;
-  static WorkersAiPostRunCfDeepgramNova3RequestCustomTopicModeEnum valueOf(String name) => _$workersAiPostRunCfDeepgramNova3RequestCustomTopicModeValueOf(name);
+  static BuiltSet<WorkersAiPostRunCfDeepgramNova3RequestCustomTopicModeEnum> get values => _$workersAiPostRunCfDeepgramNova3RequestCustomTopicModeEnumValues;
+  static WorkersAiPostRunCfDeepgramNova3RequestCustomTopicModeEnum valueOf(String name) => _$workersAiPostRunCfDeepgramNova3RequestCustomTopicModeEnumValueOf(name);
 }
 
 class WorkersAiPostRunCfDeepgramNova3RequestEncodingEnum extends EnumClass {
@@ -836,12 +836,12 @@ class WorkersAiPostRunCfDeepgramNova3RequestEncodingEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'g729')
   static const WorkersAiPostRunCfDeepgramNova3RequestEncodingEnum g729 = _$workersAiPostRunCfDeepgramNova3RequestEncodingEnum_g729;
 
-  static Serializer<WorkersAiPostRunCfDeepgramNova3RequestEncodingEnum> get serializer => _$workersAiPostRunCfDeepgramNova3RequestEncodingSerializer;
+  static Serializer<WorkersAiPostRunCfDeepgramNova3RequestEncodingEnum> get serializer => _$workersAiPostRunCfDeepgramNova3RequestEncodingEnumSerializer;
 
   const WorkersAiPostRunCfDeepgramNova3RequestEncodingEnum._(String name): super(name);
 
-  static BuiltSet<WorkersAiPostRunCfDeepgramNova3RequestEncodingEnum> get values => _$workersAiPostRunCfDeepgramNova3RequestEncodingValues;
-  static WorkersAiPostRunCfDeepgramNova3RequestEncodingEnum valueOf(String name) => _$workersAiPostRunCfDeepgramNova3RequestEncodingValueOf(name);
+  static BuiltSet<WorkersAiPostRunCfDeepgramNova3RequestEncodingEnum> get values => _$workersAiPostRunCfDeepgramNova3RequestEncodingEnumValues;
+  static WorkersAiPostRunCfDeepgramNova3RequestEncodingEnum valueOf(String name) => _$workersAiPostRunCfDeepgramNova3RequestEncodingEnumValueOf(name);
 }
 
 class WorkersAiPostRunCfDeepgramNova3RequestModeEnum extends EnumClass {
@@ -856,11 +856,11 @@ class WorkersAiPostRunCfDeepgramNova3RequestModeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'finance')
   static const WorkersAiPostRunCfDeepgramNova3RequestModeEnum finance = _$workersAiPostRunCfDeepgramNova3RequestModeEnum_finance;
 
-  static Serializer<WorkersAiPostRunCfDeepgramNova3RequestModeEnum> get serializer => _$workersAiPostRunCfDeepgramNova3RequestModeSerializer;
+  static Serializer<WorkersAiPostRunCfDeepgramNova3RequestModeEnum> get serializer => _$workersAiPostRunCfDeepgramNova3RequestModeEnumSerializer;
 
   const WorkersAiPostRunCfDeepgramNova3RequestModeEnum._(String name): super(name);
 
-  static BuiltSet<WorkersAiPostRunCfDeepgramNova3RequestModeEnum> get values => _$workersAiPostRunCfDeepgramNova3RequestModeValues;
-  static WorkersAiPostRunCfDeepgramNova3RequestModeEnum valueOf(String name) => _$workersAiPostRunCfDeepgramNova3RequestModeValueOf(name);
+  static BuiltSet<WorkersAiPostRunCfDeepgramNova3RequestModeEnum> get values => _$workersAiPostRunCfDeepgramNova3RequestModeEnumValues;
+  static WorkersAiPostRunCfDeepgramNova3RequestModeEnum valueOf(String name) => _$workersAiPostRunCfDeepgramNova3RequestModeEnumValueOf(name);
 }
 

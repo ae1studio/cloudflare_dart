@@ -131,11 +131,11 @@ class CloudflarePipelinesWorkersPipelinesBindingSourceFormatEnum extends EnumCla
   @BuiltValueEnumConst(wireName: r'json')
   static const CloudflarePipelinesWorkersPipelinesBindingSourceFormatEnum json = _$cloudflarePipelinesWorkersPipelinesBindingSourceFormatEnum_json;
 
-  static Serializer<CloudflarePipelinesWorkersPipelinesBindingSourceFormatEnum> get serializer => _$cloudflarePipelinesWorkersPipelinesBindingSourceFormatSerializer;
+  static Serializer<CloudflarePipelinesWorkersPipelinesBindingSourceFormatEnum> get serializer => _$cloudflarePipelinesWorkersPipelinesBindingSourceFormatEnumSerializer;
 
   const CloudflarePipelinesWorkersPipelinesBindingSourceFormatEnum._(String name): super(name);
 
-  static BuiltSet<CloudflarePipelinesWorkersPipelinesBindingSourceFormatEnum> get values => _$cloudflarePipelinesWorkersPipelinesBindingSourceFormatValues;
-  static CloudflarePipelinesWorkersPipelinesBindingSourceFormatEnum valueOf(String name) => _$cloudflarePipelinesWorkersPipelinesBindingSourceFormatValueOf(name);
+  static BuiltSet<CloudflarePipelinesWorkersPipelinesBindingSourceFormatEnum> get values => _$cloudflarePipelinesWorkersPipelinesBindingSourceFormatEnumValues;
+  static CloudflarePipelinesWorkersPipelinesBindingSourceFormatEnum valueOf(String name) => _$cloudflarePipelinesWorkersPipelinesBindingSourceFormatEnumValueOf(name);
 }
 

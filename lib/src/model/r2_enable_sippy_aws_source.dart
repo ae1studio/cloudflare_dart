@@ -189,11 +189,11 @@ class R2EnableSippyAwsSourceProviderEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'aws')
   static const R2EnableSippyAwsSourceProviderEnum aws = _$r2EnableSippyAwsSourceProviderEnum_aws;
 
-  static Serializer<R2EnableSippyAwsSourceProviderEnum> get serializer => _$r2EnableSippyAwsSourceProviderSerializer;
+  static Serializer<R2EnableSippyAwsSourceProviderEnum> get serializer => _$r2EnableSippyAwsSourceProviderEnumSerializer;
 
   const R2EnableSippyAwsSourceProviderEnum._(String name): super(name);
 
-  static BuiltSet<R2EnableSippyAwsSourceProviderEnum> get values => _$r2EnableSippyAwsSourceProviderValues;
-  static R2EnableSippyAwsSourceProviderEnum valueOf(String name) => _$r2EnableSippyAwsSourceProviderValueOf(name);
+  static BuiltSet<R2EnableSippyAwsSourceProviderEnum> get values => _$r2EnableSippyAwsSourceProviderEnumValues;
+  static R2EnableSippyAwsSourceProviderEnum valueOf(String name) => _$r2EnableSippyAwsSourceProviderEnumValueOf(name);
 }
 

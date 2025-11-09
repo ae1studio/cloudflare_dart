@@ -193,12 +193,12 @@ class AigConfigListGatewayLogsFiltersParameterInnerKeyEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'dlp_action')
   static const AigConfigListGatewayLogsFiltersParameterInnerKeyEnum dlpAction = _$aigConfigListGatewayLogsFiltersParameterInnerKeyEnum_dlpAction;
 
-  static Serializer<AigConfigListGatewayLogsFiltersParameterInnerKeyEnum> get serializer => _$aigConfigListGatewayLogsFiltersParameterInnerKeySerializer;
+  static Serializer<AigConfigListGatewayLogsFiltersParameterInnerKeyEnum> get serializer => _$aigConfigListGatewayLogsFiltersParameterInnerKeyEnumSerializer;
 
   const AigConfigListGatewayLogsFiltersParameterInnerKeyEnum._(String name): super(name);
 
-  static BuiltSet<AigConfigListGatewayLogsFiltersParameterInnerKeyEnum> get values => _$aigConfigListGatewayLogsFiltersParameterInnerKeyValues;
-  static AigConfigListGatewayLogsFiltersParameterInnerKeyEnum valueOf(String name) => _$aigConfigListGatewayLogsFiltersParameterInnerKeyValueOf(name);
+  static BuiltSet<AigConfigListGatewayLogsFiltersParameterInnerKeyEnum> get values => _$aigConfigListGatewayLogsFiltersParameterInnerKeyEnumValues;
+  static AigConfigListGatewayLogsFiltersParameterInnerKeyEnum valueOf(String name) => _$aigConfigListGatewayLogsFiltersParameterInnerKeyEnumValueOf(name);
 }
 
 class AigConfigListGatewayLogsFiltersParameterInnerOperator_Enum extends EnumClass {
@@ -214,11 +214,11 @@ class AigConfigListGatewayLogsFiltersParameterInnerOperator_Enum extends EnumCla
   @BuiltValueEnumConst(wireName: r'gt')
   static const AigConfigListGatewayLogsFiltersParameterInnerOperator_Enum gt = _$aigConfigListGatewayLogsFiltersParameterInnerOperatorEnum_gt;
 
-  static Serializer<AigConfigListGatewayLogsFiltersParameterInnerOperator_Enum> get serializer => _$aigConfigListGatewayLogsFiltersParameterInnerOperatorSerializer;
+  static Serializer<AigConfigListGatewayLogsFiltersParameterInnerOperator_Enum> get serializer => _$aigConfigListGatewayLogsFiltersParameterInnerOperatorEnumSerializer;
 
   const AigConfigListGatewayLogsFiltersParameterInnerOperator_Enum._(String name): super(name);
 
-  static BuiltSet<AigConfigListGatewayLogsFiltersParameterInnerOperator_Enum> get values => _$aigConfigListGatewayLogsFiltersParameterInnerOperatorValues;
-  static AigConfigListGatewayLogsFiltersParameterInnerOperator_Enum valueOf(String name) => _$aigConfigListGatewayLogsFiltersParameterInnerOperatorValueOf(name);
+  static BuiltSet<AigConfigListGatewayLogsFiltersParameterInnerOperator_Enum> get values => _$aigConfigListGatewayLogsFiltersParameterInnerOperatorEnumValues;
+  static AigConfigListGatewayLogsFiltersParameterInnerOperator_Enum valueOf(String name) => _$aigConfigListGatewayLogsFiltersParameterInnerOperatorEnumValueOf(name);
 }
 

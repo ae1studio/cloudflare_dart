@@ -4,7 +4,6 @@
 
 // ignore_for_file: unused_element
 import 'package:cloudflare_dart/src/model/rulesets_execute_sensitivity_level.dart';
-import 'package:built_value/json_object.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
@@ -13,23 +12,28 @@ part 'category_override.g.dart';
 /// A category-level override.
 ///
 /// Properties:
-/// * [action] 
-/// * [category] 
-/// * [enabled] 
-/// * [sensitivityLevel] 
+/// * [action] - The action to override rules in the category with.
+/// * [category] - The name of the category to override.
+/// * [enabled] - Whether to enable execution of rules in the category.
+/// * [sensitivityLevel] - The sensitivity level to use for rules in the category. This option is only applicable for DDoS phases.
 @BuiltValue()
 abstract class CategoryOverride implements Built<CategoryOverride, CategoryOverrideBuilder> {
+  /// The action to override rules in the category with.
   @BuiltValueField(wireName: r'action')
   String? get action;
 
+  /// The name of the category to override.
   @BuiltValueField(wireName: r'category')
   String get category;
 
+  /// Whether to enable execution of rules in the category.
   @BuiltValueField(wireName: r'enabled')
   bool? get enabled;
 
+  /// The sensitivity level to use for rules in the category. This option is only applicable for DDoS phases.
   @BuiltValueField(wireName: r'sensitivity_level')
   RulesetsExecuteSensitivityLevel? get sensitivityLevel;
+  // enum sensitivityLevelEnum {  default,  medium,  low,  eoff,  };
 
   CategoryOverride._();
 

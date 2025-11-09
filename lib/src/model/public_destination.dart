@@ -132,11 +132,11 @@ class PublicDestinationTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'public')
   static const PublicDestinationTypeEnum public = _$publicDestinationTypeEnum_public;
 
-  static Serializer<PublicDestinationTypeEnum> get serializer => _$publicDestinationTypeSerializer;
+  static Serializer<PublicDestinationTypeEnum> get serializer => _$publicDestinationTypeEnumSerializer;
 
   const PublicDestinationTypeEnum._(String name): super(name);
 
-  static BuiltSet<PublicDestinationTypeEnum> get values => _$publicDestinationTypeValues;
-  static PublicDestinationTypeEnum valueOf(String name) => _$publicDestinationTypeValueOf(name);
+  static BuiltSet<PublicDestinationTypeEnum> get values => _$publicDestinationTypeEnumValues;
+  static PublicDestinationTypeEnum valueOf(String name) => _$publicDestinationTypeEnumValueOf(name);
 }
 

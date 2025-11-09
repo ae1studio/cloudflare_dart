@@ -185,12 +185,12 @@ class ApiShieldCredentialsJWTKeyECES256KtyEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'EC')
   static const ApiShieldCredentialsJWTKeyECES256KtyEnum EC = _$apiShieldCredentialsJWTKeyECES256KtyEnum_EC;
 
-  static Serializer<ApiShieldCredentialsJWTKeyECES256KtyEnum> get serializer => _$apiShieldCredentialsJWTKeyECES256KtySerializer;
+  static Serializer<ApiShieldCredentialsJWTKeyECES256KtyEnum> get serializer => _$apiShieldCredentialsJWTKeyECES256KtyEnumSerializer;
 
   const ApiShieldCredentialsJWTKeyECES256KtyEnum._(String name): super(name);
 
-  static BuiltSet<ApiShieldCredentialsJWTKeyECES256KtyEnum> get values => _$apiShieldCredentialsJWTKeyECES256KtyValues;
-  static ApiShieldCredentialsJWTKeyECES256KtyEnum valueOf(String name) => _$apiShieldCredentialsJWTKeyECES256KtyValueOf(name);
+  static BuiltSet<ApiShieldCredentialsJWTKeyECES256KtyEnum> get values => _$apiShieldCredentialsJWTKeyECES256KtyEnumValues;
+  static ApiShieldCredentialsJWTKeyECES256KtyEnum valueOf(String name) => _$apiShieldCredentialsJWTKeyECES256KtyEnumValueOf(name);
 }
 
 class ApiShieldCredentialsJWTKeyECES256AlgEnum extends EnumClass {
@@ -199,12 +199,12 @@ class ApiShieldCredentialsJWTKeyECES256AlgEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'ES256')
   static const ApiShieldCredentialsJWTKeyECES256AlgEnum eS256 = _$apiShieldCredentialsJWTKeyECES256AlgEnum_eS256;
 
-  static Serializer<ApiShieldCredentialsJWTKeyECES256AlgEnum> get serializer => _$apiShieldCredentialsJWTKeyECES256AlgSerializer;
+  static Serializer<ApiShieldCredentialsJWTKeyECES256AlgEnum> get serializer => _$apiShieldCredentialsJWTKeyECES256AlgEnumSerializer;
 
   const ApiShieldCredentialsJWTKeyECES256AlgEnum._(String name): super(name);
 
-  static BuiltSet<ApiShieldCredentialsJWTKeyECES256AlgEnum> get values => _$apiShieldCredentialsJWTKeyECES256AlgValues;
-  static ApiShieldCredentialsJWTKeyECES256AlgEnum valueOf(String name) => _$apiShieldCredentialsJWTKeyECES256AlgValueOf(name);
+  static BuiltSet<ApiShieldCredentialsJWTKeyECES256AlgEnum> get values => _$apiShieldCredentialsJWTKeyECES256AlgEnumValues;
+  static ApiShieldCredentialsJWTKeyECES256AlgEnum valueOf(String name) => _$apiShieldCredentialsJWTKeyECES256AlgEnumValueOf(name);
 }
 
 class ApiShieldCredentialsJWTKeyECES256CrvEnum extends EnumClass {
@@ -213,11 +213,11 @@ class ApiShieldCredentialsJWTKeyECES256CrvEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'P-256')
   static const ApiShieldCredentialsJWTKeyECES256CrvEnum p256 = _$apiShieldCredentialsJWTKeyECES256CrvEnum_p256;
 
-  static Serializer<ApiShieldCredentialsJWTKeyECES256CrvEnum> get serializer => _$apiShieldCredentialsJWTKeyECES256CrvSerializer;
+  static Serializer<ApiShieldCredentialsJWTKeyECES256CrvEnum> get serializer => _$apiShieldCredentialsJWTKeyECES256CrvEnumSerializer;
 
   const ApiShieldCredentialsJWTKeyECES256CrvEnum._(String name): super(name);
 
-  static BuiltSet<ApiShieldCredentialsJWTKeyECES256CrvEnum> get values => _$apiShieldCredentialsJWTKeyECES256CrvValues;
-  static ApiShieldCredentialsJWTKeyECES256CrvEnum valueOf(String name) => _$apiShieldCredentialsJWTKeyECES256CrvValueOf(name);
+  static BuiltSet<ApiShieldCredentialsJWTKeyECES256CrvEnum> get values => _$apiShieldCredentialsJWTKeyECES256CrvEnumValues;
+  static ApiShieldCredentialsJWTKeyECES256CrvEnum valueOf(String name) => _$apiShieldCredentialsJWTKeyECES256CrvEnumValueOf(name);
 }
 

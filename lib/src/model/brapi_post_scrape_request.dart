@@ -3,7 +3,6 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:cloudflare_dart/src/model/brapi_post_content_request_all_of_allow_resource_types_inner.dart';
 import 'package:cloudflare_dart/src/model/brapi_post_content_request_all_of_cookies_inner.dart';
 import 'package:cloudflare_dart/src/model/brapi_post_content_request_all_of_viewport.dart';
 import 'package:cloudflare_dart/src/model/brapi_post_scrape_request_all_of_elements_inner.dart';
@@ -13,6 +12,8 @@ import 'package:cloudflare_dart/src/model/brapi_post_content_request_all_of_add_
 import 'package:cloudflare_dart/src/model/brapi_post_content_request_all_of_goto_options.dart';
 import 'package:cloudflare_dart/src/model/brapi_post_content_request_all_of_authenticate.dart';
 import 'package:cloudflare_dart/src/model/brapi_post_content_request_all_of_wait_for_selector.dart';
+import 'package:cloudflare_dart/src/model/brapi_post_scrape_request_all_of_reject_resource_types.dart';
+import 'package:cloudflare_dart/src/model/brapi_post_scrape_request_all_of_allow_resource_types.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
@@ -62,7 +63,7 @@ abstract class BrapiPostScrapeRequest implements Built<BrapiPostScrapeRequest, B
 
   /// Only allow requests that match the provided resource types, eg. 'image' or 'script'.
   @BuiltValueField(wireName: r'allowResourceTypes')
-  BuiltList<BrapiPostContentRequestAllOfAllowResourceTypesInner>? get allowResourceTypes;
+  BuiltList<BrapiPostScrapeRequestAllOfAllowResourceTypes>? get allowResourceTypes;
 
   @BuiltValueField(wireName: r'authenticate')
   BrapiPostContentRequestAllOfAuthenticate? get authenticate;
@@ -94,7 +95,7 @@ abstract class BrapiPostScrapeRequest implements Built<BrapiPostScrapeRequest, B
 
   /// Block undesired requests that match the provided resource types, eg. 'image' or 'script'.
   @BuiltValueField(wireName: r'rejectResourceTypes')
-  BuiltList<BrapiPostContentRequestAllOfAllowResourceTypesInner>? get rejectResourceTypes;
+  BuiltList<BrapiPostScrapeRequestAllOfRejectResourceTypes>? get rejectResourceTypes;
 
   @BuiltValueField(wireName: r'setExtraHTTPHeaders')
   BuiltMap<String, String>? get setExtraHTTPHeaders;
@@ -175,7 +176,7 @@ class _$BrapiPostScrapeRequestSerializer implements PrimitiveSerializer<BrapiPos
       yield r'allowResourceTypes';
       yield serializers.serialize(
         object.allowResourceTypes,
-        specifiedType: const FullType(BuiltList, [FullType(BrapiPostContentRequestAllOfAllowResourceTypesInner)]),
+        specifiedType: const FullType(BuiltList, [FullType(BrapiPostScrapeRequestAllOfAllowResourceTypes)]),
       );
     }
     if (object.authenticate != null) {
@@ -236,7 +237,7 @@ class _$BrapiPostScrapeRequestSerializer implements PrimitiveSerializer<BrapiPos
       yield r'rejectResourceTypes';
       yield serializers.serialize(
         object.rejectResourceTypes,
-        specifiedType: const FullType(BuiltList, [FullType(BrapiPostContentRequestAllOfAllowResourceTypesInner)]),
+        specifiedType: const FullType(BuiltList, [FullType(BrapiPostScrapeRequestAllOfRejectResourceTypes)]),
       );
     }
     if (object.setExtraHTTPHeaders != null) {
@@ -342,8 +343,8 @@ class _$BrapiPostScrapeRequestSerializer implements PrimitiveSerializer<BrapiPos
         case r'allowResourceTypes':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(BuiltList, [FullType(BrapiPostContentRequestAllOfAllowResourceTypesInner)]),
-          ) as BuiltList<BrapiPostContentRequestAllOfAllowResourceTypesInner>;
+            specifiedType: const FullType(BuiltList, [FullType(BrapiPostScrapeRequestAllOfAllowResourceTypes)]),
+          ) as BuiltList<BrapiPostScrapeRequestAllOfAllowResourceTypes>;
           result.allowResourceTypes.replace(valueDes);
           break;
         case r'authenticate':
@@ -405,8 +406,8 @@ class _$BrapiPostScrapeRequestSerializer implements PrimitiveSerializer<BrapiPos
         case r'rejectResourceTypes':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(BuiltList, [FullType(BrapiPostContentRequestAllOfAllowResourceTypesInner)]),
-          ) as BuiltList<BrapiPostContentRequestAllOfAllowResourceTypesInner>;
+            specifiedType: const FullType(BuiltList, [FullType(BrapiPostScrapeRequestAllOfRejectResourceTypes)]),
+          ) as BuiltList<BrapiPostScrapeRequestAllOfRejectResourceTypes>;
           result.rejectResourceTypes.replace(valueDes);
           break;
         case r'setExtraHTTPHeaders':

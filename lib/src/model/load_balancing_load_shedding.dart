@@ -43,9 +43,9 @@ abstract class LoadBalancingLoadShedding implements Built<LoadBalancingLoadShedd
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(LoadBalancingLoadSheddingBuilder b) => b
       ..defaultPercent = 0
-      ..defaultPolicy = const LoadBalancingLoadSheddingDefaultPolicyEnum._('random')
+      ..defaultPolicy = LoadBalancingLoadSheddingDefaultPolicyEnum.valueOf('random')
       ..sessionPercent = 0
-      ..sessionPolicy = const LoadBalancingLoadSheddingSessionPolicyEnum._('hash');
+      ..sessionPolicy = LoadBalancingLoadSheddingSessionPolicyEnum.valueOf('hash');
 
   @BuiltValueSerializer(custom: true)
   static Serializer<LoadBalancingLoadShedding> get serializer => _$LoadBalancingLoadSheddingSerializer();
@@ -180,12 +180,12 @@ class LoadBalancingLoadSheddingDefaultPolicyEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'hash')
   static const LoadBalancingLoadSheddingDefaultPolicyEnum hash = _$loadBalancingLoadSheddingDefaultPolicyEnum_hash;
 
-  static Serializer<LoadBalancingLoadSheddingDefaultPolicyEnum> get serializer => _$loadBalancingLoadSheddingDefaultPolicySerializer;
+  static Serializer<LoadBalancingLoadSheddingDefaultPolicyEnum> get serializer => _$loadBalancingLoadSheddingDefaultPolicyEnumSerializer;
 
   const LoadBalancingLoadSheddingDefaultPolicyEnum._(String name): super(name);
 
-  static BuiltSet<LoadBalancingLoadSheddingDefaultPolicyEnum> get values => _$loadBalancingLoadSheddingDefaultPolicyValues;
-  static LoadBalancingLoadSheddingDefaultPolicyEnum valueOf(String name) => _$loadBalancingLoadSheddingDefaultPolicyValueOf(name);
+  static BuiltSet<LoadBalancingLoadSheddingDefaultPolicyEnum> get values => _$loadBalancingLoadSheddingDefaultPolicyEnumValues;
+  static LoadBalancingLoadSheddingDefaultPolicyEnum valueOf(String name) => _$loadBalancingLoadSheddingDefaultPolicyEnumValueOf(name);
 }
 
 class LoadBalancingLoadSheddingSessionPolicyEnum extends EnumClass {
@@ -194,11 +194,11 @@ class LoadBalancingLoadSheddingSessionPolicyEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'hash')
   static const LoadBalancingLoadSheddingSessionPolicyEnum hash = _$loadBalancingLoadSheddingSessionPolicyEnum_hash;
 
-  static Serializer<LoadBalancingLoadSheddingSessionPolicyEnum> get serializer => _$loadBalancingLoadSheddingSessionPolicySerializer;
+  static Serializer<LoadBalancingLoadSheddingSessionPolicyEnum> get serializer => _$loadBalancingLoadSheddingSessionPolicyEnumSerializer;
 
   const LoadBalancingLoadSheddingSessionPolicyEnum._(String name): super(name);
 
-  static BuiltSet<LoadBalancingLoadSheddingSessionPolicyEnum> get values => _$loadBalancingLoadSheddingSessionPolicyValues;
-  static LoadBalancingLoadSheddingSessionPolicyEnum valueOf(String name) => _$loadBalancingLoadSheddingSessionPolicyValueOf(name);
+  static BuiltSet<LoadBalancingLoadSheddingSessionPolicyEnum> get values => _$loadBalancingLoadSheddingSessionPolicyEnumValues;
+  static LoadBalancingLoadSheddingSessionPolicyEnum valueOf(String name) => _$loadBalancingLoadSheddingSessionPolicyEnumValueOf(name);
 }
 

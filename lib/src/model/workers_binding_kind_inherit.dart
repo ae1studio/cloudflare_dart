@@ -169,11 +169,11 @@ class WorkersBindingKindInheritTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'inherit')
   static const WorkersBindingKindInheritTypeEnum inherit = _$workersBindingKindInheritTypeEnum_inherit;
 
-  static Serializer<WorkersBindingKindInheritTypeEnum> get serializer => _$workersBindingKindInheritTypeSerializer;
+  static Serializer<WorkersBindingKindInheritTypeEnum> get serializer => _$workersBindingKindInheritTypeEnumSerializer;
 
   const WorkersBindingKindInheritTypeEnum._(String name): super(name);
 
-  static BuiltSet<WorkersBindingKindInheritTypeEnum> get values => _$workersBindingKindInheritTypeValues;
-  static WorkersBindingKindInheritTypeEnum valueOf(String name) => _$workersBindingKindInheritTypeValueOf(name);
+  static BuiltSet<WorkersBindingKindInheritTypeEnum> get values => _$workersBindingKindInheritTypeEnumValues;
+  static WorkersBindingKindInheritTypeEnum valueOf(String name) => _$workersBindingKindInheritTypeEnumValueOf(name);
 }
 

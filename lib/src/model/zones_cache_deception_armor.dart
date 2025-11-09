@@ -135,12 +135,12 @@ class ZonesCacheDeceptionArmorIdEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'cache_deception_armor')
   static const ZonesCacheDeceptionArmorIdEnum cacheDeceptionArmor = _$zonesCacheDeceptionArmorIdEnum_cacheDeceptionArmor;
 
-  static Serializer<ZonesCacheDeceptionArmorIdEnum> get serializer => _$zonesCacheDeceptionArmorIdSerializer;
+  static Serializer<ZonesCacheDeceptionArmorIdEnum> get serializer => _$zonesCacheDeceptionArmorIdEnumSerializer;
 
   const ZonesCacheDeceptionArmorIdEnum._(String name): super(name);
 
-  static BuiltSet<ZonesCacheDeceptionArmorIdEnum> get values => _$zonesCacheDeceptionArmorIdValues;
-  static ZonesCacheDeceptionArmorIdEnum valueOf(String name) => _$zonesCacheDeceptionArmorIdValueOf(name);
+  static BuiltSet<ZonesCacheDeceptionArmorIdEnum> get values => _$zonesCacheDeceptionArmorIdEnumValues;
+  static ZonesCacheDeceptionArmorIdEnum valueOf(String name) => _$zonesCacheDeceptionArmorIdEnumValueOf(name);
 }
 
 class ZonesCacheDeceptionArmorValueEnum extends EnumClass {
@@ -152,11 +152,11 @@ class ZonesCacheDeceptionArmorValueEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'off')
   static const ZonesCacheDeceptionArmorValueEnum off = _$zonesCacheDeceptionArmorValueEnum_off;
 
-  static Serializer<ZonesCacheDeceptionArmorValueEnum> get serializer => _$zonesCacheDeceptionArmorValueSerializer;
+  static Serializer<ZonesCacheDeceptionArmorValueEnum> get serializer => _$zonesCacheDeceptionArmorValueEnumSerializer;
 
   const ZonesCacheDeceptionArmorValueEnum._(String name): super(name);
 
-  static BuiltSet<ZonesCacheDeceptionArmorValueEnum> get values => _$zonesCacheDeceptionArmorValueValues;
-  static ZonesCacheDeceptionArmorValueEnum valueOf(String name) => _$zonesCacheDeceptionArmorValueValueOf(name);
+  static BuiltSet<ZonesCacheDeceptionArmorValueEnum> get values => _$zonesCacheDeceptionArmorValueEnumValues;
+  static ZonesCacheDeceptionArmorValueEnum valueOf(String name) => _$zonesCacheDeceptionArmorValueEnumValueOf(name);
 }
 

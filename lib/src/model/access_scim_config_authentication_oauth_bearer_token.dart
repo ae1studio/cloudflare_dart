@@ -130,11 +130,11 @@ class AccessScimConfigAuthenticationOauthBearerTokenSchemeEnum extends EnumClass
   @BuiltValueEnumConst(wireName: r'oauthbearertoken')
   static const AccessScimConfigAuthenticationOauthBearerTokenSchemeEnum oauthbearertoken = _$accessScimConfigAuthenticationOauthBearerTokenSchemeEnum_oauthbearertoken;
 
-  static Serializer<AccessScimConfigAuthenticationOauthBearerTokenSchemeEnum> get serializer => _$accessScimConfigAuthenticationOauthBearerTokenSchemeSerializer;
+  static Serializer<AccessScimConfigAuthenticationOauthBearerTokenSchemeEnum> get serializer => _$accessScimConfigAuthenticationOauthBearerTokenSchemeEnumSerializer;
 
   const AccessScimConfigAuthenticationOauthBearerTokenSchemeEnum._(String name): super(name);
 
-  static BuiltSet<AccessScimConfigAuthenticationOauthBearerTokenSchemeEnum> get values => _$accessScimConfigAuthenticationOauthBearerTokenSchemeValues;
-  static AccessScimConfigAuthenticationOauthBearerTokenSchemeEnum valueOf(String name) => _$accessScimConfigAuthenticationOauthBearerTokenSchemeValueOf(name);
+  static BuiltSet<AccessScimConfigAuthenticationOauthBearerTokenSchemeEnum> get values => _$accessScimConfigAuthenticationOauthBearerTokenSchemeEnumValues;
+  static AccessScimConfigAuthenticationOauthBearerTokenSchemeEnum valueOf(String name) => _$accessScimConfigAuthenticationOauthBearerTokenSchemeEnumValueOf(name);
 }
 

@@ -143,11 +143,11 @@ class IamSsoConnectorVerificationInfoStatusEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'verified')
   static const IamSsoConnectorVerificationInfoStatusEnum verified = _$iamSsoConnectorVerificationInfoStatusEnum_verified;
 
-  static Serializer<IamSsoConnectorVerificationInfoStatusEnum> get serializer => _$iamSsoConnectorVerificationInfoStatusSerializer;
+  static Serializer<IamSsoConnectorVerificationInfoStatusEnum> get serializer => _$iamSsoConnectorVerificationInfoStatusEnumSerializer;
 
   const IamSsoConnectorVerificationInfoStatusEnum._(String name): super(name);
 
-  static BuiltSet<IamSsoConnectorVerificationInfoStatusEnum> get values => _$iamSsoConnectorVerificationInfoStatusValues;
-  static IamSsoConnectorVerificationInfoStatusEnum valueOf(String name) => _$iamSsoConnectorVerificationInfoStatusValueOf(name);
+  static BuiltSet<IamSsoConnectorVerificationInfoStatusEnum> get values => _$iamSsoConnectorVerificationInfoStatusEnumValues;
+  static IamSsoConnectorVerificationInfoStatusEnum valueOf(String name) => _$iamSsoConnectorVerificationInfoStatusEnumValueOf(name);
 }
 

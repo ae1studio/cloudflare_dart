@@ -150,11 +150,11 @@ class _$WaitingRoomDeleteWaitingRoom4XXResponseSerializer implements PrimitiveSe
 class WaitingRoomDeleteWaitingRoom4XXResponseResultEnum extends EnumClass {
 
 
-  static Serializer<WaitingRoomDeleteWaitingRoom4XXResponseResultEnum> get serializer => _$waitingRoomDeleteWaitingRoom4XXResponseResultSerializer;
+  static Serializer<WaitingRoomDeleteWaitingRoom4XXResponseResultEnum> get serializer => _$waitingRoomDeleteWaitingRoom4XXResponseResultEnumSerializer;
 
   const WaitingRoomDeleteWaitingRoom4XXResponseResultEnum._(String name): super(name);
 
-  static BuiltSet<WaitingRoomDeleteWaitingRoom4XXResponseResultEnum> get values => _$waitingRoomDeleteWaitingRoom4XXResponseResultValues;
-  static WaitingRoomDeleteWaitingRoom4XXResponseResultEnum valueOf(String name) => _$waitingRoomDeleteWaitingRoom4XXResponseResultValueOf(name);
+  static BuiltSet<WaitingRoomDeleteWaitingRoom4XXResponseResultEnum> get values => _$waitingRoomDeleteWaitingRoom4XXResponseResultEnumValues;
+  static WaitingRoomDeleteWaitingRoom4XXResponseResultEnum valueOf(String name) => _$waitingRoomDeleteWaitingRoom4XXResponseResultEnumValueOf(name);
 }
 

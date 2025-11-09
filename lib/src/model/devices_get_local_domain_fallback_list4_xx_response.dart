@@ -165,11 +165,11 @@ class _$DevicesGetLocalDomainFallbackList4XXResponseSerializer implements Primit
 class DevicesGetLocalDomainFallbackList4XXResponseResultEnum extends EnumClass {
 
 
-  static Serializer<DevicesGetLocalDomainFallbackList4XXResponseResultEnum> get serializer => _$devicesGetLocalDomainFallbackList4XXResponseResultSerializer;
+  static Serializer<DevicesGetLocalDomainFallbackList4XXResponseResultEnum> get serializer => _$devicesGetLocalDomainFallbackList4XXResponseResultEnumSerializer;
 
   const DevicesGetLocalDomainFallbackList4XXResponseResultEnum._(String name): super(name);
 
-  static BuiltSet<DevicesGetLocalDomainFallbackList4XXResponseResultEnum> get values => _$devicesGetLocalDomainFallbackList4XXResponseResultValues;
-  static DevicesGetLocalDomainFallbackList4XXResponseResultEnum valueOf(String name) => _$devicesGetLocalDomainFallbackList4XXResponseResultValueOf(name);
+  static BuiltSet<DevicesGetLocalDomainFallbackList4XXResponseResultEnum> get values => _$devicesGetLocalDomainFallbackList4XXResponseResultEnumValues;
+  static DevicesGetLocalDomainFallbackList4XXResponseResultEnum valueOf(String name) => _$devicesGetLocalDomainFallbackList4XXResponseResultEnumValueOf(name);
 }
 

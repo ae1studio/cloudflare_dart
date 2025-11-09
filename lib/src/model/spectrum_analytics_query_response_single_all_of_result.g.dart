@@ -13,9 +13,9 @@ class _$SpectrumAnalyticsQueryResponseSingleAllOfResult
   @override
   final num dataLag;
   @override
-  final SpectrumAnalyticsQueryResponseSingleAllOfResultMax max;
+  final BuiltMap<String, num> max;
   @override
-  final SpectrumAnalyticsQueryResponseSingleAllOfResultMin min;
+  final BuiltMap<String, num> min;
   @override
   final SpectrumAnalyticsQuery query;
   @override
@@ -23,7 +23,7 @@ class _$SpectrumAnalyticsQueryResponseSingleAllOfResult
   @override
   final BuiltList<BuiltList<DateTime>>? timeIntervals;
   @override
-  final SpectrumAnalyticsQueryResponseSingleAllOfResultTotals totals;
+  final BuiltMap<String, num> totals;
 
   factory _$SpectrumAnalyticsQueryResponseSingleAllOfResult(
           [void Function(
@@ -113,19 +113,13 @@ class SpectrumAnalyticsQueryResponseSingleAllOfResultBuilder
   num? get dataLag => _$this._dataLag;
   set dataLag(num? dataLag) => _$this._dataLag = dataLag;
 
-  SpectrumAnalyticsQueryResponseSingleAllOfResultMaxBuilder? _max;
-  SpectrumAnalyticsQueryResponseSingleAllOfResultMaxBuilder get max =>
-      _$this._max ??=
-          SpectrumAnalyticsQueryResponseSingleAllOfResultMaxBuilder();
-  set max(SpectrumAnalyticsQueryResponseSingleAllOfResultMaxBuilder? max) =>
-      _$this._max = max;
+  MapBuilder<String, num>? _max;
+  MapBuilder<String, num> get max => _$this._max ??= MapBuilder<String, num>();
+  set max(MapBuilder<String, num>? max) => _$this._max = max;
 
-  SpectrumAnalyticsQueryResponseSingleAllOfResultMinBuilder? _min;
-  SpectrumAnalyticsQueryResponseSingleAllOfResultMinBuilder get min =>
-      _$this._min ??=
-          SpectrumAnalyticsQueryResponseSingleAllOfResultMinBuilder();
-  set min(SpectrumAnalyticsQueryResponseSingleAllOfResultMinBuilder? min) =>
-      _$this._min = min;
+  MapBuilder<String, num>? _min;
+  MapBuilder<String, num> get min => _$this._min ??= MapBuilder<String, num>();
+  set min(MapBuilder<String, num>? min) => _$this._min = min;
 
   SpectrumAnalyticsQueryBuilder? _query;
   SpectrumAnalyticsQueryBuilder get query =>
@@ -142,14 +136,10 @@ class SpectrumAnalyticsQueryResponseSingleAllOfResultBuilder
   set timeIntervals(ListBuilder<BuiltList<DateTime>>? timeIntervals) =>
       _$this._timeIntervals = timeIntervals;
 
-  SpectrumAnalyticsQueryResponseSingleAllOfResultTotalsBuilder? _totals;
-  SpectrumAnalyticsQueryResponseSingleAllOfResultTotalsBuilder get totals =>
-      _$this._totals ??=
-          SpectrumAnalyticsQueryResponseSingleAllOfResultTotalsBuilder();
-  set totals(
-          SpectrumAnalyticsQueryResponseSingleAllOfResultTotalsBuilder?
-              totals) =>
-      _$this._totals = totals;
+  MapBuilder<String, num>? _totals;
+  MapBuilder<String, num> get totals =>
+      _$this._totals ??= MapBuilder<String, num>();
+  set totals(MapBuilder<String, num>? totals) => _$this._totals = totals;
 
   SpectrumAnalyticsQueryResponseSingleAllOfResultBuilder() {
     SpectrumAnalyticsQueryResponseSingleAllOfResult._defaults(this);

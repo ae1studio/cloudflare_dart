@@ -169,11 +169,11 @@ class PostCommandsRequestCommandsInnerCommandTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'warp-diag')
   static const PostCommandsRequestCommandsInnerCommandTypeEnum warpDiag = _$postCommandsRequestCommandsInnerCommandTypeEnum_warpDiag;
 
-  static Serializer<PostCommandsRequestCommandsInnerCommandTypeEnum> get serializer => _$postCommandsRequestCommandsInnerCommandTypeSerializer;
+  static Serializer<PostCommandsRequestCommandsInnerCommandTypeEnum> get serializer => _$postCommandsRequestCommandsInnerCommandTypeEnumSerializer;
 
   const PostCommandsRequestCommandsInnerCommandTypeEnum._(String name): super(name);
 
-  static BuiltSet<PostCommandsRequestCommandsInnerCommandTypeEnum> get values => _$postCommandsRequestCommandsInnerCommandTypeValues;
-  static PostCommandsRequestCommandsInnerCommandTypeEnum valueOf(String name) => _$postCommandsRequestCommandsInnerCommandTypeValueOf(name);
+  static BuiltSet<PostCommandsRequestCommandsInnerCommandTypeEnum> get values => _$postCommandsRequestCommandsInnerCommandTypeEnumValues;
+  static PostCommandsRequestCommandsInnerCommandTypeEnum valueOf(String name) => _$postCommandsRequestCommandsInnerCommandTypeEnumValueOf(name);
 }
 

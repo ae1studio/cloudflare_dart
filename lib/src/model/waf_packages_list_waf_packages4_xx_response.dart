@@ -165,11 +165,11 @@ class _$WafPackagesListWafPackages4XXResponseSerializer implements PrimitiveSeri
 class WafPackagesListWafPackages4XXResponseResultEnum extends EnumClass {
 
 
-  static Serializer<WafPackagesListWafPackages4XXResponseResultEnum> get serializer => _$wafPackagesListWafPackages4XXResponseResultSerializer;
+  static Serializer<WafPackagesListWafPackages4XXResponseResultEnum> get serializer => _$wafPackagesListWafPackages4XXResponseResultEnumSerializer;
 
   const WafPackagesListWafPackages4XXResponseResultEnum._(String name): super(name);
 
-  static BuiltSet<WafPackagesListWafPackages4XXResponseResultEnum> get values => _$wafPackagesListWafPackages4XXResponseResultValues;
-  static WafPackagesListWafPackages4XXResponseResultEnum valueOf(String name) => _$wafPackagesListWafPackages4XXResponseResultValueOf(name);
+  static BuiltSet<WafPackagesListWafPackages4XXResponseResultEnum> get values => _$wafPackagesListWafPackages4XXResponseResultEnumValues;
+  static WafPackagesListWafPackages4XXResponseResultEnum valueOf(String name) => _$wafPackagesListWafPackages4XXResponseResultEnumValueOf(name);
 }
 

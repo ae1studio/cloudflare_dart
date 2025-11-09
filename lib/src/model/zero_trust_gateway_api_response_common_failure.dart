@@ -194,11 +194,11 @@ class _$$ZeroTrustGatewayApiResponseCommonFailureSerializer implements Primitive
 class ZeroTrustGatewayApiResponseCommonFailureResultEnum extends EnumClass {
 
 
-  static Serializer<ZeroTrustGatewayApiResponseCommonFailureResultEnum> get serializer => _$zeroTrustGatewayApiResponseCommonFailureResultSerializer;
+  static Serializer<ZeroTrustGatewayApiResponseCommonFailureResultEnum> get serializer => _$zeroTrustGatewayApiResponseCommonFailureResultEnumSerializer;
 
   const ZeroTrustGatewayApiResponseCommonFailureResultEnum._(String name): super(name);
 
-  static BuiltSet<ZeroTrustGatewayApiResponseCommonFailureResultEnum> get values => _$zeroTrustGatewayApiResponseCommonFailureResultValues;
-  static ZeroTrustGatewayApiResponseCommonFailureResultEnum valueOf(String name) => _$zeroTrustGatewayApiResponseCommonFailureResultValueOf(name);
+  static BuiltSet<ZeroTrustGatewayApiResponseCommonFailureResultEnum> get values => _$zeroTrustGatewayApiResponseCommonFailureResultEnumValues;
+  static ZeroTrustGatewayApiResponseCommonFailureResultEnum valueOf(String name) => _$zeroTrustGatewayApiResponseCommonFailureResultEnumValueOf(name);
 }
 

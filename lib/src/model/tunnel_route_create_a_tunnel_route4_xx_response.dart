@@ -148,11 +148,11 @@ class _$TunnelRouteCreateATunnelRoute4XXResponseSerializer implements PrimitiveS
 class TunnelRouteCreateATunnelRoute4XXResponseResultEnum extends EnumClass {
 
 
-  static Serializer<TunnelRouteCreateATunnelRoute4XXResponseResultEnum> get serializer => _$tunnelRouteCreateATunnelRoute4XXResponseResultSerializer;
+  static Serializer<TunnelRouteCreateATunnelRoute4XXResponseResultEnum> get serializer => _$tunnelRouteCreateATunnelRoute4XXResponseResultEnumSerializer;
 
   const TunnelRouteCreateATunnelRoute4XXResponseResultEnum._(String name): super(name);
 
-  static BuiltSet<TunnelRouteCreateATunnelRoute4XXResponseResultEnum> get values => _$tunnelRouteCreateATunnelRoute4XXResponseResultValues;
-  static TunnelRouteCreateATunnelRoute4XXResponseResultEnum valueOf(String name) => _$tunnelRouteCreateATunnelRoute4XXResponseResultValueOf(name);
+  static BuiltSet<TunnelRouteCreateATunnelRoute4XXResponseResultEnum> get values => _$tunnelRouteCreateATunnelRoute4XXResponseResultEnumValues;
+  static TunnelRouteCreateATunnelRoute4XXResponseResultEnum valueOf(String name) => _$tunnelRouteCreateATunnelRoute4XXResponseResultEnumValueOf(name);
 }
 

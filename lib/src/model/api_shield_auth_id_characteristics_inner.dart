@@ -84,11 +84,11 @@ class ApiShieldAuthIdCharacteristicsInnerTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'jwt')
   static const ApiShieldAuthIdCharacteristicsInnerTypeEnum jwt = _$apiShieldAuthIdCharacteristicsInnerTypeEnum_jwt;
 
-  static Serializer<ApiShieldAuthIdCharacteristicsInnerTypeEnum> get serializer => _$apiShieldAuthIdCharacteristicsInnerTypeSerializer;
+  static Serializer<ApiShieldAuthIdCharacteristicsInnerTypeEnum> get serializer => _$apiShieldAuthIdCharacteristicsInnerTypeEnumSerializer;
 
   const ApiShieldAuthIdCharacteristicsInnerTypeEnum._(String name): super(name);
 
-  static BuiltSet<ApiShieldAuthIdCharacteristicsInnerTypeEnum> get values => _$apiShieldAuthIdCharacteristicsInnerTypeValues;
-  static ApiShieldAuthIdCharacteristicsInnerTypeEnum valueOf(String name) => _$apiShieldAuthIdCharacteristicsInnerTypeValueOf(name);
+  static BuiltSet<ApiShieldAuthIdCharacteristicsInnerTypeEnum> get values => _$apiShieldAuthIdCharacteristicsInnerTypeEnumValues;
+  static ApiShieldAuthIdCharacteristicsInnerTypeEnum valueOf(String name) => _$apiShieldAuthIdCharacteristicsInnerTypeEnumValueOf(name);
 }
 

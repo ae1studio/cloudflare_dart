@@ -156,11 +156,11 @@ class ZonesHttp3IdEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'http3')
   static const ZonesHttp3IdEnum http3 = _$zonesHttp3IdEnum_http3;
 
-  static Serializer<ZonesHttp3IdEnum> get serializer => _$zonesHttp3IdSerializer;
+  static Serializer<ZonesHttp3IdEnum> get serializer => _$zonesHttp3IdEnumSerializer;
 
   const ZonesHttp3IdEnum._(String name): super(name);
 
-  static BuiltSet<ZonesHttp3IdEnum> get values => _$zonesHttp3IdValues;
-  static ZonesHttp3IdEnum valueOf(String name) => _$zonesHttp3IdValueOf(name);
+  static BuiltSet<ZonesHttp3IdEnum> get values => _$zonesHttp3IdEnumValues;
+  static ZonesHttp3IdEnum valueOf(String name) => _$zonesHttp3IdEnumValueOf(name);
 }
 

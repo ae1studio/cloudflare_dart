@@ -135,12 +135,12 @@ class ZonesSslIdEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'ssl')
   static const ZonesSslIdEnum ssl = _$zonesSslIdEnum_ssl;
 
-  static Serializer<ZonesSslIdEnum> get serializer => _$zonesSslIdSerializer;
+  static Serializer<ZonesSslIdEnum> get serializer => _$zonesSslIdEnumSerializer;
 
   const ZonesSslIdEnum._(String name): super(name);
 
-  static BuiltSet<ZonesSslIdEnum> get values => _$zonesSslIdValues;
-  static ZonesSslIdEnum valueOf(String name) => _$zonesSslIdValueOf(name);
+  static BuiltSet<ZonesSslIdEnum> get values => _$zonesSslIdEnumValues;
+  static ZonesSslIdEnum valueOf(String name) => _$zonesSslIdEnumValueOf(name);
 }
 
 class ZonesSslValueEnum extends EnumClass {
@@ -161,11 +161,11 @@ class ZonesSslValueEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'origin_pull')
   static const ZonesSslValueEnum originPull = _$zonesSslValueEnum_originPull;
 
-  static Serializer<ZonesSslValueEnum> get serializer => _$zonesSslValueSerializer;
+  static Serializer<ZonesSslValueEnum> get serializer => _$zonesSslValueEnumSerializer;
 
   const ZonesSslValueEnum._(String name): super(name);
 
-  static BuiltSet<ZonesSslValueEnum> get values => _$zonesSslValueValues;
-  static ZonesSslValueEnum valueOf(String name) => _$zonesSslValueValueOf(name);
+  static BuiltSet<ZonesSslValueEnum> get values => _$zonesSslValueEnumValues;
+  static ZonesSslValueEnum valueOf(String name) => _$zonesSslValueEnumValueOf(name);
 }
 

@@ -194,11 +194,11 @@ class _$$TeamsDevicesApiResponseCommonFailureSerializer implements PrimitiveSeri
 class TeamsDevicesApiResponseCommonFailureResultEnum extends EnumClass {
 
 
-  static Serializer<TeamsDevicesApiResponseCommonFailureResultEnum> get serializer => _$teamsDevicesApiResponseCommonFailureResultSerializer;
+  static Serializer<TeamsDevicesApiResponseCommonFailureResultEnum> get serializer => _$teamsDevicesApiResponseCommonFailureResultEnumSerializer;
 
   const TeamsDevicesApiResponseCommonFailureResultEnum._(String name): super(name);
 
-  static BuiltSet<TeamsDevicesApiResponseCommonFailureResultEnum> get values => _$teamsDevicesApiResponseCommonFailureResultValues;
-  static TeamsDevicesApiResponseCommonFailureResultEnum valueOf(String name) => _$teamsDevicesApiResponseCommonFailureResultValueOf(name);
+  static BuiltSet<TeamsDevicesApiResponseCommonFailureResultEnum> get values => _$teamsDevicesApiResponseCommonFailureResultEnumValues;
+  static TeamsDevicesApiResponseCommonFailureResultEnum valueOf(String name) => _$teamsDevicesApiResponseCommonFailureResultEnumValueOf(name);
 }
 

@@ -159,11 +159,11 @@ class TeamsDevicesKolideInputRequestCountOperatorEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'==')
   static const TeamsDevicesKolideInputRequestCountOperatorEnum equalEqual = _$teamsDevicesKolideInputRequestCountOperatorEnum_equalEqual;
 
-  static Serializer<TeamsDevicesKolideInputRequestCountOperatorEnum> get serializer => _$teamsDevicesKolideInputRequestCountOperatorSerializer;
+  static Serializer<TeamsDevicesKolideInputRequestCountOperatorEnum> get serializer => _$teamsDevicesKolideInputRequestCountOperatorEnumSerializer;
 
   const TeamsDevicesKolideInputRequestCountOperatorEnum._(String name): super(name);
 
-  static BuiltSet<TeamsDevicesKolideInputRequestCountOperatorEnum> get values => _$teamsDevicesKolideInputRequestCountOperatorValues;
-  static TeamsDevicesKolideInputRequestCountOperatorEnum valueOf(String name) => _$teamsDevicesKolideInputRequestCountOperatorValueOf(name);
+  static BuiltSet<TeamsDevicesKolideInputRequestCountOperatorEnum> get values => _$teamsDevicesKolideInputRequestCountOperatorEnumValues;
+  static TeamsDevicesKolideInputRequestCountOperatorEnum valueOf(String name) => _$teamsDevicesKolideInputRequestCountOperatorEnumValueOf(name);
 }
 

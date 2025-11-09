@@ -156,11 +156,11 @@ class ZonesHttp2IdEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'http2')
   static const ZonesHttp2IdEnum http2 = _$zonesHttp2IdEnum_http2;
 
-  static Serializer<ZonesHttp2IdEnum> get serializer => _$zonesHttp2IdSerializer;
+  static Serializer<ZonesHttp2IdEnum> get serializer => _$zonesHttp2IdEnumSerializer;
 
   const ZonesHttp2IdEnum._(String name): super(name);
 
-  static BuiltSet<ZonesHttp2IdEnum> get values => _$zonesHttp2IdValues;
-  static ZonesHttp2IdEnum valueOf(String name) => _$zonesHttp2IdValueOf(name);
+  static BuiltSet<ZonesHttp2IdEnum> get values => _$zonesHttp2IdEnumValues;
+  static ZonesHttp2IdEnum valueOf(String name) => _$zonesHttp2IdEnumValueOf(name);
 }
 

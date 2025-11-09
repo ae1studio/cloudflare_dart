@@ -439,11 +439,11 @@ class PagesDeploymentsEnvironmentEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'production')
   static const PagesDeploymentsEnvironmentEnum production = _$pagesDeploymentsEnvironmentEnum_production;
 
-  static Serializer<PagesDeploymentsEnvironmentEnum> get serializer => _$pagesDeploymentsEnvironmentSerializer;
+  static Serializer<PagesDeploymentsEnvironmentEnum> get serializer => _$pagesDeploymentsEnvironmentEnumSerializer;
 
   const PagesDeploymentsEnvironmentEnum._(String name): super(name);
 
-  static BuiltSet<PagesDeploymentsEnvironmentEnum> get values => _$pagesDeploymentsEnvironmentValues;
-  static PagesDeploymentsEnvironmentEnum valueOf(String name) => _$pagesDeploymentsEnvironmentValueOf(name);
+  static BuiltSet<PagesDeploymentsEnvironmentEnum> get values => _$pagesDeploymentsEnvironmentEnumValues;
+  static PagesDeploymentsEnvironmentEnum valueOf(String name) => _$pagesDeploymentsEnvironmentEnumValueOf(name);
 }
 

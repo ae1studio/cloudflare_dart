@@ -149,11 +149,11 @@ class _$TotalTlsTotalTlsSettingsDetails4XXResponseSerializer implements Primitiv
 class TotalTlsTotalTlsSettingsDetails4XXResponseResultEnum extends EnumClass {
 
 
-  static Serializer<TotalTlsTotalTlsSettingsDetails4XXResponseResultEnum> get serializer => _$totalTlsTotalTlsSettingsDetails4XXResponseResultSerializer;
+  static Serializer<TotalTlsTotalTlsSettingsDetails4XXResponseResultEnum> get serializer => _$totalTlsTotalTlsSettingsDetails4XXResponseResultEnumSerializer;
 
   const TotalTlsTotalTlsSettingsDetails4XXResponseResultEnum._(String name): super(name);
 
-  static BuiltSet<TotalTlsTotalTlsSettingsDetails4XXResponseResultEnum> get values => _$totalTlsTotalTlsSettingsDetails4XXResponseResultValues;
-  static TotalTlsTotalTlsSettingsDetails4XXResponseResultEnum valueOf(String name) => _$totalTlsTotalTlsSettingsDetails4XXResponseResultValueOf(name);
+  static BuiltSet<TotalTlsTotalTlsSettingsDetails4XXResponseResultEnum> get values => _$totalTlsTotalTlsSettingsDetails4XXResponseResultEnumValues;
+  static TotalTlsTotalTlsSettingsDetails4XXResponseResultEnum valueOf(String name) => _$totalTlsTotalTlsSettingsDetails4XXResponseResultEnumValueOf(name);
 }
 

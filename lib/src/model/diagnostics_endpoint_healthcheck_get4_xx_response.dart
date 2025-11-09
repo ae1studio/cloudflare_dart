@@ -149,11 +149,11 @@ class _$DiagnosticsEndpointHealthcheckGet4XXResponseSerializer implements Primit
 class DiagnosticsEndpointHealthcheckGet4XXResponseResultEnum extends EnumClass {
 
 
-  static Serializer<DiagnosticsEndpointHealthcheckGet4XXResponseResultEnum> get serializer => _$diagnosticsEndpointHealthcheckGet4XXResponseResultSerializer;
+  static Serializer<DiagnosticsEndpointHealthcheckGet4XXResponseResultEnum> get serializer => _$diagnosticsEndpointHealthcheckGet4XXResponseResultEnumSerializer;
 
   const DiagnosticsEndpointHealthcheckGet4XXResponseResultEnum._(String name): super(name);
 
-  static BuiltSet<DiagnosticsEndpointHealthcheckGet4XXResponseResultEnum> get values => _$diagnosticsEndpointHealthcheckGet4XXResponseResultValues;
-  static DiagnosticsEndpointHealthcheckGet4XXResponseResultEnum valueOf(String name) => _$diagnosticsEndpointHealthcheckGet4XXResponseResultValueOf(name);
+  static BuiltSet<DiagnosticsEndpointHealthcheckGet4XXResponseResultEnum> get values => _$diagnosticsEndpointHealthcheckGet4XXResponseResultEnumValues;
+  static DiagnosticsEndpointHealthcheckGet4XXResponseResultEnum valueOf(String name) => _$diagnosticsEndpointHealthcheckGet4XXResponseResultEnumValueOf(name);
 }
 

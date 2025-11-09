@@ -164,11 +164,11 @@ class _$WafOverridesListWafOverrides4XXResponseSerializer implements PrimitiveSe
 class WafOverridesListWafOverrides4XXResponseResultEnum extends EnumClass {
 
 
-  static Serializer<WafOverridesListWafOverrides4XXResponseResultEnum> get serializer => _$wafOverridesListWafOverrides4XXResponseResultSerializer;
+  static Serializer<WafOverridesListWafOverrides4XXResponseResultEnum> get serializer => _$wafOverridesListWafOverrides4XXResponseResultEnumSerializer;
 
   const WafOverridesListWafOverrides4XXResponseResultEnum._(String name): super(name);
 
-  static BuiltSet<WafOverridesListWafOverrides4XXResponseResultEnum> get values => _$wafOverridesListWafOverrides4XXResponseResultValues;
-  static WafOverridesListWafOverrides4XXResponseResultEnum valueOf(String name) => _$wafOverridesListWafOverrides4XXResponseResultValueOf(name);
+  static BuiltSet<WafOverridesListWafOverrides4XXResponseResultEnum> get values => _$wafOverridesListWafOverrides4XXResponseResultEnumValues;
+  static WafOverridesListWafOverrides4XXResponseResultEnum valueOf(String name) => _$wafOverridesListWafOverrides4XXResponseResultEnumValueOf(name);
 }
 

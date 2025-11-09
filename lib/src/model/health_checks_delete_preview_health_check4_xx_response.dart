@@ -148,11 +148,11 @@ class _$HealthChecksDeletePreviewHealthCheck4XXResponseSerializer implements Pri
 class HealthChecksDeletePreviewHealthCheck4XXResponseResultEnum extends EnumClass {
 
 
-  static Serializer<HealthChecksDeletePreviewHealthCheck4XXResponseResultEnum> get serializer => _$healthChecksDeletePreviewHealthCheck4XXResponseResultSerializer;
+  static Serializer<HealthChecksDeletePreviewHealthCheck4XXResponseResultEnum> get serializer => _$healthChecksDeletePreviewHealthCheck4XXResponseResultEnumSerializer;
 
   const HealthChecksDeletePreviewHealthCheck4XXResponseResultEnum._(String name): super(name);
 
-  static BuiltSet<HealthChecksDeletePreviewHealthCheck4XXResponseResultEnum> get values => _$healthChecksDeletePreviewHealthCheck4XXResponseResultValues;
-  static HealthChecksDeletePreviewHealthCheck4XXResponseResultEnum valueOf(String name) => _$healthChecksDeletePreviewHealthCheck4XXResponseResultValueOf(name);
+  static BuiltSet<HealthChecksDeletePreviewHealthCheck4XXResponseResultEnum> get values => _$healthChecksDeletePreviewHealthCheck4XXResponseResultEnumValues;
+  static HealthChecksDeletePreviewHealthCheck4XXResponseResultEnum valueOf(String name) => _$healthChecksDeletePreviewHealthCheck4XXResponseResultEnumValueOf(name);
 }
 

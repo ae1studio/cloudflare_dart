@@ -201,11 +201,11 @@ class UrlscannerSearchScans200ResponseResultTasksInnerVisibilityEnum extends Enu
   @BuiltValueEnumConst(wireName: r'unlisted')
   static const UrlscannerSearchScans200ResponseResultTasksInnerVisibilityEnum unlisted = _$urlscannerSearchScans200ResponseResultTasksInnerVisibilityEnum_unlisted;
 
-  static Serializer<UrlscannerSearchScans200ResponseResultTasksInnerVisibilityEnum> get serializer => _$urlscannerSearchScans200ResponseResultTasksInnerVisibilitySerializer;
+  static Serializer<UrlscannerSearchScans200ResponseResultTasksInnerVisibilityEnum> get serializer => _$urlscannerSearchScans200ResponseResultTasksInnerVisibilityEnumSerializer;
 
   const UrlscannerSearchScans200ResponseResultTasksInnerVisibilityEnum._(String name): super(name);
 
-  static BuiltSet<UrlscannerSearchScans200ResponseResultTasksInnerVisibilityEnum> get values => _$urlscannerSearchScans200ResponseResultTasksInnerVisibilityValues;
-  static UrlscannerSearchScans200ResponseResultTasksInnerVisibilityEnum valueOf(String name) => _$urlscannerSearchScans200ResponseResultTasksInnerVisibilityValueOf(name);
+  static BuiltSet<UrlscannerSearchScans200ResponseResultTasksInnerVisibilityEnum> get values => _$urlscannerSearchScans200ResponseResultTasksInnerVisibilityEnumValues;
+  static UrlscannerSearchScans200ResponseResultTasksInnerVisibilityEnum valueOf(String name) => _$urlscannerSearchScans200ResponseResultTasksInnerVisibilityEnumValueOf(name);
 }
 

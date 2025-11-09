@@ -149,11 +149,11 @@ class _$SecondaryDnsSecondaryZoneForceAxfr4XXResponseSerializer implements Primi
 class SecondaryDnsSecondaryZoneForceAxfr4XXResponseResultEnum extends EnumClass {
 
 
-  static Serializer<SecondaryDnsSecondaryZoneForceAxfr4XXResponseResultEnum> get serializer => _$secondaryDnsSecondaryZoneForceAxfr4XXResponseResultSerializer;
+  static Serializer<SecondaryDnsSecondaryZoneForceAxfr4XXResponseResultEnum> get serializer => _$secondaryDnsSecondaryZoneForceAxfr4XXResponseResultEnumSerializer;
 
   const SecondaryDnsSecondaryZoneForceAxfr4XXResponseResultEnum._(String name): super(name);
 
-  static BuiltSet<SecondaryDnsSecondaryZoneForceAxfr4XXResponseResultEnum> get values => _$secondaryDnsSecondaryZoneForceAxfr4XXResponseResultValues;
-  static SecondaryDnsSecondaryZoneForceAxfr4XXResponseResultEnum valueOf(String name) => _$secondaryDnsSecondaryZoneForceAxfr4XXResponseResultValueOf(name);
+  static BuiltSet<SecondaryDnsSecondaryZoneForceAxfr4XXResponseResultEnum> get values => _$secondaryDnsSecondaryZoneForceAxfr4XXResponseResultEnumValues;
+  static SecondaryDnsSecondaryZoneForceAxfr4XXResponseResultEnum valueOf(String name) => _$secondaryDnsSecondaryZoneForceAxfr4XXResponseResultEnumValueOf(name);
 }
 

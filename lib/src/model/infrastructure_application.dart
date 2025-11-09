@@ -8,7 +8,7 @@ import 'package:cloudflare_dart/src/model/access_infra_app_req_embedded_policies
 import 'package:cloudflare_dart/src/model/access_infra_props.dart';
 import 'package:built_collection/built_collection.dart';
 import 'package:cloudflare_dart/src/model/access_target_criteria_infra_app.dart';
-import 'package:cloudflare_dart/src/model/access_infra_props_all_of_type.dart';
+import 'package:cloudflare_dart/src/model/access_type.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
@@ -68,7 +68,7 @@ class _$InfrastructureApplicationSerializer implements PrimitiveSerializer<Infra
     yield r'type';
     yield serializers.serialize(
       object.type,
-      specifiedType: const FullType(AccessInfraPropsAllOfType),
+      specifiedType: const FullType(AccessType),
     );
   }
 
@@ -117,9 +117,9 @@ class _$InfrastructureApplicationSerializer implements PrimitiveSerializer<Infra
         case r'type':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(AccessInfraPropsAllOfType),
-          ) as AccessInfraPropsAllOfType;
-          result.type.replace(valueDes);
+            specifiedType: const FullType(AccessType),
+          ) as AccessType;
+          result.type = valueDes;
           break;
         default:
           unhandled.add(key);

@@ -128,11 +128,11 @@ class WorDeleteWorkflow200ResponseResultStatusEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'ok')
   static const WorDeleteWorkflow200ResponseResultStatusEnum ok = _$worDeleteWorkflow200ResponseResultStatusEnum_ok;
 
-  static Serializer<WorDeleteWorkflow200ResponseResultStatusEnum> get serializer => _$worDeleteWorkflow200ResponseResultStatusSerializer;
+  static Serializer<WorDeleteWorkflow200ResponseResultStatusEnum> get serializer => _$worDeleteWorkflow200ResponseResultStatusEnumSerializer;
 
   const WorDeleteWorkflow200ResponseResultStatusEnum._(String name): super(name);
 
-  static BuiltSet<WorDeleteWorkflow200ResponseResultStatusEnum> get values => _$worDeleteWorkflow200ResponseResultStatusValues;
-  static WorDeleteWorkflow200ResponseResultStatusEnum valueOf(String name) => _$worDeleteWorkflow200ResponseResultStatusValueOf(name);
+  static BuiltSet<WorDeleteWorkflow200ResponseResultStatusEnum> get values => _$worDeleteWorkflow200ResponseResultStatusEnumValues;
+  static WorDeleteWorkflow200ResponseResultStatusEnum valueOf(String name) => _$worDeleteWorkflow200ResponseResultStatusEnumValueOf(name);
 }
 

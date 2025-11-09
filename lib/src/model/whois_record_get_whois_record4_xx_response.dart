@@ -149,11 +149,11 @@ class _$WhoisRecordGetWhoisRecord4XXResponseSerializer implements PrimitiveSeria
 class WhoisRecordGetWhoisRecord4XXResponseResultEnum extends EnumClass {
 
 
-  static Serializer<WhoisRecordGetWhoisRecord4XXResponseResultEnum> get serializer => _$whoisRecordGetWhoisRecord4XXResponseResultSerializer;
+  static Serializer<WhoisRecordGetWhoisRecord4XXResponseResultEnum> get serializer => _$whoisRecordGetWhoisRecord4XXResponseResultEnumSerializer;
 
   const WhoisRecordGetWhoisRecord4XXResponseResultEnum._(String name): super(name);
 
-  static BuiltSet<WhoisRecordGetWhoisRecord4XXResponseResultEnum> get values => _$whoisRecordGetWhoisRecord4XXResponseResultValues;
-  static WhoisRecordGetWhoisRecord4XXResponseResultEnum valueOf(String name) => _$whoisRecordGetWhoisRecord4XXResponseResultValueOf(name);
+  static BuiltSet<WhoisRecordGetWhoisRecord4XXResponseResultEnum> get values => _$whoisRecordGetWhoisRecord4XXResponseResultEnumValues;
+  static WhoisRecordGetWhoisRecord4XXResponseResultEnum valueOf(String name) => _$whoisRecordGetWhoisRecord4XXResponseResultEnumValueOf(name);
 }
 

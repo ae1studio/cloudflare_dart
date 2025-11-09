@@ -135,11 +135,11 @@ class EmailSecurityPostBulkMessageMoveRequestDestinationEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'RecoverableItemsPurges')
   static const EmailSecurityPostBulkMessageMoveRequestDestinationEnum recoverableItemsPurges = _$emailSecurityPostBulkMessageMoveRequestDestinationEnum_recoverableItemsPurges;
 
-  static Serializer<EmailSecurityPostBulkMessageMoveRequestDestinationEnum> get serializer => _$emailSecurityPostBulkMessageMoveRequestDestinationSerializer;
+  static Serializer<EmailSecurityPostBulkMessageMoveRequestDestinationEnum> get serializer => _$emailSecurityPostBulkMessageMoveRequestDestinationEnumSerializer;
 
   const EmailSecurityPostBulkMessageMoveRequestDestinationEnum._(String name): super(name);
 
-  static BuiltSet<EmailSecurityPostBulkMessageMoveRequestDestinationEnum> get values => _$emailSecurityPostBulkMessageMoveRequestDestinationValues;
-  static EmailSecurityPostBulkMessageMoveRequestDestinationEnum valueOf(String name) => _$emailSecurityPostBulkMessageMoveRequestDestinationValueOf(name);
+  static BuiltSet<EmailSecurityPostBulkMessageMoveRequestDestinationEnum> get values => _$emailSecurityPostBulkMessageMoveRequestDestinationEnumValues;
+  static EmailSecurityPostBulkMessageMoveRequestDestinationEnum valueOf(String name) => _$emailSecurityPostBulkMessageMoveRequestDestinationEnumValueOf(name);
 }
 

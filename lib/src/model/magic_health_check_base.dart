@@ -212,12 +212,12 @@ class MagicHealthCheckBaseRateEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'high')
   static const MagicHealthCheckBaseRateEnum high = _$magicHealthCheckBaseRateEnum_high;
 
-  static Serializer<MagicHealthCheckBaseRateEnum> get serializer => _$magicHealthCheckBaseRateSerializer;
+  static Serializer<MagicHealthCheckBaseRateEnum> get serializer => _$magicHealthCheckBaseRateEnumSerializer;
 
   const MagicHealthCheckBaseRateEnum._(String name): super(name);
 
-  static BuiltSet<MagicHealthCheckBaseRateEnum> get values => _$magicHealthCheckBaseRateValues;
-  static MagicHealthCheckBaseRateEnum valueOf(String name) => _$magicHealthCheckBaseRateValueOf(name);
+  static BuiltSet<MagicHealthCheckBaseRateEnum> get values => _$magicHealthCheckBaseRateEnumValues;
+  static MagicHealthCheckBaseRateEnum valueOf(String name) => _$magicHealthCheckBaseRateEnumValueOf(name);
 }
 
 class MagicHealthCheckBaseTypeEnum extends EnumClass {
@@ -229,11 +229,11 @@ class MagicHealthCheckBaseTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'request')
   static const MagicHealthCheckBaseTypeEnum request = _$magicHealthCheckBaseTypeEnum_request;
 
-  static Serializer<MagicHealthCheckBaseTypeEnum> get serializer => _$magicHealthCheckBaseTypeSerializer;
+  static Serializer<MagicHealthCheckBaseTypeEnum> get serializer => _$magicHealthCheckBaseTypeEnumSerializer;
 
   const MagicHealthCheckBaseTypeEnum._(String name): super(name);
 
-  static BuiltSet<MagicHealthCheckBaseTypeEnum> get values => _$magicHealthCheckBaseTypeValues;
-  static MagicHealthCheckBaseTypeEnum valueOf(String name) => _$magicHealthCheckBaseTypeValueOf(name);
+  static BuiltSet<MagicHealthCheckBaseTypeEnum> get values => _$magicHealthCheckBaseTypeEnumValues;
+  static MagicHealthCheckBaseTypeEnum valueOf(String name) => _$magicHealthCheckBaseTypeEnumValueOf(name);
 }
 

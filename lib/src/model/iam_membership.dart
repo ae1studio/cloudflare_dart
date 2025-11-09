@@ -161,7 +161,7 @@ class _$IamMembershipSerializer implements PrimitiveSerializer<IamMembership> {
             value,
             specifiedType: const FullType(IamPermissions),
           ) as IamPermissions;
-          result.permissions = valueDes;
+          result.permissions.replace(valueDes);
           break;
         case r'roles':
           final valueDes = serializers.deserialize(

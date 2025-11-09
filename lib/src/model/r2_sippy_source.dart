@@ -154,11 +154,11 @@ class R2SippySourceProviderEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'gcs')
   static const R2SippySourceProviderEnum gcs = _$r2SippySourceProviderEnum_gcs;
 
-  static Serializer<R2SippySourceProviderEnum> get serializer => _$r2SippySourceProviderSerializer;
+  static Serializer<R2SippySourceProviderEnum> get serializer => _$r2SippySourceProviderEnumSerializer;
 
   const R2SippySourceProviderEnum._(String name): super(name);
 
-  static BuiltSet<R2SippySourceProviderEnum> get values => _$r2SippySourceProviderValues;
-  static R2SippySourceProviderEnum valueOf(String name) => _$r2SippySourceProviderValueOf(name);
+  static BuiltSet<R2SippySourceProviderEnum> get values => _$r2SippySourceProviderEnumValues;
+  static R2SippySourceProviderEnum valueOf(String name) => _$r2SippySourceProviderEnumValueOf(name);
 }
 

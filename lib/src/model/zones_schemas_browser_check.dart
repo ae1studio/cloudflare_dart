@@ -156,11 +156,11 @@ class ZonesSchemasBrowserCheckIdEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'browser_check')
   static const ZonesSchemasBrowserCheckIdEnum browserCheck = _$zonesSchemasBrowserCheckIdEnum_browserCheck;
 
-  static Serializer<ZonesSchemasBrowserCheckIdEnum> get serializer => _$zonesSchemasBrowserCheckIdSerializer;
+  static Serializer<ZonesSchemasBrowserCheckIdEnum> get serializer => _$zonesSchemasBrowserCheckIdEnumSerializer;
 
   const ZonesSchemasBrowserCheckIdEnum._(String name): super(name);
 
-  static BuiltSet<ZonesSchemasBrowserCheckIdEnum> get values => _$zonesSchemasBrowserCheckIdValues;
-  static ZonesSchemasBrowserCheckIdEnum valueOf(String name) => _$zonesSchemasBrowserCheckIdValueOf(name);
+  static BuiltSet<ZonesSchemasBrowserCheckIdEnum> get values => _$zonesSchemasBrowserCheckIdEnumValues;
+  static ZonesSchemasBrowserCheckIdEnum valueOf(String name) => _$zonesSchemasBrowserCheckIdEnumValueOf(name);
 }
 

@@ -144,11 +144,11 @@ class ZonesCacheRulesOriginH2MaxStreamsIdEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'origin_h2_max_streams')
   static const ZonesCacheRulesOriginH2MaxStreamsIdEnum originH2MaxStreams = _$zonesCacheRulesOriginH2MaxStreamsIdEnum_originH2MaxStreams;
 
-  static Serializer<ZonesCacheRulesOriginH2MaxStreamsIdEnum> get serializer => _$zonesCacheRulesOriginH2MaxStreamsIdSerializer;
+  static Serializer<ZonesCacheRulesOriginH2MaxStreamsIdEnum> get serializer => _$zonesCacheRulesOriginH2MaxStreamsIdEnumSerializer;
 
   const ZonesCacheRulesOriginH2MaxStreamsIdEnum._(String name): super(name);
 
-  static BuiltSet<ZonesCacheRulesOriginH2MaxStreamsIdEnum> get values => _$zonesCacheRulesOriginH2MaxStreamsIdValues;
-  static ZonesCacheRulesOriginH2MaxStreamsIdEnum valueOf(String name) => _$zonesCacheRulesOriginH2MaxStreamsIdValueOf(name);
+  static BuiltSet<ZonesCacheRulesOriginH2MaxStreamsIdEnum> get values => _$zonesCacheRulesOriginH2MaxStreamsIdEnumValues;
+  static ZonesCacheRulesOriginH2MaxStreamsIdEnum valueOf(String name) => _$zonesCacheRulesOriginH2MaxStreamsIdEnumValueOf(name);
 }
 

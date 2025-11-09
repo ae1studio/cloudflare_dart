@@ -164,11 +164,11 @@ class _$TunnelRouteListTunnelRoutes4XXResponseSerializer implements PrimitiveSer
 class TunnelRouteListTunnelRoutes4XXResponseResultEnum extends EnumClass {
 
 
-  static Serializer<TunnelRouteListTunnelRoutes4XXResponseResultEnum> get serializer => _$tunnelRouteListTunnelRoutes4XXResponseResultSerializer;
+  static Serializer<TunnelRouteListTunnelRoutes4XXResponseResultEnum> get serializer => _$tunnelRouteListTunnelRoutes4XXResponseResultEnumSerializer;
 
   const TunnelRouteListTunnelRoutes4XXResponseResultEnum._(String name): super(name);
 
-  static BuiltSet<TunnelRouteListTunnelRoutes4XXResponseResultEnum> get values => _$tunnelRouteListTunnelRoutes4XXResponseResultValues;
-  static TunnelRouteListTunnelRoutes4XXResponseResultEnum valueOf(String name) => _$tunnelRouteListTunnelRoutes4XXResponseResultValueOf(name);
+  static BuiltSet<TunnelRouteListTunnelRoutes4XXResponseResultEnum> get values => _$tunnelRouteListTunnelRoutes4XXResponseResultEnumValues;
+  static TunnelRouteListTunnelRoutes4XXResponseResultEnum valueOf(String name) => _$tunnelRouteListTunnelRoutes4XXResponseResultEnumValueOf(name);
 }
 

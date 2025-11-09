@@ -229,11 +229,11 @@ class DnsRecordsOPENPGPKEYRecordTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'OPENPGPKEY')
   static const DnsRecordsOPENPGPKEYRecordTypeEnum OPENPGPKEY = _$dnsRecordsOPENPGPKEYRecordTypeEnum_OPENPGPKEY;
 
-  static Serializer<DnsRecordsOPENPGPKEYRecordTypeEnum> get serializer => _$dnsRecordsOPENPGPKEYRecordTypeSerializer;
+  static Serializer<DnsRecordsOPENPGPKEYRecordTypeEnum> get serializer => _$dnsRecordsOPENPGPKEYRecordTypeEnumSerializer;
 
   const DnsRecordsOPENPGPKEYRecordTypeEnum._(String name): super(name);
 
-  static BuiltSet<DnsRecordsOPENPGPKEYRecordTypeEnum> get values => _$dnsRecordsOPENPGPKEYRecordTypeValues;
-  static DnsRecordsOPENPGPKEYRecordTypeEnum valueOf(String name) => _$dnsRecordsOPENPGPKEYRecordTypeValueOf(name);
+  static BuiltSet<DnsRecordsOPENPGPKEYRecordTypeEnum> get values => _$dnsRecordsOPENPGPKEYRecordTypeEnumValues;
+  static DnsRecordsOPENPGPKEYRecordTypeEnum valueOf(String name) => _$dnsRecordsOPENPGPKEYRecordTypeEnumValueOf(name);
 }
 

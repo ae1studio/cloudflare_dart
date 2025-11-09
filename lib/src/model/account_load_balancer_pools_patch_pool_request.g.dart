@@ -6,10 +6,174 @@ part of 'account_load_balancer_pools_patch_pool_request.dart';
 // BuiltValueGenerator
 // **************************************************************************
 
+const AccountLoadBalancerPoolsPatchPoolRequestCheckRegionsEnum
+    _$accountLoadBalancerPoolsPatchPoolRequestCheckRegionsEnum_WNAM =
+    const AccountLoadBalancerPoolsPatchPoolRequestCheckRegionsEnum._('WNAM');
+const AccountLoadBalancerPoolsPatchPoolRequestCheckRegionsEnum
+    _$accountLoadBalancerPoolsPatchPoolRequestCheckRegionsEnum_ENAM =
+    const AccountLoadBalancerPoolsPatchPoolRequestCheckRegionsEnum._('ENAM');
+const AccountLoadBalancerPoolsPatchPoolRequestCheckRegionsEnum
+    _$accountLoadBalancerPoolsPatchPoolRequestCheckRegionsEnum_WEU =
+    const AccountLoadBalancerPoolsPatchPoolRequestCheckRegionsEnum._('WEU');
+const AccountLoadBalancerPoolsPatchPoolRequestCheckRegionsEnum
+    _$accountLoadBalancerPoolsPatchPoolRequestCheckRegionsEnum_EEU =
+    const AccountLoadBalancerPoolsPatchPoolRequestCheckRegionsEnum._('EEU');
+const AccountLoadBalancerPoolsPatchPoolRequestCheckRegionsEnum
+    _$accountLoadBalancerPoolsPatchPoolRequestCheckRegionsEnum_NSAM =
+    const AccountLoadBalancerPoolsPatchPoolRequestCheckRegionsEnum._('NSAM');
+const AccountLoadBalancerPoolsPatchPoolRequestCheckRegionsEnum
+    _$accountLoadBalancerPoolsPatchPoolRequestCheckRegionsEnum_SSAM =
+    const AccountLoadBalancerPoolsPatchPoolRequestCheckRegionsEnum._('SSAM');
+const AccountLoadBalancerPoolsPatchPoolRequestCheckRegionsEnum
+    _$accountLoadBalancerPoolsPatchPoolRequestCheckRegionsEnum_OC =
+    const AccountLoadBalancerPoolsPatchPoolRequestCheckRegionsEnum._('OC');
+const AccountLoadBalancerPoolsPatchPoolRequestCheckRegionsEnum
+    _$accountLoadBalancerPoolsPatchPoolRequestCheckRegionsEnum_ME =
+    const AccountLoadBalancerPoolsPatchPoolRequestCheckRegionsEnum._('ME');
+const AccountLoadBalancerPoolsPatchPoolRequestCheckRegionsEnum
+    _$accountLoadBalancerPoolsPatchPoolRequestCheckRegionsEnum_NAF =
+    const AccountLoadBalancerPoolsPatchPoolRequestCheckRegionsEnum._('NAF');
+const AccountLoadBalancerPoolsPatchPoolRequestCheckRegionsEnum
+    _$accountLoadBalancerPoolsPatchPoolRequestCheckRegionsEnum_SAF =
+    const AccountLoadBalancerPoolsPatchPoolRequestCheckRegionsEnum._('SAF');
+const AccountLoadBalancerPoolsPatchPoolRequestCheckRegionsEnum
+    _$accountLoadBalancerPoolsPatchPoolRequestCheckRegionsEnum_SAS =
+    const AccountLoadBalancerPoolsPatchPoolRequestCheckRegionsEnum._('SAS');
+const AccountLoadBalancerPoolsPatchPoolRequestCheckRegionsEnum
+    _$accountLoadBalancerPoolsPatchPoolRequestCheckRegionsEnum_SEAS =
+    const AccountLoadBalancerPoolsPatchPoolRequestCheckRegionsEnum._('SEAS');
+const AccountLoadBalancerPoolsPatchPoolRequestCheckRegionsEnum
+    _$accountLoadBalancerPoolsPatchPoolRequestCheckRegionsEnum_NEAS =
+    const AccountLoadBalancerPoolsPatchPoolRequestCheckRegionsEnum._('NEAS');
+const AccountLoadBalancerPoolsPatchPoolRequestCheckRegionsEnum
+    _$accountLoadBalancerPoolsPatchPoolRequestCheckRegionsEnum_ALL_REGIONS =
+    const AccountLoadBalancerPoolsPatchPoolRequestCheckRegionsEnum._(
+        'ALL_REGIONS');
+
+AccountLoadBalancerPoolsPatchPoolRequestCheckRegionsEnum
+    _$accountLoadBalancerPoolsPatchPoolRequestCheckRegionsEnumValueOf(
+        String name) {
+  switch (name) {
+    case 'WNAM':
+      return _$accountLoadBalancerPoolsPatchPoolRequestCheckRegionsEnum_WNAM;
+    case 'ENAM':
+      return _$accountLoadBalancerPoolsPatchPoolRequestCheckRegionsEnum_ENAM;
+    case 'WEU':
+      return _$accountLoadBalancerPoolsPatchPoolRequestCheckRegionsEnum_WEU;
+    case 'EEU':
+      return _$accountLoadBalancerPoolsPatchPoolRequestCheckRegionsEnum_EEU;
+    case 'NSAM':
+      return _$accountLoadBalancerPoolsPatchPoolRequestCheckRegionsEnum_NSAM;
+    case 'SSAM':
+      return _$accountLoadBalancerPoolsPatchPoolRequestCheckRegionsEnum_SSAM;
+    case 'OC':
+      return _$accountLoadBalancerPoolsPatchPoolRequestCheckRegionsEnum_OC;
+    case 'ME':
+      return _$accountLoadBalancerPoolsPatchPoolRequestCheckRegionsEnum_ME;
+    case 'NAF':
+      return _$accountLoadBalancerPoolsPatchPoolRequestCheckRegionsEnum_NAF;
+    case 'SAF':
+      return _$accountLoadBalancerPoolsPatchPoolRequestCheckRegionsEnum_SAF;
+    case 'SAS':
+      return _$accountLoadBalancerPoolsPatchPoolRequestCheckRegionsEnum_SAS;
+    case 'SEAS':
+      return _$accountLoadBalancerPoolsPatchPoolRequestCheckRegionsEnum_SEAS;
+    case 'NEAS':
+      return _$accountLoadBalancerPoolsPatchPoolRequestCheckRegionsEnum_NEAS;
+    case 'ALL_REGIONS':
+      return _$accountLoadBalancerPoolsPatchPoolRequestCheckRegionsEnum_ALL_REGIONS;
+    default:
+      throw ArgumentError(name);
+  }
+}
+
+final BuiltSet<AccountLoadBalancerPoolsPatchPoolRequestCheckRegionsEnum>
+    _$accountLoadBalancerPoolsPatchPoolRequestCheckRegionsEnumValues = BuiltSet<
+        AccountLoadBalancerPoolsPatchPoolRequestCheckRegionsEnum>(const <AccountLoadBalancerPoolsPatchPoolRequestCheckRegionsEnum>[
+  _$accountLoadBalancerPoolsPatchPoolRequestCheckRegionsEnum_WNAM,
+  _$accountLoadBalancerPoolsPatchPoolRequestCheckRegionsEnum_ENAM,
+  _$accountLoadBalancerPoolsPatchPoolRequestCheckRegionsEnum_WEU,
+  _$accountLoadBalancerPoolsPatchPoolRequestCheckRegionsEnum_EEU,
+  _$accountLoadBalancerPoolsPatchPoolRequestCheckRegionsEnum_NSAM,
+  _$accountLoadBalancerPoolsPatchPoolRequestCheckRegionsEnum_SSAM,
+  _$accountLoadBalancerPoolsPatchPoolRequestCheckRegionsEnum_OC,
+  _$accountLoadBalancerPoolsPatchPoolRequestCheckRegionsEnum_ME,
+  _$accountLoadBalancerPoolsPatchPoolRequestCheckRegionsEnum_NAF,
+  _$accountLoadBalancerPoolsPatchPoolRequestCheckRegionsEnum_SAF,
+  _$accountLoadBalancerPoolsPatchPoolRequestCheckRegionsEnum_SAS,
+  _$accountLoadBalancerPoolsPatchPoolRequestCheckRegionsEnum_SEAS,
+  _$accountLoadBalancerPoolsPatchPoolRequestCheckRegionsEnum_NEAS,
+  _$accountLoadBalancerPoolsPatchPoolRequestCheckRegionsEnum_ALL_REGIONS,
+]);
+
+Serializer<AccountLoadBalancerPoolsPatchPoolRequestCheckRegionsEnum>
+    _$accountLoadBalancerPoolsPatchPoolRequestCheckRegionsEnumSerializer =
+    _$AccountLoadBalancerPoolsPatchPoolRequestCheckRegionsEnumSerializer();
+
+class _$AccountLoadBalancerPoolsPatchPoolRequestCheckRegionsEnumSerializer
+    implements
+        PrimitiveSerializer<
+            AccountLoadBalancerPoolsPatchPoolRequestCheckRegionsEnum> {
+  static const Map<String, Object> _toWire = const <String, Object>{
+    'WNAM': 'WNAM',
+    'ENAM': 'ENAM',
+    'WEU': 'WEU',
+    'EEU': 'EEU',
+    'NSAM': 'NSAM',
+    'SSAM': 'SSAM',
+    'OC': 'OC',
+    'ME': 'ME',
+    'NAF': 'NAF',
+    'SAF': 'SAF',
+    'SAS': 'SAS',
+    'SEAS': 'SEAS',
+    'NEAS': 'NEAS',
+    'ALL_REGIONS': 'ALL_REGIONS',
+  };
+  static const Map<Object, String> _fromWire = const <Object, String>{
+    'WNAM': 'WNAM',
+    'ENAM': 'ENAM',
+    'WEU': 'WEU',
+    'EEU': 'EEU',
+    'NSAM': 'NSAM',
+    'SSAM': 'SSAM',
+    'OC': 'OC',
+    'ME': 'ME',
+    'NAF': 'NAF',
+    'SAF': 'SAF',
+    'SAS': 'SAS',
+    'SEAS': 'SEAS',
+    'NEAS': 'NEAS',
+    'ALL_REGIONS': 'ALL_REGIONS',
+  };
+
+  @override
+  final Iterable<Type> types = const <Type>[
+    AccountLoadBalancerPoolsPatchPoolRequestCheckRegionsEnum
+  ];
+  @override
+  final String wireName =
+      'AccountLoadBalancerPoolsPatchPoolRequestCheckRegionsEnum';
+
+  @override
+  Object serialize(Serializers serializers,
+          AccountLoadBalancerPoolsPatchPoolRequestCheckRegionsEnum object,
+          {FullType specifiedType = FullType.unspecified}) =>
+      _toWire[object.name] ?? object.name;
+
+  @override
+  AccountLoadBalancerPoolsPatchPoolRequestCheckRegionsEnum deserialize(
+          Serializers serializers, Object serialized,
+          {FullType specifiedType = FullType.unspecified}) =>
+      AccountLoadBalancerPoolsPatchPoolRequestCheckRegionsEnum.valueOf(
+          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+}
+
 class _$AccountLoadBalancerPoolsPatchPoolRequest
     extends AccountLoadBalancerPoolsPatchPoolRequest {
   @override
-  final BuiltList<dynamic>? checkRegions;
+  final BuiltList<AccountLoadBalancerPoolsPatchPoolRequestCheckRegionsEnum>?
+      checkRegions;
   @override
   final String? description;
   @override
@@ -144,10 +308,14 @@ class AccountLoadBalancerPoolsPatchPoolRequestBuilder
             AccountLoadBalancerPoolsPatchPoolRequestBuilder> {
   _$AccountLoadBalancerPoolsPatchPoolRequest? _$v;
 
-  ListBuilder<dynamic>? _checkRegions;
-  ListBuilder<dynamic> get checkRegions =>
-      _$this._checkRegions ??= ListBuilder<dynamic>();
-  set checkRegions(ListBuilder<dynamic>? checkRegions) =>
+  ListBuilder<AccountLoadBalancerPoolsPatchPoolRequestCheckRegionsEnum>?
+      _checkRegions;
+  ListBuilder<AccountLoadBalancerPoolsPatchPoolRequestCheckRegionsEnum>
+      get checkRegions => _$this._checkRegions ??= ListBuilder<
+          AccountLoadBalancerPoolsPatchPoolRequestCheckRegionsEnum>();
+  set checkRegions(
+          ListBuilder<AccountLoadBalancerPoolsPatchPoolRequestCheckRegionsEnum>?
+              checkRegions) =>
       _$this._checkRegions = checkRegions;
 
   String? _description;

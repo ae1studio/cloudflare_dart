@@ -158,11 +158,11 @@ class IamPermissionsGroupResponseCollectionAllOfResultScopesEnum extends EnumCla
   @BuiltValueEnumConst(wireName: r'com.cloudflare.edge.r2.bucket')
   static const IamPermissionsGroupResponseCollectionAllOfResultScopesEnum comPeriodCloudflarePeriodEdgePeriodR2PeriodBucket = _$iamPermissionsGroupResponseCollectionAllOfResultScopesEnum_comPeriodCloudflarePeriodEdgePeriodR2PeriodBucket;
 
-  static Serializer<IamPermissionsGroupResponseCollectionAllOfResultScopesEnum> get serializer => _$iamPermissionsGroupResponseCollectionAllOfResultScopesSerializer;
+  static Serializer<IamPermissionsGroupResponseCollectionAllOfResultScopesEnum> get serializer => _$iamPermissionsGroupResponseCollectionAllOfResultScopesEnumSerializer;
 
   const IamPermissionsGroupResponseCollectionAllOfResultScopesEnum._(String name): super(name);
 
-  static BuiltSet<IamPermissionsGroupResponseCollectionAllOfResultScopesEnum> get values => _$iamPermissionsGroupResponseCollectionAllOfResultScopesValues;
-  static IamPermissionsGroupResponseCollectionAllOfResultScopesEnum valueOf(String name) => _$iamPermissionsGroupResponseCollectionAllOfResultScopesValueOf(name);
+  static BuiltSet<IamPermissionsGroupResponseCollectionAllOfResultScopesEnum> get values => _$iamPermissionsGroupResponseCollectionAllOfResultScopesEnumValues;
+  static IamPermissionsGroupResponseCollectionAllOfResultScopesEnum valueOf(String name) => _$iamPermissionsGroupResponseCollectionAllOfResultScopesEnumValueOf(name);
 }
 

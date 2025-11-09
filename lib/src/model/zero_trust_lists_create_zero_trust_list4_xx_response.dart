@@ -150,11 +150,11 @@ class _$ZeroTrustListsCreateZeroTrustList4XXResponseSerializer implements Primit
 class ZeroTrustListsCreateZeroTrustList4XXResponseResultEnum extends EnumClass {
 
 
-  static Serializer<ZeroTrustListsCreateZeroTrustList4XXResponseResultEnum> get serializer => _$zeroTrustListsCreateZeroTrustList4XXResponseResultSerializer;
+  static Serializer<ZeroTrustListsCreateZeroTrustList4XXResponseResultEnum> get serializer => _$zeroTrustListsCreateZeroTrustList4XXResponseResultEnumSerializer;
 
   const ZeroTrustListsCreateZeroTrustList4XXResponseResultEnum._(String name): super(name);
 
-  static BuiltSet<ZeroTrustListsCreateZeroTrustList4XXResponseResultEnum> get values => _$zeroTrustListsCreateZeroTrustList4XXResponseResultValues;
-  static ZeroTrustListsCreateZeroTrustList4XXResponseResultEnum valueOf(String name) => _$zeroTrustListsCreateZeroTrustList4XXResponseResultValueOf(name);
+  static BuiltSet<ZeroTrustListsCreateZeroTrustList4XXResponseResultEnum> get values => _$zeroTrustListsCreateZeroTrustList4XXResponseResultEnumValues;
+  static ZeroTrustListsCreateZeroTrustList4XXResponseResultEnum valueOf(String name) => _$zeroTrustListsCreateZeroTrustList4XXResponseResultEnumValueOf(name);
 }
 

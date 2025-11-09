@@ -135,12 +135,12 @@ class ZonesSortQueryStringForCacheIdEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'sort_query_string_for_cache')
   static const ZonesSortQueryStringForCacheIdEnum sortQueryStringForCache = _$zonesSortQueryStringForCacheIdEnum_sortQueryStringForCache;
 
-  static Serializer<ZonesSortQueryStringForCacheIdEnum> get serializer => _$zonesSortQueryStringForCacheIdSerializer;
+  static Serializer<ZonesSortQueryStringForCacheIdEnum> get serializer => _$zonesSortQueryStringForCacheIdEnumSerializer;
 
   const ZonesSortQueryStringForCacheIdEnum._(String name): super(name);
 
-  static BuiltSet<ZonesSortQueryStringForCacheIdEnum> get values => _$zonesSortQueryStringForCacheIdValues;
-  static ZonesSortQueryStringForCacheIdEnum valueOf(String name) => _$zonesSortQueryStringForCacheIdValueOf(name);
+  static BuiltSet<ZonesSortQueryStringForCacheIdEnum> get values => _$zonesSortQueryStringForCacheIdEnumValues;
+  static ZonesSortQueryStringForCacheIdEnum valueOf(String name) => _$zonesSortQueryStringForCacheIdEnumValueOf(name);
 }
 
 class ZonesSortQueryStringForCacheValueEnum extends EnumClass {
@@ -152,11 +152,11 @@ class ZonesSortQueryStringForCacheValueEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'off')
   static const ZonesSortQueryStringForCacheValueEnum off = _$zonesSortQueryStringForCacheValueEnum_off;
 
-  static Serializer<ZonesSortQueryStringForCacheValueEnum> get serializer => _$zonesSortQueryStringForCacheValueSerializer;
+  static Serializer<ZonesSortQueryStringForCacheValueEnum> get serializer => _$zonesSortQueryStringForCacheValueEnumSerializer;
 
   const ZonesSortQueryStringForCacheValueEnum._(String name): super(name);
 
-  static BuiltSet<ZonesSortQueryStringForCacheValueEnum> get values => _$zonesSortQueryStringForCacheValueValues;
-  static ZonesSortQueryStringForCacheValueEnum valueOf(String name) => _$zonesSortQueryStringForCacheValueValueOf(name);
+  static BuiltSet<ZonesSortQueryStringForCacheValueEnum> get values => _$zonesSortQueryStringForCacheValueEnumValues;
+  static ZonesSortQueryStringForCacheValueEnum valueOf(String name) => _$zonesSortQueryStringForCacheValueEnumValueOf(name);
 }
 

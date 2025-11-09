@@ -115,11 +115,11 @@ class MqEventSourceImagesTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'images')
   static const MqEventSourceImagesTypeEnum images = _$mqEventSourceImagesTypeEnum_images;
 
-  static Serializer<MqEventSourceImagesTypeEnum> get serializer => _$mqEventSourceImagesTypeSerializer;
+  static Serializer<MqEventSourceImagesTypeEnum> get serializer => _$mqEventSourceImagesTypeEnumSerializer;
 
   const MqEventSourceImagesTypeEnum._(String name): super(name);
 
-  static BuiltSet<MqEventSourceImagesTypeEnum> get values => _$mqEventSourceImagesTypeValues;
-  static MqEventSourceImagesTypeEnum valueOf(String name) => _$mqEventSourceImagesTypeValueOf(name);
+  static BuiltSet<MqEventSourceImagesTypeEnum> get values => _$mqEventSourceImagesTypeEnumValues;
+  static MqEventSourceImagesTypeEnum valueOf(String name) => _$mqEventSourceImagesTypeEnumValueOf(name);
 }
 

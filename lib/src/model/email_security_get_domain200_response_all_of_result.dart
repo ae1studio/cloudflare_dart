@@ -86,7 +86,7 @@ abstract class EmailSecurityGetDomain200ResponseAllOfResult implements Built<Ema
   String? get o365TenantId;
 
   @BuiltValueField(wireName: r'regions')
-  BuiltList<EmailSecurityUpdateDomainRequestRegionsEnum> get regions;
+  BuiltList<EmailSecurityGetDomain200ResponseAllOfResultRegionsEnum> get regions;
   // enum regionsEnum {  GLOBAL,  AU,  DE,  IN,  US,  };
 
   @BuiltValueField(wireName: r'require_tls_inbound')
@@ -216,7 +216,7 @@ class _$EmailSecurityGetDomain200ResponseAllOfResultSerializer implements Primit
     yield r'regions';
     yield serializers.serialize(
       object.regions,
-      specifiedType: const FullType(BuiltList, [FullType(EmailSecurityUpdateDomainRequestRegionsEnum)]),
+      specifiedType: const FullType(BuiltList, [FullType(EmailSecurityGetDomain200ResponseAllOfResultRegionsEnum)]),
     );
     if (object.requireTlsInbound != null) {
       yield r'require_tls_inbound';
@@ -377,8 +377,8 @@ class _$EmailSecurityGetDomain200ResponseAllOfResultSerializer implements Primit
         case r'regions':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(BuiltList, [FullType(EmailSecurityUpdateDomainRequestRegionsEnum)]),
-          ) as BuiltList<EmailSecurityUpdateDomainRequestRegionsEnum>;
+            specifiedType: const FullType(BuiltList, [FullType(EmailSecurityGetDomain200ResponseAllOfResultRegionsEnum)]),
+          ) as BuiltList<EmailSecurityGetDomain200ResponseAllOfResultRegionsEnum>;
           result.regions.replace(valueDes);
           break;
         case r'require_tls_inbound':
@@ -438,5 +438,26 @@ class _$EmailSecurityGetDomain200ResponseAllOfResultSerializer implements Primit
     );
     return result.build();
   }
+}
+
+class EmailSecurityGetDomain200ResponseAllOfResultRegionsEnum extends EnumClass {
+
+  @BuiltValueEnumConst(wireName: r'GLOBAL')
+  static const EmailSecurityGetDomain200ResponseAllOfResultRegionsEnum GLOBAL = _$emailSecurityGetDomain200ResponseAllOfResultRegionsEnum_GLOBAL;
+  @BuiltValueEnumConst(wireName: r'AU')
+  static const EmailSecurityGetDomain200ResponseAllOfResultRegionsEnum AU = _$emailSecurityGetDomain200ResponseAllOfResultRegionsEnum_AU;
+  @BuiltValueEnumConst(wireName: r'DE')
+  static const EmailSecurityGetDomain200ResponseAllOfResultRegionsEnum DE = _$emailSecurityGetDomain200ResponseAllOfResultRegionsEnum_DE;
+  @BuiltValueEnumConst(wireName: r'IN')
+  static const EmailSecurityGetDomain200ResponseAllOfResultRegionsEnum IN = _$emailSecurityGetDomain200ResponseAllOfResultRegionsEnum_IN;
+  @BuiltValueEnumConst(wireName: r'US')
+  static const EmailSecurityGetDomain200ResponseAllOfResultRegionsEnum US = _$emailSecurityGetDomain200ResponseAllOfResultRegionsEnum_US;
+
+  static Serializer<EmailSecurityGetDomain200ResponseAllOfResultRegionsEnum> get serializer => _$emailSecurityGetDomain200ResponseAllOfResultRegionsEnumSerializer;
+
+  const EmailSecurityGetDomain200ResponseAllOfResultRegionsEnum._(String name): super(name);
+
+  static BuiltSet<EmailSecurityGetDomain200ResponseAllOfResultRegionsEnum> get values => _$emailSecurityGetDomain200ResponseAllOfResultRegionsEnumValues;
+  static EmailSecurityGetDomain200ResponseAllOfResultRegionsEnum valueOf(String name) => _$emailSecurityGetDomain200ResponseAllOfResultRegionsEnumValueOf(name);
 }
 

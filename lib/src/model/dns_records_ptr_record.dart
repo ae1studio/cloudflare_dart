@@ -229,11 +229,11 @@ class DnsRecordsPTRRecordTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'PTR')
   static const DnsRecordsPTRRecordTypeEnum PTR = _$dnsRecordsPTRRecordTypeEnum_PTR;
 
-  static Serializer<DnsRecordsPTRRecordTypeEnum> get serializer => _$dnsRecordsPTRRecordTypeSerializer;
+  static Serializer<DnsRecordsPTRRecordTypeEnum> get serializer => _$dnsRecordsPTRRecordTypeEnumSerializer;
 
   const DnsRecordsPTRRecordTypeEnum._(String name): super(name);
 
-  static BuiltSet<DnsRecordsPTRRecordTypeEnum> get values => _$dnsRecordsPTRRecordTypeValues;
-  static DnsRecordsPTRRecordTypeEnum valueOf(String name) => _$dnsRecordsPTRRecordTypeValueOf(name);
+  static BuiltSet<DnsRecordsPTRRecordTypeEnum> get values => _$dnsRecordsPTRRecordTypeEnumValues;
+  static DnsRecordsPTRRecordTypeEnum valueOf(String name) => _$dnsRecordsPTRRecordTypeEnumValueOf(name);
 }
 

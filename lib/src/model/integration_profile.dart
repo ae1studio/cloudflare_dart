@@ -194,11 +194,11 @@ class IntegrationProfileTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'integration')
   static const IntegrationProfileTypeEnum integration = _$integrationProfileTypeEnum_integration;
 
-  static Serializer<IntegrationProfileTypeEnum> get serializer => _$integrationProfileTypeSerializer;
+  static Serializer<IntegrationProfileTypeEnum> get serializer => _$integrationProfileTypeEnumSerializer;
 
   const IntegrationProfileTypeEnum._(String name): super(name);
 
-  static BuiltSet<IntegrationProfileTypeEnum> get values => _$integrationProfileTypeValues;
-  static IntegrationProfileTypeEnum valueOf(String name) => _$integrationProfileTypeValueOf(name);
+  static BuiltSet<IntegrationProfileTypeEnum> get values => _$integrationProfileTypeEnumValues;
+  static IntegrationProfileTypeEnum valueOf(String name) => _$integrationProfileTypeEnumValueOf(name);
 }
 

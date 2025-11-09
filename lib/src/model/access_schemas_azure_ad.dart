@@ -206,11 +206,11 @@ class AccessSchemasAzureADTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'yandex')
   static const AccessSchemasAzureADTypeEnum yandex = _$accessSchemasAzureADTypeEnum_yandex;
 
-  static Serializer<AccessSchemasAzureADTypeEnum> get serializer => _$accessSchemasAzureADTypeSerializer;
+  static Serializer<AccessSchemasAzureADTypeEnum> get serializer => _$accessSchemasAzureADTypeEnumSerializer;
 
   const AccessSchemasAzureADTypeEnum._(String name): super(name);
 
-  static BuiltSet<AccessSchemasAzureADTypeEnum> get values => _$accessSchemasAzureADTypeValues;
-  static AccessSchemasAzureADTypeEnum valueOf(String name) => _$accessSchemasAzureADTypeValueOf(name);
+  static BuiltSet<AccessSchemasAzureADTypeEnum> get values => _$accessSchemasAzureADTypeEnumValues;
+  static AccessSchemasAzureADTypeEnum valueOf(String name) => _$accessSchemasAzureADTypeEnumValueOf(name);
 }
 

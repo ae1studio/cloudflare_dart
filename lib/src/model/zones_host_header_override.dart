@@ -134,11 +134,11 @@ class ZonesHostHeaderOverrideIdEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'host_header_override')
   static const ZonesHostHeaderOverrideIdEnum hostHeaderOverride = _$zonesHostHeaderOverrideIdEnum_hostHeaderOverride;
 
-  static Serializer<ZonesHostHeaderOverrideIdEnum> get serializer => _$zonesHostHeaderOverrideIdSerializer;
+  static Serializer<ZonesHostHeaderOverrideIdEnum> get serializer => _$zonesHostHeaderOverrideIdEnumSerializer;
 
   const ZonesHostHeaderOverrideIdEnum._(String name): super(name);
 
-  static BuiltSet<ZonesHostHeaderOverrideIdEnum> get values => _$zonesHostHeaderOverrideIdValues;
-  static ZonesHostHeaderOverrideIdEnum valueOf(String name) => _$zonesHostHeaderOverrideIdValueOf(name);
+  static BuiltSet<ZonesHostHeaderOverrideIdEnum> get values => _$zonesHostHeaderOverrideIdEnumValues;
+  static ZonesHostHeaderOverrideIdEnum valueOf(String name) => _$zonesHostHeaderOverrideIdEnumValueOf(name);
 }
 

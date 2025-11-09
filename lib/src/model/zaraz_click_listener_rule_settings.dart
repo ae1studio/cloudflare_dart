@@ -145,11 +145,11 @@ class ZarazClickListenerRuleSettingsTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'css')
   static const ZarazClickListenerRuleSettingsTypeEnum css = _$zarazClickListenerRuleSettingsTypeEnum_css;
 
-  static Serializer<ZarazClickListenerRuleSettingsTypeEnum> get serializer => _$zarazClickListenerRuleSettingsTypeSerializer;
+  static Serializer<ZarazClickListenerRuleSettingsTypeEnum> get serializer => _$zarazClickListenerRuleSettingsTypeEnumSerializer;
 
   const ZarazClickListenerRuleSettingsTypeEnum._(String name): super(name);
 
-  static BuiltSet<ZarazClickListenerRuleSettingsTypeEnum> get values => _$zarazClickListenerRuleSettingsTypeValues;
-  static ZarazClickListenerRuleSettingsTypeEnum valueOf(String name) => _$zarazClickListenerRuleSettingsTypeValueOf(name);
+  static BuiltSet<ZarazClickListenerRuleSettingsTypeEnum> get values => _$zarazClickListenerRuleSettingsTypeEnumValues;
+  static ZarazClickListenerRuleSettingsTypeEnum valueOf(String name) => _$zarazClickListenerRuleSettingsTypeEnumValueOf(name);
 }
 

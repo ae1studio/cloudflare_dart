@@ -194,11 +194,11 @@ class _$$WaitingroomApiResponseCommonFailureSerializer implements PrimitiveSeria
 class WaitingroomApiResponseCommonFailureResultEnum extends EnumClass {
 
 
-  static Serializer<WaitingroomApiResponseCommonFailureResultEnum> get serializer => _$waitingroomApiResponseCommonFailureResultSerializer;
+  static Serializer<WaitingroomApiResponseCommonFailureResultEnum> get serializer => _$waitingroomApiResponseCommonFailureResultEnumSerializer;
 
   const WaitingroomApiResponseCommonFailureResultEnum._(String name): super(name);
 
-  static BuiltSet<WaitingroomApiResponseCommonFailureResultEnum> get values => _$waitingroomApiResponseCommonFailureResultValues;
-  static WaitingroomApiResponseCommonFailureResultEnum valueOf(String name) => _$waitingroomApiResponseCommonFailureResultValueOf(name);
+  static BuiltSet<WaitingroomApiResponseCommonFailureResultEnum> get values => _$waitingroomApiResponseCommonFailureResultEnumValues;
+  static WaitingroomApiResponseCommonFailureResultEnum valueOf(String name) => _$waitingroomApiResponseCommonFailureResultEnumValueOf(name);
 }
 

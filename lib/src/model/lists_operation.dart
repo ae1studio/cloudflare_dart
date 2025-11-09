@@ -81,11 +81,11 @@ class ListsOperationStatusEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'failed')
   static const ListsOperationStatusEnum failed = _$listsOperationStatusEnum_failed;
 
-  static Serializer<ListsOperationStatusEnum> get serializer => _$listsOperationStatusSerializer;
+  static Serializer<ListsOperationStatusEnum> get serializer => _$listsOperationStatusEnumSerializer;
 
   const ListsOperationStatusEnum._(String name): super(name);
 
-  static BuiltSet<ListsOperationStatusEnum> get values => _$listsOperationStatusValues;
-  static ListsOperationStatusEnum valueOf(String name) => _$listsOperationStatusValueOf(name);
+  static BuiltSet<ListsOperationStatusEnum> get values => _$listsOperationStatusEnumValues;
+  static ListsOperationStatusEnum valueOf(String name) => _$listsOperationStatusEnumValueOf(name);
 }
 

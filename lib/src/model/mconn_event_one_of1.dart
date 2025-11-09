@@ -113,11 +113,11 @@ class MconnEventOneOf1KEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'Leave')
   static const MconnEventOneOf1KEnum leave = _$mconnEventOneOf1KEnum_leave;
 
-  static Serializer<MconnEventOneOf1KEnum> get serializer => _$mconnEventOneOf1KSerializer;
+  static Serializer<MconnEventOneOf1KEnum> get serializer => _$mconnEventOneOf1KEnumSerializer;
 
   const MconnEventOneOf1KEnum._(String name): super(name);
 
-  static BuiltSet<MconnEventOneOf1KEnum> get values => _$mconnEventOneOf1KValues;
-  static MconnEventOneOf1KEnum valueOf(String name) => _$mconnEventOneOf1KValueOf(name);
+  static BuiltSet<MconnEventOneOf1KEnum> get values => _$mconnEventOneOf1KEnumValues;
+  static MconnEventOneOf1KEnum valueOf(String name) => _$mconnEventOneOf1KEnumValueOf(name);
 }
 

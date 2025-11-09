@@ -10,13 +10,13 @@ import 'package:dio/dio.dart';
 
 import 'dart:typed_data';
 import 'package:cloudflare_dart/src/api_util.dart';
+import 'package:cloudflare_dart/src/model/addressing_api_response_common_failure.dart';
 import 'package:cloudflare_dart/src/model/addressing_api_response_single.dart';
 import 'package:cloudflare_dart/src/model/addressing_response_collection.dart';
 import 'package:cloudflare_dart/src/model/addressing_single_response.dart';
 import 'package:cloudflare_dart/src/model/ip_address_management_address_maps_delete_address_map4_xx_response.dart';
 import 'package:cloudflare_dart/src/model/ip_address_management_prefixes_add_prefix4_xx_response.dart';
 import 'package:cloudflare_dart/src/model/ip_address_management_prefixes_add_prefix_request.dart';
-import 'package:cloudflare_dart/src/model/ip_address_management_prefixes_download_loa_document4_xx_response.dart';
 import 'package:cloudflare_dart/src/model/ip_address_management_prefixes_list_prefixes4_xx_response.dart';
 import 'package:cloudflare_dart/src/model/ip_address_management_prefixes_update_prefix_description_request.dart';
 

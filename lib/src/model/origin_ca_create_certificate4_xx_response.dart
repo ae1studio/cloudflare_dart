@@ -149,11 +149,11 @@ class _$OriginCaCreateCertificate4XXResponseSerializer implements PrimitiveSeria
 class OriginCaCreateCertificate4XXResponseResultEnum extends EnumClass {
 
 
-  static Serializer<OriginCaCreateCertificate4XXResponseResultEnum> get serializer => _$originCaCreateCertificate4XXResponseResultSerializer;
+  static Serializer<OriginCaCreateCertificate4XXResponseResultEnum> get serializer => _$originCaCreateCertificate4XXResponseResultEnumSerializer;
 
   const OriginCaCreateCertificate4XXResponseResultEnum._(String name): super(name);
 
-  static BuiltSet<OriginCaCreateCertificate4XXResponseResultEnum> get values => _$originCaCreateCertificate4XXResponseResultValues;
-  static OriginCaCreateCertificate4XXResponseResultEnum valueOf(String name) => _$originCaCreateCertificate4XXResponseResultValueOf(name);
+  static BuiltSet<OriginCaCreateCertificate4XXResponseResultEnum> get values => _$originCaCreateCertificate4XXResponseResultEnumValues;
+  static OriginCaCreateCertificate4XXResponseResultEnum valueOf(String name) => _$originCaCreateCertificate4XXResponseResultEnumValueOf(name);
 }
 

@@ -3,7 +3,6 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:built_value/json_object.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
@@ -13,16 +12,17 @@ part 'rulesets_ruleset.g.dart';
 ///
 /// Properties:
 /// * [description] - An informative description of the ruleset.
-/// * [id] 
+/// * [id] - The unique ID of the ruleset.
 /// * [lastUpdated] - The timestamp of when the ruleset was last modified.
 /// * [name] - The human-readable name of the ruleset.
-/// * [version] 
+/// * [version] - The version of the ruleset.
 @BuiltValue(instantiable: false)
 abstract class RulesetsRuleset  {
   /// An informative description of the ruleset.
   @BuiltValueField(wireName: r'description')
   String? get description;
 
+  /// The unique ID of the ruleset.
   @BuiltValueField(wireName: r'id')
   String get id;
 
@@ -34,6 +34,7 @@ abstract class RulesetsRuleset  {
   @BuiltValueField(wireName: r'name')
   String? get name;
 
+  /// The version of the ruleset.
   @BuiltValueField(wireName: r'version')
   String get version;
 

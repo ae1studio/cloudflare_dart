@@ -176,12 +176,12 @@ class StreamAccessRulesActionEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'block')
   static const StreamAccessRulesActionEnum block = _$streamAccessRulesActionEnum_block;
 
-  static Serializer<StreamAccessRulesActionEnum> get serializer => _$streamAccessRulesActionSerializer;
+  static Serializer<StreamAccessRulesActionEnum> get serializer => _$streamAccessRulesActionEnumSerializer;
 
   const StreamAccessRulesActionEnum._(String name): super(name);
 
-  static BuiltSet<StreamAccessRulesActionEnum> get values => _$streamAccessRulesActionValues;
-  static StreamAccessRulesActionEnum valueOf(String name) => _$streamAccessRulesActionValueOf(name);
+  static BuiltSet<StreamAccessRulesActionEnum> get values => _$streamAccessRulesActionEnumValues;
+  static StreamAccessRulesActionEnum valueOf(String name) => _$streamAccessRulesActionEnumValueOf(name);
 }
 
 class StreamAccessRulesTypeEnum extends EnumClass {
@@ -196,11 +196,11 @@ class StreamAccessRulesTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'ip.geoip.country')
   static const StreamAccessRulesTypeEnum ipPeriodGeoipPeriodCountry = _$streamAccessRulesTypeEnum_ipPeriodGeoipPeriodCountry;
 
-  static Serializer<StreamAccessRulesTypeEnum> get serializer => _$streamAccessRulesTypeSerializer;
+  static Serializer<StreamAccessRulesTypeEnum> get serializer => _$streamAccessRulesTypeEnumSerializer;
 
   const StreamAccessRulesTypeEnum._(String name): super(name);
 
-  static BuiltSet<StreamAccessRulesTypeEnum> get values => _$streamAccessRulesTypeValues;
-  static StreamAccessRulesTypeEnum valueOf(String name) => _$streamAccessRulesTypeValueOf(name);
+  static BuiltSet<StreamAccessRulesTypeEnum> get values => _$streamAccessRulesTypeEnumValues;
+  static StreamAccessRulesTypeEnum valueOf(String name) => _$streamAccessRulesTypeEnumValueOf(name);
 }
 

@@ -150,11 +150,11 @@ class _$DnsRecordsForAZoneImportDnsRecords4XXResponseSerializer implements Primi
 class DnsRecordsForAZoneImportDnsRecords4XXResponseResultEnum extends EnumClass {
 
 
-  static Serializer<DnsRecordsForAZoneImportDnsRecords4XXResponseResultEnum> get serializer => _$dnsRecordsForAZoneImportDnsRecords4XXResponseResultSerializer;
+  static Serializer<DnsRecordsForAZoneImportDnsRecords4XXResponseResultEnum> get serializer => _$dnsRecordsForAZoneImportDnsRecords4XXResponseResultEnumSerializer;
 
   const DnsRecordsForAZoneImportDnsRecords4XXResponseResultEnum._(String name): super(name);
 
-  static BuiltSet<DnsRecordsForAZoneImportDnsRecords4XXResponseResultEnum> get values => _$dnsRecordsForAZoneImportDnsRecords4XXResponseResultValues;
-  static DnsRecordsForAZoneImportDnsRecords4XXResponseResultEnum valueOf(String name) => _$dnsRecordsForAZoneImportDnsRecords4XXResponseResultValueOf(name);
+  static BuiltSet<DnsRecordsForAZoneImportDnsRecords4XXResponseResultEnum> get values => _$dnsRecordsForAZoneImportDnsRecords4XXResponseResultEnumValues;
+  static DnsRecordsForAZoneImportDnsRecords4XXResponseResultEnum valueOf(String name) => _$dnsRecordsForAZoneImportDnsRecords4XXResponseResultEnumValueOf(name);
 }
 

@@ -149,11 +149,11 @@ class _$IpAddressManagementPrefixesCreateBgpPrefix4XXResponseSerializer implemen
 class IpAddressManagementPrefixesCreateBgpPrefix4XXResponseResultEnum extends EnumClass {
 
 
-  static Serializer<IpAddressManagementPrefixesCreateBgpPrefix4XXResponseResultEnum> get serializer => _$ipAddressManagementPrefixesCreateBgpPrefix4XXResponseResultSerializer;
+  static Serializer<IpAddressManagementPrefixesCreateBgpPrefix4XXResponseResultEnum> get serializer => _$ipAddressManagementPrefixesCreateBgpPrefix4XXResponseResultEnumSerializer;
 
   const IpAddressManagementPrefixesCreateBgpPrefix4XXResponseResultEnum._(String name): super(name);
 
-  static BuiltSet<IpAddressManagementPrefixesCreateBgpPrefix4XXResponseResultEnum> get values => _$ipAddressManagementPrefixesCreateBgpPrefix4XXResponseResultValues;
-  static IpAddressManagementPrefixesCreateBgpPrefix4XXResponseResultEnum valueOf(String name) => _$ipAddressManagementPrefixesCreateBgpPrefix4XXResponseResultValueOf(name);
+  static BuiltSet<IpAddressManagementPrefixesCreateBgpPrefix4XXResponseResultEnum> get values => _$ipAddressManagementPrefixesCreateBgpPrefix4XXResponseResultEnumValues;
+  static IpAddressManagementPrefixesCreateBgpPrefix4XXResponseResultEnum valueOf(String name) => _$ipAddressManagementPrefixesCreateBgpPrefix4XXResponseResultEnumValueOf(name);
 }
 

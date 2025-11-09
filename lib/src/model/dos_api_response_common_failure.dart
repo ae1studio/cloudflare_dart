@@ -161,11 +161,11 @@ class _$DosApiResponseCommonFailureSerializer implements PrimitiveSerializer<Dos
 class DosApiResponseCommonFailureResultEnum extends EnumClass {
 
 
-  static Serializer<DosApiResponseCommonFailureResultEnum> get serializer => _$dosApiResponseCommonFailureResultSerializer;
+  static Serializer<DosApiResponseCommonFailureResultEnum> get serializer => _$dosApiResponseCommonFailureResultEnumSerializer;
 
   const DosApiResponseCommonFailureResultEnum._(String name): super(name);
 
-  static BuiltSet<DosApiResponseCommonFailureResultEnum> get values => _$dosApiResponseCommonFailureResultValues;
-  static DosApiResponseCommonFailureResultEnum valueOf(String name) => _$dosApiResponseCommonFailureResultValueOf(name);
+  static BuiltSet<DosApiResponseCommonFailureResultEnum> get values => _$dosApiResponseCommonFailureResultEnumValues;
+  static DosApiResponseCommonFailureResultEnum valueOf(String name) => _$dosApiResponseCommonFailureResultEnumValueOf(name);
 }
 

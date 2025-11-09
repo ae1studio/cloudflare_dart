@@ -148,11 +148,11 @@ class _$CustomOriginTrustStoreDelete4XXResponseSerializer implements PrimitiveSe
 class CustomOriginTrustStoreDelete4XXResponseResultEnum extends EnumClass {
 
 
-  static Serializer<CustomOriginTrustStoreDelete4XXResponseResultEnum> get serializer => _$customOriginTrustStoreDelete4XXResponseResultSerializer;
+  static Serializer<CustomOriginTrustStoreDelete4XXResponseResultEnum> get serializer => _$customOriginTrustStoreDelete4XXResponseResultEnumSerializer;
 
   const CustomOriginTrustStoreDelete4XXResponseResultEnum._(String name): super(name);
 
-  static BuiltSet<CustomOriginTrustStoreDelete4XXResponseResultEnum> get values => _$customOriginTrustStoreDelete4XXResponseResultValues;
-  static CustomOriginTrustStoreDelete4XXResponseResultEnum valueOf(String name) => _$customOriginTrustStoreDelete4XXResponseResultValueOf(name);
+  static BuiltSet<CustomOriginTrustStoreDelete4XXResponseResultEnum> get values => _$customOriginTrustStoreDelete4XXResponseResultEnumValues;
+  static CustomOriginTrustStoreDelete4XXResponseResultEnum valueOf(String name) => _$customOriginTrustStoreDelete4XXResponseResultEnumValueOf(name);
 }
 

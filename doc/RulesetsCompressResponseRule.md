@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **actionParameters** | [**ResponseCompressionRuleActionParameters**](ResponseCompressionRuleActionParameters.md) |  | [optional] 
 **categories** | **BuiltSet&lt;String&gt;** | The categories of the rule. | [optional] 
 **description** | [**JsonObject**](.md) |  | [optional] 
-**enabled** | **bool** |  | [optional] 
+**enabled** | **bool** | Whether the rule should be executed. | [optional] [default to true]
 **exposedCredentialCheck** | [**RulesetsRuleExposedCredentialCheck**](RulesetsRuleExposedCredentialCheck.md) |  | [optional] 
 **expression** | **String** | The expression defining which traffic will match the rule. | [optional] 
 **id** | **String** | The unique ID of the rule. | [optional] 

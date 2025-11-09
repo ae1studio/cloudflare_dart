@@ -148,11 +148,11 @@ class _$FiltersDeleteAFilter4XXResponseSerializer implements PrimitiveSerializer
 class FiltersDeleteAFilter4XXResponseResultEnum extends EnumClass {
 
 
-  static Serializer<FiltersDeleteAFilter4XXResponseResultEnum> get serializer => _$filtersDeleteAFilter4XXResponseResultSerializer;
+  static Serializer<FiltersDeleteAFilter4XXResponseResultEnum> get serializer => _$filtersDeleteAFilter4XXResponseResultEnumSerializer;
 
   const FiltersDeleteAFilter4XXResponseResultEnum._(String name): super(name);
 
-  static BuiltSet<FiltersDeleteAFilter4XXResponseResultEnum> get values => _$filtersDeleteAFilter4XXResponseResultValues;
-  static FiltersDeleteAFilter4XXResponseResultEnum valueOf(String name) => _$filtersDeleteAFilter4XXResponseResultValueOf(name);
+  static BuiltSet<FiltersDeleteAFilter4XXResponseResultEnum> get values => _$filtersDeleteAFilter4XXResponseResultEnumValues;
+  static FiltersDeleteAFilter4XXResponseResultEnum valueOf(String name) => _$filtersDeleteAFilter4XXResponseResultEnumValueOf(name);
 }
 

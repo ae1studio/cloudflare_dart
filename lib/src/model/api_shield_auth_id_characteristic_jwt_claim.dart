@@ -130,11 +130,11 @@ class ApiShieldAuthIdCharacteristicJwtClaimTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'jwt')
   static const ApiShieldAuthIdCharacteristicJwtClaimTypeEnum jwt = _$apiShieldAuthIdCharacteristicJwtClaimTypeEnum_jwt;
 
-  static Serializer<ApiShieldAuthIdCharacteristicJwtClaimTypeEnum> get serializer => _$apiShieldAuthIdCharacteristicJwtClaimTypeSerializer;
+  static Serializer<ApiShieldAuthIdCharacteristicJwtClaimTypeEnum> get serializer => _$apiShieldAuthIdCharacteristicJwtClaimTypeEnumSerializer;
 
   const ApiShieldAuthIdCharacteristicJwtClaimTypeEnum._(String name): super(name);
 
-  static BuiltSet<ApiShieldAuthIdCharacteristicJwtClaimTypeEnum> get values => _$apiShieldAuthIdCharacteristicJwtClaimTypeValues;
-  static ApiShieldAuthIdCharacteristicJwtClaimTypeEnum valueOf(String name) => _$apiShieldAuthIdCharacteristicJwtClaimTypeValueOf(name);
+  static BuiltSet<ApiShieldAuthIdCharacteristicJwtClaimTypeEnum> get values => _$apiShieldAuthIdCharacteristicJwtClaimTypeEnumValues;
+  static ApiShieldAuthIdCharacteristicJwtClaimTypeEnum valueOf(String name) => _$apiShieldAuthIdCharacteristicJwtClaimTypeEnumValueOf(name);
 }
 

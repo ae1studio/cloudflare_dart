@@ -12,11 +12,11 @@ class _$BrowserVNCApplication1 extends BrowserVNCApplication1 {
   @override
   final String? aud;
   @override
-  final AccessCreatedAt? createdAt;
+  final JsonObject? createdAt;
   @override
   final String? id;
   @override
-  final AccessUpdatedAt? updatedAt;
+  final JsonObject? updatedAt;
   @override
   final bool? allowAuthenticateViaWarp;
   @override
@@ -253,20 +253,18 @@ class BrowserVNCApplication1Builder
   String? get aud => _$this._aud;
   set aud(covariant String? aud) => _$this._aud = aud;
 
-  AccessCreatedAtBuilder? _createdAt;
-  AccessCreatedAtBuilder get createdAt =>
-      _$this._createdAt ??= AccessCreatedAtBuilder();
-  set createdAt(covariant AccessCreatedAtBuilder? createdAt) =>
+  JsonObject? _createdAt;
+  JsonObject? get createdAt => _$this._createdAt;
+  set createdAt(covariant JsonObject? createdAt) =>
       _$this._createdAt = createdAt;
 
   String? _id;
   String? get id => _$this._id;
   set id(covariant String? id) => _$this._id = id;
 
-  AccessUpdatedAtBuilder? _updatedAt;
-  AccessUpdatedAtBuilder get updatedAt =>
-      _$this._updatedAt ??= AccessUpdatedAtBuilder();
-  set updatedAt(covariant AccessUpdatedAtBuilder? updatedAt) =>
+  JsonObject? _updatedAt;
+  JsonObject? get updatedAt => _$this._updatedAt;
+  set updatedAt(covariant JsonObject? updatedAt) =>
       _$this._updatedAt = updatedAt;
 
   bool? _allowAuthenticateViaWarp;
@@ -417,9 +415,9 @@ class BrowserVNCApplication1Builder
     if ($v != null) {
       _policies = $v.policies?.toBuilder();
       _aud = $v.aud;
-      _createdAt = $v.createdAt?.toBuilder();
+      _createdAt = $v.createdAt;
       _id = $v.id;
-      _updatedAt = $v.updatedAt?.toBuilder();
+      _updatedAt = $v.updatedAt;
       _allowAuthenticateViaWarp = $v.allowAuthenticateViaWarp;
       _allowIframe = $v.allowIframe;
       _allowedIdps = $v.allowedIdps?.toBuilder();
@@ -473,9 +471,9 @@ class BrowserVNCApplication1Builder
           _$BrowserVNCApplication1._(
             policies: _policies?.build(),
             aud: aud,
-            createdAt: _createdAt?.build(),
+            createdAt: createdAt,
             id: id,
-            updatedAt: _updatedAt?.build(),
+            updatedAt: updatedAt,
             allowAuthenticateViaWarp: allowAuthenticateViaWarp,
             allowIframe: allowIframe,
             allowedIdps: _allowedIdps?.build(),
@@ -511,12 +509,6 @@ class BrowserVNCApplication1Builder
       try {
         _$failedField = 'policies';
         _policies?.build();
-
-        _$failedField = 'createdAt';
-        _createdAt?.build();
-
-        _$failedField = 'updatedAt';
-        _updatedAt?.build();
 
         _$failedField = 'allowedIdps';
         _allowedIdps?.build();

@@ -178,11 +178,11 @@ class RealtimekitUpdatePresetConfigViewTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'AUDIO_ROOM')
   static const RealtimekitUpdatePresetConfigViewTypeEnum AUDIO_ROOM = _$realtimekitUpdatePresetConfigViewTypeEnum_AUDIO_ROOM;
 
-  static Serializer<RealtimekitUpdatePresetConfigViewTypeEnum> get serializer => _$realtimekitUpdatePresetConfigViewTypeSerializer;
+  static Serializer<RealtimekitUpdatePresetConfigViewTypeEnum> get serializer => _$realtimekitUpdatePresetConfigViewTypeEnumSerializer;
 
   const RealtimekitUpdatePresetConfigViewTypeEnum._(String name): super(name);
 
-  static BuiltSet<RealtimekitUpdatePresetConfigViewTypeEnum> get values => _$realtimekitUpdatePresetConfigViewTypeValues;
-  static RealtimekitUpdatePresetConfigViewTypeEnum valueOf(String name) => _$realtimekitUpdatePresetConfigViewTypeValueOf(name);
+  static BuiltSet<RealtimekitUpdatePresetConfigViewTypeEnum> get values => _$realtimekitUpdatePresetConfigViewTypeEnumValues;
+  static RealtimekitUpdatePresetConfigViewTypeEnum valueOf(String name) => _$realtimekitUpdatePresetConfigViewTypeEnumValueOf(name);
 }
 

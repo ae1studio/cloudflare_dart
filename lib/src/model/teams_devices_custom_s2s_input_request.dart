@@ -159,11 +159,11 @@ class TeamsDevicesCustomS2sInputRequestOperator_Enum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'==')
   static const TeamsDevicesCustomS2sInputRequestOperator_Enum equalEqual = _$teamsDevicesCustomS2sInputRequestOperatorEnum_equalEqual;
 
-  static Serializer<TeamsDevicesCustomS2sInputRequestOperator_Enum> get serializer => _$teamsDevicesCustomS2sInputRequestOperatorSerializer;
+  static Serializer<TeamsDevicesCustomS2sInputRequestOperator_Enum> get serializer => _$teamsDevicesCustomS2sInputRequestOperatorEnumSerializer;
 
   const TeamsDevicesCustomS2sInputRequestOperator_Enum._(String name): super(name);
 
-  static BuiltSet<TeamsDevicesCustomS2sInputRequestOperator_Enum> get values => _$teamsDevicesCustomS2sInputRequestOperatorValues;
-  static TeamsDevicesCustomS2sInputRequestOperator_Enum valueOf(String name) => _$teamsDevicesCustomS2sInputRequestOperatorValueOf(name);
+  static BuiltSet<TeamsDevicesCustomS2sInputRequestOperator_Enum> get values => _$teamsDevicesCustomS2sInputRequestOperatorEnumValues;
+  static TeamsDevicesCustomS2sInputRequestOperator_Enum valueOf(String name) => _$teamsDevicesCustomS2sInputRequestOperatorEnumValueOf(name);
 }
 

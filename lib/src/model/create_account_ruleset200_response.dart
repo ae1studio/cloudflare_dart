@@ -150,12 +150,12 @@ class CreateAccountRuleset200ResponseErrorsEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'[]')
   static const CreateAccountRuleset200ResponseErrorsEnum leftSquareBracketRightSquareBracket = _$createAccountRuleset200ResponseErrorsEnum_leftSquareBracketRightSquareBracket;
 
-  static Serializer<CreateAccountRuleset200ResponseErrorsEnum> get serializer => _$createAccountRuleset200ResponseErrorsSerializer;
+  static Serializer<CreateAccountRuleset200ResponseErrorsEnum> get serializer => _$createAccountRuleset200ResponseErrorsEnumSerializer;
 
   const CreateAccountRuleset200ResponseErrorsEnum._(String name): super(name);
 
-  static BuiltSet<CreateAccountRuleset200ResponseErrorsEnum> get values => _$createAccountRuleset200ResponseErrorsValues;
-  static CreateAccountRuleset200ResponseErrorsEnum valueOf(String name) => _$createAccountRuleset200ResponseErrorsValueOf(name);
+  static BuiltSet<CreateAccountRuleset200ResponseErrorsEnum> get values => _$createAccountRuleset200ResponseErrorsEnumValues;
+  static CreateAccountRuleset200ResponseErrorsEnum valueOf(String name) => _$createAccountRuleset200ResponseErrorsEnumValueOf(name);
 }
 
 class CreateAccountRuleset200ResponseSuccessEnum extends EnumClass {
@@ -163,11 +163,11 @@ class CreateAccountRuleset200ResponseSuccessEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'true')
   static const CreateAccountRuleset200ResponseSuccessEnum true_ = _$createAccountRuleset200ResponseSuccessEnum_true_;
 
-  static Serializer<CreateAccountRuleset200ResponseSuccessEnum> get serializer => _$createAccountRuleset200ResponseSuccessSerializer;
+  static Serializer<CreateAccountRuleset200ResponseSuccessEnum> get serializer => _$createAccountRuleset200ResponseSuccessEnumSerializer;
 
   const CreateAccountRuleset200ResponseSuccessEnum._(String name): super(name);
 
-  static BuiltSet<CreateAccountRuleset200ResponseSuccessEnum> get values => _$createAccountRuleset200ResponseSuccessValues;
-  static CreateAccountRuleset200ResponseSuccessEnum valueOf(String name) => _$createAccountRuleset200ResponseSuccessValueOf(name);
+  static BuiltSet<CreateAccountRuleset200ResponseSuccessEnum> get values => _$createAccountRuleset200ResponseSuccessEnumValues;
+  static CreateAccountRuleset200ResponseSuccessEnum valueOf(String name) => _$createAccountRuleset200ResponseSuccessEnumValueOf(name);
 }
 

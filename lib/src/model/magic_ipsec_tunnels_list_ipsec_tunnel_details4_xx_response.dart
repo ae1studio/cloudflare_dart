@@ -149,11 +149,11 @@ class _$MagicIpsecTunnelsListIpsecTunnelDetails4XXResponseSerializer implements 
 class MagicIpsecTunnelsListIpsecTunnelDetails4XXResponseResultEnum extends EnumClass {
 
 
-  static Serializer<MagicIpsecTunnelsListIpsecTunnelDetails4XXResponseResultEnum> get serializer => _$magicIpsecTunnelsListIpsecTunnelDetails4XXResponseResultSerializer;
+  static Serializer<MagicIpsecTunnelsListIpsecTunnelDetails4XXResponseResultEnum> get serializer => _$magicIpsecTunnelsListIpsecTunnelDetails4XXResponseResultEnumSerializer;
 
   const MagicIpsecTunnelsListIpsecTunnelDetails4XXResponseResultEnum._(String name): super(name);
 
-  static BuiltSet<MagicIpsecTunnelsListIpsecTunnelDetails4XXResponseResultEnum> get values => _$magicIpsecTunnelsListIpsecTunnelDetails4XXResponseResultValues;
-  static MagicIpsecTunnelsListIpsecTunnelDetails4XXResponseResultEnum valueOf(String name) => _$magicIpsecTunnelsListIpsecTunnelDetails4XXResponseResultValueOf(name);
+  static BuiltSet<MagicIpsecTunnelsListIpsecTunnelDetails4XXResponseResultEnum> get values => _$magicIpsecTunnelsListIpsecTunnelDetails4XXResponseResultEnumValues;
+  static MagicIpsecTunnelsListIpsecTunnelDetails4XXResponseResultEnum valueOf(String name) => _$magicIpsecTunnelsListIpsecTunnelDetails4XXResponseResultEnumValueOf(name);
 }
 

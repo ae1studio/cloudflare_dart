@@ -148,11 +148,11 @@ class _$CloudflareTunnelCreateACloudflareTunnel4XXResponseSerializer implements 
 class CloudflareTunnelCreateACloudflareTunnel4XXResponseResultEnum extends EnumClass {
 
 
-  static Serializer<CloudflareTunnelCreateACloudflareTunnel4XXResponseResultEnum> get serializer => _$cloudflareTunnelCreateACloudflareTunnel4XXResponseResultSerializer;
+  static Serializer<CloudflareTunnelCreateACloudflareTunnel4XXResponseResultEnum> get serializer => _$cloudflareTunnelCreateACloudflareTunnel4XXResponseResultEnumSerializer;
 
   const CloudflareTunnelCreateACloudflareTunnel4XXResponseResultEnum._(String name): super(name);
 
-  static BuiltSet<CloudflareTunnelCreateACloudflareTunnel4XXResponseResultEnum> get values => _$cloudflareTunnelCreateACloudflareTunnel4XXResponseResultValues;
-  static CloudflareTunnelCreateACloudflareTunnel4XXResponseResultEnum valueOf(String name) => _$cloudflareTunnelCreateACloudflareTunnel4XXResponseResultValueOf(name);
+  static BuiltSet<CloudflareTunnelCreateACloudflareTunnel4XXResponseResultEnum> get values => _$cloudflareTunnelCreateACloudflareTunnel4XXResponseResultEnumValues;
+  static CloudflareTunnelCreateACloudflareTunnel4XXResponseResultEnum valueOf(String name) => _$cloudflareTunnelCreateACloudflareTunnel4XXResponseResultEnumValueOf(name);
 }
 

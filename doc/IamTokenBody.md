@@ -14,9 +14,9 @@ Name | Type | Description | Notes
 **issuedOn** | [**DateTime**](DateTime.md) | The time on which the token was created. | [optional] 
 **lastUsedOn** | [**DateTime**](DateTime.md) | Last time the token was used. | [optional] 
 **modifiedOn** | [**DateTime**](DateTime.md) | Last time the token was modified. | [optional] 
-**name** | **String** | Token name. | 
+**name** | **String** | Token name. | [optional] 
 **notBefore** | [**DateTime**](DateTime.md) | The time before which the token MUST NOT be accepted for processing. | [optional] 
-**policies** | [**BuiltList&lt;IamPolicyWithPermissionGroupsAndResources&gt;**](IamPolicyWithPermissionGroupsAndResources.md) | List of access policies assigned to the token. | 
+**policies** | [**BuiltList&lt;IamPolicyWithPermissionGroupsAndResources&gt;**](IamPolicyWithPermissionGroupsAndResources.md) | List of access policies assigned to the token. | [optional] 
 **status** | [**IamTokenStatus**](IamTokenStatus.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

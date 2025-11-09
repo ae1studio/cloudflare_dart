@@ -79,11 +79,11 @@ class _$MagicPcapCollectionCreatePcapRequestDefaultResponseSerializer implements
 class MagicPcapCollectionCreatePcapRequestDefaultResponseResultEnum extends EnumClass {
 
 
-  static Serializer<MagicPcapCollectionCreatePcapRequestDefaultResponseResultEnum> get serializer => _$magicPcapCollectionCreatePcapRequestDefaultResponseResultSerializer;
+  static Serializer<MagicPcapCollectionCreatePcapRequestDefaultResponseResultEnum> get serializer => _$magicPcapCollectionCreatePcapRequestDefaultResponseResultEnumSerializer;
 
   const MagicPcapCollectionCreatePcapRequestDefaultResponseResultEnum._(String name): super(name);
 
-  static BuiltSet<MagicPcapCollectionCreatePcapRequestDefaultResponseResultEnum> get values => _$magicPcapCollectionCreatePcapRequestDefaultResponseResultValues;
-  static MagicPcapCollectionCreatePcapRequestDefaultResponseResultEnum valueOf(String name) => _$magicPcapCollectionCreatePcapRequestDefaultResponseResultValueOf(name);
+  static BuiltSet<MagicPcapCollectionCreatePcapRequestDefaultResponseResultEnum> get values => _$magicPcapCollectionCreatePcapRequestDefaultResponseResultEnumValues;
+  static MagicPcapCollectionCreatePcapRequestDefaultResponseResultEnum valueOf(String name) => _$magicPcapCollectionCreatePcapRequestDefaultResponseResultEnumValueOf(name);
 }
 

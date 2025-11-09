@@ -328,12 +328,12 @@ class DnsRecordsLOCRecordAllOfDataLatDirectionEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'S')
   static const DnsRecordsLOCRecordAllOfDataLatDirectionEnum S = _$dnsRecordsLOCRecordAllOfDataLatDirectionEnum_S;
 
-  static Serializer<DnsRecordsLOCRecordAllOfDataLatDirectionEnum> get serializer => _$dnsRecordsLOCRecordAllOfDataLatDirectionSerializer;
+  static Serializer<DnsRecordsLOCRecordAllOfDataLatDirectionEnum> get serializer => _$dnsRecordsLOCRecordAllOfDataLatDirectionEnumSerializer;
 
   const DnsRecordsLOCRecordAllOfDataLatDirectionEnum._(String name): super(name);
 
-  static BuiltSet<DnsRecordsLOCRecordAllOfDataLatDirectionEnum> get values => _$dnsRecordsLOCRecordAllOfDataLatDirectionValues;
-  static DnsRecordsLOCRecordAllOfDataLatDirectionEnum valueOf(String name) => _$dnsRecordsLOCRecordAllOfDataLatDirectionValueOf(name);
+  static BuiltSet<DnsRecordsLOCRecordAllOfDataLatDirectionEnum> get values => _$dnsRecordsLOCRecordAllOfDataLatDirectionEnumValues;
+  static DnsRecordsLOCRecordAllOfDataLatDirectionEnum valueOf(String name) => _$dnsRecordsLOCRecordAllOfDataLatDirectionEnumValueOf(name);
 }
 
 class DnsRecordsLOCRecordAllOfDataLongDirectionEnum extends EnumClass {
@@ -345,11 +345,11 @@ class DnsRecordsLOCRecordAllOfDataLongDirectionEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'W')
   static const DnsRecordsLOCRecordAllOfDataLongDirectionEnum W = _$dnsRecordsLOCRecordAllOfDataLongDirectionEnum_W;
 
-  static Serializer<DnsRecordsLOCRecordAllOfDataLongDirectionEnum> get serializer => _$dnsRecordsLOCRecordAllOfDataLongDirectionSerializer;
+  static Serializer<DnsRecordsLOCRecordAllOfDataLongDirectionEnum> get serializer => _$dnsRecordsLOCRecordAllOfDataLongDirectionEnumSerializer;
 
   const DnsRecordsLOCRecordAllOfDataLongDirectionEnum._(String name): super(name);
 
-  static BuiltSet<DnsRecordsLOCRecordAllOfDataLongDirectionEnum> get values => _$dnsRecordsLOCRecordAllOfDataLongDirectionValues;
-  static DnsRecordsLOCRecordAllOfDataLongDirectionEnum valueOf(String name) => _$dnsRecordsLOCRecordAllOfDataLongDirectionValueOf(name);
+  static BuiltSet<DnsRecordsLOCRecordAllOfDataLongDirectionEnum> get values => _$dnsRecordsLOCRecordAllOfDataLongDirectionEnumValues;
+  static DnsRecordsLOCRecordAllOfDataLongDirectionEnum valueOf(String name) => _$dnsRecordsLOCRecordAllOfDataLongDirectionEnumValueOf(name);
 }
 

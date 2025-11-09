@@ -174,7 +174,7 @@ class _$IamMembershipWithPoliciesSerializer implements PrimitiveSerializer<IamMe
             value,
             specifiedType: const FullType(IamPermissions),
           ) as IamPermissions;
-          result.permissions = valueDes;
+          result.permissions.replace(valueDes);
           break;
         case r'policies':
           final valueDes = serializers.deserialize(

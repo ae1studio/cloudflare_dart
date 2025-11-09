@@ -134,11 +134,11 @@ class FirewallUaConfigurationTargetEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'ua')
   static const FirewallUaConfigurationTargetEnum ua = _$firewallUaConfigurationTargetEnum_ua;
 
-  static Serializer<FirewallUaConfigurationTargetEnum> get serializer => _$firewallUaConfigurationTargetSerializer;
+  static Serializer<FirewallUaConfigurationTargetEnum> get serializer => _$firewallUaConfigurationTargetEnumSerializer;
 
   const FirewallUaConfigurationTargetEnum._(String name): super(name);
 
-  static BuiltSet<FirewallUaConfigurationTargetEnum> get values => _$firewallUaConfigurationTargetValues;
-  static FirewallUaConfigurationTargetEnum valueOf(String name) => _$firewallUaConfigurationTargetValueOf(name);
+  static BuiltSet<FirewallUaConfigurationTargetEnum> get values => _$firewallUaConfigurationTargetEnumValues;
+  static FirewallUaConfigurationTargetEnum valueOf(String name) => _$firewallUaConfigurationTargetEnumValueOf(name);
 }
 

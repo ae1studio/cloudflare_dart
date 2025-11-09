@@ -155,11 +155,11 @@ class ApiShieldPerOperationSettingChangeBaseMitigationActionEnum extends EnumCla
   @BuiltValueEnumConst(wireName: r'none')
   static const ApiShieldPerOperationSettingChangeBaseMitigationActionEnum none = _$apiShieldPerOperationSettingChangeBaseMitigationActionEnum_none;
 
-  static Serializer<ApiShieldPerOperationSettingChangeBaseMitigationActionEnum> get serializer => _$apiShieldPerOperationSettingChangeBaseMitigationActionSerializer;
+  static Serializer<ApiShieldPerOperationSettingChangeBaseMitigationActionEnum> get serializer => _$apiShieldPerOperationSettingChangeBaseMitigationActionEnumSerializer;
 
   const ApiShieldPerOperationSettingChangeBaseMitigationActionEnum._(String name): super(name);
 
-  static BuiltSet<ApiShieldPerOperationSettingChangeBaseMitigationActionEnum> get values => _$apiShieldPerOperationSettingChangeBaseMitigationActionValues;
-  static ApiShieldPerOperationSettingChangeBaseMitigationActionEnum valueOf(String name) => _$apiShieldPerOperationSettingChangeBaseMitigationActionValueOf(name);
+  static BuiltSet<ApiShieldPerOperationSettingChangeBaseMitigationActionEnum> get values => _$apiShieldPerOperationSettingChangeBaseMitigationActionEnumValues;
+  static ApiShieldPerOperationSettingChangeBaseMitigationActionEnum valueOf(String name) => _$apiShieldPerOperationSettingChangeBaseMitigationActionEnumValueOf(name);
 }
 

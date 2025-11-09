@@ -149,11 +149,11 @@ class _$WafContentScanningListCustomScanExpressions4XXResponseSerializer impleme
 class WafContentScanningListCustomScanExpressions4XXResponseResultEnum extends EnumClass {
 
 
-  static Serializer<WafContentScanningListCustomScanExpressions4XXResponseResultEnum> get serializer => _$wafContentScanningListCustomScanExpressions4XXResponseResultSerializer;
+  static Serializer<WafContentScanningListCustomScanExpressions4XXResponseResultEnum> get serializer => _$wafContentScanningListCustomScanExpressions4XXResponseResultEnumSerializer;
 
   const WafContentScanningListCustomScanExpressions4XXResponseResultEnum._(String name): super(name);
 
-  static BuiltSet<WafContentScanningListCustomScanExpressions4XXResponseResultEnum> get values => _$wafContentScanningListCustomScanExpressions4XXResponseResultValues;
-  static WafContentScanningListCustomScanExpressions4XXResponseResultEnum valueOf(String name) => _$wafContentScanningListCustomScanExpressions4XXResponseResultValueOf(name);
+  static BuiltSet<WafContentScanningListCustomScanExpressions4XXResponseResultEnum> get values => _$wafContentScanningListCustomScanExpressions4XXResponseResultEnumValues;
+  static WafContentScanningListCustomScanExpressions4XXResponseResultEnum valueOf(String name) => _$wafContentScanningListCustomScanExpressions4XXResponseResultEnumValueOf(name);
 }
 

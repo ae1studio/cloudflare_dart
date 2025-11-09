@@ -346,11 +346,11 @@ class PagesProjectObjectLatestDeploymentEnvironmentEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'production')
   static const PagesProjectObjectLatestDeploymentEnvironmentEnum production = _$pagesProjectObjectLatestDeploymentEnvironmentEnum_production;
 
-  static Serializer<PagesProjectObjectLatestDeploymentEnvironmentEnum> get serializer => _$pagesProjectObjectLatestDeploymentEnvironmentSerializer;
+  static Serializer<PagesProjectObjectLatestDeploymentEnvironmentEnum> get serializer => _$pagesProjectObjectLatestDeploymentEnvironmentEnumSerializer;
 
   const PagesProjectObjectLatestDeploymentEnvironmentEnum._(String name): super(name);
 
-  static BuiltSet<PagesProjectObjectLatestDeploymentEnvironmentEnum> get values => _$pagesProjectObjectLatestDeploymentEnvironmentValues;
-  static PagesProjectObjectLatestDeploymentEnvironmentEnum valueOf(String name) => _$pagesProjectObjectLatestDeploymentEnvironmentValueOf(name);
+  static BuiltSet<PagesProjectObjectLatestDeploymentEnvironmentEnum> get values => _$pagesProjectObjectLatestDeploymentEnvironmentEnumValues;
+  static PagesProjectObjectLatestDeploymentEnvironmentEnum valueOf(String name) => _$pagesProjectObjectLatestDeploymentEnvironmentEnumValueOf(name);
 }
 

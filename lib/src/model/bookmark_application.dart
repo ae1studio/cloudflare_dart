@@ -3,11 +3,9 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:cloudflare_dart/src/model/access_updated_at.dart';
 import 'package:built_collection/built_collection.dart';
 import 'package:cloudflare_dart/src/model/access_type.dart';
 import 'package:cloudflare_dart/src/model/access_bookmark_props.dart';
-import 'package:cloudflare_dart/src/model/access_created_at.dart';
 import 'package:cloudflare_dart/src/model/access_basic_app_response_props.dart';
 import 'package:built_value/json_object.dart';
 import 'package:built_value/built_value.dart';
@@ -66,7 +64,7 @@ class _$BookmarkApplicationSerializer implements PrimitiveSerializer<BookmarkApp
       yield r'created_at';
       yield serializers.serialize(
         object.createdAt,
-        specifiedType: const FullType(AccessCreatedAt),
+        specifiedType: const FullType(JsonObject),
       );
     }
     if (object.appLauncherVisible != null) {
@@ -122,7 +120,7 @@ class _$BookmarkApplicationSerializer implements PrimitiveSerializer<BookmarkApp
       yield r'updated_at';
       yield serializers.serialize(
         object.updatedAt,
-        specifiedType: const FullType(AccessUpdatedAt),
+        specifiedType: const FullType(JsonObject),
       );
     }
   }
@@ -158,8 +156,8 @@ class _$BookmarkApplicationSerializer implements PrimitiveSerializer<BookmarkApp
         case r'created_at':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(AccessCreatedAt),
-          ) as AccessCreatedAt;
+            specifiedType: const FullType(JsonObject),
+          ) as JsonObject;
           result.createdAt.replace(valueDes);
           break;
         case r'app_launcher_visible':
@@ -214,8 +212,8 @@ class _$BookmarkApplicationSerializer implements PrimitiveSerializer<BookmarkApp
         case r'updated_at':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(AccessUpdatedAt),
-          ) as AccessUpdatedAt;
+            specifiedType: const FullType(JsonObject),
+          ) as JsonObject;
           result.updatedAt.replace(valueDes);
           break;
         default:

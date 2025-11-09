@@ -280,11 +280,11 @@ class ZarazManagedComponentTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'component')
   static const ZarazManagedComponentTypeEnum component = _$zarazManagedComponentTypeEnum_component;
 
-  static Serializer<ZarazManagedComponentTypeEnum> get serializer => _$zarazManagedComponentTypeSerializer;
+  static Serializer<ZarazManagedComponentTypeEnum> get serializer => _$zarazManagedComponentTypeEnumSerializer;
 
   const ZarazManagedComponentTypeEnum._(String name): super(name);
 
-  static BuiltSet<ZarazManagedComponentTypeEnum> get values => _$zarazManagedComponentTypeValues;
-  static ZarazManagedComponentTypeEnum valueOf(String name) => _$zarazManagedComponentTypeValueOf(name);
+  static BuiltSet<ZarazManagedComponentTypeEnum> get values => _$zarazManagedComponentTypeEnumValues;
+  static ZarazManagedComponentTypeEnum valueOf(String name) => _$zarazManagedComponentTypeEnumValueOf(name);
 }
 

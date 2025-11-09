@@ -165,11 +165,11 @@ class _$PerHostnameTlsSettingsList4XXResponseSerializer implements PrimitiveSeri
 class PerHostnameTlsSettingsList4XXResponseResultEnum extends EnumClass {
 
 
-  static Serializer<PerHostnameTlsSettingsList4XXResponseResultEnum> get serializer => _$perHostnameTlsSettingsList4XXResponseResultSerializer;
+  static Serializer<PerHostnameTlsSettingsList4XXResponseResultEnum> get serializer => _$perHostnameTlsSettingsList4XXResponseResultEnumSerializer;
 
   const PerHostnameTlsSettingsList4XXResponseResultEnum._(String name): super(name);
 
-  static BuiltSet<PerHostnameTlsSettingsList4XXResponseResultEnum> get values => _$perHostnameTlsSettingsList4XXResponseResultValues;
-  static PerHostnameTlsSettingsList4XXResponseResultEnum valueOf(String name) => _$perHostnameTlsSettingsList4XXResponseResultValueOf(name);
+  static BuiltSet<PerHostnameTlsSettingsList4XXResponseResultEnum> get values => _$perHostnameTlsSettingsList4XXResponseResultEnumValues;
+  static PerHostnameTlsSettingsList4XXResponseResultEnum valueOf(String name) => _$perHostnameTlsSettingsList4XXResponseResultEnumValueOf(name);
 }
 

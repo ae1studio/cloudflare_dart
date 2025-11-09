@@ -149,11 +149,11 @@ class _$AccountLoadBalancerMonitorsPreviewMonitor4XXResponseSerializer implement
 class AccountLoadBalancerMonitorsPreviewMonitor4XXResponseResultEnum extends EnumClass {
 
 
-  static Serializer<AccountLoadBalancerMonitorsPreviewMonitor4XXResponseResultEnum> get serializer => _$accountLoadBalancerMonitorsPreviewMonitor4XXResponseResultSerializer;
+  static Serializer<AccountLoadBalancerMonitorsPreviewMonitor4XXResponseResultEnum> get serializer => _$accountLoadBalancerMonitorsPreviewMonitor4XXResponseResultEnumSerializer;
 
   const AccountLoadBalancerMonitorsPreviewMonitor4XXResponseResultEnum._(String name): super(name);
 
-  static BuiltSet<AccountLoadBalancerMonitorsPreviewMonitor4XXResponseResultEnum> get values => _$accountLoadBalancerMonitorsPreviewMonitor4XXResponseResultValues;
-  static AccountLoadBalancerMonitorsPreviewMonitor4XXResponseResultEnum valueOf(String name) => _$accountLoadBalancerMonitorsPreviewMonitor4XXResponseResultValueOf(name);
+  static BuiltSet<AccountLoadBalancerMonitorsPreviewMonitor4XXResponseResultEnum> get values => _$accountLoadBalancerMonitorsPreviewMonitor4XXResponseResultEnumValues;
+  static AccountLoadBalancerMonitorsPreviewMonitor4XXResponseResultEnum valueOf(String name) => _$accountLoadBalancerMonitorsPreviewMonitor4XXResponseResultEnumValueOf(name);
 }
 

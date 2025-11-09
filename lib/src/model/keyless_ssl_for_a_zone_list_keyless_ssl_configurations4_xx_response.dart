@@ -165,11 +165,11 @@ class _$KeylessSslForAZoneListKeylessSslConfigurations4XXResponseSerializer impl
 class KeylessSslForAZoneListKeylessSslConfigurations4XXResponseResultEnum extends EnumClass {
 
 
-  static Serializer<KeylessSslForAZoneListKeylessSslConfigurations4XXResponseResultEnum> get serializer => _$keylessSslForAZoneListKeylessSslConfigurations4XXResponseResultSerializer;
+  static Serializer<KeylessSslForAZoneListKeylessSslConfigurations4XXResponseResultEnum> get serializer => _$keylessSslForAZoneListKeylessSslConfigurations4XXResponseResultEnumSerializer;
 
   const KeylessSslForAZoneListKeylessSslConfigurations4XXResponseResultEnum._(String name): super(name);
 
-  static BuiltSet<KeylessSslForAZoneListKeylessSslConfigurations4XXResponseResultEnum> get values => _$keylessSslForAZoneListKeylessSslConfigurations4XXResponseResultValues;
-  static KeylessSslForAZoneListKeylessSslConfigurations4XXResponseResultEnum valueOf(String name) => _$keylessSslForAZoneListKeylessSslConfigurations4XXResponseResultValueOf(name);
+  static BuiltSet<KeylessSslForAZoneListKeylessSslConfigurations4XXResponseResultEnum> get values => _$keylessSslForAZoneListKeylessSslConfigurations4XXResponseResultEnumValues;
+  static KeylessSslForAZoneListKeylessSslConfigurations4XXResponseResultEnum valueOf(String name) => _$keylessSslForAZoneListKeylessSslConfigurations4XXResponseResultEnumValueOf(name);
 }
 

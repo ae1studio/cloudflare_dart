@@ -134,11 +134,11 @@ class FirewallSchemasCidrConfigurationTargetEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'ip_range')
   static const FirewallSchemasCidrConfigurationTargetEnum ipRange = _$firewallSchemasCidrConfigurationTargetEnum_ipRange;
 
-  static Serializer<FirewallSchemasCidrConfigurationTargetEnum> get serializer => _$firewallSchemasCidrConfigurationTargetSerializer;
+  static Serializer<FirewallSchemasCidrConfigurationTargetEnum> get serializer => _$firewallSchemasCidrConfigurationTargetEnumSerializer;
 
   const FirewallSchemasCidrConfigurationTargetEnum._(String name): super(name);
 
-  static BuiltSet<FirewallSchemasCidrConfigurationTargetEnum> get values => _$firewallSchemasCidrConfigurationTargetValues;
-  static FirewallSchemasCidrConfigurationTargetEnum valueOf(String name) => _$firewallSchemasCidrConfigurationTargetValueOf(name);
+  static BuiltSet<FirewallSchemasCidrConfigurationTargetEnum> get values => _$firewallSchemasCidrConfigurationTargetEnumValues;
+  static FirewallSchemasCidrConfigurationTargetEnum valueOf(String name) => _$firewallSchemasCidrConfigurationTargetEnumValueOf(name);
 }
 

@@ -5,7 +5,6 @@
 // ignore_for_file: unused_element
 import 'package:cloudflare_dart/src/model/autorag_config_ai_search_request_ranking_options.dart';
 import 'package:cloudflare_dart/src/model/autorag_config_ai_search_request_filters.dart';
-import 'package:cloudflare_dart/src/model/autorag_config_ai_search_request_model.dart';
 import 'package:cloudflare_dart/src/model/autorag_config_ai_search_request_reranking.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
@@ -33,7 +32,8 @@ abstract class AutoragConfigAiSearchRequest implements Built<AutoragConfigAiSear
   int? get maxNumResults;
 
   @BuiltValueField(wireName: r'model')
-  AutoragConfigAiSearchRequestModel? get model;
+  ModelEnum? get model;
+  // enum modelEnum {  @cf/meta/llama-3.3-70b-instruct-fp8-fast,  @cf/meta/llama-3.1-8b-instruct-fast,  @cf/meta/llama-3.1-8b-instruct-fp8,  @cf/meta/llama-4-scout-17b-16e-instruct,  @cf/deepseek-ai/deepseek-r1-distill-qwen-32b,  @cf/qwen/qwen3-30b-a3b-fp8,  @cf/moonshotai/kimi-k2-instruct,  anthropic/claude-3-7-sonnet,  anthropic/claude-sonnet-4,  anthropic/claude-opus-4,  anthropic/claude-3-5-haiku,  cerebras/qwen-3-235b-a22b-instruct,  cerebras/qwen-3-235b-a22b-thinking,  cerebras/llama-3.3-70b,  cerebras/llama-4-maverick-17b-128e-instruct,  cerebras/llama-4-scout-17b-16e-instruct,  cerebras/gpt-oss-120b,  google-ai-studio/gemini-2.5-flash,  google-ai-studio/gemini-2.5-pro,  grok/grok-4,  groq/llama-3.3-70b-versatile,  groq/llama-3.1-8b-instant,  openai/gpt-5,  openai/gpt-5-mini,  openai/gpt-5-nano,  ,  };
 
   @BuiltValueField(wireName: r'query')
   String get query;
@@ -97,7 +97,7 @@ class _$AutoragConfigAiSearchRequestSerializer implements PrimitiveSerializer<Au
       yield r'model';
       yield serializers.serialize(
         object.model,
-        specifiedType: const FullType(AutoragConfigAiSearchRequestModel),
+        specifiedType: const FullType(ModelEnum),
       );
     }
     yield r'query';
@@ -180,9 +180,9 @@ class _$AutoragConfigAiSearchRequestSerializer implements PrimitiveSerializer<Au
         case r'model':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(AutoragConfigAiSearchRequestModel),
-          ) as AutoragConfigAiSearchRequestModel;
-          result.model.replace(valueDes);
+            specifiedType: const FullType(ModelEnum),
+          ) as ModelEnum;
+          result.model = valueDes;
           break;
         case r'query':
           final valueDes = serializers.deserialize(

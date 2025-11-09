@@ -143,11 +143,11 @@ class ZarazSecretVariableTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'secret')
   static const ZarazSecretVariableTypeEnum secret = _$zarazSecretVariableTypeEnum_secret;
 
-  static Serializer<ZarazSecretVariableTypeEnum> get serializer => _$zarazSecretVariableTypeSerializer;
+  static Serializer<ZarazSecretVariableTypeEnum> get serializer => _$zarazSecretVariableTypeEnumSerializer;
 
   const ZarazSecretVariableTypeEnum._(String name): super(name);
 
-  static BuiltSet<ZarazSecretVariableTypeEnum> get values => _$zarazSecretVariableTypeValues;
-  static ZarazSecretVariableTypeEnum valueOf(String name) => _$zarazSecretVariableTypeValueOf(name);
+  static BuiltSet<ZarazSecretVariableTypeEnum> get values => _$zarazSecretVariableTypeEnumValues;
+  static ZarazSecretVariableTypeEnum valueOf(String name) => _$zarazSecretVariableTypeEnumValueOf(name);
 }
 

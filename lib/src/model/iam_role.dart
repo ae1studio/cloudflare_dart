@@ -3,7 +3,7 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:cloudflare_dart/src/model/iam_role_permissions.dart';
+import 'package:cloudflare_dart/src/model/iam_permissions.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
@@ -31,7 +31,7 @@ abstract class IamRole implements Built<IamRole, IamRoleBuilder> {
   String get name;
 
   @BuiltValueField(wireName: r'permissions')
-  IamRolePermissions get permissions;
+  IamPermissions get permissions;
 
   IamRole._();
 
@@ -74,7 +74,7 @@ class _$IamRoleSerializer implements PrimitiveSerializer<IamRole> {
     yield r'permissions';
     yield serializers.serialize(
       object.permissions,
-      specifiedType: const FullType(IamRolePermissions),
+      specifiedType: const FullType(IamPermissions),
     );
   }
 
@@ -123,8 +123,8 @@ class _$IamRoleSerializer implements PrimitiveSerializer<IamRole> {
         case r'permissions':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(IamRolePermissions),
-          ) as IamRolePermissions;
+            specifiedType: const FullType(IamPermissions),
+          ) as IamPermissions;
           result.permissions.replace(valueDes);
           break;
         default:

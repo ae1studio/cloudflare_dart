@@ -9,11 +9,11 @@ import 'package:cloudflare_dart/api.dart';
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **aud** | **String** | Audience tag. | [optional] 
-**createdAt** | [**AccessCreatedAt**](AccessCreatedAt.md) |  | [optional] 
+**createdAt** | [**JsonObject**](JsonObject.md) |  | [optional] 
 **id** | **String** | UUID. | [optional] 
-**updatedAt** | [**AccessUpdatedAt**](AccessUpdatedAt.md) |  | [optional] 
+**updatedAt** | [**JsonObject**](JsonObject.md) |  | [optional] 
 **name** | **String** | The name of the application. | [optional] 
-**type** | [**AccessInfraPropsAllOfType**](AccessInfraPropsAllOfType.md) |  | 
+**type** | [**AccessType**](AccessType.md) |  | 
 **targetCriteria** | [**BuiltList&lt;AccessTargetCriteriaInfraApp&gt;**](AccessTargetCriteriaInfraApp.md) |  | 
 **policies** | [**BuiltList&lt;AccessInfraPolicyResp&gt;**](AccessInfraPolicyResp.md) |  | [optional] 
 

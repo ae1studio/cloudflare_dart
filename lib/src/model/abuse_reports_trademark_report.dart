@@ -354,12 +354,12 @@ class AbuseReportsTrademarkReportActEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'abuse_trademark')
   static const AbuseReportsTrademarkReportActEnum abuseTrademark = _$abuseReportsTrademarkReportActEnum_abuseTrademark;
 
-  static Serializer<AbuseReportsTrademarkReportActEnum> get serializer => _$abuseReportsTrademarkReportActSerializer;
+  static Serializer<AbuseReportsTrademarkReportActEnum> get serializer => _$abuseReportsTrademarkReportActEnumSerializer;
 
   const AbuseReportsTrademarkReportActEnum._(String name): super(name);
 
-  static BuiltSet<AbuseReportsTrademarkReportActEnum> get values => _$abuseReportsTrademarkReportActValues;
-  static AbuseReportsTrademarkReportActEnum valueOf(String name) => _$abuseReportsTrademarkReportActValueOf(name);
+  static BuiltSet<AbuseReportsTrademarkReportActEnum> get values => _$abuseReportsTrademarkReportActEnumValues;
+  static AbuseReportsTrademarkReportActEnum valueOf(String name) => _$abuseReportsTrademarkReportActEnumValueOf(name);
 }
 
 class AbuseReportsTrademarkReportHostNotificationEnum extends EnumClass {
@@ -368,12 +368,12 @@ class AbuseReportsTrademarkReportHostNotificationEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'send')
   static const AbuseReportsTrademarkReportHostNotificationEnum send = _$abuseReportsTrademarkReportHostNotificationEnum_send;
 
-  static Serializer<AbuseReportsTrademarkReportHostNotificationEnum> get serializer => _$abuseReportsTrademarkReportHostNotificationSerializer;
+  static Serializer<AbuseReportsTrademarkReportHostNotificationEnum> get serializer => _$abuseReportsTrademarkReportHostNotificationEnumSerializer;
 
   const AbuseReportsTrademarkReportHostNotificationEnum._(String name): super(name);
 
-  static BuiltSet<AbuseReportsTrademarkReportHostNotificationEnum> get values => _$abuseReportsTrademarkReportHostNotificationValues;
-  static AbuseReportsTrademarkReportHostNotificationEnum valueOf(String name) => _$abuseReportsTrademarkReportHostNotificationValueOf(name);
+  static BuiltSet<AbuseReportsTrademarkReportHostNotificationEnum> get values => _$abuseReportsTrademarkReportHostNotificationEnumValues;
+  static AbuseReportsTrademarkReportHostNotificationEnum valueOf(String name) => _$abuseReportsTrademarkReportHostNotificationEnumValueOf(name);
 }
 
 class AbuseReportsTrademarkReportOwnerNotificationEnum extends EnumClass {
@@ -382,11 +382,11 @@ class AbuseReportsTrademarkReportOwnerNotificationEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'send')
   static const AbuseReportsTrademarkReportOwnerNotificationEnum send = _$abuseReportsTrademarkReportOwnerNotificationEnum_send;
 
-  static Serializer<AbuseReportsTrademarkReportOwnerNotificationEnum> get serializer => _$abuseReportsTrademarkReportOwnerNotificationSerializer;
+  static Serializer<AbuseReportsTrademarkReportOwnerNotificationEnum> get serializer => _$abuseReportsTrademarkReportOwnerNotificationEnumSerializer;
 
   const AbuseReportsTrademarkReportOwnerNotificationEnum._(String name): super(name);
 
-  static BuiltSet<AbuseReportsTrademarkReportOwnerNotificationEnum> get values => _$abuseReportsTrademarkReportOwnerNotificationValues;
-  static AbuseReportsTrademarkReportOwnerNotificationEnum valueOf(String name) => _$abuseReportsTrademarkReportOwnerNotificationValueOf(name);
+  static BuiltSet<AbuseReportsTrademarkReportOwnerNotificationEnum> get values => _$abuseReportsTrademarkReportOwnerNotificationEnumValues;
+  static AbuseReportsTrademarkReportOwnerNotificationEnum valueOf(String name) => _$abuseReportsTrademarkReportOwnerNotificationEnumValueOf(name);
 }
 

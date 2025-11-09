@@ -143,11 +143,11 @@ class CacheRulesOriginPostQuantumEncryptionResponseValueResultIdEnum extends Enu
   @BuiltValueEnumConst(wireName: r'origin_pqe')
   static const CacheRulesOriginPostQuantumEncryptionResponseValueResultIdEnum originPqe = _$cacheRulesOriginPostQuantumEncryptionResponseValueResultIdEnum_originPqe;
 
-  static Serializer<CacheRulesOriginPostQuantumEncryptionResponseValueResultIdEnum> get serializer => _$cacheRulesOriginPostQuantumEncryptionResponseValueResultIdSerializer;
+  static Serializer<CacheRulesOriginPostQuantumEncryptionResponseValueResultIdEnum> get serializer => _$cacheRulesOriginPostQuantumEncryptionResponseValueResultIdEnumSerializer;
 
   const CacheRulesOriginPostQuantumEncryptionResponseValueResultIdEnum._(String name): super(name);
 
-  static BuiltSet<CacheRulesOriginPostQuantumEncryptionResponseValueResultIdEnum> get values => _$cacheRulesOriginPostQuantumEncryptionResponseValueResultIdValues;
-  static CacheRulesOriginPostQuantumEncryptionResponseValueResultIdEnum valueOf(String name) => _$cacheRulesOriginPostQuantumEncryptionResponseValueResultIdValueOf(name);
+  static BuiltSet<CacheRulesOriginPostQuantumEncryptionResponseValueResultIdEnum> get values => _$cacheRulesOriginPostQuantumEncryptionResponseValueResultIdEnumValues;
+  static CacheRulesOriginPostQuantumEncryptionResponseValueResultIdEnum valueOf(String name) => _$cacheRulesOriginPostQuantumEncryptionResponseValueResultIdEnumValueOf(name);
 }
 

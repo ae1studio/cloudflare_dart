@@ -156,11 +156,11 @@ class ZonesAlwaysOnlineIdEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'always_online')
   static const ZonesAlwaysOnlineIdEnum alwaysOnline = _$zonesAlwaysOnlineIdEnum_alwaysOnline;
 
-  static Serializer<ZonesAlwaysOnlineIdEnum> get serializer => _$zonesAlwaysOnlineIdSerializer;
+  static Serializer<ZonesAlwaysOnlineIdEnum> get serializer => _$zonesAlwaysOnlineIdEnumSerializer;
 
   const ZonesAlwaysOnlineIdEnum._(String name): super(name);
 
-  static BuiltSet<ZonesAlwaysOnlineIdEnum> get values => _$zonesAlwaysOnlineIdValues;
-  static ZonesAlwaysOnlineIdEnum valueOf(String name) => _$zonesAlwaysOnlineIdValueOf(name);
+  static BuiltSet<ZonesAlwaysOnlineIdEnum> get values => _$zonesAlwaysOnlineIdEnumValues;
+  static ZonesAlwaysOnlineIdEnum valueOf(String name) => _$zonesAlwaysOnlineIdEnumValueOf(name);
 }
 

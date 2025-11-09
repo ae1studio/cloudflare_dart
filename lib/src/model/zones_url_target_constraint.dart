@@ -23,7 +23,7 @@ abstract class ZonesUrlTargetConstraint implements ZonesStringConstraint, Built<
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(ZonesUrlTargetConstraintBuilder b) => b
-      ..operator_ = const ZonesStringConstraintOperator_Enum._('contains');
+      ..operator_ = ZonesStringConstraintOperator_Enum.valueOf('contains');
 
   @BuiltValueSerializer(custom: true)
   static Serializer<ZonesUrlTargetConstraint> get serializer => _$ZonesUrlTargetConstraintSerializer();
@@ -135,11 +135,11 @@ class ZonesUrlTargetConstraintOperator_Enum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'not_contain')
   static const ZonesUrlTargetConstraintOperator_Enum notContain = _$zonesUrlTargetConstraintOperatorEnum_notContain;
 
-  static Serializer<ZonesUrlTargetConstraintOperator_Enum> get serializer => _$zonesUrlTargetConstraintOperatorSerializer;
+  static Serializer<ZonesUrlTargetConstraintOperator_Enum> get serializer => _$zonesUrlTargetConstraintOperatorEnumSerializer;
 
   const ZonesUrlTargetConstraintOperator_Enum._(String name): super(name);
 
-  static BuiltSet<ZonesUrlTargetConstraintOperator_Enum> get values => _$zonesUrlTargetConstraintOperatorValues;
-  static ZonesUrlTargetConstraintOperator_Enum valueOf(String name) => _$zonesUrlTargetConstraintOperatorValueOf(name);
+  static BuiltSet<ZonesUrlTargetConstraintOperator_Enum> get values => _$zonesUrlTargetConstraintOperatorEnumValues;
+  static ZonesUrlTargetConstraintOperator_Enum valueOf(String name) => _$zonesUrlTargetConstraintOperatorEnumValueOf(name);
 }
 

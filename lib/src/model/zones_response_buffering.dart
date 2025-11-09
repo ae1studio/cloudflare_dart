@@ -137,12 +137,12 @@ class ZonesResponseBufferingIdEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'response_buffering')
   static const ZonesResponseBufferingIdEnum responseBuffering = _$zonesResponseBufferingIdEnum_responseBuffering;
 
-  static Serializer<ZonesResponseBufferingIdEnum> get serializer => _$zonesResponseBufferingIdSerializer;
+  static Serializer<ZonesResponseBufferingIdEnum> get serializer => _$zonesResponseBufferingIdEnumSerializer;
 
   const ZonesResponseBufferingIdEnum._(String name): super(name);
 
-  static BuiltSet<ZonesResponseBufferingIdEnum> get values => _$zonesResponseBufferingIdValues;
-  static ZonesResponseBufferingIdEnum valueOf(String name) => _$zonesResponseBufferingIdValueOf(name);
+  static BuiltSet<ZonesResponseBufferingIdEnum> get values => _$zonesResponseBufferingIdEnumValues;
+  static ZonesResponseBufferingIdEnum valueOf(String name) => _$zonesResponseBufferingIdEnumValueOf(name);
 }
 
 @Deprecated('ZonesResponseBufferingValueEnum has been deprecated')
@@ -155,11 +155,11 @@ class ZonesResponseBufferingValueEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'off')
   static const ZonesResponseBufferingValueEnum off = _$zonesResponseBufferingValueEnum_off;
 
-  static Serializer<ZonesResponseBufferingValueEnum> get serializer => _$zonesResponseBufferingValueSerializer;
+  static Serializer<ZonesResponseBufferingValueEnum> get serializer => _$zonesResponseBufferingValueEnumSerializer;
 
   const ZonesResponseBufferingValueEnum._(String name): super(name);
 
-  static BuiltSet<ZonesResponseBufferingValueEnum> get values => _$zonesResponseBufferingValueValues;
-  static ZonesResponseBufferingValueEnum valueOf(String name) => _$zonesResponseBufferingValueValueOf(name);
+  static BuiltSet<ZonesResponseBufferingValueEnum> get values => _$zonesResponseBufferingValueEnumValues;
+  static ZonesResponseBufferingValueEnum valueOf(String name) => _$zonesResponseBufferingValueEnumValueOf(name);
 }
 

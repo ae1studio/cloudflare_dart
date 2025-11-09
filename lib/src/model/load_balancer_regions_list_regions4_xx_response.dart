@@ -149,11 +149,11 @@ class _$LoadBalancerRegionsListRegions4XXResponseSerializer implements Primitive
 class LoadBalancerRegionsListRegions4XXResponseResultEnum extends EnumClass {
 
 
-  static Serializer<LoadBalancerRegionsListRegions4XXResponseResultEnum> get serializer => _$loadBalancerRegionsListRegions4XXResponseResultSerializer;
+  static Serializer<LoadBalancerRegionsListRegions4XXResponseResultEnum> get serializer => _$loadBalancerRegionsListRegions4XXResponseResultEnumSerializer;
 
   const LoadBalancerRegionsListRegions4XXResponseResultEnum._(String name): super(name);
 
-  static BuiltSet<LoadBalancerRegionsListRegions4XXResponseResultEnum> get values => _$loadBalancerRegionsListRegions4XXResponseResultValues;
-  static LoadBalancerRegionsListRegions4XXResponseResultEnum valueOf(String name) => _$loadBalancerRegionsListRegions4XXResponseResultValueOf(name);
+  static BuiltSet<LoadBalancerRegionsListRegions4XXResponseResultEnum> get values => _$loadBalancerRegionsListRegions4XXResponseResultEnumValues;
+  static LoadBalancerRegionsListRegions4XXResponseResultEnum valueOf(String name) => _$loadBalancerRegionsListRegions4XXResponseResultEnumValueOf(name);
 }
 

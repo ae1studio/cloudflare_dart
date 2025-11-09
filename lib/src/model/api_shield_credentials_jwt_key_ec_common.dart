@@ -180,11 +180,11 @@ class ApiShieldCredentialsJWTKeyECCommonKtyEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'EC')
   static const ApiShieldCredentialsJWTKeyECCommonKtyEnum EC = _$apiShieldCredentialsJWTKeyECCommonKtyEnum_EC;
 
-  static Serializer<ApiShieldCredentialsJWTKeyECCommonKtyEnum> get serializer => _$apiShieldCredentialsJWTKeyECCommonKtySerializer;
+  static Serializer<ApiShieldCredentialsJWTKeyECCommonKtyEnum> get serializer => _$apiShieldCredentialsJWTKeyECCommonKtyEnumSerializer;
 
   const ApiShieldCredentialsJWTKeyECCommonKtyEnum._(String name): super(name);
 
-  static BuiltSet<ApiShieldCredentialsJWTKeyECCommonKtyEnum> get values => _$apiShieldCredentialsJWTKeyECCommonKtyValues;
-  static ApiShieldCredentialsJWTKeyECCommonKtyEnum valueOf(String name) => _$apiShieldCredentialsJWTKeyECCommonKtyValueOf(name);
+  static BuiltSet<ApiShieldCredentialsJWTKeyECCommonKtyEnum> get values => _$apiShieldCredentialsJWTKeyECCommonKtyEnumValues;
+  static ApiShieldCredentialsJWTKeyECCommonKtyEnum valueOf(String name) => _$apiShieldCredentialsJWTKeyECCommonKtyEnumValueOf(name);
 }
 

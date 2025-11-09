@@ -145,11 +145,11 @@ class _$ResourceSharingApiResponseCommonFailureSerializer implements PrimitiveSe
 class ResourceSharingApiResponseCommonFailureResultEnum extends EnumClass {
 
 
-  static Serializer<ResourceSharingApiResponseCommonFailureResultEnum> get serializer => _$resourceSharingApiResponseCommonFailureResultSerializer;
+  static Serializer<ResourceSharingApiResponseCommonFailureResultEnum> get serializer => _$resourceSharingApiResponseCommonFailureResultEnumSerializer;
 
   const ResourceSharingApiResponseCommonFailureResultEnum._(String name): super(name);
 
-  static BuiltSet<ResourceSharingApiResponseCommonFailureResultEnum> get values => _$resourceSharingApiResponseCommonFailureResultValues;
-  static ResourceSharingApiResponseCommonFailureResultEnum valueOf(String name) => _$resourceSharingApiResponseCommonFailureResultValueOf(name);
+  static BuiltSet<ResourceSharingApiResponseCommonFailureResultEnum> get values => _$resourceSharingApiResponseCommonFailureResultEnumValues;
+  static ResourceSharingApiResponseCommonFailureResultEnum valueOf(String name) => _$resourceSharingApiResponseCommonFailureResultEnumValueOf(name);
 }
 

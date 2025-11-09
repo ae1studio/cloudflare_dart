@@ -206,11 +206,11 @@ class AccessSchemasFacebookTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'yandex')
   static const AccessSchemasFacebookTypeEnum yandex = _$accessSchemasFacebookTypeEnum_yandex;
 
-  static Serializer<AccessSchemasFacebookTypeEnum> get serializer => _$accessSchemasFacebookTypeSerializer;
+  static Serializer<AccessSchemasFacebookTypeEnum> get serializer => _$accessSchemasFacebookTypeEnumSerializer;
 
   const AccessSchemasFacebookTypeEnum._(String name): super(name);
 
-  static BuiltSet<AccessSchemasFacebookTypeEnum> get values => _$accessSchemasFacebookTypeValues;
-  static AccessSchemasFacebookTypeEnum valueOf(String name) => _$accessSchemasFacebookTypeValueOf(name);
+  static BuiltSet<AccessSchemasFacebookTypeEnum> get values => _$accessSchemasFacebookTypeEnumValues;
+  static AccessSchemasFacebookTypeEnum valueOf(String name) => _$accessSchemasFacebookTypeEnumValueOf(name);
 }
 

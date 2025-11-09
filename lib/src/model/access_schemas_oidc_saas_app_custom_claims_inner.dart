@@ -181,11 +181,11 @@ class AccessSchemasOidcSaasAppCustomClaimsInnerScopeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'openid')
   static const AccessSchemasOidcSaasAppCustomClaimsInnerScopeEnum openid = _$accessSchemasOidcSaasAppCustomClaimsInnerScopeEnum_openid;
 
-  static Serializer<AccessSchemasOidcSaasAppCustomClaimsInnerScopeEnum> get serializer => _$accessSchemasOidcSaasAppCustomClaimsInnerScopeSerializer;
+  static Serializer<AccessSchemasOidcSaasAppCustomClaimsInnerScopeEnum> get serializer => _$accessSchemasOidcSaasAppCustomClaimsInnerScopeEnumSerializer;
 
   const AccessSchemasOidcSaasAppCustomClaimsInnerScopeEnum._(String name): super(name);
 
-  static BuiltSet<AccessSchemasOidcSaasAppCustomClaimsInnerScopeEnum> get values => _$accessSchemasOidcSaasAppCustomClaimsInnerScopeValues;
-  static AccessSchemasOidcSaasAppCustomClaimsInnerScopeEnum valueOf(String name) => _$accessSchemasOidcSaasAppCustomClaimsInnerScopeValueOf(name);
+  static BuiltSet<AccessSchemasOidcSaasAppCustomClaimsInnerScopeEnum> get values => _$accessSchemasOidcSaasAppCustomClaimsInnerScopeEnumValues;
+  static AccessSchemasOidcSaasAppCustomClaimsInnerScopeEnum valueOf(String name) => _$accessSchemasOidcSaasAppCustomClaimsInnerScopeEnumValueOf(name);
 }
 

@@ -149,11 +149,11 @@ class _$AccountLoadBalancerPoolsCreatePool4XXResponseSerializer implements Primi
 class AccountLoadBalancerPoolsCreatePool4XXResponseResultEnum extends EnumClass {
 
 
-  static Serializer<AccountLoadBalancerPoolsCreatePool4XXResponseResultEnum> get serializer => _$accountLoadBalancerPoolsCreatePool4XXResponseResultSerializer;
+  static Serializer<AccountLoadBalancerPoolsCreatePool4XXResponseResultEnum> get serializer => _$accountLoadBalancerPoolsCreatePool4XXResponseResultEnumSerializer;
 
   const AccountLoadBalancerPoolsCreatePool4XXResponseResultEnum._(String name): super(name);
 
-  static BuiltSet<AccountLoadBalancerPoolsCreatePool4XXResponseResultEnum> get values => _$accountLoadBalancerPoolsCreatePool4XXResponseResultValues;
-  static AccountLoadBalancerPoolsCreatePool4XXResponseResultEnum valueOf(String name) => _$accountLoadBalancerPoolsCreatePool4XXResponseResultValueOf(name);
+  static BuiltSet<AccountLoadBalancerPoolsCreatePool4XXResponseResultEnum> get values => _$accountLoadBalancerPoolsCreatePool4XXResponseResultEnumValues;
+  static AccountLoadBalancerPoolsCreatePool4XXResponseResultEnum valueOf(String name) => _$accountLoadBalancerPoolsCreatePool4XXResponseResultEnumValueOf(name);
 }
 

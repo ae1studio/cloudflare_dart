@@ -128,11 +128,11 @@ class WorDescribeWorkflowInstance200ResponseResultStepsInnerAnyOf2TypeEnum exten
   @BuiltValueEnumConst(wireName: r'termination')
   static const WorDescribeWorkflowInstance200ResponseResultStepsInnerAnyOf2TypeEnum termination = _$worDescribeWorkflowInstance200ResponseResultStepsInnerAnyOf2TypeEnum_termination;
 
-  static Serializer<WorDescribeWorkflowInstance200ResponseResultStepsInnerAnyOf2TypeEnum> get serializer => _$worDescribeWorkflowInstance200ResponseResultStepsInnerAnyOf2TypeSerializer;
+  static Serializer<WorDescribeWorkflowInstance200ResponseResultStepsInnerAnyOf2TypeEnum> get serializer => _$worDescribeWorkflowInstance200ResponseResultStepsInnerAnyOf2TypeEnumSerializer;
 
   const WorDescribeWorkflowInstance200ResponseResultStepsInnerAnyOf2TypeEnum._(String name): super(name);
 
-  static BuiltSet<WorDescribeWorkflowInstance200ResponseResultStepsInnerAnyOf2TypeEnum> get values => _$worDescribeWorkflowInstance200ResponseResultStepsInnerAnyOf2TypeValues;
-  static WorDescribeWorkflowInstance200ResponseResultStepsInnerAnyOf2TypeEnum valueOf(String name) => _$worDescribeWorkflowInstance200ResponseResultStepsInnerAnyOf2TypeValueOf(name);
+  static BuiltSet<WorDescribeWorkflowInstance200ResponseResultStepsInnerAnyOf2TypeEnum> get values => _$worDescribeWorkflowInstance200ResponseResultStepsInnerAnyOf2TypeEnumValues;
+  static WorDescribeWorkflowInstance200ResponseResultStepsInnerAnyOf2TypeEnum valueOf(String name) => _$worDescribeWorkflowInstance200ResponseResultStepsInnerAnyOf2TypeEnumValueOf(name);
 }
 

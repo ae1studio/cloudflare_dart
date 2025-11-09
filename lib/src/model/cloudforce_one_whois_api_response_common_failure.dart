@@ -194,11 +194,11 @@ class _$$CloudforceOneWhoisApiResponseCommonFailureSerializer implements Primiti
 class CloudforceOneWhoisApiResponseCommonFailureResultEnum extends EnumClass {
 
 
-  static Serializer<CloudforceOneWhoisApiResponseCommonFailureResultEnum> get serializer => _$cloudforceOneWhoisApiResponseCommonFailureResultSerializer;
+  static Serializer<CloudforceOneWhoisApiResponseCommonFailureResultEnum> get serializer => _$cloudforceOneWhoisApiResponseCommonFailureResultEnumSerializer;
 
   const CloudforceOneWhoisApiResponseCommonFailureResultEnum._(String name): super(name);
 
-  static BuiltSet<CloudforceOneWhoisApiResponseCommonFailureResultEnum> get values => _$cloudforceOneWhoisApiResponseCommonFailureResultValues;
-  static CloudforceOneWhoisApiResponseCommonFailureResultEnum valueOf(String name) => _$cloudforceOneWhoisApiResponseCommonFailureResultValueOf(name);
+  static BuiltSet<CloudforceOneWhoisApiResponseCommonFailureResultEnum> get values => _$cloudforceOneWhoisApiResponseCommonFailureResultEnumValues;
+  static CloudforceOneWhoisApiResponseCommonFailureResultEnum valueOf(String name) => _$cloudforceOneWhoisApiResponseCommonFailureResultEnumValueOf(name);
 }
 

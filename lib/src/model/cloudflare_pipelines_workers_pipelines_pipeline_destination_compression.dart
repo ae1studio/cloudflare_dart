@@ -26,7 +26,7 @@ abstract class CloudflarePipelinesWorkersPipelinesPipelineDestinationCompression
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(CloudflarePipelinesWorkersPipelinesPipelineDestinationCompressionBuilder b) => b
-      ..type = const CloudflarePipelinesWorkersPipelinesPipelineDestinationCompressionTypeEnum._('gzip');
+      ..type = CloudflarePipelinesWorkersPipelinesPipelineDestinationCompressionTypeEnum.valueOf('gzip');
 
   @BuiltValueSerializer(custom: true)
   static Serializer<CloudflarePipelinesWorkersPipelinesPipelineDestinationCompression> get serializer => _$CloudflarePipelinesWorkersPipelinesPipelineDestinationCompressionSerializer();
@@ -120,11 +120,11 @@ class CloudflarePipelinesWorkersPipelinesPipelineDestinationCompressionTypeEnum 
   @BuiltValueEnumConst(wireName: r'deflate')
   static const CloudflarePipelinesWorkersPipelinesPipelineDestinationCompressionTypeEnum deflate = _$cloudflarePipelinesWorkersPipelinesPipelineDestinationCompressionTypeEnum_deflate;
 
-  static Serializer<CloudflarePipelinesWorkersPipelinesPipelineDestinationCompressionTypeEnum> get serializer => _$cloudflarePipelinesWorkersPipelinesPipelineDestinationCompressionTypeSerializer;
+  static Serializer<CloudflarePipelinesWorkersPipelinesPipelineDestinationCompressionTypeEnum> get serializer => _$cloudflarePipelinesWorkersPipelinesPipelineDestinationCompressionTypeEnumSerializer;
 
   const CloudflarePipelinesWorkersPipelinesPipelineDestinationCompressionTypeEnum._(String name): super(name);
 
-  static BuiltSet<CloudflarePipelinesWorkersPipelinesPipelineDestinationCompressionTypeEnum> get values => _$cloudflarePipelinesWorkersPipelinesPipelineDestinationCompressionTypeValues;
-  static CloudflarePipelinesWorkersPipelinesPipelineDestinationCompressionTypeEnum valueOf(String name) => _$cloudflarePipelinesWorkersPipelinesPipelineDestinationCompressionTypeValueOf(name);
+  static BuiltSet<CloudflarePipelinesWorkersPipelinesPipelineDestinationCompressionTypeEnum> get values => _$cloudflarePipelinesWorkersPipelinesPipelineDestinationCompressionTypeEnumValues;
+  static CloudflarePipelinesWorkersPipelinesPipelineDestinationCompressionTypeEnum valueOf(String name) => _$cloudflarePipelinesWorkersPipelinesPipelineDestinationCompressionTypeEnumValueOf(name);
 }
 

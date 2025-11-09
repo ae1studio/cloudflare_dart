@@ -102,7 +102,7 @@ abstract class BrapiPostPdfRequestAllOfPdfOptions implements Built<BrapiPostPdfR
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(BrapiPostPdfRequestAllOfPdfOptionsBuilder b) => b
       ..displayHeaderFooter = false
-      ..format = const BrapiPostPdfRequestAllOfPdfOptionsFormatEnum._('letter')
+      ..format = BrapiPostPdfRequestAllOfPdfOptionsFormatEnum.valueOf('letter')
       ..landscape = false
       ..omitBackground = false
       ..outline = false
@@ -440,11 +440,11 @@ class BrapiPostPdfRequestAllOfPdfOptionsFormatEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'a6')
   static const BrapiPostPdfRequestAllOfPdfOptionsFormatEnum a6 = _$brapiPostPdfRequestAllOfPdfOptionsFormatEnum_a6;
 
-  static Serializer<BrapiPostPdfRequestAllOfPdfOptionsFormatEnum> get serializer => _$brapiPostPdfRequestAllOfPdfOptionsFormatSerializer;
+  static Serializer<BrapiPostPdfRequestAllOfPdfOptionsFormatEnum> get serializer => _$brapiPostPdfRequestAllOfPdfOptionsFormatEnumSerializer;
 
   const BrapiPostPdfRequestAllOfPdfOptionsFormatEnum._(String name): super(name);
 
-  static BuiltSet<BrapiPostPdfRequestAllOfPdfOptionsFormatEnum> get values => _$brapiPostPdfRequestAllOfPdfOptionsFormatValues;
-  static BrapiPostPdfRequestAllOfPdfOptionsFormatEnum valueOf(String name) => _$brapiPostPdfRequestAllOfPdfOptionsFormatValueOf(name);
+  static BuiltSet<BrapiPostPdfRequestAllOfPdfOptionsFormatEnum> get values => _$brapiPostPdfRequestAllOfPdfOptionsFormatEnumValues;
+  static BrapiPostPdfRequestAllOfPdfOptionsFormatEnum valueOf(String name) => _$brapiPostPdfRequestAllOfPdfOptionsFormatEnumValueOf(name);
 }
 

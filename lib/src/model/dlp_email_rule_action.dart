@@ -4,10 +4,8 @@
 
 // ignore_for_file: unused_element
 import 'package:built_collection/built_collection.dart';
-import 'package:cloudflare_dart/src/model/dlp_email_rule_action_one_of.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
-import 'package:one_of/one_of.dart';
 
 part 'dlp_email_rule_action.g.dart';
 
@@ -18,8 +16,12 @@ part 'dlp_email_rule_action.g.dart';
 /// * [message] 
 @BuiltValue()
 abstract class DlpEmailRuleAction implements Built<DlpEmailRuleAction, DlpEmailRuleActionBuilder> {
-  /// One Of [DlpEmailRuleActionOneOf]
-  OneOf get oneOf;
+  @BuiltValueField(wireName: r'action')
+  DlpEmailRuleActionActionEnum get action;
+  // enum actionEnum {  Block,  };
+
+  @BuiltValueField(wireName: r'message')
+  String? get message;
 
   DlpEmailRuleAction._();
 
@@ -44,6 +46,18 @@ class _$DlpEmailRuleActionSerializer implements PrimitiveSerializer<DlpEmailRule
     DlpEmailRuleAction object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    yield r'action';
+    yield serializers.serialize(
+      object.action,
+      specifiedType: const FullType(DlpEmailRuleActionActionEnum),
+    );
+    if (object.message != null) {
+      yield r'message';
+      yield serializers.serialize(
+        object.message,
+        specifiedType: const FullType.nullable(String),
+      );
+    }
   }
 
   @override
@@ -52,8 +66,42 @@ class _$DlpEmailRuleActionSerializer implements PrimitiveSerializer<DlpEmailRule
     DlpEmailRuleAction object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    final oneOf = object.oneOf;
-    return serializers.serialize(oneOf.value, specifiedType: FullType(oneOf.valueType))!;
+    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+  }
+
+  void _deserializeProperties(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+    required List<Object?> serializedList,
+    required DlpEmailRuleActionBuilder result,
+    required List<Object?> unhandled,
+  }) {
+    for (var i = 0; i < serializedList.length; i += 2) {
+      final key = serializedList[i] as String;
+      final value = serializedList[i + 1];
+      switch (key) {
+        case r'action':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(DlpEmailRuleActionActionEnum),
+          ) as DlpEmailRuleActionActionEnum;
+          result.action = valueDes;
+          break;
+        case r'message':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType.nullable(String),
+          ) as String?;
+          if (valueDes == null) continue;
+          result.message = valueDes;
+          break;
+        default:
+          unhandled.add(key);
+          unhandled.add(value);
+          break;
+      }
+    }
   }
 
   @override
@@ -63,10 +111,16 @@ class _$DlpEmailRuleActionSerializer implements PrimitiveSerializer<DlpEmailRule
     FullType specifiedType = FullType.unspecified,
   }) {
     final result = DlpEmailRuleActionBuilder();
-    Object? oneOfDataSrc;
-    final targetType = const FullType(OneOf, [FullType(DlpEmailRuleActionOneOf), ]);
-    oneOfDataSrc = serialized;
-    result.oneOf = serializers.deserialize(oneOfDataSrc, specifiedType: targetType) as OneOf;
+    final serializedList = (serialized as Iterable<Object?>).toList();
+    final unhandled = <Object?>[];
+    _deserializeProperties(
+      serializers,
+      serialized,
+      specifiedType: specifiedType,
+      serializedList: serializedList,
+      unhandled: unhandled,
+      result: result,
+    );
     return result.build();
   }
 }
@@ -76,11 +130,11 @@ class DlpEmailRuleActionActionEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'Block')
   static const DlpEmailRuleActionActionEnum block = _$dlpEmailRuleActionActionEnum_block;
 
-  static Serializer<DlpEmailRuleActionActionEnum> get serializer => _$dlpEmailRuleActionActionSerializer;
+  static Serializer<DlpEmailRuleActionActionEnum> get serializer => _$dlpEmailRuleActionActionEnumSerializer;
 
   const DlpEmailRuleActionActionEnum._(String name): super(name);
 
-  static BuiltSet<DlpEmailRuleActionActionEnum> get values => _$dlpEmailRuleActionActionValues;
-  static DlpEmailRuleActionActionEnum valueOf(String name) => _$dlpEmailRuleActionActionValueOf(name);
+  static BuiltSet<DlpEmailRuleActionActionEnum> get values => _$dlpEmailRuleActionActionEnumValues;
+  static DlpEmailRuleActionActionEnum valueOf(String name) => _$dlpEmailRuleActionActionEnumValueOf(name);
 }
 

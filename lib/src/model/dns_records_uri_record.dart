@@ -267,11 +267,11 @@ class DnsRecordsURIRecordTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'URI')
   static const DnsRecordsURIRecordTypeEnum URI = _$dnsRecordsURIRecordTypeEnum_URI;
 
-  static Serializer<DnsRecordsURIRecordTypeEnum> get serializer => _$dnsRecordsURIRecordTypeSerializer;
+  static Serializer<DnsRecordsURIRecordTypeEnum> get serializer => _$dnsRecordsURIRecordTypeEnumSerializer;
 
   const DnsRecordsURIRecordTypeEnum._(String name): super(name);
 
-  static BuiltSet<DnsRecordsURIRecordTypeEnum> get values => _$dnsRecordsURIRecordTypeValues;
-  static DnsRecordsURIRecordTypeEnum valueOf(String name) => _$dnsRecordsURIRecordTypeValueOf(name);
+  static BuiltSet<DnsRecordsURIRecordTypeEnum> get values => _$dnsRecordsURIRecordTypeEnumValues;
+  static DnsRecordsURIRecordTypeEnum valueOf(String name) => _$dnsRecordsURIRecordTypeEnumValueOf(name);
 }
 

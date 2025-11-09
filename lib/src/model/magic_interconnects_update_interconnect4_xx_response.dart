@@ -149,11 +149,11 @@ class _$MagicInterconnectsUpdateInterconnect4XXResponseSerializer implements Pri
 class MagicInterconnectsUpdateInterconnect4XXResponseResultEnum extends EnumClass {
 
 
-  static Serializer<MagicInterconnectsUpdateInterconnect4XXResponseResultEnum> get serializer => _$magicInterconnectsUpdateInterconnect4XXResponseResultSerializer;
+  static Serializer<MagicInterconnectsUpdateInterconnect4XXResponseResultEnum> get serializer => _$magicInterconnectsUpdateInterconnect4XXResponseResultEnumSerializer;
 
   const MagicInterconnectsUpdateInterconnect4XXResponseResultEnum._(String name): super(name);
 
-  static BuiltSet<MagicInterconnectsUpdateInterconnect4XXResponseResultEnum> get values => _$magicInterconnectsUpdateInterconnect4XXResponseResultValues;
-  static MagicInterconnectsUpdateInterconnect4XXResponseResultEnum valueOf(String name) => _$magicInterconnectsUpdateInterconnect4XXResponseResultValueOf(name);
+  static BuiltSet<MagicInterconnectsUpdateInterconnect4XXResponseResultEnum> get values => _$magicInterconnectsUpdateInterconnect4XXResponseResultEnumValues;
+  static MagicInterconnectsUpdateInterconnect4XXResponseResultEnum valueOf(String name) => _$magicInterconnectsUpdateInterconnect4XXResponseResultEnumValueOf(name);
 }
 

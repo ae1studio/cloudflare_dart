@@ -147,11 +147,11 @@ class WorkersBindingKindKvNamespaceTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'kv_namespace')
   static const WorkersBindingKindKvNamespaceTypeEnum kvNamespace = _$workersBindingKindKvNamespaceTypeEnum_kvNamespace;
 
-  static Serializer<WorkersBindingKindKvNamespaceTypeEnum> get serializer => _$workersBindingKindKvNamespaceTypeSerializer;
+  static Serializer<WorkersBindingKindKvNamespaceTypeEnum> get serializer => _$workersBindingKindKvNamespaceTypeEnumSerializer;
 
   const WorkersBindingKindKvNamespaceTypeEnum._(String name): super(name);
 
-  static BuiltSet<WorkersBindingKindKvNamespaceTypeEnum> get values => _$workersBindingKindKvNamespaceTypeValues;
-  static WorkersBindingKindKvNamespaceTypeEnum valueOf(String name) => _$workersBindingKindKvNamespaceTypeValueOf(name);
+  static BuiltSet<WorkersBindingKindKvNamespaceTypeEnum> get values => _$workersBindingKindKvNamespaceTypeEnumValues;
+  static WorkersBindingKindKvNamespaceTypeEnum valueOf(String name) => _$workersBindingKindKvNamespaceTypeEnumValueOf(name);
 }
 

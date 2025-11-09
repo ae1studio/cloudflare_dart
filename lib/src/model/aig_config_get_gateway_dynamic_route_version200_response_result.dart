@@ -277,11 +277,11 @@ class AigConfigGetGatewayDynamicRouteVersion200ResponseResultActiveEnum extends 
   @BuiltValueEnumConst(wireName: r'false')
   static const AigConfigGetGatewayDynamicRouteVersion200ResponseResultActiveEnum false_ = _$aigConfigGetGatewayDynamicRouteVersion200ResponseResultActiveEnum_false_;
 
-  static Serializer<AigConfigGetGatewayDynamicRouteVersion200ResponseResultActiveEnum> get serializer => _$aigConfigGetGatewayDynamicRouteVersion200ResponseResultActiveSerializer;
+  static Serializer<AigConfigGetGatewayDynamicRouteVersion200ResponseResultActiveEnum> get serializer => _$aigConfigGetGatewayDynamicRouteVersion200ResponseResultActiveEnumSerializer;
 
   const AigConfigGetGatewayDynamicRouteVersion200ResponseResultActiveEnum._(String name): super(name);
 
-  static BuiltSet<AigConfigGetGatewayDynamicRouteVersion200ResponseResultActiveEnum> get values => _$aigConfigGetGatewayDynamicRouteVersion200ResponseResultActiveValues;
-  static AigConfigGetGatewayDynamicRouteVersion200ResponseResultActiveEnum valueOf(String name) => _$aigConfigGetGatewayDynamicRouteVersion200ResponseResultActiveValueOf(name);
+  static BuiltSet<AigConfigGetGatewayDynamicRouteVersion200ResponseResultActiveEnum> get values => _$aigConfigGetGatewayDynamicRouteVersion200ResponseResultActiveEnumValues;
+  static AigConfigGetGatewayDynamicRouteVersion200ResponseResultActiveEnum valueOf(String name) => _$aigConfigGetGatewayDynamicRouteVersion200ResponseResultActiveEnumValueOf(name);
 }
 

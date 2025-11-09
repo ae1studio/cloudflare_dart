@@ -160,11 +160,11 @@ class _$CacheRulesApiResponseCommonFailureSerializer implements PrimitiveSeriali
 class CacheRulesApiResponseCommonFailureResultEnum extends EnumClass {
 
 
-  static Serializer<CacheRulesApiResponseCommonFailureResultEnum> get serializer => _$cacheRulesApiResponseCommonFailureResultSerializer;
+  static Serializer<CacheRulesApiResponseCommonFailureResultEnum> get serializer => _$cacheRulesApiResponseCommonFailureResultEnumSerializer;
 
   const CacheRulesApiResponseCommonFailureResultEnum._(String name): super(name);
 
-  static BuiltSet<CacheRulesApiResponseCommonFailureResultEnum> get values => _$cacheRulesApiResponseCommonFailureResultValues;
-  static CacheRulesApiResponseCommonFailureResultEnum valueOf(String name) => _$cacheRulesApiResponseCommonFailureResultValueOf(name);
+  static BuiltSet<CacheRulesApiResponseCommonFailureResultEnum> get values => _$cacheRulesApiResponseCommonFailureResultEnumValues;
+  static CacheRulesApiResponseCommonFailureResultEnum valueOf(String name) => _$cacheRulesApiResponseCommonFailureResultEnumValueOf(name);
 }
 

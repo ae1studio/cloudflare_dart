@@ -115,11 +115,11 @@ class MqEventSourceSuperSlurperTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'superSlurper')
   static const MqEventSourceSuperSlurperTypeEnum superSlurper = _$mqEventSourceSuperSlurperTypeEnum_superSlurper;
 
-  static Serializer<MqEventSourceSuperSlurperTypeEnum> get serializer => _$mqEventSourceSuperSlurperTypeSerializer;
+  static Serializer<MqEventSourceSuperSlurperTypeEnum> get serializer => _$mqEventSourceSuperSlurperTypeEnumSerializer;
 
   const MqEventSourceSuperSlurperTypeEnum._(String name): super(name);
 
-  static BuiltSet<MqEventSourceSuperSlurperTypeEnum> get values => _$mqEventSourceSuperSlurperTypeValues;
-  static MqEventSourceSuperSlurperTypeEnum valueOf(String name) => _$mqEventSourceSuperSlurperTypeValueOf(name);
+  static BuiltSet<MqEventSourceSuperSlurperTypeEnum> get values => _$mqEventSourceSuperSlurperTypeEnumValues;
+  static MqEventSourceSuperSlurperTypeEnum valueOf(String name) => _$mqEventSourceSuperSlurperTypeEnumValueOf(name);
 }
 

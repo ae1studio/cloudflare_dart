@@ -148,11 +148,11 @@ class _$DevicesGetPolicyCertificates4XXResponseSerializer implements PrimitiveSe
 class DevicesGetPolicyCertificates4XXResponseResultEnum extends EnumClass {
 
 
-  static Serializer<DevicesGetPolicyCertificates4XXResponseResultEnum> get serializer => _$devicesGetPolicyCertificates4XXResponseResultSerializer;
+  static Serializer<DevicesGetPolicyCertificates4XXResponseResultEnum> get serializer => _$devicesGetPolicyCertificates4XXResponseResultEnumSerializer;
 
   const DevicesGetPolicyCertificates4XXResponseResultEnum._(String name): super(name);
 
-  static BuiltSet<DevicesGetPolicyCertificates4XXResponseResultEnum> get values => _$devicesGetPolicyCertificates4XXResponseResultValues;
-  static DevicesGetPolicyCertificates4XXResponseResultEnum valueOf(String name) => _$devicesGetPolicyCertificates4XXResponseResultValueOf(name);
+  static BuiltSet<DevicesGetPolicyCertificates4XXResponseResultEnum> get values => _$devicesGetPolicyCertificates4XXResponseResultEnumValues;
+  static DevicesGetPolicyCertificates4XXResponseResultEnum valueOf(String name) => _$devicesGetPolicyCertificates4XXResponseResultEnumValueOf(name);
 }
 

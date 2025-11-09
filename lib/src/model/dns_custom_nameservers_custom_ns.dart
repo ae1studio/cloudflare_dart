@@ -192,11 +192,11 @@ class DnsCustomNameserversCustomNSStatusEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'verified')
   static const DnsCustomNameserversCustomNSStatusEnum verified = _$dnsCustomNameserversCustomNSStatusEnum_verified;
 
-  static Serializer<DnsCustomNameserversCustomNSStatusEnum> get serializer => _$dnsCustomNameserversCustomNSStatusSerializer;
+  static Serializer<DnsCustomNameserversCustomNSStatusEnum> get serializer => _$dnsCustomNameserversCustomNSStatusEnumSerializer;
 
   const DnsCustomNameserversCustomNSStatusEnum._(String name): super(name);
 
-  static BuiltSet<DnsCustomNameserversCustomNSStatusEnum> get values => _$dnsCustomNameserversCustomNSStatusValues;
-  static DnsCustomNameserversCustomNSStatusEnum valueOf(String name) => _$dnsCustomNameserversCustomNSStatusValueOf(name);
+  static BuiltSet<DnsCustomNameserversCustomNSStatusEnum> get values => _$dnsCustomNameserversCustomNSStatusEnumValues;
+  static DnsCustomNameserversCustomNSStatusEnum valueOf(String name) => _$dnsCustomNameserversCustomNSStatusEnumValueOf(name);
 }
 

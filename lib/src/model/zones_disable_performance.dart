@@ -115,11 +115,11 @@ class ZonesDisablePerformanceIdEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'disable_performance')
   static const ZonesDisablePerformanceIdEnum disablePerformance = _$zonesDisablePerformanceIdEnum_disablePerformance;
 
-  static Serializer<ZonesDisablePerformanceIdEnum> get serializer => _$zonesDisablePerformanceIdSerializer;
+  static Serializer<ZonesDisablePerformanceIdEnum> get serializer => _$zonesDisablePerformanceIdEnumSerializer;
 
   const ZonesDisablePerformanceIdEnum._(String name): super(name);
 
-  static BuiltSet<ZonesDisablePerformanceIdEnum> get values => _$zonesDisablePerformanceIdValues;
-  static ZonesDisablePerformanceIdEnum valueOf(String name) => _$zonesDisablePerformanceIdValueOf(name);
+  static BuiltSet<ZonesDisablePerformanceIdEnum> get values => _$zonesDisablePerformanceIdEnumValues;
+  static ZonesDisablePerformanceIdEnum valueOf(String name) => _$zonesDisablePerformanceIdEnumValueOf(name);
 }
 

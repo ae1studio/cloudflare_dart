@@ -149,11 +149,11 @@ class _$ZeroTrustGatewayPacfilesCreatePacfile4XXResponseSerializer implements Pr
 class ZeroTrustGatewayPacfilesCreatePacfile4XXResponseResultEnum extends EnumClass {
 
 
-  static Serializer<ZeroTrustGatewayPacfilesCreatePacfile4XXResponseResultEnum> get serializer => _$zeroTrustGatewayPacfilesCreatePacfile4XXResponseResultSerializer;
+  static Serializer<ZeroTrustGatewayPacfilesCreatePacfile4XXResponseResultEnum> get serializer => _$zeroTrustGatewayPacfilesCreatePacfile4XXResponseResultEnumSerializer;
 
   const ZeroTrustGatewayPacfilesCreatePacfile4XXResponseResultEnum._(String name): super(name);
 
-  static BuiltSet<ZeroTrustGatewayPacfilesCreatePacfile4XXResponseResultEnum> get values => _$zeroTrustGatewayPacfilesCreatePacfile4XXResponseResultValues;
-  static ZeroTrustGatewayPacfilesCreatePacfile4XXResponseResultEnum valueOf(String name) => _$zeroTrustGatewayPacfilesCreatePacfile4XXResponseResultValueOf(name);
+  static BuiltSet<ZeroTrustGatewayPacfilesCreatePacfile4XXResponseResultEnum> get values => _$zeroTrustGatewayPacfilesCreatePacfile4XXResponseResultEnumValues;
+  static ZeroTrustGatewayPacfilesCreatePacfile4XXResponseResultEnum valueOf(String name) => _$zeroTrustGatewayPacfilesCreatePacfile4XXResponseResultEnumValueOf(name);
 }
 

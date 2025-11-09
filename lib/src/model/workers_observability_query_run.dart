@@ -316,11 +316,11 @@ class WorkersObservabilityQueryRunStatusEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'COMPLETED')
   static const WorkersObservabilityQueryRunStatusEnum COMPLETED = _$workersObservabilityQueryRunStatusEnum_COMPLETED;
 
-  static Serializer<WorkersObservabilityQueryRunStatusEnum> get serializer => _$workersObservabilityQueryRunStatusSerializer;
+  static Serializer<WorkersObservabilityQueryRunStatusEnum> get serializer => _$workersObservabilityQueryRunStatusEnumSerializer;
 
   const WorkersObservabilityQueryRunStatusEnum._(String name): super(name);
 
-  static BuiltSet<WorkersObservabilityQueryRunStatusEnum> get values => _$workersObservabilityQueryRunStatusValues;
-  static WorkersObservabilityQueryRunStatusEnum valueOf(String name) => _$workersObservabilityQueryRunStatusValueOf(name);
+  static BuiltSet<WorkersObservabilityQueryRunStatusEnum> get values => _$workersObservabilityQueryRunStatusEnumValues;
+  static WorkersObservabilityQueryRunStatusEnum valueOf(String name) => _$workersObservabilityQueryRunStatusEnumValueOf(name);
 }
 

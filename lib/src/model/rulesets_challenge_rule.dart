@@ -21,7 +21,7 @@ part 'rulesets_challenge_rule.g.dart';
 /// * [actionParameters] - The parameters configuring the rule's action.
 /// * [categories] - The categories of the rule.
 /// * [description] 
-/// * [enabled] 
+/// * [enabled] - Whether the rule should be executed.
 /// * [exposedCredentialCheck] 
 /// * [expression] - The expression defining which traffic will match the rule.
 /// * [id] - The unique ID of the rule.
@@ -39,6 +39,7 @@ abstract class RulesetsChallengeRule implements RulesetsRule, Built<RulesetsChal
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(RulesetsChallengeRuleBuilder b) => b
       ..description = ''
+      ..enabled = true
       ..actionParameters = {};
 
   @BuiltValueSerializer(custom: true)
@@ -292,11 +293,11 @@ class RulesetsChallengeRuleActionEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'challenge')
   static const RulesetsChallengeRuleActionEnum challenge = _$rulesetsChallengeRuleActionEnum_challenge;
 
-  static Serializer<RulesetsChallengeRuleActionEnum> get serializer => _$rulesetsChallengeRuleActionSerializer;
+  static Serializer<RulesetsChallengeRuleActionEnum> get serializer => _$rulesetsChallengeRuleActionEnumSerializer;
 
   const RulesetsChallengeRuleActionEnum._(String name): super(name);
 
-  static BuiltSet<RulesetsChallengeRuleActionEnum> get values => _$rulesetsChallengeRuleActionValues;
-  static RulesetsChallengeRuleActionEnum valueOf(String name) => _$rulesetsChallengeRuleActionValueOf(name);
+  static BuiltSet<RulesetsChallengeRuleActionEnum> get values => _$rulesetsChallengeRuleActionEnumValues;
+  static RulesetsChallengeRuleActionEnum valueOf(String name) => _$rulesetsChallengeRuleActionEnumValueOf(name);
 }
 

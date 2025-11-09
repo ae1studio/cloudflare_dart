@@ -169,11 +169,11 @@ class S3SourceResponseSchemaVendorEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r's3')
   static const S3SourceResponseSchemaVendorEnum s3 = _$s3SourceResponseSchemaVendorEnum_s3;
 
-  static Serializer<S3SourceResponseSchemaVendorEnum> get serializer => _$s3SourceResponseSchemaVendorSerializer;
+  static Serializer<S3SourceResponseSchemaVendorEnum> get serializer => _$s3SourceResponseSchemaVendorEnumSerializer;
 
   const S3SourceResponseSchemaVendorEnum._(String name): super(name);
 
-  static BuiltSet<S3SourceResponseSchemaVendorEnum> get values => _$s3SourceResponseSchemaVendorValues;
-  static S3SourceResponseSchemaVendorEnum valueOf(String name) => _$s3SourceResponseSchemaVendorValueOf(name);
+  static BuiltSet<S3SourceResponseSchemaVendorEnum> get values => _$s3SourceResponseSchemaVendorEnumValues;
+  static S3SourceResponseSchemaVendorEnum valueOf(String name) => _$s3SourceResponseSchemaVendorEnumValueOf(name);
 }
 

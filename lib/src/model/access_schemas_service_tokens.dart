@@ -3,7 +3,6 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:built_value/json_object.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
@@ -16,7 +15,7 @@ part 'access_schemas_service_tokens.g.dart';
 /// * [createdAt] 
 /// * [duration] - The duration for how long the service token will be valid. Must be in the format `300ms` or `2h45m`. Valid time units are: ns, us (or µs), ms, s, m, h. The default is 1 year in hours (8760h).
 /// * [expiresAt] 
-/// * [id] 
+/// * [id] - The ID of the service token.
 /// * [lastSeenAt] 
 /// * [name] - The name of the service token.
 /// * [updatedAt] 
@@ -36,8 +35,9 @@ abstract class AccessSchemasServiceTokens implements Built<AccessSchemasServiceT
   @BuiltValueField(wireName: r'expires_at')
   DateTime? get expiresAt;
 
+  /// The ID of the service token.
   @BuiltValueField(wireName: r'id')
-  JsonObject? get id;
+  String? get id;
 
   @BuiltValueField(wireName: r'last_seen_at')
   DateTime? get lastSeenAt;
@@ -105,7 +105,7 @@ class _$AccessSchemasServiceTokensSerializer implements PrimitiveSerializer<Acce
       yield r'id';
       yield serializers.serialize(
         object.id,
-        specifiedType: const FullType(JsonObject),
+        specifiedType: const FullType(String),
       );
     }
     if (object.lastSeenAt != null) {
@@ -183,9 +183,9 @@ class _$AccessSchemasServiceTokensSerializer implements PrimitiveSerializer<Acce
         case r'id':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(JsonObject),
-          ) as JsonObject;
-          result.id.replace(valueDes);
+            specifiedType: const FullType(String),
+          ) as String;
+          result.id = valueDes;
           break;
         case r'last_seen_at':
           final valueDes = serializers.deserialize(

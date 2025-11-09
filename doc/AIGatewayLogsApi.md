@@ -275,7 +275,7 @@ final num minTotalTokens = 8.14; // num |
 final num maxTotalTokens = 8.14; // num | 
 final num minDuration = 8.14; // num | 
 final num maxDuration = 8.14; // num | 
-final AigConfigListGatewayLogsFeedbackParameter feedback = ; // AigConfigListGatewayLogsFeedbackParameter | 
+final num feedback = 8.14; // num | 
 final bool success = true; // bool | 
 final bool cached = true; // bool | 
 final String model = model_example; // String | 
@@ -318,7 +318,7 @@ Name | Type | Description  | Notes
  **maxTotalTokens** | **num**|  | [optional] 
  **minDuration** | **num**|  | [optional] 
  **maxDuration** | **num**|  | [optional] 
- **feedback** | [**AigConfigListGatewayLogsFeedbackParameter**](.md)|  | [optional] 
+ **feedback** | **num**|  | [optional] 
  **success** | **bool**|  | [optional] 
  **cached** | **bool**|  | [optional] 
  **model** | **String**|  | [optional] 

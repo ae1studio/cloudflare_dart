@@ -26,7 +26,7 @@ abstract class IpAccessRulesForAZoneDeleteAnIpAccessRuleRequest implements Built
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(IpAccessRulesForAZoneDeleteAnIpAccessRuleRequestBuilder b) => b
-      ..cascade = const IpAccessRulesForAZoneDeleteAnIpAccessRuleRequestCascadeEnum._('none');
+      ..cascade = IpAccessRulesForAZoneDeleteAnIpAccessRuleRequestCascadeEnum.valueOf('none');
 
   @BuiltValueSerializer(custom: true)
   static Serializer<IpAccessRulesForAZoneDeleteAnIpAccessRuleRequest> get serializer => _$IpAccessRulesForAZoneDeleteAnIpAccessRuleRequestSerializer();
@@ -122,11 +122,11 @@ class IpAccessRulesForAZoneDeleteAnIpAccessRuleRequestCascadeEnum extends EnumCl
   @BuiltValueEnumConst(wireName: r'aggressive')
   static const IpAccessRulesForAZoneDeleteAnIpAccessRuleRequestCascadeEnum aggressive = _$ipAccessRulesForAZoneDeleteAnIpAccessRuleRequestCascadeEnum_aggressive;
 
-  static Serializer<IpAccessRulesForAZoneDeleteAnIpAccessRuleRequestCascadeEnum> get serializer => _$ipAccessRulesForAZoneDeleteAnIpAccessRuleRequestCascadeSerializer;
+  static Serializer<IpAccessRulesForAZoneDeleteAnIpAccessRuleRequestCascadeEnum> get serializer => _$ipAccessRulesForAZoneDeleteAnIpAccessRuleRequestCascadeEnumSerializer;
 
   const IpAccessRulesForAZoneDeleteAnIpAccessRuleRequestCascadeEnum._(String name): super(name);
 
-  static BuiltSet<IpAccessRulesForAZoneDeleteAnIpAccessRuleRequestCascadeEnum> get values => _$ipAccessRulesForAZoneDeleteAnIpAccessRuleRequestCascadeValues;
-  static IpAccessRulesForAZoneDeleteAnIpAccessRuleRequestCascadeEnum valueOf(String name) => _$ipAccessRulesForAZoneDeleteAnIpAccessRuleRequestCascadeValueOf(name);
+  static BuiltSet<IpAccessRulesForAZoneDeleteAnIpAccessRuleRequestCascadeEnum> get values => _$ipAccessRulesForAZoneDeleteAnIpAccessRuleRequestCascadeEnumValues;
+  static IpAccessRulesForAZoneDeleteAnIpAccessRuleRequestCascadeEnum valueOf(String name) => _$ipAccessRulesForAZoneDeleteAnIpAccessRuleRequestCascadeEnumValueOf(name);
 }
 

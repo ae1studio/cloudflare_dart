@@ -228,12 +228,12 @@ class CloudflareD1ExportDatabase200ResponseAllOfResultStatusEnum extends EnumCla
   @BuiltValueEnumConst(wireName: r'error')
   static const CloudflareD1ExportDatabase200ResponseAllOfResultStatusEnum error = _$cloudflareD1ExportDatabase200ResponseAllOfResultStatusEnum_error;
 
-  static Serializer<CloudflareD1ExportDatabase200ResponseAllOfResultStatusEnum> get serializer => _$cloudflareD1ExportDatabase200ResponseAllOfResultStatusSerializer;
+  static Serializer<CloudflareD1ExportDatabase200ResponseAllOfResultStatusEnum> get serializer => _$cloudflareD1ExportDatabase200ResponseAllOfResultStatusEnumSerializer;
 
   const CloudflareD1ExportDatabase200ResponseAllOfResultStatusEnum._(String name): super(name);
 
-  static BuiltSet<CloudflareD1ExportDatabase200ResponseAllOfResultStatusEnum> get values => _$cloudflareD1ExportDatabase200ResponseAllOfResultStatusValues;
-  static CloudflareD1ExportDatabase200ResponseAllOfResultStatusEnum valueOf(String name) => _$cloudflareD1ExportDatabase200ResponseAllOfResultStatusValueOf(name);
+  static BuiltSet<CloudflareD1ExportDatabase200ResponseAllOfResultStatusEnum> get values => _$cloudflareD1ExportDatabase200ResponseAllOfResultStatusEnumValues;
+  static CloudflareD1ExportDatabase200ResponseAllOfResultStatusEnum valueOf(String name) => _$cloudflareD1ExportDatabase200ResponseAllOfResultStatusEnumValueOf(name);
 }
 
 class CloudflareD1ExportDatabase200ResponseAllOfResultTypeEnum extends EnumClass {
@@ -241,11 +241,11 @@ class CloudflareD1ExportDatabase200ResponseAllOfResultTypeEnum extends EnumClass
   @BuiltValueEnumConst(wireName: r'export')
   static const CloudflareD1ExportDatabase200ResponseAllOfResultTypeEnum export_ = _$cloudflareD1ExportDatabase200ResponseAllOfResultTypeEnum_export_;
 
-  static Serializer<CloudflareD1ExportDatabase200ResponseAllOfResultTypeEnum> get serializer => _$cloudflareD1ExportDatabase200ResponseAllOfResultTypeSerializer;
+  static Serializer<CloudflareD1ExportDatabase200ResponseAllOfResultTypeEnum> get serializer => _$cloudflareD1ExportDatabase200ResponseAllOfResultTypeEnumSerializer;
 
   const CloudflareD1ExportDatabase200ResponseAllOfResultTypeEnum._(String name): super(name);
 
-  static BuiltSet<CloudflareD1ExportDatabase200ResponseAllOfResultTypeEnum> get values => _$cloudflareD1ExportDatabase200ResponseAllOfResultTypeValues;
-  static CloudflareD1ExportDatabase200ResponseAllOfResultTypeEnum valueOf(String name) => _$cloudflareD1ExportDatabase200ResponseAllOfResultTypeValueOf(name);
+  static BuiltSet<CloudflareD1ExportDatabase200ResponseAllOfResultTypeEnum> get values => _$cloudflareD1ExportDatabase200ResponseAllOfResultTypeEnumValues;
+  static CloudflareD1ExportDatabase200ResponseAllOfResultTypeEnum valueOf(String name) => _$cloudflareD1ExportDatabase200ResponseAllOfResultTypeEnumValueOf(name);
 }
 

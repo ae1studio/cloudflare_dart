@@ -194,11 +194,11 @@ class _$$WafManagedRulesApiResponseCommonFailureSerializer implements PrimitiveS
 class WafManagedRulesApiResponseCommonFailureResultEnum extends EnumClass {
 
 
-  static Serializer<WafManagedRulesApiResponseCommonFailureResultEnum> get serializer => _$wafManagedRulesApiResponseCommonFailureResultSerializer;
+  static Serializer<WafManagedRulesApiResponseCommonFailureResultEnum> get serializer => _$wafManagedRulesApiResponseCommonFailureResultEnumSerializer;
 
   const WafManagedRulesApiResponseCommonFailureResultEnum._(String name): super(name);
 
-  static BuiltSet<WafManagedRulesApiResponseCommonFailureResultEnum> get values => _$wafManagedRulesApiResponseCommonFailureResultValues;
-  static WafManagedRulesApiResponseCommonFailureResultEnum valueOf(String name) => _$wafManagedRulesApiResponseCommonFailureResultValueOf(name);
+  static BuiltSet<WafManagedRulesApiResponseCommonFailureResultEnum> get values => _$wafManagedRulesApiResponseCommonFailureResultEnumValues;
+  static WafManagedRulesApiResponseCommonFailureResultEnum valueOf(String name) => _$wafManagedRulesApiResponseCommonFailureResultEnumValueOf(name);
 }
 

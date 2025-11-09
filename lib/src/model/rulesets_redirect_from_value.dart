@@ -164,11 +164,11 @@ class RulesetsRedirectFromValueStatusCodeEnum extends EnumClass {
   @BuiltValueEnumConst(wireNumber: 308)
   static const RulesetsRedirectFromValueStatusCodeEnum number308 = _$rulesetsRedirectFromValueStatusCodeEnum_number308;
 
-  static Serializer<RulesetsRedirectFromValueStatusCodeEnum> get serializer => _$rulesetsRedirectFromValueStatusCodeSerializer;
+  static Serializer<RulesetsRedirectFromValueStatusCodeEnum> get serializer => _$rulesetsRedirectFromValueStatusCodeEnumSerializer;
 
   const RulesetsRedirectFromValueStatusCodeEnum._(String name): super(name);
 
-  static BuiltSet<RulesetsRedirectFromValueStatusCodeEnum> get values => _$rulesetsRedirectFromValueStatusCodeValues;
-  static RulesetsRedirectFromValueStatusCodeEnum valueOf(String name) => _$rulesetsRedirectFromValueStatusCodeValueOf(name);
+  static BuiltSet<RulesetsRedirectFromValueStatusCodeEnum> get values => _$rulesetsRedirectFromValueStatusCodeEnumValues;
+  static RulesetsRedirectFromValueStatusCodeEnum valueOf(String name) => _$rulesetsRedirectFromValueStatusCodeEnumValueOf(name);
 }
 

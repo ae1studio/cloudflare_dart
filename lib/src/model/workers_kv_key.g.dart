@@ -10,7 +10,7 @@ class _$WorkersKvKey extends WorkersKvKey {
   @override
   final num? expiration;
   @override
-  final WorkersKvListMetadata? metadata;
+  final JsonObject? metadata;
   @override
   final String name;
 
@@ -63,11 +63,9 @@ class WorkersKvKeyBuilder
   num? get expiration => _$this._expiration;
   set expiration(num? expiration) => _$this._expiration = expiration;
 
-  WorkersKvListMetadataBuilder? _metadata;
-  WorkersKvListMetadataBuilder get metadata =>
-      _$this._metadata ??= WorkersKvListMetadataBuilder();
-  set metadata(WorkersKvListMetadataBuilder? metadata) =>
-      _$this._metadata = metadata;
+  JsonObject? _metadata;
+  JsonObject? get metadata => _$this._metadata;
+  set metadata(JsonObject? metadata) => _$this._metadata = metadata;
 
   String? _name;
   String? get name => _$this._name;
@@ -81,7 +79,7 @@ class WorkersKvKeyBuilder
     final $v = _$v;
     if ($v != null) {
       _expiration = $v.expiration;
-      _metadata = $v.metadata?.toBuilder();
+      _metadata = $v.metadata;
       _name = $v.name;
       _$v = null;
     }
@@ -102,26 +100,13 @@ class WorkersKvKeyBuilder
   WorkersKvKey build() => _build();
 
   _$WorkersKvKey _build() {
-    _$WorkersKvKey _$result;
-    try {
-      _$result = _$v ??
-          _$WorkersKvKey._(
-            expiration: expiration,
-            metadata: _metadata?.build(),
-            name: BuiltValueNullFieldError.checkNotNull(
-                name, r'WorkersKvKey', 'name'),
-          );
-    } catch (_) {
-      late String _$failedField;
-      try {
-        _$failedField = 'metadata';
-        _metadata?.build();
-      } catch (e) {
-        throw BuiltValueNestedFieldError(
-            r'WorkersKvKey', _$failedField, e.toString());
-      }
-      rethrow;
-    }
+    final _$result = _$v ??
+        _$WorkersKvKey._(
+          expiration: expiration,
+          metadata: metadata,
+          name: BuiltValueNullFieldError.checkNotNull(
+              name, r'WorkersKvKey', 'name'),
+        );
     replace(_$result);
     return _$result;
   }

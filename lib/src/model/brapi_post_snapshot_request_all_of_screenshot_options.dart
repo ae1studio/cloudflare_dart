@@ -3,7 +3,6 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:cloudflare_dart/src/model/brapi_post_screenshot_request_all_of_screenshot_options_type.dart';
 import 'package:cloudflare_dart/src/model/brapi_post_screenshot_request_all_of_screenshot_options_clip.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
@@ -45,14 +44,16 @@ abstract class BrapiPostSnapshotRequestAllOfScreenshotOptions implements Built<B
   num? get quality;
 
   @BuiltValueField(wireName: r'type')
-  BrapiPostScreenshotRequestAllOfScreenshotOptionsType? get type;
+  TypeEnum? get type;
+  // enum typeEnum {  png,  jpeg,  webp,  };
 
   BrapiPostSnapshotRequestAllOfScreenshotOptions._();
 
   factory BrapiPostSnapshotRequestAllOfScreenshotOptions([void updates(BrapiPostSnapshotRequestAllOfScreenshotOptionsBuilder b)]) = _$BrapiPostSnapshotRequestAllOfScreenshotOptions;
 
   @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(BrapiPostSnapshotRequestAllOfScreenshotOptionsBuilder b) => b;
+  static void _defaults(BrapiPostSnapshotRequestAllOfScreenshotOptionsBuilder b) => b
+      ..type = TypeEnum.valueOf('png');
 
   @BuiltValueSerializer(custom: true)
   static Serializer<BrapiPostSnapshotRequestAllOfScreenshotOptions> get serializer => _$BrapiPostSnapshotRequestAllOfScreenshotOptionsSerializer();
@@ -123,7 +124,7 @@ class _$BrapiPostSnapshotRequestAllOfScreenshotOptionsSerializer implements Prim
       yield r'type';
       yield serializers.serialize(
         object.type,
-        specifiedType: const FullType(BrapiPostScreenshotRequestAllOfScreenshotOptionsType),
+        specifiedType: const FullType(TypeEnum),
       );
     }
   }
@@ -201,9 +202,9 @@ class _$BrapiPostSnapshotRequestAllOfScreenshotOptionsSerializer implements Prim
         case r'type':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(BrapiPostScreenshotRequestAllOfScreenshotOptionsType),
-          ) as BrapiPostScreenshotRequestAllOfScreenshotOptionsType;
-          result.type.replace(valueDes);
+            specifiedType: const FullType(TypeEnum),
+          ) as TypeEnum;
+          result.type = valueDes;
           break;
         default:
           unhandled.add(key);

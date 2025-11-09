@@ -290,11 +290,11 @@ class ResetStreamKey200ResponseDataStatusEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'INVOKED')
   static const ResetStreamKey200ResponseDataStatusEnum INVOKED = _$resetStreamKey200ResponseDataStatusEnum_INVOKED;
 
-  static Serializer<ResetStreamKey200ResponseDataStatusEnum> get serializer => _$resetStreamKey200ResponseDataStatusSerializer;
+  static Serializer<ResetStreamKey200ResponseDataStatusEnum> get serializer => _$resetStreamKey200ResponseDataStatusEnumSerializer;
 
   const ResetStreamKey200ResponseDataStatusEnum._(String name): super(name);
 
-  static BuiltSet<ResetStreamKey200ResponseDataStatusEnum> get values => _$resetStreamKey200ResponseDataStatusValues;
-  static ResetStreamKey200ResponseDataStatusEnum valueOf(String name) => _$resetStreamKey200ResponseDataStatusValueOf(name);
+  static BuiltSet<ResetStreamKey200ResponseDataStatusEnum> get values => _$resetStreamKey200ResponseDataStatusEnumValues;
+  static ResetStreamKey200ResponseDataStatusEnum valueOf(String name) => _$resetStreamKey200ResponseDataStatusEnumValueOf(name);
 }
 

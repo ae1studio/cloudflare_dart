@@ -130,11 +130,11 @@ class MqEventDestinationQueueTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'queues.queue')
   static const MqEventDestinationQueueTypeEnum queuesPeriodQueue = _$mqEventDestinationQueueTypeEnum_queuesPeriodQueue;
 
-  static Serializer<MqEventDestinationQueueTypeEnum> get serializer => _$mqEventDestinationQueueTypeSerializer;
+  static Serializer<MqEventDestinationQueueTypeEnum> get serializer => _$mqEventDestinationQueueTypeEnumSerializer;
 
   const MqEventDestinationQueueTypeEnum._(String name): super(name);
 
-  static BuiltSet<MqEventDestinationQueueTypeEnum> get values => _$mqEventDestinationQueueTypeValues;
-  static MqEventDestinationQueueTypeEnum valueOf(String name) => _$mqEventDestinationQueueTypeValueOf(name);
+  static BuiltSet<MqEventDestinationQueueTypeEnum> get values => _$mqEventDestinationQueueTypeEnumValues;
+  static MqEventDestinationQueueTypeEnum valueOf(String name) => _$mqEventDestinationQueueTypeEnumValueOf(name);
 }
 

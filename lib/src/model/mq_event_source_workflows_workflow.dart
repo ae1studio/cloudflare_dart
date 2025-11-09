@@ -134,11 +134,11 @@ class MqEventSourceWorkflowsWorkflowTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'workflows.workflow')
   static const MqEventSourceWorkflowsWorkflowTypeEnum workflowsPeriodWorkflow = _$mqEventSourceWorkflowsWorkflowTypeEnum_workflowsPeriodWorkflow;
 
-  static Serializer<MqEventSourceWorkflowsWorkflowTypeEnum> get serializer => _$mqEventSourceWorkflowsWorkflowTypeSerializer;
+  static Serializer<MqEventSourceWorkflowsWorkflowTypeEnum> get serializer => _$mqEventSourceWorkflowsWorkflowTypeEnumSerializer;
 
   const MqEventSourceWorkflowsWorkflowTypeEnum._(String name): super(name);
 
-  static BuiltSet<MqEventSourceWorkflowsWorkflowTypeEnum> get values => _$mqEventSourceWorkflowsWorkflowTypeValues;
-  static MqEventSourceWorkflowsWorkflowTypeEnum valueOf(String name) => _$mqEventSourceWorkflowsWorkflowTypeValueOf(name);
+  static BuiltSet<MqEventSourceWorkflowsWorkflowTypeEnum> get values => _$mqEventSourceWorkflowsWorkflowTypeEnumValues;
+  static MqEventSourceWorkflowsWorkflowTypeEnum valueOf(String name) => _$mqEventSourceWorkflowsWorkflowTypeEnumValueOf(name);
 }
 

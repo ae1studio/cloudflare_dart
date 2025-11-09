@@ -161,11 +161,11 @@ class _$R2V4ResponseFailureSerializer implements PrimitiveSerializer<R2V4Respons
 class R2V4ResponseFailureResultEnum extends EnumClass {
 
 
-  static Serializer<R2V4ResponseFailureResultEnum> get serializer => _$r2V4ResponseFailureResultSerializer;
+  static Serializer<R2V4ResponseFailureResultEnum> get serializer => _$r2V4ResponseFailureResultEnumSerializer;
 
   const R2V4ResponseFailureResultEnum._(String name): super(name);
 
-  static BuiltSet<R2V4ResponseFailureResultEnum> get values => _$r2V4ResponseFailureResultValues;
-  static R2V4ResponseFailureResultEnum valueOf(String name) => _$r2V4ResponseFailureResultValueOf(name);
+  static BuiltSet<R2V4ResponseFailureResultEnum> get values => _$r2V4ResponseFailureResultEnumValues;
+  static R2V4ResponseFailureResultEnum valueOf(String name) => _$r2V4ResponseFailureResultEnumValueOf(name);
 }
 

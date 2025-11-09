@@ -251,11 +251,11 @@ class DnsRecordsDnsRecordBatchPostTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'URI')
   static const DnsRecordsDnsRecordBatchPostTypeEnum URI = _$dnsRecordsDnsRecordBatchPostTypeEnum_URI;
 
-  static Serializer<DnsRecordsDnsRecordBatchPostTypeEnum> get serializer => _$dnsRecordsDnsRecordBatchPostTypeSerializer;
+  static Serializer<DnsRecordsDnsRecordBatchPostTypeEnum> get serializer => _$dnsRecordsDnsRecordBatchPostTypeEnumSerializer;
 
   const DnsRecordsDnsRecordBatchPostTypeEnum._(String name): super(name);
 
-  static BuiltSet<DnsRecordsDnsRecordBatchPostTypeEnum> get values => _$dnsRecordsDnsRecordBatchPostTypeValues;
-  static DnsRecordsDnsRecordBatchPostTypeEnum valueOf(String name) => _$dnsRecordsDnsRecordBatchPostTypeValueOf(name);
+  static BuiltSet<DnsRecordsDnsRecordBatchPostTypeEnum> get values => _$dnsRecordsDnsRecordBatchPostTypeEnumValues;
+  static DnsRecordsDnsRecordBatchPostTypeEnum valueOf(String name) => _$dnsRecordsDnsRecordBatchPostTypeEnumValueOf(name);
 }
 

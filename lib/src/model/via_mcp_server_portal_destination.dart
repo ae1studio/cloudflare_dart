@@ -132,11 +132,11 @@ class ViaMCPServerPortalDestinationTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'via_mcp_server_portal')
   static const ViaMCPServerPortalDestinationTypeEnum viaMcpServerPortal = _$viaMCPServerPortalDestinationTypeEnum_viaMcpServerPortal;
 
-  static Serializer<ViaMCPServerPortalDestinationTypeEnum> get serializer => _$viaMCPServerPortalDestinationTypeSerializer;
+  static Serializer<ViaMCPServerPortalDestinationTypeEnum> get serializer => _$viaMCPServerPortalDestinationTypeEnumSerializer;
 
   const ViaMCPServerPortalDestinationTypeEnum._(String name): super(name);
 
-  static BuiltSet<ViaMCPServerPortalDestinationTypeEnum> get values => _$viaMCPServerPortalDestinationTypeValues;
-  static ViaMCPServerPortalDestinationTypeEnum valueOf(String name) => _$viaMCPServerPortalDestinationTypeValueOf(name);
+  static BuiltSet<ViaMCPServerPortalDestinationTypeEnum> get values => _$viaMCPServerPortalDestinationTypeEnumValues;
+  static ViaMCPServerPortalDestinationTypeEnum valueOf(String name) => _$viaMCPServerPortalDestinationTypeEnumValueOf(name);
 }
 

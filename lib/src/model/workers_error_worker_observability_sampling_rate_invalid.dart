@@ -130,11 +130,11 @@ class WorkersErrorWorkerObservabilitySamplingRateInvalidCodeEnum extends EnumCla
   @BuiltValueEnumConst(wireNumber: 100308)
   static const WorkersErrorWorkerObservabilitySamplingRateInvalidCodeEnum number100308 = _$workersErrorWorkerObservabilitySamplingRateInvalidCodeEnum_number100308;
 
-  static Serializer<WorkersErrorWorkerObservabilitySamplingRateInvalidCodeEnum> get serializer => _$workersErrorWorkerObservabilitySamplingRateInvalidCodeSerializer;
+  static Serializer<WorkersErrorWorkerObservabilitySamplingRateInvalidCodeEnum> get serializer => _$workersErrorWorkerObservabilitySamplingRateInvalidCodeEnumSerializer;
 
   const WorkersErrorWorkerObservabilitySamplingRateInvalidCodeEnum._(String name): super(name);
 
-  static BuiltSet<WorkersErrorWorkerObservabilitySamplingRateInvalidCodeEnum> get values => _$workersErrorWorkerObservabilitySamplingRateInvalidCodeValues;
-  static WorkersErrorWorkerObservabilitySamplingRateInvalidCodeEnum valueOf(String name) => _$workersErrorWorkerObservabilitySamplingRateInvalidCodeValueOf(name);
+  static BuiltSet<WorkersErrorWorkerObservabilitySamplingRateInvalidCodeEnum> get values => _$workersErrorWorkerObservabilitySamplingRateInvalidCodeEnumValues;
+  static WorkersErrorWorkerObservabilitySamplingRateInvalidCodeEnum valueOf(String name) => _$workersErrorWorkerObservabilitySamplingRateInvalidCodeEnumValueOf(name);
 }
 

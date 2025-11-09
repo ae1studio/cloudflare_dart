@@ -137,11 +137,11 @@ class ZeroTrustGatewayRuleSettingsResolveDnsInternallyFallbackEnum extends EnumC
   @BuiltValueEnumConst(wireName: r'public_dns')
   static const ZeroTrustGatewayRuleSettingsResolveDnsInternallyFallbackEnum publicDns = _$zeroTrustGatewayRuleSettingsResolveDnsInternallyFallbackEnum_publicDns;
 
-  static Serializer<ZeroTrustGatewayRuleSettingsResolveDnsInternallyFallbackEnum> get serializer => _$zeroTrustGatewayRuleSettingsResolveDnsInternallyFallbackSerializer;
+  static Serializer<ZeroTrustGatewayRuleSettingsResolveDnsInternallyFallbackEnum> get serializer => _$zeroTrustGatewayRuleSettingsResolveDnsInternallyFallbackEnumSerializer;
 
   const ZeroTrustGatewayRuleSettingsResolveDnsInternallyFallbackEnum._(String name): super(name);
 
-  static BuiltSet<ZeroTrustGatewayRuleSettingsResolveDnsInternallyFallbackEnum> get values => _$zeroTrustGatewayRuleSettingsResolveDnsInternallyFallbackValues;
-  static ZeroTrustGatewayRuleSettingsResolveDnsInternallyFallbackEnum valueOf(String name) => _$zeroTrustGatewayRuleSettingsResolveDnsInternallyFallbackValueOf(name);
+  static BuiltSet<ZeroTrustGatewayRuleSettingsResolveDnsInternallyFallbackEnum> get values => _$zeroTrustGatewayRuleSettingsResolveDnsInternallyFallbackEnumValues;
+  static ZeroTrustGatewayRuleSettingsResolveDnsInternallyFallbackEnum valueOf(String name) => _$zeroTrustGatewayRuleSettingsResolveDnsInternallyFallbackEnumValueOf(name);
 }
 

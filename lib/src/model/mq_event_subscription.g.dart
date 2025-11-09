@@ -10,7 +10,7 @@ class _$MqEventSubscription extends MqEventSubscription {
   @override
   final DateTime createdAt;
   @override
-  final MqEventDestination destination;
+  final MqEventDestinationQueue destination;
   @override
   final bool enabled;
   @override
@@ -99,10 +99,10 @@ class MqEventSubscriptionBuilder
   DateTime? get createdAt => _$this._createdAt;
   set createdAt(DateTime? createdAt) => _$this._createdAt = createdAt;
 
-  MqEventDestinationBuilder? _destination;
-  MqEventDestinationBuilder get destination =>
-      _$this._destination ??= MqEventDestinationBuilder();
-  set destination(MqEventDestinationBuilder? destination) =>
+  MqEventDestinationQueueBuilder? _destination;
+  MqEventDestinationQueueBuilder get destination =>
+      _$this._destination ??= MqEventDestinationQueueBuilder();
+  set destination(MqEventDestinationQueueBuilder? destination) =>
       _$this._destination = destination;
 
   bool? _enabled;

@@ -115,11 +115,11 @@ class RealtimekitInteractiveConfigTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'ID3')
   static const RealtimekitInteractiveConfigTypeEnum iD3 = _$realtimekitInteractiveConfigTypeEnum_iD3;
 
-  static Serializer<RealtimekitInteractiveConfigTypeEnum> get serializer => _$realtimekitInteractiveConfigTypeSerializer;
+  static Serializer<RealtimekitInteractiveConfigTypeEnum> get serializer => _$realtimekitInteractiveConfigTypeEnumSerializer;
 
   const RealtimekitInteractiveConfigTypeEnum._(String name): super(name);
 
-  static BuiltSet<RealtimekitInteractiveConfigTypeEnum> get values => _$realtimekitInteractiveConfigTypeValues;
-  static RealtimekitInteractiveConfigTypeEnum valueOf(String name) => _$realtimekitInteractiveConfigTypeValueOf(name);
+  static BuiltSet<RealtimekitInteractiveConfigTypeEnum> get values => _$realtimekitInteractiveConfigTypeEnumValues;
+  static RealtimekitInteractiveConfigTypeEnum valueOf(String name) => _$realtimekitInteractiveConfigTypeEnumValueOf(name);
 }
 

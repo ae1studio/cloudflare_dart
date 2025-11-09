@@ -236,12 +236,12 @@ class AaaAuditLogsV2ActorContextEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'origin_ca_key')
   static const AaaAuditLogsV2ActorContextEnum originCaKey = _$aaaAuditLogsV2ActorContextEnum_originCaKey;
 
-  static Serializer<AaaAuditLogsV2ActorContextEnum> get serializer => _$aaaAuditLogsV2ActorContextSerializer;
+  static Serializer<AaaAuditLogsV2ActorContextEnum> get serializer => _$aaaAuditLogsV2ActorContextEnumSerializer;
 
   const AaaAuditLogsV2ActorContextEnum._(String name): super(name);
 
-  static BuiltSet<AaaAuditLogsV2ActorContextEnum> get values => _$aaaAuditLogsV2ActorContextValues;
-  static AaaAuditLogsV2ActorContextEnum valueOf(String name) => _$aaaAuditLogsV2ActorContextValueOf(name);
+  static BuiltSet<AaaAuditLogsV2ActorContextEnum> get values => _$aaaAuditLogsV2ActorContextEnumValues;
+  static AaaAuditLogsV2ActorContextEnum valueOf(String name) => _$aaaAuditLogsV2ActorContextEnumValueOf(name);
 }
 
 class AaaAuditLogsV2ActorTypeEnum extends EnumClass {
@@ -259,11 +259,11 @@ class AaaAuditLogsV2ActorTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'user')
   static const AaaAuditLogsV2ActorTypeEnum user = _$aaaAuditLogsV2ActorTypeEnum_user;
 
-  static Serializer<AaaAuditLogsV2ActorTypeEnum> get serializer => _$aaaAuditLogsV2ActorTypeSerializer;
+  static Serializer<AaaAuditLogsV2ActorTypeEnum> get serializer => _$aaaAuditLogsV2ActorTypeEnumSerializer;
 
   const AaaAuditLogsV2ActorTypeEnum._(String name): super(name);
 
-  static BuiltSet<AaaAuditLogsV2ActorTypeEnum> get values => _$aaaAuditLogsV2ActorTypeValues;
-  static AaaAuditLogsV2ActorTypeEnum valueOf(String name) => _$aaaAuditLogsV2ActorTypeValueOf(name);
+  static BuiltSet<AaaAuditLogsV2ActorTypeEnum> get values => _$aaaAuditLogsV2ActorTypeEnumValues;
+  static AaaAuditLogsV2ActorTypeEnum valueOf(String name) => _$aaaAuditLogsV2ActorTypeEnumValueOf(name);
 }
 

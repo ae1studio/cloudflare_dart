@@ -337,12 +337,12 @@ class LogpushOutputOptionsOutputTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'csv')
   static const LogpushOutputOptionsOutputTypeEnum csv = _$logpushOutputOptionsOutputTypeEnum_csv;
 
-  static Serializer<LogpushOutputOptionsOutputTypeEnum> get serializer => _$logpushOutputOptionsOutputTypeSerializer;
+  static Serializer<LogpushOutputOptionsOutputTypeEnum> get serializer => _$logpushOutputOptionsOutputTypeEnumSerializer;
 
   const LogpushOutputOptionsOutputTypeEnum._(String name): super(name);
 
-  static BuiltSet<LogpushOutputOptionsOutputTypeEnum> get values => _$logpushOutputOptionsOutputTypeValues;
-  static LogpushOutputOptionsOutputTypeEnum valueOf(String name) => _$logpushOutputOptionsOutputTypeValueOf(name);
+  static BuiltSet<LogpushOutputOptionsOutputTypeEnum> get values => _$logpushOutputOptionsOutputTypeEnumValues;
+  static LogpushOutputOptionsOutputTypeEnum valueOf(String name) => _$logpushOutputOptionsOutputTypeEnumValueOf(name);
 }
 
 class LogpushOutputOptionsTimestampFormatEnum extends EnumClass {
@@ -357,11 +357,11 @@ class LogpushOutputOptionsTimestampFormatEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'rfc3339')
   static const LogpushOutputOptionsTimestampFormatEnum rfc3339 = _$logpushOutputOptionsTimestampFormatEnum_rfc3339;
 
-  static Serializer<LogpushOutputOptionsTimestampFormatEnum> get serializer => _$logpushOutputOptionsTimestampFormatSerializer;
+  static Serializer<LogpushOutputOptionsTimestampFormatEnum> get serializer => _$logpushOutputOptionsTimestampFormatEnumSerializer;
 
   const LogpushOutputOptionsTimestampFormatEnum._(String name): super(name);
 
-  static BuiltSet<LogpushOutputOptionsTimestampFormatEnum> get values => _$logpushOutputOptionsTimestampFormatValues;
-  static LogpushOutputOptionsTimestampFormatEnum valueOf(String name) => _$logpushOutputOptionsTimestampFormatValueOf(name);
+  static BuiltSet<LogpushOutputOptionsTimestampFormatEnum> get values => _$logpushOutputOptionsTimestampFormatEnumValues;
+  static LogpushOutputOptionsTimestampFormatEnum valueOf(String name) => _$logpushOutputOptionsTimestampFormatEnumValueOf(name);
 }
 

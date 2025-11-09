@@ -153,11 +153,11 @@ class TelemetryQueryRequestParametersHavingsInnerOperationEnum extends EnumClass
   @BuiltValueEnumConst(wireName: r'lte')
   static const TelemetryQueryRequestParametersHavingsInnerOperationEnum lte = _$telemetryQueryRequestParametersHavingsInnerOperationEnum_lte;
 
-  static Serializer<TelemetryQueryRequestParametersHavingsInnerOperationEnum> get serializer => _$telemetryQueryRequestParametersHavingsInnerOperationSerializer;
+  static Serializer<TelemetryQueryRequestParametersHavingsInnerOperationEnum> get serializer => _$telemetryQueryRequestParametersHavingsInnerOperationEnumSerializer;
 
   const TelemetryQueryRequestParametersHavingsInnerOperationEnum._(String name): super(name);
 
-  static BuiltSet<TelemetryQueryRequestParametersHavingsInnerOperationEnum> get values => _$telemetryQueryRequestParametersHavingsInnerOperationValues;
-  static TelemetryQueryRequestParametersHavingsInnerOperationEnum valueOf(String name) => _$telemetryQueryRequestParametersHavingsInnerOperationValueOf(name);
+  static BuiltSet<TelemetryQueryRequestParametersHavingsInnerOperationEnum> get values => _$telemetryQueryRequestParametersHavingsInnerOperationEnumValues;
+  static TelemetryQueryRequestParametersHavingsInnerOperationEnum valueOf(String name) => _$telemetryQueryRequestParametersHavingsInnerOperationEnumValueOf(name);
 }
 

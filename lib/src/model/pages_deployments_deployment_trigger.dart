@@ -137,11 +137,11 @@ class PagesDeploymentsDeploymentTriggerTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'ad_hoc')
   static const PagesDeploymentsDeploymentTriggerTypeEnum adHoc = _$pagesDeploymentsDeploymentTriggerTypeEnum_adHoc;
 
-  static Serializer<PagesDeploymentsDeploymentTriggerTypeEnum> get serializer => _$pagesDeploymentsDeploymentTriggerTypeSerializer;
+  static Serializer<PagesDeploymentsDeploymentTriggerTypeEnum> get serializer => _$pagesDeploymentsDeploymentTriggerTypeEnumSerializer;
 
   const PagesDeploymentsDeploymentTriggerTypeEnum._(String name): super(name);
 
-  static BuiltSet<PagesDeploymentsDeploymentTriggerTypeEnum> get values => _$pagesDeploymentsDeploymentTriggerTypeValues;
-  static PagesDeploymentsDeploymentTriggerTypeEnum valueOf(String name) => _$pagesDeploymentsDeploymentTriggerTypeValueOf(name);
+  static BuiltSet<PagesDeploymentsDeploymentTriggerTypeEnum> get values => _$pagesDeploymentsDeploymentTriggerTypeEnumValues;
+  static PagesDeploymentsDeploymentTriggerTypeEnum valueOf(String name) => _$pagesDeploymentsDeploymentTriggerTypeEnumValueOf(name);
 }
 

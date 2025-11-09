@@ -32,7 +32,7 @@ abstract class UrlscannerCreateScanBulkV2RequestInner implements Built<Urlscanne
 
   /// Take multiple screenshots targeting different device types.
   @BuiltValueField(wireName: r'screenshotsResolutions')
-  BuiltList<UrlscannerCreateScanV2RequestScreenshotsResolutionsEnum>? get screenshotsResolutions;
+  BuiltList<UrlscannerCreateScanBulkV2RequestInnerScreenshotsResolutionsEnum>? get screenshotsResolutions;
   // enum screenshotsResolutionsEnum {  desktop,  mobile,  tablet,  };
 
   @BuiltValueField(wireName: r'url')
@@ -49,8 +49,8 @@ abstract class UrlscannerCreateScanBulkV2RequestInner implements Built<Urlscanne
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(UrlscannerCreateScanBulkV2RequestInnerBuilder b) => b
-      ..screenshotsResolutions = ListBuilder()
-      ..visibility = const UrlscannerCreateScanBulkV2RequestInnerVisibilityEnum._('Public');
+      ..screenshotsResolutions = 
+      ..visibility = UrlscannerCreateScanBulkV2RequestInnerVisibilityEnum.valueOf('Public');
 
   @BuiltValueSerializer(custom: true)
   static Serializer<UrlscannerCreateScanBulkV2RequestInner> get serializer => _$UrlscannerCreateScanBulkV2RequestInnerSerializer();
@@ -93,7 +93,7 @@ class _$UrlscannerCreateScanBulkV2RequestInnerSerializer implements PrimitiveSer
       yield r'screenshotsResolutions';
       yield serializers.serialize(
         object.screenshotsResolutions,
-        specifiedType: const FullType(BuiltList, [FullType(UrlscannerCreateScanV2RequestScreenshotsResolutionsEnum)]),
+        specifiedType: const FullType(BuiltList, [FullType(UrlscannerCreateScanBulkV2RequestInnerScreenshotsResolutionsEnum)]),
       );
     }
     yield r'url';
@@ -155,8 +155,8 @@ class _$UrlscannerCreateScanBulkV2RequestInnerSerializer implements PrimitiveSer
         case r'screenshotsResolutions':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(BuiltList, [FullType(UrlscannerCreateScanV2RequestScreenshotsResolutionsEnum)]),
-          ) as BuiltList<UrlscannerCreateScanV2RequestScreenshotsResolutionsEnum>;
+            specifiedType: const FullType(BuiltList, [FullType(UrlscannerCreateScanBulkV2RequestInnerScreenshotsResolutionsEnum)]),
+          ) as BuiltList<UrlscannerCreateScanBulkV2RequestInnerScreenshotsResolutionsEnum>;
           result.screenshotsResolutions.replace(valueDes);
           break;
         case r'url':
@@ -202,24 +202,24 @@ class _$UrlscannerCreateScanBulkV2RequestInnerSerializer implements PrimitiveSer
   }
 }
 
-class UrlscannerCreateScanV2RequestScreenshotsResolutionsEnum extends EnumClass {
+class UrlscannerCreateScanBulkV2RequestInnerScreenshotsResolutionsEnum extends EnumClass {
 
   /// Device resolutions.
   @BuiltValueEnumConst(wireName: r'desktop')
-  static const UrlscannerCreateScanV2RequestScreenshotsResolutionsEnum desktop = _\$urlscannerCreateScanV2RequestScreenshotsResolutions_desktop;
+  static const UrlscannerCreateScanBulkV2RequestInnerScreenshotsResolutionsEnum desktop = _$urlscannerCreateScanBulkV2RequestInnerScreenshotsResolutionsEnum_desktop;
   /// Device resolutions.
   @BuiltValueEnumConst(wireName: r'mobile')
-  static const UrlscannerCreateScanV2RequestScreenshotsResolutionsEnum mobile = _\$urlscannerCreateScanV2RequestScreenshotsResolutions_mobile;
+  static const UrlscannerCreateScanBulkV2RequestInnerScreenshotsResolutionsEnum mobile = _$urlscannerCreateScanBulkV2RequestInnerScreenshotsResolutionsEnum_mobile;
   /// Device resolutions.
   @BuiltValueEnumConst(wireName: r'tablet')
-  static const UrlscannerCreateScanV2RequestScreenshotsResolutionsEnum tablet = _\$urlscannerCreateScanV2RequestScreenshotsResolutions_tablet;
+  static const UrlscannerCreateScanBulkV2RequestInnerScreenshotsResolutionsEnum tablet = _$urlscannerCreateScanBulkV2RequestInnerScreenshotsResolutionsEnum_tablet;
 
-  static Serializer<UrlscannerCreateScanV2RequestScreenshotsResolutionsEnum> get serializer => _$urlscannerCreateScanV2RequestScreenshotsResolutionsSerializer;
+  static Serializer<UrlscannerCreateScanBulkV2RequestInnerScreenshotsResolutionsEnum> get serializer => _$urlscannerCreateScanBulkV2RequestInnerScreenshotsResolutionsEnumSerializer;
 
-  const UrlscannerCreateScanV2RequestScreenshotsResolutionsEnum._(String name): super(name);
+  const UrlscannerCreateScanBulkV2RequestInnerScreenshotsResolutionsEnum._(String name): super(name);
 
-  static BuiltSet<UrlscannerCreateScanV2RequestScreenshotsResolutionsEnum> get values => _$urlscannerCreateScanV2RequestScreenshotsResolutionsValues;
-  static UrlscannerCreateScanV2RequestScreenshotsResolutionsEnum valueOf(String name) => _$urlscannerCreateScanV2RequestScreenshotsResolutionsValueOf(name);
+  static BuiltSet<UrlscannerCreateScanBulkV2RequestInnerScreenshotsResolutionsEnum> get values => _$urlscannerCreateScanBulkV2RequestInnerScreenshotsResolutionsEnumValues;
+  static UrlscannerCreateScanBulkV2RequestInnerScreenshotsResolutionsEnum valueOf(String name) => _$urlscannerCreateScanBulkV2RequestInnerScreenshotsResolutionsEnumValueOf(name);
 }
 
 class UrlscannerCreateScanBulkV2RequestInnerVisibilityEnum extends EnumClass {
@@ -231,11 +231,11 @@ class UrlscannerCreateScanBulkV2RequestInnerVisibilityEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'Unlisted')
   static const UrlscannerCreateScanBulkV2RequestInnerVisibilityEnum unlisted = _$urlscannerCreateScanBulkV2RequestInnerVisibilityEnum_unlisted;
 
-  static Serializer<UrlscannerCreateScanBulkV2RequestInnerVisibilityEnum> get serializer => _$urlscannerCreateScanBulkV2RequestInnerVisibilitySerializer;
+  static Serializer<UrlscannerCreateScanBulkV2RequestInnerVisibilityEnum> get serializer => _$urlscannerCreateScanBulkV2RequestInnerVisibilityEnumSerializer;
 
   const UrlscannerCreateScanBulkV2RequestInnerVisibilityEnum._(String name): super(name);
 
-  static BuiltSet<UrlscannerCreateScanBulkV2RequestInnerVisibilityEnum> get values => _$urlscannerCreateScanBulkV2RequestInnerVisibilityValues;
-  static UrlscannerCreateScanBulkV2RequestInnerVisibilityEnum valueOf(String name) => _$urlscannerCreateScanBulkV2RequestInnerVisibilityValueOf(name);
+  static BuiltSet<UrlscannerCreateScanBulkV2RequestInnerVisibilityEnum> get values => _$urlscannerCreateScanBulkV2RequestInnerVisibilityEnumValues;
+  static UrlscannerCreateScanBulkV2RequestInnerVisibilityEnum valueOf(String name) => _$urlscannerCreateScanBulkV2RequestInnerVisibilityEnumValueOf(name);
 }
 

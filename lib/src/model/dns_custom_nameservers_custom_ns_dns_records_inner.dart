@@ -137,11 +137,11 @@ class DnsCustomNameserversCustomNSDnsRecordsInnerTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'AAAA')
   static const DnsCustomNameserversCustomNSDnsRecordsInnerTypeEnum AAAA = _$dnsCustomNameserversCustomNSDnsRecordsInnerTypeEnum_AAAA;
 
-  static Serializer<DnsCustomNameserversCustomNSDnsRecordsInnerTypeEnum> get serializer => _$dnsCustomNameserversCustomNSDnsRecordsInnerTypeSerializer;
+  static Serializer<DnsCustomNameserversCustomNSDnsRecordsInnerTypeEnum> get serializer => _$dnsCustomNameserversCustomNSDnsRecordsInnerTypeEnumSerializer;
 
   const DnsCustomNameserversCustomNSDnsRecordsInnerTypeEnum._(String name): super(name);
 
-  static BuiltSet<DnsCustomNameserversCustomNSDnsRecordsInnerTypeEnum> get values => _$dnsCustomNameserversCustomNSDnsRecordsInnerTypeValues;
-  static DnsCustomNameserversCustomNSDnsRecordsInnerTypeEnum valueOf(String name) => _$dnsCustomNameserversCustomNSDnsRecordsInnerTypeValueOf(name);
+  static BuiltSet<DnsCustomNameserversCustomNSDnsRecordsInnerTypeEnum> get values => _$dnsCustomNameserversCustomNSDnsRecordsInnerTypeEnumValues;
+  static DnsCustomNameserversCustomNSDnsRecordsInnerTypeEnum valueOf(String name) => _$dnsCustomNameserversCustomNSDnsRecordsInnerTypeEnumValueOf(name);
 }
 

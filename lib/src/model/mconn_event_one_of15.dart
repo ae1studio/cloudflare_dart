@@ -113,11 +113,11 @@ class MconnEventOneOf15KEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'ConfigureCloudflaredTunnel')
   static const MconnEventOneOf15KEnum configureCloudflaredTunnel = _$mconnEventOneOf15KEnum_configureCloudflaredTunnel;
 
-  static Serializer<MconnEventOneOf15KEnum> get serializer => _$mconnEventOneOf15KSerializer;
+  static Serializer<MconnEventOneOf15KEnum> get serializer => _$mconnEventOneOf15KEnumSerializer;
 
   const MconnEventOneOf15KEnum._(String name): super(name);
 
-  static BuiltSet<MconnEventOneOf15KEnum> get values => _$mconnEventOneOf15KValues;
-  static MconnEventOneOf15KEnum valueOf(String name) => _$mconnEventOneOf15KValueOf(name);
+  static BuiltSet<MconnEventOneOf15KEnum> get values => _$mconnEventOneOf15KEnumValues;
+  static MconnEventOneOf15KEnum valueOf(String name) => _$mconnEventOneOf15KEnumValueOf(name);
 }
 

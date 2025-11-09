@@ -31,7 +31,7 @@ abstract class WorkersAiPostRunCfAi4bharatIndictrans2EnIndic1BRequest implements
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(WorkersAiPostRunCfAi4bharatIndictrans2EnIndic1BRequestBuilder b) => b
-      ..targetLanguage = const WorkersAiPostRunCfAi4bharatIndictrans2EnIndic1BRequestTargetLanguageEnum._('hin_Deva');
+      ..targetLanguage = WorkersAiPostRunCfAi4bharatIndictrans2EnIndic1BRequestTargetLanguageEnum.valueOf('hin_Deva');
 
   @BuiltValueSerializer(custom: true)
   static Serializer<WorkersAiPostRunCfAi4bharatIndictrans2EnIndic1BRequest> get serializer => _$WorkersAiPostRunCfAi4bharatIndictrans2EnIndic1BRequestSerializer();
@@ -230,11 +230,11 @@ class WorkersAiPostRunCfAi4bharatIndictrans2EnIndic1BRequestTargetLanguageEnum e
   @BuiltValueEnumConst(wireName: r'unr_Deva')
   static const WorkersAiPostRunCfAi4bharatIndictrans2EnIndic1BRequestTargetLanguageEnum unrDeva = _$workersAiPostRunCfAi4bharatIndictrans2EnIndic1BRequestTargetLanguageEnum_unrDeva;
 
-  static Serializer<WorkersAiPostRunCfAi4bharatIndictrans2EnIndic1BRequestTargetLanguageEnum> get serializer => _$workersAiPostRunCfAi4bharatIndictrans2EnIndic1BRequestTargetLanguageSerializer;
+  static Serializer<WorkersAiPostRunCfAi4bharatIndictrans2EnIndic1BRequestTargetLanguageEnum> get serializer => _$workersAiPostRunCfAi4bharatIndictrans2EnIndic1BRequestTargetLanguageEnumSerializer;
 
   const WorkersAiPostRunCfAi4bharatIndictrans2EnIndic1BRequestTargetLanguageEnum._(String name): super(name);
 
-  static BuiltSet<WorkersAiPostRunCfAi4bharatIndictrans2EnIndic1BRequestTargetLanguageEnum> get values => _$workersAiPostRunCfAi4bharatIndictrans2EnIndic1BRequestTargetLanguageValues;
-  static WorkersAiPostRunCfAi4bharatIndictrans2EnIndic1BRequestTargetLanguageEnum valueOf(String name) => _$workersAiPostRunCfAi4bharatIndictrans2EnIndic1BRequestTargetLanguageValueOf(name);
+  static BuiltSet<WorkersAiPostRunCfAi4bharatIndictrans2EnIndic1BRequestTargetLanguageEnum> get values => _$workersAiPostRunCfAi4bharatIndictrans2EnIndic1BRequestTargetLanguageEnumValues;
+  static WorkersAiPostRunCfAi4bharatIndictrans2EnIndic1BRequestTargetLanguageEnum valueOf(String name) => _$workersAiPostRunCfAi4bharatIndictrans2EnIndic1BRequestTargetLanguageEnumValueOf(name);
 }
 

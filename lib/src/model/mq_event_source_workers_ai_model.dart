@@ -134,11 +134,11 @@ class MqEventSourceWorkersAiModelTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'workersAi.model')
   static const MqEventSourceWorkersAiModelTypeEnum workersAiPeriodModel = _$mqEventSourceWorkersAiModelTypeEnum_workersAiPeriodModel;
 
-  static Serializer<MqEventSourceWorkersAiModelTypeEnum> get serializer => _$mqEventSourceWorkersAiModelTypeSerializer;
+  static Serializer<MqEventSourceWorkersAiModelTypeEnum> get serializer => _$mqEventSourceWorkersAiModelTypeEnumSerializer;
 
   const MqEventSourceWorkersAiModelTypeEnum._(String name): super(name);
 
-  static BuiltSet<MqEventSourceWorkersAiModelTypeEnum> get values => _$mqEventSourceWorkersAiModelTypeValues;
-  static MqEventSourceWorkersAiModelTypeEnum valueOf(String name) => _$mqEventSourceWorkersAiModelTypeValueOf(name);
+  static BuiltSet<MqEventSourceWorkersAiModelTypeEnum> get values => _$mqEventSourceWorkersAiModelTypeEnumValues;
+  static MqEventSourceWorkersAiModelTypeEnum valueOf(String name) => _$mqEventSourceWorkersAiModelTypeEnumValueOf(name);
 }
 

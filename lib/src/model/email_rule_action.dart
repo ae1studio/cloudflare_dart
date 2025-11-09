@@ -137,11 +137,11 @@ class EmailRuleActionTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'worker')
   static const EmailRuleActionTypeEnum worker = _$emailRuleActionTypeEnum_worker;
 
-  static Serializer<EmailRuleActionTypeEnum> get serializer => _$emailRuleActionTypeSerializer;
+  static Serializer<EmailRuleActionTypeEnum> get serializer => _$emailRuleActionTypeEnumSerializer;
 
   const EmailRuleActionTypeEnum._(String name): super(name);
 
-  static BuiltSet<EmailRuleActionTypeEnum> get values => _$emailRuleActionTypeValues;
-  static EmailRuleActionTypeEnum valueOf(String name) => _$emailRuleActionTypeValueOf(name);
+  static BuiltSet<EmailRuleActionTypeEnum> get values => _$emailRuleActionTypeEnumValues;
+  static EmailRuleActionTypeEnum valueOf(String name) => _$emailRuleActionTypeEnumValueOf(name);
 }
 

@@ -6,7 +6,6 @@
 import 'package:cloudflare_dart/src/model/rulesets_execute_sensitivity_level.dart';
 import 'package:built_collection/built_collection.dart';
 import 'package:cloudflare_dart/src/model/category_override.dart';
-import 'package:built_value/json_object.dart';
 import 'package:cloudflare_dart/src/model/rule_override.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
@@ -16,13 +15,14 @@ part 'rulesets_execute_overrides.g.dart';
 /// A set of overrides to apply to the target ruleset.
 ///
 /// Properties:
-/// * [action] 
+/// * [action] - An action to override all rules with. This option has lower precedence than rule and category overrides.
 /// * [categories] - A list of category-level overrides. This option has the second-highest precedence after rule-level overrides.
-/// * [enabled] 
+/// * [enabled] - Whether to enable execution of all rules. This option has lower precedence than rule and category overrides.
 /// * [rules] - A list of rule-level overrides. This option has the highest precedence.
-/// * [sensitivityLevel] 
+/// * [sensitivityLevel] - A sensitivity level to set for all rules. This option has lower precedence than rule and category overrides and is only applicable for DDoS phases.
 @BuiltValue()
 abstract class RulesetsExecuteOverrides implements Built<RulesetsExecuteOverrides, RulesetsExecuteOverridesBuilder> {
+  /// An action to override all rules with. This option has lower precedence than rule and category overrides.
   @BuiltValueField(wireName: r'action')
   String? get action;
 
@@ -30,6 +30,7 @@ abstract class RulesetsExecuteOverrides implements Built<RulesetsExecuteOverride
   @BuiltValueField(wireName: r'categories')
   BuiltSet<CategoryOverride>? get categories;
 
+  /// Whether to enable execution of all rules. This option has lower precedence than rule and category overrides.
   @BuiltValueField(wireName: r'enabled')
   bool? get enabled;
 
@@ -37,8 +38,10 @@ abstract class RulesetsExecuteOverrides implements Built<RulesetsExecuteOverride
   @BuiltValueField(wireName: r'rules')
   BuiltSet<RuleOverride>? get rules;
 
+  /// A sensitivity level to set for all rules. This option has lower precedence than rule and category overrides and is only applicable for DDoS phases.
   @BuiltValueField(wireName: r'sensitivity_level')
   RulesetsExecuteSensitivityLevel? get sensitivityLevel;
+  // enum sensitivityLevelEnum {  default,  medium,  low,  eoff,  };
 
   RulesetsExecuteOverrides._();
 

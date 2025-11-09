@@ -130,11 +130,11 @@ class PollActionEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'poll')
   static const PollActionEnum poll = _$pollActionEnum_poll;
 
-  static Serializer<PollActionEnum> get serializer => _$pollActionSerializer;
+  static Serializer<PollActionEnum> get serializer => _$pollActionEnumSerializer;
 
   const PollActionEnum._(String name): super(name);
 
-  static BuiltSet<PollActionEnum> get values => _$pollActionValues;
-  static PollActionEnum valueOf(String name) => _$pollActionValueOf(name);
+  static BuiltSet<PollActionEnum> get values => _$pollActionEnumValues;
+  static PollActionEnum valueOf(String name) => _$pollActionEnumValueOf(name);
 }
 

@@ -6,6 +6,76 @@ part of 'magic_acls_add_single_request.dart';
 // BuiltValueGenerator
 // **************************************************************************
 
+const MagicAclsAddSingleRequestProtocolsEnum
+    _$magicAclsAddSingleRequestProtocolsEnum_tcp =
+    const MagicAclsAddSingleRequestProtocolsEnum._('tcp');
+const MagicAclsAddSingleRequestProtocolsEnum
+    _$magicAclsAddSingleRequestProtocolsEnum_udp =
+    const MagicAclsAddSingleRequestProtocolsEnum._('udp');
+const MagicAclsAddSingleRequestProtocolsEnum
+    _$magicAclsAddSingleRequestProtocolsEnum_icmp =
+    const MagicAclsAddSingleRequestProtocolsEnum._('icmp');
+
+MagicAclsAddSingleRequestProtocolsEnum
+    _$magicAclsAddSingleRequestProtocolsEnumValueOf(String name) {
+  switch (name) {
+    case 'tcp':
+      return _$magicAclsAddSingleRequestProtocolsEnum_tcp;
+    case 'udp':
+      return _$magicAclsAddSingleRequestProtocolsEnum_udp;
+    case 'icmp':
+      return _$magicAclsAddSingleRequestProtocolsEnum_icmp;
+    default:
+      throw ArgumentError(name);
+  }
+}
+
+final BuiltSet<MagicAclsAddSingleRequestProtocolsEnum>
+    _$magicAclsAddSingleRequestProtocolsEnumValues = BuiltSet<
+        MagicAclsAddSingleRequestProtocolsEnum>(const <MagicAclsAddSingleRequestProtocolsEnum>[
+  _$magicAclsAddSingleRequestProtocolsEnum_tcp,
+  _$magicAclsAddSingleRequestProtocolsEnum_udp,
+  _$magicAclsAddSingleRequestProtocolsEnum_icmp,
+]);
+
+Serializer<MagicAclsAddSingleRequestProtocolsEnum>
+    _$magicAclsAddSingleRequestProtocolsEnumSerializer =
+    _$MagicAclsAddSingleRequestProtocolsEnumSerializer();
+
+class _$MagicAclsAddSingleRequestProtocolsEnumSerializer
+    implements PrimitiveSerializer<MagicAclsAddSingleRequestProtocolsEnum> {
+  static const Map<String, Object> _toWire = const <String, Object>{
+    'tcp': 'tcp',
+    'udp': 'udp',
+    'icmp': 'icmp',
+  };
+  static const Map<Object, String> _fromWire = const <Object, String>{
+    'tcp': 'tcp',
+    'udp': 'udp',
+    'icmp': 'icmp',
+  };
+
+  @override
+  final Iterable<Type> types = const <Type>[
+    MagicAclsAddSingleRequestProtocolsEnum
+  ];
+  @override
+  final String wireName = 'MagicAclsAddSingleRequestProtocolsEnum';
+
+  @override
+  Object serialize(Serializers serializers,
+          MagicAclsAddSingleRequestProtocolsEnum object,
+          {FullType specifiedType = FullType.unspecified}) =>
+      _toWire[object.name] ?? object.name;
+
+  @override
+  MagicAclsAddSingleRequestProtocolsEnum deserialize(
+          Serializers serializers, Object serialized,
+          {FullType specifiedType = FullType.unspecified}) =>
+      MagicAclsAddSingleRequestProtocolsEnum.valueOf(
+          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+}
+
 class _$MagicAclsAddSingleRequest extends MagicAclsAddSingleRequest {
   @override
   final String? description;
@@ -18,7 +88,7 @@ class _$MagicAclsAddSingleRequest extends MagicAclsAddSingleRequest {
   @override
   final String name;
   @override
-  final BuiltList<dynamic>? protocols;
+  final BuiltList<MagicAclsAddSingleRequestProtocolsEnum>? protocols;
   @override
   final bool? unidirectional;
 
@@ -113,10 +183,12 @@ class MagicAclsAddSingleRequestBuilder
   String? get name => _$this._name;
   set name(String? name) => _$this._name = name;
 
-  ListBuilder<dynamic>? _protocols;
-  ListBuilder<dynamic> get protocols =>
-      _$this._protocols ??= ListBuilder<dynamic>();
-  set protocols(ListBuilder<dynamic>? protocols) =>
+  ListBuilder<MagicAclsAddSingleRequestProtocolsEnum>? _protocols;
+  ListBuilder<MagicAclsAddSingleRequestProtocolsEnum> get protocols =>
+      _$this._protocols ??=
+          ListBuilder<MagicAclsAddSingleRequestProtocolsEnum>();
+  set protocols(
+          ListBuilder<MagicAclsAddSingleRequestProtocolsEnum>? protocols) =>
       _$this._protocols = protocols;
 
   bool? _unidirectional;

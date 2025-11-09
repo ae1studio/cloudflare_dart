@@ -147,11 +147,11 @@ class AccessScimConfigAuthenticationHttpBasicSchemeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'httpbasic')
   static const AccessScimConfigAuthenticationHttpBasicSchemeEnum httpbasic = _$accessScimConfigAuthenticationHttpBasicSchemeEnum_httpbasic;
 
-  static Serializer<AccessScimConfigAuthenticationHttpBasicSchemeEnum> get serializer => _$accessScimConfigAuthenticationHttpBasicSchemeSerializer;
+  static Serializer<AccessScimConfigAuthenticationHttpBasicSchemeEnum> get serializer => _$accessScimConfigAuthenticationHttpBasicSchemeEnumSerializer;
 
   const AccessScimConfigAuthenticationHttpBasicSchemeEnum._(String name): super(name);
 
-  static BuiltSet<AccessScimConfigAuthenticationHttpBasicSchemeEnum> get values => _$accessScimConfigAuthenticationHttpBasicSchemeValues;
-  static AccessScimConfigAuthenticationHttpBasicSchemeEnum valueOf(String name) => _$accessScimConfigAuthenticationHttpBasicSchemeValueOf(name);
+  static BuiltSet<AccessScimConfigAuthenticationHttpBasicSchemeEnum> get values => _$accessScimConfigAuthenticationHttpBasicSchemeEnumValues;
+  static AccessScimConfigAuthenticationHttpBasicSchemeEnum valueOf(String name) => _$accessScimConfigAuthenticationHttpBasicSchemeEnumValueOf(name);
 }
 

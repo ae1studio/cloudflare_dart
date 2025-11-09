@@ -179,11 +179,11 @@ class SmartshieldCacheReserveClearResponseValueResultIdEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'cache_reserve_clear')
   static const SmartshieldCacheReserveClearResponseValueResultIdEnum cacheReserveClear = _$smartshieldCacheReserveClearResponseValueResultIdEnum_cacheReserveClear;
 
-  static Serializer<SmartshieldCacheReserveClearResponseValueResultIdEnum> get serializer => _$smartshieldCacheReserveClearResponseValueResultIdSerializer;
+  static Serializer<SmartshieldCacheReserveClearResponseValueResultIdEnum> get serializer => _$smartshieldCacheReserveClearResponseValueResultIdEnumSerializer;
 
   const SmartshieldCacheReserveClearResponseValueResultIdEnum._(String name): super(name);
 
-  static BuiltSet<SmartshieldCacheReserveClearResponseValueResultIdEnum> get values => _$smartshieldCacheReserveClearResponseValueResultIdValues;
-  static SmartshieldCacheReserveClearResponseValueResultIdEnum valueOf(String name) => _$smartshieldCacheReserveClearResponseValueResultIdValueOf(name);
+  static BuiltSet<SmartshieldCacheReserveClearResponseValueResultIdEnum> get values => _$smartshieldCacheReserveClearResponseValueResultIdEnumValues;
+  static SmartshieldCacheReserveClearResponseValueResultIdEnum valueOf(String name) => _$smartshieldCacheReserveClearResponseValueResultIdEnumValueOf(name);
 }
 

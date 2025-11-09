@@ -5,7 +5,6 @@
 // ignore_for_file: unused_element
 import 'package:cloudflare_dart/src/model/firewall_configuration.dart';
 import 'package:cloudflare_dart/src/model/firewall_schemas_mode.dart';
-import 'package:built_value/json_object.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
@@ -16,7 +15,7 @@ part 'ip_access_rules_for_an_account_create_an_ip_access_rule_request.g.dart';
 /// Properties:
 /// * [configuration] 
 /// * [mode] 
-/// * [notes] 
+/// * [notes] - An informative summary of the rule, typically used as a reminder or explanation.
 @BuiltValue()
 abstract class IpAccessRulesForAnAccountCreateAnIpAccessRuleRequest implements Built<IpAccessRulesForAnAccountCreateAnIpAccessRuleRequest, IpAccessRulesForAnAccountCreateAnIpAccessRuleRequestBuilder> {
   @BuiltValueField(wireName: r'configuration')
@@ -26,6 +25,7 @@ abstract class IpAccessRulesForAnAccountCreateAnIpAccessRuleRequest implements B
   FirewallSchemasMode get mode;
   // enum modeEnum {  block,  challenge,  whitelist,  js_challenge,  managed_challenge,  };
 
+  /// An informative summary of the rule, typically used as a reminder or explanation.
   @BuiltValueField(wireName: r'notes')
   String? get notes;
 
@@ -34,7 +34,8 @@ abstract class IpAccessRulesForAnAccountCreateAnIpAccessRuleRequest implements B
   factory IpAccessRulesForAnAccountCreateAnIpAccessRuleRequest([void updates(IpAccessRulesForAnAccountCreateAnIpAccessRuleRequestBuilder b)]) = _$IpAccessRulesForAnAccountCreateAnIpAccessRuleRequest;
 
   @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(IpAccessRulesForAnAccountCreateAnIpAccessRuleRequestBuilder b) => b;
+  static void _defaults(IpAccessRulesForAnAccountCreateAnIpAccessRuleRequestBuilder b) => b
+      ..notes = ;
 
   @BuiltValueSerializer(custom: true)
   static Serializer<IpAccessRulesForAnAccountCreateAnIpAccessRuleRequest> get serializer => _$IpAccessRulesForAnAccountCreateAnIpAccessRuleRequestSerializer();

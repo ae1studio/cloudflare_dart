@@ -142,11 +142,11 @@ class StructTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'struct')
   static const StructTypeEnum struct = _$structTypeEnum_struct;
 
-  static Serializer<StructTypeEnum> get serializer => _$structTypeSerializer;
+  static Serializer<StructTypeEnum> get serializer => _$structTypeEnumSerializer;
 
   const StructTypeEnum._(String name): super(name);
 
-  static BuiltSet<StructTypeEnum> get values => _$structTypeValues;
-  static StructTypeEnum valueOf(String name) => _$structTypeValueOf(name);
+  static BuiltSet<StructTypeEnum> get values => _$structTypeEnumValues;
+  static StructTypeEnum valueOf(String name) => _$structTypeEnumValueOf(name);
 }
 

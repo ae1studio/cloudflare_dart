@@ -158,11 +158,11 @@ class RulesetsSetCacheSettingsEdgeTTLModeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'override_origin')
   static const RulesetsSetCacheSettingsEdgeTTLModeEnum overrideOrigin = _$rulesetsSetCacheSettingsEdgeTTLModeEnum_overrideOrigin;
 
-  static Serializer<RulesetsSetCacheSettingsEdgeTTLModeEnum> get serializer => _$rulesetsSetCacheSettingsEdgeTTLModeSerializer;
+  static Serializer<RulesetsSetCacheSettingsEdgeTTLModeEnum> get serializer => _$rulesetsSetCacheSettingsEdgeTTLModeEnumSerializer;
 
   const RulesetsSetCacheSettingsEdgeTTLModeEnum._(String name): super(name);
 
-  static BuiltSet<RulesetsSetCacheSettingsEdgeTTLModeEnum> get values => _$rulesetsSetCacheSettingsEdgeTTLModeValues;
-  static RulesetsSetCacheSettingsEdgeTTLModeEnum valueOf(String name) => _$rulesetsSetCacheSettingsEdgeTTLModeValueOf(name);
+  static BuiltSet<RulesetsSetCacheSettingsEdgeTTLModeEnum> get values => _$rulesetsSetCacheSettingsEdgeTTLModeEnumValues;
+  static RulesetsSetCacheSettingsEdgeTTLModeEnum valueOf(String name) => _$rulesetsSetCacheSettingsEdgeTTLModeEnumValueOf(name);
 }
 

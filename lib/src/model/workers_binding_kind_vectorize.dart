@@ -147,11 +147,11 @@ class WorkersBindingKindVectorizeTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'vectorize')
   static const WorkersBindingKindVectorizeTypeEnum vectorize = _$workersBindingKindVectorizeTypeEnum_vectorize;
 
-  static Serializer<WorkersBindingKindVectorizeTypeEnum> get serializer => _$workersBindingKindVectorizeTypeSerializer;
+  static Serializer<WorkersBindingKindVectorizeTypeEnum> get serializer => _$workersBindingKindVectorizeTypeEnumSerializer;
 
   const WorkersBindingKindVectorizeTypeEnum._(String name): super(name);
 
-  static BuiltSet<WorkersBindingKindVectorizeTypeEnum> get values => _$workersBindingKindVectorizeTypeValues;
-  static WorkersBindingKindVectorizeTypeEnum valueOf(String name) => _$workersBindingKindVectorizeTypeValueOf(name);
+  static BuiltSet<WorkersBindingKindVectorizeTypeEnum> get values => _$workersBindingKindVectorizeTypeEnumValues;
+  static WorkersBindingKindVectorizeTypeEnum valueOf(String name) => _$workersBindingKindVectorizeTypeEnumValueOf(name);
 }
 

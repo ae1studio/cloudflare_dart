@@ -8,7 +8,7 @@ part of 'execute_rule_action_parameters.dart';
 
 class _$ExecuteRuleActionParameters extends ExecuteRuleActionParameters {
   @override
-  final ExecuteRuleActionParametersId id;
+  final String id;
   @override
   final RulesetsExecuteMatchedData? matchedData;
   @override
@@ -65,10 +65,9 @@ class ExecuteRuleActionParametersBuilder
             ExecuteRuleActionParametersBuilder> {
   _$ExecuteRuleActionParameters? _$v;
 
-  ExecuteRuleActionParametersIdBuilder? _id;
-  ExecuteRuleActionParametersIdBuilder get id =>
-      _$this._id ??= ExecuteRuleActionParametersIdBuilder();
-  set id(ExecuteRuleActionParametersIdBuilder? id) => _$this._id = id;
+  String? _id;
+  String? get id => _$this._id;
+  set id(String? id) => _$this._id = id;
 
   RulesetsExecuteMatchedDataBuilder? _matchedData;
   RulesetsExecuteMatchedDataBuilder get matchedData =>
@@ -89,7 +88,7 @@ class ExecuteRuleActionParametersBuilder
   ExecuteRuleActionParametersBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _id = $v.id.toBuilder();
+      _id = $v.id;
       _matchedData = $v.matchedData?.toBuilder();
       _overrides = $v.overrides?.toBuilder();
       _$v = null;
@@ -115,15 +114,14 @@ class ExecuteRuleActionParametersBuilder
     try {
       _$result = _$v ??
           _$ExecuteRuleActionParameters._(
-            id: id.build(),
+            id: BuiltValueNullFieldError.checkNotNull(
+                id, r'ExecuteRuleActionParameters', 'id'),
             matchedData: _matchedData?.build(),
             overrides: _overrides?.build(),
           );
     } catch (_) {
       late String _$failedField;
       try {
-        _$failedField = 'id';
-        id.build();
         _$failedField = 'matchedData';
         _matchedData?.build();
         _$failedField = 'overrides';

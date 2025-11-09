@@ -156,11 +156,11 @@ class ZonesSecurityHeaderIdEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'security_header')
   static const ZonesSecurityHeaderIdEnum securityHeader = _$zonesSecurityHeaderIdEnum_securityHeader;
 
-  static Serializer<ZonesSecurityHeaderIdEnum> get serializer => _$zonesSecurityHeaderIdSerializer;
+  static Serializer<ZonesSecurityHeaderIdEnum> get serializer => _$zonesSecurityHeaderIdEnumSerializer;
 
   const ZonesSecurityHeaderIdEnum._(String name): super(name);
 
-  static BuiltSet<ZonesSecurityHeaderIdEnum> get values => _$zonesSecurityHeaderIdValues;
-  static ZonesSecurityHeaderIdEnum valueOf(String name) => _$zonesSecurityHeaderIdValueOf(name);
+  static BuiltSet<ZonesSecurityHeaderIdEnum> get values => _$zonesSecurityHeaderIdEnumValues;
+  static ZonesSecurityHeaderIdEnum valueOf(String name) => _$zonesSecurityHeaderIdEnumValueOf(name);
 }
 

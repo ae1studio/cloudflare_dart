@@ -83,11 +83,11 @@ class OrganizationsApiEntitlementAllocationTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'')
   static const OrganizationsApiEntitlementAllocationTypeEnum empty = _$organizationsApiEntitlementAllocationTypeEnum_empty;
 
-  static Serializer<OrganizationsApiEntitlementAllocationTypeEnum> get serializer => _$organizationsApiEntitlementAllocationTypeSerializer;
+  static Serializer<OrganizationsApiEntitlementAllocationTypeEnum> get serializer => _$organizationsApiEntitlementAllocationTypeEnumSerializer;
 
   const OrganizationsApiEntitlementAllocationTypeEnum._(String name): super(name);
 
-  static BuiltSet<OrganizationsApiEntitlementAllocationTypeEnum> get values => _$organizationsApiEntitlementAllocationTypeValues;
-  static OrganizationsApiEntitlementAllocationTypeEnum valueOf(String name) => _$organizationsApiEntitlementAllocationTypeValueOf(name);
+  static BuiltSet<OrganizationsApiEntitlementAllocationTypeEnum> get values => _$organizationsApiEntitlementAllocationTypeEnumValues;
+  static OrganizationsApiEntitlementAllocationTypeEnum valueOf(String name) => _$organizationsApiEntitlementAllocationTypeEnumValueOf(name);
 }
 

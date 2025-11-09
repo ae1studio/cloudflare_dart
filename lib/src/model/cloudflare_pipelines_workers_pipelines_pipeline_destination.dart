@@ -182,12 +182,12 @@ class CloudflarePipelinesWorkersPipelinesPipelineDestinationFormatEnum extends E
   @BuiltValueEnumConst(wireName: r'json')
   static const CloudflarePipelinesWorkersPipelinesPipelineDestinationFormatEnum json = _$cloudflarePipelinesWorkersPipelinesPipelineDestinationFormatEnum_json;
 
-  static Serializer<CloudflarePipelinesWorkersPipelinesPipelineDestinationFormatEnum> get serializer => _$cloudflarePipelinesWorkersPipelinesPipelineDestinationFormatSerializer;
+  static Serializer<CloudflarePipelinesWorkersPipelinesPipelineDestinationFormatEnum> get serializer => _$cloudflarePipelinesWorkersPipelinesPipelineDestinationFormatEnumSerializer;
 
   const CloudflarePipelinesWorkersPipelinesPipelineDestinationFormatEnum._(String name): super(name);
 
-  static BuiltSet<CloudflarePipelinesWorkersPipelinesPipelineDestinationFormatEnum> get values => _$cloudflarePipelinesWorkersPipelinesPipelineDestinationFormatValues;
-  static CloudflarePipelinesWorkersPipelinesPipelineDestinationFormatEnum valueOf(String name) => _$cloudflarePipelinesWorkersPipelinesPipelineDestinationFormatValueOf(name);
+  static BuiltSet<CloudflarePipelinesWorkersPipelinesPipelineDestinationFormatEnum> get values => _$cloudflarePipelinesWorkersPipelinesPipelineDestinationFormatEnumValues;
+  static CloudflarePipelinesWorkersPipelinesPipelineDestinationFormatEnum valueOf(String name) => _$cloudflarePipelinesWorkersPipelinesPipelineDestinationFormatEnumValueOf(name);
 }
 
 class CloudflarePipelinesWorkersPipelinesPipelineDestinationTypeEnum extends EnumClass {
@@ -196,11 +196,11 @@ class CloudflarePipelinesWorkersPipelinesPipelineDestinationTypeEnum extends Enu
   @BuiltValueEnumConst(wireName: r'r2')
   static const CloudflarePipelinesWorkersPipelinesPipelineDestinationTypeEnum r2 = _$cloudflarePipelinesWorkersPipelinesPipelineDestinationTypeEnum_r2;
 
-  static Serializer<CloudflarePipelinesWorkersPipelinesPipelineDestinationTypeEnum> get serializer => _$cloudflarePipelinesWorkersPipelinesPipelineDestinationTypeSerializer;
+  static Serializer<CloudflarePipelinesWorkersPipelinesPipelineDestinationTypeEnum> get serializer => _$cloudflarePipelinesWorkersPipelinesPipelineDestinationTypeEnumSerializer;
 
   const CloudflarePipelinesWorkersPipelinesPipelineDestinationTypeEnum._(String name): super(name);
 
-  static BuiltSet<CloudflarePipelinesWorkersPipelinesPipelineDestinationTypeEnum> get values => _$cloudflarePipelinesWorkersPipelinesPipelineDestinationTypeValues;
-  static CloudflarePipelinesWorkersPipelinesPipelineDestinationTypeEnum valueOf(String name) => _$cloudflarePipelinesWorkersPipelinesPipelineDestinationTypeValueOf(name);
+  static BuiltSet<CloudflarePipelinesWorkersPipelinesPipelineDestinationTypeEnum> get values => _$cloudflarePipelinesWorkersPipelinesPipelineDestinationTypeEnumValues;
+  static CloudflarePipelinesWorkersPipelinesPipelineDestinationTypeEnum valueOf(String name) => _$cloudflarePipelinesWorkersPipelinesPipelineDestinationTypeEnumValueOf(name);
 }
 

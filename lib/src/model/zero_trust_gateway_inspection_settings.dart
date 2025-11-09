@@ -118,11 +118,11 @@ class ZeroTrustGatewayInspectionSettingsModeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'dynamic')
   static const ZeroTrustGatewayInspectionSettingsModeEnum dynamic_ = _$zeroTrustGatewayInspectionSettingsModeEnum_dynamic_;
 
-  static Serializer<ZeroTrustGatewayInspectionSettingsModeEnum> get serializer => _$zeroTrustGatewayInspectionSettingsModeSerializer;
+  static Serializer<ZeroTrustGatewayInspectionSettingsModeEnum> get serializer => _$zeroTrustGatewayInspectionSettingsModeEnumSerializer;
 
   const ZeroTrustGatewayInspectionSettingsModeEnum._(String name): super(name);
 
-  static BuiltSet<ZeroTrustGatewayInspectionSettingsModeEnum> get values => _$zeroTrustGatewayInspectionSettingsModeValues;
-  static ZeroTrustGatewayInspectionSettingsModeEnum valueOf(String name) => _$zeroTrustGatewayInspectionSettingsModeValueOf(name);
+  static BuiltSet<ZeroTrustGatewayInspectionSettingsModeEnum> get values => _$zeroTrustGatewayInspectionSettingsModeEnumValues;
+  static ZeroTrustGatewayInspectionSettingsModeEnum valueOf(String name) => _$zeroTrustGatewayInspectionSettingsModeEnumValueOf(name);
 }
 

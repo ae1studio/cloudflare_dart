@@ -6,47 +6,7 @@ part of 'iam_permissions.dart';
 // BuiltValueGenerator
 // **************************************************************************
 
-abstract class IamPermissionsBuilder {
-  void replace(IamPermissions other);
-  void update(void Function(IamPermissionsBuilder) updates);
-  IamGrantsBuilder get analytics;
-  set analytics(IamGrantsBuilder? analytics);
-
-  IamGrantsBuilder get billing;
-  set billing(IamGrantsBuilder? billing);
-
-  IamGrantsBuilder get cachePurge;
-  set cachePurge(IamGrantsBuilder? cachePurge);
-
-  IamGrantsBuilder get dns;
-  set dns(IamGrantsBuilder? dns);
-
-  IamGrantsBuilder get dnsRecords;
-  set dnsRecords(IamGrantsBuilder? dnsRecords);
-
-  IamGrantsBuilder get lb;
-  set lb(IamGrantsBuilder? lb);
-
-  IamGrantsBuilder get logs;
-  set logs(IamGrantsBuilder? logs);
-
-  IamGrantsBuilder get organization;
-  set organization(IamGrantsBuilder? organization);
-
-  IamGrantsBuilder get ssl;
-  set ssl(IamGrantsBuilder? ssl);
-
-  IamGrantsBuilder get waf;
-  set waf(IamGrantsBuilder? waf);
-
-  IamGrantsBuilder get zoneSettings;
-  set zoneSettings(IamGrantsBuilder? zoneSettings);
-
-  IamGrantsBuilder get zones;
-  set zones(IamGrantsBuilder? zones);
-}
-
-class _$$IamPermissions extends $IamPermissions {
+class _$IamPermissions extends IamPermissions {
   @override
   final IamGrants? analytics;
   @override
@@ -72,10 +32,10 @@ class _$$IamPermissions extends $IamPermissions {
   @override
   final IamGrants? zones;
 
-  factory _$$IamPermissions([void Function($IamPermissionsBuilder)? updates]) =>
-      ($IamPermissionsBuilder()..update(updates))._build();
+  factory _$IamPermissions([void Function(IamPermissionsBuilder)? updates]) =>
+      (IamPermissionsBuilder()..update(updates))._build();
 
-  _$$IamPermissions._(
+  _$IamPermissions._(
       {this.analytics,
       this.billing,
       this.cachePurge,
@@ -90,16 +50,16 @@ class _$$IamPermissions extends $IamPermissions {
       this.zones})
       : super._();
   @override
-  $IamPermissions rebuild(void Function($IamPermissionsBuilder) updates) =>
+  IamPermissions rebuild(void Function(IamPermissionsBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  $IamPermissionsBuilder toBuilder() => $IamPermissionsBuilder()..replace(this);
+  IamPermissionsBuilder toBuilder() => IamPermissionsBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    return other is $IamPermissions &&
+    return other is IamPermissions &&
         analytics == other.analytics &&
         billing == other.billing &&
         cachePurge == other.cachePurge &&
@@ -135,7 +95,7 @@ class _$$IamPermissions extends $IamPermissions {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper(r'$IamPermissions')
+    return (newBuiltValueToStringHelper(r'IamPermissions')
           ..add('analytics', analytics)
           ..add('billing', billing)
           ..add('cachePurge', cachePurge)
@@ -152,72 +112,69 @@ class _$$IamPermissions extends $IamPermissions {
   }
 }
 
-class $IamPermissionsBuilder
-    implements
-        Builder<$IamPermissions, $IamPermissionsBuilder>,
-        IamPermissionsBuilder {
-  _$$IamPermissions? _$v;
+class IamPermissionsBuilder
+    implements Builder<IamPermissions, IamPermissionsBuilder> {
+  _$IamPermissions? _$v;
 
   IamGrantsBuilder? _analytics;
   IamGrantsBuilder get analytics => _$this._analytics ??= IamGrantsBuilder();
-  set analytics(covariant IamGrantsBuilder? analytics) =>
-      _$this._analytics = analytics;
+  set analytics(IamGrantsBuilder? analytics) => _$this._analytics = analytics;
 
   IamGrantsBuilder? _billing;
   IamGrantsBuilder get billing => _$this._billing ??= IamGrantsBuilder();
-  set billing(covariant IamGrantsBuilder? billing) => _$this._billing = billing;
+  set billing(IamGrantsBuilder? billing) => _$this._billing = billing;
 
   IamGrantsBuilder? _cachePurge;
   IamGrantsBuilder get cachePurge => _$this._cachePurge ??= IamGrantsBuilder();
-  set cachePurge(covariant IamGrantsBuilder? cachePurge) =>
+  set cachePurge(IamGrantsBuilder? cachePurge) =>
       _$this._cachePurge = cachePurge;
 
   IamGrantsBuilder? _dns;
   IamGrantsBuilder get dns => _$this._dns ??= IamGrantsBuilder();
-  set dns(covariant IamGrantsBuilder? dns) => _$this._dns = dns;
+  set dns(IamGrantsBuilder? dns) => _$this._dns = dns;
 
   IamGrantsBuilder? _dnsRecords;
   IamGrantsBuilder get dnsRecords => _$this._dnsRecords ??= IamGrantsBuilder();
-  set dnsRecords(covariant IamGrantsBuilder? dnsRecords) =>
+  set dnsRecords(IamGrantsBuilder? dnsRecords) =>
       _$this._dnsRecords = dnsRecords;
 
   IamGrantsBuilder? _lb;
   IamGrantsBuilder get lb => _$this._lb ??= IamGrantsBuilder();
-  set lb(covariant IamGrantsBuilder? lb) => _$this._lb = lb;
+  set lb(IamGrantsBuilder? lb) => _$this._lb = lb;
 
   IamGrantsBuilder? _logs;
   IamGrantsBuilder get logs => _$this._logs ??= IamGrantsBuilder();
-  set logs(covariant IamGrantsBuilder? logs) => _$this._logs = logs;
+  set logs(IamGrantsBuilder? logs) => _$this._logs = logs;
 
   IamGrantsBuilder? _organization;
   IamGrantsBuilder get organization =>
       _$this._organization ??= IamGrantsBuilder();
-  set organization(covariant IamGrantsBuilder? organization) =>
+  set organization(IamGrantsBuilder? organization) =>
       _$this._organization = organization;
 
   IamGrantsBuilder? _ssl;
   IamGrantsBuilder get ssl => _$this._ssl ??= IamGrantsBuilder();
-  set ssl(covariant IamGrantsBuilder? ssl) => _$this._ssl = ssl;
+  set ssl(IamGrantsBuilder? ssl) => _$this._ssl = ssl;
 
   IamGrantsBuilder? _waf;
   IamGrantsBuilder get waf => _$this._waf ??= IamGrantsBuilder();
-  set waf(covariant IamGrantsBuilder? waf) => _$this._waf = waf;
+  set waf(IamGrantsBuilder? waf) => _$this._waf = waf;
 
   IamGrantsBuilder? _zoneSettings;
   IamGrantsBuilder get zoneSettings =>
       _$this._zoneSettings ??= IamGrantsBuilder();
-  set zoneSettings(covariant IamGrantsBuilder? zoneSettings) =>
+  set zoneSettings(IamGrantsBuilder? zoneSettings) =>
       _$this._zoneSettings = zoneSettings;
 
   IamGrantsBuilder? _zones;
   IamGrantsBuilder get zones => _$this._zones ??= IamGrantsBuilder();
-  set zones(covariant IamGrantsBuilder? zones) => _$this._zones = zones;
+  set zones(IamGrantsBuilder? zones) => _$this._zones = zones;
 
-  $IamPermissionsBuilder() {
-    $IamPermissions._defaults(this);
+  IamPermissionsBuilder() {
+    IamPermissions._defaults(this);
   }
 
-  $IamPermissionsBuilder get _$this {
+  IamPermissionsBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
       _analytics = $v.analytics?.toBuilder();
@@ -238,23 +195,23 @@ class $IamPermissionsBuilder
   }
 
   @override
-  void replace(covariant $IamPermissions other) {
-    _$v = other as _$$IamPermissions;
+  void replace(IamPermissions other) {
+    _$v = other as _$IamPermissions;
   }
 
   @override
-  void update(void Function($IamPermissionsBuilder)? updates) {
+  void update(void Function(IamPermissionsBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  $IamPermissions build() => _build();
+  IamPermissions build() => _build();
 
-  _$$IamPermissions _build() {
-    _$$IamPermissions _$result;
+  _$IamPermissions _build() {
+    _$IamPermissions _$result;
     try {
       _$result = _$v ??
-          _$$IamPermissions._(
+          _$IamPermissions._(
             analytics: _analytics?.build(),
             billing: _billing?.build(),
             cachePurge: _cachePurge?.build(),
@@ -297,7 +254,7 @@ class $IamPermissionsBuilder
         _zones?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'$IamPermissions', _$failedField, e.toString());
+            r'IamPermissions', _$failedField, e.toString());
       }
       rethrow;
     }

@@ -14,11 +14,11 @@ class _$SpectrumConfigPaygoAppConfig extends SpectrumConfigPaygoAppConfig {
   @override
   final BuiltList<String>? originDirect;
   @override
-  final SpectrumConfigCreated createdOn;
+  final JsonObject createdOn;
   @override
-  final SpectrumConfigAppIdentifier id;
+  final JsonObject id;
   @override
-  final SpectrumConfigModified modifiedOn;
+  final JsonObject modifiedOn;
 
   factory _$SpectrumConfigPaygoAppConfig(
           [void Function(SpectrumConfigPaygoAppConfigBuilder)? updates]) =>
@@ -101,21 +101,18 @@ class SpectrumConfigPaygoAppConfigBuilder
   set originDirect(covariant ListBuilder<String>? originDirect) =>
       _$this._originDirect = originDirect;
 
-  SpectrumConfigCreatedBuilder? _createdOn;
-  SpectrumConfigCreatedBuilder get createdOn =>
-      _$this._createdOn ??= SpectrumConfigCreatedBuilder();
-  set createdOn(covariant SpectrumConfigCreatedBuilder? createdOn) =>
+  JsonObject? _createdOn;
+  JsonObject? get createdOn => _$this._createdOn;
+  set createdOn(covariant JsonObject? createdOn) =>
       _$this._createdOn = createdOn;
 
-  SpectrumConfigAppIdentifierBuilder? _id;
-  SpectrumConfigAppIdentifierBuilder get id =>
-      _$this._id ??= SpectrumConfigAppIdentifierBuilder();
-  set id(covariant SpectrumConfigAppIdentifierBuilder? id) => _$this._id = id;
+  JsonObject? _id;
+  JsonObject? get id => _$this._id;
+  set id(covariant JsonObject? id) => _$this._id = id;
 
-  SpectrumConfigModifiedBuilder? _modifiedOn;
-  SpectrumConfigModifiedBuilder get modifiedOn =>
-      _$this._modifiedOn ??= SpectrumConfigModifiedBuilder();
-  set modifiedOn(covariant SpectrumConfigModifiedBuilder? modifiedOn) =>
+  JsonObject? _modifiedOn;
+  JsonObject? get modifiedOn => _$this._modifiedOn;
+  set modifiedOn(covariant JsonObject? modifiedOn) =>
       _$this._modifiedOn = modifiedOn;
 
   SpectrumConfigPaygoAppConfigBuilder() {
@@ -128,9 +125,9 @@ class SpectrumConfigPaygoAppConfigBuilder
       _protocol = $v.protocol;
       _dns = $v.dns.toBuilder();
       _originDirect = $v.originDirect?.toBuilder();
-      _createdOn = $v.createdOn.toBuilder();
-      _id = $v.id.toBuilder();
-      _modifiedOn = $v.modifiedOn.toBuilder();
+      _createdOn = $v.createdOn;
+      _id = $v.id;
+      _modifiedOn = $v.modifiedOn;
       _$v = null;
     }
     return this;
@@ -158,9 +155,12 @@ class SpectrumConfigPaygoAppConfigBuilder
                 protocol, r'SpectrumConfigPaygoAppConfig', 'protocol'),
             dns: dns.build(),
             originDirect: _originDirect?.build(),
-            createdOn: createdOn.build(),
-            id: id.build(),
-            modifiedOn: modifiedOn.build(),
+            createdOn: BuiltValueNullFieldError.checkNotNull(
+                createdOn, r'SpectrumConfigPaygoAppConfig', 'createdOn'),
+            id: BuiltValueNullFieldError.checkNotNull(
+                id, r'SpectrumConfigPaygoAppConfig', 'id'),
+            modifiedOn: BuiltValueNullFieldError.checkNotNull(
+                modifiedOn, r'SpectrumConfigPaygoAppConfig', 'modifiedOn'),
           );
     } catch (_) {
       late String _$failedField;
@@ -169,12 +169,6 @@ class SpectrumConfigPaygoAppConfigBuilder
         dns.build();
         _$failedField = 'originDirect';
         _originDirect?.build();
-        _$failedField = 'createdOn';
-        createdOn.build();
-        _$failedField = 'id';
-        id.build();
-        _$failedField = 'modifiedOn';
-        modifiedOn.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
             r'SpectrumConfigPaygoAppConfig', _$failedField, e.toString());

@@ -148,11 +148,11 @@ class _$ZeroTrustNetworksRouteHostnameCreate4XXResponseSerializer implements Pri
 class ZeroTrustNetworksRouteHostnameCreate4XXResponseResultEnum extends EnumClass {
 
 
-  static Serializer<ZeroTrustNetworksRouteHostnameCreate4XXResponseResultEnum> get serializer => _$zeroTrustNetworksRouteHostnameCreate4XXResponseResultSerializer;
+  static Serializer<ZeroTrustNetworksRouteHostnameCreate4XXResponseResultEnum> get serializer => _$zeroTrustNetworksRouteHostnameCreate4XXResponseResultEnumSerializer;
 
   const ZeroTrustNetworksRouteHostnameCreate4XXResponseResultEnum._(String name): super(name);
 
-  static BuiltSet<ZeroTrustNetworksRouteHostnameCreate4XXResponseResultEnum> get values => _$zeroTrustNetworksRouteHostnameCreate4XXResponseResultValues;
-  static ZeroTrustNetworksRouteHostnameCreate4XXResponseResultEnum valueOf(String name) => _$zeroTrustNetworksRouteHostnameCreate4XXResponseResultValueOf(name);
+  static BuiltSet<ZeroTrustNetworksRouteHostnameCreate4XXResponseResultEnum> get values => _$zeroTrustNetworksRouteHostnameCreate4XXResponseResultEnumValues;
+  static ZeroTrustNetworksRouteHostnameCreate4XXResponseResultEnum valueOf(String name) => _$zeroTrustNetworksRouteHostnameCreate4XXResponseResultEnumValueOf(name);
 }
 

@@ -206,11 +206,11 @@ class AccessSchemasOidcTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'yandex')
   static const AccessSchemasOidcTypeEnum yandex = _$accessSchemasOidcTypeEnum_yandex;
 
-  static Serializer<AccessSchemasOidcTypeEnum> get serializer => _$accessSchemasOidcTypeSerializer;
+  static Serializer<AccessSchemasOidcTypeEnum> get serializer => _$accessSchemasOidcTypeEnumSerializer;
 
   const AccessSchemasOidcTypeEnum._(String name): super(name);
 
-  static BuiltSet<AccessSchemasOidcTypeEnum> get values => _$accessSchemasOidcTypeValues;
-  static AccessSchemasOidcTypeEnum valueOf(String name) => _$accessSchemasOidcTypeValueOf(name);
+  static BuiltSet<AccessSchemasOidcTypeEnum> get values => _$accessSchemasOidcTypeEnumValues;
+  static AccessSchemasOidcTypeEnum valueOf(String name) => _$accessSchemasOidcTypeEnumValueOf(name);
 }
 

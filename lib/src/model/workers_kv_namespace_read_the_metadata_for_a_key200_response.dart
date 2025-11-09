@@ -3,10 +3,10 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:cloudflare_dart/src/model/workers_kv_list_metadata.dart';
 import 'package:built_collection/built_collection.dart';
 import 'package:cloudflare_dart/src/model/workers_kv_api_response_common.dart';
 import 'package:cloudflare_dart/src/model/workers_kv_messages_inner.dart';
+import 'package:built_value/json_object.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
@@ -22,7 +22,7 @@ part 'workers_kv_namespace_read_the_metadata_for_a_key200_response.g.dart';
 @BuiltValue()
 abstract class WorkersKvNamespaceReadTheMetadataForAKey200Response implements WorkersKvApiResponseCommon, Built<WorkersKvNamespaceReadTheMetadataForAKey200Response, WorkersKvNamespaceReadTheMetadataForAKey200ResponseBuilder> {
   @BuiltValueField(wireName: r'result')
-  WorkersKvListMetadata? get result;
+  JsonObject? get result;
 
   WorkersKvNamespaceReadTheMetadataForAKey200Response._();
 
@@ -51,7 +51,7 @@ class _$WorkersKvNamespaceReadTheMetadataForAKey200ResponseSerializer implements
       yield r'result';
       yield serializers.serialize(
         object.result,
-        specifiedType: const FullType(WorkersKvListMetadata),
+        specifiedType: const FullType(JsonObject),
       );
     }
     yield r'messages';
@@ -95,8 +95,8 @@ class _$WorkersKvNamespaceReadTheMetadataForAKey200ResponseSerializer implements
         case r'result':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(WorkersKvListMetadata),
-          ) as WorkersKvListMetadata;
+            specifiedType: const FullType(JsonObject),
+          ) as JsonObject;
           result.result.replace(valueDes);
           break;
         case r'messages':

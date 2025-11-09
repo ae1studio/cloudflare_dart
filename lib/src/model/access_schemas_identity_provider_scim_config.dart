@@ -52,7 +52,7 @@ abstract class AccessSchemasIdentityProviderScimConfig implements Built<AccessSc
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(AccessSchemasIdentityProviderScimConfigBuilder b) => b
       ..enabled = false
-      ..identityUpdateBehavior = const AccessSchemasIdentityProviderScimConfigIdentityUpdateBehaviorEnum._('no_action')
+      ..identityUpdateBehavior = AccessSchemasIdentityProviderScimConfigIdentityUpdateBehaviorEnum.valueOf('no_action')
       ..seatDeprovision = false
       ..userDeprovision = false;
 
@@ -220,11 +220,11 @@ class AccessSchemasIdentityProviderScimConfigIdentityUpdateBehaviorEnum extends 
   @BuiltValueEnumConst(wireName: r'no_action')
   static const AccessSchemasIdentityProviderScimConfigIdentityUpdateBehaviorEnum noAction = _$accessSchemasIdentityProviderScimConfigIdentityUpdateBehaviorEnum_noAction;
 
-  static Serializer<AccessSchemasIdentityProviderScimConfigIdentityUpdateBehaviorEnum> get serializer => _$accessSchemasIdentityProviderScimConfigIdentityUpdateBehaviorSerializer;
+  static Serializer<AccessSchemasIdentityProviderScimConfigIdentityUpdateBehaviorEnum> get serializer => _$accessSchemasIdentityProviderScimConfigIdentityUpdateBehaviorEnumSerializer;
 
   const AccessSchemasIdentityProviderScimConfigIdentityUpdateBehaviorEnum._(String name): super(name);
 
-  static BuiltSet<AccessSchemasIdentityProviderScimConfigIdentityUpdateBehaviorEnum> get values => _$accessSchemasIdentityProviderScimConfigIdentityUpdateBehaviorValues;
-  static AccessSchemasIdentityProviderScimConfigIdentityUpdateBehaviorEnum valueOf(String name) => _$accessSchemasIdentityProviderScimConfigIdentityUpdateBehaviorValueOf(name);
+  static BuiltSet<AccessSchemasIdentityProviderScimConfigIdentityUpdateBehaviorEnum> get values => _$accessSchemasIdentityProviderScimConfigIdentityUpdateBehaviorEnumValues;
+  static AccessSchemasIdentityProviderScimConfigIdentityUpdateBehaviorEnum valueOf(String name) => _$accessSchemasIdentityProviderScimConfigIdentityUpdateBehaviorEnumValueOf(name);
 }
 

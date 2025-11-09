@@ -9,8 +9,6 @@ part of 'realtimekit_preset_ui_design_tokens_colors_background.dart';
 class _$RealtimekitPresetUiDesignTokensColorsBackground
     extends RealtimekitPresetUiDesignTokensColorsBackground {
   @override
-  final String n1000;
-  @override
   final String n600;
   @override
   final String n700;
@@ -18,6 +16,8 @@ class _$RealtimekitPresetUiDesignTokensColorsBackground
   final String n800;
   @override
   final String n900;
+  @override
+  final String n1000;
 
   factory _$RealtimekitPresetUiDesignTokensColorsBackground(
           [void Function(
@@ -28,11 +28,11 @@ class _$RealtimekitPresetUiDesignTokensColorsBackground
           ._build();
 
   _$RealtimekitPresetUiDesignTokensColorsBackground._(
-      {required this.n1000,
-      required this.n600,
+      {required this.n600,
       required this.n700,
       required this.n800,
-      required this.n900})
+      required this.n900,
+      required this.n1000})
       : super._();
   @override
   RealtimekitPresetUiDesignTokensColorsBackground rebuild(
@@ -48,21 +48,21 @@ class _$RealtimekitPresetUiDesignTokensColorsBackground
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is RealtimekitPresetUiDesignTokensColorsBackground &&
-        n1000 == other.n1000 &&
         n600 == other.n600 &&
         n700 == other.n700 &&
         n800 == other.n800 &&
-        n900 == other.n900;
+        n900 == other.n900 &&
+        n1000 == other.n1000;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, n1000.hashCode);
     _$hash = $jc(_$hash, n600.hashCode);
     _$hash = $jc(_$hash, n700.hashCode);
     _$hash = $jc(_$hash, n800.hashCode);
     _$hash = $jc(_$hash, n900.hashCode);
+    _$hash = $jc(_$hash, n1000.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -71,11 +71,11 @@ class _$RealtimekitPresetUiDesignTokensColorsBackground
   String toString() {
     return (newBuiltValueToStringHelper(
             r'RealtimekitPresetUiDesignTokensColorsBackground')
-          ..add('n1000', n1000)
           ..add('n600', n600)
           ..add('n700', n700)
           ..add('n800', n800)
-          ..add('n900', n900))
+          ..add('n900', n900)
+          ..add('n1000', n1000))
         .toString();
   }
 }
@@ -85,10 +85,6 @@ class RealtimekitPresetUiDesignTokensColorsBackgroundBuilder
         Builder<RealtimekitPresetUiDesignTokensColorsBackground,
             RealtimekitPresetUiDesignTokensColorsBackgroundBuilder> {
   _$RealtimekitPresetUiDesignTokensColorsBackground? _$v;
-
-  String? _n1000;
-  String? get n1000 => _$this._n1000;
-  set n1000(String? n1000) => _$this._n1000 = n1000;
 
   String? _n600;
   String? get n600 => _$this._n600;
@@ -106,6 +102,10 @@ class RealtimekitPresetUiDesignTokensColorsBackgroundBuilder
   String? get n900 => _$this._n900;
   set n900(String? n900) => _$this._n900 = n900;
 
+  String? _n1000;
+  String? get n1000 => _$this._n1000;
+  set n1000(String? n1000) => _$this._n1000 = n1000;
+
   RealtimekitPresetUiDesignTokensColorsBackgroundBuilder() {
     RealtimekitPresetUiDesignTokensColorsBackground._defaults(this);
   }
@@ -113,11 +113,11 @@ class RealtimekitPresetUiDesignTokensColorsBackgroundBuilder
   RealtimekitPresetUiDesignTokensColorsBackgroundBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _n1000 = $v.n1000;
       _n600 = $v.n600;
       _n700 = $v.n700;
       _n800 = $v.n800;
       _n900 = $v.n900;
+      _n1000 = $v.n1000;
       _$v = null;
     }
     return this;
@@ -141,8 +141,6 @@ class RealtimekitPresetUiDesignTokensColorsBackgroundBuilder
   _$RealtimekitPresetUiDesignTokensColorsBackground _build() {
     final _$result = _$v ??
         _$RealtimekitPresetUiDesignTokensColorsBackground._(
-          n1000: BuiltValueNullFieldError.checkNotNull(n1000,
-              r'RealtimekitPresetUiDesignTokensColorsBackground', 'n1000'),
           n600: BuiltValueNullFieldError.checkNotNull(
               n600, r'RealtimekitPresetUiDesignTokensColorsBackground', 'n600'),
           n700: BuiltValueNullFieldError.checkNotNull(
@@ -151,6 +149,8 @@ class RealtimekitPresetUiDesignTokensColorsBackgroundBuilder
               n800, r'RealtimekitPresetUiDesignTokensColorsBackground', 'n800'),
           n900: BuiltValueNullFieldError.checkNotNull(
               n900, r'RealtimekitPresetUiDesignTokensColorsBackground', 'n900'),
+          n1000: BuiltValueNullFieldError.checkNotNull(n1000,
+              r'RealtimekitPresetUiDesignTokensColorsBackground', 'n1000'),
         );
     replace(_$result);
     return _$result;

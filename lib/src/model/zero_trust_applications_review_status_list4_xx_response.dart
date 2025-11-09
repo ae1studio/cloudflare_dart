@@ -149,11 +149,11 @@ class _$ZeroTrustApplicationsReviewStatusList4XXResponseSerializer implements Pr
 class ZeroTrustApplicationsReviewStatusList4XXResponseResultEnum extends EnumClass {
 
 
-  static Serializer<ZeroTrustApplicationsReviewStatusList4XXResponseResultEnum> get serializer => _$zeroTrustApplicationsReviewStatusList4XXResponseResultSerializer;
+  static Serializer<ZeroTrustApplicationsReviewStatusList4XXResponseResultEnum> get serializer => _$zeroTrustApplicationsReviewStatusList4XXResponseResultEnumSerializer;
 
   const ZeroTrustApplicationsReviewStatusList4XXResponseResultEnum._(String name): super(name);
 
-  static BuiltSet<ZeroTrustApplicationsReviewStatusList4XXResponseResultEnum> get values => _$zeroTrustApplicationsReviewStatusList4XXResponseResultValues;
-  static ZeroTrustApplicationsReviewStatusList4XXResponseResultEnum valueOf(String name) => _$zeroTrustApplicationsReviewStatusList4XXResponseResultValueOf(name);
+  static BuiltSet<ZeroTrustApplicationsReviewStatusList4XXResponseResultEnum> get values => _$zeroTrustApplicationsReviewStatusList4XXResponseResultEnumValues;
+  static ZeroTrustApplicationsReviewStatusList4XXResponseResultEnum valueOf(String name) => _$zeroTrustApplicationsReviewStatusList4XXResponseResultEnumValueOf(name);
 }
 

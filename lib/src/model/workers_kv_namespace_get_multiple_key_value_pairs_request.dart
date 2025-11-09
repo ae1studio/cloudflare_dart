@@ -36,7 +36,7 @@ abstract class WorkersKvNamespaceGetMultipleKeyValuePairsRequest implements Buil
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(WorkersKvNamespaceGetMultipleKeyValuePairsRequestBuilder b) => b
-      ..type = const WorkersKvNamespaceGetMultipleKeyValuePairsRequestTypeEnum._('text')
+      ..type = WorkersKvNamespaceGetMultipleKeyValuePairsRequestTypeEnum.valueOf('text')
       ..withMetadata = false;
 
   @BuiltValueSerializer(custom: true)
@@ -156,11 +156,11 @@ class WorkersKvNamespaceGetMultipleKeyValuePairsRequestTypeEnum extends EnumClas
   @BuiltValueEnumConst(wireName: r'json')
   static const WorkersKvNamespaceGetMultipleKeyValuePairsRequestTypeEnum json = _$workersKvNamespaceGetMultipleKeyValuePairsRequestTypeEnum_json;
 
-  static Serializer<WorkersKvNamespaceGetMultipleKeyValuePairsRequestTypeEnum> get serializer => _$workersKvNamespaceGetMultipleKeyValuePairsRequestTypeSerializer;
+  static Serializer<WorkersKvNamespaceGetMultipleKeyValuePairsRequestTypeEnum> get serializer => _$workersKvNamespaceGetMultipleKeyValuePairsRequestTypeEnumSerializer;
 
   const WorkersKvNamespaceGetMultipleKeyValuePairsRequestTypeEnum._(String name): super(name);
 
-  static BuiltSet<WorkersKvNamespaceGetMultipleKeyValuePairsRequestTypeEnum> get values => _$workersKvNamespaceGetMultipleKeyValuePairsRequestTypeValues;
-  static WorkersKvNamespaceGetMultipleKeyValuePairsRequestTypeEnum valueOf(String name) => _$workersKvNamespaceGetMultipleKeyValuePairsRequestTypeValueOf(name);
+  static BuiltSet<WorkersKvNamespaceGetMultipleKeyValuePairsRequestTypeEnum> get values => _$workersKvNamespaceGetMultipleKeyValuePairsRequestTypeEnumValues;
+  static WorkersKvNamespaceGetMultipleKeyValuePairsRequestTypeEnum valueOf(String name) => _$workersKvNamespaceGetMultipleKeyValuePairsRequestTypeEnumValueOf(name);
 }
 

@@ -139,11 +139,11 @@ class CloudflarePipelinesFormatTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'parquet')
   static const CloudflarePipelinesFormatTypeEnum parquet = _$cloudflarePipelinesFormatTypeEnum_parquet;
 
-  static Serializer<CloudflarePipelinesFormatTypeEnum> get serializer => _$cloudflarePipelinesFormatTypeSerializer;
+  static Serializer<CloudflarePipelinesFormatTypeEnum> get serializer => _$cloudflarePipelinesFormatTypeEnumSerializer;
 
   const CloudflarePipelinesFormatTypeEnum._(String name): super(name);
 
-  static BuiltSet<CloudflarePipelinesFormatTypeEnum> get values => _$cloudflarePipelinesFormatTypeValues;
-  static CloudflarePipelinesFormatTypeEnum valueOf(String name) => _$cloudflarePipelinesFormatTypeValueOf(name);
+  static BuiltSet<CloudflarePipelinesFormatTypeEnum> get values => _$cloudflarePipelinesFormatTypeEnumValues;
+  static CloudflarePipelinesFormatTypeEnum valueOf(String name) => _$cloudflarePipelinesFormatTypeEnumValueOf(name);
 }
 

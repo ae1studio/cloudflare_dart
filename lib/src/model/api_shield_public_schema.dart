@@ -200,11 +200,11 @@ class ApiShieldPublicSchemaKindEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'openapi_v3')
   static const ApiShieldPublicSchemaKindEnum openapiV3 = _$apiShieldPublicSchemaKindEnum_openapiV3;
 
-  static Serializer<ApiShieldPublicSchemaKindEnum> get serializer => _$apiShieldPublicSchemaKindSerializer;
+  static Serializer<ApiShieldPublicSchemaKindEnum> get serializer => _$apiShieldPublicSchemaKindEnumSerializer;
 
   const ApiShieldPublicSchemaKindEnum._(String name): super(name);
 
-  static BuiltSet<ApiShieldPublicSchemaKindEnum> get values => _$apiShieldPublicSchemaKindValues;
-  static ApiShieldPublicSchemaKindEnum valueOf(String name) => _$apiShieldPublicSchemaKindValueOf(name);
+  static BuiltSet<ApiShieldPublicSchemaKindEnum> get values => _$apiShieldPublicSchemaKindEnumValues;
+  static ApiShieldPublicSchemaKindEnum valueOf(String name) => _$apiShieldPublicSchemaKindEnumValueOf(name);
 }
 

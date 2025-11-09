@@ -111,11 +111,11 @@ class BinaryTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'binary')
   static const BinaryTypeEnum binary = _$binaryTypeEnum_binary;
 
-  static Serializer<BinaryTypeEnum> get serializer => _$binaryTypeSerializer;
+  static Serializer<BinaryTypeEnum> get serializer => _$binaryTypeEnumSerializer;
 
   const BinaryTypeEnum._(String name): super(name);
 
-  static BuiltSet<BinaryTypeEnum> get values => _$binaryTypeValues;
-  static BinaryTypeEnum valueOf(String name) => _$binaryTypeValueOf(name);
+  static BuiltSet<BinaryTypeEnum> get values => _$binaryTypeEnumValues;
+  static BinaryTypeEnum valueOf(String name) => _$binaryTypeEnumValueOf(name);
 }
 

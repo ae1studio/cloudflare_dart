@@ -14,7 +14,6 @@ import 'package:cloudflare_dart/src/model/filters_delete_a_filter4_xx_response.d
 import 'package:cloudflare_dart/src/model/filters_delete_filters4_xx_response.dart';
 import 'package:cloudflare_dart/src/model/filters_get_a_filter4_xx_response.dart';
 import 'package:cloudflare_dart/src/model/filters_list_filters4_xx_response.dart';
-import 'package:cloudflare_dart/src/model/filters_list_filters_paused_parameter.dart';
 import 'package:cloudflare_dart/src/model/firewall_filter.dart';
 import 'package:cloudflare_dart/src/model/firewall_filter_delete_response_collection.dart';
 import 'package:cloudflare_dart/src/model/firewall_filter_delete_response_single.dart';
@@ -455,7 +454,7 @@ class FiltersApi {
   @Deprecated('This operation has been deprecated')
   Future<Response<FirewallFilterResponseCollection>> filtersListFilters({ 
     required String zoneId,
-    FiltersListFiltersPausedParameter? paused,
+    bool? paused,
     String? expression,
     String? description,
     String? ref,
@@ -499,7 +498,7 @@ class FiltersApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      if (paused != null) r'paused': encodeQueryParameter(_serializers, paused, const FullType(FiltersListFiltersPausedParameter)),
+      if (paused != null) r'paused': encodeQueryParameter(_serializers, paused, const FullType(bool)),
       if (expression != null) r'expression': encodeQueryParameter(_serializers, expression, const FullType(String)),
       if (description != null) r'description': encodeQueryParameter(_serializers, description, const FullType(String)),
       if (ref != null) r'ref': encodeQueryParameter(_serializers, ref, const FullType(String)),

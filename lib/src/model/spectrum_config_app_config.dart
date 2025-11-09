@@ -4,17 +4,15 @@
 
 // ignore_for_file: unused_element
 import 'package:cloudflare_dart/src/model/spectrum_config_tls.dart';
-import 'package:cloudflare_dart/src/model/spectrum_config_modified.dart';
-import 'package:cloudflare_dart/src/model/spectrum_config_app_identifier.dart';
 import 'package:cloudflare_dart/src/model/spectrum_config_edge_ips.dart';
 import 'package:cloudflare_dart/src/model/spectrum_config_base_app_config.dart';
 import 'package:built_collection/built_collection.dart';
-import 'package:cloudflare_dart/src/model/spectrum_config_created.dart';
 import 'package:cloudflare_dart/src/model/spectrum_config_proxy_protocol.dart';
 import 'package:cloudflare_dart/src/model/spectrum_config_dns.dart';
 import 'package:cloudflare_dart/src/model/spectrum_config_origin_dns.dart';
 import 'package:cloudflare_dart/src/model/spectrum_config_origin_port.dart';
 import 'package:cloudflare_dart/src/model/spectrum_config_traffic_type.dart';
+import 'package:built_value/json_object.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
@@ -131,7 +129,7 @@ class _$SpectrumConfigAppConfigSerializer implements PrimitiveSerializer<Spectru
     yield r'created_on';
     yield serializers.serialize(
       object.createdOn,
-      specifiedType: const FullType(SpectrumConfigCreated),
+      specifiedType: const FullType(JsonObject),
     );
     if (object.argoSmartRouting != null) {
       yield r'argo_smart_routing';
@@ -148,7 +146,7 @@ class _$SpectrumConfigAppConfigSerializer implements PrimitiveSerializer<Spectru
     yield r'modified_on';
     yield serializers.serialize(
       object.modifiedOn,
-      specifiedType: const FullType(SpectrumConfigModified),
+      specifiedType: const FullType(JsonObject),
     );
     if (object.ipFirewall != null) {
       yield r'ip_firewall';
@@ -181,7 +179,7 @@ class _$SpectrumConfigAppConfigSerializer implements PrimitiveSerializer<Spectru
     yield r'id';
     yield serializers.serialize(
       object.id,
-      specifiedType: const FullType(SpectrumConfigAppIdentifier),
+      specifiedType: const FullType(JsonObject),
     );
     if (object.originDns != null) {
       yield r'origin_dns';
@@ -244,8 +242,8 @@ class _$SpectrumConfigAppConfigSerializer implements PrimitiveSerializer<Spectru
         case r'created_on':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(SpectrumConfigCreated),
-          ) as SpectrumConfigCreated;
+            specifiedType: const FullType(JsonObject),
+          ) as JsonObject;
           result.createdOn.replace(valueDes);
           break;
         case r'argo_smart_routing':
@@ -265,8 +263,8 @@ class _$SpectrumConfigAppConfigSerializer implements PrimitiveSerializer<Spectru
         case r'modified_on':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(SpectrumConfigModified),
-          ) as SpectrumConfigModified;
+            specifiedType: const FullType(JsonObject),
+          ) as JsonObject;
           result.modifiedOn.replace(valueDes);
           break;
         case r'ip_firewall':
@@ -300,8 +298,8 @@ class _$SpectrumConfigAppConfigSerializer implements PrimitiveSerializer<Spectru
         case r'id':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(SpectrumConfigAppIdentifier),
-          ) as SpectrumConfigAppIdentifier;
+            specifiedType: const FullType(JsonObject),
+          ) as JsonObject;
           result.id.replace(valueDes);
           break;
         case r'origin_dns':

@@ -6,13 +6,128 @@ part of 'realtimekit_webhook.dart';
 // BuiltValueGenerator
 // **************************************************************************
 
+const RealtimekitWebhookEventsEnum
+    _$realtimekitWebhookEventsEnum_meetingPeriodStarted =
+    const RealtimekitWebhookEventsEnum._('meetingPeriodStarted');
+const RealtimekitWebhookEventsEnum
+    _$realtimekitWebhookEventsEnum_meetingPeriodEnded =
+    const RealtimekitWebhookEventsEnum._('meetingPeriodEnded');
+const RealtimekitWebhookEventsEnum
+    _$realtimekitWebhookEventsEnum_meetingPeriodParticipantJoined =
+    const RealtimekitWebhookEventsEnum._('meetingPeriodParticipantJoined');
+const RealtimekitWebhookEventsEnum
+    _$realtimekitWebhookEventsEnum_meetingPeriodParticipantLeft =
+    const RealtimekitWebhookEventsEnum._('meetingPeriodParticipantLeft');
+const RealtimekitWebhookEventsEnum
+    _$realtimekitWebhookEventsEnum_meetingPeriodChatSynced =
+    const RealtimekitWebhookEventsEnum._('meetingPeriodChatSynced');
+const RealtimekitWebhookEventsEnum
+    _$realtimekitWebhookEventsEnum_recordingPeriodStatusUpdate =
+    const RealtimekitWebhookEventsEnum._('recordingPeriodStatusUpdate');
+const RealtimekitWebhookEventsEnum
+    _$realtimekitWebhookEventsEnum_livestreamingPeriodStatusUpdate =
+    const RealtimekitWebhookEventsEnum._('livestreamingPeriodStatusUpdate');
+const RealtimekitWebhookEventsEnum
+    _$realtimekitWebhookEventsEnum_meetingPeriodTranscript =
+    const RealtimekitWebhookEventsEnum._('meetingPeriodTranscript');
+const RealtimekitWebhookEventsEnum
+    _$realtimekitWebhookEventsEnum_meetingPeriodSummary =
+    const RealtimekitWebhookEventsEnum._('meetingPeriodSummary');
+
+RealtimekitWebhookEventsEnum _$realtimekitWebhookEventsEnumValueOf(
+    String name) {
+  switch (name) {
+    case 'meetingPeriodStarted':
+      return _$realtimekitWebhookEventsEnum_meetingPeriodStarted;
+    case 'meetingPeriodEnded':
+      return _$realtimekitWebhookEventsEnum_meetingPeriodEnded;
+    case 'meetingPeriodParticipantJoined':
+      return _$realtimekitWebhookEventsEnum_meetingPeriodParticipantJoined;
+    case 'meetingPeriodParticipantLeft':
+      return _$realtimekitWebhookEventsEnum_meetingPeriodParticipantLeft;
+    case 'meetingPeriodChatSynced':
+      return _$realtimekitWebhookEventsEnum_meetingPeriodChatSynced;
+    case 'recordingPeriodStatusUpdate':
+      return _$realtimekitWebhookEventsEnum_recordingPeriodStatusUpdate;
+    case 'livestreamingPeriodStatusUpdate':
+      return _$realtimekitWebhookEventsEnum_livestreamingPeriodStatusUpdate;
+    case 'meetingPeriodTranscript':
+      return _$realtimekitWebhookEventsEnum_meetingPeriodTranscript;
+    case 'meetingPeriodSummary':
+      return _$realtimekitWebhookEventsEnum_meetingPeriodSummary;
+    default:
+      throw ArgumentError(name);
+  }
+}
+
+final BuiltSet<RealtimekitWebhookEventsEnum>
+    _$realtimekitWebhookEventsEnumValues =
+    BuiltSet<RealtimekitWebhookEventsEnum>(const <RealtimekitWebhookEventsEnum>[
+  _$realtimekitWebhookEventsEnum_meetingPeriodStarted,
+  _$realtimekitWebhookEventsEnum_meetingPeriodEnded,
+  _$realtimekitWebhookEventsEnum_meetingPeriodParticipantJoined,
+  _$realtimekitWebhookEventsEnum_meetingPeriodParticipantLeft,
+  _$realtimekitWebhookEventsEnum_meetingPeriodChatSynced,
+  _$realtimekitWebhookEventsEnum_recordingPeriodStatusUpdate,
+  _$realtimekitWebhookEventsEnum_livestreamingPeriodStatusUpdate,
+  _$realtimekitWebhookEventsEnum_meetingPeriodTranscript,
+  _$realtimekitWebhookEventsEnum_meetingPeriodSummary,
+]);
+
+Serializer<RealtimekitWebhookEventsEnum>
+    _$realtimekitWebhookEventsEnumSerializer =
+    _$RealtimekitWebhookEventsEnumSerializer();
+
+class _$RealtimekitWebhookEventsEnumSerializer
+    implements PrimitiveSerializer<RealtimekitWebhookEventsEnum> {
+  static const Map<String, Object> _toWire = const <String, Object>{
+    'meetingPeriodStarted': 'meeting.started',
+    'meetingPeriodEnded': 'meeting.ended',
+    'meetingPeriodParticipantJoined': 'meeting.participantJoined',
+    'meetingPeriodParticipantLeft': 'meeting.participantLeft',
+    'meetingPeriodChatSynced': 'meeting.chatSynced',
+    'recordingPeriodStatusUpdate': 'recording.statusUpdate',
+    'livestreamingPeriodStatusUpdate': 'livestreaming.statusUpdate',
+    'meetingPeriodTranscript': 'meeting.transcript',
+    'meetingPeriodSummary': 'meeting.summary',
+  };
+  static const Map<Object, String> _fromWire = const <Object, String>{
+    'meeting.started': 'meetingPeriodStarted',
+    'meeting.ended': 'meetingPeriodEnded',
+    'meeting.participantJoined': 'meetingPeriodParticipantJoined',
+    'meeting.participantLeft': 'meetingPeriodParticipantLeft',
+    'meeting.chatSynced': 'meetingPeriodChatSynced',
+    'recording.statusUpdate': 'recordingPeriodStatusUpdate',
+    'livestreaming.statusUpdate': 'livestreamingPeriodStatusUpdate',
+    'meeting.transcript': 'meetingPeriodTranscript',
+    'meeting.summary': 'meetingPeriodSummary',
+  };
+
+  @override
+  final Iterable<Type> types = const <Type>[RealtimekitWebhookEventsEnum];
+  @override
+  final String wireName = 'RealtimekitWebhookEventsEnum';
+
+  @override
+  Object serialize(Serializers serializers, RealtimekitWebhookEventsEnum object,
+          {FullType specifiedType = FullType.unspecified}) =>
+      _toWire[object.name] ?? object.name;
+
+  @override
+  RealtimekitWebhookEventsEnum deserialize(
+          Serializers serializers, Object serialized,
+          {FullType specifiedType = FullType.unspecified}) =>
+      RealtimekitWebhookEventsEnum.valueOf(
+          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+}
+
 class _$RealtimekitWebhook extends RealtimekitWebhook {
   @override
   final DateTime createdAt;
   @override
   final bool enabled;
   @override
-  final BuiltList<dynamic> events;
+  final BuiltList<RealtimekitWebhookEventsEnum> events;
   @override
   final String id;
   @override
@@ -97,9 +212,11 @@ class RealtimekitWebhookBuilder
   bool? get enabled => _$this._enabled;
   set enabled(bool? enabled) => _$this._enabled = enabled;
 
-  ListBuilder<dynamic>? _events;
-  ListBuilder<dynamic> get events => _$this._events ??= ListBuilder<dynamic>();
-  set events(ListBuilder<dynamic>? events) => _$this._events = events;
+  ListBuilder<RealtimekitWebhookEventsEnum>? _events;
+  ListBuilder<RealtimekitWebhookEventsEnum> get events =>
+      _$this._events ??= ListBuilder<RealtimekitWebhookEventsEnum>();
+  set events(ListBuilder<RealtimekitWebhookEventsEnum>? events) =>
+      _$this._events = events;
 
   String? _id;
   String? get id => _$this._id;

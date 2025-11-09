@@ -6,6 +6,106 @@ part of 'firewall_filter_rule_base.dart';
 // BuiltValueGenerator
 // **************************************************************************
 
+const FirewallFilterRuleBaseProductsEnum
+    _$firewallFilterRuleBaseProductsEnum_zoneLockdown =
+    const FirewallFilterRuleBaseProductsEnum._('zoneLockdown');
+const FirewallFilterRuleBaseProductsEnum
+    _$firewallFilterRuleBaseProductsEnum_uaBlock =
+    const FirewallFilterRuleBaseProductsEnum._('uaBlock');
+const FirewallFilterRuleBaseProductsEnum
+    _$firewallFilterRuleBaseProductsEnum_bic =
+    const FirewallFilterRuleBaseProductsEnum._('bic');
+const FirewallFilterRuleBaseProductsEnum
+    _$firewallFilterRuleBaseProductsEnum_hot =
+    const FirewallFilterRuleBaseProductsEnum._('hot');
+const FirewallFilterRuleBaseProductsEnum
+    _$firewallFilterRuleBaseProductsEnum_securityLevel =
+    const FirewallFilterRuleBaseProductsEnum._('securityLevel');
+const FirewallFilterRuleBaseProductsEnum
+    _$firewallFilterRuleBaseProductsEnum_rateLimit =
+    const FirewallFilterRuleBaseProductsEnum._('rateLimit');
+const FirewallFilterRuleBaseProductsEnum
+    _$firewallFilterRuleBaseProductsEnum_waf =
+    const FirewallFilterRuleBaseProductsEnum._('waf');
+
+FirewallFilterRuleBaseProductsEnum _$firewallFilterRuleBaseProductsEnumValueOf(
+    String name) {
+  switch (name) {
+    case 'zoneLockdown':
+      return _$firewallFilterRuleBaseProductsEnum_zoneLockdown;
+    case 'uaBlock':
+      return _$firewallFilterRuleBaseProductsEnum_uaBlock;
+    case 'bic':
+      return _$firewallFilterRuleBaseProductsEnum_bic;
+    case 'hot':
+      return _$firewallFilterRuleBaseProductsEnum_hot;
+    case 'securityLevel':
+      return _$firewallFilterRuleBaseProductsEnum_securityLevel;
+    case 'rateLimit':
+      return _$firewallFilterRuleBaseProductsEnum_rateLimit;
+    case 'waf':
+      return _$firewallFilterRuleBaseProductsEnum_waf;
+    default:
+      throw ArgumentError(name);
+  }
+}
+
+final BuiltSet<FirewallFilterRuleBaseProductsEnum>
+    _$firewallFilterRuleBaseProductsEnumValues = BuiltSet<
+        FirewallFilterRuleBaseProductsEnum>(const <FirewallFilterRuleBaseProductsEnum>[
+  _$firewallFilterRuleBaseProductsEnum_zoneLockdown,
+  _$firewallFilterRuleBaseProductsEnum_uaBlock,
+  _$firewallFilterRuleBaseProductsEnum_bic,
+  _$firewallFilterRuleBaseProductsEnum_hot,
+  _$firewallFilterRuleBaseProductsEnum_securityLevel,
+  _$firewallFilterRuleBaseProductsEnum_rateLimit,
+  _$firewallFilterRuleBaseProductsEnum_waf,
+]);
+
+Serializer<FirewallFilterRuleBaseProductsEnum>
+    _$firewallFilterRuleBaseProductsEnumSerializer =
+    _$FirewallFilterRuleBaseProductsEnumSerializer();
+
+class _$FirewallFilterRuleBaseProductsEnumSerializer
+    implements PrimitiveSerializer<FirewallFilterRuleBaseProductsEnum> {
+  static const Map<String, Object> _toWire = const <String, Object>{
+    'zoneLockdown': 'zoneLockdown',
+    'uaBlock': 'uaBlock',
+    'bic': 'bic',
+    'hot': 'hot',
+    'securityLevel': 'securityLevel',
+    'rateLimit': 'rateLimit',
+    'waf': 'waf',
+  };
+  static const Map<Object, String> _fromWire = const <Object, String>{
+    'zoneLockdown': 'zoneLockdown',
+    'uaBlock': 'uaBlock',
+    'bic': 'bic',
+    'hot': 'hot',
+    'securityLevel': 'securityLevel',
+    'rateLimit': 'rateLimit',
+    'waf': 'waf',
+  };
+
+  @override
+  final Iterable<Type> types = const <Type>[FirewallFilterRuleBaseProductsEnum];
+  @override
+  final String wireName = 'FirewallFilterRuleBaseProductsEnum';
+
+  @override
+  Object serialize(
+          Serializers serializers, FirewallFilterRuleBaseProductsEnum object,
+          {FullType specifiedType = FullType.unspecified}) =>
+      _toWire[object.name] ?? object.name;
+
+  @override
+  FirewallFilterRuleBaseProductsEnum deserialize(
+          Serializers serializers, Object serialized,
+          {FullType specifiedType = FullType.unspecified}) =>
+      FirewallFilterRuleBaseProductsEnum.valueOf(
+          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+}
+
 abstract class FirewallFilterRuleBaseBuilder {
   void replace(FirewallFilterRuleBase other);
   void update(void Function(FirewallFilterRuleBaseBuilder) updates);
@@ -24,8 +124,8 @@ abstract class FirewallFilterRuleBaseBuilder {
   num? get priority;
   set priority(num? priority);
 
-  ListBuilder<dynamic> get products;
-  set products(ListBuilder<dynamic>? products);
+  ListBuilder<FirewallFilterRuleBaseProductsEnum> get products;
+  set products(ListBuilder<FirewallFilterRuleBaseProductsEnum>? products);
 
   String? get ref;
   set ref(String? ref);
@@ -43,7 +143,7 @@ class _$$FirewallFilterRuleBase extends $FirewallFilterRuleBase {
   @override
   final num? priority;
   @override
-  final BuiltList<dynamic>? products;
+  final BuiltList<FirewallFilterRuleBaseProductsEnum>? products;
   @override
   final String? ref;
 
@@ -138,10 +238,12 @@ class $FirewallFilterRuleBaseBuilder
   num? get priority => _$this._priority;
   set priority(covariant num? priority) => _$this._priority = priority;
 
-  ListBuilder<dynamic>? _products;
-  ListBuilder<dynamic> get products =>
-      _$this._products ??= ListBuilder<dynamic>();
-  set products(covariant ListBuilder<dynamic>? products) =>
+  ListBuilder<FirewallFilterRuleBaseProductsEnum>? _products;
+  ListBuilder<FirewallFilterRuleBaseProductsEnum> get products =>
+      _$this._products ??= ListBuilder<FirewallFilterRuleBaseProductsEnum>();
+  set products(
+          covariant ListBuilder<FirewallFilterRuleBaseProductsEnum>?
+              products) =>
       _$this._products = products;
 
   String? _ref;

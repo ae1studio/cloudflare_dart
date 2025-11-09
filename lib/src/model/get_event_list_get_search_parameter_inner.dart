@@ -172,11 +172,11 @@ class GetEventListGetSearchParameterInnerOpEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'find')
   static const GetEventListGetSearchParameterInnerOpEnum find = _$getEventListGetSearchParameterInnerOpEnum_find;
 
-  static Serializer<GetEventListGetSearchParameterInnerOpEnum> get serializer => _$getEventListGetSearchParameterInnerOpSerializer;
+  static Serializer<GetEventListGetSearchParameterInnerOpEnum> get serializer => _$getEventListGetSearchParameterInnerOpEnumSerializer;
 
   const GetEventListGetSearchParameterInnerOpEnum._(String name): super(name);
 
-  static BuiltSet<GetEventListGetSearchParameterInnerOpEnum> get values => _$getEventListGetSearchParameterInnerOpValues;
-  static GetEventListGetSearchParameterInnerOpEnum valueOf(String name) => _$getEventListGetSearchParameterInnerOpValueOf(name);
+  static BuiltSet<GetEventListGetSearchParameterInnerOpEnum> get values => _$getEventListGetSearchParameterInnerOpEnumValues;
+  static GetEventListGetSearchParameterInnerOpEnum valueOf(String name) => _$getEventListGetSearchParameterInnerOpEnumValueOf(name);
 }
 

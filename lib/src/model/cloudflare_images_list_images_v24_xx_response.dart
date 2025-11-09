@@ -148,11 +148,11 @@ class _$CloudflareImagesListImagesV24XXResponseSerializer implements PrimitiveSe
 class CloudflareImagesListImagesV24XXResponseResultEnum extends EnumClass {
 
 
-  static Serializer<CloudflareImagesListImagesV24XXResponseResultEnum> get serializer => _$cloudflareImagesListImagesV24XXResponseResultSerializer;
+  static Serializer<CloudflareImagesListImagesV24XXResponseResultEnum> get serializer => _$cloudflareImagesListImagesV24XXResponseResultEnumSerializer;
 
   const CloudflareImagesListImagesV24XXResponseResultEnum._(String name): super(name);
 
-  static BuiltSet<CloudflareImagesListImagesV24XXResponseResultEnum> get values => _$cloudflareImagesListImagesV24XXResponseResultValues;
-  static CloudflareImagesListImagesV24XXResponseResultEnum valueOf(String name) => _$cloudflareImagesListImagesV24XXResponseResultValueOf(name);
+  static BuiltSet<CloudflareImagesListImagesV24XXResponseResultEnum> get values => _$cloudflareImagesListImagesV24XXResponseResultEnumValues;
+  static CloudflareImagesListImagesV24XXResponseResultEnum valueOf(String name) => _$cloudflareImagesListImagesV24XXResponseResultEnumValueOf(name);
 }
 

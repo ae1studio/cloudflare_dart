@@ -156,11 +156,11 @@ class FirewallSchemasRuleAllOfScopeTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'organization')
   static const FirewallSchemasRuleAllOfScopeTypeEnum organization = _$firewallSchemasRuleAllOfScopeTypeEnum_organization;
 
-  static Serializer<FirewallSchemasRuleAllOfScopeTypeEnum> get serializer => _$firewallSchemasRuleAllOfScopeTypeSerializer;
+  static Serializer<FirewallSchemasRuleAllOfScopeTypeEnum> get serializer => _$firewallSchemasRuleAllOfScopeTypeEnumSerializer;
 
   const FirewallSchemasRuleAllOfScopeTypeEnum._(String name): super(name);
 
-  static BuiltSet<FirewallSchemasRuleAllOfScopeTypeEnum> get values => _$firewallSchemasRuleAllOfScopeTypeValues;
-  static FirewallSchemasRuleAllOfScopeTypeEnum valueOf(String name) => _$firewallSchemasRuleAllOfScopeTypeValueOf(name);
+  static BuiltSet<FirewallSchemasRuleAllOfScopeTypeEnum> get values => _$firewallSchemasRuleAllOfScopeTypeEnumValues;
+  static FirewallSchemasRuleAllOfScopeTypeEnum valueOf(String name) => _$firewallSchemasRuleAllOfScopeTypeEnumValueOf(name);
 }
 

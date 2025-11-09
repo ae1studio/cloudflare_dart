@@ -237,11 +237,11 @@ class MagicBgpStatusWithStateStateEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'BGP_ESTABLISHING')
   static const MagicBgpStatusWithStateStateEnum BGP_ESTABLISHING = _$magicBgpStatusWithStateStateEnum_BGP_ESTABLISHING;
 
-  static Serializer<MagicBgpStatusWithStateStateEnum> get serializer => _$magicBgpStatusWithStateStateSerializer;
+  static Serializer<MagicBgpStatusWithStateStateEnum> get serializer => _$magicBgpStatusWithStateStateEnumSerializer;
 
   const MagicBgpStatusWithStateStateEnum._(String name): super(name);
 
-  static BuiltSet<MagicBgpStatusWithStateStateEnum> get values => _$magicBgpStatusWithStateStateValues;
-  static MagicBgpStatusWithStateStateEnum valueOf(String name) => _$magicBgpStatusWithStateStateValueOf(name);
+  static BuiltSet<MagicBgpStatusWithStateStateEnum> get values => _$magicBgpStatusWithStateStateEnumValues;
+  static MagicBgpStatusWithStateStateEnum valueOf(String name) => _$magicBgpStatusWithStateStateEnumValueOf(name);
 }
 

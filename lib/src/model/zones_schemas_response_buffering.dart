@@ -158,11 +158,11 @@ class ZonesSchemasResponseBufferingIdEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'response_buffering')
   static const ZonesSchemasResponseBufferingIdEnum responseBuffering = _$zonesSchemasResponseBufferingIdEnum_responseBuffering;
 
-  static Serializer<ZonesSchemasResponseBufferingIdEnum> get serializer => _$zonesSchemasResponseBufferingIdSerializer;
+  static Serializer<ZonesSchemasResponseBufferingIdEnum> get serializer => _$zonesSchemasResponseBufferingIdEnumSerializer;
 
   const ZonesSchemasResponseBufferingIdEnum._(String name): super(name);
 
-  static BuiltSet<ZonesSchemasResponseBufferingIdEnum> get values => _$zonesSchemasResponseBufferingIdValues;
-  static ZonesSchemasResponseBufferingIdEnum valueOf(String name) => _$zonesSchemasResponseBufferingIdValueOf(name);
+  static BuiltSet<ZonesSchemasResponseBufferingIdEnum> get values => _$zonesSchemasResponseBufferingIdEnumValues;
+  static ZonesSchemasResponseBufferingIdEnum valueOf(String name) => _$zonesSchemasResponseBufferingIdEnumValueOf(name);
 }
 

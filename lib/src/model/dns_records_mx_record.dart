@@ -248,11 +248,11 @@ class DnsRecordsMXRecordTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'MX')
   static const DnsRecordsMXRecordTypeEnum MX = _$dnsRecordsMXRecordTypeEnum_MX;
 
-  static Serializer<DnsRecordsMXRecordTypeEnum> get serializer => _$dnsRecordsMXRecordTypeSerializer;
+  static Serializer<DnsRecordsMXRecordTypeEnum> get serializer => _$dnsRecordsMXRecordTypeEnumSerializer;
 
   const DnsRecordsMXRecordTypeEnum._(String name): super(name);
 
-  static BuiltSet<DnsRecordsMXRecordTypeEnum> get values => _$dnsRecordsMXRecordTypeValues;
-  static DnsRecordsMXRecordTypeEnum valueOf(String name) => _$dnsRecordsMXRecordTypeValueOf(name);
+  static BuiltSet<DnsRecordsMXRecordTypeEnum> get values => _$dnsRecordsMXRecordTypeEnumValues;
+  static DnsRecordsMXRecordTypeEnum valueOf(String name) => _$dnsRecordsMXRecordTypeEnumValueOf(name);
 }
 

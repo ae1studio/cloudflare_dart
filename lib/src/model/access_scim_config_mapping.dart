@@ -211,11 +211,11 @@ class AccessScimConfigMappingStrictnessEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'passthrough')
   static const AccessScimConfigMappingStrictnessEnum passthrough = _$accessScimConfigMappingStrictnessEnum_passthrough;
 
-  static Serializer<AccessScimConfigMappingStrictnessEnum> get serializer => _$accessScimConfigMappingStrictnessSerializer;
+  static Serializer<AccessScimConfigMappingStrictnessEnum> get serializer => _$accessScimConfigMappingStrictnessEnumSerializer;
 
   const AccessScimConfigMappingStrictnessEnum._(String name): super(name);
 
-  static BuiltSet<AccessScimConfigMappingStrictnessEnum> get values => _$accessScimConfigMappingStrictnessValues;
-  static AccessScimConfigMappingStrictnessEnum valueOf(String name) => _$accessScimConfigMappingStrictnessValueOf(name);
+  static BuiltSet<AccessScimConfigMappingStrictnessEnum> get values => _$accessScimConfigMappingStrictnessEnumValues;
+  static AccessScimConfigMappingStrictnessEnum valueOf(String name) => _$accessScimConfigMappingStrictnessEnumValueOf(name);
 }
 

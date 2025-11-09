@@ -30,7 +30,7 @@ abstract class UrlscannerCreateScanRequest implements Built<UrlscannerCreateScan
 
   /// Take multiple screenshots targeting different device types.
   @BuiltValueField(wireName: r'screenshotsResolutions')
-  BuiltList<UrlscannerCreateScanV2RequestScreenshotsResolutionsEnum>? get screenshotsResolutions;
+  BuiltList<UrlscannerCreateScanRequestScreenshotsResolutionsEnum>? get screenshotsResolutions;
   // enum screenshotsResolutionsEnum {  desktop,  mobile,  tablet,  };
 
   @BuiltValueField(wireName: r'url')
@@ -47,8 +47,8 @@ abstract class UrlscannerCreateScanRequest implements Built<UrlscannerCreateScan
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(UrlscannerCreateScanRequestBuilder b) => b
-      ..screenshotsResolutions = ListBuilder()
-      ..visibility = const UrlscannerCreateScanRequestVisibilityEnum._('Public');
+      ..screenshotsResolutions = 
+      ..visibility = UrlscannerCreateScanRequestVisibilityEnum.valueOf('Public');
 
   @BuiltValueSerializer(custom: true)
   static Serializer<UrlscannerCreateScanRequest> get serializer => _$UrlscannerCreateScanRequestSerializer();
@@ -84,7 +84,7 @@ class _$UrlscannerCreateScanRequestSerializer implements PrimitiveSerializer<Url
       yield r'screenshotsResolutions';
       yield serializers.serialize(
         object.screenshotsResolutions,
-        specifiedType: const FullType(BuiltList, [FullType(UrlscannerCreateScanV2RequestScreenshotsResolutionsEnum)]),
+        specifiedType: const FullType(BuiltList, [FullType(UrlscannerCreateScanRequestScreenshotsResolutionsEnum)]),
       );
     }
     yield r'url';
@@ -139,8 +139,8 @@ class _$UrlscannerCreateScanRequestSerializer implements PrimitiveSerializer<Url
         case r'screenshotsResolutions':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(BuiltList, [FullType(UrlscannerCreateScanV2RequestScreenshotsResolutionsEnum)]),
-          ) as BuiltList<UrlscannerCreateScanV2RequestScreenshotsResolutionsEnum>;
+            specifiedType: const FullType(BuiltList, [FullType(UrlscannerCreateScanRequestScreenshotsResolutionsEnum)]),
+          ) as BuiltList<UrlscannerCreateScanRequestScreenshotsResolutionsEnum>;
           result.screenshotsResolutions.replace(valueDes);
           break;
         case r'url':
@@ -774,12 +774,32 @@ class UrlscannerCreateScanRequestCountryEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'ZW')
   static const UrlscannerCreateScanRequestCountryEnum ZW = _$urlscannerCreateScanRequestCountryEnum_ZW;
 
-  static Serializer<UrlscannerCreateScanRequestCountryEnum> get serializer => _$urlscannerCreateScanRequestCountrySerializer;
+  static Serializer<UrlscannerCreateScanRequestCountryEnum> get serializer => _$urlscannerCreateScanRequestCountryEnumSerializer;
 
   const UrlscannerCreateScanRequestCountryEnum._(String name): super(name);
 
-  static BuiltSet<UrlscannerCreateScanRequestCountryEnum> get values => _$urlscannerCreateScanRequestCountryValues;
-  static UrlscannerCreateScanRequestCountryEnum valueOf(String name) => _$urlscannerCreateScanRequestCountryValueOf(name);
+  static BuiltSet<UrlscannerCreateScanRequestCountryEnum> get values => _$urlscannerCreateScanRequestCountryEnumValues;
+  static UrlscannerCreateScanRequestCountryEnum valueOf(String name) => _$urlscannerCreateScanRequestCountryEnumValueOf(name);
+}
+
+class UrlscannerCreateScanRequestScreenshotsResolutionsEnum extends EnumClass {
+
+  /// Device resolutions.
+  @BuiltValueEnumConst(wireName: r'desktop')
+  static const UrlscannerCreateScanRequestScreenshotsResolutionsEnum desktop = _$urlscannerCreateScanRequestScreenshotsResolutionsEnum_desktop;
+  /// Device resolutions.
+  @BuiltValueEnumConst(wireName: r'mobile')
+  static const UrlscannerCreateScanRequestScreenshotsResolutionsEnum mobile = _$urlscannerCreateScanRequestScreenshotsResolutionsEnum_mobile;
+  /// Device resolutions.
+  @BuiltValueEnumConst(wireName: r'tablet')
+  static const UrlscannerCreateScanRequestScreenshotsResolutionsEnum tablet = _$urlscannerCreateScanRequestScreenshotsResolutionsEnum_tablet;
+
+  static Serializer<UrlscannerCreateScanRequestScreenshotsResolutionsEnum> get serializer => _$urlscannerCreateScanRequestScreenshotsResolutionsEnumSerializer;
+
+  const UrlscannerCreateScanRequestScreenshotsResolutionsEnum._(String name): super(name);
+
+  static BuiltSet<UrlscannerCreateScanRequestScreenshotsResolutionsEnum> get values => _$urlscannerCreateScanRequestScreenshotsResolutionsEnumValues;
+  static UrlscannerCreateScanRequestScreenshotsResolutionsEnum valueOf(String name) => _$urlscannerCreateScanRequestScreenshotsResolutionsEnumValueOf(name);
 }
 
 class UrlscannerCreateScanRequestVisibilityEnum extends EnumClass {
@@ -791,11 +811,11 @@ class UrlscannerCreateScanRequestVisibilityEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'Unlisted')
   static const UrlscannerCreateScanRequestVisibilityEnum unlisted = _$urlscannerCreateScanRequestVisibilityEnum_unlisted;
 
-  static Serializer<UrlscannerCreateScanRequestVisibilityEnum> get serializer => _$urlscannerCreateScanRequestVisibilitySerializer;
+  static Serializer<UrlscannerCreateScanRequestVisibilityEnum> get serializer => _$urlscannerCreateScanRequestVisibilityEnumSerializer;
 
   const UrlscannerCreateScanRequestVisibilityEnum._(String name): super(name);
 
-  static BuiltSet<UrlscannerCreateScanRequestVisibilityEnum> get values => _$urlscannerCreateScanRequestVisibilityValues;
-  static UrlscannerCreateScanRequestVisibilityEnum valueOf(String name) => _$urlscannerCreateScanRequestVisibilityValueOf(name);
+  static BuiltSet<UrlscannerCreateScanRequestVisibilityEnum> get values => _$urlscannerCreateScanRequestVisibilityEnumValues;
+  static UrlscannerCreateScanRequestVisibilityEnum valueOf(String name) => _$urlscannerCreateScanRequestVisibilityEnumValueOf(name);
 }
 

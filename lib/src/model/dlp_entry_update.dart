@@ -151,11 +151,11 @@ class DlpEntryUpdateTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'integration')
   static const DlpEntryUpdateTypeEnum integration = _$dlpEntryUpdateTypeEnum_integration;
 
-  static Serializer<DlpEntryUpdateTypeEnum> get serializer => _$dlpEntryUpdateTypeSerializer;
+  static Serializer<DlpEntryUpdateTypeEnum> get serializer => _$dlpEntryUpdateTypeEnumSerializer;
 
   const DlpEntryUpdateTypeEnum._(String name): super(name);
 
-  static BuiltSet<DlpEntryUpdateTypeEnum> get values => _$dlpEntryUpdateTypeValues;
-  static DlpEntryUpdateTypeEnum valueOf(String name) => _$dlpEntryUpdateTypeValueOf(name);
+  static BuiltSet<DlpEntryUpdateTypeEnum> get values => _$dlpEntryUpdateTypeEnumValues;
+  static DlpEntryUpdateTypeEnum valueOf(String name) => _$dlpEntryUpdateTypeEnumValueOf(name);
 }
 

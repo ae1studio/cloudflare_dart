@@ -164,11 +164,11 @@ class R2SlurperR2TargetSchemaVendorEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'r2')
   static const R2SlurperR2TargetSchemaVendorEnum r2 = _$r2SlurperR2TargetSchemaVendorEnum_r2;
 
-  static Serializer<R2SlurperR2TargetSchemaVendorEnum> get serializer => _$r2SlurperR2TargetSchemaVendorSerializer;
+  static Serializer<R2SlurperR2TargetSchemaVendorEnum> get serializer => _$r2SlurperR2TargetSchemaVendorEnumSerializer;
 
   const R2SlurperR2TargetSchemaVendorEnum._(String name): super(name);
 
-  static BuiltSet<R2SlurperR2TargetSchemaVendorEnum> get values => _$r2SlurperR2TargetSchemaVendorValues;
-  static R2SlurperR2TargetSchemaVendorEnum valueOf(String name) => _$r2SlurperR2TargetSchemaVendorValueOf(name);
+  static BuiltSet<R2SlurperR2TargetSchemaVendorEnum> get values => _$r2SlurperR2TargetSchemaVendorEnumValues;
+  static R2SlurperR2TargetSchemaVendorEnum valueOf(String name) => _$r2SlurperR2TargetSchemaVendorEnumValueOf(name);
 }
 

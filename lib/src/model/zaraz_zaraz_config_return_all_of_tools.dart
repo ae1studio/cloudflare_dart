@@ -94,11 +94,11 @@ class ZarazZarazConfigReturnAllOfToolsTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'custom-mc')
   static const ZarazZarazConfigReturnAllOfToolsTypeEnum customMc = _$zarazZarazConfigReturnAllOfToolsTypeEnum_customMc;
 
-  static Serializer<ZarazZarazConfigReturnAllOfToolsTypeEnum> get serializer => _$zarazZarazConfigReturnAllOfToolsTypeSerializer;
+  static Serializer<ZarazZarazConfigReturnAllOfToolsTypeEnum> get serializer => _$zarazZarazConfigReturnAllOfToolsTypeEnumSerializer;
 
   const ZarazZarazConfigReturnAllOfToolsTypeEnum._(String name): super(name);
 
-  static BuiltSet<ZarazZarazConfigReturnAllOfToolsTypeEnum> get values => _$zarazZarazConfigReturnAllOfToolsTypeValues;
-  static ZarazZarazConfigReturnAllOfToolsTypeEnum valueOf(String name) => _$zarazZarazConfigReturnAllOfToolsTypeValueOf(name);
+  static BuiltSet<ZarazZarazConfigReturnAllOfToolsTypeEnum> get values => _$zarazZarazConfigReturnAllOfToolsTypeEnumValues;
+  static ZarazZarazConfigReturnAllOfToolsTypeEnum valueOf(String name) => _$zarazZarazConfigReturnAllOfToolsTypeEnumValueOf(name);
 }
 

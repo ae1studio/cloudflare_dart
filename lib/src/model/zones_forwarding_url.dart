@@ -134,11 +134,11 @@ class ZonesForwardingUrlIdEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'forwarding_url')
   static const ZonesForwardingUrlIdEnum forwardingUrl = _$zonesForwardingUrlIdEnum_forwardingUrl;
 
-  static Serializer<ZonesForwardingUrlIdEnum> get serializer => _$zonesForwardingUrlIdSerializer;
+  static Serializer<ZonesForwardingUrlIdEnum> get serializer => _$zonesForwardingUrlIdEnumSerializer;
 
   const ZonesForwardingUrlIdEnum._(String name): super(name);
 
-  static BuiltSet<ZonesForwardingUrlIdEnum> get values => _$zonesForwardingUrlIdValues;
-  static ZonesForwardingUrlIdEnum valueOf(String name) => _$zonesForwardingUrlIdValueOf(name);
+  static BuiltSet<ZonesForwardingUrlIdEnum> get values => _$zonesForwardingUrlIdEnumValues;
+  static ZonesForwardingUrlIdEnum valueOf(String name) => _$zonesForwardingUrlIdEnumValueOf(name);
 }
 

@@ -156,11 +156,11 @@ class ZonesSchemasRocketLoaderIdEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'rocket_loader')
   static const ZonesSchemasRocketLoaderIdEnum rocketLoader = _$zonesSchemasRocketLoaderIdEnum_rocketLoader;
 
-  static Serializer<ZonesSchemasRocketLoaderIdEnum> get serializer => _$zonesSchemasRocketLoaderIdSerializer;
+  static Serializer<ZonesSchemasRocketLoaderIdEnum> get serializer => _$zonesSchemasRocketLoaderIdEnumSerializer;
 
   const ZonesSchemasRocketLoaderIdEnum._(String name): super(name);
 
-  static BuiltSet<ZonesSchemasRocketLoaderIdEnum> get values => _$zonesSchemasRocketLoaderIdValues;
-  static ZonesSchemasRocketLoaderIdEnum valueOf(String name) => _$zonesSchemasRocketLoaderIdValueOf(name);
+  static BuiltSet<ZonesSchemasRocketLoaderIdEnum> get values => _$zonesSchemasRocketLoaderIdEnumValues;
+  static ZonesSchemasRocketLoaderIdEnum valueOf(String name) => _$zonesSchemasRocketLoaderIdEnumValueOf(name);
 }
 

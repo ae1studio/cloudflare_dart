@@ -43,7 +43,7 @@ abstract class FirewallFilterRuleBase  {
   num? get priority;
 
   @BuiltValueField(wireName: r'products')
-  BuiltList<FirewallFilterRuleResponseProductsEnum>? get products;
+  BuiltList<FirewallFilterRuleBaseProductsEnum>? get products;
   // enum productsEnum {  zoneLockdown,  uaBlock,  bic,  hot,  securityLevel,  rateLimit,  waf,  };
 
   /// A short reference tag. Allows you to select related firewall rules.
@@ -105,7 +105,7 @@ class _$FirewallFilterRuleBaseSerializer implements PrimitiveSerializer<Firewall
       yield r'products';
       yield serializers.serialize(
         object.products,
-        specifiedType: const FullType(BuiltList, [FullType(FirewallFilterRuleResponseProductsEnum)]),
+        specifiedType: const FullType(BuiltList, [FullType(FirewallFilterRuleBaseProductsEnum)]),
       );
     }
     if (object.ref != null) {
@@ -216,8 +216,8 @@ class _$$FirewallFilterRuleBaseSerializer implements PrimitiveSerializer<$Firewa
         case r'products':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(BuiltList, [FullType(FirewallFilterRuleResponseProductsEnum)]),
-          ) as BuiltList<FirewallFilterRuleResponseProductsEnum>;
+            specifiedType: const FullType(BuiltList, [FullType(FirewallFilterRuleBaseProductsEnum)]),
+          ) as BuiltList<FirewallFilterRuleBaseProductsEnum>;
           result.products.replace(valueDes);
           break;
         case r'ref':
@@ -254,5 +254,37 @@ class _$$FirewallFilterRuleBaseSerializer implements PrimitiveSerializer<$Firewa
     );
     return result.build();
   }
+}
+
+class FirewallFilterRuleBaseProductsEnum extends EnumClass {
+
+  /// A list of products to bypass for a request when using the `bypass` action.
+  @BuiltValueEnumConst(wireName: r'zoneLockdown')
+  static const FirewallFilterRuleBaseProductsEnum zoneLockdown = _$firewallFilterRuleBaseProductsEnum_zoneLockdown;
+  /// A list of products to bypass for a request when using the `bypass` action.
+  @BuiltValueEnumConst(wireName: r'uaBlock')
+  static const FirewallFilterRuleBaseProductsEnum uaBlock = _$firewallFilterRuleBaseProductsEnum_uaBlock;
+  /// A list of products to bypass for a request when using the `bypass` action.
+  @BuiltValueEnumConst(wireName: r'bic')
+  static const FirewallFilterRuleBaseProductsEnum bic = _$firewallFilterRuleBaseProductsEnum_bic;
+  /// A list of products to bypass for a request when using the `bypass` action.
+  @BuiltValueEnumConst(wireName: r'hot')
+  static const FirewallFilterRuleBaseProductsEnum hot = _$firewallFilterRuleBaseProductsEnum_hot;
+  /// A list of products to bypass for a request when using the `bypass` action.
+  @BuiltValueEnumConst(wireName: r'securityLevel')
+  static const FirewallFilterRuleBaseProductsEnum securityLevel = _$firewallFilterRuleBaseProductsEnum_securityLevel;
+  /// A list of products to bypass for a request when using the `bypass` action.
+  @BuiltValueEnumConst(wireName: r'rateLimit')
+  static const FirewallFilterRuleBaseProductsEnum rateLimit = _$firewallFilterRuleBaseProductsEnum_rateLimit;
+  /// A list of products to bypass for a request when using the `bypass` action.
+  @BuiltValueEnumConst(wireName: r'waf')
+  static const FirewallFilterRuleBaseProductsEnum waf = _$firewallFilterRuleBaseProductsEnum_waf;
+
+  static Serializer<FirewallFilterRuleBaseProductsEnum> get serializer => _$firewallFilterRuleBaseProductsEnumSerializer;
+
+  const FirewallFilterRuleBaseProductsEnum._(String name): super(name);
+
+  static BuiltSet<FirewallFilterRuleBaseProductsEnum> get values => _$firewallFilterRuleBaseProductsEnumValues;
+  static FirewallFilterRuleBaseProductsEnum valueOf(String name) => _$firewallFilterRuleBaseProductsEnumValueOf(name);
 }
 

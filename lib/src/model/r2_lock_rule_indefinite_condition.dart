@@ -111,11 +111,11 @@ class R2LockRuleIndefiniteConditionTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'Indefinite')
   static const R2LockRuleIndefiniteConditionTypeEnum indefinite = _$r2LockRuleIndefiniteConditionTypeEnum_indefinite;
 
-  static Serializer<R2LockRuleIndefiniteConditionTypeEnum> get serializer => _$r2LockRuleIndefiniteConditionTypeSerializer;
+  static Serializer<R2LockRuleIndefiniteConditionTypeEnum> get serializer => _$r2LockRuleIndefiniteConditionTypeEnumSerializer;
 
   const R2LockRuleIndefiniteConditionTypeEnum._(String name): super(name);
 
-  static BuiltSet<R2LockRuleIndefiniteConditionTypeEnum> get values => _$r2LockRuleIndefiniteConditionTypeValues;
-  static R2LockRuleIndefiniteConditionTypeEnum valueOf(String name) => _$r2LockRuleIndefiniteConditionTypeValueOf(name);
+  static BuiltSet<R2LockRuleIndefiniteConditionTypeEnum> get values => _$r2LockRuleIndefiniteConditionTypeEnumValues;
+  static R2LockRuleIndefiniteConditionTypeEnum valueOf(String name) => _$r2LockRuleIndefiniteConditionTypeEnumValueOf(name);
 }
 

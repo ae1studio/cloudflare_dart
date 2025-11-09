@@ -22,7 +22,7 @@ part 'rulesets_compress_response_rule.g.dart';
 /// * [actionParameters] 
 /// * [categories] - The categories of the rule.
 /// * [description] 
-/// * [enabled] 
+/// * [enabled] - Whether the rule should be executed.
 /// * [exposedCredentialCheck] 
 /// * [expression] - The expression defining which traffic will match the rule.
 /// * [id] - The unique ID of the rule.
@@ -40,6 +40,7 @@ abstract class RulesetsCompressResponseRule implements RulesetsRule, Built<Rules
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(RulesetsCompressResponseRuleBuilder b) => b
       ..description = ''
+      ..enabled = true
       ..actionParameters = {};
 
   @BuiltValueSerializer(custom: true)
@@ -293,11 +294,11 @@ class RulesetsCompressResponseRuleActionEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'compress_response')
   static const RulesetsCompressResponseRuleActionEnum compressResponse = _$rulesetsCompressResponseRuleActionEnum_compressResponse;
 
-  static Serializer<RulesetsCompressResponseRuleActionEnum> get serializer => _$rulesetsCompressResponseRuleActionSerializer;
+  static Serializer<RulesetsCompressResponseRuleActionEnum> get serializer => _$rulesetsCompressResponseRuleActionEnumSerializer;
 
   const RulesetsCompressResponseRuleActionEnum._(String name): super(name);
 
-  static BuiltSet<RulesetsCompressResponseRuleActionEnum> get values => _$rulesetsCompressResponseRuleActionValues;
-  static RulesetsCompressResponseRuleActionEnum valueOf(String name) => _$rulesetsCompressResponseRuleActionValueOf(name);
+  static BuiltSet<RulesetsCompressResponseRuleActionEnum> get values => _$rulesetsCompressResponseRuleActionEnumValues;
+  static RulesetsCompressResponseRuleActionEnum valueOf(String name) => _$rulesetsCompressResponseRuleActionEnumValueOf(name);
 }
 

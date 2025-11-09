@@ -130,11 +130,11 @@ class AutoragConfigAiSearchRequestFiltersAnyOf1TypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'or')
   static const AutoragConfigAiSearchRequestFiltersAnyOf1TypeEnum or = _$autoragConfigAiSearchRequestFiltersAnyOf1TypeEnum_or;
 
-  static Serializer<AutoragConfigAiSearchRequestFiltersAnyOf1TypeEnum> get serializer => _$autoragConfigAiSearchRequestFiltersAnyOf1TypeSerializer;
+  static Serializer<AutoragConfigAiSearchRequestFiltersAnyOf1TypeEnum> get serializer => _$autoragConfigAiSearchRequestFiltersAnyOf1TypeEnumSerializer;
 
   const AutoragConfigAiSearchRequestFiltersAnyOf1TypeEnum._(String name): super(name);
 
-  static BuiltSet<AutoragConfigAiSearchRequestFiltersAnyOf1TypeEnum> get values => _$autoragConfigAiSearchRequestFiltersAnyOf1TypeValues;
-  static AutoragConfigAiSearchRequestFiltersAnyOf1TypeEnum valueOf(String name) => _$autoragConfigAiSearchRequestFiltersAnyOf1TypeValueOf(name);
+  static BuiltSet<AutoragConfigAiSearchRequestFiltersAnyOf1TypeEnum> get values => _$autoragConfigAiSearchRequestFiltersAnyOf1TypeEnumValues;
+  static AutoragConfigAiSearchRequestFiltersAnyOf1TypeEnum valueOf(String name) => _$autoragConfigAiSearchRequestFiltersAnyOf1TypeEnumValueOf(name);
 }
 

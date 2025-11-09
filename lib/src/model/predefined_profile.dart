@@ -38,7 +38,7 @@ abstract class PredefinedProfile implements DlpPredefinedProfile, Built<Predefin
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(PredefinedProfileBuilder b) => b
-      ..confidenceThreshold = const ._(DlpConfidence.low)
+      ..confidenceThreshold = DlpConfidence.low
       ..aiContextEnabled = false
       ..ocrEnabled = false;
 
@@ -245,11 +245,11 @@ class PredefinedProfileTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'predefined')
   static const PredefinedProfileTypeEnum predefined = _$predefinedProfileTypeEnum_predefined;
 
-  static Serializer<PredefinedProfileTypeEnum> get serializer => _$predefinedProfileTypeSerializer;
+  static Serializer<PredefinedProfileTypeEnum> get serializer => _$predefinedProfileTypeEnumSerializer;
 
   const PredefinedProfileTypeEnum._(String name): super(name);
 
-  static BuiltSet<PredefinedProfileTypeEnum> get values => _$predefinedProfileTypeValues;
-  static PredefinedProfileTypeEnum valueOf(String name) => _$predefinedProfileTypeValueOf(name);
+  static BuiltSet<PredefinedProfileTypeEnum> get values => _$predefinedProfileTypeEnumValues;
+  static PredefinedProfileTypeEnum valueOf(String name) => _$predefinedProfileTypeEnumValueOf(name);
 }
 

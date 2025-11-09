@@ -156,11 +156,11 @@ class ZonesPseudoIpv4IdEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'pseudo_ipv4')
   static const ZonesPseudoIpv4IdEnum pseudoIpv4 = _$zonesPseudoIpv4IdEnum_pseudoIpv4;
 
-  static Serializer<ZonesPseudoIpv4IdEnum> get serializer => _$zonesPseudoIpv4IdSerializer;
+  static Serializer<ZonesPseudoIpv4IdEnum> get serializer => _$zonesPseudoIpv4IdEnumSerializer;
 
   const ZonesPseudoIpv4IdEnum._(String name): super(name);
 
-  static BuiltSet<ZonesPseudoIpv4IdEnum> get values => _$zonesPseudoIpv4IdValues;
-  static ZonesPseudoIpv4IdEnum valueOf(String name) => _$zonesPseudoIpv4IdValueOf(name);
+  static BuiltSet<ZonesPseudoIpv4IdEnum> get values => _$zonesPseudoIpv4IdEnumValues;
+  static ZonesPseudoIpv4IdEnum valueOf(String name) => _$zonesPseudoIpv4IdEnumValueOf(name);
 }
 

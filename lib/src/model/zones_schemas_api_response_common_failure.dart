@@ -161,11 +161,11 @@ class _$ZonesSchemasApiResponseCommonFailureSerializer implements PrimitiveSeria
 class ZonesSchemasApiResponseCommonFailureResultEnum extends EnumClass {
 
 
-  static Serializer<ZonesSchemasApiResponseCommonFailureResultEnum> get serializer => _$zonesSchemasApiResponseCommonFailureResultSerializer;
+  static Serializer<ZonesSchemasApiResponseCommonFailureResultEnum> get serializer => _$zonesSchemasApiResponseCommonFailureResultEnumSerializer;
 
   const ZonesSchemasApiResponseCommonFailureResultEnum._(String name): super(name);
 
-  static BuiltSet<ZonesSchemasApiResponseCommonFailureResultEnum> get values => _$zonesSchemasApiResponseCommonFailureResultValues;
-  static ZonesSchemasApiResponseCommonFailureResultEnum valueOf(String name) => _$zonesSchemasApiResponseCommonFailureResultValueOf(name);
+  static BuiltSet<ZonesSchemasApiResponseCommonFailureResultEnum> get values => _$zonesSchemasApiResponseCommonFailureResultEnumValues;
+  static ZonesSchemasApiResponseCommonFailureResultEnum valueOf(String name) => _$zonesSchemasApiResponseCommonFailureResultEnumValueOf(name);
 }
 

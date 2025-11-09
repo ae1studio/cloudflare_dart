@@ -221,12 +221,12 @@ class WorkersAssetsConfigHtmlHandlingEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'none')
   static const WorkersAssetsConfigHtmlHandlingEnum none = _$workersAssetsConfigHtmlHandlingEnum_none;
 
-  static Serializer<WorkersAssetsConfigHtmlHandlingEnum> get serializer => _$workersAssetsConfigHtmlHandlingSerializer;
+  static Serializer<WorkersAssetsConfigHtmlHandlingEnum> get serializer => _$workersAssetsConfigHtmlHandlingEnumSerializer;
 
   const WorkersAssetsConfigHtmlHandlingEnum._(String name): super(name);
 
-  static BuiltSet<WorkersAssetsConfigHtmlHandlingEnum> get values => _$workersAssetsConfigHtmlHandlingValues;
-  static WorkersAssetsConfigHtmlHandlingEnum valueOf(String name) => _$workersAssetsConfigHtmlHandlingValueOf(name);
+  static BuiltSet<WorkersAssetsConfigHtmlHandlingEnum> get values => _$workersAssetsConfigHtmlHandlingEnumValues;
+  static WorkersAssetsConfigHtmlHandlingEnum valueOf(String name) => _$workersAssetsConfigHtmlHandlingEnumValueOf(name);
 }
 
 class WorkersAssetsConfigNotFoundHandlingEnum extends EnumClass {
@@ -241,11 +241,11 @@ class WorkersAssetsConfigNotFoundHandlingEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'single-page-application')
   static const WorkersAssetsConfigNotFoundHandlingEnum singlePageApplication = _$workersAssetsConfigNotFoundHandlingEnum_singlePageApplication;
 
-  static Serializer<WorkersAssetsConfigNotFoundHandlingEnum> get serializer => _$workersAssetsConfigNotFoundHandlingSerializer;
+  static Serializer<WorkersAssetsConfigNotFoundHandlingEnum> get serializer => _$workersAssetsConfigNotFoundHandlingEnumSerializer;
 
   const WorkersAssetsConfigNotFoundHandlingEnum._(String name): super(name);
 
-  static BuiltSet<WorkersAssetsConfigNotFoundHandlingEnum> get values => _$workersAssetsConfigNotFoundHandlingValues;
-  static WorkersAssetsConfigNotFoundHandlingEnum valueOf(String name) => _$workersAssetsConfigNotFoundHandlingValueOf(name);
+  static BuiltSet<WorkersAssetsConfigNotFoundHandlingEnum> get values => _$workersAssetsConfigNotFoundHandlingEnumValues;
+  static WorkersAssetsConfigNotFoundHandlingEnum valueOf(String name) => _$workersAssetsConfigNotFoundHandlingEnumValueOf(name);
 }
 

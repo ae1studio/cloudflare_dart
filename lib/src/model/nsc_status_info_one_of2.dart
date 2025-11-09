@@ -131,11 +131,11 @@ class NscStatusInfoOneOf2StateEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'Unhealthy')
   static const NscStatusInfoOneOf2StateEnum unhealthy = _$nscStatusInfoOneOf2StateEnum_unhealthy;
 
-  static Serializer<NscStatusInfoOneOf2StateEnum> get serializer => _$nscStatusInfoOneOf2StateSerializer;
+  static Serializer<NscStatusInfoOneOf2StateEnum> get serializer => _$nscStatusInfoOneOf2StateEnumSerializer;
 
   const NscStatusInfoOneOf2StateEnum._(String name): super(name);
 
-  static BuiltSet<NscStatusInfoOneOf2StateEnum> get values => _$nscStatusInfoOneOf2StateValues;
-  static NscStatusInfoOneOf2StateEnum valueOf(String name) => _$nscStatusInfoOneOf2StateValueOf(name);
+  static BuiltSet<NscStatusInfoOneOf2StateEnum> get values => _$nscStatusInfoOneOf2StateEnumValues;
+  static NscStatusInfoOneOf2StateEnum valueOf(String name) => _$nscStatusInfoOneOf2StateEnumValueOf(name);
 }
 

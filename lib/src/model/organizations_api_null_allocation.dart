@@ -130,11 +130,11 @@ class OrganizationsApiNullAllocationTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'')
   static const OrganizationsApiNullAllocationTypeEnum empty = _$organizationsApiNullAllocationTypeEnum_empty;
 
-  static Serializer<OrganizationsApiNullAllocationTypeEnum> get serializer => _$organizationsApiNullAllocationTypeSerializer;
+  static Serializer<OrganizationsApiNullAllocationTypeEnum> get serializer => _$organizationsApiNullAllocationTypeEnumSerializer;
 
   const OrganizationsApiNullAllocationTypeEnum._(String name): super(name);
 
-  static BuiltSet<OrganizationsApiNullAllocationTypeEnum> get values => _$organizationsApiNullAllocationTypeValues;
-  static OrganizationsApiNullAllocationTypeEnum valueOf(String name) => _$organizationsApiNullAllocationTypeValueOf(name);
+  static BuiltSet<OrganizationsApiNullAllocationTypeEnum> get values => _$organizationsApiNullAllocationTypeEnumValues;
+  static OrganizationsApiNullAllocationTypeEnum valueOf(String name) => _$organizationsApiNullAllocationTypeEnumValueOf(name);
 }
 

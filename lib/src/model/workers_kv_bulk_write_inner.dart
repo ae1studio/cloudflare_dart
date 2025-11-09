@@ -3,7 +3,7 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:cloudflare_dart/src/model/workers_kv_list_metadata.dart';
+import 'package:built_value/json_object.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
@@ -37,7 +37,7 @@ abstract class WorkersKvBulkWriteInner implements Built<WorkersKvBulkWriteInner,
   String get key;
 
   @BuiltValueField(wireName: r'metadata')
-  WorkersKvListMetadata? get metadata;
+  JsonObject? get metadata;
 
   /// A UTF-8 encoded string to be stored, up to 25 MiB in length.
   @BuiltValueField(wireName: r'value')
@@ -97,7 +97,7 @@ class _$WorkersKvBulkWriteInnerSerializer implements PrimitiveSerializer<Workers
       yield r'metadata';
       yield serializers.serialize(
         object.metadata,
-        specifiedType: const FullType(WorkersKvListMetadata),
+        specifiedType: const FullType(JsonObject),
       );
     }
     yield r'value';
@@ -159,8 +159,8 @@ class _$WorkersKvBulkWriteInnerSerializer implements PrimitiveSerializer<Workers
         case r'metadata':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(WorkersKvListMetadata),
-          ) as WorkersKvListMetadata;
+            specifiedType: const FullType(JsonObject),
+          ) as JsonObject;
           result.metadata.replace(valueDes);
           break;
         case r'value':

@@ -9,7 +9,7 @@ import 'package:cloudflare_dart/api.dart';
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **name** | **String** | The name of the application. | [optional] 
-**type** | [**AccessInfraPropsAllOfType**](AccessInfraPropsAllOfType.md) |  | 
+**type** | [**AccessType**](AccessType.md) |  | 
 **targetCriteria** | [**BuiltList&lt;AccessTargetCriteriaInfraApp&gt;**](AccessTargetCriteriaInfraApp.md) |  | 
 **policies** | [**BuiltList&lt;AccessInfraPolicyReq&gt;**](AccessInfraPolicyReq.md) | The policies that Access applies to the application. | [optional] 
 

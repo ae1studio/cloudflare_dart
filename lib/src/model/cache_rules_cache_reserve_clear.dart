@@ -158,11 +158,11 @@ class CacheRulesCacheReserveClearIdEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'cache_reserve_clear')
   static const CacheRulesCacheReserveClearIdEnum cacheReserveClear = _$cacheRulesCacheReserveClearIdEnum_cacheReserveClear;
 
-  static Serializer<CacheRulesCacheReserveClearIdEnum> get serializer => _$cacheRulesCacheReserveClearIdSerializer;
+  static Serializer<CacheRulesCacheReserveClearIdEnum> get serializer => _$cacheRulesCacheReserveClearIdEnumSerializer;
 
   const CacheRulesCacheReserveClearIdEnum._(String name): super(name);
 
-  static BuiltSet<CacheRulesCacheReserveClearIdEnum> get values => _$cacheRulesCacheReserveClearIdValues;
-  static CacheRulesCacheReserveClearIdEnum valueOf(String name) => _$cacheRulesCacheReserveClearIdValueOf(name);
+  static BuiltSet<CacheRulesCacheReserveClearIdEnum> get values => _$cacheRulesCacheReserveClearIdEnumValues;
+  static CacheRulesCacheReserveClearIdEnum valueOf(String name) => _$cacheRulesCacheReserveClearIdEnumValueOf(name);
 }
 

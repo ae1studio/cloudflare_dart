@@ -285,11 +285,11 @@ class CreateMeetingRequestPreferredRegionEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'eu-central-1')
   static const CreateMeetingRequestPreferredRegionEnum euCentral1 = _$createMeetingRequestPreferredRegionEnum_euCentral1;
 
-  static Serializer<CreateMeetingRequestPreferredRegionEnum> get serializer => _$createMeetingRequestPreferredRegionSerializer;
+  static Serializer<CreateMeetingRequestPreferredRegionEnum> get serializer => _$createMeetingRequestPreferredRegionEnumSerializer;
 
   const CreateMeetingRequestPreferredRegionEnum._(String name): super(name);
 
-  static BuiltSet<CreateMeetingRequestPreferredRegionEnum> get values => _$createMeetingRequestPreferredRegionValues;
-  static CreateMeetingRequestPreferredRegionEnum valueOf(String name) => _$createMeetingRequestPreferredRegionValueOf(name);
+  static BuiltSet<CreateMeetingRequestPreferredRegionEnum> get values => _$createMeetingRequestPreferredRegionEnumValues;
+  static CreateMeetingRequestPreferredRegionEnum valueOf(String name) => _$createMeetingRequestPreferredRegionEnumValueOf(name);
 }
 

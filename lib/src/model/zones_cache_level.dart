@@ -135,12 +135,12 @@ class ZonesCacheLevelIdEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'cache_level')
   static const ZonesCacheLevelIdEnum cacheLevel = _$zonesCacheLevelIdEnum_cacheLevel;
 
-  static Serializer<ZonesCacheLevelIdEnum> get serializer => _$zonesCacheLevelIdSerializer;
+  static Serializer<ZonesCacheLevelIdEnum> get serializer => _$zonesCacheLevelIdEnumSerializer;
 
   const ZonesCacheLevelIdEnum._(String name): super(name);
 
-  static BuiltSet<ZonesCacheLevelIdEnum> get values => _$zonesCacheLevelIdValues;
-  static ZonesCacheLevelIdEnum valueOf(String name) => _$zonesCacheLevelIdValueOf(name);
+  static BuiltSet<ZonesCacheLevelIdEnum> get values => _$zonesCacheLevelIdEnumValues;
+  static ZonesCacheLevelIdEnum valueOf(String name) => _$zonesCacheLevelIdEnumValueOf(name);
 }
 
 class ZonesCacheLevelValueEnum extends EnumClass {
@@ -161,11 +161,11 @@ class ZonesCacheLevelValueEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'cache_everything')
   static const ZonesCacheLevelValueEnum cacheEverything = _$zonesCacheLevelValueEnum_cacheEverything;
 
-  static Serializer<ZonesCacheLevelValueEnum> get serializer => _$zonesCacheLevelValueSerializer;
+  static Serializer<ZonesCacheLevelValueEnum> get serializer => _$zonesCacheLevelValueEnumSerializer;
 
   const ZonesCacheLevelValueEnum._(String name): super(name);
 
-  static BuiltSet<ZonesCacheLevelValueEnum> get values => _$zonesCacheLevelValueValues;
-  static ZonesCacheLevelValueEnum valueOf(String name) => _$zonesCacheLevelValueValueOf(name);
+  static BuiltSet<ZonesCacheLevelValueEnum> get values => _$zonesCacheLevelValueEnumValues;
+  static ZonesCacheLevelValueEnum valueOf(String name) => _$zonesCacheLevelValueEnumValueOf(name);
 }
 

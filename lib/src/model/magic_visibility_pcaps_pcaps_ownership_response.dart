@@ -206,11 +206,11 @@ class MagicVisibilityPcapsPcapsOwnershipResponseStatusEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'failed')
   static const MagicVisibilityPcapsPcapsOwnershipResponseStatusEnum failed = _$magicVisibilityPcapsPcapsOwnershipResponseStatusEnum_failed;
 
-  static Serializer<MagicVisibilityPcapsPcapsOwnershipResponseStatusEnum> get serializer => _$magicVisibilityPcapsPcapsOwnershipResponseStatusSerializer;
+  static Serializer<MagicVisibilityPcapsPcapsOwnershipResponseStatusEnum> get serializer => _$magicVisibilityPcapsPcapsOwnershipResponseStatusEnumSerializer;
 
   const MagicVisibilityPcapsPcapsOwnershipResponseStatusEnum._(String name): super(name);
 
-  static BuiltSet<MagicVisibilityPcapsPcapsOwnershipResponseStatusEnum> get values => _$magicVisibilityPcapsPcapsOwnershipResponseStatusValues;
-  static MagicVisibilityPcapsPcapsOwnershipResponseStatusEnum valueOf(String name) => _$magicVisibilityPcapsPcapsOwnershipResponseStatusValueOf(name);
+  static BuiltSet<MagicVisibilityPcapsPcapsOwnershipResponseStatusEnum> get values => _$magicVisibilityPcapsPcapsOwnershipResponseStatusEnumValues;
+  static MagicVisibilityPcapsPcapsOwnershipResponseStatusEnum valueOf(String name) => _$magicVisibilityPcapsPcapsOwnershipResponseStatusEnumValueOf(name);
 }
 

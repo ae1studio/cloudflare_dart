@@ -4,7 +4,7 @@
 
 // ignore_for_file: unused_element
 import 'package:built_collection/built_collection.dart';
-import 'package:cloudflare_dart/src/model/access_biso_props_all_of_type.dart';
+import 'package:cloudflare_dart/src/model/access_type.dart';
 import 'package:cloudflare_dart/src/model/access_biso_props.dart';
 import 'package:cloudflare_dart/src/model/access_app_req_embedded_policies.dart';
 import 'package:cloudflare_dart/src/model/access_app_req_embedded_policies_policies_inner.dart';
@@ -121,7 +121,7 @@ class _$BrowserIsolationPermissionsApplicationSerializer implements PrimitiveSer
     yield r'type';
     yield serializers.serialize(
       object.type,
-      specifiedType: const FullType(AccessBisoPropsAllOfType),
+      specifiedType: const FullType(AccessType),
     );
   }
 
@@ -214,9 +214,9 @@ class _$BrowserIsolationPermissionsApplicationSerializer implements PrimitiveSer
         case r'type':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(AccessBisoPropsAllOfType),
-          ) as AccessBisoPropsAllOfType;
-          result.type.replace(valueDes);
+            specifiedType: const FullType(AccessType),
+          ) as AccessType;
+          result.type = valueDes;
           break;
         default:
           unhandled.add(key);

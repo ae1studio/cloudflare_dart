@@ -165,11 +165,11 @@ class _$ZoneLockdownListZoneLockdownRules4XXResponseSerializer implements Primit
 class ZoneLockdownListZoneLockdownRules4XXResponseResultEnum extends EnumClass {
 
 
-  static Serializer<ZoneLockdownListZoneLockdownRules4XXResponseResultEnum> get serializer => _$zoneLockdownListZoneLockdownRules4XXResponseResultSerializer;
+  static Serializer<ZoneLockdownListZoneLockdownRules4XXResponseResultEnum> get serializer => _$zoneLockdownListZoneLockdownRules4XXResponseResultEnumSerializer;
 
   const ZoneLockdownListZoneLockdownRules4XXResponseResultEnum._(String name): super(name);
 
-  static BuiltSet<ZoneLockdownListZoneLockdownRules4XXResponseResultEnum> get values => _$zoneLockdownListZoneLockdownRules4XXResponseResultValues;
-  static ZoneLockdownListZoneLockdownRules4XXResponseResultEnum valueOf(String name) => _$zoneLockdownListZoneLockdownRules4XXResponseResultValueOf(name);
+  static BuiltSet<ZoneLockdownListZoneLockdownRules4XXResponseResultEnum> get values => _$zoneLockdownListZoneLockdownRules4XXResponseResultEnumValues;
+  static ZoneLockdownListZoneLockdownRules4XXResponseResultEnum valueOf(String name) => _$zoneLockdownListZoneLockdownRules4XXResponseResultEnumValueOf(name);
 }
 

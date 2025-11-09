@@ -131,11 +131,11 @@ class TelemetryQueryRequestParametersGroupBysInnerTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'boolean')
   static const TelemetryQueryRequestParametersGroupBysInnerTypeEnum boolean = _$telemetryQueryRequestParametersGroupBysInnerTypeEnum_boolean;
 
-  static Serializer<TelemetryQueryRequestParametersGroupBysInnerTypeEnum> get serializer => _$telemetryQueryRequestParametersGroupBysInnerTypeSerializer;
+  static Serializer<TelemetryQueryRequestParametersGroupBysInnerTypeEnum> get serializer => _$telemetryQueryRequestParametersGroupBysInnerTypeEnumSerializer;
 
   const TelemetryQueryRequestParametersGroupBysInnerTypeEnum._(String name): super(name);
 
-  static BuiltSet<TelemetryQueryRequestParametersGroupBysInnerTypeEnum> get values => _$telemetryQueryRequestParametersGroupBysInnerTypeValues;
-  static TelemetryQueryRequestParametersGroupBysInnerTypeEnum valueOf(String name) => _$telemetryQueryRequestParametersGroupBysInnerTypeValueOf(name);
+  static BuiltSet<TelemetryQueryRequestParametersGroupBysInnerTypeEnum> get values => _$telemetryQueryRequestParametersGroupBysInnerTypeEnumValues;
+  static TelemetryQueryRequestParametersGroupBysInnerTypeEnum valueOf(String name) => _$telemetryQueryRequestParametersGroupBysInnerTypeEnumValueOf(name);
 }
 

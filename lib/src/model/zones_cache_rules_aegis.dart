@@ -144,11 +144,11 @@ class ZonesCacheRulesAegisIdEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'aegis')
   static const ZonesCacheRulesAegisIdEnum aegis = _$zonesCacheRulesAegisIdEnum_aegis;
 
-  static Serializer<ZonesCacheRulesAegisIdEnum> get serializer => _$zonesCacheRulesAegisIdSerializer;
+  static Serializer<ZonesCacheRulesAegisIdEnum> get serializer => _$zonesCacheRulesAegisIdEnumSerializer;
 
   const ZonesCacheRulesAegisIdEnum._(String name): super(name);
 
-  static BuiltSet<ZonesCacheRulesAegisIdEnum> get values => _$zonesCacheRulesAegisIdValues;
-  static ZonesCacheRulesAegisIdEnum valueOf(String name) => _$zonesCacheRulesAegisIdValueOf(name);
+  static BuiltSet<ZonesCacheRulesAegisIdEnum> get values => _$zonesCacheRulesAegisIdEnumValues;
+  static ZonesCacheRulesAegisIdEnum valueOf(String name) => _$zonesCacheRulesAegisIdEnumValueOf(name);
 }
 

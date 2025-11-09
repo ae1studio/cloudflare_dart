@@ -193,11 +193,11 @@ class IntelSchemasIpBelongsToRefTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'organization')
   static const IntelSchemasIpBelongsToRefTypeEnum organization = _$intelSchemasIpBelongsToRefTypeEnum_organization;
 
-  static Serializer<IntelSchemasIpBelongsToRefTypeEnum> get serializer => _$intelSchemasIpBelongsToRefTypeSerializer;
+  static Serializer<IntelSchemasIpBelongsToRefTypeEnum> get serializer => _$intelSchemasIpBelongsToRefTypeEnumSerializer;
 
   const IntelSchemasIpBelongsToRefTypeEnum._(String name): super(name);
 
-  static BuiltSet<IntelSchemasIpBelongsToRefTypeEnum> get values => _$intelSchemasIpBelongsToRefTypeValues;
-  static IntelSchemasIpBelongsToRefTypeEnum valueOf(String name) => _$intelSchemasIpBelongsToRefTypeValueOf(name);
+  static BuiltSet<IntelSchemasIpBelongsToRefTypeEnum> get values => _$intelSchemasIpBelongsToRefTypeEnumValues;
+  static IntelSchemasIpBelongsToRefTypeEnum valueOf(String name) => _$intelSchemasIpBelongsToRefTypeEnumValueOf(name);
 }
 

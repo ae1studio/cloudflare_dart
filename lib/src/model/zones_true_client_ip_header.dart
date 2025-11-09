@@ -135,12 +135,12 @@ class ZonesTrueClientIpHeaderIdEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'true_client_ip_header')
   static const ZonesTrueClientIpHeaderIdEnum trueClientIpHeader = _$zonesTrueClientIpHeaderIdEnum_trueClientIpHeader;
 
-  static Serializer<ZonesTrueClientIpHeaderIdEnum> get serializer => _$zonesTrueClientIpHeaderIdSerializer;
+  static Serializer<ZonesTrueClientIpHeaderIdEnum> get serializer => _$zonesTrueClientIpHeaderIdEnumSerializer;
 
   const ZonesTrueClientIpHeaderIdEnum._(String name): super(name);
 
-  static BuiltSet<ZonesTrueClientIpHeaderIdEnum> get values => _$zonesTrueClientIpHeaderIdValues;
-  static ZonesTrueClientIpHeaderIdEnum valueOf(String name) => _$zonesTrueClientIpHeaderIdValueOf(name);
+  static BuiltSet<ZonesTrueClientIpHeaderIdEnum> get values => _$zonesTrueClientIpHeaderIdEnumValues;
+  static ZonesTrueClientIpHeaderIdEnum valueOf(String name) => _$zonesTrueClientIpHeaderIdEnumValueOf(name);
 }
 
 class ZonesTrueClientIpHeaderValueEnum extends EnumClass {
@@ -152,11 +152,11 @@ class ZonesTrueClientIpHeaderValueEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'off')
   static const ZonesTrueClientIpHeaderValueEnum off = _$zonesTrueClientIpHeaderValueEnum_off;
 
-  static Serializer<ZonesTrueClientIpHeaderValueEnum> get serializer => _$zonesTrueClientIpHeaderValueSerializer;
+  static Serializer<ZonesTrueClientIpHeaderValueEnum> get serializer => _$zonesTrueClientIpHeaderValueEnumSerializer;
 
   const ZonesTrueClientIpHeaderValueEnum._(String name): super(name);
 
-  static BuiltSet<ZonesTrueClientIpHeaderValueEnum> get values => _$zonesTrueClientIpHeaderValueValues;
-  static ZonesTrueClientIpHeaderValueEnum valueOf(String name) => _$zonesTrueClientIpHeaderValueValueOf(name);
+  static BuiltSet<ZonesTrueClientIpHeaderValueEnum> get values => _$zonesTrueClientIpHeaderValueEnumValues;
+  static ZonesTrueClientIpHeaderValueEnum valueOf(String name) => _$zonesTrueClientIpHeaderValueEnumValueOf(name);
 }
 

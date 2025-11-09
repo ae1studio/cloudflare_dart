@@ -234,11 +234,11 @@ class IntelMiscategorizationIndicatorTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'url')
   static const IntelMiscategorizationIndicatorTypeEnum url = _$intelMiscategorizationIndicatorTypeEnum_url;
 
-  static Serializer<IntelMiscategorizationIndicatorTypeEnum> get serializer => _$intelMiscategorizationIndicatorTypeSerializer;
+  static Serializer<IntelMiscategorizationIndicatorTypeEnum> get serializer => _$intelMiscategorizationIndicatorTypeEnumSerializer;
 
   const IntelMiscategorizationIndicatorTypeEnum._(String name): super(name);
 
-  static BuiltSet<IntelMiscategorizationIndicatorTypeEnum> get values => _$intelMiscategorizationIndicatorTypeValues;
-  static IntelMiscategorizationIndicatorTypeEnum valueOf(String name) => _$intelMiscategorizationIndicatorTypeValueOf(name);
+  static BuiltSet<IntelMiscategorizationIndicatorTypeEnum> get values => _$intelMiscategorizationIndicatorTypeEnumValues;
+  static IntelMiscategorizationIndicatorTypeEnum valueOf(String name) => _$intelMiscategorizationIndicatorTypeEnumValueOf(name);
 }
 

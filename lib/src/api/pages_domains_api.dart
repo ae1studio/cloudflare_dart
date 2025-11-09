@@ -9,13 +9,13 @@ import 'package:built_value/serializer.dart';
 import 'package:dio/dio.dart';
 
 import 'package:cloudflare_dart/src/api_util.dart';
+import 'package:cloudflare_dart/src/model/pages_api_response_common_failure.dart';
 import 'package:cloudflare_dart/src/model/pages_domain_response_collection.dart';
 import 'package:cloudflare_dart/src/model/pages_domain_response_single.dart';
 import 'package:cloudflare_dart/src/model/pages_domains_add_domain4_xx_response.dart';
 import 'package:cloudflare_dart/src/model/pages_domains_get_domains4_xx_response.dart';
 import 'package:cloudflare_dart/src/model/pages_domains_post.dart';
 import 'package:cloudflare_dart/src/model/pages_project_delete_project200_response.dart';
-import 'package:cloudflare_dart/src/model/pages_project_delete_project4_xx_response.dart';
 
 class PagesDomainsApi {
 

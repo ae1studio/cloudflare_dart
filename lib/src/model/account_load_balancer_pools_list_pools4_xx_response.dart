@@ -162,11 +162,11 @@ class _$AccountLoadBalancerPoolsListPools4XXResponseSerializer implements Primit
 class AccountLoadBalancerPoolsListPools4XXResponseResultEnum extends EnumClass {
 
 
-  static Serializer<AccountLoadBalancerPoolsListPools4XXResponseResultEnum> get serializer => _$accountLoadBalancerPoolsListPools4XXResponseResultSerializer;
+  static Serializer<AccountLoadBalancerPoolsListPools4XXResponseResultEnum> get serializer => _$accountLoadBalancerPoolsListPools4XXResponseResultEnumSerializer;
 
   const AccountLoadBalancerPoolsListPools4XXResponseResultEnum._(String name): super(name);
 
-  static BuiltSet<AccountLoadBalancerPoolsListPools4XXResponseResultEnum> get values => _$accountLoadBalancerPoolsListPools4XXResponseResultValues;
-  static AccountLoadBalancerPoolsListPools4XXResponseResultEnum valueOf(String name) => _$accountLoadBalancerPoolsListPools4XXResponseResultValueOf(name);
+  static BuiltSet<AccountLoadBalancerPoolsListPools4XXResponseResultEnum> get values => _$accountLoadBalancerPoolsListPools4XXResponseResultEnumValues;
+  static AccountLoadBalancerPoolsListPools4XXResponseResultEnum valueOf(String name) => _$accountLoadBalancerPoolsListPools4XXResponseResultEnumValueOf(name);
 }
 

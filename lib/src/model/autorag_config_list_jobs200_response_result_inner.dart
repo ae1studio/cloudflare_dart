@@ -201,11 +201,11 @@ class AutoragConfigListJobs200ResponseResultInnerSource_Enum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'schedule')
   static const AutoragConfigListJobs200ResponseResultInnerSource_Enum schedule = _$autoragConfigListJobs200ResponseResultInnerSourceEnum_schedule;
 
-  static Serializer<AutoragConfigListJobs200ResponseResultInnerSource_Enum> get serializer => _$autoragConfigListJobs200ResponseResultInnerSourceSerializer;
+  static Serializer<AutoragConfigListJobs200ResponseResultInnerSource_Enum> get serializer => _$autoragConfigListJobs200ResponseResultInnerSourceEnumSerializer;
 
   const AutoragConfigListJobs200ResponseResultInnerSource_Enum._(String name): super(name);
 
-  static BuiltSet<AutoragConfigListJobs200ResponseResultInnerSource_Enum> get values => _$autoragConfigListJobs200ResponseResultInnerSourceValues;
-  static AutoragConfigListJobs200ResponseResultInnerSource_Enum valueOf(String name) => _$autoragConfigListJobs200ResponseResultInnerSourceValueOf(name);
+  static BuiltSet<AutoragConfigListJobs200ResponseResultInnerSource_Enum> get values => _$autoragConfigListJobs200ResponseResultInnerSourceEnumValues;
+  static AutoragConfigListJobs200ResponseResultInnerSource_Enum valueOf(String name) => _$autoragConfigListJobs200ResponseResultInnerSourceEnumValueOf(name);
 }
 

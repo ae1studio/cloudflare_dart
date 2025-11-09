@@ -224,11 +224,11 @@ class DigitalExperienceMonitoringTracerouteTestNetworkPathResponseKindEnum exten
   @BuiltValueEnumConst(wireName: r'traceroute')
   static const DigitalExperienceMonitoringTracerouteTestNetworkPathResponseKindEnum traceroute = _$digitalExperienceMonitoringTracerouteTestNetworkPathResponseKindEnum_traceroute;
 
-  static Serializer<DigitalExperienceMonitoringTracerouteTestNetworkPathResponseKindEnum> get serializer => _$digitalExperienceMonitoringTracerouteTestNetworkPathResponseKindSerializer;
+  static Serializer<DigitalExperienceMonitoringTracerouteTestNetworkPathResponseKindEnum> get serializer => _$digitalExperienceMonitoringTracerouteTestNetworkPathResponseKindEnumSerializer;
 
   const DigitalExperienceMonitoringTracerouteTestNetworkPathResponseKindEnum._(String name): super(name);
 
-  static BuiltSet<DigitalExperienceMonitoringTracerouteTestNetworkPathResponseKindEnum> get values => _$digitalExperienceMonitoringTracerouteTestNetworkPathResponseKindValues;
-  static DigitalExperienceMonitoringTracerouteTestNetworkPathResponseKindEnum valueOf(String name) => _$digitalExperienceMonitoringTracerouteTestNetworkPathResponseKindValueOf(name);
+  static BuiltSet<DigitalExperienceMonitoringTracerouteTestNetworkPathResponseKindEnum> get values => _$digitalExperienceMonitoringTracerouteTestNetworkPathResponseKindEnumValues;
+  static DigitalExperienceMonitoringTracerouteTestNetworkPathResponseKindEnum valueOf(String name) => _$digitalExperienceMonitoringTracerouteTestNetworkPathResponseKindEnumValueOf(name);
 }
 

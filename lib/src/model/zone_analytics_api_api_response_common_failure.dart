@@ -194,11 +194,11 @@ class _$$ZoneAnalyticsApiApiResponseCommonFailureSerializer implements Primitive
 class ZoneAnalyticsApiApiResponseCommonFailureResultEnum extends EnumClass {
 
 
-  static Serializer<ZoneAnalyticsApiApiResponseCommonFailureResultEnum> get serializer => _$zoneAnalyticsApiApiResponseCommonFailureResultSerializer;
+  static Serializer<ZoneAnalyticsApiApiResponseCommonFailureResultEnum> get serializer => _$zoneAnalyticsApiApiResponseCommonFailureResultEnumSerializer;
 
   const ZoneAnalyticsApiApiResponseCommonFailureResultEnum._(String name): super(name);
 
-  static BuiltSet<ZoneAnalyticsApiApiResponseCommonFailureResultEnum> get values => _$zoneAnalyticsApiApiResponseCommonFailureResultValues;
-  static ZoneAnalyticsApiApiResponseCommonFailureResultEnum valueOf(String name) => _$zoneAnalyticsApiApiResponseCommonFailureResultValueOf(name);
+  static BuiltSet<ZoneAnalyticsApiApiResponseCommonFailureResultEnum> get values => _$zoneAnalyticsApiApiResponseCommonFailureResultEnumValues;
+  static ZoneAnalyticsApiApiResponseCommonFailureResultEnum valueOf(String name) => _$zoneAnalyticsApiApiResponseCommonFailureResultEnumValueOf(name);
 }
 

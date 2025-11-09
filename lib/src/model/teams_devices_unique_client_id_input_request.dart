@@ -136,11 +136,11 @@ class TeamsDevicesUniqueClientIdInputRequestOperatingSystemEnum extends EnumClas
   @BuiltValueEnumConst(wireName: r'chromeos')
   static const TeamsDevicesUniqueClientIdInputRequestOperatingSystemEnum chromeos = _$teamsDevicesUniqueClientIdInputRequestOperatingSystemEnum_chromeos;
 
-  static Serializer<TeamsDevicesUniqueClientIdInputRequestOperatingSystemEnum> get serializer => _$teamsDevicesUniqueClientIdInputRequestOperatingSystemSerializer;
+  static Serializer<TeamsDevicesUniqueClientIdInputRequestOperatingSystemEnum> get serializer => _$teamsDevicesUniqueClientIdInputRequestOperatingSystemEnumSerializer;
 
   const TeamsDevicesUniqueClientIdInputRequestOperatingSystemEnum._(String name): super(name);
 
-  static BuiltSet<TeamsDevicesUniqueClientIdInputRequestOperatingSystemEnum> get values => _$teamsDevicesUniqueClientIdInputRequestOperatingSystemValues;
-  static TeamsDevicesUniqueClientIdInputRequestOperatingSystemEnum valueOf(String name) => _$teamsDevicesUniqueClientIdInputRequestOperatingSystemValueOf(name);
+  static BuiltSet<TeamsDevicesUniqueClientIdInputRequestOperatingSystemEnum> get values => _$teamsDevicesUniqueClientIdInputRequestOperatingSystemEnumValues;
+  static TeamsDevicesUniqueClientIdInputRequestOperatingSystemEnum valueOf(String name) => _$teamsDevicesUniqueClientIdInputRequestOperatingSystemEnumValueOf(name);
 }
 

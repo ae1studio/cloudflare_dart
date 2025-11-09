@@ -248,11 +248,11 @@ class DnsRecordsSVCBRecordTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'SVCB')
   static const DnsRecordsSVCBRecordTypeEnum SVCB = _$dnsRecordsSVCBRecordTypeEnum_SVCB;
 
-  static Serializer<DnsRecordsSVCBRecordTypeEnum> get serializer => _$dnsRecordsSVCBRecordTypeSerializer;
+  static Serializer<DnsRecordsSVCBRecordTypeEnum> get serializer => _$dnsRecordsSVCBRecordTypeEnumSerializer;
 
   const DnsRecordsSVCBRecordTypeEnum._(String name): super(name);
 
-  static BuiltSet<DnsRecordsSVCBRecordTypeEnum> get values => _$dnsRecordsSVCBRecordTypeValues;
-  static DnsRecordsSVCBRecordTypeEnum valueOf(String name) => _$dnsRecordsSVCBRecordTypeValueOf(name);
+  static BuiltSet<DnsRecordsSVCBRecordTypeEnum> get values => _$dnsRecordsSVCBRecordTypeEnumValues;
+  static DnsRecordsSVCBRecordTypeEnum valueOf(String name) => _$dnsRecordsSVCBRecordTypeEnumValueOf(name);
 }
 

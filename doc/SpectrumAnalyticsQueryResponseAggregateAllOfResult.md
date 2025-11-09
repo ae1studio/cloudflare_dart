@@ -8,7 +8,7 @@ import 'package:cloudflare_dart/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**appID** | [**SpectrumAnalyticsQueryResponseAggregateAllOfAppID**](SpectrumAnalyticsQueryResponseAggregateAllOfAppID.md) |  | 
+**appID** | **String** | Application identifier. | 
 **bytesEgress** | **num** | Number of bytes sent | 
 **bytesIngress** | **num** | Number of bytes received | 
 **connections** | **num** | Number of connections | 

@@ -143,11 +143,11 @@ class CacheRulesCacheReserveResponseValueResultIdEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'cache_reserve')
   static const CacheRulesCacheReserveResponseValueResultIdEnum cacheReserve = _$cacheRulesCacheReserveResponseValueResultIdEnum_cacheReserve;
 
-  static Serializer<CacheRulesCacheReserveResponseValueResultIdEnum> get serializer => _$cacheRulesCacheReserveResponseValueResultIdSerializer;
+  static Serializer<CacheRulesCacheReserveResponseValueResultIdEnum> get serializer => _$cacheRulesCacheReserveResponseValueResultIdEnumSerializer;
 
   const CacheRulesCacheReserveResponseValueResultIdEnum._(String name): super(name);
 
-  static BuiltSet<CacheRulesCacheReserveResponseValueResultIdEnum> get values => _$cacheRulesCacheReserveResponseValueResultIdValues;
-  static CacheRulesCacheReserveResponseValueResultIdEnum valueOf(String name) => _$cacheRulesCacheReserveResponseValueResultIdValueOf(name);
+  static BuiltSet<CacheRulesCacheReserveResponseValueResultIdEnum> get values => _$cacheRulesCacheReserveResponseValueResultIdEnumValues;
+  static CacheRulesCacheReserveResponseValueResultIdEnum valueOf(String name) => _$cacheRulesCacheReserveResponseValueResultIdEnumValueOf(name);
 }
 

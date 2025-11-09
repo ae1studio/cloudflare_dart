@@ -3,8 +3,7 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:cloudflare_dart/src/model/access_updated_at.dart';
-import 'package:cloudflare_dart/src/model/access_created_at.dart';
+import 'package:built_value/json_object.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
@@ -31,7 +30,7 @@ abstract class AccessCreateResponseAllOfResult implements Built<AccessCreateResp
   String? get clientSecret;
 
   @BuiltValueField(wireName: r'created_at')
-  AccessCreatedAt? get createdAt;
+  JsonObject? get createdAt;
 
   /// The duration for how long the service token will be valid. Must be in the format `300ms` or `2h45m`. Valid time units are: ns, us (or µs), ms, s, m, h. The default is 1 year in hours (8760h).
   @BuiltValueField(wireName: r'duration')
@@ -46,7 +45,7 @@ abstract class AccessCreateResponseAllOfResult implements Built<AccessCreateResp
   String? get name;
 
   @BuiltValueField(wireName: r'updated_at')
-  AccessUpdatedAt? get updatedAt;
+  JsonObject? get updatedAt;
 
   AccessCreateResponseAllOfResult._();
 
@@ -90,7 +89,7 @@ class _$AccessCreateResponseAllOfResultSerializer implements PrimitiveSerializer
       yield r'created_at';
       yield serializers.serialize(
         object.createdAt,
-        specifiedType: const FullType(AccessCreatedAt),
+        specifiedType: const FullType(JsonObject),
       );
     }
     if (object.duration != null) {
@@ -118,7 +117,7 @@ class _$AccessCreateResponseAllOfResultSerializer implements PrimitiveSerializer
       yield r'updated_at';
       yield serializers.serialize(
         object.updatedAt,
-        specifiedType: const FullType(AccessUpdatedAt),
+        specifiedType: const FullType(JsonObject),
       );
     }
   }
@@ -161,8 +160,8 @@ class _$AccessCreateResponseAllOfResultSerializer implements PrimitiveSerializer
         case r'created_at':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(AccessCreatedAt),
-          ) as AccessCreatedAt;
+            specifiedType: const FullType(JsonObject),
+          ) as JsonObject;
           result.createdAt.replace(valueDes);
           break;
         case r'duration':
@@ -189,8 +188,8 @@ class _$AccessCreateResponseAllOfResultSerializer implements PrimitiveSerializer
         case r'updated_at':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(AccessUpdatedAt),
-          ) as AccessUpdatedAt;
+            specifiedType: const FullType(JsonObject),
+          ) as JsonObject;
           result.updatedAt.replace(valueDes);
           break;
         default:

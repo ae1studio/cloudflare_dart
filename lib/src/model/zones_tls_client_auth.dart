@@ -156,11 +156,11 @@ class ZonesTlsClientAuthIdEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'tls_client_auth')
   static const ZonesTlsClientAuthIdEnum tlsClientAuth = _$zonesTlsClientAuthIdEnum_tlsClientAuth;
 
-  static Serializer<ZonesTlsClientAuthIdEnum> get serializer => _$zonesTlsClientAuthIdSerializer;
+  static Serializer<ZonesTlsClientAuthIdEnum> get serializer => _$zonesTlsClientAuthIdEnumSerializer;
 
   const ZonesTlsClientAuthIdEnum._(String name): super(name);
 
-  static BuiltSet<ZonesTlsClientAuthIdEnum> get values => _$zonesTlsClientAuthIdValues;
-  static ZonesTlsClientAuthIdEnum valueOf(String name) => _$zonesTlsClientAuthIdValueOf(name);
+  static BuiltSet<ZonesTlsClientAuthIdEnum> get values => _$zonesTlsClientAuthIdEnumValues;
+  static ZonesTlsClientAuthIdEnum valueOf(String name) => _$zonesTlsClientAuthIdEnumValueOf(name);
 }
 

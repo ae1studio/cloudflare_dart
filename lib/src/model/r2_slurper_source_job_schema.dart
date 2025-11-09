@@ -85,11 +85,11 @@ class R2SlurperSourceJobSchemaVendorEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'r2')
   static const R2SlurperSourceJobSchemaVendorEnum r2 = _$r2SlurperSourceJobSchemaVendorEnum_r2;
 
-  static Serializer<R2SlurperSourceJobSchemaVendorEnum> get serializer => _$r2SlurperSourceJobSchemaVendorSerializer;
+  static Serializer<R2SlurperSourceJobSchemaVendorEnum> get serializer => _$r2SlurperSourceJobSchemaVendorEnumSerializer;
 
   const R2SlurperSourceJobSchemaVendorEnum._(String name): super(name);
 
-  static BuiltSet<R2SlurperSourceJobSchemaVendorEnum> get values => _$r2SlurperSourceJobSchemaVendorValues;
-  static R2SlurperSourceJobSchemaVendorEnum valueOf(String name) => _$r2SlurperSourceJobSchemaVendorValueOf(name);
+  static BuiltSet<R2SlurperSourceJobSchemaVendorEnum> get values => _$r2SlurperSourceJobSchemaVendorEnumValues;
+  static R2SlurperSourceJobSchemaVendorEnum valueOf(String name) => _$r2SlurperSourceJobSchemaVendorEnumValueOf(name);
 }
 

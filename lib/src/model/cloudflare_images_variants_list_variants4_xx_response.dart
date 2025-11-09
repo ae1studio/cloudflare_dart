@@ -148,11 +148,11 @@ class _$CloudflareImagesVariantsListVariants4XXResponseSerializer implements Pri
 class CloudflareImagesVariantsListVariants4XXResponseResultEnum extends EnumClass {
 
 
-  static Serializer<CloudflareImagesVariantsListVariants4XXResponseResultEnum> get serializer => _$cloudflareImagesVariantsListVariants4XXResponseResultSerializer;
+  static Serializer<CloudflareImagesVariantsListVariants4XXResponseResultEnum> get serializer => _$cloudflareImagesVariantsListVariants4XXResponseResultEnumSerializer;
 
   const CloudflareImagesVariantsListVariants4XXResponseResultEnum._(String name): super(name);
 
-  static BuiltSet<CloudflareImagesVariantsListVariants4XXResponseResultEnum> get values => _$cloudflareImagesVariantsListVariants4XXResponseResultValues;
-  static CloudflareImagesVariantsListVariants4XXResponseResultEnum valueOf(String name) => _$cloudflareImagesVariantsListVariants4XXResponseResultValueOf(name);
+  static BuiltSet<CloudflareImagesVariantsListVariants4XXResponseResultEnum> get values => _$cloudflareImagesVariantsListVariants4XXResponseResultEnumValues;
+  static CloudflareImagesVariantsListVariants4XXResponseResultEnum valueOf(String name) => _$cloudflareImagesVariantsListVariants4XXResponseResultEnumValueOf(name);
 }
 

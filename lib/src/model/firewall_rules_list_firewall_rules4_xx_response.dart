@@ -164,11 +164,11 @@ class _$FirewallRulesListFirewallRules4XXResponseSerializer implements Primitive
 class FirewallRulesListFirewallRules4XXResponseResultEnum extends EnumClass {
 
 
-  static Serializer<FirewallRulesListFirewallRules4XXResponseResultEnum> get serializer => _$firewallRulesListFirewallRules4XXResponseResultSerializer;
+  static Serializer<FirewallRulesListFirewallRules4XXResponseResultEnum> get serializer => _$firewallRulesListFirewallRules4XXResponseResultEnumSerializer;
 
   const FirewallRulesListFirewallRules4XXResponseResultEnum._(String name): super(name);
 
-  static BuiltSet<FirewallRulesListFirewallRules4XXResponseResultEnum> get values => _$firewallRulesListFirewallRules4XXResponseResultValues;
-  static FirewallRulesListFirewallRules4XXResponseResultEnum valueOf(String name) => _$firewallRulesListFirewallRules4XXResponseResultValueOf(name);
+  static BuiltSet<FirewallRulesListFirewallRules4XXResponseResultEnum> get values => _$firewallRulesListFirewallRules4XXResponseResultEnumValues;
+  static FirewallRulesListFirewallRules4XXResponseResultEnum valueOf(String name) => _$firewallRulesListFirewallRules4XXResponseResultEnumValueOf(name);
 }
 

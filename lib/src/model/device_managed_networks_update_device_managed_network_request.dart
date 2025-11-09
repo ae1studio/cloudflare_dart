@@ -4,7 +4,7 @@
 
 // ignore_for_file: unused_element
 import 'package:cloudflare_dart/src/model/teams_devices_components_schemas_type.dart';
-import 'package:cloudflare_dart/src/model/teams_devices_schemas_config_request.dart';
+import 'package:cloudflare_dart/src/model/teams_devices_tls_config_request.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
@@ -19,7 +19,7 @@ part 'device_managed_networks_update_device_managed_network_request.g.dart';
 @BuiltValue()
 abstract class DeviceManagedNetworksUpdateDeviceManagedNetworkRequest implements Built<DeviceManagedNetworksUpdateDeviceManagedNetworkRequest, DeviceManagedNetworksUpdateDeviceManagedNetworkRequestBuilder> {
   @BuiltValueField(wireName: r'config')
-  TeamsDevicesSchemasConfigRequest? get config;
+  TeamsDevicesTlsConfigRequest? get config;
 
   /// The name of the device managed network. This name must be unique.
   @BuiltValueField(wireName: r'name')
@@ -56,7 +56,7 @@ class _$DeviceManagedNetworksUpdateDeviceManagedNetworkRequestSerializer impleme
       yield r'config';
       yield serializers.serialize(
         object.config,
-        specifiedType: const FullType(TeamsDevicesSchemasConfigRequest),
+        specifiedType: const FullType(TeamsDevicesTlsConfigRequest),
       );
     }
     if (object.name != null) {
@@ -99,8 +99,8 @@ class _$DeviceManagedNetworksUpdateDeviceManagedNetworkRequestSerializer impleme
         case r'config':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(TeamsDevicesSchemasConfigRequest),
-          ) as TeamsDevicesSchemasConfigRequest;
+            specifiedType: const FullType(TeamsDevicesTlsConfigRequest),
+          ) as TeamsDevicesTlsConfigRequest;
           result.config.replace(valueDes);
           break;
         case r'name':

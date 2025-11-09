@@ -611,12 +611,12 @@ class ZonesActionsInnerIdEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'waf')
   static const ZonesActionsInnerIdEnum waf = _$zonesActionsInnerIdEnum_waf;
 
-  static Serializer<ZonesActionsInnerIdEnum> get serializer => _$zonesActionsInnerIdSerializer;
+  static Serializer<ZonesActionsInnerIdEnum> get serializer => _$zonesActionsInnerIdEnumSerializer;
 
   const ZonesActionsInnerIdEnum._(String name): super(name);
 
-  static BuiltSet<ZonesActionsInnerIdEnum> get values => _$zonesActionsInnerIdValues;
-  static ZonesActionsInnerIdEnum valueOf(String name) => _$zonesActionsInnerIdValueOf(name);
+  static BuiltSet<ZonesActionsInnerIdEnum> get values => _$zonesActionsInnerIdEnumValues;
+  static ZonesActionsInnerIdEnum valueOf(String name) => _$zonesActionsInnerIdEnumValueOf(name);
 }
 
 class ZonesActionsInnerValueEnum extends EnumClass {
@@ -628,11 +628,11 @@ class ZonesActionsInnerValueEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'off')
   static const ZonesActionsInnerValueEnum off = _$zonesActionsInnerValueEnum_off;
 
-  static Serializer<ZonesActionsInnerValueEnum> get serializer => _$zonesActionsInnerValueSerializer;
+  static Serializer<ZonesActionsInnerValueEnum> get serializer => _$zonesActionsInnerValueEnumSerializer;
 
   const ZonesActionsInnerValueEnum._(String name): super(name);
 
-  static BuiltSet<ZonesActionsInnerValueEnum> get values => _$zonesActionsInnerValueValues;
-  static ZonesActionsInnerValueEnum valueOf(String name) => _$zonesActionsInnerValueValueOf(name);
+  static BuiltSet<ZonesActionsInnerValueEnum> get values => _$zonesActionsInnerValueEnumValues;
+  static ZonesActionsInnerValueEnum valueOf(String name) => _$zonesActionsInnerValueEnumValueOf(name);
 }
 

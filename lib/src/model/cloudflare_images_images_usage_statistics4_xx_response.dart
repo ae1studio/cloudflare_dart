@@ -148,11 +148,11 @@ class _$CloudflareImagesImagesUsageStatistics4XXResponseSerializer implements Pr
 class CloudflareImagesImagesUsageStatistics4XXResponseResultEnum extends EnumClass {
 
 
-  static Serializer<CloudflareImagesImagesUsageStatistics4XXResponseResultEnum> get serializer => _$cloudflareImagesImagesUsageStatistics4XXResponseResultSerializer;
+  static Serializer<CloudflareImagesImagesUsageStatistics4XXResponseResultEnum> get serializer => _$cloudflareImagesImagesUsageStatistics4XXResponseResultEnumSerializer;
 
   const CloudflareImagesImagesUsageStatistics4XXResponseResultEnum._(String name): super(name);
 
-  static BuiltSet<CloudflareImagesImagesUsageStatistics4XXResponseResultEnum> get values => _$cloudflareImagesImagesUsageStatistics4XXResponseResultValues;
-  static CloudflareImagesImagesUsageStatistics4XXResponseResultEnum valueOf(String name) => _$cloudflareImagesImagesUsageStatistics4XXResponseResultValueOf(name);
+  static BuiltSet<CloudflareImagesImagesUsageStatistics4XXResponseResultEnum> get values => _$cloudflareImagesImagesUsageStatistics4XXResponseResultEnumValues;
+  static CloudflareImagesImagesUsageStatistics4XXResponseResultEnum valueOf(String name) => _$cloudflareImagesImagesUsageStatistics4XXResponseResultEnumValueOf(name);
 }
 

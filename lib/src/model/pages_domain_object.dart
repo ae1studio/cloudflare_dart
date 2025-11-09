@@ -262,12 +262,12 @@ class PagesDomainObjectCertificateAuthorityEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'lets_encrypt')
   static const PagesDomainObjectCertificateAuthorityEnum letsEncrypt = _$pagesDomainObjectCertificateAuthorityEnum_letsEncrypt;
 
-  static Serializer<PagesDomainObjectCertificateAuthorityEnum> get serializer => _$pagesDomainObjectCertificateAuthoritySerializer;
+  static Serializer<PagesDomainObjectCertificateAuthorityEnum> get serializer => _$pagesDomainObjectCertificateAuthorityEnumSerializer;
 
   const PagesDomainObjectCertificateAuthorityEnum._(String name): super(name);
 
-  static BuiltSet<PagesDomainObjectCertificateAuthorityEnum> get values => _$pagesDomainObjectCertificateAuthorityValues;
-  static PagesDomainObjectCertificateAuthorityEnum valueOf(String name) => _$pagesDomainObjectCertificateAuthorityValueOf(name);
+  static BuiltSet<PagesDomainObjectCertificateAuthorityEnum> get values => _$pagesDomainObjectCertificateAuthorityEnumValues;
+  static PagesDomainObjectCertificateAuthorityEnum valueOf(String name) => _$pagesDomainObjectCertificateAuthorityEnumValueOf(name);
 }
 
 class PagesDomainObjectStatusEnum extends EnumClass {
@@ -285,11 +285,11 @@ class PagesDomainObjectStatusEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'error')
   static const PagesDomainObjectStatusEnum error = _$pagesDomainObjectStatusEnum_error;
 
-  static Serializer<PagesDomainObjectStatusEnum> get serializer => _$pagesDomainObjectStatusSerializer;
+  static Serializer<PagesDomainObjectStatusEnum> get serializer => _$pagesDomainObjectStatusEnumSerializer;
 
   const PagesDomainObjectStatusEnum._(String name): super(name);
 
-  static BuiltSet<PagesDomainObjectStatusEnum> get values => _$pagesDomainObjectStatusValues;
-  static PagesDomainObjectStatusEnum valueOf(String name) => _$pagesDomainObjectStatusValueOf(name);
+  static BuiltSet<PagesDomainObjectStatusEnum> get values => _$pagesDomainObjectStatusEnumValues;
+  static PagesDomainObjectStatusEnum valueOf(String name) => _$pagesDomainObjectStatusEnumValueOf(name);
 }
 

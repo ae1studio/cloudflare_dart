@@ -3,9 +3,6 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:cloudflare_dart/src/model/brapi_post_content_request_all_of_cookies_inner_priority.dart';
-import 'package:cloudflare_dart/src/model/brapi_post_content_request_all_of_cookies_inner_same_site.dart';
-import 'package:cloudflare_dart/src/model/brapi_post_content_request_all_of_cookies_inner_source_scheme.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
@@ -49,13 +46,15 @@ abstract class BrapiPostContentRequestAllOfCookiesInner implements Built<BrapiPo
   String? get path;
 
   @BuiltValueField(wireName: r'priority')
-  BrapiPostContentRequestAllOfCookiesInnerPriority? get priority;
+  PriorityEnum? get priority;
+  // enum priorityEnum {  Low,  Medium,  High,  };
 
   @BuiltValueField(wireName: r'sameParty')
   bool? get sameParty;
 
   @BuiltValueField(wireName: r'sameSite')
-  BrapiPostContentRequestAllOfCookiesInnerSameSite? get sameSite;
+  SameSiteEnum? get sameSite;
+  // enum sameSiteEnum {  Strict,  Lax,  None,  };
 
   @BuiltValueField(wireName: r'secure')
   bool? get secure;
@@ -64,7 +63,8 @@ abstract class BrapiPostContentRequestAllOfCookiesInner implements Built<BrapiPo
   num? get sourcePort;
 
   @BuiltValueField(wireName: r'sourceScheme')
-  BrapiPostContentRequestAllOfCookiesInnerSourceScheme? get sourceScheme;
+  SourceSchemeEnum? get sourceScheme;
+  // enum sourceSchemeEnum {  Unset,  NonSecure,  Secure,  };
 
   @BuiltValueField(wireName: r'url')
   String? get url;
@@ -139,7 +139,7 @@ class _$BrapiPostContentRequestAllOfCookiesInnerSerializer implements PrimitiveS
       yield r'priority';
       yield serializers.serialize(
         object.priority,
-        specifiedType: const FullType(BrapiPostContentRequestAllOfCookiesInnerPriority),
+        specifiedType: const FullType(PriorityEnum),
       );
     }
     if (object.sameParty != null) {
@@ -153,7 +153,7 @@ class _$BrapiPostContentRequestAllOfCookiesInnerSerializer implements PrimitiveS
       yield r'sameSite';
       yield serializers.serialize(
         object.sameSite,
-        specifiedType: const FullType(BrapiPostContentRequestAllOfCookiesInnerSameSite),
+        specifiedType: const FullType(SameSiteEnum),
       );
     }
     if (object.secure != null) {
@@ -174,7 +174,7 @@ class _$BrapiPostContentRequestAllOfCookiesInnerSerializer implements PrimitiveS
       yield r'sourceScheme';
       yield serializers.serialize(
         object.sourceScheme,
-        specifiedType: const FullType(BrapiPostContentRequestAllOfCookiesInnerSourceScheme),
+        specifiedType: const FullType(SourceSchemeEnum),
       );
     }
     if (object.url != null) {
@@ -257,9 +257,9 @@ class _$BrapiPostContentRequestAllOfCookiesInnerSerializer implements PrimitiveS
         case r'priority':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(BrapiPostContentRequestAllOfCookiesInnerPriority),
-          ) as BrapiPostContentRequestAllOfCookiesInnerPriority;
-          result.priority.replace(valueDes);
+            specifiedType: const FullType(PriorityEnum),
+          ) as PriorityEnum;
+          result.priority = valueDes;
           break;
         case r'sameParty':
           final valueDes = serializers.deserialize(
@@ -271,9 +271,9 @@ class _$BrapiPostContentRequestAllOfCookiesInnerSerializer implements PrimitiveS
         case r'sameSite':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(BrapiPostContentRequestAllOfCookiesInnerSameSite),
-          ) as BrapiPostContentRequestAllOfCookiesInnerSameSite;
-          result.sameSite.replace(valueDes);
+            specifiedType: const FullType(SameSiteEnum),
+          ) as SameSiteEnum;
+          result.sameSite = valueDes;
           break;
         case r'secure':
           final valueDes = serializers.deserialize(
@@ -292,9 +292,9 @@ class _$BrapiPostContentRequestAllOfCookiesInnerSerializer implements PrimitiveS
         case r'sourceScheme':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(BrapiPostContentRequestAllOfCookiesInnerSourceScheme),
-          ) as BrapiPostContentRequestAllOfCookiesInnerSourceScheme;
-          result.sourceScheme.replace(valueDes);
+            specifiedType: const FullType(SourceSchemeEnum),
+          ) as SourceSchemeEnum;
+          result.sourceScheme = valueDes;
           break;
         case r'url':
           final valueDes = serializers.deserialize(

@@ -148,11 +148,11 @@ class WorkersBindingKindTextBlobTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'text_blob')
   static const WorkersBindingKindTextBlobTypeEnum textBlob = _$workersBindingKindTextBlobTypeEnum_textBlob;
 
-  static Serializer<WorkersBindingKindTextBlobTypeEnum> get serializer => _$workersBindingKindTextBlobTypeSerializer;
+  static Serializer<WorkersBindingKindTextBlobTypeEnum> get serializer => _$workersBindingKindTextBlobTypeEnumSerializer;
 
   const WorkersBindingKindTextBlobTypeEnum._(String name): super(name);
 
-  static BuiltSet<WorkersBindingKindTextBlobTypeEnum> get values => _$workersBindingKindTextBlobTypeValues;
-  static WorkersBindingKindTextBlobTypeEnum valueOf(String name) => _$workersBindingKindTextBlobTypeValueOf(name);
+  static BuiltSet<WorkersBindingKindTextBlobTypeEnum> get values => _$workersBindingKindTextBlobTypeEnumValues;
+  static WorkersBindingKindTextBlobTypeEnum valueOf(String name) => _$workersBindingKindTextBlobTypeEnumValueOf(name);
 }
 

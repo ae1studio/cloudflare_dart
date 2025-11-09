@@ -136,11 +136,11 @@ class VectorizeCreateMetadataIndexRequestIndexTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'boolean')
   static const VectorizeCreateMetadataIndexRequestIndexTypeEnum boolean = _$vectorizeCreateMetadataIndexRequestIndexTypeEnum_boolean;
 
-  static Serializer<VectorizeCreateMetadataIndexRequestIndexTypeEnum> get serializer => _$vectorizeCreateMetadataIndexRequestIndexTypeSerializer;
+  static Serializer<VectorizeCreateMetadataIndexRequestIndexTypeEnum> get serializer => _$vectorizeCreateMetadataIndexRequestIndexTypeEnumSerializer;
 
   const VectorizeCreateMetadataIndexRequestIndexTypeEnum._(String name): super(name);
 
-  static BuiltSet<VectorizeCreateMetadataIndexRequestIndexTypeEnum> get values => _$vectorizeCreateMetadataIndexRequestIndexTypeValues;
-  static VectorizeCreateMetadataIndexRequestIndexTypeEnum valueOf(String name) => _$vectorizeCreateMetadataIndexRequestIndexTypeValueOf(name);
+  static BuiltSet<VectorizeCreateMetadataIndexRequestIndexTypeEnum> get values => _$vectorizeCreateMetadataIndexRequestIndexTypeEnumValues;
+  static VectorizeCreateMetadataIndexRequestIndexTypeEnum valueOf(String name) => _$vectorizeCreateMetadataIndexRequestIndexTypeEnumValueOf(name);
 }
 

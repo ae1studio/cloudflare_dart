@@ -23,7 +23,6 @@ import 'package:cloudflare_dart/src/model/browser_rdp_application.dart';
 import 'package:built_collection/built_collection.dart';
 import 'package:cloudflare_dart/src/model/access_bookmark_props.dart';
 import 'package:cloudflare_dart/src/model/access_landing_page_design.dart';
-import 'package:built_value/json_object.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 import 'package:one_of/any_of.dart';

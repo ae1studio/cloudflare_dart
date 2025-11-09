@@ -5,10 +5,8 @@
 // ignore_for_file: unused_element
 import 'package:built_collection/built_collection.dart';
 import 'package:cloudflare_dart/src/model/dlp_prompt_topic_type.dart';
-import 'package:cloudflare_dart/src/model/dlp_predefined_entry_variant_one_of.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
-import 'package:one_of/one_of.dart';
 
 part 'dlp_predefined_entry_variant.g.dart';
 
@@ -20,8 +18,16 @@ part 'dlp_predefined_entry_variant.g.dart';
 /// * [type] 
 @BuiltValue()
 abstract class DlpPredefinedEntryVariant implements Built<DlpPredefinedEntryVariant, DlpPredefinedEntryVariantBuilder> {
-  /// One Of [DlpPredefinedEntryVariantOneOf]
-  OneOf get oneOf;
+  @BuiltValueField(wireName: r'description')
+  String? get description;
+
+  @BuiltValueField(wireName: r'topic_type')
+  DlpPromptTopicType get topicType;
+  // enum topicTypeEnum {  Intent,  Content,  };
+
+  @BuiltValueField(wireName: r'type')
+  DlpPredefinedEntryVariantTypeEnum get type;
+  // enum typeEnum {  PromptTopic,  };
 
   DlpPredefinedEntryVariant._();
 
@@ -46,6 +52,23 @@ class _$DlpPredefinedEntryVariantSerializer implements PrimitiveSerializer<DlpPr
     DlpPredefinedEntryVariant object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    if (object.description != null) {
+      yield r'description';
+      yield serializers.serialize(
+        object.description,
+        specifiedType: const FullType.nullable(String),
+      );
+    }
+    yield r'topic_type';
+    yield serializers.serialize(
+      object.topicType,
+      specifiedType: const FullType(DlpPromptTopicType),
+    );
+    yield r'type';
+    yield serializers.serialize(
+      object.type,
+      specifiedType: const FullType(DlpPredefinedEntryVariantTypeEnum),
+    );
   }
 
   @override
@@ -54,8 +77,49 @@ class _$DlpPredefinedEntryVariantSerializer implements PrimitiveSerializer<DlpPr
     DlpPredefinedEntryVariant object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    final oneOf = object.oneOf;
-    return serializers.serialize(oneOf.value, specifiedType: FullType(oneOf.valueType))!;
+    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+  }
+
+  void _deserializeProperties(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+    required List<Object?> serializedList,
+    required DlpPredefinedEntryVariantBuilder result,
+    required List<Object?> unhandled,
+  }) {
+    for (var i = 0; i < serializedList.length; i += 2) {
+      final key = serializedList[i] as String;
+      final value = serializedList[i + 1];
+      switch (key) {
+        case r'description':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType.nullable(String),
+          ) as String?;
+          if (valueDes == null) continue;
+          result.description = valueDes;
+          break;
+        case r'topic_type':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(DlpPromptTopicType),
+          ) as DlpPromptTopicType;
+          result.topicType = valueDes;
+          break;
+        case r'type':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(DlpPredefinedEntryVariantTypeEnum),
+          ) as DlpPredefinedEntryVariantTypeEnum;
+          result.type = valueDes;
+          break;
+        default:
+          unhandled.add(key);
+          unhandled.add(value);
+          break;
+      }
+    }
   }
 
   @override
@@ -65,10 +129,16 @@ class _$DlpPredefinedEntryVariantSerializer implements PrimitiveSerializer<DlpPr
     FullType specifiedType = FullType.unspecified,
   }) {
     final result = DlpPredefinedEntryVariantBuilder();
-    Object? oneOfDataSrc;
-    final targetType = const FullType(OneOf, [FullType(DlpPredefinedEntryVariantOneOf), ]);
-    oneOfDataSrc = serialized;
-    result.oneOf = serializers.deserialize(oneOfDataSrc, specifiedType: targetType) as OneOf;
+    final serializedList = (serialized as Iterable<Object?>).toList();
+    final unhandled = <Object?>[];
+    _deserializeProperties(
+      serializers,
+      serialized,
+      specifiedType: specifiedType,
+      serializedList: serializedList,
+      unhandled: unhandled,
+      result: result,
+    );
     return result.build();
   }
 }
@@ -78,11 +148,11 @@ class DlpPredefinedEntryVariantTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'PromptTopic')
   static const DlpPredefinedEntryVariantTypeEnum promptTopic = _$dlpPredefinedEntryVariantTypeEnum_promptTopic;
 
-  static Serializer<DlpPredefinedEntryVariantTypeEnum> get serializer => _$dlpPredefinedEntryVariantTypeSerializer;
+  static Serializer<DlpPredefinedEntryVariantTypeEnum> get serializer => _$dlpPredefinedEntryVariantTypeEnumSerializer;
 
   const DlpPredefinedEntryVariantTypeEnum._(String name): super(name);
 
-  static BuiltSet<DlpPredefinedEntryVariantTypeEnum> get values => _$dlpPredefinedEntryVariantTypeValues;
-  static DlpPredefinedEntryVariantTypeEnum valueOf(String name) => _$dlpPredefinedEntryVariantTypeValueOf(name);
+  static BuiltSet<DlpPredefinedEntryVariantTypeEnum> get values => _$dlpPredefinedEntryVariantTypeEnumValues;
+  static DlpPredefinedEntryVariantTypeEnum valueOf(String name) => _$dlpPredefinedEntryVariantTypeEnumValueOf(name);
 }
 

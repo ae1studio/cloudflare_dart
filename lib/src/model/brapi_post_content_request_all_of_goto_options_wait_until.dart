@@ -3,7 +3,6 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:cloudflare_dart/src/model/brapi_post_content_request_all_of_goto_options_wait_until_any_of_inner.dart';
 import 'package:built_collection/built_collection.dart';
 import 'dart:core';
 import 'package:built_value/built_value.dart';
@@ -15,7 +14,7 @@ part 'brapi_post_content_request_all_of_goto_options_wait_until.g.dart';
 /// BrapiPostContentRequestAllOfGotoOptionsWaitUntil
 @BuiltValue()
 abstract class BrapiPostContentRequestAllOfGotoOptionsWaitUntil implements Built<BrapiPostContentRequestAllOfGotoOptionsWaitUntil, BrapiPostContentRequestAllOfGotoOptionsWaitUntilBuilder> {
-  /// Any Of [BuiltList<BrapiPostContentRequestAllOfGotoOptionsWaitUntilAnyOfInner>], [String]
+  /// Any Of [BuiltList<String>], [String]
   AnyOf get anyOf;
 
   BrapiPostContentRequestAllOfGotoOptionsWaitUntil._();
@@ -61,7 +60,7 @@ class _$BrapiPostContentRequestAllOfGotoOptionsWaitUntilSerializer implements Pr
   }) {
     final result = BrapiPostContentRequestAllOfGotoOptionsWaitUntilBuilder();
     Object? anyOfDataSrc;
-    final targetType = const FullType(AnyOf, [FullType(AnyOf0Enum), FullType(AnyOf1Enum), FullType(AnyOf2Enum), FullType(AnyOf3Enum), FullType(BuiltList, [FullType(BrapiPostContentRequestAllOfGotoOptionsWaitUntilAnyOfInner)]), ]);
+    final targetType = const FullType(AnyOf, [FullType(AnyOf0Enum), FullType(AnyOf1Enum), FullType(AnyOf2Enum), FullType(AnyOf3Enum), FullType(BuiltList, [FullType(AnyOf4Enum)]), ]);
     anyOfDataSrc = serialized;
     result.anyOf = serializers.deserialize(anyOfDataSrc, specifiedType: targetType) as AnyOf;
     return result.build();

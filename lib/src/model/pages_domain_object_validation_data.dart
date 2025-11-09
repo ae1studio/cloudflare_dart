@@ -188,12 +188,12 @@ class PagesDomainObjectValidationDataMethodEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'txt')
   static const PagesDomainObjectValidationDataMethodEnum txt = _$pagesDomainObjectValidationDataMethodEnum_txt;
 
-  static Serializer<PagesDomainObjectValidationDataMethodEnum> get serializer => _$pagesDomainObjectValidationDataMethodSerializer;
+  static Serializer<PagesDomainObjectValidationDataMethodEnum> get serializer => _$pagesDomainObjectValidationDataMethodEnumSerializer;
 
   const PagesDomainObjectValidationDataMethodEnum._(String name): super(name);
 
-  static BuiltSet<PagesDomainObjectValidationDataMethodEnum> get values => _$pagesDomainObjectValidationDataMethodValues;
-  static PagesDomainObjectValidationDataMethodEnum valueOf(String name) => _$pagesDomainObjectValidationDataMethodValueOf(name);
+  static BuiltSet<PagesDomainObjectValidationDataMethodEnum> get values => _$pagesDomainObjectValidationDataMethodEnumValues;
+  static PagesDomainObjectValidationDataMethodEnum valueOf(String name) => _$pagesDomainObjectValidationDataMethodEnumValueOf(name);
 }
 
 class PagesDomainObjectValidationDataStatusEnum extends EnumClass {
@@ -209,11 +209,11 @@ class PagesDomainObjectValidationDataStatusEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'error')
   static const PagesDomainObjectValidationDataStatusEnum error = _$pagesDomainObjectValidationDataStatusEnum_error;
 
-  static Serializer<PagesDomainObjectValidationDataStatusEnum> get serializer => _$pagesDomainObjectValidationDataStatusSerializer;
+  static Serializer<PagesDomainObjectValidationDataStatusEnum> get serializer => _$pagesDomainObjectValidationDataStatusEnumSerializer;
 
   const PagesDomainObjectValidationDataStatusEnum._(String name): super(name);
 
-  static BuiltSet<PagesDomainObjectValidationDataStatusEnum> get values => _$pagesDomainObjectValidationDataStatusValues;
-  static PagesDomainObjectValidationDataStatusEnum valueOf(String name) => _$pagesDomainObjectValidationDataStatusValueOf(name);
+  static BuiltSet<PagesDomainObjectValidationDataStatusEnum> get values => _$pagesDomainObjectValidationDataStatusEnumValues;
+  static PagesDomainObjectValidationDataStatusEnum valueOf(String name) => _$pagesDomainObjectValidationDataStatusEnumValueOf(name);
 }
 

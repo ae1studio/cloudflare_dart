@@ -147,11 +147,11 @@ class WorkersBindingKindPipelinesTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'pipelines')
   static const WorkersBindingKindPipelinesTypeEnum pipelines = _$workersBindingKindPipelinesTypeEnum_pipelines;
 
-  static Serializer<WorkersBindingKindPipelinesTypeEnum> get serializer => _$workersBindingKindPipelinesTypeSerializer;
+  static Serializer<WorkersBindingKindPipelinesTypeEnum> get serializer => _$workersBindingKindPipelinesTypeEnumSerializer;
 
   const WorkersBindingKindPipelinesTypeEnum._(String name): super(name);
 
-  static BuiltSet<WorkersBindingKindPipelinesTypeEnum> get values => _$workersBindingKindPipelinesTypeValues;
-  static WorkersBindingKindPipelinesTypeEnum valueOf(String name) => _$workersBindingKindPipelinesTypeValueOf(name);
+  static BuiltSet<WorkersBindingKindPipelinesTypeEnum> get values => _$workersBindingKindPipelinesTypeEnumValues;
+  static WorkersBindingKindPipelinesTypeEnum valueOf(String name) => _$workersBindingKindPipelinesTypeEnumValueOf(name);
 }
 

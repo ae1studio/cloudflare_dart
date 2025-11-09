@@ -339,12 +339,12 @@ class WorkersObservabilityTelemetryEventWorkersAnyOf1EventTypeEnum extends EnumC
   @BuiltValueEnumConst(wireName: r'unknown')
   static const WorkersObservabilityTelemetryEventWorkersAnyOf1EventTypeEnum unknown = _$workersObservabilityTelemetryEventWorkersAnyOf1EventTypeEnum_unknown;
 
-  static Serializer<WorkersObservabilityTelemetryEventWorkersAnyOf1EventTypeEnum> get serializer => _$workersObservabilityTelemetryEventWorkersAnyOf1EventTypeSerializer;
+  static Serializer<WorkersObservabilityTelemetryEventWorkersAnyOf1EventTypeEnum> get serializer => _$workersObservabilityTelemetryEventWorkersAnyOf1EventTypeEnumSerializer;
 
   const WorkersObservabilityTelemetryEventWorkersAnyOf1EventTypeEnum._(String name): super(name);
 
-  static BuiltSet<WorkersObservabilityTelemetryEventWorkersAnyOf1EventTypeEnum> get values => _$workersObservabilityTelemetryEventWorkersAnyOf1EventTypeValues;
-  static WorkersObservabilityTelemetryEventWorkersAnyOf1EventTypeEnum valueOf(String name) => _$workersObservabilityTelemetryEventWorkersAnyOf1EventTypeValueOf(name);
+  static BuiltSet<WorkersObservabilityTelemetryEventWorkersAnyOf1EventTypeEnum> get values => _$workersObservabilityTelemetryEventWorkersAnyOf1EventTypeEnumValues;
+  static WorkersObservabilityTelemetryEventWorkersAnyOf1EventTypeEnum valueOf(String name) => _$workersObservabilityTelemetryEventWorkersAnyOf1EventTypeEnumValueOf(name);
 }
 
 class WorkersObservabilityTelemetryEventWorkersAnyOf1ExecutionModelEnum extends EnumClass {
@@ -354,11 +354,11 @@ class WorkersObservabilityTelemetryEventWorkersAnyOf1ExecutionModelEnum extends 
   @BuiltValueEnumConst(wireName: r'stateless')
   static const WorkersObservabilityTelemetryEventWorkersAnyOf1ExecutionModelEnum stateless = _$workersObservabilityTelemetryEventWorkersAnyOf1ExecutionModelEnum_stateless;
 
-  static Serializer<WorkersObservabilityTelemetryEventWorkersAnyOf1ExecutionModelEnum> get serializer => _$workersObservabilityTelemetryEventWorkersAnyOf1ExecutionModelSerializer;
+  static Serializer<WorkersObservabilityTelemetryEventWorkersAnyOf1ExecutionModelEnum> get serializer => _$workersObservabilityTelemetryEventWorkersAnyOf1ExecutionModelEnumSerializer;
 
   const WorkersObservabilityTelemetryEventWorkersAnyOf1ExecutionModelEnum._(String name): super(name);
 
-  static BuiltSet<WorkersObservabilityTelemetryEventWorkersAnyOf1ExecutionModelEnum> get values => _$workersObservabilityTelemetryEventWorkersAnyOf1ExecutionModelValues;
-  static WorkersObservabilityTelemetryEventWorkersAnyOf1ExecutionModelEnum valueOf(String name) => _$workersObservabilityTelemetryEventWorkersAnyOf1ExecutionModelValueOf(name);
+  static BuiltSet<WorkersObservabilityTelemetryEventWorkersAnyOf1ExecutionModelEnum> get values => _$workersObservabilityTelemetryEventWorkersAnyOf1ExecutionModelEnumValues;
+  static WorkersObservabilityTelemetryEventWorkersAnyOf1ExecutionModelEnum valueOf(String name) => _$workersObservabilityTelemetryEventWorkersAnyOf1ExecutionModelEnumValueOf(name);
 }
 

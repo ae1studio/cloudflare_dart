@@ -215,11 +215,11 @@ class IamMemberWithPoliciesStatusEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'pending')
   static const IamMemberWithPoliciesStatusEnum pending = _$iamMemberWithPoliciesStatusEnum_pending;
 
-  static Serializer<IamMemberWithPoliciesStatusEnum> get serializer => _$iamMemberWithPoliciesStatusSerializer;
+  static Serializer<IamMemberWithPoliciesStatusEnum> get serializer => _$iamMemberWithPoliciesStatusEnumSerializer;
 
   const IamMemberWithPoliciesStatusEnum._(String name): super(name);
 
-  static BuiltSet<IamMemberWithPoliciesStatusEnum> get values => _$iamMemberWithPoliciesStatusValues;
-  static IamMemberWithPoliciesStatusEnum valueOf(String name) => _$iamMemberWithPoliciesStatusValueOf(name);
+  static BuiltSet<IamMemberWithPoliciesStatusEnum> get values => _$iamMemberWithPoliciesStatusEnumValues;
+  static IamMemberWithPoliciesStatusEnum valueOf(String name) => _$iamMemberWithPoliciesStatusEnumValueOf(name);
 }
 

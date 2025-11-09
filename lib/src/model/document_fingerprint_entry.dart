@@ -177,11 +177,11 @@ class DocumentFingerprintEntryTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'document_fingerprint')
   static const DocumentFingerprintEntryTypeEnum documentFingerprint = _$documentFingerprintEntryTypeEnum_documentFingerprint;
 
-  static Serializer<DocumentFingerprintEntryTypeEnum> get serializer => _$documentFingerprintEntryTypeSerializer;
+  static Serializer<DocumentFingerprintEntryTypeEnum> get serializer => _$documentFingerprintEntryTypeEnumSerializer;
 
   const DocumentFingerprintEntryTypeEnum._(String name): super(name);
 
-  static BuiltSet<DocumentFingerprintEntryTypeEnum> get values => _$documentFingerprintEntryTypeValues;
-  static DocumentFingerprintEntryTypeEnum valueOf(String name) => _$documentFingerprintEntryTypeValueOf(name);
+  static BuiltSet<DocumentFingerprintEntryTypeEnum> get values => _$documentFingerprintEntryTypeEnumValues;
+  static DocumentFingerprintEntryTypeEnum valueOf(String name) => _$documentFingerprintEntryTypeEnumValueOf(name);
 }
 

@@ -163,11 +163,11 @@ class R2SlurperGCSSourceSchemaVendorEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'gcs')
   static const R2SlurperGCSSourceSchemaVendorEnum gcs = _$r2SlurperGCSSourceSchemaVendorEnum_gcs;
 
-  static Serializer<R2SlurperGCSSourceSchemaVendorEnum> get serializer => _$r2SlurperGCSSourceSchemaVendorSerializer;
+  static Serializer<R2SlurperGCSSourceSchemaVendorEnum> get serializer => _$r2SlurperGCSSourceSchemaVendorEnumSerializer;
 
   const R2SlurperGCSSourceSchemaVendorEnum._(String name): super(name);
 
-  static BuiltSet<R2SlurperGCSSourceSchemaVendorEnum> get values => _$r2SlurperGCSSourceSchemaVendorValues;
-  static R2SlurperGCSSourceSchemaVendorEnum valueOf(String name) => _$r2SlurperGCSSourceSchemaVendorValueOf(name);
+  static BuiltSet<R2SlurperGCSSourceSchemaVendorEnum> get values => _$r2SlurperGCSSourceSchemaVendorEnumValues;
+  static R2SlurperGCSSourceSchemaVendorEnum valueOf(String name) => _$r2SlurperGCSSourceSchemaVendorEnumValueOf(name);
 }
 

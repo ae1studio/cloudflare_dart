@@ -156,11 +156,11 @@ class ZonesHotlinkProtectionIdEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'hotlink_protection')
   static const ZonesHotlinkProtectionIdEnum hotlinkProtection = _$zonesHotlinkProtectionIdEnum_hotlinkProtection;
 
-  static Serializer<ZonesHotlinkProtectionIdEnum> get serializer => _$zonesHotlinkProtectionIdSerializer;
+  static Serializer<ZonesHotlinkProtectionIdEnum> get serializer => _$zonesHotlinkProtectionIdEnumSerializer;
 
   const ZonesHotlinkProtectionIdEnum._(String name): super(name);
 
-  static BuiltSet<ZonesHotlinkProtectionIdEnum> get values => _$zonesHotlinkProtectionIdValues;
-  static ZonesHotlinkProtectionIdEnum valueOf(String name) => _$zonesHotlinkProtectionIdValueOf(name);
+  static BuiltSet<ZonesHotlinkProtectionIdEnum> get values => _$zonesHotlinkProtectionIdEnumValues;
+  static ZonesHotlinkProtectionIdEnum valueOf(String name) => _$zonesHotlinkProtectionIdEnumValueOf(name);
 }
 

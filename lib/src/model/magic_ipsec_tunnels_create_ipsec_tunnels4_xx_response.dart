@@ -149,11 +149,11 @@ class _$MagicIpsecTunnelsCreateIpsecTunnels4XXResponseSerializer implements Prim
 class MagicIpsecTunnelsCreateIpsecTunnels4XXResponseResultEnum extends EnumClass {
 
 
-  static Serializer<MagicIpsecTunnelsCreateIpsecTunnels4XXResponseResultEnum> get serializer => _$magicIpsecTunnelsCreateIpsecTunnels4XXResponseResultSerializer;
+  static Serializer<MagicIpsecTunnelsCreateIpsecTunnels4XXResponseResultEnum> get serializer => _$magicIpsecTunnelsCreateIpsecTunnels4XXResponseResultEnumSerializer;
 
   const MagicIpsecTunnelsCreateIpsecTunnels4XXResponseResultEnum._(String name): super(name);
 
-  static BuiltSet<MagicIpsecTunnelsCreateIpsecTunnels4XXResponseResultEnum> get values => _$magicIpsecTunnelsCreateIpsecTunnels4XXResponseResultValues;
-  static MagicIpsecTunnelsCreateIpsecTunnels4XXResponseResultEnum valueOf(String name) => _$magicIpsecTunnelsCreateIpsecTunnels4XXResponseResultValueOf(name);
+  static BuiltSet<MagicIpsecTunnelsCreateIpsecTunnels4XXResponseResultEnum> get values => _$magicIpsecTunnelsCreateIpsecTunnels4XXResponseResultEnumValues;
+  static MagicIpsecTunnelsCreateIpsecTunnels4XXResponseResultEnum valueOf(String name) => _$magicIpsecTunnelsCreateIpsecTunnels4XXResponseResultEnumValueOf(name);
 }
 

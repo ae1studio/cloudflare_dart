@@ -158,11 +158,11 @@ class CacheRulesSmartTieredCacheIdEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'tiered_cache_smart_topology_enable')
   static const CacheRulesSmartTieredCacheIdEnum tieredCacheSmartTopologyEnable = _$cacheRulesSmartTieredCacheIdEnum_tieredCacheSmartTopologyEnable;
 
-  static Serializer<CacheRulesSmartTieredCacheIdEnum> get serializer => _$cacheRulesSmartTieredCacheIdSerializer;
+  static Serializer<CacheRulesSmartTieredCacheIdEnum> get serializer => _$cacheRulesSmartTieredCacheIdEnumSerializer;
 
   const CacheRulesSmartTieredCacheIdEnum._(String name): super(name);
 
-  static BuiltSet<CacheRulesSmartTieredCacheIdEnum> get values => _$cacheRulesSmartTieredCacheIdValues;
-  static CacheRulesSmartTieredCacheIdEnum valueOf(String name) => _$cacheRulesSmartTieredCacheIdValueOf(name);
+  static BuiltSet<CacheRulesSmartTieredCacheIdEnum> get values => _$cacheRulesSmartTieredCacheIdEnumValues;
+  static CacheRulesSmartTieredCacheIdEnum valueOf(String name) => _$cacheRulesSmartTieredCacheIdEnumValueOf(name);
 }
 

@@ -111,11 +111,11 @@ class DlpEntryUpdateTypeOneOf1TypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'predefined')
   static const DlpEntryUpdateTypeOneOf1TypeEnum predefined = _$dlpEntryUpdateTypeOneOf1TypeEnum_predefined;
 
-  static Serializer<DlpEntryUpdateTypeOneOf1TypeEnum> get serializer => _$dlpEntryUpdateTypeOneOf1TypeSerializer;
+  static Serializer<DlpEntryUpdateTypeOneOf1TypeEnum> get serializer => _$dlpEntryUpdateTypeOneOf1TypeEnumSerializer;
 
   const DlpEntryUpdateTypeOneOf1TypeEnum._(String name): super(name);
 
-  static BuiltSet<DlpEntryUpdateTypeOneOf1TypeEnum> get values => _$dlpEntryUpdateTypeOneOf1TypeValues;
-  static DlpEntryUpdateTypeOneOf1TypeEnum valueOf(String name) => _$dlpEntryUpdateTypeOneOf1TypeValueOf(name);
+  static BuiltSet<DlpEntryUpdateTypeOneOf1TypeEnum> get values => _$dlpEntryUpdateTypeOneOf1TypeEnumValues;
+  static DlpEntryUpdateTypeOneOf1TypeEnum valueOf(String name) => _$dlpEntryUpdateTypeOneOf1TypeEnumValueOf(name);
 }
 

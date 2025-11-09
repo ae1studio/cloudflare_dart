@@ -164,11 +164,11 @@ class _$ZeroTrustNetworksSubnetsList4XXResponseSerializer implements PrimitiveSe
 class ZeroTrustNetworksSubnetsList4XXResponseResultEnum extends EnumClass {
 
 
-  static Serializer<ZeroTrustNetworksSubnetsList4XXResponseResultEnum> get serializer => _$zeroTrustNetworksSubnetsList4XXResponseResultSerializer;
+  static Serializer<ZeroTrustNetworksSubnetsList4XXResponseResultEnum> get serializer => _$zeroTrustNetworksSubnetsList4XXResponseResultEnumSerializer;
 
   const ZeroTrustNetworksSubnetsList4XXResponseResultEnum._(String name): super(name);
 
-  static BuiltSet<ZeroTrustNetworksSubnetsList4XXResponseResultEnum> get values => _$zeroTrustNetworksSubnetsList4XXResponseResultValues;
-  static ZeroTrustNetworksSubnetsList4XXResponseResultEnum valueOf(String name) => _$zeroTrustNetworksSubnetsList4XXResponseResultValueOf(name);
+  static BuiltSet<ZeroTrustNetworksSubnetsList4XXResponseResultEnum> get values => _$zeroTrustNetworksSubnetsList4XXResponseResultEnumValues;
+  static ZeroTrustNetworksSubnetsList4XXResponseResultEnum valueOf(String name) => _$zeroTrustNetworksSubnetsList4XXResponseResultEnumValueOf(name);
 }
 

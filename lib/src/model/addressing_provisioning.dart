@@ -118,11 +118,11 @@ class AddressingProvisioningStateEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'active')
   static const AddressingProvisioningStateEnum active = _$addressingProvisioningStateEnum_active;
 
-  static Serializer<AddressingProvisioningStateEnum> get serializer => _$addressingProvisioningStateSerializer;
+  static Serializer<AddressingProvisioningStateEnum> get serializer => _$addressingProvisioningStateEnumSerializer;
 
   const AddressingProvisioningStateEnum._(String name): super(name);
 
-  static BuiltSet<AddressingProvisioningStateEnum> get values => _$addressingProvisioningStateValues;
-  static AddressingProvisioningStateEnum valueOf(String name) => _$addressingProvisioningStateValueOf(name);
+  static BuiltSet<AddressingProvisioningStateEnum> get values => _$addressingProvisioningStateEnumValues;
+  static AddressingProvisioningStateEnum valueOf(String name) => _$addressingProvisioningStateEnumValueOf(name);
 }
 

@@ -37,8 +37,8 @@ abstract class WorkersVersionAssetsConfig implements Built<WorkersVersionAssetsC
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(WorkersVersionAssetsConfigBuilder b) => b
-      ..htmlHandling = const WorkersVersionAssetsConfigHtmlHandlingEnum._('auto-trailing-slash')
-      ..notFoundHandling = const WorkersVersionAssetsConfigNotFoundHandlingEnum._('none');
+      ..htmlHandling = WorkersVersionAssetsConfigHtmlHandlingEnum.valueOf('auto-trailing-slash')
+      ..notFoundHandling = WorkersVersionAssetsConfigNotFoundHandlingEnum.valueOf('none');
 
   @BuiltValueSerializer(custom: true)
   static Serializer<WorkersVersionAssetsConfig> get serializer => _$WorkersVersionAssetsConfigSerializer();
@@ -165,12 +165,12 @@ class WorkersVersionAssetsConfigHtmlHandlingEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'none')
   static const WorkersVersionAssetsConfigHtmlHandlingEnum none = _$workersVersionAssetsConfigHtmlHandlingEnum_none;
 
-  static Serializer<WorkersVersionAssetsConfigHtmlHandlingEnum> get serializer => _$workersVersionAssetsConfigHtmlHandlingSerializer;
+  static Serializer<WorkersVersionAssetsConfigHtmlHandlingEnum> get serializer => _$workersVersionAssetsConfigHtmlHandlingEnumSerializer;
 
   const WorkersVersionAssetsConfigHtmlHandlingEnum._(String name): super(name);
 
-  static BuiltSet<WorkersVersionAssetsConfigHtmlHandlingEnum> get values => _$workersVersionAssetsConfigHtmlHandlingValues;
-  static WorkersVersionAssetsConfigHtmlHandlingEnum valueOf(String name) => _$workersVersionAssetsConfigHtmlHandlingValueOf(name);
+  static BuiltSet<WorkersVersionAssetsConfigHtmlHandlingEnum> get values => _$workersVersionAssetsConfigHtmlHandlingEnumValues;
+  static WorkersVersionAssetsConfigHtmlHandlingEnum valueOf(String name) => _$workersVersionAssetsConfigHtmlHandlingEnumValueOf(name);
 }
 
 class WorkersVersionAssetsConfigNotFoundHandlingEnum extends EnumClass {
@@ -185,11 +185,11 @@ class WorkersVersionAssetsConfigNotFoundHandlingEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'single-page-application')
   static const WorkersVersionAssetsConfigNotFoundHandlingEnum singlePageApplication = _$workersVersionAssetsConfigNotFoundHandlingEnum_singlePageApplication;
 
-  static Serializer<WorkersVersionAssetsConfigNotFoundHandlingEnum> get serializer => _$workersVersionAssetsConfigNotFoundHandlingSerializer;
+  static Serializer<WorkersVersionAssetsConfigNotFoundHandlingEnum> get serializer => _$workersVersionAssetsConfigNotFoundHandlingEnumSerializer;
 
   const WorkersVersionAssetsConfigNotFoundHandlingEnum._(String name): super(name);
 
-  static BuiltSet<WorkersVersionAssetsConfigNotFoundHandlingEnum> get values => _$workersVersionAssetsConfigNotFoundHandlingValues;
-  static WorkersVersionAssetsConfigNotFoundHandlingEnum valueOf(String name) => _$workersVersionAssetsConfigNotFoundHandlingValueOf(name);
+  static BuiltSet<WorkersVersionAssetsConfigNotFoundHandlingEnum> get values => _$workersVersionAssetsConfigNotFoundHandlingEnumValues;
+  static WorkersVersionAssetsConfigNotFoundHandlingEnum valueOf(String name) => _$workersVersionAssetsConfigNotFoundHandlingEnumValueOf(name);
 }
 

@@ -164,11 +164,11 @@ class TelemetryValuesList200ResponseResultInnerTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'number')
   static const TelemetryValuesList200ResponseResultInnerTypeEnum number = _$telemetryValuesList200ResponseResultInnerTypeEnum_number;
 
-  static Serializer<TelemetryValuesList200ResponseResultInnerTypeEnum> get serializer => _$telemetryValuesList200ResponseResultInnerTypeSerializer;
+  static Serializer<TelemetryValuesList200ResponseResultInnerTypeEnum> get serializer => _$telemetryValuesList200ResponseResultInnerTypeEnumSerializer;
 
   const TelemetryValuesList200ResponseResultInnerTypeEnum._(String name): super(name);
 
-  static BuiltSet<TelemetryValuesList200ResponseResultInnerTypeEnum> get values => _$telemetryValuesList200ResponseResultInnerTypeValues;
-  static TelemetryValuesList200ResponseResultInnerTypeEnum valueOf(String name) => _$telemetryValuesList200ResponseResultInnerTypeValueOf(name);
+  static BuiltSet<TelemetryValuesList200ResponseResultInnerTypeEnum> get values => _$telemetryValuesList200ResponseResultInnerTypeEnumValues;
+  static TelemetryValuesList200ResponseResultInnerTypeEnum valueOf(String name) => _$telemetryValuesList200ResponseResultInnerTypeEnumValueOf(name);
 }
 

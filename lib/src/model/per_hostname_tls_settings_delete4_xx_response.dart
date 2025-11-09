@@ -149,11 +149,11 @@ class _$PerHostnameTlsSettingsDelete4XXResponseSerializer implements PrimitiveSe
 class PerHostnameTlsSettingsDelete4XXResponseResultEnum extends EnumClass {
 
 
-  static Serializer<PerHostnameTlsSettingsDelete4XXResponseResultEnum> get serializer => _$perHostnameTlsSettingsDelete4XXResponseResultSerializer;
+  static Serializer<PerHostnameTlsSettingsDelete4XXResponseResultEnum> get serializer => _$perHostnameTlsSettingsDelete4XXResponseResultEnumSerializer;
 
   const PerHostnameTlsSettingsDelete4XXResponseResultEnum._(String name): super(name);
 
-  static BuiltSet<PerHostnameTlsSettingsDelete4XXResponseResultEnum> get values => _$perHostnameTlsSettingsDelete4XXResponseResultValues;
-  static PerHostnameTlsSettingsDelete4XXResponseResultEnum valueOf(String name) => _$perHostnameTlsSettingsDelete4XXResponseResultValueOf(name);
+  static BuiltSet<PerHostnameTlsSettingsDelete4XXResponseResultEnum> get values => _$perHostnameTlsSettingsDelete4XXResponseResultEnumValues;
+  static PerHostnameTlsSettingsDelete4XXResponseResultEnum valueOf(String name) => _$perHostnameTlsSettingsDelete4XXResponseResultEnumValueOf(name);
 }
 

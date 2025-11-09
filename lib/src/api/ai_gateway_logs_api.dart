@@ -14,7 +14,6 @@ import 'package:cloudflare_dart/src/api_util.dart';
 import 'package:cloudflare_dart/src/model/aig_config_delete_gateway_logs200_response.dart';
 import 'package:cloudflare_dart/src/model/aig_config_get_gateway_log_detail200_response.dart';
 import 'package:cloudflare_dart/src/model/aig_config_list_gateway_logs200_response.dart';
-import 'package:cloudflare_dart/src/model/aig_config_list_gateway_logs_feedback_parameter.dart';
 import 'package:cloudflare_dart/src/model/aig_config_list_gateway_logs_filters_parameter_inner.dart';
 import 'package:cloudflare_dart/src/model/aig_config_patch_gateway_log_request.dart';
 import 'package:cloudflare_dart/src/model/mcp_portals_api_fetch_gateways404_response.dart';
@@ -489,7 +488,7 @@ class AIGatewayLogsApi {
     num? maxTotalTokens,
     num? minDuration,
     num? maxDuration,
-    AigConfigListGatewayLogsFeedbackParameter? feedback,
+    num? feedback,
     bool? success,
     bool? cached,
     String? model,
@@ -554,7 +553,7 @@ class AIGatewayLogsApi {
       if (maxTotalTokens != null) r'max_total_tokens': encodeQueryParameter(_serializers, maxTotalTokens, const FullType(num)),
       if (minDuration != null) r'min_duration': encodeQueryParameter(_serializers, minDuration, const FullType(num)),
       if (maxDuration != null) r'max_duration': encodeQueryParameter(_serializers, maxDuration, const FullType(num)),
-      if (feedback != null) r'feedback': encodeQueryParameter(_serializers, feedback, const FullType(AigConfigListGatewayLogsFeedbackParameter)),
+      if (feedback != null) r'feedback': encodeQueryParameter(_serializers, feedback, const FullType(num)),
       if (success != null) r'success': encodeQueryParameter(_serializers, success, const FullType(bool)),
       if (cached != null) r'cached': encodeQueryParameter(_serializers, cached, const FullType(bool)),
       if (model != null) r'model': encodeQueryParameter(_serializers, model, const FullType(String)),

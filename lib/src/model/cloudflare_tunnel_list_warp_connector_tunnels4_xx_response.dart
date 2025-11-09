@@ -164,11 +164,11 @@ class _$CloudflareTunnelListWarpConnectorTunnels4XXResponseSerializer implements
 class CloudflareTunnelListWarpConnectorTunnels4XXResponseResultEnum extends EnumClass {
 
 
-  static Serializer<CloudflareTunnelListWarpConnectorTunnels4XXResponseResultEnum> get serializer => _$cloudflareTunnelListWarpConnectorTunnels4XXResponseResultSerializer;
+  static Serializer<CloudflareTunnelListWarpConnectorTunnels4XXResponseResultEnum> get serializer => _$cloudflareTunnelListWarpConnectorTunnels4XXResponseResultEnumSerializer;
 
   const CloudflareTunnelListWarpConnectorTunnels4XXResponseResultEnum._(String name): super(name);
 
-  static BuiltSet<CloudflareTunnelListWarpConnectorTunnels4XXResponseResultEnum> get values => _$cloudflareTunnelListWarpConnectorTunnels4XXResponseResultValues;
-  static CloudflareTunnelListWarpConnectorTunnels4XXResponseResultEnum valueOf(String name) => _$cloudflareTunnelListWarpConnectorTunnels4XXResponseResultValueOf(name);
+  static BuiltSet<CloudflareTunnelListWarpConnectorTunnels4XXResponseResultEnum> get values => _$cloudflareTunnelListWarpConnectorTunnels4XXResponseResultEnumValues;
+  static CloudflareTunnelListWarpConnectorTunnels4XXResponseResultEnum valueOf(String name) => _$cloudflareTunnelListWarpConnectorTunnels4XXResponseResultEnumValueOf(name);
 }
 

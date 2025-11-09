@@ -132,11 +132,11 @@ class MqQueueMessageJsonContentTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'json')
   static const MqQueueMessageJsonContentTypeEnum json = _$mqQueueMessageJsonContentTypeEnum_json;
 
-  static Serializer<MqQueueMessageJsonContentTypeEnum> get serializer => _$mqQueueMessageJsonContentTypeSerializer;
+  static Serializer<MqQueueMessageJsonContentTypeEnum> get serializer => _$mqQueueMessageJsonContentTypeEnumSerializer;
 
   const MqQueueMessageJsonContentTypeEnum._(String name): super(name);
 
-  static BuiltSet<MqQueueMessageJsonContentTypeEnum> get values => _$mqQueueMessageJsonContentTypeValues;
-  static MqQueueMessageJsonContentTypeEnum valueOf(String name) => _$mqQueueMessageJsonContentTypeValueOf(name);
+  static BuiltSet<MqQueueMessageJsonContentTypeEnum> get values => _$mqQueueMessageJsonContentTypeEnumValues;
+  static MqQueueMessageJsonContentTypeEnum valueOf(String name) => _$mqQueueMessageJsonContentTypeEnumValueOf(name);
 }
 

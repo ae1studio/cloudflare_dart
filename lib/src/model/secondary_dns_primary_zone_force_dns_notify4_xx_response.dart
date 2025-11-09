@@ -150,11 +150,11 @@ class _$SecondaryDnsPrimaryZoneForceDnsNotify4XXResponseSerializer implements Pr
 class SecondaryDnsPrimaryZoneForceDnsNotify4XXResponseResultEnum extends EnumClass {
 
 
-  static Serializer<SecondaryDnsPrimaryZoneForceDnsNotify4XXResponseResultEnum> get serializer => _$secondaryDnsPrimaryZoneForceDnsNotify4XXResponseResultSerializer;
+  static Serializer<SecondaryDnsPrimaryZoneForceDnsNotify4XXResponseResultEnum> get serializer => _$secondaryDnsPrimaryZoneForceDnsNotify4XXResponseResultEnumSerializer;
 
   const SecondaryDnsPrimaryZoneForceDnsNotify4XXResponseResultEnum._(String name): super(name);
 
-  static BuiltSet<SecondaryDnsPrimaryZoneForceDnsNotify4XXResponseResultEnum> get values => _$secondaryDnsPrimaryZoneForceDnsNotify4XXResponseResultValues;
-  static SecondaryDnsPrimaryZoneForceDnsNotify4XXResponseResultEnum valueOf(String name) => _$secondaryDnsPrimaryZoneForceDnsNotify4XXResponseResultValueOf(name);
+  static BuiltSet<SecondaryDnsPrimaryZoneForceDnsNotify4XXResponseResultEnum> get values => _$secondaryDnsPrimaryZoneForceDnsNotify4XXResponseResultEnumValues;
+  static SecondaryDnsPrimaryZoneForceDnsNotify4XXResponseResultEnum valueOf(String name) => _$secondaryDnsPrimaryZoneForceDnsNotify4XXResponseResultEnumValueOf(name);
 }
 

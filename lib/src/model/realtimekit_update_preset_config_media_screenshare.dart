@@ -140,11 +140,11 @@ class RealtimekitUpdatePresetConfigMediaScreenshareQualityEnum extends EnumClass
   @BuiltValueEnumConst(wireName: r'qvga')
   static const RealtimekitUpdatePresetConfigMediaScreenshareQualityEnum qvga = _$realtimekitUpdatePresetConfigMediaScreenshareQualityEnum_qvga;
 
-  static Serializer<RealtimekitUpdatePresetConfigMediaScreenshareQualityEnum> get serializer => _$realtimekitUpdatePresetConfigMediaScreenshareQualitySerializer;
+  static Serializer<RealtimekitUpdatePresetConfigMediaScreenshareQualityEnum> get serializer => _$realtimekitUpdatePresetConfigMediaScreenshareQualityEnumSerializer;
 
   const RealtimekitUpdatePresetConfigMediaScreenshareQualityEnum._(String name): super(name);
 
-  static BuiltSet<RealtimekitUpdatePresetConfigMediaScreenshareQualityEnum> get values => _$realtimekitUpdatePresetConfigMediaScreenshareQualityValues;
-  static RealtimekitUpdatePresetConfigMediaScreenshareQualityEnum valueOf(String name) => _$realtimekitUpdatePresetConfigMediaScreenshareQualityValueOf(name);
+  static BuiltSet<RealtimekitUpdatePresetConfigMediaScreenshareQualityEnum> get values => _$realtimekitUpdatePresetConfigMediaScreenshareQualityEnumValues;
+  static RealtimekitUpdatePresetConfigMediaScreenshareQualityEnum valueOf(String name) => _$realtimekitUpdatePresetConfigMediaScreenshareQualityEnumValueOf(name);
 }
 

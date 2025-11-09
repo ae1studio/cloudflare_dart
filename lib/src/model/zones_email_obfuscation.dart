@@ -135,12 +135,12 @@ class ZonesEmailObfuscationIdEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'email_obfuscation')
   static const ZonesEmailObfuscationIdEnum emailObfuscation = _$zonesEmailObfuscationIdEnum_emailObfuscation;
 
-  static Serializer<ZonesEmailObfuscationIdEnum> get serializer => _$zonesEmailObfuscationIdSerializer;
+  static Serializer<ZonesEmailObfuscationIdEnum> get serializer => _$zonesEmailObfuscationIdEnumSerializer;
 
   const ZonesEmailObfuscationIdEnum._(String name): super(name);
 
-  static BuiltSet<ZonesEmailObfuscationIdEnum> get values => _$zonesEmailObfuscationIdValues;
-  static ZonesEmailObfuscationIdEnum valueOf(String name) => _$zonesEmailObfuscationIdValueOf(name);
+  static BuiltSet<ZonesEmailObfuscationIdEnum> get values => _$zonesEmailObfuscationIdEnumValues;
+  static ZonesEmailObfuscationIdEnum valueOf(String name) => _$zonesEmailObfuscationIdEnumValueOf(name);
 }
 
 class ZonesEmailObfuscationValueEnum extends EnumClass {
@@ -152,11 +152,11 @@ class ZonesEmailObfuscationValueEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'off')
   static const ZonesEmailObfuscationValueEnum off = _$zonesEmailObfuscationValueEnum_off;
 
-  static Serializer<ZonesEmailObfuscationValueEnum> get serializer => _$zonesEmailObfuscationValueSerializer;
+  static Serializer<ZonesEmailObfuscationValueEnum> get serializer => _$zonesEmailObfuscationValueEnumSerializer;
 
   const ZonesEmailObfuscationValueEnum._(String name): super(name);
 
-  static BuiltSet<ZonesEmailObfuscationValueEnum> get values => _$zonesEmailObfuscationValueValues;
-  static ZonesEmailObfuscationValueEnum valueOf(String name) => _$zonesEmailObfuscationValueValueOf(name);
+  static BuiltSet<ZonesEmailObfuscationValueEnum> get values => _$zonesEmailObfuscationValueEnumValues;
+  static ZonesEmailObfuscationValueEnum valueOf(String name) => _$zonesEmailObfuscationValueEnumValueOf(name);
 }
 

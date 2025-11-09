@@ -159,11 +159,11 @@ class Json1TypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'json')
   static const Json1TypeEnum json = _$json1TypeEnum_json;
 
-  static Serializer<Json1TypeEnum> get serializer => _$json1TypeSerializer;
+  static Serializer<Json1TypeEnum> get serializer => _$json1TypeEnumSerializer;
 
   const Json1TypeEnum._(String name): super(name);
 
-  static BuiltSet<Json1TypeEnum> get values => _$json1TypeValues;
-  static Json1TypeEnum valueOf(String name) => _$json1TypeValueOf(name);
+  static BuiltSet<Json1TypeEnum> get values => _$json1TypeEnumValues;
+  static Json1TypeEnum valueOf(String name) => _$json1TypeEnumValueOf(name);
 }
 

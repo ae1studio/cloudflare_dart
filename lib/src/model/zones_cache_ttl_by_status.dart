@@ -135,11 +135,11 @@ class ZonesCacheTtlByStatusIdEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'cache_ttl_by_status')
   static const ZonesCacheTtlByStatusIdEnum cacheTtlByStatus = _$zonesCacheTtlByStatusIdEnum_cacheTtlByStatus;
 
-  static Serializer<ZonesCacheTtlByStatusIdEnum> get serializer => _$zonesCacheTtlByStatusIdSerializer;
+  static Serializer<ZonesCacheTtlByStatusIdEnum> get serializer => _$zonesCacheTtlByStatusIdEnumSerializer;
 
   const ZonesCacheTtlByStatusIdEnum._(String name): super(name);
 
-  static BuiltSet<ZonesCacheTtlByStatusIdEnum> get values => _$zonesCacheTtlByStatusIdValues;
-  static ZonesCacheTtlByStatusIdEnum valueOf(String name) => _$zonesCacheTtlByStatusIdValueOf(name);
+  static BuiltSet<ZonesCacheTtlByStatusIdEnum> get values => _$zonesCacheTtlByStatusIdEnumValues;
+  static ZonesCacheTtlByStatusIdEnum valueOf(String name) => _$zonesCacheTtlByStatusIdEnumValueOf(name);
 }
 

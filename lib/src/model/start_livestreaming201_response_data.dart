@@ -195,11 +195,11 @@ class StartLivestreaming201ResponseDataStatusEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'INVOKED')
   static const StartLivestreaming201ResponseDataStatusEnum INVOKED = _$startLivestreaming201ResponseDataStatusEnum_INVOKED;
 
-  static Serializer<StartLivestreaming201ResponseDataStatusEnum> get serializer => _$startLivestreaming201ResponseDataStatusSerializer;
+  static Serializer<StartLivestreaming201ResponseDataStatusEnum> get serializer => _$startLivestreaming201ResponseDataStatusEnumSerializer;
 
   const StartLivestreaming201ResponseDataStatusEnum._(String name): super(name);
 
-  static BuiltSet<StartLivestreaming201ResponseDataStatusEnum> get values => _$startLivestreaming201ResponseDataStatusValues;
-  static StartLivestreaming201ResponseDataStatusEnum valueOf(String name) => _$startLivestreaming201ResponseDataStatusValueOf(name);
+  static BuiltSet<StartLivestreaming201ResponseDataStatusEnum> get values => _$startLivestreaming201ResponseDataStatusEnumValues;
+  static StartLivestreaming201ResponseDataStatusEnum valueOf(String name) => _$startLivestreaming201ResponseDataStatusEnumValueOf(name);
 }
 

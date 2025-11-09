@@ -37,8 +37,8 @@ abstract class RealtimekitAudioConfig implements Built<RealtimekitAudioConfig, R
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(RealtimekitAudioConfigBuilder b) => b
-      ..channel = const RealtimekitAudioConfigChannelEnum._('stereo')
-      ..codec = const RealtimekitAudioConfigCodecEnum._('AAC')
+      ..channel = RealtimekitAudioConfigChannelEnum.valueOf('stereo')
+      ..codec = RealtimekitAudioConfigCodecEnum.valueOf('AAC')
       ..exportFile = true;
 
   @BuiltValueSerializer(custom: true)
@@ -160,12 +160,12 @@ class RealtimekitAudioConfigChannelEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'stereo')
   static const RealtimekitAudioConfigChannelEnum stereo = _$realtimekitAudioConfigChannelEnum_stereo;
 
-  static Serializer<RealtimekitAudioConfigChannelEnum> get serializer => _$realtimekitAudioConfigChannelSerializer;
+  static Serializer<RealtimekitAudioConfigChannelEnum> get serializer => _$realtimekitAudioConfigChannelEnumSerializer;
 
   const RealtimekitAudioConfigChannelEnum._(String name): super(name);
 
-  static BuiltSet<RealtimekitAudioConfigChannelEnum> get values => _$realtimekitAudioConfigChannelValues;
-  static RealtimekitAudioConfigChannelEnum valueOf(String name) => _$realtimekitAudioConfigChannelValueOf(name);
+  static BuiltSet<RealtimekitAudioConfigChannelEnum> get values => _$realtimekitAudioConfigChannelEnumValues;
+  static RealtimekitAudioConfigChannelEnum valueOf(String name) => _$realtimekitAudioConfigChannelEnumValueOf(name);
 }
 
 class RealtimekitAudioConfigCodecEnum extends EnumClass {
@@ -177,11 +177,11 @@ class RealtimekitAudioConfigCodecEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'AAC')
   static const RealtimekitAudioConfigCodecEnum AAC = _$realtimekitAudioConfigCodecEnum_AAC;
 
-  static Serializer<RealtimekitAudioConfigCodecEnum> get serializer => _$realtimekitAudioConfigCodecSerializer;
+  static Serializer<RealtimekitAudioConfigCodecEnum> get serializer => _$realtimekitAudioConfigCodecEnumSerializer;
 
   const RealtimekitAudioConfigCodecEnum._(String name): super(name);
 
-  static BuiltSet<RealtimekitAudioConfigCodecEnum> get values => _$realtimekitAudioConfigCodecValues;
-  static RealtimekitAudioConfigCodecEnum valueOf(String name) => _$realtimekitAudioConfigCodecValueOf(name);
+  static BuiltSet<RealtimekitAudioConfigCodecEnum> get values => _$realtimekitAudioConfigCodecEnumValues;
+  static RealtimekitAudioConfigCodecEnum valueOf(String name) => _$realtimekitAudioConfigCodecEnumValueOf(name);
 }
 

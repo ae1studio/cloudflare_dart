@@ -132,11 +132,11 @@ class OrganizationsApiCreateSingleMemberStatusEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'canceled')
   static const OrganizationsApiCreateSingleMemberStatusEnum canceled = _$organizationsApiCreateSingleMemberStatusEnum_canceled;
 
-  static Serializer<OrganizationsApiCreateSingleMemberStatusEnum> get serializer => _$organizationsApiCreateSingleMemberStatusSerializer;
+  static Serializer<OrganizationsApiCreateSingleMemberStatusEnum> get serializer => _$organizationsApiCreateSingleMemberStatusEnumSerializer;
 
   const OrganizationsApiCreateSingleMemberStatusEnum._(String name): super(name);
 
-  static BuiltSet<OrganizationsApiCreateSingleMemberStatusEnum> get values => _$organizationsApiCreateSingleMemberStatusValues;
-  static OrganizationsApiCreateSingleMemberStatusEnum valueOf(String name) => _$organizationsApiCreateSingleMemberStatusValueOf(name);
+  static BuiltSet<OrganizationsApiCreateSingleMemberStatusEnum> get values => _$organizationsApiCreateSingleMemberStatusEnumValues;
+  static OrganizationsApiCreateSingleMemberStatusEnum valueOf(String name) => _$organizationsApiCreateSingleMemberStatusEnumValueOf(name);
 }
 

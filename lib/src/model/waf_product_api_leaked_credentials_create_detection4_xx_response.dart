@@ -148,11 +148,11 @@ class _$WafProductApiLeakedCredentialsCreateDetection4XXResponseSerializer imple
 class WafProductApiLeakedCredentialsCreateDetection4XXResponseResultEnum extends EnumClass {
 
 
-  static Serializer<WafProductApiLeakedCredentialsCreateDetection4XXResponseResultEnum> get serializer => _$wafProductApiLeakedCredentialsCreateDetection4XXResponseResultSerializer;
+  static Serializer<WafProductApiLeakedCredentialsCreateDetection4XXResponseResultEnum> get serializer => _$wafProductApiLeakedCredentialsCreateDetection4XXResponseResultEnumSerializer;
 
   const WafProductApiLeakedCredentialsCreateDetection4XXResponseResultEnum._(String name): super(name);
 
-  static BuiltSet<WafProductApiLeakedCredentialsCreateDetection4XXResponseResultEnum> get values => _$wafProductApiLeakedCredentialsCreateDetection4XXResponseResultValues;
-  static WafProductApiLeakedCredentialsCreateDetection4XXResponseResultEnum valueOf(String name) => _$wafProductApiLeakedCredentialsCreateDetection4XXResponseResultValueOf(name);
+  static BuiltSet<WafProductApiLeakedCredentialsCreateDetection4XXResponseResultEnum> get values => _$wafProductApiLeakedCredentialsCreateDetection4XXResponseResultEnumValues;
+  static WafProductApiLeakedCredentialsCreateDetection4XXResponseResultEnum valueOf(String name) => _$wafProductApiLeakedCredentialsCreateDetection4XXResponseResultEnumValueOf(name);
 }
 

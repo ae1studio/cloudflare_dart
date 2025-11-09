@@ -143,11 +143,11 @@ class McnCloudPlatformClientClientTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'MAGIC_WAN_CLOUD_ONRAMP')
   static const McnCloudPlatformClientClientTypeEnum MAGIC_WAN_CLOUD_ONRAMP = _$mcnCloudPlatformClientClientTypeEnum_MAGIC_WAN_CLOUD_ONRAMP;
 
-  static Serializer<McnCloudPlatformClientClientTypeEnum> get serializer => _$mcnCloudPlatformClientClientTypeSerializer;
+  static Serializer<McnCloudPlatformClientClientTypeEnum> get serializer => _$mcnCloudPlatformClientClientTypeEnumSerializer;
 
   const McnCloudPlatformClientClientTypeEnum._(String name): super(name);
 
-  static BuiltSet<McnCloudPlatformClientClientTypeEnum> get values => _$mcnCloudPlatformClientClientTypeValues;
-  static McnCloudPlatformClientClientTypeEnum valueOf(String name) => _$mcnCloudPlatformClientClientTypeValueOf(name);
+  static BuiltSet<McnCloudPlatformClientClientTypeEnum> get values => _$mcnCloudPlatformClientClientTypeEnumValues;
+  static McnCloudPlatformClientClientTypeEnum valueOf(String name) => _$mcnCloudPlatformClientClientTypeEnumValueOf(name);
 }
 

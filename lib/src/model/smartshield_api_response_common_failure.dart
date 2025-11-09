@@ -194,11 +194,11 @@ class _$$SmartshieldApiResponseCommonFailureSerializer implements PrimitiveSeria
 class SmartshieldApiResponseCommonFailureResultEnum extends EnumClass {
 
 
-  static Serializer<SmartshieldApiResponseCommonFailureResultEnum> get serializer => _$smartshieldApiResponseCommonFailureResultSerializer;
+  static Serializer<SmartshieldApiResponseCommonFailureResultEnum> get serializer => _$smartshieldApiResponseCommonFailureResultEnumSerializer;
 
   const SmartshieldApiResponseCommonFailureResultEnum._(String name): super(name);
 
-  static BuiltSet<SmartshieldApiResponseCommonFailureResultEnum> get values => _$smartshieldApiResponseCommonFailureResultValues;
-  static SmartshieldApiResponseCommonFailureResultEnum valueOf(String name) => _$smartshieldApiResponseCommonFailureResultValueOf(name);
+  static BuiltSet<SmartshieldApiResponseCommonFailureResultEnum> get values => _$smartshieldApiResponseCommonFailureResultEnumValues;
+  static SmartshieldApiResponseCommonFailureResultEnum valueOf(String name) => _$smartshieldApiResponseCommonFailureResultEnumValueOf(name);
 }
 

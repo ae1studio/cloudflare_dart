@@ -96,11 +96,11 @@ class DlpProfileTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'integration')
   static const DlpProfileTypeEnum integration = _$dlpProfileTypeEnum_integration;
 
-  static Serializer<DlpProfileTypeEnum> get serializer => _$dlpProfileTypeSerializer;
+  static Serializer<DlpProfileTypeEnum> get serializer => _$dlpProfileTypeEnumSerializer;
 
   const DlpProfileTypeEnum._(String name): super(name);
 
-  static BuiltSet<DlpProfileTypeEnum> get values => _$dlpProfileTypeValues;
-  static DlpProfileTypeEnum valueOf(String name) => _$dlpProfileTypeValueOf(name);
+  static BuiltSet<DlpProfileTypeEnum> get values => _$dlpProfileTypeEnumValues;
+  static DlpProfileTypeEnum valueOf(String name) => _$dlpProfileTypeEnumValueOf(name);
 }
 

@@ -3,10 +3,9 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:cloudflare_dart/src/model/access_updated_at.dart';
 import 'package:cloudflare_dart/src/model/access_custom_pages.dart';
-import 'package:cloudflare_dart/src/model/access_created_at.dart';
 import 'package:cloudflare_dart/src/model/access_login_design.dart';
+import 'package:built_value/json_object.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
@@ -43,7 +42,7 @@ abstract class AccessOrganizations implements Built<AccessOrganizations, AccessO
   bool? get autoRedirectToIdentity;
 
   @BuiltValueField(wireName: r'created_at')
-  AccessCreatedAt? get createdAt;
+  JsonObject? get createdAt;
 
   @BuiltValueField(wireName: r'custom_pages')
   AccessCustomPages? get customPages;
@@ -68,7 +67,7 @@ abstract class AccessOrganizations implements Built<AccessOrganizations, AccessO
   String? get uiReadOnlyToggleReason;
 
   @BuiltValueField(wireName: r'updated_at')
-  AccessUpdatedAt? get updatedAt;
+  JsonObject? get updatedAt;
 
   /// The amount of time a user seat is inactive before it expires. When the user seat exceeds the set time of inactivity, the user is removed as an active seat and no longer counts against your Teams seat count.  Minimum value for this setting is 1 month (730h). Must be in the format `300ms` or `2h45m`. Valid time units are: `ns`, `us` (or `µs`), `ms`, `s`, `m`, `h`.
   @BuiltValueField(wireName: r'user_seat_expiration_inactive_time')
@@ -129,7 +128,7 @@ class _$AccessOrganizationsSerializer implements PrimitiveSerializer<AccessOrgan
       yield r'created_at';
       yield serializers.serialize(
         object.createdAt,
-        specifiedType: const FullType(AccessCreatedAt),
+        specifiedType: const FullType(JsonObject),
       );
     }
     if (object.customPages != null) {
@@ -178,7 +177,7 @@ class _$AccessOrganizationsSerializer implements PrimitiveSerializer<AccessOrgan
       yield r'updated_at';
       yield serializers.serialize(
         object.updatedAt,
-        specifiedType: const FullType(AccessUpdatedAt),
+        specifiedType: const FullType(JsonObject),
       );
     }
     if (object.userSeatExpirationInactiveTime != null) {
@@ -242,8 +241,8 @@ class _$AccessOrganizationsSerializer implements PrimitiveSerializer<AccessOrgan
         case r'created_at':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(AccessCreatedAt),
-          ) as AccessCreatedAt;
+            specifiedType: const FullType(JsonObject),
+          ) as JsonObject;
           result.createdAt.replace(valueDes);
           break;
         case r'custom_pages':
@@ -291,8 +290,8 @@ class _$AccessOrganizationsSerializer implements PrimitiveSerializer<AccessOrgan
         case r'updated_at':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(AccessUpdatedAt),
-          ) as AccessUpdatedAt;
+            specifiedType: const FullType(JsonObject),
+          ) as JsonObject;
           result.updatedAt.replace(valueDes);
           break;
         case r'user_seat_expiration_inactive_time':

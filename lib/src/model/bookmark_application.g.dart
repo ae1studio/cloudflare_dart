@@ -10,11 +10,11 @@ class _$BookmarkApplication extends BookmarkApplication {
   @override
   final String? aud;
   @override
-  final AccessCreatedAt? createdAt;
+  final JsonObject? createdAt;
   @override
   final String? id;
   @override
-  final AccessUpdatedAt? updatedAt;
+  final JsonObject? updatedAt;
   @override
   final bool? appLauncherVisible;
   @override
@@ -114,20 +114,18 @@ class BookmarkApplicationBuilder
   String? get aud => _$this._aud;
   set aud(covariant String? aud) => _$this._aud = aud;
 
-  AccessCreatedAtBuilder? _createdAt;
-  AccessCreatedAtBuilder get createdAt =>
-      _$this._createdAt ??= AccessCreatedAtBuilder();
-  set createdAt(covariant AccessCreatedAtBuilder? createdAt) =>
+  JsonObject? _createdAt;
+  JsonObject? get createdAt => _$this._createdAt;
+  set createdAt(covariant JsonObject? createdAt) =>
       _$this._createdAt = createdAt;
 
   String? _id;
   String? get id => _$this._id;
   set id(covariant String? id) => _$this._id = id;
 
-  AccessUpdatedAtBuilder? _updatedAt;
-  AccessUpdatedAtBuilder get updatedAt =>
-      _$this._updatedAt ??= AccessUpdatedAtBuilder();
-  set updatedAt(covariant AccessUpdatedAtBuilder? updatedAt) =>
+  JsonObject? _updatedAt;
+  JsonObject? get updatedAt => _$this._updatedAt;
+  set updatedAt(covariant JsonObject? updatedAt) =>
       _$this._updatedAt = updatedAt;
 
   bool? _appLauncherVisible;
@@ -163,9 +161,9 @@ class BookmarkApplicationBuilder
     final $v = _$v;
     if ($v != null) {
       _aud = $v.aud;
-      _createdAt = $v.createdAt?.toBuilder();
+      _createdAt = $v.createdAt;
       _id = $v.id;
-      _updatedAt = $v.updatedAt?.toBuilder();
+      _updatedAt = $v.updatedAt;
       _appLauncherVisible = $v.appLauncherVisible;
       _domain = $v.domain;
       _logoUrl = $v.logoUrl;
@@ -197,9 +195,9 @@ class BookmarkApplicationBuilder
       _$result = _$v ??
           _$BookmarkApplication._(
             aud: aud,
-            createdAt: _createdAt?.build(),
+            createdAt: createdAt,
             id: id,
-            updatedAt: _updatedAt?.build(),
+            updatedAt: updatedAt,
             appLauncherVisible: appLauncherVisible,
             domain: domain,
             logoUrl: logoUrl,
@@ -210,12 +208,6 @@ class BookmarkApplicationBuilder
     } catch (_) {
       late String _$failedField;
       try {
-        _$failedField = 'createdAt';
-        _createdAt?.build();
-
-        _$failedField = 'updatedAt';
-        _updatedAt?.build();
-
         _$failedField = 'tags';
         _tags?.build();
       } catch (e) {

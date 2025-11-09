@@ -119,11 +119,11 @@ class MqConsumerTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'http_pull')
   static const MqConsumerTypeEnum httpPull = _$mqConsumerTypeEnum_httpPull;
 
-  static Serializer<MqConsumerTypeEnum> get serializer => _$mqConsumerTypeSerializer;
+  static Serializer<MqConsumerTypeEnum> get serializer => _$mqConsumerTypeEnumSerializer;
 
   const MqConsumerTypeEnum._(String name): super(name);
 
-  static BuiltSet<MqConsumerTypeEnum> get values => _$mqConsumerTypeValues;
-  static MqConsumerTypeEnum valueOf(String name) => _$mqConsumerTypeValueOf(name);
+  static BuiltSet<MqConsumerTypeEnum> get values => _$mqConsumerTypeEnumValues;
+  static MqConsumerTypeEnum valueOf(String name) => _$mqConsumerTypeEnumValueOf(name);
 }
 

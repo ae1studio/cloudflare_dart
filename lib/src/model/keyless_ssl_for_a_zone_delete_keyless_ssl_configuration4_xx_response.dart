@@ -150,11 +150,11 @@ class _$KeylessSslForAZoneDeleteKeylessSslConfiguration4XXResponseSerializer imp
 class KeylessSslForAZoneDeleteKeylessSslConfiguration4XXResponseResultEnum extends EnumClass {
 
 
-  static Serializer<KeylessSslForAZoneDeleteKeylessSslConfiguration4XXResponseResultEnum> get serializer => _$keylessSslForAZoneDeleteKeylessSslConfiguration4XXResponseResultSerializer;
+  static Serializer<KeylessSslForAZoneDeleteKeylessSslConfiguration4XXResponseResultEnum> get serializer => _$keylessSslForAZoneDeleteKeylessSslConfiguration4XXResponseResultEnumSerializer;
 
   const KeylessSslForAZoneDeleteKeylessSslConfiguration4XXResponseResultEnum._(String name): super(name);
 
-  static BuiltSet<KeylessSslForAZoneDeleteKeylessSslConfiguration4XXResponseResultEnum> get values => _$keylessSslForAZoneDeleteKeylessSslConfiguration4XXResponseResultValues;
-  static KeylessSslForAZoneDeleteKeylessSslConfiguration4XXResponseResultEnum valueOf(String name) => _$keylessSslForAZoneDeleteKeylessSslConfiguration4XXResponseResultValueOf(name);
+  static BuiltSet<KeylessSslForAZoneDeleteKeylessSslConfiguration4XXResponseResultEnum> get values => _$keylessSslForAZoneDeleteKeylessSslConfiguration4XXResponseResultEnumValues;
+  static KeylessSslForAZoneDeleteKeylessSslConfiguration4XXResponseResultEnum valueOf(String name) => _$keylessSslForAZoneDeleteKeylessSslConfiguration4XXResponseResultEnumValueOf(name);
 }
 

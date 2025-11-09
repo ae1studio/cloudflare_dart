@@ -164,11 +164,11 @@ class _$FirewallRulesDeleteFirewallRules4XXResponseSerializer implements Primiti
 class FirewallRulesDeleteFirewallRules4XXResponseResultEnum extends EnumClass {
 
 
-  static Serializer<FirewallRulesDeleteFirewallRules4XXResponseResultEnum> get serializer => _$firewallRulesDeleteFirewallRules4XXResponseResultSerializer;
+  static Serializer<FirewallRulesDeleteFirewallRules4XXResponseResultEnum> get serializer => _$firewallRulesDeleteFirewallRules4XXResponseResultEnumSerializer;
 
   const FirewallRulesDeleteFirewallRules4XXResponseResultEnum._(String name): super(name);
 
-  static BuiltSet<FirewallRulesDeleteFirewallRules4XXResponseResultEnum> get values => _$firewallRulesDeleteFirewallRules4XXResponseResultValues;
-  static FirewallRulesDeleteFirewallRules4XXResponseResultEnum valueOf(String name) => _$firewallRulesDeleteFirewallRules4XXResponseResultValueOf(name);
+  static BuiltSet<FirewallRulesDeleteFirewallRules4XXResponseResultEnum> get values => _$firewallRulesDeleteFirewallRules4XXResponseResultEnumValues;
+  static FirewallRulesDeleteFirewallRules4XXResponseResultEnum valueOf(String name) => _$firewallRulesDeleteFirewallRules4XXResponseResultEnumValueOf(name);
 }
 

@@ -196,11 +196,11 @@ class OrganizationsApiMemberStatusEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'canceled')
   static const OrganizationsApiMemberStatusEnum canceled = _$organizationsApiMemberStatusEnum_canceled;
 
-  static Serializer<OrganizationsApiMemberStatusEnum> get serializer => _$organizationsApiMemberStatusSerializer;
+  static Serializer<OrganizationsApiMemberStatusEnum> get serializer => _$organizationsApiMemberStatusEnumSerializer;
 
   const OrganizationsApiMemberStatusEnum._(String name): super(name);
 
-  static BuiltSet<OrganizationsApiMemberStatusEnum> get values => _$organizationsApiMemberStatusValues;
-  static OrganizationsApiMemberStatusEnum valueOf(String name) => _$organizationsApiMemberStatusValueOf(name);
+  static BuiltSet<OrganizationsApiMemberStatusEnum> get values => _$organizationsApiMemberStatusEnumValues;
+  static OrganizationsApiMemberStatusEnum valueOf(String name) => _$organizationsApiMemberStatusEnumValueOf(name);
 }
 

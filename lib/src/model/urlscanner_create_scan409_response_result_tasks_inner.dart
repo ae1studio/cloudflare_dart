@@ -299,12 +299,12 @@ class UrlscannerCreateScan409ResponseResultTasksInnerClientTypeEnum extends Enum
   @BuiltValueEnumConst(wireName: r'Api')
   static const UrlscannerCreateScan409ResponseResultTasksInnerClientTypeEnum api = _$urlscannerCreateScan409ResponseResultTasksInnerClientTypeEnum_api;
 
-  static Serializer<UrlscannerCreateScan409ResponseResultTasksInnerClientTypeEnum> get serializer => _$urlscannerCreateScan409ResponseResultTasksInnerClientTypeSerializer;
+  static Serializer<UrlscannerCreateScan409ResponseResultTasksInnerClientTypeEnum> get serializer => _$urlscannerCreateScan409ResponseResultTasksInnerClientTypeEnumSerializer;
 
   const UrlscannerCreateScan409ResponseResultTasksInnerClientTypeEnum._(String name): super(name);
 
-  static BuiltSet<UrlscannerCreateScan409ResponseResultTasksInnerClientTypeEnum> get values => _$urlscannerCreateScan409ResponseResultTasksInnerClientTypeValues;
-  static UrlscannerCreateScan409ResponseResultTasksInnerClientTypeEnum valueOf(String name) => _$urlscannerCreateScan409ResponseResultTasksInnerClientTypeValueOf(name);
+  static BuiltSet<UrlscannerCreateScan409ResponseResultTasksInnerClientTypeEnum> get values => _$urlscannerCreateScan409ResponseResultTasksInnerClientTypeEnumValues;
+  static UrlscannerCreateScan409ResponseResultTasksInnerClientTypeEnum valueOf(String name) => _$urlscannerCreateScan409ResponseResultTasksInnerClientTypeEnumValueOf(name);
 }
 
 class UrlscannerCreateScan409ResponseResultTasksInnerStatusEnum extends EnumClass {
@@ -318,12 +318,12 @@ class UrlscannerCreateScan409ResponseResultTasksInnerStatusEnum extends EnumClas
   @BuiltValueEnumConst(wireName: r'Finished')
   static const UrlscannerCreateScan409ResponseResultTasksInnerStatusEnum finished = _$urlscannerCreateScan409ResponseResultTasksInnerStatusEnum_finished;
 
-  static Serializer<UrlscannerCreateScan409ResponseResultTasksInnerStatusEnum> get serializer => _$urlscannerCreateScan409ResponseResultTasksInnerStatusSerializer;
+  static Serializer<UrlscannerCreateScan409ResponseResultTasksInnerStatusEnum> get serializer => _$urlscannerCreateScan409ResponseResultTasksInnerStatusEnumSerializer;
 
   const UrlscannerCreateScan409ResponseResultTasksInnerStatusEnum._(String name): super(name);
 
-  static BuiltSet<UrlscannerCreateScan409ResponseResultTasksInnerStatusEnum> get values => _$urlscannerCreateScan409ResponseResultTasksInnerStatusValues;
-  static UrlscannerCreateScan409ResponseResultTasksInnerStatusEnum valueOf(String name) => _$urlscannerCreateScan409ResponseResultTasksInnerStatusValueOf(name);
+  static BuiltSet<UrlscannerCreateScan409ResponseResultTasksInnerStatusEnum> get values => _$urlscannerCreateScan409ResponseResultTasksInnerStatusEnumValues;
+  static UrlscannerCreateScan409ResponseResultTasksInnerStatusEnum valueOf(String name) => _$urlscannerCreateScan409ResponseResultTasksInnerStatusEnumValueOf(name);
 }
 
 class UrlscannerCreateScan409ResponseResultTasksInnerVisibilityEnum extends EnumClass {
@@ -333,11 +333,11 @@ class UrlscannerCreateScan409ResponseResultTasksInnerVisibilityEnum extends Enum
   @BuiltValueEnumConst(wireName: r'Unlisted')
   static const UrlscannerCreateScan409ResponseResultTasksInnerVisibilityEnum unlisted = _$urlscannerCreateScan409ResponseResultTasksInnerVisibilityEnum_unlisted;
 
-  static Serializer<UrlscannerCreateScan409ResponseResultTasksInnerVisibilityEnum> get serializer => _$urlscannerCreateScan409ResponseResultTasksInnerVisibilitySerializer;
+  static Serializer<UrlscannerCreateScan409ResponseResultTasksInnerVisibilityEnum> get serializer => _$urlscannerCreateScan409ResponseResultTasksInnerVisibilityEnumSerializer;
 
   const UrlscannerCreateScan409ResponseResultTasksInnerVisibilityEnum._(String name): super(name);
 
-  static BuiltSet<UrlscannerCreateScan409ResponseResultTasksInnerVisibilityEnum> get values => _$urlscannerCreateScan409ResponseResultTasksInnerVisibilityValues;
-  static UrlscannerCreateScan409ResponseResultTasksInnerVisibilityEnum valueOf(String name) => _$urlscannerCreateScan409ResponseResultTasksInnerVisibilityValueOf(name);
+  static BuiltSet<UrlscannerCreateScan409ResponseResultTasksInnerVisibilityEnum> get values => _$urlscannerCreateScan409ResponseResultTasksInnerVisibilityEnumValues;
+  static UrlscannerCreateScan409ResponseResultTasksInnerVisibilityEnum valueOf(String name) => _$urlscannerCreateScan409ResponseResultTasksInnerVisibilityEnumValueOf(name);
 }
 

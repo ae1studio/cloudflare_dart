@@ -163,11 +163,11 @@ class _$LoadBalancersListLoadBalancers4XXResponseSerializer implements Primitive
 class LoadBalancersListLoadBalancers4XXResponseResultEnum extends EnumClass {
 
 
-  static Serializer<LoadBalancersListLoadBalancers4XXResponseResultEnum> get serializer => _$loadBalancersListLoadBalancers4XXResponseResultSerializer;
+  static Serializer<LoadBalancersListLoadBalancers4XXResponseResultEnum> get serializer => _$loadBalancersListLoadBalancers4XXResponseResultEnumSerializer;
 
   const LoadBalancersListLoadBalancers4XXResponseResultEnum._(String name): super(name);
 
-  static BuiltSet<LoadBalancersListLoadBalancers4XXResponseResultEnum> get values => _$loadBalancersListLoadBalancers4XXResponseResultValues;
-  static LoadBalancersListLoadBalancers4XXResponseResultEnum valueOf(String name) => _$loadBalancersListLoadBalancers4XXResponseResultValueOf(name);
+  static BuiltSet<LoadBalancersListLoadBalancers4XXResponseResultEnum> get values => _$loadBalancersListLoadBalancers4XXResponseResultEnumValues;
+  static LoadBalancersListLoadBalancers4XXResponseResultEnum valueOf(String name) => _$loadBalancersListLoadBalancers4XXResponseResultEnumValueOf(name);
 }
 

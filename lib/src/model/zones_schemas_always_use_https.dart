@@ -156,11 +156,11 @@ class ZonesSchemasAlwaysUseHttpsIdEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'always_use_https')
   static const ZonesSchemasAlwaysUseHttpsIdEnum alwaysUseHttps = _$zonesSchemasAlwaysUseHttpsIdEnum_alwaysUseHttps;
 
-  static Serializer<ZonesSchemasAlwaysUseHttpsIdEnum> get serializer => _$zonesSchemasAlwaysUseHttpsIdSerializer;
+  static Serializer<ZonesSchemasAlwaysUseHttpsIdEnum> get serializer => _$zonesSchemasAlwaysUseHttpsIdEnumSerializer;
 
   const ZonesSchemasAlwaysUseHttpsIdEnum._(String name): super(name);
 
-  static BuiltSet<ZonesSchemasAlwaysUseHttpsIdEnum> get values => _$zonesSchemasAlwaysUseHttpsIdValues;
-  static ZonesSchemasAlwaysUseHttpsIdEnum valueOf(String name) => _$zonesSchemasAlwaysUseHttpsIdValueOf(name);
+  static BuiltSet<ZonesSchemasAlwaysUseHttpsIdEnum> get values => _$zonesSchemasAlwaysUseHttpsIdEnumValues;
+  static ZonesSchemasAlwaysUseHttpsIdEnum valueOf(String name) => _$zonesSchemasAlwaysUseHttpsIdEnumValueOf(name);
 }
 

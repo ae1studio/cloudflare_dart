@@ -451,12 +451,12 @@ class SetConfigurationRuleActionParametersPolishEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'webp')
   static const SetConfigurationRuleActionParametersPolishEnum webp = _$setConfigurationRuleActionParametersPolishEnum_webp;
 
-  static Serializer<SetConfigurationRuleActionParametersPolishEnum> get serializer => _$setConfigurationRuleActionParametersPolishSerializer;
+  static Serializer<SetConfigurationRuleActionParametersPolishEnum> get serializer => _$setConfigurationRuleActionParametersPolishEnumSerializer;
 
   const SetConfigurationRuleActionParametersPolishEnum._(String name): super(name);
 
-  static BuiltSet<SetConfigurationRuleActionParametersPolishEnum> get values => _$setConfigurationRuleActionParametersPolishValues;
-  static SetConfigurationRuleActionParametersPolishEnum valueOf(String name) => _$setConfigurationRuleActionParametersPolishValueOf(name);
+  static BuiltSet<SetConfigurationRuleActionParametersPolishEnum> get values => _$setConfigurationRuleActionParametersPolishEnumValues;
+  static SetConfigurationRuleActionParametersPolishEnum valueOf(String name) => _$setConfigurationRuleActionParametersPolishEnumValueOf(name);
 }
 
 class SetConfigurationRuleActionParametersSecurityLevelEnum extends EnumClass {
@@ -480,12 +480,12 @@ class SetConfigurationRuleActionParametersSecurityLevelEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'under_attack')
   static const SetConfigurationRuleActionParametersSecurityLevelEnum underAttack = _$setConfigurationRuleActionParametersSecurityLevelEnum_underAttack;
 
-  static Serializer<SetConfigurationRuleActionParametersSecurityLevelEnum> get serializer => _$setConfigurationRuleActionParametersSecurityLevelSerializer;
+  static Serializer<SetConfigurationRuleActionParametersSecurityLevelEnum> get serializer => _$setConfigurationRuleActionParametersSecurityLevelEnumSerializer;
 
   const SetConfigurationRuleActionParametersSecurityLevelEnum._(String name): super(name);
 
-  static BuiltSet<SetConfigurationRuleActionParametersSecurityLevelEnum> get values => _$setConfigurationRuleActionParametersSecurityLevelValues;
-  static SetConfigurationRuleActionParametersSecurityLevelEnum valueOf(String name) => _$setConfigurationRuleActionParametersSecurityLevelValueOf(name);
+  static BuiltSet<SetConfigurationRuleActionParametersSecurityLevelEnum> get values => _$setConfigurationRuleActionParametersSecurityLevelEnumValues;
+  static SetConfigurationRuleActionParametersSecurityLevelEnum valueOf(String name) => _$setConfigurationRuleActionParametersSecurityLevelEnumValueOf(name);
 }
 
 class SetConfigurationRuleActionParametersSslEnum extends EnumClass {
@@ -506,11 +506,11 @@ class SetConfigurationRuleActionParametersSslEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'origin_pull')
   static const SetConfigurationRuleActionParametersSslEnum originPull = _$setConfigurationRuleActionParametersSslEnum_originPull;
 
-  static Serializer<SetConfigurationRuleActionParametersSslEnum> get serializer => _$setConfigurationRuleActionParametersSslSerializer;
+  static Serializer<SetConfigurationRuleActionParametersSslEnum> get serializer => _$setConfigurationRuleActionParametersSslEnumSerializer;
 
   const SetConfigurationRuleActionParametersSslEnum._(String name): super(name);
 
-  static BuiltSet<SetConfigurationRuleActionParametersSslEnum> get values => _$setConfigurationRuleActionParametersSslValues;
-  static SetConfigurationRuleActionParametersSslEnum valueOf(String name) => _$setConfigurationRuleActionParametersSslValueOf(name);
+  static BuiltSet<SetConfigurationRuleActionParametersSslEnum> get values => _$setConfigurationRuleActionParametersSslEnumValues;
+  static SetConfigurationRuleActionParametersSslEnum valueOf(String name) => _$setConfigurationRuleActionParametersSslEnumValueOf(name);
 }
 

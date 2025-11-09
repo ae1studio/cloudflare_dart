@@ -21,7 +21,7 @@ part 'rulesets_managed_challenge_rule.g.dart';
 /// * [actionParameters] - The parameters configuring the rule's action.
 /// * [categories] - The categories of the rule.
 /// * [description] 
-/// * [enabled] 
+/// * [enabled] - Whether the rule should be executed.
 /// * [exposedCredentialCheck] 
 /// * [expression] - The expression defining which traffic will match the rule.
 /// * [id] - The unique ID of the rule.
@@ -39,6 +39,7 @@ abstract class RulesetsManagedChallengeRule implements RulesetsRule, Built<Rules
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(RulesetsManagedChallengeRuleBuilder b) => b
       ..description = ''
+      ..enabled = true
       ..actionParameters = {};
 
   @BuiltValueSerializer(custom: true)
@@ -292,11 +293,11 @@ class RulesetsManagedChallengeRuleActionEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'managed_challenge')
   static const RulesetsManagedChallengeRuleActionEnum managedChallenge = _$rulesetsManagedChallengeRuleActionEnum_managedChallenge;
 
-  static Serializer<RulesetsManagedChallengeRuleActionEnum> get serializer => _$rulesetsManagedChallengeRuleActionSerializer;
+  static Serializer<RulesetsManagedChallengeRuleActionEnum> get serializer => _$rulesetsManagedChallengeRuleActionEnumSerializer;
 
   const RulesetsManagedChallengeRuleActionEnum._(String name): super(name);
 
-  static BuiltSet<RulesetsManagedChallengeRuleActionEnum> get values => _$rulesetsManagedChallengeRuleActionValues;
-  static RulesetsManagedChallengeRuleActionEnum valueOf(String name) => _$rulesetsManagedChallengeRuleActionValueOf(name);
+  static BuiltSet<RulesetsManagedChallengeRuleActionEnum> get values => _$rulesetsManagedChallengeRuleActionEnumValues;
+  static RulesetsManagedChallengeRuleActionEnum valueOf(String name) => _$rulesetsManagedChallengeRuleActionEnumValueOf(name);
 }
 

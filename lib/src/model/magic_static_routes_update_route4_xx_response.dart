@@ -149,11 +149,11 @@ class _$MagicStaticRoutesUpdateRoute4XXResponseSerializer implements PrimitiveSe
 class MagicStaticRoutesUpdateRoute4XXResponseResultEnum extends EnumClass {
 
 
-  static Serializer<MagicStaticRoutesUpdateRoute4XXResponseResultEnum> get serializer => _$magicStaticRoutesUpdateRoute4XXResponseResultSerializer;
+  static Serializer<MagicStaticRoutesUpdateRoute4XXResponseResultEnum> get serializer => _$magicStaticRoutesUpdateRoute4XXResponseResultEnumSerializer;
 
   const MagicStaticRoutesUpdateRoute4XXResponseResultEnum._(String name): super(name);
 
-  static BuiltSet<MagicStaticRoutesUpdateRoute4XXResponseResultEnum> get values => _$magicStaticRoutesUpdateRoute4XXResponseResultValues;
-  static MagicStaticRoutesUpdateRoute4XXResponseResultEnum valueOf(String name) => _$magicStaticRoutesUpdateRoute4XXResponseResultValueOf(name);
+  static BuiltSet<MagicStaticRoutesUpdateRoute4XXResponseResultEnum> get values => _$magicStaticRoutesUpdateRoute4XXResponseResultEnumValues;
+  static MagicStaticRoutesUpdateRoute4XXResponseResultEnum valueOf(String name) => _$magicStaticRoutesUpdateRoute4XXResponseResultEnumValueOf(name);
 }
 

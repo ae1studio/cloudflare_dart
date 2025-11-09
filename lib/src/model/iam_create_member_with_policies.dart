@@ -36,7 +36,7 @@ abstract class IamCreateMemberWithPolicies implements Built<IamCreateMemberWithP
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(IamCreateMemberWithPoliciesBuilder b) => b
-      ..status = const IamCreateMemberWithPoliciesStatusEnum._('pending');
+      ..status = IamCreateMemberWithPoliciesStatusEnum.valueOf('pending');
 
   @BuiltValueSerializer(custom: true)
   static Serializer<IamCreateMemberWithPolicies> get serializer => _$IamCreateMemberWithPoliciesSerializer();
@@ -151,11 +151,11 @@ class IamCreateMemberWithPoliciesStatusEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'pending')
   static const IamCreateMemberWithPoliciesStatusEnum pending = _$iamCreateMemberWithPoliciesStatusEnum_pending;
 
-  static Serializer<IamCreateMemberWithPoliciesStatusEnum> get serializer => _$iamCreateMemberWithPoliciesStatusSerializer;
+  static Serializer<IamCreateMemberWithPoliciesStatusEnum> get serializer => _$iamCreateMemberWithPoliciesStatusEnumSerializer;
 
   const IamCreateMemberWithPoliciesStatusEnum._(String name): super(name);
 
-  static BuiltSet<IamCreateMemberWithPoliciesStatusEnum> get values => _$iamCreateMemberWithPoliciesStatusValues;
-  static IamCreateMemberWithPoliciesStatusEnum valueOf(String name) => _$iamCreateMemberWithPoliciesStatusValueOf(name);
+  static BuiltSet<IamCreateMemberWithPoliciesStatusEnum> get values => _$iamCreateMemberWithPoliciesStatusEnumValues;
+  static IamCreateMemberWithPoliciesStatusEnum valueOf(String name) => _$iamCreateMemberWithPoliciesStatusEnumValueOf(name);
 }
 

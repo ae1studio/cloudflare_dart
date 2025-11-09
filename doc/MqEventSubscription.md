@@ -9,7 +9,7 @@ import 'package:cloudflare_dart/api.dart';
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **createdAt** | [**DateTime**](DateTime.md) | When the subscription was created | 
-**destination** | [**MqEventDestination**](MqEventDestination.md) |  | 
+**destination** | [**MqEventDestinationQueue**](MqEventDestinationQueue.md) |  | 
 **enabled** | **bool** | Whether the subscription is active | 
 **events** | **BuiltList&lt;String&gt;** | List of event types this subscription handles | 
 **id** | **String** | Unique identifier for the subscription | 

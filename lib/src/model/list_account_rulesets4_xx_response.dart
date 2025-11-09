@@ -147,12 +147,12 @@ class _$ListAccountRulesets4XXResponseSerializer implements PrimitiveSerializer<
 class ListAccountRulesets4XXResponseResultEnum extends EnumClass {
 
 
-  static Serializer<ListAccountRulesets4XXResponseResultEnum> get serializer => _$listAccountRulesets4XXResponseResultSerializer;
+  static Serializer<ListAccountRulesets4XXResponseResultEnum> get serializer => _$listAccountRulesets4XXResponseResultEnumSerializer;
 
   const ListAccountRulesets4XXResponseResultEnum._(String name): super(name);
 
-  static BuiltSet<ListAccountRulesets4XXResponseResultEnum> get values => _$listAccountRulesets4XXResponseResultValues;
-  static ListAccountRulesets4XXResponseResultEnum valueOf(String name) => _$listAccountRulesets4XXResponseResultValueOf(name);
+  static BuiltSet<ListAccountRulesets4XXResponseResultEnum> get values => _$listAccountRulesets4XXResponseResultEnumValues;
+  static ListAccountRulesets4XXResponseResultEnum valueOf(String name) => _$listAccountRulesets4XXResponseResultEnumValueOf(name);
 }
 
 class ListAccountRulesets4XXResponseSuccessEnum extends EnumClass {
@@ -160,11 +160,11 @@ class ListAccountRulesets4XXResponseSuccessEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'false')
   static const ListAccountRulesets4XXResponseSuccessEnum false_ = _$listAccountRulesets4XXResponseSuccessEnum_false_;
 
-  static Serializer<ListAccountRulesets4XXResponseSuccessEnum> get serializer => _$listAccountRulesets4XXResponseSuccessSerializer;
+  static Serializer<ListAccountRulesets4XXResponseSuccessEnum> get serializer => _$listAccountRulesets4XXResponseSuccessEnumSerializer;
 
   const ListAccountRulesets4XXResponseSuccessEnum._(String name): super(name);
 
-  static BuiltSet<ListAccountRulesets4XXResponseSuccessEnum> get values => _$listAccountRulesets4XXResponseSuccessValues;
-  static ListAccountRulesets4XXResponseSuccessEnum valueOf(String name) => _$listAccountRulesets4XXResponseSuccessValueOf(name);
+  static BuiltSet<ListAccountRulesets4XXResponseSuccessEnum> get values => _$listAccountRulesets4XXResponseSuccessEnumValues;
+  static ListAccountRulesets4XXResponseSuccessEnum valueOf(String name) => _$listAccountRulesets4XXResponseSuccessEnumValueOf(name);
 }
 

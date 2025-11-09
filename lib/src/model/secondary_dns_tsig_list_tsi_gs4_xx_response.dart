@@ -166,11 +166,11 @@ class _$SecondaryDnsTsigListTsiGs4XXResponseSerializer implements PrimitiveSeria
 class SecondaryDnsTsigListTsiGs4XXResponseResultEnum extends EnumClass {
 
 
-  static Serializer<SecondaryDnsTsigListTsiGs4XXResponseResultEnum> get serializer => _$secondaryDnsTsigListTsiGs4XXResponseResultSerializer;
+  static Serializer<SecondaryDnsTsigListTsiGs4XXResponseResultEnum> get serializer => _$secondaryDnsTsigListTsiGs4XXResponseResultEnumSerializer;
 
   const SecondaryDnsTsigListTsiGs4XXResponseResultEnum._(String name): super(name);
 
-  static BuiltSet<SecondaryDnsTsigListTsiGs4XXResponseResultEnum> get values => _$secondaryDnsTsigListTsiGs4XXResponseResultValues;
-  static SecondaryDnsTsigListTsiGs4XXResponseResultEnum valueOf(String name) => _$secondaryDnsTsigListTsiGs4XXResponseResultValueOf(name);
+  static BuiltSet<SecondaryDnsTsigListTsiGs4XXResponseResultEnum> get values => _$secondaryDnsTsigListTsiGs4XXResponseResultEnumValues;
+  static SecondaryDnsTsigListTsiGs4XXResponseResultEnum valueOf(String name) => _$secondaryDnsTsigListTsiGs4XXResponseResultEnumValueOf(name);
 }
 

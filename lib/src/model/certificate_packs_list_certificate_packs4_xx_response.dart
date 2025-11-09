@@ -165,11 +165,11 @@ class _$CertificatePacksListCertificatePacks4XXResponseSerializer implements Pri
 class CertificatePacksListCertificatePacks4XXResponseResultEnum extends EnumClass {
 
 
-  static Serializer<CertificatePacksListCertificatePacks4XXResponseResultEnum> get serializer => _$certificatePacksListCertificatePacks4XXResponseResultSerializer;
+  static Serializer<CertificatePacksListCertificatePacks4XXResponseResultEnum> get serializer => _$certificatePacksListCertificatePacks4XXResponseResultEnumSerializer;
 
   const CertificatePacksListCertificatePacks4XXResponseResultEnum._(String name): super(name);
 
-  static BuiltSet<CertificatePacksListCertificatePacks4XXResponseResultEnum> get values => _$certificatePacksListCertificatePacks4XXResponseResultValues;
-  static CertificatePacksListCertificatePacks4XXResponseResultEnum valueOf(String name) => _$certificatePacksListCertificatePacks4XXResponseResultValueOf(name);
+  static BuiltSet<CertificatePacksListCertificatePacks4XXResponseResultEnum> get values => _$certificatePacksListCertificatePacks4XXResponseResultEnumValues;
+  static CertificatePacksListCertificatePacks4XXResponseResultEnum valueOf(String name) => _$certificatePacksListCertificatePacks4XXResponseResultEnumValueOf(name);
 }
 

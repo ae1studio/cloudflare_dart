@@ -133,11 +133,11 @@ class WorkersAiPostRunCfMetaLlamaGuard38bRequestMessagesInnerRoleEnum extends En
   @BuiltValueEnumConst(wireName: r'assistant')
   static const WorkersAiPostRunCfMetaLlamaGuard38bRequestMessagesInnerRoleEnum assistant = _$workersAiPostRunCfMetaLlamaGuard38bRequestMessagesInnerRoleEnum_assistant;
 
-  static Serializer<WorkersAiPostRunCfMetaLlamaGuard38bRequestMessagesInnerRoleEnum> get serializer => _$workersAiPostRunCfMetaLlamaGuard38bRequestMessagesInnerRoleSerializer;
+  static Serializer<WorkersAiPostRunCfMetaLlamaGuard38bRequestMessagesInnerRoleEnum> get serializer => _$workersAiPostRunCfMetaLlamaGuard38bRequestMessagesInnerRoleEnumSerializer;
 
   const WorkersAiPostRunCfMetaLlamaGuard38bRequestMessagesInnerRoleEnum._(String name): super(name);
 
-  static BuiltSet<WorkersAiPostRunCfMetaLlamaGuard38bRequestMessagesInnerRoleEnum> get values => _$workersAiPostRunCfMetaLlamaGuard38bRequestMessagesInnerRoleValues;
-  static WorkersAiPostRunCfMetaLlamaGuard38bRequestMessagesInnerRoleEnum valueOf(String name) => _$workersAiPostRunCfMetaLlamaGuard38bRequestMessagesInnerRoleValueOf(name);
+  static BuiltSet<WorkersAiPostRunCfMetaLlamaGuard38bRequestMessagesInnerRoleEnum> get values => _$workersAiPostRunCfMetaLlamaGuard38bRequestMessagesInnerRoleEnumValues;
+  static WorkersAiPostRunCfMetaLlamaGuard38bRequestMessagesInnerRoleEnum valueOf(String name) => _$workersAiPostRunCfMetaLlamaGuard38bRequestMessagesInnerRoleEnumValueOf(name);
 }
 

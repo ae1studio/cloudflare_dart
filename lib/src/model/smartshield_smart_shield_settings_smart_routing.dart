@@ -156,11 +156,11 @@ class SmartshieldSmartShieldSettingsSmartRoutingValueEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'off')
   static const SmartshieldSmartShieldSettingsSmartRoutingValueEnum off = _$smartshieldSmartShieldSettingsSmartRoutingValueEnum_off;
 
-  static Serializer<SmartshieldSmartShieldSettingsSmartRoutingValueEnum> get serializer => _$smartshieldSmartShieldSettingsSmartRoutingValueSerializer;
+  static Serializer<SmartshieldSmartShieldSettingsSmartRoutingValueEnum> get serializer => _$smartshieldSmartShieldSettingsSmartRoutingValueEnumSerializer;
 
   const SmartshieldSmartShieldSettingsSmartRoutingValueEnum._(String name): super(name);
 
-  static BuiltSet<SmartshieldSmartShieldSettingsSmartRoutingValueEnum> get values => _$smartshieldSmartShieldSettingsSmartRoutingValueValues;
-  static SmartshieldSmartShieldSettingsSmartRoutingValueEnum valueOf(String name) => _$smartshieldSmartShieldSettingsSmartRoutingValueValueOf(name);
+  static BuiltSet<SmartshieldSmartShieldSettingsSmartRoutingValueEnum> get values => _$smartshieldSmartShieldSettingsSmartRoutingValueEnumValues;
+  static SmartshieldSmartShieldSettingsSmartRoutingValueEnum valueOf(String name) => _$smartshieldSmartShieldSettingsSmartRoutingValueEnumValueOf(name);
 }
 

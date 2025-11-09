@@ -164,11 +164,11 @@ class _$DomainHistoryGetDomainHistory4XXResponseSerializer implements PrimitiveS
 class DomainHistoryGetDomainHistory4XXResponseResultEnum extends EnumClass {
 
 
-  static Serializer<DomainHistoryGetDomainHistory4XXResponseResultEnum> get serializer => _$domainHistoryGetDomainHistory4XXResponseResultSerializer;
+  static Serializer<DomainHistoryGetDomainHistory4XXResponseResultEnum> get serializer => _$domainHistoryGetDomainHistory4XXResponseResultEnumSerializer;
 
   const DomainHistoryGetDomainHistory4XXResponseResultEnum._(String name): super(name);
 
-  static BuiltSet<DomainHistoryGetDomainHistory4XXResponseResultEnum> get values => _$domainHistoryGetDomainHistory4XXResponseResultValues;
-  static DomainHistoryGetDomainHistory4XXResponseResultEnum valueOf(String name) => _$domainHistoryGetDomainHistory4XXResponseResultValueOf(name);
+  static BuiltSet<DomainHistoryGetDomainHistory4XXResponseResultEnum> get values => _$domainHistoryGetDomainHistory4XXResponseResultEnumValues;
+  static DomainHistoryGetDomainHistory4XXResponseResultEnum valueOf(String name) => _$domainHistoryGetDomainHistory4XXResponseResultEnumValueOf(name);
 }
 

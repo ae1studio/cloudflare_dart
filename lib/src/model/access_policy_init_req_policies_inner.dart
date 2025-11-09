@@ -18,17 +18,17 @@ part 'access_policy_init_req_policies_inner.g.dart';
 /// AccessPolicyInitReqPoliciesInner
 ///
 /// Properties:
+/// * [decision] 
+/// * [exclude] - Rules evaluated with a NOT logical operator. To match the policy, a user cannot meet any of the Exclude rules.
+/// * [include] - Rules evaluated with an OR logical operator. A user needs to meet only one of the Include rules.
+/// * [name] - The name of the Access policy.
+/// * [require] - Rules evaluated with an AND logical operator. To match the policy, a user must meet all of the Require rules.
 /// * [approvalGroups] - Administrators who can approve a temporary authentication request.
 /// * [approvalRequired] - Requires the user to request access from an administrator at the start of each session.
 /// * [isolationRequired] - Require this application to be served in an isolated browser for users matching this policy. 'Client Web Isolation' must be on for the account in order to use this feature.
 /// * [purposeJustificationPrompt] - A custom message that will appear on the purpose justification screen.
 /// * [purposeJustificationRequired] - Require users to enter a justification when they log in to the application.
 /// * [sessionDuration] - The amount of time that tokens issued for the application will be valid. Must be in the format `300ms` or `2h45m`. Valid time units are: ns, us (or µs), ms, s, m, h.
-/// * [decision] 
-/// * [exclude] - Rules evaluated with a NOT logical operator. To match the policy, a user cannot meet any of the Exclude rules.
-/// * [include] - Rules evaluated with an OR logical operator. A user needs to meet only one of the Include rules.
-/// * [name] - The name of the Access policy.
-/// * [require] - Rules evaluated with an AND logical operator. To match the policy, a user must meet all of the Require rules.
 @BuiltValue()
 abstract class AccessPolicyInitReqPoliciesInner implements Built<AccessPolicyInitReqPoliciesInner, AccessPolicyInitReqPoliciesInnerBuilder> {
   /// One Of [AccessPolicyReq], [String]

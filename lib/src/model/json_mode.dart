@@ -135,11 +135,11 @@ class JSONModeTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'json_schema')
   static const JSONModeTypeEnum jsonSchema = _$jSONModeTypeEnum_jsonSchema;
 
-  static Serializer<JSONModeTypeEnum> get serializer => _$jSONModeTypeSerializer;
+  static Serializer<JSONModeTypeEnum> get serializer => _$jSONModeTypeEnumSerializer;
 
   const JSONModeTypeEnum._(String name): super(name);
 
-  static BuiltSet<JSONModeTypeEnum> get values => _$jSONModeTypeValues;
-  static JSONModeTypeEnum valueOf(String name) => _$jSONModeTypeValueOf(name);
+  static BuiltSet<JSONModeTypeEnum> get values => _$jSONModeTypeEnumValues;
+  static JSONModeTypeEnum valueOf(String name) => _$jSONModeTypeEnumValueOf(name);
 }
 

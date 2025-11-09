@@ -194,11 +194,11 @@ class _$$RegistrarApiApiResponseCommonFailureSerializer implements PrimitiveSeri
 class RegistrarApiApiResponseCommonFailureResultEnum extends EnumClass {
 
 
-  static Serializer<RegistrarApiApiResponseCommonFailureResultEnum> get serializer => _$registrarApiApiResponseCommonFailureResultSerializer;
+  static Serializer<RegistrarApiApiResponseCommonFailureResultEnum> get serializer => _$registrarApiApiResponseCommonFailureResultEnumSerializer;
 
   const RegistrarApiApiResponseCommonFailureResultEnum._(String name): super(name);
 
-  static BuiltSet<RegistrarApiApiResponseCommonFailureResultEnum> get values => _$registrarApiApiResponseCommonFailureResultValues;
-  static RegistrarApiApiResponseCommonFailureResultEnum valueOf(String name) => _$registrarApiApiResponseCommonFailureResultValueOf(name);
+  static BuiltSet<RegistrarApiApiResponseCommonFailureResultEnum> get values => _$registrarApiApiResponseCommonFailureResultEnumValues;
+  static RegistrarApiApiResponseCommonFailureResultEnum valueOf(String name) => _$registrarApiApiResponseCommonFailureResultEnumValueOf(name);
 }
 

@@ -3,15 +3,13 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:cloudflare_dart/src/model/tls_certificates_and_hostnames_ownership_verification_one_of.dart';
 import 'package:built_collection/built_collection.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
-import 'package:one_of/one_of.dart';
 
 part 'tls_certificates_and_hostnames_ownership_verification.g.dart';
 
-/// This is a record which can be placed to activate a hostname.
+/// TlsCertificatesAndHostnamesOwnershipVerification
 ///
 /// Properties:
 /// * [name] - DNS Name for record.
@@ -19,8 +17,18 @@ part 'tls_certificates_and_hostnames_ownership_verification.g.dart';
 /// * [value] - Content for the record.
 @BuiltValue()
 abstract class TlsCertificatesAndHostnamesOwnershipVerification implements Built<TlsCertificatesAndHostnamesOwnershipVerification, TlsCertificatesAndHostnamesOwnershipVerificationBuilder> {
-  /// One Of [TlsCertificatesAndHostnamesOwnershipVerificationOneOf]
-  OneOf get oneOf;
+  /// DNS Name for record.
+  @BuiltValueField(wireName: r'name')
+  String? get name;
+
+  /// DNS Record type.
+  @BuiltValueField(wireName: r'type')
+  TlsCertificatesAndHostnamesOwnershipVerificationTypeEnum? get type;
+  // enum typeEnum {  txt,  };
+
+  /// Content for the record.
+  @BuiltValueField(wireName: r'value')
+  String? get value;
 
   TlsCertificatesAndHostnamesOwnershipVerification._();
 
@@ -45,6 +53,27 @@ class _$TlsCertificatesAndHostnamesOwnershipVerificationSerializer implements Pr
     TlsCertificatesAndHostnamesOwnershipVerification object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    if (object.name != null) {
+      yield r'name';
+      yield serializers.serialize(
+        object.name,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.type != null) {
+      yield r'type';
+      yield serializers.serialize(
+        object.type,
+        specifiedType: const FullType(TlsCertificatesAndHostnamesOwnershipVerificationTypeEnum),
+      );
+    }
+    if (object.value != null) {
+      yield r'value';
+      yield serializers.serialize(
+        object.value,
+        specifiedType: const FullType(String),
+      );
+    }
   }
 
   @override
@@ -53,8 +82,48 @@ class _$TlsCertificatesAndHostnamesOwnershipVerificationSerializer implements Pr
     TlsCertificatesAndHostnamesOwnershipVerification object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    final oneOf = object.oneOf;
-    return serializers.serialize(oneOf.value, specifiedType: FullType(oneOf.valueType))!;
+    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+  }
+
+  void _deserializeProperties(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+    required List<Object?> serializedList,
+    required TlsCertificatesAndHostnamesOwnershipVerificationBuilder result,
+    required List<Object?> unhandled,
+  }) {
+    for (var i = 0; i < serializedList.length; i += 2) {
+      final key = serializedList[i] as String;
+      final value = serializedList[i + 1];
+      switch (key) {
+        case r'name':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.name = valueDes;
+          break;
+        case r'type':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(TlsCertificatesAndHostnamesOwnershipVerificationTypeEnum),
+          ) as TlsCertificatesAndHostnamesOwnershipVerificationTypeEnum;
+          result.type = valueDes;
+          break;
+        case r'value':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.value = valueDes;
+          break;
+        default:
+          unhandled.add(key);
+          unhandled.add(value);
+          break;
+      }
+    }
   }
 
   @override
@@ -64,10 +133,16 @@ class _$TlsCertificatesAndHostnamesOwnershipVerificationSerializer implements Pr
     FullType specifiedType = FullType.unspecified,
   }) {
     final result = TlsCertificatesAndHostnamesOwnershipVerificationBuilder();
-    Object? oneOfDataSrc;
-    final targetType = const FullType(OneOf, [FullType(TlsCertificatesAndHostnamesOwnershipVerificationOneOf), ]);
-    oneOfDataSrc = serialized;
-    result.oneOf = serializers.deserialize(oneOfDataSrc, specifiedType: targetType) as OneOf;
+    final serializedList = (serialized as Iterable<Object?>).toList();
+    final unhandled = <Object?>[];
+    _deserializeProperties(
+      serializers,
+      serialized,
+      specifiedType: specifiedType,
+      serializedList: serializedList,
+      unhandled: unhandled,
+      result: result,
+    );
     return result.build();
   }
 }
@@ -78,11 +153,11 @@ class TlsCertificatesAndHostnamesOwnershipVerificationTypeEnum extends EnumClass
   @BuiltValueEnumConst(wireName: r'txt')
   static const TlsCertificatesAndHostnamesOwnershipVerificationTypeEnum txt = _$tlsCertificatesAndHostnamesOwnershipVerificationTypeEnum_txt;
 
-  static Serializer<TlsCertificatesAndHostnamesOwnershipVerificationTypeEnum> get serializer => _$tlsCertificatesAndHostnamesOwnershipVerificationTypeSerializer;
+  static Serializer<TlsCertificatesAndHostnamesOwnershipVerificationTypeEnum> get serializer => _$tlsCertificatesAndHostnamesOwnershipVerificationTypeEnumSerializer;
 
   const TlsCertificatesAndHostnamesOwnershipVerificationTypeEnum._(String name): super(name);
 
-  static BuiltSet<TlsCertificatesAndHostnamesOwnershipVerificationTypeEnum> get values => _$tlsCertificatesAndHostnamesOwnershipVerificationTypeValues;
-  static TlsCertificatesAndHostnamesOwnershipVerificationTypeEnum valueOf(String name) => _$tlsCertificatesAndHostnamesOwnershipVerificationTypeValueOf(name);
+  static BuiltSet<TlsCertificatesAndHostnamesOwnershipVerificationTypeEnum> get values => _$tlsCertificatesAndHostnamesOwnershipVerificationTypeEnumValues;
+  static TlsCertificatesAndHostnamesOwnershipVerificationTypeEnum valueOf(String name) => _$tlsCertificatesAndHostnamesOwnershipVerificationTypeEnumValueOf(name);
 }
 

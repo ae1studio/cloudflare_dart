@@ -343,3 +343,56 @@ class _$SmartshieldQueryHealthcheckSerializer implements PrimitiveSerializer<Sma
   }
 }
 
+class SmartshieldQueryHealthcheckCheckRegionsEnum extends EnumClass {
+
+  /// WNAM: Western North America, ENAM: Eastern North America, WEU: Western Europe, EEU: Eastern Europe, NSAM: Northern South America, SSAM: Southern South America, OC: Oceania, ME: Middle East, NAF: North Africa, SAF: South Africa, IN: India, SEAS: South East Asia, NEAS: North East Asia, ALL_REGIONS: all regions (BUSINESS and ENTERPRISE customers only).
+  @BuiltValueEnumConst(wireName: r'WNAM')
+  static const SmartshieldQueryHealthcheckCheckRegionsEnum WNAM = _$smartshieldQueryHealthcheckCheckRegionsEnum_WNAM;
+  /// WNAM: Western North America, ENAM: Eastern North America, WEU: Western Europe, EEU: Eastern Europe, NSAM: Northern South America, SSAM: Southern South America, OC: Oceania, ME: Middle East, NAF: North Africa, SAF: South Africa, IN: India, SEAS: South East Asia, NEAS: North East Asia, ALL_REGIONS: all regions (BUSINESS and ENTERPRISE customers only).
+  @BuiltValueEnumConst(wireName: r'ENAM')
+  static const SmartshieldQueryHealthcheckCheckRegionsEnum ENAM = _$smartshieldQueryHealthcheckCheckRegionsEnum_ENAM;
+  /// WNAM: Western North America, ENAM: Eastern North America, WEU: Western Europe, EEU: Eastern Europe, NSAM: Northern South America, SSAM: Southern South America, OC: Oceania, ME: Middle East, NAF: North Africa, SAF: South Africa, IN: India, SEAS: South East Asia, NEAS: North East Asia, ALL_REGIONS: all regions (BUSINESS and ENTERPRISE customers only).
+  @BuiltValueEnumConst(wireName: r'WEU')
+  static const SmartshieldQueryHealthcheckCheckRegionsEnum WEU = _$smartshieldQueryHealthcheckCheckRegionsEnum_WEU;
+  /// WNAM: Western North America, ENAM: Eastern North America, WEU: Western Europe, EEU: Eastern Europe, NSAM: Northern South America, SSAM: Southern South America, OC: Oceania, ME: Middle East, NAF: North Africa, SAF: South Africa, IN: India, SEAS: South East Asia, NEAS: North East Asia, ALL_REGIONS: all regions (BUSINESS and ENTERPRISE customers only).
+  @BuiltValueEnumConst(wireName: r'EEU')
+  static const SmartshieldQueryHealthcheckCheckRegionsEnum EEU = _$smartshieldQueryHealthcheckCheckRegionsEnum_EEU;
+  /// WNAM: Western North America, ENAM: Eastern North America, WEU: Western Europe, EEU: Eastern Europe, NSAM: Northern South America, SSAM: Southern South America, OC: Oceania, ME: Middle East, NAF: North Africa, SAF: South Africa, IN: India, SEAS: South East Asia, NEAS: North East Asia, ALL_REGIONS: all regions (BUSINESS and ENTERPRISE customers only).
+  @BuiltValueEnumConst(wireName: r'NSAM')
+  static const SmartshieldQueryHealthcheckCheckRegionsEnum NSAM = _$smartshieldQueryHealthcheckCheckRegionsEnum_NSAM;
+  /// WNAM: Western North America, ENAM: Eastern North America, WEU: Western Europe, EEU: Eastern Europe, NSAM: Northern South America, SSAM: Southern South America, OC: Oceania, ME: Middle East, NAF: North Africa, SAF: South Africa, IN: India, SEAS: South East Asia, NEAS: North East Asia, ALL_REGIONS: all regions (BUSINESS and ENTERPRISE customers only).
+  @BuiltValueEnumConst(wireName: r'SSAM')
+  static const SmartshieldQueryHealthcheckCheckRegionsEnum SSAM = _$smartshieldQueryHealthcheckCheckRegionsEnum_SSAM;
+  /// WNAM: Western North America, ENAM: Eastern North America, WEU: Western Europe, EEU: Eastern Europe, NSAM: Northern South America, SSAM: Southern South America, OC: Oceania, ME: Middle East, NAF: North Africa, SAF: South Africa, IN: India, SEAS: South East Asia, NEAS: North East Asia, ALL_REGIONS: all regions (BUSINESS and ENTERPRISE customers only).
+  @BuiltValueEnumConst(wireName: r'OC')
+  static const SmartshieldQueryHealthcheckCheckRegionsEnum OC = _$smartshieldQueryHealthcheckCheckRegionsEnum_OC;
+  /// WNAM: Western North America, ENAM: Eastern North America, WEU: Western Europe, EEU: Eastern Europe, NSAM: Northern South America, SSAM: Southern South America, OC: Oceania, ME: Middle East, NAF: North Africa, SAF: South Africa, IN: India, SEAS: South East Asia, NEAS: North East Asia, ALL_REGIONS: all regions (BUSINESS and ENTERPRISE customers only).
+  @BuiltValueEnumConst(wireName: r'ME')
+  static const SmartshieldQueryHealthcheckCheckRegionsEnum ME = _$smartshieldQueryHealthcheckCheckRegionsEnum_ME;
+  /// WNAM: Western North America, ENAM: Eastern North America, WEU: Western Europe, EEU: Eastern Europe, NSAM: Northern South America, SSAM: Southern South America, OC: Oceania, ME: Middle East, NAF: North Africa, SAF: South Africa, IN: India, SEAS: South East Asia, NEAS: North East Asia, ALL_REGIONS: all regions (BUSINESS and ENTERPRISE customers only).
+  @BuiltValueEnumConst(wireName: r'NAF')
+  static const SmartshieldQueryHealthcheckCheckRegionsEnum NAF = _$smartshieldQueryHealthcheckCheckRegionsEnum_NAF;
+  /// WNAM: Western North America, ENAM: Eastern North America, WEU: Western Europe, EEU: Eastern Europe, NSAM: Northern South America, SSAM: Southern South America, OC: Oceania, ME: Middle East, NAF: North Africa, SAF: South Africa, IN: India, SEAS: South East Asia, NEAS: North East Asia, ALL_REGIONS: all regions (BUSINESS and ENTERPRISE customers only).
+  @BuiltValueEnumConst(wireName: r'SAF')
+  static const SmartshieldQueryHealthcheckCheckRegionsEnum SAF = _$smartshieldQueryHealthcheckCheckRegionsEnum_SAF;
+  /// WNAM: Western North America, ENAM: Eastern North America, WEU: Western Europe, EEU: Eastern Europe, NSAM: Northern South America, SSAM: Southern South America, OC: Oceania, ME: Middle East, NAF: North Africa, SAF: South Africa, IN: India, SEAS: South East Asia, NEAS: North East Asia, ALL_REGIONS: all regions (BUSINESS and ENTERPRISE customers only).
+  @BuiltValueEnumConst(wireName: r'IN')
+  static const SmartshieldQueryHealthcheckCheckRegionsEnum IN = _$smartshieldQueryHealthcheckCheckRegionsEnum_IN;
+  /// WNAM: Western North America, ENAM: Eastern North America, WEU: Western Europe, EEU: Eastern Europe, NSAM: Northern South America, SSAM: Southern South America, OC: Oceania, ME: Middle East, NAF: North Africa, SAF: South Africa, IN: India, SEAS: South East Asia, NEAS: North East Asia, ALL_REGIONS: all regions (BUSINESS and ENTERPRISE customers only).
+  @BuiltValueEnumConst(wireName: r'SEAS')
+  static const SmartshieldQueryHealthcheckCheckRegionsEnum SEAS = _$smartshieldQueryHealthcheckCheckRegionsEnum_SEAS;
+  /// WNAM: Western North America, ENAM: Eastern North America, WEU: Western Europe, EEU: Eastern Europe, NSAM: Northern South America, SSAM: Southern South America, OC: Oceania, ME: Middle East, NAF: North Africa, SAF: South Africa, IN: India, SEAS: South East Asia, NEAS: North East Asia, ALL_REGIONS: all regions (BUSINESS and ENTERPRISE customers only).
+  @BuiltValueEnumConst(wireName: r'NEAS')
+  static const SmartshieldQueryHealthcheckCheckRegionsEnum NEAS = _$smartshieldQueryHealthcheckCheckRegionsEnum_NEAS;
+  /// WNAM: Western North America, ENAM: Eastern North America, WEU: Western Europe, EEU: Eastern Europe, NSAM: Northern South America, SSAM: Southern South America, OC: Oceania, ME: Middle East, NAF: North Africa, SAF: South Africa, IN: India, SEAS: South East Asia, NEAS: North East Asia, ALL_REGIONS: all regions (BUSINESS and ENTERPRISE customers only).
+  @BuiltValueEnumConst(wireName: r'ALL_REGIONS')
+  static const SmartshieldQueryHealthcheckCheckRegionsEnum ALL_REGIONS = _$smartshieldQueryHealthcheckCheckRegionsEnum_ALL_REGIONS;
+
+  static Serializer<SmartshieldQueryHealthcheckCheckRegionsEnum> get serializer => _$smartshieldQueryHealthcheckCheckRegionsEnumSerializer;
+
+  const SmartshieldQueryHealthcheckCheckRegionsEnum._(String name): super(name);
+
+  static BuiltSet<SmartshieldQueryHealthcheckCheckRegionsEnum> get values => _$smartshieldQueryHealthcheckCheckRegionsEnumValues;
+  static SmartshieldQueryHealthcheckCheckRegionsEnum valueOf(String name) => _$smartshieldQueryHealthcheckCheckRegionsEnumValueOf(name);
+}
+

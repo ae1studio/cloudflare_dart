@@ -115,11 +115,11 @@ class MqEventSourceR2TypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'r2')
   static const MqEventSourceR2TypeEnum r2 = _$mqEventSourceR2TypeEnum_r2;
 
-  static Serializer<MqEventSourceR2TypeEnum> get serializer => _$mqEventSourceR2TypeSerializer;
+  static Serializer<MqEventSourceR2TypeEnum> get serializer => _$mqEventSourceR2TypeEnumSerializer;
 
   const MqEventSourceR2TypeEnum._(String name): super(name);
 
-  static BuiltSet<MqEventSourceR2TypeEnum> get values => _$mqEventSourceR2TypeValues;
-  static MqEventSourceR2TypeEnum valueOf(String name) => _$mqEventSourceR2TypeValueOf(name);
+  static BuiltSet<MqEventSourceR2TypeEnum> get values => _$mqEventSourceR2TypeEnumValues;
+  static MqEventSourceR2TypeEnum valueOf(String name) => _$mqEventSourceR2TypeEnumValueOf(name);
 }
 

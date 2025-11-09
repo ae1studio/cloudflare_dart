@@ -3,18 +3,16 @@
 //
 
 // ignore_for_file: unused_element
+import 'package:cloudflare_dart/src/model/firewall_match_response.dart';
+import 'package:cloudflare_dart/src/model/firewall_match_headers_inner.dart';
 import 'package:built_collection/built_collection.dart';
-import 'package:cloudflare_dart/src/model/firewall_match_one_of.dart';
-import 'package:cloudflare_dart/src/model/firewall_match_one_of_headers_inner.dart';
-import 'package:cloudflare_dart/src/model/firewall_match_one_of_response.dart';
-import 'package:cloudflare_dart/src/model/firewall_match_one_of_request.dart';
+import 'package:cloudflare_dart/src/model/firewall_match_request.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
-import 'package:one_of/one_of.dart';
 
 part 'firewall_match.g.dart';
 
-/// Determines which traffic the rate limit counts towards the threshold.
+/// FirewallMatch
 ///
 /// Properties:
 /// * [headers] 
@@ -22,8 +20,14 @@ part 'firewall_match.g.dart';
 /// * [response] 
 @BuiltValue()
 abstract class FirewallMatch implements Built<FirewallMatch, FirewallMatchBuilder> {
-  /// One Of [FirewallMatchOneOf]
-  OneOf get oneOf;
+  @BuiltValueField(wireName: r'headers')
+  BuiltList<FirewallMatchHeadersInner>? get headers;
+
+  @BuiltValueField(wireName: r'request')
+  FirewallMatchRequest? get request;
+
+  @BuiltValueField(wireName: r'response')
+  FirewallMatchResponse? get response;
 
   FirewallMatch._();
 
@@ -48,6 +52,27 @@ class _$FirewallMatchSerializer implements PrimitiveSerializer<FirewallMatch> {
     FirewallMatch object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    if (object.headers != null) {
+      yield r'headers';
+      yield serializers.serialize(
+        object.headers,
+        specifiedType: const FullType(BuiltList, [FullType(FirewallMatchHeadersInner)]),
+      );
+    }
+    if (object.request != null) {
+      yield r'request';
+      yield serializers.serialize(
+        object.request,
+        specifiedType: const FullType(FirewallMatchRequest),
+      );
+    }
+    if (object.response != null) {
+      yield r'response';
+      yield serializers.serialize(
+        object.response,
+        specifiedType: const FullType(FirewallMatchResponse),
+      );
+    }
   }
 
   @override
@@ -56,8 +81,48 @@ class _$FirewallMatchSerializer implements PrimitiveSerializer<FirewallMatch> {
     FirewallMatch object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    final oneOf = object.oneOf;
-    return serializers.serialize(oneOf.value, specifiedType: FullType(oneOf.valueType))!;
+    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+  }
+
+  void _deserializeProperties(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+    required List<Object?> serializedList,
+    required FirewallMatchBuilder result,
+    required List<Object?> unhandled,
+  }) {
+    for (var i = 0; i < serializedList.length; i += 2) {
+      final key = serializedList[i] as String;
+      final value = serializedList[i + 1];
+      switch (key) {
+        case r'headers':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BuiltList, [FullType(FirewallMatchHeadersInner)]),
+          ) as BuiltList<FirewallMatchHeadersInner>;
+          result.headers.replace(valueDes);
+          break;
+        case r'request':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(FirewallMatchRequest),
+          ) as FirewallMatchRequest;
+          result.request.replace(valueDes);
+          break;
+        case r'response':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(FirewallMatchResponse),
+          ) as FirewallMatchResponse;
+          result.response.replace(valueDes);
+          break;
+        default:
+          unhandled.add(key);
+          unhandled.add(value);
+          break;
+      }
+    }
   }
 
   @override
@@ -67,10 +132,16 @@ class _$FirewallMatchSerializer implements PrimitiveSerializer<FirewallMatch> {
     FullType specifiedType = FullType.unspecified,
   }) {
     final result = FirewallMatchBuilder();
-    Object? oneOfDataSrc;
-    final targetType = const FullType(OneOf, [FullType(FirewallMatchOneOf), ]);
-    oneOfDataSrc = serialized;
-    result.oneOf = serializers.deserialize(oneOfDataSrc, specifiedType: targetType) as OneOf;
+    final serializedList = (serialized as Iterable<Object?>).toList();
+    final unhandled = <Object?>[];
+    _deserializeProperties(
+      serializers,
+      serialized,
+      specifiedType: specifiedType,
+      serializedList: serializedList,
+      unhandled: unhandled,
+      result: result,
+    );
     return result.build();
   }
 }

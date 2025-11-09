@@ -187,11 +187,11 @@ class WorkersBindingKindSendEmailTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'send_email')
   static const WorkersBindingKindSendEmailTypeEnum sendEmail = _$workersBindingKindSendEmailTypeEnum_sendEmail;
 
-  static Serializer<WorkersBindingKindSendEmailTypeEnum> get serializer => _$workersBindingKindSendEmailTypeSerializer;
+  static Serializer<WorkersBindingKindSendEmailTypeEnum> get serializer => _$workersBindingKindSendEmailTypeEnumSerializer;
 
   const WorkersBindingKindSendEmailTypeEnum._(String name): super(name);
 
-  static BuiltSet<WorkersBindingKindSendEmailTypeEnum> get values => _$workersBindingKindSendEmailTypeValues;
-  static WorkersBindingKindSendEmailTypeEnum valueOf(String name) => _$workersBindingKindSendEmailTypeValueOf(name);
+  static BuiltSet<WorkersBindingKindSendEmailTypeEnum> get values => _$workersBindingKindSendEmailTypeEnumValues;
+  static WorkersBindingKindSendEmailTypeEnum valueOf(String name) => _$workersBindingKindSendEmailTypeEnumValueOf(name);
 }
 

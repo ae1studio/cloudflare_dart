@@ -54,9 +54,9 @@ abstract class LoadBalancingSessionAffinityAttributes implements Built<LoadBalan
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(LoadBalancingSessionAffinityAttributesBuilder b) => b
       ..requireAllHeaders = false
-      ..samesite = const LoadBalancingSessionAffinityAttributesSamesiteEnum._('Auto')
-      ..secure = const LoadBalancingSessionAffinityAttributesSecureEnum._('Auto')
-      ..zeroDowntimeFailover = const LoadBalancingSessionAffinityAttributesZeroDowntimeFailoverEnum._('none');
+      ..samesite = LoadBalancingSessionAffinityAttributesSamesiteEnum.valueOf('Auto')
+      ..secure = LoadBalancingSessionAffinityAttributesSecureEnum.valueOf('Auto')
+      ..zeroDowntimeFailover = LoadBalancingSessionAffinityAttributesZeroDowntimeFailoverEnum.valueOf('none');
 
   @BuiltValueSerializer(custom: true)
   static Serializer<LoadBalancingSessionAffinityAttributes> get serializer => _$LoadBalancingSessionAffinityAttributesSerializer();
@@ -225,12 +225,12 @@ class LoadBalancingSessionAffinityAttributesSamesiteEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'Strict')
   static const LoadBalancingSessionAffinityAttributesSamesiteEnum strict = _$loadBalancingSessionAffinityAttributesSamesiteEnum_strict;
 
-  static Serializer<LoadBalancingSessionAffinityAttributesSamesiteEnum> get serializer => _$loadBalancingSessionAffinityAttributesSamesiteSerializer;
+  static Serializer<LoadBalancingSessionAffinityAttributesSamesiteEnum> get serializer => _$loadBalancingSessionAffinityAttributesSamesiteEnumSerializer;
 
   const LoadBalancingSessionAffinityAttributesSamesiteEnum._(String name): super(name);
 
-  static BuiltSet<LoadBalancingSessionAffinityAttributesSamesiteEnum> get values => _$loadBalancingSessionAffinityAttributesSamesiteValues;
-  static LoadBalancingSessionAffinityAttributesSamesiteEnum valueOf(String name) => _$loadBalancingSessionAffinityAttributesSamesiteValueOf(name);
+  static BuiltSet<LoadBalancingSessionAffinityAttributesSamesiteEnum> get values => _$loadBalancingSessionAffinityAttributesSamesiteEnumValues;
+  static LoadBalancingSessionAffinityAttributesSamesiteEnum valueOf(String name) => _$loadBalancingSessionAffinityAttributesSamesiteEnumValueOf(name);
 }
 
 class LoadBalancingSessionAffinityAttributesSecureEnum extends EnumClass {
@@ -245,12 +245,12 @@ class LoadBalancingSessionAffinityAttributesSecureEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'Never')
   static const LoadBalancingSessionAffinityAttributesSecureEnum never = _$loadBalancingSessionAffinityAttributesSecureEnum_never;
 
-  static Serializer<LoadBalancingSessionAffinityAttributesSecureEnum> get serializer => _$loadBalancingSessionAffinityAttributesSecureSerializer;
+  static Serializer<LoadBalancingSessionAffinityAttributesSecureEnum> get serializer => _$loadBalancingSessionAffinityAttributesSecureEnumSerializer;
 
   const LoadBalancingSessionAffinityAttributesSecureEnum._(String name): super(name);
 
-  static BuiltSet<LoadBalancingSessionAffinityAttributesSecureEnum> get values => _$loadBalancingSessionAffinityAttributesSecureValues;
-  static LoadBalancingSessionAffinityAttributesSecureEnum valueOf(String name) => _$loadBalancingSessionAffinityAttributesSecureValueOf(name);
+  static BuiltSet<LoadBalancingSessionAffinityAttributesSecureEnum> get values => _$loadBalancingSessionAffinityAttributesSecureEnumValues;
+  static LoadBalancingSessionAffinityAttributesSecureEnum valueOf(String name) => _$loadBalancingSessionAffinityAttributesSecureEnumValueOf(name);
 }
 
 class LoadBalancingSessionAffinityAttributesZeroDowntimeFailoverEnum extends EnumClass {
@@ -265,11 +265,11 @@ class LoadBalancingSessionAffinityAttributesZeroDowntimeFailoverEnum extends Enu
   @BuiltValueEnumConst(wireName: r'sticky')
   static const LoadBalancingSessionAffinityAttributesZeroDowntimeFailoverEnum sticky = _$loadBalancingSessionAffinityAttributesZeroDowntimeFailoverEnum_sticky;
 
-  static Serializer<LoadBalancingSessionAffinityAttributesZeroDowntimeFailoverEnum> get serializer => _$loadBalancingSessionAffinityAttributesZeroDowntimeFailoverSerializer;
+  static Serializer<LoadBalancingSessionAffinityAttributesZeroDowntimeFailoverEnum> get serializer => _$loadBalancingSessionAffinityAttributesZeroDowntimeFailoverEnumSerializer;
 
   const LoadBalancingSessionAffinityAttributesZeroDowntimeFailoverEnum._(String name): super(name);
 
-  static BuiltSet<LoadBalancingSessionAffinityAttributesZeroDowntimeFailoverEnum> get values => _$loadBalancingSessionAffinityAttributesZeroDowntimeFailoverValues;
-  static LoadBalancingSessionAffinityAttributesZeroDowntimeFailoverEnum valueOf(String name) => _$loadBalancingSessionAffinityAttributesZeroDowntimeFailoverValueOf(name);
+  static BuiltSet<LoadBalancingSessionAffinityAttributesZeroDowntimeFailoverEnum> get values => _$loadBalancingSessionAffinityAttributesZeroDowntimeFailoverEnumValues;
+  static LoadBalancingSessionAffinityAttributesZeroDowntimeFailoverEnum valueOf(String name) => _$loadBalancingSessionAffinityAttributesZeroDowntimeFailoverEnumValueOf(name);
 }
 

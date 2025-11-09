@@ -248,11 +248,11 @@ class DnsRecordsSMIMEARecordTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'SMIMEA')
   static const DnsRecordsSMIMEARecordTypeEnum SMIMEA = _$dnsRecordsSMIMEARecordTypeEnum_SMIMEA;
 
-  static Serializer<DnsRecordsSMIMEARecordTypeEnum> get serializer => _$dnsRecordsSMIMEARecordTypeSerializer;
+  static Serializer<DnsRecordsSMIMEARecordTypeEnum> get serializer => _$dnsRecordsSMIMEARecordTypeEnumSerializer;
 
   const DnsRecordsSMIMEARecordTypeEnum._(String name): super(name);
 
-  static BuiltSet<DnsRecordsSMIMEARecordTypeEnum> get values => _$dnsRecordsSMIMEARecordTypeValues;
-  static DnsRecordsSMIMEARecordTypeEnum valueOf(String name) => _$dnsRecordsSMIMEARecordTypeValueOf(name);
+  static BuiltSet<DnsRecordsSMIMEARecordTypeEnum> get values => _$dnsRecordsSMIMEARecordTypeEnumValues;
+  static DnsRecordsSMIMEARecordTypeEnum valueOf(String name) => _$dnsRecordsSMIMEARecordTypeEnumValueOf(name);
 }
 

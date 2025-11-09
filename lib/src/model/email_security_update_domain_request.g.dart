@@ -6,6 +6,93 @@ part of 'email_security_update_domain_request.dart';
 // BuiltValueGenerator
 // **************************************************************************
 
+const EmailSecurityUpdateDomainRequestRegionsEnum
+    _$emailSecurityUpdateDomainRequestRegionsEnum_GLOBAL =
+    const EmailSecurityUpdateDomainRequestRegionsEnum._('GLOBAL');
+const EmailSecurityUpdateDomainRequestRegionsEnum
+    _$emailSecurityUpdateDomainRequestRegionsEnum_AU =
+    const EmailSecurityUpdateDomainRequestRegionsEnum._('AU');
+const EmailSecurityUpdateDomainRequestRegionsEnum
+    _$emailSecurityUpdateDomainRequestRegionsEnum_DE =
+    const EmailSecurityUpdateDomainRequestRegionsEnum._('DE');
+const EmailSecurityUpdateDomainRequestRegionsEnum
+    _$emailSecurityUpdateDomainRequestRegionsEnum_IN =
+    const EmailSecurityUpdateDomainRequestRegionsEnum._('IN');
+const EmailSecurityUpdateDomainRequestRegionsEnum
+    _$emailSecurityUpdateDomainRequestRegionsEnum_US =
+    const EmailSecurityUpdateDomainRequestRegionsEnum._('US');
+
+EmailSecurityUpdateDomainRequestRegionsEnum
+    _$emailSecurityUpdateDomainRequestRegionsEnumValueOf(String name) {
+  switch (name) {
+    case 'GLOBAL':
+      return _$emailSecurityUpdateDomainRequestRegionsEnum_GLOBAL;
+    case 'AU':
+      return _$emailSecurityUpdateDomainRequestRegionsEnum_AU;
+    case 'DE':
+      return _$emailSecurityUpdateDomainRequestRegionsEnum_DE;
+    case 'IN':
+      return _$emailSecurityUpdateDomainRequestRegionsEnum_IN;
+    case 'US':
+      return _$emailSecurityUpdateDomainRequestRegionsEnum_US;
+    default:
+      throw ArgumentError(name);
+  }
+}
+
+final BuiltSet<EmailSecurityUpdateDomainRequestRegionsEnum>
+    _$emailSecurityUpdateDomainRequestRegionsEnumValues = BuiltSet<
+        EmailSecurityUpdateDomainRequestRegionsEnum>(const <EmailSecurityUpdateDomainRequestRegionsEnum>[
+  _$emailSecurityUpdateDomainRequestRegionsEnum_GLOBAL,
+  _$emailSecurityUpdateDomainRequestRegionsEnum_AU,
+  _$emailSecurityUpdateDomainRequestRegionsEnum_DE,
+  _$emailSecurityUpdateDomainRequestRegionsEnum_IN,
+  _$emailSecurityUpdateDomainRequestRegionsEnum_US,
+]);
+
+Serializer<EmailSecurityUpdateDomainRequestRegionsEnum>
+    _$emailSecurityUpdateDomainRequestRegionsEnumSerializer =
+    _$EmailSecurityUpdateDomainRequestRegionsEnumSerializer();
+
+class _$EmailSecurityUpdateDomainRequestRegionsEnumSerializer
+    implements
+        PrimitiveSerializer<EmailSecurityUpdateDomainRequestRegionsEnum> {
+  static const Map<String, Object> _toWire = const <String, Object>{
+    'GLOBAL': 'GLOBAL',
+    'AU': 'AU',
+    'DE': 'DE',
+    'IN': 'IN',
+    'US': 'US',
+  };
+  static const Map<Object, String> _fromWire = const <Object, String>{
+    'GLOBAL': 'GLOBAL',
+    'AU': 'AU',
+    'DE': 'DE',
+    'IN': 'IN',
+    'US': 'US',
+  };
+
+  @override
+  final Iterable<Type> types = const <Type>[
+    EmailSecurityUpdateDomainRequestRegionsEnum
+  ];
+  @override
+  final String wireName = 'EmailSecurityUpdateDomainRequestRegionsEnum';
+
+  @override
+  Object serialize(Serializers serializers,
+          EmailSecurityUpdateDomainRequestRegionsEnum object,
+          {FullType specifiedType = FullType.unspecified}) =>
+      _toWire[object.name] ?? object.name;
+
+  @override
+  EmailSecurityUpdateDomainRequestRegionsEnum deserialize(
+          Serializers serializers, Object serialized,
+          {FullType specifiedType = FullType.unspecified}) =>
+      EmailSecurityUpdateDomainRequestRegionsEnum.valueOf(
+          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+}
+
 class _$EmailSecurityUpdateDomainRequest
     extends EmailSecurityUpdateDomainRequest {
   @override
@@ -23,7 +110,7 @@ class _$EmailSecurityUpdateDomainRequest
   @override
   final int? lookbackHops;
   @override
-  final BuiltList<dynamic>? regions;
+  final BuiltList<EmailSecurityUpdateDomainRequestRegionsEnum>? regions;
   @override
   final bool? requireTlsInbound;
   @override
@@ -153,10 +240,13 @@ class EmailSecurityUpdateDomainRequestBuilder
   int? get lookbackHops => _$this._lookbackHops;
   set lookbackHops(int? lookbackHops) => _$this._lookbackHops = lookbackHops;
 
-  ListBuilder<dynamic>? _regions;
-  ListBuilder<dynamic> get regions =>
-      _$this._regions ??= ListBuilder<dynamic>();
-  set regions(ListBuilder<dynamic>? regions) => _$this._regions = regions;
+  ListBuilder<EmailSecurityUpdateDomainRequestRegionsEnum>? _regions;
+  ListBuilder<EmailSecurityUpdateDomainRequestRegionsEnum> get regions =>
+      _$this._regions ??=
+          ListBuilder<EmailSecurityUpdateDomainRequestRegionsEnum>();
+  set regions(
+          ListBuilder<EmailSecurityUpdateDomainRequestRegionsEnum>? regions) =>
+      _$this._regions = regions;
 
   bool? _requireTlsInbound;
   bool? get requireTlsInbound => _$this._requireTlsInbound;

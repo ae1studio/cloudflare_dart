@@ -158,11 +158,11 @@ class EmailSecurityPostReclassifyRequestExpectedDispositionEnum extends EnumClas
   @BuiltValueEnumConst(wireName: r'SUSPICIOUS')
   static const EmailSecurityPostReclassifyRequestExpectedDispositionEnum SUSPICIOUS = _$emailSecurityPostReclassifyRequestExpectedDispositionEnum_SUSPICIOUS;
 
-  static Serializer<EmailSecurityPostReclassifyRequestExpectedDispositionEnum> get serializer => _$emailSecurityPostReclassifyRequestExpectedDispositionSerializer;
+  static Serializer<EmailSecurityPostReclassifyRequestExpectedDispositionEnum> get serializer => _$emailSecurityPostReclassifyRequestExpectedDispositionEnumSerializer;
 
   const EmailSecurityPostReclassifyRequestExpectedDispositionEnum._(String name): super(name);
 
-  static BuiltSet<EmailSecurityPostReclassifyRequestExpectedDispositionEnum> get values => _$emailSecurityPostReclassifyRequestExpectedDispositionValues;
-  static EmailSecurityPostReclassifyRequestExpectedDispositionEnum valueOf(String name) => _$emailSecurityPostReclassifyRequestExpectedDispositionValueOf(name);
+  static BuiltSet<EmailSecurityPostReclassifyRequestExpectedDispositionEnum> get values => _$emailSecurityPostReclassifyRequestExpectedDispositionEnumValues;
+  static EmailSecurityPostReclassifyRequestExpectedDispositionEnum valueOf(String name) => _$emailSecurityPostReclassifyRequestExpectedDispositionEnumValueOf(name);
 }
 

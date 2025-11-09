@@ -166,11 +166,11 @@ class WorkersBindingKindDispatchNamespaceTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'dispatch_namespace')
   static const WorkersBindingKindDispatchNamespaceTypeEnum dispatchNamespace = _$workersBindingKindDispatchNamespaceTypeEnum_dispatchNamespace;
 
-  static Serializer<WorkersBindingKindDispatchNamespaceTypeEnum> get serializer => _$workersBindingKindDispatchNamespaceTypeSerializer;
+  static Serializer<WorkersBindingKindDispatchNamespaceTypeEnum> get serializer => _$workersBindingKindDispatchNamespaceTypeEnumSerializer;
 
   const WorkersBindingKindDispatchNamespaceTypeEnum._(String name): super(name);
 
-  static BuiltSet<WorkersBindingKindDispatchNamespaceTypeEnum> get values => _$workersBindingKindDispatchNamespaceTypeValues;
-  static WorkersBindingKindDispatchNamespaceTypeEnum valueOf(String name) => _$workersBindingKindDispatchNamespaceTypeValueOf(name);
+  static BuiltSet<WorkersBindingKindDispatchNamespaceTypeEnum> get values => _$workersBindingKindDispatchNamespaceTypeEnumValues;
+  static WorkersBindingKindDispatchNamespaceTypeEnum valueOf(String name) => _$workersBindingKindDispatchNamespaceTypeEnumValueOf(name);
 }
 

@@ -334,11 +334,11 @@ class StartRecording200ResponseAllOfDataStatusEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'PAUSED')
   static const StartRecording200ResponseAllOfDataStatusEnum PAUSED = _$startRecording200ResponseAllOfDataStatusEnum_PAUSED;
 
-  static Serializer<StartRecording200ResponseAllOfDataStatusEnum> get serializer => _$startRecording200ResponseAllOfDataStatusSerializer;
+  static Serializer<StartRecording200ResponseAllOfDataStatusEnum> get serializer => _$startRecording200ResponseAllOfDataStatusEnumSerializer;
 
   const StartRecording200ResponseAllOfDataStatusEnum._(String name): super(name);
 
-  static BuiltSet<StartRecording200ResponseAllOfDataStatusEnum> get values => _$startRecording200ResponseAllOfDataStatusValues;
-  static StartRecording200ResponseAllOfDataStatusEnum valueOf(String name) => _$startRecording200ResponseAllOfDataStatusValueOf(name);
+  static BuiltSet<StartRecording200ResponseAllOfDataStatusEnum> get values => _$startRecording200ResponseAllOfDataStatusEnumValues;
+  static StartRecording200ResponseAllOfDataStatusEnum valueOf(String name) => _$startRecording200ResponseAllOfDataStatusEnumValueOf(name);
 }
 

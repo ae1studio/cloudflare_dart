@@ -143,11 +143,11 @@ class DnsSettingsDnsSettingsZonePatchAllOfNameserversTypeEnum extends EnumClass 
   @BuiltValueEnumConst(wireName: r'custom.zone')
   static const DnsSettingsDnsSettingsZonePatchAllOfNameserversTypeEnum customPeriodZone = _$dnsSettingsDnsSettingsZonePatchAllOfNameserversTypeEnum_customPeriodZone;
 
-  static Serializer<DnsSettingsDnsSettingsZonePatchAllOfNameserversTypeEnum> get serializer => _$dnsSettingsDnsSettingsZonePatchAllOfNameserversTypeSerializer;
+  static Serializer<DnsSettingsDnsSettingsZonePatchAllOfNameserversTypeEnum> get serializer => _$dnsSettingsDnsSettingsZonePatchAllOfNameserversTypeEnumSerializer;
 
   const DnsSettingsDnsSettingsZonePatchAllOfNameserversTypeEnum._(String name): super(name);
 
-  static BuiltSet<DnsSettingsDnsSettingsZonePatchAllOfNameserversTypeEnum> get values => _$dnsSettingsDnsSettingsZonePatchAllOfNameserversTypeValues;
-  static DnsSettingsDnsSettingsZonePatchAllOfNameserversTypeEnum valueOf(String name) => _$dnsSettingsDnsSettingsZonePatchAllOfNameserversTypeValueOf(name);
+  static BuiltSet<DnsSettingsDnsSettingsZonePatchAllOfNameserversTypeEnum> get values => _$dnsSettingsDnsSettingsZonePatchAllOfNameserversTypeEnumValues;
+  static DnsSettingsDnsSettingsZonePatchAllOfNameserversTypeEnum valueOf(String name) => _$dnsSettingsDnsSettingsZonePatchAllOfNameserversTypeEnumValueOf(name);
 }
 

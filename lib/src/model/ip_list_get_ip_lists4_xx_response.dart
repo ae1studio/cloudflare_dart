@@ -164,11 +164,11 @@ class _$IpListGetIpLists4XXResponseSerializer implements PrimitiveSerializer<IpL
 class IpListGetIpLists4XXResponseResultEnum extends EnumClass {
 
 
-  static Serializer<IpListGetIpLists4XXResponseResultEnum> get serializer => _$ipListGetIpLists4XXResponseResultSerializer;
+  static Serializer<IpListGetIpLists4XXResponseResultEnum> get serializer => _$ipListGetIpLists4XXResponseResultEnumSerializer;
 
   const IpListGetIpLists4XXResponseResultEnum._(String name): super(name);
 
-  static BuiltSet<IpListGetIpLists4XXResponseResultEnum> get values => _$ipListGetIpLists4XXResponseResultValues;
-  static IpListGetIpLists4XXResponseResultEnum valueOf(String name) => _$ipListGetIpLists4XXResponseResultValueOf(name);
+  static BuiltSet<IpListGetIpLists4XXResponseResultEnum> get values => _$ipListGetIpLists4XXResponseResultEnumValues;
+  static IpListGetIpLists4XXResponseResultEnum valueOf(String name) => _$ipListGetIpLists4XXResponseResultEnumValueOf(name);
 }
 

@@ -127,11 +127,11 @@ class R2LockRuleDateConditionTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'Date')
   static const R2LockRuleDateConditionTypeEnum date = _$r2LockRuleDateConditionTypeEnum_date;
 
-  static Serializer<R2LockRuleDateConditionTypeEnum> get serializer => _$r2LockRuleDateConditionTypeSerializer;
+  static Serializer<R2LockRuleDateConditionTypeEnum> get serializer => _$r2LockRuleDateConditionTypeEnumSerializer;
 
   const R2LockRuleDateConditionTypeEnum._(String name): super(name);
 
-  static BuiltSet<R2LockRuleDateConditionTypeEnum> get values => _$r2LockRuleDateConditionTypeValues;
-  static R2LockRuleDateConditionTypeEnum valueOf(String name) => _$r2LockRuleDateConditionTypeValueOf(name);
+  static BuiltSet<R2LockRuleDateConditionTypeEnum> get values => _$r2LockRuleDateConditionTypeEnumValues;
+  static R2LockRuleDateConditionTypeEnum valueOf(String name) => _$r2LockRuleDateConditionTypeEnumValueOf(name);
 }
 

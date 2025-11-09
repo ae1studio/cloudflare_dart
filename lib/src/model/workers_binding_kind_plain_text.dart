@@ -147,11 +147,11 @@ class WorkersBindingKindPlainTextTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'plain_text')
   static const WorkersBindingKindPlainTextTypeEnum plainText = _$workersBindingKindPlainTextTypeEnum_plainText;
 
-  static Serializer<WorkersBindingKindPlainTextTypeEnum> get serializer => _$workersBindingKindPlainTextTypeSerializer;
+  static Serializer<WorkersBindingKindPlainTextTypeEnum> get serializer => _$workersBindingKindPlainTextTypeEnumSerializer;
 
   const WorkersBindingKindPlainTextTypeEnum._(String name): super(name);
 
-  static BuiltSet<WorkersBindingKindPlainTextTypeEnum> get values => _$workersBindingKindPlainTextTypeValues;
-  static WorkersBindingKindPlainTextTypeEnum valueOf(String name) => _$workersBindingKindPlainTextTypeValueOf(name);
+  static BuiltSet<WorkersBindingKindPlainTextTypeEnum> get values => _$workersBindingKindPlainTextTypeEnumValues;
+  static WorkersBindingKindPlainTextTypeEnum valueOf(String name) => _$workersBindingKindPlainTextTypeEnumValueOf(name);
 }
 

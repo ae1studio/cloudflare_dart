@@ -132,11 +132,11 @@ class ZeroTrustGatewayProxyEndpointIpCreateKindEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'ip')
   static const ZeroTrustGatewayProxyEndpointIpCreateKindEnum ip = _$zeroTrustGatewayProxyEndpointIpCreateKindEnum_ip;
 
-  static Serializer<ZeroTrustGatewayProxyEndpointIpCreateKindEnum> get serializer => _$zeroTrustGatewayProxyEndpointIpCreateKindSerializer;
+  static Serializer<ZeroTrustGatewayProxyEndpointIpCreateKindEnum> get serializer => _$zeroTrustGatewayProxyEndpointIpCreateKindEnumSerializer;
 
   const ZeroTrustGatewayProxyEndpointIpCreateKindEnum._(String name): super(name);
 
-  static BuiltSet<ZeroTrustGatewayProxyEndpointIpCreateKindEnum> get values => _$zeroTrustGatewayProxyEndpointIpCreateKindValues;
-  static ZeroTrustGatewayProxyEndpointIpCreateKindEnum valueOf(String name) => _$zeroTrustGatewayProxyEndpointIpCreateKindValueOf(name);
+  static BuiltSet<ZeroTrustGatewayProxyEndpointIpCreateKindEnum> get values => _$zeroTrustGatewayProxyEndpointIpCreateKindEnumValues;
+  static ZeroTrustGatewayProxyEndpointIpCreateKindEnum valueOf(String name) => _$zeroTrustGatewayProxyEndpointIpCreateKindEnumValueOf(name);
 }
 

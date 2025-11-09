@@ -156,11 +156,11 @@ class ZonesSchemasEmailObfuscationIdEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'email_obfuscation')
   static const ZonesSchemasEmailObfuscationIdEnum emailObfuscation = _$zonesSchemasEmailObfuscationIdEnum_emailObfuscation;
 
-  static Serializer<ZonesSchemasEmailObfuscationIdEnum> get serializer => _$zonesSchemasEmailObfuscationIdSerializer;
+  static Serializer<ZonesSchemasEmailObfuscationIdEnum> get serializer => _$zonesSchemasEmailObfuscationIdEnumSerializer;
 
   const ZonesSchemasEmailObfuscationIdEnum._(String name): super(name);
 
-  static BuiltSet<ZonesSchemasEmailObfuscationIdEnum> get values => _$zonesSchemasEmailObfuscationIdValues;
-  static ZonesSchemasEmailObfuscationIdEnum valueOf(String name) => _$zonesSchemasEmailObfuscationIdValueOf(name);
+  static BuiltSet<ZonesSchemasEmailObfuscationIdEnum> get values => _$zonesSchemasEmailObfuscationIdEnumValues;
+  static ZonesSchemasEmailObfuscationIdEnum valueOf(String name) => _$zonesSchemasEmailObfuscationIdEnumValueOf(name);
 }
 

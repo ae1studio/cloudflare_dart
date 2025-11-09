@@ -92,11 +92,11 @@ class MconnEventKEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'ConfigureCloudflaredTunnel')
   static const MconnEventKEnum configureCloudflaredTunnel = _$mconnEventKEnum_configureCloudflaredTunnel;
 
-  static Serializer<MconnEventKEnum> get serializer => _$mconnEventKSerializer;
+  static Serializer<MconnEventKEnum> get serializer => _$mconnEventKEnumSerializer;
 
   const MconnEventKEnum._(String name): super(name);
 
-  static BuiltSet<MconnEventKEnum> get values => _$mconnEventKValues;
-  static MconnEventKEnum valueOf(String name) => _$mconnEventKValueOf(name);
+  static BuiltSet<MconnEventKEnum> get values => _$mconnEventKEnumValues;
+  static MconnEventKEnum valueOf(String name) => _$mconnEventKEnumValueOf(name);
 }
 

@@ -165,11 +165,11 @@ class _$MagicNetworkMonitoringRulesListRules4XXResponseSerializer implements Pri
 class MagicNetworkMonitoringRulesListRules4XXResponseResultEnum extends EnumClass {
 
 
-  static Serializer<MagicNetworkMonitoringRulesListRules4XXResponseResultEnum> get serializer => _$magicNetworkMonitoringRulesListRules4XXResponseResultSerializer;
+  static Serializer<MagicNetworkMonitoringRulesListRules4XXResponseResultEnum> get serializer => _$magicNetworkMonitoringRulesListRules4XXResponseResultEnumSerializer;
 
   const MagicNetworkMonitoringRulesListRules4XXResponseResultEnum._(String name): super(name);
 
-  static BuiltSet<MagicNetworkMonitoringRulesListRules4XXResponseResultEnum> get values => _$magicNetworkMonitoringRulesListRules4XXResponseResultValues;
-  static MagicNetworkMonitoringRulesListRules4XXResponseResultEnum valueOf(String name) => _$magicNetworkMonitoringRulesListRules4XXResponseResultValueOf(name);
+  static BuiltSet<MagicNetworkMonitoringRulesListRules4XXResponseResultEnum> get values => _$magicNetworkMonitoringRulesListRules4XXResponseResultEnumValues;
+  static MagicNetworkMonitoringRulesListRules4XXResponseResultEnum valueOf(String name) => _$magicNetworkMonitoringRulesListRules4XXResponseResultEnumValueOf(name);
 }
 

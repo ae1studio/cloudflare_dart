@@ -96,7 +96,7 @@ abstract class ZeroTrustGatewayBlockPageSettings implements Built<ZeroTrustGatew
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(ZeroTrustGatewayBlockPageSettingsBuilder b) => b
-      ..mode = const ZeroTrustGatewayBlockPageSettingsModeEnum._('');
+      ..mode = ZeroTrustGatewayBlockPageSettingsModeEnum.valueOf('');
 
   @BuiltValueSerializer(custom: true)
   static Serializer<ZeroTrustGatewayBlockPageSettings> get serializer => _$ZeroTrustGatewayBlockPageSettingsSerializer();
@@ -392,11 +392,11 @@ class ZeroTrustGatewayBlockPageSettingsModeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'redirect_uri')
   static const ZeroTrustGatewayBlockPageSettingsModeEnum redirectUri = _$zeroTrustGatewayBlockPageSettingsModeEnum_redirectUri;
 
-  static Serializer<ZeroTrustGatewayBlockPageSettingsModeEnum> get serializer => _$zeroTrustGatewayBlockPageSettingsModeSerializer;
+  static Serializer<ZeroTrustGatewayBlockPageSettingsModeEnum> get serializer => _$zeroTrustGatewayBlockPageSettingsModeEnumSerializer;
 
   const ZeroTrustGatewayBlockPageSettingsModeEnum._(String name): super(name);
 
-  static BuiltSet<ZeroTrustGatewayBlockPageSettingsModeEnum> get values => _$zeroTrustGatewayBlockPageSettingsModeValues;
-  static ZeroTrustGatewayBlockPageSettingsModeEnum valueOf(String name) => _$zeroTrustGatewayBlockPageSettingsModeValueOf(name);
+  static BuiltSet<ZeroTrustGatewayBlockPageSettingsModeEnum> get values => _$zeroTrustGatewayBlockPageSettingsModeEnumValues;
+  static ZeroTrustGatewayBlockPageSettingsModeEnum valueOf(String name) => _$zeroTrustGatewayBlockPageSettingsModeEnumValueOf(name);
 }
 

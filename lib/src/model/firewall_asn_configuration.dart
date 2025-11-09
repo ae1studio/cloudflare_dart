@@ -134,11 +134,11 @@ class FirewallAsnConfigurationTargetEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'asn')
   static const FirewallAsnConfigurationTargetEnum asn = _$firewallAsnConfigurationTargetEnum_asn;
 
-  static Serializer<FirewallAsnConfigurationTargetEnum> get serializer => _$firewallAsnConfigurationTargetSerializer;
+  static Serializer<FirewallAsnConfigurationTargetEnum> get serializer => _$firewallAsnConfigurationTargetEnumSerializer;
 
   const FirewallAsnConfigurationTargetEnum._(String name): super(name);
 
-  static BuiltSet<FirewallAsnConfigurationTargetEnum> get values => _$firewallAsnConfigurationTargetValues;
-  static FirewallAsnConfigurationTargetEnum valueOf(String name) => _$firewallAsnConfigurationTargetValueOf(name);
+  static BuiltSet<FirewallAsnConfigurationTargetEnum> get values => _$firewallAsnConfigurationTargetEnumValues;
+  static FirewallAsnConfigurationTargetEnum valueOf(String name) => _$firewallAsnConfigurationTargetEnumValueOf(name);
 }
 

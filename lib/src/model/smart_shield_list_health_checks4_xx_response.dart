@@ -164,11 +164,11 @@ class _$SmartShieldListHealthChecks4XXResponseSerializer implements PrimitiveSer
 class SmartShieldListHealthChecks4XXResponseResultEnum extends EnumClass {
 
 
-  static Serializer<SmartShieldListHealthChecks4XXResponseResultEnum> get serializer => _$smartShieldListHealthChecks4XXResponseResultSerializer;
+  static Serializer<SmartShieldListHealthChecks4XXResponseResultEnum> get serializer => _$smartShieldListHealthChecks4XXResponseResultEnumSerializer;
 
   const SmartShieldListHealthChecks4XXResponseResultEnum._(String name): super(name);
 
-  static BuiltSet<SmartShieldListHealthChecks4XXResponseResultEnum> get values => _$smartShieldListHealthChecks4XXResponseResultValues;
-  static SmartShieldListHealthChecks4XXResponseResultEnum valueOf(String name) => _$smartShieldListHealthChecks4XXResponseResultValueOf(name);
+  static BuiltSet<SmartShieldListHealthChecks4XXResponseResultEnum> get values => _$smartShieldListHealthChecks4XXResponseResultEnumValues;
+  static SmartShieldListHealthChecks4XXResponseResultEnum valueOf(String name) => _$smartShieldListHealthChecks4XXResponseResultEnumValueOf(name);
 }
 

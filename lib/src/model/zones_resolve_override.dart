@@ -134,11 +134,11 @@ class ZonesResolveOverrideIdEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'resolve_override')
   static const ZonesResolveOverrideIdEnum resolveOverride = _$zonesResolveOverrideIdEnum_resolveOverride;
 
-  static Serializer<ZonesResolveOverrideIdEnum> get serializer => _$zonesResolveOverrideIdSerializer;
+  static Serializer<ZonesResolveOverrideIdEnum> get serializer => _$zonesResolveOverrideIdEnumSerializer;
 
   const ZonesResolveOverrideIdEnum._(String name): super(name);
 
-  static BuiltSet<ZonesResolveOverrideIdEnum> get values => _$zonesResolveOverrideIdValues;
-  static ZonesResolveOverrideIdEnum valueOf(String name) => _$zonesResolveOverrideIdValueOf(name);
+  static BuiltSet<ZonesResolveOverrideIdEnum> get values => _$zonesResolveOverrideIdEnumValues;
+  static ZonesResolveOverrideIdEnum valueOf(String name) => _$zonesResolveOverrideIdEnumValueOf(name);
 }
 

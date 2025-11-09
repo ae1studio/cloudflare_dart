@@ -16,7 +16,7 @@ class TeamsDevicesTrustStoresEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'user')
   static const TeamsDevicesTrustStoresEnum user = _$user;
 
-  static Serializer<TeamsDevicesTrustStoresEnum> get serializer => _$teamsDevicesTrustStoresSerializer;
+  static Serializer<TeamsDevicesTrustStoresEnum> get serializer => _$teamsDevicesTrustStoresEnumSerializer;
 
   const TeamsDevicesTrustStoresEnum._(String name): super(name);
 

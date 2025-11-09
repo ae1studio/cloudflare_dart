@@ -3,7 +3,7 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:cloudflare_dart/src/model/workers_kv_list_metadata.dart';
+import 'package:built_value/json_object.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
@@ -22,7 +22,7 @@ abstract class WorkersKvKey implements Built<WorkersKvKey, WorkersKvKeyBuilder> 
   num? get expiration;
 
   @BuiltValueField(wireName: r'metadata')
-  WorkersKvListMetadata? get metadata;
+  JsonObject? get metadata;
 
   /// A key's name. The name may be at most 512 bytes. All printable, non-whitespace characters are valid. Use percent-encoding to define key names as part of a URL.
   @BuiltValueField(wireName: r'name')
@@ -62,7 +62,7 @@ class _$WorkersKvKeySerializer implements PrimitiveSerializer<WorkersKvKey> {
       yield r'metadata';
       yield serializers.serialize(
         object.metadata,
-        specifiedType: const FullType(WorkersKvListMetadata),
+        specifiedType: const FullType(JsonObject),
       );
     }
     yield r'name';
@@ -103,8 +103,8 @@ class _$WorkersKvKeySerializer implements PrimitiveSerializer<WorkersKvKey> {
         case r'metadata':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(WorkersKvListMetadata),
-          ) as WorkersKvListMetadata;
+            specifiedType: const FullType(JsonObject),
+          ) as JsonObject;
           result.metadata.replace(valueDes);
           break;
         case r'name':

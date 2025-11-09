@@ -136,11 +136,11 @@ class ApiShieldPerOperationSettingMitigationActionEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'none')
   static const ApiShieldPerOperationSettingMitigationActionEnum none = _$apiShieldPerOperationSettingMitigationActionEnum_none;
 
-  static Serializer<ApiShieldPerOperationSettingMitigationActionEnum> get serializer => _$apiShieldPerOperationSettingMitigationActionSerializer;
+  static Serializer<ApiShieldPerOperationSettingMitigationActionEnum> get serializer => _$apiShieldPerOperationSettingMitigationActionEnumSerializer;
 
   const ApiShieldPerOperationSettingMitigationActionEnum._(String name): super(name);
 
-  static BuiltSet<ApiShieldPerOperationSettingMitigationActionEnum> get values => _$apiShieldPerOperationSettingMitigationActionValues;
-  static ApiShieldPerOperationSettingMitigationActionEnum valueOf(String name) => _$apiShieldPerOperationSettingMitigationActionValueOf(name);
+  static BuiltSet<ApiShieldPerOperationSettingMitigationActionEnum> get values => _$apiShieldPerOperationSettingMitigationActionEnumValues;
+  static ApiShieldPerOperationSettingMitigationActionEnum valueOf(String name) => _$apiShieldPerOperationSettingMitigationActionEnumValueOf(name);
 }
 

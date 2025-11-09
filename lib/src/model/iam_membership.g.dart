@@ -94,9 +94,10 @@ class IamMembershipBuilder
   String? get id => _$this._id;
   set id(String? id) => _$this._id = id;
 
-  IamPermissions? _permissions;
-  IamPermissions? get permissions => _$this._permissions;
-  set permissions(IamPermissions? permissions) =>
+  IamPermissionsBuilder? _permissions;
+  IamPermissionsBuilder get permissions =>
+      _$this._permissions ??= IamPermissionsBuilder();
+  set permissions(IamPermissionsBuilder? permissions) =>
       _$this._permissions = permissions;
 
   ListBuilder<String>? _roles;
@@ -117,7 +118,7 @@ class IamMembershipBuilder
       _account = $v.account?.toBuilder();
       _apiAccessEnabled = $v.apiAccessEnabled;
       _id = $v.id;
-      _permissions = $v.permissions;
+      _permissions = $v.permissions?.toBuilder();
       _roles = $v.roles?.toBuilder();
       _status = $v.status;
       _$v = null;
@@ -146,7 +147,7 @@ class IamMembershipBuilder
             account: _account?.build(),
             apiAccessEnabled: apiAccessEnabled,
             id: id,
-            permissions: permissions,
+            permissions: _permissions?.build(),
             roles: _roles?.build(),
             status: status,
           );
@@ -156,6 +157,8 @@ class IamMembershipBuilder
         _$failedField = 'account';
         _account?.build();
 
+        _$failedField = 'permissions';
+        _permissions?.build();
         _$failedField = 'roles';
         _roles?.build();
       } catch (e) {

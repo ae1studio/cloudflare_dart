@@ -156,11 +156,11 @@ class ZonesOpportunisticOnionIdEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'opportunistic_onion')
   static const ZonesOpportunisticOnionIdEnum opportunisticOnion = _$zonesOpportunisticOnionIdEnum_opportunisticOnion;
 
-  static Serializer<ZonesOpportunisticOnionIdEnum> get serializer => _$zonesOpportunisticOnionIdSerializer;
+  static Serializer<ZonesOpportunisticOnionIdEnum> get serializer => _$zonesOpportunisticOnionIdEnumSerializer;
 
   const ZonesOpportunisticOnionIdEnum._(String name): super(name);
 
-  static BuiltSet<ZonesOpportunisticOnionIdEnum> get values => _$zonesOpportunisticOnionIdValues;
-  static ZonesOpportunisticOnionIdEnum valueOf(String name) => _$zonesOpportunisticOnionIdValueOf(name);
+  static BuiltSet<ZonesOpportunisticOnionIdEnum> get values => _$zonesOpportunisticOnionIdEnumValues;
+  static ZonesOpportunisticOnionIdEnum valueOf(String name) => _$zonesOpportunisticOnionIdEnumValueOf(name);
 }
 

@@ -145,11 +145,11 @@ class ZonesCacheRulesOriginMaxHttpVersionIdEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'origin_max_http_version')
   static const ZonesCacheRulesOriginMaxHttpVersionIdEnum originMaxHttpVersion = _$zonesCacheRulesOriginMaxHttpVersionIdEnum_originMaxHttpVersion;
 
-  static Serializer<ZonesCacheRulesOriginMaxHttpVersionIdEnum> get serializer => _$zonesCacheRulesOriginMaxHttpVersionIdSerializer;
+  static Serializer<ZonesCacheRulesOriginMaxHttpVersionIdEnum> get serializer => _$zonesCacheRulesOriginMaxHttpVersionIdEnumSerializer;
 
   const ZonesCacheRulesOriginMaxHttpVersionIdEnum._(String name): super(name);
 
-  static BuiltSet<ZonesCacheRulesOriginMaxHttpVersionIdEnum> get values => _$zonesCacheRulesOriginMaxHttpVersionIdValues;
-  static ZonesCacheRulesOriginMaxHttpVersionIdEnum valueOf(String name) => _$zonesCacheRulesOriginMaxHttpVersionIdValueOf(name);
+  static BuiltSet<ZonesCacheRulesOriginMaxHttpVersionIdEnum> get values => _$zonesCacheRulesOriginMaxHttpVersionIdEnumValues;
+  static ZonesCacheRulesOriginMaxHttpVersionIdEnum valueOf(String name) => _$zonesCacheRulesOriginMaxHttpVersionIdEnumValueOf(name);
 }
 

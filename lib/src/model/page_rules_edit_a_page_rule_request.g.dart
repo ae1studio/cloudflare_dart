@@ -14,7 +14,7 @@ class _$PageRulesEditAPageRuleRequest extends PageRulesEditAPageRuleRequest {
   @override
   final ZonesStatus? status;
   @override
-  final BuiltList<ZonesTarget>? targets;
+  final BuiltList<ZonesUrlTarget>? targets;
 
   factory _$PageRulesEditAPageRuleRequest(
           [void Function(PageRulesEditAPageRuleRequestBuilder)? updates]) =>
@@ -84,10 +84,11 @@ class PageRulesEditAPageRuleRequestBuilder
   ZonesStatus? get status => _$this._status;
   set status(ZonesStatus? status) => _$this._status = status;
 
-  ListBuilder<ZonesTarget>? _targets;
-  ListBuilder<ZonesTarget> get targets =>
-      _$this._targets ??= ListBuilder<ZonesTarget>();
-  set targets(ListBuilder<ZonesTarget>? targets) => _$this._targets = targets;
+  ListBuilder<ZonesUrlTarget>? _targets;
+  ListBuilder<ZonesUrlTarget> get targets =>
+      _$this._targets ??= ListBuilder<ZonesUrlTarget>();
+  set targets(ListBuilder<ZonesUrlTarget>? targets) =>
+      _$this._targets = targets;
 
   PageRulesEditAPageRuleRequestBuilder() {
     PageRulesEditAPageRuleRequest._defaults(this);

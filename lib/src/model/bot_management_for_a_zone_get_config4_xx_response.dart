@@ -150,11 +150,11 @@ class _$BotManagementForAZoneGetConfig4XXResponseSerializer implements Primitive
 class BotManagementForAZoneGetConfig4XXResponseResultEnum extends EnumClass {
 
 
-  static Serializer<BotManagementForAZoneGetConfig4XXResponseResultEnum> get serializer => _$botManagementForAZoneGetConfig4XXResponseResultSerializer;
+  static Serializer<BotManagementForAZoneGetConfig4XXResponseResultEnum> get serializer => _$botManagementForAZoneGetConfig4XXResponseResultEnumSerializer;
 
   const BotManagementForAZoneGetConfig4XXResponseResultEnum._(String name): super(name);
 
-  static BuiltSet<BotManagementForAZoneGetConfig4XXResponseResultEnum> get values => _$botManagementForAZoneGetConfig4XXResponseResultValues;
-  static BotManagementForAZoneGetConfig4XXResponseResultEnum valueOf(String name) => _$botManagementForAZoneGetConfig4XXResponseResultValueOf(name);
+  static BuiltSet<BotManagementForAZoneGetConfig4XXResponseResultEnum> get values => _$botManagementForAZoneGetConfig4XXResponseResultEnumValues;
+  static BotManagementForAZoneGetConfig4XXResponseResultEnum valueOf(String name) => _$botManagementForAZoneGetConfig4XXResponseResultEnumValueOf(name);
 }
 

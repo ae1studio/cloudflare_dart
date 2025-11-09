@@ -11,16 +11,13 @@ part 'realtimekit_preset_ui_design_tokens_colors_background.g.dart';
 /// RealtimekitPresetUiDesignTokensColorsBackground
 ///
 /// Properties:
-/// * [n1000] 
 /// * [n600] 
 /// * [n700] 
 /// * [n800] 
 /// * [n900] 
+/// * [n1000] 
 @BuiltValue()
 abstract class RealtimekitPresetUiDesignTokensColorsBackground implements Built<RealtimekitPresetUiDesignTokensColorsBackground, RealtimekitPresetUiDesignTokensColorsBackgroundBuilder> {
-  @BuiltValueField(wireName: r'1000')
-  String get n1000;
-
   @BuiltValueField(wireName: r'600')
   String get n600;
 
@@ -33,17 +30,20 @@ abstract class RealtimekitPresetUiDesignTokensColorsBackground implements Built<
   @BuiltValueField(wireName: r'900')
   String get n900;
 
+  @BuiltValueField(wireName: r'1000')
+  String get n1000;
+
   RealtimekitPresetUiDesignTokensColorsBackground._();
 
   factory RealtimekitPresetUiDesignTokensColorsBackground([void updates(RealtimekitPresetUiDesignTokensColorsBackgroundBuilder b)]) = _$RealtimekitPresetUiDesignTokensColorsBackground;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(RealtimekitPresetUiDesignTokensColorsBackgroundBuilder b) => b
-      ..n1000 = '#141414'
       ..n600 = '#222222'
       ..n700 = '#1f1f1f'
       ..n800 = '#1b1b1b'
-      ..n900 = '#181818';
+      ..n900 = '#181818'
+      ..n1000 = '#141414';
 
   @BuiltValueSerializer(custom: true)
   static Serializer<RealtimekitPresetUiDesignTokensColorsBackground> get serializer => _$RealtimekitPresetUiDesignTokensColorsBackgroundSerializer();
@@ -61,11 +61,6 @@ class _$RealtimekitPresetUiDesignTokensColorsBackgroundSerializer implements Pri
     RealtimekitPresetUiDesignTokensColorsBackground object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
-    yield r'1000';
-    yield serializers.serialize(
-      object.n1000,
-      specifiedType: const FullType(String),
-    );
     yield r'600';
     yield serializers.serialize(
       object.n600,
@@ -84,6 +79,11 @@ class _$RealtimekitPresetUiDesignTokensColorsBackgroundSerializer implements Pri
     yield r'900';
     yield serializers.serialize(
       object.n900,
+      specifiedType: const FullType(String),
+    );
+    yield r'1000';
+    yield serializers.serialize(
+      object.n1000,
       specifiedType: const FullType(String),
     );
   }
@@ -109,13 +109,6 @@ class _$RealtimekitPresetUiDesignTokensColorsBackgroundSerializer implements Pri
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'1000':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.n1000 = valueDes;
-          break;
         case r'600':
           final valueDes = serializers.deserialize(
             value,
@@ -143,6 +136,13 @@ class _$RealtimekitPresetUiDesignTokensColorsBackgroundSerializer implements Pri
             specifiedType: const FullType(String),
           ) as String;
           result.n900 = valueDes;
+          break;
+        case r'1000':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.n1000 = valueDes;
           break;
         default:
           unhandled.add(key);

@@ -163,11 +163,11 @@ class _$Web3HostnameCreateWeb3Hostname5XXResponseSerializer implements Primitive
 class Web3HostnameCreateWeb3Hostname5XXResponseResultEnum extends EnumClass {
 
 
-  static Serializer<Web3HostnameCreateWeb3Hostname5XXResponseResultEnum> get serializer => _$web3HostnameCreateWeb3Hostname5XXResponseResultSerializer;
+  static Serializer<Web3HostnameCreateWeb3Hostname5XXResponseResultEnum> get serializer => _$web3HostnameCreateWeb3Hostname5XXResponseResultEnumSerializer;
 
   const Web3HostnameCreateWeb3Hostname5XXResponseResultEnum._(String name): super(name);
 
-  static BuiltSet<Web3HostnameCreateWeb3Hostname5XXResponseResultEnum> get values => _$web3HostnameCreateWeb3Hostname5XXResponseResultValues;
-  static Web3HostnameCreateWeb3Hostname5XXResponseResultEnum valueOf(String name) => _$web3HostnameCreateWeb3Hostname5XXResponseResultValueOf(name);
+  static BuiltSet<Web3HostnameCreateWeb3Hostname5XXResponseResultEnum> get values => _$web3HostnameCreateWeb3Hostname5XXResponseResultEnumValues;
+  static Web3HostnameCreateWeb3Hostname5XXResponseResultEnum valueOf(String name) => _$web3HostnameCreateWeb3Hostname5XXResponseResultEnumValueOf(name);
 }
 

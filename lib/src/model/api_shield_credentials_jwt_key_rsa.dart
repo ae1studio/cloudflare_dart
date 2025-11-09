@@ -194,12 +194,12 @@ class ApiShieldCredentialsJWTKeyRSAAlgEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'PS512')
   static const ApiShieldCredentialsJWTKeyRSAAlgEnum pS512 = _$apiShieldCredentialsJWTKeyRSAAlgEnum_pS512;
 
-  static Serializer<ApiShieldCredentialsJWTKeyRSAAlgEnum> get serializer => _$apiShieldCredentialsJWTKeyRSAAlgSerializer;
+  static Serializer<ApiShieldCredentialsJWTKeyRSAAlgEnum> get serializer => _$apiShieldCredentialsJWTKeyRSAAlgEnumSerializer;
 
   const ApiShieldCredentialsJWTKeyRSAAlgEnum._(String name): super(name);
 
-  static BuiltSet<ApiShieldCredentialsJWTKeyRSAAlgEnum> get values => _$apiShieldCredentialsJWTKeyRSAAlgValues;
-  static ApiShieldCredentialsJWTKeyRSAAlgEnum valueOf(String name) => _$apiShieldCredentialsJWTKeyRSAAlgValueOf(name);
+  static BuiltSet<ApiShieldCredentialsJWTKeyRSAAlgEnum> get values => _$apiShieldCredentialsJWTKeyRSAAlgEnumValues;
+  static ApiShieldCredentialsJWTKeyRSAAlgEnum valueOf(String name) => _$apiShieldCredentialsJWTKeyRSAAlgEnumValueOf(name);
 }
 
 class ApiShieldCredentialsJWTKeyRSAKtyEnum extends EnumClass {
@@ -208,11 +208,11 @@ class ApiShieldCredentialsJWTKeyRSAKtyEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'RSA')
   static const ApiShieldCredentialsJWTKeyRSAKtyEnum RSA = _$apiShieldCredentialsJWTKeyRSAKtyEnum_RSA;
 
-  static Serializer<ApiShieldCredentialsJWTKeyRSAKtyEnum> get serializer => _$apiShieldCredentialsJWTKeyRSAKtySerializer;
+  static Serializer<ApiShieldCredentialsJWTKeyRSAKtyEnum> get serializer => _$apiShieldCredentialsJWTKeyRSAKtyEnumSerializer;
 
   const ApiShieldCredentialsJWTKeyRSAKtyEnum._(String name): super(name);
 
-  static BuiltSet<ApiShieldCredentialsJWTKeyRSAKtyEnum> get values => _$apiShieldCredentialsJWTKeyRSAKtyValues;
-  static ApiShieldCredentialsJWTKeyRSAKtyEnum valueOf(String name) => _$apiShieldCredentialsJWTKeyRSAKtyValueOf(name);
+  static BuiltSet<ApiShieldCredentialsJWTKeyRSAKtyEnum> get values => _$apiShieldCredentialsJWTKeyRSAKtyEnumValues;
+  static ApiShieldCredentialsJWTKeyRSAKtyEnum valueOf(String name) => _$apiShieldCredentialsJWTKeyRSAKtyEnumValueOf(name);
 }
 

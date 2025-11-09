@@ -149,11 +149,11 @@ class _$WorkerScriptUpdateCreateAssetsUploadSession4XXResponseSerializer impleme
 class WorkerScriptUpdateCreateAssetsUploadSession4XXResponseResultEnum extends EnumClass {
 
 
-  static Serializer<WorkerScriptUpdateCreateAssetsUploadSession4XXResponseResultEnum> get serializer => _$workerScriptUpdateCreateAssetsUploadSession4XXResponseResultSerializer;
+  static Serializer<WorkerScriptUpdateCreateAssetsUploadSession4XXResponseResultEnum> get serializer => _$workerScriptUpdateCreateAssetsUploadSession4XXResponseResultEnumSerializer;
 
   const WorkerScriptUpdateCreateAssetsUploadSession4XXResponseResultEnum._(String name): super(name);
 
-  static BuiltSet<WorkerScriptUpdateCreateAssetsUploadSession4XXResponseResultEnum> get values => _$workerScriptUpdateCreateAssetsUploadSession4XXResponseResultValues;
-  static WorkerScriptUpdateCreateAssetsUploadSession4XXResponseResultEnum valueOf(String name) => _$workerScriptUpdateCreateAssetsUploadSession4XXResponseResultValueOf(name);
+  static BuiltSet<WorkerScriptUpdateCreateAssetsUploadSession4XXResponseResultEnum> get values => _$workerScriptUpdateCreateAssetsUploadSession4XXResponseResultEnumValues;
+  static WorkerScriptUpdateCreateAssetsUploadSession4XXResponseResultEnum valueOf(String name) => _$workerScriptUpdateCreateAssetsUploadSession4XXResponseResultEnumValueOf(name);
 }
 

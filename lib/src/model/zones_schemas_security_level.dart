@@ -156,11 +156,11 @@ class ZonesSchemasSecurityLevelIdEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'security_level')
   static const ZonesSchemasSecurityLevelIdEnum securityLevel = _$zonesSchemasSecurityLevelIdEnum_securityLevel;
 
-  static Serializer<ZonesSchemasSecurityLevelIdEnum> get serializer => _$zonesSchemasSecurityLevelIdSerializer;
+  static Serializer<ZonesSchemasSecurityLevelIdEnum> get serializer => _$zonesSchemasSecurityLevelIdEnumSerializer;
 
   const ZonesSchemasSecurityLevelIdEnum._(String name): super(name);
 
-  static BuiltSet<ZonesSchemasSecurityLevelIdEnum> get values => _$zonesSchemasSecurityLevelIdValues;
-  static ZonesSchemasSecurityLevelIdEnum valueOf(String name) => _$zonesSchemasSecurityLevelIdValueOf(name);
+  static BuiltSet<ZonesSchemasSecurityLevelIdEnum> get values => _$zonesSchemasSecurityLevelIdEnumValues;
+  static ZonesSchemasSecurityLevelIdEnum valueOf(String name) => _$zonesSchemasSecurityLevelIdEnumValueOf(name);
 }
 

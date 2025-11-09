@@ -131,11 +131,11 @@ class DigitalExperienceMonitoringAggregateTimePeriodUnitsEnum extends EnumClass 
   @BuiltValueEnumConst(wireName: r'testRuns')
   static const DigitalExperienceMonitoringAggregateTimePeriodUnitsEnum testRuns = _$digitalExperienceMonitoringAggregateTimePeriodUnitsEnum_testRuns;
 
-  static Serializer<DigitalExperienceMonitoringAggregateTimePeriodUnitsEnum> get serializer => _$digitalExperienceMonitoringAggregateTimePeriodUnitsSerializer;
+  static Serializer<DigitalExperienceMonitoringAggregateTimePeriodUnitsEnum> get serializer => _$digitalExperienceMonitoringAggregateTimePeriodUnitsEnumSerializer;
 
   const DigitalExperienceMonitoringAggregateTimePeriodUnitsEnum._(String name): super(name);
 
-  static BuiltSet<DigitalExperienceMonitoringAggregateTimePeriodUnitsEnum> get values => _$digitalExperienceMonitoringAggregateTimePeriodUnitsValues;
-  static DigitalExperienceMonitoringAggregateTimePeriodUnitsEnum valueOf(String name) => _$digitalExperienceMonitoringAggregateTimePeriodUnitsValueOf(name);
+  static BuiltSet<DigitalExperienceMonitoringAggregateTimePeriodUnitsEnum> get values => _$digitalExperienceMonitoringAggregateTimePeriodUnitsEnumValues;
+  static DigitalExperienceMonitoringAggregateTimePeriodUnitsEnum valueOf(String name) => _$digitalExperienceMonitoringAggregateTimePeriodUnitsEnumValueOf(name);
 }
 

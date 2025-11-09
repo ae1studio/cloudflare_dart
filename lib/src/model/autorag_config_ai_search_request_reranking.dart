@@ -3,7 +3,6 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:cloudflare_dart/src/model/autorag_config_ai_search_request_reranking_model.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
@@ -20,7 +19,8 @@ abstract class AutoragConfigAiSearchRequestReranking implements Built<AutoragCon
   bool? get enabled;
 
   @BuiltValueField(wireName: r'model')
-  AutoragConfigAiSearchRequestRerankingModel? get model;
+  ModelEnum? get model;
+  // enum modelEnum {  @cf/baai/bge-reranker-base,  ,  };
 
   AutoragConfigAiSearchRequestReranking._();
 
@@ -57,7 +57,7 @@ class _$AutoragConfigAiSearchRequestRerankingSerializer implements PrimitiveSeri
       yield r'model';
       yield serializers.serialize(
         object.model,
-        specifiedType: const FullType(AutoragConfigAiSearchRequestRerankingModel),
+        specifiedType: const FullType(ModelEnum),
       );
     }
   }
@@ -93,9 +93,9 @@ class _$AutoragConfigAiSearchRequestRerankingSerializer implements PrimitiveSeri
         case r'model':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(AutoragConfigAiSearchRequestRerankingModel),
-          ) as AutoragConfigAiSearchRequestRerankingModel;
-          result.model.replace(valueDes);
+            specifiedType: const FullType(ModelEnum),
+          ) as ModelEnum;
+          result.model = valueDes;
           break;
         default:
           unhandled.add(key);

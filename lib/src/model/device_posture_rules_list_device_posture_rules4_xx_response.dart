@@ -165,11 +165,11 @@ class _$DevicePostureRulesListDevicePostureRules4XXResponseSerializer implements
 class DevicePostureRulesListDevicePostureRules4XXResponseResultEnum extends EnumClass {
 
 
-  static Serializer<DevicePostureRulesListDevicePostureRules4XXResponseResultEnum> get serializer => _$devicePostureRulesListDevicePostureRules4XXResponseResultSerializer;
+  static Serializer<DevicePostureRulesListDevicePostureRules4XXResponseResultEnum> get serializer => _$devicePostureRulesListDevicePostureRules4XXResponseResultEnumSerializer;
 
   const DevicePostureRulesListDevicePostureRules4XXResponseResultEnum._(String name): super(name);
 
-  static BuiltSet<DevicePostureRulesListDevicePostureRules4XXResponseResultEnum> get values => _$devicePostureRulesListDevicePostureRules4XXResponseResultValues;
-  static DevicePostureRulesListDevicePostureRules4XXResponseResultEnum valueOf(String name) => _$devicePostureRulesListDevicePostureRules4XXResponseResultValueOf(name);
+  static BuiltSet<DevicePostureRulesListDevicePostureRules4XXResponseResultEnum> get values => _$devicePostureRulesListDevicePostureRules4XXResponseResultEnumValues;
+  static DevicePostureRulesListDevicePostureRules4XXResponseResultEnum valueOf(String name) => _$devicePostureRulesListDevicePostureRules4XXResponseResultEnumValueOf(name);
 }
 

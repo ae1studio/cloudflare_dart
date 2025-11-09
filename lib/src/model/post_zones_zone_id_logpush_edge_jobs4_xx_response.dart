@@ -151,11 +151,11 @@ class _$PostZonesZoneIdLogpushEdgeJobs4XXResponseSerializer implements Primitive
 class PostZonesZoneIdLogpushEdgeJobs4XXResponseResultEnum extends EnumClass {
 
 
-  static Serializer<PostZonesZoneIdLogpushEdgeJobs4XXResponseResultEnum> get serializer => _$postZonesZoneIdLogpushEdgeJobs4XXResponseResultSerializer;
+  static Serializer<PostZonesZoneIdLogpushEdgeJobs4XXResponseResultEnum> get serializer => _$postZonesZoneIdLogpushEdgeJobs4XXResponseResultEnumSerializer;
 
   const PostZonesZoneIdLogpushEdgeJobs4XXResponseResultEnum._(String name): super(name);
 
-  static BuiltSet<PostZonesZoneIdLogpushEdgeJobs4XXResponseResultEnum> get values => _$postZonesZoneIdLogpushEdgeJobs4XXResponseResultValues;
-  static PostZonesZoneIdLogpushEdgeJobs4XXResponseResultEnum valueOf(String name) => _$postZonesZoneIdLogpushEdgeJobs4XXResponseResultValueOf(name);
+  static BuiltSet<PostZonesZoneIdLogpushEdgeJobs4XXResponseResultEnum> get values => _$postZonesZoneIdLogpushEdgeJobs4XXResponseResultEnumValues;
+  static PostZonesZoneIdLogpushEdgeJobs4XXResponseResultEnum valueOf(String name) => _$postZonesZoneIdLogpushEdgeJobs4XXResponseResultEnumValueOf(name);
 }
 

@@ -156,11 +156,11 @@ class ZonesSchemasIpGeolocationIdEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'ip_geolocation')
   static const ZonesSchemasIpGeolocationIdEnum ipGeolocation = _$zonesSchemasIpGeolocationIdEnum_ipGeolocation;
 
-  static Serializer<ZonesSchemasIpGeolocationIdEnum> get serializer => _$zonesSchemasIpGeolocationIdSerializer;
+  static Serializer<ZonesSchemasIpGeolocationIdEnum> get serializer => _$zonesSchemasIpGeolocationIdEnumSerializer;
 
   const ZonesSchemasIpGeolocationIdEnum._(String name): super(name);
 
-  static BuiltSet<ZonesSchemasIpGeolocationIdEnum> get values => _$zonesSchemasIpGeolocationIdValues;
-  static ZonesSchemasIpGeolocationIdEnum valueOf(String name) => _$zonesSchemasIpGeolocationIdValueOf(name);
+  static BuiltSet<ZonesSchemasIpGeolocationIdEnum> get values => _$zonesSchemasIpGeolocationIdEnumValues;
+  static ZonesSchemasIpGeolocationIdEnum valueOf(String name) => _$zonesSchemasIpGeolocationIdEnumValueOf(name);
 }
 

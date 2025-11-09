@@ -149,11 +149,11 @@ class _$CustomSslForAZoneCreateSslConfiguration4XXResponseSerializer implements 
 class CustomSslForAZoneCreateSslConfiguration4XXResponseResultEnum extends EnumClass {
 
 
-  static Serializer<CustomSslForAZoneCreateSslConfiguration4XXResponseResultEnum> get serializer => _$customSslForAZoneCreateSslConfiguration4XXResponseResultSerializer;
+  static Serializer<CustomSslForAZoneCreateSslConfiguration4XXResponseResultEnum> get serializer => _$customSslForAZoneCreateSslConfiguration4XXResponseResultEnumSerializer;
 
   const CustomSslForAZoneCreateSslConfiguration4XXResponseResultEnum._(String name): super(name);
 
-  static BuiltSet<CustomSslForAZoneCreateSslConfiguration4XXResponseResultEnum> get values => _$customSslForAZoneCreateSslConfiguration4XXResponseResultValues;
-  static CustomSslForAZoneCreateSslConfiguration4XXResponseResultEnum valueOf(String name) => _$customSslForAZoneCreateSslConfiguration4XXResponseResultValueOf(name);
+  static BuiltSet<CustomSslForAZoneCreateSslConfiguration4XXResponseResultEnum> get values => _$customSslForAZoneCreateSslConfiguration4XXResponseResultEnumValues;
+  static CustomSslForAZoneCreateSslConfiguration4XXResponseResultEnum valueOf(String name) => _$customSslForAZoneCreateSslConfiguration4XXResponseResultEnumValueOf(name);
 }
 

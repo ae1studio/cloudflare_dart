@@ -149,11 +149,11 @@ class _$DevicesRevokeDevices4XXResponseSerializer implements PrimitiveSerializer
 class DevicesRevokeDevices4XXResponseResultEnum extends EnumClass {
 
 
-  static Serializer<DevicesRevokeDevices4XXResponseResultEnum> get serializer => _$devicesRevokeDevices4XXResponseResultSerializer;
+  static Serializer<DevicesRevokeDevices4XXResponseResultEnum> get serializer => _$devicesRevokeDevices4XXResponseResultEnumSerializer;
 
   const DevicesRevokeDevices4XXResponseResultEnum._(String name): super(name);
 
-  static BuiltSet<DevicesRevokeDevices4XXResponseResultEnum> get values => _$devicesRevokeDevices4XXResponseResultValues;
-  static DevicesRevokeDevices4XXResponseResultEnum valueOf(String name) => _$devicesRevokeDevices4XXResponseResultValueOf(name);
+  static BuiltSet<DevicesRevokeDevices4XXResponseResultEnum> get values => _$devicesRevokeDevices4XXResponseResultEnumValues;
+  static DevicesRevokeDevices4XXResponseResultEnum valueOf(String name) => _$devicesRevokeDevices4XXResponseResultEnumValueOf(name);
 }
 

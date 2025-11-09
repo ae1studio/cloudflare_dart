@@ -133,11 +133,11 @@ class ApiShieldAuthIdCharacteristicTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'cookie')
   static const ApiShieldAuthIdCharacteristicTypeEnum cookie = _$apiShieldAuthIdCharacteristicTypeEnum_cookie;
 
-  static Serializer<ApiShieldAuthIdCharacteristicTypeEnum> get serializer => _$apiShieldAuthIdCharacteristicTypeSerializer;
+  static Serializer<ApiShieldAuthIdCharacteristicTypeEnum> get serializer => _$apiShieldAuthIdCharacteristicTypeEnumSerializer;
 
   const ApiShieldAuthIdCharacteristicTypeEnum._(String name): super(name);
 
-  static BuiltSet<ApiShieldAuthIdCharacteristicTypeEnum> get values => _$apiShieldAuthIdCharacteristicTypeValues;
-  static ApiShieldAuthIdCharacteristicTypeEnum valueOf(String name) => _$apiShieldAuthIdCharacteristicTypeValueOf(name);
+  static BuiltSet<ApiShieldAuthIdCharacteristicTypeEnum> get values => _$apiShieldAuthIdCharacteristicTypeEnumValues;
+  static ApiShieldAuthIdCharacteristicTypeEnum valueOf(String name) => _$apiShieldAuthIdCharacteristicTypeEnumValueOf(name);
 }
 

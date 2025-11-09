@@ -31,7 +31,7 @@ abstract class RealtimekitTrackLayerOutput implements Built<RealtimekitTrackLaye
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(RealtimekitTrackLayerOutputBuilder b) => b
-      ..type = const RealtimekitTrackLayerOutputTypeEnum._('REALTIMEKIT_BUCKET');
+      ..type = RealtimekitTrackLayerOutputTypeEnum.valueOf('REALTIMEKIT_BUCKET');
 
   @BuiltValueSerializer(custom: true)
   static Serializer<RealtimekitTrackLayerOutput> get serializer => _$RealtimekitTrackLayerOutputSerializer();
@@ -139,11 +139,11 @@ class RealtimekitTrackLayerOutputTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'STORAGE_CONFIG')
   static const RealtimekitTrackLayerOutputTypeEnum STORAGE_CONFIG = _$realtimekitTrackLayerOutputTypeEnum_STORAGE_CONFIG;
 
-  static Serializer<RealtimekitTrackLayerOutputTypeEnum> get serializer => _$realtimekitTrackLayerOutputTypeSerializer;
+  static Serializer<RealtimekitTrackLayerOutputTypeEnum> get serializer => _$realtimekitTrackLayerOutputTypeEnumSerializer;
 
   const RealtimekitTrackLayerOutputTypeEnum._(String name): super(name);
 
-  static BuiltSet<RealtimekitTrackLayerOutputTypeEnum> get values => _$realtimekitTrackLayerOutputTypeValues;
-  static RealtimekitTrackLayerOutputTypeEnum valueOf(String name) => _$realtimekitTrackLayerOutputTypeValueOf(name);
+  static BuiltSet<RealtimekitTrackLayerOutputTypeEnum> get values => _$realtimekitTrackLayerOutputTypeEnumValues;
+  static RealtimekitTrackLayerOutputTypeEnum valueOf(String name) => _$realtimekitTrackLayerOutputTypeEnumValueOf(name);
 }
 

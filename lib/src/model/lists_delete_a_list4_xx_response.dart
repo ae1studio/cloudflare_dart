@@ -148,11 +148,11 @@ class _$ListsDeleteAList4XXResponseSerializer implements PrimitiveSerializer<Lis
 class ListsDeleteAList4XXResponseResultEnum extends EnumClass {
 
 
-  static Serializer<ListsDeleteAList4XXResponseResultEnum> get serializer => _$listsDeleteAList4XXResponseResultSerializer;
+  static Serializer<ListsDeleteAList4XXResponseResultEnum> get serializer => _$listsDeleteAList4XXResponseResultEnumSerializer;
 
   const ListsDeleteAList4XXResponseResultEnum._(String name): super(name);
 
-  static BuiltSet<ListsDeleteAList4XXResponseResultEnum> get values => _$listsDeleteAList4XXResponseResultValues;
-  static ListsDeleteAList4XXResponseResultEnum valueOf(String name) => _$listsDeleteAList4XXResponseResultValueOf(name);
+  static BuiltSet<ListsDeleteAList4XXResponseResultEnum> get values => _$listsDeleteAList4XXResponseResultEnumValues;
+  static ListsDeleteAList4XXResponseResultEnum valueOf(String name) => _$listsDeleteAList4XXResponseResultEnumValueOf(name);
 }
 

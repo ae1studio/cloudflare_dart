@@ -20,7 +20,7 @@ part 'rulesets_rule.g.dart';
 /// * [actionParameters] - The parameters configuring the rule's action.
 /// * [categories] - The categories of the rule.
 /// * [description] - An informative description of the rule.
-/// * [enabled] 
+/// * [enabled] - Whether the rule should be executed.
 /// * [exposedCredentialCheck] 
 /// * [expression] - The expression defining which traffic will match the rule.
 /// * [id] - The unique ID of the rule.
@@ -47,6 +47,7 @@ abstract class RulesetsRule  {
   @BuiltValueField(wireName: r'description')
   String? get description;
 
+  /// Whether the rule should be executed.
   @BuiltValueField(wireName: r'enabled')
   bool? get enabled;
 

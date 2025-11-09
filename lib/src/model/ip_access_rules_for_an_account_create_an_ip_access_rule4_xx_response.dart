@@ -148,11 +148,11 @@ class _$IpAccessRulesForAnAccountCreateAnIpAccessRule4XXResponseSerializer imple
 class IpAccessRulesForAnAccountCreateAnIpAccessRule4XXResponseResultEnum extends EnumClass {
 
 
-  static Serializer<IpAccessRulesForAnAccountCreateAnIpAccessRule4XXResponseResultEnum> get serializer => _$ipAccessRulesForAnAccountCreateAnIpAccessRule4XXResponseResultSerializer;
+  static Serializer<IpAccessRulesForAnAccountCreateAnIpAccessRule4XXResponseResultEnum> get serializer => _$ipAccessRulesForAnAccountCreateAnIpAccessRule4XXResponseResultEnumSerializer;
 
   const IpAccessRulesForAnAccountCreateAnIpAccessRule4XXResponseResultEnum._(String name): super(name);
 
-  static BuiltSet<IpAccessRulesForAnAccountCreateAnIpAccessRule4XXResponseResultEnum> get values => _$ipAccessRulesForAnAccountCreateAnIpAccessRule4XXResponseResultValues;
-  static IpAccessRulesForAnAccountCreateAnIpAccessRule4XXResponseResultEnum valueOf(String name) => _$ipAccessRulesForAnAccountCreateAnIpAccessRule4XXResponseResultValueOf(name);
+  static BuiltSet<IpAccessRulesForAnAccountCreateAnIpAccessRule4XXResponseResultEnum> get values => _$ipAccessRulesForAnAccountCreateAnIpAccessRule4XXResponseResultEnumValues;
+  static IpAccessRulesForAnAccountCreateAnIpAccessRule4XXResponseResultEnum valueOf(String name) => _$ipAccessRulesForAnAccountCreateAnIpAccessRule4XXResponseResultEnumValueOf(name);
 }
 

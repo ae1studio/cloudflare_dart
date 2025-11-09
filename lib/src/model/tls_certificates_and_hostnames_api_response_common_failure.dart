@@ -194,11 +194,11 @@ class _$$TlsCertificatesAndHostnamesApiResponseCommonFailureSerializer implement
 class TlsCertificatesAndHostnamesApiResponseCommonFailureResultEnum extends EnumClass {
 
 
-  static Serializer<TlsCertificatesAndHostnamesApiResponseCommonFailureResultEnum> get serializer => _$tlsCertificatesAndHostnamesApiResponseCommonFailureResultSerializer;
+  static Serializer<TlsCertificatesAndHostnamesApiResponseCommonFailureResultEnum> get serializer => _$tlsCertificatesAndHostnamesApiResponseCommonFailureResultEnumSerializer;
 
   const TlsCertificatesAndHostnamesApiResponseCommonFailureResultEnum._(String name): super(name);
 
-  static BuiltSet<TlsCertificatesAndHostnamesApiResponseCommonFailureResultEnum> get values => _$tlsCertificatesAndHostnamesApiResponseCommonFailureResultValues;
-  static TlsCertificatesAndHostnamesApiResponseCommonFailureResultEnum valueOf(String name) => _$tlsCertificatesAndHostnamesApiResponseCommonFailureResultValueOf(name);
+  static BuiltSet<TlsCertificatesAndHostnamesApiResponseCommonFailureResultEnum> get values => _$tlsCertificatesAndHostnamesApiResponseCommonFailureResultEnumValues;
+  static TlsCertificatesAndHostnamesApiResponseCommonFailureResultEnum valueOf(String name) => _$tlsCertificatesAndHostnamesApiResponseCommonFailureResultEnumValueOf(name);
 }
 

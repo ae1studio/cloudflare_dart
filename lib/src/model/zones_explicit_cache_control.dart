@@ -135,12 +135,12 @@ class ZonesExplicitCacheControlIdEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'explicit_cache_control')
   static const ZonesExplicitCacheControlIdEnum explicitCacheControl = _$zonesExplicitCacheControlIdEnum_explicitCacheControl;
 
-  static Serializer<ZonesExplicitCacheControlIdEnum> get serializer => _$zonesExplicitCacheControlIdSerializer;
+  static Serializer<ZonesExplicitCacheControlIdEnum> get serializer => _$zonesExplicitCacheControlIdEnumSerializer;
 
   const ZonesExplicitCacheControlIdEnum._(String name): super(name);
 
-  static BuiltSet<ZonesExplicitCacheControlIdEnum> get values => _$zonesExplicitCacheControlIdValues;
-  static ZonesExplicitCacheControlIdEnum valueOf(String name) => _$zonesExplicitCacheControlIdValueOf(name);
+  static BuiltSet<ZonesExplicitCacheControlIdEnum> get values => _$zonesExplicitCacheControlIdEnumValues;
+  static ZonesExplicitCacheControlIdEnum valueOf(String name) => _$zonesExplicitCacheControlIdEnumValueOf(name);
 }
 
 class ZonesExplicitCacheControlValueEnum extends EnumClass {
@@ -152,11 +152,11 @@ class ZonesExplicitCacheControlValueEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'off')
   static const ZonesExplicitCacheControlValueEnum off = _$zonesExplicitCacheControlValueEnum_off;
 
-  static Serializer<ZonesExplicitCacheControlValueEnum> get serializer => _$zonesExplicitCacheControlValueSerializer;
+  static Serializer<ZonesExplicitCacheControlValueEnum> get serializer => _$zonesExplicitCacheControlValueEnumSerializer;
 
   const ZonesExplicitCacheControlValueEnum._(String name): super(name);
 
-  static BuiltSet<ZonesExplicitCacheControlValueEnum> get values => _$zonesExplicitCacheControlValueValues;
-  static ZonesExplicitCacheControlValueEnum valueOf(String name) => _$zonesExplicitCacheControlValueValueOf(name);
+  static BuiltSet<ZonesExplicitCacheControlValueEnum> get values => _$zonesExplicitCacheControlValueEnumValues;
+  static ZonesExplicitCacheControlValueEnum valueOf(String name) => _$zonesExplicitCacheControlValueEnumValueOf(name);
 }
 

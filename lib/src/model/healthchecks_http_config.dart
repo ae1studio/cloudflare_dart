@@ -63,7 +63,7 @@ abstract class HealthchecksHttpConfig implements Built<HealthchecksHttpConfig, H
   static void _defaults(HealthchecksHttpConfigBuilder b) => b
       ..allowInsecure = false
       ..followRedirects = false
-      ..method = const HealthchecksHttpConfigMethodEnum._('GET')
+      ..method = HealthchecksHttpConfigMethodEnum.valueOf('GET')
       ..path = '/'
       ..port = 80;
 
@@ -258,11 +258,11 @@ class HealthchecksHttpConfigMethodEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'HEAD')
   static const HealthchecksHttpConfigMethodEnum HEAD = _$healthchecksHttpConfigMethodEnum_HEAD;
 
-  static Serializer<HealthchecksHttpConfigMethodEnum> get serializer => _$healthchecksHttpConfigMethodSerializer;
+  static Serializer<HealthchecksHttpConfigMethodEnum> get serializer => _$healthchecksHttpConfigMethodEnumSerializer;
 
   const HealthchecksHttpConfigMethodEnum._(String name): super(name);
 
-  static BuiltSet<HealthchecksHttpConfigMethodEnum> get values => _$healthchecksHttpConfigMethodValues;
-  static HealthchecksHttpConfigMethodEnum valueOf(String name) => _$healthchecksHttpConfigMethodValueOf(name);
+  static BuiltSet<HealthchecksHttpConfigMethodEnum> get values => _$healthchecksHttpConfigMethodEnumValues;
+  static HealthchecksHttpConfigMethodEnum valueOf(String name) => _$healthchecksHttpConfigMethodEnumValueOf(name);
 }
 

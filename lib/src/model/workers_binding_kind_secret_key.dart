@@ -50,7 +50,7 @@ abstract class WorkersBindingKindSecretKey implements Built<WorkersBindingKindSe
 
   /// Allowed operations with the key. [Learn more](https://developer.mozilla.org/en-US/docs/Web/API/SubtleCrypto/importKey#keyUsages).
   @BuiltValueField(wireName: r'usages')
-  BuiltList<WorkersSecretUsagesEnum> get usages;
+  BuiltList<WorkersBindingKindSecretKeyUsagesEnum> get usages;
   // enum usagesEnum {  encrypt,  decrypt,  sign,  verify,  deriveKey,  deriveBits,  wrapKey,  unwrapKey,  };
 
   WorkersBindingKindSecretKey._();
@@ -113,7 +113,7 @@ class _$WorkersBindingKindSecretKeySerializer implements PrimitiveSerializer<Wor
     yield r'usages';
     yield serializers.serialize(
       object.usages,
-      specifiedType: const FullType(BuiltList, [FullType(WorkersSecretUsagesEnum)]),
+      specifiedType: const FullType(BuiltList, [FullType(WorkersBindingKindSecretKeyUsagesEnum)]),
     );
   }
 
@@ -183,8 +183,8 @@ class _$WorkersBindingKindSecretKeySerializer implements PrimitiveSerializer<Wor
         case r'usages':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(BuiltList, [FullType(WorkersSecretUsagesEnum)]),
-          ) as BuiltList<WorkersSecretUsagesEnum>;
+            specifiedType: const FullType(BuiltList, [FullType(WorkersBindingKindSecretKeyUsagesEnum)]),
+          ) as BuiltList<WorkersBindingKindSecretKeyUsagesEnum>;
           result.usages.replace(valueDes);
           break;
         default:
@@ -231,12 +231,12 @@ class WorkersBindingKindSecretKeyFormatEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'jwk')
   static const WorkersBindingKindSecretKeyFormatEnum jwk = _$workersBindingKindSecretKeyFormatEnum_jwk;
 
-  static Serializer<WorkersBindingKindSecretKeyFormatEnum> get serializer => _$workersBindingKindSecretKeyFormatSerializer;
+  static Serializer<WorkersBindingKindSecretKeyFormatEnum> get serializer => _$workersBindingKindSecretKeyFormatEnumSerializer;
 
   const WorkersBindingKindSecretKeyFormatEnum._(String name): super(name);
 
-  static BuiltSet<WorkersBindingKindSecretKeyFormatEnum> get values => _$workersBindingKindSecretKeyFormatValues;
-  static WorkersBindingKindSecretKeyFormatEnum valueOf(String name) => _$workersBindingKindSecretKeyFormatValueOf(name);
+  static BuiltSet<WorkersBindingKindSecretKeyFormatEnum> get values => _$workersBindingKindSecretKeyFormatEnumValues;
+  static WorkersBindingKindSecretKeyFormatEnum valueOf(String name) => _$workersBindingKindSecretKeyFormatEnumValueOf(name);
 }
 
 class WorkersBindingKindSecretKeyTypeEnum extends EnumClass {
@@ -245,11 +245,38 @@ class WorkersBindingKindSecretKeyTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'secret_key')
   static const WorkersBindingKindSecretKeyTypeEnum secretKey = _$workersBindingKindSecretKeyTypeEnum_secretKey;
 
-  static Serializer<WorkersBindingKindSecretKeyTypeEnum> get serializer => _$workersBindingKindSecretKeyTypeSerializer;
+  static Serializer<WorkersBindingKindSecretKeyTypeEnum> get serializer => _$workersBindingKindSecretKeyTypeEnumSerializer;
 
   const WorkersBindingKindSecretKeyTypeEnum._(String name): super(name);
 
-  static BuiltSet<WorkersBindingKindSecretKeyTypeEnum> get values => _$workersBindingKindSecretKeyTypeValues;
-  static WorkersBindingKindSecretKeyTypeEnum valueOf(String name) => _$workersBindingKindSecretKeyTypeValueOf(name);
+  static BuiltSet<WorkersBindingKindSecretKeyTypeEnum> get values => _$workersBindingKindSecretKeyTypeEnumValues;
+  static WorkersBindingKindSecretKeyTypeEnum valueOf(String name) => _$workersBindingKindSecretKeyTypeEnumValueOf(name);
+}
+
+class WorkersBindingKindSecretKeyUsagesEnum extends EnumClass {
+
+  @BuiltValueEnumConst(wireName: r'encrypt')
+  static const WorkersBindingKindSecretKeyUsagesEnum encrypt = _$workersBindingKindSecretKeyUsagesEnum_encrypt;
+  @BuiltValueEnumConst(wireName: r'decrypt')
+  static const WorkersBindingKindSecretKeyUsagesEnum decrypt = _$workersBindingKindSecretKeyUsagesEnum_decrypt;
+  @BuiltValueEnumConst(wireName: r'sign')
+  static const WorkersBindingKindSecretKeyUsagesEnum sign = _$workersBindingKindSecretKeyUsagesEnum_sign;
+  @BuiltValueEnumConst(wireName: r'verify')
+  static const WorkersBindingKindSecretKeyUsagesEnum verify = _$workersBindingKindSecretKeyUsagesEnum_verify;
+  @BuiltValueEnumConst(wireName: r'deriveKey')
+  static const WorkersBindingKindSecretKeyUsagesEnum deriveKey = _$workersBindingKindSecretKeyUsagesEnum_deriveKey;
+  @BuiltValueEnumConst(wireName: r'deriveBits')
+  static const WorkersBindingKindSecretKeyUsagesEnum deriveBits = _$workersBindingKindSecretKeyUsagesEnum_deriveBits;
+  @BuiltValueEnumConst(wireName: r'wrapKey')
+  static const WorkersBindingKindSecretKeyUsagesEnum wrapKey = _$workersBindingKindSecretKeyUsagesEnum_wrapKey;
+  @BuiltValueEnumConst(wireName: r'unwrapKey')
+  static const WorkersBindingKindSecretKeyUsagesEnum unwrapKey = _$workersBindingKindSecretKeyUsagesEnum_unwrapKey;
+
+  static Serializer<WorkersBindingKindSecretKeyUsagesEnum> get serializer => _$workersBindingKindSecretKeyUsagesEnumSerializer;
+
+  const WorkersBindingKindSecretKeyUsagesEnum._(String name): super(name);
+
+  static BuiltSet<WorkersBindingKindSecretKeyUsagesEnum> get values => _$workersBindingKindSecretKeyUsagesEnumValues;
+  static WorkersBindingKindSecretKeyUsagesEnum valueOf(String name) => _$workersBindingKindSecretKeyUsagesEnumValueOf(name);
 }
 

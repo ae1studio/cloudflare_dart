@@ -9,9 +9,9 @@ import 'package:cloudflare_dart/api.dart';
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **appCount** | **int** | The number of applications that have this tag | [optional] 
-**createdAt** | [**AccessCreatedAt**](AccessCreatedAt.md) |  | [optional] 
+**createdAt** | [**JsonObject**](JsonObject.md) |  | [optional] 
 **name** | **String** | The name of the tag | 
-**updatedAt** | [**AccessUpdatedAt**](AccessUpdatedAt.md) |  | [optional] 
+**updatedAt** | [**JsonObject**](JsonObject.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

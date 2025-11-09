@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 **domain** | [**JsonObject**](.md) |  | [optional] 
 **name** | [**JsonObject**](.md) |  | [optional] [default to App Launcher]
 **sessionDuration** | **String** | The amount of time that tokens issued for this application will be valid. Must be in the format `300ms` or `2h45m`. Valid time units are: ns, us (or µs), ms, s, m, h. Note: unsupported for infrastructure type applications. | [optional] [default to '24h']
-**type** | [**AccessAppLauncherPropsAllOfType**](AccessAppLauncherPropsAllOfType.md) |  | 
+**type** | [**AccessType**](AccessType.md) |  | 
 **appLauncherLogoUrl** | **String** | The image URL of the logo shown in the App Launcher header. | [optional] 
 **bgColor** | **String** | The background color of the App Launcher page. | [optional] 
 **footerLinks** | [**BuiltList&lt;AccessFooterLinksInner&gt;**](AccessFooterLinksInner.md) | The links in the App Launcher footer. | [optional] 

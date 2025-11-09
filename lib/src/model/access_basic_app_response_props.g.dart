@@ -12,25 +12,25 @@ abstract class AccessBasicAppResponsePropsBuilder {
   String? get aud;
   set aud(String? aud);
 
-  AccessCreatedAtBuilder get createdAt;
-  set createdAt(AccessCreatedAtBuilder? createdAt);
+  JsonObject? get createdAt;
+  set createdAt(JsonObject? createdAt);
 
   String? get id;
   set id(String? id);
 
-  AccessUpdatedAtBuilder get updatedAt;
-  set updatedAt(AccessUpdatedAtBuilder? updatedAt);
+  JsonObject? get updatedAt;
+  set updatedAt(JsonObject? updatedAt);
 }
 
 class _$$AccessBasicAppResponseProps extends $AccessBasicAppResponseProps {
   @override
   final String? aud;
   @override
-  final AccessCreatedAt? createdAt;
+  final JsonObject? createdAt;
   @override
   final String? id;
   @override
-  final AccessUpdatedAt? updatedAt;
+  final JsonObject? updatedAt;
 
   factory _$$AccessBasicAppResponseProps(
           [void Function($AccessBasicAppResponsePropsBuilder)? updates]) =>
@@ -91,20 +91,18 @@ class $AccessBasicAppResponsePropsBuilder
   String? get aud => _$this._aud;
   set aud(covariant String? aud) => _$this._aud = aud;
 
-  AccessCreatedAtBuilder? _createdAt;
-  AccessCreatedAtBuilder get createdAt =>
-      _$this._createdAt ??= AccessCreatedAtBuilder();
-  set createdAt(covariant AccessCreatedAtBuilder? createdAt) =>
+  JsonObject? _createdAt;
+  JsonObject? get createdAt => _$this._createdAt;
+  set createdAt(covariant JsonObject? createdAt) =>
       _$this._createdAt = createdAt;
 
   String? _id;
   String? get id => _$this._id;
   set id(covariant String? id) => _$this._id = id;
 
-  AccessUpdatedAtBuilder? _updatedAt;
-  AccessUpdatedAtBuilder get updatedAt =>
-      _$this._updatedAt ??= AccessUpdatedAtBuilder();
-  set updatedAt(covariant AccessUpdatedAtBuilder? updatedAt) =>
+  JsonObject? _updatedAt;
+  JsonObject? get updatedAt => _$this._updatedAt;
+  set updatedAt(covariant JsonObject? updatedAt) =>
       _$this._updatedAt = updatedAt;
 
   $AccessBasicAppResponsePropsBuilder() {
@@ -115,9 +113,9 @@ class $AccessBasicAppResponsePropsBuilder
     final $v = _$v;
     if ($v != null) {
       _aud = $v.aud;
-      _createdAt = $v.createdAt?.toBuilder();
+      _createdAt = $v.createdAt;
       _id = $v.id;
-      _updatedAt = $v.updatedAt?.toBuilder();
+      _updatedAt = $v.updatedAt;
       _$v = null;
     }
     return this;
@@ -137,29 +135,13 @@ class $AccessBasicAppResponsePropsBuilder
   $AccessBasicAppResponseProps build() => _build();
 
   _$$AccessBasicAppResponseProps _build() {
-    _$$AccessBasicAppResponseProps _$result;
-    try {
-      _$result = _$v ??
-          _$$AccessBasicAppResponseProps._(
-            aud: aud,
-            createdAt: _createdAt?.build(),
-            id: id,
-            updatedAt: _updatedAt?.build(),
-          );
-    } catch (_) {
-      late String _$failedField;
-      try {
-        _$failedField = 'createdAt';
-        _createdAt?.build();
-
-        _$failedField = 'updatedAt';
-        _updatedAt?.build();
-      } catch (e) {
-        throw BuiltValueNestedFieldError(
-            r'$AccessBasicAppResponseProps', _$failedField, e.toString());
-      }
-      rethrow;
-    }
+    final _$result = _$v ??
+        _$$AccessBasicAppResponseProps._(
+          aud: aud,
+          createdAt: createdAt,
+          id: id,
+          updatedAt: updatedAt,
+        );
     replace(_$result);
     return _$result;
   }

@@ -148,11 +148,11 @@ class _$SchemaValidationCreateSchema4XXResponseSerializer implements PrimitiveSe
 class SchemaValidationCreateSchema4XXResponseResultEnum extends EnumClass {
 
 
-  static Serializer<SchemaValidationCreateSchema4XXResponseResultEnum> get serializer => _$schemaValidationCreateSchema4XXResponseResultSerializer;
+  static Serializer<SchemaValidationCreateSchema4XXResponseResultEnum> get serializer => _$schemaValidationCreateSchema4XXResponseResultEnumSerializer;
 
   const SchemaValidationCreateSchema4XXResponseResultEnum._(String name): super(name);
 
-  static BuiltSet<SchemaValidationCreateSchema4XXResponseResultEnum> get values => _$schemaValidationCreateSchema4XXResponseResultValues;
-  static SchemaValidationCreateSchema4XXResponseResultEnum valueOf(String name) => _$schemaValidationCreateSchema4XXResponseResultValueOf(name);
+  static BuiltSet<SchemaValidationCreateSchema4XXResponseResultEnum> get values => _$schemaValidationCreateSchema4XXResponseResultEnumValues;
+  static SchemaValidationCreateSchema4XXResponseResultEnum valueOf(String name) => _$schemaValidationCreateSchema4XXResponseResultEnumValueOf(name);
 }
 

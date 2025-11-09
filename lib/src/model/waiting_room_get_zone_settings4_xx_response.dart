@@ -148,11 +148,11 @@ class _$WaitingRoomGetZoneSettings4XXResponseSerializer implements PrimitiveSeri
 class WaitingRoomGetZoneSettings4XXResponseResultEnum extends EnumClass {
 
 
-  static Serializer<WaitingRoomGetZoneSettings4XXResponseResultEnum> get serializer => _$waitingRoomGetZoneSettings4XXResponseResultSerializer;
+  static Serializer<WaitingRoomGetZoneSettings4XXResponseResultEnum> get serializer => _$waitingRoomGetZoneSettings4XXResponseResultEnumSerializer;
 
   const WaitingRoomGetZoneSettings4XXResponseResultEnum._(String name): super(name);
 
-  static BuiltSet<WaitingRoomGetZoneSettings4XXResponseResultEnum> get values => _$waitingRoomGetZoneSettings4XXResponseResultValues;
-  static WaitingRoomGetZoneSettings4XXResponseResultEnum valueOf(String name) => _$waitingRoomGetZoneSettings4XXResponseResultValueOf(name);
+  static BuiltSet<WaitingRoomGetZoneSettings4XXResponseResultEnum> get values => _$waitingRoomGetZoneSettings4XXResponseResultEnumValues;
+  static WaitingRoomGetZoneSettings4XXResponseResultEnum valueOf(String name) => _$waitingRoomGetZoneSettings4XXResponseResultEnumValueOf(name);
 }
 

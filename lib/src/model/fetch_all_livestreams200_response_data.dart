@@ -309,11 +309,11 @@ class FetchAllLivestreams200ResponseDataStatusEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'INVOKED')
   static const FetchAllLivestreams200ResponseDataStatusEnum INVOKED = _$fetchAllLivestreams200ResponseDataStatusEnum_INVOKED;
 
-  static Serializer<FetchAllLivestreams200ResponseDataStatusEnum> get serializer => _$fetchAllLivestreams200ResponseDataStatusSerializer;
+  static Serializer<FetchAllLivestreams200ResponseDataStatusEnum> get serializer => _$fetchAllLivestreams200ResponseDataStatusEnumSerializer;
 
   const FetchAllLivestreams200ResponseDataStatusEnum._(String name): super(name);
 
-  static BuiltSet<FetchAllLivestreams200ResponseDataStatusEnum> get values => _$fetchAllLivestreams200ResponseDataStatusValues;
-  static FetchAllLivestreams200ResponseDataStatusEnum valueOf(String name) => _$fetchAllLivestreams200ResponseDataStatusValueOf(name);
+  static BuiltSet<FetchAllLivestreams200ResponseDataStatusEnum> get values => _$fetchAllLivestreams200ResponseDataStatusEnumValues;
+  static FetchAllLivestreams200ResponseDataStatusEnum valueOf(String name) => _$fetchAllLivestreams200ResponseDataStatusEnumValueOf(name);
 }
 

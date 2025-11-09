@@ -150,12 +150,12 @@ class ListZoneSnippetRules200ResponseErrorsEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'[]')
   static const ListZoneSnippetRules200ResponseErrorsEnum leftSquareBracketRightSquareBracket = _$listZoneSnippetRules200ResponseErrorsEnum_leftSquareBracketRightSquareBracket;
 
-  static Serializer<ListZoneSnippetRules200ResponseErrorsEnum> get serializer => _$listZoneSnippetRules200ResponseErrorsSerializer;
+  static Serializer<ListZoneSnippetRules200ResponseErrorsEnum> get serializer => _$listZoneSnippetRules200ResponseErrorsEnumSerializer;
 
   const ListZoneSnippetRules200ResponseErrorsEnum._(String name): super(name);
 
-  static BuiltSet<ListZoneSnippetRules200ResponseErrorsEnum> get values => _$listZoneSnippetRules200ResponseErrorsValues;
-  static ListZoneSnippetRules200ResponseErrorsEnum valueOf(String name) => _$listZoneSnippetRules200ResponseErrorsValueOf(name);
+  static BuiltSet<ListZoneSnippetRules200ResponseErrorsEnum> get values => _$listZoneSnippetRules200ResponseErrorsEnumValues;
+  static ListZoneSnippetRules200ResponseErrorsEnum valueOf(String name) => _$listZoneSnippetRules200ResponseErrorsEnumValueOf(name);
 }
 
 class ListZoneSnippetRules200ResponseSuccessEnum extends EnumClass {
@@ -163,11 +163,11 @@ class ListZoneSnippetRules200ResponseSuccessEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'true')
   static const ListZoneSnippetRules200ResponseSuccessEnum true_ = _$listZoneSnippetRules200ResponseSuccessEnum_true_;
 
-  static Serializer<ListZoneSnippetRules200ResponseSuccessEnum> get serializer => _$listZoneSnippetRules200ResponseSuccessSerializer;
+  static Serializer<ListZoneSnippetRules200ResponseSuccessEnum> get serializer => _$listZoneSnippetRules200ResponseSuccessEnumSerializer;
 
   const ListZoneSnippetRules200ResponseSuccessEnum._(String name): super(name);
 
-  static BuiltSet<ListZoneSnippetRules200ResponseSuccessEnum> get values => _$listZoneSnippetRules200ResponseSuccessValues;
-  static ListZoneSnippetRules200ResponseSuccessEnum valueOf(String name) => _$listZoneSnippetRules200ResponseSuccessValueOf(name);
+  static BuiltSet<ListZoneSnippetRules200ResponseSuccessEnum> get values => _$listZoneSnippetRules200ResponseSuccessEnumValues;
+  static ListZoneSnippetRules200ResponseSuccessEnum valueOf(String name) => _$listZoneSnippetRules200ResponseSuccessEnumValueOf(name);
 }
 

@@ -194,11 +194,11 @@ class _$$CustomPagesApiResponseCommonFailureSerializer implements PrimitiveSeria
 class CustomPagesApiResponseCommonFailureResultEnum extends EnumClass {
 
 
-  static Serializer<CustomPagesApiResponseCommonFailureResultEnum> get serializer => _$customPagesApiResponseCommonFailureResultSerializer;
+  static Serializer<CustomPagesApiResponseCommonFailureResultEnum> get serializer => _$customPagesApiResponseCommonFailureResultEnumSerializer;
 
   const CustomPagesApiResponseCommonFailureResultEnum._(String name): super(name);
 
-  static BuiltSet<CustomPagesApiResponseCommonFailureResultEnum> get values => _$customPagesApiResponseCommonFailureResultValues;
-  static CustomPagesApiResponseCommonFailureResultEnum valueOf(String name) => _$customPagesApiResponseCommonFailureResultValueOf(name);
+  static BuiltSet<CustomPagesApiResponseCommonFailureResultEnum> get values => _$customPagesApiResponseCommonFailureResultEnumValues;
+  static CustomPagesApiResponseCommonFailureResultEnum valueOf(String name) => _$customPagesApiResponseCommonFailureResultEnumValueOf(name);
 }
 

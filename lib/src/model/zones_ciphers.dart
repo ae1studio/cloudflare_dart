@@ -155,11 +155,11 @@ class ZonesCiphersIdEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'ciphers')
   static const ZonesCiphersIdEnum ciphers = _$zonesCiphersIdEnum_ciphers;
 
-  static Serializer<ZonesCiphersIdEnum> get serializer => _$zonesCiphersIdSerializer;
+  static Serializer<ZonesCiphersIdEnum> get serializer => _$zonesCiphersIdEnumSerializer;
 
   const ZonesCiphersIdEnum._(String name): super(name);
 
-  static BuiltSet<ZonesCiphersIdEnum> get values => _$zonesCiphersIdValues;
-  static ZonesCiphersIdEnum valueOf(String name) => _$zonesCiphersIdValueOf(name);
+  static BuiltSet<ZonesCiphersIdEnum> get values => _$zonesCiphersIdEnumValues;
+  static ZonesCiphersIdEnum valueOf(String name) => _$zonesCiphersIdEnumValueOf(name);
 }
 

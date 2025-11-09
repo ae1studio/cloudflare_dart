@@ -121,11 +121,11 @@ class ZeroTrustGatewayRuleSettingsUntrustedCertActionEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'error')
   static const ZeroTrustGatewayRuleSettingsUntrustedCertActionEnum error = _$zeroTrustGatewayRuleSettingsUntrustedCertActionEnum_error;
 
-  static Serializer<ZeroTrustGatewayRuleSettingsUntrustedCertActionEnum> get serializer => _$zeroTrustGatewayRuleSettingsUntrustedCertActionSerializer;
+  static Serializer<ZeroTrustGatewayRuleSettingsUntrustedCertActionEnum> get serializer => _$zeroTrustGatewayRuleSettingsUntrustedCertActionEnumSerializer;
 
   const ZeroTrustGatewayRuleSettingsUntrustedCertActionEnum._(String name): super(name);
 
-  static BuiltSet<ZeroTrustGatewayRuleSettingsUntrustedCertActionEnum> get values => _$zeroTrustGatewayRuleSettingsUntrustedCertActionValues;
-  static ZeroTrustGatewayRuleSettingsUntrustedCertActionEnum valueOf(String name) => _$zeroTrustGatewayRuleSettingsUntrustedCertActionValueOf(name);
+  static BuiltSet<ZeroTrustGatewayRuleSettingsUntrustedCertActionEnum> get values => _$zeroTrustGatewayRuleSettingsUntrustedCertActionEnumValues;
+  static ZeroTrustGatewayRuleSettingsUntrustedCertActionEnum valueOf(String name) => _$zeroTrustGatewayRuleSettingsUntrustedCertActionEnumValueOf(name);
 }
 

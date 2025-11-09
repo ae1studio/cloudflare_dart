@@ -127,11 +127,11 @@ class OrganizationsApiMaxCountAllocationTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'max_count')
   static const OrganizationsApiMaxCountAllocationTypeEnum maxCount = _$organizationsApiMaxCountAllocationTypeEnum_maxCount;
 
-  static Serializer<OrganizationsApiMaxCountAllocationTypeEnum> get serializer => _$organizationsApiMaxCountAllocationTypeSerializer;
+  static Serializer<OrganizationsApiMaxCountAllocationTypeEnum> get serializer => _$organizationsApiMaxCountAllocationTypeEnumSerializer;
 
   const OrganizationsApiMaxCountAllocationTypeEnum._(String name): super(name);
 
-  static BuiltSet<OrganizationsApiMaxCountAllocationTypeEnum> get values => _$organizationsApiMaxCountAllocationTypeValues;
-  static OrganizationsApiMaxCountAllocationTypeEnum valueOf(String name) => _$organizationsApiMaxCountAllocationTypeValueOf(name);
+  static BuiltSet<OrganizationsApiMaxCountAllocationTypeEnum> get values => _$organizationsApiMaxCountAllocationTypeEnumValues;
+  static OrganizationsApiMaxCountAllocationTypeEnum valueOf(String name) => _$organizationsApiMaxCountAllocationTypeEnumValueOf(name);
 }
 

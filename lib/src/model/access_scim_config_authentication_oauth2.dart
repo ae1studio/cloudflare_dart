@@ -200,11 +200,11 @@ class AccessScimConfigAuthenticationOauth2SchemeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'oauth2')
   static const AccessScimConfigAuthenticationOauth2SchemeEnum oauth2 = _$accessScimConfigAuthenticationOauth2SchemeEnum_oauth2;
 
-  static Serializer<AccessScimConfigAuthenticationOauth2SchemeEnum> get serializer => _$accessScimConfigAuthenticationOauth2SchemeSerializer;
+  static Serializer<AccessScimConfigAuthenticationOauth2SchemeEnum> get serializer => _$accessScimConfigAuthenticationOauth2SchemeEnumSerializer;
 
   const AccessScimConfigAuthenticationOauth2SchemeEnum._(String name): super(name);
 
-  static BuiltSet<AccessScimConfigAuthenticationOauth2SchemeEnum> get values => _$accessScimConfigAuthenticationOauth2SchemeValues;
-  static AccessScimConfigAuthenticationOauth2SchemeEnum valueOf(String name) => _$accessScimConfigAuthenticationOauth2SchemeValueOf(name);
+  static BuiltSet<AccessScimConfigAuthenticationOauth2SchemeEnum> get values => _$accessScimConfigAuthenticationOauth2SchemeEnumValues;
+  static AccessScimConfigAuthenticationOauth2SchemeEnum valueOf(String name) => _$accessScimConfigAuthenticationOauth2SchemeEnumValueOf(name);
 }
 

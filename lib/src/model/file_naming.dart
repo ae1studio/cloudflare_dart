@@ -162,11 +162,11 @@ class FileNamingStrategyEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'ulid')
   static const FileNamingStrategyEnum ulid = _$fileNamingStrategyEnum_ulid;
 
-  static Serializer<FileNamingStrategyEnum> get serializer => _$fileNamingStrategySerializer;
+  static Serializer<FileNamingStrategyEnum> get serializer => _$fileNamingStrategyEnumSerializer;
 
   const FileNamingStrategyEnum._(String name): super(name);
 
-  static BuiltSet<FileNamingStrategyEnum> get values => _$fileNamingStrategyValues;
-  static FileNamingStrategyEnum valueOf(String name) => _$fileNamingStrategyValueOf(name);
+  static BuiltSet<FileNamingStrategyEnum> get values => _$fileNamingStrategyEnumValues;
+  static FileNamingStrategyEnum valueOf(String name) => _$fileNamingStrategyEnumValueOf(name);
 }
 

@@ -16,12 +16,6 @@ part 'access_app_policy_response.g.dart';
 /// AccessAppPolicyResponse
 ///
 /// Properties:
-/// * [approvalGroups] - Administrators who can approve a temporary authentication request.
-/// * [approvalRequired] - Requires the user to request access from an administrator at the start of each session.
-/// * [isolationRequired] - Require this application to be served in an isolated browser for users matching this policy. 'Client Web Isolation' must be on for the account in order to use this feature.
-/// * [purposeJustificationPrompt] - A custom message that will appear on the purpose justification screen.
-/// * [purposeJustificationRequired] - Require users to enter a justification when they log in to the application.
-/// * [sessionDuration] - The amount of time that tokens issued for the application will be valid. Must be in the format `300ms` or `2h45m`. Valid time units are: ns, us (or µs), ms, s, m, h.
 /// * [createdAt] 
 /// * [decision] 
 /// * [exclude] - Rules evaluated with a NOT logical operator. To match the policy, a user cannot meet any of the Exclude rules.
@@ -30,6 +24,12 @@ part 'access_app_policy_response.g.dart';
 /// * [name] - The name of the Access policy.
 /// * [require] - Rules evaluated with an AND logical operator. To match the policy, a user must meet all of the Require rules.
 /// * [updatedAt] 
+/// * [approvalGroups] - Administrators who can approve a temporary authentication request.
+/// * [approvalRequired] - Requires the user to request access from an administrator at the start of each session.
+/// * [isolationRequired] - Require this application to be served in an isolated browser for users matching this policy. 'Client Web Isolation' must be on for the account in order to use this feature.
+/// * [purposeJustificationPrompt] - A custom message that will appear on the purpose justification screen.
+/// * [purposeJustificationRequired] - Require users to enter a justification when they log in to the application.
+/// * [sessionDuration] - The amount of time that tokens issued for the application will be valid. Must be in the format `300ms` or `2h45m`. Valid time units are: ns, us (or µs), ms, s, m, h.
 /// * [precedence] - The order of execution for this policy. Must be unique for each policy within an app. 
 @BuiltValue()
 abstract class AccessAppPolicyResponse implements AccessPolicyResp, Built<AccessAppPolicyResponse, AccessAppPolicyResponseBuilder> {

@@ -219,11 +219,11 @@ class QueuesCreateConsumerRequestTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'http_pull')
   static const QueuesCreateConsumerRequestTypeEnum httpPull = _$queuesCreateConsumerRequestTypeEnum_httpPull;
 
-  static Serializer<QueuesCreateConsumerRequestTypeEnum> get serializer => _$queuesCreateConsumerRequestTypeSerializer;
+  static Serializer<QueuesCreateConsumerRequestTypeEnum> get serializer => _$queuesCreateConsumerRequestTypeEnumSerializer;
 
   const QueuesCreateConsumerRequestTypeEnum._(String name): super(name);
 
-  static BuiltSet<QueuesCreateConsumerRequestTypeEnum> get values => _$queuesCreateConsumerRequestTypeValues;
-  static QueuesCreateConsumerRequestTypeEnum valueOf(String name) => _$queuesCreateConsumerRequestTypeValueOf(name);
+  static BuiltSet<QueuesCreateConsumerRequestTypeEnum> get values => _$queuesCreateConsumerRequestTypeEnumValues;
+  static QueuesCreateConsumerRequestTypeEnum valueOf(String name) => _$queuesCreateConsumerRequestTypeEnumValueOf(name);
 }
 

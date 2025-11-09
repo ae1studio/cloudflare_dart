@@ -144,11 +144,11 @@ class ZarazWorkerVariableTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'worker')
   static const ZarazWorkerVariableTypeEnum worker = _$zarazWorkerVariableTypeEnum_worker;
 
-  static Serializer<ZarazWorkerVariableTypeEnum> get serializer => _$zarazWorkerVariableTypeSerializer;
+  static Serializer<ZarazWorkerVariableTypeEnum> get serializer => _$zarazWorkerVariableTypeEnumSerializer;
 
   const ZarazWorkerVariableTypeEnum._(String name): super(name);
 
-  static BuiltSet<ZarazWorkerVariableTypeEnum> get values => _$zarazWorkerVariableTypeValues;
-  static ZarazWorkerVariableTypeEnum valueOf(String name) => _$zarazWorkerVariableTypeValueOf(name);
+  static BuiltSet<ZarazWorkerVariableTypeEnum> get values => _$zarazWorkerVariableTypeEnumValues;
+  static ZarazWorkerVariableTypeEnum valueOf(String name) => _$zarazWorkerVariableTypeEnumValueOf(name);
 }
 

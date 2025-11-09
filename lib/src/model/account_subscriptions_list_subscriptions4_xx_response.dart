@@ -164,11 +164,11 @@ class _$AccountSubscriptionsListSubscriptions4XXResponseSerializer implements Pr
 class AccountSubscriptionsListSubscriptions4XXResponseResultEnum extends EnumClass {
 
 
-  static Serializer<AccountSubscriptionsListSubscriptions4XXResponseResultEnum> get serializer => _$accountSubscriptionsListSubscriptions4XXResponseResultSerializer;
+  static Serializer<AccountSubscriptionsListSubscriptions4XXResponseResultEnum> get serializer => _$accountSubscriptionsListSubscriptions4XXResponseResultEnumSerializer;
 
   const AccountSubscriptionsListSubscriptions4XXResponseResultEnum._(String name): super(name);
 
-  static BuiltSet<AccountSubscriptionsListSubscriptions4XXResponseResultEnum> get values => _$accountSubscriptionsListSubscriptions4XXResponseResultValues;
-  static AccountSubscriptionsListSubscriptions4XXResponseResultEnum valueOf(String name) => _$accountSubscriptionsListSubscriptions4XXResponseResultValueOf(name);
+  static BuiltSet<AccountSubscriptionsListSubscriptions4XXResponseResultEnum> get values => _$accountSubscriptionsListSubscriptions4XXResponseResultEnumValues;
+  static AccountSubscriptionsListSubscriptions4XXResponseResultEnum valueOf(String name) => _$accountSubscriptionsListSubscriptions4XXResponseResultEnumValueOf(name);
 }
 

@@ -10,7 +10,7 @@ class _$AccessCertificates extends AccessCertificates {
   @override
   final BuiltList<String>? associatedHostnames;
   @override
-  final AccessCreatedAt? createdAt;
+  final JsonObject? createdAt;
   @override
   final DateTime? expiresOn;
   @override
@@ -20,7 +20,7 @@ class _$AccessCertificates extends AccessCertificates {
   @override
   final String? name;
   @override
-  final AccessUpdatedAt? updatedAt;
+  final JsonObject? updatedAt;
 
   factory _$AccessCertificates(
           [void Function(AccessCertificatesBuilder)? updates]) =>
@@ -95,11 +95,9 @@ class AccessCertificatesBuilder
   set associatedHostnames(ListBuilder<String>? associatedHostnames) =>
       _$this._associatedHostnames = associatedHostnames;
 
-  AccessCreatedAtBuilder? _createdAt;
-  AccessCreatedAtBuilder get createdAt =>
-      _$this._createdAt ??= AccessCreatedAtBuilder();
-  set createdAt(AccessCreatedAtBuilder? createdAt) =>
-      _$this._createdAt = createdAt;
+  JsonObject? _createdAt;
+  JsonObject? get createdAt => _$this._createdAt;
+  set createdAt(JsonObject? createdAt) => _$this._createdAt = createdAt;
 
   DateTime? _expiresOn;
   DateTime? get expiresOn => _$this._expiresOn;
@@ -117,11 +115,9 @@ class AccessCertificatesBuilder
   String? get name => _$this._name;
   set name(String? name) => _$this._name = name;
 
-  AccessUpdatedAtBuilder? _updatedAt;
-  AccessUpdatedAtBuilder get updatedAt =>
-      _$this._updatedAt ??= AccessUpdatedAtBuilder();
-  set updatedAt(AccessUpdatedAtBuilder? updatedAt) =>
-      _$this._updatedAt = updatedAt;
+  JsonObject? _updatedAt;
+  JsonObject? get updatedAt => _$this._updatedAt;
+  set updatedAt(JsonObject? updatedAt) => _$this._updatedAt = updatedAt;
 
   AccessCertificatesBuilder() {
     AccessCertificates._defaults(this);
@@ -131,12 +127,12 @@ class AccessCertificatesBuilder
     final $v = _$v;
     if ($v != null) {
       _associatedHostnames = $v.associatedHostnames?.toBuilder();
-      _createdAt = $v.createdAt?.toBuilder();
+      _createdAt = $v.createdAt;
       _expiresOn = $v.expiresOn;
       _fingerprint = $v.fingerprint;
       _id = $v.id;
       _name = $v.name;
-      _updatedAt = $v.updatedAt?.toBuilder();
+      _updatedAt = $v.updatedAt;
       _$v = null;
     }
     return this;
@@ -161,23 +157,18 @@ class AccessCertificatesBuilder
       _$result = _$v ??
           _$AccessCertificates._(
             associatedHostnames: _associatedHostnames?.build(),
-            createdAt: _createdAt?.build(),
+            createdAt: createdAt,
             expiresOn: expiresOn,
             fingerprint: fingerprint,
             id: id,
             name: name,
-            updatedAt: _updatedAt?.build(),
+            updatedAt: updatedAt,
           );
     } catch (_) {
       late String _$failedField;
       try {
         _$failedField = 'associatedHostnames';
         _associatedHostnames?.build();
-        _$failedField = 'createdAt';
-        _createdAt?.build();
-
-        _$failedField = 'updatedAt';
-        _updatedAt?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
             r'AccessCertificates', _$failedField, e.toString());

@@ -156,11 +156,11 @@ class ZonesSchemasSortQueryStringForCacheIdEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'sort_query_string_for_cache')
   static const ZonesSchemasSortQueryStringForCacheIdEnum sortQueryStringForCache = _$zonesSchemasSortQueryStringForCacheIdEnum_sortQueryStringForCache;
 
-  static Serializer<ZonesSchemasSortQueryStringForCacheIdEnum> get serializer => _$zonesSchemasSortQueryStringForCacheIdSerializer;
+  static Serializer<ZonesSchemasSortQueryStringForCacheIdEnum> get serializer => _$zonesSchemasSortQueryStringForCacheIdEnumSerializer;
 
   const ZonesSchemasSortQueryStringForCacheIdEnum._(String name): super(name);
 
-  static BuiltSet<ZonesSchemasSortQueryStringForCacheIdEnum> get values => _$zonesSchemasSortQueryStringForCacheIdValues;
-  static ZonesSchemasSortQueryStringForCacheIdEnum valueOf(String name) => _$zonesSchemasSortQueryStringForCacheIdValueOf(name);
+  static BuiltSet<ZonesSchemasSortQueryStringForCacheIdEnum> get values => _$zonesSchemasSortQueryStringForCacheIdEnumValues;
+  static ZonesSchemasSortQueryStringForCacheIdEnum valueOf(String name) => _$zonesSchemasSortQueryStringForCacheIdEnumValueOf(name);
 }
 

@@ -156,11 +156,11 @@ class ZonesSchemasWafIdEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'waf')
   static const ZonesSchemasWafIdEnum waf = _$zonesSchemasWafIdEnum_waf;
 
-  static Serializer<ZonesSchemasWafIdEnum> get serializer => _$zonesSchemasWafIdSerializer;
+  static Serializer<ZonesSchemasWafIdEnum> get serializer => _$zonesSchemasWafIdEnumSerializer;
 
   const ZonesSchemasWafIdEnum._(String name): super(name);
 
-  static BuiltSet<ZonesSchemasWafIdEnum> get values => _$zonesSchemasWafIdValues;
-  static ZonesSchemasWafIdEnum valueOf(String name) => _$zonesSchemasWafIdValueOf(name);
+  static BuiltSet<ZonesSchemasWafIdEnum> get values => _$zonesSchemasWafIdEnumValues;
+  static ZonesSchemasWafIdEnum valueOf(String name) => _$zonesSchemasWafIdEnumValueOf(name);
 }
 

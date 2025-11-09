@@ -63,7 +63,7 @@ abstract class SmartshieldHttpConfig implements Built<SmartshieldHttpConfig, Sma
   static void _defaults(SmartshieldHttpConfigBuilder b) => b
       ..allowInsecure = false
       ..followRedirects = false
-      ..method = const SmartshieldHttpConfigMethodEnum._('GET')
+      ..method = SmartshieldHttpConfigMethodEnum.valueOf('GET')
       ..path = '/'
       ..port = 80;
 
@@ -258,11 +258,11 @@ class SmartshieldHttpConfigMethodEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'HEAD')
   static const SmartshieldHttpConfigMethodEnum HEAD = _$smartshieldHttpConfigMethodEnum_HEAD;
 
-  static Serializer<SmartshieldHttpConfigMethodEnum> get serializer => _$smartshieldHttpConfigMethodSerializer;
+  static Serializer<SmartshieldHttpConfigMethodEnum> get serializer => _$smartshieldHttpConfigMethodEnumSerializer;
 
   const SmartshieldHttpConfigMethodEnum._(String name): super(name);
 
-  static BuiltSet<SmartshieldHttpConfigMethodEnum> get values => _$smartshieldHttpConfigMethodValues;
-  static SmartshieldHttpConfigMethodEnum valueOf(String name) => _$smartshieldHttpConfigMethodValueOf(name);
+  static BuiltSet<SmartshieldHttpConfigMethodEnum> get values => _$smartshieldHttpConfigMethodEnumValues;
+  static SmartshieldHttpConfigMethodEnum valueOf(String name) => _$smartshieldHttpConfigMethodEnumValueOf(name);
 }
 

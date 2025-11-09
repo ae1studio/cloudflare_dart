@@ -35,7 +35,7 @@ Name | Type | Description | Notes
 **sessionDuration** | **String** | The amount of time that tokens issued for this application will be valid. Must be in the format `300ms` or `2h45m`. Valid time units are: ns, us (or µs), ms, s, m, h. Note: unsupported for infrastructure type applications. | [optional] [default to '24h']
 **skipInterstitial** | **bool** | Enables automatic authentication through cloudflared. | [optional] 
 **tags** | **BuiltList&lt;String&gt;** | The tags you want assigned to an application. Tags are used to filter applications in the App Launcher dashboard. | [optional] [default to ListBuilder()]
-**type** | [**AccessRdpPropsAllOfType**](AccessRdpPropsAllOfType.md) |  | 
+**type** | [**AccessType**](AccessType.md) |  | 
 **policies** | [**BuiltList&lt;AccessAppReqEmbeddedPoliciesPoliciesInner&gt;**](AccessAppReqEmbeddedPoliciesPoliciesInner.md) | The policies that Access applies to the application, in ascending order of precedence. Items can reference existing policies or create new policies exclusive to the application. | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

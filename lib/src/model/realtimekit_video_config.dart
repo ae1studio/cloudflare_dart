@@ -46,7 +46,7 @@ abstract class RealtimekitVideoConfig implements Built<RealtimekitVideoConfig, R
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(RealtimekitVideoConfigBuilder b) => b
-      ..codec = const RealtimekitVideoConfigCodecEnum._('H264')
+      ..codec = RealtimekitVideoConfigCodecEnum.valueOf('H264')
       ..exportFile = true
       ..height = 720
       ..width = 1280;
@@ -198,11 +198,11 @@ class RealtimekitVideoConfigCodecEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'VP8')
   static const RealtimekitVideoConfigCodecEnum vP8 = _$realtimekitVideoConfigCodecEnum_vP8;
 
-  static Serializer<RealtimekitVideoConfigCodecEnum> get serializer => _$realtimekitVideoConfigCodecSerializer;
+  static Serializer<RealtimekitVideoConfigCodecEnum> get serializer => _$realtimekitVideoConfigCodecEnumSerializer;
 
   const RealtimekitVideoConfigCodecEnum._(String name): super(name);
 
-  static BuiltSet<RealtimekitVideoConfigCodecEnum> get values => _$realtimekitVideoConfigCodecValues;
-  static RealtimekitVideoConfigCodecEnum valueOf(String name) => _$realtimekitVideoConfigCodecValueOf(name);
+  static BuiltSet<RealtimekitVideoConfigCodecEnum> get values => _$realtimekitVideoConfigCodecEnumValues;
+  static RealtimekitVideoConfigCodecEnum valueOf(String name) => _$realtimekitVideoConfigCodecEnumValueOf(name);
 }
 

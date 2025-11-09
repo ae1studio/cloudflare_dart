@@ -150,11 +150,11 @@ class GCSSourceResponseSchemaVendorEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'gcs')
   static const GCSSourceResponseSchemaVendorEnum gcs = _$gCSSourceResponseSchemaVendorEnum_gcs;
 
-  static Serializer<GCSSourceResponseSchemaVendorEnum> get serializer => _$gCSSourceResponseSchemaVendorSerializer;
+  static Serializer<GCSSourceResponseSchemaVendorEnum> get serializer => _$gCSSourceResponseSchemaVendorEnumSerializer;
 
   const GCSSourceResponseSchemaVendorEnum._(String name): super(name);
 
-  static BuiltSet<GCSSourceResponseSchemaVendorEnum> get values => _$gCSSourceResponseSchemaVendorValues;
-  static GCSSourceResponseSchemaVendorEnum valueOf(String name) => _$gCSSourceResponseSchemaVendorValueOf(name);
+  static BuiltSet<GCSSourceResponseSchemaVendorEnum> get values => _$gCSSourceResponseSchemaVendorEnumValues;
+  static GCSSourceResponseSchemaVendorEnum valueOf(String name) => _$gCSSourceResponseSchemaVendorEnumValueOf(name);
 }
 

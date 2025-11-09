@@ -300,11 +300,11 @@ class SecurityCenterIssueSeverityEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'Critical')
   static const SecurityCenterIssueSeverityEnum critical = _$securityCenterIssueSeverityEnum_critical;
 
-  static Serializer<SecurityCenterIssueSeverityEnum> get serializer => _$securityCenterIssueSeveritySerializer;
+  static Serializer<SecurityCenterIssueSeverityEnum> get serializer => _$securityCenterIssueSeverityEnumSerializer;
 
   const SecurityCenterIssueSeverityEnum._(String name): super(name);
 
-  static BuiltSet<SecurityCenterIssueSeverityEnum> get values => _$securityCenterIssueSeverityValues;
-  static SecurityCenterIssueSeverityEnum valueOf(String name) => _$securityCenterIssueSeverityValueOf(name);
+  static BuiltSet<SecurityCenterIssueSeverityEnum> get values => _$securityCenterIssueSeverityEnumValues;
+  static SecurityCenterIssueSeverityEnum valueOf(String name) => _$securityCenterIssueSeverityEnumValueOf(name);
 }
 

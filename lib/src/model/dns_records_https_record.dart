@@ -248,11 +248,11 @@ class DnsRecordsHTTPSRecordTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'HTTPS')
   static const DnsRecordsHTTPSRecordTypeEnum HTTPS = _$dnsRecordsHTTPSRecordTypeEnum_HTTPS;
 
-  static Serializer<DnsRecordsHTTPSRecordTypeEnum> get serializer => _$dnsRecordsHTTPSRecordTypeSerializer;
+  static Serializer<DnsRecordsHTTPSRecordTypeEnum> get serializer => _$dnsRecordsHTTPSRecordTypeEnumSerializer;
 
   const DnsRecordsHTTPSRecordTypeEnum._(String name): super(name);
 
-  static BuiltSet<DnsRecordsHTTPSRecordTypeEnum> get values => _$dnsRecordsHTTPSRecordTypeValues;
-  static DnsRecordsHTTPSRecordTypeEnum valueOf(String name) => _$dnsRecordsHTTPSRecordTypeValueOf(name);
+  static BuiltSet<DnsRecordsHTTPSRecordTypeEnum> get values => _$dnsRecordsHTTPSRecordTypeEnumValues;
+  static DnsRecordsHTTPSRecordTypeEnum valueOf(String name) => _$dnsRecordsHTTPSRecordTypeEnumValueOf(name);
 }
 

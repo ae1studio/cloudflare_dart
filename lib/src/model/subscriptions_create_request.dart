@@ -4,7 +4,7 @@
 
 // ignore_for_file: unused_element
 import 'package:built_collection/built_collection.dart';
-import 'package:cloudflare_dart/src/model/mq_event_destination.dart';
+import 'package:cloudflare_dart/src/model/mq_event_destination_queue.dart';
 import 'package:cloudflare_dart/src/model/mq_event_source.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
@@ -22,7 +22,7 @@ part 'subscriptions_create_request.g.dart';
 @BuiltValue()
 abstract class SubscriptionsCreateRequest implements Built<SubscriptionsCreateRequest, SubscriptionsCreateRequestBuilder> {
   @BuiltValueField(wireName: r'destination')
-  MqEventDestination? get destination;
+  MqEventDestinationQueue? get destination;
 
   /// Whether the subscription is active
   @BuiltValueField(wireName: r'enabled')
@@ -66,7 +66,7 @@ class _$SubscriptionsCreateRequestSerializer implements PrimitiveSerializer<Subs
       yield r'destination';
       yield serializers.serialize(
         object.destination,
-        specifiedType: const FullType(MqEventDestination),
+        specifiedType: const FullType(MqEventDestinationQueue),
       );
     }
     if (object.enabled != null) {
@@ -123,8 +123,8 @@ class _$SubscriptionsCreateRequestSerializer implements PrimitiveSerializer<Subs
         case r'destination':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(MqEventDestination),
-          ) as MqEventDestination;
+            specifiedType: const FullType(MqEventDestinationQueue),
+          ) as MqEventDestinationQueue;
           result.destination.replace(valueDes);
           break;
         case r'enabled':

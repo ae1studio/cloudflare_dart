@@ -137,11 +137,11 @@ class ZonesForwardingUrlValueStatusCodeEnum extends EnumClass {
   @BuiltValueEnumConst(wireNumber: 302)
   static const ZonesForwardingUrlValueStatusCodeEnum number302 = _$zonesForwardingUrlValueStatusCodeEnum_number302;
 
-  static Serializer<ZonesForwardingUrlValueStatusCodeEnum> get serializer => _$zonesForwardingUrlValueStatusCodeSerializer;
+  static Serializer<ZonesForwardingUrlValueStatusCodeEnum> get serializer => _$zonesForwardingUrlValueStatusCodeEnumSerializer;
 
   const ZonesForwardingUrlValueStatusCodeEnum._(String name): super(name);
 
-  static BuiltSet<ZonesForwardingUrlValueStatusCodeEnum> get values => _$zonesForwardingUrlValueStatusCodeValues;
-  static ZonesForwardingUrlValueStatusCodeEnum valueOf(String name) => _$zonesForwardingUrlValueStatusCodeValueOf(name);
+  static BuiltSet<ZonesForwardingUrlValueStatusCodeEnum> get values => _$zonesForwardingUrlValueStatusCodeEnumValues;
+  static ZonesForwardingUrlValueStatusCodeEnum valueOf(String name) => _$zonesForwardingUrlValueStatusCodeEnumValueOf(name);
 }
 

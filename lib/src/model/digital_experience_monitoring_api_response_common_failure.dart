@@ -194,11 +194,11 @@ class _$$DigitalExperienceMonitoringApiResponseCommonFailureSerializer implement
 class DigitalExperienceMonitoringApiResponseCommonFailureResultEnum extends EnumClass {
 
 
-  static Serializer<DigitalExperienceMonitoringApiResponseCommonFailureResultEnum> get serializer => _$digitalExperienceMonitoringApiResponseCommonFailureResultSerializer;
+  static Serializer<DigitalExperienceMonitoringApiResponseCommonFailureResultEnum> get serializer => _$digitalExperienceMonitoringApiResponseCommonFailureResultEnumSerializer;
 
   const DigitalExperienceMonitoringApiResponseCommonFailureResultEnum._(String name): super(name);
 
-  static BuiltSet<DigitalExperienceMonitoringApiResponseCommonFailureResultEnum> get values => _$digitalExperienceMonitoringApiResponseCommonFailureResultValues;
-  static DigitalExperienceMonitoringApiResponseCommonFailureResultEnum valueOf(String name) => _$digitalExperienceMonitoringApiResponseCommonFailureResultValueOf(name);
+  static BuiltSet<DigitalExperienceMonitoringApiResponseCommonFailureResultEnum> get values => _$digitalExperienceMonitoringApiResponseCommonFailureResultEnumValues;
+  static DigitalExperienceMonitoringApiResponseCommonFailureResultEnum valueOf(String name) => _$digitalExperienceMonitoringApiResponseCommonFailureResultEnumValueOf(name);
 }
 

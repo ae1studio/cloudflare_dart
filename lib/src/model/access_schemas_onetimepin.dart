@@ -166,11 +166,11 @@ class AccessSchemasOnetimepinTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'onetimepin')
   static const AccessSchemasOnetimepinTypeEnum onetimepin = _$accessSchemasOnetimepinTypeEnum_onetimepin;
 
-  static Serializer<AccessSchemasOnetimepinTypeEnum> get serializer => _$accessSchemasOnetimepinTypeSerializer;
+  static Serializer<AccessSchemasOnetimepinTypeEnum> get serializer => _$accessSchemasOnetimepinTypeEnumSerializer;
 
   const AccessSchemasOnetimepinTypeEnum._(String name): super(name);
 
-  static BuiltSet<AccessSchemasOnetimepinTypeEnum> get values => _$accessSchemasOnetimepinTypeValues;
-  static AccessSchemasOnetimepinTypeEnum valueOf(String name) => _$accessSchemasOnetimepinTypeValueOf(name);
+  static BuiltSet<AccessSchemasOnetimepinTypeEnum> get values => _$accessSchemasOnetimepinTypeEnumValues;
+  static AccessSchemasOnetimepinTypeEnum valueOf(String name) => _$accessSchemasOnetimepinTypeEnumValueOf(name);
 }
 

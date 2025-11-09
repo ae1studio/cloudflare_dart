@@ -149,11 +149,11 @@ class _$GetWorker400ResponseSerializer implements PrimitiveSerializer<GetWorker4
 class GetWorker400ResponseResultEnum extends EnumClass {
 
 
-  static Serializer<GetWorker400ResponseResultEnum> get serializer => _$getWorker400ResponseResultSerializer;
+  static Serializer<GetWorker400ResponseResultEnum> get serializer => _$getWorker400ResponseResultEnumSerializer;
 
   const GetWorker400ResponseResultEnum._(String name): super(name);
 
-  static BuiltSet<GetWorker400ResponseResultEnum> get values => _$getWorker400ResponseResultValues;
-  static GetWorker400ResponseResultEnum valueOf(String name) => _$getWorker400ResponseResultValueOf(name);
+  static BuiltSet<GetWorker400ResponseResultEnum> get values => _$getWorker400ResponseResultEnumValues;
+  static GetWorker400ResponseResultEnum valueOf(String name) => _$getWorker400ResponseResultEnumValueOf(name);
 }
 

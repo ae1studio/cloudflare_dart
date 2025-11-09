@@ -133,11 +133,11 @@ class TeamsDevicesFirewallInputRequestOperatingSystemEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'mac')
   static const TeamsDevicesFirewallInputRequestOperatingSystemEnum mac = _$teamsDevicesFirewallInputRequestOperatingSystemEnum_mac;
 
-  static Serializer<TeamsDevicesFirewallInputRequestOperatingSystemEnum> get serializer => _$teamsDevicesFirewallInputRequestOperatingSystemSerializer;
+  static Serializer<TeamsDevicesFirewallInputRequestOperatingSystemEnum> get serializer => _$teamsDevicesFirewallInputRequestOperatingSystemEnumSerializer;
 
   const TeamsDevicesFirewallInputRequestOperatingSystemEnum._(String name): super(name);
 
-  static BuiltSet<TeamsDevicesFirewallInputRequestOperatingSystemEnum> get values => _$teamsDevicesFirewallInputRequestOperatingSystemValues;
-  static TeamsDevicesFirewallInputRequestOperatingSystemEnum valueOf(String name) => _$teamsDevicesFirewallInputRequestOperatingSystemValueOf(name);
+  static BuiltSet<TeamsDevicesFirewallInputRequestOperatingSystemEnum> get values => _$teamsDevicesFirewallInputRequestOperatingSystemEnumValues;
+  static TeamsDevicesFirewallInputRequestOperatingSystemEnum valueOf(String name) => _$teamsDevicesFirewallInputRequestOperatingSystemEnumValueOf(name);
 }
 

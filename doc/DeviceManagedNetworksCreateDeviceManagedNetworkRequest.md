@@ -8,7 +8,7 @@ import 'package:cloudflare_dart/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**config** | [**TeamsDevicesSchemasConfigRequest**](TeamsDevicesSchemasConfigRequest.md) |  | 
+**config** | [**TeamsDevicesTlsConfigRequest**](TeamsDevicesTlsConfigRequest.md) |  | 
 **name** | **String** | The name of the device managed network. This name must be unique. | 
 **type** | [**TeamsDevicesComponentsSchemasType**](TeamsDevicesComponentsSchemasType.md) |  | 
 

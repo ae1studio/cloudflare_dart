@@ -310,11 +310,11 @@ class IamUserInviteStatusEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'expired')
   static const IamUserInviteStatusEnum expired = _$iamUserInviteStatusEnum_expired;
 
-  static Serializer<IamUserInviteStatusEnum> get serializer => _$iamUserInviteStatusSerializer;
+  static Serializer<IamUserInviteStatusEnum> get serializer => _$iamUserInviteStatusEnumSerializer;
 
   const IamUserInviteStatusEnum._(String name): super(name);
 
-  static BuiltSet<IamUserInviteStatusEnum> get values => _$iamUserInviteStatusValues;
-  static IamUserInviteStatusEnum valueOf(String name) => _$iamUserInviteStatusValueOf(name);
+  static BuiltSet<IamUserInviteStatusEnum> get values => _$iamUserInviteStatusEnumValues;
+  static IamUserInviteStatusEnum valueOf(String name) => _$iamUserInviteStatusEnumValueOf(name);
 }
 

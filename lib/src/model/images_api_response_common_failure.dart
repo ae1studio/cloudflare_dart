@@ -194,11 +194,11 @@ class _$$ImagesApiResponseCommonFailureSerializer implements PrimitiveSerializer
 class ImagesApiResponseCommonFailureResultEnum extends EnumClass {
 
 
-  static Serializer<ImagesApiResponseCommonFailureResultEnum> get serializer => _$imagesApiResponseCommonFailureResultSerializer;
+  static Serializer<ImagesApiResponseCommonFailureResultEnum> get serializer => _$imagesApiResponseCommonFailureResultEnumSerializer;
 
   const ImagesApiResponseCommonFailureResultEnum._(String name): super(name);
 
-  static BuiltSet<ImagesApiResponseCommonFailureResultEnum> get values => _$imagesApiResponseCommonFailureResultValues;
-  static ImagesApiResponseCommonFailureResultEnum valueOf(String name) => _$imagesApiResponseCommonFailureResultValueOf(name);
+  static BuiltSet<ImagesApiResponseCommonFailureResultEnum> get values => _$imagesApiResponseCommonFailureResultEnumValues;
+  static ImagesApiResponseCommonFailureResultEnum valueOf(String name) => _$imagesApiResponseCommonFailureResultEnumValueOf(name);
 }
 

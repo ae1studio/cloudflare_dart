@@ -5,7 +5,7 @@
 // ignore_for_file: unused_element
 import 'package:cloudflare_dart/src/model/access_feature_app_props.dart';
 import 'package:built_collection/built_collection.dart';
-import 'package:cloudflare_dart/src/model/access_warp_props_all_of_type.dart';
+import 'package:cloudflare_dart/src/model/access_type.dart';
 import 'package:built_value/json_object.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';

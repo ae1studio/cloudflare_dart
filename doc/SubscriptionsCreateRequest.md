@@ -8,7 +8,7 @@ import 'package:cloudflare_dart/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**destination** | [**MqEventDestination**](MqEventDestination.md) |  | [optional] 
+**destination** | [**MqEventDestinationQueue**](MqEventDestinationQueue.md) |  | [optional] 
 **enabled** | **bool** | Whether the subscription is active | [optional] 
 **events** | **BuiltList&lt;String&gt;** | List of event types this subscription handles | [optional] 
 **name** | **String** | Name of the subscription | [optional] 

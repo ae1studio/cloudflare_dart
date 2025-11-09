@@ -6,9 +6,163 @@ part of 'load_balancing_pool.dart';
 // BuiltValueGenerator
 // **************************************************************************
 
+const LoadBalancingPoolCheckRegionsEnum
+    _$loadBalancingPoolCheckRegionsEnum_WNAM =
+    const LoadBalancingPoolCheckRegionsEnum._('WNAM');
+const LoadBalancingPoolCheckRegionsEnum
+    _$loadBalancingPoolCheckRegionsEnum_ENAM =
+    const LoadBalancingPoolCheckRegionsEnum._('ENAM');
+const LoadBalancingPoolCheckRegionsEnum
+    _$loadBalancingPoolCheckRegionsEnum_WEU =
+    const LoadBalancingPoolCheckRegionsEnum._('WEU');
+const LoadBalancingPoolCheckRegionsEnum
+    _$loadBalancingPoolCheckRegionsEnum_EEU =
+    const LoadBalancingPoolCheckRegionsEnum._('EEU');
+const LoadBalancingPoolCheckRegionsEnum
+    _$loadBalancingPoolCheckRegionsEnum_NSAM =
+    const LoadBalancingPoolCheckRegionsEnum._('NSAM');
+const LoadBalancingPoolCheckRegionsEnum
+    _$loadBalancingPoolCheckRegionsEnum_SSAM =
+    const LoadBalancingPoolCheckRegionsEnum._('SSAM');
+const LoadBalancingPoolCheckRegionsEnum _$loadBalancingPoolCheckRegionsEnum_OC =
+    const LoadBalancingPoolCheckRegionsEnum._('OC');
+const LoadBalancingPoolCheckRegionsEnum _$loadBalancingPoolCheckRegionsEnum_ME =
+    const LoadBalancingPoolCheckRegionsEnum._('ME');
+const LoadBalancingPoolCheckRegionsEnum
+    _$loadBalancingPoolCheckRegionsEnum_NAF =
+    const LoadBalancingPoolCheckRegionsEnum._('NAF');
+const LoadBalancingPoolCheckRegionsEnum
+    _$loadBalancingPoolCheckRegionsEnum_SAF =
+    const LoadBalancingPoolCheckRegionsEnum._('SAF');
+const LoadBalancingPoolCheckRegionsEnum
+    _$loadBalancingPoolCheckRegionsEnum_SAS =
+    const LoadBalancingPoolCheckRegionsEnum._('SAS');
+const LoadBalancingPoolCheckRegionsEnum
+    _$loadBalancingPoolCheckRegionsEnum_SEAS =
+    const LoadBalancingPoolCheckRegionsEnum._('SEAS');
+const LoadBalancingPoolCheckRegionsEnum
+    _$loadBalancingPoolCheckRegionsEnum_NEAS =
+    const LoadBalancingPoolCheckRegionsEnum._('NEAS');
+const LoadBalancingPoolCheckRegionsEnum
+    _$loadBalancingPoolCheckRegionsEnum_ALL_REGIONS =
+    const LoadBalancingPoolCheckRegionsEnum._('ALL_REGIONS');
+
+LoadBalancingPoolCheckRegionsEnum _$loadBalancingPoolCheckRegionsEnumValueOf(
+    String name) {
+  switch (name) {
+    case 'WNAM':
+      return _$loadBalancingPoolCheckRegionsEnum_WNAM;
+    case 'ENAM':
+      return _$loadBalancingPoolCheckRegionsEnum_ENAM;
+    case 'WEU':
+      return _$loadBalancingPoolCheckRegionsEnum_WEU;
+    case 'EEU':
+      return _$loadBalancingPoolCheckRegionsEnum_EEU;
+    case 'NSAM':
+      return _$loadBalancingPoolCheckRegionsEnum_NSAM;
+    case 'SSAM':
+      return _$loadBalancingPoolCheckRegionsEnum_SSAM;
+    case 'OC':
+      return _$loadBalancingPoolCheckRegionsEnum_OC;
+    case 'ME':
+      return _$loadBalancingPoolCheckRegionsEnum_ME;
+    case 'NAF':
+      return _$loadBalancingPoolCheckRegionsEnum_NAF;
+    case 'SAF':
+      return _$loadBalancingPoolCheckRegionsEnum_SAF;
+    case 'SAS':
+      return _$loadBalancingPoolCheckRegionsEnum_SAS;
+    case 'SEAS':
+      return _$loadBalancingPoolCheckRegionsEnum_SEAS;
+    case 'NEAS':
+      return _$loadBalancingPoolCheckRegionsEnum_NEAS;
+    case 'ALL_REGIONS':
+      return _$loadBalancingPoolCheckRegionsEnum_ALL_REGIONS;
+    default:
+      throw ArgumentError(name);
+  }
+}
+
+final BuiltSet<LoadBalancingPoolCheckRegionsEnum>
+    _$loadBalancingPoolCheckRegionsEnumValues = BuiltSet<
+        LoadBalancingPoolCheckRegionsEnum>(const <LoadBalancingPoolCheckRegionsEnum>[
+  _$loadBalancingPoolCheckRegionsEnum_WNAM,
+  _$loadBalancingPoolCheckRegionsEnum_ENAM,
+  _$loadBalancingPoolCheckRegionsEnum_WEU,
+  _$loadBalancingPoolCheckRegionsEnum_EEU,
+  _$loadBalancingPoolCheckRegionsEnum_NSAM,
+  _$loadBalancingPoolCheckRegionsEnum_SSAM,
+  _$loadBalancingPoolCheckRegionsEnum_OC,
+  _$loadBalancingPoolCheckRegionsEnum_ME,
+  _$loadBalancingPoolCheckRegionsEnum_NAF,
+  _$loadBalancingPoolCheckRegionsEnum_SAF,
+  _$loadBalancingPoolCheckRegionsEnum_SAS,
+  _$loadBalancingPoolCheckRegionsEnum_SEAS,
+  _$loadBalancingPoolCheckRegionsEnum_NEAS,
+  _$loadBalancingPoolCheckRegionsEnum_ALL_REGIONS,
+]);
+
+Serializer<LoadBalancingPoolCheckRegionsEnum>
+    _$loadBalancingPoolCheckRegionsEnumSerializer =
+    _$LoadBalancingPoolCheckRegionsEnumSerializer();
+
+class _$LoadBalancingPoolCheckRegionsEnumSerializer
+    implements PrimitiveSerializer<LoadBalancingPoolCheckRegionsEnum> {
+  static const Map<String, Object> _toWire = const <String, Object>{
+    'WNAM': 'WNAM',
+    'ENAM': 'ENAM',
+    'WEU': 'WEU',
+    'EEU': 'EEU',
+    'NSAM': 'NSAM',
+    'SSAM': 'SSAM',
+    'OC': 'OC',
+    'ME': 'ME',
+    'NAF': 'NAF',
+    'SAF': 'SAF',
+    'SAS': 'SAS',
+    'SEAS': 'SEAS',
+    'NEAS': 'NEAS',
+    'ALL_REGIONS': 'ALL_REGIONS',
+  };
+  static const Map<Object, String> _fromWire = const <Object, String>{
+    'WNAM': 'WNAM',
+    'ENAM': 'ENAM',
+    'WEU': 'WEU',
+    'EEU': 'EEU',
+    'NSAM': 'NSAM',
+    'SSAM': 'SSAM',
+    'OC': 'OC',
+    'ME': 'ME',
+    'NAF': 'NAF',
+    'SAF': 'SAF',
+    'SAS': 'SAS',
+    'SEAS': 'SEAS',
+    'NEAS': 'NEAS',
+    'ALL_REGIONS': 'ALL_REGIONS',
+  };
+
+  @override
+  final Iterable<Type> types = const <Type>[LoadBalancingPoolCheckRegionsEnum];
+  @override
+  final String wireName = 'LoadBalancingPoolCheckRegionsEnum';
+
+  @override
+  Object serialize(
+          Serializers serializers, LoadBalancingPoolCheckRegionsEnum object,
+          {FullType specifiedType = FullType.unspecified}) =>
+      _toWire[object.name] ?? object.name;
+
+  @override
+  LoadBalancingPoolCheckRegionsEnum deserialize(
+          Serializers serializers, Object serialized,
+          {FullType specifiedType = FullType.unspecified}) =>
+      LoadBalancingPoolCheckRegionsEnum.valueOf(
+          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+}
+
 class _$LoadBalancingPool extends LoadBalancingPool {
   @override
-  final BuiltList<dynamic>? checkRegions;
+  final BuiltList<LoadBalancingPoolCheckRegionsEnum>? checkRegions;
   @override
   final DateTime? createdOn;
   @override
@@ -160,10 +314,11 @@ class LoadBalancingPoolBuilder
     implements Builder<LoadBalancingPool, LoadBalancingPoolBuilder> {
   _$LoadBalancingPool? _$v;
 
-  ListBuilder<dynamic>? _checkRegions;
-  ListBuilder<dynamic> get checkRegions =>
-      _$this._checkRegions ??= ListBuilder<dynamic>();
-  set checkRegions(ListBuilder<dynamic>? checkRegions) =>
+  ListBuilder<LoadBalancingPoolCheckRegionsEnum>? _checkRegions;
+  ListBuilder<LoadBalancingPoolCheckRegionsEnum> get checkRegions =>
+      _$this._checkRegions ??= ListBuilder<LoadBalancingPoolCheckRegionsEnum>();
+  set checkRegions(
+          ListBuilder<LoadBalancingPoolCheckRegionsEnum>? checkRegions) =>
       _$this._checkRegions = checkRegions;
 
   DateTime? _createdOn;

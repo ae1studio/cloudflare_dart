@@ -149,11 +149,11 @@ class _$DcvDelegationUuidGet4XXResponseSerializer implements PrimitiveSerializer
 class DcvDelegationUuidGet4XXResponseResultEnum extends EnumClass {
 
 
-  static Serializer<DcvDelegationUuidGet4XXResponseResultEnum> get serializer => _$dcvDelegationUuidGet4XXResponseResultSerializer;
+  static Serializer<DcvDelegationUuidGet4XXResponseResultEnum> get serializer => _$dcvDelegationUuidGet4XXResponseResultEnumSerializer;
 
   const DcvDelegationUuidGet4XXResponseResultEnum._(String name): super(name);
 
-  static BuiltSet<DcvDelegationUuidGet4XXResponseResultEnum> get values => _$dcvDelegationUuidGet4XXResponseResultValues;
-  static DcvDelegationUuidGet4XXResponseResultEnum valueOf(String name) => _$dcvDelegationUuidGet4XXResponseResultValueOf(name);
+  static BuiltSet<DcvDelegationUuidGet4XXResponseResultEnum> get values => _$dcvDelegationUuidGet4XXResponseResultEnumValues;
+  static DcvDelegationUuidGet4XXResponseResultEnum valueOf(String name) => _$dcvDelegationUuidGet4XXResponseResultEnumValueOf(name);
 }
 

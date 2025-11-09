@@ -151,11 +151,11 @@ class CloudflareD1ExportDatabaseRequestOutputFormatEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'polling')
   static const CloudflareD1ExportDatabaseRequestOutputFormatEnum polling = _$cloudflareD1ExportDatabaseRequestOutputFormatEnum_polling;
 
-  static Serializer<CloudflareD1ExportDatabaseRequestOutputFormatEnum> get serializer => _$cloudflareD1ExportDatabaseRequestOutputFormatSerializer;
+  static Serializer<CloudflareD1ExportDatabaseRequestOutputFormatEnum> get serializer => _$cloudflareD1ExportDatabaseRequestOutputFormatEnumSerializer;
 
   const CloudflareD1ExportDatabaseRequestOutputFormatEnum._(String name): super(name);
 
-  static BuiltSet<CloudflareD1ExportDatabaseRequestOutputFormatEnum> get values => _$cloudflareD1ExportDatabaseRequestOutputFormatValues;
-  static CloudflareD1ExportDatabaseRequestOutputFormatEnum valueOf(String name) => _$cloudflareD1ExportDatabaseRequestOutputFormatValueOf(name);
+  static BuiltSet<CloudflareD1ExportDatabaseRequestOutputFormatEnum> get values => _$cloudflareD1ExportDatabaseRequestOutputFormatEnumValues;
+  static CloudflareD1ExportDatabaseRequestOutputFormatEnum valueOf(String name) => _$cloudflareD1ExportDatabaseRequestOutputFormatEnumValueOf(name);
 }
 

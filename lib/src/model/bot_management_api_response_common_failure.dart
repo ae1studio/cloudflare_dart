@@ -194,11 +194,11 @@ class _$$BotManagementApiResponseCommonFailureSerializer implements PrimitiveSer
 class BotManagementApiResponseCommonFailureResultEnum extends EnumClass {
 
 
-  static Serializer<BotManagementApiResponseCommonFailureResultEnum> get serializer => _$botManagementApiResponseCommonFailureResultSerializer;
+  static Serializer<BotManagementApiResponseCommonFailureResultEnum> get serializer => _$botManagementApiResponseCommonFailureResultEnumSerializer;
 
   const BotManagementApiResponseCommonFailureResultEnum._(String name): super(name);
 
-  static BuiltSet<BotManagementApiResponseCommonFailureResultEnum> get values => _$botManagementApiResponseCommonFailureResultValues;
-  static BotManagementApiResponseCommonFailureResultEnum valueOf(String name) => _$botManagementApiResponseCommonFailureResultValueOf(name);
+  static BuiltSet<BotManagementApiResponseCommonFailureResultEnum> get values => _$botManagementApiResponseCommonFailureResultEnumValues;
+  static BotManagementApiResponseCommonFailureResultEnum valueOf(String name) => _$botManagementApiResponseCommonFailureResultEnumValueOf(name);
 }
 

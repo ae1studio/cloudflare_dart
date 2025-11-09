@@ -248,11 +248,11 @@ class DnsRecordsCERTRecordTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'CERT')
   static const DnsRecordsCERTRecordTypeEnum CERT = _$dnsRecordsCERTRecordTypeEnum_CERT;
 
-  static Serializer<DnsRecordsCERTRecordTypeEnum> get serializer => _$dnsRecordsCERTRecordTypeSerializer;
+  static Serializer<DnsRecordsCERTRecordTypeEnum> get serializer => _$dnsRecordsCERTRecordTypeEnumSerializer;
 
   const DnsRecordsCERTRecordTypeEnum._(String name): super(name);
 
-  static BuiltSet<DnsRecordsCERTRecordTypeEnum> get values => _$dnsRecordsCERTRecordTypeValues;
-  static DnsRecordsCERTRecordTypeEnum valueOf(String name) => _$dnsRecordsCERTRecordTypeValueOf(name);
+  static BuiltSet<DnsRecordsCERTRecordTypeEnum> get values => _$dnsRecordsCERTRecordTypeEnumValues;
+  static DnsRecordsCERTRecordTypeEnum valueOf(String name) => _$dnsRecordsCERTRecordTypeEnumValueOf(name);
 }
 

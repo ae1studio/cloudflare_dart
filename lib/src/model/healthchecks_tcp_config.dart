@@ -31,7 +31,7 @@ abstract class HealthchecksTcpConfig implements Built<HealthchecksTcpConfig, Hea
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(HealthchecksTcpConfigBuilder b) => b
-      ..method = const HealthchecksTcpConfigMethodEnum._('connection_established')
+      ..method = HealthchecksTcpConfigMethodEnum.valueOf('connection_established')
       ..port = 80;
 
   @BuiltValueSerializer(custom: true)
@@ -136,11 +136,11 @@ class HealthchecksTcpConfigMethodEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'connection_established')
   static const HealthchecksTcpConfigMethodEnum connectionEstablished = _$healthchecksTcpConfigMethodEnum_connectionEstablished;
 
-  static Serializer<HealthchecksTcpConfigMethodEnum> get serializer => _$healthchecksTcpConfigMethodSerializer;
+  static Serializer<HealthchecksTcpConfigMethodEnum> get serializer => _$healthchecksTcpConfigMethodEnumSerializer;
 
   const HealthchecksTcpConfigMethodEnum._(String name): super(name);
 
-  static BuiltSet<HealthchecksTcpConfigMethodEnum> get values => _$healthchecksTcpConfigMethodValues;
-  static HealthchecksTcpConfigMethodEnum valueOf(String name) => _$healthchecksTcpConfigMethodValueOf(name);
+  static BuiltSet<HealthchecksTcpConfigMethodEnum> get values => _$healthchecksTcpConfigMethodEnumValues;
+  static HealthchecksTcpConfigMethodEnum valueOf(String name) => _$healthchecksTcpConfigMethodEnumValueOf(name);
 }
 

@@ -32,8 +32,8 @@ abstract class WaitingroomCookieAttributes implements Built<WaitingroomCookieAtt
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(WaitingroomCookieAttributesBuilder b) => b
-      ..samesite = const WaitingroomCookieAttributesSamesiteEnum._('auto')
-      ..secure = const WaitingroomCookieAttributesSecureEnum._('auto');
+      ..samesite = WaitingroomCookieAttributesSamesiteEnum.valueOf('auto')
+      ..secure = WaitingroomCookieAttributesSecureEnum.valueOf('auto');
 
   @BuiltValueSerializer(custom: true)
   static Serializer<WaitingroomCookieAttributes> get serializer => _$WaitingroomCookieAttributesSerializer();
@@ -146,12 +146,12 @@ class WaitingroomCookieAttributesSamesiteEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'strict')
   static const WaitingroomCookieAttributesSamesiteEnum strict = _$waitingroomCookieAttributesSamesiteEnum_strict;
 
-  static Serializer<WaitingroomCookieAttributesSamesiteEnum> get serializer => _$waitingroomCookieAttributesSamesiteSerializer;
+  static Serializer<WaitingroomCookieAttributesSamesiteEnum> get serializer => _$waitingroomCookieAttributesSamesiteEnumSerializer;
 
   const WaitingroomCookieAttributesSamesiteEnum._(String name): super(name);
 
-  static BuiltSet<WaitingroomCookieAttributesSamesiteEnum> get values => _$waitingroomCookieAttributesSamesiteValues;
-  static WaitingroomCookieAttributesSamesiteEnum valueOf(String name) => _$waitingroomCookieAttributesSamesiteValueOf(name);
+  static BuiltSet<WaitingroomCookieAttributesSamesiteEnum> get values => _$waitingroomCookieAttributesSamesiteEnumValues;
+  static WaitingroomCookieAttributesSamesiteEnum valueOf(String name) => _$waitingroomCookieAttributesSamesiteEnumValueOf(name);
 }
 
 class WaitingroomCookieAttributesSecureEnum extends EnumClass {
@@ -166,11 +166,11 @@ class WaitingroomCookieAttributesSecureEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'never')
   static const WaitingroomCookieAttributesSecureEnum never = _$waitingroomCookieAttributesSecureEnum_never;
 
-  static Serializer<WaitingroomCookieAttributesSecureEnum> get serializer => _$waitingroomCookieAttributesSecureSerializer;
+  static Serializer<WaitingroomCookieAttributesSecureEnum> get serializer => _$waitingroomCookieAttributesSecureEnumSerializer;
 
   const WaitingroomCookieAttributesSecureEnum._(String name): super(name);
 
-  static BuiltSet<WaitingroomCookieAttributesSecureEnum> get values => _$waitingroomCookieAttributesSecureValues;
-  static WaitingroomCookieAttributesSecureEnum valueOf(String name) => _$waitingroomCookieAttributesSecureValueOf(name);
+  static BuiltSet<WaitingroomCookieAttributesSecureEnum> get values => _$waitingroomCookieAttributesSecureEnumValues;
+  static WaitingroomCookieAttributesSecureEnum valueOf(String name) => _$waitingroomCookieAttributesSecureEnumValueOf(name);
 }
 

@@ -156,11 +156,11 @@ class ZonesSha1SupportIdEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'sha1_support')
   static const ZonesSha1SupportIdEnum sha1Support = _$zonesSha1SupportIdEnum_sha1Support;
 
-  static Serializer<ZonesSha1SupportIdEnum> get serializer => _$zonesSha1SupportIdSerializer;
+  static Serializer<ZonesSha1SupportIdEnum> get serializer => _$zonesSha1SupportIdEnumSerializer;
 
   const ZonesSha1SupportIdEnum._(String name): super(name);
 
-  static BuiltSet<ZonesSha1SupportIdEnum> get values => _$zonesSha1SupportIdValues;
-  static ZonesSha1SupportIdEnum valueOf(String name) => _$zonesSha1SupportIdValueOf(name);
+  static BuiltSet<ZonesSha1SupportIdEnum> get values => _$zonesSha1SupportIdEnumValues;
+  static ZonesSha1SupportIdEnum valueOf(String name) => _$zonesSha1SupportIdEnumValueOf(name);
 }
 

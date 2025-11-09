@@ -239,11 +239,11 @@ class PostV4AccountsByAccountIdPipelinesV1Sinks200ResponseResultTypeEnum extends
   @BuiltValueEnumConst(wireName: r'r2_data_catalog')
   static const PostV4AccountsByAccountIdPipelinesV1Sinks200ResponseResultTypeEnum r2DataCatalog = _$postV4AccountsByAccountIdPipelinesV1Sinks200ResponseResultTypeEnum_r2DataCatalog;
 
-  static Serializer<PostV4AccountsByAccountIdPipelinesV1Sinks200ResponseResultTypeEnum> get serializer => _$postV4AccountsByAccountIdPipelinesV1Sinks200ResponseResultTypeSerializer;
+  static Serializer<PostV4AccountsByAccountIdPipelinesV1Sinks200ResponseResultTypeEnum> get serializer => _$postV4AccountsByAccountIdPipelinesV1Sinks200ResponseResultTypeEnumSerializer;
 
   const PostV4AccountsByAccountIdPipelinesV1Sinks200ResponseResultTypeEnum._(String name): super(name);
 
-  static BuiltSet<PostV4AccountsByAccountIdPipelinesV1Sinks200ResponseResultTypeEnum> get values => _$postV4AccountsByAccountIdPipelinesV1Sinks200ResponseResultTypeValues;
-  static PostV4AccountsByAccountIdPipelinesV1Sinks200ResponseResultTypeEnum valueOf(String name) => _$postV4AccountsByAccountIdPipelinesV1Sinks200ResponseResultTypeValueOf(name);
+  static BuiltSet<PostV4AccountsByAccountIdPipelinesV1Sinks200ResponseResultTypeEnum> get values => _$postV4AccountsByAccountIdPipelinesV1Sinks200ResponseResultTypeEnumValues;
+  static PostV4AccountsByAccountIdPipelinesV1Sinks200ResponseResultTypeEnum valueOf(String name) => _$postV4AccountsByAccountIdPipelinesV1Sinks200ResponseResultTypeEnumValueOf(name);
 }
 

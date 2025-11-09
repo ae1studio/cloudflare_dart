@@ -201,11 +201,11 @@ class McpPortalsApiCreateServersRequestAuthTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'unauthenticated')
   static const McpPortalsApiCreateServersRequestAuthTypeEnum unauthenticated = _$mcpPortalsApiCreateServersRequestAuthTypeEnum_unauthenticated;
 
-  static Serializer<McpPortalsApiCreateServersRequestAuthTypeEnum> get serializer => _$mcpPortalsApiCreateServersRequestAuthTypeSerializer;
+  static Serializer<McpPortalsApiCreateServersRequestAuthTypeEnum> get serializer => _$mcpPortalsApiCreateServersRequestAuthTypeEnumSerializer;
 
   const McpPortalsApiCreateServersRequestAuthTypeEnum._(String name): super(name);
 
-  static BuiltSet<McpPortalsApiCreateServersRequestAuthTypeEnum> get values => _$mcpPortalsApiCreateServersRequestAuthTypeValues;
-  static McpPortalsApiCreateServersRequestAuthTypeEnum valueOf(String name) => _$mcpPortalsApiCreateServersRequestAuthTypeValueOf(name);
+  static BuiltSet<McpPortalsApiCreateServersRequestAuthTypeEnum> get values => _$mcpPortalsApiCreateServersRequestAuthTypeEnumValues;
+  static McpPortalsApiCreateServersRequestAuthTypeEnum valueOf(String name) => _$mcpPortalsApiCreateServersRequestAuthTypeEnumValueOf(name);
 }
 

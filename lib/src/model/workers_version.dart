@@ -100,7 +100,7 @@ abstract class WorkersVersion implements Built<WorkersVersion, WorkersVersionBui
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(WorkersVersionBuilder b) => b
       ..compatibilityFlags = ListBuilder()
-      ..usageModel = const WorkersVersionUsageModelEnum._('standard');
+      ..usageModel = WorkersVersionUsageModelEnum.valueOf('standard');
 
   @BuiltValueSerializer(custom: true)
   static Serializer<WorkersVersion> get serializer => _$WorkersVersionSerializer();
@@ -386,11 +386,11 @@ class WorkersVersionUsageModelEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'unbound')
   static const WorkersVersionUsageModelEnum unbound = _$workersVersionUsageModelEnum_unbound;
 
-  static Serializer<WorkersVersionUsageModelEnum> get serializer => _$workersVersionUsageModelSerializer;
+  static Serializer<WorkersVersionUsageModelEnum> get serializer => _$workersVersionUsageModelEnumSerializer;
 
   const WorkersVersionUsageModelEnum._(String name): super(name);
 
-  static BuiltSet<WorkersVersionUsageModelEnum> get values => _$workersVersionUsageModelValues;
-  static WorkersVersionUsageModelEnum valueOf(String name) => _$workersVersionUsageModelValueOf(name);
+  static BuiltSet<WorkersVersionUsageModelEnum> get values => _$workersVersionUsageModelEnumValues;
+  static WorkersVersionUsageModelEnum valueOf(String name) => _$workersVersionUsageModelEnumValueOf(name);
 }
 

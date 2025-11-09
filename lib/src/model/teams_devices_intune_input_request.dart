@@ -145,11 +145,11 @@ class TeamsDevicesIntuneInputRequestComplianceStatusEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'error')
   static const TeamsDevicesIntuneInputRequestComplianceStatusEnum error = _$teamsDevicesIntuneInputRequestComplianceStatusEnum_error;
 
-  static Serializer<TeamsDevicesIntuneInputRequestComplianceStatusEnum> get serializer => _$teamsDevicesIntuneInputRequestComplianceStatusSerializer;
+  static Serializer<TeamsDevicesIntuneInputRequestComplianceStatusEnum> get serializer => _$teamsDevicesIntuneInputRequestComplianceStatusEnumSerializer;
 
   const TeamsDevicesIntuneInputRequestComplianceStatusEnum._(String name): super(name);
 
-  static BuiltSet<TeamsDevicesIntuneInputRequestComplianceStatusEnum> get values => _$teamsDevicesIntuneInputRequestComplianceStatusValues;
-  static TeamsDevicesIntuneInputRequestComplianceStatusEnum valueOf(String name) => _$teamsDevicesIntuneInputRequestComplianceStatusValueOf(name);
+  static BuiltSet<TeamsDevicesIntuneInputRequestComplianceStatusEnum> get values => _$teamsDevicesIntuneInputRequestComplianceStatusEnumValues;
+  static TeamsDevicesIntuneInputRequestComplianceStatusEnum valueOf(String name) => _$teamsDevicesIntuneInputRequestComplianceStatusEnumValueOf(name);
 }
 

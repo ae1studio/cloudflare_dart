@@ -165,11 +165,11 @@ class _$CustomSslForAZoneListSslConfigurations4XXResponseSerializer implements P
 class CustomSslForAZoneListSslConfigurations4XXResponseResultEnum extends EnumClass {
 
 
-  static Serializer<CustomSslForAZoneListSslConfigurations4XXResponseResultEnum> get serializer => _$customSslForAZoneListSslConfigurations4XXResponseResultSerializer;
+  static Serializer<CustomSslForAZoneListSslConfigurations4XXResponseResultEnum> get serializer => _$customSslForAZoneListSslConfigurations4XXResponseResultEnumSerializer;
 
   const CustomSslForAZoneListSslConfigurations4XXResponseResultEnum._(String name): super(name);
 
-  static BuiltSet<CustomSslForAZoneListSslConfigurations4XXResponseResultEnum> get values => _$customSslForAZoneListSslConfigurations4XXResponseResultValues;
-  static CustomSslForAZoneListSslConfigurations4XXResponseResultEnum valueOf(String name) => _$customSslForAZoneListSslConfigurations4XXResponseResultValueOf(name);
+  static BuiltSet<CustomSslForAZoneListSslConfigurations4XXResponseResultEnum> get values => _$customSslForAZoneListSslConfigurations4XXResponseResultEnumValues;
+  static CustomSslForAZoneListSslConfigurations4XXResponseResultEnum valueOf(String name) => _$customSslForAZoneListSslConfigurations4XXResponseResultEnumValueOf(name);
 }
 

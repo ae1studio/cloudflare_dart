@@ -134,11 +134,11 @@ class FirewallSchemasIpConfigurationTargetEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'ip')
   static const FirewallSchemasIpConfigurationTargetEnum ip = _$firewallSchemasIpConfigurationTargetEnum_ip;
 
-  static Serializer<FirewallSchemasIpConfigurationTargetEnum> get serializer => _$firewallSchemasIpConfigurationTargetSerializer;
+  static Serializer<FirewallSchemasIpConfigurationTargetEnum> get serializer => _$firewallSchemasIpConfigurationTargetEnumSerializer;
 
   const FirewallSchemasIpConfigurationTargetEnum._(String name): super(name);
 
-  static BuiltSet<FirewallSchemasIpConfigurationTargetEnum> get values => _$firewallSchemasIpConfigurationTargetValues;
-  static FirewallSchemasIpConfigurationTargetEnum valueOf(String name) => _$firewallSchemasIpConfigurationTargetValueOf(name);
+  static BuiltSet<FirewallSchemasIpConfigurationTargetEnum> get values => _$firewallSchemasIpConfigurationTargetEnumValues;
+  static FirewallSchemasIpConfigurationTargetEnum valueOf(String name) => _$firewallSchemasIpConfigurationTargetEnumValueOf(name);
 }
 

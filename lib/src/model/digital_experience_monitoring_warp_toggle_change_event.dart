@@ -270,11 +270,11 @@ class DigitalExperienceMonitoringWarpToggleChangeEventToggleEnum extends EnumCla
   @BuiltValueEnumConst(wireName: r'off')
   static const DigitalExperienceMonitoringWarpToggleChangeEventToggleEnum off = _$digitalExperienceMonitoringWarpToggleChangeEventToggleEnum_off;
 
-  static Serializer<DigitalExperienceMonitoringWarpToggleChangeEventToggleEnum> get serializer => _$digitalExperienceMonitoringWarpToggleChangeEventToggleSerializer;
+  static Serializer<DigitalExperienceMonitoringWarpToggleChangeEventToggleEnum> get serializer => _$digitalExperienceMonitoringWarpToggleChangeEventToggleEnumSerializer;
 
   const DigitalExperienceMonitoringWarpToggleChangeEventToggleEnum._(String name): super(name);
 
-  static BuiltSet<DigitalExperienceMonitoringWarpToggleChangeEventToggleEnum> get values => _$digitalExperienceMonitoringWarpToggleChangeEventToggleValues;
-  static DigitalExperienceMonitoringWarpToggleChangeEventToggleEnum valueOf(String name) => _$digitalExperienceMonitoringWarpToggleChangeEventToggleValueOf(name);
+  static BuiltSet<DigitalExperienceMonitoringWarpToggleChangeEventToggleEnum> get values => _$digitalExperienceMonitoringWarpToggleChangeEventToggleEnumValues;
+  static DigitalExperienceMonitoringWarpToggleChangeEventToggleEnum valueOf(String name) => _$digitalExperienceMonitoringWarpToggleChangeEventToggleEnumValueOf(name);
 }
 

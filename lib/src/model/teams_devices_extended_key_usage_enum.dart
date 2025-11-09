@@ -16,7 +16,7 @@ class TeamsDevicesExtendedKeyUsageEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'emailProtection')
   static const TeamsDevicesExtendedKeyUsageEnum emailProtection = _$emailProtection;
 
-  static Serializer<TeamsDevicesExtendedKeyUsageEnum> get serializer => _$teamsDevicesExtendedKeyUsageSerializer;
+  static Serializer<TeamsDevicesExtendedKeyUsageEnum> get serializer => _$teamsDevicesExtendedKeyUsageEnumSerializer;
 
   const TeamsDevicesExtendedKeyUsageEnum._(String name): super(name);
 

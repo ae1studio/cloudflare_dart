@@ -21,7 +21,7 @@ part 'rulesets_force_connection_close_rule.g.dart';
 /// * [actionParameters] - The parameters configuring the rule's action.
 /// * [categories] - The categories of the rule.
 /// * [description] 
-/// * [enabled] 
+/// * [enabled] - Whether the rule should be executed.
 /// * [exposedCredentialCheck] 
 /// * [expression] - The expression defining which traffic will match the rule.
 /// * [id] - The unique ID of the rule.
@@ -39,6 +39,7 @@ abstract class RulesetsForceConnectionCloseRule implements RulesetsRule, Built<R
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(RulesetsForceConnectionCloseRuleBuilder b) => b
       ..description = ''
+      ..enabled = true
       ..actionParameters = {};
 
   @BuiltValueSerializer(custom: true)
@@ -292,11 +293,11 @@ class RulesetsForceConnectionCloseRuleActionEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'force_connection_close')
   static const RulesetsForceConnectionCloseRuleActionEnum forceConnectionClose = _$rulesetsForceConnectionCloseRuleActionEnum_forceConnectionClose;
 
-  static Serializer<RulesetsForceConnectionCloseRuleActionEnum> get serializer => _$rulesetsForceConnectionCloseRuleActionSerializer;
+  static Serializer<RulesetsForceConnectionCloseRuleActionEnum> get serializer => _$rulesetsForceConnectionCloseRuleActionEnumSerializer;
 
   const RulesetsForceConnectionCloseRuleActionEnum._(String name): super(name);
 
-  static BuiltSet<RulesetsForceConnectionCloseRuleActionEnum> get values => _$rulesetsForceConnectionCloseRuleActionValues;
-  static RulesetsForceConnectionCloseRuleActionEnum valueOf(String name) => _$rulesetsForceConnectionCloseRuleActionValueOf(name);
+  static BuiltSet<RulesetsForceConnectionCloseRuleActionEnum> get values => _$rulesetsForceConnectionCloseRuleActionEnumValues;
+  static RulesetsForceConnectionCloseRuleActionEnum valueOf(String name) => _$rulesetsForceConnectionCloseRuleActionEnumValueOf(name);
 }
 

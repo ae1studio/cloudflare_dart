@@ -55,8 +55,8 @@ abstract class UrlscannerCreateScanV2Request implements Built<UrlscannerCreateSc
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(UrlscannerCreateScanV2RequestBuilder b) => b
-      ..screenshotsResolutions = ListBuilder()
-      ..visibility = const UrlscannerCreateScanV2RequestVisibilityEnum._('Public');
+      ..screenshotsResolutions = 
+      ..visibility = UrlscannerCreateScanV2RequestVisibilityEnum.valueOf('Public');
 
   @BuiltValueSerializer(custom: true)
   static Serializer<UrlscannerCreateScanV2Request> get serializer => _$UrlscannerCreateScanV2RequestSerializer();
@@ -810,12 +810,32 @@ class UrlscannerCreateScanV2RequestCountryEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'ZW')
   static const UrlscannerCreateScanV2RequestCountryEnum ZW = _$urlscannerCreateScanV2RequestCountryEnum_ZW;
 
-  static Serializer<UrlscannerCreateScanV2RequestCountryEnum> get serializer => _$urlscannerCreateScanV2RequestCountrySerializer;
+  static Serializer<UrlscannerCreateScanV2RequestCountryEnum> get serializer => _$urlscannerCreateScanV2RequestCountryEnumSerializer;
 
   const UrlscannerCreateScanV2RequestCountryEnum._(String name): super(name);
 
-  static BuiltSet<UrlscannerCreateScanV2RequestCountryEnum> get values => _$urlscannerCreateScanV2RequestCountryValues;
-  static UrlscannerCreateScanV2RequestCountryEnum valueOf(String name) => _$urlscannerCreateScanV2RequestCountryValueOf(name);
+  static BuiltSet<UrlscannerCreateScanV2RequestCountryEnum> get values => _$urlscannerCreateScanV2RequestCountryEnumValues;
+  static UrlscannerCreateScanV2RequestCountryEnum valueOf(String name) => _$urlscannerCreateScanV2RequestCountryEnumValueOf(name);
+}
+
+class UrlscannerCreateScanV2RequestScreenshotsResolutionsEnum extends EnumClass {
+
+  /// Device resolutions.
+  @BuiltValueEnumConst(wireName: r'desktop')
+  static const UrlscannerCreateScanV2RequestScreenshotsResolutionsEnum desktop = _$urlscannerCreateScanV2RequestScreenshotsResolutionsEnum_desktop;
+  /// Device resolutions.
+  @BuiltValueEnumConst(wireName: r'mobile')
+  static const UrlscannerCreateScanV2RequestScreenshotsResolutionsEnum mobile = _$urlscannerCreateScanV2RequestScreenshotsResolutionsEnum_mobile;
+  /// Device resolutions.
+  @BuiltValueEnumConst(wireName: r'tablet')
+  static const UrlscannerCreateScanV2RequestScreenshotsResolutionsEnum tablet = _$urlscannerCreateScanV2RequestScreenshotsResolutionsEnum_tablet;
+
+  static Serializer<UrlscannerCreateScanV2RequestScreenshotsResolutionsEnum> get serializer => _$urlscannerCreateScanV2RequestScreenshotsResolutionsEnumSerializer;
+
+  const UrlscannerCreateScanV2RequestScreenshotsResolutionsEnum._(String name): super(name);
+
+  static BuiltSet<UrlscannerCreateScanV2RequestScreenshotsResolutionsEnum> get values => _$urlscannerCreateScanV2RequestScreenshotsResolutionsEnumValues;
+  static UrlscannerCreateScanV2RequestScreenshotsResolutionsEnum valueOf(String name) => _$urlscannerCreateScanV2RequestScreenshotsResolutionsEnumValueOf(name);
 }
 
 class UrlscannerCreateScanV2RequestVisibilityEnum extends EnumClass {
@@ -827,11 +847,11 @@ class UrlscannerCreateScanV2RequestVisibilityEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'Unlisted')
   static const UrlscannerCreateScanV2RequestVisibilityEnum unlisted = _$urlscannerCreateScanV2RequestVisibilityEnum_unlisted;
 
-  static Serializer<UrlscannerCreateScanV2RequestVisibilityEnum> get serializer => _$urlscannerCreateScanV2RequestVisibilitySerializer;
+  static Serializer<UrlscannerCreateScanV2RequestVisibilityEnum> get serializer => _$urlscannerCreateScanV2RequestVisibilityEnumSerializer;
 
   const UrlscannerCreateScanV2RequestVisibilityEnum._(String name): super(name);
 
-  static BuiltSet<UrlscannerCreateScanV2RequestVisibilityEnum> get values => _$urlscannerCreateScanV2RequestVisibilityValues;
-  static UrlscannerCreateScanV2RequestVisibilityEnum valueOf(String name) => _$urlscannerCreateScanV2RequestVisibilityValueOf(name);
+  static BuiltSet<UrlscannerCreateScanV2RequestVisibilityEnum> get values => _$urlscannerCreateScanV2RequestVisibilityEnumValues;
+  static UrlscannerCreateScanV2RequestVisibilityEnum valueOf(String name) => _$urlscannerCreateScanV2RequestVisibilityEnumValueOf(name);
 }
 

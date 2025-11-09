@@ -322,12 +322,12 @@ class AbuseReportsPhishingReportActEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'abuse_phishing')
   static const AbuseReportsPhishingReportActEnum abusePhishing = _$abuseReportsPhishingReportActEnum_abusePhishing;
 
-  static Serializer<AbuseReportsPhishingReportActEnum> get serializer => _$abuseReportsPhishingReportActSerializer;
+  static Serializer<AbuseReportsPhishingReportActEnum> get serializer => _$abuseReportsPhishingReportActEnumSerializer;
 
   const AbuseReportsPhishingReportActEnum._(String name): super(name);
 
-  static BuiltSet<AbuseReportsPhishingReportActEnum> get values => _$abuseReportsPhishingReportActValues;
-  static AbuseReportsPhishingReportActEnum valueOf(String name) => _$abuseReportsPhishingReportActValueOf(name);
+  static BuiltSet<AbuseReportsPhishingReportActEnum> get values => _$abuseReportsPhishingReportActEnumValues;
+  static AbuseReportsPhishingReportActEnum valueOf(String name) => _$abuseReportsPhishingReportActEnumValueOf(name);
 }
 
 class AbuseReportsPhishingReportHostNotificationEnum extends EnumClass {
@@ -339,12 +339,12 @@ class AbuseReportsPhishingReportHostNotificationEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'send-anon')
   static const AbuseReportsPhishingReportHostNotificationEnum sendAnon = _$abuseReportsPhishingReportHostNotificationEnum_sendAnon;
 
-  static Serializer<AbuseReportsPhishingReportHostNotificationEnum> get serializer => _$abuseReportsPhishingReportHostNotificationSerializer;
+  static Serializer<AbuseReportsPhishingReportHostNotificationEnum> get serializer => _$abuseReportsPhishingReportHostNotificationEnumSerializer;
 
   const AbuseReportsPhishingReportHostNotificationEnum._(String name): super(name);
 
-  static BuiltSet<AbuseReportsPhishingReportHostNotificationEnum> get values => _$abuseReportsPhishingReportHostNotificationValues;
-  static AbuseReportsPhishingReportHostNotificationEnum valueOf(String name) => _$abuseReportsPhishingReportHostNotificationValueOf(name);
+  static BuiltSet<AbuseReportsPhishingReportHostNotificationEnum> get values => _$abuseReportsPhishingReportHostNotificationEnumValues;
+  static AbuseReportsPhishingReportHostNotificationEnum valueOf(String name) => _$abuseReportsPhishingReportHostNotificationEnumValueOf(name);
 }
 
 class AbuseReportsPhishingReportOwnerNotificationEnum extends EnumClass {
@@ -356,11 +356,11 @@ class AbuseReportsPhishingReportOwnerNotificationEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'send-anon')
   static const AbuseReportsPhishingReportOwnerNotificationEnum sendAnon = _$abuseReportsPhishingReportOwnerNotificationEnum_sendAnon;
 
-  static Serializer<AbuseReportsPhishingReportOwnerNotificationEnum> get serializer => _$abuseReportsPhishingReportOwnerNotificationSerializer;
+  static Serializer<AbuseReportsPhishingReportOwnerNotificationEnum> get serializer => _$abuseReportsPhishingReportOwnerNotificationEnumSerializer;
 
   const AbuseReportsPhishingReportOwnerNotificationEnum._(String name): super(name);
 
-  static BuiltSet<AbuseReportsPhishingReportOwnerNotificationEnum> get values => _$abuseReportsPhishingReportOwnerNotificationValues;
-  static AbuseReportsPhishingReportOwnerNotificationEnum valueOf(String name) => _$abuseReportsPhishingReportOwnerNotificationValueOf(name);
+  static BuiltSet<AbuseReportsPhishingReportOwnerNotificationEnum> get values => _$abuseReportsPhishingReportOwnerNotificationEnumValues;
+  static AbuseReportsPhishingReportOwnerNotificationEnum valueOf(String name) => _$abuseReportsPhishingReportOwnerNotificationEnumValueOf(name);
 }
 

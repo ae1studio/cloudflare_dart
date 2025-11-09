@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **authType** | **String** | Identifier of the authentication protocol used for the saas app. Required for OIDC. | [optional] 
 **clientId** | **String** | The application client id | [optional] 
 **clientSecret** | **String** | The application client secret, only returned on POST request. | [optional] 
-**createdAt** | [**AccessCreatedAt**](AccessCreatedAt.md) |  | [optional] 
+**createdAt** | [**JsonObject**](JsonObject.md) |  | [optional] 
 **customClaims** | [**BuiltList&lt;AccessOidcSaasAppCustomClaimsInner&gt;**](AccessOidcSaasAppCustomClaimsInner.md) |  | [optional] 
 **grantTypes** | **BuiltList&lt;String&gt;** | The OIDC flows supported by this application | [optional] 
 **groupFilterRegex** | **String** | A regex to filter Cloudflare groups returned in ID token and userinfo endpoint | [optional] 
@@ -23,7 +23,7 @@ Name | Type | Description | Notes
 **redirectUris** | **BuiltList&lt;String&gt;** | The permitted URL's for Cloudflare to return Authorization codes and Access/ID tokens | [optional] 
 **refreshTokenOptions** | [**AccessOidcSaasAppRefreshTokenOptions**](AccessOidcSaasAppRefreshTokenOptions.md) |  | [optional] 
 **scopes** | **BuiltList&lt;String&gt;** | Define the user information shared with access, \"offline_access\" scope will be automatically enabled if refresh tokens are enabled | [optional] 
-**updatedAt** | [**AccessUpdatedAt**](AccessUpdatedAt.md) |  | [optional] 
+**updatedAt** | [**JsonObject**](JsonObject.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

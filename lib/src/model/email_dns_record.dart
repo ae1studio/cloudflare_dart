@@ -242,11 +242,11 @@ class EmailDnsRecordTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'URI')
   static const EmailDnsRecordTypeEnum URI = _$emailDnsRecordTypeEnum_URI;
 
-  static Serializer<EmailDnsRecordTypeEnum> get serializer => _$emailDnsRecordTypeSerializer;
+  static Serializer<EmailDnsRecordTypeEnum> get serializer => _$emailDnsRecordTypeEnumSerializer;
 
   const EmailDnsRecordTypeEnum._(String name): super(name);
 
-  static BuiltSet<EmailDnsRecordTypeEnum> get values => _$emailDnsRecordTypeValues;
-  static EmailDnsRecordTypeEnum valueOf(String name) => _$emailDnsRecordTypeValueOf(name);
+  static BuiltSet<EmailDnsRecordTypeEnum> get values => _$emailDnsRecordTypeEnumValues;
+  static EmailDnsRecordTypeEnum valueOf(String name) => _$emailDnsRecordTypeEnumValueOf(name);
 }
 

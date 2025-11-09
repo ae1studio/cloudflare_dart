@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **authType** | **String** | Identifier of the authentication protocol used for the saas app. Required for OIDC. | [optional] 
 **consumerServiceUrl** | **String** | The service provider's endpoint that is responsible for receiving and parsing a SAML assertion. | [optional] 
-**createdAt** | [**AccessCreatedAt**](AccessCreatedAt.md) |  | [optional] 
+**createdAt** | [**JsonObject**](JsonObject.md) |  | [optional] 
 **customAttributes** | [**BuiltList&lt;AccessSamlSaasAppCustomAttributesInner&gt;**](AccessSamlSaasAppCustomAttributesInner.md) |  | [optional] 
 **defaultRelayState** | **String** | The URL that the user will be redirected to after a successful login for IDP initiated logins. | [optional] 
 **idpEntityId** | **String** | The unique identifier for your SaaS application. | [optional] 
@@ -20,7 +20,7 @@ Name | Type | Description | Notes
 **samlAttributeTransformJsonata** | **String** | A [JSONata] (https://jsonata.org/) expression that transforms an application's user identities into attribute assertions in the SAML response. The expression can transform id, email, name, and groups values. It can also transform fields listed in the saml_attributes or oidc_fields of the identity provider used to authenticate. The output of this expression must be a JSON object.  | [optional] 
 **spEntityId** | **String** | A globally unique name for an identity or service provider. | [optional] 
 **ssoEndpoint** | **String** | The endpoint where your SaaS application will send login requests. | [optional] 
-**updatedAt** | [**AccessUpdatedAt**](AccessUpdatedAt.md) |  | [optional] 
+**updatedAt** | [**JsonObject**](JsonObject.md) |  | [optional] 
 **accessTokenLifetime** | **String** | The lifetime of the OIDC Access Token after creation. Valid units are m,h. Must be greater than or equal to 1m and less than or equal to 24h. | [optional] 
 **allowPkceWithoutClientSecret** | **bool** | If client secret should be required on the token endpoint when authorization_code_with_pkce grant is used. | [optional] 
 **appLauncherUrl** | **String** | The URL where this applications tile redirects users | [optional] 

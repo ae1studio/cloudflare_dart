@@ -151,11 +151,11 @@ class R2TargetResponseSchemaVendorEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'r2')
   static const R2TargetResponseSchemaVendorEnum r2 = _$r2TargetResponseSchemaVendorEnum_r2;
 
-  static Serializer<R2TargetResponseSchemaVendorEnum> get serializer => _$r2TargetResponseSchemaVendorSerializer;
+  static Serializer<R2TargetResponseSchemaVendorEnum> get serializer => _$r2TargetResponseSchemaVendorEnumSerializer;
 
   const R2TargetResponseSchemaVendorEnum._(String name): super(name);
 
-  static BuiltSet<R2TargetResponseSchemaVendorEnum> get values => _$r2TargetResponseSchemaVendorValues;
-  static R2TargetResponseSchemaVendorEnum valueOf(String name) => _$r2TargetResponseSchemaVendorValueOf(name);
+  static BuiltSet<R2TargetResponseSchemaVendorEnum> get values => _$r2TargetResponseSchemaVendorEnumValues;
+  static R2TargetResponseSchemaVendorEnum valueOf(String name) => _$r2TargetResponseSchemaVendorEnumValueOf(name);
 }
 

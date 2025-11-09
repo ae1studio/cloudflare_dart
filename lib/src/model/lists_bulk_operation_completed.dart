@@ -147,11 +147,11 @@ class ListsBulkOperationCompletedStatusEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'completed')
   static const ListsBulkOperationCompletedStatusEnum completed = _$listsBulkOperationCompletedStatusEnum_completed;
 
-  static Serializer<ListsBulkOperationCompletedStatusEnum> get serializer => _$listsBulkOperationCompletedStatusSerializer;
+  static Serializer<ListsBulkOperationCompletedStatusEnum> get serializer => _$listsBulkOperationCompletedStatusEnumSerializer;
 
   const ListsBulkOperationCompletedStatusEnum._(String name): super(name);
 
-  static BuiltSet<ListsBulkOperationCompletedStatusEnum> get values => _$listsBulkOperationCompletedStatusValues;
-  static ListsBulkOperationCompletedStatusEnum valueOf(String name) => _$listsBulkOperationCompletedStatusValueOf(name);
+  static BuiltSet<ListsBulkOperationCompletedStatusEnum> get values => _$listsBulkOperationCompletedStatusEnumValues;
+  static ListsBulkOperationCompletedStatusEnum valueOf(String name) => _$listsBulkOperationCompletedStatusEnumValueOf(name);
 }
 

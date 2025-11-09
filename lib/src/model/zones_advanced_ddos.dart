@@ -156,11 +156,11 @@ class ZonesAdvancedDdosIdEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'advanced_ddos')
   static const ZonesAdvancedDdosIdEnum advancedDdos = _$zonesAdvancedDdosIdEnum_advancedDdos;
 
-  static Serializer<ZonesAdvancedDdosIdEnum> get serializer => _$zonesAdvancedDdosIdSerializer;
+  static Serializer<ZonesAdvancedDdosIdEnum> get serializer => _$zonesAdvancedDdosIdEnumSerializer;
 
   const ZonesAdvancedDdosIdEnum._(String name): super(name);
 
-  static BuiltSet<ZonesAdvancedDdosIdEnum> get values => _$zonesAdvancedDdosIdValues;
-  static ZonesAdvancedDdosIdEnum valueOf(String name) => _$zonesAdvancedDdosIdValueOf(name);
+  static BuiltSet<ZonesAdvancedDdosIdEnum> get values => _$zonesAdvancedDdosIdEnumValues;
+  static ZonesAdvancedDdosIdEnum valueOf(String name) => _$zonesAdvancedDdosIdEnumValueOf(name);
 }
 

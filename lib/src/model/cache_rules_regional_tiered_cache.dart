@@ -158,11 +158,11 @@ class CacheRulesRegionalTieredCacheIdEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'tc_regional')
   static const CacheRulesRegionalTieredCacheIdEnum tcRegional = _$cacheRulesRegionalTieredCacheIdEnum_tcRegional;
 
-  static Serializer<CacheRulesRegionalTieredCacheIdEnum> get serializer => _$cacheRulesRegionalTieredCacheIdSerializer;
+  static Serializer<CacheRulesRegionalTieredCacheIdEnum> get serializer => _$cacheRulesRegionalTieredCacheIdEnumSerializer;
 
   const CacheRulesRegionalTieredCacheIdEnum._(String name): super(name);
 
-  static BuiltSet<CacheRulesRegionalTieredCacheIdEnum> get values => _$cacheRulesRegionalTieredCacheIdValues;
-  static CacheRulesRegionalTieredCacheIdEnum valueOf(String name) => _$cacheRulesRegionalTieredCacheIdValueOf(name);
+  static BuiltSet<CacheRulesRegionalTieredCacheIdEnum> get values => _$cacheRulesRegionalTieredCacheIdEnumValues;
+  static CacheRulesRegionalTieredCacheIdEnum valueOf(String name) => _$cacheRulesRegionalTieredCacheIdEnumValueOf(name);
 }
 

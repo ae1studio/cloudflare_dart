@@ -291,11 +291,11 @@ class LivestreamSessionDetails200ResponseDataLivestreamsInnerStatusEnum extends 
   @BuiltValueEnumConst(wireName: r'IDLE')
   static const LivestreamSessionDetails200ResponseDataLivestreamsInnerStatusEnum IDLE = _$livestreamSessionDetails200ResponseDataLivestreamsInnerStatusEnum_IDLE;
 
-  static Serializer<LivestreamSessionDetails200ResponseDataLivestreamsInnerStatusEnum> get serializer => _$livestreamSessionDetails200ResponseDataLivestreamsInnerStatusSerializer;
+  static Serializer<LivestreamSessionDetails200ResponseDataLivestreamsInnerStatusEnum> get serializer => _$livestreamSessionDetails200ResponseDataLivestreamsInnerStatusEnumSerializer;
 
   const LivestreamSessionDetails200ResponseDataLivestreamsInnerStatusEnum._(String name): super(name);
 
-  static BuiltSet<LivestreamSessionDetails200ResponseDataLivestreamsInnerStatusEnum> get values => _$livestreamSessionDetails200ResponseDataLivestreamsInnerStatusValues;
-  static LivestreamSessionDetails200ResponseDataLivestreamsInnerStatusEnum valueOf(String name) => _$livestreamSessionDetails200ResponseDataLivestreamsInnerStatusValueOf(name);
+  static BuiltSet<LivestreamSessionDetails200ResponseDataLivestreamsInnerStatusEnum> get values => _$livestreamSessionDetails200ResponseDataLivestreamsInnerStatusEnumValues;
+  static LivestreamSessionDetails200ResponseDataLivestreamsInnerStatusEnum valueOf(String name) => _$livestreamSessionDetails200ResponseDataLivestreamsInnerStatusEnumValueOf(name);
 }
 

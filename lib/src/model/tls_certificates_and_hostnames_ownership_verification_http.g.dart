@@ -9,7 +9,9 @@ part of 'tls_certificates_and_hostnames_ownership_verification_http.dart';
 class _$TlsCertificatesAndHostnamesOwnershipVerificationHttp
     extends TlsCertificatesAndHostnamesOwnershipVerificationHttp {
   @override
-  final OneOf oneOf;
+  final String? httpBody;
+  @override
+  final String? httpUrl;
 
   factory _$TlsCertificatesAndHostnamesOwnershipVerificationHttp(
           [void Function(
@@ -20,7 +22,7 @@ class _$TlsCertificatesAndHostnamesOwnershipVerificationHttp
           ._build();
 
   _$TlsCertificatesAndHostnamesOwnershipVerificationHttp._(
-      {required this.oneOf})
+      {this.httpBody, this.httpUrl})
       : super._();
   @override
   TlsCertificatesAndHostnamesOwnershipVerificationHttp rebuild(
@@ -38,13 +40,15 @@ class _$TlsCertificatesAndHostnamesOwnershipVerificationHttp
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is TlsCertificatesAndHostnamesOwnershipVerificationHttp &&
-        oneOf == other.oneOf;
+        httpBody == other.httpBody &&
+        httpUrl == other.httpUrl;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, oneOf.hashCode);
+    _$hash = $jc(_$hash, httpBody.hashCode);
+    _$hash = $jc(_$hash, httpUrl.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -53,7 +57,8 @@ class _$TlsCertificatesAndHostnamesOwnershipVerificationHttp
   String toString() {
     return (newBuiltValueToStringHelper(
             r'TlsCertificatesAndHostnamesOwnershipVerificationHttp')
-          ..add('oneOf', oneOf))
+          ..add('httpBody', httpBody)
+          ..add('httpUrl', httpUrl))
         .toString();
   }
 }
@@ -64,9 +69,13 @@ class TlsCertificatesAndHostnamesOwnershipVerificationHttpBuilder
             TlsCertificatesAndHostnamesOwnershipVerificationHttpBuilder> {
   _$TlsCertificatesAndHostnamesOwnershipVerificationHttp? _$v;
 
-  OneOf? _oneOf;
-  OneOf? get oneOf => _$this._oneOf;
-  set oneOf(OneOf? oneOf) => _$this._oneOf = oneOf;
+  String? _httpBody;
+  String? get httpBody => _$this._httpBody;
+  set httpBody(String? httpBody) => _$this._httpBody = httpBody;
+
+  String? _httpUrl;
+  String? get httpUrl => _$this._httpUrl;
+  set httpUrl(String? httpUrl) => _$this._httpUrl = httpUrl;
 
   TlsCertificatesAndHostnamesOwnershipVerificationHttpBuilder() {
     TlsCertificatesAndHostnamesOwnershipVerificationHttp._defaults(this);
@@ -75,7 +84,8 @@ class TlsCertificatesAndHostnamesOwnershipVerificationHttpBuilder
   TlsCertificatesAndHostnamesOwnershipVerificationHttpBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _oneOf = $v.oneOf;
+      _httpBody = $v.httpBody;
+      _httpUrl = $v.httpUrl;
       _$v = null;
     }
     return this;
@@ -100,8 +110,8 @@ class TlsCertificatesAndHostnamesOwnershipVerificationHttpBuilder
   _$TlsCertificatesAndHostnamesOwnershipVerificationHttp _build() {
     final _$result = _$v ??
         _$TlsCertificatesAndHostnamesOwnershipVerificationHttp._(
-          oneOf: BuiltValueNullFieldError.checkNotNull(oneOf,
-              r'TlsCertificatesAndHostnamesOwnershipVerificationHttp', 'oneOf'),
+          httpBody: httpBody,
+          httpUrl: httpUrl,
         );
     replace(_$result);
     return _$result;

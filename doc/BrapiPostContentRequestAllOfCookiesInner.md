@@ -14,12 +14,12 @@ Name | Type | Description | Notes
 **name** | **String** |  | 
 **partitionKey** | **String** |  | [optional] 
 **path** | **String** |  | [optional] 
-**priority** | [**BrapiPostContentRequestAllOfCookiesInnerPriority**](BrapiPostContentRequestAllOfCookiesInnerPriority.md) |  | [optional] 
+**priority** | **String** |  | [optional] 
 **sameParty** | **bool** |  | [optional] 
-**sameSite** | [**BrapiPostContentRequestAllOfCookiesInnerSameSite**](BrapiPostContentRequestAllOfCookiesInnerSameSite.md) |  | [optional] 
+**sameSite** | **String** |  | [optional] 
 **secure** | **bool** |  | [optional] 
 **sourcePort** | **num** |  | [optional] 
-**sourceScheme** | [**BrapiPostContentRequestAllOfCookiesInnerSourceScheme**](BrapiPostContentRequestAllOfCookiesInnerSourceScheme.md) |  | [optional] 
+**sourceScheme** | **String** |  | [optional] 
 **url** | **String** |  | [optional] 
 **value** | **String** |  | 
 

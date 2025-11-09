@@ -148,11 +148,11 @@ class _$CloudflareImagesKeysListSigningKeys4XXResponseSerializer implements Prim
 class CloudflareImagesKeysListSigningKeys4XXResponseResultEnum extends EnumClass {
 
 
-  static Serializer<CloudflareImagesKeysListSigningKeys4XXResponseResultEnum> get serializer => _$cloudflareImagesKeysListSigningKeys4XXResponseResultSerializer;
+  static Serializer<CloudflareImagesKeysListSigningKeys4XXResponseResultEnum> get serializer => _$cloudflareImagesKeysListSigningKeys4XXResponseResultEnumSerializer;
 
   const CloudflareImagesKeysListSigningKeys4XXResponseResultEnum._(String name): super(name);
 
-  static BuiltSet<CloudflareImagesKeysListSigningKeys4XXResponseResultEnum> get values => _$cloudflareImagesKeysListSigningKeys4XXResponseResultValues;
-  static CloudflareImagesKeysListSigningKeys4XXResponseResultEnum valueOf(String name) => _$cloudflareImagesKeysListSigningKeys4XXResponseResultValueOf(name);
+  static BuiltSet<CloudflareImagesKeysListSigningKeys4XXResponseResultEnum> get values => _$cloudflareImagesKeysListSigningKeys4XXResponseResultEnumValues;
+  static CloudflareImagesKeysListSigningKeys4XXResponseResultEnum valueOf(String name) => _$cloudflareImagesKeysListSigningKeys4XXResponseResultEnumValueOf(name);
 }
 

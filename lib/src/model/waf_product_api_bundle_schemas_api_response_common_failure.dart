@@ -194,11 +194,11 @@ class _$$WafProductApiBundleSchemasApiResponseCommonFailureSerializer implements
 class WafProductApiBundleSchemasApiResponseCommonFailureResultEnum extends EnumClass {
 
 
-  static Serializer<WafProductApiBundleSchemasApiResponseCommonFailureResultEnum> get serializer => _$wafProductApiBundleSchemasApiResponseCommonFailureResultSerializer;
+  static Serializer<WafProductApiBundleSchemasApiResponseCommonFailureResultEnum> get serializer => _$wafProductApiBundleSchemasApiResponseCommonFailureResultEnumSerializer;
 
   const WafProductApiBundleSchemasApiResponseCommonFailureResultEnum._(String name): super(name);
 
-  static BuiltSet<WafProductApiBundleSchemasApiResponseCommonFailureResultEnum> get values => _$wafProductApiBundleSchemasApiResponseCommonFailureResultValues;
-  static WafProductApiBundleSchemasApiResponseCommonFailureResultEnum valueOf(String name) => _$wafProductApiBundleSchemasApiResponseCommonFailureResultValueOf(name);
+  static BuiltSet<WafProductApiBundleSchemasApiResponseCommonFailureResultEnum> get values => _$wafProductApiBundleSchemasApiResponseCommonFailureResultEnumValues;
+  static WafProductApiBundleSchemasApiResponseCommonFailureResultEnum valueOf(String name) => _$wafProductApiBundleSchemasApiResponseCommonFailureResultEnumValueOf(name);
 }
 

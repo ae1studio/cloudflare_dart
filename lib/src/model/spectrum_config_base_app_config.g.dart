@@ -9,23 +9,23 @@ part of 'spectrum_config_base_app_config.dart';
 abstract class SpectrumConfigBaseAppConfigBuilder {
   void replace(SpectrumConfigBaseAppConfig other);
   void update(void Function(SpectrumConfigBaseAppConfigBuilder) updates);
-  SpectrumConfigCreatedBuilder get createdOn;
-  set createdOn(SpectrumConfigCreatedBuilder? createdOn);
+  JsonObject? get createdOn;
+  set createdOn(JsonObject? createdOn);
 
-  SpectrumConfigAppIdentifierBuilder get id;
-  set id(SpectrumConfigAppIdentifierBuilder? id);
+  JsonObject? get id;
+  set id(JsonObject? id);
 
-  SpectrumConfigModifiedBuilder get modifiedOn;
-  set modifiedOn(SpectrumConfigModifiedBuilder? modifiedOn);
+  JsonObject? get modifiedOn;
+  set modifiedOn(JsonObject? modifiedOn);
 }
 
 class _$$SpectrumConfigBaseAppConfig extends $SpectrumConfigBaseAppConfig {
   @override
-  final SpectrumConfigCreated createdOn;
+  final JsonObject createdOn;
   @override
-  final SpectrumConfigAppIdentifier id;
+  final JsonObject id;
   @override
-  final SpectrumConfigModified modifiedOn;
+  final JsonObject modifiedOn;
 
   factory _$$SpectrumConfigBaseAppConfig(
           [void Function($SpectrumConfigBaseAppConfigBuilder)? updates]) =>
@@ -79,21 +79,18 @@ class $SpectrumConfigBaseAppConfigBuilder
         SpectrumConfigBaseAppConfigBuilder {
   _$$SpectrumConfigBaseAppConfig? _$v;
 
-  SpectrumConfigCreatedBuilder? _createdOn;
-  SpectrumConfigCreatedBuilder get createdOn =>
-      _$this._createdOn ??= SpectrumConfigCreatedBuilder();
-  set createdOn(covariant SpectrumConfigCreatedBuilder? createdOn) =>
+  JsonObject? _createdOn;
+  JsonObject? get createdOn => _$this._createdOn;
+  set createdOn(covariant JsonObject? createdOn) =>
       _$this._createdOn = createdOn;
 
-  SpectrumConfigAppIdentifierBuilder? _id;
-  SpectrumConfigAppIdentifierBuilder get id =>
-      _$this._id ??= SpectrumConfigAppIdentifierBuilder();
-  set id(covariant SpectrumConfigAppIdentifierBuilder? id) => _$this._id = id;
+  JsonObject? _id;
+  JsonObject? get id => _$this._id;
+  set id(covariant JsonObject? id) => _$this._id = id;
 
-  SpectrumConfigModifiedBuilder? _modifiedOn;
-  SpectrumConfigModifiedBuilder get modifiedOn =>
-      _$this._modifiedOn ??= SpectrumConfigModifiedBuilder();
-  set modifiedOn(covariant SpectrumConfigModifiedBuilder? modifiedOn) =>
+  JsonObject? _modifiedOn;
+  JsonObject? get modifiedOn => _$this._modifiedOn;
+  set modifiedOn(covariant JsonObject? modifiedOn) =>
       _$this._modifiedOn = modifiedOn;
 
   $SpectrumConfigBaseAppConfigBuilder() {
@@ -103,9 +100,9 @@ class $SpectrumConfigBaseAppConfigBuilder
   $SpectrumConfigBaseAppConfigBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _createdOn = $v.createdOn.toBuilder();
-      _id = $v.id.toBuilder();
-      _modifiedOn = $v.modifiedOn.toBuilder();
+      _createdOn = $v.createdOn;
+      _id = $v.id;
+      _modifiedOn = $v.modifiedOn;
       _$v = null;
     }
     return this;
@@ -125,29 +122,15 @@ class $SpectrumConfigBaseAppConfigBuilder
   $SpectrumConfigBaseAppConfig build() => _build();
 
   _$$SpectrumConfigBaseAppConfig _build() {
-    _$$SpectrumConfigBaseAppConfig _$result;
-    try {
-      _$result = _$v ??
-          _$$SpectrumConfigBaseAppConfig._(
-            createdOn: createdOn.build(),
-            id: id.build(),
-            modifiedOn: modifiedOn.build(),
-          );
-    } catch (_) {
-      late String _$failedField;
-      try {
-        _$failedField = 'createdOn';
-        createdOn.build();
-        _$failedField = 'id';
-        id.build();
-        _$failedField = 'modifiedOn';
-        modifiedOn.build();
-      } catch (e) {
-        throw BuiltValueNestedFieldError(
-            r'$SpectrumConfigBaseAppConfig', _$failedField, e.toString());
-      }
-      rethrow;
-    }
+    final _$result = _$v ??
+        _$$SpectrumConfigBaseAppConfig._(
+          createdOn: BuiltValueNullFieldError.checkNotNull(
+              createdOn, r'$SpectrumConfigBaseAppConfig', 'createdOn'),
+          id: BuiltValueNullFieldError.checkNotNull(
+              id, r'$SpectrumConfigBaseAppConfig', 'id'),
+          modifiedOn: BuiltValueNullFieldError.checkNotNull(
+              modifiedOn, r'$SpectrumConfigBaseAppConfig', 'modifiedOn'),
+        );
     replace(_$result);
     return _$result;
   }

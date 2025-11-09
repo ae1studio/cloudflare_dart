@@ -4,8 +4,7 @@
 
 // ignore_for_file: unused_element
 import 'package:built_collection/built_collection.dart';
-import 'package:cloudflare_dart/src/model/spectrum_analytics_since.dart';
-import 'package:cloudflare_dart/src/model/spectrum_analytics_until.dart';
+import 'package:built_value/json_object.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
@@ -42,14 +41,14 @@ abstract class SpectrumAnalyticsQuery implements Built<SpectrumAnalyticsQuery, S
   // enum metricsEnum {  count,  bytesIngress,  bytesEgress,  durationAvg,  durationMedian,  duration90th,  duration99th,  };
 
   @BuiltValueField(wireName: r'since')
-  SpectrumAnalyticsSince? get since;
+  JsonObject? get since;
 
   /// The sort order for the result set; sort fields must be included in `metrics` or `dimensions`.
   @BuiltValueField(wireName: r'sort')
   BuiltList<String>? get sort;
 
   @BuiltValueField(wireName: r'until')
-  SpectrumAnalyticsUntil? get until;
+  JsonObject? get until;
 
   SpectrumAnalyticsQuery._();
 
@@ -106,7 +105,7 @@ class _$SpectrumAnalyticsQuerySerializer implements PrimitiveSerializer<Spectrum
       yield r'since';
       yield serializers.serialize(
         object.since,
-        specifiedType: const FullType(SpectrumAnalyticsSince),
+        specifiedType: const FullType(JsonObject),
       );
     }
     if (object.sort != null) {
@@ -120,7 +119,7 @@ class _$SpectrumAnalyticsQuerySerializer implements PrimitiveSerializer<Spectrum
       yield r'until';
       yield serializers.serialize(
         object.until,
-        specifiedType: const FullType(SpectrumAnalyticsUntil),
+        specifiedType: const FullType(JsonObject),
       );
     }
   }
@@ -177,8 +176,8 @@ class _$SpectrumAnalyticsQuerySerializer implements PrimitiveSerializer<Spectrum
         case r'since':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(SpectrumAnalyticsSince),
-          ) as SpectrumAnalyticsSince;
+            specifiedType: const FullType(JsonObject),
+          ) as JsonObject;
           result.since.replace(valueDes);
           break;
         case r'sort':
@@ -191,8 +190,8 @@ class _$SpectrumAnalyticsQuerySerializer implements PrimitiveSerializer<Spectrum
         case r'until':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(SpectrumAnalyticsUntil),
-          ) as SpectrumAnalyticsUntil;
+            specifiedType: const FullType(JsonObject),
+          ) as JsonObject;
           result.until.replace(valueDes);
           break;
         default:
@@ -235,12 +234,12 @@ class SpectrumAnalyticsQueryDimensionsEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'ipVersion')
   static const SpectrumAnalyticsQueryDimensionsEnum ipVersion = _$spectrumAnalyticsQueryDimensionsEnum_ipVersion;
 
-  static Serializer<SpectrumAnalyticsQueryDimensionsEnum> get serializer => _$spectrumAnalyticsQueryDimensionsSerializer;
+  static Serializer<SpectrumAnalyticsQueryDimensionsEnum> get serializer => _$spectrumAnalyticsQueryDimensionsEnumSerializer;
 
   const SpectrumAnalyticsQueryDimensionsEnum._(String name): super(name);
 
-  static BuiltSet<SpectrumAnalyticsQueryDimensionsEnum> get values => _$spectrumAnalyticsQueryDimensionsValues;
-  static SpectrumAnalyticsQueryDimensionsEnum valueOf(String name) => _$spectrumAnalyticsQueryDimensionsValueOf(name);
+  static BuiltSet<SpectrumAnalyticsQueryDimensionsEnum> get values => _$spectrumAnalyticsQueryDimensionsEnumValues;
+  static SpectrumAnalyticsQueryDimensionsEnum valueOf(String name) => _$spectrumAnalyticsQueryDimensionsEnumValueOf(name);
 }
 
 class SpectrumAnalyticsQueryMetricsEnum extends EnumClass {
@@ -260,11 +259,11 @@ class SpectrumAnalyticsQueryMetricsEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'duration99th')
   static const SpectrumAnalyticsQueryMetricsEnum duration99th = _$spectrumAnalyticsQueryMetricsEnum_duration99th;
 
-  static Serializer<SpectrumAnalyticsQueryMetricsEnum> get serializer => _$spectrumAnalyticsQueryMetricsSerializer;
+  static Serializer<SpectrumAnalyticsQueryMetricsEnum> get serializer => _$spectrumAnalyticsQueryMetricsEnumSerializer;
 
   const SpectrumAnalyticsQueryMetricsEnum._(String name): super(name);
 
-  static BuiltSet<SpectrumAnalyticsQueryMetricsEnum> get values => _$spectrumAnalyticsQueryMetricsValues;
-  static SpectrumAnalyticsQueryMetricsEnum valueOf(String name) => _$spectrumAnalyticsQueryMetricsValueOf(name);
+  static BuiltSet<SpectrumAnalyticsQueryMetricsEnum> get values => _$spectrumAnalyticsQueryMetricsEnumValues;
+  static SpectrumAnalyticsQueryMetricsEnum valueOf(String name) => _$spectrumAnalyticsQueryMetricsEnumValueOf(name);
 }
 

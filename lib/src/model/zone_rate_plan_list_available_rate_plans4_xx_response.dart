@@ -164,11 +164,11 @@ class _$ZoneRatePlanListAvailableRatePlans4XXResponseSerializer implements Primi
 class ZoneRatePlanListAvailableRatePlans4XXResponseResultEnum extends EnumClass {
 
 
-  static Serializer<ZoneRatePlanListAvailableRatePlans4XXResponseResultEnum> get serializer => _$zoneRatePlanListAvailableRatePlans4XXResponseResultSerializer;
+  static Serializer<ZoneRatePlanListAvailableRatePlans4XXResponseResultEnum> get serializer => _$zoneRatePlanListAvailableRatePlans4XXResponseResultEnumSerializer;
 
   const ZoneRatePlanListAvailableRatePlans4XXResponseResultEnum._(String name): super(name);
 
-  static BuiltSet<ZoneRatePlanListAvailableRatePlans4XXResponseResultEnum> get values => _$zoneRatePlanListAvailableRatePlans4XXResponseResultValues;
-  static ZoneRatePlanListAvailableRatePlans4XXResponseResultEnum valueOf(String name) => _$zoneRatePlanListAvailableRatePlans4XXResponseResultValueOf(name);
+  static BuiltSet<ZoneRatePlanListAvailableRatePlans4XXResponseResultEnum> get values => _$zoneRatePlanListAvailableRatePlans4XXResponseResultEnumValues;
+  static ZoneRatePlanListAvailableRatePlans4XXResponseResultEnum valueOf(String name) => _$zoneRatePlanListAvailableRatePlans4XXResponseResultEnumValueOf(name);
 }
 

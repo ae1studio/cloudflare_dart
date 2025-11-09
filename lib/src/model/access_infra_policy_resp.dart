@@ -16,7 +16,6 @@ part 'access_infra_policy_resp.g.dart';
 /// AccessInfraPolicyResp
 ///
 /// Properties:
-/// * [connectionRules] 
 /// * [createdAt] 
 /// * [decision] 
 /// * [exclude] - Rules evaluated with a NOT logical operator. To match the policy, a user cannot meet any of the Exclude rules.
@@ -25,6 +24,7 @@ part 'access_infra_policy_resp.g.dart';
 /// * [name] - The name of the Access policy.
 /// * [require] - Rules evaluated with an AND logical operator. To match the policy, a user must meet all of the Require rules.
 /// * [updatedAt] 
+/// * [connectionRules] 
 @BuiltValue()
 abstract class AccessInfraPolicyResp implements AccessBasePolicyResp, Built<AccessInfraPolicyResp, AccessInfraPolicyRespBuilder> {
   @BuiltValueField(wireName: r'connection_rules')

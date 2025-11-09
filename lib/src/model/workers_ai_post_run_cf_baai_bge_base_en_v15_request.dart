@@ -83,11 +83,11 @@ class WorkersAiPostRunCfBaaiBgeBaseEnV15RequestPoolingEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'cls')
   static const WorkersAiPostRunCfBaaiBgeBaseEnV15RequestPoolingEnum cls = _$workersAiPostRunCfBaaiBgeBaseEnV15RequestPoolingEnum_cls;
 
-  static Serializer<WorkersAiPostRunCfBaaiBgeBaseEnV15RequestPoolingEnum> get serializer => _$workersAiPostRunCfBaaiBgeBaseEnV15RequestPoolingSerializer;
+  static Serializer<WorkersAiPostRunCfBaaiBgeBaseEnV15RequestPoolingEnum> get serializer => _$workersAiPostRunCfBaaiBgeBaseEnV15RequestPoolingEnumSerializer;
 
   const WorkersAiPostRunCfBaaiBgeBaseEnV15RequestPoolingEnum._(String name): super(name);
 
-  static BuiltSet<WorkersAiPostRunCfBaaiBgeBaseEnV15RequestPoolingEnum> get values => _$workersAiPostRunCfBaaiBgeBaseEnV15RequestPoolingValues;
-  static WorkersAiPostRunCfBaaiBgeBaseEnV15RequestPoolingEnum valueOf(String name) => _$workersAiPostRunCfBaaiBgeBaseEnV15RequestPoolingValueOf(name);
+  static BuiltSet<WorkersAiPostRunCfBaaiBgeBaseEnV15RequestPoolingEnum> get values => _$workersAiPostRunCfBaaiBgeBaseEnV15RequestPoolingEnumValues;
+  static WorkersAiPostRunCfBaaiBgeBaseEnV15RequestPoolingEnum valueOf(String name) => _$workersAiPostRunCfBaaiBgeBaseEnV15RequestPoolingEnumValueOf(name);
 }
 

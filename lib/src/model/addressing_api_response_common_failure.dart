@@ -194,11 +194,11 @@ class _$$AddressingApiResponseCommonFailureSerializer implements PrimitiveSerial
 class AddressingApiResponseCommonFailureResultEnum extends EnumClass {
 
 
-  static Serializer<AddressingApiResponseCommonFailureResultEnum> get serializer => _$addressingApiResponseCommonFailureResultSerializer;
+  static Serializer<AddressingApiResponseCommonFailureResultEnum> get serializer => _$addressingApiResponseCommonFailureResultEnumSerializer;
 
   const AddressingApiResponseCommonFailureResultEnum._(String name): super(name);
 
-  static BuiltSet<AddressingApiResponseCommonFailureResultEnum> get values => _$addressingApiResponseCommonFailureResultValues;
-  static AddressingApiResponseCommonFailureResultEnum valueOf(String name) => _$addressingApiResponseCommonFailureResultValueOf(name);
+  static BuiltSet<AddressingApiResponseCommonFailureResultEnum> get values => _$addressingApiResponseCommonFailureResultEnumValues;
+  static AddressingApiResponseCommonFailureResultEnum valueOf(String name) => _$addressingApiResponseCommonFailureResultEnumValueOf(name);
 }
 

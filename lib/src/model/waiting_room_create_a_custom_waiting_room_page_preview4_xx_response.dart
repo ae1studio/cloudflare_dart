@@ -150,11 +150,11 @@ class _$WaitingRoomCreateACustomWaitingRoomPagePreview4XXResponseSerializer impl
 class WaitingRoomCreateACustomWaitingRoomPagePreview4XXResponseResultEnum extends EnumClass {
 
 
-  static Serializer<WaitingRoomCreateACustomWaitingRoomPagePreview4XXResponseResultEnum> get serializer => _$waitingRoomCreateACustomWaitingRoomPagePreview4XXResponseResultSerializer;
+  static Serializer<WaitingRoomCreateACustomWaitingRoomPagePreview4XXResponseResultEnum> get serializer => _$waitingRoomCreateACustomWaitingRoomPagePreview4XXResponseResultEnumSerializer;
 
   const WaitingRoomCreateACustomWaitingRoomPagePreview4XXResponseResultEnum._(String name): super(name);
 
-  static BuiltSet<WaitingRoomCreateACustomWaitingRoomPagePreview4XXResponseResultEnum> get values => _$waitingRoomCreateACustomWaitingRoomPagePreview4XXResponseResultValues;
-  static WaitingRoomCreateACustomWaitingRoomPagePreview4XXResponseResultEnum valueOf(String name) => _$waitingRoomCreateACustomWaitingRoomPagePreview4XXResponseResultValueOf(name);
+  static BuiltSet<WaitingRoomCreateACustomWaitingRoomPagePreview4XXResponseResultEnum> get values => _$waitingRoomCreateACustomWaitingRoomPagePreview4XXResponseResultEnumValues;
+  static WaitingRoomCreateACustomWaitingRoomPagePreview4XXResponseResultEnum valueOf(String name) => _$waitingRoomCreateACustomWaitingRoomPagePreview4XXResponseResultEnumValueOf(name);
 }
 

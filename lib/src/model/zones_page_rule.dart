@@ -5,7 +5,7 @@
 // ignore_for_file: unused_element
 import 'package:built_collection/built_collection.dart';
 import 'package:cloudflare_dart/src/model/zones_status.dart';
-import 'package:cloudflare_dart/src/model/zones_target.dart';
+import 'package:cloudflare_dart/src/model/zones_url_target.dart';
 import 'package:cloudflare_dart/src/model/zones_actions_inner.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
@@ -50,7 +50,7 @@ abstract class ZonesPageRule implements Built<ZonesPageRule, ZonesPageRuleBuilde
 
   /// The rule targets to evaluate on each request.
   @BuiltValueField(wireName: r'targets')
-  BuiltList<ZonesTarget> get targets;
+  BuiltList<ZonesUrlTarget> get targets;
 
   ZonesPageRule._();
 
@@ -109,7 +109,7 @@ class _$ZonesPageRuleSerializer implements PrimitiveSerializer<ZonesPageRule> {
     yield r'targets';
     yield serializers.serialize(
       object.targets,
-      specifiedType: const FullType(BuiltList, [FullType(ZonesTarget)]),
+      specifiedType: const FullType(BuiltList, [FullType(ZonesUrlTarget)]),
     );
   }
 
@@ -179,8 +179,8 @@ class _$ZonesPageRuleSerializer implements PrimitiveSerializer<ZonesPageRule> {
         case r'targets':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(BuiltList, [FullType(ZonesTarget)]),
-          ) as BuiltList<ZonesTarget>;
+            specifiedType: const FullType(BuiltList, [FullType(ZonesUrlTarget)]),
+          ) as BuiltList<ZonesUrlTarget>;
           result.targets.replace(valueDes);
           break;
         default:

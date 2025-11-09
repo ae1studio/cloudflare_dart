@@ -9,7 +9,7 @@ part of 'workers_version_item_full_all_of_resources.dart';
 class _$WorkersVersionItemFullAllOfResources
     extends WorkersVersionItemFullAllOfResources {
   @override
-  final WorkersVersionItemFullAllOfResourcesBindings? bindings;
+  final BuiltList<WorkersBindingItem>? bindings;
   @override
   final WorkersVersionItemFullAllOfResourcesScript? script;
   @override
@@ -67,11 +67,10 @@ class WorkersVersionItemFullAllOfResourcesBuilder
             WorkersVersionItemFullAllOfResourcesBuilder> {
   _$WorkersVersionItemFullAllOfResources? _$v;
 
-  WorkersVersionItemFullAllOfResourcesBindingsBuilder? _bindings;
-  WorkersVersionItemFullAllOfResourcesBindingsBuilder get bindings =>
-      _$this._bindings ??=
-          WorkersVersionItemFullAllOfResourcesBindingsBuilder();
-  set bindings(WorkersVersionItemFullAllOfResourcesBindingsBuilder? bindings) =>
+  ListBuilder<WorkersBindingItem>? _bindings;
+  ListBuilder<WorkersBindingItem> get bindings =>
+      _$this._bindings ??= ListBuilder<WorkersBindingItem>();
+  set bindings(ListBuilder<WorkersBindingItem>? bindings) =>
       _$this._bindings = bindings;
 
   WorkersVersionItemFullAllOfResourcesScriptBuilder? _script;

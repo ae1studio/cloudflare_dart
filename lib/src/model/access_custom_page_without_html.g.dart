@@ -10,7 +10,7 @@ class _$AccessCustomPageWithoutHtml extends AccessCustomPageWithoutHtml {
   @override
   final int? appCount;
   @override
-  final AccessCreatedAt? createdAt;
+  final JsonObject? createdAt;
   @override
   final String name;
   @override
@@ -18,7 +18,7 @@ class _$AccessCustomPageWithoutHtml extends AccessCustomPageWithoutHtml {
   @override
   final String? uid;
   @override
-  final AccessUpdatedAt? updatedAt;
+  final JsonObject? updatedAt;
 
   factory _$AccessCustomPageWithoutHtml(
           [void Function(AccessCustomPageWithoutHtmlBuilder)? updates]) =>
@@ -89,11 +89,9 @@ class AccessCustomPageWithoutHtmlBuilder
   int? get appCount => _$this._appCount;
   set appCount(int? appCount) => _$this._appCount = appCount;
 
-  AccessCreatedAtBuilder? _createdAt;
-  AccessCreatedAtBuilder get createdAt =>
-      _$this._createdAt ??= AccessCreatedAtBuilder();
-  set createdAt(AccessCreatedAtBuilder? createdAt) =>
-      _$this._createdAt = createdAt;
+  JsonObject? _createdAt;
+  JsonObject? get createdAt => _$this._createdAt;
+  set createdAt(JsonObject? createdAt) => _$this._createdAt = createdAt;
 
   String? _name;
   String? get name => _$this._name;
@@ -107,11 +105,9 @@ class AccessCustomPageWithoutHtmlBuilder
   String? get uid => _$this._uid;
   set uid(String? uid) => _$this._uid = uid;
 
-  AccessUpdatedAtBuilder? _updatedAt;
-  AccessUpdatedAtBuilder get updatedAt =>
-      _$this._updatedAt ??= AccessUpdatedAtBuilder();
-  set updatedAt(AccessUpdatedAtBuilder? updatedAt) =>
-      _$this._updatedAt = updatedAt;
+  JsonObject? _updatedAt;
+  JsonObject? get updatedAt => _$this._updatedAt;
+  set updatedAt(JsonObject? updatedAt) => _$this._updatedAt = updatedAt;
 
   AccessCustomPageWithoutHtmlBuilder() {
     AccessCustomPageWithoutHtml._defaults(this);
@@ -121,11 +117,11 @@ class AccessCustomPageWithoutHtmlBuilder
     final $v = _$v;
     if ($v != null) {
       _appCount = $v.appCount;
-      _createdAt = $v.createdAt?.toBuilder();
+      _createdAt = $v.createdAt;
       _name = $v.name;
       _type = $v.type;
       _uid = $v.uid;
-      _updatedAt = $v.updatedAt?.toBuilder();
+      _updatedAt = $v.updatedAt;
       _$v = null;
     }
     return this;
@@ -145,33 +141,17 @@ class AccessCustomPageWithoutHtmlBuilder
   AccessCustomPageWithoutHtml build() => _build();
 
   _$AccessCustomPageWithoutHtml _build() {
-    _$AccessCustomPageWithoutHtml _$result;
-    try {
-      _$result = _$v ??
-          _$AccessCustomPageWithoutHtml._(
-            appCount: appCount,
-            createdAt: _createdAt?.build(),
-            name: BuiltValueNullFieldError.checkNotNull(
-                name, r'AccessCustomPageWithoutHtml', 'name'),
-            type: BuiltValueNullFieldError.checkNotNull(
-                type, r'AccessCustomPageWithoutHtml', 'type'),
-            uid: uid,
-            updatedAt: _updatedAt?.build(),
-          );
-    } catch (_) {
-      late String _$failedField;
-      try {
-        _$failedField = 'createdAt';
-        _createdAt?.build();
-
-        _$failedField = 'updatedAt';
-        _updatedAt?.build();
-      } catch (e) {
-        throw BuiltValueNestedFieldError(
-            r'AccessCustomPageWithoutHtml', _$failedField, e.toString());
-      }
-      rethrow;
-    }
+    final _$result = _$v ??
+        _$AccessCustomPageWithoutHtml._(
+          appCount: appCount,
+          createdAt: createdAt,
+          name: BuiltValueNullFieldError.checkNotNull(
+              name, r'AccessCustomPageWithoutHtml', 'name'),
+          type: BuiltValueNullFieldError.checkNotNull(
+              type, r'AccessCustomPageWithoutHtml', 'type'),
+          uid: uid,
+          updatedAt: updatedAt,
+        );
     replace(_$result);
     return _$result;
   }

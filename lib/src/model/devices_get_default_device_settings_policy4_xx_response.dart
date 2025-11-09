@@ -149,11 +149,11 @@ class _$DevicesGetDefaultDeviceSettingsPolicy4XXResponseSerializer implements Pr
 class DevicesGetDefaultDeviceSettingsPolicy4XXResponseResultEnum extends EnumClass {
 
 
-  static Serializer<DevicesGetDefaultDeviceSettingsPolicy4XXResponseResultEnum> get serializer => _$devicesGetDefaultDeviceSettingsPolicy4XXResponseResultSerializer;
+  static Serializer<DevicesGetDefaultDeviceSettingsPolicy4XXResponseResultEnum> get serializer => _$devicesGetDefaultDeviceSettingsPolicy4XXResponseResultEnumSerializer;
 
   const DevicesGetDefaultDeviceSettingsPolicy4XXResponseResultEnum._(String name): super(name);
 
-  static BuiltSet<DevicesGetDefaultDeviceSettingsPolicy4XXResponseResultEnum> get values => _$devicesGetDefaultDeviceSettingsPolicy4XXResponseResultValues;
-  static DevicesGetDefaultDeviceSettingsPolicy4XXResponseResultEnum valueOf(String name) => _$devicesGetDefaultDeviceSettingsPolicy4XXResponseResultValueOf(name);
+  static BuiltSet<DevicesGetDefaultDeviceSettingsPolicy4XXResponseResultEnum> get values => _$devicesGetDefaultDeviceSettingsPolicy4XXResponseResultEnumValues;
+  static DevicesGetDefaultDeviceSettingsPolicy4XXResponseResultEnum valueOf(String name) => _$devicesGetDefaultDeviceSettingsPolicy4XXResponseResultEnumValueOf(name);
 }
 

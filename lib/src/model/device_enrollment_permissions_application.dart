@@ -4,10 +4,10 @@
 
 // ignore_for_file: unused_element
 import 'package:built_collection/built_collection.dart';
+import 'package:cloudflare_dart/src/model/access_type.dart';
 import 'package:cloudflare_dart/src/model/access_app_req_embedded_policies.dart';
 import 'package:cloudflare_dart/src/model/access_warp_props.dart';
 import 'package:cloudflare_dart/src/model/access_app_req_embedded_policies_policies_inner.dart';
-import 'package:cloudflare_dart/src/model/access_warp_props_all_of_type.dart';
 import 'package:built_value/json_object.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
@@ -121,7 +121,7 @@ class _$DeviceEnrollmentPermissionsApplicationSerializer implements PrimitiveSer
     yield r'type';
     yield serializers.serialize(
       object.type,
-      specifiedType: const FullType(AccessWarpPropsAllOfType),
+      specifiedType: const FullType(AccessType),
     );
   }
 
@@ -214,9 +214,9 @@ class _$DeviceEnrollmentPermissionsApplicationSerializer implements PrimitiveSer
         case r'type':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(AccessWarpPropsAllOfType),
-          ) as AccessWarpPropsAllOfType;
-          result.type.replace(valueDes);
+            specifiedType: const FullType(AccessType),
+          ) as AccessType;
+          result.type = valueDes;
           break;
         default:
           unhandled.add(key);

@@ -3,14 +3,15 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:cloudflare_dart/src/model/brapi_post_content_request_all_of_allow_resource_types_inner.dart';
 import 'package:cloudflare_dart/src/model/brapi_post_content_request_all_of_cookies_inner.dart';
 import 'package:cloudflare_dart/src/model/brapi_post_content_request_all_of_viewport.dart';
+import 'package:cloudflare_dart/src/model/brapi_post_pdf_request_all_of_reject_resource_types.dart';
 import 'package:cloudflare_dart/src/model/brapi_post_content_request_all_of_add_script_tag_inner.dart';
 import 'package:cloudflare_dart/src/model/brapi_post_pdf_request_all_of_pdf_options.dart';
 import 'package:built_collection/built_collection.dart';
 import 'package:cloudflare_dart/src/model/brapi_post_content_request_all_of_add_style_tag_inner.dart';
 import 'package:cloudflare_dart/src/model/brapi_post_content_request_all_of_goto_options.dart';
+import 'package:cloudflare_dart/src/model/brapi_post_pdf_request_all_of_allow_resource_types.dart';
 import 'package:cloudflare_dart/src/model/brapi_post_content_request_all_of_authenticate.dart';
 import 'package:cloudflare_dart/src/model/brapi_post_content_request_all_of_wait_for_selector.dart';
 import 'package:built_value/built_value.dart';
@@ -62,7 +63,7 @@ abstract class BrapiPostPdfRequest implements Built<BrapiPostPdfRequest, BrapiPo
 
   /// Only allow requests that match the provided resource types, eg. 'image' or 'script'.
   @BuiltValueField(wireName: r'allowResourceTypes')
-  BuiltList<BrapiPostContentRequestAllOfAllowResourceTypesInner>? get allowResourceTypes;
+  BuiltList<BrapiPostPdfRequestAllOfAllowResourceTypes>? get allowResourceTypes;
 
   @BuiltValueField(wireName: r'authenticate')
   BrapiPostContentRequestAllOfAuthenticate? get authenticate;
@@ -94,7 +95,7 @@ abstract class BrapiPostPdfRequest implements Built<BrapiPostPdfRequest, BrapiPo
 
   /// Block undesired requests that match the provided resource types, eg. 'image' or 'script'.
   @BuiltValueField(wireName: r'rejectResourceTypes')
-  BuiltList<BrapiPostContentRequestAllOfAllowResourceTypesInner>? get rejectResourceTypes;
+  BuiltList<BrapiPostPdfRequestAllOfRejectResourceTypes>? get rejectResourceTypes;
 
   @BuiltValueField(wireName: r'setExtraHTTPHeaders')
   BuiltMap<String, String>? get setExtraHTTPHeaders;
@@ -175,7 +176,7 @@ class _$BrapiPostPdfRequestSerializer implements PrimitiveSerializer<BrapiPostPd
       yield r'allowResourceTypes';
       yield serializers.serialize(
         object.allowResourceTypes,
-        specifiedType: const FullType(BuiltList, [FullType(BrapiPostContentRequestAllOfAllowResourceTypesInner)]),
+        specifiedType: const FullType(BuiltList, [FullType(BrapiPostPdfRequestAllOfAllowResourceTypes)]),
       );
     }
     if (object.authenticate != null) {
@@ -238,7 +239,7 @@ class _$BrapiPostPdfRequestSerializer implements PrimitiveSerializer<BrapiPostPd
       yield r'rejectResourceTypes';
       yield serializers.serialize(
         object.rejectResourceTypes,
-        specifiedType: const FullType(BuiltList, [FullType(BrapiPostContentRequestAllOfAllowResourceTypesInner)]),
+        specifiedType: const FullType(BuiltList, [FullType(BrapiPostPdfRequestAllOfRejectResourceTypes)]),
       );
     }
     if (object.setExtraHTTPHeaders != null) {
@@ -344,8 +345,8 @@ class _$BrapiPostPdfRequestSerializer implements PrimitiveSerializer<BrapiPostPd
         case r'allowResourceTypes':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(BuiltList, [FullType(BrapiPostContentRequestAllOfAllowResourceTypesInner)]),
-          ) as BuiltList<BrapiPostContentRequestAllOfAllowResourceTypesInner>;
+            specifiedType: const FullType(BuiltList, [FullType(BrapiPostPdfRequestAllOfAllowResourceTypes)]),
+          ) as BuiltList<BrapiPostPdfRequestAllOfAllowResourceTypes>;
           result.allowResourceTypes.replace(valueDes);
           break;
         case r'authenticate':
@@ -407,8 +408,8 @@ class _$BrapiPostPdfRequestSerializer implements PrimitiveSerializer<BrapiPostPd
         case r'rejectResourceTypes':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(BuiltList, [FullType(BrapiPostContentRequestAllOfAllowResourceTypesInner)]),
-          ) as BuiltList<BrapiPostContentRequestAllOfAllowResourceTypesInner>;
+            specifiedType: const FullType(BuiltList, [FullType(BrapiPostPdfRequestAllOfRejectResourceTypes)]),
+          ) as BuiltList<BrapiPostPdfRequestAllOfRejectResourceTypes>;
           result.rejectResourceTypes.replace(valueDes);
           break;
         case r'setExtraHTTPHeaders':

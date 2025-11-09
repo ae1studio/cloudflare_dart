@@ -144,11 +144,11 @@ class ZarazTimerRuleActionEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'timer')
   static const ZarazTimerRuleActionEnum timer = _$zarazTimerRuleActionEnum_timer;
 
-  static Serializer<ZarazTimerRuleActionEnum> get serializer => _$zarazTimerRuleActionSerializer;
+  static Serializer<ZarazTimerRuleActionEnum> get serializer => _$zarazTimerRuleActionEnumSerializer;
 
   const ZarazTimerRuleActionEnum._(String name): super(name);
 
-  static BuiltSet<ZarazTimerRuleActionEnum> get values => _$zarazTimerRuleActionValues;
-  static ZarazTimerRuleActionEnum valueOf(String name) => _$zarazTimerRuleActionValueOf(name);
+  static BuiltSet<ZarazTimerRuleActionEnum> get values => _$zarazTimerRuleActionEnumValues;
+  static ZarazTimerRuleActionEnum valueOf(String name) => _$zarazTimerRuleActionEnumValueOf(name);
 }
 

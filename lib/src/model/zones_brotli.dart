@@ -156,11 +156,11 @@ class ZonesBrotliIdEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'brotli')
   static const ZonesBrotliIdEnum brotli = _$zonesBrotliIdEnum_brotli;
 
-  static Serializer<ZonesBrotliIdEnum> get serializer => _$zonesBrotliIdSerializer;
+  static Serializer<ZonesBrotliIdEnum> get serializer => _$zonesBrotliIdEnumSerializer;
 
   const ZonesBrotliIdEnum._(String name): super(name);
 
-  static BuiltSet<ZonesBrotliIdEnum> get values => _$zonesBrotliIdValues;
-  static ZonesBrotliIdEnum valueOf(String name) => _$zonesBrotliIdValueOf(name);
+  static BuiltSet<ZonesBrotliIdEnum> get values => _$zonesBrotliIdEnumValues;
+  static ZonesBrotliIdEnum valueOf(String name) => _$zonesBrotliIdEnumValueOf(name);
 }
 

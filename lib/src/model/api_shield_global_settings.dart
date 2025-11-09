@@ -139,12 +139,12 @@ class ApiShieldGlobalSettingsValidationDefaultMitigationActionEnum extends EnumC
   @BuiltValueEnumConst(wireName: r'block')
   static const ApiShieldGlobalSettingsValidationDefaultMitigationActionEnum block = _$apiShieldGlobalSettingsValidationDefaultMitigationActionEnum_block;
 
-  static Serializer<ApiShieldGlobalSettingsValidationDefaultMitigationActionEnum> get serializer => _$apiShieldGlobalSettingsValidationDefaultMitigationActionSerializer;
+  static Serializer<ApiShieldGlobalSettingsValidationDefaultMitigationActionEnum> get serializer => _$apiShieldGlobalSettingsValidationDefaultMitigationActionEnumSerializer;
 
   const ApiShieldGlobalSettingsValidationDefaultMitigationActionEnum._(String name): super(name);
 
-  static BuiltSet<ApiShieldGlobalSettingsValidationDefaultMitigationActionEnum> get values => _$apiShieldGlobalSettingsValidationDefaultMitigationActionValues;
-  static ApiShieldGlobalSettingsValidationDefaultMitigationActionEnum valueOf(String name) => _$apiShieldGlobalSettingsValidationDefaultMitigationActionValueOf(name);
+  static BuiltSet<ApiShieldGlobalSettingsValidationDefaultMitigationActionEnum> get values => _$apiShieldGlobalSettingsValidationDefaultMitigationActionEnumValues;
+  static ApiShieldGlobalSettingsValidationDefaultMitigationActionEnum valueOf(String name) => _$apiShieldGlobalSettingsValidationDefaultMitigationActionEnumValueOf(name);
 }
 
 class ApiShieldGlobalSettingsValidationOverrideMitigationActionEnum extends EnumClass {
@@ -153,11 +153,11 @@ class ApiShieldGlobalSettingsValidationOverrideMitigationActionEnum extends Enum
   @BuiltValueEnumConst(wireName: r'none')
   static const ApiShieldGlobalSettingsValidationOverrideMitigationActionEnum none = _$apiShieldGlobalSettingsValidationOverrideMitigationActionEnum_none;
 
-  static Serializer<ApiShieldGlobalSettingsValidationOverrideMitigationActionEnum> get serializer => _$apiShieldGlobalSettingsValidationOverrideMitigationActionSerializer;
+  static Serializer<ApiShieldGlobalSettingsValidationOverrideMitigationActionEnum> get serializer => _$apiShieldGlobalSettingsValidationOverrideMitigationActionEnumSerializer;
 
   const ApiShieldGlobalSettingsValidationOverrideMitigationActionEnum._(String name): super(name);
 
-  static BuiltSet<ApiShieldGlobalSettingsValidationOverrideMitigationActionEnum> get values => _$apiShieldGlobalSettingsValidationOverrideMitigationActionValues;
-  static ApiShieldGlobalSettingsValidationOverrideMitigationActionEnum valueOf(String name) => _$apiShieldGlobalSettingsValidationOverrideMitigationActionValueOf(name);
+  static BuiltSet<ApiShieldGlobalSettingsValidationOverrideMitigationActionEnum> get values => _$apiShieldGlobalSettingsValidationOverrideMitigationActionEnumValues;
+  static ApiShieldGlobalSettingsValidationOverrideMitigationActionEnum valueOf(String name) => _$apiShieldGlobalSettingsValidationOverrideMitigationActionEnumValueOf(name);
 }
 

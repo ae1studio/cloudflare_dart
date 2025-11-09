@@ -144,11 +144,11 @@ class ZarazClickListenerRuleActionEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'clickListener')
   static const ZarazClickListenerRuleActionEnum clickListener = _$zarazClickListenerRuleActionEnum_clickListener;
 
-  static Serializer<ZarazClickListenerRuleActionEnum> get serializer => _$zarazClickListenerRuleActionSerializer;
+  static Serializer<ZarazClickListenerRuleActionEnum> get serializer => _$zarazClickListenerRuleActionEnumSerializer;
 
   const ZarazClickListenerRuleActionEnum._(String name): super(name);
 
-  static BuiltSet<ZarazClickListenerRuleActionEnum> get values => _$zarazClickListenerRuleActionValues;
-  static ZarazClickListenerRuleActionEnum valueOf(String name) => _$zarazClickListenerRuleActionValueOf(name);
+  static BuiltSet<ZarazClickListenerRuleActionEnum> get values => _$zarazClickListenerRuleActionEnumValues;
+  static ZarazClickListenerRuleActionEnum valueOf(String name) => _$zarazClickListenerRuleActionEnumValueOf(name);
 }
 

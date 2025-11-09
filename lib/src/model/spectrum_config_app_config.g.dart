@@ -30,11 +30,11 @@ class _$SpectrumConfigAppConfig extends SpectrumConfigAppConfig {
   @override
   final SpectrumConfigOriginDns? originDns;
   @override
-  final SpectrumConfigCreated createdOn;
+  final JsonObject createdOn;
   @override
-  final SpectrumConfigAppIdentifier id;
+  final JsonObject id;
   @override
-  final SpectrumConfigModified modifiedOn;
+  final JsonObject modifiedOn;
 
   factory _$SpectrumConfigAppConfig(
           [void Function(SpectrumConfigAppConfigBuilder)? updates]) =>
@@ -189,21 +189,18 @@ class SpectrumConfigAppConfigBuilder
   set originDns(covariant SpectrumConfigOriginDnsBuilder? originDns) =>
       _$this._originDns = originDns;
 
-  SpectrumConfigCreatedBuilder? _createdOn;
-  SpectrumConfigCreatedBuilder get createdOn =>
-      _$this._createdOn ??= SpectrumConfigCreatedBuilder();
-  set createdOn(covariant SpectrumConfigCreatedBuilder? createdOn) =>
+  JsonObject? _createdOn;
+  JsonObject? get createdOn => _$this._createdOn;
+  set createdOn(covariant JsonObject? createdOn) =>
       _$this._createdOn = createdOn;
 
-  SpectrumConfigAppIdentifierBuilder? _id;
-  SpectrumConfigAppIdentifierBuilder get id =>
-      _$this._id ??= SpectrumConfigAppIdentifierBuilder();
-  set id(covariant SpectrumConfigAppIdentifierBuilder? id) => _$this._id = id;
+  JsonObject? _id;
+  JsonObject? get id => _$this._id;
+  set id(covariant JsonObject? id) => _$this._id = id;
 
-  SpectrumConfigModifiedBuilder? _modifiedOn;
-  SpectrumConfigModifiedBuilder get modifiedOn =>
-      _$this._modifiedOn ??= SpectrumConfigModifiedBuilder();
-  set modifiedOn(covariant SpectrumConfigModifiedBuilder? modifiedOn) =>
+  JsonObject? _modifiedOn;
+  JsonObject? get modifiedOn => _$this._modifiedOn;
+  set modifiedOn(covariant JsonObject? modifiedOn) =>
       _$this._modifiedOn = modifiedOn;
 
   SpectrumConfigAppConfigBuilder() {
@@ -224,9 +221,9 @@ class SpectrumConfigAppConfigBuilder
       _tls = $v.tls;
       _edgeIps = $v.edgeIps?.toBuilder();
       _originDns = $v.originDns?.toBuilder();
-      _createdOn = $v.createdOn.toBuilder();
-      _id = $v.id.toBuilder();
-      _modifiedOn = $v.modifiedOn.toBuilder();
+      _createdOn = $v.createdOn;
+      _id = $v.id;
+      _modifiedOn = $v.modifiedOn;
       _$v = null;
     }
     return this;
@@ -263,9 +260,12 @@ class SpectrumConfigAppConfigBuilder
             tls: tls,
             edgeIps: _edgeIps?.build(),
             originDns: _originDns?.build(),
-            createdOn: createdOn.build(),
-            id: id.build(),
-            modifiedOn: modifiedOn.build(),
+            createdOn: BuiltValueNullFieldError.checkNotNull(
+                createdOn, r'SpectrumConfigAppConfig', 'createdOn'),
+            id: BuiltValueNullFieldError.checkNotNull(
+                id, r'SpectrumConfigAppConfig', 'id'),
+            modifiedOn: BuiltValueNullFieldError.checkNotNull(
+                modifiedOn, r'SpectrumConfigAppConfig', 'modifiedOn'),
           );
     } catch (_) {
       late String _$failedField;
@@ -283,12 +283,6 @@ class SpectrumConfigAppConfigBuilder
         _edgeIps?.build();
         _$failedField = 'originDns';
         _originDns?.build();
-        _$failedField = 'createdOn';
-        createdOn.build();
-        _$failedField = 'id';
-        id.build();
-        _$failedField = 'modifiedOn';
-        modifiedOn.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
             r'SpectrumConfigAppConfig', _$failedField, e.toString());

@@ -164,11 +164,11 @@ class _$ListsGetListItems4XXResponseSerializer implements PrimitiveSerializer<Li
 class ListsGetListItems4XXResponseResultEnum extends EnumClass {
 
 
-  static Serializer<ListsGetListItems4XXResponseResultEnum> get serializer => _$listsGetListItems4XXResponseResultSerializer;
+  static Serializer<ListsGetListItems4XXResponseResultEnum> get serializer => _$listsGetListItems4XXResponseResultEnumSerializer;
 
   const ListsGetListItems4XXResponseResultEnum._(String name): super(name);
 
-  static BuiltSet<ListsGetListItems4XXResponseResultEnum> get values => _$listsGetListItems4XXResponseResultValues;
-  static ListsGetListItems4XXResponseResultEnum valueOf(String name) => _$listsGetListItems4XXResponseResultValueOf(name);
+  static BuiltSet<ListsGetListItems4XXResponseResultEnum> get values => _$listsGetListItems4XXResponseResultEnumValues;
+  static ListsGetListItems4XXResponseResultEnum valueOf(String name) => _$listsGetListItems4XXResponseResultEnumValueOf(name);
 }
 

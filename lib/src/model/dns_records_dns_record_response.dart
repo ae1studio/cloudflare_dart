@@ -394,11 +394,11 @@ class DnsRecordsDnsRecordResponseTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'URI')
   static const DnsRecordsDnsRecordResponseTypeEnum URI = _$dnsRecordsDnsRecordResponseTypeEnum_URI;
 
-  static Serializer<DnsRecordsDnsRecordResponseTypeEnum> get serializer => _$dnsRecordsDnsRecordResponseTypeSerializer;
+  static Serializer<DnsRecordsDnsRecordResponseTypeEnum> get serializer => _$dnsRecordsDnsRecordResponseTypeEnumSerializer;
 
   const DnsRecordsDnsRecordResponseTypeEnum._(String name): super(name);
 
-  static BuiltSet<DnsRecordsDnsRecordResponseTypeEnum> get values => _$dnsRecordsDnsRecordResponseTypeValues;
-  static DnsRecordsDnsRecordResponseTypeEnum valueOf(String name) => _$dnsRecordsDnsRecordResponseTypeValueOf(name);
+  static BuiltSet<DnsRecordsDnsRecordResponseTypeEnum> get values => _$dnsRecordsDnsRecordResponseTypeEnumValues;
+  static DnsRecordsDnsRecordResponseTypeEnum valueOf(String name) => _$dnsRecordsDnsRecordResponseTypeEnumValueOf(name);
 }
 

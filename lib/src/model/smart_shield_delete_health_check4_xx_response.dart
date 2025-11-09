@@ -148,11 +148,11 @@ class _$SmartShieldDeleteHealthCheck4XXResponseSerializer implements PrimitiveSe
 class SmartShieldDeleteHealthCheck4XXResponseResultEnum extends EnumClass {
 
 
-  static Serializer<SmartShieldDeleteHealthCheck4XXResponseResultEnum> get serializer => _$smartShieldDeleteHealthCheck4XXResponseResultSerializer;
+  static Serializer<SmartShieldDeleteHealthCheck4XXResponseResultEnum> get serializer => _$smartShieldDeleteHealthCheck4XXResponseResultEnumSerializer;
 
   const SmartShieldDeleteHealthCheck4XXResponseResultEnum._(String name): super(name);
 
-  static BuiltSet<SmartShieldDeleteHealthCheck4XXResponseResultEnum> get values => _$smartShieldDeleteHealthCheck4XXResponseResultValues;
-  static SmartShieldDeleteHealthCheck4XXResponseResultEnum valueOf(String name) => _$smartShieldDeleteHealthCheck4XXResponseResultValueOf(name);
+  static BuiltSet<SmartShieldDeleteHealthCheck4XXResponseResultEnum> get values => _$smartShieldDeleteHealthCheck4XXResponseResultEnumValues;
+  static SmartShieldDeleteHealthCheck4XXResponseResultEnum valueOf(String name) => _$smartShieldDeleteHealthCheck4XXResponseResultEnumValueOf(name);
 }
 

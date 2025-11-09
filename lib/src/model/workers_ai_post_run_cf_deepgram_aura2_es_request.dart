@@ -53,7 +53,7 @@ abstract class WorkersAiPostRunCfDeepgramAura2EsRequest implements Built<Workers
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(WorkersAiPostRunCfDeepgramAura2EsRequestBuilder b) => b
-      ..speaker = const WorkersAiPostRunCfDeepgramAura2EsRequestSpeakerEnum._('aquila');
+      ..speaker = WorkersAiPostRunCfDeepgramAura2EsRequestSpeakerEnum.valueOf('aquila');
 
   @BuiltValueSerializer(custom: true)
   static Serializer<WorkersAiPostRunCfDeepgramAura2EsRequest> get serializer => _$WorkersAiPostRunCfDeepgramAura2EsRequestSerializer();
@@ -217,12 +217,12 @@ class WorkersAiPostRunCfDeepgramAura2EsRequestContainerEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'ogg')
   static const WorkersAiPostRunCfDeepgramAura2EsRequestContainerEnum ogg = _$workersAiPostRunCfDeepgramAura2EsRequestContainerEnum_ogg;
 
-  static Serializer<WorkersAiPostRunCfDeepgramAura2EsRequestContainerEnum> get serializer => _$workersAiPostRunCfDeepgramAura2EsRequestContainerSerializer;
+  static Serializer<WorkersAiPostRunCfDeepgramAura2EsRequestContainerEnum> get serializer => _$workersAiPostRunCfDeepgramAura2EsRequestContainerEnumSerializer;
 
   const WorkersAiPostRunCfDeepgramAura2EsRequestContainerEnum._(String name): super(name);
 
-  static BuiltSet<WorkersAiPostRunCfDeepgramAura2EsRequestContainerEnum> get values => _$workersAiPostRunCfDeepgramAura2EsRequestContainerValues;
-  static WorkersAiPostRunCfDeepgramAura2EsRequestContainerEnum valueOf(String name) => _$workersAiPostRunCfDeepgramAura2EsRequestContainerValueOf(name);
+  static BuiltSet<WorkersAiPostRunCfDeepgramAura2EsRequestContainerEnum> get values => _$workersAiPostRunCfDeepgramAura2EsRequestContainerEnumValues;
+  static WorkersAiPostRunCfDeepgramAura2EsRequestContainerEnum valueOf(String name) => _$workersAiPostRunCfDeepgramAura2EsRequestContainerEnumValueOf(name);
 }
 
 class WorkersAiPostRunCfDeepgramAura2EsRequestEncodingEnum extends EnumClass {
@@ -249,12 +249,12 @@ class WorkersAiPostRunCfDeepgramAura2EsRequestEncodingEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'aac')
   static const WorkersAiPostRunCfDeepgramAura2EsRequestEncodingEnum aac = _$workersAiPostRunCfDeepgramAura2EsRequestEncodingEnum_aac;
 
-  static Serializer<WorkersAiPostRunCfDeepgramAura2EsRequestEncodingEnum> get serializer => _$workersAiPostRunCfDeepgramAura2EsRequestEncodingSerializer;
+  static Serializer<WorkersAiPostRunCfDeepgramAura2EsRequestEncodingEnum> get serializer => _$workersAiPostRunCfDeepgramAura2EsRequestEncodingEnumSerializer;
 
   const WorkersAiPostRunCfDeepgramAura2EsRequestEncodingEnum._(String name): super(name);
 
-  static BuiltSet<WorkersAiPostRunCfDeepgramAura2EsRequestEncodingEnum> get values => _$workersAiPostRunCfDeepgramAura2EsRequestEncodingValues;
-  static WorkersAiPostRunCfDeepgramAura2EsRequestEncodingEnum valueOf(String name) => _$workersAiPostRunCfDeepgramAura2EsRequestEncodingValueOf(name);
+  static BuiltSet<WorkersAiPostRunCfDeepgramAura2EsRequestEncodingEnum> get values => _$workersAiPostRunCfDeepgramAura2EsRequestEncodingEnumValues;
+  static WorkersAiPostRunCfDeepgramAura2EsRequestEncodingEnum valueOf(String name) => _$workersAiPostRunCfDeepgramAura2EsRequestEncodingEnumValueOf(name);
 }
 
 class WorkersAiPostRunCfDeepgramAura2EsRequestSpeakerEnum extends EnumClass {
@@ -290,11 +290,11 @@ class WorkersAiPostRunCfDeepgramAura2EsRequestSpeakerEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'javier')
   static const WorkersAiPostRunCfDeepgramAura2EsRequestSpeakerEnum javier = _$workersAiPostRunCfDeepgramAura2EsRequestSpeakerEnum_javier;
 
-  static Serializer<WorkersAiPostRunCfDeepgramAura2EsRequestSpeakerEnum> get serializer => _$workersAiPostRunCfDeepgramAura2EsRequestSpeakerSerializer;
+  static Serializer<WorkersAiPostRunCfDeepgramAura2EsRequestSpeakerEnum> get serializer => _$workersAiPostRunCfDeepgramAura2EsRequestSpeakerEnumSerializer;
 
   const WorkersAiPostRunCfDeepgramAura2EsRequestSpeakerEnum._(String name): super(name);
 
-  static BuiltSet<WorkersAiPostRunCfDeepgramAura2EsRequestSpeakerEnum> get values => _$workersAiPostRunCfDeepgramAura2EsRequestSpeakerValues;
-  static WorkersAiPostRunCfDeepgramAura2EsRequestSpeakerEnum valueOf(String name) => _$workersAiPostRunCfDeepgramAura2EsRequestSpeakerValueOf(name);
+  static BuiltSet<WorkersAiPostRunCfDeepgramAura2EsRequestSpeakerEnum> get values => _$workersAiPostRunCfDeepgramAura2EsRequestSpeakerEnumValues;
+  static WorkersAiPostRunCfDeepgramAura2EsRequestSpeakerEnum valueOf(String name) => _$workersAiPostRunCfDeepgramAura2EsRequestSpeakerEnumValueOf(name);
 }
 

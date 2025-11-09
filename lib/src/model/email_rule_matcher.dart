@@ -152,12 +152,12 @@ class EmailRuleMatcherFieldEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'to')
   static const EmailRuleMatcherFieldEnum to = _$emailRuleMatcherFieldEnum_to;
 
-  static Serializer<EmailRuleMatcherFieldEnum> get serializer => _$emailRuleMatcherFieldSerializer;
+  static Serializer<EmailRuleMatcherFieldEnum> get serializer => _$emailRuleMatcherFieldEnumSerializer;
 
   const EmailRuleMatcherFieldEnum._(String name): super(name);
 
-  static BuiltSet<EmailRuleMatcherFieldEnum> get values => _$emailRuleMatcherFieldValues;
-  static EmailRuleMatcherFieldEnum valueOf(String name) => _$emailRuleMatcherFieldValueOf(name);
+  static BuiltSet<EmailRuleMatcherFieldEnum> get values => _$emailRuleMatcherFieldEnumValues;
+  static EmailRuleMatcherFieldEnum valueOf(String name) => _$emailRuleMatcherFieldEnumValueOf(name);
 }
 
 class EmailRuleMatcherTypeEnum extends EnumClass {
@@ -169,11 +169,11 @@ class EmailRuleMatcherTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'literal')
   static const EmailRuleMatcherTypeEnum literal = _$emailRuleMatcherTypeEnum_literal;
 
-  static Serializer<EmailRuleMatcherTypeEnum> get serializer => _$emailRuleMatcherTypeSerializer;
+  static Serializer<EmailRuleMatcherTypeEnum> get serializer => _$emailRuleMatcherTypeEnumSerializer;
 
   const EmailRuleMatcherTypeEnum._(String name): super(name);
 
-  static BuiltSet<EmailRuleMatcherTypeEnum> get values => _$emailRuleMatcherTypeValues;
-  static EmailRuleMatcherTypeEnum valueOf(String name) => _$emailRuleMatcherTypeValueOf(name);
+  static BuiltSet<EmailRuleMatcherTypeEnum> get values => _$emailRuleMatcherTypeEnumValues;
+  static EmailRuleMatcherTypeEnum valueOf(String name) => _$emailRuleMatcherTypeEnumValueOf(name);
 }
 

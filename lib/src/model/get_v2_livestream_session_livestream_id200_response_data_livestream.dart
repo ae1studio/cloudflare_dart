@@ -290,11 +290,11 @@ class GetV2LivestreamSessionLivestreamId200ResponseDataLivestreamStatusEnum exte
   @BuiltValueEnumConst(wireName: r'INVOKED')
   static const GetV2LivestreamSessionLivestreamId200ResponseDataLivestreamStatusEnum INVOKED = _$getV2LivestreamSessionLivestreamId200ResponseDataLivestreamStatusEnum_INVOKED;
 
-  static Serializer<GetV2LivestreamSessionLivestreamId200ResponseDataLivestreamStatusEnum> get serializer => _$getV2LivestreamSessionLivestreamId200ResponseDataLivestreamStatusSerializer;
+  static Serializer<GetV2LivestreamSessionLivestreamId200ResponseDataLivestreamStatusEnum> get serializer => _$getV2LivestreamSessionLivestreamId200ResponseDataLivestreamStatusEnumSerializer;
 
   const GetV2LivestreamSessionLivestreamId200ResponseDataLivestreamStatusEnum._(String name): super(name);
 
-  static BuiltSet<GetV2LivestreamSessionLivestreamId200ResponseDataLivestreamStatusEnum> get values => _$getV2LivestreamSessionLivestreamId200ResponseDataLivestreamStatusValues;
-  static GetV2LivestreamSessionLivestreamId200ResponseDataLivestreamStatusEnum valueOf(String name) => _$getV2LivestreamSessionLivestreamId200ResponseDataLivestreamStatusValueOf(name);
+  static BuiltSet<GetV2LivestreamSessionLivestreamId200ResponseDataLivestreamStatusEnum> get values => _$getV2LivestreamSessionLivestreamId200ResponseDataLivestreamStatusEnumValues;
+  static GetV2LivestreamSessionLivestreamId200ResponseDataLivestreamStatusEnum valueOf(String name) => _$getV2LivestreamSessionLivestreamId200ResponseDataLivestreamStatusEnumValueOf(name);
 }
 

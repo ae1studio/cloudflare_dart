@@ -246,29 +246,29 @@ class _$AccessSchemasCorsHeadersSerializer implements PrimitiveSerializer<Access
 class AccessSchemasCorsHeadersAllowedMethodsEnum extends EnumClass {
 
   @BuiltValueEnumConst(wireName: r'GET')
-  static const AccessSchemasCorsHeadersAllowedMethodsEnum GET = _\$accessSchemasCorsHeadersAllowedMethods_GET;
+  static const AccessSchemasCorsHeadersAllowedMethodsEnum GET = _$accessSchemasCorsHeadersAllowedMethodsEnum_GET;
   @BuiltValueEnumConst(wireName: r'POST')
-  static const AccessSchemasCorsHeadersAllowedMethodsEnum POST = _\$accessSchemasCorsHeadersAllowedMethods_POST;
+  static const AccessSchemasCorsHeadersAllowedMethodsEnum POST = _$accessSchemasCorsHeadersAllowedMethodsEnum_POST;
   @BuiltValueEnumConst(wireName: r'HEAD')
-  static const AccessSchemasCorsHeadersAllowedMethodsEnum HEAD = _\$accessSchemasCorsHeadersAllowedMethods_HEAD;
+  static const AccessSchemasCorsHeadersAllowedMethodsEnum HEAD = _$accessSchemasCorsHeadersAllowedMethodsEnum_HEAD;
   @BuiltValueEnumConst(wireName: r'PUT')
-  static const AccessSchemasCorsHeadersAllowedMethodsEnum PUT = _\$accessSchemasCorsHeadersAllowedMethods_PUT;
+  static const AccessSchemasCorsHeadersAllowedMethodsEnum PUT = _$accessSchemasCorsHeadersAllowedMethodsEnum_PUT;
   @BuiltValueEnumConst(wireName: r'DELETE')
-  static const AccessSchemasCorsHeadersAllowedMethodsEnum DELETE = _\$accessSchemasCorsHeadersAllowedMethods_DELETE;
+  static const AccessSchemasCorsHeadersAllowedMethodsEnum DELETE = _$accessSchemasCorsHeadersAllowedMethodsEnum_DELETE;
   @BuiltValueEnumConst(wireName: r'CONNECT')
-  static const AccessSchemasCorsHeadersAllowedMethodsEnum CONNECT = _\$accessSchemasCorsHeadersAllowedMethods_CONNECT;
+  static const AccessSchemasCorsHeadersAllowedMethodsEnum CONNECT = _$accessSchemasCorsHeadersAllowedMethodsEnum_CONNECT;
   @BuiltValueEnumConst(wireName: r'OPTIONS')
-  static const AccessSchemasCorsHeadersAllowedMethodsEnum OPTIONS = _\$accessSchemasCorsHeadersAllowedMethods_OPTIONS;
+  static const AccessSchemasCorsHeadersAllowedMethodsEnum OPTIONS = _$accessSchemasCorsHeadersAllowedMethodsEnum_OPTIONS;
   @BuiltValueEnumConst(wireName: r'TRACE')
-  static const AccessSchemasCorsHeadersAllowedMethodsEnum TRACE = _\$accessSchemasCorsHeadersAllowedMethods_TRACE;
+  static const AccessSchemasCorsHeadersAllowedMethodsEnum TRACE = _$accessSchemasCorsHeadersAllowedMethodsEnum_TRACE;
   @BuiltValueEnumConst(wireName: r'PATCH')
-  static const AccessSchemasCorsHeadersAllowedMethodsEnum PATCH = _\$accessSchemasCorsHeadersAllowedMethods_PATCH;
+  static const AccessSchemasCorsHeadersAllowedMethodsEnum PATCH = _$accessSchemasCorsHeadersAllowedMethodsEnum_PATCH;
 
-  static Serializer<AccessSchemasCorsHeadersAllowedMethodsEnum> get serializer => _$accessSchemasCorsHeadersAllowedMethodsSerializer;
+  static Serializer<AccessSchemasCorsHeadersAllowedMethodsEnum> get serializer => _$accessSchemasCorsHeadersAllowedMethodsEnumSerializer;
 
   const AccessSchemasCorsHeadersAllowedMethodsEnum._(String name): super(name);
 
-  static BuiltSet<AccessSchemasCorsHeadersAllowedMethodsEnum> get values => _$accessSchemasCorsHeadersAllowedMethodsValues;
-  static AccessSchemasCorsHeadersAllowedMethodsEnum valueOf(String name) => _$accessSchemasCorsHeadersAllowedMethodsValueOf(name);
+  static BuiltSet<AccessSchemasCorsHeadersAllowedMethodsEnum> get values => _$accessSchemasCorsHeadersAllowedMethodsEnumValues;
+  static AccessSchemasCorsHeadersAllowedMethodsEnum valueOf(String name) => _$accessSchemasCorsHeadersAllowedMethodsEnumValueOf(name);
 }
 

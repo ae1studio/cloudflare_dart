@@ -144,11 +144,11 @@ class ZarazVariableMatchRuleActionEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'variableMatch')
   static const ZarazVariableMatchRuleActionEnum variableMatch = _$zarazVariableMatchRuleActionEnum_variableMatch;
 
-  static Serializer<ZarazVariableMatchRuleActionEnum> get serializer => _$zarazVariableMatchRuleActionSerializer;
+  static Serializer<ZarazVariableMatchRuleActionEnum> get serializer => _$zarazVariableMatchRuleActionEnumSerializer;
 
   const ZarazVariableMatchRuleActionEnum._(String name): super(name);
 
-  static BuiltSet<ZarazVariableMatchRuleActionEnum> get values => _$zarazVariableMatchRuleActionValues;
-  static ZarazVariableMatchRuleActionEnum valueOf(String name) => _$zarazVariableMatchRuleActionValueOf(name);
+  static BuiltSet<ZarazVariableMatchRuleActionEnum> get values => _$zarazVariableMatchRuleActionEnumValues;
+  static ZarazVariableMatchRuleActionEnum valueOf(String name) => _$zarazVariableMatchRuleActionEnumValueOf(name);
 }
 

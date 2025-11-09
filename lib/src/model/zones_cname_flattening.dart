@@ -158,11 +158,11 @@ class ZonesCnameFlatteningIdEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'cname_flattening')
   static const ZonesCnameFlatteningIdEnum cnameFlattening = _$zonesCnameFlatteningIdEnum_cnameFlattening;
 
-  static Serializer<ZonesCnameFlatteningIdEnum> get serializer => _$zonesCnameFlatteningIdSerializer;
+  static Serializer<ZonesCnameFlatteningIdEnum> get serializer => _$zonesCnameFlatteningIdEnumSerializer;
 
   const ZonesCnameFlatteningIdEnum._(String name): super(name);
 
-  static BuiltSet<ZonesCnameFlatteningIdEnum> get values => _$zonesCnameFlatteningIdValues;
-  static ZonesCnameFlatteningIdEnum valueOf(String name) => _$zonesCnameFlatteningIdValueOf(name);
+  static BuiltSet<ZonesCnameFlatteningIdEnum> get values => _$zonesCnameFlatteningIdEnumValues;
+  static ZonesCnameFlatteningIdEnum valueOf(String name) => _$zonesCnameFlatteningIdEnumValueOf(name);
 }
 

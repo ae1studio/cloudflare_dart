@@ -194,11 +194,11 @@ class _$$VectorizeApiResponseCommonFailureSerializer implements PrimitiveSeriali
 class VectorizeApiResponseCommonFailureResultEnum extends EnumClass {
 
 
-  static Serializer<VectorizeApiResponseCommonFailureResultEnum> get serializer => _$vectorizeApiResponseCommonFailureResultSerializer;
+  static Serializer<VectorizeApiResponseCommonFailureResultEnum> get serializer => _$vectorizeApiResponseCommonFailureResultEnumSerializer;
 
   const VectorizeApiResponseCommonFailureResultEnum._(String name): super(name);
 
-  static BuiltSet<VectorizeApiResponseCommonFailureResultEnum> get values => _$vectorizeApiResponseCommonFailureResultValues;
-  static VectorizeApiResponseCommonFailureResultEnum valueOf(String name) => _$vectorizeApiResponseCommonFailureResultValueOf(name);
+  static BuiltSet<VectorizeApiResponseCommonFailureResultEnum> get values => _$vectorizeApiResponseCommonFailureResultEnumValues;
+  static VectorizeApiResponseCommonFailureResultEnum valueOf(String name) => _$vectorizeApiResponseCommonFailureResultEnumValueOf(name);
 }
 

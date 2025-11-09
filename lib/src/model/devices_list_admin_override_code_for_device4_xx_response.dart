@@ -165,11 +165,11 @@ class _$DevicesListAdminOverrideCodeForDevice4XXResponseSerializer implements Pr
 class DevicesListAdminOverrideCodeForDevice4XXResponseResultEnum extends EnumClass {
 
 
-  static Serializer<DevicesListAdminOverrideCodeForDevice4XXResponseResultEnum> get serializer => _$devicesListAdminOverrideCodeForDevice4XXResponseResultSerializer;
+  static Serializer<DevicesListAdminOverrideCodeForDevice4XXResponseResultEnum> get serializer => _$devicesListAdminOverrideCodeForDevice4XXResponseResultEnumSerializer;
 
   const DevicesListAdminOverrideCodeForDevice4XXResponseResultEnum._(String name): super(name);
 
-  static BuiltSet<DevicesListAdminOverrideCodeForDevice4XXResponseResultEnum> get values => _$devicesListAdminOverrideCodeForDevice4XXResponseResultValues;
-  static DevicesListAdminOverrideCodeForDevice4XXResponseResultEnum valueOf(String name) => _$devicesListAdminOverrideCodeForDevice4XXResponseResultValueOf(name);
+  static BuiltSet<DevicesListAdminOverrideCodeForDevice4XXResponseResultEnum> get values => _$devicesListAdminOverrideCodeForDevice4XXResponseResultEnumValues;
+  static DevicesListAdminOverrideCodeForDevice4XXResponseResultEnum valueOf(String name) => _$devicesListAdminOverrideCodeForDevice4XXResponseResultEnumValueOf(name);
 }
 

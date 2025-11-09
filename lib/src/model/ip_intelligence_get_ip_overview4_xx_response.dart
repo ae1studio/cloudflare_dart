@@ -164,11 +164,11 @@ class _$IpIntelligenceGetIpOverview4XXResponseSerializer implements PrimitiveSer
 class IpIntelligenceGetIpOverview4XXResponseResultEnum extends EnumClass {
 
 
-  static Serializer<IpIntelligenceGetIpOverview4XXResponseResultEnum> get serializer => _$ipIntelligenceGetIpOverview4XXResponseResultSerializer;
+  static Serializer<IpIntelligenceGetIpOverview4XXResponseResultEnum> get serializer => _$ipIntelligenceGetIpOverview4XXResponseResultEnumSerializer;
 
   const IpIntelligenceGetIpOverview4XXResponseResultEnum._(String name): super(name);
 
-  static BuiltSet<IpIntelligenceGetIpOverview4XXResponseResultEnum> get values => _$ipIntelligenceGetIpOverview4XXResponseResultValues;
-  static IpIntelligenceGetIpOverview4XXResponseResultEnum valueOf(String name) => _$ipIntelligenceGetIpOverview4XXResponseResultValueOf(name);
+  static BuiltSet<IpIntelligenceGetIpOverview4XXResponseResultEnum> get values => _$ipIntelligenceGetIpOverview4XXResponseResultEnumValues;
+  static IpIntelligenceGetIpOverview4XXResponseResultEnum valueOf(String name) => _$ipIntelligenceGetIpOverview4XXResponseResultEnumValueOf(name);
 }
 

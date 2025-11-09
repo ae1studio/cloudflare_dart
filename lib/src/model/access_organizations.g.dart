@@ -14,7 +14,7 @@ class _$AccessOrganizations extends AccessOrganizations {
   @override
   final bool? autoRedirectToIdentity;
   @override
-  final AccessCreatedAt? createdAt;
+  final JsonObject? createdAt;
   @override
   final AccessCustomPages? customPages;
   @override
@@ -28,7 +28,7 @@ class _$AccessOrganizations extends AccessOrganizations {
   @override
   final String? uiReadOnlyToggleReason;
   @override
-  final AccessUpdatedAt? updatedAt;
+  final JsonObject? updatedAt;
   @override
   final String? userSeatExpirationInactiveTime;
   @override
@@ -141,11 +141,9 @@ class AccessOrganizationsBuilder
   set autoRedirectToIdentity(bool? autoRedirectToIdentity) =>
       _$this._autoRedirectToIdentity = autoRedirectToIdentity;
 
-  AccessCreatedAtBuilder? _createdAt;
-  AccessCreatedAtBuilder get createdAt =>
-      _$this._createdAt ??= AccessCreatedAtBuilder();
-  set createdAt(AccessCreatedAtBuilder? createdAt) =>
-      _$this._createdAt = createdAt;
+  JsonObject? _createdAt;
+  JsonObject? get createdAt => _$this._createdAt;
+  set createdAt(JsonObject? createdAt) => _$this._createdAt = createdAt;
 
   AccessCustomPagesBuilder? _customPages;
   AccessCustomPagesBuilder get customPages =>
@@ -177,11 +175,9 @@ class AccessOrganizationsBuilder
   set uiReadOnlyToggleReason(String? uiReadOnlyToggleReason) =>
       _$this._uiReadOnlyToggleReason = uiReadOnlyToggleReason;
 
-  AccessUpdatedAtBuilder? _updatedAt;
-  AccessUpdatedAtBuilder get updatedAt =>
-      _$this._updatedAt ??= AccessUpdatedAtBuilder();
-  set updatedAt(AccessUpdatedAtBuilder? updatedAt) =>
-      _$this._updatedAt = updatedAt;
+  JsonObject? _updatedAt;
+  JsonObject? get updatedAt => _$this._updatedAt;
+  set updatedAt(JsonObject? updatedAt) => _$this._updatedAt = updatedAt;
 
   String? _userSeatExpirationInactiveTime;
   String? get userSeatExpirationInactiveTime =>
@@ -204,14 +200,14 @@ class AccessOrganizationsBuilder
       _allowAuthenticateViaWarp = $v.allowAuthenticateViaWarp;
       _authDomain = $v.authDomain;
       _autoRedirectToIdentity = $v.autoRedirectToIdentity;
-      _createdAt = $v.createdAt?.toBuilder();
+      _createdAt = $v.createdAt;
       _customPages = $v.customPages?.toBuilder();
       _isUiReadOnly = $v.isUiReadOnly;
       _loginDesign = $v.loginDesign?.toBuilder();
       _name = $v.name;
       _sessionDuration = $v.sessionDuration;
       _uiReadOnlyToggleReason = $v.uiReadOnlyToggleReason;
-      _updatedAt = $v.updatedAt?.toBuilder();
+      _updatedAt = $v.updatedAt;
       _userSeatExpirationInactiveTime = $v.userSeatExpirationInactiveTime;
       _warpAuthSessionDuration = $v.warpAuthSessionDuration;
       _$v = null;
@@ -240,30 +236,25 @@ class AccessOrganizationsBuilder
             allowAuthenticateViaWarp: allowAuthenticateViaWarp,
             authDomain: authDomain,
             autoRedirectToIdentity: autoRedirectToIdentity,
-            createdAt: _createdAt?.build(),
+            createdAt: createdAt,
             customPages: _customPages?.build(),
             isUiReadOnly: isUiReadOnly,
             loginDesign: _loginDesign?.build(),
             name: name,
             sessionDuration: sessionDuration,
             uiReadOnlyToggleReason: uiReadOnlyToggleReason,
-            updatedAt: _updatedAt?.build(),
+            updatedAt: updatedAt,
             userSeatExpirationInactiveTime: userSeatExpirationInactiveTime,
             warpAuthSessionDuration: warpAuthSessionDuration,
           );
     } catch (_) {
       late String _$failedField;
       try {
-        _$failedField = 'createdAt';
-        _createdAt?.build();
         _$failedField = 'customPages';
         _customPages?.build();
 
         _$failedField = 'loginDesign';
         _loginDesign?.build();
-
-        _$failedField = 'updatedAt';
-        _updatedAt?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
             r'AccessOrganizations', _$failedField, e.toString());

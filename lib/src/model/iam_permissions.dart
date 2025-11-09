@@ -24,8 +24,8 @@ part 'iam_permissions.g.dart';
 /// * [waf] 
 /// * [zoneSettings] 
 /// * [zones] 
-@BuiltValue(instantiable: false)
-abstract class IamPermissions  {
+@BuiltValue()
+abstract class IamPermissions implements Built<IamPermissions, IamPermissionsBuilder> {
   @BuiltValueField(wireName: r'analytics')
   IamGrants? get analytics;
 
@@ -62,13 +62,20 @@ abstract class IamPermissions  {
   @BuiltValueField(wireName: r'zones')
   IamGrants? get zones;
 
+  IamPermissions._();
+
+  factory IamPermissions([void updates(IamPermissionsBuilder b)]) = _$IamPermissions;
+
+  @BuiltValueHook(initializeBuilder: true)
+  static void _defaults(IamPermissionsBuilder b) => b;
+
   @BuiltValueSerializer(custom: true)
   static Serializer<IamPermissions> get serializer => _$IamPermissionsSerializer();
 }
 
 class _$IamPermissionsSerializer implements PrimitiveSerializer<IamPermissions> {
   @override
-  final Iterable<Type> types = const [IamPermissions];
+  final Iterable<Type> types = const [IamPermissions, _$IamPermissions];
 
   @override
   final String wireName = r'IamPermissions';
@@ -171,46 +178,6 @@ class _$IamPermissionsSerializer implements PrimitiveSerializer<IamPermissions> 
     FullType specifiedType = FullType.unspecified,
   }) {
     return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
-  }
-
-  @override
-  IamPermissions deserialize(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    return serializers.deserialize(serialized, specifiedType: FullType($IamPermissions)) as $IamPermissions;
-  }
-}
-
-/// a concrete implementation of [IamPermissions], since [IamPermissions] is not instantiable
-@BuiltValue(instantiable: true)
-abstract class $IamPermissions implements IamPermissions, Built<$IamPermissions, $IamPermissionsBuilder> {
-  $IamPermissions._();
-
-  factory $IamPermissions([void Function($IamPermissionsBuilder)? updates]) = _$$IamPermissions;
-
-  @BuiltValueHook(initializeBuilder: true)
-  static void _defaults($IamPermissionsBuilder b) => b;
-
-  @BuiltValueSerializer(custom: true)
-  static Serializer<$IamPermissions> get serializer => _$$IamPermissionsSerializer();
-}
-
-class _$$IamPermissionsSerializer implements PrimitiveSerializer<$IamPermissions> {
-  @override
-  final Iterable<Type> types = const [$IamPermissions, _$$IamPermissions];
-
-  @override
-  final String wireName = r'$IamPermissions';
-
-  @override
-  Object serialize(
-    Serializers serializers,
-    $IamPermissions object, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    return serializers.serialize(object, specifiedType: FullType(IamPermissions))!;
   }
 
   void _deserializeProperties(
@@ -318,12 +285,12 @@ class _$$IamPermissionsSerializer implements PrimitiveSerializer<$IamPermissions
   }
 
   @override
-  $IamPermissions deserialize(
+  IamPermissions deserialize(
     Serializers serializers,
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    final result = $IamPermissionsBuilder();
+    final result = IamPermissionsBuilder();
     final serializedList = (serialized as Iterable<Object?>).toList();
     final unhandled = <Object?>[];
     _deserializeProperties(

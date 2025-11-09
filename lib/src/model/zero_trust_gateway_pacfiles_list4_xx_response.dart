@@ -165,11 +165,11 @@ class _$ZeroTrustGatewayPacfilesList4XXResponseSerializer implements PrimitiveSe
 class ZeroTrustGatewayPacfilesList4XXResponseResultEnum extends EnumClass {
 
 
-  static Serializer<ZeroTrustGatewayPacfilesList4XXResponseResultEnum> get serializer => _$zeroTrustGatewayPacfilesList4XXResponseResultSerializer;
+  static Serializer<ZeroTrustGatewayPacfilesList4XXResponseResultEnum> get serializer => _$zeroTrustGatewayPacfilesList4XXResponseResultEnumSerializer;
 
   const ZeroTrustGatewayPacfilesList4XXResponseResultEnum._(String name): super(name);
 
-  static BuiltSet<ZeroTrustGatewayPacfilesList4XXResponseResultEnum> get values => _$zeroTrustGatewayPacfilesList4XXResponseResultValues;
-  static ZeroTrustGatewayPacfilesList4XXResponseResultEnum valueOf(String name) => _$zeroTrustGatewayPacfilesList4XXResponseResultValueOf(name);
+  static BuiltSet<ZeroTrustGatewayPacfilesList4XXResponseResultEnum> get values => _$zeroTrustGatewayPacfilesList4XXResponseResultEnumValues;
+  static ZeroTrustGatewayPacfilesList4XXResponseResultEnum valueOf(String name) => _$zeroTrustGatewayPacfilesList4XXResponseResultEnumValueOf(name);
 }
 

@@ -40,7 +40,7 @@ part 'rulesets_request_rule.g.dart';
 /// * [actionParameters] 
 /// * [categories] - The categories of the rule.
 /// * [description] 
-/// * [enabled] 
+/// * [enabled] - Whether the rule should be executed.
 /// * [exposedCredentialCheck] 
 /// * [expression] - The expression defining which traffic will match the rule.
 /// * [id] - The unique ID of the rule.
@@ -420,11 +420,11 @@ class RulesetsRequestRuleActionEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'skip')
   static const RulesetsRequestRuleActionEnum skip = _$rulesetsRequestRuleActionEnum_skip;
 
-  static Serializer<RulesetsRequestRuleActionEnum> get serializer => _$rulesetsRequestRuleActionSerializer;
+  static Serializer<RulesetsRequestRuleActionEnum> get serializer => _$rulesetsRequestRuleActionEnumSerializer;
 
   const RulesetsRequestRuleActionEnum._(String name): super(name);
 
-  static BuiltSet<RulesetsRequestRuleActionEnum> get values => _$rulesetsRequestRuleActionValues;
-  static RulesetsRequestRuleActionEnum valueOf(String name) => _$rulesetsRequestRuleActionValueOf(name);
+  static BuiltSet<RulesetsRequestRuleActionEnum> get values => _$rulesetsRequestRuleActionEnumValues;
+  static RulesetsRequestRuleActionEnum valueOf(String name) => _$rulesetsRequestRuleActionEnumValueOf(name);
 }
 

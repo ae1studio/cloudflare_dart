@@ -135,12 +135,12 @@ class ZonesMirageIdEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'mirage')
   static const ZonesMirageIdEnum mirage = _$zonesMirageIdEnum_mirage;
 
-  static Serializer<ZonesMirageIdEnum> get serializer => _$zonesMirageIdSerializer;
+  static Serializer<ZonesMirageIdEnum> get serializer => _$zonesMirageIdEnumSerializer;
 
   const ZonesMirageIdEnum._(String name): super(name);
 
-  static BuiltSet<ZonesMirageIdEnum> get values => _$zonesMirageIdValues;
-  static ZonesMirageIdEnum valueOf(String name) => _$zonesMirageIdValueOf(name);
+  static BuiltSet<ZonesMirageIdEnum> get values => _$zonesMirageIdEnumValues;
+  static ZonesMirageIdEnum valueOf(String name) => _$zonesMirageIdEnumValueOf(name);
 }
 
 class ZonesMirageValueEnum extends EnumClass {
@@ -152,11 +152,11 @@ class ZonesMirageValueEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'off')
   static const ZonesMirageValueEnum off = _$zonesMirageValueEnum_off;
 
-  static Serializer<ZonesMirageValueEnum> get serializer => _$zonesMirageValueSerializer;
+  static Serializer<ZonesMirageValueEnum> get serializer => _$zonesMirageValueEnumSerializer;
 
   const ZonesMirageValueEnum._(String name): super(name);
 
-  static BuiltSet<ZonesMirageValueEnum> get values => _$zonesMirageValueValues;
-  static ZonesMirageValueEnum valueOf(String name) => _$zonesMirageValueValueOf(name);
+  static BuiltSet<ZonesMirageValueEnum> get values => _$zonesMirageValueEnumValues;
+  static ZonesMirageValueEnum valueOf(String name) => _$zonesMirageValueEnumValueOf(name);
 }
 

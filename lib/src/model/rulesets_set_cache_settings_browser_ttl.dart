@@ -141,11 +141,11 @@ class RulesetsSetCacheSettingsBrowserTTLModeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'bypass')
   static const RulesetsSetCacheSettingsBrowserTTLModeEnum bypass = _$rulesetsSetCacheSettingsBrowserTTLModeEnum_bypass;
 
-  static Serializer<RulesetsSetCacheSettingsBrowserTTLModeEnum> get serializer => _$rulesetsSetCacheSettingsBrowserTTLModeSerializer;
+  static Serializer<RulesetsSetCacheSettingsBrowserTTLModeEnum> get serializer => _$rulesetsSetCacheSettingsBrowserTTLModeEnumSerializer;
 
   const RulesetsSetCacheSettingsBrowserTTLModeEnum._(String name): super(name);
 
-  static BuiltSet<RulesetsSetCacheSettingsBrowserTTLModeEnum> get values => _$rulesetsSetCacheSettingsBrowserTTLModeValues;
-  static RulesetsSetCacheSettingsBrowserTTLModeEnum valueOf(String name) => _$rulesetsSetCacheSettingsBrowserTTLModeValueOf(name);
+  static BuiltSet<RulesetsSetCacheSettingsBrowserTTLModeEnum> get values => _$rulesetsSetCacheSettingsBrowserTTLModeEnumValues;
+  static RulesetsSetCacheSettingsBrowserTTLModeEnum valueOf(String name) => _$rulesetsSetCacheSettingsBrowserTTLModeEnumValueOf(name);
 }
 

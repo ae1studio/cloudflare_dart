@@ -35,7 +35,7 @@ abstract class HealthchecksQueryHealthcheck implements Built<HealthchecksQueryHe
 
   /// A list of regions from which to run health checks. Null means Cloudflare will pick a default region.
   @BuiltValueField(wireName: r'check_regions')
-  BuiltList<SmartshieldQueryHealthcheckCheckRegionsEnum>? get checkRegions;
+  BuiltList<HealthchecksQueryHealthcheckCheckRegionsEnum>? get checkRegions;
   // enum checkRegionsEnum {  WNAM,  ENAM,  WEU,  EEU,  NSAM,  SSAM,  OC,  ME,  NAF,  SAF,  IN,  SEAS,  NEAS,  ALL_REGIONS,  };
 
   /// The number of consecutive fails required from a health check before changing the health to unhealthy.
@@ -119,7 +119,7 @@ class _$HealthchecksQueryHealthcheckSerializer implements PrimitiveSerializer<He
       yield r'check_regions';
       yield serializers.serialize(
         object.checkRegions,
-        specifiedType: const FullType.nullable(BuiltList, [FullType(SmartshieldQueryHealthcheckCheckRegionsEnum)]),
+        specifiedType: const FullType.nullable(BuiltList, [FullType(HealthchecksQueryHealthcheckCheckRegionsEnum)]),
       );
     }
     if (object.consecutiveFails != null) {
@@ -230,8 +230,8 @@ class _$HealthchecksQueryHealthcheckSerializer implements PrimitiveSerializer<He
         case r'check_regions':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType.nullable(BuiltList, [FullType(SmartshieldQueryHealthcheckCheckRegionsEnum)]),
-          ) as BuiltList<SmartshieldQueryHealthcheckCheckRegionsEnum>?;
+            specifiedType: const FullType.nullable(BuiltList, [FullType(HealthchecksQueryHealthcheckCheckRegionsEnum)]),
+          ) as BuiltList<HealthchecksQueryHealthcheckCheckRegionsEnum>?;
           if (valueDes == null) continue;
           result.checkRegions.replace(valueDes);
           break;
@@ -341,5 +341,58 @@ class _$HealthchecksQueryHealthcheckSerializer implements PrimitiveSerializer<He
     );
     return result.build();
   }
+}
+
+class HealthchecksQueryHealthcheckCheckRegionsEnum extends EnumClass {
+
+  /// WNAM: Western North America, ENAM: Eastern North America, WEU: Western Europe, EEU: Eastern Europe, NSAM: Northern South America, SSAM: Southern South America, OC: Oceania, ME: Middle East, NAF: North Africa, SAF: South Africa, IN: India, SEAS: South East Asia, NEAS: North East Asia, ALL_REGIONS: all regions (BUSINESS and ENTERPRISE customers only).
+  @BuiltValueEnumConst(wireName: r'WNAM')
+  static const HealthchecksQueryHealthcheckCheckRegionsEnum WNAM = _$healthchecksQueryHealthcheckCheckRegionsEnum_WNAM;
+  /// WNAM: Western North America, ENAM: Eastern North America, WEU: Western Europe, EEU: Eastern Europe, NSAM: Northern South America, SSAM: Southern South America, OC: Oceania, ME: Middle East, NAF: North Africa, SAF: South Africa, IN: India, SEAS: South East Asia, NEAS: North East Asia, ALL_REGIONS: all regions (BUSINESS and ENTERPRISE customers only).
+  @BuiltValueEnumConst(wireName: r'ENAM')
+  static const HealthchecksQueryHealthcheckCheckRegionsEnum ENAM = _$healthchecksQueryHealthcheckCheckRegionsEnum_ENAM;
+  /// WNAM: Western North America, ENAM: Eastern North America, WEU: Western Europe, EEU: Eastern Europe, NSAM: Northern South America, SSAM: Southern South America, OC: Oceania, ME: Middle East, NAF: North Africa, SAF: South Africa, IN: India, SEAS: South East Asia, NEAS: North East Asia, ALL_REGIONS: all regions (BUSINESS and ENTERPRISE customers only).
+  @BuiltValueEnumConst(wireName: r'WEU')
+  static const HealthchecksQueryHealthcheckCheckRegionsEnum WEU = _$healthchecksQueryHealthcheckCheckRegionsEnum_WEU;
+  /// WNAM: Western North America, ENAM: Eastern North America, WEU: Western Europe, EEU: Eastern Europe, NSAM: Northern South America, SSAM: Southern South America, OC: Oceania, ME: Middle East, NAF: North Africa, SAF: South Africa, IN: India, SEAS: South East Asia, NEAS: North East Asia, ALL_REGIONS: all regions (BUSINESS and ENTERPRISE customers only).
+  @BuiltValueEnumConst(wireName: r'EEU')
+  static const HealthchecksQueryHealthcheckCheckRegionsEnum EEU = _$healthchecksQueryHealthcheckCheckRegionsEnum_EEU;
+  /// WNAM: Western North America, ENAM: Eastern North America, WEU: Western Europe, EEU: Eastern Europe, NSAM: Northern South America, SSAM: Southern South America, OC: Oceania, ME: Middle East, NAF: North Africa, SAF: South Africa, IN: India, SEAS: South East Asia, NEAS: North East Asia, ALL_REGIONS: all regions (BUSINESS and ENTERPRISE customers only).
+  @BuiltValueEnumConst(wireName: r'NSAM')
+  static const HealthchecksQueryHealthcheckCheckRegionsEnum NSAM = _$healthchecksQueryHealthcheckCheckRegionsEnum_NSAM;
+  /// WNAM: Western North America, ENAM: Eastern North America, WEU: Western Europe, EEU: Eastern Europe, NSAM: Northern South America, SSAM: Southern South America, OC: Oceania, ME: Middle East, NAF: North Africa, SAF: South Africa, IN: India, SEAS: South East Asia, NEAS: North East Asia, ALL_REGIONS: all regions (BUSINESS and ENTERPRISE customers only).
+  @BuiltValueEnumConst(wireName: r'SSAM')
+  static const HealthchecksQueryHealthcheckCheckRegionsEnum SSAM = _$healthchecksQueryHealthcheckCheckRegionsEnum_SSAM;
+  /// WNAM: Western North America, ENAM: Eastern North America, WEU: Western Europe, EEU: Eastern Europe, NSAM: Northern South America, SSAM: Southern South America, OC: Oceania, ME: Middle East, NAF: North Africa, SAF: South Africa, IN: India, SEAS: South East Asia, NEAS: North East Asia, ALL_REGIONS: all regions (BUSINESS and ENTERPRISE customers only).
+  @BuiltValueEnumConst(wireName: r'OC')
+  static const HealthchecksQueryHealthcheckCheckRegionsEnum OC = _$healthchecksQueryHealthcheckCheckRegionsEnum_OC;
+  /// WNAM: Western North America, ENAM: Eastern North America, WEU: Western Europe, EEU: Eastern Europe, NSAM: Northern South America, SSAM: Southern South America, OC: Oceania, ME: Middle East, NAF: North Africa, SAF: South Africa, IN: India, SEAS: South East Asia, NEAS: North East Asia, ALL_REGIONS: all regions (BUSINESS and ENTERPRISE customers only).
+  @BuiltValueEnumConst(wireName: r'ME')
+  static const HealthchecksQueryHealthcheckCheckRegionsEnum ME = _$healthchecksQueryHealthcheckCheckRegionsEnum_ME;
+  /// WNAM: Western North America, ENAM: Eastern North America, WEU: Western Europe, EEU: Eastern Europe, NSAM: Northern South America, SSAM: Southern South America, OC: Oceania, ME: Middle East, NAF: North Africa, SAF: South Africa, IN: India, SEAS: South East Asia, NEAS: North East Asia, ALL_REGIONS: all regions (BUSINESS and ENTERPRISE customers only).
+  @BuiltValueEnumConst(wireName: r'NAF')
+  static const HealthchecksQueryHealthcheckCheckRegionsEnum NAF = _$healthchecksQueryHealthcheckCheckRegionsEnum_NAF;
+  /// WNAM: Western North America, ENAM: Eastern North America, WEU: Western Europe, EEU: Eastern Europe, NSAM: Northern South America, SSAM: Southern South America, OC: Oceania, ME: Middle East, NAF: North Africa, SAF: South Africa, IN: India, SEAS: South East Asia, NEAS: North East Asia, ALL_REGIONS: all regions (BUSINESS and ENTERPRISE customers only).
+  @BuiltValueEnumConst(wireName: r'SAF')
+  static const HealthchecksQueryHealthcheckCheckRegionsEnum SAF = _$healthchecksQueryHealthcheckCheckRegionsEnum_SAF;
+  /// WNAM: Western North America, ENAM: Eastern North America, WEU: Western Europe, EEU: Eastern Europe, NSAM: Northern South America, SSAM: Southern South America, OC: Oceania, ME: Middle East, NAF: North Africa, SAF: South Africa, IN: India, SEAS: South East Asia, NEAS: North East Asia, ALL_REGIONS: all regions (BUSINESS and ENTERPRISE customers only).
+  @BuiltValueEnumConst(wireName: r'IN')
+  static const HealthchecksQueryHealthcheckCheckRegionsEnum IN = _$healthchecksQueryHealthcheckCheckRegionsEnum_IN;
+  /// WNAM: Western North America, ENAM: Eastern North America, WEU: Western Europe, EEU: Eastern Europe, NSAM: Northern South America, SSAM: Southern South America, OC: Oceania, ME: Middle East, NAF: North Africa, SAF: South Africa, IN: India, SEAS: South East Asia, NEAS: North East Asia, ALL_REGIONS: all regions (BUSINESS and ENTERPRISE customers only).
+  @BuiltValueEnumConst(wireName: r'SEAS')
+  static const HealthchecksQueryHealthcheckCheckRegionsEnum SEAS = _$healthchecksQueryHealthcheckCheckRegionsEnum_SEAS;
+  /// WNAM: Western North America, ENAM: Eastern North America, WEU: Western Europe, EEU: Eastern Europe, NSAM: Northern South America, SSAM: Southern South America, OC: Oceania, ME: Middle East, NAF: North Africa, SAF: South Africa, IN: India, SEAS: South East Asia, NEAS: North East Asia, ALL_REGIONS: all regions (BUSINESS and ENTERPRISE customers only).
+  @BuiltValueEnumConst(wireName: r'NEAS')
+  static const HealthchecksQueryHealthcheckCheckRegionsEnum NEAS = _$healthchecksQueryHealthcheckCheckRegionsEnum_NEAS;
+  /// WNAM: Western North America, ENAM: Eastern North America, WEU: Western Europe, EEU: Eastern Europe, NSAM: Northern South America, SSAM: Southern South America, OC: Oceania, ME: Middle East, NAF: North Africa, SAF: South Africa, IN: India, SEAS: South East Asia, NEAS: North East Asia, ALL_REGIONS: all regions (BUSINESS and ENTERPRISE customers only).
+  @BuiltValueEnumConst(wireName: r'ALL_REGIONS')
+  static const HealthchecksQueryHealthcheckCheckRegionsEnum ALL_REGIONS = _$healthchecksQueryHealthcheckCheckRegionsEnum_ALL_REGIONS;
+
+  static Serializer<HealthchecksQueryHealthcheckCheckRegionsEnum> get serializer => _$healthchecksQueryHealthcheckCheckRegionsEnumSerializer;
+
+  const HealthchecksQueryHealthcheckCheckRegionsEnum._(String name): super(name);
+
+  static BuiltSet<HealthchecksQueryHealthcheckCheckRegionsEnum> get values => _$healthchecksQueryHealthcheckCheckRegionsEnumValues;
+  static HealthchecksQueryHealthcheckCheckRegionsEnum valueOf(String name) => _$healthchecksQueryHealthcheckCheckRegionsEnumValueOf(name);
 }
 

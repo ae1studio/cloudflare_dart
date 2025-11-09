@@ -150,11 +150,11 @@ class _$DnsFirewallCreateDnsFirewallCluster4XXResponseSerializer implements Prim
 class DnsFirewallCreateDnsFirewallCluster4XXResponseResultEnum extends EnumClass {
 
 
-  static Serializer<DnsFirewallCreateDnsFirewallCluster4XXResponseResultEnum> get serializer => _$dnsFirewallCreateDnsFirewallCluster4XXResponseResultSerializer;
+  static Serializer<DnsFirewallCreateDnsFirewallCluster4XXResponseResultEnum> get serializer => _$dnsFirewallCreateDnsFirewallCluster4XXResponseResultEnumSerializer;
 
   const DnsFirewallCreateDnsFirewallCluster4XXResponseResultEnum._(String name): super(name);
 
-  static BuiltSet<DnsFirewallCreateDnsFirewallCluster4XXResponseResultEnum> get values => _$dnsFirewallCreateDnsFirewallCluster4XXResponseResultValues;
-  static DnsFirewallCreateDnsFirewallCluster4XXResponseResultEnum valueOf(String name) => _$dnsFirewallCreateDnsFirewallCluster4XXResponseResultValueOf(name);
+  static BuiltSet<DnsFirewallCreateDnsFirewallCluster4XXResponseResultEnum> get values => _$dnsFirewallCreateDnsFirewallCluster4XXResponseResultEnumValues;
+  static DnsFirewallCreateDnsFirewallCluster4XXResponseResultEnum valueOf(String name) => _$dnsFirewallCreateDnsFirewallCluster4XXResponseResultEnumValueOf(name);
 }
 

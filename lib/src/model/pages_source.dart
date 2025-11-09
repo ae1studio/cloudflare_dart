@@ -137,11 +137,11 @@ class PagesSourceTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'gitlab')
   static const PagesSourceTypeEnum gitlab = _$pagesSourceTypeEnum_gitlab;
 
-  static Serializer<PagesSourceTypeEnum> get serializer => _$pagesSourceTypeSerializer;
+  static Serializer<PagesSourceTypeEnum> get serializer => _$pagesSourceTypeEnumSerializer;
 
   const PagesSourceTypeEnum._(String name): super(name);
 
-  static BuiltSet<PagesSourceTypeEnum> get values => _$pagesSourceTypeValues;
-  static PagesSourceTypeEnum valueOf(String name) => _$pagesSourceTypeValueOf(name);
+  static BuiltSet<PagesSourceTypeEnum> get values => _$pagesSourceTypeEnumValues;
+  static PagesSourceTypeEnum valueOf(String name) => _$pagesSourceTypeEnumValueOf(name);
 }
 

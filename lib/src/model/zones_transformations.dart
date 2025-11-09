@@ -156,11 +156,11 @@ class ZonesTransformationsIdEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'transformations')
   static const ZonesTransformationsIdEnum transformations = _$zonesTransformationsIdEnum_transformations;
 
-  static Serializer<ZonesTransformationsIdEnum> get serializer => _$zonesTransformationsIdSerializer;
+  static Serializer<ZonesTransformationsIdEnum> get serializer => _$zonesTransformationsIdEnumSerializer;
 
   const ZonesTransformationsIdEnum._(String name): super(name);
 
-  static BuiltSet<ZonesTransformationsIdEnum> get values => _$zonesTransformationsIdValues;
-  static ZonesTransformationsIdEnum valueOf(String name) => _$zonesTransformationsIdValueOf(name);
+  static BuiltSet<ZonesTransformationsIdEnum> get values => _$zonesTransformationsIdEnumValues;
+  static ZonesTransformationsIdEnum valueOf(String name) => _$zonesTransformationsIdEnumValueOf(name);
 }
 

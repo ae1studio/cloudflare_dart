@@ -161,11 +161,11 @@ class _$IamApiResponseCommonFailureSerializer implements PrimitiveSerializer<Iam
 class IamApiResponseCommonFailureResultEnum extends EnumClass {
 
 
-  static Serializer<IamApiResponseCommonFailureResultEnum> get serializer => _$iamApiResponseCommonFailureResultSerializer;
+  static Serializer<IamApiResponseCommonFailureResultEnum> get serializer => _$iamApiResponseCommonFailureResultEnumSerializer;
 
   const IamApiResponseCommonFailureResultEnum._(String name): super(name);
 
-  static BuiltSet<IamApiResponseCommonFailureResultEnum> get values => _$iamApiResponseCommonFailureResultValues;
-  static IamApiResponseCommonFailureResultEnum valueOf(String name) => _$iamApiResponseCommonFailureResultValueOf(name);
+  static BuiltSet<IamApiResponseCommonFailureResultEnum> get values => _$iamApiResponseCommonFailureResultEnumValues;
+  static IamApiResponseCommonFailureResultEnum valueOf(String name) => _$iamApiResponseCommonFailureResultEnumValueOf(name);
 }
 

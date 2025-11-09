@@ -151,11 +151,11 @@ class RealtimekitCreateChatChannelInfoVisibilityEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'private')
   static const RealtimekitCreateChatChannelInfoVisibilityEnum private = _$realtimekitCreateChatChannelInfoVisibilityEnum_private;
 
-  static Serializer<RealtimekitCreateChatChannelInfoVisibilityEnum> get serializer => _$realtimekitCreateChatChannelInfoVisibilitySerializer;
+  static Serializer<RealtimekitCreateChatChannelInfoVisibilityEnum> get serializer => _$realtimekitCreateChatChannelInfoVisibilityEnumSerializer;
 
   const RealtimekitCreateChatChannelInfoVisibilityEnum._(String name): super(name);
 
-  static BuiltSet<RealtimekitCreateChatChannelInfoVisibilityEnum> get values => _$realtimekitCreateChatChannelInfoVisibilityValues;
-  static RealtimekitCreateChatChannelInfoVisibilityEnum valueOf(String name) => _$realtimekitCreateChatChannelInfoVisibilityValueOf(name);
+  static BuiltSet<RealtimekitCreateChatChannelInfoVisibilityEnum> get values => _$realtimekitCreateChatChannelInfoVisibilityEnumValues;
+  static RealtimekitCreateChatChannelInfoVisibilityEnum valueOf(String name) => _$realtimekitCreateChatChannelInfoVisibilityEnumValueOf(name);
 }
 

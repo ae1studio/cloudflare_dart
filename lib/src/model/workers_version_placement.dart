@@ -115,11 +115,11 @@ class WorkersVersionPlacementModeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'smart')
   static const WorkersVersionPlacementModeEnum smart = _$workersVersionPlacementModeEnum_smart;
 
-  static Serializer<WorkersVersionPlacementModeEnum> get serializer => _$workersVersionPlacementModeSerializer;
+  static Serializer<WorkersVersionPlacementModeEnum> get serializer => _$workersVersionPlacementModeEnumSerializer;
 
   const WorkersVersionPlacementModeEnum._(String name): super(name);
 
-  static BuiltSet<WorkersVersionPlacementModeEnum> get values => _$workersVersionPlacementModeValues;
-  static WorkersVersionPlacementModeEnum valueOf(String name) => _$workersVersionPlacementModeValueOf(name);
+  static BuiltSet<WorkersVersionPlacementModeEnum> get values => _$workersVersionPlacementModeEnumValues;
+  static WorkersVersionPlacementModeEnum valueOf(String name) => _$workersVersionPlacementModeEnumValueOf(name);
 }
 

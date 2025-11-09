@@ -128,11 +128,11 @@ class TimestampTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'timestamp')
   static const TimestampTypeEnum timestamp = _$timestampTypeEnum_timestamp;
 
-  static Serializer<TimestampTypeEnum> get serializer => _$timestampTypeSerializer;
+  static Serializer<TimestampTypeEnum> get serializer => _$timestampTypeEnumSerializer;
 
   const TimestampTypeEnum._(String name): super(name);
 
-  static BuiltSet<TimestampTypeEnum> get values => _$timestampTypeValues;
-  static TimestampTypeEnum valueOf(String name) => _$timestampTypeValueOf(name);
+  static BuiltSet<TimestampTypeEnum> get values => _$timestampTypeEnumValues;
+  static TimestampTypeEnum valueOf(String name) => _$timestampTypeEnumValueOf(name);
 }
 

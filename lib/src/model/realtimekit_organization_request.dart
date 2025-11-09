@@ -42,7 +42,7 @@ abstract class RealtimekitOrganizationRequest implements Built<RealtimekitOrgani
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(RealtimekitOrganizationRequestBuilder b) => b
-      ..preferredRegion = const RealtimekitOrganizationRequestPreferredRegionEnum._('ap-south-1');
+      ..preferredRegion = RealtimekitOrganizationRequestPreferredRegionEnum.valueOf('ap-south-1');
 
   @BuiltValueSerializer(custom: true)
   static Serializer<RealtimekitOrganizationRequest> get serializer => _$RealtimekitOrganizationRequestSerializer();
@@ -187,11 +187,11 @@ class RealtimekitOrganizationRequestPreferredRegionEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'eu-central-1')
   static const RealtimekitOrganizationRequestPreferredRegionEnum euCentral1 = _$realtimekitOrganizationRequestPreferredRegionEnum_euCentral1;
 
-  static Serializer<RealtimekitOrganizationRequestPreferredRegionEnum> get serializer => _$realtimekitOrganizationRequestPreferredRegionSerializer;
+  static Serializer<RealtimekitOrganizationRequestPreferredRegionEnum> get serializer => _$realtimekitOrganizationRequestPreferredRegionEnumSerializer;
 
   const RealtimekitOrganizationRequestPreferredRegionEnum._(String name): super(name);
 
-  static BuiltSet<RealtimekitOrganizationRequestPreferredRegionEnum> get values => _$realtimekitOrganizationRequestPreferredRegionValues;
-  static RealtimekitOrganizationRequestPreferredRegionEnum valueOf(String name) => _$realtimekitOrganizationRequestPreferredRegionValueOf(name);
+  static BuiltSet<RealtimekitOrganizationRequestPreferredRegionEnum> get values => _$realtimekitOrganizationRequestPreferredRegionEnumValues;
+  static RealtimekitOrganizationRequestPreferredRegionEnum valueOf(String name) => _$realtimekitOrganizationRequestPreferredRegionEnumValueOf(name);
 }
 

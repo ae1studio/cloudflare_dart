@@ -5,10 +5,10 @@
 // ignore_for_file: unused_element
 import 'package:cloudflare_dart/src/model/access_footer_links_inner.dart';
 import 'package:built_collection/built_collection.dart';
+import 'package:cloudflare_dart/src/model/access_type.dart';
 import 'package:cloudflare_dart/src/model/access_app_req_embedded_policies.dart';
 import 'package:cloudflare_dart/src/model/access_landing_page_design.dart';
 import 'package:cloudflare_dart/src/model/access_app_launcher_props.dart';
-import 'package:cloudflare_dart/src/model/access_app_launcher_props_all_of_type.dart';
 import 'package:cloudflare_dart/src/model/access_app_req_embedded_policies_policies_inner.dart';
 import 'package:built_value/json_object.dart';
 import 'package:built_value/built_value.dart';
@@ -116,7 +116,7 @@ class _$AppLauncherApplicationSerializer implements PrimitiveSerializer<AppLaunc
     yield r'type';
     yield serializers.serialize(
       object.type,
-      specifiedType: const FullType(AccessAppLauncherPropsAllOfType),
+      specifiedType: const FullType(AccessType),
     );
     if (object.customNonIdentityDenyUrl != null) {
       yield r'custom_non_identity_deny_url';
@@ -249,9 +249,9 @@ class _$AppLauncherApplicationSerializer implements PrimitiveSerializer<AppLaunc
         case r'type':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(AccessAppLauncherPropsAllOfType),
-          ) as AccessAppLauncherPropsAllOfType;
-          result.type.replace(valueDes);
+            specifiedType: const FullType(AccessType),
+          ) as AccessType;
+          result.type = valueDes;
           break;
         case r'custom_non_identity_deny_url':
           final valueDes = serializers.deserialize(

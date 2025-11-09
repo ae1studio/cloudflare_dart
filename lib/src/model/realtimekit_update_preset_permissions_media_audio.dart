@@ -121,11 +121,11 @@ class RealtimekitUpdatePresetPermissionsMediaAudioCanProduceEnum extends EnumCla
   @BuiltValueEnumConst(wireName: r'CAN_REQUEST')
   static const RealtimekitUpdatePresetPermissionsMediaAudioCanProduceEnum CAN_REQUEST = _$realtimekitUpdatePresetPermissionsMediaAudioCanProduceEnum_CAN_REQUEST;
 
-  static Serializer<RealtimekitUpdatePresetPermissionsMediaAudioCanProduceEnum> get serializer => _$realtimekitUpdatePresetPermissionsMediaAudioCanProduceSerializer;
+  static Serializer<RealtimekitUpdatePresetPermissionsMediaAudioCanProduceEnum> get serializer => _$realtimekitUpdatePresetPermissionsMediaAudioCanProduceEnumSerializer;
 
   const RealtimekitUpdatePresetPermissionsMediaAudioCanProduceEnum._(String name): super(name);
 
-  static BuiltSet<RealtimekitUpdatePresetPermissionsMediaAudioCanProduceEnum> get values => _$realtimekitUpdatePresetPermissionsMediaAudioCanProduceValues;
-  static RealtimekitUpdatePresetPermissionsMediaAudioCanProduceEnum valueOf(String name) => _$realtimekitUpdatePresetPermissionsMediaAudioCanProduceValueOf(name);
+  static BuiltSet<RealtimekitUpdatePresetPermissionsMediaAudioCanProduceEnum> get values => _$realtimekitUpdatePresetPermissionsMediaAudioCanProduceEnumValues;
+  static RealtimekitUpdatePresetPermissionsMediaAudioCanProduceEnum valueOf(String name) => _$realtimekitUpdatePresetPermissionsMediaAudioCanProduceEnumValueOf(name);
 }
 

@@ -32,8 +32,8 @@ abstract class LoadBalancingLocationStrategy implements Built<LoadBalancingLocat
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(LoadBalancingLocationStrategyBuilder b) => b
-      ..mode = const LoadBalancingLocationStrategyModeEnum._('pop')
-      ..preferEcs = const LoadBalancingLocationStrategyPreferEcsEnum._('proximity');
+      ..mode = LoadBalancingLocationStrategyModeEnum.valueOf('pop')
+      ..preferEcs = LoadBalancingLocationStrategyPreferEcsEnum.valueOf('proximity');
 
   @BuiltValueSerializer(custom: true)
   static Serializer<LoadBalancingLocationStrategy> get serializer => _$LoadBalancingLocationStrategySerializer();
@@ -140,12 +140,12 @@ class LoadBalancingLocationStrategyModeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'resolver_ip')
   static const LoadBalancingLocationStrategyModeEnum resolverIp = _$loadBalancingLocationStrategyModeEnum_resolverIp;
 
-  static Serializer<LoadBalancingLocationStrategyModeEnum> get serializer => _$loadBalancingLocationStrategyModeSerializer;
+  static Serializer<LoadBalancingLocationStrategyModeEnum> get serializer => _$loadBalancingLocationStrategyModeEnumSerializer;
 
   const LoadBalancingLocationStrategyModeEnum._(String name): super(name);
 
-  static BuiltSet<LoadBalancingLocationStrategyModeEnum> get values => _$loadBalancingLocationStrategyModeValues;
-  static LoadBalancingLocationStrategyModeEnum valueOf(String name) => _$loadBalancingLocationStrategyModeValueOf(name);
+  static BuiltSet<LoadBalancingLocationStrategyModeEnum> get values => _$loadBalancingLocationStrategyModeEnumValues;
+  static LoadBalancingLocationStrategyModeEnum valueOf(String name) => _$loadBalancingLocationStrategyModeEnumValueOf(name);
 }
 
 class LoadBalancingLocationStrategyPreferEcsEnum extends EnumClass {
@@ -163,11 +163,11 @@ class LoadBalancingLocationStrategyPreferEcsEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'geo')
   static const LoadBalancingLocationStrategyPreferEcsEnum geo = _$loadBalancingLocationStrategyPreferEcsEnum_geo;
 
-  static Serializer<LoadBalancingLocationStrategyPreferEcsEnum> get serializer => _$loadBalancingLocationStrategyPreferEcsSerializer;
+  static Serializer<LoadBalancingLocationStrategyPreferEcsEnum> get serializer => _$loadBalancingLocationStrategyPreferEcsEnumSerializer;
 
   const LoadBalancingLocationStrategyPreferEcsEnum._(String name): super(name);
 
-  static BuiltSet<LoadBalancingLocationStrategyPreferEcsEnum> get values => _$loadBalancingLocationStrategyPreferEcsValues;
-  static LoadBalancingLocationStrategyPreferEcsEnum valueOf(String name) => _$loadBalancingLocationStrategyPreferEcsValueOf(name);
+  static BuiltSet<LoadBalancingLocationStrategyPreferEcsEnum> get values => _$loadBalancingLocationStrategyPreferEcsEnumValues;
+  static LoadBalancingLocationStrategyPreferEcsEnum valueOf(String name) => _$loadBalancingLocationStrategyPreferEcsEnumValueOf(name);
 }
 

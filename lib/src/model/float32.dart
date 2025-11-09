@@ -111,11 +111,11 @@ class Float32TypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'float32')
   static const Float32TypeEnum float32 = _$float32TypeEnum_float32;
 
-  static Serializer<Float32TypeEnum> get serializer => _$float32TypeSerializer;
+  static Serializer<Float32TypeEnum> get serializer => _$float32TypeEnumSerializer;
 
   const Float32TypeEnum._(String name): super(name);
 
-  static BuiltSet<Float32TypeEnum> get values => _$float32TypeValues;
-  static Float32TypeEnum valueOf(String name) => _$float32TypeValueOf(name);
+  static BuiltSet<Float32TypeEnum> get values => _$float32TypeEnumValues;
+  static Float32TypeEnum valueOf(String name) => _$float32TypeEnumValueOf(name);
 }
 

@@ -22,7 +22,7 @@ part 'rulesets_skip_rule.g.dart';
 /// * [actionParameters] 
 /// * [categories] - The categories of the rule.
 /// * [description] 
-/// * [enabled] 
+/// * [enabled] - Whether the rule should be executed.
 /// * [exposedCredentialCheck] 
 /// * [expression] - The expression defining which traffic will match the rule.
 /// * [id] - The unique ID of the rule.
@@ -40,6 +40,7 @@ abstract class RulesetsSkipRule implements RulesetsRule, Built<RulesetsSkipRule,
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(RulesetsSkipRuleBuilder b) => b
       ..description = ''
+      ..enabled = true
       ..actionParameters = {};
 
   @BuiltValueSerializer(custom: true)
@@ -293,11 +294,11 @@ class RulesetsSkipRuleActionEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'skip')
   static const RulesetsSkipRuleActionEnum skip = _$rulesetsSkipRuleActionEnum_skip;
 
-  static Serializer<RulesetsSkipRuleActionEnum> get serializer => _$rulesetsSkipRuleActionSerializer;
+  static Serializer<RulesetsSkipRuleActionEnum> get serializer => _$rulesetsSkipRuleActionEnumSerializer;
 
   const RulesetsSkipRuleActionEnum._(String name): super(name);
 
-  static BuiltSet<RulesetsSkipRuleActionEnum> get values => _$rulesetsSkipRuleActionValues;
-  static RulesetsSkipRuleActionEnum valueOf(String name) => _$rulesetsSkipRuleActionValueOf(name);
+  static BuiltSet<RulesetsSkipRuleActionEnum> get values => _$rulesetsSkipRuleActionEnumValues;
+  static RulesetsSkipRuleActionEnum valueOf(String name) => _$rulesetsSkipRuleActionEnumValueOf(name);
 }
 

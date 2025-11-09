@@ -115,11 +115,11 @@ class MqEventSourceKvTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'kv')
   static const MqEventSourceKvTypeEnum kv = _$mqEventSourceKvTypeEnum_kv;
 
-  static Serializer<MqEventSourceKvTypeEnum> get serializer => _$mqEventSourceKvTypeSerializer;
+  static Serializer<MqEventSourceKvTypeEnum> get serializer => _$mqEventSourceKvTypeEnumSerializer;
 
   const MqEventSourceKvTypeEnum._(String name): super(name);
 
-  static BuiltSet<MqEventSourceKvTypeEnum> get values => _$mqEventSourceKvTypeValues;
-  static MqEventSourceKvTypeEnum valueOf(String name) => _$mqEventSourceKvTypeValueOf(name);
+  static BuiltSet<MqEventSourceKvTypeEnum> get values => _$mqEventSourceKvTypeEnumValues;
+  static MqEventSourceKvTypeEnum valueOf(String name) => _$mqEventSourceKvTypeEnumValueOf(name);
 }
 

@@ -141,12 +141,12 @@ class SpectrumConfigEdgeIpsOneOfConnectivityEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'ipv6')
   static const SpectrumConfigEdgeIpsOneOfConnectivityEnum ipv6 = _$spectrumConfigEdgeIpsOneOfConnectivityEnum_ipv6;
 
-  static Serializer<SpectrumConfigEdgeIpsOneOfConnectivityEnum> get serializer => _$spectrumConfigEdgeIpsOneOfConnectivitySerializer;
+  static Serializer<SpectrumConfigEdgeIpsOneOfConnectivityEnum> get serializer => _$spectrumConfigEdgeIpsOneOfConnectivityEnumSerializer;
 
   const SpectrumConfigEdgeIpsOneOfConnectivityEnum._(String name): super(name);
 
-  static BuiltSet<SpectrumConfigEdgeIpsOneOfConnectivityEnum> get values => _$spectrumConfigEdgeIpsOneOfConnectivityValues;
-  static SpectrumConfigEdgeIpsOneOfConnectivityEnum valueOf(String name) => _$spectrumConfigEdgeIpsOneOfConnectivityValueOf(name);
+  static BuiltSet<SpectrumConfigEdgeIpsOneOfConnectivityEnum> get values => _$spectrumConfigEdgeIpsOneOfConnectivityEnumValues;
+  static SpectrumConfigEdgeIpsOneOfConnectivityEnum valueOf(String name) => _$spectrumConfigEdgeIpsOneOfConnectivityEnumValueOf(name);
 }
 
 class SpectrumConfigEdgeIpsOneOfTypeEnum extends EnumClass {
@@ -155,11 +155,11 @@ class SpectrumConfigEdgeIpsOneOfTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'dynamic')
   static const SpectrumConfigEdgeIpsOneOfTypeEnum dynamic_ = _$spectrumConfigEdgeIpsOneOfTypeEnum_dynamic_;
 
-  static Serializer<SpectrumConfigEdgeIpsOneOfTypeEnum> get serializer => _$spectrumConfigEdgeIpsOneOfTypeSerializer;
+  static Serializer<SpectrumConfigEdgeIpsOneOfTypeEnum> get serializer => _$spectrumConfigEdgeIpsOneOfTypeEnumSerializer;
 
   const SpectrumConfigEdgeIpsOneOfTypeEnum._(String name): super(name);
 
-  static BuiltSet<SpectrumConfigEdgeIpsOneOfTypeEnum> get values => _$spectrumConfigEdgeIpsOneOfTypeValues;
-  static SpectrumConfigEdgeIpsOneOfTypeEnum valueOf(String name) => _$spectrumConfigEdgeIpsOneOfTypeValueOf(name);
+  static BuiltSet<SpectrumConfigEdgeIpsOneOfTypeEnum> get values => _$spectrumConfigEdgeIpsOneOfTypeEnumValues;
+  static SpectrumConfigEdgeIpsOneOfTypeEnum valueOf(String name) => _$spectrumConfigEdgeIpsOneOfTypeEnumValueOf(name);
 }
 

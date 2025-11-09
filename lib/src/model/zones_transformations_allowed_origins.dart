@@ -155,11 +155,11 @@ class ZonesTransformationsAllowedOriginsIdEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'transformations_allowed_origins')
   static const ZonesTransformationsAllowedOriginsIdEnum transformationsAllowedOrigins = _$zonesTransformationsAllowedOriginsIdEnum_transformationsAllowedOrigins;
 
-  static Serializer<ZonesTransformationsAllowedOriginsIdEnum> get serializer => _$zonesTransformationsAllowedOriginsIdSerializer;
+  static Serializer<ZonesTransformationsAllowedOriginsIdEnum> get serializer => _$zonesTransformationsAllowedOriginsIdEnumSerializer;
 
   const ZonesTransformationsAllowedOriginsIdEnum._(String name): super(name);
 
-  static BuiltSet<ZonesTransformationsAllowedOriginsIdEnum> get values => _$zonesTransformationsAllowedOriginsIdValues;
-  static ZonesTransformationsAllowedOriginsIdEnum valueOf(String name) => _$zonesTransformationsAllowedOriginsIdValueOf(name);
+  static BuiltSet<ZonesTransformationsAllowedOriginsIdEnum> get values => _$zonesTransformationsAllowedOriginsIdEnumValues;
+  static ZonesTransformationsAllowedOriginsIdEnum valueOf(String name) => _$zonesTransformationsAllowedOriginsIdEnumValueOf(name);
 }
 

@@ -280,11 +280,11 @@ class TelemetryQueryRequestParametersFilterCombinationEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'OR')
   static const TelemetryQueryRequestParametersFilterCombinationEnum OR = _$telemetryQueryRequestParametersFilterCombinationEnum_OR;
 
-  static Serializer<TelemetryQueryRequestParametersFilterCombinationEnum> get serializer => _$telemetryQueryRequestParametersFilterCombinationSerializer;
+  static Serializer<TelemetryQueryRequestParametersFilterCombinationEnum> get serializer => _$telemetryQueryRequestParametersFilterCombinationEnumSerializer;
 
   const TelemetryQueryRequestParametersFilterCombinationEnum._(String name): super(name);
 
-  static BuiltSet<TelemetryQueryRequestParametersFilterCombinationEnum> get values => _$telemetryQueryRequestParametersFilterCombinationValues;
-  static TelemetryQueryRequestParametersFilterCombinationEnum valueOf(String name) => _$telemetryQueryRequestParametersFilterCombinationValueOf(name);
+  static BuiltSet<TelemetryQueryRequestParametersFilterCombinationEnum> get values => _$telemetryQueryRequestParametersFilterCombinationEnumValues;
+  static TelemetryQueryRequestParametersFilterCombinationEnum valueOf(String name) => _$telemetryQueryRequestParametersFilterCombinationEnumValueOf(name);
 }
 

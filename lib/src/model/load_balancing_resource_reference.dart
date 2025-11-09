@@ -195,12 +195,12 @@ class LoadBalancingResourceReferenceReferenceTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'referrer')
   static const LoadBalancingResourceReferenceReferenceTypeEnum referrer = _$loadBalancingResourceReferenceReferenceTypeEnum_referrer;
 
-  static Serializer<LoadBalancingResourceReferenceReferenceTypeEnum> get serializer => _$loadBalancingResourceReferenceReferenceTypeSerializer;
+  static Serializer<LoadBalancingResourceReferenceReferenceTypeEnum> get serializer => _$loadBalancingResourceReferenceReferenceTypeEnumSerializer;
 
   const LoadBalancingResourceReferenceReferenceTypeEnum._(String name): super(name);
 
-  static BuiltSet<LoadBalancingResourceReferenceReferenceTypeEnum> get values => _$loadBalancingResourceReferenceReferenceTypeValues;
-  static LoadBalancingResourceReferenceReferenceTypeEnum valueOf(String name) => _$loadBalancingResourceReferenceReferenceTypeValueOf(name);
+  static BuiltSet<LoadBalancingResourceReferenceReferenceTypeEnum> get values => _$loadBalancingResourceReferenceReferenceTypeEnumValues;
+  static LoadBalancingResourceReferenceReferenceTypeEnum valueOf(String name) => _$loadBalancingResourceReferenceReferenceTypeEnumValueOf(name);
 }
 
 class LoadBalancingResourceReferenceResourceTypeEnum extends EnumClass {
@@ -215,11 +215,11 @@ class LoadBalancingResourceReferenceResourceTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'pool')
   static const LoadBalancingResourceReferenceResourceTypeEnum pool = _$loadBalancingResourceReferenceResourceTypeEnum_pool;
 
-  static Serializer<LoadBalancingResourceReferenceResourceTypeEnum> get serializer => _$loadBalancingResourceReferenceResourceTypeSerializer;
+  static Serializer<LoadBalancingResourceReferenceResourceTypeEnum> get serializer => _$loadBalancingResourceReferenceResourceTypeEnumSerializer;
 
   const LoadBalancingResourceReferenceResourceTypeEnum._(String name): super(name);
 
-  static BuiltSet<LoadBalancingResourceReferenceResourceTypeEnum> get values => _$loadBalancingResourceReferenceResourceTypeValues;
-  static LoadBalancingResourceReferenceResourceTypeEnum valueOf(String name) => _$loadBalancingResourceReferenceResourceTypeValueOf(name);
+  static BuiltSet<LoadBalancingResourceReferenceResourceTypeEnum> get values => _$loadBalancingResourceReferenceResourceTypeEnumValues;
+  static LoadBalancingResourceReferenceResourceTypeEnum valueOf(String name) => _$loadBalancingResourceReferenceResourceTypeEnumValueOf(name);
 }
 

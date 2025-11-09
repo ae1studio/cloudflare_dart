@@ -80,11 +80,11 @@ class R2LifecycleRuleDeleteObjectsTransitionConditionTypeEnum extends EnumClass 
   @BuiltValueEnumConst(wireName: r'Date')
   static const R2LifecycleRuleDeleteObjectsTransitionConditionTypeEnum date = _$r2LifecycleRuleDeleteObjectsTransitionConditionTypeEnum_date;
 
-  static Serializer<R2LifecycleRuleDeleteObjectsTransitionConditionTypeEnum> get serializer => _$r2LifecycleRuleDeleteObjectsTransitionConditionTypeSerializer;
+  static Serializer<R2LifecycleRuleDeleteObjectsTransitionConditionTypeEnum> get serializer => _$r2LifecycleRuleDeleteObjectsTransitionConditionTypeEnumSerializer;
 
   const R2LifecycleRuleDeleteObjectsTransitionConditionTypeEnum._(String name): super(name);
 
-  static BuiltSet<R2LifecycleRuleDeleteObjectsTransitionConditionTypeEnum> get values => _$r2LifecycleRuleDeleteObjectsTransitionConditionTypeValues;
-  static R2LifecycleRuleDeleteObjectsTransitionConditionTypeEnum valueOf(String name) => _$r2LifecycleRuleDeleteObjectsTransitionConditionTypeValueOf(name);
+  static BuiltSet<R2LifecycleRuleDeleteObjectsTransitionConditionTypeEnum> get values => _$r2LifecycleRuleDeleteObjectsTransitionConditionTypeEnumValues;
+  static R2LifecycleRuleDeleteObjectsTransitionConditionTypeEnum valueOf(String name) => _$r2LifecycleRuleDeleteObjectsTransitionConditionTypeEnumValueOf(name);
 }
 

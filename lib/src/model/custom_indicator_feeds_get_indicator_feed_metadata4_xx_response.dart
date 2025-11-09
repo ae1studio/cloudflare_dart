@@ -150,11 +150,11 @@ class _$CustomIndicatorFeedsGetIndicatorFeedMetadata4XXResponseSerializer implem
 class CustomIndicatorFeedsGetIndicatorFeedMetadata4XXResponseResultEnum extends EnumClass {
 
 
-  static Serializer<CustomIndicatorFeedsGetIndicatorFeedMetadata4XXResponseResultEnum> get serializer => _$customIndicatorFeedsGetIndicatorFeedMetadata4XXResponseResultSerializer;
+  static Serializer<CustomIndicatorFeedsGetIndicatorFeedMetadata4XXResponseResultEnum> get serializer => _$customIndicatorFeedsGetIndicatorFeedMetadata4XXResponseResultEnumSerializer;
 
   const CustomIndicatorFeedsGetIndicatorFeedMetadata4XXResponseResultEnum._(String name): super(name);
 
-  static BuiltSet<CustomIndicatorFeedsGetIndicatorFeedMetadata4XXResponseResultEnum> get values => _$customIndicatorFeedsGetIndicatorFeedMetadata4XXResponseResultValues;
-  static CustomIndicatorFeedsGetIndicatorFeedMetadata4XXResponseResultEnum valueOf(String name) => _$customIndicatorFeedsGetIndicatorFeedMetadata4XXResponseResultValueOf(name);
+  static BuiltSet<CustomIndicatorFeedsGetIndicatorFeedMetadata4XXResponseResultEnum> get values => _$customIndicatorFeedsGetIndicatorFeedMetadata4XXResponseResultEnumValues;
+  static CustomIndicatorFeedsGetIndicatorFeedMetadata4XXResponseResultEnum valueOf(String name) => _$customIndicatorFeedsGetIndicatorFeedMetadata4XXResponseResultEnumValueOf(name);
 }
 

@@ -83,7 +83,7 @@ abstract class PagesSourceConfig implements Built<PagesSourceConfig, PagesSource
       ..prCommentsEnabled = true
       ..previewBranchExcludes = ListBuilder()
       ..previewBranchIncludes = ListBuilder()
-      ..previewDeploymentSetting = const PagesSourceConfigPreviewDeploymentSettingEnum._('all')
+      ..previewDeploymentSetting = PagesSourceConfigPreviewDeploymentSettingEnum.valueOf('all')
       ..productionDeploymentsEnabled = true;
 
   @BuiltValueSerializer(custom: true)
@@ -320,11 +320,11 @@ class PagesSourceConfigPreviewDeploymentSettingEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'custom')
   static const PagesSourceConfigPreviewDeploymentSettingEnum custom = _$pagesSourceConfigPreviewDeploymentSettingEnum_custom;
 
-  static Serializer<PagesSourceConfigPreviewDeploymentSettingEnum> get serializer => _$pagesSourceConfigPreviewDeploymentSettingSerializer;
+  static Serializer<PagesSourceConfigPreviewDeploymentSettingEnum> get serializer => _$pagesSourceConfigPreviewDeploymentSettingEnumSerializer;
 
   const PagesSourceConfigPreviewDeploymentSettingEnum._(String name): super(name);
 
-  static BuiltSet<PagesSourceConfigPreviewDeploymentSettingEnum> get values => _$pagesSourceConfigPreviewDeploymentSettingValues;
-  static PagesSourceConfigPreviewDeploymentSettingEnum valueOf(String name) => _$pagesSourceConfigPreviewDeploymentSettingValueOf(name);
+  static BuiltSet<PagesSourceConfigPreviewDeploymentSettingEnum> get values => _$pagesSourceConfigPreviewDeploymentSettingEnumValues;
+  static PagesSourceConfigPreviewDeploymentSettingEnum valueOf(String name) => _$pagesSourceConfigPreviewDeploymentSettingEnumValueOf(name);
 }
 

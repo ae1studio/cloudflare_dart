@@ -132,11 +132,11 @@ class TeamsDevicesDomainJoinedInputRequestOperatingSystemEnum extends EnumClass 
   @BuiltValueEnumConst(wireName: r'windows')
   static const TeamsDevicesDomainJoinedInputRequestOperatingSystemEnum windows = _$teamsDevicesDomainJoinedInputRequestOperatingSystemEnum_windows;
 
-  static Serializer<TeamsDevicesDomainJoinedInputRequestOperatingSystemEnum> get serializer => _$teamsDevicesDomainJoinedInputRequestOperatingSystemSerializer;
+  static Serializer<TeamsDevicesDomainJoinedInputRequestOperatingSystemEnum> get serializer => _$teamsDevicesDomainJoinedInputRequestOperatingSystemEnumSerializer;
 
   const TeamsDevicesDomainJoinedInputRequestOperatingSystemEnum._(String name): super(name);
 
-  static BuiltSet<TeamsDevicesDomainJoinedInputRequestOperatingSystemEnum> get values => _$teamsDevicesDomainJoinedInputRequestOperatingSystemValues;
-  static TeamsDevicesDomainJoinedInputRequestOperatingSystemEnum valueOf(String name) => _$teamsDevicesDomainJoinedInputRequestOperatingSystemValueOf(name);
+  static BuiltSet<TeamsDevicesDomainJoinedInputRequestOperatingSystemEnum> get values => _$teamsDevicesDomainJoinedInputRequestOperatingSystemEnumValues;
+  static TeamsDevicesDomainJoinedInputRequestOperatingSystemEnum valueOf(String name) => _$teamsDevicesDomainJoinedInputRequestOperatingSystemEnumValueOf(name);
 }
 

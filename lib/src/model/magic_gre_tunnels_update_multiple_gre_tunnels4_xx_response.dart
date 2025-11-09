@@ -149,11 +149,11 @@ class _$MagicGreTunnelsUpdateMultipleGreTunnels4XXResponseSerializer implements 
 class MagicGreTunnelsUpdateMultipleGreTunnels4XXResponseResultEnum extends EnumClass {
 
 
-  static Serializer<MagicGreTunnelsUpdateMultipleGreTunnels4XXResponseResultEnum> get serializer => _$magicGreTunnelsUpdateMultipleGreTunnels4XXResponseResultSerializer;
+  static Serializer<MagicGreTunnelsUpdateMultipleGreTunnels4XXResponseResultEnum> get serializer => _$magicGreTunnelsUpdateMultipleGreTunnels4XXResponseResultEnumSerializer;
 
   const MagicGreTunnelsUpdateMultipleGreTunnels4XXResponseResultEnum._(String name): super(name);
 
-  static BuiltSet<MagicGreTunnelsUpdateMultipleGreTunnels4XXResponseResultEnum> get values => _$magicGreTunnelsUpdateMultipleGreTunnels4XXResponseResultValues;
-  static MagicGreTunnelsUpdateMultipleGreTunnels4XXResponseResultEnum valueOf(String name) => _$magicGreTunnelsUpdateMultipleGreTunnels4XXResponseResultValueOf(name);
+  static BuiltSet<MagicGreTunnelsUpdateMultipleGreTunnels4XXResponseResultEnum> get values => _$magicGreTunnelsUpdateMultipleGreTunnels4XXResponseResultEnumValues;
+  static MagicGreTunnelsUpdateMultipleGreTunnels4XXResponseResultEnum valueOf(String name) => _$magicGreTunnelsUpdateMultipleGreTunnels4XXResponseResultEnumValueOf(name);
 }
 

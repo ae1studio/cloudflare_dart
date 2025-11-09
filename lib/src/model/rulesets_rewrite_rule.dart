@@ -22,7 +22,7 @@ part 'rulesets_rewrite_rule.g.dart';
 /// * [actionParameters] 
 /// * [categories] - The categories of the rule.
 /// * [description] 
-/// * [enabled] 
+/// * [enabled] - Whether the rule should be executed.
 /// * [exposedCredentialCheck] 
 /// * [expression] - The expression defining which traffic will match the rule.
 /// * [id] - The unique ID of the rule.
@@ -40,6 +40,7 @@ abstract class RulesetsRewriteRule implements RulesetsRule, Built<RulesetsRewrit
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(RulesetsRewriteRuleBuilder b) => b
       ..description = ''
+      ..enabled = true
       ..actionParameters = {};
 
   @BuiltValueSerializer(custom: true)
@@ -293,11 +294,11 @@ class RulesetsRewriteRuleActionEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'rewrite')
   static const RulesetsRewriteRuleActionEnum rewrite = _$rulesetsRewriteRuleActionEnum_rewrite;
 
-  static Serializer<RulesetsRewriteRuleActionEnum> get serializer => _$rulesetsRewriteRuleActionSerializer;
+  static Serializer<RulesetsRewriteRuleActionEnum> get serializer => _$rulesetsRewriteRuleActionEnumSerializer;
 
   const RulesetsRewriteRuleActionEnum._(String name): super(name);
 
-  static BuiltSet<RulesetsRewriteRuleActionEnum> get values => _$rulesetsRewriteRuleActionValues;
-  static RulesetsRewriteRuleActionEnum valueOf(String name) => _$rulesetsRewriteRuleActionValueOf(name);
+  static BuiltSet<RulesetsRewriteRuleActionEnum> get values => _$rulesetsRewriteRuleActionEnumValues;
+  static RulesetsRewriteRuleActionEnum valueOf(String name) => _$rulesetsRewriteRuleActionEnumValueOf(name);
 }
 

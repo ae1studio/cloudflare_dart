@@ -111,11 +111,11 @@ class ModelStringTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'string')
   static const ModelStringTypeEnum string = _$modelStringTypeEnum_string;
 
-  static Serializer<ModelStringTypeEnum> get serializer => _$modelStringTypeSerializer;
+  static Serializer<ModelStringTypeEnum> get serializer => _$modelStringTypeEnumSerializer;
 
   const ModelStringTypeEnum._(String name): super(name);
 
-  static BuiltSet<ModelStringTypeEnum> get values => _$modelStringTypeValues;
-  static ModelStringTypeEnum valueOf(String name) => _$modelStringTypeValueOf(name);
+  static BuiltSet<ModelStringTypeEnum> get values => _$modelStringTypeEnumValues;
+  static ModelStringTypeEnum valueOf(String name) => _$modelStringTypeEnumValueOf(name);
 }
 

@@ -52,7 +52,7 @@ abstract class ListsItemRedirect implements Built<ListsItemRedirect, ListsItemRe
       ..includeSubdomains = false
       ..preservePathSuffix = false
       ..preserveQueryString = false
-      ..statusCode = const ListsItemRedirectStatusCodeEnum._(ListsItemRedirectStatusCodeEnum.number301)
+      ..statusCode = ListsItemRedirectStatusCodeEnum.valueOf(ListsItemRedirectStatusCodeEnum.number301)
       ..subpathMatching = false;
 
   @BuiltValueSerializer(custom: true)
@@ -228,11 +228,11 @@ class ListsItemRedirectStatusCodeEnum extends EnumClass {
   @BuiltValueEnumConst(wireNumber: 308)
   static const ListsItemRedirectStatusCodeEnum number308 = _$listsItemRedirectStatusCodeEnum_number308;
 
-  static Serializer<ListsItemRedirectStatusCodeEnum> get serializer => _$listsItemRedirectStatusCodeSerializer;
+  static Serializer<ListsItemRedirectStatusCodeEnum> get serializer => _$listsItemRedirectStatusCodeEnumSerializer;
 
   const ListsItemRedirectStatusCodeEnum._(String name): super(name);
 
-  static BuiltSet<ListsItemRedirectStatusCodeEnum> get values => _$listsItemRedirectStatusCodeValues;
-  static ListsItemRedirectStatusCodeEnum valueOf(String name) => _$listsItemRedirectStatusCodeValueOf(name);
+  static BuiltSet<ListsItemRedirectStatusCodeEnum> get values => _$listsItemRedirectStatusCodeEnumValues;
+  static ListsItemRedirectStatusCodeEnum valueOf(String name) => _$listsItemRedirectStatusCodeEnumValueOf(name);
 }
 

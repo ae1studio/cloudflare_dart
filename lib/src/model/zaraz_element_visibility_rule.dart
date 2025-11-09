@@ -144,11 +144,11 @@ class ZarazElementVisibilityRuleActionEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'elementVisibility')
   static const ZarazElementVisibilityRuleActionEnum elementVisibility = _$zarazElementVisibilityRuleActionEnum_elementVisibility;
 
-  static Serializer<ZarazElementVisibilityRuleActionEnum> get serializer => _$zarazElementVisibilityRuleActionSerializer;
+  static Serializer<ZarazElementVisibilityRuleActionEnum> get serializer => _$zarazElementVisibilityRuleActionEnumSerializer;
 
   const ZarazElementVisibilityRuleActionEnum._(String name): super(name);
 
-  static BuiltSet<ZarazElementVisibilityRuleActionEnum> get values => _$zarazElementVisibilityRuleActionValues;
-  static ZarazElementVisibilityRuleActionEnum valueOf(String name) => _$zarazElementVisibilityRuleActionValueOf(name);
+  static BuiltSet<ZarazElementVisibilityRuleActionEnum> get values => _$zarazElementVisibilityRuleActionEnumValues;
+  static ZarazElementVisibilityRuleActionEnum valueOf(String name) => _$zarazElementVisibilityRuleActionEnumValueOf(name);
 }
 

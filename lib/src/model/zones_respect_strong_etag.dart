@@ -135,12 +135,12 @@ class ZonesRespectStrongEtagIdEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'respect_strong_etag')
   static const ZonesRespectStrongEtagIdEnum respectStrongEtag = _$zonesRespectStrongEtagIdEnum_respectStrongEtag;
 
-  static Serializer<ZonesRespectStrongEtagIdEnum> get serializer => _$zonesRespectStrongEtagIdSerializer;
+  static Serializer<ZonesRespectStrongEtagIdEnum> get serializer => _$zonesRespectStrongEtagIdEnumSerializer;
 
   const ZonesRespectStrongEtagIdEnum._(String name): super(name);
 
-  static BuiltSet<ZonesRespectStrongEtagIdEnum> get values => _$zonesRespectStrongEtagIdValues;
-  static ZonesRespectStrongEtagIdEnum valueOf(String name) => _$zonesRespectStrongEtagIdValueOf(name);
+  static BuiltSet<ZonesRespectStrongEtagIdEnum> get values => _$zonesRespectStrongEtagIdEnumValues;
+  static ZonesRespectStrongEtagIdEnum valueOf(String name) => _$zonesRespectStrongEtagIdEnumValueOf(name);
 }
 
 class ZonesRespectStrongEtagValueEnum extends EnumClass {
@@ -152,11 +152,11 @@ class ZonesRespectStrongEtagValueEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'off')
   static const ZonesRespectStrongEtagValueEnum off = _$zonesRespectStrongEtagValueEnum_off;
 
-  static Serializer<ZonesRespectStrongEtagValueEnum> get serializer => _$zonesRespectStrongEtagValueSerializer;
+  static Serializer<ZonesRespectStrongEtagValueEnum> get serializer => _$zonesRespectStrongEtagValueEnumSerializer;
 
   const ZonesRespectStrongEtagValueEnum._(String name): super(name);
 
-  static BuiltSet<ZonesRespectStrongEtagValueEnum> get values => _$zonesRespectStrongEtagValueValues;
-  static ZonesRespectStrongEtagValueEnum valueOf(String name) => _$zonesRespectStrongEtagValueValueOf(name);
+  static BuiltSet<ZonesRespectStrongEtagValueEnum> get values => _$zonesRespectStrongEtagValueEnumValues;
+  static ZonesRespectStrongEtagValueEnum valueOf(String name) => _$zonesRespectStrongEtagValueEnumValueOf(name);
 }
 

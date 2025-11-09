@@ -343,11 +343,11 @@ class McpPortalsApiListServers200ResponseResultInnerAuthTypeEnum extends EnumCla
   @BuiltValueEnumConst(wireName: r'unauthenticated')
   static const McpPortalsApiListServers200ResponseResultInnerAuthTypeEnum unauthenticated = _$mcpPortalsApiListServers200ResponseResultInnerAuthTypeEnum_unauthenticated;
 
-  static Serializer<McpPortalsApiListServers200ResponseResultInnerAuthTypeEnum> get serializer => _$mcpPortalsApiListServers200ResponseResultInnerAuthTypeSerializer;
+  static Serializer<McpPortalsApiListServers200ResponseResultInnerAuthTypeEnum> get serializer => _$mcpPortalsApiListServers200ResponseResultInnerAuthTypeEnumSerializer;
 
   const McpPortalsApiListServers200ResponseResultInnerAuthTypeEnum._(String name): super(name);
 
-  static BuiltSet<McpPortalsApiListServers200ResponseResultInnerAuthTypeEnum> get values => _$mcpPortalsApiListServers200ResponseResultInnerAuthTypeValues;
-  static McpPortalsApiListServers200ResponseResultInnerAuthTypeEnum valueOf(String name) => _$mcpPortalsApiListServers200ResponseResultInnerAuthTypeValueOf(name);
+  static BuiltSet<McpPortalsApiListServers200ResponseResultInnerAuthTypeEnum> get values => _$mcpPortalsApiListServers200ResponseResultInnerAuthTypeEnumValues;
+  static McpPortalsApiListServers200ResponseResultInnerAuthTypeEnum valueOf(String name) => _$mcpPortalsApiListServers200ResponseResultInnerAuthTypeEnumValueOf(name);
 }
 

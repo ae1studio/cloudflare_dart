@@ -338,11 +338,11 @@ class CloudflarePipelinesFieldTypeTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'list')
   static const CloudflarePipelinesFieldTypeTypeEnum list = _$cloudflarePipelinesFieldTypeTypeEnum_list;
 
-  static Serializer<CloudflarePipelinesFieldTypeTypeEnum> get serializer => _$cloudflarePipelinesFieldTypeTypeSerializer;
+  static Serializer<CloudflarePipelinesFieldTypeTypeEnum> get serializer => _$cloudflarePipelinesFieldTypeTypeEnumSerializer;
 
   const CloudflarePipelinesFieldTypeTypeEnum._(String name): super(name);
 
-  static BuiltSet<CloudflarePipelinesFieldTypeTypeEnum> get values => _$cloudflarePipelinesFieldTypeTypeValues;
-  static CloudflarePipelinesFieldTypeTypeEnum valueOf(String name) => _$cloudflarePipelinesFieldTypeTypeValueOf(name);
+  static BuiltSet<CloudflarePipelinesFieldTypeTypeEnum> get values => _$cloudflarePipelinesFieldTypeTypeEnumValues;
+  static CloudflarePipelinesFieldTypeTypeEnum valueOf(String name) => _$cloudflarePipelinesFieldTypeTypeEnumValueOf(name);
 }
 

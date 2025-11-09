@@ -635,12 +635,12 @@ class WorkersBindingItemTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'wasm_module')
   static const WorkersBindingItemTypeEnum wasmModule = _$workersBindingItemTypeEnum_wasmModule;
 
-  static Serializer<WorkersBindingItemTypeEnum> get serializer => _$workersBindingItemTypeSerializer;
+  static Serializer<WorkersBindingItemTypeEnum> get serializer => _$workersBindingItemTypeEnumSerializer;
 
   const WorkersBindingItemTypeEnum._(String name): super(name);
 
-  static BuiltSet<WorkersBindingItemTypeEnum> get values => _$workersBindingItemTypeValues;
-  static WorkersBindingItemTypeEnum valueOf(String name) => _$workersBindingItemTypeValueOf(name);
+  static BuiltSet<WorkersBindingItemTypeEnum> get values => _$workersBindingItemTypeEnumValues;
+  static WorkersBindingItemTypeEnum valueOf(String name) => _$workersBindingItemTypeEnumValueOf(name);
 }
 
 class WorkersBindingItemJurisdictionEnum extends EnumClass {
@@ -652,12 +652,12 @@ class WorkersBindingItemJurisdictionEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'fedramp')
   static const WorkersBindingItemJurisdictionEnum fedramp = _$workersBindingItemJurisdictionEnum_fedramp;
 
-  static Serializer<WorkersBindingItemJurisdictionEnum> get serializer => _$workersBindingItemJurisdictionSerializer;
+  static Serializer<WorkersBindingItemJurisdictionEnum> get serializer => _$workersBindingItemJurisdictionEnumSerializer;
 
   const WorkersBindingItemJurisdictionEnum._(String name): super(name);
 
-  static BuiltSet<WorkersBindingItemJurisdictionEnum> get values => _$workersBindingItemJurisdictionValues;
-  static WorkersBindingItemJurisdictionEnum valueOf(String name) => _$workersBindingItemJurisdictionValueOf(name);
+  static BuiltSet<WorkersBindingItemJurisdictionEnum> get values => _$workersBindingItemJurisdictionEnumValues;
+  static WorkersBindingItemJurisdictionEnum valueOf(String name) => _$workersBindingItemJurisdictionEnumValueOf(name);
 }
 
 class WorkersBindingItemFormatEnum extends EnumClass {
@@ -675,38 +675,38 @@ class WorkersBindingItemFormatEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'jwk')
   static const WorkersBindingItemFormatEnum jwk = _$workersBindingItemFormatEnum_jwk;
 
-  static Serializer<WorkersBindingItemFormatEnum> get serializer => _$workersBindingItemFormatSerializer;
+  static Serializer<WorkersBindingItemFormatEnum> get serializer => _$workersBindingItemFormatEnumSerializer;
 
   const WorkersBindingItemFormatEnum._(String name): super(name);
 
-  static BuiltSet<WorkersBindingItemFormatEnum> get values => _$workersBindingItemFormatValues;
-  static WorkersBindingItemFormatEnum valueOf(String name) => _$workersBindingItemFormatValueOf(name);
+  static BuiltSet<WorkersBindingItemFormatEnum> get values => _$workersBindingItemFormatEnumValues;
+  static WorkersBindingItemFormatEnum valueOf(String name) => _$workersBindingItemFormatEnumValueOf(name);
 }
 
-class WorkersSecretUsagesEnum extends EnumClass {
+class WorkersBindingItemUsagesEnum extends EnumClass {
 
   @BuiltValueEnumConst(wireName: r'encrypt')
-  static const WorkersSecretUsagesEnum encrypt = _\$workersSecretUsages_encrypt;
+  static const WorkersBindingItemUsagesEnum encrypt = _$workersBindingItemUsagesEnum_encrypt;
   @BuiltValueEnumConst(wireName: r'decrypt')
-  static const WorkersSecretUsagesEnum decrypt = _\$workersSecretUsages_decrypt;
+  static const WorkersBindingItemUsagesEnum decrypt = _$workersBindingItemUsagesEnum_decrypt;
   @BuiltValueEnumConst(wireName: r'sign')
-  static const WorkersSecretUsagesEnum sign = _\$workersSecretUsages_sign;
+  static const WorkersBindingItemUsagesEnum sign = _$workersBindingItemUsagesEnum_sign;
   @BuiltValueEnumConst(wireName: r'verify')
-  static const WorkersSecretUsagesEnum verify = _\$workersSecretUsages_verify;
+  static const WorkersBindingItemUsagesEnum verify = _$workersBindingItemUsagesEnum_verify;
   @BuiltValueEnumConst(wireName: r'deriveKey')
-  static const WorkersSecretUsagesEnum deriveKey = _\$workersSecretUsages_deriveKey;
+  static const WorkersBindingItemUsagesEnum deriveKey = _$workersBindingItemUsagesEnum_deriveKey;
   @BuiltValueEnumConst(wireName: r'deriveBits')
-  static const WorkersSecretUsagesEnum deriveBits = _\$workersSecretUsages_deriveBits;
+  static const WorkersBindingItemUsagesEnum deriveBits = _$workersBindingItemUsagesEnum_deriveBits;
   @BuiltValueEnumConst(wireName: r'wrapKey')
-  static const WorkersSecretUsagesEnum wrapKey = _\$workersSecretUsages_wrapKey;
+  static const WorkersBindingItemUsagesEnum wrapKey = _$workersBindingItemUsagesEnum_wrapKey;
   @BuiltValueEnumConst(wireName: r'unwrapKey')
-  static const WorkersSecretUsagesEnum unwrapKey = _\$workersSecretUsages_unwrapKey;
+  static const WorkersBindingItemUsagesEnum unwrapKey = _$workersBindingItemUsagesEnum_unwrapKey;
 
-  static Serializer<WorkersSecretUsagesEnum> get serializer => _$workersSecretUsagesSerializer;
+  static Serializer<WorkersBindingItemUsagesEnum> get serializer => _$workersBindingItemUsagesEnumSerializer;
 
-  const WorkersSecretUsagesEnum._(String name): super(name);
+  const WorkersBindingItemUsagesEnum._(String name): super(name);
 
-  static BuiltSet<WorkersSecretUsagesEnum> get values => _$workersSecretUsagesValues;
-  static WorkersSecretUsagesEnum valueOf(String name) => _$workersSecretUsagesValueOf(name);
+  static BuiltSet<WorkersBindingItemUsagesEnum> get values => _$workersBindingItemUsagesEnumValues;
+  static WorkersBindingItemUsagesEnum valueOf(String name) => _$workersBindingItemUsagesEnumValueOf(name);
 }
 

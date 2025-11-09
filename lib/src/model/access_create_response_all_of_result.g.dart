@@ -13,7 +13,7 @@ class _$AccessCreateResponseAllOfResult
   @override
   final String? clientSecret;
   @override
-  final AccessCreatedAt? createdAt;
+  final JsonObject? createdAt;
   @override
   final String? duration;
   @override
@@ -21,7 +21,7 @@ class _$AccessCreateResponseAllOfResult
   @override
   final String? name;
   @override
-  final AccessUpdatedAt? updatedAt;
+  final JsonObject? updatedAt;
 
   factory _$AccessCreateResponseAllOfResult(
           [void Function(AccessCreateResponseAllOfResultBuilder)? updates]) =>
@@ -100,11 +100,9 @@ class AccessCreateResponseAllOfResultBuilder
   String? get clientSecret => _$this._clientSecret;
   set clientSecret(String? clientSecret) => _$this._clientSecret = clientSecret;
 
-  AccessCreatedAtBuilder? _createdAt;
-  AccessCreatedAtBuilder get createdAt =>
-      _$this._createdAt ??= AccessCreatedAtBuilder();
-  set createdAt(AccessCreatedAtBuilder? createdAt) =>
-      _$this._createdAt = createdAt;
+  JsonObject? _createdAt;
+  JsonObject? get createdAt => _$this._createdAt;
+  set createdAt(JsonObject? createdAt) => _$this._createdAt = createdAt;
 
   String? _duration;
   String? get duration => _$this._duration;
@@ -118,11 +116,9 @@ class AccessCreateResponseAllOfResultBuilder
   String? get name => _$this._name;
   set name(String? name) => _$this._name = name;
 
-  AccessUpdatedAtBuilder? _updatedAt;
-  AccessUpdatedAtBuilder get updatedAt =>
-      _$this._updatedAt ??= AccessUpdatedAtBuilder();
-  set updatedAt(AccessUpdatedAtBuilder? updatedAt) =>
-      _$this._updatedAt = updatedAt;
+  JsonObject? _updatedAt;
+  JsonObject? get updatedAt => _$this._updatedAt;
+  set updatedAt(JsonObject? updatedAt) => _$this._updatedAt = updatedAt;
 
   AccessCreateResponseAllOfResultBuilder() {
     AccessCreateResponseAllOfResult._defaults(this);
@@ -133,11 +129,11 @@ class AccessCreateResponseAllOfResultBuilder
     if ($v != null) {
       _clientId = $v.clientId;
       _clientSecret = $v.clientSecret;
-      _createdAt = $v.createdAt?.toBuilder();
+      _createdAt = $v.createdAt;
       _duration = $v.duration;
       _id = $v.id;
       _name = $v.name;
-      _updatedAt = $v.updatedAt?.toBuilder();
+      _updatedAt = $v.updatedAt;
       _$v = null;
     }
     return this;
@@ -157,32 +153,16 @@ class AccessCreateResponseAllOfResultBuilder
   AccessCreateResponseAllOfResult build() => _build();
 
   _$AccessCreateResponseAllOfResult _build() {
-    _$AccessCreateResponseAllOfResult _$result;
-    try {
-      _$result = _$v ??
-          _$AccessCreateResponseAllOfResult._(
-            clientId: clientId,
-            clientSecret: clientSecret,
-            createdAt: _createdAt?.build(),
-            duration: duration,
-            id: id,
-            name: name,
-            updatedAt: _updatedAt?.build(),
-          );
-    } catch (_) {
-      late String _$failedField;
-      try {
-        _$failedField = 'createdAt';
-        _createdAt?.build();
-
-        _$failedField = 'updatedAt';
-        _updatedAt?.build();
-      } catch (e) {
-        throw BuiltValueNestedFieldError(
-            r'AccessCreateResponseAllOfResult', _$failedField, e.toString());
-      }
-      rethrow;
-    }
+    final _$result = _$v ??
+        _$AccessCreateResponseAllOfResult._(
+          clientId: clientId,
+          clientSecret: clientSecret,
+          createdAt: createdAt,
+          duration: duration,
+          id: id,
+          name: name,
+          updatedAt: updatedAt,
+        );
     replace(_$result);
     return _$result;
   }

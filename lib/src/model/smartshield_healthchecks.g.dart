@@ -6,11 +6,169 @@ part of 'smartshield_healthchecks.dart';
 // BuiltValueGenerator
 // **************************************************************************
 
+const SmartshieldHealthchecksCheckRegionsEnum
+    _$smartshieldHealthchecksCheckRegionsEnum_WNAM =
+    const SmartshieldHealthchecksCheckRegionsEnum._('WNAM');
+const SmartshieldHealthchecksCheckRegionsEnum
+    _$smartshieldHealthchecksCheckRegionsEnum_ENAM =
+    const SmartshieldHealthchecksCheckRegionsEnum._('ENAM');
+const SmartshieldHealthchecksCheckRegionsEnum
+    _$smartshieldHealthchecksCheckRegionsEnum_WEU =
+    const SmartshieldHealthchecksCheckRegionsEnum._('WEU');
+const SmartshieldHealthchecksCheckRegionsEnum
+    _$smartshieldHealthchecksCheckRegionsEnum_EEU =
+    const SmartshieldHealthchecksCheckRegionsEnum._('EEU');
+const SmartshieldHealthchecksCheckRegionsEnum
+    _$smartshieldHealthchecksCheckRegionsEnum_NSAM =
+    const SmartshieldHealthchecksCheckRegionsEnum._('NSAM');
+const SmartshieldHealthchecksCheckRegionsEnum
+    _$smartshieldHealthchecksCheckRegionsEnum_SSAM =
+    const SmartshieldHealthchecksCheckRegionsEnum._('SSAM');
+const SmartshieldHealthchecksCheckRegionsEnum
+    _$smartshieldHealthchecksCheckRegionsEnum_OC =
+    const SmartshieldHealthchecksCheckRegionsEnum._('OC');
+const SmartshieldHealthchecksCheckRegionsEnum
+    _$smartshieldHealthchecksCheckRegionsEnum_ME =
+    const SmartshieldHealthchecksCheckRegionsEnum._('ME');
+const SmartshieldHealthchecksCheckRegionsEnum
+    _$smartshieldHealthchecksCheckRegionsEnum_NAF =
+    const SmartshieldHealthchecksCheckRegionsEnum._('NAF');
+const SmartshieldHealthchecksCheckRegionsEnum
+    _$smartshieldHealthchecksCheckRegionsEnum_SAF =
+    const SmartshieldHealthchecksCheckRegionsEnum._('SAF');
+const SmartshieldHealthchecksCheckRegionsEnum
+    _$smartshieldHealthchecksCheckRegionsEnum_IN =
+    const SmartshieldHealthchecksCheckRegionsEnum._('IN');
+const SmartshieldHealthchecksCheckRegionsEnum
+    _$smartshieldHealthchecksCheckRegionsEnum_SEAS =
+    const SmartshieldHealthchecksCheckRegionsEnum._('SEAS');
+const SmartshieldHealthchecksCheckRegionsEnum
+    _$smartshieldHealthchecksCheckRegionsEnum_NEAS =
+    const SmartshieldHealthchecksCheckRegionsEnum._('NEAS');
+const SmartshieldHealthchecksCheckRegionsEnum
+    _$smartshieldHealthchecksCheckRegionsEnum_ALL_REGIONS =
+    const SmartshieldHealthchecksCheckRegionsEnum._('ALL_REGIONS');
+
+SmartshieldHealthchecksCheckRegionsEnum
+    _$smartshieldHealthchecksCheckRegionsEnumValueOf(String name) {
+  switch (name) {
+    case 'WNAM':
+      return _$smartshieldHealthchecksCheckRegionsEnum_WNAM;
+    case 'ENAM':
+      return _$smartshieldHealthchecksCheckRegionsEnum_ENAM;
+    case 'WEU':
+      return _$smartshieldHealthchecksCheckRegionsEnum_WEU;
+    case 'EEU':
+      return _$smartshieldHealthchecksCheckRegionsEnum_EEU;
+    case 'NSAM':
+      return _$smartshieldHealthchecksCheckRegionsEnum_NSAM;
+    case 'SSAM':
+      return _$smartshieldHealthchecksCheckRegionsEnum_SSAM;
+    case 'OC':
+      return _$smartshieldHealthchecksCheckRegionsEnum_OC;
+    case 'ME':
+      return _$smartshieldHealthchecksCheckRegionsEnum_ME;
+    case 'NAF':
+      return _$smartshieldHealthchecksCheckRegionsEnum_NAF;
+    case 'SAF':
+      return _$smartshieldHealthchecksCheckRegionsEnum_SAF;
+    case 'IN':
+      return _$smartshieldHealthchecksCheckRegionsEnum_IN;
+    case 'SEAS':
+      return _$smartshieldHealthchecksCheckRegionsEnum_SEAS;
+    case 'NEAS':
+      return _$smartshieldHealthchecksCheckRegionsEnum_NEAS;
+    case 'ALL_REGIONS':
+      return _$smartshieldHealthchecksCheckRegionsEnum_ALL_REGIONS;
+    default:
+      throw ArgumentError(name);
+  }
+}
+
+final BuiltSet<SmartshieldHealthchecksCheckRegionsEnum>
+    _$smartshieldHealthchecksCheckRegionsEnumValues = BuiltSet<
+        SmartshieldHealthchecksCheckRegionsEnum>(const <SmartshieldHealthchecksCheckRegionsEnum>[
+  _$smartshieldHealthchecksCheckRegionsEnum_WNAM,
+  _$smartshieldHealthchecksCheckRegionsEnum_ENAM,
+  _$smartshieldHealthchecksCheckRegionsEnum_WEU,
+  _$smartshieldHealthchecksCheckRegionsEnum_EEU,
+  _$smartshieldHealthchecksCheckRegionsEnum_NSAM,
+  _$smartshieldHealthchecksCheckRegionsEnum_SSAM,
+  _$smartshieldHealthchecksCheckRegionsEnum_OC,
+  _$smartshieldHealthchecksCheckRegionsEnum_ME,
+  _$smartshieldHealthchecksCheckRegionsEnum_NAF,
+  _$smartshieldHealthchecksCheckRegionsEnum_SAF,
+  _$smartshieldHealthchecksCheckRegionsEnum_IN,
+  _$smartshieldHealthchecksCheckRegionsEnum_SEAS,
+  _$smartshieldHealthchecksCheckRegionsEnum_NEAS,
+  _$smartshieldHealthchecksCheckRegionsEnum_ALL_REGIONS,
+]);
+
+Serializer<SmartshieldHealthchecksCheckRegionsEnum>
+    _$smartshieldHealthchecksCheckRegionsEnumSerializer =
+    _$SmartshieldHealthchecksCheckRegionsEnumSerializer();
+
+class _$SmartshieldHealthchecksCheckRegionsEnumSerializer
+    implements PrimitiveSerializer<SmartshieldHealthchecksCheckRegionsEnum> {
+  static const Map<String, Object> _toWire = const <String, Object>{
+    'WNAM': 'WNAM',
+    'ENAM': 'ENAM',
+    'WEU': 'WEU',
+    'EEU': 'EEU',
+    'NSAM': 'NSAM',
+    'SSAM': 'SSAM',
+    'OC': 'OC',
+    'ME': 'ME',
+    'NAF': 'NAF',
+    'SAF': 'SAF',
+    'IN': 'IN',
+    'SEAS': 'SEAS',
+    'NEAS': 'NEAS',
+    'ALL_REGIONS': 'ALL_REGIONS',
+  };
+  static const Map<Object, String> _fromWire = const <Object, String>{
+    'WNAM': 'WNAM',
+    'ENAM': 'ENAM',
+    'WEU': 'WEU',
+    'EEU': 'EEU',
+    'NSAM': 'NSAM',
+    'SSAM': 'SSAM',
+    'OC': 'OC',
+    'ME': 'ME',
+    'NAF': 'NAF',
+    'SAF': 'SAF',
+    'IN': 'IN',
+    'SEAS': 'SEAS',
+    'NEAS': 'NEAS',
+    'ALL_REGIONS': 'ALL_REGIONS',
+  };
+
+  @override
+  final Iterable<Type> types = const <Type>[
+    SmartshieldHealthchecksCheckRegionsEnum
+  ];
+  @override
+  final String wireName = 'SmartshieldHealthchecksCheckRegionsEnum';
+
+  @override
+  Object serialize(Serializers serializers,
+          SmartshieldHealthchecksCheckRegionsEnum object,
+          {FullType specifiedType = FullType.unspecified}) =>
+      _toWire[object.name] ?? object.name;
+
+  @override
+  SmartshieldHealthchecksCheckRegionsEnum deserialize(
+          Serializers serializers, Object serialized,
+          {FullType specifiedType = FullType.unspecified}) =>
+      SmartshieldHealthchecksCheckRegionsEnum.valueOf(
+          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+}
+
 class _$SmartshieldHealthchecks extends SmartshieldHealthchecks {
   @override
   final String? address;
   @override
-  final BuiltList<dynamic>? checkRegions;
+  final BuiltList<SmartshieldHealthchecksCheckRegionsEnum>? checkRegions;
   @override
   final int? consecutiveFails;
   @override
@@ -160,10 +318,12 @@ class SmartshieldHealthchecksBuilder
   String? get address => _$this._address;
   set address(String? address) => _$this._address = address;
 
-  ListBuilder<dynamic>? _checkRegions;
-  ListBuilder<dynamic> get checkRegions =>
-      _$this._checkRegions ??= ListBuilder<dynamic>();
-  set checkRegions(ListBuilder<dynamic>? checkRegions) =>
+  ListBuilder<SmartshieldHealthchecksCheckRegionsEnum>? _checkRegions;
+  ListBuilder<SmartshieldHealthchecksCheckRegionsEnum> get checkRegions =>
+      _$this._checkRegions ??=
+          ListBuilder<SmartshieldHealthchecksCheckRegionsEnum>();
+  set checkRegions(
+          ListBuilder<SmartshieldHealthchecksCheckRegionsEnum>? checkRegions) =>
       _$this._checkRegions = checkRegions;
 
   int? _consecutiveFails;

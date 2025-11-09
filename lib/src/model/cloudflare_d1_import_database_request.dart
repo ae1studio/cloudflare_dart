@@ -81,11 +81,11 @@ class CloudflareD1ImportDatabaseRequestActionEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'poll')
   static const CloudflareD1ImportDatabaseRequestActionEnum poll = _$cloudflareD1ImportDatabaseRequestActionEnum_poll;
 
-  static Serializer<CloudflareD1ImportDatabaseRequestActionEnum> get serializer => _$cloudflareD1ImportDatabaseRequestActionSerializer;
+  static Serializer<CloudflareD1ImportDatabaseRequestActionEnum> get serializer => _$cloudflareD1ImportDatabaseRequestActionEnumSerializer;
 
   const CloudflareD1ImportDatabaseRequestActionEnum._(String name): super(name);
 
-  static BuiltSet<CloudflareD1ImportDatabaseRequestActionEnum> get values => _$cloudflareD1ImportDatabaseRequestActionValues;
-  static CloudflareD1ImportDatabaseRequestActionEnum valueOf(String name) => _$cloudflareD1ImportDatabaseRequestActionValueOf(name);
+  static BuiltSet<CloudflareD1ImportDatabaseRequestActionEnum> get values => _$cloudflareD1ImportDatabaseRequestActionEnumValues;
+  static CloudflareD1ImportDatabaseRequestActionEnum valueOf(String name) => _$cloudflareD1ImportDatabaseRequestActionEnumValueOf(name);
 }
 

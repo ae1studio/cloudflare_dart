@@ -151,11 +151,11 @@ class R2EnableSippyAwsDestinationProviderEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'r2')
   static const R2EnableSippyAwsDestinationProviderEnum r2 = _$r2EnableSippyAwsDestinationProviderEnum_r2;
 
-  static Serializer<R2EnableSippyAwsDestinationProviderEnum> get serializer => _$r2EnableSippyAwsDestinationProviderSerializer;
+  static Serializer<R2EnableSippyAwsDestinationProviderEnum> get serializer => _$r2EnableSippyAwsDestinationProviderEnumSerializer;
 
   const R2EnableSippyAwsDestinationProviderEnum._(String name): super(name);
 
-  static BuiltSet<R2EnableSippyAwsDestinationProviderEnum> get values => _$r2EnableSippyAwsDestinationProviderValues;
-  static R2EnableSippyAwsDestinationProviderEnum valueOf(String name) => _$r2EnableSippyAwsDestinationProviderValueOf(name);
+  static BuiltSet<R2EnableSippyAwsDestinationProviderEnum> get values => _$r2EnableSippyAwsDestinationProviderEnumValues;
+  static R2EnableSippyAwsDestinationProviderEnum valueOf(String name) => _$r2EnableSippyAwsDestinationProviderEnumValueOf(name);
 }
 

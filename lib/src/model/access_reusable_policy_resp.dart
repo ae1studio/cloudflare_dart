@@ -16,12 +16,6 @@ part 'access_reusable_policy_resp.g.dart';
 /// AccessReusablePolicyResp
 ///
 /// Properties:
-/// * [approvalGroups] - Administrators who can approve a temporary authentication request.
-/// * [approvalRequired] - Requires the user to request access from an administrator at the start of each session.
-/// * [isolationRequired] - Require this application to be served in an isolated browser for users matching this policy. 'Client Web Isolation' must be on for the account in order to use this feature.
-/// * [purposeJustificationPrompt] - A custom message that will appear on the purpose justification screen.
-/// * [purposeJustificationRequired] - Require users to enter a justification when they log in to the application.
-/// * [sessionDuration] - The amount of time that tokens issued for the application will be valid. Must be in the format `300ms` or `2h45m`. Valid time units are: ns, us (or µs), ms, s, m, h.
 /// * [createdAt] 
 /// * [decision] 
 /// * [exclude] - Rules evaluated with a NOT logical operator. To match the policy, a user cannot meet any of the Exclude rules.
@@ -30,6 +24,12 @@ part 'access_reusable_policy_resp.g.dart';
 /// * [name] - The name of the Access policy.
 /// * [require] - Rules evaluated with an AND logical operator. To match the policy, a user must meet all of the Require rules.
 /// * [updatedAt] 
+/// * [approvalGroups] - Administrators who can approve a temporary authentication request.
+/// * [approvalRequired] - Requires the user to request access from an administrator at the start of each session.
+/// * [isolationRequired] - Require this application to be served in an isolated browser for users matching this policy. 'Client Web Isolation' must be on for the account in order to use this feature.
+/// * [purposeJustificationPrompt] - A custom message that will appear on the purpose justification screen.
+/// * [purposeJustificationRequired] - Require users to enter a justification when they log in to the application.
+/// * [sessionDuration] - The amount of time that tokens issued for the application will be valid. Must be in the format `300ms` or `2h45m`. Valid time units are: ns, us (or µs), ms, s, m, h.
 /// * [appCount] - Number of access applications currently using this policy.
 /// * [reusable] 
 @BuiltValue()

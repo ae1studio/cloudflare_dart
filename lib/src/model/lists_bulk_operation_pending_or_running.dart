@@ -133,11 +133,11 @@ class ListsBulkOperationPendingOrRunningStatusEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'running')
   static const ListsBulkOperationPendingOrRunningStatusEnum running = _$listsBulkOperationPendingOrRunningStatusEnum_running;
 
-  static Serializer<ListsBulkOperationPendingOrRunningStatusEnum> get serializer => _$listsBulkOperationPendingOrRunningStatusSerializer;
+  static Serializer<ListsBulkOperationPendingOrRunningStatusEnum> get serializer => _$listsBulkOperationPendingOrRunningStatusEnumSerializer;
 
   const ListsBulkOperationPendingOrRunningStatusEnum._(String name): super(name);
 
-  static BuiltSet<ListsBulkOperationPendingOrRunningStatusEnum> get values => _$listsBulkOperationPendingOrRunningStatusValues;
-  static ListsBulkOperationPendingOrRunningStatusEnum valueOf(String name) => _$listsBulkOperationPendingOrRunningStatusValueOf(name);
+  static BuiltSet<ListsBulkOperationPendingOrRunningStatusEnum> get values => _$listsBulkOperationPendingOrRunningStatusEnumValues;
+  static ListsBulkOperationPendingOrRunningStatusEnum valueOf(String name) => _$listsBulkOperationPendingOrRunningStatusEnumValueOf(name);
 }
 

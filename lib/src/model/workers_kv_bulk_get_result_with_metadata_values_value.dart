@@ -13,19 +13,21 @@ part 'workers_kv_bulk_get_result_with_metadata_values_value.g.dart';
 ///
 /// Properties:
 /// * [expiration] - Expires the key at a certain time, measured in number of seconds since the UNIX epoch.
-/// * [metadata] 
-/// * [value] 
+/// * [metadata] - The metadata associated with the key.
+/// * [value] - The value associated with the key.
 @BuiltValue()
 abstract class WorkersKvBulkGetResultWithMetadataValuesValue implements Built<WorkersKvBulkGetResultWithMetadataValuesValue, WorkersKvBulkGetResultWithMetadataValuesValueBuilder> {
   /// Expires the key at a certain time, measured in number of seconds since the UNIX epoch.
   @BuiltValueField(wireName: r'expiration')
   num? get expiration;
 
+  /// The metadata associated with the key.
   @BuiltValueField(wireName: r'metadata')
-  JsonObject get metadata;
+  JsonObject? get metadata;
 
+  /// The value associated with the key.
   @BuiltValueField(wireName: r'value')
-  JsonObject get value;
+  JsonObject? get value;
 
   WorkersKvBulkGetResultWithMetadataValuesValue._();
 
@@ -58,14 +60,14 @@ class _$WorkersKvBulkGetResultWithMetadataValuesValueSerializer implements Primi
       );
     }
     yield r'metadata';
-    yield serializers.serialize(
+    yield object.metadata == null ? null : serializers.serialize(
       object.metadata,
-      specifiedType: const FullType(JsonObject),
+      specifiedType: const FullType.nullable(JsonObject),
     );
     yield r'value';
-    yield serializers.serialize(
+    yield object.value == null ? null : serializers.serialize(
       object.value,
-      specifiedType: const FullType(JsonObject),
+      specifiedType: const FullType.nullable(JsonObject),
     );
   }
 
@@ -100,16 +102,18 @@ class _$WorkersKvBulkGetResultWithMetadataValuesValueSerializer implements Primi
         case r'metadata':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(JsonObject),
-          ) as JsonObject;
-          result.metadata.replace(valueDes);
+            specifiedType: const FullType.nullable(JsonObject),
+          ) as JsonObject?;
+          if (valueDes == null) continue;
+          result.metadata = valueDes;
           break;
         case r'value':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(JsonObject),
-          ) as JsonObject;
-          result.value.replace(valueDes);
+            specifiedType: const FullType.nullable(JsonObject),
+          ) as JsonObject?;
+          if (valueDes == null) continue;
+          result.value = valueDes;
           break;
         default:
           unhandled.add(key);

@@ -3,9 +3,8 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:cloudflare_dart/src/model/access_updated_at.dart';
 import 'package:built_collection/built_collection.dart';
-import 'package:cloudflare_dart/src/model/access_created_at.dart';
+import 'package:built_value/json_object.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
@@ -28,7 +27,7 @@ abstract class AccessCertificates implements Built<AccessCertificates, AccessCer
   BuiltList<String>? get associatedHostnames;
 
   @BuiltValueField(wireName: r'created_at')
-  AccessCreatedAt? get createdAt;
+  JsonObject? get createdAt;
 
   @BuiltValueField(wireName: r'expires_on')
   DateTime? get expiresOn;
@@ -46,7 +45,7 @@ abstract class AccessCertificates implements Built<AccessCertificates, AccessCer
   String? get name;
 
   @BuiltValueField(wireName: r'updated_at')
-  AccessUpdatedAt? get updatedAt;
+  JsonObject? get updatedAt;
 
   AccessCertificates._();
 
@@ -82,7 +81,7 @@ class _$AccessCertificatesSerializer implements PrimitiveSerializer<AccessCertif
       yield r'created_at';
       yield serializers.serialize(
         object.createdAt,
-        specifiedType: const FullType(AccessCreatedAt),
+        specifiedType: const FullType(JsonObject),
       );
     }
     if (object.expiresOn != null) {
@@ -117,7 +116,7 @@ class _$AccessCertificatesSerializer implements PrimitiveSerializer<AccessCertif
       yield r'updated_at';
       yield serializers.serialize(
         object.updatedAt,
-        specifiedType: const FullType(AccessUpdatedAt),
+        specifiedType: const FullType(JsonObject),
       );
     }
   }
@@ -153,8 +152,8 @@ class _$AccessCertificatesSerializer implements PrimitiveSerializer<AccessCertif
         case r'created_at':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(AccessCreatedAt),
-          ) as AccessCreatedAt;
+            specifiedType: const FullType(JsonObject),
+          ) as JsonObject;
           result.createdAt.replace(valueDes);
           break;
         case r'expires_on':
@@ -188,8 +187,8 @@ class _$AccessCertificatesSerializer implements PrimitiveSerializer<AccessCertif
         case r'updated_at':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(AccessUpdatedAt),
-          ) as AccessUpdatedAt;
+            specifiedType: const FullType(JsonObject),
+          ) as JsonObject;
           result.updatedAt.replace(valueDes);
           break;
         default:

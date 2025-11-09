@@ -156,11 +156,11 @@ class ZonesChallengeTtlIdEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'challenge_ttl')
   static const ZonesChallengeTtlIdEnum challengeTtl = _$zonesChallengeTtlIdEnum_challengeTtl;
 
-  static Serializer<ZonesChallengeTtlIdEnum> get serializer => _$zonesChallengeTtlIdSerializer;
+  static Serializer<ZonesChallengeTtlIdEnum> get serializer => _$zonesChallengeTtlIdEnumSerializer;
 
   const ZonesChallengeTtlIdEnum._(String name): super(name);
 
-  static BuiltSet<ZonesChallengeTtlIdEnum> get values => _$zonesChallengeTtlIdValues;
-  static ZonesChallengeTtlIdEnum valueOf(String name) => _$zonesChallengeTtlIdValueOf(name);
+  static BuiltSet<ZonesChallengeTtlIdEnum> get values => _$zonesChallengeTtlIdEnumValues;
+  static ZonesChallengeTtlIdEnum valueOf(String name) => _$zonesChallengeTtlIdEnumValueOf(name);
 }
 

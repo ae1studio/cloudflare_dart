@@ -91,11 +91,11 @@ class DigitalExperienceMonitoringWarpEventsResponseInnerToggleEnum extends EnumC
   @BuiltValueEnumConst(wireName: r'off')
   static const DigitalExperienceMonitoringWarpEventsResponseInnerToggleEnum off = _$digitalExperienceMonitoringWarpEventsResponseInnerToggleEnum_off;
 
-  static Serializer<DigitalExperienceMonitoringWarpEventsResponseInnerToggleEnum> get serializer => _$digitalExperienceMonitoringWarpEventsResponseInnerToggleSerializer;
+  static Serializer<DigitalExperienceMonitoringWarpEventsResponseInnerToggleEnum> get serializer => _$digitalExperienceMonitoringWarpEventsResponseInnerToggleEnumSerializer;
 
   const DigitalExperienceMonitoringWarpEventsResponseInnerToggleEnum._(String name): super(name);
 
-  static BuiltSet<DigitalExperienceMonitoringWarpEventsResponseInnerToggleEnum> get values => _$digitalExperienceMonitoringWarpEventsResponseInnerToggleValues;
-  static DigitalExperienceMonitoringWarpEventsResponseInnerToggleEnum valueOf(String name) => _$digitalExperienceMonitoringWarpEventsResponseInnerToggleValueOf(name);
+  static BuiltSet<DigitalExperienceMonitoringWarpEventsResponseInnerToggleEnum> get values => _$digitalExperienceMonitoringWarpEventsResponseInnerToggleEnumValues;
+  static DigitalExperienceMonitoringWarpEventsResponseInnerToggleEnum valueOf(String name) => _$digitalExperienceMonitoringWarpEventsResponseInnerToggleEnumValueOf(name);
 }
 

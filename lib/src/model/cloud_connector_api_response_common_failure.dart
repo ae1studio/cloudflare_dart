@@ -161,11 +161,11 @@ class _$CloudConnectorApiResponseCommonFailureSerializer implements PrimitiveSer
 class CloudConnectorApiResponseCommonFailureResultEnum extends EnumClass {
 
 
-  static Serializer<CloudConnectorApiResponseCommonFailureResultEnum> get serializer => _$cloudConnectorApiResponseCommonFailureResultSerializer;
+  static Serializer<CloudConnectorApiResponseCommonFailureResultEnum> get serializer => _$cloudConnectorApiResponseCommonFailureResultEnumSerializer;
 
   const CloudConnectorApiResponseCommonFailureResultEnum._(String name): super(name);
 
-  static BuiltSet<CloudConnectorApiResponseCommonFailureResultEnum> get values => _$cloudConnectorApiResponseCommonFailureResultValues;
-  static CloudConnectorApiResponseCommonFailureResultEnum valueOf(String name) => _$cloudConnectorApiResponseCommonFailureResultValueOf(name);
+  static BuiltSet<CloudConnectorApiResponseCommonFailureResultEnum> get values => _$cloudConnectorApiResponseCommonFailureResultEnumValues;
+  static CloudConnectorApiResponseCommonFailureResultEnum valueOf(String name) => _$cloudConnectorApiResponseCommonFailureResultEnumValueOf(name);
 }
 

@@ -22,7 +22,7 @@ part 'rulesets_response_rule.g.dart';
 /// * [actionParameters] 
 /// * [categories] - The categories of the rule.
 /// * [description] 
-/// * [enabled] 
+/// * [enabled] - Whether the rule should be executed.
 /// * [exposedCredentialCheck] 
 /// * [expression] - The expression defining which traffic will match the rule.
 /// * [id] - The unique ID of the rule.
@@ -38,7 +38,8 @@ abstract class RulesetsResponseRule implements RulesetsRequestRule, Built<Rulese
   factory RulesetsResponseRule([void updates(RulesetsResponseRuleBuilder b)]) = _$RulesetsResponseRule;
 
   @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(RulesetsResponseRuleBuilder b) => b..action=b.discriminatorValue;
+  static void _defaults(RulesetsResponseRuleBuilder b) => b..action=b.discriminatorValue
+      ..enabled = true;
 
   @BuiltValueSerializer(custom: true)
   static Serializer<RulesetsResponseRule> get serializer => _$RulesetsResponseRuleSerializer();
@@ -292,11 +293,11 @@ class RulesetsResponseRuleActionEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'skip')
   static const RulesetsResponseRuleActionEnum skip = _$rulesetsResponseRuleActionEnum_skip;
 
-  static Serializer<RulesetsResponseRuleActionEnum> get serializer => _$rulesetsResponseRuleActionSerializer;
+  static Serializer<RulesetsResponseRuleActionEnum> get serializer => _$rulesetsResponseRuleActionEnumSerializer;
 
   const RulesetsResponseRuleActionEnum._(String name): super(name);
 
-  static BuiltSet<RulesetsResponseRuleActionEnum> get values => _$rulesetsResponseRuleActionValues;
-  static RulesetsResponseRuleActionEnum valueOf(String name) => _$rulesetsResponseRuleActionValueOf(name);
+  static BuiltSet<RulesetsResponseRuleActionEnum> get values => _$rulesetsResponseRuleActionEnumValues;
+  static RulesetsResponseRuleActionEnum valueOf(String name) => _$rulesetsResponseRuleActionEnumValueOf(name);
 }
 

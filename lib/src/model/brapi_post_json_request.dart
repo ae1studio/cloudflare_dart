@@ -3,9 +3,9 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:cloudflare_dart/src/model/brapi_post_content_request_all_of_allow_resource_types_inner.dart';
 import 'package:cloudflare_dart/src/model/brapi_post_content_request_all_of_cookies_inner.dart';
 import 'package:cloudflare_dart/src/model/brapi_post_content_request_all_of_viewport.dart';
+import 'package:cloudflare_dart/src/model/brapi_post_json_request_all_of_reject_resource_types.dart';
 import 'package:cloudflare_dart/src/model/brapi_post_content_request_all_of_add_script_tag_inner.dart';
 import 'package:cloudflare_dart/src/model/brapi_post_json_request_all_of_custom_ai_inner.dart';
 import 'package:built_collection/built_collection.dart';
@@ -14,6 +14,7 @@ import 'package:cloudflare_dart/src/model/brapi_post_content_request_all_of_goto
 import 'package:cloudflare_dart/src/model/brapi_post_content_request_all_of_authenticate.dart';
 import 'package:cloudflare_dart/src/model/brapi_post_content_request_all_of_wait_for_selector.dart';
 import 'package:cloudflare_dart/src/model/brapi_post_json_request_all_of_response_format.dart';
+import 'package:cloudflare_dart/src/model/brapi_post_json_request_all_of_allow_resource_types.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
@@ -65,7 +66,7 @@ abstract class BrapiPostJsonRequest implements Built<BrapiPostJsonRequest, Brapi
 
   /// Only allow requests that match the provided resource types, eg. 'image' or 'script'.
   @BuiltValueField(wireName: r'allowResourceTypes')
-  BuiltList<BrapiPostContentRequestAllOfAllowResourceTypesInner>? get allowResourceTypes;
+  BuiltList<BrapiPostJsonRequestAllOfAllowResourceTypes>? get allowResourceTypes;
 
   @BuiltValueField(wireName: r'authenticate')
   BrapiPostContentRequestAllOfAuthenticate? get authenticate;
@@ -101,7 +102,7 @@ abstract class BrapiPostJsonRequest implements Built<BrapiPostJsonRequest, Brapi
 
   /// Block undesired requests that match the provided resource types, eg. 'image' or 'script'.
   @BuiltValueField(wireName: r'rejectResourceTypes')
-  BuiltList<BrapiPostContentRequestAllOfAllowResourceTypesInner>? get rejectResourceTypes;
+  BuiltList<BrapiPostJsonRequestAllOfRejectResourceTypes>? get rejectResourceTypes;
 
   @BuiltValueField(wireName: r'response_format')
   BrapiPostJsonRequestAllOfResponseFormat? get responseFormat;
@@ -185,7 +186,7 @@ class _$BrapiPostJsonRequestSerializer implements PrimitiveSerializer<BrapiPostJ
       yield r'allowResourceTypes';
       yield serializers.serialize(
         object.allowResourceTypes,
-        specifiedType: const FullType(BuiltList, [FullType(BrapiPostContentRequestAllOfAllowResourceTypesInner)]),
+        specifiedType: const FullType(BuiltList, [FullType(BrapiPostJsonRequestAllOfAllowResourceTypes)]),
       );
     }
     if (object.authenticate != null) {
@@ -255,7 +256,7 @@ class _$BrapiPostJsonRequestSerializer implements PrimitiveSerializer<BrapiPostJ
       yield r'rejectResourceTypes';
       yield serializers.serialize(
         object.rejectResourceTypes,
-        specifiedType: const FullType(BuiltList, [FullType(BrapiPostContentRequestAllOfAllowResourceTypesInner)]),
+        specifiedType: const FullType(BuiltList, [FullType(BrapiPostJsonRequestAllOfRejectResourceTypes)]),
       );
     }
     if (object.responseFormat != null) {
@@ -368,8 +369,8 @@ class _$BrapiPostJsonRequestSerializer implements PrimitiveSerializer<BrapiPostJ
         case r'allowResourceTypes':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(BuiltList, [FullType(BrapiPostContentRequestAllOfAllowResourceTypesInner)]),
-          ) as BuiltList<BrapiPostContentRequestAllOfAllowResourceTypesInner>;
+            specifiedType: const FullType(BuiltList, [FullType(BrapiPostJsonRequestAllOfAllowResourceTypes)]),
+          ) as BuiltList<BrapiPostJsonRequestAllOfAllowResourceTypes>;
           result.allowResourceTypes.replace(valueDes);
           break;
         case r'authenticate':
@@ -438,8 +439,8 @@ class _$BrapiPostJsonRequestSerializer implements PrimitiveSerializer<BrapiPostJ
         case r'rejectResourceTypes':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(BuiltList, [FullType(BrapiPostContentRequestAllOfAllowResourceTypesInner)]),
-          ) as BuiltList<BrapiPostContentRequestAllOfAllowResourceTypesInner>;
+            specifiedType: const FullType(BuiltList, [FullType(BrapiPostJsonRequestAllOfRejectResourceTypes)]),
+          ) as BuiltList<BrapiPostJsonRequestAllOfRejectResourceTypes>;
           result.rejectResourceTypes.replace(valueDes);
           break;
         case r'response_format':

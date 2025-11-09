@@ -145,11 +145,11 @@ class AigConfigListGateway200ResponseResultInnerDlpAnyOfActionEnum extends EnumC
   @BuiltValueEnumConst(wireName: r'FLAG')
   static const AigConfigListGateway200ResponseResultInnerDlpAnyOfActionEnum FLAG = _$aigConfigListGateway200ResponseResultInnerDlpAnyOfActionEnum_FLAG;
 
-  static Serializer<AigConfigListGateway200ResponseResultInnerDlpAnyOfActionEnum> get serializer => _$aigConfigListGateway200ResponseResultInnerDlpAnyOfActionSerializer;
+  static Serializer<AigConfigListGateway200ResponseResultInnerDlpAnyOfActionEnum> get serializer => _$aigConfigListGateway200ResponseResultInnerDlpAnyOfActionEnumSerializer;
 
   const AigConfigListGateway200ResponseResultInnerDlpAnyOfActionEnum._(String name): super(name);
 
-  static BuiltSet<AigConfigListGateway200ResponseResultInnerDlpAnyOfActionEnum> get values => _$aigConfigListGateway200ResponseResultInnerDlpAnyOfActionValues;
-  static AigConfigListGateway200ResponseResultInnerDlpAnyOfActionEnum valueOf(String name) => _$aigConfigListGateway200ResponseResultInnerDlpAnyOfActionValueOf(name);
+  static BuiltSet<AigConfigListGateway200ResponseResultInnerDlpAnyOfActionEnum> get values => _$aigConfigListGateway200ResponseResultInnerDlpAnyOfActionEnumValues;
+  static AigConfigListGateway200ResponseResultInnerDlpAnyOfActionEnum valueOf(String name) => _$aigConfigListGateway200ResponseResultInnerDlpAnyOfActionEnumValueOf(name);
 }
 

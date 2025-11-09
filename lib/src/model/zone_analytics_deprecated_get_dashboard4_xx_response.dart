@@ -164,11 +164,11 @@ class _$ZoneAnalyticsDeprecatedGetDashboard4XXResponseSerializer implements Prim
 class ZoneAnalyticsDeprecatedGetDashboard4XXResponseResultEnum extends EnumClass {
 
 
-  static Serializer<ZoneAnalyticsDeprecatedGetDashboard4XXResponseResultEnum> get serializer => _$zoneAnalyticsDeprecatedGetDashboard4XXResponseResultSerializer;
+  static Serializer<ZoneAnalyticsDeprecatedGetDashboard4XXResponseResultEnum> get serializer => _$zoneAnalyticsDeprecatedGetDashboard4XXResponseResultEnumSerializer;
 
   const ZoneAnalyticsDeprecatedGetDashboard4XXResponseResultEnum._(String name): super(name);
 
-  static BuiltSet<ZoneAnalyticsDeprecatedGetDashboard4XXResponseResultEnum> get values => _$zoneAnalyticsDeprecatedGetDashboard4XXResponseResultValues;
-  static ZoneAnalyticsDeprecatedGetDashboard4XXResponseResultEnum valueOf(String name) => _$zoneAnalyticsDeprecatedGetDashboard4XXResponseResultValueOf(name);
+  static BuiltSet<ZoneAnalyticsDeprecatedGetDashboard4XXResponseResultEnum> get values => _$zoneAnalyticsDeprecatedGetDashboard4XXResponseResultEnumValues;
+  static ZoneAnalyticsDeprecatedGetDashboard4XXResponseResultEnum valueOf(String name) => _$zoneAnalyticsDeprecatedGetDashboard4XXResponseResultEnumValueOf(name);
 }
 

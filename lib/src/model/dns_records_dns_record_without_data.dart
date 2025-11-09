@@ -114,11 +114,11 @@ class DnsRecordsDnsRecordWithoutDataTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'TXT')
   static const DnsRecordsDnsRecordWithoutDataTypeEnum TXT = _$dnsRecordsDnsRecordWithoutDataTypeEnum_TXT;
 
-  static Serializer<DnsRecordsDnsRecordWithoutDataTypeEnum> get serializer => _$dnsRecordsDnsRecordWithoutDataTypeSerializer;
+  static Serializer<DnsRecordsDnsRecordWithoutDataTypeEnum> get serializer => _$dnsRecordsDnsRecordWithoutDataTypeEnumSerializer;
 
   const DnsRecordsDnsRecordWithoutDataTypeEnum._(String name): super(name);
 
-  static BuiltSet<DnsRecordsDnsRecordWithoutDataTypeEnum> get values => _$dnsRecordsDnsRecordWithoutDataTypeValues;
-  static DnsRecordsDnsRecordWithoutDataTypeEnum valueOf(String name) => _$dnsRecordsDnsRecordWithoutDataTypeValueOf(name);
+  static BuiltSet<DnsRecordsDnsRecordWithoutDataTypeEnum> get values => _$dnsRecordsDnsRecordWithoutDataTypeEnumValues;
+  static DnsRecordsDnsRecordWithoutDataTypeEnum valueOf(String name) => _$dnsRecordsDnsRecordWithoutDataTypeEnumValueOf(name);
 }
 

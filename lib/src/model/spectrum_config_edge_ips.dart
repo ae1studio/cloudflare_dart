@@ -85,12 +85,12 @@ class SpectrumConfigEdgeIpsConnectivityEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'ipv6')
   static const SpectrumConfigEdgeIpsConnectivityEnum ipv6 = _$spectrumConfigEdgeIpsConnectivityEnum_ipv6;
 
-  static Serializer<SpectrumConfigEdgeIpsConnectivityEnum> get serializer => _$spectrumConfigEdgeIpsConnectivitySerializer;
+  static Serializer<SpectrumConfigEdgeIpsConnectivityEnum> get serializer => _$spectrumConfigEdgeIpsConnectivityEnumSerializer;
 
   const SpectrumConfigEdgeIpsConnectivityEnum._(String name): super(name);
 
-  static BuiltSet<SpectrumConfigEdgeIpsConnectivityEnum> get values => _$spectrumConfigEdgeIpsConnectivityValues;
-  static SpectrumConfigEdgeIpsConnectivityEnum valueOf(String name) => _$spectrumConfigEdgeIpsConnectivityValueOf(name);
+  static BuiltSet<SpectrumConfigEdgeIpsConnectivityEnum> get values => _$spectrumConfigEdgeIpsConnectivityEnumValues;
+  static SpectrumConfigEdgeIpsConnectivityEnum valueOf(String name) => _$spectrumConfigEdgeIpsConnectivityEnumValueOf(name);
 }
 
 class SpectrumConfigEdgeIpsTypeEnum extends EnumClass {
@@ -102,11 +102,11 @@ class SpectrumConfigEdgeIpsTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'static')
   static const SpectrumConfigEdgeIpsTypeEnum static_ = _$spectrumConfigEdgeIpsTypeEnum_static_;
 
-  static Serializer<SpectrumConfigEdgeIpsTypeEnum> get serializer => _$spectrumConfigEdgeIpsTypeSerializer;
+  static Serializer<SpectrumConfigEdgeIpsTypeEnum> get serializer => _$spectrumConfigEdgeIpsTypeEnumSerializer;
 
   const SpectrumConfigEdgeIpsTypeEnum._(String name): super(name);
 
-  static BuiltSet<SpectrumConfigEdgeIpsTypeEnum> get values => _$spectrumConfigEdgeIpsTypeValues;
-  static SpectrumConfigEdgeIpsTypeEnum valueOf(String name) => _$spectrumConfigEdgeIpsTypeValueOf(name);
+  static BuiltSet<SpectrumConfigEdgeIpsTypeEnum> get values => _$spectrumConfigEdgeIpsTypeEnumValues;
+  static SpectrumConfigEdgeIpsTypeEnum valueOf(String name) => _$spectrumConfigEdgeIpsTypeEnumValueOf(name);
 }
 

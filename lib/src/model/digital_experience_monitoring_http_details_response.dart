@@ -266,11 +266,11 @@ class DigitalExperienceMonitoringHttpDetailsResponseKindEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'http')
   static const DigitalExperienceMonitoringHttpDetailsResponseKindEnum http = _$digitalExperienceMonitoringHttpDetailsResponseKindEnum_http;
 
-  static Serializer<DigitalExperienceMonitoringHttpDetailsResponseKindEnum> get serializer => _$digitalExperienceMonitoringHttpDetailsResponseKindSerializer;
+  static Serializer<DigitalExperienceMonitoringHttpDetailsResponseKindEnum> get serializer => _$digitalExperienceMonitoringHttpDetailsResponseKindEnumSerializer;
 
   const DigitalExperienceMonitoringHttpDetailsResponseKindEnum._(String name): super(name);
 
-  static BuiltSet<DigitalExperienceMonitoringHttpDetailsResponseKindEnum> get values => _$digitalExperienceMonitoringHttpDetailsResponseKindValues;
-  static DigitalExperienceMonitoringHttpDetailsResponseKindEnum valueOf(String name) => _$digitalExperienceMonitoringHttpDetailsResponseKindValueOf(name);
+  static BuiltSet<DigitalExperienceMonitoringHttpDetailsResponseKindEnum> get values => _$digitalExperienceMonitoringHttpDetailsResponseKindEnumValues;
+  static DigitalExperienceMonitoringHttpDetailsResponseKindEnum valueOf(String name) => _$digitalExperienceMonitoringHttpDetailsResponseKindEnumValueOf(name);
 }
 

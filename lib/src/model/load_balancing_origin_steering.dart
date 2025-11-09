@@ -26,7 +26,7 @@ abstract class LoadBalancingOriginSteering implements Built<LoadBalancingOriginS
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(LoadBalancingOriginSteeringBuilder b) => b
-      ..policy = const LoadBalancingOriginSteeringPolicyEnum._('random');
+      ..policy = LoadBalancingOriginSteeringPolicyEnum.valueOf('random');
 
   @BuiltValueSerializer(custom: true)
   static Serializer<LoadBalancingOriginSteering> get serializer => _$LoadBalancingOriginSteeringSerializer();
@@ -125,11 +125,11 @@ class LoadBalancingOriginSteeringPolicyEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'least_connections')
   static const LoadBalancingOriginSteeringPolicyEnum leastConnections = _$loadBalancingOriginSteeringPolicyEnum_leastConnections;
 
-  static Serializer<LoadBalancingOriginSteeringPolicyEnum> get serializer => _$loadBalancingOriginSteeringPolicySerializer;
+  static Serializer<LoadBalancingOriginSteeringPolicyEnum> get serializer => _$loadBalancingOriginSteeringPolicyEnumSerializer;
 
   const LoadBalancingOriginSteeringPolicyEnum._(String name): super(name);
 
-  static BuiltSet<LoadBalancingOriginSteeringPolicyEnum> get values => _$loadBalancingOriginSteeringPolicyValues;
-  static LoadBalancingOriginSteeringPolicyEnum valueOf(String name) => _$loadBalancingOriginSteeringPolicyValueOf(name);
+  static BuiltSet<LoadBalancingOriginSteeringPolicyEnum> get values => _$loadBalancingOriginSteeringPolicyEnumValues;
+  static LoadBalancingOriginSteeringPolicyEnum valueOf(String name) => _$loadBalancingOriginSteeringPolicyEnumValueOf(name);
 }
 

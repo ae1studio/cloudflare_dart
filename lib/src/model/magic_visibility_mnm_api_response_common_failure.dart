@@ -194,11 +194,11 @@ class _$$MagicVisibilityMnmApiResponseCommonFailureSerializer implements Primiti
 class MagicVisibilityMnmApiResponseCommonFailureResultEnum extends EnumClass {
 
 
-  static Serializer<MagicVisibilityMnmApiResponseCommonFailureResultEnum> get serializer => _$magicVisibilityMnmApiResponseCommonFailureResultSerializer;
+  static Serializer<MagicVisibilityMnmApiResponseCommonFailureResultEnum> get serializer => _$magicVisibilityMnmApiResponseCommonFailureResultEnumSerializer;
 
   const MagicVisibilityMnmApiResponseCommonFailureResultEnum._(String name): super(name);
 
-  static BuiltSet<MagicVisibilityMnmApiResponseCommonFailureResultEnum> get values => _$magicVisibilityMnmApiResponseCommonFailureResultValues;
-  static MagicVisibilityMnmApiResponseCommonFailureResultEnum valueOf(String name) => _$magicVisibilityMnmApiResponseCommonFailureResultValueOf(name);
+  static BuiltSet<MagicVisibilityMnmApiResponseCommonFailureResultEnum> get values => _$magicVisibilityMnmApiResponseCommonFailureResultEnumValues;
+  static MagicVisibilityMnmApiResponseCommonFailureResultEnum valueOf(String name) => _$magicVisibilityMnmApiResponseCommonFailureResultEnumValueOf(name);
 }
 

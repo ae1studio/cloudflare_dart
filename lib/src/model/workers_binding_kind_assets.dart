@@ -130,11 +130,11 @@ class WorkersBindingKindAssetsTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'assets')
   static const WorkersBindingKindAssetsTypeEnum assets = _$workersBindingKindAssetsTypeEnum_assets;
 
-  static Serializer<WorkersBindingKindAssetsTypeEnum> get serializer => _$workersBindingKindAssetsTypeSerializer;
+  static Serializer<WorkersBindingKindAssetsTypeEnum> get serializer => _$workersBindingKindAssetsTypeEnumSerializer;
 
   const WorkersBindingKindAssetsTypeEnum._(String name): super(name);
 
-  static BuiltSet<WorkersBindingKindAssetsTypeEnum> get values => _$workersBindingKindAssetsTypeValues;
-  static WorkersBindingKindAssetsTypeEnum valueOf(String name) => _$workersBindingKindAssetsTypeValueOf(name);
+  static BuiltSet<WorkersBindingKindAssetsTypeEnum> get values => _$workersBindingKindAssetsTypeEnumValues;
+  static WorkersBindingKindAssetsTypeEnum valueOf(String name) => _$workersBindingKindAssetsTypeEnumValueOf(name);
 }
 

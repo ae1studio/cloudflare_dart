@@ -8,11 +8,11 @@ part of 'access_tag_without_app_count.dart';
 
 class _$AccessTagWithoutAppCount extends AccessTagWithoutAppCount {
   @override
-  final AccessCreatedAt? createdAt;
+  final JsonObject? createdAt;
   @override
   final String name;
   @override
-  final AccessUpdatedAt? updatedAt;
+  final JsonObject? updatedAt;
 
   factory _$AccessTagWithoutAppCount(
           [void Function(AccessTagWithoutAppCountBuilder)? updates]) =>
@@ -64,21 +64,17 @@ class AccessTagWithoutAppCountBuilder
         Builder<AccessTagWithoutAppCount, AccessTagWithoutAppCountBuilder> {
   _$AccessTagWithoutAppCount? _$v;
 
-  AccessCreatedAtBuilder? _createdAt;
-  AccessCreatedAtBuilder get createdAt =>
-      _$this._createdAt ??= AccessCreatedAtBuilder();
-  set createdAt(AccessCreatedAtBuilder? createdAt) =>
-      _$this._createdAt = createdAt;
+  JsonObject? _createdAt;
+  JsonObject? get createdAt => _$this._createdAt;
+  set createdAt(JsonObject? createdAt) => _$this._createdAt = createdAt;
 
   String? _name;
   String? get name => _$this._name;
   set name(String? name) => _$this._name = name;
 
-  AccessUpdatedAtBuilder? _updatedAt;
-  AccessUpdatedAtBuilder get updatedAt =>
-      _$this._updatedAt ??= AccessUpdatedAtBuilder();
-  set updatedAt(AccessUpdatedAtBuilder? updatedAt) =>
-      _$this._updatedAt = updatedAt;
+  JsonObject? _updatedAt;
+  JsonObject? get updatedAt => _$this._updatedAt;
+  set updatedAt(JsonObject? updatedAt) => _$this._updatedAt = updatedAt;
 
   AccessTagWithoutAppCountBuilder() {
     AccessTagWithoutAppCount._defaults(this);
@@ -87,9 +83,9 @@ class AccessTagWithoutAppCountBuilder
   AccessTagWithoutAppCountBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _createdAt = $v.createdAt?.toBuilder();
+      _createdAt = $v.createdAt;
       _name = $v.name;
-      _updatedAt = $v.updatedAt?.toBuilder();
+      _updatedAt = $v.updatedAt;
       _$v = null;
     }
     return this;
@@ -109,29 +105,13 @@ class AccessTagWithoutAppCountBuilder
   AccessTagWithoutAppCount build() => _build();
 
   _$AccessTagWithoutAppCount _build() {
-    _$AccessTagWithoutAppCount _$result;
-    try {
-      _$result = _$v ??
-          _$AccessTagWithoutAppCount._(
-            createdAt: _createdAt?.build(),
-            name: BuiltValueNullFieldError.checkNotNull(
-                name, r'AccessTagWithoutAppCount', 'name'),
-            updatedAt: _updatedAt?.build(),
-          );
-    } catch (_) {
-      late String _$failedField;
-      try {
-        _$failedField = 'createdAt';
-        _createdAt?.build();
-
-        _$failedField = 'updatedAt';
-        _updatedAt?.build();
-      } catch (e) {
-        throw BuiltValueNestedFieldError(
-            r'AccessTagWithoutAppCount', _$failedField, e.toString());
-      }
-      rethrow;
-    }
+    final _$result = _$v ??
+        _$AccessTagWithoutAppCount._(
+          createdAt: createdAt,
+          name: BuiltValueNullFieldError.checkNotNull(
+              name, r'AccessTagWithoutAppCount', 'name'),
+          updatedAt: updatedAt,
+        );
     replace(_$result);
     return _$result;
   }

@@ -87,11 +87,11 @@ class AccessScimConfigSingleAuthenticationSchemeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'access_service_token')
   static const AccessScimConfigSingleAuthenticationSchemeEnum accessServiceToken = _$accessScimConfigSingleAuthenticationSchemeEnum_accessServiceToken;
 
-  static Serializer<AccessScimConfigSingleAuthenticationSchemeEnum> get serializer => _$accessScimConfigSingleAuthenticationSchemeSerializer;
+  static Serializer<AccessScimConfigSingleAuthenticationSchemeEnum> get serializer => _$accessScimConfigSingleAuthenticationSchemeEnumSerializer;
 
   const AccessScimConfigSingleAuthenticationSchemeEnum._(String name): super(name);
 
-  static BuiltSet<AccessScimConfigSingleAuthenticationSchemeEnum> get values => _$accessScimConfigSingleAuthenticationSchemeValues;
-  static AccessScimConfigSingleAuthenticationSchemeEnum valueOf(String name) => _$accessScimConfigSingleAuthenticationSchemeValueOf(name);
+  static BuiltSet<AccessScimConfigSingleAuthenticationSchemeEnum> get values => _$accessScimConfigSingleAuthenticationSchemeEnumValues;
+  static AccessScimConfigSingleAuthenticationSchemeEnum valueOf(String name) => _$accessScimConfigSingleAuthenticationSchemeEnumValueOf(name);
 }
 

@@ -8,7 +8,7 @@ part of 'access_schemas_groups.dart';
 
 class _$AccessSchemasGroups extends AccessSchemasGroups {
   @override
-  final AccessCreatedAt? createdAt;
+  final JsonObject? createdAt;
   @override
   final BuiltList<AccessRule>? exclude;
   @override
@@ -22,7 +22,7 @@ class _$AccessSchemasGroups extends AccessSchemasGroups {
   @override
   final BuiltList<AccessRule>? require;
   @override
-  final AccessUpdatedAt? updatedAt;
+  final JsonObject? updatedAt;
 
   factory _$AccessSchemasGroups(
           [void Function(AccessSchemasGroupsBuilder)? updates]) =>
@@ -95,11 +95,9 @@ class AccessSchemasGroupsBuilder
     implements Builder<AccessSchemasGroups, AccessSchemasGroupsBuilder> {
   _$AccessSchemasGroups? _$v;
 
-  AccessCreatedAtBuilder? _createdAt;
-  AccessCreatedAtBuilder get createdAt =>
-      _$this._createdAt ??= AccessCreatedAtBuilder();
-  set createdAt(AccessCreatedAtBuilder? createdAt) =>
-      _$this._createdAt = createdAt;
+  JsonObject? _createdAt;
+  JsonObject? get createdAt => _$this._createdAt;
+  set createdAt(JsonObject? createdAt) => _$this._createdAt = createdAt;
 
   ListBuilder<AccessRule>? _exclude;
   ListBuilder<AccessRule> get exclude =>
@@ -130,11 +128,9 @@ class AccessSchemasGroupsBuilder
       _$this._require ??= ListBuilder<AccessRule>();
   set require(ListBuilder<AccessRule>? require) => _$this._require = require;
 
-  AccessUpdatedAtBuilder? _updatedAt;
-  AccessUpdatedAtBuilder get updatedAt =>
-      _$this._updatedAt ??= AccessUpdatedAtBuilder();
-  set updatedAt(AccessUpdatedAtBuilder? updatedAt) =>
-      _$this._updatedAt = updatedAt;
+  JsonObject? _updatedAt;
+  JsonObject? get updatedAt => _$this._updatedAt;
+  set updatedAt(JsonObject? updatedAt) => _$this._updatedAt = updatedAt;
 
   AccessSchemasGroupsBuilder() {
     AccessSchemasGroups._defaults(this);
@@ -143,14 +139,14 @@ class AccessSchemasGroupsBuilder
   AccessSchemasGroupsBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _createdAt = $v.createdAt?.toBuilder();
+      _createdAt = $v.createdAt;
       _exclude = $v.exclude?.toBuilder();
       _id = $v.id;
       _include = $v.include?.toBuilder();
       _isDefault = $v.isDefault?.toBuilder();
       _name = $v.name;
       _require = $v.require?.toBuilder();
-      _updatedAt = $v.updatedAt?.toBuilder();
+      _updatedAt = $v.updatedAt;
       _$v = null;
     }
     return this;
@@ -174,20 +170,18 @@ class AccessSchemasGroupsBuilder
     try {
       _$result = _$v ??
           _$AccessSchemasGroups._(
-            createdAt: _createdAt?.build(),
+            createdAt: createdAt,
             exclude: _exclude?.build(),
             id: id,
             include: _include?.build(),
             isDefault: _isDefault?.build(),
             name: name,
             require: _require?.build(),
-            updatedAt: _updatedAt?.build(),
+            updatedAt: updatedAt,
           );
     } catch (_) {
       late String _$failedField;
       try {
-        _$failedField = 'createdAt';
-        _createdAt?.build();
         _$failedField = 'exclude';
         _exclude?.build();
 
@@ -198,8 +192,6 @@ class AccessSchemasGroupsBuilder
 
         _$failedField = 'require';
         _require?.build();
-        _$failedField = 'updatedAt';
-        _updatedAt?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
             r'AccessSchemasGroups', _$failedField, e.toString());

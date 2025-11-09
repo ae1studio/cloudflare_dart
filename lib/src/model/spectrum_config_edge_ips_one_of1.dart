@@ -134,11 +134,11 @@ class SpectrumConfigEdgeIpsOneOf1TypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'static')
   static const SpectrumConfigEdgeIpsOneOf1TypeEnum static_ = _$spectrumConfigEdgeIpsOneOf1TypeEnum_static_;
 
-  static Serializer<SpectrumConfigEdgeIpsOneOf1TypeEnum> get serializer => _$spectrumConfigEdgeIpsOneOf1TypeSerializer;
+  static Serializer<SpectrumConfigEdgeIpsOneOf1TypeEnum> get serializer => _$spectrumConfigEdgeIpsOneOf1TypeEnumSerializer;
 
   const SpectrumConfigEdgeIpsOneOf1TypeEnum._(String name): super(name);
 
-  static BuiltSet<SpectrumConfigEdgeIpsOneOf1TypeEnum> get values => _$spectrumConfigEdgeIpsOneOf1TypeValues;
-  static SpectrumConfigEdgeIpsOneOf1TypeEnum valueOf(String name) => _$spectrumConfigEdgeIpsOneOf1TypeValueOf(name);
+  static BuiltSet<SpectrumConfigEdgeIpsOneOf1TypeEnum> get values => _$spectrumConfigEdgeIpsOneOf1TypeEnumValues;
+  static SpectrumConfigEdgeIpsOneOf1TypeEnum valueOf(String name) => _$spectrumConfigEdgeIpsOneOf1TypeEnumValueOf(name);
 }
 

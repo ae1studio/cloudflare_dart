@@ -138,11 +138,11 @@ class ZeroTrustGatewayRuleSettingsQuarantineFileTypesEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'rar')
   static const ZeroTrustGatewayRuleSettingsQuarantineFileTypesEnum rar = _$zeroTrustGatewayRuleSettingsQuarantineFileTypesEnum_rar;
 
-  static Serializer<ZeroTrustGatewayRuleSettingsQuarantineFileTypesEnum> get serializer => _$zeroTrustGatewayRuleSettingsQuarantineFileTypesSerializer;
+  static Serializer<ZeroTrustGatewayRuleSettingsQuarantineFileTypesEnum> get serializer => _$zeroTrustGatewayRuleSettingsQuarantineFileTypesEnumSerializer;
 
   const ZeroTrustGatewayRuleSettingsQuarantineFileTypesEnum._(String name): super(name);
 
-  static BuiltSet<ZeroTrustGatewayRuleSettingsQuarantineFileTypesEnum> get values => _$zeroTrustGatewayRuleSettingsQuarantineFileTypesValues;
-  static ZeroTrustGatewayRuleSettingsQuarantineFileTypesEnum valueOf(String name) => _$zeroTrustGatewayRuleSettingsQuarantineFileTypesValueOf(name);
+  static BuiltSet<ZeroTrustGatewayRuleSettingsQuarantineFileTypesEnum> get values => _$zeroTrustGatewayRuleSettingsQuarantineFileTypesEnumValues;
+  static ZeroTrustGatewayRuleSettingsQuarantineFileTypesEnum valueOf(String name) => _$zeroTrustGatewayRuleSettingsQuarantineFileTypesEnumValueOf(name);
 }
 

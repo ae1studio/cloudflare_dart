@@ -156,11 +156,11 @@ class ZonesPrefetchPreloadIdEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'prefetch_preload')
   static const ZonesPrefetchPreloadIdEnum prefetchPreload = _$zonesPrefetchPreloadIdEnum_prefetchPreload;
 
-  static Serializer<ZonesPrefetchPreloadIdEnum> get serializer => _$zonesPrefetchPreloadIdSerializer;
+  static Serializer<ZonesPrefetchPreloadIdEnum> get serializer => _$zonesPrefetchPreloadIdEnumSerializer;
 
   const ZonesPrefetchPreloadIdEnum._(String name): super(name);
 
-  static BuiltSet<ZonesPrefetchPreloadIdEnum> get values => _$zonesPrefetchPreloadIdValues;
-  static ZonesPrefetchPreloadIdEnum valueOf(String name) => _$zonesPrefetchPreloadIdValueOf(name);
+  static BuiltSet<ZonesPrefetchPreloadIdEnum> get values => _$zonesPrefetchPreloadIdEnumValues;
+  static ZonesPrefetchPreloadIdEnum valueOf(String name) => _$zonesPrefetchPreloadIdEnumValueOf(name);
 }
 

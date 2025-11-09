@@ -149,11 +149,11 @@ class _$DnssecDeleteDnssecRecords4XXResponseSerializer implements PrimitiveSeria
 class DnssecDeleteDnssecRecords4XXResponseResultEnum extends EnumClass {
 
 
-  static Serializer<DnssecDeleteDnssecRecords4XXResponseResultEnum> get serializer => _$dnssecDeleteDnssecRecords4XXResponseResultSerializer;
+  static Serializer<DnssecDeleteDnssecRecords4XXResponseResultEnum> get serializer => _$dnssecDeleteDnssecRecords4XXResponseResultEnumSerializer;
 
   const DnssecDeleteDnssecRecords4XXResponseResultEnum._(String name): super(name);
 
-  static BuiltSet<DnssecDeleteDnssecRecords4XXResponseResultEnum> get values => _$dnssecDeleteDnssecRecords4XXResponseResultValues;
-  static DnssecDeleteDnssecRecords4XXResponseResultEnum valueOf(String name) => _$dnssecDeleteDnssecRecords4XXResponseResultValueOf(name);
+  static BuiltSet<DnssecDeleteDnssecRecords4XXResponseResultEnum> get values => _$dnssecDeleteDnssecRecords4XXResponseResultEnumValues;
+  static DnssecDeleteDnssecRecords4XXResponseResultEnum valueOf(String name) => _$dnssecDeleteDnssecRecords4XXResponseResultEnumValueOf(name);
 }
 

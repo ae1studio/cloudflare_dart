@@ -134,11 +134,11 @@ class ZonesUrlTargetTargetEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'url')
   static const ZonesUrlTargetTargetEnum url = _$zonesUrlTargetTargetEnum_url;
 
-  static Serializer<ZonesUrlTargetTargetEnum> get serializer => _$zonesUrlTargetTargetSerializer;
+  static Serializer<ZonesUrlTargetTargetEnum> get serializer => _$zonesUrlTargetTargetEnumSerializer;
 
   const ZonesUrlTargetTargetEnum._(String name): super(name);
 
-  static BuiltSet<ZonesUrlTargetTargetEnum> get values => _$zonesUrlTargetTargetValues;
-  static ZonesUrlTargetTargetEnum valueOf(String name) => _$zonesUrlTargetTargetValueOf(name);
+  static BuiltSet<ZonesUrlTargetTargetEnum> get values => _$zonesUrlTargetTargetEnumValues;
+  static ZonesUrlTargetTargetEnum valueOf(String name) => _$zonesUrlTargetTargetEnumValueOf(name);
 }
 

@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 **omitBackground** | **bool** |  | [optional] 
 **optimizeForSpeed** | **bool** |  | [optional] 
 **quality** | **num** |  | [optional] 
-**type** | [**BrapiPostScreenshotRequestAllOfScreenshotOptionsType**](BrapiPostScreenshotRequestAllOfScreenshotOptionsType.md) |  | [optional] 
+**type** | **String** |  | [optional] [default to 'png']
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

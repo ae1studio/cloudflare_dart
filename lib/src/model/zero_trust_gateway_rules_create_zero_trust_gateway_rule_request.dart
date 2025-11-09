@@ -321,3 +321,29 @@ class _$ZeroTrustGatewayRulesCreateZeroTrustGatewayRuleRequestSerializer impleme
   }
 }
 
+class ZeroTrustGatewayRulesCreateZeroTrustGatewayRuleRequestFiltersEnum extends EnumClass {
+
+  /// Specify the protocol or layer to use.
+  @BuiltValueEnumConst(wireName: r'http')
+  static const ZeroTrustGatewayRulesCreateZeroTrustGatewayRuleRequestFiltersEnum http = _$zeroTrustGatewayRulesCreateZeroTrustGatewayRuleRequestFiltersEnum_http;
+  /// Specify the protocol or layer to use.
+  @BuiltValueEnumConst(wireName: r'dns')
+  static const ZeroTrustGatewayRulesCreateZeroTrustGatewayRuleRequestFiltersEnum dns = _$zeroTrustGatewayRulesCreateZeroTrustGatewayRuleRequestFiltersEnum_dns;
+  /// Specify the protocol or layer to use.
+  @BuiltValueEnumConst(wireName: r'l4')
+  static const ZeroTrustGatewayRulesCreateZeroTrustGatewayRuleRequestFiltersEnum l4 = _$zeroTrustGatewayRulesCreateZeroTrustGatewayRuleRequestFiltersEnum_l4;
+  /// Specify the protocol or layer to use.
+  @BuiltValueEnumConst(wireName: r'egress')
+  static const ZeroTrustGatewayRulesCreateZeroTrustGatewayRuleRequestFiltersEnum egress = _$zeroTrustGatewayRulesCreateZeroTrustGatewayRuleRequestFiltersEnum_egress;
+  /// Specify the protocol or layer to use.
+  @BuiltValueEnumConst(wireName: r'dns_resolver')
+  static const ZeroTrustGatewayRulesCreateZeroTrustGatewayRuleRequestFiltersEnum dnsResolver = _$zeroTrustGatewayRulesCreateZeroTrustGatewayRuleRequestFiltersEnum_dnsResolver;
+
+  static Serializer<ZeroTrustGatewayRulesCreateZeroTrustGatewayRuleRequestFiltersEnum> get serializer => _$zeroTrustGatewayRulesCreateZeroTrustGatewayRuleRequestFiltersEnumSerializer;
+
+  const ZeroTrustGatewayRulesCreateZeroTrustGatewayRuleRequestFiltersEnum._(String name): super(name);
+
+  static BuiltSet<ZeroTrustGatewayRulesCreateZeroTrustGatewayRuleRequestFiltersEnum> get values => _$zeroTrustGatewayRulesCreateZeroTrustGatewayRuleRequestFiltersEnumValues;
+  static ZeroTrustGatewayRulesCreateZeroTrustGatewayRuleRequestFiltersEnum valueOf(String name) => _$zeroTrustGatewayRulesCreateZeroTrustGatewayRuleRequestFiltersEnumValueOf(name);
+}
+

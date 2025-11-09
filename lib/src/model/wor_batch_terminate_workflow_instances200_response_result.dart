@@ -129,11 +129,11 @@ class WorBatchTerminateWorkflowInstances200ResponseResultStatusEnum extends Enum
   @BuiltValueEnumConst(wireName: r'already_running')
   static const WorBatchTerminateWorkflowInstances200ResponseResultStatusEnum alreadyRunning = _$worBatchTerminateWorkflowInstances200ResponseResultStatusEnum_alreadyRunning;
 
-  static Serializer<WorBatchTerminateWorkflowInstances200ResponseResultStatusEnum> get serializer => _$worBatchTerminateWorkflowInstances200ResponseResultStatusSerializer;
+  static Serializer<WorBatchTerminateWorkflowInstances200ResponseResultStatusEnum> get serializer => _$worBatchTerminateWorkflowInstances200ResponseResultStatusEnumSerializer;
 
   const WorBatchTerminateWorkflowInstances200ResponseResultStatusEnum._(String name): super(name);
 
-  static BuiltSet<WorBatchTerminateWorkflowInstances200ResponseResultStatusEnum> get values => _$worBatchTerminateWorkflowInstances200ResponseResultStatusValues;
-  static WorBatchTerminateWorkflowInstances200ResponseResultStatusEnum valueOf(String name) => _$worBatchTerminateWorkflowInstances200ResponseResultStatusValueOf(name);
+  static BuiltSet<WorBatchTerminateWorkflowInstances200ResponseResultStatusEnum> get values => _$worBatchTerminateWorkflowInstances200ResponseResultStatusEnumValues;
+  static WorBatchTerminateWorkflowInstances200ResponseResultStatusEnum valueOf(String name) => _$worBatchTerminateWorkflowInstances200ResponseResultStatusEnumValueOf(name);
 }
 

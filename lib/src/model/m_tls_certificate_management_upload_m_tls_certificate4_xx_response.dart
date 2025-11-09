@@ -149,11 +149,11 @@ class _$MTlsCertificateManagementUploadMTlsCertificate4XXResponseSerializer impl
 class MTlsCertificateManagementUploadMTlsCertificate4XXResponseResultEnum extends EnumClass {
 
 
-  static Serializer<MTlsCertificateManagementUploadMTlsCertificate4XXResponseResultEnum> get serializer => _$mTlsCertificateManagementUploadMTlsCertificate4XXResponseResultSerializer;
+  static Serializer<MTlsCertificateManagementUploadMTlsCertificate4XXResponseResultEnum> get serializer => _$mTlsCertificateManagementUploadMTlsCertificate4XXResponseResultEnumSerializer;
 
   const MTlsCertificateManagementUploadMTlsCertificate4XXResponseResultEnum._(String name): super(name);
 
-  static BuiltSet<MTlsCertificateManagementUploadMTlsCertificate4XXResponseResultEnum> get values => _$mTlsCertificateManagementUploadMTlsCertificate4XXResponseResultValues;
-  static MTlsCertificateManagementUploadMTlsCertificate4XXResponseResultEnum valueOf(String name) => _$mTlsCertificateManagementUploadMTlsCertificate4XXResponseResultValueOf(name);
+  static BuiltSet<MTlsCertificateManagementUploadMTlsCertificate4XXResponseResultEnum> get values => _$mTlsCertificateManagementUploadMTlsCertificate4XXResponseResultEnumValues;
+  static MTlsCertificateManagementUploadMTlsCertificate4XXResponseResultEnum valueOf(String name) => _$mTlsCertificateManagementUploadMTlsCertificate4XXResponseResultEnumValueOf(name);
 }
 

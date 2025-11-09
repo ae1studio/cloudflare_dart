@@ -3,7 +3,6 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:built_value/json_object.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
@@ -12,9 +11,10 @@ part 'cursors.g.dart';
 /// The set of cursors.
 ///
 /// Properties:
-/// * [after] 
+/// * [after] - The cursor to use for the next page.
 @BuiltValue()
 abstract class Cursors implements Built<Cursors, CursorsBuilder> {
+  /// The cursor to use for the next page.
   @BuiltValueField(wireName: r'after')
   String get after;
 

@@ -143,11 +143,11 @@ class DlpNewSharedEntryOneOf2EntryTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'integration')
   static const DlpNewSharedEntryOneOf2EntryTypeEnum integration = _$dlpNewSharedEntryOneOf2EntryTypeEnum_integration;
 
-  static Serializer<DlpNewSharedEntryOneOf2EntryTypeEnum> get serializer => _$dlpNewSharedEntryOneOf2EntryTypeSerializer;
+  static Serializer<DlpNewSharedEntryOneOf2EntryTypeEnum> get serializer => _$dlpNewSharedEntryOneOf2EntryTypeEnumSerializer;
 
   const DlpNewSharedEntryOneOf2EntryTypeEnum._(String name): super(name);
 
-  static BuiltSet<DlpNewSharedEntryOneOf2EntryTypeEnum> get values => _$dlpNewSharedEntryOneOf2EntryTypeValues;
-  static DlpNewSharedEntryOneOf2EntryTypeEnum valueOf(String name) => _$dlpNewSharedEntryOneOf2EntryTypeValueOf(name);
+  static BuiltSet<DlpNewSharedEntryOneOf2EntryTypeEnum> get values => _$dlpNewSharedEntryOneOf2EntryTypeEnumValues;
+  static DlpNewSharedEntryOneOf2EntryTypeEnum valueOf(String name) => _$dlpNewSharedEntryOneOf2EntryTypeEnumValueOf(name);
 }
 

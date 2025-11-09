@@ -194,11 +194,11 @@ class _$$MagicApiResponseCommonFailureSerializer implements PrimitiveSerializer<
 class MagicApiResponseCommonFailureResultEnum extends EnumClass {
 
 
-  static Serializer<MagicApiResponseCommonFailureResultEnum> get serializer => _$magicApiResponseCommonFailureResultSerializer;
+  static Serializer<MagicApiResponseCommonFailureResultEnum> get serializer => _$magicApiResponseCommonFailureResultEnumSerializer;
 
   const MagicApiResponseCommonFailureResultEnum._(String name): super(name);
 
-  static BuiltSet<MagicApiResponseCommonFailureResultEnum> get values => _$magicApiResponseCommonFailureResultValues;
-  static MagicApiResponseCommonFailureResultEnum valueOf(String name) => _$magicApiResponseCommonFailureResultValueOf(name);
+  static BuiltSet<MagicApiResponseCommonFailureResultEnum> get values => _$magicApiResponseCommonFailureResultEnumValues;
+  static MagicApiResponseCommonFailureResultEnum valueOf(String name) => _$magicApiResponseCommonFailureResultEnumValueOf(name);
 }
 

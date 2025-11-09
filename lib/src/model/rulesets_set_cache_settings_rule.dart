@@ -22,7 +22,7 @@ part 'rulesets_set_cache_settings_rule.g.dart';
 /// * [actionParameters] 
 /// * [categories] - The categories of the rule.
 /// * [description] 
-/// * [enabled] 
+/// * [enabled] - Whether the rule should be executed.
 /// * [exposedCredentialCheck] 
 /// * [expression] - The expression defining which traffic will match the rule.
 /// * [id] - The unique ID of the rule.
@@ -40,6 +40,7 @@ abstract class RulesetsSetCacheSettingsRule implements RulesetsRule, Built<Rules
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(RulesetsSetCacheSettingsRuleBuilder b) => b
       ..description = ''
+      ..enabled = true
       ..actionParameters = {};
 
   @BuiltValueSerializer(custom: true)
@@ -293,11 +294,11 @@ class RulesetsSetCacheSettingsRuleActionEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'set_cache_settings')
   static const RulesetsSetCacheSettingsRuleActionEnum setCacheSettings = _$rulesetsSetCacheSettingsRuleActionEnum_setCacheSettings;
 
-  static Serializer<RulesetsSetCacheSettingsRuleActionEnum> get serializer => _$rulesetsSetCacheSettingsRuleActionSerializer;
+  static Serializer<RulesetsSetCacheSettingsRuleActionEnum> get serializer => _$rulesetsSetCacheSettingsRuleActionEnumSerializer;
 
   const RulesetsSetCacheSettingsRuleActionEnum._(String name): super(name);
 
-  static BuiltSet<RulesetsSetCacheSettingsRuleActionEnum> get values => _$rulesetsSetCacheSettingsRuleActionValues;
-  static RulesetsSetCacheSettingsRuleActionEnum valueOf(String name) => _$rulesetsSetCacheSettingsRuleActionValueOf(name);
+  static BuiltSet<RulesetsSetCacheSettingsRuleActionEnum> get values => _$rulesetsSetCacheSettingsRuleActionEnumValues;
+  static RulesetsSetCacheSettingsRuleActionEnum valueOf(String name) => _$rulesetsSetCacheSettingsRuleActionEnumValueOf(name);
 }
 

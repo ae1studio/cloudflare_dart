@@ -147,11 +147,11 @@ class WorkersBindingKindQueueTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'queue')
   static const WorkersBindingKindQueueTypeEnum queue = _$workersBindingKindQueueTypeEnum_queue;
 
-  static Serializer<WorkersBindingKindQueueTypeEnum> get serializer => _$workersBindingKindQueueTypeSerializer;
+  static Serializer<WorkersBindingKindQueueTypeEnum> get serializer => _$workersBindingKindQueueTypeEnumSerializer;
 
   const WorkersBindingKindQueueTypeEnum._(String name): super(name);
 
-  static BuiltSet<WorkersBindingKindQueueTypeEnum> get values => _$workersBindingKindQueueTypeValues;
-  static WorkersBindingKindQueueTypeEnum valueOf(String name) => _$workersBindingKindQueueTypeValueOf(name);
+  static BuiltSet<WorkersBindingKindQueueTypeEnum> get values => _$workersBindingKindQueueTypeEnumValues;
+  static WorkersBindingKindQueueTypeEnum valueOf(String name) => _$workersBindingKindQueueTypeEnumValueOf(name);
 }
 

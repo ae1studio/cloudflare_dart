@@ -248,12 +248,12 @@ class AbuseReportsSubmitReportRequestActEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'abuse_ncsei')
   static const AbuseReportsSubmitReportRequestActEnum abuseNcsei = _$abuseReportsSubmitReportRequestActEnum_abuseNcsei;
 
-  static Serializer<AbuseReportsSubmitReportRequestActEnum> get serializer => _$abuseReportsSubmitReportRequestActSerializer;
+  static Serializer<AbuseReportsSubmitReportRequestActEnum> get serializer => _$abuseReportsSubmitReportRequestActEnumSerializer;
 
   const AbuseReportsSubmitReportRequestActEnum._(String name): super(name);
 
-  static BuiltSet<AbuseReportsSubmitReportRequestActEnum> get values => _$abuseReportsSubmitReportRequestActValues;
-  static AbuseReportsSubmitReportRequestActEnum valueOf(String name) => _$abuseReportsSubmitReportRequestActValueOf(name);
+  static BuiltSet<AbuseReportsSubmitReportRequestActEnum> get values => _$abuseReportsSubmitReportRequestActEnumValues;
+  static AbuseReportsSubmitReportRequestActEnum valueOf(String name) => _$abuseReportsSubmitReportRequestActEnumValueOf(name);
 }
 
 class AbuseReportsSubmitReportRequestAgreeEnum extends EnumClass {
@@ -262,12 +262,12 @@ class AbuseReportsSubmitReportRequestAgreeEnum extends EnumClass {
   @BuiltValueEnumConst(wireNumber: 1)
   static const AbuseReportsSubmitReportRequestAgreeEnum number1 = _$abuseReportsSubmitReportRequestAgreeEnum_number1;
 
-  static Serializer<AbuseReportsSubmitReportRequestAgreeEnum> get serializer => _$abuseReportsSubmitReportRequestAgreeSerializer;
+  static Serializer<AbuseReportsSubmitReportRequestAgreeEnum> get serializer => _$abuseReportsSubmitReportRequestAgreeEnumSerializer;
 
   const AbuseReportsSubmitReportRequestAgreeEnum._(String name): super(name);
 
-  static BuiltSet<AbuseReportsSubmitReportRequestAgreeEnum> get values => _$abuseReportsSubmitReportRequestAgreeValues;
-  static AbuseReportsSubmitReportRequestAgreeEnum valueOf(String name) => _$abuseReportsSubmitReportRequestAgreeValueOf(name);
+  static BuiltSet<AbuseReportsSubmitReportRequestAgreeEnum> get values => _$abuseReportsSubmitReportRequestAgreeEnumValues;
+  static AbuseReportsSubmitReportRequestAgreeEnum valueOf(String name) => _$abuseReportsSubmitReportRequestAgreeEnumValueOf(name);
 }
 
 class AbuseReportsSubmitReportRequestHostNotificationEnum extends EnumClass {
@@ -279,12 +279,12 @@ class AbuseReportsSubmitReportRequestHostNotificationEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'send-anon')
   static const AbuseReportsSubmitReportRequestHostNotificationEnum sendAnon = _$abuseReportsSubmitReportRequestHostNotificationEnum_sendAnon;
 
-  static Serializer<AbuseReportsSubmitReportRequestHostNotificationEnum> get serializer => _$abuseReportsSubmitReportRequestHostNotificationSerializer;
+  static Serializer<AbuseReportsSubmitReportRequestHostNotificationEnum> get serializer => _$abuseReportsSubmitReportRequestHostNotificationEnumSerializer;
 
   const AbuseReportsSubmitReportRequestHostNotificationEnum._(String name): super(name);
 
-  static BuiltSet<AbuseReportsSubmitReportRequestHostNotificationEnum> get values => _$abuseReportsSubmitReportRequestHostNotificationValues;
-  static AbuseReportsSubmitReportRequestHostNotificationEnum valueOf(String name) => _$abuseReportsSubmitReportRequestHostNotificationValueOf(name);
+  static BuiltSet<AbuseReportsSubmitReportRequestHostNotificationEnum> get values => _$abuseReportsSubmitReportRequestHostNotificationEnumValues;
+  static AbuseReportsSubmitReportRequestHostNotificationEnum valueOf(String name) => _$abuseReportsSubmitReportRequestHostNotificationEnumValueOf(name);
 }
 
 class AbuseReportsSubmitReportRequestOwnerNotificationEnum extends EnumClass {
@@ -299,12 +299,12 @@ class AbuseReportsSubmitReportRequestOwnerNotificationEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'none')
   static const AbuseReportsSubmitReportRequestOwnerNotificationEnum none = _$abuseReportsSubmitReportRequestOwnerNotificationEnum_none;
 
-  static Serializer<AbuseReportsSubmitReportRequestOwnerNotificationEnum> get serializer => _$abuseReportsSubmitReportRequestOwnerNotificationSerializer;
+  static Serializer<AbuseReportsSubmitReportRequestOwnerNotificationEnum> get serializer => _$abuseReportsSubmitReportRequestOwnerNotificationEnumSerializer;
 
   const AbuseReportsSubmitReportRequestOwnerNotificationEnum._(String name): super(name);
 
-  static BuiltSet<AbuseReportsSubmitReportRequestOwnerNotificationEnum> get values => _$abuseReportsSubmitReportRequestOwnerNotificationValues;
-  static AbuseReportsSubmitReportRequestOwnerNotificationEnum valueOf(String name) => _$abuseReportsSubmitReportRequestOwnerNotificationValueOf(name);
+  static BuiltSet<AbuseReportsSubmitReportRequestOwnerNotificationEnum> get values => _$abuseReportsSubmitReportRequestOwnerNotificationEnumValues;
+  static AbuseReportsSubmitReportRequestOwnerNotificationEnum valueOf(String name) => _$abuseReportsSubmitReportRequestOwnerNotificationEnumValueOf(name);
 }
 
 class AbuseReportsSubmitReportRequestNcmecNotificationEnum extends EnumClass {
@@ -316,11 +316,11 @@ class AbuseReportsSubmitReportRequestNcmecNotificationEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'send-anon')
   static const AbuseReportsSubmitReportRequestNcmecNotificationEnum sendAnon = _$abuseReportsSubmitReportRequestNcmecNotificationEnum_sendAnon;
 
-  static Serializer<AbuseReportsSubmitReportRequestNcmecNotificationEnum> get serializer => _$abuseReportsSubmitReportRequestNcmecNotificationSerializer;
+  static Serializer<AbuseReportsSubmitReportRequestNcmecNotificationEnum> get serializer => _$abuseReportsSubmitReportRequestNcmecNotificationEnumSerializer;
 
   const AbuseReportsSubmitReportRequestNcmecNotificationEnum._(String name): super(name);
 
-  static BuiltSet<AbuseReportsSubmitReportRequestNcmecNotificationEnum> get values => _$abuseReportsSubmitReportRequestNcmecNotificationValues;
-  static AbuseReportsSubmitReportRequestNcmecNotificationEnum valueOf(String name) => _$abuseReportsSubmitReportRequestNcmecNotificationValueOf(name);
+  static BuiltSet<AbuseReportsSubmitReportRequestNcmecNotificationEnum> get values => _$abuseReportsSubmitReportRequestNcmecNotificationEnumValues;
+  static AbuseReportsSubmitReportRequestNcmecNotificationEnum valueOf(String name) => _$abuseReportsSubmitReportRequestNcmecNotificationEnumValueOf(name);
 }
 

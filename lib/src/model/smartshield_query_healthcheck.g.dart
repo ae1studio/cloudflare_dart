@@ -6,11 +6,170 @@ part of 'smartshield_query_healthcheck.dart';
 // BuiltValueGenerator
 // **************************************************************************
 
+const SmartshieldQueryHealthcheckCheckRegionsEnum
+    _$smartshieldQueryHealthcheckCheckRegionsEnum_WNAM =
+    const SmartshieldQueryHealthcheckCheckRegionsEnum._('WNAM');
+const SmartshieldQueryHealthcheckCheckRegionsEnum
+    _$smartshieldQueryHealthcheckCheckRegionsEnum_ENAM =
+    const SmartshieldQueryHealthcheckCheckRegionsEnum._('ENAM');
+const SmartshieldQueryHealthcheckCheckRegionsEnum
+    _$smartshieldQueryHealthcheckCheckRegionsEnum_WEU =
+    const SmartshieldQueryHealthcheckCheckRegionsEnum._('WEU');
+const SmartshieldQueryHealthcheckCheckRegionsEnum
+    _$smartshieldQueryHealthcheckCheckRegionsEnum_EEU =
+    const SmartshieldQueryHealthcheckCheckRegionsEnum._('EEU');
+const SmartshieldQueryHealthcheckCheckRegionsEnum
+    _$smartshieldQueryHealthcheckCheckRegionsEnum_NSAM =
+    const SmartshieldQueryHealthcheckCheckRegionsEnum._('NSAM');
+const SmartshieldQueryHealthcheckCheckRegionsEnum
+    _$smartshieldQueryHealthcheckCheckRegionsEnum_SSAM =
+    const SmartshieldQueryHealthcheckCheckRegionsEnum._('SSAM');
+const SmartshieldQueryHealthcheckCheckRegionsEnum
+    _$smartshieldQueryHealthcheckCheckRegionsEnum_OC =
+    const SmartshieldQueryHealthcheckCheckRegionsEnum._('OC');
+const SmartshieldQueryHealthcheckCheckRegionsEnum
+    _$smartshieldQueryHealthcheckCheckRegionsEnum_ME =
+    const SmartshieldQueryHealthcheckCheckRegionsEnum._('ME');
+const SmartshieldQueryHealthcheckCheckRegionsEnum
+    _$smartshieldQueryHealthcheckCheckRegionsEnum_NAF =
+    const SmartshieldQueryHealthcheckCheckRegionsEnum._('NAF');
+const SmartshieldQueryHealthcheckCheckRegionsEnum
+    _$smartshieldQueryHealthcheckCheckRegionsEnum_SAF =
+    const SmartshieldQueryHealthcheckCheckRegionsEnum._('SAF');
+const SmartshieldQueryHealthcheckCheckRegionsEnum
+    _$smartshieldQueryHealthcheckCheckRegionsEnum_IN =
+    const SmartshieldQueryHealthcheckCheckRegionsEnum._('IN');
+const SmartshieldQueryHealthcheckCheckRegionsEnum
+    _$smartshieldQueryHealthcheckCheckRegionsEnum_SEAS =
+    const SmartshieldQueryHealthcheckCheckRegionsEnum._('SEAS');
+const SmartshieldQueryHealthcheckCheckRegionsEnum
+    _$smartshieldQueryHealthcheckCheckRegionsEnum_NEAS =
+    const SmartshieldQueryHealthcheckCheckRegionsEnum._('NEAS');
+const SmartshieldQueryHealthcheckCheckRegionsEnum
+    _$smartshieldQueryHealthcheckCheckRegionsEnum_ALL_REGIONS =
+    const SmartshieldQueryHealthcheckCheckRegionsEnum._('ALL_REGIONS');
+
+SmartshieldQueryHealthcheckCheckRegionsEnum
+    _$smartshieldQueryHealthcheckCheckRegionsEnumValueOf(String name) {
+  switch (name) {
+    case 'WNAM':
+      return _$smartshieldQueryHealthcheckCheckRegionsEnum_WNAM;
+    case 'ENAM':
+      return _$smartshieldQueryHealthcheckCheckRegionsEnum_ENAM;
+    case 'WEU':
+      return _$smartshieldQueryHealthcheckCheckRegionsEnum_WEU;
+    case 'EEU':
+      return _$smartshieldQueryHealthcheckCheckRegionsEnum_EEU;
+    case 'NSAM':
+      return _$smartshieldQueryHealthcheckCheckRegionsEnum_NSAM;
+    case 'SSAM':
+      return _$smartshieldQueryHealthcheckCheckRegionsEnum_SSAM;
+    case 'OC':
+      return _$smartshieldQueryHealthcheckCheckRegionsEnum_OC;
+    case 'ME':
+      return _$smartshieldQueryHealthcheckCheckRegionsEnum_ME;
+    case 'NAF':
+      return _$smartshieldQueryHealthcheckCheckRegionsEnum_NAF;
+    case 'SAF':
+      return _$smartshieldQueryHealthcheckCheckRegionsEnum_SAF;
+    case 'IN':
+      return _$smartshieldQueryHealthcheckCheckRegionsEnum_IN;
+    case 'SEAS':
+      return _$smartshieldQueryHealthcheckCheckRegionsEnum_SEAS;
+    case 'NEAS':
+      return _$smartshieldQueryHealthcheckCheckRegionsEnum_NEAS;
+    case 'ALL_REGIONS':
+      return _$smartshieldQueryHealthcheckCheckRegionsEnum_ALL_REGIONS;
+    default:
+      throw ArgumentError(name);
+  }
+}
+
+final BuiltSet<SmartshieldQueryHealthcheckCheckRegionsEnum>
+    _$smartshieldQueryHealthcheckCheckRegionsEnumValues = BuiltSet<
+        SmartshieldQueryHealthcheckCheckRegionsEnum>(const <SmartshieldQueryHealthcheckCheckRegionsEnum>[
+  _$smartshieldQueryHealthcheckCheckRegionsEnum_WNAM,
+  _$smartshieldQueryHealthcheckCheckRegionsEnum_ENAM,
+  _$smartshieldQueryHealthcheckCheckRegionsEnum_WEU,
+  _$smartshieldQueryHealthcheckCheckRegionsEnum_EEU,
+  _$smartshieldQueryHealthcheckCheckRegionsEnum_NSAM,
+  _$smartshieldQueryHealthcheckCheckRegionsEnum_SSAM,
+  _$smartshieldQueryHealthcheckCheckRegionsEnum_OC,
+  _$smartshieldQueryHealthcheckCheckRegionsEnum_ME,
+  _$smartshieldQueryHealthcheckCheckRegionsEnum_NAF,
+  _$smartshieldQueryHealthcheckCheckRegionsEnum_SAF,
+  _$smartshieldQueryHealthcheckCheckRegionsEnum_IN,
+  _$smartshieldQueryHealthcheckCheckRegionsEnum_SEAS,
+  _$smartshieldQueryHealthcheckCheckRegionsEnum_NEAS,
+  _$smartshieldQueryHealthcheckCheckRegionsEnum_ALL_REGIONS,
+]);
+
+Serializer<SmartshieldQueryHealthcheckCheckRegionsEnum>
+    _$smartshieldQueryHealthcheckCheckRegionsEnumSerializer =
+    _$SmartshieldQueryHealthcheckCheckRegionsEnumSerializer();
+
+class _$SmartshieldQueryHealthcheckCheckRegionsEnumSerializer
+    implements
+        PrimitiveSerializer<SmartshieldQueryHealthcheckCheckRegionsEnum> {
+  static const Map<String, Object> _toWire = const <String, Object>{
+    'WNAM': 'WNAM',
+    'ENAM': 'ENAM',
+    'WEU': 'WEU',
+    'EEU': 'EEU',
+    'NSAM': 'NSAM',
+    'SSAM': 'SSAM',
+    'OC': 'OC',
+    'ME': 'ME',
+    'NAF': 'NAF',
+    'SAF': 'SAF',
+    'IN': 'IN',
+    'SEAS': 'SEAS',
+    'NEAS': 'NEAS',
+    'ALL_REGIONS': 'ALL_REGIONS',
+  };
+  static const Map<Object, String> _fromWire = const <Object, String>{
+    'WNAM': 'WNAM',
+    'ENAM': 'ENAM',
+    'WEU': 'WEU',
+    'EEU': 'EEU',
+    'NSAM': 'NSAM',
+    'SSAM': 'SSAM',
+    'OC': 'OC',
+    'ME': 'ME',
+    'NAF': 'NAF',
+    'SAF': 'SAF',
+    'IN': 'IN',
+    'SEAS': 'SEAS',
+    'NEAS': 'NEAS',
+    'ALL_REGIONS': 'ALL_REGIONS',
+  };
+
+  @override
+  final Iterable<Type> types = const <Type>[
+    SmartshieldQueryHealthcheckCheckRegionsEnum
+  ];
+  @override
+  final String wireName = 'SmartshieldQueryHealthcheckCheckRegionsEnum';
+
+  @override
+  Object serialize(Serializers serializers,
+          SmartshieldQueryHealthcheckCheckRegionsEnum object,
+          {FullType specifiedType = FullType.unspecified}) =>
+      _toWire[object.name] ?? object.name;
+
+  @override
+  SmartshieldQueryHealthcheckCheckRegionsEnum deserialize(
+          Serializers serializers, Object serialized,
+          {FullType specifiedType = FullType.unspecified}) =>
+      SmartshieldQueryHealthcheckCheckRegionsEnum.valueOf(
+          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+}
+
 class _$SmartshieldQueryHealthcheck extends SmartshieldQueryHealthcheck {
   @override
   final String address;
   @override
-  final BuiltList<dynamic>? checkRegions;
+  final BuiltList<SmartshieldQueryHealthcheckCheckRegionsEnum>? checkRegions;
   @override
   final int? consecutiveFails;
   @override
@@ -131,10 +290,13 @@ class SmartshieldQueryHealthcheckBuilder
   String? get address => _$this._address;
   set address(String? address) => _$this._address = address;
 
-  ListBuilder<dynamic>? _checkRegions;
-  ListBuilder<dynamic> get checkRegions =>
-      _$this._checkRegions ??= ListBuilder<dynamic>();
-  set checkRegions(ListBuilder<dynamic>? checkRegions) =>
+  ListBuilder<SmartshieldQueryHealthcheckCheckRegionsEnum>? _checkRegions;
+  ListBuilder<SmartshieldQueryHealthcheckCheckRegionsEnum> get checkRegions =>
+      _$this._checkRegions ??=
+          ListBuilder<SmartshieldQueryHealthcheckCheckRegionsEnum>();
+  set checkRegions(
+          ListBuilder<SmartshieldQueryHealthcheckCheckRegionsEnum>?
+              checkRegions) =>
       _$this._checkRegions = checkRegions;
 
   int? _consecutiveFails;

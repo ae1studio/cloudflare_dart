@@ -164,11 +164,11 @@ class WorkersBindingKindSecretsStoreSecretTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'secrets_store_secret')
   static const WorkersBindingKindSecretsStoreSecretTypeEnum secretsStoreSecret = _$workersBindingKindSecretsStoreSecretTypeEnum_secretsStoreSecret;
 
-  static Serializer<WorkersBindingKindSecretsStoreSecretTypeEnum> get serializer => _$workersBindingKindSecretsStoreSecretTypeSerializer;
+  static Serializer<WorkersBindingKindSecretsStoreSecretTypeEnum> get serializer => _$workersBindingKindSecretsStoreSecretTypeEnumSerializer;
 
   const WorkersBindingKindSecretsStoreSecretTypeEnum._(String name): super(name);
 
-  static BuiltSet<WorkersBindingKindSecretsStoreSecretTypeEnum> get values => _$workersBindingKindSecretsStoreSecretTypeValues;
-  static WorkersBindingKindSecretsStoreSecretTypeEnum valueOf(String name) => _$workersBindingKindSecretsStoreSecretTypeValueOf(name);
+  static BuiltSet<WorkersBindingKindSecretsStoreSecretTypeEnum> get values => _$workersBindingKindSecretsStoreSecretTypeEnumValues;
+  static WorkersBindingKindSecretsStoreSecretTypeEnum valueOf(String name) => _$workersBindingKindSecretsStoreSecretTypeEnumValueOf(name);
 }
 

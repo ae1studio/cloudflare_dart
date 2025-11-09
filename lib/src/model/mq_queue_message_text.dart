@@ -131,11 +131,11 @@ class MqQueueMessageTextContentTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'text')
   static const MqQueueMessageTextContentTypeEnum text = _$mqQueueMessageTextContentTypeEnum_text;
 
-  static Serializer<MqQueueMessageTextContentTypeEnum> get serializer => _$mqQueueMessageTextContentTypeSerializer;
+  static Serializer<MqQueueMessageTextContentTypeEnum> get serializer => _$mqQueueMessageTextContentTypeEnumSerializer;
 
   const MqQueueMessageTextContentTypeEnum._(String name): super(name);
 
-  static BuiltSet<MqQueueMessageTextContentTypeEnum> get values => _$mqQueueMessageTextContentTypeValues;
-  static MqQueueMessageTextContentTypeEnum valueOf(String name) => _$mqQueueMessageTextContentTypeValueOf(name);
+  static BuiltSet<MqQueueMessageTextContentTypeEnum> get values => _$mqQueueMessageTextContentTypeEnumValues;
+  static MqQueueMessageTextContentTypeEnum valueOf(String name) => _$mqQueueMessageTextContentTypeEnumValueOf(name);
 }
 

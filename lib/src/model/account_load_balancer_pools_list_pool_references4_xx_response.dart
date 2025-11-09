@@ -148,11 +148,11 @@ class _$AccountLoadBalancerPoolsListPoolReferences4XXResponseSerializer implemen
 class AccountLoadBalancerPoolsListPoolReferences4XXResponseResultEnum extends EnumClass {
 
 
-  static Serializer<AccountLoadBalancerPoolsListPoolReferences4XXResponseResultEnum> get serializer => _$accountLoadBalancerPoolsListPoolReferences4XXResponseResultSerializer;
+  static Serializer<AccountLoadBalancerPoolsListPoolReferences4XXResponseResultEnum> get serializer => _$accountLoadBalancerPoolsListPoolReferences4XXResponseResultEnumSerializer;
 
   const AccountLoadBalancerPoolsListPoolReferences4XXResponseResultEnum._(String name): super(name);
 
-  static BuiltSet<AccountLoadBalancerPoolsListPoolReferences4XXResponseResultEnum> get values => _$accountLoadBalancerPoolsListPoolReferences4XXResponseResultValues;
-  static AccountLoadBalancerPoolsListPoolReferences4XXResponseResultEnum valueOf(String name) => _$accountLoadBalancerPoolsListPoolReferences4XXResponseResultValueOf(name);
+  static BuiltSet<AccountLoadBalancerPoolsListPoolReferences4XXResponseResultEnum> get values => _$accountLoadBalancerPoolsListPoolReferences4XXResponseResultEnumValues;
+  static AccountLoadBalancerPoolsListPoolReferences4XXResponseResultEnum valueOf(String name) => _$accountLoadBalancerPoolsListPoolReferences4XXResponseResultEnumValueOf(name);
 }
 

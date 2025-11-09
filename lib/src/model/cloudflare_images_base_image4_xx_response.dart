@@ -149,11 +149,11 @@ class _$CloudflareImagesBaseImage4XXResponseSerializer implements PrimitiveSeria
 class CloudflareImagesBaseImage4XXResponseResultEnum extends EnumClass {
 
 
-  static Serializer<CloudflareImagesBaseImage4XXResponseResultEnum> get serializer => _$cloudflareImagesBaseImage4XXResponseResultSerializer;
+  static Serializer<CloudflareImagesBaseImage4XXResponseResultEnum> get serializer => _$cloudflareImagesBaseImage4XXResponseResultEnumSerializer;
 
   const CloudflareImagesBaseImage4XXResponseResultEnum._(String name): super(name);
 
-  static BuiltSet<CloudflareImagesBaseImage4XXResponseResultEnum> get values => _$cloudflareImagesBaseImage4XXResponseResultValues;
-  static CloudflareImagesBaseImage4XXResponseResultEnum valueOf(String name) => _$cloudflareImagesBaseImage4XXResponseResultValueOf(name);
+  static BuiltSet<CloudflareImagesBaseImage4XXResponseResultEnum> get values => _$cloudflareImagesBaseImage4XXResponseResultEnumValues;
+  static CloudflareImagesBaseImage4XXResponseResultEnum valueOf(String name) => _$cloudflareImagesBaseImage4XXResponseResultEnumValueOf(name);
 }
 

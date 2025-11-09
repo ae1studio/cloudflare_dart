@@ -86,7 +86,7 @@ abstract class EmailSecurityDomain implements Built<EmailSecurityDomain, EmailSe
   String? get o365TenantId;
 
   @BuiltValueField(wireName: r'regions')
-  BuiltList<EmailSecurityUpdateDomainRequestRegionsEnum> get regions;
+  BuiltList<EmailSecurityDomainRegionsEnum> get regions;
   // enum regionsEnum {  GLOBAL,  AU,  DE,  IN,  US,  };
 
   @BuiltValueField(wireName: r'require_tls_inbound')
@@ -216,7 +216,7 @@ class _$EmailSecurityDomainSerializer implements PrimitiveSerializer<EmailSecuri
     yield r'regions';
     yield serializers.serialize(
       object.regions,
-      specifiedType: const FullType(BuiltList, [FullType(EmailSecurityUpdateDomainRequestRegionsEnum)]),
+      specifiedType: const FullType(BuiltList, [FullType(EmailSecurityDomainRegionsEnum)]),
     );
     if (object.requireTlsInbound != null) {
       yield r'require_tls_inbound';
@@ -377,8 +377,8 @@ class _$EmailSecurityDomainSerializer implements PrimitiveSerializer<EmailSecuri
         case r'regions':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(BuiltList, [FullType(EmailSecurityUpdateDomainRequestRegionsEnum)]),
-          ) as BuiltList<EmailSecurityUpdateDomainRequestRegionsEnum>;
+            specifiedType: const FullType(BuiltList, [FullType(EmailSecurityDomainRegionsEnum)]),
+          ) as BuiltList<EmailSecurityDomainRegionsEnum>;
           result.regions.replace(valueDes);
           break;
         case r'require_tls_inbound':
@@ -440,24 +440,24 @@ class _$EmailSecurityDomainSerializer implements PrimitiveSerializer<EmailSecuri
   }
 }
 
-class EmailSecurityUpdateDomainRequestRegionsEnum extends EnumClass {
+class EmailSecurityDomainRegionsEnum extends EnumClass {
 
   @BuiltValueEnumConst(wireName: r'GLOBAL')
-  static const EmailSecurityUpdateDomainRequestRegionsEnum GLOBAL = _\$emailSecurityUpdateDomainRequestRegions_GLOBAL;
+  static const EmailSecurityDomainRegionsEnum GLOBAL = _$emailSecurityDomainRegionsEnum_GLOBAL;
   @BuiltValueEnumConst(wireName: r'AU')
-  static const EmailSecurityUpdateDomainRequestRegionsEnum AU = _\$emailSecurityUpdateDomainRequestRegions_AU;
+  static const EmailSecurityDomainRegionsEnum AU = _$emailSecurityDomainRegionsEnum_AU;
   @BuiltValueEnumConst(wireName: r'DE')
-  static const EmailSecurityUpdateDomainRequestRegionsEnum DE = _\$emailSecurityUpdateDomainRequestRegions_DE;
+  static const EmailSecurityDomainRegionsEnum DE = _$emailSecurityDomainRegionsEnum_DE;
   @BuiltValueEnumConst(wireName: r'IN')
-  static const EmailSecurityUpdateDomainRequestRegionsEnum IN = _\$emailSecurityUpdateDomainRequestRegions_IN;
+  static const EmailSecurityDomainRegionsEnum IN = _$emailSecurityDomainRegionsEnum_IN;
   @BuiltValueEnumConst(wireName: r'US')
-  static const EmailSecurityUpdateDomainRequestRegionsEnum US = _\$emailSecurityUpdateDomainRequestRegions_US;
+  static const EmailSecurityDomainRegionsEnum US = _$emailSecurityDomainRegionsEnum_US;
 
-  static Serializer<EmailSecurityUpdateDomainRequestRegionsEnum> get serializer => _$emailSecurityUpdateDomainRequestRegionsSerializer;
+  static Serializer<EmailSecurityDomainRegionsEnum> get serializer => _$emailSecurityDomainRegionsEnumSerializer;
 
-  const EmailSecurityUpdateDomainRequestRegionsEnum._(String name): super(name);
+  const EmailSecurityDomainRegionsEnum._(String name): super(name);
 
-  static BuiltSet<EmailSecurityUpdateDomainRequestRegionsEnum> get values => _$emailSecurityUpdateDomainRequestRegionsValues;
-  static EmailSecurityUpdateDomainRequestRegionsEnum valueOf(String name) => _$emailSecurityUpdateDomainRequestRegionsValueOf(name);
+  static BuiltSet<EmailSecurityDomainRegionsEnum> get values => _$emailSecurityDomainRegionsEnumValues;
+  static EmailSecurityDomainRegionsEnum valueOf(String name) => _$emailSecurityDomainRegionsEnumValueOf(name);
 }
 

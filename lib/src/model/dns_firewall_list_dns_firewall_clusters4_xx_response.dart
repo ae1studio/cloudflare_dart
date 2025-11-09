@@ -166,11 +166,11 @@ class _$DnsFirewallListDnsFirewallClusters4XXResponseSerializer implements Primi
 class DnsFirewallListDnsFirewallClusters4XXResponseResultEnum extends EnumClass {
 
 
-  static Serializer<DnsFirewallListDnsFirewallClusters4XXResponseResultEnum> get serializer => _$dnsFirewallListDnsFirewallClusters4XXResponseResultSerializer;
+  static Serializer<DnsFirewallListDnsFirewallClusters4XXResponseResultEnum> get serializer => _$dnsFirewallListDnsFirewallClusters4XXResponseResultEnumSerializer;
 
   const DnsFirewallListDnsFirewallClusters4XXResponseResultEnum._(String name): super(name);
 
-  static BuiltSet<DnsFirewallListDnsFirewallClusters4XXResponseResultEnum> get values => _$dnsFirewallListDnsFirewallClusters4XXResponseResultValues;
-  static DnsFirewallListDnsFirewallClusters4XXResponseResultEnum valueOf(String name) => _$dnsFirewallListDnsFirewallClusters4XXResponseResultValueOf(name);
+  static BuiltSet<DnsFirewallListDnsFirewallClusters4XXResponseResultEnum> get values => _$dnsFirewallListDnsFirewallClusters4XXResponseResultEnumValues;
+  static DnsFirewallListDnsFirewallClusters4XXResponseResultEnum valueOf(String name) => _$dnsFirewallListDnsFirewallClusters4XXResponseResultEnumValueOf(name);
 }
 

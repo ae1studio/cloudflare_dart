@@ -178,11 +178,11 @@ class AaaAuditLogsActorTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'Cloudflare')
   static const AaaAuditLogsActorTypeEnum cloudflare = _$aaaAuditLogsActorTypeEnum_cloudflare;
 
-  static Serializer<AaaAuditLogsActorTypeEnum> get serializer => _$aaaAuditLogsActorTypeSerializer;
+  static Serializer<AaaAuditLogsActorTypeEnum> get serializer => _$aaaAuditLogsActorTypeEnumSerializer;
 
   const AaaAuditLogsActorTypeEnum._(String name): super(name);
 
-  static BuiltSet<AaaAuditLogsActorTypeEnum> get values => _$aaaAuditLogsActorTypeValues;
-  static AaaAuditLogsActorTypeEnum valueOf(String name) => _$aaaAuditLogsActorTypeValueOf(name);
+  static BuiltSet<AaaAuditLogsActorTypeEnum> get values => _$aaaAuditLogsActorTypeEnumValues;
+  static AaaAuditLogsActorTypeEnum valueOf(String name) => _$aaaAuditLogsActorTypeEnumValueOf(name);
 }
 

@@ -169,12 +169,12 @@ class ListAccountRulesets200ResponseErrorsEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'[]')
   static const ListAccountRulesets200ResponseErrorsEnum leftSquareBracketRightSquareBracket = _$listAccountRulesets200ResponseErrorsEnum_leftSquareBracketRightSquareBracket;
 
-  static Serializer<ListAccountRulesets200ResponseErrorsEnum> get serializer => _$listAccountRulesets200ResponseErrorsSerializer;
+  static Serializer<ListAccountRulesets200ResponseErrorsEnum> get serializer => _$listAccountRulesets200ResponseErrorsEnumSerializer;
 
   const ListAccountRulesets200ResponseErrorsEnum._(String name): super(name);
 
-  static BuiltSet<ListAccountRulesets200ResponseErrorsEnum> get values => _$listAccountRulesets200ResponseErrorsValues;
-  static ListAccountRulesets200ResponseErrorsEnum valueOf(String name) => _$listAccountRulesets200ResponseErrorsValueOf(name);
+  static BuiltSet<ListAccountRulesets200ResponseErrorsEnum> get values => _$listAccountRulesets200ResponseErrorsEnumValues;
+  static ListAccountRulesets200ResponseErrorsEnum valueOf(String name) => _$listAccountRulesets200ResponseErrorsEnumValueOf(name);
 }
 
 class ListAccountRulesets200ResponseSuccessEnum extends EnumClass {
@@ -182,11 +182,11 @@ class ListAccountRulesets200ResponseSuccessEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'true')
   static const ListAccountRulesets200ResponseSuccessEnum true_ = _$listAccountRulesets200ResponseSuccessEnum_true_;
 
-  static Serializer<ListAccountRulesets200ResponseSuccessEnum> get serializer => _$listAccountRulesets200ResponseSuccessSerializer;
+  static Serializer<ListAccountRulesets200ResponseSuccessEnum> get serializer => _$listAccountRulesets200ResponseSuccessEnumSerializer;
 
   const ListAccountRulesets200ResponseSuccessEnum._(String name): super(name);
 
-  static BuiltSet<ListAccountRulesets200ResponseSuccessEnum> get values => _$listAccountRulesets200ResponseSuccessValues;
-  static ListAccountRulesets200ResponseSuccessEnum valueOf(String name) => _$listAccountRulesets200ResponseSuccessValueOf(name);
+  static BuiltSet<ListAccountRulesets200ResponseSuccessEnum> get values => _$listAccountRulesets200ResponseSuccessEnumValues;
+  static ListAccountRulesets200ResponseSuccessEnum valueOf(String name) => _$listAccountRulesets200ResponseSuccessEnumValueOf(name);
 }
 

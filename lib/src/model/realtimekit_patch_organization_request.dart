@@ -192,11 +192,11 @@ class RealtimekitPatchOrganizationRequestPreferredRegionEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'eu-central-1')
   static const RealtimekitPatchOrganizationRequestPreferredRegionEnum euCentral1 = _$realtimekitPatchOrganizationRequestPreferredRegionEnum_euCentral1;
 
-  static Serializer<RealtimekitPatchOrganizationRequestPreferredRegionEnum> get serializer => _$realtimekitPatchOrganizationRequestPreferredRegionSerializer;
+  static Serializer<RealtimekitPatchOrganizationRequestPreferredRegionEnum> get serializer => _$realtimekitPatchOrganizationRequestPreferredRegionEnumSerializer;
 
   const RealtimekitPatchOrganizationRequestPreferredRegionEnum._(String name): super(name);
 
-  static BuiltSet<RealtimekitPatchOrganizationRequestPreferredRegionEnum> get values => _$realtimekitPatchOrganizationRequestPreferredRegionValues;
-  static RealtimekitPatchOrganizationRequestPreferredRegionEnum valueOf(String name) => _$realtimekitPatchOrganizationRequestPreferredRegionValueOf(name);
+  static BuiltSet<RealtimekitPatchOrganizationRequestPreferredRegionEnum> get values => _$realtimekitPatchOrganizationRequestPreferredRegionEnumValues;
+  static RealtimekitPatchOrganizationRequestPreferredRegionEnum valueOf(String name) => _$realtimekitPatchOrganizationRequestPreferredRegionEnumValueOf(name);
 }
 

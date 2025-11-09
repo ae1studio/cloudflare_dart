@@ -130,11 +130,11 @@ class WorkersBindingKindImagesTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'images')
   static const WorkersBindingKindImagesTypeEnum images = _$workersBindingKindImagesTypeEnum_images;
 
-  static Serializer<WorkersBindingKindImagesTypeEnum> get serializer => _$workersBindingKindImagesTypeSerializer;
+  static Serializer<WorkersBindingKindImagesTypeEnum> get serializer => _$workersBindingKindImagesTypeEnumSerializer;
 
   const WorkersBindingKindImagesTypeEnum._(String name): super(name);
 
-  static BuiltSet<WorkersBindingKindImagesTypeEnum> get values => _$workersBindingKindImagesTypeValues;
-  static WorkersBindingKindImagesTypeEnum valueOf(String name) => _$workersBindingKindImagesTypeValueOf(name);
+  static BuiltSet<WorkersBindingKindImagesTypeEnum> get values => _$workersBindingKindImagesTypeEnumValues;
+  static WorkersBindingKindImagesTypeEnum valueOf(String name) => _$workersBindingKindImagesTypeEnumValueOf(name);
 }
 

@@ -138,11 +138,11 @@ class ZonesMultipleSettingsInnerIdEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'websockets')
   static const ZonesMultipleSettingsInnerIdEnum websockets = _$zonesMultipleSettingsInnerIdEnum_websockets;
 
-  static Serializer<ZonesMultipleSettingsInnerIdEnum> get serializer => _$zonesMultipleSettingsInnerIdSerializer;
+  static Serializer<ZonesMultipleSettingsInnerIdEnum> get serializer => _$zonesMultipleSettingsInnerIdEnumSerializer;
 
   const ZonesMultipleSettingsInnerIdEnum._(String name): super(name);
 
-  static BuiltSet<ZonesMultipleSettingsInnerIdEnum> get values => _$zonesMultipleSettingsInnerIdValues;
-  static ZonesMultipleSettingsInnerIdEnum valueOf(String name) => _$zonesMultipleSettingsInnerIdValueOf(name);
+  static BuiltSet<ZonesMultipleSettingsInnerIdEnum> get values => _$zonesMultipleSettingsInnerIdEnumValues;
+  static ZonesMultipleSettingsInnerIdEnum valueOf(String name) => _$zonesMultipleSettingsInnerIdEnumValueOf(name);
 }
 

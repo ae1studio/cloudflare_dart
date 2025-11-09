@@ -194,11 +194,11 @@ class _$$TunnelApiResponseCommonFailureSerializer implements PrimitiveSerializer
 class TunnelApiResponseCommonFailureResultEnum extends EnumClass {
 
 
-  static Serializer<TunnelApiResponseCommonFailureResultEnum> get serializer => _$tunnelApiResponseCommonFailureResultSerializer;
+  static Serializer<TunnelApiResponseCommonFailureResultEnum> get serializer => _$tunnelApiResponseCommonFailureResultEnumSerializer;
 
   const TunnelApiResponseCommonFailureResultEnum._(String name): super(name);
 
-  static BuiltSet<TunnelApiResponseCommonFailureResultEnum> get values => _$tunnelApiResponseCommonFailureResultValues;
-  static TunnelApiResponseCommonFailureResultEnum valueOf(String name) => _$tunnelApiResponseCommonFailureResultValueOf(name);
+  static BuiltSet<TunnelApiResponseCommonFailureResultEnum> get values => _$tunnelApiResponseCommonFailureResultEnumValues;
+  static TunnelApiResponseCommonFailureResultEnum valueOf(String name) => _$tunnelApiResponseCommonFailureResultEnumValueOf(name);
 }
 

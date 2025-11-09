@@ -131,11 +131,11 @@ class CreateWorker403ResponseAllOfErrorsInnerCodeEnum extends EnumClass {
   @BuiltValueEnumConst(wireNumber: 100103)
   static const CreateWorker403ResponseAllOfErrorsInnerCodeEnum number100103 = _$createWorker403ResponseAllOfErrorsInnerCodeEnum_number100103;
 
-  static Serializer<CreateWorker403ResponseAllOfErrorsInnerCodeEnum> get serializer => _$createWorker403ResponseAllOfErrorsInnerCodeSerializer;
+  static Serializer<CreateWorker403ResponseAllOfErrorsInnerCodeEnum> get serializer => _$createWorker403ResponseAllOfErrorsInnerCodeEnumSerializer;
 
   const CreateWorker403ResponseAllOfErrorsInnerCodeEnum._(String name): super(name);
 
-  static BuiltSet<CreateWorker403ResponseAllOfErrorsInnerCodeEnum> get values => _$createWorker403ResponseAllOfErrorsInnerCodeValues;
-  static CreateWorker403ResponseAllOfErrorsInnerCodeEnum valueOf(String name) => _$createWorker403ResponseAllOfErrorsInnerCodeValueOf(name);
+  static BuiltSet<CreateWorker403ResponseAllOfErrorsInnerCodeEnum> get values => _$createWorker403ResponseAllOfErrorsInnerCodeEnumValues;
+  static CreateWorker403ResponseAllOfErrorsInnerCodeEnum valueOf(String name) => _$createWorker403ResponseAllOfErrorsInnerCodeEnumValueOf(name);
 }
 

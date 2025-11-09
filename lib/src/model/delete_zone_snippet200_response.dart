@@ -149,23 +149,23 @@ class DeleteZoneSnippet200ResponseErrorsEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'[]')
   static const DeleteZoneSnippet200ResponseErrorsEnum leftSquareBracketRightSquareBracket = _$deleteZoneSnippet200ResponseErrorsEnum_leftSquareBracketRightSquareBracket;
 
-  static Serializer<DeleteZoneSnippet200ResponseErrorsEnum> get serializer => _$deleteZoneSnippet200ResponseErrorsSerializer;
+  static Serializer<DeleteZoneSnippet200ResponseErrorsEnum> get serializer => _$deleteZoneSnippet200ResponseErrorsEnumSerializer;
 
   const DeleteZoneSnippet200ResponseErrorsEnum._(String name): super(name);
 
-  static BuiltSet<DeleteZoneSnippet200ResponseErrorsEnum> get values => _$deleteZoneSnippet200ResponseErrorsValues;
-  static DeleteZoneSnippet200ResponseErrorsEnum valueOf(String name) => _$deleteZoneSnippet200ResponseErrorsValueOf(name);
+  static BuiltSet<DeleteZoneSnippet200ResponseErrorsEnum> get values => _$deleteZoneSnippet200ResponseErrorsEnumValues;
+  static DeleteZoneSnippet200ResponseErrorsEnum valueOf(String name) => _$deleteZoneSnippet200ResponseErrorsEnumValueOf(name);
 }
 
 class DeleteZoneSnippet200ResponseResultEnum extends EnumClass {
 
 
-  static Serializer<DeleteZoneSnippet200ResponseResultEnum> get serializer => _$deleteZoneSnippet200ResponseResultSerializer;
+  static Serializer<DeleteZoneSnippet200ResponseResultEnum> get serializer => _$deleteZoneSnippet200ResponseResultEnumSerializer;
 
   const DeleteZoneSnippet200ResponseResultEnum._(String name): super(name);
 
-  static BuiltSet<DeleteZoneSnippet200ResponseResultEnum> get values => _$deleteZoneSnippet200ResponseResultValues;
-  static DeleteZoneSnippet200ResponseResultEnum valueOf(String name) => _$deleteZoneSnippet200ResponseResultValueOf(name);
+  static BuiltSet<DeleteZoneSnippet200ResponseResultEnum> get values => _$deleteZoneSnippet200ResponseResultEnumValues;
+  static DeleteZoneSnippet200ResponseResultEnum valueOf(String name) => _$deleteZoneSnippet200ResponseResultEnumValueOf(name);
 }
 
 class DeleteZoneSnippet200ResponseSuccessEnum extends EnumClass {
@@ -173,11 +173,11 @@ class DeleteZoneSnippet200ResponseSuccessEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'true')
   static const DeleteZoneSnippet200ResponseSuccessEnum true_ = _$deleteZoneSnippet200ResponseSuccessEnum_true_;
 
-  static Serializer<DeleteZoneSnippet200ResponseSuccessEnum> get serializer => _$deleteZoneSnippet200ResponseSuccessSerializer;
+  static Serializer<DeleteZoneSnippet200ResponseSuccessEnum> get serializer => _$deleteZoneSnippet200ResponseSuccessEnumSerializer;
 
   const DeleteZoneSnippet200ResponseSuccessEnum._(String name): super(name);
 
-  static BuiltSet<DeleteZoneSnippet200ResponseSuccessEnum> get values => _$deleteZoneSnippet200ResponseSuccessValues;
-  static DeleteZoneSnippet200ResponseSuccessEnum valueOf(String name) => _$deleteZoneSnippet200ResponseSuccessValueOf(name);
+  static BuiltSet<DeleteZoneSnippet200ResponseSuccessEnum> get values => _$deleteZoneSnippet200ResponseSuccessEnumValues;
+  static DeleteZoneSnippet200ResponseSuccessEnum valueOf(String name) => _$deleteZoneSnippet200ResponseSuccessEnumValueOf(name);
 }
 

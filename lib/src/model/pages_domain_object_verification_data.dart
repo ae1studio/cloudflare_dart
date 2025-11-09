@@ -139,11 +139,11 @@ class PagesDomainObjectVerificationDataStatusEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'error')
   static const PagesDomainObjectVerificationDataStatusEnum error = _$pagesDomainObjectVerificationDataStatusEnum_error;
 
-  static Serializer<PagesDomainObjectVerificationDataStatusEnum> get serializer => _$pagesDomainObjectVerificationDataStatusSerializer;
+  static Serializer<PagesDomainObjectVerificationDataStatusEnum> get serializer => _$pagesDomainObjectVerificationDataStatusEnumSerializer;
 
   const PagesDomainObjectVerificationDataStatusEnum._(String name): super(name);
 
-  static BuiltSet<PagesDomainObjectVerificationDataStatusEnum> get values => _$pagesDomainObjectVerificationDataStatusValues;
-  static PagesDomainObjectVerificationDataStatusEnum valueOf(String name) => _$pagesDomainObjectVerificationDataStatusValueOf(name);
+  static BuiltSet<PagesDomainObjectVerificationDataStatusEnum> get values => _$pagesDomainObjectVerificationDataStatusEnumValues;
+  static PagesDomainObjectVerificationDataStatusEnum valueOf(String name) => _$pagesDomainObjectVerificationDataStatusEnumValueOf(name);
 }
 

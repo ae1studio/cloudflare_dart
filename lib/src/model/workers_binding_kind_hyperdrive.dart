@@ -147,11 +147,11 @@ class WorkersBindingKindHyperdriveTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'hyperdrive')
   static const WorkersBindingKindHyperdriveTypeEnum hyperdrive = _$workersBindingKindHyperdriveTypeEnum_hyperdrive;
 
-  static Serializer<WorkersBindingKindHyperdriveTypeEnum> get serializer => _$workersBindingKindHyperdriveTypeSerializer;
+  static Serializer<WorkersBindingKindHyperdriveTypeEnum> get serializer => _$workersBindingKindHyperdriveTypeEnumSerializer;
 
   const WorkersBindingKindHyperdriveTypeEnum._(String name): super(name);
 
-  static BuiltSet<WorkersBindingKindHyperdriveTypeEnum> get values => _$workersBindingKindHyperdriveTypeValues;
-  static WorkersBindingKindHyperdriveTypeEnum valueOf(String name) => _$workersBindingKindHyperdriveTypeValueOf(name);
+  static BuiltSet<WorkersBindingKindHyperdriveTypeEnum> get values => _$workersBindingKindHyperdriveTypeEnumValues;
+  static WorkersBindingKindHyperdriveTypeEnum valueOf(String name) => _$workersBindingKindHyperdriveTypeEnumValueOf(name);
 }
 

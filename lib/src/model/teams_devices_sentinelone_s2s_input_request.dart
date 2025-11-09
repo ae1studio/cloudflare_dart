@@ -238,12 +238,12 @@ class TeamsDevicesSentineloneS2sInputRequestNetworkStatusEnum extends EnumClass 
   @BuiltValueEnumConst(wireName: r'connecting')
   static const TeamsDevicesSentineloneS2sInputRequestNetworkStatusEnum connecting = _$teamsDevicesSentineloneS2sInputRequestNetworkStatusEnum_connecting;
 
-  static Serializer<TeamsDevicesSentineloneS2sInputRequestNetworkStatusEnum> get serializer => _$teamsDevicesSentineloneS2sInputRequestNetworkStatusSerializer;
+  static Serializer<TeamsDevicesSentineloneS2sInputRequestNetworkStatusEnum> get serializer => _$teamsDevicesSentineloneS2sInputRequestNetworkStatusEnumSerializer;
 
   const TeamsDevicesSentineloneS2sInputRequestNetworkStatusEnum._(String name): super(name);
 
-  static BuiltSet<TeamsDevicesSentineloneS2sInputRequestNetworkStatusEnum> get values => _$teamsDevicesSentineloneS2sInputRequestNetworkStatusValues;
-  static TeamsDevicesSentineloneS2sInputRequestNetworkStatusEnum valueOf(String name) => _$teamsDevicesSentineloneS2sInputRequestNetworkStatusValueOf(name);
+  static BuiltSet<TeamsDevicesSentineloneS2sInputRequestNetworkStatusEnum> get values => _$teamsDevicesSentineloneS2sInputRequestNetworkStatusEnumValues;
+  static TeamsDevicesSentineloneS2sInputRequestNetworkStatusEnum valueOf(String name) => _$teamsDevicesSentineloneS2sInputRequestNetworkStatusEnumValueOf(name);
 }
 
 class TeamsDevicesSentineloneS2sInputRequestOperationalStateEnum extends EnumClass {
@@ -270,12 +270,12 @@ class TeamsDevicesSentineloneS2sInputRequestOperationalStateEnum extends EnumCla
   @BuiltValueEnumConst(wireName: r'db_corruption')
   static const TeamsDevicesSentineloneS2sInputRequestOperationalStateEnum dbCorruption = _$teamsDevicesSentineloneS2sInputRequestOperationalStateEnum_dbCorruption;
 
-  static Serializer<TeamsDevicesSentineloneS2sInputRequestOperationalStateEnum> get serializer => _$teamsDevicesSentineloneS2sInputRequestOperationalStateSerializer;
+  static Serializer<TeamsDevicesSentineloneS2sInputRequestOperationalStateEnum> get serializer => _$teamsDevicesSentineloneS2sInputRequestOperationalStateEnumSerializer;
 
   const TeamsDevicesSentineloneS2sInputRequestOperationalStateEnum._(String name): super(name);
 
-  static BuiltSet<TeamsDevicesSentineloneS2sInputRequestOperationalStateEnum> get values => _$teamsDevicesSentineloneS2sInputRequestOperationalStateValues;
-  static TeamsDevicesSentineloneS2sInputRequestOperationalStateEnum valueOf(String name) => _$teamsDevicesSentineloneS2sInputRequestOperationalStateValueOf(name);
+  static BuiltSet<TeamsDevicesSentineloneS2sInputRequestOperationalStateEnum> get values => _$teamsDevicesSentineloneS2sInputRequestOperationalStateEnumValues;
+  static TeamsDevicesSentineloneS2sInputRequestOperationalStateEnum valueOf(String name) => _$teamsDevicesSentineloneS2sInputRequestOperationalStateEnumValueOf(name);
 }
 
 class TeamsDevicesSentineloneS2sInputRequestOperator_Enum extends EnumClass {
@@ -296,11 +296,11 @@ class TeamsDevicesSentineloneS2sInputRequestOperator_Enum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'==')
   static const TeamsDevicesSentineloneS2sInputRequestOperator_Enum equalEqual = _$teamsDevicesSentineloneS2sInputRequestOperatorEnum_equalEqual;
 
-  static Serializer<TeamsDevicesSentineloneS2sInputRequestOperator_Enum> get serializer => _$teamsDevicesSentineloneS2sInputRequestOperatorSerializer;
+  static Serializer<TeamsDevicesSentineloneS2sInputRequestOperator_Enum> get serializer => _$teamsDevicesSentineloneS2sInputRequestOperatorEnumSerializer;
 
   const TeamsDevicesSentineloneS2sInputRequestOperator_Enum._(String name): super(name);
 
-  static BuiltSet<TeamsDevicesSentineloneS2sInputRequestOperator_Enum> get values => _$teamsDevicesSentineloneS2sInputRequestOperatorValues;
-  static TeamsDevicesSentineloneS2sInputRequestOperator_Enum valueOf(String name) => _$teamsDevicesSentineloneS2sInputRequestOperatorValueOf(name);
+  static BuiltSet<TeamsDevicesSentineloneS2sInputRequestOperator_Enum> get values => _$teamsDevicesSentineloneS2sInputRequestOperatorEnumValues;
+  static TeamsDevicesSentineloneS2sInputRequestOperator_Enum valueOf(String name) => _$teamsDevicesSentineloneS2sInputRequestOperatorEnumValueOf(name);
 }
 

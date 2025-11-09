@@ -187,11 +187,11 @@ class RealtimekitPatchWebhookRequestEventsEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'meeting.summary')
   static const RealtimekitPatchWebhookRequestEventsEnum meetingPeriodSummary = _$realtimekitPatchWebhookRequestEventsEnum_meetingPeriodSummary;
 
-  static Serializer<RealtimekitPatchWebhookRequestEventsEnum> get serializer => _$realtimekitPatchWebhookRequestEventsSerializer;
+  static Serializer<RealtimekitPatchWebhookRequestEventsEnum> get serializer => _$realtimekitPatchWebhookRequestEventsEnumSerializer;
 
   const RealtimekitPatchWebhookRequestEventsEnum._(String name): super(name);
 
-  static BuiltSet<RealtimekitPatchWebhookRequestEventsEnum> get values => _$realtimekitPatchWebhookRequestEventsValues;
-  static RealtimekitPatchWebhookRequestEventsEnum valueOf(String name) => _$realtimekitPatchWebhookRequestEventsValueOf(name);
+  static BuiltSet<RealtimekitPatchWebhookRequestEventsEnum> get values => _$realtimekitPatchWebhookRequestEventsEnumValues;
+  static RealtimekitPatchWebhookRequestEventsEnum valueOf(String name) => _$realtimekitPatchWebhookRequestEventsEnumValueOf(name);
 }
 

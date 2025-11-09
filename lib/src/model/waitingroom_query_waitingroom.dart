@@ -71,7 +71,7 @@ abstract class WaitingroomQueryWaitingroom implements Built<WaitingroomQueryWait
 
   /// A list of enabled origin commands.
   @BuiltValueField(wireName: r'enabled_origin_commands')
-  BuiltList<WaitingroomWaitingroomEnabledOriginCommandsEnum>? get enabledOriginCommands;
+  BuiltList<WaitingroomQueryWaitingroomEnabledOriginCommandsEnum>? get enabledOriginCommands;
   // enum enabledOriginCommandsEnum {  revoke,  };
 
   /// The host name to which the waiting room will be applied (no wildcards). Please do not include the scheme (http:// or https://). The host and path combination must be unique.
@@ -135,7 +135,7 @@ abstract class WaitingroomQueryWaitingroom implements Built<WaitingroomQueryWait
       ..customPageHtml = ''
       ..description = ''
       ..disableSessionRenewal = false
-      ..enabledOriginCommands = ListBuilder()
+      ..enabledOriginCommands = 
       ..jsonResponseEnabled = false
       ..path = '/'
       ..queueAll = false
@@ -211,7 +211,7 @@ class _$WaitingroomQueryWaitingroomSerializer implements PrimitiveSerializer<Wai
       yield r'enabled_origin_commands';
       yield serializers.serialize(
         object.enabledOriginCommands,
-        specifiedType: const FullType(BuiltList, [FullType(WaitingroomWaitingroomEnabledOriginCommandsEnum)]),
+        specifiedType: const FullType(BuiltList, [FullType(WaitingroomQueryWaitingroomEnabledOriginCommandsEnum)]),
       );
     }
     yield r'host';
@@ -372,8 +372,8 @@ class _$WaitingroomQueryWaitingroomSerializer implements PrimitiveSerializer<Wai
         case r'enabled_origin_commands':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(BuiltList, [FullType(WaitingroomWaitingroomEnabledOriginCommandsEnum)]),
-          ) as BuiltList<WaitingroomWaitingroomEnabledOriginCommandsEnum>;
+            specifiedType: const FullType(BuiltList, [FullType(WaitingroomQueryWaitingroomEnabledOriginCommandsEnum)]),
+          ) as BuiltList<WaitingroomQueryWaitingroomEnabledOriginCommandsEnum>;
           result.enabledOriginCommands.replace(valueDes);
           break;
         case r'host':
@@ -496,16 +496,16 @@ class _$WaitingroomQueryWaitingroomSerializer implements PrimitiveSerializer<Wai
   }
 }
 
-class WaitingroomWaitingroomEnabledOriginCommandsEnum extends EnumClass {
+class WaitingroomQueryWaitingroomEnabledOriginCommandsEnum extends EnumClass {
 
   @BuiltValueEnumConst(wireName: r'revoke')
-  static const WaitingroomWaitingroomEnabledOriginCommandsEnum revoke = _\$waitingroomWaitingroomEnabledOriginCommands_revoke;
+  static const WaitingroomQueryWaitingroomEnabledOriginCommandsEnum revoke = _$waitingroomQueryWaitingroomEnabledOriginCommandsEnum_revoke;
 
-  static Serializer<WaitingroomWaitingroomEnabledOriginCommandsEnum> get serializer => _$waitingroomWaitingroomEnabledOriginCommandsSerializer;
+  static Serializer<WaitingroomQueryWaitingroomEnabledOriginCommandsEnum> get serializer => _$waitingroomQueryWaitingroomEnabledOriginCommandsEnumSerializer;
 
-  const WaitingroomWaitingroomEnabledOriginCommandsEnum._(String name): super(name);
+  const WaitingroomQueryWaitingroomEnabledOriginCommandsEnum._(String name): super(name);
 
-  static BuiltSet<WaitingroomWaitingroomEnabledOriginCommandsEnum> get values => _$waitingroomWaitingroomEnabledOriginCommandsValues;
-  static WaitingroomWaitingroomEnabledOriginCommandsEnum valueOf(String name) => _$waitingroomWaitingroomEnabledOriginCommandsValueOf(name);
+  static BuiltSet<WaitingroomQueryWaitingroomEnabledOriginCommandsEnum> get values => _$waitingroomQueryWaitingroomEnabledOriginCommandsEnumValues;
+  static WaitingroomQueryWaitingroomEnabledOriginCommandsEnum valueOf(String name) => _$waitingroomQueryWaitingroomEnabledOriginCommandsEnumValueOf(name);
 }
 

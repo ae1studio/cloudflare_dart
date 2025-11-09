@@ -167,11 +167,11 @@ class WorkersBindingKindServiceTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'service')
   static const WorkersBindingKindServiceTypeEnum service = _$workersBindingKindServiceTypeEnum_service;
 
-  static Serializer<WorkersBindingKindServiceTypeEnum> get serializer => _$workersBindingKindServiceTypeSerializer;
+  static Serializer<WorkersBindingKindServiceTypeEnum> get serializer => _$workersBindingKindServiceTypeEnumSerializer;
 
   const WorkersBindingKindServiceTypeEnum._(String name): super(name);
 
-  static BuiltSet<WorkersBindingKindServiceTypeEnum> get values => _$workersBindingKindServiceTypeValues;
-  static WorkersBindingKindServiceTypeEnum valueOf(String name) => _$workersBindingKindServiceTypeValueOf(name);
+  static BuiltSet<WorkersBindingKindServiceTypeEnum> get values => _$workersBindingKindServiceTypeEnumValues;
+  static WorkersBindingKindServiceTypeEnum valueOf(String name) => _$workersBindingKindServiceTypeEnumValueOf(name);
 }
 

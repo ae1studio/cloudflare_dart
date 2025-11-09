@@ -194,11 +194,11 @@ class R2AddCustomDomainRequestMinTLSEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'1.3')
   static const R2AddCustomDomainRequestMinTLSEnum n1period3 = _$r2AddCustomDomainRequestMinTLSEnum_n1period3;
 
-  static Serializer<R2AddCustomDomainRequestMinTLSEnum> get serializer => _$r2AddCustomDomainRequestMinTLSSerializer;
+  static Serializer<R2AddCustomDomainRequestMinTLSEnum> get serializer => _$r2AddCustomDomainRequestMinTLSEnumSerializer;
 
   const R2AddCustomDomainRequestMinTLSEnum._(String name): super(name);
 
-  static BuiltSet<R2AddCustomDomainRequestMinTLSEnum> get values => _$r2AddCustomDomainRequestMinTLSValues;
-  static R2AddCustomDomainRequestMinTLSEnum valueOf(String name) => _$r2AddCustomDomainRequestMinTLSValueOf(name);
+  static BuiltSet<R2AddCustomDomainRequestMinTLSEnum> get values => _$r2AddCustomDomainRequestMinTLSEnumValues;
+  static R2AddCustomDomainRequestMinTLSEnum valueOf(String name) => _$r2AddCustomDomainRequestMinTLSEnumValueOf(name);
 }
 

@@ -6,6 +6,124 @@ part of 'access_cors_headers.dart';
 // BuiltValueGenerator
 // **************************************************************************
 
+const AccessCorsHeadersAllowedMethodsEnum
+    _$accessCorsHeadersAllowedMethodsEnum_GET =
+    const AccessCorsHeadersAllowedMethodsEnum._('GET');
+const AccessCorsHeadersAllowedMethodsEnum
+    _$accessCorsHeadersAllowedMethodsEnum_POST =
+    const AccessCorsHeadersAllowedMethodsEnum._('POST');
+const AccessCorsHeadersAllowedMethodsEnum
+    _$accessCorsHeadersAllowedMethodsEnum_HEAD =
+    const AccessCorsHeadersAllowedMethodsEnum._('HEAD');
+const AccessCorsHeadersAllowedMethodsEnum
+    _$accessCorsHeadersAllowedMethodsEnum_PUT =
+    const AccessCorsHeadersAllowedMethodsEnum._('PUT');
+const AccessCorsHeadersAllowedMethodsEnum
+    _$accessCorsHeadersAllowedMethodsEnum_DELETE =
+    const AccessCorsHeadersAllowedMethodsEnum._('DELETE');
+const AccessCorsHeadersAllowedMethodsEnum
+    _$accessCorsHeadersAllowedMethodsEnum_CONNECT =
+    const AccessCorsHeadersAllowedMethodsEnum._('CONNECT');
+const AccessCorsHeadersAllowedMethodsEnum
+    _$accessCorsHeadersAllowedMethodsEnum_OPTIONS =
+    const AccessCorsHeadersAllowedMethodsEnum._('OPTIONS');
+const AccessCorsHeadersAllowedMethodsEnum
+    _$accessCorsHeadersAllowedMethodsEnum_TRACE =
+    const AccessCorsHeadersAllowedMethodsEnum._('TRACE');
+const AccessCorsHeadersAllowedMethodsEnum
+    _$accessCorsHeadersAllowedMethodsEnum_PATCH =
+    const AccessCorsHeadersAllowedMethodsEnum._('PATCH');
+
+AccessCorsHeadersAllowedMethodsEnum
+    _$accessCorsHeadersAllowedMethodsEnumValueOf(String name) {
+  switch (name) {
+    case 'GET':
+      return _$accessCorsHeadersAllowedMethodsEnum_GET;
+    case 'POST':
+      return _$accessCorsHeadersAllowedMethodsEnum_POST;
+    case 'HEAD':
+      return _$accessCorsHeadersAllowedMethodsEnum_HEAD;
+    case 'PUT':
+      return _$accessCorsHeadersAllowedMethodsEnum_PUT;
+    case 'DELETE':
+      return _$accessCorsHeadersAllowedMethodsEnum_DELETE;
+    case 'CONNECT':
+      return _$accessCorsHeadersAllowedMethodsEnum_CONNECT;
+    case 'OPTIONS':
+      return _$accessCorsHeadersAllowedMethodsEnum_OPTIONS;
+    case 'TRACE':
+      return _$accessCorsHeadersAllowedMethodsEnum_TRACE;
+    case 'PATCH':
+      return _$accessCorsHeadersAllowedMethodsEnum_PATCH;
+    default:
+      throw ArgumentError(name);
+  }
+}
+
+final BuiltSet<AccessCorsHeadersAllowedMethodsEnum>
+    _$accessCorsHeadersAllowedMethodsEnumValues = BuiltSet<
+        AccessCorsHeadersAllowedMethodsEnum>(const <AccessCorsHeadersAllowedMethodsEnum>[
+  _$accessCorsHeadersAllowedMethodsEnum_GET,
+  _$accessCorsHeadersAllowedMethodsEnum_POST,
+  _$accessCorsHeadersAllowedMethodsEnum_HEAD,
+  _$accessCorsHeadersAllowedMethodsEnum_PUT,
+  _$accessCorsHeadersAllowedMethodsEnum_DELETE,
+  _$accessCorsHeadersAllowedMethodsEnum_CONNECT,
+  _$accessCorsHeadersAllowedMethodsEnum_OPTIONS,
+  _$accessCorsHeadersAllowedMethodsEnum_TRACE,
+  _$accessCorsHeadersAllowedMethodsEnum_PATCH,
+]);
+
+Serializer<AccessCorsHeadersAllowedMethodsEnum>
+    _$accessCorsHeadersAllowedMethodsEnumSerializer =
+    _$AccessCorsHeadersAllowedMethodsEnumSerializer();
+
+class _$AccessCorsHeadersAllowedMethodsEnumSerializer
+    implements PrimitiveSerializer<AccessCorsHeadersAllowedMethodsEnum> {
+  static const Map<String, Object> _toWire = const <String, Object>{
+    'GET': 'GET',
+    'POST': 'POST',
+    'HEAD': 'HEAD',
+    'PUT': 'PUT',
+    'DELETE': 'DELETE',
+    'CONNECT': 'CONNECT',
+    'OPTIONS': 'OPTIONS',
+    'TRACE': 'TRACE',
+    'PATCH': 'PATCH',
+  };
+  static const Map<Object, String> _fromWire = const <Object, String>{
+    'GET': 'GET',
+    'POST': 'POST',
+    'HEAD': 'HEAD',
+    'PUT': 'PUT',
+    'DELETE': 'DELETE',
+    'CONNECT': 'CONNECT',
+    'OPTIONS': 'OPTIONS',
+    'TRACE': 'TRACE',
+    'PATCH': 'PATCH',
+  };
+
+  @override
+  final Iterable<Type> types = const <Type>[
+    AccessCorsHeadersAllowedMethodsEnum
+  ];
+  @override
+  final String wireName = 'AccessCorsHeadersAllowedMethodsEnum';
+
+  @override
+  Object serialize(
+          Serializers serializers, AccessCorsHeadersAllowedMethodsEnum object,
+          {FullType specifiedType = FullType.unspecified}) =>
+      _toWire[object.name] ?? object.name;
+
+  @override
+  AccessCorsHeadersAllowedMethodsEnum deserialize(
+          Serializers serializers, Object serialized,
+          {FullType specifiedType = FullType.unspecified}) =>
+      AccessCorsHeadersAllowedMethodsEnum.valueOf(
+          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+}
+
 class _$AccessCorsHeaders extends AccessCorsHeaders {
   @override
   final bool? allowAllHeaders;
@@ -18,7 +136,7 @@ class _$AccessCorsHeaders extends AccessCorsHeaders {
   @override
   final BuiltList<String>? allowedHeaders;
   @override
-  final BuiltList<dynamic>? allowedMethods;
+  final BuiltList<AccessCorsHeadersAllowedMethodsEnum>? allowedMethods;
   @override
   final BuiltList<String>? allowedOrigins;
   @override
@@ -120,10 +238,12 @@ class AccessCorsHeadersBuilder
   set allowedHeaders(ListBuilder<String>? allowedHeaders) =>
       _$this._allowedHeaders = allowedHeaders;
 
-  ListBuilder<dynamic>? _allowedMethods;
-  ListBuilder<dynamic> get allowedMethods =>
-      _$this._allowedMethods ??= ListBuilder<dynamic>();
-  set allowedMethods(ListBuilder<dynamic>? allowedMethods) =>
+  ListBuilder<AccessCorsHeadersAllowedMethodsEnum>? _allowedMethods;
+  ListBuilder<AccessCorsHeadersAllowedMethodsEnum> get allowedMethods =>
+      _$this._allowedMethods ??=
+          ListBuilder<AccessCorsHeadersAllowedMethodsEnum>();
+  set allowedMethods(
+          ListBuilder<AccessCorsHeadersAllowedMethodsEnum>? allowedMethods) =>
       _$this._allowedMethods = allowedMethods;
 
   ListBuilder<String>? _allowedOrigins;

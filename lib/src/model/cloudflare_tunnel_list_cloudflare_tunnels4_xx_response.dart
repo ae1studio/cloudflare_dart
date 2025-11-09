@@ -164,11 +164,11 @@ class _$CloudflareTunnelListCloudflareTunnels4XXResponseSerializer implements Pr
 class CloudflareTunnelListCloudflareTunnels4XXResponseResultEnum extends EnumClass {
 
 
-  static Serializer<CloudflareTunnelListCloudflareTunnels4XXResponseResultEnum> get serializer => _$cloudflareTunnelListCloudflareTunnels4XXResponseResultSerializer;
+  static Serializer<CloudflareTunnelListCloudflareTunnels4XXResponseResultEnum> get serializer => _$cloudflareTunnelListCloudflareTunnels4XXResponseResultEnumSerializer;
 
   const CloudflareTunnelListCloudflareTunnels4XXResponseResultEnum._(String name): super(name);
 
-  static BuiltSet<CloudflareTunnelListCloudflareTunnels4XXResponseResultEnum> get values => _$cloudflareTunnelListCloudflareTunnels4XXResponseResultValues;
-  static CloudflareTunnelListCloudflareTunnels4XXResponseResultEnum valueOf(String name) => _$cloudflareTunnelListCloudflareTunnels4XXResponseResultValueOf(name);
+  static BuiltSet<CloudflareTunnelListCloudflareTunnels4XXResponseResultEnum> get values => _$cloudflareTunnelListCloudflareTunnels4XXResponseResultEnumValues;
+  static CloudflareTunnelListCloudflareTunnels4XXResponseResultEnum valueOf(String name) => _$cloudflareTunnelListCloudflareTunnels4XXResponseResultEnumValueOf(name);
 }
 

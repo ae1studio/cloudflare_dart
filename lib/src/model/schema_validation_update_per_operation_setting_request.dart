@@ -118,11 +118,11 @@ class SchemaValidationUpdatePerOperationSettingRequestMitigationActionEnum exten
   @BuiltValueEnumConst(wireName: r'none')
   static const SchemaValidationUpdatePerOperationSettingRequestMitigationActionEnum none = _$schemaValidationUpdatePerOperationSettingRequestMitigationActionEnum_none;
 
-  static Serializer<SchemaValidationUpdatePerOperationSettingRequestMitigationActionEnum> get serializer => _$schemaValidationUpdatePerOperationSettingRequestMitigationActionSerializer;
+  static Serializer<SchemaValidationUpdatePerOperationSettingRequestMitigationActionEnum> get serializer => _$schemaValidationUpdatePerOperationSettingRequestMitigationActionEnumSerializer;
 
   const SchemaValidationUpdatePerOperationSettingRequestMitigationActionEnum._(String name): super(name);
 
-  static BuiltSet<SchemaValidationUpdatePerOperationSettingRequestMitigationActionEnum> get values => _$schemaValidationUpdatePerOperationSettingRequestMitigationActionValues;
-  static SchemaValidationUpdatePerOperationSettingRequestMitigationActionEnum valueOf(String name) => _$schemaValidationUpdatePerOperationSettingRequestMitigationActionValueOf(name);
+  static BuiltSet<SchemaValidationUpdatePerOperationSettingRequestMitigationActionEnum> get values => _$schemaValidationUpdatePerOperationSettingRequestMitigationActionEnumValues;
+  static SchemaValidationUpdatePerOperationSettingRequestMitigationActionEnum valueOf(String name) => _$schemaValidationUpdatePerOperationSettingRequestMitigationActionEnumValueOf(name);
 }
 

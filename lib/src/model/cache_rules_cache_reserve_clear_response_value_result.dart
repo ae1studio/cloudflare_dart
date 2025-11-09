@@ -179,11 +179,11 @@ class CacheRulesCacheReserveClearResponseValueResultIdEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'cache_reserve_clear')
   static const CacheRulesCacheReserveClearResponseValueResultIdEnum cacheReserveClear = _$cacheRulesCacheReserveClearResponseValueResultIdEnum_cacheReserveClear;
 
-  static Serializer<CacheRulesCacheReserveClearResponseValueResultIdEnum> get serializer => _$cacheRulesCacheReserveClearResponseValueResultIdSerializer;
+  static Serializer<CacheRulesCacheReserveClearResponseValueResultIdEnum> get serializer => _$cacheRulesCacheReserveClearResponseValueResultIdEnumSerializer;
 
   const CacheRulesCacheReserveClearResponseValueResultIdEnum._(String name): super(name);
 
-  static BuiltSet<CacheRulesCacheReserveClearResponseValueResultIdEnum> get values => _$cacheRulesCacheReserveClearResponseValueResultIdValues;
-  static CacheRulesCacheReserveClearResponseValueResultIdEnum valueOf(String name) => _$cacheRulesCacheReserveClearResponseValueResultIdValueOf(name);
+  static BuiltSet<CacheRulesCacheReserveClearResponseValueResultIdEnum> get values => _$cacheRulesCacheReserveClearResponseValueResultIdEnumValues;
+  static CacheRulesCacheReserveClearResponseValueResultIdEnum valueOf(String name) => _$cacheRulesCacheReserveClearResponseValueResultIdEnumValueOf(name);
 }
 

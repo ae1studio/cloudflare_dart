@@ -170,12 +170,12 @@ class WorkersBindingKindR2BucketJurisdictionEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'fedramp')
   static const WorkersBindingKindR2BucketJurisdictionEnum fedramp = _$workersBindingKindR2BucketJurisdictionEnum_fedramp;
 
-  static Serializer<WorkersBindingKindR2BucketJurisdictionEnum> get serializer => _$workersBindingKindR2BucketJurisdictionSerializer;
+  static Serializer<WorkersBindingKindR2BucketJurisdictionEnum> get serializer => _$workersBindingKindR2BucketJurisdictionEnumSerializer;
 
   const WorkersBindingKindR2BucketJurisdictionEnum._(String name): super(name);
 
-  static BuiltSet<WorkersBindingKindR2BucketJurisdictionEnum> get values => _$workersBindingKindR2BucketJurisdictionValues;
-  static WorkersBindingKindR2BucketJurisdictionEnum valueOf(String name) => _$workersBindingKindR2BucketJurisdictionValueOf(name);
+  static BuiltSet<WorkersBindingKindR2BucketJurisdictionEnum> get values => _$workersBindingKindR2BucketJurisdictionEnumValues;
+  static WorkersBindingKindR2BucketJurisdictionEnum valueOf(String name) => _$workersBindingKindR2BucketJurisdictionEnumValueOf(name);
 }
 
 class WorkersBindingKindR2BucketTypeEnum extends EnumClass {
@@ -184,11 +184,11 @@ class WorkersBindingKindR2BucketTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'r2_bucket')
   static const WorkersBindingKindR2BucketTypeEnum r2Bucket = _$workersBindingKindR2BucketTypeEnum_r2Bucket;
 
-  static Serializer<WorkersBindingKindR2BucketTypeEnum> get serializer => _$workersBindingKindR2BucketTypeSerializer;
+  static Serializer<WorkersBindingKindR2BucketTypeEnum> get serializer => _$workersBindingKindR2BucketTypeEnumSerializer;
 
   const WorkersBindingKindR2BucketTypeEnum._(String name): super(name);
 
-  static BuiltSet<WorkersBindingKindR2BucketTypeEnum> get values => _$workersBindingKindR2BucketTypeValues;
-  static WorkersBindingKindR2BucketTypeEnum valueOf(String name) => _$workersBindingKindR2BucketTypeValueOf(name);
+  static BuiltSet<WorkersBindingKindR2BucketTypeEnum> get values => _$workersBindingKindR2BucketTypeEnumValues;
+  static WorkersBindingKindR2BucketTypeEnum valueOf(String name) => _$workersBindingKindR2BucketTypeEnumValueOf(name);
 }
 

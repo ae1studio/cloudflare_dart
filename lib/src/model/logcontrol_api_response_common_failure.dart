@@ -161,11 +161,11 @@ class _$LogcontrolApiResponseCommonFailureSerializer implements PrimitiveSeriali
 class LogcontrolApiResponseCommonFailureResultEnum extends EnumClass {
 
 
-  static Serializer<LogcontrolApiResponseCommonFailureResultEnum> get serializer => _$logcontrolApiResponseCommonFailureResultSerializer;
+  static Serializer<LogcontrolApiResponseCommonFailureResultEnum> get serializer => _$logcontrolApiResponseCommonFailureResultEnumSerializer;
 
   const LogcontrolApiResponseCommonFailureResultEnum._(String name): super(name);
 
-  static BuiltSet<LogcontrolApiResponseCommonFailureResultEnum> get values => _$logcontrolApiResponseCommonFailureResultValues;
-  static LogcontrolApiResponseCommonFailureResultEnum valueOf(String name) => _$logcontrolApiResponseCommonFailureResultValueOf(name);
+  static BuiltSet<LogcontrolApiResponseCommonFailureResultEnum> get values => _$logcontrolApiResponseCommonFailureResultEnumValues;
+  static LogcontrolApiResponseCommonFailureResultEnum valueOf(String name) => _$logcontrolApiResponseCommonFailureResultEnumValueOf(name);
 }
 

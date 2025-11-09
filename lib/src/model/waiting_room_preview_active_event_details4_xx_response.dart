@@ -150,11 +150,11 @@ class _$WaitingRoomPreviewActiveEventDetails4XXResponseSerializer implements Pri
 class WaitingRoomPreviewActiveEventDetails4XXResponseResultEnum extends EnumClass {
 
 
-  static Serializer<WaitingRoomPreviewActiveEventDetails4XXResponseResultEnum> get serializer => _$waitingRoomPreviewActiveEventDetails4XXResponseResultSerializer;
+  static Serializer<WaitingRoomPreviewActiveEventDetails4XXResponseResultEnum> get serializer => _$waitingRoomPreviewActiveEventDetails4XXResponseResultEnumSerializer;
 
   const WaitingRoomPreviewActiveEventDetails4XXResponseResultEnum._(String name): super(name);
 
-  static BuiltSet<WaitingRoomPreviewActiveEventDetails4XXResponseResultEnum> get values => _$waitingRoomPreviewActiveEventDetails4XXResponseResultValues;
-  static WaitingRoomPreviewActiveEventDetails4XXResponseResultEnum valueOf(String name) => _$waitingRoomPreviewActiveEventDetails4XXResponseResultValueOf(name);
+  static BuiltSet<WaitingRoomPreviewActiveEventDetails4XXResponseResultEnum> get values => _$waitingRoomPreviewActiveEventDetails4XXResponseResultEnumValues;
+  static WaitingRoomPreviewActiveEventDetails4XXResponseResultEnum valueOf(String name) => _$waitingRoomPreviewActiveEventDetails4XXResponseResultEnumValueOf(name);
 }
 

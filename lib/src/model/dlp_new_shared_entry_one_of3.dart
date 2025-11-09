@@ -143,11 +143,11 @@ class DlpNewSharedEntryOneOf3EntryTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'exact_data')
   static const DlpNewSharedEntryOneOf3EntryTypeEnum exactData = _$dlpNewSharedEntryOneOf3EntryTypeEnum_exactData;
 
-  static Serializer<DlpNewSharedEntryOneOf3EntryTypeEnum> get serializer => _$dlpNewSharedEntryOneOf3EntryTypeSerializer;
+  static Serializer<DlpNewSharedEntryOneOf3EntryTypeEnum> get serializer => _$dlpNewSharedEntryOneOf3EntryTypeEnumSerializer;
 
   const DlpNewSharedEntryOneOf3EntryTypeEnum._(String name): super(name);
 
-  static BuiltSet<DlpNewSharedEntryOneOf3EntryTypeEnum> get values => _$dlpNewSharedEntryOneOf3EntryTypeValues;
-  static DlpNewSharedEntryOneOf3EntryTypeEnum valueOf(String name) => _$dlpNewSharedEntryOneOf3EntryTypeValueOf(name);
+  static BuiltSet<DlpNewSharedEntryOneOf3EntryTypeEnum> get values => _$dlpNewSharedEntryOneOf3EntryTypeEnumValues;
+  static DlpNewSharedEntryOneOf3EntryTypeEnum valueOf(String name) => _$dlpNewSharedEntryOneOf3EntryTypeEnumValueOf(name);
 }
 

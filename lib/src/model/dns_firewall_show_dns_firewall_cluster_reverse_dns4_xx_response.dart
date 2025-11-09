@@ -150,11 +150,11 @@ class _$DnsFirewallShowDnsFirewallClusterReverseDns4XXResponseSerializer impleme
 class DnsFirewallShowDnsFirewallClusterReverseDns4XXResponseResultEnum extends EnumClass {
 
 
-  static Serializer<DnsFirewallShowDnsFirewallClusterReverseDns4XXResponseResultEnum> get serializer => _$dnsFirewallShowDnsFirewallClusterReverseDns4XXResponseResultSerializer;
+  static Serializer<DnsFirewallShowDnsFirewallClusterReverseDns4XXResponseResultEnum> get serializer => _$dnsFirewallShowDnsFirewallClusterReverseDns4XXResponseResultEnumSerializer;
 
   const DnsFirewallShowDnsFirewallClusterReverseDns4XXResponseResultEnum._(String name): super(name);
 
-  static BuiltSet<DnsFirewallShowDnsFirewallClusterReverseDns4XXResponseResultEnum> get values => _$dnsFirewallShowDnsFirewallClusterReverseDns4XXResponseResultValues;
-  static DnsFirewallShowDnsFirewallClusterReverseDns4XXResponseResultEnum valueOf(String name) => _$dnsFirewallShowDnsFirewallClusterReverseDns4XXResponseResultValueOf(name);
+  static BuiltSet<DnsFirewallShowDnsFirewallClusterReverseDns4XXResponseResultEnum> get values => _$dnsFirewallShowDnsFirewallClusterReverseDns4XXResponseResultEnumValues;
+  static DnsFirewallShowDnsFirewallClusterReverseDns4XXResponseResultEnum valueOf(String name) => _$dnsFirewallShowDnsFirewallClusterReverseDns4XXResponseResultEnumValueOf(name);
 }
 

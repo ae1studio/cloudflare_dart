@@ -81,11 +81,11 @@ class ZarazZarazConfigBaseVariablesValueTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'worker')
   static const ZarazZarazConfigBaseVariablesValueTypeEnum worker = _$zarazZarazConfigBaseVariablesValueTypeEnum_worker;
 
-  static Serializer<ZarazZarazConfigBaseVariablesValueTypeEnum> get serializer => _$zarazZarazConfigBaseVariablesValueTypeSerializer;
+  static Serializer<ZarazZarazConfigBaseVariablesValueTypeEnum> get serializer => _$zarazZarazConfigBaseVariablesValueTypeEnumSerializer;
 
   const ZarazZarazConfigBaseVariablesValueTypeEnum._(String name): super(name);
 
-  static BuiltSet<ZarazZarazConfigBaseVariablesValueTypeEnum> get values => _$zarazZarazConfigBaseVariablesValueTypeValues;
-  static ZarazZarazConfigBaseVariablesValueTypeEnum valueOf(String name) => _$zarazZarazConfigBaseVariablesValueTypeValueOf(name);
+  static BuiltSet<ZarazZarazConfigBaseVariablesValueTypeEnum> get values => _$zarazZarazConfigBaseVariablesValueTypeEnumValues;
+  static ZarazZarazConfigBaseVariablesValueTypeEnum valueOf(String name) => _$zarazZarazConfigBaseVariablesValueTypeEnumValueOf(name);
 }
 

@@ -87,7 +87,7 @@ abstract class ZeroTrustGatewayRuleSettingsBisoAdminControls implements Built<Ze
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(ZeroTrustGatewayRuleSettingsBisoAdminControlsBuilder b) => b
-      ..version = const ZeroTrustGatewayRuleSettingsBisoAdminControlsVersionEnum._('v1');
+      ..version = ZeroTrustGatewayRuleSettingsBisoAdminControlsVersionEnum.valueOf('v1');
 
   @BuiltValueSerializer(custom: true)
   static Serializer<ZeroTrustGatewayRuleSettingsBisoAdminControls> get serializer => _$ZeroTrustGatewayRuleSettingsBisoAdminControlsSerializer();
@@ -337,12 +337,12 @@ class ZeroTrustGatewayRuleSettingsBisoAdminControlsCopyEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'remote_only')
   static const ZeroTrustGatewayRuleSettingsBisoAdminControlsCopyEnum remoteOnly = _$zeroTrustGatewayRuleSettingsBisoAdminControlsCopyEnum_remoteOnly;
 
-  static Serializer<ZeroTrustGatewayRuleSettingsBisoAdminControlsCopyEnum> get serializer => _$zeroTrustGatewayRuleSettingsBisoAdminControlsCopySerializer;
+  static Serializer<ZeroTrustGatewayRuleSettingsBisoAdminControlsCopyEnum> get serializer => _$zeroTrustGatewayRuleSettingsBisoAdminControlsCopyEnumSerializer;
 
   const ZeroTrustGatewayRuleSettingsBisoAdminControlsCopyEnum._(String name): super(name);
 
-  static BuiltSet<ZeroTrustGatewayRuleSettingsBisoAdminControlsCopyEnum> get values => _$zeroTrustGatewayRuleSettingsBisoAdminControlsCopyValues;
-  static ZeroTrustGatewayRuleSettingsBisoAdminControlsCopyEnum valueOf(String name) => _$zeroTrustGatewayRuleSettingsBisoAdminControlsCopyValueOf(name);
+  static BuiltSet<ZeroTrustGatewayRuleSettingsBisoAdminControlsCopyEnum> get values => _$zeroTrustGatewayRuleSettingsBisoAdminControlsCopyEnumValues;
+  static ZeroTrustGatewayRuleSettingsBisoAdminControlsCopyEnum valueOf(String name) => _$zeroTrustGatewayRuleSettingsBisoAdminControlsCopyEnumValueOf(name);
 }
 
 class ZeroTrustGatewayRuleSettingsBisoAdminControlsDownloadEnum extends EnumClass {
@@ -357,12 +357,12 @@ class ZeroTrustGatewayRuleSettingsBisoAdminControlsDownloadEnum extends EnumClas
   @BuiltValueEnumConst(wireName: r'remote_only')
   static const ZeroTrustGatewayRuleSettingsBisoAdminControlsDownloadEnum remoteOnly = _$zeroTrustGatewayRuleSettingsBisoAdminControlsDownloadEnum_remoteOnly;
 
-  static Serializer<ZeroTrustGatewayRuleSettingsBisoAdminControlsDownloadEnum> get serializer => _$zeroTrustGatewayRuleSettingsBisoAdminControlsDownloadSerializer;
+  static Serializer<ZeroTrustGatewayRuleSettingsBisoAdminControlsDownloadEnum> get serializer => _$zeroTrustGatewayRuleSettingsBisoAdminControlsDownloadEnumSerializer;
 
   const ZeroTrustGatewayRuleSettingsBisoAdminControlsDownloadEnum._(String name): super(name);
 
-  static BuiltSet<ZeroTrustGatewayRuleSettingsBisoAdminControlsDownloadEnum> get values => _$zeroTrustGatewayRuleSettingsBisoAdminControlsDownloadValues;
-  static ZeroTrustGatewayRuleSettingsBisoAdminControlsDownloadEnum valueOf(String name) => _$zeroTrustGatewayRuleSettingsBisoAdminControlsDownloadValueOf(name);
+  static BuiltSet<ZeroTrustGatewayRuleSettingsBisoAdminControlsDownloadEnum> get values => _$zeroTrustGatewayRuleSettingsBisoAdminControlsDownloadEnumValues;
+  static ZeroTrustGatewayRuleSettingsBisoAdminControlsDownloadEnum valueOf(String name) => _$zeroTrustGatewayRuleSettingsBisoAdminControlsDownloadEnumValueOf(name);
 }
 
 class ZeroTrustGatewayRuleSettingsBisoAdminControlsKeyboardEnum extends EnumClass {
@@ -374,12 +374,12 @@ class ZeroTrustGatewayRuleSettingsBisoAdminControlsKeyboardEnum extends EnumClas
   @BuiltValueEnumConst(wireName: r'disabled')
   static const ZeroTrustGatewayRuleSettingsBisoAdminControlsKeyboardEnum disabled = _$zeroTrustGatewayRuleSettingsBisoAdminControlsKeyboardEnum_disabled;
 
-  static Serializer<ZeroTrustGatewayRuleSettingsBisoAdminControlsKeyboardEnum> get serializer => _$zeroTrustGatewayRuleSettingsBisoAdminControlsKeyboardSerializer;
+  static Serializer<ZeroTrustGatewayRuleSettingsBisoAdminControlsKeyboardEnum> get serializer => _$zeroTrustGatewayRuleSettingsBisoAdminControlsKeyboardEnumSerializer;
 
   const ZeroTrustGatewayRuleSettingsBisoAdminControlsKeyboardEnum._(String name): super(name);
 
-  static BuiltSet<ZeroTrustGatewayRuleSettingsBisoAdminControlsKeyboardEnum> get values => _$zeroTrustGatewayRuleSettingsBisoAdminControlsKeyboardValues;
-  static ZeroTrustGatewayRuleSettingsBisoAdminControlsKeyboardEnum valueOf(String name) => _$zeroTrustGatewayRuleSettingsBisoAdminControlsKeyboardValueOf(name);
+  static BuiltSet<ZeroTrustGatewayRuleSettingsBisoAdminControlsKeyboardEnum> get values => _$zeroTrustGatewayRuleSettingsBisoAdminControlsKeyboardEnumValues;
+  static ZeroTrustGatewayRuleSettingsBisoAdminControlsKeyboardEnum valueOf(String name) => _$zeroTrustGatewayRuleSettingsBisoAdminControlsKeyboardEnumValueOf(name);
 }
 
 class ZeroTrustGatewayRuleSettingsBisoAdminControlsPasteEnum extends EnumClass {
@@ -394,12 +394,12 @@ class ZeroTrustGatewayRuleSettingsBisoAdminControlsPasteEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'remote_only')
   static const ZeroTrustGatewayRuleSettingsBisoAdminControlsPasteEnum remoteOnly = _$zeroTrustGatewayRuleSettingsBisoAdminControlsPasteEnum_remoteOnly;
 
-  static Serializer<ZeroTrustGatewayRuleSettingsBisoAdminControlsPasteEnum> get serializer => _$zeroTrustGatewayRuleSettingsBisoAdminControlsPasteSerializer;
+  static Serializer<ZeroTrustGatewayRuleSettingsBisoAdminControlsPasteEnum> get serializer => _$zeroTrustGatewayRuleSettingsBisoAdminControlsPasteEnumSerializer;
 
   const ZeroTrustGatewayRuleSettingsBisoAdminControlsPasteEnum._(String name): super(name);
 
-  static BuiltSet<ZeroTrustGatewayRuleSettingsBisoAdminControlsPasteEnum> get values => _$zeroTrustGatewayRuleSettingsBisoAdminControlsPasteValues;
-  static ZeroTrustGatewayRuleSettingsBisoAdminControlsPasteEnum valueOf(String name) => _$zeroTrustGatewayRuleSettingsBisoAdminControlsPasteValueOf(name);
+  static BuiltSet<ZeroTrustGatewayRuleSettingsBisoAdminControlsPasteEnum> get values => _$zeroTrustGatewayRuleSettingsBisoAdminControlsPasteEnumValues;
+  static ZeroTrustGatewayRuleSettingsBisoAdminControlsPasteEnum valueOf(String name) => _$zeroTrustGatewayRuleSettingsBisoAdminControlsPasteEnumValueOf(name);
 }
 
 class ZeroTrustGatewayRuleSettingsBisoAdminControlsPrintingEnum extends EnumClass {
@@ -411,12 +411,12 @@ class ZeroTrustGatewayRuleSettingsBisoAdminControlsPrintingEnum extends EnumClas
   @BuiltValueEnumConst(wireName: r'disabled')
   static const ZeroTrustGatewayRuleSettingsBisoAdminControlsPrintingEnum disabled = _$zeroTrustGatewayRuleSettingsBisoAdminControlsPrintingEnum_disabled;
 
-  static Serializer<ZeroTrustGatewayRuleSettingsBisoAdminControlsPrintingEnum> get serializer => _$zeroTrustGatewayRuleSettingsBisoAdminControlsPrintingSerializer;
+  static Serializer<ZeroTrustGatewayRuleSettingsBisoAdminControlsPrintingEnum> get serializer => _$zeroTrustGatewayRuleSettingsBisoAdminControlsPrintingEnumSerializer;
 
   const ZeroTrustGatewayRuleSettingsBisoAdminControlsPrintingEnum._(String name): super(name);
 
-  static BuiltSet<ZeroTrustGatewayRuleSettingsBisoAdminControlsPrintingEnum> get values => _$zeroTrustGatewayRuleSettingsBisoAdminControlsPrintingValues;
-  static ZeroTrustGatewayRuleSettingsBisoAdminControlsPrintingEnum valueOf(String name) => _$zeroTrustGatewayRuleSettingsBisoAdminControlsPrintingValueOf(name);
+  static BuiltSet<ZeroTrustGatewayRuleSettingsBisoAdminControlsPrintingEnum> get values => _$zeroTrustGatewayRuleSettingsBisoAdminControlsPrintingEnumValues;
+  static ZeroTrustGatewayRuleSettingsBisoAdminControlsPrintingEnum valueOf(String name) => _$zeroTrustGatewayRuleSettingsBisoAdminControlsPrintingEnumValueOf(name);
 }
 
 class ZeroTrustGatewayRuleSettingsBisoAdminControlsUploadEnum extends EnumClass {
@@ -428,12 +428,12 @@ class ZeroTrustGatewayRuleSettingsBisoAdminControlsUploadEnum extends EnumClass 
   @BuiltValueEnumConst(wireName: r'disabled')
   static const ZeroTrustGatewayRuleSettingsBisoAdminControlsUploadEnum disabled = _$zeroTrustGatewayRuleSettingsBisoAdminControlsUploadEnum_disabled;
 
-  static Serializer<ZeroTrustGatewayRuleSettingsBisoAdminControlsUploadEnum> get serializer => _$zeroTrustGatewayRuleSettingsBisoAdminControlsUploadSerializer;
+  static Serializer<ZeroTrustGatewayRuleSettingsBisoAdminControlsUploadEnum> get serializer => _$zeroTrustGatewayRuleSettingsBisoAdminControlsUploadEnumSerializer;
 
   const ZeroTrustGatewayRuleSettingsBisoAdminControlsUploadEnum._(String name): super(name);
 
-  static BuiltSet<ZeroTrustGatewayRuleSettingsBisoAdminControlsUploadEnum> get values => _$zeroTrustGatewayRuleSettingsBisoAdminControlsUploadValues;
-  static ZeroTrustGatewayRuleSettingsBisoAdminControlsUploadEnum valueOf(String name) => _$zeroTrustGatewayRuleSettingsBisoAdminControlsUploadValueOf(name);
+  static BuiltSet<ZeroTrustGatewayRuleSettingsBisoAdminControlsUploadEnum> get values => _$zeroTrustGatewayRuleSettingsBisoAdminControlsUploadEnumValues;
+  static ZeroTrustGatewayRuleSettingsBisoAdminControlsUploadEnum valueOf(String name) => _$zeroTrustGatewayRuleSettingsBisoAdminControlsUploadEnumValueOf(name);
 }
 
 class ZeroTrustGatewayRuleSettingsBisoAdminControlsVersionEnum extends EnumClass {
@@ -445,11 +445,11 @@ class ZeroTrustGatewayRuleSettingsBisoAdminControlsVersionEnum extends EnumClass
   @BuiltValueEnumConst(wireName: r'v2')
   static const ZeroTrustGatewayRuleSettingsBisoAdminControlsVersionEnum v2 = _$zeroTrustGatewayRuleSettingsBisoAdminControlsVersionEnum_v2;
 
-  static Serializer<ZeroTrustGatewayRuleSettingsBisoAdminControlsVersionEnum> get serializer => _$zeroTrustGatewayRuleSettingsBisoAdminControlsVersionSerializer;
+  static Serializer<ZeroTrustGatewayRuleSettingsBisoAdminControlsVersionEnum> get serializer => _$zeroTrustGatewayRuleSettingsBisoAdminControlsVersionEnumSerializer;
 
   const ZeroTrustGatewayRuleSettingsBisoAdminControlsVersionEnum._(String name): super(name);
 
-  static BuiltSet<ZeroTrustGatewayRuleSettingsBisoAdminControlsVersionEnum> get values => _$zeroTrustGatewayRuleSettingsBisoAdminControlsVersionValues;
-  static ZeroTrustGatewayRuleSettingsBisoAdminControlsVersionEnum valueOf(String name) => _$zeroTrustGatewayRuleSettingsBisoAdminControlsVersionValueOf(name);
+  static BuiltSet<ZeroTrustGatewayRuleSettingsBisoAdminControlsVersionEnum> get values => _$zeroTrustGatewayRuleSettingsBisoAdminControlsVersionEnumValues;
+  static ZeroTrustGatewayRuleSettingsBisoAdminControlsVersionEnum valueOf(String name) => _$zeroTrustGatewayRuleSettingsBisoAdminControlsVersionEnumValueOf(name);
 }
 

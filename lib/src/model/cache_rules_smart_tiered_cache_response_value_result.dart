@@ -143,11 +143,11 @@ class CacheRulesSmartTieredCacheResponseValueResultIdEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'tiered_cache_smart_topology_enable')
   static const CacheRulesSmartTieredCacheResponseValueResultIdEnum tieredCacheSmartTopologyEnable = _$cacheRulesSmartTieredCacheResponseValueResultIdEnum_tieredCacheSmartTopologyEnable;
 
-  static Serializer<CacheRulesSmartTieredCacheResponseValueResultIdEnum> get serializer => _$cacheRulesSmartTieredCacheResponseValueResultIdSerializer;
+  static Serializer<CacheRulesSmartTieredCacheResponseValueResultIdEnum> get serializer => _$cacheRulesSmartTieredCacheResponseValueResultIdEnumSerializer;
 
   const CacheRulesSmartTieredCacheResponseValueResultIdEnum._(String name): super(name);
 
-  static BuiltSet<CacheRulesSmartTieredCacheResponseValueResultIdEnum> get values => _$cacheRulesSmartTieredCacheResponseValueResultIdValues;
-  static CacheRulesSmartTieredCacheResponseValueResultIdEnum valueOf(String name) => _$cacheRulesSmartTieredCacheResponseValueResultIdValueOf(name);
+  static BuiltSet<CacheRulesSmartTieredCacheResponseValueResultIdEnum> get values => _$cacheRulesSmartTieredCacheResponseValueResultIdEnumValues;
+  static CacheRulesSmartTieredCacheResponseValueResultIdEnum valueOf(String name) => _$cacheRulesSmartTieredCacheResponseValueResultIdEnumValueOf(name);
 }
 

@@ -118,11 +118,11 @@ class ZeroTrustGatewayBodyScanningSettingsInspectionModeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'shallow')
   static const ZeroTrustGatewayBodyScanningSettingsInspectionModeEnum shallow = _$zeroTrustGatewayBodyScanningSettingsInspectionModeEnum_shallow;
 
-  static Serializer<ZeroTrustGatewayBodyScanningSettingsInspectionModeEnum> get serializer => _$zeroTrustGatewayBodyScanningSettingsInspectionModeSerializer;
+  static Serializer<ZeroTrustGatewayBodyScanningSettingsInspectionModeEnum> get serializer => _$zeroTrustGatewayBodyScanningSettingsInspectionModeEnumSerializer;
 
   const ZeroTrustGatewayBodyScanningSettingsInspectionModeEnum._(String name): super(name);
 
-  static BuiltSet<ZeroTrustGatewayBodyScanningSettingsInspectionModeEnum> get values => _$zeroTrustGatewayBodyScanningSettingsInspectionModeValues;
-  static ZeroTrustGatewayBodyScanningSettingsInspectionModeEnum valueOf(String name) => _$zeroTrustGatewayBodyScanningSettingsInspectionModeValueOf(name);
+  static BuiltSet<ZeroTrustGatewayBodyScanningSettingsInspectionModeEnum> get values => _$zeroTrustGatewayBodyScanningSettingsInspectionModeEnumValues;
+  static ZeroTrustGatewayBodyScanningSettingsInspectionModeEnum valueOf(String name) => _$zeroTrustGatewayBodyScanningSettingsInspectionModeEnumValueOf(name);
 }
 

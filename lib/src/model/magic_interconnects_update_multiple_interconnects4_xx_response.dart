@@ -149,11 +149,11 @@ class _$MagicInterconnectsUpdateMultipleInterconnects4XXResponseSerializer imple
 class MagicInterconnectsUpdateMultipleInterconnects4XXResponseResultEnum extends EnumClass {
 
 
-  static Serializer<MagicInterconnectsUpdateMultipleInterconnects4XXResponseResultEnum> get serializer => _$magicInterconnectsUpdateMultipleInterconnects4XXResponseResultSerializer;
+  static Serializer<MagicInterconnectsUpdateMultipleInterconnects4XXResponseResultEnum> get serializer => _$magicInterconnectsUpdateMultipleInterconnects4XXResponseResultEnumSerializer;
 
   const MagicInterconnectsUpdateMultipleInterconnects4XXResponseResultEnum._(String name): super(name);
 
-  static BuiltSet<MagicInterconnectsUpdateMultipleInterconnects4XXResponseResultEnum> get values => _$magicInterconnectsUpdateMultipleInterconnects4XXResponseResultValues;
-  static MagicInterconnectsUpdateMultipleInterconnects4XXResponseResultEnum valueOf(String name) => _$magicInterconnectsUpdateMultipleInterconnects4XXResponseResultValueOf(name);
+  static BuiltSet<MagicInterconnectsUpdateMultipleInterconnects4XXResponseResultEnum> get values => _$magicInterconnectsUpdateMultipleInterconnects4XXResponseResultEnumValues;
+  static MagicInterconnectsUpdateMultipleInterconnects4XXResponseResultEnum valueOf(String name) => _$magicInterconnectsUpdateMultipleInterconnects4XXResponseResultEnumValueOf(name);
 }
 

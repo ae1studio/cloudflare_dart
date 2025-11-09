@@ -10,19 +10,19 @@ class _$AccessServiceTokens extends AccessServiceTokens {
   @override
   final String? clientId;
   @override
-  final AccessCreatedAt? createdAt;
+  final JsonObject? createdAt;
   @override
   final String? duration;
   @override
   final DateTime? expiresAt;
   @override
-  final JsonObject? id;
+  final String? id;
   @override
-  final JsonObject? lastSeenAt;
+  final DateTime? lastSeenAt;
   @override
   final String? name;
   @override
-  final AccessUpdatedAt? updatedAt;
+  final JsonObject? updatedAt;
 
   factory _$AccessServiceTokens(
           [void Function(AccessServiceTokensBuilder)? updates]) =>
@@ -99,11 +99,9 @@ class AccessServiceTokensBuilder
   String? get clientId => _$this._clientId;
   set clientId(String? clientId) => _$this._clientId = clientId;
 
-  AccessCreatedAtBuilder? _createdAt;
-  AccessCreatedAtBuilder get createdAt =>
-      _$this._createdAt ??= AccessCreatedAtBuilder();
-  set createdAt(AccessCreatedAtBuilder? createdAt) =>
-      _$this._createdAt = createdAt;
+  JsonObject? _createdAt;
+  JsonObject? get createdAt => _$this._createdAt;
+  set createdAt(JsonObject? createdAt) => _$this._createdAt = createdAt;
 
   String? _duration;
   String? get duration => _$this._duration;
@@ -113,23 +111,21 @@ class AccessServiceTokensBuilder
   DateTime? get expiresAt => _$this._expiresAt;
   set expiresAt(DateTime? expiresAt) => _$this._expiresAt = expiresAt;
 
-  JsonObject? _id;
-  JsonObject? get id => _$this._id;
-  set id(JsonObject? id) => _$this._id = id;
+  String? _id;
+  String? get id => _$this._id;
+  set id(String? id) => _$this._id = id;
 
-  JsonObject? _lastSeenAt;
-  JsonObject? get lastSeenAt => _$this._lastSeenAt;
-  set lastSeenAt(JsonObject? lastSeenAt) => _$this._lastSeenAt = lastSeenAt;
+  DateTime? _lastSeenAt;
+  DateTime? get lastSeenAt => _$this._lastSeenAt;
+  set lastSeenAt(DateTime? lastSeenAt) => _$this._lastSeenAt = lastSeenAt;
 
   String? _name;
   String? get name => _$this._name;
   set name(String? name) => _$this._name = name;
 
-  AccessUpdatedAtBuilder? _updatedAt;
-  AccessUpdatedAtBuilder get updatedAt =>
-      _$this._updatedAt ??= AccessUpdatedAtBuilder();
-  set updatedAt(AccessUpdatedAtBuilder? updatedAt) =>
-      _$this._updatedAt = updatedAt;
+  JsonObject? _updatedAt;
+  JsonObject? get updatedAt => _$this._updatedAt;
+  set updatedAt(JsonObject? updatedAt) => _$this._updatedAt = updatedAt;
 
   AccessServiceTokensBuilder() {
     AccessServiceTokens._defaults(this);
@@ -139,13 +135,13 @@ class AccessServiceTokensBuilder
     final $v = _$v;
     if ($v != null) {
       _clientId = $v.clientId;
-      _createdAt = $v.createdAt?.toBuilder();
+      _createdAt = $v.createdAt;
       _duration = $v.duration;
       _expiresAt = $v.expiresAt;
       _id = $v.id;
       _lastSeenAt = $v.lastSeenAt;
       _name = $v.name;
-      _updatedAt = $v.updatedAt?.toBuilder();
+      _updatedAt = $v.updatedAt;
       _$v = null;
     }
     return this;
@@ -165,33 +161,17 @@ class AccessServiceTokensBuilder
   AccessServiceTokens build() => _build();
 
   _$AccessServiceTokens _build() {
-    _$AccessServiceTokens _$result;
-    try {
-      _$result = _$v ??
-          _$AccessServiceTokens._(
-            clientId: clientId,
-            createdAt: _createdAt?.build(),
-            duration: duration,
-            expiresAt: expiresAt,
-            id: id,
-            lastSeenAt: lastSeenAt,
-            name: name,
-            updatedAt: _updatedAt?.build(),
-          );
-    } catch (_) {
-      late String _$failedField;
-      try {
-        _$failedField = 'createdAt';
-        _createdAt?.build();
-
-        _$failedField = 'updatedAt';
-        _updatedAt?.build();
-      } catch (e) {
-        throw BuiltValueNestedFieldError(
-            r'AccessServiceTokens', _$failedField, e.toString());
-      }
-      rethrow;
-    }
+    final _$result = _$v ??
+        _$AccessServiceTokens._(
+          clientId: clientId,
+          createdAt: createdAt,
+          duration: duration,
+          expiresAt: expiresAt,
+          id: id,
+          lastSeenAt: lastSeenAt,
+          name: name,
+          updatedAt: updatedAt,
+        );
     replace(_$result);
     return _$result;
   }

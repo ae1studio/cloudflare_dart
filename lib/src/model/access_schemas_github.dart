@@ -206,11 +206,11 @@ class AccessSchemasGithubTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'yandex')
   static const AccessSchemasGithubTypeEnum yandex = _$accessSchemasGithubTypeEnum_yandex;
 
-  static Serializer<AccessSchemasGithubTypeEnum> get serializer => _$accessSchemasGithubTypeSerializer;
+  static Serializer<AccessSchemasGithubTypeEnum> get serializer => _$accessSchemasGithubTypeEnumSerializer;
 
   const AccessSchemasGithubTypeEnum._(String name): super(name);
 
-  static BuiltSet<AccessSchemasGithubTypeEnum> get values => _$accessSchemasGithubTypeValues;
-  static AccessSchemasGithubTypeEnum valueOf(String name) => _$accessSchemasGithubTypeValueOf(name);
+  static BuiltSet<AccessSchemasGithubTypeEnum> get values => _$accessSchemasGithubTypeEnumValues;
+  static AccessSchemasGithubTypeEnum valueOf(String name) => _$accessSchemasGithubTypeEnumValueOf(name);
 }
 

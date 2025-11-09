@@ -167,11 +167,11 @@ class _$ApiShieldOldSchemaUploadFailureSerializer implements PrimitiveSerializer
 class ApiShieldOldSchemaUploadFailureResultEnum extends EnumClass {
 
 
-  static Serializer<ApiShieldOldSchemaUploadFailureResultEnum> get serializer => _$apiShieldOldSchemaUploadFailureResultSerializer;
+  static Serializer<ApiShieldOldSchemaUploadFailureResultEnum> get serializer => _$apiShieldOldSchemaUploadFailureResultEnumSerializer;
 
   const ApiShieldOldSchemaUploadFailureResultEnum._(String name): super(name);
 
-  static BuiltSet<ApiShieldOldSchemaUploadFailureResultEnum> get values => _$apiShieldOldSchemaUploadFailureResultValues;
-  static ApiShieldOldSchemaUploadFailureResultEnum valueOf(String name) => _$apiShieldOldSchemaUploadFailureResultValueOf(name);
+  static BuiltSet<ApiShieldOldSchemaUploadFailureResultEnum> get values => _$apiShieldOldSchemaUploadFailureResultEnumValues;
+  static ApiShieldOldSchemaUploadFailureResultEnum valueOf(String name) => _$apiShieldOldSchemaUploadFailureResultEnumValueOf(name);
 }
 

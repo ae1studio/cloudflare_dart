@@ -148,11 +148,11 @@ class _$ZoneLockdownCreateAZoneLockdownRule4XXResponseSerializer implements Prim
 class ZoneLockdownCreateAZoneLockdownRule4XXResponseResultEnum extends EnumClass {
 
 
-  static Serializer<ZoneLockdownCreateAZoneLockdownRule4XXResponseResultEnum> get serializer => _$zoneLockdownCreateAZoneLockdownRule4XXResponseResultSerializer;
+  static Serializer<ZoneLockdownCreateAZoneLockdownRule4XXResponseResultEnum> get serializer => _$zoneLockdownCreateAZoneLockdownRule4XXResponseResultEnumSerializer;
 
   const ZoneLockdownCreateAZoneLockdownRule4XXResponseResultEnum._(String name): super(name);
 
-  static BuiltSet<ZoneLockdownCreateAZoneLockdownRule4XXResponseResultEnum> get values => _$zoneLockdownCreateAZoneLockdownRule4XXResponseResultValues;
-  static ZoneLockdownCreateAZoneLockdownRule4XXResponseResultEnum valueOf(String name) => _$zoneLockdownCreateAZoneLockdownRule4XXResponseResultValueOf(name);
+  static BuiltSet<ZoneLockdownCreateAZoneLockdownRule4XXResponseResultEnum> get values => _$zoneLockdownCreateAZoneLockdownRule4XXResponseResultEnumValues;
+  static ZoneLockdownCreateAZoneLockdownRule4XXResponseResultEnum valueOf(String name) => _$zoneLockdownCreateAZoneLockdownRule4XXResponseResultEnumValueOf(name);
 }
 

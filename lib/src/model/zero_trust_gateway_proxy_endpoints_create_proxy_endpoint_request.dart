@@ -134,11 +134,11 @@ class ZeroTrustGatewayProxyEndpointsCreateProxyEndpointRequestKindEnum extends E
   @BuiltValueEnumConst(wireName: r'identity')
   static const ZeroTrustGatewayProxyEndpointsCreateProxyEndpointRequestKindEnum identity = _$zeroTrustGatewayProxyEndpointsCreateProxyEndpointRequestKindEnum_identity;
 
-  static Serializer<ZeroTrustGatewayProxyEndpointsCreateProxyEndpointRequestKindEnum> get serializer => _$zeroTrustGatewayProxyEndpointsCreateProxyEndpointRequestKindSerializer;
+  static Serializer<ZeroTrustGatewayProxyEndpointsCreateProxyEndpointRequestKindEnum> get serializer => _$zeroTrustGatewayProxyEndpointsCreateProxyEndpointRequestKindEnumSerializer;
 
   const ZeroTrustGatewayProxyEndpointsCreateProxyEndpointRequestKindEnum._(String name): super(name);
 
-  static BuiltSet<ZeroTrustGatewayProxyEndpointsCreateProxyEndpointRequestKindEnum> get values => _$zeroTrustGatewayProxyEndpointsCreateProxyEndpointRequestKindValues;
-  static ZeroTrustGatewayProxyEndpointsCreateProxyEndpointRequestKindEnum valueOf(String name) => _$zeroTrustGatewayProxyEndpointsCreateProxyEndpointRequestKindValueOf(name);
+  static BuiltSet<ZeroTrustGatewayProxyEndpointsCreateProxyEndpointRequestKindEnum> get values => _$zeroTrustGatewayProxyEndpointsCreateProxyEndpointRequestKindEnumValues;
+  static ZeroTrustGatewayProxyEndpointsCreateProxyEndpointRequestKindEnum valueOf(String name) => _$zeroTrustGatewayProxyEndpointsCreateProxyEndpointRequestKindEnumValueOf(name);
 }
 

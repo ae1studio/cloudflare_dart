@@ -22,7 +22,7 @@ part 'rulesets_redirect_rule.g.dart';
 /// * [actionParameters] 
 /// * [categories] - The categories of the rule.
 /// * [description] 
-/// * [enabled] 
+/// * [enabled] - Whether the rule should be executed.
 /// * [exposedCredentialCheck] 
 /// * [expression] - The expression defining which traffic will match the rule.
 /// * [id] - The unique ID of the rule.
@@ -40,6 +40,7 @@ abstract class RulesetsRedirectRule implements RulesetsRule, Built<RulesetsRedir
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(RulesetsRedirectRuleBuilder b) => b
       ..description = ''
+      ..enabled = true
       ..actionParameters = {};
 
   @BuiltValueSerializer(custom: true)
@@ -293,11 +294,11 @@ class RulesetsRedirectRuleActionEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'redirect')
   static const RulesetsRedirectRuleActionEnum redirect = _$rulesetsRedirectRuleActionEnum_redirect;
 
-  static Serializer<RulesetsRedirectRuleActionEnum> get serializer => _$rulesetsRedirectRuleActionSerializer;
+  static Serializer<RulesetsRedirectRuleActionEnum> get serializer => _$rulesetsRedirectRuleActionEnumSerializer;
 
   const RulesetsRedirectRuleActionEnum._(String name): super(name);
 
-  static BuiltSet<RulesetsRedirectRuleActionEnum> get values => _$rulesetsRedirectRuleActionValues;
-  static RulesetsRedirectRuleActionEnum valueOf(String name) => _$rulesetsRedirectRuleActionValueOf(name);
+  static BuiltSet<RulesetsRedirectRuleActionEnum> get values => _$rulesetsRedirectRuleActionEnumValues;
+  static RulesetsRedirectRuleActionEnum valueOf(String name) => _$rulesetsRedirectRuleActionEnumValueOf(name);
 }
 

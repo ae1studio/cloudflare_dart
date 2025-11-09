@@ -221,11 +221,11 @@ class WorkersVersionItemShortMetadataSource_Enum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'workersci')
   static const WorkersVersionItemShortMetadataSource_Enum workersci = _$workersVersionItemShortMetadataSourceEnum_workersci;
 
-  static Serializer<WorkersVersionItemShortMetadataSource_Enum> get serializer => _$workersVersionItemShortMetadataSourceSerializer;
+  static Serializer<WorkersVersionItemShortMetadataSource_Enum> get serializer => _$workersVersionItemShortMetadataSourceEnumSerializer;
 
   const WorkersVersionItemShortMetadataSource_Enum._(String name): super(name);
 
-  static BuiltSet<WorkersVersionItemShortMetadataSource_Enum> get values => _$workersVersionItemShortMetadataSourceValues;
-  static WorkersVersionItemShortMetadataSource_Enum valueOf(String name) => _$workersVersionItemShortMetadataSourceValueOf(name);
+  static BuiltSet<WorkersVersionItemShortMetadataSource_Enum> get values => _$workersVersionItemShortMetadataSourceEnumValues;
+  static WorkersVersionItemShortMetadataSource_Enum valueOf(String name) => _$workersVersionItemShortMetadataSourceEnumValueOf(name);
 }
 

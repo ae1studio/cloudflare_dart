@@ -144,12 +144,12 @@ class TlsCertificatesAndHostnamesVerificationInfoRecordNameEnum extends EnumClas
   @BuiltValueEnumConst(wireName: r'txt_name')
   static const TlsCertificatesAndHostnamesVerificationInfoRecordNameEnum txtName = _$tlsCertificatesAndHostnamesVerificationInfoRecordNameEnum_txtName;
 
-  static Serializer<TlsCertificatesAndHostnamesVerificationInfoRecordNameEnum> get serializer => _$tlsCertificatesAndHostnamesVerificationInfoRecordNameSerializer;
+  static Serializer<TlsCertificatesAndHostnamesVerificationInfoRecordNameEnum> get serializer => _$tlsCertificatesAndHostnamesVerificationInfoRecordNameEnumSerializer;
 
   const TlsCertificatesAndHostnamesVerificationInfoRecordNameEnum._(String name): super(name);
 
-  static BuiltSet<TlsCertificatesAndHostnamesVerificationInfoRecordNameEnum> get values => _$tlsCertificatesAndHostnamesVerificationInfoRecordNameValues;
-  static TlsCertificatesAndHostnamesVerificationInfoRecordNameEnum valueOf(String name) => _$tlsCertificatesAndHostnamesVerificationInfoRecordNameValueOf(name);
+  static BuiltSet<TlsCertificatesAndHostnamesVerificationInfoRecordNameEnum> get values => _$tlsCertificatesAndHostnamesVerificationInfoRecordNameEnumValues;
+  static TlsCertificatesAndHostnamesVerificationInfoRecordNameEnum valueOf(String name) => _$tlsCertificatesAndHostnamesVerificationInfoRecordNameEnumValueOf(name);
 }
 
 class TlsCertificatesAndHostnamesVerificationInfoRecordTargetEnum extends EnumClass {
@@ -167,11 +167,11 @@ class TlsCertificatesAndHostnamesVerificationInfoRecordTargetEnum extends EnumCl
   @BuiltValueEnumConst(wireName: r'txt_value')
   static const TlsCertificatesAndHostnamesVerificationInfoRecordTargetEnum txtValue = _$tlsCertificatesAndHostnamesVerificationInfoRecordTargetEnum_txtValue;
 
-  static Serializer<TlsCertificatesAndHostnamesVerificationInfoRecordTargetEnum> get serializer => _$tlsCertificatesAndHostnamesVerificationInfoRecordTargetSerializer;
+  static Serializer<TlsCertificatesAndHostnamesVerificationInfoRecordTargetEnum> get serializer => _$tlsCertificatesAndHostnamesVerificationInfoRecordTargetEnumSerializer;
 
   const TlsCertificatesAndHostnamesVerificationInfoRecordTargetEnum._(String name): super(name);
 
-  static BuiltSet<TlsCertificatesAndHostnamesVerificationInfoRecordTargetEnum> get values => _$tlsCertificatesAndHostnamesVerificationInfoRecordTargetValues;
-  static TlsCertificatesAndHostnamesVerificationInfoRecordTargetEnum valueOf(String name) => _$tlsCertificatesAndHostnamesVerificationInfoRecordTargetValueOf(name);
+  static BuiltSet<TlsCertificatesAndHostnamesVerificationInfoRecordTargetEnum> get values => _$tlsCertificatesAndHostnamesVerificationInfoRecordTargetEnumValues;
+  static TlsCertificatesAndHostnamesVerificationInfoRecordTargetEnum valueOf(String name) => _$tlsCertificatesAndHostnamesVerificationInfoRecordTargetEnumValueOf(name);
 }
 

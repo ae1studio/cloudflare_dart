@@ -170,12 +170,12 @@ class TelemetryQueryRequestParametersCalculationsInnerKeyTypeEnum extends EnumCl
   @BuiltValueEnumConst(wireName: r'boolean')
   static const TelemetryQueryRequestParametersCalculationsInnerKeyTypeEnum boolean = _$telemetryQueryRequestParametersCalculationsInnerKeyTypeEnum_boolean;
 
-  static Serializer<TelemetryQueryRequestParametersCalculationsInnerKeyTypeEnum> get serializer => _$telemetryQueryRequestParametersCalculationsInnerKeyTypeSerializer;
+  static Serializer<TelemetryQueryRequestParametersCalculationsInnerKeyTypeEnum> get serializer => _$telemetryQueryRequestParametersCalculationsInnerKeyTypeEnumSerializer;
 
   const TelemetryQueryRequestParametersCalculationsInnerKeyTypeEnum._(String name): super(name);
 
-  static BuiltSet<TelemetryQueryRequestParametersCalculationsInnerKeyTypeEnum> get values => _$telemetryQueryRequestParametersCalculationsInnerKeyTypeValues;
-  static TelemetryQueryRequestParametersCalculationsInnerKeyTypeEnum valueOf(String name) => _$telemetryQueryRequestParametersCalculationsInnerKeyTypeValueOf(name);
+  static BuiltSet<TelemetryQueryRequestParametersCalculationsInnerKeyTypeEnum> get values => _$telemetryQueryRequestParametersCalculationsInnerKeyTypeEnumValues;
+  static TelemetryQueryRequestParametersCalculationsInnerKeyTypeEnum valueOf(String name) => _$telemetryQueryRequestParametersCalculationsInnerKeyTypeEnumValueOf(name);
 }
 
 class TelemetryQueryRequestParametersCalculationsInnerOperator_Enum extends EnumClass {
@@ -257,11 +257,11 @@ class TelemetryQueryRequestParametersCalculationsInnerOperator_Enum extends Enum
   @BuiltValueEnumConst(wireName: r'VARIANCE')
   static const TelemetryQueryRequestParametersCalculationsInnerOperator_Enum VARIANCE = _$telemetryQueryRequestParametersCalculationsInnerOperatorEnum_VARIANCE;
 
-  static Serializer<TelemetryQueryRequestParametersCalculationsInnerOperator_Enum> get serializer => _$telemetryQueryRequestParametersCalculationsInnerOperatorSerializer;
+  static Serializer<TelemetryQueryRequestParametersCalculationsInnerOperator_Enum> get serializer => _$telemetryQueryRequestParametersCalculationsInnerOperatorEnumSerializer;
 
   const TelemetryQueryRequestParametersCalculationsInnerOperator_Enum._(String name): super(name);
 
-  static BuiltSet<TelemetryQueryRequestParametersCalculationsInnerOperator_Enum> get values => _$telemetryQueryRequestParametersCalculationsInnerOperatorValues;
-  static TelemetryQueryRequestParametersCalculationsInnerOperator_Enum valueOf(String name) => _$telemetryQueryRequestParametersCalculationsInnerOperatorValueOf(name);
+  static BuiltSet<TelemetryQueryRequestParametersCalculationsInnerOperator_Enum> get values => _$telemetryQueryRequestParametersCalculationsInnerOperatorEnumValues;
+  static TelemetryQueryRequestParametersCalculationsInnerOperator_Enum valueOf(String name) => _$telemetryQueryRequestParametersCalculationsInnerOperatorEnumValueOf(name);
 }
 

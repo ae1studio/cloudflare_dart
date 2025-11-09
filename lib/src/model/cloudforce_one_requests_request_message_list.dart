@@ -209,11 +209,11 @@ class CloudforceOneRequestsRequestMessageListSortOrderEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'desc')
   static const CloudforceOneRequestsRequestMessageListSortOrderEnum desc = _$cloudforceOneRequestsRequestMessageListSortOrderEnum_desc;
 
-  static Serializer<CloudforceOneRequestsRequestMessageListSortOrderEnum> get serializer => _$cloudforceOneRequestsRequestMessageListSortOrderSerializer;
+  static Serializer<CloudforceOneRequestsRequestMessageListSortOrderEnum> get serializer => _$cloudforceOneRequestsRequestMessageListSortOrderEnumSerializer;
 
   const CloudforceOneRequestsRequestMessageListSortOrderEnum._(String name): super(name);
 
-  static BuiltSet<CloudforceOneRequestsRequestMessageListSortOrderEnum> get values => _$cloudforceOneRequestsRequestMessageListSortOrderValues;
-  static CloudforceOneRequestsRequestMessageListSortOrderEnum valueOf(String name) => _$cloudforceOneRequestsRequestMessageListSortOrderValueOf(name);
+  static BuiltSet<CloudforceOneRequestsRequestMessageListSortOrderEnum> get values => _$cloudforceOneRequestsRequestMessageListSortOrderEnumValues;
+  static CloudforceOneRequestsRequestMessageListSortOrderEnum valueOf(String name) => _$cloudforceOneRequestsRequestMessageListSortOrderEnumValueOf(name);
 }
 

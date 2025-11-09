@@ -154,11 +154,11 @@ class AutoragConfigAiSearchRequestFiltersAnyOfTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'lte')
   static const AutoragConfigAiSearchRequestFiltersAnyOfTypeEnum lte = _$autoragConfigAiSearchRequestFiltersAnyOfTypeEnum_lte;
 
-  static Serializer<AutoragConfigAiSearchRequestFiltersAnyOfTypeEnum> get serializer => _$autoragConfigAiSearchRequestFiltersAnyOfTypeSerializer;
+  static Serializer<AutoragConfigAiSearchRequestFiltersAnyOfTypeEnum> get serializer => _$autoragConfigAiSearchRequestFiltersAnyOfTypeEnumSerializer;
 
   const AutoragConfigAiSearchRequestFiltersAnyOfTypeEnum._(String name): super(name);
 
-  static BuiltSet<AutoragConfigAiSearchRequestFiltersAnyOfTypeEnum> get values => _$autoragConfigAiSearchRequestFiltersAnyOfTypeValues;
-  static AutoragConfigAiSearchRequestFiltersAnyOfTypeEnum valueOf(String name) => _$autoragConfigAiSearchRequestFiltersAnyOfTypeValueOf(name);
+  static BuiltSet<AutoragConfigAiSearchRequestFiltersAnyOfTypeEnum> get values => _$autoragConfigAiSearchRequestFiltersAnyOfTypeEnumValues;
+  static AutoragConfigAiSearchRequestFiltersAnyOfTypeEnum valueOf(String name) => _$autoragConfigAiSearchRequestFiltersAnyOfTypeEnumValueOf(name);
 }
 

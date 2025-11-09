@@ -183,11 +183,11 @@ class Zones0PatchRequestTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'internal')
   static const Zones0PatchRequestTypeEnum internal = _$zones0PatchRequestTypeEnum_internal;
 
-  static Serializer<Zones0PatchRequestTypeEnum> get serializer => _$zones0PatchRequestTypeSerializer;
+  static Serializer<Zones0PatchRequestTypeEnum> get serializer => _$zones0PatchRequestTypeEnumSerializer;
 
   const Zones0PatchRequestTypeEnum._(String name): super(name);
 
-  static BuiltSet<Zones0PatchRequestTypeEnum> get values => _$zones0PatchRequestTypeValues;
-  static Zones0PatchRequestTypeEnum valueOf(String name) => _$zones0PatchRequestTypeValueOf(name);
+  static BuiltSet<Zones0PatchRequestTypeEnum> get values => _$zones0PatchRequestTypeEnumValues;
+  static Zones0PatchRequestTypeEnum valueOf(String name) => _$zones0PatchRequestTypeEnumValueOf(name);
 }
 

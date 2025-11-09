@@ -215,3 +215,23 @@ class _$MagicAclsAddSingleRequestSerializer implements PrimitiveSerializer<Magic
   }
 }
 
+class MagicAclsAddSingleRequestProtocolsEnum extends EnumClass {
+
+  /// Array of allowed communication protocols between configured LANs. If no protocols are provided, all protocols are allowed.
+  @BuiltValueEnumConst(wireName: r'tcp')
+  static const MagicAclsAddSingleRequestProtocolsEnum tcp = _$magicAclsAddSingleRequestProtocolsEnum_tcp;
+  /// Array of allowed communication protocols between configured LANs. If no protocols are provided, all protocols are allowed.
+  @BuiltValueEnumConst(wireName: r'udp')
+  static const MagicAclsAddSingleRequestProtocolsEnum udp = _$magicAclsAddSingleRequestProtocolsEnum_udp;
+  /// Array of allowed communication protocols between configured LANs. If no protocols are provided, all protocols are allowed.
+  @BuiltValueEnumConst(wireName: r'icmp')
+  static const MagicAclsAddSingleRequestProtocolsEnum icmp = _$magicAclsAddSingleRequestProtocolsEnum_icmp;
+
+  static Serializer<MagicAclsAddSingleRequestProtocolsEnum> get serializer => _$magicAclsAddSingleRequestProtocolsEnumSerializer;
+
+  const MagicAclsAddSingleRequestProtocolsEnum._(String name): super(name);
+
+  static BuiltSet<MagicAclsAddSingleRequestProtocolsEnum> get values => _$magicAclsAddSingleRequestProtocolsEnumValues;
+  static MagicAclsAddSingleRequestProtocolsEnum valueOf(String name) => _$magicAclsAddSingleRequestProtocolsEnumValueOf(name);
+}
+

@@ -26,7 +26,7 @@ abstract class PostV4AccountsByAccountIdPipelinesDeprecatedRequestDestinationCom
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(PostV4AccountsByAccountIdPipelinesDeprecatedRequestDestinationCompressionBuilder b) => b
-      ..type = const PostV4AccountsByAccountIdPipelinesDeprecatedRequestDestinationCompressionTypeEnum._('gzip');
+      ..type = PostV4AccountsByAccountIdPipelinesDeprecatedRequestDestinationCompressionTypeEnum.valueOf('gzip');
 
   @BuiltValueSerializer(custom: true)
   static Serializer<PostV4AccountsByAccountIdPipelinesDeprecatedRequestDestinationCompression> get serializer => _$PostV4AccountsByAccountIdPipelinesDeprecatedRequestDestinationCompressionSerializer();
@@ -122,11 +122,11 @@ class PostV4AccountsByAccountIdPipelinesDeprecatedRequestDestinationCompressionT
   @BuiltValueEnumConst(wireName: r'deflate')
   static const PostV4AccountsByAccountIdPipelinesDeprecatedRequestDestinationCompressionTypeEnum deflate = _$postV4AccountsByAccountIdPipelinesDeprecatedRequestDestinationCompressionTypeEnum_deflate;
 
-  static Serializer<PostV4AccountsByAccountIdPipelinesDeprecatedRequestDestinationCompressionTypeEnum> get serializer => _$postV4AccountsByAccountIdPipelinesDeprecatedRequestDestinationCompressionTypeSerializer;
+  static Serializer<PostV4AccountsByAccountIdPipelinesDeprecatedRequestDestinationCompressionTypeEnum> get serializer => _$postV4AccountsByAccountIdPipelinesDeprecatedRequestDestinationCompressionTypeEnumSerializer;
 
   const PostV4AccountsByAccountIdPipelinesDeprecatedRequestDestinationCompressionTypeEnum._(String name): super(name);
 
-  static BuiltSet<PostV4AccountsByAccountIdPipelinesDeprecatedRequestDestinationCompressionTypeEnum> get values => _$postV4AccountsByAccountIdPipelinesDeprecatedRequestDestinationCompressionTypeValues;
-  static PostV4AccountsByAccountIdPipelinesDeprecatedRequestDestinationCompressionTypeEnum valueOf(String name) => _$postV4AccountsByAccountIdPipelinesDeprecatedRequestDestinationCompressionTypeValueOf(name);
+  static BuiltSet<PostV4AccountsByAccountIdPipelinesDeprecatedRequestDestinationCompressionTypeEnum> get values => _$postV4AccountsByAccountIdPipelinesDeprecatedRequestDestinationCompressionTypeEnumValues;
+  static PostV4AccountsByAccountIdPipelinesDeprecatedRequestDestinationCompressionTypeEnum valueOf(String name) => _$postV4AccountsByAccountIdPipelinesDeprecatedRequestDestinationCompressionTypeEnumValueOf(name);
 }
 

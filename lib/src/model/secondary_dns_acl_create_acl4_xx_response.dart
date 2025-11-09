@@ -150,11 +150,11 @@ class _$SecondaryDnsAclCreateAcl4XXResponseSerializer implements PrimitiveSerial
 class SecondaryDnsAclCreateAcl4XXResponseResultEnum extends EnumClass {
 
 
-  static Serializer<SecondaryDnsAclCreateAcl4XXResponseResultEnum> get serializer => _$secondaryDnsAclCreateAcl4XXResponseResultSerializer;
+  static Serializer<SecondaryDnsAclCreateAcl4XXResponseResultEnum> get serializer => _$secondaryDnsAclCreateAcl4XXResponseResultEnumSerializer;
 
   const SecondaryDnsAclCreateAcl4XXResponseResultEnum._(String name): super(name);
 
-  static BuiltSet<SecondaryDnsAclCreateAcl4XXResponseResultEnum> get values => _$secondaryDnsAclCreateAcl4XXResponseResultValues;
-  static SecondaryDnsAclCreateAcl4XXResponseResultEnum valueOf(String name) => _$secondaryDnsAclCreateAcl4XXResponseResultValueOf(name);
+  static BuiltSet<SecondaryDnsAclCreateAcl4XXResponseResultEnum> get values => _$secondaryDnsAclCreateAcl4XXResponseResultEnumValues;
+  static SecondaryDnsAclCreateAcl4XXResponseResultEnum valueOf(String name) => _$secondaryDnsAclCreateAcl4XXResponseResultEnumValueOf(name);
 }
 

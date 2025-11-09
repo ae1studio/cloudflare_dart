@@ -147,11 +147,11 @@ class WorkersBindingKindD1TypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'd1')
   static const WorkersBindingKindD1TypeEnum d1 = _$workersBindingKindD1TypeEnum_d1;
 
-  static Serializer<WorkersBindingKindD1TypeEnum> get serializer => _$workersBindingKindD1TypeSerializer;
+  static Serializer<WorkersBindingKindD1TypeEnum> get serializer => _$workersBindingKindD1TypeEnumSerializer;
 
   const WorkersBindingKindD1TypeEnum._(String name): super(name);
 
-  static BuiltSet<WorkersBindingKindD1TypeEnum> get values => _$workersBindingKindD1TypeValues;
-  static WorkersBindingKindD1TypeEnum valueOf(String name) => _$workersBindingKindD1TypeValueOf(name);
+  static BuiltSet<WorkersBindingKindD1TypeEnum> get values => _$workersBindingKindD1TypeEnumValues;
+  static WorkersBindingKindD1TypeEnum valueOf(String name) => _$workersBindingKindD1TypeEnumValueOf(name);
 }
 

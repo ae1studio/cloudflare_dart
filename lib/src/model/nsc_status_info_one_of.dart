@@ -111,11 +111,11 @@ class NscStatusInfoOneOfStateEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'Pending')
   static const NscStatusInfoOneOfStateEnum pending = _$nscStatusInfoOneOfStateEnum_pending;
 
-  static Serializer<NscStatusInfoOneOfStateEnum> get serializer => _$nscStatusInfoOneOfStateSerializer;
+  static Serializer<NscStatusInfoOneOfStateEnum> get serializer => _$nscStatusInfoOneOfStateEnumSerializer;
 
   const NscStatusInfoOneOfStateEnum._(String name): super(name);
 
-  static BuiltSet<NscStatusInfoOneOfStateEnum> get values => _$nscStatusInfoOneOfStateValues;
-  static NscStatusInfoOneOfStateEnum valueOf(String name) => _$nscStatusInfoOneOfStateValueOf(name);
+  static BuiltSet<NscStatusInfoOneOfStateEnum> get values => _$nscStatusInfoOneOfStateEnumValues;
+  static NscStatusInfoOneOfStateEnum valueOf(String name) => _$nscStatusInfoOneOfStateEnumValueOf(name);
 }
 

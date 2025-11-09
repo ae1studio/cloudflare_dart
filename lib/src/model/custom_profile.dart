@@ -40,7 +40,7 @@ abstract class CustomProfile implements DlpCustomProfile, Built<CustomProfile, C
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(CustomProfileBuilder b) => b
-      ..confidenceThreshold = const ._(DlpConfidence.low)
+      ..confidenceThreshold = DlpConfidence.low
       ..aiContextEnabled = false
       ..allowedMatchCount = 0
       ..ocrEnabled = false;
@@ -273,11 +273,11 @@ class CustomProfileTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'custom')
   static const CustomProfileTypeEnum custom = _$customProfileTypeEnum_custom;
 
-  static Serializer<CustomProfileTypeEnum> get serializer => _$customProfileTypeSerializer;
+  static Serializer<CustomProfileTypeEnum> get serializer => _$customProfileTypeEnumSerializer;
 
   const CustomProfileTypeEnum._(String name): super(name);
 
-  static BuiltSet<CustomProfileTypeEnum> get values => _$customProfileTypeValues;
-  static CustomProfileTypeEnum valueOf(String name) => _$customProfileTypeValueOf(name);
+  static BuiltSet<CustomProfileTypeEnum> get values => _$customProfileTypeEnumValues;
+  static CustomProfileTypeEnum valueOf(String name) => _$customProfileTypeEnumValueOf(name);
 }
 

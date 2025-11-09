@@ -149,11 +149,11 @@ class _$AnalyzeCertificateAnalyzeCertificate4XXResponseSerializer implements Pri
 class AnalyzeCertificateAnalyzeCertificate4XXResponseResultEnum extends EnumClass {
 
 
-  static Serializer<AnalyzeCertificateAnalyzeCertificate4XXResponseResultEnum> get serializer => _$analyzeCertificateAnalyzeCertificate4XXResponseResultSerializer;
+  static Serializer<AnalyzeCertificateAnalyzeCertificate4XXResponseResultEnum> get serializer => _$analyzeCertificateAnalyzeCertificate4XXResponseResultEnumSerializer;
 
   const AnalyzeCertificateAnalyzeCertificate4XXResponseResultEnum._(String name): super(name);
 
-  static BuiltSet<AnalyzeCertificateAnalyzeCertificate4XXResponseResultEnum> get values => _$analyzeCertificateAnalyzeCertificate4XXResponseResultValues;
-  static AnalyzeCertificateAnalyzeCertificate4XXResponseResultEnum valueOf(String name) => _$analyzeCertificateAnalyzeCertificate4XXResponseResultValueOf(name);
+  static BuiltSet<AnalyzeCertificateAnalyzeCertificate4XXResponseResultEnum> get values => _$analyzeCertificateAnalyzeCertificate4XXResponseResultEnumValues;
+  static AnalyzeCertificateAnalyzeCertificate4XXResponseResultEnum valueOf(String name) => _$analyzeCertificateAnalyzeCertificate4XXResponseResultEnumValueOf(name);
 }
 

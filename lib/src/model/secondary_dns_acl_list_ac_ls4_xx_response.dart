@@ -165,11 +165,11 @@ class _$SecondaryDnsAclListAcLs4XXResponseSerializer implements PrimitiveSeriali
 class SecondaryDnsAclListAcLs4XXResponseResultEnum extends EnumClass {
 
 
-  static Serializer<SecondaryDnsAclListAcLs4XXResponseResultEnum> get serializer => _$secondaryDnsAclListAcLs4XXResponseResultSerializer;
+  static Serializer<SecondaryDnsAclListAcLs4XXResponseResultEnum> get serializer => _$secondaryDnsAclListAcLs4XXResponseResultEnumSerializer;
 
   const SecondaryDnsAclListAcLs4XXResponseResultEnum._(String name): super(name);
 
-  static BuiltSet<SecondaryDnsAclListAcLs4XXResponseResultEnum> get values => _$secondaryDnsAclListAcLs4XXResponseResultValues;
-  static SecondaryDnsAclListAcLs4XXResponseResultEnum valueOf(String name) => _$secondaryDnsAclListAcLs4XXResponseResultValueOf(name);
+  static BuiltSet<SecondaryDnsAclListAcLs4XXResponseResultEnum> get values => _$secondaryDnsAclListAcLs4XXResponseResultEnumValues;
+  static SecondaryDnsAclListAcLs4XXResponseResultEnum valueOf(String name) => _$secondaryDnsAclListAcLs4XXResponseResultEnumValueOf(name);
 }
 

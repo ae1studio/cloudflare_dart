@@ -186,11 +186,11 @@ class CacheResultValueEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'custom')
   static const CacheResultValueEnum custom = _$cacheResultValueEnum_custom;
 
-  static Serializer<CacheResultValueEnum> get serializer => _$cacheResultValueSerializer;
+  static Serializer<CacheResultValueEnum> get serializer => _$cacheResultValueEnumSerializer;
 
   const CacheResultValueEnum._(String name): super(name);
 
-  static BuiltSet<CacheResultValueEnum> get values => _$cacheResultValueValues;
-  static CacheResultValueEnum valueOf(String name) => _$cacheResultValueValueOf(name);
+  static BuiltSet<CacheResultValueEnum> get values => _$cacheResultValueEnumValues;
+  static CacheResultValueEnum valueOf(String name) => _$cacheResultValueEnumValueOf(name);
 }
 

@@ -149,11 +149,11 @@ class _$SslVerificationSslVerificationDetails4XXResponseSerializer implements Pr
 class SslVerificationSslVerificationDetails4XXResponseResultEnum extends EnumClass {
 
 
-  static Serializer<SslVerificationSslVerificationDetails4XXResponseResultEnum> get serializer => _$sslVerificationSslVerificationDetails4XXResponseResultSerializer;
+  static Serializer<SslVerificationSslVerificationDetails4XXResponseResultEnum> get serializer => _$sslVerificationSslVerificationDetails4XXResponseResultEnumSerializer;
 
   const SslVerificationSslVerificationDetails4XXResponseResultEnum._(String name): super(name);
 
-  static BuiltSet<SslVerificationSslVerificationDetails4XXResponseResultEnum> get values => _$sslVerificationSslVerificationDetails4XXResponseResultValues;
-  static SslVerificationSslVerificationDetails4XXResponseResultEnum valueOf(String name) => _$sslVerificationSslVerificationDetails4XXResponseResultValueOf(name);
+  static BuiltSet<SslVerificationSslVerificationDetails4XXResponseResultEnum> get values => _$sslVerificationSslVerificationDetails4XXResponseResultEnumValues;
+  static SslVerificationSslVerificationDetails4XXResponseResultEnum valueOf(String name) => _$sslVerificationSslVerificationDetails4XXResponseResultEnumValueOf(name);
 }
 

@@ -175,11 +175,11 @@ class ZonesDevelopmentModeIdEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'development_mode')
   static const ZonesDevelopmentModeIdEnum developmentMode = _$zonesDevelopmentModeIdEnum_developmentMode;
 
-  static Serializer<ZonesDevelopmentModeIdEnum> get serializer => _$zonesDevelopmentModeIdSerializer;
+  static Serializer<ZonesDevelopmentModeIdEnum> get serializer => _$zonesDevelopmentModeIdEnumSerializer;
 
   const ZonesDevelopmentModeIdEnum._(String name): super(name);
 
-  static BuiltSet<ZonesDevelopmentModeIdEnum> get values => _$zonesDevelopmentModeIdValues;
-  static ZonesDevelopmentModeIdEnum valueOf(String name) => _$zonesDevelopmentModeIdValueOf(name);
+  static BuiltSet<ZonesDevelopmentModeIdEnum> get values => _$zonesDevelopmentModeIdEnumValues;
+  static ZonesDevelopmentModeIdEnum valueOf(String name) => _$zonesDevelopmentModeIdEnumValueOf(name);
 }
 

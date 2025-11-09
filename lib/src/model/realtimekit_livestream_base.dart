@@ -315,11 +315,11 @@ class RealtimekitLivestreamBaseStatusEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'INVOKED')
   static const RealtimekitLivestreamBaseStatusEnum INVOKED = _$realtimekitLivestreamBaseStatusEnum_INVOKED;
 
-  static Serializer<RealtimekitLivestreamBaseStatusEnum> get serializer => _$realtimekitLivestreamBaseStatusSerializer;
+  static Serializer<RealtimekitLivestreamBaseStatusEnum> get serializer => _$realtimekitLivestreamBaseStatusEnumSerializer;
 
   const RealtimekitLivestreamBaseStatusEnum._(String name): super(name);
 
-  static BuiltSet<RealtimekitLivestreamBaseStatusEnum> get values => _$realtimekitLivestreamBaseStatusValues;
-  static RealtimekitLivestreamBaseStatusEnum valueOf(String name) => _$realtimekitLivestreamBaseStatusValueOf(name);
+  static BuiltSet<RealtimekitLivestreamBaseStatusEnum> get values => _$realtimekitLivestreamBaseStatusEnumValues;
+  static RealtimekitLivestreamBaseStatusEnum valueOf(String name) => _$realtimekitLivestreamBaseStatusEnumValueOf(name);
 }
 

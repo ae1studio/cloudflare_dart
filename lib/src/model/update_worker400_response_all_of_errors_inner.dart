@@ -221,11 +221,11 @@ class UpdateWorker400ResponseAllOfErrorsInnerCodeEnum extends EnumClass {
   @BuiltValueEnumConst(wireNumber: 100308)
   static const UpdateWorker400ResponseAllOfErrorsInnerCodeEnum number100308 = _$updateWorker400ResponseAllOfErrorsInnerCodeEnum_number100308;
 
-  static Serializer<UpdateWorker400ResponseAllOfErrorsInnerCodeEnum> get serializer => _$updateWorker400ResponseAllOfErrorsInnerCodeSerializer;
+  static Serializer<UpdateWorker400ResponseAllOfErrorsInnerCodeEnum> get serializer => _$updateWorker400ResponseAllOfErrorsInnerCodeEnumSerializer;
 
   const UpdateWorker400ResponseAllOfErrorsInnerCodeEnum._(String name): super(name);
 
-  static BuiltSet<UpdateWorker400ResponseAllOfErrorsInnerCodeEnum> get values => _$updateWorker400ResponseAllOfErrorsInnerCodeValues;
-  static UpdateWorker400ResponseAllOfErrorsInnerCodeEnum valueOf(String name) => _$updateWorker400ResponseAllOfErrorsInnerCodeValueOf(name);
+  static BuiltSet<UpdateWorker400ResponseAllOfErrorsInnerCodeEnum> get values => _$updateWorker400ResponseAllOfErrorsInnerCodeEnumValues;
+  static UpdateWorker400ResponseAllOfErrorsInnerCodeEnum valueOf(String name) => _$updateWorker400ResponseAllOfErrorsInnerCodeEnumValueOf(name);
 }
 

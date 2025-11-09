@@ -217,12 +217,12 @@ class RegistrarApiTransferInAcceptFoaEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'ok')
   static const RegistrarApiTransferInAcceptFoaEnum ok = _$registrarApiTransferInAcceptFoaEnum_ok;
 
-  static Serializer<RegistrarApiTransferInAcceptFoaEnum> get serializer => _$registrarApiTransferInAcceptFoaSerializer;
+  static Serializer<RegistrarApiTransferInAcceptFoaEnum> get serializer => _$registrarApiTransferInAcceptFoaEnumSerializer;
 
   const RegistrarApiTransferInAcceptFoaEnum._(String name): super(name);
 
-  static BuiltSet<RegistrarApiTransferInAcceptFoaEnum> get values => _$registrarApiTransferInAcceptFoaValues;
-  static RegistrarApiTransferInAcceptFoaEnum valueOf(String name) => _$registrarApiTransferInAcceptFoaValueOf(name);
+  static BuiltSet<RegistrarApiTransferInAcceptFoaEnum> get values => _$registrarApiTransferInAcceptFoaEnumValues;
+  static RegistrarApiTransferInAcceptFoaEnum valueOf(String name) => _$registrarApiTransferInAcceptFoaEnumValueOf(name);
 }
 
 class RegistrarApiTransferInApproveTransferEnum extends EnumClass {
@@ -246,12 +246,12 @@ class RegistrarApiTransferInApproveTransferEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'unknown')
   static const RegistrarApiTransferInApproveTransferEnum unknown = _$registrarApiTransferInApproveTransferEnum_unknown;
 
-  static Serializer<RegistrarApiTransferInApproveTransferEnum> get serializer => _$registrarApiTransferInApproveTransferSerializer;
+  static Serializer<RegistrarApiTransferInApproveTransferEnum> get serializer => _$registrarApiTransferInApproveTransferEnumSerializer;
 
   const RegistrarApiTransferInApproveTransferEnum._(String name): super(name);
 
-  static BuiltSet<RegistrarApiTransferInApproveTransferEnum> get values => _$registrarApiTransferInApproveTransferValues;
-  static RegistrarApiTransferInApproveTransferEnum valueOf(String name) => _$registrarApiTransferInApproveTransferValueOf(name);
+  static BuiltSet<RegistrarApiTransferInApproveTransferEnum> get values => _$registrarApiTransferInApproveTransferEnumValues;
+  static RegistrarApiTransferInApproveTransferEnum valueOf(String name) => _$registrarApiTransferInApproveTransferEnumValueOf(name);
 }
 
 class RegistrarApiTransferInDisablePrivacyEnum extends EnumClass {
@@ -266,12 +266,12 @@ class RegistrarApiTransferInDisablePrivacyEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'unknown')
   static const RegistrarApiTransferInDisablePrivacyEnum unknown = _$registrarApiTransferInDisablePrivacyEnum_unknown;
 
-  static Serializer<RegistrarApiTransferInDisablePrivacyEnum> get serializer => _$registrarApiTransferInDisablePrivacySerializer;
+  static Serializer<RegistrarApiTransferInDisablePrivacyEnum> get serializer => _$registrarApiTransferInDisablePrivacyEnumSerializer;
 
   const RegistrarApiTransferInDisablePrivacyEnum._(String name): super(name);
 
-  static BuiltSet<RegistrarApiTransferInDisablePrivacyEnum> get values => _$registrarApiTransferInDisablePrivacyValues;
-  static RegistrarApiTransferInDisablePrivacyEnum valueOf(String name) => _$registrarApiTransferInDisablePrivacyValueOf(name);
+  static BuiltSet<RegistrarApiTransferInDisablePrivacyEnum> get values => _$registrarApiTransferInDisablePrivacyEnumValues;
+  static RegistrarApiTransferInDisablePrivacyEnum valueOf(String name) => _$registrarApiTransferInDisablePrivacyEnumValueOf(name);
 }
 
 class RegistrarApiTransferInEnterAuthCodeEnum extends EnumClass {
@@ -292,12 +292,12 @@ class RegistrarApiTransferInEnterAuthCodeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'rejected')
   static const RegistrarApiTransferInEnterAuthCodeEnum rejected = _$registrarApiTransferInEnterAuthCodeEnum_rejected;
 
-  static Serializer<RegistrarApiTransferInEnterAuthCodeEnum> get serializer => _$registrarApiTransferInEnterAuthCodeSerializer;
+  static Serializer<RegistrarApiTransferInEnterAuthCodeEnum> get serializer => _$registrarApiTransferInEnterAuthCodeEnumSerializer;
 
   const RegistrarApiTransferInEnterAuthCodeEnum._(String name): super(name);
 
-  static BuiltSet<RegistrarApiTransferInEnterAuthCodeEnum> get values => _$registrarApiTransferInEnterAuthCodeValues;
-  static RegistrarApiTransferInEnterAuthCodeEnum valueOf(String name) => _$registrarApiTransferInEnterAuthCodeValueOf(name);
+  static BuiltSet<RegistrarApiTransferInEnterAuthCodeEnum> get values => _$registrarApiTransferInEnterAuthCodeEnumValues;
+  static RegistrarApiTransferInEnterAuthCodeEnum valueOf(String name) => _$registrarApiTransferInEnterAuthCodeEnumValueOf(name);
 }
 
 class RegistrarApiTransferInUnlockDomainEnum extends EnumClass {
@@ -318,11 +318,11 @@ class RegistrarApiTransferInUnlockDomainEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'unknown')
   static const RegistrarApiTransferInUnlockDomainEnum unknown = _$registrarApiTransferInUnlockDomainEnum_unknown;
 
-  static Serializer<RegistrarApiTransferInUnlockDomainEnum> get serializer => _$registrarApiTransferInUnlockDomainSerializer;
+  static Serializer<RegistrarApiTransferInUnlockDomainEnum> get serializer => _$registrarApiTransferInUnlockDomainEnumSerializer;
 
   const RegistrarApiTransferInUnlockDomainEnum._(String name): super(name);
 
-  static BuiltSet<RegistrarApiTransferInUnlockDomainEnum> get values => _$registrarApiTransferInUnlockDomainValues;
-  static RegistrarApiTransferInUnlockDomainEnum valueOf(String name) => _$registrarApiTransferInUnlockDomainValueOf(name);
+  static BuiltSet<RegistrarApiTransferInUnlockDomainEnum> get values => _$registrarApiTransferInUnlockDomainEnumValues;
+  static RegistrarApiTransferInUnlockDomainEnum valueOf(String name) => _$registrarApiTransferInUnlockDomainEnumValueOf(name);
 }
 

@@ -83,7 +83,7 @@ abstract class TelemetryQueryRequest implements Built<TelemetryQueryRequest, Tel
       ..dry = false
       ..ignoreSeries = false
       ..limit = 50
-      ..view = const TelemetryQueryRequestViewEnum._('calculations');
+      ..view = TelemetryQueryRequestViewEnum.valueOf('calculations');
 
   @BuiltValueSerializer(custom: true)
   static Serializer<TelemetryQueryRequest> get serializer => _$TelemetryQueryRequestSerializer();
@@ -352,12 +352,12 @@ class TelemetryQueryRequestPatternTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'error')
   static const TelemetryQueryRequestPatternTypeEnum error = _$telemetryQueryRequestPatternTypeEnum_error;
 
-  static Serializer<TelemetryQueryRequestPatternTypeEnum> get serializer => _$telemetryQueryRequestPatternTypeSerializer;
+  static Serializer<TelemetryQueryRequestPatternTypeEnum> get serializer => _$telemetryQueryRequestPatternTypeEnumSerializer;
 
   const TelemetryQueryRequestPatternTypeEnum._(String name): super(name);
 
-  static BuiltSet<TelemetryQueryRequestPatternTypeEnum> get values => _$telemetryQueryRequestPatternTypeValues;
-  static TelemetryQueryRequestPatternTypeEnum valueOf(String name) => _$telemetryQueryRequestPatternTypeValueOf(name);
+  static BuiltSet<TelemetryQueryRequestPatternTypeEnum> get values => _$telemetryQueryRequestPatternTypeEnumValues;
+  static TelemetryQueryRequestPatternTypeEnum valueOf(String name) => _$telemetryQueryRequestPatternTypeEnumValueOf(name);
 }
 
 class TelemetryQueryRequestViewEnum extends EnumClass {
@@ -375,11 +375,11 @@ class TelemetryQueryRequestViewEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'patterns')
   static const TelemetryQueryRequestViewEnum patterns = _$telemetryQueryRequestViewEnum_patterns;
 
-  static Serializer<TelemetryQueryRequestViewEnum> get serializer => _$telemetryQueryRequestViewSerializer;
+  static Serializer<TelemetryQueryRequestViewEnum> get serializer => _$telemetryQueryRequestViewEnumSerializer;
 
   const TelemetryQueryRequestViewEnum._(String name): super(name);
 
-  static BuiltSet<TelemetryQueryRequestViewEnum> get values => _$telemetryQueryRequestViewValues;
-  static TelemetryQueryRequestViewEnum valueOf(String name) => _$telemetryQueryRequestViewValueOf(name);
+  static BuiltSet<TelemetryQueryRequestViewEnum> get values => _$telemetryQueryRequestViewEnumValues;
+  static TelemetryQueryRequestViewEnum valueOf(String name) => _$telemetryQueryRequestViewEnumValueOf(name);
 }
 

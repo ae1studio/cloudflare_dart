@@ -158,11 +158,11 @@ class CacheRulesOriginPostQuantumEncryptionIdEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'origin_pqe')
   static const CacheRulesOriginPostQuantumEncryptionIdEnum originPqe = _$cacheRulesOriginPostQuantumEncryptionIdEnum_originPqe;
 
-  static Serializer<CacheRulesOriginPostQuantumEncryptionIdEnum> get serializer => _$cacheRulesOriginPostQuantumEncryptionIdSerializer;
+  static Serializer<CacheRulesOriginPostQuantumEncryptionIdEnum> get serializer => _$cacheRulesOriginPostQuantumEncryptionIdEnumSerializer;
 
   const CacheRulesOriginPostQuantumEncryptionIdEnum._(String name): super(name);
 
-  static BuiltSet<CacheRulesOriginPostQuantumEncryptionIdEnum> get values => _$cacheRulesOriginPostQuantumEncryptionIdValues;
-  static CacheRulesOriginPostQuantumEncryptionIdEnum valueOf(String name) => _$cacheRulesOriginPostQuantumEncryptionIdValueOf(name);
+  static BuiltSet<CacheRulesOriginPostQuantumEncryptionIdEnum> get values => _$cacheRulesOriginPostQuantumEncryptionIdEnumValues;
+  static CacheRulesOriginPostQuantumEncryptionIdEnum valueOf(String name) => _$cacheRulesOriginPostQuantumEncryptionIdEnumValueOf(name);
 }
 

@@ -149,11 +149,11 @@ class _$CreateWorker409ResponseSerializer implements PrimitiveSerializer<CreateW
 class CreateWorker409ResponseResultEnum extends EnumClass {
 
 
-  static Serializer<CreateWorker409ResponseResultEnum> get serializer => _$createWorker409ResponseResultSerializer;
+  static Serializer<CreateWorker409ResponseResultEnum> get serializer => _$createWorker409ResponseResultEnumSerializer;
 
   const CreateWorker409ResponseResultEnum._(String name): super(name);
 
-  static BuiltSet<CreateWorker409ResponseResultEnum> get values => _$createWorker409ResponseResultValues;
-  static CreateWorker409ResponseResultEnum valueOf(String name) => _$createWorker409ResponseResultValueOf(name);
+  static BuiltSet<CreateWorker409ResponseResultEnum> get values => _$createWorker409ResponseResultEnumValues;
+  static CreateWorker409ResponseResultEnum valueOf(String name) => _$createWorker409ResponseResultEnumValueOf(name);
 }
 

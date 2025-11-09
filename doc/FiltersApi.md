@@ -251,7 +251,7 @@ import 'package:cloudflare_dart/api.dart';
 
 final api = CloudflareDart().getFiltersApi();
 final String zoneId = zoneId_example; // String | 
-final FiltersListFiltersPausedParameter paused = ; // FiltersListFiltersPausedParameter | 
+final bool paused = true; // bool | 
 final String expression = php; // String | 
 final String description = browsers; // String | 
 final String ref = FIL-100; // String | 
@@ -272,7 +272,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **zoneId** | **String**|  | 
- **paused** | [**FiltersListFiltersPausedParameter**](.md)|  | [optional] 
+ **paused** | **bool**|  | [optional] 
  **expression** | **String**|  | [optional] 
  **description** | **String**|  | [optional] 
  **ref** | **String**|  | [optional] 

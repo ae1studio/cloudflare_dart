@@ -919,12 +919,12 @@ class AaaFiltersIncidentImpactEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'INCIDENT_IMPACT_CRITICAL')
   static const AaaFiltersIncidentImpactEnum INCIDENT_IMPACT_CRITICAL = _$aaaFiltersIncidentImpactEnum_INCIDENT_IMPACT_CRITICAL;
 
-  static Serializer<AaaFiltersIncidentImpactEnum> get serializer => _$aaaFiltersIncidentImpactSerializer;
+  static Serializer<AaaFiltersIncidentImpactEnum> get serializer => _$aaaFiltersIncidentImpactEnumSerializer;
 
   const AaaFiltersIncidentImpactEnum._(String name): super(name);
 
-  static BuiltSet<AaaFiltersIncidentImpactEnum> get values => _$aaaFiltersIncidentImpactValues;
-  static AaaFiltersIncidentImpactEnum valueOf(String name) => _$aaaFiltersIncidentImpactValueOf(name);
+  static BuiltSet<AaaFiltersIncidentImpactEnum> get values => _$aaaFiltersIncidentImpactEnumValues;
+  static AaaFiltersIncidentImpactEnum valueOf(String name) => _$aaaFiltersIncidentImpactEnumValueOf(name);
 }
 
 class AaaFiltersTrafficExclusionsEnum extends EnumClass {
@@ -932,11 +932,11 @@ class AaaFiltersTrafficExclusionsEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'security_events')
   static const AaaFiltersTrafficExclusionsEnum securityEvents = _$aaaFiltersTrafficExclusionsEnum_securityEvents;
 
-  static Serializer<AaaFiltersTrafficExclusionsEnum> get serializer => _$aaaFiltersTrafficExclusionsSerializer;
+  static Serializer<AaaFiltersTrafficExclusionsEnum> get serializer => _$aaaFiltersTrafficExclusionsEnumSerializer;
 
   const AaaFiltersTrafficExclusionsEnum._(String name): super(name);
 
-  static BuiltSet<AaaFiltersTrafficExclusionsEnum> get values => _$aaaFiltersTrafficExclusionsValues;
-  static AaaFiltersTrafficExclusionsEnum valueOf(String name) => _$aaaFiltersTrafficExclusionsValueOf(name);
+  static BuiltSet<AaaFiltersTrafficExclusionsEnum> get values => _$aaaFiltersTrafficExclusionsEnumValues;
+  static AaaFiltersTrafficExclusionsEnum valueOf(String name) => _$aaaFiltersTrafficExclusionsEnumValueOf(name);
 }
 

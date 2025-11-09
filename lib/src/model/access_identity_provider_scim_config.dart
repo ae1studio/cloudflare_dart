@@ -52,7 +52,7 @@ abstract class AccessIdentityProviderScimConfig implements Built<AccessIdentityP
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(AccessIdentityProviderScimConfigBuilder b) => b
       ..enabled = false
-      ..identityUpdateBehavior = const AccessIdentityProviderScimConfigIdentityUpdateBehaviorEnum._('no_action')
+      ..identityUpdateBehavior = AccessIdentityProviderScimConfigIdentityUpdateBehaviorEnum.valueOf('no_action')
       ..seatDeprovision = false
       ..userDeprovision = false;
 
@@ -220,11 +220,11 @@ class AccessIdentityProviderScimConfigIdentityUpdateBehaviorEnum extends EnumCla
   @BuiltValueEnumConst(wireName: r'no_action')
   static const AccessIdentityProviderScimConfigIdentityUpdateBehaviorEnum noAction = _$accessIdentityProviderScimConfigIdentityUpdateBehaviorEnum_noAction;
 
-  static Serializer<AccessIdentityProviderScimConfigIdentityUpdateBehaviorEnum> get serializer => _$accessIdentityProviderScimConfigIdentityUpdateBehaviorSerializer;
+  static Serializer<AccessIdentityProviderScimConfigIdentityUpdateBehaviorEnum> get serializer => _$accessIdentityProviderScimConfigIdentityUpdateBehaviorEnumSerializer;
 
   const AccessIdentityProviderScimConfigIdentityUpdateBehaviorEnum._(String name): super(name);
 
-  static BuiltSet<AccessIdentityProviderScimConfigIdentityUpdateBehaviorEnum> get values => _$accessIdentityProviderScimConfigIdentityUpdateBehaviorValues;
-  static AccessIdentityProviderScimConfigIdentityUpdateBehaviorEnum valueOf(String name) => _$accessIdentityProviderScimConfigIdentityUpdateBehaviorValueOf(name);
+  static BuiltSet<AccessIdentityProviderScimConfigIdentityUpdateBehaviorEnum> get values => _$accessIdentityProviderScimConfigIdentityUpdateBehaviorEnumValues;
+  static AccessIdentityProviderScimConfigIdentityUpdateBehaviorEnum valueOf(String name) => _$accessIdentityProviderScimConfigIdentityUpdateBehaviorEnumValueOf(name);
 }
 

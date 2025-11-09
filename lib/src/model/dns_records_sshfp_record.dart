@@ -248,11 +248,11 @@ class DnsRecordsSSHFPRecordTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'SSHFP')
   static const DnsRecordsSSHFPRecordTypeEnum SSHFP = _$dnsRecordsSSHFPRecordTypeEnum_SSHFP;
 
-  static Serializer<DnsRecordsSSHFPRecordTypeEnum> get serializer => _$dnsRecordsSSHFPRecordTypeSerializer;
+  static Serializer<DnsRecordsSSHFPRecordTypeEnum> get serializer => _$dnsRecordsSSHFPRecordTypeEnumSerializer;
 
   const DnsRecordsSSHFPRecordTypeEnum._(String name): super(name);
 
-  static BuiltSet<DnsRecordsSSHFPRecordTypeEnum> get values => _$dnsRecordsSSHFPRecordTypeValues;
-  static DnsRecordsSSHFPRecordTypeEnum valueOf(String name) => _$dnsRecordsSSHFPRecordTypeValueOf(name);
+  static BuiltSet<DnsRecordsSSHFPRecordTypeEnum> get values => _$dnsRecordsSSHFPRecordTypeEnumValues;
+  static DnsRecordsSSHFPRecordTypeEnum valueOf(String name) => _$dnsRecordsSSHFPRecordTypeEnumValueOf(name);
 }
 

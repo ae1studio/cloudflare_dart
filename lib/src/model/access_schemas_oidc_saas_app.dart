@@ -66,7 +66,7 @@ abstract class AccessSchemasOidcSaasApp implements Built<AccessSchemasOidcSaasAp
 
   /// The OIDC flows supported by this application
   @BuiltValueField(wireName: r'grant_types')
-  BuiltList<AccessSchemasSaasPropsSaasAppGrantTypesEnum>? get grantTypes;
+  BuiltList<AccessSchemasOidcSaasAppGrantTypesEnum>? get grantTypes;
   // enum grantTypesEnum {  authorization_code,  authorization_code_with_pkce,  refresh_tokens,  hybrid,  implicit,  };
 
   /// A regex to filter Cloudflare groups returned in ID token and userinfo endpoint.
@@ -89,7 +89,7 @@ abstract class AccessSchemasOidcSaasApp implements Built<AccessSchemasOidcSaasAp
 
   /// Define the user information shared with access, \"offline_access\" scope will be automatically enabled if refresh tokens are enabled
   @BuiltValueField(wireName: r'scopes')
-  BuiltList<AccessSchemasSaasPropsSaasAppScopesEnum>? get scopes;
+  BuiltList<AccessSchemasOidcSaasAppScopesEnum>? get scopes;
   // enum scopesEnum {  openid,  groups,  email,  profile,  };
 
   @BuiltValueField(wireName: r'updated_at')
@@ -178,7 +178,7 @@ class _$AccessSchemasOidcSaasAppSerializer implements PrimitiveSerializer<Access
       yield r'grant_types';
       yield serializers.serialize(
         object.grantTypes,
-        specifiedType: const FullType(BuiltList, [FullType(AccessSchemasSaasPropsSaasAppGrantTypesEnum)]),
+        specifiedType: const FullType(BuiltList, [FullType(AccessSchemasOidcSaasAppGrantTypesEnum)]),
       );
     }
     if (object.groupFilterRegex != null) {
@@ -220,7 +220,7 @@ class _$AccessSchemasOidcSaasAppSerializer implements PrimitiveSerializer<Access
       yield r'scopes';
       yield serializers.serialize(
         object.scopes,
-        specifiedType: const FullType(BuiltList, [FullType(AccessSchemasSaasPropsSaasAppScopesEnum)]),
+        specifiedType: const FullType(BuiltList, [FullType(AccessSchemasOidcSaasAppScopesEnum)]),
       );
     }
     if (object.updatedAt != null) {
@@ -312,8 +312,8 @@ class _$AccessSchemasOidcSaasAppSerializer implements PrimitiveSerializer<Access
         case r'grant_types':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(BuiltList, [FullType(AccessSchemasSaasPropsSaasAppGrantTypesEnum)]),
-          ) as BuiltList<AccessSchemasSaasPropsSaasAppGrantTypesEnum>;
+            specifiedType: const FullType(BuiltList, [FullType(AccessSchemasOidcSaasAppGrantTypesEnum)]),
+          ) as BuiltList<AccessSchemasOidcSaasAppGrantTypesEnum>;
           result.grantTypes.replace(valueDes);
           break;
         case r'group_filter_regex':
@@ -354,8 +354,8 @@ class _$AccessSchemasOidcSaasAppSerializer implements PrimitiveSerializer<Access
         case r'scopes':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(BuiltList, [FullType(AccessSchemasSaasPropsSaasAppScopesEnum)]),
-          ) as BuiltList<AccessSchemasSaasPropsSaasAppScopesEnum>;
+            specifiedType: const FullType(BuiltList, [FullType(AccessSchemasOidcSaasAppScopesEnum)]),
+          ) as BuiltList<AccessSchemasOidcSaasAppScopesEnum>;
           result.scopes.replace(valueDes);
           break;
         case r'updated_at':
@@ -403,51 +403,51 @@ class AccessSchemasOidcSaasAppAuthTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'oidc')
   static const AccessSchemasOidcSaasAppAuthTypeEnum oidc = _$accessSchemasOidcSaasAppAuthTypeEnum_oidc;
 
-  static Serializer<AccessSchemasOidcSaasAppAuthTypeEnum> get serializer => _$accessSchemasOidcSaasAppAuthTypeSerializer;
+  static Serializer<AccessSchemasOidcSaasAppAuthTypeEnum> get serializer => _$accessSchemasOidcSaasAppAuthTypeEnumSerializer;
 
   const AccessSchemasOidcSaasAppAuthTypeEnum._(String name): super(name);
 
-  static BuiltSet<AccessSchemasOidcSaasAppAuthTypeEnum> get values => _$accessSchemasOidcSaasAppAuthTypeValues;
-  static AccessSchemasOidcSaasAppAuthTypeEnum valueOf(String name) => _$accessSchemasOidcSaasAppAuthTypeValueOf(name);
+  static BuiltSet<AccessSchemasOidcSaasAppAuthTypeEnum> get values => _$accessSchemasOidcSaasAppAuthTypeEnumValues;
+  static AccessSchemasOidcSaasAppAuthTypeEnum valueOf(String name) => _$accessSchemasOidcSaasAppAuthTypeEnumValueOf(name);
 }
 
-class AccessSchemasSaasPropsSaasAppGrantTypesEnum extends EnumClass {
+class AccessSchemasOidcSaasAppGrantTypesEnum extends EnumClass {
 
   @BuiltValueEnumConst(wireName: r'authorization_code')
-  static const AccessSchemasSaasPropsSaasAppGrantTypesEnum authorizationCode = _\$accessSchemasSaasPropsSaasAppGrantTypes_authorizationCode;
+  static const AccessSchemasOidcSaasAppGrantTypesEnum authorizationCode = _$accessSchemasOidcSaasAppGrantTypesEnum_authorizationCode;
   @BuiltValueEnumConst(wireName: r'authorization_code_with_pkce')
-  static const AccessSchemasSaasPropsSaasAppGrantTypesEnum authorizationCodeWithPkce = _\$accessSchemasSaasPropsSaasAppGrantTypes_authorizationCodeWithPkce;
+  static const AccessSchemasOidcSaasAppGrantTypesEnum authorizationCodeWithPkce = _$accessSchemasOidcSaasAppGrantTypesEnum_authorizationCodeWithPkce;
   @BuiltValueEnumConst(wireName: r'refresh_tokens')
-  static const AccessSchemasSaasPropsSaasAppGrantTypesEnum refreshTokens = _\$accessSchemasSaasPropsSaasAppGrantTypes_refreshTokens;
+  static const AccessSchemasOidcSaasAppGrantTypesEnum refreshTokens = _$accessSchemasOidcSaasAppGrantTypesEnum_refreshTokens;
   @BuiltValueEnumConst(wireName: r'hybrid')
-  static const AccessSchemasSaasPropsSaasAppGrantTypesEnum hybrid = _\$accessSchemasSaasPropsSaasAppGrantTypes_hybrid;
+  static const AccessSchemasOidcSaasAppGrantTypesEnum hybrid = _$accessSchemasOidcSaasAppGrantTypesEnum_hybrid;
   @BuiltValueEnumConst(wireName: r'implicit')
-  static const AccessSchemasSaasPropsSaasAppGrantTypesEnum implicit = _\$accessSchemasSaasPropsSaasAppGrantTypes_implicit;
+  static const AccessSchemasOidcSaasAppGrantTypesEnum implicit = _$accessSchemasOidcSaasAppGrantTypesEnum_implicit;
 
-  static Serializer<AccessSchemasSaasPropsSaasAppGrantTypesEnum> get serializer => _$accessSchemasSaasPropsSaasAppGrantTypesSerializer;
+  static Serializer<AccessSchemasOidcSaasAppGrantTypesEnum> get serializer => _$accessSchemasOidcSaasAppGrantTypesEnumSerializer;
 
-  const AccessSchemasSaasPropsSaasAppGrantTypesEnum._(String name): super(name);
+  const AccessSchemasOidcSaasAppGrantTypesEnum._(String name): super(name);
 
-  static BuiltSet<AccessSchemasSaasPropsSaasAppGrantTypesEnum> get values => _$accessSchemasSaasPropsSaasAppGrantTypesValues;
-  static AccessSchemasSaasPropsSaasAppGrantTypesEnum valueOf(String name) => _$accessSchemasSaasPropsSaasAppGrantTypesValueOf(name);
+  static BuiltSet<AccessSchemasOidcSaasAppGrantTypesEnum> get values => _$accessSchemasOidcSaasAppGrantTypesEnumValues;
+  static AccessSchemasOidcSaasAppGrantTypesEnum valueOf(String name) => _$accessSchemasOidcSaasAppGrantTypesEnumValueOf(name);
 }
 
-class AccessSchemasSaasPropsSaasAppScopesEnum extends EnumClass {
+class AccessSchemasOidcSaasAppScopesEnum extends EnumClass {
 
   @BuiltValueEnumConst(wireName: r'openid')
-  static const AccessSchemasSaasPropsSaasAppScopesEnum openid = _$accessSchemasSaasPropsSaasAppScopesEnum_openid;
+  static const AccessSchemasOidcSaasAppScopesEnum openid = _$accessSchemasOidcSaasAppScopesEnum_openid;
   @BuiltValueEnumConst(wireName: r'groups')
-  static const AccessSchemasSaasPropsSaasAppScopesEnum groups = _$accessSchemasSaasPropsSaasAppScopesEnum_groups;
+  static const AccessSchemasOidcSaasAppScopesEnum groups = _$accessSchemasOidcSaasAppScopesEnum_groups;
   @BuiltValueEnumConst(wireName: r'email')
-  static const AccessSchemasSaasPropsSaasAppScopesEnum email = _$accessSchemasSaasPropsSaasAppScopesEnum_email;
+  static const AccessSchemasOidcSaasAppScopesEnum email = _$accessSchemasOidcSaasAppScopesEnum_email;
   @BuiltValueEnumConst(wireName: r'profile')
-  static const AccessSchemasSaasPropsSaasAppScopesEnum profile = _$accessSchemasSaasPropsSaasAppScopesEnum_profile;
+  static const AccessSchemasOidcSaasAppScopesEnum profile = _$accessSchemasOidcSaasAppScopesEnum_profile;
 
-  static Serializer<AccessSchemasSaasPropsSaasAppScopesEnum> get serializer => _$accessSchemasSaasPropsSaasAppScopesSerializer;
+  static Serializer<AccessSchemasOidcSaasAppScopesEnum> get serializer => _$accessSchemasOidcSaasAppScopesEnumSerializer;
 
-  const AccessSchemasSaasPropsSaasAppScopesEnum._(String name): super(name);
+  const AccessSchemasOidcSaasAppScopesEnum._(String name): super(name);
 
-  static BuiltSet<AccessSchemasSaasPropsSaasAppScopesEnum> get values => _$accessSchemasSaasPropsSaasAppScopesValues;
-  static AccessSchemasSaasPropsSaasAppScopesEnum valueOf(String name) => _$accessSchemasSaasPropsSaasAppScopesValueOf(name);
+  static BuiltSet<AccessSchemasOidcSaasAppScopesEnum> get values => _$accessSchemasOidcSaasAppScopesEnumValues;
+  static AccessSchemasOidcSaasAppScopesEnum valueOf(String name) => _$accessSchemasOidcSaasAppScopesEnumValueOf(name);
 }
 

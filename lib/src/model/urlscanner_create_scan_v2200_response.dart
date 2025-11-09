@@ -219,11 +219,11 @@ class UrlscannerCreateScanV2200ResponseVisibilityEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'unlisted')
   static const UrlscannerCreateScanV2200ResponseVisibilityEnum unlisted = _$urlscannerCreateScanV2200ResponseVisibilityEnum_unlisted;
 
-  static Serializer<UrlscannerCreateScanV2200ResponseVisibilityEnum> get serializer => _$urlscannerCreateScanV2200ResponseVisibilitySerializer;
+  static Serializer<UrlscannerCreateScanV2200ResponseVisibilityEnum> get serializer => _$urlscannerCreateScanV2200ResponseVisibilityEnumSerializer;
 
   const UrlscannerCreateScanV2200ResponseVisibilityEnum._(String name): super(name);
 
-  static BuiltSet<UrlscannerCreateScanV2200ResponseVisibilityEnum> get values => _$urlscannerCreateScanV2200ResponseVisibilityValues;
-  static UrlscannerCreateScanV2200ResponseVisibilityEnum valueOf(String name) => _$urlscannerCreateScanV2200ResponseVisibilityValueOf(name);
+  static BuiltSet<UrlscannerCreateScanV2200ResponseVisibilityEnum> get values => _$urlscannerCreateScanV2200ResponseVisibilityEnumValues;
+  static UrlscannerCreateScanV2200ResponseVisibilityEnum valueOf(String name) => _$urlscannerCreateScanV2200ResponseVisibilityEnumValueOf(name);
 }
 

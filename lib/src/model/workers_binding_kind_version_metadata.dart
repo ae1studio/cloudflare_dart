@@ -130,11 +130,11 @@ class WorkersBindingKindVersionMetadataTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'version_metadata')
   static const WorkersBindingKindVersionMetadataTypeEnum versionMetadata = _$workersBindingKindVersionMetadataTypeEnum_versionMetadata;
 
-  static Serializer<WorkersBindingKindVersionMetadataTypeEnum> get serializer => _$workersBindingKindVersionMetadataTypeSerializer;
+  static Serializer<WorkersBindingKindVersionMetadataTypeEnum> get serializer => _$workersBindingKindVersionMetadataTypeEnumSerializer;
 
   const WorkersBindingKindVersionMetadataTypeEnum._(String name): super(name);
 
-  static BuiltSet<WorkersBindingKindVersionMetadataTypeEnum> get values => _$workersBindingKindVersionMetadataTypeValues;
-  static WorkersBindingKindVersionMetadataTypeEnum valueOf(String name) => _$workersBindingKindVersionMetadataTypeValueOf(name);
+  static BuiltSet<WorkersBindingKindVersionMetadataTypeEnum> get values => _$workersBindingKindVersionMetadataTypeEnumValues;
+  static WorkersBindingKindVersionMetadataTypeEnum valueOf(String name) => _$workersBindingKindVersionMetadataTypeEnumValueOf(name);
 }
 

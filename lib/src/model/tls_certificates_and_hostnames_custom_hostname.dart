@@ -17,15 +17,15 @@ part 'tls_certificates_and_hostnames_custom_hostname.g.dart';
 /// TlsCertificatesAndHostnamesCustomHostname
 ///
 /// Properties:
-/// * [hostname] - The custom hostname that will point to your hostname via CNAME.
-/// * [id] - Identifier.
-/// * [ssl] 
 /// * [createdAt] - This is the time the hostname was created.
 /// * [customMetadata] - Unique key/value metadata for this hostname. These are per-hostname (customer) settings.
 /// * [customOriginServer] - a valid hostname that’s been added to your DNS zone as an A, AAAA, or CNAME record.
 /// * [customOriginSni] - A hostname that will be sent to your custom origin server as SNI for TLS handshake. This can be a valid subdomain of the zone or custom origin server name or the string ':request_host_header:' which will cause the host header in the request to be used as SNI. Not configurable with default/fallback origin server.
+/// * [hostname] - The custom hostname that will point to your hostname via CNAME.
+/// * [id] - Identifier.
 /// * [ownershipVerification] 
 /// * [ownershipVerificationHttp] 
+/// * [ssl] 
 /// * [status] 
 /// * [verificationErrors] - These are errors that were encountered while trying to activate a hostname.
 @BuiltValue()

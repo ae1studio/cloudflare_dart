@@ -194,11 +194,11 @@ class _$$ArgoAnalyticsApiResponseCommonFailureSerializer implements PrimitiveSer
 class ArgoAnalyticsApiResponseCommonFailureResultEnum extends EnumClass {
 
 
-  static Serializer<ArgoAnalyticsApiResponseCommonFailureResultEnum> get serializer => _$argoAnalyticsApiResponseCommonFailureResultSerializer;
+  static Serializer<ArgoAnalyticsApiResponseCommonFailureResultEnum> get serializer => _$argoAnalyticsApiResponseCommonFailureResultEnumSerializer;
 
   const ArgoAnalyticsApiResponseCommonFailureResultEnum._(String name): super(name);
 
-  static BuiltSet<ArgoAnalyticsApiResponseCommonFailureResultEnum> get values => _$argoAnalyticsApiResponseCommonFailureResultValues;
-  static ArgoAnalyticsApiResponseCommonFailureResultEnum valueOf(String name) => _$argoAnalyticsApiResponseCommonFailureResultValueOf(name);
+  static BuiltSet<ArgoAnalyticsApiResponseCommonFailureResultEnum> get values => _$argoAnalyticsApiResponseCommonFailureResultEnumValues;
+  static ArgoAnalyticsApiResponseCommonFailureResultEnum valueOf(String name) => _$argoAnalyticsApiResponseCommonFailureResultEnumValueOf(name);
 }
 

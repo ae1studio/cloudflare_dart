@@ -150,12 +150,12 @@ class GetUrlNormalization200ResponseErrorsEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'[]')
   static const GetUrlNormalization200ResponseErrorsEnum leftSquareBracketRightSquareBracket = _$getUrlNormalization200ResponseErrorsEnum_leftSquareBracketRightSquareBracket;
 
-  static Serializer<GetUrlNormalization200ResponseErrorsEnum> get serializer => _$getUrlNormalization200ResponseErrorsSerializer;
+  static Serializer<GetUrlNormalization200ResponseErrorsEnum> get serializer => _$getUrlNormalization200ResponseErrorsEnumSerializer;
 
   const GetUrlNormalization200ResponseErrorsEnum._(String name): super(name);
 
-  static BuiltSet<GetUrlNormalization200ResponseErrorsEnum> get values => _$getUrlNormalization200ResponseErrorsValues;
-  static GetUrlNormalization200ResponseErrorsEnum valueOf(String name) => _$getUrlNormalization200ResponseErrorsValueOf(name);
+  static BuiltSet<GetUrlNormalization200ResponseErrorsEnum> get values => _$getUrlNormalization200ResponseErrorsEnumValues;
+  static GetUrlNormalization200ResponseErrorsEnum valueOf(String name) => _$getUrlNormalization200ResponseErrorsEnumValueOf(name);
 }
 
 class GetUrlNormalization200ResponseSuccessEnum extends EnumClass {
@@ -163,11 +163,11 @@ class GetUrlNormalization200ResponseSuccessEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'true')
   static const GetUrlNormalization200ResponseSuccessEnum true_ = _$getUrlNormalization200ResponseSuccessEnum_true_;
 
-  static Serializer<GetUrlNormalization200ResponseSuccessEnum> get serializer => _$getUrlNormalization200ResponseSuccessSerializer;
+  static Serializer<GetUrlNormalization200ResponseSuccessEnum> get serializer => _$getUrlNormalization200ResponseSuccessEnumSerializer;
 
   const GetUrlNormalization200ResponseSuccessEnum._(String name): super(name);
 
-  static BuiltSet<GetUrlNormalization200ResponseSuccessEnum> get values => _$getUrlNormalization200ResponseSuccessValues;
-  static GetUrlNormalization200ResponseSuccessEnum valueOf(String name) => _$getUrlNormalization200ResponseSuccessValueOf(name);
+  static BuiltSet<GetUrlNormalization200ResponseSuccessEnum> get values => _$getUrlNormalization200ResponseSuccessEnumValues;
+  static GetUrlNormalization200ResponseSuccessEnum valueOf(String name) => _$getUrlNormalization200ResponseSuccessEnumValueOf(name);
 }
 

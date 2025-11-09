@@ -151,11 +151,11 @@ class R2EnableSippyGcsDestinationProviderEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'r2')
   static const R2EnableSippyGcsDestinationProviderEnum r2 = _$r2EnableSippyGcsDestinationProviderEnum_r2;
 
-  static Serializer<R2EnableSippyGcsDestinationProviderEnum> get serializer => _$r2EnableSippyGcsDestinationProviderSerializer;
+  static Serializer<R2EnableSippyGcsDestinationProviderEnum> get serializer => _$r2EnableSippyGcsDestinationProviderEnumSerializer;
 
   const R2EnableSippyGcsDestinationProviderEnum._(String name): super(name);
 
-  static BuiltSet<R2EnableSippyGcsDestinationProviderEnum> get values => _$r2EnableSippyGcsDestinationProviderValues;
-  static R2EnableSippyGcsDestinationProviderEnum valueOf(String name) => _$r2EnableSippyGcsDestinationProviderValueOf(name);
+  static BuiltSet<R2EnableSippyGcsDestinationProviderEnum> get values => _$r2EnableSippyGcsDestinationProviderEnumValues;
+  static R2EnableSippyGcsDestinationProviderEnum valueOf(String name) => _$r2EnableSippyGcsDestinationProviderEnumValueOf(name);
 }
 

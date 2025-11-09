@@ -130,11 +130,11 @@ class WorkersErrorWorkerLimitCodeEnum extends EnumClass {
   @BuiltValueEnumConst(wireNumber: 10037)
   static const WorkersErrorWorkerLimitCodeEnum number10037 = _$workersErrorWorkerLimitCodeEnum_number10037;
 
-  static Serializer<WorkersErrorWorkerLimitCodeEnum> get serializer => _$workersErrorWorkerLimitCodeSerializer;
+  static Serializer<WorkersErrorWorkerLimitCodeEnum> get serializer => _$workersErrorWorkerLimitCodeEnumSerializer;
 
   const WorkersErrorWorkerLimitCodeEnum._(String name): super(name);
 
-  static BuiltSet<WorkersErrorWorkerLimitCodeEnum> get values => _$workersErrorWorkerLimitCodeValues;
-  static WorkersErrorWorkerLimitCodeEnum valueOf(String name) => _$workersErrorWorkerLimitCodeValueOf(name);
+  static BuiltSet<WorkersErrorWorkerLimitCodeEnum> get values => _$workersErrorWorkerLimitCodeEnumValues;
+  static WorkersErrorWorkerLimitCodeEnum valueOf(String name) => _$workersErrorWorkerLimitCodeEnumValueOf(name);
 }
 

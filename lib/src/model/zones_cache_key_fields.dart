@@ -134,11 +134,11 @@ class ZonesCacheKeyFieldsIdEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'cache_key_fields')
   static const ZonesCacheKeyFieldsIdEnum cacheKeyFields = _$zonesCacheKeyFieldsIdEnum_cacheKeyFields;
 
-  static Serializer<ZonesCacheKeyFieldsIdEnum> get serializer => _$zonesCacheKeyFieldsIdSerializer;
+  static Serializer<ZonesCacheKeyFieldsIdEnum> get serializer => _$zonesCacheKeyFieldsIdEnumSerializer;
 
   const ZonesCacheKeyFieldsIdEnum._(String name): super(name);
 
-  static BuiltSet<ZonesCacheKeyFieldsIdEnum> get values => _$zonesCacheKeyFieldsIdValues;
-  static ZonesCacheKeyFieldsIdEnum valueOf(String name) => _$zonesCacheKeyFieldsIdValueOf(name);
+  static BuiltSet<ZonesCacheKeyFieldsIdEnum> get values => _$zonesCacheKeyFieldsIdEnumValues;
+  static ZonesCacheKeyFieldsIdEnum valueOf(String name) => _$zonesCacheKeyFieldsIdEnumValueOf(name);
 }
 

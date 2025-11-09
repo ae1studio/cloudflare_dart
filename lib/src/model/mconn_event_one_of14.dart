@@ -113,11 +113,11 @@ class MconnEventOneOf14KEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'Reconcile')
   static const MconnEventOneOf14KEnum reconcile = _$mconnEventOneOf14KEnum_reconcile;
 
-  static Serializer<MconnEventOneOf14KEnum> get serializer => _$mconnEventOneOf14KSerializer;
+  static Serializer<MconnEventOneOf14KEnum> get serializer => _$mconnEventOneOf14KEnumSerializer;
 
   const MconnEventOneOf14KEnum._(String name): super(name);
 
-  static BuiltSet<MconnEventOneOf14KEnum> get values => _$mconnEventOneOf14KValues;
-  static MconnEventOneOf14KEnum valueOf(String name) => _$mconnEventOneOf14KValueOf(name);
+  static BuiltSet<MconnEventOneOf14KEnum> get values => _$mconnEventOneOf14KEnumValues;
+  static MconnEventOneOf14KEnum valueOf(String name) => _$mconnEventOneOf14KEnumValueOf(name);
 }
 

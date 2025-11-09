@@ -114,7 +114,6 @@ import 'package:cloudflare_dart/src/model/access_api_response_common_failure.dar
 import 'package:cloudflare_dart/src/model/access_api_response_single.dart';
 import 'package:cloudflare_dart/src/model/access_app_id.dart';
 import 'package:cloudflare_dart/src/model/access_app_launcher_props.dart';
-import 'package:cloudflare_dart/src/model/access_app_launcher_props_all_of_type.dart';
 import 'package:cloudflare_dart/src/model/access_app_policies_components_schemas_id_response.dart';
 import 'package:cloudflare_dart/src/model/access_app_policies_components_schemas_id_response_all_of_result.dart';
 import 'package:cloudflare_dart/src/model/access_app_policies_components_schemas_response_collection.dart';
@@ -151,7 +150,6 @@ import 'package:cloudflare_dart/src/model/access_base_policy_req.dart';
 import 'package:cloudflare_dart/src/model/access_base_policy_resp.dart';
 import 'package:cloudflare_dart/src/model/access_basic_app_response_props.dart';
 import 'package:cloudflare_dart/src/model/access_biso_props.dart';
-import 'package:cloudflare_dart/src/model/access_biso_props_all_of_type.dart';
 import 'package:cloudflare_dart/src/model/access_bookmark_props.dart';
 import 'package:cloudflare_dart/src/model/access_bookmarks.dart';
 import 'package:cloudflare_dart/src/model/access_bookmarks_components_schemas_response_collection.dart';
@@ -186,7 +184,6 @@ import 'package:cloudflare_dart/src/model/access_country_rule.dart';
 import 'package:cloudflare_dart/src/model/access_country_rule_geo.dart';
 import 'package:cloudflare_dart/src/model/access_create_response.dart';
 import 'package:cloudflare_dart/src/model/access_create_response_all_of_result.dart';
-import 'package:cloudflare_dart/src/model/access_created_at.dart';
 import 'package:cloudflare_dart/src/model/access_custom_claims_support.dart';
 import 'package:cloudflare_dart/src/model/access_custom_page.dart';
 import 'package:cloudflare_dart/src/model/access_custom_page_without_html.dart';
@@ -248,7 +245,6 @@ import 'package:cloudflare_dart/src/model/access_infra_app_resp_embedded_policie
 import 'package:cloudflare_dart/src/model/access_infra_policy_req.dart';
 import 'package:cloudflare_dart/src/model/access_infra_policy_resp.dart';
 import 'package:cloudflare_dart/src/model/access_infra_props.dart';
-import 'package:cloudflare_dart/src/model/access_infra_props_all_of_type.dart';
 import 'package:cloudflare_dart/src/model/access_ip_list_rule.dart';
 import 'package:cloudflare_dart/src/model/access_ip_list_rule_ip_list.dart';
 import 'package:cloudflare_dart/src/model/access_ip_rule.dart';
@@ -315,7 +311,6 @@ import 'package:cloudflare_dart/src/model/access_protected_database_behind_cloud
 import 'package:cloudflare_dart/src/model/access_protocol_infra_app.dart';
 import 'package:cloudflare_dart/src/model/access_protocol_self_hosted_app.dart';
 import 'package:cloudflare_dart/src/model/access_rdp_props.dart';
-import 'package:cloudflare_dart/src/model/access_rdp_props_all_of_type.dart';
 import 'package:cloudflare_dart/src/model/access_response_collection.dart';
 import 'package:cloudflare_dart/src/model/access_response_collection_all_of_result.dart';
 import 'package:cloudflare_dart/src/model/access_response_collection_hostnames.dart';
@@ -364,7 +359,6 @@ import 'package:cloudflare_dart/src/model/access_schemas_google_apps_all_of_conf
 import 'package:cloudflare_dart/src/model/access_schemas_groups.dart';
 import 'package:cloudflare_dart/src/model/access_schemas_id_response.dart';
 import 'package:cloudflare_dart/src/model/access_schemas_id_response_all_of_result.dart';
-import 'package:cloudflare_dart/src/model/access_schemas_identifier.dart';
 import 'package:cloudflare_dart/src/model/access_schemas_identity_provider.dart';
 import 'package:cloudflare_dart/src/model/access_schemas_identity_provider_scim_config.dart';
 import 'package:cloudflare_dart/src/model/access_schemas_identity_providers.dart';
@@ -438,7 +432,6 @@ import 'package:cloudflare_dart/src/model/access_single_response.dart';
 import 'package:cloudflare_dart/src/model/access_single_response_update.dart';
 import 'package:cloudflare_dart/src/model/access_single_response_without_html.dart';
 import 'package:cloudflare_dart/src/model/access_ssh_props.dart';
-import 'package:cloudflare_dart/src/model/access_ssh_props_all_of_type.dart';
 import 'package:cloudflare_dart/src/model/access_status.dart';
 import 'package:cloudflare_dart/src/model/access_tag.dart';
 import 'package:cloudflare_dart/src/model/access_tag_without_app_count.dart';
@@ -450,16 +443,13 @@ import 'package:cloudflare_dart/src/model/access_target_criteria_infra_app.dart'
 import 'package:cloudflare_dart/src/model/access_target_criteria_self_hosted_app.dart';
 import 'package:cloudflare_dart/src/model/access_type.dart';
 import 'package:cloudflare_dart/src/model/access_update_status.dart';
-import 'package:cloudflare_dart/src/model/access_updated_at.dart';
 import 'package:cloudflare_dart/src/model/access_user_result.dart';
 import 'package:cloudflare_dart/src/model/access_users.dart';
 import 'package:cloudflare_dart/src/model/access_users_components_schemas_response_collection.dart';
 import 'package:cloudflare_dart/src/model/access_users_components_schemas_response_collection_all_of_result_info.dart';
 import 'package:cloudflare_dart/src/model/access_users_emails_inner.dart';
 import 'package:cloudflare_dart/src/model/access_vnc_props.dart';
-import 'package:cloudflare_dart/src/model/access_vnc_props_all_of_type.dart';
 import 'package:cloudflare_dart/src/model/access_warp_props.dart';
-import 'package:cloudflare_dart/src/model/access_warp_props_all_of_type.dart';
 import 'package:cloudflare_dart/src/model/access_yandex.dart';
 import 'package:cloudflare_dart/src/model/account_billing_profile_deprecated_billing_profile_details4_xx_response.dart';
 import 'package:cloudflare_dart/src/model/account_level_custom_nameservers_add_account_custom_nameserver4_xx_response.dart';
@@ -629,7 +619,6 @@ import 'package:cloudflare_dart/src/model/aig_config_list_gateway_dynamic_routes
 import 'package:cloudflare_dart/src/model/aig_config_list_gateway_logs200_response.dart';
 import 'package:cloudflare_dart/src/model/aig_config_list_gateway_logs200_response_result_info.dart';
 import 'package:cloudflare_dart/src/model/aig_config_list_gateway_logs200_response_result_inner.dart';
-import 'package:cloudflare_dart/src/model/aig_config_list_gateway_logs_feedback_parameter.dart';
 import 'package:cloudflare_dart/src/model/aig_config_list_gateway_logs_filters_parameter_inner.dart';
 import 'package:cloudflare_dart/src/model/aig_config_list_gateway_logs_filters_parameter_inner_value_inner.dart';
 import 'package:cloudflare_dart/src/model/aig_config_list_providers200_response.dart';
@@ -802,10 +791,8 @@ import 'package:cloudflare_dart/src/model/autorag_config_ai_search_request.dart'
 import 'package:cloudflare_dart/src/model/autorag_config_ai_search_request_filters.dart';
 import 'package:cloudflare_dart/src/model/autorag_config_ai_search_request_filters_any_of.dart';
 import 'package:cloudflare_dart/src/model/autorag_config_ai_search_request_filters_any_of1.dart';
-import 'package:cloudflare_dart/src/model/autorag_config_ai_search_request_model.dart';
 import 'package:cloudflare_dart/src/model/autorag_config_ai_search_request_ranking_options.dart';
 import 'package:cloudflare_dart/src/model/autorag_config_ai_search_request_reranking.dart';
-import 'package:cloudflare_dart/src/model/autorag_config_ai_search_request_reranking_model.dart';
 import 'package:cloudflare_dart/src/model/autorag_config_files200_response.dart';
 import 'package:cloudflare_dart/src/model/autorag_config_files200_response_result_info.dart';
 import 'package:cloudflare_dart/src/model/autorag_config_files200_response_result_inner.dart';
@@ -910,45 +897,52 @@ import 'package:cloudflare_dart/src/model/brapi_post_content400_response.dart';
 import 'package:cloudflare_dart/src/model/brapi_post_content_request.dart';
 import 'package:cloudflare_dart/src/model/brapi_post_content_request_all_of_add_script_tag_inner.dart';
 import 'package:cloudflare_dart/src/model/brapi_post_content_request_all_of_add_style_tag_inner.dart';
-import 'package:cloudflare_dart/src/model/brapi_post_content_request_all_of_allow_resource_types_inner.dart';
+import 'package:cloudflare_dart/src/model/brapi_post_content_request_all_of_allow_resource_types.dart';
 import 'package:cloudflare_dart/src/model/brapi_post_content_request_all_of_authenticate.dart';
 import 'package:cloudflare_dart/src/model/brapi_post_content_request_all_of_cookies_inner.dart';
-import 'package:cloudflare_dart/src/model/brapi_post_content_request_all_of_cookies_inner_priority.dart';
-import 'package:cloudflare_dart/src/model/brapi_post_content_request_all_of_cookies_inner_same_site.dart';
-import 'package:cloudflare_dart/src/model/brapi_post_content_request_all_of_cookies_inner_source_scheme.dart';
 import 'package:cloudflare_dart/src/model/brapi_post_content_request_all_of_goto_options.dart';
 import 'package:cloudflare_dart/src/model/brapi_post_content_request_all_of_goto_options_wait_until.dart';
-import 'package:cloudflare_dart/src/model/brapi_post_content_request_all_of_goto_options_wait_until_any_of_inner.dart';
+import 'package:cloudflare_dart/src/model/brapi_post_content_request_all_of_reject_resource_types.dart';
 import 'package:cloudflare_dart/src/model/brapi_post_content_request_all_of_viewport.dart';
 import 'package:cloudflare_dart/src/model/brapi_post_content_request_all_of_wait_for_selector.dart';
 import 'package:cloudflare_dart/src/model/brapi_post_json200_response.dart';
 import 'package:cloudflare_dart/src/model/brapi_post_json_request.dart';
+import 'package:cloudflare_dart/src/model/brapi_post_json_request_all_of_allow_resource_types.dart';
 import 'package:cloudflare_dart/src/model/brapi_post_json_request_all_of_custom_ai_inner.dart';
+import 'package:cloudflare_dart/src/model/brapi_post_json_request_all_of_reject_resource_types.dart';
 import 'package:cloudflare_dart/src/model/brapi_post_json_request_all_of_response_format.dart';
 import 'package:cloudflare_dart/src/model/brapi_post_json_request_all_of_response_format_json_schema_value.dart';
 import 'package:cloudflare_dart/src/model/brapi_post_links200_response.dart';
 import 'package:cloudflare_dart/src/model/brapi_post_links_request.dart';
+import 'package:cloudflare_dart/src/model/brapi_post_links_request_all_of_allow_resource_types.dart';
+import 'package:cloudflare_dart/src/model/brapi_post_links_request_all_of_reject_resource_types.dart';
 import 'package:cloudflare_dart/src/model/brapi_post_markdown200_response.dart';
 import 'package:cloudflare_dart/src/model/brapi_post_pdf_request.dart';
+import 'package:cloudflare_dart/src/model/brapi_post_pdf_request_all_of_allow_resource_types.dart';
 import 'package:cloudflare_dart/src/model/brapi_post_pdf_request_all_of_pdf_options.dart';
 import 'package:cloudflare_dart/src/model/brapi_post_pdf_request_all_of_pdf_options_height.dart';
 import 'package:cloudflare_dart/src/model/brapi_post_pdf_request_all_of_pdf_options_margin.dart';
 import 'package:cloudflare_dart/src/model/brapi_post_pdf_request_all_of_pdf_options_margin_bottom.dart';
 import 'package:cloudflare_dart/src/model/brapi_post_pdf_request_all_of_pdf_options_width.dart';
+import 'package:cloudflare_dart/src/model/brapi_post_pdf_request_all_of_reject_resource_types.dart';
 import 'package:cloudflare_dart/src/model/brapi_post_scrape200_response.dart';
 import 'package:cloudflare_dart/src/model/brapi_post_scrape200_response_result_inner.dart';
 import 'package:cloudflare_dart/src/model/brapi_post_scrape200_response_result_inner_results.dart';
 import 'package:cloudflare_dart/src/model/brapi_post_scrape200_response_result_inner_results_attributes_inner.dart';
 import 'package:cloudflare_dart/src/model/brapi_post_scrape_request.dart';
+import 'package:cloudflare_dart/src/model/brapi_post_scrape_request_all_of_allow_resource_types.dart';
 import 'package:cloudflare_dart/src/model/brapi_post_scrape_request_all_of_elements_inner.dart';
+import 'package:cloudflare_dart/src/model/brapi_post_scrape_request_all_of_reject_resource_types.dart';
 import 'package:cloudflare_dart/src/model/brapi_post_screenshot_request.dart';
+import 'package:cloudflare_dart/src/model/brapi_post_screenshot_request_all_of_allow_resource_types.dart';
+import 'package:cloudflare_dart/src/model/brapi_post_screenshot_request_all_of_reject_resource_types.dart';
 import 'package:cloudflare_dart/src/model/brapi_post_screenshot_request_all_of_screenshot_options.dart';
 import 'package:cloudflare_dart/src/model/brapi_post_screenshot_request_all_of_screenshot_options_clip.dart';
-import 'package:cloudflare_dart/src/model/brapi_post_screenshot_request_all_of_screenshot_options_encoding.dart';
-import 'package:cloudflare_dart/src/model/brapi_post_screenshot_request_all_of_screenshot_options_type.dart';
 import 'package:cloudflare_dart/src/model/brapi_post_snapshot200_response.dart';
 import 'package:cloudflare_dart/src/model/brapi_post_snapshot200_response_result.dart';
 import 'package:cloudflare_dart/src/model/brapi_post_snapshot_request.dart';
+import 'package:cloudflare_dart/src/model/brapi_post_snapshot_request_all_of_allow_resource_types.dart';
+import 'package:cloudflare_dart/src/model/brapi_post_snapshot_request_all_of_reject_resource_types.dart';
 import 'package:cloudflare_dart/src/model/brapi_post_snapshot_request_all_of_screenshot_options.dart';
 import 'package:cloudflare_dart/src/model/browser_isolation_permissions_application.dart';
 import 'package:cloudflare_dart/src/model/browser_isolation_permissions_application1.dart';
@@ -1492,7 +1486,6 @@ import 'package:cloudflare_dart/src/model/dlp_document_fingerprints_read_all200_
 import 'package:cloudflare_dart/src/model/dlp_document_fingerprints_upload200_response.dart';
 import 'package:cloudflare_dart/src/model/dlp_email_rule.dart';
 import 'package:cloudflare_dart/src/model/dlp_email_rule_action.dart';
-import 'package:cloudflare_dart/src/model/dlp_email_rule_action_one_of.dart';
 import 'package:cloudflare_dart/src/model/dlp_email_rule_condition.dart';
 import 'package:cloudflare_dart/src/model/dlp_email_rule_operator.dart';
 import 'package:cloudflare_dart/src/model/dlp_email_rule_selector.dart';
@@ -1543,7 +1536,6 @@ import 'package:cloudflare_dart/src/model/dlp_payload_log_setting_update.dart';
 import 'package:cloudflare_dart/src/model/dlp_predefined_entry.dart';
 import 'package:cloudflare_dart/src/model/dlp_predefined_entry_update.dart';
 import 'package:cloudflare_dart/src/model/dlp_predefined_entry_variant.dart';
-import 'package:cloudflare_dart/src/model/dlp_predefined_entry_variant_one_of.dart';
 import 'package:cloudflare_dart/src/model/dlp_predefined_profile.dart';
 import 'package:cloudflare_dart/src/model/dlp_predefined_profile_config.dart';
 import 'package:cloudflare_dart/src/model/dlp_predefined_profile_config_update.dart';
@@ -1982,7 +1974,6 @@ import 'package:cloudflare_dart/src/model/enable_livestream200_response.dart';
 import 'package:cloudflare_dart/src/model/exact_data_entry.dart';
 import 'package:cloudflare_dart/src/model/exclude.dart';
 import 'package:cloudflare_dart/src/model/execute_rule_action_parameters.dart';
-import 'package:cloudflare_dart/src/model/execute_rule_action_parameters_id.dart';
 import 'package:cloudflare_dart/src/model/fetch_all_livestreams200_response.dart';
 import 'package:cloudflare_dart/src/model/fetch_all_livestreams200_response_data.dart';
 import 'package:cloudflare_dart/src/model/fetch_all_livestreams200_response_data_paging.dart';
@@ -1992,7 +1983,6 @@ import 'package:cloudflare_dart/src/model/filters_delete_a_filter4_xx_response.d
 import 'package:cloudflare_dart/src/model/filters_delete_filters4_xx_response.dart';
 import 'package:cloudflare_dart/src/model/filters_get_a_filter4_xx_response.dart';
 import 'package:cloudflare_dart/src/model/filters_list_filters4_xx_response.dart';
-import 'package:cloudflare_dart/src/model/filters_list_filters_paused_parameter.dart';
 import 'package:cloudflare_dart/src/model/firewall_action.dart';
 import 'package:cloudflare_dart/src/model/firewall_action_mode.dart';
 import 'package:cloudflare_dart/src/model/firewall_anomaly_package.dart';
@@ -2037,10 +2027,9 @@ import 'package:cloudflare_dart/src/model/firewall_header_op.dart';
 import 'package:cloudflare_dart/src/model/firewall_ip_configuration.dart';
 import 'package:cloudflare_dart/src/model/firewall_ipv6_configuration.dart';
 import 'package:cloudflare_dart/src/model/firewall_match.dart';
-import 'package:cloudflare_dart/src/model/firewall_match_one_of.dart';
-import 'package:cloudflare_dart/src/model/firewall_match_one_of_headers_inner.dart';
-import 'package:cloudflare_dart/src/model/firewall_match_one_of_request.dart';
-import 'package:cloudflare_dart/src/model/firewall_match_one_of_response.dart';
+import 'package:cloudflare_dart/src/model/firewall_match_headers_inner.dart';
+import 'package:cloudflare_dart/src/model/firewall_match_request.dart';
+import 'package:cloudflare_dart/src/model/firewall_match_response.dart';
 import 'package:cloudflare_dart/src/model/firewall_mode.dart';
 import 'package:cloudflare_dart/src/model/firewall_override.dart';
 import 'package:cloudflare_dart/src/model/firewall_override_response_collection.dart';
@@ -2361,7 +2350,6 @@ import 'package:cloudflare_dart/src/model/iam_response_single_account.dart';
 import 'package:cloudflare_dart/src/model/iam_response_single_value.dart';
 import 'package:cloudflare_dart/src/model/iam_result_info.dart';
 import 'package:cloudflare_dart/src/model/iam_role.dart';
-import 'package:cloudflare_dart/src/model/iam_role_permissions.dart';
 import 'package:cloudflare_dart/src/model/iam_schemas_account.dart';
 import 'package:cloudflare_dart/src/model/iam_schemas_collection_invite_response.dart';
 import 'package:cloudflare_dart/src/model/iam_schemas_status.dart';
@@ -2456,7 +2444,6 @@ import 'package:cloudflare_dart/src/model/infra_ipv6_host.dart';
 import 'package:cloudflare_dart/src/model/infra_network.dart';
 import 'package:cloudflare_dart/src/model/infra_resolver_network.dart';
 import 'package:cloudflare_dart/src/model/infra_service_common.dart';
-import 'package:cloudflare_dart/src/model/infra_service_config.dart';
 import 'package:cloudflare_dart/src/model/infra_service_host.dart';
 import 'package:cloudflare_dart/src/model/infra_service_type.dart';
 import 'package:cloudflare_dart/src/model/infra_sorting_direction.dart';
@@ -2557,7 +2544,6 @@ import 'package:cloudflare_dart/src/model/ip_address_management_prefix_delegatio
 import 'package:cloudflare_dart/src/model/ip_address_management_prefixes_add_prefix4_xx_response.dart';
 import 'package:cloudflare_dart/src/model/ip_address_management_prefixes_add_prefix_request.dart';
 import 'package:cloudflare_dart/src/model/ip_address_management_prefixes_create_bgp_prefix4_xx_response.dart';
-import 'package:cloudflare_dart/src/model/ip_address_management_prefixes_download_loa_document4_xx_response.dart';
 import 'package:cloudflare_dart/src/model/ip_address_management_prefixes_list_bgp_prefixes4_xx_response.dart';
 import 'package:cloudflare_dart/src/model/ip_address_management_prefixes_list_prefixes4_xx_response.dart';
 import 'package:cloudflare_dart/src/model/ip_address_management_prefixes_update_prefix_description_request.dart';
@@ -3291,7 +3277,6 @@ import 'package:cloudflare_dart/src/model/model_string.dart';
 import 'package:cloudflare_dart/src/model/mq_api_v4_failure.dart';
 import 'package:cloudflare_dart/src/model/mq_api_v4_success.dart';
 import 'package:cloudflare_dart/src/model/mq_consumer.dart';
-import 'package:cloudflare_dart/src/model/mq_event_destination.dart';
 import 'package:cloudflare_dart/src/model/mq_event_destination_queue.dart';
 import 'package:cloudflare_dart/src/model/mq_event_source.dart';
 import 'package:cloudflare_dart/src/model/mq_event_source_images.dart';
@@ -3528,7 +3513,6 @@ import 'package:cloudflare_dart/src/model/pages_env_vars_value.dart';
 import 'package:cloudflare_dart/src/model/pages_plain_text_env_var.dart';
 import 'package:cloudflare_dart/src/model/pages_project_create_project4_xx_response.dart';
 import 'package:cloudflare_dart/src/model/pages_project_delete_project200_response.dart';
-import 'package:cloudflare_dart/src/model/pages_project_delete_project4_xx_response.dart';
 import 'package:cloudflare_dart/src/model/pages_project_get_projects4_xx_response.dart';
 import 'package:cloudflare_dart/src/model/pages_project_object.dart';
 import 'package:cloudflare_dart/src/model/pages_project_object_build_config.dart';
@@ -4804,15 +4788,9 @@ import 'package:cloudflare_dart/src/model/spectrum_analytics_column.dart';
 import 'package:cloudflare_dart/src/model/spectrum_analytics_column_metrics.dart';
 import 'package:cloudflare_dart/src/model/spectrum_analytics_query.dart';
 import 'package:cloudflare_dart/src/model/spectrum_analytics_query_response_aggregate.dart';
-import 'package:cloudflare_dart/src/model/spectrum_analytics_query_response_aggregate_all_of_app_id.dart';
 import 'package:cloudflare_dart/src/model/spectrum_analytics_query_response_aggregate_all_of_result.dart';
 import 'package:cloudflare_dart/src/model/spectrum_analytics_query_response_single.dart';
 import 'package:cloudflare_dart/src/model/spectrum_analytics_query_response_single_all_of_result.dart';
-import 'package:cloudflare_dart/src/model/spectrum_analytics_query_response_single_all_of_result_max.dart';
-import 'package:cloudflare_dart/src/model/spectrum_analytics_query_response_single_all_of_result_min.dart';
-import 'package:cloudflare_dart/src/model/spectrum_analytics_query_response_single_all_of_result_totals.dart';
-import 'package:cloudflare_dart/src/model/spectrum_analytics_since.dart';
-import 'package:cloudflare_dart/src/model/spectrum_analytics_until.dart';
 import 'package:cloudflare_dart/src/model/spectrum_config_api_response_collection.dart';
 import 'package:cloudflare_dart/src/model/spectrum_config_api_response_common.dart';
 import 'package:cloudflare_dart/src/model/spectrum_config_api_response_common_failure.dart';
@@ -4824,15 +4802,12 @@ import 'package:cloudflare_dart/src/model/spectrum_config_app_config_collection.
 import 'package:cloudflare_dart/src/model/spectrum_config_app_config_collection_all_of_result.dart';
 import 'package:cloudflare_dart/src/model/spectrum_config_app_config_single.dart';
 import 'package:cloudflare_dart/src/model/spectrum_config_app_config_single_all_of_result.dart';
-import 'package:cloudflare_dart/src/model/spectrum_config_app_identifier.dart';
 import 'package:cloudflare_dart/src/model/spectrum_config_base_app_config.dart';
-import 'package:cloudflare_dart/src/model/spectrum_config_created.dart';
 import 'package:cloudflare_dart/src/model/spectrum_config_dns.dart';
 import 'package:cloudflare_dart/src/model/spectrum_config_dns_type.dart';
 import 'package:cloudflare_dart/src/model/spectrum_config_edge_ips.dart';
 import 'package:cloudflare_dart/src/model/spectrum_config_edge_ips_one_of.dart';
 import 'package:cloudflare_dart/src/model/spectrum_config_edge_ips_one_of1.dart';
-import 'package:cloudflare_dart/src/model/spectrum_config_modified.dart';
 import 'package:cloudflare_dart/src/model/spectrum_config_origin_dns.dart';
 import 'package:cloudflare_dart/src/model/spectrum_config_origin_dns_type.dart';
 import 'package:cloudflare_dart/src/model/spectrum_config_origin_port.dart';
@@ -4841,7 +4816,6 @@ import 'package:cloudflare_dart/src/model/spectrum_config_proxy_protocol.dart';
 import 'package:cloudflare_dart/src/model/spectrum_config_tls.dart';
 import 'package:cloudflare_dart/src/model/spectrum_config_traffic_type.dart';
 import 'package:cloudflare_dart/src/model/spectrum_config_update_app_config.dart';
-import 'package:cloudflare_dart/src/model/spectrum_config_zone_identifier.dart';
 import 'package:cloudflare_dart/src/model/speed_api_response_common.dart';
 import 'package:cloudflare_dart/src/model/speed_api_response_common_failure.dart';
 import 'package:cloudflare_dart/src/model/speed_api_response_single_id.dart';
@@ -4964,7 +4938,6 @@ import 'package:cloudflare_dart/src/model/teams_devices_components_schemas_respo
 import 'package:cloudflare_dart/src/model/teams_devices_components_schemas_single_response.dart';
 import 'package:cloudflare_dart/src/model/teams_devices_components_schemas_type.dart';
 import 'package:cloudflare_dart/src/model/teams_devices_config_request.dart';
-import 'package:cloudflare_dart/src/model/teams_devices_config_response.dart';
 import 'package:cloudflare_dart/src/model/teams_devices_crowdstrike_config_request.dart';
 import 'package:cloudflare_dart/src/model/teams_devices_crowdstrike_input_request.dart';
 import 'package:cloudflare_dart/src/model/teams_devices_cursor_result_info.dart';
@@ -5026,8 +4999,6 @@ import 'package:cloudflare_dart/src/model/teams_devices_registration_details.dar
 import 'package:cloudflare_dart/src/model/teams_devices_registration_device_details.dart';
 import 'package:cloudflare_dart/src/model/teams_devices_response_collection.dart';
 import 'package:cloudflare_dart/src/model/teams_devices_result_info.dart';
-import 'package:cloudflare_dart/src/model/teams_devices_schemas_config_request.dart';
-import 'package:cloudflare_dart/src/model/teams_devices_schemas_config_response.dart';
 import 'package:cloudflare_dart/src/model/teams_devices_schemas_id_response.dart';
 import 'package:cloudflare_dart/src/model/teams_devices_schemas_response_collection.dart';
 import 'package:cloudflare_dart/src/model/teams_devices_schemas_single_response.dart';
@@ -5180,8 +5151,6 @@ import 'package:cloudflare_dart/src/model/tls_certificates_and_hostnames_mtls_ma
 import 'package:cloudflare_dart/src/model/tls_certificates_and_hostnames_mtls_management_components_schemas_certificate_response_single.dart';
 import 'package:cloudflare_dart/src/model/tls_certificates_and_hostnames_ownership_verification.dart';
 import 'package:cloudflare_dart/src/model/tls_certificates_and_hostnames_ownership_verification_http.dart';
-import 'package:cloudflare_dart/src/model/tls_certificates_and_hostnames_ownership_verification_http_one_of.dart';
-import 'package:cloudflare_dart/src/model/tls_certificates_and_hostnames_ownership_verification_one_of.dart';
 import 'package:cloudflare_dart/src/model/tls_certificates_and_hostnames_per_hostname_settings_response.dart';
 import 'package:cloudflare_dart/src/model/tls_certificates_and_hostnames_per_hostname_settings_response_collection.dart';
 import 'package:cloudflare_dart/src/model/tls_certificates_and_hostnames_per_hostname_settings_response_collection_all_of_result.dart';
@@ -5201,13 +5170,11 @@ import 'package:cloudflare_dart/src/model/tls_certificates_and_hostnames_setting
 import 'package:cloudflare_dart/src/model/tls_certificates_and_hostnames_setting_object.dart';
 import 'package:cloudflare_dart/src/model/tls_certificates_and_hostnames_setting_object_delete.dart';
 import 'package:cloudflare_dart/src/model/tls_certificates_and_hostnames_ssl.dart';
-import 'package:cloudflare_dart/src/model/tls_certificates_and_hostnames_ssl_one_of.dart';
 import 'package:cloudflare_dart/src/model/tls_certificates_and_hostnames_ssl_universal_settings_response.dart';
 import 'package:cloudflare_dart/src/model/tls_certificates_and_hostnames_ssl_validation_method_response_collection.dart';
 import 'package:cloudflare_dart/src/model/tls_certificates_and_hostnames_ssl_validation_method_response_collection_all_of_result.dart';
 import 'package:cloudflare_dart/src/model/tls_certificates_and_hostnames_ssl_verification_response_collection.dart';
 import 'package:cloudflare_dart/src/model/tls_certificates_and_hostnames_sslpost.dart';
-import 'package:cloudflare_dart/src/model/tls_certificates_and_hostnames_sslpost_one_of.dart';
 import 'package:cloudflare_dart/src/model/tls_certificates_and_hostnames_sslsettings.dart';
 import 'package:cloudflare_dart/src/model/tls_certificates_and_hostnames_status.dart';
 import 'package:cloudflare_dart/src/model/tls_certificates_and_hostnames_total_tls_settings_response.dart';
@@ -5932,9 +5899,7 @@ import 'package:cloudflare_dart/src/model/workers_kv_bulk_result.dart';
 import 'package:cloudflare_dart/src/model/workers_kv_bulk_write_inner.dart';
 import 'package:cloudflare_dart/src/model/workers_kv_create_rename_namespace_body.dart';
 import 'package:cloudflare_dart/src/model/workers_kv_key.dart';
-import 'package:cloudflare_dart/src/model/workers_kv_list_metadata.dart';
 import 'package:cloudflare_dart/src/model/workers_kv_messages_inner.dart';
-import 'package:cloudflare_dart/src/model/workers_kv_metadata.dart';
 import 'package:cloudflare_dart/src/model/workers_kv_namespace.dart';
 import 'package:cloudflare_dart/src/model/workers_kv_namespace_create_a_namespace200_response.dart';
 import 'package:cloudflare_dart/src/model/workers_kv_namespace_get_multiple_key_value_pairs200_response.dart';
@@ -6034,7 +5999,6 @@ import 'package:cloudflare_dart/src/model/workers_version_assets_config.dart';
 import 'package:cloudflare_dart/src/model/workers_version_assets_config_run_worker_first.dart';
 import 'package:cloudflare_dart/src/model/workers_version_item_full.dart';
 import 'package:cloudflare_dart/src/model/workers_version_item_full_all_of_resources.dart';
-import 'package:cloudflare_dart/src/model/workers_version_item_full_all_of_resources_bindings.dart';
 import 'package:cloudflare_dart/src/model/workers_version_item_full_all_of_resources_script.dart';
 import 'package:cloudflare_dart/src/model/workers_version_item_full_all_of_resources_script_named_handlers.dart';
 import 'package:cloudflare_dart/src/model/workers_version_item_full_all_of_resources_script_runtime.dart';
@@ -6530,7 +6494,6 @@ import 'package:cloudflare_dart/src/model/zones_ssl_recommender.dart';
 import 'package:cloudflare_dart/src/model/zones_ssl_value.dart';
 import 'package:cloudflare_dart/src/model/zones_status.dart';
 import 'package:cloudflare_dart/src/model/zones_string_constraint.dart';
-import 'package:cloudflare_dart/src/model/zones_target.dart';
 import 'package:cloudflare_dart/src/model/zones_tls12_only.dart';
 import 'package:cloudflare_dart/src/model/zones_tls12_only_value.dart';
 import 'package:cloudflare_dart/src/model/zones_tls13.dart';
@@ -6666,7 +6629,6 @@ part 'serializers.g.dart';
   AccessApiResponseSingle,$AccessApiResponseSingle,
   AccessAppId,
   AccessAppLauncherProps,$AccessAppLauncherProps,
-  AccessAppLauncherPropsAllOfType,
   AccessAppPoliciesComponentsSchemasIdResponse,
   AccessAppPoliciesComponentsSchemasIdResponseAllOfResult,
   AccessAppPoliciesComponentsSchemasResponseCollection,
@@ -6703,7 +6665,6 @@ part 'serializers.g.dart';
   AccessBasePolicyResp,$AccessBasePolicyResp,
   AccessBasicAppResponseProps,$AccessBasicAppResponseProps,
   AccessBisoProps,$AccessBisoProps,
-  AccessBisoPropsAllOfType,
   AccessBookmarkProps,$AccessBookmarkProps,
   AccessBookmarks,
   AccessBookmarksComponentsSchemasResponseCollection,
@@ -6738,7 +6699,6 @@ part 'serializers.g.dart';
   AccessCountryRuleGeo,
   AccessCreateResponse,
   AccessCreateResponseAllOfResult,
-  AccessCreatedAt,
   AccessCustomClaimsSupport,$AccessCustomClaimsSupport,
   AccessCustomPage,
   AccessCustomPageWithoutHtml,
@@ -6800,7 +6760,6 @@ part 'serializers.g.dart';
   AccessInfraPolicyReq,
   AccessInfraPolicyResp,
   AccessInfraProps,$AccessInfraProps,
-  AccessInfraPropsAllOfType,
   AccessIpListRule,
   AccessIpListRuleIpList,
   AccessIpRule,
@@ -6867,7 +6826,6 @@ part 'serializers.g.dart';
   AccessProtocolInfraApp,
   AccessProtocolSelfHostedApp,
   AccessRdpProps,$AccessRdpProps,
-  AccessRdpPropsAllOfType,
   AccessResponseCollection,
   AccessResponseCollectionAllOfResult,
   AccessResponseCollectionHostnames,
@@ -6916,7 +6874,6 @@ part 'serializers.g.dart';
   AccessSchemasGroups,
   AccessSchemasIdResponse,
   AccessSchemasIdResponseAllOfResult,
-  AccessSchemasIdentifier,
   AccessSchemasIdentityProvider,$AccessSchemasIdentityProvider,
   AccessSchemasIdentityProviderScimConfig,
   AccessSchemasIdentityProviders,
@@ -6990,7 +6947,6 @@ part 'serializers.g.dart';
   AccessSingleResponseUpdate,
   AccessSingleResponseWithoutHtml,
   AccessSshProps,$AccessSshProps,
-  AccessSshPropsAllOfType,
   AccessStatus,
   AccessTag,
   AccessTagWithoutAppCount,
@@ -7000,18 +6956,15 @@ part 'serializers.g.dart';
   AccessTargetCriteriaBase,$AccessTargetCriteriaBase,
   AccessTargetCriteriaInfraApp,
   AccessTargetCriteriaSelfHostedApp,
-  AccessType,$AccessType,
+  AccessType,
   AccessUpdateStatus,
-  AccessUpdatedAt,
   AccessUserResult,
   AccessUsers,
   AccessUsersComponentsSchemasResponseCollection,
   AccessUsersComponentsSchemasResponseCollectionAllOfResultInfo,
   AccessUsersEmailsInner,
   AccessVncProps,$AccessVncProps,
-  AccessVncPropsAllOfType,
   AccessWarpProps,$AccessWarpProps,
-  AccessWarpPropsAllOfType,
   AccessYandex,
   AccountBillingProfileDeprecatedBillingProfileDetails4XXResponse,
   AccountLevelCustomNameserversAddAccountCustomNameserver4XXResponse,
@@ -7181,7 +7134,6 @@ part 'serializers.g.dart';
   AigConfigListGatewayLogs200Response,
   AigConfigListGatewayLogs200ResponseResultInfo,
   AigConfigListGatewayLogs200ResponseResultInner,
-  AigConfigListGatewayLogsFeedbackParameter,
   AigConfigListGatewayLogsFiltersParameterInner,
   AigConfigListGatewayLogsFiltersParameterInnerValueInner,
   AigConfigListProviders200Response,
@@ -7354,10 +7306,8 @@ part 'serializers.g.dart';
   AutoragConfigAiSearchRequestFilters,
   AutoragConfigAiSearchRequestFiltersAnyOf,
   AutoragConfigAiSearchRequestFiltersAnyOf1,
-  AutoragConfigAiSearchRequestModel,
   AutoragConfigAiSearchRequestRankingOptions,
   AutoragConfigAiSearchRequestReranking,
-  AutoragConfigAiSearchRequestRerankingModel,
   AutoragConfigFiles200Response,
   AutoragConfigFiles200ResponseResultInfo,
   AutoragConfigFiles200ResponseResultInner,
@@ -7462,45 +7412,52 @@ part 'serializers.g.dart';
   BrapiPostContentRequest,
   BrapiPostContentRequestAllOfAddScriptTagInner,
   BrapiPostContentRequestAllOfAddStyleTagInner,
-  BrapiPostContentRequestAllOfAllowResourceTypesInner,
+  BrapiPostContentRequestAllOfAllowResourceTypes,
   BrapiPostContentRequestAllOfAuthenticate,
   BrapiPostContentRequestAllOfCookiesInner,
-  BrapiPostContentRequestAllOfCookiesInnerPriority,
-  BrapiPostContentRequestAllOfCookiesInnerSameSite,
-  BrapiPostContentRequestAllOfCookiesInnerSourceScheme,
   BrapiPostContentRequestAllOfGotoOptions,
   BrapiPostContentRequestAllOfGotoOptionsWaitUntil,
-  BrapiPostContentRequestAllOfGotoOptionsWaitUntilAnyOfInner,
+  BrapiPostContentRequestAllOfRejectResourceTypes,
   BrapiPostContentRequestAllOfViewport,
   BrapiPostContentRequestAllOfWaitForSelector,
   BrapiPostJson200Response,
   BrapiPostJsonRequest,
+  BrapiPostJsonRequestAllOfAllowResourceTypes,
   BrapiPostJsonRequestAllOfCustomAiInner,
+  BrapiPostJsonRequestAllOfRejectResourceTypes,
   BrapiPostJsonRequestAllOfResponseFormat,
   BrapiPostJsonRequestAllOfResponseFormatJsonSchemaValue,
   BrapiPostLinks200Response,
   BrapiPostLinksRequest,
+  BrapiPostLinksRequestAllOfAllowResourceTypes,
+  BrapiPostLinksRequestAllOfRejectResourceTypes,
   BrapiPostMarkdown200Response,
   BrapiPostPdfRequest,
+  BrapiPostPdfRequestAllOfAllowResourceTypes,
   BrapiPostPdfRequestAllOfPdfOptions,
   BrapiPostPdfRequestAllOfPdfOptionsHeight,
   BrapiPostPdfRequestAllOfPdfOptionsMargin,
   BrapiPostPdfRequestAllOfPdfOptionsMarginBottom,
   BrapiPostPdfRequestAllOfPdfOptionsWidth,
+  BrapiPostPdfRequestAllOfRejectResourceTypes,
   BrapiPostScrape200Response,
   BrapiPostScrape200ResponseResultInner,
   BrapiPostScrape200ResponseResultInnerResults,
   BrapiPostScrape200ResponseResultInnerResultsAttributesInner,
   BrapiPostScrapeRequest,
+  BrapiPostScrapeRequestAllOfAllowResourceTypes,
   BrapiPostScrapeRequestAllOfElementsInner,
+  BrapiPostScrapeRequestAllOfRejectResourceTypes,
   BrapiPostScreenshotRequest,
+  BrapiPostScreenshotRequestAllOfAllowResourceTypes,
+  BrapiPostScreenshotRequestAllOfRejectResourceTypes,
   BrapiPostScreenshotRequestAllOfScreenshotOptions,
   BrapiPostScreenshotRequestAllOfScreenshotOptionsClip,
-  BrapiPostScreenshotRequestAllOfScreenshotOptionsEncoding,
-  BrapiPostScreenshotRequestAllOfScreenshotOptionsType,
   BrapiPostSnapshot200Response,
   BrapiPostSnapshot200ResponseResult,
   BrapiPostSnapshotRequest,
+  BrapiPostSnapshotRequestAllOfAllowResourceTypes,
+  BrapiPostSnapshotRequestAllOfRejectResourceTypes,
   BrapiPostSnapshotRequestAllOfScreenshotOptions,
   BrowserIsolationPermissionsApplication,
   BrowserIsolationPermissionsApplication1,
@@ -8044,7 +8001,6 @@ part 'serializers.g.dart';
   DlpDocumentFingerprintsUpload200Response,
   DlpEmailRule,
   DlpEmailRuleAction,
-  DlpEmailRuleActionOneOf,
   DlpEmailRuleCondition,
   DlpEmailRuleOperator,
   DlpEmailRuleSelector,
@@ -8095,7 +8051,6 @@ part 'serializers.g.dart';
   DlpPredefinedEntry,$DlpPredefinedEntry,
   DlpPredefinedEntryUpdate,
   DlpPredefinedEntryVariant,
-  DlpPredefinedEntryVariantOneOf,
   DlpPredefinedProfile,$DlpPredefinedProfile,
   DlpPredefinedProfileConfig,
   DlpPredefinedProfileConfigUpdate,
@@ -8534,7 +8489,6 @@ part 'serializers.g.dart';
   ExactDataEntry,
   Exclude,
   ExecuteRuleActionParameters,
-  ExecuteRuleActionParametersId,
   FetchAllLivestreams200Response,
   FetchAllLivestreams200ResponseData,
   FetchAllLivestreams200ResponseDataPaging,
@@ -8544,7 +8498,6 @@ part 'serializers.g.dart';
   FiltersDeleteFilters4XXResponse,
   FiltersGetAFilter4XXResponse,
   FiltersListFilters4XXResponse,
-  FiltersListFiltersPausedParameter,
   FirewallAction,
   FirewallActionMode,
   FirewallAnomalyPackage,
@@ -8589,10 +8542,9 @@ part 'serializers.g.dart';
   FirewallIpConfiguration,
   FirewallIpv6Configuration,
   FirewallMatch,
-  FirewallMatchOneOf,
-  FirewallMatchOneOfHeadersInner,
-  FirewallMatchOneOfRequest,
-  FirewallMatchOneOfResponse,
+  FirewallMatchHeadersInner,
+  FirewallMatchRequest,
+  FirewallMatchResponse,
   FirewallMode,
   FirewallOverride,
   FirewallOverrideResponseCollection,$FirewallOverrideResponseCollection,
@@ -8893,7 +8845,7 @@ part 'serializers.g.dart';
   IamPermissionGroup,
   IamPermissionGroupIdsInner,
   IamPermissionGroupMeta,
-  IamPermissions,$IamPermissions,
+  IamPermissions,
   IamPermissionsGroupResponseCollection,
   IamPermissionsGroupResponseCollectionAllOfResult,
   IamPolicyWithPermissionGroupsAndResources,
@@ -8913,7 +8865,6 @@ part 'serializers.g.dart';
   IamResponseSingleValue,
   IamResultInfo,
   IamRole,
-  IamRolePermissions,
   IamSchemasAccount,
   IamSchemasCollectionInviteResponse,
   IamSchemasStatus,
@@ -9008,7 +8959,6 @@ part 'serializers.g.dart';
   InfraNetwork,
   InfraResolverNetwork,
   InfraServiceCommon,$InfraServiceCommon,
-  InfraServiceConfig,
   InfraServiceHost,
   InfraServiceType,
   InfraSortingDirection,
@@ -9109,7 +9059,6 @@ part 'serializers.g.dart';
   IpAddressManagementPrefixesAddPrefix4XXResponse,
   IpAddressManagementPrefixesAddPrefixRequest,
   IpAddressManagementPrefixesCreateBgpPrefix4XXResponse,
-  IpAddressManagementPrefixesDownloadLoaDocument4XXResponse,
   IpAddressManagementPrefixesListBgpPrefixes4XXResponse,
   IpAddressManagementPrefixesListPrefixes4XXResponse,
   IpAddressManagementPrefixesUpdatePrefixDescriptionRequest,
@@ -9843,7 +9792,6 @@ part 'serializers.g.dart';
   MqApiV4Failure,
   MqApiV4Success,$MqApiV4Success,
   MqConsumer,$MqConsumer,
-  MqEventDestination,
   MqEventDestinationQueue,
   MqEventSource,
   MqEventSourceImages,
@@ -10080,7 +10028,6 @@ part 'serializers.g.dart';
   PagesPlainTextEnvVar,
   PagesProjectCreateProject4XXResponse,
   PagesProjectDeleteProject200Response,
-  PagesProjectDeleteProject4XXResponse,
   PagesProjectGetProjects4XXResponse,
   PagesProjectObject,$PagesProjectObject,
   PagesProjectObjectBuildConfig,
@@ -11356,15 +11303,9 @@ part 'serializers.g.dart';
   SpectrumAnalyticsColumnMetrics,
   SpectrumAnalyticsQuery,
   SpectrumAnalyticsQueryResponseAggregate,
-  SpectrumAnalyticsQueryResponseAggregateAllOfAppID,
   SpectrumAnalyticsQueryResponseAggregateAllOfResult,
   SpectrumAnalyticsQueryResponseSingle,
   SpectrumAnalyticsQueryResponseSingleAllOfResult,
-  SpectrumAnalyticsQueryResponseSingleAllOfResultMax,
-  SpectrumAnalyticsQueryResponseSingleAllOfResultMin,
-  SpectrumAnalyticsQueryResponseSingleAllOfResultTotals,
-  SpectrumAnalyticsSince,
-  SpectrumAnalyticsUntil,
   SpectrumConfigApiResponseCollection,$SpectrumConfigApiResponseCollection,
   SpectrumConfigApiResponseCommon,$SpectrumConfigApiResponseCommon,
   SpectrumConfigApiResponseCommonFailure,
@@ -11376,15 +11317,12 @@ part 'serializers.g.dart';
   SpectrumConfigAppConfigCollectionAllOfResult,
   SpectrumConfigAppConfigSingle,
   SpectrumConfigAppConfigSingleAllOfResult,
-  SpectrumConfigAppIdentifier,
   SpectrumConfigBaseAppConfig,$SpectrumConfigBaseAppConfig,
-  SpectrumConfigCreated,
   SpectrumConfigDns,
   SpectrumConfigDnsType,
   SpectrumConfigEdgeIps,
   SpectrumConfigEdgeIpsOneOf,
   SpectrumConfigEdgeIpsOneOf1,
-  SpectrumConfigModified,
   SpectrumConfigOriginDns,
   SpectrumConfigOriginDnsType,
   SpectrumConfigOriginPort,
@@ -11393,7 +11331,6 @@ part 'serializers.g.dart';
   SpectrumConfigTls,
   SpectrumConfigTrafficType,
   SpectrumConfigUpdateAppConfig,
-  SpectrumConfigZoneIdentifier,
   SpeedApiResponseCommon,$SpeedApiResponseCommon,
   SpeedApiResponseCommonFailure,
   SpeedApiResponseSingleId,
@@ -11516,7 +11453,6 @@ part 'serializers.g.dart';
   TeamsDevicesComponentsSchemasSingleResponse,$TeamsDevicesComponentsSchemasSingleResponse,
   TeamsDevicesComponentsSchemasType,
   TeamsDevicesConfigRequest,
-  TeamsDevicesConfigResponse,
   TeamsDevicesCrowdstrikeConfigRequest,
   TeamsDevicesCrowdstrikeInputRequest,
   TeamsDevicesCursorResultInfo,
@@ -11578,8 +11514,6 @@ part 'serializers.g.dart';
   TeamsDevicesRegistrationDeviceDetails,
   TeamsDevicesResponseCollection,$TeamsDevicesResponseCollection,
   TeamsDevicesResultInfo,
-  TeamsDevicesSchemasConfigRequest,
-  TeamsDevicesSchemasConfigResponse,
   TeamsDevicesSchemasIdResponse,$TeamsDevicesSchemasIdResponse,
   TeamsDevicesSchemasResponseCollection,$TeamsDevicesSchemasResponseCollection,
   TeamsDevicesSchemasSingleResponse,$TeamsDevicesSchemasSingleResponse,
@@ -11732,8 +11666,6 @@ part 'serializers.g.dart';
   TlsCertificatesAndHostnamesMtlsManagementComponentsSchemasCertificateResponseSingle,$TlsCertificatesAndHostnamesMtlsManagementComponentsSchemasCertificateResponseSingle,
   TlsCertificatesAndHostnamesOwnershipVerification,
   TlsCertificatesAndHostnamesOwnershipVerificationHttp,
-  TlsCertificatesAndHostnamesOwnershipVerificationHttpOneOf,
-  TlsCertificatesAndHostnamesOwnershipVerificationOneOf,
   TlsCertificatesAndHostnamesPerHostnameSettingsResponse,$TlsCertificatesAndHostnamesPerHostnameSettingsResponse,
   TlsCertificatesAndHostnamesPerHostnameSettingsResponseCollection,$TlsCertificatesAndHostnamesPerHostnameSettingsResponseCollection,
   TlsCertificatesAndHostnamesPerHostnameSettingsResponseCollectionAllOfResult,
@@ -11753,13 +11685,11 @@ part 'serializers.g.dart';
   TlsCertificatesAndHostnamesSettingObject,
   TlsCertificatesAndHostnamesSettingObjectDelete,
   TlsCertificatesAndHostnamesSsl,
-  TlsCertificatesAndHostnamesSslOneOf,
   TlsCertificatesAndHostnamesSslUniversalSettingsResponse,$TlsCertificatesAndHostnamesSslUniversalSettingsResponse,
   TlsCertificatesAndHostnamesSslValidationMethodResponseCollection,$TlsCertificatesAndHostnamesSslValidationMethodResponseCollection,
   TlsCertificatesAndHostnamesSslValidationMethodResponseCollectionAllOfResult,
   TlsCertificatesAndHostnamesSslVerificationResponseCollection,$TlsCertificatesAndHostnamesSslVerificationResponseCollection,
   TlsCertificatesAndHostnamesSslpost,
-  TlsCertificatesAndHostnamesSslpostOneOf,
   TlsCertificatesAndHostnamesSslsettings,
   TlsCertificatesAndHostnamesStatus,
   TlsCertificatesAndHostnamesTotalTlsSettingsResponse,$TlsCertificatesAndHostnamesTotalTlsSettingsResponse,
@@ -12484,9 +12414,7 @@ part 'serializers.g.dart';
   WorkersKvBulkWriteInner,
   WorkersKvCreateRenameNamespaceBody,
   WorkersKvKey,
-  WorkersKvListMetadata,
   WorkersKvMessagesInner,
-  WorkersKvMetadata,
   WorkersKvNamespace,
   WorkersKvNamespaceCreateANamespace200Response,
   WorkersKvNamespaceGetMultipleKeyValuePairs200Response,
@@ -12586,7 +12514,6 @@ part 'serializers.g.dart';
   WorkersVersionAssetsConfigRunWorkerFirst,
   WorkersVersionItemFull,$WorkersVersionItemFull,
   WorkersVersionItemFullAllOfResources,
-  WorkersVersionItemFullAllOfResourcesBindings,
   WorkersVersionItemFullAllOfResourcesScript,
   WorkersVersionItemFullAllOfResourcesScriptNamedHandlers,
   WorkersVersionItemFullAllOfResourcesScriptRuntime,
@@ -13082,7 +13009,6 @@ part 'serializers.g.dart';
   ZonesSslValue,
   ZonesStatus,
   ZonesStringConstraint,$ZonesStringConstraint,
-  ZonesTarget,
   ZonesTls12Only,
   ZonesTls12OnlyValue,
   ZonesTls13,
@@ -13281,8 +13207,8 @@ Serializers serializers = (_$serializers.toBuilder()
         () => MapBuilder<String, SchemaValidationBulkEditPerOperationSettingsRequestValue>(),
       )
       ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(BuiltList<String>)]),
-        () => ListBuilder<BuiltList<String>>(),
+        const FullType(BuiltList, [FullType(BuiltList&lt;String&gt;)]),
+        () => ListBuilder<BuiltList&lt;String&gt;>(),
       )
       ..addBuilderFactory(
         const FullType(BuiltList, [FullType(McnResourceType)]),
@@ -13412,7 +13338,6 @@ Serializers serializers = (_$serializers.toBuilder()
       ..add(AccessSelfHostedProps.serializer)
       ..add(AccessSshProps.serializer)
       ..add(AccessTargetCriteriaBase.serializer)
-      ..add(AccessType.serializer)
       ..add(AccessVncProps.serializer)
       ..add(AccessWarpProps.serializer)
       ..add(AddressingAddressMaps.serializer)
@@ -13675,7 +13600,6 @@ Serializers serializers = (_$serializers.toBuilder()
       ..add(IamApiResponseCollection.serializer)
       ..add(IamApiResponseCommon.serializer)
       ..add(IamApiResponseSingle.serializer)
-      ..add(IamPermissions.serializer)
       ..add(IamTokenBase.serializer)
       ..add(IamUserGroupPolicyWriteBody.serializer)
       ..add(ImagesApiResponseCollectionV2.serializer)
@@ -14144,8 +14068,8 @@ Serializers serializers = (_$serializers.toBuilder()
       ..add(const OneOfSerializer())
       ..add(const AnyOfSerializer())
       ..add(const DateSerializer())
-      ..add(Iso8601DateTimeSerializer()))
-    .build();
+      ..add(Iso8601DateTimeSerializer())
+    ).build();
 
 Serializers standardSerializers =
     (serializers.toBuilder()..addPlugin(StandardJsonPlugin())).build();

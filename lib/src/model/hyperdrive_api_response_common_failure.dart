@@ -161,11 +161,11 @@ class _$HyperdriveApiResponseCommonFailureSerializer implements PrimitiveSeriali
 class HyperdriveApiResponseCommonFailureResultEnum extends EnumClass {
 
 
-  static Serializer<HyperdriveApiResponseCommonFailureResultEnum> get serializer => _$hyperdriveApiResponseCommonFailureResultSerializer;
+  static Serializer<HyperdriveApiResponseCommonFailureResultEnum> get serializer => _$hyperdriveApiResponseCommonFailureResultEnumSerializer;
 
   const HyperdriveApiResponseCommonFailureResultEnum._(String name): super(name);
 
-  static BuiltSet<HyperdriveApiResponseCommonFailureResultEnum> get values => _$hyperdriveApiResponseCommonFailureResultValues;
-  static HyperdriveApiResponseCommonFailureResultEnum valueOf(String name) => _$hyperdriveApiResponseCommonFailureResultValueOf(name);
+  static BuiltSet<HyperdriveApiResponseCommonFailureResultEnum> get values => _$hyperdriveApiResponseCommonFailureResultEnumValues;
+  static HyperdriveApiResponseCommonFailureResultEnum valueOf(String name) => _$hyperdriveApiResponseCommonFailureResultEnumValueOf(name);
 }
 

@@ -132,11 +132,11 @@ class FirewallBypassInnerNameEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'url')
   static const FirewallBypassInnerNameEnum url = _$firewallBypassInnerNameEnum_url;
 
-  static Serializer<FirewallBypassInnerNameEnum> get serializer => _$firewallBypassInnerNameSerializer;
+  static Serializer<FirewallBypassInnerNameEnum> get serializer => _$firewallBypassInnerNameEnumSerializer;
 
   const FirewallBypassInnerNameEnum._(String name): super(name);
 
-  static BuiltSet<FirewallBypassInnerNameEnum> get values => _$firewallBypassInnerNameValues;
-  static FirewallBypassInnerNameEnum valueOf(String name) => _$firewallBypassInnerNameValueOf(name);
+  static BuiltSet<FirewallBypassInnerNameEnum> get values => _$firewallBypassInnerNameEnumValues;
+  static FirewallBypassInnerNameEnum valueOf(String name) => _$firewallBypassInnerNameEnumValueOf(name);
 }
 

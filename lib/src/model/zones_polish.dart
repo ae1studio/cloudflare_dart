@@ -135,12 +135,12 @@ class ZonesPolishIdEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'polish')
   static const ZonesPolishIdEnum polish = _$zonesPolishIdEnum_polish;
 
-  static Serializer<ZonesPolishIdEnum> get serializer => _$zonesPolishIdSerializer;
+  static Serializer<ZonesPolishIdEnum> get serializer => _$zonesPolishIdEnumSerializer;
 
   const ZonesPolishIdEnum._(String name): super(name);
 
-  static BuiltSet<ZonesPolishIdEnum> get values => _$zonesPolishIdValues;
-  static ZonesPolishIdEnum valueOf(String name) => _$zonesPolishIdValueOf(name);
+  static BuiltSet<ZonesPolishIdEnum> get values => _$zonesPolishIdEnumValues;
+  static ZonesPolishIdEnum valueOf(String name) => _$zonesPolishIdEnumValueOf(name);
 }
 
 class ZonesPolishValueEnum extends EnumClass {
@@ -155,11 +155,11 @@ class ZonesPolishValueEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'lossy')
   static const ZonesPolishValueEnum lossy = _$zonesPolishValueEnum_lossy;
 
-  static Serializer<ZonesPolishValueEnum> get serializer => _$zonesPolishValueSerializer;
+  static Serializer<ZonesPolishValueEnum> get serializer => _$zonesPolishValueEnumSerializer;
 
   const ZonesPolishValueEnum._(String name): super(name);
 
-  static BuiltSet<ZonesPolishValueEnum> get values => _$zonesPolishValueValues;
-  static ZonesPolishValueEnum valueOf(String name) => _$zonesPolishValueValueOf(name);
+  static BuiltSet<ZonesPolishValueEnum> get values => _$zonesPolishValueEnumValues;
+  static ZonesPolishValueEnum valueOf(String name) => _$zonesPolishValueEnumValueOf(name);
 }
 

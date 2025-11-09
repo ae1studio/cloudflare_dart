@@ -10,17 +10,17 @@ class _$InfrastructureApplication1 extends InfrastructureApplication1 {
   @override
   final String? aud;
   @override
-  final AccessCreatedAt? createdAt;
+  final JsonObject? createdAt;
   @override
   final String? id;
   @override
-  final AccessUpdatedAt? updatedAt;
+  final JsonObject? updatedAt;
   @override
   final BuiltList<AccessInfraPolicyResp>? policies;
   @override
   final String? name;
   @override
-  final AccessInfraPropsAllOfType type;
+  final AccessType type;
   @override
   final BuiltList<AccessTargetCriteriaInfraApp>? targetCriteria;
 
@@ -103,20 +103,18 @@ class InfrastructureApplication1Builder
   String? get aud => _$this._aud;
   set aud(covariant String? aud) => _$this._aud = aud;
 
-  AccessCreatedAtBuilder? _createdAt;
-  AccessCreatedAtBuilder get createdAt =>
-      _$this._createdAt ??= AccessCreatedAtBuilder();
-  set createdAt(covariant AccessCreatedAtBuilder? createdAt) =>
+  JsonObject? _createdAt;
+  JsonObject? get createdAt => _$this._createdAt;
+  set createdAt(covariant JsonObject? createdAt) =>
       _$this._createdAt = createdAt;
 
   String? _id;
   String? get id => _$this._id;
   set id(covariant String? id) => _$this._id = id;
 
-  AccessUpdatedAtBuilder? _updatedAt;
-  AccessUpdatedAtBuilder get updatedAt =>
-      _$this._updatedAt ??= AccessUpdatedAtBuilder();
-  set updatedAt(covariant AccessUpdatedAtBuilder? updatedAt) =>
+  JsonObject? _updatedAt;
+  JsonObject? get updatedAt => _$this._updatedAt;
+  set updatedAt(covariant JsonObject? updatedAt) =>
       _$this._updatedAt = updatedAt;
 
   ListBuilder<AccessInfraPolicyResp>? _policies;
@@ -129,11 +127,9 @@ class InfrastructureApplication1Builder
   String? get name => _$this._name;
   set name(covariant String? name) => _$this._name = name;
 
-  AccessInfraPropsAllOfTypeBuilder? _type;
-  AccessInfraPropsAllOfTypeBuilder get type =>
-      _$this._type ??= AccessInfraPropsAllOfTypeBuilder();
-  set type(covariant AccessInfraPropsAllOfTypeBuilder? type) =>
-      _$this._type = type;
+  AccessType? _type;
+  AccessType? get type => _$this._type;
+  set type(covariant AccessType? type) => _$this._type = type;
 
   ListBuilder<AccessTargetCriteriaInfraApp>? _targetCriteria;
   ListBuilder<AccessTargetCriteriaInfraApp> get targetCriteria =>
@@ -151,12 +147,12 @@ class InfrastructureApplication1Builder
     final $v = _$v;
     if ($v != null) {
       _aud = $v.aud;
-      _createdAt = $v.createdAt?.toBuilder();
+      _createdAt = $v.createdAt;
       _id = $v.id;
-      _updatedAt = $v.updatedAt?.toBuilder();
+      _updatedAt = $v.updatedAt;
       _policies = $v.policies?.toBuilder();
       _name = $v.name;
-      _type = $v.type.toBuilder();
+      _type = $v.type;
       _targetCriteria = $v.targetCriteria?.toBuilder();
       _$v = null;
     }
@@ -183,27 +179,21 @@ class InfrastructureApplication1Builder
       _$result = _$v ??
           _$InfrastructureApplication1._(
             aud: aud,
-            createdAt: _createdAt?.build(),
+            createdAt: createdAt,
             id: id,
-            updatedAt: _updatedAt?.build(),
+            updatedAt: updatedAt,
             policies: _policies?.build(),
             name: name,
-            type: type.build(),
+            type: BuiltValueNullFieldError.checkNotNull(
+                type, r'InfrastructureApplication1', 'type'),
             targetCriteria: _targetCriteria?.build(),
           );
     } catch (_) {
       late String _$failedField;
       try {
-        _$failedField = 'createdAt';
-        _createdAt?.build();
-
-        _$failedField = 'updatedAt';
-        _updatedAt?.build();
         _$failedField = 'policies';
         _policies?.build();
 
-        _$failedField = 'type';
-        type.build();
         _$failedField = 'targetCriteria';
         _targetCriteria?.build();
       } catch (e) {

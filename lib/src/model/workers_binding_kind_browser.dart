@@ -130,11 +130,11 @@ class WorkersBindingKindBrowserTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'browser')
   static const WorkersBindingKindBrowserTypeEnum browser = _$workersBindingKindBrowserTypeEnum_browser;
 
-  static Serializer<WorkersBindingKindBrowserTypeEnum> get serializer => _$workersBindingKindBrowserTypeSerializer;
+  static Serializer<WorkersBindingKindBrowserTypeEnum> get serializer => _$workersBindingKindBrowserTypeEnumSerializer;
 
   const WorkersBindingKindBrowserTypeEnum._(String name): super(name);
 
-  static BuiltSet<WorkersBindingKindBrowserTypeEnum> get values => _$workersBindingKindBrowserTypeValues;
-  static WorkersBindingKindBrowserTypeEnum valueOf(String name) => _$workersBindingKindBrowserTypeValueOf(name);
+  static BuiltSet<WorkersBindingKindBrowserTypeEnum> get values => _$workersBindingKindBrowserTypeEnumValues;
+  static WorkersBindingKindBrowserTypeEnum valueOf(String name) => _$workersBindingKindBrowserTypeEnumValueOf(name);
 }
 

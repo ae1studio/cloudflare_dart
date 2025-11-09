@@ -116,11 +116,11 @@ class ZoneSettingsChangeSpeedBrainSettingRequestValueEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'off')
   static const ZoneSettingsChangeSpeedBrainSettingRequestValueEnum off = _$zoneSettingsChangeSpeedBrainSettingRequestValueEnum_off;
 
-  static Serializer<ZoneSettingsChangeSpeedBrainSettingRequestValueEnum> get serializer => _$zoneSettingsChangeSpeedBrainSettingRequestValueSerializer;
+  static Serializer<ZoneSettingsChangeSpeedBrainSettingRequestValueEnum> get serializer => _$zoneSettingsChangeSpeedBrainSettingRequestValueEnumSerializer;
 
   const ZoneSettingsChangeSpeedBrainSettingRequestValueEnum._(String name): super(name);
 
-  static BuiltSet<ZoneSettingsChangeSpeedBrainSettingRequestValueEnum> get values => _$zoneSettingsChangeSpeedBrainSettingRequestValueValues;
-  static ZoneSettingsChangeSpeedBrainSettingRequestValueEnum valueOf(String name) => _$zoneSettingsChangeSpeedBrainSettingRequestValueValueOf(name);
+  static BuiltSet<ZoneSettingsChangeSpeedBrainSettingRequestValueEnum> get values => _$zoneSettingsChangeSpeedBrainSettingRequestValueEnumValues;
+  static ZoneSettingsChangeSpeedBrainSettingRequestValueEnum valueOf(String name) => _$zoneSettingsChangeSpeedBrainSettingRequestValueEnumValueOf(name);
 }
 

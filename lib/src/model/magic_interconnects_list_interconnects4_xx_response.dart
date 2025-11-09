@@ -149,11 +149,11 @@ class _$MagicInterconnectsListInterconnects4XXResponseSerializer implements Prim
 class MagicInterconnectsListInterconnects4XXResponseResultEnum extends EnumClass {
 
 
-  static Serializer<MagicInterconnectsListInterconnects4XXResponseResultEnum> get serializer => _$magicInterconnectsListInterconnects4XXResponseResultSerializer;
+  static Serializer<MagicInterconnectsListInterconnects4XXResponseResultEnum> get serializer => _$magicInterconnectsListInterconnects4XXResponseResultEnumSerializer;
 
   const MagicInterconnectsListInterconnects4XXResponseResultEnum._(String name): super(name);
 
-  static BuiltSet<MagicInterconnectsListInterconnects4XXResponseResultEnum> get values => _$magicInterconnectsListInterconnects4XXResponseResultValues;
-  static MagicInterconnectsListInterconnects4XXResponseResultEnum valueOf(String name) => _$magicInterconnectsListInterconnects4XXResponseResultValueOf(name);
+  static BuiltSet<MagicInterconnectsListInterconnects4XXResponseResultEnum> get values => _$magicInterconnectsListInterconnects4XXResponseResultEnumValues;
+  static MagicInterconnectsListInterconnects4XXResponseResultEnum valueOf(String name) => _$magicInterconnectsListInterconnects4XXResponseResultEnumValueOf(name);
 }
 

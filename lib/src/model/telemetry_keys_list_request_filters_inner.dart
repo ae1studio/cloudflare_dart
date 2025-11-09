@@ -217,12 +217,12 @@ class TelemetryKeysListRequestFiltersInnerOperationEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'STARTS_WITH')
   static const TelemetryKeysListRequestFiltersInnerOperationEnum STARTS_WITH = _$telemetryKeysListRequestFiltersInnerOperationEnum_STARTS_WITH;
 
-  static Serializer<TelemetryKeysListRequestFiltersInnerOperationEnum> get serializer => _$telemetryKeysListRequestFiltersInnerOperationSerializer;
+  static Serializer<TelemetryKeysListRequestFiltersInnerOperationEnum> get serializer => _$telemetryKeysListRequestFiltersInnerOperationEnumSerializer;
 
   const TelemetryKeysListRequestFiltersInnerOperationEnum._(String name): super(name);
 
-  static BuiltSet<TelemetryKeysListRequestFiltersInnerOperationEnum> get values => _$telemetryKeysListRequestFiltersInnerOperationValues;
-  static TelemetryKeysListRequestFiltersInnerOperationEnum valueOf(String name) => _$telemetryKeysListRequestFiltersInnerOperationValueOf(name);
+  static BuiltSet<TelemetryKeysListRequestFiltersInnerOperationEnum> get values => _$telemetryKeysListRequestFiltersInnerOperationEnumValues;
+  static TelemetryKeysListRequestFiltersInnerOperationEnum valueOf(String name) => _$telemetryKeysListRequestFiltersInnerOperationEnumValueOf(name);
 }
 
 class TelemetryKeysListRequestFiltersInnerTypeEnum extends EnumClass {
@@ -234,11 +234,11 @@ class TelemetryKeysListRequestFiltersInnerTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'boolean')
   static const TelemetryKeysListRequestFiltersInnerTypeEnum boolean = _$telemetryKeysListRequestFiltersInnerTypeEnum_boolean;
 
-  static Serializer<TelemetryKeysListRequestFiltersInnerTypeEnum> get serializer => _$telemetryKeysListRequestFiltersInnerTypeSerializer;
+  static Serializer<TelemetryKeysListRequestFiltersInnerTypeEnum> get serializer => _$telemetryKeysListRequestFiltersInnerTypeEnumSerializer;
 
   const TelemetryKeysListRequestFiltersInnerTypeEnum._(String name): super(name);
 
-  static BuiltSet<TelemetryKeysListRequestFiltersInnerTypeEnum> get values => _$telemetryKeysListRequestFiltersInnerTypeValues;
-  static TelemetryKeysListRequestFiltersInnerTypeEnum valueOf(String name) => _$telemetryKeysListRequestFiltersInnerTypeValueOf(name);
+  static BuiltSet<TelemetryKeysListRequestFiltersInnerTypeEnum> get values => _$telemetryKeysListRequestFiltersInnerTypeEnumValues;
+  static TelemetryKeysListRequestFiltersInnerTypeEnum valueOf(String name) => _$telemetryKeysListRequestFiltersInnerTypeEnumValueOf(name);
 }
 

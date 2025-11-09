@@ -165,11 +165,11 @@ class _$FiltersDeleteFilters4XXResponseSerializer implements PrimitiveSerializer
 class FiltersDeleteFilters4XXResponseResultEnum extends EnumClass {
 
 
-  static Serializer<FiltersDeleteFilters4XXResponseResultEnum> get serializer => _$filtersDeleteFilters4XXResponseResultSerializer;
+  static Serializer<FiltersDeleteFilters4XXResponseResultEnum> get serializer => _$filtersDeleteFilters4XXResponseResultEnumSerializer;
 
   const FiltersDeleteFilters4XXResponseResultEnum._(String name): super(name);
 
-  static BuiltSet<FiltersDeleteFilters4XXResponseResultEnum> get values => _$filtersDeleteFilters4XXResponseResultValues;
-  static FiltersDeleteFilters4XXResponseResultEnum valueOf(String name) => _$filtersDeleteFilters4XXResponseResultValueOf(name);
+  static BuiltSet<FiltersDeleteFilters4XXResponseResultEnum> get values => _$filtersDeleteFilters4XXResponseResultEnumValues;
+  static FiltersDeleteFilters4XXResponseResultEnum valueOf(String name) => _$filtersDeleteFilters4XXResponseResultEnumValueOf(name);
 }
 

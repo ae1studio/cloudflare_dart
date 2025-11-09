@@ -149,11 +149,11 @@ class _$CustomHostnameForAZoneCreateCustomHostname4XXResponseSerializer implemen
 class CustomHostnameForAZoneCreateCustomHostname4XXResponseResultEnum extends EnumClass {
 
 
-  static Serializer<CustomHostnameForAZoneCreateCustomHostname4XXResponseResultEnum> get serializer => _$customHostnameForAZoneCreateCustomHostname4XXResponseResultSerializer;
+  static Serializer<CustomHostnameForAZoneCreateCustomHostname4XXResponseResultEnum> get serializer => _$customHostnameForAZoneCreateCustomHostname4XXResponseResultEnumSerializer;
 
   const CustomHostnameForAZoneCreateCustomHostname4XXResponseResultEnum._(String name): super(name);
 
-  static BuiltSet<CustomHostnameForAZoneCreateCustomHostname4XXResponseResultEnum> get values => _$customHostnameForAZoneCreateCustomHostname4XXResponseResultValues;
-  static CustomHostnameForAZoneCreateCustomHostname4XXResponseResultEnum valueOf(String name) => _$customHostnameForAZoneCreateCustomHostname4XXResponseResultValueOf(name);
+  static BuiltSet<CustomHostnameForAZoneCreateCustomHostname4XXResponseResultEnum> get values => _$customHostnameForAZoneCreateCustomHostname4XXResponseResultEnumValues;
+  static CustomHostnameForAZoneCreateCustomHostname4XXResponseResultEnum valueOf(String name) => _$customHostnameForAZoneCreateCustomHostname4XXResponseResultEnumValueOf(name);
 }
 

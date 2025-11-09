@@ -167,11 +167,11 @@ class RadarGetBgpTimeseries200ResponseResultMetaAggIntervalEnum extends EnumClas
   @BuiltValueEnumConst(wireName: r'1w')
   static const RadarGetBgpTimeseries200ResponseResultMetaAggIntervalEnum n1w = _$radarGetBgpTimeseries200ResponseResultMetaAggIntervalEnum_n1w;
 
-  static Serializer<RadarGetBgpTimeseries200ResponseResultMetaAggIntervalEnum> get serializer => _$radarGetBgpTimeseries200ResponseResultMetaAggIntervalSerializer;
+  static Serializer<RadarGetBgpTimeseries200ResponseResultMetaAggIntervalEnum> get serializer => _$radarGetBgpTimeseries200ResponseResultMetaAggIntervalEnumSerializer;
 
   const RadarGetBgpTimeseries200ResponseResultMetaAggIntervalEnum._(String name): super(name);
 
-  static BuiltSet<RadarGetBgpTimeseries200ResponseResultMetaAggIntervalEnum> get values => _$radarGetBgpTimeseries200ResponseResultMetaAggIntervalValues;
-  static RadarGetBgpTimeseries200ResponseResultMetaAggIntervalEnum valueOf(String name) => _$radarGetBgpTimeseries200ResponseResultMetaAggIntervalValueOf(name);
+  static BuiltSet<RadarGetBgpTimeseries200ResponseResultMetaAggIntervalEnum> get values => _$radarGetBgpTimeseries200ResponseResultMetaAggIntervalEnumValues;
+  static RadarGetBgpTimeseries200ResponseResultMetaAggIntervalEnum valueOf(String name) => _$radarGetBgpTimeseries200ResponseResultMetaAggIntervalEnumValueOf(name);
 }
 

@@ -149,11 +149,11 @@ class _$DevicePostureRulesDeleteDevicePostureRule4XXResponseSerializer implement
 class DevicePostureRulesDeleteDevicePostureRule4XXResponseResultEnum extends EnumClass {
 
 
-  static Serializer<DevicePostureRulesDeleteDevicePostureRule4XXResponseResultEnum> get serializer => _$devicePostureRulesDeleteDevicePostureRule4XXResponseResultSerializer;
+  static Serializer<DevicePostureRulesDeleteDevicePostureRule4XXResponseResultEnum> get serializer => _$devicePostureRulesDeleteDevicePostureRule4XXResponseResultEnumSerializer;
 
   const DevicePostureRulesDeleteDevicePostureRule4XXResponseResultEnum._(String name): super(name);
 
-  static BuiltSet<DevicePostureRulesDeleteDevicePostureRule4XXResponseResultEnum> get values => _$devicePostureRulesDeleteDevicePostureRule4XXResponseResultValues;
-  static DevicePostureRulesDeleteDevicePostureRule4XXResponseResultEnum valueOf(String name) => _$devicePostureRulesDeleteDevicePostureRule4XXResponseResultValueOf(name);
+  static BuiltSet<DevicePostureRulesDeleteDevicePostureRule4XXResponseResultEnum> get values => _$devicePostureRulesDeleteDevicePostureRule4XXResponseResultEnumValues;
+  static DevicePostureRulesDeleteDevicePostureRule4XXResponseResultEnum valueOf(String name) => _$devicePostureRulesDeleteDevicePostureRule4XXResponseResultEnumValueOf(name);
 }
 

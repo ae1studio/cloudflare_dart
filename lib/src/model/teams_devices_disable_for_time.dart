@@ -12,23 +12,15 @@ part 'teams_devices_disable_for_time.g.dart';
 ///
 /// Properties:
 /// * [n1] - Override code that is valid for 1 hour.
-/// * [n12] - Override code that is valid for 12 hour2.
-/// * [n24] - Override code that is valid for 24 hour.2.
 /// * [n3] - Override code that is valid for 3 hours.
 /// * [n6] - Override code that is valid for 6 hours.
+/// * [n12] - Override code that is valid for 12 hour2.
+/// * [n24] - Override code that is valid for 24 hour.2.
 @BuiltValue()
 abstract class TeamsDevicesDisableForTime implements Built<TeamsDevicesDisableForTime, TeamsDevicesDisableForTimeBuilder> {
   /// Override code that is valid for 1 hour.
   @BuiltValueField(wireName: r'1')
   String? get n1;
-
-  /// Override code that is valid for 12 hour2.
-  @BuiltValueField(wireName: r'12')
-  String? get n12;
-
-  /// Override code that is valid for 24 hour.2.
-  @BuiltValueField(wireName: r'24')
-  String? get n24;
 
   /// Override code that is valid for 3 hours.
   @BuiltValueField(wireName: r'3')
@@ -37,6 +29,14 @@ abstract class TeamsDevicesDisableForTime implements Built<TeamsDevicesDisableFo
   /// Override code that is valid for 6 hours.
   @BuiltValueField(wireName: r'6')
   String? get n6;
+
+  /// Override code that is valid for 12 hour2.
+  @BuiltValueField(wireName: r'12')
+  String? get n12;
+
+  /// Override code that is valid for 24 hour.2.
+  @BuiltValueField(wireName: r'24')
+  String? get n24;
 
   TeamsDevicesDisableForTime._();
 
@@ -68,20 +68,6 @@ class _$TeamsDevicesDisableForTimeSerializer implements PrimitiveSerializer<Team
         specifiedType: const FullType(String),
       );
     }
-    if (object.n12 != null) {
-      yield r'12';
-      yield serializers.serialize(
-        object.n12,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.n24 != null) {
-      yield r'24';
-      yield serializers.serialize(
-        object.n24,
-        specifiedType: const FullType(String),
-      );
-    }
     if (object.n3 != null) {
       yield r'3';
       yield serializers.serialize(
@@ -93,6 +79,20 @@ class _$TeamsDevicesDisableForTimeSerializer implements PrimitiveSerializer<Team
       yield r'6';
       yield serializers.serialize(
         object.n6,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.n12 != null) {
+      yield r'12';
+      yield serializers.serialize(
+        object.n12,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.n24 != null) {
+      yield r'24';
+      yield serializers.serialize(
+        object.n24,
         specifiedType: const FullType(String),
       );
     }
@@ -126,20 +126,6 @@ class _$TeamsDevicesDisableForTimeSerializer implements PrimitiveSerializer<Team
           ) as String;
           result.n1 = valueDes;
           break;
-        case r'12':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.n12 = valueDes;
-          break;
-        case r'24':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.n24 = valueDes;
-          break;
         case r'3':
           final valueDes = serializers.deserialize(
             value,
@@ -153,6 +139,20 @@ class _$TeamsDevicesDisableForTimeSerializer implements PrimitiveSerializer<Team
             specifiedType: const FullType(String),
           ) as String;
           result.n6 = valueDes;
+          break;
+        case r'12':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.n12 = valueDes;
+          break;
+        case r'24':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.n24 = valueDes;
           break;
         default:
           unhandled.add(key);

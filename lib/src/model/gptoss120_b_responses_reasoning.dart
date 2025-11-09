@@ -141,12 +141,12 @@ class GPTOSS120BResponsesReasoningEffortEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'high')
   static const GPTOSS120BResponsesReasoningEffortEnum high = _$gPTOSS120BResponsesReasoningEffortEnum_high;
 
-  static Serializer<GPTOSS120BResponsesReasoningEffortEnum> get serializer => _$gPTOSS120BResponsesReasoningEffortSerializer;
+  static Serializer<GPTOSS120BResponsesReasoningEffortEnum> get serializer => _$gPTOSS120BResponsesReasoningEffortEnumSerializer;
 
   const GPTOSS120BResponsesReasoningEffortEnum._(String name): super(name);
 
-  static BuiltSet<GPTOSS120BResponsesReasoningEffortEnum> get values => _$gPTOSS120BResponsesReasoningEffortValues;
-  static GPTOSS120BResponsesReasoningEffortEnum valueOf(String name) => _$gPTOSS120BResponsesReasoningEffortValueOf(name);
+  static BuiltSet<GPTOSS120BResponsesReasoningEffortEnum> get values => _$gPTOSS120BResponsesReasoningEffortEnumValues;
+  static GPTOSS120BResponsesReasoningEffortEnum valueOf(String name) => _$gPTOSS120BResponsesReasoningEffortEnumValueOf(name);
 }
 
 class GPTOSS120BResponsesReasoningSummaryEnum extends EnumClass {
@@ -161,11 +161,11 @@ class GPTOSS120BResponsesReasoningSummaryEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'detailed')
   static const GPTOSS120BResponsesReasoningSummaryEnum detailed = _$gPTOSS120BResponsesReasoningSummaryEnum_detailed;
 
-  static Serializer<GPTOSS120BResponsesReasoningSummaryEnum> get serializer => _$gPTOSS120BResponsesReasoningSummarySerializer;
+  static Serializer<GPTOSS120BResponsesReasoningSummaryEnum> get serializer => _$gPTOSS120BResponsesReasoningSummaryEnumSerializer;
 
   const GPTOSS120BResponsesReasoningSummaryEnum._(String name): super(name);
 
-  static BuiltSet<GPTOSS120BResponsesReasoningSummaryEnum> get values => _$gPTOSS120BResponsesReasoningSummaryValues;
-  static GPTOSS120BResponsesReasoningSummaryEnum valueOf(String name) => _$gPTOSS120BResponsesReasoningSummaryValueOf(name);
+  static BuiltSet<GPTOSS120BResponsesReasoningSummaryEnum> get values => _$gPTOSS120BResponsesReasoningSummaryEnumValues;
+  static GPTOSS120BResponsesReasoningSummaryEnum valueOf(String name) => _$gPTOSS120BResponsesReasoningSummaryEnumValueOf(name);
 }
 

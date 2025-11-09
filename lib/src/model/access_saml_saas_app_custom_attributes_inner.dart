@@ -197,11 +197,11 @@ class AccessSamlSaasAppCustomAttributesInnerNameFormatEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'urn:oasis:names:tc:SAML:2.0:attrname-format:uri')
   static const AccessSamlSaasAppCustomAttributesInnerNameFormatEnum urnColonOasisColonNamesColonTcColonSAMLColon2Period0ColonAttrnameFormatColonUri = _$accessSamlSaasAppCustomAttributesInnerNameFormatEnum_urnColonOasisColonNamesColonTcColonSAMLColon2Period0ColonAttrnameFormatColonUri;
 
-  static Serializer<AccessSamlSaasAppCustomAttributesInnerNameFormatEnum> get serializer => _$accessSamlSaasAppCustomAttributesInnerNameFormatSerializer;
+  static Serializer<AccessSamlSaasAppCustomAttributesInnerNameFormatEnum> get serializer => _$accessSamlSaasAppCustomAttributesInnerNameFormatEnumSerializer;
 
   const AccessSamlSaasAppCustomAttributesInnerNameFormatEnum._(String name): super(name);
 
-  static BuiltSet<AccessSamlSaasAppCustomAttributesInnerNameFormatEnum> get values => _$accessSamlSaasAppCustomAttributesInnerNameFormatValues;
-  static AccessSamlSaasAppCustomAttributesInnerNameFormatEnum valueOf(String name) => _$accessSamlSaasAppCustomAttributesInnerNameFormatValueOf(name);
+  static BuiltSet<AccessSamlSaasAppCustomAttributesInnerNameFormatEnum> get values => _$accessSamlSaasAppCustomAttributesInnerNameFormatEnumValues;
+  static AccessSamlSaasAppCustomAttributesInnerNameFormatEnum valueOf(String name) => _$accessSamlSaasAppCustomAttributesInnerNameFormatEnumValueOf(name);
 }
 

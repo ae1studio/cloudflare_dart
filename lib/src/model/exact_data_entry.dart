@@ -203,11 +203,11 @@ class ExactDataEntryTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'exact_data')
   static const ExactDataEntryTypeEnum exactData = _$exactDataEntryTypeEnum_exactData;
 
-  static Serializer<ExactDataEntryTypeEnum> get serializer => _$exactDataEntryTypeSerializer;
+  static Serializer<ExactDataEntryTypeEnum> get serializer => _$exactDataEntryTypeEnumSerializer;
 
   const ExactDataEntryTypeEnum._(String name): super(name);
 
-  static BuiltSet<ExactDataEntryTypeEnum> get values => _$exactDataEntryTypeValues;
-  static ExactDataEntryTypeEnum valueOf(String name) => _$exactDataEntryTypeValueOf(name);
+  static BuiltSet<ExactDataEntryTypeEnum> get values => _$exactDataEntryTypeEnumValues;
+  static ExactDataEntryTypeEnum valueOf(String name) => _$exactDataEntryTypeEnumValueOf(name);
 }
 

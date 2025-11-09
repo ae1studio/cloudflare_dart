@@ -147,11 +147,11 @@ class WorkersBindingKindAnalyticsEngineTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'analytics_engine')
   static const WorkersBindingKindAnalyticsEngineTypeEnum analyticsEngine = _$workersBindingKindAnalyticsEngineTypeEnum_analyticsEngine;
 
-  static Serializer<WorkersBindingKindAnalyticsEngineTypeEnum> get serializer => _$workersBindingKindAnalyticsEngineTypeSerializer;
+  static Serializer<WorkersBindingKindAnalyticsEngineTypeEnum> get serializer => _$workersBindingKindAnalyticsEngineTypeEnumSerializer;
 
   const WorkersBindingKindAnalyticsEngineTypeEnum._(String name): super(name);
 
-  static BuiltSet<WorkersBindingKindAnalyticsEngineTypeEnum> get values => _$workersBindingKindAnalyticsEngineTypeValues;
-  static WorkersBindingKindAnalyticsEngineTypeEnum valueOf(String name) => _$workersBindingKindAnalyticsEngineTypeValueOf(name);
+  static BuiltSet<WorkersBindingKindAnalyticsEngineTypeEnum> get values => _$workersBindingKindAnalyticsEngineTypeEnumValues;
+  static WorkersBindingKindAnalyticsEngineTypeEnum valueOf(String name) => _$workersBindingKindAnalyticsEngineTypeEnumValueOf(name);
 }
 

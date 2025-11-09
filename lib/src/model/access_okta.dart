@@ -206,11 +206,11 @@ class AccessOktaTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'yandex')
   static const AccessOktaTypeEnum yandex = _$accessOktaTypeEnum_yandex;
 
-  static Serializer<AccessOktaTypeEnum> get serializer => _$accessOktaTypeSerializer;
+  static Serializer<AccessOktaTypeEnum> get serializer => _$accessOktaTypeEnumSerializer;
 
   const AccessOktaTypeEnum._(String name): super(name);
 
-  static BuiltSet<AccessOktaTypeEnum> get values => _$accessOktaTypeValues;
-  static AccessOktaTypeEnum valueOf(String name) => _$accessOktaTypeValueOf(name);
+  static BuiltSet<AccessOktaTypeEnum> get values => _$accessOktaTypeEnumValues;
+  static AccessOktaTypeEnum valueOf(String name) => _$accessOktaTypeEnumValueOf(name);
 }
 

@@ -230,11 +230,11 @@ class TeamsDevicesClientCertificateV2InputRequestOperatingSystemEnum extends Enu
   @BuiltValueEnumConst(wireName: r'linux')
   static const TeamsDevicesClientCertificateV2InputRequestOperatingSystemEnum linux = _$teamsDevicesClientCertificateV2InputRequestOperatingSystemEnum_linux;
 
-  static Serializer<TeamsDevicesClientCertificateV2InputRequestOperatingSystemEnum> get serializer => _$teamsDevicesClientCertificateV2InputRequestOperatingSystemSerializer;
+  static Serializer<TeamsDevicesClientCertificateV2InputRequestOperatingSystemEnum> get serializer => _$teamsDevicesClientCertificateV2InputRequestOperatingSystemEnumSerializer;
 
   const TeamsDevicesClientCertificateV2InputRequestOperatingSystemEnum._(String name): super(name);
 
-  static BuiltSet<TeamsDevicesClientCertificateV2InputRequestOperatingSystemEnum> get values => _$teamsDevicesClientCertificateV2InputRequestOperatingSystemValues;
-  static TeamsDevicesClientCertificateV2InputRequestOperatingSystemEnum valueOf(String name) => _$teamsDevicesClientCertificateV2InputRequestOperatingSystemValueOf(name);
+  static BuiltSet<TeamsDevicesClientCertificateV2InputRequestOperatingSystemEnum> get values => _$teamsDevicesClientCertificateV2InputRequestOperatingSystemEnumValues;
+  static TeamsDevicesClientCertificateV2InputRequestOperatingSystemEnum valueOf(String name) => _$teamsDevicesClientCertificateV2InputRequestOperatingSystemEnumValueOf(name);
 }
 

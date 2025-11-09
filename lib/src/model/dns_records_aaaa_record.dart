@@ -229,11 +229,11 @@ class DnsRecordsAAAARecordTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'AAAA')
   static const DnsRecordsAAAARecordTypeEnum AAAA = _$dnsRecordsAAAARecordTypeEnum_AAAA;
 
-  static Serializer<DnsRecordsAAAARecordTypeEnum> get serializer => _$dnsRecordsAAAARecordTypeSerializer;
+  static Serializer<DnsRecordsAAAARecordTypeEnum> get serializer => _$dnsRecordsAAAARecordTypeEnumSerializer;
 
   const DnsRecordsAAAARecordTypeEnum._(String name): super(name);
 
-  static BuiltSet<DnsRecordsAAAARecordTypeEnum> get values => _$dnsRecordsAAAARecordTypeValues;
-  static DnsRecordsAAAARecordTypeEnum valueOf(String name) => _$dnsRecordsAAAARecordTypeValueOf(name);
+  static BuiltSet<DnsRecordsAAAARecordTypeEnum> get values => _$dnsRecordsAAAARecordTypeEnumValues;
+  static DnsRecordsAAAARecordTypeEnum valueOf(String name) => _$dnsRecordsAAAARecordTypeEnumValueOf(name);
 }
 

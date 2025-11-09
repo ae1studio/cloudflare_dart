@@ -3,13 +3,11 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:cloudflare_dart/src/model/access_updated_at.dart';
 import 'package:built_collection/built_collection.dart';
 import 'package:cloudflare_dart/src/model/access_app_policy_response.dart';
+import 'package:cloudflare_dart/src/model/access_type.dart';
 import 'package:cloudflare_dart/src/model/access_app_resp_embedded_policies.dart';
-import 'package:cloudflare_dart/src/model/access_created_at.dart';
 import 'package:cloudflare_dart/src/model/access_warp_props.dart';
-import 'package:cloudflare_dart/src/model/access_warp_props_all_of_type.dart';
 import 'package:cloudflare_dart/src/model/access_basic_app_response_props.dart';
 import 'package:built_value/json_object.dart';
 import 'package:built_value/built_value.dart';
@@ -100,7 +98,7 @@ class _$DeviceEnrollmentPermissionsApplication1Serializer implements PrimitiveSe
     yield r'type';
     yield serializers.serialize(
       object.type,
-      specifiedType: const FullType(AccessWarpPropsAllOfType),
+      specifiedType: const FullType(AccessType),
     );
     if (object.customNonIdentityDenyUrl != null) {
       yield r'custom_non_identity_deny_url';
@@ -120,7 +118,7 @@ class _$DeviceEnrollmentPermissionsApplication1Serializer implements PrimitiveSe
       yield r'created_at';
       yield serializers.serialize(
         object.createdAt,
-        specifiedType: const FullType(AccessCreatedAt),
+        specifiedType: const FullType(JsonObject),
       );
     }
     if (object.autoRedirectToIdentity != null) {
@@ -155,7 +153,7 @@ class _$DeviceEnrollmentPermissionsApplication1Serializer implements PrimitiveSe
       yield r'updated_at';
       yield serializers.serialize(
         object.updatedAt,
-        specifiedType: const FullType(AccessUpdatedAt),
+        specifiedType: const FullType(JsonObject),
       );
     }
   }
@@ -219,9 +217,9 @@ class _$DeviceEnrollmentPermissionsApplication1Serializer implements PrimitiveSe
         case r'type':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(AccessWarpPropsAllOfType),
-          ) as AccessWarpPropsAllOfType;
-          result.type.replace(valueDes);
+            specifiedType: const FullType(AccessType),
+          ) as AccessType;
+          result.type = valueDes;
           break;
         case r'custom_non_identity_deny_url':
           final valueDes = serializers.deserialize(
@@ -240,8 +238,8 @@ class _$DeviceEnrollmentPermissionsApplication1Serializer implements PrimitiveSe
         case r'created_at':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(AccessCreatedAt),
-          ) as AccessCreatedAt;
+            specifiedType: const FullType(JsonObject),
+          ) as JsonObject;
           result.createdAt.replace(valueDes);
           break;
         case r'auto_redirect_to_identity':
@@ -277,8 +275,8 @@ class _$DeviceEnrollmentPermissionsApplication1Serializer implements PrimitiveSe
         case r'updated_at':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(AccessUpdatedAt),
-          ) as AccessUpdatedAt;
+            specifiedType: const FullType(JsonObject),
+          ) as JsonObject;
           result.updatedAt.replace(valueDes);
           break;
         default:

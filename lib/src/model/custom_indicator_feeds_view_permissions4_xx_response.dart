@@ -150,11 +150,11 @@ class _$CustomIndicatorFeedsViewPermissions4XXResponseSerializer implements Prim
 class CustomIndicatorFeedsViewPermissions4XXResponseResultEnum extends EnumClass {
 
 
-  static Serializer<CustomIndicatorFeedsViewPermissions4XXResponseResultEnum> get serializer => _$customIndicatorFeedsViewPermissions4XXResponseResultSerializer;
+  static Serializer<CustomIndicatorFeedsViewPermissions4XXResponseResultEnum> get serializer => _$customIndicatorFeedsViewPermissions4XXResponseResultEnumSerializer;
 
   const CustomIndicatorFeedsViewPermissions4XXResponseResultEnum._(String name): super(name);
 
-  static BuiltSet<CustomIndicatorFeedsViewPermissions4XXResponseResultEnum> get values => _$customIndicatorFeedsViewPermissions4XXResponseResultValues;
-  static CustomIndicatorFeedsViewPermissions4XXResponseResultEnum valueOf(String name) => _$customIndicatorFeedsViewPermissions4XXResponseResultValueOf(name);
+  static BuiltSet<CustomIndicatorFeedsViewPermissions4XXResponseResultEnum> get values => _$customIndicatorFeedsViewPermissions4XXResponseResultEnumValues;
+  static CustomIndicatorFeedsViewPermissions4XXResponseResultEnum valueOf(String name) => _$customIndicatorFeedsViewPermissions4XXResponseResultEnumValueOf(name);
 }
 

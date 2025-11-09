@@ -142,12 +142,12 @@ class TeamsDevicesInputOperatingSystemEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'linux')
   static const TeamsDevicesInputOperatingSystemEnum linux = _$teamsDevicesInputOperatingSystemEnum_linux;
 
-  static Serializer<TeamsDevicesInputOperatingSystemEnum> get serializer => _$teamsDevicesInputOperatingSystemSerializer;
+  static Serializer<TeamsDevicesInputOperatingSystemEnum> get serializer => _$teamsDevicesInputOperatingSystemEnumSerializer;
 
   const TeamsDevicesInputOperatingSystemEnum._(String name): super(name);
 
-  static BuiltSet<TeamsDevicesInputOperatingSystemEnum> get values => _$teamsDevicesInputOperatingSystemValues;
-  static TeamsDevicesInputOperatingSystemEnum valueOf(String name) => _$teamsDevicesInputOperatingSystemValueOf(name);
+  static BuiltSet<TeamsDevicesInputOperatingSystemEnum> get values => _$teamsDevicesInputOperatingSystemEnumValues;
+  static TeamsDevicesInputOperatingSystemEnum valueOf(String name) => _$teamsDevicesInputOperatingSystemEnumValueOf(name);
 }
 
 class TeamsDevicesInputOperator_Enum extends EnumClass {
@@ -168,12 +168,12 @@ class TeamsDevicesInputOperator_Enum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'==')
   static const TeamsDevicesInputOperator_Enum equalEqual = _$teamsDevicesInputOperatorEnum_equalEqual;
 
-  static Serializer<TeamsDevicesInputOperator_Enum> get serializer => _$teamsDevicesInputOperatorSerializer;
+  static Serializer<TeamsDevicesInputOperator_Enum> get serializer => _$teamsDevicesInputOperatorEnumSerializer;
 
   const TeamsDevicesInputOperator_Enum._(String name): super(name);
 
-  static BuiltSet<TeamsDevicesInputOperator_Enum> get values => _$teamsDevicesInputOperatorValues;
-  static TeamsDevicesInputOperator_Enum valueOf(String name) => _$teamsDevicesInputOperatorValueOf(name);
+  static BuiltSet<TeamsDevicesInputOperator_Enum> get values => _$teamsDevicesInputOperatorEnumValues;
+  static TeamsDevicesInputOperator_Enum valueOf(String name) => _$teamsDevicesInputOperatorEnumValueOf(name);
 }
 
 class TeamsDevicesInputComplianceStatusEnum extends EnumClass {
@@ -197,12 +197,12 @@ class TeamsDevicesInputComplianceStatusEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'error')
   static const TeamsDevicesInputComplianceStatusEnum error = _$teamsDevicesInputComplianceStatusEnum_error;
 
-  static Serializer<TeamsDevicesInputComplianceStatusEnum> get serializer => _$teamsDevicesInputComplianceStatusSerializer;
+  static Serializer<TeamsDevicesInputComplianceStatusEnum> get serializer => _$teamsDevicesInputComplianceStatusEnumSerializer;
 
   const TeamsDevicesInputComplianceStatusEnum._(String name): super(name);
 
-  static BuiltSet<TeamsDevicesInputComplianceStatusEnum> get values => _$teamsDevicesInputComplianceStatusValues;
-  static TeamsDevicesInputComplianceStatusEnum valueOf(String name) => _$teamsDevicesInputComplianceStatusValueOf(name);
+  static BuiltSet<TeamsDevicesInputComplianceStatusEnum> get values => _$teamsDevicesInputComplianceStatusEnumValues;
+  static TeamsDevicesInputComplianceStatusEnum valueOf(String name) => _$teamsDevicesInputComplianceStatusEnumValueOf(name);
 }
 
 class TeamsDevicesInputStateEnum extends EnumClass {
@@ -217,12 +217,12 @@ class TeamsDevicesInputStateEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'unknown')
   static const TeamsDevicesInputStateEnum unknown = _$teamsDevicesInputStateEnum_unknown;
 
-  static Serializer<TeamsDevicesInputStateEnum> get serializer => _$teamsDevicesInputStateSerializer;
+  static Serializer<TeamsDevicesInputStateEnum> get serializer => _$teamsDevicesInputStateEnumSerializer;
 
   const TeamsDevicesInputStateEnum._(String name): super(name);
 
-  static BuiltSet<TeamsDevicesInputStateEnum> get values => _$teamsDevicesInputStateValues;
-  static TeamsDevicesInputStateEnum valueOf(String name) => _$teamsDevicesInputStateValueOf(name);
+  static BuiltSet<TeamsDevicesInputStateEnum> get values => _$teamsDevicesInputStateEnumValues;
+  static TeamsDevicesInputStateEnum valueOf(String name) => _$teamsDevicesInputStateEnumValueOf(name);
 }
 
 class TeamsDevicesInputVersionOperatorEnum extends EnumClass {
@@ -243,12 +243,12 @@ class TeamsDevicesInputVersionOperatorEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'==')
   static const TeamsDevicesInputVersionOperatorEnum equalEqual = _$teamsDevicesInputVersionOperatorEnum_equalEqual;
 
-  static Serializer<TeamsDevicesInputVersionOperatorEnum> get serializer => _$teamsDevicesInputVersionOperatorSerializer;
+  static Serializer<TeamsDevicesInputVersionOperatorEnum> get serializer => _$teamsDevicesInputVersionOperatorEnumSerializer;
 
   const TeamsDevicesInputVersionOperatorEnum._(String name): super(name);
 
-  static BuiltSet<TeamsDevicesInputVersionOperatorEnum> get values => _$teamsDevicesInputVersionOperatorValues;
-  static TeamsDevicesInputVersionOperatorEnum valueOf(String name) => _$teamsDevicesInputVersionOperatorValueOf(name);
+  static BuiltSet<TeamsDevicesInputVersionOperatorEnum> get values => _$teamsDevicesInputVersionOperatorEnumValues;
+  static TeamsDevicesInputVersionOperatorEnum valueOf(String name) => _$teamsDevicesInputVersionOperatorEnumValueOf(name);
 }
 
 class TeamsDevicesInputCountOperatorEnum extends EnumClass {
@@ -269,12 +269,12 @@ class TeamsDevicesInputCountOperatorEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'==')
   static const TeamsDevicesInputCountOperatorEnum equalEqual = _$teamsDevicesInputCountOperatorEnum_equalEqual;
 
-  static Serializer<TeamsDevicesInputCountOperatorEnum> get serializer => _$teamsDevicesInputCountOperatorSerializer;
+  static Serializer<TeamsDevicesInputCountOperatorEnum> get serializer => _$teamsDevicesInputCountOperatorEnumSerializer;
 
   const TeamsDevicesInputCountOperatorEnum._(String name): super(name);
 
-  static BuiltSet<TeamsDevicesInputCountOperatorEnum> get values => _$teamsDevicesInputCountOperatorValues;
-  static TeamsDevicesInputCountOperatorEnum valueOf(String name) => _$teamsDevicesInputCountOperatorValueOf(name);
+  static BuiltSet<TeamsDevicesInputCountOperatorEnum> get values => _$teamsDevicesInputCountOperatorEnumValues;
+  static TeamsDevicesInputCountOperatorEnum valueOf(String name) => _$teamsDevicesInputCountOperatorEnumValueOf(name);
 }
 
 class TeamsDevicesInputRiskLevelEnum extends EnumClass {
@@ -292,12 +292,12 @@ class TeamsDevicesInputRiskLevelEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'critical')
   static const TeamsDevicesInputRiskLevelEnum critical = _$teamsDevicesInputRiskLevelEnum_critical;
 
-  static Serializer<TeamsDevicesInputRiskLevelEnum> get serializer => _$teamsDevicesInputRiskLevelSerializer;
+  static Serializer<TeamsDevicesInputRiskLevelEnum> get serializer => _$teamsDevicesInputRiskLevelEnumSerializer;
 
   const TeamsDevicesInputRiskLevelEnum._(String name): super(name);
 
-  static BuiltSet<TeamsDevicesInputRiskLevelEnum> get values => _$teamsDevicesInputRiskLevelValues;
-  static TeamsDevicesInputRiskLevelEnum valueOf(String name) => _$teamsDevicesInputRiskLevelValueOf(name);
+  static BuiltSet<TeamsDevicesInputRiskLevelEnum> get values => _$teamsDevicesInputRiskLevelEnumValues;
+  static TeamsDevicesInputRiskLevelEnum valueOf(String name) => _$teamsDevicesInputRiskLevelEnumValueOf(name);
 }
 
 class TeamsDevicesInputScoreOperatorEnum extends EnumClass {
@@ -318,12 +318,12 @@ class TeamsDevicesInputScoreOperatorEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'==')
   static const TeamsDevicesInputScoreOperatorEnum equalEqual = _$teamsDevicesInputScoreOperatorEnum_equalEqual;
 
-  static Serializer<TeamsDevicesInputScoreOperatorEnum> get serializer => _$teamsDevicesInputScoreOperatorSerializer;
+  static Serializer<TeamsDevicesInputScoreOperatorEnum> get serializer => _$teamsDevicesInputScoreOperatorEnumSerializer;
 
   const TeamsDevicesInputScoreOperatorEnum._(String name): super(name);
 
-  static BuiltSet<TeamsDevicesInputScoreOperatorEnum> get values => _$teamsDevicesInputScoreOperatorValues;
-  static TeamsDevicesInputScoreOperatorEnum valueOf(String name) => _$teamsDevicesInputScoreOperatorValueOf(name);
+  static BuiltSet<TeamsDevicesInputScoreOperatorEnum> get values => _$teamsDevicesInputScoreOperatorEnumValues;
+  static TeamsDevicesInputScoreOperatorEnum valueOf(String name) => _$teamsDevicesInputScoreOperatorEnumValueOf(name);
 }
 
 class TeamsDevicesInputNetworkStatusEnum extends EnumClass {
@@ -341,12 +341,12 @@ class TeamsDevicesInputNetworkStatusEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'connecting')
   static const TeamsDevicesInputNetworkStatusEnum connecting = _$teamsDevicesInputNetworkStatusEnum_connecting;
 
-  static Serializer<TeamsDevicesInputNetworkStatusEnum> get serializer => _$teamsDevicesInputNetworkStatusSerializer;
+  static Serializer<TeamsDevicesInputNetworkStatusEnum> get serializer => _$teamsDevicesInputNetworkStatusEnumSerializer;
 
   const TeamsDevicesInputNetworkStatusEnum._(String name): super(name);
 
-  static BuiltSet<TeamsDevicesInputNetworkStatusEnum> get values => _$teamsDevicesInputNetworkStatusValues;
-  static TeamsDevicesInputNetworkStatusEnum valueOf(String name) => _$teamsDevicesInputNetworkStatusValueOf(name);
+  static BuiltSet<TeamsDevicesInputNetworkStatusEnum> get values => _$teamsDevicesInputNetworkStatusEnumValues;
+  static TeamsDevicesInputNetworkStatusEnum valueOf(String name) => _$teamsDevicesInputNetworkStatusEnumValueOf(name);
 }
 
 class TeamsDevicesInputOperationalStateEnum extends EnumClass {
@@ -373,11 +373,11 @@ class TeamsDevicesInputOperationalStateEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'db_corruption')
   static const TeamsDevicesInputOperationalStateEnum dbCorruption = _$teamsDevicesInputOperationalStateEnum_dbCorruption;
 
-  static Serializer<TeamsDevicesInputOperationalStateEnum> get serializer => _$teamsDevicesInputOperationalStateSerializer;
+  static Serializer<TeamsDevicesInputOperationalStateEnum> get serializer => _$teamsDevicesInputOperationalStateEnumSerializer;
 
   const TeamsDevicesInputOperationalStateEnum._(String name): super(name);
 
-  static BuiltSet<TeamsDevicesInputOperationalStateEnum> get values => _$teamsDevicesInputOperationalStateValues;
-  static TeamsDevicesInputOperationalStateEnum valueOf(String name) => _$teamsDevicesInputOperationalStateValueOf(name);
+  static BuiltSet<TeamsDevicesInputOperationalStateEnum> get values => _$teamsDevicesInputOperationalStateEnumValues;
+  static TeamsDevicesInputOperationalStateEnum valueOf(String name) => _$teamsDevicesInputOperationalStateEnumValueOf(name);
 }
 

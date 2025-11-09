@@ -149,11 +149,11 @@ class _$MagicStaticRoutesDeleteManyRoutes4XXResponseSerializer implements Primit
 class MagicStaticRoutesDeleteManyRoutes4XXResponseResultEnum extends EnumClass {
 
 
-  static Serializer<MagicStaticRoutesDeleteManyRoutes4XXResponseResultEnum> get serializer => _$magicStaticRoutesDeleteManyRoutes4XXResponseResultSerializer;
+  static Serializer<MagicStaticRoutesDeleteManyRoutes4XXResponseResultEnum> get serializer => _$magicStaticRoutesDeleteManyRoutes4XXResponseResultEnumSerializer;
 
   const MagicStaticRoutesDeleteManyRoutes4XXResponseResultEnum._(String name): super(name);
 
-  static BuiltSet<MagicStaticRoutesDeleteManyRoutes4XXResponseResultEnum> get values => _$magicStaticRoutesDeleteManyRoutes4XXResponseResultValues;
-  static MagicStaticRoutesDeleteManyRoutes4XXResponseResultEnum valueOf(String name) => _$magicStaticRoutesDeleteManyRoutes4XXResponseResultValueOf(name);
+  static BuiltSet<MagicStaticRoutesDeleteManyRoutes4XXResponseResultEnum> get values => _$magicStaticRoutesDeleteManyRoutes4XXResponseResultEnumValues;
+  static MagicStaticRoutesDeleteManyRoutes4XXResponseResultEnum valueOf(String name) => _$magicStaticRoutesDeleteManyRoutes4XXResponseResultEnumValueOf(name);
 }
 

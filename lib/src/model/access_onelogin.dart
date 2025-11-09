@@ -206,11 +206,11 @@ class AccessOneloginTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'yandex')
   static const AccessOneloginTypeEnum yandex = _$accessOneloginTypeEnum_yandex;
 
-  static Serializer<AccessOneloginTypeEnum> get serializer => _$accessOneloginTypeSerializer;
+  static Serializer<AccessOneloginTypeEnum> get serializer => _$accessOneloginTypeEnumSerializer;
 
   const AccessOneloginTypeEnum._(String name): super(name);
 
-  static BuiltSet<AccessOneloginTypeEnum> get values => _$accessOneloginTypeValues;
-  static AccessOneloginTypeEnum valueOf(String name) => _$accessOneloginTypeValueOf(name);
+  static BuiltSet<AccessOneloginTypeEnum> get values => _$accessOneloginTypeEnumValues;
+  static AccessOneloginTypeEnum valueOf(String name) => _$accessOneloginTypeEnumValueOf(name);
 }
 

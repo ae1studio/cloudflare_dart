@@ -194,11 +194,11 @@ class _$$DnsRecordsApiResponseCommonFailureSerializer implements PrimitiveSerial
 class DnsRecordsApiResponseCommonFailureResultEnum extends EnumClass {
 
 
-  static Serializer<DnsRecordsApiResponseCommonFailureResultEnum> get serializer => _$dnsRecordsApiResponseCommonFailureResultSerializer;
+  static Serializer<DnsRecordsApiResponseCommonFailureResultEnum> get serializer => _$dnsRecordsApiResponseCommonFailureResultEnumSerializer;
 
   const DnsRecordsApiResponseCommonFailureResultEnum._(String name): super(name);
 
-  static BuiltSet<DnsRecordsApiResponseCommonFailureResultEnum> get values => _$dnsRecordsApiResponseCommonFailureResultValues;
-  static DnsRecordsApiResponseCommonFailureResultEnum valueOf(String name) => _$dnsRecordsApiResponseCommonFailureResultValueOf(name);
+  static BuiltSet<DnsRecordsApiResponseCommonFailureResultEnum> get values => _$dnsRecordsApiResponseCommonFailureResultEnumValues;
+  static DnsRecordsApiResponseCommonFailureResultEnum valueOf(String name) => _$dnsRecordsApiResponseCommonFailureResultEnumValueOf(name);
 }
 

@@ -311,12 +311,12 @@ class RealtimekitMeetingPreferredRegionEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'eu-central-1')
   static const RealtimekitMeetingPreferredRegionEnum euCentral1 = _$realtimekitMeetingPreferredRegionEnum_euCentral1;
 
-  static Serializer<RealtimekitMeetingPreferredRegionEnum> get serializer => _$realtimekitMeetingPreferredRegionSerializer;
+  static Serializer<RealtimekitMeetingPreferredRegionEnum> get serializer => _$realtimekitMeetingPreferredRegionEnumSerializer;
 
   const RealtimekitMeetingPreferredRegionEnum._(String name): super(name);
 
-  static BuiltSet<RealtimekitMeetingPreferredRegionEnum> get values => _$realtimekitMeetingPreferredRegionValues;
-  static RealtimekitMeetingPreferredRegionEnum valueOf(String name) => _$realtimekitMeetingPreferredRegionValueOf(name);
+  static BuiltSet<RealtimekitMeetingPreferredRegionEnum> get values => _$realtimekitMeetingPreferredRegionEnumValues;
+  static RealtimekitMeetingPreferredRegionEnum valueOf(String name) => _$realtimekitMeetingPreferredRegionEnumValueOf(name);
 }
 
 class RealtimekitMeetingStatusEnum extends EnumClass {
@@ -328,11 +328,11 @@ class RealtimekitMeetingStatusEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'INACTIVE')
   static const RealtimekitMeetingStatusEnum INACTIVE = _$realtimekitMeetingStatusEnum_INACTIVE;
 
-  static Serializer<RealtimekitMeetingStatusEnum> get serializer => _$realtimekitMeetingStatusSerializer;
+  static Serializer<RealtimekitMeetingStatusEnum> get serializer => _$realtimekitMeetingStatusEnumSerializer;
 
   const RealtimekitMeetingStatusEnum._(String name): super(name);
 
-  static BuiltSet<RealtimekitMeetingStatusEnum> get values => _$realtimekitMeetingStatusValues;
-  static RealtimekitMeetingStatusEnum valueOf(String name) => _$realtimekitMeetingStatusValueOf(name);
+  static BuiltSet<RealtimekitMeetingStatusEnum> get values => _$realtimekitMeetingStatusEnumValues;
+  static RealtimekitMeetingStatusEnum valueOf(String name) => _$realtimekitMeetingStatusEnumValueOf(name);
 }
 

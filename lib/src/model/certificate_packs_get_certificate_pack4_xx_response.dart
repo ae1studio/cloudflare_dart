@@ -149,11 +149,11 @@ class _$CertificatePacksGetCertificatePack4XXResponseSerializer implements Primi
 class CertificatePacksGetCertificatePack4XXResponseResultEnum extends EnumClass {
 
 
-  static Serializer<CertificatePacksGetCertificatePack4XXResponseResultEnum> get serializer => _$certificatePacksGetCertificatePack4XXResponseResultSerializer;
+  static Serializer<CertificatePacksGetCertificatePack4XXResponseResultEnum> get serializer => _$certificatePacksGetCertificatePack4XXResponseResultEnumSerializer;
 
   const CertificatePacksGetCertificatePack4XXResponseResultEnum._(String name): super(name);
 
-  static BuiltSet<CertificatePacksGetCertificatePack4XXResponseResultEnum> get values => _$certificatePacksGetCertificatePack4XXResponseResultValues;
-  static CertificatePacksGetCertificatePack4XXResponseResultEnum valueOf(String name) => _$certificatePacksGetCertificatePack4XXResponseResultValueOf(name);
+  static BuiltSet<CertificatePacksGetCertificatePack4XXResponseResultEnum> get values => _$certificatePacksGetCertificatePack4XXResponseResultEnumValues;
+  static CertificatePacksGetCertificatePack4XXResponseResultEnum valueOf(String name) => _$certificatePacksGetCertificatePack4XXResponseResultEnumValueOf(name);
 }
 

@@ -21,7 +21,7 @@ part 'rulesets_log_rule.g.dart';
 /// * [actionParameters] - The parameters configuring the rule's action.
 /// * [categories] - The categories of the rule.
 /// * [description] 
-/// * [enabled] 
+/// * [enabled] - Whether the rule should be executed.
 /// * [exposedCredentialCheck] 
 /// * [expression] - The expression defining which traffic will match the rule.
 /// * [id] - The unique ID of the rule.
@@ -39,6 +39,7 @@ abstract class RulesetsLogRule implements RulesetsRule, Built<RulesetsLogRule, R
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(RulesetsLogRuleBuilder b) => b
       ..description = ''
+      ..enabled = true
       ..actionParameters = {};
 
   @BuiltValueSerializer(custom: true)
@@ -292,11 +293,11 @@ class RulesetsLogRuleActionEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'log')
   static const RulesetsLogRuleActionEnum log = _$rulesetsLogRuleActionEnum_log;
 
-  static Serializer<RulesetsLogRuleActionEnum> get serializer => _$rulesetsLogRuleActionSerializer;
+  static Serializer<RulesetsLogRuleActionEnum> get serializer => _$rulesetsLogRuleActionEnumSerializer;
 
   const RulesetsLogRuleActionEnum._(String name): super(name);
 
-  static BuiltSet<RulesetsLogRuleActionEnum> get values => _$rulesetsLogRuleActionValues;
-  static RulesetsLogRuleActionEnum valueOf(String name) => _$rulesetsLogRuleActionValueOf(name);
+  static BuiltSet<RulesetsLogRuleActionEnum> get values => _$rulesetsLogRuleActionEnumValues;
+  static RulesetsLogRuleActionEnum valueOf(String name) => _$rulesetsLogRuleActionEnumValueOf(name);
 }
 

@@ -205,12 +205,12 @@ class TeamsDevicesOsVersionInputRequestOperatingSystemEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'windows')
   static const TeamsDevicesOsVersionInputRequestOperatingSystemEnum windows = _$teamsDevicesOsVersionInputRequestOperatingSystemEnum_windows;
 
-  static Serializer<TeamsDevicesOsVersionInputRequestOperatingSystemEnum> get serializer => _$teamsDevicesOsVersionInputRequestOperatingSystemSerializer;
+  static Serializer<TeamsDevicesOsVersionInputRequestOperatingSystemEnum> get serializer => _$teamsDevicesOsVersionInputRequestOperatingSystemEnumSerializer;
 
   const TeamsDevicesOsVersionInputRequestOperatingSystemEnum._(String name): super(name);
 
-  static BuiltSet<TeamsDevicesOsVersionInputRequestOperatingSystemEnum> get values => _$teamsDevicesOsVersionInputRequestOperatingSystemValues;
-  static TeamsDevicesOsVersionInputRequestOperatingSystemEnum valueOf(String name) => _$teamsDevicesOsVersionInputRequestOperatingSystemValueOf(name);
+  static BuiltSet<TeamsDevicesOsVersionInputRequestOperatingSystemEnum> get values => _$teamsDevicesOsVersionInputRequestOperatingSystemEnumValues;
+  static TeamsDevicesOsVersionInputRequestOperatingSystemEnum valueOf(String name) => _$teamsDevicesOsVersionInputRequestOperatingSystemEnumValueOf(name);
 }
 
 class TeamsDevicesOsVersionInputRequestOperator_Enum extends EnumClass {
@@ -231,11 +231,11 @@ class TeamsDevicesOsVersionInputRequestOperator_Enum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'==')
   static const TeamsDevicesOsVersionInputRequestOperator_Enum equalEqual = _$teamsDevicesOsVersionInputRequestOperatorEnum_equalEqual;
 
-  static Serializer<TeamsDevicesOsVersionInputRequestOperator_Enum> get serializer => _$teamsDevicesOsVersionInputRequestOperatorSerializer;
+  static Serializer<TeamsDevicesOsVersionInputRequestOperator_Enum> get serializer => _$teamsDevicesOsVersionInputRequestOperatorEnumSerializer;
 
   const TeamsDevicesOsVersionInputRequestOperator_Enum._(String name): super(name);
 
-  static BuiltSet<TeamsDevicesOsVersionInputRequestOperator_Enum> get values => _$teamsDevicesOsVersionInputRequestOperatorValues;
-  static TeamsDevicesOsVersionInputRequestOperator_Enum valueOf(String name) => _$teamsDevicesOsVersionInputRequestOperatorValueOf(name);
+  static BuiltSet<TeamsDevicesOsVersionInputRequestOperator_Enum> get values => _$teamsDevicesOsVersionInputRequestOperatorEnumValues;
+  static TeamsDevicesOsVersionInputRequestOperator_Enum valueOf(String name) => _$teamsDevicesOsVersionInputRequestOperatorEnumValueOf(name);
 }
 

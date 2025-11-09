@@ -184,11 +184,11 @@ class ZarazZarazConfigBaseTriggersValueSystemEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'pageload')
   static const ZarazZarazConfigBaseTriggersValueSystemEnum pageload = _$zarazZarazConfigBaseTriggersValueSystemEnum_pageload;
 
-  static Serializer<ZarazZarazConfigBaseTriggersValueSystemEnum> get serializer => _$zarazZarazConfigBaseTriggersValueSystemSerializer;
+  static Serializer<ZarazZarazConfigBaseTriggersValueSystemEnum> get serializer => _$zarazZarazConfigBaseTriggersValueSystemEnumSerializer;
 
   const ZarazZarazConfigBaseTriggersValueSystemEnum._(String name): super(name);
 
-  static BuiltSet<ZarazZarazConfigBaseTriggersValueSystemEnum> get values => _$zarazZarazConfigBaseTriggersValueSystemValues;
-  static ZarazZarazConfigBaseTriggersValueSystemEnum valueOf(String name) => _$zarazZarazConfigBaseTriggersValueSystemValueOf(name);
+  static BuiltSet<ZarazZarazConfigBaseTriggersValueSystemEnum> get values => _$zarazZarazConfigBaseTriggersValueSystemEnumValues;
+  static ZarazZarazConfigBaseTriggersValueSystemEnum valueOf(String name) => _$zarazZarazConfigBaseTriggersValueSystemEnumValueOf(name);
 }
 

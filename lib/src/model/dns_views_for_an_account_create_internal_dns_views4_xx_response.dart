@@ -149,11 +149,11 @@ class _$DnsViewsForAnAccountCreateInternalDnsViews4XXResponseSerializer implemen
 class DnsViewsForAnAccountCreateInternalDnsViews4XXResponseResultEnum extends EnumClass {
 
 
-  static Serializer<DnsViewsForAnAccountCreateInternalDnsViews4XXResponseResultEnum> get serializer => _$dnsViewsForAnAccountCreateInternalDnsViews4XXResponseResultSerializer;
+  static Serializer<DnsViewsForAnAccountCreateInternalDnsViews4XXResponseResultEnum> get serializer => _$dnsViewsForAnAccountCreateInternalDnsViews4XXResponseResultEnumSerializer;
 
   const DnsViewsForAnAccountCreateInternalDnsViews4XXResponseResultEnum._(String name): super(name);
 
-  static BuiltSet<DnsViewsForAnAccountCreateInternalDnsViews4XXResponseResultEnum> get values => _$dnsViewsForAnAccountCreateInternalDnsViews4XXResponseResultValues;
-  static DnsViewsForAnAccountCreateInternalDnsViews4XXResponseResultEnum valueOf(String name) => _$dnsViewsForAnAccountCreateInternalDnsViews4XXResponseResultValueOf(name);
+  static BuiltSet<DnsViewsForAnAccountCreateInternalDnsViews4XXResponseResultEnum> get values => _$dnsViewsForAnAccountCreateInternalDnsViews4XXResponseResultEnumValues;
+  static DnsViewsForAnAccountCreateInternalDnsViews4XXResponseResultEnum valueOf(String name) => _$dnsViewsForAnAccountCreateInternalDnsViews4XXResponseResultEnumValueOf(name);
 }
 

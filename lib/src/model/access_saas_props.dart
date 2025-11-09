@@ -7,7 +7,6 @@ import 'package:cloudflare_dart/src/model/access_scim_config.dart';
 import 'package:built_collection/built_collection.dart';
 import 'package:cloudflare_dart/src/model/access_type.dart';
 import 'package:cloudflare_dart/src/model/access_saas_props_saas_app.dart';
-import 'package:built_value/json_object.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
@@ -64,6 +63,7 @@ abstract class AccessSaasProps  {
 
   @BuiltValueField(wireName: r'type')
   AccessType? get type;
+  // enum typeEnum {  self_hosted,  saas,  ssh,  vnc,  app_launcher,  warp,  biso,  bookmark,  dash_sso,  infrastructure,  rdp,  mcp,  mcp_portal,  };
 
   @BuiltValueSerializer(custom: true)
   static Serializer<AccessSaasProps> get serializer => _$AccessSaasPropsSerializer();

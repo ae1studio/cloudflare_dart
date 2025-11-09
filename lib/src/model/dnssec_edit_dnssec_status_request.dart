@@ -175,11 +175,11 @@ class DnssecEditDnssecStatusRequestStatusEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'disabled')
   static const DnssecEditDnssecStatusRequestStatusEnum disabled = _$dnssecEditDnssecStatusRequestStatusEnum_disabled;
 
-  static Serializer<DnssecEditDnssecStatusRequestStatusEnum> get serializer => _$dnssecEditDnssecStatusRequestStatusSerializer;
+  static Serializer<DnssecEditDnssecStatusRequestStatusEnum> get serializer => _$dnssecEditDnssecStatusRequestStatusEnumSerializer;
 
   const DnssecEditDnssecStatusRequestStatusEnum._(String name): super(name);
 
-  static BuiltSet<DnssecEditDnssecStatusRequestStatusEnum> get values => _$dnssecEditDnssecStatusRequestStatusValues;
-  static DnssecEditDnssecStatusRequestStatusEnum valueOf(String name) => _$dnssecEditDnssecStatusRequestStatusValueOf(name);
+  static BuiltSet<DnssecEditDnssecStatusRequestStatusEnum> get values => _$dnssecEditDnssecStatusRequestStatusEnumValues;
+  static DnssecEditDnssecStatusRequestStatusEnum valueOf(String name) => _$dnssecEditDnssecStatusRequestStatusEnumValueOf(name);
 }
 

@@ -148,11 +148,11 @@ class _$CloudflareImagesVariantsDeleteAVariant4XXResponseSerializer implements P
 class CloudflareImagesVariantsDeleteAVariant4XXResponseResultEnum extends EnumClass {
 
 
-  static Serializer<CloudflareImagesVariantsDeleteAVariant4XXResponseResultEnum> get serializer => _$cloudflareImagesVariantsDeleteAVariant4XXResponseResultSerializer;
+  static Serializer<CloudflareImagesVariantsDeleteAVariant4XXResponseResultEnum> get serializer => _$cloudflareImagesVariantsDeleteAVariant4XXResponseResultEnumSerializer;
 
   const CloudflareImagesVariantsDeleteAVariant4XXResponseResultEnum._(String name): super(name);
 
-  static BuiltSet<CloudflareImagesVariantsDeleteAVariant4XXResponseResultEnum> get values => _$cloudflareImagesVariantsDeleteAVariant4XXResponseResultValues;
-  static CloudflareImagesVariantsDeleteAVariant4XXResponseResultEnum valueOf(String name) => _$cloudflareImagesVariantsDeleteAVariant4XXResponseResultValueOf(name);
+  static BuiltSet<CloudflareImagesVariantsDeleteAVariant4XXResponseResultEnum> get values => _$cloudflareImagesVariantsDeleteAVariant4XXResponseResultEnumValues;
+  static CloudflareImagesVariantsDeleteAVariant4XXResponseResultEnum valueOf(String name) => _$cloudflareImagesVariantsDeleteAVariant4XXResponseResultEnumValueOf(name);
 }
 

@@ -146,12 +146,12 @@ class R2GetCustomDomainResponseStatusOwnershipEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'unknown')
   static const R2GetCustomDomainResponseStatusOwnershipEnum unknown = _$r2GetCustomDomainResponseStatusOwnershipEnum_unknown;
 
-  static Serializer<R2GetCustomDomainResponseStatusOwnershipEnum> get serializer => _$r2GetCustomDomainResponseStatusOwnershipSerializer;
+  static Serializer<R2GetCustomDomainResponseStatusOwnershipEnum> get serializer => _$r2GetCustomDomainResponseStatusOwnershipEnumSerializer;
 
   const R2GetCustomDomainResponseStatusOwnershipEnum._(String name): super(name);
 
-  static BuiltSet<R2GetCustomDomainResponseStatusOwnershipEnum> get values => _$r2GetCustomDomainResponseStatusOwnershipValues;
-  static R2GetCustomDomainResponseStatusOwnershipEnum valueOf(String name) => _$r2GetCustomDomainResponseStatusOwnershipValueOf(name);
+  static BuiltSet<R2GetCustomDomainResponseStatusOwnershipEnum> get values => _$r2GetCustomDomainResponseStatusOwnershipEnumValues;
+  static R2GetCustomDomainResponseStatusOwnershipEnum valueOf(String name) => _$r2GetCustomDomainResponseStatusOwnershipEnumValueOf(name);
 }
 
 class R2GetCustomDomainResponseStatusSslEnum extends EnumClass {
@@ -175,11 +175,11 @@ class R2GetCustomDomainResponseStatusSslEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'unknown')
   static const R2GetCustomDomainResponseStatusSslEnum unknown = _$r2GetCustomDomainResponseStatusSslEnum_unknown;
 
-  static Serializer<R2GetCustomDomainResponseStatusSslEnum> get serializer => _$r2GetCustomDomainResponseStatusSslSerializer;
+  static Serializer<R2GetCustomDomainResponseStatusSslEnum> get serializer => _$r2GetCustomDomainResponseStatusSslEnumSerializer;
 
   const R2GetCustomDomainResponseStatusSslEnum._(String name): super(name);
 
-  static BuiltSet<R2GetCustomDomainResponseStatusSslEnum> get values => _$r2GetCustomDomainResponseStatusSslValues;
-  static R2GetCustomDomainResponseStatusSslEnum valueOf(String name) => _$r2GetCustomDomainResponseStatusSslValueOf(name);
+  static BuiltSet<R2GetCustomDomainResponseStatusSslEnum> get values => _$r2GetCustomDomainResponseStatusSslEnumValues;
+  static R2GetCustomDomainResponseStatusSslEnum valueOf(String name) => _$r2GetCustomDomainResponseStatusSslEnumValueOf(name);
 }
 

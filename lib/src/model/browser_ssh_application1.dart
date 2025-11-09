@@ -3,17 +3,16 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:cloudflare_dart/src/model/access_updated_at.dart';
 import 'package:cloudflare_dart/src/model/access_scim_config.dart';
 import 'package:cloudflare_dart/src/model/access_destinations_inner.dart';
 import 'package:cloudflare_dart/src/model/access_ssh_props.dart';
 import 'package:built_collection/built_collection.dart';
 import 'package:cloudflare_dart/src/model/access_app_policy_response.dart';
+import 'package:cloudflare_dart/src/model/access_type.dart';
 import 'package:cloudflare_dart/src/model/access_app_resp_embedded_policies.dart';
 import 'package:cloudflare_dart/src/model/access_cors_headers.dart';
-import 'package:cloudflare_dart/src/model/access_created_at.dart';
-import 'package:cloudflare_dart/src/model/access_ssh_props_all_of_type.dart';
 import 'package:cloudflare_dart/src/model/access_basic_app_response_props.dart';
+import 'package:built_value/json_object.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
@@ -126,7 +125,7 @@ class _$BrowserSSHApplication1Serializer implements PrimitiveSerializer<BrowserS
     yield r'type';
     yield serializers.serialize(
       object.type,
-      specifiedType: const FullType(AccessSshPropsAllOfType),
+      specifiedType: const FullType(AccessType),
     );
     if (object.corsHeaders != null) {
       yield r'cors_headers';
@@ -139,7 +138,7 @@ class _$BrowserSSHApplication1Serializer implements PrimitiveSerializer<BrowserS
       yield r'created_at';
       yield serializers.serialize(
         object.createdAt,
-        specifiedType: const FullType(AccessCreatedAt),
+        specifiedType: const FullType(JsonObject),
       );
     }
     if (object.readServiceTokensFromHeader != null) {
@@ -174,7 +173,7 @@ class _$BrowserSSHApplication1Serializer implements PrimitiveSerializer<BrowserS
       yield r'updated_at';
       yield serializers.serialize(
         object.updatedAt,
-        specifiedType: const FullType(AccessUpdatedAt),
+        specifiedType: const FullType(JsonObject),
       );
     }
     if (object.customDenyUrl != null) {
@@ -369,9 +368,9 @@ class _$BrowserSSHApplication1Serializer implements PrimitiveSerializer<BrowserS
         case r'type':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(AccessSshPropsAllOfType),
-          ) as AccessSshPropsAllOfType;
-          result.type.replace(valueDes);
+            specifiedType: const FullType(AccessType),
+          ) as AccessType;
+          result.type = valueDes;
           break;
         case r'cors_headers':
           final valueDes = serializers.deserialize(
@@ -383,8 +382,8 @@ class _$BrowserSSHApplication1Serializer implements PrimitiveSerializer<BrowserS
         case r'created_at':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(AccessCreatedAt),
-          ) as AccessCreatedAt;
+            specifiedType: const FullType(JsonObject),
+          ) as JsonObject;
           result.createdAt.replace(valueDes);
           break;
         case r'read_service_tokens_from_header':
@@ -418,8 +417,8 @@ class _$BrowserSSHApplication1Serializer implements PrimitiveSerializer<BrowserS
         case r'updated_at':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(AccessUpdatedAt),
-          ) as AccessUpdatedAt;
+            specifiedType: const FullType(JsonObject),
+          ) as JsonObject;
           result.updatedAt.replace(valueDes);
           break;
         case r'custom_deny_url':

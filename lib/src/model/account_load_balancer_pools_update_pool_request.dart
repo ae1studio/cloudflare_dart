@@ -35,7 +35,7 @@ part 'account_load_balancer_pools_update_pool_request.g.dart';
 abstract class AccountLoadBalancerPoolsUpdatePoolRequest implements Built<AccountLoadBalancerPoolsUpdatePoolRequest, AccountLoadBalancerPoolsUpdatePoolRequestBuilder> {
   /// A list of regions from which to run health checks. Null means every Cloudflare data center.
   @BuiltValueField(wireName: r'check_regions')
-  BuiltList<LoadBalancerPoolsUpdatePoolRequestCheckRegionsEnum>? get checkRegions;
+  BuiltList<AccountLoadBalancerPoolsUpdatePoolRequestCheckRegionsEnum>? get checkRegions;
   // enum checkRegionsEnum {  WNAM,  ENAM,  WEU,  EEU,  NSAM,  SSAM,  OC,  ME,  NAF,  SAF,  SAS,  SEAS,  NEAS,  ALL_REGIONS,  };
 
   /// A human-readable description of the pool.
@@ -122,7 +122,7 @@ class _$AccountLoadBalancerPoolsUpdatePoolRequestSerializer implements Primitive
       yield r'check_regions';
       yield serializers.serialize(
         object.checkRegions,
-        specifiedType: const FullType.nullable(BuiltList, [FullType(LoadBalancerPoolsUpdatePoolRequestCheckRegionsEnum)]),
+        specifiedType: const FullType.nullable(BuiltList, [FullType(AccountLoadBalancerPoolsUpdatePoolRequestCheckRegionsEnum)]),
       );
     }
     if (object.description != null) {
@@ -245,8 +245,8 @@ class _$AccountLoadBalancerPoolsUpdatePoolRequestSerializer implements Primitive
         case r'check_regions':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType.nullable(BuiltList, [FullType(LoadBalancerPoolsUpdatePoolRequestCheckRegionsEnum)]),
-          ) as BuiltList<LoadBalancerPoolsUpdatePoolRequestCheckRegionsEnum>?;
+            specifiedType: const FullType.nullable(BuiltList, [FullType(AccountLoadBalancerPoolsUpdatePoolRequestCheckRegionsEnum)]),
+          ) as BuiltList<AccountLoadBalancerPoolsUpdatePoolRequestCheckRegionsEnum>?;
           if (valueDes == null) continue;
           result.checkRegions.replace(valueDes);
           break;
@@ -376,5 +376,58 @@ class _$AccountLoadBalancerPoolsUpdatePoolRequestSerializer implements Primitive
     );
     return result.build();
   }
+}
+
+class AccountLoadBalancerPoolsUpdatePoolRequestCheckRegionsEnum extends EnumClass {
+
+  /// WNAM: Western North America, ENAM: Eastern North America, WEU: Western Europe, EEU: Eastern Europe, NSAM: Northern South America, SSAM: Southern South America, OC: Oceania, ME: Middle East, NAF: North Africa, SAF: South Africa, SAS: Southern Asia, SEAS: South East Asia, NEAS: North East Asia, ALL_REGIONS: all regions (ENTERPRISE customers only).
+  @BuiltValueEnumConst(wireName: r'WNAM')
+  static const AccountLoadBalancerPoolsUpdatePoolRequestCheckRegionsEnum WNAM = _$accountLoadBalancerPoolsUpdatePoolRequestCheckRegionsEnum_WNAM;
+  /// WNAM: Western North America, ENAM: Eastern North America, WEU: Western Europe, EEU: Eastern Europe, NSAM: Northern South America, SSAM: Southern South America, OC: Oceania, ME: Middle East, NAF: North Africa, SAF: South Africa, SAS: Southern Asia, SEAS: South East Asia, NEAS: North East Asia, ALL_REGIONS: all regions (ENTERPRISE customers only).
+  @BuiltValueEnumConst(wireName: r'ENAM')
+  static const AccountLoadBalancerPoolsUpdatePoolRequestCheckRegionsEnum ENAM = _$accountLoadBalancerPoolsUpdatePoolRequestCheckRegionsEnum_ENAM;
+  /// WNAM: Western North America, ENAM: Eastern North America, WEU: Western Europe, EEU: Eastern Europe, NSAM: Northern South America, SSAM: Southern South America, OC: Oceania, ME: Middle East, NAF: North Africa, SAF: South Africa, SAS: Southern Asia, SEAS: South East Asia, NEAS: North East Asia, ALL_REGIONS: all regions (ENTERPRISE customers only).
+  @BuiltValueEnumConst(wireName: r'WEU')
+  static const AccountLoadBalancerPoolsUpdatePoolRequestCheckRegionsEnum WEU = _$accountLoadBalancerPoolsUpdatePoolRequestCheckRegionsEnum_WEU;
+  /// WNAM: Western North America, ENAM: Eastern North America, WEU: Western Europe, EEU: Eastern Europe, NSAM: Northern South America, SSAM: Southern South America, OC: Oceania, ME: Middle East, NAF: North Africa, SAF: South Africa, SAS: Southern Asia, SEAS: South East Asia, NEAS: North East Asia, ALL_REGIONS: all regions (ENTERPRISE customers only).
+  @BuiltValueEnumConst(wireName: r'EEU')
+  static const AccountLoadBalancerPoolsUpdatePoolRequestCheckRegionsEnum EEU = _$accountLoadBalancerPoolsUpdatePoolRequestCheckRegionsEnum_EEU;
+  /// WNAM: Western North America, ENAM: Eastern North America, WEU: Western Europe, EEU: Eastern Europe, NSAM: Northern South America, SSAM: Southern South America, OC: Oceania, ME: Middle East, NAF: North Africa, SAF: South Africa, SAS: Southern Asia, SEAS: South East Asia, NEAS: North East Asia, ALL_REGIONS: all regions (ENTERPRISE customers only).
+  @BuiltValueEnumConst(wireName: r'NSAM')
+  static const AccountLoadBalancerPoolsUpdatePoolRequestCheckRegionsEnum NSAM = _$accountLoadBalancerPoolsUpdatePoolRequestCheckRegionsEnum_NSAM;
+  /// WNAM: Western North America, ENAM: Eastern North America, WEU: Western Europe, EEU: Eastern Europe, NSAM: Northern South America, SSAM: Southern South America, OC: Oceania, ME: Middle East, NAF: North Africa, SAF: South Africa, SAS: Southern Asia, SEAS: South East Asia, NEAS: North East Asia, ALL_REGIONS: all regions (ENTERPRISE customers only).
+  @BuiltValueEnumConst(wireName: r'SSAM')
+  static const AccountLoadBalancerPoolsUpdatePoolRequestCheckRegionsEnum SSAM = _$accountLoadBalancerPoolsUpdatePoolRequestCheckRegionsEnum_SSAM;
+  /// WNAM: Western North America, ENAM: Eastern North America, WEU: Western Europe, EEU: Eastern Europe, NSAM: Northern South America, SSAM: Southern South America, OC: Oceania, ME: Middle East, NAF: North Africa, SAF: South Africa, SAS: Southern Asia, SEAS: South East Asia, NEAS: North East Asia, ALL_REGIONS: all regions (ENTERPRISE customers only).
+  @BuiltValueEnumConst(wireName: r'OC')
+  static const AccountLoadBalancerPoolsUpdatePoolRequestCheckRegionsEnum OC = _$accountLoadBalancerPoolsUpdatePoolRequestCheckRegionsEnum_OC;
+  /// WNAM: Western North America, ENAM: Eastern North America, WEU: Western Europe, EEU: Eastern Europe, NSAM: Northern South America, SSAM: Southern South America, OC: Oceania, ME: Middle East, NAF: North Africa, SAF: South Africa, SAS: Southern Asia, SEAS: South East Asia, NEAS: North East Asia, ALL_REGIONS: all regions (ENTERPRISE customers only).
+  @BuiltValueEnumConst(wireName: r'ME')
+  static const AccountLoadBalancerPoolsUpdatePoolRequestCheckRegionsEnum ME = _$accountLoadBalancerPoolsUpdatePoolRequestCheckRegionsEnum_ME;
+  /// WNAM: Western North America, ENAM: Eastern North America, WEU: Western Europe, EEU: Eastern Europe, NSAM: Northern South America, SSAM: Southern South America, OC: Oceania, ME: Middle East, NAF: North Africa, SAF: South Africa, SAS: Southern Asia, SEAS: South East Asia, NEAS: North East Asia, ALL_REGIONS: all regions (ENTERPRISE customers only).
+  @BuiltValueEnumConst(wireName: r'NAF')
+  static const AccountLoadBalancerPoolsUpdatePoolRequestCheckRegionsEnum NAF = _$accountLoadBalancerPoolsUpdatePoolRequestCheckRegionsEnum_NAF;
+  /// WNAM: Western North America, ENAM: Eastern North America, WEU: Western Europe, EEU: Eastern Europe, NSAM: Northern South America, SSAM: Southern South America, OC: Oceania, ME: Middle East, NAF: North Africa, SAF: South Africa, SAS: Southern Asia, SEAS: South East Asia, NEAS: North East Asia, ALL_REGIONS: all regions (ENTERPRISE customers only).
+  @BuiltValueEnumConst(wireName: r'SAF')
+  static const AccountLoadBalancerPoolsUpdatePoolRequestCheckRegionsEnum SAF = _$accountLoadBalancerPoolsUpdatePoolRequestCheckRegionsEnum_SAF;
+  /// WNAM: Western North America, ENAM: Eastern North America, WEU: Western Europe, EEU: Eastern Europe, NSAM: Northern South America, SSAM: Southern South America, OC: Oceania, ME: Middle East, NAF: North Africa, SAF: South Africa, SAS: Southern Asia, SEAS: South East Asia, NEAS: North East Asia, ALL_REGIONS: all regions (ENTERPRISE customers only).
+  @BuiltValueEnumConst(wireName: r'SAS')
+  static const AccountLoadBalancerPoolsUpdatePoolRequestCheckRegionsEnum SAS = _$accountLoadBalancerPoolsUpdatePoolRequestCheckRegionsEnum_SAS;
+  /// WNAM: Western North America, ENAM: Eastern North America, WEU: Western Europe, EEU: Eastern Europe, NSAM: Northern South America, SSAM: Southern South America, OC: Oceania, ME: Middle East, NAF: North Africa, SAF: South Africa, SAS: Southern Asia, SEAS: South East Asia, NEAS: North East Asia, ALL_REGIONS: all regions (ENTERPRISE customers only).
+  @BuiltValueEnumConst(wireName: r'SEAS')
+  static const AccountLoadBalancerPoolsUpdatePoolRequestCheckRegionsEnum SEAS = _$accountLoadBalancerPoolsUpdatePoolRequestCheckRegionsEnum_SEAS;
+  /// WNAM: Western North America, ENAM: Eastern North America, WEU: Western Europe, EEU: Eastern Europe, NSAM: Northern South America, SSAM: Southern South America, OC: Oceania, ME: Middle East, NAF: North Africa, SAF: South Africa, SAS: Southern Asia, SEAS: South East Asia, NEAS: North East Asia, ALL_REGIONS: all regions (ENTERPRISE customers only).
+  @BuiltValueEnumConst(wireName: r'NEAS')
+  static const AccountLoadBalancerPoolsUpdatePoolRequestCheckRegionsEnum NEAS = _$accountLoadBalancerPoolsUpdatePoolRequestCheckRegionsEnum_NEAS;
+  /// WNAM: Western North America, ENAM: Eastern North America, WEU: Western Europe, EEU: Eastern Europe, NSAM: Northern South America, SSAM: Southern South America, OC: Oceania, ME: Middle East, NAF: North Africa, SAF: South Africa, SAS: Southern Asia, SEAS: South East Asia, NEAS: North East Asia, ALL_REGIONS: all regions (ENTERPRISE customers only).
+  @BuiltValueEnumConst(wireName: r'ALL_REGIONS')
+  static const AccountLoadBalancerPoolsUpdatePoolRequestCheckRegionsEnum ALL_REGIONS = _$accountLoadBalancerPoolsUpdatePoolRequestCheckRegionsEnum_ALL_REGIONS;
+
+  static Serializer<AccountLoadBalancerPoolsUpdatePoolRequestCheckRegionsEnum> get serializer => _$accountLoadBalancerPoolsUpdatePoolRequestCheckRegionsEnumSerializer;
+
+  const AccountLoadBalancerPoolsUpdatePoolRequestCheckRegionsEnum._(String name): super(name);
+
+  static BuiltSet<AccountLoadBalancerPoolsUpdatePoolRequestCheckRegionsEnum> get values => _$accountLoadBalancerPoolsUpdatePoolRequestCheckRegionsEnumValues;
+  static AccountLoadBalancerPoolsUpdatePoolRequestCheckRegionsEnum valueOf(String name) => _$accountLoadBalancerPoolsUpdatePoolRequestCheckRegionsEnumValueOf(name);
 }
 

@@ -116,11 +116,11 @@ class UserSAccountMembershipsUpdateMembershipRequestStatusEnum extends EnumClass
   @BuiltValueEnumConst(wireName: r'rejected')
   static const UserSAccountMembershipsUpdateMembershipRequestStatusEnum rejected = _$userSAccountMembershipsUpdateMembershipRequestStatusEnum_rejected;
 
-  static Serializer<UserSAccountMembershipsUpdateMembershipRequestStatusEnum> get serializer => _$userSAccountMembershipsUpdateMembershipRequestStatusSerializer;
+  static Serializer<UserSAccountMembershipsUpdateMembershipRequestStatusEnum> get serializer => _$userSAccountMembershipsUpdateMembershipRequestStatusEnumSerializer;
 
   const UserSAccountMembershipsUpdateMembershipRequestStatusEnum._(String name): super(name);
 
-  static BuiltSet<UserSAccountMembershipsUpdateMembershipRequestStatusEnum> get values => _$userSAccountMembershipsUpdateMembershipRequestStatusValues;
-  static UserSAccountMembershipsUpdateMembershipRequestStatusEnum valueOf(String name) => _$userSAccountMembershipsUpdateMembershipRequestStatusValueOf(name);
+  static BuiltSet<UserSAccountMembershipsUpdateMembershipRequestStatusEnum> get values => _$userSAccountMembershipsUpdateMembershipRequestStatusEnumValues;
+  static UserSAccountMembershipsUpdateMembershipRequestStatusEnum valueOf(String name) => _$userSAccountMembershipsUpdateMembershipRequestStatusEnumValueOf(name);
 }
 

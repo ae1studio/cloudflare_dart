@@ -130,11 +130,11 @@ class WorkersErrorMissingParamCodeEnum extends EnumClass {
   @BuiltValueEnumConst(wireNumber: 10003)
   static const WorkersErrorMissingParamCodeEnum number10003 = _$workersErrorMissingParamCodeEnum_number10003;
 
-  static Serializer<WorkersErrorMissingParamCodeEnum> get serializer => _$workersErrorMissingParamCodeSerializer;
+  static Serializer<WorkersErrorMissingParamCodeEnum> get serializer => _$workersErrorMissingParamCodeEnumSerializer;
 
   const WorkersErrorMissingParamCodeEnum._(String name): super(name);
 
-  static BuiltSet<WorkersErrorMissingParamCodeEnum> get values => _$workersErrorMissingParamCodeValues;
-  static WorkersErrorMissingParamCodeEnum valueOf(String name) => _$workersErrorMissingParamCodeValueOf(name);
+  static BuiltSet<WorkersErrorMissingParamCodeEnum> get values => _$workersErrorMissingParamCodeEnumValues;
+  static WorkersErrorMissingParamCodeEnum valueOf(String name) => _$workersErrorMissingParamCodeEnumValueOf(name);
 }
 

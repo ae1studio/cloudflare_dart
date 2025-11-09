@@ -31,7 +31,7 @@ abstract class WorkersAiPostRunCfBaaiBgeBaseEnV15RequestOneOf implements Built<W
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(WorkersAiPostRunCfBaaiBgeBaseEnV15RequestOneOfBuilder b) => b
-      ..pooling = const WorkersAiPostRunCfBaaiBgeBaseEnV15RequestOneOfPoolingEnum._('mean');
+      ..pooling = WorkersAiPostRunCfBaaiBgeBaseEnV15RequestOneOfPoolingEnum.valueOf('mean');
 
   @BuiltValueSerializer(custom: true)
   static Serializer<WorkersAiPostRunCfBaaiBgeBaseEnV15RequestOneOf> get serializer => _$WorkersAiPostRunCfBaaiBgeBaseEnV15RequestOneOfSerializer();
@@ -136,11 +136,11 @@ class WorkersAiPostRunCfBaaiBgeBaseEnV15RequestOneOfPoolingEnum extends EnumClas
   @BuiltValueEnumConst(wireName: r'cls')
   static const WorkersAiPostRunCfBaaiBgeBaseEnV15RequestOneOfPoolingEnum cls = _$workersAiPostRunCfBaaiBgeBaseEnV15RequestOneOfPoolingEnum_cls;
 
-  static Serializer<WorkersAiPostRunCfBaaiBgeBaseEnV15RequestOneOfPoolingEnum> get serializer => _$workersAiPostRunCfBaaiBgeBaseEnV15RequestOneOfPoolingSerializer;
+  static Serializer<WorkersAiPostRunCfBaaiBgeBaseEnV15RequestOneOfPoolingEnum> get serializer => _$workersAiPostRunCfBaaiBgeBaseEnV15RequestOneOfPoolingEnumSerializer;
 
   const WorkersAiPostRunCfBaaiBgeBaseEnV15RequestOneOfPoolingEnum._(String name): super(name);
 
-  static BuiltSet<WorkersAiPostRunCfBaaiBgeBaseEnV15RequestOneOfPoolingEnum> get values => _$workersAiPostRunCfBaaiBgeBaseEnV15RequestOneOfPoolingValues;
-  static WorkersAiPostRunCfBaaiBgeBaseEnV15RequestOneOfPoolingEnum valueOf(String name) => _$workersAiPostRunCfBaaiBgeBaseEnV15RequestOneOfPoolingValueOf(name);
+  static BuiltSet<WorkersAiPostRunCfBaaiBgeBaseEnV15RequestOneOfPoolingEnum> get values => _$workersAiPostRunCfBaaiBgeBaseEnV15RequestOneOfPoolingEnumValues;
+  static WorkersAiPostRunCfBaaiBgeBaseEnV15RequestOneOfPoolingEnum valueOf(String name) => _$workersAiPostRunCfBaaiBgeBaseEnV15RequestOneOfPoolingEnumValueOf(name);
 }
 

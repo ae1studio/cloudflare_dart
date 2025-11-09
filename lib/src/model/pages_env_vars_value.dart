@@ -132,11 +132,11 @@ class PagesEnvVarsValueTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'secret_text')
   static const PagesEnvVarsValueTypeEnum secretText = _$pagesEnvVarsValueTypeEnum_secretText;
 
-  static Serializer<PagesEnvVarsValueTypeEnum> get serializer => _$pagesEnvVarsValueTypeSerializer;
+  static Serializer<PagesEnvVarsValueTypeEnum> get serializer => _$pagesEnvVarsValueTypeEnumSerializer;
 
   const PagesEnvVarsValueTypeEnum._(String name): super(name);
 
-  static BuiltSet<PagesEnvVarsValueTypeEnum> get values => _$pagesEnvVarsValueTypeValues;
-  static PagesEnvVarsValueTypeEnum valueOf(String name) => _$pagesEnvVarsValueTypeValueOf(name);
+  static BuiltSet<PagesEnvVarsValueTypeEnum> get values => _$pagesEnvVarsValueTypeEnumValues;
+  static PagesEnvVarsValueTypeEnum valueOf(String name) => _$pagesEnvVarsValueTypeEnumValueOf(name);
 }
 

@@ -80,11 +80,11 @@ class MqProducerTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'r2_bucket')
   static const MqProducerTypeEnum r2Bucket = _$mqProducerTypeEnum_r2Bucket;
 
-  static Serializer<MqProducerTypeEnum> get serializer => _$mqProducerTypeSerializer;
+  static Serializer<MqProducerTypeEnum> get serializer => _$mqProducerTypeEnumSerializer;
 
   const MqProducerTypeEnum._(String name): super(name);
 
-  static BuiltSet<MqProducerTypeEnum> get values => _$mqProducerTypeValues;
-  static MqProducerTypeEnum valueOf(String name) => _$mqProducerTypeValueOf(name);
+  static BuiltSet<MqProducerTypeEnum> get values => _$mqProducerTypeEnumValues;
+  static MqProducerTypeEnum valueOf(String name) => _$mqProducerTypeEnumValueOf(name);
 }
 

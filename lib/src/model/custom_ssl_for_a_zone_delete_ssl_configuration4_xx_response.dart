@@ -149,11 +149,11 @@ class _$CustomSslForAZoneDeleteSslConfiguration4XXResponseSerializer implements 
 class CustomSslForAZoneDeleteSslConfiguration4XXResponseResultEnum extends EnumClass {
 
 
-  static Serializer<CustomSslForAZoneDeleteSslConfiguration4XXResponseResultEnum> get serializer => _$customSslForAZoneDeleteSslConfiguration4XXResponseResultSerializer;
+  static Serializer<CustomSslForAZoneDeleteSslConfiguration4XXResponseResultEnum> get serializer => _$customSslForAZoneDeleteSslConfiguration4XXResponseResultEnumSerializer;
 
   const CustomSslForAZoneDeleteSslConfiguration4XXResponseResultEnum._(String name): super(name);
 
-  static BuiltSet<CustomSslForAZoneDeleteSslConfiguration4XXResponseResultEnum> get values => _$customSslForAZoneDeleteSslConfiguration4XXResponseResultValues;
-  static CustomSslForAZoneDeleteSslConfiguration4XXResponseResultEnum valueOf(String name) => _$customSslForAZoneDeleteSslConfiguration4XXResponseResultValueOf(name);
+  static BuiltSet<CustomSslForAZoneDeleteSslConfiguration4XXResponseResultEnum> get values => _$customSslForAZoneDeleteSslConfiguration4XXResponseResultEnumValues;
+  static CustomSslForAZoneDeleteSslConfiguration4XXResponseResultEnum valueOf(String name) => _$customSslForAZoneDeleteSslConfiguration4XXResponseResultEnumValueOf(name);
 }
 

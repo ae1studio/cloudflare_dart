@@ -194,11 +194,11 @@ class _$$LogpushApiResponseCommonFailureSerializer implements PrimitiveSerialize
 class LogpushApiResponseCommonFailureResultEnum extends EnumClass {
 
 
-  static Serializer<LogpushApiResponseCommonFailureResultEnum> get serializer => _$logpushApiResponseCommonFailureResultSerializer;
+  static Serializer<LogpushApiResponseCommonFailureResultEnum> get serializer => _$logpushApiResponseCommonFailureResultEnumSerializer;
 
   const LogpushApiResponseCommonFailureResultEnum._(String name): super(name);
 
-  static BuiltSet<LogpushApiResponseCommonFailureResultEnum> get values => _$logpushApiResponseCommonFailureResultValues;
-  static LogpushApiResponseCommonFailureResultEnum valueOf(String name) => _$logpushApiResponseCommonFailureResultValueOf(name);
+  static BuiltSet<LogpushApiResponseCommonFailureResultEnum> get values => _$logpushApiResponseCommonFailureResultEnumValues;
+  static LogpushApiResponseCommonFailureResultEnum valueOf(String name) => _$logpushApiResponseCommonFailureResultEnumValueOf(name);
 }
 

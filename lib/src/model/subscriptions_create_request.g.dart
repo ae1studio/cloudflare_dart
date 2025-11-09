@@ -8,7 +8,7 @@ part of 'subscriptions_create_request.dart';
 
 class _$SubscriptionsCreateRequest extends SubscriptionsCreateRequest {
   @override
-  final MqEventDestination? destination;
+  final MqEventDestinationQueue? destination;
   @override
   final bool? enabled;
   @override
@@ -74,10 +74,10 @@ class SubscriptionsCreateRequestBuilder
         Builder<SubscriptionsCreateRequest, SubscriptionsCreateRequestBuilder> {
   _$SubscriptionsCreateRequest? _$v;
 
-  MqEventDestinationBuilder? _destination;
-  MqEventDestinationBuilder get destination =>
-      _$this._destination ??= MqEventDestinationBuilder();
-  set destination(MqEventDestinationBuilder? destination) =>
+  MqEventDestinationQueueBuilder? _destination;
+  MqEventDestinationQueueBuilder get destination =>
+      _$this._destination ??= MqEventDestinationQueueBuilder();
+  set destination(MqEventDestinationQueueBuilder? destination) =>
       _$this._destination = destination;
 
   bool? _enabled;

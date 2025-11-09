@@ -6,6 +6,66 @@ part of 'magic_acl.dart';
 // BuiltValueGenerator
 // **************************************************************************
 
+const MagicAclProtocolsEnum _$magicAclProtocolsEnum_tcp =
+    const MagicAclProtocolsEnum._('tcp');
+const MagicAclProtocolsEnum _$magicAclProtocolsEnum_udp =
+    const MagicAclProtocolsEnum._('udp');
+const MagicAclProtocolsEnum _$magicAclProtocolsEnum_icmp =
+    const MagicAclProtocolsEnum._('icmp');
+
+MagicAclProtocolsEnum _$magicAclProtocolsEnumValueOf(String name) {
+  switch (name) {
+    case 'tcp':
+      return _$magicAclProtocolsEnum_tcp;
+    case 'udp':
+      return _$magicAclProtocolsEnum_udp;
+    case 'icmp':
+      return _$magicAclProtocolsEnum_icmp;
+    default:
+      throw ArgumentError(name);
+  }
+}
+
+final BuiltSet<MagicAclProtocolsEnum> _$magicAclProtocolsEnumValues =
+    BuiltSet<MagicAclProtocolsEnum>(const <MagicAclProtocolsEnum>[
+  _$magicAclProtocolsEnum_tcp,
+  _$magicAclProtocolsEnum_udp,
+  _$magicAclProtocolsEnum_icmp,
+]);
+
+Serializer<MagicAclProtocolsEnum> _$magicAclProtocolsEnumSerializer =
+    _$MagicAclProtocolsEnumSerializer();
+
+class _$MagicAclProtocolsEnumSerializer
+    implements PrimitiveSerializer<MagicAclProtocolsEnum> {
+  static const Map<String, Object> _toWire = const <String, Object>{
+    'tcp': 'tcp',
+    'udp': 'udp',
+    'icmp': 'icmp',
+  };
+  static const Map<Object, String> _fromWire = const <Object, String>{
+    'tcp': 'tcp',
+    'udp': 'udp',
+    'icmp': 'icmp',
+  };
+
+  @override
+  final Iterable<Type> types = const <Type>[MagicAclProtocolsEnum];
+  @override
+  final String wireName = 'MagicAclProtocolsEnum';
+
+  @override
+  Object serialize(Serializers serializers, MagicAclProtocolsEnum object,
+          {FullType specifiedType = FullType.unspecified}) =>
+      _toWire[object.name] ?? object.name;
+
+  @override
+  MagicAclProtocolsEnum deserialize(Serializers serializers, Object serialized,
+          {FullType specifiedType = FullType.unspecified}) =>
+      MagicAclProtocolsEnum.valueOf(
+          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+}
+
 class _$MagicAcl extends MagicAcl {
   @override
   final String? description;
@@ -20,7 +80,7 @@ class _$MagicAcl extends MagicAcl {
   @override
   final String? name;
   @override
-  final BuiltList<dynamic>? protocols;
+  final BuiltList<MagicAclProtocolsEnum>? protocols;
   @override
   final bool? unidirectional;
 
@@ -118,10 +178,10 @@ class MagicAclBuilder implements Builder<MagicAcl, MagicAclBuilder> {
   String? get name => _$this._name;
   set name(String? name) => _$this._name = name;
 
-  ListBuilder<dynamic>? _protocols;
-  ListBuilder<dynamic> get protocols =>
-      _$this._protocols ??= ListBuilder<dynamic>();
-  set protocols(ListBuilder<dynamic>? protocols) =>
+  ListBuilder<MagicAclProtocolsEnum>? _protocols;
+  ListBuilder<MagicAclProtocolsEnum> get protocols =>
+      _$this._protocols ??= ListBuilder<MagicAclProtocolsEnum>();
+  set protocols(ListBuilder<MagicAclProtocolsEnum>? protocols) =>
       _$this._protocols = protocols;
 
   bool? _unidirectional;

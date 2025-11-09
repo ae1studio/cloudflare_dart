@@ -150,11 +150,11 @@ class _$ZeroTrustCertificatesDeleteZeroTrustCertificate4XXResponseSerializer imp
 class ZeroTrustCertificatesDeleteZeroTrustCertificate4XXResponseResultEnum extends EnumClass {
 
 
-  static Serializer<ZeroTrustCertificatesDeleteZeroTrustCertificate4XXResponseResultEnum> get serializer => _$zeroTrustCertificatesDeleteZeroTrustCertificate4XXResponseResultSerializer;
+  static Serializer<ZeroTrustCertificatesDeleteZeroTrustCertificate4XXResponseResultEnum> get serializer => _$zeroTrustCertificatesDeleteZeroTrustCertificate4XXResponseResultEnumSerializer;
 
   const ZeroTrustCertificatesDeleteZeroTrustCertificate4XXResponseResultEnum._(String name): super(name);
 
-  static BuiltSet<ZeroTrustCertificatesDeleteZeroTrustCertificate4XXResponseResultEnum> get values => _$zeroTrustCertificatesDeleteZeroTrustCertificate4XXResponseResultValues;
-  static ZeroTrustCertificatesDeleteZeroTrustCertificate4XXResponseResultEnum valueOf(String name) => _$zeroTrustCertificatesDeleteZeroTrustCertificate4XXResponseResultValueOf(name);
+  static BuiltSet<ZeroTrustCertificatesDeleteZeroTrustCertificate4XXResponseResultEnum> get values => _$zeroTrustCertificatesDeleteZeroTrustCertificate4XXResponseResultEnumValues;
+  static ZeroTrustCertificatesDeleteZeroTrustCertificate4XXResponseResultEnum valueOf(String name) => _$zeroTrustCertificatesDeleteZeroTrustCertificate4XXResponseResultEnumValueOf(name);
 }
 

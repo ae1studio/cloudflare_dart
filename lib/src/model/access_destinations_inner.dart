@@ -88,12 +88,12 @@ class AccessDestinationsInnerTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'via_mcp_server_portal')
   static const AccessDestinationsInnerTypeEnum viaMcpServerPortal = _$accessDestinationsInnerTypeEnum_viaMcpServerPortal;
 
-  static Serializer<AccessDestinationsInnerTypeEnum> get serializer => _$accessDestinationsInnerTypeSerializer;
+  static Serializer<AccessDestinationsInnerTypeEnum> get serializer => _$accessDestinationsInnerTypeEnumSerializer;
 
   const AccessDestinationsInnerTypeEnum._(String name): super(name);
 
-  static BuiltSet<AccessDestinationsInnerTypeEnum> get values => _$accessDestinationsInnerTypeValues;
-  static AccessDestinationsInnerTypeEnum valueOf(String name) => _$accessDestinationsInnerTypeValueOf(name);
+  static BuiltSet<AccessDestinationsInnerTypeEnum> get values => _$accessDestinationsInnerTypeEnumValues;
+  static AccessDestinationsInnerTypeEnum valueOf(String name) => _$accessDestinationsInnerTypeEnumValueOf(name);
 }
 
 class AccessDestinationsInnerL4ProtocolEnum extends EnumClass {
@@ -105,11 +105,11 @@ class AccessDestinationsInnerL4ProtocolEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'udp')
   static const AccessDestinationsInnerL4ProtocolEnum udp = _$accessDestinationsInnerL4ProtocolEnum_udp;
 
-  static Serializer<AccessDestinationsInnerL4ProtocolEnum> get serializer => _$accessDestinationsInnerL4ProtocolSerializer;
+  static Serializer<AccessDestinationsInnerL4ProtocolEnum> get serializer => _$accessDestinationsInnerL4ProtocolEnumSerializer;
 
   const AccessDestinationsInnerL4ProtocolEnum._(String name): super(name);
 
-  static BuiltSet<AccessDestinationsInnerL4ProtocolEnum> get values => _$accessDestinationsInnerL4ProtocolValues;
-  static AccessDestinationsInnerL4ProtocolEnum valueOf(String name) => _$accessDestinationsInnerL4ProtocolValueOf(name);
+  static BuiltSet<AccessDestinationsInnerL4ProtocolEnum> get values => _$accessDestinationsInnerL4ProtocolEnumValues;
+  static AccessDestinationsInnerL4ProtocolEnum valueOf(String name) => _$accessDestinationsInnerL4ProtocolEnumValueOf(name);
 }
 

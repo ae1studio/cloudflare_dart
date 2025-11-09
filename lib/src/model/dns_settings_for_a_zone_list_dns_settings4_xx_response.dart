@@ -149,11 +149,11 @@ class _$DnsSettingsForAZoneListDnsSettings4XXResponseSerializer implements Primi
 class DnsSettingsForAZoneListDnsSettings4XXResponseResultEnum extends EnumClass {
 
 
-  static Serializer<DnsSettingsForAZoneListDnsSettings4XXResponseResultEnum> get serializer => _$dnsSettingsForAZoneListDnsSettings4XXResponseResultSerializer;
+  static Serializer<DnsSettingsForAZoneListDnsSettings4XXResponseResultEnum> get serializer => _$dnsSettingsForAZoneListDnsSettings4XXResponseResultEnumSerializer;
 
   const DnsSettingsForAZoneListDnsSettings4XXResponseResultEnum._(String name): super(name);
 
-  static BuiltSet<DnsSettingsForAZoneListDnsSettings4XXResponseResultEnum> get values => _$dnsSettingsForAZoneListDnsSettings4XXResponseResultValues;
-  static DnsSettingsForAZoneListDnsSettings4XXResponseResultEnum valueOf(String name) => _$dnsSettingsForAZoneListDnsSettings4XXResponseResultValueOf(name);
+  static BuiltSet<DnsSettingsForAZoneListDnsSettings4XXResponseResultEnum> get values => _$dnsSettingsForAZoneListDnsSettings4XXResponseResultEnumValues;
+  static DnsSettingsForAZoneListDnsSettings4XXResponseResultEnum valueOf(String name) => _$dnsSettingsForAZoneListDnsSettings4XXResponseResultEnumValueOf(name);
 }
 

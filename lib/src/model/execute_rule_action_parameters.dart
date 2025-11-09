@@ -5,7 +5,6 @@
 // ignore_for_file: unused_element
 import 'package:cloudflare_dart/src/model/rulesets_execute_overrides.dart';
 import 'package:cloudflare_dart/src/model/rulesets_execute_matched_data.dart';
-import 'package:cloudflare_dart/src/model/execute_rule_action_parameters_id.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
@@ -14,13 +13,14 @@ part 'execute_rule_action_parameters.g.dart';
 /// ExecuteRuleActionParameters
 ///
 /// Properties:
-/// * [id] 
+/// * [id] - The ID of the ruleset to execute.
 /// * [matchedData] 
 /// * [overrides] 
 @BuiltValue()
 abstract class ExecuteRuleActionParameters implements Built<ExecuteRuleActionParameters, ExecuteRuleActionParametersBuilder> {
+  /// The ID of the ruleset to execute.
   @BuiltValueField(wireName: r'id')
-  ExecuteRuleActionParametersId get id;
+  String get id;
 
   @BuiltValueField(wireName: r'matched_data')
   RulesetsExecuteMatchedData? get matchedData;
@@ -54,7 +54,7 @@ class _$ExecuteRuleActionParametersSerializer implements PrimitiveSerializer<Exe
     yield r'id';
     yield serializers.serialize(
       object.id,
-      specifiedType: const FullType(ExecuteRuleActionParametersId),
+      specifiedType: const FullType(String),
     );
     if (object.matchedData != null) {
       yield r'matched_data';
@@ -96,9 +96,9 @@ class _$ExecuteRuleActionParametersSerializer implements PrimitiveSerializer<Exe
         case r'id':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(ExecuteRuleActionParametersId),
-          ) as ExecuteRuleActionParametersId;
-          result.id.replace(valueDes);
+            specifiedType: const FullType(String),
+          ) as String;
+          result.id = valueDes;
           break;
         case r'matched_data':
           final valueDes = serializers.deserialize(

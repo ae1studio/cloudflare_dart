@@ -165,11 +165,11 @@ class _$PassiveDnsByIpGetPassiveDnsByIp4XXResponseSerializer implements Primitiv
 class PassiveDnsByIpGetPassiveDnsByIp4XXResponseResultEnum extends EnumClass {
 
 
-  static Serializer<PassiveDnsByIpGetPassiveDnsByIp4XXResponseResultEnum> get serializer => _$passiveDnsByIpGetPassiveDnsByIp4XXResponseResultSerializer;
+  static Serializer<PassiveDnsByIpGetPassiveDnsByIp4XXResponseResultEnum> get serializer => _$passiveDnsByIpGetPassiveDnsByIp4XXResponseResultEnumSerializer;
 
   const PassiveDnsByIpGetPassiveDnsByIp4XXResponseResultEnum._(String name): super(name);
 
-  static BuiltSet<PassiveDnsByIpGetPassiveDnsByIp4XXResponseResultEnum> get values => _$passiveDnsByIpGetPassiveDnsByIp4XXResponseResultValues;
-  static PassiveDnsByIpGetPassiveDnsByIp4XXResponseResultEnum valueOf(String name) => _$passiveDnsByIpGetPassiveDnsByIp4XXResponseResultValueOf(name);
+  static BuiltSet<PassiveDnsByIpGetPassiveDnsByIp4XXResponseResultEnum> get values => _$passiveDnsByIpGetPassiveDnsByIp4XXResponseResultEnumValues;
+  static PassiveDnsByIpGetPassiveDnsByIp4XXResponseResultEnum valueOf(String name) => _$passiveDnsByIpGetPassiveDnsByIp4XXResponseResultEnumValueOf(name);
 }
 

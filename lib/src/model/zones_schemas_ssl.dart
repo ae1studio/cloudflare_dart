@@ -156,11 +156,11 @@ class ZonesSchemasSslIdEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'ssl')
   static const ZonesSchemasSslIdEnum ssl = _$zonesSchemasSslIdEnum_ssl;
 
-  static Serializer<ZonesSchemasSslIdEnum> get serializer => _$zonesSchemasSslIdSerializer;
+  static Serializer<ZonesSchemasSslIdEnum> get serializer => _$zonesSchemasSslIdEnumSerializer;
 
   const ZonesSchemasSslIdEnum._(String name): super(name);
 
-  static BuiltSet<ZonesSchemasSslIdEnum> get values => _$zonesSchemasSslIdValues;
-  static ZonesSchemasSslIdEnum valueOf(String name) => _$zonesSchemasSslIdValueOf(name);
+  static BuiltSet<ZonesSchemasSslIdEnum> get values => _$zonesSchemasSslIdEnumValues;
+  static ZonesSchemasSslIdEnum valueOf(String name) => _$zonesSchemasSslIdEnumValueOf(name);
 }
 

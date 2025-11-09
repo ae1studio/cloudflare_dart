@@ -3,11 +3,11 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:cloudflare_dart/src/model/access_vnc_props_all_of_type.dart';
 import 'package:cloudflare_dart/src/model/access_scim_config.dart';
 import 'package:cloudflare_dart/src/model/access_destinations_inner.dart';
 import 'package:cloudflare_dart/src/model/access_self_hosted_props.dart';
 import 'package:built_collection/built_collection.dart';
+import 'package:cloudflare_dart/src/model/access_type.dart';
 import 'package:cloudflare_dart/src/model/access_cors_headers.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';

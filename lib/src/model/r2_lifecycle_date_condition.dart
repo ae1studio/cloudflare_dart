@@ -127,11 +127,11 @@ class R2LifecycleDateConditionTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'Date')
   static const R2LifecycleDateConditionTypeEnum date = _$r2LifecycleDateConditionTypeEnum_date;
 
-  static Serializer<R2LifecycleDateConditionTypeEnum> get serializer => _$r2LifecycleDateConditionTypeSerializer;
+  static Serializer<R2LifecycleDateConditionTypeEnum> get serializer => _$r2LifecycleDateConditionTypeEnumSerializer;
 
   const R2LifecycleDateConditionTypeEnum._(String name): super(name);
 
-  static BuiltSet<R2LifecycleDateConditionTypeEnum> get values => _$r2LifecycleDateConditionTypeValues;
-  static R2LifecycleDateConditionTypeEnum valueOf(String name) => _$r2LifecycleDateConditionTypeValueOf(name);
+  static BuiltSet<R2LifecycleDateConditionTypeEnum> get values => _$r2LifecycleDateConditionTypeEnumValues;
+  static R2LifecycleDateConditionTypeEnum valueOf(String name) => _$r2LifecycleDateConditionTypeEnumValueOf(name);
 }
 

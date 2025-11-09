@@ -179,11 +179,11 @@ class OrganizationsApiAccountTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'enterprise')
   static const OrganizationsApiAccountTypeEnum enterprise = _$organizationsApiAccountTypeEnum_enterprise;
 
-  static Serializer<OrganizationsApiAccountTypeEnum> get serializer => _$organizationsApiAccountTypeSerializer;
+  static Serializer<OrganizationsApiAccountTypeEnum> get serializer => _$organizationsApiAccountTypeEnumSerializer;
 
   const OrganizationsApiAccountTypeEnum._(String name): super(name);
 
-  static BuiltSet<OrganizationsApiAccountTypeEnum> get values => _$organizationsApiAccountTypeValues;
-  static OrganizationsApiAccountTypeEnum valueOf(String name) => _$organizationsApiAccountTypeValueOf(name);
+  static BuiltSet<OrganizationsApiAccountTypeEnum> get values => _$organizationsApiAccountTypeEnumValues;
+  static OrganizationsApiAccountTypeEnum valueOf(String name) => _$organizationsApiAccountTypeEnumValueOf(name);
 }
 

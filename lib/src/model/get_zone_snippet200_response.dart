@@ -150,12 +150,12 @@ class GetZoneSnippet200ResponseErrorsEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'[]')
   static const GetZoneSnippet200ResponseErrorsEnum leftSquareBracketRightSquareBracket = _$getZoneSnippet200ResponseErrorsEnum_leftSquareBracketRightSquareBracket;
 
-  static Serializer<GetZoneSnippet200ResponseErrorsEnum> get serializer => _$getZoneSnippet200ResponseErrorsSerializer;
+  static Serializer<GetZoneSnippet200ResponseErrorsEnum> get serializer => _$getZoneSnippet200ResponseErrorsEnumSerializer;
 
   const GetZoneSnippet200ResponseErrorsEnum._(String name): super(name);
 
-  static BuiltSet<GetZoneSnippet200ResponseErrorsEnum> get values => _$getZoneSnippet200ResponseErrorsValues;
-  static GetZoneSnippet200ResponseErrorsEnum valueOf(String name) => _$getZoneSnippet200ResponseErrorsValueOf(name);
+  static BuiltSet<GetZoneSnippet200ResponseErrorsEnum> get values => _$getZoneSnippet200ResponseErrorsEnumValues;
+  static GetZoneSnippet200ResponseErrorsEnum valueOf(String name) => _$getZoneSnippet200ResponseErrorsEnumValueOf(name);
 }
 
 class GetZoneSnippet200ResponseSuccessEnum extends EnumClass {
@@ -163,11 +163,11 @@ class GetZoneSnippet200ResponseSuccessEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'true')
   static const GetZoneSnippet200ResponseSuccessEnum true_ = _$getZoneSnippet200ResponseSuccessEnum_true_;
 
-  static Serializer<GetZoneSnippet200ResponseSuccessEnum> get serializer => _$getZoneSnippet200ResponseSuccessSerializer;
+  static Serializer<GetZoneSnippet200ResponseSuccessEnum> get serializer => _$getZoneSnippet200ResponseSuccessEnumSerializer;
 
   const GetZoneSnippet200ResponseSuccessEnum._(String name): super(name);
 
-  static BuiltSet<GetZoneSnippet200ResponseSuccessEnum> get values => _$getZoneSnippet200ResponseSuccessValues;
-  static GetZoneSnippet200ResponseSuccessEnum valueOf(String name) => _$getZoneSnippet200ResponseSuccessValueOf(name);
+  static BuiltSet<GetZoneSnippet200ResponseSuccessEnum> get values => _$getZoneSnippet200ResponseSuccessEnumValues;
+  static GetZoneSnippet200ResponseSuccessEnum valueOf(String name) => _$getZoneSnippet200ResponseSuccessEnumValueOf(name);
 }
 

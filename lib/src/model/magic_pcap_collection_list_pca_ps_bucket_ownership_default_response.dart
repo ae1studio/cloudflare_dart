@@ -81,11 +81,11 @@ class _$MagicPcapCollectionListPcaPsBucketOwnershipDefaultResponseSerializer imp
 class MagicPcapCollectionListPcaPsBucketOwnershipDefaultResponseResultEnum extends EnumClass {
 
 
-  static Serializer<MagicPcapCollectionListPcaPsBucketOwnershipDefaultResponseResultEnum> get serializer => _$magicPcapCollectionListPcaPsBucketOwnershipDefaultResponseResultSerializer;
+  static Serializer<MagicPcapCollectionListPcaPsBucketOwnershipDefaultResponseResultEnum> get serializer => _$magicPcapCollectionListPcaPsBucketOwnershipDefaultResponseResultEnumSerializer;
 
   const MagicPcapCollectionListPcaPsBucketOwnershipDefaultResponseResultEnum._(String name): super(name);
 
-  static BuiltSet<MagicPcapCollectionListPcaPsBucketOwnershipDefaultResponseResultEnum> get values => _$magicPcapCollectionListPcaPsBucketOwnershipDefaultResponseResultValues;
-  static MagicPcapCollectionListPcaPsBucketOwnershipDefaultResponseResultEnum valueOf(String name) => _$magicPcapCollectionListPcaPsBucketOwnershipDefaultResponseResultValueOf(name);
+  static BuiltSet<MagicPcapCollectionListPcaPsBucketOwnershipDefaultResponseResultEnum> get values => _$magicPcapCollectionListPcaPsBucketOwnershipDefaultResponseResultEnumValues;
+  static MagicPcapCollectionListPcaPsBucketOwnershipDefaultResponseResultEnum valueOf(String name) => _$magicPcapCollectionListPcaPsBucketOwnershipDefaultResponseResultEnumValueOf(name);
 }
 

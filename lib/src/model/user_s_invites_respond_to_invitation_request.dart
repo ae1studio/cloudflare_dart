@@ -116,11 +116,11 @@ class UserSInvitesRespondToInvitationRequestStatusEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'rejected')
   static const UserSInvitesRespondToInvitationRequestStatusEnum rejected = _$userSInvitesRespondToInvitationRequestStatusEnum_rejected;
 
-  static Serializer<UserSInvitesRespondToInvitationRequestStatusEnum> get serializer => _$userSInvitesRespondToInvitationRequestStatusSerializer;
+  static Serializer<UserSInvitesRespondToInvitationRequestStatusEnum> get serializer => _$userSInvitesRespondToInvitationRequestStatusEnumSerializer;
 
   const UserSInvitesRespondToInvitationRequestStatusEnum._(String name): super(name);
 
-  static BuiltSet<UserSInvitesRespondToInvitationRequestStatusEnum> get values => _$userSInvitesRespondToInvitationRequestStatusValues;
-  static UserSInvitesRespondToInvitationRequestStatusEnum valueOf(String name) => _$userSInvitesRespondToInvitationRequestStatusValueOf(name);
+  static BuiltSet<UserSInvitesRespondToInvitationRequestStatusEnum> get values => _$userSInvitesRespondToInvitationRequestStatusEnumValues;
+  static UserSInvitesRespondToInvitationRequestStatusEnum valueOf(String name) => _$userSInvitesRespondToInvitationRequestStatusEnumValueOf(name);
 }
 

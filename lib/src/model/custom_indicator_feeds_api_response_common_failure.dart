@@ -194,11 +194,11 @@ class _$$CustomIndicatorFeedsApiResponseCommonFailureSerializer implements Primi
 class CustomIndicatorFeedsApiResponseCommonFailureResultEnum extends EnumClass {
 
 
-  static Serializer<CustomIndicatorFeedsApiResponseCommonFailureResultEnum> get serializer => _$customIndicatorFeedsApiResponseCommonFailureResultSerializer;
+  static Serializer<CustomIndicatorFeedsApiResponseCommonFailureResultEnum> get serializer => _$customIndicatorFeedsApiResponseCommonFailureResultEnumSerializer;
 
   const CustomIndicatorFeedsApiResponseCommonFailureResultEnum._(String name): super(name);
 
-  static BuiltSet<CustomIndicatorFeedsApiResponseCommonFailureResultEnum> get values => _$customIndicatorFeedsApiResponseCommonFailureResultValues;
-  static CustomIndicatorFeedsApiResponseCommonFailureResultEnum valueOf(String name) => _$customIndicatorFeedsApiResponseCommonFailureResultValueOf(name);
+  static BuiltSet<CustomIndicatorFeedsApiResponseCommonFailureResultEnum> get values => _$customIndicatorFeedsApiResponseCommonFailureResultEnumValues;
+  static CustomIndicatorFeedsApiResponseCommonFailureResultEnum valueOf(String name) => _$customIndicatorFeedsApiResponseCommonFailureResultEnumValueOf(name);
 }
 

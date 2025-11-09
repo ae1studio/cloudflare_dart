@@ -3,12 +3,10 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:cloudflare_dart/src/model/spectrum_config_modified.dart';
-import 'package:cloudflare_dart/src/model/spectrum_config_app_identifier.dart';
 import 'package:cloudflare_dart/src/model/spectrum_config_base_app_config.dart';
 import 'package:built_collection/built_collection.dart';
-import 'package:cloudflare_dart/src/model/spectrum_config_created.dart';
 import 'package:cloudflare_dart/src/model/spectrum_config_dns.dart';
+import 'package:built_value/json_object.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
@@ -79,17 +77,17 @@ class _$SpectrumConfigPaygoAppConfigSerializer implements PrimitiveSerializer<Sp
     yield r'modified_on';
     yield serializers.serialize(
       object.modifiedOn,
-      specifiedType: const FullType(SpectrumConfigModified),
+      specifiedType: const FullType(JsonObject),
     );
     yield r'id';
     yield serializers.serialize(
       object.id,
-      specifiedType: const FullType(SpectrumConfigAppIdentifier),
+      specifiedType: const FullType(JsonObject),
     );
     yield r'created_on';
     yield serializers.serialize(
       object.createdOn,
-      specifiedType: const FullType(SpectrumConfigCreated),
+      specifiedType: const FullType(JsonObject),
     );
   }
 
@@ -138,22 +136,22 @@ class _$SpectrumConfigPaygoAppConfigSerializer implements PrimitiveSerializer<Sp
         case r'modified_on':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(SpectrumConfigModified),
-          ) as SpectrumConfigModified;
+            specifiedType: const FullType(JsonObject),
+          ) as JsonObject;
           result.modifiedOn.replace(valueDes);
           break;
         case r'id':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(SpectrumConfigAppIdentifier),
-          ) as SpectrumConfigAppIdentifier;
+            specifiedType: const FullType(JsonObject),
+          ) as JsonObject;
           result.id.replace(valueDes);
           break;
         case r'created_on':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(SpectrumConfigCreated),
-          ) as SpectrumConfigCreated;
+            specifiedType: const FullType(JsonObject),
+          ) as JsonObject;
           result.createdOn.replace(valueDes);
           break;
         default:

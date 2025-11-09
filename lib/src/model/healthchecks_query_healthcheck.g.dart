@@ -6,11 +6,170 @@ part of 'healthchecks_query_healthcheck.dart';
 // BuiltValueGenerator
 // **************************************************************************
 
+const HealthchecksQueryHealthcheckCheckRegionsEnum
+    _$healthchecksQueryHealthcheckCheckRegionsEnum_WNAM =
+    const HealthchecksQueryHealthcheckCheckRegionsEnum._('WNAM');
+const HealthchecksQueryHealthcheckCheckRegionsEnum
+    _$healthchecksQueryHealthcheckCheckRegionsEnum_ENAM =
+    const HealthchecksQueryHealthcheckCheckRegionsEnum._('ENAM');
+const HealthchecksQueryHealthcheckCheckRegionsEnum
+    _$healthchecksQueryHealthcheckCheckRegionsEnum_WEU =
+    const HealthchecksQueryHealthcheckCheckRegionsEnum._('WEU');
+const HealthchecksQueryHealthcheckCheckRegionsEnum
+    _$healthchecksQueryHealthcheckCheckRegionsEnum_EEU =
+    const HealthchecksQueryHealthcheckCheckRegionsEnum._('EEU');
+const HealthchecksQueryHealthcheckCheckRegionsEnum
+    _$healthchecksQueryHealthcheckCheckRegionsEnum_NSAM =
+    const HealthchecksQueryHealthcheckCheckRegionsEnum._('NSAM');
+const HealthchecksQueryHealthcheckCheckRegionsEnum
+    _$healthchecksQueryHealthcheckCheckRegionsEnum_SSAM =
+    const HealthchecksQueryHealthcheckCheckRegionsEnum._('SSAM');
+const HealthchecksQueryHealthcheckCheckRegionsEnum
+    _$healthchecksQueryHealthcheckCheckRegionsEnum_OC =
+    const HealthchecksQueryHealthcheckCheckRegionsEnum._('OC');
+const HealthchecksQueryHealthcheckCheckRegionsEnum
+    _$healthchecksQueryHealthcheckCheckRegionsEnum_ME =
+    const HealthchecksQueryHealthcheckCheckRegionsEnum._('ME');
+const HealthchecksQueryHealthcheckCheckRegionsEnum
+    _$healthchecksQueryHealthcheckCheckRegionsEnum_NAF =
+    const HealthchecksQueryHealthcheckCheckRegionsEnum._('NAF');
+const HealthchecksQueryHealthcheckCheckRegionsEnum
+    _$healthchecksQueryHealthcheckCheckRegionsEnum_SAF =
+    const HealthchecksQueryHealthcheckCheckRegionsEnum._('SAF');
+const HealthchecksQueryHealthcheckCheckRegionsEnum
+    _$healthchecksQueryHealthcheckCheckRegionsEnum_IN =
+    const HealthchecksQueryHealthcheckCheckRegionsEnum._('IN');
+const HealthchecksQueryHealthcheckCheckRegionsEnum
+    _$healthchecksQueryHealthcheckCheckRegionsEnum_SEAS =
+    const HealthchecksQueryHealthcheckCheckRegionsEnum._('SEAS');
+const HealthchecksQueryHealthcheckCheckRegionsEnum
+    _$healthchecksQueryHealthcheckCheckRegionsEnum_NEAS =
+    const HealthchecksQueryHealthcheckCheckRegionsEnum._('NEAS');
+const HealthchecksQueryHealthcheckCheckRegionsEnum
+    _$healthchecksQueryHealthcheckCheckRegionsEnum_ALL_REGIONS =
+    const HealthchecksQueryHealthcheckCheckRegionsEnum._('ALL_REGIONS');
+
+HealthchecksQueryHealthcheckCheckRegionsEnum
+    _$healthchecksQueryHealthcheckCheckRegionsEnumValueOf(String name) {
+  switch (name) {
+    case 'WNAM':
+      return _$healthchecksQueryHealthcheckCheckRegionsEnum_WNAM;
+    case 'ENAM':
+      return _$healthchecksQueryHealthcheckCheckRegionsEnum_ENAM;
+    case 'WEU':
+      return _$healthchecksQueryHealthcheckCheckRegionsEnum_WEU;
+    case 'EEU':
+      return _$healthchecksQueryHealthcheckCheckRegionsEnum_EEU;
+    case 'NSAM':
+      return _$healthchecksQueryHealthcheckCheckRegionsEnum_NSAM;
+    case 'SSAM':
+      return _$healthchecksQueryHealthcheckCheckRegionsEnum_SSAM;
+    case 'OC':
+      return _$healthchecksQueryHealthcheckCheckRegionsEnum_OC;
+    case 'ME':
+      return _$healthchecksQueryHealthcheckCheckRegionsEnum_ME;
+    case 'NAF':
+      return _$healthchecksQueryHealthcheckCheckRegionsEnum_NAF;
+    case 'SAF':
+      return _$healthchecksQueryHealthcheckCheckRegionsEnum_SAF;
+    case 'IN':
+      return _$healthchecksQueryHealthcheckCheckRegionsEnum_IN;
+    case 'SEAS':
+      return _$healthchecksQueryHealthcheckCheckRegionsEnum_SEAS;
+    case 'NEAS':
+      return _$healthchecksQueryHealthcheckCheckRegionsEnum_NEAS;
+    case 'ALL_REGIONS':
+      return _$healthchecksQueryHealthcheckCheckRegionsEnum_ALL_REGIONS;
+    default:
+      throw ArgumentError(name);
+  }
+}
+
+final BuiltSet<HealthchecksQueryHealthcheckCheckRegionsEnum>
+    _$healthchecksQueryHealthcheckCheckRegionsEnumValues = BuiltSet<
+        HealthchecksQueryHealthcheckCheckRegionsEnum>(const <HealthchecksQueryHealthcheckCheckRegionsEnum>[
+  _$healthchecksQueryHealthcheckCheckRegionsEnum_WNAM,
+  _$healthchecksQueryHealthcheckCheckRegionsEnum_ENAM,
+  _$healthchecksQueryHealthcheckCheckRegionsEnum_WEU,
+  _$healthchecksQueryHealthcheckCheckRegionsEnum_EEU,
+  _$healthchecksQueryHealthcheckCheckRegionsEnum_NSAM,
+  _$healthchecksQueryHealthcheckCheckRegionsEnum_SSAM,
+  _$healthchecksQueryHealthcheckCheckRegionsEnum_OC,
+  _$healthchecksQueryHealthcheckCheckRegionsEnum_ME,
+  _$healthchecksQueryHealthcheckCheckRegionsEnum_NAF,
+  _$healthchecksQueryHealthcheckCheckRegionsEnum_SAF,
+  _$healthchecksQueryHealthcheckCheckRegionsEnum_IN,
+  _$healthchecksQueryHealthcheckCheckRegionsEnum_SEAS,
+  _$healthchecksQueryHealthcheckCheckRegionsEnum_NEAS,
+  _$healthchecksQueryHealthcheckCheckRegionsEnum_ALL_REGIONS,
+]);
+
+Serializer<HealthchecksQueryHealthcheckCheckRegionsEnum>
+    _$healthchecksQueryHealthcheckCheckRegionsEnumSerializer =
+    _$HealthchecksQueryHealthcheckCheckRegionsEnumSerializer();
+
+class _$HealthchecksQueryHealthcheckCheckRegionsEnumSerializer
+    implements
+        PrimitiveSerializer<HealthchecksQueryHealthcheckCheckRegionsEnum> {
+  static const Map<String, Object> _toWire = const <String, Object>{
+    'WNAM': 'WNAM',
+    'ENAM': 'ENAM',
+    'WEU': 'WEU',
+    'EEU': 'EEU',
+    'NSAM': 'NSAM',
+    'SSAM': 'SSAM',
+    'OC': 'OC',
+    'ME': 'ME',
+    'NAF': 'NAF',
+    'SAF': 'SAF',
+    'IN': 'IN',
+    'SEAS': 'SEAS',
+    'NEAS': 'NEAS',
+    'ALL_REGIONS': 'ALL_REGIONS',
+  };
+  static const Map<Object, String> _fromWire = const <Object, String>{
+    'WNAM': 'WNAM',
+    'ENAM': 'ENAM',
+    'WEU': 'WEU',
+    'EEU': 'EEU',
+    'NSAM': 'NSAM',
+    'SSAM': 'SSAM',
+    'OC': 'OC',
+    'ME': 'ME',
+    'NAF': 'NAF',
+    'SAF': 'SAF',
+    'IN': 'IN',
+    'SEAS': 'SEAS',
+    'NEAS': 'NEAS',
+    'ALL_REGIONS': 'ALL_REGIONS',
+  };
+
+  @override
+  final Iterable<Type> types = const <Type>[
+    HealthchecksQueryHealthcheckCheckRegionsEnum
+  ];
+  @override
+  final String wireName = 'HealthchecksQueryHealthcheckCheckRegionsEnum';
+
+  @override
+  Object serialize(Serializers serializers,
+          HealthchecksQueryHealthcheckCheckRegionsEnum object,
+          {FullType specifiedType = FullType.unspecified}) =>
+      _toWire[object.name] ?? object.name;
+
+  @override
+  HealthchecksQueryHealthcheckCheckRegionsEnum deserialize(
+          Serializers serializers, Object serialized,
+          {FullType specifiedType = FullType.unspecified}) =>
+      HealthchecksQueryHealthcheckCheckRegionsEnum.valueOf(
+          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+}
+
 class _$HealthchecksQueryHealthcheck extends HealthchecksQueryHealthcheck {
   @override
   final String address;
   @override
-  final BuiltList<dynamic>? checkRegions;
+  final BuiltList<HealthchecksQueryHealthcheckCheckRegionsEnum>? checkRegions;
   @override
   final int? consecutiveFails;
   @override
@@ -131,10 +290,13 @@ class HealthchecksQueryHealthcheckBuilder
   String? get address => _$this._address;
   set address(String? address) => _$this._address = address;
 
-  ListBuilder<dynamic>? _checkRegions;
-  ListBuilder<dynamic> get checkRegions =>
-      _$this._checkRegions ??= ListBuilder<dynamic>();
-  set checkRegions(ListBuilder<dynamic>? checkRegions) =>
+  ListBuilder<HealthchecksQueryHealthcheckCheckRegionsEnum>? _checkRegions;
+  ListBuilder<HealthchecksQueryHealthcheckCheckRegionsEnum> get checkRegions =>
+      _$this._checkRegions ??=
+          ListBuilder<HealthchecksQueryHealthcheckCheckRegionsEnum>();
+  set checkRegions(
+          ListBuilder<HealthchecksQueryHealthcheckCheckRegionsEnum>?
+              checkRegions) =>
       _$this._checkRegions = checkRegions;
 
   int? _consecutiveFails;

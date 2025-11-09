@@ -148,11 +148,11 @@ class WorkersBindingKindWasmModuleTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'wasm_module')
   static const WorkersBindingKindWasmModuleTypeEnum wasmModule = _$workersBindingKindWasmModuleTypeEnum_wasmModule;
 
-  static Serializer<WorkersBindingKindWasmModuleTypeEnum> get serializer => _$workersBindingKindWasmModuleTypeSerializer;
+  static Serializer<WorkersBindingKindWasmModuleTypeEnum> get serializer => _$workersBindingKindWasmModuleTypeEnumSerializer;
 
   const WorkersBindingKindWasmModuleTypeEnum._(String name): super(name);
 
-  static BuiltSet<WorkersBindingKindWasmModuleTypeEnum> get values => _$workersBindingKindWasmModuleTypeValues;
-  static WorkersBindingKindWasmModuleTypeEnum valueOf(String name) => _$workersBindingKindWasmModuleTypeValueOf(name);
+  static BuiltSet<WorkersBindingKindWasmModuleTypeEnum> get values => _$workersBindingKindWasmModuleTypeEnumValues;
+  static WorkersBindingKindWasmModuleTypeEnum valueOf(String name) => _$workersBindingKindWasmModuleTypeEnumValueOf(name);
 }
 

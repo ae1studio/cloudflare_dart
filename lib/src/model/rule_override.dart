@@ -4,7 +4,6 @@
 
 // ignore_for_file: unused_element
 import 'package:cloudflare_dart/src/model/rulesets_execute_sensitivity_level.dart';
-import 'package:built_value/json_object.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
@@ -13,19 +12,22 @@ part 'rule_override.g.dart';
 /// A rule-level override.
 ///
 /// Properties:
-/// * [action] 
-/// * [enabled] 
-/// * [id] 
+/// * [action] - The action to override the rule with.
+/// * [enabled] - Whether to enable execution of the rule.
+/// * [id] - The ID of the rule to override.
 /// * [scoreThreshold] - The score threshold to use for the rule.
-/// * [sensitivityLevel] 
+/// * [sensitivityLevel] - The sensitivity level to use for the rule. This option is only applicable for DDoS phases.
 @BuiltValue()
 abstract class RuleOverride implements Built<RuleOverride, RuleOverrideBuilder> {
+  /// The action to override the rule with.
   @BuiltValueField(wireName: r'action')
   String? get action;
 
+  /// Whether to enable execution of the rule.
   @BuiltValueField(wireName: r'enabled')
   bool? get enabled;
 
+  /// The ID of the rule to override.
   @BuiltValueField(wireName: r'id')
   String get id;
 
@@ -33,8 +35,10 @@ abstract class RuleOverride implements Built<RuleOverride, RuleOverrideBuilder> 
   @BuiltValueField(wireName: r'score_threshold')
   int? get scoreThreshold;
 
+  /// The sensitivity level to use for the rule. This option is only applicable for DDoS phases.
   @BuiltValueField(wireName: r'sensitivity_level')
   RulesetsExecuteSensitivityLevel? get sensitivityLevel;
+  // enum sensitivityLevelEnum {  default,  medium,  low,  eoff,  };
 
   RuleOverride._();
 

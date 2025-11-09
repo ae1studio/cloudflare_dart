@@ -165,11 +165,11 @@ class _$PageShieldApiResponseCommonFailureSerializer implements PrimitiveSeriali
 class PageShieldApiResponseCommonFailureResultEnum extends EnumClass {
 
 
-  static Serializer<PageShieldApiResponseCommonFailureResultEnum> get serializer => _$pageShieldApiResponseCommonFailureResultSerializer;
+  static Serializer<PageShieldApiResponseCommonFailureResultEnum> get serializer => _$pageShieldApiResponseCommonFailureResultEnumSerializer;
 
   const PageShieldApiResponseCommonFailureResultEnum._(String name): super(name);
 
-  static BuiltSet<PageShieldApiResponseCommonFailureResultEnum> get values => _$pageShieldApiResponseCommonFailureResultValues;
-  static PageShieldApiResponseCommonFailureResultEnum valueOf(String name) => _$pageShieldApiResponseCommonFailureResultValueOf(name);
+  static BuiltSet<PageShieldApiResponseCommonFailureResultEnum> get values => _$pageShieldApiResponseCommonFailureResultEnumValues;
+  static PageShieldApiResponseCommonFailureResultEnum valueOf(String name) => _$pageShieldApiResponseCommonFailureResultEnumValueOf(name);
 }
 

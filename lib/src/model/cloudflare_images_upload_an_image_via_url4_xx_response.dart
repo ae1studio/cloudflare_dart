@@ -148,11 +148,11 @@ class _$CloudflareImagesUploadAnImageViaUrl4XXResponseSerializer implements Prim
 class CloudflareImagesUploadAnImageViaUrl4XXResponseResultEnum extends EnumClass {
 
 
-  static Serializer<CloudflareImagesUploadAnImageViaUrl4XXResponseResultEnum> get serializer => _$cloudflareImagesUploadAnImageViaUrl4XXResponseResultSerializer;
+  static Serializer<CloudflareImagesUploadAnImageViaUrl4XXResponseResultEnum> get serializer => _$cloudflareImagesUploadAnImageViaUrl4XXResponseResultEnumSerializer;
 
   const CloudflareImagesUploadAnImageViaUrl4XXResponseResultEnum._(String name): super(name);
 
-  static BuiltSet<CloudflareImagesUploadAnImageViaUrl4XXResponseResultEnum> get values => _$cloudflareImagesUploadAnImageViaUrl4XXResponseResultValues;
-  static CloudflareImagesUploadAnImageViaUrl4XXResponseResultEnum valueOf(String name) => _$cloudflareImagesUploadAnImageViaUrl4XXResponseResultValueOf(name);
+  static BuiltSet<CloudflareImagesUploadAnImageViaUrl4XXResponseResultEnum> get values => _$cloudflareImagesUploadAnImageViaUrl4XXResponseResultEnumValues;
+  static CloudflareImagesUploadAnImageViaUrl4XXResponseResultEnum valueOf(String name) => _$cloudflareImagesUploadAnImageViaUrl4XXResponseResultEnumValueOf(name);
 }
 

@@ -134,11 +134,11 @@ class MqEventSourceWorkersBuildsWorkerTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'workersBuilds.worker')
   static const MqEventSourceWorkersBuildsWorkerTypeEnum workersBuildsPeriodWorker = _$mqEventSourceWorkersBuildsWorkerTypeEnum_workersBuildsPeriodWorker;
 
-  static Serializer<MqEventSourceWorkersBuildsWorkerTypeEnum> get serializer => _$mqEventSourceWorkersBuildsWorkerTypeSerializer;
+  static Serializer<MqEventSourceWorkersBuildsWorkerTypeEnum> get serializer => _$mqEventSourceWorkersBuildsWorkerTypeEnumSerializer;
 
   const MqEventSourceWorkersBuildsWorkerTypeEnum._(String name): super(name);
 
-  static BuiltSet<MqEventSourceWorkersBuildsWorkerTypeEnum> get values => _$mqEventSourceWorkersBuildsWorkerTypeValues;
-  static MqEventSourceWorkersBuildsWorkerTypeEnum valueOf(String name) => _$mqEventSourceWorkersBuildsWorkerTypeValueOf(name);
+  static BuiltSet<MqEventSourceWorkersBuildsWorkerTypeEnum> get values => _$mqEventSourceWorkersBuildsWorkerTypeEnumValues;
+  static MqEventSourceWorkersBuildsWorkerTypeEnum valueOf(String name) => _$mqEventSourceWorkersBuildsWorkerTypeEnumValueOf(name);
 }
 

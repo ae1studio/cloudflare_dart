@@ -236,11 +236,11 @@ class RadarGetQualitySpeedHistogram200ResponseResultMetaNormalizationEnum extend
   @BuiltValueEnumConst(wireName: r'RATIO')
   static const RadarGetQualitySpeedHistogram200ResponseResultMetaNormalizationEnum RATIO = _$radarGetQualitySpeedHistogram200ResponseResultMetaNormalizationEnum_RATIO;
 
-  static Serializer<RadarGetQualitySpeedHistogram200ResponseResultMetaNormalizationEnum> get serializer => _$radarGetQualitySpeedHistogram200ResponseResultMetaNormalizationSerializer;
+  static Serializer<RadarGetQualitySpeedHistogram200ResponseResultMetaNormalizationEnum> get serializer => _$radarGetQualitySpeedHistogram200ResponseResultMetaNormalizationEnumSerializer;
 
   const RadarGetQualitySpeedHistogram200ResponseResultMetaNormalizationEnum._(String name): super(name);
 
-  static BuiltSet<RadarGetQualitySpeedHistogram200ResponseResultMetaNormalizationEnum> get values => _$radarGetQualitySpeedHistogram200ResponseResultMetaNormalizationValues;
-  static RadarGetQualitySpeedHistogram200ResponseResultMetaNormalizationEnum valueOf(String name) => _$radarGetQualitySpeedHistogram200ResponseResultMetaNormalizationValueOf(name);
+  static BuiltSet<RadarGetQualitySpeedHistogram200ResponseResultMetaNormalizationEnum> get values => _$radarGetQualitySpeedHistogram200ResponseResultMetaNormalizationEnumValues;
+  static RadarGetQualitySpeedHistogram200ResponseResultMetaNormalizationEnum valueOf(String name) => _$radarGetQualitySpeedHistogram200ResponseResultMetaNormalizationEnumValueOf(name);
 }
 

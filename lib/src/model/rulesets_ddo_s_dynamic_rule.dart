@@ -21,7 +21,7 @@ part 'rulesets_ddo_s_dynamic_rule.g.dart';
 /// * [actionParameters] - The parameters configuring the rule's action.
 /// * [categories] - The categories of the rule.
 /// * [description] 
-/// * [enabled] 
+/// * [enabled] - Whether the rule should be executed.
 /// * [exposedCredentialCheck] 
 /// * [expression] - The expression defining which traffic will match the rule.
 /// * [id] - The unique ID of the rule.
@@ -39,6 +39,7 @@ abstract class RulesetsDDoSDynamicRule implements RulesetsRule, Built<RulesetsDD
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(RulesetsDDoSDynamicRuleBuilder b) => b
       ..description = ''
+      ..enabled = true
       ..actionParameters = {};
 
   @BuiltValueSerializer(custom: true)
@@ -292,11 +293,11 @@ class RulesetsDDoSDynamicRuleActionEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'ddos_dynamic')
   static const RulesetsDDoSDynamicRuleActionEnum ddosDynamic = _$rulesetsDDoSDynamicRuleActionEnum_ddosDynamic;
 
-  static Serializer<RulesetsDDoSDynamicRuleActionEnum> get serializer => _$rulesetsDDoSDynamicRuleActionSerializer;
+  static Serializer<RulesetsDDoSDynamicRuleActionEnum> get serializer => _$rulesetsDDoSDynamicRuleActionEnumSerializer;
 
   const RulesetsDDoSDynamicRuleActionEnum._(String name): super(name);
 
-  static BuiltSet<RulesetsDDoSDynamicRuleActionEnum> get values => _$rulesetsDDoSDynamicRuleActionValues;
-  static RulesetsDDoSDynamicRuleActionEnum valueOf(String name) => _$rulesetsDDoSDynamicRuleActionValueOf(name);
+  static BuiltSet<RulesetsDDoSDynamicRuleActionEnum> get values => _$rulesetsDDoSDynamicRuleActionEnumValues;
+  static RulesetsDDoSDynamicRuleActionEnum valueOf(String name) => _$rulesetsDDoSDynamicRuleActionEnumValueOf(name);
 }
 

@@ -14,21 +14,21 @@ part 'tls_certificates_and_hostnames_hostname_authenticated_origin_pull.g.dart';
 ///
 /// Properties:
 /// * [certId] - Identifier.
-/// * [certificate] - The hostname certificate.
-/// * [enabled] - Indicates whether hostname-level authenticated origin pulls is enabled. A null value voids the association.
-/// * [hostname] - The hostname on the origin for which the client certificate uploaded will be used.
-/// * [id] - Identifier.
-/// * [privateKey] - The hostname certificate's private key.
 /// * [certStatus] 
 /// * [certUpdatedAt] - The time when the certificate was updated.
 /// * [certUploadedOn] - The time when the certificate was uploaded.
+/// * [certificate] - The hostname certificate.
 /// * [createdAt] - The time when the certificate was created.
+/// * [enabled] - Indicates whether hostname-level authenticated origin pulls is enabled. A null value voids the association.
 /// * [expiresOn] - The date when the certificate expires.
+/// * [hostname] - The hostname on the origin for which the client certificate uploaded will be used.
 /// * [issuer] - The certificate authority that issued the certificate.
 /// * [serialNumber] - The serial number on the uploaded certificate.
 /// * [signature] - The type of hash used for the certificate.
 /// * [status] 
 /// * [updatedAt] - The time when the certificate was updated.
+/// * [id] - Identifier.
+/// * [privateKey] - The hostname certificate's private key.
 @BuiltValue()
 abstract class TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPull implements TlsCertificatesAndHostnamesHostnameCertidObject, Built<TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPull, TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPullBuilder> {
   /// The hostname certificate's private key.

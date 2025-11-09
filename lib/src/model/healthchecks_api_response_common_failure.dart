@@ -194,11 +194,11 @@ class _$$HealthchecksApiResponseCommonFailureSerializer implements PrimitiveSeri
 class HealthchecksApiResponseCommonFailureResultEnum extends EnumClass {
 
 
-  static Serializer<HealthchecksApiResponseCommonFailureResultEnum> get serializer => _$healthchecksApiResponseCommonFailureResultSerializer;
+  static Serializer<HealthchecksApiResponseCommonFailureResultEnum> get serializer => _$healthchecksApiResponseCommonFailureResultEnumSerializer;
 
   const HealthchecksApiResponseCommonFailureResultEnum._(String name): super(name);
 
-  static BuiltSet<HealthchecksApiResponseCommonFailureResultEnum> get values => _$healthchecksApiResponseCommonFailureResultValues;
-  static HealthchecksApiResponseCommonFailureResultEnum valueOf(String name) => _$healthchecksApiResponseCommonFailureResultValueOf(name);
+  static BuiltSet<HealthchecksApiResponseCommonFailureResultEnum> get values => _$healthchecksApiResponseCommonFailureResultEnumValues;
+  static HealthchecksApiResponseCommonFailureResultEnum valueOf(String name) => _$healthchecksApiResponseCommonFailureResultEnumValueOf(name);
 }
 

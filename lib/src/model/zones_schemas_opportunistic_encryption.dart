@@ -156,11 +156,11 @@ class ZonesSchemasOpportunisticEncryptionIdEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'opportunistic_encryption')
   static const ZonesSchemasOpportunisticEncryptionIdEnum opportunisticEncryption = _$zonesSchemasOpportunisticEncryptionIdEnum_opportunisticEncryption;
 
-  static Serializer<ZonesSchemasOpportunisticEncryptionIdEnum> get serializer => _$zonesSchemasOpportunisticEncryptionIdSerializer;
+  static Serializer<ZonesSchemasOpportunisticEncryptionIdEnum> get serializer => _$zonesSchemasOpportunisticEncryptionIdEnumSerializer;
 
   const ZonesSchemasOpportunisticEncryptionIdEnum._(String name): super(name);
 
-  static BuiltSet<ZonesSchemasOpportunisticEncryptionIdEnum> get values => _$zonesSchemasOpportunisticEncryptionIdValues;
-  static ZonesSchemasOpportunisticEncryptionIdEnum valueOf(String name) => _$zonesSchemasOpportunisticEncryptionIdValueOf(name);
+  static BuiltSet<ZonesSchemasOpportunisticEncryptionIdEnum> get values => _$zonesSchemasOpportunisticEncryptionIdEnumValues;
+  static ZonesSchemasOpportunisticEncryptionIdEnum valueOf(String name) => _$zonesSchemasOpportunisticEncryptionIdEnumValueOf(name);
 }
 

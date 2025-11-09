@@ -222,12 +222,12 @@ class TeamsDevicesTaniumInputRequestOperator_Enum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'==')
   static const TeamsDevicesTaniumInputRequestOperator_Enum equalEqual = _$teamsDevicesTaniumInputRequestOperatorEnum_equalEqual;
 
-  static Serializer<TeamsDevicesTaniumInputRequestOperator_Enum> get serializer => _$teamsDevicesTaniumInputRequestOperatorSerializer;
+  static Serializer<TeamsDevicesTaniumInputRequestOperator_Enum> get serializer => _$teamsDevicesTaniumInputRequestOperatorEnumSerializer;
 
   const TeamsDevicesTaniumInputRequestOperator_Enum._(String name): super(name);
 
-  static BuiltSet<TeamsDevicesTaniumInputRequestOperator_Enum> get values => _$teamsDevicesTaniumInputRequestOperatorValues;
-  static TeamsDevicesTaniumInputRequestOperator_Enum valueOf(String name) => _$teamsDevicesTaniumInputRequestOperatorValueOf(name);
+  static BuiltSet<TeamsDevicesTaniumInputRequestOperator_Enum> get values => _$teamsDevicesTaniumInputRequestOperatorEnumValues;
+  static TeamsDevicesTaniumInputRequestOperator_Enum valueOf(String name) => _$teamsDevicesTaniumInputRequestOperatorEnumValueOf(name);
 }
 
 class TeamsDevicesTaniumInputRequestRiskLevelEnum extends EnumClass {
@@ -245,12 +245,12 @@ class TeamsDevicesTaniumInputRequestRiskLevelEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'critical')
   static const TeamsDevicesTaniumInputRequestRiskLevelEnum critical = _$teamsDevicesTaniumInputRequestRiskLevelEnum_critical;
 
-  static Serializer<TeamsDevicesTaniumInputRequestRiskLevelEnum> get serializer => _$teamsDevicesTaniumInputRequestRiskLevelSerializer;
+  static Serializer<TeamsDevicesTaniumInputRequestRiskLevelEnum> get serializer => _$teamsDevicesTaniumInputRequestRiskLevelEnumSerializer;
 
   const TeamsDevicesTaniumInputRequestRiskLevelEnum._(String name): super(name);
 
-  static BuiltSet<TeamsDevicesTaniumInputRequestRiskLevelEnum> get values => _$teamsDevicesTaniumInputRequestRiskLevelValues;
-  static TeamsDevicesTaniumInputRequestRiskLevelEnum valueOf(String name) => _$teamsDevicesTaniumInputRequestRiskLevelValueOf(name);
+  static BuiltSet<TeamsDevicesTaniumInputRequestRiskLevelEnum> get values => _$teamsDevicesTaniumInputRequestRiskLevelEnumValues;
+  static TeamsDevicesTaniumInputRequestRiskLevelEnum valueOf(String name) => _$teamsDevicesTaniumInputRequestRiskLevelEnumValueOf(name);
 }
 
 class TeamsDevicesTaniumInputRequestScoreOperatorEnum extends EnumClass {
@@ -271,11 +271,11 @@ class TeamsDevicesTaniumInputRequestScoreOperatorEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'==')
   static const TeamsDevicesTaniumInputRequestScoreOperatorEnum equalEqual = _$teamsDevicesTaniumInputRequestScoreOperatorEnum_equalEqual;
 
-  static Serializer<TeamsDevicesTaniumInputRequestScoreOperatorEnum> get serializer => _$teamsDevicesTaniumInputRequestScoreOperatorSerializer;
+  static Serializer<TeamsDevicesTaniumInputRequestScoreOperatorEnum> get serializer => _$teamsDevicesTaniumInputRequestScoreOperatorEnumSerializer;
 
   const TeamsDevicesTaniumInputRequestScoreOperatorEnum._(String name): super(name);
 
-  static BuiltSet<TeamsDevicesTaniumInputRequestScoreOperatorEnum> get values => _$teamsDevicesTaniumInputRequestScoreOperatorValues;
-  static TeamsDevicesTaniumInputRequestScoreOperatorEnum valueOf(String name) => _$teamsDevicesTaniumInputRequestScoreOperatorValueOf(name);
+  static BuiltSet<TeamsDevicesTaniumInputRequestScoreOperatorEnum> get values => _$teamsDevicesTaniumInputRequestScoreOperatorEnumValues;
+  static TeamsDevicesTaniumInputRequestScoreOperatorEnum valueOf(String name) => _$teamsDevicesTaniumInputRequestScoreOperatorEnumValueOf(name);
 }
 

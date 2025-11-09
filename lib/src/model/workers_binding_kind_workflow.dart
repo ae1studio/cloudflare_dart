@@ -185,11 +185,11 @@ class WorkersBindingKindWorkflowTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'workflow')
   static const WorkersBindingKindWorkflowTypeEnum workflow = _$workersBindingKindWorkflowTypeEnum_workflow;
 
-  static Serializer<WorkersBindingKindWorkflowTypeEnum> get serializer => _$workersBindingKindWorkflowTypeSerializer;
+  static Serializer<WorkersBindingKindWorkflowTypeEnum> get serializer => _$workersBindingKindWorkflowTypeEnumSerializer;
 
   const WorkersBindingKindWorkflowTypeEnum._(String name): super(name);
 
-  static BuiltSet<WorkersBindingKindWorkflowTypeEnum> get values => _$workersBindingKindWorkflowTypeValues;
-  static WorkersBindingKindWorkflowTypeEnum valueOf(String name) => _$workersBindingKindWorkflowTypeValueOf(name);
+  static BuiltSet<WorkersBindingKindWorkflowTypeEnum> get values => _$workersBindingKindWorkflowTypeEnumValues;
+  static WorkersBindingKindWorkflowTypeEnum valueOf(String name) => _$workersBindingKindWorkflowTypeEnumValueOf(name);
 }
 

@@ -10,7 +10,7 @@ class _$AccessBookmarks extends AccessBookmarks {
   @override
   final bool? appLauncherVisible;
   @override
-  final AccessCreatedAt? createdAt;
+  final JsonObject? createdAt;
   @override
   final String? domain;
   @override
@@ -20,7 +20,7 @@ class _$AccessBookmarks extends AccessBookmarks {
   @override
   final String? name;
   @override
-  final AccessUpdatedAt? updatedAt;
+  final JsonObject? updatedAt;
 
   factory _$AccessBookmarks([void Function(AccessBookmarksBuilder)? updates]) =>
       (AccessBookmarksBuilder()..update(updates))._build();
@@ -91,11 +91,9 @@ class AccessBookmarksBuilder
   set appLauncherVisible(bool? appLauncherVisible) =>
       _$this._appLauncherVisible = appLauncherVisible;
 
-  AccessCreatedAtBuilder? _createdAt;
-  AccessCreatedAtBuilder get createdAt =>
-      _$this._createdAt ??= AccessCreatedAtBuilder();
-  set createdAt(AccessCreatedAtBuilder? createdAt) =>
-      _$this._createdAt = createdAt;
+  JsonObject? _createdAt;
+  JsonObject? get createdAt => _$this._createdAt;
+  set createdAt(JsonObject? createdAt) => _$this._createdAt = createdAt;
 
   String? _domain;
   String? get domain => _$this._domain;
@@ -113,11 +111,9 @@ class AccessBookmarksBuilder
   String? get name => _$this._name;
   set name(String? name) => _$this._name = name;
 
-  AccessUpdatedAtBuilder? _updatedAt;
-  AccessUpdatedAtBuilder get updatedAt =>
-      _$this._updatedAt ??= AccessUpdatedAtBuilder();
-  set updatedAt(AccessUpdatedAtBuilder? updatedAt) =>
-      _$this._updatedAt = updatedAt;
+  JsonObject? _updatedAt;
+  JsonObject? get updatedAt => _$this._updatedAt;
+  set updatedAt(JsonObject? updatedAt) => _$this._updatedAt = updatedAt;
 
   AccessBookmarksBuilder() {
     AccessBookmarks._defaults(this);
@@ -127,12 +123,12 @@ class AccessBookmarksBuilder
     final $v = _$v;
     if ($v != null) {
       _appLauncherVisible = $v.appLauncherVisible;
-      _createdAt = $v.createdAt?.toBuilder();
+      _createdAt = $v.createdAt;
       _domain = $v.domain;
       _id = $v.id;
       _logoUrl = $v.logoUrl;
       _name = $v.name;
-      _updatedAt = $v.updatedAt?.toBuilder();
+      _updatedAt = $v.updatedAt;
       _$v = null;
     }
     return this;
@@ -152,32 +148,16 @@ class AccessBookmarksBuilder
   AccessBookmarks build() => _build();
 
   _$AccessBookmarks _build() {
-    _$AccessBookmarks _$result;
-    try {
-      _$result = _$v ??
-          _$AccessBookmarks._(
-            appLauncherVisible: appLauncherVisible,
-            createdAt: _createdAt?.build(),
-            domain: domain,
-            id: id,
-            logoUrl: logoUrl,
-            name: name,
-            updatedAt: _updatedAt?.build(),
-          );
-    } catch (_) {
-      late String _$failedField;
-      try {
-        _$failedField = 'createdAt';
-        _createdAt?.build();
-
-        _$failedField = 'updatedAt';
-        _updatedAt?.build();
-      } catch (e) {
-        throw BuiltValueNestedFieldError(
-            r'AccessBookmarks', _$failedField, e.toString());
-      }
-      rethrow;
-    }
+    final _$result = _$v ??
+        _$AccessBookmarks._(
+          appLauncherVisible: appLauncherVisible,
+          createdAt: createdAt,
+          domain: domain,
+          id: id,
+          logoUrl: logoUrl,
+          name: name,
+          updatedAt: updatedAt,
+        );
     replace(_$result);
     return _$result;
   }

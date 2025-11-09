@@ -165,11 +165,11 @@ class _$DnsViewsForAnAccountListInternalDnsViews4XXResponseSerializer implements
 class DnsViewsForAnAccountListInternalDnsViews4XXResponseResultEnum extends EnumClass {
 
 
-  static Serializer<DnsViewsForAnAccountListInternalDnsViews4XXResponseResultEnum> get serializer => _$dnsViewsForAnAccountListInternalDnsViews4XXResponseResultSerializer;
+  static Serializer<DnsViewsForAnAccountListInternalDnsViews4XXResponseResultEnum> get serializer => _$dnsViewsForAnAccountListInternalDnsViews4XXResponseResultEnumSerializer;
 
   const DnsViewsForAnAccountListInternalDnsViews4XXResponseResultEnum._(String name): super(name);
 
-  static BuiltSet<DnsViewsForAnAccountListInternalDnsViews4XXResponseResultEnum> get values => _$dnsViewsForAnAccountListInternalDnsViews4XXResponseResultValues;
-  static DnsViewsForAnAccountListInternalDnsViews4XXResponseResultEnum valueOf(String name) => _$dnsViewsForAnAccountListInternalDnsViews4XXResponseResultValueOf(name);
+  static BuiltSet<DnsViewsForAnAccountListInternalDnsViews4XXResponseResultEnum> get values => _$dnsViewsForAnAccountListInternalDnsViews4XXResponseResultEnumValues;
+  static DnsViewsForAnAccountListInternalDnsViews4XXResponseResultEnum valueOf(String name) => _$dnsViewsForAnAccountListInternalDnsViews4XXResponseResultEnumValueOf(name);
 }
 

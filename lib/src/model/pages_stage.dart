@@ -187,12 +187,12 @@ class PagesStageNameEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'deploy')
   static const PagesStageNameEnum deploy = _$pagesStageNameEnum_deploy;
 
-  static Serializer<PagesStageNameEnum> get serializer => _$pagesStageNameSerializer;
+  static Serializer<PagesStageNameEnum> get serializer => _$pagesStageNameEnumSerializer;
 
   const PagesStageNameEnum._(String name): super(name);
 
-  static BuiltSet<PagesStageNameEnum> get values => _$pagesStageNameValues;
-  static PagesStageNameEnum valueOf(String name) => _$pagesStageNameValueOf(name);
+  static BuiltSet<PagesStageNameEnum> get values => _$pagesStageNameEnumValues;
+  static PagesStageNameEnum valueOf(String name) => _$pagesStageNameEnumValueOf(name);
 }
 
 class PagesStageStatusEnum extends EnumClass {
@@ -213,11 +213,11 @@ class PagesStageStatusEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'canceled')
   static const PagesStageStatusEnum canceled = _$pagesStageStatusEnum_canceled;
 
-  static Serializer<PagesStageStatusEnum> get serializer => _$pagesStageStatusSerializer;
+  static Serializer<PagesStageStatusEnum> get serializer => _$pagesStageStatusEnumSerializer;
 
   const PagesStageStatusEnum._(String name): super(name);
 
-  static BuiltSet<PagesStageStatusEnum> get values => _$pagesStageStatusValues;
-  static PagesStageStatusEnum valueOf(String name) => _$pagesStageStatusValueOf(name);
+  static BuiltSet<PagesStageStatusEnum> get values => _$pagesStageStatusEnumValues;
+  static PagesStageStatusEnum valueOf(String name) => _$pagesStageStatusEnumValueOf(name);
 }
 

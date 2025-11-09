@@ -150,11 +150,11 @@ class _$ZeroTrustGatewayRulesCreateZeroTrustGatewayRule4XXResponseSerializer imp
 class ZeroTrustGatewayRulesCreateZeroTrustGatewayRule4XXResponseResultEnum extends EnumClass {
 
 
-  static Serializer<ZeroTrustGatewayRulesCreateZeroTrustGatewayRule4XXResponseResultEnum> get serializer => _$zeroTrustGatewayRulesCreateZeroTrustGatewayRule4XXResponseResultSerializer;
+  static Serializer<ZeroTrustGatewayRulesCreateZeroTrustGatewayRule4XXResponseResultEnum> get serializer => _$zeroTrustGatewayRulesCreateZeroTrustGatewayRule4XXResponseResultEnumSerializer;
 
   const ZeroTrustGatewayRulesCreateZeroTrustGatewayRule4XXResponseResultEnum._(String name): super(name);
 
-  static BuiltSet<ZeroTrustGatewayRulesCreateZeroTrustGatewayRule4XXResponseResultEnum> get values => _$zeroTrustGatewayRulesCreateZeroTrustGatewayRule4XXResponseResultValues;
-  static ZeroTrustGatewayRulesCreateZeroTrustGatewayRule4XXResponseResultEnum valueOf(String name) => _$zeroTrustGatewayRulesCreateZeroTrustGatewayRule4XXResponseResultValueOf(name);
+  static BuiltSet<ZeroTrustGatewayRulesCreateZeroTrustGatewayRule4XXResponseResultEnum> get values => _$zeroTrustGatewayRulesCreateZeroTrustGatewayRule4XXResponseResultEnumValues;
+  static ZeroTrustGatewayRulesCreateZeroTrustGatewayRule4XXResponseResultEnum valueOf(String name) => _$zeroTrustGatewayRulesCreateZeroTrustGatewayRule4XXResponseResultEnumValueOf(name);
 }
 

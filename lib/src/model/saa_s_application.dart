@@ -11,7 +11,6 @@ import 'package:cloudflare_dart/src/model/access_saas_props.dart';
 import 'package:cloudflare_dart/src/model/access_app_req_embedded_policies.dart';
 import 'package:cloudflare_dart/src/model/access_app_req_embedded_policies_policies_inner.dart';
 import 'package:cloudflare_dart/src/model/access_saas_props_saas_app.dart';
-import 'package:built_value/json_object.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 

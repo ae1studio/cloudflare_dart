@@ -48,7 +48,7 @@ abstract class FirewallFilters implements Built<FirewallFilters, FirewallFilters
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(FirewallFiltersBuilder b) => b
-      ..match = const FirewallFiltersMatchEnum._('all');
+      ..match = FirewallFiltersMatchEnum.valueOf('all');
 
   @BuiltValueSerializer(custom: true)
   static Serializer<FirewallFilters> get serializer => _$FirewallFiltersSerializer();
@@ -203,12 +203,12 @@ class FirewallFiltersConfigurationPeriodTargetEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'country')
   static const FirewallFiltersConfigurationPeriodTargetEnum country = _$firewallFiltersConfigurationPeriodTargetEnum_country;
 
-  static Serializer<FirewallFiltersConfigurationPeriodTargetEnum> get serializer => _$firewallFiltersConfigurationPeriodTargetSerializer;
+  static Serializer<FirewallFiltersConfigurationPeriodTargetEnum> get serializer => _$firewallFiltersConfigurationPeriodTargetEnumSerializer;
 
   const FirewallFiltersConfigurationPeriodTargetEnum._(String name): super(name);
 
-  static BuiltSet<FirewallFiltersConfigurationPeriodTargetEnum> get values => _$firewallFiltersConfigurationPeriodTargetValues;
-  static FirewallFiltersConfigurationPeriodTargetEnum valueOf(String name) => _$firewallFiltersConfigurationPeriodTargetValueOf(name);
+  static BuiltSet<FirewallFiltersConfigurationPeriodTargetEnum> get values => _$firewallFiltersConfigurationPeriodTargetEnumValues;
+  static FirewallFiltersConfigurationPeriodTargetEnum valueOf(String name) => _$firewallFiltersConfigurationPeriodTargetEnumValueOf(name);
 }
 
 class FirewallFiltersMatchEnum extends EnumClass {
@@ -220,11 +220,11 @@ class FirewallFiltersMatchEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'all')
   static const FirewallFiltersMatchEnum all = _$firewallFiltersMatchEnum_all;
 
-  static Serializer<FirewallFiltersMatchEnum> get serializer => _$firewallFiltersMatchSerializer;
+  static Serializer<FirewallFiltersMatchEnum> get serializer => _$firewallFiltersMatchEnumSerializer;
 
   const FirewallFiltersMatchEnum._(String name): super(name);
 
-  static BuiltSet<FirewallFiltersMatchEnum> get values => _$firewallFiltersMatchValues;
-  static FirewallFiltersMatchEnum valueOf(String name) => _$firewallFiltersMatchValueOf(name);
+  static BuiltSet<FirewallFiltersMatchEnum> get values => _$firewallFiltersMatchEnumValues;
+  static FirewallFiltersMatchEnum valueOf(String name) => _$firewallFiltersMatchEnumValueOf(name);
 }
 

@@ -144,11 +144,11 @@ class ZarazScrollDepthRuleActionEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'scrollDepth')
   static const ZarazScrollDepthRuleActionEnum scrollDepth = _$zarazScrollDepthRuleActionEnum_scrollDepth;
 
-  static Serializer<ZarazScrollDepthRuleActionEnum> get serializer => _$zarazScrollDepthRuleActionSerializer;
+  static Serializer<ZarazScrollDepthRuleActionEnum> get serializer => _$zarazScrollDepthRuleActionEnumSerializer;
 
   const ZarazScrollDepthRuleActionEnum._(String name): super(name);
 
-  static BuiltSet<ZarazScrollDepthRuleActionEnum> get values => _$zarazScrollDepthRuleActionValues;
-  static ZarazScrollDepthRuleActionEnum valueOf(String name) => _$zarazScrollDepthRuleActionValueOf(name);
+  static BuiltSet<ZarazScrollDepthRuleActionEnum> get values => _$zarazScrollDepthRuleActionEnumValues;
+  static ZarazScrollDepthRuleActionEnum valueOf(String name) => _$zarazScrollDepthRuleActionEnumValueOf(name);
 }
 

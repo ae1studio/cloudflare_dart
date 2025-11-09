@@ -326,12 +326,12 @@ class RealtimekitStorageConfigAuthMethodEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'PASSWORD')
   static const RealtimekitStorageConfigAuthMethodEnum PASSWORD = _$realtimekitStorageConfigAuthMethodEnum_PASSWORD;
 
-  static Serializer<RealtimekitStorageConfigAuthMethodEnum> get serializer => _$realtimekitStorageConfigAuthMethodSerializer;
+  static Serializer<RealtimekitStorageConfigAuthMethodEnum> get serializer => _$realtimekitStorageConfigAuthMethodEnumSerializer;
 
   const RealtimekitStorageConfigAuthMethodEnum._(String name): super(name);
 
-  static BuiltSet<RealtimekitStorageConfigAuthMethodEnum> get values => _$realtimekitStorageConfigAuthMethodValues;
-  static RealtimekitStorageConfigAuthMethodEnum valueOf(String name) => _$realtimekitStorageConfigAuthMethodValueOf(name);
+  static BuiltSet<RealtimekitStorageConfigAuthMethodEnum> get values => _$realtimekitStorageConfigAuthMethodEnumValues;
+  static RealtimekitStorageConfigAuthMethodEnum valueOf(String name) => _$realtimekitStorageConfigAuthMethodEnumValueOf(name);
 }
 
 class RealtimekitStorageConfigTypeEnum extends EnumClass {
@@ -352,11 +352,11 @@ class RealtimekitStorageConfigTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'sftp')
   static const RealtimekitStorageConfigTypeEnum sftp = _$realtimekitStorageConfigTypeEnum_sftp;
 
-  static Serializer<RealtimekitStorageConfigTypeEnum> get serializer => _$realtimekitStorageConfigTypeSerializer;
+  static Serializer<RealtimekitStorageConfigTypeEnum> get serializer => _$realtimekitStorageConfigTypeEnumSerializer;
 
   const RealtimekitStorageConfigTypeEnum._(String name): super(name);
 
-  static BuiltSet<RealtimekitStorageConfigTypeEnum> get values => _$realtimekitStorageConfigTypeValues;
-  static RealtimekitStorageConfigTypeEnum valueOf(String name) => _$realtimekitStorageConfigTypeValueOf(name);
+  static BuiltSet<RealtimekitStorageConfigTypeEnum> get values => _$realtimekitStorageConfigTypeEnumValues;
+  static RealtimekitStorageConfigTypeEnum valueOf(String name) => _$realtimekitStorageConfigTypeEnumValueOf(name);
 }
 

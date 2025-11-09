@@ -129,11 +129,11 @@ class TelemetryKeysList401ResponseErrorsInnerMessageEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'Unauthorized')
   static const TelemetryKeysList401ResponseErrorsInnerMessageEnum unauthorized = _$telemetryKeysList401ResponseErrorsInnerMessageEnum_unauthorized;
 
-  static Serializer<TelemetryKeysList401ResponseErrorsInnerMessageEnum> get serializer => _$telemetryKeysList401ResponseErrorsInnerMessageSerializer;
+  static Serializer<TelemetryKeysList401ResponseErrorsInnerMessageEnum> get serializer => _$telemetryKeysList401ResponseErrorsInnerMessageEnumSerializer;
 
   const TelemetryKeysList401ResponseErrorsInnerMessageEnum._(String name): super(name);
 
-  static BuiltSet<TelemetryKeysList401ResponseErrorsInnerMessageEnum> get values => _$telemetryKeysList401ResponseErrorsInnerMessageValues;
-  static TelemetryKeysList401ResponseErrorsInnerMessageEnum valueOf(String name) => _$telemetryKeysList401ResponseErrorsInnerMessageValueOf(name);
+  static BuiltSet<TelemetryKeysList401ResponseErrorsInnerMessageEnum> get values => _$telemetryKeysList401ResponseErrorsInnerMessageEnumValues;
+  static TelemetryKeysList401ResponseErrorsInnerMessageEnum valueOf(String name) => _$telemetryKeysList401ResponseErrorsInnerMessageEnumValueOf(name);
 }
 

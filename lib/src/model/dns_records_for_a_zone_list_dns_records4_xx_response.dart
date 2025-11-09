@@ -166,11 +166,11 @@ class _$DnsRecordsForAZoneListDnsRecords4XXResponseSerializer implements Primiti
 class DnsRecordsForAZoneListDnsRecords4XXResponseResultEnum extends EnumClass {
 
 
-  static Serializer<DnsRecordsForAZoneListDnsRecords4XXResponseResultEnum> get serializer => _$dnsRecordsForAZoneListDnsRecords4XXResponseResultSerializer;
+  static Serializer<DnsRecordsForAZoneListDnsRecords4XXResponseResultEnum> get serializer => _$dnsRecordsForAZoneListDnsRecords4XXResponseResultEnumSerializer;
 
   const DnsRecordsForAZoneListDnsRecords4XXResponseResultEnum._(String name): super(name);
 
-  static BuiltSet<DnsRecordsForAZoneListDnsRecords4XXResponseResultEnum> get values => _$dnsRecordsForAZoneListDnsRecords4XXResponseResultValues;
-  static DnsRecordsForAZoneListDnsRecords4XXResponseResultEnum valueOf(String name) => _$dnsRecordsForAZoneListDnsRecords4XXResponseResultValueOf(name);
+  static BuiltSet<DnsRecordsForAZoneListDnsRecords4XXResponseResultEnum> get values => _$dnsRecordsForAZoneListDnsRecords4XXResponseResultEnumValues;
+  static DnsRecordsForAZoneListDnsRecords4XXResponseResultEnum valueOf(String name) => _$dnsRecordsForAZoneListDnsRecords4XXResponseResultEnumValueOf(name);
 }
 

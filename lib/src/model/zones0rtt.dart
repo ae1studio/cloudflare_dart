@@ -156,11 +156,11 @@ class Zones0rttIdEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'0rtt')
   static const Zones0rttIdEnum n0rtt = _$zones0rttIdEnum_n0rtt;
 
-  static Serializer<Zones0rttIdEnum> get serializer => _$zones0rttIdSerializer;
+  static Serializer<Zones0rttIdEnum> get serializer => _$zones0rttIdEnumSerializer;
 
   const Zones0rttIdEnum._(String name): super(name);
 
-  static BuiltSet<Zones0rttIdEnum> get values => _$zones0rttIdValues;
-  static Zones0rttIdEnum valueOf(String name) => _$zones0rttIdValueOf(name);
+  static BuiltSet<Zones0rttIdEnum> get values => _$zones0rttIdEnumValues;
+  static Zones0rttIdEnum valueOf(String name) => _$zones0rttIdEnumValueOf(name);
 }
 

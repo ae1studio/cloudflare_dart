@@ -149,11 +149,11 @@ class _$IpAddressManagementAddressMapsCreateAddressMap4XXResponseSerializer impl
 class IpAddressManagementAddressMapsCreateAddressMap4XXResponseResultEnum extends EnumClass {
 
 
-  static Serializer<IpAddressManagementAddressMapsCreateAddressMap4XXResponseResultEnum> get serializer => _$ipAddressManagementAddressMapsCreateAddressMap4XXResponseResultSerializer;
+  static Serializer<IpAddressManagementAddressMapsCreateAddressMap4XXResponseResultEnum> get serializer => _$ipAddressManagementAddressMapsCreateAddressMap4XXResponseResultEnumSerializer;
 
   const IpAddressManagementAddressMapsCreateAddressMap4XXResponseResultEnum._(String name): super(name);
 
-  static BuiltSet<IpAddressManagementAddressMapsCreateAddressMap4XXResponseResultEnum> get values => _$ipAddressManagementAddressMapsCreateAddressMap4XXResponseResultValues;
-  static IpAddressManagementAddressMapsCreateAddressMap4XXResponseResultEnum valueOf(String name) => _$ipAddressManagementAddressMapsCreateAddressMap4XXResponseResultValueOf(name);
+  static BuiltSet<IpAddressManagementAddressMapsCreateAddressMap4XXResponseResultEnum> get values => _$ipAddressManagementAddressMapsCreateAddressMap4XXResponseResultEnumValues;
+  static IpAddressManagementAddressMapsCreateAddressMap4XXResponseResultEnum valueOf(String name) => _$ipAddressManagementAddressMapsCreateAddressMap4XXResponseResultEnumValueOf(name);
 }
 

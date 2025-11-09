@@ -14,7 +14,7 @@ class _$IamRole extends IamRole {
   @override
   final String name;
   @override
-  final IamRolePermissions permissions;
+  final IamPermissions permissions;
 
   factory _$IamRole([void Function(IamRoleBuilder)? updates]) =>
       (IamRoleBuilder()..update(updates))._build();
@@ -79,10 +79,10 @@ class IamRoleBuilder implements Builder<IamRole, IamRoleBuilder> {
   String? get name => _$this._name;
   set name(String? name) => _$this._name = name;
 
-  IamRolePermissionsBuilder? _permissions;
-  IamRolePermissionsBuilder get permissions =>
-      _$this._permissions ??= IamRolePermissionsBuilder();
-  set permissions(IamRolePermissionsBuilder? permissions) =>
+  IamPermissionsBuilder? _permissions;
+  IamPermissionsBuilder get permissions =>
+      _$this._permissions ??= IamPermissionsBuilder();
+  set permissions(IamPermissionsBuilder? permissions) =>
       _$this._permissions = permissions;
 
   IamRoleBuilder() {

@@ -197,12 +197,12 @@ class TlsCertificatesAndHostnamesSslsettingsEarlyHintsEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'off')
   static const TlsCertificatesAndHostnamesSslsettingsEarlyHintsEnum off = _$tlsCertificatesAndHostnamesSslsettingsEarlyHintsEnum_off;
 
-  static Serializer<TlsCertificatesAndHostnamesSslsettingsEarlyHintsEnum> get serializer => _$tlsCertificatesAndHostnamesSslsettingsEarlyHintsSerializer;
+  static Serializer<TlsCertificatesAndHostnamesSslsettingsEarlyHintsEnum> get serializer => _$tlsCertificatesAndHostnamesSslsettingsEarlyHintsEnumSerializer;
 
   const TlsCertificatesAndHostnamesSslsettingsEarlyHintsEnum._(String name): super(name);
 
-  static BuiltSet<TlsCertificatesAndHostnamesSslsettingsEarlyHintsEnum> get values => _$tlsCertificatesAndHostnamesSslsettingsEarlyHintsValues;
-  static TlsCertificatesAndHostnamesSslsettingsEarlyHintsEnum valueOf(String name) => _$tlsCertificatesAndHostnamesSslsettingsEarlyHintsValueOf(name);
+  static BuiltSet<TlsCertificatesAndHostnamesSslsettingsEarlyHintsEnum> get values => _$tlsCertificatesAndHostnamesSslsettingsEarlyHintsEnumValues;
+  static TlsCertificatesAndHostnamesSslsettingsEarlyHintsEnum valueOf(String name) => _$tlsCertificatesAndHostnamesSslsettingsEarlyHintsEnumValueOf(name);
 }
 
 class TlsCertificatesAndHostnamesSslsettingsHttp2Enum extends EnumClass {
@@ -214,12 +214,12 @@ class TlsCertificatesAndHostnamesSslsettingsHttp2Enum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'off')
   static const TlsCertificatesAndHostnamesSslsettingsHttp2Enum off = _$tlsCertificatesAndHostnamesSslsettingsHttp2Enum_off;
 
-  static Serializer<TlsCertificatesAndHostnamesSslsettingsHttp2Enum> get serializer => _$tlsCertificatesAndHostnamesSslsettingsHttp2Serializer;
+  static Serializer<TlsCertificatesAndHostnamesSslsettingsHttp2Enum> get serializer => _$tlsCertificatesAndHostnamesSslsettingsHttp2EnumSerializer;
 
   const TlsCertificatesAndHostnamesSslsettingsHttp2Enum._(String name): super(name);
 
-  static BuiltSet<TlsCertificatesAndHostnamesSslsettingsHttp2Enum> get values => _$tlsCertificatesAndHostnamesSslsettingsHttp2Values;
-  static TlsCertificatesAndHostnamesSslsettingsHttp2Enum valueOf(String name) => _$tlsCertificatesAndHostnamesSslsettingsHttp2ValueOf(name);
+  static BuiltSet<TlsCertificatesAndHostnamesSslsettingsHttp2Enum> get values => _$tlsCertificatesAndHostnamesSslsettingsHttp2EnumValues;
+  static TlsCertificatesAndHostnamesSslsettingsHttp2Enum valueOf(String name) => _$tlsCertificatesAndHostnamesSslsettingsHttp2EnumValueOf(name);
 }
 
 class TlsCertificatesAndHostnamesSslsettingsMinTlsVersionEnum extends EnumClass {
@@ -237,12 +237,12 @@ class TlsCertificatesAndHostnamesSslsettingsMinTlsVersionEnum extends EnumClass 
   @BuiltValueEnumConst(wireName: r'1.3')
   static const TlsCertificatesAndHostnamesSslsettingsMinTlsVersionEnum n1period3 = _$tlsCertificatesAndHostnamesSslsettingsMinTlsVersionEnum_n1period3;
 
-  static Serializer<TlsCertificatesAndHostnamesSslsettingsMinTlsVersionEnum> get serializer => _$tlsCertificatesAndHostnamesSslsettingsMinTlsVersionSerializer;
+  static Serializer<TlsCertificatesAndHostnamesSslsettingsMinTlsVersionEnum> get serializer => _$tlsCertificatesAndHostnamesSslsettingsMinTlsVersionEnumSerializer;
 
   const TlsCertificatesAndHostnamesSslsettingsMinTlsVersionEnum._(String name): super(name);
 
-  static BuiltSet<TlsCertificatesAndHostnamesSslsettingsMinTlsVersionEnum> get values => _$tlsCertificatesAndHostnamesSslsettingsMinTlsVersionValues;
-  static TlsCertificatesAndHostnamesSslsettingsMinTlsVersionEnum valueOf(String name) => _$tlsCertificatesAndHostnamesSslsettingsMinTlsVersionValueOf(name);
+  static BuiltSet<TlsCertificatesAndHostnamesSslsettingsMinTlsVersionEnum> get values => _$tlsCertificatesAndHostnamesSslsettingsMinTlsVersionEnumValues;
+  static TlsCertificatesAndHostnamesSslsettingsMinTlsVersionEnum valueOf(String name) => _$tlsCertificatesAndHostnamesSslsettingsMinTlsVersionEnumValueOf(name);
 }
 
 class TlsCertificatesAndHostnamesSslsettingsTls13Enum extends EnumClass {
@@ -254,11 +254,11 @@ class TlsCertificatesAndHostnamesSslsettingsTls13Enum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'off')
   static const TlsCertificatesAndHostnamesSslsettingsTls13Enum off = _$tlsCertificatesAndHostnamesSslsettingsTls13Enum_off;
 
-  static Serializer<TlsCertificatesAndHostnamesSslsettingsTls13Enum> get serializer => _$tlsCertificatesAndHostnamesSslsettingsTls13Serializer;
+  static Serializer<TlsCertificatesAndHostnamesSslsettingsTls13Enum> get serializer => _$tlsCertificatesAndHostnamesSslsettingsTls13EnumSerializer;
 
   const TlsCertificatesAndHostnamesSslsettingsTls13Enum._(String name): super(name);
 
-  static BuiltSet<TlsCertificatesAndHostnamesSslsettingsTls13Enum> get values => _$tlsCertificatesAndHostnamesSslsettingsTls13Values;
-  static TlsCertificatesAndHostnamesSslsettingsTls13Enum valueOf(String name) => _$tlsCertificatesAndHostnamesSslsettingsTls13ValueOf(name);
+  static BuiltSet<TlsCertificatesAndHostnamesSslsettingsTls13Enum> get values => _$tlsCertificatesAndHostnamesSslsettingsTls13EnumValues;
+  static TlsCertificatesAndHostnamesSslsettingsTls13Enum valueOf(String name) => _$tlsCertificatesAndHostnamesSslsettingsTls13EnumValueOf(name);
 }
 

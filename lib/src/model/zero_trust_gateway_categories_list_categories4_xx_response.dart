@@ -166,11 +166,11 @@ class _$ZeroTrustGatewayCategoriesListCategories4XXResponseSerializer implements
 class ZeroTrustGatewayCategoriesListCategories4XXResponseResultEnum extends EnumClass {
 
 
-  static Serializer<ZeroTrustGatewayCategoriesListCategories4XXResponseResultEnum> get serializer => _$zeroTrustGatewayCategoriesListCategories4XXResponseResultSerializer;
+  static Serializer<ZeroTrustGatewayCategoriesListCategories4XXResponseResultEnum> get serializer => _$zeroTrustGatewayCategoriesListCategories4XXResponseResultEnumSerializer;
 
   const ZeroTrustGatewayCategoriesListCategories4XXResponseResultEnum._(String name): super(name);
 
-  static BuiltSet<ZeroTrustGatewayCategoriesListCategories4XXResponseResultEnum> get values => _$zeroTrustGatewayCategoriesListCategories4XXResponseResultValues;
-  static ZeroTrustGatewayCategoriesListCategories4XXResponseResultEnum valueOf(String name) => _$zeroTrustGatewayCategoriesListCategories4XXResponseResultValueOf(name);
+  static BuiltSet<ZeroTrustGatewayCategoriesListCategories4XXResponseResultEnum> get values => _$zeroTrustGatewayCategoriesListCategories4XXResponseResultEnumValues;
+  static ZeroTrustGatewayCategoriesListCategories4XXResponseResultEnum valueOf(String name) => _$zeroTrustGatewayCategoriesListCategories4XXResponseResultEnumValueOf(name);
 }
 

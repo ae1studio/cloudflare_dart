@@ -150,11 +150,11 @@ class _$PerHostnameTlsSettingsGet4XXResponseSerializer implements PrimitiveSeria
 class PerHostnameTlsSettingsGet4XXResponseResultEnum extends EnumClass {
 
 
-  static Serializer<PerHostnameTlsSettingsGet4XXResponseResultEnum> get serializer => _$perHostnameTlsSettingsGet4XXResponseResultSerializer;
+  static Serializer<PerHostnameTlsSettingsGet4XXResponseResultEnum> get serializer => _$perHostnameTlsSettingsGet4XXResponseResultEnumSerializer;
 
   const PerHostnameTlsSettingsGet4XXResponseResultEnum._(String name): super(name);
 
-  static BuiltSet<PerHostnameTlsSettingsGet4XXResponseResultEnum> get values => _$perHostnameTlsSettingsGet4XXResponseResultValues;
-  static PerHostnameTlsSettingsGet4XXResponseResultEnum valueOf(String name) => _$perHostnameTlsSettingsGet4XXResponseResultValueOf(name);
+  static BuiltSet<PerHostnameTlsSettingsGet4XXResponseResultEnum> get values => _$perHostnameTlsSettingsGet4XXResponseResultEnumValues;
+  static PerHostnameTlsSettingsGet4XXResponseResultEnum valueOf(String name) => _$perHostnameTlsSettingsGet4XXResponseResultEnumValueOf(name);
 }
 

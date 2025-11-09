@@ -165,11 +165,11 @@ class _$WaitingRoomListWaitingRoomsAccount4XXResponseSerializer implements Primi
 class WaitingRoomListWaitingRoomsAccount4XXResponseResultEnum extends EnumClass {
 
 
-  static Serializer<WaitingRoomListWaitingRoomsAccount4XXResponseResultEnum> get serializer => _$waitingRoomListWaitingRoomsAccount4XXResponseResultSerializer;
+  static Serializer<WaitingRoomListWaitingRoomsAccount4XXResponseResultEnum> get serializer => _$waitingRoomListWaitingRoomsAccount4XXResponseResultEnumSerializer;
 
   const WaitingRoomListWaitingRoomsAccount4XXResponseResultEnum._(String name): super(name);
 
-  static BuiltSet<WaitingRoomListWaitingRoomsAccount4XXResponseResultEnum> get values => _$waitingRoomListWaitingRoomsAccount4XXResponseResultValues;
-  static WaitingRoomListWaitingRoomsAccount4XXResponseResultEnum valueOf(String name) => _$waitingRoomListWaitingRoomsAccount4XXResponseResultValueOf(name);
+  static BuiltSet<WaitingRoomListWaitingRoomsAccount4XXResponseResultEnum> get values => _$waitingRoomListWaitingRoomsAccount4XXResponseResultEnumValues;
+  static WaitingRoomListWaitingRoomsAccount4XXResponseResultEnum valueOf(String name) => _$waitingRoomListWaitingRoomsAccount4XXResponseResultEnumValueOf(name);
 }
 

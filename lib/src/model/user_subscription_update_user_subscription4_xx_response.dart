@@ -148,11 +148,11 @@ class _$UserSubscriptionUpdateUserSubscription4XXResponseSerializer implements P
 class UserSubscriptionUpdateUserSubscription4XXResponseResultEnum extends EnumClass {
 
 
-  static Serializer<UserSubscriptionUpdateUserSubscription4XXResponseResultEnum> get serializer => _$userSubscriptionUpdateUserSubscription4XXResponseResultSerializer;
+  static Serializer<UserSubscriptionUpdateUserSubscription4XXResponseResultEnum> get serializer => _$userSubscriptionUpdateUserSubscription4XXResponseResultEnumSerializer;
 
   const UserSubscriptionUpdateUserSubscription4XXResponseResultEnum._(String name): super(name);
 
-  static BuiltSet<UserSubscriptionUpdateUserSubscription4XXResponseResultEnum> get values => _$userSubscriptionUpdateUserSubscription4XXResponseResultValues;
-  static UserSubscriptionUpdateUserSubscription4XXResponseResultEnum valueOf(String name) => _$userSubscriptionUpdateUserSubscription4XXResponseResultValueOf(name);
+  static BuiltSet<UserSubscriptionUpdateUserSubscription4XXResponseResultEnum> get values => _$userSubscriptionUpdateUserSubscription4XXResponseResultEnumValues;
+  static UserSubscriptionUpdateUserSubscription4XXResponseResultEnum valueOf(String name) => _$userSubscriptionUpdateUserSubscription4XXResponseResultEnumValueOf(name);
 }
 

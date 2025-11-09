@@ -164,11 +164,11 @@ class SchemaValidationCreateSchemaRequestKindEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'openapi_v3')
   static const SchemaValidationCreateSchemaRequestKindEnum openapiV3 = _$schemaValidationCreateSchemaRequestKindEnum_openapiV3;
 
-  static Serializer<SchemaValidationCreateSchemaRequestKindEnum> get serializer => _$schemaValidationCreateSchemaRequestKindSerializer;
+  static Serializer<SchemaValidationCreateSchemaRequestKindEnum> get serializer => _$schemaValidationCreateSchemaRequestKindEnumSerializer;
 
   const SchemaValidationCreateSchemaRequestKindEnum._(String name): super(name);
 
-  static BuiltSet<SchemaValidationCreateSchemaRequestKindEnum> get values => _$schemaValidationCreateSchemaRequestKindValues;
-  static SchemaValidationCreateSchemaRequestKindEnum valueOf(String name) => _$schemaValidationCreateSchemaRequestKindValueOf(name);
+  static BuiltSet<SchemaValidationCreateSchemaRequestKindEnum> get values => _$schemaValidationCreateSchemaRequestKindEnumValues;
+  static SchemaValidationCreateSchemaRequestKindEnum valueOf(String name) => _$schemaValidationCreateSchemaRequestKindEnumValueOf(name);
 }
 

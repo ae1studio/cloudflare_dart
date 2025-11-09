@@ -156,11 +156,11 @@ class ZonesChinaNetworkEnabledIdEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'china_network_enabled')
   static const ZonesChinaNetworkEnabledIdEnum chinaNetworkEnabled = _$zonesChinaNetworkEnabledIdEnum_chinaNetworkEnabled;
 
-  static Serializer<ZonesChinaNetworkEnabledIdEnum> get serializer => _$zonesChinaNetworkEnabledIdSerializer;
+  static Serializer<ZonesChinaNetworkEnabledIdEnum> get serializer => _$zonesChinaNetworkEnabledIdEnumSerializer;
 
   const ZonesChinaNetworkEnabledIdEnum._(String name): super(name);
 
-  static BuiltSet<ZonesChinaNetworkEnabledIdEnum> get values => _$zonesChinaNetworkEnabledIdValues;
-  static ZonesChinaNetworkEnabledIdEnum valueOf(String name) => _$zonesChinaNetworkEnabledIdValueOf(name);
+  static BuiltSet<ZonesChinaNetworkEnabledIdEnum> get values => _$zonesChinaNetworkEnabledIdEnumValues;
+  static ZonesChinaNetworkEnabledIdEnum valueOf(String name) => _$zonesChinaNetworkEnabledIdEnumValueOf(name);
 }
 

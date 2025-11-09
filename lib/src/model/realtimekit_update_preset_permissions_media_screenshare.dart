@@ -121,11 +121,11 @@ class RealtimekitUpdatePresetPermissionsMediaScreenshareCanProduceEnum extends E
   @BuiltValueEnumConst(wireName: r'CAN_REQUEST')
   static const RealtimekitUpdatePresetPermissionsMediaScreenshareCanProduceEnum CAN_REQUEST = _$realtimekitUpdatePresetPermissionsMediaScreenshareCanProduceEnum_CAN_REQUEST;
 
-  static Serializer<RealtimekitUpdatePresetPermissionsMediaScreenshareCanProduceEnum> get serializer => _$realtimekitUpdatePresetPermissionsMediaScreenshareCanProduceSerializer;
+  static Serializer<RealtimekitUpdatePresetPermissionsMediaScreenshareCanProduceEnum> get serializer => _$realtimekitUpdatePresetPermissionsMediaScreenshareCanProduceEnumSerializer;
 
   const RealtimekitUpdatePresetPermissionsMediaScreenshareCanProduceEnum._(String name): super(name);
 
-  static BuiltSet<RealtimekitUpdatePresetPermissionsMediaScreenshareCanProduceEnum> get values => _$realtimekitUpdatePresetPermissionsMediaScreenshareCanProduceValues;
-  static RealtimekitUpdatePresetPermissionsMediaScreenshareCanProduceEnum valueOf(String name) => _$realtimekitUpdatePresetPermissionsMediaScreenshareCanProduceValueOf(name);
+  static BuiltSet<RealtimekitUpdatePresetPermissionsMediaScreenshareCanProduceEnum> get values => _$realtimekitUpdatePresetPermissionsMediaScreenshareCanProduceEnumValues;
+  static RealtimekitUpdatePresetPermissionsMediaScreenshareCanProduceEnum valueOf(String name) => _$realtimekitUpdatePresetPermissionsMediaScreenshareCanProduceEnumValueOf(name);
 }
 

@@ -202,11 +202,11 @@ class RadarGetGeolocations200ResponseResultGeolocationsInnerTypeEnum extends Enu
   @BuiltValueEnumConst(wireName: r'ADM1')
   static const RadarGetGeolocations200ResponseResultGeolocationsInnerTypeEnum aDM1 = _$radarGetGeolocations200ResponseResultGeolocationsInnerTypeEnum_aDM1;
 
-  static Serializer<RadarGetGeolocations200ResponseResultGeolocationsInnerTypeEnum> get serializer => _$radarGetGeolocations200ResponseResultGeolocationsInnerTypeSerializer;
+  static Serializer<RadarGetGeolocations200ResponseResultGeolocationsInnerTypeEnum> get serializer => _$radarGetGeolocations200ResponseResultGeolocationsInnerTypeEnumSerializer;
 
   const RadarGetGeolocations200ResponseResultGeolocationsInnerTypeEnum._(String name): super(name);
 
-  static BuiltSet<RadarGetGeolocations200ResponseResultGeolocationsInnerTypeEnum> get values => _$radarGetGeolocations200ResponseResultGeolocationsInnerTypeValues;
-  static RadarGetGeolocations200ResponseResultGeolocationsInnerTypeEnum valueOf(String name) => _$radarGetGeolocations200ResponseResultGeolocationsInnerTypeValueOf(name);
+  static BuiltSet<RadarGetGeolocations200ResponseResultGeolocationsInnerTypeEnum> get values => _$radarGetGeolocations200ResponseResultGeolocationsInnerTypeEnumValues;
+  static RadarGetGeolocations200ResponseResultGeolocationsInnerTypeEnum valueOf(String name) => _$radarGetGeolocations200ResponseResultGeolocationsInnerTypeEnumValueOf(name);
 }
 

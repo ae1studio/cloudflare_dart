@@ -126,11 +126,11 @@ class ModelListTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'list')
   static const ModelListTypeEnum list = _$modelListTypeEnum_list;
 
-  static Serializer<ModelListTypeEnum> get serializer => _$modelListTypeSerializer;
+  static Serializer<ModelListTypeEnum> get serializer => _$modelListTypeEnumSerializer;
 
   const ModelListTypeEnum._(String name): super(name);
 
-  static BuiltSet<ModelListTypeEnum> get values => _$modelListTypeValues;
-  static ModelListTypeEnum valueOf(String name) => _$modelListTypeValueOf(name);
+  static BuiltSet<ModelListTypeEnum> get values => _$modelListTypeEnumValues;
+  static ModelListTypeEnum valueOf(String name) => _$modelListTypeEnumValueOf(name);
 }
 

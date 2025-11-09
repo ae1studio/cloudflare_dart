@@ -119,11 +119,11 @@ class RealtimekitPresetPermissionsMediaVideoCanProduceEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'CAN_REQUEST')
   static const RealtimekitPresetPermissionsMediaVideoCanProduceEnum CAN_REQUEST = _$realtimekitPresetPermissionsMediaVideoCanProduceEnum_CAN_REQUEST;
 
-  static Serializer<RealtimekitPresetPermissionsMediaVideoCanProduceEnum> get serializer => _$realtimekitPresetPermissionsMediaVideoCanProduceSerializer;
+  static Serializer<RealtimekitPresetPermissionsMediaVideoCanProduceEnum> get serializer => _$realtimekitPresetPermissionsMediaVideoCanProduceEnumSerializer;
 
   const RealtimekitPresetPermissionsMediaVideoCanProduceEnum._(String name): super(name);
 
-  static BuiltSet<RealtimekitPresetPermissionsMediaVideoCanProduceEnum> get values => _$realtimekitPresetPermissionsMediaVideoCanProduceValues;
-  static RealtimekitPresetPermissionsMediaVideoCanProduceEnum valueOf(String name) => _$realtimekitPresetPermissionsMediaVideoCanProduceValueOf(name);
+  static BuiltSet<RealtimekitPresetPermissionsMediaVideoCanProduceEnum> get values => _$realtimekitPresetPermissionsMediaVideoCanProduceEnumValues;
+  static RealtimekitPresetPermissionsMediaVideoCanProduceEnum valueOf(String name) => _$realtimekitPresetPermissionsMediaVideoCanProduceEnumValueOf(name);
 }
 

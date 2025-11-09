@@ -47,7 +47,7 @@ abstract class VectorizeIndexQueryV2Request implements Built<VectorizeIndexQuery
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(VectorizeIndexQueryV2RequestBuilder b) => b
-      ..returnMetadata = const VectorizeIndexQueryV2RequestReturnMetadataEnum._('none')
+      ..returnMetadata = VectorizeIndexQueryV2RequestReturnMetadataEnum.valueOf('none')
       ..returnValues = false
       ..topK = 5;
 
@@ -199,11 +199,11 @@ class VectorizeIndexQueryV2RequestReturnMetadataEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'all')
   static const VectorizeIndexQueryV2RequestReturnMetadataEnum all = _$vectorizeIndexQueryV2RequestReturnMetadataEnum_all;
 
-  static Serializer<VectorizeIndexQueryV2RequestReturnMetadataEnum> get serializer => _$vectorizeIndexQueryV2RequestReturnMetadataSerializer;
+  static Serializer<VectorizeIndexQueryV2RequestReturnMetadataEnum> get serializer => _$vectorizeIndexQueryV2RequestReturnMetadataEnumSerializer;
 
   const VectorizeIndexQueryV2RequestReturnMetadataEnum._(String name): super(name);
 
-  static BuiltSet<VectorizeIndexQueryV2RequestReturnMetadataEnum> get values => _$vectorizeIndexQueryV2RequestReturnMetadataValues;
-  static VectorizeIndexQueryV2RequestReturnMetadataEnum valueOf(String name) => _$vectorizeIndexQueryV2RequestReturnMetadataValueOf(name);
+  static BuiltSet<VectorizeIndexQueryV2RequestReturnMetadataEnum> get values => _$vectorizeIndexQueryV2RequestReturnMetadataEnumValues;
+  static VectorizeIndexQueryV2RequestReturnMetadataEnum valueOf(String name) => _$vectorizeIndexQueryV2RequestReturnMetadataEnumValueOf(name);
 }
 

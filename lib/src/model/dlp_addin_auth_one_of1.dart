@@ -111,11 +111,11 @@ class DlpAddinAuthOneOf1TypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'NoAuth')
   static const DlpAddinAuthOneOf1TypeEnum noAuth = _$dlpAddinAuthOneOf1TypeEnum_noAuth;
 
-  static Serializer<DlpAddinAuthOneOf1TypeEnum> get serializer => _$dlpAddinAuthOneOf1TypeSerializer;
+  static Serializer<DlpAddinAuthOneOf1TypeEnum> get serializer => _$dlpAddinAuthOneOf1TypeEnumSerializer;
 
   const DlpAddinAuthOneOf1TypeEnum._(String name): super(name);
 
-  static BuiltSet<DlpAddinAuthOneOf1TypeEnum> get values => _$dlpAddinAuthOneOf1TypeValues;
-  static DlpAddinAuthOneOf1TypeEnum valueOf(String name) => _$dlpAddinAuthOneOf1TypeValueOf(name);
+  static BuiltSet<DlpAddinAuthOneOf1TypeEnum> get values => _$dlpAddinAuthOneOf1TypeEnumValues;
+  static DlpAddinAuthOneOf1TypeEnum valueOf(String name) => _$dlpAddinAuthOneOf1TypeEnumValueOf(name);
 }
 

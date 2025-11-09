@@ -148,11 +148,11 @@ class _$ZoneSubscriptionZoneSubscriptionDetails4XXResponseSerializer implements 
 class ZoneSubscriptionZoneSubscriptionDetails4XXResponseResultEnum extends EnumClass {
 
 
-  static Serializer<ZoneSubscriptionZoneSubscriptionDetails4XXResponseResultEnum> get serializer => _$zoneSubscriptionZoneSubscriptionDetails4XXResponseResultSerializer;
+  static Serializer<ZoneSubscriptionZoneSubscriptionDetails4XXResponseResultEnum> get serializer => _$zoneSubscriptionZoneSubscriptionDetails4XXResponseResultEnumSerializer;
 
   const ZoneSubscriptionZoneSubscriptionDetails4XXResponseResultEnum._(String name): super(name);
 
-  static BuiltSet<ZoneSubscriptionZoneSubscriptionDetails4XXResponseResultEnum> get values => _$zoneSubscriptionZoneSubscriptionDetails4XXResponseResultValues;
-  static ZoneSubscriptionZoneSubscriptionDetails4XXResponseResultEnum valueOf(String name) => _$zoneSubscriptionZoneSubscriptionDetails4XXResponseResultValueOf(name);
+  static BuiltSet<ZoneSubscriptionZoneSubscriptionDetails4XXResponseResultEnum> get values => _$zoneSubscriptionZoneSubscriptionDetails4XXResponseResultEnumValues;
+  static ZoneSubscriptionZoneSubscriptionDetails4XXResponseResultEnum valueOf(String name) => _$zoneSubscriptionZoneSubscriptionDetails4XXResponseResultEnumValueOf(name);
 }
 

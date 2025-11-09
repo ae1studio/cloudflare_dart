@@ -115,11 +115,11 @@ class PauseResumeStopRecordingRequestActionEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'resume')
   static const PauseResumeStopRecordingRequestActionEnum resume = _$pauseResumeStopRecordingRequestActionEnum_resume;
 
-  static Serializer<PauseResumeStopRecordingRequestActionEnum> get serializer => _$pauseResumeStopRecordingRequestActionSerializer;
+  static Serializer<PauseResumeStopRecordingRequestActionEnum> get serializer => _$pauseResumeStopRecordingRequestActionEnumSerializer;
 
   const PauseResumeStopRecordingRequestActionEnum._(String name): super(name);
 
-  static BuiltSet<PauseResumeStopRecordingRequestActionEnum> get values => _$pauseResumeStopRecordingRequestActionValues;
-  static PauseResumeStopRecordingRequestActionEnum valueOf(String name) => _$pauseResumeStopRecordingRequestActionValueOf(name);
+  static BuiltSet<PauseResumeStopRecordingRequestActionEnum> get values => _$pauseResumeStopRecordingRequestActionEnumValues;
+  static PauseResumeStopRecordingRequestActionEnum valueOf(String name) => _$pauseResumeStopRecordingRequestActionEnumValueOf(name);
 }
 

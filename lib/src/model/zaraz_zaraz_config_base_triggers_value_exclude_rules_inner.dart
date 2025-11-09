@@ -105,12 +105,12 @@ class ZarazZarazConfigBaseTriggersValueExcludeRulesInnerOpEnum extends EnumClass
   @BuiltValueEnumConst(wireName: r'LESS_THAN_OR_EQUAL')
   static const ZarazZarazConfigBaseTriggersValueExcludeRulesInnerOpEnum LESS_THAN_OR_EQUAL = _$zarazZarazConfigBaseTriggersValueExcludeRulesInnerOpEnum_LESS_THAN_OR_EQUAL;
 
-  static Serializer<ZarazZarazConfigBaseTriggersValueExcludeRulesInnerOpEnum> get serializer => _$zarazZarazConfigBaseTriggersValueExcludeRulesInnerOpSerializer;
+  static Serializer<ZarazZarazConfigBaseTriggersValueExcludeRulesInnerOpEnum> get serializer => _$zarazZarazConfigBaseTriggersValueExcludeRulesInnerOpEnumSerializer;
 
   const ZarazZarazConfigBaseTriggersValueExcludeRulesInnerOpEnum._(String name): super(name);
 
-  static BuiltSet<ZarazZarazConfigBaseTriggersValueExcludeRulesInnerOpEnum> get values => _$zarazZarazConfigBaseTriggersValueExcludeRulesInnerOpValues;
-  static ZarazZarazConfigBaseTriggersValueExcludeRulesInnerOpEnum valueOf(String name) => _$zarazZarazConfigBaseTriggersValueExcludeRulesInnerOpValueOf(name);
+  static BuiltSet<ZarazZarazConfigBaseTriggersValueExcludeRulesInnerOpEnum> get values => _$zarazZarazConfigBaseTriggersValueExcludeRulesInnerOpEnumValues;
+  static ZarazZarazConfigBaseTriggersValueExcludeRulesInnerOpEnum valueOf(String name) => _$zarazZarazConfigBaseTriggersValueExcludeRulesInnerOpEnumValueOf(name);
 }
 
 class ZarazZarazConfigBaseTriggersValueExcludeRulesInnerActionEnum extends EnumClass {
@@ -118,11 +118,11 @@ class ZarazZarazConfigBaseTriggersValueExcludeRulesInnerActionEnum extends EnumC
   @BuiltValueEnumConst(wireName: r'elementVisibility')
   static const ZarazZarazConfigBaseTriggersValueExcludeRulesInnerActionEnum elementVisibility = _$zarazZarazConfigBaseTriggersValueExcludeRulesInnerActionEnum_elementVisibility;
 
-  static Serializer<ZarazZarazConfigBaseTriggersValueExcludeRulesInnerActionEnum> get serializer => _$zarazZarazConfigBaseTriggersValueExcludeRulesInnerActionSerializer;
+  static Serializer<ZarazZarazConfigBaseTriggersValueExcludeRulesInnerActionEnum> get serializer => _$zarazZarazConfigBaseTriggersValueExcludeRulesInnerActionEnumSerializer;
 
   const ZarazZarazConfigBaseTriggersValueExcludeRulesInnerActionEnum._(String name): super(name);
 
-  static BuiltSet<ZarazZarazConfigBaseTriggersValueExcludeRulesInnerActionEnum> get values => _$zarazZarazConfigBaseTriggersValueExcludeRulesInnerActionValues;
-  static ZarazZarazConfigBaseTriggersValueExcludeRulesInnerActionEnum valueOf(String name) => _$zarazZarazConfigBaseTriggersValueExcludeRulesInnerActionValueOf(name);
+  static BuiltSet<ZarazZarazConfigBaseTriggersValueExcludeRulesInnerActionEnum> get values => _$zarazZarazConfigBaseTriggersValueExcludeRulesInnerActionEnumValues;
+  static ZarazZarazConfigBaseTriggersValueExcludeRulesInnerActionEnum valueOf(String name) => _$zarazZarazConfigBaseTriggersValueExcludeRulesInnerActionEnumValueOf(name);
 }
 

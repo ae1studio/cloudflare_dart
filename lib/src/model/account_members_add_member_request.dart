@@ -82,11 +82,11 @@ class AccountMembersAddMemberRequestStatusEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'pending')
   static const AccountMembersAddMemberRequestStatusEnum pending = _$accountMembersAddMemberRequestStatusEnum_pending;
 
-  static Serializer<AccountMembersAddMemberRequestStatusEnum> get serializer => _$accountMembersAddMemberRequestStatusSerializer;
+  static Serializer<AccountMembersAddMemberRequestStatusEnum> get serializer => _$accountMembersAddMemberRequestStatusEnumSerializer;
 
   const AccountMembersAddMemberRequestStatusEnum._(String name): super(name);
 
-  static BuiltSet<AccountMembersAddMemberRequestStatusEnum> get values => _$accountMembersAddMemberRequestStatusValues;
-  static AccountMembersAddMemberRequestStatusEnum valueOf(String name) => _$accountMembersAddMemberRequestStatusValueOf(name);
+  static BuiltSet<AccountMembersAddMemberRequestStatusEnum> get values => _$accountMembersAddMemberRequestStatusEnumValues;
+  static AccountMembersAddMemberRequestStatusEnum valueOf(String name) => _$accountMembersAddMemberRequestStatusEnumValueOf(name);
 }
 

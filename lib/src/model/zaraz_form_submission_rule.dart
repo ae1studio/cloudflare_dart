@@ -144,11 +144,11 @@ class ZarazFormSubmissionRuleActionEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'formSubmission')
   static const ZarazFormSubmissionRuleActionEnum formSubmission = _$zarazFormSubmissionRuleActionEnum_formSubmission;
 
-  static Serializer<ZarazFormSubmissionRuleActionEnum> get serializer => _$zarazFormSubmissionRuleActionSerializer;
+  static Serializer<ZarazFormSubmissionRuleActionEnum> get serializer => _$zarazFormSubmissionRuleActionEnumSerializer;
 
   const ZarazFormSubmissionRuleActionEnum._(String name): super(name);
 
-  static BuiltSet<ZarazFormSubmissionRuleActionEnum> get values => _$zarazFormSubmissionRuleActionValues;
-  static ZarazFormSubmissionRuleActionEnum valueOf(String name) => _$zarazFormSubmissionRuleActionValueOf(name);
+  static BuiltSet<ZarazFormSubmissionRuleActionEnum> get values => _$zarazFormSubmissionRuleActionEnumValues;
+  static ZarazFormSubmissionRuleActionEnum valueOf(String name) => _$zarazFormSubmissionRuleActionEnumValueOf(name);
 }
 

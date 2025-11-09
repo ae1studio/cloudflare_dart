@@ -81,11 +81,11 @@ class DlpNewSharedEntryEntryTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'document_fingerprint')
   static const DlpNewSharedEntryEntryTypeEnum documentFingerprint = _$dlpNewSharedEntryEntryTypeEnum_documentFingerprint;
 
-  static Serializer<DlpNewSharedEntryEntryTypeEnum> get serializer => _$dlpNewSharedEntryEntryTypeSerializer;
+  static Serializer<DlpNewSharedEntryEntryTypeEnum> get serializer => _$dlpNewSharedEntryEntryTypeEnumSerializer;
 
   const DlpNewSharedEntryEntryTypeEnum._(String name): super(name);
 
-  static BuiltSet<DlpNewSharedEntryEntryTypeEnum> get values => _$dlpNewSharedEntryEntryTypeValues;
-  static DlpNewSharedEntryEntryTypeEnum valueOf(String name) => _$dlpNewSharedEntryEntryTypeValueOf(name);
+  static BuiltSet<DlpNewSharedEntryEntryTypeEnum> get values => _$dlpNewSharedEntryEntryTypeEnumValues;
+  static DlpNewSharedEntryEntryTypeEnum valueOf(String name) => _$dlpNewSharedEntryEntryTypeEnumValueOf(name);
 }
 

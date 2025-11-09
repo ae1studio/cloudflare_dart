@@ -161,11 +161,11 @@ class _$DlsApiResponseCommonFailureSerializer implements PrimitiveSerializer<Dls
 class DlsApiResponseCommonFailureResultEnum extends EnumClass {
 
 
-  static Serializer<DlsApiResponseCommonFailureResultEnum> get serializer => _$dlsApiResponseCommonFailureResultSerializer;
+  static Serializer<DlsApiResponseCommonFailureResultEnum> get serializer => _$dlsApiResponseCommonFailureResultEnumSerializer;
 
   const DlsApiResponseCommonFailureResultEnum._(String name): super(name);
 
-  static BuiltSet<DlsApiResponseCommonFailureResultEnum> get values => _$dlsApiResponseCommonFailureResultValues;
-  static DlsApiResponseCommonFailureResultEnum valueOf(String name) => _$dlsApiResponseCommonFailureResultValueOf(name);
+  static BuiltSet<DlsApiResponseCommonFailureResultEnum> get values => _$dlsApiResponseCommonFailureResultEnumValues;
+  static DlsApiResponseCommonFailureResultEnum valueOf(String name) => _$dlsApiResponseCommonFailureResultEnumValueOf(name);
 }
 

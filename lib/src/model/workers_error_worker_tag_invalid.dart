@@ -130,11 +130,11 @@ class WorkersErrorWorkerTagInvalidCodeEnum extends EnumClass {
   @BuiltValueEnumConst(wireNumber: 100134)
   static const WorkersErrorWorkerTagInvalidCodeEnum number100134 = _$workersErrorWorkerTagInvalidCodeEnum_number100134;
 
-  static Serializer<WorkersErrorWorkerTagInvalidCodeEnum> get serializer => _$workersErrorWorkerTagInvalidCodeSerializer;
+  static Serializer<WorkersErrorWorkerTagInvalidCodeEnum> get serializer => _$workersErrorWorkerTagInvalidCodeEnumSerializer;
 
   const WorkersErrorWorkerTagInvalidCodeEnum._(String name): super(name);
 
-  static BuiltSet<WorkersErrorWorkerTagInvalidCodeEnum> get values => _$workersErrorWorkerTagInvalidCodeValues;
-  static WorkersErrorWorkerTagInvalidCodeEnum valueOf(String name) => _$workersErrorWorkerTagInvalidCodeValueOf(name);
+  static BuiltSet<WorkersErrorWorkerTagInvalidCodeEnum> get values => _$workersErrorWorkerTagInvalidCodeEnumValues;
+  static WorkersErrorWorkerTagInvalidCodeEnum valueOf(String name) => _$workersErrorWorkerTagInvalidCodeEnumValueOf(name);
 }
 

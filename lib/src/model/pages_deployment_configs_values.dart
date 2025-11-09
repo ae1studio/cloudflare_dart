@@ -149,7 +149,7 @@ abstract class PagesDeploymentConfigsValues implements Built<PagesDeploymentConf
       ..buildImageMajorVersion = 3
       ..compatibilityFlags = ListBuilder()
       ..failOpen = true
-      ..usageModel = const PagesDeploymentConfigsValuesUsageModelEnum._('standard');
+      ..usageModel = PagesDeploymentConfigsValuesUsageModelEnum.valueOf('standard');
 
   @BuiltValueSerializer(custom: true)
   static Serializer<PagesDeploymentConfigsValues> get serializer => _$PagesDeploymentConfigsValuesSerializer();
@@ -555,11 +555,11 @@ class PagesDeploymentConfigsValuesUsageModelEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'unbound')
   static const PagesDeploymentConfigsValuesUsageModelEnum unbound = _$pagesDeploymentConfigsValuesUsageModelEnum_unbound;
 
-  static Serializer<PagesDeploymentConfigsValuesUsageModelEnum> get serializer => _$pagesDeploymentConfigsValuesUsageModelSerializer;
+  static Serializer<PagesDeploymentConfigsValuesUsageModelEnum> get serializer => _$pagesDeploymentConfigsValuesUsageModelEnumSerializer;
 
   const PagesDeploymentConfigsValuesUsageModelEnum._(String name): super(name);
 
-  static BuiltSet<PagesDeploymentConfigsValuesUsageModelEnum> get values => _$pagesDeploymentConfigsValuesUsageModelValues;
-  static PagesDeploymentConfigsValuesUsageModelEnum valueOf(String name) => _$pagesDeploymentConfigsValuesUsageModelValueOf(name);
+  static BuiltSet<PagesDeploymentConfigsValuesUsageModelEnum> get values => _$pagesDeploymentConfigsValuesUsageModelEnumValues;
+  static PagesDeploymentConfigsValuesUsageModelEnum valueOf(String name) => _$pagesDeploymentConfigsValuesUsageModelEnumValueOf(name);
 }
 

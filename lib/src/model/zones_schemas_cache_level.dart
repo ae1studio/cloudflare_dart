@@ -156,11 +156,11 @@ class ZonesSchemasCacheLevelIdEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'cache_level')
   static const ZonesSchemasCacheLevelIdEnum cacheLevel = _$zonesSchemasCacheLevelIdEnum_cacheLevel;
 
-  static Serializer<ZonesSchemasCacheLevelIdEnum> get serializer => _$zonesSchemasCacheLevelIdSerializer;
+  static Serializer<ZonesSchemasCacheLevelIdEnum> get serializer => _$zonesSchemasCacheLevelIdEnumSerializer;
 
   const ZonesSchemasCacheLevelIdEnum._(String name): super(name);
 
-  static BuiltSet<ZonesSchemasCacheLevelIdEnum> get values => _$zonesSchemasCacheLevelIdValues;
-  static ZonesSchemasCacheLevelIdEnum valueOf(String name) => _$zonesSchemasCacheLevelIdValueOf(name);
+  static BuiltSet<ZonesSchemasCacheLevelIdEnum> get values => _$zonesSchemasCacheLevelIdEnumValues;
+  static ZonesSchemasCacheLevelIdEnum valueOf(String name) => _$zonesSchemasCacheLevelIdEnumValueOf(name);
 }
 

@@ -156,11 +156,11 @@ class ZonesNelIdEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'nel')
   static const ZonesNelIdEnum nel = _$zonesNelIdEnum_nel;
 
-  static Serializer<ZonesNelIdEnum> get serializer => _$zonesNelIdSerializer;
+  static Serializer<ZonesNelIdEnum> get serializer => _$zonesNelIdEnumSerializer;
 
   const ZonesNelIdEnum._(String name): super(name);
 
-  static BuiltSet<ZonesNelIdEnum> get values => _$zonesNelIdValues;
-  static ZonesNelIdEnum valueOf(String name) => _$zonesNelIdValueOf(name);
+  static BuiltSet<ZonesNelIdEnum> get values => _$zonesNelIdEnumValues;
+  static ZonesNelIdEnum valueOf(String name) => _$zonesNelIdEnumValueOf(name);
 }
 

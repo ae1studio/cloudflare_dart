@@ -193,11 +193,11 @@ class IntegrationEntryTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'integration')
   static const IntegrationEntryTypeEnum integration = _$integrationEntryTypeEnum_integration;
 
-  static Serializer<IntegrationEntryTypeEnum> get serializer => _$integrationEntryTypeSerializer;
+  static Serializer<IntegrationEntryTypeEnum> get serializer => _$integrationEntryTypeEnumSerializer;
 
   const IntegrationEntryTypeEnum._(String name): super(name);
 
-  static BuiltSet<IntegrationEntryTypeEnum> get values => _$integrationEntryTypeValues;
-  static IntegrationEntryTypeEnum valueOf(String name) => _$integrationEntryTypeValueOf(name);
+  static BuiltSet<IntegrationEntryTypeEnum> get values => _$integrationEntryTypeEnumValues;
+  static IntegrationEntryTypeEnum valueOf(String name) => _$integrationEntryTypeEnumValueOf(name);
 }
 

@@ -64,7 +64,7 @@ abstract class WorkersAiPostRunCfDeepgramFluxRequest implements Built<WorkersAiP
   static void _defaults(WorkersAiPostRunCfDeepgramFluxRequestBuilder b) => b
       ..eotThreshold = '0.7'
       ..eotTimeoutMs = '5000'
-      ..mipOptOut = const WorkersAiPostRunCfDeepgramFluxRequestMipOptOutEnum._('false');
+      ..mipOptOut = WorkersAiPostRunCfDeepgramFluxRequestMipOptOutEnum.valueOf('false');
 
   @BuiltValueSerializer(custom: true)
   static Serializer<WorkersAiPostRunCfDeepgramFluxRequest> get serializer => _$WorkersAiPostRunCfDeepgramFluxRequestSerializer();
@@ -248,12 +248,12 @@ class WorkersAiPostRunCfDeepgramFluxRequestEncodingEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'linear16')
   static const WorkersAiPostRunCfDeepgramFluxRequestEncodingEnum linear16 = _$workersAiPostRunCfDeepgramFluxRequestEncodingEnum_linear16;
 
-  static Serializer<WorkersAiPostRunCfDeepgramFluxRequestEncodingEnum> get serializer => _$workersAiPostRunCfDeepgramFluxRequestEncodingSerializer;
+  static Serializer<WorkersAiPostRunCfDeepgramFluxRequestEncodingEnum> get serializer => _$workersAiPostRunCfDeepgramFluxRequestEncodingEnumSerializer;
 
   const WorkersAiPostRunCfDeepgramFluxRequestEncodingEnum._(String name): super(name);
 
-  static BuiltSet<WorkersAiPostRunCfDeepgramFluxRequestEncodingEnum> get values => _$workersAiPostRunCfDeepgramFluxRequestEncodingValues;
-  static WorkersAiPostRunCfDeepgramFluxRequestEncodingEnum valueOf(String name) => _$workersAiPostRunCfDeepgramFluxRequestEncodingValueOf(name);
+  static BuiltSet<WorkersAiPostRunCfDeepgramFluxRequestEncodingEnum> get values => _$workersAiPostRunCfDeepgramFluxRequestEncodingEnumValues;
+  static WorkersAiPostRunCfDeepgramFluxRequestEncodingEnum valueOf(String name) => _$workersAiPostRunCfDeepgramFluxRequestEncodingEnumValueOf(name);
 }
 
 class WorkersAiPostRunCfDeepgramFluxRequestMipOptOutEnum extends EnumClass {
@@ -265,11 +265,11 @@ class WorkersAiPostRunCfDeepgramFluxRequestMipOptOutEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'false')
   static const WorkersAiPostRunCfDeepgramFluxRequestMipOptOutEnum false_ = _$workersAiPostRunCfDeepgramFluxRequestMipOptOutEnum_false_;
 
-  static Serializer<WorkersAiPostRunCfDeepgramFluxRequestMipOptOutEnum> get serializer => _$workersAiPostRunCfDeepgramFluxRequestMipOptOutSerializer;
+  static Serializer<WorkersAiPostRunCfDeepgramFluxRequestMipOptOutEnum> get serializer => _$workersAiPostRunCfDeepgramFluxRequestMipOptOutEnumSerializer;
 
   const WorkersAiPostRunCfDeepgramFluxRequestMipOptOutEnum._(String name): super(name);
 
-  static BuiltSet<WorkersAiPostRunCfDeepgramFluxRequestMipOptOutEnum> get values => _$workersAiPostRunCfDeepgramFluxRequestMipOptOutValues;
-  static WorkersAiPostRunCfDeepgramFluxRequestMipOptOutEnum valueOf(String name) => _$workersAiPostRunCfDeepgramFluxRequestMipOptOutValueOf(name);
+  static BuiltSet<WorkersAiPostRunCfDeepgramFluxRequestMipOptOutEnum> get values => _$workersAiPostRunCfDeepgramFluxRequestMipOptOutEnumValues;
+  static WorkersAiPostRunCfDeepgramFluxRequestMipOptOutEnum valueOf(String name) => _$workersAiPostRunCfDeepgramFluxRequestMipOptOutEnumValueOf(name);
 }
 

@@ -213,12 +213,12 @@ class PrivateDestinationL4ProtocolEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'udp')
   static const PrivateDestinationL4ProtocolEnum udp = _$privateDestinationL4ProtocolEnum_udp;
 
-  static Serializer<PrivateDestinationL4ProtocolEnum> get serializer => _$privateDestinationL4ProtocolSerializer;
+  static Serializer<PrivateDestinationL4ProtocolEnum> get serializer => _$privateDestinationL4ProtocolEnumSerializer;
 
   const PrivateDestinationL4ProtocolEnum._(String name): super(name);
 
-  static BuiltSet<PrivateDestinationL4ProtocolEnum> get values => _$privateDestinationL4ProtocolValues;
-  static PrivateDestinationL4ProtocolEnum valueOf(String name) => _$privateDestinationL4ProtocolValueOf(name);
+  static BuiltSet<PrivateDestinationL4ProtocolEnum> get values => _$privateDestinationL4ProtocolEnumValues;
+  static PrivateDestinationL4ProtocolEnum valueOf(String name) => _$privateDestinationL4ProtocolEnumValueOf(name);
 }
 
 class PrivateDestinationTypeEnum extends EnumClass {
@@ -226,11 +226,11 @@ class PrivateDestinationTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'private')
   static const PrivateDestinationTypeEnum private = _$privateDestinationTypeEnum_private;
 
-  static Serializer<PrivateDestinationTypeEnum> get serializer => _$privateDestinationTypeSerializer;
+  static Serializer<PrivateDestinationTypeEnum> get serializer => _$privateDestinationTypeEnumSerializer;
 
   const PrivateDestinationTypeEnum._(String name): super(name);
 
-  static BuiltSet<PrivateDestinationTypeEnum> get values => _$privateDestinationTypeValues;
-  static PrivateDestinationTypeEnum valueOf(String name) => _$privateDestinationTypeValueOf(name);
+  static BuiltSet<PrivateDestinationTypeEnum> get values => _$privateDestinationTypeEnumValues;
+  static PrivateDestinationTypeEnum valueOf(String name) => _$privateDestinationTypeEnumValueOf(name);
 }
 

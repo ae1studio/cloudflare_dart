@@ -14,14 +14,14 @@ part 'tls_certificates_and_hostnames_zone_authenticated_origin_pull.g.dart';
 ///
 /// Properties:
 /// * [certificate] - The zone's leaf certificate.
-/// * [enabled] - Indicates whether zone-level authenticated origin pulls is enabled.
-/// * [id] - Identifier.
-/// * [privateKey] - The zone's private key.
 /// * [expiresOn] - When the certificate from the authority expires.
+/// * [id] - Identifier.
 /// * [issuer] - The certificate authority that issued the certificate.
 /// * [signature] - The type of hash used for the certificate.
 /// * [status] 
 /// * [uploadedOn] - This is the time the certificate was uploaded.
+/// * [enabled] - Indicates whether zone-level authenticated origin pulls is enabled.
+/// * [privateKey] - The zone's private key.
 @BuiltValue()
 abstract class TlsCertificatesAndHostnamesZoneAuthenticatedOriginPull implements TlsCertificatesAndHostnamesCertificateObject, Built<TlsCertificatesAndHostnamesZoneAuthenticatedOriginPull, TlsCertificatesAndHostnamesZoneAuthenticatedOriginPullBuilder> {
   /// The zone's private key.

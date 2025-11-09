@@ -315,11 +315,11 @@ class GetAllRecordings200ResponseAllOfDataInnerStatusEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'PAUSED')
   static const GetAllRecordings200ResponseAllOfDataInnerStatusEnum PAUSED = _$getAllRecordings200ResponseAllOfDataInnerStatusEnum_PAUSED;
 
-  static Serializer<GetAllRecordings200ResponseAllOfDataInnerStatusEnum> get serializer => _$getAllRecordings200ResponseAllOfDataInnerStatusSerializer;
+  static Serializer<GetAllRecordings200ResponseAllOfDataInnerStatusEnum> get serializer => _$getAllRecordings200ResponseAllOfDataInnerStatusEnumSerializer;
 
   const GetAllRecordings200ResponseAllOfDataInnerStatusEnum._(String name): super(name);
 
-  static BuiltSet<GetAllRecordings200ResponseAllOfDataInnerStatusEnum> get values => _$getAllRecordings200ResponseAllOfDataInnerStatusValues;
-  static GetAllRecordings200ResponseAllOfDataInnerStatusEnum valueOf(String name) => _$getAllRecordings200ResponseAllOfDataInnerStatusValueOf(name);
+  static BuiltSet<GetAllRecordings200ResponseAllOfDataInnerStatusEnum> get values => _$getAllRecordings200ResponseAllOfDataInnerStatusEnumValues;
+  static GetAllRecordings200ResponseAllOfDataInnerStatusEnum valueOf(String name) => _$getAllRecordings200ResponseAllOfDataInnerStatusEnumValueOf(name);
 }
 

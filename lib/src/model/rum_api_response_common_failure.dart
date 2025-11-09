@@ -161,11 +161,11 @@ class _$RumApiResponseCommonFailureSerializer implements PrimitiveSerializer<Rum
 class RumApiResponseCommonFailureResultEnum extends EnumClass {
 
 
-  static Serializer<RumApiResponseCommonFailureResultEnum> get serializer => _$rumApiResponseCommonFailureResultSerializer;
+  static Serializer<RumApiResponseCommonFailureResultEnum> get serializer => _$rumApiResponseCommonFailureResultEnumSerializer;
 
   const RumApiResponseCommonFailureResultEnum._(String name): super(name);
 
-  static BuiltSet<RumApiResponseCommonFailureResultEnum> get values => _$rumApiResponseCommonFailureResultValues;
-  static RumApiResponseCommonFailureResultEnum valueOf(String name) => _$rumApiResponseCommonFailureResultValueOf(name);
+  static BuiltSet<RumApiResponseCommonFailureResultEnum> get values => _$rumApiResponseCommonFailureResultEnumValues;
+  static RumApiResponseCommonFailureResultEnum valueOf(String name) => _$rumApiResponseCommonFailureResultEnumValueOf(name);
 }
 

@@ -150,11 +150,11 @@ class _$WaitingRoomCreateEvent4XXResponseSerializer implements PrimitiveSerializ
 class WaitingRoomCreateEvent4XXResponseResultEnum extends EnumClass {
 
 
-  static Serializer<WaitingRoomCreateEvent4XXResponseResultEnum> get serializer => _$waitingRoomCreateEvent4XXResponseResultSerializer;
+  static Serializer<WaitingRoomCreateEvent4XXResponseResultEnum> get serializer => _$waitingRoomCreateEvent4XXResponseResultEnumSerializer;
 
   const WaitingRoomCreateEvent4XXResponseResultEnum._(String name): super(name);
 
-  static BuiltSet<WaitingRoomCreateEvent4XXResponseResultEnum> get values => _$waitingRoomCreateEvent4XXResponseResultValues;
-  static WaitingRoomCreateEvent4XXResponseResultEnum valueOf(String name) => _$waitingRoomCreateEvent4XXResponseResultValueOf(name);
+  static BuiltSet<WaitingRoomCreateEvent4XXResponseResultEnum> get values => _$waitingRoomCreateEvent4XXResponseResultEnumValues;
+  static WaitingRoomCreateEvent4XXResponseResultEnum valueOf(String name) => _$waitingRoomCreateEvent4XXResponseResultEnumValueOf(name);
 }
 

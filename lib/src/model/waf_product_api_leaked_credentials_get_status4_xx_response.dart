@@ -148,11 +148,11 @@ class _$WafProductApiLeakedCredentialsGetStatus4XXResponseSerializer implements 
 class WafProductApiLeakedCredentialsGetStatus4XXResponseResultEnum extends EnumClass {
 
 
-  static Serializer<WafProductApiLeakedCredentialsGetStatus4XXResponseResultEnum> get serializer => _$wafProductApiLeakedCredentialsGetStatus4XXResponseResultSerializer;
+  static Serializer<WafProductApiLeakedCredentialsGetStatus4XXResponseResultEnum> get serializer => _$wafProductApiLeakedCredentialsGetStatus4XXResponseResultEnumSerializer;
 
   const WafProductApiLeakedCredentialsGetStatus4XXResponseResultEnum._(String name): super(name);
 
-  static BuiltSet<WafProductApiLeakedCredentialsGetStatus4XXResponseResultEnum> get values => _$wafProductApiLeakedCredentialsGetStatus4XXResponseResultValues;
-  static WafProductApiLeakedCredentialsGetStatus4XXResponseResultEnum valueOf(String name) => _$wafProductApiLeakedCredentialsGetStatus4XXResponseResultValueOf(name);
+  static BuiltSet<WafProductApiLeakedCredentialsGetStatus4XXResponseResultEnum> get values => _$wafProductApiLeakedCredentialsGetStatus4XXResponseResultEnumValues;
+  static WafProductApiLeakedCredentialsGetStatus4XXResponseResultEnum valueOf(String name) => _$wafProductApiLeakedCredentialsGetStatus4XXResponseResultEnumValueOf(name);
 }
 

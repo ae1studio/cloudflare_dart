@@ -9,7 +9,7 @@ part of 'connectivity_services_post200_response.dart';
 class _$ConnectivityServicesPost200Response
     extends ConnectivityServicesPost200Response {
   @override
-  final InfraServiceConfig? result;
+  final InfraHttpServiceConfig? result;
   @override
   final BuiltList<AccessMessagesInner> errors;
   @override
@@ -76,10 +76,10 @@ class ConnectivityServicesPost200ResponseBuilder
         InfraApiResponseSingleBuilder {
   _$ConnectivityServicesPost200Response? _$v;
 
-  InfraServiceConfigBuilder? _result;
-  InfraServiceConfigBuilder get result =>
-      _$this._result ??= InfraServiceConfigBuilder();
-  set result(covariant InfraServiceConfigBuilder? result) =>
+  InfraHttpServiceConfigBuilder? _result;
+  InfraHttpServiceConfigBuilder get result =>
+      _$this._result ??= InfraHttpServiceConfigBuilder();
+  set result(covariant InfraHttpServiceConfigBuilder? result) =>
       _$this._result = result;
 
   ListBuilder<AccessMessagesInner>? _errors;

@@ -209,11 +209,11 @@ class AccessSchemasAzureADAllOfConfigPromptEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'none')
   static const AccessSchemasAzureADAllOfConfigPromptEnum none = _$accessSchemasAzureADAllOfConfigPromptEnum_none;
 
-  static Serializer<AccessSchemasAzureADAllOfConfigPromptEnum> get serializer => _$accessSchemasAzureADAllOfConfigPromptSerializer;
+  static Serializer<AccessSchemasAzureADAllOfConfigPromptEnum> get serializer => _$accessSchemasAzureADAllOfConfigPromptEnumSerializer;
 
   const AccessSchemasAzureADAllOfConfigPromptEnum._(String name): super(name);
 
-  static BuiltSet<AccessSchemasAzureADAllOfConfigPromptEnum> get values => _$accessSchemasAzureADAllOfConfigPromptValues;
-  static AccessSchemasAzureADAllOfConfigPromptEnum valueOf(String name) => _$accessSchemasAzureADAllOfConfigPromptValueOf(name);
+  static BuiltSet<AccessSchemasAzureADAllOfConfigPromptEnum> get values => _$accessSchemasAzureADAllOfConfigPromptEnumValues;
+  static AccessSchemasAzureADAllOfConfigPromptEnum valueOf(String name) => _$accessSchemasAzureADAllOfConfigPromptEnumValueOf(name);
 }
 

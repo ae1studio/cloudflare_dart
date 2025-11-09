@@ -3,19 +3,17 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:cloudflare_dart/src/model/spectrum_config_app_identifier.dart';
-import 'package:cloudflare_dart/src/model/spectrum_config_edge_ips.dart';
-import 'package:cloudflare_dart/src/model/spectrum_config_paygo_app_config.dart';
-import 'package:cloudflare_dart/src/model/spectrum_config_created.dart';
-import 'package:cloudflare_dart/src/model/spectrum_config_origin_dns.dart';
 import 'package:cloudflare_dart/src/model/spectrum_config_tls.dart';
-import 'package:cloudflare_dart/src/model/spectrum_config_modified.dart';
+import 'package:cloudflare_dart/src/model/spectrum_config_edge_ips.dart';
 import 'package:built_collection/built_collection.dart';
 import 'package:cloudflare_dart/src/model/spectrum_config_app_config.dart';
+import 'package:cloudflare_dart/src/model/spectrum_config_paygo_app_config.dart';
 import 'package:cloudflare_dart/src/model/spectrum_config_proxy_protocol.dart';
 import 'package:cloudflare_dart/src/model/spectrum_config_dns.dart';
+import 'package:cloudflare_dart/src/model/spectrum_config_origin_dns.dart';
 import 'package:cloudflare_dart/src/model/spectrum_config_origin_port.dart';
 import 'package:cloudflare_dart/src/model/spectrum_config_traffic_type.dart';
+import 'package:built_value/json_object.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 import 'package:one_of/one_of.dart';

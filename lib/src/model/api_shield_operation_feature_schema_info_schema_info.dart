@@ -160,11 +160,11 @@ class ApiShieldOperationFeatureSchemaInfoSchemaInfoMitigationActionEnum extends 
   @BuiltValueEnumConst(wireName: r'block')
   static const ApiShieldOperationFeatureSchemaInfoSchemaInfoMitigationActionEnum block = _$apiShieldOperationFeatureSchemaInfoSchemaInfoMitigationActionEnum_block;
 
-  static Serializer<ApiShieldOperationFeatureSchemaInfoSchemaInfoMitigationActionEnum> get serializer => _$apiShieldOperationFeatureSchemaInfoSchemaInfoMitigationActionSerializer;
+  static Serializer<ApiShieldOperationFeatureSchemaInfoSchemaInfoMitigationActionEnum> get serializer => _$apiShieldOperationFeatureSchemaInfoSchemaInfoMitigationActionEnumSerializer;
 
   const ApiShieldOperationFeatureSchemaInfoSchemaInfoMitigationActionEnum._(String name): super(name);
 
-  static BuiltSet<ApiShieldOperationFeatureSchemaInfoSchemaInfoMitigationActionEnum> get values => _$apiShieldOperationFeatureSchemaInfoSchemaInfoMitigationActionValues;
-  static ApiShieldOperationFeatureSchemaInfoSchemaInfoMitigationActionEnum valueOf(String name) => _$apiShieldOperationFeatureSchemaInfoSchemaInfoMitigationActionValueOf(name);
+  static BuiltSet<ApiShieldOperationFeatureSchemaInfoSchemaInfoMitigationActionEnum> get values => _$apiShieldOperationFeatureSchemaInfoSchemaInfoMitigationActionEnumValues;
+  static ApiShieldOperationFeatureSchemaInfoSchemaInfoMitigationActionEnum valueOf(String name) => _$apiShieldOperationFeatureSchemaInfoSchemaInfoMitigationActionEnumValueOf(name);
 }
 

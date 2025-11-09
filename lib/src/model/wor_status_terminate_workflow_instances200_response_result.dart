@@ -113,11 +113,11 @@ class WorStatusTerminateWorkflowInstances200ResponseResultStatusEnum extends Enu
   @BuiltValueEnumConst(wireName: r'not_running')
   static const WorStatusTerminateWorkflowInstances200ResponseResultStatusEnum notRunning = _$worStatusTerminateWorkflowInstances200ResponseResultStatusEnum_notRunning;
 
-  static Serializer<WorStatusTerminateWorkflowInstances200ResponseResultStatusEnum> get serializer => _$worStatusTerminateWorkflowInstances200ResponseResultStatusSerializer;
+  static Serializer<WorStatusTerminateWorkflowInstances200ResponseResultStatusEnum> get serializer => _$worStatusTerminateWorkflowInstances200ResponseResultStatusEnumSerializer;
 
   const WorStatusTerminateWorkflowInstances200ResponseResultStatusEnum._(String name): super(name);
 
-  static BuiltSet<WorStatusTerminateWorkflowInstances200ResponseResultStatusEnum> get values => _$worStatusTerminateWorkflowInstances200ResponseResultStatusValues;
-  static WorStatusTerminateWorkflowInstances200ResponseResultStatusEnum valueOf(String name) => _$worStatusTerminateWorkflowInstances200ResponseResultStatusValueOf(name);
+  static BuiltSet<WorStatusTerminateWorkflowInstances200ResponseResultStatusEnum> get values => _$worStatusTerminateWorkflowInstances200ResponseResultStatusEnumValues;
+  static WorStatusTerminateWorkflowInstances200ResponseResultStatusEnum valueOf(String name) => _$worStatusTerminateWorkflowInstances200ResponseResultStatusEnumValueOf(name);
 }
 

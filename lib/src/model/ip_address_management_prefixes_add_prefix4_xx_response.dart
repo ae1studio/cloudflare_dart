@@ -150,11 +150,11 @@ class _$IpAddressManagementPrefixesAddPrefix4XXResponseSerializer implements Pri
 class IpAddressManagementPrefixesAddPrefix4XXResponseResultEnum extends EnumClass {
 
 
-  static Serializer<IpAddressManagementPrefixesAddPrefix4XXResponseResultEnum> get serializer => _$ipAddressManagementPrefixesAddPrefix4XXResponseResultSerializer;
+  static Serializer<IpAddressManagementPrefixesAddPrefix4XXResponseResultEnum> get serializer => _$ipAddressManagementPrefixesAddPrefix4XXResponseResultEnumSerializer;
 
   const IpAddressManagementPrefixesAddPrefix4XXResponseResultEnum._(String name): super(name);
 
-  static BuiltSet<IpAddressManagementPrefixesAddPrefix4XXResponseResultEnum> get values => _$ipAddressManagementPrefixesAddPrefix4XXResponseResultValues;
-  static IpAddressManagementPrefixesAddPrefix4XXResponseResultEnum valueOf(String name) => _$ipAddressManagementPrefixesAddPrefix4XXResponseResultValueOf(name);
+  static BuiltSet<IpAddressManagementPrefixesAddPrefix4XXResponseResultEnum> get values => _$ipAddressManagementPrefixesAddPrefix4XXResponseResultEnumValues;
+  static IpAddressManagementPrefixesAddPrefix4XXResponseResultEnum valueOf(String name) => _$ipAddressManagementPrefixesAddPrefix4XXResponseResultEnumValueOf(name);
 }
 

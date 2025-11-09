@@ -297,11 +297,11 @@ class ZarazCustomManagedComponentTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'custom-mc')
   static const ZarazCustomManagedComponentTypeEnum customMc = _$zarazCustomManagedComponentTypeEnum_customMc;
 
-  static Serializer<ZarazCustomManagedComponentTypeEnum> get serializer => _$zarazCustomManagedComponentTypeSerializer;
+  static Serializer<ZarazCustomManagedComponentTypeEnum> get serializer => _$zarazCustomManagedComponentTypeEnumSerializer;
 
   const ZarazCustomManagedComponentTypeEnum._(String name): super(name);
 
-  static BuiltSet<ZarazCustomManagedComponentTypeEnum> get values => _$zarazCustomManagedComponentTypeValues;
-  static ZarazCustomManagedComponentTypeEnum valueOf(String name) => _$zarazCustomManagedComponentTypeValueOf(name);
+  static BuiltSet<ZarazCustomManagedComponentTypeEnum> get values => _$zarazCustomManagedComponentTypeEnumValues;
+  static ZarazCustomManagedComponentTypeEnum valueOf(String name) => _$zarazCustomManagedComponentTypeEnumValueOf(name);
 }
 

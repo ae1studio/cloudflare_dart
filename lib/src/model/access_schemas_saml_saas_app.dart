@@ -307,12 +307,12 @@ class AccessSchemasSamlSaasAppAuthTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'oidc')
   static const AccessSchemasSamlSaasAppAuthTypeEnum oidc = _$accessSchemasSamlSaasAppAuthTypeEnum_oidc;
 
-  static Serializer<AccessSchemasSamlSaasAppAuthTypeEnum> get serializer => _$accessSchemasSamlSaasAppAuthTypeSerializer;
+  static Serializer<AccessSchemasSamlSaasAppAuthTypeEnum> get serializer => _$accessSchemasSamlSaasAppAuthTypeEnumSerializer;
 
   const AccessSchemasSamlSaasAppAuthTypeEnum._(String name): super(name);
 
-  static BuiltSet<AccessSchemasSamlSaasAppAuthTypeEnum> get values => _$accessSchemasSamlSaasAppAuthTypeValues;
-  static AccessSchemasSamlSaasAppAuthTypeEnum valueOf(String name) => _$accessSchemasSamlSaasAppAuthTypeValueOf(name);
+  static BuiltSet<AccessSchemasSamlSaasAppAuthTypeEnum> get values => _$accessSchemasSamlSaasAppAuthTypeEnumValues;
+  static AccessSchemasSamlSaasAppAuthTypeEnum valueOf(String name) => _$accessSchemasSamlSaasAppAuthTypeEnumValueOf(name);
 }
 
 class AccessSchemasSamlSaasAppNameIdFormatEnum extends EnumClass {
@@ -324,11 +324,11 @@ class AccessSchemasSamlSaasAppNameIdFormatEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'email')
   static const AccessSchemasSamlSaasAppNameIdFormatEnum email = _$accessSchemasSamlSaasAppNameIdFormatEnum_email;
 
-  static Serializer<AccessSchemasSamlSaasAppNameIdFormatEnum> get serializer => _$accessSchemasSamlSaasAppNameIdFormatSerializer;
+  static Serializer<AccessSchemasSamlSaasAppNameIdFormatEnum> get serializer => _$accessSchemasSamlSaasAppNameIdFormatEnumSerializer;
 
   const AccessSchemasSamlSaasAppNameIdFormatEnum._(String name): super(name);
 
-  static BuiltSet<AccessSchemasSamlSaasAppNameIdFormatEnum> get values => _$accessSchemasSamlSaasAppNameIdFormatValues;
-  static AccessSchemasSamlSaasAppNameIdFormatEnum valueOf(String name) => _$accessSchemasSamlSaasAppNameIdFormatValueOf(name);
+  static BuiltSet<AccessSchemasSamlSaasAppNameIdFormatEnum> get values => _$accessSchemasSamlSaasAppNameIdFormatEnumValues;
+  static AccessSchemasSamlSaasAppNameIdFormatEnum valueOf(String name) => _$accessSchemasSamlSaasAppNameIdFormatEnumValueOf(name);
 }
 

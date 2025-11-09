@@ -163,11 +163,11 @@ class PostCreateEventRelationshipRequestTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'attributed_to')
   static const PostCreateEventRelationshipRequestTypeEnum attributedTo = _$postCreateEventRelationshipRequestTypeEnum_attributedTo;
 
-  static Serializer<PostCreateEventRelationshipRequestTypeEnum> get serializer => _$postCreateEventRelationshipRequestTypeSerializer;
+  static Serializer<PostCreateEventRelationshipRequestTypeEnum> get serializer => _$postCreateEventRelationshipRequestTypeEnumSerializer;
 
   const PostCreateEventRelationshipRequestTypeEnum._(String name): super(name);
 
-  static BuiltSet<PostCreateEventRelationshipRequestTypeEnum> get values => _$postCreateEventRelationshipRequestTypeValues;
-  static PostCreateEventRelationshipRequestTypeEnum valueOf(String name) => _$postCreateEventRelationshipRequestTypeValueOf(name);
+  static BuiltSet<PostCreateEventRelationshipRequestTypeEnum> get values => _$postCreateEventRelationshipRequestTypeEnumValues;
+  static PostCreateEventRelationshipRequestTypeEnum valueOf(String name) => _$postCreateEventRelationshipRequestTypeEnumValueOf(name);
 }
 

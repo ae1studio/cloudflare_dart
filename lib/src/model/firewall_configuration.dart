@@ -81,11 +81,11 @@ class FirewallConfigurationTargetEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'country')
   static const FirewallConfigurationTargetEnum country = _$firewallConfigurationTargetEnum_country;
 
-  static Serializer<FirewallConfigurationTargetEnum> get serializer => _$firewallConfigurationTargetSerializer;
+  static Serializer<FirewallConfigurationTargetEnum> get serializer => _$firewallConfigurationTargetEnumSerializer;
 
   const FirewallConfigurationTargetEnum._(String name): super(name);
 
-  static BuiltSet<FirewallConfigurationTargetEnum> get values => _$firewallConfigurationTargetValues;
-  static FirewallConfigurationTargetEnum valueOf(String name) => _$firewallConfigurationTargetValueOf(name);
+  static BuiltSet<FirewallConfigurationTargetEnum> get values => _$firewallConfigurationTargetEnumValues;
+  static FirewallConfigurationTargetEnum valueOf(String name) => _$firewallConfigurationTargetEnumValueOf(name);
 }
 

@@ -221,11 +221,11 @@ class CloudflarePipelinesSourceFieldTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'list')
   static const CloudflarePipelinesSourceFieldTypeEnum list = _$cloudflarePipelinesSourceFieldTypeEnum_list;
 
-  static Serializer<CloudflarePipelinesSourceFieldTypeEnum> get serializer => _$cloudflarePipelinesSourceFieldTypeSerializer;
+  static Serializer<CloudflarePipelinesSourceFieldTypeEnum> get serializer => _$cloudflarePipelinesSourceFieldTypeEnumSerializer;
 
   const CloudflarePipelinesSourceFieldTypeEnum._(String name): super(name);
 
-  static BuiltSet<CloudflarePipelinesSourceFieldTypeEnum> get values => _$cloudflarePipelinesSourceFieldTypeValues;
-  static CloudflarePipelinesSourceFieldTypeEnum valueOf(String name) => _$cloudflarePipelinesSourceFieldTypeValueOf(name);
+  static BuiltSet<CloudflarePipelinesSourceFieldTypeEnum> get values => _$cloudflarePipelinesSourceFieldTypeEnumValues;
+  static CloudflarePipelinesSourceFieldTypeEnum valueOf(String name) => _$cloudflarePipelinesSourceFieldTypeEnumValueOf(name);
 }
 

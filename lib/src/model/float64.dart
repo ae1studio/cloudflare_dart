@@ -111,11 +111,11 @@ class Float64TypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'float64')
   static const Float64TypeEnum float64 = _$float64TypeEnum_float64;
 
-  static Serializer<Float64TypeEnum> get serializer => _$float64TypeSerializer;
+  static Serializer<Float64TypeEnum> get serializer => _$float64TypeEnumSerializer;
 
   const Float64TypeEnum._(String name): super(name);
 
-  static BuiltSet<Float64TypeEnum> get values => _$float64TypeValues;
-  static Float64TypeEnum valueOf(String name) => _$float64TypeValueOf(name);
+  static BuiltSet<Float64TypeEnum> get values => _$float64TypeEnumValues;
+  static Float64TypeEnum valueOf(String name) => _$float64TypeEnumValueOf(name);
 }
 

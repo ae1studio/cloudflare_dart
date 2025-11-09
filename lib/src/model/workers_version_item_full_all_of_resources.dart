@@ -4,7 +4,8 @@
 
 // ignore_for_file: unused_element
 import 'package:cloudflare_dart/src/model/workers_version_item_full_all_of_resources_script.dart';
-import 'package:cloudflare_dart/src/model/workers_version_item_full_all_of_resources_bindings.dart';
+import 'package:built_collection/built_collection.dart';
+import 'package:cloudflare_dart/src/model/workers_binding_item.dart';
 import 'package:cloudflare_dart/src/model/workers_version_item_full_all_of_resources_script_runtime.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
@@ -14,13 +15,14 @@ part 'workers_version_item_full_all_of_resources.g.dart';
 /// WorkersVersionItemFullAllOfResources
 ///
 /// Properties:
-/// * [bindings] 
+/// * [bindings] - List of bindings attached to a Worker. You can find more about bindings on our docs: https://developers.cloudflare.com/workers/configuration/multipart-upload-metadata/#bindings.
 /// * [script] 
 /// * [scriptRuntime] 
 @BuiltValue()
 abstract class WorkersVersionItemFullAllOfResources implements Built<WorkersVersionItemFullAllOfResources, WorkersVersionItemFullAllOfResourcesBuilder> {
+  /// List of bindings attached to a Worker. You can find more about bindings on our docs: https://developers.cloudflare.com/workers/configuration/multipart-upload-metadata/#bindings.
   @BuiltValueField(wireName: r'bindings')
-  WorkersVersionItemFullAllOfResourcesBindings? get bindings;
+  BuiltList<WorkersBindingItem>? get bindings;
 
   @BuiltValueField(wireName: r'script')
   WorkersVersionItemFullAllOfResourcesScript? get script;
@@ -55,7 +57,7 @@ class _$WorkersVersionItemFullAllOfResourcesSerializer implements PrimitiveSeria
       yield r'bindings';
       yield serializers.serialize(
         object.bindings,
-        specifiedType: const FullType(WorkersVersionItemFullAllOfResourcesBindings),
+        specifiedType: const FullType(BuiltList, [FullType(WorkersBindingItem)]),
       );
     }
     if (object.script != null) {
@@ -98,8 +100,8 @@ class _$WorkersVersionItemFullAllOfResourcesSerializer implements PrimitiveSeria
         case r'bindings':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(WorkersVersionItemFullAllOfResourcesBindings),
-          ) as WorkersVersionItemFullAllOfResourcesBindings;
+            specifiedType: const FullType(BuiltList, [FullType(WorkersBindingItem)]),
+          ) as BuiltList<WorkersBindingItem>;
           result.bindings.replace(valueDes);
           break;
         case r'script':

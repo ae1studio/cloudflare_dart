@@ -135,12 +135,12 @@ class ZonesWafIdEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'waf')
   static const ZonesWafIdEnum waf = _$zonesWafIdEnum_waf;
 
-  static Serializer<ZonesWafIdEnum> get serializer => _$zonesWafIdSerializer;
+  static Serializer<ZonesWafIdEnum> get serializer => _$zonesWafIdEnumSerializer;
 
   const ZonesWafIdEnum._(String name): super(name);
 
-  static BuiltSet<ZonesWafIdEnum> get values => _$zonesWafIdValues;
-  static ZonesWafIdEnum valueOf(String name) => _$zonesWafIdValueOf(name);
+  static BuiltSet<ZonesWafIdEnum> get values => _$zonesWafIdEnumValues;
+  static ZonesWafIdEnum valueOf(String name) => _$zonesWafIdEnumValueOf(name);
 }
 
 class ZonesWafValueEnum extends EnumClass {
@@ -152,11 +152,11 @@ class ZonesWafValueEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'off')
   static const ZonesWafValueEnum off = _$zonesWafValueEnum_off;
 
-  static Serializer<ZonesWafValueEnum> get serializer => _$zonesWafValueSerializer;
+  static Serializer<ZonesWafValueEnum> get serializer => _$zonesWafValueEnumSerializer;
 
   const ZonesWafValueEnum._(String name): super(name);
 
-  static BuiltSet<ZonesWafValueEnum> get values => _$zonesWafValueValues;
-  static ZonesWafValueEnum valueOf(String name) => _$zonesWafValueValueOf(name);
+  static BuiltSet<ZonesWafValueEnum> get values => _$zonesWafValueEnumValues;
+  static ZonesWafValueEnum valueOf(String name) => _$zonesWafValueEnumValueOf(name);
 }
 

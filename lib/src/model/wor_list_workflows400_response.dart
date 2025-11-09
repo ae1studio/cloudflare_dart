@@ -160,11 +160,11 @@ class _$WorListWorkflows400ResponseSerializer implements PrimitiveSerializer<Wor
 class WorListWorkflows400ResponseResultEnum extends EnumClass {
 
 
-  static Serializer<WorListWorkflows400ResponseResultEnum> get serializer => _$worListWorkflows400ResponseResultSerializer;
+  static Serializer<WorListWorkflows400ResponseResultEnum> get serializer => _$worListWorkflows400ResponseResultEnumSerializer;
 
   const WorListWorkflows400ResponseResultEnum._(String name): super(name);
 
-  static BuiltSet<WorListWorkflows400ResponseResultEnum> get values => _$worListWorkflows400ResponseResultValues;
-  static WorListWorkflows400ResponseResultEnum valueOf(String name) => _$worListWorkflows400ResponseResultValueOf(name);
+  static BuiltSet<WorListWorkflows400ResponseResultEnum> get values => _$worListWorkflows400ResponseResultEnumValues;
+  static WorListWorkflows400ResponseResultEnum valueOf(String name) => _$worListWorkflows400ResponseResultEnumValueOf(name);
 }
 

@@ -130,11 +130,11 @@ class InitActionEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'init')
   static const InitActionEnum init = _$initActionEnum_init;
 
-  static Serializer<InitActionEnum> get serializer => _$initActionSerializer;
+  static Serializer<InitActionEnum> get serializer => _$initActionEnumSerializer;
 
   const InitActionEnum._(String name): super(name);
 
-  static BuiltSet<InitActionEnum> get values => _$initActionValues;
-  static InitActionEnum valueOf(String name) => _$initActionValueOf(name);
+  static BuiltSet<InitActionEnum> get values => _$initActionEnumValues;
+  static InitActionEnum valueOf(String name) => _$initActionEnumValueOf(name);
 }
 

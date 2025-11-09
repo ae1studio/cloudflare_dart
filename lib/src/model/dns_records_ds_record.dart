@@ -248,11 +248,11 @@ class DnsRecordsDSRecordTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'DS')
   static const DnsRecordsDSRecordTypeEnum DS = _$dnsRecordsDSRecordTypeEnum_DS;
 
-  static Serializer<DnsRecordsDSRecordTypeEnum> get serializer => _$dnsRecordsDSRecordTypeSerializer;
+  static Serializer<DnsRecordsDSRecordTypeEnum> get serializer => _$dnsRecordsDSRecordTypeEnumSerializer;
 
   const DnsRecordsDSRecordTypeEnum._(String name): super(name);
 
-  static BuiltSet<DnsRecordsDSRecordTypeEnum> get values => _$dnsRecordsDSRecordTypeValues;
-  static DnsRecordsDSRecordTypeEnum valueOf(String name) => _$dnsRecordsDSRecordTypeValueOf(name);
+  static BuiltSet<DnsRecordsDSRecordTypeEnum> get values => _$dnsRecordsDSRecordTypeEnumValues;
+  static DnsRecordsDSRecordTypeEnum valueOf(String name) => _$dnsRecordsDSRecordTypeEnumValueOf(name);
 }
 

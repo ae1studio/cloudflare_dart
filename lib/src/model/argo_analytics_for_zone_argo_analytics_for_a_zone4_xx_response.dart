@@ -148,11 +148,11 @@ class _$ArgoAnalyticsForZoneArgoAnalyticsForAZone4XXResponseSerializer implement
 class ArgoAnalyticsForZoneArgoAnalyticsForAZone4XXResponseResultEnum extends EnumClass {
 
 
-  static Serializer<ArgoAnalyticsForZoneArgoAnalyticsForAZone4XXResponseResultEnum> get serializer => _$argoAnalyticsForZoneArgoAnalyticsForAZone4XXResponseResultSerializer;
+  static Serializer<ArgoAnalyticsForZoneArgoAnalyticsForAZone4XXResponseResultEnum> get serializer => _$argoAnalyticsForZoneArgoAnalyticsForAZone4XXResponseResultEnumSerializer;
 
   const ArgoAnalyticsForZoneArgoAnalyticsForAZone4XXResponseResultEnum._(String name): super(name);
 
-  static BuiltSet<ArgoAnalyticsForZoneArgoAnalyticsForAZone4XXResponseResultEnum> get values => _$argoAnalyticsForZoneArgoAnalyticsForAZone4XXResponseResultValues;
-  static ArgoAnalyticsForZoneArgoAnalyticsForAZone4XXResponseResultEnum valueOf(String name) => _$argoAnalyticsForZoneArgoAnalyticsForAZone4XXResponseResultValueOf(name);
+  static BuiltSet<ArgoAnalyticsForZoneArgoAnalyticsForAZone4XXResponseResultEnum> get values => _$argoAnalyticsForZoneArgoAnalyticsForAZone4XXResponseResultEnumValues;
+  static ArgoAnalyticsForZoneArgoAnalyticsForAZone4XXResponseResultEnum valueOf(String name) => _$argoAnalyticsForZoneArgoAnalyticsForAZone4XXResponseResultEnumValueOf(name);
 }
 

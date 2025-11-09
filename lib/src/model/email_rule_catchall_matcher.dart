@@ -113,11 +113,11 @@ class EmailRuleCatchallMatcherTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'all')
   static const EmailRuleCatchallMatcherTypeEnum all = _$emailRuleCatchallMatcherTypeEnum_all;
 
-  static Serializer<EmailRuleCatchallMatcherTypeEnum> get serializer => _$emailRuleCatchallMatcherTypeSerializer;
+  static Serializer<EmailRuleCatchallMatcherTypeEnum> get serializer => _$emailRuleCatchallMatcherTypeEnumSerializer;
 
   const EmailRuleCatchallMatcherTypeEnum._(String name): super(name);
 
-  static BuiltSet<EmailRuleCatchallMatcherTypeEnum> get values => _$emailRuleCatchallMatcherTypeValues;
-  static EmailRuleCatchallMatcherTypeEnum valueOf(String name) => _$emailRuleCatchallMatcherTypeValueOf(name);
+  static BuiltSet<EmailRuleCatchallMatcherTypeEnum> get values => _$emailRuleCatchallMatcherTypeEnumValues;
+  static EmailRuleCatchallMatcherTypeEnum valueOf(String name) => _$emailRuleCatchallMatcherTypeEnumValueOf(name);
 }
 

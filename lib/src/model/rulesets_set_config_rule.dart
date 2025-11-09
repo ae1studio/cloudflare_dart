@@ -22,7 +22,7 @@ part 'rulesets_set_config_rule.g.dart';
 /// * [actionParameters] 
 /// * [categories] - The categories of the rule.
 /// * [description] 
-/// * [enabled] 
+/// * [enabled] - Whether the rule should be executed.
 /// * [exposedCredentialCheck] 
 /// * [expression] - The expression defining which traffic will match the rule.
 /// * [id] - The unique ID of the rule.
@@ -40,6 +40,7 @@ abstract class RulesetsSetConfigRule implements RulesetsRule, Built<RulesetsSetC
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(RulesetsSetConfigRuleBuilder b) => b
       ..description = ''
+      ..enabled = true
       ..actionParameters = {};
 
   @BuiltValueSerializer(custom: true)
@@ -293,11 +294,11 @@ class RulesetsSetConfigRuleActionEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'set_config')
   static const RulesetsSetConfigRuleActionEnum setConfig = _$rulesetsSetConfigRuleActionEnum_setConfig;
 
-  static Serializer<RulesetsSetConfigRuleActionEnum> get serializer => _$rulesetsSetConfigRuleActionSerializer;
+  static Serializer<RulesetsSetConfigRuleActionEnum> get serializer => _$rulesetsSetConfigRuleActionEnumSerializer;
 
   const RulesetsSetConfigRuleActionEnum._(String name): super(name);
 
-  static BuiltSet<RulesetsSetConfigRuleActionEnum> get values => _$rulesetsSetConfigRuleActionValues;
-  static RulesetsSetConfigRuleActionEnum valueOf(String name) => _$rulesetsSetConfigRuleActionValueOf(name);
+  static BuiltSet<RulesetsSetConfigRuleActionEnum> get values => _$rulesetsSetConfigRuleActionEnumValues;
+  static RulesetsSetConfigRuleActionEnum valueOf(String name) => _$rulesetsSetConfigRuleActionEnumValueOf(name);
 }
 

@@ -156,11 +156,11 @@ class ZonesSchemasAutomaticHttpsRewritesIdEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'automatic_https_rewrites')
   static const ZonesSchemasAutomaticHttpsRewritesIdEnum automaticHttpsRewrites = _$zonesSchemasAutomaticHttpsRewritesIdEnum_automaticHttpsRewrites;
 
-  static Serializer<ZonesSchemasAutomaticHttpsRewritesIdEnum> get serializer => _$zonesSchemasAutomaticHttpsRewritesIdSerializer;
+  static Serializer<ZonesSchemasAutomaticHttpsRewritesIdEnum> get serializer => _$zonesSchemasAutomaticHttpsRewritesIdEnumSerializer;
 
   const ZonesSchemasAutomaticHttpsRewritesIdEnum._(String name): super(name);
 
-  static BuiltSet<ZonesSchemasAutomaticHttpsRewritesIdEnum> get values => _$zonesSchemasAutomaticHttpsRewritesIdValues;
-  static ZonesSchemasAutomaticHttpsRewritesIdEnum valueOf(String name) => _$zonesSchemasAutomaticHttpsRewritesIdValueOf(name);
+  static BuiltSet<ZonesSchemasAutomaticHttpsRewritesIdEnum> get values => _$zonesSchemasAutomaticHttpsRewritesIdEnumValues;
+  static ZonesSchemasAutomaticHttpsRewritesIdEnum valueOf(String name) => _$zonesSchemasAutomaticHttpsRewritesIdEnumValueOf(name);
 }
 

@@ -111,11 +111,11 @@ class Int64TypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'int64')
   static const Int64TypeEnum int64 = _$int64TypeEnum_int64;
 
-  static Serializer<Int64TypeEnum> get serializer => _$int64TypeSerializer;
+  static Serializer<Int64TypeEnum> get serializer => _$int64TypeEnumSerializer;
 
   const Int64TypeEnum._(String name): super(name);
 
-  static BuiltSet<Int64TypeEnum> get values => _$int64TypeValues;
-  static Int64TypeEnum valueOf(String name) => _$int64TypeValueOf(name);
+  static BuiltSet<Int64TypeEnum> get values => _$int64TypeEnumValues;
+  static Int64TypeEnum valueOf(String name) => _$int64TypeEnumValueOf(name);
 }
 

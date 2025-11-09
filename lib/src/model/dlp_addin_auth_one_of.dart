@@ -127,11 +127,11 @@ class DlpAddinAuthOneOfTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'Org')
   static const DlpAddinAuthOneOfTypeEnum org = _$dlpAddinAuthOneOfTypeEnum_org;
 
-  static Serializer<DlpAddinAuthOneOfTypeEnum> get serializer => _$dlpAddinAuthOneOfTypeSerializer;
+  static Serializer<DlpAddinAuthOneOfTypeEnum> get serializer => _$dlpAddinAuthOneOfTypeEnumSerializer;
 
   const DlpAddinAuthOneOfTypeEnum._(String name): super(name);
 
-  static BuiltSet<DlpAddinAuthOneOfTypeEnum> get values => _$dlpAddinAuthOneOfTypeValues;
-  static DlpAddinAuthOneOfTypeEnum valueOf(String name) => _$dlpAddinAuthOneOfTypeValueOf(name);
+  static BuiltSet<DlpAddinAuthOneOfTypeEnum> get values => _$dlpAddinAuthOneOfTypeEnumValues;
+  static DlpAddinAuthOneOfTypeEnum valueOf(String name) => _$dlpAddinAuthOneOfTypeEnumValueOf(name);
 }
 

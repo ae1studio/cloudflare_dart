@@ -122,11 +122,11 @@ class WorChangeStatusWorkflowInstanceRequestStatusEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'restart')
   static const WorChangeStatusWorkflowInstanceRequestStatusEnum restart = _$worChangeStatusWorkflowInstanceRequestStatusEnum_restart;
 
-  static Serializer<WorChangeStatusWorkflowInstanceRequestStatusEnum> get serializer => _$worChangeStatusWorkflowInstanceRequestStatusSerializer;
+  static Serializer<WorChangeStatusWorkflowInstanceRequestStatusEnum> get serializer => _$worChangeStatusWorkflowInstanceRequestStatusEnumSerializer;
 
   const WorChangeStatusWorkflowInstanceRequestStatusEnum._(String name): super(name);
 
-  static BuiltSet<WorChangeStatusWorkflowInstanceRequestStatusEnum> get values => _$worChangeStatusWorkflowInstanceRequestStatusValues;
-  static WorChangeStatusWorkflowInstanceRequestStatusEnum valueOf(String name) => _$worChangeStatusWorkflowInstanceRequestStatusValueOf(name);
+  static BuiltSet<WorChangeStatusWorkflowInstanceRequestStatusEnum> get values => _$worChangeStatusWorkflowInstanceRequestStatusEnumValues;
+  static WorChangeStatusWorkflowInstanceRequestStatusEnum valueOf(String name) => _$worChangeStatusWorkflowInstanceRequestStatusEnumValueOf(name);
 }
 

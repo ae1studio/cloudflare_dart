@@ -3,14 +3,12 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:cloudflare_dart/src/model/access_updated_at.dart';
 import 'package:cloudflare_dart/src/model/access_scim_config.dart';
 import 'package:built_collection/built_collection.dart';
 import 'package:cloudflare_dart/src/model/access_app_policy_response.dart';
 import 'package:cloudflare_dart/src/model/access_type.dart';
 import 'package:cloudflare_dart/src/model/access_saas_props.dart';
 import 'package:cloudflare_dart/src/model/access_app_resp_embedded_policies.dart';
-import 'package:cloudflare_dart/src/model/access_created_at.dart';
 import 'package:cloudflare_dart/src/model/access_basic_app_response_props.dart';
 import 'package:cloudflare_dart/src/model/access_saas_props_saas_app.dart';
 import 'package:built_value/json_object.dart';
@@ -125,7 +123,7 @@ class _$SaaSApplication1Serializer implements PrimitiveSerializer<SaaSApplicatio
       yield r'created_at';
       yield serializers.serialize(
         object.createdAt,
-        specifiedType: const FullType(AccessCreatedAt),
+        specifiedType: const FullType(JsonObject),
       );
     }
     if (object.appLauncherVisible != null) {
@@ -167,7 +165,7 @@ class _$SaaSApplication1Serializer implements PrimitiveSerializer<SaaSApplicatio
       yield r'updated_at';
       yield serializers.serialize(
         object.updatedAt,
-        specifiedType: const FullType(AccessUpdatedAt),
+        specifiedType: const FullType(JsonObject),
       );
     }
   }
@@ -252,8 +250,8 @@ class _$SaaSApplication1Serializer implements PrimitiveSerializer<SaaSApplicatio
         case r'created_at':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(AccessCreatedAt),
-          ) as AccessCreatedAt;
+            specifiedType: const FullType(JsonObject),
+          ) as JsonObject;
           result.createdAt.replace(valueDes);
           break;
         case r'app_launcher_visible':
@@ -294,8 +292,8 @@ class _$SaaSApplication1Serializer implements PrimitiveSerializer<SaaSApplicatio
         case r'updated_at':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(AccessUpdatedAt),
-          ) as AccessUpdatedAt;
+            specifiedType: const FullType(JsonObject),
+          ) as JsonObject;
           result.updatedAt.replace(valueDes);
           break;
         default:

@@ -136,11 +136,11 @@ class ZeroTrustGatewayProxyEndpointsKindEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'identity')
   static const ZeroTrustGatewayProxyEndpointsKindEnum identity = _$zeroTrustGatewayProxyEndpointsKindEnum_identity;
 
-  static Serializer<ZeroTrustGatewayProxyEndpointsKindEnum> get serializer => _$zeroTrustGatewayProxyEndpointsKindSerializer;
+  static Serializer<ZeroTrustGatewayProxyEndpointsKindEnum> get serializer => _$zeroTrustGatewayProxyEndpointsKindEnumSerializer;
 
   const ZeroTrustGatewayProxyEndpointsKindEnum._(String name): super(name);
 
-  static BuiltSet<ZeroTrustGatewayProxyEndpointsKindEnum> get values => _$zeroTrustGatewayProxyEndpointsKindValues;
-  static ZeroTrustGatewayProxyEndpointsKindEnum valueOf(String name) => _$zeroTrustGatewayProxyEndpointsKindValueOf(name);
+  static BuiltSet<ZeroTrustGatewayProxyEndpointsKindEnum> get values => _$zeroTrustGatewayProxyEndpointsKindEnumValues;
+  static ZeroTrustGatewayProxyEndpointsKindEnum valueOf(String name) => _$zeroTrustGatewayProxyEndpointsKindEnumValueOf(name);
 }
 

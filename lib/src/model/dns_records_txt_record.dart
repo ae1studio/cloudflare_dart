@@ -229,11 +229,11 @@ class DnsRecordsTXTRecordTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'TXT')
   static const DnsRecordsTXTRecordTypeEnum TXT = _$dnsRecordsTXTRecordTypeEnum_TXT;
 
-  static Serializer<DnsRecordsTXTRecordTypeEnum> get serializer => _$dnsRecordsTXTRecordTypeSerializer;
+  static Serializer<DnsRecordsTXTRecordTypeEnum> get serializer => _$dnsRecordsTXTRecordTypeEnumSerializer;
 
   const DnsRecordsTXTRecordTypeEnum._(String name): super(name);
 
-  static BuiltSet<DnsRecordsTXTRecordTypeEnum> get values => _$dnsRecordsTXTRecordTypeValues;
-  static DnsRecordsTXTRecordTypeEnum valueOf(String name) => _$dnsRecordsTXTRecordTypeValueOf(name);
+  static BuiltSet<DnsRecordsTXTRecordTypeEnum> get values => _$dnsRecordsTXTRecordTypeEnumValues;
+  static DnsRecordsTXTRecordTypeEnum valueOf(String name) => _$dnsRecordsTXTRecordTypeEnumValueOf(name);
 }
 

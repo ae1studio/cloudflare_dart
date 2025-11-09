@@ -36,7 +36,7 @@ abstract class RealtimekitVideoConfigWatermark implements Built<RealtimekitVideo
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(RealtimekitVideoConfigWatermarkBuilder b) => b
-      ..position = const RealtimekitVideoConfigWatermarkPositionEnum._('left top');
+      ..position = RealtimekitVideoConfigWatermarkPositionEnum.valueOf('left top');
 
   @BuiltValueSerializer(custom: true)
   static Serializer<RealtimekitVideoConfigWatermark> get serializer => _$RealtimekitVideoConfigWatermarkSerializer();
@@ -163,11 +163,11 @@ class RealtimekitVideoConfigWatermarkPositionEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'right bottom')
   static const RealtimekitVideoConfigWatermarkPositionEnum rightBottom = _$realtimekitVideoConfigWatermarkPositionEnum_rightBottom;
 
-  static Serializer<RealtimekitVideoConfigWatermarkPositionEnum> get serializer => _$realtimekitVideoConfigWatermarkPositionSerializer;
+  static Serializer<RealtimekitVideoConfigWatermarkPositionEnum> get serializer => _$realtimekitVideoConfigWatermarkPositionEnumSerializer;
 
   const RealtimekitVideoConfigWatermarkPositionEnum._(String name): super(name);
 
-  static BuiltSet<RealtimekitVideoConfigWatermarkPositionEnum> get values => _$realtimekitVideoConfigWatermarkPositionValues;
-  static RealtimekitVideoConfigWatermarkPositionEnum valueOf(String name) => _$realtimekitVideoConfigWatermarkPositionValueOf(name);
+  static BuiltSet<RealtimekitVideoConfigWatermarkPositionEnum> get values => _$realtimekitVideoConfigWatermarkPositionEnumValues;
+  static RealtimekitVideoConfigWatermarkPositionEnum valueOf(String name) => _$realtimekitVideoConfigWatermarkPositionEnumValueOf(name);
 }
 

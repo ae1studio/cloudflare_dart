@@ -135,12 +135,12 @@ class ZonesCacheByDeviceTypeIdEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'cache_by_device_type')
   static const ZonesCacheByDeviceTypeIdEnum cacheByDeviceType = _$zonesCacheByDeviceTypeIdEnum_cacheByDeviceType;
 
-  static Serializer<ZonesCacheByDeviceTypeIdEnum> get serializer => _$zonesCacheByDeviceTypeIdSerializer;
+  static Serializer<ZonesCacheByDeviceTypeIdEnum> get serializer => _$zonesCacheByDeviceTypeIdEnumSerializer;
 
   const ZonesCacheByDeviceTypeIdEnum._(String name): super(name);
 
-  static BuiltSet<ZonesCacheByDeviceTypeIdEnum> get values => _$zonesCacheByDeviceTypeIdValues;
-  static ZonesCacheByDeviceTypeIdEnum valueOf(String name) => _$zonesCacheByDeviceTypeIdValueOf(name);
+  static BuiltSet<ZonesCacheByDeviceTypeIdEnum> get values => _$zonesCacheByDeviceTypeIdEnumValues;
+  static ZonesCacheByDeviceTypeIdEnum valueOf(String name) => _$zonesCacheByDeviceTypeIdEnumValueOf(name);
 }
 
 class ZonesCacheByDeviceTypeValueEnum extends EnumClass {
@@ -152,11 +152,11 @@ class ZonesCacheByDeviceTypeValueEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'off')
   static const ZonesCacheByDeviceTypeValueEnum off = _$zonesCacheByDeviceTypeValueEnum_off;
 
-  static Serializer<ZonesCacheByDeviceTypeValueEnum> get serializer => _$zonesCacheByDeviceTypeValueSerializer;
+  static Serializer<ZonesCacheByDeviceTypeValueEnum> get serializer => _$zonesCacheByDeviceTypeValueEnumSerializer;
 
   const ZonesCacheByDeviceTypeValueEnum._(String name): super(name);
 
-  static BuiltSet<ZonesCacheByDeviceTypeValueEnum> get values => _$zonesCacheByDeviceTypeValueValues;
-  static ZonesCacheByDeviceTypeValueEnum valueOf(String name) => _$zonesCacheByDeviceTypeValueValueOf(name);
+  static BuiltSet<ZonesCacheByDeviceTypeValueEnum> get values => _$zonesCacheByDeviceTypeValueEnumValues;
+  static ZonesCacheByDeviceTypeValueEnum valueOf(String name) => _$zonesCacheByDeviceTypeValueEnumValueOf(name);
 }
 

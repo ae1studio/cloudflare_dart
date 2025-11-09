@@ -31,7 +31,7 @@ abstract class RealtimekitWebhook implements Built<RealtimekitWebhook, Realtimek
 
   /// Events this webhook will send updates for
   @BuiltValueField(wireName: r'events')
-  BuiltList<RealtimekitWebhookRequestEventsEnum> get events;
+  BuiltList<RealtimekitWebhookEventsEnum> get events;
   // enum eventsEnum {  meeting.started,  meeting.ended,  meeting.participantJoined,  meeting.participantLeft,  meeting.chatSynced,  recording.statusUpdate,  livestreaming.statusUpdate,  meeting.transcript,  meeting.summary,  };
 
   /// ID of the webhook
@@ -86,7 +86,7 @@ class _$RealtimekitWebhookSerializer implements PrimitiveSerializer<RealtimekitW
     yield r'events';
     yield serializers.serialize(
       object.events,
-      specifiedType: const FullType(BuiltList, [FullType(RealtimekitWebhookRequestEventsEnum)]),
+      specifiedType: const FullType(BuiltList, [FullType(RealtimekitWebhookEventsEnum)]),
     );
     yield r'id';
     yield serializers.serialize(
@@ -148,8 +148,8 @@ class _$RealtimekitWebhookSerializer implements PrimitiveSerializer<RealtimekitW
         case r'events':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(BuiltList, [FullType(RealtimekitWebhookRequestEventsEnum)]),
-          ) as BuiltList<RealtimekitWebhookRequestEventsEnum>;
+            specifiedType: const FullType(BuiltList, [FullType(RealtimekitWebhookEventsEnum)]),
+          ) as BuiltList<RealtimekitWebhookEventsEnum>;
           result.events.replace(valueDes);
           break;
         case r'id':
@@ -207,5 +207,34 @@ class _$RealtimekitWebhookSerializer implements PrimitiveSerializer<RealtimekitW
     );
     return result.build();
   }
+}
+
+class RealtimekitWebhookEventsEnum extends EnumClass {
+
+  @BuiltValueEnumConst(wireName: r'meeting.started')
+  static const RealtimekitWebhookEventsEnum meetingPeriodStarted = _$realtimekitWebhookEventsEnum_meetingPeriodStarted;
+  @BuiltValueEnumConst(wireName: r'meeting.ended')
+  static const RealtimekitWebhookEventsEnum meetingPeriodEnded = _$realtimekitWebhookEventsEnum_meetingPeriodEnded;
+  @BuiltValueEnumConst(wireName: r'meeting.participantJoined')
+  static const RealtimekitWebhookEventsEnum meetingPeriodParticipantJoined = _$realtimekitWebhookEventsEnum_meetingPeriodParticipantJoined;
+  @BuiltValueEnumConst(wireName: r'meeting.participantLeft')
+  static const RealtimekitWebhookEventsEnum meetingPeriodParticipantLeft = _$realtimekitWebhookEventsEnum_meetingPeriodParticipantLeft;
+  @BuiltValueEnumConst(wireName: r'meeting.chatSynced')
+  static const RealtimekitWebhookEventsEnum meetingPeriodChatSynced = _$realtimekitWebhookEventsEnum_meetingPeriodChatSynced;
+  @BuiltValueEnumConst(wireName: r'recording.statusUpdate')
+  static const RealtimekitWebhookEventsEnum recordingPeriodStatusUpdate = _$realtimekitWebhookEventsEnum_recordingPeriodStatusUpdate;
+  @BuiltValueEnumConst(wireName: r'livestreaming.statusUpdate')
+  static const RealtimekitWebhookEventsEnum livestreamingPeriodStatusUpdate = _$realtimekitWebhookEventsEnum_livestreamingPeriodStatusUpdate;
+  @BuiltValueEnumConst(wireName: r'meeting.transcript')
+  static const RealtimekitWebhookEventsEnum meetingPeriodTranscript = _$realtimekitWebhookEventsEnum_meetingPeriodTranscript;
+  @BuiltValueEnumConst(wireName: r'meeting.summary')
+  static const RealtimekitWebhookEventsEnum meetingPeriodSummary = _$realtimekitWebhookEventsEnum_meetingPeriodSummary;
+
+  static Serializer<RealtimekitWebhookEventsEnum> get serializer => _$realtimekitWebhookEventsEnumSerializer;
+
+  const RealtimekitWebhookEventsEnum._(String name): super(name);
+
+  static BuiltSet<RealtimekitWebhookEventsEnum> get values => _$realtimekitWebhookEventsEnumValues;
+  static RealtimekitWebhookEventsEnum valueOf(String name) => _$realtimekitWebhookEventsEnumValueOf(name);
 }
 

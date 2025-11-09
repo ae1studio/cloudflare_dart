@@ -7,7 +7,6 @@ import 'package:cloudflare_dart/src/model/rulesets_ruleset_phase.dart';
 import 'package:cloudflare_dart/src/model/rulesets_skip_ruleset.dart';
 import 'package:built_collection/built_collection.dart';
 import 'package:cloudflare_dart/src/model/rulesets_skip_phase.dart';
-import 'package:built_value/json_object.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
@@ -232,11 +231,11 @@ class SkipRuleActionParametersProductsEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'zoneLockdown')
   static const SkipRuleActionParametersProductsEnum zoneLockdown = _$skipRuleActionParametersProductsEnum_zoneLockdown;
 
-  static Serializer<SkipRuleActionParametersProductsEnum> get serializer => _$skipRuleActionParametersProductsSerializer;
+  static Serializer<SkipRuleActionParametersProductsEnum> get serializer => _$skipRuleActionParametersProductsEnumSerializer;
 
   const SkipRuleActionParametersProductsEnum._(String name): super(name);
 
-  static BuiltSet<SkipRuleActionParametersProductsEnum> get values => _$skipRuleActionParametersProductsValues;
-  static SkipRuleActionParametersProductsEnum valueOf(String name) => _$skipRuleActionParametersProductsValueOf(name);
+  static BuiltSet<SkipRuleActionParametersProductsEnum> get values => _$skipRuleActionParametersProductsEnumValues;
+  static SkipRuleActionParametersProductsEnum valueOf(String name) => _$skipRuleActionParametersProductsEnumValueOf(name);
 }
 

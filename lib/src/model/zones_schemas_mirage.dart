@@ -158,11 +158,11 @@ class ZonesSchemasMirageIdEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'mirage')
   static const ZonesSchemasMirageIdEnum mirage = _$zonesSchemasMirageIdEnum_mirage;
 
-  static Serializer<ZonesSchemasMirageIdEnum> get serializer => _$zonesSchemasMirageIdSerializer;
+  static Serializer<ZonesSchemasMirageIdEnum> get serializer => _$zonesSchemasMirageIdEnumSerializer;
 
   const ZonesSchemasMirageIdEnum._(String name): super(name);
 
-  static BuiltSet<ZonesSchemasMirageIdEnum> get values => _$zonesSchemasMirageIdValues;
-  static ZonesSchemasMirageIdEnum valueOf(String name) => _$zonesSchemasMirageIdValueOf(name);
+  static BuiltSet<ZonesSchemasMirageIdEnum> get values => _$zonesSchemasMirageIdEnumValues;
+  static ZonesSchemasMirageIdEnum valueOf(String name) => _$zonesSchemasMirageIdEnumValueOf(name);
 }
 
