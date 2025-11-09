@@ -44,7 +44,8 @@ openapi-generator generate \
   -g dart-dio \
   -o "$OUTPUT_DIR" \
   --skip-validate-spec \
-  --additional-properties=pubName=cloudflare_dart,pubVersion=1.0.0,pubAuthor=ae1.dev,pubHomepage=https://github.com/ae1studio/cloudflare_dart
+  --global-property=generateAliasAsModel=true \
+  --additional-properties=pubName=cloudflare_dart,pubVersion=1.0.0,pubAuthor=ae1.dev,pubHomepage=https://github.com/ae1studio/cloudflare_dart,sortModelPropertiesByRequiredFlag=true,sortParamsByRequiredFlag=true,enumUnknownDefaultCase=true
 
 echo "Generation complete! Output directory: $OUTPUT_DIR"
 echo "Cleaning up temporary files..."
