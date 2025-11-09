@@ -45,7 +45,7 @@ openapi-generator generate \
   -o "$OUTPUT_DIR" \
   --skip-validate-spec \
   --global-property=generateAliasAsModel=true \
-  --additional-properties=pubName=cloudflare_dart,pubVersion=1.0.0,pubAuthor=ae1.dev,pubHomepage=https://github.com/ae1studio/cloudflare_dart,sortModelPropertiesByRequiredFlag=true,sortParamsByRequiredFlag=true,enumUnknownDefaultCase=true
+  --additional-properties=pubName=cloudflare_dart,pubVersion=1.0.0,pubAuthor=ae1.dev,pubHomepage=https://github.com/ae1studio/cloudflare_dart,sortModelPropertiesByRequiredFlag=true,sortParamsByRequiredFlag=true
 
 echo "Generation complete! Output directory: $OUTPUT_DIR"
 echo "Cleaning up temporary files..."
@@ -54,6 +54,9 @@ rm -rf "$TEMP_DIR"
 
 echo "Deduplicating enums..."
 python3 scripts/deduplicate_enums.py
+
+echo "Fixing serializers.dart issues..."
+python3 scripts/fix_serializers.py
 
 echo "Fixing missing imports using Dart analyzer..."
 python3 scripts/fix_missing_imports.py
