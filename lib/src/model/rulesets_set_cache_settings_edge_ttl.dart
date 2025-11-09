@@ -13,19 +13,19 @@ part 'rulesets_set_cache_settings_edge_ttl.g.dart';
 /// How long the Cloudflare edge network should cache the response.
 ///
 /// Properties:
-/// * [default_] - The edge TTL (in seconds) if you choose the \"override_origin\" mode.
 /// * [mode] - The edge TTL mode.
+/// * [default_] - The edge TTL (in seconds) if you choose the \"override_origin\" mode.
 /// * [statusCodeTtl] - A list of TTLs to apply to specific status codes or status code ranges.
 @BuiltValue()
 abstract class RulesetsSetCacheSettingsEdgeTTL implements Built<RulesetsSetCacheSettingsEdgeTTL, RulesetsSetCacheSettingsEdgeTTLBuilder> {
-  /// The edge TTL (in seconds) if you choose the \"override_origin\" mode.
-  @BuiltValueField(wireName: r'default')
-  int? get default_;
-
   /// The edge TTL mode.
   @BuiltValueField(wireName: r'mode')
   RulesetsSetCacheSettingsEdgeTTLModeEnum get mode;
   // enum modeEnum {  respect_origin,  bypass_by_default,  override_origin,  };
+
+  /// The edge TTL (in seconds) if you choose the \"override_origin\" mode.
+  @BuiltValueField(wireName: r'default')
+  int? get default_;
 
   /// A list of TTLs to apply to specific status codes or status code ranges.
   @BuiltValueField(wireName: r'status_code_ttl')
@@ -54,6 +54,11 @@ class _$RulesetsSetCacheSettingsEdgeTTLSerializer implements PrimitiveSerializer
     RulesetsSetCacheSettingsEdgeTTL object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    yield r'mode';
+    yield serializers.serialize(
+      object.mode,
+      specifiedType: const FullType(RulesetsSetCacheSettingsEdgeTTLModeEnum),
+    );
     if (object.default_ != null) {
       yield r'default';
       yield serializers.serialize(
@@ -61,11 +66,6 @@ class _$RulesetsSetCacheSettingsEdgeTTLSerializer implements PrimitiveSerializer
         specifiedType: const FullType(int),
       );
     }
-    yield r'mode';
-    yield serializers.serialize(
-      object.mode,
-      specifiedType: const FullType(RulesetsSetCacheSettingsEdgeTTLModeEnum),
-    );
     if (object.statusCodeTtl != null) {
       yield r'status_code_ttl';
       yield serializers.serialize(
@@ -96,19 +96,19 @@ class _$RulesetsSetCacheSettingsEdgeTTLSerializer implements PrimitiveSerializer
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'default':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
-          result.default_ = valueDes;
-          break;
         case r'mode':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(RulesetsSetCacheSettingsEdgeTTLModeEnum),
           ) as RulesetsSetCacheSettingsEdgeTTLModeEnum;
           result.mode = valueDes;
+          break;
+        case r'default':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(int),
+          ) as int;
+          result.default_ = valueDes;
           break;
         case r'status_code_ttl':
           final valueDes = serializers.deserialize(

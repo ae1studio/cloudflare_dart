@@ -76,16 +76,16 @@ class _$PostV4AccountsByAccountIdPipelinesV1SinksRequestTypeEnumSerializer
 class _$PostV4AccountsByAccountIdPipelinesV1SinksRequest
     extends PostV4AccountsByAccountIdPipelinesV1SinksRequest {
   @override
+  final String name;
+  @override
+  final PostV4AccountsByAccountIdPipelinesV1SinksRequestTypeEnum type;
+  @override
   final GetV4AccountsByAccountIdPipelinesV1Sinks200ResponseResultInnerConfig?
       config;
   @override
   final CloudflarePipelinesFormat? format;
   @override
-  final String name;
-  @override
   final CloudflarePipelinesConnectionSchema? schema;
-  @override
-  final PostV4AccountsByAccountIdPipelinesV1SinksRequestTypeEnum type;
 
   factory _$PostV4AccountsByAccountIdPipelinesV1SinksRequest(
           [void Function(
@@ -96,11 +96,11 @@ class _$PostV4AccountsByAccountIdPipelinesV1SinksRequest
           ._build();
 
   _$PostV4AccountsByAccountIdPipelinesV1SinksRequest._(
-      {this.config,
+      {required this.name,
+      required this.type,
+      this.config,
       this.format,
-      required this.name,
-      this.schema,
-      required this.type})
+      this.schema})
       : super._();
   @override
   PostV4AccountsByAccountIdPipelinesV1SinksRequest rebuild(
@@ -116,21 +116,21 @@ class _$PostV4AccountsByAccountIdPipelinesV1SinksRequest
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is PostV4AccountsByAccountIdPipelinesV1SinksRequest &&
+        name == other.name &&
+        type == other.type &&
         config == other.config &&
         format == other.format &&
-        name == other.name &&
-        schema == other.schema &&
-        type == other.type;
+        schema == other.schema;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
+    _$hash = $jc(_$hash, name.hashCode);
+    _$hash = $jc(_$hash, type.hashCode);
     _$hash = $jc(_$hash, config.hashCode);
     _$hash = $jc(_$hash, format.hashCode);
-    _$hash = $jc(_$hash, name.hashCode);
     _$hash = $jc(_$hash, schema.hashCode);
-    _$hash = $jc(_$hash, type.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -139,11 +139,11 @@ class _$PostV4AccountsByAccountIdPipelinesV1SinksRequest
   String toString() {
     return (newBuiltValueToStringHelper(
             r'PostV4AccountsByAccountIdPipelinesV1SinksRequest')
+          ..add('name', name)
+          ..add('type', type)
           ..add('config', config)
           ..add('format', format)
-          ..add('name', name)
-          ..add('schema', schema)
-          ..add('type', type))
+          ..add('schema', schema))
         .toString();
   }
 }
@@ -153,6 +153,16 @@ class PostV4AccountsByAccountIdPipelinesV1SinksRequestBuilder
         Builder<PostV4AccountsByAccountIdPipelinesV1SinksRequest,
             PostV4AccountsByAccountIdPipelinesV1SinksRequestBuilder> {
   _$PostV4AccountsByAccountIdPipelinesV1SinksRequest? _$v;
+
+  String? _name;
+  String? get name => _$this._name;
+  set name(String? name) => _$this._name = name;
+
+  PostV4AccountsByAccountIdPipelinesV1SinksRequestTypeEnum? _type;
+  PostV4AccountsByAccountIdPipelinesV1SinksRequestTypeEnum? get type =>
+      _$this._type;
+  set type(PostV4AccountsByAccountIdPipelinesV1SinksRequestTypeEnum? type) =>
+      _$this._type = type;
 
   GetV4AccountsByAccountIdPipelinesV1Sinks200ResponseResultInnerConfigBuilder?
       _config;
@@ -170,21 +180,11 @@ class PostV4AccountsByAccountIdPipelinesV1SinksRequestBuilder
   set format(CloudflarePipelinesFormatBuilder? format) =>
       _$this._format = format;
 
-  String? _name;
-  String? get name => _$this._name;
-  set name(String? name) => _$this._name = name;
-
   CloudflarePipelinesConnectionSchemaBuilder? _schema;
   CloudflarePipelinesConnectionSchemaBuilder get schema =>
       _$this._schema ??= CloudflarePipelinesConnectionSchemaBuilder();
   set schema(CloudflarePipelinesConnectionSchemaBuilder? schema) =>
       _$this._schema = schema;
-
-  PostV4AccountsByAccountIdPipelinesV1SinksRequestTypeEnum? _type;
-  PostV4AccountsByAccountIdPipelinesV1SinksRequestTypeEnum? get type =>
-      _$this._type;
-  set type(PostV4AccountsByAccountIdPipelinesV1SinksRequestTypeEnum? type) =>
-      _$this._type = type;
 
   PostV4AccountsByAccountIdPipelinesV1SinksRequestBuilder() {
     PostV4AccountsByAccountIdPipelinesV1SinksRequest._defaults(this);
@@ -193,11 +193,11 @@ class PostV4AccountsByAccountIdPipelinesV1SinksRequestBuilder
   PostV4AccountsByAccountIdPipelinesV1SinksRequestBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
+      _name = $v.name;
+      _type = $v.type;
       _config = $v.config?.toBuilder();
       _format = $v.format?.toBuilder();
-      _name = $v.name;
       _schema = $v.schema?.toBuilder();
-      _type = $v.type;
       _$v = null;
     }
     return this;
@@ -223,13 +223,13 @@ class PostV4AccountsByAccountIdPipelinesV1SinksRequestBuilder
     try {
       _$result = _$v ??
           _$PostV4AccountsByAccountIdPipelinesV1SinksRequest._(
-            config: _config?.build(),
-            format: _format?.build(),
             name: BuiltValueNullFieldError.checkNotNull(name,
                 r'PostV4AccountsByAccountIdPipelinesV1SinksRequest', 'name'),
-            schema: _schema?.build(),
             type: BuiltValueNullFieldError.checkNotNull(type,
                 r'PostV4AccountsByAccountIdPipelinesV1SinksRequest', 'type'),
+            config: _config?.build(),
+            format: _format?.build(),
+            schema: _schema?.build(),
           );
     } catch (_) {
       late String _$failedField;
@@ -238,7 +238,6 @@ class PostV4AccountsByAccountIdPipelinesV1SinksRequestBuilder
         _config?.build();
         _$failedField = 'format';
         _format?.build();
-
         _$failedField = 'schema';
         _schema?.build();
       } catch (e) {

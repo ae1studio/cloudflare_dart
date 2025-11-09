@@ -11,9 +11,9 @@ class _$ZeroTrustGatewayPacfilesCreatePacfileRequest
   @override
   final String contents;
   @override
-  final String? description;
-  @override
   final String name;
+  @override
+  final String? description;
   @override
   final String? slug;
 
@@ -24,7 +24,7 @@ class _$ZeroTrustGatewayPacfilesCreatePacfileRequest
           ._build();
 
   _$ZeroTrustGatewayPacfilesCreatePacfileRequest._(
-      {required this.contents, this.description, required this.name, this.slug})
+      {required this.contents, required this.name, this.description, this.slug})
       : super._();
   @override
   ZeroTrustGatewayPacfilesCreatePacfileRequest rebuild(
@@ -41,8 +41,8 @@ class _$ZeroTrustGatewayPacfilesCreatePacfileRequest
     if (identical(other, this)) return true;
     return other is ZeroTrustGatewayPacfilesCreatePacfileRequest &&
         contents == other.contents &&
-        description == other.description &&
         name == other.name &&
+        description == other.description &&
         slug == other.slug;
   }
 
@@ -50,8 +50,8 @@ class _$ZeroTrustGatewayPacfilesCreatePacfileRequest
   int get hashCode {
     var _$hash = 0;
     _$hash = $jc(_$hash, contents.hashCode);
-    _$hash = $jc(_$hash, description.hashCode);
     _$hash = $jc(_$hash, name.hashCode);
+    _$hash = $jc(_$hash, description.hashCode);
     _$hash = $jc(_$hash, slug.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
@@ -62,8 +62,8 @@ class _$ZeroTrustGatewayPacfilesCreatePacfileRequest
     return (newBuiltValueToStringHelper(
             r'ZeroTrustGatewayPacfilesCreatePacfileRequest')
           ..add('contents', contents)
-          ..add('description', description)
           ..add('name', name)
+          ..add('description', description)
           ..add('slug', slug))
         .toString();
   }
@@ -79,13 +79,13 @@ class ZeroTrustGatewayPacfilesCreatePacfileRequestBuilder
   String? get contents => _$this._contents;
   set contents(String? contents) => _$this._contents = contents;
 
-  String? _description;
-  String? get description => _$this._description;
-  set description(String? description) => _$this._description = description;
-
   String? _name;
   String? get name => _$this._name;
   set name(String? name) => _$this._name = name;
+
+  String? _description;
+  String? get description => _$this._description;
+  set description(String? description) => _$this._description = description;
 
   String? _slug;
   String? get slug => _$this._slug;
@@ -99,8 +99,8 @@ class ZeroTrustGatewayPacfilesCreatePacfileRequestBuilder
     final $v = _$v;
     if ($v != null) {
       _contents = $v.contents;
-      _description = $v.description;
       _name = $v.name;
+      _description = $v.description;
       _slug = $v.slug;
       _$v = null;
     }
@@ -127,9 +127,9 @@ class ZeroTrustGatewayPacfilesCreatePacfileRequestBuilder
         _$ZeroTrustGatewayPacfilesCreatePacfileRequest._(
           contents: BuiltValueNullFieldError.checkNotNull(contents,
               r'ZeroTrustGatewayPacfilesCreatePacfileRequest', 'contents'),
-          description: description,
           name: BuiltValueNullFieldError.checkNotNull(
               name, r'ZeroTrustGatewayPacfilesCreatePacfileRequest', 'name'),
+          description: description,
           slug: slug,
         );
     replace(_$result);

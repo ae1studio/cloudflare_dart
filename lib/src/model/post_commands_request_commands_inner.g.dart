@@ -72,23 +72,23 @@ class _$PostCommandsRequestCommandsInnerCommandTypeEnumSerializer
 class _$PostCommandsRequestCommandsInner
     extends PostCommandsRequestCommandsInner {
   @override
-  final PostCommandsRequestCommandsInnerCommandArgs? commandArgs;
-  @override
   final PostCommandsRequestCommandsInnerCommandTypeEnum commandType;
   @override
   final String deviceId;
   @override
   final String userEmail;
+  @override
+  final PostCommandsRequestCommandsInnerCommandArgs? commandArgs;
 
   factory _$PostCommandsRequestCommandsInner(
           [void Function(PostCommandsRequestCommandsInnerBuilder)? updates]) =>
       (PostCommandsRequestCommandsInnerBuilder()..update(updates))._build();
 
   _$PostCommandsRequestCommandsInner._(
-      {this.commandArgs,
-      required this.commandType,
+      {required this.commandType,
       required this.deviceId,
-      required this.userEmail})
+      required this.userEmail,
+      this.commandArgs})
       : super._();
   @override
   PostCommandsRequestCommandsInner rebuild(
@@ -103,19 +103,19 @@ class _$PostCommandsRequestCommandsInner
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is PostCommandsRequestCommandsInner &&
-        commandArgs == other.commandArgs &&
         commandType == other.commandType &&
         deviceId == other.deviceId &&
-        userEmail == other.userEmail;
+        userEmail == other.userEmail &&
+        commandArgs == other.commandArgs;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, commandArgs.hashCode);
     _$hash = $jc(_$hash, commandType.hashCode);
     _$hash = $jc(_$hash, deviceId.hashCode);
     _$hash = $jc(_$hash, userEmail.hashCode);
+    _$hash = $jc(_$hash, commandArgs.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -123,10 +123,10 @@ class _$PostCommandsRequestCommandsInner
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'PostCommandsRequestCommandsInner')
-          ..add('commandArgs', commandArgs)
           ..add('commandType', commandType)
           ..add('deviceId', deviceId)
-          ..add('userEmail', userEmail))
+          ..add('userEmail', userEmail)
+          ..add('commandArgs', commandArgs))
         .toString();
   }
 }
@@ -136,14 +136,6 @@ class PostCommandsRequestCommandsInnerBuilder
         Builder<PostCommandsRequestCommandsInner,
             PostCommandsRequestCommandsInnerBuilder> {
   _$PostCommandsRequestCommandsInner? _$v;
-
-  PostCommandsRequestCommandsInnerCommandArgsBuilder? _commandArgs;
-  PostCommandsRequestCommandsInnerCommandArgsBuilder get commandArgs =>
-      _$this._commandArgs ??=
-          PostCommandsRequestCommandsInnerCommandArgsBuilder();
-  set commandArgs(
-          PostCommandsRequestCommandsInnerCommandArgsBuilder? commandArgs) =>
-      _$this._commandArgs = commandArgs;
 
   PostCommandsRequestCommandsInnerCommandTypeEnum? _commandType;
   PostCommandsRequestCommandsInnerCommandTypeEnum? get commandType =>
@@ -160,6 +152,14 @@ class PostCommandsRequestCommandsInnerBuilder
   String? get userEmail => _$this._userEmail;
   set userEmail(String? userEmail) => _$this._userEmail = userEmail;
 
+  PostCommandsRequestCommandsInnerCommandArgsBuilder? _commandArgs;
+  PostCommandsRequestCommandsInnerCommandArgsBuilder get commandArgs =>
+      _$this._commandArgs ??=
+          PostCommandsRequestCommandsInnerCommandArgsBuilder();
+  set commandArgs(
+          PostCommandsRequestCommandsInnerCommandArgsBuilder? commandArgs) =>
+      _$this._commandArgs = commandArgs;
+
   PostCommandsRequestCommandsInnerBuilder() {
     PostCommandsRequestCommandsInner._defaults(this);
   }
@@ -167,10 +167,10 @@ class PostCommandsRequestCommandsInnerBuilder
   PostCommandsRequestCommandsInnerBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _commandArgs = $v.commandArgs?.toBuilder();
       _commandType = $v.commandType;
       _deviceId = $v.deviceId;
       _userEmail = $v.userEmail;
+      _commandArgs = $v.commandArgs?.toBuilder();
       _$v = null;
     }
     return this;
@@ -194,13 +194,13 @@ class PostCommandsRequestCommandsInnerBuilder
     try {
       _$result = _$v ??
           _$PostCommandsRequestCommandsInner._(
-            commandArgs: _commandArgs?.build(),
             commandType: BuiltValueNullFieldError.checkNotNull(commandType,
                 r'PostCommandsRequestCommandsInner', 'commandType'),
             deviceId: BuiltValueNullFieldError.checkNotNull(
                 deviceId, r'PostCommandsRequestCommandsInner', 'deviceId'),
             userEmail: BuiltValueNullFieldError.checkNotNull(
                 userEmail, r'PostCommandsRequestCommandsInner', 'userEmail'),
+            commandArgs: _commandArgs?.build(),
           );
     } catch (_) {
       late String _$failedField;

@@ -8,8 +8,6 @@ part of 'secrets_store_secret_object.dart';
 
 class _$SecretsStoreSecretObject extends SecretsStoreSecretObject {
   @override
-  final String? comment;
-  @override
   final DateTime created;
   @override
   final String id;
@@ -21,19 +19,21 @@ class _$SecretsStoreSecretObject extends SecretsStoreSecretObject {
   final SecretsStoreSecretStatus status;
   @override
   final String storeId;
+  @override
+  final String? comment;
 
   factory _$SecretsStoreSecretObject(
           [void Function(SecretsStoreSecretObjectBuilder)? updates]) =>
       (SecretsStoreSecretObjectBuilder()..update(updates))._build();
 
   _$SecretsStoreSecretObject._(
-      {this.comment,
-      required this.created,
+      {required this.created,
       required this.id,
       required this.modified,
       required this.name,
       required this.status,
-      required this.storeId})
+      required this.storeId,
+      this.comment})
       : super._();
   @override
   SecretsStoreSecretObject rebuild(
@@ -48,25 +48,25 @@ class _$SecretsStoreSecretObject extends SecretsStoreSecretObject {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is SecretsStoreSecretObject &&
-        comment == other.comment &&
         created == other.created &&
         id == other.id &&
         modified == other.modified &&
         name == other.name &&
         status == other.status &&
-        storeId == other.storeId;
+        storeId == other.storeId &&
+        comment == other.comment;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, comment.hashCode);
     _$hash = $jc(_$hash, created.hashCode);
     _$hash = $jc(_$hash, id.hashCode);
     _$hash = $jc(_$hash, modified.hashCode);
     _$hash = $jc(_$hash, name.hashCode);
     _$hash = $jc(_$hash, status.hashCode);
     _$hash = $jc(_$hash, storeId.hashCode);
+    _$hash = $jc(_$hash, comment.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -74,13 +74,13 @@ class _$SecretsStoreSecretObject extends SecretsStoreSecretObject {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'SecretsStoreSecretObject')
-          ..add('comment', comment)
           ..add('created', created)
           ..add('id', id)
           ..add('modified', modified)
           ..add('name', name)
           ..add('status', status)
-          ..add('storeId', storeId))
+          ..add('storeId', storeId)
+          ..add('comment', comment))
         .toString();
   }
 }
@@ -89,10 +89,6 @@ class SecretsStoreSecretObjectBuilder
     implements
         Builder<SecretsStoreSecretObject, SecretsStoreSecretObjectBuilder> {
   _$SecretsStoreSecretObject? _$v;
-
-  String? _comment;
-  String? get comment => _$this._comment;
-  set comment(String? comment) => _$this._comment = comment;
 
   DateTime? _created;
   DateTime? get created => _$this._created;
@@ -118,6 +114,10 @@ class SecretsStoreSecretObjectBuilder
   String? get storeId => _$this._storeId;
   set storeId(String? storeId) => _$this._storeId = storeId;
 
+  String? _comment;
+  String? get comment => _$this._comment;
+  set comment(String? comment) => _$this._comment = comment;
+
   SecretsStoreSecretObjectBuilder() {
     SecretsStoreSecretObject._defaults(this);
   }
@@ -125,13 +125,13 @@ class SecretsStoreSecretObjectBuilder
   SecretsStoreSecretObjectBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _comment = $v.comment;
       _created = $v.created;
       _id = $v.id;
       _modified = $v.modified;
       _name = $v.name;
       _status = $v.status;
       _storeId = $v.storeId;
+      _comment = $v.comment;
       _$v = null;
     }
     return this;
@@ -153,7 +153,6 @@ class SecretsStoreSecretObjectBuilder
   _$SecretsStoreSecretObject _build() {
     final _$result = _$v ??
         _$SecretsStoreSecretObject._(
-          comment: comment,
           created: BuiltValueNullFieldError.checkNotNull(
               created, r'SecretsStoreSecretObject', 'created'),
           id: BuiltValueNullFieldError.checkNotNull(
@@ -166,6 +165,7 @@ class SecretsStoreSecretObjectBuilder
               status, r'SecretsStoreSecretObject', 'status'),
           storeId: BuiltValueNullFieldError.checkNotNull(
               storeId, r'SecretsStoreSecretObject', 'storeId'),
+          comment: comment,
         );
     replace(_$result);
     return _$result;

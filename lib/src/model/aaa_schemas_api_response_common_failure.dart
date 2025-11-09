@@ -15,20 +15,20 @@ part 'aaa_schemas_api_response_common_failure.g.dart';
 ///
 /// Properties:
 /// * [errors] - A list of error messages.
-/// * [messages] 
 /// * [success] - Indicates whether the API call was failed
+/// * [messages] 
 @BuiltValue()
 abstract class AaaSchemasApiResponseCommonFailure implements Built<AaaSchemasApiResponseCommonFailure, AaaSchemasApiResponseCommonFailureBuilder> {
   /// A list of error messages.
   @BuiltValueField(wireName: r'errors')
   BuiltList<AaaSchemasApiResponseCommonFailureErrorsInner> get errors;
 
-  @BuiltValueField(wireName: r'messages')
-  BuiltList<AaaSchemasApiResponseCommonFailureMessagesInner>? get messages;
-
   /// Indicates whether the API call was failed
   @BuiltValueField(wireName: r'success')
   bool get success;
+
+  @BuiltValueField(wireName: r'messages')
+  BuiltList<AaaSchemasApiResponseCommonFailureMessagesInner>? get messages;
 
   AaaSchemasApiResponseCommonFailure._();
 
@@ -58,6 +58,11 @@ class _$AaaSchemasApiResponseCommonFailureSerializer implements PrimitiveSeriali
       object.errors,
       specifiedType: const FullType(BuiltList, [FullType(AaaSchemasApiResponseCommonFailureErrorsInner)]),
     );
+    yield r'success';
+    yield serializers.serialize(
+      object.success,
+      specifiedType: const FullType(bool),
+    );
     if (object.messages != null) {
       yield r'messages';
       yield serializers.serialize(
@@ -65,11 +70,6 @@ class _$AaaSchemasApiResponseCommonFailureSerializer implements PrimitiveSeriali
         specifiedType: const FullType(BuiltList, [FullType(AaaSchemasApiResponseCommonFailureMessagesInner)]),
       );
     }
-    yield r'success';
-    yield serializers.serialize(
-      object.success,
-      specifiedType: const FullType(bool),
-    );
   }
 
   @override
@@ -100,19 +100,19 @@ class _$AaaSchemasApiResponseCommonFailureSerializer implements PrimitiveSeriali
           ) as BuiltList<AaaSchemasApiResponseCommonFailureErrorsInner>;
           result.errors.replace(valueDes);
           break;
-        case r'messages':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(AaaSchemasApiResponseCommonFailureMessagesInner)]),
-          ) as BuiltList<AaaSchemasApiResponseCommonFailureMessagesInner>;
-          result.messages.replace(valueDes);
-          break;
         case r'success':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(bool),
           ) as bool;
           result.success = valueDes;
+          break;
+        case r'messages':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BuiltList, [FullType(AaaSchemasApiResponseCommonFailureMessagesInner)]),
+          ) as BuiltList<AaaSchemasApiResponseCommonFailureMessagesInner>;
+          result.messages.replace(valueDes);
           break;
         default:
           unhandled.add(key);

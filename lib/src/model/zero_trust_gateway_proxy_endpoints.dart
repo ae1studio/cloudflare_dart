@@ -15,11 +15,11 @@ part 'zero_trust_gateway_proxy_endpoints.g.dart';
 /// ZeroTrustGatewayProxyEndpoints
 ///
 /// Properties:
-/// * [createdAt] 
-/// * [id] 
 /// * [ips] - Specify the list of CIDRs to restrict ingress connections.
 /// * [kind] - The proxy endpoint kind
 /// * [name] - Specify the name of the proxy endpoint.
+/// * [createdAt] 
+/// * [id] 
 /// * [subdomain] - Specify the subdomain to use as the destination in the proxy client.
 /// * [updatedAt] 
 @BuiltValue()

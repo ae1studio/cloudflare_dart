@@ -17,13 +17,13 @@ class _$RadarGetAsnsAsSet200ResponseResultAsSetsInner
   @override
   final int asnConeSize;
   @override
-  final int? hierarchicalAsn;
-  @override
-  final int? inferredAsn;
-  @override
   final BuiltList<String> irrSources;
   @override
   final String name;
+  @override
+  final int? hierarchicalAsn;
+  @override
+  final int? inferredAsn;
   @override
   final int? peeringdbAsn;
 
@@ -38,10 +38,10 @@ class _$RadarGetAsnsAsSet200ResponseResultAsSetsInner
       required this.asSetMembersCount,
       required this.asSetUpstreamsCount,
       required this.asnConeSize,
-      this.hierarchicalAsn,
-      this.inferredAsn,
       required this.irrSources,
       required this.name,
+      this.hierarchicalAsn,
+      this.inferredAsn,
       this.peeringdbAsn})
       : super._();
   @override
@@ -62,10 +62,10 @@ class _$RadarGetAsnsAsSet200ResponseResultAsSetsInner
         asSetMembersCount == other.asSetMembersCount &&
         asSetUpstreamsCount == other.asSetUpstreamsCount &&
         asnConeSize == other.asnConeSize &&
-        hierarchicalAsn == other.hierarchicalAsn &&
-        inferredAsn == other.inferredAsn &&
         irrSources == other.irrSources &&
         name == other.name &&
+        hierarchicalAsn == other.hierarchicalAsn &&
+        inferredAsn == other.inferredAsn &&
         peeringdbAsn == other.peeringdbAsn;
   }
 
@@ -76,10 +76,10 @@ class _$RadarGetAsnsAsSet200ResponseResultAsSetsInner
     _$hash = $jc(_$hash, asSetMembersCount.hashCode);
     _$hash = $jc(_$hash, asSetUpstreamsCount.hashCode);
     _$hash = $jc(_$hash, asnConeSize.hashCode);
-    _$hash = $jc(_$hash, hierarchicalAsn.hashCode);
-    _$hash = $jc(_$hash, inferredAsn.hashCode);
     _$hash = $jc(_$hash, irrSources.hashCode);
     _$hash = $jc(_$hash, name.hashCode);
+    _$hash = $jc(_$hash, hierarchicalAsn.hashCode);
+    _$hash = $jc(_$hash, inferredAsn.hashCode);
     _$hash = $jc(_$hash, peeringdbAsn.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
@@ -93,10 +93,10 @@ class _$RadarGetAsnsAsSet200ResponseResultAsSetsInner
           ..add('asSetMembersCount', asSetMembersCount)
           ..add('asSetUpstreamsCount', asSetUpstreamsCount)
           ..add('asnConeSize', asnConeSize)
-          ..add('hierarchicalAsn', hierarchicalAsn)
-          ..add('inferredAsn', inferredAsn)
           ..add('irrSources', irrSources)
           ..add('name', name)
+          ..add('hierarchicalAsn', hierarchicalAsn)
+          ..add('inferredAsn', inferredAsn)
           ..add('peeringdbAsn', peeringdbAsn))
         .toString();
   }
@@ -127,15 +127,6 @@ class RadarGetAsnsAsSet200ResponseResultAsSetsInnerBuilder
   int? get asnConeSize => _$this._asnConeSize;
   set asnConeSize(int? asnConeSize) => _$this._asnConeSize = asnConeSize;
 
-  int? _hierarchicalAsn;
-  int? get hierarchicalAsn => _$this._hierarchicalAsn;
-  set hierarchicalAsn(int? hierarchicalAsn) =>
-      _$this._hierarchicalAsn = hierarchicalAsn;
-
-  int? _inferredAsn;
-  int? get inferredAsn => _$this._inferredAsn;
-  set inferredAsn(int? inferredAsn) => _$this._inferredAsn = inferredAsn;
-
   ListBuilder<String>? _irrSources;
   ListBuilder<String> get irrSources =>
       _$this._irrSources ??= ListBuilder<String>();
@@ -145,6 +136,15 @@ class RadarGetAsnsAsSet200ResponseResultAsSetsInnerBuilder
   String? _name;
   String? get name => _$this._name;
   set name(String? name) => _$this._name = name;
+
+  int? _hierarchicalAsn;
+  int? get hierarchicalAsn => _$this._hierarchicalAsn;
+  set hierarchicalAsn(int? hierarchicalAsn) =>
+      _$this._hierarchicalAsn = hierarchicalAsn;
+
+  int? _inferredAsn;
+  int? get inferredAsn => _$this._inferredAsn;
+  set inferredAsn(int? inferredAsn) => _$this._inferredAsn = inferredAsn;
 
   int? _peeringdbAsn;
   int? get peeringdbAsn => _$this._peeringdbAsn;
@@ -161,10 +161,10 @@ class RadarGetAsnsAsSet200ResponseResultAsSetsInnerBuilder
       _asSetMembersCount = $v.asSetMembersCount;
       _asSetUpstreamsCount = $v.asSetUpstreamsCount;
       _asnConeSize = $v.asnConeSize;
-      _hierarchicalAsn = $v.hierarchicalAsn;
-      _inferredAsn = $v.inferredAsn;
       _irrSources = $v.irrSources.toBuilder();
       _name = $v.name;
+      _hierarchicalAsn = $v.hierarchicalAsn;
+      _inferredAsn = $v.inferredAsn;
       _peeringdbAsn = $v.peeringdbAsn;
       _$v = null;
     }
@@ -207,11 +207,11 @@ class RadarGetAsnsAsSet200ResponseResultAsSetsInnerBuilder
                 asnConeSize,
                 r'RadarGetAsnsAsSet200ResponseResultAsSetsInner',
                 'asnConeSize'),
-            hierarchicalAsn: hierarchicalAsn,
-            inferredAsn: inferredAsn,
             irrSources: irrSources.build(),
             name: BuiltValueNullFieldError.checkNotNull(
                 name, r'RadarGetAsnsAsSet200ResponseResultAsSetsInner', 'name'),
+            hierarchicalAsn: hierarchicalAsn,
+            inferredAsn: inferredAsn,
             peeringdbAsn: peeringdbAsn,
           );
     } catch (_) {

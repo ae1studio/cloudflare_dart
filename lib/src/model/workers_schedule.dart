@@ -11,16 +11,16 @@ part 'workers_schedule.g.dart';
 /// WorkersSchedule
 ///
 /// Properties:
-/// * [createdOn] 
 /// * [cron] 
+/// * [createdOn] 
 /// * [modifiedOn] 
 @BuiltValue()
 abstract class WorkersSchedule implements Built<WorkersSchedule, WorkersScheduleBuilder> {
-  @BuiltValueField(wireName: r'created_on')
-  String? get createdOn;
-
   @BuiltValueField(wireName: r'cron')
   String get cron;
+
+  @BuiltValueField(wireName: r'created_on')
+  String? get createdOn;
 
   @BuiltValueField(wireName: r'modified_on')
   String? get modifiedOn;
@@ -48,6 +48,11 @@ class _$WorkersScheduleSerializer implements PrimitiveSerializer<WorkersSchedule
     WorkersSchedule object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    yield r'cron';
+    yield serializers.serialize(
+      object.cron,
+      specifiedType: const FullType(String),
+    );
     if (object.createdOn != null) {
       yield r'created_on';
       yield serializers.serialize(
@@ -55,11 +60,6 @@ class _$WorkersScheduleSerializer implements PrimitiveSerializer<WorkersSchedule
         specifiedType: const FullType(String),
       );
     }
-    yield r'cron';
-    yield serializers.serialize(
-      object.cron,
-      specifiedType: const FullType(String),
-    );
     if (object.modifiedOn != null) {
       yield r'modified_on';
       yield serializers.serialize(
@@ -90,19 +90,19 @@ class _$WorkersScheduleSerializer implements PrimitiveSerializer<WorkersSchedule
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'created_on':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.createdOn = valueDes;
-          break;
         case r'cron':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(String),
           ) as String;
           result.cron = valueDes;
+          break;
+        case r'created_on':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.createdOn = valueDes;
           break;
         case r'modified_on':
           final valueDes = serializers.deserialize(

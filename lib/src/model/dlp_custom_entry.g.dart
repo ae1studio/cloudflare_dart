@@ -24,11 +24,11 @@ abstract class DlpCustomEntryBuilder {
   DlpPatternBuilder get pattern;
   set pattern(DlpPatternBuilder? pattern);
 
-  String? get profileId;
-  set profileId(String? profileId);
-
   DateTime? get updatedAt;
   set updatedAt(DateTime? updatedAt);
+
+  String? get profileId;
+  set profileId(String? profileId);
 }
 
 class _$$DlpCustomEntry extends $DlpCustomEntry {
@@ -43,9 +43,9 @@ class _$$DlpCustomEntry extends $DlpCustomEntry {
   @override
   final DlpPattern pattern;
   @override
-  final String? profileId;
-  @override
   final DateTime updatedAt;
+  @override
+  final String? profileId;
 
   factory _$$DlpCustomEntry([void Function($DlpCustomEntryBuilder)? updates]) =>
       ($DlpCustomEntryBuilder()..update(updates))._build();
@@ -56,8 +56,8 @@ class _$$DlpCustomEntry extends $DlpCustomEntry {
       required this.id,
       required this.name,
       required this.pattern,
-      this.profileId,
-      required this.updatedAt})
+      required this.updatedAt,
+      this.profileId})
       : super._();
   @override
   $DlpCustomEntry rebuild(void Function($DlpCustomEntryBuilder) updates) =>
@@ -75,8 +75,8 @@ class _$$DlpCustomEntry extends $DlpCustomEntry {
         id == other.id &&
         name == other.name &&
         pattern == other.pattern &&
-        profileId == other.profileId &&
-        updatedAt == other.updatedAt;
+        updatedAt == other.updatedAt &&
+        profileId == other.profileId;
   }
 
   @override
@@ -87,8 +87,8 @@ class _$$DlpCustomEntry extends $DlpCustomEntry {
     _$hash = $jc(_$hash, id.hashCode);
     _$hash = $jc(_$hash, name.hashCode);
     _$hash = $jc(_$hash, pattern.hashCode);
-    _$hash = $jc(_$hash, profileId.hashCode);
     _$hash = $jc(_$hash, updatedAt.hashCode);
+    _$hash = $jc(_$hash, profileId.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -101,8 +101,8 @@ class _$$DlpCustomEntry extends $DlpCustomEntry {
           ..add('id', id)
           ..add('name', name)
           ..add('pattern', pattern)
-          ..add('profileId', profileId)
-          ..add('updatedAt', updatedAt))
+          ..add('updatedAt', updatedAt)
+          ..add('profileId', profileId))
         .toString();
   }
 }
@@ -134,13 +134,13 @@ class $DlpCustomEntryBuilder
   set pattern(covariant DlpPatternBuilder? pattern) =>
       _$this._pattern = pattern;
 
-  String? _profileId;
-  String? get profileId => _$this._profileId;
-  set profileId(covariant String? profileId) => _$this._profileId = profileId;
-
   DateTime? _updatedAt;
   DateTime? get updatedAt => _$this._updatedAt;
   set updatedAt(covariant DateTime? updatedAt) => _$this._updatedAt = updatedAt;
+
+  String? _profileId;
+  String? get profileId => _$this._profileId;
+  set profileId(covariant String? profileId) => _$this._profileId = profileId;
 
   $DlpCustomEntryBuilder() {
     $DlpCustomEntry._defaults(this);
@@ -154,8 +154,8 @@ class $DlpCustomEntryBuilder
       _id = $v.id;
       _name = $v.name;
       _pattern = $v.pattern.toBuilder();
-      _profileId = $v.profileId;
       _updatedAt = $v.updatedAt;
+      _profileId = $v.profileId;
       _$v = null;
     }
     return this;
@@ -188,9 +188,9 @@ class $DlpCustomEntryBuilder
             name: BuiltValueNullFieldError.checkNotNull(
                 name, r'$DlpCustomEntry', 'name'),
             pattern: pattern.build(),
-            profileId: profileId,
             updatedAt: BuiltValueNullFieldError.checkNotNull(
                 updatedAt, r'$DlpCustomEntry', 'updatedAt'),
+            profileId: profileId,
           );
     } catch (_) {
       late String _$failedField;

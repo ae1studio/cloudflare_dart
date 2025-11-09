@@ -10,9 +10,9 @@ class _$PostCategoryCreateRequest extends PostCategoryCreateRequest {
   @override
   final num killChain;
   @override
-  final BuiltList<String>? mitreAttack;
-  @override
   final String name;
+  @override
+  final BuiltList<String>? mitreAttack;
   @override
   final String? shortname;
 
@@ -22,8 +22,8 @@ class _$PostCategoryCreateRequest extends PostCategoryCreateRequest {
 
   _$PostCategoryCreateRequest._(
       {required this.killChain,
-      this.mitreAttack,
       required this.name,
+      this.mitreAttack,
       this.shortname})
       : super._();
   @override
@@ -40,8 +40,8 @@ class _$PostCategoryCreateRequest extends PostCategoryCreateRequest {
     if (identical(other, this)) return true;
     return other is PostCategoryCreateRequest &&
         killChain == other.killChain &&
-        mitreAttack == other.mitreAttack &&
         name == other.name &&
+        mitreAttack == other.mitreAttack &&
         shortname == other.shortname;
   }
 
@@ -49,8 +49,8 @@ class _$PostCategoryCreateRequest extends PostCategoryCreateRequest {
   int get hashCode {
     var _$hash = 0;
     _$hash = $jc(_$hash, killChain.hashCode);
-    _$hash = $jc(_$hash, mitreAttack.hashCode);
     _$hash = $jc(_$hash, name.hashCode);
+    _$hash = $jc(_$hash, mitreAttack.hashCode);
     _$hash = $jc(_$hash, shortname.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
@@ -60,8 +60,8 @@ class _$PostCategoryCreateRequest extends PostCategoryCreateRequest {
   String toString() {
     return (newBuiltValueToStringHelper(r'PostCategoryCreateRequest')
           ..add('killChain', killChain)
-          ..add('mitreAttack', mitreAttack)
           ..add('name', name)
+          ..add('mitreAttack', mitreAttack)
           ..add('shortname', shortname))
         .toString();
   }
@@ -76,15 +76,15 @@ class PostCategoryCreateRequestBuilder
   num? get killChain => _$this._killChain;
   set killChain(num? killChain) => _$this._killChain = killChain;
 
+  String? _name;
+  String? get name => _$this._name;
+  set name(String? name) => _$this._name = name;
+
   ListBuilder<String>? _mitreAttack;
   ListBuilder<String> get mitreAttack =>
       _$this._mitreAttack ??= ListBuilder<String>();
   set mitreAttack(ListBuilder<String>? mitreAttack) =>
       _$this._mitreAttack = mitreAttack;
-
-  String? _name;
-  String? get name => _$this._name;
-  set name(String? name) => _$this._name = name;
 
   String? _shortname;
   String? get shortname => _$this._shortname;
@@ -98,8 +98,8 @@ class PostCategoryCreateRequestBuilder
     final $v = _$v;
     if ($v != null) {
       _killChain = $v.killChain;
-      _mitreAttack = $v.mitreAttack?.toBuilder();
       _name = $v.name;
+      _mitreAttack = $v.mitreAttack?.toBuilder();
       _shortname = $v.shortname;
       _$v = null;
     }
@@ -126,9 +126,9 @@ class PostCategoryCreateRequestBuilder
           _$PostCategoryCreateRequest._(
             killChain: BuiltValueNullFieldError.checkNotNull(
                 killChain, r'PostCategoryCreateRequest', 'killChain'),
-            mitreAttack: _mitreAttack?.build(),
             name: BuiltValueNullFieldError.checkNotNull(
                 name, r'PostCategoryCreateRequest', 'name'),
+            mitreAttack: _mitreAttack?.build(),
             shortname: shortname,
           );
     } catch (_) {

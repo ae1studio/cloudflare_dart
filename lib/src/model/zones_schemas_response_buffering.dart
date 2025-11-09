@@ -8,16 +8,17 @@ import 'package:built_collection/built_collection.dart';
 import 'package:cloudflare_dart/src/model/zones_base.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
+import 'package:built_value/json_object.dart';
 
 part 'zones_schemas_response_buffering.g.dart';
 
 /// Enables or disables buffering of responses from the proxied server. Cloudflare may buffer the whole payload to deliver it at once to the client versus allowing it to be delivered in chunks. By default, the proxied server streams directly and is not buffered by Cloudflare. This is limited to Enterprise Zones.
 ///
 /// Properties:
-/// * [editable] - Whether or not this setting can be modified for this zone (based on your Cloudflare plan level).
 /// * [id] - ID of the zone setting.
-/// * [modifiedOn] - last time this setting was modified.
 /// * [value] 
+/// * [editable] - Whether or not this setting can be modified for this zone (based on your Cloudflare plan level).
+/// * [modifiedOn] - last time this setting was modified.
 @Deprecated('ZonesSchemasResponseBuffering has been deprecated')
 @BuiltValue()
 abstract class ZonesSchemasResponseBuffering implements ZonesBase, Built<ZonesSchemasResponseBuffering, ZonesSchemasResponseBufferingBuilder> {

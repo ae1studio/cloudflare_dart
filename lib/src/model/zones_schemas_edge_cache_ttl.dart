@@ -8,16 +8,17 @@ import 'package:cloudflare_dart/src/model/zones_edge_cache_ttl_value.dart';
 import 'package:cloudflare_dart/src/model/zones_base.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
+import 'package:built_value/json_object.dart';
 
 part 'zones_schemas_edge_cache_ttl.g.dart';
 
 /// Time (in seconds) that a resource will be ensured to remain on Cloudflare's cache servers.
 ///
 /// Properties:
-/// * [editable] - Whether or not this setting can be modified for this zone (based on your Cloudflare plan level).
 /// * [id] - ID of the zone setting.
-/// * [modifiedOn] - last time this setting was modified.
 /// * [value] 
+/// * [editable] - Whether or not this setting can be modified for this zone (based on your Cloudflare plan level).
+/// * [modifiedOn] - last time this setting was modified.
 @BuiltValue()
 abstract class ZonesSchemasEdgeCacheTtl implements ZonesBase, Built<ZonesSchemasEdgeCacheTtl, ZonesSchemasEdgeCacheTtlBuilder> {
   ZonesSchemasEdgeCacheTtl._();

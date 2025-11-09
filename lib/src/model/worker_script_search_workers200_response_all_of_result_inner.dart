@@ -12,25 +12,17 @@ part 'worker_script_search_workers200_response_all_of_result_inner.g.dart';
 ///
 /// Properties:
 /// * [createdOn] - When the script was created.
-/// * [environmentIsDefault] - Whether the environment is the default environment.
-/// * [environmentName] - Name of the environment.
 /// * [modifiedOn] - When the script was last modified.
 /// * [scriptName] - Name of the script, used in URLs and route configuration.
 /// * [scriptTag] - Identifier.
+/// * [environmentIsDefault] - Whether the environment is the default environment.
+/// * [environmentName] - Name of the environment.
 /// * [serviceName] - Name of the service.
 @BuiltValue()
 abstract class WorkerScriptSearchWorkers200ResponseAllOfResultInner implements Built<WorkerScriptSearchWorkers200ResponseAllOfResultInner, WorkerScriptSearchWorkers200ResponseAllOfResultInnerBuilder> {
   /// When the script was created.
   @BuiltValueField(wireName: r'created_on')
   DateTime get createdOn;
-
-  /// Whether the environment is the default environment.
-  @BuiltValueField(wireName: r'environment_is_default')
-  bool? get environmentIsDefault;
-
-  /// Name of the environment.
-  @BuiltValueField(wireName: r'environment_name')
-  String? get environmentName;
 
   /// When the script was last modified.
   @BuiltValueField(wireName: r'modified_on')
@@ -43,6 +35,14 @@ abstract class WorkerScriptSearchWorkers200ResponseAllOfResultInner implements B
   /// Identifier.
   @BuiltValueField(wireName: r'script_tag')
   String get scriptTag;
+
+  /// Whether the environment is the default environment.
+  @BuiltValueField(wireName: r'environment_is_default')
+  bool? get environmentIsDefault;
+
+  /// Name of the environment.
+  @BuiltValueField(wireName: r'environment_name')
+  String? get environmentName;
 
   /// Name of the service.
   @BuiltValueField(wireName: r'service_name')
@@ -76,20 +76,6 @@ class _$WorkerScriptSearchWorkers200ResponseAllOfResultInnerSerializer implement
       object.createdOn,
       specifiedType: const FullType(DateTime),
     );
-    if (object.environmentIsDefault != null) {
-      yield r'environment_is_default';
-      yield serializers.serialize(
-        object.environmentIsDefault,
-        specifiedType: const FullType(bool),
-      );
-    }
-    if (object.environmentName != null) {
-      yield r'environment_name';
-      yield serializers.serialize(
-        object.environmentName,
-        specifiedType: const FullType(String),
-      );
-    }
     yield r'modified_on';
     yield serializers.serialize(
       object.modifiedOn,
@@ -105,6 +91,20 @@ class _$WorkerScriptSearchWorkers200ResponseAllOfResultInnerSerializer implement
       object.scriptTag,
       specifiedType: const FullType(String),
     );
+    if (object.environmentIsDefault != null) {
+      yield r'environment_is_default';
+      yield serializers.serialize(
+        object.environmentIsDefault,
+        specifiedType: const FullType(bool),
+      );
+    }
+    if (object.environmentName != null) {
+      yield r'environment_name';
+      yield serializers.serialize(
+        object.environmentName,
+        specifiedType: const FullType(String),
+      );
+    }
     if (object.serviceName != null) {
       yield r'service_name';
       yield serializers.serialize(
@@ -142,20 +142,6 @@ class _$WorkerScriptSearchWorkers200ResponseAllOfResultInnerSerializer implement
           ) as DateTime;
           result.createdOn = valueDes;
           break;
-        case r'environment_is_default':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
-          result.environmentIsDefault = valueDes;
-          break;
-        case r'environment_name':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.environmentName = valueDes;
-          break;
         case r'modified_on':
           final valueDes = serializers.deserialize(
             value,
@@ -176,6 +162,20 @@ class _$WorkerScriptSearchWorkers200ResponseAllOfResultInnerSerializer implement
             specifiedType: const FullType(String),
           ) as String;
           result.scriptTag = valueDes;
+          break;
+        case r'environment_is_default':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(bool),
+          ) as bool;
+          result.environmentIsDefault = valueDes;
+          break;
+        case r'environment_name':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.environmentName = valueDes;
           break;
         case r'service_name':
           final valueDes = serializers.deserialize(

@@ -9,6 +9,8 @@ part of 'mistral_small3124_b_instruct_prompt.dart';
 class _$MistralSmall3124BInstructPrompt
     extends MistralSmall3124BInstructPrompt {
   @override
+  final String prompt;
+  @override
   final num? frequencyPenalty;
   @override
   final JsonObject? guidedJson;
@@ -16,8 +18,6 @@ class _$MistralSmall3124BInstructPrompt
   final int? maxTokens;
   @override
   final num? presencePenalty;
-  @override
-  final String prompt;
   @override
   final bool? raw;
   @override
@@ -38,11 +38,11 @@ class _$MistralSmall3124BInstructPrompt
       (MistralSmall3124BInstructPromptBuilder()..update(updates))._build();
 
   _$MistralSmall3124BInstructPrompt._(
-      {this.frequencyPenalty,
+      {required this.prompt,
+      this.frequencyPenalty,
       this.guidedJson,
       this.maxTokens,
       this.presencePenalty,
-      required this.prompt,
       this.raw,
       this.repetitionPenalty,
       this.seed,
@@ -64,11 +64,11 @@ class _$MistralSmall3124BInstructPrompt
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is MistralSmall3124BInstructPrompt &&
+        prompt == other.prompt &&
         frequencyPenalty == other.frequencyPenalty &&
         guidedJson == other.guidedJson &&
         maxTokens == other.maxTokens &&
         presencePenalty == other.presencePenalty &&
-        prompt == other.prompt &&
         raw == other.raw &&
         repetitionPenalty == other.repetitionPenalty &&
         seed == other.seed &&
@@ -81,11 +81,11 @@ class _$MistralSmall3124BInstructPrompt
   @override
   int get hashCode {
     var _$hash = 0;
+    _$hash = $jc(_$hash, prompt.hashCode);
     _$hash = $jc(_$hash, frequencyPenalty.hashCode);
     _$hash = $jc(_$hash, guidedJson.hashCode);
     _$hash = $jc(_$hash, maxTokens.hashCode);
     _$hash = $jc(_$hash, presencePenalty.hashCode);
-    _$hash = $jc(_$hash, prompt.hashCode);
     _$hash = $jc(_$hash, raw.hashCode);
     _$hash = $jc(_$hash, repetitionPenalty.hashCode);
     _$hash = $jc(_$hash, seed.hashCode);
@@ -100,11 +100,11 @@ class _$MistralSmall3124BInstructPrompt
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'MistralSmall3124BInstructPrompt')
+          ..add('prompt', prompt)
           ..add('frequencyPenalty', frequencyPenalty)
           ..add('guidedJson', guidedJson)
           ..add('maxTokens', maxTokens)
           ..add('presencePenalty', presencePenalty)
-          ..add('prompt', prompt)
           ..add('raw', raw)
           ..add('repetitionPenalty', repetitionPenalty)
           ..add('seed', seed)
@@ -121,6 +121,10 @@ class MistralSmall3124BInstructPromptBuilder
         Builder<MistralSmall3124BInstructPrompt,
             MistralSmall3124BInstructPromptBuilder> {
   _$MistralSmall3124BInstructPrompt? _$v;
+
+  String? _prompt;
+  String? get prompt => _$this._prompt;
+  set prompt(String? prompt) => _$this._prompt = prompt;
 
   num? _frequencyPenalty;
   num? get frequencyPenalty => _$this._frequencyPenalty;
@@ -139,10 +143,6 @@ class MistralSmall3124BInstructPromptBuilder
   num? get presencePenalty => _$this._presencePenalty;
   set presencePenalty(num? presencePenalty) =>
       _$this._presencePenalty = presencePenalty;
-
-  String? _prompt;
-  String? get prompt => _$this._prompt;
-  set prompt(String? prompt) => _$this._prompt = prompt;
 
   bool? _raw;
   bool? get raw => _$this._raw;
@@ -180,11 +180,11 @@ class MistralSmall3124BInstructPromptBuilder
   MistralSmall3124BInstructPromptBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
+      _prompt = $v.prompt;
       _frequencyPenalty = $v.frequencyPenalty;
       _guidedJson = $v.guidedJson;
       _maxTokens = $v.maxTokens;
       _presencePenalty = $v.presencePenalty;
-      _prompt = $v.prompt;
       _raw = $v.raw;
       _repetitionPenalty = $v.repetitionPenalty;
       _seed = $v.seed;
@@ -213,12 +213,12 @@ class MistralSmall3124BInstructPromptBuilder
   _$MistralSmall3124BInstructPrompt _build() {
     final _$result = _$v ??
         _$MistralSmall3124BInstructPrompt._(
+          prompt: BuiltValueNullFieldError.checkNotNull(
+              prompt, r'MistralSmall3124BInstructPrompt', 'prompt'),
           frequencyPenalty: frequencyPenalty,
           guidedJson: guidedJson,
           maxTokens: maxTokens,
           presencePenalty: presencePenalty,
-          prompt: BuiltValueNullFieldError.checkNotNull(
-              prompt, r'MistralSmall3124BInstructPrompt', 'prompt'),
           raw: raw,
           repetitionPenalty: repetitionPenalty,
           seed: seed,

@@ -75,15 +75,15 @@ class _$AutoragConfigListJobs200ResponseResultInnerSource_EnumSerializer
 class _$AutoragConfigListJobs200ResponseResultInner
     extends AutoragConfigListJobs200ResponseResultInner {
   @override
+  final String id;
+  @override
+  final AutoragConfigListJobs200ResponseResultInnerSource_Enum source_;
+  @override
   final String? endReason;
   @override
   final String? endedAt;
   @override
-  final String id;
-  @override
   final String? lastSeenAt;
-  @override
-  final AutoragConfigListJobs200ResponseResultInnerSource_Enum source_;
   @override
   final String? startedAt;
 
@@ -94,11 +94,11 @@ class _$AutoragConfigListJobs200ResponseResultInner
           ._build();
 
   _$AutoragConfigListJobs200ResponseResultInner._(
-      {this.endReason,
-      this.endedAt,
-      required this.id,
-      this.lastSeenAt,
+      {required this.id,
       required this.source_,
+      this.endReason,
+      this.endedAt,
+      this.lastSeenAt,
       this.startedAt})
       : super._();
   @override
@@ -115,22 +115,22 @@ class _$AutoragConfigListJobs200ResponseResultInner
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is AutoragConfigListJobs200ResponseResultInner &&
+        id == other.id &&
+        source_ == other.source_ &&
         endReason == other.endReason &&
         endedAt == other.endedAt &&
-        id == other.id &&
         lastSeenAt == other.lastSeenAt &&
-        source_ == other.source_ &&
         startedAt == other.startedAt;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
+    _$hash = $jc(_$hash, id.hashCode);
+    _$hash = $jc(_$hash, source_.hashCode);
     _$hash = $jc(_$hash, endReason.hashCode);
     _$hash = $jc(_$hash, endedAt.hashCode);
-    _$hash = $jc(_$hash, id.hashCode);
     _$hash = $jc(_$hash, lastSeenAt.hashCode);
-    _$hash = $jc(_$hash, source_.hashCode);
     _$hash = $jc(_$hash, startedAt.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
@@ -140,11 +140,11 @@ class _$AutoragConfigListJobs200ResponseResultInner
   String toString() {
     return (newBuiltValueToStringHelper(
             r'AutoragConfigListJobs200ResponseResultInner')
+          ..add('id', id)
+          ..add('source_', source_)
           ..add('endReason', endReason)
           ..add('endedAt', endedAt)
-          ..add('id', id)
           ..add('lastSeenAt', lastSeenAt)
-          ..add('source_', source_)
           ..add('startedAt', startedAt))
         .toString();
   }
@@ -156,6 +156,17 @@ class AutoragConfigListJobs200ResponseResultInnerBuilder
             AutoragConfigListJobs200ResponseResultInnerBuilder> {
   _$AutoragConfigListJobs200ResponseResultInner? _$v;
 
+  String? _id;
+  String? get id => _$this._id;
+  set id(String? id) => _$this._id = id;
+
+  AutoragConfigListJobs200ResponseResultInnerSource_Enum? _source_;
+  AutoragConfigListJobs200ResponseResultInnerSource_Enum? get source_ =>
+      _$this._source_;
+  set source_(
+          AutoragConfigListJobs200ResponseResultInnerSource_Enum? source_) =>
+      _$this._source_ = source_;
+
   String? _endReason;
   String? get endReason => _$this._endReason;
   set endReason(String? endReason) => _$this._endReason = endReason;
@@ -164,20 +175,9 @@ class AutoragConfigListJobs200ResponseResultInnerBuilder
   String? get endedAt => _$this._endedAt;
   set endedAt(String? endedAt) => _$this._endedAt = endedAt;
 
-  String? _id;
-  String? get id => _$this._id;
-  set id(String? id) => _$this._id = id;
-
   String? _lastSeenAt;
   String? get lastSeenAt => _$this._lastSeenAt;
   set lastSeenAt(String? lastSeenAt) => _$this._lastSeenAt = lastSeenAt;
-
-  AutoragConfigListJobs200ResponseResultInnerSource_Enum? _source_;
-  AutoragConfigListJobs200ResponseResultInnerSource_Enum? get source_ =>
-      _$this._source_;
-  set source_(
-          AutoragConfigListJobs200ResponseResultInnerSource_Enum? source_) =>
-      _$this._source_ = source_;
 
   String? _startedAt;
   String? get startedAt => _$this._startedAt;
@@ -190,11 +190,11 @@ class AutoragConfigListJobs200ResponseResultInnerBuilder
   AutoragConfigListJobs200ResponseResultInnerBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
+      _id = $v.id;
+      _source_ = $v.source_;
       _endReason = $v.endReason;
       _endedAt = $v.endedAt;
-      _id = $v.id;
       _lastSeenAt = $v.lastSeenAt;
-      _source_ = $v.source_;
       _startedAt = $v.startedAt;
       _$v = null;
     }
@@ -219,13 +219,13 @@ class AutoragConfigListJobs200ResponseResultInnerBuilder
   _$AutoragConfigListJobs200ResponseResultInner _build() {
     final _$result = _$v ??
         _$AutoragConfigListJobs200ResponseResultInner._(
-          endReason: endReason,
-          endedAt: endedAt,
           id: BuiltValueNullFieldError.checkNotNull(
               id, r'AutoragConfigListJobs200ResponseResultInner', 'id'),
-          lastSeenAt: lastSeenAt,
           source_: BuiltValueNullFieldError.checkNotNull(source_,
               r'AutoragConfigListJobs200ResponseResultInner', 'source_'),
+          endReason: endReason,
+          endedAt: endedAt,
+          lastSeenAt: lastSeenAt,
           startedAt: startedAt,
         );
     replace(_$result);

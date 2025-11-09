@@ -8,15 +8,15 @@ part of 'infra_resolver_network.dart';
 
 class _$InfraResolverNetwork extends InfraResolverNetwork {
   @override
-  final BuiltList<String>? resolverIps;
-  @override
   final String tunnelId;
+  @override
+  final BuiltList<String>? resolverIps;
 
   factory _$InfraResolverNetwork(
           [void Function(InfraResolverNetworkBuilder)? updates]) =>
       (InfraResolverNetworkBuilder()..update(updates))._build();
 
-  _$InfraResolverNetwork._({this.resolverIps, required this.tunnelId})
+  _$InfraResolverNetwork._({required this.tunnelId, this.resolverIps})
       : super._();
   @override
   InfraResolverNetwork rebuild(
@@ -31,15 +31,15 @@ class _$InfraResolverNetwork extends InfraResolverNetwork {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is InfraResolverNetwork &&
-        resolverIps == other.resolverIps &&
-        tunnelId == other.tunnelId;
+        tunnelId == other.tunnelId &&
+        resolverIps == other.resolverIps;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, resolverIps.hashCode);
     _$hash = $jc(_$hash, tunnelId.hashCode);
+    _$hash = $jc(_$hash, resolverIps.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -47,8 +47,8 @@ class _$InfraResolverNetwork extends InfraResolverNetwork {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'InfraResolverNetwork')
-          ..add('resolverIps', resolverIps)
-          ..add('tunnelId', tunnelId))
+          ..add('tunnelId', tunnelId)
+          ..add('resolverIps', resolverIps))
         .toString();
   }
 }
@@ -57,15 +57,15 @@ class InfraResolverNetworkBuilder
     implements Builder<InfraResolverNetwork, InfraResolverNetworkBuilder> {
   _$InfraResolverNetwork? _$v;
 
+  String? _tunnelId;
+  String? get tunnelId => _$this._tunnelId;
+  set tunnelId(String? tunnelId) => _$this._tunnelId = tunnelId;
+
   ListBuilder<String>? _resolverIps;
   ListBuilder<String> get resolverIps =>
       _$this._resolverIps ??= ListBuilder<String>();
   set resolverIps(ListBuilder<String>? resolverIps) =>
       _$this._resolverIps = resolverIps;
-
-  String? _tunnelId;
-  String? get tunnelId => _$this._tunnelId;
-  set tunnelId(String? tunnelId) => _$this._tunnelId = tunnelId;
 
   InfraResolverNetworkBuilder() {
     InfraResolverNetwork._defaults(this);
@@ -74,8 +74,8 @@ class InfraResolverNetworkBuilder
   InfraResolverNetworkBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _resolverIps = $v.resolverIps?.toBuilder();
       _tunnelId = $v.tunnelId;
+      _resolverIps = $v.resolverIps?.toBuilder();
       _$v = null;
     }
     return this;
@@ -99,9 +99,9 @@ class InfraResolverNetworkBuilder
     try {
       _$result = _$v ??
           _$InfraResolverNetwork._(
-            resolverIps: _resolverIps?.build(),
             tunnelId: BuiltValueNullFieldError.checkNotNull(
                 tunnelId, r'InfraResolverNetwork', 'tunnelId'),
+            resolverIps: _resolverIps?.build(),
           );
     } catch (_) {
       late String _$failedField;

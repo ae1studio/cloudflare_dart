@@ -16,6 +16,8 @@ part 'load_balancer_pools_create_pool_request.g.dart';
 /// LoadBalancerPoolsCreatePoolRequest
 ///
 /// Properties:
+/// * [name] - A short name (tag) for the pool. Only alphanumeric characters, hyphens, and underscores are allowed.
+/// * [origins] - The list of origins within this pool. Traffic directed at this pool is balanced across all currently healthy origins, provided the pool itself is healthy.
 /// * [checkRegions] - A list of regions from which to run health checks. Null means every Cloudflare data center.
 /// * [description] - A human-readable description of the pool.
 /// * [enabled] - Whether to enable (the default) or disable this pool. Disabled pools will not receive traffic and are excluded from health checks. Disabling a pool will cause any load balancers using it to failover to the next pool (if any).
@@ -25,14 +27,20 @@ part 'load_balancer_pools_create_pool_request.g.dart';
 /// * [minimumOrigins] - The minimum number of origins that must be healthy for this pool to serve traffic. If the number of healthy origins falls below this number, the pool will be marked unhealthy and will failover to the next available pool.
 /// * [monitor] - The ID of the Monitor to use for checking the health of origins within this pool.
 /// * [monitorGroup] - The ID of the Monitor Group to use for checking the health of origins within this pool.
-/// * [name] - A short name (tag) for the pool. Only alphanumeric characters, hyphens, and underscores are allowed.
 /// * [networks] - List of networks where Load Balancer or Pool is enabled.
 /// * [notificationEmail] - This field is now deprecated. It has been moved to Cloudflare's Centralized Notification service https://developers.cloudflare.com/fundamentals/notifications/. The email address to send health status notifications to. This can be an individual mailbox or a mailing list. Multiple emails can be supplied as a comma delimited list.
 /// * [notificationFilter] 
 /// * [originSteering] 
-/// * [origins] - The list of origins within this pool. Traffic directed at this pool is balanced across all currently healthy origins, provided the pool itself is healthy.
 @BuiltValue()
 abstract class LoadBalancerPoolsCreatePoolRequest implements Built<LoadBalancerPoolsCreatePoolRequest, LoadBalancerPoolsCreatePoolRequestBuilder> {
+  /// A short name (tag) for the pool. Only alphanumeric characters, hyphens, and underscores are allowed.
+  @BuiltValueField(wireName: r'name')
+  String get name;
+
+  /// The list of origins within this pool. Traffic directed at this pool is balanced across all currently healthy origins, provided the pool itself is healthy.
+  @BuiltValueField(wireName: r'origins')
+  BuiltList<LoadBalancingOrigin> get origins;
+
   /// A list of regions from which to run health checks. Null means every Cloudflare data center.
   @BuiltValueField(wireName: r'check_regions')
   BuiltList<LoadBalancerPoolsCreatePoolRequestCheckRegionsEnum>? get checkRegions;
@@ -69,10 +77,6 @@ abstract class LoadBalancerPoolsCreatePoolRequest implements Built<LoadBalancerP
   @BuiltValueField(wireName: r'monitor_group')
   String? get monitorGroup;
 
-  /// A short name (tag) for the pool. Only alphanumeric characters, hyphens, and underscores are allowed.
-  @BuiltValueField(wireName: r'name')
-  String get name;
-
   /// List of networks where Load Balancer or Pool is enabled.
   @BuiltValueField(wireName: r'networks')
   BuiltList<String>? get networks;
@@ -86,10 +90,6 @@ abstract class LoadBalancerPoolsCreatePoolRequest implements Built<LoadBalancerP
 
   @BuiltValueField(wireName: r'origin_steering')
   LoadBalancingOriginSteering? get originSteering;
-
-  /// The list of origins within this pool. Traffic directed at this pool is balanced across all currently healthy origins, provided the pool itself is healthy.
-  @BuiltValueField(wireName: r'origins')
-  BuiltList<LoadBalancingOrigin> get origins;
 
   LoadBalancerPoolsCreatePoolRequest._();
 
@@ -118,6 +118,16 @@ class _$LoadBalancerPoolsCreatePoolRequestSerializer implements PrimitiveSeriali
     LoadBalancerPoolsCreatePoolRequest object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    yield r'name';
+    yield serializers.serialize(
+      object.name,
+      specifiedType: const FullType(String),
+    );
+    yield r'origins';
+    yield serializers.serialize(
+      object.origins,
+      specifiedType: const FullType(BuiltList, [FullType(LoadBalancingOrigin)]),
+    );
     if (object.checkRegions != null) {
       yield r'check_regions';
       yield serializers.serialize(
@@ -181,11 +191,6 @@ class _$LoadBalancerPoolsCreatePoolRequestSerializer implements PrimitiveSeriali
         specifiedType: const FullType(String),
       );
     }
-    yield r'name';
-    yield serializers.serialize(
-      object.name,
-      specifiedType: const FullType(String),
-    );
     if (object.networks != null) {
       yield r'networks';
       yield serializers.serialize(
@@ -214,11 +219,6 @@ class _$LoadBalancerPoolsCreatePoolRequestSerializer implements PrimitiveSeriali
         specifiedType: const FullType(LoadBalancingOriginSteering),
       );
     }
-    yield r'origins';
-    yield serializers.serialize(
-      object.origins,
-      specifiedType: const FullType(BuiltList, [FullType(LoadBalancingOrigin)]),
-    );
   }
 
   @override
@@ -242,6 +242,20 @@ class _$LoadBalancerPoolsCreatePoolRequestSerializer implements PrimitiveSeriali
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
+        case r'name':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.name = valueDes;
+          break;
+        case r'origins':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BuiltList, [FullType(LoadBalancingOrigin)]),
+          ) as BuiltList<LoadBalancingOrigin>;
+          result.origins.replace(valueDes);
+          break;
         case r'check_regions':
           final valueDes = serializers.deserialize(
             value,
@@ -306,13 +320,6 @@ class _$LoadBalancerPoolsCreatePoolRequestSerializer implements PrimitiveSeriali
           ) as String;
           result.monitorGroup = valueDes;
           break;
-        case r'name':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.name = valueDes;
-          break;
         case r'networks':
           final valueDes = serializers.deserialize(
             value,
@@ -341,13 +348,6 @@ class _$LoadBalancerPoolsCreatePoolRequestSerializer implements PrimitiveSeriali
             specifiedType: const FullType(LoadBalancingOriginSteering),
           ) as LoadBalancingOriginSteering;
           result.originSteering.replace(valueDes);
-          break;
-        case r'origins':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(LoadBalancingOrigin)]),
-          ) as BuiltList<LoadBalancingOrigin>;
-          result.origins.replace(valueDes);
           break;
         default:
           unhandled.add(key);

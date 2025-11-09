@@ -8,13 +8,13 @@ part of 'load_balancing_monitor_group.dart';
 
 class _$LoadBalancingMonitorGroup extends LoadBalancingMonitorGroup {
   @override
-  final DateTime? createdAt;
-  @override
   final String description;
   @override
   final String id;
   @override
   final BuiltList<LoadBalancingMonitorGroupMember> members;
+  @override
+  final DateTime? createdAt;
   @override
   final DateTime? updatedAt;
 
@@ -23,10 +23,10 @@ class _$LoadBalancingMonitorGroup extends LoadBalancingMonitorGroup {
       (LoadBalancingMonitorGroupBuilder()..update(updates))._build();
 
   _$LoadBalancingMonitorGroup._(
-      {this.createdAt,
-      required this.description,
+      {required this.description,
       required this.id,
       required this.members,
+      this.createdAt,
       this.updatedAt})
       : super._();
   @override
@@ -42,20 +42,20 @@ class _$LoadBalancingMonitorGroup extends LoadBalancingMonitorGroup {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is LoadBalancingMonitorGroup &&
-        createdAt == other.createdAt &&
         description == other.description &&
         id == other.id &&
         members == other.members &&
+        createdAt == other.createdAt &&
         updatedAt == other.updatedAt;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, createdAt.hashCode);
     _$hash = $jc(_$hash, description.hashCode);
     _$hash = $jc(_$hash, id.hashCode);
     _$hash = $jc(_$hash, members.hashCode);
+    _$hash = $jc(_$hash, createdAt.hashCode);
     _$hash = $jc(_$hash, updatedAt.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
@@ -64,10 +64,10 @@ class _$LoadBalancingMonitorGroup extends LoadBalancingMonitorGroup {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'LoadBalancingMonitorGroup')
-          ..add('createdAt', createdAt)
           ..add('description', description)
           ..add('id', id)
           ..add('members', members)
+          ..add('createdAt', createdAt)
           ..add('updatedAt', updatedAt))
         .toString();
   }
@@ -77,10 +77,6 @@ class LoadBalancingMonitorGroupBuilder
     implements
         Builder<LoadBalancingMonitorGroup, LoadBalancingMonitorGroupBuilder> {
   _$LoadBalancingMonitorGroup? _$v;
-
-  DateTime? _createdAt;
-  DateTime? get createdAt => _$this._createdAt;
-  set createdAt(DateTime? createdAt) => _$this._createdAt = createdAt;
 
   String? _description;
   String? get description => _$this._description;
@@ -96,6 +92,10 @@ class LoadBalancingMonitorGroupBuilder
   set members(ListBuilder<LoadBalancingMonitorGroupMember>? members) =>
       _$this._members = members;
 
+  DateTime? _createdAt;
+  DateTime? get createdAt => _$this._createdAt;
+  set createdAt(DateTime? createdAt) => _$this._createdAt = createdAt;
+
   DateTime? _updatedAt;
   DateTime? get updatedAt => _$this._updatedAt;
   set updatedAt(DateTime? updatedAt) => _$this._updatedAt = updatedAt;
@@ -107,10 +107,10 @@ class LoadBalancingMonitorGroupBuilder
   LoadBalancingMonitorGroupBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _createdAt = $v.createdAt;
       _description = $v.description;
       _id = $v.id;
       _members = $v.members.toBuilder();
+      _createdAt = $v.createdAt;
       _updatedAt = $v.updatedAt;
       _$v = null;
     }
@@ -135,12 +135,12 @@ class LoadBalancingMonitorGroupBuilder
     try {
       _$result = _$v ??
           _$LoadBalancingMonitorGroup._(
-            createdAt: createdAt,
             description: BuiltValueNullFieldError.checkNotNull(
                 description, r'LoadBalancingMonitorGroup', 'description'),
             id: BuiltValueNullFieldError.checkNotNull(
                 id, r'LoadBalancingMonitorGroup', 'id'),
             members: members.build(),
+            createdAt: createdAt,
             updatedAt: updatedAt,
           );
     } catch (_) {

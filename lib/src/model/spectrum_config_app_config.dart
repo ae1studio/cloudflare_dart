@@ -24,26 +24,26 @@ part 'spectrum_config_app_config.g.dart';
 /// * [createdOn] 
 /// * [id] 
 /// * [modifiedOn] 
-/// * [argoSmartRouting] - Enables Argo Smart Routing for this application. Notes: Only available for TCP applications with traffic_type set to \"direct\".
 /// * [dns] 
+/// * [protocol] - The port configuration at Cloudflare's edge. May specify a single port, for example `\"tcp/1000\"`, or a range of ports, for example `\"tcp/1000-2000\"`.
+/// * [trafficType] 
+/// * [argoSmartRouting] - Enables Argo Smart Routing for this application. Notes: Only available for TCP applications with traffic_type set to \"direct\".
 /// * [edgeIps] 
 /// * [ipFirewall] - Enables IP Access Rules for this application. Notes: Only available for TCP applications.
 /// * [originDirect] - List of origin IP addresses. Array may contain multiple IP addresses for load balancing.
 /// * [originDns] 
 /// * [originPort] 
-/// * [protocol] - The port configuration at Cloudflare's edge. May specify a single port, for example `\"tcp/1000\"`, or a range of ports, for example `\"tcp/1000-2000\"`.
 /// * [proxyProtocol] 
 /// * [tls] 
-/// * [trafficType] 
 @BuiltValue()
 abstract class SpectrumConfigAppConfig implements SpectrumConfigBaseAppConfig, Built<SpectrumConfigAppConfig, SpectrumConfigAppConfigBuilder> {
-  /// Enables Argo Smart Routing for this application. Notes: Only available for TCP applications with traffic_type set to \"direct\".
-  @BuiltValueField(wireName: r'argo_smart_routing')
-  bool? get argoSmartRouting;
-
   /// The port configuration at Cloudflare's edge. May specify a single port, for example `\"tcp/1000\"`, or a range of ports, for example `\"tcp/1000-2000\"`.
   @BuiltValueField(wireName: r'protocol')
   String get protocol;
+
+  /// Enables Argo Smart Routing for this application. Notes: Only available for TCP applications with traffic_type set to \"direct\".
+  @BuiltValueField(wireName: r'argo_smart_routing')
+  bool? get argoSmartRouting;
 
   @BuiltValueField(wireName: r'proxy_protocol')
   SpectrumConfigProxyProtocol? get proxyProtocol;
@@ -131,6 +131,11 @@ class _$SpectrumConfigAppConfigSerializer implements PrimitiveSerializer<Spectru
       object.createdOn,
       specifiedType: const FullType(JsonObject),
     );
+    yield r'protocol';
+    yield serializers.serialize(
+      object.protocol,
+      specifiedType: const FullType(String),
+    );
     if (object.argoSmartRouting != null) {
       yield r'argo_smart_routing';
       yield serializers.serialize(
@@ -138,11 +143,6 @@ class _$SpectrumConfigAppConfigSerializer implements PrimitiveSerializer<Spectru
         specifiedType: const FullType(bool),
       );
     }
-    yield r'protocol';
-    yield serializers.serialize(
-      object.protocol,
-      specifiedType: const FullType(String),
-    );
     yield r'modified_on';
     yield serializers.serialize(
       object.modifiedOn,
@@ -246,19 +246,19 @@ class _$SpectrumConfigAppConfigSerializer implements PrimitiveSerializer<Spectru
           ) as JsonObject;
           result.createdOn.replace(valueDes);
           break;
-        case r'argo_smart_routing':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
-          result.argoSmartRouting = valueDes;
-          break;
         case r'protocol':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(String),
           ) as String;
           result.protocol = valueDes;
+          break;
+        case r'argo_smart_routing':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(bool),
+          ) as bool;
+          result.argoSmartRouting = valueDes;
           break;
         case r'modified_on':
           final valueDes = serializers.deserialize(

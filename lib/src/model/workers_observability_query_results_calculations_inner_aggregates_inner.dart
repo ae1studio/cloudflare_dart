@@ -14,17 +14,14 @@ part 'workers_observability_query_results_calculations_inner_aggregates_inner.g.
 ///
 /// Properties:
 /// * [count] 
-/// * [groups] 
 /// * [interval] 
 /// * [sampleInterval] 
 /// * [value] 
+/// * [groups] 
 @BuiltValue()
 abstract class WorkersObservabilityQueryResultsCalculationsInnerAggregatesInner implements Built<WorkersObservabilityQueryResultsCalculationsInnerAggregatesInner, WorkersObservabilityQueryResultsCalculationsInnerAggregatesInnerBuilder> {
   @BuiltValueField(wireName: r'count')
   num get count;
-
-  @BuiltValueField(wireName: r'groups')
-  BuiltList<WorkersObservabilityQueryResultsCalculationsInnerAggregatesInnerGroupsInner>? get groups;
 
   @BuiltValueField(wireName: r'interval')
   num get interval;
@@ -34,6 +31,9 @@ abstract class WorkersObservabilityQueryResultsCalculationsInnerAggregatesInner 
 
   @BuiltValueField(wireName: r'value')
   num get value;
+
+  @BuiltValueField(wireName: r'groups')
+  BuiltList<WorkersObservabilityQueryResultsCalculationsInnerAggregatesInnerGroupsInner>? get groups;
 
   WorkersObservabilityQueryResultsCalculationsInnerAggregatesInner._();
 
@@ -63,13 +63,6 @@ class _$WorkersObservabilityQueryResultsCalculationsInnerAggregatesInnerSerializ
       object.count,
       specifiedType: const FullType(num),
     );
-    if (object.groups != null) {
-      yield r'groups';
-      yield serializers.serialize(
-        object.groups,
-        specifiedType: const FullType(BuiltList, [FullType(WorkersObservabilityQueryResultsCalculationsInnerAggregatesInnerGroupsInner)]),
-      );
-    }
     yield r'interval';
     yield serializers.serialize(
       object.interval,
@@ -85,6 +78,13 @@ class _$WorkersObservabilityQueryResultsCalculationsInnerAggregatesInnerSerializ
       object.value,
       specifiedType: const FullType(num),
     );
+    if (object.groups != null) {
+      yield r'groups';
+      yield serializers.serialize(
+        object.groups,
+        specifiedType: const FullType(BuiltList, [FullType(WorkersObservabilityQueryResultsCalculationsInnerAggregatesInnerGroupsInner)]),
+      );
+    }
   }
 
   @override
@@ -115,13 +115,6 @@ class _$WorkersObservabilityQueryResultsCalculationsInnerAggregatesInnerSerializ
           ) as num;
           result.count = valueDes;
           break;
-        case r'groups':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(WorkersObservabilityQueryResultsCalculationsInnerAggregatesInnerGroupsInner)]),
-          ) as BuiltList<WorkersObservabilityQueryResultsCalculationsInnerAggregatesInnerGroupsInner>;
-          result.groups.replace(valueDes);
-          break;
         case r'interval':
           final valueDes = serializers.deserialize(
             value,
@@ -142,6 +135,13 @@ class _$WorkersObservabilityQueryResultsCalculationsInnerAggregatesInnerSerializ
             specifiedType: const FullType(num),
           ) as num;
           result.value = valueDes;
+          break;
+        case r'groups':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BuiltList, [FullType(WorkersObservabilityQueryResultsCalculationsInnerAggregatesInnerGroupsInner)]),
+          ) as BuiltList<WorkersObservabilityQueryResultsCalculationsInnerAggregatesInnerGroupsInner>;
+          result.groups.replace(valueDes);
           break;
         default:
           unhandled.add(key);

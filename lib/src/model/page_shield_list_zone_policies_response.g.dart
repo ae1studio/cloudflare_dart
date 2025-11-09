@@ -13,11 +13,11 @@ class _$PageShieldListZonePoliciesResponse
   @override
   final PageShieldResultInfo resultInfo;
   @override
+  final bool success;
+  @override
   final BuiltList<AaaMessagesInner>? errors;
   @override
   final BuiltList<AaaMessagesInner>? messages;
-  @override
-  final bool success;
 
   factory _$PageShieldListZonePoliciesResponse(
           [void Function(PageShieldListZonePoliciesResponseBuilder)?
@@ -27,9 +27,9 @@ class _$PageShieldListZonePoliciesResponse
   _$PageShieldListZonePoliciesResponse._(
       {required this.result,
       required this.resultInfo,
+      required this.success,
       this.errors,
-      this.messages,
-      required this.success})
+      this.messages})
       : super._();
   @override
   PageShieldListZonePoliciesResponse rebuild(
@@ -46,9 +46,9 @@ class _$PageShieldListZonePoliciesResponse
     return other is PageShieldListZonePoliciesResponse &&
         result == other.result &&
         resultInfo == other.resultInfo &&
+        success == other.success &&
         errors == other.errors &&
-        messages == other.messages &&
-        success == other.success;
+        messages == other.messages;
   }
 
   @override
@@ -56,9 +56,9 @@ class _$PageShieldListZonePoliciesResponse
     var _$hash = 0;
     _$hash = $jc(_$hash, result.hashCode);
     _$hash = $jc(_$hash, resultInfo.hashCode);
+    _$hash = $jc(_$hash, success.hashCode);
     _$hash = $jc(_$hash, errors.hashCode);
     _$hash = $jc(_$hash, messages.hashCode);
-    _$hash = $jc(_$hash, success.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -68,9 +68,9 @@ class _$PageShieldListZonePoliciesResponse
     return (newBuiltValueToStringHelper(r'PageShieldListZonePoliciesResponse')
           ..add('result', result)
           ..add('resultInfo', resultInfo)
+          ..add('success', success)
           ..add('errors', errors)
-          ..add('messages', messages)
-          ..add('success', success))
+          ..add('messages', messages))
         .toString();
   }
 }
@@ -94,6 +94,10 @@ class PageShieldListZonePoliciesResponseBuilder
   set resultInfo(covariant PageShieldResultInfoBuilder? resultInfo) =>
       _$this._resultInfo = resultInfo;
 
+  bool? _success;
+  bool? get success => _$this._success;
+  set success(covariant bool? success) => _$this._success = success;
+
   ListBuilder<AaaMessagesInner>? _errors;
   ListBuilder<AaaMessagesInner> get errors =>
       _$this._errors ??= ListBuilder<AaaMessagesInner>();
@@ -106,10 +110,6 @@ class PageShieldListZonePoliciesResponseBuilder
   set messages(covariant ListBuilder<AaaMessagesInner>? messages) =>
       _$this._messages = messages;
 
-  bool? _success;
-  bool? get success => _$this._success;
-  set success(covariant bool? success) => _$this._success = success;
-
   PageShieldListZonePoliciesResponseBuilder() {
     PageShieldListZonePoliciesResponse._defaults(this);
   }
@@ -119,9 +119,9 @@ class PageShieldListZonePoliciesResponseBuilder
     if ($v != null) {
       _result = $v.result.toBuilder();
       _resultInfo = $v.resultInfo.toBuilder();
+      _success = $v.success;
       _errors = $v.errors?.toBuilder();
       _messages = $v.messages?.toBuilder();
-      _success = $v.success;
       _$v = null;
     }
     return this;
@@ -148,10 +148,10 @@ class PageShieldListZonePoliciesResponseBuilder
           _$PageShieldListZonePoliciesResponse._(
             result: result.build(),
             resultInfo: resultInfo.build(),
-            errors: _errors?.build(),
-            messages: _messages?.build(),
             success: BuiltValueNullFieldError.checkNotNull(
                 success, r'PageShieldListZonePoliciesResponse', 'success'),
+            errors: _errors?.build(),
+            messages: _messages?.build(),
           );
     } catch (_) {
       late String _$failedField;
@@ -160,6 +160,7 @@ class PageShieldListZonePoliciesResponseBuilder
         result.build();
         _$failedField = 'resultInfo';
         resultInfo.build();
+
         _$failedField = 'errors';
         _errors?.build();
         _$failedField = 'messages';

@@ -15,31 +15,31 @@ part 'access_identity_provider.g.dart';
 ///
 /// Properties:
 /// * [config] - The configuration parameters for the identity provider. To view the required parameters for a specific provider, refer to our [developer documentation](https://developers.cloudflare.com/cloudflare-one/identity/idp-integration/).
-/// * [id] - UUID.
 /// * [name] - The name of the identity provider, shown to users on the login page.
-/// * [scimConfig] 
 /// * [type] - The type of identity provider. To determine the value for a specific provider, refer to our [developer documentation](https://developers.cloudflare.com/cloudflare-one/identity/idp-integration/).
+/// * [id] - UUID.
+/// * [scimConfig] 
 @BuiltValue(instantiable: false)
 abstract class AccessIdentityProvider  {
   /// The configuration parameters for the identity provider. To view the required parameters for a specific provider, refer to our [developer documentation](https://developers.cloudflare.com/cloudflare-one/identity/idp-integration/).
   @BuiltValueField(wireName: r'config')
   JsonObject get config;
 
-  /// UUID.
-  @BuiltValueField(wireName: r'id')
-  String? get id;
-
   /// The name of the identity provider, shown to users on the login page.
   @BuiltValueField(wireName: r'name')
   String get name;
-
-  @BuiltValueField(wireName: r'scim_config')
-  AccessIdentityProviderScimConfig? get scimConfig;
 
   /// The type of identity provider. To determine the value for a specific provider, refer to our [developer documentation](https://developers.cloudflare.com/cloudflare-one/identity/idp-integration/).
   @BuiltValueField(wireName: r'type')
   AccessIdentityProviderTypeEnum get type;
   // enum typeEnum {  onetimepin,  azureAD,  saml,  centrify,  facebook,  github,  google-apps,  google,  linkedin,  oidc,  okta,  onelogin,  pingone,  yandex,  };
+
+  /// UUID.
+  @BuiltValueField(wireName: r'id')
+  String? get id;
+
+  @BuiltValueField(wireName: r'scim_config')
+  AccessIdentityProviderScimConfig? get scimConfig;
 
   @BuiltValueSerializer(custom: true)
   static Serializer<AccessIdentityProvider> get serializer => _$AccessIdentityProviderSerializer();
@@ -62,6 +62,16 @@ class _$AccessIdentityProviderSerializer implements PrimitiveSerializer<AccessId
       object.config,
       specifiedType: const FullType(JsonObject),
     );
+    yield r'name';
+    yield serializers.serialize(
+      object.name,
+      specifiedType: const FullType(String),
+    );
+    yield r'type';
+    yield serializers.serialize(
+      object.type,
+      specifiedType: const FullType(AccessIdentityProviderTypeEnum),
+    );
     if (object.id != null) {
       yield r'id';
       yield serializers.serialize(
@@ -69,11 +79,6 @@ class _$AccessIdentityProviderSerializer implements PrimitiveSerializer<AccessId
         specifiedType: const FullType(String),
       );
     }
-    yield r'name';
-    yield serializers.serialize(
-      object.name,
-      specifiedType: const FullType(String),
-    );
     if (object.scimConfig != null) {
       yield r'scim_config';
       yield serializers.serialize(
@@ -81,11 +86,6 @@ class _$AccessIdentityProviderSerializer implements PrimitiveSerializer<AccessId
         specifiedType: const FullType(AccessIdentityProviderScimConfig),
       );
     }
-    yield r'type';
-    yield serializers.serialize(
-      object.type,
-      specifiedType: const FullType(AccessIdentityProviderTypeEnum),
-    );
   }
 
   @override
@@ -156,13 +156,6 @@ class _$$AccessIdentityProviderSerializer implements PrimitiveSerializer<$Access
           ) as JsonObject;
           result.config = valueDes;
           break;
-        case r'id':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.id = valueDes;
-          break;
         case r'name':
           final valueDes = serializers.deserialize(
             value,
@@ -170,19 +163,26 @@ class _$$AccessIdentityProviderSerializer implements PrimitiveSerializer<$Access
           ) as String;
           result.name = valueDes;
           break;
-        case r'scim_config':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(AccessIdentityProviderScimConfig),
-          ) as AccessIdentityProviderScimConfig;
-          result.scimConfig.replace(valueDes);
-          break;
         case r'type':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(AccessIdentityProviderTypeEnum),
           ) as AccessIdentityProviderTypeEnum;
           result.type = valueDes;
+          break;
+        case r'id':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.id = valueDes;
+          break;
+        case r'scim_config':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(AccessIdentityProviderScimConfig),
+          ) as AccessIdentityProviderScimConfig;
+          result.scimConfig.replace(valueDes);
           break;
         default:
           unhandled.add(key);

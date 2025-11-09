@@ -8,14 +8,14 @@ part of 'd1_single_query.dart';
 
 class _$D1SingleQuery extends D1SingleQuery {
   @override
-  final BuiltList<String>? params;
-  @override
   final String sql;
+  @override
+  final BuiltList<String>? params;
 
   factory _$D1SingleQuery([void Function(D1SingleQueryBuilder)? updates]) =>
       (D1SingleQueryBuilder()..update(updates))._build();
 
-  _$D1SingleQuery._({this.params, required this.sql}) : super._();
+  _$D1SingleQuery._({required this.sql, this.params}) : super._();
   @override
   D1SingleQuery rebuild(void Function(D1SingleQueryBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -26,14 +26,14 @@ class _$D1SingleQuery extends D1SingleQuery {
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    return other is D1SingleQuery && params == other.params && sql == other.sql;
+    return other is D1SingleQuery && sql == other.sql && params == other.params;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, params.hashCode);
     _$hash = $jc(_$hash, sql.hashCode);
+    _$hash = $jc(_$hash, params.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -41,8 +41,8 @@ class _$D1SingleQuery extends D1SingleQuery {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'D1SingleQuery')
-          ..add('params', params)
-          ..add('sql', sql))
+          ..add('sql', sql)
+          ..add('params', params))
         .toString();
   }
 }
@@ -51,13 +51,13 @@ class D1SingleQueryBuilder
     implements Builder<D1SingleQuery, D1SingleQueryBuilder> {
   _$D1SingleQuery? _$v;
 
-  ListBuilder<String>? _params;
-  ListBuilder<String> get params => _$this._params ??= ListBuilder<String>();
-  set params(ListBuilder<String>? params) => _$this._params = params;
-
   String? _sql;
   String? get sql => _$this._sql;
   set sql(String? sql) => _$this._sql = sql;
+
+  ListBuilder<String>? _params;
+  ListBuilder<String> get params => _$this._params ??= ListBuilder<String>();
+  set params(ListBuilder<String>? params) => _$this._params = params;
 
   D1SingleQueryBuilder() {
     D1SingleQuery._defaults(this);
@@ -66,8 +66,8 @@ class D1SingleQueryBuilder
   D1SingleQueryBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _params = $v.params?.toBuilder();
       _sql = $v.sql;
+      _params = $v.params?.toBuilder();
       _$v = null;
     }
     return this;
@@ -91,9 +91,9 @@ class D1SingleQueryBuilder
     try {
       _$result = _$v ??
           _$D1SingleQuery._(
-            params: _params?.build(),
             sql: BuiltValueNullFieldError.checkNotNull(
                 sql, r'D1SingleQuery', 'sql'),
+            params: _params?.build(),
           );
     } catch (_) {
       late String _$failedField;

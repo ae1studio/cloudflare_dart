@@ -11,20 +11,20 @@ part 'zero_trust_gateway_custom_certificate_settings.g.dart';
 /// Specify custom certificate settings for BYO-PKI. This field is deprecated; use `certificate` instead.
 ///
 /// Properties:
-/// * [bindingStatus] - Indicate the internal certificate status.
 /// * [enabled] - Specify whether to enable a custom certificate authority for signing Gateway traffic.
+/// * [bindingStatus] - Indicate the internal certificate status.
 /// * [id] - Specify the UUID of the certificate (ID from MTLS certificate store).
 /// * [updatedAt] 
 @Deprecated('ZeroTrustGatewayCustomCertificateSettings has been deprecated')
 @BuiltValue(instantiable: false)
 abstract class ZeroTrustGatewayCustomCertificateSettings  {
-  /// Indicate the internal certificate status.
-  @BuiltValueField(wireName: r'binding_status')
-  String? get bindingStatus;
-
   /// Specify whether to enable a custom certificate authority for signing Gateway traffic.
   @BuiltValueField(wireName: r'enabled')
   bool? get enabled;
+
+  /// Indicate the internal certificate status.
+  @BuiltValueField(wireName: r'binding_status')
+  String? get bindingStatus;
 
   /// Specify the UUID of the certificate (ID from MTLS certificate store).
   @BuiltValueField(wireName: r'id')
@@ -49,6 +49,11 @@ class _$ZeroTrustGatewayCustomCertificateSettingsSerializer implements Primitive
     ZeroTrustGatewayCustomCertificateSettings object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    yield r'enabled';
+    yield object.enabled == null ? null : serializers.serialize(
+      object.enabled,
+      specifiedType: const FullType.nullable(bool),
+    );
     if (object.bindingStatus != null) {
       yield r'binding_status';
       yield serializers.serialize(
@@ -56,11 +61,6 @@ class _$ZeroTrustGatewayCustomCertificateSettingsSerializer implements Primitive
         specifiedType: const FullType(String),
       );
     }
-    yield r'enabled';
-    yield object.enabled == null ? null : serializers.serialize(
-      object.enabled,
-      specifiedType: const FullType.nullable(bool),
-    );
     if (object.id != null) {
       yield r'id';
       yield serializers.serialize(
@@ -138,13 +138,6 @@ class _$$ZeroTrustGatewayCustomCertificateSettingsSerializer implements Primitiv
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'binding_status':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.bindingStatus = valueDes;
-          break;
         case r'enabled':
           final valueDes = serializers.deserialize(
             value,
@@ -152,6 +145,13 @@ class _$$ZeroTrustGatewayCustomCertificateSettingsSerializer implements Primitiv
           ) as bool?;
           if (valueDes == null) continue;
           result.enabled = valueDes;
+          break;
+        case r'binding_status':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.bindingStatus = valueDes;
           break;
         case r'id':
           final valueDes = serializers.deserialize(

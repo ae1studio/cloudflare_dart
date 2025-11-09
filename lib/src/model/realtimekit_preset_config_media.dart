@@ -14,19 +14,19 @@ part 'realtimekit_preset_config_media.g.dart';
 /// Media configuration options. eg: Video quality
 ///
 /// Properties:
-/// * [audio] 
 /// * [screenshare] 
 /// * [video] 
+/// * [audio] 
 @BuiltValue()
 abstract class RealtimekitPresetConfigMedia implements Built<RealtimekitPresetConfigMedia, RealtimekitPresetConfigMediaBuilder> {
-  @BuiltValueField(wireName: r'audio')
-  RealtimekitPresetConfigMediaAudio? get audio;
-
   @BuiltValueField(wireName: r'screenshare')
   RealtimekitPresetConfigMediaScreenshare get screenshare;
 
   @BuiltValueField(wireName: r'video')
   RealtimekitPresetConfigMediaVideo get video;
+
+  @BuiltValueField(wireName: r'audio')
+  RealtimekitPresetConfigMediaAudio? get audio;
 
   RealtimekitPresetConfigMedia._();
 
@@ -51,13 +51,6 @@ class _$RealtimekitPresetConfigMediaSerializer implements PrimitiveSerializer<Re
     RealtimekitPresetConfigMedia object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
-    if (object.audio != null) {
-      yield r'audio';
-      yield serializers.serialize(
-        object.audio,
-        specifiedType: const FullType(RealtimekitPresetConfigMediaAudio),
-      );
-    }
     yield r'screenshare';
     yield serializers.serialize(
       object.screenshare,
@@ -68,6 +61,13 @@ class _$RealtimekitPresetConfigMediaSerializer implements PrimitiveSerializer<Re
       object.video,
       specifiedType: const FullType(RealtimekitPresetConfigMediaVideo),
     );
+    if (object.audio != null) {
+      yield r'audio';
+      yield serializers.serialize(
+        object.audio,
+        specifiedType: const FullType(RealtimekitPresetConfigMediaAudio),
+      );
+    }
   }
 
   @override
@@ -91,13 +91,6 @@ class _$RealtimekitPresetConfigMediaSerializer implements PrimitiveSerializer<Re
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'audio':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(RealtimekitPresetConfigMediaAudio),
-          ) as RealtimekitPresetConfigMediaAudio;
-          result.audio.replace(valueDes);
-          break;
         case r'screenshare':
           final valueDes = serializers.deserialize(
             value,
@@ -111,6 +104,13 @@ class _$RealtimekitPresetConfigMediaSerializer implements PrimitiveSerializer<Re
             specifiedType: const FullType(RealtimekitPresetConfigMediaVideo),
           ) as RealtimekitPresetConfigMediaVideo;
           result.video.replace(valueDes);
+          break;
+        case r'audio':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(RealtimekitPresetConfigMediaAudio),
+          ) as RealtimekitPresetConfigMediaAudio;
+          result.audio.replace(valueDes);
           break;
         default:
           unhandled.add(key);

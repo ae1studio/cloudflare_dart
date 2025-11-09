@@ -8,8 +8,6 @@ part of 'nsc_slot_info.dart';
 
 class _$NscSlotInfo extends NscSlotInfo {
   @override
-  final String? account;
-  @override
   final NscFacilityInfo facility;
   @override
   final String id;
@@ -19,17 +17,19 @@ class _$NscSlotInfo extends NscSlotInfo {
   final String site;
   @override
   final String speed;
+  @override
+  final String? account;
 
   factory _$NscSlotInfo([void Function(NscSlotInfoBuilder)? updates]) =>
       (NscSlotInfoBuilder()..update(updates))._build();
 
   _$NscSlotInfo._(
-      {this.account,
-      required this.facility,
+      {required this.facility,
       required this.id,
       required this.occupied,
       required this.site,
-      required this.speed})
+      required this.speed,
+      this.account})
       : super._();
   @override
   NscSlotInfo rebuild(void Function(NscSlotInfoBuilder) updates) =>
@@ -42,23 +42,23 @@ class _$NscSlotInfo extends NscSlotInfo {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is NscSlotInfo &&
-        account == other.account &&
         facility == other.facility &&
         id == other.id &&
         occupied == other.occupied &&
         site == other.site &&
-        speed == other.speed;
+        speed == other.speed &&
+        account == other.account;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, account.hashCode);
     _$hash = $jc(_$hash, facility.hashCode);
     _$hash = $jc(_$hash, id.hashCode);
     _$hash = $jc(_$hash, occupied.hashCode);
     _$hash = $jc(_$hash, site.hashCode);
     _$hash = $jc(_$hash, speed.hashCode);
+    _$hash = $jc(_$hash, account.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -66,22 +66,18 @@ class _$NscSlotInfo extends NscSlotInfo {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'NscSlotInfo')
-          ..add('account', account)
           ..add('facility', facility)
           ..add('id', id)
           ..add('occupied', occupied)
           ..add('site', site)
-          ..add('speed', speed))
+          ..add('speed', speed)
+          ..add('account', account))
         .toString();
   }
 }
 
 class NscSlotInfoBuilder implements Builder<NscSlotInfo, NscSlotInfoBuilder> {
   _$NscSlotInfo? _$v;
-
-  String? _account;
-  String? get account => _$this._account;
-  set account(String? account) => _$this._account = account;
 
   NscFacilityInfoBuilder? _facility;
   NscFacilityInfoBuilder get facility =>
@@ -104,6 +100,10 @@ class NscSlotInfoBuilder implements Builder<NscSlotInfo, NscSlotInfoBuilder> {
   String? get speed => _$this._speed;
   set speed(String? speed) => _$this._speed = speed;
 
+  String? _account;
+  String? get account => _$this._account;
+  set account(String? account) => _$this._account = account;
+
   NscSlotInfoBuilder() {
     NscSlotInfo._defaults(this);
   }
@@ -111,12 +111,12 @@ class NscSlotInfoBuilder implements Builder<NscSlotInfo, NscSlotInfoBuilder> {
   NscSlotInfoBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _account = $v.account;
       _facility = $v.facility.toBuilder();
       _id = $v.id;
       _occupied = $v.occupied;
       _site = $v.site;
       _speed = $v.speed;
+      _account = $v.account;
       _$v = null;
     }
     return this;
@@ -140,7 +140,6 @@ class NscSlotInfoBuilder implements Builder<NscSlotInfo, NscSlotInfoBuilder> {
     try {
       _$result = _$v ??
           _$NscSlotInfo._(
-            account: account,
             facility: facility.build(),
             id: BuiltValueNullFieldError.checkNotNull(id, r'NscSlotInfo', 'id'),
             occupied: BuiltValueNullFieldError.checkNotNull(
@@ -149,6 +148,7 @@ class NscSlotInfoBuilder implements Builder<NscSlotInfo, NscSlotInfoBuilder> {
                 site, r'NscSlotInfo', 'site'),
             speed: BuiltValueNullFieldError.checkNotNull(
                 speed, r'NscSlotInfo', 'speed'),
+            account: account,
           );
     } catch (_) {
       late String _$failedField;

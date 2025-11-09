@@ -18,6 +18,10 @@ class _$BrowserSSHApplication2 extends BrowserSSHApplication2 {
   @override
   final DateTime? updatedAt;
   @override
+  final String domain;
+  @override
+  final String type;
+  @override
   final bool? allowIframe;
   @override
   final BuiltList<String>? allowedIdps;
@@ -31,8 +35,6 @@ class _$BrowserSSHApplication2 extends BrowserSSHApplication2 {
   final String? customDenyMessage;
   @override
   final String? customDenyUrl;
-  @override
-  final String domain;
   @override
   final bool? enableBindingCookie;
   @override
@@ -51,8 +53,6 @@ class _$BrowserSSHApplication2 extends BrowserSSHApplication2 {
   final String? sessionDuration;
   @override
   final bool? skipInterstitial;
-  @override
-  final String type;
 
   factory _$BrowserSSHApplication2(
           [void Function(BrowserSSHApplication2Builder)? updates]) =>
@@ -64,6 +64,8 @@ class _$BrowserSSHApplication2 extends BrowserSSHApplication2 {
       this.id,
       this.scimConfig,
       this.updatedAt,
+      required this.domain,
+      required this.type,
       this.allowIframe,
       this.allowedIdps,
       this.appLauncherVisible,
@@ -71,7 +73,6 @@ class _$BrowserSSHApplication2 extends BrowserSSHApplication2 {
       this.corsHeaders,
       this.customDenyMessage,
       this.customDenyUrl,
-      required this.domain,
       this.enableBindingCookie,
       this.httpOnlyCookieAttribute,
       this.logoUrl,
@@ -80,8 +81,7 @@ class _$BrowserSSHApplication2 extends BrowserSSHApplication2 {
       this.sameSiteCookieAttribute,
       this.serviceAuth401Redirect,
       this.sessionDuration,
-      this.skipInterstitial,
-      required this.type})
+      this.skipInterstitial})
       : super._();
   @override
   BrowserSSHApplication2 rebuild(
@@ -101,6 +101,8 @@ class _$BrowserSSHApplication2 extends BrowserSSHApplication2 {
         id == other.id &&
         scimConfig == other.scimConfig &&
         updatedAt == other.updatedAt &&
+        domain == other.domain &&
+        type == other.type &&
         allowIframe == other.allowIframe &&
         allowedIdps == other.allowedIdps &&
         appLauncherVisible == other.appLauncherVisible &&
@@ -108,7 +110,6 @@ class _$BrowserSSHApplication2 extends BrowserSSHApplication2 {
         corsHeaders == other.corsHeaders &&
         customDenyMessage == other.customDenyMessage &&
         customDenyUrl == other.customDenyUrl &&
-        domain == other.domain &&
         enableBindingCookie == other.enableBindingCookie &&
         httpOnlyCookieAttribute == other.httpOnlyCookieAttribute &&
         logoUrl == other.logoUrl &&
@@ -117,8 +118,7 @@ class _$BrowserSSHApplication2 extends BrowserSSHApplication2 {
         sameSiteCookieAttribute == other.sameSiteCookieAttribute &&
         serviceAuth401Redirect == other.serviceAuth401Redirect &&
         sessionDuration == other.sessionDuration &&
-        skipInterstitial == other.skipInterstitial &&
-        type == other.type;
+        skipInterstitial == other.skipInterstitial;
   }
 
   @override
@@ -129,6 +129,8 @@ class _$BrowserSSHApplication2 extends BrowserSSHApplication2 {
     _$hash = $jc(_$hash, id.hashCode);
     _$hash = $jc(_$hash, scimConfig.hashCode);
     _$hash = $jc(_$hash, updatedAt.hashCode);
+    _$hash = $jc(_$hash, domain.hashCode);
+    _$hash = $jc(_$hash, type.hashCode);
     _$hash = $jc(_$hash, allowIframe.hashCode);
     _$hash = $jc(_$hash, allowedIdps.hashCode);
     _$hash = $jc(_$hash, appLauncherVisible.hashCode);
@@ -136,7 +138,6 @@ class _$BrowserSSHApplication2 extends BrowserSSHApplication2 {
     _$hash = $jc(_$hash, corsHeaders.hashCode);
     _$hash = $jc(_$hash, customDenyMessage.hashCode);
     _$hash = $jc(_$hash, customDenyUrl.hashCode);
-    _$hash = $jc(_$hash, domain.hashCode);
     _$hash = $jc(_$hash, enableBindingCookie.hashCode);
     _$hash = $jc(_$hash, httpOnlyCookieAttribute.hashCode);
     _$hash = $jc(_$hash, logoUrl.hashCode);
@@ -146,7 +147,6 @@ class _$BrowserSSHApplication2 extends BrowserSSHApplication2 {
     _$hash = $jc(_$hash, serviceAuth401Redirect.hashCode);
     _$hash = $jc(_$hash, sessionDuration.hashCode);
     _$hash = $jc(_$hash, skipInterstitial.hashCode);
-    _$hash = $jc(_$hash, type.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -159,6 +159,8 @@ class _$BrowserSSHApplication2 extends BrowserSSHApplication2 {
           ..add('id', id)
           ..add('scimConfig', scimConfig)
           ..add('updatedAt', updatedAt)
+          ..add('domain', domain)
+          ..add('type', type)
           ..add('allowIframe', allowIframe)
           ..add('allowedIdps', allowedIdps)
           ..add('appLauncherVisible', appLauncherVisible)
@@ -166,7 +168,6 @@ class _$BrowserSSHApplication2 extends BrowserSSHApplication2 {
           ..add('corsHeaders', corsHeaders)
           ..add('customDenyMessage', customDenyMessage)
           ..add('customDenyUrl', customDenyUrl)
-          ..add('domain', domain)
           ..add('enableBindingCookie', enableBindingCookie)
           ..add('httpOnlyCookieAttribute', httpOnlyCookieAttribute)
           ..add('logoUrl', logoUrl)
@@ -175,8 +176,7 @@ class _$BrowserSSHApplication2 extends BrowserSSHApplication2 {
           ..add('sameSiteCookieAttribute', sameSiteCookieAttribute)
           ..add('serviceAuth401Redirect', serviceAuth401Redirect)
           ..add('sessionDuration', sessionDuration)
-          ..add('skipInterstitial', skipInterstitial)
-          ..add('type', type))
+          ..add('skipInterstitial', skipInterstitial))
         .toString();
   }
 }
@@ -209,6 +209,14 @@ class BrowserSSHApplication2Builder
   DateTime? _updatedAt;
   DateTime? get updatedAt => _$this._updatedAt;
   set updatedAt(covariant DateTime? updatedAt) => _$this._updatedAt = updatedAt;
+
+  String? _domain;
+  String? get domain => _$this._domain;
+  set domain(covariant String? domain) => _$this._domain = domain;
+
+  String? _type;
+  String? get type => _$this._type;
+  set type(covariant String? type) => _$this._type = type;
 
   bool? _allowIframe;
   bool? get allowIframe => _$this._allowIframe;
@@ -246,10 +254,6 @@ class BrowserSSHApplication2Builder
   String? get customDenyUrl => _$this._customDenyUrl;
   set customDenyUrl(covariant String? customDenyUrl) =>
       _$this._customDenyUrl = customDenyUrl;
-
-  String? _domain;
-  String? get domain => _$this._domain;
-  set domain(covariant String? domain) => _$this._domain = domain;
 
   bool? _enableBindingCookie;
   bool? get enableBindingCookie => _$this._enableBindingCookie;
@@ -294,10 +298,6 @@ class BrowserSSHApplication2Builder
   set skipInterstitial(covariant bool? skipInterstitial) =>
       _$this._skipInterstitial = skipInterstitial;
 
-  String? _type;
-  String? get type => _$this._type;
-  set type(covariant String? type) => _$this._type = type;
-
   BrowserSSHApplication2Builder() {
     BrowserSSHApplication2._defaults(this);
   }
@@ -310,6 +310,8 @@ class BrowserSSHApplication2Builder
       _id = $v.id;
       _scimConfig = $v.scimConfig?.toBuilder();
       _updatedAt = $v.updatedAt;
+      _domain = $v.domain;
+      _type = $v.type;
       _allowIframe = $v.allowIframe;
       _allowedIdps = $v.allowedIdps?.toBuilder();
       _appLauncherVisible = $v.appLauncherVisible;
@@ -317,7 +319,6 @@ class BrowserSSHApplication2Builder
       _corsHeaders = $v.corsHeaders?.toBuilder();
       _customDenyMessage = $v.customDenyMessage;
       _customDenyUrl = $v.customDenyUrl;
-      _domain = $v.domain;
       _enableBindingCookie = $v.enableBindingCookie;
       _httpOnlyCookieAttribute = $v.httpOnlyCookieAttribute;
       _logoUrl = $v.logoUrl;
@@ -327,7 +328,6 @@ class BrowserSSHApplication2Builder
       _serviceAuth401Redirect = $v.serviceAuth401Redirect;
       _sessionDuration = $v.sessionDuration;
       _skipInterstitial = $v.skipInterstitial;
-      _type = $v.type;
       _$v = null;
     }
     return this;
@@ -357,6 +357,10 @@ class BrowserSSHApplication2Builder
             id: id,
             scimConfig: _scimConfig?.build(),
             updatedAt: updatedAt,
+            domain: BuiltValueNullFieldError.checkNotNull(
+                domain, r'BrowserSSHApplication2', 'domain'),
+            type: BuiltValueNullFieldError.checkNotNull(
+                type, r'BrowserSSHApplication2', 'type'),
             allowIframe: allowIframe,
             allowedIdps: _allowedIdps?.build(),
             appLauncherVisible: appLauncherVisible,
@@ -364,8 +368,6 @@ class BrowserSSHApplication2Builder
             corsHeaders: _corsHeaders?.build(),
             customDenyMessage: customDenyMessage,
             customDenyUrl: customDenyUrl,
-            domain: BuiltValueNullFieldError.checkNotNull(
-                domain, r'BrowserSSHApplication2', 'domain'),
             enableBindingCookie: enableBindingCookie,
             httpOnlyCookieAttribute: httpOnlyCookieAttribute,
             logoUrl: logoUrl,
@@ -375,8 +377,6 @@ class BrowserSSHApplication2Builder
             serviceAuth401Redirect: serviceAuth401Redirect,
             sessionDuration: sessionDuration,
             skipInterstitial: skipInterstitial,
-            type: BuiltValueNullFieldError.checkNotNull(
-                type, r'BrowserSSHApplication2', 'type'),
           );
     } catch (_) {
       late String _$failedField;

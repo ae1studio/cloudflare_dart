@@ -156,13 +156,13 @@ class _$TeamsDevicesOsVersionInputRequest
   @override
   final TeamsDevicesOsVersionInputRequestOperator_Enum operator_;
   @override
+  final String version;
+  @override
   final String? osDistroName;
   @override
   final String? osDistroRevision;
   @override
   final String? osVersionExtra;
-  @override
-  final String version;
 
   factory _$TeamsDevicesOsVersionInputRequest(
           [void Function(TeamsDevicesOsVersionInputRequestBuilder)? updates]) =>
@@ -171,10 +171,10 @@ class _$TeamsDevicesOsVersionInputRequest
   _$TeamsDevicesOsVersionInputRequest._(
       {required this.operatingSystem,
       required this.operator_,
+      required this.version,
       this.osDistroName,
       this.osDistroRevision,
-      this.osVersionExtra,
-      required this.version})
+      this.osVersionExtra})
       : super._();
   @override
   TeamsDevicesOsVersionInputRequest rebuild(
@@ -191,10 +191,10 @@ class _$TeamsDevicesOsVersionInputRequest
     return other is TeamsDevicesOsVersionInputRequest &&
         operatingSystem == other.operatingSystem &&
         operator_ == other.operator_ &&
+        version == other.version &&
         osDistroName == other.osDistroName &&
         osDistroRevision == other.osDistroRevision &&
-        osVersionExtra == other.osVersionExtra &&
-        version == other.version;
+        osVersionExtra == other.osVersionExtra;
   }
 
   @override
@@ -202,10 +202,10 @@ class _$TeamsDevicesOsVersionInputRequest
     var _$hash = 0;
     _$hash = $jc(_$hash, operatingSystem.hashCode);
     _$hash = $jc(_$hash, operator_.hashCode);
+    _$hash = $jc(_$hash, version.hashCode);
     _$hash = $jc(_$hash, osDistroName.hashCode);
     _$hash = $jc(_$hash, osDistroRevision.hashCode);
     _$hash = $jc(_$hash, osVersionExtra.hashCode);
-    _$hash = $jc(_$hash, version.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -215,10 +215,10 @@ class _$TeamsDevicesOsVersionInputRequest
     return (newBuiltValueToStringHelper(r'TeamsDevicesOsVersionInputRequest')
           ..add('operatingSystem', operatingSystem)
           ..add('operator_', operator_)
+          ..add('version', version)
           ..add('osDistroName', osDistroName)
           ..add('osDistroRevision', osDistroRevision)
-          ..add('osVersionExtra', osVersionExtra)
-          ..add('version', version))
+          ..add('osVersionExtra', osVersionExtra))
         .toString();
   }
 }
@@ -243,6 +243,10 @@ class TeamsDevicesOsVersionInputRequestBuilder
   set operator_(TeamsDevicesOsVersionInputRequestOperator_Enum? operator_) =>
       _$this._operator_ = operator_;
 
+  String? _version;
+  String? get version => _$this._version;
+  set version(String? version) => _$this._version = version;
+
   String? _osDistroName;
   String? get osDistroName => _$this._osDistroName;
   set osDistroName(String? osDistroName) => _$this._osDistroName = osDistroName;
@@ -257,10 +261,6 @@ class TeamsDevicesOsVersionInputRequestBuilder
   set osVersionExtra(String? osVersionExtra) =>
       _$this._osVersionExtra = osVersionExtra;
 
-  String? _version;
-  String? get version => _$this._version;
-  set version(String? version) => _$this._version = version;
-
   TeamsDevicesOsVersionInputRequestBuilder() {
     TeamsDevicesOsVersionInputRequest._defaults(this);
   }
@@ -270,10 +270,10 @@ class TeamsDevicesOsVersionInputRequestBuilder
     if ($v != null) {
       _operatingSystem = $v.operatingSystem;
       _operator_ = $v.operator_;
+      _version = $v.version;
       _osDistroName = $v.osDistroName;
       _osDistroRevision = $v.osDistroRevision;
       _osVersionExtra = $v.osVersionExtra;
-      _version = $v.version;
       _$v = null;
     }
     return this;
@@ -302,11 +302,11 @@ class TeamsDevicesOsVersionInputRequestBuilder
               'operatingSystem'),
           operator_: BuiltValueNullFieldError.checkNotNull(
               operator_, r'TeamsDevicesOsVersionInputRequest', 'operator_'),
+          version: BuiltValueNullFieldError.checkNotNull(
+              version, r'TeamsDevicesOsVersionInputRequest', 'version'),
           osDistroName: osDistroName,
           osDistroRevision: osDistroRevision,
           osVersionExtra: osVersionExtra,
-          version: BuiltValueNullFieldError.checkNotNull(
-              version, r'TeamsDevicesOsVersionInputRequest', 'version'),
         );
     replace(_$result);
     return _$result;

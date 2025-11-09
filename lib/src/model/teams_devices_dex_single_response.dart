@@ -9,6 +9,7 @@ import 'package:cloudflare_dart/src/model/teams_devices_api_response_single.dart
 import 'package:cloudflare_dart/src/model/aaa_messages_inner.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
+import 'package:built_value/json_object.dart';
 
 part 'teams_devices_dex_single_response.g.dart';
 

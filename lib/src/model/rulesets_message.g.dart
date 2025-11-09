@@ -8,16 +8,16 @@ part of 'rulesets_message.dart';
 
 class _$RulesetsMessage extends RulesetsMessage {
   @override
-  final int? code;
-  @override
   final String message;
+  @override
+  final int? code;
   @override
   final ModelSource? source_;
 
   factory _$RulesetsMessage([void Function(RulesetsMessageBuilder)? updates]) =>
       (RulesetsMessageBuilder()..update(updates))._build();
 
-  _$RulesetsMessage._({this.code, required this.message, this.source_})
+  _$RulesetsMessage._({required this.message, this.code, this.source_})
       : super._();
   @override
   RulesetsMessage rebuild(void Function(RulesetsMessageBuilder) updates) =>
@@ -30,16 +30,16 @@ class _$RulesetsMessage extends RulesetsMessage {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is RulesetsMessage &&
-        code == other.code &&
         message == other.message &&
+        code == other.code &&
         source_ == other.source_;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, code.hashCode);
     _$hash = $jc(_$hash, message.hashCode);
+    _$hash = $jc(_$hash, code.hashCode);
     _$hash = $jc(_$hash, source_.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
@@ -48,8 +48,8 @@ class _$RulesetsMessage extends RulesetsMessage {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'RulesetsMessage')
-          ..add('code', code)
           ..add('message', message)
+          ..add('code', code)
           ..add('source_', source_))
         .toString();
   }
@@ -59,13 +59,13 @@ class RulesetsMessageBuilder
     implements Builder<RulesetsMessage, RulesetsMessageBuilder> {
   _$RulesetsMessage? _$v;
 
-  int? _code;
-  int? get code => _$this._code;
-  set code(int? code) => _$this._code = code;
-
   String? _message;
   String? get message => _$this._message;
   set message(String? message) => _$this._message = message;
+
+  int? _code;
+  int? get code => _$this._code;
+  set code(int? code) => _$this._code = code;
 
   ModelSourceBuilder? _source_;
   ModelSourceBuilder get source_ => _$this._source_ ??= ModelSourceBuilder();
@@ -78,8 +78,8 @@ class RulesetsMessageBuilder
   RulesetsMessageBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _code = $v.code;
       _message = $v.message;
+      _code = $v.code;
       _source_ = $v.source_?.toBuilder();
       _$v = null;
     }
@@ -104,9 +104,9 @@ class RulesetsMessageBuilder
     try {
       _$result = _$v ??
           _$RulesetsMessage._(
-            code: code,
             message: BuiltValueNullFieldError.checkNotNull(
                 message, r'RulesetsMessage', 'message'),
+            code: code,
             source_: _source_?.build(),
           );
     } catch (_) {

@@ -12,30 +12,18 @@ part 'magic_app_config.g.dart';
 /// Traffic decision configuration for an app.
 ///
 /// Properties:
-/// * [breakout] - Whether to breakout traffic to the app's endpoints directly. Null preserves default behavior.
 /// * [id] - Identifier
-/// * [preferredWans] - WAN interfaces to prefer over default WANs, highest-priority first. Can only be specified for breakout rules (breakout must be true).
-/// * [priority] - Priority of traffic. 0 is default, anything greater is prioritized. (Currently only 0 and 1 are supported)
 /// * [siteId] - Identifier
 /// * [accountAppId] - Magic account app ID.
 /// * [managedAppId] - Managed app ID.
+/// * [breakout] - Whether to breakout traffic to the app's endpoints directly. Null preserves default behavior.
+/// * [preferredWans] - WAN interfaces to prefer over default WANs, highest-priority first. Can only be specified for breakout rules (breakout must be true).
+/// * [priority] - Priority of traffic. 0 is default, anything greater is prioritized. (Currently only 0 and 1 are supported)
 @BuiltValue()
 abstract class MagicAppConfig implements Built<MagicAppConfig, MagicAppConfigBuilder> {
-  /// Whether to breakout traffic to the app's endpoints directly. Null preserves default behavior.
-  @BuiltValueField(wireName: r'breakout')
-  bool? get breakout;
-
   /// Identifier
   @BuiltValueField(wireName: r'id')
   String get id;
-
-  /// WAN interfaces to prefer over default WANs, highest-priority first. Can only be specified for breakout rules (breakout must be true).
-  @BuiltValueField(wireName: r'preferred_wans')
-  BuiltList<String>? get preferredWans;
-
-  /// Priority of traffic. 0 is default, anything greater is prioritized. (Currently only 0 and 1 are supported)
-  @BuiltValueField(wireName: r'priority')
-  int? get priority;
 
   /// Identifier
   @BuiltValueField(wireName: r'site_id')
@@ -48,6 +36,18 @@ abstract class MagicAppConfig implements Built<MagicAppConfig, MagicAppConfigBui
   /// Managed app ID.
   @BuiltValueField(wireName: r'managed_app_id')
   String get managedAppId;
+
+  /// Whether to breakout traffic to the app's endpoints directly. Null preserves default behavior.
+  @BuiltValueField(wireName: r'breakout')
+  bool? get breakout;
+
+  /// WAN interfaces to prefer over default WANs, highest-priority first. Can only be specified for breakout rules (breakout must be true).
+  @BuiltValueField(wireName: r'preferred_wans')
+  BuiltList<String>? get preferredWans;
+
+  /// Priority of traffic. 0 is default, anything greater is prioritized. (Currently only 0 and 1 are supported)
+  @BuiltValueField(wireName: r'priority')
+  int? get priority;
 
   MagicAppConfig._();
 
@@ -72,32 +72,11 @@ class _$MagicAppConfigSerializer implements PrimitiveSerializer<MagicAppConfig> 
     MagicAppConfig object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
-    if (object.breakout != null) {
-      yield r'breakout';
-      yield serializers.serialize(
-        object.breakout,
-        specifiedType: const FullType(bool),
-      );
-    }
     yield r'id';
     yield serializers.serialize(
       object.id,
       specifiedType: const FullType(String),
     );
-    if (object.preferredWans != null) {
-      yield r'preferred_wans';
-      yield serializers.serialize(
-        object.preferredWans,
-        specifiedType: const FullType(BuiltList, [FullType(String)]),
-      );
-    }
-    if (object.priority != null) {
-      yield r'priority';
-      yield serializers.serialize(
-        object.priority,
-        specifiedType: const FullType(int),
-      );
-    }
     yield r'site_id';
     yield serializers.serialize(
       object.siteId,
@@ -113,6 +92,27 @@ class _$MagicAppConfigSerializer implements PrimitiveSerializer<MagicAppConfig> 
       object.managedAppId,
       specifiedType: const FullType(String),
     );
+    if (object.breakout != null) {
+      yield r'breakout';
+      yield serializers.serialize(
+        object.breakout,
+        specifiedType: const FullType(bool),
+      );
+    }
+    if (object.preferredWans != null) {
+      yield r'preferred_wans';
+      yield serializers.serialize(
+        object.preferredWans,
+        specifiedType: const FullType(BuiltList, [FullType(String)]),
+      );
+    }
+    if (object.priority != null) {
+      yield r'priority';
+      yield serializers.serialize(
+        object.priority,
+        specifiedType: const FullType(int),
+      );
+    }
   }
 
   @override
@@ -136,33 +136,12 @@ class _$MagicAppConfigSerializer implements PrimitiveSerializer<MagicAppConfig> 
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'breakout':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
-          result.breakout = valueDes;
-          break;
         case r'id':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(String),
           ) as String;
           result.id = valueDes;
-          break;
-        case r'preferred_wans':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>;
-          result.preferredWans.replace(valueDes);
-          break;
-        case r'priority':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
-          result.priority = valueDes;
           break;
         case r'site_id':
           final valueDes = serializers.deserialize(
@@ -184,6 +163,27 @@ class _$MagicAppConfigSerializer implements PrimitiveSerializer<MagicAppConfig> 
             specifiedType: const FullType(String),
           ) as String;
           result.managedAppId = valueDes;
+          break;
+        case r'breakout':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(bool),
+          ) as bool;
+          result.breakout = valueDes;
+          break;
+        case r'preferred_wans':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BuiltList, [FullType(String)]),
+          ) as BuiltList<String>;
+          result.preferredWans.replace(valueDes);
+          break;
+        case r'priority':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(int),
+          ) as int;
+          result.priority = valueDes;
           break;
         default:
           unhandled.add(key);

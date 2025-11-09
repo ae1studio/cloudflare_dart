@@ -8,16 +8,17 @@ import 'package:cloudflare_dart/src/model/zones_base.dart';
 import 'package:cloudflare_dart/src/model/zones_pseudo_ipv4_value.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
+import 'package:built_value/json_object.dart';
 
 part 'zones_pseudo_ipv4.g.dart';
 
 /// The value set for the Pseudo IPv4 setting.
 ///
 /// Properties:
-/// * [editable] - Whether or not this setting can be modified for this zone (based on your Cloudflare plan level).
 /// * [id] - Value of the Pseudo IPv4 setting.
-/// * [modifiedOn] - last time this setting was modified.
 /// * [value] 
+/// * [editable] - Whether or not this setting can be modified for this zone (based on your Cloudflare plan level).
+/// * [modifiedOn] - last time this setting was modified.
 @BuiltValue()
 abstract class ZonesPseudoIpv4 implements ZonesBase, Built<ZonesPseudoIpv4, ZonesPseudoIpv4Builder> {
   ZonesPseudoIpv4._();

@@ -8,13 +8,13 @@ part of 'magic_create_route_request.dart';
 
 class _$MagicCreateRouteRequest extends MagicCreateRouteRequest {
   @override
-  final String? description;
-  @override
   final String nexthop;
   @override
   final String prefix;
   @override
   final int priority;
+  @override
+  final String? description;
   @override
   final MagicScope? scope;
   @override
@@ -25,10 +25,10 @@ class _$MagicCreateRouteRequest extends MagicCreateRouteRequest {
       (MagicCreateRouteRequestBuilder()..update(updates))._build();
 
   _$MagicCreateRouteRequest._(
-      {this.description,
-      required this.nexthop,
+      {required this.nexthop,
       required this.prefix,
       required this.priority,
+      this.description,
       this.scope,
       this.weight})
       : super._();
@@ -45,10 +45,10 @@ class _$MagicCreateRouteRequest extends MagicCreateRouteRequest {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is MagicCreateRouteRequest &&
-        description == other.description &&
         nexthop == other.nexthop &&
         prefix == other.prefix &&
         priority == other.priority &&
+        description == other.description &&
         scope == other.scope &&
         weight == other.weight;
   }
@@ -56,10 +56,10 @@ class _$MagicCreateRouteRequest extends MagicCreateRouteRequest {
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, description.hashCode);
     _$hash = $jc(_$hash, nexthop.hashCode);
     _$hash = $jc(_$hash, prefix.hashCode);
     _$hash = $jc(_$hash, priority.hashCode);
+    _$hash = $jc(_$hash, description.hashCode);
     _$hash = $jc(_$hash, scope.hashCode);
     _$hash = $jc(_$hash, weight.hashCode);
     _$hash = $jf(_$hash);
@@ -69,10 +69,10 @@ class _$MagicCreateRouteRequest extends MagicCreateRouteRequest {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'MagicCreateRouteRequest')
-          ..add('description', description)
           ..add('nexthop', nexthop)
           ..add('prefix', prefix)
           ..add('priority', priority)
+          ..add('description', description)
           ..add('scope', scope)
           ..add('weight', weight))
         .toString();
@@ -83,10 +83,6 @@ class MagicCreateRouteRequestBuilder
     implements
         Builder<MagicCreateRouteRequest, MagicCreateRouteRequestBuilder> {
   _$MagicCreateRouteRequest? _$v;
-
-  String? _description;
-  String? get description => _$this._description;
-  set description(String? description) => _$this._description = description;
 
   String? _nexthop;
   String? get nexthop => _$this._nexthop;
@@ -99,6 +95,10 @@ class MagicCreateRouteRequestBuilder
   int? _priority;
   int? get priority => _$this._priority;
   set priority(int? priority) => _$this._priority = priority;
+
+  String? _description;
+  String? get description => _$this._description;
+  set description(String? description) => _$this._description = description;
 
   MagicScopeBuilder? _scope;
   MagicScopeBuilder get scope => _$this._scope ??= MagicScopeBuilder();
@@ -115,10 +115,10 @@ class MagicCreateRouteRequestBuilder
   MagicCreateRouteRequestBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _description = $v.description;
       _nexthop = $v.nexthop;
       _prefix = $v.prefix;
       _priority = $v.priority;
+      _description = $v.description;
       _scope = $v.scope?.toBuilder();
       _weight = $v.weight;
       _$v = null;
@@ -144,13 +144,13 @@ class MagicCreateRouteRequestBuilder
     try {
       _$result = _$v ??
           _$MagicCreateRouteRequest._(
-            description: description,
             nexthop: BuiltValueNullFieldError.checkNotNull(
                 nexthop, r'MagicCreateRouteRequest', 'nexthop'),
             prefix: BuiltValueNullFieldError.checkNotNull(
                 prefix, r'MagicCreateRouteRequest', 'prefix'),
             priority: BuiltValueNullFieldError.checkNotNull(
                 priority, r'MagicCreateRouteRequest', 'priority'),
+            description: description,
             scope: _scope?.build(),
             weight: weight,
           );

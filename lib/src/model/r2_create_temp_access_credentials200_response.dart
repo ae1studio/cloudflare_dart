@@ -9,6 +9,7 @@ import 'package:cloudflare_dart/src/model/r2_v4_response.dart';
 import 'package:cloudflare_dart/src/model/aaa_messages_inner.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
+import 'package:built_value/json_object.dart';
 
 part 'r2_create_temp_access_credentials200_response.g.dart';
 

@@ -20,7 +20,6 @@ part 'get_event_list_get200_response_inner.g.dart';
 /// * [indicator] 
 /// * [indicatorType] 
 /// * [indicatorTypeId] 
-/// * [insight] 
 /// * [killChain] 
 /// * [mitreAttack] 
 /// * [numReferenced] 
@@ -30,12 +29,13 @@ part 'get_event_list_get200_response_inner.g.dart';
 /// * [referencedIds] 
 /// * [references] 
 /// * [referencesIds] 
-/// * [releasabilityId] 
 /// * [tags] 
 /// * [targetCountry] 
 /// * [targetIndustry] 
 /// * [tlp] 
 /// * [uuid] 
+/// * [insight] 
+/// * [releasabilityId] 
 @BuiltValue()
 abstract class GetEventListGet200ResponseInner implements Built<GetEventListGet200ResponseInner, GetEventListGet200ResponseInnerBuilder> {
   @BuiltValueField(wireName: r'attacker')
@@ -61,9 +61,6 @@ abstract class GetEventListGet200ResponseInner implements Built<GetEventListGet2
 
   @BuiltValueField(wireName: r'indicatorTypeId')
   num get indicatorTypeId;
-
-  @BuiltValueField(wireName: r'insight')
-  String? get insight;
 
   @BuiltValueField(wireName: r'killChain')
   num get killChain;
@@ -92,9 +89,6 @@ abstract class GetEventListGet200ResponseInner implements Built<GetEventListGet2
   @BuiltValueField(wireName: r'referencesIds')
   BuiltList<num> get referencesIds;
 
-  @BuiltValueField(wireName: r'releasabilityId')
-  String? get releasabilityId;
-
   @BuiltValueField(wireName: r'tags')
   BuiltList<String> get tags;
 
@@ -109,6 +103,12 @@ abstract class GetEventListGet200ResponseInner implements Built<GetEventListGet2
 
   @BuiltValueField(wireName: r'uuid')
   String get uuid;
+
+  @BuiltValueField(wireName: r'insight')
+  String? get insight;
+
+  @BuiltValueField(wireName: r'releasabilityId')
+  String? get releasabilityId;
 
   GetEventListGet200ResponseInner._();
 
@@ -173,13 +173,6 @@ class _$GetEventListGet200ResponseInnerSerializer implements PrimitiveSerializer
       object.indicatorTypeId,
       specifiedType: const FullType(num),
     );
-    if (object.insight != null) {
-      yield r'insight';
-      yield serializers.serialize(
-        object.insight,
-        specifiedType: const FullType(String),
-      );
-    }
     yield r'killChain';
     yield serializers.serialize(
       object.killChain,
@@ -225,13 +218,6 @@ class _$GetEventListGet200ResponseInnerSerializer implements PrimitiveSerializer
       object.referencesIds,
       specifiedType: const FullType(BuiltList, [FullType(num)]),
     );
-    if (object.releasabilityId != null) {
-      yield r'releasabilityId';
-      yield serializers.serialize(
-        object.releasabilityId,
-        specifiedType: const FullType(String),
-      );
-    }
     yield r'tags';
     yield serializers.serialize(
       object.tags,
@@ -257,6 +243,20 @@ class _$GetEventListGet200ResponseInnerSerializer implements PrimitiveSerializer
       object.uuid,
       specifiedType: const FullType(String),
     );
+    if (object.insight != null) {
+      yield r'insight';
+      yield serializers.serialize(
+        object.insight,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.releasabilityId != null) {
+      yield r'releasabilityId';
+      yield serializers.serialize(
+        object.releasabilityId,
+        specifiedType: const FullType(String),
+      );
+    }
   }
 
   @override
@@ -336,13 +336,6 @@ class _$GetEventListGet200ResponseInnerSerializer implements PrimitiveSerializer
           ) as num;
           result.indicatorTypeId = valueDes;
           break;
-        case r'insight':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.insight = valueDes;
-          break;
         case r'killChain':
           final valueDes = serializers.deserialize(
             value,
@@ -406,13 +399,6 @@ class _$GetEventListGet200ResponseInnerSerializer implements PrimitiveSerializer
           ) as BuiltList<num>;
           result.referencesIds.replace(valueDes);
           break;
-        case r'releasabilityId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.releasabilityId = valueDes;
-          break;
         case r'tags':
           final valueDes = serializers.deserialize(
             value,
@@ -447,6 +433,20 @@ class _$GetEventListGet200ResponseInnerSerializer implements PrimitiveSerializer
             specifiedType: const FullType(String),
           ) as String;
           result.uuid = valueDes;
+          break;
+        case r'insight':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.insight = valueDes;
+          break;
+        case r'releasabilityId':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.releasabilityId = valueDes;
           break;
         default:
           unhandled.add(key);

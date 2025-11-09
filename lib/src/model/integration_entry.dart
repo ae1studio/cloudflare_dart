@@ -17,9 +17,9 @@ part 'integration_entry.g.dart';
 /// * [enabled] 
 /// * [id] 
 /// * [name] 
-/// * [profileId] 
 /// * [updatedAt] 
 /// * [type] 
+/// * [profileId] 
 @BuiltValue()
 abstract class IntegrationEntry implements DlpIntegrationEntry, Built<IntegrationEntry, IntegrationEntryBuilder> {
   @BuiltValueField(wireName: r'type')

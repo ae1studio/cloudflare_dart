@@ -20,8 +20,8 @@ part 'account_level_custom_nameservers_delete_account_custom_nameserver4_xx_resp
 /// * [errors] 
 /// * [messages] 
 /// * [success] - Whether the API call was successful.
-/// * [resultInfo] 
 /// * [result] 
+/// * [resultInfo] 
 @BuiltValue()
 abstract class AccountLevelCustomNameserversDeleteAccountCustomNameserver4XXResponse implements DnsCustomNameserversApiResponseCommonFailure, DnsCustomNameserversEmptyResponse, Built<AccountLevelCustomNameserversDeleteAccountCustomNameserver4XXResponse, AccountLevelCustomNameserversDeleteAccountCustomNameserver4XXResponseBuilder> {
   AccountLevelCustomNameserversDeleteAccountCustomNameserver4XXResponse._();

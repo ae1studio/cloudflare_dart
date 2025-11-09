@@ -14,19 +14,19 @@ part 'workers_ai_post_run_cf_meta_llama_guard38b_request.g.dart';
 /// WorkersAiPostRunCfMetaLlamaGuard38bRequest
 ///
 /// Properties:
-/// * [maxTokens] - The maximum number of tokens to generate in the response.
 /// * [messages] - An array of message objects representing the conversation history.
+/// * [maxTokens] - The maximum number of tokens to generate in the response.
 /// * [responseFormat] 
 /// * [temperature] - Controls the randomness of the output; higher values produce more random results.
 @BuiltValue()
 abstract class WorkersAiPostRunCfMetaLlamaGuard38bRequest implements Built<WorkersAiPostRunCfMetaLlamaGuard38bRequest, WorkersAiPostRunCfMetaLlamaGuard38bRequestBuilder> {
-  /// The maximum number of tokens to generate in the response.
-  @BuiltValueField(wireName: r'max_tokens')
-  int? get maxTokens;
-
   /// An array of message objects representing the conversation history.
   @BuiltValueField(wireName: r'messages')
   BuiltList<WorkersAiPostRunCfMetaLlamaGuard38bRequestMessagesInner> get messages;
+
+  /// The maximum number of tokens to generate in the response.
+  @BuiltValueField(wireName: r'max_tokens')
+  int? get maxTokens;
 
   @BuiltValueField(wireName: r'response_format')
   WorkersAiPostRunCfMetaLlamaGuard38bRequestResponseFormat? get responseFormat;
@@ -60,6 +60,11 @@ class _$WorkersAiPostRunCfMetaLlamaGuard38bRequestSerializer implements Primitiv
     WorkersAiPostRunCfMetaLlamaGuard38bRequest object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    yield r'messages';
+    yield serializers.serialize(
+      object.messages,
+      specifiedType: const FullType(BuiltList, [FullType(WorkersAiPostRunCfMetaLlamaGuard38bRequestMessagesInner)]),
+    );
     if (object.maxTokens != null) {
       yield r'max_tokens';
       yield serializers.serialize(
@@ -67,11 +72,6 @@ class _$WorkersAiPostRunCfMetaLlamaGuard38bRequestSerializer implements Primitiv
         specifiedType: const FullType(int),
       );
     }
-    yield r'messages';
-    yield serializers.serialize(
-      object.messages,
-      specifiedType: const FullType(BuiltList, [FullType(WorkersAiPostRunCfMetaLlamaGuard38bRequestMessagesInner)]),
-    );
     if (object.responseFormat != null) {
       yield r'response_format';
       yield serializers.serialize(
@@ -109,19 +109,19 @@ class _$WorkersAiPostRunCfMetaLlamaGuard38bRequestSerializer implements Primitiv
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'max_tokens':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
-          result.maxTokens = valueDes;
-          break;
         case r'messages':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(BuiltList, [FullType(WorkersAiPostRunCfMetaLlamaGuard38bRequestMessagesInner)]),
           ) as BuiltList<WorkersAiPostRunCfMetaLlamaGuard38bRequestMessagesInner>;
           result.messages.replace(valueDes);
+          break;
+        case r'max_tokens':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(int),
+          ) as int;
+          result.maxTokens = valueDes;
           break;
         case r'response_format':
           final valueDes = serializers.deserialize(

@@ -16,16 +16,16 @@ part 'predefined_profile.g.dart';
 /// PredefinedProfile
 ///
 /// Properties:
-/// * [aiContextEnabled] 
 /// * [allowedMatchCount] 
-/// * [confidenceThreshold] 
-/// * [contextAwareness] 
 /// * [entries] 
 /// * [id] - The id of the predefined profile (uuid).
 /// * [name] - The name of the predefined profile.
+/// * [type] 
+/// * [aiContextEnabled] 
+/// * [confidenceThreshold] 
+/// * [contextAwareness] 
 /// * [ocrEnabled] 
 /// * [openAccess] - Whether this profile can be accessed by anyone.
-/// * [type] 
 @BuiltValue()
 abstract class PredefinedProfile implements DlpPredefinedProfile, Built<PredefinedProfile, PredefinedProfileBuilder> {
   @BuiltValueField(wireName: r'type')

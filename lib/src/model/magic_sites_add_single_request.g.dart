@@ -8,6 +8,8 @@ part of 'magic_sites_add_single_request.dart';
 
 class _$MagicSitesAddSingleRequest extends MagicSitesAddSingleRequest {
   @override
+  final String name;
+  @override
   final String? connectorId;
   @override
   final String? description;
@@ -16,8 +18,6 @@ class _$MagicSitesAddSingleRequest extends MagicSitesAddSingleRequest {
   @override
   final MagicSiteLocation? location;
   @override
-  final String name;
-  @override
   final String? secondaryConnectorId;
 
   factory _$MagicSitesAddSingleRequest(
@@ -25,11 +25,11 @@ class _$MagicSitesAddSingleRequest extends MagicSitesAddSingleRequest {
       (MagicSitesAddSingleRequestBuilder()..update(updates))._build();
 
   _$MagicSitesAddSingleRequest._(
-      {this.connectorId,
+      {required this.name,
+      this.connectorId,
       this.description,
       this.haMode,
       this.location,
-      required this.name,
       this.secondaryConnectorId})
       : super._();
   @override
@@ -45,22 +45,22 @@ class _$MagicSitesAddSingleRequest extends MagicSitesAddSingleRequest {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is MagicSitesAddSingleRequest &&
+        name == other.name &&
         connectorId == other.connectorId &&
         description == other.description &&
         haMode == other.haMode &&
         location == other.location &&
-        name == other.name &&
         secondaryConnectorId == other.secondaryConnectorId;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
+    _$hash = $jc(_$hash, name.hashCode);
     _$hash = $jc(_$hash, connectorId.hashCode);
     _$hash = $jc(_$hash, description.hashCode);
     _$hash = $jc(_$hash, haMode.hashCode);
     _$hash = $jc(_$hash, location.hashCode);
-    _$hash = $jc(_$hash, name.hashCode);
     _$hash = $jc(_$hash, secondaryConnectorId.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
@@ -69,11 +69,11 @@ class _$MagicSitesAddSingleRequest extends MagicSitesAddSingleRequest {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'MagicSitesAddSingleRequest')
+          ..add('name', name)
           ..add('connectorId', connectorId)
           ..add('description', description)
           ..add('haMode', haMode)
           ..add('location', location)
-          ..add('name', name)
           ..add('secondaryConnectorId', secondaryConnectorId))
         .toString();
   }
@@ -83,6 +83,10 @@ class MagicSitesAddSingleRequestBuilder
     implements
         Builder<MagicSitesAddSingleRequest, MagicSitesAddSingleRequestBuilder> {
   _$MagicSitesAddSingleRequest? _$v;
+
+  String? _name;
+  String? get name => _$this._name;
+  set name(String? name) => _$this._name = name;
 
   String? _connectorId;
   String? get connectorId => _$this._connectorId;
@@ -102,10 +106,6 @@ class MagicSitesAddSingleRequestBuilder
   set location(MagicSiteLocationBuilder? location) =>
       _$this._location = location;
 
-  String? _name;
-  String? get name => _$this._name;
-  set name(String? name) => _$this._name = name;
-
   String? _secondaryConnectorId;
   String? get secondaryConnectorId => _$this._secondaryConnectorId;
   set secondaryConnectorId(String? secondaryConnectorId) =>
@@ -118,11 +118,11 @@ class MagicSitesAddSingleRequestBuilder
   MagicSitesAddSingleRequestBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
+      _name = $v.name;
       _connectorId = $v.connectorId;
       _description = $v.description;
       _haMode = $v.haMode;
       _location = $v.location?.toBuilder();
-      _name = $v.name;
       _secondaryConnectorId = $v.secondaryConnectorId;
       _$v = null;
     }
@@ -147,12 +147,12 @@ class MagicSitesAddSingleRequestBuilder
     try {
       _$result = _$v ??
           _$MagicSitesAddSingleRequest._(
+            name: BuiltValueNullFieldError.checkNotNull(
+                name, r'MagicSitesAddSingleRequest', 'name'),
             connectorId: connectorId,
             description: description,
             haMode: haMode,
             location: _location?.build(),
-            name: BuiltValueNullFieldError.checkNotNull(
-                name, r'MagicSitesAddSingleRequest', 'name'),
             secondaryConnectorId: secondaryConnectorId,
           );
     } catch (_) {

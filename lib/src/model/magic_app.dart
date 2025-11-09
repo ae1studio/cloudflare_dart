@@ -16,11 +16,11 @@ part 'magic_app.g.dart';
 ///
 /// Properties:
 /// * [accountAppId] - Magic account app ID.
+/// * [managedAppId] - Managed app ID.
 /// * [hostnames] - FQDNs to associate with traffic decisions.
 /// * [ipSubnets] - IPv4 CIDRs to associate with traffic decisions. (IPv6 CIDRs are currently unsupported)
 /// * [name] - Display name for the app.
 /// * [type] - Category of the app.
-/// * [managedAppId] - Managed app ID.
 @BuiltValue()
 abstract class MagicApp implements Built<MagicApp, MagicAppBuilder> {
   /// One Of [MagicAccountApp], [MagicManagedApp]

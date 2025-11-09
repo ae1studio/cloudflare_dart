@@ -8,11 +8,13 @@ import 'package:cloudflare_dart/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**bonds** | [**BuiltList&lt;MconnSnapshotBond&gt;**](MconnSnapshotBond.md) |  | [optional] 
 **countReclaimFailures** | **num** | Count of failures to reclaim space | 
 **countReclaimedPaths** | **num** | Count of reclaimed paths | 
 **countRecordFailed** | **num** | Count of failed snapshot recordings | 
 **countTransmitFailures** | **num** | Count of failed snapshot transmissions | 
+**t** | **num** | Time the Snapshot was recorded (seconds since the Unix epoch) | 
+**v** | **String** | Version | 
+**bonds** | [**BuiltList&lt;MconnSnapshotBond&gt;**](MconnSnapshotBond.md) |  | [optional] 
 **cpuCount** | **num** | Count of processors/cores | [optional] 
 **cpuPressure10s** | **num** | Percentage of time over a 10 second window that tasks were stalled | [optional] 
 **cpuPressure300s** | **num** | Percentage of time over a 5 minute window that tasks were stalled | [optional] 
@@ -172,12 +174,10 @@ Name | Type | Description | Notes
 **snmpUdpNoPorts** | **num** | Number of UDP datagrams received for which there was not application at the destination port | [optional] 
 **snmpUdpOutDatagrams** | **num** | Number of UDP datagrams sent | [optional] 
 **systemBootTimeS** | **num** | Boottime of the system (seconds since the Unix epoch) | [optional] 
-**t** | **num** | Time the Snapshot was recorded (seconds since the Unix epoch) | 
 **thermals** | [**BuiltList&lt;MconnSnapshotThermal&gt;**](MconnSnapshotThermal.md) |  | [optional] 
 **tunnels** | [**BuiltList&lt;MconnSnapshotTunnel&gt;**](MconnSnapshotTunnel.md) |  | [optional] 
 **uptimeIdleMs** | **num** | Sum of how much time each core has spent idle | [optional] 
 **uptimeTotalMs** | **num** | Uptime of the system, including time spent in suspend | [optional] 
-**v** | **String** | Version | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

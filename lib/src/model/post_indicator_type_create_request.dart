@@ -11,17 +11,17 @@ part 'post_indicator_type_create_request.g.dart';
 /// PostIndicatorTypeCreateRequest
 ///
 /// Properties:
-/// * [description] - Optional description for the indicator type
 /// * [indicatorType] - The indicator type to create (e.g., 'DOMAIN', 'IP', 'URL', 'HASH', 'EMAIL')
+/// * [description] - Optional description for the indicator type
 @BuiltValue()
 abstract class PostIndicatorTypeCreateRequest implements Built<PostIndicatorTypeCreateRequest, PostIndicatorTypeCreateRequestBuilder> {
-  /// Optional description for the indicator type
-  @BuiltValueField(wireName: r'description')
-  String? get description;
-
   /// The indicator type to create (e.g., 'DOMAIN', 'IP', 'URL', 'HASH', 'EMAIL')
   @BuiltValueField(wireName: r'indicatorType')
   String get indicatorType;
+
+  /// Optional description for the indicator type
+  @BuiltValueField(wireName: r'description')
+  String? get description;
 
   PostIndicatorTypeCreateRequest._();
 
@@ -46,6 +46,11 @@ class _$PostIndicatorTypeCreateRequestSerializer implements PrimitiveSerializer<
     PostIndicatorTypeCreateRequest object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    yield r'indicatorType';
+    yield serializers.serialize(
+      object.indicatorType,
+      specifiedType: const FullType(String),
+    );
     if (object.description != null) {
       yield r'description';
       yield serializers.serialize(
@@ -53,11 +58,6 @@ class _$PostIndicatorTypeCreateRequestSerializer implements PrimitiveSerializer<
         specifiedType: const FullType(String),
       );
     }
-    yield r'indicatorType';
-    yield serializers.serialize(
-      object.indicatorType,
-      specifiedType: const FullType(String),
-    );
   }
 
   @override
@@ -81,19 +81,19 @@ class _$PostIndicatorTypeCreateRequestSerializer implements PrimitiveSerializer<
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'description':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.description = valueDes;
-          break;
         case r'indicatorType':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(String),
           ) as String;
           result.indicatorType = valueDes;
+          break;
+        case r'description':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.description = valueDes;
           break;
         default:
           unhandled.add(key);

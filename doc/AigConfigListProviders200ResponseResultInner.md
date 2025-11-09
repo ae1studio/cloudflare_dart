@@ -16,10 +16,10 @@ Name | Type | Description | Notes
 **id** | **String** |  | 
 **modifiedAt** | [**DateTime**](DateTime.md) |  | 
 **providerSlug** | **String** |  | 
-**rateLimit** | **num** |  | [optional] 
-**rateLimitPeriod** | **num** |  | [optional] [default to 60]
 **secretId** | **String** |  | 
 **secretPreview** | **String** |  | 
+**rateLimit** | **num** |  | [optional] 
+**rateLimitPeriod** | **num** |  | [optional] [default to 60]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

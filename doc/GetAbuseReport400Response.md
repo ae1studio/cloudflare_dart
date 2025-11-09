@@ -9,9 +9,9 @@ import 'package:cloudflare_dart/api.dart';
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **errors** | [**BuiltList&lt;AbuseReportsErrorMessage&gt;**](AbuseReportsErrorMessage.md) |  | 
+**success** | **bool** |  | 
 **messages** | [**BuiltList&lt;AbuseReportsMessage&gt;**](AbuseReportsMessage.md) |  | [optional] 
 **result** | [**AbuseReportsAbuseReport**](AbuseReportsAbuseReport.md) |  | [optional] 
-**success** | **bool** |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

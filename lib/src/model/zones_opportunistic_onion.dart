@@ -8,16 +8,17 @@ import 'package:built_collection/built_collection.dart';
 import 'package:cloudflare_dart/src/model/zones_base.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
+import 'package:built_value/json_object.dart';
 
 part 'zones_opportunistic_onion.g.dart';
 
 /// Add an Alt-Svc header to all legitimate requests from Tor, allowing the connection to use our onion services instead of exit nodes.
 ///
 /// Properties:
-/// * [editable] - Whether or not this setting can be modified for this zone (based on your Cloudflare plan level).
 /// * [id] - ID of the zone setting.
-/// * [modifiedOn] - last time this setting was modified.
 /// * [value] 
+/// * [editable] - Whether or not this setting can be modified for this zone (based on your Cloudflare plan level).
+/// * [modifiedOn] - last time this setting was modified.
 @BuiltValue()
 abstract class ZonesOpportunisticOnion implements ZonesBase, Built<ZonesOpportunisticOnion, ZonesOpportunisticOnionBuilder> {
   ZonesOpportunisticOnion._();

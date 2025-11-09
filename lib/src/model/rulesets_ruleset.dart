@@ -11,17 +11,13 @@ part 'rulesets_ruleset.g.dart';
 /// A ruleset object.
 ///
 /// Properties:
-/// * [description] - An informative description of the ruleset.
 /// * [id] - The unique ID of the ruleset.
 /// * [lastUpdated] - The timestamp of when the ruleset was last modified.
-/// * [name] - The human-readable name of the ruleset.
 /// * [version] - The version of the ruleset.
+/// * [description] - An informative description of the ruleset.
+/// * [name] - The human-readable name of the ruleset.
 @BuiltValue(instantiable: false)
 abstract class RulesetsRuleset  {
-  /// An informative description of the ruleset.
-  @BuiltValueField(wireName: r'description')
-  String? get description;
-
   /// The unique ID of the ruleset.
   @BuiltValueField(wireName: r'id')
   String get id;
@@ -30,13 +26,17 @@ abstract class RulesetsRuleset  {
   @BuiltValueField(wireName: r'last_updated')
   DateTime get lastUpdated;
 
-  /// The human-readable name of the ruleset.
-  @BuiltValueField(wireName: r'name')
-  String? get name;
-
   /// The version of the ruleset.
   @BuiltValueField(wireName: r'version')
   String get version;
+
+  /// An informative description of the ruleset.
+  @BuiltValueField(wireName: r'description')
+  String? get description;
+
+  /// The human-readable name of the ruleset.
+  @BuiltValueField(wireName: r'name')
+  String? get name;
 
   @BuiltValueSerializer(custom: true)
   static Serializer<RulesetsRuleset> get serializer => _$RulesetsRulesetSerializer();
@@ -54,13 +54,6 @@ class _$RulesetsRulesetSerializer implements PrimitiveSerializer<RulesetsRuleset
     RulesetsRuleset object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
-    if (object.description != null) {
-      yield r'description';
-      yield serializers.serialize(
-        object.description,
-        specifiedType: const FullType(String),
-      );
-    }
     yield r'id';
     yield serializers.serialize(
       object.id,
@@ -71,6 +64,18 @@ class _$RulesetsRulesetSerializer implements PrimitiveSerializer<RulesetsRuleset
       object.lastUpdated,
       specifiedType: const FullType(DateTime),
     );
+    yield r'version';
+    yield serializers.serialize(
+      object.version,
+      specifiedType: const FullType(String),
+    );
+    if (object.description != null) {
+      yield r'description';
+      yield serializers.serialize(
+        object.description,
+        specifiedType: const FullType(String),
+      );
+    }
     if (object.name != null) {
       yield r'name';
       yield serializers.serialize(
@@ -78,11 +83,6 @@ class _$RulesetsRulesetSerializer implements PrimitiveSerializer<RulesetsRuleset
         specifiedType: const FullType(String),
       );
     }
-    yield r'version';
-    yield serializers.serialize(
-      object.version,
-      specifiedType: const FullType(String),
-    );
   }
 
   @override
@@ -146,13 +146,6 @@ class _$$RulesetsRulesetSerializer implements PrimitiveSerializer<$RulesetsRules
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'description':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.description = valueDes;
-          break;
         case r'id':
           final valueDes = serializers.deserialize(
             value,
@@ -167,19 +160,26 @@ class _$$RulesetsRulesetSerializer implements PrimitiveSerializer<$RulesetsRules
           ) as DateTime;
           result.lastUpdated = valueDes;
           break;
-        case r'name':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.name = valueDes;
-          break;
         case r'version':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(String),
           ) as String;
           result.version = valueDes;
+          break;
+        case r'description':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.description = valueDes;
+          break;
+        case r'name':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.name = valueDes;
           break;
         default:
           unhandled.add(key);

@@ -8,8 +8,8 @@ import 'package:cloudflare_dart/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**bindingStatus** | **String** | Indicate the internal certificate status. | [optional] 
 **enabled** | **bool** | Specify whether to enable a custom certificate authority for signing Gateway traffic. | 
+**bindingStatus** | **String** | Indicate the internal certificate status. | [optional] 
 **id** | **String** | Specify the UUID of the certificate (ID from MTLS certificate store). | [optional] 
 **updatedAt** | [**DateTime**](DateTime.md) |  | [optional] 
 

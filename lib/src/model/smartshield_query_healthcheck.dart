@@ -15,13 +15,13 @@ part 'smartshield_query_healthcheck.g.dart';
 ///
 /// Properties:
 /// * [address] - The hostname or IP address of the origin server to run health checks on.
+/// * [name] - A short name to identify the health check. Only alphanumeric characters, hyphens and underscores are allowed.
 /// * [checkRegions] - A list of regions from which to run health checks. Null means Cloudflare will pick a default region.
 /// * [consecutiveFails] - The number of consecutive fails required from a health check before changing the health to unhealthy.
 /// * [consecutiveSuccesses] - The number of consecutive successes required from a health check before changing the health to healthy.
 /// * [description] - A human-readable description of the health check.
 /// * [httpConfig] 
 /// * [interval] - The interval between each health check. Shorter intervals may give quicker notifications if the origin status changes, but will increase load on the origin as we check from multiple locations.
-/// * [name] - A short name to identify the health check. Only alphanumeric characters, hyphens and underscores are allowed.
 /// * [retries] - The number of retries to attempt in case of a timeout before marking the origin as unhealthy. Retries are attempted immediately.
 /// * [suspended] - If suspended, no health checks are sent to the origin.
 /// * [tcpConfig] 
@@ -32,6 +32,10 @@ abstract class SmartshieldQueryHealthcheck implements Built<SmartshieldQueryHeal
   /// The hostname or IP address of the origin server to run health checks on.
   @BuiltValueField(wireName: r'address')
   String get address;
+
+  /// A short name to identify the health check. Only alphanumeric characters, hyphens and underscores are allowed.
+  @BuiltValueField(wireName: r'name')
+  String get name;
 
   /// A list of regions from which to run health checks. Null means Cloudflare will pick a default region.
   @BuiltValueField(wireName: r'check_regions')
@@ -56,10 +60,6 @@ abstract class SmartshieldQueryHealthcheck implements Built<SmartshieldQueryHeal
   /// The interval between each health check. Shorter intervals may give quicker notifications if the origin status changes, but will increase load on the origin as we check from multiple locations.
   @BuiltValueField(wireName: r'interval')
   int? get interval;
-
-  /// A short name to identify the health check. Only alphanumeric characters, hyphens and underscores are allowed.
-  @BuiltValueField(wireName: r'name')
-  String get name;
 
   /// The number of retries to attempt in case of a timeout before marking the origin as unhealthy. Retries are attempted immediately.
   @BuiltValueField(wireName: r'retries')
@@ -115,6 +115,11 @@ class _$SmartshieldQueryHealthcheckSerializer implements PrimitiveSerializer<Sma
       object.address,
       specifiedType: const FullType(String),
     );
+    yield r'name';
+    yield serializers.serialize(
+      object.name,
+      specifiedType: const FullType(String),
+    );
     if (object.checkRegions != null) {
       yield r'check_regions';
       yield serializers.serialize(
@@ -157,11 +162,6 @@ class _$SmartshieldQueryHealthcheckSerializer implements PrimitiveSerializer<Sma
         specifiedType: const FullType(int),
       );
     }
-    yield r'name';
-    yield serializers.serialize(
-      object.name,
-      specifiedType: const FullType(String),
-    );
     if (object.retries != null) {
       yield r'retries';
       yield serializers.serialize(
@@ -227,6 +227,13 @@ class _$SmartshieldQueryHealthcheckSerializer implements PrimitiveSerializer<Sma
           ) as String;
           result.address = valueDes;
           break;
+        case r'name':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.name = valueDes;
+          break;
         case r'check_regions':
           final valueDes = serializers.deserialize(
             value,
@@ -270,13 +277,6 @@ class _$SmartshieldQueryHealthcheckSerializer implements PrimitiveSerializer<Sma
             specifiedType: const FullType(int),
           ) as int;
           result.interval = valueDes;
-          break;
-        case r'name':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.name = valueDes;
           break;
         case r'retries':
           final valueDes = serializers.deserialize(

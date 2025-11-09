@@ -9,11 +9,11 @@ part of 'organizations_api_batch_account_move_response_statuses.dart';
 class _$OrganizationsApiBatchAccountMoveResponseStatuses
     extends OrganizationsApiBatchAccountMoveResponseStatuses {
   @override
-  final String? message;
-  @override
   final bool moved;
   @override
   final String tag;
+  @override
+  final String? message;
 
   factory _$OrganizationsApiBatchAccountMoveResponseStatuses(
           [void Function(
@@ -24,7 +24,7 @@ class _$OrganizationsApiBatchAccountMoveResponseStatuses
           ._build();
 
   _$OrganizationsApiBatchAccountMoveResponseStatuses._(
-      {this.message, required this.moved, required this.tag})
+      {required this.moved, required this.tag, this.message})
       : super._();
   @override
   OrganizationsApiBatchAccountMoveResponseStatuses rebuild(
@@ -40,17 +40,17 @@ class _$OrganizationsApiBatchAccountMoveResponseStatuses
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is OrganizationsApiBatchAccountMoveResponseStatuses &&
-        message == other.message &&
         moved == other.moved &&
-        tag == other.tag;
+        tag == other.tag &&
+        message == other.message;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, message.hashCode);
     _$hash = $jc(_$hash, moved.hashCode);
     _$hash = $jc(_$hash, tag.hashCode);
+    _$hash = $jc(_$hash, message.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -59,9 +59,9 @@ class _$OrganizationsApiBatchAccountMoveResponseStatuses
   String toString() {
     return (newBuiltValueToStringHelper(
             r'OrganizationsApiBatchAccountMoveResponseStatuses')
-          ..add('message', message)
           ..add('moved', moved)
-          ..add('tag', tag))
+          ..add('tag', tag)
+          ..add('message', message))
         .toString();
   }
 }
@@ -72,10 +72,6 @@ class OrganizationsApiBatchAccountMoveResponseStatusesBuilder
             OrganizationsApiBatchAccountMoveResponseStatusesBuilder> {
   _$OrganizationsApiBatchAccountMoveResponseStatuses? _$v;
 
-  String? _message;
-  String? get message => _$this._message;
-  set message(String? message) => _$this._message = message;
-
   bool? _moved;
   bool? get moved => _$this._moved;
   set moved(bool? moved) => _$this._moved = moved;
@@ -84,6 +80,10 @@ class OrganizationsApiBatchAccountMoveResponseStatusesBuilder
   String? get tag => _$this._tag;
   set tag(String? tag) => _$this._tag = tag;
 
+  String? _message;
+  String? get message => _$this._message;
+  set message(String? message) => _$this._message = message;
+
   OrganizationsApiBatchAccountMoveResponseStatusesBuilder() {
     OrganizationsApiBatchAccountMoveResponseStatuses._defaults(this);
   }
@@ -91,9 +91,9 @@ class OrganizationsApiBatchAccountMoveResponseStatusesBuilder
   OrganizationsApiBatchAccountMoveResponseStatusesBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _message = $v.message;
       _moved = $v.moved;
       _tag = $v.tag;
+      _message = $v.message;
       _$v = null;
     }
     return this;
@@ -117,11 +117,11 @@ class OrganizationsApiBatchAccountMoveResponseStatusesBuilder
   _$OrganizationsApiBatchAccountMoveResponseStatuses _build() {
     final _$result = _$v ??
         _$OrganizationsApiBatchAccountMoveResponseStatuses._(
-          message: message,
           moved: BuiltValueNullFieldError.checkNotNull(moved,
               r'OrganizationsApiBatchAccountMoveResponseStatuses', 'moved'),
           tag: BuiltValueNullFieldError.checkNotNull(
               tag, r'OrganizationsApiBatchAccountMoveResponseStatuses', 'tag'),
+          message: message,
         );
     replace(_$result);
     return _$result;

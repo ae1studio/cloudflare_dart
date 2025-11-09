@@ -13,15 +13,15 @@ part 'realtimekit_preset_ui.g.dart';
 /// RealtimekitPresetUi
 ///
 /// Properties:
-/// * [configDiff] 
 /// * [designTokens] 
+/// * [configDiff] 
 @BuiltValue()
 abstract class RealtimekitPresetUi implements Built<RealtimekitPresetUi, RealtimekitPresetUiBuilder> {
-  @BuiltValueField(wireName: r'config_diff')
-  JsonObject? get configDiff;
-
   @BuiltValueField(wireName: r'design_tokens')
   RealtimekitPresetUiDesignTokens get designTokens;
+
+  @BuiltValueField(wireName: r'config_diff')
+  JsonObject? get configDiff;
 
   RealtimekitPresetUi._();
 
@@ -46,6 +46,11 @@ class _$RealtimekitPresetUiSerializer implements PrimitiveSerializer<Realtimekit
     RealtimekitPresetUi object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    yield r'design_tokens';
+    yield serializers.serialize(
+      object.designTokens,
+      specifiedType: const FullType(RealtimekitPresetUiDesignTokens),
+    );
     if (object.configDiff != null) {
       yield r'config_diff';
       yield serializers.serialize(
@@ -53,11 +58,6 @@ class _$RealtimekitPresetUiSerializer implements PrimitiveSerializer<Realtimekit
         specifiedType: const FullType(JsonObject),
       );
     }
-    yield r'design_tokens';
-    yield serializers.serialize(
-      object.designTokens,
-      specifiedType: const FullType(RealtimekitPresetUiDesignTokens),
-    );
   }
 
   @override
@@ -81,19 +81,19 @@ class _$RealtimekitPresetUiSerializer implements PrimitiveSerializer<Realtimekit
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'config_diff':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(JsonObject),
-          ) as JsonObject;
-          result.configDiff = valueDes;
-          break;
         case r'design_tokens':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(RealtimekitPresetUiDesignTokens),
           ) as RealtimekitPresetUiDesignTokens;
           result.designTokens.replace(valueDes);
+          break;
+        case r'config_diff':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(JsonObject),
+          ) as JsonObject;
+          result.configDiff = valueDes;
           break;
         default:
           unhandled.add(key);

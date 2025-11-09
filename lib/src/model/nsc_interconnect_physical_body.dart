@@ -14,12 +14,12 @@ part 'nsc_interconnect_physical_body.g.dart';
 /// Properties:
 /// * [account] 
 /// * [name] 
-/// * [owner] 
 /// * [type] 
 /// * [facility] 
 /// * [site] - A Cloudflare site name.
 /// * [slotId] 
 /// * [speed] 
+/// * [owner] 
 @BuiltValue()
 abstract class NscInterconnectPhysicalBody implements Built<NscInterconnectPhysicalBody, NscInterconnectPhysicalBodyBuilder> {
   @BuiltValueField(wireName: r'account')
@@ -27,9 +27,6 @@ abstract class NscInterconnectPhysicalBody implements Built<NscInterconnectPhysi
 
   @BuiltValueField(wireName: r'name')
   String get name;
-
-  @BuiltValueField(wireName: r'owner')
-  String? get owner;
 
   @BuiltValueField(wireName: r'type')
   String get type;
@@ -46,6 +43,9 @@ abstract class NscInterconnectPhysicalBody implements Built<NscInterconnectPhysi
 
   @BuiltValueField(wireName: r'speed')
   String get speed;
+
+  @BuiltValueField(wireName: r'owner')
+  String? get owner;
 
   NscInterconnectPhysicalBody._();
 
@@ -80,13 +80,6 @@ class _$NscInterconnectPhysicalBodySerializer implements PrimitiveSerializer<Nsc
       object.name,
       specifiedType: const FullType(String),
     );
-    if (object.owner != null) {
-      yield r'owner';
-      yield serializers.serialize(
-        object.owner,
-        specifiedType: const FullType(String),
-      );
-    }
     yield r'type';
     yield serializers.serialize(
       object.type,
@@ -112,6 +105,13 @@ class _$NscInterconnectPhysicalBodySerializer implements PrimitiveSerializer<Nsc
       object.speed,
       specifiedType: const FullType(String),
     );
+    if (object.owner != null) {
+      yield r'owner';
+      yield serializers.serialize(
+        object.owner,
+        specifiedType: const FullType(String),
+      );
+    }
   }
 
   @override
@@ -149,13 +149,6 @@ class _$NscInterconnectPhysicalBodySerializer implements PrimitiveSerializer<Nsc
           ) as String;
           result.name = valueDes;
           break;
-        case r'owner':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.owner = valueDes;
-          break;
         case r'type':
           final valueDes = serializers.deserialize(
             value,
@@ -190,6 +183,13 @@ class _$NscInterconnectPhysicalBodySerializer implements PrimitiveSerializer<Nsc
             specifiedType: const FullType(String),
           ) as String;
           result.speed = valueDes;
+          break;
+        case r'owner':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.owner = valueDes;
           break;
         default:
           unhandled.add(key);

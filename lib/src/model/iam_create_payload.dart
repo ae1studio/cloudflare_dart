@@ -14,13 +14,21 @@ part 'iam_create_payload.g.dart';
 /// IamCreatePayload
 ///
 /// Properties:
+/// * [name] - Token name.
+/// * [policies] - List of access policies assigned to the token.
 /// * [condition] 
 /// * [expiresOn] - The expiration time on or after which the JWT MUST NOT be accepted for processing.
-/// * [name] - Token name.
 /// * [notBefore] - The time before which the token MUST NOT be accepted for processing.
-/// * [policies] - List of access policies assigned to the token.
 @BuiltValue()
 abstract class IamCreatePayload implements Built<IamCreatePayload, IamCreatePayloadBuilder> {
+  /// Token name.
+  @BuiltValueField(wireName: r'name')
+  String get name;
+
+  /// List of access policies assigned to the token.
+  @BuiltValueField(wireName: r'policies')
+  BuiltList<IamPolicyWithPermissionGroupsAndResources> get policies;
+
   @BuiltValueField(wireName: r'condition')
   IamCondition? get condition;
 
@@ -28,17 +36,9 @@ abstract class IamCreatePayload implements Built<IamCreatePayload, IamCreatePayl
   @BuiltValueField(wireName: r'expires_on')
   DateTime? get expiresOn;
 
-  /// Token name.
-  @BuiltValueField(wireName: r'name')
-  String get name;
-
   /// The time before which the token MUST NOT be accepted for processing.
   @BuiltValueField(wireName: r'not_before')
   DateTime? get notBefore;
-
-  /// List of access policies assigned to the token.
-  @BuiltValueField(wireName: r'policies')
-  BuiltList<IamPolicyWithPermissionGroupsAndResources> get policies;
 
   IamCreatePayload._();
 
@@ -63,6 +63,16 @@ class _$IamCreatePayloadSerializer implements PrimitiveSerializer<IamCreatePaylo
     IamCreatePayload object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    yield r'name';
+    yield serializers.serialize(
+      object.name,
+      specifiedType: const FullType(String),
+    );
+    yield r'policies';
+    yield serializers.serialize(
+      object.policies,
+      specifiedType: const FullType(BuiltList, [FullType(IamPolicyWithPermissionGroupsAndResources)]),
+    );
     if (object.condition != null) {
       yield r'condition';
       yield serializers.serialize(
@@ -77,11 +87,6 @@ class _$IamCreatePayloadSerializer implements PrimitiveSerializer<IamCreatePaylo
         specifiedType: const FullType(DateTime),
       );
     }
-    yield r'name';
-    yield serializers.serialize(
-      object.name,
-      specifiedType: const FullType(String),
-    );
     if (object.notBefore != null) {
       yield r'not_before';
       yield serializers.serialize(
@@ -89,11 +94,6 @@ class _$IamCreatePayloadSerializer implements PrimitiveSerializer<IamCreatePaylo
         specifiedType: const FullType(DateTime),
       );
     }
-    yield r'policies';
-    yield serializers.serialize(
-      object.policies,
-      specifiedType: const FullType(BuiltList, [FullType(IamPolicyWithPermissionGroupsAndResources)]),
-    );
   }
 
   @override
@@ -117,6 +117,20 @@ class _$IamCreatePayloadSerializer implements PrimitiveSerializer<IamCreatePaylo
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
+        case r'name':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.name = valueDes;
+          break;
+        case r'policies':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BuiltList, [FullType(IamPolicyWithPermissionGroupsAndResources)]),
+          ) as BuiltList<IamPolicyWithPermissionGroupsAndResources>;
+          result.policies.replace(valueDes);
+          break;
         case r'condition':
           final valueDes = serializers.deserialize(
             value,
@@ -131,26 +145,12 @@ class _$IamCreatePayloadSerializer implements PrimitiveSerializer<IamCreatePaylo
           ) as DateTime;
           result.expiresOn = valueDes;
           break;
-        case r'name':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.name = valueDes;
-          break;
         case r'not_before':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(DateTime),
           ) as DateTime;
           result.notBefore = valueDes;
-          break;
-        case r'policies':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(IamPolicyWithPermissionGroupsAndResources)]),
-          ) as BuiltList<IamPolicyWithPermissionGroupsAndResources>;
-          result.policies.replace(valueDes);
           break;
         default:
           unhandled.add(key);

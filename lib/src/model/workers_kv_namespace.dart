@@ -12,21 +12,21 @@ part 'workers_kv_namespace.g.dart';
 ///
 /// Properties:
 /// * [id] - Namespace identifier tag.
-/// * [supportsUrlEncoding] - True if keys written on the URL will be URL-decoded before storing. For example, if set to \"true\", a key written on the URL as \"%3F\" will be stored as \"?\".
 /// * [title] - A human-readable string name for a Namespace.
+/// * [supportsUrlEncoding] - True if keys written on the URL will be URL-decoded before storing. For example, if set to \"true\", a key written on the URL as \"%3F\" will be stored as \"?\".
 @BuiltValue()
 abstract class WorkersKvNamespace implements Built<WorkersKvNamespace, WorkersKvNamespaceBuilder> {
   /// Namespace identifier tag.
   @BuiltValueField(wireName: r'id')
   String get id;
 
-  /// True if keys written on the URL will be URL-decoded before storing. For example, if set to \"true\", a key written on the URL as \"%3F\" will be stored as \"?\".
-  @BuiltValueField(wireName: r'supports_url_encoding')
-  bool? get supportsUrlEncoding;
-
   /// A human-readable string name for a Namespace.
   @BuiltValueField(wireName: r'title')
   String get title;
+
+  /// True if keys written on the URL will be URL-decoded before storing. For example, if set to \"true\", a key written on the URL as \"%3F\" will be stored as \"?\".
+  @BuiltValueField(wireName: r'supports_url_encoding')
+  bool? get supportsUrlEncoding;
 
   WorkersKvNamespace._();
 
@@ -56,6 +56,11 @@ class _$WorkersKvNamespaceSerializer implements PrimitiveSerializer<WorkersKvNam
       object.id,
       specifiedType: const FullType(String),
     );
+    yield r'title';
+    yield serializers.serialize(
+      object.title,
+      specifiedType: const FullType(String),
+    );
     if (object.supportsUrlEncoding != null) {
       yield r'supports_url_encoding';
       yield serializers.serialize(
@@ -63,11 +68,6 @@ class _$WorkersKvNamespaceSerializer implements PrimitiveSerializer<WorkersKvNam
         specifiedType: const FullType(bool),
       );
     }
-    yield r'title';
-    yield serializers.serialize(
-      object.title,
-      specifiedType: const FullType(String),
-    );
   }
 
   @override
@@ -98,19 +98,19 @@ class _$WorkersKvNamespaceSerializer implements PrimitiveSerializer<WorkersKvNam
           ) as String;
           result.id = valueDes;
           break;
-        case r'supports_url_encoding':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
-          result.supportsUrlEncoding = valueDes;
-          break;
         case r'title':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(String),
           ) as String;
           result.title = valueDes;
+          break;
+        case r'supports_url_encoding':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(bool),
+          ) as bool;
+          result.supportsUrlEncoding = valueDes;
           break;
         default:
           unhandled.add(key);

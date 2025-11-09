@@ -13,19 +13,19 @@ part 'mcn_create_provider_request.g.dart';
 ///
 /// Properties:
 /// * [cloudType] 
-/// * [description] 
 /// * [friendlyName] 
+/// * [description] 
 @BuiltValue()
 abstract class McnCreateProviderRequest implements Built<McnCreateProviderRequest, McnCreateProviderRequestBuilder> {
   @BuiltValueField(wireName: r'cloud_type')
   McnCloudType get cloudType;
   // enum cloudTypeEnum {  AWS,  AZURE,  GOOGLE,  CLOUDFLARE,  };
 
-  @BuiltValueField(wireName: r'description')
-  String? get description;
-
   @BuiltValueField(wireName: r'friendly_name')
   String get friendlyName;
+
+  @BuiltValueField(wireName: r'description')
+  String? get description;
 
   McnCreateProviderRequest._();
 
@@ -55,6 +55,11 @@ class _$McnCreateProviderRequestSerializer implements PrimitiveSerializer<McnCre
       object.cloudType,
       specifiedType: const FullType(McnCloudType),
     );
+    yield r'friendly_name';
+    yield serializers.serialize(
+      object.friendlyName,
+      specifiedType: const FullType(String),
+    );
     if (object.description != null) {
       yield r'description';
       yield serializers.serialize(
@@ -62,11 +67,6 @@ class _$McnCreateProviderRequestSerializer implements PrimitiveSerializer<McnCre
         specifiedType: const FullType(String),
       );
     }
-    yield r'friendly_name';
-    yield serializers.serialize(
-      object.friendlyName,
-      specifiedType: const FullType(String),
-    );
   }
 
   @override
@@ -97,19 +97,19 @@ class _$McnCreateProviderRequestSerializer implements PrimitiveSerializer<McnCre
           ) as McnCloudType;
           result.cloudType = valueDes;
           break;
-        case r'description':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.description = valueDes;
-          break;
         case r'friendly_name':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(String),
           ) as String;
           result.friendlyName = valueDes;
+          break;
+        case r'description':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.description = valueDes;
           break;
         default:
           unhandled.add(key);

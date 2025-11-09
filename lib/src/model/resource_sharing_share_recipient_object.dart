@@ -19,8 +19,8 @@ part 'resource_sharing_share_recipient_object.g.dart';
 /// * [created] - When the share was created.
 /// * [id] - Share Recipient identifier tag.
 /// * [modified] - When the share was modified.
-/// * [resources] 
 /// * [statusMessage] - Share Recipient status message.
+/// * [resources] 
 @BuiltValue()
 abstract class ResourceSharingShareRecipientObject implements Built<ResourceSharingShareRecipientObject, ResourceSharingShareRecipientObjectBuilder> {
   /// Account identifier.
@@ -43,12 +43,12 @@ abstract class ResourceSharingShareRecipientObject implements Built<ResourceShar
   @BuiltValueField(wireName: r'modified')
   DateTime get modified;
 
-  @BuiltValueField(wireName: r'resources')
-  BuiltList<ResourceSharingShareRecipientResourceObject>? get resources;
-
   /// Share Recipient status message.
   @BuiltValueField(wireName: r'status_message')
   String get statusMessage;
+
+  @BuiltValueField(wireName: r'resources')
+  BuiltList<ResourceSharingShareRecipientResourceObject>? get resources;
 
   ResourceSharingShareRecipientObject._();
 
@@ -98,6 +98,11 @@ class _$ResourceSharingShareRecipientObjectSerializer implements PrimitiveSerial
       object.modified,
       specifiedType: const FullType(DateTime),
     );
+    yield r'status_message';
+    yield serializers.serialize(
+      object.statusMessage,
+      specifiedType: const FullType(String),
+    );
     if (object.resources != null) {
       yield r'resources';
       yield serializers.serialize(
@@ -105,11 +110,6 @@ class _$ResourceSharingShareRecipientObjectSerializer implements PrimitiveSerial
         specifiedType: const FullType(BuiltList, [FullType(ResourceSharingShareRecipientResourceObject)]),
       );
     }
-    yield r'status_message';
-    yield serializers.serialize(
-      object.statusMessage,
-      specifiedType: const FullType(String),
-    );
   }
 
   @override
@@ -168,19 +168,19 @@ class _$ResourceSharingShareRecipientObjectSerializer implements PrimitiveSerial
           ) as DateTime;
           result.modified = valueDes;
           break;
-        case r'resources':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(ResourceSharingShareRecipientResourceObject)]),
-          ) as BuiltList<ResourceSharingShareRecipientResourceObject>;
-          result.resources.replace(valueDes);
-          break;
         case r'status_message':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(String),
           ) as String;
           result.statusMessage = valueDes;
+          break;
+        case r'resources':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BuiltList, [FullType(ResourceSharingShareRecipientResourceObject)]),
+          ) as BuiltList<ResourceSharingShareRecipientResourceObject>;
+          result.resources.replace(valueDes);
           break;
         default:
           unhandled.add(key);

@@ -14,14 +14,22 @@ part 'access_scim_config.g.dart';
 /// Configuration for provisioning to this application via SCIM. This is currently in closed beta.
 ///
 /// Properties:
+/// * [idpUid] - The UID of the IdP to use as the source for SCIM resources to provision to this application.
+/// * [remoteUri] - The base URI for the application's SCIM-compatible API.
 /// * [authentication] 
 /// * [deactivateOnDelete] - If false, propagates DELETE requests to the target application for SCIM resources. If true, sets 'active' to false on the SCIM resource. Note: Some targets do not support DELETE operations.
 /// * [enabled] - Whether SCIM provisioning is turned on for this application.
-/// * [idpUid] - The UID of the IdP to use as the source for SCIM resources to provision to this application.
 /// * [mappings] - A list of mappings to apply to SCIM resources before provisioning them in this application. These can transform or filter the resources to be provisioned.
-/// * [remoteUri] - The base URI for the application's SCIM-compatible API.
 @BuiltValue()
 abstract class AccessScimConfig implements Built<AccessScimConfig, AccessScimConfigBuilder> {
+  /// The UID of the IdP to use as the source for SCIM resources to provision to this application.
+  @BuiltValueField(wireName: r'idp_uid')
+  String get idpUid;
+
+  /// The base URI for the application's SCIM-compatible API.
+  @BuiltValueField(wireName: r'remote_uri')
+  String get remoteUri;
+
   @BuiltValueField(wireName: r'authentication')
   AccessScimConfigAuthentication? get authentication;
 
@@ -33,17 +41,9 @@ abstract class AccessScimConfig implements Built<AccessScimConfig, AccessScimCon
   @BuiltValueField(wireName: r'enabled')
   bool? get enabled;
 
-  /// The UID of the IdP to use as the source for SCIM resources to provision to this application.
-  @BuiltValueField(wireName: r'idp_uid')
-  String get idpUid;
-
   /// A list of mappings to apply to SCIM resources before provisioning them in this application. These can transform or filter the resources to be provisioned.
   @BuiltValueField(wireName: r'mappings')
   BuiltList<AccessScimConfigMapping>? get mappings;
-
-  /// The base URI for the application's SCIM-compatible API.
-  @BuiltValueField(wireName: r'remote_uri')
-  String get remoteUri;
 
   AccessScimConfig._();
 
@@ -68,6 +68,16 @@ class _$AccessScimConfigSerializer implements PrimitiveSerializer<AccessScimConf
     AccessScimConfig object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    yield r'idp_uid';
+    yield serializers.serialize(
+      object.idpUid,
+      specifiedType: const FullType(String),
+    );
+    yield r'remote_uri';
+    yield serializers.serialize(
+      object.remoteUri,
+      specifiedType: const FullType(String),
+    );
     if (object.authentication != null) {
       yield r'authentication';
       yield serializers.serialize(
@@ -89,11 +99,6 @@ class _$AccessScimConfigSerializer implements PrimitiveSerializer<AccessScimConf
         specifiedType: const FullType(bool),
       );
     }
-    yield r'idp_uid';
-    yield serializers.serialize(
-      object.idpUid,
-      specifiedType: const FullType(String),
-    );
     if (object.mappings != null) {
       yield r'mappings';
       yield serializers.serialize(
@@ -101,11 +106,6 @@ class _$AccessScimConfigSerializer implements PrimitiveSerializer<AccessScimConf
         specifiedType: const FullType(BuiltList, [FullType(AccessScimConfigMapping)]),
       );
     }
-    yield r'remote_uri';
-    yield serializers.serialize(
-      object.remoteUri,
-      specifiedType: const FullType(String),
-    );
   }
 
   @override
@@ -129,6 +129,20 @@ class _$AccessScimConfigSerializer implements PrimitiveSerializer<AccessScimConf
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
+        case r'idp_uid':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.idpUid = valueDes;
+          break;
+        case r'remote_uri':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.remoteUri = valueDes;
+          break;
         case r'authentication':
           final valueDes = serializers.deserialize(
             value,
@@ -150,26 +164,12 @@ class _$AccessScimConfigSerializer implements PrimitiveSerializer<AccessScimConf
           ) as bool;
           result.enabled = valueDes;
           break;
-        case r'idp_uid':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.idpUid = valueDes;
-          break;
         case r'mappings':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(BuiltList, [FullType(AccessScimConfigMapping)]),
           ) as BuiltList<AccessScimConfigMapping>;
           result.mappings.replace(valueDes);
-          break;
-        case r'remote_uri':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.remoteUri = valueDes;
           break;
         default:
           unhandled.add(key);

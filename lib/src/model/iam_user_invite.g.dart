@@ -76,6 +76,10 @@ class _$IamUserInviteStatusEnumSerializer
 
 class _$IamUserInvite extends IamUserInvite {
   @override
+  final String? invitedMemberId;
+  @override
+  final String organizationId;
+  @override
   final DateTime? expiresOn;
   @override
   final String? id;
@@ -84,11 +88,7 @@ class _$IamUserInvite extends IamUserInvite {
   @override
   final String? invitedMemberEmail;
   @override
-  final String? invitedMemberId;
-  @override
   final DateTime? invitedOn;
-  @override
-  final String organizationId;
   @override
   final bool? organizationIsEnforcingTwofactor;
   @override
@@ -102,13 +102,13 @@ class _$IamUserInvite extends IamUserInvite {
       (IamUserInviteBuilder()..update(updates))._build();
 
   _$IamUserInvite._(
-      {this.expiresOn,
+      {this.invitedMemberId,
+      required this.organizationId,
+      this.expiresOn,
       this.id,
       this.invitedBy,
       this.invitedMemberEmail,
-      this.invitedMemberId,
       this.invitedOn,
-      required this.organizationId,
       this.organizationIsEnforcingTwofactor,
       this.organizationName,
       this.roles,
@@ -125,13 +125,13 @@ class _$IamUserInvite extends IamUserInvite {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is IamUserInvite &&
+        invitedMemberId == other.invitedMemberId &&
+        organizationId == other.organizationId &&
         expiresOn == other.expiresOn &&
         id == other.id &&
         invitedBy == other.invitedBy &&
         invitedMemberEmail == other.invitedMemberEmail &&
-        invitedMemberId == other.invitedMemberId &&
         invitedOn == other.invitedOn &&
-        organizationId == other.organizationId &&
         organizationIsEnforcingTwofactor ==
             other.organizationIsEnforcingTwofactor &&
         organizationName == other.organizationName &&
@@ -142,13 +142,13 @@ class _$IamUserInvite extends IamUserInvite {
   @override
   int get hashCode {
     var _$hash = 0;
+    _$hash = $jc(_$hash, invitedMemberId.hashCode);
+    _$hash = $jc(_$hash, organizationId.hashCode);
     _$hash = $jc(_$hash, expiresOn.hashCode);
     _$hash = $jc(_$hash, id.hashCode);
     _$hash = $jc(_$hash, invitedBy.hashCode);
     _$hash = $jc(_$hash, invitedMemberEmail.hashCode);
-    _$hash = $jc(_$hash, invitedMemberId.hashCode);
     _$hash = $jc(_$hash, invitedOn.hashCode);
-    _$hash = $jc(_$hash, organizationId.hashCode);
     _$hash = $jc(_$hash, organizationIsEnforcingTwofactor.hashCode);
     _$hash = $jc(_$hash, organizationName.hashCode);
     _$hash = $jc(_$hash, roles.hashCode);
@@ -160,13 +160,13 @@ class _$IamUserInvite extends IamUserInvite {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'IamUserInvite')
+          ..add('invitedMemberId', invitedMemberId)
+          ..add('organizationId', organizationId)
           ..add('expiresOn', expiresOn)
           ..add('id', id)
           ..add('invitedBy', invitedBy)
           ..add('invitedMemberEmail', invitedMemberEmail)
-          ..add('invitedMemberId', invitedMemberId)
           ..add('invitedOn', invitedOn)
-          ..add('organizationId', organizationId)
           ..add('organizationIsEnforcingTwofactor',
               organizationIsEnforcingTwofactor)
           ..add('organizationName', organizationName)
@@ -179,6 +179,16 @@ class _$IamUserInvite extends IamUserInvite {
 class IamUserInviteBuilder
     implements Builder<IamUserInvite, IamUserInviteBuilder> {
   _$IamUserInvite? _$v;
+
+  String? _invitedMemberId;
+  String? get invitedMemberId => _$this._invitedMemberId;
+  set invitedMemberId(String? invitedMemberId) =>
+      _$this._invitedMemberId = invitedMemberId;
+
+  String? _organizationId;
+  String? get organizationId => _$this._organizationId;
+  set organizationId(String? organizationId) =>
+      _$this._organizationId = organizationId;
 
   DateTime? _expiresOn;
   DateTime? get expiresOn => _$this._expiresOn;
@@ -197,19 +207,9 @@ class IamUserInviteBuilder
   set invitedMemberEmail(String? invitedMemberEmail) =>
       _$this._invitedMemberEmail = invitedMemberEmail;
 
-  String? _invitedMemberId;
-  String? get invitedMemberId => _$this._invitedMemberId;
-  set invitedMemberId(String? invitedMemberId) =>
-      _$this._invitedMemberId = invitedMemberId;
-
   DateTime? _invitedOn;
   DateTime? get invitedOn => _$this._invitedOn;
   set invitedOn(DateTime? invitedOn) => _$this._invitedOn = invitedOn;
-
-  String? _organizationId;
-  String? get organizationId => _$this._organizationId;
-  set organizationId(String? organizationId) =>
-      _$this._organizationId = organizationId;
 
   bool? _organizationIsEnforcingTwofactor;
   bool? get organizationIsEnforcingTwofactor =>
@@ -239,13 +239,13 @@ class IamUserInviteBuilder
   IamUserInviteBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
+      _invitedMemberId = $v.invitedMemberId;
+      _organizationId = $v.organizationId;
       _expiresOn = $v.expiresOn;
       _id = $v.id;
       _invitedBy = $v.invitedBy;
       _invitedMemberEmail = $v.invitedMemberEmail;
-      _invitedMemberId = $v.invitedMemberId;
       _invitedOn = $v.invitedOn;
-      _organizationId = $v.organizationId;
       _organizationIsEnforcingTwofactor = $v.organizationIsEnforcingTwofactor;
       _organizationName = $v.organizationName;
       _roles = $v.roles?.toBuilder();
@@ -273,14 +273,14 @@ class IamUserInviteBuilder
     try {
       _$result = _$v ??
           _$IamUserInvite._(
+            invitedMemberId: invitedMemberId,
+            organizationId: BuiltValueNullFieldError.checkNotNull(
+                organizationId, r'IamUserInvite', 'organizationId'),
             expiresOn: expiresOn,
             id: id,
             invitedBy: invitedBy,
             invitedMemberEmail: invitedMemberEmail,
-            invitedMemberId: invitedMemberId,
             invitedOn: invitedOn,
-            organizationId: BuiltValueNullFieldError.checkNotNull(
-                organizationId, r'IamUserInvite', 'organizationId'),
             organizationIsEnforcingTwofactor: organizationIsEnforcingTwofactor,
             organizationName: organizationName,
             roles: _roles?.build(),

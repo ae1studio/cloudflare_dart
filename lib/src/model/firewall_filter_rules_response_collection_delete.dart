@@ -10,6 +10,7 @@ import 'package:cloudflare_dart/src/model/firewall_filter_rule_response.dart';
 import 'package:cloudflare_dart/src/model/aaa_messages_inner.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
+import 'package:built_value/json_object.dart';
 
 part 'firewall_filter_rules_response_collection_delete.g.dart';
 

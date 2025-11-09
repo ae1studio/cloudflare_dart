@@ -11,10 +11,10 @@ Name | Type | Description | Notes
 **errors** | [**BuiltList&lt;AccessMessagesInner&gt;**](AccessMessagesInner.md) |  | 
 **messages** | [**BuiltList&lt;AccessMessagesInner&gt;**](AccessMessagesInner.md) |  | 
 **success** | **bool** | Whether the API call was successful. | 
+**result** | [**JsonObject**](.md) |  | 
 **resultInfo** | [**AccessApiResponseCollectionAllOfResultInfo**](AccessApiResponseCollectionAllOfResultInfo.md) |  | [optional] 
 **enabled** | **bool** | Whether zone uses account-level custom nameservers. | [optional] 
 **nsSet** | **num** | The number of the name server set to assign to the zone. | [optional] [default to 1]
-**result** | [**JsonObject**](.md) |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

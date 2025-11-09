@@ -20,8 +20,8 @@ part 'per_hostname_authenticated_origin_pull_enable_or_disable_a_hostname_for_cl
 /// * [errors] 
 /// * [messages] 
 /// * [success] - Whether the API call was successful.
-/// * [resultInfo] 
 /// * [result] 
+/// * [resultInfo] 
 @BuiltValue()
 abstract class PerHostnameAuthenticatedOriginPullEnableOrDisableAHostnameForClientAuthentication4XXResponse implements TlsCertificatesAndHostnamesApiResponseCommonFailure, TlsCertificatesAndHostnamesHostnameAopResponseCollection, Built<PerHostnameAuthenticatedOriginPullEnableOrDisableAHostnameForClientAuthentication4XXResponse, PerHostnameAuthenticatedOriginPullEnableOrDisableAHostnameForClientAuthentication4XXResponseBuilder> {
   PerHostnameAuthenticatedOriginPullEnableOrDisableAHostnameForClientAuthentication4XXResponse._();

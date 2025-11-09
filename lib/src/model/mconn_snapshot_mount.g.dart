@@ -8,21 +8,21 @@ part of 'mconn_snapshot_mount.dart';
 
 class _$MconnSnapshotMount extends MconnSnapshotMount {
   @override
-  final num? availableBytes;
-  @override
-  final String? connectorId;
-  @override
   final String fileSystem;
-  @override
-  final bool? isReadOnly;
-  @override
-  final bool? isRemovable;
   @override
   final String kind;
   @override
   final String mountPoint;
   @override
   final String name;
+  @override
+  final num? availableBytes;
+  @override
+  final String? connectorId;
+  @override
+  final bool? isReadOnly;
+  @override
+  final bool? isRemovable;
   @override
   final num? totalBytes;
 
@@ -31,14 +31,14 @@ class _$MconnSnapshotMount extends MconnSnapshotMount {
       (MconnSnapshotMountBuilder()..update(updates))._build();
 
   _$MconnSnapshotMount._(
-      {this.availableBytes,
-      this.connectorId,
-      required this.fileSystem,
-      this.isReadOnly,
-      this.isRemovable,
+      {required this.fileSystem,
       required this.kind,
       required this.mountPoint,
       required this.name,
+      this.availableBytes,
+      this.connectorId,
+      this.isReadOnly,
+      this.isRemovable,
       this.totalBytes})
       : super._();
   @override
@@ -54,28 +54,28 @@ class _$MconnSnapshotMount extends MconnSnapshotMount {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is MconnSnapshotMount &&
-        availableBytes == other.availableBytes &&
-        connectorId == other.connectorId &&
         fileSystem == other.fileSystem &&
-        isReadOnly == other.isReadOnly &&
-        isRemovable == other.isRemovable &&
         kind == other.kind &&
         mountPoint == other.mountPoint &&
         name == other.name &&
+        availableBytes == other.availableBytes &&
+        connectorId == other.connectorId &&
+        isReadOnly == other.isReadOnly &&
+        isRemovable == other.isRemovable &&
         totalBytes == other.totalBytes;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, availableBytes.hashCode);
-    _$hash = $jc(_$hash, connectorId.hashCode);
     _$hash = $jc(_$hash, fileSystem.hashCode);
-    _$hash = $jc(_$hash, isReadOnly.hashCode);
-    _$hash = $jc(_$hash, isRemovable.hashCode);
     _$hash = $jc(_$hash, kind.hashCode);
     _$hash = $jc(_$hash, mountPoint.hashCode);
     _$hash = $jc(_$hash, name.hashCode);
+    _$hash = $jc(_$hash, availableBytes.hashCode);
+    _$hash = $jc(_$hash, connectorId.hashCode);
+    _$hash = $jc(_$hash, isReadOnly.hashCode);
+    _$hash = $jc(_$hash, isRemovable.hashCode);
     _$hash = $jc(_$hash, totalBytes.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
@@ -84,14 +84,14 @@ class _$MconnSnapshotMount extends MconnSnapshotMount {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'MconnSnapshotMount')
-          ..add('availableBytes', availableBytes)
-          ..add('connectorId', connectorId)
           ..add('fileSystem', fileSystem)
-          ..add('isReadOnly', isReadOnly)
-          ..add('isRemovable', isRemovable)
           ..add('kind', kind)
           ..add('mountPoint', mountPoint)
           ..add('name', name)
+          ..add('availableBytes', availableBytes)
+          ..add('connectorId', connectorId)
+          ..add('isReadOnly', isReadOnly)
+          ..add('isRemovable', isRemovable)
           ..add('totalBytes', totalBytes))
         .toString();
   }
@@ -101,26 +101,9 @@ class MconnSnapshotMountBuilder
     implements Builder<MconnSnapshotMount, MconnSnapshotMountBuilder> {
   _$MconnSnapshotMount? _$v;
 
-  num? _availableBytes;
-  num? get availableBytes => _$this._availableBytes;
-  set availableBytes(num? availableBytes) =>
-      _$this._availableBytes = availableBytes;
-
-  String? _connectorId;
-  String? get connectorId => _$this._connectorId;
-  set connectorId(String? connectorId) => _$this._connectorId = connectorId;
-
   String? _fileSystem;
   String? get fileSystem => _$this._fileSystem;
   set fileSystem(String? fileSystem) => _$this._fileSystem = fileSystem;
-
-  bool? _isReadOnly;
-  bool? get isReadOnly => _$this._isReadOnly;
-  set isReadOnly(bool? isReadOnly) => _$this._isReadOnly = isReadOnly;
-
-  bool? _isRemovable;
-  bool? get isRemovable => _$this._isRemovable;
-  set isRemovable(bool? isRemovable) => _$this._isRemovable = isRemovable;
 
   String? _kind;
   String? get kind => _$this._kind;
@@ -134,6 +117,23 @@ class MconnSnapshotMountBuilder
   String? get name => _$this._name;
   set name(String? name) => _$this._name = name;
 
+  num? _availableBytes;
+  num? get availableBytes => _$this._availableBytes;
+  set availableBytes(num? availableBytes) =>
+      _$this._availableBytes = availableBytes;
+
+  String? _connectorId;
+  String? get connectorId => _$this._connectorId;
+  set connectorId(String? connectorId) => _$this._connectorId = connectorId;
+
+  bool? _isReadOnly;
+  bool? get isReadOnly => _$this._isReadOnly;
+  set isReadOnly(bool? isReadOnly) => _$this._isReadOnly = isReadOnly;
+
+  bool? _isRemovable;
+  bool? get isRemovable => _$this._isRemovable;
+  set isRemovable(bool? isRemovable) => _$this._isRemovable = isRemovable;
+
   num? _totalBytes;
   num? get totalBytes => _$this._totalBytes;
   set totalBytes(num? totalBytes) => _$this._totalBytes = totalBytes;
@@ -145,14 +145,14 @@ class MconnSnapshotMountBuilder
   MconnSnapshotMountBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _availableBytes = $v.availableBytes;
-      _connectorId = $v.connectorId;
       _fileSystem = $v.fileSystem;
-      _isReadOnly = $v.isReadOnly;
-      _isRemovable = $v.isRemovable;
       _kind = $v.kind;
       _mountPoint = $v.mountPoint;
       _name = $v.name;
+      _availableBytes = $v.availableBytes;
+      _connectorId = $v.connectorId;
+      _isReadOnly = $v.isReadOnly;
+      _isRemovable = $v.isRemovable;
       _totalBytes = $v.totalBytes;
       _$v = null;
     }
@@ -175,18 +175,18 @@ class MconnSnapshotMountBuilder
   _$MconnSnapshotMount _build() {
     final _$result = _$v ??
         _$MconnSnapshotMount._(
-          availableBytes: availableBytes,
-          connectorId: connectorId,
           fileSystem: BuiltValueNullFieldError.checkNotNull(
               fileSystem, r'MconnSnapshotMount', 'fileSystem'),
-          isReadOnly: isReadOnly,
-          isRemovable: isRemovable,
           kind: BuiltValueNullFieldError.checkNotNull(
               kind, r'MconnSnapshotMount', 'kind'),
           mountPoint: BuiltValueNullFieldError.checkNotNull(
               mountPoint, r'MconnSnapshotMount', 'mountPoint'),
           name: BuiltValueNullFieldError.checkNotNull(
               name, r'MconnSnapshotMount', 'name'),
+          availableBytes: availableBytes,
+          connectorId: connectorId,
+          isReadOnly: isReadOnly,
+          isRemovable: isRemovable,
           totalBytes: totalBytes,
         );
     replace(_$result);

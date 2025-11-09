@@ -10,8 +10,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **errors** | [**BuiltList&lt;TeamsDevicesV4ResponseMessage&gt;**](TeamsDevicesV4ResponseMessage.md) |  | 
 **messages** | [**BuiltList&lt;TeamsDevicesV4ResponseMessage&gt;**](TeamsDevicesV4ResponseMessage.md) |  | 
-**result** | [**JsonObject**](.md) |  | [optional] 
 **success** | **bool** | Whether the API call was successful. | 
+**result** | [**JsonObject**](.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

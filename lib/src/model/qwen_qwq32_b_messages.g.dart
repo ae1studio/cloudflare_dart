@@ -8,6 +8,8 @@ part of 'qwen_qwq32_b_messages.dart';
 
 class _$QwenQwq32BMessages extends QwenQwq32BMessages {
   @override
+  final BuiltList<Messages2MessagesInner> messages;
+  @override
   final num? frequencyPenalty;
   @override
   final BuiltList<MessagesFunctionsInner>? functions;
@@ -15,8 +17,6 @@ class _$QwenQwq32BMessages extends QwenQwq32BMessages {
   final JsonObject? guidedJson;
   @override
   final int? maxTokens;
-  @override
-  final BuiltList<Messages2MessagesInner> messages;
   @override
   final num? presencePenalty;
   @override
@@ -41,11 +41,11 @@ class _$QwenQwq32BMessages extends QwenQwq32BMessages {
       (QwenQwq32BMessagesBuilder()..update(updates))._build();
 
   _$QwenQwq32BMessages._(
-      {this.frequencyPenalty,
+      {required this.messages,
+      this.frequencyPenalty,
       this.functions,
       this.guidedJson,
       this.maxTokens,
-      required this.messages,
       this.presencePenalty,
       this.raw,
       this.repetitionPenalty,
@@ -69,11 +69,11 @@ class _$QwenQwq32BMessages extends QwenQwq32BMessages {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is QwenQwq32BMessages &&
+        messages == other.messages &&
         frequencyPenalty == other.frequencyPenalty &&
         functions == other.functions &&
         guidedJson == other.guidedJson &&
         maxTokens == other.maxTokens &&
-        messages == other.messages &&
         presencePenalty == other.presencePenalty &&
         raw == other.raw &&
         repetitionPenalty == other.repetitionPenalty &&
@@ -88,11 +88,11 @@ class _$QwenQwq32BMessages extends QwenQwq32BMessages {
   @override
   int get hashCode {
     var _$hash = 0;
+    _$hash = $jc(_$hash, messages.hashCode);
     _$hash = $jc(_$hash, frequencyPenalty.hashCode);
     _$hash = $jc(_$hash, functions.hashCode);
     _$hash = $jc(_$hash, guidedJson.hashCode);
     _$hash = $jc(_$hash, maxTokens.hashCode);
-    _$hash = $jc(_$hash, messages.hashCode);
     _$hash = $jc(_$hash, presencePenalty.hashCode);
     _$hash = $jc(_$hash, raw.hashCode);
     _$hash = $jc(_$hash, repetitionPenalty.hashCode);
@@ -109,11 +109,11 @@ class _$QwenQwq32BMessages extends QwenQwq32BMessages {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'QwenQwq32BMessages')
+          ..add('messages', messages)
           ..add('frequencyPenalty', frequencyPenalty)
           ..add('functions', functions)
           ..add('guidedJson', guidedJson)
           ..add('maxTokens', maxTokens)
-          ..add('messages', messages)
           ..add('presencePenalty', presencePenalty)
           ..add('raw', raw)
           ..add('repetitionPenalty', repetitionPenalty)
@@ -130,6 +130,12 @@ class _$QwenQwq32BMessages extends QwenQwq32BMessages {
 class QwenQwq32BMessagesBuilder
     implements Builder<QwenQwq32BMessages, QwenQwq32BMessagesBuilder> {
   _$QwenQwq32BMessages? _$v;
+
+  ListBuilder<Messages2MessagesInner>? _messages;
+  ListBuilder<Messages2MessagesInner> get messages =>
+      _$this._messages ??= ListBuilder<Messages2MessagesInner>();
+  set messages(ListBuilder<Messages2MessagesInner>? messages) =>
+      _$this._messages = messages;
 
   num? _frequencyPenalty;
   num? get frequencyPenalty => _$this._frequencyPenalty;
@@ -149,12 +155,6 @@ class QwenQwq32BMessagesBuilder
   int? _maxTokens;
   int? get maxTokens => _$this._maxTokens;
   set maxTokens(int? maxTokens) => _$this._maxTokens = maxTokens;
-
-  ListBuilder<Messages2MessagesInner>? _messages;
-  ListBuilder<Messages2MessagesInner> get messages =>
-      _$this._messages ??= ListBuilder<Messages2MessagesInner>();
-  set messages(ListBuilder<Messages2MessagesInner>? messages) =>
-      _$this._messages = messages;
 
   num? _presencePenalty;
   num? get presencePenalty => _$this._presencePenalty;
@@ -202,11 +202,11 @@ class QwenQwq32BMessagesBuilder
   QwenQwq32BMessagesBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
+      _messages = $v.messages.toBuilder();
       _frequencyPenalty = $v.frequencyPenalty;
       _functions = $v.functions?.toBuilder();
       _guidedJson = $v.guidedJson;
       _maxTokens = $v.maxTokens;
-      _messages = $v.messages.toBuilder();
       _presencePenalty = $v.presencePenalty;
       _raw = $v.raw;
       _repetitionPenalty = $v.repetitionPenalty;
@@ -239,11 +239,11 @@ class QwenQwq32BMessagesBuilder
     try {
       _$result = _$v ??
           _$QwenQwq32BMessages._(
+            messages: messages.build(),
             frequencyPenalty: frequencyPenalty,
             functions: _functions?.build(),
             guidedJson: guidedJson,
             maxTokens: maxTokens,
-            messages: messages.build(),
             presencePenalty: presencePenalty,
             raw: raw,
             repetitionPenalty: repetitionPenalty,
@@ -257,11 +257,11 @@ class QwenQwq32BMessagesBuilder
     } catch (_) {
       late String _$failedField;
       try {
-        _$failedField = 'functions';
-        _functions?.build();
-
         _$failedField = 'messages';
         messages.build();
+
+        _$failedField = 'functions';
+        _functions?.build();
 
         _$failedField = 'tools';
         _tools?.build();

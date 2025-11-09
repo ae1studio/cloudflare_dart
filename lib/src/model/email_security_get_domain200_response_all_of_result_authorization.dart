@@ -12,18 +12,18 @@ part 'email_security_get_domain200_response_all_of_result_authorization.g.dart';
 ///
 /// Properties:
 /// * [authorized] 
-/// * [statusMessage] 
 /// * [timestamp] 
+/// * [statusMessage] 
 @BuiltValue()
 abstract class EmailSecurityGetDomain200ResponseAllOfResultAuthorization implements Built<EmailSecurityGetDomain200ResponseAllOfResultAuthorization, EmailSecurityGetDomain200ResponseAllOfResultAuthorizationBuilder> {
   @BuiltValueField(wireName: r'authorized')
   bool get authorized;
 
-  @BuiltValueField(wireName: r'status_message')
-  String? get statusMessage;
-
   @BuiltValueField(wireName: r'timestamp')
   DateTime get timestamp;
+
+  @BuiltValueField(wireName: r'status_message')
+  String? get statusMessage;
 
   EmailSecurityGetDomain200ResponseAllOfResultAuthorization._();
 
@@ -53,6 +53,11 @@ class _$EmailSecurityGetDomain200ResponseAllOfResultAuthorizationSerializer impl
       object.authorized,
       specifiedType: const FullType(bool),
     );
+    yield r'timestamp';
+    yield serializers.serialize(
+      object.timestamp,
+      specifiedType: const FullType(DateTime),
+    );
     if (object.statusMessage != null) {
       yield r'status_message';
       yield serializers.serialize(
@@ -60,11 +65,6 @@ class _$EmailSecurityGetDomain200ResponseAllOfResultAuthorizationSerializer impl
         specifiedType: const FullType.nullable(String),
       );
     }
-    yield r'timestamp';
-    yield serializers.serialize(
-      object.timestamp,
-      specifiedType: const FullType(DateTime),
-    );
   }
 
   @override
@@ -95,6 +95,13 @@ class _$EmailSecurityGetDomain200ResponseAllOfResultAuthorizationSerializer impl
           ) as bool;
           result.authorized = valueDes;
           break;
+        case r'timestamp':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(DateTime),
+          ) as DateTime;
+          result.timestamp = valueDes;
+          break;
         case r'status_message':
           final valueDes = serializers.deserialize(
             value,
@@ -102,13 +109,6 @@ class _$EmailSecurityGetDomain200ResponseAllOfResultAuthorizationSerializer impl
           ) as String?;
           if (valueDes == null) continue;
           result.statusMessage = valueDes;
-          break;
-        case r'timestamp':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
-          result.timestamp = valueDes;
           break;
         default:
           unhandled.add(key);

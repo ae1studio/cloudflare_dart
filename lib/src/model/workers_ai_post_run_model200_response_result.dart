@@ -29,14 +29,14 @@ part 'workers_ai_post_run_model200_response_result.g.dart';
 /// WorkersAiPostRunModel200ResponseResult
 ///
 /// Properties:
+/// * [text] - The transcription
+/// * [response] - The generated text response from the model
 /// * [audio] - The generated audio in MP3 format, base64-encoded
 /// * [data] 
 /// * [shape] 
-/// * [text] - The transcription
 /// * [vtt] 
 /// * [wordCount] 
 /// * [words] 
-/// * [response] - The generated text response from the model
 /// * [toolCalls] - An array of tool calls requests made during the response generation
 /// * [usage] 
 /// * [translatedText] - The translated text in the target language

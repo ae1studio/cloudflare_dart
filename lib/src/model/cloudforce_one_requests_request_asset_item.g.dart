@@ -9,15 +9,15 @@ part of 'cloudforce_one_requests_request_asset_item.dart';
 class _$CloudforceOneRequestsRequestAssetItem
     extends CloudforceOneRequestsRequestAssetItem {
   @override
+  final int id;
+  @override
+  final String name;
+  @override
   final DateTime? created;
   @override
   final String? description;
   @override
   final String? fileType;
-  @override
-  final int id;
-  @override
-  final String name;
 
   factory _$CloudforceOneRequestsRequestAssetItem(
           [void Function(CloudforceOneRequestsRequestAssetItemBuilder)?
@@ -26,11 +26,11 @@ class _$CloudforceOneRequestsRequestAssetItem
           ._build();
 
   _$CloudforceOneRequestsRequestAssetItem._(
-      {this.created,
+      {required this.id,
+      required this.name,
+      this.created,
       this.description,
-      this.fileType,
-      required this.id,
-      required this.name})
+      this.fileType})
       : super._();
   @override
   CloudforceOneRequestsRequestAssetItem rebuild(
@@ -46,21 +46,21 @@ class _$CloudforceOneRequestsRequestAssetItem
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is CloudforceOneRequestsRequestAssetItem &&
+        id == other.id &&
+        name == other.name &&
         created == other.created &&
         description == other.description &&
-        fileType == other.fileType &&
-        id == other.id &&
-        name == other.name;
+        fileType == other.fileType;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
+    _$hash = $jc(_$hash, id.hashCode);
+    _$hash = $jc(_$hash, name.hashCode);
     _$hash = $jc(_$hash, created.hashCode);
     _$hash = $jc(_$hash, description.hashCode);
     _$hash = $jc(_$hash, fileType.hashCode);
-    _$hash = $jc(_$hash, id.hashCode);
-    _$hash = $jc(_$hash, name.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -69,11 +69,11 @@ class _$CloudforceOneRequestsRequestAssetItem
   String toString() {
     return (newBuiltValueToStringHelper(
             r'CloudforceOneRequestsRequestAssetItem')
+          ..add('id', id)
+          ..add('name', name)
           ..add('created', created)
           ..add('description', description)
-          ..add('fileType', fileType)
-          ..add('id', id)
-          ..add('name', name))
+          ..add('fileType', fileType))
         .toString();
   }
 }
@@ -83,6 +83,14 @@ class CloudforceOneRequestsRequestAssetItemBuilder
         Builder<CloudforceOneRequestsRequestAssetItem,
             CloudforceOneRequestsRequestAssetItemBuilder> {
   _$CloudforceOneRequestsRequestAssetItem? _$v;
+
+  int? _id;
+  int? get id => _$this._id;
+  set id(int? id) => _$this._id = id;
+
+  String? _name;
+  String? get name => _$this._name;
+  set name(String? name) => _$this._name = name;
 
   DateTime? _created;
   DateTime? get created => _$this._created;
@@ -96,14 +104,6 @@ class CloudforceOneRequestsRequestAssetItemBuilder
   String? get fileType => _$this._fileType;
   set fileType(String? fileType) => _$this._fileType = fileType;
 
-  int? _id;
-  int? get id => _$this._id;
-  set id(int? id) => _$this._id = id;
-
-  String? _name;
-  String? get name => _$this._name;
-  set name(String? name) => _$this._name = name;
-
   CloudforceOneRequestsRequestAssetItemBuilder() {
     CloudforceOneRequestsRequestAssetItem._defaults(this);
   }
@@ -111,11 +111,11 @@ class CloudforceOneRequestsRequestAssetItemBuilder
   CloudforceOneRequestsRequestAssetItemBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
+      _id = $v.id;
+      _name = $v.name;
       _created = $v.created;
       _description = $v.description;
       _fileType = $v.fileType;
-      _id = $v.id;
-      _name = $v.name;
       _$v = null;
     }
     return this;
@@ -138,13 +138,13 @@ class CloudforceOneRequestsRequestAssetItemBuilder
   _$CloudforceOneRequestsRequestAssetItem _build() {
     final _$result = _$v ??
         _$CloudforceOneRequestsRequestAssetItem._(
-          created: created,
-          description: description,
-          fileType: fileType,
           id: BuiltValueNullFieldError.checkNotNull(
               id, r'CloudforceOneRequestsRequestAssetItem', 'id'),
           name: BuiltValueNullFieldError.checkNotNull(
               name, r'CloudforceOneRequestsRequestAssetItem', 'name'),
+          created: created,
+          description: description,
+          fileType: fileType,
         );
     replace(_$result);
     return _$result;

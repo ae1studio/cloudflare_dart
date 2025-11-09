@@ -16,7 +16,6 @@ part 'bot_management_feedback_report_create.g.dart';
 /// BotManagementFeedbackReportCreate
 ///
 /// Properties:
-/// * [createdAt] 
 /// * [description] 
 /// * [expression] - Wirefilter expression describing the traffic being reported.
 /// * [firstRequestSeenAt] 
@@ -25,8 +24,9 @@ part 'bot_management_feedback_report_create.g.dart';
 /// * [requestsByAttribute] - Top attributes contributing to the feedback sample. Keys include topASNs, topCountries, topHosts, topIPs, topJA3Hashes, topJA4s, topPaths, topUserAgents.
 /// * [requestsByScore] - Map of bot scores (1-99) to request counts. Sum must equal `requests`.
 /// * [requestsByScoreSrc] - Map of score source to request counts. Sum must equal `requests`.
-/// * [subtype] 
 /// * [type] 
+/// * [createdAt] 
+/// * [subtype] 
 @BuiltValue()
 abstract class BotManagementFeedbackReportCreate implements BotManagementFeedbackReport, Built<BotManagementFeedbackReportCreate, BotManagementFeedbackReportCreateBuilder> {
   BotManagementFeedbackReportCreate._();

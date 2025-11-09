@@ -14,7 +14,6 @@ part 'builds_create_trigger_request.g.dart';
 /// Properties:
 /// * [branchExcludes] 
 /// * [branchIncludes] 
-/// * [buildCachingEnabled] 
 /// * [buildCommand] 
 /// * [buildTokenUuid] 
 /// * [deployCommand] 
@@ -24,6 +23,7 @@ part 'builds_create_trigger_request.g.dart';
 /// * [repoConnectionUuid] 
 /// * [rootDirectory] 
 /// * [triggerName] 
+/// * [buildCachingEnabled] 
 @BuiltValue()
 abstract class BuildsCreateTriggerRequest implements Built<BuildsCreateTriggerRequest, BuildsCreateTriggerRequestBuilder> {
   @BuiltValueField(wireName: r'branch_excludes')
@@ -31,9 +31,6 @@ abstract class BuildsCreateTriggerRequest implements Built<BuildsCreateTriggerRe
 
   @BuiltValueField(wireName: r'branch_includes')
   BuiltList<String> get branchIncludes;
-
-  @BuiltValueField(wireName: r'build_caching_enabled')
-  bool? get buildCachingEnabled;
 
   @BuiltValueField(wireName: r'build_command')
   String get buildCommand;
@@ -61,6 +58,9 @@ abstract class BuildsCreateTriggerRequest implements Built<BuildsCreateTriggerRe
 
   @BuiltValueField(wireName: r'trigger_name')
   String get triggerName;
+
+  @BuiltValueField(wireName: r'build_caching_enabled')
+  bool? get buildCachingEnabled;
 
   BuildsCreateTriggerRequest._();
 
@@ -96,13 +96,6 @@ class _$BuildsCreateTriggerRequestSerializer implements PrimitiveSerializer<Buil
       object.branchIncludes,
       specifiedType: const FullType(BuiltList, [FullType(String)]),
     );
-    if (object.buildCachingEnabled != null) {
-      yield r'build_caching_enabled';
-      yield serializers.serialize(
-        object.buildCachingEnabled,
-        specifiedType: const FullType(bool),
-      );
-    }
     yield r'build_command';
     yield serializers.serialize(
       object.buildCommand,
@@ -148,6 +141,13 @@ class _$BuildsCreateTriggerRequestSerializer implements PrimitiveSerializer<Buil
       object.triggerName,
       specifiedType: const FullType(String),
     );
+    if (object.buildCachingEnabled != null) {
+      yield r'build_caching_enabled';
+      yield serializers.serialize(
+        object.buildCachingEnabled,
+        specifiedType: const FullType(bool),
+      );
+    }
   }
 
   @override
@@ -184,13 +184,6 @@ class _$BuildsCreateTriggerRequestSerializer implements PrimitiveSerializer<Buil
             specifiedType: const FullType(BuiltList, [FullType(String)]),
           ) as BuiltList<String>;
           result.branchIncludes.replace(valueDes);
-          break;
-        case r'build_caching_enabled':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
-          result.buildCachingEnabled = valueDes;
           break;
         case r'build_command':
           final valueDes = serializers.deserialize(
@@ -254,6 +247,13 @@ class _$BuildsCreateTriggerRequestSerializer implements PrimitiveSerializer<Buil
             specifiedType: const FullType(String),
           ) as String;
           result.triggerName = valueDes;
+          break;
+        case r'build_caching_enabled':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(bool),
+          ) as bool;
+          result.buildCachingEnabled = valueDes;
           break;
         default:
           unhandled.add(key);

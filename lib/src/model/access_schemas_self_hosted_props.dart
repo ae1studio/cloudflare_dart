@@ -13,6 +13,8 @@ part 'access_schemas_self_hosted_props.g.dart';
 /// AccessSchemasSelfHostedProps
 ///
 /// Properties:
+/// * [domain] - The domain and path that Access will secure.
+/// * [type] - The application type.
 /// * [allowIframe] - Enables loading application content in an iFrame.
 /// * [allowedIdps] - The identity providers your users can select when connecting to this application. Defaults to all IdPs configured in your account.
 /// * [appLauncherVisible] - Displays the application in the App Launcher.
@@ -20,7 +22,6 @@ part 'access_schemas_self_hosted_props.g.dart';
 /// * [corsHeaders] 
 /// * [customDenyMessage] - The custom error message shown to a user when they are denied access to the application.
 /// * [customDenyUrl] - The custom URL a user is redirected to when they are denied access to the application.
-/// * [domain] - The domain and path that Access will secure.
 /// * [enableBindingCookie] - Enables the binding cookie, which increases security against compromised authorization tokens and CSRF attacks.
 /// * [httpOnlyCookieAttribute] - Enables the HttpOnly cookie attribute, which increases security against XSS attacks.
 /// * [logoUrl] - The image URL for the logo shown in the App Launcher dashboard.
@@ -30,9 +31,16 @@ part 'access_schemas_self_hosted_props.g.dart';
 /// * [serviceAuth401Redirect] - Returns a 401 status code when the request is blocked by a Service Auth policy.
 /// * [sessionDuration] - The amount of time that tokens issued for this application will be valid. Must be in the format `300ms` or `2h45m`. Valid time units are: ns, us (or µs), ms, s, m, h.
 /// * [skipInterstitial] - Enables automatic authentication through cloudflared.
-/// * [type] - The application type.
 @BuiltValue(instantiable: false)
 abstract class AccessSchemasSelfHostedProps  {
+  /// The domain and path that Access will secure.
+  @BuiltValueField(wireName: r'domain')
+  String get domain;
+
+  /// The application type.
+  @BuiltValueField(wireName: r'type')
+  String get type;
+
   /// Enables loading application content in an iFrame.
   @BuiltValueField(wireName: r'allow_iframe')
   bool? get allowIframe;
@@ -59,10 +67,6 @@ abstract class AccessSchemasSelfHostedProps  {
   /// The custom URL a user is redirected to when they are denied access to the application.
   @BuiltValueField(wireName: r'custom_deny_url')
   String? get customDenyUrl;
-
-  /// The domain and path that Access will secure.
-  @BuiltValueField(wireName: r'domain')
-  String get domain;
 
   /// Enables the binding cookie, which increases security against compromised authorization tokens and CSRF attacks.
   @BuiltValueField(wireName: r'enable_binding_cookie')
@@ -100,10 +104,6 @@ abstract class AccessSchemasSelfHostedProps  {
   @BuiltValueField(wireName: r'skip_interstitial')
   bool? get skipInterstitial;
 
-  /// The application type.
-  @BuiltValueField(wireName: r'type')
-  String get type;
-
   @BuiltValueSerializer(custom: true)
   static Serializer<AccessSchemasSelfHostedProps> get serializer => _$AccessSchemasSelfHostedPropsSerializer();
 }
@@ -120,6 +120,16 @@ class _$AccessSchemasSelfHostedPropsSerializer implements PrimitiveSerializer<Ac
     AccessSchemasSelfHostedProps object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    yield r'domain';
+    yield serializers.serialize(
+      object.domain,
+      specifiedType: const FullType(String),
+    );
+    yield r'type';
+    yield serializers.serialize(
+      object.type,
+      specifiedType: const FullType(String),
+    );
     if (object.allowIframe != null) {
       yield r'allow_iframe';
       yield serializers.serialize(
@@ -169,11 +179,6 @@ class _$AccessSchemasSelfHostedPropsSerializer implements PrimitiveSerializer<Ac
         specifiedType: const FullType(String),
       );
     }
-    yield r'domain';
-    yield serializers.serialize(
-      object.domain,
-      specifiedType: const FullType(String),
-    );
     if (object.enableBindingCookie != null) {
       yield r'enable_binding_cookie';
       yield serializers.serialize(
@@ -237,11 +242,6 @@ class _$AccessSchemasSelfHostedPropsSerializer implements PrimitiveSerializer<Ac
         specifiedType: const FullType(bool),
       );
     }
-    yield r'type';
-    yield serializers.serialize(
-      object.type,
-      specifiedType: const FullType(String),
-    );
   }
 
   @override
@@ -305,6 +305,20 @@ class _$$AccessSchemasSelfHostedPropsSerializer implements PrimitiveSerializer<$
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
+        case r'domain':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.domain = valueDes;
+          break;
+        case r'type':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.type = valueDes;
+          break;
         case r'allow_iframe':
           final valueDes = serializers.deserialize(
             value,
@@ -353,13 +367,6 @@ class _$$AccessSchemasSelfHostedPropsSerializer implements PrimitiveSerializer<$
             specifiedType: const FullType(String),
           ) as String;
           result.customDenyUrl = valueDes;
-          break;
-        case r'domain':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.domain = valueDes;
           break;
         case r'enable_binding_cookie':
           final valueDes = serializers.deserialize(
@@ -423,13 +430,6 @@ class _$$AccessSchemasSelfHostedPropsSerializer implements PrimitiveSerializer<$
             specifiedType: const FullType(bool),
           ) as bool;
           result.skipInterstitial = valueDes;
-          break;
-        case r'type':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.type = valueDes;
           break;
         default:
           unhandled.add(key);

@@ -8,10 +8,6 @@ part of 'snippet_rule.dart';
 
 class _$SnippetRule extends SnippetRule {
   @override
-  final String? description;
-  @override
-  final bool? enabled;
-  @override
   final String expression;
   @override
   final String id;
@@ -19,17 +15,21 @@ class _$SnippetRule extends SnippetRule {
   final DateTime lastUpdated;
   @override
   final String snippetName;
+  @override
+  final String? description;
+  @override
+  final bool? enabled;
 
   factory _$SnippetRule([void Function(SnippetRuleBuilder)? updates]) =>
       (SnippetRuleBuilder()..update(updates))._build();
 
   _$SnippetRule._(
-      {this.description,
-      this.enabled,
-      required this.expression,
+      {required this.expression,
       required this.id,
       required this.lastUpdated,
-      required this.snippetName})
+      required this.snippetName,
+      this.description,
+      this.enabled})
       : super._();
   @override
   SnippetRule rebuild(void Function(SnippetRuleBuilder) updates) =>
@@ -42,23 +42,23 @@ class _$SnippetRule extends SnippetRule {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is SnippetRule &&
-        description == other.description &&
-        enabled == other.enabled &&
         expression == other.expression &&
         id == other.id &&
         lastUpdated == other.lastUpdated &&
-        snippetName == other.snippetName;
+        snippetName == other.snippetName &&
+        description == other.description &&
+        enabled == other.enabled;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, description.hashCode);
-    _$hash = $jc(_$hash, enabled.hashCode);
     _$hash = $jc(_$hash, expression.hashCode);
     _$hash = $jc(_$hash, id.hashCode);
     _$hash = $jc(_$hash, lastUpdated.hashCode);
     _$hash = $jc(_$hash, snippetName.hashCode);
+    _$hash = $jc(_$hash, description.hashCode);
+    _$hash = $jc(_$hash, enabled.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -66,26 +66,18 @@ class _$SnippetRule extends SnippetRule {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'SnippetRule')
-          ..add('description', description)
-          ..add('enabled', enabled)
           ..add('expression', expression)
           ..add('id', id)
           ..add('lastUpdated', lastUpdated)
-          ..add('snippetName', snippetName))
+          ..add('snippetName', snippetName)
+          ..add('description', description)
+          ..add('enabled', enabled))
         .toString();
   }
 }
 
 class SnippetRuleBuilder implements Builder<SnippetRule, SnippetRuleBuilder> {
   _$SnippetRule? _$v;
-
-  String? _description;
-  String? get description => _$this._description;
-  set description(String? description) => _$this._description = description;
-
-  bool? _enabled;
-  bool? get enabled => _$this._enabled;
-  set enabled(bool? enabled) => _$this._enabled = enabled;
 
   String? _expression;
   String? get expression => _$this._expression;
@@ -103,6 +95,14 @@ class SnippetRuleBuilder implements Builder<SnippetRule, SnippetRuleBuilder> {
   String? get snippetName => _$this._snippetName;
   set snippetName(String? snippetName) => _$this._snippetName = snippetName;
 
+  String? _description;
+  String? get description => _$this._description;
+  set description(String? description) => _$this._description = description;
+
+  bool? _enabled;
+  bool? get enabled => _$this._enabled;
+  set enabled(bool? enabled) => _$this._enabled = enabled;
+
   SnippetRuleBuilder() {
     SnippetRule._defaults(this);
   }
@@ -110,12 +110,12 @@ class SnippetRuleBuilder implements Builder<SnippetRule, SnippetRuleBuilder> {
   SnippetRuleBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _description = $v.description;
-      _enabled = $v.enabled;
       _expression = $v.expression;
       _id = $v.id;
       _lastUpdated = $v.lastUpdated;
       _snippetName = $v.snippetName;
+      _description = $v.description;
+      _enabled = $v.enabled;
       _$v = null;
     }
     return this;
@@ -137,8 +137,6 @@ class SnippetRuleBuilder implements Builder<SnippetRule, SnippetRuleBuilder> {
   _$SnippetRule _build() {
     final _$result = _$v ??
         _$SnippetRule._(
-          description: description,
-          enabled: enabled,
           expression: BuiltValueNullFieldError.checkNotNull(
               expression, r'SnippetRule', 'expression'),
           id: BuiltValueNullFieldError.checkNotNull(id, r'SnippetRule', 'id'),
@@ -146,6 +144,8 @@ class SnippetRuleBuilder implements Builder<SnippetRule, SnippetRuleBuilder> {
               lastUpdated, r'SnippetRule', 'lastUpdated'),
           snippetName: BuiltValueNullFieldError.checkNotNull(
               snippetName, r'SnippetRule', 'snippetName'),
+          description: description,
+          enabled: enabled,
         );
     replace(_$result);
     return _$result;

@@ -19,10 +19,10 @@ part 'aig_config_list_providers200_response_result_inner.g.dart';
 /// * [id] 
 /// * [modifiedAt] 
 /// * [providerSlug] 
-/// * [rateLimit] 
-/// * [rateLimitPeriod] 
 /// * [secretId] 
 /// * [secretPreview] 
+/// * [rateLimit] 
+/// * [rateLimitPeriod] 
 @BuiltValue()
 abstract class AigConfigListProviders200ResponseResultInner implements Built<AigConfigListProviders200ResponseResultInner, AigConfigListProviders200ResponseResultInnerBuilder> {
   @BuiltValueField(wireName: r'account_id')
@@ -50,17 +50,17 @@ abstract class AigConfigListProviders200ResponseResultInner implements Built<Aig
   @BuiltValueField(wireName: r'provider_slug')
   String get providerSlug;
 
-  @BuiltValueField(wireName: r'rate_limit')
-  num? get rateLimit;
-
-  @BuiltValueField(wireName: r'rate_limit_period')
-  num? get rateLimitPeriod;
-
   @BuiltValueField(wireName: r'secret_id')
   String get secretId;
 
   @BuiltValueField(wireName: r'secret_preview')
   String get secretPreview;
+
+  @BuiltValueField(wireName: r'rate_limit')
+  num? get rateLimit;
+
+  @BuiltValueField(wireName: r'rate_limit_period')
+  num? get rateLimitPeriod;
 
   AigConfigListProviders200ResponseResultInner._();
 
@@ -126,6 +126,16 @@ class _$AigConfigListProviders200ResponseResultInnerSerializer implements Primit
       object.providerSlug,
       specifiedType: const FullType(String),
     );
+    yield r'secret_id';
+    yield serializers.serialize(
+      object.secretId,
+      specifiedType: const FullType(String),
+    );
+    yield r'secret_preview';
+    yield serializers.serialize(
+      object.secretPreview,
+      specifiedType: const FullType(String),
+    );
     if (object.rateLimit != null) {
       yield r'rate_limit';
       yield serializers.serialize(
@@ -140,16 +150,6 @@ class _$AigConfigListProviders200ResponseResultInnerSerializer implements Primit
         specifiedType: const FullType(num),
       );
     }
-    yield r'secret_id';
-    yield serializers.serialize(
-      object.secretId,
-      specifiedType: const FullType(String),
-    );
-    yield r'secret_preview';
-    yield serializers.serialize(
-      object.secretPreview,
-      specifiedType: const FullType(String),
-    );
   }
 
   @override
@@ -229,20 +229,6 @@ class _$AigConfigListProviders200ResponseResultInnerSerializer implements Primit
           ) as String;
           result.providerSlug = valueDes;
           break;
-        case r'rate_limit':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(num),
-          ) as num;
-          result.rateLimit = valueDes;
-          break;
-        case r'rate_limit_period':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(num),
-          ) as num;
-          result.rateLimitPeriod = valueDes;
-          break;
         case r'secret_id':
           final valueDes = serializers.deserialize(
             value,
@@ -256,6 +242,20 @@ class _$AigConfigListProviders200ResponseResultInnerSerializer implements Primit
             specifiedType: const FullType(String),
           ) as String;
           result.secretPreview = valueDes;
+          break;
+        case r'rate_limit':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(num),
+          ) as num;
+          result.rateLimit = valueDes;
+          break;
+        case r'rate_limit_period':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(num),
+          ) as num;
+          result.rateLimitPeriod = valueDes;
           break;
         default:
           unhandled.add(key);

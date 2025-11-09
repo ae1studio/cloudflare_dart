@@ -137,11 +137,7 @@ class _$RealtimekitActiveSession extends RealtimekitActiveSession {
   @override
   final String associatedId;
   @override
-  final BuiltList<RealtimekitActiveSession>? breakoutRooms;
-  @override
   final String createdAt;
-  @override
-  final String? endedAt;
   @override
   final String id;
   @override
@@ -150,8 +146,6 @@ class _$RealtimekitActiveSession extends RealtimekitActiveSession {
   final num maxConcurrentParticipants;
   @override
   final String meetingDisplayName;
-  @override
-  final JsonObject? meta;
   @override
   final num minutesConsumed;
   @override
@@ -164,6 +158,12 @@ class _$RealtimekitActiveSession extends RealtimekitActiveSession {
   final RealtimekitActiveSessionTypeEnum type;
   @override
   final String updatedAt;
+  @override
+  final BuiltList<RealtimekitActiveSession>? breakoutRooms;
+  @override
+  final String? endedAt;
+  @override
+  final JsonObject? meta;
 
   factory _$RealtimekitActiveSession(
           [void Function(RealtimekitActiveSessionBuilder)? updates]) =>
@@ -171,20 +171,20 @@ class _$RealtimekitActiveSession extends RealtimekitActiveSession {
 
   _$RealtimekitActiveSession._(
       {required this.associatedId,
-      this.breakoutRooms,
       required this.createdAt,
-      this.endedAt,
       required this.id,
       required this.liveParticipants,
       required this.maxConcurrentParticipants,
       required this.meetingDisplayName,
-      this.meta,
       required this.minutesConsumed,
       required this.organizationId,
       required this.startedAt,
       required this.status,
       required this.type,
-      required this.updatedAt})
+      required this.updatedAt,
+      this.breakoutRooms,
+      this.endedAt,
+      this.meta})
       : super._();
   @override
   RealtimekitActiveSession rebuild(
@@ -200,40 +200,40 @@ class _$RealtimekitActiveSession extends RealtimekitActiveSession {
     if (identical(other, this)) return true;
     return other is RealtimekitActiveSession &&
         associatedId == other.associatedId &&
-        breakoutRooms == other.breakoutRooms &&
         createdAt == other.createdAt &&
-        endedAt == other.endedAt &&
         id == other.id &&
         liveParticipants == other.liveParticipants &&
         maxConcurrentParticipants == other.maxConcurrentParticipants &&
         meetingDisplayName == other.meetingDisplayName &&
-        meta == other.meta &&
         minutesConsumed == other.minutesConsumed &&
         organizationId == other.organizationId &&
         startedAt == other.startedAt &&
         status == other.status &&
         type == other.type &&
-        updatedAt == other.updatedAt;
+        updatedAt == other.updatedAt &&
+        breakoutRooms == other.breakoutRooms &&
+        endedAt == other.endedAt &&
+        meta == other.meta;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
     _$hash = $jc(_$hash, associatedId.hashCode);
-    _$hash = $jc(_$hash, breakoutRooms.hashCode);
     _$hash = $jc(_$hash, createdAt.hashCode);
-    _$hash = $jc(_$hash, endedAt.hashCode);
     _$hash = $jc(_$hash, id.hashCode);
     _$hash = $jc(_$hash, liveParticipants.hashCode);
     _$hash = $jc(_$hash, maxConcurrentParticipants.hashCode);
     _$hash = $jc(_$hash, meetingDisplayName.hashCode);
-    _$hash = $jc(_$hash, meta.hashCode);
     _$hash = $jc(_$hash, minutesConsumed.hashCode);
     _$hash = $jc(_$hash, organizationId.hashCode);
     _$hash = $jc(_$hash, startedAt.hashCode);
     _$hash = $jc(_$hash, status.hashCode);
     _$hash = $jc(_$hash, type.hashCode);
     _$hash = $jc(_$hash, updatedAt.hashCode);
+    _$hash = $jc(_$hash, breakoutRooms.hashCode);
+    _$hash = $jc(_$hash, endedAt.hashCode);
+    _$hash = $jc(_$hash, meta.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -242,20 +242,20 @@ class _$RealtimekitActiveSession extends RealtimekitActiveSession {
   String toString() {
     return (newBuiltValueToStringHelper(r'RealtimekitActiveSession')
           ..add('associatedId', associatedId)
-          ..add('breakoutRooms', breakoutRooms)
           ..add('createdAt', createdAt)
-          ..add('endedAt', endedAt)
           ..add('id', id)
           ..add('liveParticipants', liveParticipants)
           ..add('maxConcurrentParticipants', maxConcurrentParticipants)
           ..add('meetingDisplayName', meetingDisplayName)
-          ..add('meta', meta)
           ..add('minutesConsumed', minutesConsumed)
           ..add('organizationId', organizationId)
           ..add('startedAt', startedAt)
           ..add('status', status)
           ..add('type', type)
-          ..add('updatedAt', updatedAt))
+          ..add('updatedAt', updatedAt)
+          ..add('breakoutRooms', breakoutRooms)
+          ..add('endedAt', endedAt)
+          ..add('meta', meta))
         .toString();
   }
 }
@@ -269,19 +269,9 @@ class RealtimekitActiveSessionBuilder
   String? get associatedId => _$this._associatedId;
   set associatedId(String? associatedId) => _$this._associatedId = associatedId;
 
-  ListBuilder<RealtimekitActiveSession>? _breakoutRooms;
-  ListBuilder<RealtimekitActiveSession> get breakoutRooms =>
-      _$this._breakoutRooms ??= ListBuilder<RealtimekitActiveSession>();
-  set breakoutRooms(ListBuilder<RealtimekitActiveSession>? breakoutRooms) =>
-      _$this._breakoutRooms = breakoutRooms;
-
   String? _createdAt;
   String? get createdAt => _$this._createdAt;
   set createdAt(String? createdAt) => _$this._createdAt = createdAt;
-
-  String? _endedAt;
-  String? get endedAt => _$this._endedAt;
-  set endedAt(String? endedAt) => _$this._endedAt = endedAt;
 
   String? _id;
   String? get id => _$this._id;
@@ -301,10 +291,6 @@ class RealtimekitActiveSessionBuilder
   String? get meetingDisplayName => _$this._meetingDisplayName;
   set meetingDisplayName(String? meetingDisplayName) =>
       _$this._meetingDisplayName = meetingDisplayName;
-
-  JsonObject? _meta;
-  JsonObject? get meta => _$this._meta;
-  set meta(JsonObject? meta) => _$this._meta = meta;
 
   num? _minutesConsumed;
   num? get minutesConsumed => _$this._minutesConsumed;
@@ -333,6 +319,20 @@ class RealtimekitActiveSessionBuilder
   String? get updatedAt => _$this._updatedAt;
   set updatedAt(String? updatedAt) => _$this._updatedAt = updatedAt;
 
+  ListBuilder<RealtimekitActiveSession>? _breakoutRooms;
+  ListBuilder<RealtimekitActiveSession> get breakoutRooms =>
+      _$this._breakoutRooms ??= ListBuilder<RealtimekitActiveSession>();
+  set breakoutRooms(ListBuilder<RealtimekitActiveSession>? breakoutRooms) =>
+      _$this._breakoutRooms = breakoutRooms;
+
+  String? _endedAt;
+  String? get endedAt => _$this._endedAt;
+  set endedAt(String? endedAt) => _$this._endedAt = endedAt;
+
+  JsonObject? _meta;
+  JsonObject? get meta => _$this._meta;
+  set meta(JsonObject? meta) => _$this._meta = meta;
+
   RealtimekitActiveSessionBuilder() {
     RealtimekitActiveSession._defaults(this);
   }
@@ -341,20 +341,20 @@ class RealtimekitActiveSessionBuilder
     final $v = _$v;
     if ($v != null) {
       _associatedId = $v.associatedId;
-      _breakoutRooms = $v.breakoutRooms?.toBuilder();
       _createdAt = $v.createdAt;
-      _endedAt = $v.endedAt;
       _id = $v.id;
       _liveParticipants = $v.liveParticipants;
       _maxConcurrentParticipants = $v.maxConcurrentParticipants;
       _meetingDisplayName = $v.meetingDisplayName;
-      _meta = $v.meta;
       _minutesConsumed = $v.minutesConsumed;
       _organizationId = $v.organizationId;
       _startedAt = $v.startedAt;
       _status = $v.status;
       _type = $v.type;
       _updatedAt = $v.updatedAt;
+      _breakoutRooms = $v.breakoutRooms?.toBuilder();
+      _endedAt = $v.endedAt;
+      _meta = $v.meta;
       _$v = null;
     }
     return this;
@@ -380,10 +380,8 @@ class RealtimekitActiveSessionBuilder
           _$RealtimekitActiveSession._(
             associatedId: BuiltValueNullFieldError.checkNotNull(
                 associatedId, r'RealtimekitActiveSession', 'associatedId'),
-            breakoutRooms: _breakoutRooms?.build(),
             createdAt: BuiltValueNullFieldError.checkNotNull(
                 createdAt, r'RealtimekitActiveSession', 'createdAt'),
-            endedAt: endedAt,
             id: BuiltValueNullFieldError.checkNotNull(
                 id, r'RealtimekitActiveSession', 'id'),
             liveParticipants: BuiltValueNullFieldError.checkNotNull(
@@ -398,7 +396,6 @@ class RealtimekitActiveSessionBuilder
                 meetingDisplayName,
                 r'RealtimekitActiveSession',
                 'meetingDisplayName'),
-            meta: meta,
             minutesConsumed: BuiltValueNullFieldError.checkNotNull(
                 minutesConsumed,
                 r'RealtimekitActiveSession',
@@ -413,6 +410,9 @@ class RealtimekitActiveSessionBuilder
                 type, r'RealtimekitActiveSession', 'type'),
             updatedAt: BuiltValueNullFieldError.checkNotNull(
                 updatedAt, r'RealtimekitActiveSession', 'updatedAt'),
+            breakoutRooms: _breakoutRooms?.build(),
+            endedAt: endedAt,
+            meta: meta,
           );
     } catch (_) {
       late String _$failedField;

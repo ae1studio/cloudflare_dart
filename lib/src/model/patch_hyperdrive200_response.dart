@@ -9,6 +9,7 @@ import 'package:cloudflare_dart/src/model/hyperdrive_hyperdrive_config_response.
 import 'package:cloudflare_dart/src/model/aaa_messages_inner.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
+import 'package:built_value/json_object.dart';
 
 part 'patch_hyperdrive200_response.g.dart';
 

@@ -16,13 +16,13 @@ part 'email_security_display_name.g.dart';
 /// * [email] 
 /// * [isEmailRegex] 
 /// * [name] 
-/// * [comments] 
 /// * [createdAt] 
+/// * [id] 
+/// * [lastModified] 
+/// * [comments] 
 /// * [directoryId] 
 /// * [directoryNodeId] 
 /// * [externalDirectoryNodeId] 
-/// * [id] 
-/// * [lastModified] 
 /// * [provenance] 
 @BuiltValue()
 abstract class EmailSecurityDisplayName implements Built<EmailSecurityDisplayName, EmailSecurityDisplayNameBuilder> {
@@ -35,11 +35,17 @@ abstract class EmailSecurityDisplayName implements Built<EmailSecurityDisplayNam
   @BuiltValueField(wireName: r'name')
   String get name;
 
-  @BuiltValueField(wireName: r'comments')
-  String? get comments;
-
   @BuiltValueField(wireName: r'created_at')
   DateTime get createdAt;
+
+  @BuiltValueField(wireName: r'id')
+  int get id;
+
+  @BuiltValueField(wireName: r'last_modified')
+  DateTime get lastModified;
+
+  @BuiltValueField(wireName: r'comments')
+  String? get comments;
 
   @BuiltValueField(wireName: r'directory_id')
   EmailSecurityDisplayNameAllOfDirectoryId? get directoryId;
@@ -50,12 +56,6 @@ abstract class EmailSecurityDisplayName implements Built<EmailSecurityDisplayNam
   @Deprecated('externalDirectoryNodeId has been deprecated')
   @BuiltValueField(wireName: r'external_directory_node_id')
   String? get externalDirectoryNodeId;
-
-  @BuiltValueField(wireName: r'id')
-  int get id;
-
-  @BuiltValueField(wireName: r'last_modified')
-  DateTime get lastModified;
 
   @BuiltValueField(wireName: r'provenance')
   String? get provenance;
@@ -98,6 +98,21 @@ class _$EmailSecurityDisplayNameSerializer implements PrimitiveSerializer<EmailS
       object.name,
       specifiedType: const FullType(String),
     );
+    yield r'created_at';
+    yield serializers.serialize(
+      object.createdAt,
+      specifiedType: const FullType(DateTime),
+    );
+    yield r'id';
+    yield serializers.serialize(
+      object.id,
+      specifiedType: const FullType(int),
+    );
+    yield r'last_modified';
+    yield serializers.serialize(
+      object.lastModified,
+      specifiedType: const FullType(DateTime),
+    );
     if (object.comments != null) {
       yield r'comments';
       yield serializers.serialize(
@@ -105,11 +120,6 @@ class _$EmailSecurityDisplayNameSerializer implements PrimitiveSerializer<EmailS
         specifiedType: const FullType.nullable(String),
       );
     }
-    yield r'created_at';
-    yield serializers.serialize(
-      object.createdAt,
-      specifiedType: const FullType(DateTime),
-    );
     if (object.directoryId != null) {
       yield r'directory_id';
       yield serializers.serialize(
@@ -131,16 +141,6 @@ class _$EmailSecurityDisplayNameSerializer implements PrimitiveSerializer<EmailS
         specifiedType: const FullType.nullable(String),
       );
     }
-    yield r'id';
-    yield serializers.serialize(
-      object.id,
-      specifiedType: const FullType(int),
-    );
-    yield r'last_modified';
-    yield serializers.serialize(
-      object.lastModified,
-      specifiedType: const FullType(DateTime),
-    );
     if (object.provenance != null) {
       yield r'provenance';
       yield serializers.serialize(
@@ -192,6 +192,27 @@ class _$EmailSecurityDisplayNameSerializer implements PrimitiveSerializer<EmailS
           ) as String;
           result.name = valueDes;
           break;
+        case r'created_at':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(DateTime),
+          ) as DateTime;
+          result.createdAt = valueDes;
+          break;
+        case r'id':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(int),
+          ) as int;
+          result.id = valueDes;
+          break;
+        case r'last_modified':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(DateTime),
+          ) as DateTime;
+          result.lastModified = valueDes;
+          break;
         case r'comments':
           final valueDes = serializers.deserialize(
             value,
@@ -199,13 +220,6 @@ class _$EmailSecurityDisplayNameSerializer implements PrimitiveSerializer<EmailS
           ) as String?;
           if (valueDes == null) continue;
           result.comments = valueDes;
-          break;
-        case r'created_at':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
-          result.createdAt = valueDes;
           break;
         case r'directory_id':
           final valueDes = serializers.deserialize(
@@ -228,20 +242,6 @@ class _$EmailSecurityDisplayNameSerializer implements PrimitiveSerializer<EmailS
           ) as String?;
           if (valueDes == null) continue;
           result.externalDirectoryNodeId = valueDes;
-          break;
-        case r'id':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
-          result.id = valueDes;
-          break;
-        case r'last_modified':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
-          result.lastModified = valueDes;
           break;
         case r'provenance':
           final valueDes = serializers.deserialize(

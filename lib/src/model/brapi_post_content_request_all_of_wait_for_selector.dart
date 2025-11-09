@@ -11,17 +11,17 @@ part 'brapi_post_content_request_all_of_wait_for_selector.g.dart';
 /// Wait for the selector to appear in page. Check [options](https://pptr.dev/api/puppeteer.page.waitforselector).
 ///
 /// Properties:
-/// * [hidden] 
 /// * [selector] 
+/// * [hidden] 
 /// * [timeout] 
 /// * [visible] 
 @BuiltValue()
 abstract class BrapiPostContentRequestAllOfWaitForSelector implements Built<BrapiPostContentRequestAllOfWaitForSelector, BrapiPostContentRequestAllOfWaitForSelectorBuilder> {
-  @BuiltValueField(wireName: r'hidden')
-  bool? get hidden;
-
   @BuiltValueField(wireName: r'selector')
   String get selector;
+
+  @BuiltValueField(wireName: r'hidden')
+  bool? get hidden;
 
   @BuiltValueField(wireName: r'timeout')
   num? get timeout;
@@ -52,6 +52,11 @@ class _$BrapiPostContentRequestAllOfWaitForSelectorSerializer implements Primiti
     BrapiPostContentRequestAllOfWaitForSelector object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    yield r'selector';
+    yield serializers.serialize(
+      object.selector,
+      specifiedType: const FullType(String),
+    );
     if (object.hidden != null) {
       yield r'hidden';
       yield serializers.serialize(
@@ -59,11 +64,6 @@ class _$BrapiPostContentRequestAllOfWaitForSelectorSerializer implements Primiti
         specifiedType: const FullType(bool),
       );
     }
-    yield r'selector';
-    yield serializers.serialize(
-      object.selector,
-      specifiedType: const FullType(String),
-    );
     if (object.timeout != null) {
       yield r'timeout';
       yield serializers.serialize(
@@ -101,19 +101,19 @@ class _$BrapiPostContentRequestAllOfWaitForSelectorSerializer implements Primiti
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'hidden':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
-          result.hidden = valueDes;
-          break;
         case r'selector':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(String),
           ) as String;
           result.selector = valueDes;
+          break;
+        case r'hidden':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(bool),
+          ) as bool;
+          result.hidden = valueDes;
           break;
         case r'timeout':
           final valueDes = serializers.deserialize(

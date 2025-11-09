@@ -19,20 +19,22 @@ part 'mcn_onramp.g.dart';
 /// McnOnramp
 ///
 /// Properties:
-/// * [attachedHubs] 
-/// * [attachedVpcs] 
 /// * [cloudType] 
-/// * [description] 
-/// * [hub] 
 /// * [id] 
 /// * [installRoutesInCloud] 
 /// * [installRoutesInMagicWan] 
+/// * [name] 
+/// * [type] 
+/// * [updatedAt] 
+/// * [attachedHubs] 
+/// * [attachedVpcs] 
+/// * [description] 
+/// * [hub] 
 /// * [lastAppliedAt] 
 /// * [lastExportedAt] 
 /// * [lastPlannedAt] 
 /// * [manageHubToHubAttachments] 
 /// * [manageVpcToHubAttachments] 
-/// * [name] 
 /// * [plannedMonthlyCostEstimate] 
 /// * [plannedResources] 
 /// * [plannedResourcesUnavailable] 
@@ -41,28 +43,14 @@ part 'mcn_onramp.g.dart';
 /// * [postApplyResourcesUnavailable] 
 /// * [region] 
 /// * [status] 
-/// * [type] 
-/// * [updatedAt] 
 /// * [vpc] 
 /// * [vpcsById] 
 /// * [vpcsByIdUnavailable] - The list of vpc IDs for which resource details failed to generate.
 @BuiltValue(instantiable: false)
 abstract class McnOnramp  {
-  @BuiltValueField(wireName: r'attached_hubs')
-  BuiltList<String>? get attachedHubs;
-
-  @BuiltValueField(wireName: r'attached_vpcs')
-  BuiltList<String>? get attachedVpcs;
-
   @BuiltValueField(wireName: r'cloud_type')
   McnOnrampCloudType get cloudType;
   // enum cloudTypeEnum {  AWS,  AZURE,  GOOGLE,  };
-
-  @BuiltValueField(wireName: r'description')
-  String? get description;
-
-  @BuiltValueField(wireName: r'hub')
-  String? get hub;
 
   @BuiltValueField(wireName: r'id')
   String get id;
@@ -72,6 +60,28 @@ abstract class McnOnramp  {
 
   @BuiltValueField(wireName: r'install_routes_in_magic_wan')
   bool get installRoutesInMagicWan;
+
+  @BuiltValueField(wireName: r'name')
+  String get name;
+
+  @BuiltValueField(wireName: r'type')
+  McnOnrampType get type;
+  // enum typeEnum {  OnrampTypeSingle,  OnrampTypeHub,  };
+
+  @BuiltValueField(wireName: r'updated_at')
+  String get updatedAt;
+
+  @BuiltValueField(wireName: r'attached_hubs')
+  BuiltList<String>? get attachedHubs;
+
+  @BuiltValueField(wireName: r'attached_vpcs')
+  BuiltList<String>? get attachedVpcs;
+
+  @BuiltValueField(wireName: r'description')
+  String? get description;
+
+  @BuiltValueField(wireName: r'hub')
+  String? get hub;
 
   @BuiltValueField(wireName: r'last_applied_at')
   String? get lastAppliedAt;
@@ -87,9 +97,6 @@ abstract class McnOnramp  {
 
   @BuiltValueField(wireName: r'manage_vpc_to_hub_attachments')
   bool? get manageVpcToHubAttachments;
-
-  @BuiltValueField(wireName: r'name')
-  String get name;
 
   @BuiltValueField(wireName: r'planned_monthly_cost_estimate')
   McnCostDiff? get plannedMonthlyCostEstimate;
@@ -114,13 +121,6 @@ abstract class McnOnramp  {
 
   @BuiltValueField(wireName: r'status')
   McnOnrampStatus? get status;
-
-  @BuiltValueField(wireName: r'type')
-  McnOnrampType get type;
-  // enum typeEnum {  OnrampTypeSingle,  OnrampTypeHub,  };
-
-  @BuiltValueField(wireName: r'updated_at')
-  String get updatedAt;
 
   @BuiltValueField(wireName: r'vpc')
   String? get vpc;
@@ -148,39 +148,11 @@ class _$McnOnrampSerializer implements PrimitiveSerializer<McnOnramp> {
     McnOnramp object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
-    if (object.attachedHubs != null) {
-      yield r'attached_hubs';
-      yield serializers.serialize(
-        object.attachedHubs,
-        specifiedType: const FullType(BuiltList, [FullType(String)]),
-      );
-    }
-    if (object.attachedVpcs != null) {
-      yield r'attached_vpcs';
-      yield serializers.serialize(
-        object.attachedVpcs,
-        specifiedType: const FullType(BuiltList, [FullType(String)]),
-      );
-    }
     yield r'cloud_type';
     yield serializers.serialize(
       object.cloudType,
       specifiedType: const FullType(McnOnrampCloudType),
     );
-    if (object.description != null) {
-      yield r'description';
-      yield serializers.serialize(
-        object.description,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.hub != null) {
-      yield r'hub';
-      yield serializers.serialize(
-        object.hub,
-        specifiedType: const FullType(String),
-      );
-    }
     yield r'id';
     yield serializers.serialize(
       object.id,
@@ -196,6 +168,49 @@ class _$McnOnrampSerializer implements PrimitiveSerializer<McnOnramp> {
       object.installRoutesInMagicWan,
       specifiedType: const FullType(bool),
     );
+    yield r'name';
+    yield serializers.serialize(
+      object.name,
+      specifiedType: const FullType(String),
+    );
+    yield r'type';
+    yield serializers.serialize(
+      object.type,
+      specifiedType: const FullType(McnOnrampType),
+    );
+    yield r'updated_at';
+    yield serializers.serialize(
+      object.updatedAt,
+      specifiedType: const FullType(String),
+    );
+    if (object.attachedHubs != null) {
+      yield r'attached_hubs';
+      yield serializers.serialize(
+        object.attachedHubs,
+        specifiedType: const FullType(BuiltList, [FullType(String)]),
+      );
+    }
+    if (object.attachedVpcs != null) {
+      yield r'attached_vpcs';
+      yield serializers.serialize(
+        object.attachedVpcs,
+        specifiedType: const FullType(BuiltList, [FullType(String)]),
+      );
+    }
+    if (object.description != null) {
+      yield r'description';
+      yield serializers.serialize(
+        object.description,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.hub != null) {
+      yield r'hub';
+      yield serializers.serialize(
+        object.hub,
+        specifiedType: const FullType(String),
+      );
+    }
     if (object.lastAppliedAt != null) {
       yield r'last_applied_at';
       yield serializers.serialize(
@@ -231,11 +246,6 @@ class _$McnOnrampSerializer implements PrimitiveSerializer<McnOnramp> {
         specifiedType: const FullType(bool),
       );
     }
-    yield r'name';
-    yield serializers.serialize(
-      object.name,
-      specifiedType: const FullType(String),
-    );
     if (object.plannedMonthlyCostEstimate != null) {
       yield r'planned_monthly_cost_estimate';
       yield serializers.serialize(
@@ -292,16 +302,6 @@ class _$McnOnrampSerializer implements PrimitiveSerializer<McnOnramp> {
         specifiedType: const FullType(McnOnrampStatus),
       );
     }
-    yield r'type';
-    yield serializers.serialize(
-      object.type,
-      specifiedType: const FullType(McnOnrampType),
-    );
-    yield r'updated_at';
-    yield serializers.serialize(
-      object.updatedAt,
-      specifiedType: const FullType(String),
-    );
     if (object.vpc != null) {
       yield r'vpc';
       yield serializers.serialize(
@@ -386,40 +386,12 @@ class _$$McnOnrampSerializer implements PrimitiveSerializer<$McnOnramp> {
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'attached_hubs':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>;
-          result.attachedHubs.replace(valueDes);
-          break;
-        case r'attached_vpcs':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>;
-          result.attachedVpcs.replace(valueDes);
-          break;
         case r'cloud_type':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(McnOnrampCloudType),
           ) as McnOnrampCloudType;
           result.cloudType = valueDes;
-          break;
-        case r'description':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.description = valueDes;
-          break;
-        case r'hub':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.hub = valueDes;
           break;
         case r'id':
           final valueDes = serializers.deserialize(
@@ -441,6 +413,55 @@ class _$$McnOnrampSerializer implements PrimitiveSerializer<$McnOnramp> {
             specifiedType: const FullType(bool),
           ) as bool;
           result.installRoutesInMagicWan = valueDes;
+          break;
+        case r'name':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.name = valueDes;
+          break;
+        case r'type':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(McnOnrampType),
+          ) as McnOnrampType;
+          result.type = valueDes;
+          break;
+        case r'updated_at':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.updatedAt = valueDes;
+          break;
+        case r'attached_hubs':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BuiltList, [FullType(String)]),
+          ) as BuiltList<String>;
+          result.attachedHubs.replace(valueDes);
+          break;
+        case r'attached_vpcs':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BuiltList, [FullType(String)]),
+          ) as BuiltList<String>;
+          result.attachedVpcs.replace(valueDes);
+          break;
+        case r'description':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.description = valueDes;
+          break;
+        case r'hub':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.hub = valueDes;
           break;
         case r'last_applied_at':
           final valueDes = serializers.deserialize(
@@ -476,13 +497,6 @@ class _$$McnOnrampSerializer implements PrimitiveSerializer<$McnOnramp> {
             specifiedType: const FullType(bool),
           ) as bool;
           result.manageVpcToHubAttachments = valueDes;
-          break;
-        case r'name':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.name = valueDes;
           break;
         case r'planned_monthly_cost_estimate':
           final valueDes = serializers.deserialize(
@@ -539,20 +553,6 @@ class _$$McnOnrampSerializer implements PrimitiveSerializer<$McnOnramp> {
             specifiedType: const FullType(McnOnrampStatus),
           ) as McnOnrampStatus;
           result.status.replace(valueDes);
-          break;
-        case r'type':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(McnOnrampType),
-          ) as McnOnrampType;
-          result.type = valueDes;
-          break;
-        case r'updated_at':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.updatedAt = valueDes;
           break;
         case r'vpc':
           final valueDes = serializers.deserialize(

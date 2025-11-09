@@ -18,8 +18,8 @@ part 'audit_logs_get_account_audit_logs4_xx_response.g.dart';
 /// Properties:
 /// * [errors] 
 /// * [messages] 
-/// * [result] 
 /// * [success] - Whether the API call was successful
+/// * [result] 
 @BuiltValue()
 abstract class AuditLogsGetAccountAuditLogs4XXResponse implements AaaApiResponseCommonFailure, AaaAuditLogsResponseCollection, Built<AuditLogsGetAccountAuditLogs4XXResponse, AuditLogsGetAccountAuditLogs4XXResponseBuilder> {
   AuditLogsGetAccountAuditLogs4XXResponse._();

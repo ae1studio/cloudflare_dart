@@ -10,16 +10,16 @@ class _$ImagesImageVariantDefinition extends ImagesImageVariantDefinition {
   @override
   final String id;
   @override
-  final bool? neverRequireSignedURLs;
-  @override
   final ImagesImageVariantOptions options;
+  @override
+  final bool? neverRequireSignedURLs;
 
   factory _$ImagesImageVariantDefinition(
           [void Function(ImagesImageVariantDefinitionBuilder)? updates]) =>
       (ImagesImageVariantDefinitionBuilder()..update(updates))._build();
 
   _$ImagesImageVariantDefinition._(
-      {required this.id, this.neverRequireSignedURLs, required this.options})
+      {required this.id, required this.options, this.neverRequireSignedURLs})
       : super._();
   @override
   ImagesImageVariantDefinition rebuild(
@@ -35,16 +35,16 @@ class _$ImagesImageVariantDefinition extends ImagesImageVariantDefinition {
     if (identical(other, this)) return true;
     return other is ImagesImageVariantDefinition &&
         id == other.id &&
-        neverRequireSignedURLs == other.neverRequireSignedURLs &&
-        options == other.options;
+        options == other.options &&
+        neverRequireSignedURLs == other.neverRequireSignedURLs;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
     _$hash = $jc(_$hash, id.hashCode);
-    _$hash = $jc(_$hash, neverRequireSignedURLs.hashCode);
     _$hash = $jc(_$hash, options.hashCode);
+    _$hash = $jc(_$hash, neverRequireSignedURLs.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -53,8 +53,8 @@ class _$ImagesImageVariantDefinition extends ImagesImageVariantDefinition {
   String toString() {
     return (newBuiltValueToStringHelper(r'ImagesImageVariantDefinition')
           ..add('id', id)
-          ..add('neverRequireSignedURLs', neverRequireSignedURLs)
-          ..add('options', options))
+          ..add('options', options)
+          ..add('neverRequireSignedURLs', neverRequireSignedURLs))
         .toString();
   }
 }
@@ -69,16 +69,16 @@ class ImagesImageVariantDefinitionBuilder
   String? get id => _$this._id;
   set id(String? id) => _$this._id = id;
 
-  bool? _neverRequireSignedURLs;
-  bool? get neverRequireSignedURLs => _$this._neverRequireSignedURLs;
-  set neverRequireSignedURLs(bool? neverRequireSignedURLs) =>
-      _$this._neverRequireSignedURLs = neverRequireSignedURLs;
-
   ImagesImageVariantOptionsBuilder? _options;
   ImagesImageVariantOptionsBuilder get options =>
       _$this._options ??= ImagesImageVariantOptionsBuilder();
   set options(ImagesImageVariantOptionsBuilder? options) =>
       _$this._options = options;
+
+  bool? _neverRequireSignedURLs;
+  bool? get neverRequireSignedURLs => _$this._neverRequireSignedURLs;
+  set neverRequireSignedURLs(bool? neverRequireSignedURLs) =>
+      _$this._neverRequireSignedURLs = neverRequireSignedURLs;
 
   ImagesImageVariantDefinitionBuilder() {
     ImagesImageVariantDefinition._defaults(this);
@@ -88,8 +88,8 @@ class ImagesImageVariantDefinitionBuilder
     final $v = _$v;
     if ($v != null) {
       _id = $v.id;
-      _neverRequireSignedURLs = $v.neverRequireSignedURLs;
       _options = $v.options.toBuilder();
+      _neverRequireSignedURLs = $v.neverRequireSignedURLs;
       _$v = null;
     }
     return this;
@@ -115,8 +115,8 @@ class ImagesImageVariantDefinitionBuilder
           _$ImagesImageVariantDefinition._(
             id: BuiltValueNullFieldError.checkNotNull(
                 id, r'ImagesImageVariantDefinition', 'id'),
-            neverRequireSignedURLs: neverRequireSignedURLs,
             options: options.build(),
+            neverRequireSignedURLs: neverRequireSignedURLs,
           );
     } catch (_) {
       late String _$failedField;

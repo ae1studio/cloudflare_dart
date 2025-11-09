@@ -20,8 +20,8 @@ part 'secondary_dns_peer_list_peers4_xx_response.g.dart';
 /// * [errors] 
 /// * [messages] 
 /// * [success] - Whether the API call was successful.
-/// * [resultInfo] 
 /// * [result] 
+/// * [resultInfo] 
 @BuiltValue()
 abstract class SecondaryDnsPeerListPeers4XXResponse implements SecondaryDnsApiResponseCommonFailure, SecondaryDnsSchemasResponseCollection, Built<SecondaryDnsPeerListPeers4XXResponse, SecondaryDnsPeerListPeers4XXResponseBuilder> {
   SecondaryDnsPeerListPeers4XXResponse._();

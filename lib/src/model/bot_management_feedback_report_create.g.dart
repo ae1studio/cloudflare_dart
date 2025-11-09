@@ -9,8 +9,6 @@ part of 'bot_management_feedback_report_create.dart';
 class _$BotManagementFeedbackReportCreate
     extends BotManagementFeedbackReportCreate {
   @override
-  final DateTime? createdAt;
-  @override
   final String description;
   @override
   final String expression;
@@ -28,17 +26,18 @@ class _$BotManagementFeedbackReportCreate
   @override
   final BuiltMap<String, int> requestsByScoreSrc;
   @override
-  final String? subtype;
-  @override
   final BotManagementFeedbackType type;
+  @override
+  final DateTime? createdAt;
+  @override
+  final String? subtype;
 
   factory _$BotManagementFeedbackReportCreate(
           [void Function(BotManagementFeedbackReportCreateBuilder)? updates]) =>
       (BotManagementFeedbackReportCreateBuilder()..update(updates))._build();
 
   _$BotManagementFeedbackReportCreate._(
-      {this.createdAt,
-      required this.description,
+      {required this.description,
       required this.expression,
       required this.firstRequestSeenAt,
       required this.lastRequestSeenAt,
@@ -46,8 +45,9 @@ class _$BotManagementFeedbackReportCreate
       required this.requestsByAttribute,
       required this.requestsByScore,
       required this.requestsByScoreSrc,
-      this.subtype,
-      required this.type})
+      required this.type,
+      this.createdAt,
+      this.subtype})
       : super._();
   @override
   BotManagementFeedbackReportCreate rebuild(
@@ -62,7 +62,6 @@ class _$BotManagementFeedbackReportCreate
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is BotManagementFeedbackReportCreate &&
-        createdAt == other.createdAt &&
         description == other.description &&
         expression == other.expression &&
         firstRequestSeenAt == other.firstRequestSeenAt &&
@@ -71,14 +70,14 @@ class _$BotManagementFeedbackReportCreate
         requestsByAttribute == other.requestsByAttribute &&
         requestsByScore == other.requestsByScore &&
         requestsByScoreSrc == other.requestsByScoreSrc &&
-        subtype == other.subtype &&
-        type == other.type;
+        type == other.type &&
+        createdAt == other.createdAt &&
+        subtype == other.subtype;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, createdAt.hashCode);
     _$hash = $jc(_$hash, description.hashCode);
     _$hash = $jc(_$hash, expression.hashCode);
     _$hash = $jc(_$hash, firstRequestSeenAt.hashCode);
@@ -87,8 +86,9 @@ class _$BotManagementFeedbackReportCreate
     _$hash = $jc(_$hash, requestsByAttribute.hashCode);
     _$hash = $jc(_$hash, requestsByScore.hashCode);
     _$hash = $jc(_$hash, requestsByScoreSrc.hashCode);
-    _$hash = $jc(_$hash, subtype.hashCode);
     _$hash = $jc(_$hash, type.hashCode);
+    _$hash = $jc(_$hash, createdAt.hashCode);
+    _$hash = $jc(_$hash, subtype.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -96,7 +96,6 @@ class _$BotManagementFeedbackReportCreate
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'BotManagementFeedbackReportCreate')
-          ..add('createdAt', createdAt)
           ..add('description', description)
           ..add('expression', expression)
           ..add('firstRequestSeenAt', firstRequestSeenAt)
@@ -105,8 +104,9 @@ class _$BotManagementFeedbackReportCreate
           ..add('requestsByAttribute', requestsByAttribute)
           ..add('requestsByScore', requestsByScore)
           ..add('requestsByScoreSrc', requestsByScoreSrc)
-          ..add('subtype', subtype)
-          ..add('type', type))
+          ..add('type', type)
+          ..add('createdAt', createdAt)
+          ..add('subtype', subtype))
         .toString();
   }
 }
@@ -117,10 +117,6 @@ class BotManagementFeedbackReportCreateBuilder
             BotManagementFeedbackReportCreateBuilder>,
         BotManagementFeedbackReportBuilder {
   _$BotManagementFeedbackReportCreate? _$v;
-
-  DateTime? _createdAt;
-  DateTime? get createdAt => _$this._createdAt;
-  set createdAt(covariant DateTime? createdAt) => _$this._createdAt = createdAt;
 
   String? _description;
   String? get description => _$this._description;
@@ -169,13 +165,17 @@ class BotManagementFeedbackReportCreateBuilder
           covariant MapBuilder<String, int>? requestsByScoreSrc) =>
       _$this._requestsByScoreSrc = requestsByScoreSrc;
 
-  String? _subtype;
-  String? get subtype => _$this._subtype;
-  set subtype(covariant String? subtype) => _$this._subtype = subtype;
-
   BotManagementFeedbackType? _type;
   BotManagementFeedbackType? get type => _$this._type;
   set type(covariant BotManagementFeedbackType? type) => _$this._type = type;
+
+  DateTime? _createdAt;
+  DateTime? get createdAt => _$this._createdAt;
+  set createdAt(covariant DateTime? createdAt) => _$this._createdAt = createdAt;
+
+  String? _subtype;
+  String? get subtype => _$this._subtype;
+  set subtype(covariant String? subtype) => _$this._subtype = subtype;
 
   BotManagementFeedbackReportCreateBuilder() {
     BotManagementFeedbackReportCreate._defaults(this);
@@ -184,7 +184,6 @@ class BotManagementFeedbackReportCreateBuilder
   BotManagementFeedbackReportCreateBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _createdAt = $v.createdAt;
       _description = $v.description;
       _expression = $v.expression;
       _firstRequestSeenAt = $v.firstRequestSeenAt;
@@ -193,8 +192,9 @@ class BotManagementFeedbackReportCreateBuilder
       _requestsByAttribute = $v.requestsByAttribute.toBuilder();
       _requestsByScore = $v.requestsByScore.toBuilder();
       _requestsByScoreSrc = $v.requestsByScoreSrc.toBuilder();
-      _subtype = $v.subtype;
       _type = $v.type;
+      _createdAt = $v.createdAt;
+      _subtype = $v.subtype;
       _$v = null;
     }
     return this;
@@ -219,7 +219,6 @@ class BotManagementFeedbackReportCreateBuilder
     try {
       _$result = _$v ??
           _$BotManagementFeedbackReportCreate._(
-            createdAt: createdAt,
             description: BuiltValueNullFieldError.checkNotNull(description,
                 r'BotManagementFeedbackReportCreate', 'description'),
             expression: BuiltValueNullFieldError.checkNotNull(
@@ -237,9 +236,10 @@ class BotManagementFeedbackReportCreateBuilder
             requestsByAttribute: requestsByAttribute.build(),
             requestsByScore: requestsByScore.build(),
             requestsByScoreSrc: requestsByScoreSrc.build(),
-            subtype: subtype,
             type: BuiltValueNullFieldError.checkNotNull(
                 type, r'BotManagementFeedbackReportCreate', 'type'),
+            createdAt: createdAt,
+            subtype: subtype,
           );
     } catch (_) {
       late String _$failedField;

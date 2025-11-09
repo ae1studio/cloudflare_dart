@@ -10,6 +10,12 @@ abstract class AccessSchemasSshPropsBuilder
     implements AccessSchemasSelfHostedPropsBuilder {
   void replace(covariant AccessSchemasSshProps other);
   void update(void Function(AccessSchemasSshPropsBuilder) updates);
+  String? get domain;
+  set domain(covariant String? domain);
+
+  String? get type;
+  set type(covariant String? type);
+
   bool? get allowIframe;
   set allowIframe(covariant bool? allowIframe);
 
@@ -30,9 +36,6 @@ abstract class AccessSchemasSshPropsBuilder
 
   String? get customDenyUrl;
   set customDenyUrl(covariant String? customDenyUrl);
-
-  String? get domain;
-  set domain(covariant String? domain);
 
   bool? get enableBindingCookie;
   set enableBindingCookie(covariant bool? enableBindingCookie);
@@ -60,12 +63,13 @@ abstract class AccessSchemasSshPropsBuilder
 
   bool? get skipInterstitial;
   set skipInterstitial(covariant bool? skipInterstitial);
-
-  String? get type;
-  set type(covariant String? type);
 }
 
 class _$$AccessSchemasSshProps extends $AccessSchemasSshProps {
+  @override
+  final String domain;
+  @override
+  final String type;
   @override
   final bool? allowIframe;
   @override
@@ -80,8 +84,6 @@ class _$$AccessSchemasSshProps extends $AccessSchemasSshProps {
   final String? customDenyMessage;
   @override
   final String? customDenyUrl;
-  @override
-  final String domain;
   @override
   final bool? enableBindingCookie;
   @override
@@ -100,22 +102,21 @@ class _$$AccessSchemasSshProps extends $AccessSchemasSshProps {
   final String? sessionDuration;
   @override
   final bool? skipInterstitial;
-  @override
-  final String type;
 
   factory _$$AccessSchemasSshProps(
           [void Function($AccessSchemasSshPropsBuilder)? updates]) =>
       ($AccessSchemasSshPropsBuilder()..update(updates))._build();
 
   _$$AccessSchemasSshProps._(
-      {this.allowIframe,
+      {required this.domain,
+      required this.type,
+      this.allowIframe,
       this.allowedIdps,
       this.appLauncherVisible,
       this.autoRedirectToIdentity,
       this.corsHeaders,
       this.customDenyMessage,
       this.customDenyUrl,
-      required this.domain,
       this.enableBindingCookie,
       this.httpOnlyCookieAttribute,
       this.logoUrl,
@@ -124,8 +125,7 @@ class _$$AccessSchemasSshProps extends $AccessSchemasSshProps {
       this.sameSiteCookieAttribute,
       this.serviceAuth401Redirect,
       this.sessionDuration,
-      this.skipInterstitial,
-      required this.type})
+      this.skipInterstitial})
       : super._();
   @override
   $AccessSchemasSshProps rebuild(
@@ -140,6 +140,8 @@ class _$$AccessSchemasSshProps extends $AccessSchemasSshProps {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is $AccessSchemasSshProps &&
+        domain == other.domain &&
+        type == other.type &&
         allowIframe == other.allowIframe &&
         allowedIdps == other.allowedIdps &&
         appLauncherVisible == other.appLauncherVisible &&
@@ -147,7 +149,6 @@ class _$$AccessSchemasSshProps extends $AccessSchemasSshProps {
         corsHeaders == other.corsHeaders &&
         customDenyMessage == other.customDenyMessage &&
         customDenyUrl == other.customDenyUrl &&
-        domain == other.domain &&
         enableBindingCookie == other.enableBindingCookie &&
         httpOnlyCookieAttribute == other.httpOnlyCookieAttribute &&
         logoUrl == other.logoUrl &&
@@ -156,13 +157,14 @@ class _$$AccessSchemasSshProps extends $AccessSchemasSshProps {
         sameSiteCookieAttribute == other.sameSiteCookieAttribute &&
         serviceAuth401Redirect == other.serviceAuth401Redirect &&
         sessionDuration == other.sessionDuration &&
-        skipInterstitial == other.skipInterstitial &&
-        type == other.type;
+        skipInterstitial == other.skipInterstitial;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
+    _$hash = $jc(_$hash, domain.hashCode);
+    _$hash = $jc(_$hash, type.hashCode);
     _$hash = $jc(_$hash, allowIframe.hashCode);
     _$hash = $jc(_$hash, allowedIdps.hashCode);
     _$hash = $jc(_$hash, appLauncherVisible.hashCode);
@@ -170,7 +172,6 @@ class _$$AccessSchemasSshProps extends $AccessSchemasSshProps {
     _$hash = $jc(_$hash, corsHeaders.hashCode);
     _$hash = $jc(_$hash, customDenyMessage.hashCode);
     _$hash = $jc(_$hash, customDenyUrl.hashCode);
-    _$hash = $jc(_$hash, domain.hashCode);
     _$hash = $jc(_$hash, enableBindingCookie.hashCode);
     _$hash = $jc(_$hash, httpOnlyCookieAttribute.hashCode);
     _$hash = $jc(_$hash, logoUrl.hashCode);
@@ -180,7 +181,6 @@ class _$$AccessSchemasSshProps extends $AccessSchemasSshProps {
     _$hash = $jc(_$hash, serviceAuth401Redirect.hashCode);
     _$hash = $jc(_$hash, sessionDuration.hashCode);
     _$hash = $jc(_$hash, skipInterstitial.hashCode);
-    _$hash = $jc(_$hash, type.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -188,6 +188,8 @@ class _$$AccessSchemasSshProps extends $AccessSchemasSshProps {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'$AccessSchemasSshProps')
+          ..add('domain', domain)
+          ..add('type', type)
           ..add('allowIframe', allowIframe)
           ..add('allowedIdps', allowedIdps)
           ..add('appLauncherVisible', appLauncherVisible)
@@ -195,7 +197,6 @@ class _$$AccessSchemasSshProps extends $AccessSchemasSshProps {
           ..add('corsHeaders', corsHeaders)
           ..add('customDenyMessage', customDenyMessage)
           ..add('customDenyUrl', customDenyUrl)
-          ..add('domain', domain)
           ..add('enableBindingCookie', enableBindingCookie)
           ..add('httpOnlyCookieAttribute', httpOnlyCookieAttribute)
           ..add('logoUrl', logoUrl)
@@ -204,8 +205,7 @@ class _$$AccessSchemasSshProps extends $AccessSchemasSshProps {
           ..add('sameSiteCookieAttribute', sameSiteCookieAttribute)
           ..add('serviceAuth401Redirect', serviceAuth401Redirect)
           ..add('sessionDuration', sessionDuration)
-          ..add('skipInterstitial', skipInterstitial)
-          ..add('type', type))
+          ..add('skipInterstitial', skipInterstitial))
         .toString();
   }
 }
@@ -215,6 +215,14 @@ class $AccessSchemasSshPropsBuilder
         Builder<$AccessSchemasSshProps, $AccessSchemasSshPropsBuilder>,
         AccessSchemasSshPropsBuilder {
   _$$AccessSchemasSshProps? _$v;
+
+  String? _domain;
+  String? get domain => _$this._domain;
+  set domain(covariant String? domain) => _$this._domain = domain;
+
+  String? _type;
+  String? get type => _$this._type;
+  set type(covariant String? type) => _$this._type = type;
 
   bool? _allowIframe;
   bool? get allowIframe => _$this._allowIframe;
@@ -252,10 +260,6 @@ class $AccessSchemasSshPropsBuilder
   String? get customDenyUrl => _$this._customDenyUrl;
   set customDenyUrl(covariant String? customDenyUrl) =>
       _$this._customDenyUrl = customDenyUrl;
-
-  String? _domain;
-  String? get domain => _$this._domain;
-  set domain(covariant String? domain) => _$this._domain = domain;
 
   bool? _enableBindingCookie;
   bool? get enableBindingCookie => _$this._enableBindingCookie;
@@ -300,10 +304,6 @@ class $AccessSchemasSshPropsBuilder
   set skipInterstitial(covariant bool? skipInterstitial) =>
       _$this._skipInterstitial = skipInterstitial;
 
-  String? _type;
-  String? get type => _$this._type;
-  set type(covariant String? type) => _$this._type = type;
-
   $AccessSchemasSshPropsBuilder() {
     $AccessSchemasSshProps._defaults(this);
   }
@@ -311,6 +311,8 @@ class $AccessSchemasSshPropsBuilder
   $AccessSchemasSshPropsBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
+      _domain = $v.domain;
+      _type = $v.type;
       _allowIframe = $v.allowIframe;
       _allowedIdps = $v.allowedIdps?.toBuilder();
       _appLauncherVisible = $v.appLauncherVisible;
@@ -318,7 +320,6 @@ class $AccessSchemasSshPropsBuilder
       _corsHeaders = $v.corsHeaders?.toBuilder();
       _customDenyMessage = $v.customDenyMessage;
       _customDenyUrl = $v.customDenyUrl;
-      _domain = $v.domain;
       _enableBindingCookie = $v.enableBindingCookie;
       _httpOnlyCookieAttribute = $v.httpOnlyCookieAttribute;
       _logoUrl = $v.logoUrl;
@@ -328,7 +329,6 @@ class $AccessSchemasSshPropsBuilder
       _serviceAuth401Redirect = $v.serviceAuth401Redirect;
       _sessionDuration = $v.sessionDuration;
       _skipInterstitial = $v.skipInterstitial;
-      _type = $v.type;
       _$v = null;
     }
     return this;
@@ -352,6 +352,10 @@ class $AccessSchemasSshPropsBuilder
     try {
       _$result = _$v ??
           _$$AccessSchemasSshProps._(
+            domain: BuiltValueNullFieldError.checkNotNull(
+                domain, r'$AccessSchemasSshProps', 'domain'),
+            type: BuiltValueNullFieldError.checkNotNull(
+                type, r'$AccessSchemasSshProps', 'type'),
             allowIframe: allowIframe,
             allowedIdps: _allowedIdps?.build(),
             appLauncherVisible: appLauncherVisible,
@@ -359,8 +363,6 @@ class $AccessSchemasSshPropsBuilder
             corsHeaders: _corsHeaders?.build(),
             customDenyMessage: customDenyMessage,
             customDenyUrl: customDenyUrl,
-            domain: BuiltValueNullFieldError.checkNotNull(
-                domain, r'$AccessSchemasSshProps', 'domain'),
             enableBindingCookie: enableBindingCookie,
             httpOnlyCookieAttribute: httpOnlyCookieAttribute,
             logoUrl: logoUrl,
@@ -370,8 +372,6 @@ class $AccessSchemasSshPropsBuilder
             serviceAuth401Redirect: serviceAuth401Redirect,
             sessionDuration: sessionDuration,
             skipInterstitial: skipInterstitial,
-            type: BuiltValueNullFieldError.checkNotNull(
-                type, r'$AccessSchemasSshProps', 'type'),
           );
     } catch (_) {
       late String _$failedField;

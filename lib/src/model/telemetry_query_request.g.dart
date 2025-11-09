@@ -157,6 +157,10 @@ class _$TelemetryQueryRequestViewEnumSerializer
 
 class _$TelemetryQueryRequest extends TelemetryQueryRequest {
   @override
+  final String queryId;
+  @override
+  final TelemetryKeysListRequestTimeframe timeframe;
+  @override
   final bool? chart;
   @override
   final bool? compare;
@@ -179,10 +183,6 @@ class _$TelemetryQueryRequest extends TelemetryQueryRequest {
   @override
   final TelemetryQueryRequestPatternTypeEnum? patternType;
   @override
-  final String queryId;
-  @override
-  final TelemetryKeysListRequestTimeframe timeframe;
-  @override
   final TelemetryQueryRequestViewEnum? view;
 
   factory _$TelemetryQueryRequest(
@@ -190,7 +190,9 @@ class _$TelemetryQueryRequest extends TelemetryQueryRequest {
       (TelemetryQueryRequestBuilder()..update(updates))._build();
 
   _$TelemetryQueryRequest._(
-      {this.chart,
+      {required this.queryId,
+      required this.timeframe,
+      this.chart,
       this.compare,
       this.dry,
       this.granularity,
@@ -201,8 +203,6 @@ class _$TelemetryQueryRequest extends TelemetryQueryRequest {
       this.offsetDirection,
       this.parameters,
       this.patternType,
-      required this.queryId,
-      required this.timeframe,
       this.view})
       : super._();
   @override
@@ -218,6 +218,8 @@ class _$TelemetryQueryRequest extends TelemetryQueryRequest {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is TelemetryQueryRequest &&
+        queryId == other.queryId &&
+        timeframe == other.timeframe &&
         chart == other.chart &&
         compare == other.compare &&
         dry == other.dry &&
@@ -229,14 +231,14 @@ class _$TelemetryQueryRequest extends TelemetryQueryRequest {
         offsetDirection == other.offsetDirection &&
         parameters == other.parameters &&
         patternType == other.patternType &&
-        queryId == other.queryId &&
-        timeframe == other.timeframe &&
         view == other.view;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
+    _$hash = $jc(_$hash, queryId.hashCode);
+    _$hash = $jc(_$hash, timeframe.hashCode);
     _$hash = $jc(_$hash, chart.hashCode);
     _$hash = $jc(_$hash, compare.hashCode);
     _$hash = $jc(_$hash, dry.hashCode);
@@ -248,8 +250,6 @@ class _$TelemetryQueryRequest extends TelemetryQueryRequest {
     _$hash = $jc(_$hash, offsetDirection.hashCode);
     _$hash = $jc(_$hash, parameters.hashCode);
     _$hash = $jc(_$hash, patternType.hashCode);
-    _$hash = $jc(_$hash, queryId.hashCode);
-    _$hash = $jc(_$hash, timeframe.hashCode);
     _$hash = $jc(_$hash, view.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
@@ -258,6 +258,8 @@ class _$TelemetryQueryRequest extends TelemetryQueryRequest {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'TelemetryQueryRequest')
+          ..add('queryId', queryId)
+          ..add('timeframe', timeframe)
           ..add('chart', chart)
           ..add('compare', compare)
           ..add('dry', dry)
@@ -269,8 +271,6 @@ class _$TelemetryQueryRequest extends TelemetryQueryRequest {
           ..add('offsetDirection', offsetDirection)
           ..add('parameters', parameters)
           ..add('patternType', patternType)
-          ..add('queryId', queryId)
-          ..add('timeframe', timeframe)
           ..add('view', view))
         .toString();
   }
@@ -279,6 +279,16 @@ class _$TelemetryQueryRequest extends TelemetryQueryRequest {
 class TelemetryQueryRequestBuilder
     implements Builder<TelemetryQueryRequest, TelemetryQueryRequestBuilder> {
   _$TelemetryQueryRequest? _$v;
+
+  String? _queryId;
+  String? get queryId => _$this._queryId;
+  set queryId(String? queryId) => _$this._queryId = queryId;
+
+  TelemetryKeysListRequestTimeframeBuilder? _timeframe;
+  TelemetryKeysListRequestTimeframeBuilder get timeframe =>
+      _$this._timeframe ??= TelemetryKeysListRequestTimeframeBuilder();
+  set timeframe(TelemetryKeysListRequestTimeframeBuilder? timeframe) =>
+      _$this._timeframe = timeframe;
 
   bool? _chart;
   bool? get chart => _$this._chart;
@@ -328,16 +338,6 @@ class TelemetryQueryRequestBuilder
   set patternType(TelemetryQueryRequestPatternTypeEnum? patternType) =>
       _$this._patternType = patternType;
 
-  String? _queryId;
-  String? get queryId => _$this._queryId;
-  set queryId(String? queryId) => _$this._queryId = queryId;
-
-  TelemetryKeysListRequestTimeframeBuilder? _timeframe;
-  TelemetryKeysListRequestTimeframeBuilder get timeframe =>
-      _$this._timeframe ??= TelemetryKeysListRequestTimeframeBuilder();
-  set timeframe(TelemetryKeysListRequestTimeframeBuilder? timeframe) =>
-      _$this._timeframe = timeframe;
-
   TelemetryQueryRequestViewEnum? _view;
   TelemetryQueryRequestViewEnum? get view => _$this._view;
   set view(TelemetryQueryRequestViewEnum? view) => _$this._view = view;
@@ -349,6 +349,8 @@ class TelemetryQueryRequestBuilder
   TelemetryQueryRequestBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
+      _queryId = $v.queryId;
+      _timeframe = $v.timeframe.toBuilder();
       _chart = $v.chart;
       _compare = $v.compare;
       _dry = $v.dry;
@@ -360,8 +362,6 @@ class TelemetryQueryRequestBuilder
       _offsetDirection = $v.offsetDirection;
       _parameters = $v.parameters?.toBuilder();
       _patternType = $v.patternType;
-      _queryId = $v.queryId;
-      _timeframe = $v.timeframe.toBuilder();
       _view = $v.view;
       _$v = null;
     }
@@ -386,6 +386,9 @@ class TelemetryQueryRequestBuilder
     try {
       _$result = _$v ??
           _$TelemetryQueryRequest._(
+            queryId: BuiltValueNullFieldError.checkNotNull(
+                queryId, r'TelemetryQueryRequest', 'queryId'),
+            timeframe: timeframe.build(),
             chart: chart,
             compare: compare,
             dry: dry,
@@ -397,19 +400,16 @@ class TelemetryQueryRequestBuilder
             offsetDirection: offsetDirection,
             parameters: _parameters?.build(),
             patternType: patternType,
-            queryId: BuiltValueNullFieldError.checkNotNull(
-                queryId, r'TelemetryQueryRequest', 'queryId'),
-            timeframe: timeframe.build(),
             view: view,
           );
     } catch (_) {
       late String _$failedField;
       try {
-        _$failedField = 'parameters';
-        _parameters?.build();
-
         _$failedField = 'timeframe';
         timeframe.build();
+
+        _$failedField = 'parameters';
+        _parameters?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
             r'TelemetryQueryRequest', _$failedField, e.toString());

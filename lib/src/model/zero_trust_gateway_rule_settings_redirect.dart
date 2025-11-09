@@ -11,11 +11,15 @@ part 'zero_trust_gateway_rule_settings_redirect.g.dart';
 /// Apply settings to redirect rules. Settable only for `http` rules with the action set to `redirect`.
 ///
 /// Properties:
+/// * [targetUri] - Specify the URI to which the user is redirected.
 /// * [includeContext] - Specify whether to pass the context information as query parameters.
 /// * [preservePathAndQuery] - Specify whether to append the path and query parameters from the original request to target_uri.
-/// * [targetUri] - Specify the URI to which the user is redirected.
 @BuiltValue()
 abstract class ZeroTrustGatewayRuleSettingsRedirect implements Built<ZeroTrustGatewayRuleSettingsRedirect, ZeroTrustGatewayRuleSettingsRedirectBuilder> {
+  /// Specify the URI to which the user is redirected.
+  @BuiltValueField(wireName: r'target_uri')
+  String get targetUri;
+
   /// Specify whether to pass the context information as query parameters.
   @BuiltValueField(wireName: r'include_context')
   bool? get includeContext;
@@ -23,10 +27,6 @@ abstract class ZeroTrustGatewayRuleSettingsRedirect implements Built<ZeroTrustGa
   /// Specify whether to append the path and query parameters from the original request to target_uri.
   @BuiltValueField(wireName: r'preserve_path_and_query')
   bool? get preservePathAndQuery;
-
-  /// Specify the URI to which the user is redirected.
-  @BuiltValueField(wireName: r'target_uri')
-  String get targetUri;
 
   ZeroTrustGatewayRuleSettingsRedirect._();
 
@@ -51,6 +51,11 @@ class _$ZeroTrustGatewayRuleSettingsRedirectSerializer implements PrimitiveSeria
     ZeroTrustGatewayRuleSettingsRedirect object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    yield r'target_uri';
+    yield serializers.serialize(
+      object.targetUri,
+      specifiedType: const FullType(String),
+    );
     if (object.includeContext != null) {
       yield r'include_context';
       yield serializers.serialize(
@@ -65,11 +70,6 @@ class _$ZeroTrustGatewayRuleSettingsRedirectSerializer implements PrimitiveSeria
         specifiedType: const FullType(bool),
       );
     }
-    yield r'target_uri';
-    yield serializers.serialize(
-      object.targetUri,
-      specifiedType: const FullType(String),
-    );
   }
 
   @override
@@ -93,6 +93,13 @@ class _$ZeroTrustGatewayRuleSettingsRedirectSerializer implements PrimitiveSeria
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
+        case r'target_uri':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.targetUri = valueDes;
+          break;
         case r'include_context':
           final valueDes = serializers.deserialize(
             value,
@@ -106,13 +113,6 @@ class _$ZeroTrustGatewayRuleSettingsRedirectSerializer implements PrimitiveSeria
             specifiedType: const FullType(bool),
           ) as bool;
           result.preservePathAndQuery = valueDes;
-          break;
-        case r'target_uri':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.targetUri = valueDes;
           break;
         default:
           unhandled.add(key);

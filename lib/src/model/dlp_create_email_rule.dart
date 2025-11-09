@@ -16,9 +16,9 @@ part 'dlp_create_email_rule.g.dart';
 /// Properties:
 /// * [action] 
 /// * [conditions] - Rule is triggered if all conditions match.
-/// * [description] 
 /// * [enabled] 
 /// * [name] 
+/// * [description] 
 @BuiltValue()
 abstract class DlpCreateEmailRule implements Built<DlpCreateEmailRule, DlpCreateEmailRuleBuilder> {
   @BuiltValueField(wireName: r'action')
@@ -28,14 +28,14 @@ abstract class DlpCreateEmailRule implements Built<DlpCreateEmailRule, DlpCreate
   @BuiltValueField(wireName: r'conditions')
   BuiltList<DlpEmailRuleCondition> get conditions;
 
-  @BuiltValueField(wireName: r'description')
-  String? get description;
-
   @BuiltValueField(wireName: r'enabled')
   bool get enabled;
 
   @BuiltValueField(wireName: r'name')
   String get name;
+
+  @BuiltValueField(wireName: r'description')
+  String? get description;
 
   DlpCreateEmailRule._();
 
@@ -70,13 +70,6 @@ class _$DlpCreateEmailRuleSerializer implements PrimitiveSerializer<DlpCreateEma
       object.conditions,
       specifiedType: const FullType(BuiltList, [FullType(DlpEmailRuleCondition)]),
     );
-    if (object.description != null) {
-      yield r'description';
-      yield serializers.serialize(
-        object.description,
-        specifiedType: const FullType.nullable(String),
-      );
-    }
     yield r'enabled';
     yield serializers.serialize(
       object.enabled,
@@ -87,6 +80,13 @@ class _$DlpCreateEmailRuleSerializer implements PrimitiveSerializer<DlpCreateEma
       object.name,
       specifiedType: const FullType(String),
     );
+    if (object.description != null) {
+      yield r'description';
+      yield serializers.serialize(
+        object.description,
+        specifiedType: const FullType.nullable(String),
+      );
+    }
   }
 
   @override
@@ -124,14 +124,6 @@ class _$DlpCreateEmailRuleSerializer implements PrimitiveSerializer<DlpCreateEma
           ) as BuiltList<DlpEmailRuleCondition>;
           result.conditions.replace(valueDes);
           break;
-        case r'description':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
-          if (valueDes == null) continue;
-          result.description = valueDes;
-          break;
         case r'enabled':
           final valueDes = serializers.deserialize(
             value,
@@ -145,6 +137,14 @@ class _$DlpCreateEmailRuleSerializer implements PrimitiveSerializer<DlpCreateEma
             specifiedType: const FullType(String),
           ) as String;
           result.name = valueDes;
+          break;
+        case r'description':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType.nullable(String),
+          ) as String?;
+          if (valueDes == null) continue;
+          result.description = valueDes;
           break;
         default:
           unhandled.add(key);

@@ -67,9 +67,9 @@ class _$CacheResult extends CacheResult {
   @override
   final DateTime modifiedOn;
   @override
-  final DateTime? nextScheduledScan;
-  @override
   final CacheResultValueEnum value;
+  @override
+  final DateTime? nextScheduledScan;
 
   factory _$CacheResult([void Function(CacheResultBuilder)? updates]) =>
       (CacheResultBuilder()..update(updates))._build();
@@ -78,8 +78,8 @@ class _$CacheResult extends CacheResult {
       {required this.editable,
       required this.id,
       required this.modifiedOn,
-      this.nextScheduledScan,
-      required this.value})
+      required this.value,
+      this.nextScheduledScan})
       : super._();
   @override
   CacheResult rebuild(void Function(CacheResultBuilder) updates) =>
@@ -95,8 +95,8 @@ class _$CacheResult extends CacheResult {
         editable == other.editable &&
         id == other.id &&
         modifiedOn == other.modifiedOn &&
-        nextScheduledScan == other.nextScheduledScan &&
-        value == other.value;
+        value == other.value &&
+        nextScheduledScan == other.nextScheduledScan;
   }
 
   @override
@@ -105,8 +105,8 @@ class _$CacheResult extends CacheResult {
     _$hash = $jc(_$hash, editable.hashCode);
     _$hash = $jc(_$hash, id.hashCode);
     _$hash = $jc(_$hash, modifiedOn.hashCode);
-    _$hash = $jc(_$hash, nextScheduledScan.hashCode);
     _$hash = $jc(_$hash, value.hashCode);
+    _$hash = $jc(_$hash, nextScheduledScan.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -117,8 +117,8 @@ class _$CacheResult extends CacheResult {
           ..add('editable', editable)
           ..add('id', id)
           ..add('modifiedOn', modifiedOn)
-          ..add('nextScheduledScan', nextScheduledScan)
-          ..add('value', value))
+          ..add('value', value)
+          ..add('nextScheduledScan', nextScheduledScan))
         .toString();
   }
 }
@@ -138,14 +138,14 @@ class CacheResultBuilder implements Builder<CacheResult, CacheResultBuilder> {
   DateTime? get modifiedOn => _$this._modifiedOn;
   set modifiedOn(DateTime? modifiedOn) => _$this._modifiedOn = modifiedOn;
 
+  CacheResultValueEnum? _value;
+  CacheResultValueEnum? get value => _$this._value;
+  set value(CacheResultValueEnum? value) => _$this._value = value;
+
   DateTime? _nextScheduledScan;
   DateTime? get nextScheduledScan => _$this._nextScheduledScan;
   set nextScheduledScan(DateTime? nextScheduledScan) =>
       _$this._nextScheduledScan = nextScheduledScan;
-
-  CacheResultValueEnum? _value;
-  CacheResultValueEnum? get value => _$this._value;
-  set value(CacheResultValueEnum? value) => _$this._value = value;
 
   CacheResultBuilder() {
     CacheResult._defaults(this);
@@ -157,8 +157,8 @@ class CacheResultBuilder implements Builder<CacheResult, CacheResultBuilder> {
       _editable = $v.editable;
       _id = $v.id;
       _modifiedOn = $v.modifiedOn;
-      _nextScheduledScan = $v.nextScheduledScan;
       _value = $v.value;
+      _nextScheduledScan = $v.nextScheduledScan;
       _$v = null;
     }
     return this;
@@ -185,9 +185,9 @@ class CacheResultBuilder implements Builder<CacheResult, CacheResultBuilder> {
           id: BuiltValueNullFieldError.checkNotNull(id, r'CacheResult', 'id'),
           modifiedOn: BuiltValueNullFieldError.checkNotNull(
               modifiedOn, r'CacheResult', 'modifiedOn'),
-          nextScheduledScan: nextScheduledScan,
           value: BuiltValueNullFieldError.checkNotNull(
               value, r'CacheResult', 'value'),
+          nextScheduledScan: nextScheduledScan,
         );
     replace(_$result);
     return _$result;

@@ -16,12 +16,12 @@ part 'urlscanner_get_scan200_response_result_scan_meta_processors_tech_inner.g.d
 /// Properties:
 /// * [categories] 
 /// * [confidence] 
-/// * [description] 
 /// * [evidence] 
 /// * [icon] 
 /// * [name] 
 /// * [slug] 
 /// * [website] 
+/// * [description] 
 @BuiltValue()
 abstract class UrlscannerGetScan200ResponseResultScanMetaProcessorsTechInner implements Built<UrlscannerGetScan200ResponseResultScanMetaProcessorsTechInner, UrlscannerGetScan200ResponseResultScanMetaProcessorsTechInnerBuilder> {
   @BuiltValueField(wireName: r'categories')
@@ -29,9 +29,6 @@ abstract class UrlscannerGetScan200ResponseResultScanMetaProcessorsTechInner imp
 
   @BuiltValueField(wireName: r'confidence')
   int get confidence;
-
-  @BuiltValueField(wireName: r'description')
-  String? get description;
 
   @BuiltValueField(wireName: r'evidence')
   UrlscannerGetScan200ResponseResultScanMetaProcessorsTechInnerEvidence get evidence;
@@ -47,6 +44,9 @@ abstract class UrlscannerGetScan200ResponseResultScanMetaProcessorsTechInner imp
 
   @BuiltValueField(wireName: r'website')
   String get website;
+
+  @BuiltValueField(wireName: r'description')
+  String? get description;
 
   UrlscannerGetScan200ResponseResultScanMetaProcessorsTechInner._();
 
@@ -81,13 +81,6 @@ class _$UrlscannerGetScan200ResponseResultScanMetaProcessorsTechInnerSerializer 
       object.confidence,
       specifiedType: const FullType(int),
     );
-    if (object.description != null) {
-      yield r'description';
-      yield serializers.serialize(
-        object.description,
-        specifiedType: const FullType(String),
-      );
-    }
     yield r'evidence';
     yield serializers.serialize(
       object.evidence,
@@ -113,6 +106,13 @@ class _$UrlscannerGetScan200ResponseResultScanMetaProcessorsTechInnerSerializer 
       object.website,
       specifiedType: const FullType(String),
     );
+    if (object.description != null) {
+      yield r'description';
+      yield serializers.serialize(
+        object.description,
+        specifiedType: const FullType(String),
+      );
+    }
   }
 
   @override
@@ -150,13 +150,6 @@ class _$UrlscannerGetScan200ResponseResultScanMetaProcessorsTechInnerSerializer 
           ) as int;
           result.confidence = valueDes;
           break;
-        case r'description':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.description = valueDes;
-          break;
         case r'evidence':
           final valueDes = serializers.deserialize(
             value,
@@ -191,6 +184,13 @@ class _$UrlscannerGetScan200ResponseResultScanMetaProcessorsTechInnerSerializer 
             specifiedType: const FullType(String),
           ) as String;
           result.website = valueDes;
+          break;
+        case r'description':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.description = valueDes;
           break;
         default:
           unhandled.add(key);

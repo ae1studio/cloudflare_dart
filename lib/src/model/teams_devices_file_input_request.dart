@@ -12,17 +12,13 @@ part 'teams_devices_file_input_request.g.dart';
 /// TeamsDevicesFileInputRequest
 ///
 /// Properties:
-/// * [exists] - Whether or not file exists.
 /// * [operatingSystem] - Operating system.
 /// * [path] - File path.
+/// * [exists] - Whether or not file exists.
 /// * [sha256] - SHA-256.
 /// * [thumbprint] - Signing certificate thumbprint.
 @BuiltValue()
 abstract class TeamsDevicesFileInputRequest implements Built<TeamsDevicesFileInputRequest, TeamsDevicesFileInputRequestBuilder> {
-  /// Whether or not file exists.
-  @BuiltValueField(wireName: r'exists')
-  bool? get exists;
-
   /// Operating system.
   @BuiltValueField(wireName: r'operating_system')
   TeamsDevicesFileInputRequestOperatingSystemEnum get operatingSystem;
@@ -31,6 +27,10 @@ abstract class TeamsDevicesFileInputRequest implements Built<TeamsDevicesFileInp
   /// File path.
   @BuiltValueField(wireName: r'path')
   String get path;
+
+  /// Whether or not file exists.
+  @BuiltValueField(wireName: r'exists')
+  bool? get exists;
 
   /// SHA-256.
   @BuiltValueField(wireName: r'sha256')
@@ -63,13 +63,6 @@ class _$TeamsDevicesFileInputRequestSerializer implements PrimitiveSerializer<Te
     TeamsDevicesFileInputRequest object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
-    if (object.exists != null) {
-      yield r'exists';
-      yield serializers.serialize(
-        object.exists,
-        specifiedType: const FullType(bool),
-      );
-    }
     yield r'operating_system';
     yield serializers.serialize(
       object.operatingSystem,
@@ -80,6 +73,13 @@ class _$TeamsDevicesFileInputRequestSerializer implements PrimitiveSerializer<Te
       object.path,
       specifiedType: const FullType(String),
     );
+    if (object.exists != null) {
+      yield r'exists';
+      yield serializers.serialize(
+        object.exists,
+        specifiedType: const FullType(bool),
+      );
+    }
     if (object.sha256 != null) {
       yield r'sha256';
       yield serializers.serialize(
@@ -117,13 +117,6 @@ class _$TeamsDevicesFileInputRequestSerializer implements PrimitiveSerializer<Te
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'exists':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
-          result.exists = valueDes;
-          break;
         case r'operating_system':
           final valueDes = serializers.deserialize(
             value,
@@ -137,6 +130,13 @@ class _$TeamsDevicesFileInputRequestSerializer implements PrimitiveSerializer<Te
             specifiedType: const FullType(String),
           ) as String;
           result.path = valueDes;
+          break;
+        case r'exists':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(bool),
+          ) as bool;
+          result.exists = valueDes;
           break;
         case r'sha256':
           final valueDes = serializers.deserialize(

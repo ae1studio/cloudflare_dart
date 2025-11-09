@@ -17,9 +17,9 @@ part 'post_presets200_response_all_of_data.g.dart';
 /// Properties:
 /// * [config] 
 /// * [name] - Name of the preset
-/// * [permissions] 
 /// * [ui] 
 /// * [id] - ID of the preset
+/// * [permissions] 
 @BuiltValue()
 abstract class PostPresets200ResponseAllOfData implements RealtimekitPreset, Built<PostPresets200ResponseAllOfData, PostPresets200ResponseAllOfDataBuilder> {
   /// ID of the preset

@@ -87,16 +87,16 @@ class _$RulesetsSetCacheSettingsBrowserTTLModeEnumSerializer
 class _$RulesetsSetCacheSettingsBrowserTTL
     extends RulesetsSetCacheSettingsBrowserTTL {
   @override
-  final int? default_;
-  @override
   final RulesetsSetCacheSettingsBrowserTTLModeEnum mode;
+  @override
+  final int? default_;
 
   factory _$RulesetsSetCacheSettingsBrowserTTL(
           [void Function(RulesetsSetCacheSettingsBrowserTTLBuilder)?
               updates]) =>
       (RulesetsSetCacheSettingsBrowserTTLBuilder()..update(updates))._build();
 
-  _$RulesetsSetCacheSettingsBrowserTTL._({this.default_, required this.mode})
+  _$RulesetsSetCacheSettingsBrowserTTL._({required this.mode, this.default_})
       : super._();
   @override
   RulesetsSetCacheSettingsBrowserTTL rebuild(
@@ -111,15 +111,15 @@ class _$RulesetsSetCacheSettingsBrowserTTL
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is RulesetsSetCacheSettingsBrowserTTL &&
-        default_ == other.default_ &&
-        mode == other.mode;
+        mode == other.mode &&
+        default_ == other.default_;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, default_.hashCode);
     _$hash = $jc(_$hash, mode.hashCode);
+    _$hash = $jc(_$hash, default_.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -127,8 +127,8 @@ class _$RulesetsSetCacheSettingsBrowserTTL
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'RulesetsSetCacheSettingsBrowserTTL')
-          ..add('default_', default_)
-          ..add('mode', mode))
+          ..add('mode', mode)
+          ..add('default_', default_))
         .toString();
   }
 }
@@ -139,14 +139,14 @@ class RulesetsSetCacheSettingsBrowserTTLBuilder
             RulesetsSetCacheSettingsBrowserTTLBuilder> {
   _$RulesetsSetCacheSettingsBrowserTTL? _$v;
 
-  int? _default_;
-  int? get default_ => _$this._default_;
-  set default_(int? default_) => _$this._default_ = default_;
-
   RulesetsSetCacheSettingsBrowserTTLModeEnum? _mode;
   RulesetsSetCacheSettingsBrowserTTLModeEnum? get mode => _$this._mode;
   set mode(RulesetsSetCacheSettingsBrowserTTLModeEnum? mode) =>
       _$this._mode = mode;
+
+  int? _default_;
+  int? get default_ => _$this._default_;
+  set default_(int? default_) => _$this._default_ = default_;
 
   RulesetsSetCacheSettingsBrowserTTLBuilder() {
     RulesetsSetCacheSettingsBrowserTTL._defaults(this);
@@ -155,8 +155,8 @@ class RulesetsSetCacheSettingsBrowserTTLBuilder
   RulesetsSetCacheSettingsBrowserTTLBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _default_ = $v.default_;
       _mode = $v.mode;
+      _default_ = $v.default_;
       _$v = null;
     }
     return this;
@@ -179,9 +179,9 @@ class RulesetsSetCacheSettingsBrowserTTLBuilder
   _$RulesetsSetCacheSettingsBrowserTTL _build() {
     final _$result = _$v ??
         _$RulesetsSetCacheSettingsBrowserTTL._(
-          default_: default_,
           mode: BuiltValueNullFieldError.checkNotNull(
               mode, r'RulesetsSetCacheSettingsBrowserTTL', 'mode'),
+          default_: default_,
         );
     replace(_$result);
     return _$result;

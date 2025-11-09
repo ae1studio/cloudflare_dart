@@ -16,22 +16,38 @@ part 'workers_observability_telemetry_event_workers_any_of1.g.dart';
 ///
 /// Properties:
 /// * [cpuTimeMs] 
+/// * [eventType] 
+/// * [outcome] 
+/// * [requestId] 
+/// * [scriptName] 
+/// * [wallTimeMs] 
 /// * [diagnosticsChannelEvents] 
 /// * [dispatchNamespace] 
 /// * [entrypoint] 
 /// * [event] 
-/// * [eventType] 
 /// * [executionModel] 
-/// * [outcome] 
-/// * [requestId] 
-/// * [scriptName] 
 /// * [scriptVersion] 
 /// * [truncated] 
-/// * [wallTimeMs] 
 @BuiltValue()
 abstract class WorkersObservabilityTelemetryEventWorkersAnyOf1 implements Built<WorkersObservabilityTelemetryEventWorkersAnyOf1, WorkersObservabilityTelemetryEventWorkersAnyOf1Builder> {
   @BuiltValueField(wireName: r'cpuTimeMs')
   num get cpuTimeMs;
+
+  @BuiltValueField(wireName: r'eventType')
+  WorkersObservabilityTelemetryEventWorkersAnyOf1EventTypeEnum get eventType;
+  // enum eventTypeEnum {  fetch,  scheduled,  alarm,  cron,  queue,  email,  tail,  rpc,  websocket,  unknown,  };
+
+  @BuiltValueField(wireName: r'outcome')
+  String get outcome;
+
+  @BuiltValueField(wireName: r'requestId')
+  String get requestId;
+
+  @BuiltValueField(wireName: r'scriptName')
+  String get scriptName;
+
+  @BuiltValueField(wireName: r'wallTimeMs')
+  num get wallTimeMs;
 
   @BuiltValueField(wireName: r'diagnosticsChannelEvents')
   BuiltList<WorkersObservabilityTelemetryEventWorkersAnyOf1DiagnosticsChannelEventsInner>? get diagnosticsChannelEvents;
@@ -45,31 +61,15 @@ abstract class WorkersObservabilityTelemetryEventWorkersAnyOf1 implements Built<
   @BuiltValueField(wireName: r'event')
   BuiltMap<String, AigConfigListDataset200ResponseResultInnerFiltersInnerValueInner>? get event;
 
-  @BuiltValueField(wireName: r'eventType')
-  WorkersObservabilityTelemetryEventWorkersAnyOf1EventTypeEnum get eventType;
-  // enum eventTypeEnum {  fetch,  scheduled,  alarm,  cron,  queue,  email,  tail,  rpc,  websocket,  unknown,  };
-
   @BuiltValueField(wireName: r'executionModel')
   WorkersObservabilityTelemetryEventWorkersAnyOf1ExecutionModelEnum? get executionModel;
   // enum executionModelEnum {  durableObject,  stateless,  };
-
-  @BuiltValueField(wireName: r'outcome')
-  String get outcome;
-
-  @BuiltValueField(wireName: r'requestId')
-  String get requestId;
-
-  @BuiltValueField(wireName: r'scriptName')
-  String get scriptName;
 
   @BuiltValueField(wireName: r'scriptVersion')
   WorkersObservabilityTelemetryEventWorkersAnyOfScriptVersion? get scriptVersion;
 
   @BuiltValueField(wireName: r'truncated')
   bool? get truncated;
-
-  @BuiltValueField(wireName: r'wallTimeMs')
-  num get wallTimeMs;
 
   WorkersObservabilityTelemetryEventWorkersAnyOf1._();
 
@@ -97,6 +97,31 @@ class _$WorkersObservabilityTelemetryEventWorkersAnyOf1Serializer implements Pri
     yield r'cpuTimeMs';
     yield serializers.serialize(
       object.cpuTimeMs,
+      specifiedType: const FullType(num),
+    );
+    yield r'eventType';
+    yield serializers.serialize(
+      object.eventType,
+      specifiedType: const FullType(WorkersObservabilityTelemetryEventWorkersAnyOf1EventTypeEnum),
+    );
+    yield r'outcome';
+    yield serializers.serialize(
+      object.outcome,
+      specifiedType: const FullType(String),
+    );
+    yield r'requestId';
+    yield serializers.serialize(
+      object.requestId,
+      specifiedType: const FullType(String),
+    );
+    yield r'scriptName';
+    yield serializers.serialize(
+      object.scriptName,
+      specifiedType: const FullType(String),
+    );
+    yield r'wallTimeMs';
+    yield serializers.serialize(
+      object.wallTimeMs,
       specifiedType: const FullType(num),
     );
     if (object.diagnosticsChannelEvents != null) {
@@ -127,11 +152,6 @@ class _$WorkersObservabilityTelemetryEventWorkersAnyOf1Serializer implements Pri
         specifiedType: const FullType(BuiltMap, [FullType(String), FullType(AigConfigListDataset200ResponseResultInnerFiltersInnerValueInner)]),
       );
     }
-    yield r'eventType';
-    yield serializers.serialize(
-      object.eventType,
-      specifiedType: const FullType(WorkersObservabilityTelemetryEventWorkersAnyOf1EventTypeEnum),
-    );
     if (object.executionModel != null) {
       yield r'executionModel';
       yield serializers.serialize(
@@ -139,21 +159,6 @@ class _$WorkersObservabilityTelemetryEventWorkersAnyOf1Serializer implements Pri
         specifiedType: const FullType(WorkersObservabilityTelemetryEventWorkersAnyOf1ExecutionModelEnum),
       );
     }
-    yield r'outcome';
-    yield serializers.serialize(
-      object.outcome,
-      specifiedType: const FullType(String),
-    );
-    yield r'requestId';
-    yield serializers.serialize(
-      object.requestId,
-      specifiedType: const FullType(String),
-    );
-    yield r'scriptName';
-    yield serializers.serialize(
-      object.scriptName,
-      specifiedType: const FullType(String),
-    );
     if (object.scriptVersion != null) {
       yield r'scriptVersion';
       yield serializers.serialize(
@@ -168,11 +173,6 @@ class _$WorkersObservabilityTelemetryEventWorkersAnyOf1Serializer implements Pri
         specifiedType: const FullType(bool),
       );
     }
-    yield r'wallTimeMs';
-    yield serializers.serialize(
-      object.wallTimeMs,
-      specifiedType: const FullType(num),
-    );
   }
 
   @override
@@ -203,6 +203,41 @@ class _$WorkersObservabilityTelemetryEventWorkersAnyOf1Serializer implements Pri
           ) as num;
           result.cpuTimeMs = valueDes;
           break;
+        case r'eventType':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(WorkersObservabilityTelemetryEventWorkersAnyOf1EventTypeEnum),
+          ) as WorkersObservabilityTelemetryEventWorkersAnyOf1EventTypeEnum;
+          result.eventType = valueDes;
+          break;
+        case r'outcome':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.outcome = valueDes;
+          break;
+        case r'requestId':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.requestId = valueDes;
+          break;
+        case r'scriptName':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.scriptName = valueDes;
+          break;
+        case r'wallTimeMs':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(num),
+          ) as num;
+          result.wallTimeMs = valueDes;
+          break;
         case r'diagnosticsChannelEvents':
           final valueDes = serializers.deserialize(
             value,
@@ -231,40 +266,12 @@ class _$WorkersObservabilityTelemetryEventWorkersAnyOf1Serializer implements Pri
           ) as BuiltMap<String, AigConfigListDataset200ResponseResultInnerFiltersInnerValueInner>;
           result.event.replace(valueDes);
           break;
-        case r'eventType':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(WorkersObservabilityTelemetryEventWorkersAnyOf1EventTypeEnum),
-          ) as WorkersObservabilityTelemetryEventWorkersAnyOf1EventTypeEnum;
-          result.eventType = valueDes;
-          break;
         case r'executionModel':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(WorkersObservabilityTelemetryEventWorkersAnyOf1ExecutionModelEnum),
           ) as WorkersObservabilityTelemetryEventWorkersAnyOf1ExecutionModelEnum;
           result.executionModel = valueDes;
-          break;
-        case r'outcome':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.outcome = valueDes;
-          break;
-        case r'requestId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.requestId = valueDes;
-          break;
-        case r'scriptName':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.scriptName = valueDes;
           break;
         case r'scriptVersion':
           final valueDes = serializers.deserialize(
@@ -279,13 +286,6 @@ class _$WorkersObservabilityTelemetryEventWorkersAnyOf1Serializer implements Pri
             specifiedType: const FullType(bool),
           ) as bool;
           result.truncated = valueDes;
-          break;
-        case r'wallTimeMs':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(num),
-          ) as num;
-          result.wallTimeMs = valueDes;
           break;
         default:
           unhandled.add(key);

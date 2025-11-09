@@ -101,6 +101,8 @@ class _$DigitalExperienceMonitoringTracerouteTestResultNetworkPathResponseHopsIn
 class _$DigitalExperienceMonitoringTracerouteTestResultNetworkPathResponseHopsInner
     extends DigitalExperienceMonitoringTracerouteTestResultNetworkPathResponseHopsInner {
   @override
+  final int ttl;
+  @override
   final int? asn;
   @override
   final String? aso;
@@ -118,8 +120,6 @@ class _$DigitalExperienceMonitoringTracerouteTestResultNetworkPathResponseHopsIn
   final double? packetLossPct;
   @override
   final int? rttMs;
-  @override
-  final int ttl;
 
   factory _$DigitalExperienceMonitoringTracerouteTestResultNetworkPathResponseHopsInner(
           [void Function(
@@ -130,15 +130,15 @@ class _$DigitalExperienceMonitoringTracerouteTestResultNetworkPathResponseHopsIn
           ._build();
 
   _$DigitalExperienceMonitoringTracerouteTestResultNetworkPathResponseHopsInner._(
-      {this.asn,
+      {required this.ttl,
+      this.asn,
       this.aso,
       this.ipAddress,
       this.location,
       this.mile,
       this.name,
       this.packetLossPct,
-      this.rttMs,
-      required this.ttl})
+      this.rttMs})
       : super._();
   @override
   DigitalExperienceMonitoringTracerouteTestResultNetworkPathResponseHopsInner
@@ -159,6 +159,7 @@ class _$DigitalExperienceMonitoringTracerouteTestResultNetworkPathResponseHopsIn
     if (identical(other, this)) return true;
     return other
             is DigitalExperienceMonitoringTracerouteTestResultNetworkPathResponseHopsInner &&
+        ttl == other.ttl &&
         asn == other.asn &&
         aso == other.aso &&
         ipAddress == other.ipAddress &&
@@ -166,13 +167,13 @@ class _$DigitalExperienceMonitoringTracerouteTestResultNetworkPathResponseHopsIn
         mile == other.mile &&
         name == other.name &&
         packetLossPct == other.packetLossPct &&
-        rttMs == other.rttMs &&
-        ttl == other.ttl;
+        rttMs == other.rttMs;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
+    _$hash = $jc(_$hash, ttl.hashCode);
     _$hash = $jc(_$hash, asn.hashCode);
     _$hash = $jc(_$hash, aso.hashCode);
     _$hash = $jc(_$hash, ipAddress.hashCode);
@@ -181,7 +182,6 @@ class _$DigitalExperienceMonitoringTracerouteTestResultNetworkPathResponseHopsIn
     _$hash = $jc(_$hash, name.hashCode);
     _$hash = $jc(_$hash, packetLossPct.hashCode);
     _$hash = $jc(_$hash, rttMs.hashCode);
-    _$hash = $jc(_$hash, ttl.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -190,6 +190,7 @@ class _$DigitalExperienceMonitoringTracerouteTestResultNetworkPathResponseHopsIn
   String toString() {
     return (newBuiltValueToStringHelper(
             r'DigitalExperienceMonitoringTracerouteTestResultNetworkPathResponseHopsInner')
+          ..add('ttl', ttl)
           ..add('asn', asn)
           ..add('aso', aso)
           ..add('ipAddress', ipAddress)
@@ -197,8 +198,7 @@ class _$DigitalExperienceMonitoringTracerouteTestResultNetworkPathResponseHopsIn
           ..add('mile', mile)
           ..add('name', name)
           ..add('packetLossPct', packetLossPct)
-          ..add('rttMs', rttMs)
-          ..add('ttl', ttl))
+          ..add('rttMs', rttMs))
         .toString();
   }
 }
@@ -210,6 +210,10 @@ class DigitalExperienceMonitoringTracerouteTestResultNetworkPathResponseHopsInne
             DigitalExperienceMonitoringTracerouteTestResultNetworkPathResponseHopsInnerBuilder> {
   _$DigitalExperienceMonitoringTracerouteTestResultNetworkPathResponseHopsInner?
       _$v;
+
+  int? _ttl;
+  int? get ttl => _$this._ttl;
+  set ttl(int? ttl) => _$this._ttl = ttl;
 
   int? _asn;
   int? get asn => _$this._asn;
@@ -255,10 +259,6 @@ class DigitalExperienceMonitoringTracerouteTestResultNetworkPathResponseHopsInne
   int? get rttMs => _$this._rttMs;
   set rttMs(int? rttMs) => _$this._rttMs = rttMs;
 
-  int? _ttl;
-  int? get ttl => _$this._ttl;
-  set ttl(int? ttl) => _$this._ttl = ttl;
-
   DigitalExperienceMonitoringTracerouteTestResultNetworkPathResponseHopsInnerBuilder() {
     DigitalExperienceMonitoringTracerouteTestResultNetworkPathResponseHopsInner
         ._defaults(this);
@@ -268,6 +268,7 @@ class DigitalExperienceMonitoringTracerouteTestResultNetworkPathResponseHopsInne
       get _$this {
     final $v = _$v;
     if ($v != null) {
+      _ttl = $v.ttl;
       _asn = $v.asn;
       _aso = $v.aso;
       _ipAddress = $v.ipAddress;
@@ -276,7 +277,6 @@ class DigitalExperienceMonitoringTracerouteTestResultNetworkPathResponseHopsInne
       _name = $v.name;
       _packetLossPct = $v.packetLossPct;
       _rttMs = $v.rttMs;
-      _ttl = $v.ttl;
       _$v = null;
     }
     return this;
@@ -310,6 +310,10 @@ class DigitalExperienceMonitoringTracerouteTestResultNetworkPathResponseHopsInne
       _$result = _$v ??
           _$DigitalExperienceMonitoringTracerouteTestResultNetworkPathResponseHopsInner
               ._(
+            ttl: BuiltValueNullFieldError.checkNotNull(
+                ttl,
+                r'DigitalExperienceMonitoringTracerouteTestResultNetworkPathResponseHopsInner',
+                'ttl'),
             asn: asn,
             aso: aso,
             ipAddress: ipAddress,
@@ -318,10 +322,6 @@ class DigitalExperienceMonitoringTracerouteTestResultNetworkPathResponseHopsInne
             name: name,
             packetLossPct: packetLossPct,
             rttMs: rttMs,
-            ttl: BuiltValueNullFieldError.checkNotNull(
-                ttl,
-                r'DigitalExperienceMonitoringTracerouteTestResultNetworkPathResponseHopsInner',
-                'ttl'),
           );
     } catch (_) {
       late String _$failedField;

@@ -60,20 +60,20 @@ class _$ZonesSchemasBrowserCheckIdEnumSerializer
 
 class _$ZonesSchemasBrowserCheck extends ZonesSchemasBrowserCheck {
   @override
-  final bool? editable;
-  @override
   final String id;
   @override
-  final DateTime? modifiedOn;
-  @override
   final JsonObject? value;
+  @override
+  final bool? editable;
+  @override
+  final DateTime? modifiedOn;
 
   factory _$ZonesSchemasBrowserCheck(
           [void Function(ZonesSchemasBrowserCheckBuilder)? updates]) =>
       (ZonesSchemasBrowserCheckBuilder()..update(updates))._build();
 
   _$ZonesSchemasBrowserCheck._(
-      {this.editable, required this.id, this.modifiedOn, this.value})
+      {required this.id, this.value, this.editable, this.modifiedOn})
       : super._();
   @override
   ZonesSchemasBrowserCheck rebuild(
@@ -88,19 +88,19 @@ class _$ZonesSchemasBrowserCheck extends ZonesSchemasBrowserCheck {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is ZonesSchemasBrowserCheck &&
-        editable == other.editable &&
         id == other.id &&
-        modifiedOn == other.modifiedOn &&
-        value == other.value;
+        value == other.value &&
+        editable == other.editable &&
+        modifiedOn == other.modifiedOn;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, editable.hashCode);
     _$hash = $jc(_$hash, id.hashCode);
-    _$hash = $jc(_$hash, modifiedOn.hashCode);
     _$hash = $jc(_$hash, value.hashCode);
+    _$hash = $jc(_$hash, editable.hashCode);
+    _$hash = $jc(_$hash, modifiedOn.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -108,10 +108,10 @@ class _$ZonesSchemasBrowserCheck extends ZonesSchemasBrowserCheck {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'ZonesSchemasBrowserCheck')
-          ..add('editable', editable)
           ..add('id', id)
-          ..add('modifiedOn', modifiedOn)
-          ..add('value', value))
+          ..add('value', value)
+          ..add('editable', editable)
+          ..add('modifiedOn', modifiedOn))
         .toString();
   }
 }
@@ -122,22 +122,22 @@ class ZonesSchemasBrowserCheckBuilder
         ZonesBaseBuilder {
   _$ZonesSchemasBrowserCheck? _$v;
 
-  bool? _editable;
-  bool? get editable => _$this._editable;
-  set editable(covariant bool? editable) => _$this._editable = editable;
-
   String? _id;
   String? get id => _$this._id;
   set id(covariant String? id) => _$this._id = id;
+
+  JsonObject? _value;
+  JsonObject? get value => _$this._value;
+  set value(covariant JsonObject? value) => _$this._value = value;
+
+  bool? _editable;
+  bool? get editable => _$this._editable;
+  set editable(covariant bool? editable) => _$this._editable = editable;
 
   DateTime? _modifiedOn;
   DateTime? get modifiedOn => _$this._modifiedOn;
   set modifiedOn(covariant DateTime? modifiedOn) =>
       _$this._modifiedOn = modifiedOn;
-
-  JsonObject? _value;
-  JsonObject? get value => _$this._value;
-  set value(covariant JsonObject? value) => _$this._value = value;
 
   ZonesSchemasBrowserCheckBuilder() {
     ZonesSchemasBrowserCheck._defaults(this);
@@ -146,10 +146,10 @@ class ZonesSchemasBrowserCheckBuilder
   ZonesSchemasBrowserCheckBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _editable = $v.editable;
       _id = $v.id;
-      _modifiedOn = $v.modifiedOn;
       _value = $v.value;
+      _editable = $v.editable;
+      _modifiedOn = $v.modifiedOn;
       _$v = null;
     }
     return this;
@@ -171,11 +171,11 @@ class ZonesSchemasBrowserCheckBuilder
   _$ZonesSchemasBrowserCheck _build() {
     final _$result = _$v ??
         _$ZonesSchemasBrowserCheck._(
-          editable: editable,
           id: BuiltValueNullFieldError.checkNotNull(
               id, r'ZonesSchemasBrowserCheck', 'id'),
-          modifiedOn: modifiedOn,
           value: value,
+          editable: editable,
+          modifiedOn: modifiedOn,
         );
     replace(_$result);
     return _$result;

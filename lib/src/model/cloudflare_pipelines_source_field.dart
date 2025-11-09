@@ -15,10 +15,10 @@ part 'cloudflare_pipelines_source_field.g.dart';
 ///
 /// Properties:
 /// * [type] 
-/// * [unit] 
 /// * [fields] 
 /// * [name] 
 /// * [items] 
+/// * [unit] 
 /// * [metadataKey] 
 /// * [required_] 
 /// * [sqlName] 

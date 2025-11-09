@@ -7,14 +7,15 @@ import 'package:cloudflare_dart/src/model/realtimekit_generic_success_response.d
 import 'package:cloudflare_dart/src/model/delete_meeting_participant200_response_all_of_data.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
+import 'package:built_value/json_object.dart';
 
 part 'delete_meeting_participant200_response.g.dart';
 
 /// DeleteMeetingParticipant200Response
 ///
 /// Properties:
-/// * [data] 
 /// * [success] - Success status of the operation
+/// * [data] 
 @BuiltValue()
 abstract class DeleteMeetingParticipant200Response implements RealtimekitGenericSuccessResponse, Built<DeleteMeetingParticipant200Response, DeleteMeetingParticipant200ResponseBuilder> {
   DeleteMeetingParticipant200Response._();

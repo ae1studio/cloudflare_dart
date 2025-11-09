@@ -9,11 +9,11 @@ part of 'radar_get_entities_asn_by_ip200_response_result_asn_estimated_users_loc
 class _$RadarGetEntitiesAsnByIp200ResponseResultAsnEstimatedUsersLocationsInner
     extends RadarGetEntitiesAsnByIp200ResponseResultAsnEstimatedUsersLocationsInner {
   @override
-  final int? estimatedUsers;
-  @override
   final String locationAlpha2;
   @override
   final String locationName;
+  @override
+  final int? estimatedUsers;
 
   factory _$RadarGetEntitiesAsnByIp200ResponseResultAsnEstimatedUsersLocationsInner(
           [void Function(
@@ -24,9 +24,9 @@ class _$RadarGetEntitiesAsnByIp200ResponseResultAsnEstimatedUsersLocationsInner
           ._build();
 
   _$RadarGetEntitiesAsnByIp200ResponseResultAsnEstimatedUsersLocationsInner._(
-      {this.estimatedUsers,
-      required this.locationAlpha2,
-      required this.locationName})
+      {required this.locationAlpha2,
+      required this.locationName,
+      this.estimatedUsers})
       : super._();
   @override
   RadarGetEntitiesAsnByIp200ResponseResultAsnEstimatedUsersLocationsInner rebuild(
@@ -46,17 +46,17 @@ class _$RadarGetEntitiesAsnByIp200ResponseResultAsnEstimatedUsersLocationsInner
     if (identical(other, this)) return true;
     return other
             is RadarGetEntitiesAsnByIp200ResponseResultAsnEstimatedUsersLocationsInner &&
-        estimatedUsers == other.estimatedUsers &&
         locationAlpha2 == other.locationAlpha2 &&
-        locationName == other.locationName;
+        locationName == other.locationName &&
+        estimatedUsers == other.estimatedUsers;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, estimatedUsers.hashCode);
     _$hash = $jc(_$hash, locationAlpha2.hashCode);
     _$hash = $jc(_$hash, locationName.hashCode);
+    _$hash = $jc(_$hash, estimatedUsers.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -65,9 +65,9 @@ class _$RadarGetEntitiesAsnByIp200ResponseResultAsnEstimatedUsersLocationsInner
   String toString() {
     return (newBuiltValueToStringHelper(
             r'RadarGetEntitiesAsnByIp200ResponseResultAsnEstimatedUsersLocationsInner')
-          ..add('estimatedUsers', estimatedUsers)
           ..add('locationAlpha2', locationAlpha2)
-          ..add('locationName', locationName))
+          ..add('locationName', locationName)
+          ..add('estimatedUsers', estimatedUsers))
         .toString();
   }
 }
@@ -80,11 +80,6 @@ class RadarGetEntitiesAsnByIp200ResponseResultAsnEstimatedUsersLocationsInnerBui
   _$RadarGetEntitiesAsnByIp200ResponseResultAsnEstimatedUsersLocationsInner?
       _$v;
 
-  int? _estimatedUsers;
-  int? get estimatedUsers => _$this._estimatedUsers;
-  set estimatedUsers(int? estimatedUsers) =>
-      _$this._estimatedUsers = estimatedUsers;
-
   String? _locationAlpha2;
   String? get locationAlpha2 => _$this._locationAlpha2;
   set locationAlpha2(String? locationAlpha2) =>
@@ -93,6 +88,11 @@ class RadarGetEntitiesAsnByIp200ResponseResultAsnEstimatedUsersLocationsInnerBui
   String? _locationName;
   String? get locationName => _$this._locationName;
   set locationName(String? locationName) => _$this._locationName = locationName;
+
+  int? _estimatedUsers;
+  int? get estimatedUsers => _$this._estimatedUsers;
+  set estimatedUsers(int? estimatedUsers) =>
+      _$this._estimatedUsers = estimatedUsers;
 
   RadarGetEntitiesAsnByIp200ResponseResultAsnEstimatedUsersLocationsInnerBuilder() {
     RadarGetEntitiesAsnByIp200ResponseResultAsnEstimatedUsersLocationsInner
@@ -103,9 +103,9 @@ class RadarGetEntitiesAsnByIp200ResponseResultAsnEstimatedUsersLocationsInnerBui
       get _$this {
     final $v = _$v;
     if ($v != null) {
-      _estimatedUsers = $v.estimatedUsers;
       _locationAlpha2 = $v.locationAlpha2;
       _locationName = $v.locationName;
+      _estimatedUsers = $v.estimatedUsers;
       _$v = null;
     }
     return this;
@@ -136,7 +136,6 @@ class RadarGetEntitiesAsnByIp200ResponseResultAsnEstimatedUsersLocationsInnerBui
     final _$result = _$v ??
         _$RadarGetEntitiesAsnByIp200ResponseResultAsnEstimatedUsersLocationsInner
             ._(
-          estimatedUsers: estimatedUsers,
           locationAlpha2: BuiltValueNullFieldError.checkNotNull(
               locationAlpha2,
               r'RadarGetEntitiesAsnByIp200ResponseResultAsnEstimatedUsersLocationsInner',
@@ -145,6 +144,7 @@ class RadarGetEntitiesAsnByIp200ResponseResultAsnEstimatedUsersLocationsInnerBui
               locationName,
               r'RadarGetEntitiesAsnByIp200ResponseResultAsnEstimatedUsersLocationsInner',
               'locationName'),
+          estimatedUsers: estimatedUsers,
         );
     replace(_$result);
     return _$result;

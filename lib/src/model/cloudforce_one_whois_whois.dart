@@ -12,6 +12,14 @@ part 'cloudforce_one_whois_whois.g.dart';
 /// CloudforceOneWhoisWhois
 ///
 /// Properties:
+/// * [dnssec] 
+/// * [domain] 
+/// * [extension_] 
+/// * [found] 
+/// * [nameservers] 
+/// * [punycode] 
+/// * [registrant] 
+/// * [registrar] 
 /// * [administrativeCity] 
 /// * [administrativeCountry] 
 /// * [administrativeEmail] 
@@ -42,16 +50,9 @@ part 'cloudforce_one_whois_whois.g.dart';
 /// * [billingStreet] 
 /// * [createdDate] 
 /// * [createdDateRaw] 
-/// * [dnssec] 
-/// * [domain] 
 /// * [expirationDate] 
 /// * [expirationDateRaw] 
-/// * [extension_] 
-/// * [found] 
 /// * [id] 
-/// * [nameservers] 
-/// * [punycode] 
-/// * [registrant] 
 /// * [registrantCity] 
 /// * [registrantCountry] 
 /// * [registrantEmail] 
@@ -66,7 +67,6 @@ part 'cloudforce_one_whois_whois.g.dart';
 /// * [registrantProvince] 
 /// * [registrantReferralUrl] 
 /// * [registrantStreet] 
-/// * [registrar] 
 /// * [registrarCity] 
 /// * [registrarCountry] 
 /// * [registrarEmail] 
@@ -101,6 +101,30 @@ part 'cloudforce_one_whois_whois.g.dart';
 /// * [whoisServer] 
 @BuiltValue()
 abstract class CloudforceOneWhoisWhois implements Built<CloudforceOneWhoisWhois, CloudforceOneWhoisWhoisBuilder> {
+  @BuiltValueField(wireName: r'dnssec')
+  bool get dnssec;
+
+  @BuiltValueField(wireName: r'domain')
+  String get domain;
+
+  @BuiltValueField(wireName: r'extension')
+  String get extension_;
+
+  @BuiltValueField(wireName: r'found')
+  bool get found;
+
+  @BuiltValueField(wireName: r'nameservers')
+  BuiltList<String> get nameservers;
+
+  @BuiltValueField(wireName: r'punycode')
+  String get punycode;
+
+  @BuiltValueField(wireName: r'registrant')
+  String get registrant;
+
+  @BuiltValueField(wireName: r'registrar')
+  String get registrar;
+
   @BuiltValueField(wireName: r'administrative_city')
   String? get administrativeCity;
 
@@ -191,35 +215,14 @@ abstract class CloudforceOneWhoisWhois implements Built<CloudforceOneWhoisWhois,
   @BuiltValueField(wireName: r'created_date_raw')
   String? get createdDateRaw;
 
-  @BuiltValueField(wireName: r'dnssec')
-  bool get dnssec;
-
-  @BuiltValueField(wireName: r'domain')
-  String get domain;
-
   @BuiltValueField(wireName: r'expiration_date')
   DateTime? get expirationDate;
 
   @BuiltValueField(wireName: r'expiration_date_raw')
   String? get expirationDateRaw;
 
-  @BuiltValueField(wireName: r'extension')
-  String get extension_;
-
-  @BuiltValueField(wireName: r'found')
-  bool get found;
-
   @BuiltValueField(wireName: r'id')
   String? get id;
-
-  @BuiltValueField(wireName: r'nameservers')
-  BuiltList<String> get nameservers;
-
-  @BuiltValueField(wireName: r'punycode')
-  String get punycode;
-
-  @BuiltValueField(wireName: r'registrant')
-  String get registrant;
 
   @BuiltValueField(wireName: r'registrant_city')
   String? get registrantCity;
@@ -262,9 +265,6 @@ abstract class CloudforceOneWhoisWhois implements Built<CloudforceOneWhoisWhois,
 
   @BuiltValueField(wireName: r'registrant_street')
   String? get registrantStreet;
-
-  @BuiltValueField(wireName: r'registrar')
-  String get registrar;
 
   @BuiltValueField(wireName: r'registrar_city')
   String? get registrarCity;
@@ -385,6 +385,46 @@ class _$CloudforceOneWhoisWhoisSerializer implements PrimitiveSerializer<Cloudfo
     CloudforceOneWhoisWhois object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    yield r'dnssec';
+    yield serializers.serialize(
+      object.dnssec,
+      specifiedType: const FullType(bool),
+    );
+    yield r'domain';
+    yield serializers.serialize(
+      object.domain,
+      specifiedType: const FullType(String),
+    );
+    yield r'extension';
+    yield serializers.serialize(
+      object.extension_,
+      specifiedType: const FullType(String),
+    );
+    yield r'found';
+    yield serializers.serialize(
+      object.found,
+      specifiedType: const FullType(bool),
+    );
+    yield r'nameservers';
+    yield serializers.serialize(
+      object.nameservers,
+      specifiedType: const FullType(BuiltList, [FullType(String)]),
+    );
+    yield r'punycode';
+    yield serializers.serialize(
+      object.punycode,
+      specifiedType: const FullType(String),
+    );
+    yield r'registrant';
+    yield serializers.serialize(
+      object.registrant,
+      specifiedType: const FullType(String),
+    );
+    yield r'registrar';
+    yield serializers.serialize(
+      object.registrar,
+      specifiedType: const FullType(String),
+    );
     if (object.administrativeCity != null) {
       yield r'administrative_city';
       yield serializers.serialize(
@@ -595,16 +635,6 @@ class _$CloudforceOneWhoisWhoisSerializer implements PrimitiveSerializer<Cloudfo
         specifiedType: const FullType(String),
       );
     }
-    yield r'dnssec';
-    yield serializers.serialize(
-      object.dnssec,
-      specifiedType: const FullType(bool),
-    );
-    yield r'domain';
-    yield serializers.serialize(
-      object.domain,
-      specifiedType: const FullType(String),
-    );
     if (object.expirationDate != null) {
       yield r'expiration_date';
       yield serializers.serialize(
@@ -619,16 +649,6 @@ class _$CloudforceOneWhoisWhoisSerializer implements PrimitiveSerializer<Cloudfo
         specifiedType: const FullType(String),
       );
     }
-    yield r'extension';
-    yield serializers.serialize(
-      object.extension_,
-      specifiedType: const FullType(String),
-    );
-    yield r'found';
-    yield serializers.serialize(
-      object.found,
-      specifiedType: const FullType(bool),
-    );
     if (object.id != null) {
       yield r'id';
       yield serializers.serialize(
@@ -636,21 +656,6 @@ class _$CloudforceOneWhoisWhoisSerializer implements PrimitiveSerializer<Cloudfo
         specifiedType: const FullType(String),
       );
     }
-    yield r'nameservers';
-    yield serializers.serialize(
-      object.nameservers,
-      specifiedType: const FullType(BuiltList, [FullType(String)]),
-    );
-    yield r'punycode';
-    yield serializers.serialize(
-      object.punycode,
-      specifiedType: const FullType(String),
-    );
-    yield r'registrant';
-    yield serializers.serialize(
-      object.registrant,
-      specifiedType: const FullType(String),
-    );
     if (object.registrantCity != null) {
       yield r'registrant_city';
       yield serializers.serialize(
@@ -749,11 +754,6 @@ class _$CloudforceOneWhoisWhoisSerializer implements PrimitiveSerializer<Cloudfo
         specifiedType: const FullType(String),
       );
     }
-    yield r'registrar';
-    yield serializers.serialize(
-      object.registrar,
-      specifiedType: const FullType(String),
-    );
     if (object.registrarCity != null) {
       yield r'registrar_city';
       yield serializers.serialize(
@@ -1001,6 +1001,62 @@ class _$CloudforceOneWhoisWhoisSerializer implements PrimitiveSerializer<Cloudfo
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
+        case r'dnssec':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(bool),
+          ) as bool;
+          result.dnssec = valueDes;
+          break;
+        case r'domain':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.domain = valueDes;
+          break;
+        case r'extension':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.extension_ = valueDes;
+          break;
+        case r'found':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(bool),
+          ) as bool;
+          result.found = valueDes;
+          break;
+        case r'nameservers':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BuiltList, [FullType(String)]),
+          ) as BuiltList<String>;
+          result.nameservers.replace(valueDes);
+          break;
+        case r'punycode':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.punycode = valueDes;
+          break;
+        case r'registrant':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.registrant = valueDes;
+          break;
+        case r'registrar':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.registrar = valueDes;
+          break;
         case r'administrative_city':
           final valueDes = serializers.deserialize(
             value,
@@ -1211,20 +1267,6 @@ class _$CloudforceOneWhoisWhoisSerializer implements PrimitiveSerializer<Cloudfo
           ) as String;
           result.createdDateRaw = valueDes;
           break;
-        case r'dnssec':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
-          result.dnssec = valueDes;
-          break;
-        case r'domain':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.domain = valueDes;
-          break;
         case r'expiration_date':
           final valueDes = serializers.deserialize(
             value,
@@ -1239,47 +1281,12 @@ class _$CloudforceOneWhoisWhoisSerializer implements PrimitiveSerializer<Cloudfo
           ) as String;
           result.expirationDateRaw = valueDes;
           break;
-        case r'extension':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.extension_ = valueDes;
-          break;
-        case r'found':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
-          result.found = valueDes;
-          break;
         case r'id':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(String),
           ) as String;
           result.id = valueDes;
-          break;
-        case r'nameservers':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>;
-          result.nameservers.replace(valueDes);
-          break;
-        case r'punycode':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.punycode = valueDes;
-          break;
-        case r'registrant':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.registrant = valueDes;
           break;
         case r'registrant_city':
           final valueDes = serializers.deserialize(
@@ -1378,13 +1385,6 @@ class _$CloudforceOneWhoisWhoisSerializer implements PrimitiveSerializer<Cloudfo
             specifiedType: const FullType(String),
           ) as String;
           result.registrantStreet = valueDes;
-          break;
-        case r'registrar':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.registrar = valueDes;
           break;
         case r'registrar_city':
           final valueDes = serializers.deserialize(

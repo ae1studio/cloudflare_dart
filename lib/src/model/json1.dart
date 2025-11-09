@@ -15,10 +15,10 @@ part 'json1.g.dart';
 /// Json1
 ///
 /// Properties:
+/// * [type] 
 /// * [decimalEncoding] 
 /// * [timestampFormat] 
 /// * [unstructured] 
-/// * [type] 
 @BuiltValue()
 abstract class Json1 implements CloudflarePipelinesJsonFormat, Built<Json1, Json1Builder> {
   @BuiltValueField(wireName: r'type')

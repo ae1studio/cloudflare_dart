@@ -11,11 +11,15 @@ part 'workers_tail_consumers_script.g.dart';
 /// A reference to a script that will consume logs from the attached Worker.
 ///
 /// Properties:
+/// * [service] - Name of Worker that is to be the consumer.
 /// * [environment] - Optional environment if the Worker utilizes one.
 /// * [namespace] - Optional dispatch namespace the script belongs to.
-/// * [service] - Name of Worker that is to be the consumer.
 @BuiltValue()
 abstract class WorkersTailConsumersScript implements Built<WorkersTailConsumersScript, WorkersTailConsumersScriptBuilder> {
+  /// Name of Worker that is to be the consumer.
+  @BuiltValueField(wireName: r'service')
+  String get service;
+
   /// Optional environment if the Worker utilizes one.
   @BuiltValueField(wireName: r'environment')
   String? get environment;
@@ -23,10 +27,6 @@ abstract class WorkersTailConsumersScript implements Built<WorkersTailConsumersS
   /// Optional dispatch namespace the script belongs to.
   @BuiltValueField(wireName: r'namespace')
   String? get namespace;
-
-  /// Name of Worker that is to be the consumer.
-  @BuiltValueField(wireName: r'service')
-  String get service;
 
   WorkersTailConsumersScript._();
 
@@ -51,6 +51,11 @@ class _$WorkersTailConsumersScriptSerializer implements PrimitiveSerializer<Work
     WorkersTailConsumersScript object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    yield r'service';
+    yield serializers.serialize(
+      object.service,
+      specifiedType: const FullType(String),
+    );
     if (object.environment != null) {
       yield r'environment';
       yield serializers.serialize(
@@ -65,11 +70,6 @@ class _$WorkersTailConsumersScriptSerializer implements PrimitiveSerializer<Work
         specifiedType: const FullType(String),
       );
     }
-    yield r'service';
-    yield serializers.serialize(
-      object.service,
-      specifiedType: const FullType(String),
-    );
   }
 
   @override
@@ -93,6 +93,13 @@ class _$WorkersTailConsumersScriptSerializer implements PrimitiveSerializer<Work
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
+        case r'service':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.service = valueDes;
+          break;
         case r'environment':
           final valueDes = serializers.deserialize(
             value,
@@ -106,13 +113,6 @@ class _$WorkersTailConsumersScriptSerializer implements PrimitiveSerializer<Work
             specifiedType: const FullType(String),
           ) as String;
           result.namespace = valueDes;
-          break;
-        case r'service':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.service = valueDes;
           break;
         default:
           unhandled.add(key);

@@ -10,17 +10,17 @@ class _$DnsAnalyticsQuery extends DnsAnalyticsQuery {
   @override
   final BuiltList<String> dimensions;
   @override
-  final String? filters;
-  @override
   final int limit;
   @override
   final BuiltList<String> metrics;
   @override
   final DateTime since;
   @override
-  final BuiltList<String>? sort;
-  @override
   final DateTime until;
+  @override
+  final String? filters;
+  @override
+  final BuiltList<String>? sort;
 
   factory _$DnsAnalyticsQuery(
           [void Function(DnsAnalyticsQueryBuilder)? updates]) =>
@@ -28,12 +28,12 @@ class _$DnsAnalyticsQuery extends DnsAnalyticsQuery {
 
   _$DnsAnalyticsQuery._(
       {required this.dimensions,
-      this.filters,
       required this.limit,
       required this.metrics,
       required this.since,
-      this.sort,
-      required this.until})
+      required this.until,
+      this.filters,
+      this.sort})
       : super._();
   @override
   DnsAnalyticsQuery rebuild(void Function(DnsAnalyticsQueryBuilder) updates) =>
@@ -48,24 +48,24 @@ class _$DnsAnalyticsQuery extends DnsAnalyticsQuery {
     if (identical(other, this)) return true;
     return other is DnsAnalyticsQuery &&
         dimensions == other.dimensions &&
-        filters == other.filters &&
         limit == other.limit &&
         metrics == other.metrics &&
         since == other.since &&
-        sort == other.sort &&
-        until == other.until;
+        until == other.until &&
+        filters == other.filters &&
+        sort == other.sort;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
     _$hash = $jc(_$hash, dimensions.hashCode);
-    _$hash = $jc(_$hash, filters.hashCode);
     _$hash = $jc(_$hash, limit.hashCode);
     _$hash = $jc(_$hash, metrics.hashCode);
     _$hash = $jc(_$hash, since.hashCode);
-    _$hash = $jc(_$hash, sort.hashCode);
     _$hash = $jc(_$hash, until.hashCode);
+    _$hash = $jc(_$hash, filters.hashCode);
+    _$hash = $jc(_$hash, sort.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -74,12 +74,12 @@ class _$DnsAnalyticsQuery extends DnsAnalyticsQuery {
   String toString() {
     return (newBuiltValueToStringHelper(r'DnsAnalyticsQuery')
           ..add('dimensions', dimensions)
-          ..add('filters', filters)
           ..add('limit', limit)
           ..add('metrics', metrics)
           ..add('since', since)
-          ..add('sort', sort)
-          ..add('until', until))
+          ..add('until', until)
+          ..add('filters', filters)
+          ..add('sort', sort))
         .toString();
   }
 }
@@ -94,10 +94,6 @@ class DnsAnalyticsQueryBuilder
   set dimensions(ListBuilder<String>? dimensions) =>
       _$this._dimensions = dimensions;
 
-  String? _filters;
-  String? get filters => _$this._filters;
-  set filters(String? filters) => _$this._filters = filters;
-
   int? _limit;
   int? get limit => _$this._limit;
   set limit(int? limit) => _$this._limit = limit;
@@ -110,13 +106,17 @@ class DnsAnalyticsQueryBuilder
   DateTime? get since => _$this._since;
   set since(DateTime? since) => _$this._since = since;
 
-  ListBuilder<String>? _sort;
-  ListBuilder<String> get sort => _$this._sort ??= ListBuilder<String>();
-  set sort(ListBuilder<String>? sort) => _$this._sort = sort;
-
   DateTime? _until;
   DateTime? get until => _$this._until;
   set until(DateTime? until) => _$this._until = until;
+
+  String? _filters;
+  String? get filters => _$this._filters;
+  set filters(String? filters) => _$this._filters = filters;
+
+  ListBuilder<String>? _sort;
+  ListBuilder<String> get sort => _$this._sort ??= ListBuilder<String>();
+  set sort(ListBuilder<String>? sort) => _$this._sort = sort;
 
   DnsAnalyticsQueryBuilder() {
     DnsAnalyticsQuery._defaults(this);
@@ -126,12 +126,12 @@ class DnsAnalyticsQueryBuilder
     final $v = _$v;
     if ($v != null) {
       _dimensions = $v.dimensions.toBuilder();
-      _filters = $v.filters;
       _limit = $v.limit;
       _metrics = $v.metrics.toBuilder();
       _since = $v.since;
-      _sort = $v.sort?.toBuilder();
       _until = $v.until;
+      _filters = $v.filters;
+      _sort = $v.sort?.toBuilder();
       _$v = null;
     }
     return this;
@@ -156,15 +156,15 @@ class DnsAnalyticsQueryBuilder
       _$result = _$v ??
           _$DnsAnalyticsQuery._(
             dimensions: dimensions.build(),
-            filters: filters,
             limit: BuiltValueNullFieldError.checkNotNull(
                 limit, r'DnsAnalyticsQuery', 'limit'),
             metrics: metrics.build(),
             since: BuiltValueNullFieldError.checkNotNull(
                 since, r'DnsAnalyticsQuery', 'since'),
-            sort: _sort?.build(),
             until: BuiltValueNullFieldError.checkNotNull(
                 until, r'DnsAnalyticsQuery', 'until'),
+            filters: filters,
+            sort: _sort?.build(),
           );
     } catch (_) {
       late String _$failedField;

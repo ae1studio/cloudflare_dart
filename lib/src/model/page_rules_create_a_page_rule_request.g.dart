@@ -11,11 +11,11 @@ class _$PageRulesCreateAPageRuleRequest
   @override
   final BuiltList<ZonesActionsInner> actions;
   @override
+  final BuiltList<ZonesUrlTarget> targets;
+  @override
   final int? priority;
   @override
   final ZonesStatus? status;
-  @override
-  final BuiltList<ZonesUrlTarget> targets;
 
   factory _$PageRulesCreateAPageRuleRequest(
           [void Function(PageRulesCreateAPageRuleRequestBuilder)? updates]) =>
@@ -23,9 +23,9 @@ class _$PageRulesCreateAPageRuleRequest
 
   _$PageRulesCreateAPageRuleRequest._(
       {required this.actions,
+      required this.targets,
       this.priority,
-      this.status,
-      required this.targets})
+      this.status})
       : super._();
   @override
   PageRulesCreateAPageRuleRequest rebuild(
@@ -41,18 +41,18 @@ class _$PageRulesCreateAPageRuleRequest
     if (identical(other, this)) return true;
     return other is PageRulesCreateAPageRuleRequest &&
         actions == other.actions &&
+        targets == other.targets &&
         priority == other.priority &&
-        status == other.status &&
-        targets == other.targets;
+        status == other.status;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
     _$hash = $jc(_$hash, actions.hashCode);
+    _$hash = $jc(_$hash, targets.hashCode);
     _$hash = $jc(_$hash, priority.hashCode);
     _$hash = $jc(_$hash, status.hashCode);
-    _$hash = $jc(_$hash, targets.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -61,9 +61,9 @@ class _$PageRulesCreateAPageRuleRequest
   String toString() {
     return (newBuiltValueToStringHelper(r'PageRulesCreateAPageRuleRequest')
           ..add('actions', actions)
+          ..add('targets', targets)
           ..add('priority', priority)
-          ..add('status', status)
-          ..add('targets', targets))
+          ..add('status', status))
         .toString();
   }
 }
@@ -80,6 +80,12 @@ class PageRulesCreateAPageRuleRequestBuilder
   set actions(ListBuilder<ZonesActionsInner>? actions) =>
       _$this._actions = actions;
 
+  ListBuilder<ZonesUrlTarget>? _targets;
+  ListBuilder<ZonesUrlTarget> get targets =>
+      _$this._targets ??= ListBuilder<ZonesUrlTarget>();
+  set targets(ListBuilder<ZonesUrlTarget>? targets) =>
+      _$this._targets = targets;
+
   int? _priority;
   int? get priority => _$this._priority;
   set priority(int? priority) => _$this._priority = priority;
@@ -87,12 +93,6 @@ class PageRulesCreateAPageRuleRequestBuilder
   ZonesStatus? _status;
   ZonesStatus? get status => _$this._status;
   set status(ZonesStatus? status) => _$this._status = status;
-
-  ListBuilder<ZonesUrlTarget>? _targets;
-  ListBuilder<ZonesUrlTarget> get targets =>
-      _$this._targets ??= ListBuilder<ZonesUrlTarget>();
-  set targets(ListBuilder<ZonesUrlTarget>? targets) =>
-      _$this._targets = targets;
 
   PageRulesCreateAPageRuleRequestBuilder() {
     PageRulesCreateAPageRuleRequest._defaults(this);
@@ -102,9 +102,9 @@ class PageRulesCreateAPageRuleRequestBuilder
     final $v = _$v;
     if ($v != null) {
       _actions = $v.actions.toBuilder();
+      _targets = $v.targets.toBuilder();
       _priority = $v.priority;
       _status = $v.status;
-      _targets = $v.targets.toBuilder();
       _$v = null;
     }
     return this;
@@ -129,16 +129,15 @@ class PageRulesCreateAPageRuleRequestBuilder
       _$result = _$v ??
           _$PageRulesCreateAPageRuleRequest._(
             actions: actions.build(),
+            targets: targets.build(),
             priority: priority,
             status: status,
-            targets: targets.build(),
           );
     } catch (_) {
       late String _$failedField;
       try {
         _$failedField = 'actions';
         actions.build();
-
         _$failedField = 'targets';
         targets.build();
       } catch (e) {

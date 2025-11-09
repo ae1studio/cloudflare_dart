@@ -13,17 +13,13 @@ part 'digital_experience_monitoring_traceroute_test_result_network_path_response
 /// DigitalExperienceMonitoringTracerouteTestResultNetworkPathResponse
 ///
 /// Properties:
-/// * [deviceName] - name of the device associated with this network path response
 /// * [hops] - an array of the hops taken by the device to reach the end destination
 /// * [resultId] - API Resource UUID tag.
+/// * [deviceName] - name of the device associated with this network path response
 /// * [testId] - API Resource UUID tag.
 /// * [testName] - name of the tracroute test
 @BuiltValue()
 abstract class DigitalExperienceMonitoringTracerouteTestResultNetworkPathResponse implements Built<DigitalExperienceMonitoringTracerouteTestResultNetworkPathResponse, DigitalExperienceMonitoringTracerouteTestResultNetworkPathResponseBuilder> {
-  /// name of the device associated with this network path response
-  @BuiltValueField(wireName: r'deviceName')
-  String? get deviceName;
-
   /// an array of the hops taken by the device to reach the end destination
   @BuiltValueField(wireName: r'hops')
   BuiltList<DigitalExperienceMonitoringTracerouteTestResultNetworkPathResponseHopsInner> get hops;
@@ -31,6 +27,10 @@ abstract class DigitalExperienceMonitoringTracerouteTestResultNetworkPathRespons
   /// API Resource UUID tag.
   @BuiltValueField(wireName: r'resultId')
   String get resultId;
+
+  /// name of the device associated with this network path response
+  @BuiltValueField(wireName: r'deviceName')
+  String? get deviceName;
 
   /// API Resource UUID tag.
   @BuiltValueField(wireName: r'testId')
@@ -63,13 +63,6 @@ class _$DigitalExperienceMonitoringTracerouteTestResultNetworkPathResponseSerial
     DigitalExperienceMonitoringTracerouteTestResultNetworkPathResponse object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
-    if (object.deviceName != null) {
-      yield r'deviceName';
-      yield serializers.serialize(
-        object.deviceName,
-        specifiedType: const FullType(String),
-      );
-    }
     yield r'hops';
     yield serializers.serialize(
       object.hops,
@@ -80,6 +73,13 @@ class _$DigitalExperienceMonitoringTracerouteTestResultNetworkPathResponseSerial
       object.resultId,
       specifiedType: const FullType(String),
     );
+    if (object.deviceName != null) {
+      yield r'deviceName';
+      yield serializers.serialize(
+        object.deviceName,
+        specifiedType: const FullType(String),
+      );
+    }
     if (object.testId != null) {
       yield r'testId';
       yield serializers.serialize(
@@ -117,13 +117,6 @@ class _$DigitalExperienceMonitoringTracerouteTestResultNetworkPathResponseSerial
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'deviceName':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.deviceName = valueDes;
-          break;
         case r'hops':
           final valueDes = serializers.deserialize(
             value,
@@ -137,6 +130,13 @@ class _$DigitalExperienceMonitoringTracerouteTestResultNetworkPathResponseSerial
             specifiedType: const FullType(String),
           ) as String;
           result.resultId = valueDes;
+          break;
+        case r'deviceName':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.deviceName = valueDes;
           break;
         case r'testId':
           final valueDes = serializers.deserialize(

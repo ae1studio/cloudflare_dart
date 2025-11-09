@@ -19,12 +19,13 @@ part 'workers_ai_post_run_cf_meta_llama3211b_vision_instruct_request.g.dart';
 /// WorkersAiPostRunCfMetaLlama3211bVisionInstructRequest
 ///
 /// Properties:
+/// * [prompt] - The input text prompt for the model to generate a response.
+/// * [messages] - An array of message objects representing the conversation history.
 /// * [frequencyPenalty] - Decreases the likelihood of the model repeating the same lines verbatim.
 /// * [image] 
 /// * [lora] - Name of the LoRA (Low-Rank Adaptation) model to fine-tune the base model.
 /// * [maxTokens] - The maximum number of tokens to generate in the response.
 /// * [presencePenalty] - Increases the likelihood of the model introducing new topics.
-/// * [prompt] - The input text prompt for the model to generate a response.
 /// * [raw] - If true, a chat template is not applied and you must adhere to the specific model's expected formatting.
 /// * [repetitionPenalty] - Penalty for repeated tokens; higher values discourage repetition.
 /// * [seed] - Random seed for reproducibility of the generation.
@@ -33,7 +34,6 @@ part 'workers_ai_post_run_cf_meta_llama3211b_vision_instruct_request.g.dart';
 /// * [topK] - Limits the AI to choose from the top 'k' most probable words. Lower values make responses more focused; higher values introduce more variety and potential surprises.
 /// * [topP] - Controls the creativity of the AI's responses by adjusting how many possible words it considers. Lower values make outputs more predictable; higher values allow for more varied and creative responses.
 /// * [functions] 
-/// * [messages] - An array of message objects representing the conversation history.
 /// * [tools] - A list of tools available for the assistant to use.
 @BuiltValue()
 abstract class WorkersAiPostRunCfMetaLlama3211bVisionInstructRequest implements Built<WorkersAiPostRunCfMetaLlama3211bVisionInstructRequest, WorkersAiPostRunCfMetaLlama3211bVisionInstructRequestBuilder> {

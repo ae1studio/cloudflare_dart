@@ -16,14 +16,14 @@ Name | Type | Description | Notes
 **ttl** | [**DnsRecordsTtl**](DnsRecordsTtl.md) |  | 
 **content** | **String** | Formatted URI content. See 'data' to set URI properties. | 
 **type** | **String** | Record type. | 
-**priority** | **num** | Required for MX, SRV and URI records; unused by other record types. Records with lower priorities are preferred. | [optional] 
 **data** | [**DnsRecordsURIRecordAllOfData**](DnsRecordsURIRecordAllOfData.md) |  | 
-**commentModifiedOn** | [**DateTime**](DateTime.md) | When the record comment was last modified. Omitted if there is no comment. | [optional] 
 **createdOn** | [**DateTime**](DateTime.md) | When the record was created. | 
 **id** | **String** | Identifier. | 
 **meta** | [**JsonObject**](.md) | Extra Cloudflare-specific information about the record. | 
 **modifiedOn** | [**DateTime**](DateTime.md) | When the record was last modified. | 
 **proxiable** | **bool** | Whether the record can be proxied by Cloudflare or not. | 
+**priority** | **num** | Required for MX, SRV and URI records; unused by other record types. Records with lower priorities are preferred. | [optional] 
+**commentModifiedOn** | [**DateTime**](DateTime.md) | When the record comment was last modified. Omitted if there is no comment. | [optional] 
 **tagsModifiedOn** | [**DateTime**](DateTime.md) | When the record tags were last modified. Omitted if there are no tags. | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

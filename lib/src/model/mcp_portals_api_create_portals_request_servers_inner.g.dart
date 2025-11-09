@@ -9,11 +9,11 @@ part of 'mcp_portals_api_create_portals_request_servers_inner.dart';
 class _$McpPortalsApiCreatePortalsRequestServersInner
     extends McpPortalsApiCreatePortalsRequestServersInner {
   @override
+  final String serverId;
+  @override
   final bool? defaultDisabled;
   @override
   final bool? onBehalf;
-  @override
-  final String serverId;
   @override
   final BuiltList<
           McpPortalsApiCreatePortalsRequestServersInnerUpdatedPromptsInner>?
@@ -30,9 +30,9 @@ class _$McpPortalsApiCreatePortalsRequestServersInner
           ._build();
 
   _$McpPortalsApiCreatePortalsRequestServersInner._(
-      {this.defaultDisabled,
+      {required this.serverId,
+      this.defaultDisabled,
       this.onBehalf,
-      required this.serverId,
       this.updatedPrompts,
       this.updatedTools})
       : super._();
@@ -50,9 +50,9 @@ class _$McpPortalsApiCreatePortalsRequestServersInner
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is McpPortalsApiCreatePortalsRequestServersInner &&
+        serverId == other.serverId &&
         defaultDisabled == other.defaultDisabled &&
         onBehalf == other.onBehalf &&
-        serverId == other.serverId &&
         updatedPrompts == other.updatedPrompts &&
         updatedTools == other.updatedTools;
   }
@@ -60,9 +60,9 @@ class _$McpPortalsApiCreatePortalsRequestServersInner
   @override
   int get hashCode {
     var _$hash = 0;
+    _$hash = $jc(_$hash, serverId.hashCode);
     _$hash = $jc(_$hash, defaultDisabled.hashCode);
     _$hash = $jc(_$hash, onBehalf.hashCode);
-    _$hash = $jc(_$hash, serverId.hashCode);
     _$hash = $jc(_$hash, updatedPrompts.hashCode);
     _$hash = $jc(_$hash, updatedTools.hashCode);
     _$hash = $jf(_$hash);
@@ -73,9 +73,9 @@ class _$McpPortalsApiCreatePortalsRequestServersInner
   String toString() {
     return (newBuiltValueToStringHelper(
             r'McpPortalsApiCreatePortalsRequestServersInner')
+          ..add('serverId', serverId)
           ..add('defaultDisabled', defaultDisabled)
           ..add('onBehalf', onBehalf)
-          ..add('serverId', serverId)
           ..add('updatedPrompts', updatedPrompts)
           ..add('updatedTools', updatedTools))
         .toString();
@@ -88,6 +88,10 @@ class McpPortalsApiCreatePortalsRequestServersInnerBuilder
             McpPortalsApiCreatePortalsRequestServersInnerBuilder> {
   _$McpPortalsApiCreatePortalsRequestServersInner? _$v;
 
+  String? _serverId;
+  String? get serverId => _$this._serverId;
+  set serverId(String? serverId) => _$this._serverId = serverId;
+
   bool? _defaultDisabled;
   bool? get defaultDisabled => _$this._defaultDisabled;
   set defaultDisabled(bool? defaultDisabled) =>
@@ -96,10 +100,6 @@ class McpPortalsApiCreatePortalsRequestServersInnerBuilder
   bool? _onBehalf;
   bool? get onBehalf => _$this._onBehalf;
   set onBehalf(bool? onBehalf) => _$this._onBehalf = onBehalf;
-
-  String? _serverId;
-  String? get serverId => _$this._serverId;
-  set serverId(String? serverId) => _$this._serverId = serverId;
 
   ListBuilder<McpPortalsApiCreatePortalsRequestServersInnerUpdatedPromptsInner>?
       _updatedPrompts;
@@ -130,9 +130,9 @@ class McpPortalsApiCreatePortalsRequestServersInnerBuilder
   McpPortalsApiCreatePortalsRequestServersInnerBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
+      _serverId = $v.serverId;
       _defaultDisabled = $v.defaultDisabled;
       _onBehalf = $v.onBehalf;
-      _serverId = $v.serverId;
       _updatedPrompts = $v.updatedPrompts?.toBuilder();
       _updatedTools = $v.updatedTools?.toBuilder();
       _$v = null;
@@ -160,10 +160,10 @@ class McpPortalsApiCreatePortalsRequestServersInnerBuilder
     try {
       _$result = _$v ??
           _$McpPortalsApiCreatePortalsRequestServersInner._(
-            defaultDisabled: defaultDisabled,
-            onBehalf: onBehalf,
             serverId: BuiltValueNullFieldError.checkNotNull(serverId,
                 r'McpPortalsApiCreatePortalsRequestServersInner', 'serverId'),
+            defaultDisabled: defaultDisabled,
+            onBehalf: onBehalf,
             updatedPrompts: _updatedPrompts?.build(),
             updatedTools: _updatedTools?.build(),
           );

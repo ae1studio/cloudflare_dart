@@ -14,15 +14,15 @@ part 'digital_experience_monitoring_traceroute_test_network_path_response_networ
 /// DigitalExperienceMonitoringTracerouteTestNetworkPathResponseNetworkPath
 ///
 /// Properties:
-/// * [sampling] 
 /// * [slots] 
+/// * [sampling] 
 @BuiltValue()
 abstract class DigitalExperienceMonitoringTracerouteTestNetworkPathResponseNetworkPath implements Built<DigitalExperienceMonitoringTracerouteTestNetworkPathResponseNetworkPath, DigitalExperienceMonitoringTracerouteTestNetworkPathResponseNetworkPathBuilder> {
-  @BuiltValueField(wireName: r'sampling')
-  DigitalExperienceMonitoringTracerouteTestNetworkPathResponseNetworkPathSampling? get sampling;
-
   @BuiltValueField(wireName: r'slots')
   BuiltList<DigitalExperienceMonitoringTracerouteTestNetworkPathResponseNetworkPathSlotsInner> get slots;
+
+  @BuiltValueField(wireName: r'sampling')
+  DigitalExperienceMonitoringTracerouteTestNetworkPathResponseNetworkPathSampling? get sampling;
 
   DigitalExperienceMonitoringTracerouteTestNetworkPathResponseNetworkPath._();
 
@@ -47,6 +47,11 @@ class _$DigitalExperienceMonitoringTracerouteTestNetworkPathResponseNetworkPathS
     DigitalExperienceMonitoringTracerouteTestNetworkPathResponseNetworkPath object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    yield r'slots';
+    yield serializers.serialize(
+      object.slots,
+      specifiedType: const FullType(BuiltList, [FullType(DigitalExperienceMonitoringTracerouteTestNetworkPathResponseNetworkPathSlotsInner)]),
+    );
     if (object.sampling != null) {
       yield r'sampling';
       yield serializers.serialize(
@@ -54,11 +59,6 @@ class _$DigitalExperienceMonitoringTracerouteTestNetworkPathResponseNetworkPathS
         specifiedType: const FullType.nullable(DigitalExperienceMonitoringTracerouteTestNetworkPathResponseNetworkPathSampling),
       );
     }
-    yield r'slots';
-    yield serializers.serialize(
-      object.slots,
-      specifiedType: const FullType(BuiltList, [FullType(DigitalExperienceMonitoringTracerouteTestNetworkPathResponseNetworkPathSlotsInner)]),
-    );
   }
 
   @override
@@ -82,6 +82,13 @@ class _$DigitalExperienceMonitoringTracerouteTestNetworkPathResponseNetworkPathS
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
+        case r'slots':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BuiltList, [FullType(DigitalExperienceMonitoringTracerouteTestNetworkPathResponseNetworkPathSlotsInner)]),
+          ) as BuiltList<DigitalExperienceMonitoringTracerouteTestNetworkPathResponseNetworkPathSlotsInner>;
+          result.slots.replace(valueDes);
+          break;
         case r'sampling':
           final valueDes = serializers.deserialize(
             value,
@@ -89,13 +96,6 @@ class _$DigitalExperienceMonitoringTracerouteTestNetworkPathResponseNetworkPathS
           ) as DigitalExperienceMonitoringTracerouteTestNetworkPathResponseNetworkPathSampling?;
           if (valueDes == null) continue;
           result.sampling.replace(valueDes);
-          break;
-        case r'slots':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(DigitalExperienceMonitoringTracerouteTestNetworkPathResponseNetworkPathSlotsInner)]),
-          ) as BuiltList<DigitalExperienceMonitoringTracerouteTestNetworkPathResponseNetworkPathSlotsInner>;
-          result.slots.replace(valueDes);
           break;
         default:
           unhandled.add(key);

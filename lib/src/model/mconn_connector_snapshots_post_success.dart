@@ -15,10 +15,10 @@ part 'mconn_connector_snapshots_post_success.g.dart';
 /// MconnConnectorSnapshotsPostSuccess
 ///
 /// Properties:
-/// * [errors] 
-/// * [messages] 
 /// * [success] 
 /// * [result] 
+/// * [errors] 
+/// * [messages] 
 @BuiltValue()
 abstract class MconnConnectorSnapshotsPostSuccess implements MconnEnvelope, Built<MconnConnectorSnapshotsPostSuccess, MconnConnectorSnapshotsPostSuccessBuilder> {
   @BuiltValueField(wireName: r'result')

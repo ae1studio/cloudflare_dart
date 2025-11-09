@@ -76,8 +76,6 @@ class _$UrlscannerCreateScanV2200Response
   @override
   final String message;
   @override
-  final UrlscannerCreateScanBulkV2200ResponseInnerOptions? options;
-  @override
   final String result;
   @override
   final String url;
@@ -85,6 +83,8 @@ class _$UrlscannerCreateScanV2200Response
   final String uuid;
   @override
   final UrlscannerCreateScanV2200ResponseVisibilityEnum visibility;
+  @override
+  final UrlscannerCreateScanBulkV2200ResponseInnerOptions? options;
 
   factory _$UrlscannerCreateScanV2200Response(
           [void Function(UrlscannerCreateScanV2200ResponseBuilder)? updates]) =>
@@ -93,11 +93,11 @@ class _$UrlscannerCreateScanV2200Response
   _$UrlscannerCreateScanV2200Response._(
       {required this.api,
       required this.message,
-      this.options,
       required this.result,
       required this.url,
       required this.uuid,
-      required this.visibility})
+      required this.visibility,
+      this.options})
       : super._();
   @override
   UrlscannerCreateScanV2200Response rebuild(
@@ -114,11 +114,11 @@ class _$UrlscannerCreateScanV2200Response
     return other is UrlscannerCreateScanV2200Response &&
         api == other.api &&
         message == other.message &&
-        options == other.options &&
         result == other.result &&
         url == other.url &&
         uuid == other.uuid &&
-        visibility == other.visibility;
+        visibility == other.visibility &&
+        options == other.options;
   }
 
   @override
@@ -126,11 +126,11 @@ class _$UrlscannerCreateScanV2200Response
     var _$hash = 0;
     _$hash = $jc(_$hash, api.hashCode);
     _$hash = $jc(_$hash, message.hashCode);
-    _$hash = $jc(_$hash, options.hashCode);
     _$hash = $jc(_$hash, result.hashCode);
     _$hash = $jc(_$hash, url.hashCode);
     _$hash = $jc(_$hash, uuid.hashCode);
     _$hash = $jc(_$hash, visibility.hashCode);
+    _$hash = $jc(_$hash, options.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -140,11 +140,11 @@ class _$UrlscannerCreateScanV2200Response
     return (newBuiltValueToStringHelper(r'UrlscannerCreateScanV2200Response')
           ..add('api', api)
           ..add('message', message)
-          ..add('options', options)
           ..add('result', result)
           ..add('url', url)
           ..add('uuid', uuid)
-          ..add('visibility', visibility))
+          ..add('visibility', visibility)
+          ..add('options', options))
         .toString();
   }
 }
@@ -162,14 +162,6 @@ class UrlscannerCreateScanV2200ResponseBuilder
   String? _message;
   String? get message => _$this._message;
   set message(String? message) => _$this._message = message;
-
-  UrlscannerCreateScanBulkV2200ResponseInnerOptionsBuilder? _options;
-  UrlscannerCreateScanBulkV2200ResponseInnerOptionsBuilder get options =>
-      _$this._options ??=
-          UrlscannerCreateScanBulkV2200ResponseInnerOptionsBuilder();
-  set options(
-          UrlscannerCreateScanBulkV2200ResponseInnerOptionsBuilder? options) =>
-      _$this._options = options;
 
   String? _result;
   String? get result => _$this._result;
@@ -189,6 +181,14 @@ class UrlscannerCreateScanV2200ResponseBuilder
   set visibility(UrlscannerCreateScanV2200ResponseVisibilityEnum? visibility) =>
       _$this._visibility = visibility;
 
+  UrlscannerCreateScanBulkV2200ResponseInnerOptionsBuilder? _options;
+  UrlscannerCreateScanBulkV2200ResponseInnerOptionsBuilder get options =>
+      _$this._options ??=
+          UrlscannerCreateScanBulkV2200ResponseInnerOptionsBuilder();
+  set options(
+          UrlscannerCreateScanBulkV2200ResponseInnerOptionsBuilder? options) =>
+      _$this._options = options;
+
   UrlscannerCreateScanV2200ResponseBuilder() {
     UrlscannerCreateScanV2200Response._defaults(this);
   }
@@ -198,11 +198,11 @@ class UrlscannerCreateScanV2200ResponseBuilder
     if ($v != null) {
       _api = $v.api;
       _message = $v.message;
-      _options = $v.options?.toBuilder();
       _result = $v.result;
       _url = $v.url;
       _uuid = $v.uuid;
       _visibility = $v.visibility;
+      _options = $v.options?.toBuilder();
       _$v = null;
     }
     return this;
@@ -231,7 +231,6 @@ class UrlscannerCreateScanV2200ResponseBuilder
                 api, r'UrlscannerCreateScanV2200Response', 'api'),
             message: BuiltValueNullFieldError.checkNotNull(
                 message, r'UrlscannerCreateScanV2200Response', 'message'),
-            options: _options?.build(),
             result: BuiltValueNullFieldError.checkNotNull(
                 result, r'UrlscannerCreateScanV2200Response', 'result'),
             url: BuiltValueNullFieldError.checkNotNull(
@@ -240,6 +239,7 @@ class UrlscannerCreateScanV2200ResponseBuilder
                 uuid, r'UrlscannerCreateScanV2200Response', 'uuid'),
             visibility: BuiltValueNullFieldError.checkNotNull(
                 visibility, r'UrlscannerCreateScanV2200Response', 'visibility'),
+            options: _options?.build(),
           );
     } catch (_) {
       late String _$failedField;

@@ -13,13 +13,13 @@ part 'magic_route_update_single_request.g.dart';
 /// MagicRouteUpdateSingleRequest
 ///
 /// Properties:
-/// * [description] - An optional human provided description of the static route.
 /// * [nexthop] - The next-hop IP Address for the static route.
 /// * [prefix] - IP Prefix in Classless Inter-Domain Routing format.
 /// * [priority] - Priority of the static route.
+/// * [id] - Identifier
+/// * [description] - An optional human provided description of the static route.
 /// * [scope] 
 /// * [weight] - Optional weight of the ECMP scope - if provided.
-/// * [id] - Identifier
 @BuiltValue()
 abstract class MagicRouteUpdateSingleRequest implements MagicRouteAddSingleRequest, Built<MagicRouteUpdateSingleRequest, MagicRouteUpdateSingleRequestBuilder> {
   /// Identifier

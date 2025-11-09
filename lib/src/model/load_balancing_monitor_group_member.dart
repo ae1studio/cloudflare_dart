@@ -11,18 +11,14 @@ part 'load_balancing_monitor_group_member.g.dart';
 /// LoadBalancingMonitorGroupMember
 ///
 /// Properties:
-/// * [createdAt] - The timestamp of when the monitor was added to the group
 /// * [enabled] - Whether this monitor is enabled in the group
 /// * [monitorId] - The ID of the Monitor to use for checking the health of origins within this pool.
 /// * [monitoringOnly] - Whether this monitor is used for monitoring only (does not affect pool health)
 /// * [mustBeHealthy] - Whether this monitor must be healthy for the pool to be considered healthy
+/// * [createdAt] - The timestamp of when the monitor was added to the group
 /// * [updatedAt] - The timestamp of when the monitor group member was last updated
 @BuiltValue()
 abstract class LoadBalancingMonitorGroupMember implements Built<LoadBalancingMonitorGroupMember, LoadBalancingMonitorGroupMemberBuilder> {
-  /// The timestamp of when the monitor was added to the group
-  @BuiltValueField(wireName: r'created_at')
-  DateTime? get createdAt;
-
   /// Whether this monitor is enabled in the group
   @BuiltValueField(wireName: r'enabled')
   bool get enabled;
@@ -38,6 +34,10 @@ abstract class LoadBalancingMonitorGroupMember implements Built<LoadBalancingMon
   /// Whether this monitor must be healthy for the pool to be considered healthy
   @BuiltValueField(wireName: r'must_be_healthy')
   bool get mustBeHealthy;
+
+  /// The timestamp of when the monitor was added to the group
+  @BuiltValueField(wireName: r'created_at')
+  DateTime? get createdAt;
 
   /// The timestamp of when the monitor group member was last updated
   @BuiltValueField(wireName: r'updated_at')
@@ -66,13 +66,6 @@ class _$LoadBalancingMonitorGroupMemberSerializer implements PrimitiveSerializer
     LoadBalancingMonitorGroupMember object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
-    if (object.createdAt != null) {
-      yield r'created_at';
-      yield serializers.serialize(
-        object.createdAt,
-        specifiedType: const FullType(DateTime),
-      );
-    }
     yield r'enabled';
     yield serializers.serialize(
       object.enabled,
@@ -93,6 +86,13 @@ class _$LoadBalancingMonitorGroupMemberSerializer implements PrimitiveSerializer
       object.mustBeHealthy,
       specifiedType: const FullType(bool),
     );
+    if (object.createdAt != null) {
+      yield r'created_at';
+      yield serializers.serialize(
+        object.createdAt,
+        specifiedType: const FullType(DateTime),
+      );
+    }
     if (object.updatedAt != null) {
       yield r'updated_at';
       yield serializers.serialize(
@@ -123,13 +123,6 @@ class _$LoadBalancingMonitorGroupMemberSerializer implements PrimitiveSerializer
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'created_at':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
-          result.createdAt = valueDes;
-          break;
         case r'enabled':
           final valueDes = serializers.deserialize(
             value,
@@ -157,6 +150,13 @@ class _$LoadBalancingMonitorGroupMemberSerializer implements PrimitiveSerializer
             specifiedType: const FullType(bool),
           ) as bool;
           result.mustBeHealthy = valueDes;
+          break;
+        case r'created_at':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(DateTime),
+          ) as DateTime;
+          result.createdAt = valueDes;
           break;
         case r'updated_at':
           final valueDes = serializers.deserialize(

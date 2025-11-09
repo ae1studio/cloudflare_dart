@@ -12,12 +12,16 @@ part 'telemetry_query_request_parameters_calculations_inner.g.dart';
 /// TelemetryQueryRequestParametersCalculationsInner
 ///
 /// Properties:
+/// * [operator_] 
 /// * [alias] 
 /// * [key] 
 /// * [keyType] 
-/// * [operator_] 
 @BuiltValue()
 abstract class TelemetryQueryRequestParametersCalculationsInner implements Built<TelemetryQueryRequestParametersCalculationsInner, TelemetryQueryRequestParametersCalculationsInnerBuilder> {
+  @BuiltValueField(wireName: r'operator')
+  TelemetryQueryRequestParametersCalculationsInnerOperator_Enum get operator_;
+  // enum operator_Enum {  uniq,  count,  max,  min,  sum,  avg,  median,  p001,  p01,  p05,  p10,  p25,  p75,  p90,  p95,  p99,  p999,  stddev,  variance,  COUNT_DISTINCT,  COUNT,  MAX,  MIN,  SUM,  AVG,  MEDIAN,  P001,  P01,  P05,  P10,  P25,  P75,  P90,  P95,  P99,  P999,  STDDEV,  VARIANCE,  };
+
   @BuiltValueField(wireName: r'alias')
   String? get alias;
 
@@ -27,10 +31,6 @@ abstract class TelemetryQueryRequestParametersCalculationsInner implements Built
   @BuiltValueField(wireName: r'keyType')
   TelemetryQueryRequestParametersCalculationsInnerKeyTypeEnum? get keyType;
   // enum keyTypeEnum {  string,  number,  boolean,  };
-
-  @BuiltValueField(wireName: r'operator')
-  TelemetryQueryRequestParametersCalculationsInnerOperator_Enum get operator_;
-  // enum operator_Enum {  uniq,  count,  max,  min,  sum,  avg,  median,  p001,  p01,  p05,  p10,  p25,  p75,  p90,  p95,  p99,  p999,  stddev,  variance,  COUNT_DISTINCT,  COUNT,  MAX,  MIN,  SUM,  AVG,  MEDIAN,  P001,  P01,  P05,  P10,  P25,  P75,  P90,  P95,  P99,  P999,  STDDEV,  VARIANCE,  };
 
   TelemetryQueryRequestParametersCalculationsInner._();
 
@@ -55,6 +55,11 @@ class _$TelemetryQueryRequestParametersCalculationsInnerSerializer implements Pr
     TelemetryQueryRequestParametersCalculationsInner object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    yield r'operator';
+    yield serializers.serialize(
+      object.operator_,
+      specifiedType: const FullType(TelemetryQueryRequestParametersCalculationsInnerOperator_Enum),
+    );
     if (object.alias != null) {
       yield r'alias';
       yield serializers.serialize(
@@ -76,11 +81,6 @@ class _$TelemetryQueryRequestParametersCalculationsInnerSerializer implements Pr
         specifiedType: const FullType(TelemetryQueryRequestParametersCalculationsInnerKeyTypeEnum),
       );
     }
-    yield r'operator';
-    yield serializers.serialize(
-      object.operator_,
-      specifiedType: const FullType(TelemetryQueryRequestParametersCalculationsInnerOperator_Enum),
-    );
   }
 
   @override
@@ -104,6 +104,13 @@ class _$TelemetryQueryRequestParametersCalculationsInnerSerializer implements Pr
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
+        case r'operator':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(TelemetryQueryRequestParametersCalculationsInnerOperator_Enum),
+          ) as TelemetryQueryRequestParametersCalculationsInnerOperator_Enum;
+          result.operator_ = valueDes;
+          break;
         case r'alias':
           final valueDes = serializers.deserialize(
             value,
@@ -124,13 +131,6 @@ class _$TelemetryQueryRequestParametersCalculationsInnerSerializer implements Pr
             specifiedType: const FullType(TelemetryQueryRequestParametersCalculationsInnerKeyTypeEnum),
           ) as TelemetryQueryRequestParametersCalculationsInnerKeyTypeEnum;
           result.keyType = valueDes;
-          break;
-        case r'operator':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(TelemetryQueryRequestParametersCalculationsInnerOperator_Enum),
-          ) as TelemetryQueryRequestParametersCalculationsInnerOperator_Enum;
-          result.operator_ = valueDes;
           break;
         default:
           unhandled.add(key);
@@ -159,23 +159,6 @@ class _$TelemetryQueryRequestParametersCalculationsInnerSerializer implements Pr
     );
     return result.build();
   }
-}
-
-class TelemetryQueryRequestParametersCalculationsInnerKeyTypeEnum extends EnumClass {
-
-  @BuiltValueEnumConst(wireName: r'string')
-  static const TelemetryQueryRequestParametersCalculationsInnerKeyTypeEnum string = _$telemetryQueryRequestParametersCalculationsInnerKeyTypeEnum_string;
-  @BuiltValueEnumConst(wireName: r'number')
-  static const TelemetryQueryRequestParametersCalculationsInnerKeyTypeEnum number = _$telemetryQueryRequestParametersCalculationsInnerKeyTypeEnum_number;
-  @BuiltValueEnumConst(wireName: r'boolean')
-  static const TelemetryQueryRequestParametersCalculationsInnerKeyTypeEnum boolean = _$telemetryQueryRequestParametersCalculationsInnerKeyTypeEnum_boolean;
-
-  static Serializer<TelemetryQueryRequestParametersCalculationsInnerKeyTypeEnum> get serializer => _$telemetryQueryRequestParametersCalculationsInnerKeyTypeEnumSerializer;
-
-  const TelemetryQueryRequestParametersCalculationsInnerKeyTypeEnum._(String name): super(name);
-
-  static BuiltSet<TelemetryQueryRequestParametersCalculationsInnerKeyTypeEnum> get values => _$telemetryQueryRequestParametersCalculationsInnerKeyTypeEnumValues;
-  static TelemetryQueryRequestParametersCalculationsInnerKeyTypeEnum valueOf(String name) => _$telemetryQueryRequestParametersCalculationsInnerKeyTypeEnumValueOf(name);
 }
 
 class TelemetryQueryRequestParametersCalculationsInnerOperator_Enum extends EnumClass {
@@ -263,5 +246,22 @@ class TelemetryQueryRequestParametersCalculationsInnerOperator_Enum extends Enum
 
   static BuiltSet<TelemetryQueryRequestParametersCalculationsInnerOperator_Enum> get values => _$telemetryQueryRequestParametersCalculationsInnerOperatorEnumValues;
   static TelemetryQueryRequestParametersCalculationsInnerOperator_Enum valueOf(String name) => _$telemetryQueryRequestParametersCalculationsInnerOperatorEnumValueOf(name);
+}
+
+class TelemetryQueryRequestParametersCalculationsInnerKeyTypeEnum extends EnumClass {
+
+  @BuiltValueEnumConst(wireName: r'string')
+  static const TelemetryQueryRequestParametersCalculationsInnerKeyTypeEnum string = _$telemetryQueryRequestParametersCalculationsInnerKeyTypeEnum_string;
+  @BuiltValueEnumConst(wireName: r'number')
+  static const TelemetryQueryRequestParametersCalculationsInnerKeyTypeEnum number = _$telemetryQueryRequestParametersCalculationsInnerKeyTypeEnum_number;
+  @BuiltValueEnumConst(wireName: r'boolean')
+  static const TelemetryQueryRequestParametersCalculationsInnerKeyTypeEnum boolean = _$telemetryQueryRequestParametersCalculationsInnerKeyTypeEnum_boolean;
+
+  static Serializer<TelemetryQueryRequestParametersCalculationsInnerKeyTypeEnum> get serializer => _$telemetryQueryRequestParametersCalculationsInnerKeyTypeEnumSerializer;
+
+  const TelemetryQueryRequestParametersCalculationsInnerKeyTypeEnum._(String name): super(name);
+
+  static BuiltSet<TelemetryQueryRequestParametersCalculationsInnerKeyTypeEnum> get values => _$telemetryQueryRequestParametersCalculationsInnerKeyTypeEnumValues;
+  static TelemetryQueryRequestParametersCalculationsInnerKeyTypeEnum valueOf(String name) => _$telemetryQueryRequestParametersCalculationsInnerKeyTypeEnumValueOf(name);
 }
 

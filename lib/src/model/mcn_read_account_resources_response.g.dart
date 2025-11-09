@@ -15,9 +15,9 @@ class _$McnReadAccountResourcesResponse
   @override
   final BuiltList<McnError> messages;
   @override
-  final McnResultInfo? resultInfo;
-  @override
   final bool success;
+  @override
+  final McnResultInfo? resultInfo;
 
   factory _$McnReadAccountResourcesResponse(
           [void Function(McnReadAccountResourcesResponseBuilder)? updates]) =>
@@ -27,8 +27,8 @@ class _$McnReadAccountResourcesResponse
       {required this.result,
       required this.errors,
       required this.messages,
-      this.resultInfo,
-      required this.success})
+      required this.success,
+      this.resultInfo})
       : super._();
   @override
   McnReadAccountResourcesResponse rebuild(
@@ -46,8 +46,8 @@ class _$McnReadAccountResourcesResponse
         result == other.result &&
         errors == other.errors &&
         messages == other.messages &&
-        resultInfo == other.resultInfo &&
-        success == other.success;
+        success == other.success &&
+        resultInfo == other.resultInfo;
   }
 
   @override
@@ -56,8 +56,8 @@ class _$McnReadAccountResourcesResponse
     _$hash = $jc(_$hash, result.hashCode);
     _$hash = $jc(_$hash, errors.hashCode);
     _$hash = $jc(_$hash, messages.hashCode);
-    _$hash = $jc(_$hash, resultInfo.hashCode);
     _$hash = $jc(_$hash, success.hashCode);
+    _$hash = $jc(_$hash, resultInfo.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -68,8 +68,8 @@ class _$McnReadAccountResourcesResponse
           ..add('result', result)
           ..add('errors', errors)
           ..add('messages', messages)
-          ..add('resultInfo', resultInfo)
-          ..add('success', success))
+          ..add('success', success)
+          ..add('resultInfo', resultInfo))
         .toString();
   }
 }
@@ -99,15 +99,15 @@ class McnReadAccountResourcesResponseBuilder
   set messages(covariant ListBuilder<McnError>? messages) =>
       _$this._messages = messages;
 
+  bool? _success;
+  bool? get success => _$this._success;
+  set success(covariant bool? success) => _$this._success = success;
+
   McnResultInfoBuilder? _resultInfo;
   McnResultInfoBuilder get resultInfo =>
       _$this._resultInfo ??= McnResultInfoBuilder();
   set resultInfo(covariant McnResultInfoBuilder? resultInfo) =>
       _$this._resultInfo = resultInfo;
-
-  bool? _success;
-  bool? get success => _$this._success;
-  set success(covariant bool? success) => _$this._success = success;
 
   McnReadAccountResourcesResponseBuilder() {
     McnReadAccountResourcesResponse._defaults(this);
@@ -119,8 +119,8 @@ class McnReadAccountResourcesResponseBuilder
       _result = $v.result.toBuilder();
       _errors = $v.errors.toBuilder();
       _messages = $v.messages.toBuilder();
-      _resultInfo = $v.resultInfo?.toBuilder();
       _success = $v.success;
+      _resultInfo = $v.resultInfo?.toBuilder();
       _$v = null;
     }
     return this;
@@ -147,9 +147,9 @@ class McnReadAccountResourcesResponseBuilder
             result: result.build(),
             errors: errors.build(),
             messages: messages.build(),
-            resultInfo: _resultInfo?.build(),
             success: BuiltValueNullFieldError.checkNotNull(
                 success, r'McnReadAccountResourcesResponse', 'success'),
+            resultInfo: _resultInfo?.build(),
           );
     } catch (_) {
       late String _$failedField;
@@ -160,6 +160,7 @@ class McnReadAccountResourcesResponseBuilder
         errors.build();
         _$failedField = 'messages';
         messages.build();
+
         _$failedField = 'resultInfo';
         _resultInfo?.build();
       } catch (e) {

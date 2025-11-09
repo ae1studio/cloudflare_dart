@@ -16,30 +16,23 @@ part 'aaa_history_components_schemas_response_collection.g.dart';
 /// AaaHistoryComponentsSchemasResponseCollection
 ///
 /// Properties:
-/// * [errors]
-/// * [messages]
+/// * [errors] 
+/// * [messages] 
 /// * [success] - Whether the API call was successful
-/// * [resultInfo]
-/// * [result]
+/// * [resultInfo] 
+/// * [result] 
 @BuiltValue(instantiable: false)
-abstract class AaaHistoryComponentsSchemasResponseCollection
-    implements AaaApiResponseCollection {
+abstract class AaaHistoryComponentsSchemasResponseCollection implements AaaApiResponseCollection {
   @BuiltValueField(wireName: r'result')
   BuiltList<AaaHistory>? get result;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<AaaHistoryComponentsSchemasResponseCollection>
-      get serializer =>
-          _$AaaHistoryComponentsSchemasResponseCollectionSerializer();
+  static Serializer<AaaHistoryComponentsSchemasResponseCollection> get serializer => _$AaaHistoryComponentsSchemasResponseCollectionSerializer();
 }
 
-class _$AaaHistoryComponentsSchemasResponseCollectionSerializer
-    implements
-        PrimitiveSerializer<AaaHistoryComponentsSchemasResponseCollection> {
+class _$AaaHistoryComponentsSchemasResponseCollectionSerializer implements PrimitiveSerializer<AaaHistoryComponentsSchemasResponseCollection> {
   @override
-  final Iterable<Type> types = const [
-    AaaHistoryComponentsSchemasResponseCollection
-  ];
+  final Iterable<Type> types = const [AaaHistoryComponentsSchemasResponseCollection];
 
   @override
   final String wireName = r'AaaHistoryComponentsSchemasResponseCollection';
@@ -59,8 +52,7 @@ class _$AaaHistoryComponentsSchemasResponseCollectionSerializer
     yield r'messages';
     yield serializers.serialize(
       object.messages,
-      specifiedType: const FullType(
-          BuiltList, [FullType(AaaComponentsSchemasMessagesInner)]),
+      specifiedType: const FullType(BuiltList, [FullType(AaaComponentsSchemasMessagesInner)]),
     );
     yield r'success';
     yield serializers.serialize(
@@ -70,8 +62,7 @@ class _$AaaHistoryComponentsSchemasResponseCollectionSerializer
     yield r'errors';
     yield serializers.serialize(
       object.errors,
-      specifiedType: const FullType(
-          BuiltList, [FullType(AaaComponentsSchemasMessagesInner)]),
+      specifiedType: const FullType(BuiltList, [FullType(AaaComponentsSchemasMessagesInner)]),
     );
     if (object.resultInfo != null) {
       yield r'result_info';
@@ -88,9 +79,7 @@ class _$AaaHistoryComponentsSchemasResponseCollectionSerializer
     AaaHistoryComponentsSchemasResponseCollection object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
   }
 
   @override
@@ -99,45 +88,27 @@ class _$AaaHistoryComponentsSchemasResponseCollectionSerializer
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return serializers.deserialize(serialized,
-            specifiedType:
-                FullType($AaaHistoryComponentsSchemasResponseCollection))
-        as $AaaHistoryComponentsSchemasResponseCollection;
+    return serializers.deserialize(serialized, specifiedType: FullType($AaaHistoryComponentsSchemasResponseCollection)) as $AaaHistoryComponentsSchemasResponseCollection;
   }
 }
 
 /// a concrete implementation of [AaaHistoryComponentsSchemasResponseCollection], since [AaaHistoryComponentsSchemasResponseCollection] is not instantiable
 @BuiltValue(instantiable: true)
-abstract class $AaaHistoryComponentsSchemasResponseCollection
-    implements
-        AaaHistoryComponentsSchemasResponseCollection,
-        Built<$AaaHistoryComponentsSchemasResponseCollection,
-            $AaaHistoryComponentsSchemasResponseCollectionBuilder> {
+abstract class $AaaHistoryComponentsSchemasResponseCollection implements AaaHistoryComponentsSchemasResponseCollection, Built<$AaaHistoryComponentsSchemasResponseCollection, $AaaHistoryComponentsSchemasResponseCollectionBuilder> {
   $AaaHistoryComponentsSchemasResponseCollection._();
 
-  factory $AaaHistoryComponentsSchemasResponseCollection(
-      [void Function($AaaHistoryComponentsSchemasResponseCollectionBuilder)?
-          updates]) = _$$AaaHistoryComponentsSchemasResponseCollection;
+  factory $AaaHistoryComponentsSchemasResponseCollection([void Function($AaaHistoryComponentsSchemasResponseCollectionBuilder)? updates]) = _$$AaaHistoryComponentsSchemasResponseCollection;
 
   @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(
-          $AaaHistoryComponentsSchemasResponseCollectionBuilder b) =>
-      b;
+  static void _defaults($AaaHistoryComponentsSchemasResponseCollectionBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<$AaaHistoryComponentsSchemasResponseCollection>
-      get serializer =>
-          _$$AaaHistoryComponentsSchemasResponseCollectionSerializer();
+  static Serializer<$AaaHistoryComponentsSchemasResponseCollection> get serializer => _$$AaaHistoryComponentsSchemasResponseCollectionSerializer();
 }
 
-class _$$AaaHistoryComponentsSchemasResponseCollectionSerializer
-    implements
-        PrimitiveSerializer<$AaaHistoryComponentsSchemasResponseCollection> {
+class _$$AaaHistoryComponentsSchemasResponseCollectionSerializer implements PrimitiveSerializer<$AaaHistoryComponentsSchemasResponseCollection> {
   @override
-  final Iterable<Type> types = const [
-    $AaaHistoryComponentsSchemasResponseCollection,
-    _$$AaaHistoryComponentsSchemasResponseCollection
-  ];
+  final Iterable<Type> types = const [$AaaHistoryComponentsSchemasResponseCollection, _$$AaaHistoryComponentsSchemasResponseCollection];
 
   @override
   final String wireName = r'$AaaHistoryComponentsSchemasResponseCollection';
@@ -148,9 +119,7 @@ class _$$AaaHistoryComponentsSchemasResponseCollectionSerializer
     $AaaHistoryComponentsSchemasResponseCollection object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return serializers.serialize(object,
-        specifiedType:
-            FullType(AaaHistoryComponentsSchemasResponseCollection))!;
+    return serializers.serialize(object, specifiedType: FullType(AaaHistoryComponentsSchemasResponseCollection))!;
   }
 
   void _deserializeProperties(
@@ -175,8 +144,7 @@ class _$$AaaHistoryComponentsSchemasResponseCollectionSerializer
         case r'messages':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(
-                BuiltList, [FullType(AaaComponentsSchemasMessagesInner)]),
+            specifiedType: const FullType(BuiltList, [FullType(AaaComponentsSchemasMessagesInner)]),
           ) as BuiltList<AaaComponentsSchemasMessagesInner>;
           result.messages.replace(valueDes);
           break;
@@ -190,8 +158,7 @@ class _$$AaaHistoryComponentsSchemasResponseCollectionSerializer
         case r'errors':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(
-                BuiltList, [FullType(AaaComponentsSchemasMessagesInner)]),
+            specifiedType: const FullType(BuiltList, [FullType(AaaComponentsSchemasMessagesInner)]),
           ) as BuiltList<AaaComponentsSchemasMessagesInner>;
           result.errors.replace(valueDes);
           break;
@@ -230,3 +197,4 @@ class _$$AaaHistoryComponentsSchemasResponseCollectionSerializer
     return result.build();
   }
 }
+

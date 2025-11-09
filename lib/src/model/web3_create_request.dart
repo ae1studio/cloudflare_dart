@@ -12,20 +12,12 @@ part 'web3_create_request.g.dart';
 /// Web3CreateRequest
 ///
 /// Properties:
-/// * [description] - Specify an optional description of the hostname.
-/// * [dnslink] - Specify the DNSLink value used if the target is ipfs.
 /// * [name] - Specify the hostname that points to the target gateway via CNAME.
 /// * [target] 
+/// * [description] - Specify an optional description of the hostname.
+/// * [dnslink] - Specify the DNSLink value used if the target is ipfs.
 @BuiltValue()
 abstract class Web3CreateRequest implements Built<Web3CreateRequest, Web3CreateRequestBuilder> {
-  /// Specify an optional description of the hostname.
-  @BuiltValueField(wireName: r'description')
-  String? get description;
-
-  /// Specify the DNSLink value used if the target is ipfs.
-  @BuiltValueField(wireName: r'dnslink')
-  String? get dnslink;
-
   /// Specify the hostname that points to the target gateway via CNAME.
   @BuiltValueField(wireName: r'name')
   String get name;
@@ -33,6 +25,14 @@ abstract class Web3CreateRequest implements Built<Web3CreateRequest, Web3CreateR
   @BuiltValueField(wireName: r'target')
   Web3Target get target;
   // enum targetEnum {  ethereum,  ipfs,  ipfs_universal_path,  };
+
+  /// Specify an optional description of the hostname.
+  @BuiltValueField(wireName: r'description')
+  String? get description;
+
+  /// Specify the DNSLink value used if the target is ipfs.
+  @BuiltValueField(wireName: r'dnslink')
+  String? get dnslink;
 
   Web3CreateRequest._();
 
@@ -57,6 +57,16 @@ class _$Web3CreateRequestSerializer implements PrimitiveSerializer<Web3CreateReq
     Web3CreateRequest object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    yield r'name';
+    yield serializers.serialize(
+      object.name,
+      specifiedType: const FullType(String),
+    );
+    yield r'target';
+    yield serializers.serialize(
+      object.target,
+      specifiedType: const FullType(Web3Target),
+    );
     if (object.description != null) {
       yield r'description';
       yield serializers.serialize(
@@ -71,16 +81,6 @@ class _$Web3CreateRequestSerializer implements PrimitiveSerializer<Web3CreateReq
         specifiedType: const FullType(String),
       );
     }
-    yield r'name';
-    yield serializers.serialize(
-      object.name,
-      specifiedType: const FullType(String),
-    );
-    yield r'target';
-    yield serializers.serialize(
-      object.target,
-      specifiedType: const FullType(Web3Target),
-    );
   }
 
   @override
@@ -104,20 +104,6 @@ class _$Web3CreateRequestSerializer implements PrimitiveSerializer<Web3CreateReq
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'description':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.description = valueDes;
-          break;
-        case r'dnslink':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.dnslink = valueDes;
-          break;
         case r'name':
           final valueDes = serializers.deserialize(
             value,
@@ -131,6 +117,20 @@ class _$Web3CreateRequestSerializer implements PrimitiveSerializer<Web3CreateReq
             specifiedType: const FullType(Web3Target),
           ) as Web3Target;
           result.target = valueDes;
+          break;
+        case r'description':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.description = valueDes;
+          break;
+        case r'dnslink':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.dnslink = valueDes;
           break;
         default:
           unhandled.add(key);

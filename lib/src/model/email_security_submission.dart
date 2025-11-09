@@ -12,19 +12,25 @@ part 'email_security_submission.g.dart';
 /// EmailSecuritySubmission
 ///
 /// Properties:
+/// * [requestedTs] 
+/// * [submissionId] 
 /// * [originalDisposition] 
 /// * [originalEdfHash] 
 /// * [outcome] 
 /// * [outcomeDisposition] 
 /// * [requestedBy] 
 /// * [requestedDisposition] 
-/// * [requestedTs] 
 /// * [status] 
 /// * [subject] 
-/// * [submissionId] 
 /// * [type] 
 @BuiltValue()
 abstract class EmailSecuritySubmission implements Built<EmailSecuritySubmission, EmailSecuritySubmissionBuilder> {
+  @BuiltValueField(wireName: r'requested_ts')
+  DateTime get requestedTs;
+
+  @BuiltValueField(wireName: r'submission_id')
+  String get submissionId;
+
   @BuiltValueField(wireName: r'original_disposition')
   EmailSecurityDispositionLabel? get originalDisposition;
 
@@ -43,17 +49,11 @@ abstract class EmailSecuritySubmission implements Built<EmailSecuritySubmission,
   @BuiltValueField(wireName: r'requested_disposition')
   EmailSecurityDispositionLabel? get requestedDisposition;
 
-  @BuiltValueField(wireName: r'requested_ts')
-  DateTime get requestedTs;
-
   @BuiltValueField(wireName: r'status')
   String? get status;
 
   @BuiltValueField(wireName: r'subject')
   String? get subject;
-
-  @BuiltValueField(wireName: r'submission_id')
-  String get submissionId;
 
   @BuiltValueField(wireName: r'type')
   String? get type;
@@ -81,6 +81,16 @@ class _$EmailSecuritySubmissionSerializer implements PrimitiveSerializer<EmailSe
     EmailSecuritySubmission object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    yield r'requested_ts';
+    yield serializers.serialize(
+      object.requestedTs,
+      specifiedType: const FullType(DateTime),
+    );
+    yield r'submission_id';
+    yield serializers.serialize(
+      object.submissionId,
+      specifiedType: const FullType(String),
+    );
     if (object.originalDisposition != null) {
       yield r'original_disposition';
       yield serializers.serialize(
@@ -123,11 +133,6 @@ class _$EmailSecuritySubmissionSerializer implements PrimitiveSerializer<EmailSe
         specifiedType: const FullType(EmailSecurityDispositionLabel),
       );
     }
-    yield r'requested_ts';
-    yield serializers.serialize(
-      object.requestedTs,
-      specifiedType: const FullType(DateTime),
-    );
     if (object.status != null) {
       yield r'status';
       yield serializers.serialize(
@@ -142,11 +147,6 @@ class _$EmailSecuritySubmissionSerializer implements PrimitiveSerializer<EmailSe
         specifiedType: const FullType.nullable(String),
       );
     }
-    yield r'submission_id';
-    yield serializers.serialize(
-      object.submissionId,
-      specifiedType: const FullType(String),
-    );
     if (object.type != null) {
       yield r'type';
       yield serializers.serialize(
@@ -177,6 +177,20 @@ class _$EmailSecuritySubmissionSerializer implements PrimitiveSerializer<EmailSe
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
+        case r'requested_ts':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(DateTime),
+          ) as DateTime;
+          result.requestedTs = valueDes;
+          break;
+        case r'submission_id':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.submissionId = valueDes;
+          break;
         case r'original_disposition':
           final valueDes = serializers.deserialize(
             value,
@@ -222,13 +236,6 @@ class _$EmailSecuritySubmissionSerializer implements PrimitiveSerializer<EmailSe
           ) as EmailSecurityDispositionLabel;
           result.requestedDisposition = valueDes;
           break;
-        case r'requested_ts':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
-          result.requestedTs = valueDes;
-          break;
         case r'status':
           final valueDes = serializers.deserialize(
             value,
@@ -244,13 +251,6 @@ class _$EmailSecuritySubmissionSerializer implements PrimitiveSerializer<EmailSe
           ) as String?;
           if (valueDes == null) continue;
           result.subject = valueDes;
-          break;
-        case r'submission_id':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.submissionId = valueDes;
           break;
         case r'type':
           final valueDes = serializers.deserialize(

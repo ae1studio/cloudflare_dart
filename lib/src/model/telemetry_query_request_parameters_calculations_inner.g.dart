@@ -6,43 +6,6 @@ part of 'telemetry_query_request_parameters_calculations_inner.dart';
 // BuiltValueGenerator
 // **************************************************************************
 
-const TelemetryQueryRequestParametersCalculationsInnerKeyTypeEnum
-    _$telemetryQueryRequestParametersCalculationsInnerKeyTypeEnum_string =
-    const TelemetryQueryRequestParametersCalculationsInnerKeyTypeEnum._(
-        'string');
-const TelemetryQueryRequestParametersCalculationsInnerKeyTypeEnum
-    _$telemetryQueryRequestParametersCalculationsInnerKeyTypeEnum_number =
-    const TelemetryQueryRequestParametersCalculationsInnerKeyTypeEnum._(
-        'number');
-const TelemetryQueryRequestParametersCalculationsInnerKeyTypeEnum
-    _$telemetryQueryRequestParametersCalculationsInnerKeyTypeEnum_boolean =
-    const TelemetryQueryRequestParametersCalculationsInnerKeyTypeEnum._(
-        'boolean');
-
-TelemetryQueryRequestParametersCalculationsInnerKeyTypeEnum
-    _$telemetryQueryRequestParametersCalculationsInnerKeyTypeEnumValueOf(
-        String name) {
-  switch (name) {
-    case 'string':
-      return _$telemetryQueryRequestParametersCalculationsInnerKeyTypeEnum_string;
-    case 'number':
-      return _$telemetryQueryRequestParametersCalculationsInnerKeyTypeEnum_number;
-    case 'boolean':
-      return _$telemetryQueryRequestParametersCalculationsInnerKeyTypeEnum_boolean;
-    default:
-      throw ArgumentError(name);
-  }
-}
-
-final BuiltSet<TelemetryQueryRequestParametersCalculationsInnerKeyTypeEnum>
-    _$telemetryQueryRequestParametersCalculationsInnerKeyTypeEnumValues =
-    BuiltSet<
-        TelemetryQueryRequestParametersCalculationsInnerKeyTypeEnum>(const <TelemetryQueryRequestParametersCalculationsInnerKeyTypeEnum>[
-  _$telemetryQueryRequestParametersCalculationsInnerKeyTypeEnum_string,
-  _$telemetryQueryRequestParametersCalculationsInnerKeyTypeEnum_number,
-  _$telemetryQueryRequestParametersCalculationsInnerKeyTypeEnum_boolean,
-]);
-
 const TelemetryQueryRequestParametersCalculationsInnerOperator_Enum
     _$telemetryQueryRequestParametersCalculationsInnerOperatorEnum_uniq =
     const TelemetryQueryRequestParametersCalculationsInnerOperator_Enum._(
@@ -325,49 +288,49 @@ final BuiltSet<TelemetryQueryRequestParametersCalculationsInnerOperator_Enum>
   _$telemetryQueryRequestParametersCalculationsInnerOperatorEnum_VARIANCE,
 ]);
 
-Serializer<TelemetryQueryRequestParametersCalculationsInnerKeyTypeEnum>
-    _$telemetryQueryRequestParametersCalculationsInnerKeyTypeEnumSerializer =
-    _$TelemetryQueryRequestParametersCalculationsInnerKeyTypeEnumSerializer();
+const TelemetryQueryRequestParametersCalculationsInnerKeyTypeEnum
+    _$telemetryQueryRequestParametersCalculationsInnerKeyTypeEnum_string =
+    const TelemetryQueryRequestParametersCalculationsInnerKeyTypeEnum._(
+        'string');
+const TelemetryQueryRequestParametersCalculationsInnerKeyTypeEnum
+    _$telemetryQueryRequestParametersCalculationsInnerKeyTypeEnum_number =
+    const TelemetryQueryRequestParametersCalculationsInnerKeyTypeEnum._(
+        'number');
+const TelemetryQueryRequestParametersCalculationsInnerKeyTypeEnum
+    _$telemetryQueryRequestParametersCalculationsInnerKeyTypeEnum_boolean =
+    const TelemetryQueryRequestParametersCalculationsInnerKeyTypeEnum._(
+        'boolean');
+
+TelemetryQueryRequestParametersCalculationsInnerKeyTypeEnum
+    _$telemetryQueryRequestParametersCalculationsInnerKeyTypeEnumValueOf(
+        String name) {
+  switch (name) {
+    case 'string':
+      return _$telemetryQueryRequestParametersCalculationsInnerKeyTypeEnum_string;
+    case 'number':
+      return _$telemetryQueryRequestParametersCalculationsInnerKeyTypeEnum_number;
+    case 'boolean':
+      return _$telemetryQueryRequestParametersCalculationsInnerKeyTypeEnum_boolean;
+    default:
+      throw ArgumentError(name);
+  }
+}
+
+final BuiltSet<TelemetryQueryRequestParametersCalculationsInnerKeyTypeEnum>
+    _$telemetryQueryRequestParametersCalculationsInnerKeyTypeEnumValues =
+    BuiltSet<
+        TelemetryQueryRequestParametersCalculationsInnerKeyTypeEnum>(const <TelemetryQueryRequestParametersCalculationsInnerKeyTypeEnum>[
+  _$telemetryQueryRequestParametersCalculationsInnerKeyTypeEnum_string,
+  _$telemetryQueryRequestParametersCalculationsInnerKeyTypeEnum_number,
+  _$telemetryQueryRequestParametersCalculationsInnerKeyTypeEnum_boolean,
+]);
+
 Serializer<TelemetryQueryRequestParametersCalculationsInnerOperator_Enum>
     _$telemetryQueryRequestParametersCalculationsInnerOperatorEnumSerializer =
     _$TelemetryQueryRequestParametersCalculationsInnerOperator_EnumSerializer();
-
-class _$TelemetryQueryRequestParametersCalculationsInnerKeyTypeEnumSerializer
-    implements
-        PrimitiveSerializer<
-            TelemetryQueryRequestParametersCalculationsInnerKeyTypeEnum> {
-  static const Map<String, Object> _toWire = const <String, Object>{
-    'string': 'string',
-    'number': 'number',
-    'boolean': 'boolean',
-  };
-  static const Map<Object, String> _fromWire = const <Object, String>{
-    'string': 'string',
-    'number': 'number',
-    'boolean': 'boolean',
-  };
-
-  @override
-  final Iterable<Type> types = const <Type>[
-    TelemetryQueryRequestParametersCalculationsInnerKeyTypeEnum
-  ];
-  @override
-  final String wireName =
-      'TelemetryQueryRequestParametersCalculationsInnerKeyTypeEnum';
-
-  @override
-  Object serialize(Serializers serializers,
-          TelemetryQueryRequestParametersCalculationsInnerKeyTypeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
-
-  @override
-  TelemetryQueryRequestParametersCalculationsInnerKeyTypeEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      TelemetryQueryRequestParametersCalculationsInnerKeyTypeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
-}
+Serializer<TelemetryQueryRequestParametersCalculationsInnerKeyTypeEnum>
+    _$telemetryQueryRequestParametersCalculationsInnerKeyTypeEnumSerializer =
+    _$TelemetryQueryRequestParametersCalculationsInnerKeyTypeEnumSerializer();
 
 class _$TelemetryQueryRequestParametersCalculationsInnerOperator_EnumSerializer
     implements
@@ -476,16 +439,53 @@ class _$TelemetryQueryRequestParametersCalculationsInnerOperator_EnumSerializer
           _fromWire[serialized] ?? (serialized is String ? serialized : ''));
 }
 
+class _$TelemetryQueryRequestParametersCalculationsInnerKeyTypeEnumSerializer
+    implements
+        PrimitiveSerializer<
+            TelemetryQueryRequestParametersCalculationsInnerKeyTypeEnum> {
+  static const Map<String, Object> _toWire = const <String, Object>{
+    'string': 'string',
+    'number': 'number',
+    'boolean': 'boolean',
+  };
+  static const Map<Object, String> _fromWire = const <Object, String>{
+    'string': 'string',
+    'number': 'number',
+    'boolean': 'boolean',
+  };
+
+  @override
+  final Iterable<Type> types = const <Type>[
+    TelemetryQueryRequestParametersCalculationsInnerKeyTypeEnum
+  ];
+  @override
+  final String wireName =
+      'TelemetryQueryRequestParametersCalculationsInnerKeyTypeEnum';
+
+  @override
+  Object serialize(Serializers serializers,
+          TelemetryQueryRequestParametersCalculationsInnerKeyTypeEnum object,
+          {FullType specifiedType = FullType.unspecified}) =>
+      _toWire[object.name] ?? object.name;
+
+  @override
+  TelemetryQueryRequestParametersCalculationsInnerKeyTypeEnum deserialize(
+          Serializers serializers, Object serialized,
+          {FullType specifiedType = FullType.unspecified}) =>
+      TelemetryQueryRequestParametersCalculationsInnerKeyTypeEnum.valueOf(
+          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+}
+
 class _$TelemetryQueryRequestParametersCalculationsInner
     extends TelemetryQueryRequestParametersCalculationsInner {
+  @override
+  final TelemetryQueryRequestParametersCalculationsInnerOperator_Enum operator_;
   @override
   final String? alias;
   @override
   final String? key;
   @override
   final TelemetryQueryRequestParametersCalculationsInnerKeyTypeEnum? keyType;
-  @override
-  final TelemetryQueryRequestParametersCalculationsInnerOperator_Enum operator_;
 
   factory _$TelemetryQueryRequestParametersCalculationsInner(
           [void Function(
@@ -496,7 +496,7 @@ class _$TelemetryQueryRequestParametersCalculationsInner
           ._build();
 
   _$TelemetryQueryRequestParametersCalculationsInner._(
-      {this.alias, this.key, this.keyType, required this.operator_})
+      {required this.operator_, this.alias, this.key, this.keyType})
       : super._();
   @override
   TelemetryQueryRequestParametersCalculationsInner rebuild(
@@ -512,19 +512,19 @@ class _$TelemetryQueryRequestParametersCalculationsInner
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is TelemetryQueryRequestParametersCalculationsInner &&
+        operator_ == other.operator_ &&
         alias == other.alias &&
         key == other.key &&
-        keyType == other.keyType &&
-        operator_ == other.operator_;
+        keyType == other.keyType;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
+    _$hash = $jc(_$hash, operator_.hashCode);
     _$hash = $jc(_$hash, alias.hashCode);
     _$hash = $jc(_$hash, key.hashCode);
     _$hash = $jc(_$hash, keyType.hashCode);
-    _$hash = $jc(_$hash, operator_.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -533,10 +533,10 @@ class _$TelemetryQueryRequestParametersCalculationsInner
   String toString() {
     return (newBuiltValueToStringHelper(
             r'TelemetryQueryRequestParametersCalculationsInner')
+          ..add('operator_', operator_)
           ..add('alias', alias)
           ..add('key', key)
-          ..add('keyType', keyType)
-          ..add('operator_', operator_))
+          ..add('keyType', keyType))
         .toString();
   }
 }
@@ -546,6 +546,14 @@ class TelemetryQueryRequestParametersCalculationsInnerBuilder
         Builder<TelemetryQueryRequestParametersCalculationsInner,
             TelemetryQueryRequestParametersCalculationsInnerBuilder> {
   _$TelemetryQueryRequestParametersCalculationsInner? _$v;
+
+  TelemetryQueryRequestParametersCalculationsInnerOperator_Enum? _operator_;
+  TelemetryQueryRequestParametersCalculationsInnerOperator_Enum?
+      get operator_ => _$this._operator_;
+  set operator_(
+          TelemetryQueryRequestParametersCalculationsInnerOperator_Enum?
+              operator_) =>
+      _$this._operator_ = operator_;
 
   String? _alias;
   String? get alias => _$this._alias;
@@ -563,14 +571,6 @@ class TelemetryQueryRequestParametersCalculationsInnerBuilder
               keyType) =>
       _$this._keyType = keyType;
 
-  TelemetryQueryRequestParametersCalculationsInnerOperator_Enum? _operator_;
-  TelemetryQueryRequestParametersCalculationsInnerOperator_Enum?
-      get operator_ => _$this._operator_;
-  set operator_(
-          TelemetryQueryRequestParametersCalculationsInnerOperator_Enum?
-              operator_) =>
-      _$this._operator_ = operator_;
-
   TelemetryQueryRequestParametersCalculationsInnerBuilder() {
     TelemetryQueryRequestParametersCalculationsInner._defaults(this);
   }
@@ -578,10 +578,10 @@ class TelemetryQueryRequestParametersCalculationsInnerBuilder
   TelemetryQueryRequestParametersCalculationsInnerBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
+      _operator_ = $v.operator_;
       _alias = $v.alias;
       _key = $v.key;
       _keyType = $v.keyType;
-      _operator_ = $v.operator_;
       _$v = null;
     }
     return this;
@@ -605,11 +605,11 @@ class TelemetryQueryRequestParametersCalculationsInnerBuilder
   _$TelemetryQueryRequestParametersCalculationsInner _build() {
     final _$result = _$v ??
         _$TelemetryQueryRequestParametersCalculationsInner._(
+          operator_: BuiltValueNullFieldError.checkNotNull(operator_,
+              r'TelemetryQueryRequestParametersCalculationsInner', 'operator_'),
           alias: alias,
           key: key,
           keyType: keyType,
-          operator_: BuiltValueNullFieldError.checkNotNull(operator_,
-              r'TelemetryQueryRequestParametersCalculationsInner', 'operator_'),
         );
     replace(_$result);
     return _$result;

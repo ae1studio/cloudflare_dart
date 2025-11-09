@@ -8,18 +8,18 @@ part of 'teams_devices_fallback_domain.dart';
 
 class _$TeamsDevicesFallbackDomain extends TeamsDevicesFallbackDomain {
   @override
+  final String suffix;
+  @override
   final String? description;
   @override
   final BuiltList<String>? dnsServer;
-  @override
-  final String suffix;
 
   factory _$TeamsDevicesFallbackDomain(
           [void Function(TeamsDevicesFallbackDomainBuilder)? updates]) =>
       (TeamsDevicesFallbackDomainBuilder()..update(updates))._build();
 
   _$TeamsDevicesFallbackDomain._(
-      {this.description, this.dnsServer, required this.suffix})
+      {required this.suffix, this.description, this.dnsServer})
       : super._();
   @override
   TeamsDevicesFallbackDomain rebuild(
@@ -34,17 +34,17 @@ class _$TeamsDevicesFallbackDomain extends TeamsDevicesFallbackDomain {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is TeamsDevicesFallbackDomain &&
+        suffix == other.suffix &&
         description == other.description &&
-        dnsServer == other.dnsServer &&
-        suffix == other.suffix;
+        dnsServer == other.dnsServer;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
+    _$hash = $jc(_$hash, suffix.hashCode);
     _$hash = $jc(_$hash, description.hashCode);
     _$hash = $jc(_$hash, dnsServer.hashCode);
-    _$hash = $jc(_$hash, suffix.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -52,9 +52,9 @@ class _$TeamsDevicesFallbackDomain extends TeamsDevicesFallbackDomain {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'TeamsDevicesFallbackDomain')
+          ..add('suffix', suffix)
           ..add('description', description)
-          ..add('dnsServer', dnsServer)
-          ..add('suffix', suffix))
+          ..add('dnsServer', dnsServer))
         .toString();
   }
 }
@@ -63,6 +63,10 @@ class TeamsDevicesFallbackDomainBuilder
     implements
         Builder<TeamsDevicesFallbackDomain, TeamsDevicesFallbackDomainBuilder> {
   _$TeamsDevicesFallbackDomain? _$v;
+
+  String? _suffix;
+  String? get suffix => _$this._suffix;
+  set suffix(String? suffix) => _$this._suffix = suffix;
 
   String? _description;
   String? get description => _$this._description;
@@ -74,10 +78,6 @@ class TeamsDevicesFallbackDomainBuilder
   set dnsServer(ListBuilder<String>? dnsServer) =>
       _$this._dnsServer = dnsServer;
 
-  String? _suffix;
-  String? get suffix => _$this._suffix;
-  set suffix(String? suffix) => _$this._suffix = suffix;
-
   TeamsDevicesFallbackDomainBuilder() {
     TeamsDevicesFallbackDomain._defaults(this);
   }
@@ -85,9 +85,9 @@ class TeamsDevicesFallbackDomainBuilder
   TeamsDevicesFallbackDomainBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
+      _suffix = $v.suffix;
       _description = $v.description;
       _dnsServer = $v.dnsServer?.toBuilder();
-      _suffix = $v.suffix;
       _$v = null;
     }
     return this;
@@ -111,10 +111,10 @@ class TeamsDevicesFallbackDomainBuilder
     try {
       _$result = _$v ??
           _$TeamsDevicesFallbackDomain._(
-            description: description,
-            dnsServer: _dnsServer?.build(),
             suffix: BuiltValueNullFieldError.checkNotNull(
                 suffix, r'TeamsDevicesFallbackDomain', 'suffix'),
+            description: description,
+            dnsServer: _dnsServer?.build(),
           );
     } catch (_) {
       late String _$failedField;

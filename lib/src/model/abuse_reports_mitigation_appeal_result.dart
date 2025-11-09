@@ -15,13 +15,19 @@ part 'abuse_reports_mitigation_appeal_result.g.dart';
 /// AbuseReportsMitigationAppealResult
 ///
 /// Properties:
+/// * [resultInfo] 
+/// * [success] 
 /// * [errors] 
 /// * [messages] 
 /// * [result] 
-/// * [resultInfo] 
-/// * [success] 
 @BuiltValue()
 abstract class AbuseReportsMitigationAppealResult implements Built<AbuseReportsMitigationAppealResult, AbuseReportsMitigationAppealResultBuilder> {
+  @BuiltValueField(wireName: r'result_info')
+  ListAbuseReports200ResponseResultInfo get resultInfo;
+
+  @BuiltValueField(wireName: r'success')
+  bool get success;
+
   @BuiltValueField(wireName: r'errors')
   BuiltList<AbuseReportsMessage>? get errors;
 
@@ -30,12 +36,6 @@ abstract class AbuseReportsMitigationAppealResult implements Built<AbuseReportsM
 
   @BuiltValueField(wireName: r'result')
   BuiltList<AbuseReportsMitigationListItem>? get result;
-
-  @BuiltValueField(wireName: r'result_info')
-  ListAbuseReports200ResponseResultInfo get resultInfo;
-
-  @BuiltValueField(wireName: r'success')
-  bool get success;
 
   AbuseReportsMitigationAppealResult._();
 
@@ -60,6 +60,16 @@ class _$AbuseReportsMitigationAppealResultSerializer implements PrimitiveSeriali
     AbuseReportsMitigationAppealResult object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    yield r'result_info';
+    yield serializers.serialize(
+      object.resultInfo,
+      specifiedType: const FullType(ListAbuseReports200ResponseResultInfo),
+    );
+    yield r'success';
+    yield serializers.serialize(
+      object.success,
+      specifiedType: const FullType(bool),
+    );
     if (object.errors != null) {
       yield r'errors';
       yield serializers.serialize(
@@ -81,16 +91,6 @@ class _$AbuseReportsMitigationAppealResultSerializer implements PrimitiveSeriali
         specifiedType: const FullType(BuiltList, [FullType(AbuseReportsMitigationListItem)]),
       );
     }
-    yield r'result_info';
-    yield serializers.serialize(
-      object.resultInfo,
-      specifiedType: const FullType(ListAbuseReports200ResponseResultInfo),
-    );
-    yield r'success';
-    yield serializers.serialize(
-      object.success,
-      specifiedType: const FullType(bool),
-    );
   }
 
   @override
@@ -114,6 +114,20 @@ class _$AbuseReportsMitigationAppealResultSerializer implements PrimitiveSeriali
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
+        case r'result_info':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(ListAbuseReports200ResponseResultInfo),
+          ) as ListAbuseReports200ResponseResultInfo;
+          result.resultInfo.replace(valueDes);
+          break;
+        case r'success':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(bool),
+          ) as bool;
+          result.success = valueDes;
+          break;
         case r'errors':
           final valueDes = serializers.deserialize(
             value,
@@ -134,20 +148,6 @@ class _$AbuseReportsMitigationAppealResultSerializer implements PrimitiveSeriali
             specifiedType: const FullType(BuiltList, [FullType(AbuseReportsMitigationListItem)]),
           ) as BuiltList<AbuseReportsMitigationListItem>;
           result.result.replace(valueDes);
-          break;
-        case r'result_info':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(ListAbuseReports200ResponseResultInfo),
-          ) as ListAbuseReports200ResponseResultInfo;
-          result.resultInfo.replace(valueDes);
-          break;
-        case r'success':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
-          result.success = valueDes;
           break;
         default:
           unhandled.add(key);

@@ -14,8 +14,8 @@ part 'argo_config_result_object.g.dart';
 /// Properties:
 /// * [editable] - Specifies if the setting is editable.
 /// * [id] - Specifies the identifier of the Argo Smart Routing setting.
-/// * [modifiedOn] - Specifies the time when the setting was last modified.
 /// * [value] 
+/// * [modifiedOn] - Specifies the time when the setting was last modified.
 @BuiltValue()
 abstract class ArgoConfigResultObject implements Built<ArgoConfigResultObject, ArgoConfigResultObjectBuilder> {
   /// Specifies if the setting is editable.
@@ -26,13 +26,13 @@ abstract class ArgoConfigResultObject implements Built<ArgoConfigResultObject, A
   @BuiltValueField(wireName: r'id')
   String get id;
 
-  /// Specifies the time when the setting was last modified.
-  @BuiltValueField(wireName: r'modified_on')
-  DateTime? get modifiedOn;
-
   @BuiltValueField(wireName: r'value')
   ArgoConfigSettingValue get value;
   // enum valueEnum {  on,  off,  };
+
+  /// Specifies the time when the setting was last modified.
+  @BuiltValueField(wireName: r'modified_on')
+  DateTime? get modifiedOn;
 
   ArgoConfigResultObject._();
 
@@ -67,6 +67,11 @@ class _$ArgoConfigResultObjectSerializer implements PrimitiveSerializer<ArgoConf
       object.id,
       specifiedType: const FullType(String),
     );
+    yield r'value';
+    yield serializers.serialize(
+      object.value,
+      specifiedType: const FullType(ArgoConfigSettingValue),
+    );
     if (object.modifiedOn != null) {
       yield r'modified_on';
       yield serializers.serialize(
@@ -74,11 +79,6 @@ class _$ArgoConfigResultObjectSerializer implements PrimitiveSerializer<ArgoConf
         specifiedType: const FullType(DateTime),
       );
     }
-    yield r'value';
-    yield serializers.serialize(
-      object.value,
-      specifiedType: const FullType(ArgoConfigSettingValue),
-    );
   }
 
   @override
@@ -116,19 +116,19 @@ class _$ArgoConfigResultObjectSerializer implements PrimitiveSerializer<ArgoConf
           ) as String;
           result.id = valueDes;
           break;
-        case r'modified_on':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
-          result.modifiedOn = valueDes;
-          break;
         case r'value':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(ArgoConfigSettingValue),
           ) as ArgoConfigSettingValue;
           result.value = valueDes;
+          break;
+        case r'modified_on':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(DateTime),
+          ) as DateTime;
+          result.modifiedOn = valueDes;
           break;
         default:
           unhandled.add(key);

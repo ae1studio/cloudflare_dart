@@ -66,9 +66,9 @@ class _$CustomEntry extends CustomEntry {
   @override
   final DlpPattern pattern;
   @override
-  final String? profileId;
-  @override
   final DateTime updatedAt;
+  @override
+  final String? profileId;
 
   factory _$CustomEntry([void Function(CustomEntryBuilder)? updates]) =>
       (CustomEntryBuilder()..update(updates))._build();
@@ -80,8 +80,8 @@ class _$CustomEntry extends CustomEntry {
       required this.id,
       required this.name,
       required this.pattern,
-      this.profileId,
-      required this.updatedAt})
+      required this.updatedAt,
+      this.profileId})
       : super._();
   @override
   CustomEntry rebuild(void Function(CustomEntryBuilder) updates) =>
@@ -100,8 +100,8 @@ class _$CustomEntry extends CustomEntry {
         id == other.id &&
         name == other.name &&
         pattern == other.pattern &&
-        profileId == other.profileId &&
-        updatedAt == other.updatedAt;
+        updatedAt == other.updatedAt &&
+        profileId == other.profileId;
   }
 
   @override
@@ -113,8 +113,8 @@ class _$CustomEntry extends CustomEntry {
     _$hash = $jc(_$hash, id.hashCode);
     _$hash = $jc(_$hash, name.hashCode);
     _$hash = $jc(_$hash, pattern.hashCode);
-    _$hash = $jc(_$hash, profileId.hashCode);
     _$hash = $jc(_$hash, updatedAt.hashCode);
+    _$hash = $jc(_$hash, profileId.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -128,8 +128,8 @@ class _$CustomEntry extends CustomEntry {
           ..add('id', id)
           ..add('name', name)
           ..add('pattern', pattern)
-          ..add('profileId', profileId)
-          ..add('updatedAt', updatedAt))
+          ..add('updatedAt', updatedAt)
+          ..add('profileId', profileId))
         .toString();
   }
 }
@@ -163,13 +163,13 @@ class CustomEntryBuilder
   set pattern(covariant DlpPatternBuilder? pattern) =>
       _$this._pattern = pattern;
 
-  String? _profileId;
-  String? get profileId => _$this._profileId;
-  set profileId(covariant String? profileId) => _$this._profileId = profileId;
-
   DateTime? _updatedAt;
   DateTime? get updatedAt => _$this._updatedAt;
   set updatedAt(covariant DateTime? updatedAt) => _$this._updatedAt = updatedAt;
+
+  String? _profileId;
+  String? get profileId => _$this._profileId;
+  set profileId(covariant String? profileId) => _$this._profileId = profileId;
 
   CustomEntryBuilder() {
     CustomEntry._defaults(this);
@@ -184,8 +184,8 @@ class CustomEntryBuilder
       _id = $v.id;
       _name = $v.name;
       _pattern = $v.pattern.toBuilder();
-      _profileId = $v.profileId;
       _updatedAt = $v.updatedAt;
+      _profileId = $v.profileId;
       _$v = null;
     }
     return this;
@@ -219,9 +219,9 @@ class CustomEntryBuilder
             name: BuiltValueNullFieldError.checkNotNull(
                 name, r'CustomEntry', 'name'),
             pattern: pattern.build(),
-            profileId: profileId,
             updatedAt: BuiltValueNullFieldError.checkNotNull(
                 updatedAt, r'CustomEntry', 'updatedAt'),
+            profileId: profileId,
           );
     } catch (_) {
       late String _$failedField;

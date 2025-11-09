@@ -67,9 +67,9 @@ class _$TeamsDevicesDomainJoinedInputRequestOperatingSystemEnumSerializer
 class _$TeamsDevicesDomainJoinedInputRequest
     extends TeamsDevicesDomainJoinedInputRequest {
   @override
-  final String? domain;
-  @override
   final TeamsDevicesDomainJoinedInputRequestOperatingSystemEnum operatingSystem;
+  @override
+  final String? domain;
 
   factory _$TeamsDevicesDomainJoinedInputRequest(
           [void Function(TeamsDevicesDomainJoinedInputRequestBuilder)?
@@ -77,7 +77,7 @@ class _$TeamsDevicesDomainJoinedInputRequest
       (TeamsDevicesDomainJoinedInputRequestBuilder()..update(updates))._build();
 
   _$TeamsDevicesDomainJoinedInputRequest._(
-      {this.domain, required this.operatingSystem})
+      {required this.operatingSystem, this.domain})
       : super._();
   @override
   TeamsDevicesDomainJoinedInputRequest rebuild(
@@ -92,15 +92,15 @@ class _$TeamsDevicesDomainJoinedInputRequest
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is TeamsDevicesDomainJoinedInputRequest &&
-        domain == other.domain &&
-        operatingSystem == other.operatingSystem;
+        operatingSystem == other.operatingSystem &&
+        domain == other.domain;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, domain.hashCode);
     _$hash = $jc(_$hash, operatingSystem.hashCode);
+    _$hash = $jc(_$hash, domain.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -108,8 +108,8 @@ class _$TeamsDevicesDomainJoinedInputRequest
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'TeamsDevicesDomainJoinedInputRequest')
-          ..add('domain', domain)
-          ..add('operatingSystem', operatingSystem))
+          ..add('operatingSystem', operatingSystem)
+          ..add('domain', domain))
         .toString();
   }
 }
@@ -120,10 +120,6 @@ class TeamsDevicesDomainJoinedInputRequestBuilder
             TeamsDevicesDomainJoinedInputRequestBuilder> {
   _$TeamsDevicesDomainJoinedInputRequest? _$v;
 
-  String? _domain;
-  String? get domain => _$this._domain;
-  set domain(String? domain) => _$this._domain = domain;
-
   TeamsDevicesDomainJoinedInputRequestOperatingSystemEnum? _operatingSystem;
   TeamsDevicesDomainJoinedInputRequestOperatingSystemEnum?
       get operatingSystem => _$this._operatingSystem;
@@ -132,6 +128,10 @@ class TeamsDevicesDomainJoinedInputRequestBuilder
               operatingSystem) =>
       _$this._operatingSystem = operatingSystem;
 
+  String? _domain;
+  String? get domain => _$this._domain;
+  set domain(String? domain) => _$this._domain = domain;
+
   TeamsDevicesDomainJoinedInputRequestBuilder() {
     TeamsDevicesDomainJoinedInputRequest._defaults(this);
   }
@@ -139,8 +139,8 @@ class TeamsDevicesDomainJoinedInputRequestBuilder
   TeamsDevicesDomainJoinedInputRequestBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _domain = $v.domain;
       _operatingSystem = $v.operatingSystem;
+      _domain = $v.domain;
       _$v = null;
     }
     return this;
@@ -163,11 +163,11 @@ class TeamsDevicesDomainJoinedInputRequestBuilder
   _$TeamsDevicesDomainJoinedInputRequest _build() {
     final _$result = _$v ??
         _$TeamsDevicesDomainJoinedInputRequest._(
-          domain: domain,
           operatingSystem: BuiltValueNullFieldError.checkNotNull(
               operatingSystem,
               r'TeamsDevicesDomainJoinedInputRequest',
               'operatingSystem'),
+          domain: domain,
         );
     replace(_$result);
     return _$result;

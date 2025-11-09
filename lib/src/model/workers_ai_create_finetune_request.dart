@@ -11,20 +11,20 @@ part 'workers_ai_create_finetune_request.g.dart';
 /// WorkersAiCreateFinetuneRequest
 ///
 /// Properties:
-/// * [description] 
 /// * [model] 
 /// * [name] 
+/// * [description] 
 /// * [public] 
 @BuiltValue()
 abstract class WorkersAiCreateFinetuneRequest implements Built<WorkersAiCreateFinetuneRequest, WorkersAiCreateFinetuneRequestBuilder> {
-  @BuiltValueField(wireName: r'description')
-  String? get description;
-
   @BuiltValueField(wireName: r'model')
   String get model;
 
   @BuiltValueField(wireName: r'name')
   String get name;
+
+  @BuiltValueField(wireName: r'description')
+  String? get description;
 
   @BuiltValueField(wireName: r'public')
   bool? get public;
@@ -53,13 +53,6 @@ class _$WorkersAiCreateFinetuneRequestSerializer implements PrimitiveSerializer<
     WorkersAiCreateFinetuneRequest object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
-    if (object.description != null) {
-      yield r'description';
-      yield serializers.serialize(
-        object.description,
-        specifiedType: const FullType(String),
-      );
-    }
     yield r'model';
     yield serializers.serialize(
       object.model,
@@ -70,6 +63,13 @@ class _$WorkersAiCreateFinetuneRequestSerializer implements PrimitiveSerializer<
       object.name,
       specifiedType: const FullType(String),
     );
+    if (object.description != null) {
+      yield r'description';
+      yield serializers.serialize(
+        object.description,
+        specifiedType: const FullType(String),
+      );
+    }
     if (object.public != null) {
       yield r'public';
       yield serializers.serialize(
@@ -100,13 +100,6 @@ class _$WorkersAiCreateFinetuneRequestSerializer implements PrimitiveSerializer<
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'description':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.description = valueDes;
-          break;
         case r'model':
           final valueDes = serializers.deserialize(
             value,
@@ -120,6 +113,13 @@ class _$WorkersAiCreateFinetuneRequestSerializer implements PrimitiveSerializer<
             specifiedType: const FullType(String),
           ) as String;
           result.name = valueDes;
+          break;
+        case r'description':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.description = valueDes;
           break;
         case r'public':
           final valueDes = serializers.deserialize(

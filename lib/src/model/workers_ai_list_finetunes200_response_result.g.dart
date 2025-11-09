@@ -11,8 +11,6 @@ class _$WorkersAiListFinetunes200ResponseResult
   @override
   final DateTime createdAt;
   @override
-  final String? description;
-  @override
   final String id;
   @override
   final String model;
@@ -20,6 +18,8 @@ class _$WorkersAiListFinetunes200ResponseResult
   final DateTime modifiedAt;
   @override
   final String name;
+  @override
+  final String? description;
 
   factory _$WorkersAiListFinetunes200ResponseResult(
           [void Function(WorkersAiListFinetunes200ResponseResultBuilder)?
@@ -29,11 +29,11 @@ class _$WorkersAiListFinetunes200ResponseResult
 
   _$WorkersAiListFinetunes200ResponseResult._(
       {required this.createdAt,
-      this.description,
       required this.id,
       required this.model,
       required this.modifiedAt,
-      required this.name})
+      required this.name,
+      this.description})
       : super._();
   @override
   WorkersAiListFinetunes200ResponseResult rebuild(
@@ -50,22 +50,22 @@ class _$WorkersAiListFinetunes200ResponseResult
     if (identical(other, this)) return true;
     return other is WorkersAiListFinetunes200ResponseResult &&
         createdAt == other.createdAt &&
-        description == other.description &&
         id == other.id &&
         model == other.model &&
         modifiedAt == other.modifiedAt &&
-        name == other.name;
+        name == other.name &&
+        description == other.description;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
     _$hash = $jc(_$hash, createdAt.hashCode);
-    _$hash = $jc(_$hash, description.hashCode);
     _$hash = $jc(_$hash, id.hashCode);
     _$hash = $jc(_$hash, model.hashCode);
     _$hash = $jc(_$hash, modifiedAt.hashCode);
     _$hash = $jc(_$hash, name.hashCode);
+    _$hash = $jc(_$hash, description.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -75,11 +75,11 @@ class _$WorkersAiListFinetunes200ResponseResult
     return (newBuiltValueToStringHelper(
             r'WorkersAiListFinetunes200ResponseResult')
           ..add('createdAt', createdAt)
-          ..add('description', description)
           ..add('id', id)
           ..add('model', model)
           ..add('modifiedAt', modifiedAt)
-          ..add('name', name))
+          ..add('name', name)
+          ..add('description', description))
         .toString();
   }
 }
@@ -93,10 +93,6 @@ class WorkersAiListFinetunes200ResponseResultBuilder
   DateTime? _createdAt;
   DateTime? get createdAt => _$this._createdAt;
   set createdAt(DateTime? createdAt) => _$this._createdAt = createdAt;
-
-  String? _description;
-  String? get description => _$this._description;
-  set description(String? description) => _$this._description = description;
 
   String? _id;
   String? get id => _$this._id;
@@ -114,6 +110,10 @@ class WorkersAiListFinetunes200ResponseResultBuilder
   String? get name => _$this._name;
   set name(String? name) => _$this._name = name;
 
+  String? _description;
+  String? get description => _$this._description;
+  set description(String? description) => _$this._description = description;
+
   WorkersAiListFinetunes200ResponseResultBuilder() {
     WorkersAiListFinetunes200ResponseResult._defaults(this);
   }
@@ -122,11 +122,11 @@ class WorkersAiListFinetunes200ResponseResultBuilder
     final $v = _$v;
     if ($v != null) {
       _createdAt = $v.createdAt;
-      _description = $v.description;
       _id = $v.id;
       _model = $v.model;
       _modifiedAt = $v.modifiedAt;
       _name = $v.name;
+      _description = $v.description;
       _$v = null;
     }
     return this;
@@ -151,7 +151,6 @@ class WorkersAiListFinetunes200ResponseResultBuilder
         _$WorkersAiListFinetunes200ResponseResult._(
           createdAt: BuiltValueNullFieldError.checkNotNull(createdAt,
               r'WorkersAiListFinetunes200ResponseResult', 'createdAt'),
-          description: description,
           id: BuiltValueNullFieldError.checkNotNull(
               id, r'WorkersAiListFinetunes200ResponseResult', 'id'),
           model: BuiltValueNullFieldError.checkNotNull(
@@ -160,6 +159,7 @@ class WorkersAiListFinetunes200ResponseResultBuilder
               r'WorkersAiListFinetunes200ResponseResult', 'modifiedAt'),
           name: BuiltValueNullFieldError.checkNotNull(
               name, r'WorkersAiListFinetunes200ResponseResult', 'name'),
+          description: description,
         );
     replace(_$result);
     return _$result;

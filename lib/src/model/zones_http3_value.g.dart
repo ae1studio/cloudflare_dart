@@ -6,10 +6,10 @@ part of 'zones_http3_value.dart';
 // BuiltValueGenerator
 // **************************************************************************
 
-const ZonesWafValue _$on_ = const ZonesWafValue._('on_');
-const ZonesWafValue _$off = const ZonesWafValue._('off');
+const ZonesHttp3Value _$on_ = const ZonesHttp3Value._('on_');
+const ZonesHttp3Value _$off = const ZonesHttp3Value._('off');
 
-ZonesWafValue _$valueOf(String name) {
+ZonesHttp3Value _$valueOf(String name) {
   switch (name) {
     case 'on_':
       return _$on_;
@@ -20,30 +20,30 @@ ZonesWafValue _$valueOf(String name) {
   }
 }
 
-final BuiltSet<ZonesWafValue> _$values =
-    BuiltSet<ZonesWafValue>(const <ZonesWafValue>[
+final BuiltSet<ZonesHttp3Value> _$values =
+    BuiltSet<ZonesHttp3Value>(const <ZonesHttp3Value>[
   _$on_,
   _$off,
 ]);
 
 class _$ZonesHttp3ValueMeta {
   const _$ZonesHttp3ValueMeta();
-  ZonesWafValue get on_ => _$on_;
-  ZonesWafValue get off => _$off;
-  ZonesWafValue valueOf(String name) => _$valueOf(name);
-  BuiltSet<ZonesWafValue> get values => _$values;
+  ZonesHttp3Value get on_ => _$on_;
+  ZonesHttp3Value get off => _$off;
+  ZonesHttp3Value valueOf(String name) => _$valueOf(name);
+  BuiltSet<ZonesHttp3Value> get values => _$values;
 }
 
 abstract class _$ZonesHttp3ValueMixin {
   // ignore: non_constant_identifier_names
-  _$ZonesHttp3ValueMeta get ZonesWafValue => const _$ZonesHttp3ValueMeta();
+  _$ZonesHttp3ValueMeta get ZonesHttp3Value => const _$ZonesHttp3ValueMeta();
 }
 
-Serializer<ZonesWafValue> _$zonesHttp3ValueSerializer =
+Serializer<ZonesHttp3Value> _$zonesHttp3ValueSerializer =
     _$ZonesHttp3ValueSerializer();
 
 class _$ZonesHttp3ValueSerializer
-    implements PrimitiveSerializer<ZonesWafValue> {
+    implements PrimitiveSerializer<ZonesHttp3Value> {
   static const Map<String, Object> _toWire = const <String, Object>{
     'on_': 'on',
     'off': 'off',
@@ -54,19 +54,19 @@ class _$ZonesHttp3ValueSerializer
   };
 
   @override
-  final Iterable<Type> types = const <Type>[ZonesWafValue];
+  final Iterable<Type> types = const <Type>[ZonesHttp3Value];
   @override
-  final String wireName = 'ZonesWafValue';
+  final String wireName = 'ZonesHttp3Value';
 
   @override
-  Object serialize(Serializers serializers, ZonesWafValue object,
+  Object serialize(Serializers serializers, ZonesHttp3Value object,
           {FullType specifiedType = FullType.unspecified}) =>
       _toWire[object.name] ?? object.name;
 
   @override
-  ZonesWafValue deserialize(Serializers serializers, Object serialized,
+  ZonesHttp3Value deserialize(Serializers serializers, Object serialized,
           {FullType specifiedType = FullType.unspecified}) =>
-      ZonesWafValue.valueOf(
+      ZonesHttp3Value.valueOf(
           _fromWire[serialized] ?? (serialized is String ? serialized : ''));
 }
 

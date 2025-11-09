@@ -13,18 +13,15 @@ part 'aig_config_list_gateway_dynamic_routes200_response_data_routes_inner_versi
 ///
 /// Properties:
 /// * [active] 
-/// * [comment] 
 /// * [createdAt] 
 /// * [data] 
 /// * [versionId] 
+/// * [comment] 
 @BuiltValue()
 abstract class AigConfigListGatewayDynamicRoutes200ResponseDataRoutesInnerVersion implements Built<AigConfigListGatewayDynamicRoutes200ResponseDataRoutesInnerVersion, AigConfigListGatewayDynamicRoutes200ResponseDataRoutesInnerVersionBuilder> {
   @BuiltValueField(wireName: r'active')
   AigConfigListGatewayDynamicRoutes200ResponseDataRoutesInnerVersionActiveEnum get active;
   // enum activeEnum {  true,  false,  };
-
-  @BuiltValueField(wireName: r'comment')
-  String? get comment;
 
   @BuiltValueField(wireName: r'created_at')
   String get createdAt;
@@ -34,6 +31,9 @@ abstract class AigConfigListGatewayDynamicRoutes200ResponseDataRoutesInnerVersio
 
   @BuiltValueField(wireName: r'version_id')
   String get versionId;
+
+  @BuiltValueField(wireName: r'comment')
+  String? get comment;
 
   AigConfigListGatewayDynamicRoutes200ResponseDataRoutesInnerVersion._();
 
@@ -63,13 +63,6 @@ class _$AigConfigListGatewayDynamicRoutes200ResponseDataRoutesInnerVersionSerial
       object.active,
       specifiedType: const FullType(AigConfigListGatewayDynamicRoutes200ResponseDataRoutesInnerVersionActiveEnum),
     );
-    if (object.comment != null) {
-      yield r'comment';
-      yield serializers.serialize(
-        object.comment,
-        specifiedType: const FullType.nullable(String),
-      );
-    }
     yield r'created_at';
     yield serializers.serialize(
       object.createdAt,
@@ -85,6 +78,13 @@ class _$AigConfigListGatewayDynamicRoutes200ResponseDataRoutesInnerVersionSerial
       object.versionId,
       specifiedType: const FullType(String),
     );
+    if (object.comment != null) {
+      yield r'comment';
+      yield serializers.serialize(
+        object.comment,
+        specifiedType: const FullType.nullable(String),
+      );
+    }
   }
 
   @override
@@ -115,14 +115,6 @@ class _$AigConfigListGatewayDynamicRoutes200ResponseDataRoutesInnerVersionSerial
           ) as AigConfigListGatewayDynamicRoutes200ResponseDataRoutesInnerVersionActiveEnum;
           result.active = valueDes;
           break;
-        case r'comment':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
-          if (valueDes == null) continue;
-          result.comment = valueDes;
-          break;
         case r'created_at':
           final valueDes = serializers.deserialize(
             value,
@@ -143,6 +135,14 @@ class _$AigConfigListGatewayDynamicRoutes200ResponseDataRoutesInnerVersionSerial
             specifiedType: const FullType(String),
           ) as String;
           result.versionId = valueDes;
+          break;
+        case r'comment':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType.nullable(String),
+          ) as String?;
+          if (valueDes == null) continue;
+          result.comment = valueDes;
           break;
         default:
           unhandled.add(key);

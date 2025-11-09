@@ -10,13 +10,13 @@ class _$MagicRouteUpdateSingleRequest extends MagicRouteUpdateSingleRequest {
   @override
   final String id;
   @override
-  final String? description;
-  @override
   final String nexthop;
   @override
   final String prefix;
   @override
   final int priority;
+  @override
+  final String? description;
   @override
   final MagicScope? scope;
   @override
@@ -28,10 +28,10 @@ class _$MagicRouteUpdateSingleRequest extends MagicRouteUpdateSingleRequest {
 
   _$MagicRouteUpdateSingleRequest._(
       {required this.id,
-      this.description,
       required this.nexthop,
       required this.prefix,
       required this.priority,
+      this.description,
       this.scope,
       this.weight})
       : super._();
@@ -49,10 +49,10 @@ class _$MagicRouteUpdateSingleRequest extends MagicRouteUpdateSingleRequest {
     if (identical(other, this)) return true;
     return other is MagicRouteUpdateSingleRequest &&
         id == other.id &&
-        description == other.description &&
         nexthop == other.nexthop &&
         prefix == other.prefix &&
         priority == other.priority &&
+        description == other.description &&
         scope == other.scope &&
         weight == other.weight;
   }
@@ -61,10 +61,10 @@ class _$MagicRouteUpdateSingleRequest extends MagicRouteUpdateSingleRequest {
   int get hashCode {
     var _$hash = 0;
     _$hash = $jc(_$hash, id.hashCode);
-    _$hash = $jc(_$hash, description.hashCode);
     _$hash = $jc(_$hash, nexthop.hashCode);
     _$hash = $jc(_$hash, prefix.hashCode);
     _$hash = $jc(_$hash, priority.hashCode);
+    _$hash = $jc(_$hash, description.hashCode);
     _$hash = $jc(_$hash, scope.hashCode);
     _$hash = $jc(_$hash, weight.hashCode);
     _$hash = $jf(_$hash);
@@ -75,10 +75,10 @@ class _$MagicRouteUpdateSingleRequest extends MagicRouteUpdateSingleRequest {
   String toString() {
     return (newBuiltValueToStringHelper(r'MagicRouteUpdateSingleRequest')
           ..add('id', id)
-          ..add('description', description)
           ..add('nexthop', nexthop)
           ..add('prefix', prefix)
           ..add('priority', priority)
+          ..add('description', description)
           ..add('scope', scope)
           ..add('weight', weight))
         .toString();
@@ -96,11 +96,6 @@ class MagicRouteUpdateSingleRequestBuilder
   String? get id => _$this._id;
   set id(covariant String? id) => _$this._id = id;
 
-  String? _description;
-  String? get description => _$this._description;
-  set description(covariant String? description) =>
-      _$this._description = description;
-
   String? _nexthop;
   String? get nexthop => _$this._nexthop;
   set nexthop(covariant String? nexthop) => _$this._nexthop = nexthop;
@@ -112,6 +107,11 @@ class MagicRouteUpdateSingleRequestBuilder
   int? _priority;
   int? get priority => _$this._priority;
   set priority(covariant int? priority) => _$this._priority = priority;
+
+  String? _description;
+  String? get description => _$this._description;
+  set description(covariant String? description) =>
+      _$this._description = description;
 
   MagicScopeBuilder? _scope;
   MagicScopeBuilder get scope => _$this._scope ??= MagicScopeBuilder();
@@ -129,10 +129,10 @@ class MagicRouteUpdateSingleRequestBuilder
     final $v = _$v;
     if ($v != null) {
       _id = $v.id;
-      _description = $v.description;
       _nexthop = $v.nexthop;
       _prefix = $v.prefix;
       _priority = $v.priority;
+      _description = $v.description;
       _scope = $v.scope?.toBuilder();
       _weight = $v.weight;
       _$v = null;
@@ -160,13 +160,13 @@ class MagicRouteUpdateSingleRequestBuilder
           _$MagicRouteUpdateSingleRequest._(
             id: BuiltValueNullFieldError.checkNotNull(
                 id, r'MagicRouteUpdateSingleRequest', 'id'),
-            description: description,
             nexthop: BuiltValueNullFieldError.checkNotNull(
                 nexthop, r'MagicRouteUpdateSingleRequest', 'nexthop'),
             prefix: BuiltValueNullFieldError.checkNotNull(
                 prefix, r'MagicRouteUpdateSingleRequest', 'prefix'),
             priority: BuiltValueNullFieldError.checkNotNull(
                 priority, r'MagicRouteUpdateSingleRequest', 'priority'),
+            description: description,
             scope: _scope?.build(),
             weight: weight,
           );

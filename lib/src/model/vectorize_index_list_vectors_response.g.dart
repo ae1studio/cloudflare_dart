@@ -11,15 +11,15 @@ class _$VectorizeIndexListVectorsResponse
   @override
   final int count;
   @override
-  final DateTime? cursorExpirationTimestamp;
-  @override
   final bool isTruncated;
-  @override
-  final String? nextCursor;
   @override
   final int totalCount;
   @override
   final BuiltList<VectorizeVectorListItem> vectors;
+  @override
+  final DateTime? cursorExpirationTimestamp;
+  @override
+  final String? nextCursor;
 
   factory _$VectorizeIndexListVectorsResponse(
           [void Function(VectorizeIndexListVectorsResponseBuilder)? updates]) =>
@@ -27,11 +27,11 @@ class _$VectorizeIndexListVectorsResponse
 
   _$VectorizeIndexListVectorsResponse._(
       {required this.count,
-      this.cursorExpirationTimestamp,
       required this.isTruncated,
-      this.nextCursor,
       required this.totalCount,
-      required this.vectors})
+      required this.vectors,
+      this.cursorExpirationTimestamp,
+      this.nextCursor})
       : super._();
   @override
   VectorizeIndexListVectorsResponse rebuild(
@@ -47,22 +47,22 @@ class _$VectorizeIndexListVectorsResponse
     if (identical(other, this)) return true;
     return other is VectorizeIndexListVectorsResponse &&
         count == other.count &&
-        cursorExpirationTimestamp == other.cursorExpirationTimestamp &&
         isTruncated == other.isTruncated &&
-        nextCursor == other.nextCursor &&
         totalCount == other.totalCount &&
-        vectors == other.vectors;
+        vectors == other.vectors &&
+        cursorExpirationTimestamp == other.cursorExpirationTimestamp &&
+        nextCursor == other.nextCursor;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
     _$hash = $jc(_$hash, count.hashCode);
-    _$hash = $jc(_$hash, cursorExpirationTimestamp.hashCode);
     _$hash = $jc(_$hash, isTruncated.hashCode);
-    _$hash = $jc(_$hash, nextCursor.hashCode);
     _$hash = $jc(_$hash, totalCount.hashCode);
     _$hash = $jc(_$hash, vectors.hashCode);
+    _$hash = $jc(_$hash, cursorExpirationTimestamp.hashCode);
+    _$hash = $jc(_$hash, nextCursor.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -71,11 +71,11 @@ class _$VectorizeIndexListVectorsResponse
   String toString() {
     return (newBuiltValueToStringHelper(r'VectorizeIndexListVectorsResponse')
           ..add('count', count)
-          ..add('cursorExpirationTimestamp', cursorExpirationTimestamp)
           ..add('isTruncated', isTruncated)
-          ..add('nextCursor', nextCursor)
           ..add('totalCount', totalCount)
-          ..add('vectors', vectors))
+          ..add('vectors', vectors)
+          ..add('cursorExpirationTimestamp', cursorExpirationTimestamp)
+          ..add('nextCursor', nextCursor))
         .toString();
   }
 }
@@ -90,18 +90,9 @@ class VectorizeIndexListVectorsResponseBuilder
   int? get count => _$this._count;
   set count(int? count) => _$this._count = count;
 
-  DateTime? _cursorExpirationTimestamp;
-  DateTime? get cursorExpirationTimestamp => _$this._cursorExpirationTimestamp;
-  set cursorExpirationTimestamp(DateTime? cursorExpirationTimestamp) =>
-      _$this._cursorExpirationTimestamp = cursorExpirationTimestamp;
-
   bool? _isTruncated;
   bool? get isTruncated => _$this._isTruncated;
   set isTruncated(bool? isTruncated) => _$this._isTruncated = isTruncated;
-
-  String? _nextCursor;
-  String? get nextCursor => _$this._nextCursor;
-  set nextCursor(String? nextCursor) => _$this._nextCursor = nextCursor;
 
   int? _totalCount;
   int? get totalCount => _$this._totalCount;
@@ -113,6 +104,15 @@ class VectorizeIndexListVectorsResponseBuilder
   set vectors(ListBuilder<VectorizeVectorListItem>? vectors) =>
       _$this._vectors = vectors;
 
+  DateTime? _cursorExpirationTimestamp;
+  DateTime? get cursorExpirationTimestamp => _$this._cursorExpirationTimestamp;
+  set cursorExpirationTimestamp(DateTime? cursorExpirationTimestamp) =>
+      _$this._cursorExpirationTimestamp = cursorExpirationTimestamp;
+
+  String? _nextCursor;
+  String? get nextCursor => _$this._nextCursor;
+  set nextCursor(String? nextCursor) => _$this._nextCursor = nextCursor;
+
   VectorizeIndexListVectorsResponseBuilder() {
     VectorizeIndexListVectorsResponse._defaults(this);
   }
@@ -121,11 +121,11 @@ class VectorizeIndexListVectorsResponseBuilder
     final $v = _$v;
     if ($v != null) {
       _count = $v.count;
-      _cursorExpirationTimestamp = $v.cursorExpirationTimestamp;
       _isTruncated = $v.isTruncated;
-      _nextCursor = $v.nextCursor;
       _totalCount = $v.totalCount;
       _vectors = $v.vectors.toBuilder();
+      _cursorExpirationTimestamp = $v.cursorExpirationTimestamp;
+      _nextCursor = $v.nextCursor;
       _$v = null;
     }
     return this;
@@ -152,13 +152,13 @@ class VectorizeIndexListVectorsResponseBuilder
           _$VectorizeIndexListVectorsResponse._(
             count: BuiltValueNullFieldError.checkNotNull(
                 count, r'VectorizeIndexListVectorsResponse', 'count'),
-            cursorExpirationTimestamp: cursorExpirationTimestamp,
             isTruncated: BuiltValueNullFieldError.checkNotNull(isTruncated,
                 r'VectorizeIndexListVectorsResponse', 'isTruncated'),
-            nextCursor: nextCursor,
             totalCount: BuiltValueNullFieldError.checkNotNull(
                 totalCount, r'VectorizeIndexListVectorsResponse', 'totalCount'),
             vectors: vectors.build(),
+            cursorExpirationTimestamp: cursorExpirationTimestamp,
+            nextCursor: nextCursor,
           );
     } catch (_) {
       late String _$failedField;

@@ -74,13 +74,13 @@ class _$CloudforceOneRequestsRequestMessageListSortOrderEnumSerializer
 class _$CloudforceOneRequestsRequestMessageList
     extends CloudforceOneRequestsRequestMessageList {
   @override
-  final DateTime? after;
-  @override
-  final DateTime? before;
-  @override
   final int page;
   @override
   final int perPage;
+  @override
+  final DateTime? after;
+  @override
+  final DateTime? before;
   @override
   final String? sortBy;
   @override
@@ -93,10 +93,10 @@ class _$CloudforceOneRequestsRequestMessageList
           ._build();
 
   _$CloudforceOneRequestsRequestMessageList._(
-      {this.after,
-      this.before,
-      required this.page,
+      {required this.page,
       required this.perPage,
+      this.after,
+      this.before,
       this.sortBy,
       this.sortOrder})
       : super._();
@@ -114,10 +114,10 @@ class _$CloudforceOneRequestsRequestMessageList
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is CloudforceOneRequestsRequestMessageList &&
-        after == other.after &&
-        before == other.before &&
         page == other.page &&
         perPage == other.perPage &&
+        after == other.after &&
+        before == other.before &&
         sortBy == other.sortBy &&
         sortOrder == other.sortOrder;
   }
@@ -125,10 +125,10 @@ class _$CloudforceOneRequestsRequestMessageList
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, after.hashCode);
-    _$hash = $jc(_$hash, before.hashCode);
     _$hash = $jc(_$hash, page.hashCode);
     _$hash = $jc(_$hash, perPage.hashCode);
+    _$hash = $jc(_$hash, after.hashCode);
+    _$hash = $jc(_$hash, before.hashCode);
     _$hash = $jc(_$hash, sortBy.hashCode);
     _$hash = $jc(_$hash, sortOrder.hashCode);
     _$hash = $jf(_$hash);
@@ -139,10 +139,10 @@ class _$CloudforceOneRequestsRequestMessageList
   String toString() {
     return (newBuiltValueToStringHelper(
             r'CloudforceOneRequestsRequestMessageList')
-          ..add('after', after)
-          ..add('before', before)
           ..add('page', page)
           ..add('perPage', perPage)
+          ..add('after', after)
+          ..add('before', before)
           ..add('sortBy', sortBy)
           ..add('sortOrder', sortOrder))
         .toString();
@@ -155,14 +155,6 @@ class CloudforceOneRequestsRequestMessageListBuilder
             CloudforceOneRequestsRequestMessageListBuilder> {
   _$CloudforceOneRequestsRequestMessageList? _$v;
 
-  DateTime? _after;
-  DateTime? get after => _$this._after;
-  set after(DateTime? after) => _$this._after = after;
-
-  DateTime? _before;
-  DateTime? get before => _$this._before;
-  set before(DateTime? before) => _$this._before = before;
-
   int? _page;
   int? get page => _$this._page;
   set page(int? page) => _$this._page = page;
@@ -170,6 +162,14 @@ class CloudforceOneRequestsRequestMessageListBuilder
   int? _perPage;
   int? get perPage => _$this._perPage;
   set perPage(int? perPage) => _$this._perPage = perPage;
+
+  DateTime? _after;
+  DateTime? get after => _$this._after;
+  set after(DateTime? after) => _$this._after = after;
+
+  DateTime? _before;
+  DateTime? get before => _$this._before;
+  set before(DateTime? before) => _$this._before = before;
 
   String? _sortBy;
   String? get sortBy => _$this._sortBy;
@@ -189,10 +189,10 @@ class CloudforceOneRequestsRequestMessageListBuilder
   CloudforceOneRequestsRequestMessageListBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _after = $v.after;
-      _before = $v.before;
       _page = $v.page;
       _perPage = $v.perPage;
+      _after = $v.after;
+      _before = $v.before;
       _sortBy = $v.sortBy;
       _sortOrder = $v.sortOrder;
       _$v = null;
@@ -217,12 +217,12 @@ class CloudforceOneRequestsRequestMessageListBuilder
   _$CloudforceOneRequestsRequestMessageList _build() {
     final _$result = _$v ??
         _$CloudforceOneRequestsRequestMessageList._(
-          after: after,
-          before: before,
           page: BuiltValueNullFieldError.checkNotNull(
               page, r'CloudforceOneRequestsRequestMessageList', 'page'),
           perPage: BuiltValueNullFieldError.checkNotNull(
               perPage, r'CloudforceOneRequestsRequestMessageList', 'perPage'),
+          after: after,
+          before: before,
           sortBy: sortBy,
           sortOrder: sortOrder,
         );

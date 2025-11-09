@@ -19,8 +19,8 @@ part 'worker_script_search_workers200_response.g.dart';
 /// * [errors] 
 /// * [messages] 
 /// * [success] - Whether the API call was successful.
-/// * [resultInfo] 
 /// * [result] 
+/// * [resultInfo] 
 @BuiltValue()
 abstract class WorkerScriptSearchWorkers200Response implements WorkersApiResponseCollection, Built<WorkerScriptSearchWorkers200Response, WorkerScriptSearchWorkers200ResponseBuilder> {
   @BuiltValueField(wireName: r'result')

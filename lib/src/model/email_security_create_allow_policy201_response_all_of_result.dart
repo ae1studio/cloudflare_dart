@@ -12,13 +12,9 @@ part 'email_security_create_allow_policy201_response_all_of_result.g.dart';
 /// EmailSecurityCreateAllowPolicy201ResponseAllOfResult
 ///
 /// Properties:
-/// * [comments] 
 /// * [isAcceptableSender] - Messages from this sender will be exempted from Spam, Spoof and Bulk dispositions. Note: This will not exempt messages with Malicious or Suspicious dispositions.
 /// * [isExemptRecipient] - Messages to this recipient will bypass all detections.
-/// * [isRecipient] 
 /// * [isRegex] 
-/// * [isSender] 
-/// * [isSpoof] 
 /// * [isTrustedSender] - Messages from this sender will bypass all detections and link following.
 /// * [pattern] 
 /// * [patternType] 
@@ -26,11 +22,12 @@ part 'email_security_create_allow_policy201_response_all_of_result.g.dart';
 /// * [createdAt] 
 /// * [id] - The unique identifier for the allow policy.
 /// * [lastModified] 
+/// * [comments] 
+/// * [isRecipient] 
+/// * [isSender] 
+/// * [isSpoof] 
 @BuiltValue()
 abstract class EmailSecurityCreateAllowPolicy201ResponseAllOfResult implements Built<EmailSecurityCreateAllowPolicy201ResponseAllOfResult, EmailSecurityCreateAllowPolicy201ResponseAllOfResultBuilder> {
-  @BuiltValueField(wireName: r'comments')
-  String? get comments;
-
   /// Messages from this sender will be exempted from Spam, Spoof and Bulk dispositions. Note: This will not exempt messages with Malicious or Suspicious dispositions.
   @BuiltValueField(wireName: r'is_acceptable_sender')
   bool get isAcceptableSender;
@@ -39,20 +36,8 @@ abstract class EmailSecurityCreateAllowPolicy201ResponseAllOfResult implements B
   @BuiltValueField(wireName: r'is_exempt_recipient')
   bool get isExemptRecipient;
 
-  @Deprecated('isRecipient has been deprecated')
-  @BuiltValueField(wireName: r'is_recipient')
-  bool? get isRecipient;
-
   @BuiltValueField(wireName: r'is_regex')
   bool get isRegex;
-
-  @Deprecated('isSender has been deprecated')
-  @BuiltValueField(wireName: r'is_sender')
-  bool? get isSender;
-
-  @Deprecated('isSpoof has been deprecated')
-  @BuiltValueField(wireName: r'is_spoof')
-  bool? get isSpoof;
 
   /// Messages from this sender will bypass all detections and link following.
   @BuiltValueField(wireName: r'is_trusted_sender')
@@ -79,6 +64,21 @@ abstract class EmailSecurityCreateAllowPolicy201ResponseAllOfResult implements B
   @BuiltValueField(wireName: r'last_modified')
   DateTime get lastModified;
 
+  @BuiltValueField(wireName: r'comments')
+  String? get comments;
+
+  @Deprecated('isRecipient has been deprecated')
+  @BuiltValueField(wireName: r'is_recipient')
+  bool? get isRecipient;
+
+  @Deprecated('isSender has been deprecated')
+  @BuiltValueField(wireName: r'is_sender')
+  bool? get isSender;
+
+  @Deprecated('isSpoof has been deprecated')
+  @BuiltValueField(wireName: r'is_spoof')
+  bool? get isSpoof;
+
   EmailSecurityCreateAllowPolicy201ResponseAllOfResult._();
 
   factory EmailSecurityCreateAllowPolicy201ResponseAllOfResult([void updates(EmailSecurityCreateAllowPolicy201ResponseAllOfResultBuilder b)]) = _$EmailSecurityCreateAllowPolicy201ResponseAllOfResult;
@@ -102,13 +102,6 @@ class _$EmailSecurityCreateAllowPolicy201ResponseAllOfResultSerializer implement
     EmailSecurityCreateAllowPolicy201ResponseAllOfResult object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
-    if (object.comments != null) {
-      yield r'comments';
-      yield serializers.serialize(
-        object.comments,
-        specifiedType: const FullType.nullable(String),
-      );
-    }
     yield r'is_acceptable_sender';
     yield serializers.serialize(
       object.isAcceptableSender,
@@ -119,32 +112,11 @@ class _$EmailSecurityCreateAllowPolicy201ResponseAllOfResultSerializer implement
       object.isExemptRecipient,
       specifiedType: const FullType(bool),
     );
-    if (object.isRecipient != null) {
-      yield r'is_recipient';
-      yield serializers.serialize(
-        object.isRecipient,
-        specifiedType: const FullType(bool),
-      );
-    }
     yield r'is_regex';
     yield serializers.serialize(
       object.isRegex,
       specifiedType: const FullType(bool),
     );
-    if (object.isSender != null) {
-      yield r'is_sender';
-      yield serializers.serialize(
-        object.isSender,
-        specifiedType: const FullType(bool),
-      );
-    }
-    if (object.isSpoof != null) {
-      yield r'is_spoof';
-      yield serializers.serialize(
-        object.isSpoof,
-        specifiedType: const FullType(bool),
-      );
-    }
     yield r'is_trusted_sender';
     yield serializers.serialize(
       object.isTrustedSender,
@@ -180,6 +152,34 @@ class _$EmailSecurityCreateAllowPolicy201ResponseAllOfResultSerializer implement
       object.lastModified,
       specifiedType: const FullType(DateTime),
     );
+    if (object.comments != null) {
+      yield r'comments';
+      yield serializers.serialize(
+        object.comments,
+        specifiedType: const FullType.nullable(String),
+      );
+    }
+    if (object.isRecipient != null) {
+      yield r'is_recipient';
+      yield serializers.serialize(
+        object.isRecipient,
+        specifiedType: const FullType(bool),
+      );
+    }
+    if (object.isSender != null) {
+      yield r'is_sender';
+      yield serializers.serialize(
+        object.isSender,
+        specifiedType: const FullType(bool),
+      );
+    }
+    if (object.isSpoof != null) {
+      yield r'is_spoof';
+      yield serializers.serialize(
+        object.isSpoof,
+        specifiedType: const FullType(bool),
+      );
+    }
   }
 
   @override
@@ -203,14 +203,6 @@ class _$EmailSecurityCreateAllowPolicy201ResponseAllOfResultSerializer implement
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'comments':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
-          if (valueDes == null) continue;
-          result.comments = valueDes;
-          break;
         case r'is_acceptable_sender':
           final valueDes = serializers.deserialize(
             value,
@@ -225,33 +217,12 @@ class _$EmailSecurityCreateAllowPolicy201ResponseAllOfResultSerializer implement
           ) as bool;
           result.isExemptRecipient = valueDes;
           break;
-        case r'is_recipient':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
-          result.isRecipient = valueDes;
-          break;
         case r'is_regex':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(bool),
           ) as bool;
           result.isRegex = valueDes;
-          break;
-        case r'is_sender':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
-          result.isSender = valueDes;
-          break;
-        case r'is_spoof':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
-          result.isSpoof = valueDes;
           break;
         case r'is_trusted_sender':
           final valueDes = serializers.deserialize(
@@ -301,6 +272,35 @@ class _$EmailSecurityCreateAllowPolicy201ResponseAllOfResultSerializer implement
             specifiedType: const FullType(DateTime),
           ) as DateTime;
           result.lastModified = valueDes;
+          break;
+        case r'comments':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType.nullable(String),
+          ) as String?;
+          if (valueDes == null) continue;
+          result.comments = valueDes;
+          break;
+        case r'is_recipient':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(bool),
+          ) as bool;
+          result.isRecipient = valueDes;
+          break;
+        case r'is_sender':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(bool),
+          ) as bool;
+          result.isSender = valueDes;
+          break;
+        case r'is_spoof':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(bool),
+          ) as bool;
+          result.isSpoof = valueDes;
           break;
         default:
           unhandled.add(key);

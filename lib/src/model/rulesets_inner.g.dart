@@ -12,15 +12,15 @@ class _$RulesetsInner extends RulesetsInner {
   @override
   final RulesetsRulesetKind kind;
   @override
-  final String? description;
-  @override
   final String id;
   @override
   final DateTime lastUpdated;
   @override
-  final String? name;
-  @override
   final String version;
+  @override
+  final String? description;
+  @override
+  final String? name;
 
   factory _$RulesetsInner([void Function(RulesetsInnerBuilder)? updates]) =>
       (RulesetsInnerBuilder()..update(updates))._build();
@@ -28,11 +28,11 @@ class _$RulesetsInner extends RulesetsInner {
   _$RulesetsInner._(
       {required this.phase,
       required this.kind,
-      this.description,
       required this.id,
       required this.lastUpdated,
-      this.name,
-      required this.version})
+      required this.version,
+      this.description,
+      this.name})
       : super._();
   @override
   RulesetsInner rebuild(void Function(RulesetsInnerBuilder) updates) =>
@@ -47,11 +47,11 @@ class _$RulesetsInner extends RulesetsInner {
     return other is RulesetsInner &&
         phase == other.phase &&
         kind == other.kind &&
-        description == other.description &&
         id == other.id &&
         lastUpdated == other.lastUpdated &&
-        name == other.name &&
-        version == other.version;
+        version == other.version &&
+        description == other.description &&
+        name == other.name;
   }
 
   @override
@@ -59,11 +59,11 @@ class _$RulesetsInner extends RulesetsInner {
     var _$hash = 0;
     _$hash = $jc(_$hash, phase.hashCode);
     _$hash = $jc(_$hash, kind.hashCode);
-    _$hash = $jc(_$hash, description.hashCode);
     _$hash = $jc(_$hash, id.hashCode);
     _$hash = $jc(_$hash, lastUpdated.hashCode);
-    _$hash = $jc(_$hash, name.hashCode);
     _$hash = $jc(_$hash, version.hashCode);
+    _$hash = $jc(_$hash, description.hashCode);
+    _$hash = $jc(_$hash, name.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -73,11 +73,11 @@ class _$RulesetsInner extends RulesetsInner {
     return (newBuiltValueToStringHelper(r'RulesetsInner')
           ..add('phase', phase)
           ..add('kind', kind)
-          ..add('description', description)
           ..add('id', id)
           ..add('lastUpdated', lastUpdated)
-          ..add('name', name)
-          ..add('version', version))
+          ..add('version', version)
+          ..add('description', description)
+          ..add('name', name))
         .toString();
   }
 }
@@ -96,11 +96,6 @@ class RulesetsInnerBuilder
   RulesetsRulesetKind? get kind => _$this._kind;
   set kind(covariant RulesetsRulesetKind? kind) => _$this._kind = kind;
 
-  String? _description;
-  String? get description => _$this._description;
-  set description(covariant String? description) =>
-      _$this._description = description;
-
   String? _id;
   String? get id => _$this._id;
   set id(covariant String? id) => _$this._id = id;
@@ -110,13 +105,18 @@ class RulesetsInnerBuilder
   set lastUpdated(covariant DateTime? lastUpdated) =>
       _$this._lastUpdated = lastUpdated;
 
-  String? _name;
-  String? get name => _$this._name;
-  set name(covariant String? name) => _$this._name = name;
-
   String? _version;
   String? get version => _$this._version;
   set version(covariant String? version) => _$this._version = version;
+
+  String? _description;
+  String? get description => _$this._description;
+  set description(covariant String? description) =>
+      _$this._description = description;
+
+  String? _name;
+  String? get name => _$this._name;
+  set name(covariant String? name) => _$this._name = name;
 
   RulesetsInnerBuilder() {
     RulesetsInner._defaults(this);
@@ -127,11 +127,11 @@ class RulesetsInnerBuilder
     if ($v != null) {
       _phase = $v.phase;
       _kind = $v.kind;
-      _description = $v.description;
       _id = $v.id;
       _lastUpdated = $v.lastUpdated;
-      _name = $v.name;
       _version = $v.version;
+      _description = $v.description;
+      _name = $v.name;
       _$v = null;
     }
     return this;
@@ -157,13 +157,13 @@ class RulesetsInnerBuilder
               phase, r'RulesetsInner', 'phase'),
           kind: BuiltValueNullFieldError.checkNotNull(
               kind, r'RulesetsInner', 'kind'),
-          description: description,
           id: BuiltValueNullFieldError.checkNotNull(id, r'RulesetsInner', 'id'),
           lastUpdated: BuiltValueNullFieldError.checkNotNull(
               lastUpdated, r'RulesetsInner', 'lastUpdated'),
-          name: name,
           version: BuiltValueNullFieldError.checkNotNull(
               version, r'RulesetsInner', 'version'),
+          description: description,
+          name: name,
         );
     replace(_$result);
     return _$result;

@@ -15,11 +15,11 @@ part 'workers_binding_kind_secret_key.g.dart';
 /// Properties:
 /// * [algorithm] - Algorithm-specific key parameters. [Learn more](https://developer.mozilla.org/en-US/docs/Web/API/SubtleCrypto/importKey#algorithm).
 /// * [format] - Data format of the key. [Learn more](https://developer.mozilla.org/en-US/docs/Web/API/SubtleCrypto/importKey#format).
-/// * [keyBase64] - Base64-encoded key data. Required if `format` is \"raw\", \"pkcs8\", or \"spki\".
-/// * [keyJwk] - Key data in [JSON Web Key](https://developer.mozilla.org/en-US/docs/Web/API/SubtleCrypto/importKey#json_web_key) format. Required if `format` is \"jwk\".
 /// * [name] - A JavaScript variable name for the binding.
 /// * [type] - The kind of resource that the binding provides.
 /// * [usages] - Allowed operations with the key. [Learn more](https://developer.mozilla.org/en-US/docs/Web/API/SubtleCrypto/importKey#keyUsages).
+/// * [keyBase64] - Base64-encoded key data. Required if `format` is \"raw\", \"pkcs8\", or \"spki\".
+/// * [keyJwk] - Key data in [JSON Web Key](https://developer.mozilla.org/en-US/docs/Web/API/SubtleCrypto/importKey#json_web_key) format. Required if `format` is \"jwk\".
 @BuiltValue()
 abstract class WorkersBindingKindSecretKey implements Built<WorkersBindingKindSecretKey, WorkersBindingKindSecretKeyBuilder> {
   /// Algorithm-specific key parameters. [Learn more](https://developer.mozilla.org/en-US/docs/Web/API/SubtleCrypto/importKey#algorithm).
@@ -30,14 +30,6 @@ abstract class WorkersBindingKindSecretKey implements Built<WorkersBindingKindSe
   @BuiltValueField(wireName: r'format')
   WorkersBindingKindSecretKeyFormatEnum get format;
   // enum formatEnum {  raw,  pkcs8,  spki,  jwk,  };
-
-  /// Base64-encoded key data. Required if `format` is \"raw\", \"pkcs8\", or \"spki\".
-  @BuiltValueField(wireName: r'key_base64')
-  String? get keyBase64;
-
-  /// Key data in [JSON Web Key](https://developer.mozilla.org/en-US/docs/Web/API/SubtleCrypto/importKey#json_web_key) format. Required if `format` is \"jwk\".
-  @BuiltValueField(wireName: r'key_jwk')
-  JsonObject? get keyJwk;
 
   /// A JavaScript variable name for the binding.
   @BuiltValueField(wireName: r'name')
@@ -52,6 +44,14 @@ abstract class WorkersBindingKindSecretKey implements Built<WorkersBindingKindSe
   @BuiltValueField(wireName: r'usages')
   BuiltList<WorkersBindingKindSecretKeyUsagesEnum> get usages;
   // enum usagesEnum {  encrypt,  decrypt,  sign,  verify,  deriveKey,  deriveBits,  wrapKey,  unwrapKey,  };
+
+  /// Base64-encoded key data. Required if `format` is \"raw\", \"pkcs8\", or \"spki\".
+  @BuiltValueField(wireName: r'key_base64')
+  String? get keyBase64;
+
+  /// Key data in [JSON Web Key](https://developer.mozilla.org/en-US/docs/Web/API/SubtleCrypto/importKey#json_web_key) format. Required if `format` is \"jwk\".
+  @BuiltValueField(wireName: r'key_jwk')
+  JsonObject? get keyJwk;
 
   WorkersBindingKindSecretKey._();
 
@@ -86,20 +86,6 @@ class _$WorkersBindingKindSecretKeySerializer implements PrimitiveSerializer<Wor
       object.format,
       specifiedType: const FullType(WorkersBindingKindSecretKeyFormatEnum),
     );
-    if (object.keyBase64 != null) {
-      yield r'key_base64';
-      yield serializers.serialize(
-        object.keyBase64,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.keyJwk != null) {
-      yield r'key_jwk';
-      yield serializers.serialize(
-        object.keyJwk,
-        specifiedType: const FullType(JsonObject),
-      );
-    }
     yield r'name';
     yield serializers.serialize(
       object.name,
@@ -115,6 +101,20 @@ class _$WorkersBindingKindSecretKeySerializer implements PrimitiveSerializer<Wor
       object.usages,
       specifiedType: const FullType(BuiltList, [FullType(WorkersBindingKindSecretKeyUsagesEnum)]),
     );
+    if (object.keyBase64 != null) {
+      yield r'key_base64';
+      yield serializers.serialize(
+        object.keyBase64,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.keyJwk != null) {
+      yield r'key_jwk';
+      yield serializers.serialize(
+        object.keyJwk,
+        specifiedType: const FullType(JsonObject),
+      );
+    }
   }
 
   @override
@@ -152,20 +152,6 @@ class _$WorkersBindingKindSecretKeySerializer implements PrimitiveSerializer<Wor
           ) as WorkersBindingKindSecretKeyFormatEnum;
           result.format = valueDes;
           break;
-        case r'key_base64':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.keyBase64 = valueDes;
-          break;
-        case r'key_jwk':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(JsonObject),
-          ) as JsonObject;
-          result.keyJwk = valueDes;
-          break;
         case r'name':
           final valueDes = serializers.deserialize(
             value,
@@ -186,6 +172,20 @@ class _$WorkersBindingKindSecretKeySerializer implements PrimitiveSerializer<Wor
             specifiedType: const FullType(BuiltList, [FullType(WorkersBindingKindSecretKeyUsagesEnum)]),
           ) as BuiltList<WorkersBindingKindSecretKeyUsagesEnum>;
           result.usages.replace(valueDes);
+          break;
+        case r'key_base64':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.keyBase64 = valueDes;
+          break;
+        case r'key_jwk':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(JsonObject),
+          ) as JsonObject;
+          result.keyJwk = valueDes;
           break;
         default:
           unhandled.add(key);

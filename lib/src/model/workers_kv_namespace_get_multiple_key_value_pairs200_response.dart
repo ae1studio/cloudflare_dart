@@ -9,6 +9,7 @@ import 'package:cloudflare_dart/src/model/workers_kv_namespace_get_multiple_key_
 import 'package:cloudflare_dart/src/model/workers_kv_messages_inner.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
+import 'package:built_value/json_object.dart';
 
 part 'workers_kv_namespace_get_multiple_key_value_pairs200_response.g.dart';
 

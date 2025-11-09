@@ -14,16 +14,13 @@ part 'r2_slurper_gcs_source_schema.g.dart';
 ///
 /// Properties:
 /// * [bucket] 
-/// * [pathPrefix] 
 /// * [secret] 
 /// * [vendor] 
+/// * [pathPrefix] 
 @BuiltValue()
 abstract class R2SlurperGCSSourceSchema implements Built<R2SlurperGCSSourceSchema, R2SlurperGCSSourceSchemaBuilder> {
   @BuiltValueField(wireName: r'bucket')
   String get bucket;
-
-  @BuiltValueField(wireName: r'pathPrefix')
-  String? get pathPrefix;
 
   @BuiltValueField(wireName: r'secret')
   R2SlurperGCSLikeCredsSchema get secret;
@@ -31,6 +28,9 @@ abstract class R2SlurperGCSSourceSchema implements Built<R2SlurperGCSSourceSchem
   @BuiltValueField(wireName: r'vendor')
   R2SlurperGCSSourceSchemaVendorEnum get vendor;
   // enum vendorEnum {  gcs,  };
+
+  @BuiltValueField(wireName: r'pathPrefix')
+  String? get pathPrefix;
 
   R2SlurperGCSSourceSchema._();
 
@@ -60,13 +60,6 @@ class _$R2SlurperGCSSourceSchemaSerializer implements PrimitiveSerializer<R2Slur
       object.bucket,
       specifiedType: const FullType(String),
     );
-    if (object.pathPrefix != null) {
-      yield r'pathPrefix';
-      yield serializers.serialize(
-        object.pathPrefix,
-        specifiedType: const FullType.nullable(String),
-      );
-    }
     yield r'secret';
     yield serializers.serialize(
       object.secret,
@@ -77,6 +70,13 @@ class _$R2SlurperGCSSourceSchemaSerializer implements PrimitiveSerializer<R2Slur
       object.vendor,
       specifiedType: const FullType(R2SlurperGCSSourceSchemaVendorEnum),
     );
+    if (object.pathPrefix != null) {
+      yield r'pathPrefix';
+      yield serializers.serialize(
+        object.pathPrefix,
+        specifiedType: const FullType.nullable(String),
+      );
+    }
   }
 
   @override
@@ -107,14 +107,6 @@ class _$R2SlurperGCSSourceSchemaSerializer implements PrimitiveSerializer<R2Slur
           ) as String;
           result.bucket = valueDes;
           break;
-        case r'pathPrefix':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
-          if (valueDes == null) continue;
-          result.pathPrefix = valueDes;
-          break;
         case r'secret':
           final valueDes = serializers.deserialize(
             value,
@@ -128,6 +120,14 @@ class _$R2SlurperGCSSourceSchemaSerializer implements PrimitiveSerializer<R2Slur
             specifiedType: const FullType(R2SlurperGCSSourceSchemaVendorEnum),
           ) as R2SlurperGCSSourceSchemaVendorEnum;
           result.vendor = valueDes;
+          break;
+        case r'pathPrefix':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType.nullable(String),
+          ) as String?;
+          if (valueDes == null) continue;
+          result.pathPrefix = valueDes;
           break;
         default:
           unhandled.add(key);

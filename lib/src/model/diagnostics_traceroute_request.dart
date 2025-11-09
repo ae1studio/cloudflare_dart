@@ -13,20 +13,20 @@ part 'diagnostics_traceroute_request.g.dart';
 /// DiagnosticsTracerouteRequest
 ///
 /// Properties:
+/// * [targets] 
 /// * [colos] - If no source colo names specified, all colos will be used. China colos are unavailable for traceroutes.
 /// * [options] 
-/// * [targets] 
 @BuiltValue()
 abstract class DiagnosticsTracerouteRequest implements Built<DiagnosticsTracerouteRequest, DiagnosticsTracerouteRequestBuilder> {
+  @BuiltValueField(wireName: r'targets')
+  BuiltList<String> get targets;
+
   /// If no source colo names specified, all colos will be used. China colos are unavailable for traceroutes.
   @BuiltValueField(wireName: r'colos')
   BuiltList<String>? get colos;
 
   @BuiltValueField(wireName: r'options')
   MagicTransitOptions? get options;
-
-  @BuiltValueField(wireName: r'targets')
-  BuiltList<String> get targets;
 
   DiagnosticsTracerouteRequest._();
 
@@ -51,6 +51,11 @@ class _$DiagnosticsTracerouteRequestSerializer implements PrimitiveSerializer<Di
     DiagnosticsTracerouteRequest object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    yield r'targets';
+    yield serializers.serialize(
+      object.targets,
+      specifiedType: const FullType(BuiltList, [FullType(String)]),
+    );
     if (object.colos != null) {
       yield r'colos';
       yield serializers.serialize(
@@ -65,11 +70,6 @@ class _$DiagnosticsTracerouteRequestSerializer implements PrimitiveSerializer<Di
         specifiedType: const FullType(MagicTransitOptions),
       );
     }
-    yield r'targets';
-    yield serializers.serialize(
-      object.targets,
-      specifiedType: const FullType(BuiltList, [FullType(String)]),
-    );
   }
 
   @override
@@ -93,6 +93,13 @@ class _$DiagnosticsTracerouteRequestSerializer implements PrimitiveSerializer<Di
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
+        case r'targets':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BuiltList, [FullType(String)]),
+          ) as BuiltList<String>;
+          result.targets.replace(valueDes);
+          break;
         case r'colos':
           final valueDes = serializers.deserialize(
             value,
@@ -106,13 +113,6 @@ class _$DiagnosticsTracerouteRequestSerializer implements PrimitiveSerializer<Di
             specifiedType: const FullType(MagicTransitOptions),
           ) as MagicTransitOptions;
           result.options.replace(valueDes);
-          break;
-        case r'targets':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>;
-          result.targets.replace(valueDes);
           break;
         default:
           unhandled.add(key);

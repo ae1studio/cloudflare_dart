@@ -9,18 +9,10 @@ part of 'urlscanner_get_scan200_response_result_scan.dart';
 class _$UrlscannerGetScan200ResponseResultScan
     extends UrlscannerGetScan200ResponseResultScan {
   @override
-  final UrlscannerGetScan200ResponseResultScanAsns? asns;
-  @override
   final BuiltList<UrlscannerGetScan200ResponseResultScanCertificatesInner>
       certificates;
   @override
-  final UrlscannerGetScan200ResponseResultScanDomains? domains;
-  @override
   final UrlscannerGetScan200ResponseResultScanGeo geo;
-  @override
-  final UrlscannerGetScan200ResponseResultScanIps? ips;
-  @override
-  final UrlscannerGetScan200ResponseResultScanLinks? links;
   @override
   final UrlscannerGetScan200ResponseResultScanMeta meta;
   @override
@@ -32,6 +24,14 @@ class _$UrlscannerGetScan200ResponseResultScan
   final UrlscannerCreateScan409ResponseResultTasksInner task;
   @override
   final UrlscannerGetScan200ResponseResultScanVerdicts verdicts;
+  @override
+  final UrlscannerGetScan200ResponseResultScanAsns? asns;
+  @override
+  final UrlscannerGetScan200ResponseResultScanDomains? domains;
+  @override
+  final UrlscannerGetScan200ResponseResultScanIps? ips;
+  @override
+  final UrlscannerGetScan200ResponseResultScanLinks? links;
 
   factory _$UrlscannerGetScan200ResponseResultScan(
           [void Function(UrlscannerGetScan200ResponseResultScanBuilder)?
@@ -40,17 +40,17 @@ class _$UrlscannerGetScan200ResponseResultScan
           ._build();
 
   _$UrlscannerGetScan200ResponseResultScan._(
-      {this.asns,
-      required this.certificates,
-      this.domains,
+      {required this.certificates,
       required this.geo,
-      this.ips,
-      this.links,
       required this.meta,
       required this.page,
       required this.performance,
       required this.task,
-      required this.verdicts})
+      required this.verdicts,
+      this.asns,
+      this.domains,
+      this.ips,
+      this.links})
       : super._();
   @override
   UrlscannerGetScan200ResponseResultScan rebuild(
@@ -66,33 +66,33 @@ class _$UrlscannerGetScan200ResponseResultScan
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is UrlscannerGetScan200ResponseResultScan &&
-        asns == other.asns &&
         certificates == other.certificates &&
-        domains == other.domains &&
         geo == other.geo &&
-        ips == other.ips &&
-        links == other.links &&
         meta == other.meta &&
         page == other.page &&
         performance == other.performance &&
         task == other.task &&
-        verdicts == other.verdicts;
+        verdicts == other.verdicts &&
+        asns == other.asns &&
+        domains == other.domains &&
+        ips == other.ips &&
+        links == other.links;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, asns.hashCode);
     _$hash = $jc(_$hash, certificates.hashCode);
-    _$hash = $jc(_$hash, domains.hashCode);
     _$hash = $jc(_$hash, geo.hashCode);
-    _$hash = $jc(_$hash, ips.hashCode);
-    _$hash = $jc(_$hash, links.hashCode);
     _$hash = $jc(_$hash, meta.hashCode);
     _$hash = $jc(_$hash, page.hashCode);
     _$hash = $jc(_$hash, performance.hashCode);
     _$hash = $jc(_$hash, task.hashCode);
     _$hash = $jc(_$hash, verdicts.hashCode);
+    _$hash = $jc(_$hash, asns.hashCode);
+    _$hash = $jc(_$hash, domains.hashCode);
+    _$hash = $jc(_$hash, ips.hashCode);
+    _$hash = $jc(_$hash, links.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -101,17 +101,17 @@ class _$UrlscannerGetScan200ResponseResultScan
   String toString() {
     return (newBuiltValueToStringHelper(
             r'UrlscannerGetScan200ResponseResultScan')
-          ..add('asns', asns)
           ..add('certificates', certificates)
-          ..add('domains', domains)
           ..add('geo', geo)
-          ..add('ips', ips)
-          ..add('links', links)
           ..add('meta', meta)
           ..add('page', page)
           ..add('performance', performance)
           ..add('task', task)
-          ..add('verdicts', verdicts))
+          ..add('verdicts', verdicts)
+          ..add('asns', asns)
+          ..add('domains', domains)
+          ..add('ips', ips)
+          ..add('links', links))
         .toString();
   }
 }
@@ -121,12 +121,6 @@ class UrlscannerGetScan200ResponseResultScanBuilder
         Builder<UrlscannerGetScan200ResponseResultScan,
             UrlscannerGetScan200ResponseResultScanBuilder> {
   _$UrlscannerGetScan200ResponseResultScan? _$v;
-
-  UrlscannerGetScan200ResponseResultScanAsnsBuilder? _asns;
-  UrlscannerGetScan200ResponseResultScanAsnsBuilder get asns =>
-      _$this._asns ??= UrlscannerGetScan200ResponseResultScanAsnsBuilder();
-  set asns(UrlscannerGetScan200ResponseResultScanAsnsBuilder? asns) =>
-      _$this._asns = asns;
 
   ListBuilder<UrlscannerGetScan200ResponseResultScanCertificatesInner>?
       _certificates;
@@ -138,30 +132,11 @@ class UrlscannerGetScan200ResponseResultScanBuilder
               certificates) =>
       _$this._certificates = certificates;
 
-  UrlscannerGetScan200ResponseResultScanDomainsBuilder? _domains;
-  UrlscannerGetScan200ResponseResultScanDomainsBuilder get domains =>
-      _$this._domains ??=
-          UrlscannerGetScan200ResponseResultScanDomainsBuilder();
-  set domains(UrlscannerGetScan200ResponseResultScanDomainsBuilder? domains) =>
-      _$this._domains = domains;
-
   UrlscannerGetScan200ResponseResultScanGeoBuilder? _geo;
   UrlscannerGetScan200ResponseResultScanGeoBuilder get geo =>
       _$this._geo ??= UrlscannerGetScan200ResponseResultScanGeoBuilder();
   set geo(UrlscannerGetScan200ResponseResultScanGeoBuilder? geo) =>
       _$this._geo = geo;
-
-  UrlscannerGetScan200ResponseResultScanIpsBuilder? _ips;
-  UrlscannerGetScan200ResponseResultScanIpsBuilder get ips =>
-      _$this._ips ??= UrlscannerGetScan200ResponseResultScanIpsBuilder();
-  set ips(UrlscannerGetScan200ResponseResultScanIpsBuilder? ips) =>
-      _$this._ips = ips;
-
-  UrlscannerGetScan200ResponseResultScanLinksBuilder? _links;
-  UrlscannerGetScan200ResponseResultScanLinksBuilder get links =>
-      _$this._links ??= UrlscannerGetScan200ResponseResultScanLinksBuilder();
-  set links(UrlscannerGetScan200ResponseResultScanLinksBuilder? links) =>
-      _$this._links = links;
 
   UrlscannerGetScan200ResponseResultScanMetaBuilder? _meta;
   UrlscannerGetScan200ResponseResultScanMetaBuilder get meta =>
@@ -199,6 +174,31 @@ class UrlscannerGetScan200ResponseResultScanBuilder
           UrlscannerGetScan200ResponseResultScanVerdictsBuilder? verdicts) =>
       _$this._verdicts = verdicts;
 
+  UrlscannerGetScan200ResponseResultScanAsnsBuilder? _asns;
+  UrlscannerGetScan200ResponseResultScanAsnsBuilder get asns =>
+      _$this._asns ??= UrlscannerGetScan200ResponseResultScanAsnsBuilder();
+  set asns(UrlscannerGetScan200ResponseResultScanAsnsBuilder? asns) =>
+      _$this._asns = asns;
+
+  UrlscannerGetScan200ResponseResultScanDomainsBuilder? _domains;
+  UrlscannerGetScan200ResponseResultScanDomainsBuilder get domains =>
+      _$this._domains ??=
+          UrlscannerGetScan200ResponseResultScanDomainsBuilder();
+  set domains(UrlscannerGetScan200ResponseResultScanDomainsBuilder? domains) =>
+      _$this._domains = domains;
+
+  UrlscannerGetScan200ResponseResultScanIpsBuilder? _ips;
+  UrlscannerGetScan200ResponseResultScanIpsBuilder get ips =>
+      _$this._ips ??= UrlscannerGetScan200ResponseResultScanIpsBuilder();
+  set ips(UrlscannerGetScan200ResponseResultScanIpsBuilder? ips) =>
+      _$this._ips = ips;
+
+  UrlscannerGetScan200ResponseResultScanLinksBuilder? _links;
+  UrlscannerGetScan200ResponseResultScanLinksBuilder get links =>
+      _$this._links ??= UrlscannerGetScan200ResponseResultScanLinksBuilder();
+  set links(UrlscannerGetScan200ResponseResultScanLinksBuilder? links) =>
+      _$this._links = links;
+
   UrlscannerGetScan200ResponseResultScanBuilder() {
     UrlscannerGetScan200ResponseResultScan._defaults(this);
   }
@@ -206,17 +206,17 @@ class UrlscannerGetScan200ResponseResultScanBuilder
   UrlscannerGetScan200ResponseResultScanBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _asns = $v.asns?.toBuilder();
       _certificates = $v.certificates.toBuilder();
-      _domains = $v.domains?.toBuilder();
       _geo = $v.geo.toBuilder();
-      _ips = $v.ips?.toBuilder();
-      _links = $v.links?.toBuilder();
       _meta = $v.meta.toBuilder();
       _page = $v.page.toBuilder();
       _performance = $v.performance.toBuilder();
       _task = $v.task.toBuilder();
       _verdicts = $v.verdicts.toBuilder();
+      _asns = $v.asns?.toBuilder();
+      _domains = $v.domains?.toBuilder();
+      _ips = $v.ips?.toBuilder();
+      _links = $v.links?.toBuilder();
       _$v = null;
     }
     return this;
@@ -241,33 +241,25 @@ class UrlscannerGetScan200ResponseResultScanBuilder
     try {
       _$result = _$v ??
           _$UrlscannerGetScan200ResponseResultScan._(
-            asns: _asns?.build(),
             certificates: certificates.build(),
-            domains: _domains?.build(),
             geo: geo.build(),
-            ips: _ips?.build(),
-            links: _links?.build(),
             meta: meta.build(),
             page: page.build(),
             performance: performance.build(),
             task: task.build(),
             verdicts: verdicts.build(),
+            asns: _asns?.build(),
+            domains: _domains?.build(),
+            ips: _ips?.build(),
+            links: _links?.build(),
           );
     } catch (_) {
       late String _$failedField;
       try {
-        _$failedField = 'asns';
-        _asns?.build();
         _$failedField = 'certificates';
         certificates.build();
-        _$failedField = 'domains';
-        _domains?.build();
         _$failedField = 'geo';
         geo.build();
-        _$failedField = 'ips';
-        _ips?.build();
-        _$failedField = 'links';
-        _links?.build();
         _$failedField = 'meta';
         meta.build();
         _$failedField = 'page';
@@ -278,6 +270,14 @@ class UrlscannerGetScan200ResponseResultScanBuilder
         task.build();
         _$failedField = 'verdicts';
         verdicts.build();
+        _$failedField = 'asns';
+        _asns?.build();
+        _$failedField = 'domains';
+        _domains?.build();
+        _$failedField = 'ips';
+        _ips?.build();
+        _$failedField = 'links';
+        _links?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
             r'UrlscannerGetScan200ResponseResultScan',

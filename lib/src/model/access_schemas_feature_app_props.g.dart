@@ -9,6 +9,9 @@ part of 'access_schemas_feature_app_props.dart';
 abstract class AccessSchemasFeatureAppPropsBuilder {
   void replace(AccessSchemasFeatureAppProps other);
   void update(void Function(AccessSchemasFeatureAppPropsBuilder) updates);
+  AccessComponentsSchemasType? get type;
+  set type(AccessComponentsSchemasType? type);
+
   ListBuilder<String> get allowedIdps;
   set allowedIdps(ListBuilder<String>? allowedIdps);
 
@@ -23,12 +26,11 @@ abstract class AccessSchemasFeatureAppPropsBuilder {
 
   String? get sessionDuration;
   set sessionDuration(String? sessionDuration);
-
-  AccessComponentsSchemasType? get type;
-  set type(AccessComponentsSchemasType? type);
 }
 
 class _$$AccessSchemasFeatureAppProps extends $AccessSchemasFeatureAppProps {
+  @override
+  final AccessComponentsSchemasType type;
   @override
   final BuiltList<String>? allowedIdps;
   @override
@@ -39,20 +41,18 @@ class _$$AccessSchemasFeatureAppProps extends $AccessSchemasFeatureAppProps {
   final String? name;
   @override
   final String? sessionDuration;
-  @override
-  final AccessComponentsSchemasType type;
 
   factory _$$AccessSchemasFeatureAppProps(
           [void Function($AccessSchemasFeatureAppPropsBuilder)? updates]) =>
       ($AccessSchemasFeatureAppPropsBuilder()..update(updates))._build();
 
   _$$AccessSchemasFeatureAppProps._(
-      {this.allowedIdps,
+      {required this.type,
+      this.allowedIdps,
       this.autoRedirectToIdentity,
       this.domain,
       this.name,
-      this.sessionDuration,
-      required this.type})
+      this.sessionDuration})
       : super._();
   @override
   $AccessSchemasFeatureAppProps rebuild(
@@ -67,23 +67,23 @@ class _$$AccessSchemasFeatureAppProps extends $AccessSchemasFeatureAppProps {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is $AccessSchemasFeatureAppProps &&
+        type == other.type &&
         allowedIdps == other.allowedIdps &&
         autoRedirectToIdentity == other.autoRedirectToIdentity &&
         domain == other.domain &&
         name == other.name &&
-        sessionDuration == other.sessionDuration &&
-        type == other.type;
+        sessionDuration == other.sessionDuration;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
+    _$hash = $jc(_$hash, type.hashCode);
     _$hash = $jc(_$hash, allowedIdps.hashCode);
     _$hash = $jc(_$hash, autoRedirectToIdentity.hashCode);
     _$hash = $jc(_$hash, domain.hashCode);
     _$hash = $jc(_$hash, name.hashCode);
     _$hash = $jc(_$hash, sessionDuration.hashCode);
-    _$hash = $jc(_$hash, type.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -91,12 +91,12 @@ class _$$AccessSchemasFeatureAppProps extends $AccessSchemasFeatureAppProps {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'$AccessSchemasFeatureAppProps')
+          ..add('type', type)
           ..add('allowedIdps', allowedIdps)
           ..add('autoRedirectToIdentity', autoRedirectToIdentity)
           ..add('domain', domain)
           ..add('name', name)
-          ..add('sessionDuration', sessionDuration)
-          ..add('type', type))
+          ..add('sessionDuration', sessionDuration))
         .toString();
   }
 }
@@ -107,6 +107,10 @@ class $AccessSchemasFeatureAppPropsBuilder
             $AccessSchemasFeatureAppPropsBuilder>,
         AccessSchemasFeatureAppPropsBuilder {
   _$$AccessSchemasFeatureAppProps? _$v;
+
+  AccessComponentsSchemasType? _type;
+  AccessComponentsSchemasType? get type => _$this._type;
+  set type(covariant AccessComponentsSchemasType? type) => _$this._type = type;
 
   ListBuilder<String>? _allowedIdps;
   ListBuilder<String> get allowedIdps =>
@@ -132,10 +136,6 @@ class $AccessSchemasFeatureAppPropsBuilder
   set sessionDuration(covariant String? sessionDuration) =>
       _$this._sessionDuration = sessionDuration;
 
-  AccessComponentsSchemasType? _type;
-  AccessComponentsSchemasType? get type => _$this._type;
-  set type(covariant AccessComponentsSchemasType? type) => _$this._type = type;
-
   $AccessSchemasFeatureAppPropsBuilder() {
     $AccessSchemasFeatureAppProps._defaults(this);
   }
@@ -143,12 +143,12 @@ class $AccessSchemasFeatureAppPropsBuilder
   $AccessSchemasFeatureAppPropsBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
+      _type = $v.type;
       _allowedIdps = $v.allowedIdps?.toBuilder();
       _autoRedirectToIdentity = $v.autoRedirectToIdentity;
       _domain = $v.domain;
       _name = $v.name;
       _sessionDuration = $v.sessionDuration;
-      _type = $v.type;
       _$v = null;
     }
     return this;
@@ -172,13 +172,13 @@ class $AccessSchemasFeatureAppPropsBuilder
     try {
       _$result = _$v ??
           _$$AccessSchemasFeatureAppProps._(
+            type: BuiltValueNullFieldError.checkNotNull(
+                type, r'$AccessSchemasFeatureAppProps', 'type'),
             allowedIdps: _allowedIdps?.build(),
             autoRedirectToIdentity: autoRedirectToIdentity,
             domain: domain,
             name: name,
             sessionDuration: sessionDuration,
-            type: BuiltValueNullFieldError.checkNotNull(
-                type, r'$AccessSchemasFeatureAppProps', 'type'),
           );
     } catch (_) {
       late String _$failedField;

@@ -10,11 +10,11 @@ class _$WaitingroomCreateRule extends WaitingroomCreateRule {
   @override
   final WaitingroomRuleAction action;
   @override
+  final String expression;
+  @override
   final String? description;
   @override
   final bool? enabled;
-  @override
-  final String expression;
 
   factory _$WaitingroomCreateRule(
           [void Function(WaitingroomCreateRuleBuilder)? updates]) =>
@@ -22,9 +22,9 @@ class _$WaitingroomCreateRule extends WaitingroomCreateRule {
 
   _$WaitingroomCreateRule._(
       {required this.action,
+      required this.expression,
       this.description,
-      this.enabled,
-      required this.expression})
+      this.enabled})
       : super._();
   @override
   WaitingroomCreateRule rebuild(
@@ -40,18 +40,18 @@ class _$WaitingroomCreateRule extends WaitingroomCreateRule {
     if (identical(other, this)) return true;
     return other is WaitingroomCreateRule &&
         action == other.action &&
+        expression == other.expression &&
         description == other.description &&
-        enabled == other.enabled &&
-        expression == other.expression;
+        enabled == other.enabled;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
     _$hash = $jc(_$hash, action.hashCode);
+    _$hash = $jc(_$hash, expression.hashCode);
     _$hash = $jc(_$hash, description.hashCode);
     _$hash = $jc(_$hash, enabled.hashCode);
-    _$hash = $jc(_$hash, expression.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -60,9 +60,9 @@ class _$WaitingroomCreateRule extends WaitingroomCreateRule {
   String toString() {
     return (newBuiltValueToStringHelper(r'WaitingroomCreateRule')
           ..add('action', action)
+          ..add('expression', expression)
           ..add('description', description)
-          ..add('enabled', enabled)
-          ..add('expression', expression))
+          ..add('enabled', enabled))
         .toString();
   }
 }
@@ -75,6 +75,10 @@ class WaitingroomCreateRuleBuilder
   WaitingroomRuleAction? get action => _$this._action;
   set action(WaitingroomRuleAction? action) => _$this._action = action;
 
+  String? _expression;
+  String? get expression => _$this._expression;
+  set expression(String? expression) => _$this._expression = expression;
+
   String? _description;
   String? get description => _$this._description;
   set description(String? description) => _$this._description = description;
@@ -82,10 +86,6 @@ class WaitingroomCreateRuleBuilder
   bool? _enabled;
   bool? get enabled => _$this._enabled;
   set enabled(bool? enabled) => _$this._enabled = enabled;
-
-  String? _expression;
-  String? get expression => _$this._expression;
-  set expression(String? expression) => _$this._expression = expression;
 
   WaitingroomCreateRuleBuilder() {
     WaitingroomCreateRule._defaults(this);
@@ -95,9 +95,9 @@ class WaitingroomCreateRuleBuilder
     final $v = _$v;
     if ($v != null) {
       _action = $v.action;
+      _expression = $v.expression;
       _description = $v.description;
       _enabled = $v.enabled;
-      _expression = $v.expression;
       _$v = null;
     }
     return this;
@@ -121,10 +121,10 @@ class WaitingroomCreateRuleBuilder
         _$WaitingroomCreateRule._(
           action: BuiltValueNullFieldError.checkNotNull(
               action, r'WaitingroomCreateRule', 'action'),
-          description: description,
-          enabled: enabled,
           expression: BuiltValueNullFieldError.checkNotNull(
               expression, r'WaitingroomCreateRule', 'expression'),
+          description: description,
+          enabled: enabled,
         );
     replace(_$result);
     return _$result;

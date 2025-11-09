@@ -9,9 +9,9 @@ import 'package:cloudflare_dart/api.dart';
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **contentType** | [**RulesetsServeErrorContentType**](RulesetsServeErrorContentType.md) |  | 
-**statusCode** | **int** | The status code to use for the error. | [optional] 
 **content** | **String** | The response content. | 
 **assetName** | **String** | The name of a custom asset to serve as the error response. | 
+**statusCode** | **int** | The status code to use for the error. | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

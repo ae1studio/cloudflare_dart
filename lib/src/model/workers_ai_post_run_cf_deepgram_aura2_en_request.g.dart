@@ -554,6 +554,8 @@ class _$WorkersAiPostRunCfDeepgramAura2EnRequestSpeakerEnumSerializer
 class _$WorkersAiPostRunCfDeepgramAura2EnRequest
     extends WorkersAiPostRunCfDeepgramAura2EnRequest {
   @override
+  final String text;
+  @override
   final num? bitRate;
   @override
   final WorkersAiPostRunCfDeepgramAura2EnRequestContainerEnum? container;
@@ -563,8 +565,6 @@ class _$WorkersAiPostRunCfDeepgramAura2EnRequest
   final num? sampleRate;
   @override
   final WorkersAiPostRunCfDeepgramAura2EnRequestSpeakerEnum? speaker;
-  @override
-  final String text;
 
   factory _$WorkersAiPostRunCfDeepgramAura2EnRequest(
           [void Function(WorkersAiPostRunCfDeepgramAura2EnRequestBuilder)?
@@ -573,12 +573,12 @@ class _$WorkersAiPostRunCfDeepgramAura2EnRequest
           ._build();
 
   _$WorkersAiPostRunCfDeepgramAura2EnRequest._(
-      {this.bitRate,
+      {required this.text,
+      this.bitRate,
       this.container,
       this.encoding,
       this.sampleRate,
-      this.speaker,
-      required this.text})
+      this.speaker})
       : super._();
   @override
   WorkersAiPostRunCfDeepgramAura2EnRequest rebuild(
@@ -594,23 +594,23 @@ class _$WorkersAiPostRunCfDeepgramAura2EnRequest
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is WorkersAiPostRunCfDeepgramAura2EnRequest &&
+        text == other.text &&
         bitRate == other.bitRate &&
         container == other.container &&
         encoding == other.encoding &&
         sampleRate == other.sampleRate &&
-        speaker == other.speaker &&
-        text == other.text;
+        speaker == other.speaker;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
+    _$hash = $jc(_$hash, text.hashCode);
     _$hash = $jc(_$hash, bitRate.hashCode);
     _$hash = $jc(_$hash, container.hashCode);
     _$hash = $jc(_$hash, encoding.hashCode);
     _$hash = $jc(_$hash, sampleRate.hashCode);
     _$hash = $jc(_$hash, speaker.hashCode);
-    _$hash = $jc(_$hash, text.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -619,12 +619,12 @@ class _$WorkersAiPostRunCfDeepgramAura2EnRequest
   String toString() {
     return (newBuiltValueToStringHelper(
             r'WorkersAiPostRunCfDeepgramAura2EnRequest')
+          ..add('text', text)
           ..add('bitRate', bitRate)
           ..add('container', container)
           ..add('encoding', encoding)
           ..add('sampleRate', sampleRate)
-          ..add('speaker', speaker)
-          ..add('text', text))
+          ..add('speaker', speaker))
         .toString();
   }
 }
@@ -634,6 +634,10 @@ class WorkersAiPostRunCfDeepgramAura2EnRequestBuilder
         Builder<WorkersAiPostRunCfDeepgramAura2EnRequest,
             WorkersAiPostRunCfDeepgramAura2EnRequestBuilder> {
   _$WorkersAiPostRunCfDeepgramAura2EnRequest? _$v;
+
+  String? _text;
+  String? get text => _$this._text;
+  set text(String? text) => _$this._text = text;
 
   num? _bitRate;
   num? get bitRate => _$this._bitRate;
@@ -663,10 +667,6 @@ class WorkersAiPostRunCfDeepgramAura2EnRequestBuilder
   set speaker(WorkersAiPostRunCfDeepgramAura2EnRequestSpeakerEnum? speaker) =>
       _$this._speaker = speaker;
 
-  String? _text;
-  String? get text => _$this._text;
-  set text(String? text) => _$this._text = text;
-
   WorkersAiPostRunCfDeepgramAura2EnRequestBuilder() {
     WorkersAiPostRunCfDeepgramAura2EnRequest._defaults(this);
   }
@@ -674,12 +674,12 @@ class WorkersAiPostRunCfDeepgramAura2EnRequestBuilder
   WorkersAiPostRunCfDeepgramAura2EnRequestBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
+      _text = $v.text;
       _bitRate = $v.bitRate;
       _container = $v.container;
       _encoding = $v.encoding;
       _sampleRate = $v.sampleRate;
       _speaker = $v.speaker;
-      _text = $v.text;
       _$v = null;
     }
     return this;
@@ -702,13 +702,13 @@ class WorkersAiPostRunCfDeepgramAura2EnRequestBuilder
   _$WorkersAiPostRunCfDeepgramAura2EnRequest _build() {
     final _$result = _$v ??
         _$WorkersAiPostRunCfDeepgramAura2EnRequest._(
+          text: BuiltValueNullFieldError.checkNotNull(
+              text, r'WorkersAiPostRunCfDeepgramAura2EnRequest', 'text'),
           bitRate: bitRate,
           container: container,
           encoding: encoding,
           sampleRate: sampleRate,
           speaker: speaker,
-          text: BuiltValueNullFieldError.checkNotNull(
-              text, r'WorkersAiPostRunCfDeepgramAura2EnRequest', 'text'),
         );
     replace(_$result);
     return _$result;

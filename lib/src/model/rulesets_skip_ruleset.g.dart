@@ -6,9 +6,9 @@ part of 'rulesets_skip_ruleset.dart';
 // BuiltValueGenerator
 // **************************************************************************
 
-const RulesetsSkipPhase _$current = const RulesetsSkipPhase._('current');
+const RulesetsSkipRuleset _$current = const RulesetsSkipRuleset._('current');
 
-RulesetsSkipPhase _$valueOf(String name) {
+RulesetsSkipRuleset _$valueOf(String name) {
   switch (name) {
     case 'current':
       return _$current;
@@ -17,29 +17,29 @@ RulesetsSkipPhase _$valueOf(String name) {
   }
 }
 
-final BuiltSet<RulesetsSkipPhase> _$values =
-    BuiltSet<RulesetsSkipPhase>(const <RulesetsSkipPhase>[
+final BuiltSet<RulesetsSkipRuleset> _$values =
+    BuiltSet<RulesetsSkipRuleset>(const <RulesetsSkipRuleset>[
   _$current,
 ]);
 
 class _$RulesetsSkipRulesetMeta {
   const _$RulesetsSkipRulesetMeta();
-  RulesetsSkipPhase get current => _$current;
-  RulesetsSkipPhase valueOf(String name) => _$valueOf(name);
-  BuiltSet<RulesetsSkipPhase> get values => _$values;
+  RulesetsSkipRuleset get current => _$current;
+  RulesetsSkipRuleset valueOf(String name) => _$valueOf(name);
+  BuiltSet<RulesetsSkipRuleset> get values => _$values;
 }
 
 abstract class _$RulesetsSkipRulesetMixin {
   // ignore: non_constant_identifier_names
-  _$RulesetsSkipRulesetMeta get RulesetsSkipPhase =>
+  _$RulesetsSkipRulesetMeta get RulesetsSkipRuleset =>
       const _$RulesetsSkipRulesetMeta();
 }
 
-Serializer<RulesetsSkipPhase> _$rulesetsSkipRulesetSerializer =
+Serializer<RulesetsSkipRuleset> _$rulesetsSkipRulesetSerializer =
     _$RulesetsSkipRulesetSerializer();
 
 class _$RulesetsSkipRulesetSerializer
-    implements PrimitiveSerializer<RulesetsSkipPhase> {
+    implements PrimitiveSerializer<RulesetsSkipRuleset> {
   static const Map<String, Object> _toWire = const <String, Object>{
     'current': 'current',
   };
@@ -48,19 +48,19 @@ class _$RulesetsSkipRulesetSerializer
   };
 
   @override
-  final Iterable<Type> types = const <Type>[RulesetsSkipPhase];
+  final Iterable<Type> types = const <Type>[RulesetsSkipRuleset];
   @override
-  final String wireName = 'RulesetsSkipPhase';
+  final String wireName = 'RulesetsSkipRuleset';
 
   @override
-  Object serialize(Serializers serializers, RulesetsSkipPhase object,
+  Object serialize(Serializers serializers, RulesetsSkipRuleset object,
           {FullType specifiedType = FullType.unspecified}) =>
       _toWire[object.name] ?? object.name;
 
   @override
-  RulesetsSkipPhase deserialize(Serializers serializers, Object serialized,
+  RulesetsSkipRuleset deserialize(Serializers serializers, Object serialized,
           {FullType specifiedType = FullType.unspecified}) =>
-      RulesetsSkipPhase.valueOf(
+      RulesetsSkipRuleset.valueOf(
           _fromWire[serialized] ?? (serialized is String ? serialized : ''));
 }
 

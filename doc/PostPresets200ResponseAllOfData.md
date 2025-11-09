@@ -10,9 +10,9 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **config** | [**RealtimekitPresetConfig**](RealtimekitPresetConfig.md) |  | 
 **name** | **String** | Name of the preset | 
-**permissions** | [**RealtimekitPresetPermissions**](RealtimekitPresetPermissions.md) |  | [optional] 
 **ui** | [**RealtimekitPresetUi**](RealtimekitPresetUi.md) |  | 
 **id** | **String** | ID of the preset | 
+**permissions** | [**RealtimekitPresetPermissions**](RealtimekitPresetPermissions.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

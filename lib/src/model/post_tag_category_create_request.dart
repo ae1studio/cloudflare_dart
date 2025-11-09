@@ -11,15 +11,15 @@ part 'post_tag_category_create_request.g.dart';
 /// PostTagCategoryCreateRequest
 ///
 /// Properties:
-/// * [description] 
 /// * [name] 
+/// * [description] 
 @BuiltValue()
 abstract class PostTagCategoryCreateRequest implements Built<PostTagCategoryCreateRequest, PostTagCategoryCreateRequestBuilder> {
-  @BuiltValueField(wireName: r'description')
-  String? get description;
-
   @BuiltValueField(wireName: r'name')
   String get name;
+
+  @BuiltValueField(wireName: r'description')
+  String? get description;
 
   PostTagCategoryCreateRequest._();
 
@@ -44,6 +44,11 @@ class _$PostTagCategoryCreateRequestSerializer implements PrimitiveSerializer<Po
     PostTagCategoryCreateRequest object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    yield r'name';
+    yield serializers.serialize(
+      object.name,
+      specifiedType: const FullType(String),
+    );
     if (object.description != null) {
       yield r'description';
       yield serializers.serialize(
@@ -51,11 +56,6 @@ class _$PostTagCategoryCreateRequestSerializer implements PrimitiveSerializer<Po
         specifiedType: const FullType(String),
       );
     }
-    yield r'name';
-    yield serializers.serialize(
-      object.name,
-      specifiedType: const FullType(String),
-    );
   }
 
   @override
@@ -79,19 +79,19 @@ class _$PostTagCategoryCreateRequestSerializer implements PrimitiveSerializer<Po
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'description':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.description = valueDes;
-          break;
         case r'name':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(String),
           ) as String;
           result.name = valueDes;
+          break;
+        case r'description':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.description = valueDes;
           break;
         default:
           unhandled.add(key);

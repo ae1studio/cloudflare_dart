@@ -8,16 +8,17 @@ import 'package:cloudflare_dart/src/model/zones_base.dart';
 import 'package:cloudflare_dart/src/model/zones_brotli_value.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
+import 'package:built_value/json_object.dart';
 
 part 'zones_brotli.g.dart';
 
 /// When the client requesting an asset supports the Brotli compression algorithm, Cloudflare will serve a Brotli compressed version of the asset.
 ///
 /// Properties:
-/// * [editable] - Whether or not this setting can be modified for this zone (based on your Cloudflare plan level).
 /// * [id] - ID of the zone setting.
-/// * [modifiedOn] - last time this setting was modified.
 /// * [value] 
+/// * [editable] - Whether or not this setting can be modified for this zone (based on your Cloudflare plan level).
+/// * [modifiedOn] - last time this setting was modified.
 @BuiltValue()
 abstract class ZonesBrotli implements ZonesBase, Built<ZonesBrotli, ZonesBrotliBuilder> {
   ZonesBrotli._();

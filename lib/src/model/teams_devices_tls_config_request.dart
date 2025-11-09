@@ -11,17 +11,17 @@ part 'teams_devices_tls_config_request.g.dart';
 /// TeamsDevicesTlsConfigRequest
 ///
 /// Properties:
-/// * [sha256] - The SHA-256 hash of the TLS certificate presented by the host found at tls_sockaddr. If absent, regular certificate verification (trusted roots, valid timestamp, etc) will be used to validate the certificate.
 /// * [tlsSockaddr] - A network address of the form \"host:port\" that the WARP client will use to detect the presence of a TLS host.
+/// * [sha256] - The SHA-256 hash of the TLS certificate presented by the host found at tls_sockaddr. If absent, regular certificate verification (trusted roots, valid timestamp, etc) will be used to validate the certificate.
 @BuiltValue()
 abstract class TeamsDevicesTlsConfigRequest implements Built<TeamsDevicesTlsConfigRequest, TeamsDevicesTlsConfigRequestBuilder> {
-  /// The SHA-256 hash of the TLS certificate presented by the host found at tls_sockaddr. If absent, regular certificate verification (trusted roots, valid timestamp, etc) will be used to validate the certificate.
-  @BuiltValueField(wireName: r'sha256')
-  String? get sha256;
-
   /// A network address of the form \"host:port\" that the WARP client will use to detect the presence of a TLS host.
   @BuiltValueField(wireName: r'tls_sockaddr')
   String get tlsSockaddr;
+
+  /// The SHA-256 hash of the TLS certificate presented by the host found at tls_sockaddr. If absent, regular certificate verification (trusted roots, valid timestamp, etc) will be used to validate the certificate.
+  @BuiltValueField(wireName: r'sha256')
+  String? get sha256;
 
   TeamsDevicesTlsConfigRequest._();
 
@@ -46,6 +46,11 @@ class _$TeamsDevicesTlsConfigRequestSerializer implements PrimitiveSerializer<Te
     TeamsDevicesTlsConfigRequest object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    yield r'tls_sockaddr';
+    yield serializers.serialize(
+      object.tlsSockaddr,
+      specifiedType: const FullType(String),
+    );
     if (object.sha256 != null) {
       yield r'sha256';
       yield serializers.serialize(
@@ -53,11 +58,6 @@ class _$TeamsDevicesTlsConfigRequestSerializer implements PrimitiveSerializer<Te
         specifiedType: const FullType(String),
       );
     }
-    yield r'tls_sockaddr';
-    yield serializers.serialize(
-      object.tlsSockaddr,
-      specifiedType: const FullType(String),
-    );
   }
 
   @override
@@ -81,19 +81,19 @@ class _$TeamsDevicesTlsConfigRequestSerializer implements PrimitiveSerializer<Te
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'sha256':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.sha256 = valueDes;
-          break;
         case r'tls_sockaddr':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(String),
           ) as String;
           result.tlsSockaddr = valueDes;
+          break;
+        case r'sha256':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.sha256 = valueDes;
           break;
         default:
           unhandled.add(key);

@@ -8,8 +8,8 @@ import 'package:cloudflare_dart/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**name** | **String** |  | [optional] 
 **physport** | **int** |  | 
+**name** | **String** |  | [optional] 
 **priority** | **int** |  | [optional] 
 **staticAddressing** | [**MagicWanStaticAddressing**](MagicWanStaticAddressing.md) |  | [optional] 
 **vlanTag** | **int** | VLAN ID. Use zero for untagged. | [optional] 

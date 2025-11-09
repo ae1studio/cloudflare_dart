@@ -18,9 +18,9 @@ part 'nsc_interconnect_create.g.dart';
 /// * [account] 
 /// * [type] 
 /// * [slotId] 
-/// * [speed] 
 /// * [bandwidth] 
 /// * [pairingKey] - Pairing key provided by GCP
+/// * [speed] 
 @BuiltValue()
 abstract class NscInterconnectCreate implements Built<NscInterconnectCreate, NscInterconnectCreateBuilder> {
   /// One Of [NscInterconnectCreateGcpPartnerBody], [NscInterconnectCreatePhysicalBody]

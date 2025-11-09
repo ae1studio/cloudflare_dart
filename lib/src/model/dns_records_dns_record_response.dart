@@ -24,14 +24,14 @@ part 'dns_records_dns_record_response.g.dart';
 /// * [ttl] 
 /// * [content] - Formatted URI content. See 'data' to set URI properties.
 /// * [type] - Record type.
-/// * [priority] - Required for MX, SRV and URI records; unused by other record types. Records with lower priorities are preferred.
 /// * [data] 
-/// * [commentModifiedOn] - When the record comment was last modified. Omitted if there is no comment.
 /// * [createdOn] - When the record was created.
 /// * [id] - Identifier.
 /// * [meta] - Extra Cloudflare-specific information about the record.
 /// * [modifiedOn] - When the record was last modified.
 /// * [proxiable] - Whether the record can be proxied by Cloudflare or not.
+/// * [priority] - Required for MX, SRV and URI records; unused by other record types. Records with lower priorities are preferred.
+/// * [commentModifiedOn] - When the record comment was last modified. Omitted if there is no comment.
 /// * [tagsModifiedOn] - When the record tags were last modified. Omitted if there are no tags.
 @BuiltValue()
 abstract class DnsRecordsDnsRecordResponse implements Built<DnsRecordsDnsRecordResponse, DnsRecordsDnsRecordResponseBuilder> {
@@ -66,16 +66,8 @@ abstract class DnsRecordsDnsRecordResponse implements Built<DnsRecordsDnsRecordR
   DnsRecordsDnsRecordResponseTypeEnum get type;
   // enum typeEnum {  URI,  };
 
-  /// Required for MX, SRV and URI records; unused by other record types. Records with lower priorities are preferred.
-  @BuiltValueField(wireName: r'priority')
-  num? get priority;
-
   @BuiltValueField(wireName: r'data')
   DnsRecordsURIRecordAllOfData get data;
-
-  /// When the record comment was last modified. Omitted if there is no comment.
-  @BuiltValueField(wireName: r'comment_modified_on')
-  DateTime? get commentModifiedOn;
 
   /// When the record was created.
   @BuiltValueField(wireName: r'created_on')
@@ -96,6 +88,14 @@ abstract class DnsRecordsDnsRecordResponse implements Built<DnsRecordsDnsRecordR
   /// Whether the record can be proxied by Cloudflare or not.
   @BuiltValueField(wireName: r'proxiable')
   bool get proxiable;
+
+  /// Required for MX, SRV and URI records; unused by other record types. Records with lower priorities are preferred.
+  @BuiltValueField(wireName: r'priority')
+  num? get priority;
+
+  /// When the record comment was last modified. Omitted if there is no comment.
+  @BuiltValueField(wireName: r'comment_modified_on')
+  DateTime? get commentModifiedOn;
 
   /// When the record tags were last modified. Omitted if there are no tags.
   @BuiltValueField(wireName: r'tags_modified_on')
@@ -166,25 +166,11 @@ class _$DnsRecordsDnsRecordResponseSerializer implements PrimitiveSerializer<Dns
       object.type,
       specifiedType: const FullType(DnsRecordsDnsRecordResponseTypeEnum),
     );
-    if (object.priority != null) {
-      yield r'priority';
-      yield serializers.serialize(
-        object.priority,
-        specifiedType: const FullType(num),
-      );
-    }
     yield r'data';
     yield serializers.serialize(
       object.data,
       specifiedType: const FullType(DnsRecordsURIRecordAllOfData),
     );
-    if (object.commentModifiedOn != null) {
-      yield r'comment_modified_on';
-      yield serializers.serialize(
-        object.commentModifiedOn,
-        specifiedType: const FullType(DateTime),
-      );
-    }
     yield r'created_on';
     yield serializers.serialize(
       object.createdOn,
@@ -210,6 +196,20 @@ class _$DnsRecordsDnsRecordResponseSerializer implements PrimitiveSerializer<Dns
       object.proxiable,
       specifiedType: const FullType(bool),
     );
+    if (object.priority != null) {
+      yield r'priority';
+      yield serializers.serialize(
+        object.priority,
+        specifiedType: const FullType(num),
+      );
+    }
+    if (object.commentModifiedOn != null) {
+      yield r'comment_modified_on';
+      yield serializers.serialize(
+        object.commentModifiedOn,
+        specifiedType: const FullType(DateTime),
+      );
+    }
     if (object.tagsModifiedOn != null) {
       yield r'tags_modified_on';
       yield serializers.serialize(
@@ -296,26 +296,12 @@ class _$DnsRecordsDnsRecordResponseSerializer implements PrimitiveSerializer<Dns
           ) as DnsRecordsDnsRecordResponseTypeEnum;
           result.type = valueDes;
           break;
-        case r'priority':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(num),
-          ) as num;
-          result.priority = valueDes;
-          break;
         case r'data':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(DnsRecordsURIRecordAllOfData),
           ) as DnsRecordsURIRecordAllOfData;
           result.data.replace(valueDes);
-          break;
-        case r'comment_modified_on':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
-          result.commentModifiedOn = valueDes;
           break;
         case r'created_on':
           final valueDes = serializers.deserialize(
@@ -351,6 +337,20 @@ class _$DnsRecordsDnsRecordResponseSerializer implements PrimitiveSerializer<Dns
             specifiedType: const FullType(bool),
           ) as bool;
           result.proxiable = valueDes;
+          break;
+        case r'priority':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(num),
+          ) as num;
+          result.priority = valueDes;
+          break;
+        case r'comment_modified_on':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(DateTime),
+          ) as DateTime;
+          result.commentModifiedOn = valueDes;
           break;
         case r'tags_modified_on':
           final valueDes = serializers.deserialize(

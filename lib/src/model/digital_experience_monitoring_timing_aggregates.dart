@@ -14,16 +14,16 @@ part 'digital_experience_monitoring_timing_aggregates.g.dart';
 /// DigitalExperienceMonitoringTimingAggregates
 ///
 /// Properties:
-/// * [avgMs] 
 /// * [history] 
+/// * [avgMs] 
 /// * [overTime] 
 @BuiltValue()
 abstract class DigitalExperienceMonitoringTimingAggregates implements Built<DigitalExperienceMonitoringTimingAggregates, DigitalExperienceMonitoringTimingAggregatesBuilder> {
-  @BuiltValueField(wireName: r'avgMs')
-  int? get avgMs;
-
   @BuiltValueField(wireName: r'history')
   BuiltList<DigitalExperienceMonitoringAggregateStat> get history;
+
+  @BuiltValueField(wireName: r'avgMs')
+  int? get avgMs;
 
   @BuiltValueField(wireName: r'overTime')
   DigitalExperienceMonitoringTimingAggregatesOverTime? get overTime;
@@ -51,6 +51,11 @@ class _$DigitalExperienceMonitoringTimingAggregatesSerializer implements Primiti
     DigitalExperienceMonitoringTimingAggregates object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    yield r'history';
+    yield serializers.serialize(
+      object.history,
+      specifiedType: const FullType(BuiltList, [FullType(DigitalExperienceMonitoringAggregateStat)]),
+    );
     if (object.avgMs != null) {
       yield r'avgMs';
       yield serializers.serialize(
@@ -58,11 +63,6 @@ class _$DigitalExperienceMonitoringTimingAggregatesSerializer implements Primiti
         specifiedType: const FullType.nullable(int),
       );
     }
-    yield r'history';
-    yield serializers.serialize(
-      object.history,
-      specifiedType: const FullType(BuiltList, [FullType(DigitalExperienceMonitoringAggregateStat)]),
-    );
     if (object.overTime != null) {
       yield r'overTime';
       yield serializers.serialize(
@@ -93,6 +93,13 @@ class _$DigitalExperienceMonitoringTimingAggregatesSerializer implements Primiti
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
+        case r'history':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BuiltList, [FullType(DigitalExperienceMonitoringAggregateStat)]),
+          ) as BuiltList<DigitalExperienceMonitoringAggregateStat>;
+          result.history.replace(valueDes);
+          break;
         case r'avgMs':
           final valueDes = serializers.deserialize(
             value,
@@ -100,13 +107,6 @@ class _$DigitalExperienceMonitoringTimingAggregatesSerializer implements Primiti
           ) as int?;
           if (valueDes == null) continue;
           result.avgMs = valueDes;
-          break;
-        case r'history':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(DigitalExperienceMonitoringAggregateStat)]),
-          ) as BuiltList<DigitalExperienceMonitoringAggregateStat>;
-          result.history.replace(valueDes);
           break;
         case r'overTime':
           final valueDes = serializers.deserialize(

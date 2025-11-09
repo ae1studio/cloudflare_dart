@@ -10,15 +10,15 @@ class _$SnippetsSnippet extends SnippetsSnippet {
   @override
   final DateTime createdOn;
   @override
-  final DateTime? modifiedOn;
-  @override
   final String snippetName;
+  @override
+  final DateTime? modifiedOn;
 
   factory _$SnippetsSnippet([void Function(SnippetsSnippetBuilder)? updates]) =>
       (SnippetsSnippetBuilder()..update(updates))._build();
 
   _$SnippetsSnippet._(
-      {required this.createdOn, this.modifiedOn, required this.snippetName})
+      {required this.createdOn, required this.snippetName, this.modifiedOn})
       : super._();
   @override
   SnippetsSnippet rebuild(void Function(SnippetsSnippetBuilder) updates) =>
@@ -32,16 +32,16 @@ class _$SnippetsSnippet extends SnippetsSnippet {
     if (identical(other, this)) return true;
     return other is SnippetsSnippet &&
         createdOn == other.createdOn &&
-        modifiedOn == other.modifiedOn &&
-        snippetName == other.snippetName;
+        snippetName == other.snippetName &&
+        modifiedOn == other.modifiedOn;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
     _$hash = $jc(_$hash, createdOn.hashCode);
-    _$hash = $jc(_$hash, modifiedOn.hashCode);
     _$hash = $jc(_$hash, snippetName.hashCode);
+    _$hash = $jc(_$hash, modifiedOn.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -50,8 +50,8 @@ class _$SnippetsSnippet extends SnippetsSnippet {
   String toString() {
     return (newBuiltValueToStringHelper(r'SnippetsSnippet')
           ..add('createdOn', createdOn)
-          ..add('modifiedOn', modifiedOn)
-          ..add('snippetName', snippetName))
+          ..add('snippetName', snippetName)
+          ..add('modifiedOn', modifiedOn))
         .toString();
   }
 }
@@ -64,13 +64,13 @@ class SnippetsSnippetBuilder
   DateTime? get createdOn => _$this._createdOn;
   set createdOn(DateTime? createdOn) => _$this._createdOn = createdOn;
 
-  DateTime? _modifiedOn;
-  DateTime? get modifiedOn => _$this._modifiedOn;
-  set modifiedOn(DateTime? modifiedOn) => _$this._modifiedOn = modifiedOn;
-
   String? _snippetName;
   String? get snippetName => _$this._snippetName;
   set snippetName(String? snippetName) => _$this._snippetName = snippetName;
+
+  DateTime? _modifiedOn;
+  DateTime? get modifiedOn => _$this._modifiedOn;
+  set modifiedOn(DateTime? modifiedOn) => _$this._modifiedOn = modifiedOn;
 
   SnippetsSnippetBuilder() {
     SnippetsSnippet._defaults(this);
@@ -80,8 +80,8 @@ class SnippetsSnippetBuilder
     final $v = _$v;
     if ($v != null) {
       _createdOn = $v.createdOn;
-      _modifiedOn = $v.modifiedOn;
       _snippetName = $v.snippetName;
+      _modifiedOn = $v.modifiedOn;
       _$v = null;
     }
     return this;
@@ -105,9 +105,9 @@ class SnippetsSnippetBuilder
         _$SnippetsSnippet._(
           createdOn: BuiltValueNullFieldError.checkNotNull(
               createdOn, r'SnippetsSnippet', 'createdOn'),
-          modifiedOn: modifiedOn,
           snippetName: BuiltValueNullFieldError.checkNotNull(
               snippetName, r'SnippetsSnippet', 'snippetName'),
+          modifiedOn: modifiedOn,
         );
     replace(_$result);
     return _$result;

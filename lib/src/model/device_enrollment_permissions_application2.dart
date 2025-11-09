@@ -16,6 +16,7 @@ part 'device_enrollment_permissions_application2.g.dart';
 /// DeviceEnrollmentPermissionsApplication2
 ///
 /// Properties:
+/// * [type] - The application type.
 /// * [aud] - Audience tag.
 /// * [createdAt] 
 /// * [id] - UUID.
@@ -26,7 +27,6 @@ part 'device_enrollment_permissions_application2.g.dart';
 /// * [domain] 
 /// * [name] 
 /// * [sessionDuration] - The amount of time that tokens issued for this application will be valid. Must be in the format `300ms` or `2h45m`. Valid time units are: ns, us (or µs), ms, s, m, h.
-/// * [type] - The application type.
 @BuiltValue()
 abstract class DeviceEnrollmentPermissionsApplication2 implements AccessSchemasBasicAppResponseProps, AccessSchemasWarpProps, Built<DeviceEnrollmentPermissionsApplication2, DeviceEnrollmentPermissionsApplication2Builder> {
   DeviceEnrollmentPermissionsApplication2._();
@@ -103,6 +103,11 @@ class _$DeviceEnrollmentPermissionsApplication2Serializer implements PrimitiveSe
         specifiedType: const FullType(String),
       );
     }
+    yield r'type';
+    yield serializers.serialize(
+      object.type,
+      specifiedType: const FullType(AccessComponentsSchemasType),
+    );
     if (object.sessionDuration != null) {
       yield r'session_duration';
       yield serializers.serialize(
@@ -110,11 +115,6 @@ class _$DeviceEnrollmentPermissionsApplication2Serializer implements PrimitiveSe
         specifiedType: const FullType(String),
       );
     }
-    yield r'type';
-    yield serializers.serialize(
-      object.type,
-      specifiedType: const FullType(AccessComponentsSchemasType),
-    );
     if (object.scimConfig != null) {
       yield r'scim_config';
       yield serializers.serialize(
@@ -201,19 +201,19 @@ class _$DeviceEnrollmentPermissionsApplication2Serializer implements PrimitiveSe
           ) as String;
           result.id = valueDes;
           break;
-        case r'session_duration':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.sessionDuration = valueDes;
-          break;
         case r'type':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(AccessComponentsSchemasType),
           ) as AccessComponentsSchemasType;
           result.type = valueDes;
+          break;
+        case r'session_duration':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.sessionDuration = valueDes;
           break;
         case r'scim_config':
           final valueDes = serializers.deserialize(

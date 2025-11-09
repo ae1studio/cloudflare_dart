@@ -21,7 +21,6 @@ part 'zones_zone.g.dart';
 /// Properties:
 /// * [account] 
 /// * [activatedOn] - The last time proof of ownership was detected and the zone was made active.
-/// * [cnameSuffix] - Allows the customer to use a custom apex. *Tenants Only Configuration*.
 /// * [createdOn] - When the zone was created.
 /// * [developmentMode] - The interval (in seconds) from when development mode expires (positive integer) or last expired (negative integer) for the domain. If development mode has never been enabled, this value is 0.
 /// * [id] - Identifier
@@ -33,9 +32,10 @@ part 'zones_zone.g.dart';
 /// * [originalNameServers] - Original name servers before moving to Cloudflare.
 /// * [originalRegistrar] - Registrar for the domain at the time of switching to Cloudflare.
 /// * [owner] 
+/// * [plan] 
+/// * [cnameSuffix] - Allows the customer to use a custom apex. *Tenants Only Configuration*.
 /// * [paused] - Indicates whether the zone is only using Cloudflare DNS services. A true value means the zone will not receive security or performance benefits. 
 /// * [permissions] - Legacy permissions based on legacy user membership information.
-/// * [plan] 
 /// * [status] - The zone status on Cloudflare.
 /// * [tenant] 
 /// * [tenantUnit] 
@@ -50,10 +50,6 @@ abstract class ZonesZone implements Built<ZonesZone, ZonesZoneBuilder> {
   /// The last time proof of ownership was detected and the zone was made active.
   @BuiltValueField(wireName: r'activated_on')
   DateTime? get activatedOn;
-
-  /// Allows the customer to use a custom apex. *Tenants Only Configuration*.
-  @BuiltValueField(wireName: r'cname_suffix')
-  String? get cnameSuffix;
 
   /// When the zone was created.
   @BuiltValueField(wireName: r'created_on')
@@ -97,6 +93,14 @@ abstract class ZonesZone implements Built<ZonesZone, ZonesZoneBuilder> {
   @BuiltValueField(wireName: r'owner')
   ZonesZoneOwner get owner;
 
+  @Deprecated('plan has been deprecated')
+  @BuiltValueField(wireName: r'plan')
+  ZonesZonePlan get plan;
+
+  /// Allows the customer to use a custom apex. *Tenants Only Configuration*.
+  @BuiltValueField(wireName: r'cname_suffix')
+  String? get cnameSuffix;
+
   /// Indicates whether the zone is only using Cloudflare DNS services. A true value means the zone will not receive security or performance benefits. 
   @BuiltValueField(wireName: r'paused')
   bool? get paused;
@@ -105,10 +109,6 @@ abstract class ZonesZone implements Built<ZonesZone, ZonesZoneBuilder> {
   @Deprecated('permissions has been deprecated')
   @BuiltValueField(wireName: r'permissions')
   BuiltList<String>? get permissions;
-
-  @Deprecated('plan has been deprecated')
-  @BuiltValueField(wireName: r'plan')
-  ZonesZonePlan get plan;
 
   /// The zone status on Cloudflare.
   @BuiltValueField(wireName: r'status')
@@ -168,13 +168,6 @@ class _$ZonesZoneSerializer implements PrimitiveSerializer<ZonesZone> {
       object.activatedOn,
       specifiedType: const FullType.nullable(DateTime),
     );
-    if (object.cnameSuffix != null) {
-      yield r'cname_suffix';
-      yield serializers.serialize(
-        object.cnameSuffix,
-        specifiedType: const FullType(String),
-      );
-    }
     yield r'created_on';
     yield serializers.serialize(
       object.createdOn,
@@ -230,6 +223,18 @@ class _$ZonesZoneSerializer implements PrimitiveSerializer<ZonesZone> {
       object.owner,
       specifiedType: const FullType(ZonesZoneOwner),
     );
+    yield r'plan';
+    yield serializers.serialize(
+      object.plan,
+      specifiedType: const FullType(ZonesZonePlan),
+    );
+    if (object.cnameSuffix != null) {
+      yield r'cname_suffix';
+      yield serializers.serialize(
+        object.cnameSuffix,
+        specifiedType: const FullType(String),
+      );
+    }
     if (object.paused != null) {
       yield r'paused';
       yield serializers.serialize(
@@ -244,11 +249,6 @@ class _$ZonesZoneSerializer implements PrimitiveSerializer<ZonesZone> {
         specifiedType: const FullType(BuiltList, [FullType(String)]),
       );
     }
-    yield r'plan';
-    yield serializers.serialize(
-      object.plan,
-      specifiedType: const FullType(ZonesZonePlan),
-    );
     if (object.status != null) {
       yield r'status';
       yield serializers.serialize(
@@ -328,13 +328,6 @@ class _$ZonesZoneSerializer implements PrimitiveSerializer<ZonesZone> {
           ) as DateTime?;
           if (valueDes == null) continue;
           result.activatedOn = valueDes;
-          break;
-        case r'cname_suffix':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.cnameSuffix = valueDes;
           break;
         case r'created_on':
           final valueDes = serializers.deserialize(
@@ -416,6 +409,20 @@ class _$ZonesZoneSerializer implements PrimitiveSerializer<ZonesZone> {
           ) as ZonesZoneOwner;
           result.owner.replace(valueDes);
           break;
+        case r'plan':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(ZonesZonePlan),
+          ) as ZonesZonePlan;
+          result.plan.replace(valueDes);
+          break;
+        case r'cname_suffix':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.cnameSuffix = valueDes;
+          break;
         case r'paused':
           final valueDes = serializers.deserialize(
             value,
@@ -429,13 +436,6 @@ class _$ZonesZoneSerializer implements PrimitiveSerializer<ZonesZone> {
             specifiedType: const FullType(BuiltList, [FullType(String)]),
           ) as BuiltList<String>;
           result.permissions.replace(valueDes);
-          break;
-        case r'plan':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(ZonesZonePlan),
-          ) as ZonesZonePlan;
-          result.plan.replace(valueDes);
           break;
         case r'status':
           final valueDes = serializers.deserialize(

@@ -12,27 +12,27 @@ part 'zones_schemas_base.g.dart';
 /// ZonesSchemasBase
 ///
 /// Properties:
-/// * [editable] - Whether or not this setting can be modified for this zone (based on your Cloudflare plan level).
 /// * [id] - Identifier of the zone setting.
-/// * [modifiedOn] - last time this setting was modified.
 /// * [value] - Current value of the zone setting.
+/// * [editable] - Whether or not this setting can be modified for this zone (based on your Cloudflare plan level).
+/// * [modifiedOn] - last time this setting was modified.
 @BuiltValue(instantiable: false)
 abstract class ZonesSchemasBase  {
-  /// Whether or not this setting can be modified for this zone (based on your Cloudflare plan level).
-  @BuiltValueField(wireName: r'editable')
-  bool? get editable;
-
   /// Identifier of the zone setting.
   @BuiltValueField(wireName: r'id')
   String get id;
 
-  /// last time this setting was modified.
-  @BuiltValueField(wireName: r'modified_on')
-  DateTime? get modifiedOn;
-
   /// Current value of the zone setting.
   @BuiltValueField(wireName: r'value')
   JsonObject? get value;
+
+  /// Whether or not this setting can be modified for this zone (based on your Cloudflare plan level).
+  @BuiltValueField(wireName: r'editable')
+  bool? get editable;
+
+  /// last time this setting was modified.
+  @BuiltValueField(wireName: r'modified_on')
+  DateTime? get modifiedOn;
 
   @BuiltValueSerializer(custom: true)
   static Serializer<ZonesSchemasBase> get serializer => _$ZonesSchemasBaseSerializer();
@@ -50,6 +50,16 @@ class _$ZonesSchemasBaseSerializer implements PrimitiveSerializer<ZonesSchemasBa
     ZonesSchemasBase object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    yield r'id';
+    yield serializers.serialize(
+      object.id,
+      specifiedType: const FullType(String),
+    );
+    yield r'value';
+    yield object.value == null ? null : serializers.serialize(
+      object.value,
+      specifiedType: const FullType.nullable(JsonObject),
+    );
     if (object.editable != null) {
       yield r'editable';
       yield serializers.serialize(
@@ -57,11 +67,6 @@ class _$ZonesSchemasBaseSerializer implements PrimitiveSerializer<ZonesSchemasBa
         specifiedType: const FullType(bool),
       );
     }
-    yield r'id';
-    yield serializers.serialize(
-      object.id,
-      specifiedType: const FullType(String),
-    );
     if (object.modifiedOn != null) {
       yield r'modified_on';
       yield serializers.serialize(
@@ -69,11 +74,6 @@ class _$ZonesSchemasBaseSerializer implements PrimitiveSerializer<ZonesSchemasBa
         specifiedType: const FullType.nullable(DateTime),
       );
     }
-    yield r'value';
-    yield object.value == null ? null : serializers.serialize(
-      object.value,
-      specifiedType: const FullType.nullable(JsonObject),
-    );
   }
 
   @override
@@ -137,27 +137,12 @@ class _$$ZonesSchemasBaseSerializer implements PrimitiveSerializer<$ZonesSchemas
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'editable':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
-          result.editable = valueDes;
-          break;
         case r'id':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(String),
           ) as String;
           result.id = valueDes;
-          break;
-        case r'modified_on':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(DateTime),
-          ) as DateTime?;
-          if (valueDes == null) continue;
-          result.modifiedOn = valueDes;
           break;
         case r'value':
           final valueDes = serializers.deserialize(
@@ -166,6 +151,21 @@ class _$$ZonesSchemasBaseSerializer implements PrimitiveSerializer<$ZonesSchemas
           ) as JsonObject?;
           if (valueDes == null) continue;
           result.value = valueDes;
+          break;
+        case r'editable':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(bool),
+          ) as bool;
+          result.editable = valueDes;
+          break;
+        case r'modified_on':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType.nullable(DateTime),
+          ) as DateTime?;
+          if (valueDes == null) continue;
+          result.modifiedOn = valueDes;
           break;
         default:
           unhandled.add(key);

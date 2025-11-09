@@ -8,14 +8,14 @@ part of 'snippets_message.dart';
 
 class _$SnippetsMessage extends SnippetsMessage {
   @override
-  final int? code;
-  @override
   final String message;
+  @override
+  final int? code;
 
   factory _$SnippetsMessage([void Function(SnippetsMessageBuilder)? updates]) =>
       (SnippetsMessageBuilder()..update(updates))._build();
 
-  _$SnippetsMessage._({this.code, required this.message}) : super._();
+  _$SnippetsMessage._({required this.message, this.code}) : super._();
   @override
   SnippetsMessage rebuild(void Function(SnippetsMessageBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -27,15 +27,15 @@ class _$SnippetsMessage extends SnippetsMessage {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is SnippetsMessage &&
-        code == other.code &&
-        message == other.message;
+        message == other.message &&
+        code == other.code;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, code.hashCode);
     _$hash = $jc(_$hash, message.hashCode);
+    _$hash = $jc(_$hash, code.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -43,8 +43,8 @@ class _$SnippetsMessage extends SnippetsMessage {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'SnippetsMessage')
-          ..add('code', code)
-          ..add('message', message))
+          ..add('message', message)
+          ..add('code', code))
         .toString();
   }
 }
@@ -53,13 +53,13 @@ class SnippetsMessageBuilder
     implements Builder<SnippetsMessage, SnippetsMessageBuilder> {
   _$SnippetsMessage? _$v;
 
-  int? _code;
-  int? get code => _$this._code;
-  set code(int? code) => _$this._code = code;
-
   String? _message;
   String? get message => _$this._message;
   set message(String? message) => _$this._message = message;
+
+  int? _code;
+  int? get code => _$this._code;
+  set code(int? code) => _$this._code = code;
 
   SnippetsMessageBuilder() {
     SnippetsMessage._defaults(this);
@@ -68,8 +68,8 @@ class SnippetsMessageBuilder
   SnippetsMessageBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _code = $v.code;
       _message = $v.message;
+      _code = $v.code;
       _$v = null;
     }
     return this;
@@ -91,9 +91,9 @@ class SnippetsMessageBuilder
   _$SnippetsMessage _build() {
     final _$result = _$v ??
         _$SnippetsMessage._(
-          code: code,
           message: BuiltValueNullFieldError.checkNotNull(
               message, r'SnippetsMessage', 'message'),
+          code: code,
         );
     replace(_$result);
     return _$result;

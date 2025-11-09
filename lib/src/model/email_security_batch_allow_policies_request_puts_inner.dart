@@ -13,18 +13,18 @@ part 'email_security_batch_allow_policies_request_puts_inner.g.dart';
 /// EmailSecurityBatchAllowPoliciesRequestPutsInner
 ///
 /// Properties:
-/// * [comments] 
 /// * [isAcceptableSender] - Messages from this sender will be exempted from Spam, Spoof and Bulk dispositions. Note: This will not exempt messages with Malicious or Suspicious dispositions.
 /// * [isExemptRecipient] - Messages to this recipient will bypass all detections.
-/// * [isRecipient] 
 /// * [isRegex] 
-/// * [isSender] 
-/// * [isSpoof] 
 /// * [isTrustedSender] - Messages from this sender will bypass all detections and link following.
 /// * [pattern] 
 /// * [patternType] 
 /// * [verifySender] - Enforce DMARC, SPF or DKIM authentication. When on, Email Security only honors policies that pass authentication.
 /// * [id] - The unique identifier for the allow policy.
+/// * [comments] 
+/// * [isRecipient] 
+/// * [isSender] 
+/// * [isSpoof] 
 @BuiltValue()
 abstract class EmailSecurityBatchAllowPoliciesRequestPutsInner implements EmailSecurityCreateAllowPolicy, Built<EmailSecurityBatchAllowPoliciesRequestPutsInner, EmailSecurityBatchAllowPoliciesRequestPutsInnerBuilder> {
   /// The unique identifier for the allow policy.
@@ -68,6 +68,11 @@ class _$EmailSecurityBatchAllowPoliciesRequestPutsInnerSerializer implements Pri
         specifiedType: const FullType(bool),
       );
     }
+    yield r'is_regex';
+    yield serializers.serialize(
+      object.isRegex,
+      specifiedType: const FullType(bool),
+    );
     if (object.comments != null) {
       yield r'comments';
       yield serializers.serialize(
@@ -75,11 +80,6 @@ class _$EmailSecurityBatchAllowPoliciesRequestPutsInnerSerializer implements Pri
         specifiedType: const FullType.nullable(String),
       );
     }
-    yield r'is_regex';
-    yield serializers.serialize(
-      object.isRegex,
-      specifiedType: const FullType(bool),
-    );
     yield r'is_acceptable_sender';
     yield serializers.serialize(
       object.isAcceptableSender,
@@ -159,6 +159,13 @@ class _$EmailSecurityBatchAllowPoliciesRequestPutsInnerSerializer implements Pri
           ) as bool;
           result.isSender = valueDes;
           break;
+        case r'is_regex':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(bool),
+          ) as bool;
+          result.isRegex = valueDes;
+          break;
         case r'comments':
           final valueDes = serializers.deserialize(
             value,
@@ -166,13 +173,6 @@ class _$EmailSecurityBatchAllowPoliciesRequestPutsInnerSerializer implements Pri
           ) as String?;
           if (valueDes == null) continue;
           result.comments = valueDes;
-          break;
-        case r'is_regex':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
-          result.isRegex = valueDes;
           break;
         case r'is_acceptable_sender':
           final valueDes = serializers.deserialize(

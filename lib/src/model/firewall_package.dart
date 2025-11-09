@@ -21,10 +21,10 @@ part 'firewall_package.g.dart';
 /// * [detectionMode] - When a WAF package uses anomaly detection, each rule is given a score when triggered. If the total score of all triggered rules exceeds the sensitivity defined on the WAF package, the action defined on the package will be taken.
 /// * [id] - Defines an identifier.
 /// * [name] - The name of the WAF package.
-/// * [status] 
 /// * [zoneId] - Defines an identifier.
 /// * [actionMode] 
 /// * [sensitivity] 
+/// * [status] 
 @BuiltValue()
 abstract class FirewallPackage implements Built<FirewallPackage, FirewallPackageBuilder> {
   /// One Of [FirewallAnomalyPackage], [FirewallPackageDefinition]

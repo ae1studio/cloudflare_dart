@@ -15,24 +15,18 @@ part 'get_v4_accounts_by_account_id_pipelines_v1_sinks200_response_result_inner.
 /// GetV4AccountsByAccountIdPipelinesV1Sinks200ResponseResultInner
 ///
 /// Properties:
-/// * [config] 
 /// * [createdAt] 
-/// * [format] 
 /// * [id] - Indicates a unique identifier for this sink.
 /// * [modifiedAt] 
 /// * [name] - Defines the name of the Sink.
-/// * [schema] 
 /// * [type] - Specifies the type of sink.
+/// * [config] 
+/// * [format] 
+/// * [schema] 
 @BuiltValue()
 abstract class GetV4AccountsByAccountIdPipelinesV1Sinks200ResponseResultInner implements Built<GetV4AccountsByAccountIdPipelinesV1Sinks200ResponseResultInner, GetV4AccountsByAccountIdPipelinesV1Sinks200ResponseResultInnerBuilder> {
-  @BuiltValueField(wireName: r'config')
-  GetV4AccountsByAccountIdPipelinesV1Sinks200ResponseResultInnerConfig? get config;
-
   @BuiltValueField(wireName: r'created_at')
   DateTime get createdAt;
-
-  @BuiltValueField(wireName: r'format')
-  CloudflarePipelinesFormat? get format;
 
   /// Indicates a unique identifier for this sink.
   @BuiltValueField(wireName: r'id')
@@ -45,13 +39,19 @@ abstract class GetV4AccountsByAccountIdPipelinesV1Sinks200ResponseResultInner im
   @BuiltValueField(wireName: r'name')
   String get name;
 
-  @BuiltValueField(wireName: r'schema')
-  CloudflarePipelinesConnectionSchema? get schema;
-
   /// Specifies the type of sink.
   @BuiltValueField(wireName: r'type')
   GetV4AccountsByAccountIdPipelinesV1Sinks200ResponseResultInnerTypeEnum get type;
   // enum typeEnum {  r2,  r2_data_catalog,  };
+
+  @BuiltValueField(wireName: r'config')
+  GetV4AccountsByAccountIdPipelinesV1Sinks200ResponseResultInnerConfig? get config;
+
+  @BuiltValueField(wireName: r'format')
+  CloudflarePipelinesFormat? get format;
+
+  @BuiltValueField(wireName: r'schema')
+  CloudflarePipelinesConnectionSchema? get schema;
 
   GetV4AccountsByAccountIdPipelinesV1Sinks200ResponseResultInner._();
 
@@ -76,25 +76,11 @@ class _$GetV4AccountsByAccountIdPipelinesV1Sinks200ResponseResultInnerSerializer
     GetV4AccountsByAccountIdPipelinesV1Sinks200ResponseResultInner object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
-    if (object.config != null) {
-      yield r'config';
-      yield serializers.serialize(
-        object.config,
-        specifiedType: const FullType(GetV4AccountsByAccountIdPipelinesV1Sinks200ResponseResultInnerConfig),
-      );
-    }
     yield r'created_at';
     yield serializers.serialize(
       object.createdAt,
       specifiedType: const FullType(DateTime),
     );
-    if (object.format != null) {
-      yield r'format';
-      yield serializers.serialize(
-        object.format,
-        specifiedType: const FullType(CloudflarePipelinesFormat),
-      );
-    }
     yield r'id';
     yield serializers.serialize(
       object.id,
@@ -110,6 +96,25 @@ class _$GetV4AccountsByAccountIdPipelinesV1Sinks200ResponseResultInnerSerializer
       object.name,
       specifiedType: const FullType(String),
     );
+    yield r'type';
+    yield serializers.serialize(
+      object.type,
+      specifiedType: const FullType(GetV4AccountsByAccountIdPipelinesV1Sinks200ResponseResultInnerTypeEnum),
+    );
+    if (object.config != null) {
+      yield r'config';
+      yield serializers.serialize(
+        object.config,
+        specifiedType: const FullType(GetV4AccountsByAccountIdPipelinesV1Sinks200ResponseResultInnerConfig),
+      );
+    }
+    if (object.format != null) {
+      yield r'format';
+      yield serializers.serialize(
+        object.format,
+        specifiedType: const FullType(CloudflarePipelinesFormat),
+      );
+    }
     if (object.schema != null) {
       yield r'schema';
       yield serializers.serialize(
@@ -117,11 +122,6 @@ class _$GetV4AccountsByAccountIdPipelinesV1Sinks200ResponseResultInnerSerializer
         specifiedType: const FullType(CloudflarePipelinesConnectionSchema),
       );
     }
-    yield r'type';
-    yield serializers.serialize(
-      object.type,
-      specifiedType: const FullType(GetV4AccountsByAccountIdPipelinesV1Sinks200ResponseResultInnerTypeEnum),
-    );
   }
 
   @override
@@ -145,26 +145,12 @@ class _$GetV4AccountsByAccountIdPipelinesV1Sinks200ResponseResultInnerSerializer
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'config':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(GetV4AccountsByAccountIdPipelinesV1Sinks200ResponseResultInnerConfig),
-          ) as GetV4AccountsByAccountIdPipelinesV1Sinks200ResponseResultInnerConfig;
-          result.config.replace(valueDes);
-          break;
         case r'created_at':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(DateTime),
           ) as DateTime;
           result.createdAt = valueDes;
-          break;
-        case r'format':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(CloudflarePipelinesFormat),
-          ) as CloudflarePipelinesFormat;
-          result.format.replace(valueDes);
           break;
         case r'id':
           final valueDes = serializers.deserialize(
@@ -187,19 +173,33 @@ class _$GetV4AccountsByAccountIdPipelinesV1Sinks200ResponseResultInnerSerializer
           ) as String;
           result.name = valueDes;
           break;
-        case r'schema':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(CloudflarePipelinesConnectionSchema),
-          ) as CloudflarePipelinesConnectionSchema;
-          result.schema.replace(valueDes);
-          break;
         case r'type':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(GetV4AccountsByAccountIdPipelinesV1Sinks200ResponseResultInnerTypeEnum),
           ) as GetV4AccountsByAccountIdPipelinesV1Sinks200ResponseResultInnerTypeEnum;
           result.type = valueDes;
+          break;
+        case r'config':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(GetV4AccountsByAccountIdPipelinesV1Sinks200ResponseResultInnerConfig),
+          ) as GetV4AccountsByAccountIdPipelinesV1Sinks200ResponseResultInnerConfig;
+          result.config.replace(valueDes);
+          break;
+        case r'format':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(CloudflarePipelinesFormat),
+          ) as CloudflarePipelinesFormat;
+          result.format.replace(valueDes);
+          break;
+        case r'schema':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(CloudflarePipelinesConnectionSchema),
+          ) as CloudflarePipelinesConnectionSchema;
+          result.schema.replace(valueDes);
           break;
         default:
           unhandled.add(key);

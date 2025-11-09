@@ -9,6 +9,7 @@ import 'package:built_collection/built_collection.dart';
 import 'package:cloudflare_dart/src/model/aaa_messages_inner.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
+import 'package:built_value/json_object.dart';
 
 part 'waf_product_api_bundle_response_custom_scan_collection.g.dart';
 

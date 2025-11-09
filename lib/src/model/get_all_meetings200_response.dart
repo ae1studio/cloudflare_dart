@@ -9,6 +9,7 @@ import 'package:cloudflare_dart/src/model/realtimekit_paging_response.dart';
 import 'package:cloudflare_dart/src/model/realtimekit_paging_response_paging.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
+import 'package:built_value/json_object.dart';
 
 part 'get_all_meetings200_response.g.dart';
 

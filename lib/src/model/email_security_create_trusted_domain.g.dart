@@ -9,9 +9,6 @@ part of 'email_security_create_trusted_domain.dart';
 abstract class EmailSecurityCreateTrustedDomainBuilder {
   void replace(EmailSecurityCreateTrustedDomain other);
   void update(void Function(EmailSecurityCreateTrustedDomainBuilder) updates);
-  String? get comments;
-  set comments(String? comments);
-
   bool? get isRecent;
   set isRecent(bool? isRecent);
 
@@ -23,12 +20,13 @@ abstract class EmailSecurityCreateTrustedDomainBuilder {
 
   String? get pattern;
   set pattern(String? pattern);
+
+  String? get comments;
+  set comments(String? comments);
 }
 
 class _$$EmailSecurityCreateTrustedDomain
     extends $EmailSecurityCreateTrustedDomain {
-  @override
-  final String? comments;
   @override
   final bool isRecent;
   @override
@@ -37,17 +35,19 @@ class _$$EmailSecurityCreateTrustedDomain
   final bool isSimilarity;
   @override
   final String pattern;
+  @override
+  final String? comments;
 
   factory _$$EmailSecurityCreateTrustedDomain(
           [void Function($EmailSecurityCreateTrustedDomainBuilder)? updates]) =>
       ($EmailSecurityCreateTrustedDomainBuilder()..update(updates))._build();
 
   _$$EmailSecurityCreateTrustedDomain._(
-      {this.comments,
-      required this.isRecent,
+      {required this.isRecent,
       required this.isRegex,
       required this.isSimilarity,
-      required this.pattern})
+      required this.pattern,
+      this.comments})
       : super._();
   @override
   $EmailSecurityCreateTrustedDomain rebuild(
@@ -62,21 +62,21 @@ class _$$EmailSecurityCreateTrustedDomain
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is $EmailSecurityCreateTrustedDomain &&
-        comments == other.comments &&
         isRecent == other.isRecent &&
         isRegex == other.isRegex &&
         isSimilarity == other.isSimilarity &&
-        pattern == other.pattern;
+        pattern == other.pattern &&
+        comments == other.comments;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, comments.hashCode);
     _$hash = $jc(_$hash, isRecent.hashCode);
     _$hash = $jc(_$hash, isRegex.hashCode);
     _$hash = $jc(_$hash, isSimilarity.hashCode);
     _$hash = $jc(_$hash, pattern.hashCode);
+    _$hash = $jc(_$hash, comments.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -84,11 +84,11 @@ class _$$EmailSecurityCreateTrustedDomain
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'$EmailSecurityCreateTrustedDomain')
-          ..add('comments', comments)
           ..add('isRecent', isRecent)
           ..add('isRegex', isRegex)
           ..add('isSimilarity', isSimilarity)
-          ..add('pattern', pattern))
+          ..add('pattern', pattern)
+          ..add('comments', comments))
         .toString();
   }
 }
@@ -99,10 +99,6 @@ class $EmailSecurityCreateTrustedDomainBuilder
             $EmailSecurityCreateTrustedDomainBuilder>,
         EmailSecurityCreateTrustedDomainBuilder {
   _$$EmailSecurityCreateTrustedDomain? _$v;
-
-  String? _comments;
-  String? get comments => _$this._comments;
-  set comments(covariant String? comments) => _$this._comments = comments;
 
   bool? _isRecent;
   bool? get isRecent => _$this._isRecent;
@@ -121,6 +117,10 @@ class $EmailSecurityCreateTrustedDomainBuilder
   String? get pattern => _$this._pattern;
   set pattern(covariant String? pattern) => _$this._pattern = pattern;
 
+  String? _comments;
+  String? get comments => _$this._comments;
+  set comments(covariant String? comments) => _$this._comments = comments;
+
   $EmailSecurityCreateTrustedDomainBuilder() {
     $EmailSecurityCreateTrustedDomain._defaults(this);
   }
@@ -128,11 +128,11 @@ class $EmailSecurityCreateTrustedDomainBuilder
   $EmailSecurityCreateTrustedDomainBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _comments = $v.comments;
       _isRecent = $v.isRecent;
       _isRegex = $v.isRegex;
       _isSimilarity = $v.isSimilarity;
       _pattern = $v.pattern;
+      _comments = $v.comments;
       _$v = null;
     }
     return this;
@@ -155,7 +155,6 @@ class $EmailSecurityCreateTrustedDomainBuilder
   _$$EmailSecurityCreateTrustedDomain _build() {
     final _$result = _$v ??
         _$$EmailSecurityCreateTrustedDomain._(
-          comments: comments,
           isRecent: BuiltValueNullFieldError.checkNotNull(
               isRecent, r'$EmailSecurityCreateTrustedDomain', 'isRecent'),
           isRegex: BuiltValueNullFieldError.checkNotNull(
@@ -164,6 +163,7 @@ class $EmailSecurityCreateTrustedDomainBuilder
               r'$EmailSecurityCreateTrustedDomain', 'isSimilarity'),
           pattern: BuiltValueNullFieldError.checkNotNull(
               pattern, r'$EmailSecurityCreateTrustedDomain', 'pattern'),
+          comments: comments,
         );
     replace(_$result);
     return _$result;

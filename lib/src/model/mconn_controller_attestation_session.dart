@@ -14,22 +14,22 @@ part 'mconn_controller_attestation_session.g.dart';
 ///
 /// Properties:
 /// * [akPublic] 
-/// * [connector] 
 /// * [device] 
 /// * [nonce] 
+/// * [connector] 
 @BuiltValue()
 abstract class MconnControllerAttestationSession implements Built<MconnControllerAttestationSession, MconnControllerAttestationSessionBuilder> {
   @BuiltValueField(wireName: r'ak_public')
   String get akPublic;
-
-  @BuiltValueField(wireName: r'connector')
-  MconnControllerConnectorIdentity? get connector;
 
   @BuiltValueField(wireName: r'device')
   MconnControllerDeviceIdentity get device;
 
   @BuiltValueField(wireName: r'nonce')
   String get nonce;
+
+  @BuiltValueField(wireName: r'connector')
+  MconnControllerConnectorIdentity? get connector;
 
   MconnControllerAttestationSession._();
 
@@ -59,13 +59,6 @@ class _$MconnControllerAttestationSessionSerializer implements PrimitiveSerializ
       object.akPublic,
       specifiedType: const FullType(String),
     );
-    if (object.connector != null) {
-      yield r'connector';
-      yield serializers.serialize(
-        object.connector,
-        specifiedType: const FullType(MconnControllerConnectorIdentity),
-      );
-    }
     yield r'device';
     yield serializers.serialize(
       object.device,
@@ -76,6 +69,13 @@ class _$MconnControllerAttestationSessionSerializer implements PrimitiveSerializ
       object.nonce,
       specifiedType: const FullType(String),
     );
+    if (object.connector != null) {
+      yield r'connector';
+      yield serializers.serialize(
+        object.connector,
+        specifiedType: const FullType(MconnControllerConnectorIdentity),
+      );
+    }
   }
 
   @override
@@ -106,13 +106,6 @@ class _$MconnControllerAttestationSessionSerializer implements PrimitiveSerializ
           ) as String;
           result.akPublic = valueDes;
           break;
-        case r'connector':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(MconnControllerConnectorIdentity),
-          ) as MconnControllerConnectorIdentity;
-          result.connector.replace(valueDes);
-          break;
         case r'device':
           final valueDes = serializers.deserialize(
             value,
@@ -126,6 +119,13 @@ class _$MconnControllerAttestationSessionSerializer implements PrimitiveSerializ
             specifiedType: const FullType(String),
           ) as String;
           result.nonce = valueDes;
+          break;
+        case r'connector':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(MconnControllerConnectorIdentity),
+          ) as MconnControllerConnectorIdentity;
+          result.connector.replace(valueDes);
           break;
         default:
           unhandled.add(key);

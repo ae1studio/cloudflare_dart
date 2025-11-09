@@ -12,13 +12,13 @@ class _$TunnelVirtualNetwork extends TunnelVirtualNetwork {
   @override
   final DateTime createdAt;
   @override
-  final DateTime? deletedAt;
-  @override
   final String id;
   @override
   final bool isDefaultNetwork;
   @override
   final String name;
+  @override
+  final DateTime? deletedAt;
 
   factory _$TunnelVirtualNetwork(
           [void Function(TunnelVirtualNetworkBuilder)? updates]) =>
@@ -27,10 +27,10 @@ class _$TunnelVirtualNetwork extends TunnelVirtualNetwork {
   _$TunnelVirtualNetwork._(
       {required this.comment,
       required this.createdAt,
-      this.deletedAt,
       required this.id,
       required this.isDefaultNetwork,
-      required this.name})
+      required this.name,
+      this.deletedAt})
       : super._();
   @override
   TunnelVirtualNetwork rebuild(
@@ -47,10 +47,10 @@ class _$TunnelVirtualNetwork extends TunnelVirtualNetwork {
     return other is TunnelVirtualNetwork &&
         comment == other.comment &&
         createdAt == other.createdAt &&
-        deletedAt == other.deletedAt &&
         id == other.id &&
         isDefaultNetwork == other.isDefaultNetwork &&
-        name == other.name;
+        name == other.name &&
+        deletedAt == other.deletedAt;
   }
 
   @override
@@ -58,10 +58,10 @@ class _$TunnelVirtualNetwork extends TunnelVirtualNetwork {
     var _$hash = 0;
     _$hash = $jc(_$hash, comment.hashCode);
     _$hash = $jc(_$hash, createdAt.hashCode);
-    _$hash = $jc(_$hash, deletedAt.hashCode);
     _$hash = $jc(_$hash, id.hashCode);
     _$hash = $jc(_$hash, isDefaultNetwork.hashCode);
     _$hash = $jc(_$hash, name.hashCode);
+    _$hash = $jc(_$hash, deletedAt.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -71,10 +71,10 @@ class _$TunnelVirtualNetwork extends TunnelVirtualNetwork {
     return (newBuiltValueToStringHelper(r'TunnelVirtualNetwork')
           ..add('comment', comment)
           ..add('createdAt', createdAt)
-          ..add('deletedAt', deletedAt)
           ..add('id', id)
           ..add('isDefaultNetwork', isDefaultNetwork)
-          ..add('name', name))
+          ..add('name', name)
+          ..add('deletedAt', deletedAt))
         .toString();
   }
 }
@@ -91,10 +91,6 @@ class TunnelVirtualNetworkBuilder
   DateTime? get createdAt => _$this._createdAt;
   set createdAt(DateTime? createdAt) => _$this._createdAt = createdAt;
 
-  DateTime? _deletedAt;
-  DateTime? get deletedAt => _$this._deletedAt;
-  set deletedAt(DateTime? deletedAt) => _$this._deletedAt = deletedAt;
-
   String? _id;
   String? get id => _$this._id;
   set id(String? id) => _$this._id = id;
@@ -108,6 +104,10 @@ class TunnelVirtualNetworkBuilder
   String? get name => _$this._name;
   set name(String? name) => _$this._name = name;
 
+  DateTime? _deletedAt;
+  DateTime? get deletedAt => _$this._deletedAt;
+  set deletedAt(DateTime? deletedAt) => _$this._deletedAt = deletedAt;
+
   TunnelVirtualNetworkBuilder() {
     TunnelVirtualNetwork._defaults(this);
   }
@@ -117,10 +117,10 @@ class TunnelVirtualNetworkBuilder
     if ($v != null) {
       _comment = $v.comment;
       _createdAt = $v.createdAt;
-      _deletedAt = $v.deletedAt;
       _id = $v.id;
       _isDefaultNetwork = $v.isDefaultNetwork;
       _name = $v.name;
+      _deletedAt = $v.deletedAt;
       _$v = null;
     }
     return this;
@@ -146,13 +146,13 @@ class TunnelVirtualNetworkBuilder
               comment, r'TunnelVirtualNetwork', 'comment'),
           createdAt: BuiltValueNullFieldError.checkNotNull(
               createdAt, r'TunnelVirtualNetwork', 'createdAt'),
-          deletedAt: deletedAt,
           id: BuiltValueNullFieldError.checkNotNull(
               id, r'TunnelVirtualNetwork', 'id'),
           isDefaultNetwork: BuiltValueNullFieldError.checkNotNull(
               isDefaultNetwork, r'TunnelVirtualNetwork', 'isDefaultNetwork'),
           name: BuiltValueNullFieldError.checkNotNull(
               name, r'TunnelVirtualNetwork', 'name'),
+          deletedAt: deletedAt,
         );
     replace(_$result);
     return _$result;

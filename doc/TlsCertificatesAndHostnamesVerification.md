@@ -8,9 +8,9 @@ import 'package:cloudflare_dart/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**certificateStatus** | [**TlsCertificatesAndHostnamesCertificateStatus**](TlsCertificatesAndHostnamesCertificateStatus.md) |  | 
 **brandCheck** | **bool** | Certificate Authority is manually reviewing the order. | [optional] 
 **certPackUuid** | **String** | Certificate Pack UUID. | [optional] 
-**certificateStatus** | [**TlsCertificatesAndHostnamesCertificateStatus**](TlsCertificatesAndHostnamesCertificateStatus.md) |  | 
 **signature** | [**TlsCertificatesAndHostnamesSchemasSignature**](TlsCertificatesAndHostnamesSchemasSignature.md) |  | [optional] 
 **validationMethod** | [**TlsCertificatesAndHostnamesSchemasValidationMethod**](TlsCertificatesAndHostnamesSchemasValidationMethod.md) |  | [optional] 
 **verificationInfo** | [**TlsCertificatesAndHostnamesVerificationInfo**](TlsCertificatesAndHostnamesVerificationInfo.md) |  | [optional] 

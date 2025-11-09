@@ -12,15 +12,19 @@ part 'secondary_dns_peer.g.dart';
 ///
 /// Properties:
 /// * [id] 
+/// * [name] - The name of the peer.
 /// * [ip] - IPv4/IPv6 address of primary or secondary nameserver, depending on what zone this peer is linked to. For primary zones this IP defines the IP of the secondary nameserver Cloudflare will NOTIFY upon zone changes. For secondary zones this IP defines the IP of the primary nameserver Cloudflare will send AXFR/IXFR requests to.
 /// * [ixfrEnable] - Enable IXFR transfer protocol, default is AXFR. Only applicable to secondary zones.
-/// * [name] - The name of the peer.
 /// * [port] - DNS port of primary or secondary nameserver, depending on what zone this peer is linked to.
 /// * [tsigId] - TSIG authentication will be used for zone transfer if configured.
 @BuiltValue()
 abstract class SecondaryDnsPeer implements Built<SecondaryDnsPeer, SecondaryDnsPeerBuilder> {
   @BuiltValueField(wireName: r'id')
   String get id;
+
+  /// The name of the peer.
+  @BuiltValueField(wireName: r'name')
+  String get name;
 
   /// IPv4/IPv6 address of primary or secondary nameserver, depending on what zone this peer is linked to. For primary zones this IP defines the IP of the secondary nameserver Cloudflare will NOTIFY upon zone changes. For secondary zones this IP defines the IP of the primary nameserver Cloudflare will send AXFR/IXFR requests to.
   @BuiltValueField(wireName: r'ip')
@@ -29,10 +33,6 @@ abstract class SecondaryDnsPeer implements Built<SecondaryDnsPeer, SecondaryDnsP
   /// Enable IXFR transfer protocol, default is AXFR. Only applicable to secondary zones.
   @BuiltValueField(wireName: r'ixfr_enable')
   bool? get ixfrEnable;
-
-  /// The name of the peer.
-  @BuiltValueField(wireName: r'name')
-  String get name;
 
   /// DNS port of primary or secondary nameserver, depending on what zone this peer is linked to.
   @BuiltValueField(wireName: r'port')
@@ -70,6 +70,11 @@ class _$SecondaryDnsPeerSerializer implements PrimitiveSerializer<SecondaryDnsPe
       object.id,
       specifiedType: const FullType(String),
     );
+    yield r'name';
+    yield serializers.serialize(
+      object.name,
+      specifiedType: const FullType(String),
+    );
     if (object.ip != null) {
       yield r'ip';
       yield serializers.serialize(
@@ -84,11 +89,6 @@ class _$SecondaryDnsPeerSerializer implements PrimitiveSerializer<SecondaryDnsPe
         specifiedType: const FullType(bool),
       );
     }
-    yield r'name';
-    yield serializers.serialize(
-      object.name,
-      specifiedType: const FullType(String),
-    );
     if (object.port != null) {
       yield r'port';
       yield serializers.serialize(
@@ -133,6 +133,13 @@ class _$SecondaryDnsPeerSerializer implements PrimitiveSerializer<SecondaryDnsPe
           ) as String;
           result.id = valueDes;
           break;
+        case r'name':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.name = valueDes;
+          break;
         case r'ip':
           final valueDes = serializers.deserialize(
             value,
@@ -146,13 +153,6 @@ class _$SecondaryDnsPeerSerializer implements PrimitiveSerializer<SecondaryDnsPe
             specifiedType: const FullType(bool),
           ) as bool;
           result.ixfrEnable = valueDes;
-          break;
-        case r'name':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.name = valueDes;
           break;
         case r'port':
           final valueDes = serializers.deserialize(

@@ -9,11 +9,11 @@ part of 'tls_certificates_and_hostnames_verification.dart';
 class _$TlsCertificatesAndHostnamesVerification
     extends TlsCertificatesAndHostnamesVerification {
   @override
+  final TlsCertificatesAndHostnamesCertificateStatus certificateStatus;
+  @override
   final bool? brandCheck;
   @override
   final String? certPackUuid;
-  @override
-  final TlsCertificatesAndHostnamesCertificateStatus certificateStatus;
   @override
   final TlsCertificatesAndHostnamesSchemasSignature? signature;
   @override
@@ -32,9 +32,9 @@ class _$TlsCertificatesAndHostnamesVerification
           ._build();
 
   _$TlsCertificatesAndHostnamesVerification._(
-      {this.brandCheck,
+      {required this.certificateStatus,
+      this.brandCheck,
       this.certPackUuid,
-      required this.certificateStatus,
       this.signature,
       this.validationMethod,
       this.verificationInfo,
@@ -55,9 +55,9 @@ class _$TlsCertificatesAndHostnamesVerification
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is TlsCertificatesAndHostnamesVerification &&
+        certificateStatus == other.certificateStatus &&
         brandCheck == other.brandCheck &&
         certPackUuid == other.certPackUuid &&
-        certificateStatus == other.certificateStatus &&
         signature == other.signature &&
         validationMethod == other.validationMethod &&
         verificationInfo == other.verificationInfo &&
@@ -68,9 +68,9 @@ class _$TlsCertificatesAndHostnamesVerification
   @override
   int get hashCode {
     var _$hash = 0;
+    _$hash = $jc(_$hash, certificateStatus.hashCode);
     _$hash = $jc(_$hash, brandCheck.hashCode);
     _$hash = $jc(_$hash, certPackUuid.hashCode);
-    _$hash = $jc(_$hash, certificateStatus.hashCode);
     _$hash = $jc(_$hash, signature.hashCode);
     _$hash = $jc(_$hash, validationMethod.hashCode);
     _$hash = $jc(_$hash, verificationInfo.hashCode);
@@ -84,9 +84,9 @@ class _$TlsCertificatesAndHostnamesVerification
   String toString() {
     return (newBuiltValueToStringHelper(
             r'TlsCertificatesAndHostnamesVerification')
+          ..add('certificateStatus', certificateStatus)
           ..add('brandCheck', brandCheck)
           ..add('certPackUuid', certPackUuid)
-          ..add('certificateStatus', certificateStatus)
           ..add('signature', signature)
           ..add('validationMethod', validationMethod)
           ..add('verificationInfo', verificationInfo)
@@ -102,6 +102,13 @@ class TlsCertificatesAndHostnamesVerificationBuilder
             TlsCertificatesAndHostnamesVerificationBuilder> {
   _$TlsCertificatesAndHostnamesVerification? _$v;
 
+  TlsCertificatesAndHostnamesCertificateStatus? _certificateStatus;
+  TlsCertificatesAndHostnamesCertificateStatus? get certificateStatus =>
+      _$this._certificateStatus;
+  set certificateStatus(
+          TlsCertificatesAndHostnamesCertificateStatus? certificateStatus) =>
+      _$this._certificateStatus = certificateStatus;
+
   bool? _brandCheck;
   bool? get brandCheck => _$this._brandCheck;
   set brandCheck(bool? brandCheck) => _$this._brandCheck = brandCheck;
@@ -109,13 +116,6 @@ class TlsCertificatesAndHostnamesVerificationBuilder
   String? _certPackUuid;
   String? get certPackUuid => _$this._certPackUuid;
   set certPackUuid(String? certPackUuid) => _$this._certPackUuid = certPackUuid;
-
-  TlsCertificatesAndHostnamesCertificateStatus? _certificateStatus;
-  TlsCertificatesAndHostnamesCertificateStatus? get certificateStatus =>
-      _$this._certificateStatus;
-  set certificateStatus(
-          TlsCertificatesAndHostnamesCertificateStatus? certificateStatus) =>
-      _$this._certificateStatus = certificateStatus;
 
   TlsCertificatesAndHostnamesSchemasSignature? _signature;
   TlsCertificatesAndHostnamesSchemasSignature? get signature =>
@@ -159,9 +159,9 @@ class TlsCertificatesAndHostnamesVerificationBuilder
   TlsCertificatesAndHostnamesVerificationBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
+      _certificateStatus = $v.certificateStatus;
       _brandCheck = $v.brandCheck;
       _certPackUuid = $v.certPackUuid;
-      _certificateStatus = $v.certificateStatus;
       _signature = $v.signature;
       _validationMethod = $v.validationMethod;
       _verificationInfo = $v.verificationInfo?.toBuilder();
@@ -191,12 +191,12 @@ class TlsCertificatesAndHostnamesVerificationBuilder
     try {
       _$result = _$v ??
           _$TlsCertificatesAndHostnamesVerification._(
-            brandCheck: brandCheck,
-            certPackUuid: certPackUuid,
             certificateStatus: BuiltValueNullFieldError.checkNotNull(
                 certificateStatus,
                 r'TlsCertificatesAndHostnamesVerification',
                 'certificateStatus'),
+            brandCheck: brandCheck,
+            certPackUuid: certPackUuid,
             signature: signature,
             validationMethod: validationMethod,
             verificationInfo: _verificationInfo?.build(),

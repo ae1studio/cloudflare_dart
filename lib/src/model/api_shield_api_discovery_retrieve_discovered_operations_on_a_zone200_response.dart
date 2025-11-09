@@ -19,8 +19,8 @@ part 'api_shield_api_discovery_retrieve_discovered_operations_on_a_zone200_respo
 /// * [errors] 
 /// * [messages] 
 /// * [success] - Whether the API call was successful.
-/// * [resultInfo] 
 /// * [result] 
+/// * [resultInfo] 
 @BuiltValue()
 abstract class ApiShieldApiDiscoveryRetrieveDiscoveredOperationsOnAZone200Response implements ApiShieldApiResponseCollection, Built<ApiShieldApiDiscoveryRetrieveDiscoveredOperationsOnAZone200Response, ApiShieldApiDiscoveryRetrieveDiscoveredOperationsOnAZone200ResponseBuilder> {
   @BuiltValueField(wireName: r'result')

@@ -8,6 +8,14 @@ import 'package:cloudflare_dart/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**dnssec** | **bool** |  | 
+**domain** | **String** |  | 
+**extension_** | **String** |  | 
+**found** | **bool** |  | 
+**nameservers** | **BuiltList&lt;String&gt;** |  | 
+**punycode** | **String** |  | 
+**registrant** | **String** |  | 
+**registrar** | **String** |  | 
 **administrativeCity** | **String** |  | [optional] 
 **administrativeCountry** | **String** |  | [optional] 
 **administrativeEmail** | **String** |  | [optional] 
@@ -38,16 +46,9 @@ Name | Type | Description | Notes
 **billingStreet** | **String** |  | [optional] 
 **createdDate** | [**DateTime**](DateTime.md) |  | [optional] 
 **createdDateRaw** | **String** |  | [optional] 
-**dnssec** | **bool** |  | 
-**domain** | **String** |  | 
 **expirationDate** | [**DateTime**](DateTime.md) |  | [optional] 
 **expirationDateRaw** | **String** |  | [optional] 
-**extension_** | **String** |  | 
-**found** | **bool** |  | 
 **id** | **String** |  | [optional] 
-**nameservers** | **BuiltList&lt;String&gt;** |  | 
-**punycode** | **String** |  | 
-**registrant** | **String** |  | 
 **registrantCity** | **String** |  | [optional] 
 **registrantCountry** | **String** |  | [optional] 
 **registrantEmail** | **String** |  | [optional] 
@@ -62,7 +63,6 @@ Name | Type | Description | Notes
 **registrantProvince** | **String** |  | [optional] 
 **registrantReferralUrl** | **String** |  | [optional] 
 **registrantStreet** | **String** |  | [optional] 
-**registrar** | **String** |  | 
 **registrarCity** | **String** |  | [optional] 
 **registrarCountry** | **String** |  | [optional] 
 **registrarEmail** | **String** |  | [optional] 

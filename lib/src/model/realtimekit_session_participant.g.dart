@@ -10,15 +10,15 @@ class _$RealtimekitSessionParticipant extends RealtimekitSessionParticipant {
   @override
   final String createdAt;
   @override
-  final String? email;
-  @override
   final String id;
+  @override
+  final String updatedAt;
+  @override
+  final String? email;
   @override
   final String? name;
   @override
   final String? picture;
-  @override
-  final String updatedAt;
 
   factory _$RealtimekitSessionParticipant(
           [void Function(RealtimekitSessionParticipantBuilder)? updates]) =>
@@ -26,11 +26,11 @@ class _$RealtimekitSessionParticipant extends RealtimekitSessionParticipant {
 
   _$RealtimekitSessionParticipant._(
       {required this.createdAt,
-      this.email,
       required this.id,
+      required this.updatedAt,
+      this.email,
       this.name,
-      this.picture,
-      required this.updatedAt})
+      this.picture})
       : super._();
   @override
   RealtimekitSessionParticipant rebuild(
@@ -46,22 +46,22 @@ class _$RealtimekitSessionParticipant extends RealtimekitSessionParticipant {
     if (identical(other, this)) return true;
     return other is RealtimekitSessionParticipant &&
         createdAt == other.createdAt &&
-        email == other.email &&
         id == other.id &&
+        updatedAt == other.updatedAt &&
+        email == other.email &&
         name == other.name &&
-        picture == other.picture &&
-        updatedAt == other.updatedAt;
+        picture == other.picture;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
     _$hash = $jc(_$hash, createdAt.hashCode);
-    _$hash = $jc(_$hash, email.hashCode);
     _$hash = $jc(_$hash, id.hashCode);
+    _$hash = $jc(_$hash, updatedAt.hashCode);
+    _$hash = $jc(_$hash, email.hashCode);
     _$hash = $jc(_$hash, name.hashCode);
     _$hash = $jc(_$hash, picture.hashCode);
-    _$hash = $jc(_$hash, updatedAt.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -70,11 +70,11 @@ class _$RealtimekitSessionParticipant extends RealtimekitSessionParticipant {
   String toString() {
     return (newBuiltValueToStringHelper(r'RealtimekitSessionParticipant')
           ..add('createdAt', createdAt)
-          ..add('email', email)
           ..add('id', id)
+          ..add('updatedAt', updatedAt)
+          ..add('email', email)
           ..add('name', name)
-          ..add('picture', picture)
-          ..add('updatedAt', updatedAt))
+          ..add('picture', picture))
         .toString();
   }
 }
@@ -89,13 +89,17 @@ class RealtimekitSessionParticipantBuilder
   String? get createdAt => _$this._createdAt;
   set createdAt(String? createdAt) => _$this._createdAt = createdAt;
 
-  String? _email;
-  String? get email => _$this._email;
-  set email(String? email) => _$this._email = email;
-
   String? _id;
   String? get id => _$this._id;
   set id(String? id) => _$this._id = id;
+
+  String? _updatedAt;
+  String? get updatedAt => _$this._updatedAt;
+  set updatedAt(String? updatedAt) => _$this._updatedAt = updatedAt;
+
+  String? _email;
+  String? get email => _$this._email;
+  set email(String? email) => _$this._email = email;
 
   String? _name;
   String? get name => _$this._name;
@@ -105,10 +109,6 @@ class RealtimekitSessionParticipantBuilder
   String? get picture => _$this._picture;
   set picture(String? picture) => _$this._picture = picture;
 
-  String? _updatedAt;
-  String? get updatedAt => _$this._updatedAt;
-  set updatedAt(String? updatedAt) => _$this._updatedAt = updatedAt;
-
   RealtimekitSessionParticipantBuilder() {
     RealtimekitSessionParticipant._defaults(this);
   }
@@ -117,11 +117,11 @@ class RealtimekitSessionParticipantBuilder
     final $v = _$v;
     if ($v != null) {
       _createdAt = $v.createdAt;
-      _email = $v.email;
       _id = $v.id;
+      _updatedAt = $v.updatedAt;
+      _email = $v.email;
       _name = $v.name;
       _picture = $v.picture;
-      _updatedAt = $v.updatedAt;
       _$v = null;
     }
     return this;
@@ -145,13 +145,13 @@ class RealtimekitSessionParticipantBuilder
         _$RealtimekitSessionParticipant._(
           createdAt: BuiltValueNullFieldError.checkNotNull(
               createdAt, r'RealtimekitSessionParticipant', 'createdAt'),
-          email: email,
           id: BuiltValueNullFieldError.checkNotNull(
               id, r'RealtimekitSessionParticipant', 'id'),
-          name: name,
-          picture: picture,
           updatedAt: BuiltValueNullFieldError.checkNotNull(
               updatedAt, r'RealtimekitSessionParticipant', 'updatedAt'),
+          email: email,
+          name: name,
+          picture: picture,
         );
     replace(_$result);
     return _$result;

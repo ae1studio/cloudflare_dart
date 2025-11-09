@@ -8,8 +8,6 @@ part of 'email_security_trusted_domain.dart';
 
 class _$EmailSecurityTrustedDomain extends EmailSecurityTrustedDomain {
   @override
-  final String? comments;
-  @override
   final bool isRecent;
   @override
   final bool isRegex;
@@ -23,20 +21,22 @@ class _$EmailSecurityTrustedDomain extends EmailSecurityTrustedDomain {
   final int id;
   @override
   final DateTime lastModified;
+  @override
+  final String? comments;
 
   factory _$EmailSecurityTrustedDomain(
           [void Function(EmailSecurityTrustedDomainBuilder)? updates]) =>
       (EmailSecurityTrustedDomainBuilder()..update(updates))._build();
 
   _$EmailSecurityTrustedDomain._(
-      {this.comments,
-      required this.isRecent,
+      {required this.isRecent,
       required this.isRegex,
       required this.isSimilarity,
       required this.pattern,
       required this.createdAt,
       required this.id,
-      required this.lastModified})
+      required this.lastModified,
+      this.comments})
       : super._();
   @override
   EmailSecurityTrustedDomain rebuild(
@@ -51,20 +51,19 @@ class _$EmailSecurityTrustedDomain extends EmailSecurityTrustedDomain {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is EmailSecurityTrustedDomain &&
-        comments == other.comments &&
         isRecent == other.isRecent &&
         isRegex == other.isRegex &&
         isSimilarity == other.isSimilarity &&
         pattern == other.pattern &&
         createdAt == other.createdAt &&
         id == other.id &&
-        lastModified == other.lastModified;
+        lastModified == other.lastModified &&
+        comments == other.comments;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, comments.hashCode);
     _$hash = $jc(_$hash, isRecent.hashCode);
     _$hash = $jc(_$hash, isRegex.hashCode);
     _$hash = $jc(_$hash, isSimilarity.hashCode);
@@ -72,6 +71,7 @@ class _$EmailSecurityTrustedDomain extends EmailSecurityTrustedDomain {
     _$hash = $jc(_$hash, createdAt.hashCode);
     _$hash = $jc(_$hash, id.hashCode);
     _$hash = $jc(_$hash, lastModified.hashCode);
+    _$hash = $jc(_$hash, comments.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -79,14 +79,14 @@ class _$EmailSecurityTrustedDomain extends EmailSecurityTrustedDomain {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'EmailSecurityTrustedDomain')
-          ..add('comments', comments)
           ..add('isRecent', isRecent)
           ..add('isRegex', isRegex)
           ..add('isSimilarity', isSimilarity)
           ..add('pattern', pattern)
           ..add('createdAt', createdAt)
           ..add('id', id)
-          ..add('lastModified', lastModified))
+          ..add('lastModified', lastModified)
+          ..add('comments', comments))
         .toString();
   }
 }
@@ -95,10 +95,6 @@ class EmailSecurityTrustedDomainBuilder
     implements
         Builder<EmailSecurityTrustedDomain, EmailSecurityTrustedDomainBuilder> {
   _$EmailSecurityTrustedDomain? _$v;
-
-  String? _comments;
-  String? get comments => _$this._comments;
-  set comments(String? comments) => _$this._comments = comments;
 
   bool? _isRecent;
   bool? get isRecent => _$this._isRecent;
@@ -129,6 +125,10 @@ class EmailSecurityTrustedDomainBuilder
   set lastModified(DateTime? lastModified) =>
       _$this._lastModified = lastModified;
 
+  String? _comments;
+  String? get comments => _$this._comments;
+  set comments(String? comments) => _$this._comments = comments;
+
   EmailSecurityTrustedDomainBuilder() {
     EmailSecurityTrustedDomain._defaults(this);
   }
@@ -136,7 +136,6 @@ class EmailSecurityTrustedDomainBuilder
   EmailSecurityTrustedDomainBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _comments = $v.comments;
       _isRecent = $v.isRecent;
       _isRegex = $v.isRegex;
       _isSimilarity = $v.isSimilarity;
@@ -144,6 +143,7 @@ class EmailSecurityTrustedDomainBuilder
       _createdAt = $v.createdAt;
       _id = $v.id;
       _lastModified = $v.lastModified;
+      _comments = $v.comments;
       _$v = null;
     }
     return this;
@@ -165,7 +165,6 @@ class EmailSecurityTrustedDomainBuilder
   _$EmailSecurityTrustedDomain _build() {
     final _$result = _$v ??
         _$EmailSecurityTrustedDomain._(
-          comments: comments,
           isRecent: BuiltValueNullFieldError.checkNotNull(
               isRecent, r'EmailSecurityTrustedDomain', 'isRecent'),
           isRegex: BuiltValueNullFieldError.checkNotNull(
@@ -180,6 +179,7 @@ class EmailSecurityTrustedDomainBuilder
               id, r'EmailSecurityTrustedDomain', 'id'),
           lastModified: BuiltValueNullFieldError.checkNotNull(
               lastModified, r'EmailSecurityTrustedDomain', 'lastModified'),
+          comments: comments,
         );
     replace(_$result);
     return _$result;

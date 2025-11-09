@@ -12,19 +12,23 @@ part 'access_schemas_bookmark_props.g.dart';
 /// AccessSchemasBookmarkProps
 ///
 /// Properties:
-/// * [appLauncherVisible] 
 /// * [domain] - The URL or domain of the bookmark.
+/// * [type] - The application type.
+/// * [appLauncherVisible] 
 /// * [logoUrl] - The image URL for the logo shown in the App Launcher dashboard.
 /// * [name] - The name of the application.
-/// * [type] - The application type.
 @BuiltValue(instantiable: false)
 abstract class AccessSchemasBookmarkProps  {
-  @BuiltValueField(wireName: r'app_launcher_visible')
-  JsonObject? get appLauncherVisible;
-
   /// The URL or domain of the bookmark.
   @BuiltValueField(wireName: r'domain')
   JsonObject? get domain;
+
+  /// The application type.
+  @BuiltValueField(wireName: r'type')
+  String get type;
+
+  @BuiltValueField(wireName: r'app_launcher_visible')
+  JsonObject? get appLauncherVisible;
 
   /// The image URL for the logo shown in the App Launcher dashboard.
   @BuiltValueField(wireName: r'logo_url')
@@ -33,10 +37,6 @@ abstract class AccessSchemasBookmarkProps  {
   /// The name of the application.
   @BuiltValueField(wireName: r'name')
   String? get name;
-
-  /// The application type.
-  @BuiltValueField(wireName: r'type')
-  String get type;
 
   @BuiltValueSerializer(custom: true)
   static Serializer<AccessSchemasBookmarkProps> get serializer => _$AccessSchemasBookmarkPropsSerializer();
@@ -54,6 +54,16 @@ class _$AccessSchemasBookmarkPropsSerializer implements PrimitiveSerializer<Acce
     AccessSchemasBookmarkProps object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    yield r'domain';
+    yield object.domain == null ? null : serializers.serialize(
+      object.domain,
+      specifiedType: const FullType.nullable(JsonObject),
+    );
+    yield r'type';
+    yield serializers.serialize(
+      object.type,
+      specifiedType: const FullType(String),
+    );
     if (object.appLauncherVisible != null) {
       yield r'app_launcher_visible';
       yield serializers.serialize(
@@ -61,11 +71,6 @@ class _$AccessSchemasBookmarkPropsSerializer implements PrimitiveSerializer<Acce
         specifiedType: const FullType.nullable(JsonObject),
       );
     }
-    yield r'domain';
-    yield object.domain == null ? null : serializers.serialize(
-      object.domain,
-      specifiedType: const FullType.nullable(JsonObject),
-    );
     if (object.logoUrl != null) {
       yield r'logo_url';
       yield serializers.serialize(
@@ -80,11 +85,6 @@ class _$AccessSchemasBookmarkPropsSerializer implements PrimitiveSerializer<Acce
         specifiedType: const FullType(String),
       );
     }
-    yield r'type';
-    yield serializers.serialize(
-      object.type,
-      specifiedType: const FullType(String),
-    );
   }
 
   @override
@@ -148,14 +148,6 @@ class _$$AccessSchemasBookmarkPropsSerializer implements PrimitiveSerializer<$Ac
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'app_launcher_visible':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(JsonObject),
-          ) as JsonObject?;
-          if (valueDes == null) continue;
-          result.appLauncherVisible = valueDes;
-          break;
         case r'domain':
           final valueDes = serializers.deserialize(
             value,
@@ -163,6 +155,21 @@ class _$$AccessSchemasBookmarkPropsSerializer implements PrimitiveSerializer<$Ac
           ) as JsonObject?;
           if (valueDes == null) continue;
           result.domain = valueDes;
+          break;
+        case r'type':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.type = valueDes;
+          break;
+        case r'app_launcher_visible':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType.nullable(JsonObject),
+          ) as JsonObject?;
+          if (valueDes == null) continue;
+          result.appLauncherVisible = valueDes;
           break;
         case r'logo_url':
           final valueDes = serializers.deserialize(
@@ -177,13 +184,6 @@ class _$$AccessSchemasBookmarkPropsSerializer implements PrimitiveSerializer<$Ac
             specifiedType: const FullType(String),
           ) as String;
           result.name = valueDes;
-          break;
-        case r'type':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.type = valueDes;
           break;
         default:
           unhandled.add(key);

@@ -8,20 +8,20 @@ part of 'get_abuse_report200_response.dart';
 
 class _$GetAbuseReport200Response extends GetAbuseReport200Response {
   @override
-  final BuiltList<AbuseReportsErrorMessage>? errors;
-  @override
-  final BuiltList<AbuseReportsMessage>? messages;
-  @override
   final AbuseReportsAbuseReport result;
   @override
   final bool success;
+  @override
+  final BuiltList<AbuseReportsErrorMessage>? errors;
+  @override
+  final BuiltList<AbuseReportsMessage>? messages;
 
   factory _$GetAbuseReport200Response(
           [void Function(GetAbuseReport200ResponseBuilder)? updates]) =>
       (GetAbuseReport200ResponseBuilder()..update(updates))._build();
 
   _$GetAbuseReport200Response._(
-      {this.errors, this.messages, required this.result, required this.success})
+      {required this.result, required this.success, this.errors, this.messages})
       : super._();
   @override
   GetAbuseReport200Response rebuild(
@@ -36,19 +36,19 @@ class _$GetAbuseReport200Response extends GetAbuseReport200Response {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is GetAbuseReport200Response &&
-        errors == other.errors &&
-        messages == other.messages &&
         result == other.result &&
-        success == other.success;
+        success == other.success &&
+        errors == other.errors &&
+        messages == other.messages;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, errors.hashCode);
-    _$hash = $jc(_$hash, messages.hashCode);
     _$hash = $jc(_$hash, result.hashCode);
     _$hash = $jc(_$hash, success.hashCode);
+    _$hash = $jc(_$hash, errors.hashCode);
+    _$hash = $jc(_$hash, messages.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -56,10 +56,10 @@ class _$GetAbuseReport200Response extends GetAbuseReport200Response {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'GetAbuseReport200Response')
-          ..add('errors', errors)
-          ..add('messages', messages)
           ..add('result', result)
-          ..add('success', success))
+          ..add('success', success)
+          ..add('errors', errors)
+          ..add('messages', messages))
         .toString();
   }
 }
@@ -68,6 +68,15 @@ class GetAbuseReport200ResponseBuilder
     implements
         Builder<GetAbuseReport200Response, GetAbuseReport200ResponseBuilder> {
   _$GetAbuseReport200Response? _$v;
+
+  AbuseReportsAbuseReportBuilder? _result;
+  AbuseReportsAbuseReportBuilder get result =>
+      _$this._result ??= AbuseReportsAbuseReportBuilder();
+  set result(AbuseReportsAbuseReportBuilder? result) => _$this._result = result;
+
+  bool? _success;
+  bool? get success => _$this._success;
+  set success(bool? success) => _$this._success = success;
 
   ListBuilder<AbuseReportsErrorMessage>? _errors;
   ListBuilder<AbuseReportsErrorMessage> get errors =>
@@ -81,15 +90,6 @@ class GetAbuseReport200ResponseBuilder
   set messages(ListBuilder<AbuseReportsMessage>? messages) =>
       _$this._messages = messages;
 
-  AbuseReportsAbuseReportBuilder? _result;
-  AbuseReportsAbuseReportBuilder get result =>
-      _$this._result ??= AbuseReportsAbuseReportBuilder();
-  set result(AbuseReportsAbuseReportBuilder? result) => _$this._result = result;
-
-  bool? _success;
-  bool? get success => _$this._success;
-  set success(bool? success) => _$this._success = success;
-
   GetAbuseReport200ResponseBuilder() {
     GetAbuseReport200Response._defaults(this);
   }
@@ -97,10 +97,10 @@ class GetAbuseReport200ResponseBuilder
   GetAbuseReport200ResponseBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _errors = $v.errors?.toBuilder();
-      _messages = $v.messages?.toBuilder();
       _result = $v.result.toBuilder();
       _success = $v.success;
+      _errors = $v.errors?.toBuilder();
+      _messages = $v.messages?.toBuilder();
       _$v = null;
     }
     return this;
@@ -124,21 +124,22 @@ class GetAbuseReport200ResponseBuilder
     try {
       _$result = _$v ??
           _$GetAbuseReport200Response._(
-            errors: _errors?.build(),
-            messages: _messages?.build(),
             result: result.build(),
             success: BuiltValueNullFieldError.checkNotNull(
                 success, r'GetAbuseReport200Response', 'success'),
+            errors: _errors?.build(),
+            messages: _messages?.build(),
           );
     } catch (_) {
       late String _$failedField;
       try {
+        _$failedField = 'result';
+        result.build();
+
         _$failedField = 'errors';
         _errors?.build();
         _$failedField = 'messages';
         _messages?.build();
-        _$failedField = 'result';
-        result.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
             r'GetAbuseReport200Response', _$failedField, e.toString());

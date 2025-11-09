@@ -12,15 +12,11 @@ part 'workers_kv_bulk_get_result_with_metadata_values_value.g.dart';
 /// WorkersKvBulkGetResultWithMetadataValuesValue
 ///
 /// Properties:
-/// * [expiration] - Expires the key at a certain time, measured in number of seconds since the UNIX epoch.
 /// * [metadata] - The metadata associated with the key.
 /// * [value] - The value associated with the key.
+/// * [expiration] - Expires the key at a certain time, measured in number of seconds since the UNIX epoch.
 @BuiltValue()
 abstract class WorkersKvBulkGetResultWithMetadataValuesValue implements Built<WorkersKvBulkGetResultWithMetadataValuesValue, WorkersKvBulkGetResultWithMetadataValuesValueBuilder> {
-  /// Expires the key at a certain time, measured in number of seconds since the UNIX epoch.
-  @BuiltValueField(wireName: r'expiration')
-  num? get expiration;
-
   /// The metadata associated with the key.
   @BuiltValueField(wireName: r'metadata')
   JsonObject? get metadata;
@@ -28,6 +24,10 @@ abstract class WorkersKvBulkGetResultWithMetadataValuesValue implements Built<Wo
   /// The value associated with the key.
   @BuiltValueField(wireName: r'value')
   JsonObject? get value;
+
+  /// Expires the key at a certain time, measured in number of seconds since the UNIX epoch.
+  @BuiltValueField(wireName: r'expiration')
+  num? get expiration;
 
   WorkersKvBulkGetResultWithMetadataValuesValue._();
 
@@ -52,13 +52,6 @@ class _$WorkersKvBulkGetResultWithMetadataValuesValueSerializer implements Primi
     WorkersKvBulkGetResultWithMetadataValuesValue object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
-    if (object.expiration != null) {
-      yield r'expiration';
-      yield serializers.serialize(
-        object.expiration,
-        specifiedType: const FullType(num),
-      );
-    }
     yield r'metadata';
     yield object.metadata == null ? null : serializers.serialize(
       object.metadata,
@@ -69,6 +62,13 @@ class _$WorkersKvBulkGetResultWithMetadataValuesValueSerializer implements Primi
       object.value,
       specifiedType: const FullType.nullable(JsonObject),
     );
+    if (object.expiration != null) {
+      yield r'expiration';
+      yield serializers.serialize(
+        object.expiration,
+        specifiedType: const FullType(num),
+      );
+    }
   }
 
   @override
@@ -92,13 +92,6 @@ class _$WorkersKvBulkGetResultWithMetadataValuesValueSerializer implements Primi
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'expiration':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(num),
-          ) as num;
-          result.expiration = valueDes;
-          break;
         case r'metadata':
           final valueDes = serializers.deserialize(
             value,
@@ -114,6 +107,13 @@ class _$WorkersKvBulkGetResultWithMetadataValuesValueSerializer implements Primi
           ) as JsonObject?;
           if (valueDes == null) continue;
           result.value = valueDes;
+          break;
+        case r'expiration':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(num),
+          ) as num;
+          result.expiration = valueDes;
           break;
         default:
           unhandled.add(key);

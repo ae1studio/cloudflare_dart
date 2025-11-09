@@ -12,15 +12,12 @@ part 'email_security_create_blocked_sender.g.dart';
 /// EmailSecurityCreateBlockedSender
 ///
 /// Properties:
-/// * [comments] 
 /// * [isRegex] 
 /// * [pattern] 
 /// * [patternType] 
+/// * [comments] 
 @BuiltValue(instantiable: false)
 abstract class EmailSecurityCreateBlockedSender  {
-  @BuiltValueField(wireName: r'comments')
-  String? get comments;
-
   @BuiltValueField(wireName: r'is_regex')
   bool get isRegex;
 
@@ -30,6 +27,9 @@ abstract class EmailSecurityCreateBlockedSender  {
   @BuiltValueField(wireName: r'pattern_type')
   EmailSecurityPatternType get patternType;
   // enum patternTypeEnum {  EMAIL,  DOMAIN,  IP,  UNKNOWN,  };
+
+  @BuiltValueField(wireName: r'comments')
+  String? get comments;
 
   @BuiltValueSerializer(custom: true)
   static Serializer<EmailSecurityCreateBlockedSender> get serializer => _$EmailSecurityCreateBlockedSenderSerializer();
@@ -47,13 +47,6 @@ class _$EmailSecurityCreateBlockedSenderSerializer implements PrimitiveSerialize
     EmailSecurityCreateBlockedSender object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
-    if (object.comments != null) {
-      yield r'comments';
-      yield serializers.serialize(
-        object.comments,
-        specifiedType: const FullType.nullable(String),
-      );
-    }
     yield r'is_regex';
     yield serializers.serialize(
       object.isRegex,
@@ -69,6 +62,13 @@ class _$EmailSecurityCreateBlockedSenderSerializer implements PrimitiveSerialize
       object.patternType,
       specifiedType: const FullType(EmailSecurityPatternType),
     );
+    if (object.comments != null) {
+      yield r'comments';
+      yield serializers.serialize(
+        object.comments,
+        specifiedType: const FullType.nullable(String),
+      );
+    }
   }
 
   @override
@@ -132,14 +132,6 @@ class _$$EmailSecurityCreateBlockedSenderSerializer implements PrimitiveSerializ
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'comments':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
-          if (valueDes == null) continue;
-          result.comments = valueDes;
-          break;
         case r'is_regex':
           final valueDes = serializers.deserialize(
             value,
@@ -160,6 +152,14 @@ class _$$EmailSecurityCreateBlockedSenderSerializer implements PrimitiveSerializ
             specifiedType: const FullType(EmailSecurityPatternType),
           ) as EmailSecurityPatternType;
           result.patternType = valueDes;
+          break;
+        case r'comments':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType.nullable(String),
+          ) as String?;
+          if (valueDes == null) continue;
+          result.comments = valueDes;
           break;
         default:
           unhandled.add(key);

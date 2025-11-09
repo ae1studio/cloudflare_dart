@@ -12,20 +12,24 @@ part 'r2_data_catalog_table_details.g.dart';
 /// Contains table with metadata.
 ///
 /// Properties:
-/// * [createdAt] - Indicates the creation timestamp in ISO 8601 format.
 /// * [identifier] 
+/// * [tableUuid] - Contains the UUID that persists across renames.
+/// * [createdAt] - Indicates the creation timestamp in ISO 8601 format.
 /// * [location] - Specifies the base S3 URI for table storage location.
 /// * [metadataLocation] - Contains the S3 URI to table metadata file. Null for staged tables.
-/// * [tableUuid] - Contains the UUID that persists across renames.
 /// * [updatedAt] - Shows the last update timestamp in ISO 8601 format. Null if never updated.
 @BuiltValue()
 abstract class R2DataCatalogTableDetails implements Built<R2DataCatalogTableDetails, R2DataCatalogTableDetailsBuilder> {
+  @BuiltValueField(wireName: r'identifier')
+  R2DataCatalogTableIdentifier get identifier;
+
+  /// Contains the UUID that persists across renames.
+  @BuiltValueField(wireName: r'table_uuid')
+  String get tableUuid;
+
   /// Indicates the creation timestamp in ISO 8601 format.
   @BuiltValueField(wireName: r'created_at')
   DateTime? get createdAt;
-
-  @BuiltValueField(wireName: r'identifier')
-  R2DataCatalogTableIdentifier get identifier;
 
   /// Specifies the base S3 URI for table storage location.
   @BuiltValueField(wireName: r'location')
@@ -34,10 +38,6 @@ abstract class R2DataCatalogTableDetails implements Built<R2DataCatalogTableDeta
   /// Contains the S3 URI to table metadata file. Null for staged tables.
   @BuiltValueField(wireName: r'metadata_location')
   String? get metadataLocation;
-
-  /// Contains the UUID that persists across renames.
-  @BuiltValueField(wireName: r'table_uuid')
-  String get tableUuid;
 
   /// Shows the last update timestamp in ISO 8601 format. Null if never updated.
   @BuiltValueField(wireName: r'updated_at')
@@ -66,6 +66,16 @@ class _$R2DataCatalogTableDetailsSerializer implements PrimitiveSerializer<R2Dat
     R2DataCatalogTableDetails object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    yield r'identifier';
+    yield serializers.serialize(
+      object.identifier,
+      specifiedType: const FullType(R2DataCatalogTableIdentifier),
+    );
+    yield r'table_uuid';
+    yield serializers.serialize(
+      object.tableUuid,
+      specifiedType: const FullType(String),
+    );
     if (object.createdAt != null) {
       yield r'created_at';
       yield serializers.serialize(
@@ -73,11 +83,6 @@ class _$R2DataCatalogTableDetailsSerializer implements PrimitiveSerializer<R2Dat
         specifiedType: const FullType.nullable(DateTime),
       );
     }
-    yield r'identifier';
-    yield serializers.serialize(
-      object.identifier,
-      specifiedType: const FullType(R2DataCatalogTableIdentifier),
-    );
     if (object.location != null) {
       yield r'location';
       yield serializers.serialize(
@@ -92,11 +97,6 @@ class _$R2DataCatalogTableDetailsSerializer implements PrimitiveSerializer<R2Dat
         specifiedType: const FullType.nullable(String),
       );
     }
-    yield r'table_uuid';
-    yield serializers.serialize(
-      object.tableUuid,
-      specifiedType: const FullType(String),
-    );
     if (object.updatedAt != null) {
       yield r'updated_at';
       yield serializers.serialize(
@@ -127,6 +127,20 @@ class _$R2DataCatalogTableDetailsSerializer implements PrimitiveSerializer<R2Dat
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
+        case r'identifier':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(R2DataCatalogTableIdentifier),
+          ) as R2DataCatalogTableIdentifier;
+          result.identifier.replace(valueDes);
+          break;
+        case r'table_uuid':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.tableUuid = valueDes;
+          break;
         case r'created_at':
           final valueDes = serializers.deserialize(
             value,
@@ -134,13 +148,6 @@ class _$R2DataCatalogTableDetailsSerializer implements PrimitiveSerializer<R2Dat
           ) as DateTime?;
           if (valueDes == null) continue;
           result.createdAt = valueDes;
-          break;
-        case r'identifier':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(R2DataCatalogTableIdentifier),
-          ) as R2DataCatalogTableIdentifier;
-          result.identifier.replace(valueDes);
           break;
         case r'location':
           final valueDes = serializers.deserialize(
@@ -157,13 +164,6 @@ class _$R2DataCatalogTableDetailsSerializer implements PrimitiveSerializer<R2Dat
           ) as String?;
           if (valueDes == null) continue;
           result.metadataLocation = valueDes;
-          break;
-        case r'table_uuid':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.tableUuid = valueDes;
           break;
         case r'updated_at':
           final valueDes = serializers.deserialize(

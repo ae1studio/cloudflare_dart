@@ -14,25 +14,25 @@ part 'brapi_post_content200_response.g.dart';
 /// BrapiPostContent200Response
 ///
 /// Properties:
-/// * [errors] 
 /// * [meta] 
-/// * [result] - HTML content
 /// * [status] - Response status
+/// * [errors] 
+/// * [result] - HTML content
 @BuiltValue()
 abstract class BrapiPostContent200Response implements Built<BrapiPostContent200Response, BrapiPostContent200ResponseBuilder> {
-  @BuiltValueField(wireName: r'errors')
-  BuiltList<BrapiPostContent200ResponseErrorsInner>? get errors;
-
   @BuiltValueField(wireName: r'meta')
   BrapiPostContent200ResponseMeta get meta;
-
-  /// HTML content
-  @BuiltValueField(wireName: r'result')
-  String? get result;
 
   /// Response status
   @BuiltValueField(wireName: r'status')
   bool get status;
+
+  @BuiltValueField(wireName: r'errors')
+  BuiltList<BrapiPostContent200ResponseErrorsInner>? get errors;
+
+  /// HTML content
+  @BuiltValueField(wireName: r'result')
+  String? get result;
 
   BrapiPostContent200Response._();
 
@@ -57,6 +57,16 @@ class _$BrapiPostContent200ResponseSerializer implements PrimitiveSerializer<Bra
     BrapiPostContent200Response object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    yield r'meta';
+    yield serializers.serialize(
+      object.meta,
+      specifiedType: const FullType(BrapiPostContent200ResponseMeta),
+    );
+    yield r'status';
+    yield serializers.serialize(
+      object.status,
+      specifiedType: const FullType(bool),
+    );
     if (object.errors != null) {
       yield r'errors';
       yield serializers.serialize(
@@ -64,11 +74,6 @@ class _$BrapiPostContent200ResponseSerializer implements PrimitiveSerializer<Bra
         specifiedType: const FullType(BuiltList, [FullType(BrapiPostContent200ResponseErrorsInner)]),
       );
     }
-    yield r'meta';
-    yield serializers.serialize(
-      object.meta,
-      specifiedType: const FullType(BrapiPostContent200ResponseMeta),
-    );
     if (object.result != null) {
       yield r'result';
       yield serializers.serialize(
@@ -76,11 +81,6 @@ class _$BrapiPostContent200ResponseSerializer implements PrimitiveSerializer<Bra
         specifiedType: const FullType(String),
       );
     }
-    yield r'status';
-    yield serializers.serialize(
-      object.status,
-      specifiedType: const FullType(bool),
-    );
   }
 
   @override
@@ -104,13 +104,6 @@ class _$BrapiPostContent200ResponseSerializer implements PrimitiveSerializer<Bra
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'errors':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(BrapiPostContent200ResponseErrorsInner)]),
-          ) as BuiltList<BrapiPostContent200ResponseErrorsInner>;
-          result.errors.replace(valueDes);
-          break;
         case r'meta':
           final valueDes = serializers.deserialize(
             value,
@@ -118,19 +111,26 @@ class _$BrapiPostContent200ResponseSerializer implements PrimitiveSerializer<Bra
           ) as BrapiPostContent200ResponseMeta;
           result.meta.replace(valueDes);
           break;
-        case r'result':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.result = valueDes;
-          break;
         case r'status':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(bool),
           ) as bool;
           result.status = valueDes;
+          break;
+        case r'errors':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BuiltList, [FullType(BrapiPostContent200ResponseErrorsInner)]),
+          ) as BuiltList<BrapiPostContent200ResponseErrorsInner>;
+          result.errors.replace(valueDes);
+          break;
+        case r'result':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.result = valueDes;
           break;
         default:
           unhandled.add(key);

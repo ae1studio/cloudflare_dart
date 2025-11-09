@@ -16,6 +16,8 @@ part 'account_load_balancer_pools_create_pool_request.g.dart';
 /// AccountLoadBalancerPoolsCreatePoolRequest
 ///
 /// Properties:
+/// * [name] - A short name (tag) for the pool. Only alphanumeric characters, hyphens, and underscores are allowed.
+/// * [origins] - The list of origins within this pool. Traffic directed at this pool is balanced across all currently healthy origins, provided the pool itself is healthy.
 /// * [description] - A human-readable description of the pool.
 /// * [enabled] - Whether to enable (the default) or disable this pool. Disabled pools will not receive traffic and are excluded from health checks. Disabling a pool will cause any load balancers using it to failover to the next pool (if any).
 /// * [latitude] - The latitude of the data center containing the origins used in this pool in decimal degrees. If this is set, longitude must also be set.
@@ -24,13 +26,19 @@ part 'account_load_balancer_pools_create_pool_request.g.dart';
 /// * [minimumOrigins] - The minimum number of origins that must be healthy for this pool to serve traffic. If the number of healthy origins falls below this number, the pool will be marked unhealthy and will failover to the next available pool.
 /// * [monitor] - The ID of the Monitor to use for checking the health of origins within this pool.
 /// * [monitorGroup] - The ID of the Monitor Group to use for checking the health of origins within this pool.
-/// * [name] - A short name (tag) for the pool. Only alphanumeric characters, hyphens, and underscores are allowed.
 /// * [notificationEmail] - This field is now deprecated. It has been moved to Cloudflare's Centralized Notification service https://developers.cloudflare.com/fundamentals/notifications/. The email address to send health status notifications to. This can be an individual mailbox or a mailing list. Multiple emails can be supplied as a comma delimited list.
 /// * [notificationFilter] 
 /// * [originSteering] 
-/// * [origins] - The list of origins within this pool. Traffic directed at this pool is balanced across all currently healthy origins, provided the pool itself is healthy.
 @BuiltValue()
 abstract class AccountLoadBalancerPoolsCreatePoolRequest implements Built<AccountLoadBalancerPoolsCreatePoolRequest, AccountLoadBalancerPoolsCreatePoolRequestBuilder> {
+  /// A short name (tag) for the pool. Only alphanumeric characters, hyphens, and underscores are allowed.
+  @BuiltValueField(wireName: r'name')
+  String get name;
+
+  /// The list of origins within this pool. Traffic directed at this pool is balanced across all currently healthy origins, provided the pool itself is healthy.
+  @BuiltValueField(wireName: r'origins')
+  BuiltList<LoadBalancingOrigin> get origins;
+
   /// A human-readable description of the pool.
   @BuiltValueField(wireName: r'description')
   String? get description;
@@ -62,10 +70,6 @@ abstract class AccountLoadBalancerPoolsCreatePoolRequest implements Built<Accoun
   @BuiltValueField(wireName: r'monitor_group')
   String? get monitorGroup;
 
-  /// A short name (tag) for the pool. Only alphanumeric characters, hyphens, and underscores are allowed.
-  @BuiltValueField(wireName: r'name')
-  String get name;
-
   /// This field is now deprecated. It has been moved to Cloudflare's Centralized Notification service https://developers.cloudflare.com/fundamentals/notifications/. The email address to send health status notifications to. This can be an individual mailbox or a mailing list. Multiple emails can be supplied as a comma delimited list.
   @BuiltValueField(wireName: r'notification_email')
   String? get notificationEmail;
@@ -75,10 +79,6 @@ abstract class AccountLoadBalancerPoolsCreatePoolRequest implements Built<Accoun
 
   @BuiltValueField(wireName: r'origin_steering')
   LoadBalancingOriginSteering? get originSteering;
-
-  /// The list of origins within this pool. Traffic directed at this pool is balanced across all currently healthy origins, provided the pool itself is healthy.
-  @BuiltValueField(wireName: r'origins')
-  BuiltList<LoadBalancingOrigin> get origins;
 
   AccountLoadBalancerPoolsCreatePoolRequest._();
 
@@ -107,6 +107,16 @@ class _$AccountLoadBalancerPoolsCreatePoolRequestSerializer implements Primitive
     AccountLoadBalancerPoolsCreatePoolRequest object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    yield r'name';
+    yield serializers.serialize(
+      object.name,
+      specifiedType: const FullType(String),
+    );
+    yield r'origins';
+    yield serializers.serialize(
+      object.origins,
+      specifiedType: const FullType(BuiltList, [FullType(LoadBalancingOrigin)]),
+    );
     if (object.description != null) {
       yield r'description';
       yield serializers.serialize(
@@ -163,11 +173,6 @@ class _$AccountLoadBalancerPoolsCreatePoolRequestSerializer implements Primitive
         specifiedType: const FullType(String),
       );
     }
-    yield r'name';
-    yield serializers.serialize(
-      object.name,
-      specifiedType: const FullType(String),
-    );
     if (object.notificationEmail != null) {
       yield r'notification_email';
       yield serializers.serialize(
@@ -189,11 +194,6 @@ class _$AccountLoadBalancerPoolsCreatePoolRequestSerializer implements Primitive
         specifiedType: const FullType(LoadBalancingOriginSteering),
       );
     }
-    yield r'origins';
-    yield serializers.serialize(
-      object.origins,
-      specifiedType: const FullType(BuiltList, [FullType(LoadBalancingOrigin)]),
-    );
   }
 
   @override
@@ -217,6 +217,20 @@ class _$AccountLoadBalancerPoolsCreatePoolRequestSerializer implements Primitive
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
+        case r'name':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.name = valueDes;
+          break;
+        case r'origins':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BuiltList, [FullType(LoadBalancingOrigin)]),
+          ) as BuiltList<LoadBalancingOrigin>;
+          result.origins.replace(valueDes);
+          break;
         case r'description':
           final valueDes = serializers.deserialize(
             value,
@@ -273,13 +287,6 @@ class _$AccountLoadBalancerPoolsCreatePoolRequestSerializer implements Primitive
           ) as String;
           result.monitorGroup = valueDes;
           break;
-        case r'name':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.name = valueDes;
-          break;
         case r'notification_email':
           final valueDes = serializers.deserialize(
             value,
@@ -301,13 +308,6 @@ class _$AccountLoadBalancerPoolsCreatePoolRequestSerializer implements Primitive
             specifiedType: const FullType(LoadBalancingOriginSteering),
           ) as LoadBalancingOriginSteering;
           result.originSteering.replace(valueDes);
-          break;
-        case r'origins':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(LoadBalancingOrigin)]),
-          ) as BuiltList<LoadBalancingOrigin>;
-          result.origins.replace(valueDes);
           break;
         default:
           unhandled.add(key);

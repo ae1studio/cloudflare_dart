@@ -73,9 +73,9 @@ class _$DigitalExperienceMonitoringTracerouteTestNetworkPathResponseKindEnumSeri
 class _$DigitalExperienceMonitoringTracerouteTestNetworkPathResponse
     extends DigitalExperienceMonitoringTracerouteTestNetworkPathResponse {
   @override
-  final String? deviceName;
-  @override
   final String id;
+  @override
+  final String? deviceName;
   @override
   final String? interval;
   @override
@@ -98,8 +98,8 @@ class _$DigitalExperienceMonitoringTracerouteTestNetworkPathResponse
           ._build();
 
   _$DigitalExperienceMonitoringTracerouteTestNetworkPathResponse._(
-      {this.deviceName,
-      required this.id,
+      {required this.id,
+      this.deviceName,
       this.interval,
       this.kind,
       this.name,
@@ -124,8 +124,8 @@ class _$DigitalExperienceMonitoringTracerouteTestNetworkPathResponse
     if (identical(other, this)) return true;
     return other
             is DigitalExperienceMonitoringTracerouteTestNetworkPathResponse &&
-        deviceName == other.deviceName &&
         id == other.id &&
+        deviceName == other.deviceName &&
         interval == other.interval &&
         kind == other.kind &&
         name == other.name &&
@@ -136,8 +136,8 @@ class _$DigitalExperienceMonitoringTracerouteTestNetworkPathResponse
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, deviceName.hashCode);
     _$hash = $jc(_$hash, id.hashCode);
+    _$hash = $jc(_$hash, deviceName.hashCode);
     _$hash = $jc(_$hash, interval.hashCode);
     _$hash = $jc(_$hash, kind.hashCode);
     _$hash = $jc(_$hash, name.hashCode);
@@ -151,8 +151,8 @@ class _$DigitalExperienceMonitoringTracerouteTestNetworkPathResponse
   String toString() {
     return (newBuiltValueToStringHelper(
             r'DigitalExperienceMonitoringTracerouteTestNetworkPathResponse')
-          ..add('deviceName', deviceName)
           ..add('id', id)
+          ..add('deviceName', deviceName)
           ..add('interval', interval)
           ..add('kind', kind)
           ..add('name', name)
@@ -168,13 +168,13 @@ class DigitalExperienceMonitoringTracerouteTestNetworkPathResponseBuilder
             DigitalExperienceMonitoringTracerouteTestNetworkPathResponseBuilder> {
   _$DigitalExperienceMonitoringTracerouteTestNetworkPathResponse? _$v;
 
-  String? _deviceName;
-  String? get deviceName => _$this._deviceName;
-  set deviceName(String? deviceName) => _$this._deviceName = deviceName;
-
   String? _id;
   String? get id => _$this._id;
   set id(String? id) => _$this._id = id;
+
+  String? _deviceName;
+  String? get deviceName => _$this._deviceName;
+  set deviceName(String? deviceName) => _$this._deviceName = deviceName;
 
   String? _interval;
   String? get interval => _$this._interval;
@@ -215,8 +215,8 @@ class DigitalExperienceMonitoringTracerouteTestNetworkPathResponseBuilder
       get _$this {
     final $v = _$v;
     if ($v != null) {
-      _deviceName = $v.deviceName;
       _id = $v.id;
+      _deviceName = $v.deviceName;
       _interval = $v.interval;
       _kind = $v.kind;
       _name = $v.name;
@@ -251,11 +251,11 @@ class DigitalExperienceMonitoringTracerouteTestNetworkPathResponseBuilder
     try {
       _$result = _$v ??
           _$DigitalExperienceMonitoringTracerouteTestNetworkPathResponse._(
-            deviceName: deviceName,
             id: BuiltValueNullFieldError.checkNotNull(
                 id,
                 r'DigitalExperienceMonitoringTracerouteTestNetworkPathResponse',
                 'id'),
+            deviceName: deviceName,
             interval: interval,
             kind: kind,
             name: name,

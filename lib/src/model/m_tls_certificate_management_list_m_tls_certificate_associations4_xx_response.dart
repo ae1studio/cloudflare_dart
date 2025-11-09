@@ -20,8 +20,8 @@ part 'm_tls_certificate_management_list_m_tls_certificate_associations4_xx_respo
 /// * [errors] 
 /// * [messages] 
 /// * [success] - Whether the API call was successful.
-/// * [resultInfo] 
 /// * [result] 
+/// * [resultInfo] 
 @BuiltValue()
 abstract class MTlsCertificateManagementListMTlsCertificateAssociations4XXResponse implements TlsCertificatesAndHostnamesApiResponseCommonFailure, TlsCertificatesAndHostnamesAssociationResponseCollection, Built<MTlsCertificateManagementListMTlsCertificateAssociations4XXResponse, MTlsCertificateManagementListMTlsCertificateAssociations4XXResponseBuilder> {
   MTlsCertificateManagementListMTlsCertificateAssociations4XXResponse._();

@@ -9,13 +9,13 @@ part of 'workers_ai_post_run_cf_leonardo_lucid_origin_request.dart';
 class _$WorkersAiPostRunCfLeonardoLucidOriginRequest
     extends WorkersAiPostRunCfLeonardoLucidOriginRequest {
   @override
+  final String prompt;
+  @override
   final num? guidance;
   @override
   final int? height;
   @override
   final int? numSteps;
-  @override
-  final String prompt;
   @override
   final int? seed;
   @override
@@ -30,10 +30,10 @@ class _$WorkersAiPostRunCfLeonardoLucidOriginRequest
           ._build();
 
   _$WorkersAiPostRunCfLeonardoLucidOriginRequest._(
-      {this.guidance,
+      {required this.prompt,
+      this.guidance,
       this.height,
       this.numSteps,
-      required this.prompt,
       this.seed,
       this.steps,
       this.width})
@@ -52,10 +52,10 @@ class _$WorkersAiPostRunCfLeonardoLucidOriginRequest
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is WorkersAiPostRunCfLeonardoLucidOriginRequest &&
+        prompt == other.prompt &&
         guidance == other.guidance &&
         height == other.height &&
         numSteps == other.numSteps &&
-        prompt == other.prompt &&
         seed == other.seed &&
         steps == other.steps &&
         width == other.width;
@@ -64,10 +64,10 @@ class _$WorkersAiPostRunCfLeonardoLucidOriginRequest
   @override
   int get hashCode {
     var _$hash = 0;
+    _$hash = $jc(_$hash, prompt.hashCode);
     _$hash = $jc(_$hash, guidance.hashCode);
     _$hash = $jc(_$hash, height.hashCode);
     _$hash = $jc(_$hash, numSteps.hashCode);
-    _$hash = $jc(_$hash, prompt.hashCode);
     _$hash = $jc(_$hash, seed.hashCode);
     _$hash = $jc(_$hash, steps.hashCode);
     _$hash = $jc(_$hash, width.hashCode);
@@ -79,10 +79,10 @@ class _$WorkersAiPostRunCfLeonardoLucidOriginRequest
   String toString() {
     return (newBuiltValueToStringHelper(
             r'WorkersAiPostRunCfLeonardoLucidOriginRequest')
+          ..add('prompt', prompt)
           ..add('guidance', guidance)
           ..add('height', height)
           ..add('numSteps', numSteps)
-          ..add('prompt', prompt)
           ..add('seed', seed)
           ..add('steps', steps)
           ..add('width', width))
@@ -96,6 +96,10 @@ class WorkersAiPostRunCfLeonardoLucidOriginRequestBuilder
             WorkersAiPostRunCfLeonardoLucidOriginRequestBuilder> {
   _$WorkersAiPostRunCfLeonardoLucidOriginRequest? _$v;
 
+  String? _prompt;
+  String? get prompt => _$this._prompt;
+  set prompt(String? prompt) => _$this._prompt = prompt;
+
   num? _guidance;
   num? get guidance => _$this._guidance;
   set guidance(num? guidance) => _$this._guidance = guidance;
@@ -107,10 +111,6 @@ class WorkersAiPostRunCfLeonardoLucidOriginRequestBuilder
   int? _numSteps;
   int? get numSteps => _$this._numSteps;
   set numSteps(int? numSteps) => _$this._numSteps = numSteps;
-
-  String? _prompt;
-  String? get prompt => _$this._prompt;
-  set prompt(String? prompt) => _$this._prompt = prompt;
 
   int? _seed;
   int? get seed => _$this._seed;
@@ -131,10 +131,10 @@ class WorkersAiPostRunCfLeonardoLucidOriginRequestBuilder
   WorkersAiPostRunCfLeonardoLucidOriginRequestBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
+      _prompt = $v.prompt;
       _guidance = $v.guidance;
       _height = $v.height;
       _numSteps = $v.numSteps;
-      _prompt = $v.prompt;
       _seed = $v.seed;
       _steps = $v.steps;
       _width = $v.width;
@@ -161,11 +161,11 @@ class WorkersAiPostRunCfLeonardoLucidOriginRequestBuilder
   _$WorkersAiPostRunCfLeonardoLucidOriginRequest _build() {
     final _$result = _$v ??
         _$WorkersAiPostRunCfLeonardoLucidOriginRequest._(
+          prompt: BuiltValueNullFieldError.checkNotNull(prompt,
+              r'WorkersAiPostRunCfLeonardoLucidOriginRequest', 'prompt'),
           guidance: guidance,
           height: height,
           numSteps: numSteps,
-          prompt: BuiltValueNullFieldError.checkNotNull(prompt,
-              r'WorkersAiPostRunCfLeonardoLucidOriginRequest', 'prompt'),
           seed: seed,
           steps: steps,
           width: width,

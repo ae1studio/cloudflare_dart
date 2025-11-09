@@ -10,8 +10,6 @@ class _$McnOnrampStatus extends McnOnrampStatus {
   @override
   final McnApplyProgress applyProgress;
   @override
-  final BuiltMap<String, McnError>? lifecycleErrors;
-  @override
   final McnOnrampLifecycleState lifecycleState;
   @override
   final McnPlanProgress planProgress;
@@ -19,17 +17,19 @@ class _$McnOnrampStatus extends McnOnrampStatus {
   final BuiltList<String> routes;
   @override
   final BuiltList<String> tunnels;
+  @override
+  final BuiltMap<String, McnError>? lifecycleErrors;
 
   factory _$McnOnrampStatus([void Function(McnOnrampStatusBuilder)? updates]) =>
       (McnOnrampStatusBuilder()..update(updates))._build();
 
   _$McnOnrampStatus._(
       {required this.applyProgress,
-      this.lifecycleErrors,
       required this.lifecycleState,
       required this.planProgress,
       required this.routes,
-      required this.tunnels})
+      required this.tunnels,
+      this.lifecycleErrors})
       : super._();
   @override
   McnOnrampStatus rebuild(void Function(McnOnrampStatusBuilder) updates) =>
@@ -43,22 +43,22 @@ class _$McnOnrampStatus extends McnOnrampStatus {
     if (identical(other, this)) return true;
     return other is McnOnrampStatus &&
         applyProgress == other.applyProgress &&
-        lifecycleErrors == other.lifecycleErrors &&
         lifecycleState == other.lifecycleState &&
         planProgress == other.planProgress &&
         routes == other.routes &&
-        tunnels == other.tunnels;
+        tunnels == other.tunnels &&
+        lifecycleErrors == other.lifecycleErrors;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
     _$hash = $jc(_$hash, applyProgress.hashCode);
-    _$hash = $jc(_$hash, lifecycleErrors.hashCode);
     _$hash = $jc(_$hash, lifecycleState.hashCode);
     _$hash = $jc(_$hash, planProgress.hashCode);
     _$hash = $jc(_$hash, routes.hashCode);
     _$hash = $jc(_$hash, tunnels.hashCode);
+    _$hash = $jc(_$hash, lifecycleErrors.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -67,11 +67,11 @@ class _$McnOnrampStatus extends McnOnrampStatus {
   String toString() {
     return (newBuiltValueToStringHelper(r'McnOnrampStatus')
           ..add('applyProgress', applyProgress)
-          ..add('lifecycleErrors', lifecycleErrors)
           ..add('lifecycleState', lifecycleState)
           ..add('planProgress', planProgress)
           ..add('routes', routes)
-          ..add('tunnels', tunnels))
+          ..add('tunnels', tunnels)
+          ..add('lifecycleErrors', lifecycleErrors))
         .toString();
   }
 }
@@ -85,12 +85,6 @@ class McnOnrampStatusBuilder
       _$this._applyProgress ??= McnApplyProgressBuilder();
   set applyProgress(McnApplyProgressBuilder? applyProgress) =>
       _$this._applyProgress = applyProgress;
-
-  MapBuilder<String, McnError>? _lifecycleErrors;
-  MapBuilder<String, McnError> get lifecycleErrors =>
-      _$this._lifecycleErrors ??= MapBuilder<String, McnError>();
-  set lifecycleErrors(MapBuilder<String, McnError>? lifecycleErrors) =>
-      _$this._lifecycleErrors = lifecycleErrors;
 
   McnOnrampLifecycleState? _lifecycleState;
   McnOnrampLifecycleState? get lifecycleState => _$this._lifecycleState;
@@ -111,6 +105,12 @@ class McnOnrampStatusBuilder
   ListBuilder<String> get tunnels => _$this._tunnels ??= ListBuilder<String>();
   set tunnels(ListBuilder<String>? tunnels) => _$this._tunnels = tunnels;
 
+  MapBuilder<String, McnError>? _lifecycleErrors;
+  MapBuilder<String, McnError> get lifecycleErrors =>
+      _$this._lifecycleErrors ??= MapBuilder<String, McnError>();
+  set lifecycleErrors(MapBuilder<String, McnError>? lifecycleErrors) =>
+      _$this._lifecycleErrors = lifecycleErrors;
+
   McnOnrampStatusBuilder() {
     McnOnrampStatus._defaults(this);
   }
@@ -119,11 +119,11 @@ class McnOnrampStatusBuilder
     final $v = _$v;
     if ($v != null) {
       _applyProgress = $v.applyProgress.toBuilder();
-      _lifecycleErrors = $v.lifecycleErrors?.toBuilder();
       _lifecycleState = $v.lifecycleState;
       _planProgress = $v.planProgress.toBuilder();
       _routes = $v.routes.toBuilder();
       _tunnels = $v.tunnels.toBuilder();
+      _lifecycleErrors = $v.lifecycleErrors?.toBuilder();
       _$v = null;
     }
     return this;
@@ -148,20 +148,18 @@ class McnOnrampStatusBuilder
       _$result = _$v ??
           _$McnOnrampStatus._(
             applyProgress: applyProgress.build(),
-            lifecycleErrors: _lifecycleErrors?.build(),
             lifecycleState: BuiltValueNullFieldError.checkNotNull(
                 lifecycleState, r'McnOnrampStatus', 'lifecycleState'),
             planProgress: planProgress.build(),
             routes: routes.build(),
             tunnels: tunnels.build(),
+            lifecycleErrors: _lifecycleErrors?.build(),
           );
     } catch (_) {
       late String _$failedField;
       try {
         _$failedField = 'applyProgress';
         applyProgress.build();
-        _$failedField = 'lifecycleErrors';
-        _lifecycleErrors?.build();
 
         _$failedField = 'planProgress';
         planProgress.build();
@@ -169,6 +167,8 @@ class McnOnrampStatusBuilder
         routes.build();
         _$failedField = 'tunnels';
         tunnels.build();
+        _$failedField = 'lifecycleErrors';
+        _lifecycleErrors?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
             r'McnOnrampStatus', _$failedField, e.toString());

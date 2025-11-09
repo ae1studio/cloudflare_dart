@@ -12,13 +12,16 @@ part 'urlscanner_create_scan_request.g.dart';
 /// UrlscannerCreateScanRequest
 ///
 /// Properties:
+/// * [url] 
 /// * [country] - Country to geo egress from
 /// * [customHeaders] - Set custom headers.
 /// * [screenshotsResolutions] - Take multiple screenshots targeting different device types.
-/// * [url] 
 /// * [visibility] - The option `Public` means it will be included in listings like recent scans and search results. `Unlisted` means it will not be included in the aforementioned listings, users will need to have the scan's ID to access it. A a scan will be automatically marked as unlisted if it fails, if it contains potential PII or other sensitive material.
 @BuiltValue()
 abstract class UrlscannerCreateScanRequest implements Built<UrlscannerCreateScanRequest, UrlscannerCreateScanRequestBuilder> {
+  @BuiltValueField(wireName: r'url')
+  String get url;
+
   /// Country to geo egress from
   @BuiltValueField(wireName: r'country')
   UrlscannerCreateScanRequestCountryEnum? get country;
@@ -32,9 +35,6 @@ abstract class UrlscannerCreateScanRequest implements Built<UrlscannerCreateScan
   @BuiltValueField(wireName: r'screenshotsResolutions')
   BuiltList<UrlscannerCreateScanRequestScreenshotsResolutionsEnum>? get screenshotsResolutions;
   // enum screenshotsResolutionsEnum {  desktop,  mobile,  tablet,  };
-
-  @BuiltValueField(wireName: r'url')
-  String get url;
 
   /// The option `Public` means it will be included in listings like recent scans and search results. `Unlisted` means it will not be included in the aforementioned listings, users will need to have the scan's ID to access it. A a scan will be automatically marked as unlisted if it fails, if it contains potential PII or other sensitive material.
   @BuiltValueField(wireName: r'visibility')
@@ -66,6 +66,11 @@ class _$UrlscannerCreateScanRequestSerializer implements PrimitiveSerializer<Url
     UrlscannerCreateScanRequest object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    yield r'url';
+    yield serializers.serialize(
+      object.url,
+      specifiedType: const FullType(String),
+    );
     if (object.country != null) {
       yield r'country';
       yield serializers.serialize(
@@ -87,11 +92,6 @@ class _$UrlscannerCreateScanRequestSerializer implements PrimitiveSerializer<Url
         specifiedType: const FullType(BuiltList, [FullType(UrlscannerCreateScanRequestScreenshotsResolutionsEnum)]),
       );
     }
-    yield r'url';
-    yield serializers.serialize(
-      object.url,
-      specifiedType: const FullType(String),
-    );
     if (object.visibility != null) {
       yield r'visibility';
       yield serializers.serialize(
@@ -122,6 +122,13 @@ class _$UrlscannerCreateScanRequestSerializer implements PrimitiveSerializer<Url
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
+        case r'url':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.url = valueDes;
+          break;
         case r'country':
           final valueDes = serializers.deserialize(
             value,
@@ -142,13 +149,6 @@ class _$UrlscannerCreateScanRequestSerializer implements PrimitiveSerializer<Url
             specifiedType: const FullType(BuiltList, [FullType(UrlscannerCreateScanRequestScreenshotsResolutionsEnum)]),
           ) as BuiltList<UrlscannerCreateScanRequestScreenshotsResolutionsEnum>;
           result.screenshotsResolutions.replace(valueDes);
-          break;
-        case r'url':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.url = valueDes;
           break;
         case r'visibility':
           final valueDes = serializers.deserialize(

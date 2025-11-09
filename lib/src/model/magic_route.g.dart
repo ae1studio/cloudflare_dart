@@ -8,19 +8,19 @@ part of 'magic_route.dart';
 
 class _$MagicRoute extends MagicRoute {
   @override
-  final DateTime? createdOn;
-  @override
-  final String? description;
-  @override
   final String id;
-  @override
-  final DateTime? modifiedOn;
   @override
   final String nexthop;
   @override
   final String prefix;
   @override
   final int priority;
+  @override
+  final DateTime? createdOn;
+  @override
+  final String? description;
+  @override
+  final DateTime? modifiedOn;
   @override
   final MagicScope? scope;
   @override
@@ -30,13 +30,13 @@ class _$MagicRoute extends MagicRoute {
       (MagicRouteBuilder()..update(updates))._build();
 
   _$MagicRoute._(
-      {this.createdOn,
-      this.description,
-      required this.id,
-      this.modifiedOn,
+      {required this.id,
       required this.nexthop,
       required this.prefix,
       required this.priority,
+      this.createdOn,
+      this.description,
+      this.modifiedOn,
       this.scope,
       this.weight})
       : super._();
@@ -51,13 +51,13 @@ class _$MagicRoute extends MagicRoute {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is MagicRoute &&
-        createdOn == other.createdOn &&
-        description == other.description &&
         id == other.id &&
-        modifiedOn == other.modifiedOn &&
         nexthop == other.nexthop &&
         prefix == other.prefix &&
         priority == other.priority &&
+        createdOn == other.createdOn &&
+        description == other.description &&
+        modifiedOn == other.modifiedOn &&
         scope == other.scope &&
         weight == other.weight;
   }
@@ -65,13 +65,13 @@ class _$MagicRoute extends MagicRoute {
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, createdOn.hashCode);
-    _$hash = $jc(_$hash, description.hashCode);
     _$hash = $jc(_$hash, id.hashCode);
-    _$hash = $jc(_$hash, modifiedOn.hashCode);
     _$hash = $jc(_$hash, nexthop.hashCode);
     _$hash = $jc(_$hash, prefix.hashCode);
     _$hash = $jc(_$hash, priority.hashCode);
+    _$hash = $jc(_$hash, createdOn.hashCode);
+    _$hash = $jc(_$hash, description.hashCode);
+    _$hash = $jc(_$hash, modifiedOn.hashCode);
     _$hash = $jc(_$hash, scope.hashCode);
     _$hash = $jc(_$hash, weight.hashCode);
     _$hash = $jf(_$hash);
@@ -81,13 +81,13 @@ class _$MagicRoute extends MagicRoute {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'MagicRoute')
-          ..add('createdOn', createdOn)
-          ..add('description', description)
           ..add('id', id)
-          ..add('modifiedOn', modifiedOn)
           ..add('nexthop', nexthop)
           ..add('prefix', prefix)
           ..add('priority', priority)
+          ..add('createdOn', createdOn)
+          ..add('description', description)
+          ..add('modifiedOn', modifiedOn)
           ..add('scope', scope)
           ..add('weight', weight))
         .toString();
@@ -97,21 +97,9 @@ class _$MagicRoute extends MagicRoute {
 class MagicRouteBuilder implements Builder<MagicRoute, MagicRouteBuilder> {
   _$MagicRoute? _$v;
 
-  DateTime? _createdOn;
-  DateTime? get createdOn => _$this._createdOn;
-  set createdOn(DateTime? createdOn) => _$this._createdOn = createdOn;
-
-  String? _description;
-  String? get description => _$this._description;
-  set description(String? description) => _$this._description = description;
-
   String? _id;
   String? get id => _$this._id;
   set id(String? id) => _$this._id = id;
-
-  DateTime? _modifiedOn;
-  DateTime? get modifiedOn => _$this._modifiedOn;
-  set modifiedOn(DateTime? modifiedOn) => _$this._modifiedOn = modifiedOn;
 
   String? _nexthop;
   String? get nexthop => _$this._nexthop;
@@ -124,6 +112,18 @@ class MagicRouteBuilder implements Builder<MagicRoute, MagicRouteBuilder> {
   int? _priority;
   int? get priority => _$this._priority;
   set priority(int? priority) => _$this._priority = priority;
+
+  DateTime? _createdOn;
+  DateTime? get createdOn => _$this._createdOn;
+  set createdOn(DateTime? createdOn) => _$this._createdOn = createdOn;
+
+  String? _description;
+  String? get description => _$this._description;
+  set description(String? description) => _$this._description = description;
+
+  DateTime? _modifiedOn;
+  DateTime? get modifiedOn => _$this._modifiedOn;
+  set modifiedOn(DateTime? modifiedOn) => _$this._modifiedOn = modifiedOn;
 
   MagicScopeBuilder? _scope;
   MagicScopeBuilder get scope => _$this._scope ??= MagicScopeBuilder();
@@ -140,13 +140,13 @@ class MagicRouteBuilder implements Builder<MagicRoute, MagicRouteBuilder> {
   MagicRouteBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _createdOn = $v.createdOn;
-      _description = $v.description;
       _id = $v.id;
-      _modifiedOn = $v.modifiedOn;
       _nexthop = $v.nexthop;
       _prefix = $v.prefix;
       _priority = $v.priority;
+      _createdOn = $v.createdOn;
+      _description = $v.description;
+      _modifiedOn = $v.modifiedOn;
       _scope = $v.scope?.toBuilder();
       _weight = $v.weight;
       _$v = null;
@@ -172,16 +172,16 @@ class MagicRouteBuilder implements Builder<MagicRoute, MagicRouteBuilder> {
     try {
       _$result = _$v ??
           _$MagicRoute._(
-            createdOn: createdOn,
-            description: description,
             id: BuiltValueNullFieldError.checkNotNull(id, r'MagicRoute', 'id'),
-            modifiedOn: modifiedOn,
             nexthop: BuiltValueNullFieldError.checkNotNull(
                 nexthop, r'MagicRoute', 'nexthop'),
             prefix: BuiltValueNullFieldError.checkNotNull(
                 prefix, r'MagicRoute', 'prefix'),
             priority: BuiltValueNullFieldError.checkNotNull(
                 priority, r'MagicRoute', 'priority'),
+            createdOn: createdOn,
+            description: description,
+            modifiedOn: modifiedOn,
             scope: _scope?.build(),
             weight: weight,
           );

@@ -12,9 +12,9 @@ class _$ArgoConfigResultObject extends ArgoConfigResultObject {
   @override
   final String id;
   @override
-  final DateTime? modifiedOn;
-  @override
   final ArgoConfigSettingValue value;
+  @override
+  final DateTime? modifiedOn;
 
   factory _$ArgoConfigResultObject(
           [void Function(ArgoConfigResultObjectBuilder)? updates]) =>
@@ -23,8 +23,8 @@ class _$ArgoConfigResultObject extends ArgoConfigResultObject {
   _$ArgoConfigResultObject._(
       {required this.editable,
       required this.id,
-      this.modifiedOn,
-      required this.value})
+      required this.value,
+      this.modifiedOn})
       : super._();
   @override
   ArgoConfigResultObject rebuild(
@@ -41,8 +41,8 @@ class _$ArgoConfigResultObject extends ArgoConfigResultObject {
     return other is ArgoConfigResultObject &&
         editable == other.editable &&
         id == other.id &&
-        modifiedOn == other.modifiedOn &&
-        value == other.value;
+        value == other.value &&
+        modifiedOn == other.modifiedOn;
   }
 
   @override
@@ -50,8 +50,8 @@ class _$ArgoConfigResultObject extends ArgoConfigResultObject {
     var _$hash = 0;
     _$hash = $jc(_$hash, editable.hashCode);
     _$hash = $jc(_$hash, id.hashCode);
-    _$hash = $jc(_$hash, modifiedOn.hashCode);
     _$hash = $jc(_$hash, value.hashCode);
+    _$hash = $jc(_$hash, modifiedOn.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -61,8 +61,8 @@ class _$ArgoConfigResultObject extends ArgoConfigResultObject {
     return (newBuiltValueToStringHelper(r'ArgoConfigResultObject')
           ..add('editable', editable)
           ..add('id', id)
-          ..add('modifiedOn', modifiedOn)
-          ..add('value', value))
+          ..add('value', value)
+          ..add('modifiedOn', modifiedOn))
         .toString();
   }
 }
@@ -79,13 +79,13 @@ class ArgoConfigResultObjectBuilder
   String? get id => _$this._id;
   set id(String? id) => _$this._id = id;
 
-  DateTime? _modifiedOn;
-  DateTime? get modifiedOn => _$this._modifiedOn;
-  set modifiedOn(DateTime? modifiedOn) => _$this._modifiedOn = modifiedOn;
-
   ArgoConfigSettingValue? _value;
   ArgoConfigSettingValue? get value => _$this._value;
   set value(ArgoConfigSettingValue? value) => _$this._value = value;
+
+  DateTime? _modifiedOn;
+  DateTime? get modifiedOn => _$this._modifiedOn;
+  set modifiedOn(DateTime? modifiedOn) => _$this._modifiedOn = modifiedOn;
 
   ArgoConfigResultObjectBuilder() {
     ArgoConfigResultObject._defaults(this);
@@ -96,8 +96,8 @@ class ArgoConfigResultObjectBuilder
     if ($v != null) {
       _editable = $v.editable;
       _id = $v.id;
-      _modifiedOn = $v.modifiedOn;
       _value = $v.value;
+      _modifiedOn = $v.modifiedOn;
       _$v = null;
     }
     return this;
@@ -123,9 +123,9 @@ class ArgoConfigResultObjectBuilder
               editable, r'ArgoConfigResultObject', 'editable'),
           id: BuiltValueNullFieldError.checkNotNull(
               id, r'ArgoConfigResultObject', 'id'),
-          modifiedOn: modifiedOn,
           value: BuiltValueNullFieldError.checkNotNull(
               value, r'ArgoConfigResultObject', 'value'),
+          modifiedOn: modifiedOn,
         );
     replace(_$result);
     return _$result;

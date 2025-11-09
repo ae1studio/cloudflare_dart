@@ -19,10 +19,10 @@ part 'lists_items_update_request_collection_inner.g.dart';
 ///
 /// Properties:
 /// * [ip] - An IPv4 address, an IPv4 CIDR, an IPv6 address, or an IPv6 CIDR.
-/// * [comment] - Defines an informative summary of the list item.
 /// * [redirect] 
 /// * [hostname] 
 /// * [asn] - Defines a non-negative 32 bit integer.
+/// * [comment] - Defines an informative summary of the list item.
 @BuiltValue()
 abstract class ListsItemsUpdateRequestCollectionInner implements Built<ListsItemsUpdateRequestCollectionInner, ListsItemsUpdateRequestCollectionInnerBuilder> {
   /// One Of [ListsListItemAsnComment], [ListsListItemHostnameComment], [ListsListItemIpComment], [ListsListItemRedirectComment]

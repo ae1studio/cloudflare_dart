@@ -12,23 +12,20 @@ part 'aig_config_create_gateway_request.g.dart';
 /// AigConfigCreateGatewayRequest
 ///
 /// Properties:
-/// * [authentication] 
 /// * [cacheInvalidateOnUpdate] 
 /// * [cacheTtl] 
 /// * [collectLogs] 
 /// * [id] - gateway id
+/// * [rateLimitingInterval] 
+/// * [rateLimitingLimit] 
+/// * [rateLimitingTechnique] 
+/// * [authentication] 
 /// * [logManagement] 
 /// * [logManagementStrategy] 
 /// * [logpush] 
 /// * [logpushPublicKey] 
-/// * [rateLimitingInterval] 
-/// * [rateLimitingLimit] 
-/// * [rateLimitingTechnique] 
 @BuiltValue()
 abstract class AigConfigCreateGatewayRequest implements Built<AigConfigCreateGatewayRequest, AigConfigCreateGatewayRequestBuilder> {
-  @BuiltValueField(wireName: r'authentication')
-  bool? get authentication;
-
   @BuiltValueField(wireName: r'cache_invalidate_on_update')
   bool get cacheInvalidateOnUpdate;
 
@@ -42,6 +39,19 @@ abstract class AigConfigCreateGatewayRequest implements Built<AigConfigCreateGat
   @BuiltValueField(wireName: r'id')
   String get id;
 
+  @BuiltValueField(wireName: r'rate_limiting_interval')
+  int? get rateLimitingInterval;
+
+  @BuiltValueField(wireName: r'rate_limiting_limit')
+  int? get rateLimitingLimit;
+
+  @BuiltValueField(wireName: r'rate_limiting_technique')
+  AigConfigCreateGatewayRequestRateLimitingTechniqueEnum get rateLimitingTechnique;
+  // enum rateLimitingTechniqueEnum {  fixed,  sliding,  };
+
+  @BuiltValueField(wireName: r'authentication')
+  bool? get authentication;
+
   @BuiltValueField(wireName: r'log_management')
   int? get logManagement;
 
@@ -54,16 +64,6 @@ abstract class AigConfigCreateGatewayRequest implements Built<AigConfigCreateGat
 
   @BuiltValueField(wireName: r'logpush_public_key')
   String? get logpushPublicKey;
-
-  @BuiltValueField(wireName: r'rate_limiting_interval')
-  int? get rateLimitingInterval;
-
-  @BuiltValueField(wireName: r'rate_limiting_limit')
-  int? get rateLimitingLimit;
-
-  @BuiltValueField(wireName: r'rate_limiting_technique')
-  AigConfigCreateGatewayRequestRateLimitingTechniqueEnum get rateLimitingTechnique;
-  // enum rateLimitingTechniqueEnum {  fixed,  sliding,  };
 
   AigConfigCreateGatewayRequest._();
 
@@ -88,13 +88,6 @@ class _$AigConfigCreateGatewayRequestSerializer implements PrimitiveSerializer<A
     AigConfigCreateGatewayRequest object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
-    if (object.authentication != null) {
-      yield r'authentication';
-      yield serializers.serialize(
-        object.authentication,
-        specifiedType: const FullType(bool),
-      );
-    }
     yield r'cache_invalidate_on_update';
     yield serializers.serialize(
       object.cacheInvalidateOnUpdate,
@@ -115,6 +108,28 @@ class _$AigConfigCreateGatewayRequestSerializer implements PrimitiveSerializer<A
       object.id,
       specifiedType: const FullType(String),
     );
+    yield r'rate_limiting_interval';
+    yield object.rateLimitingInterval == null ? null : serializers.serialize(
+      object.rateLimitingInterval,
+      specifiedType: const FullType.nullable(int),
+    );
+    yield r'rate_limiting_limit';
+    yield object.rateLimitingLimit == null ? null : serializers.serialize(
+      object.rateLimitingLimit,
+      specifiedType: const FullType.nullable(int),
+    );
+    yield r'rate_limiting_technique';
+    yield serializers.serialize(
+      object.rateLimitingTechnique,
+      specifiedType: const FullType(AigConfigCreateGatewayRequestRateLimitingTechniqueEnum),
+    );
+    if (object.authentication != null) {
+      yield r'authentication';
+      yield serializers.serialize(
+        object.authentication,
+        specifiedType: const FullType(bool),
+      );
+    }
     if (object.logManagement != null) {
       yield r'log_management';
       yield serializers.serialize(
@@ -143,21 +158,6 @@ class _$AigConfigCreateGatewayRequestSerializer implements PrimitiveSerializer<A
         specifiedType: const FullType.nullable(String),
       );
     }
-    yield r'rate_limiting_interval';
-    yield object.rateLimitingInterval == null ? null : serializers.serialize(
-      object.rateLimitingInterval,
-      specifiedType: const FullType.nullable(int),
-    );
-    yield r'rate_limiting_limit';
-    yield object.rateLimitingLimit == null ? null : serializers.serialize(
-      object.rateLimitingLimit,
-      specifiedType: const FullType.nullable(int),
-    );
-    yield r'rate_limiting_technique';
-    yield serializers.serialize(
-      object.rateLimitingTechnique,
-      specifiedType: const FullType(AigConfigCreateGatewayRequestRateLimitingTechniqueEnum),
-    );
   }
 
   @override
@@ -181,13 +181,6 @@ class _$AigConfigCreateGatewayRequestSerializer implements PrimitiveSerializer<A
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'authentication':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
-          result.authentication = valueDes;
-          break;
         case r'cache_invalidate_on_update':
           final valueDes = serializers.deserialize(
             value,
@@ -216,6 +209,36 @@ class _$AigConfigCreateGatewayRequestSerializer implements PrimitiveSerializer<A
             specifiedType: const FullType(String),
           ) as String;
           result.id = valueDes;
+          break;
+        case r'rate_limiting_interval':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType.nullable(int),
+          ) as int?;
+          if (valueDes == null) continue;
+          result.rateLimitingInterval = valueDes;
+          break;
+        case r'rate_limiting_limit':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType.nullable(int),
+          ) as int?;
+          if (valueDes == null) continue;
+          result.rateLimitingLimit = valueDes;
+          break;
+        case r'rate_limiting_technique':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(AigConfigCreateGatewayRequestRateLimitingTechniqueEnum),
+          ) as AigConfigCreateGatewayRequestRateLimitingTechniqueEnum;
+          result.rateLimitingTechnique = valueDes;
+          break;
+        case r'authentication':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(bool),
+          ) as bool;
+          result.authentication = valueDes;
           break;
         case r'log_management':
           final valueDes = serializers.deserialize(
@@ -248,29 +271,6 @@ class _$AigConfigCreateGatewayRequestSerializer implements PrimitiveSerializer<A
           if (valueDes == null) continue;
           result.logpushPublicKey = valueDes;
           break;
-        case r'rate_limiting_interval':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
-          if (valueDes == null) continue;
-          result.rateLimitingInterval = valueDes;
-          break;
-        case r'rate_limiting_limit':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
-          if (valueDes == null) continue;
-          result.rateLimitingLimit = valueDes;
-          break;
-        case r'rate_limiting_technique':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(AigConfigCreateGatewayRequestRateLimitingTechniqueEnum),
-          ) as AigConfigCreateGatewayRequestRateLimitingTechniqueEnum;
-          result.rateLimitingTechnique = valueDes;
-          break;
         default:
           unhandled.add(key);
           unhandled.add(value);
@@ -300,21 +300,6 @@ class _$AigConfigCreateGatewayRequestSerializer implements PrimitiveSerializer<A
   }
 }
 
-class AigConfigCreateGatewayRequestLogManagementStrategyEnum extends EnumClass {
-
-  @BuiltValueEnumConst(wireName: r'STOP_INSERTING')
-  static const AigConfigCreateGatewayRequestLogManagementStrategyEnum STOP_INSERTING = _$aigConfigCreateGatewayRequestLogManagementStrategyEnum_STOP_INSERTING;
-  @BuiltValueEnumConst(wireName: r'DELETE_OLDEST')
-  static const AigConfigCreateGatewayRequestLogManagementStrategyEnum DELETE_OLDEST = _$aigConfigCreateGatewayRequestLogManagementStrategyEnum_DELETE_OLDEST;
-
-  static Serializer<AigConfigCreateGatewayRequestLogManagementStrategyEnum> get serializer => _$aigConfigCreateGatewayRequestLogManagementStrategyEnumSerializer;
-
-  const AigConfigCreateGatewayRequestLogManagementStrategyEnum._(String name): super(name);
-
-  static BuiltSet<AigConfigCreateGatewayRequestLogManagementStrategyEnum> get values => _$aigConfigCreateGatewayRequestLogManagementStrategyEnumValues;
-  static AigConfigCreateGatewayRequestLogManagementStrategyEnum valueOf(String name) => _$aigConfigCreateGatewayRequestLogManagementStrategyEnumValueOf(name);
-}
-
 class AigConfigCreateGatewayRequestRateLimitingTechniqueEnum extends EnumClass {
 
   @BuiltValueEnumConst(wireName: r'fixed')
@@ -328,5 +313,20 @@ class AigConfigCreateGatewayRequestRateLimitingTechniqueEnum extends EnumClass {
 
   static BuiltSet<AigConfigCreateGatewayRequestRateLimitingTechniqueEnum> get values => _$aigConfigCreateGatewayRequestRateLimitingTechniqueEnumValues;
   static AigConfigCreateGatewayRequestRateLimitingTechniqueEnum valueOf(String name) => _$aigConfigCreateGatewayRequestRateLimitingTechniqueEnumValueOf(name);
+}
+
+class AigConfigCreateGatewayRequestLogManagementStrategyEnum extends EnumClass {
+
+  @BuiltValueEnumConst(wireName: r'STOP_INSERTING')
+  static const AigConfigCreateGatewayRequestLogManagementStrategyEnum STOP_INSERTING = _$aigConfigCreateGatewayRequestLogManagementStrategyEnum_STOP_INSERTING;
+  @BuiltValueEnumConst(wireName: r'DELETE_OLDEST')
+  static const AigConfigCreateGatewayRequestLogManagementStrategyEnum DELETE_OLDEST = _$aigConfigCreateGatewayRequestLogManagementStrategyEnum_DELETE_OLDEST;
+
+  static Serializer<AigConfigCreateGatewayRequestLogManagementStrategyEnum> get serializer => _$aigConfigCreateGatewayRequestLogManagementStrategyEnumSerializer;
+
+  const AigConfigCreateGatewayRequestLogManagementStrategyEnum._(String name): super(name);
+
+  static BuiltSet<AigConfigCreateGatewayRequestLogManagementStrategyEnum> get values => _$aigConfigCreateGatewayRequestLogManagementStrategyEnumValues;
+  static AigConfigCreateGatewayRequestLogManagementStrategyEnum valueOf(String name) => _$aigConfigCreateGatewayRequestLogManagementStrategyEnumValueOf(name);
 }
 

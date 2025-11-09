@@ -14,8 +14,6 @@ class _$DlpDocumentFingerprint extends DlpDocumentFingerprint {
   @override
   final String entryId;
   @override
-  final String? fileName;
-  @override
   final String id;
   @override
   final int matchPercent;
@@ -25,6 +23,8 @@ class _$DlpDocumentFingerprint extends DlpDocumentFingerprint {
   final DlpDatasetUploadStatus status;
   @override
   final DateTime updatedAt;
+  @override
+  final String? fileName;
   @override
   final int? version;
 
@@ -36,12 +36,12 @@ class _$DlpDocumentFingerprint extends DlpDocumentFingerprint {
       {required this.createdAt,
       required this.description,
       required this.entryId,
-      this.fileName,
       required this.id,
       required this.matchPercent,
       required this.name,
       required this.status,
       required this.updatedAt,
+      this.fileName,
       this.version})
       : super._();
   @override
@@ -60,12 +60,12 @@ class _$DlpDocumentFingerprint extends DlpDocumentFingerprint {
         createdAt == other.createdAt &&
         description == other.description &&
         entryId == other.entryId &&
-        fileName == other.fileName &&
         id == other.id &&
         matchPercent == other.matchPercent &&
         name == other.name &&
         status == other.status &&
         updatedAt == other.updatedAt &&
+        fileName == other.fileName &&
         version == other.version;
   }
 
@@ -75,12 +75,12 @@ class _$DlpDocumentFingerprint extends DlpDocumentFingerprint {
     _$hash = $jc(_$hash, createdAt.hashCode);
     _$hash = $jc(_$hash, description.hashCode);
     _$hash = $jc(_$hash, entryId.hashCode);
-    _$hash = $jc(_$hash, fileName.hashCode);
     _$hash = $jc(_$hash, id.hashCode);
     _$hash = $jc(_$hash, matchPercent.hashCode);
     _$hash = $jc(_$hash, name.hashCode);
     _$hash = $jc(_$hash, status.hashCode);
     _$hash = $jc(_$hash, updatedAt.hashCode);
+    _$hash = $jc(_$hash, fileName.hashCode);
     _$hash = $jc(_$hash, version.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
@@ -92,12 +92,12 @@ class _$DlpDocumentFingerprint extends DlpDocumentFingerprint {
           ..add('createdAt', createdAt)
           ..add('description', description)
           ..add('entryId', entryId)
-          ..add('fileName', fileName)
           ..add('id', id)
           ..add('matchPercent', matchPercent)
           ..add('name', name)
           ..add('status', status)
           ..add('updatedAt', updatedAt)
+          ..add('fileName', fileName)
           ..add('version', version))
         .toString();
   }
@@ -119,10 +119,6 @@ class DlpDocumentFingerprintBuilder
   String? get entryId => _$this._entryId;
   set entryId(String? entryId) => _$this._entryId = entryId;
 
-  String? _fileName;
-  String? get fileName => _$this._fileName;
-  set fileName(String? fileName) => _$this._fileName = fileName;
-
   String? _id;
   String? get id => _$this._id;
   set id(String? id) => _$this._id = id;
@@ -143,6 +139,10 @@ class DlpDocumentFingerprintBuilder
   DateTime? get updatedAt => _$this._updatedAt;
   set updatedAt(DateTime? updatedAt) => _$this._updatedAt = updatedAt;
 
+  String? _fileName;
+  String? get fileName => _$this._fileName;
+  set fileName(String? fileName) => _$this._fileName = fileName;
+
   int? _version;
   int? get version => _$this._version;
   set version(int? version) => _$this._version = version;
@@ -157,12 +157,12 @@ class DlpDocumentFingerprintBuilder
       _createdAt = $v.createdAt;
       _description = $v.description;
       _entryId = $v.entryId;
-      _fileName = $v.fileName;
       _id = $v.id;
       _matchPercent = $v.matchPercent;
       _name = $v.name;
       _status = $v.status;
       _updatedAt = $v.updatedAt;
+      _fileName = $v.fileName;
       _version = $v.version;
       _$v = null;
     }
@@ -191,7 +191,6 @@ class DlpDocumentFingerprintBuilder
               description, r'DlpDocumentFingerprint', 'description'),
           entryId: BuiltValueNullFieldError.checkNotNull(
               entryId, r'DlpDocumentFingerprint', 'entryId'),
-          fileName: fileName,
           id: BuiltValueNullFieldError.checkNotNull(
               id, r'DlpDocumentFingerprint', 'id'),
           matchPercent: BuiltValueNullFieldError.checkNotNull(
@@ -202,6 +201,7 @@ class DlpDocumentFingerprintBuilder
               status, r'DlpDocumentFingerprint', 'status'),
           updatedAt: BuiltValueNullFieldError.checkNotNull(
               updatedAt, r'DlpDocumentFingerprint', 'updatedAt'),
+          fileName: fileName,
           version: version,
         );
     replace(_$result);

@@ -15,9 +15,9 @@ class _$RadarGetRankingTopDomains200ResponseResultTop0Inner
   @override
   final String domain;
   @override
-  final num? pctRankChange;
-  @override
   final int rank;
+  @override
+  final num? pctRankChange;
 
   factory _$RadarGetRankingTopDomains200ResponseResultTop0Inner(
           [void Function(
@@ -30,8 +30,8 @@ class _$RadarGetRankingTopDomains200ResponseResultTop0Inner
   _$RadarGetRankingTopDomains200ResponseResultTop0Inner._(
       {required this.categories,
       required this.domain,
-      this.pctRankChange,
-      required this.rank})
+      required this.rank,
+      this.pctRankChange})
       : super._();
   @override
   RadarGetRankingTopDomains200ResponseResultTop0Inner rebuild(
@@ -51,8 +51,8 @@ class _$RadarGetRankingTopDomains200ResponseResultTop0Inner
     return other is RadarGetRankingTopDomains200ResponseResultTop0Inner &&
         categories == other.categories &&
         domain == other.domain &&
-        pctRankChange == other.pctRankChange &&
-        rank == other.rank;
+        rank == other.rank &&
+        pctRankChange == other.pctRankChange;
   }
 
   @override
@@ -60,8 +60,8 @@ class _$RadarGetRankingTopDomains200ResponseResultTop0Inner
     var _$hash = 0;
     _$hash = $jc(_$hash, categories.hashCode);
     _$hash = $jc(_$hash, domain.hashCode);
-    _$hash = $jc(_$hash, pctRankChange.hashCode);
     _$hash = $jc(_$hash, rank.hashCode);
+    _$hash = $jc(_$hash, pctRankChange.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -72,8 +72,8 @@ class _$RadarGetRankingTopDomains200ResponseResultTop0Inner
             r'RadarGetRankingTopDomains200ResponseResultTop0Inner')
           ..add('categories', categories)
           ..add('domain', domain)
-          ..add('pctRankChange', pctRankChange)
-          ..add('rank', rank))
+          ..add('rank', rank)
+          ..add('pctRankChange', pctRankChange))
         .toString();
   }
 }
@@ -101,14 +101,14 @@ class RadarGetRankingTopDomains200ResponseResultTop0InnerBuilder
   String? get domain => _$this._domain;
   set domain(String? domain) => _$this._domain = domain;
 
+  int? _rank;
+  int? get rank => _$this._rank;
+  set rank(int? rank) => _$this._rank = rank;
+
   num? _pctRankChange;
   num? get pctRankChange => _$this._pctRankChange;
   set pctRankChange(num? pctRankChange) =>
       _$this._pctRankChange = pctRankChange;
-
-  int? _rank;
-  int? get rank => _$this._rank;
-  set rank(int? rank) => _$this._rank = rank;
 
   RadarGetRankingTopDomains200ResponseResultTop0InnerBuilder() {
     RadarGetRankingTopDomains200ResponseResultTop0Inner._defaults(this);
@@ -119,8 +119,8 @@ class RadarGetRankingTopDomains200ResponseResultTop0InnerBuilder
     if ($v != null) {
       _categories = $v.categories.toBuilder();
       _domain = $v.domain;
-      _pctRankChange = $v.pctRankChange;
       _rank = $v.rank;
+      _pctRankChange = $v.pctRankChange;
       _$v = null;
     }
     return this;
@@ -151,9 +151,9 @@ class RadarGetRankingTopDomains200ResponseResultTop0InnerBuilder
                 domain,
                 r'RadarGetRankingTopDomains200ResponseResultTop0Inner',
                 'domain'),
-            pctRankChange: pctRankChange,
             rank: BuiltValueNullFieldError.checkNotNull(rank,
                 r'RadarGetRankingTopDomains200ResponseResultTop0Inner', 'rank'),
+            pctRankChange: pctRankChange,
           );
     } catch (_) {
       late String _$failedField;

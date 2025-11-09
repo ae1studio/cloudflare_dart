@@ -9,8 +9,6 @@ part of 'radar_get_entities_asn_list200_response_result_asns_inner.dart';
 class _$RadarGetEntitiesAsnList200ResponseResultAsnsInner
     extends RadarGetEntitiesAsnList200ResponseResultAsnsInner {
   @override
-  final String? aka;
-  @override
   final int asn;
   @override
   final String country;
@@ -18,6 +16,8 @@ class _$RadarGetEntitiesAsnList200ResponseResultAsnsInner
   final String countryName;
   @override
   final String name;
+  @override
+  final String? aka;
   @override
   final String? orgName;
   @override
@@ -32,11 +32,11 @@ class _$RadarGetEntitiesAsnList200ResponseResultAsnsInner
           ._build();
 
   _$RadarGetEntitiesAsnList200ResponseResultAsnsInner._(
-      {this.aka,
-      required this.asn,
+      {required this.asn,
       required this.country,
       required this.countryName,
       required this.name,
+      this.aka,
       this.orgName,
       this.website})
       : super._();
@@ -55,11 +55,11 @@ class _$RadarGetEntitiesAsnList200ResponseResultAsnsInner
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is RadarGetEntitiesAsnList200ResponseResultAsnsInner &&
-        aka == other.aka &&
         asn == other.asn &&
         country == other.country &&
         countryName == other.countryName &&
         name == other.name &&
+        aka == other.aka &&
         orgName == other.orgName &&
         website == other.website;
   }
@@ -67,11 +67,11 @@ class _$RadarGetEntitiesAsnList200ResponseResultAsnsInner
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, aka.hashCode);
     _$hash = $jc(_$hash, asn.hashCode);
     _$hash = $jc(_$hash, country.hashCode);
     _$hash = $jc(_$hash, countryName.hashCode);
     _$hash = $jc(_$hash, name.hashCode);
+    _$hash = $jc(_$hash, aka.hashCode);
     _$hash = $jc(_$hash, orgName.hashCode);
     _$hash = $jc(_$hash, website.hashCode);
     _$hash = $jf(_$hash);
@@ -82,11 +82,11 @@ class _$RadarGetEntitiesAsnList200ResponseResultAsnsInner
   String toString() {
     return (newBuiltValueToStringHelper(
             r'RadarGetEntitiesAsnList200ResponseResultAsnsInner')
-          ..add('aka', aka)
           ..add('asn', asn)
           ..add('country', country)
           ..add('countryName', countryName)
           ..add('name', name)
+          ..add('aka', aka)
           ..add('orgName', orgName)
           ..add('website', website))
         .toString();
@@ -98,10 +98,6 @@ class RadarGetEntitiesAsnList200ResponseResultAsnsInnerBuilder
         Builder<RadarGetEntitiesAsnList200ResponseResultAsnsInner,
             RadarGetEntitiesAsnList200ResponseResultAsnsInnerBuilder> {
   _$RadarGetEntitiesAsnList200ResponseResultAsnsInner? _$v;
-
-  String? _aka;
-  String? get aka => _$this._aka;
-  set aka(String? aka) => _$this._aka = aka;
 
   int? _asn;
   int? get asn => _$this._asn;
@@ -119,6 +115,10 @@ class RadarGetEntitiesAsnList200ResponseResultAsnsInnerBuilder
   String? get name => _$this._name;
   set name(String? name) => _$this._name = name;
 
+  String? _aka;
+  String? get aka => _$this._aka;
+  set aka(String? aka) => _$this._aka = aka;
+
   String? _orgName;
   String? get orgName => _$this._orgName;
   set orgName(String? orgName) => _$this._orgName = orgName;
@@ -134,11 +134,11 @@ class RadarGetEntitiesAsnList200ResponseResultAsnsInnerBuilder
   RadarGetEntitiesAsnList200ResponseResultAsnsInnerBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _aka = $v.aka;
       _asn = $v.asn;
       _country = $v.country;
       _countryName = $v.countryName;
       _name = $v.name;
+      _aka = $v.aka;
       _orgName = $v.orgName;
       _website = $v.website;
       _$v = null;
@@ -164,7 +164,6 @@ class RadarGetEntitiesAsnList200ResponseResultAsnsInnerBuilder
   _$RadarGetEntitiesAsnList200ResponseResultAsnsInner _build() {
     final _$result = _$v ??
         _$RadarGetEntitiesAsnList200ResponseResultAsnsInner._(
-          aka: aka,
           asn: BuiltValueNullFieldError.checkNotNull(
               asn, r'RadarGetEntitiesAsnList200ResponseResultAsnsInner', 'asn'),
           country: BuiltValueNullFieldError.checkNotNull(country,
@@ -175,6 +174,7 @@ class RadarGetEntitiesAsnList200ResponseResultAsnsInnerBuilder
               'countryName'),
           name: BuiltValueNullFieldError.checkNotNull(name,
               r'RadarGetEntitiesAsnList200ResponseResultAsnsInner', 'name'),
+          aka: aka,
           orgName: orgName,
           website: website,
         );

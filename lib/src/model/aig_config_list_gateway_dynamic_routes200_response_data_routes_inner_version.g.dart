@@ -86,13 +86,13 @@ class _$AigConfigListGatewayDynamicRoutes200ResponseDataRoutesInnerVersion
   final AigConfigListGatewayDynamicRoutes200ResponseDataRoutesInnerVersionActiveEnum
       active;
   @override
-  final String? comment;
-  @override
   final String createdAt;
   @override
   final String data;
   @override
   final String versionId;
+  @override
+  final String? comment;
 
   factory _$AigConfigListGatewayDynamicRoutes200ResponseDataRoutesInnerVersion(
           [void Function(
@@ -104,10 +104,10 @@ class _$AigConfigListGatewayDynamicRoutes200ResponseDataRoutesInnerVersion
 
   _$AigConfigListGatewayDynamicRoutes200ResponseDataRoutesInnerVersion._(
       {required this.active,
-      this.comment,
       required this.createdAt,
       required this.data,
-      required this.versionId})
+      required this.versionId,
+      this.comment})
       : super._();
   @override
   AigConfigListGatewayDynamicRoutes200ResponseDataRoutesInnerVersion rebuild(
@@ -128,20 +128,20 @@ class _$AigConfigListGatewayDynamicRoutes200ResponseDataRoutesInnerVersion
     return other
             is AigConfigListGatewayDynamicRoutes200ResponseDataRoutesInnerVersion &&
         active == other.active &&
-        comment == other.comment &&
         createdAt == other.createdAt &&
         data == other.data &&
-        versionId == other.versionId;
+        versionId == other.versionId &&
+        comment == other.comment;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
     _$hash = $jc(_$hash, active.hashCode);
-    _$hash = $jc(_$hash, comment.hashCode);
     _$hash = $jc(_$hash, createdAt.hashCode);
     _$hash = $jc(_$hash, data.hashCode);
     _$hash = $jc(_$hash, versionId.hashCode);
+    _$hash = $jc(_$hash, comment.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -151,10 +151,10 @@ class _$AigConfigListGatewayDynamicRoutes200ResponseDataRoutesInnerVersion
     return (newBuiltValueToStringHelper(
             r'AigConfigListGatewayDynamicRoutes200ResponseDataRoutesInnerVersion')
           ..add('active', active)
-          ..add('comment', comment)
           ..add('createdAt', createdAt)
           ..add('data', data)
-          ..add('versionId', versionId))
+          ..add('versionId', versionId)
+          ..add('comment', comment))
         .toString();
   }
 }
@@ -175,10 +175,6 @@ class AigConfigListGatewayDynamicRoutes200ResponseDataRoutesInnerVersionBuilder
               active) =>
       _$this._active = active;
 
-  String? _comment;
-  String? get comment => _$this._comment;
-  set comment(String? comment) => _$this._comment = comment;
-
   String? _createdAt;
   String? get createdAt => _$this._createdAt;
   set createdAt(String? createdAt) => _$this._createdAt = createdAt;
@@ -191,6 +187,10 @@ class AigConfigListGatewayDynamicRoutes200ResponseDataRoutesInnerVersionBuilder
   String? get versionId => _$this._versionId;
   set versionId(String? versionId) => _$this._versionId = versionId;
 
+  String? _comment;
+  String? get comment => _$this._comment;
+  set comment(String? comment) => _$this._comment = comment;
+
   AigConfigListGatewayDynamicRoutes200ResponseDataRoutesInnerVersionBuilder() {
     AigConfigListGatewayDynamicRoutes200ResponseDataRoutesInnerVersion
         ._defaults(this);
@@ -201,10 +201,10 @@ class AigConfigListGatewayDynamicRoutes200ResponseDataRoutesInnerVersionBuilder
     final $v = _$v;
     if ($v != null) {
       _active = $v.active;
-      _comment = $v.comment;
       _createdAt = $v.createdAt;
       _data = $v.data;
       _versionId = $v.versionId;
+      _comment = $v.comment;
       _$v = null;
     }
     return this;
@@ -238,7 +238,6 @@ class AigConfigListGatewayDynamicRoutes200ResponseDataRoutesInnerVersionBuilder
               active,
               r'AigConfigListGatewayDynamicRoutes200ResponseDataRoutesInnerVersion',
               'active'),
-          comment: comment,
           createdAt: BuiltValueNullFieldError.checkNotNull(
               createdAt,
               r'AigConfigListGatewayDynamicRoutes200ResponseDataRoutesInnerVersion',
@@ -251,6 +250,7 @@ class AigConfigListGatewayDynamicRoutes200ResponseDataRoutesInnerVersionBuilder
               versionId,
               r'AigConfigListGatewayDynamicRoutes200ResponseDataRoutesInnerVersion',
               'versionId'),
+          comment: comment,
         );
     replace(_$result);
     return _$result;

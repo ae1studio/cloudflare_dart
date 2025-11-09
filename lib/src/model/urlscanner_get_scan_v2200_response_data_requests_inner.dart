@@ -16,18 +16,18 @@ part 'urlscanner_get_scan_v2200_response_data_requests_inner.g.dart';
 ///
 /// Properties:
 /// * [request] 
-/// * [requests] 
 /// * [response] 
+/// * [requests] 
 @BuiltValue()
 abstract class UrlscannerGetScanV2200ResponseDataRequestsInner implements Built<UrlscannerGetScanV2200ResponseDataRequestsInner, UrlscannerGetScanV2200ResponseDataRequestsInnerBuilder> {
   @BuiltValueField(wireName: r'request')
   UrlscannerGetScanV2200ResponseDataRequestsInnerRequest get request;
 
-  @BuiltValueField(wireName: r'requests')
-  BuiltList<UrlscannerGetScanV2200ResponseDataRequestsInnerRequestsInner>? get requests;
-
   @BuiltValueField(wireName: r'response')
   UrlscannerGetScanV2200ResponseDataRequestsInnerResponse get response;
+
+  @BuiltValueField(wireName: r'requests')
+  BuiltList<UrlscannerGetScanV2200ResponseDataRequestsInnerRequestsInner>? get requests;
 
   UrlscannerGetScanV2200ResponseDataRequestsInner._();
 
@@ -57,6 +57,11 @@ class _$UrlscannerGetScanV2200ResponseDataRequestsInnerSerializer implements Pri
       object.request,
       specifiedType: const FullType(UrlscannerGetScanV2200ResponseDataRequestsInnerRequest),
     );
+    yield r'response';
+    yield serializers.serialize(
+      object.response,
+      specifiedType: const FullType(UrlscannerGetScanV2200ResponseDataRequestsInnerResponse),
+    );
     if (object.requests != null) {
       yield r'requests';
       yield serializers.serialize(
@@ -64,11 +69,6 @@ class _$UrlscannerGetScanV2200ResponseDataRequestsInnerSerializer implements Pri
         specifiedType: const FullType(BuiltList, [FullType(UrlscannerGetScanV2200ResponseDataRequestsInnerRequestsInner)]),
       );
     }
-    yield r'response';
-    yield serializers.serialize(
-      object.response,
-      specifiedType: const FullType(UrlscannerGetScanV2200ResponseDataRequestsInnerResponse),
-    );
   }
 
   @override
@@ -99,19 +99,19 @@ class _$UrlscannerGetScanV2200ResponseDataRequestsInnerSerializer implements Pri
           ) as UrlscannerGetScanV2200ResponseDataRequestsInnerRequest;
           result.request.replace(valueDes);
           break;
-        case r'requests':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(UrlscannerGetScanV2200ResponseDataRequestsInnerRequestsInner)]),
-          ) as BuiltList<UrlscannerGetScanV2200ResponseDataRequestsInnerRequestsInner>;
-          result.requests.replace(valueDes);
-          break;
         case r'response':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(UrlscannerGetScanV2200ResponseDataRequestsInnerResponse),
           ) as UrlscannerGetScanV2200ResponseDataRequestsInnerResponse;
           result.response.replace(valueDes);
+          break;
+        case r'requests':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BuiltList, [FullType(UrlscannerGetScanV2200ResponseDataRequestsInnerRequestsInner)]),
+          ) as BuiltList<UrlscannerGetScanV2200ResponseDataRequestsInnerRequestsInner>;
+          result.requests.replace(valueDes);
           break;
         default:
           unhandled.add(key);

@@ -89,13 +89,13 @@ class _$RealtimekitOrganizationRequest extends RealtimekitOrganizationRequest {
   @override
   final String contact;
   @override
-  final BuiltList<String>? featureFlags;
-  @override
   final String name;
   @override
-  final RealtimekitOrganizationRequestPreferredRegionEnum? preferredRegion;
-  @override
   final String website;
+  @override
+  final BuiltList<String>? featureFlags;
+  @override
+  final RealtimekitOrganizationRequestPreferredRegionEnum? preferredRegion;
 
   factory _$RealtimekitOrganizationRequest(
           [void Function(RealtimekitOrganizationRequestBuilder)? updates]) =>
@@ -103,10 +103,10 @@ class _$RealtimekitOrganizationRequest extends RealtimekitOrganizationRequest {
 
   _$RealtimekitOrganizationRequest._(
       {required this.contact,
-      this.featureFlags,
       required this.name,
-      this.preferredRegion,
-      required this.website})
+      required this.website,
+      this.featureFlags,
+      this.preferredRegion})
       : super._();
   @override
   RealtimekitOrganizationRequest rebuild(
@@ -122,20 +122,20 @@ class _$RealtimekitOrganizationRequest extends RealtimekitOrganizationRequest {
     if (identical(other, this)) return true;
     return other is RealtimekitOrganizationRequest &&
         contact == other.contact &&
-        featureFlags == other.featureFlags &&
         name == other.name &&
-        preferredRegion == other.preferredRegion &&
-        website == other.website;
+        website == other.website &&
+        featureFlags == other.featureFlags &&
+        preferredRegion == other.preferredRegion;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
     _$hash = $jc(_$hash, contact.hashCode);
-    _$hash = $jc(_$hash, featureFlags.hashCode);
     _$hash = $jc(_$hash, name.hashCode);
-    _$hash = $jc(_$hash, preferredRegion.hashCode);
     _$hash = $jc(_$hash, website.hashCode);
+    _$hash = $jc(_$hash, featureFlags.hashCode);
+    _$hash = $jc(_$hash, preferredRegion.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -144,10 +144,10 @@ class _$RealtimekitOrganizationRequest extends RealtimekitOrganizationRequest {
   String toString() {
     return (newBuiltValueToStringHelper(r'RealtimekitOrganizationRequest')
           ..add('contact', contact)
-          ..add('featureFlags', featureFlags)
           ..add('name', name)
-          ..add('preferredRegion', preferredRegion)
-          ..add('website', website))
+          ..add('website', website)
+          ..add('featureFlags', featureFlags)
+          ..add('preferredRegion', preferredRegion))
         .toString();
   }
 }
@@ -162,15 +162,19 @@ class RealtimekitOrganizationRequestBuilder
   String? get contact => _$this._contact;
   set contact(String? contact) => _$this._contact = contact;
 
+  String? _name;
+  String? get name => _$this._name;
+  set name(String? name) => _$this._name = name;
+
+  String? _website;
+  String? get website => _$this._website;
+  set website(String? website) => _$this._website = website;
+
   ListBuilder<String>? _featureFlags;
   ListBuilder<String> get featureFlags =>
       _$this._featureFlags ??= ListBuilder<String>();
   set featureFlags(ListBuilder<String>? featureFlags) =>
       _$this._featureFlags = featureFlags;
-
-  String? _name;
-  String? get name => _$this._name;
-  set name(String? name) => _$this._name = name;
 
   RealtimekitOrganizationRequestPreferredRegionEnum? _preferredRegion;
   RealtimekitOrganizationRequestPreferredRegionEnum? get preferredRegion =>
@@ -178,10 +182,6 @@ class RealtimekitOrganizationRequestBuilder
   set preferredRegion(
           RealtimekitOrganizationRequestPreferredRegionEnum? preferredRegion) =>
       _$this._preferredRegion = preferredRegion;
-
-  String? _website;
-  String? get website => _$this._website;
-  set website(String? website) => _$this._website = website;
 
   RealtimekitOrganizationRequestBuilder() {
     RealtimekitOrganizationRequest._defaults(this);
@@ -191,10 +191,10 @@ class RealtimekitOrganizationRequestBuilder
     final $v = _$v;
     if ($v != null) {
       _contact = $v.contact;
-      _featureFlags = $v.featureFlags?.toBuilder();
       _name = $v.name;
-      _preferredRegion = $v.preferredRegion;
       _website = $v.website;
+      _featureFlags = $v.featureFlags?.toBuilder();
+      _preferredRegion = $v.preferredRegion;
       _$v = null;
     }
     return this;
@@ -220,12 +220,12 @@ class RealtimekitOrganizationRequestBuilder
           _$RealtimekitOrganizationRequest._(
             contact: BuiltValueNullFieldError.checkNotNull(
                 contact, r'RealtimekitOrganizationRequest', 'contact'),
-            featureFlags: _featureFlags?.build(),
             name: BuiltValueNullFieldError.checkNotNull(
                 name, r'RealtimekitOrganizationRequest', 'name'),
-            preferredRegion: preferredRegion,
             website: BuiltValueNullFieldError.checkNotNull(
                 website, r'RealtimekitOrganizationRequest', 'website'),
+            featureFlags: _featureFlags?.build(),
+            preferredRegion: preferredRegion,
           );
     } catch (_) {
       late String _$failedField;

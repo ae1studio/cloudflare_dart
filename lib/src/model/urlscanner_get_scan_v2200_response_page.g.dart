@@ -25,8 +25,6 @@ class _$UrlscannerGetScanV2200ResponsePage
   @override
   final String mimeType;
   @override
-  final UrlscannerGetScanV2200ResponsePageScreenshot? screenshot;
-  @override
   final String server;
   @override
   final String status;
@@ -42,6 +40,8 @@ class _$UrlscannerGetScanV2200ResponsePage
   final String tlsValidFrom;
   @override
   final String url;
+  @override
+  final UrlscannerGetScanV2200ResponsePageScreenshot? screenshot;
 
   factory _$UrlscannerGetScanV2200ResponsePage(
           [void Function(UrlscannerGetScanV2200ResponsePageBuilder)?
@@ -57,7 +57,6 @@ class _$UrlscannerGetScanV2200ResponsePage
       required this.domain,
       required this.ip,
       required this.mimeType,
-      this.screenshot,
       required this.server,
       required this.status,
       required this.title,
@@ -65,7 +64,8 @@ class _$UrlscannerGetScanV2200ResponsePage
       required this.tlsIssuer,
       required this.tlsValidDays,
       required this.tlsValidFrom,
-      required this.url})
+      required this.url,
+      this.screenshot})
       : super._();
   @override
   UrlscannerGetScanV2200ResponsePage rebuild(
@@ -88,7 +88,6 @@ class _$UrlscannerGetScanV2200ResponsePage
         domain == other.domain &&
         ip == other.ip &&
         mimeType == other.mimeType &&
-        screenshot == other.screenshot &&
         server == other.server &&
         status == other.status &&
         title == other.title &&
@@ -96,7 +95,8 @@ class _$UrlscannerGetScanV2200ResponsePage
         tlsIssuer == other.tlsIssuer &&
         tlsValidDays == other.tlsValidDays &&
         tlsValidFrom == other.tlsValidFrom &&
-        url == other.url;
+        url == other.url &&
+        screenshot == other.screenshot;
   }
 
   @override
@@ -110,7 +110,6 @@ class _$UrlscannerGetScanV2200ResponsePage
     _$hash = $jc(_$hash, domain.hashCode);
     _$hash = $jc(_$hash, ip.hashCode);
     _$hash = $jc(_$hash, mimeType.hashCode);
-    _$hash = $jc(_$hash, screenshot.hashCode);
     _$hash = $jc(_$hash, server.hashCode);
     _$hash = $jc(_$hash, status.hashCode);
     _$hash = $jc(_$hash, title.hashCode);
@@ -119,6 +118,7 @@ class _$UrlscannerGetScanV2200ResponsePage
     _$hash = $jc(_$hash, tlsValidDays.hashCode);
     _$hash = $jc(_$hash, tlsValidFrom.hashCode);
     _$hash = $jc(_$hash, url.hashCode);
+    _$hash = $jc(_$hash, screenshot.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -134,7 +134,6 @@ class _$UrlscannerGetScanV2200ResponsePage
           ..add('domain', domain)
           ..add('ip', ip)
           ..add('mimeType', mimeType)
-          ..add('screenshot', screenshot)
           ..add('server', server)
           ..add('status', status)
           ..add('title', title)
@@ -142,7 +141,8 @@ class _$UrlscannerGetScanV2200ResponsePage
           ..add('tlsIssuer', tlsIssuer)
           ..add('tlsValidDays', tlsValidDays)
           ..add('tlsValidFrom', tlsValidFrom)
-          ..add('url', url))
+          ..add('url', url)
+          ..add('screenshot', screenshot))
         .toString();
   }
 }
@@ -185,14 +185,6 @@ class UrlscannerGetScanV2200ResponsePageBuilder
   String? get mimeType => _$this._mimeType;
   set mimeType(String? mimeType) => _$this._mimeType = mimeType;
 
-  UrlscannerGetScanV2200ResponsePageScreenshotBuilder? _screenshot;
-  UrlscannerGetScanV2200ResponsePageScreenshotBuilder get screenshot =>
-      _$this._screenshot ??=
-          UrlscannerGetScanV2200ResponsePageScreenshotBuilder();
-  set screenshot(
-          UrlscannerGetScanV2200ResponsePageScreenshotBuilder? screenshot) =>
-      _$this._screenshot = screenshot;
-
   String? _server;
   String? get server => _$this._server;
   set server(String? server) => _$this._server = server;
@@ -225,6 +217,14 @@ class UrlscannerGetScanV2200ResponsePageBuilder
   String? get url => _$this._url;
   set url(String? url) => _$this._url = url;
 
+  UrlscannerGetScanV2200ResponsePageScreenshotBuilder? _screenshot;
+  UrlscannerGetScanV2200ResponsePageScreenshotBuilder get screenshot =>
+      _$this._screenshot ??=
+          UrlscannerGetScanV2200ResponsePageScreenshotBuilder();
+  set screenshot(
+          UrlscannerGetScanV2200ResponsePageScreenshotBuilder? screenshot) =>
+      _$this._screenshot = screenshot;
+
   UrlscannerGetScanV2200ResponsePageBuilder() {
     UrlscannerGetScanV2200ResponsePage._defaults(this);
   }
@@ -240,7 +240,6 @@ class UrlscannerGetScanV2200ResponsePageBuilder
       _domain = $v.domain;
       _ip = $v.ip;
       _mimeType = $v.mimeType;
-      _screenshot = $v.screenshot?.toBuilder();
       _server = $v.server;
       _status = $v.status;
       _title = $v.title;
@@ -249,6 +248,7 @@ class UrlscannerGetScanV2200ResponsePageBuilder
       _tlsValidDays = $v.tlsValidDays;
       _tlsValidFrom = $v.tlsValidFrom;
       _url = $v.url;
+      _screenshot = $v.screenshot?.toBuilder();
       _$v = null;
     }
     return this;
@@ -289,7 +289,6 @@ class UrlscannerGetScanV2200ResponsePageBuilder
                 ip, r'UrlscannerGetScanV2200ResponsePage', 'ip'),
             mimeType: BuiltValueNullFieldError.checkNotNull(
                 mimeType, r'UrlscannerGetScanV2200ResponsePage', 'mimeType'),
-            screenshot: _screenshot?.build(),
             server: BuiltValueNullFieldError.checkNotNull(
                 server, r'UrlscannerGetScanV2200ResponsePage', 'server'),
             status: BuiltValueNullFieldError.checkNotNull(
@@ -306,6 +305,7 @@ class UrlscannerGetScanV2200ResponsePageBuilder
                 r'UrlscannerGetScanV2200ResponsePage', 'tlsValidFrom'),
             url: BuiltValueNullFieldError.checkNotNull(
                 url, r'UrlscannerGetScanV2200ResponsePage', 'url'),
+            screenshot: _screenshot?.build(),
           );
     } catch (_) {
       late String _$failedField;

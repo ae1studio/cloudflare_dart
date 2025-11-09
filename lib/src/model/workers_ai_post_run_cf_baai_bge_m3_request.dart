@@ -20,10 +20,10 @@ part 'workers_ai_post_run_cf_baai_bge_m3_request.g.dart';
 ///
 /// Properties:
 /// * [contexts] - List of provided contexts. Note that the index in this array is important, as the response will refer to it.
-/// * [query] - A query you wish to perform against the provided contexts. If no query is provided the model with respond with embeddings for contexts
-/// * [truncateInputs] - When provided with too long context should the model error out or truncate the context to fit?
 /// * [text] 
 /// * [requests] - Batch of the embeddings requests to run using async-queue
+/// * [query] - A query you wish to perform against the provided contexts. If no query is provided the model with respond with embeddings for contexts
+/// * [truncateInputs] - When provided with too long context should the model error out or truncate the context to fit?
 @BuiltValue()
 abstract class WorkersAiPostRunCfBaaiBgeM3Request implements Built<WorkersAiPostRunCfBaaiBgeM3Request, WorkersAiPostRunCfBaaiBgeM3RequestBuilder> {
   /// One Of [BGEM3InputEmbedding], [BGEM3InputQueryAndContexts], [WorkersAiPostRunCfBaaiBgeM3RequestOneOf]

@@ -8,14 +8,14 @@ part of 'text_to_speech.dart';
 
 class _$TextToSpeech extends TextToSpeech {
   @override
-  final String? lang;
-  @override
   final String prompt;
+  @override
+  final String? lang;
 
   factory _$TextToSpeech([void Function(TextToSpeechBuilder)? updates]) =>
       (TextToSpeechBuilder()..update(updates))._build();
 
-  _$TextToSpeech._({this.lang, required this.prompt}) : super._();
+  _$TextToSpeech._({required this.prompt, this.lang}) : super._();
   @override
   TextToSpeech rebuild(void Function(TextToSpeechBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -27,15 +27,15 @@ class _$TextToSpeech extends TextToSpeech {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is TextToSpeech &&
-        lang == other.lang &&
-        prompt == other.prompt;
+        prompt == other.prompt &&
+        lang == other.lang;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, lang.hashCode);
     _$hash = $jc(_$hash, prompt.hashCode);
+    _$hash = $jc(_$hash, lang.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -43,8 +43,8 @@ class _$TextToSpeech extends TextToSpeech {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'TextToSpeech')
-          ..add('lang', lang)
-          ..add('prompt', prompt))
+          ..add('prompt', prompt)
+          ..add('lang', lang))
         .toString();
   }
 }
@@ -53,13 +53,13 @@ class TextToSpeechBuilder
     implements Builder<TextToSpeech, TextToSpeechBuilder> {
   _$TextToSpeech? _$v;
 
-  String? _lang;
-  String? get lang => _$this._lang;
-  set lang(String? lang) => _$this._lang = lang;
-
   String? _prompt;
   String? get prompt => _$this._prompt;
   set prompt(String? prompt) => _$this._prompt = prompt;
+
+  String? _lang;
+  String? get lang => _$this._lang;
+  set lang(String? lang) => _$this._lang = lang;
 
   TextToSpeechBuilder() {
     TextToSpeech._defaults(this);
@@ -68,8 +68,8 @@ class TextToSpeechBuilder
   TextToSpeechBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _lang = $v.lang;
       _prompt = $v.prompt;
+      _lang = $v.lang;
       _$v = null;
     }
     return this;
@@ -91,9 +91,9 @@ class TextToSpeechBuilder
   _$TextToSpeech _build() {
     final _$result = _$v ??
         _$TextToSpeech._(
-          lang: lang,
           prompt: BuiltValueNullFieldError.checkNotNull(
               prompt, r'TextToSpeech', 'prompt'),
+          lang: lang,
         );
     replace(_$result);
     return _$result;

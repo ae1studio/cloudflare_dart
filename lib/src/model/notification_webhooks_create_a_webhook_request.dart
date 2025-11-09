@@ -12,21 +12,21 @@ part 'notification_webhooks_create_a_webhook_request.g.dart';
 ///
 /// Properties:
 /// * [name] - The name of the webhook destination. This will be included in the request body when you receive a webhook notification.
-/// * [secret] - Optional secret that will be passed in the `cf-webhook-auth` header when dispatching generic webhook notifications or formatted for supported destinations. Secrets are not returned in any API response body.
 /// * [url] - The POST endpoint to call when dispatching a notification.
+/// * [secret] - Optional secret that will be passed in the `cf-webhook-auth` header when dispatching generic webhook notifications or formatted for supported destinations. Secrets are not returned in any API response body.
 @BuiltValue()
 abstract class NotificationWebhooksCreateAWebhookRequest implements Built<NotificationWebhooksCreateAWebhookRequest, NotificationWebhooksCreateAWebhookRequestBuilder> {
   /// The name of the webhook destination. This will be included in the request body when you receive a webhook notification.
   @BuiltValueField(wireName: r'name')
   String get name;
 
-  /// Optional secret that will be passed in the `cf-webhook-auth` header when dispatching generic webhook notifications or formatted for supported destinations. Secrets are not returned in any API response body.
-  @BuiltValueField(wireName: r'secret')
-  String? get secret;
-
   /// The POST endpoint to call when dispatching a notification.
   @BuiltValueField(wireName: r'url')
   String get url;
+
+  /// Optional secret that will be passed in the `cf-webhook-auth` header when dispatching generic webhook notifications or formatted for supported destinations. Secrets are not returned in any API response body.
+  @BuiltValueField(wireName: r'secret')
+  String? get secret;
 
   NotificationWebhooksCreateAWebhookRequest._();
 
@@ -56,6 +56,11 @@ class _$NotificationWebhooksCreateAWebhookRequestSerializer implements Primitive
       object.name,
       specifiedType: const FullType(String),
     );
+    yield r'url';
+    yield serializers.serialize(
+      object.url,
+      specifiedType: const FullType(String),
+    );
     if (object.secret != null) {
       yield r'secret';
       yield serializers.serialize(
@@ -63,11 +68,6 @@ class _$NotificationWebhooksCreateAWebhookRequestSerializer implements Primitive
         specifiedType: const FullType(String),
       );
     }
-    yield r'url';
-    yield serializers.serialize(
-      object.url,
-      specifiedType: const FullType(String),
-    );
   }
 
   @override
@@ -98,19 +98,19 @@ class _$NotificationWebhooksCreateAWebhookRequestSerializer implements Primitive
           ) as String;
           result.name = valueDes;
           break;
-        case r'secret':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.secret = valueDes;
-          break;
         case r'url':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(String),
           ) as String;
           result.url = valueDes;
+          break;
+        case r'secret':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.secret = valueDes;
           break;
         default:
           unhandled.add(key);

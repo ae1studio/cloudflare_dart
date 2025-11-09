@@ -20,8 +20,8 @@ part 'zero_trust_gateway_pacfiles_list4_xx_response.g.dart';
 /// * [errors] 
 /// * [messages] 
 /// * [success] - Indicate whether the API call was successful.
-/// * [resultInfo] 
 /// * [result] 
+/// * [resultInfo] 
 @BuiltValue()
 abstract class ZeroTrustGatewayPacfilesList4XXResponse implements ZeroTrustGatewayApiResponseCommonFailure, ZeroTrustGatewayPacfilesComponentsSchemasResponseCollection, Built<ZeroTrustGatewayPacfilesList4XXResponse, ZeroTrustGatewayPacfilesList4XXResponseBuilder> {
   ZeroTrustGatewayPacfilesList4XXResponse._();

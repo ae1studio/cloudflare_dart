@@ -11,14 +11,14 @@ Name | Type | Description | Notes
 **accountId** | **String** | Cloudflare Account ID | 
 **bucket** | **String** | The R2 Bucket that hosts this catalog | 
 **credentials** | [**R2Credentials**](R2Credentials.md) |  | 
+**tableName** | **String** | Table name | 
+**token** | **String** | Authentication token | 
 **fileNaming** | [**FileNaming**](FileNaming.md) |  | [optional] 
 **jurisdiction** | **String** | Jurisdiction this bucket is hosted in | [optional] 
 **partitioning** | [**PartitioningConfiguration**](PartitioningConfiguration.md) |  | [optional] 
 **path** | **String** | Subpath within the bucket to write to | [optional] 
 **rollingPolicy** | [**FileRollingPolicy**](FileRollingPolicy.md) |  | [optional] 
 **namespace** | **String** | Table namespace | [optional] 
-**tableName** | **String** | Table name | 
-**token** | **String** | Authentication token | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

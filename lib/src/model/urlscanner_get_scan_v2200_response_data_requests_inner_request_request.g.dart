@@ -9,8 +9,6 @@ part of 'urlscanner_get_scan_v2200_response_data_requests_inner_request_request.
 class _$UrlscannerGetScanV2200ResponseDataRequestsInnerRequestRequest
     extends UrlscannerGetScanV2200ResponseDataRequestsInnerRequestRequest {
   @override
-  final JsonObject? headers;
-  @override
   final String initialPriority;
   @override
   final bool isSameSite;
@@ -22,6 +20,8 @@ class _$UrlscannerGetScanV2200ResponseDataRequestsInnerRequestRequest
   final String referrerPolicy;
   @override
   final String url;
+  @override
+  final JsonObject? headers;
 
   factory _$UrlscannerGetScanV2200ResponseDataRequestsInnerRequestRequest(
           [void Function(
@@ -32,13 +32,13 @@ class _$UrlscannerGetScanV2200ResponseDataRequestsInnerRequestRequest
           ._build();
 
   _$UrlscannerGetScanV2200ResponseDataRequestsInnerRequestRequest._(
-      {this.headers,
-      required this.initialPriority,
+      {required this.initialPriority,
       required this.isSameSite,
       required this.method,
       required this.mixedContentType,
       required this.referrerPolicy,
-      required this.url})
+      required this.url,
+      this.headers})
       : super._();
   @override
   UrlscannerGetScanV2200ResponseDataRequestsInnerRequestRequest rebuild(
@@ -58,25 +58,25 @@ class _$UrlscannerGetScanV2200ResponseDataRequestsInnerRequestRequest
     if (identical(other, this)) return true;
     return other
             is UrlscannerGetScanV2200ResponseDataRequestsInnerRequestRequest &&
-        headers == other.headers &&
         initialPriority == other.initialPriority &&
         isSameSite == other.isSameSite &&
         method == other.method &&
         mixedContentType == other.mixedContentType &&
         referrerPolicy == other.referrerPolicy &&
-        url == other.url;
+        url == other.url &&
+        headers == other.headers;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, headers.hashCode);
     _$hash = $jc(_$hash, initialPriority.hashCode);
     _$hash = $jc(_$hash, isSameSite.hashCode);
     _$hash = $jc(_$hash, method.hashCode);
     _$hash = $jc(_$hash, mixedContentType.hashCode);
     _$hash = $jc(_$hash, referrerPolicy.hashCode);
     _$hash = $jc(_$hash, url.hashCode);
+    _$hash = $jc(_$hash, headers.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -85,13 +85,13 @@ class _$UrlscannerGetScanV2200ResponseDataRequestsInnerRequestRequest
   String toString() {
     return (newBuiltValueToStringHelper(
             r'UrlscannerGetScanV2200ResponseDataRequestsInnerRequestRequest')
-          ..add('headers', headers)
           ..add('initialPriority', initialPriority)
           ..add('isSameSite', isSameSite)
           ..add('method', method)
           ..add('mixedContentType', mixedContentType)
           ..add('referrerPolicy', referrerPolicy)
-          ..add('url', url))
+          ..add('url', url)
+          ..add('headers', headers))
         .toString();
   }
 }
@@ -101,10 +101,6 @@ class UrlscannerGetScanV2200ResponseDataRequestsInnerRequestRequestBuilder
         Builder<UrlscannerGetScanV2200ResponseDataRequestsInnerRequestRequest,
             UrlscannerGetScanV2200ResponseDataRequestsInnerRequestRequestBuilder> {
   _$UrlscannerGetScanV2200ResponseDataRequestsInnerRequestRequest? _$v;
-
-  JsonObject? _headers;
-  JsonObject? get headers => _$this._headers;
-  set headers(JsonObject? headers) => _$this._headers = headers;
 
   String? _initialPriority;
   String? get initialPriority => _$this._initialPriority;
@@ -133,6 +129,10 @@ class UrlscannerGetScanV2200ResponseDataRequestsInnerRequestRequestBuilder
   String? get url => _$this._url;
   set url(String? url) => _$this._url = url;
 
+  JsonObject? _headers;
+  JsonObject? get headers => _$this._headers;
+  set headers(JsonObject? headers) => _$this._headers = headers;
+
   UrlscannerGetScanV2200ResponseDataRequestsInnerRequestRequestBuilder() {
     UrlscannerGetScanV2200ResponseDataRequestsInnerRequestRequest._defaults(
         this);
@@ -142,13 +142,13 @@ class UrlscannerGetScanV2200ResponseDataRequestsInnerRequestRequestBuilder
       get _$this {
     final $v = _$v;
     if ($v != null) {
-      _headers = $v.headers;
       _initialPriority = $v.initialPriority;
       _isSameSite = $v.isSameSite;
       _method = $v.method;
       _mixedContentType = $v.mixedContentType;
       _referrerPolicy = $v.referrerPolicy;
       _url = $v.url;
+      _headers = $v.headers;
       _$v = null;
     }
     return this;
@@ -176,7 +176,6 @@ class UrlscannerGetScanV2200ResponseDataRequestsInnerRequestRequestBuilder
   _$UrlscannerGetScanV2200ResponseDataRequestsInnerRequestRequest _build() {
     final _$result = _$v ??
         _$UrlscannerGetScanV2200ResponseDataRequestsInnerRequestRequest._(
-          headers: headers,
           initialPriority: BuiltValueNullFieldError.checkNotNull(
               initialPriority,
               r'UrlscannerGetScanV2200ResponseDataRequestsInnerRequestRequest',
@@ -201,6 +200,7 @@ class UrlscannerGetScanV2200ResponseDataRequestsInnerRequestRequestBuilder
               url,
               r'UrlscannerGetScanV2200ResponseDataRequestsInnerRequestRequest',
               'url'),
+          headers: headers,
         );
     replace(_$result);
     return _$result;

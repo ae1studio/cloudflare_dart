@@ -8,6 +8,10 @@ part of 'email_security_submission.dart';
 
 class _$EmailSecuritySubmission extends EmailSecuritySubmission {
   @override
+  final DateTime requestedTs;
+  @override
+  final String submissionId;
+  @override
   final EmailSecurityDispositionLabel? originalDisposition;
   @override
   final String? originalEdfHash;
@@ -20,13 +24,9 @@ class _$EmailSecuritySubmission extends EmailSecuritySubmission {
   @override
   final EmailSecurityDispositionLabel? requestedDisposition;
   @override
-  final DateTime requestedTs;
-  @override
   final String? status;
   @override
   final String? subject;
-  @override
-  final String submissionId;
   @override
   final String? type;
 
@@ -35,16 +35,16 @@ class _$EmailSecuritySubmission extends EmailSecuritySubmission {
       (EmailSecuritySubmissionBuilder()..update(updates))._build();
 
   _$EmailSecuritySubmission._(
-      {this.originalDisposition,
+      {required this.requestedTs,
+      required this.submissionId,
+      this.originalDisposition,
       this.originalEdfHash,
       this.outcome,
       this.outcomeDisposition,
       this.requestedBy,
       this.requestedDisposition,
-      required this.requestedTs,
       this.status,
       this.subject,
-      required this.submissionId,
       this.type})
       : super._();
   @override
@@ -60,32 +60,32 @@ class _$EmailSecuritySubmission extends EmailSecuritySubmission {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is EmailSecuritySubmission &&
+        requestedTs == other.requestedTs &&
+        submissionId == other.submissionId &&
         originalDisposition == other.originalDisposition &&
         originalEdfHash == other.originalEdfHash &&
         outcome == other.outcome &&
         outcomeDisposition == other.outcomeDisposition &&
         requestedBy == other.requestedBy &&
         requestedDisposition == other.requestedDisposition &&
-        requestedTs == other.requestedTs &&
         status == other.status &&
         subject == other.subject &&
-        submissionId == other.submissionId &&
         type == other.type;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
+    _$hash = $jc(_$hash, requestedTs.hashCode);
+    _$hash = $jc(_$hash, submissionId.hashCode);
     _$hash = $jc(_$hash, originalDisposition.hashCode);
     _$hash = $jc(_$hash, originalEdfHash.hashCode);
     _$hash = $jc(_$hash, outcome.hashCode);
     _$hash = $jc(_$hash, outcomeDisposition.hashCode);
     _$hash = $jc(_$hash, requestedBy.hashCode);
     _$hash = $jc(_$hash, requestedDisposition.hashCode);
-    _$hash = $jc(_$hash, requestedTs.hashCode);
     _$hash = $jc(_$hash, status.hashCode);
     _$hash = $jc(_$hash, subject.hashCode);
-    _$hash = $jc(_$hash, submissionId.hashCode);
     _$hash = $jc(_$hash, type.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
@@ -94,16 +94,16 @@ class _$EmailSecuritySubmission extends EmailSecuritySubmission {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'EmailSecuritySubmission')
+          ..add('requestedTs', requestedTs)
+          ..add('submissionId', submissionId)
           ..add('originalDisposition', originalDisposition)
           ..add('originalEdfHash', originalEdfHash)
           ..add('outcome', outcome)
           ..add('outcomeDisposition', outcomeDisposition)
           ..add('requestedBy', requestedBy)
           ..add('requestedDisposition', requestedDisposition)
-          ..add('requestedTs', requestedTs)
           ..add('status', status)
           ..add('subject', subject)
-          ..add('submissionId', submissionId)
           ..add('type', type))
         .toString();
   }
@@ -113,6 +113,14 @@ class EmailSecuritySubmissionBuilder
     implements
         Builder<EmailSecuritySubmission, EmailSecuritySubmissionBuilder> {
   _$EmailSecuritySubmission? _$v;
+
+  DateTime? _requestedTs;
+  DateTime? get requestedTs => _$this._requestedTs;
+  set requestedTs(DateTime? requestedTs) => _$this._requestedTs = requestedTs;
+
+  String? _submissionId;
+  String? get submissionId => _$this._submissionId;
+  set submissionId(String? submissionId) => _$this._submissionId = submissionId;
 
   EmailSecurityDispositionLabel? _originalDisposition;
   EmailSecurityDispositionLabel? get originalDisposition =>
@@ -146,10 +154,6 @@ class EmailSecuritySubmissionBuilder
           EmailSecurityDispositionLabel? requestedDisposition) =>
       _$this._requestedDisposition = requestedDisposition;
 
-  DateTime? _requestedTs;
-  DateTime? get requestedTs => _$this._requestedTs;
-  set requestedTs(DateTime? requestedTs) => _$this._requestedTs = requestedTs;
-
   String? _status;
   String? get status => _$this._status;
   set status(String? status) => _$this._status = status;
@@ -157,10 +161,6 @@ class EmailSecuritySubmissionBuilder
   String? _subject;
   String? get subject => _$this._subject;
   set subject(String? subject) => _$this._subject = subject;
-
-  String? _submissionId;
-  String? get submissionId => _$this._submissionId;
-  set submissionId(String? submissionId) => _$this._submissionId = submissionId;
 
   String? _type;
   String? get type => _$this._type;
@@ -173,16 +173,16 @@ class EmailSecuritySubmissionBuilder
   EmailSecuritySubmissionBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
+      _requestedTs = $v.requestedTs;
+      _submissionId = $v.submissionId;
       _originalDisposition = $v.originalDisposition;
       _originalEdfHash = $v.originalEdfHash;
       _outcome = $v.outcome;
       _outcomeDisposition = $v.outcomeDisposition;
       _requestedBy = $v.requestedBy;
       _requestedDisposition = $v.requestedDisposition;
-      _requestedTs = $v.requestedTs;
       _status = $v.status;
       _subject = $v.subject;
-      _submissionId = $v.submissionId;
       _type = $v.type;
       _$v = null;
     }
@@ -205,18 +205,18 @@ class EmailSecuritySubmissionBuilder
   _$EmailSecuritySubmission _build() {
     final _$result = _$v ??
         _$EmailSecuritySubmission._(
+          requestedTs: BuiltValueNullFieldError.checkNotNull(
+              requestedTs, r'EmailSecuritySubmission', 'requestedTs'),
+          submissionId: BuiltValueNullFieldError.checkNotNull(
+              submissionId, r'EmailSecuritySubmission', 'submissionId'),
           originalDisposition: originalDisposition,
           originalEdfHash: originalEdfHash,
           outcome: outcome,
           outcomeDisposition: outcomeDisposition,
           requestedBy: requestedBy,
           requestedDisposition: requestedDisposition,
-          requestedTs: BuiltValueNullFieldError.checkNotNull(
-              requestedTs, r'EmailSecuritySubmission', 'requestedTs'),
           status: status,
           subject: subject,
-          submissionId: BuiltValueNullFieldError.checkNotNull(
-              submissionId, r'EmailSecuritySubmission', 'submissionId'),
           type: type,
         );
     replace(_$result);

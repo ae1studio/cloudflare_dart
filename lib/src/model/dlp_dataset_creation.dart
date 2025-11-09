@@ -15,8 +15,8 @@ part 'dlp_dataset_creation.g.dart';
 /// * [dataset] 
 /// * [encodingVersion] - Encoding version to use for dataset.
 /// * [maxCells] 
-/// * [secret] - The secret to use for Exact Data Match datasets. This is not present in Custom Wordlists.
 /// * [version] - The version to use when uploading the dataset.
+/// * [secret] - The secret to use for Exact Data Match datasets. This is not present in Custom Wordlists.
 @BuiltValue()
 abstract class DlpDatasetCreation implements Built<DlpDatasetCreation, DlpDatasetCreationBuilder> {
   @BuiltValueField(wireName: r'dataset')
@@ -29,13 +29,13 @@ abstract class DlpDatasetCreation implements Built<DlpDatasetCreation, DlpDatase
   @BuiltValueField(wireName: r'max_cells')
   int get maxCells;
 
-  /// The secret to use for Exact Data Match datasets. This is not present in Custom Wordlists.
-  @BuiltValueField(wireName: r'secret')
-  String? get secret;
-
   /// The version to use when uploading the dataset.
   @BuiltValueField(wireName: r'version')
   int get version;
+
+  /// The secret to use for Exact Data Match datasets. This is not present in Custom Wordlists.
+  @BuiltValueField(wireName: r'secret')
+  String? get secret;
 
   DlpDatasetCreation._();
 
@@ -75,6 +75,11 @@ class _$DlpDatasetCreationSerializer implements PrimitiveSerializer<DlpDatasetCr
       object.maxCells,
       specifiedType: const FullType(int),
     );
+    yield r'version';
+    yield serializers.serialize(
+      object.version,
+      specifiedType: const FullType(int),
+    );
     if (object.secret != null) {
       yield r'secret';
       yield serializers.serialize(
@@ -82,11 +87,6 @@ class _$DlpDatasetCreationSerializer implements PrimitiveSerializer<DlpDatasetCr
         specifiedType: const FullType(String),
       );
     }
-    yield r'version';
-    yield serializers.serialize(
-      object.version,
-      specifiedType: const FullType(int),
-    );
   }
 
   @override
@@ -131,19 +131,19 @@ class _$DlpDatasetCreationSerializer implements PrimitiveSerializer<DlpDatasetCr
           ) as int;
           result.maxCells = valueDes;
           break;
-        case r'secret':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.secret = valueDes;
-          break;
         case r'version':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(int),
           ) as int;
           result.version = valueDes;
+          break;
+        case r'secret':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.secret = valueDes;
           break;
         default:
           unhandled.add(key);

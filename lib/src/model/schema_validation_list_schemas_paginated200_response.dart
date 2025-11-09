@@ -19,8 +19,8 @@ part 'schema_validation_list_schemas_paginated200_response.g.dart';
 /// * [errors] 
 /// * [messages] 
 /// * [success] - Whether the API call was successful.
-/// * [resultInfo] 
 /// * [result] 
+/// * [resultInfo] 
 @BuiltValue()
 abstract class SchemaValidationListSchemasPaginated200Response implements ApiShieldApiResponseCollection, Built<SchemaValidationListSchemasPaginated200Response, SchemaValidationListSchemasPaginated200ResponseBuilder> {
   @BuiltValueField(wireName: r'result')

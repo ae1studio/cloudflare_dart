@@ -8,15 +8,15 @@ part of 'access_custom_page.dart';
 
 class _$AccessCustomPage extends AccessCustomPage {
   @override
-  final int? appCount;
-  @override
-  final JsonObject? createdAt;
-  @override
   final String customHtml;
   @override
   final String name;
   @override
   final AccessSchemasType type;
+  @override
+  final int? appCount;
+  @override
+  final JsonObject? createdAt;
   @override
   final String? uid;
   @override
@@ -27,11 +27,11 @@ class _$AccessCustomPage extends AccessCustomPage {
       (AccessCustomPageBuilder()..update(updates))._build();
 
   _$AccessCustomPage._(
-      {this.appCount,
-      this.createdAt,
-      required this.customHtml,
+      {required this.customHtml,
       required this.name,
       required this.type,
+      this.appCount,
+      this.createdAt,
       this.uid,
       this.updatedAt})
       : super._();
@@ -47,11 +47,11 @@ class _$AccessCustomPage extends AccessCustomPage {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is AccessCustomPage &&
-        appCount == other.appCount &&
-        createdAt == other.createdAt &&
         customHtml == other.customHtml &&
         name == other.name &&
         type == other.type &&
+        appCount == other.appCount &&
+        createdAt == other.createdAt &&
         uid == other.uid &&
         updatedAt == other.updatedAt;
   }
@@ -59,11 +59,11 @@ class _$AccessCustomPage extends AccessCustomPage {
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, appCount.hashCode);
-    _$hash = $jc(_$hash, createdAt.hashCode);
     _$hash = $jc(_$hash, customHtml.hashCode);
     _$hash = $jc(_$hash, name.hashCode);
     _$hash = $jc(_$hash, type.hashCode);
+    _$hash = $jc(_$hash, appCount.hashCode);
+    _$hash = $jc(_$hash, createdAt.hashCode);
     _$hash = $jc(_$hash, uid.hashCode);
     _$hash = $jc(_$hash, updatedAt.hashCode);
     _$hash = $jf(_$hash);
@@ -73,11 +73,11 @@ class _$AccessCustomPage extends AccessCustomPage {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'AccessCustomPage')
-          ..add('appCount', appCount)
-          ..add('createdAt', createdAt)
           ..add('customHtml', customHtml)
           ..add('name', name)
           ..add('type', type)
+          ..add('appCount', appCount)
+          ..add('createdAt', createdAt)
           ..add('uid', uid)
           ..add('updatedAt', updatedAt))
         .toString();
@@ -87,14 +87,6 @@ class _$AccessCustomPage extends AccessCustomPage {
 class AccessCustomPageBuilder
     implements Builder<AccessCustomPage, AccessCustomPageBuilder> {
   _$AccessCustomPage? _$v;
-
-  int? _appCount;
-  int? get appCount => _$this._appCount;
-  set appCount(int? appCount) => _$this._appCount = appCount;
-
-  JsonObject? _createdAt;
-  JsonObject? get createdAt => _$this._createdAt;
-  set createdAt(JsonObject? createdAt) => _$this._createdAt = createdAt;
 
   String? _customHtml;
   String? get customHtml => _$this._customHtml;
@@ -107,6 +99,14 @@ class AccessCustomPageBuilder
   AccessSchemasType? _type;
   AccessSchemasType? get type => _$this._type;
   set type(AccessSchemasType? type) => _$this._type = type;
+
+  int? _appCount;
+  int? get appCount => _$this._appCount;
+  set appCount(int? appCount) => _$this._appCount = appCount;
+
+  JsonObject? _createdAt;
+  JsonObject? get createdAt => _$this._createdAt;
+  set createdAt(JsonObject? createdAt) => _$this._createdAt = createdAt;
 
   String? _uid;
   String? get uid => _$this._uid;
@@ -123,11 +123,11 @@ class AccessCustomPageBuilder
   AccessCustomPageBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _appCount = $v.appCount;
-      _createdAt = $v.createdAt;
       _customHtml = $v.customHtml;
       _name = $v.name;
       _type = $v.type;
+      _appCount = $v.appCount;
+      _createdAt = $v.createdAt;
       _uid = $v.uid;
       _updatedAt = $v.updatedAt;
       _$v = null;
@@ -151,14 +151,14 @@ class AccessCustomPageBuilder
   _$AccessCustomPage _build() {
     final _$result = _$v ??
         _$AccessCustomPage._(
-          appCount: appCount,
-          createdAt: createdAt,
           customHtml: BuiltValueNullFieldError.checkNotNull(
               customHtml, r'AccessCustomPage', 'customHtml'),
           name: BuiltValueNullFieldError.checkNotNull(
               name, r'AccessCustomPage', 'name'),
           type: BuiltValueNullFieldError.checkNotNull(
               type, r'AccessCustomPage', 'type'),
+          appCount: appCount,
+          createdAt: createdAt,
           uid: uid,
           updatedAt: updatedAt,
         );

@@ -12,12 +12,16 @@ part 'email_security_release_response.g.dart';
 /// EmailSecurityReleaseResponse
 ///
 /// Properties:
+/// * [postfixId] - The identifier of the message.
 /// * [delivered] 
 /// * [failed] 
 /// * [undelivered] 
-/// * [postfixId] - The identifier of the message.
 @BuiltValue()
 abstract class EmailSecurityReleaseResponse implements Built<EmailSecurityReleaseResponse, EmailSecurityReleaseResponseBuilder> {
+  /// The identifier of the message.
+  @BuiltValueField(wireName: r'postfix_id')
+  String get postfixId;
+
   @BuiltValueField(wireName: r'delivered')
   BuiltList<String>? get delivered;
 
@@ -26,10 +30,6 @@ abstract class EmailSecurityReleaseResponse implements Built<EmailSecurityReleas
 
   @BuiltValueField(wireName: r'undelivered')
   BuiltList<String>? get undelivered;
-
-  /// The identifier of the message.
-  @BuiltValueField(wireName: r'postfix_id')
-  String get postfixId;
 
   EmailSecurityReleaseResponse._();
 
@@ -54,6 +54,11 @@ class _$EmailSecurityReleaseResponseSerializer implements PrimitiveSerializer<Em
     EmailSecurityReleaseResponse object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    yield r'postfix_id';
+    yield serializers.serialize(
+      object.postfixId,
+      specifiedType: const FullType(String),
+    );
     if (object.delivered != null) {
       yield r'delivered';
       yield serializers.serialize(
@@ -75,11 +80,6 @@ class _$EmailSecurityReleaseResponseSerializer implements PrimitiveSerializer<Em
         specifiedType: const FullType.nullable(BuiltList, [FullType(String)]),
       );
     }
-    yield r'postfix_id';
-    yield serializers.serialize(
-      object.postfixId,
-      specifiedType: const FullType(String),
-    );
   }
 
   @override
@@ -103,6 +103,13 @@ class _$EmailSecurityReleaseResponseSerializer implements PrimitiveSerializer<Em
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
+        case r'postfix_id':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.postfixId = valueDes;
+          break;
         case r'delivered':
           final valueDes = serializers.deserialize(
             value,
@@ -126,13 +133,6 @@ class _$EmailSecurityReleaseResponseSerializer implements PrimitiveSerializer<Em
           ) as BuiltList<String>?;
           if (valueDes == null) continue;
           result.undelivered.replace(valueDes);
-          break;
-        case r'postfix_id':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.postfixId = valueDes;
           break;
         default:
           unhandled.add(key);

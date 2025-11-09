@@ -17,20 +17,16 @@ part 'certificate_packs_order_advanced_certificate_manager_certificate_pack_requ
 ///
 /// Properties:
 /// * [certificateAuthority] 
-/// * [cloudflareBranding] - Whether or not to add Cloudflare Branding for the order.  This will add a subdomain of sni.cloudflaressl.com as the Common Name if set to true.
 /// * [hosts] - Comma separated list of valid host names for the certificate packs. Must contain the zone apex, may not contain more than 50 hosts, and may not be empty.
 /// * [type] 
 /// * [validationMethod] 
 /// * [validityDays] 
+/// * [cloudflareBranding] - Whether or not to add Cloudflare Branding for the order.  This will add a subdomain of sni.cloudflaressl.com as the Common Name if set to true.
 @BuiltValue()
 abstract class CertificatePacksOrderAdvancedCertificateManagerCertificatePackRequest implements Built<CertificatePacksOrderAdvancedCertificateManagerCertificatePackRequest, CertificatePacksOrderAdvancedCertificateManagerCertificatePackRequestBuilder> {
   @BuiltValueField(wireName: r'certificate_authority')
   TlsCertificatesAndHostnamesSchemasCertificateAuthority get certificateAuthority;
   // enum certificateAuthorityEnum {  google,  lets_encrypt,  ssl_com,  };
-
-  /// Whether or not to add Cloudflare Branding for the order.  This will add a subdomain of sni.cloudflaressl.com as the Common Name if set to true.
-  @BuiltValueField(wireName: r'cloudflare_branding')
-  bool? get cloudflareBranding;
 
   /// Comma separated list of valid host names for the certificate packs. Must contain the zone apex, may not contain more than 50 hosts, and may not be empty.
   @BuiltValueField(wireName: r'hosts')
@@ -47,6 +43,10 @@ abstract class CertificatePacksOrderAdvancedCertificateManagerCertificatePackReq
   @BuiltValueField(wireName: r'validity_days')
   TlsCertificatesAndHostnamesValidityDays get validityDays;
   // enum validityDaysEnum {  14,  30,  90,  365,  };
+
+  /// Whether or not to add Cloudflare Branding for the order.  This will add a subdomain of sni.cloudflaressl.com as the Common Name if set to true.
+  @BuiltValueField(wireName: r'cloudflare_branding')
+  bool? get cloudflareBranding;
 
   CertificatePacksOrderAdvancedCertificateManagerCertificatePackRequest._();
 
@@ -76,13 +76,6 @@ class _$CertificatePacksOrderAdvancedCertificateManagerCertificatePackRequestSer
       object.certificateAuthority,
       specifiedType: const FullType(TlsCertificatesAndHostnamesSchemasCertificateAuthority),
     );
-    if (object.cloudflareBranding != null) {
-      yield r'cloudflare_branding';
-      yield serializers.serialize(
-        object.cloudflareBranding,
-        specifiedType: const FullType(bool),
-      );
-    }
     yield r'hosts';
     yield serializers.serialize(
       object.hosts,
@@ -103,6 +96,13 @@ class _$CertificatePacksOrderAdvancedCertificateManagerCertificatePackRequestSer
       object.validityDays,
       specifiedType: const FullType(TlsCertificatesAndHostnamesValidityDays),
     );
+    if (object.cloudflareBranding != null) {
+      yield r'cloudflare_branding';
+      yield serializers.serialize(
+        object.cloudflareBranding,
+        specifiedType: const FullType(bool),
+      );
+    }
   }
 
   @override
@@ -133,13 +133,6 @@ class _$CertificatePacksOrderAdvancedCertificateManagerCertificatePackRequestSer
           ) as TlsCertificatesAndHostnamesSchemasCertificateAuthority;
           result.certificateAuthority = valueDes;
           break;
-        case r'cloudflare_branding':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
-          result.cloudflareBranding = valueDes;
-          break;
         case r'hosts':
           final valueDes = serializers.deserialize(
             value,
@@ -167,6 +160,13 @@ class _$CertificatePacksOrderAdvancedCertificateManagerCertificatePackRequestSer
             specifiedType: const FullType(TlsCertificatesAndHostnamesValidityDays),
           ) as TlsCertificatesAndHostnamesValidityDays;
           result.validityDays = valueDes;
+          break;
+        case r'cloudflare_branding':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(bool),
+          ) as bool;
+          result.cloudflareBranding = valueDes;
           break;
         default:
           unhandled.add(key);

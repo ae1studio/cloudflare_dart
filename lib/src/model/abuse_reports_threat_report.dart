@@ -14,19 +14,19 @@ part 'abuse_reports_threat_report.g.dart';
 ///
 /// Properties:
 /// * [act] 
-/// * [comments] - Any additional comments about the infringement not exceeding 2000 characters
-/// * [company] - Text not exceeding 100 characters. This field may be released by Cloudflare to third parties such as the Lumen Database (https://lumendatabase.org/).
 /// * [email] - A valid email of the abuse reporter. This field may be released by Cloudflare to third parties such as the Lumen Database (https://lumendatabase.org/).
 /// * [email2] - Should match the value provided in `email`
 /// * [name] - Text not exceeding 255 characters. This field may be released by Cloudflare to third parties such as the Lumen Database (https://lumendatabase.org/).
-/// * [reportedCountry] - Text containing 2 characters
-/// * [reportedUserAgent] - Text not exceeding 255 characters
-/// * [tele] - Text not exceeding 20 characters. This field may be released by Cloudflare to third parties such as the Lumen Database (https://lumendatabase.org/).
-/// * [title] - Text not exceeding 255 characters
 /// * [urls] - A list of valid URLs separated by ‘\\n’ (new line character). The list of the URLs should not exceed 250 URLs. All URLs should have the same hostname. Each URL should be unique. This field may be released by Cloudflare to third parties such as the Lumen Database (https://lumendatabase.org/).
 /// * [hostNotification] - Notification type based on the abuse type. NOTE: Copyright (DMCA) and Trademark reports cannot be anonymous. 
 /// * [justification] - A detailed description of the infringement, including any necessary access details and the exact steps needed to view the content, not exceeding 5000 characters. 
 /// * [ownerNotification] - Notification type based on the abuse type. NOTE: Copyright (DMCA) and Trademark reports cannot be anonymous. 
+/// * [comments] - Any additional comments about the infringement not exceeding 2000 characters
+/// * [company] - Text not exceeding 100 characters. This field may be released by Cloudflare to third parties such as the Lumen Database (https://lumendatabase.org/).
+/// * [reportedCountry] - Text containing 2 characters
+/// * [reportedUserAgent] - Text not exceeding 255 characters
+/// * [tele] - Text not exceeding 20 characters. This field may be released by Cloudflare to third parties such as the Lumen Database (https://lumendatabase.org/).
+/// * [title] - Text not exceeding 255 characters
 @BuiltValue()
 abstract class AbuseReportsThreatReport implements AbuseReportsBaseReportFields, Built<AbuseReportsThreatReport, AbuseReportsThreatReportBuilder> {
   /// Notification type based on the abuse type. NOTE: Copyright (DMCA) and Trademark reports cannot be anonymous. 

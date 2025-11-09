@@ -12,9 +12,9 @@ class _$GetEventAggregate200Response extends GetEventAggregate200Response {
   @override
   final BuiltList<GetEventAggregate200ResponseAggregationsInner> aggregations;
   @override
-  final GetEventAggregate200ResponseDateRange? dateRange;
-  @override
   final num total;
+  @override
+  final GetEventAggregate200ResponseDateRange? dateRange;
 
   factory _$GetEventAggregate200Response(
           [void Function(GetEventAggregate200ResponseBuilder)? updates]) =>
@@ -23,8 +23,8 @@ class _$GetEventAggregate200Response extends GetEventAggregate200Response {
   _$GetEventAggregate200Response._(
       {required this.aggregateBy,
       required this.aggregations,
-      this.dateRange,
-      required this.total})
+      required this.total,
+      this.dateRange})
       : super._();
   @override
   GetEventAggregate200Response rebuild(
@@ -41,8 +41,8 @@ class _$GetEventAggregate200Response extends GetEventAggregate200Response {
     return other is GetEventAggregate200Response &&
         aggregateBy == other.aggregateBy &&
         aggregations == other.aggregations &&
-        dateRange == other.dateRange &&
-        total == other.total;
+        total == other.total &&
+        dateRange == other.dateRange;
   }
 
   @override
@@ -50,8 +50,8 @@ class _$GetEventAggregate200Response extends GetEventAggregate200Response {
     var _$hash = 0;
     _$hash = $jc(_$hash, aggregateBy.hashCode);
     _$hash = $jc(_$hash, aggregations.hashCode);
-    _$hash = $jc(_$hash, dateRange.hashCode);
     _$hash = $jc(_$hash, total.hashCode);
+    _$hash = $jc(_$hash, dateRange.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -61,8 +61,8 @@ class _$GetEventAggregate200Response extends GetEventAggregate200Response {
     return (newBuiltValueToStringHelper(r'GetEventAggregate200Response')
           ..add('aggregateBy', aggregateBy)
           ..add('aggregations', aggregations)
-          ..add('dateRange', dateRange)
-          ..add('total', total))
+          ..add('total', total)
+          ..add('dateRange', dateRange))
         .toString();
   }
 }
@@ -86,15 +86,15 @@ class GetEventAggregate200ResponseBuilder
               aggregations) =>
       _$this._aggregations = aggregations;
 
+  num? _total;
+  num? get total => _$this._total;
+  set total(num? total) => _$this._total = total;
+
   GetEventAggregate200ResponseDateRangeBuilder? _dateRange;
   GetEventAggregate200ResponseDateRangeBuilder get dateRange =>
       _$this._dateRange ??= GetEventAggregate200ResponseDateRangeBuilder();
   set dateRange(GetEventAggregate200ResponseDateRangeBuilder? dateRange) =>
       _$this._dateRange = dateRange;
-
-  num? _total;
-  num? get total => _$this._total;
-  set total(num? total) => _$this._total = total;
 
   GetEventAggregate200ResponseBuilder() {
     GetEventAggregate200Response._defaults(this);
@@ -105,8 +105,8 @@ class GetEventAggregate200ResponseBuilder
     if ($v != null) {
       _aggregateBy = $v.aggregateBy;
       _aggregations = $v.aggregations.toBuilder();
-      _dateRange = $v.dateRange?.toBuilder();
       _total = $v.total;
+      _dateRange = $v.dateRange?.toBuilder();
       _$v = null;
     }
     return this;
@@ -133,15 +133,16 @@ class GetEventAggregate200ResponseBuilder
             aggregateBy: BuiltValueNullFieldError.checkNotNull(
                 aggregateBy, r'GetEventAggregate200Response', 'aggregateBy'),
             aggregations: aggregations.build(),
-            dateRange: _dateRange?.build(),
             total: BuiltValueNullFieldError.checkNotNull(
                 total, r'GetEventAggregate200Response', 'total'),
+            dateRange: _dateRange?.build(),
           );
     } catch (_) {
       late String _$failedField;
       try {
         _$failedField = 'aggregations';
         aggregations.build();
+
         _$failedField = 'dateRange';
         _dateRange?.build();
       } catch (e) {

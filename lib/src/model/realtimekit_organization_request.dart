@@ -13,28 +13,28 @@ part 'realtimekit_organization_request.g.dart';
 ///
 /// Properties:
 /// * [contact] 
-/// * [featureFlags] 
 /// * [name] - Must be a unique organization name
-/// * [preferredRegion] 
 /// * [website] 
+/// * [featureFlags] 
+/// * [preferredRegion] 
 @BuiltValue()
 abstract class RealtimekitOrganizationRequest implements Built<RealtimekitOrganizationRequest, RealtimekitOrganizationRequestBuilder> {
   @BuiltValueField(wireName: r'contact')
   String get contact;
 
-  @BuiltValueField(wireName: r'feature_flags')
-  BuiltList<String>? get featureFlags;
-
   /// Must be a unique organization name
   @BuiltValueField(wireName: r'name')
   String get name;
 
+  @BuiltValueField(wireName: r'website')
+  String get website;
+
+  @BuiltValueField(wireName: r'feature_flags')
+  BuiltList<String>? get featureFlags;
+
   @BuiltValueField(wireName: r'preferred_region')
   RealtimekitOrganizationRequestPreferredRegionEnum? get preferredRegion;
   // enum preferredRegionEnum {  ap-south-1,  ap-southeast-1,  us-east-1,  eu-central-1,  };
-
-  @BuiltValueField(wireName: r'website')
-  String get website;
 
   RealtimekitOrganizationRequest._();
 
@@ -65,6 +65,16 @@ class _$RealtimekitOrganizationRequestSerializer implements PrimitiveSerializer<
       object.contact,
       specifiedType: const FullType(String),
     );
+    yield r'name';
+    yield serializers.serialize(
+      object.name,
+      specifiedType: const FullType(String),
+    );
+    yield r'website';
+    yield serializers.serialize(
+      object.website,
+      specifiedType: const FullType(String),
+    );
     if (object.featureFlags != null) {
       yield r'feature_flags';
       yield serializers.serialize(
@@ -72,11 +82,6 @@ class _$RealtimekitOrganizationRequestSerializer implements PrimitiveSerializer<
         specifiedType: const FullType(BuiltList, [FullType(String)]),
       );
     }
-    yield r'name';
-    yield serializers.serialize(
-      object.name,
-      specifiedType: const FullType(String),
-    );
     if (object.preferredRegion != null) {
       yield r'preferred_region';
       yield serializers.serialize(
@@ -84,11 +89,6 @@ class _$RealtimekitOrganizationRequestSerializer implements PrimitiveSerializer<
         specifiedType: const FullType(RealtimekitOrganizationRequestPreferredRegionEnum),
       );
     }
-    yield r'website';
-    yield serializers.serialize(
-      object.website,
-      specifiedType: const FullType(String),
-    );
   }
 
   @override
@@ -119,13 +119,6 @@ class _$RealtimekitOrganizationRequestSerializer implements PrimitiveSerializer<
           ) as String;
           result.contact = valueDes;
           break;
-        case r'feature_flags':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>;
-          result.featureFlags.replace(valueDes);
-          break;
         case r'name':
           final valueDes = serializers.deserialize(
             value,
@@ -133,19 +126,26 @@ class _$RealtimekitOrganizationRequestSerializer implements PrimitiveSerializer<
           ) as String;
           result.name = valueDes;
           break;
-        case r'preferred_region':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(RealtimekitOrganizationRequestPreferredRegionEnum),
-          ) as RealtimekitOrganizationRequestPreferredRegionEnum;
-          result.preferredRegion = valueDes;
-          break;
         case r'website':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(String),
           ) as String;
           result.website = valueDes;
+          break;
+        case r'feature_flags':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BuiltList, [FullType(String)]),
+          ) as BuiltList<String>;
+          result.featureFlags.replace(valueDes);
+          break;
+        case r'preferred_region':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(RealtimekitOrganizationRequestPreferredRegionEnum),
+          ) as RealtimekitOrganizationRequestPreferredRegionEnum;
+          result.preferredRegion = valueDes;
           break;
         default:
           unhandled.add(key);

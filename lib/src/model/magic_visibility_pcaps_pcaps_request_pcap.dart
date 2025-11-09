@@ -17,15 +17,15 @@ part 'magic_visibility_pcaps_pcaps_request_pcap.g.dart';
 /// MagicVisibilityPcapsPcapsRequestPcap
 ///
 /// Properties:
-/// * [filterV1] 
-/// * [offsetTime] - The RFC 3339 offset timestamp from which to query backwards for packets. Must be within the last 24h. When this field is empty, defaults to time of request.
 /// * [packetLimit] - The limit of packets contained in a packet capture.
 /// * [system] 
 /// * [timeLimit] - The packet capture duration in seconds.
 /// * [type] 
-/// * [byteLimit] - The maximum number of bytes to capture. This field only applies to `full` packet captures.
 /// * [coloName] - The name of the data center used for the packet capture. This can be a specific colo (ord02) or a multi-colo name (ORD). This field only applies to `full` packet captures.
 /// * [destinationConf] - The full URI for the bucket. This field only applies to `full` packet captures.
+/// * [filterV1] 
+/// * [offsetTime] - The RFC 3339 offset timestamp from which to query backwards for packets. Must be within the last 24h. When this field is empty, defaults to time of request.
+/// * [byteLimit] - The maximum number of bytes to capture. This field only applies to `full` packet captures.
 @BuiltValue()
 abstract class MagicVisibilityPcapsPcapsRequestPcap implements Built<MagicVisibilityPcapsPcapsRequestPcap, MagicVisibilityPcapsPcapsRequestPcapBuilder> {
   /// Any Of [MagicVisibilityPcapsPcapsRequestFull], [MagicVisibilityPcapsPcapsRequestSimple]

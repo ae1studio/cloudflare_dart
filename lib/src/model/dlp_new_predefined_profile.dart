@@ -15,13 +15,13 @@ part 'dlp_new_predefined_profile.g.dart';
 /// DlpNewPredefinedProfile
 ///
 /// Properties:
+/// * [profileId] 
 /// * [aiContextEnabled] 
 /// * [allowedMatchCount] 
 /// * [confidenceThreshold] 
 /// * [contextAwareness] 
 /// * [entries] 
 /// * [ocrEnabled] 
-/// * [profileId] 
 @BuiltValue()
 abstract class DlpNewPredefinedProfile implements DlpPredefinedProfileUpdate, Built<DlpNewPredefinedProfile, DlpNewPredefinedProfileBuilder> {
   @BuiltValueField(wireName: r'profile_id')

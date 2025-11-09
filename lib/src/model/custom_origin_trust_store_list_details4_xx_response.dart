@@ -20,8 +20,8 @@ part 'custom_origin_trust_store_list_details4_xx_response.g.dart';
 /// * [errors] 
 /// * [messages] 
 /// * [success] - Whether the API call was successful.
-/// * [resultInfo] 
 /// * [result] 
+/// * [resultInfo] 
 @BuiltValue()
 abstract class CustomOriginTrustStoreListDetails4XXResponse implements TlsCertificatesAndHostnamesApiResponseCommonFailure, TlsCertificatesAndHostnamesCustomTrustStoreResponseCollection, Built<CustomOriginTrustStoreListDetails4XXResponse, CustomOriginTrustStoreListDetails4XXResponseBuilder> {
   CustomOriginTrustStoreListDetails4XXResponse._();

@@ -13,18 +13,18 @@ part 'radar_get_annotations200_response_result_annotations_inner_asns_details_in
 ///
 /// Properties:
 /// * [asn] 
-/// * [locations] 
 /// * [name] 
+/// * [locations] 
 @BuiltValue()
 abstract class RadarGetAnnotations200ResponseResultAnnotationsInnerAsnsDetailsInner implements Built<RadarGetAnnotations200ResponseResultAnnotationsInnerAsnsDetailsInner, RadarGetAnnotations200ResponseResultAnnotationsInnerAsnsDetailsInnerBuilder> {
   @BuiltValueField(wireName: r'asn')
   String get asn;
 
-  @BuiltValueField(wireName: r'locations')
-  RadarGetAnnotations200ResponseResultAnnotationsInnerAsnsDetailsInnerLocations? get locations;
-
   @BuiltValueField(wireName: r'name')
   String get name;
+
+  @BuiltValueField(wireName: r'locations')
+  RadarGetAnnotations200ResponseResultAnnotationsInnerAsnsDetailsInnerLocations? get locations;
 
   RadarGetAnnotations200ResponseResultAnnotationsInnerAsnsDetailsInner._();
 
@@ -54,6 +54,11 @@ class _$RadarGetAnnotations200ResponseResultAnnotationsInnerAsnsDetailsInnerSeri
       object.asn,
       specifiedType: const FullType(String),
     );
+    yield r'name';
+    yield serializers.serialize(
+      object.name,
+      specifiedType: const FullType(String),
+    );
     if (object.locations != null) {
       yield r'locations';
       yield serializers.serialize(
@@ -61,11 +66,6 @@ class _$RadarGetAnnotations200ResponseResultAnnotationsInnerAsnsDetailsInnerSeri
         specifiedType: const FullType(RadarGetAnnotations200ResponseResultAnnotationsInnerAsnsDetailsInnerLocations),
       );
     }
-    yield r'name';
-    yield serializers.serialize(
-      object.name,
-      specifiedType: const FullType(String),
-    );
   }
 
   @override
@@ -96,19 +96,19 @@ class _$RadarGetAnnotations200ResponseResultAnnotationsInnerAsnsDetailsInnerSeri
           ) as String;
           result.asn = valueDes;
           break;
-        case r'locations':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(RadarGetAnnotations200ResponseResultAnnotationsInnerAsnsDetailsInnerLocations),
-          ) as RadarGetAnnotations200ResponseResultAnnotationsInnerAsnsDetailsInnerLocations;
-          result.locations.replace(valueDes);
-          break;
         case r'name':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(String),
           ) as String;
           result.name = valueDes;
+          break;
+        case r'locations':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(RadarGetAnnotations200ResponseResultAnnotationsInnerAsnsDetailsInnerLocations),
+          ) as RadarGetAnnotations200ResponseResultAnnotationsInnerAsnsDetailsInnerLocations;
+          result.locations.replace(valueDes);
           break;
         default:
           unhandled.add(key);

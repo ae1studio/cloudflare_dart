@@ -13,12 +13,15 @@ part 'digital_experience_monitoring_test_stat_over_time.g.dart';
 /// DigitalExperienceMonitoringTestStatOverTime
 ///
 /// Properties:
+/// * [slots] 
 /// * [avg] - average observed in the time period
 /// * [max] - highest observed in the time period
 /// * [min] - lowest observed in the time period
-/// * [slots] 
 @BuiltValue()
 abstract class DigitalExperienceMonitoringTestStatOverTime implements Built<DigitalExperienceMonitoringTestStatOverTime, DigitalExperienceMonitoringTestStatOverTimeBuilder> {
+  @BuiltValueField(wireName: r'slots')
+  BuiltList<DigitalExperienceMonitoringTestStatOverTimeSlotsInner> get slots;
+
   /// average observed in the time period
   @BuiltValueField(wireName: r'avg')
   int? get avg;
@@ -30,9 +33,6 @@ abstract class DigitalExperienceMonitoringTestStatOverTime implements Built<Digi
   /// lowest observed in the time period
   @BuiltValueField(wireName: r'min')
   int? get min;
-
-  @BuiltValueField(wireName: r'slots')
-  BuiltList<DigitalExperienceMonitoringTestStatOverTimeSlotsInner> get slots;
 
   DigitalExperienceMonitoringTestStatOverTime._();
 
@@ -57,6 +57,11 @@ class _$DigitalExperienceMonitoringTestStatOverTimeSerializer implements Primiti
     DigitalExperienceMonitoringTestStatOverTime object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    yield r'slots';
+    yield serializers.serialize(
+      object.slots,
+      specifiedType: const FullType(BuiltList, [FullType(DigitalExperienceMonitoringTestStatOverTimeSlotsInner)]),
+    );
     if (object.avg != null) {
       yield r'avg';
       yield serializers.serialize(
@@ -78,11 +83,6 @@ class _$DigitalExperienceMonitoringTestStatOverTimeSerializer implements Primiti
         specifiedType: const FullType.nullable(int),
       );
     }
-    yield r'slots';
-    yield serializers.serialize(
-      object.slots,
-      specifiedType: const FullType(BuiltList, [FullType(DigitalExperienceMonitoringTestStatOverTimeSlotsInner)]),
-    );
   }
 
   @override
@@ -106,6 +106,13 @@ class _$DigitalExperienceMonitoringTestStatOverTimeSerializer implements Primiti
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
+        case r'slots':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BuiltList, [FullType(DigitalExperienceMonitoringTestStatOverTimeSlotsInner)]),
+          ) as BuiltList<DigitalExperienceMonitoringTestStatOverTimeSlotsInner>;
+          result.slots.replace(valueDes);
+          break;
         case r'avg':
           final valueDes = serializers.deserialize(
             value,
@@ -129,13 +136,6 @@ class _$DigitalExperienceMonitoringTestStatOverTimeSerializer implements Primiti
           ) as int?;
           if (valueDes == null) continue;
           result.min = valueDes;
-          break;
-        case r'slots':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(DigitalExperienceMonitoringTestStatOverTimeSlotsInner)]),
-          ) as BuiltList<DigitalExperienceMonitoringTestStatOverTimeSlotsInner>;
-          result.slots.replace(valueDes);
           break;
         default:
           unhandled.add(key);

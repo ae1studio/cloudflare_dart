@@ -94,18 +94,18 @@ class _$RulesetsRedirectFromValueStatusCodeEnumSerializer
 
 class _$RulesetsRedirectFromValue extends RulesetsRedirectFromValue {
   @override
+  final TargetURL targetUrl;
+  @override
   final bool? preserveQueryString;
   @override
   final RulesetsRedirectFromValueStatusCodeEnum? statusCode;
-  @override
-  final TargetURL targetUrl;
 
   factory _$RulesetsRedirectFromValue(
           [void Function(RulesetsRedirectFromValueBuilder)? updates]) =>
       (RulesetsRedirectFromValueBuilder()..update(updates))._build();
 
   _$RulesetsRedirectFromValue._(
-      {this.preserveQueryString, this.statusCode, required this.targetUrl})
+      {required this.targetUrl, this.preserveQueryString, this.statusCode})
       : super._();
   @override
   RulesetsRedirectFromValue rebuild(
@@ -120,17 +120,17 @@ class _$RulesetsRedirectFromValue extends RulesetsRedirectFromValue {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is RulesetsRedirectFromValue &&
+        targetUrl == other.targetUrl &&
         preserveQueryString == other.preserveQueryString &&
-        statusCode == other.statusCode &&
-        targetUrl == other.targetUrl;
+        statusCode == other.statusCode;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
+    _$hash = $jc(_$hash, targetUrl.hashCode);
     _$hash = $jc(_$hash, preserveQueryString.hashCode);
     _$hash = $jc(_$hash, statusCode.hashCode);
-    _$hash = $jc(_$hash, targetUrl.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -138,9 +138,9 @@ class _$RulesetsRedirectFromValue extends RulesetsRedirectFromValue {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'RulesetsRedirectFromValue')
+          ..add('targetUrl', targetUrl)
           ..add('preserveQueryString', preserveQueryString)
-          ..add('statusCode', statusCode)
-          ..add('targetUrl', targetUrl))
+          ..add('statusCode', statusCode))
         .toString();
   }
 }
@@ -149,6 +149,10 @@ class RulesetsRedirectFromValueBuilder
     implements
         Builder<RulesetsRedirectFromValue, RulesetsRedirectFromValueBuilder> {
   _$RulesetsRedirectFromValue? _$v;
+
+  TargetURLBuilder? _targetUrl;
+  TargetURLBuilder get targetUrl => _$this._targetUrl ??= TargetURLBuilder();
+  set targetUrl(TargetURLBuilder? targetUrl) => _$this._targetUrl = targetUrl;
 
   bool? _preserveQueryString;
   bool? get preserveQueryString => _$this._preserveQueryString;
@@ -160,10 +164,6 @@ class RulesetsRedirectFromValueBuilder
   set statusCode(RulesetsRedirectFromValueStatusCodeEnum? statusCode) =>
       _$this._statusCode = statusCode;
 
-  TargetURLBuilder? _targetUrl;
-  TargetURLBuilder get targetUrl => _$this._targetUrl ??= TargetURLBuilder();
-  set targetUrl(TargetURLBuilder? targetUrl) => _$this._targetUrl = targetUrl;
-
   RulesetsRedirectFromValueBuilder() {
     RulesetsRedirectFromValue._defaults(this);
   }
@@ -171,9 +171,9 @@ class RulesetsRedirectFromValueBuilder
   RulesetsRedirectFromValueBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
+      _targetUrl = $v.targetUrl.toBuilder();
       _preserveQueryString = $v.preserveQueryString;
       _statusCode = $v.statusCode;
-      _targetUrl = $v.targetUrl.toBuilder();
       _$v = null;
     }
     return this;
@@ -197,9 +197,9 @@ class RulesetsRedirectFromValueBuilder
     try {
       _$result = _$v ??
           _$RulesetsRedirectFromValue._(
+            targetUrl: targetUrl.build(),
             preserveQueryString: preserveQueryString,
             statusCode: statusCode,
-            targetUrl: targetUrl.build(),
           );
     } catch (_) {
       late String _$failedField;

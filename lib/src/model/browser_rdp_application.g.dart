@@ -12,6 +12,10 @@ class _$BrowserRDPApplication extends BrowserRDPApplication {
   @override
   final BuiltList<AccessTargetCriteriaSelfHostedApp>? targetCriteria;
   @override
+  final String domain;
+  @override
+  final AccessType type;
+  @override
   final bool? allowAuthenticateViaWarp;
   @override
   final bool? allowIframe;
@@ -33,8 +37,6 @@ class _$BrowserRDPApplication extends BrowserRDPApplication {
   final BuiltList<String>? customPages;
   @override
   final BuiltList<AccessDestinationsInner>? destinations;
-  @override
-  final String domain;
   @override
   final bool? enableBindingCookie;
   @override
@@ -63,8 +65,6 @@ class _$BrowserRDPApplication extends BrowserRDPApplication {
   final bool? skipInterstitial;
   @override
   final BuiltList<String>? tags;
-  @override
-  final AccessType type;
 
   factory _$BrowserRDPApplication(
           [void Function(BrowserRDPApplicationBuilder)? updates]) =>
@@ -73,6 +73,8 @@ class _$BrowserRDPApplication extends BrowserRDPApplication {
   _$BrowserRDPApplication._(
       {this.policies,
       this.targetCriteria,
+      required this.domain,
+      required this.type,
       this.allowAuthenticateViaWarp,
       this.allowIframe,
       this.allowedIdps,
@@ -84,7 +86,6 @@ class _$BrowserRDPApplication extends BrowserRDPApplication {
       this.customNonIdentityDenyUrl,
       this.customPages,
       this.destinations,
-      required this.domain,
       this.enableBindingCookie,
       this.httpOnlyCookieAttribute,
       this.logoUrl,
@@ -98,8 +99,7 @@ class _$BrowserRDPApplication extends BrowserRDPApplication {
       this.serviceAuth401Redirect,
       this.sessionDuration,
       this.skipInterstitial,
-      this.tags,
-      required this.type})
+      this.tags})
       : super._();
   @override
   BrowserRDPApplication rebuild(
@@ -116,6 +116,8 @@ class _$BrowserRDPApplication extends BrowserRDPApplication {
     return other is BrowserRDPApplication &&
         policies == other.policies &&
         targetCriteria == other.targetCriteria &&
+        domain == other.domain &&
+        type == other.type &&
         allowAuthenticateViaWarp == other.allowAuthenticateViaWarp &&
         allowIframe == other.allowIframe &&
         allowedIdps == other.allowedIdps &&
@@ -127,7 +129,6 @@ class _$BrowserRDPApplication extends BrowserRDPApplication {
         customNonIdentityDenyUrl == other.customNonIdentityDenyUrl &&
         customPages == other.customPages &&
         destinations == other.destinations &&
-        domain == other.domain &&
         enableBindingCookie == other.enableBindingCookie &&
         httpOnlyCookieAttribute == other.httpOnlyCookieAttribute &&
         logoUrl == other.logoUrl &&
@@ -141,8 +142,7 @@ class _$BrowserRDPApplication extends BrowserRDPApplication {
         serviceAuth401Redirect == other.serviceAuth401Redirect &&
         sessionDuration == other.sessionDuration &&
         skipInterstitial == other.skipInterstitial &&
-        tags == other.tags &&
-        type == other.type;
+        tags == other.tags;
   }
 
   @override
@@ -150,6 +150,8 @@ class _$BrowserRDPApplication extends BrowserRDPApplication {
     var _$hash = 0;
     _$hash = $jc(_$hash, policies.hashCode);
     _$hash = $jc(_$hash, targetCriteria.hashCode);
+    _$hash = $jc(_$hash, domain.hashCode);
+    _$hash = $jc(_$hash, type.hashCode);
     _$hash = $jc(_$hash, allowAuthenticateViaWarp.hashCode);
     _$hash = $jc(_$hash, allowIframe.hashCode);
     _$hash = $jc(_$hash, allowedIdps.hashCode);
@@ -161,7 +163,6 @@ class _$BrowserRDPApplication extends BrowserRDPApplication {
     _$hash = $jc(_$hash, customNonIdentityDenyUrl.hashCode);
     _$hash = $jc(_$hash, customPages.hashCode);
     _$hash = $jc(_$hash, destinations.hashCode);
-    _$hash = $jc(_$hash, domain.hashCode);
     _$hash = $jc(_$hash, enableBindingCookie.hashCode);
     _$hash = $jc(_$hash, httpOnlyCookieAttribute.hashCode);
     _$hash = $jc(_$hash, logoUrl.hashCode);
@@ -176,7 +177,6 @@ class _$BrowserRDPApplication extends BrowserRDPApplication {
     _$hash = $jc(_$hash, sessionDuration.hashCode);
     _$hash = $jc(_$hash, skipInterstitial.hashCode);
     _$hash = $jc(_$hash, tags.hashCode);
-    _$hash = $jc(_$hash, type.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -186,6 +186,8 @@ class _$BrowserRDPApplication extends BrowserRDPApplication {
     return (newBuiltValueToStringHelper(r'BrowserRDPApplication')
           ..add('policies', policies)
           ..add('targetCriteria', targetCriteria)
+          ..add('domain', domain)
+          ..add('type', type)
           ..add('allowAuthenticateViaWarp', allowAuthenticateViaWarp)
           ..add('allowIframe', allowIframe)
           ..add('allowedIdps', allowedIdps)
@@ -197,7 +199,6 @@ class _$BrowserRDPApplication extends BrowserRDPApplication {
           ..add('customNonIdentityDenyUrl', customNonIdentityDenyUrl)
           ..add('customPages', customPages)
           ..add('destinations', destinations)
-          ..add('domain', domain)
           ..add('enableBindingCookie', enableBindingCookie)
           ..add('httpOnlyCookieAttribute', httpOnlyCookieAttribute)
           ..add('logoUrl', logoUrl)
@@ -211,8 +212,7 @@ class _$BrowserRDPApplication extends BrowserRDPApplication {
           ..add('serviceAuth401Redirect', serviceAuth401Redirect)
           ..add('sessionDuration', sessionDuration)
           ..add('skipInterstitial', skipInterstitial)
-          ..add('tags', tags)
-          ..add('type', type))
+          ..add('tags', tags))
         .toString();
   }
 }
@@ -241,6 +241,14 @@ class BrowserRDPApplicationBuilder
           covariant ListBuilder<AccessTargetCriteriaSelfHostedApp>?
               targetCriteria) =>
       _$this._targetCriteria = targetCriteria;
+
+  String? _domain;
+  String? get domain => _$this._domain;
+  set domain(covariant String? domain) => _$this._domain = domain;
+
+  AccessType? _type;
+  AccessType? get type => _$this._type;
+  set type(covariant AccessType? type) => _$this._type = type;
 
   bool? _allowAuthenticateViaWarp;
   bool? get allowAuthenticateViaWarp => _$this._allowAuthenticateViaWarp;
@@ -301,10 +309,6 @@ class BrowserRDPApplicationBuilder
   set destinations(
           covariant ListBuilder<AccessDestinationsInner>? destinations) =>
       _$this._destinations = destinations;
-
-  String? _domain;
-  String? get domain => _$this._domain;
-  set domain(covariant String? domain) => _$this._domain = domain;
 
   bool? _enableBindingCookie;
   bool? get enableBindingCookie => _$this._enableBindingCookie;
@@ -377,10 +381,6 @@ class BrowserRDPApplicationBuilder
   ListBuilder<String> get tags => _$this._tags ??= ListBuilder<String>();
   set tags(covariant ListBuilder<String>? tags) => _$this._tags = tags;
 
-  AccessType? _type;
-  AccessType? get type => _$this._type;
-  set type(covariant AccessType? type) => _$this._type = type;
-
   BrowserRDPApplicationBuilder() {
     BrowserRDPApplication._defaults(this);
   }
@@ -390,6 +390,8 @@ class BrowserRDPApplicationBuilder
     if ($v != null) {
       _policies = $v.policies?.toBuilder();
       _targetCriteria = $v.targetCriteria?.toBuilder();
+      _domain = $v.domain;
+      _type = $v.type;
       _allowAuthenticateViaWarp = $v.allowAuthenticateViaWarp;
       _allowIframe = $v.allowIframe;
       _allowedIdps = $v.allowedIdps?.toBuilder();
@@ -401,7 +403,6 @@ class BrowserRDPApplicationBuilder
       _customNonIdentityDenyUrl = $v.customNonIdentityDenyUrl;
       _customPages = $v.customPages?.toBuilder();
       _destinations = $v.destinations?.toBuilder();
-      _domain = $v.domain;
       _enableBindingCookie = $v.enableBindingCookie;
       _httpOnlyCookieAttribute = $v.httpOnlyCookieAttribute;
       _logoUrl = $v.logoUrl;
@@ -416,7 +417,6 @@ class BrowserRDPApplicationBuilder
       _sessionDuration = $v.sessionDuration;
       _skipInterstitial = $v.skipInterstitial;
       _tags = $v.tags?.toBuilder();
-      _type = $v.type;
       _$v = null;
     }
     return this;
@@ -443,6 +443,10 @@ class BrowserRDPApplicationBuilder
           _$BrowserRDPApplication._(
             policies: _policies?.build(),
             targetCriteria: _targetCriteria?.build(),
+            domain: BuiltValueNullFieldError.checkNotNull(
+                domain, r'BrowserRDPApplication', 'domain'),
+            type: BuiltValueNullFieldError.checkNotNull(
+                type, r'BrowserRDPApplication', 'type'),
             allowAuthenticateViaWarp: allowAuthenticateViaWarp,
             allowIframe: allowIframe,
             allowedIdps: _allowedIdps?.build(),
@@ -454,8 +458,6 @@ class BrowserRDPApplicationBuilder
             customNonIdentityDenyUrl: customNonIdentityDenyUrl,
             customPages: _customPages?.build(),
             destinations: _destinations?.build(),
-            domain: BuiltValueNullFieldError.checkNotNull(
-                domain, r'BrowserRDPApplication', 'domain'),
             enableBindingCookie: enableBindingCookie,
             httpOnlyCookieAttribute: httpOnlyCookieAttribute,
             logoUrl: logoUrl,
@@ -470,8 +472,6 @@ class BrowserRDPApplicationBuilder
             sessionDuration: sessionDuration,
             skipInterstitial: skipInterstitial,
             tags: _tags?.build(),
-            type: BuiltValueNullFieldError.checkNotNull(
-                type, r'BrowserRDPApplication', 'type'),
           );
     } catch (_) {
       late String _$failedField;

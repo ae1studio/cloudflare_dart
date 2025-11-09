@@ -14,20 +14,17 @@ part 'nsc_cni.g.dart';
 ///
 /// Properties:
 /// * [account] - Customer account tag
-/// * [bgp] 
 /// * [custIp] - Customer end of the point-to-point link  This should always be inside the same prefix as `p2p_ip`.
 /// * [id] 
 /// * [interconnect] - Interconnect identifier hosting this CNI
 /// * [magic] 
 /// * [p2pIp] - Cloudflare end of the point-to-point link
+/// * [bgp] 
 @BuiltValue()
 abstract class NscCni implements Built<NscCni, NscCniBuilder> {
   /// Customer account tag
   @BuiltValueField(wireName: r'account')
   String get account;
-
-  @BuiltValueField(wireName: r'bgp')
-  NscBgpControl? get bgp;
 
   /// Customer end of the point-to-point link  This should always be inside the same prefix as `p2p_ip`.
   @BuiltValueField(wireName: r'cust_ip')
@@ -46,6 +43,9 @@ abstract class NscCni implements Built<NscCni, NscCniBuilder> {
   /// Cloudflare end of the point-to-point link
   @BuiltValueField(wireName: r'p2p_ip')
   String get p2pIp;
+
+  @BuiltValueField(wireName: r'bgp')
+  NscBgpControl? get bgp;
 
   NscCni._();
 
@@ -75,13 +75,6 @@ class _$NscCniSerializer implements PrimitiveSerializer<NscCni> {
       object.account,
       specifiedType: const FullType(String),
     );
-    if (object.bgp != null) {
-      yield r'bgp';
-      yield serializers.serialize(
-        object.bgp,
-        specifiedType: const FullType(NscBgpControl),
-      );
-    }
     yield r'cust_ip';
     yield serializers.serialize(
       object.custIp,
@@ -107,6 +100,13 @@ class _$NscCniSerializer implements PrimitiveSerializer<NscCni> {
       object.p2pIp,
       specifiedType: const FullType(String),
     );
+    if (object.bgp != null) {
+      yield r'bgp';
+      yield serializers.serialize(
+        object.bgp,
+        specifiedType: const FullType(NscBgpControl),
+      );
+    }
   }
 
   @override
@@ -136,13 +136,6 @@ class _$NscCniSerializer implements PrimitiveSerializer<NscCni> {
             specifiedType: const FullType(String),
           ) as String;
           result.account = valueDes;
-          break;
-        case r'bgp':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(NscBgpControl),
-          ) as NscBgpControl;
-          result.bgp.replace(valueDes);
           break;
         case r'cust_ip':
           final valueDes = serializers.deserialize(
@@ -178,6 +171,13 @@ class _$NscCniSerializer implements PrimitiveSerializer<NscCni> {
             specifiedType: const FullType(String),
           ) as String;
           result.p2pIp = valueDes;
+          break;
+        case r'bgp':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(NscBgpControl),
+          ) as NscBgpControl;
+          result.bgp.replace(valueDes);
           break;
         default:
           unhandled.add(key);

@@ -13,9 +13,9 @@ class _$OrganizationsApiV4ErrorResponse
   @override
   final BuiltList<OrganizationsApiV4Message> messages;
   @override
-  final JsonObject? result;
-  @override
   final bool success;
+  @override
+  final JsonObject? result;
 
   factory _$OrganizationsApiV4ErrorResponse(
           [void Function(OrganizationsApiV4ErrorResponseBuilder)? updates]) =>
@@ -24,8 +24,8 @@ class _$OrganizationsApiV4ErrorResponse
   _$OrganizationsApiV4ErrorResponse._(
       {required this.errors,
       required this.messages,
-      this.result,
-      required this.success})
+      required this.success,
+      this.result})
       : super._();
   @override
   OrganizationsApiV4ErrorResponse rebuild(
@@ -42,8 +42,8 @@ class _$OrganizationsApiV4ErrorResponse
     return other is OrganizationsApiV4ErrorResponse &&
         errors == other.errors &&
         messages == other.messages &&
-        result == other.result &&
-        success == other.success;
+        success == other.success &&
+        result == other.result;
   }
 
   @override
@@ -51,8 +51,8 @@ class _$OrganizationsApiV4ErrorResponse
     var _$hash = 0;
     _$hash = $jc(_$hash, errors.hashCode);
     _$hash = $jc(_$hash, messages.hashCode);
-    _$hash = $jc(_$hash, result.hashCode);
     _$hash = $jc(_$hash, success.hashCode);
+    _$hash = $jc(_$hash, result.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -62,8 +62,8 @@ class _$OrganizationsApiV4ErrorResponse
     return (newBuiltValueToStringHelper(r'OrganizationsApiV4ErrorResponse')
           ..add('errors', errors)
           ..add('messages', messages)
-          ..add('result', result)
-          ..add('success', success))
+          ..add('success', success)
+          ..add('result', result))
         .toString();
   }
 }
@@ -86,13 +86,13 @@ class OrganizationsApiV4ErrorResponseBuilder
   set messages(ListBuilder<OrganizationsApiV4Message>? messages) =>
       _$this._messages = messages;
 
-  JsonObject? _result;
-  JsonObject? get result => _$this._result;
-  set result(JsonObject? result) => _$this._result = result;
-
   bool? _success;
   bool? get success => _$this._success;
   set success(bool? success) => _$this._success = success;
+
+  JsonObject? _result;
+  JsonObject? get result => _$this._result;
+  set result(JsonObject? result) => _$this._result = result;
 
   OrganizationsApiV4ErrorResponseBuilder() {
     OrganizationsApiV4ErrorResponse._defaults(this);
@@ -103,8 +103,8 @@ class OrganizationsApiV4ErrorResponseBuilder
     if ($v != null) {
       _errors = $v.errors.toBuilder();
       _messages = $v.messages.toBuilder();
-      _result = $v.result;
       _success = $v.success;
+      _result = $v.result;
       _$v = null;
     }
     return this;
@@ -130,9 +130,9 @@ class OrganizationsApiV4ErrorResponseBuilder
           _$OrganizationsApiV4ErrorResponse._(
             errors: errors.build(),
             messages: messages.build(),
-            result: result,
             success: BuiltValueNullFieldError.checkNotNull(
                 success, r'OrganizationsApiV4ErrorResponse', 'success'),
+            result: result,
           );
     } catch (_) {
       late String _$failedField;

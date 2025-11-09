@@ -15,22 +15,22 @@ part 'post_v4_accounts_by_account_id_pipelines_v1_streams_request.g.dart';
 /// PostV4AccountsByAccountIdPipelinesV1StreamsRequest
 ///
 /// Properties:
+/// * [name] - Specifies the name of the Stream.
 /// * [format] 
 /// * [http] 
-/// * [name] - Specifies the name of the Stream.
 /// * [schema] 
 /// * [workerBinding] 
 @BuiltValue()
 abstract class PostV4AccountsByAccountIdPipelinesV1StreamsRequest implements Built<PostV4AccountsByAccountIdPipelinesV1StreamsRequest, PostV4AccountsByAccountIdPipelinesV1StreamsRequestBuilder> {
+  /// Specifies the name of the Stream.
+  @BuiltValueField(wireName: r'name')
+  String get name;
+
   @BuiltValueField(wireName: r'format')
   CloudflarePipelinesFormat? get format;
 
   @BuiltValueField(wireName: r'http')
   PostV4AccountsByAccountIdPipelinesV1StreamsRequestHttp? get http;
-
-  /// Specifies the name of the Stream.
-  @BuiltValueField(wireName: r'name')
-  String get name;
 
   @BuiltValueField(wireName: r'schema')
   CloudflarePipelinesConnectionSchema? get schema;
@@ -61,6 +61,11 @@ class _$PostV4AccountsByAccountIdPipelinesV1StreamsRequestSerializer implements 
     PostV4AccountsByAccountIdPipelinesV1StreamsRequest object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    yield r'name';
+    yield serializers.serialize(
+      object.name,
+      specifiedType: const FullType(String),
+    );
     if (object.format != null) {
       yield r'format';
       yield serializers.serialize(
@@ -75,11 +80,6 @@ class _$PostV4AccountsByAccountIdPipelinesV1StreamsRequestSerializer implements 
         specifiedType: const FullType(PostV4AccountsByAccountIdPipelinesV1StreamsRequestHttp),
       );
     }
-    yield r'name';
-    yield serializers.serialize(
-      object.name,
-      specifiedType: const FullType(String),
-    );
     if (object.schema != null) {
       yield r'schema';
       yield serializers.serialize(
@@ -117,6 +117,13 @@ class _$PostV4AccountsByAccountIdPipelinesV1StreamsRequestSerializer implements 
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
+        case r'name':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.name = valueDes;
+          break;
         case r'format':
           final valueDes = serializers.deserialize(
             value,
@@ -130,13 +137,6 @@ class _$PostV4AccountsByAccountIdPipelinesV1StreamsRequestSerializer implements 
             specifiedType: const FullType(PostV4AccountsByAccountIdPipelinesV1StreamsRequestHttp),
           ) as PostV4AccountsByAccountIdPipelinesV1StreamsRequestHttp;
           result.http.replace(valueDes);
-          break;
-        case r'name':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.name = valueDes;
           break;
         case r'schema':
           final valueDes = serializers.deserialize(

@@ -11,16 +11,26 @@ part 'mcp_portals_api_list_portals200_response_result_inner.g.dart';
 /// McpPortalsApiListPortals200ResponseResultInner
 ///
 /// Properties:
+/// * [hostname] 
+/// * [id] - portal id
+/// * [name] 
 /// * [createdAt] 
 /// * [createdBy] 
 /// * [description] 
-/// * [hostname] 
-/// * [id] - portal id
 /// * [modifiedAt] 
 /// * [modifiedBy] 
-/// * [name] 
 @BuiltValue()
 abstract class McpPortalsApiListPortals200ResponseResultInner implements Built<McpPortalsApiListPortals200ResponseResultInner, McpPortalsApiListPortals200ResponseResultInnerBuilder> {
+  @BuiltValueField(wireName: r'hostname')
+  String get hostname;
+
+  /// portal id
+  @BuiltValueField(wireName: r'id')
+  String get id;
+
+  @BuiltValueField(wireName: r'name')
+  String get name;
+
   @BuiltValueField(wireName: r'created_at')
   DateTime? get createdAt;
 
@@ -30,21 +40,11 @@ abstract class McpPortalsApiListPortals200ResponseResultInner implements Built<M
   @BuiltValueField(wireName: r'description')
   String? get description;
 
-  @BuiltValueField(wireName: r'hostname')
-  String get hostname;
-
-  /// portal id
-  @BuiltValueField(wireName: r'id')
-  String get id;
-
   @BuiltValueField(wireName: r'modified_at')
   DateTime? get modifiedAt;
 
   @BuiltValueField(wireName: r'modified_by')
   String? get modifiedBy;
-
-  @BuiltValueField(wireName: r'name')
-  String get name;
 
   McpPortalsApiListPortals200ResponseResultInner._();
 
@@ -69,6 +69,21 @@ class _$McpPortalsApiListPortals200ResponseResultInnerSerializer implements Prim
     McpPortalsApiListPortals200ResponseResultInner object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    yield r'hostname';
+    yield serializers.serialize(
+      object.hostname,
+      specifiedType: const FullType(String),
+    );
+    yield r'id';
+    yield serializers.serialize(
+      object.id,
+      specifiedType: const FullType(String),
+    );
+    yield r'name';
+    yield serializers.serialize(
+      object.name,
+      specifiedType: const FullType(String),
+    );
     if (object.createdAt != null) {
       yield r'created_at';
       yield serializers.serialize(
@@ -90,16 +105,6 @@ class _$McpPortalsApiListPortals200ResponseResultInnerSerializer implements Prim
         specifiedType: const FullType(String),
       );
     }
-    yield r'hostname';
-    yield serializers.serialize(
-      object.hostname,
-      specifiedType: const FullType(String),
-    );
-    yield r'id';
-    yield serializers.serialize(
-      object.id,
-      specifiedType: const FullType(String),
-    );
     if (object.modifiedAt != null) {
       yield r'modified_at';
       yield serializers.serialize(
@@ -114,11 +119,6 @@ class _$McpPortalsApiListPortals200ResponseResultInnerSerializer implements Prim
         specifiedType: const FullType(String),
       );
     }
-    yield r'name';
-    yield serializers.serialize(
-      object.name,
-      specifiedType: const FullType(String),
-    );
   }
 
   @override
@@ -142,6 +142,27 @@ class _$McpPortalsApiListPortals200ResponseResultInnerSerializer implements Prim
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
+        case r'hostname':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.hostname = valueDes;
+          break;
+        case r'id':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.id = valueDes;
+          break;
+        case r'name':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.name = valueDes;
+          break;
         case r'created_at':
           final valueDes = serializers.deserialize(
             value,
@@ -163,20 +184,6 @@ class _$McpPortalsApiListPortals200ResponseResultInnerSerializer implements Prim
           ) as String;
           result.description = valueDes;
           break;
-        case r'hostname':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.hostname = valueDes;
-          break;
-        case r'id':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.id = valueDes;
-          break;
         case r'modified_at':
           final valueDes = serializers.deserialize(
             value,
@@ -190,13 +197,6 @@ class _$McpPortalsApiListPortals200ResponseResultInnerSerializer implements Prim
             specifiedType: const FullType(String),
           ) as String;
           result.modifiedBy = valueDes;
-          break;
-        case r'name':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.name = valueDes;
           break;
         default:
           unhandled.add(key);

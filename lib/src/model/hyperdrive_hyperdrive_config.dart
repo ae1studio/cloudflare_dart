@@ -14,16 +14,26 @@ part 'hyperdrive_hyperdrive_config.g.dart';
 /// HyperdriveHyperdriveConfig
 ///
 /// Properties:
-/// * [caching] 
-/// * [createdOn] - Defines the creation time of the Hyperdrive configuration.
 /// * [id] - Define configurations using a unique string identifier.
-/// * [modifiedOn] - Defines the last modified time of the Hyperdrive configuration.
-/// * [mtls] 
 /// * [name] 
 /// * [origin] 
+/// * [caching] 
+/// * [createdOn] - Defines the creation time of the Hyperdrive configuration.
+/// * [modifiedOn] - Defines the last modified time of the Hyperdrive configuration.
+/// * [mtls] 
 /// * [originConnectionLimit] - The (soft) maximum number of connections the Hyperdrive is allowed to make to the origin database.
 @BuiltValue(instantiable: false)
 abstract class HyperdriveHyperdriveConfig  {
+  /// Define configurations using a unique string identifier.
+  @BuiltValueField(wireName: r'id')
+  String get id;
+
+  @BuiltValueField(wireName: r'name')
+  String get name;
+
+  @BuiltValueField(wireName: r'origin')
+  HyperdriveHyperdriveConfigOrigin get origin;
+
   @BuiltValueField(wireName: r'caching')
   HyperdriveHyperdriveCaching? get caching;
 
@@ -31,22 +41,12 @@ abstract class HyperdriveHyperdriveConfig  {
   @BuiltValueField(wireName: r'created_on')
   DateTime? get createdOn;
 
-  /// Define configurations using a unique string identifier.
-  @BuiltValueField(wireName: r'id')
-  String get id;
-
   /// Defines the last modified time of the Hyperdrive configuration.
   @BuiltValueField(wireName: r'modified_on')
   DateTime? get modifiedOn;
 
   @BuiltValueField(wireName: r'mtls')
   HyperdriveHyperdriveMtls? get mtls;
-
-  @BuiltValueField(wireName: r'name')
-  String get name;
-
-  @BuiltValueField(wireName: r'origin')
-  HyperdriveHyperdriveConfigOrigin get origin;
 
   /// The (soft) maximum number of connections the Hyperdrive is allowed to make to the origin database.
   @BuiltValueField(wireName: r'origin_connection_limit')
@@ -68,6 +68,21 @@ class _$HyperdriveHyperdriveConfigSerializer implements PrimitiveSerializer<Hype
     HyperdriveHyperdriveConfig object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    yield r'id';
+    yield serializers.serialize(
+      object.id,
+      specifiedType: const FullType(String),
+    );
+    yield r'name';
+    yield serializers.serialize(
+      object.name,
+      specifiedType: const FullType(String),
+    );
+    yield r'origin';
+    yield serializers.serialize(
+      object.origin,
+      specifiedType: const FullType(HyperdriveHyperdriveConfigOrigin),
+    );
     if (object.caching != null) {
       yield r'caching';
       yield serializers.serialize(
@@ -82,11 +97,6 @@ class _$HyperdriveHyperdriveConfigSerializer implements PrimitiveSerializer<Hype
         specifiedType: const FullType(DateTime),
       );
     }
-    yield r'id';
-    yield serializers.serialize(
-      object.id,
-      specifiedType: const FullType(String),
-    );
     if (object.modifiedOn != null) {
       yield r'modified_on';
       yield serializers.serialize(
@@ -101,16 +111,6 @@ class _$HyperdriveHyperdriveConfigSerializer implements PrimitiveSerializer<Hype
         specifiedType: const FullType(HyperdriveHyperdriveMtls),
       );
     }
-    yield r'name';
-    yield serializers.serialize(
-      object.name,
-      specifiedType: const FullType(String),
-    );
-    yield r'origin';
-    yield serializers.serialize(
-      object.origin,
-      specifiedType: const FullType(HyperdriveHyperdriveConfigOrigin),
-    );
     if (object.originConnectionLimit != null) {
       yield r'origin_connection_limit';
       yield serializers.serialize(
@@ -181,40 +181,12 @@ class _$$HyperdriveHyperdriveConfigSerializer implements PrimitiveSerializer<$Hy
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'caching':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(HyperdriveHyperdriveCaching),
-          ) as HyperdriveHyperdriveCaching;
-          result.caching.replace(valueDes);
-          break;
-        case r'created_on':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
-          result.createdOn = valueDes;
-          break;
         case r'id':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(String),
           ) as String;
           result.id = valueDes;
-          break;
-        case r'modified_on':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
-          result.modifiedOn = valueDes;
-          break;
-        case r'mtls':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(HyperdriveHyperdriveMtls),
-          ) as HyperdriveHyperdriveMtls;
-          result.mtls.replace(valueDes);
           break;
         case r'name':
           final valueDes = serializers.deserialize(
@@ -229,6 +201,34 @@ class _$$HyperdriveHyperdriveConfigSerializer implements PrimitiveSerializer<$Hy
             specifiedType: const FullType(HyperdriveHyperdriveConfigOrigin),
           ) as HyperdriveHyperdriveConfigOrigin;
           result.origin.replace(valueDes);
+          break;
+        case r'caching':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(HyperdriveHyperdriveCaching),
+          ) as HyperdriveHyperdriveCaching;
+          result.caching.replace(valueDes);
+          break;
+        case r'created_on':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(DateTime),
+          ) as DateTime;
+          result.createdOn = valueDes;
+          break;
+        case r'modified_on':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(DateTime),
+          ) as DateTime;
+          result.modifiedOn = valueDes;
+          break;
+        case r'mtls':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(HyperdriveHyperdriveMtls),
+          ) as HyperdriveHyperdriveMtls;
+          result.mtls.replace(valueDes);
           break;
         case r'origin_connection_limit':
           final valueDes = serializers.deserialize(

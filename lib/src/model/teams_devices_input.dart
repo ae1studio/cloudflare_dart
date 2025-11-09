@@ -34,37 +34,38 @@ part 'teams_devices_input.g.dart';
 /// The value to be checked against.
 ///
 /// Properties:
-/// * [exists] - Whether or not file exists.
 /// * [operatingSystem] - Operating System.
 /// * [path] - Path for the application.
-/// * [sha256] - SHA-256.
-/// * [thumbprint] - Signing certificate thumbprint.
 /// * [id] - UUID of Access List.
-/// * [domain] - Domain.
 /// * [operator_] - Operator.
-/// * [osDistroName] - Operating System Distribution Name (linux only).
-/// * [osDistroRevision] - Version of OS Distribution (linux only).
-/// * [osVersionExtra] - Additional operating system version details. For Windows, the UBR (Update Build Revision). For Mac or iOS, the Product Version Extra. For Linux, the distribution name and version.
 /// * [version] - Version.
 /// * [enabled] - Enabled.
-/// * [checkDisks] - List of volume names to be checked for encryption.
-/// * [requireAll] - Whether to check all disks for encryption.
 /// * [certificateId] - UUID of Cloudflare managed certificate.
 /// * [cn] - Certificate Common Name. This may include one or more variables in the ${ } notation. Only ${serial_number} and ${hostname} are valid variables.
 /// * [checkPrivateKey] - Confirm the certificate was not imported from another device. We recommend keeping this enabled unless the certificate was deployed without a private key.
+/// * [complianceStatus] - Compliance Status.
+/// * [connectionId] - Posture Integration ID.
+/// * [countOperator] - Count Operator.
+/// * [issueCount] - The Number of Issues.
+/// * [score] - A value between 0-100 assigned to devices set by the 3rd party posture provider.
+/// * [exists] - Whether or not file exists.
+/// * [sha256] - SHA-256.
+/// * [thumbprint] - Signing certificate thumbprint.
+/// * [domain] - Domain.
+/// * [osDistroName] - Operating System Distribution Name (linux only).
+/// * [osDistroRevision] - Version of OS Distribution (linux only).
+/// * [osVersionExtra] - Additional operating system version details. For Windows, the UBR (Update Build Revision). For Mac or iOS, the Product Version Extra. For Linux, the distribution name and version.
+/// * [checkDisks] - List of volume names to be checked for encryption.
+/// * [requireAll] - Whether to check all disks for encryption.
 /// * [extendedKeyUsage] - List of values indicating purposes for which the certificate public key can be used.
 /// * [locations] 
 /// * [subjectAlternativeNames] - List of certificate Subject Alternative Names.
-/// * [complianceStatus] - Compliance Status.
-/// * [connectionId] - Posture Integration ID.
 /// * [lastSeen] - For more details on last seen, please refer to the Crowdstrike documentation.
 /// * [os] - Os Version.
 /// * [overall] - Overall.
 /// * [sensorConfig] - SensorConfig.
 /// * [state] - For more details on state, please refer to the Crowdstrike documentation.
 /// * [versionOperator] - Version Operator.
-/// * [countOperator] - Count Operator.
-/// * [issueCount] - The Number of Issues.
 /// * [eidLastSeen] - For more details on eid last seen, refer to the Tanium documentation.
 /// * [riskLevel] - For more details on risk level, refer to the Tanium documentation.
 /// * [scoreOperator] - Score Operator.
@@ -74,7 +75,6 @@ part 'teams_devices_input.g.dart';
 /// * [isActive] - Whether device is active.
 /// * [networkStatus] - Network status of device.
 /// * [operationalState] - Agent operational state.
-/// * [score] - A value between 0-100 assigned to devices set by the 3rd party posture provider.
 @BuiltValue()
 abstract class TeamsDevicesInput implements Built<TeamsDevicesInput, TeamsDevicesInputBuilder> {
   /// One Of [TeamsDevicesAccessSerialNumberListInputRequest], [TeamsDevicesApplicationInputRequest], [TeamsDevicesCarbonblackInputRequest], [TeamsDevicesClientCertificateInputRequest], [TeamsDevicesClientCertificateV2InputRequest], [TeamsDevicesCrowdstrikeInputRequest], [TeamsDevicesCustomS2sInputRequest], [TeamsDevicesDiskEncryptionInputRequest], [TeamsDevicesDomainJoinedInputRequest], [TeamsDevicesFileInputRequest], [TeamsDevicesFirewallInputRequest], [TeamsDevicesIntuneInputRequest], [TeamsDevicesKolideInputRequest], [TeamsDevicesOsVersionInputRequest], [TeamsDevicesSentineloneInputRequest], [TeamsDevicesSentineloneS2sInputRequest], [TeamsDevicesTaniumInputRequest], [TeamsDevicesUniqueClientIdInputRequest], [TeamsDevicesWorkspaceOneInputRequest]
@@ -205,6 +205,32 @@ class TeamsDevicesInputComplianceStatusEnum extends EnumClass {
   static TeamsDevicesInputComplianceStatusEnum valueOf(String name) => _$teamsDevicesInputComplianceStatusEnumValueOf(name);
 }
 
+class TeamsDevicesInputCountOperatorEnum extends EnumClass {
+
+  /// Count Operator.
+  @BuiltValueEnumConst(wireName: r'<')
+  static const TeamsDevicesInputCountOperatorEnum lessThan = _$teamsDevicesInputCountOperatorEnum_lessThan;
+  /// Count Operator.
+  @BuiltValueEnumConst(wireName: r'<=')
+  static const TeamsDevicesInputCountOperatorEnum lessThanEqual = _$teamsDevicesInputCountOperatorEnum_lessThanEqual;
+  /// Count Operator.
+  @BuiltValueEnumConst(wireName: r'>')
+  static const TeamsDevicesInputCountOperatorEnum greaterThan = _$teamsDevicesInputCountOperatorEnum_greaterThan;
+  /// Count Operator.
+  @BuiltValueEnumConst(wireName: r'>=')
+  static const TeamsDevicesInputCountOperatorEnum greaterThanEqual = _$teamsDevicesInputCountOperatorEnum_greaterThanEqual;
+  /// Count Operator.
+  @BuiltValueEnumConst(wireName: r'==')
+  static const TeamsDevicesInputCountOperatorEnum equalEqual = _$teamsDevicesInputCountOperatorEnum_equalEqual;
+
+  static Serializer<TeamsDevicesInputCountOperatorEnum> get serializer => _$teamsDevicesInputCountOperatorEnumSerializer;
+
+  const TeamsDevicesInputCountOperatorEnum._(String name): super(name);
+
+  static BuiltSet<TeamsDevicesInputCountOperatorEnum> get values => _$teamsDevicesInputCountOperatorEnumValues;
+  static TeamsDevicesInputCountOperatorEnum valueOf(String name) => _$teamsDevicesInputCountOperatorEnumValueOf(name);
+}
+
 class TeamsDevicesInputStateEnum extends EnumClass {
 
   /// For more details on state, please refer to the Crowdstrike documentation.
@@ -249,32 +275,6 @@ class TeamsDevicesInputVersionOperatorEnum extends EnumClass {
 
   static BuiltSet<TeamsDevicesInputVersionOperatorEnum> get values => _$teamsDevicesInputVersionOperatorEnumValues;
   static TeamsDevicesInputVersionOperatorEnum valueOf(String name) => _$teamsDevicesInputVersionOperatorEnumValueOf(name);
-}
-
-class TeamsDevicesInputCountOperatorEnum extends EnumClass {
-
-  /// Count Operator.
-  @BuiltValueEnumConst(wireName: r'<')
-  static const TeamsDevicesInputCountOperatorEnum lessThan = _$teamsDevicesInputCountOperatorEnum_lessThan;
-  /// Count Operator.
-  @BuiltValueEnumConst(wireName: r'<=')
-  static const TeamsDevicesInputCountOperatorEnum lessThanEqual = _$teamsDevicesInputCountOperatorEnum_lessThanEqual;
-  /// Count Operator.
-  @BuiltValueEnumConst(wireName: r'>')
-  static const TeamsDevicesInputCountOperatorEnum greaterThan = _$teamsDevicesInputCountOperatorEnum_greaterThan;
-  /// Count Operator.
-  @BuiltValueEnumConst(wireName: r'>=')
-  static const TeamsDevicesInputCountOperatorEnum greaterThanEqual = _$teamsDevicesInputCountOperatorEnum_greaterThanEqual;
-  /// Count Operator.
-  @BuiltValueEnumConst(wireName: r'==')
-  static const TeamsDevicesInputCountOperatorEnum equalEqual = _$teamsDevicesInputCountOperatorEnum_equalEqual;
-
-  static Serializer<TeamsDevicesInputCountOperatorEnum> get serializer => _$teamsDevicesInputCountOperatorEnumSerializer;
-
-  const TeamsDevicesInputCountOperatorEnum._(String name): super(name);
-
-  static BuiltSet<TeamsDevicesInputCountOperatorEnum> get values => _$teamsDevicesInputCountOperatorEnumValues;
-  static TeamsDevicesInputCountOperatorEnum valueOf(String name) => _$teamsDevicesInputCountOperatorEnumValueOf(name);
 }
 
 class TeamsDevicesInputRiskLevelEnum extends EnumClass {

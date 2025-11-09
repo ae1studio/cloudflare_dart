@@ -8,16 +8,16 @@ part of 'post_indicator_create_bulk_request.dart';
 
 class _$PostIndicatorCreateBulkRequest extends PostIndicatorCreateBulkRequest {
   @override
-  final bool? autoCreateType;
-  @override
   final BuiltList<PostIndicatorCreateBulkRequestIndicatorsInner> indicators;
+  @override
+  final bool? autoCreateType;
 
   factory _$PostIndicatorCreateBulkRequest(
           [void Function(PostIndicatorCreateBulkRequestBuilder)? updates]) =>
       (PostIndicatorCreateBulkRequestBuilder()..update(updates))._build();
 
   _$PostIndicatorCreateBulkRequest._(
-      {this.autoCreateType, required this.indicators})
+      {required this.indicators, this.autoCreateType})
       : super._();
   @override
   PostIndicatorCreateBulkRequest rebuild(
@@ -32,15 +32,15 @@ class _$PostIndicatorCreateBulkRequest extends PostIndicatorCreateBulkRequest {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is PostIndicatorCreateBulkRequest &&
-        autoCreateType == other.autoCreateType &&
-        indicators == other.indicators;
+        indicators == other.indicators &&
+        autoCreateType == other.autoCreateType;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, autoCreateType.hashCode);
     _$hash = $jc(_$hash, indicators.hashCode);
+    _$hash = $jc(_$hash, autoCreateType.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -48,8 +48,8 @@ class _$PostIndicatorCreateBulkRequest extends PostIndicatorCreateBulkRequest {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'PostIndicatorCreateBulkRequest')
-          ..add('autoCreateType', autoCreateType)
-          ..add('indicators', indicators))
+          ..add('indicators', indicators)
+          ..add('autoCreateType', autoCreateType))
         .toString();
   }
 }
@@ -60,11 +60,6 @@ class PostIndicatorCreateBulkRequestBuilder
             PostIndicatorCreateBulkRequestBuilder> {
   _$PostIndicatorCreateBulkRequest? _$v;
 
-  bool? _autoCreateType;
-  bool? get autoCreateType => _$this._autoCreateType;
-  set autoCreateType(bool? autoCreateType) =>
-      _$this._autoCreateType = autoCreateType;
-
   ListBuilder<PostIndicatorCreateBulkRequestIndicatorsInner>? _indicators;
   ListBuilder<PostIndicatorCreateBulkRequestIndicatorsInner> get indicators =>
       _$this._indicators ??=
@@ -74,6 +69,11 @@ class PostIndicatorCreateBulkRequestBuilder
               indicators) =>
       _$this._indicators = indicators;
 
+  bool? _autoCreateType;
+  bool? get autoCreateType => _$this._autoCreateType;
+  set autoCreateType(bool? autoCreateType) =>
+      _$this._autoCreateType = autoCreateType;
+
   PostIndicatorCreateBulkRequestBuilder() {
     PostIndicatorCreateBulkRequest._defaults(this);
   }
@@ -81,8 +81,8 @@ class PostIndicatorCreateBulkRequestBuilder
   PostIndicatorCreateBulkRequestBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _autoCreateType = $v.autoCreateType;
       _indicators = $v.indicators.toBuilder();
+      _autoCreateType = $v.autoCreateType;
       _$v = null;
     }
     return this;
@@ -106,8 +106,8 @@ class PostIndicatorCreateBulkRequestBuilder
     try {
       _$result = _$v ??
           _$PostIndicatorCreateBulkRequest._(
-            autoCreateType: autoCreateType,
             indicators: indicators.build(),
+            autoCreateType: autoCreateType,
           );
     } catch (_) {
       late String _$failedField;

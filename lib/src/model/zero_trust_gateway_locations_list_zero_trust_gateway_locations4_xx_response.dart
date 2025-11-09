@@ -20,8 +20,8 @@ part 'zero_trust_gateway_locations_list_zero_trust_gateway_locations4_xx_respons
 /// * [errors] 
 /// * [messages] 
 /// * [success] - Indicate whether the API call was successful.
-/// * [resultInfo] 
 /// * [result] 
+/// * [resultInfo] 
 @BuiltValue()
 abstract class ZeroTrustGatewayLocationsListZeroTrustGatewayLocations4XXResponse implements ZeroTrustGatewayApiResponseCommonFailure, ZeroTrustGatewayComponentsSchemasResponseCollection, Built<ZeroTrustGatewayLocationsListZeroTrustGatewayLocations4XXResponse, ZeroTrustGatewayLocationsListZeroTrustGatewayLocations4XXResponseBuilder> {
   ZeroTrustGatewayLocationsListZeroTrustGatewayLocations4XXResponse._();

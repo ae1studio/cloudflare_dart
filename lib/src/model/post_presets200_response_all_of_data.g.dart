@@ -15,9 +15,9 @@ class _$PostPresets200ResponseAllOfData
   @override
   final String name;
   @override
-  final RealtimekitPresetPermissions? permissions;
-  @override
   final RealtimekitPresetUi ui;
+  @override
+  final RealtimekitPresetPermissions? permissions;
 
   factory _$PostPresets200ResponseAllOfData(
           [void Function(PostPresets200ResponseAllOfDataBuilder)? updates]) =>
@@ -27,8 +27,8 @@ class _$PostPresets200ResponseAllOfData
       {required this.id,
       required this.config,
       required this.name,
-      this.permissions,
-      required this.ui})
+      required this.ui,
+      this.permissions})
       : super._();
   @override
   PostPresets200ResponseAllOfData rebuild(
@@ -46,8 +46,8 @@ class _$PostPresets200ResponseAllOfData
         id == other.id &&
         config == other.config &&
         name == other.name &&
-        permissions == other.permissions &&
-        ui == other.ui;
+        ui == other.ui &&
+        permissions == other.permissions;
   }
 
   @override
@@ -56,8 +56,8 @@ class _$PostPresets200ResponseAllOfData
     _$hash = $jc(_$hash, id.hashCode);
     _$hash = $jc(_$hash, config.hashCode);
     _$hash = $jc(_$hash, name.hashCode);
-    _$hash = $jc(_$hash, permissions.hashCode);
     _$hash = $jc(_$hash, ui.hashCode);
+    _$hash = $jc(_$hash, permissions.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -68,8 +68,8 @@ class _$PostPresets200ResponseAllOfData
           ..add('id', id)
           ..add('config', config)
           ..add('name', name)
-          ..add('permissions', permissions)
-          ..add('ui', ui))
+          ..add('ui', ui)
+          ..add('permissions', permissions))
         .toString();
   }
 }
@@ -95,16 +95,16 @@ class PostPresets200ResponseAllOfDataBuilder
   String? get name => _$this._name;
   set name(covariant String? name) => _$this._name = name;
 
+  RealtimekitPresetUiBuilder? _ui;
+  RealtimekitPresetUiBuilder get ui =>
+      _$this._ui ??= RealtimekitPresetUiBuilder();
+  set ui(covariant RealtimekitPresetUiBuilder? ui) => _$this._ui = ui;
+
   RealtimekitPresetPermissionsBuilder? _permissions;
   RealtimekitPresetPermissionsBuilder get permissions =>
       _$this._permissions ??= RealtimekitPresetPermissionsBuilder();
   set permissions(covariant RealtimekitPresetPermissionsBuilder? permissions) =>
       _$this._permissions = permissions;
-
-  RealtimekitPresetUiBuilder? _ui;
-  RealtimekitPresetUiBuilder get ui =>
-      _$this._ui ??= RealtimekitPresetUiBuilder();
-  set ui(covariant RealtimekitPresetUiBuilder? ui) => _$this._ui = ui;
 
   PostPresets200ResponseAllOfDataBuilder() {
     PostPresets200ResponseAllOfData._defaults(this);
@@ -116,8 +116,8 @@ class PostPresets200ResponseAllOfDataBuilder
       _id = $v.id;
       _config = $v.config.toBuilder();
       _name = $v.name;
-      _permissions = $v.permissions?.toBuilder();
       _ui = $v.ui.toBuilder();
+      _permissions = $v.permissions?.toBuilder();
       _$v = null;
     }
     return this;
@@ -146,8 +146,8 @@ class PostPresets200ResponseAllOfDataBuilder
             config: config.build(),
             name: BuiltValueNullFieldError.checkNotNull(
                 name, r'PostPresets200ResponseAllOfData', 'name'),
-            permissions: _permissions?.build(),
             ui: ui.build(),
+            permissions: _permissions?.build(),
           );
     } catch (_) {
       late String _$failedField;
@@ -155,10 +155,10 @@ class PostPresets200ResponseAllOfDataBuilder
         _$failedField = 'config';
         config.build();
 
-        _$failedField = 'permissions';
-        _permissions?.build();
         _$failedField = 'ui';
         ui.build();
+        _$failedField = 'permissions';
+        _permissions?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
             r'PostPresets200ResponseAllOfData', _$failedField, e.toString());

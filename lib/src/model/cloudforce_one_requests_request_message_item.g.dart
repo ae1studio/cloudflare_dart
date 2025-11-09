@@ -13,13 +13,13 @@ class _$CloudforceOneRequestsRequestMessageItem
   @override
   final String content;
   @override
-  final DateTime? created;
-  @override
   final int id;
   @override
   final bool isFollowOnRequest;
   @override
   final DateTime updated;
+  @override
+  final DateTime? created;
 
   factory _$CloudforceOneRequestsRequestMessageItem(
           [void Function(CloudforceOneRequestsRequestMessageItemBuilder)?
@@ -30,10 +30,10 @@ class _$CloudforceOneRequestsRequestMessageItem
   _$CloudforceOneRequestsRequestMessageItem._(
       {required this.author,
       required this.content,
-      this.created,
       required this.id,
       required this.isFollowOnRequest,
-      required this.updated})
+      required this.updated,
+      this.created})
       : super._();
   @override
   CloudforceOneRequestsRequestMessageItem rebuild(
@@ -51,10 +51,10 @@ class _$CloudforceOneRequestsRequestMessageItem
     return other is CloudforceOneRequestsRequestMessageItem &&
         author == other.author &&
         content == other.content &&
-        created == other.created &&
         id == other.id &&
         isFollowOnRequest == other.isFollowOnRequest &&
-        updated == other.updated;
+        updated == other.updated &&
+        created == other.created;
   }
 
   @override
@@ -62,10 +62,10 @@ class _$CloudforceOneRequestsRequestMessageItem
     var _$hash = 0;
     _$hash = $jc(_$hash, author.hashCode);
     _$hash = $jc(_$hash, content.hashCode);
-    _$hash = $jc(_$hash, created.hashCode);
     _$hash = $jc(_$hash, id.hashCode);
     _$hash = $jc(_$hash, isFollowOnRequest.hashCode);
     _$hash = $jc(_$hash, updated.hashCode);
+    _$hash = $jc(_$hash, created.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -76,10 +76,10 @@ class _$CloudforceOneRequestsRequestMessageItem
             r'CloudforceOneRequestsRequestMessageItem')
           ..add('author', author)
           ..add('content', content)
-          ..add('created', created)
           ..add('id', id)
           ..add('isFollowOnRequest', isFollowOnRequest)
-          ..add('updated', updated))
+          ..add('updated', updated)
+          ..add('created', created))
         .toString();
   }
 }
@@ -98,10 +98,6 @@ class CloudforceOneRequestsRequestMessageItemBuilder
   String? get content => _$this._content;
   set content(String? content) => _$this._content = content;
 
-  DateTime? _created;
-  DateTime? get created => _$this._created;
-  set created(DateTime? created) => _$this._created = created;
-
   int? _id;
   int? get id => _$this._id;
   set id(int? id) => _$this._id = id;
@@ -115,6 +111,10 @@ class CloudforceOneRequestsRequestMessageItemBuilder
   DateTime? get updated => _$this._updated;
   set updated(DateTime? updated) => _$this._updated = updated;
 
+  DateTime? _created;
+  DateTime? get created => _$this._created;
+  set created(DateTime? created) => _$this._created = created;
+
   CloudforceOneRequestsRequestMessageItemBuilder() {
     CloudforceOneRequestsRequestMessageItem._defaults(this);
   }
@@ -124,10 +124,10 @@ class CloudforceOneRequestsRequestMessageItemBuilder
     if ($v != null) {
       _author = $v.author;
       _content = $v.content;
-      _created = $v.created;
       _id = $v.id;
       _isFollowOnRequest = $v.isFollowOnRequest;
       _updated = $v.updated;
+      _created = $v.created;
       _$v = null;
     }
     return this;
@@ -154,7 +154,6 @@ class CloudforceOneRequestsRequestMessageItemBuilder
               author, r'CloudforceOneRequestsRequestMessageItem', 'author'),
           content: BuiltValueNullFieldError.checkNotNull(
               content, r'CloudforceOneRequestsRequestMessageItem', 'content'),
-          created: created,
           id: BuiltValueNullFieldError.checkNotNull(
               id, r'CloudforceOneRequestsRequestMessageItem', 'id'),
           isFollowOnRequest: BuiltValueNullFieldError.checkNotNull(
@@ -163,6 +162,7 @@ class CloudforceOneRequestsRequestMessageItemBuilder
               'isFollowOnRequest'),
           updated: BuiltValueNullFieldError.checkNotNull(
               updated, r'CloudforceOneRequestsRequestMessageItem', 'updated'),
+          created: created,
         );
     replace(_$result);
     return _$result;

@@ -20,8 +20,8 @@ part 'dns_records_for_a_zone_list_dns_records4_xx_response.g.dart';
 /// * [errors] 
 /// * [messages] 
 /// * [success] - Whether the API call was successful.
-/// * [resultInfo] 
 /// * [result] 
+/// * [resultInfo] 
 @BuiltValue()
 abstract class DnsRecordsForAZoneListDnsRecords4XXResponse implements DnsRecordsApiResponseCommonFailure, DnsRecordsDnsResponseCollection, Built<DnsRecordsForAZoneListDnsRecords4XXResponse, DnsRecordsForAZoneListDnsRecords4XXResponseBuilder> {
   DnsRecordsForAZoneListDnsRecords4XXResponse._();

@@ -7,6 +7,7 @@ import 'package:cloudflare_dart/src/model/realtimekit_generic_success_response.d
 import 'package:cloudflare_dart/src/model/regenerate_token200_response_all_of_data.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
+import 'package:built_value/json_object.dart';
 
 part 'regenerate_token200_response.g.dart';
 

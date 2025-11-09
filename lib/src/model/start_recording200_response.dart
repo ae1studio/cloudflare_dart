@@ -7,14 +7,15 @@ import 'package:cloudflare_dart/src/model/start_recording200_response_all_of_dat
 import 'package:cloudflare_dart/src/model/realtimekit_generic_success_response.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
+import 'package:built_value/json_object.dart';
 
 part 'start_recording200_response.g.dart';
 
 /// StartRecording200Response
 ///
 /// Properties:
-/// * [data] 
 /// * [success] - Success status of the operation
+/// * [data] 
 @BuiltValue()
 abstract class StartRecording200Response implements RealtimekitGenericSuccessResponse, Built<StartRecording200Response, StartRecording200ResponseBuilder> {
   StartRecording200Response._();

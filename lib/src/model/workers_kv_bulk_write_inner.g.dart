@@ -8,29 +8,29 @@ part of 'workers_kv_bulk_write_inner.dart';
 
 class _$WorkersKvBulkWriteInner extends WorkersKvBulkWriteInner {
   @override
+  final String key;
+  @override
+  final String value;
+  @override
   final bool? base64;
   @override
   final num? expiration;
   @override
   final num? expirationTtl;
   @override
-  final String key;
-  @override
   final JsonObject? metadata;
-  @override
-  final String value;
 
   factory _$WorkersKvBulkWriteInner(
           [void Function(WorkersKvBulkWriteInnerBuilder)? updates]) =>
       (WorkersKvBulkWriteInnerBuilder()..update(updates))._build();
 
   _$WorkersKvBulkWriteInner._(
-      {this.base64,
+      {required this.key,
+      required this.value,
+      this.base64,
       this.expiration,
       this.expirationTtl,
-      required this.key,
-      this.metadata,
-      required this.value})
+      this.metadata})
       : super._();
   @override
   WorkersKvBulkWriteInner rebuild(
@@ -45,23 +45,23 @@ class _$WorkersKvBulkWriteInner extends WorkersKvBulkWriteInner {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is WorkersKvBulkWriteInner &&
+        key == other.key &&
+        value == other.value &&
         base64 == other.base64 &&
         expiration == other.expiration &&
         expirationTtl == other.expirationTtl &&
-        key == other.key &&
-        metadata == other.metadata &&
-        value == other.value;
+        metadata == other.metadata;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
+    _$hash = $jc(_$hash, key.hashCode);
+    _$hash = $jc(_$hash, value.hashCode);
     _$hash = $jc(_$hash, base64.hashCode);
     _$hash = $jc(_$hash, expiration.hashCode);
     _$hash = $jc(_$hash, expirationTtl.hashCode);
-    _$hash = $jc(_$hash, key.hashCode);
     _$hash = $jc(_$hash, metadata.hashCode);
-    _$hash = $jc(_$hash, value.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -69,12 +69,12 @@ class _$WorkersKvBulkWriteInner extends WorkersKvBulkWriteInner {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'WorkersKvBulkWriteInner')
+          ..add('key', key)
+          ..add('value', value)
           ..add('base64', base64)
           ..add('expiration', expiration)
           ..add('expirationTtl', expirationTtl)
-          ..add('key', key)
-          ..add('metadata', metadata)
-          ..add('value', value))
+          ..add('metadata', metadata))
         .toString();
   }
 }
@@ -83,6 +83,14 @@ class WorkersKvBulkWriteInnerBuilder
     implements
         Builder<WorkersKvBulkWriteInner, WorkersKvBulkWriteInnerBuilder> {
   _$WorkersKvBulkWriteInner? _$v;
+
+  String? _key;
+  String? get key => _$this._key;
+  set key(String? key) => _$this._key = key;
+
+  String? _value;
+  String? get value => _$this._value;
+  set value(String? value) => _$this._value = value;
 
   bool? _base64;
   bool? get base64 => _$this._base64;
@@ -97,17 +105,9 @@ class WorkersKvBulkWriteInnerBuilder
   set expirationTtl(num? expirationTtl) =>
       _$this._expirationTtl = expirationTtl;
 
-  String? _key;
-  String? get key => _$this._key;
-  set key(String? key) => _$this._key = key;
-
   JsonObject? _metadata;
   JsonObject? get metadata => _$this._metadata;
   set metadata(JsonObject? metadata) => _$this._metadata = metadata;
-
-  String? _value;
-  String? get value => _$this._value;
-  set value(String? value) => _$this._value = value;
 
   WorkersKvBulkWriteInnerBuilder() {
     WorkersKvBulkWriteInner._defaults(this);
@@ -116,12 +116,12 @@ class WorkersKvBulkWriteInnerBuilder
   WorkersKvBulkWriteInnerBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
+      _key = $v.key;
+      _value = $v.value;
       _base64 = $v.base64;
       _expiration = $v.expiration;
       _expirationTtl = $v.expirationTtl;
-      _key = $v.key;
       _metadata = $v.metadata;
-      _value = $v.value;
       _$v = null;
     }
     return this;
@@ -143,14 +143,14 @@ class WorkersKvBulkWriteInnerBuilder
   _$WorkersKvBulkWriteInner _build() {
     final _$result = _$v ??
         _$WorkersKvBulkWriteInner._(
+          key: BuiltValueNullFieldError.checkNotNull(
+              key, r'WorkersKvBulkWriteInner', 'key'),
+          value: BuiltValueNullFieldError.checkNotNull(
+              value, r'WorkersKvBulkWriteInner', 'value'),
           base64: base64,
           expiration: expiration,
           expirationTtl: expirationTtl,
-          key: BuiltValueNullFieldError.checkNotNull(
-              key, r'WorkersKvBulkWriteInner', 'key'),
           metadata: metadata,
-          value: BuiltValueNullFieldError.checkNotNull(
-              value, r'WorkersKvBulkWriteInner', 'value'),
         );
     replace(_$result);
     return _$result;

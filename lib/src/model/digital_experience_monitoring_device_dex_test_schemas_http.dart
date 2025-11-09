@@ -15,10 +15,10 @@ part 'digital_experience_monitoring_device_dex_test_schemas_http.g.dart';
 ///
 /// Properties:
 /// * [data] 
-/// * [description] - Additional details about the test.
 /// * [enabled] - Determines whether or not the test is active.
 /// * [interval] - How often the test will run.
 /// * [name] - The name of the DEX test. Must be unique.
+/// * [description] - Additional details about the test.
 /// * [targetPolicies] - DEX rules targeted by this test
 /// * [targeted] 
 /// * [testId] - The unique identifier for the test.
@@ -26,10 +26,6 @@ part 'digital_experience_monitoring_device_dex_test_schemas_http.g.dart';
 abstract class DigitalExperienceMonitoringDeviceDexTestSchemasHttp implements Built<DigitalExperienceMonitoringDeviceDexTestSchemasHttp, DigitalExperienceMonitoringDeviceDexTestSchemasHttpBuilder> {
   @BuiltValueField(wireName: r'data')
   DigitalExperienceMonitoringDeviceDexTestSchemasData get data;
-
-  /// Additional details about the test.
-  @BuiltValueField(wireName: r'description')
-  String? get description;
 
   /// Determines whether or not the test is active.
   @BuiltValueField(wireName: r'enabled')
@@ -42,6 +38,10 @@ abstract class DigitalExperienceMonitoringDeviceDexTestSchemasHttp implements Bu
   /// The name of the DEX test. Must be unique.
   @BuiltValueField(wireName: r'name')
   String get name;
+
+  /// Additional details about the test.
+  @BuiltValueField(wireName: r'description')
+  String? get description;
 
   /// DEX rules targeted by this test
   @BuiltValueField(wireName: r'target_policies')
@@ -82,13 +82,6 @@ class _$DigitalExperienceMonitoringDeviceDexTestSchemasHttpSerializer implements
       object.data,
       specifiedType: const FullType(DigitalExperienceMonitoringDeviceDexTestSchemasData),
     );
-    if (object.description != null) {
-      yield r'description';
-      yield serializers.serialize(
-        object.description,
-        specifiedType: const FullType(String),
-      );
-    }
     yield r'enabled';
     yield serializers.serialize(
       object.enabled,
@@ -104,6 +97,13 @@ class _$DigitalExperienceMonitoringDeviceDexTestSchemasHttpSerializer implements
       object.name,
       specifiedType: const FullType(String),
     );
+    if (object.description != null) {
+      yield r'description';
+      yield serializers.serialize(
+        object.description,
+        specifiedType: const FullType(String),
+      );
+    }
     if (object.targetPolicies != null) {
       yield r'target_policies';
       yield serializers.serialize(
@@ -155,13 +155,6 @@ class _$DigitalExperienceMonitoringDeviceDexTestSchemasHttpSerializer implements
           ) as DigitalExperienceMonitoringDeviceDexTestSchemasData;
           result.data.replace(valueDes);
           break;
-        case r'description':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.description = valueDes;
-          break;
         case r'enabled':
           final valueDes = serializers.deserialize(
             value,
@@ -182,6 +175,13 @@ class _$DigitalExperienceMonitoringDeviceDexTestSchemasHttpSerializer implements
             specifiedType: const FullType(String),
           ) as String;
           result.name = valueDes;
+          break;
+        case r'description':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.description = valueDes;
           break;
         case r'target_policies':
           final valueDes = serializers.deserialize(

@@ -14,18 +14,18 @@ part 'mconn_customer_events_get_result.g.dart';
 ///
 /// Properties:
 /// * [count] 
-/// * [cursor] 
 /// * [items] 
+/// * [cursor] 
 @BuiltValue()
 abstract class MconnCustomerEventsGetResult implements Built<MconnCustomerEventsGetResult, MconnCustomerEventsGetResultBuilder> {
   @BuiltValueField(wireName: r'count')
   num get count;
 
-  @BuiltValueField(wireName: r'cursor')
-  String? get cursor;
-
   @BuiltValueField(wireName: r'items')
   BuiltList<MconnEventMetadata> get items;
+
+  @BuiltValueField(wireName: r'cursor')
+  String? get cursor;
 
   MconnCustomerEventsGetResult._();
 
@@ -55,6 +55,11 @@ class _$MconnCustomerEventsGetResultSerializer implements PrimitiveSerializer<Mc
       object.count,
       specifiedType: const FullType(num),
     );
+    yield r'items';
+    yield serializers.serialize(
+      object.items,
+      specifiedType: const FullType(BuiltList, [FullType(MconnEventMetadata)]),
+    );
     if (object.cursor != null) {
       yield r'cursor';
       yield serializers.serialize(
@@ -62,11 +67,6 @@ class _$MconnCustomerEventsGetResultSerializer implements PrimitiveSerializer<Mc
         specifiedType: const FullType(String),
       );
     }
-    yield r'items';
-    yield serializers.serialize(
-      object.items,
-      specifiedType: const FullType(BuiltList, [FullType(MconnEventMetadata)]),
-    );
   }
 
   @override
@@ -97,19 +97,19 @@ class _$MconnCustomerEventsGetResultSerializer implements PrimitiveSerializer<Mc
           ) as num;
           result.count = valueDes;
           break;
-        case r'cursor':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.cursor = valueDes;
-          break;
         case r'items':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(BuiltList, [FullType(MconnEventMetadata)]),
           ) as BuiltList<MconnEventMetadata>;
           result.items.replace(valueDes);
+          break;
+        case r'cursor':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.cursor = valueDes;
           break;
         default:
           unhandled.add(key);

@@ -14,7 +14,6 @@ part 'bot_management_feedback_report.g.dart';
 /// BotManagementFeedbackReport
 ///
 /// Properties:
-/// * [createdAt] 
 /// * [description] 
 /// * [expression] - Wirefilter expression describing the traffic being reported.
 /// * [firstRequestSeenAt] 
@@ -23,13 +22,11 @@ part 'bot_management_feedback_report.g.dart';
 /// * [requestsByAttribute] - Top attributes contributing to the feedback sample. Keys include topASNs, topCountries, topHosts, topIPs, topJA3Hashes, topJA4s, topPaths, topUserAgents.
 /// * [requestsByScore] - Map of bot scores (1-99) to request counts. Sum must equal `requests`.
 /// * [requestsByScoreSrc] - Map of score source to request counts. Sum must equal `requests`.
-/// * [subtype] 
 /// * [type] 
+/// * [createdAt] 
+/// * [subtype] 
 @BuiltValue(instantiable: false)
 abstract class BotManagementFeedbackReport  {
-  @BuiltValueField(wireName: r'created_at')
-  DateTime? get createdAt;
-
   @BuiltValueField(wireName: r'description')
   String get description;
 
@@ -58,12 +55,15 @@ abstract class BotManagementFeedbackReport  {
   @BuiltValueField(wireName: r'requests_by_score_src')
   BuiltMap<String, int> get requestsByScoreSrc;
 
-  @BuiltValueField(wireName: r'subtype')
-  String? get subtype;
-
   @BuiltValueField(wireName: r'type')
   BotManagementFeedbackType get type;
   // enum typeEnum {  false_positive,  false_negative,  };
+
+  @BuiltValueField(wireName: r'created_at')
+  DateTime? get createdAt;
+
+  @BuiltValueField(wireName: r'subtype')
+  String? get subtype;
 
   @BuiltValueSerializer(custom: true)
   static Serializer<BotManagementFeedbackReport> get serializer => _$BotManagementFeedbackReportSerializer();
@@ -81,13 +81,6 @@ class _$BotManagementFeedbackReportSerializer implements PrimitiveSerializer<Bot
     BotManagementFeedbackReport object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
-    if (object.createdAt != null) {
-      yield r'created_at';
-      yield serializers.serialize(
-        object.createdAt,
-        specifiedType: const FullType(DateTime),
-      );
-    }
     yield r'description';
     yield serializers.serialize(
       object.description,
@@ -128,6 +121,18 @@ class _$BotManagementFeedbackReportSerializer implements PrimitiveSerializer<Bot
       object.requestsByScoreSrc,
       specifiedType: const FullType(BuiltMap, [FullType(String), FullType(int)]),
     );
+    yield r'type';
+    yield serializers.serialize(
+      object.type,
+      specifiedType: const FullType(BotManagementFeedbackType),
+    );
+    if (object.createdAt != null) {
+      yield r'created_at';
+      yield serializers.serialize(
+        object.createdAt,
+        specifiedType: const FullType(DateTime),
+      );
+    }
     if (object.subtype != null) {
       yield r'subtype';
       yield serializers.serialize(
@@ -135,11 +140,6 @@ class _$BotManagementFeedbackReportSerializer implements PrimitiveSerializer<Bot
         specifiedType: const FullType(String),
       );
     }
-    yield r'type';
-    yield serializers.serialize(
-      object.type,
-      specifiedType: const FullType(BotManagementFeedbackType),
-    );
   }
 
   @override
@@ -203,13 +203,6 @@ class _$$BotManagementFeedbackReportSerializer implements PrimitiveSerializer<$B
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'created_at':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
-          result.createdAt = valueDes;
-          break;
         case r'description':
           final valueDes = serializers.deserialize(
             value,
@@ -266,19 +259,26 @@ class _$$BotManagementFeedbackReportSerializer implements PrimitiveSerializer<$B
           ) as BuiltMap<String, int>;
           result.requestsByScoreSrc.replace(valueDes);
           break;
-        case r'subtype':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.subtype = valueDes;
-          break;
         case r'type':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(BotManagementFeedbackType),
           ) as BotManagementFeedbackType;
           result.type = valueDes;
+          break;
+        case r'created_at':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(DateTime),
+          ) as DateTime;
+          result.createdAt = valueDes;
+          break;
+        case r'subtype':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.subtype = valueDes;
           break;
         default:
           unhandled.add(key);

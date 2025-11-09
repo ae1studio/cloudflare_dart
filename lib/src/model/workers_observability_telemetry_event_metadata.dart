@@ -11,6 +11,7 @@ part 'workers_observability_telemetry_event_metadata.g.dart';
 /// WorkersObservabilityTelemetryEventMetadata
 ///
 /// Properties:
+/// * [id] 
 /// * [account] 
 /// * [cloudService] 
 /// * [coldStart] 
@@ -20,7 +21,6 @@ part 'workers_observability_telemetry_event_metadata.g.dart';
 /// * [error] 
 /// * [errorTemplate] 
 /// * [fingerprint] 
-/// * [id] 
 /// * [level] 
 /// * [message] 
 /// * [messageTemplate] 
@@ -43,6 +43,9 @@ part 'workers_observability_telemetry_event_metadata.g.dart';
 /// * [url] 
 @BuiltValue()
 abstract class WorkersObservabilityTelemetryEventMetadata implements Built<WorkersObservabilityTelemetryEventMetadata, WorkersObservabilityTelemetryEventMetadataBuilder> {
+  @BuiltValueField(wireName: r'id')
+  String get id;
+
   @BuiltValueField(wireName: r'account')
   String? get account;
 
@@ -69,9 +72,6 @@ abstract class WorkersObservabilityTelemetryEventMetadata implements Built<Worke
 
   @BuiltValueField(wireName: r'fingerprint')
   String? get fingerprint;
-
-  @BuiltValueField(wireName: r'id')
-  String get id;
 
   @BuiltValueField(wireName: r'level')
   String? get level;
@@ -156,6 +156,11 @@ class _$WorkersObservabilityTelemetryEventMetadataSerializer implements Primitiv
     WorkersObservabilityTelemetryEventMetadata object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    yield r'id';
+    yield serializers.serialize(
+      object.id,
+      specifiedType: const FullType(String),
+    );
     if (object.account != null) {
       yield r'account';
       yield serializers.serialize(
@@ -219,11 +224,6 @@ class _$WorkersObservabilityTelemetryEventMetadataSerializer implements Primitiv
         specifiedType: const FullType(String),
       );
     }
-    yield r'id';
-    yield serializers.serialize(
-      object.id,
-      specifiedType: const FullType(String),
-    );
     if (object.level != null) {
       yield r'level';
       yield serializers.serialize(
@@ -387,6 +387,13 @@ class _$WorkersObservabilityTelemetryEventMetadataSerializer implements Primitiv
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
+        case r'id':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.id = valueDes;
+          break;
         case r'account':
           final valueDes = serializers.deserialize(
             value,
@@ -449,13 +456,6 @@ class _$WorkersObservabilityTelemetryEventMetadataSerializer implements Primitiv
             specifiedType: const FullType(String),
           ) as String;
           result.fingerprint = valueDes;
-          break;
-        case r'id':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.id = valueDes;
           break;
         case r'level':
           final valueDes = serializers.deserialize(

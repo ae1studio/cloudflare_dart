@@ -18,12 +18,12 @@ part 'firewall_schemas_rule.g.dart';
 /// Properties:
 /// * [allowedModes] - The available actions that a rule can apply to a matched request.
 /// * [configuration] 
-/// * [createdOn] - The timestamp of when the rule was created.
 /// * [id] - The unique identifier of the IP Access rule.
 /// * [mode] 
+/// * [scope] 
+/// * [createdOn] - The timestamp of when the rule was created.
 /// * [modifiedOn] - The timestamp of when the rule was last modified.
 /// * [notes] - An informative summary of the rule, typically used as a reminder or explanation.
-/// * [scope] 
 @BuiltValue()
 abstract class FirewallSchemasRule implements FirewallRule, Built<FirewallSchemasRule, FirewallSchemasRuleBuilder> {
   @BuiltValueField(wireName: r'scope')

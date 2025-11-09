@@ -86,8 +86,6 @@ class _$AigConfigGetGatewayDynamicRouteVersion200ResponseResult
   final AigConfigGetGatewayDynamicRouteVersion200ResponseResultActiveEnum
       active;
   @override
-  final String? comment;
-  @override
   final String createdAt;
   @override
   final String data;
@@ -105,6 +103,8 @@ class _$AigConfigGetGatewayDynamicRouteVersion200ResponseResult
   final String name;
   @override
   final String versionId;
+  @override
+  final String? comment;
 
   factory _$AigConfigGetGatewayDynamicRouteVersion200ResponseResult(
           [void Function(
@@ -117,7 +117,6 @@ class _$AigConfigGetGatewayDynamicRouteVersion200ResponseResult
   _$AigConfigGetGatewayDynamicRouteVersion200ResponseResult._(
       {required this.accountTag,
       required this.active,
-      this.comment,
       required this.createdAt,
       required this.data,
       required this.elements,
@@ -125,7 +124,8 @@ class _$AigConfigGetGatewayDynamicRouteVersion200ResponseResult
       required this.id,
       required this.modifiedAt,
       required this.name,
-      required this.versionId})
+      required this.versionId,
+      this.comment})
       : super._();
   @override
   AigConfigGetGatewayDynamicRouteVersion200ResponseResult rebuild(
@@ -145,7 +145,6 @@ class _$AigConfigGetGatewayDynamicRouteVersion200ResponseResult
     return other is AigConfigGetGatewayDynamicRouteVersion200ResponseResult &&
         accountTag == other.accountTag &&
         active == other.active &&
-        comment == other.comment &&
         createdAt == other.createdAt &&
         data == other.data &&
         elements == other.elements &&
@@ -153,7 +152,8 @@ class _$AigConfigGetGatewayDynamicRouteVersion200ResponseResult
         id == other.id &&
         modifiedAt == other.modifiedAt &&
         name == other.name &&
-        versionId == other.versionId;
+        versionId == other.versionId &&
+        comment == other.comment;
   }
 
   @override
@@ -161,7 +161,6 @@ class _$AigConfigGetGatewayDynamicRouteVersion200ResponseResult
     var _$hash = 0;
     _$hash = $jc(_$hash, accountTag.hashCode);
     _$hash = $jc(_$hash, active.hashCode);
-    _$hash = $jc(_$hash, comment.hashCode);
     _$hash = $jc(_$hash, createdAt.hashCode);
     _$hash = $jc(_$hash, data.hashCode);
     _$hash = $jc(_$hash, elements.hashCode);
@@ -170,6 +169,7 @@ class _$AigConfigGetGatewayDynamicRouteVersion200ResponseResult
     _$hash = $jc(_$hash, modifiedAt.hashCode);
     _$hash = $jc(_$hash, name.hashCode);
     _$hash = $jc(_$hash, versionId.hashCode);
+    _$hash = $jc(_$hash, comment.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -180,7 +180,6 @@ class _$AigConfigGetGatewayDynamicRouteVersion200ResponseResult
             r'AigConfigGetGatewayDynamicRouteVersion200ResponseResult')
           ..add('accountTag', accountTag)
           ..add('active', active)
-          ..add('comment', comment)
           ..add('createdAt', createdAt)
           ..add('data', data)
           ..add('elements', elements)
@@ -188,7 +187,8 @@ class _$AigConfigGetGatewayDynamicRouteVersion200ResponseResult
           ..add('id', id)
           ..add('modifiedAt', modifiedAt)
           ..add('name', name)
-          ..add('versionId', versionId))
+          ..add('versionId', versionId)
+          ..add('comment', comment))
         .toString();
   }
 }
@@ -210,10 +210,6 @@ class AigConfigGetGatewayDynamicRouteVersion200ResponseResultBuilder
           AigConfigGetGatewayDynamicRouteVersion200ResponseResultActiveEnum?
               active) =>
       _$this._active = active;
-
-  String? _comment;
-  String? get comment => _$this._comment;
-  set comment(String? comment) => _$this._comment = comment;
 
   String? _createdAt;
   String? get createdAt => _$this._createdAt;
@@ -256,6 +252,10 @@ class AigConfigGetGatewayDynamicRouteVersion200ResponseResultBuilder
   String? get versionId => _$this._versionId;
   set versionId(String? versionId) => _$this._versionId = versionId;
 
+  String? _comment;
+  String? get comment => _$this._comment;
+  set comment(String? comment) => _$this._comment = comment;
+
   AigConfigGetGatewayDynamicRouteVersion200ResponseResultBuilder() {
     AigConfigGetGatewayDynamicRouteVersion200ResponseResult._defaults(this);
   }
@@ -265,7 +265,6 @@ class AigConfigGetGatewayDynamicRouteVersion200ResponseResultBuilder
     if ($v != null) {
       _accountTag = $v.accountTag;
       _active = $v.active;
-      _comment = $v.comment;
       _createdAt = $v.createdAt;
       _data = $v.data;
       _elements = $v.elements.toBuilder();
@@ -274,6 +273,7 @@ class AigConfigGetGatewayDynamicRouteVersion200ResponseResultBuilder
       _modifiedAt = $v.modifiedAt;
       _name = $v.name;
       _versionId = $v.versionId;
+      _comment = $v.comment;
       _$v = null;
     }
     return this;
@@ -308,7 +308,6 @@ class AigConfigGetGatewayDynamicRouteVersion200ResponseResultBuilder
                 active,
                 r'AigConfigGetGatewayDynamicRouteVersion200ResponseResult',
                 'active'),
-            comment: comment,
             createdAt: BuiltValueNullFieldError.checkNotNull(
                 createdAt,
                 r'AigConfigGetGatewayDynamicRouteVersion200ResponseResult',
@@ -338,6 +337,7 @@ class AigConfigGetGatewayDynamicRouteVersion200ResponseResultBuilder
                 versionId,
                 r'AigConfigGetGatewayDynamicRouteVersion200ResponseResult',
                 'versionId'),
+            comment: comment,
           );
     } catch (_) {
       late String _$failedField;

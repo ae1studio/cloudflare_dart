@@ -11,8 +11,6 @@ class _$UrlscannerGetScanV2200ResponseDataRequestsInnerResponse
   @override
   final UrlscannerGetScanV2200ResponseDataRequestsInnerResponseAsn asn;
   @override
-  final bool? contentAvailable;
-  @override
   final num dataLength;
   @override
   final num encodedDataLength;
@@ -20,8 +18,6 @@ class _$UrlscannerGetScanV2200ResponseDataRequestsInnerResponse
   final UrlscannerGetScanV2200ResponseDataRequestsInnerResponseGeoip geoip;
   @override
   final bool hasExtraInfo;
-  @override
-  final String? hash;
   @override
   final String requestId;
   @override
@@ -31,6 +27,10 @@ class _$UrlscannerGetScanV2200ResponseDataRequestsInnerResponse
   final num size;
   @override
   final String type;
+  @override
+  final bool? contentAvailable;
+  @override
+  final String? hash;
 
   factory _$UrlscannerGetScanV2200ResponseDataRequestsInnerResponse(
           [void Function(
@@ -42,16 +42,16 @@ class _$UrlscannerGetScanV2200ResponseDataRequestsInnerResponse
 
   _$UrlscannerGetScanV2200ResponseDataRequestsInnerResponse._(
       {required this.asn,
-      this.contentAvailable,
       required this.dataLength,
       required this.encodedDataLength,
       required this.geoip,
       required this.hasExtraInfo,
-      this.hash,
       required this.requestId,
       required this.response,
       required this.size,
-      required this.type})
+      required this.type,
+      this.contentAvailable,
+      this.hash})
       : super._();
   @override
   UrlscannerGetScanV2200ResponseDataRequestsInnerResponse rebuild(
@@ -70,32 +70,32 @@ class _$UrlscannerGetScanV2200ResponseDataRequestsInnerResponse
     if (identical(other, this)) return true;
     return other is UrlscannerGetScanV2200ResponseDataRequestsInnerResponse &&
         asn == other.asn &&
-        contentAvailable == other.contentAvailable &&
         dataLength == other.dataLength &&
         encodedDataLength == other.encodedDataLength &&
         geoip == other.geoip &&
         hasExtraInfo == other.hasExtraInfo &&
-        hash == other.hash &&
         requestId == other.requestId &&
         response == other.response &&
         size == other.size &&
-        type == other.type;
+        type == other.type &&
+        contentAvailable == other.contentAvailable &&
+        hash == other.hash;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
     _$hash = $jc(_$hash, asn.hashCode);
-    _$hash = $jc(_$hash, contentAvailable.hashCode);
     _$hash = $jc(_$hash, dataLength.hashCode);
     _$hash = $jc(_$hash, encodedDataLength.hashCode);
     _$hash = $jc(_$hash, geoip.hashCode);
     _$hash = $jc(_$hash, hasExtraInfo.hashCode);
-    _$hash = $jc(_$hash, hash.hashCode);
     _$hash = $jc(_$hash, requestId.hashCode);
     _$hash = $jc(_$hash, response.hashCode);
     _$hash = $jc(_$hash, size.hashCode);
     _$hash = $jc(_$hash, type.hashCode);
+    _$hash = $jc(_$hash, contentAvailable.hashCode);
+    _$hash = $jc(_$hash, hash.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -105,16 +105,16 @@ class _$UrlscannerGetScanV2200ResponseDataRequestsInnerResponse
     return (newBuiltValueToStringHelper(
             r'UrlscannerGetScanV2200ResponseDataRequestsInnerResponse')
           ..add('asn', asn)
-          ..add('contentAvailable', contentAvailable)
           ..add('dataLength', dataLength)
           ..add('encodedDataLength', encodedDataLength)
           ..add('geoip', geoip)
           ..add('hasExtraInfo', hasExtraInfo)
-          ..add('hash', hash)
           ..add('requestId', requestId)
           ..add('response', response)
           ..add('size', size)
-          ..add('type', type))
+          ..add('type', type)
+          ..add('contentAvailable', contentAvailable)
+          ..add('hash', hash))
         .toString();
   }
 }
@@ -133,11 +133,6 @@ class UrlscannerGetScanV2200ResponseDataRequestsInnerResponseBuilder
           UrlscannerGetScanV2200ResponseDataRequestsInnerResponseAsnBuilder?
               asn) =>
       _$this._asn = asn;
-
-  bool? _contentAvailable;
-  bool? get contentAvailable => _$this._contentAvailable;
-  set contentAvailable(bool? contentAvailable) =>
-      _$this._contentAvailable = contentAvailable;
 
   num? _dataLength;
   num? get dataLength => _$this._dataLength;
@@ -161,10 +156,6 @@ class UrlscannerGetScanV2200ResponseDataRequestsInnerResponseBuilder
   bool? get hasExtraInfo => _$this._hasExtraInfo;
   set hasExtraInfo(bool? hasExtraInfo) => _$this._hasExtraInfo = hasExtraInfo;
 
-  String? _hash;
-  String? get hash => _$this._hash;
-  set hash(String? hash) => _$this._hash = hash;
-
   String? _requestId;
   String? get requestId => _$this._requestId;
   set requestId(String? requestId) => _$this._requestId = requestId;
@@ -187,6 +178,15 @@ class UrlscannerGetScanV2200ResponseDataRequestsInnerResponseBuilder
   String? get type => _$this._type;
   set type(String? type) => _$this._type = type;
 
+  bool? _contentAvailable;
+  bool? get contentAvailable => _$this._contentAvailable;
+  set contentAvailable(bool? contentAvailable) =>
+      _$this._contentAvailable = contentAvailable;
+
+  String? _hash;
+  String? get hash => _$this._hash;
+  set hash(String? hash) => _$this._hash = hash;
+
   UrlscannerGetScanV2200ResponseDataRequestsInnerResponseBuilder() {
     UrlscannerGetScanV2200ResponseDataRequestsInnerResponse._defaults(this);
   }
@@ -195,16 +195,16 @@ class UrlscannerGetScanV2200ResponseDataRequestsInnerResponseBuilder
     final $v = _$v;
     if ($v != null) {
       _asn = $v.asn.toBuilder();
-      _contentAvailable = $v.contentAvailable;
       _dataLength = $v.dataLength;
       _encodedDataLength = $v.encodedDataLength;
       _geoip = $v.geoip.toBuilder();
       _hasExtraInfo = $v.hasExtraInfo;
-      _hash = $v.hash;
       _requestId = $v.requestId;
       _response = $v.response.toBuilder();
       _size = $v.size;
       _type = $v.type;
+      _contentAvailable = $v.contentAvailable;
+      _hash = $v.hash;
       _$v = null;
     }
     return this;
@@ -232,7 +232,6 @@ class UrlscannerGetScanV2200ResponseDataRequestsInnerResponseBuilder
       _$result = _$v ??
           _$UrlscannerGetScanV2200ResponseDataRequestsInnerResponse._(
             asn: asn.build(),
-            contentAvailable: contentAvailable,
             dataLength: BuiltValueNullFieldError.checkNotNull(
                 dataLength,
                 r'UrlscannerGetScanV2200ResponseDataRequestsInnerResponse',
@@ -246,7 +245,6 @@ class UrlscannerGetScanV2200ResponseDataRequestsInnerResponseBuilder
                 hasExtraInfo,
                 r'UrlscannerGetScanV2200ResponseDataRequestsInnerResponse',
                 'hasExtraInfo'),
-            hash: hash,
             requestId: BuiltValueNullFieldError.checkNotNull(
                 requestId,
                 r'UrlscannerGetScanV2200ResponseDataRequestsInnerResponse',
@@ -260,6 +258,8 @@ class UrlscannerGetScanV2200ResponseDataRequestsInnerResponseBuilder
                 type,
                 r'UrlscannerGetScanV2200ResponseDataRequestsInnerResponse',
                 'type'),
+            contentAvailable: contentAvailable,
+            hash: hash,
           );
     } catch (_) {
       late String _$failedField;

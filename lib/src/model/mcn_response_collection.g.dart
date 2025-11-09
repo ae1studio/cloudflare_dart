@@ -12,27 +12,27 @@ abstract class McnResponseCollectionBuilder {
   ListBuilder<McnError> get messages;
   set messages(ListBuilder<McnError>? messages);
 
-  McnResultInfoBuilder get resultInfo;
-  set resultInfo(McnResultInfoBuilder? resultInfo);
-
   bool? get success;
   set success(bool? success);
+
+  McnResultInfoBuilder get resultInfo;
+  set resultInfo(McnResultInfoBuilder? resultInfo);
 }
 
 class _$$McnResponseCollection extends $McnResponseCollection {
   @override
   final BuiltList<McnError> messages;
   @override
-  final McnResultInfo? resultInfo;
-  @override
   final bool success;
+  @override
+  final McnResultInfo? resultInfo;
 
   factory _$$McnResponseCollection(
           [void Function($McnResponseCollectionBuilder)? updates]) =>
       ($McnResponseCollectionBuilder()..update(updates))._build();
 
   _$$McnResponseCollection._(
-      {required this.messages, this.resultInfo, required this.success})
+      {required this.messages, required this.success, this.resultInfo})
       : super._();
   @override
   $McnResponseCollection rebuild(
@@ -48,16 +48,16 @@ class _$$McnResponseCollection extends $McnResponseCollection {
     if (identical(other, this)) return true;
     return other is $McnResponseCollection &&
         messages == other.messages &&
-        resultInfo == other.resultInfo &&
-        success == other.success;
+        success == other.success &&
+        resultInfo == other.resultInfo;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
     _$hash = $jc(_$hash, messages.hashCode);
-    _$hash = $jc(_$hash, resultInfo.hashCode);
     _$hash = $jc(_$hash, success.hashCode);
+    _$hash = $jc(_$hash, resultInfo.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -66,8 +66,8 @@ class _$$McnResponseCollection extends $McnResponseCollection {
   String toString() {
     return (newBuiltValueToStringHelper(r'$McnResponseCollection')
           ..add('messages', messages)
-          ..add('resultInfo', resultInfo)
-          ..add('success', success))
+          ..add('success', success)
+          ..add('resultInfo', resultInfo))
         .toString();
   }
 }
@@ -84,15 +84,15 @@ class $McnResponseCollectionBuilder
   set messages(covariant ListBuilder<McnError>? messages) =>
       _$this._messages = messages;
 
+  bool? _success;
+  bool? get success => _$this._success;
+  set success(covariant bool? success) => _$this._success = success;
+
   McnResultInfoBuilder? _resultInfo;
   McnResultInfoBuilder get resultInfo =>
       _$this._resultInfo ??= McnResultInfoBuilder();
   set resultInfo(covariant McnResultInfoBuilder? resultInfo) =>
       _$this._resultInfo = resultInfo;
-
-  bool? _success;
-  bool? get success => _$this._success;
-  set success(covariant bool? success) => _$this._success = success;
 
   $McnResponseCollectionBuilder() {
     $McnResponseCollection._defaults(this);
@@ -102,8 +102,8 @@ class $McnResponseCollectionBuilder
     final $v = _$v;
     if ($v != null) {
       _messages = $v.messages.toBuilder();
-      _resultInfo = $v.resultInfo?.toBuilder();
       _success = $v.success;
+      _resultInfo = $v.resultInfo?.toBuilder();
       _$v = null;
     }
     return this;
@@ -128,15 +128,16 @@ class $McnResponseCollectionBuilder
       _$result = _$v ??
           _$$McnResponseCollection._(
             messages: messages.build(),
-            resultInfo: _resultInfo?.build(),
             success: BuiltValueNullFieldError.checkNotNull(
                 success, r'$McnResponseCollection', 'success'),
+            resultInfo: _resultInfo?.build(),
           );
     } catch (_) {
       late String _$failedField;
       try {
         _$failedField = 'messages';
         messages.build();
+
         _$failedField = 'resultInfo';
         _resultInfo?.build();
       } catch (e) {

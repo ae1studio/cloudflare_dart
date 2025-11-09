@@ -8,16 +8,17 @@ import 'package:built_collection/built_collection.dart';
 import 'package:cloudflare_dart/src/model/zones_base.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
+import 'package:built_value/json_object.dart';
 
 part 'zones_schemas_cache_level.g.dart';
 
 /// Cache Level functions based off the setting level. The basic setting will cache most static resources (i.e., css, images, and JavaScript). The simplified setting will ignore the query string when delivering a cached resource. The aggressive setting will cache all static resources, including ones with a query string. (https://support.cloudflare.com/hc/en-us/articles/200168256).
 ///
 /// Properties:
-/// * [editable] - Whether or not this setting can be modified for this zone (based on your Cloudflare plan level).
 /// * [id] - ID of the zone setting.
-/// * [modifiedOn] - last time this setting was modified.
 /// * [value] 
+/// * [editable] - Whether or not this setting can be modified for this zone (based on your Cloudflare plan level).
+/// * [modifiedOn] - last time this setting was modified.
 @BuiltValue()
 abstract class ZonesSchemasCacheLevel implements ZonesBase, Built<ZonesSchemasCacheLevel, ZonesSchemasCacheLevelBuilder> {
   ZonesSchemasCacheLevel._();

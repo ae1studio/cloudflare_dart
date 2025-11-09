@@ -20,8 +20,8 @@ part 'dns_views_for_an_account_list_internal_dns_views4_xx_response.g.dart';
 /// * [errors] 
 /// * [messages] 
 /// * [success] - Whether the API call was successful.
-/// * [resultInfo] 
 /// * [result] 
+/// * [resultInfo] 
 @BuiltValue()
 abstract class DnsViewsForAnAccountListInternalDnsViews4XXResponse implements DnsSettingsApiResponseCommonFailure, DnsSettingsDnsViewResponseCollection, Built<DnsViewsForAnAccountListInternalDnsViews4XXResponse, DnsViewsForAnAccountListInternalDnsViews4XXResponseBuilder> {
   DnsViewsForAnAccountListInternalDnsViews4XXResponse._();

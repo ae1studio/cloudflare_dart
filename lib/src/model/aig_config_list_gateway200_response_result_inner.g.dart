@@ -6,37 +6,6 @@ part of 'aig_config_list_gateway200_response_result_inner.dart';
 // BuiltValueGenerator
 // **************************************************************************
 
-const AigConfigListGateway200ResponseResultInnerLogManagementStrategyEnum
-    _$aigConfigListGateway200ResponseResultInnerLogManagementStrategyEnum_STOP_INSERTING =
-    const AigConfigListGateway200ResponseResultInnerLogManagementStrategyEnum._(
-        'STOP_INSERTING');
-const AigConfigListGateway200ResponseResultInnerLogManagementStrategyEnum
-    _$aigConfigListGateway200ResponseResultInnerLogManagementStrategyEnum_DELETE_OLDEST =
-    const AigConfigListGateway200ResponseResultInnerLogManagementStrategyEnum._(
-        'DELETE_OLDEST');
-
-AigConfigListGateway200ResponseResultInnerLogManagementStrategyEnum
-    _$aigConfigListGateway200ResponseResultInnerLogManagementStrategyEnumValueOf(
-        String name) {
-  switch (name) {
-    case 'STOP_INSERTING':
-      return _$aigConfigListGateway200ResponseResultInnerLogManagementStrategyEnum_STOP_INSERTING;
-    case 'DELETE_OLDEST':
-      return _$aigConfigListGateway200ResponseResultInnerLogManagementStrategyEnum_DELETE_OLDEST;
-    default:
-      throw ArgumentError(name);
-  }
-}
-
-final BuiltSet<
-        AigConfigListGateway200ResponseResultInnerLogManagementStrategyEnum>
-    _$aigConfigListGateway200ResponseResultInnerLogManagementStrategyEnumValues =
-    BuiltSet<
-        AigConfigListGateway200ResponseResultInnerLogManagementStrategyEnum>(const <AigConfigListGateway200ResponseResultInnerLogManagementStrategyEnum>[
-  _$aigConfigListGateway200ResponseResultInnerLogManagementStrategyEnum_STOP_INSERTING,
-  _$aigConfigListGateway200ResponseResultInnerLogManagementStrategyEnum_DELETE_OLDEST,
-]);
-
 const AigConfigListGateway200ResponseResultInnerRateLimitingTechniqueEnum
     _$aigConfigListGateway200ResponseResultInnerRateLimitingTechniqueEnum_fixed =
     const AigConfigListGateway200ResponseResultInnerRateLimitingTechniqueEnum._(
@@ -68,50 +37,43 @@ final BuiltSet<
   _$aigConfigListGateway200ResponseResultInnerRateLimitingTechniqueEnum_sliding,
 ]);
 
-Serializer<AigConfigListGateway200ResponseResultInnerLogManagementStrategyEnum>
-    _$aigConfigListGateway200ResponseResultInnerLogManagementStrategyEnumSerializer =
-    _$AigConfigListGateway200ResponseResultInnerLogManagementStrategyEnumSerializer();
+const AigConfigListGateway200ResponseResultInnerLogManagementStrategyEnum
+    _$aigConfigListGateway200ResponseResultInnerLogManagementStrategyEnum_STOP_INSERTING =
+    const AigConfigListGateway200ResponseResultInnerLogManagementStrategyEnum._(
+        'STOP_INSERTING');
+const AigConfigListGateway200ResponseResultInnerLogManagementStrategyEnum
+    _$aigConfigListGateway200ResponseResultInnerLogManagementStrategyEnum_DELETE_OLDEST =
+    const AigConfigListGateway200ResponseResultInnerLogManagementStrategyEnum._(
+        'DELETE_OLDEST');
+
+AigConfigListGateway200ResponseResultInnerLogManagementStrategyEnum
+    _$aigConfigListGateway200ResponseResultInnerLogManagementStrategyEnumValueOf(
+        String name) {
+  switch (name) {
+    case 'STOP_INSERTING':
+      return _$aigConfigListGateway200ResponseResultInnerLogManagementStrategyEnum_STOP_INSERTING;
+    case 'DELETE_OLDEST':
+      return _$aigConfigListGateway200ResponseResultInnerLogManagementStrategyEnum_DELETE_OLDEST;
+    default:
+      throw ArgumentError(name);
+  }
+}
+
+final BuiltSet<
+        AigConfigListGateway200ResponseResultInnerLogManagementStrategyEnum>
+    _$aigConfigListGateway200ResponseResultInnerLogManagementStrategyEnumValues =
+    BuiltSet<
+        AigConfigListGateway200ResponseResultInnerLogManagementStrategyEnum>(const <AigConfigListGateway200ResponseResultInnerLogManagementStrategyEnum>[
+  _$aigConfigListGateway200ResponseResultInnerLogManagementStrategyEnum_STOP_INSERTING,
+  _$aigConfigListGateway200ResponseResultInnerLogManagementStrategyEnum_DELETE_OLDEST,
+]);
+
 Serializer<AigConfigListGateway200ResponseResultInnerRateLimitingTechniqueEnum>
     _$aigConfigListGateway200ResponseResultInnerRateLimitingTechniqueEnumSerializer =
     _$AigConfigListGateway200ResponseResultInnerRateLimitingTechniqueEnumSerializer();
-
-class _$AigConfigListGateway200ResponseResultInnerLogManagementStrategyEnumSerializer
-    implements
-        PrimitiveSerializer<
-            AigConfigListGateway200ResponseResultInnerLogManagementStrategyEnum> {
-  static const Map<String, Object> _toWire = const <String, Object>{
-    'STOP_INSERTING': 'STOP_INSERTING',
-    'DELETE_OLDEST': 'DELETE_OLDEST',
-  };
-  static const Map<Object, String> _fromWire = const <Object, String>{
-    'STOP_INSERTING': 'STOP_INSERTING',
-    'DELETE_OLDEST': 'DELETE_OLDEST',
-  };
-
-  @override
-  final Iterable<Type> types = const <Type>[
-    AigConfigListGateway200ResponseResultInnerLogManagementStrategyEnum
-  ];
-  @override
-  final String wireName =
-      'AigConfigListGateway200ResponseResultInnerLogManagementStrategyEnum';
-
-  @override
-  Object serialize(
-          Serializers serializers,
-          AigConfigListGateway200ResponseResultInnerLogManagementStrategyEnum
-              object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
-
-  @override
-  AigConfigListGateway200ResponseResultInnerLogManagementStrategyEnum
-      deserialize(Serializers serializers, Object serialized,
-              {FullType specifiedType = FullType.unspecified}) =>
-          AigConfigListGateway200ResponseResultInnerLogManagementStrategyEnum
-              .valueOf(_fromWire[serialized] ??
-                  (serialized is String ? serialized : ''));
-}
+Serializer<AigConfigListGateway200ResponseResultInnerLogManagementStrategyEnum>
+    _$aigConfigListGateway200ResponseResultInnerLogManagementStrategyEnumSerializer =
+    _$AigConfigListGateway200ResponseResultInnerLogManagementStrategyEnumSerializer();
 
 class _$AigConfigListGateway200ResponseResultInnerRateLimitingTechniqueEnumSerializer
     implements
@@ -151,14 +113,50 @@ class _$AigConfigListGateway200ResponseResultInnerRateLimitingTechniqueEnumSeria
                   (serialized is String ? serialized : ''));
 }
 
+class _$AigConfigListGateway200ResponseResultInnerLogManagementStrategyEnumSerializer
+    implements
+        PrimitiveSerializer<
+            AigConfigListGateway200ResponseResultInnerLogManagementStrategyEnum> {
+  static const Map<String, Object> _toWire = const <String, Object>{
+    'STOP_INSERTING': 'STOP_INSERTING',
+    'DELETE_OLDEST': 'DELETE_OLDEST',
+  };
+  static const Map<Object, String> _fromWire = const <Object, String>{
+    'STOP_INSERTING': 'STOP_INSERTING',
+    'DELETE_OLDEST': 'DELETE_OLDEST',
+  };
+
+  @override
+  final Iterable<Type> types = const <Type>[
+    AigConfigListGateway200ResponseResultInnerLogManagementStrategyEnum
+  ];
+  @override
+  final String wireName =
+      'AigConfigListGateway200ResponseResultInnerLogManagementStrategyEnum';
+
+  @override
+  Object serialize(
+          Serializers serializers,
+          AigConfigListGateway200ResponseResultInnerLogManagementStrategyEnum
+              object,
+          {FullType specifiedType = FullType.unspecified}) =>
+      _toWire[object.name] ?? object.name;
+
+  @override
+  AigConfigListGateway200ResponseResultInnerLogManagementStrategyEnum
+      deserialize(Serializers serializers, Object serialized,
+              {FullType specifiedType = FullType.unspecified}) =>
+          AigConfigListGateway200ResponseResultInnerLogManagementStrategyEnum
+              .valueOf(_fromWire[serialized] ??
+                  (serialized is String ? serialized : ''));
+}
+
 class _$AigConfigListGateway200ResponseResultInner
     extends AigConfigListGateway200ResponseResultInner {
   @override
   final String accountId;
   @override
   final String accountTag;
-  @override
-  final bool? authentication;
   @override
   final bool cacheInvalidateOnUpdate;
   @override
@@ -168,11 +166,22 @@ class _$AigConfigListGateway200ResponseResultInner
   @override
   final DateTime createdAt;
   @override
-  final AigConfigListGateway200ResponseResultInnerDlp? dlp;
-  @override
   final String id;
   @override
   final String internalId;
+  @override
+  final DateTime modifiedAt;
+  @override
+  final int? rateLimitingInterval;
+  @override
+  final int? rateLimitingLimit;
+  @override
+  final AigConfigListGateway200ResponseResultInnerRateLimitingTechniqueEnum
+      rateLimitingTechnique;
+  @override
+  final bool? authentication;
+  @override
+  final AigConfigListGateway200ResponseResultInnerDlp? dlp;
   @override
   final int? logManagement;
   @override
@@ -183,16 +192,7 @@ class _$AigConfigListGateway200ResponseResultInner
   @override
   final String? logpushPublicKey;
   @override
-  final DateTime modifiedAt;
-  @override
   final BuiltList<AigConfigListGateway200ResponseResultInnerOtelInner>? otel;
-  @override
-  final int? rateLimitingInterval;
-  @override
-  final int? rateLimitingLimit;
-  @override
-  final AigConfigListGateway200ResponseResultInnerRateLimitingTechniqueEnum
-      rateLimitingTechnique;
   @override
   final String? storeId;
   @override
@@ -207,23 +207,23 @@ class _$AigConfigListGateway200ResponseResultInner
   _$AigConfigListGateway200ResponseResultInner._(
       {required this.accountId,
       required this.accountTag,
-      this.authentication,
       required this.cacheInvalidateOnUpdate,
       this.cacheTtl,
       required this.collectLogs,
       required this.createdAt,
-      this.dlp,
       required this.id,
       required this.internalId,
+      required this.modifiedAt,
+      this.rateLimitingInterval,
+      this.rateLimitingLimit,
+      required this.rateLimitingTechnique,
+      this.authentication,
+      this.dlp,
       this.logManagement,
       this.logManagementStrategy,
       this.logpush,
       this.logpushPublicKey,
-      required this.modifiedAt,
       this.otel,
-      this.rateLimitingInterval,
-      this.rateLimitingLimit,
-      required this.rateLimitingTechnique,
       this.storeId,
       this.stripe})
       : super._();
@@ -243,23 +243,23 @@ class _$AigConfigListGateway200ResponseResultInner
     return other is AigConfigListGateway200ResponseResultInner &&
         accountId == other.accountId &&
         accountTag == other.accountTag &&
-        authentication == other.authentication &&
         cacheInvalidateOnUpdate == other.cacheInvalidateOnUpdate &&
         cacheTtl == other.cacheTtl &&
         collectLogs == other.collectLogs &&
         createdAt == other.createdAt &&
-        dlp == other.dlp &&
         id == other.id &&
         internalId == other.internalId &&
+        modifiedAt == other.modifiedAt &&
+        rateLimitingInterval == other.rateLimitingInterval &&
+        rateLimitingLimit == other.rateLimitingLimit &&
+        rateLimitingTechnique == other.rateLimitingTechnique &&
+        authentication == other.authentication &&
+        dlp == other.dlp &&
         logManagement == other.logManagement &&
         logManagementStrategy == other.logManagementStrategy &&
         logpush == other.logpush &&
         logpushPublicKey == other.logpushPublicKey &&
-        modifiedAt == other.modifiedAt &&
         otel == other.otel &&
-        rateLimitingInterval == other.rateLimitingInterval &&
-        rateLimitingLimit == other.rateLimitingLimit &&
-        rateLimitingTechnique == other.rateLimitingTechnique &&
         storeId == other.storeId &&
         stripe == other.stripe;
   }
@@ -269,23 +269,23 @@ class _$AigConfigListGateway200ResponseResultInner
     var _$hash = 0;
     _$hash = $jc(_$hash, accountId.hashCode);
     _$hash = $jc(_$hash, accountTag.hashCode);
-    _$hash = $jc(_$hash, authentication.hashCode);
     _$hash = $jc(_$hash, cacheInvalidateOnUpdate.hashCode);
     _$hash = $jc(_$hash, cacheTtl.hashCode);
     _$hash = $jc(_$hash, collectLogs.hashCode);
     _$hash = $jc(_$hash, createdAt.hashCode);
-    _$hash = $jc(_$hash, dlp.hashCode);
     _$hash = $jc(_$hash, id.hashCode);
     _$hash = $jc(_$hash, internalId.hashCode);
+    _$hash = $jc(_$hash, modifiedAt.hashCode);
+    _$hash = $jc(_$hash, rateLimitingInterval.hashCode);
+    _$hash = $jc(_$hash, rateLimitingLimit.hashCode);
+    _$hash = $jc(_$hash, rateLimitingTechnique.hashCode);
+    _$hash = $jc(_$hash, authentication.hashCode);
+    _$hash = $jc(_$hash, dlp.hashCode);
     _$hash = $jc(_$hash, logManagement.hashCode);
     _$hash = $jc(_$hash, logManagementStrategy.hashCode);
     _$hash = $jc(_$hash, logpush.hashCode);
     _$hash = $jc(_$hash, logpushPublicKey.hashCode);
-    _$hash = $jc(_$hash, modifiedAt.hashCode);
     _$hash = $jc(_$hash, otel.hashCode);
-    _$hash = $jc(_$hash, rateLimitingInterval.hashCode);
-    _$hash = $jc(_$hash, rateLimitingLimit.hashCode);
-    _$hash = $jc(_$hash, rateLimitingTechnique.hashCode);
     _$hash = $jc(_$hash, storeId.hashCode);
     _$hash = $jc(_$hash, stripe.hashCode);
     _$hash = $jf(_$hash);
@@ -298,23 +298,23 @@ class _$AigConfigListGateway200ResponseResultInner
             r'AigConfigListGateway200ResponseResultInner')
           ..add('accountId', accountId)
           ..add('accountTag', accountTag)
-          ..add('authentication', authentication)
           ..add('cacheInvalidateOnUpdate', cacheInvalidateOnUpdate)
           ..add('cacheTtl', cacheTtl)
           ..add('collectLogs', collectLogs)
           ..add('createdAt', createdAt)
-          ..add('dlp', dlp)
           ..add('id', id)
           ..add('internalId', internalId)
+          ..add('modifiedAt', modifiedAt)
+          ..add('rateLimitingInterval', rateLimitingInterval)
+          ..add('rateLimitingLimit', rateLimitingLimit)
+          ..add('rateLimitingTechnique', rateLimitingTechnique)
+          ..add('authentication', authentication)
+          ..add('dlp', dlp)
           ..add('logManagement', logManagement)
           ..add('logManagementStrategy', logManagementStrategy)
           ..add('logpush', logpush)
           ..add('logpushPublicKey', logpushPublicKey)
-          ..add('modifiedAt', modifiedAt)
           ..add('otel', otel)
-          ..add('rateLimitingInterval', rateLimitingInterval)
-          ..add('rateLimitingLimit', rateLimitingLimit)
-          ..add('rateLimitingTechnique', rateLimitingTechnique)
           ..add('storeId', storeId)
           ..add('stripe', stripe))
         .toString();
@@ -335,11 +335,6 @@ class AigConfigListGateway200ResponseResultInnerBuilder
   String? get accountTag => _$this._accountTag;
   set accountTag(String? accountTag) => _$this._accountTag = accountTag;
 
-  bool? _authentication;
-  bool? get authentication => _$this._authentication;
-  set authentication(bool? authentication) =>
-      _$this._authentication = authentication;
-
   bool? _cacheInvalidateOnUpdate;
   bool? get cacheInvalidateOnUpdate => _$this._cacheInvalidateOnUpdate;
   set cacheInvalidateOnUpdate(bool? cacheInvalidateOnUpdate) =>
@@ -357,12 +352,6 @@ class AigConfigListGateway200ResponseResultInnerBuilder
   DateTime? get createdAt => _$this._createdAt;
   set createdAt(DateTime? createdAt) => _$this._createdAt = createdAt;
 
-  AigConfigListGateway200ResponseResultInnerDlpBuilder? _dlp;
-  AigConfigListGateway200ResponseResultInnerDlpBuilder get dlp =>
-      _$this._dlp ??= AigConfigListGateway200ResponseResultInnerDlpBuilder();
-  set dlp(AigConfigListGateway200ResponseResultInnerDlpBuilder? dlp) =>
-      _$this._dlp = dlp;
-
   String? _id;
   String? get id => _$this._id;
   set id(String? id) => _$this._id = id;
@@ -370,6 +359,40 @@ class AigConfigListGateway200ResponseResultInnerBuilder
   String? _internalId;
   String? get internalId => _$this._internalId;
   set internalId(String? internalId) => _$this._internalId = internalId;
+
+  DateTime? _modifiedAt;
+  DateTime? get modifiedAt => _$this._modifiedAt;
+  set modifiedAt(DateTime? modifiedAt) => _$this._modifiedAt = modifiedAt;
+
+  int? _rateLimitingInterval;
+  int? get rateLimitingInterval => _$this._rateLimitingInterval;
+  set rateLimitingInterval(int? rateLimitingInterval) =>
+      _$this._rateLimitingInterval = rateLimitingInterval;
+
+  int? _rateLimitingLimit;
+  int? get rateLimitingLimit => _$this._rateLimitingLimit;
+  set rateLimitingLimit(int? rateLimitingLimit) =>
+      _$this._rateLimitingLimit = rateLimitingLimit;
+
+  AigConfigListGateway200ResponseResultInnerRateLimitingTechniqueEnum?
+      _rateLimitingTechnique;
+  AigConfigListGateway200ResponseResultInnerRateLimitingTechniqueEnum?
+      get rateLimitingTechnique => _$this._rateLimitingTechnique;
+  set rateLimitingTechnique(
+          AigConfigListGateway200ResponseResultInnerRateLimitingTechniqueEnum?
+              rateLimitingTechnique) =>
+      _$this._rateLimitingTechnique = rateLimitingTechnique;
+
+  bool? _authentication;
+  bool? get authentication => _$this._authentication;
+  set authentication(bool? authentication) =>
+      _$this._authentication = authentication;
+
+  AigConfigListGateway200ResponseResultInnerDlpBuilder? _dlp;
+  AigConfigListGateway200ResponseResultInnerDlpBuilder get dlp =>
+      _$this._dlp ??= AigConfigListGateway200ResponseResultInnerDlpBuilder();
+  set dlp(AigConfigListGateway200ResponseResultInnerDlpBuilder? dlp) =>
+      _$this._dlp = dlp;
 
   int? _logManagement;
   int? get logManagement => _$this._logManagement;
@@ -394,10 +417,6 @@ class AigConfigListGateway200ResponseResultInnerBuilder
   set logpushPublicKey(String? logpushPublicKey) =>
       _$this._logpushPublicKey = logpushPublicKey;
 
-  DateTime? _modifiedAt;
-  DateTime? get modifiedAt => _$this._modifiedAt;
-  set modifiedAt(DateTime? modifiedAt) => _$this._modifiedAt = modifiedAt;
-
   ListBuilder<AigConfigListGateway200ResponseResultInnerOtelInner>? _otel;
   ListBuilder<AigConfigListGateway200ResponseResultInnerOtelInner> get otel =>
       _$this._otel ??=
@@ -406,25 +425,6 @@ class AigConfigListGateway200ResponseResultInnerBuilder
           ListBuilder<AigConfigListGateway200ResponseResultInnerOtelInner>?
               otel) =>
       _$this._otel = otel;
-
-  int? _rateLimitingInterval;
-  int? get rateLimitingInterval => _$this._rateLimitingInterval;
-  set rateLimitingInterval(int? rateLimitingInterval) =>
-      _$this._rateLimitingInterval = rateLimitingInterval;
-
-  int? _rateLimitingLimit;
-  int? get rateLimitingLimit => _$this._rateLimitingLimit;
-  set rateLimitingLimit(int? rateLimitingLimit) =>
-      _$this._rateLimitingLimit = rateLimitingLimit;
-
-  AigConfigListGateway200ResponseResultInnerRateLimitingTechniqueEnum?
-      _rateLimitingTechnique;
-  AigConfigListGateway200ResponseResultInnerRateLimitingTechniqueEnum?
-      get rateLimitingTechnique => _$this._rateLimitingTechnique;
-  set rateLimitingTechnique(
-          AigConfigListGateway200ResponseResultInnerRateLimitingTechniqueEnum?
-              rateLimitingTechnique) =>
-      _$this._rateLimitingTechnique = rateLimitingTechnique;
 
   String? _storeId;
   String? get storeId => _$this._storeId;
@@ -446,23 +446,23 @@ class AigConfigListGateway200ResponseResultInnerBuilder
     if ($v != null) {
       _accountId = $v.accountId;
       _accountTag = $v.accountTag;
-      _authentication = $v.authentication;
       _cacheInvalidateOnUpdate = $v.cacheInvalidateOnUpdate;
       _cacheTtl = $v.cacheTtl;
       _collectLogs = $v.collectLogs;
       _createdAt = $v.createdAt;
-      _dlp = $v.dlp?.toBuilder();
       _id = $v.id;
       _internalId = $v.internalId;
+      _modifiedAt = $v.modifiedAt;
+      _rateLimitingInterval = $v.rateLimitingInterval;
+      _rateLimitingLimit = $v.rateLimitingLimit;
+      _rateLimitingTechnique = $v.rateLimitingTechnique;
+      _authentication = $v.authentication;
+      _dlp = $v.dlp?.toBuilder();
       _logManagement = $v.logManagement;
       _logManagementStrategy = $v.logManagementStrategy;
       _logpush = $v.logpush;
       _logpushPublicKey = $v.logpushPublicKey;
-      _modifiedAt = $v.modifiedAt;
       _otel = $v.otel?.toBuilder();
-      _rateLimitingInterval = $v.rateLimitingInterval;
-      _rateLimitingLimit = $v.rateLimitingLimit;
-      _rateLimitingTechnique = $v.rateLimitingTechnique;
       _storeId = $v.storeId;
       _stripe = $v.stripe?.toBuilder();
       _$v = null;
@@ -494,7 +494,6 @@ class AigConfigListGateway200ResponseResultInnerBuilder
                 r'AigConfigListGateway200ResponseResultInner', 'accountId'),
             accountTag: BuiltValueNullFieldError.checkNotNull(accountTag,
                 r'AigConfigListGateway200ResponseResultInner', 'accountTag'),
-            authentication: authentication,
             cacheInvalidateOnUpdate: BuiltValueNullFieldError.checkNotNull(
                 cacheInvalidateOnUpdate,
                 r'AigConfigListGateway200ResponseResultInner',
@@ -504,24 +503,25 @@ class AigConfigListGateway200ResponseResultInnerBuilder
                 r'AigConfigListGateway200ResponseResultInner', 'collectLogs'),
             createdAt: BuiltValueNullFieldError.checkNotNull(createdAt,
                 r'AigConfigListGateway200ResponseResultInner', 'createdAt'),
-            dlp: _dlp?.build(),
             id: BuiltValueNullFieldError.checkNotNull(
                 id, r'AigConfigListGateway200ResponseResultInner', 'id'),
             internalId: BuiltValueNullFieldError.checkNotNull(internalId,
                 r'AigConfigListGateway200ResponseResultInner', 'internalId'),
-            logManagement: logManagement,
-            logManagementStrategy: logManagementStrategy,
-            logpush: logpush,
-            logpushPublicKey: logpushPublicKey,
             modifiedAt: BuiltValueNullFieldError.checkNotNull(modifiedAt,
                 r'AigConfigListGateway200ResponseResultInner', 'modifiedAt'),
-            otel: _otel?.build(),
             rateLimitingInterval: rateLimitingInterval,
             rateLimitingLimit: rateLimitingLimit,
             rateLimitingTechnique: BuiltValueNullFieldError.checkNotNull(
                 rateLimitingTechnique,
                 r'AigConfigListGateway200ResponseResultInner',
                 'rateLimitingTechnique'),
+            authentication: authentication,
+            dlp: _dlp?.build(),
+            logManagement: logManagement,
+            logManagementStrategy: logManagementStrategy,
+            logpush: logpush,
+            logpushPublicKey: logpushPublicKey,
+            otel: _otel?.build(),
             storeId: storeId,
             stripe: _stripe?.build(),
           );

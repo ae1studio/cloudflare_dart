@@ -15,9 +15,9 @@ part 'dns_custom_nameservers_custom_ns.g.dart';
 /// Properties:
 /// * [dnsRecords] - A and AAAA records associated with the nameserver.
 /// * [nsName] - The FQDN of the name server.
-/// * [nsSet] - The number of the set that this name server belongs to.
 /// * [status] - Verification status of the nameserver.
 /// * [zoneTag] - Identifier.
+/// * [nsSet] - The number of the set that this name server belongs to.
 @BuiltValue()
 abstract class DnsCustomNameserversCustomNS implements Built<DnsCustomNameserversCustomNS, DnsCustomNameserversCustomNSBuilder> {
   /// A and AAAA records associated with the nameserver.
@@ -28,10 +28,6 @@ abstract class DnsCustomNameserversCustomNS implements Built<DnsCustomNameserver
   @BuiltValueField(wireName: r'ns_name')
   String get nsName;
 
-  /// The number of the set that this name server belongs to.
-  @BuiltValueField(wireName: r'ns_set')
-  num? get nsSet;
-
   /// Verification status of the nameserver.
   @Deprecated('status has been deprecated')
   @BuiltValueField(wireName: r'status')
@@ -41,6 +37,10 @@ abstract class DnsCustomNameserversCustomNS implements Built<DnsCustomNameserver
   /// Identifier.
   @BuiltValueField(wireName: r'zone_tag')
   String get zoneTag;
+
+  /// The number of the set that this name server belongs to.
+  @BuiltValueField(wireName: r'ns_set')
+  num? get nsSet;
 
   DnsCustomNameserversCustomNS._();
 
@@ -76,13 +76,6 @@ class _$DnsCustomNameserversCustomNSSerializer implements PrimitiveSerializer<Dn
       object.nsName,
       specifiedType: const FullType(String),
     );
-    if (object.nsSet != null) {
-      yield r'ns_set';
-      yield serializers.serialize(
-        object.nsSet,
-        specifiedType: const FullType(num),
-      );
-    }
     yield r'status';
     yield serializers.serialize(
       object.status,
@@ -93,6 +86,13 @@ class _$DnsCustomNameserversCustomNSSerializer implements PrimitiveSerializer<Dn
       object.zoneTag,
       specifiedType: const FullType(String),
     );
+    if (object.nsSet != null) {
+      yield r'ns_set';
+      yield serializers.serialize(
+        object.nsSet,
+        specifiedType: const FullType(num),
+      );
+    }
   }
 
   @override
@@ -130,13 +130,6 @@ class _$DnsCustomNameserversCustomNSSerializer implements PrimitiveSerializer<Dn
           ) as String;
           result.nsName = valueDes;
           break;
-        case r'ns_set':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(num),
-          ) as num;
-          result.nsSet = valueDes;
-          break;
         case r'status':
           final valueDes = serializers.deserialize(
             value,
@@ -150,6 +143,13 @@ class _$DnsCustomNameserversCustomNSSerializer implements PrimitiveSerializer<Dn
             specifiedType: const FullType(String),
           ) as String;
           result.zoneTag = valueDes;
+          break;
+        case r'ns_set':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(num),
+          ) as num;
+          result.nsSet = valueDes;
           break;
         default:
           unhandled.add(key);

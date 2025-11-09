@@ -12,11 +12,11 @@ class _$TunnelArgoTunnel extends TunnelArgoTunnel {
   @override
   final DateTime createdAt;
   @override
-  final DateTime? deletedAt;
-  @override
   final String id;
   @override
   final String name;
+  @override
+  final DateTime? deletedAt;
 
   factory _$TunnelArgoTunnel(
           [void Function(TunnelArgoTunnelBuilder)? updates]) =>
@@ -25,9 +25,9 @@ class _$TunnelArgoTunnel extends TunnelArgoTunnel {
   _$TunnelArgoTunnel._(
       {required this.connections,
       required this.createdAt,
-      this.deletedAt,
       required this.id,
-      required this.name})
+      required this.name,
+      this.deletedAt})
       : super._();
   @override
   TunnelArgoTunnel rebuild(void Function(TunnelArgoTunnelBuilder) updates) =>
@@ -43,9 +43,9 @@ class _$TunnelArgoTunnel extends TunnelArgoTunnel {
     return other is TunnelArgoTunnel &&
         connections == other.connections &&
         createdAt == other.createdAt &&
-        deletedAt == other.deletedAt &&
         id == other.id &&
-        name == other.name;
+        name == other.name &&
+        deletedAt == other.deletedAt;
   }
 
   @override
@@ -53,9 +53,9 @@ class _$TunnelArgoTunnel extends TunnelArgoTunnel {
     var _$hash = 0;
     _$hash = $jc(_$hash, connections.hashCode);
     _$hash = $jc(_$hash, createdAt.hashCode);
-    _$hash = $jc(_$hash, deletedAt.hashCode);
     _$hash = $jc(_$hash, id.hashCode);
     _$hash = $jc(_$hash, name.hashCode);
+    _$hash = $jc(_$hash, deletedAt.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -65,9 +65,9 @@ class _$TunnelArgoTunnel extends TunnelArgoTunnel {
     return (newBuiltValueToStringHelper(r'TunnelArgoTunnel')
           ..add('connections', connections)
           ..add('createdAt', createdAt)
-          ..add('deletedAt', deletedAt)
           ..add('id', id)
-          ..add('name', name))
+          ..add('name', name)
+          ..add('deletedAt', deletedAt))
         .toString();
   }
 }
@@ -86,10 +86,6 @@ class TunnelArgoTunnelBuilder
   DateTime? get createdAt => _$this._createdAt;
   set createdAt(DateTime? createdAt) => _$this._createdAt = createdAt;
 
-  DateTime? _deletedAt;
-  DateTime? get deletedAt => _$this._deletedAt;
-  set deletedAt(DateTime? deletedAt) => _$this._deletedAt = deletedAt;
-
   String? _id;
   String? get id => _$this._id;
   set id(String? id) => _$this._id = id;
@@ -97,6 +93,10 @@ class TunnelArgoTunnelBuilder
   String? _name;
   String? get name => _$this._name;
   set name(String? name) => _$this._name = name;
+
+  DateTime? _deletedAt;
+  DateTime? get deletedAt => _$this._deletedAt;
+  set deletedAt(DateTime? deletedAt) => _$this._deletedAt = deletedAt;
 
   TunnelArgoTunnelBuilder() {
     TunnelArgoTunnel._defaults(this);
@@ -107,9 +107,9 @@ class TunnelArgoTunnelBuilder
     if ($v != null) {
       _connections = $v.connections.toBuilder();
       _createdAt = $v.createdAt;
-      _deletedAt = $v.deletedAt;
       _id = $v.id;
       _name = $v.name;
+      _deletedAt = $v.deletedAt;
       _$v = null;
     }
     return this;
@@ -136,11 +136,11 @@ class TunnelArgoTunnelBuilder
             connections: connections.build(),
             createdAt: BuiltValueNullFieldError.checkNotNull(
                 createdAt, r'TunnelArgoTunnel', 'createdAt'),
-            deletedAt: deletedAt,
             id: BuiltValueNullFieldError.checkNotNull(
                 id, r'TunnelArgoTunnel', 'id'),
             name: BuiltValueNullFieldError.checkNotNull(
                 name, r'TunnelArgoTunnel', 'name'),
+            deletedAt: deletedAt,
           );
     } catch (_) {
       late String _$failedField;

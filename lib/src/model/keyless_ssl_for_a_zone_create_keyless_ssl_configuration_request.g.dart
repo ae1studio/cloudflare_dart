@@ -9,15 +9,15 @@ part of 'keyless_ssl_for_a_zone_create_keyless_ssl_configuration_request.dart';
 class _$KeylessSslForAZoneCreateKeylessSslConfigurationRequest
     extends KeylessSslForAZoneCreateKeylessSslConfigurationRequest {
   @override
-  final TlsCertificatesAndHostnamesBundleMethod? bundleMethod;
-  @override
   final String certificate;
   @override
   final String host;
   @override
-  final String? name;
-  @override
   final num port;
+  @override
+  final TlsCertificatesAndHostnamesBundleMethod? bundleMethod;
+  @override
+  final String? name;
   @override
   final TlsCertificatesAndHostnamesKeylessTunnel? tunnel;
 
@@ -30,11 +30,11 @@ class _$KeylessSslForAZoneCreateKeylessSslConfigurationRequest
           ._build();
 
   _$KeylessSslForAZoneCreateKeylessSslConfigurationRequest._(
-      {this.bundleMethod,
-      required this.certificate,
+      {required this.certificate,
       required this.host,
-      this.name,
       required this.port,
+      this.bundleMethod,
+      this.name,
       this.tunnel})
       : super._();
   @override
@@ -53,22 +53,22 @@ class _$KeylessSslForAZoneCreateKeylessSslConfigurationRequest
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is KeylessSslForAZoneCreateKeylessSslConfigurationRequest &&
-        bundleMethod == other.bundleMethod &&
         certificate == other.certificate &&
         host == other.host &&
-        name == other.name &&
         port == other.port &&
+        bundleMethod == other.bundleMethod &&
+        name == other.name &&
         tunnel == other.tunnel;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, bundleMethod.hashCode);
     _$hash = $jc(_$hash, certificate.hashCode);
     _$hash = $jc(_$hash, host.hashCode);
-    _$hash = $jc(_$hash, name.hashCode);
     _$hash = $jc(_$hash, port.hashCode);
+    _$hash = $jc(_$hash, bundleMethod.hashCode);
+    _$hash = $jc(_$hash, name.hashCode);
     _$hash = $jc(_$hash, tunnel.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
@@ -78,11 +78,11 @@ class _$KeylessSslForAZoneCreateKeylessSslConfigurationRequest
   String toString() {
     return (newBuiltValueToStringHelper(
             r'KeylessSslForAZoneCreateKeylessSslConfigurationRequest')
-          ..add('bundleMethod', bundleMethod)
           ..add('certificate', certificate)
           ..add('host', host)
-          ..add('name', name)
           ..add('port', port)
+          ..add('bundleMethod', bundleMethod)
+          ..add('name', name)
           ..add('tunnel', tunnel))
         .toString();
   }
@@ -94,12 +94,6 @@ class KeylessSslForAZoneCreateKeylessSslConfigurationRequestBuilder
             KeylessSslForAZoneCreateKeylessSslConfigurationRequestBuilder> {
   _$KeylessSslForAZoneCreateKeylessSslConfigurationRequest? _$v;
 
-  TlsCertificatesAndHostnamesBundleMethod? _bundleMethod;
-  TlsCertificatesAndHostnamesBundleMethod? get bundleMethod =>
-      _$this._bundleMethod;
-  set bundleMethod(TlsCertificatesAndHostnamesBundleMethod? bundleMethod) =>
-      _$this._bundleMethod = bundleMethod;
-
   String? _certificate;
   String? get certificate => _$this._certificate;
   set certificate(String? certificate) => _$this._certificate = certificate;
@@ -108,13 +102,19 @@ class KeylessSslForAZoneCreateKeylessSslConfigurationRequestBuilder
   String? get host => _$this._host;
   set host(String? host) => _$this._host = host;
 
-  String? _name;
-  String? get name => _$this._name;
-  set name(String? name) => _$this._name = name;
-
   num? _port;
   num? get port => _$this._port;
   set port(num? port) => _$this._port = port;
+
+  TlsCertificatesAndHostnamesBundleMethod? _bundleMethod;
+  TlsCertificatesAndHostnamesBundleMethod? get bundleMethod =>
+      _$this._bundleMethod;
+  set bundleMethod(TlsCertificatesAndHostnamesBundleMethod? bundleMethod) =>
+      _$this._bundleMethod = bundleMethod;
+
+  String? _name;
+  String? get name => _$this._name;
+  set name(String? name) => _$this._name = name;
 
   TlsCertificatesAndHostnamesKeylessTunnelBuilder? _tunnel;
   TlsCertificatesAndHostnamesKeylessTunnelBuilder get tunnel =>
@@ -129,11 +129,11 @@ class KeylessSslForAZoneCreateKeylessSslConfigurationRequestBuilder
   KeylessSslForAZoneCreateKeylessSslConfigurationRequestBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _bundleMethod = $v.bundleMethod;
       _certificate = $v.certificate;
       _host = $v.host;
-      _name = $v.name;
       _port = $v.port;
+      _bundleMethod = $v.bundleMethod;
+      _name = $v.name;
       _tunnel = $v.tunnel?.toBuilder();
       _$v = null;
     }
@@ -161,7 +161,6 @@ class KeylessSslForAZoneCreateKeylessSslConfigurationRequestBuilder
     try {
       _$result = _$v ??
           _$KeylessSslForAZoneCreateKeylessSslConfigurationRequest._(
-            bundleMethod: bundleMethod,
             certificate: BuiltValueNullFieldError.checkNotNull(
                 certificate,
                 r'KeylessSslForAZoneCreateKeylessSslConfigurationRequest',
@@ -170,11 +169,12 @@ class KeylessSslForAZoneCreateKeylessSslConfigurationRequestBuilder
                 host,
                 r'KeylessSslForAZoneCreateKeylessSslConfigurationRequest',
                 'host'),
-            name: name,
             port: BuiltValueNullFieldError.checkNotNull(
                 port,
                 r'KeylessSslForAZoneCreateKeylessSslConfigurationRequest',
                 'port'),
+            bundleMethod: bundleMethod,
+            name: name,
             tunnel: _tunnel?.build(),
           );
     } catch (_) {

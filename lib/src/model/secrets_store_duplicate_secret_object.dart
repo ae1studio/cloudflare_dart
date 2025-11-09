@@ -12,15 +12,11 @@ part 'secrets_store_duplicate_secret_object.g.dart';
 /// SecretsStoreDuplicateSecretObject
 ///
 /// Properties:
-/// * [comment] - Freeform text describing the secret
 /// * [name] - The name of the secret
 /// * [scopes] - The list of services that can use this secret.
+/// * [comment] - Freeform text describing the secret
 @BuiltValue()
 abstract class SecretsStoreDuplicateSecretObject implements Built<SecretsStoreDuplicateSecretObject, SecretsStoreDuplicateSecretObjectBuilder> {
-  /// Freeform text describing the secret
-  @BuiltValueField(wireName: r'comment')
-  String? get comment;
-
   /// The name of the secret
   @BuiltValueField(wireName: r'name')
   String get name;
@@ -28,6 +24,10 @@ abstract class SecretsStoreDuplicateSecretObject implements Built<SecretsStoreDu
   /// The list of services that can use this secret.
   @BuiltValueField(wireName: r'scopes')
   BuiltList<String> get scopes;
+
+  /// Freeform text describing the secret
+  @BuiltValueField(wireName: r'comment')
+  String? get comment;
 
   SecretsStoreDuplicateSecretObject._();
 
@@ -52,13 +52,6 @@ class _$SecretsStoreDuplicateSecretObjectSerializer implements PrimitiveSerializ
     SecretsStoreDuplicateSecretObject object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
-    if (object.comment != null) {
-      yield r'comment';
-      yield serializers.serialize(
-        object.comment,
-        specifiedType: const FullType(String),
-      );
-    }
     yield r'name';
     yield serializers.serialize(
       object.name,
@@ -69,6 +62,13 @@ class _$SecretsStoreDuplicateSecretObjectSerializer implements PrimitiveSerializ
       object.scopes,
       specifiedType: const FullType(BuiltList, [FullType(String)]),
     );
+    if (object.comment != null) {
+      yield r'comment';
+      yield serializers.serialize(
+        object.comment,
+        specifiedType: const FullType(String),
+      );
+    }
   }
 
   @override
@@ -92,13 +92,6 @@ class _$SecretsStoreDuplicateSecretObjectSerializer implements PrimitiveSerializ
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'comment':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.comment = valueDes;
-          break;
         case r'name':
           final valueDes = serializers.deserialize(
             value,
@@ -112,6 +105,13 @@ class _$SecretsStoreDuplicateSecretObjectSerializer implements PrimitiveSerializ
             specifiedType: const FullType(BuiltList, [FullType(String)]),
           ) as BuiltList<String>;
           result.scopes.replace(valueDes);
+          break;
+        case r'comment':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.comment = valueDes;
           break;
         default:
           unhandled.add(key);

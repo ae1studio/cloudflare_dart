@@ -8,10 +8,10 @@ import 'package:cloudflare_dart/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**query** | **String** |  | 
 **filters** | [**AutoragConfigAiSearchRequestFilters**](AutoragConfigAiSearchRequestFilters.md) |  | [optional] 
 **maxNumResults** | **int** |  | [optional] [default to 10]
 **model** | **String** |  | [optional] 
-**query** | **String** |  | 
 **rankingOptions** | [**AutoragConfigAiSearchRequestRankingOptions**](AutoragConfigAiSearchRequestRankingOptions.md) |  | [optional] 
 **reranking** | [**AutoragConfigAiSearchRequestReranking**](AutoragConfigAiSearchRequestReranking.md) |  | [optional] 
 **rewriteQuery** | **bool** |  | [optional] [default to false]

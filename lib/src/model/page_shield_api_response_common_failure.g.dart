@@ -52,11 +52,11 @@ class _$PageShieldApiResponseCommonFailure
   @override
   final BuiltList<AaaMessagesInner> errors;
   @override
+  final bool success;
+  @override
   final BuiltList<AaaMessagesInner>? messages;
   @override
   final PageShieldApiResponseCommonFailureResultEnum? result;
-  @override
-  final bool success;
 
   factory _$PageShieldApiResponseCommonFailure(
           [void Function(PageShieldApiResponseCommonFailureBuilder)?
@@ -64,7 +64,7 @@ class _$PageShieldApiResponseCommonFailure
       (PageShieldApiResponseCommonFailureBuilder()..update(updates))._build();
 
   _$PageShieldApiResponseCommonFailure._(
-      {required this.errors, this.messages, this.result, required this.success})
+      {required this.errors, required this.success, this.messages, this.result})
       : super._();
   @override
   PageShieldApiResponseCommonFailure rebuild(
@@ -80,18 +80,18 @@ class _$PageShieldApiResponseCommonFailure
     if (identical(other, this)) return true;
     return other is PageShieldApiResponseCommonFailure &&
         errors == other.errors &&
+        success == other.success &&
         messages == other.messages &&
-        result == other.result &&
-        success == other.success;
+        result == other.result;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
     _$hash = $jc(_$hash, errors.hashCode);
+    _$hash = $jc(_$hash, success.hashCode);
     _$hash = $jc(_$hash, messages.hashCode);
     _$hash = $jc(_$hash, result.hashCode);
-    _$hash = $jc(_$hash, success.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -100,9 +100,9 @@ class _$PageShieldApiResponseCommonFailure
   String toString() {
     return (newBuiltValueToStringHelper(r'PageShieldApiResponseCommonFailure')
           ..add('errors', errors)
+          ..add('success', success)
           ..add('messages', messages)
-          ..add('result', result)
-          ..add('success', success))
+          ..add('result', result))
         .toString();
   }
 }
@@ -118,6 +118,10 @@ class PageShieldApiResponseCommonFailureBuilder
       _$this._errors ??= ListBuilder<AaaMessagesInner>();
   set errors(ListBuilder<AaaMessagesInner>? errors) => _$this._errors = errors;
 
+  bool? _success;
+  bool? get success => _$this._success;
+  set success(bool? success) => _$this._success = success;
+
   ListBuilder<AaaMessagesInner>? _messages;
   ListBuilder<AaaMessagesInner> get messages =>
       _$this._messages ??= ListBuilder<AaaMessagesInner>();
@@ -129,10 +133,6 @@ class PageShieldApiResponseCommonFailureBuilder
   set result(PageShieldApiResponseCommonFailureResultEnum? result) =>
       _$this._result = result;
 
-  bool? _success;
-  bool? get success => _$this._success;
-  set success(bool? success) => _$this._success = success;
-
   PageShieldApiResponseCommonFailureBuilder() {
     PageShieldApiResponseCommonFailure._defaults(this);
   }
@@ -141,9 +141,9 @@ class PageShieldApiResponseCommonFailureBuilder
     final $v = _$v;
     if ($v != null) {
       _errors = $v.errors.toBuilder();
+      _success = $v.success;
       _messages = $v.messages?.toBuilder();
       _result = $v.result;
-      _success = $v.success;
       _$v = null;
     }
     return this;
@@ -169,16 +169,17 @@ class PageShieldApiResponseCommonFailureBuilder
       _$result = _$v ??
           _$PageShieldApiResponseCommonFailure._(
             errors: errors.build(),
-            messages: _messages?.build(),
-            result: result,
             success: BuiltValueNullFieldError.checkNotNull(
                 success, r'PageShieldApiResponseCommonFailure', 'success'),
+            messages: _messages?.build(),
+            result: result,
           );
     } catch (_) {
       late String _$failedField;
       try {
         _$failedField = 'errors';
         errors.build();
+
         _$failedField = 'messages';
         _messages?.build();
       } catch (e) {

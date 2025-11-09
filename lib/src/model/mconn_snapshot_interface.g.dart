@@ -8,13 +8,13 @@ part of 'mconn_snapshot_interface.dart';
 
 class _$MconnSnapshotInterface extends MconnSnapshotInterface {
   @override
-  final String? connectorId;
-  @override
-  final BuiltList<MconnSnapshotInterfaceAddress>? ipAddresses;
-  @override
   final String name;
   @override
   final String operstate;
+  @override
+  final String? connectorId;
+  @override
+  final BuiltList<MconnSnapshotInterfaceAddress>? ipAddresses;
   @override
   final num? speed;
 
@@ -23,10 +23,10 @@ class _$MconnSnapshotInterface extends MconnSnapshotInterface {
       (MconnSnapshotInterfaceBuilder()..update(updates))._build();
 
   _$MconnSnapshotInterface._(
-      {this.connectorId,
-      this.ipAddresses,
-      required this.name,
+      {required this.name,
       required this.operstate,
+      this.connectorId,
+      this.ipAddresses,
       this.speed})
       : super._();
   @override
@@ -42,20 +42,20 @@ class _$MconnSnapshotInterface extends MconnSnapshotInterface {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is MconnSnapshotInterface &&
-        connectorId == other.connectorId &&
-        ipAddresses == other.ipAddresses &&
         name == other.name &&
         operstate == other.operstate &&
+        connectorId == other.connectorId &&
+        ipAddresses == other.ipAddresses &&
         speed == other.speed;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, connectorId.hashCode);
-    _$hash = $jc(_$hash, ipAddresses.hashCode);
     _$hash = $jc(_$hash, name.hashCode);
     _$hash = $jc(_$hash, operstate.hashCode);
+    _$hash = $jc(_$hash, connectorId.hashCode);
+    _$hash = $jc(_$hash, ipAddresses.hashCode);
     _$hash = $jc(_$hash, speed.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
@@ -64,10 +64,10 @@ class _$MconnSnapshotInterface extends MconnSnapshotInterface {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'MconnSnapshotInterface')
-          ..add('connectorId', connectorId)
-          ..add('ipAddresses', ipAddresses)
           ..add('name', name)
           ..add('operstate', operstate)
+          ..add('connectorId', connectorId)
+          ..add('ipAddresses', ipAddresses)
           ..add('speed', speed))
         .toString();
   }
@@ -76,6 +76,14 @@ class _$MconnSnapshotInterface extends MconnSnapshotInterface {
 class MconnSnapshotInterfaceBuilder
     implements Builder<MconnSnapshotInterface, MconnSnapshotInterfaceBuilder> {
   _$MconnSnapshotInterface? _$v;
+
+  String? _name;
+  String? get name => _$this._name;
+  set name(String? name) => _$this._name = name;
+
+  String? _operstate;
+  String? get operstate => _$this._operstate;
+  set operstate(String? operstate) => _$this._operstate = operstate;
 
   String? _connectorId;
   String? get connectorId => _$this._connectorId;
@@ -86,14 +94,6 @@ class MconnSnapshotInterfaceBuilder
       _$this._ipAddresses ??= ListBuilder<MconnSnapshotInterfaceAddress>();
   set ipAddresses(ListBuilder<MconnSnapshotInterfaceAddress>? ipAddresses) =>
       _$this._ipAddresses = ipAddresses;
-
-  String? _name;
-  String? get name => _$this._name;
-  set name(String? name) => _$this._name = name;
-
-  String? _operstate;
-  String? get operstate => _$this._operstate;
-  set operstate(String? operstate) => _$this._operstate = operstate;
 
   num? _speed;
   num? get speed => _$this._speed;
@@ -106,10 +106,10 @@ class MconnSnapshotInterfaceBuilder
   MconnSnapshotInterfaceBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _connectorId = $v.connectorId;
-      _ipAddresses = $v.ipAddresses?.toBuilder();
       _name = $v.name;
       _operstate = $v.operstate;
+      _connectorId = $v.connectorId;
+      _ipAddresses = $v.ipAddresses?.toBuilder();
       _speed = $v.speed;
       _$v = null;
     }
@@ -134,12 +134,12 @@ class MconnSnapshotInterfaceBuilder
     try {
       _$result = _$v ??
           _$MconnSnapshotInterface._(
-            connectorId: connectorId,
-            ipAddresses: _ipAddresses?.build(),
             name: BuiltValueNullFieldError.checkNotNull(
                 name, r'MconnSnapshotInterface', 'name'),
             operstate: BuiltValueNullFieldError.checkNotNull(
                 operstate, r'MconnSnapshotInterface', 'operstate'),
+            connectorId: connectorId,
+            ipAddresses: _ipAddresses?.build(),
             speed: speed,
           );
     } catch (_) {

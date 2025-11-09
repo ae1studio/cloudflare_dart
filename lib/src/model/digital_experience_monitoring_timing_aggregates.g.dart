@@ -9,9 +9,9 @@ part of 'digital_experience_monitoring_timing_aggregates.dart';
 class _$DigitalExperienceMonitoringTimingAggregates
     extends DigitalExperienceMonitoringTimingAggregates {
   @override
-  final int? avgMs;
-  @override
   final BuiltList<DigitalExperienceMonitoringAggregateStat> history;
+  @override
+  final int? avgMs;
   @override
   final DigitalExperienceMonitoringTimingAggregatesOverTime? overTime;
 
@@ -22,7 +22,7 @@ class _$DigitalExperienceMonitoringTimingAggregates
           ._build();
 
   _$DigitalExperienceMonitoringTimingAggregates._(
-      {this.avgMs, required this.history, this.overTime})
+      {required this.history, this.avgMs, this.overTime})
       : super._();
   @override
   DigitalExperienceMonitoringTimingAggregates rebuild(
@@ -38,16 +38,16 @@ class _$DigitalExperienceMonitoringTimingAggregates
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is DigitalExperienceMonitoringTimingAggregates &&
-        avgMs == other.avgMs &&
         history == other.history &&
+        avgMs == other.avgMs &&
         overTime == other.overTime;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, avgMs.hashCode);
     _$hash = $jc(_$hash, history.hashCode);
+    _$hash = $jc(_$hash, avgMs.hashCode);
     _$hash = $jc(_$hash, overTime.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
@@ -57,8 +57,8 @@ class _$DigitalExperienceMonitoringTimingAggregates
   String toString() {
     return (newBuiltValueToStringHelper(
             r'DigitalExperienceMonitoringTimingAggregates')
-          ..add('avgMs', avgMs)
           ..add('history', history)
+          ..add('avgMs', avgMs)
           ..add('overTime', overTime))
         .toString();
   }
@@ -70,16 +70,16 @@ class DigitalExperienceMonitoringTimingAggregatesBuilder
             DigitalExperienceMonitoringTimingAggregatesBuilder> {
   _$DigitalExperienceMonitoringTimingAggregates? _$v;
 
-  int? _avgMs;
-  int? get avgMs => _$this._avgMs;
-  set avgMs(int? avgMs) => _$this._avgMs = avgMs;
-
   ListBuilder<DigitalExperienceMonitoringAggregateStat>? _history;
   ListBuilder<DigitalExperienceMonitoringAggregateStat> get history =>
       _$this._history ??=
           ListBuilder<DigitalExperienceMonitoringAggregateStat>();
   set history(ListBuilder<DigitalExperienceMonitoringAggregateStat>? history) =>
       _$this._history = history;
+
+  int? _avgMs;
+  int? get avgMs => _$this._avgMs;
+  set avgMs(int? avgMs) => _$this._avgMs = avgMs;
 
   DigitalExperienceMonitoringTimingAggregatesOverTimeBuilder? _overTime;
   DigitalExperienceMonitoringTimingAggregatesOverTimeBuilder get overTime =>
@@ -97,8 +97,8 @@ class DigitalExperienceMonitoringTimingAggregatesBuilder
   DigitalExperienceMonitoringTimingAggregatesBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _avgMs = $v.avgMs;
       _history = $v.history.toBuilder();
+      _avgMs = $v.avgMs;
       _overTime = $v.overTime?.toBuilder();
       _$v = null;
     }
@@ -125,8 +125,8 @@ class DigitalExperienceMonitoringTimingAggregatesBuilder
     try {
       _$result = _$v ??
           _$DigitalExperienceMonitoringTimingAggregates._(
-            avgMs: avgMs,
             history: history.build(),
+            avgMs: avgMs,
             overTime: _overTime?.build(),
           );
     } catch (_) {
@@ -134,6 +134,7 @@ class DigitalExperienceMonitoringTimingAggregatesBuilder
       try {
         _$failedField = 'history';
         history.build();
+
         _$failedField = 'overTime';
         _overTime?.build();
       } catch (e) {

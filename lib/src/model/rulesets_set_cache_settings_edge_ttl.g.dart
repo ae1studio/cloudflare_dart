@@ -79,9 +79,9 @@ class _$RulesetsSetCacheSettingsEdgeTTLModeEnumSerializer
 class _$RulesetsSetCacheSettingsEdgeTTL
     extends RulesetsSetCacheSettingsEdgeTTL {
   @override
-  final int? default_;
-  @override
   final RulesetsSetCacheSettingsEdgeTTLModeEnum mode;
+  @override
+  final int? default_;
   @override
   final BuiltSet<RulesetsSetCacheSettingsStatusCodeTTLInner>? statusCodeTtl;
 
@@ -90,7 +90,7 @@ class _$RulesetsSetCacheSettingsEdgeTTL
       (RulesetsSetCacheSettingsEdgeTTLBuilder()..update(updates))._build();
 
   _$RulesetsSetCacheSettingsEdgeTTL._(
-      {this.default_, required this.mode, this.statusCodeTtl})
+      {required this.mode, this.default_, this.statusCodeTtl})
       : super._();
   @override
   RulesetsSetCacheSettingsEdgeTTL rebuild(
@@ -105,16 +105,16 @@ class _$RulesetsSetCacheSettingsEdgeTTL
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is RulesetsSetCacheSettingsEdgeTTL &&
-        default_ == other.default_ &&
         mode == other.mode &&
+        default_ == other.default_ &&
         statusCodeTtl == other.statusCodeTtl;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, default_.hashCode);
     _$hash = $jc(_$hash, mode.hashCode);
+    _$hash = $jc(_$hash, default_.hashCode);
     _$hash = $jc(_$hash, statusCodeTtl.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
@@ -123,8 +123,8 @@ class _$RulesetsSetCacheSettingsEdgeTTL
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'RulesetsSetCacheSettingsEdgeTTL')
-          ..add('default_', default_)
           ..add('mode', mode)
+          ..add('default_', default_)
           ..add('statusCodeTtl', statusCodeTtl))
         .toString();
   }
@@ -136,14 +136,14 @@ class RulesetsSetCacheSettingsEdgeTTLBuilder
             RulesetsSetCacheSettingsEdgeTTLBuilder> {
   _$RulesetsSetCacheSettingsEdgeTTL? _$v;
 
-  int? _default_;
-  int? get default_ => _$this._default_;
-  set default_(int? default_) => _$this._default_ = default_;
-
   RulesetsSetCacheSettingsEdgeTTLModeEnum? _mode;
   RulesetsSetCacheSettingsEdgeTTLModeEnum? get mode => _$this._mode;
   set mode(RulesetsSetCacheSettingsEdgeTTLModeEnum? mode) =>
       _$this._mode = mode;
+
+  int? _default_;
+  int? get default_ => _$this._default_;
+  set default_(int? default_) => _$this._default_ = default_;
 
   SetBuilder<RulesetsSetCacheSettingsStatusCodeTTLInner>? _statusCodeTtl;
   SetBuilder<RulesetsSetCacheSettingsStatusCodeTTLInner> get statusCodeTtl =>
@@ -161,8 +161,8 @@ class RulesetsSetCacheSettingsEdgeTTLBuilder
   RulesetsSetCacheSettingsEdgeTTLBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _default_ = $v.default_;
       _mode = $v.mode;
+      _default_ = $v.default_;
       _statusCodeTtl = $v.statusCodeTtl?.toBuilder();
       _$v = null;
     }
@@ -187,9 +187,9 @@ class RulesetsSetCacheSettingsEdgeTTLBuilder
     try {
       _$result = _$v ??
           _$RulesetsSetCacheSettingsEdgeTTL._(
-            default_: default_,
             mode: BuiltValueNullFieldError.checkNotNull(
                 mode, r'RulesetsSetCacheSettingsEdgeTTL', 'mode'),
+            default_: default_,
             statusCodeTtl: _statusCodeTtl?.build(),
           );
     } catch (_) {

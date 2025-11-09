@@ -11,15 +11,11 @@ part 'stream_create_output_request.g.dart';
 /// StreamCreateOutputRequest
 ///
 /// Properties:
-/// * [enabled] - When enabled, live video streamed to the associated live input will be sent to the output URL. When disabled, live video will not be sent to the output URL, even when streaming to the associated live input. Use this to control precisely when you start and stop simulcasting to specific destinations like YouTube and Twitch.
 /// * [streamKey] - The streamKey used to authenticate against an output's target.
 /// * [url] - The URL an output uses to restream.
+/// * [enabled] - When enabled, live video streamed to the associated live input will be sent to the output URL. When disabled, live video will not be sent to the output URL, even when streaming to the associated live input. Use this to control precisely when you start and stop simulcasting to specific destinations like YouTube and Twitch.
 @BuiltValue()
 abstract class StreamCreateOutputRequest implements Built<StreamCreateOutputRequest, StreamCreateOutputRequestBuilder> {
-  /// When enabled, live video streamed to the associated live input will be sent to the output URL. When disabled, live video will not be sent to the output URL, even when streaming to the associated live input. Use this to control precisely when you start and stop simulcasting to specific destinations like YouTube and Twitch.
-  @BuiltValueField(wireName: r'enabled')
-  bool? get enabled;
-
   /// The streamKey used to authenticate against an output's target.
   @BuiltValueField(wireName: r'streamKey')
   String get streamKey;
@@ -27,6 +23,10 @@ abstract class StreamCreateOutputRequest implements Built<StreamCreateOutputRequ
   /// The URL an output uses to restream.
   @BuiltValueField(wireName: r'url')
   String get url;
+
+  /// When enabled, live video streamed to the associated live input will be sent to the output URL. When disabled, live video will not be sent to the output URL, even when streaming to the associated live input. Use this to control precisely when you start and stop simulcasting to specific destinations like YouTube and Twitch.
+  @BuiltValueField(wireName: r'enabled')
+  bool? get enabled;
 
   StreamCreateOutputRequest._();
 
@@ -52,13 +52,6 @@ class _$StreamCreateOutputRequestSerializer implements PrimitiveSerializer<Strea
     StreamCreateOutputRequest object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
-    if (object.enabled != null) {
-      yield r'enabled';
-      yield serializers.serialize(
-        object.enabled,
-        specifiedType: const FullType(bool),
-      );
-    }
     yield r'streamKey';
     yield serializers.serialize(
       object.streamKey,
@@ -69,6 +62,13 @@ class _$StreamCreateOutputRequestSerializer implements PrimitiveSerializer<Strea
       object.url,
       specifiedType: const FullType(String),
     );
+    if (object.enabled != null) {
+      yield r'enabled';
+      yield serializers.serialize(
+        object.enabled,
+        specifiedType: const FullType(bool),
+      );
+    }
   }
 
   @override
@@ -92,13 +92,6 @@ class _$StreamCreateOutputRequestSerializer implements PrimitiveSerializer<Strea
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'enabled':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
-          result.enabled = valueDes;
-          break;
         case r'streamKey':
           final valueDes = serializers.deserialize(
             value,
@@ -112,6 +105,13 @@ class _$StreamCreateOutputRequestSerializer implements PrimitiveSerializer<Strea
             specifiedType: const FullType(String),
           ) as String;
           result.url = valueDes;
+          break;
+        case r'enabled':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(bool),
+          ) as bool;
+          result.enabled = valueDes;
           break;
         default:
           unhandled.add(key);

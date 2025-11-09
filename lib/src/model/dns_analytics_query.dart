@@ -13,21 +13,17 @@ part 'dns_analytics_query.g.dart';
 ///
 /// Properties:
 /// * [dimensions] - Array of dimension names.
-/// * [filters] - Segmentation filter in 'attribute operator value' format.
 /// * [limit] - Limit number of returned metrics.
 /// * [metrics] - Array of metric names.
 /// * [since] - Start date and time of requesting data period in ISO 8601 format.
-/// * [sort] - Array of dimensions to sort by, where each dimension may be prefixed by - (descending) or + (ascending).
 /// * [until] - End date and time of requesting data period in ISO 8601 format.
+/// * [filters] - Segmentation filter in 'attribute operator value' format.
+/// * [sort] - Array of dimensions to sort by, where each dimension may be prefixed by - (descending) or + (ascending).
 @BuiltValue()
 abstract class DnsAnalyticsQuery implements Built<DnsAnalyticsQuery, DnsAnalyticsQueryBuilder> {
   /// Array of dimension names.
   @BuiltValueField(wireName: r'dimensions')
   BuiltList<String> get dimensions;
-
-  /// Segmentation filter in 'attribute operator value' format.
-  @BuiltValueField(wireName: r'filters')
-  String? get filters;
 
   /// Limit number of returned metrics.
   @BuiltValueField(wireName: r'limit')
@@ -41,13 +37,17 @@ abstract class DnsAnalyticsQuery implements Built<DnsAnalyticsQuery, DnsAnalytic
   @BuiltValueField(wireName: r'since')
   DateTime get since;
 
-  /// Array of dimensions to sort by, where each dimension may be prefixed by - (descending) or + (ascending).
-  @BuiltValueField(wireName: r'sort')
-  BuiltList<String>? get sort;
-
   /// End date and time of requesting data period in ISO 8601 format.
   @BuiltValueField(wireName: r'until')
   DateTime get until;
+
+  /// Segmentation filter in 'attribute operator value' format.
+  @BuiltValueField(wireName: r'filters')
+  String? get filters;
+
+  /// Array of dimensions to sort by, where each dimension may be prefixed by - (descending) or + (ascending).
+  @BuiltValueField(wireName: r'sort')
+  BuiltList<String>? get sort;
 
   DnsAnalyticsQuery._();
 
@@ -78,13 +78,6 @@ class _$DnsAnalyticsQuerySerializer implements PrimitiveSerializer<DnsAnalyticsQ
       object.dimensions,
       specifiedType: const FullType(BuiltList, [FullType(String)]),
     );
-    if (object.filters != null) {
-      yield r'filters';
-      yield serializers.serialize(
-        object.filters,
-        specifiedType: const FullType(String),
-      );
-    }
     yield r'limit';
     yield serializers.serialize(
       object.limit,
@@ -100,6 +93,18 @@ class _$DnsAnalyticsQuerySerializer implements PrimitiveSerializer<DnsAnalyticsQ
       object.since,
       specifiedType: const FullType(DateTime),
     );
+    yield r'until';
+    yield serializers.serialize(
+      object.until,
+      specifiedType: const FullType(DateTime),
+    );
+    if (object.filters != null) {
+      yield r'filters';
+      yield serializers.serialize(
+        object.filters,
+        specifiedType: const FullType(String),
+      );
+    }
     if (object.sort != null) {
       yield r'sort';
       yield serializers.serialize(
@@ -107,11 +112,6 @@ class _$DnsAnalyticsQuerySerializer implements PrimitiveSerializer<DnsAnalyticsQ
         specifiedType: const FullType(BuiltList, [FullType(String)]),
       );
     }
-    yield r'until';
-    yield serializers.serialize(
-      object.until,
-      specifiedType: const FullType(DateTime),
-    );
   }
 
   @override
@@ -142,13 +142,6 @@ class _$DnsAnalyticsQuerySerializer implements PrimitiveSerializer<DnsAnalyticsQ
           ) as BuiltList<String>;
           result.dimensions.replace(valueDes);
           break;
-        case r'filters':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.filters = valueDes;
-          break;
         case r'limit':
           final valueDes = serializers.deserialize(
             value,
@@ -170,19 +163,26 @@ class _$DnsAnalyticsQuerySerializer implements PrimitiveSerializer<DnsAnalyticsQ
           ) as DateTime;
           result.since = valueDes;
           break;
-        case r'sort':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>;
-          result.sort.replace(valueDes);
-          break;
         case r'until':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(DateTime),
           ) as DateTime;
           result.until = valueDes;
+          break;
+        case r'filters':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.filters = valueDes;
+          break;
+        case r'sort':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BuiltList, [FullType(String)]),
+          ) as BuiltList<String>;
+          result.sort.replace(valueDes);
           break;
         default:
           unhandled.add(key);

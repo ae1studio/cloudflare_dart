@@ -12,11 +12,15 @@ part 'teams_devices_fallback_domain.g.dart';
 /// TeamsDevicesFallbackDomain
 ///
 /// Properties:
+/// * [suffix] - The domain suffix to match when resolving locally.
 /// * [description] - A description of the fallback domain, displayed in the client UI.
 /// * [dnsServer] - A list of IP addresses to handle domain resolution.
-/// * [suffix] - The domain suffix to match when resolving locally.
 @BuiltValue()
 abstract class TeamsDevicesFallbackDomain implements Built<TeamsDevicesFallbackDomain, TeamsDevicesFallbackDomainBuilder> {
+  /// The domain suffix to match when resolving locally.
+  @BuiltValueField(wireName: r'suffix')
+  String get suffix;
+
   /// A description of the fallback domain, displayed in the client UI.
   @BuiltValueField(wireName: r'description')
   String? get description;
@@ -24,10 +28,6 @@ abstract class TeamsDevicesFallbackDomain implements Built<TeamsDevicesFallbackD
   /// A list of IP addresses to handle domain resolution.
   @BuiltValueField(wireName: r'dns_server')
   BuiltList<String>? get dnsServer;
-
-  /// The domain suffix to match when resolving locally.
-  @BuiltValueField(wireName: r'suffix')
-  String get suffix;
 
   TeamsDevicesFallbackDomain._();
 
@@ -52,6 +52,11 @@ class _$TeamsDevicesFallbackDomainSerializer implements PrimitiveSerializer<Team
     TeamsDevicesFallbackDomain object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    yield r'suffix';
+    yield serializers.serialize(
+      object.suffix,
+      specifiedType: const FullType(String),
+    );
     if (object.description != null) {
       yield r'description';
       yield serializers.serialize(
@@ -66,11 +71,6 @@ class _$TeamsDevicesFallbackDomainSerializer implements PrimitiveSerializer<Team
         specifiedType: const FullType(BuiltList, [FullType(String)]),
       );
     }
-    yield r'suffix';
-    yield serializers.serialize(
-      object.suffix,
-      specifiedType: const FullType(String),
-    );
   }
 
   @override
@@ -94,6 +94,13 @@ class _$TeamsDevicesFallbackDomainSerializer implements PrimitiveSerializer<Team
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
+        case r'suffix':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.suffix = valueDes;
+          break;
         case r'description':
           final valueDes = serializers.deserialize(
             value,
@@ -107,13 +114,6 @@ class _$TeamsDevicesFallbackDomainSerializer implements PrimitiveSerializer<Team
             specifiedType: const FullType(BuiltList, [FullType(String)]),
           ) as BuiltList<String>;
           result.dnsServer.replace(valueDes);
-          break;
-        case r'suffix':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.suffix = valueDes;
           break;
         default:
           unhandled.add(key);

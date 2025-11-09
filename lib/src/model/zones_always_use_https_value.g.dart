@@ -6,10 +6,10 @@ part of 'zones_always_use_https_value.dart';
 // BuiltValueGenerator
 // **************************************************************************
 
-const ZonesWafValue _$on_ = const ZonesWafValue._('on_');
-const ZonesWafValue _$off = const ZonesWafValue._('off');
+const ZonesAlwaysUseHttpsValue _$on_ = const ZonesAlwaysUseHttpsValue._('on_');
+const ZonesAlwaysUseHttpsValue _$off = const ZonesAlwaysUseHttpsValue._('off');
 
-ZonesWafValue _$valueOf(String name) {
+ZonesAlwaysUseHttpsValue _$valueOf(String name) {
   switch (name) {
     case 'on_':
       return _$on_;
@@ -20,31 +20,31 @@ ZonesWafValue _$valueOf(String name) {
   }
 }
 
-final BuiltSet<ZonesWafValue> _$values =
-    BuiltSet<ZonesWafValue>(const <ZonesWafValue>[
+final BuiltSet<ZonesAlwaysUseHttpsValue> _$values =
+    BuiltSet<ZonesAlwaysUseHttpsValue>(const <ZonesAlwaysUseHttpsValue>[
   _$on_,
   _$off,
 ]);
 
 class _$ZonesAlwaysUseHttpsValueMeta {
   const _$ZonesAlwaysUseHttpsValueMeta();
-  ZonesWafValue get on_ => _$on_;
-  ZonesWafValue get off => _$off;
-  ZonesWafValue valueOf(String name) => _$valueOf(name);
-  BuiltSet<ZonesWafValue> get values => _$values;
+  ZonesAlwaysUseHttpsValue get on_ => _$on_;
+  ZonesAlwaysUseHttpsValue get off => _$off;
+  ZonesAlwaysUseHttpsValue valueOf(String name) => _$valueOf(name);
+  BuiltSet<ZonesAlwaysUseHttpsValue> get values => _$values;
 }
 
 abstract class _$ZonesAlwaysUseHttpsValueMixin {
   // ignore: non_constant_identifier_names
-  _$ZonesAlwaysUseHttpsValueMeta get ZonesWafValue =>
+  _$ZonesAlwaysUseHttpsValueMeta get ZonesAlwaysUseHttpsValue =>
       const _$ZonesAlwaysUseHttpsValueMeta();
 }
 
-Serializer<ZonesWafValue> _$zonesAlwaysUseHttpsValueSerializer =
+Serializer<ZonesAlwaysUseHttpsValue> _$zonesAlwaysUseHttpsValueSerializer =
     _$ZonesAlwaysUseHttpsValueSerializer();
 
 class _$ZonesAlwaysUseHttpsValueSerializer
-    implements PrimitiveSerializer<ZonesWafValue> {
+    implements PrimitiveSerializer<ZonesAlwaysUseHttpsValue> {
   static const Map<String, Object> _toWire = const <String, Object>{
     'on_': 'on',
     'off': 'off',
@@ -55,20 +55,20 @@ class _$ZonesAlwaysUseHttpsValueSerializer
   };
 
   @override
-  final Iterable<Type> types = const <Type>[ZonesWafValue];
+  final Iterable<Type> types = const <Type>[ZonesAlwaysUseHttpsValue];
   @override
-  final String wireName = 'ZonesWafValue';
+  final String wireName = 'ZonesAlwaysUseHttpsValue';
 
   @override
-  Object serialize(Serializers serializers, ZonesWafValue object,
+  Object serialize(Serializers serializers, ZonesAlwaysUseHttpsValue object,
           {FullType specifiedType = FullType.unspecified}) =>
       _toWire[object.name] ?? object.name;
 
   @override
-  ZonesWafValue deserialize(
+  ZonesAlwaysUseHttpsValue deserialize(
           Serializers serializers, Object serialized,
           {FullType specifiedType = FullType.unspecified}) =>
-      ZonesWafValue.valueOf(
+      ZonesAlwaysUseHttpsValue.valueOf(
           _fromWire[serialized] ?? (serialized is String ? serialized : ''));
 }
 

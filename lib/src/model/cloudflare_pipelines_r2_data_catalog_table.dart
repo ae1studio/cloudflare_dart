@@ -14,10 +14,10 @@ part 'cloudflare_pipelines_r2_data_catalog_table.g.dart';
 /// Properties:
 /// * [accountId] - Cloudflare Account ID
 /// * [bucket] - The R2 Bucket that hosts this catalog
-/// * [namespace] - Table namespace
-/// * [rollingPolicy] 
 /// * [tableName] - Table name
 /// * [token] - Authentication token
+/// * [namespace] - Table namespace
+/// * [rollingPolicy] 
 @BuiltValue()
 abstract class CloudflarePipelinesR2DataCatalogTable implements Built<CloudflarePipelinesR2DataCatalogTable, CloudflarePipelinesR2DataCatalogTableBuilder> {
   /// Cloudflare Account ID
@@ -28,13 +28,6 @@ abstract class CloudflarePipelinesR2DataCatalogTable implements Built<Cloudflare
   @BuiltValueField(wireName: r'bucket')
   String get bucket;
 
-  /// Table namespace
-  @BuiltValueField(wireName: r'namespace')
-  String? get namespace;
-
-  @BuiltValueField(wireName: r'rolling_policy')
-  FileRollingPolicy? get rollingPolicy;
-
   /// Table name
   @BuiltValueField(wireName: r'table_name')
   String get tableName;
@@ -42,6 +35,13 @@ abstract class CloudflarePipelinesR2DataCatalogTable implements Built<Cloudflare
   /// Authentication token
   @BuiltValueField(wireName: r'token')
   String get token;
+
+  /// Table namespace
+  @BuiltValueField(wireName: r'namespace')
+  String? get namespace;
+
+  @BuiltValueField(wireName: r'rolling_policy')
+  FileRollingPolicy? get rollingPolicy;
 
   CloudflarePipelinesR2DataCatalogTable._();
 
@@ -76,6 +76,16 @@ class _$CloudflarePipelinesR2DataCatalogTableSerializer implements PrimitiveSeri
       object.bucket,
       specifiedType: const FullType(String),
     );
+    yield r'table_name';
+    yield serializers.serialize(
+      object.tableName,
+      specifiedType: const FullType(String),
+    );
+    yield r'token';
+    yield serializers.serialize(
+      object.token,
+      specifiedType: const FullType(String),
+    );
     if (object.namespace != null) {
       yield r'namespace';
       yield serializers.serialize(
@@ -90,16 +100,6 @@ class _$CloudflarePipelinesR2DataCatalogTableSerializer implements PrimitiveSeri
         specifiedType: const FullType(FileRollingPolicy),
       );
     }
-    yield r'table_name';
-    yield serializers.serialize(
-      object.tableName,
-      specifiedType: const FullType(String),
-    );
-    yield r'token';
-    yield serializers.serialize(
-      object.token,
-      specifiedType: const FullType(String),
-    );
   }
 
   @override
@@ -137,20 +137,6 @@ class _$CloudflarePipelinesR2DataCatalogTableSerializer implements PrimitiveSeri
           ) as String;
           result.bucket = valueDes;
           break;
-        case r'namespace':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.namespace = valueDes;
-          break;
-        case r'rolling_policy':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(FileRollingPolicy),
-          ) as FileRollingPolicy;
-          result.rollingPolicy.replace(valueDes);
-          break;
         case r'table_name':
           final valueDes = serializers.deserialize(
             value,
@@ -164,6 +150,20 @@ class _$CloudflarePipelinesR2DataCatalogTableSerializer implements PrimitiveSeri
             specifiedType: const FullType(String),
           ) as String;
           result.token = valueDes;
+          break;
+        case r'namespace':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.namespace = valueDes;
+          break;
+        case r'rolling_policy':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(FileRollingPolicy),
+          ) as FileRollingPolicy;
+          result.rollingPolicy.replace(valueDes);
           break;
         default:
           unhandled.add(key);

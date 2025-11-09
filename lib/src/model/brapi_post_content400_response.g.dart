@@ -8,15 +8,15 @@ part of 'brapi_post_content400_response.dart';
 
 class _$BrapiPostContent400Response extends BrapiPostContent400Response {
   @override
-  final BuiltList<BrapiPostContent200ResponseErrorsInner>? errors;
-  @override
   final bool status;
+  @override
+  final BuiltList<BrapiPostContent200ResponseErrorsInner>? errors;
 
   factory _$BrapiPostContent400Response(
           [void Function(BrapiPostContent400ResponseBuilder)? updates]) =>
       (BrapiPostContent400ResponseBuilder()..update(updates))._build();
 
-  _$BrapiPostContent400Response._({this.errors, required this.status})
+  _$BrapiPostContent400Response._({required this.status, this.errors})
       : super._();
   @override
   BrapiPostContent400Response rebuild(
@@ -31,15 +31,15 @@ class _$BrapiPostContent400Response extends BrapiPostContent400Response {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is BrapiPostContent400Response &&
-        errors == other.errors &&
-        status == other.status;
+        status == other.status &&
+        errors == other.errors;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, errors.hashCode);
     _$hash = $jc(_$hash, status.hashCode);
+    _$hash = $jc(_$hash, errors.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -47,8 +47,8 @@ class _$BrapiPostContent400Response extends BrapiPostContent400Response {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'BrapiPostContent400Response')
-          ..add('errors', errors)
-          ..add('status', status))
+          ..add('status', status)
+          ..add('errors', errors))
         .toString();
   }
 }
@@ -59,15 +59,15 @@ class BrapiPostContent400ResponseBuilder
             BrapiPostContent400ResponseBuilder> {
   _$BrapiPostContent400Response? _$v;
 
+  bool? _status;
+  bool? get status => _$this._status;
+  set status(bool? status) => _$this._status = status;
+
   ListBuilder<BrapiPostContent200ResponseErrorsInner>? _errors;
   ListBuilder<BrapiPostContent200ResponseErrorsInner> get errors =>
       _$this._errors ??= ListBuilder<BrapiPostContent200ResponseErrorsInner>();
   set errors(ListBuilder<BrapiPostContent200ResponseErrorsInner>? errors) =>
       _$this._errors = errors;
-
-  bool? _status;
-  bool? get status => _$this._status;
-  set status(bool? status) => _$this._status = status;
 
   BrapiPostContent400ResponseBuilder() {
     BrapiPostContent400Response._defaults(this);
@@ -76,8 +76,8 @@ class BrapiPostContent400ResponseBuilder
   BrapiPostContent400ResponseBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _errors = $v.errors?.toBuilder();
       _status = $v.status;
+      _errors = $v.errors?.toBuilder();
       _$v = null;
     }
     return this;
@@ -101,9 +101,9 @@ class BrapiPostContent400ResponseBuilder
     try {
       _$result = _$v ??
           _$BrapiPostContent400Response._(
-            errors: _errors?.build(),
             status: BuiltValueNullFieldError.checkNotNull(
                 status, r'BrapiPostContent400Response', 'status'),
+            errors: _errors?.build(),
           );
     } catch (_) {
       late String _$failedField;

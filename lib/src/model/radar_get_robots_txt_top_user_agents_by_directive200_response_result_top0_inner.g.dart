@@ -9,13 +9,13 @@ part of 'radar_get_robots_txt_top_user_agents_by_directive200_response_result_to
 class _$RadarGetRobotsTxtTopUserAgentsByDirective200ResponseResultTop0Inner
     extends RadarGetRobotsTxtTopUserAgentsByDirective200ResponseResultTop0Inner {
   @override
-  final int? fully;
-  @override
   final String name;
   @override
-  final int? partially;
-  @override
   final int value;
+  @override
+  final int? fully;
+  @override
+  final int? partially;
 
   factory _$RadarGetRobotsTxtTopUserAgentsByDirective200ResponseResultTop0Inner(
           [void Function(
@@ -26,7 +26,7 @@ class _$RadarGetRobotsTxtTopUserAgentsByDirective200ResponseResultTop0Inner
           ._build();
 
   _$RadarGetRobotsTxtTopUserAgentsByDirective200ResponseResultTop0Inner._(
-      {this.fully, required this.name, this.partially, required this.value})
+      {required this.name, required this.value, this.fully, this.partially})
       : super._();
   @override
   RadarGetRobotsTxtTopUserAgentsByDirective200ResponseResultTop0Inner rebuild(
@@ -46,19 +46,19 @@ class _$RadarGetRobotsTxtTopUserAgentsByDirective200ResponseResultTop0Inner
     if (identical(other, this)) return true;
     return other
             is RadarGetRobotsTxtTopUserAgentsByDirective200ResponseResultTop0Inner &&
-        fully == other.fully &&
         name == other.name &&
-        partially == other.partially &&
-        value == other.value;
+        value == other.value &&
+        fully == other.fully &&
+        partially == other.partially;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, fully.hashCode);
     _$hash = $jc(_$hash, name.hashCode);
-    _$hash = $jc(_$hash, partially.hashCode);
     _$hash = $jc(_$hash, value.hashCode);
+    _$hash = $jc(_$hash, fully.hashCode);
+    _$hash = $jc(_$hash, partially.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -67,10 +67,10 @@ class _$RadarGetRobotsTxtTopUserAgentsByDirective200ResponseResultTop0Inner
   String toString() {
     return (newBuiltValueToStringHelper(
             r'RadarGetRobotsTxtTopUserAgentsByDirective200ResponseResultTop0Inner')
-          ..add('fully', fully)
           ..add('name', name)
-          ..add('partially', partially)
-          ..add('value', value))
+          ..add('value', value)
+          ..add('fully', fully)
+          ..add('partially', partially))
         .toString();
   }
 }
@@ -82,21 +82,21 @@ class RadarGetRobotsTxtTopUserAgentsByDirective200ResponseResultTop0InnerBuilder
             RadarGetRobotsTxtTopUserAgentsByDirective200ResponseResultTop0InnerBuilder> {
   _$RadarGetRobotsTxtTopUserAgentsByDirective200ResponseResultTop0Inner? _$v;
 
-  int? _fully;
-  int? get fully => _$this._fully;
-  set fully(int? fully) => _$this._fully = fully;
-
   String? _name;
   String? get name => _$this._name;
   set name(String? name) => _$this._name = name;
 
-  int? _partially;
-  int? get partially => _$this._partially;
-  set partially(int? partially) => _$this._partially = partially;
-
   int? _value;
   int? get value => _$this._value;
   set value(int? value) => _$this._value = value;
+
+  int? _fully;
+  int? get fully => _$this._fully;
+  set fully(int? fully) => _$this._fully = fully;
+
+  int? _partially;
+  int? get partially => _$this._partially;
+  set partially(int? partially) => _$this._partially = partially;
 
   RadarGetRobotsTxtTopUserAgentsByDirective200ResponseResultTop0InnerBuilder() {
     RadarGetRobotsTxtTopUserAgentsByDirective200ResponseResultTop0Inner
@@ -107,10 +107,10 @@ class RadarGetRobotsTxtTopUserAgentsByDirective200ResponseResultTop0InnerBuilder
       get _$this {
     final $v = _$v;
     if ($v != null) {
-      _fully = $v.fully;
       _name = $v.name;
-      _partially = $v.partially;
       _value = $v.value;
+      _fully = $v.fully;
+      _partially = $v.partially;
       _$v = null;
     }
     return this;
@@ -140,16 +140,16 @@ class RadarGetRobotsTxtTopUserAgentsByDirective200ResponseResultTop0InnerBuilder
       _build() {
     final _$result = _$v ??
         _$RadarGetRobotsTxtTopUserAgentsByDirective200ResponseResultTop0Inner._(
-          fully: fully,
           name: BuiltValueNullFieldError.checkNotNull(
               name,
               r'RadarGetRobotsTxtTopUserAgentsByDirective200ResponseResultTop0Inner',
               'name'),
-          partially: partially,
           value: BuiltValueNullFieldError.checkNotNull(
               value,
               r'RadarGetRobotsTxtTopUserAgentsByDirective200ResponseResultTop0Inner',
               'value'),
+          fully: fully,
+          partially: partially,
         );
     replace(_$result);
     return _$result;

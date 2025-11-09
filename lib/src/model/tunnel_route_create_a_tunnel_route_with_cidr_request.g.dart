@@ -9,9 +9,9 @@ part of 'tunnel_route_create_a_tunnel_route_with_cidr_request.dart';
 class _$TunnelRouteCreateATunnelRouteWithCidrRequest
     extends TunnelRouteCreateATunnelRouteWithCidrRequest {
   @override
-  final String? comment;
-  @override
   final String tunnelId;
+  @override
+  final String? comment;
   @override
   final String? virtualNetworkId;
 
@@ -22,7 +22,7 @@ class _$TunnelRouteCreateATunnelRouteWithCidrRequest
           ._build();
 
   _$TunnelRouteCreateATunnelRouteWithCidrRequest._(
-      {this.comment, required this.tunnelId, this.virtualNetworkId})
+      {required this.tunnelId, this.comment, this.virtualNetworkId})
       : super._();
   @override
   TunnelRouteCreateATunnelRouteWithCidrRequest rebuild(
@@ -38,16 +38,16 @@ class _$TunnelRouteCreateATunnelRouteWithCidrRequest
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is TunnelRouteCreateATunnelRouteWithCidrRequest &&
-        comment == other.comment &&
         tunnelId == other.tunnelId &&
+        comment == other.comment &&
         virtualNetworkId == other.virtualNetworkId;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, comment.hashCode);
     _$hash = $jc(_$hash, tunnelId.hashCode);
+    _$hash = $jc(_$hash, comment.hashCode);
     _$hash = $jc(_$hash, virtualNetworkId.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
@@ -57,8 +57,8 @@ class _$TunnelRouteCreateATunnelRouteWithCidrRequest
   String toString() {
     return (newBuiltValueToStringHelper(
             r'TunnelRouteCreateATunnelRouteWithCidrRequest')
-          ..add('comment', comment)
           ..add('tunnelId', tunnelId)
+          ..add('comment', comment)
           ..add('virtualNetworkId', virtualNetworkId))
         .toString();
   }
@@ -70,13 +70,13 @@ class TunnelRouteCreateATunnelRouteWithCidrRequestBuilder
             TunnelRouteCreateATunnelRouteWithCidrRequestBuilder> {
   _$TunnelRouteCreateATunnelRouteWithCidrRequest? _$v;
 
-  String? _comment;
-  String? get comment => _$this._comment;
-  set comment(String? comment) => _$this._comment = comment;
-
   String? _tunnelId;
   String? get tunnelId => _$this._tunnelId;
   set tunnelId(String? tunnelId) => _$this._tunnelId = tunnelId;
+
+  String? _comment;
+  String? get comment => _$this._comment;
+  set comment(String? comment) => _$this._comment = comment;
 
   String? _virtualNetworkId;
   String? get virtualNetworkId => _$this._virtualNetworkId;
@@ -90,8 +90,8 @@ class TunnelRouteCreateATunnelRouteWithCidrRequestBuilder
   TunnelRouteCreateATunnelRouteWithCidrRequestBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _comment = $v.comment;
       _tunnelId = $v.tunnelId;
+      _comment = $v.comment;
       _virtualNetworkId = $v.virtualNetworkId;
       _$v = null;
     }
@@ -116,9 +116,9 @@ class TunnelRouteCreateATunnelRouteWithCidrRequestBuilder
   _$TunnelRouteCreateATunnelRouteWithCidrRequest _build() {
     final _$result = _$v ??
         _$TunnelRouteCreateATunnelRouteWithCidrRequest._(
-          comment: comment,
           tunnelId: BuiltValueNullFieldError.checkNotNull(tunnelId,
               r'TunnelRouteCreateATunnelRouteWithCidrRequest', 'tunnelId'),
+          comment: comment,
           virtualNetworkId: virtualNetworkId,
         );
     replace(_$result);

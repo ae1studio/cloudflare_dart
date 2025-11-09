@@ -20,6 +20,7 @@ part 'app_launcher_application1.g.dart';
 /// AppLauncherApplication1
 ///
 /// Properties:
+/// * [type] 
 /// * [aud] - Audience tag.
 /// * [createdAt] 
 /// * [id] - UUID.
@@ -32,7 +33,6 @@ part 'app_launcher_application1.g.dart';
 /// * [domain] 
 /// * [name] 
 /// * [sessionDuration] - The amount of time that tokens issued for this application will be valid. Must be in the format `300ms` or `2h45m`. Valid time units are: ns, us (or µs), ms, s, m, h. Note: unsupported for infrastructure type applications.
-/// * [type] 
 /// * [appLauncherLogoUrl] - The image URL of the logo shown in the App Launcher header.
 /// * [bgColor] - The background color of the App Launcher page.
 /// * [footerLinks] - The links in the App Launcher footer.
@@ -111,6 +111,11 @@ class _$AppLauncherApplication1Serializer implements PrimitiveSerializer<AppLaun
         specifiedType: const FullType(AccessLandingPageDesign),
       );
     }
+    yield r'type';
+    yield serializers.serialize(
+      object.type,
+      specifiedType: const FullType(AccessType),
+    );
     if (object.sessionDuration != null) {
       yield r'session_duration';
       yield serializers.serialize(
@@ -118,11 +123,6 @@ class _$AppLauncherApplication1Serializer implements PrimitiveSerializer<AppLaun
         specifiedType: const FullType(String),
       );
     }
-    yield r'type';
-    yield serializers.serialize(
-      object.type,
-      specifiedType: const FullType(AccessType),
-    );
     if (object.customNonIdentityDenyUrl != null) {
       yield r'custom_non_identity_deny_url';
       yield serializers.serialize(
@@ -272,19 +272,19 @@ class _$AppLauncherApplication1Serializer implements PrimitiveSerializer<AppLaun
           ) as AccessLandingPageDesign;
           result.landingPageDesign.replace(valueDes);
           break;
-        case r'session_duration':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.sessionDuration = valueDes;
-          break;
         case r'type':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(AccessType),
           ) as AccessType;
           result.type = valueDes;
+          break;
+        case r'session_duration':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.sessionDuration = valueDes;
           break;
         case r'custom_non_identity_deny_url':
           final valueDes = serializers.deserialize(

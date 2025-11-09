@@ -8,29 +8,29 @@ part of 'access_scim_config.dart';
 
 class _$AccessScimConfig extends AccessScimConfig {
   @override
+  final String idpUid;
+  @override
+  final String remoteUri;
+  @override
   final AccessScimConfigAuthentication? authentication;
   @override
   final bool? deactivateOnDelete;
   @override
   final bool? enabled;
   @override
-  final String idpUid;
-  @override
   final BuiltList<AccessScimConfigMapping>? mappings;
-  @override
-  final String remoteUri;
 
   factory _$AccessScimConfig(
           [void Function(AccessScimConfigBuilder)? updates]) =>
       (AccessScimConfigBuilder()..update(updates))._build();
 
   _$AccessScimConfig._(
-      {this.authentication,
+      {required this.idpUid,
+      required this.remoteUri,
+      this.authentication,
       this.deactivateOnDelete,
       this.enabled,
-      required this.idpUid,
-      this.mappings,
-      required this.remoteUri})
+      this.mappings})
       : super._();
   @override
   AccessScimConfig rebuild(void Function(AccessScimConfigBuilder) updates) =>
@@ -44,23 +44,23 @@ class _$AccessScimConfig extends AccessScimConfig {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is AccessScimConfig &&
+        idpUid == other.idpUid &&
+        remoteUri == other.remoteUri &&
         authentication == other.authentication &&
         deactivateOnDelete == other.deactivateOnDelete &&
         enabled == other.enabled &&
-        idpUid == other.idpUid &&
-        mappings == other.mappings &&
-        remoteUri == other.remoteUri;
+        mappings == other.mappings;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
+    _$hash = $jc(_$hash, idpUid.hashCode);
+    _$hash = $jc(_$hash, remoteUri.hashCode);
     _$hash = $jc(_$hash, authentication.hashCode);
     _$hash = $jc(_$hash, deactivateOnDelete.hashCode);
     _$hash = $jc(_$hash, enabled.hashCode);
-    _$hash = $jc(_$hash, idpUid.hashCode);
     _$hash = $jc(_$hash, mappings.hashCode);
-    _$hash = $jc(_$hash, remoteUri.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -68,12 +68,12 @@ class _$AccessScimConfig extends AccessScimConfig {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'AccessScimConfig')
+          ..add('idpUid', idpUid)
+          ..add('remoteUri', remoteUri)
           ..add('authentication', authentication)
           ..add('deactivateOnDelete', deactivateOnDelete)
           ..add('enabled', enabled)
-          ..add('idpUid', idpUid)
-          ..add('mappings', mappings)
-          ..add('remoteUri', remoteUri))
+          ..add('mappings', mappings))
         .toString();
   }
 }
@@ -81,6 +81,14 @@ class _$AccessScimConfig extends AccessScimConfig {
 class AccessScimConfigBuilder
     implements Builder<AccessScimConfig, AccessScimConfigBuilder> {
   _$AccessScimConfig? _$v;
+
+  String? _idpUid;
+  String? get idpUid => _$this._idpUid;
+  set idpUid(String? idpUid) => _$this._idpUid = idpUid;
+
+  String? _remoteUri;
+  String? get remoteUri => _$this._remoteUri;
+  set remoteUri(String? remoteUri) => _$this._remoteUri = remoteUri;
 
   AccessScimConfigAuthenticationBuilder? _authentication;
   AccessScimConfigAuthenticationBuilder get authentication =>
@@ -97,19 +105,11 @@ class AccessScimConfigBuilder
   bool? get enabled => _$this._enabled;
   set enabled(bool? enabled) => _$this._enabled = enabled;
 
-  String? _idpUid;
-  String? get idpUid => _$this._idpUid;
-  set idpUid(String? idpUid) => _$this._idpUid = idpUid;
-
   ListBuilder<AccessScimConfigMapping>? _mappings;
   ListBuilder<AccessScimConfigMapping> get mappings =>
       _$this._mappings ??= ListBuilder<AccessScimConfigMapping>();
   set mappings(ListBuilder<AccessScimConfigMapping>? mappings) =>
       _$this._mappings = mappings;
-
-  String? _remoteUri;
-  String? get remoteUri => _$this._remoteUri;
-  set remoteUri(String? remoteUri) => _$this._remoteUri = remoteUri;
 
   AccessScimConfigBuilder() {
     AccessScimConfig._defaults(this);
@@ -118,12 +118,12 @@ class AccessScimConfigBuilder
   AccessScimConfigBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
+      _idpUid = $v.idpUid;
+      _remoteUri = $v.remoteUri;
       _authentication = $v.authentication?.toBuilder();
       _deactivateOnDelete = $v.deactivateOnDelete;
       _enabled = $v.enabled;
-      _idpUid = $v.idpUid;
       _mappings = $v.mappings?.toBuilder();
-      _remoteUri = $v.remoteUri;
       _$v = null;
     }
     return this;
@@ -147,14 +147,14 @@ class AccessScimConfigBuilder
     try {
       _$result = _$v ??
           _$AccessScimConfig._(
+            idpUid: BuiltValueNullFieldError.checkNotNull(
+                idpUid, r'AccessScimConfig', 'idpUid'),
+            remoteUri: BuiltValueNullFieldError.checkNotNull(
+                remoteUri, r'AccessScimConfig', 'remoteUri'),
             authentication: _authentication?.build(),
             deactivateOnDelete: deactivateOnDelete,
             enabled: enabled,
-            idpUid: BuiltValueNullFieldError.checkNotNull(
-                idpUid, r'AccessScimConfig', 'idpUid'),
             mappings: _mappings?.build(),
-            remoteUri: BuiltValueNullFieldError.checkNotNull(
-                remoteUri, r'AccessScimConfig', 'remoteUri'),
           );
     } catch (_) {
       late String _$failedField;

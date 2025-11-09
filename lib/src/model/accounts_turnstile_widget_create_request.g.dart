@@ -9,17 +9,17 @@ part of 'accounts_turnstile_widget_create_request.dart';
 class _$AccountsTurnstileWidgetCreateRequest
     extends AccountsTurnstileWidgetCreateRequest {
   @override
-  final bool? botFightMode;
-  @override
-  final TurnstileClearanceLevel? clearanceLevel;
-  @override
   final BuiltList<String> domains;
-  @override
-  final bool? ephemeralId;
   @override
   final TurnstileWidgetMode mode;
   @override
   final String name;
+  @override
+  final bool? botFightMode;
+  @override
+  final TurnstileClearanceLevel? clearanceLevel;
+  @override
+  final bool? ephemeralId;
   @override
   final bool? offlabel;
   @override
@@ -31,12 +31,12 @@ class _$AccountsTurnstileWidgetCreateRequest
       (AccountsTurnstileWidgetCreateRequestBuilder()..update(updates))._build();
 
   _$AccountsTurnstileWidgetCreateRequest._(
-      {this.botFightMode,
-      this.clearanceLevel,
-      required this.domains,
-      this.ephemeralId,
+      {required this.domains,
       required this.mode,
       required this.name,
+      this.botFightMode,
+      this.clearanceLevel,
+      this.ephemeralId,
       this.offlabel,
       this.region})
       : super._();
@@ -53,12 +53,12 @@ class _$AccountsTurnstileWidgetCreateRequest
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is AccountsTurnstileWidgetCreateRequest &&
-        botFightMode == other.botFightMode &&
-        clearanceLevel == other.clearanceLevel &&
         domains == other.domains &&
-        ephemeralId == other.ephemeralId &&
         mode == other.mode &&
         name == other.name &&
+        botFightMode == other.botFightMode &&
+        clearanceLevel == other.clearanceLevel &&
+        ephemeralId == other.ephemeralId &&
         offlabel == other.offlabel &&
         region == other.region;
   }
@@ -66,12 +66,12 @@ class _$AccountsTurnstileWidgetCreateRequest
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, botFightMode.hashCode);
-    _$hash = $jc(_$hash, clearanceLevel.hashCode);
     _$hash = $jc(_$hash, domains.hashCode);
-    _$hash = $jc(_$hash, ephemeralId.hashCode);
     _$hash = $jc(_$hash, mode.hashCode);
     _$hash = $jc(_$hash, name.hashCode);
+    _$hash = $jc(_$hash, botFightMode.hashCode);
+    _$hash = $jc(_$hash, clearanceLevel.hashCode);
+    _$hash = $jc(_$hash, ephemeralId.hashCode);
     _$hash = $jc(_$hash, offlabel.hashCode);
     _$hash = $jc(_$hash, region.hashCode);
     _$hash = $jf(_$hash);
@@ -81,12 +81,12 @@ class _$AccountsTurnstileWidgetCreateRequest
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'AccountsTurnstileWidgetCreateRequest')
-          ..add('botFightMode', botFightMode)
-          ..add('clearanceLevel', clearanceLevel)
           ..add('domains', domains)
-          ..add('ephemeralId', ephemeralId)
           ..add('mode', mode)
           ..add('name', name)
+          ..add('botFightMode', botFightMode)
+          ..add('clearanceLevel', clearanceLevel)
+          ..add('ephemeralId', ephemeralId)
           ..add('offlabel', offlabel)
           ..add('region', region))
         .toString();
@@ -99,6 +99,18 @@ class AccountsTurnstileWidgetCreateRequestBuilder
             AccountsTurnstileWidgetCreateRequestBuilder> {
   _$AccountsTurnstileWidgetCreateRequest? _$v;
 
+  ListBuilder<String>? _domains;
+  ListBuilder<String> get domains => _$this._domains ??= ListBuilder<String>();
+  set domains(ListBuilder<String>? domains) => _$this._domains = domains;
+
+  TurnstileWidgetMode? _mode;
+  TurnstileWidgetMode? get mode => _$this._mode;
+  set mode(TurnstileWidgetMode? mode) => _$this._mode = mode;
+
+  String? _name;
+  String? get name => _$this._name;
+  set name(String? name) => _$this._name = name;
+
   bool? _botFightMode;
   bool? get botFightMode => _$this._botFightMode;
   set botFightMode(bool? botFightMode) => _$this._botFightMode = botFightMode;
@@ -108,21 +120,9 @@ class AccountsTurnstileWidgetCreateRequestBuilder
   set clearanceLevel(TurnstileClearanceLevel? clearanceLevel) =>
       _$this._clearanceLevel = clearanceLevel;
 
-  ListBuilder<String>? _domains;
-  ListBuilder<String> get domains => _$this._domains ??= ListBuilder<String>();
-  set domains(ListBuilder<String>? domains) => _$this._domains = domains;
-
   bool? _ephemeralId;
   bool? get ephemeralId => _$this._ephemeralId;
   set ephemeralId(bool? ephemeralId) => _$this._ephemeralId = ephemeralId;
-
-  TurnstileWidgetMode? _mode;
-  TurnstileWidgetMode? get mode => _$this._mode;
-  set mode(TurnstileWidgetMode? mode) => _$this._mode = mode;
-
-  String? _name;
-  String? get name => _$this._name;
-  set name(String? name) => _$this._name = name;
 
   bool? _offlabel;
   bool? get offlabel => _$this._offlabel;
@@ -139,12 +139,12 @@ class AccountsTurnstileWidgetCreateRequestBuilder
   AccountsTurnstileWidgetCreateRequestBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _botFightMode = $v.botFightMode;
-      _clearanceLevel = $v.clearanceLevel;
       _domains = $v.domains.toBuilder();
-      _ephemeralId = $v.ephemeralId;
       _mode = $v.mode;
       _name = $v.name;
+      _botFightMode = $v.botFightMode;
+      _clearanceLevel = $v.clearanceLevel;
+      _ephemeralId = $v.ephemeralId;
       _offlabel = $v.offlabel;
       _region = $v.region;
       _$v = null;
@@ -171,14 +171,14 @@ class AccountsTurnstileWidgetCreateRequestBuilder
     try {
       _$result = _$v ??
           _$AccountsTurnstileWidgetCreateRequest._(
-            botFightMode: botFightMode,
-            clearanceLevel: clearanceLevel,
             domains: domains.build(),
-            ephemeralId: ephemeralId,
             mode: BuiltValueNullFieldError.checkNotNull(
                 mode, r'AccountsTurnstileWidgetCreateRequest', 'mode'),
             name: BuiltValueNullFieldError.checkNotNull(
                 name, r'AccountsTurnstileWidgetCreateRequest', 'name'),
+            botFightMode: botFightMode,
+            clearanceLevel: clearanceLevel,
+            ephemeralId: ephemeralId,
             offlabel: offlabel,
             region: region,
           );

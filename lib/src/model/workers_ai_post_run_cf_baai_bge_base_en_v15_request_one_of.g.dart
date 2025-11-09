@@ -76,9 +76,9 @@ class _$WorkersAiPostRunCfBaaiBgeBaseEnV15RequestOneOfPoolingEnumSerializer
 class _$WorkersAiPostRunCfBaaiBgeBaseEnV15RequestOneOf
     extends WorkersAiPostRunCfBaaiBgeBaseEnV15RequestOneOf {
   @override
-  final WorkersAiPostRunCfBaaiBgeBaseEnV15RequestOneOfPoolingEnum? pooling;
-  @override
   final WorkersAiPostRunCfBaaiBgeBaseEnV15RequestOneOfText text;
+  @override
+  final WorkersAiPostRunCfBaaiBgeBaseEnV15RequestOneOfPoolingEnum? pooling;
 
   factory _$WorkersAiPostRunCfBaaiBgeBaseEnV15RequestOneOf(
           [void Function(WorkersAiPostRunCfBaaiBgeBaseEnV15RequestOneOfBuilder)?
@@ -87,7 +87,7 @@ class _$WorkersAiPostRunCfBaaiBgeBaseEnV15RequestOneOf
           ._build();
 
   _$WorkersAiPostRunCfBaaiBgeBaseEnV15RequestOneOf._(
-      {this.pooling, required this.text})
+      {required this.text, this.pooling})
       : super._();
   @override
   WorkersAiPostRunCfBaaiBgeBaseEnV15RequestOneOf rebuild(
@@ -103,15 +103,15 @@ class _$WorkersAiPostRunCfBaaiBgeBaseEnV15RequestOneOf
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is WorkersAiPostRunCfBaaiBgeBaseEnV15RequestOneOf &&
-        pooling == other.pooling &&
-        text == other.text;
+        text == other.text &&
+        pooling == other.pooling;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, pooling.hashCode);
     _$hash = $jc(_$hash, text.hashCode);
+    _$hash = $jc(_$hash, pooling.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -120,8 +120,8 @@ class _$WorkersAiPostRunCfBaaiBgeBaseEnV15RequestOneOf
   String toString() {
     return (newBuiltValueToStringHelper(
             r'WorkersAiPostRunCfBaaiBgeBaseEnV15RequestOneOf')
-          ..add('pooling', pooling)
-          ..add('text', text))
+          ..add('text', text)
+          ..add('pooling', pooling))
         .toString();
   }
 }
@@ -132,19 +132,19 @@ class WorkersAiPostRunCfBaaiBgeBaseEnV15RequestOneOfBuilder
             WorkersAiPostRunCfBaaiBgeBaseEnV15RequestOneOfBuilder> {
   _$WorkersAiPostRunCfBaaiBgeBaseEnV15RequestOneOf? _$v;
 
-  WorkersAiPostRunCfBaaiBgeBaseEnV15RequestOneOfPoolingEnum? _pooling;
-  WorkersAiPostRunCfBaaiBgeBaseEnV15RequestOneOfPoolingEnum? get pooling =>
-      _$this._pooling;
-  set pooling(
-          WorkersAiPostRunCfBaaiBgeBaseEnV15RequestOneOfPoolingEnum? pooling) =>
-      _$this._pooling = pooling;
-
   WorkersAiPostRunCfBaaiBgeBaseEnV15RequestOneOfTextBuilder? _text;
   WorkersAiPostRunCfBaaiBgeBaseEnV15RequestOneOfTextBuilder get text =>
       _$this._text ??=
           WorkersAiPostRunCfBaaiBgeBaseEnV15RequestOneOfTextBuilder();
   set text(WorkersAiPostRunCfBaaiBgeBaseEnV15RequestOneOfTextBuilder? text) =>
       _$this._text = text;
+
+  WorkersAiPostRunCfBaaiBgeBaseEnV15RequestOneOfPoolingEnum? _pooling;
+  WorkersAiPostRunCfBaaiBgeBaseEnV15RequestOneOfPoolingEnum? get pooling =>
+      _$this._pooling;
+  set pooling(
+          WorkersAiPostRunCfBaaiBgeBaseEnV15RequestOneOfPoolingEnum? pooling) =>
+      _$this._pooling = pooling;
 
   WorkersAiPostRunCfBaaiBgeBaseEnV15RequestOneOfBuilder() {
     WorkersAiPostRunCfBaaiBgeBaseEnV15RequestOneOf._defaults(this);
@@ -153,8 +153,8 @@ class WorkersAiPostRunCfBaaiBgeBaseEnV15RequestOneOfBuilder
   WorkersAiPostRunCfBaaiBgeBaseEnV15RequestOneOfBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _pooling = $v.pooling;
       _text = $v.text.toBuilder();
+      _pooling = $v.pooling;
       _$v = null;
     }
     return this;
@@ -180,8 +180,8 @@ class WorkersAiPostRunCfBaaiBgeBaseEnV15RequestOneOfBuilder
     try {
       _$result = _$v ??
           _$WorkersAiPostRunCfBaaiBgeBaseEnV15RequestOneOf._(
-            pooling: pooling,
             text: text.build(),
+            pooling: pooling,
           );
     } catch (_) {
       late String _$failedField;

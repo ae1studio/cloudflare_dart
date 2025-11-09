@@ -14,15 +14,7 @@ class _$McnCatalogSync extends McnCatalogSync {
   @override
   final McnCatalogSyncDestinationType destinationType;
   @override
-  final BuiltMap<String, McnError>? errors;
-  @override
   final String id;
-  @override
-  final String? includesDiscoveriesUntil;
-  @override
-  final String? lastAttemptedUpdateAt;
-  @override
-  final String? lastSuccessfulUpdateAt;
   @override
   final String lastUserUpdateAt;
   @override
@@ -31,6 +23,14 @@ class _$McnCatalogSync extends McnCatalogSync {
   final String policy;
   @override
   final McnCatalogSyncUpdateMode updateMode;
+  @override
+  final BuiltMap<String, McnError>? errors;
+  @override
+  final String? includesDiscoveriesUntil;
+  @override
+  final String? lastAttemptedUpdateAt;
+  @override
+  final String? lastSuccessfulUpdateAt;
 
   factory _$McnCatalogSync([void Function(McnCatalogSyncBuilder)? updates]) =>
       (McnCatalogSyncBuilder()..update(updates))._build();
@@ -39,15 +39,15 @@ class _$McnCatalogSync extends McnCatalogSync {
       {required this.description,
       required this.destinationId,
       required this.destinationType,
-      this.errors,
       required this.id,
-      this.includesDiscoveriesUntil,
-      this.lastAttemptedUpdateAt,
-      this.lastSuccessfulUpdateAt,
       required this.lastUserUpdateAt,
       required this.name,
       required this.policy,
-      required this.updateMode})
+      required this.updateMode,
+      this.errors,
+      this.includesDiscoveriesUntil,
+      this.lastAttemptedUpdateAt,
+      this.lastSuccessfulUpdateAt})
       : super._();
   @override
   McnCatalogSync rebuild(void Function(McnCatalogSyncBuilder) updates) =>
@@ -63,15 +63,15 @@ class _$McnCatalogSync extends McnCatalogSync {
         description == other.description &&
         destinationId == other.destinationId &&
         destinationType == other.destinationType &&
-        errors == other.errors &&
         id == other.id &&
-        includesDiscoveriesUntil == other.includesDiscoveriesUntil &&
-        lastAttemptedUpdateAt == other.lastAttemptedUpdateAt &&
-        lastSuccessfulUpdateAt == other.lastSuccessfulUpdateAt &&
         lastUserUpdateAt == other.lastUserUpdateAt &&
         name == other.name &&
         policy == other.policy &&
-        updateMode == other.updateMode;
+        updateMode == other.updateMode &&
+        errors == other.errors &&
+        includesDiscoveriesUntil == other.includesDiscoveriesUntil &&
+        lastAttemptedUpdateAt == other.lastAttemptedUpdateAt &&
+        lastSuccessfulUpdateAt == other.lastSuccessfulUpdateAt;
   }
 
   @override
@@ -80,15 +80,15 @@ class _$McnCatalogSync extends McnCatalogSync {
     _$hash = $jc(_$hash, description.hashCode);
     _$hash = $jc(_$hash, destinationId.hashCode);
     _$hash = $jc(_$hash, destinationType.hashCode);
-    _$hash = $jc(_$hash, errors.hashCode);
     _$hash = $jc(_$hash, id.hashCode);
-    _$hash = $jc(_$hash, includesDiscoveriesUntil.hashCode);
-    _$hash = $jc(_$hash, lastAttemptedUpdateAt.hashCode);
-    _$hash = $jc(_$hash, lastSuccessfulUpdateAt.hashCode);
     _$hash = $jc(_$hash, lastUserUpdateAt.hashCode);
     _$hash = $jc(_$hash, name.hashCode);
     _$hash = $jc(_$hash, policy.hashCode);
     _$hash = $jc(_$hash, updateMode.hashCode);
+    _$hash = $jc(_$hash, errors.hashCode);
+    _$hash = $jc(_$hash, includesDiscoveriesUntil.hashCode);
+    _$hash = $jc(_$hash, lastAttemptedUpdateAt.hashCode);
+    _$hash = $jc(_$hash, lastSuccessfulUpdateAt.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -99,15 +99,15 @@ class _$McnCatalogSync extends McnCatalogSync {
           ..add('description', description)
           ..add('destinationId', destinationId)
           ..add('destinationType', destinationType)
-          ..add('errors', errors)
           ..add('id', id)
-          ..add('includesDiscoveriesUntil', includesDiscoveriesUntil)
-          ..add('lastAttemptedUpdateAt', lastAttemptedUpdateAt)
-          ..add('lastSuccessfulUpdateAt', lastSuccessfulUpdateAt)
           ..add('lastUserUpdateAt', lastUserUpdateAt)
           ..add('name', name)
           ..add('policy', policy)
-          ..add('updateMode', updateMode))
+          ..add('updateMode', updateMode)
+          ..add('errors', errors)
+          ..add('includesDiscoveriesUntil', includesDiscoveriesUntil)
+          ..add('lastAttemptedUpdateAt', lastAttemptedUpdateAt)
+          ..add('lastSuccessfulUpdateAt', lastSuccessfulUpdateAt))
         .toString();
   }
 }
@@ -130,29 +130,9 @@ class McnCatalogSyncBuilder
   set destinationType(McnCatalogSyncDestinationType? destinationType) =>
       _$this._destinationType = destinationType;
 
-  MapBuilder<String, McnError>? _errors;
-  MapBuilder<String, McnError> get errors =>
-      _$this._errors ??= MapBuilder<String, McnError>();
-  set errors(MapBuilder<String, McnError>? errors) => _$this._errors = errors;
-
   String? _id;
   String? get id => _$this._id;
   set id(String? id) => _$this._id = id;
-
-  String? _includesDiscoveriesUntil;
-  String? get includesDiscoveriesUntil => _$this._includesDiscoveriesUntil;
-  set includesDiscoveriesUntil(String? includesDiscoveriesUntil) =>
-      _$this._includesDiscoveriesUntil = includesDiscoveriesUntil;
-
-  String? _lastAttemptedUpdateAt;
-  String? get lastAttemptedUpdateAt => _$this._lastAttemptedUpdateAt;
-  set lastAttemptedUpdateAt(String? lastAttemptedUpdateAt) =>
-      _$this._lastAttemptedUpdateAt = lastAttemptedUpdateAt;
-
-  String? _lastSuccessfulUpdateAt;
-  String? get lastSuccessfulUpdateAt => _$this._lastSuccessfulUpdateAt;
-  set lastSuccessfulUpdateAt(String? lastSuccessfulUpdateAt) =>
-      _$this._lastSuccessfulUpdateAt = lastSuccessfulUpdateAt;
 
   String? _lastUserUpdateAt;
   String? get lastUserUpdateAt => _$this._lastUserUpdateAt;
@@ -172,6 +152,26 @@ class McnCatalogSyncBuilder
   set updateMode(McnCatalogSyncUpdateMode? updateMode) =>
       _$this._updateMode = updateMode;
 
+  MapBuilder<String, McnError>? _errors;
+  MapBuilder<String, McnError> get errors =>
+      _$this._errors ??= MapBuilder<String, McnError>();
+  set errors(MapBuilder<String, McnError>? errors) => _$this._errors = errors;
+
+  String? _includesDiscoveriesUntil;
+  String? get includesDiscoveriesUntil => _$this._includesDiscoveriesUntil;
+  set includesDiscoveriesUntil(String? includesDiscoveriesUntil) =>
+      _$this._includesDiscoveriesUntil = includesDiscoveriesUntil;
+
+  String? _lastAttemptedUpdateAt;
+  String? get lastAttemptedUpdateAt => _$this._lastAttemptedUpdateAt;
+  set lastAttemptedUpdateAt(String? lastAttemptedUpdateAt) =>
+      _$this._lastAttemptedUpdateAt = lastAttemptedUpdateAt;
+
+  String? _lastSuccessfulUpdateAt;
+  String? get lastSuccessfulUpdateAt => _$this._lastSuccessfulUpdateAt;
+  set lastSuccessfulUpdateAt(String? lastSuccessfulUpdateAt) =>
+      _$this._lastSuccessfulUpdateAt = lastSuccessfulUpdateAt;
+
   McnCatalogSyncBuilder() {
     McnCatalogSync._defaults(this);
   }
@@ -182,15 +182,15 @@ class McnCatalogSyncBuilder
       _description = $v.description;
       _destinationId = $v.destinationId;
       _destinationType = $v.destinationType;
-      _errors = $v.errors?.toBuilder();
       _id = $v.id;
-      _includesDiscoveriesUntil = $v.includesDiscoveriesUntil;
-      _lastAttemptedUpdateAt = $v.lastAttemptedUpdateAt;
-      _lastSuccessfulUpdateAt = $v.lastSuccessfulUpdateAt;
       _lastUserUpdateAt = $v.lastUserUpdateAt;
       _name = $v.name;
       _policy = $v.policy;
       _updateMode = $v.updateMode;
+      _errors = $v.errors?.toBuilder();
+      _includesDiscoveriesUntil = $v.includesDiscoveriesUntil;
+      _lastAttemptedUpdateAt = $v.lastAttemptedUpdateAt;
+      _lastSuccessfulUpdateAt = $v.lastSuccessfulUpdateAt;
       _$v = null;
     }
     return this;
@@ -220,12 +220,8 @@ class McnCatalogSyncBuilder
                 destinationId, r'McnCatalogSync', 'destinationId'),
             destinationType: BuiltValueNullFieldError.checkNotNull(
                 destinationType, r'McnCatalogSync', 'destinationType'),
-            errors: _errors?.build(),
             id: BuiltValueNullFieldError.checkNotNull(
                 id, r'McnCatalogSync', 'id'),
-            includesDiscoveriesUntil: includesDiscoveriesUntil,
-            lastAttemptedUpdateAt: lastAttemptedUpdateAt,
-            lastSuccessfulUpdateAt: lastSuccessfulUpdateAt,
             lastUserUpdateAt: BuiltValueNullFieldError.checkNotNull(
                 lastUserUpdateAt, r'McnCatalogSync', 'lastUserUpdateAt'),
             name: BuiltValueNullFieldError.checkNotNull(
@@ -234,6 +230,10 @@ class McnCatalogSyncBuilder
                 policy, r'McnCatalogSync', 'policy'),
             updateMode: BuiltValueNullFieldError.checkNotNull(
                 updateMode, r'McnCatalogSync', 'updateMode'),
+            errors: _errors?.build(),
+            includesDiscoveriesUntil: includesDiscoveriesUntil,
+            lastAttemptedUpdateAt: lastAttemptedUpdateAt,
+            lastSuccessfulUpdateAt: lastSuccessfulUpdateAt,
           );
     } catch (_) {
       late String _$failedField;

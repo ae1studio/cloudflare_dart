@@ -9,50 +9,50 @@ part of 'cloudforce_one_requests_request_item.dart';
 class _$CloudforceOneRequestsRequestItem
     extends CloudforceOneRequestsRequestItem {
   @override
-  final DateTime? completed;
-  @override
   final String content;
   @override
   final DateTime created;
   @override
   final String id;
   @override
-  final int? messageTokens;
-  @override
   final DateTime priority;
   @override
-  final String? readableId;
-  @override
   final String request;
-  @override
-  final CloudforceOneRequestsRequestStatus? status;
   @override
   final String summary;
   @override
   final CloudforceOneRequestsTlp tlp;
   @override
-  final int? tokens;
-  @override
   final DateTime updated;
+  @override
+  final DateTime? completed;
+  @override
+  final int? messageTokens;
+  @override
+  final String? readableId;
+  @override
+  final CloudforceOneRequestsRequestStatus? status;
+  @override
+  final int? tokens;
 
   factory _$CloudforceOneRequestsRequestItem(
           [void Function(CloudforceOneRequestsRequestItemBuilder)? updates]) =>
       (CloudforceOneRequestsRequestItemBuilder()..update(updates))._build();
 
   _$CloudforceOneRequestsRequestItem._(
-      {this.completed,
-      required this.content,
+      {required this.content,
       required this.created,
       required this.id,
-      this.messageTokens,
       required this.priority,
-      this.readableId,
       required this.request,
-      this.status,
       required this.summary,
       required this.tlp,
-      this.tokens,
-      required this.updated})
+      required this.updated,
+      this.completed,
+      this.messageTokens,
+      this.readableId,
+      this.status,
+      this.tokens})
       : super._();
   @override
   CloudforceOneRequestsRequestItem rebuild(
@@ -67,37 +67,37 @@ class _$CloudforceOneRequestsRequestItem
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is CloudforceOneRequestsRequestItem &&
-        completed == other.completed &&
         content == other.content &&
         created == other.created &&
         id == other.id &&
-        messageTokens == other.messageTokens &&
         priority == other.priority &&
-        readableId == other.readableId &&
         request == other.request &&
-        status == other.status &&
         summary == other.summary &&
         tlp == other.tlp &&
-        tokens == other.tokens &&
-        updated == other.updated;
+        updated == other.updated &&
+        completed == other.completed &&
+        messageTokens == other.messageTokens &&
+        readableId == other.readableId &&
+        status == other.status &&
+        tokens == other.tokens;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, completed.hashCode);
     _$hash = $jc(_$hash, content.hashCode);
     _$hash = $jc(_$hash, created.hashCode);
     _$hash = $jc(_$hash, id.hashCode);
-    _$hash = $jc(_$hash, messageTokens.hashCode);
     _$hash = $jc(_$hash, priority.hashCode);
-    _$hash = $jc(_$hash, readableId.hashCode);
     _$hash = $jc(_$hash, request.hashCode);
-    _$hash = $jc(_$hash, status.hashCode);
     _$hash = $jc(_$hash, summary.hashCode);
     _$hash = $jc(_$hash, tlp.hashCode);
-    _$hash = $jc(_$hash, tokens.hashCode);
     _$hash = $jc(_$hash, updated.hashCode);
+    _$hash = $jc(_$hash, completed.hashCode);
+    _$hash = $jc(_$hash, messageTokens.hashCode);
+    _$hash = $jc(_$hash, readableId.hashCode);
+    _$hash = $jc(_$hash, status.hashCode);
+    _$hash = $jc(_$hash, tokens.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -105,19 +105,19 @@ class _$CloudforceOneRequestsRequestItem
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'CloudforceOneRequestsRequestItem')
-          ..add('completed', completed)
           ..add('content', content)
           ..add('created', created)
           ..add('id', id)
-          ..add('messageTokens', messageTokens)
           ..add('priority', priority)
-          ..add('readableId', readableId)
           ..add('request', request)
-          ..add('status', status)
           ..add('summary', summary)
           ..add('tlp', tlp)
-          ..add('tokens', tokens)
-          ..add('updated', updated))
+          ..add('updated', updated)
+          ..add('completed', completed)
+          ..add('messageTokens', messageTokens)
+          ..add('readableId', readableId)
+          ..add('status', status)
+          ..add('tokens', tokens))
         .toString();
   }
 }
@@ -127,10 +127,6 @@ class CloudforceOneRequestsRequestItemBuilder
         Builder<CloudforceOneRequestsRequestItem,
             CloudforceOneRequestsRequestItemBuilder> {
   _$CloudforceOneRequestsRequestItem? _$v;
-
-  DateTime? _completed;
-  DateTime? get completed => _$this._completed;
-  set completed(DateTime? completed) => _$this._completed = completed;
 
   String? _content;
   String? get content => _$this._content;
@@ -144,27 +140,13 @@ class CloudforceOneRequestsRequestItemBuilder
   String? get id => _$this._id;
   set id(String? id) => _$this._id = id;
 
-  int? _messageTokens;
-  int? get messageTokens => _$this._messageTokens;
-  set messageTokens(int? messageTokens) =>
-      _$this._messageTokens = messageTokens;
-
   DateTime? _priority;
   DateTime? get priority => _$this._priority;
   set priority(DateTime? priority) => _$this._priority = priority;
 
-  String? _readableId;
-  String? get readableId => _$this._readableId;
-  set readableId(String? readableId) => _$this._readableId = readableId;
-
   String? _request;
   String? get request => _$this._request;
   set request(String? request) => _$this._request = request;
-
-  CloudforceOneRequestsRequestStatus? _status;
-  CloudforceOneRequestsRequestStatus? get status => _$this._status;
-  set status(CloudforceOneRequestsRequestStatus? status) =>
-      _$this._status = status;
 
   String? _summary;
   String? get summary => _$this._summary;
@@ -174,13 +156,31 @@ class CloudforceOneRequestsRequestItemBuilder
   CloudforceOneRequestsTlp? get tlp => _$this._tlp;
   set tlp(CloudforceOneRequestsTlp? tlp) => _$this._tlp = tlp;
 
-  int? _tokens;
-  int? get tokens => _$this._tokens;
-  set tokens(int? tokens) => _$this._tokens = tokens;
-
   DateTime? _updated;
   DateTime? get updated => _$this._updated;
   set updated(DateTime? updated) => _$this._updated = updated;
+
+  DateTime? _completed;
+  DateTime? get completed => _$this._completed;
+  set completed(DateTime? completed) => _$this._completed = completed;
+
+  int? _messageTokens;
+  int? get messageTokens => _$this._messageTokens;
+  set messageTokens(int? messageTokens) =>
+      _$this._messageTokens = messageTokens;
+
+  String? _readableId;
+  String? get readableId => _$this._readableId;
+  set readableId(String? readableId) => _$this._readableId = readableId;
+
+  CloudforceOneRequestsRequestStatus? _status;
+  CloudforceOneRequestsRequestStatus? get status => _$this._status;
+  set status(CloudforceOneRequestsRequestStatus? status) =>
+      _$this._status = status;
+
+  int? _tokens;
+  int? get tokens => _$this._tokens;
+  set tokens(int? tokens) => _$this._tokens = tokens;
 
   CloudforceOneRequestsRequestItemBuilder() {
     CloudforceOneRequestsRequestItem._defaults(this);
@@ -189,19 +189,19 @@ class CloudforceOneRequestsRequestItemBuilder
   CloudforceOneRequestsRequestItemBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _completed = $v.completed;
       _content = $v.content;
       _created = $v.created;
       _id = $v.id;
-      _messageTokens = $v.messageTokens;
       _priority = $v.priority;
-      _readableId = $v.readableId;
       _request = $v.request;
-      _status = $v.status;
       _summary = $v.summary;
       _tlp = $v.tlp;
-      _tokens = $v.tokens;
       _updated = $v.updated;
+      _completed = $v.completed;
+      _messageTokens = $v.messageTokens;
+      _readableId = $v.readableId;
+      _status = $v.status;
+      _tokens = $v.tokens;
       _$v = null;
     }
     return this;
@@ -223,27 +223,27 @@ class CloudforceOneRequestsRequestItemBuilder
   _$CloudforceOneRequestsRequestItem _build() {
     final _$result = _$v ??
         _$CloudforceOneRequestsRequestItem._(
-          completed: completed,
           content: BuiltValueNullFieldError.checkNotNull(
               content, r'CloudforceOneRequestsRequestItem', 'content'),
           created: BuiltValueNullFieldError.checkNotNull(
               created, r'CloudforceOneRequestsRequestItem', 'created'),
           id: BuiltValueNullFieldError.checkNotNull(
               id, r'CloudforceOneRequestsRequestItem', 'id'),
-          messageTokens: messageTokens,
           priority: BuiltValueNullFieldError.checkNotNull(
               priority, r'CloudforceOneRequestsRequestItem', 'priority'),
-          readableId: readableId,
           request: BuiltValueNullFieldError.checkNotNull(
               request, r'CloudforceOneRequestsRequestItem', 'request'),
-          status: status,
           summary: BuiltValueNullFieldError.checkNotNull(
               summary, r'CloudforceOneRequestsRequestItem', 'summary'),
           tlp: BuiltValueNullFieldError.checkNotNull(
               tlp, r'CloudforceOneRequestsRequestItem', 'tlp'),
-          tokens: tokens,
           updated: BuiltValueNullFieldError.checkNotNull(
               updated, r'CloudforceOneRequestsRequestItem', 'updated'),
+          completed: completed,
+          messageTokens: messageTokens,
+          readableId: readableId,
+          status: status,
+          tokens: tokens,
         );
     replace(_$result);
     return _$result;

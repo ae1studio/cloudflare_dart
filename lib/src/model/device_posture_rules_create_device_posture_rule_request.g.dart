@@ -9,6 +9,10 @@ part of 'device_posture_rules_create_device_posture_rule_request.dart';
 class _$DevicePostureRulesCreateDevicePostureRuleRequest
     extends DevicePostureRulesCreateDevicePostureRuleRequest {
   @override
+  final String name;
+  @override
+  final TeamsDevicesType type;
+  @override
   final String? description;
   @override
   final String? expiration;
@@ -17,11 +21,7 @@ class _$DevicePostureRulesCreateDevicePostureRuleRequest
   @override
   final BuiltList<TeamsDevicesMatchItem>? match;
   @override
-  final String name;
-  @override
   final String? schedule;
-  @override
-  final TeamsDevicesType type;
 
   factory _$DevicePostureRulesCreateDevicePostureRuleRequest(
           [void Function(
@@ -32,13 +32,13 @@ class _$DevicePostureRulesCreateDevicePostureRuleRequest
           ._build();
 
   _$DevicePostureRulesCreateDevicePostureRuleRequest._(
-      {this.description,
+      {required this.name,
+      required this.type,
+      this.description,
       this.expiration,
       this.input,
       this.match,
-      required this.name,
-      this.schedule,
-      required this.type})
+      this.schedule})
       : super._();
   @override
   DevicePostureRulesCreateDevicePostureRuleRequest rebuild(
@@ -54,25 +54,25 @@ class _$DevicePostureRulesCreateDevicePostureRuleRequest
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is DevicePostureRulesCreateDevicePostureRuleRequest &&
+        name == other.name &&
+        type == other.type &&
         description == other.description &&
         expiration == other.expiration &&
         input == other.input &&
         match == other.match &&
-        name == other.name &&
-        schedule == other.schedule &&
-        type == other.type;
+        schedule == other.schedule;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
+    _$hash = $jc(_$hash, name.hashCode);
+    _$hash = $jc(_$hash, type.hashCode);
     _$hash = $jc(_$hash, description.hashCode);
     _$hash = $jc(_$hash, expiration.hashCode);
     _$hash = $jc(_$hash, input.hashCode);
     _$hash = $jc(_$hash, match.hashCode);
-    _$hash = $jc(_$hash, name.hashCode);
     _$hash = $jc(_$hash, schedule.hashCode);
-    _$hash = $jc(_$hash, type.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -81,13 +81,13 @@ class _$DevicePostureRulesCreateDevicePostureRuleRequest
   String toString() {
     return (newBuiltValueToStringHelper(
             r'DevicePostureRulesCreateDevicePostureRuleRequest')
+          ..add('name', name)
+          ..add('type', type)
           ..add('description', description)
           ..add('expiration', expiration)
           ..add('input', input)
           ..add('match', match)
-          ..add('name', name)
-          ..add('schedule', schedule)
-          ..add('type', type))
+          ..add('schedule', schedule))
         .toString();
   }
 }
@@ -97,6 +97,14 @@ class DevicePostureRulesCreateDevicePostureRuleRequestBuilder
         Builder<DevicePostureRulesCreateDevicePostureRuleRequest,
             DevicePostureRulesCreateDevicePostureRuleRequestBuilder> {
   _$DevicePostureRulesCreateDevicePostureRuleRequest? _$v;
+
+  String? _name;
+  String? get name => _$this._name;
+  set name(String? name) => _$this._name = name;
+
+  TeamsDevicesType? _type;
+  TeamsDevicesType? get type => _$this._type;
+  set type(TeamsDevicesType? type) => _$this._type = type;
 
   String? _description;
   String? get description => _$this._description;
@@ -116,17 +124,9 @@ class DevicePostureRulesCreateDevicePostureRuleRequestBuilder
       _$this._match ??= ListBuilder<TeamsDevicesMatchItem>();
   set match(ListBuilder<TeamsDevicesMatchItem>? match) => _$this._match = match;
 
-  String? _name;
-  String? get name => _$this._name;
-  set name(String? name) => _$this._name = name;
-
   String? _schedule;
   String? get schedule => _$this._schedule;
   set schedule(String? schedule) => _$this._schedule = schedule;
-
-  TeamsDevicesType? _type;
-  TeamsDevicesType? get type => _$this._type;
-  set type(TeamsDevicesType? type) => _$this._type = type;
 
   DevicePostureRulesCreateDevicePostureRuleRequestBuilder() {
     DevicePostureRulesCreateDevicePostureRuleRequest._defaults(this);
@@ -135,13 +135,13 @@ class DevicePostureRulesCreateDevicePostureRuleRequestBuilder
   DevicePostureRulesCreateDevicePostureRuleRequestBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
+      _name = $v.name;
+      _type = $v.type;
       _description = $v.description;
       _expiration = $v.expiration;
       _input = $v.input?.toBuilder();
       _match = $v.match?.toBuilder();
-      _name = $v.name;
       _schedule = $v.schedule;
-      _type = $v.type;
       _$v = null;
     }
     return this;
@@ -167,15 +167,15 @@ class DevicePostureRulesCreateDevicePostureRuleRequestBuilder
     try {
       _$result = _$v ??
           _$DevicePostureRulesCreateDevicePostureRuleRequest._(
+            name: BuiltValueNullFieldError.checkNotNull(name,
+                r'DevicePostureRulesCreateDevicePostureRuleRequest', 'name'),
+            type: BuiltValueNullFieldError.checkNotNull(type,
+                r'DevicePostureRulesCreateDevicePostureRuleRequest', 'type'),
             description: description,
             expiration: expiration,
             input: _input?.build(),
             match: _match?.build(),
-            name: BuiltValueNullFieldError.checkNotNull(name,
-                r'DevicePostureRulesCreateDevicePostureRuleRequest', 'name'),
             schedule: schedule,
-            type: BuiltValueNullFieldError.checkNotNull(type,
-                r'DevicePostureRulesCreateDevicePostureRuleRequest', 'type'),
           );
     } catch (_) {
       late String _$failedField;

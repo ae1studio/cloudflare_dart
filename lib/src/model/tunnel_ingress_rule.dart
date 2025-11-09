@@ -13,14 +13,18 @@ part 'tunnel_ingress_rule.g.dart';
 ///
 /// Properties:
 /// * [hostname] - Public hostname for this service.
+/// * [service] - Protocol and address of destination server. Supported protocols: http://, https://, unix://, tcp://, ssh://, rdp://, unix+tls://, smb://. Alternatively can return a HTTP status code http_status:[code] e.g. 'http_status:404'. 
 /// * [originRequest] 
 /// * [path] - Requests with this path route to this public hostname.
-/// * [service] - Protocol and address of destination server. Supported protocols: http://, https://, unix://, tcp://, ssh://, rdp://, unix+tls://, smb://. Alternatively can return a HTTP status code http_status:[code] e.g. 'http_status:404'. 
 @BuiltValue()
 abstract class TunnelIngressRule implements Built<TunnelIngressRule, TunnelIngressRuleBuilder> {
   /// Public hostname for this service.
   @BuiltValueField(wireName: r'hostname')
   String get hostname;
+
+  /// Protocol and address of destination server. Supported protocols: http://, https://, unix://, tcp://, ssh://, rdp://, unix+tls://, smb://. Alternatively can return a HTTP status code http_status:[code] e.g. 'http_status:404'. 
+  @BuiltValueField(wireName: r'service')
+  String get service;
 
   @BuiltValueField(wireName: r'originRequest')
   TunnelOriginRequest? get originRequest;
@@ -28,10 +32,6 @@ abstract class TunnelIngressRule implements Built<TunnelIngressRule, TunnelIngre
   /// Requests with this path route to this public hostname.
   @BuiltValueField(wireName: r'path')
   String? get path;
-
-  /// Protocol and address of destination server. Supported protocols: http://, https://, unix://, tcp://, ssh://, rdp://, unix+tls://, smb://. Alternatively can return a HTTP status code http_status:[code] e.g. 'http_status:404'. 
-  @BuiltValueField(wireName: r'service')
-  String get service;
 
   TunnelIngressRule._();
 
@@ -61,6 +61,11 @@ class _$TunnelIngressRuleSerializer implements PrimitiveSerializer<TunnelIngress
       object.hostname,
       specifiedType: const FullType(String),
     );
+    yield r'service';
+    yield serializers.serialize(
+      object.service,
+      specifiedType: const FullType(String),
+    );
     if (object.originRequest != null) {
       yield r'originRequest';
       yield serializers.serialize(
@@ -75,11 +80,6 @@ class _$TunnelIngressRuleSerializer implements PrimitiveSerializer<TunnelIngress
         specifiedType: const FullType(String),
       );
     }
-    yield r'service';
-    yield serializers.serialize(
-      object.service,
-      specifiedType: const FullType(String),
-    );
   }
 
   @override
@@ -110,6 +110,13 @@ class _$TunnelIngressRuleSerializer implements PrimitiveSerializer<TunnelIngress
           ) as String;
           result.hostname = valueDes;
           break;
+        case r'service':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.service = valueDes;
+          break;
         case r'originRequest':
           final valueDes = serializers.deserialize(
             value,
@@ -123,13 +130,6 @@ class _$TunnelIngressRuleSerializer implements PrimitiveSerializer<TunnelIngress
             specifiedType: const FullType(String),
           ) as String;
           result.path = valueDes;
-          break;
-        case r'service':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.service = valueDes;
           break;
         default:
           unhandled.add(key);

@@ -18,14 +18,14 @@ part 'magic_visibility_mnm_mnm_rule.g.dart';
 ///
 /// Properties:
 /// * [automaticAdvertisement] - Toggle on if you would like Cloudflare to automatically advertise the IP Prefixes within the rule via Magic Transit when the rule is triggered. Only available for users of Magic Transit.
+/// * [name] - The name of the rule. Must be unique. Supports characters A-Z, a-z, 0-9, underscore (_), dash (-), period (.), and tilde (~). You can’t have a space in the rule name. Max 256 characters.
+/// * [prefixes] 
+/// * [type] 
 /// * [bandwidthThreshold] - The number of bits per second for the rule. When this value is exceeded for the set duration, an alert notification is sent. Minimum of 1 and no maximum.
 /// * [duration] 
 /// * [id] - The id of the rule. Must be unique.
-/// * [name] - The name of the rule. Must be unique. Supports characters A-Z, a-z, 0-9, underscore (_), dash (-), period (.), and tilde (~). You can’t have a space in the rule name. Max 256 characters.
 /// * [packetThreshold] - The number of packets per second for the rule. When this value is exceeded for the set duration, an alert notification is sent. Minimum of 1 and no maximum.
 /// * [prefixMatch] 
-/// * [prefixes] 
-/// * [type] 
 /// * [zscoreSensitivity] 
 /// * [zscoreTarget] 
 @BuiltValue()
@@ -33,6 +33,17 @@ abstract class MagicVisibilityMnmMnmRule implements Built<MagicVisibilityMnmMnmR
   /// Toggle on if you would like Cloudflare to automatically advertise the IP Prefixes within the rule via Magic Transit when the rule is triggered. Only available for users of Magic Transit.
   @BuiltValueField(wireName: r'automatic_advertisement')
   bool? get automaticAdvertisement;
+
+  /// The name of the rule. Must be unique. Supports characters A-Z, a-z, 0-9, underscore (_), dash (-), period (.), and tilde (~). You can’t have a space in the rule name. Max 256 characters.
+  @BuiltValueField(wireName: r'name')
+  String get name;
+
+  @BuiltValueField(wireName: r'prefixes')
+  BuiltList<String> get prefixes;
+
+  @BuiltValueField(wireName: r'type')
+  MagicVisibilityMnmMnmRuleType get type;
+  // enum typeEnum {  threshold,  zscore,  advanced_ddos,  };
 
   /// The number of bits per second for the rule. When this value is exceeded for the set duration, an alert notification is sent. Minimum of 1 and no maximum.
   @BuiltValueField(wireName: r'bandwidth_threshold')
@@ -46,10 +57,6 @@ abstract class MagicVisibilityMnmMnmRule implements Built<MagicVisibilityMnmMnmR
   @BuiltValueField(wireName: r'id')
   String? get id;
 
-  /// The name of the rule. Must be unique. Supports characters A-Z, a-z, 0-9, underscore (_), dash (-), period (.), and tilde (~). You can’t have a space in the rule name. Max 256 characters.
-  @BuiltValueField(wireName: r'name')
-  String get name;
-
   /// The number of packets per second for the rule. When this value is exceeded for the set duration, an alert notification is sent. Minimum of 1 and no maximum.
   @BuiltValueField(wireName: r'packet_threshold')
   num? get packetThreshold;
@@ -57,13 +64,6 @@ abstract class MagicVisibilityMnmMnmRule implements Built<MagicVisibilityMnmMnmR
   @BuiltValueField(wireName: r'prefix_match')
   MagicVisibilityMnmMnmRulePrefixMatch? get prefixMatch;
   // enum prefixMatchEnum {  exact,  subnet,  supernet,  };
-
-  @BuiltValueField(wireName: r'prefixes')
-  BuiltList<String> get prefixes;
-
-  @BuiltValueField(wireName: r'type')
-  MagicVisibilityMnmMnmRuleType get type;
-  // enum typeEnum {  threshold,  zscore,  advanced_ddos,  };
 
   @BuiltValueField(wireName: r'zscore_sensitivity')
   MagicVisibilityMnmMnmRuleZscoreSensitivity? get zscoreSensitivity;
@@ -101,6 +101,21 @@ class _$MagicVisibilityMnmMnmRuleSerializer implements PrimitiveSerializer<Magic
       object.automaticAdvertisement,
       specifiedType: const FullType.nullable(bool),
     );
+    yield r'name';
+    yield serializers.serialize(
+      object.name,
+      specifiedType: const FullType(String),
+    );
+    yield r'prefixes';
+    yield serializers.serialize(
+      object.prefixes,
+      specifiedType: const FullType(BuiltList, [FullType(String)]),
+    );
+    yield r'type';
+    yield serializers.serialize(
+      object.type,
+      specifiedType: const FullType(MagicVisibilityMnmMnmRuleType),
+    );
     if (object.bandwidthThreshold != null) {
       yield r'bandwidth_threshold';
       yield serializers.serialize(
@@ -122,11 +137,6 @@ class _$MagicVisibilityMnmMnmRuleSerializer implements PrimitiveSerializer<Magic
         specifiedType: const FullType(String),
       );
     }
-    yield r'name';
-    yield serializers.serialize(
-      object.name,
-      specifiedType: const FullType(String),
-    );
     if (object.packetThreshold != null) {
       yield r'packet_threshold';
       yield serializers.serialize(
@@ -141,16 +151,6 @@ class _$MagicVisibilityMnmMnmRuleSerializer implements PrimitiveSerializer<Magic
         specifiedType: const FullType.nullable(MagicVisibilityMnmMnmRulePrefixMatch),
       );
     }
-    yield r'prefixes';
-    yield serializers.serialize(
-      object.prefixes,
-      specifiedType: const FullType(BuiltList, [FullType(String)]),
-    );
-    yield r'type';
-    yield serializers.serialize(
-      object.type,
-      specifiedType: const FullType(MagicVisibilityMnmMnmRuleType),
-    );
     if (object.zscoreSensitivity != null) {
       yield r'zscore_sensitivity';
       yield serializers.serialize(
@@ -196,6 +196,27 @@ class _$MagicVisibilityMnmMnmRuleSerializer implements PrimitiveSerializer<Magic
           if (valueDes == null) continue;
           result.automaticAdvertisement = valueDes;
           break;
+        case r'name':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.name = valueDes;
+          break;
+        case r'prefixes':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BuiltList, [FullType(String)]),
+          ) as BuiltList<String>;
+          result.prefixes.replace(valueDes);
+          break;
+        case r'type':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(MagicVisibilityMnmMnmRuleType),
+          ) as MagicVisibilityMnmMnmRuleType;
+          result.type = valueDes;
+          break;
         case r'bandwidth_threshold':
           final valueDes = serializers.deserialize(
             value,
@@ -217,13 +238,6 @@ class _$MagicVisibilityMnmMnmRuleSerializer implements PrimitiveSerializer<Magic
           ) as String;
           result.id = valueDes;
           break;
-        case r'name':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.name = valueDes;
-          break;
         case r'packet_threshold':
           final valueDes = serializers.deserialize(
             value,
@@ -238,20 +252,6 @@ class _$MagicVisibilityMnmMnmRuleSerializer implements PrimitiveSerializer<Magic
           ) as MagicVisibilityMnmMnmRulePrefixMatch?;
           if (valueDes == null) continue;
           result.prefixMatch = valueDes;
-          break;
-        case r'prefixes':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>;
-          result.prefixes.replace(valueDes);
-          break;
-        case r'type':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(MagicVisibilityMnmMnmRuleType),
-          ) as MagicVisibilityMnmMnmRuleType;
-          result.type = valueDes;
           break;
         case r'zscore_sensitivity':
           final valueDes = serializers.deserialize(

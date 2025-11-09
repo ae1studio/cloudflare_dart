@@ -11,10 +11,10 @@ class _$GetV4AccountsByAccountIdPipelinesV1Streams200ResponseResultInnerHttp
   @override
   final bool authentication;
   @override
+  final bool enabled;
+  @override
   final GetV4AccountsByAccountIdPipelinesV1Streams200ResponseResultInnerHttpCors?
       cors;
-  @override
-  final bool enabled;
 
   factory _$GetV4AccountsByAccountIdPipelinesV1Streams200ResponseResultInnerHttp(
           [void Function(
@@ -25,7 +25,7 @@ class _$GetV4AccountsByAccountIdPipelinesV1Streams200ResponseResultInnerHttp
           ._build();
 
   _$GetV4AccountsByAccountIdPipelinesV1Streams200ResponseResultInnerHttp._(
-      {required this.authentication, this.cors, required this.enabled})
+      {required this.authentication, required this.enabled, this.cors})
       : super._();
   @override
   GetV4AccountsByAccountIdPipelinesV1Streams200ResponseResultInnerHttp rebuild(
@@ -46,16 +46,16 @@ class _$GetV4AccountsByAccountIdPipelinesV1Streams200ResponseResultInnerHttp
     return other
             is GetV4AccountsByAccountIdPipelinesV1Streams200ResponseResultInnerHttp &&
         authentication == other.authentication &&
-        cors == other.cors &&
-        enabled == other.enabled;
+        enabled == other.enabled &&
+        cors == other.cors;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
     _$hash = $jc(_$hash, authentication.hashCode);
-    _$hash = $jc(_$hash, cors.hashCode);
     _$hash = $jc(_$hash, enabled.hashCode);
+    _$hash = $jc(_$hash, cors.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -65,8 +65,8 @@ class _$GetV4AccountsByAccountIdPipelinesV1Streams200ResponseResultInnerHttp
     return (newBuiltValueToStringHelper(
             r'GetV4AccountsByAccountIdPipelinesV1Streams200ResponseResultInnerHttp')
           ..add('authentication', authentication)
-          ..add('cors', cors)
-          ..add('enabled', enabled))
+          ..add('enabled', enabled)
+          ..add('cors', cors))
         .toString();
   }
 }
@@ -83,6 +83,10 @@ class GetV4AccountsByAccountIdPipelinesV1Streams200ResponseResultInnerHttpBuilde
   set authentication(bool? authentication) =>
       _$this._authentication = authentication;
 
+  bool? _enabled;
+  bool? get enabled => _$this._enabled;
+  set enabled(bool? enabled) => _$this._enabled = enabled;
+
   GetV4AccountsByAccountIdPipelinesV1Streams200ResponseResultInnerHttpCorsBuilder?
       _cors;
   GetV4AccountsByAccountIdPipelinesV1Streams200ResponseResultInnerHttpCorsBuilder
@@ -92,10 +96,6 @@ class GetV4AccountsByAccountIdPipelinesV1Streams200ResponseResultInnerHttpBuilde
           GetV4AccountsByAccountIdPipelinesV1Streams200ResponseResultInnerHttpCorsBuilder?
               cors) =>
       _$this._cors = cors;
-
-  bool? _enabled;
-  bool? get enabled => _$this._enabled;
-  set enabled(bool? enabled) => _$this._enabled = enabled;
 
   GetV4AccountsByAccountIdPipelinesV1Streams200ResponseResultInnerHttpBuilder() {
     GetV4AccountsByAccountIdPipelinesV1Streams200ResponseResultInnerHttp
@@ -107,8 +107,8 @@ class GetV4AccountsByAccountIdPipelinesV1Streams200ResponseResultInnerHttpBuilde
     final $v = _$v;
     if ($v != null) {
       _authentication = $v.authentication;
-      _cors = $v.cors?.toBuilder();
       _enabled = $v.enabled;
+      _cors = $v.cors?.toBuilder();
       _$v = null;
     }
     return this;
@@ -146,11 +146,11 @@ class GetV4AccountsByAccountIdPipelinesV1Streams200ResponseResultInnerHttpBuilde
                 authentication,
                 r'GetV4AccountsByAccountIdPipelinesV1Streams200ResponseResultInnerHttp',
                 'authentication'),
-            cors: _cors?.build(),
             enabled: BuiltValueNullFieldError.checkNotNull(
                 enabled,
                 r'GetV4AccountsByAccountIdPipelinesV1Streams200ResponseResultInnerHttp',
                 'enabled'),
+            cors: _cors?.build(),
           );
     } catch (_) {
       late String _$failedField;

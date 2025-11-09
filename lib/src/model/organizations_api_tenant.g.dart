@@ -10,8 +10,6 @@ class _$OrganizationsApiTenant extends OrganizationsApiTenant {
   @override
   final DateTime cdate;
   @override
-  final String? customerId;
-  @override
   final DateTime edate;
   @override
   final OrganizationsApiTenantTenantContacts tenantContacts;
@@ -31,6 +29,8 @@ class _$OrganizationsApiTenant extends OrganizationsApiTenant {
   final String tenantType;
   @override
   final BuiltList<OrganizationsApiTenantUnit> tenantUnits;
+  @override
+  final String? customerId;
 
   factory _$OrganizationsApiTenant(
           [void Function(OrganizationsApiTenantBuilder)? updates]) =>
@@ -38,7 +38,6 @@ class _$OrganizationsApiTenant extends OrganizationsApiTenant {
 
   _$OrganizationsApiTenant._(
       {required this.cdate,
-      this.customerId,
       required this.edate,
       required this.tenantContacts,
       required this.tenantLabels,
@@ -48,7 +47,8 @@ class _$OrganizationsApiTenant extends OrganizationsApiTenant {
       required this.tenantStatus,
       required this.tenantTag,
       required this.tenantType,
-      required this.tenantUnits})
+      required this.tenantUnits,
+      this.customerId})
       : super._();
   @override
   OrganizationsApiTenant rebuild(
@@ -64,7 +64,6 @@ class _$OrganizationsApiTenant extends OrganizationsApiTenant {
     if (identical(other, this)) return true;
     return other is OrganizationsApiTenant &&
         cdate == other.cdate &&
-        customerId == other.customerId &&
         edate == other.edate &&
         tenantContacts == other.tenantContacts &&
         tenantLabels == other.tenantLabels &&
@@ -74,14 +73,14 @@ class _$OrganizationsApiTenant extends OrganizationsApiTenant {
         tenantStatus == other.tenantStatus &&
         tenantTag == other.tenantTag &&
         tenantType == other.tenantType &&
-        tenantUnits == other.tenantUnits;
+        tenantUnits == other.tenantUnits &&
+        customerId == other.customerId;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
     _$hash = $jc(_$hash, cdate.hashCode);
-    _$hash = $jc(_$hash, customerId.hashCode);
     _$hash = $jc(_$hash, edate.hashCode);
     _$hash = $jc(_$hash, tenantContacts.hashCode);
     _$hash = $jc(_$hash, tenantLabels.hashCode);
@@ -92,6 +91,7 @@ class _$OrganizationsApiTenant extends OrganizationsApiTenant {
     _$hash = $jc(_$hash, tenantTag.hashCode);
     _$hash = $jc(_$hash, tenantType.hashCode);
     _$hash = $jc(_$hash, tenantUnits.hashCode);
+    _$hash = $jc(_$hash, customerId.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -100,7 +100,6 @@ class _$OrganizationsApiTenant extends OrganizationsApiTenant {
   String toString() {
     return (newBuiltValueToStringHelper(r'OrganizationsApiTenant')
           ..add('cdate', cdate)
-          ..add('customerId', customerId)
           ..add('edate', edate)
           ..add('tenantContacts', tenantContacts)
           ..add('tenantLabels', tenantLabels)
@@ -110,7 +109,8 @@ class _$OrganizationsApiTenant extends OrganizationsApiTenant {
           ..add('tenantStatus', tenantStatus)
           ..add('tenantTag', tenantTag)
           ..add('tenantType', tenantType)
-          ..add('tenantUnits', tenantUnits))
+          ..add('tenantUnits', tenantUnits)
+          ..add('customerId', customerId))
         .toString();
   }
 }
@@ -122,10 +122,6 @@ class OrganizationsApiTenantBuilder
   DateTime? _cdate;
   DateTime? get cdate => _$this._cdate;
   set cdate(DateTime? cdate) => _$this._cdate = cdate;
-
-  String? _customerId;
-  String? get customerId => _$this._customerId;
-  set customerId(String? customerId) => _$this._customerId = customerId;
 
   DateTime? _edate;
   DateTime? get edate => _$this._edate;
@@ -178,6 +174,10 @@ class OrganizationsApiTenantBuilder
   set tenantUnits(ListBuilder<OrganizationsApiTenantUnit>? tenantUnits) =>
       _$this._tenantUnits = tenantUnits;
 
+  String? _customerId;
+  String? get customerId => _$this._customerId;
+  set customerId(String? customerId) => _$this._customerId = customerId;
+
   OrganizationsApiTenantBuilder() {
     OrganizationsApiTenant._defaults(this);
   }
@@ -186,7 +186,6 @@ class OrganizationsApiTenantBuilder
     final $v = _$v;
     if ($v != null) {
       _cdate = $v.cdate;
-      _customerId = $v.customerId;
       _edate = $v.edate;
       _tenantContacts = $v.tenantContacts.toBuilder();
       _tenantLabels = $v.tenantLabels.toBuilder();
@@ -197,6 +196,7 @@ class OrganizationsApiTenantBuilder
       _tenantTag = $v.tenantTag;
       _tenantType = $v.tenantType;
       _tenantUnits = $v.tenantUnits.toBuilder();
+      _customerId = $v.customerId;
       _$v = null;
     }
     return this;
@@ -222,7 +222,6 @@ class OrganizationsApiTenantBuilder
           _$OrganizationsApiTenant._(
             cdate: BuiltValueNullFieldError.checkNotNull(
                 cdate, r'OrganizationsApiTenant', 'cdate'),
-            customerId: customerId,
             edate: BuiltValueNullFieldError.checkNotNull(
                 edate, r'OrganizationsApiTenant', 'edate'),
             tenantContacts: tenantContacts.build(),
@@ -239,6 +238,7 @@ class OrganizationsApiTenantBuilder
             tenantType: BuiltValueNullFieldError.checkNotNull(
                 tenantType, r'OrganizationsApiTenant', 'tenantType'),
             tenantUnits: tenantUnits.build(),
+            customerId: customerId,
           );
     } catch (_) {
       late String _$failedField;

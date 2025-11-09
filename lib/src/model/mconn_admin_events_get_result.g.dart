@@ -10,16 +10,16 @@ class _$MconnAdminEventsGetResult extends MconnAdminEventsGetResult {
   @override
   final num count;
   @override
-  final String? cursor;
-  @override
   final BuiltList<MconnEventMetadata> items;
+  @override
+  final String? cursor;
 
   factory _$MconnAdminEventsGetResult(
           [void Function(MconnAdminEventsGetResultBuilder)? updates]) =>
       (MconnAdminEventsGetResultBuilder()..update(updates))._build();
 
   _$MconnAdminEventsGetResult._(
-      {required this.count, this.cursor, required this.items})
+      {required this.count, required this.items, this.cursor})
       : super._();
   @override
   MconnAdminEventsGetResult rebuild(
@@ -35,16 +35,16 @@ class _$MconnAdminEventsGetResult extends MconnAdminEventsGetResult {
     if (identical(other, this)) return true;
     return other is MconnAdminEventsGetResult &&
         count == other.count &&
-        cursor == other.cursor &&
-        items == other.items;
+        items == other.items &&
+        cursor == other.cursor;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
     _$hash = $jc(_$hash, count.hashCode);
-    _$hash = $jc(_$hash, cursor.hashCode);
     _$hash = $jc(_$hash, items.hashCode);
+    _$hash = $jc(_$hash, cursor.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -53,8 +53,8 @@ class _$MconnAdminEventsGetResult extends MconnAdminEventsGetResult {
   String toString() {
     return (newBuiltValueToStringHelper(r'MconnAdminEventsGetResult')
           ..add('count', count)
-          ..add('cursor', cursor)
-          ..add('items', items))
+          ..add('items', items)
+          ..add('cursor', cursor))
         .toString();
   }
 }
@@ -68,14 +68,14 @@ class MconnAdminEventsGetResultBuilder
   num? get count => _$this._count;
   set count(num? count) => _$this._count = count;
 
-  String? _cursor;
-  String? get cursor => _$this._cursor;
-  set cursor(String? cursor) => _$this._cursor = cursor;
-
   ListBuilder<MconnEventMetadata>? _items;
   ListBuilder<MconnEventMetadata> get items =>
       _$this._items ??= ListBuilder<MconnEventMetadata>();
   set items(ListBuilder<MconnEventMetadata>? items) => _$this._items = items;
+
+  String? _cursor;
+  String? get cursor => _$this._cursor;
+  set cursor(String? cursor) => _$this._cursor = cursor;
 
   MconnAdminEventsGetResultBuilder() {
     MconnAdminEventsGetResult._defaults(this);
@@ -85,8 +85,8 @@ class MconnAdminEventsGetResultBuilder
     final $v = _$v;
     if ($v != null) {
       _count = $v.count;
-      _cursor = $v.cursor;
       _items = $v.items.toBuilder();
+      _cursor = $v.cursor;
       _$v = null;
     }
     return this;
@@ -112,8 +112,8 @@ class MconnAdminEventsGetResultBuilder
           _$MconnAdminEventsGetResult._(
             count: BuiltValueNullFieldError.checkNotNull(
                 count, r'MconnAdminEventsGetResult', 'count'),
-            cursor: cursor,
             items: items.build(),
+            cursor: cursor,
           );
     } catch (_) {
       late String _$failedField;

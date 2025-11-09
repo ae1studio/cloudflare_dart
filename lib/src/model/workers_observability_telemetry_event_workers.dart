@@ -18,19 +18,19 @@ part 'workers_observability_telemetry_event_workers.g.dart';
 /// Cloudflare Workers event information enriches your logs so you can easily identify and debug issues.
 ///
 /// Properties:
-/// * [entrypoint] 
-/// * [event] 
 /// * [eventType] 
-/// * [executionModel] 
 /// * [outcome] 
 /// * [requestId] 
 /// * [scriptName] 
+/// * [cpuTimeMs] 
+/// * [wallTimeMs] 
+/// * [entrypoint] 
+/// * [event] 
+/// * [executionModel] 
 /// * [scriptVersion] 
 /// * [truncated] 
-/// * [cpuTimeMs] 
 /// * [diagnosticsChannelEvents] 
 /// * [dispatchNamespace] 
-/// * [wallTimeMs] 
 @BuiltValue()
 abstract class WorkersObservabilityTelemetryEventWorkers implements Built<WorkersObservabilityTelemetryEventWorkers, WorkersObservabilityTelemetryEventWorkersBuilder> {
   /// Any Of [WorkersObservabilityTelemetryEventWorkersAnyOf], [WorkersObservabilityTelemetryEventWorkersAnyOf1]

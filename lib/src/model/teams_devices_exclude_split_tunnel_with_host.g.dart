@@ -9,9 +9,9 @@ part of 'teams_devices_exclude_split_tunnel_with_host.dart';
 class _$TeamsDevicesExcludeSplitTunnelWithHost
     extends TeamsDevicesExcludeSplitTunnelWithHost {
   @override
-  final String? description;
-  @override
   final String host;
+  @override
+  final String? description;
 
   factory _$TeamsDevicesExcludeSplitTunnelWithHost(
           [void Function(TeamsDevicesExcludeSplitTunnelWithHostBuilder)?
@@ -20,7 +20,7 @@ class _$TeamsDevicesExcludeSplitTunnelWithHost
           ._build();
 
   _$TeamsDevicesExcludeSplitTunnelWithHost._(
-      {this.description, required this.host})
+      {required this.host, this.description})
       : super._();
   @override
   TeamsDevicesExcludeSplitTunnelWithHost rebuild(
@@ -36,15 +36,15 @@ class _$TeamsDevicesExcludeSplitTunnelWithHost
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is TeamsDevicesExcludeSplitTunnelWithHost &&
-        description == other.description &&
-        host == other.host;
+        host == other.host &&
+        description == other.description;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, description.hashCode);
     _$hash = $jc(_$hash, host.hashCode);
+    _$hash = $jc(_$hash, description.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -53,8 +53,8 @@ class _$TeamsDevicesExcludeSplitTunnelWithHost
   String toString() {
     return (newBuiltValueToStringHelper(
             r'TeamsDevicesExcludeSplitTunnelWithHost')
-          ..add('description', description)
-          ..add('host', host))
+          ..add('host', host)
+          ..add('description', description))
         .toString();
   }
 }
@@ -65,13 +65,13 @@ class TeamsDevicesExcludeSplitTunnelWithHostBuilder
             TeamsDevicesExcludeSplitTunnelWithHostBuilder> {
   _$TeamsDevicesExcludeSplitTunnelWithHost? _$v;
 
-  String? _description;
-  String? get description => _$this._description;
-  set description(String? description) => _$this._description = description;
-
   String? _host;
   String? get host => _$this._host;
   set host(String? host) => _$this._host = host;
+
+  String? _description;
+  String? get description => _$this._description;
+  set description(String? description) => _$this._description = description;
 
   TeamsDevicesExcludeSplitTunnelWithHostBuilder() {
     TeamsDevicesExcludeSplitTunnelWithHost._defaults(this);
@@ -80,8 +80,8 @@ class TeamsDevicesExcludeSplitTunnelWithHostBuilder
   TeamsDevicesExcludeSplitTunnelWithHostBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _description = $v.description;
       _host = $v.host;
+      _description = $v.description;
       _$v = null;
     }
     return this;
@@ -104,9 +104,9 @@ class TeamsDevicesExcludeSplitTunnelWithHostBuilder
   _$TeamsDevicesExcludeSplitTunnelWithHost _build() {
     final _$result = _$v ??
         _$TeamsDevicesExcludeSplitTunnelWithHost._(
-          description: description,
           host: BuiltValueNullFieldError.checkNotNull(
               host, r'TeamsDevicesExcludeSplitTunnelWithHost', 'host'),
+          description: description,
         );
     replace(_$result);
     return _$result;

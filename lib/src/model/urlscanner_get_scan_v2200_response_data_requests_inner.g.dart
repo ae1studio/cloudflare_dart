@@ -11,10 +11,10 @@ class _$UrlscannerGetScanV2200ResponseDataRequestsInner
   @override
   final UrlscannerGetScanV2200ResponseDataRequestsInnerRequest request;
   @override
+  final UrlscannerGetScanV2200ResponseDataRequestsInnerResponse response;
+  @override
   final BuiltList<UrlscannerGetScanV2200ResponseDataRequestsInnerRequestsInner>?
       requests;
-  @override
-  final UrlscannerGetScanV2200ResponseDataRequestsInnerResponse response;
 
   factory _$UrlscannerGetScanV2200ResponseDataRequestsInner(
           [void Function(
@@ -25,7 +25,7 @@ class _$UrlscannerGetScanV2200ResponseDataRequestsInner
           ._build();
 
   _$UrlscannerGetScanV2200ResponseDataRequestsInner._(
-      {required this.request, this.requests, required this.response})
+      {required this.request, required this.response, this.requests})
       : super._();
   @override
   UrlscannerGetScanV2200ResponseDataRequestsInner rebuild(
@@ -42,16 +42,16 @@ class _$UrlscannerGetScanV2200ResponseDataRequestsInner
     if (identical(other, this)) return true;
     return other is UrlscannerGetScanV2200ResponseDataRequestsInner &&
         request == other.request &&
-        requests == other.requests &&
-        response == other.response;
+        response == other.response &&
+        requests == other.requests;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
     _$hash = $jc(_$hash, request.hashCode);
-    _$hash = $jc(_$hash, requests.hashCode);
     _$hash = $jc(_$hash, response.hashCode);
+    _$hash = $jc(_$hash, requests.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -61,8 +61,8 @@ class _$UrlscannerGetScanV2200ResponseDataRequestsInner
     return (newBuiltValueToStringHelper(
             r'UrlscannerGetScanV2200ResponseDataRequestsInner')
           ..add('request', request)
-          ..add('requests', requests)
-          ..add('response', response))
+          ..add('response', response)
+          ..add('requests', requests))
         .toString();
   }
 }
@@ -82,6 +82,15 @@ class UrlscannerGetScanV2200ResponseDataRequestsInnerBuilder
               request) =>
       _$this._request = request;
 
+  UrlscannerGetScanV2200ResponseDataRequestsInnerResponseBuilder? _response;
+  UrlscannerGetScanV2200ResponseDataRequestsInnerResponseBuilder get response =>
+      _$this._response ??=
+          UrlscannerGetScanV2200ResponseDataRequestsInnerResponseBuilder();
+  set response(
+          UrlscannerGetScanV2200ResponseDataRequestsInnerResponseBuilder?
+              response) =>
+      _$this._response = response;
+
   ListBuilder<UrlscannerGetScanV2200ResponseDataRequestsInnerRequestsInner>?
       _requests;
   ListBuilder<UrlscannerGetScanV2200ResponseDataRequestsInnerRequestsInner>
@@ -93,15 +102,6 @@ class UrlscannerGetScanV2200ResponseDataRequestsInnerBuilder
               requests) =>
       _$this._requests = requests;
 
-  UrlscannerGetScanV2200ResponseDataRequestsInnerResponseBuilder? _response;
-  UrlscannerGetScanV2200ResponseDataRequestsInnerResponseBuilder get response =>
-      _$this._response ??=
-          UrlscannerGetScanV2200ResponseDataRequestsInnerResponseBuilder();
-  set response(
-          UrlscannerGetScanV2200ResponseDataRequestsInnerResponseBuilder?
-              response) =>
-      _$this._response = response;
-
   UrlscannerGetScanV2200ResponseDataRequestsInnerBuilder() {
     UrlscannerGetScanV2200ResponseDataRequestsInner._defaults(this);
   }
@@ -110,8 +110,8 @@ class UrlscannerGetScanV2200ResponseDataRequestsInnerBuilder
     final $v = _$v;
     if ($v != null) {
       _request = $v.request.toBuilder();
-      _requests = $v.requests?.toBuilder();
       _response = $v.response.toBuilder();
+      _requests = $v.requests?.toBuilder();
       _$v = null;
     }
     return this;
@@ -138,18 +138,18 @@ class UrlscannerGetScanV2200ResponseDataRequestsInnerBuilder
       _$result = _$v ??
           _$UrlscannerGetScanV2200ResponseDataRequestsInner._(
             request: request.build(),
-            requests: _requests?.build(),
             response: response.build(),
+            requests: _requests?.build(),
           );
     } catch (_) {
       late String _$failedField;
       try {
         _$failedField = 'request';
         request.build();
-        _$failedField = 'requests';
-        _requests?.build();
         _$failedField = 'response';
         response.build();
+        _$failedField = 'requests';
+        _requests?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
             r'UrlscannerGetScanV2200ResponseDataRequestsInner',

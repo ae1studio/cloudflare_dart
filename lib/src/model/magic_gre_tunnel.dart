@@ -14,23 +14,43 @@ part 'magic_gre_tunnel.g.dart';
 /// MagicGreTunnel
 ///
 /// Properties:
+/// * [cloudflareGreEndpoint] - The IP address assigned to the Cloudflare side of the GRE tunnel.
+/// * [customerGreEndpoint] - The IP address assigned to the customer side of the GRE tunnel.
+/// * [id] - Identifier
+/// * [interfaceAddress] - A 31-bit prefix (/31 in CIDR notation) supporting two hosts, one for each side of the tunnel. Select the subnet from the following private IP space: 10.0.0.0–10.255.255.255, 172.16.0.0–172.31.255.255, 192.168.0.0–192.168.255.255.
+/// * [name] - The name of the tunnel. The name cannot contain spaces or special characters, must be 15 characters or less, and cannot share a name with another GRE tunnel.
 /// * [automaticReturnRouting] - True if automatic stateful return routing should be enabled for a tunnel, false otherwise.
 /// * [bgp] 
 /// * [bgpStatus] 
-/// * [cloudflareGreEndpoint] - The IP address assigned to the Cloudflare side of the GRE tunnel.
 /// * [createdOn] - The date and time the tunnel was created.
-/// * [customerGreEndpoint] - The IP address assigned to the customer side of the GRE tunnel.
 /// * [description] - An optional description of the GRE tunnel.
 /// * [healthCheck] 
-/// * [id] - Identifier
-/// * [interfaceAddress] - A 31-bit prefix (/31 in CIDR notation) supporting two hosts, one for each side of the tunnel. Select the subnet from the following private IP space: 10.0.0.0–10.255.255.255, 172.16.0.0–172.31.255.255, 192.168.0.0–192.168.255.255.
 /// * [interfaceAddress6] - A 127 bit IPV6 prefix from within the virtual_subnet6 prefix space with the address being the first IP of the subnet and not same as the address of virtual_subnet6. Eg if virtual_subnet6 is 2606:54c1:7:0:a9fe:12d2::/127 , interface_address6 could be 2606:54c1:7:0:a9fe:12d2:1:200/127
 /// * [modifiedOn] - The date and time the tunnel was last modified.
 /// * [mtu] - Maximum Transmission Unit (MTU) in bytes for the GRE tunnel. The minimum value is 576.
-/// * [name] - The name of the tunnel. The name cannot contain spaces or special characters, must be 15 characters or less, and cannot share a name with another GRE tunnel.
 /// * [ttl] - Time To Live (TTL) in number of hops of the GRE tunnel.
 @BuiltValue()
 abstract class MagicGreTunnel implements Built<MagicGreTunnel, MagicGreTunnelBuilder> {
+  /// The IP address assigned to the Cloudflare side of the GRE tunnel.
+  @BuiltValueField(wireName: r'cloudflare_gre_endpoint')
+  String get cloudflareGreEndpoint;
+
+  /// The IP address assigned to the customer side of the GRE tunnel.
+  @BuiltValueField(wireName: r'customer_gre_endpoint')
+  String get customerGreEndpoint;
+
+  /// Identifier
+  @BuiltValueField(wireName: r'id')
+  String get id;
+
+  /// A 31-bit prefix (/31 in CIDR notation) supporting two hosts, one for each side of the tunnel. Select the subnet from the following private IP space: 10.0.0.0–10.255.255.255, 172.16.0.0–172.31.255.255, 192.168.0.0–192.168.255.255.
+  @BuiltValueField(wireName: r'interface_address')
+  String get interfaceAddress;
+
+  /// The name of the tunnel. The name cannot contain spaces or special characters, must be 15 characters or less, and cannot share a name with another GRE tunnel.
+  @BuiltValueField(wireName: r'name')
+  String get name;
+
   /// True if automatic stateful return routing should be enabled for a tunnel, false otherwise.
   @BuiltValueField(wireName: r'automatic_return_routing')
   bool? get automaticReturnRouting;
@@ -41,17 +61,9 @@ abstract class MagicGreTunnel implements Built<MagicGreTunnel, MagicGreTunnelBui
   @BuiltValueField(wireName: r'bgp_status')
   MagicBgpStatusWithState? get bgpStatus;
 
-  /// The IP address assigned to the Cloudflare side of the GRE tunnel.
-  @BuiltValueField(wireName: r'cloudflare_gre_endpoint')
-  String get cloudflareGreEndpoint;
-
   /// The date and time the tunnel was created.
   @BuiltValueField(wireName: r'created_on')
   DateTime? get createdOn;
-
-  /// The IP address assigned to the customer side of the GRE tunnel.
-  @BuiltValueField(wireName: r'customer_gre_endpoint')
-  String get customerGreEndpoint;
 
   /// An optional description of the GRE tunnel.
   @BuiltValueField(wireName: r'description')
@@ -59,14 +71,6 @@ abstract class MagicGreTunnel implements Built<MagicGreTunnel, MagicGreTunnelBui
 
   @BuiltValueField(wireName: r'health_check')
   MagicTunnelHealthCheck? get healthCheck;
-
-  /// Identifier
-  @BuiltValueField(wireName: r'id')
-  String get id;
-
-  /// A 31-bit prefix (/31 in CIDR notation) supporting two hosts, one for each side of the tunnel. Select the subnet from the following private IP space: 10.0.0.0–10.255.255.255, 172.16.0.0–172.31.255.255, 192.168.0.0–192.168.255.255.
-  @BuiltValueField(wireName: r'interface_address')
-  String get interfaceAddress;
 
   /// A 127 bit IPV6 prefix from within the virtual_subnet6 prefix space with the address being the first IP of the subnet and not same as the address of virtual_subnet6. Eg if virtual_subnet6 is 2606:54c1:7:0:a9fe:12d2::/127 , interface_address6 could be 2606:54c1:7:0:a9fe:12d2:1:200/127
   @BuiltValueField(wireName: r'interface_address6')
@@ -79,10 +83,6 @@ abstract class MagicGreTunnel implements Built<MagicGreTunnel, MagicGreTunnelBui
   /// Maximum Transmission Unit (MTU) in bytes for the GRE tunnel. The minimum value is 576.
   @BuiltValueField(wireName: r'mtu')
   int? get mtu;
-
-  /// The name of the tunnel. The name cannot contain spaces or special characters, must be 15 characters or less, and cannot share a name with another GRE tunnel.
-  @BuiltValueField(wireName: r'name')
-  String get name;
 
   /// Time To Live (TTL) in number of hops of the GRE tunnel.
   @BuiltValueField(wireName: r'ttl')
@@ -114,6 +114,31 @@ class _$MagicGreTunnelSerializer implements PrimitiveSerializer<MagicGreTunnel> 
     MagicGreTunnel object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    yield r'cloudflare_gre_endpoint';
+    yield serializers.serialize(
+      object.cloudflareGreEndpoint,
+      specifiedType: const FullType(String),
+    );
+    yield r'customer_gre_endpoint';
+    yield serializers.serialize(
+      object.customerGreEndpoint,
+      specifiedType: const FullType(String),
+    );
+    yield r'id';
+    yield serializers.serialize(
+      object.id,
+      specifiedType: const FullType(String),
+    );
+    yield r'interface_address';
+    yield serializers.serialize(
+      object.interfaceAddress,
+      specifiedType: const FullType(String),
+    );
+    yield r'name';
+    yield serializers.serialize(
+      object.name,
+      specifiedType: const FullType(String),
+    );
     if (object.automaticReturnRouting != null) {
       yield r'automatic_return_routing';
       yield serializers.serialize(
@@ -135,11 +160,6 @@ class _$MagicGreTunnelSerializer implements PrimitiveSerializer<MagicGreTunnel> 
         specifiedType: const FullType(MagicBgpStatusWithState),
       );
     }
-    yield r'cloudflare_gre_endpoint';
-    yield serializers.serialize(
-      object.cloudflareGreEndpoint,
-      specifiedType: const FullType(String),
-    );
     if (object.createdOn != null) {
       yield r'created_on';
       yield serializers.serialize(
@@ -147,11 +167,6 @@ class _$MagicGreTunnelSerializer implements PrimitiveSerializer<MagicGreTunnel> 
         specifiedType: const FullType(DateTime),
       );
     }
-    yield r'customer_gre_endpoint';
-    yield serializers.serialize(
-      object.customerGreEndpoint,
-      specifiedType: const FullType(String),
-    );
     if (object.description != null) {
       yield r'description';
       yield serializers.serialize(
@@ -166,16 +181,6 @@ class _$MagicGreTunnelSerializer implements PrimitiveSerializer<MagicGreTunnel> 
         specifiedType: const FullType(MagicTunnelHealthCheck),
       );
     }
-    yield r'id';
-    yield serializers.serialize(
-      object.id,
-      specifiedType: const FullType(String),
-    );
-    yield r'interface_address';
-    yield serializers.serialize(
-      object.interfaceAddress,
-      specifiedType: const FullType(String),
-    );
     if (object.interfaceAddress6 != null) {
       yield r'interface_address6';
       yield serializers.serialize(
@@ -197,11 +202,6 @@ class _$MagicGreTunnelSerializer implements PrimitiveSerializer<MagicGreTunnel> 
         specifiedType: const FullType(int),
       );
     }
-    yield r'name';
-    yield serializers.serialize(
-      object.name,
-      specifiedType: const FullType(String),
-    );
     if (object.ttl != null) {
       yield r'ttl';
       yield serializers.serialize(
@@ -232,6 +232,41 @@ class _$MagicGreTunnelSerializer implements PrimitiveSerializer<MagicGreTunnel> 
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
+        case r'cloudflare_gre_endpoint':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.cloudflareGreEndpoint = valueDes;
+          break;
+        case r'customer_gre_endpoint':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.customerGreEndpoint = valueDes;
+          break;
+        case r'id':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.id = valueDes;
+          break;
+        case r'interface_address':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.interfaceAddress = valueDes;
+          break;
+        case r'name':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.name = valueDes;
+          break;
         case r'automatic_return_routing':
           final valueDes = serializers.deserialize(
             value,
@@ -253,26 +288,12 @@ class _$MagicGreTunnelSerializer implements PrimitiveSerializer<MagicGreTunnel> 
           ) as MagicBgpStatusWithState;
           result.bgpStatus.replace(valueDes);
           break;
-        case r'cloudflare_gre_endpoint':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.cloudflareGreEndpoint = valueDes;
-          break;
         case r'created_on':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(DateTime),
           ) as DateTime;
           result.createdOn = valueDes;
-          break;
-        case r'customer_gre_endpoint':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.customerGreEndpoint = valueDes;
           break;
         case r'description':
           final valueDes = serializers.deserialize(
@@ -287,20 +308,6 @@ class _$MagicGreTunnelSerializer implements PrimitiveSerializer<MagicGreTunnel> 
             specifiedType: const FullType(MagicTunnelHealthCheck),
           ) as MagicTunnelHealthCheck;
           result.healthCheck.replace(valueDes);
-          break;
-        case r'id':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.id = valueDes;
-          break;
-        case r'interface_address':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.interfaceAddress = valueDes;
           break;
         case r'interface_address6':
           final valueDes = serializers.deserialize(
@@ -322,13 +329,6 @@ class _$MagicGreTunnelSerializer implements PrimitiveSerializer<MagicGreTunnel> 
             specifiedType: const FullType(int),
           ) as int;
           result.mtu = valueDes;
-          break;
-        case r'name':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.name = valueDes;
           break;
         case r'ttl':
           final valueDes = serializers.deserialize(

@@ -10,6 +10,7 @@ import 'package:cloudflare_dart/src/model/resource_sharing_api_response_collecti
 import 'package:built_collection/built_collection.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
+import 'package:built_value/json_object.dart';
 
 part 'resource_sharing_share_resource_response_collection.g.dart';
 
@@ -17,8 +18,8 @@ part 'resource_sharing_share_resource_response_collection.g.dart';
 ///
 /// Properties:
 /// * [errors] 
-/// * [result] 
 /// * [success] - Whether the API call was successful.
+/// * [result] 
 /// * [resultInfo] 
 @BuiltValue()
 abstract class ResourceSharingShareResourceResponseCollection implements ResourceSharingApiResponseCollection, Built<ResourceSharingShareResourceResponseCollection, ResourceSharingShareResourceResponseCollectionBuilder> {

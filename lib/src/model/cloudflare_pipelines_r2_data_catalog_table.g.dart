@@ -13,13 +13,13 @@ class _$CloudflarePipelinesR2DataCatalogTable
   @override
   final String bucket;
   @override
-  final String? namespace;
-  @override
-  final FileRollingPolicy? rollingPolicy;
-  @override
   final String tableName;
   @override
   final String token;
+  @override
+  final String? namespace;
+  @override
+  final FileRollingPolicy? rollingPolicy;
 
   factory _$CloudflarePipelinesR2DataCatalogTable(
           [void Function(CloudflarePipelinesR2DataCatalogTableBuilder)?
@@ -30,10 +30,10 @@ class _$CloudflarePipelinesR2DataCatalogTable
   _$CloudflarePipelinesR2DataCatalogTable._(
       {required this.accountId,
       required this.bucket,
-      this.namespace,
-      this.rollingPolicy,
       required this.tableName,
-      required this.token})
+      required this.token,
+      this.namespace,
+      this.rollingPolicy})
       : super._();
   @override
   CloudflarePipelinesR2DataCatalogTable rebuild(
@@ -51,10 +51,10 @@ class _$CloudflarePipelinesR2DataCatalogTable
     return other is CloudflarePipelinesR2DataCatalogTable &&
         accountId == other.accountId &&
         bucket == other.bucket &&
-        namespace == other.namespace &&
-        rollingPolicy == other.rollingPolicy &&
         tableName == other.tableName &&
-        token == other.token;
+        token == other.token &&
+        namespace == other.namespace &&
+        rollingPolicy == other.rollingPolicy;
   }
 
   @override
@@ -62,10 +62,10 @@ class _$CloudflarePipelinesR2DataCatalogTable
     var _$hash = 0;
     _$hash = $jc(_$hash, accountId.hashCode);
     _$hash = $jc(_$hash, bucket.hashCode);
-    _$hash = $jc(_$hash, namespace.hashCode);
-    _$hash = $jc(_$hash, rollingPolicy.hashCode);
     _$hash = $jc(_$hash, tableName.hashCode);
     _$hash = $jc(_$hash, token.hashCode);
+    _$hash = $jc(_$hash, namespace.hashCode);
+    _$hash = $jc(_$hash, rollingPolicy.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -76,10 +76,10 @@ class _$CloudflarePipelinesR2DataCatalogTable
             r'CloudflarePipelinesR2DataCatalogTable')
           ..add('accountId', accountId)
           ..add('bucket', bucket)
-          ..add('namespace', namespace)
-          ..add('rollingPolicy', rollingPolicy)
           ..add('tableName', tableName)
-          ..add('token', token))
+          ..add('token', token)
+          ..add('namespace', namespace)
+          ..add('rollingPolicy', rollingPolicy))
         .toString();
   }
 }
@@ -98,6 +98,14 @@ class CloudflarePipelinesR2DataCatalogTableBuilder
   String? get bucket => _$this._bucket;
   set bucket(String? bucket) => _$this._bucket = bucket;
 
+  String? _tableName;
+  String? get tableName => _$this._tableName;
+  set tableName(String? tableName) => _$this._tableName = tableName;
+
+  String? _token;
+  String? get token => _$this._token;
+  set token(String? token) => _$this._token = token;
+
   String? _namespace;
   String? get namespace => _$this._namespace;
   set namespace(String? namespace) => _$this._namespace = namespace;
@@ -108,14 +116,6 @@ class CloudflarePipelinesR2DataCatalogTableBuilder
   set rollingPolicy(FileRollingPolicyBuilder? rollingPolicy) =>
       _$this._rollingPolicy = rollingPolicy;
 
-  String? _tableName;
-  String? get tableName => _$this._tableName;
-  set tableName(String? tableName) => _$this._tableName = tableName;
-
-  String? _token;
-  String? get token => _$this._token;
-  set token(String? token) => _$this._token = token;
-
   CloudflarePipelinesR2DataCatalogTableBuilder() {
     CloudflarePipelinesR2DataCatalogTable._defaults(this);
   }
@@ -125,10 +125,10 @@ class CloudflarePipelinesR2DataCatalogTableBuilder
     if ($v != null) {
       _accountId = $v.accountId;
       _bucket = $v.bucket;
-      _namespace = $v.namespace;
-      _rollingPolicy = $v.rollingPolicy?.toBuilder();
       _tableName = $v.tableName;
       _token = $v.token;
+      _namespace = $v.namespace;
+      _rollingPolicy = $v.rollingPolicy?.toBuilder();
       _$v = null;
     }
     return this;
@@ -157,12 +157,12 @@ class CloudflarePipelinesR2DataCatalogTableBuilder
                 r'CloudflarePipelinesR2DataCatalogTable', 'accountId'),
             bucket: BuiltValueNullFieldError.checkNotNull(
                 bucket, r'CloudflarePipelinesR2DataCatalogTable', 'bucket'),
-            namespace: namespace,
-            rollingPolicy: _rollingPolicy?.build(),
             tableName: BuiltValueNullFieldError.checkNotNull(tableName,
                 r'CloudflarePipelinesR2DataCatalogTable', 'tableName'),
             token: BuiltValueNullFieldError.checkNotNull(
                 token, r'CloudflarePipelinesR2DataCatalogTable', 'token'),
+            namespace: namespace,
+            rollingPolicy: _rollingPolicy?.build(),
           );
     } catch (_) {
       late String _$failedField;

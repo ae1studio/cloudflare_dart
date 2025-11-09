@@ -62,9 +62,9 @@ class _$WorkersBindingKindInherit extends WorkersBindingKindInherit {
   @override
   final String name;
   @override
-  final String? oldName;
-  @override
   final WorkersBindingKindInheritTypeEnum type;
+  @override
+  final String? oldName;
   @override
   final String? versionId;
 
@@ -73,7 +73,7 @@ class _$WorkersBindingKindInherit extends WorkersBindingKindInherit {
       (WorkersBindingKindInheritBuilder()..update(updates))._build();
 
   _$WorkersBindingKindInherit._(
-      {required this.name, this.oldName, required this.type, this.versionId})
+      {required this.name, required this.type, this.oldName, this.versionId})
       : super._();
   @override
   WorkersBindingKindInherit rebuild(
@@ -89,8 +89,8 @@ class _$WorkersBindingKindInherit extends WorkersBindingKindInherit {
     if (identical(other, this)) return true;
     return other is WorkersBindingKindInherit &&
         name == other.name &&
-        oldName == other.oldName &&
         type == other.type &&
+        oldName == other.oldName &&
         versionId == other.versionId;
   }
 
@@ -98,8 +98,8 @@ class _$WorkersBindingKindInherit extends WorkersBindingKindInherit {
   int get hashCode {
     var _$hash = 0;
     _$hash = $jc(_$hash, name.hashCode);
-    _$hash = $jc(_$hash, oldName.hashCode);
     _$hash = $jc(_$hash, type.hashCode);
+    _$hash = $jc(_$hash, oldName.hashCode);
     _$hash = $jc(_$hash, versionId.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
@@ -109,8 +109,8 @@ class _$WorkersBindingKindInherit extends WorkersBindingKindInherit {
   String toString() {
     return (newBuiltValueToStringHelper(r'WorkersBindingKindInherit')
           ..add('name', name)
-          ..add('oldName', oldName)
           ..add('type', type)
+          ..add('oldName', oldName)
           ..add('versionId', versionId))
         .toString();
   }
@@ -125,13 +125,13 @@ class WorkersBindingKindInheritBuilder
   String? get name => _$this._name;
   set name(String? name) => _$this._name = name;
 
-  String? _oldName;
-  String? get oldName => _$this._oldName;
-  set oldName(String? oldName) => _$this._oldName = oldName;
-
   WorkersBindingKindInheritTypeEnum? _type;
   WorkersBindingKindInheritTypeEnum? get type => _$this._type;
   set type(WorkersBindingKindInheritTypeEnum? type) => _$this._type = type;
+
+  String? _oldName;
+  String? get oldName => _$this._oldName;
+  set oldName(String? oldName) => _$this._oldName = oldName;
 
   String? _versionId;
   String? get versionId => _$this._versionId;
@@ -145,8 +145,8 @@ class WorkersBindingKindInheritBuilder
     final $v = _$v;
     if ($v != null) {
       _name = $v.name;
-      _oldName = $v.oldName;
       _type = $v.type;
+      _oldName = $v.oldName;
       _versionId = $v.versionId;
       _$v = null;
     }
@@ -171,9 +171,9 @@ class WorkersBindingKindInheritBuilder
         _$WorkersBindingKindInherit._(
           name: BuiltValueNullFieldError.checkNotNull(
               name, r'WorkersBindingKindInherit', 'name'),
-          oldName: oldName,
           type: BuiltValueNullFieldError.checkNotNull(
               type, r'WorkersBindingKindInherit', 'type'),
+          oldName: oldName,
           versionId: versionId,
         );
     replace(_$result);

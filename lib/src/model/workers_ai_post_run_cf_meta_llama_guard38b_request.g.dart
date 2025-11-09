@@ -9,10 +9,10 @@ part of 'workers_ai_post_run_cf_meta_llama_guard38b_request.dart';
 class _$WorkersAiPostRunCfMetaLlamaGuard38bRequest
     extends WorkersAiPostRunCfMetaLlamaGuard38bRequest {
   @override
-  final int? maxTokens;
-  @override
   final BuiltList<WorkersAiPostRunCfMetaLlamaGuard38bRequestMessagesInner>
       messages;
+  @override
+  final int? maxTokens;
   @override
   final WorkersAiPostRunCfMetaLlamaGuard38bRequestResponseFormat?
       responseFormat;
@@ -26,8 +26,8 @@ class _$WorkersAiPostRunCfMetaLlamaGuard38bRequest
           ._build();
 
   _$WorkersAiPostRunCfMetaLlamaGuard38bRequest._(
-      {this.maxTokens,
-      required this.messages,
+      {required this.messages,
+      this.maxTokens,
       this.responseFormat,
       this.temperature})
       : super._();
@@ -45,8 +45,8 @@ class _$WorkersAiPostRunCfMetaLlamaGuard38bRequest
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is WorkersAiPostRunCfMetaLlamaGuard38bRequest &&
-        maxTokens == other.maxTokens &&
         messages == other.messages &&
+        maxTokens == other.maxTokens &&
         responseFormat == other.responseFormat &&
         temperature == other.temperature;
   }
@@ -54,8 +54,8 @@ class _$WorkersAiPostRunCfMetaLlamaGuard38bRequest
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, maxTokens.hashCode);
     _$hash = $jc(_$hash, messages.hashCode);
+    _$hash = $jc(_$hash, maxTokens.hashCode);
     _$hash = $jc(_$hash, responseFormat.hashCode);
     _$hash = $jc(_$hash, temperature.hashCode);
     _$hash = $jf(_$hash);
@@ -66,8 +66,8 @@ class _$WorkersAiPostRunCfMetaLlamaGuard38bRequest
   String toString() {
     return (newBuiltValueToStringHelper(
             r'WorkersAiPostRunCfMetaLlamaGuard38bRequest')
-          ..add('maxTokens', maxTokens)
           ..add('messages', messages)
+          ..add('maxTokens', maxTokens)
           ..add('responseFormat', responseFormat)
           ..add('temperature', temperature))
         .toString();
@@ -80,10 +80,6 @@ class WorkersAiPostRunCfMetaLlamaGuard38bRequestBuilder
             WorkersAiPostRunCfMetaLlamaGuard38bRequestBuilder> {
   _$WorkersAiPostRunCfMetaLlamaGuard38bRequest? _$v;
 
-  int? _maxTokens;
-  int? get maxTokens => _$this._maxTokens;
-  set maxTokens(int? maxTokens) => _$this._maxTokens = maxTokens;
-
   ListBuilder<WorkersAiPostRunCfMetaLlamaGuard38bRequestMessagesInner>?
       _messages;
   ListBuilder<WorkersAiPostRunCfMetaLlamaGuard38bRequestMessagesInner>
@@ -93,6 +89,10 @@ class WorkersAiPostRunCfMetaLlamaGuard38bRequestBuilder
           ListBuilder<WorkersAiPostRunCfMetaLlamaGuard38bRequestMessagesInner>?
               messages) =>
       _$this._messages = messages;
+
+  int? _maxTokens;
+  int? get maxTokens => _$this._maxTokens;
+  set maxTokens(int? maxTokens) => _$this._maxTokens = maxTokens;
 
   WorkersAiPostRunCfMetaLlamaGuard38bRequestResponseFormatBuilder?
       _responseFormat;
@@ -115,8 +115,8 @@ class WorkersAiPostRunCfMetaLlamaGuard38bRequestBuilder
   WorkersAiPostRunCfMetaLlamaGuard38bRequestBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _maxTokens = $v.maxTokens;
       _messages = $v.messages.toBuilder();
+      _maxTokens = $v.maxTokens;
       _responseFormat = $v.responseFormat?.toBuilder();
       _temperature = $v.temperature;
       _$v = null;
@@ -144,8 +144,8 @@ class WorkersAiPostRunCfMetaLlamaGuard38bRequestBuilder
     try {
       _$result = _$v ??
           _$WorkersAiPostRunCfMetaLlamaGuard38bRequest._(
-            maxTokens: maxTokens,
             messages: messages.build(),
+            maxTokens: maxTokens,
             responseFormat: _responseFormat?.build(),
             temperature: temperature,
           );
@@ -154,6 +154,7 @@ class WorkersAiPostRunCfMetaLlamaGuard38bRequestBuilder
       try {
         _$failedField = 'messages';
         messages.build();
+
         _$failedField = 'responseFormat';
         _responseFormat?.build();
       } catch (e) {

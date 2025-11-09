@@ -11,15 +11,11 @@ part 'translation.g.dart';
 /// Translation
 ///
 /// Properties:
-/// * [sourceLang] - The language code of the source text (e.g., 'en' for English). Defaults to 'en' if not specified
 /// * [targetLang] - The language code to translate the text into (e.g., 'es' for Spanish)
 /// * [text] - The text to be translated
+/// * [sourceLang] - The language code of the source text (e.g., 'en' for English). Defaults to 'en' if not specified
 @BuiltValue()
 abstract class Translation implements Built<Translation, TranslationBuilder> {
-  /// The language code of the source text (e.g., 'en' for English). Defaults to 'en' if not specified
-  @BuiltValueField(wireName: r'source_lang')
-  String? get sourceLang;
-
   /// The language code to translate the text into (e.g., 'es' for Spanish)
   @BuiltValueField(wireName: r'target_lang')
   String get targetLang;
@@ -27,6 +23,10 @@ abstract class Translation implements Built<Translation, TranslationBuilder> {
   /// The text to be translated
   @BuiltValueField(wireName: r'text')
   String get text;
+
+  /// The language code of the source text (e.g., 'en' for English). Defaults to 'en' if not specified
+  @BuiltValueField(wireName: r'source_lang')
+  String? get sourceLang;
 
   Translation._();
 
@@ -52,13 +52,6 @@ class _$TranslationSerializer implements PrimitiveSerializer<Translation> {
     Translation object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
-    if (object.sourceLang != null) {
-      yield r'source_lang';
-      yield serializers.serialize(
-        object.sourceLang,
-        specifiedType: const FullType(String),
-      );
-    }
     yield r'target_lang';
     yield serializers.serialize(
       object.targetLang,
@@ -69,6 +62,13 @@ class _$TranslationSerializer implements PrimitiveSerializer<Translation> {
       object.text,
       specifiedType: const FullType(String),
     );
+    if (object.sourceLang != null) {
+      yield r'source_lang';
+      yield serializers.serialize(
+        object.sourceLang,
+        specifiedType: const FullType(String),
+      );
+    }
   }
 
   @override
@@ -92,13 +92,6 @@ class _$TranslationSerializer implements PrimitiveSerializer<Translation> {
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'source_lang':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.sourceLang = valueDes;
-          break;
         case r'target_lang':
           final valueDes = serializers.deserialize(
             value,
@@ -112,6 +105,13 @@ class _$TranslationSerializer implements PrimitiveSerializer<Translation> {
             specifiedType: const FullType(String),
           ) as String;
           result.text = valueDes;
+          break;
+        case r'source_lang':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.sourceLang = valueDes;
           break;
         default:
           unhandled.add(key);

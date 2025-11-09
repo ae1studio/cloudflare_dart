@@ -86,18 +86,18 @@ class _$R2CorsRuleAllowedMethodsEnumSerializer
 
 class _$R2CorsRuleAllowed extends R2CorsRuleAllowed {
   @override
-  final BuiltList<String>? headers;
-  @override
   final BuiltList<R2CorsRuleAllowedMethodsEnum> methods;
   @override
   final BuiltList<String> origins;
+  @override
+  final BuiltList<String>? headers;
 
   factory _$R2CorsRuleAllowed(
           [void Function(R2CorsRuleAllowedBuilder)? updates]) =>
       (R2CorsRuleAllowedBuilder()..update(updates))._build();
 
   _$R2CorsRuleAllowed._(
-      {this.headers, required this.methods, required this.origins})
+      {required this.methods, required this.origins, this.headers})
       : super._();
   @override
   R2CorsRuleAllowed rebuild(void Function(R2CorsRuleAllowedBuilder) updates) =>
@@ -111,17 +111,17 @@ class _$R2CorsRuleAllowed extends R2CorsRuleAllowed {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is R2CorsRuleAllowed &&
-        headers == other.headers &&
         methods == other.methods &&
-        origins == other.origins;
+        origins == other.origins &&
+        headers == other.headers;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, headers.hashCode);
     _$hash = $jc(_$hash, methods.hashCode);
     _$hash = $jc(_$hash, origins.hashCode);
+    _$hash = $jc(_$hash, headers.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -129,9 +129,9 @@ class _$R2CorsRuleAllowed extends R2CorsRuleAllowed {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'R2CorsRuleAllowed')
-          ..add('headers', headers)
           ..add('methods', methods)
-          ..add('origins', origins))
+          ..add('origins', origins)
+          ..add('headers', headers))
         .toString();
   }
 }
@@ -139,10 +139,6 @@ class _$R2CorsRuleAllowed extends R2CorsRuleAllowed {
 class R2CorsRuleAllowedBuilder
     implements Builder<R2CorsRuleAllowed, R2CorsRuleAllowedBuilder> {
   _$R2CorsRuleAllowed? _$v;
-
-  ListBuilder<String>? _headers;
-  ListBuilder<String> get headers => _$this._headers ??= ListBuilder<String>();
-  set headers(ListBuilder<String>? headers) => _$this._headers = headers;
 
   ListBuilder<R2CorsRuleAllowedMethodsEnum>? _methods;
   ListBuilder<R2CorsRuleAllowedMethodsEnum> get methods =>
@@ -154,6 +150,10 @@ class R2CorsRuleAllowedBuilder
   ListBuilder<String> get origins => _$this._origins ??= ListBuilder<String>();
   set origins(ListBuilder<String>? origins) => _$this._origins = origins;
 
+  ListBuilder<String>? _headers;
+  ListBuilder<String> get headers => _$this._headers ??= ListBuilder<String>();
+  set headers(ListBuilder<String>? headers) => _$this._headers = headers;
+
   R2CorsRuleAllowedBuilder() {
     R2CorsRuleAllowed._defaults(this);
   }
@@ -161,9 +161,9 @@ class R2CorsRuleAllowedBuilder
   R2CorsRuleAllowedBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _headers = $v.headers?.toBuilder();
       _methods = $v.methods.toBuilder();
       _origins = $v.origins.toBuilder();
+      _headers = $v.headers?.toBuilder();
       _$v = null;
     }
     return this;
@@ -187,19 +187,19 @@ class R2CorsRuleAllowedBuilder
     try {
       _$result = _$v ??
           _$R2CorsRuleAllowed._(
-            headers: _headers?.build(),
             methods: methods.build(),
             origins: origins.build(),
+            headers: _headers?.build(),
           );
     } catch (_) {
       late String _$failedField;
       try {
-        _$failedField = 'headers';
-        _headers?.build();
         _$failedField = 'methods';
         methods.build();
         _$failedField = 'origins';
         origins.build();
+        _$failedField = 'headers';
+        _headers?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
             r'R2CorsRuleAllowed', _$failedField, e.toString());

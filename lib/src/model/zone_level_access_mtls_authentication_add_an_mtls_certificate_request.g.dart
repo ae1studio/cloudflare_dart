@@ -9,11 +9,11 @@ part of 'zone_level_access_mtls_authentication_add_an_mtls_certificate_request.d
 class _$ZoneLevelAccessMtlsAuthenticationAddAnMtlsCertificateRequest
     extends ZoneLevelAccessMtlsAuthenticationAddAnMtlsCertificateRequest {
   @override
-  final BuiltList<String>? associatedHostnames;
-  @override
   final String certificate;
   @override
   final String name;
+  @override
+  final BuiltList<String>? associatedHostnames;
 
   factory _$ZoneLevelAccessMtlsAuthenticationAddAnMtlsCertificateRequest(
           [void Function(
@@ -24,7 +24,7 @@ class _$ZoneLevelAccessMtlsAuthenticationAddAnMtlsCertificateRequest
           ._build();
 
   _$ZoneLevelAccessMtlsAuthenticationAddAnMtlsCertificateRequest._(
-      {this.associatedHostnames, required this.certificate, required this.name})
+      {required this.certificate, required this.name, this.associatedHostnames})
       : super._();
   @override
   ZoneLevelAccessMtlsAuthenticationAddAnMtlsCertificateRequest rebuild(
@@ -44,17 +44,17 @@ class _$ZoneLevelAccessMtlsAuthenticationAddAnMtlsCertificateRequest
     if (identical(other, this)) return true;
     return other
             is ZoneLevelAccessMtlsAuthenticationAddAnMtlsCertificateRequest &&
-        associatedHostnames == other.associatedHostnames &&
         certificate == other.certificate &&
-        name == other.name;
+        name == other.name &&
+        associatedHostnames == other.associatedHostnames;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, associatedHostnames.hashCode);
     _$hash = $jc(_$hash, certificate.hashCode);
     _$hash = $jc(_$hash, name.hashCode);
+    _$hash = $jc(_$hash, associatedHostnames.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -63,9 +63,9 @@ class _$ZoneLevelAccessMtlsAuthenticationAddAnMtlsCertificateRequest
   String toString() {
     return (newBuiltValueToStringHelper(
             r'ZoneLevelAccessMtlsAuthenticationAddAnMtlsCertificateRequest')
-          ..add('associatedHostnames', associatedHostnames)
           ..add('certificate', certificate)
-          ..add('name', name))
+          ..add('name', name)
+          ..add('associatedHostnames', associatedHostnames))
         .toString();
   }
 }
@@ -76,12 +76,6 @@ class ZoneLevelAccessMtlsAuthenticationAddAnMtlsCertificateRequestBuilder
             ZoneLevelAccessMtlsAuthenticationAddAnMtlsCertificateRequestBuilder> {
   _$ZoneLevelAccessMtlsAuthenticationAddAnMtlsCertificateRequest? _$v;
 
-  ListBuilder<String>? _associatedHostnames;
-  ListBuilder<String> get associatedHostnames =>
-      _$this._associatedHostnames ??= ListBuilder<String>();
-  set associatedHostnames(ListBuilder<String>? associatedHostnames) =>
-      _$this._associatedHostnames = associatedHostnames;
-
   String? _certificate;
   String? get certificate => _$this._certificate;
   set certificate(String? certificate) => _$this._certificate = certificate;
@@ -89,6 +83,12 @@ class ZoneLevelAccessMtlsAuthenticationAddAnMtlsCertificateRequestBuilder
   String? _name;
   String? get name => _$this._name;
   set name(String? name) => _$this._name = name;
+
+  ListBuilder<String>? _associatedHostnames;
+  ListBuilder<String> get associatedHostnames =>
+      _$this._associatedHostnames ??= ListBuilder<String>();
+  set associatedHostnames(ListBuilder<String>? associatedHostnames) =>
+      _$this._associatedHostnames = associatedHostnames;
 
   ZoneLevelAccessMtlsAuthenticationAddAnMtlsCertificateRequestBuilder() {
     ZoneLevelAccessMtlsAuthenticationAddAnMtlsCertificateRequest._defaults(
@@ -99,9 +99,9 @@ class ZoneLevelAccessMtlsAuthenticationAddAnMtlsCertificateRequestBuilder
       get _$this {
     final $v = _$v;
     if ($v != null) {
-      _associatedHostnames = $v.associatedHostnames?.toBuilder();
       _certificate = $v.certificate;
       _name = $v.name;
+      _associatedHostnames = $v.associatedHostnames?.toBuilder();
       _$v = null;
     }
     return this;
@@ -131,7 +131,6 @@ class ZoneLevelAccessMtlsAuthenticationAddAnMtlsCertificateRequestBuilder
     try {
       _$result = _$v ??
           _$ZoneLevelAccessMtlsAuthenticationAddAnMtlsCertificateRequest._(
-            associatedHostnames: _associatedHostnames?.build(),
             certificate: BuiltValueNullFieldError.checkNotNull(
                 certificate,
                 r'ZoneLevelAccessMtlsAuthenticationAddAnMtlsCertificateRequest',
@@ -140,6 +139,7 @@ class ZoneLevelAccessMtlsAuthenticationAddAnMtlsCertificateRequestBuilder
                 name,
                 r'ZoneLevelAccessMtlsAuthenticationAddAnMtlsCertificateRequest',
                 'name'),
+            associatedHostnames: _associatedHostnames?.build(),
           );
     } catch (_) {
       late String _$failedField;

@@ -9,6 +9,7 @@ import 'package:built_collection/built_collection.dart';
 import 'package:cloudflare_dart/src/model/access_messages_inner.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
+import 'package:built_value/json_object.dart';
 
 part 'digital_experience_monitoring_dex_response_collection.g.dart';
 

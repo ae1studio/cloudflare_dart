@@ -15,8 +15,8 @@ part 'd1_batch_query.g.dart';
 /// A single query object or a batch query object
 ///
 /// Properties:
-/// * [params] 
 /// * [sql] - Your SQL query. Supports multiple statements, joined by semicolons, which will be executed as a batch.
+/// * [params] 
 /// * [batch] 
 @BuiltValue()
 abstract class D1BatchQuery implements Built<D1BatchQuery, D1BatchQueryBuilder> {

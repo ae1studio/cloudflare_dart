@@ -12,16 +12,12 @@ part 'workers_binding_kind_service.g.dart';
 /// WorkersBindingKindService
 ///
 /// Properties:
-/// * [environment] - Optional environment if the Worker utilizes one.
 /// * [name] - A JavaScript variable name for the binding.
 /// * [service] - Name of Worker to bind to.
 /// * [type] - The kind of resource that the binding provides.
+/// * [environment] - Optional environment if the Worker utilizes one.
 @BuiltValue()
 abstract class WorkersBindingKindService implements Built<WorkersBindingKindService, WorkersBindingKindServiceBuilder> {
-  /// Optional environment if the Worker utilizes one.
-  @BuiltValueField(wireName: r'environment')
-  String? get environment;
-
   /// A JavaScript variable name for the binding.
   @BuiltValueField(wireName: r'name')
   String get name;
@@ -34,6 +30,10 @@ abstract class WorkersBindingKindService implements Built<WorkersBindingKindServ
   @BuiltValueField(wireName: r'type')
   WorkersBindingKindServiceTypeEnum get type;
   // enum typeEnum {  service,  };
+
+  /// Optional environment if the Worker utilizes one.
+  @BuiltValueField(wireName: r'environment')
+  String? get environment;
 
   WorkersBindingKindService._();
 
@@ -59,13 +59,6 @@ class _$WorkersBindingKindServiceSerializer implements PrimitiveSerializer<Worke
     WorkersBindingKindService object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
-    if (object.environment != null) {
-      yield r'environment';
-      yield serializers.serialize(
-        object.environment,
-        specifiedType: const FullType(String),
-      );
-    }
     yield r'name';
     yield serializers.serialize(
       object.name,
@@ -81,6 +74,13 @@ class _$WorkersBindingKindServiceSerializer implements PrimitiveSerializer<Worke
       object.type,
       specifiedType: const FullType(WorkersBindingKindServiceTypeEnum),
     );
+    if (object.environment != null) {
+      yield r'environment';
+      yield serializers.serialize(
+        object.environment,
+        specifiedType: const FullType(String),
+      );
+    }
   }
 
   @override
@@ -104,13 +104,6 @@ class _$WorkersBindingKindServiceSerializer implements PrimitiveSerializer<Worke
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'environment':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.environment = valueDes;
-          break;
         case r'name':
           final valueDes = serializers.deserialize(
             value,
@@ -131,6 +124,13 @@ class _$WorkersBindingKindServiceSerializer implements PrimitiveSerializer<Worke
             specifiedType: const FullType(WorkersBindingKindServiceTypeEnum),
           ) as WorkersBindingKindServiceTypeEnum;
           result.type = valueDes;
+          break;
+        case r'environment':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.environment = valueDes;
           break;
         default:
           unhandled.add(key);

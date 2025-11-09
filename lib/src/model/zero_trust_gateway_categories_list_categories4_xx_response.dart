@@ -20,8 +20,8 @@ part 'zero_trust_gateway_categories_list_categories4_xx_response.g.dart';
 /// * [errors] 
 /// * [messages] 
 /// * [success] - Indicate whether the API call was successful.
-/// * [resultInfo] 
 /// * [result] 
+/// * [resultInfo] 
 @BuiltValue()
 abstract class ZeroTrustGatewayCategoriesListCategories4XXResponse implements ZeroTrustGatewayApiResponseCommonFailure, ZeroTrustGatewayCategoriesComponentsSchemasResponseCollection, Built<ZeroTrustGatewayCategoriesListCategories4XXResponse, ZeroTrustGatewayCategoriesListCategories4XXResponseBuilder> {
   ZeroTrustGatewayCategoriesListCategories4XXResponse._();

@@ -9,10 +9,6 @@ part of 'magic_visibility_pcaps_pcaps_request_simple.dart';
 class _$MagicVisibilityPcapsPcapsRequestSimple
     extends MagicVisibilityPcapsPcapsRequestSimple {
   @override
-  final MagicVisibilityPcapsPcapsFilterV1? filterV1;
-  @override
-  final DateTime? offsetTime;
-  @override
   final num packetLimit;
   @override
   final MagicVisibilityPcapsPcapsSystem system;
@@ -20,6 +16,10 @@ class _$MagicVisibilityPcapsPcapsRequestSimple
   final num timeLimit;
   @override
   final MagicVisibilityPcapsPcapsType type;
+  @override
+  final MagicVisibilityPcapsPcapsFilterV1? filterV1;
+  @override
+  final DateTime? offsetTime;
 
   factory _$MagicVisibilityPcapsPcapsRequestSimple(
           [void Function(MagicVisibilityPcapsPcapsRequestSimpleBuilder)?
@@ -28,12 +28,12 @@ class _$MagicVisibilityPcapsPcapsRequestSimple
           ._build();
 
   _$MagicVisibilityPcapsPcapsRequestSimple._(
-      {this.filterV1,
-      this.offsetTime,
-      required this.packetLimit,
+      {required this.packetLimit,
       required this.system,
       required this.timeLimit,
-      required this.type})
+      required this.type,
+      this.filterV1,
+      this.offsetTime})
       : super._();
   @override
   MagicVisibilityPcapsPcapsRequestSimple rebuild(
@@ -49,23 +49,23 @@ class _$MagicVisibilityPcapsPcapsRequestSimple
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is MagicVisibilityPcapsPcapsRequestSimple &&
-        filterV1 == other.filterV1 &&
-        offsetTime == other.offsetTime &&
         packetLimit == other.packetLimit &&
         system == other.system &&
         timeLimit == other.timeLimit &&
-        type == other.type;
+        type == other.type &&
+        filterV1 == other.filterV1 &&
+        offsetTime == other.offsetTime;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, filterV1.hashCode);
-    _$hash = $jc(_$hash, offsetTime.hashCode);
     _$hash = $jc(_$hash, packetLimit.hashCode);
     _$hash = $jc(_$hash, system.hashCode);
     _$hash = $jc(_$hash, timeLimit.hashCode);
     _$hash = $jc(_$hash, type.hashCode);
+    _$hash = $jc(_$hash, filterV1.hashCode);
+    _$hash = $jc(_$hash, offsetTime.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -74,12 +74,12 @@ class _$MagicVisibilityPcapsPcapsRequestSimple
   String toString() {
     return (newBuiltValueToStringHelper(
             r'MagicVisibilityPcapsPcapsRequestSimple')
-          ..add('filterV1', filterV1)
-          ..add('offsetTime', offsetTime)
           ..add('packetLimit', packetLimit)
           ..add('system', system)
           ..add('timeLimit', timeLimit)
-          ..add('type', type))
+          ..add('type', type)
+          ..add('filterV1', filterV1)
+          ..add('offsetTime', offsetTime))
         .toString();
   }
 }
@@ -89,16 +89,6 @@ class MagicVisibilityPcapsPcapsRequestSimpleBuilder
         Builder<MagicVisibilityPcapsPcapsRequestSimple,
             MagicVisibilityPcapsPcapsRequestSimpleBuilder> {
   _$MagicVisibilityPcapsPcapsRequestSimple? _$v;
-
-  MagicVisibilityPcapsPcapsFilterV1Builder? _filterV1;
-  MagicVisibilityPcapsPcapsFilterV1Builder get filterV1 =>
-      _$this._filterV1 ??= MagicVisibilityPcapsPcapsFilterV1Builder();
-  set filterV1(MagicVisibilityPcapsPcapsFilterV1Builder? filterV1) =>
-      _$this._filterV1 = filterV1;
-
-  DateTime? _offsetTime;
-  DateTime? get offsetTime => _$this._offsetTime;
-  set offsetTime(DateTime? offsetTime) => _$this._offsetTime = offsetTime;
 
   num? _packetLimit;
   num? get packetLimit => _$this._packetLimit;
@@ -117,6 +107,16 @@ class MagicVisibilityPcapsPcapsRequestSimpleBuilder
   MagicVisibilityPcapsPcapsType? get type => _$this._type;
   set type(MagicVisibilityPcapsPcapsType? type) => _$this._type = type;
 
+  MagicVisibilityPcapsPcapsFilterV1Builder? _filterV1;
+  MagicVisibilityPcapsPcapsFilterV1Builder get filterV1 =>
+      _$this._filterV1 ??= MagicVisibilityPcapsPcapsFilterV1Builder();
+  set filterV1(MagicVisibilityPcapsPcapsFilterV1Builder? filterV1) =>
+      _$this._filterV1 = filterV1;
+
+  DateTime? _offsetTime;
+  DateTime? get offsetTime => _$this._offsetTime;
+  set offsetTime(DateTime? offsetTime) => _$this._offsetTime = offsetTime;
+
   MagicVisibilityPcapsPcapsRequestSimpleBuilder() {
     MagicVisibilityPcapsPcapsRequestSimple._defaults(this);
   }
@@ -124,12 +124,12 @@ class MagicVisibilityPcapsPcapsRequestSimpleBuilder
   MagicVisibilityPcapsPcapsRequestSimpleBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _filterV1 = $v.filterV1?.toBuilder();
-      _offsetTime = $v.offsetTime;
       _packetLimit = $v.packetLimit;
       _system = $v.system;
       _timeLimit = $v.timeLimit;
       _type = $v.type;
+      _filterV1 = $v.filterV1?.toBuilder();
+      _offsetTime = $v.offsetTime;
       _$v = null;
     }
     return this;
@@ -154,8 +154,6 @@ class MagicVisibilityPcapsPcapsRequestSimpleBuilder
     try {
       _$result = _$v ??
           _$MagicVisibilityPcapsPcapsRequestSimple._(
-            filterV1: _filterV1?.build(),
-            offsetTime: offsetTime,
             packetLimit: BuiltValueNullFieldError.checkNotNull(packetLimit,
                 r'MagicVisibilityPcapsPcapsRequestSimple', 'packetLimit'),
             system: BuiltValueNullFieldError.checkNotNull(
@@ -164,6 +162,8 @@ class MagicVisibilityPcapsPcapsRequestSimpleBuilder
                 r'MagicVisibilityPcapsPcapsRequestSimple', 'timeLimit'),
             type: BuiltValueNullFieldError.checkNotNull(
                 type, r'MagicVisibilityPcapsPcapsRequestSimple', 'type'),
+            filterV1: _filterV1?.build(),
+            offsetTime: offsetTime,
           );
     } catch (_) {
       late String _$failedField;

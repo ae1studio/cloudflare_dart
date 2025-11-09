@@ -10,7 +10,6 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **branchExcludes** | **BuiltList&lt;String&gt;** |  | 
 **branchIncludes** | **BuiltList&lt;String&gt;** |  | 
-**buildCachingEnabled** | **bool** |  | [optional] [default to false]
 **buildCommand** | **String** |  | 
 **buildTokenUuid** | **String** |  | 
 **deployCommand** | **String** |  | 
@@ -20,6 +19,7 @@ Name | Type | Description | Notes
 **repoConnectionUuid** | **String** |  | 
 **rootDirectory** | **String** |  | 
 **triggerName** | **String** |  | 
+**buildCachingEnabled** | **bool** |  | [optional] [default to false]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -33,6 +33,9 @@ part 'access_app_response.g.dart';
 /// AccessAppResponse
 ///
 /// Properties:
+/// * [domain] - The primary hostname and path secured by Access. This domain will be displayed if the app is visible in the App Launcher.
+/// * [type] 
+/// * [targetCriteria] 
 /// * [aud] - Audience tag.
 /// * [createdAt] 
 /// * [id] - UUID.
@@ -48,7 +51,6 @@ part 'access_app_response.g.dart';
 /// * [customNonIdentityDenyUrl] - The custom URL a user is redirected to when they are denied access to the application when failing non-identity rules.
 /// * [customPages] - The custom pages that will be displayed when applicable for this application
 /// * [destinations] - List of destinations secured by Access. This supersedes `self_hosted_domains` to allow for more flexibility in defining different types of domains. If `destinations` are provided, then `self_hosted_domains` will be ignored. 
-/// * [domain] - The primary hostname and path secured by Access. This domain will be displayed if the app is visible in the App Launcher.
 /// * [enableBindingCookie] - Enables the binding cookie, which increases security against compromised authorization tokens and CSRF attacks.
 /// * [httpOnlyCookieAttribute] - Enables the HttpOnly cookie attribute, which increases security against XSS attacks.
 /// * [logoUrl] - The image URL for the logo shown in the App Launcher dashboard.
@@ -63,7 +65,6 @@ part 'access_app_response.g.dart';
 /// * [sessionDuration] - The amount of time that tokens issued for this application will be valid. Must be in the format `300ms` or `2h45m`. Valid time units are: ns, us (or µs), ms, s, m, h. Note: unsupported for infrastructure type applications.
 /// * [skipInterstitial] - Enables automatic authentication through cloudflared.
 /// * [tags] - The tags you want assigned to an application. Tags are used to filter applications in the App Launcher dashboard.
-/// * [type] 
 /// * [policies] 
 /// * [saasApp] 
 /// * [appLauncherLogoUrl] - The image URL of the logo shown in the App Launcher header.
@@ -72,7 +73,6 @@ part 'access_app_response.g.dart';
 /// * [headerBgColor] - The background color of the App Launcher header.
 /// * [landingPageDesign] 
 /// * [skipAppLauncherLoginPage] - Determines when to skip the App Launcher landing page.
-/// * [targetCriteria] 
 @BuiltValue()
 abstract class AccessAppResponse implements Built<AccessAppResponse, AccessAppResponseBuilder> {
   /// Any Of [AppLauncherApplication1], [BookmarkApplication], [BrowserIsolationPermissionsApplication1], [BrowserRDPApplication1], [BrowserSSHApplication1], [BrowserVNCApplication1], [DeviceEnrollmentPermissionsApplication1], [InfrastructureApplication1], [SaaSApplication1], [SelfHostedApplication1]

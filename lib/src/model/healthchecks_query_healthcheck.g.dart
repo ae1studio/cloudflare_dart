@@ -169,6 +169,8 @@ class _$HealthchecksQueryHealthcheck extends HealthchecksQueryHealthcheck {
   @override
   final String address;
   @override
+  final String name;
+  @override
   final BuiltList<HealthchecksQueryHealthcheckCheckRegionsEnum>? checkRegions;
   @override
   final int? consecutiveFails;
@@ -180,8 +182,6 @@ class _$HealthchecksQueryHealthcheck extends HealthchecksQueryHealthcheck {
   final HealthchecksHttpConfig? httpConfig;
   @override
   final int? interval;
-  @override
-  final String name;
   @override
   final int? retries;
   @override
@@ -199,13 +199,13 @@ class _$HealthchecksQueryHealthcheck extends HealthchecksQueryHealthcheck {
 
   _$HealthchecksQueryHealthcheck._(
       {required this.address,
+      required this.name,
       this.checkRegions,
       this.consecutiveFails,
       this.consecutiveSuccesses,
       this.description,
       this.httpConfig,
       this.interval,
-      required this.name,
       this.retries,
       this.suspended,
       this.tcpConfig,
@@ -226,13 +226,13 @@ class _$HealthchecksQueryHealthcheck extends HealthchecksQueryHealthcheck {
     if (identical(other, this)) return true;
     return other is HealthchecksQueryHealthcheck &&
         address == other.address &&
+        name == other.name &&
         checkRegions == other.checkRegions &&
         consecutiveFails == other.consecutiveFails &&
         consecutiveSuccesses == other.consecutiveSuccesses &&
         description == other.description &&
         httpConfig == other.httpConfig &&
         interval == other.interval &&
-        name == other.name &&
         retries == other.retries &&
         suspended == other.suspended &&
         tcpConfig == other.tcpConfig &&
@@ -244,13 +244,13 @@ class _$HealthchecksQueryHealthcheck extends HealthchecksQueryHealthcheck {
   int get hashCode {
     var _$hash = 0;
     _$hash = $jc(_$hash, address.hashCode);
+    _$hash = $jc(_$hash, name.hashCode);
     _$hash = $jc(_$hash, checkRegions.hashCode);
     _$hash = $jc(_$hash, consecutiveFails.hashCode);
     _$hash = $jc(_$hash, consecutiveSuccesses.hashCode);
     _$hash = $jc(_$hash, description.hashCode);
     _$hash = $jc(_$hash, httpConfig.hashCode);
     _$hash = $jc(_$hash, interval.hashCode);
-    _$hash = $jc(_$hash, name.hashCode);
     _$hash = $jc(_$hash, retries.hashCode);
     _$hash = $jc(_$hash, suspended.hashCode);
     _$hash = $jc(_$hash, tcpConfig.hashCode);
@@ -264,13 +264,13 @@ class _$HealthchecksQueryHealthcheck extends HealthchecksQueryHealthcheck {
   String toString() {
     return (newBuiltValueToStringHelper(r'HealthchecksQueryHealthcheck')
           ..add('address', address)
+          ..add('name', name)
           ..add('checkRegions', checkRegions)
           ..add('consecutiveFails', consecutiveFails)
           ..add('consecutiveSuccesses', consecutiveSuccesses)
           ..add('description', description)
           ..add('httpConfig', httpConfig)
           ..add('interval', interval)
-          ..add('name', name)
           ..add('retries', retries)
           ..add('suspended', suspended)
           ..add('tcpConfig', tcpConfig)
@@ -289,6 +289,10 @@ class HealthchecksQueryHealthcheckBuilder
   String? _address;
   String? get address => _$this._address;
   set address(String? address) => _$this._address = address;
+
+  String? _name;
+  String? get name => _$this._name;
+  set name(String? name) => _$this._name = name;
 
   ListBuilder<HealthchecksQueryHealthcheckCheckRegionsEnum>? _checkRegions;
   ListBuilder<HealthchecksQueryHealthcheckCheckRegionsEnum> get checkRegions =>
@@ -323,10 +327,6 @@ class HealthchecksQueryHealthcheckBuilder
   int? get interval => _$this._interval;
   set interval(int? interval) => _$this._interval = interval;
 
-  String? _name;
-  String? get name => _$this._name;
-  set name(String? name) => _$this._name = name;
-
   int? _retries;
   int? get retries => _$this._retries;
   set retries(int? retries) => _$this._retries = retries;
@@ -357,13 +357,13 @@ class HealthchecksQueryHealthcheckBuilder
     final $v = _$v;
     if ($v != null) {
       _address = $v.address;
+      _name = $v.name;
       _checkRegions = $v.checkRegions?.toBuilder();
       _consecutiveFails = $v.consecutiveFails;
       _consecutiveSuccesses = $v.consecutiveSuccesses;
       _description = $v.description;
       _httpConfig = $v.httpConfig?.toBuilder();
       _interval = $v.interval;
-      _name = $v.name;
       _retries = $v.retries;
       _suspended = $v.suspended;
       _tcpConfig = $v.tcpConfig?.toBuilder();
@@ -394,14 +394,14 @@ class HealthchecksQueryHealthcheckBuilder
           _$HealthchecksQueryHealthcheck._(
             address: BuiltValueNullFieldError.checkNotNull(
                 address, r'HealthchecksQueryHealthcheck', 'address'),
+            name: BuiltValueNullFieldError.checkNotNull(
+                name, r'HealthchecksQueryHealthcheck', 'name'),
             checkRegions: _checkRegions?.build(),
             consecutiveFails: consecutiveFails,
             consecutiveSuccesses: consecutiveSuccesses,
             description: description,
             httpConfig: _httpConfig?.build(),
             interval: interval,
-            name: BuiltValueNullFieldError.checkNotNull(
-                name, r'HealthchecksQueryHealthcheck', 'name'),
             retries: retries,
             suspended: suspended,
             tcpConfig: _tcpConfig?.build(),

@@ -8,6 +8,22 @@ part of 'cloudforce_one_whois_whois.dart';
 
 class _$CloudforceOneWhoisWhois extends CloudforceOneWhoisWhois {
   @override
+  final bool dnssec;
+  @override
+  final String domain;
+  @override
+  final String extension_;
+  @override
+  final bool found;
+  @override
+  final BuiltList<String> nameservers;
+  @override
+  final String punycode;
+  @override
+  final String registrant;
+  @override
+  final String registrar;
+  @override
   final String? administrativeCity;
   @override
   final String? administrativeCountry;
@@ -68,25 +84,11 @@ class _$CloudforceOneWhoisWhois extends CloudforceOneWhoisWhois {
   @override
   final String? createdDateRaw;
   @override
-  final bool dnssec;
-  @override
-  final String domain;
-  @override
   final DateTime? expirationDate;
   @override
   final String? expirationDateRaw;
   @override
-  final String extension_;
-  @override
-  final bool found;
-  @override
   final String? id;
-  @override
-  final BuiltList<String> nameservers;
-  @override
-  final String punycode;
-  @override
-  final String registrant;
   @override
   final String? registrantCity;
   @override
@@ -115,8 +117,6 @@ class _$CloudforceOneWhoisWhois extends CloudforceOneWhoisWhois {
   final String? registrantReferralUrl;
   @override
   final String? registrantStreet;
-  @override
-  final String registrar;
   @override
   final String? registrarCity;
   @override
@@ -187,7 +187,15 @@ class _$CloudforceOneWhoisWhois extends CloudforceOneWhoisWhois {
       (CloudforceOneWhoisWhoisBuilder()..update(updates))._build();
 
   _$CloudforceOneWhoisWhois._(
-      {this.administrativeCity,
+      {required this.dnssec,
+      required this.domain,
+      required this.extension_,
+      required this.found,
+      required this.nameservers,
+      required this.punycode,
+      required this.registrant,
+      required this.registrar,
+      this.administrativeCity,
       this.administrativeCountry,
       this.administrativeEmail,
       this.administrativeFax,
@@ -217,16 +225,9 @@ class _$CloudforceOneWhoisWhois extends CloudforceOneWhoisWhois {
       this.billingStreet,
       this.createdDate,
       this.createdDateRaw,
-      required this.dnssec,
-      required this.domain,
       this.expirationDate,
       this.expirationDateRaw,
-      required this.extension_,
-      required this.found,
       this.id,
-      required this.nameservers,
-      required this.punycode,
-      required this.registrant,
       this.registrantCity,
       this.registrantCountry,
       this.registrantEmail,
@@ -241,7 +242,6 @@ class _$CloudforceOneWhoisWhois extends CloudforceOneWhoisWhois {
       this.registrantProvince,
       this.registrantReferralUrl,
       this.registrantStreet,
-      required this.registrar,
       this.registrarCity,
       this.registrarCountry,
       this.registrarEmail,
@@ -288,6 +288,14 @@ class _$CloudforceOneWhoisWhois extends CloudforceOneWhoisWhois {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is CloudforceOneWhoisWhois &&
+        dnssec == other.dnssec &&
+        domain == other.domain &&
+        extension_ == other.extension_ &&
+        found == other.found &&
+        nameservers == other.nameservers &&
+        punycode == other.punycode &&
+        registrant == other.registrant &&
+        registrar == other.registrar &&
         administrativeCity == other.administrativeCity &&
         administrativeCountry == other.administrativeCountry &&
         administrativeEmail == other.administrativeEmail &&
@@ -318,16 +326,9 @@ class _$CloudforceOneWhoisWhois extends CloudforceOneWhoisWhois {
         billingStreet == other.billingStreet &&
         createdDate == other.createdDate &&
         createdDateRaw == other.createdDateRaw &&
-        dnssec == other.dnssec &&
-        domain == other.domain &&
         expirationDate == other.expirationDate &&
         expirationDateRaw == other.expirationDateRaw &&
-        extension_ == other.extension_ &&
-        found == other.found &&
         id == other.id &&
-        nameservers == other.nameservers &&
-        punycode == other.punycode &&
-        registrant == other.registrant &&
         registrantCity == other.registrantCity &&
         registrantCountry == other.registrantCountry &&
         registrantEmail == other.registrantEmail &&
@@ -342,7 +343,6 @@ class _$CloudforceOneWhoisWhois extends CloudforceOneWhoisWhois {
         registrantProvince == other.registrantProvince &&
         registrantReferralUrl == other.registrantReferralUrl &&
         registrantStreet == other.registrantStreet &&
-        registrar == other.registrar &&
         registrarCity == other.registrarCity &&
         registrarCountry == other.registrarCountry &&
         registrarEmail == other.registrarEmail &&
@@ -380,6 +380,14 @@ class _$CloudforceOneWhoisWhois extends CloudforceOneWhoisWhois {
   @override
   int get hashCode {
     var _$hash = 0;
+    _$hash = $jc(_$hash, dnssec.hashCode);
+    _$hash = $jc(_$hash, domain.hashCode);
+    _$hash = $jc(_$hash, extension_.hashCode);
+    _$hash = $jc(_$hash, found.hashCode);
+    _$hash = $jc(_$hash, nameservers.hashCode);
+    _$hash = $jc(_$hash, punycode.hashCode);
+    _$hash = $jc(_$hash, registrant.hashCode);
+    _$hash = $jc(_$hash, registrar.hashCode);
     _$hash = $jc(_$hash, administrativeCity.hashCode);
     _$hash = $jc(_$hash, administrativeCountry.hashCode);
     _$hash = $jc(_$hash, administrativeEmail.hashCode);
@@ -410,16 +418,9 @@ class _$CloudforceOneWhoisWhois extends CloudforceOneWhoisWhois {
     _$hash = $jc(_$hash, billingStreet.hashCode);
     _$hash = $jc(_$hash, createdDate.hashCode);
     _$hash = $jc(_$hash, createdDateRaw.hashCode);
-    _$hash = $jc(_$hash, dnssec.hashCode);
-    _$hash = $jc(_$hash, domain.hashCode);
     _$hash = $jc(_$hash, expirationDate.hashCode);
     _$hash = $jc(_$hash, expirationDateRaw.hashCode);
-    _$hash = $jc(_$hash, extension_.hashCode);
-    _$hash = $jc(_$hash, found.hashCode);
     _$hash = $jc(_$hash, id.hashCode);
-    _$hash = $jc(_$hash, nameservers.hashCode);
-    _$hash = $jc(_$hash, punycode.hashCode);
-    _$hash = $jc(_$hash, registrant.hashCode);
     _$hash = $jc(_$hash, registrantCity.hashCode);
     _$hash = $jc(_$hash, registrantCountry.hashCode);
     _$hash = $jc(_$hash, registrantEmail.hashCode);
@@ -434,7 +435,6 @@ class _$CloudforceOneWhoisWhois extends CloudforceOneWhoisWhois {
     _$hash = $jc(_$hash, registrantProvince.hashCode);
     _$hash = $jc(_$hash, registrantReferralUrl.hashCode);
     _$hash = $jc(_$hash, registrantStreet.hashCode);
-    _$hash = $jc(_$hash, registrar.hashCode);
     _$hash = $jc(_$hash, registrarCity.hashCode);
     _$hash = $jc(_$hash, registrarCountry.hashCode);
     _$hash = $jc(_$hash, registrarEmail.hashCode);
@@ -474,6 +474,14 @@ class _$CloudforceOneWhoisWhois extends CloudforceOneWhoisWhois {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'CloudforceOneWhoisWhois')
+          ..add('dnssec', dnssec)
+          ..add('domain', domain)
+          ..add('extension_', extension_)
+          ..add('found', found)
+          ..add('nameservers', nameservers)
+          ..add('punycode', punycode)
+          ..add('registrant', registrant)
+          ..add('registrar', registrar)
           ..add('administrativeCity', administrativeCity)
           ..add('administrativeCountry', administrativeCountry)
           ..add('administrativeEmail', administrativeEmail)
@@ -504,16 +512,9 @@ class _$CloudforceOneWhoisWhois extends CloudforceOneWhoisWhois {
           ..add('billingStreet', billingStreet)
           ..add('createdDate', createdDate)
           ..add('createdDateRaw', createdDateRaw)
-          ..add('dnssec', dnssec)
-          ..add('domain', domain)
           ..add('expirationDate', expirationDate)
           ..add('expirationDateRaw', expirationDateRaw)
-          ..add('extension_', extension_)
-          ..add('found', found)
           ..add('id', id)
-          ..add('nameservers', nameservers)
-          ..add('punycode', punycode)
-          ..add('registrant', registrant)
           ..add('registrantCity', registrantCity)
           ..add('registrantCountry', registrantCountry)
           ..add('registrantEmail', registrantEmail)
@@ -528,7 +529,6 @@ class _$CloudforceOneWhoisWhois extends CloudforceOneWhoisWhois {
           ..add('registrantProvince', registrantProvince)
           ..add('registrantReferralUrl', registrantReferralUrl)
           ..add('registrantStreet', registrantStreet)
-          ..add('registrar', registrar)
           ..add('registrarCity', registrarCity)
           ..add('registrarCountry', registrarCountry)
           ..add('registrarEmail', registrarEmail)
@@ -569,6 +569,40 @@ class CloudforceOneWhoisWhoisBuilder
     implements
         Builder<CloudforceOneWhoisWhois, CloudforceOneWhoisWhoisBuilder> {
   _$CloudforceOneWhoisWhois? _$v;
+
+  bool? _dnssec;
+  bool? get dnssec => _$this._dnssec;
+  set dnssec(bool? dnssec) => _$this._dnssec = dnssec;
+
+  String? _domain;
+  String? get domain => _$this._domain;
+  set domain(String? domain) => _$this._domain = domain;
+
+  String? _extension_;
+  String? get extension_ => _$this._extension_;
+  set extension_(String? extension_) => _$this._extension_ = extension_;
+
+  bool? _found;
+  bool? get found => _$this._found;
+  set found(bool? found) => _$this._found = found;
+
+  ListBuilder<String>? _nameservers;
+  ListBuilder<String> get nameservers =>
+      _$this._nameservers ??= ListBuilder<String>();
+  set nameservers(ListBuilder<String>? nameservers) =>
+      _$this._nameservers = nameservers;
+
+  String? _punycode;
+  String? get punycode => _$this._punycode;
+  set punycode(String? punycode) => _$this._punycode = punycode;
+
+  String? _registrant;
+  String? get registrant => _$this._registrant;
+  set registrant(String? registrant) => _$this._registrant = registrant;
+
+  String? _registrar;
+  String? get registrar => _$this._registrar;
+  set registrar(String? registrar) => _$this._registrar = registrar;
 
   String? _administrativeCity;
   String? get administrativeCity => _$this._administrativeCity;
@@ -712,14 +746,6 @@ class CloudforceOneWhoisWhoisBuilder
   set createdDateRaw(String? createdDateRaw) =>
       _$this._createdDateRaw = createdDateRaw;
 
-  bool? _dnssec;
-  bool? get dnssec => _$this._dnssec;
-  set dnssec(bool? dnssec) => _$this._dnssec = dnssec;
-
-  String? _domain;
-  String? get domain => _$this._domain;
-  set domain(String? domain) => _$this._domain = domain;
-
   DateTime? _expirationDate;
   DateTime? get expirationDate => _$this._expirationDate;
   set expirationDate(DateTime? expirationDate) =>
@@ -730,31 +756,9 @@ class CloudforceOneWhoisWhoisBuilder
   set expirationDateRaw(String? expirationDateRaw) =>
       _$this._expirationDateRaw = expirationDateRaw;
 
-  String? _extension_;
-  String? get extension_ => _$this._extension_;
-  set extension_(String? extension_) => _$this._extension_ = extension_;
-
-  bool? _found;
-  bool? get found => _$this._found;
-  set found(bool? found) => _$this._found = found;
-
   String? _id;
   String? get id => _$this._id;
   set id(String? id) => _$this._id = id;
-
-  ListBuilder<String>? _nameservers;
-  ListBuilder<String> get nameservers =>
-      _$this._nameservers ??= ListBuilder<String>();
-  set nameservers(ListBuilder<String>? nameservers) =>
-      _$this._nameservers = nameservers;
-
-  String? _punycode;
-  String? get punycode => _$this._punycode;
-  set punycode(String? punycode) => _$this._punycode = punycode;
-
-  String? _registrant;
-  String? get registrant => _$this._registrant;
-  set registrant(String? registrant) => _$this._registrant = registrant;
 
   String? _registrantCity;
   String? get registrantCity => _$this._registrantCity;
@@ -824,10 +828,6 @@ class CloudforceOneWhoisWhoisBuilder
   String? get registrantStreet => _$this._registrantStreet;
   set registrantStreet(String? registrantStreet) =>
       _$this._registrantStreet = registrantStreet;
-
-  String? _registrar;
-  String? get registrar => _$this._registrar;
-  set registrar(String? registrar) => _$this._registrar = registrar;
 
   String? _registrarCity;
   String? get registrarCity => _$this._registrarCity;
@@ -987,6 +987,14 @@ class CloudforceOneWhoisWhoisBuilder
   CloudforceOneWhoisWhoisBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
+      _dnssec = $v.dnssec;
+      _domain = $v.domain;
+      _extension_ = $v.extension_;
+      _found = $v.found;
+      _nameservers = $v.nameservers.toBuilder();
+      _punycode = $v.punycode;
+      _registrant = $v.registrant;
+      _registrar = $v.registrar;
       _administrativeCity = $v.administrativeCity;
       _administrativeCountry = $v.administrativeCountry;
       _administrativeEmail = $v.administrativeEmail;
@@ -1017,16 +1025,9 @@ class CloudforceOneWhoisWhoisBuilder
       _billingStreet = $v.billingStreet;
       _createdDate = $v.createdDate;
       _createdDateRaw = $v.createdDateRaw;
-      _dnssec = $v.dnssec;
-      _domain = $v.domain;
       _expirationDate = $v.expirationDate;
       _expirationDateRaw = $v.expirationDateRaw;
-      _extension_ = $v.extension_;
-      _found = $v.found;
       _id = $v.id;
-      _nameservers = $v.nameservers.toBuilder();
-      _punycode = $v.punycode;
-      _registrant = $v.registrant;
       _registrantCity = $v.registrantCity;
       _registrantCountry = $v.registrantCountry;
       _registrantEmail = $v.registrantEmail;
@@ -1041,7 +1042,6 @@ class CloudforceOneWhoisWhoisBuilder
       _registrantProvince = $v.registrantProvince;
       _registrantReferralUrl = $v.registrantReferralUrl;
       _registrantStreet = $v.registrantStreet;
-      _registrar = $v.registrar;
       _registrarCity = $v.registrarCity;
       _registrarCountry = $v.registrarCountry;
       _registrarEmail = $v.registrarEmail;
@@ -1097,6 +1097,21 @@ class CloudforceOneWhoisWhoisBuilder
     try {
       _$result = _$v ??
           _$CloudforceOneWhoisWhois._(
+            dnssec: BuiltValueNullFieldError.checkNotNull(
+                dnssec, r'CloudforceOneWhoisWhois', 'dnssec'),
+            domain: BuiltValueNullFieldError.checkNotNull(
+                domain, r'CloudforceOneWhoisWhois', 'domain'),
+            extension_: BuiltValueNullFieldError.checkNotNull(
+                extension_, r'CloudforceOneWhoisWhois', 'extension_'),
+            found: BuiltValueNullFieldError.checkNotNull(
+                found, r'CloudforceOneWhoisWhois', 'found'),
+            nameservers: nameservers.build(),
+            punycode: BuiltValueNullFieldError.checkNotNull(
+                punycode, r'CloudforceOneWhoisWhois', 'punycode'),
+            registrant: BuiltValueNullFieldError.checkNotNull(
+                registrant, r'CloudforceOneWhoisWhois', 'registrant'),
+            registrar: BuiltValueNullFieldError.checkNotNull(
+                registrar, r'CloudforceOneWhoisWhois', 'registrar'),
             administrativeCity: administrativeCity,
             administrativeCountry: administrativeCountry,
             administrativeEmail: administrativeEmail,
@@ -1127,22 +1142,9 @@ class CloudforceOneWhoisWhoisBuilder
             billingStreet: billingStreet,
             createdDate: createdDate,
             createdDateRaw: createdDateRaw,
-            dnssec: BuiltValueNullFieldError.checkNotNull(
-                dnssec, r'CloudforceOneWhoisWhois', 'dnssec'),
-            domain: BuiltValueNullFieldError.checkNotNull(
-                domain, r'CloudforceOneWhoisWhois', 'domain'),
             expirationDate: expirationDate,
             expirationDateRaw: expirationDateRaw,
-            extension_: BuiltValueNullFieldError.checkNotNull(
-                extension_, r'CloudforceOneWhoisWhois', 'extension_'),
-            found: BuiltValueNullFieldError.checkNotNull(
-                found, r'CloudforceOneWhoisWhois', 'found'),
             id: id,
-            nameservers: nameservers.build(),
-            punycode: BuiltValueNullFieldError.checkNotNull(
-                punycode, r'CloudforceOneWhoisWhois', 'punycode'),
-            registrant: BuiltValueNullFieldError.checkNotNull(
-                registrant, r'CloudforceOneWhoisWhois', 'registrant'),
             registrantCity: registrantCity,
             registrantCountry: registrantCountry,
             registrantEmail: registrantEmail,
@@ -1157,8 +1159,6 @@ class CloudforceOneWhoisWhoisBuilder
             registrantProvince: registrantProvince,
             registrantReferralUrl: registrantReferralUrl,
             registrantStreet: registrantStreet,
-            registrar: BuiltValueNullFieldError.checkNotNull(
-                registrar, r'CloudforceOneWhoisWhois', 'registrar'),
             registrarCity: registrarCity,
             registrarCountry: registrarCountry,
             registrarEmail: registrarEmail,

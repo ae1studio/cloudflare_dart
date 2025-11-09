@@ -19,9 +19,9 @@ class _$ResourceSharingShareRecipientObject
   @override
   final DateTime modified;
   @override
-  final BuiltList<ResourceSharingShareRecipientResourceObject>? resources;
-  @override
   final String statusMessage;
+  @override
+  final BuiltList<ResourceSharingShareRecipientResourceObject>? resources;
 
   factory _$ResourceSharingShareRecipientObject(
           [void Function(ResourceSharingShareRecipientObjectBuilder)?
@@ -34,8 +34,8 @@ class _$ResourceSharingShareRecipientObject
       required this.created,
       required this.id,
       required this.modified,
-      this.resources,
-      required this.statusMessage})
+      required this.statusMessage,
+      this.resources})
       : super._();
   @override
   ResourceSharingShareRecipientObject rebuild(
@@ -55,8 +55,8 @@ class _$ResourceSharingShareRecipientObject
         created == other.created &&
         id == other.id &&
         modified == other.modified &&
-        resources == other.resources &&
-        statusMessage == other.statusMessage;
+        statusMessage == other.statusMessage &&
+        resources == other.resources;
   }
 
   @override
@@ -67,8 +67,8 @@ class _$ResourceSharingShareRecipientObject
     _$hash = $jc(_$hash, created.hashCode);
     _$hash = $jc(_$hash, id.hashCode);
     _$hash = $jc(_$hash, modified.hashCode);
-    _$hash = $jc(_$hash, resources.hashCode);
     _$hash = $jc(_$hash, statusMessage.hashCode);
+    _$hash = $jc(_$hash, resources.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -81,8 +81,8 @@ class _$ResourceSharingShareRecipientObject
           ..add('created', created)
           ..add('id', id)
           ..add('modified', modified)
-          ..add('resources', resources)
-          ..add('statusMessage', statusMessage))
+          ..add('statusMessage', statusMessage)
+          ..add('resources', resources))
         .toString();
   }
 }
@@ -116,6 +116,11 @@ class ResourceSharingShareRecipientObjectBuilder
   DateTime? get modified => _$this._modified;
   set modified(DateTime? modified) => _$this._modified = modified;
 
+  String? _statusMessage;
+  String? get statusMessage => _$this._statusMessage;
+  set statusMessage(String? statusMessage) =>
+      _$this._statusMessage = statusMessage;
+
   ListBuilder<ResourceSharingShareRecipientResourceObject>? _resources;
   ListBuilder<ResourceSharingShareRecipientResourceObject> get resources =>
       _$this._resources ??=
@@ -124,11 +129,6 @@ class ResourceSharingShareRecipientObjectBuilder
           ListBuilder<ResourceSharingShareRecipientResourceObject>?
               resources) =>
       _$this._resources = resources;
-
-  String? _statusMessage;
-  String? get statusMessage => _$this._statusMessage;
-  set statusMessage(String? statusMessage) =>
-      _$this._statusMessage = statusMessage;
 
   ResourceSharingShareRecipientObjectBuilder() {
     ResourceSharingShareRecipientObject._defaults(this);
@@ -142,8 +142,8 @@ class ResourceSharingShareRecipientObjectBuilder
       _created = $v.created;
       _id = $v.id;
       _modified = $v.modified;
-      _resources = $v.resources?.toBuilder();
       _statusMessage = $v.statusMessage;
+      _resources = $v.resources?.toBuilder();
       _$v = null;
     }
     return this;
@@ -180,9 +180,9 @@ class ResourceSharingShareRecipientObjectBuilder
                 id, r'ResourceSharingShareRecipientObject', 'id'),
             modified: BuiltValueNullFieldError.checkNotNull(
                 modified, r'ResourceSharingShareRecipientObject', 'modified'),
-            resources: _resources?.build(),
             statusMessage: BuiltValueNullFieldError.checkNotNull(statusMessage,
                 r'ResourceSharingShareRecipientObject', 'statusMessage'),
+            resources: _resources?.build(),
           );
     } catch (_) {
       late String _$failedField;

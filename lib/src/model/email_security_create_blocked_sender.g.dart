@@ -9,9 +9,6 @@ part of 'email_security_create_blocked_sender.dart';
 abstract class EmailSecurityCreateBlockedSenderBuilder {
   void replace(EmailSecurityCreateBlockedSender other);
   void update(void Function(EmailSecurityCreateBlockedSenderBuilder) updates);
-  String? get comments;
-  set comments(String? comments);
-
   bool? get isRegex;
   set isRegex(bool? isRegex);
 
@@ -20,28 +17,31 @@ abstract class EmailSecurityCreateBlockedSenderBuilder {
 
   EmailSecurityPatternType? get patternType;
   set patternType(EmailSecurityPatternType? patternType);
+
+  String? get comments;
+  set comments(String? comments);
 }
 
 class _$$EmailSecurityCreateBlockedSender
     extends $EmailSecurityCreateBlockedSender {
-  @override
-  final String? comments;
   @override
   final bool isRegex;
   @override
   final String pattern;
   @override
   final EmailSecurityPatternType patternType;
+  @override
+  final String? comments;
 
   factory _$$EmailSecurityCreateBlockedSender(
           [void Function($EmailSecurityCreateBlockedSenderBuilder)? updates]) =>
       ($EmailSecurityCreateBlockedSenderBuilder()..update(updates))._build();
 
   _$$EmailSecurityCreateBlockedSender._(
-      {this.comments,
-      required this.isRegex,
+      {required this.isRegex,
       required this.pattern,
-      required this.patternType})
+      required this.patternType,
+      this.comments})
       : super._();
   @override
   $EmailSecurityCreateBlockedSender rebuild(
@@ -56,19 +56,19 @@ class _$$EmailSecurityCreateBlockedSender
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is $EmailSecurityCreateBlockedSender &&
-        comments == other.comments &&
         isRegex == other.isRegex &&
         pattern == other.pattern &&
-        patternType == other.patternType;
+        patternType == other.patternType &&
+        comments == other.comments;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, comments.hashCode);
     _$hash = $jc(_$hash, isRegex.hashCode);
     _$hash = $jc(_$hash, pattern.hashCode);
     _$hash = $jc(_$hash, patternType.hashCode);
+    _$hash = $jc(_$hash, comments.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -76,10 +76,10 @@ class _$$EmailSecurityCreateBlockedSender
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'$EmailSecurityCreateBlockedSender')
-          ..add('comments', comments)
           ..add('isRegex', isRegex)
           ..add('pattern', pattern)
-          ..add('patternType', patternType))
+          ..add('patternType', patternType)
+          ..add('comments', comments))
         .toString();
   }
 }
@@ -90,10 +90,6 @@ class $EmailSecurityCreateBlockedSenderBuilder
             $EmailSecurityCreateBlockedSenderBuilder>,
         EmailSecurityCreateBlockedSenderBuilder {
   _$$EmailSecurityCreateBlockedSender? _$v;
-
-  String? _comments;
-  String? get comments => _$this._comments;
-  set comments(covariant String? comments) => _$this._comments = comments;
 
   bool? _isRegex;
   bool? get isRegex => _$this._isRegex;
@@ -108,6 +104,10 @@ class $EmailSecurityCreateBlockedSenderBuilder
   set patternType(covariant EmailSecurityPatternType? patternType) =>
       _$this._patternType = patternType;
 
+  String? _comments;
+  String? get comments => _$this._comments;
+  set comments(covariant String? comments) => _$this._comments = comments;
+
   $EmailSecurityCreateBlockedSenderBuilder() {
     $EmailSecurityCreateBlockedSender._defaults(this);
   }
@@ -115,10 +115,10 @@ class $EmailSecurityCreateBlockedSenderBuilder
   $EmailSecurityCreateBlockedSenderBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _comments = $v.comments;
       _isRegex = $v.isRegex;
       _pattern = $v.pattern;
       _patternType = $v.patternType;
+      _comments = $v.comments;
       _$v = null;
     }
     return this;
@@ -141,13 +141,13 @@ class $EmailSecurityCreateBlockedSenderBuilder
   _$$EmailSecurityCreateBlockedSender _build() {
     final _$result = _$v ??
         _$$EmailSecurityCreateBlockedSender._(
-          comments: comments,
           isRegex: BuiltValueNullFieldError.checkNotNull(
               isRegex, r'$EmailSecurityCreateBlockedSender', 'isRegex'),
           pattern: BuiltValueNullFieldError.checkNotNull(
               pattern, r'$EmailSecurityCreateBlockedSender', 'pattern'),
           patternType: BuiltValueNullFieldError.checkNotNull(
               patternType, r'$EmailSecurityCreateBlockedSender', 'patternType'),
+          comments: comments,
         );
     replace(_$result);
     return _$result;

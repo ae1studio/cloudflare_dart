@@ -110,6 +110,8 @@ class _$ZeroTrustGatewayRulesCreateZeroTrustGatewayRuleRequest
   @override
   final ZeroTrustGatewayAction action;
   @override
+  final String name;
+  @override
   final String? description;
   @override
   final String? devicePosture;
@@ -123,8 +125,6 @@ class _$ZeroTrustGatewayRulesCreateZeroTrustGatewayRuleRequest
       filters;
   @override
   final String? identity;
-  @override
-  final String name;
   @override
   final int? precedence;
   @override
@@ -144,13 +144,13 @@ class _$ZeroTrustGatewayRulesCreateZeroTrustGatewayRuleRequest
 
   _$ZeroTrustGatewayRulesCreateZeroTrustGatewayRuleRequest._(
       {required this.action,
+      required this.name,
       this.description,
       this.devicePosture,
       this.enabled,
       this.expiration,
       this.filters,
       this.identity,
-      required this.name,
       this.precedence,
       this.ruleSettings,
       this.schedule,
@@ -173,13 +173,13 @@ class _$ZeroTrustGatewayRulesCreateZeroTrustGatewayRuleRequest
     if (identical(other, this)) return true;
     return other is ZeroTrustGatewayRulesCreateZeroTrustGatewayRuleRequest &&
         action == other.action &&
+        name == other.name &&
         description == other.description &&
         devicePosture == other.devicePosture &&
         enabled == other.enabled &&
         expiration == other.expiration &&
         filters == other.filters &&
         identity == other.identity &&
-        name == other.name &&
         precedence == other.precedence &&
         ruleSettings == other.ruleSettings &&
         schedule == other.schedule &&
@@ -190,13 +190,13 @@ class _$ZeroTrustGatewayRulesCreateZeroTrustGatewayRuleRequest
   int get hashCode {
     var _$hash = 0;
     _$hash = $jc(_$hash, action.hashCode);
+    _$hash = $jc(_$hash, name.hashCode);
     _$hash = $jc(_$hash, description.hashCode);
     _$hash = $jc(_$hash, devicePosture.hashCode);
     _$hash = $jc(_$hash, enabled.hashCode);
     _$hash = $jc(_$hash, expiration.hashCode);
     _$hash = $jc(_$hash, filters.hashCode);
     _$hash = $jc(_$hash, identity.hashCode);
-    _$hash = $jc(_$hash, name.hashCode);
     _$hash = $jc(_$hash, precedence.hashCode);
     _$hash = $jc(_$hash, ruleSettings.hashCode);
     _$hash = $jc(_$hash, schedule.hashCode);
@@ -210,13 +210,13 @@ class _$ZeroTrustGatewayRulesCreateZeroTrustGatewayRuleRequest
     return (newBuiltValueToStringHelper(
             r'ZeroTrustGatewayRulesCreateZeroTrustGatewayRuleRequest')
           ..add('action', action)
+          ..add('name', name)
           ..add('description', description)
           ..add('devicePosture', devicePosture)
           ..add('enabled', enabled)
           ..add('expiration', expiration)
           ..add('filters', filters)
           ..add('identity', identity)
-          ..add('name', name)
           ..add('precedence', precedence)
           ..add('ruleSettings', ruleSettings)
           ..add('schedule', schedule)
@@ -234,6 +234,10 @@ class ZeroTrustGatewayRulesCreateZeroTrustGatewayRuleRequestBuilder
   ZeroTrustGatewayAction? _action;
   ZeroTrustGatewayAction? get action => _$this._action;
   set action(ZeroTrustGatewayAction? action) => _$this._action = action;
+
+  String? _name;
+  String? get name => _$this._name;
+  set name(String? name) => _$this._name = name;
 
   String? _description;
   String? get description => _$this._description;
@@ -270,10 +274,6 @@ class ZeroTrustGatewayRulesCreateZeroTrustGatewayRuleRequestBuilder
   String? get identity => _$this._identity;
   set identity(String? identity) => _$this._identity = identity;
 
-  String? _name;
-  String? get name => _$this._name;
-  set name(String? name) => _$this._name = name;
-
   int? _precedence;
   int? get precedence => _$this._precedence;
   set precedence(int? precedence) => _$this._precedence = precedence;
@@ -302,13 +302,13 @@ class ZeroTrustGatewayRulesCreateZeroTrustGatewayRuleRequestBuilder
     final $v = _$v;
     if ($v != null) {
       _action = $v.action;
+      _name = $v.name;
       _description = $v.description;
       _devicePosture = $v.devicePosture;
       _enabled = $v.enabled;
       _expiration = $v.expiration?.toBuilder();
       _filters = $v.filters?.toBuilder();
       _identity = $v.identity;
-      _name = $v.name;
       _precedence = $v.precedence;
       _ruleSettings = $v.ruleSettings?.toBuilder();
       _schedule = $v.schedule?.toBuilder();
@@ -343,16 +343,16 @@ class ZeroTrustGatewayRulesCreateZeroTrustGatewayRuleRequestBuilder
                 action,
                 r'ZeroTrustGatewayRulesCreateZeroTrustGatewayRuleRequest',
                 'action'),
+            name: BuiltValueNullFieldError.checkNotNull(
+                name,
+                r'ZeroTrustGatewayRulesCreateZeroTrustGatewayRuleRequest',
+                'name'),
             description: description,
             devicePosture: devicePosture,
             enabled: enabled,
             expiration: _expiration?.build(),
             filters: _filters?.build(),
             identity: identity,
-            name: BuiltValueNullFieldError.checkNotNull(
-                name,
-                r'ZeroTrustGatewayRulesCreateZeroTrustGatewayRuleRequest',
-                'name'),
             precedence: precedence,
             ruleSettings: _ruleSettings?.build(),
             schedule: _schedule?.build(),

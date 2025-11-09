@@ -12,16 +12,12 @@ part 'realtimekit_webhook_request.g.dart';
 /// RealtimekitWebhookRequest
 ///
 /// Properties:
-/// * [enabled] - Set whether or not the webhook should be active when created
 /// * [events] - Events that this webhook will get triggered by
 /// * [name] - Name of the webhook
 /// * [url] - URL this webhook will send events to
+/// * [enabled] - Set whether or not the webhook should be active when created
 @BuiltValue()
 abstract class RealtimekitWebhookRequest implements Built<RealtimekitWebhookRequest, RealtimekitWebhookRequestBuilder> {
-  /// Set whether or not the webhook should be active when created
-  @BuiltValueField(wireName: r'enabled')
-  bool? get enabled;
-
   /// Events that this webhook will get triggered by
   @BuiltValueField(wireName: r'events')
   BuiltList<RealtimekitWebhookRequestEventsEnum> get events;
@@ -34,6 +30,10 @@ abstract class RealtimekitWebhookRequest implements Built<RealtimekitWebhookRequ
   /// URL this webhook will send events to
   @BuiltValueField(wireName: r'url')
   String get url;
+
+  /// Set whether or not the webhook should be active when created
+  @BuiltValueField(wireName: r'enabled')
+  bool? get enabled;
 
   RealtimekitWebhookRequest._();
 
@@ -59,13 +59,6 @@ class _$RealtimekitWebhookRequestSerializer implements PrimitiveSerializer<Realt
     RealtimekitWebhookRequest object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
-    if (object.enabled != null) {
-      yield r'enabled';
-      yield serializers.serialize(
-        object.enabled,
-        specifiedType: const FullType(bool),
-      );
-    }
     yield r'events';
     yield serializers.serialize(
       object.events,
@@ -81,6 +74,13 @@ class _$RealtimekitWebhookRequestSerializer implements PrimitiveSerializer<Realt
       object.url,
       specifiedType: const FullType(String),
     );
+    if (object.enabled != null) {
+      yield r'enabled';
+      yield serializers.serialize(
+        object.enabled,
+        specifiedType: const FullType(bool),
+      );
+    }
   }
 
   @override
@@ -104,13 +104,6 @@ class _$RealtimekitWebhookRequestSerializer implements PrimitiveSerializer<Realt
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'enabled':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
-          result.enabled = valueDes;
-          break;
         case r'events':
           final valueDes = serializers.deserialize(
             value,
@@ -131,6 +124,13 @@ class _$RealtimekitWebhookRequestSerializer implements PrimitiveSerializer<Realt
             specifiedType: const FullType(String),
           ) as String;
           result.url = valueDes;
+          break;
+        case r'enabled':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(bool),
+          ) as bool;
+          result.enabled = valueDes;
           break;
         default:
           unhandled.add(key);

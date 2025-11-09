@@ -26,17 +26,17 @@ part 'spectrum_config_update_app_config.g.dart';
 /// * [createdOn] 
 /// * [id] 
 /// * [modifiedOn] 
-/// * [argoSmartRouting] - Enables Argo Smart Routing for this application. Notes: Only available for TCP applications with traffic_type set to \"direct\".
 /// * [dns] 
+/// * [protocol] - The port configuration at Cloudflare's edge. May specify a single port, for example `\"tcp/1000\"`, or a range of ports, for example `\"tcp/1000-2000\"`.
+/// * [trafficType] 
+/// * [argoSmartRouting] - Enables Argo Smart Routing for this application. Notes: Only available for TCP applications with traffic_type set to \"direct\".
 /// * [edgeIps] 
 /// * [ipFirewall] - Enables IP Access Rules for this application. Notes: Only available for TCP applications.
 /// * [originDirect] - List of origin IP addresses. Array may contain multiple IP addresses for load balancing.
 /// * [originDns] 
 /// * [originPort] 
-/// * [protocol] - The port configuration at Cloudflare's edge. May specify a single port, for example `\"tcp/1000\"`, or a range of ports, for example `\"tcp/1000-2000\"`.
 /// * [proxyProtocol] 
 /// * [tls] 
-/// * [trafficType] 
 @BuiltValue()
 abstract class SpectrumConfigUpdateAppConfig implements Built<SpectrumConfigUpdateAppConfig, SpectrumConfigUpdateAppConfigBuilder> {
   /// One Of [SpectrumConfigAppConfig], [SpectrumConfigPaygoAppConfig]

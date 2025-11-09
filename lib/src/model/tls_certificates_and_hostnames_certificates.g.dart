@@ -9,19 +9,19 @@ part of 'tls_certificates_and_hostnames_certificates.dart';
 class _$TlsCertificatesAndHostnamesCertificates
     extends TlsCertificatesAndHostnamesCertificates {
   @override
-  final String? certificate;
-  @override
   final String csr;
   @override
-  final String? expiresOn;
-  @override
   final BuiltList<String> hostnames;
-  @override
-  final String? id;
   @override
   final TlsCertificatesAndHostnamesRequestType requestType;
   @override
   final TlsCertificatesAndHostnamesRequestedValidity requestedValidity;
+  @override
+  final String? certificate;
+  @override
+  final String? expiresOn;
+  @override
+  final String? id;
 
   factory _$TlsCertificatesAndHostnamesCertificates(
           [void Function(TlsCertificatesAndHostnamesCertificatesBuilder)?
@@ -30,13 +30,13 @@ class _$TlsCertificatesAndHostnamesCertificates
           ._build();
 
   _$TlsCertificatesAndHostnamesCertificates._(
-      {this.certificate,
-      required this.csr,
-      this.expiresOn,
+      {required this.csr,
       required this.hostnames,
-      this.id,
       required this.requestType,
-      required this.requestedValidity})
+      required this.requestedValidity,
+      this.certificate,
+      this.expiresOn,
+      this.id})
       : super._();
   @override
   TlsCertificatesAndHostnamesCertificates rebuild(
@@ -52,25 +52,25 @@ class _$TlsCertificatesAndHostnamesCertificates
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is TlsCertificatesAndHostnamesCertificates &&
-        certificate == other.certificate &&
         csr == other.csr &&
-        expiresOn == other.expiresOn &&
         hostnames == other.hostnames &&
-        id == other.id &&
         requestType == other.requestType &&
-        requestedValidity == other.requestedValidity;
+        requestedValidity == other.requestedValidity &&
+        certificate == other.certificate &&
+        expiresOn == other.expiresOn &&
+        id == other.id;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, certificate.hashCode);
     _$hash = $jc(_$hash, csr.hashCode);
-    _$hash = $jc(_$hash, expiresOn.hashCode);
     _$hash = $jc(_$hash, hostnames.hashCode);
-    _$hash = $jc(_$hash, id.hashCode);
     _$hash = $jc(_$hash, requestType.hashCode);
     _$hash = $jc(_$hash, requestedValidity.hashCode);
+    _$hash = $jc(_$hash, certificate.hashCode);
+    _$hash = $jc(_$hash, expiresOn.hashCode);
+    _$hash = $jc(_$hash, id.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -79,13 +79,13 @@ class _$TlsCertificatesAndHostnamesCertificates
   String toString() {
     return (newBuiltValueToStringHelper(
             r'TlsCertificatesAndHostnamesCertificates')
-          ..add('certificate', certificate)
           ..add('csr', csr)
-          ..add('expiresOn', expiresOn)
           ..add('hostnames', hostnames)
-          ..add('id', id)
           ..add('requestType', requestType)
-          ..add('requestedValidity', requestedValidity))
+          ..add('requestedValidity', requestedValidity)
+          ..add('certificate', certificate)
+          ..add('expiresOn', expiresOn)
+          ..add('id', id))
         .toString();
   }
 }
@@ -96,27 +96,15 @@ class TlsCertificatesAndHostnamesCertificatesBuilder
             TlsCertificatesAndHostnamesCertificatesBuilder> {
   _$TlsCertificatesAndHostnamesCertificates? _$v;
 
-  String? _certificate;
-  String? get certificate => _$this._certificate;
-  set certificate(String? certificate) => _$this._certificate = certificate;
-
   String? _csr;
   String? get csr => _$this._csr;
   set csr(String? csr) => _$this._csr = csr;
-
-  String? _expiresOn;
-  String? get expiresOn => _$this._expiresOn;
-  set expiresOn(String? expiresOn) => _$this._expiresOn = expiresOn;
 
   ListBuilder<String>? _hostnames;
   ListBuilder<String> get hostnames =>
       _$this._hostnames ??= ListBuilder<String>();
   set hostnames(ListBuilder<String>? hostnames) =>
       _$this._hostnames = hostnames;
-
-  String? _id;
-  String? get id => _$this._id;
-  set id(String? id) => _$this._id = id;
 
   TlsCertificatesAndHostnamesRequestType? _requestType;
   TlsCertificatesAndHostnamesRequestType? get requestType =>
@@ -131,6 +119,18 @@ class TlsCertificatesAndHostnamesCertificatesBuilder
           TlsCertificatesAndHostnamesRequestedValidity? requestedValidity) =>
       _$this._requestedValidity = requestedValidity;
 
+  String? _certificate;
+  String? get certificate => _$this._certificate;
+  set certificate(String? certificate) => _$this._certificate = certificate;
+
+  String? _expiresOn;
+  String? get expiresOn => _$this._expiresOn;
+  set expiresOn(String? expiresOn) => _$this._expiresOn = expiresOn;
+
+  String? _id;
+  String? get id => _$this._id;
+  set id(String? id) => _$this._id = id;
+
   TlsCertificatesAndHostnamesCertificatesBuilder() {
     TlsCertificatesAndHostnamesCertificates._defaults(this);
   }
@@ -138,13 +138,13 @@ class TlsCertificatesAndHostnamesCertificatesBuilder
   TlsCertificatesAndHostnamesCertificatesBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _certificate = $v.certificate;
       _csr = $v.csr;
-      _expiresOn = $v.expiresOn;
       _hostnames = $v.hostnames.toBuilder();
-      _id = $v.id;
       _requestType = $v.requestType;
       _requestedValidity = $v.requestedValidity;
+      _certificate = $v.certificate;
+      _expiresOn = $v.expiresOn;
+      _id = $v.id;
       _$v = null;
     }
     return this;
@@ -169,18 +169,18 @@ class TlsCertificatesAndHostnamesCertificatesBuilder
     try {
       _$result = _$v ??
           _$TlsCertificatesAndHostnamesCertificates._(
-            certificate: certificate,
             csr: BuiltValueNullFieldError.checkNotNull(
                 csr, r'TlsCertificatesAndHostnamesCertificates', 'csr'),
-            expiresOn: expiresOn,
             hostnames: hostnames.build(),
-            id: id,
             requestType: BuiltValueNullFieldError.checkNotNull(requestType,
                 r'TlsCertificatesAndHostnamesCertificates', 'requestType'),
             requestedValidity: BuiltValueNullFieldError.checkNotNull(
                 requestedValidity,
                 r'TlsCertificatesAndHostnamesCertificates',
                 'requestedValidity'),
+            certificate: certificate,
+            expiresOn: expiresOn,
+            id: id,
           );
     } catch (_) {
       late String _$failedField;

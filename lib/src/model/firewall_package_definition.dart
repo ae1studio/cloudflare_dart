@@ -17,8 +17,8 @@ part 'firewall_package_definition.g.dart';
 /// * [detectionMode] 
 /// * [id] - Defines an identifier.
 /// * [name] - The name of the WAF package.
-/// * [status] 
 /// * [zoneId] - Defines an identifier.
+/// * [status] 
 @BuiltValue(instantiable: false)
 abstract class FirewallPackageDefinition  {
   /// A summary of the purpose/function of the WAF package.
@@ -37,13 +37,13 @@ abstract class FirewallPackageDefinition  {
   @BuiltValueField(wireName: r'name')
   String get name;
 
-  @BuiltValueField(wireName: r'status')
-  FirewallStatus? get status;
-  // enum statusEnum {  active,  };
-
   /// Defines an identifier.
   @BuiltValueField(wireName: r'zone_id')
   String get zoneId;
+
+  @BuiltValueField(wireName: r'status')
+  FirewallStatus? get status;
+  // enum statusEnum {  active,  };
 
   @BuiltValueSerializer(custom: true)
   static Serializer<FirewallPackageDefinition> get serializer => _$FirewallPackageDefinitionSerializer();
@@ -81,6 +81,11 @@ class _$FirewallPackageDefinitionSerializer implements PrimitiveSerializer<Firew
       object.name,
       specifiedType: const FullType(String),
     );
+    yield r'zone_id';
+    yield serializers.serialize(
+      object.zoneId,
+      specifiedType: const FullType(String),
+    );
     if (object.status != null) {
       yield r'status';
       yield serializers.serialize(
@@ -88,11 +93,6 @@ class _$FirewallPackageDefinitionSerializer implements PrimitiveSerializer<Firew
         specifiedType: const FullType(FirewallStatus),
       );
     }
-    yield r'zone_id';
-    yield serializers.serialize(
-      object.zoneId,
-      specifiedType: const FullType(String),
-    );
   }
 
   @override
@@ -184,19 +184,19 @@ class _$$FirewallPackageDefinitionSerializer implements PrimitiveSerializer<$Fir
           ) as String;
           result.name = valueDes;
           break;
-        case r'status':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(FirewallStatus),
-          ) as FirewallStatus;
-          result.status = valueDes;
-          break;
         case r'zone_id':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(String),
           ) as String;
           result.zoneId = valueDes;
+          break;
+        case r'status':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(FirewallStatus),
+          ) as FirewallStatus;
+          result.status = valueDes;
           break;
         default:
           unhandled.add(key);

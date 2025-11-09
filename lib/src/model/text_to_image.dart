@@ -12,6 +12,7 @@ part 'text_to_image.g.dart';
 /// TextToImage
 ///
 /// Properties:
+/// * [prompt] - A text description of the image you want to generate
 /// * [guidance] - Controls how closely the generated image should adhere to the prompt; higher values make the image more aligned with the prompt
 /// * [height] - The height of the generated image in pixels
 /// * [image] - For use with img2img tasks. An array of integers that represent the image data constrained to 8-bit unsigned integer values
@@ -19,12 +20,15 @@ part 'text_to_image.g.dart';
 /// * [mask] - An array representing An array of integers that represent mask image data for inpainting constrained to 8-bit unsigned integer values
 /// * [negativePrompt] - Text describing elements to avoid in the generated image
 /// * [numSteps] - The number of diffusion steps; higher values can improve quality but take longer
-/// * [prompt] - A text description of the image you want to generate
 /// * [seed] - Random seed for reproducibility of the image generation
 /// * [strength] - A value between 0 and 1 indicating how strongly to apply the transformation during img2img tasks; lower values make the output closer to the input image
 /// * [width] - The width of the generated image in pixels
 @BuiltValue()
 abstract class TextToImage implements Built<TextToImage, TextToImageBuilder> {
+  /// A text description of the image you want to generate
+  @BuiltValueField(wireName: r'prompt')
+  String get prompt;
+
   /// Controls how closely the generated image should adhere to the prompt; higher values make the image more aligned with the prompt
   @BuiltValueField(wireName: r'guidance')
   num? get guidance;
@@ -52,10 +56,6 @@ abstract class TextToImage implements Built<TextToImage, TextToImageBuilder> {
   /// The number of diffusion steps; higher values can improve quality but take longer
   @BuiltValueField(wireName: r'num_steps')
   int? get numSteps;
-
-  /// A text description of the image you want to generate
-  @BuiltValueField(wireName: r'prompt')
-  String get prompt;
 
   /// Random seed for reproducibility of the image generation
   @BuiltValueField(wireName: r'seed')
@@ -95,6 +95,11 @@ class _$TextToImageSerializer implements PrimitiveSerializer<TextToImage> {
     TextToImage object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    yield r'prompt';
+    yield serializers.serialize(
+      object.prompt,
+      specifiedType: const FullType(String),
+    );
     if (object.guidance != null) {
       yield r'guidance';
       yield serializers.serialize(
@@ -144,11 +149,6 @@ class _$TextToImageSerializer implements PrimitiveSerializer<TextToImage> {
         specifiedType: const FullType(int),
       );
     }
-    yield r'prompt';
-    yield serializers.serialize(
-      object.prompt,
-      specifiedType: const FullType(String),
-    );
     if (object.seed != null) {
       yield r'seed';
       yield serializers.serialize(
@@ -193,6 +193,13 @@ class _$TextToImageSerializer implements PrimitiveSerializer<TextToImage> {
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
+        case r'prompt':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.prompt = valueDes;
+          break;
         case r'guidance':
           final valueDes = serializers.deserialize(
             value,
@@ -241,13 +248,6 @@ class _$TextToImageSerializer implements PrimitiveSerializer<TextToImage> {
             specifiedType: const FullType(int),
           ) as int;
           result.numSteps = valueDes;
-          break;
-        case r'prompt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.prompt = valueDes;
           break;
         case r'seed':
           final valueDes = serializers.deserialize(

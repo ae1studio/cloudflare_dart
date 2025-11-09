@@ -144,9 +144,6 @@ class _$PutV4AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestDestinat
   final PostV4AccountsByAccountIdPipelinesDeprecatedRequestDestinationCompression
       compression;
   @override
-  final PostV4AccountsByAccountIdPipelinesDeprecatedRequestDestinationCredentials?
-      credentials;
-  @override
   final PutV4AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestDestinationFormatEnum
       format;
   @override
@@ -154,6 +151,9 @@ class _$PutV4AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestDestinat
   @override
   final PutV4AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestDestinationTypeEnum
       type;
+  @override
+  final PostV4AccountsByAccountIdPipelinesDeprecatedRequestDestinationCredentials?
+      credentials;
 
   factory _$PutV4AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestDestination(
           [void Function(
@@ -166,10 +166,10 @@ class _$PutV4AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestDestinat
   _$PutV4AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestDestination._(
       {required this.batch,
       required this.compression,
-      this.credentials,
       required this.format,
       required this.path,
-      required this.type})
+      required this.type,
+      this.credentials})
       : super._();
   @override
   PutV4AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestDestination
@@ -192,10 +192,10 @@ class _$PutV4AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestDestinat
             is PutV4AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestDestination &&
         batch == other.batch &&
         compression == other.compression &&
-        credentials == other.credentials &&
         format == other.format &&
         path == other.path &&
-        type == other.type;
+        type == other.type &&
+        credentials == other.credentials;
   }
 
   @override
@@ -203,10 +203,10 @@ class _$PutV4AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestDestinat
     var _$hash = 0;
     _$hash = $jc(_$hash, batch.hashCode);
     _$hash = $jc(_$hash, compression.hashCode);
-    _$hash = $jc(_$hash, credentials.hashCode);
     _$hash = $jc(_$hash, format.hashCode);
     _$hash = $jc(_$hash, path.hashCode);
     _$hash = $jc(_$hash, type.hashCode);
+    _$hash = $jc(_$hash, credentials.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -217,10 +217,10 @@ class _$PutV4AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestDestinat
             r'PutV4AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestDestination')
           ..add('batch', batch)
           ..add('compression', compression)
-          ..add('credentials', credentials)
           ..add('format', format)
           ..add('path', path)
-          ..add('type', type))
+          ..add('type', type)
+          ..add('credentials', credentials))
         .toString();
   }
 }
@@ -253,16 +253,6 @@ class PutV4AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestDestinatio
               compression) =>
       _$this._compression = compression;
 
-  PostV4AccountsByAccountIdPipelinesDeprecatedRequestDestinationCredentialsBuilder?
-      _credentials;
-  PostV4AccountsByAccountIdPipelinesDeprecatedRequestDestinationCredentialsBuilder
-      get credentials => _$this._credentials ??=
-          PostV4AccountsByAccountIdPipelinesDeprecatedRequestDestinationCredentialsBuilder();
-  set credentials(
-          PostV4AccountsByAccountIdPipelinesDeprecatedRequestDestinationCredentialsBuilder?
-              credentials) =>
-      _$this._credentials = credentials;
-
   PutV4AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestDestinationFormatEnum?
       _format;
   PutV4AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestDestinationFormatEnum?
@@ -291,6 +281,16 @@ class PutV4AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestDestinatio
               type) =>
       _$this._type = type;
 
+  PostV4AccountsByAccountIdPipelinesDeprecatedRequestDestinationCredentialsBuilder?
+      _credentials;
+  PostV4AccountsByAccountIdPipelinesDeprecatedRequestDestinationCredentialsBuilder
+      get credentials => _$this._credentials ??=
+          PostV4AccountsByAccountIdPipelinesDeprecatedRequestDestinationCredentialsBuilder();
+  set credentials(
+          PostV4AccountsByAccountIdPipelinesDeprecatedRequestDestinationCredentialsBuilder?
+              credentials) =>
+      _$this._credentials = credentials;
+
   PutV4AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestDestinationBuilder() {
     PutV4AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestDestination
         ._defaults(this);
@@ -302,10 +302,10 @@ class PutV4AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestDestinatio
     if ($v != null) {
       _batch = $v.batch.toBuilder();
       _compression = $v.compression.toBuilder();
-      _credentials = $v.credentials?.toBuilder();
       _format = $v.format;
       _path = $v.path.toBuilder();
       _type = $v.type;
+      _credentials = $v.credentials?.toBuilder();
       _$v = null;
     }
     return this;
@@ -341,7 +341,6 @@ class PutV4AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestDestinatio
               ._(
             batch: batch.build(),
             compression: compression.build(),
-            credentials: _credentials?.build(),
             format: BuiltValueNullFieldError.checkNotNull(
                 format,
                 r'PutV4AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestDestination',
@@ -351,6 +350,7 @@ class PutV4AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestDestinatio
                 type,
                 r'PutV4AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestDestination',
                 'type'),
+            credentials: _credentials?.build(),
           );
     } catch (_) {
       late String _$failedField;
@@ -359,11 +359,12 @@ class PutV4AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestDestinatio
         batch.build();
         _$failedField = 'compression';
         compression.build();
-        _$failedField = 'credentials';
-        _credentials?.build();
 
         _$failedField = 'path';
         path.build();
+
+        _$failedField = 'credentials';
+        _credentials?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
             r'PutV4AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestDestination',

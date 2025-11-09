@@ -18,10 +18,10 @@ part 'put_v4_accounts_by_account_id_pipelines_by_pipeline_name_deprecated_reques
 /// Properties:
 /// * [batch] 
 /// * [compression] 
-/// * [credentials] 
 /// * [format] - Specifies the format of data to deliver.
 /// * [path] 
 /// * [type] - Specifies the type of destination.
+/// * [credentials] 
 @BuiltValue()
 abstract class PutV4AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestDestination implements Built<PutV4AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestDestination, PutV4AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestDestinationBuilder> {
   @BuiltValueField(wireName: r'batch')
@@ -29,9 +29,6 @@ abstract class PutV4AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestD
 
   @BuiltValueField(wireName: r'compression')
   PostV4AccountsByAccountIdPipelinesDeprecatedRequestDestinationCompression get compression;
-
-  @BuiltValueField(wireName: r'credentials')
-  PostV4AccountsByAccountIdPipelinesDeprecatedRequestDestinationCredentials? get credentials;
 
   /// Specifies the format of data to deliver.
   @BuiltValueField(wireName: r'format')
@@ -45,6 +42,9 @@ abstract class PutV4AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestD
   @BuiltValueField(wireName: r'type')
   PutV4AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestDestinationTypeEnum get type;
   // enum typeEnum {  r2,  };
+
+  @BuiltValueField(wireName: r'credentials')
+  PostV4AccountsByAccountIdPipelinesDeprecatedRequestDestinationCredentials? get credentials;
 
   PutV4AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestDestination._();
 
@@ -79,13 +79,6 @@ class _$PutV4AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestDestinat
       object.compression,
       specifiedType: const FullType(PostV4AccountsByAccountIdPipelinesDeprecatedRequestDestinationCompression),
     );
-    if (object.credentials != null) {
-      yield r'credentials';
-      yield serializers.serialize(
-        object.credentials,
-        specifiedType: const FullType(PostV4AccountsByAccountIdPipelinesDeprecatedRequestDestinationCredentials),
-      );
-    }
     yield r'format';
     yield serializers.serialize(
       object.format,
@@ -101,6 +94,13 @@ class _$PutV4AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestDestinat
       object.type,
       specifiedType: const FullType(PutV4AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestDestinationTypeEnum),
     );
+    if (object.credentials != null) {
+      yield r'credentials';
+      yield serializers.serialize(
+        object.credentials,
+        specifiedType: const FullType(PostV4AccountsByAccountIdPipelinesDeprecatedRequestDestinationCredentials),
+      );
+    }
   }
 
   @override
@@ -138,13 +138,6 @@ class _$PutV4AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestDestinat
           ) as PostV4AccountsByAccountIdPipelinesDeprecatedRequestDestinationCompression;
           result.compression.replace(valueDes);
           break;
-        case r'credentials':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(PostV4AccountsByAccountIdPipelinesDeprecatedRequestDestinationCredentials),
-          ) as PostV4AccountsByAccountIdPipelinesDeprecatedRequestDestinationCredentials;
-          result.credentials.replace(valueDes);
-          break;
         case r'format':
           final valueDes = serializers.deserialize(
             value,
@@ -165,6 +158,13 @@ class _$PutV4AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestDestinat
             specifiedType: const FullType(PutV4AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestDestinationTypeEnum),
           ) as PutV4AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestDestinationTypeEnum;
           result.type = valueDes;
+          break;
+        case r'credentials':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(PostV4AccountsByAccountIdPipelinesDeprecatedRequestDestinationCredentials),
+          ) as PostV4AccountsByAccountIdPipelinesDeprecatedRequestDestinationCredentials;
+          result.credentials.replace(valueDes);
           break;
         default:
           unhandled.add(key);

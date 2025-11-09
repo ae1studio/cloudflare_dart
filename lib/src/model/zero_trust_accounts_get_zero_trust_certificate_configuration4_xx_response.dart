@@ -16,14 +16,14 @@ part 'zero_trust_accounts_get_zero_trust_certificate_configuration4_xx_response.
 /// ZeroTrustAccountsGetZeroTrustCertificateConfiguration4XXResponse
 ///
 /// Properties:
-/// * [bindingStatus] - Indicate the internal certificate status.
 /// * [enabled] - Specify whether to enable a custom certificate authority for signing Gateway traffic.
-/// * [id] - Specify the UUID of the certificate (ID from MTLS certificate store).
-/// * [updatedAt] 
 /// * [errors] 
 /// * [messages] 
 /// * [result] 
 /// * [success] - Indicate whether the API call was successful.
+/// * [bindingStatus] - Indicate the internal certificate status.
+/// * [id] - Specify the UUID of the certificate (ID from MTLS certificate store).
+/// * [updatedAt] 
 @BuiltValue()
 abstract class ZeroTrustAccountsGetZeroTrustCertificateConfiguration4XXResponse implements ZeroTrustGatewayApiResponseCommonFailure, ZeroTrustGatewayCustomCertificateSettings, Built<ZeroTrustAccountsGetZeroTrustCertificateConfiguration4XXResponse, ZeroTrustAccountsGetZeroTrustCertificateConfiguration4XXResponseBuilder> {
   ZeroTrustAccountsGetZeroTrustCertificateConfiguration4XXResponse._();

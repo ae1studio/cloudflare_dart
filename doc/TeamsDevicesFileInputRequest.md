@@ -8,9 +8,9 @@ import 'package:cloudflare_dart/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**exists** | **bool** | Whether or not file exists. | [optional] 
 **operatingSystem** | **String** | Operating system. | 
 **path** | **String** | File path. | 
+**exists** | **bool** | Whether or not file exists. | [optional] 
 **sha256** | **String** | SHA-256. | [optional] 
 **thumbprint** | **String** | Signing certificate thumbprint. | [optional] 
 

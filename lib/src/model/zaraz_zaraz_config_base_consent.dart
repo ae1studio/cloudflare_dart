@@ -15,6 +15,7 @@ part 'zaraz_zaraz_config_base_consent.g.dart';
 /// Consent management configuration.
 ///
 /// Properties:
+/// * [enabled] 
 /// * [buttonTextTranslations] 
 /// * [companyEmail] 
 /// * [companyName] 
@@ -25,13 +26,15 @@ part 'zaraz_zaraz_config_base_consent.g.dart';
 /// * [customCSS] 
 /// * [customIntroDisclaimerDismissed] 
 /// * [defaultLanguage] 
-/// * [enabled] 
 /// * [hideModal] 
 /// * [purposes] - Object where keys are purpose alpha-numeric IDs
 /// * [purposesWithTranslations] - Object where keys are purpose alpha-numeric IDs
 /// * [tcfCompliant] 
 @BuiltValue()
 abstract class ZarazZarazConfigBaseConsent implements Built<ZarazZarazConfigBaseConsent, ZarazZarazConfigBaseConsentBuilder> {
+  @BuiltValueField(wireName: r'enabled')
+  bool get enabled;
+
   @BuiltValueField(wireName: r'buttonTextTranslations')
   ZarazZarazConfigBaseConsentButtonTextTranslations? get buttonTextTranslations;
 
@@ -62,9 +65,6 @@ abstract class ZarazZarazConfigBaseConsent implements Built<ZarazZarazConfigBase
 
   @BuiltValueField(wireName: r'defaultLanguage')
   String? get defaultLanguage;
-
-  @BuiltValueField(wireName: r'enabled')
-  bool get enabled;
 
   @BuiltValueField(wireName: r'hideModal')
   bool? get hideModal;
@@ -103,6 +103,11 @@ class _$ZarazZarazConfigBaseConsentSerializer implements PrimitiveSerializer<Zar
     ZarazZarazConfigBaseConsent object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    yield r'enabled';
+    yield serializers.serialize(
+      object.enabled,
+      specifiedType: const FullType(bool),
+    );
     if (object.buttonTextTranslations != null) {
       yield r'buttonTextTranslations';
       yield serializers.serialize(
@@ -173,11 +178,6 @@ class _$ZarazZarazConfigBaseConsentSerializer implements PrimitiveSerializer<Zar
         specifiedType: const FullType(String),
       );
     }
-    yield r'enabled';
-    yield serializers.serialize(
-      object.enabled,
-      specifiedType: const FullType(bool),
-    );
     if (object.hideModal != null) {
       yield r'hideModal';
       yield serializers.serialize(
@@ -229,6 +229,13 @@ class _$ZarazZarazConfigBaseConsentSerializer implements PrimitiveSerializer<Zar
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
+        case r'enabled':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(bool),
+          ) as bool;
+          result.enabled = valueDes;
+          break;
         case r'buttonTextTranslations':
           final valueDes = serializers.deserialize(
             value,
@@ -298,13 +305,6 @@ class _$ZarazZarazConfigBaseConsentSerializer implements PrimitiveSerializer<Zar
             specifiedType: const FullType(String),
           ) as String;
           result.defaultLanguage = valueDes;
-          break;
-        case r'enabled':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
-          result.enabled = valueDes;
           break;
         case r'hideModal':
           final valueDes = serializers.deserialize(

@@ -11,18 +11,18 @@ class _$PageShieldGetZoneCookieResponse
   @override
   final JsonObject? result;
   @override
+  final bool success;
+  @override
   final BuiltList<AaaMessagesInner>? errors;
   @override
   final BuiltList<AaaMessagesInner>? messages;
-  @override
-  final bool success;
 
   factory _$PageShieldGetZoneCookieResponse(
           [void Function(PageShieldGetZoneCookieResponseBuilder)? updates]) =>
       (PageShieldGetZoneCookieResponseBuilder()..update(updates))._build();
 
   _$PageShieldGetZoneCookieResponse._(
-      {this.result, this.errors, this.messages, required this.success})
+      {this.result, required this.success, this.errors, this.messages})
       : super._();
   @override
   PageShieldGetZoneCookieResponse rebuild(
@@ -38,18 +38,18 @@ class _$PageShieldGetZoneCookieResponse
     if (identical(other, this)) return true;
     return other is PageShieldGetZoneCookieResponse &&
         result == other.result &&
+        success == other.success &&
         errors == other.errors &&
-        messages == other.messages &&
-        success == other.success;
+        messages == other.messages;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
     _$hash = $jc(_$hash, result.hashCode);
+    _$hash = $jc(_$hash, success.hashCode);
     _$hash = $jc(_$hash, errors.hashCode);
     _$hash = $jc(_$hash, messages.hashCode);
-    _$hash = $jc(_$hash, success.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -58,9 +58,9 @@ class _$PageShieldGetZoneCookieResponse
   String toString() {
     return (newBuiltValueToStringHelper(r'PageShieldGetZoneCookieResponse')
           ..add('result', result)
+          ..add('success', success)
           ..add('errors', errors)
-          ..add('messages', messages)
-          ..add('success', success))
+          ..add('messages', messages))
         .toString();
   }
 }
@@ -76,6 +76,10 @@ class PageShieldGetZoneCookieResponseBuilder
   JsonObject? get result => _$this._result;
   set result(covariant JsonObject? result) => _$this._result = result;
 
+  bool? _success;
+  bool? get success => _$this._success;
+  set success(covariant bool? success) => _$this._success = success;
+
   ListBuilder<AaaMessagesInner>? _errors;
   ListBuilder<AaaMessagesInner> get errors =>
       _$this._errors ??= ListBuilder<AaaMessagesInner>();
@@ -88,10 +92,6 @@ class PageShieldGetZoneCookieResponseBuilder
   set messages(covariant ListBuilder<AaaMessagesInner>? messages) =>
       _$this._messages = messages;
 
-  bool? _success;
-  bool? get success => _$this._success;
-  set success(covariant bool? success) => _$this._success = success;
-
   PageShieldGetZoneCookieResponseBuilder() {
     PageShieldGetZoneCookieResponse._defaults(this);
   }
@@ -100,9 +100,9 @@ class PageShieldGetZoneCookieResponseBuilder
     final $v = _$v;
     if ($v != null) {
       _result = $v.result;
+      _success = $v.success;
       _errors = $v.errors?.toBuilder();
       _messages = $v.messages?.toBuilder();
-      _success = $v.success;
       _$v = null;
     }
     return this;
@@ -127,10 +127,10 @@ class PageShieldGetZoneCookieResponseBuilder
       _$result = _$v ??
           _$PageShieldGetZoneCookieResponse._(
             result: result,
-            errors: _errors?.build(),
-            messages: _messages?.build(),
             success: BuiltValueNullFieldError.checkNotNull(
                 success, r'PageShieldGetZoneCookieResponse', 'success'),
+            errors: _errors?.build(),
+            messages: _messages?.build(),
           );
     } catch (_) {
       late String _$failedField;

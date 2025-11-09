@@ -15,25 +15,25 @@ part 'page_shield_get_zone_script_response_all_of_result.g.dart';
 ///
 /// Properties:
 /// * [addedAt] 
+/// * [firstSeenAt] 
+/// * [host] 
+/// * [id] - Identifier
+/// * [lastSeenAt] 
+/// * [url] 
+/// * [urlContainsCdnCgiPath] 
 /// * [cryptominingScore] - The cryptomining score of the JavaScript content.
 /// * [dataflowScore] - The dataflow score of the JavaScript content.
 /// * [domainReportedMalicious] 
 /// * [fetchedAt] - The timestamp of when the script was last fetched.
 /// * [firstPageUrl] 
-/// * [firstSeenAt] 
 /// * [hash] - The computed hash of the analyzed script.
-/// * [host] 
-/// * [id] - Identifier
 /// * [jsIntegrityScore] - The integrity score of the JavaScript content.
-/// * [lastSeenAt] 
 /// * [magecartScore] - The magecart score of the JavaScript content.
 /// * [maliciousDomainCategories] 
 /// * [maliciousUrlCategories] 
 /// * [malwareScore] - The malware score of the JavaScript content.
 /// * [obfuscationScore] - The obfuscation score of the JavaScript content.
 /// * [pageUrls] 
-/// * [url] 
-/// * [urlContainsCdnCgiPath] 
 /// * [urlReportedMalicious] 
 /// * [versions] 
 @BuiltValue()
@@ -64,6 +64,11 @@ class _$PageShieldGetZoneScriptResponseAllOfResultSerializer implements Primitiv
     PageShieldGetZoneScriptResponseAllOfResult object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    yield r'last_seen_at';
+    yield serializers.serialize(
+      object.lastSeenAt,
+      specifiedType: const FullType(DateTime),
+    );
     if (object.dataflowScore != null) {
       yield r'dataflow_score';
       yield serializers.serialize(
@@ -71,11 +76,6 @@ class _$PageShieldGetZoneScriptResponseAllOfResultSerializer implements Primitiv
         specifiedType: const FullType.nullable(int),
       );
     }
-    yield r'last_seen_at';
-    yield serializers.serialize(
-      object.lastSeenAt,
-      specifiedType: const FullType(DateTime),
-    );
     yield r'added_at';
     yield serializers.serialize(
       object.addedAt,
@@ -227,6 +227,13 @@ class _$PageShieldGetZoneScriptResponseAllOfResultSerializer implements Primitiv
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
+        case r'last_seen_at':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(DateTime),
+          ) as DateTime;
+          result.lastSeenAt = valueDes;
+          break;
         case r'dataflow_score':
           final valueDes = serializers.deserialize(
             value,
@@ -234,13 +241,6 @@ class _$PageShieldGetZoneScriptResponseAllOfResultSerializer implements Primitiv
           ) as int?;
           if (valueDes == null) continue;
           result.dataflowScore = valueDes;
-          break;
-        case r'last_seen_at':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
-          result.lastSeenAt = valueDes;
           break;
         case r'added_at':
           final valueDes = serializers.deserialize(

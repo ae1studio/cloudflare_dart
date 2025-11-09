@@ -16,7 +16,6 @@ part 'create_account_ruleset200_response_all_of_result.g.dart';
 /// CreateAccountRuleset200ResponseAllOfResult
 ///
 /// Properties:
-/// * [description] - An informative description of the ruleset.
 /// * [id] - The unique ID of the ruleset.
 /// * [lastUpdated] - The timestamp of when the ruleset was last modified.
 /// * [name] - The human-readable name of the ruleset.
@@ -24,6 +23,7 @@ part 'create_account_ruleset200_response_all_of_result.g.dart';
 /// * [kind] 
 /// * [phase] 
 /// * [rules] - The list of rules in the ruleset.
+/// * [description] - An informative description of the ruleset.
 @BuiltValue()
 abstract class CreateAccountRuleset200ResponseAllOfResult implements RulesetsRuleset, Built<CreateAccountRuleset200ResponseAllOfResult, CreateAccountRuleset200ResponseAllOfResultBuilder> {
   @BuiltValueField(wireName: r'phase')

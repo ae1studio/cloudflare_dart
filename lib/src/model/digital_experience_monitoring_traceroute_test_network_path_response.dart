@@ -13,8 +13,8 @@ part 'digital_experience_monitoring_traceroute_test_network_path_response.g.dart
 /// DigitalExperienceMonitoringTracerouteTestNetworkPathResponse
 ///
 /// Properties:
-/// * [deviceName] 
 /// * [id] - API Resource UUID tag.
+/// * [deviceName] 
 /// * [interval] - The interval at which the Traceroute synthetic application test is set to run.
 /// * [kind] 
 /// * [name] 
@@ -22,12 +22,12 @@ part 'digital_experience_monitoring_traceroute_test_network_path_response.g.dart
 /// * [url] - The host of the Traceroute synthetic application test
 @BuiltValue()
 abstract class DigitalExperienceMonitoringTracerouteTestNetworkPathResponse implements Built<DigitalExperienceMonitoringTracerouteTestNetworkPathResponse, DigitalExperienceMonitoringTracerouteTestNetworkPathResponseBuilder> {
-  @BuiltValueField(wireName: r'deviceName')
-  String? get deviceName;
-
   /// API Resource UUID tag.
   @BuiltValueField(wireName: r'id')
   String get id;
+
+  @BuiltValueField(wireName: r'deviceName')
+  String? get deviceName;
 
   /// The interval at which the Traceroute synthetic application test is set to run.
   @BuiltValueField(wireName: r'interval')
@@ -70,6 +70,11 @@ class _$DigitalExperienceMonitoringTracerouteTestNetworkPathResponseSerializer i
     DigitalExperienceMonitoringTracerouteTestNetworkPathResponse object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    yield r'id';
+    yield serializers.serialize(
+      object.id,
+      specifiedType: const FullType(String),
+    );
     if (object.deviceName != null) {
       yield r'deviceName';
       yield serializers.serialize(
@@ -77,11 +82,6 @@ class _$DigitalExperienceMonitoringTracerouteTestNetworkPathResponseSerializer i
         specifiedType: const FullType(String),
       );
     }
-    yield r'id';
-    yield serializers.serialize(
-      object.id,
-      specifiedType: const FullType(String),
-    );
     if (object.interval != null) {
       yield r'interval';
       yield serializers.serialize(
@@ -140,19 +140,19 @@ class _$DigitalExperienceMonitoringTracerouteTestNetworkPathResponseSerializer i
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'deviceName':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.deviceName = valueDes;
-          break;
         case r'id':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(String),
           ) as String;
           result.id = valueDes;
+          break;
+        case r'deviceName':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.deviceName = valueDes;
           break;
         case r'interval':
           final valueDes = serializers.deserialize(

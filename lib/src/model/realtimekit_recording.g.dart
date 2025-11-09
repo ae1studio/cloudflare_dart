@@ -118,9 +118,6 @@ abstract class RealtimekitRecordingBuilder {
   String? get outputFileName;
   set outputFileName(String? outputFileName);
 
-  int? get recordingDuration;
-  set recordingDuration(int? recordingDuration);
-
   String? get sessionId;
   set sessionId(String? sessionId);
 
@@ -132,6 +129,9 @@ abstract class RealtimekitRecordingBuilder {
 
   DateTime? get stoppedTime;
   set stoppedTime(DateTime? stoppedTime);
+
+  int? get recordingDuration;
+  set recordingDuration(int? recordingDuration);
 }
 
 class _$$RealtimekitRecording extends $RealtimekitRecording {
@@ -150,8 +150,6 @@ class _$$RealtimekitRecording extends $RealtimekitRecording {
   @override
   final String outputFileName;
   @override
-  final int? recordingDuration;
-  @override
   final String? sessionId;
   @override
   final DateTime? startedTime;
@@ -159,6 +157,8 @@ class _$$RealtimekitRecording extends $RealtimekitRecording {
   final RealtimekitRecordingStatusEnum status;
   @override
   final DateTime? stoppedTime;
+  @override
+  final int? recordingDuration;
 
   factory _$$RealtimekitRecording(
           [void Function($RealtimekitRecordingBuilder)? updates]) =>
@@ -172,11 +172,11 @@ class _$$RealtimekitRecording extends $RealtimekitRecording {
       required this.id,
       required this.invokedTime,
       required this.outputFileName,
-      this.recordingDuration,
       this.sessionId,
       this.startedTime,
       required this.status,
-      this.stoppedTime})
+      this.stoppedTime,
+      this.recordingDuration})
       : super._();
   @override
   $RealtimekitRecording rebuild(
@@ -198,11 +198,11 @@ class _$$RealtimekitRecording extends $RealtimekitRecording {
         id == other.id &&
         invokedTime == other.invokedTime &&
         outputFileName == other.outputFileName &&
-        recordingDuration == other.recordingDuration &&
         sessionId == other.sessionId &&
         startedTime == other.startedTime &&
         status == other.status &&
-        stoppedTime == other.stoppedTime;
+        stoppedTime == other.stoppedTime &&
+        recordingDuration == other.recordingDuration;
   }
 
   @override
@@ -215,11 +215,11 @@ class _$$RealtimekitRecording extends $RealtimekitRecording {
     _$hash = $jc(_$hash, id.hashCode);
     _$hash = $jc(_$hash, invokedTime.hashCode);
     _$hash = $jc(_$hash, outputFileName.hashCode);
-    _$hash = $jc(_$hash, recordingDuration.hashCode);
     _$hash = $jc(_$hash, sessionId.hashCode);
     _$hash = $jc(_$hash, startedTime.hashCode);
     _$hash = $jc(_$hash, status.hashCode);
     _$hash = $jc(_$hash, stoppedTime.hashCode);
+    _$hash = $jc(_$hash, recordingDuration.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -234,11 +234,11 @@ class _$$RealtimekitRecording extends $RealtimekitRecording {
           ..add('id', id)
           ..add('invokedTime', invokedTime)
           ..add('outputFileName', outputFileName)
-          ..add('recordingDuration', recordingDuration)
           ..add('sessionId', sessionId)
           ..add('startedTime', startedTime)
           ..add('status', status)
-          ..add('stoppedTime', stoppedTime))
+          ..add('stoppedTime', stoppedTime)
+          ..add('recordingDuration', recordingDuration))
         .toString();
   }
 }
@@ -282,11 +282,6 @@ class $RealtimekitRecordingBuilder
   set outputFileName(covariant String? outputFileName) =>
       _$this._outputFileName = outputFileName;
 
-  int? _recordingDuration;
-  int? get recordingDuration => _$this._recordingDuration;
-  set recordingDuration(covariant int? recordingDuration) =>
-      _$this._recordingDuration = recordingDuration;
-
   String? _sessionId;
   String? get sessionId => _$this._sessionId;
   set sessionId(covariant String? sessionId) => _$this._sessionId = sessionId;
@@ -306,6 +301,11 @@ class $RealtimekitRecordingBuilder
   set stoppedTime(covariant DateTime? stoppedTime) =>
       _$this._stoppedTime = stoppedTime;
 
+  int? _recordingDuration;
+  int? get recordingDuration => _$this._recordingDuration;
+  set recordingDuration(covariant int? recordingDuration) =>
+      _$this._recordingDuration = recordingDuration;
+
   $RealtimekitRecordingBuilder() {
     $RealtimekitRecording._defaults(this);
   }
@@ -320,11 +320,11 @@ class $RealtimekitRecordingBuilder
       _id = $v.id;
       _invokedTime = $v.invokedTime;
       _outputFileName = $v.outputFileName;
-      _recordingDuration = $v.recordingDuration;
       _sessionId = $v.sessionId;
       _startedTime = $v.startedTime;
       _status = $v.status;
       _stoppedTime = $v.stoppedTime;
+      _recordingDuration = $v.recordingDuration;
       _$v = null;
     }
     return this;
@@ -356,12 +356,12 @@ class $RealtimekitRecordingBuilder
               invokedTime, r'$RealtimekitRecording', 'invokedTime'),
           outputFileName: BuiltValueNullFieldError.checkNotNull(
               outputFileName, r'$RealtimekitRecording', 'outputFileName'),
-          recordingDuration: recordingDuration,
           sessionId: sessionId,
           startedTime: startedTime,
           status: BuiltValueNullFieldError.checkNotNull(
               status, r'$RealtimekitRecording', 'status'),
           stoppedTime: stoppedTime,
+          recordingDuration: recordingDuration,
         );
     replace(_$result);
     return _$result;

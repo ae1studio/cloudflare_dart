@@ -72,6 +72,10 @@ class _$CloudforceOneRequestsRequestListSortOrderEnumSerializer
 class _$CloudforceOneRequestsRequestList
     extends CloudforceOneRequestsRequestList {
   @override
+  final int page;
+  @override
+  final int perPage;
+  @override
   final DateTime? completedAfter;
   @override
   final DateTime? completedBefore;
@@ -79,10 +83,6 @@ class _$CloudforceOneRequestsRequestList
   final DateTime? createdAfter;
   @override
   final DateTime? createdBefore;
-  @override
-  final int page;
-  @override
-  final int perPage;
   @override
   final String? requestType;
   @override
@@ -97,12 +97,12 @@ class _$CloudforceOneRequestsRequestList
       (CloudforceOneRequestsRequestListBuilder()..update(updates))._build();
 
   _$CloudforceOneRequestsRequestList._(
-      {this.completedAfter,
+      {required this.page,
+      required this.perPage,
+      this.completedAfter,
       this.completedBefore,
       this.createdAfter,
       this.createdBefore,
-      required this.page,
-      required this.perPage,
       this.requestType,
       this.sortBy,
       this.sortOrder,
@@ -121,12 +121,12 @@ class _$CloudforceOneRequestsRequestList
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is CloudforceOneRequestsRequestList &&
+        page == other.page &&
+        perPage == other.perPage &&
         completedAfter == other.completedAfter &&
         completedBefore == other.completedBefore &&
         createdAfter == other.createdAfter &&
         createdBefore == other.createdBefore &&
-        page == other.page &&
-        perPage == other.perPage &&
         requestType == other.requestType &&
         sortBy == other.sortBy &&
         sortOrder == other.sortOrder &&
@@ -136,12 +136,12 @@ class _$CloudforceOneRequestsRequestList
   @override
   int get hashCode {
     var _$hash = 0;
+    _$hash = $jc(_$hash, page.hashCode);
+    _$hash = $jc(_$hash, perPage.hashCode);
     _$hash = $jc(_$hash, completedAfter.hashCode);
     _$hash = $jc(_$hash, completedBefore.hashCode);
     _$hash = $jc(_$hash, createdAfter.hashCode);
     _$hash = $jc(_$hash, createdBefore.hashCode);
-    _$hash = $jc(_$hash, page.hashCode);
-    _$hash = $jc(_$hash, perPage.hashCode);
     _$hash = $jc(_$hash, requestType.hashCode);
     _$hash = $jc(_$hash, sortBy.hashCode);
     _$hash = $jc(_$hash, sortOrder.hashCode);
@@ -153,12 +153,12 @@ class _$CloudforceOneRequestsRequestList
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'CloudforceOneRequestsRequestList')
+          ..add('page', page)
+          ..add('perPage', perPage)
           ..add('completedAfter', completedAfter)
           ..add('completedBefore', completedBefore)
           ..add('createdAfter', createdAfter)
           ..add('createdBefore', createdBefore)
-          ..add('page', page)
-          ..add('perPage', perPage)
           ..add('requestType', requestType)
           ..add('sortBy', sortBy)
           ..add('sortOrder', sortOrder)
@@ -172,6 +172,14 @@ class CloudforceOneRequestsRequestListBuilder
         Builder<CloudforceOneRequestsRequestList,
             CloudforceOneRequestsRequestListBuilder> {
   _$CloudforceOneRequestsRequestList? _$v;
+
+  int? _page;
+  int? get page => _$this._page;
+  set page(int? page) => _$this._page = page;
+
+  int? _perPage;
+  int? get perPage => _$this._perPage;
+  set perPage(int? perPage) => _$this._perPage = perPage;
 
   DateTime? _completedAfter;
   DateTime? get completedAfter => _$this._completedAfter;
@@ -192,14 +200,6 @@ class CloudforceOneRequestsRequestListBuilder
   DateTime? get createdBefore => _$this._createdBefore;
   set createdBefore(DateTime? createdBefore) =>
       _$this._createdBefore = createdBefore;
-
-  int? _page;
-  int? get page => _$this._page;
-  set page(int? page) => _$this._page = page;
-
-  int? _perPage;
-  int? get perPage => _$this._perPage;
-  set perPage(int? perPage) => _$this._perPage = perPage;
 
   String? _requestType;
   String? get requestType => _$this._requestType;
@@ -227,12 +227,12 @@ class CloudforceOneRequestsRequestListBuilder
   CloudforceOneRequestsRequestListBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
+      _page = $v.page;
+      _perPage = $v.perPage;
       _completedAfter = $v.completedAfter;
       _completedBefore = $v.completedBefore;
       _createdAfter = $v.createdAfter;
       _createdBefore = $v.createdBefore;
-      _page = $v.page;
-      _perPage = $v.perPage;
       _requestType = $v.requestType;
       _sortBy = $v.sortBy;
       _sortOrder = $v.sortOrder;
@@ -258,14 +258,14 @@ class CloudforceOneRequestsRequestListBuilder
   _$CloudforceOneRequestsRequestList _build() {
     final _$result = _$v ??
         _$CloudforceOneRequestsRequestList._(
-          completedAfter: completedAfter,
-          completedBefore: completedBefore,
-          createdAfter: createdAfter,
-          createdBefore: createdBefore,
           page: BuiltValueNullFieldError.checkNotNull(
               page, r'CloudforceOneRequestsRequestList', 'page'),
           perPage: BuiltValueNullFieldError.checkNotNull(
               perPage, r'CloudforceOneRequestsRequestList', 'perPage'),
+          completedAfter: completedAfter,
+          completedBefore: completedBefore,
+          createdAfter: createdAfter,
+          createdBefore: createdBefore,
           requestType: requestType,
           sortBy: sortBy,
           sortOrder: sortOrder,

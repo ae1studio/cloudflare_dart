@@ -12,9 +12,9 @@ class _$DlpRiskEvents extends DlpRiskEvents {
   @override
   final BuiltList<DlpRiskEvent> events;
   @override
-  final DateTime? lastResetTime;
-  @override
   final String name;
+  @override
+  final DateTime? lastResetTime;
   @override
   final DlpRiskLevel? riskLevel;
 
@@ -24,8 +24,8 @@ class _$DlpRiskEvents extends DlpRiskEvents {
   _$DlpRiskEvents._(
       {required this.email,
       required this.events,
-      this.lastResetTime,
       required this.name,
+      this.lastResetTime,
       this.riskLevel})
       : super._();
   @override
@@ -41,8 +41,8 @@ class _$DlpRiskEvents extends DlpRiskEvents {
     return other is DlpRiskEvents &&
         email == other.email &&
         events == other.events &&
-        lastResetTime == other.lastResetTime &&
         name == other.name &&
+        lastResetTime == other.lastResetTime &&
         riskLevel == other.riskLevel;
   }
 
@@ -51,8 +51,8 @@ class _$DlpRiskEvents extends DlpRiskEvents {
     var _$hash = 0;
     _$hash = $jc(_$hash, email.hashCode);
     _$hash = $jc(_$hash, events.hashCode);
-    _$hash = $jc(_$hash, lastResetTime.hashCode);
     _$hash = $jc(_$hash, name.hashCode);
+    _$hash = $jc(_$hash, lastResetTime.hashCode);
     _$hash = $jc(_$hash, riskLevel.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
@@ -63,8 +63,8 @@ class _$DlpRiskEvents extends DlpRiskEvents {
     return (newBuiltValueToStringHelper(r'DlpRiskEvents')
           ..add('email', email)
           ..add('events', events)
-          ..add('lastResetTime', lastResetTime)
           ..add('name', name)
+          ..add('lastResetTime', lastResetTime)
           ..add('riskLevel', riskLevel))
         .toString();
   }
@@ -83,14 +83,14 @@ class DlpRiskEventsBuilder
       _$this._events ??= ListBuilder<DlpRiskEvent>();
   set events(ListBuilder<DlpRiskEvent>? events) => _$this._events = events;
 
+  String? _name;
+  String? get name => _$this._name;
+  set name(String? name) => _$this._name = name;
+
   DateTime? _lastResetTime;
   DateTime? get lastResetTime => _$this._lastResetTime;
   set lastResetTime(DateTime? lastResetTime) =>
       _$this._lastResetTime = lastResetTime;
-
-  String? _name;
-  String? get name => _$this._name;
-  set name(String? name) => _$this._name = name;
 
   DlpRiskLevel? _riskLevel;
   DlpRiskLevel? get riskLevel => _$this._riskLevel;
@@ -105,8 +105,8 @@ class DlpRiskEventsBuilder
     if ($v != null) {
       _email = $v.email;
       _events = $v.events.toBuilder();
-      _lastResetTime = $v.lastResetTime;
       _name = $v.name;
+      _lastResetTime = $v.lastResetTime;
       _riskLevel = $v.riskLevel;
       _$v = null;
     }
@@ -134,9 +134,9 @@ class DlpRiskEventsBuilder
             email: BuiltValueNullFieldError.checkNotNull(
                 email, r'DlpRiskEvents', 'email'),
             events: events.build(),
-            lastResetTime: lastResetTime,
             name: BuiltValueNullFieldError.checkNotNull(
                 name, r'DlpRiskEvents', 'name'),
+            lastResetTime: lastResetTime,
             riskLevel: riskLevel,
           );
     } catch (_) {

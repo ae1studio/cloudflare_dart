@@ -1085,9 +1085,9 @@ class _$McnError extends McnError {
   @override
   final McnErrorCodeEnum code;
   @override
-  final String? documentationUrl;
-  @override
   final String message;
+  @override
+  final String? documentationUrl;
   @override
   final McnErrorMeta? meta;
   @override
@@ -1098,8 +1098,8 @@ class _$McnError extends McnError {
 
   _$McnError._(
       {required this.code,
-      this.documentationUrl,
       required this.message,
+      this.documentationUrl,
       this.meta,
       this.source_})
       : super._();
@@ -1115,8 +1115,8 @@ class _$McnError extends McnError {
     if (identical(other, this)) return true;
     return other is McnError &&
         code == other.code &&
-        documentationUrl == other.documentationUrl &&
         message == other.message &&
+        documentationUrl == other.documentationUrl &&
         meta == other.meta &&
         source_ == other.source_;
   }
@@ -1125,8 +1125,8 @@ class _$McnError extends McnError {
   int get hashCode {
     var _$hash = 0;
     _$hash = $jc(_$hash, code.hashCode);
-    _$hash = $jc(_$hash, documentationUrl.hashCode);
     _$hash = $jc(_$hash, message.hashCode);
+    _$hash = $jc(_$hash, documentationUrl.hashCode);
     _$hash = $jc(_$hash, meta.hashCode);
     _$hash = $jc(_$hash, source_.hashCode);
     _$hash = $jf(_$hash);
@@ -1137,8 +1137,8 @@ class _$McnError extends McnError {
   String toString() {
     return (newBuiltValueToStringHelper(r'McnError')
           ..add('code', code)
-          ..add('documentationUrl', documentationUrl)
           ..add('message', message)
+          ..add('documentationUrl', documentationUrl)
           ..add('meta', meta)
           ..add('source_', source_))
         .toString();
@@ -1152,14 +1152,14 @@ class McnErrorBuilder implements Builder<McnError, McnErrorBuilder> {
   McnErrorCodeEnum? get code => _$this._code;
   set code(McnErrorCodeEnum? code) => _$this._code = code;
 
+  String? _message;
+  String? get message => _$this._message;
+  set message(String? message) => _$this._message = message;
+
   String? _documentationUrl;
   String? get documentationUrl => _$this._documentationUrl;
   set documentationUrl(String? documentationUrl) =>
       _$this._documentationUrl = documentationUrl;
-
-  String? _message;
-  String? get message => _$this._message;
-  set message(String? message) => _$this._message = message;
 
   McnErrorMetaBuilder? _meta;
   McnErrorMetaBuilder get meta => _$this._meta ??= McnErrorMetaBuilder();
@@ -1178,8 +1178,8 @@ class McnErrorBuilder implements Builder<McnError, McnErrorBuilder> {
     final $v = _$v;
     if ($v != null) {
       _code = $v.code;
-      _documentationUrl = $v.documentationUrl;
       _message = $v.message;
+      _documentationUrl = $v.documentationUrl;
       _meta = $v.meta?.toBuilder();
       _source_ = $v.source_?.toBuilder();
       _$v = null;
@@ -1207,9 +1207,9 @@ class McnErrorBuilder implements Builder<McnError, McnErrorBuilder> {
           _$McnError._(
             code: BuiltValueNullFieldError.checkNotNull(
                 code, r'McnError', 'code'),
-            documentationUrl: documentationUrl,
             message: BuiltValueNullFieldError.checkNotNull(
                 message, r'McnError', 'message'),
+            documentationUrl: documentationUrl,
             meta: _meta?.build(),
             source_: _source_?.build(),
           );

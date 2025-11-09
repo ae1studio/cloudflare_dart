@@ -13,11 +13,11 @@ part 'email_settings.g.dart';
 /// EmailSettings
 ///
 /// Properties:
-/// * [created] - The date and time the settings have been created.
 /// * [enabled] - State of the zone settings for Email Routing.
 /// * [id] - Email Routing settings identifier.
-/// * [modified] - The date and time the settings have been modified.
 /// * [name] - Domain of your zone.
+/// * [created] - The date and time the settings have been created.
+/// * [modified] - The date and time the settings have been modified.
 /// * [skipWizard] - Flag to check if the user skipped the configuration wizard.
 /// * [status] 
 /// * [tag] - Email Routing settings tag. (Deprecated, replaced by Email Routing settings identifier)

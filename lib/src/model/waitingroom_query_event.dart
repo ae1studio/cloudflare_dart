@@ -13,12 +13,12 @@ part 'waitingroom_query_event.g.dart';
 /// WaitingroomQueryEvent
 ///
 /// Properties:
-/// * [customPageHtml] - If set, the event will override the waiting room's `custom_page_html` property while it is active. If null, the event will inherit it.
-/// * [description] - A note that you can use to add more details about the event.
-/// * [disableSessionRenewal] - If set, the event will override the waiting room's `disable_session_renewal` property while it is active. If null, the event will inherit it.
 /// * [eventEndTime] - An ISO 8601 timestamp that marks the end of the event.
 /// * [eventStartTime] - An ISO 8601 timestamp that marks the start of the event. At this time, queued users will be processed with the event's configuration. The start time must be at least one minute before `event_end_time`.
 /// * [name] - A unique name to identify the event. Only alphanumeric characters, hyphens and underscores are allowed.
+/// * [customPageHtml] - If set, the event will override the waiting room's `custom_page_html` property while it is active. If null, the event will inherit it.
+/// * [description] - A note that you can use to add more details about the event.
+/// * [disableSessionRenewal] - If set, the event will override the waiting room's `disable_session_renewal` property while it is active. If null, the event will inherit it.
 /// * [newUsersPerMinute] - If set, the event will override the waiting room's `new_users_per_minute` property while it is active. If null, the event will inherit it. This can only be set if the event's `total_active_users` property is also set.
 /// * [prequeueStartTime] - An ISO 8601 timestamp that marks when to begin queueing all users before the event starts. The prequeue must start at least five minutes before `event_start_time`.
 /// * [queueingMethod] - If set, the event will override the waiting room's `queueing_method` property while it is active. If null, the event will inherit it.
@@ -30,18 +30,6 @@ part 'waitingroom_query_event.g.dart';
 /// * [turnstileMode] 
 @BuiltValue()
 abstract class WaitingroomQueryEvent implements Built<WaitingroomQueryEvent, WaitingroomQueryEventBuilder> {
-  /// If set, the event will override the waiting room's `custom_page_html` property while it is active. If null, the event will inherit it.
-  @BuiltValueField(wireName: r'custom_page_html')
-  String? get customPageHtml;
-
-  /// A note that you can use to add more details about the event.
-  @BuiltValueField(wireName: r'description')
-  String? get description;
-
-  /// If set, the event will override the waiting room's `disable_session_renewal` property while it is active. If null, the event will inherit it.
-  @BuiltValueField(wireName: r'disable_session_renewal')
-  bool? get disableSessionRenewal;
-
   /// An ISO 8601 timestamp that marks the end of the event.
   @BuiltValueField(wireName: r'event_end_time')
   String get eventEndTime;
@@ -53,6 +41,18 @@ abstract class WaitingroomQueryEvent implements Built<WaitingroomQueryEvent, Wai
   /// A unique name to identify the event. Only alphanumeric characters, hyphens and underscores are allowed.
   @BuiltValueField(wireName: r'name')
   String get name;
+
+  /// If set, the event will override the waiting room's `custom_page_html` property while it is active. If null, the event will inherit it.
+  @BuiltValueField(wireName: r'custom_page_html')
+  String? get customPageHtml;
+
+  /// A note that you can use to add more details about the event.
+  @BuiltValueField(wireName: r'description')
+  String? get description;
+
+  /// If set, the event will override the waiting room's `disable_session_renewal` property while it is active. If null, the event will inherit it.
+  @BuiltValueField(wireName: r'disable_session_renewal')
+  bool? get disableSessionRenewal;
 
   /// If set, the event will override the waiting room's `new_users_per_minute` property while it is active. If null, the event will inherit it. This can only be set if the event's `total_active_users` property is also set.
   @BuiltValueField(wireName: r'new_users_per_minute')
@@ -116,6 +116,21 @@ class _$WaitingroomQueryEventSerializer implements PrimitiveSerializer<Waitingro
     WaitingroomQueryEvent object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    yield r'event_end_time';
+    yield serializers.serialize(
+      object.eventEndTime,
+      specifiedType: const FullType(String),
+    );
+    yield r'event_start_time';
+    yield serializers.serialize(
+      object.eventStartTime,
+      specifiedType: const FullType(String),
+    );
+    yield r'name';
+    yield serializers.serialize(
+      object.name,
+      specifiedType: const FullType(String),
+    );
     if (object.customPageHtml != null) {
       yield r'custom_page_html';
       yield serializers.serialize(
@@ -137,21 +152,6 @@ class _$WaitingroomQueryEventSerializer implements PrimitiveSerializer<Waitingro
         specifiedType: const FullType.nullable(bool),
       );
     }
-    yield r'event_end_time';
-    yield serializers.serialize(
-      object.eventEndTime,
-      specifiedType: const FullType(String),
-    );
-    yield r'event_start_time';
-    yield serializers.serialize(
-      object.eventStartTime,
-      specifiedType: const FullType(String),
-    );
-    yield r'name';
-    yield serializers.serialize(
-      object.name,
-      specifiedType: const FullType(String),
-    );
     if (object.newUsersPerMinute != null) {
       yield r'new_users_per_minute';
       yield serializers.serialize(
@@ -238,6 +238,27 @@ class _$WaitingroomQueryEventSerializer implements PrimitiveSerializer<Waitingro
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
+        case r'event_end_time':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.eventEndTime = valueDes;
+          break;
+        case r'event_start_time':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.eventStartTime = valueDes;
+          break;
+        case r'name':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.name = valueDes;
+          break;
         case r'custom_page_html':
           final valueDes = serializers.deserialize(
             value,
@@ -260,27 +281,6 @@ class _$WaitingroomQueryEventSerializer implements PrimitiveSerializer<Waitingro
           ) as bool?;
           if (valueDes == null) continue;
           result.disableSessionRenewal = valueDes;
-          break;
-        case r'event_end_time':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.eventEndTime = valueDes;
-          break;
-        case r'event_start_time':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.eventStartTime = valueDes;
-          break;
-        case r'name':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.name = valueDes;
           break;
         case r'new_users_per_minute':
           final valueDes = serializers.deserialize(

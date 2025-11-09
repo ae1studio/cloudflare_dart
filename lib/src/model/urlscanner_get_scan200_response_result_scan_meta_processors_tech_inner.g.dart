@@ -15,8 +15,6 @@ class _$UrlscannerGetScan200ResponseResultScanMetaProcessorsTechInner
   @override
   final int confidence;
   @override
-  final String? description;
-  @override
   final UrlscannerGetScan200ResponseResultScanMetaProcessorsTechInnerEvidence
       evidence;
   @override
@@ -27,6 +25,8 @@ class _$UrlscannerGetScan200ResponseResultScanMetaProcessorsTechInner
   final String slug;
   @override
   final String website;
+  @override
+  final String? description;
 
   factory _$UrlscannerGetScan200ResponseResultScanMetaProcessorsTechInner(
           [void Function(
@@ -39,12 +39,12 @@ class _$UrlscannerGetScan200ResponseResultScanMetaProcessorsTechInner
   _$UrlscannerGetScan200ResponseResultScanMetaProcessorsTechInner._(
       {required this.categories,
       required this.confidence,
-      this.description,
       required this.evidence,
       required this.icon,
       required this.name,
       required this.slug,
-      required this.website})
+      required this.website,
+      this.description})
       : super._();
   @override
   UrlscannerGetScan200ResponseResultScanMetaProcessorsTechInner rebuild(
@@ -66,12 +66,12 @@ class _$UrlscannerGetScan200ResponseResultScanMetaProcessorsTechInner
             is UrlscannerGetScan200ResponseResultScanMetaProcessorsTechInner &&
         categories == other.categories &&
         confidence == other.confidence &&
-        description == other.description &&
         evidence == other.evidence &&
         icon == other.icon &&
         name == other.name &&
         slug == other.slug &&
-        website == other.website;
+        website == other.website &&
+        description == other.description;
   }
 
   @override
@@ -79,12 +79,12 @@ class _$UrlscannerGetScan200ResponseResultScanMetaProcessorsTechInner
     var _$hash = 0;
     _$hash = $jc(_$hash, categories.hashCode);
     _$hash = $jc(_$hash, confidence.hashCode);
-    _$hash = $jc(_$hash, description.hashCode);
     _$hash = $jc(_$hash, evidence.hashCode);
     _$hash = $jc(_$hash, icon.hashCode);
     _$hash = $jc(_$hash, name.hashCode);
     _$hash = $jc(_$hash, slug.hashCode);
     _$hash = $jc(_$hash, website.hashCode);
+    _$hash = $jc(_$hash, description.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -95,12 +95,12 @@ class _$UrlscannerGetScan200ResponseResultScanMetaProcessorsTechInner
             r'UrlscannerGetScan200ResponseResultScanMetaProcessorsTechInner')
           ..add('categories', categories)
           ..add('confidence', confidence)
-          ..add('description', description)
           ..add('evidence', evidence)
           ..add('icon', icon)
           ..add('name', name)
           ..add('slug', slug)
-          ..add('website', website))
+          ..add('website', website)
+          ..add('description', description))
         .toString();
   }
 }
@@ -128,10 +128,6 @@ class UrlscannerGetScan200ResponseResultScanMetaProcessorsTechInnerBuilder
   int? get confidence => _$this._confidence;
   set confidence(int? confidence) => _$this._confidence = confidence;
 
-  String? _description;
-  String? get description => _$this._description;
-  set description(String? description) => _$this._description = description;
-
   UrlscannerGetScan200ResponseResultScanMetaProcessorsTechInnerEvidenceBuilder?
       _evidence;
   UrlscannerGetScan200ResponseResultScanMetaProcessorsTechInnerEvidenceBuilder
@@ -158,6 +154,10 @@ class UrlscannerGetScan200ResponseResultScanMetaProcessorsTechInnerBuilder
   String? get website => _$this._website;
   set website(String? website) => _$this._website = website;
 
+  String? _description;
+  String? get description => _$this._description;
+  set description(String? description) => _$this._description = description;
+
   UrlscannerGetScan200ResponseResultScanMetaProcessorsTechInnerBuilder() {
     UrlscannerGetScan200ResponseResultScanMetaProcessorsTechInner._defaults(
         this);
@@ -169,12 +169,12 @@ class UrlscannerGetScan200ResponseResultScanMetaProcessorsTechInnerBuilder
     if ($v != null) {
       _categories = $v.categories.toBuilder();
       _confidence = $v.confidence;
-      _description = $v.description;
       _evidence = $v.evidence.toBuilder();
       _icon = $v.icon;
       _name = $v.name;
       _slug = $v.slug;
       _website = $v.website;
+      _description = $v.description;
       _$v = null;
     }
     return this;
@@ -209,7 +209,6 @@ class UrlscannerGetScan200ResponseResultScanMetaProcessorsTechInnerBuilder
                 confidence,
                 r'UrlscannerGetScan200ResponseResultScanMetaProcessorsTechInner',
                 'confidence'),
-            description: description,
             evidence: evidence.build(),
             icon: BuiltValueNullFieldError.checkNotNull(
                 icon,
@@ -227,6 +226,7 @@ class UrlscannerGetScan200ResponseResultScanMetaProcessorsTechInnerBuilder
                 website,
                 r'UrlscannerGetScan200ResponseResultScanMetaProcessorsTechInner',
                 'website'),
+            description: description,
           );
     } catch (_) {
       late String _$failedField;

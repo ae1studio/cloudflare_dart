@@ -8,6 +8,8 @@ import 'package:cloudflare_dart/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**queryId** | **String** |  | 
+**timeframe** | [**TelemetryKeysListRequestTimeframe**](TelemetryKeysListRequestTimeframe.md) |  | 
 **chart** | **bool** |  | [optional] 
 **compare** | **bool** |  | [optional] 
 **dry** | **bool** |  | [optional] [default to false]
@@ -19,8 +21,6 @@ Name | Type | Description | Notes
 **offsetDirection** | **String** |  | [optional] 
 **parameters** | [**TelemetryQueryRequestParameters**](TelemetryQueryRequestParameters.md) |  | [optional] 
 **patternType** | **String** |  | [optional] 
-**queryId** | **String** |  | 
-**timeframe** | [**TelemetryKeysListRequestTimeframe**](TelemetryKeysListRequestTimeframe.md) |  | 
 **view** | **String** |  | [optional] [default to 'calculations']
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -8,6 +8,7 @@ import 'package:cloudflare_dart/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**enabled** | **bool** |  | 
 **buttonTextTranslations** | [**ZarazZarazConfigBaseConsentButtonTextTranslations**](ZarazZarazConfigBaseConsentButtonTextTranslations.md) |  | [optional] 
 **companyEmail** | **String** |  | [optional] 
 **companyName** | **String** |  | [optional] 
@@ -18,7 +19,6 @@ Name | Type | Description | Notes
 **customCSS** | **String** |  | [optional] 
 **customIntroDisclaimerDismissed** | **bool** |  | [optional] 
 **defaultLanguage** | **String** |  | [optional] 
-**enabled** | **bool** |  | 
 **hideModal** | **bool** |  | [optional] 
 **purposes** | [**BuiltMap&lt;String, ZarazZarazConfigBaseConsentPurposesValue&gt;**](ZarazZarazConfigBaseConsentPurposesValue.md) | Object where keys are purpose alpha-numeric IDs | [optional] 
 **purposesWithTranslations** | [**BuiltMap&lt;String, ZarazZarazConfigBaseConsentPurposesWithTranslationsValue&gt;**](ZarazZarazConfigBaseConsentPurposesWithTranslationsValue.md) | Object where keys are purpose alpha-numeric IDs | [optional] 

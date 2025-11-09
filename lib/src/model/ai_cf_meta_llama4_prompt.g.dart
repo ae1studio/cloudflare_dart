@@ -8,6 +8,8 @@ part of 'ai_cf_meta_llama4_prompt.dart';
 
 class _$AiCfMetaLlama4Prompt extends AiCfMetaLlama4Prompt {
   @override
+  final String prompt;
+  @override
   final num? frequencyPenalty;
   @override
   final JsonObject? guidedJson;
@@ -15,8 +17,6 @@ class _$AiCfMetaLlama4Prompt extends AiCfMetaLlama4Prompt {
   final int? maxTokens;
   @override
   final num? presencePenalty;
-  @override
-  final String prompt;
   @override
   final bool? raw;
   @override
@@ -39,11 +39,11 @@ class _$AiCfMetaLlama4Prompt extends AiCfMetaLlama4Prompt {
       (AiCfMetaLlama4PromptBuilder()..update(updates))._build();
 
   _$AiCfMetaLlama4Prompt._(
-      {this.frequencyPenalty,
+      {required this.prompt,
+      this.frequencyPenalty,
       this.guidedJson,
       this.maxTokens,
       this.presencePenalty,
-      required this.prompt,
       this.raw,
       this.repetitionPenalty,
       this.responseFormat,
@@ -66,11 +66,11 @@ class _$AiCfMetaLlama4Prompt extends AiCfMetaLlama4Prompt {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is AiCfMetaLlama4Prompt &&
+        prompt == other.prompt &&
         frequencyPenalty == other.frequencyPenalty &&
         guidedJson == other.guidedJson &&
         maxTokens == other.maxTokens &&
         presencePenalty == other.presencePenalty &&
-        prompt == other.prompt &&
         raw == other.raw &&
         repetitionPenalty == other.repetitionPenalty &&
         responseFormat == other.responseFormat &&
@@ -84,11 +84,11 @@ class _$AiCfMetaLlama4Prompt extends AiCfMetaLlama4Prompt {
   @override
   int get hashCode {
     var _$hash = 0;
+    _$hash = $jc(_$hash, prompt.hashCode);
     _$hash = $jc(_$hash, frequencyPenalty.hashCode);
     _$hash = $jc(_$hash, guidedJson.hashCode);
     _$hash = $jc(_$hash, maxTokens.hashCode);
     _$hash = $jc(_$hash, presencePenalty.hashCode);
-    _$hash = $jc(_$hash, prompt.hashCode);
     _$hash = $jc(_$hash, raw.hashCode);
     _$hash = $jc(_$hash, repetitionPenalty.hashCode);
     _$hash = $jc(_$hash, responseFormat.hashCode);
@@ -104,11 +104,11 @@ class _$AiCfMetaLlama4Prompt extends AiCfMetaLlama4Prompt {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'AiCfMetaLlama4Prompt')
+          ..add('prompt', prompt)
           ..add('frequencyPenalty', frequencyPenalty)
           ..add('guidedJson', guidedJson)
           ..add('maxTokens', maxTokens)
           ..add('presencePenalty', presencePenalty)
-          ..add('prompt', prompt)
           ..add('raw', raw)
           ..add('repetitionPenalty', repetitionPenalty)
           ..add('responseFormat', responseFormat)
@@ -124,6 +124,10 @@ class _$AiCfMetaLlama4Prompt extends AiCfMetaLlama4Prompt {
 class AiCfMetaLlama4PromptBuilder
     implements Builder<AiCfMetaLlama4Prompt, AiCfMetaLlama4PromptBuilder> {
   _$AiCfMetaLlama4Prompt? _$v;
+
+  String? _prompt;
+  String? get prompt => _$this._prompt;
+  set prompt(String? prompt) => _$this._prompt = prompt;
 
   num? _frequencyPenalty;
   num? get frequencyPenalty => _$this._frequencyPenalty;
@@ -142,10 +146,6 @@ class AiCfMetaLlama4PromptBuilder
   num? get presencePenalty => _$this._presencePenalty;
   set presencePenalty(num? presencePenalty) =>
       _$this._presencePenalty = presencePenalty;
-
-  String? _prompt;
-  String? get prompt => _$this._prompt;
-  set prompt(String? prompt) => _$this._prompt = prompt;
 
   bool? _raw;
   bool? get raw => _$this._raw;
@@ -189,11 +189,11 @@ class AiCfMetaLlama4PromptBuilder
   AiCfMetaLlama4PromptBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
+      _prompt = $v.prompt;
       _frequencyPenalty = $v.frequencyPenalty;
       _guidedJson = $v.guidedJson;
       _maxTokens = $v.maxTokens;
       _presencePenalty = $v.presencePenalty;
-      _prompt = $v.prompt;
       _raw = $v.raw;
       _repetitionPenalty = $v.repetitionPenalty;
       _responseFormat = $v.responseFormat?.toBuilder();
@@ -225,12 +225,12 @@ class AiCfMetaLlama4PromptBuilder
     try {
       _$result = _$v ??
           _$AiCfMetaLlama4Prompt._(
+            prompt: BuiltValueNullFieldError.checkNotNull(
+                prompt, r'AiCfMetaLlama4Prompt', 'prompt'),
             frequencyPenalty: frequencyPenalty,
             guidedJson: guidedJson,
             maxTokens: maxTokens,
             presencePenalty: presencePenalty,
-            prompt: BuiltValueNullFieldError.checkNotNull(
-                prompt, r'AiCfMetaLlama4Prompt', 'prompt'),
             raw: raw,
             repetitionPenalty: repetitionPenalty,
             responseFormat: _responseFormat?.build(),

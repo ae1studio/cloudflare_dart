@@ -30,10 +30,10 @@ part 'access_identity_providers_components_schemas_response_collection_all_of_re
 ///
 /// Properties:
 /// * [config] 
-/// * [id] - UUID.
 /// * [name] - The name of the identity provider, shown to users on the login page.
-/// * [scimConfig] 
 /// * [type] - The type of identity provider. To determine the value for a specific provider, refer to our [developer documentation](https://developers.cloudflare.com/cloudflare-one/identity/idp-integration/).
+/// * [id] - UUID.
+/// * [scimConfig] 
 @BuiltValue()
 abstract class AccessIdentityProvidersComponentsSchemasResponseCollectionAllOfResult implements Built<AccessIdentityProvidersComponentsSchemasResponseCollectionAllOfResult, AccessIdentityProvidersComponentsSchemasResponseCollectionAllOfResultBuilder> {
   /// Any Of [AccessSchemasAzureAD], [AccessSchemasCentrify], [AccessSchemasFacebook], [AccessSchemasGithub], [AccessSchemasGoogle], [AccessSchemasGoogleApps], [AccessSchemasLinkedin], [AccessSchemasOidc], [AccessSchemasOkta], [AccessSchemasOnelogin], [AccessSchemasOnetimepin], [AccessSchemasPingone], [AccessSchemasSaml], [AccessSchemasYandex]

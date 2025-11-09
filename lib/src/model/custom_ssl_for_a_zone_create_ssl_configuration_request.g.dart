@@ -9,15 +9,15 @@ part of 'custom_ssl_for_a_zone_create_ssl_configuration_request.dart';
 class _$CustomSslForAZoneCreateSslConfigurationRequest
     extends CustomSslForAZoneCreateSslConfigurationRequest {
   @override
-  final TlsCertificatesAndHostnamesBundleMethod? bundleMethod;
-  @override
   final String certificate;
+  @override
+  final String privateKey;
+  @override
+  final TlsCertificatesAndHostnamesBundleMethod? bundleMethod;
   @override
   final TlsCertificatesAndHostnamesGeoRestrictions? geoRestrictions;
   @override
   final String? policy;
-  @override
-  final String privateKey;
   @override
   final TlsCertificatesAndHostnamesType? type;
 
@@ -28,11 +28,11 @@ class _$CustomSslForAZoneCreateSslConfigurationRequest
           ._build();
 
   _$CustomSslForAZoneCreateSslConfigurationRequest._(
-      {this.bundleMethod,
-      required this.certificate,
+      {required this.certificate,
+      required this.privateKey,
+      this.bundleMethod,
       this.geoRestrictions,
       this.policy,
-      required this.privateKey,
       this.type})
       : super._();
   @override
@@ -49,22 +49,22 @@ class _$CustomSslForAZoneCreateSslConfigurationRequest
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is CustomSslForAZoneCreateSslConfigurationRequest &&
-        bundleMethod == other.bundleMethod &&
         certificate == other.certificate &&
+        privateKey == other.privateKey &&
+        bundleMethod == other.bundleMethod &&
         geoRestrictions == other.geoRestrictions &&
         policy == other.policy &&
-        privateKey == other.privateKey &&
         type == other.type;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, bundleMethod.hashCode);
     _$hash = $jc(_$hash, certificate.hashCode);
+    _$hash = $jc(_$hash, privateKey.hashCode);
+    _$hash = $jc(_$hash, bundleMethod.hashCode);
     _$hash = $jc(_$hash, geoRestrictions.hashCode);
     _$hash = $jc(_$hash, policy.hashCode);
-    _$hash = $jc(_$hash, privateKey.hashCode);
     _$hash = $jc(_$hash, type.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
@@ -74,11 +74,11 @@ class _$CustomSslForAZoneCreateSslConfigurationRequest
   String toString() {
     return (newBuiltValueToStringHelper(
             r'CustomSslForAZoneCreateSslConfigurationRequest')
-          ..add('bundleMethod', bundleMethod)
           ..add('certificate', certificate)
+          ..add('privateKey', privateKey)
+          ..add('bundleMethod', bundleMethod)
           ..add('geoRestrictions', geoRestrictions)
           ..add('policy', policy)
-          ..add('privateKey', privateKey)
           ..add('type', type))
         .toString();
   }
@@ -90,15 +90,19 @@ class CustomSslForAZoneCreateSslConfigurationRequestBuilder
             CustomSslForAZoneCreateSslConfigurationRequestBuilder> {
   _$CustomSslForAZoneCreateSslConfigurationRequest? _$v;
 
+  String? _certificate;
+  String? get certificate => _$this._certificate;
+  set certificate(String? certificate) => _$this._certificate = certificate;
+
+  String? _privateKey;
+  String? get privateKey => _$this._privateKey;
+  set privateKey(String? privateKey) => _$this._privateKey = privateKey;
+
   TlsCertificatesAndHostnamesBundleMethod? _bundleMethod;
   TlsCertificatesAndHostnamesBundleMethod? get bundleMethod =>
       _$this._bundleMethod;
   set bundleMethod(TlsCertificatesAndHostnamesBundleMethod? bundleMethod) =>
       _$this._bundleMethod = bundleMethod;
-
-  String? _certificate;
-  String? get certificate => _$this._certificate;
-  set certificate(String? certificate) => _$this._certificate = certificate;
 
   TlsCertificatesAndHostnamesGeoRestrictionsBuilder? _geoRestrictions;
   TlsCertificatesAndHostnamesGeoRestrictionsBuilder get geoRestrictions =>
@@ -112,10 +116,6 @@ class CustomSslForAZoneCreateSslConfigurationRequestBuilder
   String? get policy => _$this._policy;
   set policy(String? policy) => _$this._policy = policy;
 
-  String? _privateKey;
-  String? get privateKey => _$this._privateKey;
-  set privateKey(String? privateKey) => _$this._privateKey = privateKey;
-
   TlsCertificatesAndHostnamesType? _type;
   TlsCertificatesAndHostnamesType? get type => _$this._type;
   set type(TlsCertificatesAndHostnamesType? type) => _$this._type = type;
@@ -127,11 +127,11 @@ class CustomSslForAZoneCreateSslConfigurationRequestBuilder
   CustomSslForAZoneCreateSslConfigurationRequestBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _bundleMethod = $v.bundleMethod;
       _certificate = $v.certificate;
+      _privateKey = $v.privateKey;
+      _bundleMethod = $v.bundleMethod;
       _geoRestrictions = $v.geoRestrictions?.toBuilder();
       _policy = $v.policy;
-      _privateKey = $v.privateKey;
       _type = $v.type;
       _$v = null;
     }
@@ -158,17 +158,17 @@ class CustomSslForAZoneCreateSslConfigurationRequestBuilder
     try {
       _$result = _$v ??
           _$CustomSslForAZoneCreateSslConfigurationRequest._(
-            bundleMethod: bundleMethod,
             certificate: BuiltValueNullFieldError.checkNotNull(
                 certificate,
                 r'CustomSslForAZoneCreateSslConfigurationRequest',
                 'certificate'),
-            geoRestrictions: _geoRestrictions?.build(),
-            policy: policy,
             privateKey: BuiltValueNullFieldError.checkNotNull(
                 privateKey,
                 r'CustomSslForAZoneCreateSslConfigurationRequest',
                 'privateKey'),
+            bundleMethod: bundleMethod,
+            geoRestrictions: _geoRestrictions?.build(),
+            policy: policy,
             type: type,
           );
     } catch (_) {

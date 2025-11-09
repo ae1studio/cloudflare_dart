@@ -9,11 +9,11 @@ part of 'teams_devices_registration_device_details.dart';
 class _$TeamsDevicesRegistrationDeviceDetails
     extends TeamsDevicesRegistrationDeviceDetails {
   @override
-  final String? clientVersion;
-  @override
   final String id;
   @override
   final String name;
+  @override
+  final String? clientVersion;
 
   factory _$TeamsDevicesRegistrationDeviceDetails(
           [void Function(TeamsDevicesRegistrationDeviceDetailsBuilder)?
@@ -22,7 +22,7 @@ class _$TeamsDevicesRegistrationDeviceDetails
           ._build();
 
   _$TeamsDevicesRegistrationDeviceDetails._(
-      {this.clientVersion, required this.id, required this.name})
+      {required this.id, required this.name, this.clientVersion})
       : super._();
   @override
   TeamsDevicesRegistrationDeviceDetails rebuild(
@@ -38,17 +38,17 @@ class _$TeamsDevicesRegistrationDeviceDetails
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is TeamsDevicesRegistrationDeviceDetails &&
-        clientVersion == other.clientVersion &&
         id == other.id &&
-        name == other.name;
+        name == other.name &&
+        clientVersion == other.clientVersion;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, clientVersion.hashCode);
     _$hash = $jc(_$hash, id.hashCode);
     _$hash = $jc(_$hash, name.hashCode);
+    _$hash = $jc(_$hash, clientVersion.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -57,9 +57,9 @@ class _$TeamsDevicesRegistrationDeviceDetails
   String toString() {
     return (newBuiltValueToStringHelper(
             r'TeamsDevicesRegistrationDeviceDetails')
-          ..add('clientVersion', clientVersion)
           ..add('id', id)
-          ..add('name', name))
+          ..add('name', name)
+          ..add('clientVersion', clientVersion))
         .toString();
   }
 }
@@ -70,11 +70,6 @@ class TeamsDevicesRegistrationDeviceDetailsBuilder
             TeamsDevicesRegistrationDeviceDetailsBuilder> {
   _$TeamsDevicesRegistrationDeviceDetails? _$v;
 
-  String? _clientVersion;
-  String? get clientVersion => _$this._clientVersion;
-  set clientVersion(String? clientVersion) =>
-      _$this._clientVersion = clientVersion;
-
   String? _id;
   String? get id => _$this._id;
   set id(String? id) => _$this._id = id;
@@ -83,6 +78,11 @@ class TeamsDevicesRegistrationDeviceDetailsBuilder
   String? get name => _$this._name;
   set name(String? name) => _$this._name = name;
 
+  String? _clientVersion;
+  String? get clientVersion => _$this._clientVersion;
+  set clientVersion(String? clientVersion) =>
+      _$this._clientVersion = clientVersion;
+
   TeamsDevicesRegistrationDeviceDetailsBuilder() {
     TeamsDevicesRegistrationDeviceDetails._defaults(this);
   }
@@ -90,9 +90,9 @@ class TeamsDevicesRegistrationDeviceDetailsBuilder
   TeamsDevicesRegistrationDeviceDetailsBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _clientVersion = $v.clientVersion;
       _id = $v.id;
       _name = $v.name;
+      _clientVersion = $v.clientVersion;
       _$v = null;
     }
     return this;
@@ -115,11 +115,11 @@ class TeamsDevicesRegistrationDeviceDetailsBuilder
   _$TeamsDevicesRegistrationDeviceDetails _build() {
     final _$result = _$v ??
         _$TeamsDevicesRegistrationDeviceDetails._(
-          clientVersion: clientVersion,
           id: BuiltValueNullFieldError.checkNotNull(
               id, r'TeamsDevicesRegistrationDeviceDetails', 'id'),
           name: BuiltValueNullFieldError.checkNotNull(
               name, r'TeamsDevicesRegistrationDeviceDetails', 'name'),
+          clientVersion: clientVersion,
         );
     replace(_$result);
     return _$result;

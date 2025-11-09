@@ -80,29 +80,29 @@ class _$McpPortalsApiCreateServersRequestAuthTypeEnumSerializer
 class _$McpPortalsApiCreateServersRequest
     extends McpPortalsApiCreateServersRequest {
   @override
-  final String? authCredentials;
-  @override
   final McpPortalsApiCreateServersRequestAuthTypeEnum authType;
-  @override
-  final String? description;
   @override
   final String hostname;
   @override
   final String id;
   @override
   final String name;
+  @override
+  final String? authCredentials;
+  @override
+  final String? description;
 
   factory _$McpPortalsApiCreateServersRequest(
           [void Function(McpPortalsApiCreateServersRequestBuilder)? updates]) =>
       (McpPortalsApiCreateServersRequestBuilder()..update(updates))._build();
 
   _$McpPortalsApiCreateServersRequest._(
-      {this.authCredentials,
-      required this.authType,
-      this.description,
+      {required this.authType,
       required this.hostname,
       required this.id,
-      required this.name})
+      required this.name,
+      this.authCredentials,
+      this.description})
       : super._();
   @override
   McpPortalsApiCreateServersRequest rebuild(
@@ -117,23 +117,23 @@ class _$McpPortalsApiCreateServersRequest
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is McpPortalsApiCreateServersRequest &&
-        authCredentials == other.authCredentials &&
         authType == other.authType &&
-        description == other.description &&
         hostname == other.hostname &&
         id == other.id &&
-        name == other.name;
+        name == other.name &&
+        authCredentials == other.authCredentials &&
+        description == other.description;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, authCredentials.hashCode);
     _$hash = $jc(_$hash, authType.hashCode);
-    _$hash = $jc(_$hash, description.hashCode);
     _$hash = $jc(_$hash, hostname.hashCode);
     _$hash = $jc(_$hash, id.hashCode);
     _$hash = $jc(_$hash, name.hashCode);
+    _$hash = $jc(_$hash, authCredentials.hashCode);
+    _$hash = $jc(_$hash, description.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -141,12 +141,12 @@ class _$McpPortalsApiCreateServersRequest
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'McpPortalsApiCreateServersRequest')
-          ..add('authCredentials', authCredentials)
           ..add('authType', authType)
-          ..add('description', description)
           ..add('hostname', hostname)
           ..add('id', id)
-          ..add('name', name))
+          ..add('name', name)
+          ..add('authCredentials', authCredentials)
+          ..add('description', description))
         .toString();
   }
 }
@@ -157,20 +157,11 @@ class McpPortalsApiCreateServersRequestBuilder
             McpPortalsApiCreateServersRequestBuilder> {
   _$McpPortalsApiCreateServersRequest? _$v;
 
-  String? _authCredentials;
-  String? get authCredentials => _$this._authCredentials;
-  set authCredentials(String? authCredentials) =>
-      _$this._authCredentials = authCredentials;
-
   McpPortalsApiCreateServersRequestAuthTypeEnum? _authType;
   McpPortalsApiCreateServersRequestAuthTypeEnum? get authType =>
       _$this._authType;
   set authType(McpPortalsApiCreateServersRequestAuthTypeEnum? authType) =>
       _$this._authType = authType;
-
-  String? _description;
-  String? get description => _$this._description;
-  set description(String? description) => _$this._description = description;
 
   String? _hostname;
   String? get hostname => _$this._hostname;
@@ -184,6 +175,15 @@ class McpPortalsApiCreateServersRequestBuilder
   String? get name => _$this._name;
   set name(String? name) => _$this._name = name;
 
+  String? _authCredentials;
+  String? get authCredentials => _$this._authCredentials;
+  set authCredentials(String? authCredentials) =>
+      _$this._authCredentials = authCredentials;
+
+  String? _description;
+  String? get description => _$this._description;
+  set description(String? description) => _$this._description = description;
+
   McpPortalsApiCreateServersRequestBuilder() {
     McpPortalsApiCreateServersRequest._defaults(this);
   }
@@ -191,12 +191,12 @@ class McpPortalsApiCreateServersRequestBuilder
   McpPortalsApiCreateServersRequestBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _authCredentials = $v.authCredentials;
       _authType = $v.authType;
-      _description = $v.description;
       _hostname = $v.hostname;
       _id = $v.id;
       _name = $v.name;
+      _authCredentials = $v.authCredentials;
+      _description = $v.description;
       _$v = null;
     }
     return this;
@@ -219,16 +219,16 @@ class McpPortalsApiCreateServersRequestBuilder
   _$McpPortalsApiCreateServersRequest _build() {
     final _$result = _$v ??
         _$McpPortalsApiCreateServersRequest._(
-          authCredentials: authCredentials,
           authType: BuiltValueNullFieldError.checkNotNull(
               authType, r'McpPortalsApiCreateServersRequest', 'authType'),
-          description: description,
           hostname: BuiltValueNullFieldError.checkNotNull(
               hostname, r'McpPortalsApiCreateServersRequest', 'hostname'),
           id: BuiltValueNullFieldError.checkNotNull(
               id, r'McpPortalsApiCreateServersRequest', 'id'),
           name: BuiltValueNullFieldError.checkNotNull(
               name, r'McpPortalsApiCreateServersRequest', 'name'),
+          authCredentials: authCredentials,
+          description: description,
         );
     replace(_$result);
     return _$result;

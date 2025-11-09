@@ -8,17 +8,17 @@ part of 'image_text_to_text_one_of.dart';
 
 class _$ImageTextToTextOneOf extends ImageTextToTextOneOf {
   @override
+  final String image;
+  @override
+  final String prompt;
+  @override
   final num? frequencyPenalty;
   @override
   final bool? ignoreEos;
   @override
-  final String image;
-  @override
   final int? maxTokens;
   @override
   final num? presencePenalty;
-  @override
-  final String prompt;
   @override
   final num? repetitionPenalty;
   @override
@@ -35,12 +35,12 @@ class _$ImageTextToTextOneOf extends ImageTextToTextOneOf {
       (ImageTextToTextOneOfBuilder()..update(updates))._build();
 
   _$ImageTextToTextOneOf._(
-      {this.frequencyPenalty,
+      {required this.image,
+      required this.prompt,
+      this.frequencyPenalty,
       this.ignoreEos,
-      required this.image,
       this.maxTokens,
       this.presencePenalty,
-      required this.prompt,
       this.repetitionPenalty,
       this.seed,
       this.temperature,
@@ -60,12 +60,12 @@ class _$ImageTextToTextOneOf extends ImageTextToTextOneOf {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is ImageTextToTextOneOf &&
+        image == other.image &&
+        prompt == other.prompt &&
         frequencyPenalty == other.frequencyPenalty &&
         ignoreEos == other.ignoreEos &&
-        image == other.image &&
         maxTokens == other.maxTokens &&
         presencePenalty == other.presencePenalty &&
-        prompt == other.prompt &&
         repetitionPenalty == other.repetitionPenalty &&
         seed == other.seed &&
         temperature == other.temperature &&
@@ -76,12 +76,12 @@ class _$ImageTextToTextOneOf extends ImageTextToTextOneOf {
   @override
   int get hashCode {
     var _$hash = 0;
+    _$hash = $jc(_$hash, image.hashCode);
+    _$hash = $jc(_$hash, prompt.hashCode);
     _$hash = $jc(_$hash, frequencyPenalty.hashCode);
     _$hash = $jc(_$hash, ignoreEos.hashCode);
-    _$hash = $jc(_$hash, image.hashCode);
     _$hash = $jc(_$hash, maxTokens.hashCode);
     _$hash = $jc(_$hash, presencePenalty.hashCode);
-    _$hash = $jc(_$hash, prompt.hashCode);
     _$hash = $jc(_$hash, repetitionPenalty.hashCode);
     _$hash = $jc(_$hash, seed.hashCode);
     _$hash = $jc(_$hash, temperature.hashCode);
@@ -94,12 +94,12 @@ class _$ImageTextToTextOneOf extends ImageTextToTextOneOf {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'ImageTextToTextOneOf')
+          ..add('image', image)
+          ..add('prompt', prompt)
           ..add('frequencyPenalty', frequencyPenalty)
           ..add('ignoreEos', ignoreEos)
-          ..add('image', image)
           ..add('maxTokens', maxTokens)
           ..add('presencePenalty', presencePenalty)
-          ..add('prompt', prompt)
           ..add('repetitionPenalty', repetitionPenalty)
           ..add('seed', seed)
           ..add('temperature', temperature)
@@ -113,6 +113,14 @@ class ImageTextToTextOneOfBuilder
     implements Builder<ImageTextToTextOneOf, ImageTextToTextOneOfBuilder> {
   _$ImageTextToTextOneOf? _$v;
 
+  String? _image;
+  String? get image => _$this._image;
+  set image(String? image) => _$this._image = image;
+
+  String? _prompt;
+  String? get prompt => _$this._prompt;
+  set prompt(String? prompt) => _$this._prompt = prompt;
+
   num? _frequencyPenalty;
   num? get frequencyPenalty => _$this._frequencyPenalty;
   set frequencyPenalty(num? frequencyPenalty) =>
@@ -122,10 +130,6 @@ class ImageTextToTextOneOfBuilder
   bool? get ignoreEos => _$this._ignoreEos;
   set ignoreEos(bool? ignoreEos) => _$this._ignoreEos = ignoreEos;
 
-  String? _image;
-  String? get image => _$this._image;
-  set image(String? image) => _$this._image = image;
-
   int? _maxTokens;
   int? get maxTokens => _$this._maxTokens;
   set maxTokens(int? maxTokens) => _$this._maxTokens = maxTokens;
@@ -134,10 +138,6 @@ class ImageTextToTextOneOfBuilder
   num? get presencePenalty => _$this._presencePenalty;
   set presencePenalty(num? presencePenalty) =>
       _$this._presencePenalty = presencePenalty;
-
-  String? _prompt;
-  String? get prompt => _$this._prompt;
-  set prompt(String? prompt) => _$this._prompt = prompt;
 
   num? _repetitionPenalty;
   num? get repetitionPenalty => _$this._repetitionPenalty;
@@ -167,12 +167,12 @@ class ImageTextToTextOneOfBuilder
   ImageTextToTextOneOfBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
+      _image = $v.image;
+      _prompt = $v.prompt;
       _frequencyPenalty = $v.frequencyPenalty;
       _ignoreEos = $v.ignoreEos;
-      _image = $v.image;
       _maxTokens = $v.maxTokens;
       _presencePenalty = $v.presencePenalty;
-      _prompt = $v.prompt;
       _repetitionPenalty = $v.repetitionPenalty;
       _seed = $v.seed;
       _temperature = $v.temperature;
@@ -199,14 +199,14 @@ class ImageTextToTextOneOfBuilder
   _$ImageTextToTextOneOf _build() {
     final _$result = _$v ??
         _$ImageTextToTextOneOf._(
-          frequencyPenalty: frequencyPenalty,
-          ignoreEos: ignoreEos,
           image: BuiltValueNullFieldError.checkNotNull(
               image, r'ImageTextToTextOneOf', 'image'),
-          maxTokens: maxTokens,
-          presencePenalty: presencePenalty,
           prompt: BuiltValueNullFieldError.checkNotNull(
               prompt, r'ImageTextToTextOneOf', 'prompt'),
+          frequencyPenalty: frequencyPenalty,
+          ignoreEos: ignoreEos,
+          maxTokens: maxTokens,
+          presencePenalty: presencePenalty,
           repetitionPenalty: repetitionPenalty,
           seed: seed,
           temperature: temperature,

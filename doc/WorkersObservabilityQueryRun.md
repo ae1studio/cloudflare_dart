@@ -9,18 +9,18 @@ import 'package:cloudflare_dart/api.dart';
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **accountId** | **String** |  | 
-**created** | **String** |  | [optional] 
 **dry** | **bool** |  | 
 **environmentId** | **String** |  | 
 **granularity** | **num** |  | 
 **id** | **String** |  | 
 **query** | [**WorkersObservabilityQuery**](WorkersObservabilityQuery.md) |  | 
-**statistics** | [**WorkersObservabilityQueryRunStatistics**](WorkersObservabilityQueryRunStatistics.md) |  | [optional] 
 **status** | **String** |  | 
 **timeframe** | [**WorkersObservabilityQueryRunTimeframe**](WorkersObservabilityQueryRunTimeframe.md) |  | 
-**updated** | **String** |  | [optional] 
 **userId** | **String** |  | 
 **workspaceId** | **String** |  | 
+**created** | **String** |  | [optional] 
+**statistics** | [**WorkersObservabilityQueryRunStatistics**](WorkersObservabilityQueryRunStatistics.md) |  | [optional] 
+**updated** | **String** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

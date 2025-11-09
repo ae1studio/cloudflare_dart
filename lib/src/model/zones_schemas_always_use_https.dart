@@ -8,16 +8,17 @@ import 'package:built_collection/built_collection.dart';
 import 'package:cloudflare_dart/src/model/zones_base.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
+import 'package:built_value/json_object.dart';
 
 part 'zones_schemas_always_use_https.g.dart';
 
 /// Reply to all requests for URLs that use \"http\" with a 301 redirect to the equivalent \"https\" URL. If you only want to redirect for a subset of requests, consider creating an \"Always use HTTPS\" page rule.
 ///
 /// Properties:
-/// * [editable] - Whether or not this setting can be modified for this zone (based on your Cloudflare plan level).
 /// * [id] - ID of the zone setting.
-/// * [modifiedOn] - last time this setting was modified.
 /// * [value] 
+/// * [editable] - Whether or not this setting can be modified for this zone (based on your Cloudflare plan level).
+/// * [modifiedOn] - last time this setting was modified.
 @BuiltValue()
 abstract class ZonesSchemasAlwaysUseHttps implements ZonesBase, Built<ZonesSchemasAlwaysUseHttps, ZonesSchemasAlwaysUseHttpsBuilder> {
   ZonesSchemasAlwaysUseHttps._();

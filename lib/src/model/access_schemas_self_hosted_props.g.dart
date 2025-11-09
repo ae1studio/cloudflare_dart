@@ -9,6 +9,12 @@ part of 'access_schemas_self_hosted_props.dart';
 abstract class AccessSchemasSelfHostedPropsBuilder {
   void replace(AccessSchemasSelfHostedProps other);
   void update(void Function(AccessSchemasSelfHostedPropsBuilder) updates);
+  String? get domain;
+  set domain(String? domain);
+
+  String? get type;
+  set type(String? type);
+
   bool? get allowIframe;
   set allowIframe(bool? allowIframe);
 
@@ -29,9 +35,6 @@ abstract class AccessSchemasSelfHostedPropsBuilder {
 
   String? get customDenyUrl;
   set customDenyUrl(String? customDenyUrl);
-
-  String? get domain;
-  set domain(String? domain);
 
   bool? get enableBindingCookie;
   set enableBindingCookie(bool? enableBindingCookie);
@@ -59,12 +62,13 @@ abstract class AccessSchemasSelfHostedPropsBuilder {
 
   bool? get skipInterstitial;
   set skipInterstitial(bool? skipInterstitial);
-
-  String? get type;
-  set type(String? type);
 }
 
 class _$$AccessSchemasSelfHostedProps extends $AccessSchemasSelfHostedProps {
+  @override
+  final String domain;
+  @override
+  final String type;
   @override
   final bool? allowIframe;
   @override
@@ -79,8 +83,6 @@ class _$$AccessSchemasSelfHostedProps extends $AccessSchemasSelfHostedProps {
   final String? customDenyMessage;
   @override
   final String? customDenyUrl;
-  @override
-  final String domain;
   @override
   final bool? enableBindingCookie;
   @override
@@ -99,22 +101,21 @@ class _$$AccessSchemasSelfHostedProps extends $AccessSchemasSelfHostedProps {
   final String? sessionDuration;
   @override
   final bool? skipInterstitial;
-  @override
-  final String type;
 
   factory _$$AccessSchemasSelfHostedProps(
           [void Function($AccessSchemasSelfHostedPropsBuilder)? updates]) =>
       ($AccessSchemasSelfHostedPropsBuilder()..update(updates))._build();
 
   _$$AccessSchemasSelfHostedProps._(
-      {this.allowIframe,
+      {required this.domain,
+      required this.type,
+      this.allowIframe,
       this.allowedIdps,
       this.appLauncherVisible,
       this.autoRedirectToIdentity,
       this.corsHeaders,
       this.customDenyMessage,
       this.customDenyUrl,
-      required this.domain,
       this.enableBindingCookie,
       this.httpOnlyCookieAttribute,
       this.logoUrl,
@@ -123,8 +124,7 @@ class _$$AccessSchemasSelfHostedProps extends $AccessSchemasSelfHostedProps {
       this.sameSiteCookieAttribute,
       this.serviceAuth401Redirect,
       this.sessionDuration,
-      this.skipInterstitial,
-      required this.type})
+      this.skipInterstitial})
       : super._();
   @override
   $AccessSchemasSelfHostedProps rebuild(
@@ -139,6 +139,8 @@ class _$$AccessSchemasSelfHostedProps extends $AccessSchemasSelfHostedProps {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is $AccessSchemasSelfHostedProps &&
+        domain == other.domain &&
+        type == other.type &&
         allowIframe == other.allowIframe &&
         allowedIdps == other.allowedIdps &&
         appLauncherVisible == other.appLauncherVisible &&
@@ -146,7 +148,6 @@ class _$$AccessSchemasSelfHostedProps extends $AccessSchemasSelfHostedProps {
         corsHeaders == other.corsHeaders &&
         customDenyMessage == other.customDenyMessage &&
         customDenyUrl == other.customDenyUrl &&
-        domain == other.domain &&
         enableBindingCookie == other.enableBindingCookie &&
         httpOnlyCookieAttribute == other.httpOnlyCookieAttribute &&
         logoUrl == other.logoUrl &&
@@ -155,13 +156,14 @@ class _$$AccessSchemasSelfHostedProps extends $AccessSchemasSelfHostedProps {
         sameSiteCookieAttribute == other.sameSiteCookieAttribute &&
         serviceAuth401Redirect == other.serviceAuth401Redirect &&
         sessionDuration == other.sessionDuration &&
-        skipInterstitial == other.skipInterstitial &&
-        type == other.type;
+        skipInterstitial == other.skipInterstitial;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
+    _$hash = $jc(_$hash, domain.hashCode);
+    _$hash = $jc(_$hash, type.hashCode);
     _$hash = $jc(_$hash, allowIframe.hashCode);
     _$hash = $jc(_$hash, allowedIdps.hashCode);
     _$hash = $jc(_$hash, appLauncherVisible.hashCode);
@@ -169,7 +171,6 @@ class _$$AccessSchemasSelfHostedProps extends $AccessSchemasSelfHostedProps {
     _$hash = $jc(_$hash, corsHeaders.hashCode);
     _$hash = $jc(_$hash, customDenyMessage.hashCode);
     _$hash = $jc(_$hash, customDenyUrl.hashCode);
-    _$hash = $jc(_$hash, domain.hashCode);
     _$hash = $jc(_$hash, enableBindingCookie.hashCode);
     _$hash = $jc(_$hash, httpOnlyCookieAttribute.hashCode);
     _$hash = $jc(_$hash, logoUrl.hashCode);
@@ -179,7 +180,6 @@ class _$$AccessSchemasSelfHostedProps extends $AccessSchemasSelfHostedProps {
     _$hash = $jc(_$hash, serviceAuth401Redirect.hashCode);
     _$hash = $jc(_$hash, sessionDuration.hashCode);
     _$hash = $jc(_$hash, skipInterstitial.hashCode);
-    _$hash = $jc(_$hash, type.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -187,6 +187,8 @@ class _$$AccessSchemasSelfHostedProps extends $AccessSchemasSelfHostedProps {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'$AccessSchemasSelfHostedProps')
+          ..add('domain', domain)
+          ..add('type', type)
           ..add('allowIframe', allowIframe)
           ..add('allowedIdps', allowedIdps)
           ..add('appLauncherVisible', appLauncherVisible)
@@ -194,7 +196,6 @@ class _$$AccessSchemasSelfHostedProps extends $AccessSchemasSelfHostedProps {
           ..add('corsHeaders', corsHeaders)
           ..add('customDenyMessage', customDenyMessage)
           ..add('customDenyUrl', customDenyUrl)
-          ..add('domain', domain)
           ..add('enableBindingCookie', enableBindingCookie)
           ..add('httpOnlyCookieAttribute', httpOnlyCookieAttribute)
           ..add('logoUrl', logoUrl)
@@ -203,8 +204,7 @@ class _$$AccessSchemasSelfHostedProps extends $AccessSchemasSelfHostedProps {
           ..add('sameSiteCookieAttribute', sameSiteCookieAttribute)
           ..add('serviceAuth401Redirect', serviceAuth401Redirect)
           ..add('sessionDuration', sessionDuration)
-          ..add('skipInterstitial', skipInterstitial)
-          ..add('type', type))
+          ..add('skipInterstitial', skipInterstitial))
         .toString();
   }
 }
@@ -215,6 +215,14 @@ class $AccessSchemasSelfHostedPropsBuilder
             $AccessSchemasSelfHostedPropsBuilder>,
         AccessSchemasSelfHostedPropsBuilder {
   _$$AccessSchemasSelfHostedProps? _$v;
+
+  String? _domain;
+  String? get domain => _$this._domain;
+  set domain(covariant String? domain) => _$this._domain = domain;
+
+  String? _type;
+  String? get type => _$this._type;
+  set type(covariant String? type) => _$this._type = type;
 
   bool? _allowIframe;
   bool? get allowIframe => _$this._allowIframe;
@@ -252,10 +260,6 @@ class $AccessSchemasSelfHostedPropsBuilder
   String? get customDenyUrl => _$this._customDenyUrl;
   set customDenyUrl(covariant String? customDenyUrl) =>
       _$this._customDenyUrl = customDenyUrl;
-
-  String? _domain;
-  String? get domain => _$this._domain;
-  set domain(covariant String? domain) => _$this._domain = domain;
 
   bool? _enableBindingCookie;
   bool? get enableBindingCookie => _$this._enableBindingCookie;
@@ -300,10 +304,6 @@ class $AccessSchemasSelfHostedPropsBuilder
   set skipInterstitial(covariant bool? skipInterstitial) =>
       _$this._skipInterstitial = skipInterstitial;
 
-  String? _type;
-  String? get type => _$this._type;
-  set type(covariant String? type) => _$this._type = type;
-
   $AccessSchemasSelfHostedPropsBuilder() {
     $AccessSchemasSelfHostedProps._defaults(this);
   }
@@ -311,6 +311,8 @@ class $AccessSchemasSelfHostedPropsBuilder
   $AccessSchemasSelfHostedPropsBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
+      _domain = $v.domain;
+      _type = $v.type;
       _allowIframe = $v.allowIframe;
       _allowedIdps = $v.allowedIdps?.toBuilder();
       _appLauncherVisible = $v.appLauncherVisible;
@@ -318,7 +320,6 @@ class $AccessSchemasSelfHostedPropsBuilder
       _corsHeaders = $v.corsHeaders?.toBuilder();
       _customDenyMessage = $v.customDenyMessage;
       _customDenyUrl = $v.customDenyUrl;
-      _domain = $v.domain;
       _enableBindingCookie = $v.enableBindingCookie;
       _httpOnlyCookieAttribute = $v.httpOnlyCookieAttribute;
       _logoUrl = $v.logoUrl;
@@ -328,7 +329,6 @@ class $AccessSchemasSelfHostedPropsBuilder
       _serviceAuth401Redirect = $v.serviceAuth401Redirect;
       _sessionDuration = $v.sessionDuration;
       _skipInterstitial = $v.skipInterstitial;
-      _type = $v.type;
       _$v = null;
     }
     return this;
@@ -352,6 +352,10 @@ class $AccessSchemasSelfHostedPropsBuilder
     try {
       _$result = _$v ??
           _$$AccessSchemasSelfHostedProps._(
+            domain: BuiltValueNullFieldError.checkNotNull(
+                domain, r'$AccessSchemasSelfHostedProps', 'domain'),
+            type: BuiltValueNullFieldError.checkNotNull(
+                type, r'$AccessSchemasSelfHostedProps', 'type'),
             allowIframe: allowIframe,
             allowedIdps: _allowedIdps?.build(),
             appLauncherVisible: appLauncherVisible,
@@ -359,8 +363,6 @@ class $AccessSchemasSelfHostedPropsBuilder
             corsHeaders: _corsHeaders?.build(),
             customDenyMessage: customDenyMessage,
             customDenyUrl: customDenyUrl,
-            domain: BuiltValueNullFieldError.checkNotNull(
-                domain, r'$AccessSchemasSelfHostedProps', 'domain'),
             enableBindingCookie: enableBindingCookie,
             httpOnlyCookieAttribute: httpOnlyCookieAttribute,
             logoUrl: logoUrl,
@@ -370,8 +372,6 @@ class $AccessSchemasSelfHostedPropsBuilder
             serviceAuth401Redirect: serviceAuth401Redirect,
             sessionDuration: sessionDuration,
             skipInterstitial: skipInterstitial,
-            type: BuiltValueNullFieldError.checkNotNull(
-                type, r'$AccessSchemasSelfHostedProps', 'type'),
           );
     } catch (_) {
       late String _$failedField;

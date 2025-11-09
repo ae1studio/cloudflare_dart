@@ -10,16 +10,16 @@ class _$DlpUpdateIntegrationBody extends DlpUpdateIntegrationBody {
   @override
   final bool active;
   @override
-  final String? referenceId;
-  @override
   final String tenantUrl;
+  @override
+  final String? referenceId;
 
   factory _$DlpUpdateIntegrationBody(
           [void Function(DlpUpdateIntegrationBodyBuilder)? updates]) =>
       (DlpUpdateIntegrationBodyBuilder()..update(updates))._build();
 
   _$DlpUpdateIntegrationBody._(
-      {required this.active, this.referenceId, required this.tenantUrl})
+      {required this.active, required this.tenantUrl, this.referenceId})
       : super._();
   @override
   DlpUpdateIntegrationBody rebuild(
@@ -35,16 +35,16 @@ class _$DlpUpdateIntegrationBody extends DlpUpdateIntegrationBody {
     if (identical(other, this)) return true;
     return other is DlpUpdateIntegrationBody &&
         active == other.active &&
-        referenceId == other.referenceId &&
-        tenantUrl == other.tenantUrl;
+        tenantUrl == other.tenantUrl &&
+        referenceId == other.referenceId;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
     _$hash = $jc(_$hash, active.hashCode);
-    _$hash = $jc(_$hash, referenceId.hashCode);
     _$hash = $jc(_$hash, tenantUrl.hashCode);
+    _$hash = $jc(_$hash, referenceId.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -53,8 +53,8 @@ class _$DlpUpdateIntegrationBody extends DlpUpdateIntegrationBody {
   String toString() {
     return (newBuiltValueToStringHelper(r'DlpUpdateIntegrationBody')
           ..add('active', active)
-          ..add('referenceId', referenceId)
-          ..add('tenantUrl', tenantUrl))
+          ..add('tenantUrl', tenantUrl)
+          ..add('referenceId', referenceId))
         .toString();
   }
 }
@@ -68,13 +68,13 @@ class DlpUpdateIntegrationBodyBuilder
   bool? get active => _$this._active;
   set active(bool? active) => _$this._active = active;
 
-  String? _referenceId;
-  String? get referenceId => _$this._referenceId;
-  set referenceId(String? referenceId) => _$this._referenceId = referenceId;
-
   String? _tenantUrl;
   String? get tenantUrl => _$this._tenantUrl;
   set tenantUrl(String? tenantUrl) => _$this._tenantUrl = tenantUrl;
+
+  String? _referenceId;
+  String? get referenceId => _$this._referenceId;
+  set referenceId(String? referenceId) => _$this._referenceId = referenceId;
 
   DlpUpdateIntegrationBodyBuilder() {
     DlpUpdateIntegrationBody._defaults(this);
@@ -84,8 +84,8 @@ class DlpUpdateIntegrationBodyBuilder
     final $v = _$v;
     if ($v != null) {
       _active = $v.active;
-      _referenceId = $v.referenceId;
       _tenantUrl = $v.tenantUrl;
+      _referenceId = $v.referenceId;
       _$v = null;
     }
     return this;
@@ -109,9 +109,9 @@ class DlpUpdateIntegrationBodyBuilder
         _$DlpUpdateIntegrationBody._(
           active: BuiltValueNullFieldError.checkNotNull(
               active, r'DlpUpdateIntegrationBody', 'active'),
-          referenceId: referenceId,
           tenantUrl: BuiltValueNullFieldError.checkNotNull(
               tenantUrl, r'DlpUpdateIntegrationBody', 'tenantUrl'),
+          referenceId: referenceId,
         );
     replace(_$result);
     return _$result;

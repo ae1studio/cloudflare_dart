@@ -12,14 +12,23 @@ part 'workers_binding_kind_durable_object_namespace.g.dart';
 /// WorkersBindingKindDurableObjectNamespace
 ///
 /// Properties:
+/// * [name] - A JavaScript variable name for the binding.
+/// * [type] - The kind of resource that the binding provides.
 /// * [className] - The exported class name of the Durable Object.
 /// * [environment] - The environment of the script_name to bind to.
-/// * [name] - A JavaScript variable name for the binding.
 /// * [namespaceId] 
 /// * [scriptName] - The script where the Durable Object is defined, if it is external to this Worker.
-/// * [type] - The kind of resource that the binding provides.
 @BuiltValue()
 abstract class WorkersBindingKindDurableObjectNamespace implements Built<WorkersBindingKindDurableObjectNamespace, WorkersBindingKindDurableObjectNamespaceBuilder> {
+  /// A JavaScript variable name for the binding.
+  @BuiltValueField(wireName: r'name')
+  String get name;
+
+  /// The kind of resource that the binding provides.
+  @BuiltValueField(wireName: r'type')
+  WorkersBindingKindDurableObjectNamespaceTypeEnum get type;
+  // enum typeEnum {  durable_object_namespace,  };
+
   /// The exported class name of the Durable Object.
   @BuiltValueField(wireName: r'class_name')
   String? get className;
@@ -28,21 +37,12 @@ abstract class WorkersBindingKindDurableObjectNamespace implements Built<Workers
   @BuiltValueField(wireName: r'environment')
   String? get environment;
 
-  /// A JavaScript variable name for the binding.
-  @BuiltValueField(wireName: r'name')
-  String get name;
-
   @BuiltValueField(wireName: r'namespace_id')
   String? get namespaceId;
 
   /// The script where the Durable Object is defined, if it is external to this Worker.
   @BuiltValueField(wireName: r'script_name')
   String? get scriptName;
-
-  /// The kind of resource that the binding provides.
-  @BuiltValueField(wireName: r'type')
-  WorkersBindingKindDurableObjectNamespaceTypeEnum get type;
-  // enum typeEnum {  durable_object_namespace,  };
 
   WorkersBindingKindDurableObjectNamespace._();
 
@@ -67,6 +67,16 @@ class _$WorkersBindingKindDurableObjectNamespaceSerializer implements PrimitiveS
     WorkersBindingKindDurableObjectNamespace object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    yield r'name';
+    yield serializers.serialize(
+      object.name,
+      specifiedType: const FullType(String),
+    );
+    yield r'type';
+    yield serializers.serialize(
+      object.type,
+      specifiedType: const FullType(WorkersBindingKindDurableObjectNamespaceTypeEnum),
+    );
     if (object.className != null) {
       yield r'class_name';
       yield serializers.serialize(
@@ -81,11 +91,6 @@ class _$WorkersBindingKindDurableObjectNamespaceSerializer implements PrimitiveS
         specifiedType: const FullType(String),
       );
     }
-    yield r'name';
-    yield serializers.serialize(
-      object.name,
-      specifiedType: const FullType(String),
-    );
     if (object.namespaceId != null) {
       yield r'namespace_id';
       yield serializers.serialize(
@@ -100,11 +105,6 @@ class _$WorkersBindingKindDurableObjectNamespaceSerializer implements PrimitiveS
         specifiedType: const FullType(String),
       );
     }
-    yield r'type';
-    yield serializers.serialize(
-      object.type,
-      specifiedType: const FullType(WorkersBindingKindDurableObjectNamespaceTypeEnum),
-    );
   }
 
   @override
@@ -128,6 +128,20 @@ class _$WorkersBindingKindDurableObjectNamespaceSerializer implements PrimitiveS
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
+        case r'name':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.name = valueDes;
+          break;
+        case r'type':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(WorkersBindingKindDurableObjectNamespaceTypeEnum),
+          ) as WorkersBindingKindDurableObjectNamespaceTypeEnum;
+          result.type = valueDes;
+          break;
         case r'class_name':
           final valueDes = serializers.deserialize(
             value,
@@ -142,13 +156,6 @@ class _$WorkersBindingKindDurableObjectNamespaceSerializer implements PrimitiveS
           ) as String;
           result.environment = valueDes;
           break;
-        case r'name':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.name = valueDes;
-          break;
         case r'namespace_id':
           final valueDes = serializers.deserialize(
             value,
@@ -162,13 +169,6 @@ class _$WorkersBindingKindDurableObjectNamespaceSerializer implements PrimitiveS
             specifiedType: const FullType(String),
           ) as String;
           result.scriptName = valueDes;
-          break;
-        case r'type':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(WorkersBindingKindDurableObjectNamespaceTypeEnum),
-          ) as WorkersBindingKindDurableObjectNamespaceTypeEnum;
-          result.type = valueDes;
           break;
         default:
           unhandled.add(key);

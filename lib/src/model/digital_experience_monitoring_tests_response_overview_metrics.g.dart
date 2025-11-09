@@ -9,11 +9,11 @@ part of 'digital_experience_monitoring_tests_response_overview_metrics.dart';
 class _$DigitalExperienceMonitoringTestsResponseOverviewMetrics
     extends DigitalExperienceMonitoringTestsResponseOverviewMetrics {
   @override
+  final int testsTotal;
+  @override
   final double? avgHttpAvailabilityPct;
   @override
   final double? avgTracerouteAvailabilityPct;
-  @override
-  final int testsTotal;
 
   factory _$DigitalExperienceMonitoringTestsResponseOverviewMetrics(
           [void Function(
@@ -24,9 +24,9 @@ class _$DigitalExperienceMonitoringTestsResponseOverviewMetrics
           ._build();
 
   _$DigitalExperienceMonitoringTestsResponseOverviewMetrics._(
-      {this.avgHttpAvailabilityPct,
-      this.avgTracerouteAvailabilityPct,
-      required this.testsTotal})
+      {required this.testsTotal,
+      this.avgHttpAvailabilityPct,
+      this.avgTracerouteAvailabilityPct})
       : super._();
   @override
   DigitalExperienceMonitoringTestsResponseOverviewMetrics rebuild(
@@ -44,17 +44,17 @@ class _$DigitalExperienceMonitoringTestsResponseOverviewMetrics
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is DigitalExperienceMonitoringTestsResponseOverviewMetrics &&
+        testsTotal == other.testsTotal &&
         avgHttpAvailabilityPct == other.avgHttpAvailabilityPct &&
-        avgTracerouteAvailabilityPct == other.avgTracerouteAvailabilityPct &&
-        testsTotal == other.testsTotal;
+        avgTracerouteAvailabilityPct == other.avgTracerouteAvailabilityPct;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
+    _$hash = $jc(_$hash, testsTotal.hashCode);
     _$hash = $jc(_$hash, avgHttpAvailabilityPct.hashCode);
     _$hash = $jc(_$hash, avgTracerouteAvailabilityPct.hashCode);
-    _$hash = $jc(_$hash, testsTotal.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -63,9 +63,9 @@ class _$DigitalExperienceMonitoringTestsResponseOverviewMetrics
   String toString() {
     return (newBuiltValueToStringHelper(
             r'DigitalExperienceMonitoringTestsResponseOverviewMetrics')
+          ..add('testsTotal', testsTotal)
           ..add('avgHttpAvailabilityPct', avgHttpAvailabilityPct)
-          ..add('avgTracerouteAvailabilityPct', avgTracerouteAvailabilityPct)
-          ..add('testsTotal', testsTotal))
+          ..add('avgTracerouteAvailabilityPct', avgTracerouteAvailabilityPct))
         .toString();
   }
 }
@@ -75,6 +75,10 @@ class DigitalExperienceMonitoringTestsResponseOverviewMetricsBuilder
         Builder<DigitalExperienceMonitoringTestsResponseOverviewMetrics,
             DigitalExperienceMonitoringTestsResponseOverviewMetricsBuilder> {
   _$DigitalExperienceMonitoringTestsResponseOverviewMetrics? _$v;
+
+  int? _testsTotal;
+  int? get testsTotal => _$this._testsTotal;
+  set testsTotal(int? testsTotal) => _$this._testsTotal = testsTotal;
 
   double? _avgHttpAvailabilityPct;
   double? get avgHttpAvailabilityPct => _$this._avgHttpAvailabilityPct;
@@ -87,10 +91,6 @@ class DigitalExperienceMonitoringTestsResponseOverviewMetricsBuilder
   set avgTracerouteAvailabilityPct(double? avgTracerouteAvailabilityPct) =>
       _$this._avgTracerouteAvailabilityPct = avgTracerouteAvailabilityPct;
 
-  int? _testsTotal;
-  int? get testsTotal => _$this._testsTotal;
-  set testsTotal(int? testsTotal) => _$this._testsTotal = testsTotal;
-
   DigitalExperienceMonitoringTestsResponseOverviewMetricsBuilder() {
     DigitalExperienceMonitoringTestsResponseOverviewMetrics._defaults(this);
   }
@@ -98,9 +98,9 @@ class DigitalExperienceMonitoringTestsResponseOverviewMetricsBuilder
   DigitalExperienceMonitoringTestsResponseOverviewMetricsBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
+      _testsTotal = $v.testsTotal;
       _avgHttpAvailabilityPct = $v.avgHttpAvailabilityPct;
       _avgTracerouteAvailabilityPct = $v.avgTracerouteAvailabilityPct;
-      _testsTotal = $v.testsTotal;
       _$v = null;
     }
     return this;
@@ -125,12 +125,12 @@ class DigitalExperienceMonitoringTestsResponseOverviewMetricsBuilder
   _$DigitalExperienceMonitoringTestsResponseOverviewMetrics _build() {
     final _$result = _$v ??
         _$DigitalExperienceMonitoringTestsResponseOverviewMetrics._(
-          avgHttpAvailabilityPct: avgHttpAvailabilityPct,
-          avgTracerouteAvailabilityPct: avgTracerouteAvailabilityPct,
           testsTotal: BuiltValueNullFieldError.checkNotNull(
               testsTotal,
               r'DigitalExperienceMonitoringTestsResponseOverviewMetrics',
               'testsTotal'),
+          avgHttpAvailabilityPct: avgHttpAvailabilityPct,
+          avgTracerouteAvailabilityPct: avgTracerouteAvailabilityPct,
         );
     replace(_$result);
     return _$result;

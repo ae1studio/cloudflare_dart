@@ -10,11 +10,11 @@ abstract class ZeroTrustGatewayCustomCertificateSettingsBuilder {
   void replace(ZeroTrustGatewayCustomCertificateSettings other);
   void update(
       void Function(ZeroTrustGatewayCustomCertificateSettingsBuilder) updates);
-  String? get bindingStatus;
-  set bindingStatus(String? bindingStatus);
-
   bool? get enabled;
   set enabled(bool? enabled);
+
+  String? get bindingStatus;
+  set bindingStatus(String? bindingStatus);
 
   String? get id;
   set id(String? id);
@@ -26,9 +26,9 @@ abstract class ZeroTrustGatewayCustomCertificateSettingsBuilder {
 class _$$ZeroTrustGatewayCustomCertificateSettings
     extends $ZeroTrustGatewayCustomCertificateSettings {
   @override
-  final String? bindingStatus;
-  @override
   final bool? enabled;
+  @override
+  final String? bindingStatus;
   @override
   final String? id;
   @override
@@ -41,7 +41,7 @@ class _$$ZeroTrustGatewayCustomCertificateSettings
           ._build();
 
   _$$ZeroTrustGatewayCustomCertificateSettings._(
-      {this.bindingStatus, this.enabled, this.id, this.updatedAt})
+      {this.enabled, this.bindingStatus, this.id, this.updatedAt})
       : super._();
   @override
   $ZeroTrustGatewayCustomCertificateSettings rebuild(
@@ -57,8 +57,8 @@ class _$$ZeroTrustGatewayCustomCertificateSettings
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is $ZeroTrustGatewayCustomCertificateSettings &&
-        bindingStatus == other.bindingStatus &&
         enabled == other.enabled &&
+        bindingStatus == other.bindingStatus &&
         id == other.id &&
         updatedAt == other.updatedAt;
   }
@@ -66,8 +66,8 @@ class _$$ZeroTrustGatewayCustomCertificateSettings
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, bindingStatus.hashCode);
     _$hash = $jc(_$hash, enabled.hashCode);
+    _$hash = $jc(_$hash, bindingStatus.hashCode);
     _$hash = $jc(_$hash, id.hashCode);
     _$hash = $jc(_$hash, updatedAt.hashCode);
     _$hash = $jf(_$hash);
@@ -78,8 +78,8 @@ class _$$ZeroTrustGatewayCustomCertificateSettings
   String toString() {
     return (newBuiltValueToStringHelper(
             r'$ZeroTrustGatewayCustomCertificateSettings')
-          ..add('bindingStatus', bindingStatus)
           ..add('enabled', enabled)
+          ..add('bindingStatus', bindingStatus)
           ..add('id', id)
           ..add('updatedAt', updatedAt))
         .toString();
@@ -93,14 +93,14 @@ class $ZeroTrustGatewayCustomCertificateSettingsBuilder
         ZeroTrustGatewayCustomCertificateSettingsBuilder {
   _$$ZeroTrustGatewayCustomCertificateSettings? _$v;
 
+  bool? _enabled;
+  bool? get enabled => _$this._enabled;
+  set enabled(covariant bool? enabled) => _$this._enabled = enabled;
+
   String? _bindingStatus;
   String? get bindingStatus => _$this._bindingStatus;
   set bindingStatus(covariant String? bindingStatus) =>
       _$this._bindingStatus = bindingStatus;
-
-  bool? _enabled;
-  bool? get enabled => _$this._enabled;
-  set enabled(covariant bool? enabled) => _$this._enabled = enabled;
 
   String? _id;
   String? get id => _$this._id;
@@ -117,8 +117,8 @@ class $ZeroTrustGatewayCustomCertificateSettingsBuilder
   $ZeroTrustGatewayCustomCertificateSettingsBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _bindingStatus = $v.bindingStatus;
       _enabled = $v.enabled;
+      _bindingStatus = $v.bindingStatus;
       _id = $v.id;
       _updatedAt = $v.updatedAt;
       _$v = null;
@@ -144,8 +144,8 @@ class $ZeroTrustGatewayCustomCertificateSettingsBuilder
   _$$ZeroTrustGatewayCustomCertificateSettings _build() {
     final _$result = _$v ??
         _$$ZeroTrustGatewayCustomCertificateSettings._(
-          bindingStatus: bindingStatus,
           enabled: enabled,
+          bindingStatus: bindingStatus,
           id: id,
           updatedAt: updatedAt,
         );

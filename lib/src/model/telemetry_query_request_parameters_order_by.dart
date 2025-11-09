@@ -12,18 +12,18 @@ part 'telemetry_query_request_parameters_order_by.g.dart';
 /// Configure the order of the results returned by the query.
 ///
 /// Properties:
-/// * [order] - Set the order of the results
 /// * [value] - Configure which Calculation to order the results by.
+/// * [order] - Set the order of the results
 @BuiltValue()
 abstract class TelemetryQueryRequestParametersOrderBy implements Built<TelemetryQueryRequestParametersOrderBy, TelemetryQueryRequestParametersOrderByBuilder> {
+  /// Configure which Calculation to order the results by.
+  @BuiltValueField(wireName: r'value')
+  String get value;
+
   /// Set the order of the results
   @BuiltValueField(wireName: r'order')
   TelemetryQueryRequestParametersOrderByOrderEnum? get order;
   // enum orderEnum {  asc,  desc,  };
-
-  /// Configure which Calculation to order the results by.
-  @BuiltValueField(wireName: r'value')
-  String get value;
 
   TelemetryQueryRequestParametersOrderBy._();
 
@@ -48,6 +48,11 @@ class _$TelemetryQueryRequestParametersOrderBySerializer implements PrimitiveSer
     TelemetryQueryRequestParametersOrderBy object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    yield r'value';
+    yield serializers.serialize(
+      object.value,
+      specifiedType: const FullType(String),
+    );
     if (object.order != null) {
       yield r'order';
       yield serializers.serialize(
@@ -55,11 +60,6 @@ class _$TelemetryQueryRequestParametersOrderBySerializer implements PrimitiveSer
         specifiedType: const FullType(TelemetryQueryRequestParametersOrderByOrderEnum),
       );
     }
-    yield r'value';
-    yield serializers.serialize(
-      object.value,
-      specifiedType: const FullType(String),
-    );
   }
 
   @override
@@ -83,19 +83,19 @@ class _$TelemetryQueryRequestParametersOrderBySerializer implements PrimitiveSer
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'order':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(TelemetryQueryRequestParametersOrderByOrderEnum),
-          ) as TelemetryQueryRequestParametersOrderByOrderEnum;
-          result.order = valueDes;
-          break;
         case r'value':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(String),
           ) as String;
           result.value = valueDes;
+          break;
+        case r'order':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(TelemetryQueryRequestParametersOrderByOrderEnum),
+          ) as TelemetryQueryRequestParametersOrderByOrderEnum;
+          result.order = valueDes;
           break;
         default:
           unhandled.add(key);

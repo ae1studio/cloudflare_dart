@@ -8,8 +8,6 @@ part of 'dlp_risk_event.dart';
 
 class _$DlpRiskEvent extends DlpRiskEvent {
   @override
-  final JsonObject? eventDetails;
-  @override
   final String id;
   @override
   final String name;
@@ -17,16 +15,18 @@ class _$DlpRiskEvent extends DlpRiskEvent {
   final DlpRiskLevel riskLevel;
   @override
   final DateTime timestamp;
+  @override
+  final JsonObject? eventDetails;
 
   factory _$DlpRiskEvent([void Function(DlpRiskEventBuilder)? updates]) =>
       (DlpRiskEventBuilder()..update(updates))._build();
 
   _$DlpRiskEvent._(
-      {this.eventDetails,
-      required this.id,
+      {required this.id,
       required this.name,
       required this.riskLevel,
-      required this.timestamp})
+      required this.timestamp,
+      this.eventDetails})
       : super._();
   @override
   DlpRiskEvent rebuild(void Function(DlpRiskEventBuilder) updates) =>
@@ -39,21 +39,21 @@ class _$DlpRiskEvent extends DlpRiskEvent {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is DlpRiskEvent &&
-        eventDetails == other.eventDetails &&
         id == other.id &&
         name == other.name &&
         riskLevel == other.riskLevel &&
-        timestamp == other.timestamp;
+        timestamp == other.timestamp &&
+        eventDetails == other.eventDetails;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, eventDetails.hashCode);
     _$hash = $jc(_$hash, id.hashCode);
     _$hash = $jc(_$hash, name.hashCode);
     _$hash = $jc(_$hash, riskLevel.hashCode);
     _$hash = $jc(_$hash, timestamp.hashCode);
+    _$hash = $jc(_$hash, eventDetails.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -61,11 +61,11 @@ class _$DlpRiskEvent extends DlpRiskEvent {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'DlpRiskEvent')
-          ..add('eventDetails', eventDetails)
           ..add('id', id)
           ..add('name', name)
           ..add('riskLevel', riskLevel)
-          ..add('timestamp', timestamp))
+          ..add('timestamp', timestamp)
+          ..add('eventDetails', eventDetails))
         .toString();
   }
 }
@@ -73,11 +73,6 @@ class _$DlpRiskEvent extends DlpRiskEvent {
 class DlpRiskEventBuilder
     implements Builder<DlpRiskEvent, DlpRiskEventBuilder> {
   _$DlpRiskEvent? _$v;
-
-  JsonObject? _eventDetails;
-  JsonObject? get eventDetails => _$this._eventDetails;
-  set eventDetails(JsonObject? eventDetails) =>
-      _$this._eventDetails = eventDetails;
 
   String? _id;
   String? get id => _$this._id;
@@ -95,6 +90,11 @@ class DlpRiskEventBuilder
   DateTime? get timestamp => _$this._timestamp;
   set timestamp(DateTime? timestamp) => _$this._timestamp = timestamp;
 
+  JsonObject? _eventDetails;
+  JsonObject? get eventDetails => _$this._eventDetails;
+  set eventDetails(JsonObject? eventDetails) =>
+      _$this._eventDetails = eventDetails;
+
   DlpRiskEventBuilder() {
     DlpRiskEvent._defaults(this);
   }
@@ -102,11 +102,11 @@ class DlpRiskEventBuilder
   DlpRiskEventBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _eventDetails = $v.eventDetails;
       _id = $v.id;
       _name = $v.name;
       _riskLevel = $v.riskLevel;
       _timestamp = $v.timestamp;
+      _eventDetails = $v.eventDetails;
       _$v = null;
     }
     return this;
@@ -128,7 +128,6 @@ class DlpRiskEventBuilder
   _$DlpRiskEvent _build() {
     final _$result = _$v ??
         _$DlpRiskEvent._(
-          eventDetails: eventDetails,
           id: BuiltValueNullFieldError.checkNotNull(id, r'DlpRiskEvent', 'id'),
           name: BuiltValueNullFieldError.checkNotNull(
               name, r'DlpRiskEvent', 'name'),
@@ -136,6 +135,7 @@ class DlpRiskEventBuilder
               riskLevel, r'DlpRiskEvent', 'riskLevel'),
           timestamp: BuiltValueNullFieldError.checkNotNull(
               timestamp, r'DlpRiskEvent', 'timestamp'),
+          eventDetails: eventDetails,
         );
     replace(_$result);
     return _$result;

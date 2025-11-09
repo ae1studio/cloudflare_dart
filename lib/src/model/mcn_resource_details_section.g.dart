@@ -8,23 +8,23 @@ part of 'mcn_resource_details_section.dart';
 
 class _$McnResourceDetailsSection extends McnResourceDetailsSection {
   @override
-  final String? helpText;
-  @override
   final BuiltList<McnResourceDetailsSectionItem> hiddenItems;
   @override
   final String name;
   @override
   final BuiltList<McnResourceDetailsSectionItem> visibleItems;
+  @override
+  final String? helpText;
 
   factory _$McnResourceDetailsSection(
           [void Function(McnResourceDetailsSectionBuilder)? updates]) =>
       (McnResourceDetailsSectionBuilder()..update(updates))._build();
 
   _$McnResourceDetailsSection._(
-      {this.helpText,
-      required this.hiddenItems,
+      {required this.hiddenItems,
       required this.name,
-      required this.visibleItems})
+      required this.visibleItems,
+      this.helpText})
       : super._();
   @override
   McnResourceDetailsSection rebuild(
@@ -39,19 +39,19 @@ class _$McnResourceDetailsSection extends McnResourceDetailsSection {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is McnResourceDetailsSection &&
-        helpText == other.helpText &&
         hiddenItems == other.hiddenItems &&
         name == other.name &&
-        visibleItems == other.visibleItems;
+        visibleItems == other.visibleItems &&
+        helpText == other.helpText;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, helpText.hashCode);
     _$hash = $jc(_$hash, hiddenItems.hashCode);
     _$hash = $jc(_$hash, name.hashCode);
     _$hash = $jc(_$hash, visibleItems.hashCode);
+    _$hash = $jc(_$hash, helpText.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -59,10 +59,10 @@ class _$McnResourceDetailsSection extends McnResourceDetailsSection {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'McnResourceDetailsSection')
-          ..add('helpText', helpText)
           ..add('hiddenItems', hiddenItems)
           ..add('name', name)
-          ..add('visibleItems', visibleItems))
+          ..add('visibleItems', visibleItems)
+          ..add('helpText', helpText))
         .toString();
   }
 }
@@ -71,10 +71,6 @@ class McnResourceDetailsSectionBuilder
     implements
         Builder<McnResourceDetailsSection, McnResourceDetailsSectionBuilder> {
   _$McnResourceDetailsSection? _$v;
-
-  String? _helpText;
-  String? get helpText => _$this._helpText;
-  set helpText(String? helpText) => _$this._helpText = helpText;
 
   ListBuilder<McnResourceDetailsSectionItem>? _hiddenItems;
   ListBuilder<McnResourceDetailsSectionItem> get hiddenItems =>
@@ -92,6 +88,10 @@ class McnResourceDetailsSectionBuilder
   set visibleItems(ListBuilder<McnResourceDetailsSectionItem>? visibleItems) =>
       _$this._visibleItems = visibleItems;
 
+  String? _helpText;
+  String? get helpText => _$this._helpText;
+  set helpText(String? helpText) => _$this._helpText = helpText;
+
   McnResourceDetailsSectionBuilder() {
     McnResourceDetailsSection._defaults(this);
   }
@@ -99,10 +99,10 @@ class McnResourceDetailsSectionBuilder
   McnResourceDetailsSectionBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _helpText = $v.helpText;
       _hiddenItems = $v.hiddenItems.toBuilder();
       _name = $v.name;
       _visibleItems = $v.visibleItems.toBuilder();
+      _helpText = $v.helpText;
       _$v = null;
     }
     return this;
@@ -126,11 +126,11 @@ class McnResourceDetailsSectionBuilder
     try {
       _$result = _$v ??
           _$McnResourceDetailsSection._(
-            helpText: helpText,
             hiddenItems: hiddenItems.build(),
             name: BuiltValueNullFieldError.checkNotNull(
                 name, r'McnResourceDetailsSection', 'name'),
             visibleItems: visibleItems.build(),
+            helpText: helpText,
           );
     } catch (_) {
       late String _$failedField;

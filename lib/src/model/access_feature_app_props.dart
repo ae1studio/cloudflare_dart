@@ -13,6 +13,7 @@ part 'access_feature_app_props.g.dart';
 /// AccessFeatureAppProps
 ///
 /// Properties:
+/// * [type] 
 /// * [allowedIdps] - The identity providers your users can select when connecting to this application. Defaults to all IdPs configured in your account.
 /// * [autoRedirectToIdentity] - When set to `true`, users skip the identity provider selection step during login. You must specify only one identity provider in allowed_idps.
 /// * [customDenyUrl] - The custom URL a user is redirected to when they are denied access to the application when failing identity-based rules.
@@ -21,9 +22,12 @@ part 'access_feature_app_props.g.dart';
 /// * [domain] - The primary hostname and path secured by Access. This domain will be displayed if the app is visible in the App Launcher.
 /// * [name] - The name of the application.
 /// * [sessionDuration] - The amount of time that tokens issued for this application will be valid. Must be in the format `300ms` or `2h45m`. Valid time units are: ns, us (or µs), ms, s, m, h. Note: unsupported for infrastructure type applications.
-/// * [type] 
 @BuiltValue(instantiable: false)
 abstract class AccessFeatureAppProps  {
+  @BuiltValueField(wireName: r'type')
+  AccessType get type;
+  // enum typeEnum {  self_hosted,  saas,  ssh,  vnc,  app_launcher,  warp,  biso,  bookmark,  dash_sso,  infrastructure,  rdp,  mcp,  mcp_portal,  };
+
   /// The identity providers your users can select when connecting to this application. Defaults to all IdPs configured in your account.
   @BuiltValueField(wireName: r'allowed_idps')
   BuiltList<String>? get allowedIdps;
@@ -56,10 +60,6 @@ abstract class AccessFeatureAppProps  {
   @BuiltValueField(wireName: r'session_duration')
   String? get sessionDuration;
 
-  @BuiltValueField(wireName: r'type')
-  AccessType get type;
-  // enum typeEnum {  self_hosted,  saas,  ssh,  vnc,  app_launcher,  warp,  biso,  bookmark,  dash_sso,  infrastructure,  rdp,  mcp,  mcp_portal,  };
-
   @BuiltValueSerializer(custom: true)
   static Serializer<AccessFeatureAppProps> get serializer => _$AccessFeatureAppPropsSerializer();
 }
@@ -76,6 +76,11 @@ class _$AccessFeatureAppPropsSerializer implements PrimitiveSerializer<AccessFea
     AccessFeatureAppProps object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    yield r'type';
+    yield serializers.serialize(
+      object.type,
+      specifiedType: const FullType(AccessType),
+    );
     if (object.allowedIdps != null) {
       yield r'allowed_idps';
       yield serializers.serialize(
@@ -132,11 +137,6 @@ class _$AccessFeatureAppPropsSerializer implements PrimitiveSerializer<AccessFea
         specifiedType: const FullType(String),
       );
     }
-    yield r'type';
-    yield serializers.serialize(
-      object.type,
-      specifiedType: const FullType(AccessType),
-    );
   }
 
   @override
@@ -200,6 +200,13 @@ class _$$AccessFeatureAppPropsSerializer implements PrimitiveSerializer<$AccessF
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
+        case r'type':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(AccessType),
+          ) as AccessType;
+          result.type = valueDes;
+          break;
         case r'allowed_idps':
           final valueDes = serializers.deserialize(
             value,
@@ -255,13 +262,6 @@ class _$$AccessFeatureAppPropsSerializer implements PrimitiveSerializer<$AccessF
             specifiedType: const FullType(String),
           ) as String;
           result.sessionDuration = valueDes;
-          break;
-        case r'type':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(AccessType),
-          ) as AccessType;
-          result.type = valueDes;
           break;
         default:
           unhandled.add(key);

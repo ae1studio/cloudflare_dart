@@ -58,15 +58,15 @@ class _$NscStatusInfoOneOf1StateEnumSerializer
 
 class _$NscStatusInfoOneOf1 extends NscStatusInfoOneOf1 {
   @override
-  final String? reason;
-  @override
   final NscStatusInfoOneOf1StateEnum state;
+  @override
+  final String? reason;
 
   factory _$NscStatusInfoOneOf1(
           [void Function(NscStatusInfoOneOf1Builder)? updates]) =>
       (NscStatusInfoOneOf1Builder()..update(updates))._build();
 
-  _$NscStatusInfoOneOf1._({this.reason, required this.state}) : super._();
+  _$NscStatusInfoOneOf1._({required this.state, this.reason}) : super._();
   @override
   NscStatusInfoOneOf1 rebuild(
           void Function(NscStatusInfoOneOf1Builder) updates) =>
@@ -80,15 +80,15 @@ class _$NscStatusInfoOneOf1 extends NscStatusInfoOneOf1 {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is NscStatusInfoOneOf1 &&
-        reason == other.reason &&
-        state == other.state;
+        state == other.state &&
+        reason == other.reason;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, reason.hashCode);
     _$hash = $jc(_$hash, state.hashCode);
+    _$hash = $jc(_$hash, reason.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -96,8 +96,8 @@ class _$NscStatusInfoOneOf1 extends NscStatusInfoOneOf1 {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'NscStatusInfoOneOf1')
-          ..add('reason', reason)
-          ..add('state', state))
+          ..add('state', state)
+          ..add('reason', reason))
         .toString();
   }
 }
@@ -106,13 +106,13 @@ class NscStatusInfoOneOf1Builder
     implements Builder<NscStatusInfoOneOf1, NscStatusInfoOneOf1Builder> {
   _$NscStatusInfoOneOf1? _$v;
 
-  String? _reason;
-  String? get reason => _$this._reason;
-  set reason(String? reason) => _$this._reason = reason;
-
   NscStatusInfoOneOf1StateEnum? _state;
   NscStatusInfoOneOf1StateEnum? get state => _$this._state;
   set state(NscStatusInfoOneOf1StateEnum? state) => _$this._state = state;
+
+  String? _reason;
+  String? get reason => _$this._reason;
+  set reason(String? reason) => _$this._reason = reason;
 
   NscStatusInfoOneOf1Builder() {
     NscStatusInfoOneOf1._defaults(this);
@@ -121,8 +121,8 @@ class NscStatusInfoOneOf1Builder
   NscStatusInfoOneOf1Builder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _reason = $v.reason;
       _state = $v.state;
+      _reason = $v.reason;
       _$v = null;
     }
     return this;
@@ -144,9 +144,9 @@ class NscStatusInfoOneOf1Builder
   _$NscStatusInfoOneOf1 _build() {
     final _$result = _$v ??
         _$NscStatusInfoOneOf1._(
-          reason: reason,
           state: BuiltValueNullFieldError.checkNotNull(
               state, r'NscStatusInfoOneOf1', 'state'),
+          reason: reason,
         );
     replace(_$result);
     return _$result;

@@ -12,17 +12,17 @@ part 'access_connection_rules_ssh.g.dart';
 /// The SSH-specific rules that define how users may connect to the targets secured by your application.
 ///
 /// Properties:
-/// * [allowEmailAlias] - Enables using Identity Provider email alias as SSH username.
 /// * [usernames] - Contains the Unix usernames that may be used when connecting over SSH.
+/// * [allowEmailAlias] - Enables using Identity Provider email alias as SSH username.
 @BuiltValue()
 abstract class AccessConnectionRulesSsh implements Built<AccessConnectionRulesSsh, AccessConnectionRulesSshBuilder> {
-  /// Enables using Identity Provider email alias as SSH username.
-  @BuiltValueField(wireName: r'allow_email_alias')
-  bool? get allowEmailAlias;
-
   /// Contains the Unix usernames that may be used when connecting over SSH.
   @BuiltValueField(wireName: r'usernames')
   BuiltList<String> get usernames;
+
+  /// Enables using Identity Provider email alias as SSH username.
+  @BuiltValueField(wireName: r'allow_email_alias')
+  bool? get allowEmailAlias;
 
   AccessConnectionRulesSsh._();
 
@@ -47,6 +47,11 @@ class _$AccessConnectionRulesSshSerializer implements PrimitiveSerializer<Access
     AccessConnectionRulesSsh object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    yield r'usernames';
+    yield serializers.serialize(
+      object.usernames,
+      specifiedType: const FullType(BuiltList, [FullType(String)]),
+    );
     if (object.allowEmailAlias != null) {
       yield r'allow_email_alias';
       yield serializers.serialize(
@@ -54,11 +59,6 @@ class _$AccessConnectionRulesSshSerializer implements PrimitiveSerializer<Access
         specifiedType: const FullType(bool),
       );
     }
-    yield r'usernames';
-    yield serializers.serialize(
-      object.usernames,
-      specifiedType: const FullType(BuiltList, [FullType(String)]),
-    );
   }
 
   @override
@@ -82,19 +82,19 @@ class _$AccessConnectionRulesSshSerializer implements PrimitiveSerializer<Access
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'allow_email_alias':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
-          result.allowEmailAlias = valueDes;
-          break;
         case r'usernames':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(BuiltList, [FullType(String)]),
           ) as BuiltList<String>;
           result.usernames.replace(valueDes);
+          break;
+        case r'allow_email_alias':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(bool),
+          ) as bool;
+          result.allowEmailAlias = valueDes;
           break;
         default:
           unhandled.add(key);

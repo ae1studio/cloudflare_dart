@@ -12,8 +12,8 @@ part 'mconn_controller_device.g.dart';
 ///
 /// Properties:
 /// * [cryptKey] 
-/// * [cryptKeyRotationFinishedAt] 
 /// * [id] 
+/// * [cryptKeyRotationFinishedAt] 
 /// * [imagedAt] 
 /// * [lastCryptKey] 
 /// * [licenseKeySha256] 
@@ -23,11 +23,11 @@ abstract class MconnControllerDevice implements Built<MconnControllerDevice, Mco
   @BuiltValueField(wireName: r'crypt_key')
   String get cryptKey;
 
-  @BuiltValueField(wireName: r'crypt_key_rotation_finished_at')
-  String? get cryptKeyRotationFinishedAt;
-
   @BuiltValueField(wireName: r'id')
   String get id;
+
+  @BuiltValueField(wireName: r'crypt_key_rotation_finished_at')
+  String? get cryptKeyRotationFinishedAt;
 
   @BuiltValueField(wireName: r'imaged_at')
   String? get imagedAt;
@@ -69,6 +69,11 @@ class _$MconnControllerDeviceSerializer implements PrimitiveSerializer<MconnCont
       object.cryptKey,
       specifiedType: const FullType(String),
     );
+    yield r'id';
+    yield serializers.serialize(
+      object.id,
+      specifiedType: const FullType(String),
+    );
     if (object.cryptKeyRotationFinishedAt != null) {
       yield r'crypt_key_rotation_finished_at';
       yield serializers.serialize(
@@ -76,11 +81,6 @@ class _$MconnControllerDeviceSerializer implements PrimitiveSerializer<MconnCont
         specifiedType: const FullType(String),
       );
     }
-    yield r'id';
-    yield serializers.serialize(
-      object.id,
-      specifiedType: const FullType(String),
-    );
     if (object.imagedAt != null) {
       yield r'imaged_at';
       yield serializers.serialize(
@@ -139,19 +139,19 @@ class _$MconnControllerDeviceSerializer implements PrimitiveSerializer<MconnCont
           ) as String;
           result.cryptKey = valueDes;
           break;
-        case r'crypt_key_rotation_finished_at':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.cryptKeyRotationFinishedAt = valueDes;
-          break;
         case r'id':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(String),
           ) as String;
           result.id = valueDes;
+          break;
+        case r'crypt_key_rotation_finished_at':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.cryptKeyRotationFinishedAt = valueDes;
           break;
         case r'imaged_at':
           final valueDes = serializers.deserialize(

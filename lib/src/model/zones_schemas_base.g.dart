@@ -9,35 +9,35 @@ part of 'zones_schemas_base.dart';
 abstract class ZonesSchemasBaseBuilder {
   void replace(ZonesSchemasBase other);
   void update(void Function(ZonesSchemasBaseBuilder) updates);
-  bool? get editable;
-  set editable(bool? editable);
-
   String? get id;
   set id(String? id);
 
-  DateTime? get modifiedOn;
-  set modifiedOn(DateTime? modifiedOn);
-
   JsonObject? get value;
   set value(JsonObject? value);
+
+  bool? get editable;
+  set editable(bool? editable);
+
+  DateTime? get modifiedOn;
+  set modifiedOn(DateTime? modifiedOn);
 }
 
 class _$$ZonesSchemasBase extends $ZonesSchemasBase {
   @override
-  final bool? editable;
-  @override
   final String id;
   @override
-  final DateTime? modifiedOn;
-  @override
   final JsonObject? value;
+  @override
+  final bool? editable;
+  @override
+  final DateTime? modifiedOn;
 
   factory _$$ZonesSchemasBase(
           [void Function($ZonesSchemasBaseBuilder)? updates]) =>
       ($ZonesSchemasBaseBuilder()..update(updates))._build();
 
   _$$ZonesSchemasBase._(
-      {this.editable, required this.id, this.modifiedOn, this.value})
+      {required this.id, this.value, this.editable, this.modifiedOn})
       : super._();
   @override
   $ZonesSchemasBase rebuild(void Function($ZonesSchemasBaseBuilder) updates) =>
@@ -51,19 +51,19 @@ class _$$ZonesSchemasBase extends $ZonesSchemasBase {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is $ZonesSchemasBase &&
-        editable == other.editable &&
         id == other.id &&
-        modifiedOn == other.modifiedOn &&
-        value == other.value;
+        value == other.value &&
+        editable == other.editable &&
+        modifiedOn == other.modifiedOn;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, editable.hashCode);
     _$hash = $jc(_$hash, id.hashCode);
-    _$hash = $jc(_$hash, modifiedOn.hashCode);
     _$hash = $jc(_$hash, value.hashCode);
+    _$hash = $jc(_$hash, editable.hashCode);
+    _$hash = $jc(_$hash, modifiedOn.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -71,10 +71,10 @@ class _$$ZonesSchemasBase extends $ZonesSchemasBase {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'$ZonesSchemasBase')
-          ..add('editable', editable)
           ..add('id', id)
-          ..add('modifiedOn', modifiedOn)
-          ..add('value', value))
+          ..add('value', value)
+          ..add('editable', editable)
+          ..add('modifiedOn', modifiedOn))
         .toString();
   }
 }
@@ -85,22 +85,22 @@ class $ZonesSchemasBaseBuilder
         ZonesSchemasBaseBuilder {
   _$$ZonesSchemasBase? _$v;
 
-  bool? _editable;
-  bool? get editable => _$this._editable;
-  set editable(covariant bool? editable) => _$this._editable = editable;
-
   String? _id;
   String? get id => _$this._id;
   set id(covariant String? id) => _$this._id = id;
+
+  JsonObject? _value;
+  JsonObject? get value => _$this._value;
+  set value(covariant JsonObject? value) => _$this._value = value;
+
+  bool? _editable;
+  bool? get editable => _$this._editable;
+  set editable(covariant bool? editable) => _$this._editable = editable;
 
   DateTime? _modifiedOn;
   DateTime? get modifiedOn => _$this._modifiedOn;
   set modifiedOn(covariant DateTime? modifiedOn) =>
       _$this._modifiedOn = modifiedOn;
-
-  JsonObject? _value;
-  JsonObject? get value => _$this._value;
-  set value(covariant JsonObject? value) => _$this._value = value;
 
   $ZonesSchemasBaseBuilder() {
     $ZonesSchemasBase._defaults(this);
@@ -109,10 +109,10 @@ class $ZonesSchemasBaseBuilder
   $ZonesSchemasBaseBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _editable = $v.editable;
       _id = $v.id;
-      _modifiedOn = $v.modifiedOn;
       _value = $v.value;
+      _editable = $v.editable;
+      _modifiedOn = $v.modifiedOn;
       _$v = null;
     }
     return this;
@@ -134,11 +134,11 @@ class $ZonesSchemasBaseBuilder
   _$$ZonesSchemasBase _build() {
     final _$result = _$v ??
         _$$ZonesSchemasBase._(
-          editable: editable,
           id: BuiltValueNullFieldError.checkNotNull(
               id, r'$ZonesSchemasBase', 'id'),
-          modifiedOn: modifiedOn,
           value: value,
+          editable: editable,
+          modifiedOn: modifiedOn,
         );
     replace(_$result);
     return _$result;

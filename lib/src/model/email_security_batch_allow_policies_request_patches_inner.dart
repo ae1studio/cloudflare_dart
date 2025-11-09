@@ -13,6 +13,7 @@ part 'email_security_batch_allow_policies_request_patches_inner.g.dart';
 /// EmailSecurityBatchAllowPoliciesRequestPatchesInner
 ///
 /// Properties:
+/// * [id] - The unique identifier for the allow policy.
 /// * [comments] 
 /// * [isAcceptableSender] - Messages from this sender will be exempted from Spam, Spoof and Bulk dispositions. Note: This will not exempt messages with Malicious or Suspicious dispositions.
 /// * [isExemptRecipient] - Messages to this recipient will bypass all detections.
@@ -21,7 +22,6 @@ part 'email_security_batch_allow_policies_request_patches_inner.g.dart';
 /// * [pattern] 
 /// * [patternType] 
 /// * [verifySender] - Enforce DMARC, SPF or DKIM authentication. When on, Email Security only honors policies that pass authentication.
-/// * [id] - The unique identifier for the allow policy.
 @BuiltValue()
 abstract class EmailSecurityBatchAllowPoliciesRequestPatchesInner implements EmailSecurityUpdateAllowPolicy, Built<EmailSecurityBatchAllowPoliciesRequestPatchesInner, EmailSecurityBatchAllowPoliciesRequestPatchesInnerBuilder> {
   /// The unique identifier for the allow policy.

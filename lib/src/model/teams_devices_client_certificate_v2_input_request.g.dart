@@ -91,14 +91,14 @@ class _$TeamsDevicesClientCertificateV2InputRequest
   @override
   final bool checkPrivateKey;
   @override
+  final TeamsDevicesClientCertificateV2InputRequestOperatingSystemEnum
+      operatingSystem;
+  @override
   final String? cn;
   @override
   final BuiltList<TeamsDevicesExtendedKeyUsageEnum>? extendedKeyUsage;
   @override
   final TeamsDevicesClientCertificateV2InputRequestLocations? locations;
-  @override
-  final TeamsDevicesClientCertificateV2InputRequestOperatingSystemEnum
-      operatingSystem;
   @override
   final BuiltList<String>? subjectAlternativeNames;
 
@@ -111,10 +111,10 @@ class _$TeamsDevicesClientCertificateV2InputRequest
   _$TeamsDevicesClientCertificateV2InputRequest._(
       {required this.certificateId,
       required this.checkPrivateKey,
+      required this.operatingSystem,
       this.cn,
       this.extendedKeyUsage,
       this.locations,
-      required this.operatingSystem,
       this.subjectAlternativeNames})
       : super._();
   @override
@@ -133,10 +133,10 @@ class _$TeamsDevicesClientCertificateV2InputRequest
     return other is TeamsDevicesClientCertificateV2InputRequest &&
         certificateId == other.certificateId &&
         checkPrivateKey == other.checkPrivateKey &&
+        operatingSystem == other.operatingSystem &&
         cn == other.cn &&
         extendedKeyUsage == other.extendedKeyUsage &&
         locations == other.locations &&
-        operatingSystem == other.operatingSystem &&
         subjectAlternativeNames == other.subjectAlternativeNames;
   }
 
@@ -145,10 +145,10 @@ class _$TeamsDevicesClientCertificateV2InputRequest
     var _$hash = 0;
     _$hash = $jc(_$hash, certificateId.hashCode);
     _$hash = $jc(_$hash, checkPrivateKey.hashCode);
+    _$hash = $jc(_$hash, operatingSystem.hashCode);
     _$hash = $jc(_$hash, cn.hashCode);
     _$hash = $jc(_$hash, extendedKeyUsage.hashCode);
     _$hash = $jc(_$hash, locations.hashCode);
-    _$hash = $jc(_$hash, operatingSystem.hashCode);
     _$hash = $jc(_$hash, subjectAlternativeNames.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
@@ -160,10 +160,10 @@ class _$TeamsDevicesClientCertificateV2InputRequest
             r'TeamsDevicesClientCertificateV2InputRequest')
           ..add('certificateId', certificateId)
           ..add('checkPrivateKey', checkPrivateKey)
+          ..add('operatingSystem', operatingSystem)
           ..add('cn', cn)
           ..add('extendedKeyUsage', extendedKeyUsage)
           ..add('locations', locations)
-          ..add('operatingSystem', operatingSystem)
           ..add('subjectAlternativeNames', subjectAlternativeNames))
         .toString();
   }
@@ -184,6 +184,15 @@ class TeamsDevicesClientCertificateV2InputRequestBuilder
   bool? get checkPrivateKey => _$this._checkPrivateKey;
   set checkPrivateKey(bool? checkPrivateKey) =>
       _$this._checkPrivateKey = checkPrivateKey;
+
+  TeamsDevicesClientCertificateV2InputRequestOperatingSystemEnum?
+      _operatingSystem;
+  TeamsDevicesClientCertificateV2InputRequestOperatingSystemEnum?
+      get operatingSystem => _$this._operatingSystem;
+  set operatingSystem(
+          TeamsDevicesClientCertificateV2InputRequestOperatingSystemEnum?
+              operatingSystem) =>
+      _$this._operatingSystem = operatingSystem;
 
   String? _cn;
   String? get cn => _$this._cn;
@@ -206,15 +215,6 @@ class TeamsDevicesClientCertificateV2InputRequestBuilder
               locations) =>
       _$this._locations = locations;
 
-  TeamsDevicesClientCertificateV2InputRequestOperatingSystemEnum?
-      _operatingSystem;
-  TeamsDevicesClientCertificateV2InputRequestOperatingSystemEnum?
-      get operatingSystem => _$this._operatingSystem;
-  set operatingSystem(
-          TeamsDevicesClientCertificateV2InputRequestOperatingSystemEnum?
-              operatingSystem) =>
-      _$this._operatingSystem = operatingSystem;
-
   ListBuilder<String>? _subjectAlternativeNames;
   ListBuilder<String> get subjectAlternativeNames =>
       _$this._subjectAlternativeNames ??= ListBuilder<String>();
@@ -230,10 +230,10 @@ class TeamsDevicesClientCertificateV2InputRequestBuilder
     if ($v != null) {
       _certificateId = $v.certificateId;
       _checkPrivateKey = $v.checkPrivateKey;
+      _operatingSystem = $v.operatingSystem;
       _cn = $v.cn;
       _extendedKeyUsage = $v.extendedKeyUsage?.toBuilder();
       _locations = $v.locations?.toBuilder();
-      _operatingSystem = $v.operatingSystem;
       _subjectAlternativeNames = $v.subjectAlternativeNames?.toBuilder();
       _$v = null;
     }
@@ -268,13 +268,13 @@ class TeamsDevicesClientCertificateV2InputRequestBuilder
                 checkPrivateKey,
                 r'TeamsDevicesClientCertificateV2InputRequest',
                 'checkPrivateKey'),
-            cn: cn,
-            extendedKeyUsage: _extendedKeyUsage?.build(),
-            locations: _locations?.build(),
             operatingSystem: BuiltValueNullFieldError.checkNotNull(
                 operatingSystem,
                 r'TeamsDevicesClientCertificateV2InputRequest',
                 'operatingSystem'),
+            cn: cn,
+            extendedKeyUsage: _extendedKeyUsage?.build(),
+            locations: _locations?.build(),
             subjectAlternativeNames: _subjectAlternativeNames?.build(),
           );
     } catch (_) {
@@ -284,7 +284,6 @@ class TeamsDevicesClientCertificateV2InputRequestBuilder
         _extendedKeyUsage?.build();
         _$failedField = 'locations';
         _locations?.build();
-
         _$failedField = 'subjectAlternativeNames';
         _subjectAlternativeNames?.build();
       } catch (e) {

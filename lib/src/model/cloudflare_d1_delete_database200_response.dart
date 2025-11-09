@@ -9,6 +9,7 @@ import 'package:cloudflare_dart/src/model/mcn_bad_response_all_of_result.dart';
 import 'package:cloudflare_dart/src/model/aaa_messages_inner.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
+import 'package:built_value/json_object.dart';
 
 part 'cloudflare_d1_delete_database200_response.g.dart';
 

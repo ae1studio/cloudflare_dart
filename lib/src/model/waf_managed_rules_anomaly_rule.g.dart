@@ -8,9 +8,9 @@ part of 'waf_managed_rules_anomaly_rule.dart';
 
 class _$WafManagedRulesAnomalyRule extends WafManagedRulesAnomalyRule {
   @override
-  final ZonesWafValue mode;
+  final WafManagedRulesModeAnomaly mode;
   @override
-  final BuiltList<ZonesWafValue> allowedModes;
+  final BuiltList<WafManagedRulesModeAnomaly> allowedModes;
   @override
   final String? description;
   @override
@@ -91,15 +91,15 @@ class WafManagedRulesAnomalyRuleBuilder
         WafManagedRulesSchemasBaseBuilder {
   _$WafManagedRulesAnomalyRule? _$v;
 
-  ZonesWafValue? _mode;
-  ZonesWafValue? get mode => _$this._mode;
-  set mode(covariant ZonesWafValue? mode) => _$this._mode = mode;
+  WafManagedRulesModeAnomaly? _mode;
+  WafManagedRulesModeAnomaly? get mode => _$this._mode;
+  set mode(covariant WafManagedRulesModeAnomaly? mode) => _$this._mode = mode;
 
-  ListBuilder<ZonesWafValue>? _allowedModes;
-  ListBuilder<ZonesWafValue> get allowedModes =>
-      _$this._allowedModes ??= ListBuilder<ZonesWafValue>();
+  ListBuilder<WafManagedRulesModeAnomaly>? _allowedModes;
+  ListBuilder<WafManagedRulesModeAnomaly> get allowedModes =>
+      _$this._allowedModes ??= ListBuilder<WafManagedRulesModeAnomaly>();
   set allowedModes(
-          covariant ListBuilder<ZonesWafValue>? allowedModes) =>
+          covariant ListBuilder<WafManagedRulesModeAnomaly>? allowedModes) =>
       _$this._allowedModes = allowedModes;
 
   String? _description;

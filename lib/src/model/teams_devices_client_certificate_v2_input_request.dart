@@ -16,10 +16,10 @@ part 'teams_devices_client_certificate_v2_input_request.g.dart';
 /// Properties:
 /// * [certificateId] - UUID of Cloudflare managed certificate.
 /// * [checkPrivateKey] - Confirm the certificate was not imported from another device. We recommend keeping this enabled unless the certificate was deployed without a private key.
+/// * [operatingSystem] - Operating System.
 /// * [cn] - Certificate Common Name. This may include one or more variables in the ${ } notation. Only ${serial_number} and ${hostname} are valid variables.
 /// * [extendedKeyUsage] - List of values indicating purposes for which the certificate public key can be used.
 /// * [locations] 
-/// * [operatingSystem] - Operating System.
 /// * [subjectAlternativeNames] - List of certificate Subject Alternative Names.
 @BuiltValue()
 abstract class TeamsDevicesClientCertificateV2InputRequest implements Built<TeamsDevicesClientCertificateV2InputRequest, TeamsDevicesClientCertificateV2InputRequestBuilder> {
@@ -31,6 +31,11 @@ abstract class TeamsDevicesClientCertificateV2InputRequest implements Built<Team
   @BuiltValueField(wireName: r'check_private_key')
   bool get checkPrivateKey;
 
+  /// Operating System.
+  @BuiltValueField(wireName: r'operating_system')
+  TeamsDevicesClientCertificateV2InputRequestOperatingSystemEnum get operatingSystem;
+  // enum operatingSystemEnum {  windows,  mac,  linux,  };
+
   /// Certificate Common Name. This may include one or more variables in the ${ } notation. Only ${serial_number} and ${hostname} are valid variables.
   @BuiltValueField(wireName: r'cn')
   String? get cn;
@@ -41,11 +46,6 @@ abstract class TeamsDevicesClientCertificateV2InputRequest implements Built<Team
 
   @BuiltValueField(wireName: r'locations')
   TeamsDevicesClientCertificateV2InputRequestLocations? get locations;
-
-  /// Operating System.
-  @BuiltValueField(wireName: r'operating_system')
-  TeamsDevicesClientCertificateV2InputRequestOperatingSystemEnum get operatingSystem;
-  // enum operatingSystemEnum {  windows,  mac,  linux,  };
 
   /// List of certificate Subject Alternative Names.
   @BuiltValueField(wireName: r'subject_alternative_names')
@@ -84,6 +84,11 @@ class _$TeamsDevicesClientCertificateV2InputRequestSerializer implements Primiti
       object.checkPrivateKey,
       specifiedType: const FullType(bool),
     );
+    yield r'operating_system';
+    yield serializers.serialize(
+      object.operatingSystem,
+      specifiedType: const FullType(TeamsDevicesClientCertificateV2InputRequestOperatingSystemEnum),
+    );
     if (object.cn != null) {
       yield r'cn';
       yield serializers.serialize(
@@ -105,11 +110,6 @@ class _$TeamsDevicesClientCertificateV2InputRequestSerializer implements Primiti
         specifiedType: const FullType(TeamsDevicesClientCertificateV2InputRequestLocations),
       );
     }
-    yield r'operating_system';
-    yield serializers.serialize(
-      object.operatingSystem,
-      specifiedType: const FullType(TeamsDevicesClientCertificateV2InputRequestOperatingSystemEnum),
-    );
     if (object.subjectAlternativeNames != null) {
       yield r'subject_alternative_names';
       yield serializers.serialize(
@@ -154,6 +154,13 @@ class _$TeamsDevicesClientCertificateV2InputRequestSerializer implements Primiti
           ) as bool;
           result.checkPrivateKey = valueDes;
           break;
+        case r'operating_system':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(TeamsDevicesClientCertificateV2InputRequestOperatingSystemEnum),
+          ) as TeamsDevicesClientCertificateV2InputRequestOperatingSystemEnum;
+          result.operatingSystem = valueDes;
+          break;
         case r'cn':
           final valueDes = serializers.deserialize(
             value,
@@ -174,13 +181,6 @@ class _$TeamsDevicesClientCertificateV2InputRequestSerializer implements Primiti
             specifiedType: const FullType(TeamsDevicesClientCertificateV2InputRequestLocations),
           ) as TeamsDevicesClientCertificateV2InputRequestLocations;
           result.locations.replace(valueDes);
-          break;
-        case r'operating_system':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(TeamsDevicesClientCertificateV2InputRequestOperatingSystemEnum),
-          ) as TeamsDevicesClientCertificateV2InputRequestOperatingSystemEnum;
-          result.operatingSystem = valueDes;
           break;
         case r'subject_alternative_names':
           final valueDes = serializers.deserialize(

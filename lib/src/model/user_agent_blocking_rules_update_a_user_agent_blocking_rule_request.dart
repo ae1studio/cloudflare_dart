@@ -14,18 +14,14 @@ part 'user_agent_blocking_rules_update_a_user_agent_blocking_rule_request.g.dart
 ///
 /// Properties:
 /// * [configuration] 
-/// * [description] - An informative summary of the rule. This value is sanitized and any tags will be removed.
 /// * [id] - The unique identifier of the resource.
 /// * [mode] 
+/// * [description] - An informative summary of the rule. This value is sanitized and any tags will be removed.
 /// * [paused] - When true, indicates that the rule is currently paused.
 @BuiltValue()
 abstract class UserAgentBlockingRulesUpdateAUserAgentBlockingRuleRequest implements Built<UserAgentBlockingRulesUpdateAUserAgentBlockingRuleRequest, UserAgentBlockingRulesUpdateAUserAgentBlockingRuleRequestBuilder> {
   @BuiltValueField(wireName: r'configuration')
   FirewallConfiguration get configuration;
-
-  /// An informative summary of the rule. This value is sanitized and any tags will be removed.
-  @BuiltValueField(wireName: r'description')
-  String? get description;
 
   /// The unique identifier of the resource.
   @BuiltValueField(wireName: r'id')
@@ -34,6 +30,10 @@ abstract class UserAgentBlockingRulesUpdateAUserAgentBlockingRuleRequest impleme
   @BuiltValueField(wireName: r'mode')
   FirewallSchemasMode get mode;
   // enum modeEnum {  block,  challenge,  whitelist,  js_challenge,  managed_challenge,  };
+
+  /// An informative summary of the rule. This value is sanitized and any tags will be removed.
+  @BuiltValueField(wireName: r'description')
+  String? get description;
 
   /// When true, indicates that the rule is currently paused.
   @BuiltValueField(wireName: r'paused')
@@ -67,13 +67,6 @@ class _$UserAgentBlockingRulesUpdateAUserAgentBlockingRuleRequestSerializer impl
       object.configuration,
       specifiedType: const FullType(FirewallConfiguration),
     );
-    if (object.description != null) {
-      yield r'description';
-      yield serializers.serialize(
-        object.description,
-        specifiedType: const FullType(String),
-      );
-    }
     yield r'id';
     yield serializers.serialize(
       object.id,
@@ -84,6 +77,13 @@ class _$UserAgentBlockingRulesUpdateAUserAgentBlockingRuleRequestSerializer impl
       object.mode,
       specifiedType: const FullType(FirewallSchemasMode),
     );
+    if (object.description != null) {
+      yield r'description';
+      yield serializers.serialize(
+        object.description,
+        specifiedType: const FullType(String),
+      );
+    }
     if (object.paused != null) {
       yield r'paused';
       yield serializers.serialize(
@@ -121,13 +121,6 @@ class _$UserAgentBlockingRulesUpdateAUserAgentBlockingRuleRequestSerializer impl
           ) as FirewallConfiguration;
           result.configuration.replace(valueDes);
           break;
-        case r'description':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.description = valueDes;
-          break;
         case r'id':
           final valueDes = serializers.deserialize(
             value,
@@ -141,6 +134,13 @@ class _$UserAgentBlockingRulesUpdateAUserAgentBlockingRuleRequestSerializer impl
             specifiedType: const FullType(FirewallSchemasMode),
           ) as FirewallSchemasMode;
           result.mode = valueDes;
+          break;
+        case r'description':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.description = valueDes;
           break;
         case r'paused':
           final valueDes = serializers.deserialize(

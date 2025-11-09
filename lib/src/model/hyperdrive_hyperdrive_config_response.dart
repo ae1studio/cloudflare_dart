@@ -16,12 +16,12 @@ part 'hyperdrive_hyperdrive_config_response.g.dart';
 ///
 /// Properties:
 /// * [caching] 
-/// * [createdOn] - Defines the creation time of the Hyperdrive configuration.
 /// * [id] - Define configurations using a unique string identifier.
-/// * [modifiedOn] - Defines the last modified time of the Hyperdrive configuration.
-/// * [mtls] 
 /// * [name] 
 /// * [origin] 
+/// * [createdOn] - Defines the creation time of the Hyperdrive configuration.
+/// * [modifiedOn] - Defines the last modified time of the Hyperdrive configuration.
+/// * [mtls] 
 /// * [originConnectionLimit] - The (soft) maximum number of connections the Hyperdrive is allowed to make to the origin database.
 @BuiltValue()
 abstract class HyperdriveHyperdriveConfigResponse implements HyperdriveHyperdriveConfig, Built<HyperdriveHyperdriveConfigResponse, HyperdriveHyperdriveConfigResponseBuilder> {

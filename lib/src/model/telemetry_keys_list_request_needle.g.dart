@@ -8,18 +8,18 @@ part of 'telemetry_keys_list_request_needle.dart';
 
 class _$TelemetryKeysListRequestNeedle extends TelemetryKeysListRequestNeedle {
   @override
+  final AigConfigListDataset200ResponseResultInnerFiltersInnerValueInner value;
+  @override
   final bool? isRegex;
   @override
   final bool? matchCase;
-  @override
-  final AigConfigListDataset200ResponseResultInnerFiltersInnerValueInner value;
 
   factory _$TelemetryKeysListRequestNeedle(
           [void Function(TelemetryKeysListRequestNeedleBuilder)? updates]) =>
       (TelemetryKeysListRequestNeedleBuilder()..update(updates))._build();
 
   _$TelemetryKeysListRequestNeedle._(
-      {this.isRegex, this.matchCase, required this.value})
+      {required this.value, this.isRegex, this.matchCase})
       : super._();
   @override
   TelemetryKeysListRequestNeedle rebuild(
@@ -34,17 +34,17 @@ class _$TelemetryKeysListRequestNeedle extends TelemetryKeysListRequestNeedle {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is TelemetryKeysListRequestNeedle &&
+        value == other.value &&
         isRegex == other.isRegex &&
-        matchCase == other.matchCase &&
-        value == other.value;
+        matchCase == other.matchCase;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
+    _$hash = $jc(_$hash, value.hashCode);
     _$hash = $jc(_$hash, isRegex.hashCode);
     _$hash = $jc(_$hash, matchCase.hashCode);
-    _$hash = $jc(_$hash, value.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -52,9 +52,9 @@ class _$TelemetryKeysListRequestNeedle extends TelemetryKeysListRequestNeedle {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'TelemetryKeysListRequestNeedle')
+          ..add('value', value)
           ..add('isRegex', isRegex)
-          ..add('matchCase', matchCase)
-          ..add('value', value))
+          ..add('matchCase', matchCase))
         .toString();
   }
 }
@@ -64,14 +64,6 @@ class TelemetryKeysListRequestNeedleBuilder
         Builder<TelemetryKeysListRequestNeedle,
             TelemetryKeysListRequestNeedleBuilder> {
   _$TelemetryKeysListRequestNeedle? _$v;
-
-  bool? _isRegex;
-  bool? get isRegex => _$this._isRegex;
-  set isRegex(bool? isRegex) => _$this._isRegex = isRegex;
-
-  bool? _matchCase;
-  bool? get matchCase => _$this._matchCase;
-  set matchCase(bool? matchCase) => _$this._matchCase = matchCase;
 
   AigConfigListDataset200ResponseResultInnerFiltersInnerValueInnerBuilder?
       _value;
@@ -83,6 +75,14 @@ class TelemetryKeysListRequestNeedleBuilder
               value) =>
       _$this._value = value;
 
+  bool? _isRegex;
+  bool? get isRegex => _$this._isRegex;
+  set isRegex(bool? isRegex) => _$this._isRegex = isRegex;
+
+  bool? _matchCase;
+  bool? get matchCase => _$this._matchCase;
+  set matchCase(bool? matchCase) => _$this._matchCase = matchCase;
+
   TelemetryKeysListRequestNeedleBuilder() {
     TelemetryKeysListRequestNeedle._defaults(this);
   }
@@ -90,9 +90,9 @@ class TelemetryKeysListRequestNeedleBuilder
   TelemetryKeysListRequestNeedleBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
+      _value = $v.value.toBuilder();
       _isRegex = $v.isRegex;
       _matchCase = $v.matchCase;
-      _value = $v.value.toBuilder();
       _$v = null;
     }
     return this;
@@ -116,9 +116,9 @@ class TelemetryKeysListRequestNeedleBuilder
     try {
       _$result = _$v ??
           _$TelemetryKeysListRequestNeedle._(
+            value: value.build(),
             isRegex: isRegex,
             matchCase: matchCase,
-            value: value.build(),
           );
     } catch (_) {
       late String _$failedField;

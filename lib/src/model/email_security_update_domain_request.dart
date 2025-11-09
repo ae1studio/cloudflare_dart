@@ -15,12 +15,12 @@ part 'email_security_update_domain_request.g.dart';
 /// EmailSecurityUpdateDomainRequest
 ///
 /// Properties:
+/// * [ipRestrictions] 
 /// * [allowedDeliveryModes] 
 /// * [domain] 
 /// * [dropDispositions] 
 /// * [folder] 
 /// * [integrationId] 
-/// * [ipRestrictions] 
 /// * [lookbackHops] 
 /// * [regions] 
 /// * [requireTlsInbound] 
@@ -28,6 +28,9 @@ part 'email_security_update_domain_request.g.dart';
 /// * [transport] 
 @BuiltValue()
 abstract class EmailSecurityUpdateDomainRequest implements Built<EmailSecurityUpdateDomainRequest, EmailSecurityUpdateDomainRequestBuilder> {
+  @BuiltValueField(wireName: r'ip_restrictions')
+  BuiltList<String> get ipRestrictions;
+
   @BuiltValueField(wireName: r'allowed_delivery_modes')
   BuiltList<EmailSecurityDeliveryMode>? get allowedDeliveryModes;
 
@@ -43,9 +46,6 @@ abstract class EmailSecurityUpdateDomainRequest implements Built<EmailSecurityUp
 
   @BuiltValueField(wireName: r'integration_id')
   String? get integrationId;
-
-  @BuiltValueField(wireName: r'ip_restrictions')
-  BuiltList<String> get ipRestrictions;
 
   @BuiltValueField(wireName: r'lookback_hops')
   int? get lookbackHops;
@@ -86,6 +86,11 @@ class _$EmailSecurityUpdateDomainRequestSerializer implements PrimitiveSerialize
     EmailSecurityUpdateDomainRequest object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    yield r'ip_restrictions';
+    yield serializers.serialize(
+      object.ipRestrictions,
+      specifiedType: const FullType(BuiltList, [FullType(String)]),
+    );
     if (object.allowedDeliveryModes != null) {
       yield r'allowed_delivery_modes';
       yield serializers.serialize(
@@ -121,11 +126,6 @@ class _$EmailSecurityUpdateDomainRequestSerializer implements PrimitiveSerialize
         specifiedType: const FullType(String),
       );
     }
-    yield r'ip_restrictions';
-    yield serializers.serialize(
-      object.ipRestrictions,
-      specifiedType: const FullType(BuiltList, [FullType(String)]),
-    );
     if (object.lookbackHops != null) {
       yield r'lookback_hops';
       yield serializers.serialize(
@@ -184,6 +184,13 @@ class _$EmailSecurityUpdateDomainRequestSerializer implements PrimitiveSerialize
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
+        case r'ip_restrictions':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BuiltList, [FullType(String)]),
+          ) as BuiltList<String>;
+          result.ipRestrictions.replace(valueDes);
+          break;
         case r'allowed_delivery_modes':
           final valueDes = serializers.deserialize(
             value,
@@ -218,13 +225,6 @@ class _$EmailSecurityUpdateDomainRequestSerializer implements PrimitiveSerialize
             specifiedType: const FullType(String),
           ) as String;
           result.integrationId = valueDes;
-          break;
-        case r'ip_restrictions':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>;
-          result.ipRestrictions.replace(valueDes);
           break;
         case r'lookback_hops':
           final valueDes = serializers.deserialize(

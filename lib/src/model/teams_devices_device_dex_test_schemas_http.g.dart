@@ -11,13 +11,13 @@ class _$TeamsDevicesDeviceDexTestSchemasHttp
   @override
   final TeamsDevicesDeviceDexTestSchemasData data;
   @override
-  final String? description;
-  @override
   final bool enabled;
   @override
   final String interval;
   @override
   final String name;
+  @override
+  final String? description;
   @override
   final BuiltList<TeamsDevicesDexTargetPolicy>? targetPolicies;
   @override
@@ -32,10 +32,10 @@ class _$TeamsDevicesDeviceDexTestSchemasHttp
 
   _$TeamsDevicesDeviceDexTestSchemasHttp._(
       {required this.data,
-      this.description,
       required this.enabled,
       required this.interval,
       required this.name,
+      this.description,
       this.targetPolicies,
       this.targeted,
       this.testId})
@@ -54,10 +54,10 @@ class _$TeamsDevicesDeviceDexTestSchemasHttp
     if (identical(other, this)) return true;
     return other is TeamsDevicesDeviceDexTestSchemasHttp &&
         data == other.data &&
-        description == other.description &&
         enabled == other.enabled &&
         interval == other.interval &&
         name == other.name &&
+        description == other.description &&
         targetPolicies == other.targetPolicies &&
         targeted == other.targeted &&
         testId == other.testId;
@@ -67,10 +67,10 @@ class _$TeamsDevicesDeviceDexTestSchemasHttp
   int get hashCode {
     var _$hash = 0;
     _$hash = $jc(_$hash, data.hashCode);
-    _$hash = $jc(_$hash, description.hashCode);
     _$hash = $jc(_$hash, enabled.hashCode);
     _$hash = $jc(_$hash, interval.hashCode);
     _$hash = $jc(_$hash, name.hashCode);
+    _$hash = $jc(_$hash, description.hashCode);
     _$hash = $jc(_$hash, targetPolicies.hashCode);
     _$hash = $jc(_$hash, targeted.hashCode);
     _$hash = $jc(_$hash, testId.hashCode);
@@ -82,10 +82,10 @@ class _$TeamsDevicesDeviceDexTestSchemasHttp
   String toString() {
     return (newBuiltValueToStringHelper(r'TeamsDevicesDeviceDexTestSchemasHttp')
           ..add('data', data)
-          ..add('description', description)
           ..add('enabled', enabled)
           ..add('interval', interval)
           ..add('name', name)
+          ..add('description', description)
           ..add('targetPolicies', targetPolicies)
           ..add('targeted', targeted)
           ..add('testId', testId))
@@ -105,10 +105,6 @@ class TeamsDevicesDeviceDexTestSchemasHttpBuilder
   set data(TeamsDevicesDeviceDexTestSchemasDataBuilder? data) =>
       _$this._data = data;
 
-  String? _description;
-  String? get description => _$this._description;
-  set description(String? description) => _$this._description = description;
-
   bool? _enabled;
   bool? get enabled => _$this._enabled;
   set enabled(bool? enabled) => _$this._enabled = enabled;
@@ -120,6 +116,10 @@ class TeamsDevicesDeviceDexTestSchemasHttpBuilder
   String? _name;
   String? get name => _$this._name;
   set name(String? name) => _$this._name = name;
+
+  String? _description;
+  String? get description => _$this._description;
+  set description(String? description) => _$this._description = description;
 
   ListBuilder<TeamsDevicesDexTargetPolicy>? _targetPolicies;
   ListBuilder<TeamsDevicesDexTargetPolicy> get targetPolicies =>
@@ -144,10 +144,10 @@ class TeamsDevicesDeviceDexTestSchemasHttpBuilder
     final $v = _$v;
     if ($v != null) {
       _data = $v.data.toBuilder();
-      _description = $v.description;
       _enabled = $v.enabled;
       _interval = $v.interval;
       _name = $v.name;
+      _description = $v.description;
       _targetPolicies = $v.targetPolicies?.toBuilder();
       _targeted = $v.targeted;
       _testId = $v.testId;
@@ -176,13 +176,13 @@ class TeamsDevicesDeviceDexTestSchemasHttpBuilder
       _$result = _$v ??
           _$TeamsDevicesDeviceDexTestSchemasHttp._(
             data: data.build(),
-            description: description,
             enabled: BuiltValueNullFieldError.checkNotNull(
                 enabled, r'TeamsDevicesDeviceDexTestSchemasHttp', 'enabled'),
             interval: BuiltValueNullFieldError.checkNotNull(
                 interval, r'TeamsDevicesDeviceDexTestSchemasHttp', 'interval'),
             name: BuiltValueNullFieldError.checkNotNull(
                 name, r'TeamsDevicesDeviceDexTestSchemasHttp', 'name'),
+            description: description,
             targetPolicies: _targetPolicies?.build(),
             targeted: targeted,
             testId: testId,

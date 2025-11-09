@@ -10,9 +10,9 @@ class _$EmailCreateRuleProperties extends EmailCreateRuleProperties {
   @override
   final BuiltList<EmailRuleAction> actions;
   @override
-  final bool? enabled;
-  @override
   final BuiltList<EmailRuleMatcher> matchers;
+  @override
+  final bool? enabled;
   @override
   final String? name;
   @override
@@ -24,8 +24,8 @@ class _$EmailCreateRuleProperties extends EmailCreateRuleProperties {
 
   _$EmailCreateRuleProperties._(
       {required this.actions,
-      this.enabled,
       required this.matchers,
+      this.enabled,
       this.name,
       this.priority})
       : super._();
@@ -43,8 +43,8 @@ class _$EmailCreateRuleProperties extends EmailCreateRuleProperties {
     if (identical(other, this)) return true;
     return other is EmailCreateRuleProperties &&
         actions == other.actions &&
-        enabled == other.enabled &&
         matchers == other.matchers &&
+        enabled == other.enabled &&
         name == other.name &&
         priority == other.priority;
   }
@@ -53,8 +53,8 @@ class _$EmailCreateRuleProperties extends EmailCreateRuleProperties {
   int get hashCode {
     var _$hash = 0;
     _$hash = $jc(_$hash, actions.hashCode);
-    _$hash = $jc(_$hash, enabled.hashCode);
     _$hash = $jc(_$hash, matchers.hashCode);
+    _$hash = $jc(_$hash, enabled.hashCode);
     _$hash = $jc(_$hash, name.hashCode);
     _$hash = $jc(_$hash, priority.hashCode);
     _$hash = $jf(_$hash);
@@ -65,8 +65,8 @@ class _$EmailCreateRuleProperties extends EmailCreateRuleProperties {
   String toString() {
     return (newBuiltValueToStringHelper(r'EmailCreateRuleProperties')
           ..add('actions', actions)
-          ..add('enabled', enabled)
           ..add('matchers', matchers)
+          ..add('enabled', enabled)
           ..add('name', name)
           ..add('priority', priority))
         .toString();
@@ -84,15 +84,15 @@ class EmailCreateRulePropertiesBuilder
   set actions(ListBuilder<EmailRuleAction>? actions) =>
       _$this._actions = actions;
 
-  bool? _enabled;
-  bool? get enabled => _$this._enabled;
-  set enabled(bool? enabled) => _$this._enabled = enabled;
-
   ListBuilder<EmailRuleMatcher>? _matchers;
   ListBuilder<EmailRuleMatcher> get matchers =>
       _$this._matchers ??= ListBuilder<EmailRuleMatcher>();
   set matchers(ListBuilder<EmailRuleMatcher>? matchers) =>
       _$this._matchers = matchers;
+
+  bool? _enabled;
+  bool? get enabled => _$this._enabled;
+  set enabled(bool? enabled) => _$this._enabled = enabled;
 
   String? _name;
   String? get name => _$this._name;
@@ -110,8 +110,8 @@ class EmailCreateRulePropertiesBuilder
     final $v = _$v;
     if ($v != null) {
       _actions = $v.actions.toBuilder();
-      _enabled = $v.enabled;
       _matchers = $v.matchers.toBuilder();
+      _enabled = $v.enabled;
       _name = $v.name;
       _priority = $v.priority;
       _$v = null;
@@ -138,8 +138,8 @@ class EmailCreateRulePropertiesBuilder
       _$result = _$v ??
           _$EmailCreateRuleProperties._(
             actions: actions.build(),
-            enabled: enabled,
             matchers: matchers.build(),
+            enabled: enabled,
             name: name,
             priority: priority,
           );
@@ -148,7 +148,6 @@ class EmailCreateRulePropertiesBuilder
       try {
         _$failedField = 'actions';
         actions.build();
-
         _$failedField = 'matchers';
         matchers.build();
       } catch (e) {

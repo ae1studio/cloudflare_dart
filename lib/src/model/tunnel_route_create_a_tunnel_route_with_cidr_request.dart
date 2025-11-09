@@ -11,18 +11,18 @@ part 'tunnel_route_create_a_tunnel_route_with_cidr_request.g.dart';
 /// TunnelRouteCreateATunnelRouteWithCidrRequest
 ///
 /// Properties:
-/// * [comment] - Optional remark describing the route.
 /// * [tunnelId] - UUID of the tunnel.
+/// * [comment] - Optional remark describing the route.
 /// * [virtualNetworkId] - UUID of the virtual network.
 @BuiltValue()
 abstract class TunnelRouteCreateATunnelRouteWithCidrRequest implements Built<TunnelRouteCreateATunnelRouteWithCidrRequest, TunnelRouteCreateATunnelRouteWithCidrRequestBuilder> {
-  /// Optional remark describing the route.
-  @BuiltValueField(wireName: r'comment')
-  String? get comment;
-
   /// UUID of the tunnel.
   @BuiltValueField(wireName: r'tunnel_id')
   String get tunnelId;
+
+  /// Optional remark describing the route.
+  @BuiltValueField(wireName: r'comment')
+  String? get comment;
 
   /// UUID of the virtual network.
   @BuiltValueField(wireName: r'virtual_network_id')
@@ -52,6 +52,11 @@ class _$TunnelRouteCreateATunnelRouteWithCidrRequestSerializer implements Primit
     TunnelRouteCreateATunnelRouteWithCidrRequest object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    yield r'tunnel_id';
+    yield serializers.serialize(
+      object.tunnelId,
+      specifiedType: const FullType(String),
+    );
     if (object.comment != null) {
       yield r'comment';
       yield serializers.serialize(
@@ -59,11 +64,6 @@ class _$TunnelRouteCreateATunnelRouteWithCidrRequestSerializer implements Primit
         specifiedType: const FullType(String),
       );
     }
-    yield r'tunnel_id';
-    yield serializers.serialize(
-      object.tunnelId,
-      specifiedType: const FullType(String),
-    );
     if (object.virtualNetworkId != null) {
       yield r'virtual_network_id';
       yield serializers.serialize(
@@ -94,19 +94,19 @@ class _$TunnelRouteCreateATunnelRouteWithCidrRequestSerializer implements Primit
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'comment':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.comment = valueDes;
-          break;
         case r'tunnel_id':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(String),
           ) as String;
           result.tunnelId = valueDes;
+          break;
+        case r'comment':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.comment = valueDes;
           break;
         case r'virtual_network_id':
           final valueDes = serializers.deserialize(

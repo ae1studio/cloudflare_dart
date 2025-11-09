@@ -19,16 +19,16 @@ part 'zaraz_zaraz_config_body.g.dart';
 /// ZarazZarazConfigBody
 ///
 /// Properties:
-/// * [analytics] 
-/// * [consent] 
 /// * [dataLayer] - Data layer compatibility mode enabled.
 /// * [debugKey] - The key for Zaraz debug mode.
-/// * [historyChange] - Single Page Application support enabled.
 /// * [settings] 
 /// * [triggers] - Triggers set up under Zaraz configuration, where key is the trigger alpha-numeric ID and value is the trigger configuration.
 /// * [variables] - Variables set up under Zaraz configuration, where key is the variable alpha-numeric ID and value is the variable configuration. Values of variables of type secret are not included.
 /// * [zarazVersion] - Zaraz internal version of the config.
 /// * [tools] - Tools set up under Zaraz configuration, where key is the alpha-numeric tool ID and value is the tool configuration object.
+/// * [analytics] 
+/// * [consent] 
+/// * [historyChange] - Single Page Application support enabled.
 @BuiltValue()
 abstract class ZarazZarazConfigBody implements ZarazZarazConfigBase, Built<ZarazZarazConfigBody, ZarazZarazConfigBodyBuilder> {
   /// Tools set up under Zaraz configuration, where key is the alpha-numeric tool ID and value is the tool configuration object.
@@ -90,6 +90,11 @@ class _$ZarazZarazConfigBodySerializer implements PrimitiveSerializer<ZarazZaraz
       object.debugKey,
       specifiedType: const FullType(String),
     );
+    yield r'triggers';
+    yield serializers.serialize(
+      object.triggers,
+      specifiedType: const FullType(BuiltMap, [FullType(String), FullType(ZarazZarazConfigBaseTriggersValue)]),
+    );
     if (object.consent != null) {
       yield r'consent';
       yield serializers.serialize(
@@ -97,11 +102,6 @@ class _$ZarazZarazConfigBodySerializer implements PrimitiveSerializer<ZarazZaraz
         specifiedType: const FullType(ZarazZarazConfigBaseConsent),
       );
     }
-    yield r'triggers';
-    yield serializers.serialize(
-      object.triggers,
-      specifiedType: const FullType(BuiltMap, [FullType(String), FullType(ZarazZarazConfigBaseTriggersValue)]),
-    );
     yield r'tools';
     yield serializers.serialize(
       object.tools,
@@ -179,19 +179,19 @@ class _$ZarazZarazConfigBodySerializer implements PrimitiveSerializer<ZarazZaraz
           ) as String;
           result.debugKey = valueDes;
           break;
-        case r'consent':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(ZarazZarazConfigBaseConsent),
-          ) as ZarazZarazConfigBaseConsent;
-          result.consent.replace(valueDes);
-          break;
         case r'triggers':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(BuiltMap, [FullType(String), FullType(ZarazZarazConfigBaseTriggersValue)]),
           ) as BuiltMap<String, ZarazZarazConfigBaseTriggersValue>;
           result.triggers.replace(valueDes);
+          break;
+        case r'consent':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(ZarazZarazConfigBaseConsent),
+          ) as ZarazZarazConfigBaseConsent;
+          result.consent.replace(valueDes);
           break;
         case r'tools':
           final valueDes = serializers.deserialize(

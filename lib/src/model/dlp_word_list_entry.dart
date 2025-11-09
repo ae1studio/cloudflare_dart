@@ -16,9 +16,9 @@ part 'dlp_word_list_entry.g.dart';
 /// * [enabled] 
 /// * [id] 
 /// * [name] 
-/// * [profileId] 
 /// * [updatedAt] 
 /// * [wordList] 
+/// * [profileId] 
 @BuiltValue(instantiable: false)
 abstract class DlpWordListEntry  {
   @BuiltValueField(wireName: r'created_at')
@@ -33,14 +33,14 @@ abstract class DlpWordListEntry  {
   @BuiltValueField(wireName: r'name')
   String get name;
 
-  @BuiltValueField(wireName: r'profile_id')
-  String? get profileId;
-
   @BuiltValueField(wireName: r'updated_at')
   DateTime get updatedAt;
 
   @BuiltValueField(wireName: r'word_list')
   JsonObject? get wordList;
+
+  @BuiltValueField(wireName: r'profile_id')
+  String? get profileId;
 
   @BuiltValueSerializer(custom: true)
   static Serializer<DlpWordListEntry> get serializer => _$DlpWordListEntrySerializer();
@@ -78,13 +78,6 @@ class _$DlpWordListEntrySerializer implements PrimitiveSerializer<DlpWordListEnt
       object.name,
       specifiedType: const FullType(String),
     );
-    if (object.profileId != null) {
-      yield r'profile_id';
-      yield serializers.serialize(
-        object.profileId,
-        specifiedType: const FullType.nullable(String),
-      );
-    }
     yield r'updated_at';
     yield serializers.serialize(
       object.updatedAt,
@@ -95,6 +88,13 @@ class _$DlpWordListEntrySerializer implements PrimitiveSerializer<DlpWordListEnt
       object.wordList,
       specifiedType: const FullType.nullable(JsonObject),
     );
+    if (object.profileId != null) {
+      yield r'profile_id';
+      yield serializers.serialize(
+        object.profileId,
+        specifiedType: const FullType.nullable(String),
+      );
+    }
   }
 
   @override
@@ -186,14 +186,6 @@ class _$$DlpWordListEntrySerializer implements PrimitiveSerializer<$DlpWordListE
           ) as String;
           result.name = valueDes;
           break;
-        case r'profile_id':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
-          if (valueDes == null) continue;
-          result.profileId = valueDes;
-          break;
         case r'updated_at':
           final valueDes = serializers.deserialize(
             value,
@@ -208,6 +200,14 @@ class _$$DlpWordListEntrySerializer implements PrimitiveSerializer<$DlpWordListE
           ) as JsonObject?;
           if (valueDes == null) continue;
           result.wordList = valueDes;
+          break;
+        case r'profile_id':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType.nullable(String),
+          ) as String?;
+          if (valueDes == null) continue;
+          result.profileId = valueDes;
           break;
         default:
           unhandled.add(key);

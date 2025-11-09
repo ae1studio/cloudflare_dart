@@ -8,9 +8,9 @@ import 'package:cloudflare_dart/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**managedAppId** | **String** | Managed app ID. | 
 **hostnames** | **BuiltList&lt;String&gt;** | FQDNs to associate with traffic decisions. | [optional] 
 **ipSubnets** | **BuiltList&lt;String&gt;** | IPv4 CIDRs to associate with traffic decisions. (IPv6 CIDRs are currently unsupported) | [optional] 
-**managedAppId** | **String** | Managed app ID. | 
 **name** | **String** | Display name for the app. | [optional] 
 **type** | **String** | Category of the app. | [optional] 
 

@@ -148,13 +148,13 @@ class _$AccessSchemasOidc extends AccessSchemasOidc {
   @override
   final JsonObject config;
   @override
-  final String? id;
-  @override
   final String name;
   @override
-  final AccessSchemasIdentityProviderScimConfig? scimConfig;
-  @override
   final AccessSchemasIdentityProviderTypeEnum type;
+  @override
+  final String? id;
+  @override
+  final AccessSchemasIdentityProviderScimConfig? scimConfig;
 
   factory _$AccessSchemasOidc(
           [void Function(AccessSchemasOidcBuilder)? updates]) =>
@@ -162,10 +162,10 @@ class _$AccessSchemasOidc extends AccessSchemasOidc {
 
   _$AccessSchemasOidc._(
       {required this.config,
-      this.id,
       required this.name,
-      this.scimConfig,
-      required this.type})
+      required this.type,
+      this.id,
+      this.scimConfig})
       : super._();
   @override
   AccessSchemasOidc rebuild(void Function(AccessSchemasOidcBuilder) updates) =>
@@ -180,20 +180,20 @@ class _$AccessSchemasOidc extends AccessSchemasOidc {
     if (identical(other, this)) return true;
     return other is AccessSchemasOidc &&
         config == other.config &&
-        id == other.id &&
         name == other.name &&
-        scimConfig == other.scimConfig &&
-        type == other.type;
+        type == other.type &&
+        id == other.id &&
+        scimConfig == other.scimConfig;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
     _$hash = $jc(_$hash, config.hashCode);
-    _$hash = $jc(_$hash, id.hashCode);
     _$hash = $jc(_$hash, name.hashCode);
-    _$hash = $jc(_$hash, scimConfig.hashCode);
     _$hash = $jc(_$hash, type.hashCode);
+    _$hash = $jc(_$hash, id.hashCode);
+    _$hash = $jc(_$hash, scimConfig.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -202,10 +202,10 @@ class _$AccessSchemasOidc extends AccessSchemasOidc {
   String toString() {
     return (newBuiltValueToStringHelper(r'AccessSchemasOidc')
           ..add('config', config)
-          ..add('id', id)
           ..add('name', name)
-          ..add('scimConfig', scimConfig)
-          ..add('type', type))
+          ..add('type', type)
+          ..add('id', id)
+          ..add('scimConfig', scimConfig))
         .toString();
   }
 }
@@ -220,13 +220,18 @@ class AccessSchemasOidcBuilder
   JsonObject? get config => _$this._config;
   set config(covariant JsonObject? config) => _$this._config = config;
 
-  String? _id;
-  String? get id => _$this._id;
-  set id(covariant String? id) => _$this._id = id;
-
   String? _name;
   String? get name => _$this._name;
   set name(covariant String? name) => _$this._name = name;
+
+  AccessSchemasIdentityProviderTypeEnum? _type;
+  AccessSchemasIdentityProviderTypeEnum? get type => _$this._type;
+  set type(covariant AccessSchemasIdentityProviderTypeEnum? type) =>
+      _$this._type = type;
+
+  String? _id;
+  String? get id => _$this._id;
+  set id(covariant String? id) => _$this._id = id;
 
   AccessSchemasIdentityProviderScimConfigBuilder? _scimConfig;
   AccessSchemasIdentityProviderScimConfigBuilder get scimConfig =>
@@ -236,11 +241,6 @@ class AccessSchemasOidcBuilder
               scimConfig) =>
       _$this._scimConfig = scimConfig;
 
-  AccessSchemasIdentityProviderTypeEnum? _type;
-  AccessSchemasIdentityProviderTypeEnum? get type => _$this._type;
-  set type(covariant AccessSchemasIdentityProviderTypeEnum? type) =>
-      _$this._type = type;
-
   AccessSchemasOidcBuilder() {
     AccessSchemasOidc._defaults(this);
   }
@@ -249,10 +249,10 @@ class AccessSchemasOidcBuilder
     final $v = _$v;
     if ($v != null) {
       _config = $v.config;
-      _id = $v.id;
       _name = $v.name;
-      _scimConfig = $v.scimConfig?.toBuilder();
       _type = $v.type;
+      _id = $v.id;
+      _scimConfig = $v.scimConfig?.toBuilder();
       _$v = null;
     }
     return this;
@@ -278,12 +278,12 @@ class AccessSchemasOidcBuilder
           _$AccessSchemasOidc._(
             config: BuiltValueNullFieldError.checkNotNull(
                 config, r'AccessSchemasOidc', 'config'),
-            id: id,
             name: BuiltValueNullFieldError.checkNotNull(
                 name, r'AccessSchemasOidc', 'name'),
-            scimConfig: _scimConfig?.build(),
             type: BuiltValueNullFieldError.checkNotNull(
                 type, r'AccessSchemasOidc', 'type'),
+            id: id,
+            scimConfig: _scimConfig?.build(),
           );
     } catch (_) {
       late String _$failedField;

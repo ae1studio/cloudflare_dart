@@ -13,16 +13,16 @@ part 'post_indicator_create_bulk_request.g.dart';
 /// PostIndicatorCreateBulkRequest
 ///
 /// Properties:
-/// * [autoCreateType] - Global flag to automatically create indicator types if they don't exist. Individual indicators can override this with their own autoCreateType flag.
 /// * [indicators] 
+/// * [autoCreateType] - Global flag to automatically create indicator types if they don't exist. Individual indicators can override this with their own autoCreateType flag.
 @BuiltValue()
 abstract class PostIndicatorCreateBulkRequest implements Built<PostIndicatorCreateBulkRequest, PostIndicatorCreateBulkRequestBuilder> {
+  @BuiltValueField(wireName: r'indicators')
+  BuiltList<PostIndicatorCreateBulkRequestIndicatorsInner> get indicators;
+
   /// Global flag to automatically create indicator types if they don't exist. Individual indicators can override this with their own autoCreateType flag.
   @BuiltValueField(wireName: r'autoCreateType')
   bool? get autoCreateType;
-
-  @BuiltValueField(wireName: r'indicators')
-  BuiltList<PostIndicatorCreateBulkRequestIndicatorsInner> get indicators;
 
   PostIndicatorCreateBulkRequest._();
 
@@ -47,6 +47,11 @@ class _$PostIndicatorCreateBulkRequestSerializer implements PrimitiveSerializer<
     PostIndicatorCreateBulkRequest object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    yield r'indicators';
+    yield serializers.serialize(
+      object.indicators,
+      specifiedType: const FullType(BuiltList, [FullType(PostIndicatorCreateBulkRequestIndicatorsInner)]),
+    );
     if (object.autoCreateType != null) {
       yield r'autoCreateType';
       yield serializers.serialize(
@@ -54,11 +59,6 @@ class _$PostIndicatorCreateBulkRequestSerializer implements PrimitiveSerializer<
         specifiedType: const FullType(bool),
       );
     }
-    yield r'indicators';
-    yield serializers.serialize(
-      object.indicators,
-      specifiedType: const FullType(BuiltList, [FullType(PostIndicatorCreateBulkRequestIndicatorsInner)]),
-    );
   }
 
   @override
@@ -82,19 +82,19 @@ class _$PostIndicatorCreateBulkRequestSerializer implements PrimitiveSerializer<
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'autoCreateType':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
-          result.autoCreateType = valueDes;
-          break;
         case r'indicators':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(BuiltList, [FullType(PostIndicatorCreateBulkRequestIndicatorsInner)]),
           ) as BuiltList<PostIndicatorCreateBulkRequestIndicatorsInner>;
           result.indicators.replace(valueDes);
+          break;
+        case r'autoCreateType':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(bool),
+          ) as bool;
+          result.autoCreateType = valueDes;
           break;
         default:
           unhandled.add(key);

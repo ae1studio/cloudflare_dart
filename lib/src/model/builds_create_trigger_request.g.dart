@@ -12,8 +12,6 @@ class _$BuildsCreateTriggerRequest extends BuildsCreateTriggerRequest {
   @override
   final BuiltList<String> branchIncludes;
   @override
-  final bool? buildCachingEnabled;
-  @override
   final String buildCommand;
   @override
   final String buildTokenUuid;
@@ -31,6 +29,8 @@ class _$BuildsCreateTriggerRequest extends BuildsCreateTriggerRequest {
   final String rootDirectory;
   @override
   final String triggerName;
+  @override
+  final bool? buildCachingEnabled;
 
   factory _$BuildsCreateTriggerRequest(
           [void Function(BuildsCreateTriggerRequestBuilder)? updates]) =>
@@ -39,7 +39,6 @@ class _$BuildsCreateTriggerRequest extends BuildsCreateTriggerRequest {
   _$BuildsCreateTriggerRequest._(
       {required this.branchExcludes,
       required this.branchIncludes,
-      this.buildCachingEnabled,
       required this.buildCommand,
       required this.buildTokenUuid,
       required this.deployCommand,
@@ -48,7 +47,8 @@ class _$BuildsCreateTriggerRequest extends BuildsCreateTriggerRequest {
       required this.pathIncludes,
       required this.repoConnectionUuid,
       required this.rootDirectory,
-      required this.triggerName})
+      required this.triggerName,
+      this.buildCachingEnabled})
       : super._();
   @override
   BuildsCreateTriggerRequest rebuild(
@@ -65,7 +65,6 @@ class _$BuildsCreateTriggerRequest extends BuildsCreateTriggerRequest {
     return other is BuildsCreateTriggerRequest &&
         branchExcludes == other.branchExcludes &&
         branchIncludes == other.branchIncludes &&
-        buildCachingEnabled == other.buildCachingEnabled &&
         buildCommand == other.buildCommand &&
         buildTokenUuid == other.buildTokenUuid &&
         deployCommand == other.deployCommand &&
@@ -74,7 +73,8 @@ class _$BuildsCreateTriggerRequest extends BuildsCreateTriggerRequest {
         pathIncludes == other.pathIncludes &&
         repoConnectionUuid == other.repoConnectionUuid &&
         rootDirectory == other.rootDirectory &&
-        triggerName == other.triggerName;
+        triggerName == other.triggerName &&
+        buildCachingEnabled == other.buildCachingEnabled;
   }
 
   @override
@@ -82,7 +82,6 @@ class _$BuildsCreateTriggerRequest extends BuildsCreateTriggerRequest {
     var _$hash = 0;
     _$hash = $jc(_$hash, branchExcludes.hashCode);
     _$hash = $jc(_$hash, branchIncludes.hashCode);
-    _$hash = $jc(_$hash, buildCachingEnabled.hashCode);
     _$hash = $jc(_$hash, buildCommand.hashCode);
     _$hash = $jc(_$hash, buildTokenUuid.hashCode);
     _$hash = $jc(_$hash, deployCommand.hashCode);
@@ -92,6 +91,7 @@ class _$BuildsCreateTriggerRequest extends BuildsCreateTriggerRequest {
     _$hash = $jc(_$hash, repoConnectionUuid.hashCode);
     _$hash = $jc(_$hash, rootDirectory.hashCode);
     _$hash = $jc(_$hash, triggerName.hashCode);
+    _$hash = $jc(_$hash, buildCachingEnabled.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -101,7 +101,6 @@ class _$BuildsCreateTriggerRequest extends BuildsCreateTriggerRequest {
     return (newBuiltValueToStringHelper(r'BuildsCreateTriggerRequest')
           ..add('branchExcludes', branchExcludes)
           ..add('branchIncludes', branchIncludes)
-          ..add('buildCachingEnabled', buildCachingEnabled)
           ..add('buildCommand', buildCommand)
           ..add('buildTokenUuid', buildTokenUuid)
           ..add('deployCommand', deployCommand)
@@ -110,7 +109,8 @@ class _$BuildsCreateTriggerRequest extends BuildsCreateTriggerRequest {
           ..add('pathIncludes', pathIncludes)
           ..add('repoConnectionUuid', repoConnectionUuid)
           ..add('rootDirectory', rootDirectory)
-          ..add('triggerName', triggerName))
+          ..add('triggerName', triggerName)
+          ..add('buildCachingEnabled', buildCachingEnabled))
         .toString();
   }
 }
@@ -131,11 +131,6 @@ class BuildsCreateTriggerRequestBuilder
       _$this._branchIncludes ??= ListBuilder<String>();
   set branchIncludes(ListBuilder<String>? branchIncludes) =>
       _$this._branchIncludes = branchIncludes;
-
-  bool? _buildCachingEnabled;
-  bool? get buildCachingEnabled => _$this._buildCachingEnabled;
-  set buildCachingEnabled(bool? buildCachingEnabled) =>
-      _$this._buildCachingEnabled = buildCachingEnabled;
 
   String? _buildCommand;
   String? get buildCommand => _$this._buildCommand;
@@ -182,6 +177,11 @@ class BuildsCreateTriggerRequestBuilder
   String? get triggerName => _$this._triggerName;
   set triggerName(String? triggerName) => _$this._triggerName = triggerName;
 
+  bool? _buildCachingEnabled;
+  bool? get buildCachingEnabled => _$this._buildCachingEnabled;
+  set buildCachingEnabled(bool? buildCachingEnabled) =>
+      _$this._buildCachingEnabled = buildCachingEnabled;
+
   BuildsCreateTriggerRequestBuilder() {
     BuildsCreateTriggerRequest._defaults(this);
   }
@@ -191,7 +191,6 @@ class BuildsCreateTriggerRequestBuilder
     if ($v != null) {
       _branchExcludes = $v.branchExcludes.toBuilder();
       _branchIncludes = $v.branchIncludes.toBuilder();
-      _buildCachingEnabled = $v.buildCachingEnabled;
       _buildCommand = $v.buildCommand;
       _buildTokenUuid = $v.buildTokenUuid;
       _deployCommand = $v.deployCommand;
@@ -201,6 +200,7 @@ class BuildsCreateTriggerRequestBuilder
       _repoConnectionUuid = $v.repoConnectionUuid;
       _rootDirectory = $v.rootDirectory;
       _triggerName = $v.triggerName;
+      _buildCachingEnabled = $v.buildCachingEnabled;
       _$v = null;
     }
     return this;
@@ -226,7 +226,6 @@ class BuildsCreateTriggerRequestBuilder
           _$BuildsCreateTriggerRequest._(
             branchExcludes: branchExcludes.build(),
             branchIncludes: branchIncludes.build(),
-            buildCachingEnabled: buildCachingEnabled,
             buildCommand: BuiltValueNullFieldError.checkNotNull(
                 buildCommand, r'BuildsCreateTriggerRequest', 'buildCommand'),
             buildTokenUuid: BuiltValueNullFieldError.checkNotNull(
@@ -249,6 +248,7 @@ class BuildsCreateTriggerRequestBuilder
                 rootDirectory, r'BuildsCreateTriggerRequest', 'rootDirectory'),
             triggerName: BuiltValueNullFieldError.checkNotNull(
                 triggerName, r'BuildsCreateTriggerRequest', 'triggerName'),
+            buildCachingEnabled: buildCachingEnabled,
           );
     } catch (_) {
       late String _$failedField;

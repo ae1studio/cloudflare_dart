@@ -9,6 +9,8 @@ part of 'zero_trust_gateway_locations_create_zero_trust_gateway_location_request
 class _$ZeroTrustGatewayLocationsCreateZeroTrustGatewayLocationRequest
     extends ZeroTrustGatewayLocationsCreateZeroTrustGatewayLocationRequest {
   @override
+  final String name;
+  @override
   final bool? clientDefault;
   @override
   final String? dnsDestinationIpsId;
@@ -16,8 +18,6 @@ class _$ZeroTrustGatewayLocationsCreateZeroTrustGatewayLocationRequest
   final bool? ecsSupport;
   @override
   final ZeroTrustGatewayEndpoints? endpoints;
-  @override
-  final String name;
   @override
   final BuiltList<ZeroTrustGatewayIpv4Network>? networks;
 
@@ -30,11 +30,11 @@ class _$ZeroTrustGatewayLocationsCreateZeroTrustGatewayLocationRequest
           ._build();
 
   _$ZeroTrustGatewayLocationsCreateZeroTrustGatewayLocationRequest._(
-      {this.clientDefault,
+      {required this.name,
+      this.clientDefault,
       this.dnsDestinationIpsId,
       this.ecsSupport,
       this.endpoints,
-      required this.name,
       this.networks})
       : super._();
   @override
@@ -55,22 +55,22 @@ class _$ZeroTrustGatewayLocationsCreateZeroTrustGatewayLocationRequest
     if (identical(other, this)) return true;
     return other
             is ZeroTrustGatewayLocationsCreateZeroTrustGatewayLocationRequest &&
+        name == other.name &&
         clientDefault == other.clientDefault &&
         dnsDestinationIpsId == other.dnsDestinationIpsId &&
         ecsSupport == other.ecsSupport &&
         endpoints == other.endpoints &&
-        name == other.name &&
         networks == other.networks;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
+    _$hash = $jc(_$hash, name.hashCode);
     _$hash = $jc(_$hash, clientDefault.hashCode);
     _$hash = $jc(_$hash, dnsDestinationIpsId.hashCode);
     _$hash = $jc(_$hash, ecsSupport.hashCode);
     _$hash = $jc(_$hash, endpoints.hashCode);
-    _$hash = $jc(_$hash, name.hashCode);
     _$hash = $jc(_$hash, networks.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
@@ -80,11 +80,11 @@ class _$ZeroTrustGatewayLocationsCreateZeroTrustGatewayLocationRequest
   String toString() {
     return (newBuiltValueToStringHelper(
             r'ZeroTrustGatewayLocationsCreateZeroTrustGatewayLocationRequest')
+          ..add('name', name)
           ..add('clientDefault', clientDefault)
           ..add('dnsDestinationIpsId', dnsDestinationIpsId)
           ..add('ecsSupport', ecsSupport)
           ..add('endpoints', endpoints)
-          ..add('name', name)
           ..add('networks', networks))
         .toString();
   }
@@ -95,6 +95,10 @@ class ZeroTrustGatewayLocationsCreateZeroTrustGatewayLocationRequestBuilder
         Builder<ZeroTrustGatewayLocationsCreateZeroTrustGatewayLocationRequest,
             ZeroTrustGatewayLocationsCreateZeroTrustGatewayLocationRequestBuilder> {
   _$ZeroTrustGatewayLocationsCreateZeroTrustGatewayLocationRequest? _$v;
+
+  String? _name;
+  String? get name => _$this._name;
+  set name(String? name) => _$this._name = name;
 
   bool? _clientDefault;
   bool? get clientDefault => _$this._clientDefault;
@@ -116,10 +120,6 @@ class ZeroTrustGatewayLocationsCreateZeroTrustGatewayLocationRequestBuilder
   set endpoints(ZeroTrustGatewayEndpointsBuilder? endpoints) =>
       _$this._endpoints = endpoints;
 
-  String? _name;
-  String? get name => _$this._name;
-  set name(String? name) => _$this._name = name;
-
   ListBuilder<ZeroTrustGatewayIpv4Network>? _networks;
   ListBuilder<ZeroTrustGatewayIpv4Network> get networks =>
       _$this._networks ??= ListBuilder<ZeroTrustGatewayIpv4Network>();
@@ -135,11 +135,11 @@ class ZeroTrustGatewayLocationsCreateZeroTrustGatewayLocationRequestBuilder
       get _$this {
     final $v = _$v;
     if ($v != null) {
+      _name = $v.name;
       _clientDefault = $v.clientDefault;
       _dnsDestinationIpsId = $v.dnsDestinationIpsId;
       _ecsSupport = $v.ecsSupport;
       _endpoints = $v.endpoints?.toBuilder();
-      _name = $v.name;
       _networks = $v.networks?.toBuilder();
       _$v = null;
     }
@@ -170,14 +170,14 @@ class ZeroTrustGatewayLocationsCreateZeroTrustGatewayLocationRequestBuilder
     try {
       _$result = _$v ??
           _$ZeroTrustGatewayLocationsCreateZeroTrustGatewayLocationRequest._(
-            clientDefault: clientDefault,
-            dnsDestinationIpsId: dnsDestinationIpsId,
-            ecsSupport: ecsSupport,
-            endpoints: _endpoints?.build(),
             name: BuiltValueNullFieldError.checkNotNull(
                 name,
                 r'ZeroTrustGatewayLocationsCreateZeroTrustGatewayLocationRequest',
                 'name'),
+            clientDefault: clientDefault,
+            dnsDestinationIpsId: dnsDestinationIpsId,
+            ecsSupport: ecsSupport,
+            endpoints: _endpoints?.build(),
             networks: _networks?.build(),
           );
     } catch (_) {
@@ -185,7 +185,6 @@ class ZeroTrustGatewayLocationsCreateZeroTrustGatewayLocationRequestBuilder
       try {
         _$failedField = 'endpoints';
         _endpoints?.build();
-
         _$failedField = 'networks';
         _networks?.build();
       } catch (e) {

@@ -8,16 +8,17 @@ import 'package:cloudflare_dart/src/model/zones_base.dart';
 import 'package:cloudflare_dart/src/model/zones0rtt_value.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
+import 'package:built_value/json_object.dart';
 
 part 'zones0rtt.g.dart';
 
 /// 0-RTT session resumption enabled for this zone.
 ///
 /// Properties:
-/// * [editable] - Whether or not this setting can be modified for this zone (based on your Cloudflare plan level).
 /// * [id] - ID of the zone setting.
-/// * [modifiedOn] - last time this setting was modified.
 /// * [value] 
+/// * [editable] - Whether or not this setting can be modified for this zone (based on your Cloudflare plan level).
+/// * [modifiedOn] - last time this setting was modified.
 @BuiltValue()
 abstract class Zones0rtt implements ZonesBase, Built<Zones0rtt, Zones0rttBuilder> {
   Zones0rtt._();

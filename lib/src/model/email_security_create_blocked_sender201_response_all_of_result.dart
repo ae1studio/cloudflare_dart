@@ -12,18 +12,15 @@ part 'email_security_create_blocked_sender201_response_all_of_result.g.dart';
 /// EmailSecurityCreateBlockedSender201ResponseAllOfResult
 ///
 /// Properties:
-/// * [comments] 
 /// * [isRegex] 
 /// * [pattern] 
 /// * [patternType] 
 /// * [createdAt] 
 /// * [id] - The unique identifier for the allow policy.
 /// * [lastModified] 
+/// * [comments] 
 @BuiltValue()
 abstract class EmailSecurityCreateBlockedSender201ResponseAllOfResult implements Built<EmailSecurityCreateBlockedSender201ResponseAllOfResult, EmailSecurityCreateBlockedSender201ResponseAllOfResultBuilder> {
-  @BuiltValueField(wireName: r'comments')
-  String? get comments;
-
   @BuiltValueField(wireName: r'is_regex')
   bool get isRegex;
 
@@ -43,6 +40,9 @@ abstract class EmailSecurityCreateBlockedSender201ResponseAllOfResult implements
 
   @BuiltValueField(wireName: r'last_modified')
   DateTime get lastModified;
+
+  @BuiltValueField(wireName: r'comments')
+  String? get comments;
 
   EmailSecurityCreateBlockedSender201ResponseAllOfResult._();
 
@@ -67,13 +67,6 @@ class _$EmailSecurityCreateBlockedSender201ResponseAllOfResultSerializer impleme
     EmailSecurityCreateBlockedSender201ResponseAllOfResult object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
-    if (object.comments != null) {
-      yield r'comments';
-      yield serializers.serialize(
-        object.comments,
-        specifiedType: const FullType.nullable(String),
-      );
-    }
     yield r'is_regex';
     yield serializers.serialize(
       object.isRegex,
@@ -104,6 +97,13 @@ class _$EmailSecurityCreateBlockedSender201ResponseAllOfResultSerializer impleme
       object.lastModified,
       specifiedType: const FullType(DateTime),
     );
+    if (object.comments != null) {
+      yield r'comments';
+      yield serializers.serialize(
+        object.comments,
+        specifiedType: const FullType.nullable(String),
+      );
+    }
   }
 
   @override
@@ -127,14 +127,6 @@ class _$EmailSecurityCreateBlockedSender201ResponseAllOfResultSerializer impleme
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'comments':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
-          if (valueDes == null) continue;
-          result.comments = valueDes;
-          break;
         case r'is_regex':
           final valueDes = serializers.deserialize(
             value,
@@ -176,6 +168,14 @@ class _$EmailSecurityCreateBlockedSender201ResponseAllOfResultSerializer impleme
             specifiedType: const FullType(DateTime),
           ) as DateTime;
           result.lastModified = valueDes;
+          break;
+        case r'comments':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType.nullable(String),
+          ) as String?;
+          if (valueDes == null) continue;
+          result.comments = valueDes;
           break;
         default:
           unhandled.add(key);

@@ -15,10 +15,10 @@ part 'smartshield_cache_reserve_clear_response_value_result.g.dart';
 ///
 /// Properties:
 /// * [id] - ID of the zone setting.
-/// * [modifiedOn] - Last time this setting was modified.
-/// * [endTs] - The time that the latest Cache Reserve Clear operation completed.
 /// * [startTs] - The time that the latest Cache Reserve Clear operation started.
 /// * [state] 
+/// * [modifiedOn] - Last time this setting was modified.
+/// * [endTs] - The time that the latest Cache Reserve Clear operation completed.
 @BuiltValue()
 abstract class SmartshieldCacheReserveClearResponseValueResult implements SmartshieldCacheReserveClear, Built<SmartshieldCacheReserveClearResponseValueResult, SmartshieldCacheReserveClearResponseValueResultBuilder> {
   /// The time that the latest Cache Reserve Clear operation completed.

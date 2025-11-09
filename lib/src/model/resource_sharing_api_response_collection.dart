@@ -17,8 +17,8 @@ part 'resource_sharing_api_response_collection.g.dart';
 ///
 /// Properties:
 /// * [errors] 
-/// * [result] 
 /// * [success] - Whether the API call was successful.
+/// * [result] 
 /// * [resultInfo] 
 @BuiltValue(instantiable: false)
 abstract class ResourceSharingApiResponseCollection implements ResourceSharingApiResponseCommon {

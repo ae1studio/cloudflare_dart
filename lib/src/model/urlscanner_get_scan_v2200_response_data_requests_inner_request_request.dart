@@ -12,18 +12,15 @@ part 'urlscanner_get_scan_v2200_response_data_requests_inner_request_request.g.d
 /// UrlscannerGetScanV2200ResponseDataRequestsInnerRequestRequest
 ///
 /// Properties:
-/// * [headers] 
 /// * [initialPriority] 
 /// * [isSameSite] 
 /// * [method] 
 /// * [mixedContentType] 
 /// * [referrerPolicy] 
 /// * [url] 
+/// * [headers] 
 @BuiltValue()
 abstract class UrlscannerGetScanV2200ResponseDataRequestsInnerRequestRequest implements Built<UrlscannerGetScanV2200ResponseDataRequestsInnerRequestRequest, UrlscannerGetScanV2200ResponseDataRequestsInnerRequestRequestBuilder> {
-  @BuiltValueField(wireName: r'headers')
-  JsonObject? get headers;
-
   @BuiltValueField(wireName: r'initialPriority')
   String get initialPriority;
 
@@ -41,6 +38,9 @@ abstract class UrlscannerGetScanV2200ResponseDataRequestsInnerRequestRequest imp
 
   @BuiltValueField(wireName: r'url')
   String get url;
+
+  @BuiltValueField(wireName: r'headers')
+  JsonObject? get headers;
 
   UrlscannerGetScanV2200ResponseDataRequestsInnerRequestRequest._();
 
@@ -65,13 +65,6 @@ class _$UrlscannerGetScanV2200ResponseDataRequestsInnerRequestRequestSerializer 
     UrlscannerGetScanV2200ResponseDataRequestsInnerRequestRequest object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
-    if (object.headers != null) {
-      yield r'headers';
-      yield serializers.serialize(
-        object.headers,
-        specifiedType: const FullType(JsonObject),
-      );
-    }
     yield r'initialPriority';
     yield serializers.serialize(
       object.initialPriority,
@@ -102,6 +95,13 @@ class _$UrlscannerGetScanV2200ResponseDataRequestsInnerRequestRequestSerializer 
       object.url,
       specifiedType: const FullType(String),
     );
+    if (object.headers != null) {
+      yield r'headers';
+      yield serializers.serialize(
+        object.headers,
+        specifiedType: const FullType(JsonObject),
+      );
+    }
   }
 
   @override
@@ -125,13 +125,6 @@ class _$UrlscannerGetScanV2200ResponseDataRequestsInnerRequestRequestSerializer 
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'headers':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(JsonObject),
-          ) as JsonObject;
-          result.headers = valueDes;
-          break;
         case r'initialPriority':
           final valueDes = serializers.deserialize(
             value,
@@ -173,6 +166,13 @@ class _$UrlscannerGetScanV2200ResponseDataRequestsInnerRequestRequestSerializer 
             specifiedType: const FullType(String),
           ) as String;
           result.url = valueDes;
+          break;
+        case r'headers':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(JsonObject),
+          ) as JsonObject;
+          result.headers = valueDes;
           break;
         default:
           unhandled.add(key);

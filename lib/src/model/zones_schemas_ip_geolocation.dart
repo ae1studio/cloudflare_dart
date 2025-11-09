@@ -8,16 +8,17 @@ import 'package:cloudflare_dart/src/model/zones_base.dart';
 import 'package:cloudflare_dart/src/model/zones_ip_geolocation_value.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
+import 'package:built_value/json_object.dart';
 
 part 'zones_schemas_ip_geolocation.g.dart';
 
 /// Enable IP Geolocation to have Cloudflare geolocate visitors to your website and pass the country code to you. (https://support.cloudflare.com/hc/en-us/articles/200168236).
 ///
 /// Properties:
-/// * [editable] - Whether or not this setting can be modified for this zone (based on your Cloudflare plan level).
 /// * [id] - ID of the zone setting.
-/// * [modifiedOn] - last time this setting was modified.
 /// * [value] 
+/// * [editable] - Whether or not this setting can be modified for this zone (based on your Cloudflare plan level).
+/// * [modifiedOn] - last time this setting was modified.
 @BuiltValue()
 abstract class ZonesSchemasIpGeolocation implements ZonesBase, Built<ZonesSchemasIpGeolocation, ZonesSchemasIpGeolocationBuilder> {
   ZonesSchemasIpGeolocation._();

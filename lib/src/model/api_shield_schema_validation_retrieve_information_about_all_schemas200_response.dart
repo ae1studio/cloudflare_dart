@@ -19,8 +19,8 @@ part 'api_shield_schema_validation_retrieve_information_about_all_schemas200_res
 /// * [errors] 
 /// * [messages] 
 /// * [success] - Whether the API call was successful.
-/// * [resultInfo] 
 /// * [result] 
+/// * [resultInfo] 
 @BuiltValue()
 abstract class ApiShieldSchemaValidationRetrieveInformationAboutAllSchemas200Response implements ApiShieldApiResponseCollection, Built<ApiShieldSchemaValidationRetrieveInformationAboutAllSchemas200Response, ApiShieldSchemaValidationRetrieveInformationAboutAllSchemas200ResponseBuilder> {
   @BuiltValueField(wireName: r'result')

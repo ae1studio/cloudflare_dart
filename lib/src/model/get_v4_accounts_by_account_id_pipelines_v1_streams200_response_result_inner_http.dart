@@ -13,20 +13,20 @@ part 'get_v4_accounts_by_account_id_pipelines_v1_streams200_response_result_inne
 ///
 /// Properties:
 /// * [authentication] - Indicates that authentication is required for the HTTP endpoint.
-/// * [cors] 
 /// * [enabled] - Indicates that the HTTP endpoint is enabled.
+/// * [cors] 
 @BuiltValue()
 abstract class GetV4AccountsByAccountIdPipelinesV1Streams200ResponseResultInnerHttp implements Built<GetV4AccountsByAccountIdPipelinesV1Streams200ResponseResultInnerHttp, GetV4AccountsByAccountIdPipelinesV1Streams200ResponseResultInnerHttpBuilder> {
   /// Indicates that authentication is required for the HTTP endpoint.
   @BuiltValueField(wireName: r'authentication')
   bool get authentication;
 
-  @BuiltValueField(wireName: r'cors')
-  GetV4AccountsByAccountIdPipelinesV1Streams200ResponseResultInnerHttpCors? get cors;
-
   /// Indicates that the HTTP endpoint is enabled.
   @BuiltValueField(wireName: r'enabled')
   bool get enabled;
+
+  @BuiltValueField(wireName: r'cors')
+  GetV4AccountsByAccountIdPipelinesV1Streams200ResponseResultInnerHttpCors? get cors;
 
   GetV4AccountsByAccountIdPipelinesV1Streams200ResponseResultInnerHttp._();
 
@@ -56,6 +56,11 @@ class _$GetV4AccountsByAccountIdPipelinesV1Streams200ResponseResultInnerHttpSeri
       object.authentication,
       specifiedType: const FullType(bool),
     );
+    yield r'enabled';
+    yield serializers.serialize(
+      object.enabled,
+      specifiedType: const FullType(bool),
+    );
     if (object.cors != null) {
       yield r'cors';
       yield serializers.serialize(
@@ -63,11 +68,6 @@ class _$GetV4AccountsByAccountIdPipelinesV1Streams200ResponseResultInnerHttpSeri
         specifiedType: const FullType(GetV4AccountsByAccountIdPipelinesV1Streams200ResponseResultInnerHttpCors),
       );
     }
-    yield r'enabled';
-    yield serializers.serialize(
-      object.enabled,
-      specifiedType: const FullType(bool),
-    );
   }
 
   @override
@@ -98,19 +98,19 @@ class _$GetV4AccountsByAccountIdPipelinesV1Streams200ResponseResultInnerHttpSeri
           ) as bool;
           result.authentication = valueDes;
           break;
-        case r'cors':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(GetV4AccountsByAccountIdPipelinesV1Streams200ResponseResultInnerHttpCors),
-          ) as GetV4AccountsByAccountIdPipelinesV1Streams200ResponseResultInnerHttpCors;
-          result.cors.replace(valueDes);
-          break;
         case r'enabled':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(bool),
           ) as bool;
           result.enabled = valueDes;
+          break;
+        case r'cors':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(GetV4AccountsByAccountIdPipelinesV1Streams200ResponseResultInnerHttpCors),
+          ) as GetV4AccountsByAccountIdPipelinesV1Streams200ResponseResultInnerHttpCors;
+          result.cors.replace(valueDes);
           break;
         default:
           unhandled.add(key);

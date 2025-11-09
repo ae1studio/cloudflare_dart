@@ -10,8 +10,6 @@ class _$ListsList extends ListsList {
   @override
   final String createdOn;
   @override
-  final String? description;
-  @override
   final String id;
   @override
   final ListsKind kind;
@@ -23,19 +21,21 @@ class _$ListsList extends ListsList {
   final num numItems;
   @override
   final num numReferencingFilters;
+  @override
+  final String? description;
 
   factory _$ListsList([void Function(ListsListBuilder)? updates]) =>
       (ListsListBuilder()..update(updates))._build();
 
   _$ListsList._(
       {required this.createdOn,
-      this.description,
       required this.id,
       required this.kind,
       required this.modifiedOn,
       required this.name,
       required this.numItems,
-      required this.numReferencingFilters})
+      required this.numReferencingFilters,
+      this.description})
       : super._();
   @override
   ListsList rebuild(void Function(ListsListBuilder) updates) =>
@@ -49,26 +49,26 @@ class _$ListsList extends ListsList {
     if (identical(other, this)) return true;
     return other is ListsList &&
         createdOn == other.createdOn &&
-        description == other.description &&
         id == other.id &&
         kind == other.kind &&
         modifiedOn == other.modifiedOn &&
         name == other.name &&
         numItems == other.numItems &&
-        numReferencingFilters == other.numReferencingFilters;
+        numReferencingFilters == other.numReferencingFilters &&
+        description == other.description;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
     _$hash = $jc(_$hash, createdOn.hashCode);
-    _$hash = $jc(_$hash, description.hashCode);
     _$hash = $jc(_$hash, id.hashCode);
     _$hash = $jc(_$hash, kind.hashCode);
     _$hash = $jc(_$hash, modifiedOn.hashCode);
     _$hash = $jc(_$hash, name.hashCode);
     _$hash = $jc(_$hash, numItems.hashCode);
     _$hash = $jc(_$hash, numReferencingFilters.hashCode);
+    _$hash = $jc(_$hash, description.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -77,13 +77,13 @@ class _$ListsList extends ListsList {
   String toString() {
     return (newBuiltValueToStringHelper(r'ListsList')
           ..add('createdOn', createdOn)
-          ..add('description', description)
           ..add('id', id)
           ..add('kind', kind)
           ..add('modifiedOn', modifiedOn)
           ..add('name', name)
           ..add('numItems', numItems)
-          ..add('numReferencingFilters', numReferencingFilters))
+          ..add('numReferencingFilters', numReferencingFilters)
+          ..add('description', description))
         .toString();
   }
 }
@@ -94,10 +94,6 @@ class ListsListBuilder implements Builder<ListsList, ListsListBuilder> {
   String? _createdOn;
   String? get createdOn => _$this._createdOn;
   set createdOn(String? createdOn) => _$this._createdOn = createdOn;
-
-  String? _description;
-  String? get description => _$this._description;
-  set description(String? description) => _$this._description = description;
 
   String? _id;
   String? get id => _$this._id;
@@ -124,6 +120,10 @@ class ListsListBuilder implements Builder<ListsList, ListsListBuilder> {
   set numReferencingFilters(num? numReferencingFilters) =>
       _$this._numReferencingFilters = numReferencingFilters;
 
+  String? _description;
+  String? get description => _$this._description;
+  set description(String? description) => _$this._description = description;
+
   ListsListBuilder() {
     ListsList._defaults(this);
   }
@@ -132,13 +132,13 @@ class ListsListBuilder implements Builder<ListsList, ListsListBuilder> {
     final $v = _$v;
     if ($v != null) {
       _createdOn = $v.createdOn;
-      _description = $v.description;
       _id = $v.id;
       _kind = $v.kind;
       _modifiedOn = $v.modifiedOn;
       _name = $v.name;
       _numItems = $v.numItems;
       _numReferencingFilters = $v.numReferencingFilters;
+      _description = $v.description;
       _$v = null;
     }
     return this;
@@ -162,7 +162,6 @@ class ListsListBuilder implements Builder<ListsList, ListsListBuilder> {
         _$ListsList._(
           createdOn: BuiltValueNullFieldError.checkNotNull(
               createdOn, r'ListsList', 'createdOn'),
-          description: description,
           id: BuiltValueNullFieldError.checkNotNull(id, r'ListsList', 'id'),
           kind:
               BuiltValueNullFieldError.checkNotNull(kind, r'ListsList', 'kind'),
@@ -174,6 +173,7 @@ class ListsListBuilder implements Builder<ListsList, ListsListBuilder> {
               numItems, r'ListsList', 'numItems'),
           numReferencingFilters: BuiltValueNullFieldError.checkNotNull(
               numReferencingFilters, r'ListsList', 'numReferencingFilters'),
+          description: description,
         );
     replace(_$result);
     return _$result;

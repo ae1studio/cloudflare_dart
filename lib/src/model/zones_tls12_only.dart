@@ -8,16 +8,17 @@ import 'package:built_collection/built_collection.dart';
 import 'package:cloudflare_dart/src/model/zones_base.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
+import 'package:built_value/json_object.dart';
 
 part 'zones_tls12_only.g.dart';
 
 /// Only allows TLS1.2.
 ///
 /// Properties:
-/// * [editable] - Whether or not this setting can be modified for this zone (based on your Cloudflare plan level).
 /// * [id] - Zone setting identifier.
-/// * [modifiedOn] - last time this setting was modified.
 /// * [value] 
+/// * [editable] - Whether or not this setting can be modified for this zone (based on your Cloudflare plan level).
+/// * [modifiedOn] - last time this setting was modified.
 @BuiltValue()
 abstract class ZonesTls12Only implements ZonesBase, Built<ZonesTls12Only, ZonesTls12OnlyBuilder> {
   ZonesTls12Only._();

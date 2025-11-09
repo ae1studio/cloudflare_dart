@@ -8,6 +8,8 @@ part of 'zaraz_zaraz_config_base_consent.dart';
 
 class _$ZarazZarazConfigBaseConsent extends ZarazZarazConfigBaseConsent {
   @override
+  final bool enabled;
+  @override
   final ZarazZarazConfigBaseConsentButtonTextTranslations?
       buttonTextTranslations;
   @override
@@ -29,8 +31,6 @@ class _$ZarazZarazConfigBaseConsent extends ZarazZarazConfigBaseConsent {
   @override
   final String? defaultLanguage;
   @override
-  final bool enabled;
-  @override
   final bool? hideModal;
   @override
   final BuiltMap<String, ZarazZarazConfigBaseConsentPurposesValue>? purposes;
@@ -46,7 +46,8 @@ class _$ZarazZarazConfigBaseConsent extends ZarazZarazConfigBaseConsent {
       (ZarazZarazConfigBaseConsentBuilder()..update(updates))._build();
 
   _$ZarazZarazConfigBaseConsent._(
-      {this.buttonTextTranslations,
+      {required this.enabled,
+      this.buttonTextTranslations,
       this.companyEmail,
       this.companyName,
       this.companyStreetAddress,
@@ -56,7 +57,6 @@ class _$ZarazZarazConfigBaseConsent extends ZarazZarazConfigBaseConsent {
       this.customCSS,
       this.customIntroDisclaimerDismissed,
       this.defaultLanguage,
-      required this.enabled,
       this.hideModal,
       this.purposes,
       this.purposesWithTranslations,
@@ -75,6 +75,7 @@ class _$ZarazZarazConfigBaseConsent extends ZarazZarazConfigBaseConsent {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is ZarazZarazConfigBaseConsent &&
+        enabled == other.enabled &&
         buttonTextTranslations == other.buttonTextTranslations &&
         companyEmail == other.companyEmail &&
         companyName == other.companyName &&
@@ -87,7 +88,6 @@ class _$ZarazZarazConfigBaseConsent extends ZarazZarazConfigBaseConsent {
         customIntroDisclaimerDismissed ==
             other.customIntroDisclaimerDismissed &&
         defaultLanguage == other.defaultLanguage &&
-        enabled == other.enabled &&
         hideModal == other.hideModal &&
         purposes == other.purposes &&
         purposesWithTranslations == other.purposesWithTranslations &&
@@ -97,6 +97,7 @@ class _$ZarazZarazConfigBaseConsent extends ZarazZarazConfigBaseConsent {
   @override
   int get hashCode {
     var _$hash = 0;
+    _$hash = $jc(_$hash, enabled.hashCode);
     _$hash = $jc(_$hash, buttonTextTranslations.hashCode);
     _$hash = $jc(_$hash, companyEmail.hashCode);
     _$hash = $jc(_$hash, companyName.hashCode);
@@ -107,7 +108,6 @@ class _$ZarazZarazConfigBaseConsent extends ZarazZarazConfigBaseConsent {
     _$hash = $jc(_$hash, customCSS.hashCode);
     _$hash = $jc(_$hash, customIntroDisclaimerDismissed.hashCode);
     _$hash = $jc(_$hash, defaultLanguage.hashCode);
-    _$hash = $jc(_$hash, enabled.hashCode);
     _$hash = $jc(_$hash, hideModal.hashCode);
     _$hash = $jc(_$hash, purposes.hashCode);
     _$hash = $jc(_$hash, purposesWithTranslations.hashCode);
@@ -119,6 +119,7 @@ class _$ZarazZarazConfigBaseConsent extends ZarazZarazConfigBaseConsent {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'ZarazZarazConfigBaseConsent')
+          ..add('enabled', enabled)
           ..add('buttonTextTranslations', buttonTextTranslations)
           ..add('companyEmail', companyEmail)
           ..add('companyName', companyName)
@@ -131,7 +132,6 @@ class _$ZarazZarazConfigBaseConsent extends ZarazZarazConfigBaseConsent {
           ..add(
               'customIntroDisclaimerDismissed', customIntroDisclaimerDismissed)
           ..add('defaultLanguage', defaultLanguage)
-          ..add('enabled', enabled)
           ..add('hideModal', hideModal)
           ..add('purposes', purposes)
           ..add('purposesWithTranslations', purposesWithTranslations)
@@ -145,6 +145,10 @@ class ZarazZarazConfigBaseConsentBuilder
         Builder<ZarazZarazConfigBaseConsent,
             ZarazZarazConfigBaseConsentBuilder> {
   _$ZarazZarazConfigBaseConsent? _$v;
+
+  bool? _enabled;
+  bool? get enabled => _$this._enabled;
+  set enabled(bool? enabled) => _$this._enabled = enabled;
 
   ZarazZarazConfigBaseConsentButtonTextTranslationsBuilder?
       _buttonTextTranslations;
@@ -202,10 +206,6 @@ class ZarazZarazConfigBaseConsentBuilder
   set defaultLanguage(String? defaultLanguage) =>
       _$this._defaultLanguage = defaultLanguage;
 
-  bool? _enabled;
-  bool? get enabled => _$this._enabled;
-  set enabled(bool? enabled) => _$this._enabled = enabled;
-
   bool? _hideModal;
   bool? get hideModal => _$this._hideModal;
   set hideModal(bool? hideModal) => _$this._hideModal = hideModal;
@@ -242,6 +242,7 @@ class ZarazZarazConfigBaseConsentBuilder
   ZarazZarazConfigBaseConsentBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
+      _enabled = $v.enabled;
       _buttonTextTranslations = $v.buttonTextTranslations?.toBuilder();
       _companyEmail = $v.companyEmail;
       _companyName = $v.companyName;
@@ -253,7 +254,6 @@ class ZarazZarazConfigBaseConsentBuilder
       _customCSS = $v.customCSS;
       _customIntroDisclaimerDismissed = $v.customIntroDisclaimerDismissed;
       _defaultLanguage = $v.defaultLanguage;
-      _enabled = $v.enabled;
       _hideModal = $v.hideModal;
       _purposes = $v.purposes?.toBuilder();
       _purposesWithTranslations = $v.purposesWithTranslations?.toBuilder();
@@ -281,6 +281,8 @@ class ZarazZarazConfigBaseConsentBuilder
     try {
       _$result = _$v ??
           _$ZarazZarazConfigBaseConsent._(
+            enabled: BuiltValueNullFieldError.checkNotNull(
+                enabled, r'ZarazZarazConfigBaseConsent', 'enabled'),
             buttonTextTranslations: _buttonTextTranslations?.build(),
             companyEmail: companyEmail,
             companyName: companyName,
@@ -292,8 +294,6 @@ class ZarazZarazConfigBaseConsentBuilder
             customCSS: customCSS,
             customIntroDisclaimerDismissed: customIntroDisclaimerDismissed,
             defaultLanguage: defaultLanguage,
-            enabled: BuiltValueNullFieldError.checkNotNull(
-                enabled, r'ZarazZarazConfigBaseConsent', 'enabled'),
             hideModal: hideModal,
             purposes: _purposes?.build(),
             purposesWithTranslations: _purposesWithTranslations?.build(),

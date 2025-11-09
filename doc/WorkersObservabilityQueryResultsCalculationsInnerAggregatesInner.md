@@ -9,10 +9,10 @@ import 'package:cloudflare_dart/api.dart';
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **count** | **num** |  | 
-**groups** | [**BuiltList&lt;WorkersObservabilityQueryResultsCalculationsInnerAggregatesInnerGroupsInner&gt;**](WorkersObservabilityQueryResultsCalculationsInnerAggregatesInnerGroupsInner.md) |  | [optional] 
 **interval** | **num** |  | 
 **sampleInterval** | **num** |  | 
 **value** | **num** |  | 
+**groups** | [**BuiltList&lt;WorkersObservabilityQueryResultsCalculationsInnerAggregatesInnerGroupsInner&gt;**](WorkersObservabilityQueryResultsCalculationsInnerAggregatesInnerGroupsInner.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

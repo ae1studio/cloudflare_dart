@@ -16,14 +16,18 @@ part 'page_rules_create_a_page_rule_request.g.dart';
 ///
 /// Properties:
 /// * [actions] - The set of actions to perform if the targets of this rule match the request. Actions can redirect to another URL or override settings, but not both. 
+/// * [targets] - The rule targets to evaluate on each request.
 /// * [priority] - The priority of the rule, used to define which Page Rule is processed over another. A higher number indicates a higher priority. For example, if you have a catch-all Page Rule (rule A: `/images/_*`) but want a more specific Page Rule to take precedence (rule B: `/images/special/_*`), specify a higher priority for rule B so it overrides rule A. 
 /// * [status] 
-/// * [targets] - The rule targets to evaluate on each request.
 @BuiltValue()
 abstract class PageRulesCreateAPageRuleRequest implements Built<PageRulesCreateAPageRuleRequest, PageRulesCreateAPageRuleRequestBuilder> {
   /// The set of actions to perform if the targets of this rule match the request. Actions can redirect to another URL or override settings, but not both. 
   @BuiltValueField(wireName: r'actions')
   BuiltList<ZonesActionsInner> get actions;
+
+  /// The rule targets to evaluate on each request.
+  @BuiltValueField(wireName: r'targets')
+  BuiltList<ZonesUrlTarget> get targets;
 
   /// The priority of the rule, used to define which Page Rule is processed over another. A higher number indicates a higher priority. For example, if you have a catch-all Page Rule (rule A: `/images/_*`) but want a more specific Page Rule to take precedence (rule B: `/images/special/_*`), specify a higher priority for rule B so it overrides rule A. 
   @BuiltValueField(wireName: r'priority')
@@ -32,10 +36,6 @@ abstract class PageRulesCreateAPageRuleRequest implements Built<PageRulesCreateA
   @BuiltValueField(wireName: r'status')
   ZonesStatus? get status;
   // enum statusEnum {  active,  disabled,  };
-
-  /// The rule targets to evaluate on each request.
-  @BuiltValueField(wireName: r'targets')
-  BuiltList<ZonesUrlTarget> get targets;
 
   PageRulesCreateAPageRuleRequest._();
 
@@ -66,6 +66,11 @@ class _$PageRulesCreateAPageRuleRequestSerializer implements PrimitiveSerializer
       object.actions,
       specifiedType: const FullType(BuiltList, [FullType(ZonesActionsInner)]),
     );
+    yield r'targets';
+    yield serializers.serialize(
+      object.targets,
+      specifiedType: const FullType(BuiltList, [FullType(ZonesUrlTarget)]),
+    );
     if (object.priority != null) {
       yield r'priority';
       yield serializers.serialize(
@@ -80,11 +85,6 @@ class _$PageRulesCreateAPageRuleRequestSerializer implements PrimitiveSerializer
         specifiedType: const FullType(ZonesStatus),
       );
     }
-    yield r'targets';
-    yield serializers.serialize(
-      object.targets,
-      specifiedType: const FullType(BuiltList, [FullType(ZonesUrlTarget)]),
-    );
   }
 
   @override
@@ -115,6 +115,13 @@ class _$PageRulesCreateAPageRuleRequestSerializer implements PrimitiveSerializer
           ) as BuiltList<ZonesActionsInner>;
           result.actions.replace(valueDes);
           break;
+        case r'targets':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BuiltList, [FullType(ZonesUrlTarget)]),
+          ) as BuiltList<ZonesUrlTarget>;
+          result.targets.replace(valueDes);
+          break;
         case r'priority':
           final valueDes = serializers.deserialize(
             value,
@@ -128,13 +135,6 @@ class _$PageRulesCreateAPageRuleRequestSerializer implements PrimitiveSerializer
             specifiedType: const FullType(ZonesStatus),
           ) as ZonesStatus;
           result.status = valueDes;
-          break;
-        case r'targets':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(ZonesUrlTarget)]),
-          ) as BuiltList<ZonesUrlTarget>;
-          result.targets.replace(valueDes);
           break;
         default:
           unhandled.add(key);

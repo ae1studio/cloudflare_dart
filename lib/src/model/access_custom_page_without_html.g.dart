@@ -8,13 +8,13 @@ part of 'access_custom_page_without_html.dart';
 
 class _$AccessCustomPageWithoutHtml extends AccessCustomPageWithoutHtml {
   @override
-  final int? appCount;
-  @override
-  final JsonObject? createdAt;
-  @override
   final String name;
   @override
   final AccessSchemasType type;
+  @override
+  final int? appCount;
+  @override
+  final JsonObject? createdAt;
   @override
   final String? uid;
   @override
@@ -25,10 +25,10 @@ class _$AccessCustomPageWithoutHtml extends AccessCustomPageWithoutHtml {
       (AccessCustomPageWithoutHtmlBuilder()..update(updates))._build();
 
   _$AccessCustomPageWithoutHtml._(
-      {this.appCount,
-      this.createdAt,
-      required this.name,
+      {required this.name,
       required this.type,
+      this.appCount,
+      this.createdAt,
       this.uid,
       this.updatedAt})
       : super._();
@@ -45,10 +45,10 @@ class _$AccessCustomPageWithoutHtml extends AccessCustomPageWithoutHtml {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is AccessCustomPageWithoutHtml &&
-        appCount == other.appCount &&
-        createdAt == other.createdAt &&
         name == other.name &&
         type == other.type &&
+        appCount == other.appCount &&
+        createdAt == other.createdAt &&
         uid == other.uid &&
         updatedAt == other.updatedAt;
   }
@@ -56,10 +56,10 @@ class _$AccessCustomPageWithoutHtml extends AccessCustomPageWithoutHtml {
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, appCount.hashCode);
-    _$hash = $jc(_$hash, createdAt.hashCode);
     _$hash = $jc(_$hash, name.hashCode);
     _$hash = $jc(_$hash, type.hashCode);
+    _$hash = $jc(_$hash, appCount.hashCode);
+    _$hash = $jc(_$hash, createdAt.hashCode);
     _$hash = $jc(_$hash, uid.hashCode);
     _$hash = $jc(_$hash, updatedAt.hashCode);
     _$hash = $jf(_$hash);
@@ -69,10 +69,10 @@ class _$AccessCustomPageWithoutHtml extends AccessCustomPageWithoutHtml {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'AccessCustomPageWithoutHtml')
-          ..add('appCount', appCount)
-          ..add('createdAt', createdAt)
           ..add('name', name)
           ..add('type', type)
+          ..add('appCount', appCount)
+          ..add('createdAt', createdAt)
           ..add('uid', uid)
           ..add('updatedAt', updatedAt))
         .toString();
@@ -85,14 +85,6 @@ class AccessCustomPageWithoutHtmlBuilder
             AccessCustomPageWithoutHtmlBuilder> {
   _$AccessCustomPageWithoutHtml? _$v;
 
-  int? _appCount;
-  int? get appCount => _$this._appCount;
-  set appCount(int? appCount) => _$this._appCount = appCount;
-
-  JsonObject? _createdAt;
-  JsonObject? get createdAt => _$this._createdAt;
-  set createdAt(JsonObject? createdAt) => _$this._createdAt = createdAt;
-
   String? _name;
   String? get name => _$this._name;
   set name(String? name) => _$this._name = name;
@@ -100,6 +92,14 @@ class AccessCustomPageWithoutHtmlBuilder
   AccessSchemasType? _type;
   AccessSchemasType? get type => _$this._type;
   set type(AccessSchemasType? type) => _$this._type = type;
+
+  int? _appCount;
+  int? get appCount => _$this._appCount;
+  set appCount(int? appCount) => _$this._appCount = appCount;
+
+  JsonObject? _createdAt;
+  JsonObject? get createdAt => _$this._createdAt;
+  set createdAt(JsonObject? createdAt) => _$this._createdAt = createdAt;
 
   String? _uid;
   String? get uid => _$this._uid;
@@ -116,10 +116,10 @@ class AccessCustomPageWithoutHtmlBuilder
   AccessCustomPageWithoutHtmlBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _appCount = $v.appCount;
-      _createdAt = $v.createdAt;
       _name = $v.name;
       _type = $v.type;
+      _appCount = $v.appCount;
+      _createdAt = $v.createdAt;
       _uid = $v.uid;
       _updatedAt = $v.updatedAt;
       _$v = null;
@@ -143,12 +143,12 @@ class AccessCustomPageWithoutHtmlBuilder
   _$AccessCustomPageWithoutHtml _build() {
     final _$result = _$v ??
         _$AccessCustomPageWithoutHtml._(
-          appCount: appCount,
-          createdAt: createdAt,
           name: BuiltValueNullFieldError.checkNotNull(
               name, r'AccessCustomPageWithoutHtml', 'name'),
           type: BuiltValueNullFieldError.checkNotNull(
               type, r'AccessCustomPageWithoutHtml', 'type'),
+          appCount: appCount,
+          createdAt: createdAt,
           uid: uid,
           updatedAt: updatedAt,
         );

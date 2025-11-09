@@ -11,20 +11,12 @@ part 'teams_devices_tanium_config_request.g.dart';
 /// TeamsDevicesTaniumConfigRequest
 ///
 /// Properties:
-/// * [accessClientId] - If present, this id will be passed in the `CF-Access-Client-ID` header when hitting the `api_url`.
-/// * [accessClientSecret] - If present, this secret will be passed in the `CF-Access-Client-Secret` header when hitting the `api_url`.
 /// * [apiUrl] - The Tanium API URL.
 /// * [clientSecret] - The Tanium client secret.
+/// * [accessClientId] - If present, this id will be passed in the `CF-Access-Client-ID` header when hitting the `api_url`.
+/// * [accessClientSecret] - If present, this secret will be passed in the `CF-Access-Client-Secret` header when hitting the `api_url`.
 @BuiltValue()
 abstract class TeamsDevicesTaniumConfigRequest implements Built<TeamsDevicesTaniumConfigRequest, TeamsDevicesTaniumConfigRequestBuilder> {
-  /// If present, this id will be passed in the `CF-Access-Client-ID` header when hitting the `api_url`.
-  @BuiltValueField(wireName: r'access_client_id')
-  String? get accessClientId;
-
-  /// If present, this secret will be passed in the `CF-Access-Client-Secret` header when hitting the `api_url`.
-  @BuiltValueField(wireName: r'access_client_secret')
-  String? get accessClientSecret;
-
   /// The Tanium API URL.
   @BuiltValueField(wireName: r'api_url')
   String get apiUrl;
@@ -32,6 +24,14 @@ abstract class TeamsDevicesTaniumConfigRequest implements Built<TeamsDevicesTani
   /// The Tanium client secret.
   @BuiltValueField(wireName: r'client_secret')
   String get clientSecret;
+
+  /// If present, this id will be passed in the `CF-Access-Client-ID` header when hitting the `api_url`.
+  @BuiltValueField(wireName: r'access_client_id')
+  String? get accessClientId;
+
+  /// If present, this secret will be passed in the `CF-Access-Client-Secret` header when hitting the `api_url`.
+  @BuiltValueField(wireName: r'access_client_secret')
+  String? get accessClientSecret;
 
   TeamsDevicesTaniumConfigRequest._();
 
@@ -56,6 +56,16 @@ class _$TeamsDevicesTaniumConfigRequestSerializer implements PrimitiveSerializer
     TeamsDevicesTaniumConfigRequest object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    yield r'api_url';
+    yield serializers.serialize(
+      object.apiUrl,
+      specifiedType: const FullType(String),
+    );
+    yield r'client_secret';
+    yield serializers.serialize(
+      object.clientSecret,
+      specifiedType: const FullType(String),
+    );
     if (object.accessClientId != null) {
       yield r'access_client_id';
       yield serializers.serialize(
@@ -70,16 +80,6 @@ class _$TeamsDevicesTaniumConfigRequestSerializer implements PrimitiveSerializer
         specifiedType: const FullType(String),
       );
     }
-    yield r'api_url';
-    yield serializers.serialize(
-      object.apiUrl,
-      specifiedType: const FullType(String),
-    );
-    yield r'client_secret';
-    yield serializers.serialize(
-      object.clientSecret,
-      specifiedType: const FullType(String),
-    );
   }
 
   @override
@@ -103,20 +103,6 @@ class _$TeamsDevicesTaniumConfigRequestSerializer implements PrimitiveSerializer
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'access_client_id':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.accessClientId = valueDes;
-          break;
-        case r'access_client_secret':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.accessClientSecret = valueDes;
-          break;
         case r'api_url':
           final valueDes = serializers.deserialize(
             value,
@@ -130,6 +116,20 @@ class _$TeamsDevicesTaniumConfigRequestSerializer implements PrimitiveSerializer
             specifiedType: const FullType(String),
           ) as String;
           result.clientSecret = valueDes;
+          break;
+        case r'access_client_id':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.accessClientId = valueDes;
+          break;
+        case r'access_client_secret':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.accessClientSecret = valueDes;
           break;
         default:
           unhandled.add(key);

@@ -8,9 +8,9 @@ part of 'r2_create_bucket_request.dart';
 
 class _$R2CreateBucketRequest extends R2CreateBucketRequest {
   @override
-  final R2BucketLocation? locationHint;
-  @override
   final String name;
+  @override
+  final R2BucketLocation? locationHint;
   @override
   final R2StorageClass? storageClass;
 
@@ -19,7 +19,7 @@ class _$R2CreateBucketRequest extends R2CreateBucketRequest {
       (R2CreateBucketRequestBuilder()..update(updates))._build();
 
   _$R2CreateBucketRequest._(
-      {this.locationHint, required this.name, this.storageClass})
+      {required this.name, this.locationHint, this.storageClass})
       : super._();
   @override
   R2CreateBucketRequest rebuild(
@@ -34,16 +34,16 @@ class _$R2CreateBucketRequest extends R2CreateBucketRequest {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is R2CreateBucketRequest &&
-        locationHint == other.locationHint &&
         name == other.name &&
+        locationHint == other.locationHint &&
         storageClass == other.storageClass;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, locationHint.hashCode);
     _$hash = $jc(_$hash, name.hashCode);
+    _$hash = $jc(_$hash, locationHint.hashCode);
     _$hash = $jc(_$hash, storageClass.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
@@ -52,8 +52,8 @@ class _$R2CreateBucketRequest extends R2CreateBucketRequest {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'R2CreateBucketRequest')
-          ..add('locationHint', locationHint)
           ..add('name', name)
+          ..add('locationHint', locationHint)
           ..add('storageClass', storageClass))
         .toString();
   }
@@ -63,14 +63,14 @@ class R2CreateBucketRequestBuilder
     implements Builder<R2CreateBucketRequest, R2CreateBucketRequestBuilder> {
   _$R2CreateBucketRequest? _$v;
 
+  String? _name;
+  String? get name => _$this._name;
+  set name(String? name) => _$this._name = name;
+
   R2BucketLocation? _locationHint;
   R2BucketLocation? get locationHint => _$this._locationHint;
   set locationHint(R2BucketLocation? locationHint) =>
       _$this._locationHint = locationHint;
-
-  String? _name;
-  String? get name => _$this._name;
-  set name(String? name) => _$this._name = name;
 
   R2StorageClass? _storageClass;
   R2StorageClass? get storageClass => _$this._storageClass;
@@ -84,8 +84,8 @@ class R2CreateBucketRequestBuilder
   R2CreateBucketRequestBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _locationHint = $v.locationHint;
       _name = $v.name;
+      _locationHint = $v.locationHint;
       _storageClass = $v.storageClass;
       _$v = null;
     }
@@ -108,9 +108,9 @@ class R2CreateBucketRequestBuilder
   _$R2CreateBucketRequest _build() {
     final _$result = _$v ??
         _$R2CreateBucketRequest._(
-          locationHint: locationHint,
           name: BuiltValueNullFieldError.checkNotNull(
               name, r'R2CreateBucketRequest', 'name'),
+          locationHint: locationHint,
           storageClass: storageClass,
         );
     replace(_$result);

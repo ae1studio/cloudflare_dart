@@ -62,26 +62,26 @@ class _$WorkersBindingKindSendEmailTypeEnumSerializer
 
 class _$WorkersBindingKindSendEmail extends WorkersBindingKindSendEmail {
   @override
+  final String name;
+  @override
+  final WorkersBindingKindSendEmailTypeEnum type;
+  @override
   final BuiltList<String>? allowedDestinationAddresses;
   @override
   final BuiltList<String>? allowedSenderAddresses;
   @override
   final String? destinationAddress;
-  @override
-  final String name;
-  @override
-  final WorkersBindingKindSendEmailTypeEnum type;
 
   factory _$WorkersBindingKindSendEmail(
           [void Function(WorkersBindingKindSendEmailBuilder)? updates]) =>
       (WorkersBindingKindSendEmailBuilder()..update(updates))._build();
 
   _$WorkersBindingKindSendEmail._(
-      {this.allowedDestinationAddresses,
+      {required this.name,
+      required this.type,
+      this.allowedDestinationAddresses,
       this.allowedSenderAddresses,
-      this.destinationAddress,
-      required this.name,
-      required this.type})
+      this.destinationAddress})
       : super._();
   @override
   WorkersBindingKindSendEmail rebuild(
@@ -96,21 +96,21 @@ class _$WorkersBindingKindSendEmail extends WorkersBindingKindSendEmail {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is WorkersBindingKindSendEmail &&
+        name == other.name &&
+        type == other.type &&
         allowedDestinationAddresses == other.allowedDestinationAddresses &&
         allowedSenderAddresses == other.allowedSenderAddresses &&
-        destinationAddress == other.destinationAddress &&
-        name == other.name &&
-        type == other.type;
+        destinationAddress == other.destinationAddress;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
+    _$hash = $jc(_$hash, name.hashCode);
+    _$hash = $jc(_$hash, type.hashCode);
     _$hash = $jc(_$hash, allowedDestinationAddresses.hashCode);
     _$hash = $jc(_$hash, allowedSenderAddresses.hashCode);
     _$hash = $jc(_$hash, destinationAddress.hashCode);
-    _$hash = $jc(_$hash, name.hashCode);
-    _$hash = $jc(_$hash, type.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -118,11 +118,11 @@ class _$WorkersBindingKindSendEmail extends WorkersBindingKindSendEmail {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'WorkersBindingKindSendEmail')
+          ..add('name', name)
+          ..add('type', type)
           ..add('allowedDestinationAddresses', allowedDestinationAddresses)
           ..add('allowedSenderAddresses', allowedSenderAddresses)
-          ..add('destinationAddress', destinationAddress)
-          ..add('name', name)
-          ..add('type', type))
+          ..add('destinationAddress', destinationAddress))
         .toString();
   }
 }
@@ -132,6 +132,14 @@ class WorkersBindingKindSendEmailBuilder
         Builder<WorkersBindingKindSendEmail,
             WorkersBindingKindSendEmailBuilder> {
   _$WorkersBindingKindSendEmail? _$v;
+
+  String? _name;
+  String? get name => _$this._name;
+  set name(String? name) => _$this._name = name;
+
+  WorkersBindingKindSendEmailTypeEnum? _type;
+  WorkersBindingKindSendEmailTypeEnum? get type => _$this._type;
+  set type(WorkersBindingKindSendEmailTypeEnum? type) => _$this._type = type;
 
   ListBuilder<String>? _allowedDestinationAddresses;
   ListBuilder<String> get allowedDestinationAddresses =>
@@ -151,14 +159,6 @@ class WorkersBindingKindSendEmailBuilder
   set destinationAddress(String? destinationAddress) =>
       _$this._destinationAddress = destinationAddress;
 
-  String? _name;
-  String? get name => _$this._name;
-  set name(String? name) => _$this._name = name;
-
-  WorkersBindingKindSendEmailTypeEnum? _type;
-  WorkersBindingKindSendEmailTypeEnum? get type => _$this._type;
-  set type(WorkersBindingKindSendEmailTypeEnum? type) => _$this._type = type;
-
   WorkersBindingKindSendEmailBuilder() {
     WorkersBindingKindSendEmail._defaults(this);
   }
@@ -166,12 +166,12 @@ class WorkersBindingKindSendEmailBuilder
   WorkersBindingKindSendEmailBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
+      _name = $v.name;
+      _type = $v.type;
       _allowedDestinationAddresses =
           $v.allowedDestinationAddresses?.toBuilder();
       _allowedSenderAddresses = $v.allowedSenderAddresses?.toBuilder();
       _destinationAddress = $v.destinationAddress;
-      _name = $v.name;
-      _type = $v.type;
       _$v = null;
     }
     return this;
@@ -195,13 +195,13 @@ class WorkersBindingKindSendEmailBuilder
     try {
       _$result = _$v ??
           _$WorkersBindingKindSendEmail._(
-            allowedDestinationAddresses: _allowedDestinationAddresses?.build(),
-            allowedSenderAddresses: _allowedSenderAddresses?.build(),
-            destinationAddress: destinationAddress,
             name: BuiltValueNullFieldError.checkNotNull(
                 name, r'WorkersBindingKindSendEmail', 'name'),
             type: BuiltValueNullFieldError.checkNotNull(
                 type, r'WorkersBindingKindSendEmail', 'type'),
+            allowedDestinationAddresses: _allowedDestinationAddresses?.build(),
+            allowedSenderAddresses: _allowedSenderAddresses?.build(),
+            destinationAddress: destinationAddress,
           );
     } catch (_) {
       late String _$failedField;

@@ -11,20 +11,20 @@ part 'radar_get_entities_asn_by_ip200_response_result_asn_estimated_users_locati
 /// RadarGetEntitiesAsnByIp200ResponseResultAsnEstimatedUsersLocationsInner
 ///
 /// Properties:
-/// * [estimatedUsers] - Estimated users per location.
 /// * [locationAlpha2] 
 /// * [locationName] 
+/// * [estimatedUsers] - Estimated users per location.
 @BuiltValue()
 abstract class RadarGetEntitiesAsnByIp200ResponseResultAsnEstimatedUsersLocationsInner implements Built<RadarGetEntitiesAsnByIp200ResponseResultAsnEstimatedUsersLocationsInner, RadarGetEntitiesAsnByIp200ResponseResultAsnEstimatedUsersLocationsInnerBuilder> {
-  /// Estimated users per location.
-  @BuiltValueField(wireName: r'estimatedUsers')
-  int? get estimatedUsers;
-
   @BuiltValueField(wireName: r'locationAlpha2')
   String get locationAlpha2;
 
   @BuiltValueField(wireName: r'locationName')
   String get locationName;
+
+  /// Estimated users per location.
+  @BuiltValueField(wireName: r'estimatedUsers')
+  int? get estimatedUsers;
 
   RadarGetEntitiesAsnByIp200ResponseResultAsnEstimatedUsersLocationsInner._();
 
@@ -49,13 +49,6 @@ class _$RadarGetEntitiesAsnByIp200ResponseResultAsnEstimatedUsersLocationsInnerS
     RadarGetEntitiesAsnByIp200ResponseResultAsnEstimatedUsersLocationsInner object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
-    if (object.estimatedUsers != null) {
-      yield r'estimatedUsers';
-      yield serializers.serialize(
-        object.estimatedUsers,
-        specifiedType: const FullType(int),
-      );
-    }
     yield r'locationAlpha2';
     yield serializers.serialize(
       object.locationAlpha2,
@@ -66,6 +59,13 @@ class _$RadarGetEntitiesAsnByIp200ResponseResultAsnEstimatedUsersLocationsInnerS
       object.locationName,
       specifiedType: const FullType(String),
     );
+    if (object.estimatedUsers != null) {
+      yield r'estimatedUsers';
+      yield serializers.serialize(
+        object.estimatedUsers,
+        specifiedType: const FullType(int),
+      );
+    }
   }
 
   @override
@@ -89,13 +89,6 @@ class _$RadarGetEntitiesAsnByIp200ResponseResultAsnEstimatedUsersLocationsInnerS
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'estimatedUsers':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
-          result.estimatedUsers = valueDes;
-          break;
         case r'locationAlpha2':
           final valueDes = serializers.deserialize(
             value,
@@ -109,6 +102,13 @@ class _$RadarGetEntitiesAsnByIp200ResponseResultAsnEstimatedUsersLocationsInnerS
             specifiedType: const FullType(String),
           ) as String;
           result.locationName = valueDes;
+          break;
+        case r'estimatedUsers':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(int),
+          ) as int;
+          result.estimatedUsers = valueDes;
           break;
         default:
           unhandled.add(key);

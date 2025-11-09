@@ -12,14 +12,18 @@ part 'add_participant_request.g.dart';
 ///
 /// Properties:
 /// * [customParticipantId] - A unique participant ID. You must specify a unique ID for the participant, for example, UUID, email address, and so on. 
+/// * [presetName] - Name of the preset to apply to this participant.
 /// * [name] - (Optional) Name of the participant. 
 /// * [picture] - (Optional) A URL to a picture to be used for the participant. 
-/// * [presetName] - Name of the preset to apply to this participant.
 @BuiltValue()
 abstract class AddParticipantRequest implements Built<AddParticipantRequest, AddParticipantRequestBuilder> {
   /// A unique participant ID. You must specify a unique ID for the participant, for example, UUID, email address, and so on. 
   @BuiltValueField(wireName: r'custom_participant_id')
   String get customParticipantId;
+
+  /// Name of the preset to apply to this participant.
+  @BuiltValueField(wireName: r'preset_name')
+  String get presetName;
 
   /// (Optional) Name of the participant. 
   @BuiltValueField(wireName: r'name')
@@ -28,10 +32,6 @@ abstract class AddParticipantRequest implements Built<AddParticipantRequest, Add
   /// (Optional) A URL to a picture to be used for the participant. 
   @BuiltValueField(wireName: r'picture')
   String? get picture;
-
-  /// Name of the preset to apply to this participant.
-  @BuiltValueField(wireName: r'preset_name')
-  String get presetName;
 
   AddParticipantRequest._();
 
@@ -62,6 +62,11 @@ class _$AddParticipantRequestSerializer implements PrimitiveSerializer<AddPartic
       object.customParticipantId,
       specifiedType: const FullType(String),
     );
+    yield r'preset_name';
+    yield serializers.serialize(
+      object.presetName,
+      specifiedType: const FullType(String),
+    );
     if (object.name != null) {
       yield r'name';
       yield serializers.serialize(
@@ -76,11 +81,6 @@ class _$AddParticipantRequestSerializer implements PrimitiveSerializer<AddPartic
         specifiedType: const FullType.nullable(String),
       );
     }
-    yield r'preset_name';
-    yield serializers.serialize(
-      object.presetName,
-      specifiedType: const FullType(String),
-    );
   }
 
   @override
@@ -111,6 +111,13 @@ class _$AddParticipantRequestSerializer implements PrimitiveSerializer<AddPartic
           ) as String;
           result.customParticipantId = valueDes;
           break;
+        case r'preset_name':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.presetName = valueDes;
+          break;
         case r'name':
           final valueDes = serializers.deserialize(
             value,
@@ -126,13 +133,6 @@ class _$AddParticipantRequestSerializer implements PrimitiveSerializer<AddPartic
           ) as String?;
           if (valueDes == null) continue;
           result.picture = valueDes;
-          break;
-        case r'preset_name':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.presetName = valueDes;
           break;
         default:
           unhandled.add(key);

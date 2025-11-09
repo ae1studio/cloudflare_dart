@@ -13,14 +13,14 @@ Name | Type | Description | Notes
 **id** | **String** |  | 
 **name** | **String** |  | 
 **pattern** | [**DlpPattern**](DlpPattern.md) |  | 
-**profileId** | **String** |  | [optional] 
 **updatedAt** | [**DateTime**](DateTime.md) |  | 
 **type** | **String** |  | 
 **confidence** | [**DlpEntryConfidence**](DlpEntryConfidence.md) |  | 
-**variant** | [**DlpPredefinedEntryVariant**](DlpPredefinedEntryVariant.md) |  | [optional] 
 **caseSensitive** | **bool** | Only applies to custom word lists. Determines if the words should be matched in a case-sensitive manner Cannot be set to false if secret is true | 
 **secret** | **bool** |  | 
 **wordList** | [**JsonObject**](.md) |  | 
+**profileId** | **String** |  | [optional] 
+**variant** | [**DlpPredefinedEntryVariant**](DlpPredefinedEntryVariant.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

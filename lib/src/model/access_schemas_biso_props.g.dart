@@ -10,6 +10,9 @@ abstract class AccessSchemasBisoPropsBuilder
     implements AccessSchemasFeatureAppPropsBuilder {
   void replace(covariant AccessSchemasBisoProps other);
   void update(void Function(AccessSchemasBisoPropsBuilder) updates);
+  AccessComponentsSchemasType? get type;
+  set type(covariant AccessComponentsSchemasType? type);
+
   ListBuilder<String> get allowedIdps;
   set allowedIdps(covariant ListBuilder<String>? allowedIdps);
 
@@ -24,12 +27,11 @@ abstract class AccessSchemasBisoPropsBuilder
 
   String? get sessionDuration;
   set sessionDuration(covariant String? sessionDuration);
-
-  AccessComponentsSchemasType? get type;
-  set type(covariant AccessComponentsSchemasType? type);
 }
 
 class _$$AccessSchemasBisoProps extends $AccessSchemasBisoProps {
+  @override
+  final AccessComponentsSchemasType type;
   @override
   final BuiltList<String>? allowedIdps;
   @override
@@ -40,20 +42,18 @@ class _$$AccessSchemasBisoProps extends $AccessSchemasBisoProps {
   final String? name;
   @override
   final String? sessionDuration;
-  @override
-  final AccessComponentsSchemasType type;
 
   factory _$$AccessSchemasBisoProps(
           [void Function($AccessSchemasBisoPropsBuilder)? updates]) =>
       ($AccessSchemasBisoPropsBuilder()..update(updates))._build();
 
   _$$AccessSchemasBisoProps._(
-      {this.allowedIdps,
+      {required this.type,
+      this.allowedIdps,
       this.autoRedirectToIdentity,
       this.domain,
       this.name,
-      this.sessionDuration,
-      required this.type})
+      this.sessionDuration})
       : super._();
   @override
   $AccessSchemasBisoProps rebuild(
@@ -68,23 +68,23 @@ class _$$AccessSchemasBisoProps extends $AccessSchemasBisoProps {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is $AccessSchemasBisoProps &&
+        type == other.type &&
         allowedIdps == other.allowedIdps &&
         autoRedirectToIdentity == other.autoRedirectToIdentity &&
         domain == other.domain &&
         name == other.name &&
-        sessionDuration == other.sessionDuration &&
-        type == other.type;
+        sessionDuration == other.sessionDuration;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
+    _$hash = $jc(_$hash, type.hashCode);
     _$hash = $jc(_$hash, allowedIdps.hashCode);
     _$hash = $jc(_$hash, autoRedirectToIdentity.hashCode);
     _$hash = $jc(_$hash, domain.hashCode);
     _$hash = $jc(_$hash, name.hashCode);
     _$hash = $jc(_$hash, sessionDuration.hashCode);
-    _$hash = $jc(_$hash, type.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -92,12 +92,12 @@ class _$$AccessSchemasBisoProps extends $AccessSchemasBisoProps {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'$AccessSchemasBisoProps')
+          ..add('type', type)
           ..add('allowedIdps', allowedIdps)
           ..add('autoRedirectToIdentity', autoRedirectToIdentity)
           ..add('domain', domain)
           ..add('name', name)
-          ..add('sessionDuration', sessionDuration)
-          ..add('type', type))
+          ..add('sessionDuration', sessionDuration))
         .toString();
   }
 }
@@ -107,6 +107,10 @@ class $AccessSchemasBisoPropsBuilder
         Builder<$AccessSchemasBisoProps, $AccessSchemasBisoPropsBuilder>,
         AccessSchemasBisoPropsBuilder {
   _$$AccessSchemasBisoProps? _$v;
+
+  AccessComponentsSchemasType? _type;
+  AccessComponentsSchemasType? get type => _$this._type;
+  set type(covariant AccessComponentsSchemasType? type) => _$this._type = type;
 
   ListBuilder<String>? _allowedIdps;
   ListBuilder<String> get allowedIdps =>
@@ -132,10 +136,6 @@ class $AccessSchemasBisoPropsBuilder
   set sessionDuration(covariant String? sessionDuration) =>
       _$this._sessionDuration = sessionDuration;
 
-  AccessComponentsSchemasType? _type;
-  AccessComponentsSchemasType? get type => _$this._type;
-  set type(covariant AccessComponentsSchemasType? type) => _$this._type = type;
-
   $AccessSchemasBisoPropsBuilder() {
     $AccessSchemasBisoProps._defaults(this);
   }
@@ -143,12 +143,12 @@ class $AccessSchemasBisoPropsBuilder
   $AccessSchemasBisoPropsBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
+      _type = $v.type;
       _allowedIdps = $v.allowedIdps?.toBuilder();
       _autoRedirectToIdentity = $v.autoRedirectToIdentity;
       _domain = $v.domain;
       _name = $v.name;
       _sessionDuration = $v.sessionDuration;
-      _type = $v.type;
       _$v = null;
     }
     return this;
@@ -172,13 +172,13 @@ class $AccessSchemasBisoPropsBuilder
     try {
       _$result = _$v ??
           _$$AccessSchemasBisoProps._(
+            type: BuiltValueNullFieldError.checkNotNull(
+                type, r'$AccessSchemasBisoProps', 'type'),
             allowedIdps: _allowedIdps?.build(),
             autoRedirectToIdentity: autoRedirectToIdentity,
             domain: domain,
             name: name,
             sessionDuration: sessionDuration,
-            type: BuiltValueNullFieldError.checkNotNull(
-                type, r'$AccessSchemasBisoProps', 'type'),
           );
     } catch (_) {
       late String _$failedField;

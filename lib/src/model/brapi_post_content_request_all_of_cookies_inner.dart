@@ -11,10 +11,11 @@ part 'brapi_post_content_request_all_of_cookies_inner.g.dart';
 /// BrapiPostContentRequestAllOfCookiesInner
 ///
 /// Properties:
+/// * [name] 
+/// * [value] 
 /// * [domain] 
 /// * [expires] 
 /// * [httpOnly] 
-/// * [name] 
 /// * [partitionKey] 
 /// * [path] 
 /// * [priority] 
@@ -24,9 +25,14 @@ part 'brapi_post_content_request_all_of_cookies_inner.g.dart';
 /// * [sourcePort] 
 /// * [sourceScheme] 
 /// * [url] 
-/// * [value] 
 @BuiltValue()
 abstract class BrapiPostContentRequestAllOfCookiesInner implements Built<BrapiPostContentRequestAllOfCookiesInner, BrapiPostContentRequestAllOfCookiesInnerBuilder> {
+  @BuiltValueField(wireName: r'name')
+  String get name;
+
+  @BuiltValueField(wireName: r'value')
+  String get value;
+
   @BuiltValueField(wireName: r'domain')
   String? get domain;
 
@@ -35,9 +41,6 @@ abstract class BrapiPostContentRequestAllOfCookiesInner implements Built<BrapiPo
 
   @BuiltValueField(wireName: r'httpOnly')
   bool? get httpOnly;
-
-  @BuiltValueField(wireName: r'name')
-  String get name;
 
   @BuiltValueField(wireName: r'partitionKey')
   String? get partitionKey;
@@ -69,9 +72,6 @@ abstract class BrapiPostContentRequestAllOfCookiesInner implements Built<BrapiPo
   @BuiltValueField(wireName: r'url')
   String? get url;
 
-  @BuiltValueField(wireName: r'value')
-  String get value;
-
   BrapiPostContentRequestAllOfCookiesInner._();
 
   factory BrapiPostContentRequestAllOfCookiesInner([void updates(BrapiPostContentRequestAllOfCookiesInnerBuilder b)]) = _$BrapiPostContentRequestAllOfCookiesInner;
@@ -95,6 +95,16 @@ class _$BrapiPostContentRequestAllOfCookiesInnerSerializer implements PrimitiveS
     BrapiPostContentRequestAllOfCookiesInner object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    yield r'name';
+    yield serializers.serialize(
+      object.name,
+      specifiedType: const FullType(String),
+    );
+    yield r'value';
+    yield serializers.serialize(
+      object.value,
+      specifiedType: const FullType(String),
+    );
     if (object.domain != null) {
       yield r'domain';
       yield serializers.serialize(
@@ -116,11 +126,6 @@ class _$BrapiPostContentRequestAllOfCookiesInnerSerializer implements PrimitiveS
         specifiedType: const FullType(bool),
       );
     }
-    yield r'name';
-    yield serializers.serialize(
-      object.name,
-      specifiedType: const FullType(String),
-    );
     if (object.partitionKey != null) {
       yield r'partitionKey';
       yield serializers.serialize(
@@ -184,11 +189,6 @@ class _$BrapiPostContentRequestAllOfCookiesInnerSerializer implements PrimitiveS
         specifiedType: const FullType(String),
       );
     }
-    yield r'value';
-    yield serializers.serialize(
-      object.value,
-      specifiedType: const FullType(String),
-    );
   }
 
   @override
@@ -212,6 +212,20 @@ class _$BrapiPostContentRequestAllOfCookiesInnerSerializer implements PrimitiveS
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
+        case r'name':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.name = valueDes;
+          break;
+        case r'value':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.value = valueDes;
+          break;
         case r'domain':
           final valueDes = serializers.deserialize(
             value,
@@ -232,13 +246,6 @@ class _$BrapiPostContentRequestAllOfCookiesInnerSerializer implements PrimitiveS
             specifiedType: const FullType(bool),
           ) as bool;
           result.httpOnly = valueDes;
-          break;
-        case r'name':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.name = valueDes;
           break;
         case r'partitionKey':
           final valueDes = serializers.deserialize(
@@ -302,13 +309,6 @@ class _$BrapiPostContentRequestAllOfCookiesInnerSerializer implements PrimitiveS
             specifiedType: const FullType(String),
           ) as String;
           result.url = valueDes;
-          break;
-        case r'value':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.value = valueDes;
           break;
         default:
           unhandled.add(key);

@@ -15,12 +15,12 @@ part 'dlp_document_fingerprint.g.dart';
 /// * [createdAt] 
 /// * [description] 
 /// * [entryId] 
-/// * [fileName] 
 /// * [id] 
 /// * [matchPercent] 
 /// * [name] 
 /// * [status] 
 /// * [updatedAt] 
+/// * [fileName] 
 /// * [version] 
 @BuiltValue()
 abstract class DlpDocumentFingerprint implements Built<DlpDocumentFingerprint, DlpDocumentFingerprintBuilder> {
@@ -32,9 +32,6 @@ abstract class DlpDocumentFingerprint implements Built<DlpDocumentFingerprint, D
 
   @BuiltValueField(wireName: r'entry_id')
   String get entryId;
-
-  @BuiltValueField(wireName: r'file_name')
-  String? get fileName;
 
   @BuiltValueField(wireName: r'id')
   String get id;
@@ -51,6 +48,9 @@ abstract class DlpDocumentFingerprint implements Built<DlpDocumentFingerprint, D
 
   @BuiltValueField(wireName: r'updated_at')
   DateTime get updatedAt;
+
+  @BuiltValueField(wireName: r'file_name')
+  String? get fileName;
 
   @BuiltValueField(wireName: r'version')
   int? get version;
@@ -94,13 +94,6 @@ class _$DlpDocumentFingerprintSerializer implements PrimitiveSerializer<DlpDocum
       object.entryId,
       specifiedType: const FullType(String),
     );
-    if (object.fileName != null) {
-      yield r'file_name';
-      yield serializers.serialize(
-        object.fileName,
-        specifiedType: const FullType.nullable(String),
-      );
-    }
     yield r'id';
     yield serializers.serialize(
       object.id,
@@ -126,6 +119,13 @@ class _$DlpDocumentFingerprintSerializer implements PrimitiveSerializer<DlpDocum
       object.updatedAt,
       specifiedType: const FullType(DateTime),
     );
+    if (object.fileName != null) {
+      yield r'file_name';
+      yield serializers.serialize(
+        object.fileName,
+        specifiedType: const FullType.nullable(String),
+      );
+    }
     if (object.version != null) {
       yield r'version';
       yield serializers.serialize(
@@ -177,14 +177,6 @@ class _$DlpDocumentFingerprintSerializer implements PrimitiveSerializer<DlpDocum
           ) as String;
           result.entryId = valueDes;
           break;
-        case r'file_name':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
-          if (valueDes == null) continue;
-          result.fileName = valueDes;
-          break;
         case r'id':
           final valueDes = serializers.deserialize(
             value,
@@ -219,6 +211,14 @@ class _$DlpDocumentFingerprintSerializer implements PrimitiveSerializer<DlpDocum
             specifiedType: const FullType(DateTime),
           ) as DateTime;
           result.updatedAt = valueDes;
+          break;
+        case r'file_name':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType.nullable(String),
+          ) as String?;
+          if (valueDes == null) continue;
+          result.fileName = valueDes;
           break;
         case r'version':
           final valueDes = serializers.deserialize(

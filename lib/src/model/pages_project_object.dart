@@ -17,6 +17,9 @@ part 'pages_project_object.g.dart';
 /// PagesProjectObject
 ///
 /// Properties:
+/// * [id] - ID of the project.
+/// * [name] - Name of the project.
+/// * [productionBranch] - Production branch of the project. Used to identify production deployments.
 /// * [buildConfig] 
 /// * [canonicalDeployment] 
 /// * [createdOn] - When the project was created.
@@ -24,17 +27,26 @@ part 'pages_project_object.g.dart';
 /// * [domains] - A list of associated custom domains for the project.
 /// * [framework] - Framework the project is using.
 /// * [frameworkVersion] - Version of the framework the project is using.
-/// * [id] - ID of the project.
 /// * [latestDeployment] 
-/// * [name] - Name of the project.
 /// * [previewScriptName] - Name of the preview script.
-/// * [productionBranch] - Production branch of the project. Used to identify production deployments.
 /// * [productionScriptName] - Name of the production script.
 /// * [source_] 
 /// * [subdomain] - The Cloudflare subdomain associated with the project.
 /// * [usesFunctions] - Whether the project uses functions.
 @BuiltValue(instantiable: false)
 abstract class PagesProjectObject  {
+  /// ID of the project.
+  @BuiltValueField(wireName: r'id')
+  String get id;
+
+  /// Name of the project.
+  @BuiltValueField(wireName: r'name')
+  String get name;
+
+  /// Production branch of the project. Used to identify production deployments.
+  @BuiltValueField(wireName: r'production_branch')
+  String get productionBranch;
+
   @BuiltValueField(wireName: r'build_config')
   PagesProjectObjectBuildConfig? get buildConfig;
 
@@ -60,24 +72,12 @@ abstract class PagesProjectObject  {
   @BuiltValueField(wireName: r'framework_version')
   String? get frameworkVersion;
 
-  /// ID of the project.
-  @BuiltValueField(wireName: r'id')
-  String get id;
-
   @BuiltValueField(wireName: r'latest_deployment')
   PagesProjectObjectLatestDeployment? get latestDeployment;
-
-  /// Name of the project.
-  @BuiltValueField(wireName: r'name')
-  String get name;
 
   /// Name of the preview script.
   @BuiltValueField(wireName: r'preview_script_name')
   String? get previewScriptName;
-
-  /// Production branch of the project. Used to identify production deployments.
-  @BuiltValueField(wireName: r'production_branch')
-  String get productionBranch;
 
   /// Name of the production script.
   @BuiltValueField(wireName: r'production_script_name')
@@ -110,6 +110,21 @@ class _$PagesProjectObjectSerializer implements PrimitiveSerializer<PagesProject
     PagesProjectObject object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    yield r'id';
+    yield serializers.serialize(
+      object.id,
+      specifiedType: const FullType(String),
+    );
+    yield r'name';
+    yield serializers.serialize(
+      object.name,
+      specifiedType: const FullType(String),
+    );
+    yield r'production_branch';
+    yield serializers.serialize(
+      object.productionBranch,
+      specifiedType: const FullType(String),
+    );
     if (object.buildConfig != null) {
       yield r'build_config';
       yield serializers.serialize(
@@ -159,11 +174,6 @@ class _$PagesProjectObjectSerializer implements PrimitiveSerializer<PagesProject
         specifiedType: const FullType(String),
       );
     }
-    yield r'id';
-    yield serializers.serialize(
-      object.id,
-      specifiedType: const FullType(String),
-    );
     if (object.latestDeployment != null) {
       yield r'latest_deployment';
       yield serializers.serialize(
@@ -171,11 +181,6 @@ class _$PagesProjectObjectSerializer implements PrimitiveSerializer<PagesProject
         specifiedType: const FullType(PagesProjectObjectLatestDeployment),
       );
     }
-    yield r'name';
-    yield serializers.serialize(
-      object.name,
-      specifiedType: const FullType(String),
-    );
     if (object.previewScriptName != null) {
       yield r'preview_script_name';
       yield serializers.serialize(
@@ -183,11 +188,6 @@ class _$PagesProjectObjectSerializer implements PrimitiveSerializer<PagesProject
         specifiedType: const FullType(String),
       );
     }
-    yield r'production_branch';
-    yield serializers.serialize(
-      object.productionBranch,
-      specifiedType: const FullType(String),
-    );
     if (object.productionScriptName != null) {
       yield r'production_script_name';
       yield serializers.serialize(
@@ -279,6 +279,27 @@ class _$$PagesProjectObjectSerializer implements PrimitiveSerializer<$PagesProje
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
+        case r'id':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.id = valueDes;
+          break;
+        case r'name':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.name = valueDes;
+          break;
+        case r'production_branch':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.productionBranch = valueDes;
+          break;
         case r'build_config':
           final valueDes = serializers.deserialize(
             value,
@@ -329,13 +350,6 @@ class _$$PagesProjectObjectSerializer implements PrimitiveSerializer<$PagesProje
           ) as String;
           result.frameworkVersion = valueDes;
           break;
-        case r'id':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.id = valueDes;
-          break;
         case r'latest_deployment':
           final valueDes = serializers.deserialize(
             value,
@@ -343,26 +357,12 @@ class _$$PagesProjectObjectSerializer implements PrimitiveSerializer<$PagesProje
           ) as PagesProjectObjectLatestDeployment;
           result.latestDeployment.replace(valueDes);
           break;
-        case r'name':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.name = valueDes;
-          break;
         case r'preview_script_name':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(String),
           ) as String;
           result.previewScriptName = valueDes;
-          break;
-        case r'production_branch':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.productionBranch = valueDes;
           break;
         case r'production_script_name':
           final valueDes = serializers.deserialize(

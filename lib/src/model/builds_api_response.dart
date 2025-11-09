@@ -18,8 +18,8 @@ part 'builds_api_response.g.dart';
 /// * [errors] 
 /// * [messages] 
 /// * [result] 
-/// * [resultInfo] 
 /// * [success] 
+/// * [resultInfo] 
 @BuiltValue(instantiable: false)
 abstract class BuildsAPIResponse  {
   @BuiltValueField(wireName: r'errors')
@@ -31,11 +31,11 @@ abstract class BuildsAPIResponse  {
   @BuiltValueField(wireName: r'result')
   JsonObject? get result;
 
-  @BuiltValueField(wireName: r'result_info')
-  BuildsPaginationInfo? get resultInfo;
-
   @BuiltValueField(wireName: r'success')
   bool get success;
+
+  @BuiltValueField(wireName: r'result_info')
+  BuildsPaginationInfo? get resultInfo;
 
   @BuiltValueSerializer(custom: true)
   static Serializer<BuildsAPIResponse> get serializer => _$BuildsAPIResponseSerializer();
@@ -68,6 +68,11 @@ class _$BuildsAPIResponseSerializer implements PrimitiveSerializer<BuildsAPIResp
       object.result,
       specifiedType: const FullType.nullable(JsonObject),
     );
+    yield r'success';
+    yield serializers.serialize(
+      object.success,
+      specifiedType: const FullType(bool),
+    );
     if (object.resultInfo != null) {
       yield r'result_info';
       yield serializers.serialize(
@@ -75,11 +80,6 @@ class _$BuildsAPIResponseSerializer implements PrimitiveSerializer<BuildsAPIResp
         specifiedType: const FullType(BuildsPaginationInfo),
       );
     }
-    yield r'success';
-    yield serializers.serialize(
-      object.success,
-      specifiedType: const FullType(bool),
-    );
   }
 
   @override
@@ -165,19 +165,19 @@ class _$$BuildsAPIResponseSerializer implements PrimitiveSerializer<$BuildsAPIRe
           if (valueDes == null) continue;
           result.result = valueDes;
           break;
-        case r'result_info':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuildsPaginationInfo),
-          ) as BuildsPaginationInfo;
-          result.resultInfo.replace(valueDes);
-          break;
         case r'success':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(bool),
           ) as bool;
           result.success = valueDes;
+          break;
+        case r'result_info':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BuildsPaginationInfo),
+          ) as BuildsPaginationInfo;
+          result.resultInfo.replace(valueDes);
           break;
         default:
           unhandled.add(key);

@@ -18,38 +18,32 @@ part 'email_security_domain.g.dart';
 ///
 /// Properties:
 /// * [allowedDeliveryModes] 
-/// * [authorization] 
 /// * [createdAt] 
-/// * [dmarcStatus] 
 /// * [domain] 
 /// * [dropDispositions] 
-/// * [emailsProcessed] 
-/// * [folder] 
 /// * [id] - The unique identifier for the domain.
-/// * [inboxProvider] 
-/// * [integrationId] 
 /// * [ipRestrictions] 
 /// * [lastModified] 
 /// * [lookbackHops] 
-/// * [o365TenantId] 
 /// * [regions] 
+/// * [transport] 
+/// * [authorization] 
+/// * [dmarcStatus] 
+/// * [emailsProcessed] 
+/// * [folder] 
+/// * [inboxProvider] 
+/// * [integrationId] 
+/// * [o365TenantId] 
 /// * [requireTlsInbound] 
 /// * [requireTlsOutbound] 
 /// * [spfStatus] 
-/// * [transport] 
 @BuiltValue()
 abstract class EmailSecurityDomain implements Built<EmailSecurityDomain, EmailSecurityDomainBuilder> {
   @BuiltValueField(wireName: r'allowed_delivery_modes')
   BuiltList<EmailSecurityDeliveryMode> get allowedDeliveryModes;
 
-  @BuiltValueField(wireName: r'authorization')
-  EmailSecurityGetDomain200ResponseAllOfResultAuthorization? get authorization;
-
   @BuiltValueField(wireName: r'created_at')
   DateTime get createdAt;
-
-  @BuiltValueField(wireName: r'dmarc_status')
-  String? get dmarcStatus;
 
   @BuiltValueField(wireName: r'domain')
   String get domain;
@@ -57,21 +51,9 @@ abstract class EmailSecurityDomain implements Built<EmailSecurityDomain, EmailSe
   @BuiltValueField(wireName: r'drop_dispositions')
   BuiltList<EmailSecurityDispositionLabel> get dropDispositions;
 
-  @BuiltValueField(wireName: r'emails_processed')
-  EmailSecurityGetDomain200ResponseAllOfResultEmailsProcessed? get emailsProcessed;
-
-  @BuiltValueField(wireName: r'folder')
-  EmailSecurityScannableFolder? get folder;
-
   /// The unique identifier for the domain.
   @BuiltValueField(wireName: r'id')
   int get id;
-
-  @BuiltValueField(wireName: r'inbox_provider')
-  String? get inboxProvider;
-
-  @BuiltValueField(wireName: r'integration_id')
-  String? get integrationId;
 
   @BuiltValueField(wireName: r'ip_restrictions')
   BuiltList<String> get ipRestrictions;
@@ -82,12 +64,33 @@ abstract class EmailSecurityDomain implements Built<EmailSecurityDomain, EmailSe
   @BuiltValueField(wireName: r'lookback_hops')
   int get lookbackHops;
 
-  @BuiltValueField(wireName: r'o365_tenant_id')
-  String? get o365TenantId;
-
   @BuiltValueField(wireName: r'regions')
   BuiltList<EmailSecurityDomainRegionsEnum> get regions;
   // enum regionsEnum {  GLOBAL,  AU,  DE,  IN,  US,  };
+
+  @BuiltValueField(wireName: r'transport')
+  String get transport;
+
+  @BuiltValueField(wireName: r'authorization')
+  EmailSecurityGetDomain200ResponseAllOfResultAuthorization? get authorization;
+
+  @BuiltValueField(wireName: r'dmarc_status')
+  String? get dmarcStatus;
+
+  @BuiltValueField(wireName: r'emails_processed')
+  EmailSecurityGetDomain200ResponseAllOfResultEmailsProcessed? get emailsProcessed;
+
+  @BuiltValueField(wireName: r'folder')
+  EmailSecurityScannableFolder? get folder;
+
+  @BuiltValueField(wireName: r'inbox_provider')
+  String? get inboxProvider;
+
+  @BuiltValueField(wireName: r'integration_id')
+  String? get integrationId;
+
+  @BuiltValueField(wireName: r'o365_tenant_id')
+  String? get o365TenantId;
 
   @BuiltValueField(wireName: r'require_tls_inbound')
   bool? get requireTlsInbound;
@@ -97,9 +100,6 @@ abstract class EmailSecurityDomain implements Built<EmailSecurityDomain, EmailSe
 
   @BuiltValueField(wireName: r'spf_status')
   String? get spfStatus;
-
-  @BuiltValueField(wireName: r'transport')
-  String get transport;
 
   EmailSecurityDomain._();
 
@@ -129,25 +129,11 @@ class _$EmailSecurityDomainSerializer implements PrimitiveSerializer<EmailSecuri
       object.allowedDeliveryModes,
       specifiedType: const FullType(BuiltList, [FullType(EmailSecurityDeliveryMode)]),
     );
-    if (object.authorization != null) {
-      yield r'authorization';
-      yield serializers.serialize(
-        object.authorization,
-        specifiedType: const FullType(EmailSecurityGetDomain200ResponseAllOfResultAuthorization),
-      );
-    }
     yield r'created_at';
     yield serializers.serialize(
       object.createdAt,
       specifiedType: const FullType(DateTime),
     );
-    if (object.dmarcStatus != null) {
-      yield r'dmarc_status';
-      yield serializers.serialize(
-        object.dmarcStatus,
-        specifiedType: const FullType(String),
-      );
-    }
     yield r'domain';
     yield serializers.serialize(
       object.domain,
@@ -158,39 +144,11 @@ class _$EmailSecurityDomainSerializer implements PrimitiveSerializer<EmailSecuri
       object.dropDispositions,
       specifiedType: const FullType(BuiltList, [FullType(EmailSecurityDispositionLabel)]),
     );
-    if (object.emailsProcessed != null) {
-      yield r'emails_processed';
-      yield serializers.serialize(
-        object.emailsProcessed,
-        specifiedType: const FullType(EmailSecurityGetDomain200ResponseAllOfResultEmailsProcessed),
-      );
-    }
-    if (object.folder != null) {
-      yield r'folder';
-      yield serializers.serialize(
-        object.folder,
-        specifiedType: const FullType(EmailSecurityScannableFolder),
-      );
-    }
     yield r'id';
     yield serializers.serialize(
       object.id,
       specifiedType: const FullType(int),
     );
-    if (object.inboxProvider != null) {
-      yield r'inbox_provider';
-      yield serializers.serialize(
-        object.inboxProvider,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.integrationId != null) {
-      yield r'integration_id';
-      yield serializers.serialize(
-        object.integrationId,
-        specifiedType: const FullType.nullable(String),
-      );
-    }
     yield r'ip_restrictions';
     yield serializers.serialize(
       object.ipRestrictions,
@@ -206,6 +164,58 @@ class _$EmailSecurityDomainSerializer implements PrimitiveSerializer<EmailSecuri
       object.lookbackHops,
       specifiedType: const FullType(int),
     );
+    yield r'regions';
+    yield serializers.serialize(
+      object.regions,
+      specifiedType: const FullType(BuiltList, [FullType(EmailSecurityDomainRegionsEnum)]),
+    );
+    yield r'transport';
+    yield serializers.serialize(
+      object.transport,
+      specifiedType: const FullType(String),
+    );
+    if (object.authorization != null) {
+      yield r'authorization';
+      yield serializers.serialize(
+        object.authorization,
+        specifiedType: const FullType(EmailSecurityGetDomain200ResponseAllOfResultAuthorization),
+      );
+    }
+    if (object.dmarcStatus != null) {
+      yield r'dmarc_status';
+      yield serializers.serialize(
+        object.dmarcStatus,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.emailsProcessed != null) {
+      yield r'emails_processed';
+      yield serializers.serialize(
+        object.emailsProcessed,
+        specifiedType: const FullType(EmailSecurityGetDomain200ResponseAllOfResultEmailsProcessed),
+      );
+    }
+    if (object.folder != null) {
+      yield r'folder';
+      yield serializers.serialize(
+        object.folder,
+        specifiedType: const FullType(EmailSecurityScannableFolder),
+      );
+    }
+    if (object.inboxProvider != null) {
+      yield r'inbox_provider';
+      yield serializers.serialize(
+        object.inboxProvider,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.integrationId != null) {
+      yield r'integration_id';
+      yield serializers.serialize(
+        object.integrationId,
+        specifiedType: const FullType.nullable(String),
+      );
+    }
     if (object.o365TenantId != null) {
       yield r'o365_tenant_id';
       yield serializers.serialize(
@@ -213,11 +223,6 @@ class _$EmailSecurityDomainSerializer implements PrimitiveSerializer<EmailSecuri
         specifiedType: const FullType.nullable(String),
       );
     }
-    yield r'regions';
-    yield serializers.serialize(
-      object.regions,
-      specifiedType: const FullType(BuiltList, [FullType(EmailSecurityDomainRegionsEnum)]),
-    );
     if (object.requireTlsInbound != null) {
       yield r'require_tls_inbound';
       yield serializers.serialize(
@@ -239,11 +244,6 @@ class _$EmailSecurityDomainSerializer implements PrimitiveSerializer<EmailSecuri
         specifiedType: const FullType(String),
       );
     }
-    yield r'transport';
-    yield serializers.serialize(
-      object.transport,
-      specifiedType: const FullType(String),
-    );
   }
 
   @override
@@ -274,26 +274,12 @@ class _$EmailSecurityDomainSerializer implements PrimitiveSerializer<EmailSecuri
           ) as BuiltList<EmailSecurityDeliveryMode>;
           result.allowedDeliveryModes.replace(valueDes);
           break;
-        case r'authorization':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(EmailSecurityGetDomain200ResponseAllOfResultAuthorization),
-          ) as EmailSecurityGetDomain200ResponseAllOfResultAuthorization;
-          result.authorization.replace(valueDes);
-          break;
         case r'created_at':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(DateTime),
           ) as DateTime;
           result.createdAt = valueDes;
-          break;
-        case r'dmarc_status':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.dmarcStatus = valueDes;
           break;
         case r'domain':
           final valueDes = serializers.deserialize(
@@ -309,41 +295,12 @@ class _$EmailSecurityDomainSerializer implements PrimitiveSerializer<EmailSecuri
           ) as BuiltList<EmailSecurityDispositionLabel>;
           result.dropDispositions.replace(valueDes);
           break;
-        case r'emails_processed':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(EmailSecurityGetDomain200ResponseAllOfResultEmailsProcessed),
-          ) as EmailSecurityGetDomain200ResponseAllOfResultEmailsProcessed;
-          result.emailsProcessed.replace(valueDes);
-          break;
-        case r'folder':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(EmailSecurityScannableFolder),
-          ) as EmailSecurityScannableFolder;
-          result.folder = valueDes;
-          break;
         case r'id':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(int),
           ) as int;
           result.id = valueDes;
-          break;
-        case r'inbox_provider':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.inboxProvider = valueDes;
-          break;
-        case r'integration_id':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
-          if (valueDes == null) continue;
-          result.integrationId = valueDes;
           break;
         case r'ip_restrictions':
           final valueDes = serializers.deserialize(
@@ -366,6 +323,63 @@ class _$EmailSecurityDomainSerializer implements PrimitiveSerializer<EmailSecuri
           ) as int;
           result.lookbackHops = valueDes;
           break;
+        case r'regions':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BuiltList, [FullType(EmailSecurityDomainRegionsEnum)]),
+          ) as BuiltList<EmailSecurityDomainRegionsEnum>;
+          result.regions.replace(valueDes);
+          break;
+        case r'transport':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.transport = valueDes;
+          break;
+        case r'authorization':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(EmailSecurityGetDomain200ResponseAllOfResultAuthorization),
+          ) as EmailSecurityGetDomain200ResponseAllOfResultAuthorization;
+          result.authorization.replace(valueDes);
+          break;
+        case r'dmarc_status':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.dmarcStatus = valueDes;
+          break;
+        case r'emails_processed':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(EmailSecurityGetDomain200ResponseAllOfResultEmailsProcessed),
+          ) as EmailSecurityGetDomain200ResponseAllOfResultEmailsProcessed;
+          result.emailsProcessed.replace(valueDes);
+          break;
+        case r'folder':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(EmailSecurityScannableFolder),
+          ) as EmailSecurityScannableFolder;
+          result.folder = valueDes;
+          break;
+        case r'inbox_provider':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.inboxProvider = valueDes;
+          break;
+        case r'integration_id':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType.nullable(String),
+          ) as String?;
+          if (valueDes == null) continue;
+          result.integrationId = valueDes;
+          break;
         case r'o365_tenant_id':
           final valueDes = serializers.deserialize(
             value,
@@ -373,13 +387,6 @@ class _$EmailSecurityDomainSerializer implements PrimitiveSerializer<EmailSecuri
           ) as String?;
           if (valueDes == null) continue;
           result.o365TenantId = valueDes;
-          break;
-        case r'regions':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(EmailSecurityDomainRegionsEnum)]),
-          ) as BuiltList<EmailSecurityDomainRegionsEnum>;
-          result.regions.replace(valueDes);
           break;
         case r'require_tls_inbound':
           final valueDes = serializers.deserialize(
@@ -403,13 +410,6 @@ class _$EmailSecurityDomainSerializer implements PrimitiveSerializer<EmailSecuri
             specifiedType: const FullType(String),
           ) as String;
           result.spfStatus = valueDes;
-          break;
-        case r'transport':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.transport = valueDes;
           break;
         default:
           unhandled.add(key);

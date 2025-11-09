@@ -14,18 +14,18 @@ part 'radar_get_ranking_domain_details200_response_result_details0.g.dart';
 /// RadarGetRankingDomainDetails200ResponseResultDetails0
 ///
 /// Properties:
-/// * [bucket] - Only available in POPULAR ranking for the most recent ranking.
 /// * [categories] 
+/// * [bucket] - Only available in POPULAR ranking for the most recent ranking.
 /// * [rank] 
 /// * [topLocations] 
 @BuiltValue()
 abstract class RadarGetRankingDomainDetails200ResponseResultDetails0 implements Built<RadarGetRankingDomainDetails200ResponseResultDetails0, RadarGetRankingDomainDetails200ResponseResultDetails0Builder> {
+  @BuiltValueField(wireName: r'categories')
+  BuiltList<RadarGetRankingDomainDetails200ResponseResultDetails0CategoriesInner> get categories;
+
   /// Only available in POPULAR ranking for the most recent ranking.
   @BuiltValueField(wireName: r'bucket')
   String? get bucket;
-
-  @BuiltValueField(wireName: r'categories')
-  BuiltList<RadarGetRankingDomainDetails200ResponseResultDetails0CategoriesInner> get categories;
 
   @BuiltValueField(wireName: r'rank')
   int? get rank;
@@ -56,6 +56,11 @@ class _$RadarGetRankingDomainDetails200ResponseResultDetails0Serializer implemen
     RadarGetRankingDomainDetails200ResponseResultDetails0 object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    yield r'categories';
+    yield serializers.serialize(
+      object.categories,
+      specifiedType: const FullType(BuiltList, [FullType(RadarGetRankingDomainDetails200ResponseResultDetails0CategoriesInner)]),
+    );
     if (object.bucket != null) {
       yield r'bucket';
       yield serializers.serialize(
@@ -63,11 +68,6 @@ class _$RadarGetRankingDomainDetails200ResponseResultDetails0Serializer implemen
         specifiedType: const FullType(String),
       );
     }
-    yield r'categories';
-    yield serializers.serialize(
-      object.categories,
-      specifiedType: const FullType(BuiltList, [FullType(RadarGetRankingDomainDetails200ResponseResultDetails0CategoriesInner)]),
-    );
     if (object.rank != null) {
       yield r'rank';
       yield serializers.serialize(
@@ -105,19 +105,19 @@ class _$RadarGetRankingDomainDetails200ResponseResultDetails0Serializer implemen
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'bucket':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.bucket = valueDes;
-          break;
         case r'categories':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(BuiltList, [FullType(RadarGetRankingDomainDetails200ResponseResultDetails0CategoriesInner)]),
           ) as BuiltList<RadarGetRankingDomainDetails200ResponseResultDetails0CategoriesInner>;
           result.categories.replace(valueDes);
+          break;
+        case r'bucket':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.bucket = valueDes;
           break;
         case r'rank':
           final valueDes = serializers.deserialize(

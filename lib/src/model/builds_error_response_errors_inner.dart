@@ -11,15 +11,15 @@ part 'builds_error_response_errors_inner.g.dart';
 /// BuildsErrorResponseErrorsInner
 ///
 /// Properties:
-/// * [code] 
 /// * [message] 
+/// * [code] 
 @BuiltValue()
 abstract class BuildsErrorResponseErrorsInner implements Built<BuildsErrorResponseErrorsInner, BuildsErrorResponseErrorsInnerBuilder> {
-  @BuiltValueField(wireName: r'code')
-  int? get code;
-
   @BuiltValueField(wireName: r'message')
   String get message;
+
+  @BuiltValueField(wireName: r'code')
+  int? get code;
 
   BuildsErrorResponseErrorsInner._();
 
@@ -44,6 +44,11 @@ class _$BuildsErrorResponseErrorsInnerSerializer implements PrimitiveSerializer<
     BuildsErrorResponseErrorsInner object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    yield r'message';
+    yield serializers.serialize(
+      object.message,
+      specifiedType: const FullType(String),
+    );
     if (object.code != null) {
       yield r'code';
       yield serializers.serialize(
@@ -51,11 +56,6 @@ class _$BuildsErrorResponseErrorsInnerSerializer implements PrimitiveSerializer<
         specifiedType: const FullType(int),
       );
     }
-    yield r'message';
-    yield serializers.serialize(
-      object.message,
-      specifiedType: const FullType(String),
-    );
   }
 
   @override
@@ -79,19 +79,19 @@ class _$BuildsErrorResponseErrorsInnerSerializer implements PrimitiveSerializer<
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'code':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
-          result.code = valueDes;
-          break;
         case r'message':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(String),
           ) as String;
           result.message = valueDes;
+          break;
+        case r'code':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(int),
+          ) as int;
+          result.code = valueDes;
           break;
         default:
           unhandled.add(key);

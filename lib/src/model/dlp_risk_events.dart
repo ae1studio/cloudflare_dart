@@ -16,8 +16,8 @@ part 'dlp_risk_events.g.dart';
 /// Properties:
 /// * [email] 
 /// * [events] 
-/// * [lastResetTime] 
 /// * [name] 
+/// * [lastResetTime] 
 /// * [riskLevel] 
 @BuiltValue()
 abstract class DlpRiskEvents implements Built<DlpRiskEvents, DlpRiskEventsBuilder> {
@@ -27,11 +27,11 @@ abstract class DlpRiskEvents implements Built<DlpRiskEvents, DlpRiskEventsBuilde
   @BuiltValueField(wireName: r'events')
   BuiltList<DlpRiskEvent> get events;
 
-  @BuiltValueField(wireName: r'last_reset_time')
-  DateTime? get lastResetTime;
-
   @BuiltValueField(wireName: r'name')
   String get name;
+
+  @BuiltValueField(wireName: r'last_reset_time')
+  DateTime? get lastResetTime;
 
   @BuiltValueField(wireName: r'risk_level')
   DlpRiskLevel? get riskLevel;
@@ -70,6 +70,11 @@ class _$DlpRiskEventsSerializer implements PrimitiveSerializer<DlpRiskEvents> {
       object.events,
       specifiedType: const FullType(BuiltList, [FullType(DlpRiskEvent)]),
     );
+    yield r'name';
+    yield serializers.serialize(
+      object.name,
+      specifiedType: const FullType(String),
+    );
     if (object.lastResetTime != null) {
       yield r'last_reset_time';
       yield serializers.serialize(
@@ -77,11 +82,6 @@ class _$DlpRiskEventsSerializer implements PrimitiveSerializer<DlpRiskEvents> {
         specifiedType: const FullType.nullable(DateTime),
       );
     }
-    yield r'name';
-    yield serializers.serialize(
-      object.name,
-      specifiedType: const FullType(String),
-    );
     if (object.riskLevel != null) {
       yield r'risk_level';
       yield serializers.serialize(
@@ -126,6 +126,13 @@ class _$DlpRiskEventsSerializer implements PrimitiveSerializer<DlpRiskEvents> {
           ) as BuiltList<DlpRiskEvent>;
           result.events.replace(valueDes);
           break;
+        case r'name':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.name = valueDes;
+          break;
         case r'last_reset_time':
           final valueDes = serializers.deserialize(
             value,
@@ -133,13 +140,6 @@ class _$DlpRiskEventsSerializer implements PrimitiveSerializer<DlpRiskEvents> {
           ) as DateTime?;
           if (valueDes == null) continue;
           result.lastResetTime = valueDes;
-          break;
-        case r'name':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.name = valueDes;
           break;
         case r'risk_level':
           final valueDes = serializers.deserialize(

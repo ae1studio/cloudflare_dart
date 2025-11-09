@@ -14,16 +14,24 @@ part 'account_request_tracer_request_trace_request.g.dart';
 /// AccountRequestTracerRequestTraceRequest
 ///
 /// Properties:
+/// * [method] - HTTP Method of tracing request
+/// * [url] - URL to which perform tracing request
 /// * [body] 
 /// * [context] 
 /// * [cookies] - Cookies added to tracing request
 /// * [headers] - Headers added to tracing request
-/// * [method] - HTTP Method of tracing request
 /// * [protocol] - HTTP Protocol of tracing request
 /// * [skipResponse] - Skip sending the request to the Origin server after all rules evaluation
-/// * [url] - URL to which perform tracing request
 @BuiltValue()
 abstract class AccountRequestTracerRequestTraceRequest implements Built<AccountRequestTracerRequestTraceRequest, AccountRequestTracerRequestTraceRequestBuilder> {
+  /// HTTP Method of tracing request
+  @BuiltValueField(wireName: r'method')
+  String get method;
+
+  /// URL to which perform tracing request
+  @BuiltValueField(wireName: r'url')
+  String get url;
+
   @BuiltValueField(wireName: r'body')
   AccountRequestTracerRequestTraceRequestBody? get body;
 
@@ -38,10 +46,6 @@ abstract class AccountRequestTracerRequestTraceRequest implements Built<AccountR
   @BuiltValueField(wireName: r'headers')
   BuiltMap<String, String>? get headers;
 
-  /// HTTP Method of tracing request
-  @BuiltValueField(wireName: r'method')
-  String get method;
-
   /// HTTP Protocol of tracing request
   @BuiltValueField(wireName: r'protocol')
   String? get protocol;
@@ -49,10 +53,6 @@ abstract class AccountRequestTracerRequestTraceRequest implements Built<AccountR
   /// Skip sending the request to the Origin server after all rules evaluation
   @BuiltValueField(wireName: r'skip_response')
   bool? get skipResponse;
-
-  /// URL to which perform tracing request
-  @BuiltValueField(wireName: r'url')
-  String get url;
 
   AccountRequestTracerRequestTraceRequest._();
 
@@ -77,6 +77,16 @@ class _$AccountRequestTracerRequestTraceRequestSerializer implements PrimitiveSe
     AccountRequestTracerRequestTraceRequest object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    yield r'method';
+    yield serializers.serialize(
+      object.method,
+      specifiedType: const FullType(String),
+    );
+    yield r'url';
+    yield serializers.serialize(
+      object.url,
+      specifiedType: const FullType(String),
+    );
     if (object.body != null) {
       yield r'body';
       yield serializers.serialize(
@@ -105,11 +115,6 @@ class _$AccountRequestTracerRequestTraceRequestSerializer implements PrimitiveSe
         specifiedType: const FullType(BuiltMap, [FullType(String), FullType(String)]),
       );
     }
-    yield r'method';
-    yield serializers.serialize(
-      object.method,
-      specifiedType: const FullType(String),
-    );
     if (object.protocol != null) {
       yield r'protocol';
       yield serializers.serialize(
@@ -124,11 +129,6 @@ class _$AccountRequestTracerRequestTraceRequestSerializer implements PrimitiveSe
         specifiedType: const FullType(bool),
       );
     }
-    yield r'url';
-    yield serializers.serialize(
-      object.url,
-      specifiedType: const FullType(String),
-    );
   }
 
   @override
@@ -152,6 +152,20 @@ class _$AccountRequestTracerRequestTraceRequestSerializer implements PrimitiveSe
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
+        case r'method':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.method = valueDes;
+          break;
+        case r'url':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.url = valueDes;
+          break;
         case r'body':
           final valueDes = serializers.deserialize(
             value,
@@ -180,13 +194,6 @@ class _$AccountRequestTracerRequestTraceRequestSerializer implements PrimitiveSe
           ) as BuiltMap<String, String>;
           result.headers.replace(valueDes);
           break;
-        case r'method':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.method = valueDes;
-          break;
         case r'protocol':
           final valueDes = serializers.deserialize(
             value,
@@ -200,13 +207,6 @@ class _$AccountRequestTracerRequestTraceRequestSerializer implements PrimitiveSe
             specifiedType: const FullType(bool),
           ) as bool;
           result.skipResponse = valueDes;
-          break;
-        case r'url':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.url = valueDes;
           break;
         default:
           unhandled.add(key);

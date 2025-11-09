@@ -85,6 +85,16 @@ class _$DigitalExperienceMonitoringTestsResponseTestsInner
   @override
   final String host;
   @override
+  final String id;
+  @override
+  final String interval;
+  @override
+  final DigitalExperienceMonitoringTestsResponseTestsInnerKindEnum kind;
+  @override
+  final String name;
+  @override
+  final String updated;
+  @override
   final DigitalExperienceMonitoringTestsResponseTestsInnerHttpResults?
       httpResults;
   @override
@@ -92,15 +102,7 @@ class _$DigitalExperienceMonitoringTestsResponseTestsInner
           DigitalExperienceMonitoringTestsResponseTestsInnerHttpResultsByColoInner>?
       httpResultsByColo;
   @override
-  final String id;
-  @override
-  final String interval;
-  @override
-  final DigitalExperienceMonitoringTestsResponseTestsInnerKindEnum kind;
-  @override
   final String? method;
-  @override
-  final String name;
   @override
   final BuiltList<
           DigitalExperienceMonitoringHttpDetailsResponseTargetPoliciesInner>?
@@ -114,8 +116,6 @@ class _$DigitalExperienceMonitoringTestsResponseTestsInner
   final BuiltList<
           DigitalExperienceMonitoringTestsResponseTestsInnerTracerouteResultsByColoInner>?
       tracerouteResultsByColo;
-  @override
-  final String updated;
 
   factory _$DigitalExperienceMonitoringTestsResponseTestsInner(
           [void Function(
@@ -130,18 +130,18 @@ class _$DigitalExperienceMonitoringTestsResponseTestsInner
       required this.description,
       required this.enabled,
       required this.host,
-      this.httpResults,
-      this.httpResultsByColo,
       required this.id,
       required this.interval,
       required this.kind,
-      this.method,
       required this.name,
+      required this.updated,
+      this.httpResults,
+      this.httpResultsByColo,
+      this.method,
       this.targetPolicies,
       this.targeted,
       this.tracerouteResults,
-      this.tracerouteResultsByColo,
-      required this.updated})
+      this.tracerouteResultsByColo})
       : super._();
   @override
   DigitalExperienceMonitoringTestsResponseTestsInner rebuild(
@@ -163,18 +163,18 @@ class _$DigitalExperienceMonitoringTestsResponseTestsInner
         description == other.description &&
         enabled == other.enabled &&
         host == other.host &&
-        httpResults == other.httpResults &&
-        httpResultsByColo == other.httpResultsByColo &&
         id == other.id &&
         interval == other.interval &&
         kind == other.kind &&
-        method == other.method &&
         name == other.name &&
+        updated == other.updated &&
+        httpResults == other.httpResults &&
+        httpResultsByColo == other.httpResultsByColo &&
+        method == other.method &&
         targetPolicies == other.targetPolicies &&
         targeted == other.targeted &&
         tracerouteResults == other.tracerouteResults &&
-        tracerouteResultsByColo == other.tracerouteResultsByColo &&
-        updated == other.updated;
+        tracerouteResultsByColo == other.tracerouteResultsByColo;
   }
 
   @override
@@ -184,18 +184,18 @@ class _$DigitalExperienceMonitoringTestsResponseTestsInner
     _$hash = $jc(_$hash, description.hashCode);
     _$hash = $jc(_$hash, enabled.hashCode);
     _$hash = $jc(_$hash, host.hashCode);
-    _$hash = $jc(_$hash, httpResults.hashCode);
-    _$hash = $jc(_$hash, httpResultsByColo.hashCode);
     _$hash = $jc(_$hash, id.hashCode);
     _$hash = $jc(_$hash, interval.hashCode);
     _$hash = $jc(_$hash, kind.hashCode);
-    _$hash = $jc(_$hash, method.hashCode);
     _$hash = $jc(_$hash, name.hashCode);
+    _$hash = $jc(_$hash, updated.hashCode);
+    _$hash = $jc(_$hash, httpResults.hashCode);
+    _$hash = $jc(_$hash, httpResultsByColo.hashCode);
+    _$hash = $jc(_$hash, method.hashCode);
     _$hash = $jc(_$hash, targetPolicies.hashCode);
     _$hash = $jc(_$hash, targeted.hashCode);
     _$hash = $jc(_$hash, tracerouteResults.hashCode);
     _$hash = $jc(_$hash, tracerouteResultsByColo.hashCode);
-    _$hash = $jc(_$hash, updated.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -208,18 +208,18 @@ class _$DigitalExperienceMonitoringTestsResponseTestsInner
           ..add('description', description)
           ..add('enabled', enabled)
           ..add('host', host)
-          ..add('httpResults', httpResults)
-          ..add('httpResultsByColo', httpResultsByColo)
           ..add('id', id)
           ..add('interval', interval)
           ..add('kind', kind)
-          ..add('method', method)
           ..add('name', name)
+          ..add('updated', updated)
+          ..add('httpResults', httpResults)
+          ..add('httpResultsByColo', httpResultsByColo)
+          ..add('method', method)
           ..add('targetPolicies', targetPolicies)
           ..add('targeted', targeted)
           ..add('tracerouteResults', tracerouteResults)
-          ..add('tracerouteResultsByColo', tracerouteResultsByColo)
-          ..add('updated', updated))
+          ..add('tracerouteResultsByColo', tracerouteResultsByColo))
         .toString();
   }
 }
@@ -246,6 +246,28 @@ class DigitalExperienceMonitoringTestsResponseTestsInnerBuilder
   String? get host => _$this._host;
   set host(String? host) => _$this._host = host;
 
+  String? _id;
+  String? get id => _$this._id;
+  set id(String? id) => _$this._id = id;
+
+  String? _interval;
+  String? get interval => _$this._interval;
+  set interval(String? interval) => _$this._interval = interval;
+
+  DigitalExperienceMonitoringTestsResponseTestsInnerKindEnum? _kind;
+  DigitalExperienceMonitoringTestsResponseTestsInnerKindEnum? get kind =>
+      _$this._kind;
+  set kind(DigitalExperienceMonitoringTestsResponseTestsInnerKindEnum? kind) =>
+      _$this._kind = kind;
+
+  String? _name;
+  String? get name => _$this._name;
+  set name(String? name) => _$this._name = name;
+
+  String? _updated;
+  String? get updated => _$this._updated;
+  set updated(String? updated) => _$this._updated = updated;
+
   DigitalExperienceMonitoringTestsResponseTestsInnerHttpResultsBuilder?
       _httpResults;
   DigitalExperienceMonitoringTestsResponseTestsInnerHttpResultsBuilder
@@ -269,27 +291,9 @@ class DigitalExperienceMonitoringTestsResponseTestsInnerBuilder
               httpResultsByColo) =>
       _$this._httpResultsByColo = httpResultsByColo;
 
-  String? _id;
-  String? get id => _$this._id;
-  set id(String? id) => _$this._id = id;
-
-  String? _interval;
-  String? get interval => _$this._interval;
-  set interval(String? interval) => _$this._interval = interval;
-
-  DigitalExperienceMonitoringTestsResponseTestsInnerKindEnum? _kind;
-  DigitalExperienceMonitoringTestsResponseTestsInnerKindEnum? get kind =>
-      _$this._kind;
-  set kind(DigitalExperienceMonitoringTestsResponseTestsInnerKindEnum? kind) =>
-      _$this._kind = kind;
-
   String? _method;
   String? get method => _$this._method;
   set method(String? method) => _$this._method = method;
-
-  String? _name;
-  String? get name => _$this._name;
-  set name(String? name) => _$this._name = name;
 
   ListBuilder<
           DigitalExperienceMonitoringHttpDetailsResponseTargetPoliciesInner>?
@@ -331,10 +335,6 @@ class DigitalExperienceMonitoringTestsResponseTestsInnerBuilder
               tracerouteResultsByColo) =>
       _$this._tracerouteResultsByColo = tracerouteResultsByColo;
 
-  String? _updated;
-  String? get updated => _$this._updated;
-  set updated(String? updated) => _$this._updated = updated;
-
   DigitalExperienceMonitoringTestsResponseTestsInnerBuilder() {
     DigitalExperienceMonitoringTestsResponseTestsInner._defaults(this);
   }
@@ -346,18 +346,18 @@ class DigitalExperienceMonitoringTestsResponseTestsInnerBuilder
       _description = $v.description;
       _enabled = $v.enabled;
       _host = $v.host;
-      _httpResults = $v.httpResults?.toBuilder();
-      _httpResultsByColo = $v.httpResultsByColo?.toBuilder();
       _id = $v.id;
       _interval = $v.interval;
       _kind = $v.kind;
-      _method = $v.method;
       _name = $v.name;
+      _updated = $v.updated;
+      _httpResults = $v.httpResults?.toBuilder();
+      _httpResultsByColo = $v.httpResultsByColo?.toBuilder();
+      _method = $v.method;
       _targetPolicies = $v.targetPolicies?.toBuilder();
       _targeted = $v.targeted;
       _tracerouteResults = $v.tracerouteResults?.toBuilder();
       _tracerouteResultsByColo = $v.tracerouteResultsByColo?.toBuilder();
-      _updated = $v.updated;
       _$v = null;
     }
     return this;
@@ -397,8 +397,6 @@ class DigitalExperienceMonitoringTestsResponseTestsInnerBuilder
                 'enabled'),
             host: BuiltValueNullFieldError.checkNotNull(host,
                 r'DigitalExperienceMonitoringTestsResponseTestsInner', 'host'),
-            httpResults: _httpResults?.build(),
-            httpResultsByColo: _httpResultsByColo?.build(),
             id: BuiltValueNullFieldError.checkNotNull(id,
                 r'DigitalExperienceMonitoringTestsResponseTestsInner', 'id'),
             interval: BuiltValueNullFieldError.checkNotNull(
@@ -407,17 +405,19 @@ class DigitalExperienceMonitoringTestsResponseTestsInnerBuilder
                 'interval'),
             kind: BuiltValueNullFieldError.checkNotNull(kind,
                 r'DigitalExperienceMonitoringTestsResponseTestsInner', 'kind'),
-            method: method,
             name: BuiltValueNullFieldError.checkNotNull(name,
                 r'DigitalExperienceMonitoringTestsResponseTestsInner', 'name'),
-            targetPolicies: _targetPolicies?.build(),
-            targeted: targeted,
-            tracerouteResults: _tracerouteResults?.build(),
-            tracerouteResultsByColo: _tracerouteResultsByColo?.build(),
             updated: BuiltValueNullFieldError.checkNotNull(
                 updated,
                 r'DigitalExperienceMonitoringTestsResponseTestsInner',
                 'updated'),
+            httpResults: _httpResults?.build(),
+            httpResultsByColo: _httpResultsByColo?.build(),
+            method: method,
+            targetPolicies: _targetPolicies?.build(),
+            targeted: targeted,
+            tracerouteResults: _tracerouteResults?.build(),
+            tracerouteResultsByColo: _tracerouteResultsByColo?.build(),
           );
     } catch (_) {
       late String _$failedField;

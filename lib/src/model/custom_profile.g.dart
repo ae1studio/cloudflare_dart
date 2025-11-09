@@ -56,19 +56,9 @@ class _$CustomProfile extends CustomProfile {
   @override
   final CustomProfileTypeEnum type;
   @override
-  final bool? aiContextEnabled;
-  @override
   final int allowedMatchCount;
   @override
-  final DlpConfidence? confidenceThreshold;
-  @override
-  final DlpContextAwareness? contextAwareness;
-  @override
   final DateTime createdAt;
-  @override
-  final String? description;
-  @override
-  final BuiltList<DlpEntry>? entries;
   @override
   final String id;
   @override
@@ -77,23 +67,33 @@ class _$CustomProfile extends CustomProfile {
   final bool ocrEnabled;
   @override
   final DateTime updatedAt;
+  @override
+  final bool? aiContextEnabled;
+  @override
+  final DlpConfidence? confidenceThreshold;
+  @override
+  final DlpContextAwareness? contextAwareness;
+  @override
+  final String? description;
+  @override
+  final BuiltList<DlpEntry>? entries;
 
   factory _$CustomProfile([void Function(CustomProfileBuilder)? updates]) =>
       (CustomProfileBuilder()..update(updates))._build();
 
   _$CustomProfile._(
       {required this.type,
-      this.aiContextEnabled,
       required this.allowedMatchCount,
-      this.confidenceThreshold,
-      this.contextAwareness,
       required this.createdAt,
-      this.description,
-      this.entries,
       required this.id,
       required this.name,
       required this.ocrEnabled,
-      required this.updatedAt})
+      required this.updatedAt,
+      this.aiContextEnabled,
+      this.confidenceThreshold,
+      this.contextAwareness,
+      this.description,
+      this.entries})
       : super._();
   @override
   CustomProfile rebuild(void Function(CustomProfileBuilder) updates) =>
@@ -107,34 +107,34 @@ class _$CustomProfile extends CustomProfile {
     if (identical(other, this)) return true;
     return other is CustomProfile &&
         type == other.type &&
-        aiContextEnabled == other.aiContextEnabled &&
         allowedMatchCount == other.allowedMatchCount &&
-        confidenceThreshold == other.confidenceThreshold &&
-        contextAwareness == other.contextAwareness &&
         createdAt == other.createdAt &&
-        description == other.description &&
-        entries == other.entries &&
         id == other.id &&
         name == other.name &&
         ocrEnabled == other.ocrEnabled &&
-        updatedAt == other.updatedAt;
+        updatedAt == other.updatedAt &&
+        aiContextEnabled == other.aiContextEnabled &&
+        confidenceThreshold == other.confidenceThreshold &&
+        contextAwareness == other.contextAwareness &&
+        description == other.description &&
+        entries == other.entries;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
     _$hash = $jc(_$hash, type.hashCode);
-    _$hash = $jc(_$hash, aiContextEnabled.hashCode);
     _$hash = $jc(_$hash, allowedMatchCount.hashCode);
-    _$hash = $jc(_$hash, confidenceThreshold.hashCode);
-    _$hash = $jc(_$hash, contextAwareness.hashCode);
     _$hash = $jc(_$hash, createdAt.hashCode);
-    _$hash = $jc(_$hash, description.hashCode);
-    _$hash = $jc(_$hash, entries.hashCode);
     _$hash = $jc(_$hash, id.hashCode);
     _$hash = $jc(_$hash, name.hashCode);
     _$hash = $jc(_$hash, ocrEnabled.hashCode);
     _$hash = $jc(_$hash, updatedAt.hashCode);
+    _$hash = $jc(_$hash, aiContextEnabled.hashCode);
+    _$hash = $jc(_$hash, confidenceThreshold.hashCode);
+    _$hash = $jc(_$hash, contextAwareness.hashCode);
+    _$hash = $jc(_$hash, description.hashCode);
+    _$hash = $jc(_$hash, entries.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -143,17 +143,17 @@ class _$CustomProfile extends CustomProfile {
   String toString() {
     return (newBuiltValueToStringHelper(r'CustomProfile')
           ..add('type', type)
-          ..add('aiContextEnabled', aiContextEnabled)
           ..add('allowedMatchCount', allowedMatchCount)
-          ..add('confidenceThreshold', confidenceThreshold)
-          ..add('contextAwareness', contextAwareness)
           ..add('createdAt', createdAt)
-          ..add('description', description)
-          ..add('entries', entries)
           ..add('id', id)
           ..add('name', name)
           ..add('ocrEnabled', ocrEnabled)
-          ..add('updatedAt', updatedAt))
+          ..add('updatedAt', updatedAt)
+          ..add('aiContextEnabled', aiContextEnabled)
+          ..add('confidenceThreshold', confidenceThreshold)
+          ..add('contextAwareness', contextAwareness)
+          ..add('description', description)
+          ..add('entries', entries))
         .toString();
   }
 }
@@ -168,42 +168,14 @@ class CustomProfileBuilder
   CustomProfileTypeEnum? get type => _$this._type;
   set type(covariant CustomProfileTypeEnum? type) => _$this._type = type;
 
-  bool? _aiContextEnabled;
-  bool? get aiContextEnabled => _$this._aiContextEnabled;
-  set aiContextEnabled(covariant bool? aiContextEnabled) =>
-      _$this._aiContextEnabled = aiContextEnabled;
-
   int? _allowedMatchCount;
   int? get allowedMatchCount => _$this._allowedMatchCount;
   set allowedMatchCount(covariant int? allowedMatchCount) =>
       _$this._allowedMatchCount = allowedMatchCount;
 
-  DlpConfidence? _confidenceThreshold;
-  DlpConfidence? get confidenceThreshold => _$this._confidenceThreshold;
-  set confidenceThreshold(covariant DlpConfidence? confidenceThreshold) =>
-      _$this._confidenceThreshold = confidenceThreshold;
-
-  DlpContextAwarenessBuilder? _contextAwareness;
-  DlpContextAwarenessBuilder get contextAwareness =>
-      _$this._contextAwareness ??= DlpContextAwarenessBuilder();
-  set contextAwareness(
-          covariant DlpContextAwarenessBuilder? contextAwareness) =>
-      _$this._contextAwareness = contextAwareness;
-
   DateTime? _createdAt;
   DateTime? get createdAt => _$this._createdAt;
   set createdAt(covariant DateTime? createdAt) => _$this._createdAt = createdAt;
-
-  String? _description;
-  String? get description => _$this._description;
-  set description(covariant String? description) =>
-      _$this._description = description;
-
-  ListBuilder<DlpEntry>? _entries;
-  ListBuilder<DlpEntry> get entries =>
-      _$this._entries ??= ListBuilder<DlpEntry>();
-  set entries(covariant ListBuilder<DlpEntry>? entries) =>
-      _$this._entries = entries;
 
   String? _id;
   String? get id => _$this._id;
@@ -221,6 +193,34 @@ class CustomProfileBuilder
   DateTime? get updatedAt => _$this._updatedAt;
   set updatedAt(covariant DateTime? updatedAt) => _$this._updatedAt = updatedAt;
 
+  bool? _aiContextEnabled;
+  bool? get aiContextEnabled => _$this._aiContextEnabled;
+  set aiContextEnabled(covariant bool? aiContextEnabled) =>
+      _$this._aiContextEnabled = aiContextEnabled;
+
+  DlpConfidence? _confidenceThreshold;
+  DlpConfidence? get confidenceThreshold => _$this._confidenceThreshold;
+  set confidenceThreshold(covariant DlpConfidence? confidenceThreshold) =>
+      _$this._confidenceThreshold = confidenceThreshold;
+
+  DlpContextAwarenessBuilder? _contextAwareness;
+  DlpContextAwarenessBuilder get contextAwareness =>
+      _$this._contextAwareness ??= DlpContextAwarenessBuilder();
+  set contextAwareness(
+          covariant DlpContextAwarenessBuilder? contextAwareness) =>
+      _$this._contextAwareness = contextAwareness;
+
+  String? _description;
+  String? get description => _$this._description;
+  set description(covariant String? description) =>
+      _$this._description = description;
+
+  ListBuilder<DlpEntry>? _entries;
+  ListBuilder<DlpEntry> get entries =>
+      _$this._entries ??= ListBuilder<DlpEntry>();
+  set entries(covariant ListBuilder<DlpEntry>? entries) =>
+      _$this._entries = entries;
+
   CustomProfileBuilder() {
     CustomProfile._defaults(this);
   }
@@ -229,17 +229,17 @@ class CustomProfileBuilder
     final $v = _$v;
     if ($v != null) {
       _type = $v.type;
-      _aiContextEnabled = $v.aiContextEnabled;
       _allowedMatchCount = $v.allowedMatchCount;
-      _confidenceThreshold = $v.confidenceThreshold;
-      _contextAwareness = $v.contextAwareness?.toBuilder();
       _createdAt = $v.createdAt;
-      _description = $v.description;
-      _entries = $v.entries?.toBuilder();
       _id = $v.id;
       _name = $v.name;
       _ocrEnabled = $v.ocrEnabled;
       _updatedAt = $v.updatedAt;
+      _aiContextEnabled = $v.aiContextEnabled;
+      _confidenceThreshold = $v.confidenceThreshold;
+      _contextAwareness = $v.contextAwareness?.toBuilder();
+      _description = $v.description;
+      _entries = $v.entries?.toBuilder();
       _$v = null;
     }
     return this;
@@ -265,15 +265,10 @@ class CustomProfileBuilder
           _$CustomProfile._(
             type: BuiltValueNullFieldError.checkNotNull(
                 type, r'CustomProfile', 'type'),
-            aiContextEnabled: aiContextEnabled,
             allowedMatchCount: BuiltValueNullFieldError.checkNotNull(
                 allowedMatchCount, r'CustomProfile', 'allowedMatchCount'),
-            confidenceThreshold: confidenceThreshold,
-            contextAwareness: _contextAwareness?.build(),
             createdAt: BuiltValueNullFieldError.checkNotNull(
                 createdAt, r'CustomProfile', 'createdAt'),
-            description: description,
-            entries: _entries?.build(),
             id: BuiltValueNullFieldError.checkNotNull(
                 id, r'CustomProfile', 'id'),
             name: BuiltValueNullFieldError.checkNotNull(
@@ -282,6 +277,11 @@ class CustomProfileBuilder
                 ocrEnabled, r'CustomProfile', 'ocrEnabled'),
             updatedAt: BuiltValueNullFieldError.checkNotNull(
                 updatedAt, r'CustomProfile', 'updatedAt'),
+            aiContextEnabled: aiContextEnabled,
+            confidenceThreshold: confidenceThreshold,
+            contextAwareness: _contextAwareness?.build(),
+            description: description,
+            entries: _entries?.build(),
           );
     } catch (_) {
       late String _$failedField;

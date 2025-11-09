@@ -12,9 +12,6 @@ abstract class DlpIntegrationProfileBuilder {
   DateTime? get createdAt;
   set createdAt(DateTime? createdAt);
 
-  String? get description;
-  set description(String? description);
-
   ListBuilder<DlpEntry> get entries;
   set entries(ListBuilder<DlpEntry>? entries);
 
@@ -26,13 +23,14 @@ abstract class DlpIntegrationProfileBuilder {
 
   DateTime? get updatedAt;
   set updatedAt(DateTime? updatedAt);
+
+  String? get description;
+  set description(String? description);
 }
 
 class _$$DlpIntegrationProfile extends $DlpIntegrationProfile {
   @override
   final DateTime createdAt;
-  @override
-  final String? description;
   @override
   final BuiltList<DlpEntry> entries;
   @override
@@ -41,6 +39,8 @@ class _$$DlpIntegrationProfile extends $DlpIntegrationProfile {
   final String name;
   @override
   final DateTime updatedAt;
+  @override
+  final String? description;
 
   factory _$$DlpIntegrationProfile(
           [void Function($DlpIntegrationProfileBuilder)? updates]) =>
@@ -48,11 +48,11 @@ class _$$DlpIntegrationProfile extends $DlpIntegrationProfile {
 
   _$$DlpIntegrationProfile._(
       {required this.createdAt,
-      this.description,
       required this.entries,
       required this.id,
       required this.name,
-      required this.updatedAt})
+      required this.updatedAt,
+      this.description})
       : super._();
   @override
   $DlpIntegrationProfile rebuild(
@@ -68,22 +68,22 @@ class _$$DlpIntegrationProfile extends $DlpIntegrationProfile {
     if (identical(other, this)) return true;
     return other is $DlpIntegrationProfile &&
         createdAt == other.createdAt &&
-        description == other.description &&
         entries == other.entries &&
         id == other.id &&
         name == other.name &&
-        updatedAt == other.updatedAt;
+        updatedAt == other.updatedAt &&
+        description == other.description;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
     _$hash = $jc(_$hash, createdAt.hashCode);
-    _$hash = $jc(_$hash, description.hashCode);
     _$hash = $jc(_$hash, entries.hashCode);
     _$hash = $jc(_$hash, id.hashCode);
     _$hash = $jc(_$hash, name.hashCode);
     _$hash = $jc(_$hash, updatedAt.hashCode);
+    _$hash = $jc(_$hash, description.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -92,11 +92,11 @@ class _$$DlpIntegrationProfile extends $DlpIntegrationProfile {
   String toString() {
     return (newBuiltValueToStringHelper(r'$DlpIntegrationProfile')
           ..add('createdAt', createdAt)
-          ..add('description', description)
           ..add('entries', entries)
           ..add('id', id)
           ..add('name', name)
-          ..add('updatedAt', updatedAt))
+          ..add('updatedAt', updatedAt)
+          ..add('description', description))
         .toString();
   }
 }
@@ -110,11 +110,6 @@ class $DlpIntegrationProfileBuilder
   DateTime? _createdAt;
   DateTime? get createdAt => _$this._createdAt;
   set createdAt(covariant DateTime? createdAt) => _$this._createdAt = createdAt;
-
-  String? _description;
-  String? get description => _$this._description;
-  set description(covariant String? description) =>
-      _$this._description = description;
 
   ListBuilder<DlpEntry>? _entries;
   ListBuilder<DlpEntry> get entries =>
@@ -134,6 +129,11 @@ class $DlpIntegrationProfileBuilder
   DateTime? get updatedAt => _$this._updatedAt;
   set updatedAt(covariant DateTime? updatedAt) => _$this._updatedAt = updatedAt;
 
+  String? _description;
+  String? get description => _$this._description;
+  set description(covariant String? description) =>
+      _$this._description = description;
+
   $DlpIntegrationProfileBuilder() {
     $DlpIntegrationProfile._defaults(this);
   }
@@ -142,11 +142,11 @@ class $DlpIntegrationProfileBuilder
     final $v = _$v;
     if ($v != null) {
       _createdAt = $v.createdAt;
-      _description = $v.description;
       _entries = $v.entries.toBuilder();
       _id = $v.id;
       _name = $v.name;
       _updatedAt = $v.updatedAt;
+      _description = $v.description;
       _$v = null;
     }
     return this;
@@ -172,7 +172,6 @@ class $DlpIntegrationProfileBuilder
           _$$DlpIntegrationProfile._(
             createdAt: BuiltValueNullFieldError.checkNotNull(
                 createdAt, r'$DlpIntegrationProfile', 'createdAt'),
-            description: description,
             entries: entries.build(),
             id: BuiltValueNullFieldError.checkNotNull(
                 id, r'$DlpIntegrationProfile', 'id'),
@@ -180,6 +179,7 @@ class $DlpIntegrationProfileBuilder
                 name, r'$DlpIntegrationProfile', 'name'),
             updatedAt: BuiltValueNullFieldError.checkNotNull(
                 updatedAt, r'$DlpIntegrationProfile', 'updatedAt'),
+            description: description,
           );
     } catch (_) {
       late String _$failedField;

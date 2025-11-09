@@ -7,6 +7,7 @@ import 'package:cloudflare_dart/src/model/realtimekit_generic_success_response.d
 import 'package:cloudflare_dart/src/model/realtimekit_recording.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
+import 'package:built_value/json_object.dart';
 
 part 'get_active_recording200_response.g.dart';
 

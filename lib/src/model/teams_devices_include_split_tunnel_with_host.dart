@@ -11,17 +11,17 @@ part 'teams_devices_include_split_tunnel_with_host.g.dart';
 /// TeamsDevicesIncludeSplitTunnelWithHost
 ///
 /// Properties:
-/// * [description] - A description of the Split Tunnel item, displayed in the client UI.
 /// * [host] - The domain name to include in the tunnel. If `host` is present, `address` must not be present.
+/// * [description] - A description of the Split Tunnel item, displayed in the client UI.
 @BuiltValue()
 abstract class TeamsDevicesIncludeSplitTunnelWithHost implements Built<TeamsDevicesIncludeSplitTunnelWithHost, TeamsDevicesIncludeSplitTunnelWithHostBuilder> {
-  /// A description of the Split Tunnel item, displayed in the client UI.
-  @BuiltValueField(wireName: r'description')
-  String? get description;
-
   /// The domain name to include in the tunnel. If `host` is present, `address` must not be present.
   @BuiltValueField(wireName: r'host')
   String get host;
+
+  /// A description of the Split Tunnel item, displayed in the client UI.
+  @BuiltValueField(wireName: r'description')
+  String? get description;
 
   TeamsDevicesIncludeSplitTunnelWithHost._();
 
@@ -46,6 +46,11 @@ class _$TeamsDevicesIncludeSplitTunnelWithHostSerializer implements PrimitiveSer
     TeamsDevicesIncludeSplitTunnelWithHost object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    yield r'host';
+    yield serializers.serialize(
+      object.host,
+      specifiedType: const FullType(String),
+    );
     if (object.description != null) {
       yield r'description';
       yield serializers.serialize(
@@ -53,11 +58,6 @@ class _$TeamsDevicesIncludeSplitTunnelWithHostSerializer implements PrimitiveSer
         specifiedType: const FullType(String),
       );
     }
-    yield r'host';
-    yield serializers.serialize(
-      object.host,
-      specifiedType: const FullType(String),
-    );
   }
 
   @override
@@ -81,19 +81,19 @@ class _$TeamsDevicesIncludeSplitTunnelWithHostSerializer implements PrimitiveSer
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'description':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.description = valueDes;
-          break;
         case r'host':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(String),
           ) as String;
           result.host = valueDes;
+          break;
+        case r'description':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.description = valueDes;
           break;
         default:
           unhandled.add(key);

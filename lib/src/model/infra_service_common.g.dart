@@ -9,20 +9,20 @@ part of 'infra_service_common.dart';
 abstract class InfraServiceCommonBuilder {
   void replace(InfraServiceCommon other);
   void update(void Function(InfraServiceCommonBuilder) updates);
-  DateTime? get createdAt;
-  set createdAt(DateTime? createdAt);
-
   InfraServiceHostBuilder get host;
   set host(InfraServiceHostBuilder? host);
 
   String? get name;
   set name(String? name);
 
-  String? get serviceId;
-  set serviceId(String? serviceId);
-
   InfraServiceType? get type;
   set type(InfraServiceType? type);
+
+  DateTime? get createdAt;
+  set createdAt(DateTime? createdAt);
+
+  String? get serviceId;
+  set serviceId(String? serviceId);
 
   DateTime? get updatedAt;
   set updatedAt(DateTime? updatedAt);
@@ -30,15 +30,15 @@ abstract class InfraServiceCommonBuilder {
 
 class _$$InfraServiceCommon extends $InfraServiceCommon {
   @override
-  final DateTime? createdAt;
-  @override
   final InfraServiceHost host;
   @override
   final String name;
   @override
-  final String? serviceId;
-  @override
   final InfraServiceType type;
+  @override
+  final DateTime? createdAt;
+  @override
+  final String? serviceId;
   @override
   final DateTime? updatedAt;
 
@@ -47,11 +47,11 @@ class _$$InfraServiceCommon extends $InfraServiceCommon {
       ($InfraServiceCommonBuilder()..update(updates))._build();
 
   _$$InfraServiceCommon._(
-      {this.createdAt,
-      required this.host,
+      {required this.host,
       required this.name,
-      this.serviceId,
       required this.type,
+      this.createdAt,
+      this.serviceId,
       this.updatedAt})
       : super._();
   @override
@@ -67,22 +67,22 @@ class _$$InfraServiceCommon extends $InfraServiceCommon {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is $InfraServiceCommon &&
-        createdAt == other.createdAt &&
         host == other.host &&
         name == other.name &&
-        serviceId == other.serviceId &&
         type == other.type &&
+        createdAt == other.createdAt &&
+        serviceId == other.serviceId &&
         updatedAt == other.updatedAt;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, createdAt.hashCode);
     _$hash = $jc(_$hash, host.hashCode);
     _$hash = $jc(_$hash, name.hashCode);
-    _$hash = $jc(_$hash, serviceId.hashCode);
     _$hash = $jc(_$hash, type.hashCode);
+    _$hash = $jc(_$hash, createdAt.hashCode);
+    _$hash = $jc(_$hash, serviceId.hashCode);
     _$hash = $jc(_$hash, updatedAt.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
@@ -91,11 +91,11 @@ class _$$InfraServiceCommon extends $InfraServiceCommon {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'$InfraServiceCommon')
-          ..add('createdAt', createdAt)
           ..add('host', host)
           ..add('name', name)
-          ..add('serviceId', serviceId)
           ..add('type', type)
+          ..add('createdAt', createdAt)
+          ..add('serviceId', serviceId)
           ..add('updatedAt', updatedAt))
         .toString();
   }
@@ -107,10 +107,6 @@ class $InfraServiceCommonBuilder
         InfraServiceCommonBuilder {
   _$$InfraServiceCommon? _$v;
 
-  DateTime? _createdAt;
-  DateTime? get createdAt => _$this._createdAt;
-  set createdAt(covariant DateTime? createdAt) => _$this._createdAt = createdAt;
-
   InfraServiceHostBuilder? _host;
   InfraServiceHostBuilder get host =>
       _$this._host ??= InfraServiceHostBuilder();
@@ -120,13 +116,17 @@ class $InfraServiceCommonBuilder
   String? get name => _$this._name;
   set name(covariant String? name) => _$this._name = name;
 
-  String? _serviceId;
-  String? get serviceId => _$this._serviceId;
-  set serviceId(covariant String? serviceId) => _$this._serviceId = serviceId;
-
   InfraServiceType? _type;
   InfraServiceType? get type => _$this._type;
   set type(covariant InfraServiceType? type) => _$this._type = type;
+
+  DateTime? _createdAt;
+  DateTime? get createdAt => _$this._createdAt;
+  set createdAt(covariant DateTime? createdAt) => _$this._createdAt = createdAt;
+
+  String? _serviceId;
+  String? get serviceId => _$this._serviceId;
+  set serviceId(covariant String? serviceId) => _$this._serviceId = serviceId;
 
   DateTime? _updatedAt;
   DateTime? get updatedAt => _$this._updatedAt;
@@ -139,11 +139,11 @@ class $InfraServiceCommonBuilder
   $InfraServiceCommonBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _createdAt = $v.createdAt;
       _host = $v.host.toBuilder();
       _name = $v.name;
-      _serviceId = $v.serviceId;
       _type = $v.type;
+      _createdAt = $v.createdAt;
+      _serviceId = $v.serviceId;
       _updatedAt = $v.updatedAt;
       _$v = null;
     }
@@ -168,13 +168,13 @@ class $InfraServiceCommonBuilder
     try {
       _$result = _$v ??
           _$$InfraServiceCommon._(
-            createdAt: createdAt,
             host: host.build(),
             name: BuiltValueNullFieldError.checkNotNull(
                 name, r'$InfraServiceCommon', 'name'),
-            serviceId: serviceId,
             type: BuiltValueNullFieldError.checkNotNull(
                 type, r'$InfraServiceCommon', 'type'),
+            createdAt: createdAt,
+            serviceId: serviceId,
             updatedAt: updatedAt,
           );
     } catch (_) {

@@ -13,23 +13,20 @@ part 'mconn_customer_connector.g.dart';
 ///
 /// Properties:
 /// * [activated] 
-/// * [device] 
 /// * [id] 
 /// * [interruptWindowDurationHours] 
 /// * [interruptWindowHourOfDay] 
-/// * [lastHeartbeat] 
-/// * [lastSeenVersion] 
 /// * [lastUpdated] 
-/// * [licenseKey] 
 /// * [notes] 
 /// * [timezone] 
+/// * [device] 
+/// * [lastHeartbeat] 
+/// * [lastSeenVersion] 
+/// * [licenseKey] 
 @BuiltValue()
 abstract class MconnCustomerConnector implements Built<MconnCustomerConnector, MconnCustomerConnectorBuilder> {
   @BuiltValueField(wireName: r'activated')
   bool get activated;
-
-  @BuiltValueField(wireName: r'device')
-  MconnCustomerDevice? get device;
 
   @BuiltValueField(wireName: r'id')
   String get id;
@@ -40,23 +37,26 @@ abstract class MconnCustomerConnector implements Built<MconnCustomerConnector, M
   @BuiltValueField(wireName: r'interrupt_window_hour_of_day')
   num get interruptWindowHourOfDay;
 
-  @BuiltValueField(wireName: r'last_heartbeat')
-  String? get lastHeartbeat;
-
-  @BuiltValueField(wireName: r'last_seen_version')
-  String? get lastSeenVersion;
-
   @BuiltValueField(wireName: r'last_updated')
   String get lastUpdated;
-
-  @BuiltValueField(wireName: r'license_key')
-  String? get licenseKey;
 
   @BuiltValueField(wireName: r'notes')
   String get notes;
 
   @BuiltValueField(wireName: r'timezone')
   String get timezone;
+
+  @BuiltValueField(wireName: r'device')
+  MconnCustomerDevice? get device;
+
+  @BuiltValueField(wireName: r'last_heartbeat')
+  String? get lastHeartbeat;
+
+  @BuiltValueField(wireName: r'last_seen_version')
+  String? get lastSeenVersion;
+
+  @BuiltValueField(wireName: r'license_key')
+  String? get licenseKey;
 
   MconnCustomerConnector._();
 
@@ -86,13 +86,6 @@ class _$MconnCustomerConnectorSerializer implements PrimitiveSerializer<MconnCus
       object.activated,
       specifiedType: const FullType(bool),
     );
-    if (object.device != null) {
-      yield r'device';
-      yield serializers.serialize(
-        object.device,
-        specifiedType: const FullType(MconnCustomerDevice),
-      );
-    }
     yield r'id';
     yield serializers.serialize(
       object.id,
@@ -108,6 +101,28 @@ class _$MconnCustomerConnectorSerializer implements PrimitiveSerializer<MconnCus
       object.interruptWindowHourOfDay,
       specifiedType: const FullType(num),
     );
+    yield r'last_updated';
+    yield serializers.serialize(
+      object.lastUpdated,
+      specifiedType: const FullType(String),
+    );
+    yield r'notes';
+    yield serializers.serialize(
+      object.notes,
+      specifiedType: const FullType(String),
+    );
+    yield r'timezone';
+    yield serializers.serialize(
+      object.timezone,
+      specifiedType: const FullType(String),
+    );
+    if (object.device != null) {
+      yield r'device';
+      yield serializers.serialize(
+        object.device,
+        specifiedType: const FullType(MconnCustomerDevice),
+      );
+    }
     if (object.lastHeartbeat != null) {
       yield r'last_heartbeat';
       yield serializers.serialize(
@@ -122,11 +137,6 @@ class _$MconnCustomerConnectorSerializer implements PrimitiveSerializer<MconnCus
         specifiedType: const FullType(String),
       );
     }
-    yield r'last_updated';
-    yield serializers.serialize(
-      object.lastUpdated,
-      specifiedType: const FullType(String),
-    );
     if (object.licenseKey != null) {
       yield r'license_key';
       yield serializers.serialize(
@@ -134,16 +144,6 @@ class _$MconnCustomerConnectorSerializer implements PrimitiveSerializer<MconnCus
         specifiedType: const FullType(String),
       );
     }
-    yield r'notes';
-    yield serializers.serialize(
-      object.notes,
-      specifiedType: const FullType(String),
-    );
-    yield r'timezone';
-    yield serializers.serialize(
-      object.timezone,
-      specifiedType: const FullType(String),
-    );
   }
 
   @override
@@ -174,13 +174,6 @@ class _$MconnCustomerConnectorSerializer implements PrimitiveSerializer<MconnCus
           ) as bool;
           result.activated = valueDes;
           break;
-        case r'device':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(MconnCustomerDevice),
-          ) as MconnCustomerDevice;
-          result.device.replace(valueDes);
-          break;
         case r'id':
           final valueDes = serializers.deserialize(
             value,
@@ -202,33 +195,12 @@ class _$MconnCustomerConnectorSerializer implements PrimitiveSerializer<MconnCus
           ) as num;
           result.interruptWindowHourOfDay = valueDes;
           break;
-        case r'last_heartbeat':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.lastHeartbeat = valueDes;
-          break;
-        case r'last_seen_version':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.lastSeenVersion = valueDes;
-          break;
         case r'last_updated':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(String),
           ) as String;
           result.lastUpdated = valueDes;
-          break;
-        case r'license_key':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.licenseKey = valueDes;
           break;
         case r'notes':
           final valueDes = serializers.deserialize(
@@ -243,6 +215,34 @@ class _$MconnCustomerConnectorSerializer implements PrimitiveSerializer<MconnCus
             specifiedType: const FullType(String),
           ) as String;
           result.timezone = valueDes;
+          break;
+        case r'device':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(MconnCustomerDevice),
+          ) as MconnCustomerDevice;
+          result.device.replace(valueDes);
+          break;
+        case r'last_heartbeat':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.lastHeartbeat = valueDes;
+          break;
+        case r'last_seen_version':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.lastSeenVersion = valueDes;
+          break;
+        case r'license_key':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.licenseKey = valueDes;
           break;
         default:
           unhandled.add(key);

@@ -8,18 +8,18 @@ part of 'realtimekit_preset_config_media.dart';
 
 class _$RealtimekitPresetConfigMedia extends RealtimekitPresetConfigMedia {
   @override
-  final RealtimekitPresetConfigMediaAudio? audio;
-  @override
   final RealtimekitPresetConfigMediaScreenshare screenshare;
   @override
   final RealtimekitPresetConfigMediaVideo video;
+  @override
+  final RealtimekitPresetConfigMediaAudio? audio;
 
   factory _$RealtimekitPresetConfigMedia(
           [void Function(RealtimekitPresetConfigMediaBuilder)? updates]) =>
       (RealtimekitPresetConfigMediaBuilder()..update(updates))._build();
 
   _$RealtimekitPresetConfigMedia._(
-      {this.audio, required this.screenshare, required this.video})
+      {required this.screenshare, required this.video, this.audio})
       : super._();
   @override
   RealtimekitPresetConfigMedia rebuild(
@@ -34,17 +34,17 @@ class _$RealtimekitPresetConfigMedia extends RealtimekitPresetConfigMedia {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is RealtimekitPresetConfigMedia &&
-        audio == other.audio &&
         screenshare == other.screenshare &&
-        video == other.video;
+        video == other.video &&
+        audio == other.audio;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, audio.hashCode);
     _$hash = $jc(_$hash, screenshare.hashCode);
     _$hash = $jc(_$hash, video.hashCode);
+    _$hash = $jc(_$hash, audio.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -52,9 +52,9 @@ class _$RealtimekitPresetConfigMedia extends RealtimekitPresetConfigMedia {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'RealtimekitPresetConfigMedia')
-          ..add('audio', audio)
           ..add('screenshare', screenshare)
-          ..add('video', video))
+          ..add('video', video)
+          ..add('audio', audio))
         .toString();
   }
 }
@@ -64,12 +64,6 @@ class RealtimekitPresetConfigMediaBuilder
         Builder<RealtimekitPresetConfigMedia,
             RealtimekitPresetConfigMediaBuilder> {
   _$RealtimekitPresetConfigMedia? _$v;
-
-  RealtimekitPresetConfigMediaAudioBuilder? _audio;
-  RealtimekitPresetConfigMediaAudioBuilder get audio =>
-      _$this._audio ??= RealtimekitPresetConfigMediaAudioBuilder();
-  set audio(RealtimekitPresetConfigMediaAudioBuilder? audio) =>
-      _$this._audio = audio;
 
   RealtimekitPresetConfigMediaScreenshareBuilder? _screenshare;
   RealtimekitPresetConfigMediaScreenshareBuilder get screenshare =>
@@ -84,6 +78,12 @@ class RealtimekitPresetConfigMediaBuilder
   set video(RealtimekitPresetConfigMediaVideoBuilder? video) =>
       _$this._video = video;
 
+  RealtimekitPresetConfigMediaAudioBuilder? _audio;
+  RealtimekitPresetConfigMediaAudioBuilder get audio =>
+      _$this._audio ??= RealtimekitPresetConfigMediaAudioBuilder();
+  set audio(RealtimekitPresetConfigMediaAudioBuilder? audio) =>
+      _$this._audio = audio;
+
   RealtimekitPresetConfigMediaBuilder() {
     RealtimekitPresetConfigMedia._defaults(this);
   }
@@ -91,9 +91,9 @@ class RealtimekitPresetConfigMediaBuilder
   RealtimekitPresetConfigMediaBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _audio = $v.audio?.toBuilder();
       _screenshare = $v.screenshare.toBuilder();
       _video = $v.video.toBuilder();
+      _audio = $v.audio?.toBuilder();
       _$v = null;
     }
     return this;
@@ -117,19 +117,19 @@ class RealtimekitPresetConfigMediaBuilder
     try {
       _$result = _$v ??
           _$RealtimekitPresetConfigMedia._(
-            audio: _audio?.build(),
             screenshare: screenshare.build(),
             video: video.build(),
+            audio: _audio?.build(),
           );
     } catch (_) {
       late String _$failedField;
       try {
-        _$failedField = 'audio';
-        _audio?.build();
         _$failedField = 'screenshare';
         screenshare.build();
         _$failedField = 'video';
         video.build();
+        _$failedField = 'audio';
+        _audio?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
             r'RealtimekitPresetConfigMedia', _$failedField, e.toString());

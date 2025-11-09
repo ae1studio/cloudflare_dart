@@ -21,7 +21,6 @@ Name | Type | Description | Notes
 **disableParticipantScreensharing** | **bool** |  | 
 **disableParticipantVideo** | **bool** |  | 
 **hiddenParticipant** | **bool** | Whether this participant is visible to others or not | 
-**isRecorder** | **bool** |  | [optional] [default to false]
 **kickParticipant** | **bool** |  | 
 **media** | [**RealtimekitPresetPermissionsMedia**](RealtimekitPresetPermissionsMedia.md) |  | 
 **pinParticipant** | **bool** |  | 
@@ -30,6 +29,7 @@ Name | Type | Description | Notes
 **recorderType** | **String** | Type of the recording peer | [default to 'NONE']
 **showParticipantList** | **bool** |  | 
 **waitingRoomType** | **String** | Waiting room type | 
+**isRecorder** | **bool** |  | [optional] [default to false]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

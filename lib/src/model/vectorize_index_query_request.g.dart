@@ -8,6 +8,8 @@ part of 'vectorize_index_query_request.dart';
 
 class _$VectorizeIndexQueryRequest extends VectorizeIndexQueryRequest {
   @override
+  final BuiltList<num> vector;
+  @override
   final JsonObject? filter;
   @override
   final bool? returnMetadata;
@@ -15,19 +17,17 @@ class _$VectorizeIndexQueryRequest extends VectorizeIndexQueryRequest {
   final bool? returnValues;
   @override
   final num? topK;
-  @override
-  final BuiltList<num> vector;
 
   factory _$VectorizeIndexQueryRequest(
           [void Function(VectorizeIndexQueryRequestBuilder)? updates]) =>
       (VectorizeIndexQueryRequestBuilder()..update(updates))._build();
 
   _$VectorizeIndexQueryRequest._(
-      {this.filter,
+      {required this.vector,
+      this.filter,
       this.returnMetadata,
       this.returnValues,
-      this.topK,
-      required this.vector})
+      this.topK})
       : super._();
   @override
   VectorizeIndexQueryRequest rebuild(
@@ -42,21 +42,21 @@ class _$VectorizeIndexQueryRequest extends VectorizeIndexQueryRequest {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is VectorizeIndexQueryRequest &&
+        vector == other.vector &&
         filter == other.filter &&
         returnMetadata == other.returnMetadata &&
         returnValues == other.returnValues &&
-        topK == other.topK &&
-        vector == other.vector;
+        topK == other.topK;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
+    _$hash = $jc(_$hash, vector.hashCode);
     _$hash = $jc(_$hash, filter.hashCode);
     _$hash = $jc(_$hash, returnMetadata.hashCode);
     _$hash = $jc(_$hash, returnValues.hashCode);
     _$hash = $jc(_$hash, topK.hashCode);
-    _$hash = $jc(_$hash, vector.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -64,11 +64,11 @@ class _$VectorizeIndexQueryRequest extends VectorizeIndexQueryRequest {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'VectorizeIndexQueryRequest')
+          ..add('vector', vector)
           ..add('filter', filter)
           ..add('returnMetadata', returnMetadata)
           ..add('returnValues', returnValues)
-          ..add('topK', topK)
-          ..add('vector', vector))
+          ..add('topK', topK))
         .toString();
   }
 }
@@ -77,6 +77,10 @@ class VectorizeIndexQueryRequestBuilder
     implements
         Builder<VectorizeIndexQueryRequest, VectorizeIndexQueryRequestBuilder> {
   _$VectorizeIndexQueryRequest? _$v;
+
+  ListBuilder<num>? _vector;
+  ListBuilder<num> get vector => _$this._vector ??= ListBuilder<num>();
+  set vector(ListBuilder<num>? vector) => _$this._vector = vector;
 
   JsonObject? _filter;
   JsonObject? get filter => _$this._filter;
@@ -95,10 +99,6 @@ class VectorizeIndexQueryRequestBuilder
   num? get topK => _$this._topK;
   set topK(num? topK) => _$this._topK = topK;
 
-  ListBuilder<num>? _vector;
-  ListBuilder<num> get vector => _$this._vector ??= ListBuilder<num>();
-  set vector(ListBuilder<num>? vector) => _$this._vector = vector;
-
   VectorizeIndexQueryRequestBuilder() {
     VectorizeIndexQueryRequest._defaults(this);
   }
@@ -106,11 +106,11 @@ class VectorizeIndexQueryRequestBuilder
   VectorizeIndexQueryRequestBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
+      _vector = $v.vector.toBuilder();
       _filter = $v.filter;
       _returnMetadata = $v.returnMetadata;
       _returnValues = $v.returnValues;
       _topK = $v.topK;
-      _vector = $v.vector.toBuilder();
       _$v = null;
     }
     return this;
@@ -134,11 +134,11 @@ class VectorizeIndexQueryRequestBuilder
     try {
       _$result = _$v ??
           _$VectorizeIndexQueryRequest._(
+            vector: vector.build(),
             filter: filter,
             returnMetadata: returnMetadata,
             returnValues: returnValues,
             topK: topK,
-            vector: vector.build(),
           );
     } catch (_) {
       late String _$failedField;

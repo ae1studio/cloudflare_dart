@@ -12,19 +12,19 @@ part 'digital_experience_monitoring_aggregate_stat.g.dart';
 /// DigitalExperienceMonitoringAggregateStat
 ///
 /// Properties:
+/// * [timePeriod] 
 /// * [avgMs] 
 /// * [deltaPct] 
-/// * [timePeriod] 
 @BuiltValue()
 abstract class DigitalExperienceMonitoringAggregateStat implements Built<DigitalExperienceMonitoringAggregateStat, DigitalExperienceMonitoringAggregateStatBuilder> {
+  @BuiltValueField(wireName: r'timePeriod')
+  DigitalExperienceMonitoringAggregateTimePeriod get timePeriod;
+
   @BuiltValueField(wireName: r'avgMs')
   int? get avgMs;
 
   @BuiltValueField(wireName: r'deltaPct')
   double? get deltaPct;
-
-  @BuiltValueField(wireName: r'timePeriod')
-  DigitalExperienceMonitoringAggregateTimePeriod get timePeriod;
 
   DigitalExperienceMonitoringAggregateStat._();
 
@@ -49,6 +49,11 @@ class _$DigitalExperienceMonitoringAggregateStatSerializer implements PrimitiveS
     DigitalExperienceMonitoringAggregateStat object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    yield r'timePeriod';
+    yield serializers.serialize(
+      object.timePeriod,
+      specifiedType: const FullType(DigitalExperienceMonitoringAggregateTimePeriod),
+    );
     if (object.avgMs != null) {
       yield r'avgMs';
       yield serializers.serialize(
@@ -63,11 +68,6 @@ class _$DigitalExperienceMonitoringAggregateStatSerializer implements PrimitiveS
         specifiedType: const FullType.nullable(double),
       );
     }
-    yield r'timePeriod';
-    yield serializers.serialize(
-      object.timePeriod,
-      specifiedType: const FullType(DigitalExperienceMonitoringAggregateTimePeriod),
-    );
   }
 
   @override
@@ -91,6 +91,13 @@ class _$DigitalExperienceMonitoringAggregateStatSerializer implements PrimitiveS
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
+        case r'timePeriod':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(DigitalExperienceMonitoringAggregateTimePeriod),
+          ) as DigitalExperienceMonitoringAggregateTimePeriod;
+          result.timePeriod.replace(valueDes);
+          break;
         case r'avgMs':
           final valueDes = serializers.deserialize(
             value,
@@ -106,13 +113,6 @@ class _$DigitalExperienceMonitoringAggregateStatSerializer implements PrimitiveS
           ) as double?;
           if (valueDes == null) continue;
           result.deltaPct = valueDes;
-          break;
-        case r'timePeriod':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DigitalExperienceMonitoringAggregateTimePeriod),
-          ) as DigitalExperienceMonitoringAggregateTimePeriod;
-          result.timePeriod.replace(valueDes);
           break;
         default:
           unhandled.add(key);

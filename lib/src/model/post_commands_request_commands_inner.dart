@@ -13,15 +13,12 @@ part 'post_commands_request_commands_inner.g.dart';
 /// PostCommandsRequestCommandsInner
 ///
 /// Properties:
-/// * [commandArgs] 
 /// * [commandType] - Type of command to execute on the device
 /// * [deviceId] - Unique identifier for the device
 /// * [userEmail] - Email tied to the device
+/// * [commandArgs] 
 @BuiltValue()
 abstract class PostCommandsRequestCommandsInner implements Built<PostCommandsRequestCommandsInner, PostCommandsRequestCommandsInnerBuilder> {
-  @BuiltValueField(wireName: r'command_args')
-  PostCommandsRequestCommandsInnerCommandArgs? get commandArgs;
-
   /// Type of command to execute on the device
   @BuiltValueField(wireName: r'command_type')
   PostCommandsRequestCommandsInnerCommandTypeEnum get commandType;
@@ -34,6 +31,9 @@ abstract class PostCommandsRequestCommandsInner implements Built<PostCommandsReq
   /// Email tied to the device
   @BuiltValueField(wireName: r'user_email')
   String get userEmail;
+
+  @BuiltValueField(wireName: r'command_args')
+  PostCommandsRequestCommandsInnerCommandArgs? get commandArgs;
 
   PostCommandsRequestCommandsInner._();
 
@@ -58,13 +58,6 @@ class _$PostCommandsRequestCommandsInnerSerializer implements PrimitiveSerialize
     PostCommandsRequestCommandsInner object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
-    if (object.commandArgs != null) {
-      yield r'command_args';
-      yield serializers.serialize(
-        object.commandArgs,
-        specifiedType: const FullType(PostCommandsRequestCommandsInnerCommandArgs),
-      );
-    }
     yield r'command_type';
     yield serializers.serialize(
       object.commandType,
@@ -80,6 +73,13 @@ class _$PostCommandsRequestCommandsInnerSerializer implements PrimitiveSerialize
       object.userEmail,
       specifiedType: const FullType(String),
     );
+    if (object.commandArgs != null) {
+      yield r'command_args';
+      yield serializers.serialize(
+        object.commandArgs,
+        specifiedType: const FullType(PostCommandsRequestCommandsInnerCommandArgs),
+      );
+    }
   }
 
   @override
@@ -103,13 +103,6 @@ class _$PostCommandsRequestCommandsInnerSerializer implements PrimitiveSerialize
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'command_args':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(PostCommandsRequestCommandsInnerCommandArgs),
-          ) as PostCommandsRequestCommandsInnerCommandArgs;
-          result.commandArgs.replace(valueDes);
-          break;
         case r'command_type':
           final valueDes = serializers.deserialize(
             value,
@@ -130,6 +123,13 @@ class _$PostCommandsRequestCommandsInnerSerializer implements PrimitiveSerialize
             specifiedType: const FullType(String),
           ) as String;
           result.userEmail = valueDes;
+          break;
+        case r'command_args':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(PostCommandsRequestCommandsInnerCommandArgs),
+          ) as PostCommandsRequestCommandsInnerCommandArgs;
+          result.commandArgs.replace(valueDes);
           break;
         default:
           unhandled.add(key);

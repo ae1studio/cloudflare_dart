@@ -9,6 +9,8 @@ part of 'workers_observability_telemetry_event_metadata.dart';
 class _$WorkersObservabilityTelemetryEventMetadata
     extends WorkersObservabilityTelemetryEventMetadata {
   @override
+  final String id;
+  @override
   final String? account;
   @override
   final String? cloudService;
@@ -26,8 +28,6 @@ class _$WorkersObservabilityTelemetryEventMetadata
   final String? errorTemplate;
   @override
   final String? fingerprint;
-  @override
-  final String id;
   @override
   final String? level;
   @override
@@ -76,7 +76,8 @@ class _$WorkersObservabilityTelemetryEventMetadata
           ._build();
 
   _$WorkersObservabilityTelemetryEventMetadata._(
-      {this.account,
+      {required this.id,
+      this.account,
       this.cloudService,
       this.coldStart,
       this.cost,
@@ -85,7 +86,6 @@ class _$WorkersObservabilityTelemetryEventMetadata
       this.error,
       this.errorTemplate,
       this.fingerprint,
-      required this.id,
       this.level,
       this.message,
       this.messageTemplate,
@@ -121,6 +121,7 @@ class _$WorkersObservabilityTelemetryEventMetadata
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is WorkersObservabilityTelemetryEventMetadata &&
+        id == other.id &&
         account == other.account &&
         cloudService == other.cloudService &&
         coldStart == other.coldStart &&
@@ -130,7 +131,6 @@ class _$WorkersObservabilityTelemetryEventMetadata
         error == other.error &&
         errorTemplate == other.errorTemplate &&
         fingerprint == other.fingerprint &&
-        id == other.id &&
         level == other.level &&
         message == other.message &&
         messageTemplate == other.messageTemplate &&
@@ -156,6 +156,7 @@ class _$WorkersObservabilityTelemetryEventMetadata
   @override
   int get hashCode {
     var _$hash = 0;
+    _$hash = $jc(_$hash, id.hashCode);
     _$hash = $jc(_$hash, account.hashCode);
     _$hash = $jc(_$hash, cloudService.hashCode);
     _$hash = $jc(_$hash, coldStart.hashCode);
@@ -165,7 +166,6 @@ class _$WorkersObservabilityTelemetryEventMetadata
     _$hash = $jc(_$hash, error.hashCode);
     _$hash = $jc(_$hash, errorTemplate.hashCode);
     _$hash = $jc(_$hash, fingerprint.hashCode);
-    _$hash = $jc(_$hash, id.hashCode);
     _$hash = $jc(_$hash, level.hashCode);
     _$hash = $jc(_$hash, message.hashCode);
     _$hash = $jc(_$hash, messageTemplate.hashCode);
@@ -194,6 +194,7 @@ class _$WorkersObservabilityTelemetryEventMetadata
   String toString() {
     return (newBuiltValueToStringHelper(
             r'WorkersObservabilityTelemetryEventMetadata')
+          ..add('id', id)
           ..add('account', account)
           ..add('cloudService', cloudService)
           ..add('coldStart', coldStart)
@@ -203,7 +204,6 @@ class _$WorkersObservabilityTelemetryEventMetadata
           ..add('error', error)
           ..add('errorTemplate', errorTemplate)
           ..add('fingerprint', fingerprint)
-          ..add('id', id)
           ..add('level', level)
           ..add('message', message)
           ..add('messageTemplate', messageTemplate)
@@ -233,6 +233,10 @@ class WorkersObservabilityTelemetryEventMetadataBuilder
         Builder<WorkersObservabilityTelemetryEventMetadata,
             WorkersObservabilityTelemetryEventMetadataBuilder> {
   _$WorkersObservabilityTelemetryEventMetadata? _$v;
+
+  String? _id;
+  String? get id => _$this._id;
+  set id(String? id) => _$this._id = id;
 
   String? _account;
   String? get account => _$this._account;
@@ -270,10 +274,6 @@ class WorkersObservabilityTelemetryEventMetadataBuilder
   String? _fingerprint;
   String? get fingerprint => _$this._fingerprint;
   set fingerprint(String? fingerprint) => _$this._fingerprint = fingerprint;
-
-  String? _id;
-  String? get id => _$this._id;
-  set id(String? id) => _$this._id = id;
 
   String? _level;
   String? get level => _$this._level;
@@ -364,6 +364,7 @@ class WorkersObservabilityTelemetryEventMetadataBuilder
   WorkersObservabilityTelemetryEventMetadataBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
+      _id = $v.id;
       _account = $v.account;
       _cloudService = $v.cloudService;
       _coldStart = $v.coldStart;
@@ -373,7 +374,6 @@ class WorkersObservabilityTelemetryEventMetadataBuilder
       _error = $v.error;
       _errorTemplate = $v.errorTemplate;
       _fingerprint = $v.fingerprint;
-      _id = $v.id;
       _level = $v.level;
       _message = $v.message;
       _messageTemplate = $v.messageTemplate;
@@ -417,6 +417,8 @@ class WorkersObservabilityTelemetryEventMetadataBuilder
   _$WorkersObservabilityTelemetryEventMetadata _build() {
     final _$result = _$v ??
         _$WorkersObservabilityTelemetryEventMetadata._(
+          id: BuiltValueNullFieldError.checkNotNull(
+              id, r'WorkersObservabilityTelemetryEventMetadata', 'id'),
           account: account,
           cloudService: cloudService,
           coldStart: coldStart,
@@ -426,8 +428,6 @@ class WorkersObservabilityTelemetryEventMetadataBuilder
           error: error,
           errorTemplate: errorTemplate,
           fingerprint: fingerprint,
-          id: BuiltValueNullFieldError.checkNotNull(
-              id, r'WorkersObservabilityTelemetryEventMetadata', 'id'),
           level: level,
           message: message,
           messageTemplate: messageTemplate,

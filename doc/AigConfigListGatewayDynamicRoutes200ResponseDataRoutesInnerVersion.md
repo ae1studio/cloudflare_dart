@@ -9,10 +9,10 @@ import 'package:cloudflare_dart/api.dart';
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **active** | **String** |  | 
-**comment** | **String** |  | [optional] 
 **createdAt** | **String** |  | 
 **data** | **String** |  | 
 **versionId** | **String** |  | 
+**comment** | **String** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

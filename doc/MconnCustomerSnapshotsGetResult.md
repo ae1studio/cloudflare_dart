@@ -9,8 +9,8 @@ import 'package:cloudflare_dart/api.dart';
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **count** | **num** |  | 
-**cursor** | **String** |  | [optional] 
 **items** | [**BuiltList&lt;MconnSnapshotMetadata&gt;**](MconnSnapshotMetadata.md) |  | 
+**cursor** | **String** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

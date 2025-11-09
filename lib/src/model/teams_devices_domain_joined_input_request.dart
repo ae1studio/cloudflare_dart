@@ -12,18 +12,18 @@ part 'teams_devices_domain_joined_input_request.g.dart';
 /// TeamsDevicesDomainJoinedInputRequest
 ///
 /// Properties:
-/// * [domain] - Domain.
 /// * [operatingSystem] - Operating System.
+/// * [domain] - Domain.
 @BuiltValue()
 abstract class TeamsDevicesDomainJoinedInputRequest implements Built<TeamsDevicesDomainJoinedInputRequest, TeamsDevicesDomainJoinedInputRequestBuilder> {
-  /// Domain.
-  @BuiltValueField(wireName: r'domain')
-  String? get domain;
-
   /// Operating System.
   @BuiltValueField(wireName: r'operating_system')
   TeamsDevicesDomainJoinedInputRequestOperatingSystemEnum get operatingSystem;
   // enum operatingSystemEnum {  windows,  };
+
+  /// Domain.
+  @BuiltValueField(wireName: r'domain')
+  String? get domain;
 
   TeamsDevicesDomainJoinedInputRequest._();
 
@@ -48,6 +48,11 @@ class _$TeamsDevicesDomainJoinedInputRequestSerializer implements PrimitiveSeria
     TeamsDevicesDomainJoinedInputRequest object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    yield r'operating_system';
+    yield serializers.serialize(
+      object.operatingSystem,
+      specifiedType: const FullType(TeamsDevicesDomainJoinedInputRequestOperatingSystemEnum),
+    );
     if (object.domain != null) {
       yield r'domain';
       yield serializers.serialize(
@@ -55,11 +60,6 @@ class _$TeamsDevicesDomainJoinedInputRequestSerializer implements PrimitiveSeria
         specifiedType: const FullType(String),
       );
     }
-    yield r'operating_system';
-    yield serializers.serialize(
-      object.operatingSystem,
-      specifiedType: const FullType(TeamsDevicesDomainJoinedInputRequestOperatingSystemEnum),
-    );
   }
 
   @override
@@ -83,19 +83,19 @@ class _$TeamsDevicesDomainJoinedInputRequestSerializer implements PrimitiveSeria
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'domain':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.domain = valueDes;
-          break;
         case r'operating_system':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(TeamsDevicesDomainJoinedInputRequestOperatingSystemEnum),
           ) as TeamsDevicesDomainJoinedInputRequestOperatingSystemEnum;
           result.operatingSystem = valueDes;
+          break;
+        case r'domain':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.domain = valueDes;
           break;
         default:
           unhandled.add(key);

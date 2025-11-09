@@ -23,11 +23,11 @@ part 'start_recording200_response_all_of_data.g.dart';
 /// * [id] - ID of the recording
 /// * [invokedTime] - Timestamp when this recording was invoked.
 /// * [outputFileName] - File name of the recording.
-/// * [recordingDuration] - Total recording time in seconds.
 /// * [sessionId] - ID of the meeting session this recording is for.
 /// * [startedTime] - Timestamp when this recording actually started after being invoked. Usually a few seconds after `invoked_time`.
 /// * [status] - Current status of the recording.
 /// * [stoppedTime] - Timestamp when this recording was stopped. Optional; is present only when the recording has actually been stopped.
+/// * [recordingDuration] - Total recording time in seconds.
 /// * [startReason] 
 /// * [stopReason] 
 /// * [storageConfig] 

@@ -11,22 +11,14 @@ part 'snippet_rule.g.dart';
 /// A snippet rule.
 ///
 /// Properties:
-/// * [description] - An informative description of the rule.
-/// * [enabled] - Whether the rule should be executed.
 /// * [expression] - The expression defining which traffic will match the rule.
 /// * [id] - The unique ID of the rule.
 /// * [lastUpdated] - The timestamp of when the rule was last modified.
 /// * [snippetName] - The identifying name of the snippet.
+/// * [description] - An informative description of the rule.
+/// * [enabled] - Whether the rule should be executed.
 @BuiltValue()
 abstract class SnippetRule implements Built<SnippetRule, SnippetRuleBuilder> {
-  /// An informative description of the rule.
-  @BuiltValueField(wireName: r'description')
-  String? get description;
-
-  /// Whether the rule should be executed.
-  @BuiltValueField(wireName: r'enabled')
-  bool? get enabled;
-
   /// The expression defining which traffic will match the rule.
   @BuiltValueField(wireName: r'expression')
   String get expression;
@@ -42,6 +34,14 @@ abstract class SnippetRule implements Built<SnippetRule, SnippetRuleBuilder> {
   /// The identifying name of the snippet.
   @BuiltValueField(wireName: r'snippet_name')
   String get snippetName;
+
+  /// An informative description of the rule.
+  @BuiltValueField(wireName: r'description')
+  String? get description;
+
+  /// Whether the rule should be executed.
+  @BuiltValueField(wireName: r'enabled')
+  bool? get enabled;
 
   SnippetRule._();
 
@@ -68,20 +68,6 @@ class _$SnippetRuleSerializer implements PrimitiveSerializer<SnippetRule> {
     SnippetRule object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
-    if (object.description != null) {
-      yield r'description';
-      yield serializers.serialize(
-        object.description,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.enabled != null) {
-      yield r'enabled';
-      yield serializers.serialize(
-        object.enabled,
-        specifiedType: const FullType(bool),
-      );
-    }
     yield r'expression';
     yield serializers.serialize(
       object.expression,
@@ -102,6 +88,20 @@ class _$SnippetRuleSerializer implements PrimitiveSerializer<SnippetRule> {
       object.snippetName,
       specifiedType: const FullType(String),
     );
+    if (object.description != null) {
+      yield r'description';
+      yield serializers.serialize(
+        object.description,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.enabled != null) {
+      yield r'enabled';
+      yield serializers.serialize(
+        object.enabled,
+        specifiedType: const FullType(bool),
+      );
+    }
   }
 
   @override
@@ -125,20 +125,6 @@ class _$SnippetRuleSerializer implements PrimitiveSerializer<SnippetRule> {
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'description':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.description = valueDes;
-          break;
-        case r'enabled':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
-          result.enabled = valueDes;
-          break;
         case r'expression':
           final valueDes = serializers.deserialize(
             value,
@@ -166,6 +152,20 @@ class _$SnippetRuleSerializer implements PrimitiveSerializer<SnippetRule> {
             specifiedType: const FullType(String),
           ) as String;
           result.snippetName = valueDes;
+          break;
+        case r'description':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.description = valueDes;
+          break;
+        case r'enabled':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(bool),
+          ) as bool;
+          result.enabled = valueDes;
           break;
         default:
           unhandled.add(key);

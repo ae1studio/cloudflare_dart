@@ -10,11 +10,11 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **algorithm** | [**JsonObject**](.md) | Algorithm-specific key parameters. [Learn more](https://developer.mozilla.org/en-US/docs/Web/API/SubtleCrypto/importKey#algorithm). | 
 **format** | **String** | Data format of the key. [Learn more](https://developer.mozilla.org/en-US/docs/Web/API/SubtleCrypto/importKey#format). | 
-**keyBase64** | **String** | Base64-encoded key data. Required if `format` is \"raw\", \"pkcs8\", or \"spki\". | [optional] 
-**keyJwk** | [**JsonObject**](.md) | Key data in [JSON Web Key](https://developer.mozilla.org/en-US/docs/Web/API/SubtleCrypto/importKey#json_web_key) format. Required if `format` is \"jwk\". | [optional] 
 **name** | **String** | A JavaScript variable name for the binding. | 
 **type** | **String** | The kind of resource that the binding provides. | 
 **usages** | **BuiltList&lt;String&gt;** | Allowed operations with the key. [Learn more](https://developer.mozilla.org/en-US/docs/Web/API/SubtleCrypto/importKey#keyUsages). | 
+**keyBase64** | **String** | Base64-encoded key data. Required if `format` is \"raw\", \"pkcs8\", or \"spki\". | [optional] 
+**keyJwk** | [**JsonObject**](.md) | Key data in [JSON Web Key](https://developer.mozilla.org/en-US/docs/Web/API/SubtleCrypto/importKey#json_web_key) format. Required if `format` is \"jwk\". | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

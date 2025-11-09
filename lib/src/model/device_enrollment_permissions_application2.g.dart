@@ -19,6 +19,8 @@ class _$DeviceEnrollmentPermissionsApplication2
   @override
   final DateTime? updatedAt;
   @override
+  final AccessComponentsSchemasType type;
+  @override
   final BuiltList<String>? allowedIdps;
   @override
   final bool? autoRedirectToIdentity;
@@ -28,8 +30,6 @@ class _$DeviceEnrollmentPermissionsApplication2
   final String? name;
   @override
   final String? sessionDuration;
-  @override
-  final AccessComponentsSchemasType type;
 
   factory _$DeviceEnrollmentPermissionsApplication2(
           [void Function(DeviceEnrollmentPermissionsApplication2Builder)?
@@ -43,12 +43,12 @@ class _$DeviceEnrollmentPermissionsApplication2
       this.id,
       this.scimConfig,
       this.updatedAt,
+      required this.type,
       this.allowedIdps,
       this.autoRedirectToIdentity,
       this.domain,
       this.name,
-      this.sessionDuration,
-      required this.type})
+      this.sessionDuration})
       : super._();
   @override
   DeviceEnrollmentPermissionsApplication2 rebuild(
@@ -69,12 +69,12 @@ class _$DeviceEnrollmentPermissionsApplication2
         id == other.id &&
         scimConfig == other.scimConfig &&
         updatedAt == other.updatedAt &&
+        type == other.type &&
         allowedIdps == other.allowedIdps &&
         autoRedirectToIdentity == other.autoRedirectToIdentity &&
         domain == other.domain &&
         name == other.name &&
-        sessionDuration == other.sessionDuration &&
-        type == other.type;
+        sessionDuration == other.sessionDuration;
   }
 
   @override
@@ -85,12 +85,12 @@ class _$DeviceEnrollmentPermissionsApplication2
     _$hash = $jc(_$hash, id.hashCode);
     _$hash = $jc(_$hash, scimConfig.hashCode);
     _$hash = $jc(_$hash, updatedAt.hashCode);
+    _$hash = $jc(_$hash, type.hashCode);
     _$hash = $jc(_$hash, allowedIdps.hashCode);
     _$hash = $jc(_$hash, autoRedirectToIdentity.hashCode);
     _$hash = $jc(_$hash, domain.hashCode);
     _$hash = $jc(_$hash, name.hashCode);
     _$hash = $jc(_$hash, sessionDuration.hashCode);
-    _$hash = $jc(_$hash, type.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -104,12 +104,12 @@ class _$DeviceEnrollmentPermissionsApplication2
           ..add('id', id)
           ..add('scimConfig', scimConfig)
           ..add('updatedAt', updatedAt)
+          ..add('type', type)
           ..add('allowedIdps', allowedIdps)
           ..add('autoRedirectToIdentity', autoRedirectToIdentity)
           ..add('domain', domain)
           ..add('name', name)
-          ..add('sessionDuration', sessionDuration)
-          ..add('type', type))
+          ..add('sessionDuration', sessionDuration))
         .toString();
   }
 }
@@ -144,6 +144,10 @@ class DeviceEnrollmentPermissionsApplication2Builder
   DateTime? get updatedAt => _$this._updatedAt;
   set updatedAt(covariant DateTime? updatedAt) => _$this._updatedAt = updatedAt;
 
+  AccessComponentsSchemasType? _type;
+  AccessComponentsSchemasType? get type => _$this._type;
+  set type(covariant AccessComponentsSchemasType? type) => _$this._type = type;
+
   ListBuilder<String>? _allowedIdps;
   ListBuilder<String> get allowedIdps =>
       _$this._allowedIdps ??= ListBuilder<String>();
@@ -168,10 +172,6 @@ class DeviceEnrollmentPermissionsApplication2Builder
   set sessionDuration(covariant String? sessionDuration) =>
       _$this._sessionDuration = sessionDuration;
 
-  AccessComponentsSchemasType? _type;
-  AccessComponentsSchemasType? get type => _$this._type;
-  set type(covariant AccessComponentsSchemasType? type) => _$this._type = type;
-
   DeviceEnrollmentPermissionsApplication2Builder() {
     DeviceEnrollmentPermissionsApplication2._defaults(this);
   }
@@ -184,12 +184,12 @@ class DeviceEnrollmentPermissionsApplication2Builder
       _id = $v.id;
       _scimConfig = $v.scimConfig?.toBuilder();
       _updatedAt = $v.updatedAt;
+      _type = $v.type;
       _allowedIdps = $v.allowedIdps?.toBuilder();
       _autoRedirectToIdentity = $v.autoRedirectToIdentity;
       _domain = $v.domain;
       _name = $v.name;
       _sessionDuration = $v.sessionDuration;
-      _type = $v.type;
       _$v = null;
     }
     return this;
@@ -220,13 +220,13 @@ class DeviceEnrollmentPermissionsApplication2Builder
             id: id,
             scimConfig: _scimConfig?.build(),
             updatedAt: updatedAt,
+            type: BuiltValueNullFieldError.checkNotNull(
+                type, r'DeviceEnrollmentPermissionsApplication2', 'type'),
             allowedIdps: _allowedIdps?.build(),
             autoRedirectToIdentity: autoRedirectToIdentity,
             domain: domain,
             name: name,
             sessionDuration: sessionDuration,
-            type: BuiltValueNullFieldError.checkNotNull(
-                type, r'DeviceEnrollmentPermissionsApplication2', 'type'),
           );
     } catch (_) {
       late String _$failedField;

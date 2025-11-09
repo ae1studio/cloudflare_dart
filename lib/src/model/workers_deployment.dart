@@ -14,21 +14,15 @@ part 'workers_deployment.g.dart';
 /// WorkersDeployment
 ///
 /// Properties:
-/// * [annotations] 
-/// * [authorEmail] 
 /// * [createdOn] 
 /// * [id] 
 /// * [source_] 
 /// * [strategy] 
 /// * [versions] 
+/// * [annotations] 
+/// * [authorEmail] 
 @BuiltValue()
 abstract class WorkersDeployment implements Built<WorkersDeployment, WorkersDeploymentBuilder> {
-  @BuiltValueField(wireName: r'annotations')
-  WorkersDeploymentAnnotations? get annotations;
-
-  @BuiltValueField(wireName: r'author_email')
-  String? get authorEmail;
-
   @BuiltValueField(wireName: r'created_on')
   DateTime get createdOn;
 
@@ -44,6 +38,12 @@ abstract class WorkersDeployment implements Built<WorkersDeployment, WorkersDepl
 
   @BuiltValueField(wireName: r'versions')
   BuiltList<WorkersDeploymentVersionsInner> get versions;
+
+  @BuiltValueField(wireName: r'annotations')
+  WorkersDeploymentAnnotations? get annotations;
+
+  @BuiltValueField(wireName: r'author_email')
+  String? get authorEmail;
 
   WorkersDeployment._();
 
@@ -68,20 +68,6 @@ class _$WorkersDeploymentSerializer implements PrimitiveSerializer<WorkersDeploy
     WorkersDeployment object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
-    if (object.annotations != null) {
-      yield r'annotations';
-      yield serializers.serialize(
-        object.annotations,
-        specifiedType: const FullType(WorkersDeploymentAnnotations),
-      );
-    }
-    if (object.authorEmail != null) {
-      yield r'author_email';
-      yield serializers.serialize(
-        object.authorEmail,
-        specifiedType: const FullType(String),
-      );
-    }
     yield r'created_on';
     yield serializers.serialize(
       object.createdOn,
@@ -107,6 +93,20 @@ class _$WorkersDeploymentSerializer implements PrimitiveSerializer<WorkersDeploy
       object.versions,
       specifiedType: const FullType(BuiltList, [FullType(WorkersDeploymentVersionsInner)]),
     );
+    if (object.annotations != null) {
+      yield r'annotations';
+      yield serializers.serialize(
+        object.annotations,
+        specifiedType: const FullType(WorkersDeploymentAnnotations),
+      );
+    }
+    if (object.authorEmail != null) {
+      yield r'author_email';
+      yield serializers.serialize(
+        object.authorEmail,
+        specifiedType: const FullType(String),
+      );
+    }
   }
 
   @override
@@ -130,20 +130,6 @@ class _$WorkersDeploymentSerializer implements PrimitiveSerializer<WorkersDeploy
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'annotations':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(WorkersDeploymentAnnotations),
-          ) as WorkersDeploymentAnnotations;
-          result.annotations.replace(valueDes);
-          break;
-        case r'author_email':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.authorEmail = valueDes;
-          break;
         case r'created_on':
           final valueDes = serializers.deserialize(
             value,
@@ -178,6 +164,20 @@ class _$WorkersDeploymentSerializer implements PrimitiveSerializer<WorkersDeploy
             specifiedType: const FullType(BuiltList, [FullType(WorkersDeploymentVersionsInner)]),
           ) as BuiltList<WorkersDeploymentVersionsInner>;
           result.versions.replace(valueDes);
+          break;
+        case r'annotations':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(WorkersDeploymentAnnotations),
+          ) as WorkersDeploymentAnnotations;
+          result.annotations.replace(valueDes);
+          break;
+        case r'author_email':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.authorEmail = valueDes;
           break;
         default:
           unhandled.add(key);

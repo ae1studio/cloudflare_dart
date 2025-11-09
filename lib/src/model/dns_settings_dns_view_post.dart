@@ -13,10 +13,10 @@ part 'dns_settings_dns_view_post.g.dart';
 /// DnsSettingsDnsViewPost
 ///
 /// Properties:
-/// * [createdTime] - When the view was created.
-/// * [modifiedTime] - When the view was last modified.
 /// * [name] - The name of the view.
 /// * [zones] - The list of zones linked to this view.
+/// * [createdTime] - When the view was created.
+/// * [modifiedTime] - When the view was last modified.
 @BuiltValue()
 abstract class DnsSettingsDnsViewPost implements DnsSettingsDnsView, Built<DnsSettingsDnsViewPost, DnsSettingsDnsViewPostBuilder> {
   DnsSettingsDnsViewPost._();

@@ -8,9 +8,9 @@ part of 'mconn_controller_upgrade_slot.dart';
 
 class _$MconnControllerUpgradeSlot extends MconnControllerUpgradeSlot {
   @override
-  final String? connectorId;
-  @override
   final num id;
+  @override
+  final String? connectorId;
   @override
   final String? startedAt;
 
@@ -19,7 +19,7 @@ class _$MconnControllerUpgradeSlot extends MconnControllerUpgradeSlot {
       (MconnControllerUpgradeSlotBuilder()..update(updates))._build();
 
   _$MconnControllerUpgradeSlot._(
-      {this.connectorId, required this.id, this.startedAt})
+      {required this.id, this.connectorId, this.startedAt})
       : super._();
   @override
   MconnControllerUpgradeSlot rebuild(
@@ -34,16 +34,16 @@ class _$MconnControllerUpgradeSlot extends MconnControllerUpgradeSlot {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is MconnControllerUpgradeSlot &&
-        connectorId == other.connectorId &&
         id == other.id &&
+        connectorId == other.connectorId &&
         startedAt == other.startedAt;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, connectorId.hashCode);
     _$hash = $jc(_$hash, id.hashCode);
+    _$hash = $jc(_$hash, connectorId.hashCode);
     _$hash = $jc(_$hash, startedAt.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
@@ -52,8 +52,8 @@ class _$MconnControllerUpgradeSlot extends MconnControllerUpgradeSlot {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'MconnControllerUpgradeSlot')
-          ..add('connectorId', connectorId)
           ..add('id', id)
+          ..add('connectorId', connectorId)
           ..add('startedAt', startedAt))
         .toString();
   }
@@ -64,13 +64,13 @@ class MconnControllerUpgradeSlotBuilder
         Builder<MconnControllerUpgradeSlot, MconnControllerUpgradeSlotBuilder> {
   _$MconnControllerUpgradeSlot? _$v;
 
-  String? _connectorId;
-  String? get connectorId => _$this._connectorId;
-  set connectorId(String? connectorId) => _$this._connectorId = connectorId;
-
   num? _id;
   num? get id => _$this._id;
   set id(num? id) => _$this._id = id;
+
+  String? _connectorId;
+  String? get connectorId => _$this._connectorId;
+  set connectorId(String? connectorId) => _$this._connectorId = connectorId;
 
   String? _startedAt;
   String? get startedAt => _$this._startedAt;
@@ -83,8 +83,8 @@ class MconnControllerUpgradeSlotBuilder
   MconnControllerUpgradeSlotBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _connectorId = $v.connectorId;
       _id = $v.id;
+      _connectorId = $v.connectorId;
       _startedAt = $v.startedAt;
       _$v = null;
     }
@@ -107,9 +107,9 @@ class MconnControllerUpgradeSlotBuilder
   _$MconnControllerUpgradeSlot _build() {
     final _$result = _$v ??
         _$MconnControllerUpgradeSlot._(
-          connectorId: connectorId,
           id: BuiltValueNullFieldError.checkNotNull(
               id, r'MconnControllerUpgradeSlot', 'id'),
+          connectorId: connectorId,
           startedAt: startedAt,
         );
     replace(_$result);

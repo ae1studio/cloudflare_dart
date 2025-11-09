@@ -14,7 +14,6 @@ part 'email_security_create_trusted_domain201_response_all_of_result.g.dart';
 /// EmailSecurityCreateTrustedDomain201ResponseAllOfResult
 ///
 /// Properties:
-/// * [comments] 
 /// * [isRecent] - Select to prevent recently registered domains from triggering a Suspicious or Malicious disposition.
 /// * [isRegex] 
 /// * [isSimilarity] - Select for partner or other approved domains that have similar spelling to your connected domains. Prevents listed domains from triggering a Spoof disposition.
@@ -22,6 +21,7 @@ part 'email_security_create_trusted_domain201_response_all_of_result.g.dart';
 /// * [createdAt] 
 /// * [id] - The unique identifier for the trusted domain.
 /// * [lastModified] 
+/// * [comments] 
 @BuiltValue()
 abstract class EmailSecurityCreateTrustedDomain201ResponseAllOfResult implements Built<EmailSecurityCreateTrustedDomain201ResponseAllOfResult, EmailSecurityCreateTrustedDomain201ResponseAllOfResultBuilder> {
   /// One Of [BuiltList<EmailSecurityTrustedDomain>], [EmailSecurityTrustedDomain]

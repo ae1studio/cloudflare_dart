@@ -20,8 +20,8 @@ part 'origin_ca_list_certificates4_xx_response.g.dart';
 /// * [errors] 
 /// * [messages] 
 /// * [success] - Whether the API call was successful.
-/// * [resultInfo] 
 /// * [result] 
+/// * [resultInfo] 
 @BuiltValue()
 abstract class OriginCaListCertificates4XXResponse implements TlsCertificatesAndHostnamesApiResponseCommonFailure, TlsCertificatesAndHostnamesSchemasCertificateResponseCollection, Built<OriginCaListCertificates4XXResponse, OriginCaListCertificates4XXResponseBuilder> {
   OriginCaListCertificates4XXResponse._();

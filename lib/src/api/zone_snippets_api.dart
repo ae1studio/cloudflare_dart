@@ -3,7 +3,6 @@
 //
 
 import 'dart:async';
-import 'dart:typed_data';
 
 import 'package:built_value/json_object.dart';
 import 'package:built_value/serializer.dart';

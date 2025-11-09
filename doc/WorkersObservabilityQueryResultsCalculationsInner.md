@@ -9,9 +9,9 @@ import 'package:cloudflare_dart/api.dart';
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **aggregates** | [**BuiltList&lt;WorkersObservabilityQueryResultsCalculationsInnerAggregatesInner&gt;**](WorkersObservabilityQueryResultsCalculationsInnerAggregatesInner.md) |  | 
-**alias** | **String** |  | [optional] 
 **calculation** | **String** |  | 
 **series** | [**BuiltList&lt;WorkersObservabilityQueryResultsCalculationsInnerSeriesInner&gt;**](WorkersObservabilityQueryResultsCalculationsInnerSeriesInner.md) |  | 
+**alias** | **String** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

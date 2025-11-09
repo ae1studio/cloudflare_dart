@@ -15,29 +15,20 @@ part 'r2_data_catalog_catalog.g.dart';
 ///
 /// Properties:
 /// * [bucket] - Specifies the associated R2 bucket name.
-/// * [credentialStatus] - Shows the credential configuration status.
 /// * [id] - Use this to uniquely identify the catalog.
-/// * [maintenanceConfig] - Configures maintenance for the catalog.
 /// * [name] - Specifies the catalog name (generated from account and bucket name).
 /// * [status] 
+/// * [credentialStatus] - Shows the credential configuration status.
+/// * [maintenanceConfig] - Configures maintenance for the catalog.
 @BuiltValue()
 abstract class R2DataCatalogCatalog implements Built<R2DataCatalogCatalog, R2DataCatalogCatalogBuilder> {
   /// Specifies the associated R2 bucket name.
   @BuiltValueField(wireName: r'bucket')
   String get bucket;
 
-  /// Shows the credential configuration status.
-  @BuiltValueField(wireName: r'credential_status')
-  R2DataCatalogCredentialStatus? get credentialStatus;
-  // enum credentialStatusEnum {  present,  absent,  };
-
   /// Use this to uniquely identify the catalog.
   @BuiltValueField(wireName: r'id')
   String get id;
-
-  /// Configures maintenance for the catalog.
-  @BuiltValueField(wireName: r'maintenance_config')
-  R2DataCatalogCatalogMaintenanceConfig? get maintenanceConfig;
 
   /// Specifies the catalog name (generated from account and bucket name).
   @BuiltValueField(wireName: r'name')
@@ -46,6 +37,15 @@ abstract class R2DataCatalogCatalog implements Built<R2DataCatalogCatalog, R2Dat
   @BuiltValueField(wireName: r'status')
   R2DataCatalogCatalogStatus get status;
   // enum statusEnum {  active,  inactive,  };
+
+  /// Shows the credential configuration status.
+  @BuiltValueField(wireName: r'credential_status')
+  R2DataCatalogCredentialStatus? get credentialStatus;
+  // enum credentialStatusEnum {  present,  absent,  };
+
+  /// Configures maintenance for the catalog.
+  @BuiltValueField(wireName: r'maintenance_config')
+  R2DataCatalogCatalogMaintenanceConfig? get maintenanceConfig;
 
   R2DataCatalogCatalog._();
 
@@ -75,25 +75,11 @@ class _$R2DataCatalogCatalogSerializer implements PrimitiveSerializer<R2DataCata
       object.bucket,
       specifiedType: const FullType(String),
     );
-    if (object.credentialStatus != null) {
-      yield r'credential_status';
-      yield serializers.serialize(
-        object.credentialStatus,
-        specifiedType: const FullType.nullable(R2DataCatalogCredentialStatus),
-      );
-    }
     yield r'id';
     yield serializers.serialize(
       object.id,
       specifiedType: const FullType(String),
     );
-    if (object.maintenanceConfig != null) {
-      yield r'maintenance_config';
-      yield serializers.serialize(
-        object.maintenanceConfig,
-        specifiedType: const FullType.nullable(R2DataCatalogCatalogMaintenanceConfig),
-      );
-    }
     yield r'name';
     yield serializers.serialize(
       object.name,
@@ -104,6 +90,20 @@ class _$R2DataCatalogCatalogSerializer implements PrimitiveSerializer<R2DataCata
       object.status,
       specifiedType: const FullType(R2DataCatalogCatalogStatus),
     );
+    if (object.credentialStatus != null) {
+      yield r'credential_status';
+      yield serializers.serialize(
+        object.credentialStatus,
+        specifiedType: const FullType.nullable(R2DataCatalogCredentialStatus),
+      );
+    }
+    if (object.maintenanceConfig != null) {
+      yield r'maintenance_config';
+      yield serializers.serialize(
+        object.maintenanceConfig,
+        specifiedType: const FullType.nullable(R2DataCatalogCatalogMaintenanceConfig),
+      );
+    }
   }
 
   @override
@@ -134,28 +134,12 @@ class _$R2DataCatalogCatalogSerializer implements PrimitiveSerializer<R2DataCata
           ) as String;
           result.bucket = valueDes;
           break;
-        case r'credential_status':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(R2DataCatalogCredentialStatus),
-          ) as R2DataCatalogCredentialStatus?;
-          if (valueDes == null) continue;
-          result.credentialStatus = valueDes;
-          break;
         case r'id':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(String),
           ) as String;
           result.id = valueDes;
-          break;
-        case r'maintenance_config':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(R2DataCatalogCatalogMaintenanceConfig),
-          ) as R2DataCatalogCatalogMaintenanceConfig?;
-          if (valueDes == null) continue;
-          result.maintenanceConfig.replace(valueDes);
           break;
         case r'name':
           final valueDes = serializers.deserialize(
@@ -170,6 +154,22 @@ class _$R2DataCatalogCatalogSerializer implements PrimitiveSerializer<R2DataCata
             specifiedType: const FullType(R2DataCatalogCatalogStatus),
           ) as R2DataCatalogCatalogStatus;
           result.status = valueDes;
+          break;
+        case r'credential_status':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType.nullable(R2DataCatalogCredentialStatus),
+          ) as R2DataCatalogCredentialStatus?;
+          if (valueDes == null) continue;
+          result.credentialStatus = valueDes;
+          break;
+        case r'maintenance_config':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType.nullable(R2DataCatalogCatalogMaintenanceConfig),
+          ) as R2DataCatalogCatalogMaintenanceConfig?;
+          if (valueDes == null) continue;
+          result.maintenanceConfig.replace(valueDes);
           break;
         default:
           unhandled.add(key);

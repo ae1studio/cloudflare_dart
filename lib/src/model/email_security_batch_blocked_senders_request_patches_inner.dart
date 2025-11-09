@@ -13,11 +13,11 @@ part 'email_security_batch_blocked_senders_request_patches_inner.g.dart';
 /// EmailSecurityBatchBlockedSendersRequestPatchesInner
 ///
 /// Properties:
+/// * [id] - The unique identifier for the allow policy.
 /// * [comments] 
 /// * [isRegex] 
 /// * [pattern] 
 /// * [patternType] 
-/// * [id] - The unique identifier for the allow policy.
 @BuiltValue()
 abstract class EmailSecurityBatchBlockedSendersRequestPatchesInner implements EmailSecurityUpdateBlockedSender, Built<EmailSecurityBatchBlockedSendersRequestPatchesInner, EmailSecurityBatchBlockedSendersRequestPatchesInnerBuilder> {
   /// The unique identifier for the allow policy.

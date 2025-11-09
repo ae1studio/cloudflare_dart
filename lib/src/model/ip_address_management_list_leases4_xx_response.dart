@@ -20,8 +20,8 @@ part 'ip_address_management_list_leases4_xx_response.g.dart';
 /// * [errors] 
 /// * [messages] 
 /// * [success] - Whether the API call was successful.
-/// * [resultInfo] 
 /// * [result] 
+/// * [resultInfo] 
 @BuiltValue()
 abstract class IpAddressManagementListLeases4XXResponse implements AddressingApiResponseCommonFailure, AddressingLeasesComponentsSchemasResponseCollection, Built<IpAddressManagementListLeases4XXResponse, IpAddressManagementListLeases4XXResponseBuilder> {
   IpAddressManagementListLeases4XXResponse._();

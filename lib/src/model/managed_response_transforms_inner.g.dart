@@ -8,23 +8,23 @@ part of 'managed_response_transforms_inner.dart';
 
 class _$ManagedResponseTransformsInner extends ManagedResponseTransformsInner {
   @override
-  final BuiltSet<String>? conflictsWith;
-  @override
   final bool enabled;
   @override
   final bool hasConflict;
   @override
   final String id;
+  @override
+  final BuiltSet<String>? conflictsWith;
 
   factory _$ManagedResponseTransformsInner(
           [void Function(ManagedResponseTransformsInnerBuilder)? updates]) =>
       (ManagedResponseTransformsInnerBuilder()..update(updates))._build();
 
   _$ManagedResponseTransformsInner._(
-      {this.conflictsWith,
-      required this.enabled,
+      {required this.enabled,
       required this.hasConflict,
-      required this.id})
+      required this.id,
+      this.conflictsWith})
       : super._();
   @override
   ManagedResponseTransformsInner rebuild(
@@ -39,19 +39,19 @@ class _$ManagedResponseTransformsInner extends ManagedResponseTransformsInner {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is ManagedResponseTransformsInner &&
-        conflictsWith == other.conflictsWith &&
         enabled == other.enabled &&
         hasConflict == other.hasConflict &&
-        id == other.id;
+        id == other.id &&
+        conflictsWith == other.conflictsWith;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, conflictsWith.hashCode);
     _$hash = $jc(_$hash, enabled.hashCode);
     _$hash = $jc(_$hash, hasConflict.hashCode);
     _$hash = $jc(_$hash, id.hashCode);
+    _$hash = $jc(_$hash, conflictsWith.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -59,10 +59,10 @@ class _$ManagedResponseTransformsInner extends ManagedResponseTransformsInner {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'ManagedResponseTransformsInner')
-          ..add('conflictsWith', conflictsWith)
           ..add('enabled', enabled)
           ..add('hasConflict', hasConflict)
-          ..add('id', id))
+          ..add('id', id)
+          ..add('conflictsWith', conflictsWith))
         .toString();
   }
 }
@@ -73,12 +73,6 @@ class ManagedResponseTransformsInnerBuilder
             ManagedResponseTransformsInnerBuilder>,
         RulesetsManagedTransformBuilder {
   _$ManagedResponseTransformsInner? _$v;
-
-  SetBuilder<String>? _conflictsWith;
-  SetBuilder<String> get conflictsWith =>
-      _$this._conflictsWith ??= SetBuilder<String>();
-  set conflictsWith(covariant SetBuilder<String>? conflictsWith) =>
-      _$this._conflictsWith = conflictsWith;
 
   bool? _enabled;
   bool? get enabled => _$this._enabled;
@@ -93,6 +87,12 @@ class ManagedResponseTransformsInnerBuilder
   String? get id => _$this._id;
   set id(covariant String? id) => _$this._id = id;
 
+  SetBuilder<String>? _conflictsWith;
+  SetBuilder<String> get conflictsWith =>
+      _$this._conflictsWith ??= SetBuilder<String>();
+  set conflictsWith(covariant SetBuilder<String>? conflictsWith) =>
+      _$this._conflictsWith = conflictsWith;
+
   ManagedResponseTransformsInnerBuilder() {
     ManagedResponseTransformsInner._defaults(this);
   }
@@ -100,10 +100,10 @@ class ManagedResponseTransformsInnerBuilder
   ManagedResponseTransformsInnerBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _conflictsWith = $v.conflictsWith?.toBuilder();
       _enabled = $v.enabled;
       _hasConflict = $v.hasConflict;
       _id = $v.id;
+      _conflictsWith = $v.conflictsWith?.toBuilder();
       _$v = null;
     }
     return this;
@@ -127,13 +127,13 @@ class ManagedResponseTransformsInnerBuilder
     try {
       _$result = _$v ??
           _$ManagedResponseTransformsInner._(
-            conflictsWith: _conflictsWith?.build(),
             enabled: BuiltValueNullFieldError.checkNotNull(
                 enabled, r'ManagedResponseTransformsInner', 'enabled'),
             hasConflict: BuiltValueNullFieldError.checkNotNull(
                 hasConflict, r'ManagedResponseTransformsInner', 'hasConflict'),
             id: BuiltValueNullFieldError.checkNotNull(
                 id, r'ManagedResponseTransformsInner', 'id'),
+            conflictsWith: _conflictsWith?.build(),
           );
     } catch (_) {
       late String _$failedField;

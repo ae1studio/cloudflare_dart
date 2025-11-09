@@ -12,19 +12,19 @@ part 'r2_edit_custom_domain_response.g.dart';
 /// R2EditCustomDomainResponse
 ///
 /// Properties:
-/// * [ciphers] - An allowlist of ciphers for TLS termination. These ciphers must be in the BoringSSL format.
 /// * [domain] - Domain name of the affected custom domain.
+/// * [ciphers] - An allowlist of ciphers for TLS termination. These ciphers must be in the BoringSSL format.
 /// * [enabled] - Whether this bucket is publicly accessible at the specified custom domain.
 /// * [minTLS] - Minimum TLS Version the custom domain will accept for incoming connections. If not set, defaults to 1.0.
 @BuiltValue()
 abstract class R2EditCustomDomainResponse implements Built<R2EditCustomDomainResponse, R2EditCustomDomainResponseBuilder> {
-  /// An allowlist of ciphers for TLS termination. These ciphers must be in the BoringSSL format.
-  @BuiltValueField(wireName: r'ciphers')
-  BuiltList<String>? get ciphers;
-
   /// Domain name of the affected custom domain.
   @BuiltValueField(wireName: r'domain')
   String get domain;
+
+  /// An allowlist of ciphers for TLS termination. These ciphers must be in the BoringSSL format.
+  @BuiltValueField(wireName: r'ciphers')
+  BuiltList<String>? get ciphers;
 
   /// Whether this bucket is publicly accessible at the specified custom domain.
   @BuiltValueField(wireName: r'enabled')
@@ -58,6 +58,11 @@ class _$R2EditCustomDomainResponseSerializer implements PrimitiveSerializer<R2Ed
     R2EditCustomDomainResponse object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    yield r'domain';
+    yield serializers.serialize(
+      object.domain,
+      specifiedType: const FullType(String),
+    );
     if (object.ciphers != null) {
       yield r'ciphers';
       yield serializers.serialize(
@@ -65,11 +70,6 @@ class _$R2EditCustomDomainResponseSerializer implements PrimitiveSerializer<R2Ed
         specifiedType: const FullType(BuiltList, [FullType(String)]),
       );
     }
-    yield r'domain';
-    yield serializers.serialize(
-      object.domain,
-      specifiedType: const FullType(String),
-    );
     if (object.enabled != null) {
       yield r'enabled';
       yield serializers.serialize(
@@ -107,19 +107,19 @@ class _$R2EditCustomDomainResponseSerializer implements PrimitiveSerializer<R2Ed
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'ciphers':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>;
-          result.ciphers.replace(valueDes);
-          break;
         case r'domain':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(String),
           ) as String;
           result.domain = valueDes;
+          break;
+        case r'ciphers':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BuiltList, [FullType(String)]),
+          ) as BuiltList<String>;
+          result.ciphers.replace(valueDes);
           break;
         case r'enabled':
           final valueDes = serializers.deserialize(

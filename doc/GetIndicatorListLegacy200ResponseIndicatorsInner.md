@@ -10,11 +10,11 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **createdAt** | [**DateTime**](DateTime.md) |  | 
 **indicatorType** | **String** |  | 
-**relatedEvents** | [**BuiltList&lt;GetIndicatorListLegacy200ResponseIndicatorsInnerRelatedEventsInner&gt;**](GetIndicatorListLegacy200ResponseIndicatorsInnerRelatedEventsInner.md) |  | [optional] 
-**tags** | [**BuiltList&lt;GetIndicatorListLegacy200ResponseIndicatorsInnerTagsInner&gt;**](GetIndicatorListLegacy200ResponseIndicatorsInnerTagsInner.md) |  | [optional] 
 **updatedAt** | [**DateTime**](DateTime.md) |  | 
 **uuid** | **String** |  | 
 **value** | **String** |  | 
+**relatedEvents** | [**BuiltList&lt;GetIndicatorListLegacy200ResponseIndicatorsInnerRelatedEventsInner&gt;**](GetIndicatorListLegacy200ResponseIndicatorsInnerRelatedEventsInner.md) |  | [optional] 
+**tags** | [**BuiltList&lt;GetIndicatorListLegacy200ResponseIndicatorsInnerTagsInner&gt;**](GetIndicatorListLegacy200ResponseIndicatorsInnerTagsInner.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

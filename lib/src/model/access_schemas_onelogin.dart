@@ -9,6 +9,7 @@ import 'package:built_collection/built_collection.dart';
 import 'package:cloudflare_dart/src/model/access_schemas_identity_provider.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
+import 'package:built_value/json_object.dart';
 
 part 'access_schemas_onelogin.g.dart';
 
@@ -16,10 +17,10 @@ part 'access_schemas_onelogin.g.dart';
 ///
 /// Properties:
 /// * [config] 
-/// * [id] - UUID.
 /// * [name] - The name of the identity provider, shown to users on the login page.
-/// * [scimConfig] 
 /// * [type] - The type of identity provider. To determine the value for a specific provider, refer to our [developer documentation](https://developers.cloudflare.com/cloudflare-one/identity/idp-integration/).
+/// * [id] - UUID.
+/// * [scimConfig] 
 @BuiltValue()
 abstract class AccessSchemasOnelogin implements AccessSchemasIdentityProvider, Built<AccessSchemasOnelogin, AccessSchemasOneloginBuilder> {
   AccessSchemasOnelogin._();

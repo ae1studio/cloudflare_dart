@@ -20,9 +20,9 @@ class _$FirewallAnomalyPackage extends FirewallAnomalyPackage {
   @override
   final String name;
   @override
-  final FirewallStatus? status;
-  @override
   final String zoneId;
+  @override
+  final FirewallStatus? status;
 
   factory _$FirewallAnomalyPackage(
           [void Function(FirewallAnomalyPackageBuilder)? updates]) =>
@@ -35,8 +35,8 @@ class _$FirewallAnomalyPackage extends FirewallAnomalyPackage {
       required this.detectionMode,
       required this.id,
       required this.name,
-      this.status,
-      required this.zoneId})
+      required this.zoneId,
+      this.status})
       : super._();
   @override
   FirewallAnomalyPackage rebuild(
@@ -57,8 +57,8 @@ class _$FirewallAnomalyPackage extends FirewallAnomalyPackage {
         detectionMode == other.detectionMode &&
         id == other.id &&
         name == other.name &&
-        status == other.status &&
-        zoneId == other.zoneId;
+        zoneId == other.zoneId &&
+        status == other.status;
   }
 
   @override
@@ -70,8 +70,8 @@ class _$FirewallAnomalyPackage extends FirewallAnomalyPackage {
     _$hash = $jc(_$hash, detectionMode.hashCode);
     _$hash = $jc(_$hash, id.hashCode);
     _$hash = $jc(_$hash, name.hashCode);
-    _$hash = $jc(_$hash, status.hashCode);
     _$hash = $jc(_$hash, zoneId.hashCode);
+    _$hash = $jc(_$hash, status.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -85,8 +85,8 @@ class _$FirewallAnomalyPackage extends FirewallAnomalyPackage {
           ..add('detectionMode', detectionMode)
           ..add('id', id)
           ..add('name', name)
-          ..add('status', status)
-          ..add('zoneId', zoneId))
+          ..add('zoneId', zoneId)
+          ..add('status', status))
         .toString();
   }
 }
@@ -125,13 +125,13 @@ class FirewallAnomalyPackageBuilder
   String? get name => _$this._name;
   set name(covariant String? name) => _$this._name = name;
 
-  FirewallStatus? _status;
-  FirewallStatus? get status => _$this._status;
-  set status(covariant FirewallStatus? status) => _$this._status = status;
-
   String? _zoneId;
   String? get zoneId => _$this._zoneId;
   set zoneId(covariant String? zoneId) => _$this._zoneId = zoneId;
+
+  FirewallStatus? _status;
+  FirewallStatus? get status => _$this._status;
+  set status(covariant FirewallStatus? status) => _$this._status = status;
 
   FirewallAnomalyPackageBuilder() {
     FirewallAnomalyPackage._defaults(this);
@@ -146,8 +146,8 @@ class FirewallAnomalyPackageBuilder
       _detectionMode = $v.detectionMode;
       _id = $v.id;
       _name = $v.name;
-      _status = $v.status;
       _zoneId = $v.zoneId;
+      _status = $v.status;
       _$v = null;
     }
     return this;
@@ -181,9 +181,9 @@ class FirewallAnomalyPackageBuilder
               id, r'FirewallAnomalyPackage', 'id'),
           name: BuiltValueNullFieldError.checkNotNull(
               name, r'FirewallAnomalyPackage', 'name'),
-          status: status,
           zoneId: BuiltValueNullFieldError.checkNotNull(
               zoneId, r'FirewallAnomalyPackage', 'zoneId'),
+          status: status,
         );
     replace(_$result);
     return _$result;

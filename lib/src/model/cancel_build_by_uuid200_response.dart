@@ -10,6 +10,7 @@ import 'package:built_collection/built_collection.dart';
 import 'package:cloudflare_dart/src/model/builds_api_response_errors_inner.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
+import 'package:built_value/json_object.dart';
 
 part 'cancel_build_by_uuid200_response.g.dart';
 
@@ -19,8 +20,8 @@ part 'cancel_build_by_uuid200_response.g.dart';
 /// * [errors] 
 /// * [messages] 
 /// * [result] 
-/// * [resultInfo] 
 /// * [success] 
+/// * [resultInfo] 
 @BuiltValue()
 abstract class CancelBuildByUuid200Response implements BuildsAPIResponse, Built<CancelBuildByUuid200Response, CancelBuildByUuid200ResponseBuilder> {
   CancelBuildByUuid200Response._();

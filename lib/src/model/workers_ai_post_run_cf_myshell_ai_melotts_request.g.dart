@@ -9,9 +9,9 @@ part of 'workers_ai_post_run_cf_myshell_ai_melotts_request.dart';
 class _$WorkersAiPostRunCfMyshellAiMelottsRequest
     extends WorkersAiPostRunCfMyshellAiMelottsRequest {
   @override
-  final String? lang;
-  @override
   final String prompt;
+  @override
+  final String? lang;
 
   factory _$WorkersAiPostRunCfMyshellAiMelottsRequest(
           [void Function(WorkersAiPostRunCfMyshellAiMelottsRequestBuilder)?
@@ -20,7 +20,7 @@ class _$WorkersAiPostRunCfMyshellAiMelottsRequest
           ._build();
 
   _$WorkersAiPostRunCfMyshellAiMelottsRequest._(
-      {this.lang, required this.prompt})
+      {required this.prompt, this.lang})
       : super._();
   @override
   WorkersAiPostRunCfMyshellAiMelottsRequest rebuild(
@@ -36,15 +36,15 @@ class _$WorkersAiPostRunCfMyshellAiMelottsRequest
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is WorkersAiPostRunCfMyshellAiMelottsRequest &&
-        lang == other.lang &&
-        prompt == other.prompt;
+        prompt == other.prompt &&
+        lang == other.lang;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, lang.hashCode);
     _$hash = $jc(_$hash, prompt.hashCode);
+    _$hash = $jc(_$hash, lang.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -53,8 +53,8 @@ class _$WorkersAiPostRunCfMyshellAiMelottsRequest
   String toString() {
     return (newBuiltValueToStringHelper(
             r'WorkersAiPostRunCfMyshellAiMelottsRequest')
-          ..add('lang', lang)
-          ..add('prompt', prompt))
+          ..add('prompt', prompt)
+          ..add('lang', lang))
         .toString();
   }
 }
@@ -65,13 +65,13 @@ class WorkersAiPostRunCfMyshellAiMelottsRequestBuilder
             WorkersAiPostRunCfMyshellAiMelottsRequestBuilder> {
   _$WorkersAiPostRunCfMyshellAiMelottsRequest? _$v;
 
-  String? _lang;
-  String? get lang => _$this._lang;
-  set lang(String? lang) => _$this._lang = lang;
-
   String? _prompt;
   String? get prompt => _$this._prompt;
   set prompt(String? prompt) => _$this._prompt = prompt;
+
+  String? _lang;
+  String? get lang => _$this._lang;
+  set lang(String? lang) => _$this._lang = lang;
 
   WorkersAiPostRunCfMyshellAiMelottsRequestBuilder() {
     WorkersAiPostRunCfMyshellAiMelottsRequest._defaults(this);
@@ -80,8 +80,8 @@ class WorkersAiPostRunCfMyshellAiMelottsRequestBuilder
   WorkersAiPostRunCfMyshellAiMelottsRequestBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _lang = $v.lang;
       _prompt = $v.prompt;
+      _lang = $v.lang;
       _$v = null;
     }
     return this;
@@ -105,9 +105,9 @@ class WorkersAiPostRunCfMyshellAiMelottsRequestBuilder
   _$WorkersAiPostRunCfMyshellAiMelottsRequest _build() {
     final _$result = _$v ??
         _$WorkersAiPostRunCfMyshellAiMelottsRequest._(
-          lang: lang,
           prompt: BuiltValueNullFieldError.checkNotNull(
               prompt, r'WorkersAiPostRunCfMyshellAiMelottsRequest', 'prompt'),
+          lang: lang,
         );
     replace(_$result);
     return _$result;

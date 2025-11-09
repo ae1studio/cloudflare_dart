@@ -9,6 +9,7 @@ import 'package:cloudflare_dart/src/model/access_oidc_all_of_config.dart';
 import 'package:cloudflare_dart/src/model/access_identity_provider.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
+import 'package:built_value/json_object.dart';
 
 part 'access_oidc.g.dart';
 
@@ -16,10 +17,10 @@ part 'access_oidc.g.dart';
 ///
 /// Properties:
 /// * [config] 
-/// * [id] - UUID.
 /// * [name] - The name of the identity provider, shown to users on the login page.
-/// * [scimConfig] 
 /// * [type] - The type of identity provider. To determine the value for a specific provider, refer to our [developer documentation](https://developers.cloudflare.com/cloudflare-one/identity/idp-integration/).
+/// * [id] - UUID.
+/// * [scimConfig] 
 @BuiltValue()
 abstract class AccessOidc implements AccessIdentityProvider, Built<AccessOidc, AccessOidcBuilder> {
   AccessOidc._();

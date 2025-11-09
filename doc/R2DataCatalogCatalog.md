@@ -9,11 +9,11 @@ import 'package:cloudflare_dart/api.dart';
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **bucket** | **String** | Specifies the associated R2 bucket name. | 
-**credentialStatus** | [**R2DataCatalogCredentialStatus**](R2DataCatalogCredentialStatus.md) | Shows the credential configuration status. | [optional] 
 **id** | **String** | Use this to uniquely identify the catalog. | 
-**maintenanceConfig** | [**R2DataCatalogCatalogMaintenanceConfig**](R2DataCatalogCatalogMaintenanceConfig.md) | Configures maintenance for the catalog. | [optional] 
 **name** | **String** | Specifies the catalog name (generated from account and bucket name). | 
 **status** | [**R2DataCatalogCatalogStatus**](R2DataCatalogCatalogStatus.md) |  | 
+**credentialStatus** | [**R2DataCatalogCredentialStatus**](R2DataCatalogCredentialStatus.md) | Shows the credential configuration status. | [optional] 
+**maintenanceConfig** | [**R2DataCatalogCatalogMaintenanceConfig**](R2DataCatalogCatalogMaintenanceConfig.md) | Configures maintenance for the catalog. | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

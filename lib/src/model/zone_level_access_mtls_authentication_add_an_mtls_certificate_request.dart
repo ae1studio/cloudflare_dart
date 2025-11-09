@@ -12,15 +12,11 @@ part 'zone_level_access_mtls_authentication_add_an_mtls_certificate_request.g.da
 /// ZoneLevelAccessMtlsAuthenticationAddAnMtlsCertificateRequest
 ///
 /// Properties:
-/// * [associatedHostnames] - The hostnames of the applications that will use this certificate.
 /// * [certificate] - The certificate content.
 /// * [name] - The name of the certificate.
+/// * [associatedHostnames] - The hostnames of the applications that will use this certificate.
 @BuiltValue()
 abstract class ZoneLevelAccessMtlsAuthenticationAddAnMtlsCertificateRequest implements Built<ZoneLevelAccessMtlsAuthenticationAddAnMtlsCertificateRequest, ZoneLevelAccessMtlsAuthenticationAddAnMtlsCertificateRequestBuilder> {
-  /// The hostnames of the applications that will use this certificate.
-  @BuiltValueField(wireName: r'associated_hostnames')
-  BuiltList<String>? get associatedHostnames;
-
   /// The certificate content.
   @BuiltValueField(wireName: r'certificate')
   String get certificate;
@@ -28,6 +24,10 @@ abstract class ZoneLevelAccessMtlsAuthenticationAddAnMtlsCertificateRequest impl
   /// The name of the certificate.
   @BuiltValueField(wireName: r'name')
   String get name;
+
+  /// The hostnames of the applications that will use this certificate.
+  @BuiltValueField(wireName: r'associated_hostnames')
+  BuiltList<String>? get associatedHostnames;
 
   ZoneLevelAccessMtlsAuthenticationAddAnMtlsCertificateRequest._();
 
@@ -52,13 +52,6 @@ class _$ZoneLevelAccessMtlsAuthenticationAddAnMtlsCertificateRequestSerializer i
     ZoneLevelAccessMtlsAuthenticationAddAnMtlsCertificateRequest object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
-    if (object.associatedHostnames != null) {
-      yield r'associated_hostnames';
-      yield serializers.serialize(
-        object.associatedHostnames,
-        specifiedType: const FullType(BuiltList, [FullType(String)]),
-      );
-    }
     yield r'certificate';
     yield serializers.serialize(
       object.certificate,
@@ -69,6 +62,13 @@ class _$ZoneLevelAccessMtlsAuthenticationAddAnMtlsCertificateRequestSerializer i
       object.name,
       specifiedType: const FullType(String),
     );
+    if (object.associatedHostnames != null) {
+      yield r'associated_hostnames';
+      yield serializers.serialize(
+        object.associatedHostnames,
+        specifiedType: const FullType(BuiltList, [FullType(String)]),
+      );
+    }
   }
 
   @override
@@ -92,13 +92,6 @@ class _$ZoneLevelAccessMtlsAuthenticationAddAnMtlsCertificateRequestSerializer i
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'associated_hostnames':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>;
-          result.associatedHostnames.replace(valueDes);
-          break;
         case r'certificate':
           final valueDes = serializers.deserialize(
             value,
@@ -112,6 +105,13 @@ class _$ZoneLevelAccessMtlsAuthenticationAddAnMtlsCertificateRequestSerializer i
             specifiedType: const FullType(String),
           ) as String;
           result.name = valueDes;
+          break;
+        case r'associated_hostnames':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BuiltList, [FullType(String)]),
+          ) as BuiltList<String>;
+          result.associatedHostnames.replace(valueDes);
           break;
         default:
           unhandled.add(key);

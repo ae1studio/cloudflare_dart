@@ -13,19 +13,19 @@ part 'list_abuse_reports500_response.g.dart';
 /// ListAbuseReports500Response
 ///
 /// Properties:
+/// * [success] 
 /// * [errors] 
 /// * [messages] 
-/// * [success] 
 @BuiltValue()
 abstract class ListAbuseReports500Response implements Built<ListAbuseReports500Response, ListAbuseReports500ResponseBuilder> {
+  @BuiltValueField(wireName: r'success')
+  bool get success;
+
   @BuiltValueField(wireName: r'errors')
   BuiltList<AbuseReportsMessage>? get errors;
 
   @BuiltValueField(wireName: r'messages')
   BuiltList<AbuseReportsMessage>? get messages;
-
-  @BuiltValueField(wireName: r'success')
-  bool get success;
 
   ListAbuseReports500Response._();
 
@@ -50,6 +50,11 @@ class _$ListAbuseReports500ResponseSerializer implements PrimitiveSerializer<Lis
     ListAbuseReports500Response object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    yield r'success';
+    yield serializers.serialize(
+      object.success,
+      specifiedType: const FullType(bool),
+    );
     if (object.errors != null) {
       yield r'errors';
       yield serializers.serialize(
@@ -64,11 +69,6 @@ class _$ListAbuseReports500ResponseSerializer implements PrimitiveSerializer<Lis
         specifiedType: const FullType(BuiltList, [FullType(AbuseReportsMessage)]),
       );
     }
-    yield r'success';
-    yield serializers.serialize(
-      object.success,
-      specifiedType: const FullType(bool),
-    );
   }
 
   @override
@@ -92,6 +92,13 @@ class _$ListAbuseReports500ResponseSerializer implements PrimitiveSerializer<Lis
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
+        case r'success':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(bool),
+          ) as bool;
+          result.success = valueDes;
+          break;
         case r'errors':
           final valueDes = serializers.deserialize(
             value,
@@ -105,13 +112,6 @@ class _$ListAbuseReports500ResponseSerializer implements PrimitiveSerializer<Lis
             specifiedType: const FullType(BuiltList, [FullType(AbuseReportsMessage)]),
           ) as BuiltList<AbuseReportsMessage>;
           result.messages.replace(valueDes);
-          break;
-        case r'success':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
-          result.success = valueDes;
           break;
         default:
           unhandled.add(key);

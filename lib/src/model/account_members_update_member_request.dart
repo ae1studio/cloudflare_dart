@@ -18,11 +18,11 @@ part 'account_members_update_member_request.g.dart';
 /// AccountMembersUpdateMemberRequest
 ///
 /// Properties:
+/// * [policies] - Array of policies associated with this member.
 /// * [id] - Membership identifier tag.
 /// * [roles] - Roles assigned to this member.
 /// * [status] - A member's status in the account.
 /// * [user] 
-/// * [policies] - Array of policies associated with this member.
 @BuiltValue()
 abstract class AccountMembersUpdateMemberRequest implements Built<AccountMembersUpdateMemberRequest, AccountMembersUpdateMemberRequestBuilder> {
   /// One Of [IamUpdateMemberWithPolicies], [IamUpdateMemberWithRoles]

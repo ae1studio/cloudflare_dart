@@ -11,10 +11,10 @@ class _$RadarGetAnnotations200ResponseResultAnnotationsInnerAsnsDetailsInner
   @override
   final String asn;
   @override
+  final String name;
+  @override
   final RadarGetAnnotations200ResponseResultAnnotationsInnerAsnsDetailsInnerLocations?
       locations;
-  @override
-  final String name;
 
   factory _$RadarGetAnnotations200ResponseResultAnnotationsInnerAsnsDetailsInner(
           [void Function(
@@ -25,7 +25,7 @@ class _$RadarGetAnnotations200ResponseResultAnnotationsInnerAsnsDetailsInner
           ._build();
 
   _$RadarGetAnnotations200ResponseResultAnnotationsInnerAsnsDetailsInner._(
-      {required this.asn, this.locations, required this.name})
+      {required this.asn, required this.name, this.locations})
       : super._();
   @override
   RadarGetAnnotations200ResponseResultAnnotationsInnerAsnsDetailsInner rebuild(
@@ -46,16 +46,16 @@ class _$RadarGetAnnotations200ResponseResultAnnotationsInnerAsnsDetailsInner
     return other
             is RadarGetAnnotations200ResponseResultAnnotationsInnerAsnsDetailsInner &&
         asn == other.asn &&
-        locations == other.locations &&
-        name == other.name;
+        name == other.name &&
+        locations == other.locations;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
     _$hash = $jc(_$hash, asn.hashCode);
-    _$hash = $jc(_$hash, locations.hashCode);
     _$hash = $jc(_$hash, name.hashCode);
+    _$hash = $jc(_$hash, locations.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -65,8 +65,8 @@ class _$RadarGetAnnotations200ResponseResultAnnotationsInnerAsnsDetailsInner
     return (newBuiltValueToStringHelper(
             r'RadarGetAnnotations200ResponseResultAnnotationsInnerAsnsDetailsInner')
           ..add('asn', asn)
-          ..add('locations', locations)
-          ..add('name', name))
+          ..add('name', name)
+          ..add('locations', locations))
         .toString();
   }
 }
@@ -82,6 +82,10 @@ class RadarGetAnnotations200ResponseResultAnnotationsInnerAsnsDetailsInnerBuilde
   String? get asn => _$this._asn;
   set asn(String? asn) => _$this._asn = asn;
 
+  String? _name;
+  String? get name => _$this._name;
+  set name(String? name) => _$this._name = name;
+
   RadarGetAnnotations200ResponseResultAnnotationsInnerAsnsDetailsInnerLocationsBuilder?
       _locations;
   RadarGetAnnotations200ResponseResultAnnotationsInnerAsnsDetailsInnerLocationsBuilder
@@ -91,10 +95,6 @@ class RadarGetAnnotations200ResponseResultAnnotationsInnerAsnsDetailsInnerBuilde
           RadarGetAnnotations200ResponseResultAnnotationsInnerAsnsDetailsInnerLocationsBuilder?
               locations) =>
       _$this._locations = locations;
-
-  String? _name;
-  String? get name => _$this._name;
-  set name(String? name) => _$this._name = name;
 
   RadarGetAnnotations200ResponseResultAnnotationsInnerAsnsDetailsInnerBuilder() {
     RadarGetAnnotations200ResponseResultAnnotationsInnerAsnsDetailsInner
@@ -106,8 +106,8 @@ class RadarGetAnnotations200ResponseResultAnnotationsInnerAsnsDetailsInnerBuilde
     final $v = _$v;
     if ($v != null) {
       _asn = $v.asn;
-      _locations = $v.locations?.toBuilder();
       _name = $v.name;
+      _locations = $v.locations?.toBuilder();
       _$v = null;
     }
     return this;
@@ -145,11 +145,11 @@ class RadarGetAnnotations200ResponseResultAnnotationsInnerAsnsDetailsInnerBuilde
                 asn,
                 r'RadarGetAnnotations200ResponseResultAnnotationsInnerAsnsDetailsInner',
                 'asn'),
-            locations: _locations?.build(),
             name: BuiltValueNullFieldError.checkNotNull(
                 name,
                 r'RadarGetAnnotations200ResponseResultAnnotationsInnerAsnsDetailsInner',
                 'name'),
+            locations: _locations?.build(),
           );
     } catch (_) {
       late String _$failedField;

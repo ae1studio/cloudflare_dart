@@ -14,11 +14,11 @@ part 'update_account_entrypoint_ruleset_request.g.dart';
 /// UpdateAccountEntrypointRulesetRequest
 ///
 /// Properties:
-/// * [description] - An informative description of the ruleset.
 /// * [id] - The unique ID of the ruleset.
 /// * [lastUpdated] - The timestamp of when the ruleset was last modified.
-/// * [name] - The human-readable name of the ruleset.
 /// * [version] - The version of the ruleset.
+/// * [description] - An informative description of the ruleset.
+/// * [name] - The human-readable name of the ruleset.
 /// * [rules] - The list of rules in the ruleset.
 @BuiltValue()
 abstract class UpdateAccountEntrypointRulesetRequest implements RulesetsRuleset, Built<UpdateAccountEntrypointRulesetRequest, UpdateAccountEntrypointRulesetRequestBuilder> {

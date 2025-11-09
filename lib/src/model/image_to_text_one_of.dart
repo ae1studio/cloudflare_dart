@@ -12,8 +12,8 @@ part 'image_to_text_one_of.g.dart';
 /// ImageToTextOneOf
 ///
 /// Properties:
-/// * [frequencyPenalty] - Decreases the likelihood of the model repeating the same lines verbatim.
 /// * [image] 
+/// * [frequencyPenalty] - Decreases the likelihood of the model repeating the same lines verbatim.
 /// * [maxTokens] - The maximum number of tokens to generate in the response.
 /// * [presencePenalty] - Increases the likelihood of the model introducing new topics.
 /// * [prompt] - The input text prompt for the model to generate a response.
@@ -25,12 +25,12 @@ part 'image_to_text_one_of.g.dart';
 /// * [topP] - Controls the creativity of the AI's responses by adjusting how many possible words it considers. Lower values make outputs more predictable; higher values allow for more varied and creative responses.
 @BuiltValue()
 abstract class ImageToTextOneOf implements Built<ImageToTextOneOf, ImageToTextOneOfBuilder> {
+  @BuiltValueField(wireName: r'image')
+  ImageToTextOneOfImage get image;
+
   /// Decreases the likelihood of the model repeating the same lines verbatim.
   @BuiltValueField(wireName: r'frequency_penalty')
   num? get frequencyPenalty;
-
-  @BuiltValueField(wireName: r'image')
-  ImageToTextOneOfImage get image;
 
   /// The maximum number of tokens to generate in the response.
   @BuiltValueField(wireName: r'max_tokens')
@@ -93,6 +93,11 @@ class _$ImageToTextOneOfSerializer implements PrimitiveSerializer<ImageToTextOne
     ImageToTextOneOf object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    yield r'image';
+    yield serializers.serialize(
+      object.image,
+      specifiedType: const FullType(ImageToTextOneOfImage),
+    );
     if (object.frequencyPenalty != null) {
       yield r'frequency_penalty';
       yield serializers.serialize(
@@ -100,11 +105,6 @@ class _$ImageToTextOneOfSerializer implements PrimitiveSerializer<ImageToTextOne
         specifiedType: const FullType(num),
       );
     }
-    yield r'image';
-    yield serializers.serialize(
-      object.image,
-      specifiedType: const FullType(ImageToTextOneOfImage),
-    );
     if (object.maxTokens != null) {
       yield r'max_tokens';
       yield serializers.serialize(
@@ -191,19 +191,19 @@ class _$ImageToTextOneOfSerializer implements PrimitiveSerializer<ImageToTextOne
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'frequency_penalty':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(num),
-          ) as num;
-          result.frequencyPenalty = valueDes;
-          break;
         case r'image':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(ImageToTextOneOfImage),
           ) as ImageToTextOneOfImage;
           result.image.replace(valueDes);
+          break;
+        case r'frequency_penalty':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(num),
+          ) as num;
+          result.frequencyPenalty = valueDes;
           break;
         case r'max_tokens':
           final valueDes = serializers.deserialize(

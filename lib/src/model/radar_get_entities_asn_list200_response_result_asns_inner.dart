@@ -11,18 +11,15 @@ part 'radar_get_entities_asn_list200_response_result_asns_inner.g.dart';
 /// RadarGetEntitiesAsnList200ResponseResultAsnsInner
 ///
 /// Properties:
-/// * [aka] 
 /// * [asn] 
 /// * [country] 
 /// * [countryName] 
 /// * [name] 
+/// * [aka] 
 /// * [orgName] 
 /// * [website] 
 @BuiltValue()
 abstract class RadarGetEntitiesAsnList200ResponseResultAsnsInner implements Built<RadarGetEntitiesAsnList200ResponseResultAsnsInner, RadarGetEntitiesAsnList200ResponseResultAsnsInnerBuilder> {
-  @BuiltValueField(wireName: r'aka')
-  String? get aka;
-
   @BuiltValueField(wireName: r'asn')
   int get asn;
 
@@ -34,6 +31,9 @@ abstract class RadarGetEntitiesAsnList200ResponseResultAsnsInner implements Buil
 
   @BuiltValueField(wireName: r'name')
   String get name;
+
+  @BuiltValueField(wireName: r'aka')
+  String? get aka;
 
   @BuiltValueField(wireName: r'orgName')
   String? get orgName;
@@ -64,13 +64,6 @@ class _$RadarGetEntitiesAsnList200ResponseResultAsnsInnerSerializer implements P
     RadarGetEntitiesAsnList200ResponseResultAsnsInner object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
-    if (object.aka != null) {
-      yield r'aka';
-      yield serializers.serialize(
-        object.aka,
-        specifiedType: const FullType(String),
-      );
-    }
     yield r'asn';
     yield serializers.serialize(
       object.asn,
@@ -91,6 +84,13 @@ class _$RadarGetEntitiesAsnList200ResponseResultAsnsInnerSerializer implements P
       object.name,
       specifiedType: const FullType(String),
     );
+    if (object.aka != null) {
+      yield r'aka';
+      yield serializers.serialize(
+        object.aka,
+        specifiedType: const FullType(String),
+      );
+    }
     if (object.orgName != null) {
       yield r'orgName';
       yield serializers.serialize(
@@ -128,13 +128,6 @@ class _$RadarGetEntitiesAsnList200ResponseResultAsnsInnerSerializer implements P
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'aka':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.aka = valueDes;
-          break;
         case r'asn':
           final valueDes = serializers.deserialize(
             value,
@@ -162,6 +155,13 @@ class _$RadarGetEntitiesAsnList200ResponseResultAsnsInnerSerializer implements P
             specifiedType: const FullType(String),
           ) as String;
           result.name = valueDes;
+          break;
+        case r'aka':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.aka = valueDes;
           break;
         case r'orgName':
           final valueDes = serializers.deserialize(

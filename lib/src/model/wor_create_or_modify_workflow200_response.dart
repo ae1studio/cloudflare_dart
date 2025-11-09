@@ -18,8 +18,8 @@ part 'wor_create_or_modify_workflow200_response.g.dart';
 /// * [errors] 
 /// * [messages] 
 /// * [result] 
-/// * [resultInfo] 
 /// * [success] 
+/// * [resultInfo] 
 @BuiltValue()
 abstract class WorCreateOrModifyWorkflow200Response implements Built<WorCreateOrModifyWorkflow200Response, WorCreateOrModifyWorkflow200ResponseBuilder> {
   @BuiltValueField(wireName: r'errors')
@@ -31,11 +31,11 @@ abstract class WorCreateOrModifyWorkflow200Response implements Built<WorCreateOr
   @BuiltValueField(wireName: r'result')
   WorCreateOrModifyWorkflow200ResponseResult get result;
 
-  @BuiltValueField(wireName: r'result_info')
-  WorListWorkflows200ResponseResultInfo? get resultInfo;
-
   @BuiltValueField(wireName: r'success')
   bool get success;
+
+  @BuiltValueField(wireName: r'result_info')
+  WorListWorkflows200ResponseResultInfo? get resultInfo;
 
   WorCreateOrModifyWorkflow200Response._();
 
@@ -75,6 +75,11 @@ class _$WorCreateOrModifyWorkflow200ResponseSerializer implements PrimitiveSeria
       object.result,
       specifiedType: const FullType(WorCreateOrModifyWorkflow200ResponseResult),
     );
+    yield r'success';
+    yield serializers.serialize(
+      object.success,
+      specifiedType: const FullType(bool),
+    );
     if (object.resultInfo != null) {
       yield r'result_info';
       yield serializers.serialize(
@@ -82,11 +87,6 @@ class _$WorCreateOrModifyWorkflow200ResponseSerializer implements PrimitiveSeria
         specifiedType: const FullType(WorListWorkflows200ResponseResultInfo),
       );
     }
-    yield r'success';
-    yield serializers.serialize(
-      object.success,
-      specifiedType: const FullType(bool),
-    );
   }
 
   @override
@@ -131,19 +131,19 @@ class _$WorCreateOrModifyWorkflow200ResponseSerializer implements PrimitiveSeria
           ) as WorCreateOrModifyWorkflow200ResponseResult;
           result.result.replace(valueDes);
           break;
-        case r'result_info':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(WorListWorkflows200ResponseResultInfo),
-          ) as WorListWorkflows200ResponseResultInfo;
-          result.resultInfo.replace(valueDes);
-          break;
         case r'success':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(bool),
           ) as bool;
           result.success = valueDes;
+          break;
+        case r'result_info':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(WorListWorkflows200ResponseResultInfo),
+          ) as WorListWorkflows200ResponseResultInfo;
+          result.resultInfo.replace(valueDes);
           break;
         default:
           unhandled.add(key);

@@ -16,8 +16,8 @@ part 'resource_sharing_share_recipient_response_single.g.dart';
 ///
 /// Properties:
 /// * [errors] 
-/// * [result] 
 /// * [success] - Whether the API call was successful.
+/// * [result] 
 @BuiltValue()
 abstract class ResourceSharingShareRecipientResponseSingle implements ResourceSharingApiResponseCommon, Built<ResourceSharingShareRecipientResponseSingle, ResourceSharingShareRecipientResponseSingleBuilder> {
   ResourceSharingShareRecipientResponseSingle._();

@@ -11,12 +11,16 @@ part 'tunnel_virtual_network_create_a_virtual_network_request.g.dart';
 /// TunnelVirtualNetworkCreateAVirtualNetworkRequest
 ///
 /// Properties:
+/// * [name] - A user-friendly name for the virtual network.
 /// * [comment] - Optional remark describing the virtual network.
 /// * [isDefault] - If `true`, this virtual network is the default for the account.
 /// * [isDefaultNetwork] - If `true`, this virtual network is the default for the account.
-/// * [name] - A user-friendly name for the virtual network.
 @BuiltValue()
 abstract class TunnelVirtualNetworkCreateAVirtualNetworkRequest implements Built<TunnelVirtualNetworkCreateAVirtualNetworkRequest, TunnelVirtualNetworkCreateAVirtualNetworkRequestBuilder> {
+  /// A user-friendly name for the virtual network.
+  @BuiltValueField(wireName: r'name')
+  String get name;
+
   /// Optional remark describing the virtual network.
   @BuiltValueField(wireName: r'comment')
   String? get comment;
@@ -29,10 +33,6 @@ abstract class TunnelVirtualNetworkCreateAVirtualNetworkRequest implements Built
   /// If `true`, this virtual network is the default for the account.
   @BuiltValueField(wireName: r'is_default_network')
   bool? get isDefaultNetwork;
-
-  /// A user-friendly name for the virtual network.
-  @BuiltValueField(wireName: r'name')
-  String get name;
 
   TunnelVirtualNetworkCreateAVirtualNetworkRequest._();
 
@@ -59,6 +59,11 @@ class _$TunnelVirtualNetworkCreateAVirtualNetworkRequestSerializer implements Pr
     TunnelVirtualNetworkCreateAVirtualNetworkRequest object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    yield r'name';
+    yield serializers.serialize(
+      object.name,
+      specifiedType: const FullType(String),
+    );
     if (object.comment != null) {
       yield r'comment';
       yield serializers.serialize(
@@ -80,11 +85,6 @@ class _$TunnelVirtualNetworkCreateAVirtualNetworkRequestSerializer implements Pr
         specifiedType: const FullType(bool),
       );
     }
-    yield r'name';
-    yield serializers.serialize(
-      object.name,
-      specifiedType: const FullType(String),
-    );
   }
 
   @override
@@ -108,6 +108,13 @@ class _$TunnelVirtualNetworkCreateAVirtualNetworkRequestSerializer implements Pr
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
+        case r'name':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.name = valueDes;
+          break;
         case r'comment':
           final valueDes = serializers.deserialize(
             value,
@@ -128,13 +135,6 @@ class _$TunnelVirtualNetworkCreateAVirtualNetworkRequestSerializer implements Pr
             specifiedType: const FullType(bool),
           ) as bool;
           result.isDefaultNetwork = valueDes;
-          break;
-        case r'name':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.name = valueDes;
           break;
         default:
           unhandled.add(key);

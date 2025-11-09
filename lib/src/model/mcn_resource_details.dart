@@ -25,7 +25,6 @@ part 'mcn_resource_details.g.dart';
 /// * [deploymentProvider] 
 /// * [id] 
 /// * [managed] 
-/// * [managedBy] 
 /// * [monthlyCostEstimate] 
 /// * [name] 
 /// * [nativeId] 
@@ -40,6 +39,7 @@ part 'mcn_resource_details.g.dart';
 /// * [tags] 
 /// * [updatedAt] 
 /// * [url] 
+/// * [managedBy] 
 @BuiltValue()
 abstract class McnResourceDetails implements Built<McnResourceDetails, McnResourceDetailsBuilder> {
   @BuiltValueField(wireName: r'account_id')
@@ -60,9 +60,6 @@ abstract class McnResourceDetails implements Built<McnResourceDetails, McnResour
 
   @BuiltValueField(wireName: r'managed')
   bool get managed;
-
-  @BuiltValueField(wireName: r'managed_by')
-  BuiltList<McnCloudPlatformClient>? get managedBy;
 
   @BuiltValueField(wireName: r'monthly_cost_estimate')
   McnCost get monthlyCostEstimate;
@@ -106,6 +103,9 @@ abstract class McnResourceDetails implements Built<McnResourceDetails, McnResour
 
   @BuiltValueField(wireName: r'url')
   String get url;
+
+  @BuiltValueField(wireName: r'managed_by')
+  BuiltList<McnCloudPlatformClient>? get managedBy;
 
   McnResourceDetails._();
 
@@ -160,13 +160,6 @@ class _$McnResourceDetailsSerializer implements PrimitiveSerializer<McnResourceD
       object.managed,
       specifiedType: const FullType(bool),
     );
-    if (object.managedBy != null) {
-      yield r'managed_by';
-      yield serializers.serialize(
-        object.managedBy,
-        specifiedType: const FullType(BuiltList, [FullType(McnCloudPlatformClient)]),
-      );
-    }
     yield r'monthly_cost_estimate';
     yield serializers.serialize(
       object.monthlyCostEstimate,
@@ -237,6 +230,13 @@ class _$McnResourceDetailsSerializer implements PrimitiveSerializer<McnResourceD
       object.url,
       specifiedType: const FullType(String),
     );
+    if (object.managedBy != null) {
+      yield r'managed_by';
+      yield serializers.serialize(
+        object.managedBy,
+        specifiedType: const FullType(BuiltList, [FullType(McnCloudPlatformClient)]),
+      );
+    }
   }
 
   @override
@@ -301,13 +301,6 @@ class _$McnResourceDetailsSerializer implements PrimitiveSerializer<McnResourceD
             specifiedType: const FullType(bool),
           ) as bool;
           result.managed = valueDes;
-          break;
-        case r'managed_by':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(McnCloudPlatformClient)]),
-          ) as BuiltList<McnCloudPlatformClient>;
-          result.managedBy.replace(valueDes);
           break;
         case r'monthly_cost_estimate':
           final valueDes = serializers.deserialize(
@@ -406,6 +399,13 @@ class _$McnResourceDetailsSerializer implements PrimitiveSerializer<McnResourceD
             specifiedType: const FullType(String),
           ) as String;
           result.url = valueDes;
+          break;
+        case r'managed_by':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BuiltList, [FullType(McnCloudPlatformClient)]),
+          ) as BuiltList<McnCloudPlatformClient>;
+          result.managedBy.replace(valueDes);
           break;
         default:
           unhandled.add(key);

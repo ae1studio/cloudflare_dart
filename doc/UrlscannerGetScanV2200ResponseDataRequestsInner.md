@@ -9,8 +9,8 @@ import 'package:cloudflare_dart/api.dart';
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **request** | [**UrlscannerGetScanV2200ResponseDataRequestsInnerRequest**](UrlscannerGetScanV2200ResponseDataRequestsInnerRequest.md) |  | 
-**requests** | [**BuiltList&lt;UrlscannerGetScanV2200ResponseDataRequestsInnerRequestsInner&gt;**](UrlscannerGetScanV2200ResponseDataRequestsInnerRequestsInner.md) |  | [optional] 
 **response** | [**UrlscannerGetScanV2200ResponseDataRequestsInnerResponse**](UrlscannerGetScanV2200ResponseDataRequestsInnerResponse.md) |  | 
+**requests** | [**BuiltList&lt;UrlscannerGetScanV2200ResponseDataRequestsInnerRequestsInner&gt;**](UrlscannerGetScanV2200ResponseDataRequestsInnerRequestsInner.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

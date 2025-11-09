@@ -21,12 +21,12 @@ part 'email_security_get_message_detections200_response_all_of_result.g.dart';
 /// Properties:
 /// * [action] 
 /// * [attachments] 
-/// * [finalDisposition] 
 /// * [headers] 
 /// * [links] 
 /// * [senderInfo] 
 /// * [threatCategories] 
 /// * [validation] 
+/// * [finalDisposition] 
 @BuiltValue()
 abstract class EmailSecurityGetMessageDetections200ResponseAllOfResult implements Built<EmailSecurityGetMessageDetections200ResponseAllOfResult, EmailSecurityGetMessageDetections200ResponseAllOfResultBuilder> {
   @BuiltValueField(wireName: r'action')
@@ -34,9 +34,6 @@ abstract class EmailSecurityGetMessageDetections200ResponseAllOfResult implement
 
   @BuiltValueField(wireName: r'attachments')
   BuiltList<EmailSecurityAttachment> get attachments;
-
-  @BuiltValueField(wireName: r'final_disposition')
-  EmailSecurityDispositionLabel? get finalDisposition;
 
   @BuiltValueField(wireName: r'headers')
   BuiltList<EmailSecurityMessageHeader> get headers;
@@ -52,6 +49,9 @@ abstract class EmailSecurityGetMessageDetections200ResponseAllOfResult implement
 
   @BuiltValueField(wireName: r'validation')
   EmailSecurityGetMessageDetections200ResponseAllOfResultValidation get validation;
+
+  @BuiltValueField(wireName: r'final_disposition')
+  EmailSecurityDispositionLabel? get finalDisposition;
 
   EmailSecurityGetMessageDetections200ResponseAllOfResult._();
 
@@ -86,13 +86,6 @@ class _$EmailSecurityGetMessageDetections200ResponseAllOfResultSerializer implem
       object.attachments,
       specifiedType: const FullType(BuiltList, [FullType(EmailSecurityAttachment)]),
     );
-    if (object.finalDisposition != null) {
-      yield r'final_disposition';
-      yield serializers.serialize(
-        object.finalDisposition,
-        specifiedType: const FullType(EmailSecurityDispositionLabel),
-      );
-    }
     yield r'headers';
     yield serializers.serialize(
       object.headers,
@@ -118,6 +111,13 @@ class _$EmailSecurityGetMessageDetections200ResponseAllOfResultSerializer implem
       object.validation,
       specifiedType: const FullType(EmailSecurityGetMessageDetections200ResponseAllOfResultValidation),
     );
+    if (object.finalDisposition != null) {
+      yield r'final_disposition';
+      yield serializers.serialize(
+        object.finalDisposition,
+        specifiedType: const FullType(EmailSecurityDispositionLabel),
+      );
+    }
   }
 
   @override
@@ -155,13 +155,6 @@ class _$EmailSecurityGetMessageDetections200ResponseAllOfResultSerializer implem
           ) as BuiltList<EmailSecurityAttachment>;
           result.attachments.replace(valueDes);
           break;
-        case r'final_disposition':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(EmailSecurityDispositionLabel),
-          ) as EmailSecurityDispositionLabel;
-          result.finalDisposition = valueDes;
-          break;
         case r'headers':
           final valueDes = serializers.deserialize(
             value,
@@ -196,6 +189,13 @@ class _$EmailSecurityGetMessageDetections200ResponseAllOfResultSerializer implem
             specifiedType: const FullType(EmailSecurityGetMessageDetections200ResponseAllOfResultValidation),
           ) as EmailSecurityGetMessageDetections200ResponseAllOfResultValidation;
           result.validation.replace(valueDes);
+          break;
+        case r'final_disposition':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(EmailSecurityDispositionLabel),
+          ) as EmailSecurityDispositionLabel;
+          result.finalDisposition = valueDes;
           break;
         default:
           unhandled.add(key);

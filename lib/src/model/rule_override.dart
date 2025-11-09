@@ -12,13 +12,17 @@ part 'rule_override.g.dart';
 /// A rule-level override.
 ///
 /// Properties:
+/// * [id] - The ID of the rule to override.
 /// * [action] - The action to override the rule with.
 /// * [enabled] - Whether to enable execution of the rule.
-/// * [id] - The ID of the rule to override.
 /// * [scoreThreshold] - The score threshold to use for the rule.
 /// * [sensitivityLevel] - The sensitivity level to use for the rule. This option is only applicable for DDoS phases.
 @BuiltValue()
 abstract class RuleOverride implements Built<RuleOverride, RuleOverrideBuilder> {
+  /// The ID of the rule to override.
+  @BuiltValueField(wireName: r'id')
+  String get id;
+
   /// The action to override the rule with.
   @BuiltValueField(wireName: r'action')
   String? get action;
@@ -26,10 +30,6 @@ abstract class RuleOverride implements Built<RuleOverride, RuleOverrideBuilder> 
   /// Whether to enable execution of the rule.
   @BuiltValueField(wireName: r'enabled')
   bool? get enabled;
-
-  /// The ID of the rule to override.
-  @BuiltValueField(wireName: r'id')
-  String get id;
 
   /// The score threshold to use for the rule.
   @BuiltValueField(wireName: r'score_threshold')
@@ -63,6 +63,11 @@ class _$RuleOverrideSerializer implements PrimitiveSerializer<RuleOverride> {
     RuleOverride object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    yield r'id';
+    yield serializers.serialize(
+      object.id,
+      specifiedType: const FullType(String),
+    );
     if (object.action != null) {
       yield r'action';
       yield serializers.serialize(
@@ -77,11 +82,6 @@ class _$RuleOverrideSerializer implements PrimitiveSerializer<RuleOverride> {
         specifiedType: const FullType(bool),
       );
     }
-    yield r'id';
-    yield serializers.serialize(
-      object.id,
-      specifiedType: const FullType(String),
-    );
     if (object.scoreThreshold != null) {
       yield r'score_threshold';
       yield serializers.serialize(
@@ -119,6 +119,13 @@ class _$RuleOverrideSerializer implements PrimitiveSerializer<RuleOverride> {
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
+        case r'id':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.id = valueDes;
+          break;
         case r'action':
           final valueDes = serializers.deserialize(
             value,
@@ -132,13 +139,6 @@ class _$RuleOverrideSerializer implements PrimitiveSerializer<RuleOverride> {
             specifiedType: const FullType(bool),
           ) as bool;
           result.enabled = valueDes;
-          break;
-        case r'id':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.id = valueDes;
           break;
         case r'score_threshold':
           final valueDes = serializers.deserialize(

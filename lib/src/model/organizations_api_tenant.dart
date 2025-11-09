@@ -17,7 +17,6 @@ part 'organizations_api_tenant.g.dart';
 ///
 /// Properties:
 /// * [cdate] 
-/// * [customerId] 
 /// * [edate] 
 /// * [tenantContacts] 
 /// * [tenantLabels] 
@@ -28,13 +27,11 @@ part 'organizations_api_tenant.g.dart';
 /// * [tenantTag] 
 /// * [tenantType] 
 /// * [tenantUnits] 
+/// * [customerId] 
 @BuiltValue()
 abstract class OrganizationsApiTenant implements Built<OrganizationsApiTenant, OrganizationsApiTenantBuilder> {
   @BuiltValueField(wireName: r'cdate')
   DateTime get cdate;
-
-  @BuiltValueField(wireName: r'customer_id')
-  String? get customerId;
 
   @BuiltValueField(wireName: r'edate')
   DateTime get edate;
@@ -66,6 +63,9 @@ abstract class OrganizationsApiTenant implements Built<OrganizationsApiTenant, O
   @BuiltValueField(wireName: r'tenant_units')
   BuiltList<OrganizationsApiTenantUnit> get tenantUnits;
 
+  @BuiltValueField(wireName: r'customer_id')
+  String? get customerId;
+
   OrganizationsApiTenant._();
 
   factory OrganizationsApiTenant([void updates(OrganizationsApiTenantBuilder b)]) = _$OrganizationsApiTenant;
@@ -94,13 +94,6 @@ class _$OrganizationsApiTenantSerializer implements PrimitiveSerializer<Organiza
       object.cdate,
       specifiedType: const FullType(DateTime),
     );
-    if (object.customerId != null) {
-      yield r'customer_id';
-      yield serializers.serialize(
-        object.customerId,
-        specifiedType: const FullType(String),
-      );
-    }
     yield r'edate';
     yield serializers.serialize(
       object.edate,
@@ -151,6 +144,13 @@ class _$OrganizationsApiTenantSerializer implements PrimitiveSerializer<Organiza
       object.tenantUnits,
       specifiedType: const FullType(BuiltList, [FullType(OrganizationsApiTenantUnit)]),
     );
+    if (object.customerId != null) {
+      yield r'customer_id';
+      yield serializers.serialize(
+        object.customerId,
+        specifiedType: const FullType(String),
+      );
+    }
   }
 
   @override
@@ -180,13 +180,6 @@ class _$OrganizationsApiTenantSerializer implements PrimitiveSerializer<Organiza
             specifiedType: const FullType(DateTime),
           ) as DateTime;
           result.cdate = valueDes;
-          break;
-        case r'customer_id':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.customerId = valueDes;
           break;
         case r'edate':
           final valueDes = serializers.deserialize(
@@ -257,6 +250,13 @@ class _$OrganizationsApiTenantSerializer implements PrimitiveSerializer<Organiza
             specifiedType: const FullType(BuiltList, [FullType(OrganizationsApiTenantUnit)]),
           ) as BuiltList<OrganizationsApiTenantUnit>;
           result.tenantUnits.replace(valueDes);
+          break;
+        case r'customer_id':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.customerId = valueDes;
           break;
         default:
           unhandled.add(key);

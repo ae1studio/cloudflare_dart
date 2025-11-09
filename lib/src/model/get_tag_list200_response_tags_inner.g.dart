@@ -8,6 +8,10 @@ part of 'get_tag_list200_response_tags_inner.dart';
 
 class _$GetTagList200ResponseTagsInner extends GetTagList200ResponseTagsInner {
   @override
+  final String uuid;
+  @override
+  final String value;
+  @override
   final String? activeDuration;
   @override
   final String? actorCategory;
@@ -37,17 +41,15 @@ class _$GetTagList200ResponseTagsInner extends GetTagList200ResponseTagsInner {
   final num? priority;
   @override
   final String? sophisticationLevel;
-  @override
-  final String uuid;
-  @override
-  final String value;
 
   factory _$GetTagList200ResponseTagsInner(
           [void Function(GetTagList200ResponseTagsInnerBuilder)? updates]) =>
       (GetTagList200ResponseTagsInnerBuilder()..update(updates))._build();
 
   _$GetTagList200ResponseTagsInner._(
-      {this.activeDuration,
+      {required this.uuid,
+      required this.value,
+      this.activeDuration,
       this.actorCategory,
       this.aliasGroupNames,
       this.aliasGroupNamesInternal,
@@ -61,9 +63,7 @@ class _$GetTagList200ResponseTagsInner extends GetTagList200ResponseTagsInner {
       this.opsecLevel,
       this.originCountryISO,
       this.priority,
-      this.sophisticationLevel,
-      required this.uuid,
-      required this.value})
+      this.sophisticationLevel})
       : super._();
   @override
   GetTagList200ResponseTagsInner rebuild(
@@ -78,6 +78,8 @@ class _$GetTagList200ResponseTagsInner extends GetTagList200ResponseTagsInner {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is GetTagList200ResponseTagsInner &&
+        uuid == other.uuid &&
+        value == other.value &&
         activeDuration == other.activeDuration &&
         actorCategory == other.actorCategory &&
         aliasGroupNames == other.aliasGroupNames &&
@@ -92,14 +94,14 @@ class _$GetTagList200ResponseTagsInner extends GetTagList200ResponseTagsInner {
         opsecLevel == other.opsecLevel &&
         originCountryISO == other.originCountryISO &&
         priority == other.priority &&
-        sophisticationLevel == other.sophisticationLevel &&
-        uuid == other.uuid &&
-        value == other.value;
+        sophisticationLevel == other.sophisticationLevel;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
+    _$hash = $jc(_$hash, uuid.hashCode);
+    _$hash = $jc(_$hash, value.hashCode);
     _$hash = $jc(_$hash, activeDuration.hashCode);
     _$hash = $jc(_$hash, actorCategory.hashCode);
     _$hash = $jc(_$hash, aliasGroupNames.hashCode);
@@ -115,8 +117,6 @@ class _$GetTagList200ResponseTagsInner extends GetTagList200ResponseTagsInner {
     _$hash = $jc(_$hash, originCountryISO.hashCode);
     _$hash = $jc(_$hash, priority.hashCode);
     _$hash = $jc(_$hash, sophisticationLevel.hashCode);
-    _$hash = $jc(_$hash, uuid.hashCode);
-    _$hash = $jc(_$hash, value.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -124,6 +124,8 @@ class _$GetTagList200ResponseTagsInner extends GetTagList200ResponseTagsInner {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'GetTagList200ResponseTagsInner')
+          ..add('uuid', uuid)
+          ..add('value', value)
           ..add('activeDuration', activeDuration)
           ..add('actorCategory', actorCategory)
           ..add('aliasGroupNames', aliasGroupNames)
@@ -138,9 +140,7 @@ class _$GetTagList200ResponseTagsInner extends GetTagList200ResponseTagsInner {
           ..add('opsecLevel', opsecLevel)
           ..add('originCountryISO', originCountryISO)
           ..add('priority', priority)
-          ..add('sophisticationLevel', sophisticationLevel)
-          ..add('uuid', uuid)
-          ..add('value', value))
+          ..add('sophisticationLevel', sophisticationLevel))
         .toString();
   }
 }
@@ -150,6 +150,14 @@ class GetTagList200ResponseTagsInnerBuilder
         Builder<GetTagList200ResponseTagsInner,
             GetTagList200ResponseTagsInnerBuilder> {
   _$GetTagList200ResponseTagsInner? _$v;
+
+  String? _uuid;
+  String? get uuid => _$this._uuid;
+  set uuid(String? uuid) => _$this._uuid = uuid;
+
+  String? _value;
+  String? get value => _$this._value;
+  set value(String? value) => _$this._value = value;
 
   String? _activeDuration;
   String? get activeDuration => _$this._activeDuration;
@@ -225,14 +233,6 @@ class GetTagList200ResponseTagsInnerBuilder
   set sophisticationLevel(String? sophisticationLevel) =>
       _$this._sophisticationLevel = sophisticationLevel;
 
-  String? _uuid;
-  String? get uuid => _$this._uuid;
-  set uuid(String? uuid) => _$this._uuid = uuid;
-
-  String? _value;
-  String? get value => _$this._value;
-  set value(String? value) => _$this._value = value;
-
   GetTagList200ResponseTagsInnerBuilder() {
     GetTagList200ResponseTagsInner._defaults(this);
   }
@@ -240,6 +240,8 @@ class GetTagList200ResponseTagsInnerBuilder
   GetTagList200ResponseTagsInnerBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
+      _uuid = $v.uuid;
+      _value = $v.value;
       _activeDuration = $v.activeDuration;
       _actorCategory = $v.actorCategory;
       _aliasGroupNames = $v.aliasGroupNames?.toBuilder();
@@ -255,8 +257,6 @@ class GetTagList200ResponseTagsInnerBuilder
       _originCountryISO = $v.originCountryISO;
       _priority = $v.priority;
       _sophisticationLevel = $v.sophisticationLevel;
-      _uuid = $v.uuid;
-      _value = $v.value;
       _$v = null;
     }
     return this;
@@ -280,6 +280,10 @@ class GetTagList200ResponseTagsInnerBuilder
     try {
       _$result = _$v ??
           _$GetTagList200ResponseTagsInner._(
+            uuid: BuiltValueNullFieldError.checkNotNull(
+                uuid, r'GetTagList200ResponseTagsInner', 'uuid'),
+            value: BuiltValueNullFieldError.checkNotNull(
+                value, r'GetTagList200ResponseTagsInner', 'value'),
             activeDuration: activeDuration,
             actorCategory: actorCategory,
             aliasGroupNames: _aliasGroupNames?.build(),
@@ -295,10 +299,6 @@ class GetTagList200ResponseTagsInnerBuilder
             originCountryISO: originCountryISO,
             priority: priority,
             sophisticationLevel: sophisticationLevel,
-            uuid: BuiltValueNullFieldError.checkNotNull(
-                uuid, r'GetTagList200ResponseTagsInner', 'uuid'),
-            value: BuiltValueNullFieldError.checkNotNull(
-                value, r'GetTagList200ResponseTagsInner', 'value'),
           );
     } catch (_) {
       late String _$failedField;

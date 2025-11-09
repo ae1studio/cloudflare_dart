@@ -9,11 +9,11 @@ part of 'rulesets_set_cache_settings_status_code_ttl_inner.dart';
 class _$RulesetsSetCacheSettingsStatusCodeTTLInner
     extends RulesetsSetCacheSettingsStatusCodeTTLInner {
   @override
+  final int value;
+  @override
   final int? statusCode;
   @override
   final StatusCodeRange? statusCodeRange;
-  @override
-  final int value;
 
   factory _$RulesetsSetCacheSettingsStatusCodeTTLInner(
           [void Function(RulesetsSetCacheSettingsStatusCodeTTLInnerBuilder)?
@@ -22,7 +22,7 @@ class _$RulesetsSetCacheSettingsStatusCodeTTLInner
           ._build();
 
   _$RulesetsSetCacheSettingsStatusCodeTTLInner._(
-      {this.statusCode, this.statusCodeRange, required this.value})
+      {required this.value, this.statusCode, this.statusCodeRange})
       : super._();
   @override
   RulesetsSetCacheSettingsStatusCodeTTLInner rebuild(
@@ -38,17 +38,17 @@ class _$RulesetsSetCacheSettingsStatusCodeTTLInner
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is RulesetsSetCacheSettingsStatusCodeTTLInner &&
+        value == other.value &&
         statusCode == other.statusCode &&
-        statusCodeRange == other.statusCodeRange &&
-        value == other.value;
+        statusCodeRange == other.statusCodeRange;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
+    _$hash = $jc(_$hash, value.hashCode);
     _$hash = $jc(_$hash, statusCode.hashCode);
     _$hash = $jc(_$hash, statusCodeRange.hashCode);
-    _$hash = $jc(_$hash, value.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -57,9 +57,9 @@ class _$RulesetsSetCacheSettingsStatusCodeTTLInner
   String toString() {
     return (newBuiltValueToStringHelper(
             r'RulesetsSetCacheSettingsStatusCodeTTLInner')
+          ..add('value', value)
           ..add('statusCode', statusCode)
-          ..add('statusCodeRange', statusCodeRange)
-          ..add('value', value))
+          ..add('statusCodeRange', statusCodeRange))
         .toString();
   }
 }
@@ -69,6 +69,10 @@ class RulesetsSetCacheSettingsStatusCodeTTLInnerBuilder
         Builder<RulesetsSetCacheSettingsStatusCodeTTLInner,
             RulesetsSetCacheSettingsStatusCodeTTLInnerBuilder> {
   _$RulesetsSetCacheSettingsStatusCodeTTLInner? _$v;
+
+  int? _value;
+  int? get value => _$this._value;
+  set value(int? value) => _$this._value = value;
 
   int? _statusCode;
   int? get statusCode => _$this._statusCode;
@@ -80,10 +84,6 @@ class RulesetsSetCacheSettingsStatusCodeTTLInnerBuilder
   set statusCodeRange(StatusCodeRangeBuilder? statusCodeRange) =>
       _$this._statusCodeRange = statusCodeRange;
 
-  int? _value;
-  int? get value => _$this._value;
-  set value(int? value) => _$this._value = value;
-
   RulesetsSetCacheSettingsStatusCodeTTLInnerBuilder() {
     RulesetsSetCacheSettingsStatusCodeTTLInner._defaults(this);
   }
@@ -91,9 +91,9 @@ class RulesetsSetCacheSettingsStatusCodeTTLInnerBuilder
   RulesetsSetCacheSettingsStatusCodeTTLInnerBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
+      _value = $v.value;
       _statusCode = $v.statusCode;
       _statusCodeRange = $v.statusCodeRange?.toBuilder();
-      _value = $v.value;
       _$v = null;
     }
     return this;
@@ -119,10 +119,10 @@ class RulesetsSetCacheSettingsStatusCodeTTLInnerBuilder
     try {
       _$result = _$v ??
           _$RulesetsSetCacheSettingsStatusCodeTTLInner._(
-            statusCode: statusCode,
-            statusCodeRange: _statusCodeRange?.build(),
             value: BuiltValueNullFieldError.checkNotNull(
                 value, r'RulesetsSetCacheSettingsStatusCodeTTLInner', 'value'),
+            statusCode: statusCode,
+            statusCodeRange: _statusCodeRange?.build(),
           );
     } catch (_) {
       late String _$failedField;

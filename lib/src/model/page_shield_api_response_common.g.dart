@@ -9,30 +9,30 @@ part of 'page_shield_api_response_common.dart';
 abstract class PageShieldApiResponseCommonBuilder {
   void replace(PageShieldApiResponseCommon other);
   void update(void Function(PageShieldApiResponseCommonBuilder) updates);
+  bool? get success;
+  set success(bool? success);
+
   ListBuilder<AaaMessagesInner> get errors;
   set errors(ListBuilder<AaaMessagesInner>? errors);
 
   ListBuilder<AaaMessagesInner> get messages;
   set messages(ListBuilder<AaaMessagesInner>? messages);
-
-  bool? get success;
-  set success(bool? success);
 }
 
 class _$$PageShieldApiResponseCommon extends $PageShieldApiResponseCommon {
   @override
+  final bool success;
+  @override
   final BuiltList<AaaMessagesInner>? errors;
   @override
   final BuiltList<AaaMessagesInner>? messages;
-  @override
-  final bool success;
 
   factory _$$PageShieldApiResponseCommon(
           [void Function($PageShieldApiResponseCommonBuilder)? updates]) =>
       ($PageShieldApiResponseCommonBuilder()..update(updates))._build();
 
   _$$PageShieldApiResponseCommon._(
-      {this.errors, this.messages, required this.success})
+      {required this.success, this.errors, this.messages})
       : super._();
   @override
   $PageShieldApiResponseCommon rebuild(
@@ -47,17 +47,17 @@ class _$$PageShieldApiResponseCommon extends $PageShieldApiResponseCommon {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is $PageShieldApiResponseCommon &&
+        success == other.success &&
         errors == other.errors &&
-        messages == other.messages &&
-        success == other.success;
+        messages == other.messages;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
+    _$hash = $jc(_$hash, success.hashCode);
     _$hash = $jc(_$hash, errors.hashCode);
     _$hash = $jc(_$hash, messages.hashCode);
-    _$hash = $jc(_$hash, success.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -65,9 +65,9 @@ class _$$PageShieldApiResponseCommon extends $PageShieldApiResponseCommon {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'$PageShieldApiResponseCommon')
+          ..add('success', success)
           ..add('errors', errors)
-          ..add('messages', messages)
-          ..add('success', success))
+          ..add('messages', messages))
         .toString();
   }
 }
@@ -78,6 +78,10 @@ class $PageShieldApiResponseCommonBuilder
             $PageShieldApiResponseCommonBuilder>,
         PageShieldApiResponseCommonBuilder {
   _$$PageShieldApiResponseCommon? _$v;
+
+  bool? _success;
+  bool? get success => _$this._success;
+  set success(covariant bool? success) => _$this._success = success;
 
   ListBuilder<AaaMessagesInner>? _errors;
   ListBuilder<AaaMessagesInner> get errors =>
@@ -91,10 +95,6 @@ class $PageShieldApiResponseCommonBuilder
   set messages(covariant ListBuilder<AaaMessagesInner>? messages) =>
       _$this._messages = messages;
 
-  bool? _success;
-  bool? get success => _$this._success;
-  set success(covariant bool? success) => _$this._success = success;
-
   $PageShieldApiResponseCommonBuilder() {
     $PageShieldApiResponseCommon._defaults(this);
   }
@@ -102,9 +102,9 @@ class $PageShieldApiResponseCommonBuilder
   $PageShieldApiResponseCommonBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
+      _success = $v.success;
       _errors = $v.errors?.toBuilder();
       _messages = $v.messages?.toBuilder();
-      _success = $v.success;
       _$v = null;
     }
     return this;
@@ -128,10 +128,10 @@ class $PageShieldApiResponseCommonBuilder
     try {
       _$result = _$v ??
           _$$PageShieldApiResponseCommon._(
-            errors: _errors?.build(),
-            messages: _messages?.build(),
             success: BuiltValueNullFieldError.checkNotNull(
                 success, r'$PageShieldApiResponseCommon', 'success'),
+            errors: _errors?.build(),
+            messages: _messages?.build(),
           );
     } catch (_) {
       late String _$failedField;

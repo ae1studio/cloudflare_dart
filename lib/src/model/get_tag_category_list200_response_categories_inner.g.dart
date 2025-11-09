@@ -9,15 +9,15 @@ part of 'get_tag_category_list200_response_categories_inner.dart';
 class _$GetTagCategoryList200ResponseCategoriesInner
     extends GetTagCategoryList200ResponseCategoriesInner {
   @override
+  final String name;
+  @override
+  final String uuid;
+  @override
   final String? createdAt;
   @override
   final String? description;
   @override
-  final String name;
-  @override
   final String? updatedAt;
-  @override
-  final String uuid;
 
   factory _$GetTagCategoryList200ResponseCategoriesInner(
           [void Function(GetTagCategoryList200ResponseCategoriesInnerBuilder)?
@@ -26,11 +26,11 @@ class _$GetTagCategoryList200ResponseCategoriesInner
           ._build();
 
   _$GetTagCategoryList200ResponseCategoriesInner._(
-      {this.createdAt,
+      {required this.name,
+      required this.uuid,
+      this.createdAt,
       this.description,
-      required this.name,
-      this.updatedAt,
-      required this.uuid})
+      this.updatedAt})
       : super._();
   @override
   GetTagCategoryList200ResponseCategoriesInner rebuild(
@@ -46,21 +46,21 @@ class _$GetTagCategoryList200ResponseCategoriesInner
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is GetTagCategoryList200ResponseCategoriesInner &&
+        name == other.name &&
+        uuid == other.uuid &&
         createdAt == other.createdAt &&
         description == other.description &&
-        name == other.name &&
-        updatedAt == other.updatedAt &&
-        uuid == other.uuid;
+        updatedAt == other.updatedAt;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
+    _$hash = $jc(_$hash, name.hashCode);
+    _$hash = $jc(_$hash, uuid.hashCode);
     _$hash = $jc(_$hash, createdAt.hashCode);
     _$hash = $jc(_$hash, description.hashCode);
-    _$hash = $jc(_$hash, name.hashCode);
     _$hash = $jc(_$hash, updatedAt.hashCode);
-    _$hash = $jc(_$hash, uuid.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -69,11 +69,11 @@ class _$GetTagCategoryList200ResponseCategoriesInner
   String toString() {
     return (newBuiltValueToStringHelper(
             r'GetTagCategoryList200ResponseCategoriesInner')
+          ..add('name', name)
+          ..add('uuid', uuid)
           ..add('createdAt', createdAt)
           ..add('description', description)
-          ..add('name', name)
-          ..add('updatedAt', updatedAt)
-          ..add('uuid', uuid))
+          ..add('updatedAt', updatedAt))
         .toString();
   }
 }
@@ -84,6 +84,14 @@ class GetTagCategoryList200ResponseCategoriesInnerBuilder
             GetTagCategoryList200ResponseCategoriesInnerBuilder> {
   _$GetTagCategoryList200ResponseCategoriesInner? _$v;
 
+  String? _name;
+  String? get name => _$this._name;
+  set name(String? name) => _$this._name = name;
+
+  String? _uuid;
+  String? get uuid => _$this._uuid;
+  set uuid(String? uuid) => _$this._uuid = uuid;
+
   String? _createdAt;
   String? get createdAt => _$this._createdAt;
   set createdAt(String? createdAt) => _$this._createdAt = createdAt;
@@ -92,17 +100,9 @@ class GetTagCategoryList200ResponseCategoriesInnerBuilder
   String? get description => _$this._description;
   set description(String? description) => _$this._description = description;
 
-  String? _name;
-  String? get name => _$this._name;
-  set name(String? name) => _$this._name = name;
-
   String? _updatedAt;
   String? get updatedAt => _$this._updatedAt;
   set updatedAt(String? updatedAt) => _$this._updatedAt = updatedAt;
-
-  String? _uuid;
-  String? get uuid => _$this._uuid;
-  set uuid(String? uuid) => _$this._uuid = uuid;
 
   GetTagCategoryList200ResponseCategoriesInnerBuilder() {
     GetTagCategoryList200ResponseCategoriesInner._defaults(this);
@@ -111,11 +111,11 @@ class GetTagCategoryList200ResponseCategoriesInnerBuilder
   GetTagCategoryList200ResponseCategoriesInnerBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
+      _name = $v.name;
+      _uuid = $v.uuid;
       _createdAt = $v.createdAt;
       _description = $v.description;
-      _name = $v.name;
       _updatedAt = $v.updatedAt;
-      _uuid = $v.uuid;
       _$v = null;
     }
     return this;
@@ -139,13 +139,13 @@ class GetTagCategoryList200ResponseCategoriesInnerBuilder
   _$GetTagCategoryList200ResponseCategoriesInner _build() {
     final _$result = _$v ??
         _$GetTagCategoryList200ResponseCategoriesInner._(
-          createdAt: createdAt,
-          description: description,
           name: BuiltValueNullFieldError.checkNotNull(
               name, r'GetTagCategoryList200ResponseCategoriesInner', 'name'),
-          updatedAt: updatedAt,
           uuid: BuiltValueNullFieldError.checkNotNull(
               uuid, r'GetTagCategoryList200ResponseCategoriesInner', 'uuid'),
+          createdAt: createdAt,
+          description: description,
+          updatedAt: updatedAt,
         );
     replace(_$result);
     return _$result;

@@ -19,9 +19,9 @@ part 'custom_entry.g.dart';
 /// * [id] 
 /// * [name] 
 /// * [pattern] 
-/// * [profileId] 
 /// * [updatedAt] 
 /// * [type] 
+/// * [profileId] 
 @BuiltValue()
 abstract class CustomEntry implements DlpCustomEntry, Built<CustomEntry, CustomEntryBuilder> {
   @BuiltValueField(wireName: r'type')

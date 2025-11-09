@@ -12,16 +12,16 @@ class _$MessagesToolsInnerOneOfParameters
   final BuiltMap<String, MessagesToolsInnerOneOfParametersPropertiesValue>
       properties;
   @override
-  final BuiltList<String>? required_;
-  @override
   final String type;
+  @override
+  final BuiltList<String>? required_;
 
   factory _$MessagesToolsInnerOneOfParameters(
           [void Function(MessagesToolsInnerOneOfParametersBuilder)? updates]) =>
       (MessagesToolsInnerOneOfParametersBuilder()..update(updates))._build();
 
   _$MessagesToolsInnerOneOfParameters._(
-      {required this.properties, this.required_, required this.type})
+      {required this.properties, required this.type, this.required_})
       : super._();
   @override
   MessagesToolsInnerOneOfParameters rebuild(
@@ -37,16 +37,16 @@ class _$MessagesToolsInnerOneOfParameters
     if (identical(other, this)) return true;
     return other is MessagesToolsInnerOneOfParameters &&
         properties == other.properties &&
-        required_ == other.required_ &&
-        type == other.type;
+        type == other.type &&
+        required_ == other.required_;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
     _$hash = $jc(_$hash, properties.hashCode);
-    _$hash = $jc(_$hash, required_.hashCode);
     _$hash = $jc(_$hash, type.hashCode);
+    _$hash = $jc(_$hash, required_.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -55,8 +55,8 @@ class _$MessagesToolsInnerOneOfParameters
   String toString() {
     return (newBuiltValueToStringHelper(r'MessagesToolsInnerOneOfParameters')
           ..add('properties', properties)
-          ..add('required_', required_)
-          ..add('type', type))
+          ..add('type', type)
+          ..add('required_', required_))
         .toString();
   }
 }
@@ -77,15 +77,15 @@ class MessagesToolsInnerOneOfParametersBuilder
               properties) =>
       _$this._properties = properties;
 
+  String? _type;
+  String? get type => _$this._type;
+  set type(String? type) => _$this._type = type;
+
   ListBuilder<String>? _required_;
   ListBuilder<String> get required_ =>
       _$this._required_ ??= ListBuilder<String>();
   set required_(ListBuilder<String>? required_) =>
       _$this._required_ = required_;
-
-  String? _type;
-  String? get type => _$this._type;
-  set type(String? type) => _$this._type = type;
 
   MessagesToolsInnerOneOfParametersBuilder() {
     MessagesToolsInnerOneOfParameters._defaults(this);
@@ -95,8 +95,8 @@ class MessagesToolsInnerOneOfParametersBuilder
     final $v = _$v;
     if ($v != null) {
       _properties = $v.properties.toBuilder();
-      _required_ = $v.required_?.toBuilder();
       _type = $v.type;
+      _required_ = $v.required_?.toBuilder();
       _$v = null;
     }
     return this;
@@ -122,15 +122,16 @@ class MessagesToolsInnerOneOfParametersBuilder
       _$result = _$v ??
           _$MessagesToolsInnerOneOfParameters._(
             properties: properties.build(),
-            required_: _required_?.build(),
             type: BuiltValueNullFieldError.checkNotNull(
                 type, r'MessagesToolsInnerOneOfParameters', 'type'),
+            required_: _required_?.build(),
           );
     } catch (_) {
       late String _$failedField;
       try {
         _$failedField = 'properties';
         properties.build();
+
         _$failedField = 'required_';
         _required_?.build();
       } catch (e) {

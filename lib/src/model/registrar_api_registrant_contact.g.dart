@@ -10,19 +10,11 @@ class _$RegistrarApiRegistrantContact extends RegistrarApiRegistrantContact {
   @override
   final String address;
   @override
-  final String? address2;
-  @override
   final String city;
   @override
   final String? country;
   @override
-  final String? email;
-  @override
-  final String? fax;
-  @override
   final String? firstName;
-  @override
-  final String? id;
   @override
   final String? lastName;
   @override
@@ -33,6 +25,14 @@ class _$RegistrarApiRegistrantContact extends RegistrarApiRegistrantContact {
   final String state;
   @override
   final String? zip;
+  @override
+  final String? address2;
+  @override
+  final String? email;
+  @override
+  final String? fax;
+  @override
+  final String? id;
 
   factory _$RegistrarApiRegistrantContact(
           [void Function(RegistrarApiRegistrantContactBuilder)? updates]) =>
@@ -40,18 +40,18 @@ class _$RegistrarApiRegistrantContact extends RegistrarApiRegistrantContact {
 
   _$RegistrarApiRegistrantContact._(
       {required this.address,
-      this.address2,
       required this.city,
       this.country,
-      this.email,
-      this.fax,
       this.firstName,
-      this.id,
       this.lastName,
       required this.organization,
       this.phone,
       required this.state,
-      this.zip})
+      this.zip,
+      this.address2,
+      this.email,
+      this.fax,
+      this.id})
       : super._();
   @override
   RegistrarApiRegistrantContact rebuild(
@@ -67,36 +67,36 @@ class _$RegistrarApiRegistrantContact extends RegistrarApiRegistrantContact {
     if (identical(other, this)) return true;
     return other is RegistrarApiRegistrantContact &&
         address == other.address &&
-        address2 == other.address2 &&
         city == other.city &&
         country == other.country &&
-        email == other.email &&
-        fax == other.fax &&
         firstName == other.firstName &&
-        id == other.id &&
         lastName == other.lastName &&
         organization == other.organization &&
         phone == other.phone &&
         state == other.state &&
-        zip == other.zip;
+        zip == other.zip &&
+        address2 == other.address2 &&
+        email == other.email &&
+        fax == other.fax &&
+        id == other.id;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
     _$hash = $jc(_$hash, address.hashCode);
-    _$hash = $jc(_$hash, address2.hashCode);
     _$hash = $jc(_$hash, city.hashCode);
     _$hash = $jc(_$hash, country.hashCode);
-    _$hash = $jc(_$hash, email.hashCode);
-    _$hash = $jc(_$hash, fax.hashCode);
     _$hash = $jc(_$hash, firstName.hashCode);
-    _$hash = $jc(_$hash, id.hashCode);
     _$hash = $jc(_$hash, lastName.hashCode);
     _$hash = $jc(_$hash, organization.hashCode);
     _$hash = $jc(_$hash, phone.hashCode);
     _$hash = $jc(_$hash, state.hashCode);
     _$hash = $jc(_$hash, zip.hashCode);
+    _$hash = $jc(_$hash, address2.hashCode);
+    _$hash = $jc(_$hash, email.hashCode);
+    _$hash = $jc(_$hash, fax.hashCode);
+    _$hash = $jc(_$hash, id.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -105,18 +105,18 @@ class _$RegistrarApiRegistrantContact extends RegistrarApiRegistrantContact {
   String toString() {
     return (newBuiltValueToStringHelper(r'RegistrarApiRegistrantContact')
           ..add('address', address)
-          ..add('address2', address2)
           ..add('city', city)
           ..add('country', country)
-          ..add('email', email)
-          ..add('fax', fax)
           ..add('firstName', firstName)
-          ..add('id', id)
           ..add('lastName', lastName)
           ..add('organization', organization)
           ..add('phone', phone)
           ..add('state', state)
-          ..add('zip', zip))
+          ..add('zip', zip)
+          ..add('address2', address2)
+          ..add('email', email)
+          ..add('fax', fax)
+          ..add('id', id))
         .toString();
   }
 }
@@ -132,10 +132,6 @@ class RegistrarApiRegistrantContactBuilder
   String? get address => _$this._address;
   set address(covariant String? address) => _$this._address = address;
 
-  String? _address2;
-  String? get address2 => _$this._address2;
-  set address2(covariant String? address2) => _$this._address2 = address2;
-
   String? _city;
   String? get city => _$this._city;
   set city(covariant String? city) => _$this._city = city;
@@ -144,21 +140,9 @@ class RegistrarApiRegistrantContactBuilder
   String? get country => _$this._country;
   set country(covariant String? country) => _$this._country = country;
 
-  String? _email;
-  String? get email => _$this._email;
-  set email(covariant String? email) => _$this._email = email;
-
-  String? _fax;
-  String? get fax => _$this._fax;
-  set fax(covariant String? fax) => _$this._fax = fax;
-
   String? _firstName;
   String? get firstName => _$this._firstName;
   set firstName(covariant String? firstName) => _$this._firstName = firstName;
-
-  String? _id;
-  String? get id => _$this._id;
-  set id(covariant String? id) => _$this._id = id;
 
   String? _lastName;
   String? get lastName => _$this._lastName;
@@ -181,6 +165,22 @@ class RegistrarApiRegistrantContactBuilder
   String? get zip => _$this._zip;
   set zip(covariant String? zip) => _$this._zip = zip;
 
+  String? _address2;
+  String? get address2 => _$this._address2;
+  set address2(covariant String? address2) => _$this._address2 = address2;
+
+  String? _email;
+  String? get email => _$this._email;
+  set email(covariant String? email) => _$this._email = email;
+
+  String? _fax;
+  String? get fax => _$this._fax;
+  set fax(covariant String? fax) => _$this._fax = fax;
+
+  String? _id;
+  String? get id => _$this._id;
+  set id(covariant String? id) => _$this._id = id;
+
   RegistrarApiRegistrantContactBuilder() {
     RegistrarApiRegistrantContact._defaults(this);
   }
@@ -189,18 +189,18 @@ class RegistrarApiRegistrantContactBuilder
     final $v = _$v;
     if ($v != null) {
       _address = $v.address;
-      _address2 = $v.address2;
       _city = $v.city;
       _country = $v.country;
-      _email = $v.email;
-      _fax = $v.fax;
       _firstName = $v.firstName;
-      _id = $v.id;
       _lastName = $v.lastName;
       _organization = $v.organization;
       _phone = $v.phone;
       _state = $v.state;
       _zip = $v.zip;
+      _address2 = $v.address2;
+      _email = $v.email;
+      _fax = $v.fax;
+      _id = $v.id;
       _$v = null;
     }
     return this;
@@ -224,14 +224,10 @@ class RegistrarApiRegistrantContactBuilder
         _$RegistrarApiRegistrantContact._(
           address: BuiltValueNullFieldError.checkNotNull(
               address, r'RegistrarApiRegistrantContact', 'address'),
-          address2: address2,
           city: BuiltValueNullFieldError.checkNotNull(
               city, r'RegistrarApiRegistrantContact', 'city'),
           country: country,
-          email: email,
-          fax: fax,
           firstName: firstName,
-          id: id,
           lastName: lastName,
           organization: BuiltValueNullFieldError.checkNotNull(
               organization, r'RegistrarApiRegistrantContact', 'organization'),
@@ -239,6 +235,10 @@ class RegistrarApiRegistrantContactBuilder
           state: BuiltValueNullFieldError.checkNotNull(
               state, r'RegistrarApiRegistrantContact', 'state'),
           zip: zip,
+          address2: address2,
+          email: email,
+          fax: fax,
+          id: id,
         );
     replace(_$result);
     return _$result;

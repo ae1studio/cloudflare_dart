@@ -11,17 +11,17 @@ part 'zero_trust_gateway_rule_settings_block_page.g.dart';
 /// Configure custom block page settings. If missing or null, use the account settings. Settable only for `http` rules with the action set to `block`.
 ///
 /// Properties:
-/// * [includeContext] - Specify whether to pass the context information as query parameters.
 /// * [targetUri] - Specify the URI to which the user is redirected.
+/// * [includeContext] - Specify whether to pass the context information as query parameters.
 @BuiltValue()
 abstract class ZeroTrustGatewayRuleSettingsBlockPage implements Built<ZeroTrustGatewayRuleSettingsBlockPage, ZeroTrustGatewayRuleSettingsBlockPageBuilder> {
-  /// Specify whether to pass the context information as query parameters.
-  @BuiltValueField(wireName: r'include_context')
-  bool? get includeContext;
-
   /// Specify the URI to which the user is redirected.
   @BuiltValueField(wireName: r'target_uri')
   String get targetUri;
+
+  /// Specify whether to pass the context information as query parameters.
+  @BuiltValueField(wireName: r'include_context')
+  bool? get includeContext;
 
   ZeroTrustGatewayRuleSettingsBlockPage._();
 
@@ -46,6 +46,11 @@ class _$ZeroTrustGatewayRuleSettingsBlockPageSerializer implements PrimitiveSeri
     ZeroTrustGatewayRuleSettingsBlockPage object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    yield r'target_uri';
+    yield serializers.serialize(
+      object.targetUri,
+      specifiedType: const FullType(String),
+    );
     if (object.includeContext != null) {
       yield r'include_context';
       yield serializers.serialize(
@@ -53,11 +58,6 @@ class _$ZeroTrustGatewayRuleSettingsBlockPageSerializer implements PrimitiveSeri
         specifiedType: const FullType(bool),
       );
     }
-    yield r'target_uri';
-    yield serializers.serialize(
-      object.targetUri,
-      specifiedType: const FullType(String),
-    );
   }
 
   @override
@@ -81,19 +81,19 @@ class _$ZeroTrustGatewayRuleSettingsBlockPageSerializer implements PrimitiveSeri
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'include_context':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
-          result.includeContext = valueDes;
-          break;
         case r'target_uri':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(String),
           ) as String;
           result.targetUri = valueDes;
+          break;
+        case r'include_context':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(bool),
+          ) as bool;
+          result.includeContext = valueDes;
           break;
         default:
           unhandled.add(key);

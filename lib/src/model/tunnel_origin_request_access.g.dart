@@ -10,16 +10,16 @@ class _$TunnelOriginRequestAccess extends TunnelOriginRequestAccess {
   @override
   final BuiltList<String> audTag;
   @override
-  final bool? required_;
-  @override
   final String teamName;
+  @override
+  final bool? required_;
 
   factory _$TunnelOriginRequestAccess(
           [void Function(TunnelOriginRequestAccessBuilder)? updates]) =>
       (TunnelOriginRequestAccessBuilder()..update(updates))._build();
 
   _$TunnelOriginRequestAccess._(
-      {required this.audTag, this.required_, required this.teamName})
+      {required this.audTag, required this.teamName, this.required_})
       : super._();
   @override
   TunnelOriginRequestAccess rebuild(
@@ -35,16 +35,16 @@ class _$TunnelOriginRequestAccess extends TunnelOriginRequestAccess {
     if (identical(other, this)) return true;
     return other is TunnelOriginRequestAccess &&
         audTag == other.audTag &&
-        required_ == other.required_ &&
-        teamName == other.teamName;
+        teamName == other.teamName &&
+        required_ == other.required_;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
     _$hash = $jc(_$hash, audTag.hashCode);
-    _$hash = $jc(_$hash, required_.hashCode);
     _$hash = $jc(_$hash, teamName.hashCode);
+    _$hash = $jc(_$hash, required_.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -53,8 +53,8 @@ class _$TunnelOriginRequestAccess extends TunnelOriginRequestAccess {
   String toString() {
     return (newBuiltValueToStringHelper(r'TunnelOriginRequestAccess')
           ..add('audTag', audTag)
-          ..add('required_', required_)
-          ..add('teamName', teamName))
+          ..add('teamName', teamName)
+          ..add('required_', required_))
         .toString();
   }
 }
@@ -68,13 +68,13 @@ class TunnelOriginRequestAccessBuilder
   ListBuilder<String> get audTag => _$this._audTag ??= ListBuilder<String>();
   set audTag(ListBuilder<String>? audTag) => _$this._audTag = audTag;
 
-  bool? _required_;
-  bool? get required_ => _$this._required_;
-  set required_(bool? required_) => _$this._required_ = required_;
-
   String? _teamName;
   String? get teamName => _$this._teamName;
   set teamName(String? teamName) => _$this._teamName = teamName;
+
+  bool? _required_;
+  bool? get required_ => _$this._required_;
+  set required_(bool? required_) => _$this._required_ = required_;
 
   TunnelOriginRequestAccessBuilder() {
     TunnelOriginRequestAccess._defaults(this);
@@ -84,8 +84,8 @@ class TunnelOriginRequestAccessBuilder
     final $v = _$v;
     if ($v != null) {
       _audTag = $v.audTag.toBuilder();
-      _required_ = $v.required_;
       _teamName = $v.teamName;
+      _required_ = $v.required_;
       _$v = null;
     }
     return this;
@@ -110,9 +110,9 @@ class TunnelOriginRequestAccessBuilder
       _$result = _$v ??
           _$TunnelOriginRequestAccess._(
             audTag: audTag.build(),
-            required_: required_,
             teamName: BuiltValueNullFieldError.checkNotNull(
                 teamName, r'TunnelOriginRequestAccess', 'teamName'),
+            required_: required_,
           );
     } catch (_) {
       late String _$failedField;

@@ -11,13 +11,13 @@ class _$ZoneLockdownCreateAZoneLockdownRuleRequest
   @override
   final BuiltList<FirewallConfigurationsInner> configurations;
   @override
+  final BuiltList<String> urls;
+  @override
   final String? description;
   @override
   final bool? paused;
   @override
   final num? priority;
-  @override
-  final BuiltList<String> urls;
 
   factory _$ZoneLockdownCreateAZoneLockdownRuleRequest(
           [void Function(ZoneLockdownCreateAZoneLockdownRuleRequestBuilder)?
@@ -27,10 +27,10 @@ class _$ZoneLockdownCreateAZoneLockdownRuleRequest
 
   _$ZoneLockdownCreateAZoneLockdownRuleRequest._(
       {required this.configurations,
+      required this.urls,
       this.description,
       this.paused,
-      this.priority,
-      required this.urls})
+      this.priority})
       : super._();
   @override
   ZoneLockdownCreateAZoneLockdownRuleRequest rebuild(
@@ -47,20 +47,20 @@ class _$ZoneLockdownCreateAZoneLockdownRuleRequest
     if (identical(other, this)) return true;
     return other is ZoneLockdownCreateAZoneLockdownRuleRequest &&
         configurations == other.configurations &&
+        urls == other.urls &&
         description == other.description &&
         paused == other.paused &&
-        priority == other.priority &&
-        urls == other.urls;
+        priority == other.priority;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
     _$hash = $jc(_$hash, configurations.hashCode);
+    _$hash = $jc(_$hash, urls.hashCode);
     _$hash = $jc(_$hash, description.hashCode);
     _$hash = $jc(_$hash, paused.hashCode);
     _$hash = $jc(_$hash, priority.hashCode);
-    _$hash = $jc(_$hash, urls.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -70,10 +70,10 @@ class _$ZoneLockdownCreateAZoneLockdownRuleRequest
     return (newBuiltValueToStringHelper(
             r'ZoneLockdownCreateAZoneLockdownRuleRequest')
           ..add('configurations', configurations)
+          ..add('urls', urls)
           ..add('description', description)
           ..add('paused', paused)
-          ..add('priority', priority)
-          ..add('urls', urls))
+          ..add('priority', priority))
         .toString();
   }
 }
@@ -91,6 +91,10 @@ class ZoneLockdownCreateAZoneLockdownRuleRequestBuilder
           ListBuilder<FirewallConfigurationsInner>? configurations) =>
       _$this._configurations = configurations;
 
+  ListBuilder<String>? _urls;
+  ListBuilder<String> get urls => _$this._urls ??= ListBuilder<String>();
+  set urls(ListBuilder<String>? urls) => _$this._urls = urls;
+
   String? _description;
   String? get description => _$this._description;
   set description(String? description) => _$this._description = description;
@@ -103,10 +107,6 @@ class ZoneLockdownCreateAZoneLockdownRuleRequestBuilder
   num? get priority => _$this._priority;
   set priority(num? priority) => _$this._priority = priority;
 
-  ListBuilder<String>? _urls;
-  ListBuilder<String> get urls => _$this._urls ??= ListBuilder<String>();
-  set urls(ListBuilder<String>? urls) => _$this._urls = urls;
-
   ZoneLockdownCreateAZoneLockdownRuleRequestBuilder() {
     ZoneLockdownCreateAZoneLockdownRuleRequest._defaults(this);
   }
@@ -115,10 +115,10 @@ class ZoneLockdownCreateAZoneLockdownRuleRequestBuilder
     final $v = _$v;
     if ($v != null) {
       _configurations = $v.configurations.toBuilder();
+      _urls = $v.urls.toBuilder();
       _description = $v.description;
       _paused = $v.paused;
       _priority = $v.priority;
-      _urls = $v.urls.toBuilder();
       _$v = null;
     }
     return this;
@@ -145,17 +145,16 @@ class ZoneLockdownCreateAZoneLockdownRuleRequestBuilder
       _$result = _$v ??
           _$ZoneLockdownCreateAZoneLockdownRuleRequest._(
             configurations: configurations.build(),
+            urls: urls.build(),
             description: description,
             paused: paused,
             priority: priority,
-            urls: urls.build(),
           );
     } catch (_) {
       late String _$failedField;
       try {
         _$failedField = 'configurations';
         configurations.build();
-
         _$failedField = 'urls';
         urls.build();
       } catch (e) {

@@ -21,14 +21,14 @@ part 'post_v4_accounts_by_account_id_pipelines_v1_sinks200_response_result_confi
 /// * [accountId] - Cloudflare Account ID
 /// * [bucket] - The R2 Bucket that hosts this catalog
 /// * [credentials] 
+/// * [tableName] - Table name
+/// * [token] - Authentication token
 /// * [fileNaming] 
 /// * [jurisdiction] - Jurisdiction this bucket is hosted in
 /// * [partitioning] 
 /// * [path] - Subpath within the bucket to write to
 /// * [rollingPolicy] 
 /// * [namespace] - Table namespace
-/// * [tableName] - Table name
-/// * [token] - Authentication token
 @BuiltValue()
 abstract class PostV4AccountsByAccountIdPipelinesV1Sinks200ResponseResultConfig implements Built<PostV4AccountsByAccountIdPipelinesV1Sinks200ResponseResultConfig, PostV4AccountsByAccountIdPipelinesV1Sinks200ResponseResultConfigBuilder> {
   /// One Of [CloudflarePipelinesR2DataCatalogTable], [CloudflarePipelinesR2Table]

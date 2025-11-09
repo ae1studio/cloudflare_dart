@@ -13,29 +13,37 @@ part 'magic_ipsec_tunnel_add_single_request.g.dart';
 /// MagicIpsecTunnelAddSingleRequest
 ///
 /// Properties:
+/// * [cloudflareEndpoint] - The IP address assigned to the Cloudflare side of the IPsec tunnel.
+/// * [interfaceAddress] - A 31-bit prefix (/31 in CIDR notation) supporting two hosts, one for each side of the tunnel. Select the subnet from the following private IP space: 10.0.0.0–10.255.255.255, 172.16.0.0–172.31.255.255, 192.168.0.0–192.168.255.255.
+/// * [name] - The name of the IPsec tunnel. The name cannot share a name with other tunnels.
 /// * [automaticReturnRouting] - True if automatic stateful return routing should be enabled for a tunnel, false otherwise.
 /// * [bgp] 
-/// * [cloudflareEndpoint] - The IP address assigned to the Cloudflare side of the IPsec tunnel.
 /// * [customerEndpoint] - The IP address assigned to the customer side of the IPsec tunnel. Not required, but must be set for proactive traceroutes to work.
 /// * [description] - An optional description forthe IPsec tunnel.
 /// * [healthCheck] 
-/// * [interfaceAddress] - A 31-bit prefix (/31 in CIDR notation) supporting two hosts, one for each side of the tunnel. Select the subnet from the following private IP space: 10.0.0.0–10.255.255.255, 172.16.0.0–172.31.255.255, 192.168.0.0–192.168.255.255.
 /// * [interfaceAddress6] - A 127 bit IPV6 prefix from within the virtual_subnet6 prefix space with the address being the first IP of the subnet and not same as the address of virtual_subnet6. Eg if virtual_subnet6 is 2606:54c1:7:0:a9fe:12d2::/127 , interface_address6 could be 2606:54c1:7:0:a9fe:12d2:1:200/127
-/// * [name] - The name of the IPsec tunnel. The name cannot share a name with other tunnels.
 /// * [psk] - A randomly generated or provided string for use in the IPsec tunnel.
 /// * [replayProtection] - If `true`, then IPsec replay protection will be supported in the Cloudflare-to-customer direction.
 @BuiltValue(instantiable: false)
 abstract class MagicIpsecTunnelAddSingleRequest  {
+  /// The IP address assigned to the Cloudflare side of the IPsec tunnel.
+  @BuiltValueField(wireName: r'cloudflare_endpoint')
+  String get cloudflareEndpoint;
+
+  /// A 31-bit prefix (/31 in CIDR notation) supporting two hosts, one for each side of the tunnel. Select the subnet from the following private IP space: 10.0.0.0–10.255.255.255, 172.16.0.0–172.31.255.255, 192.168.0.0–192.168.255.255.
+  @BuiltValueField(wireName: r'interface_address')
+  String get interfaceAddress;
+
+  /// The name of the IPsec tunnel. The name cannot share a name with other tunnels.
+  @BuiltValueField(wireName: r'name')
+  String get name;
+
   /// True if automatic stateful return routing should be enabled for a tunnel, false otherwise.
   @BuiltValueField(wireName: r'automatic_return_routing')
   bool? get automaticReturnRouting;
 
   @BuiltValueField(wireName: r'bgp')
   MagicBgpConfig? get bgp;
-
-  /// The IP address assigned to the Cloudflare side of the IPsec tunnel.
-  @BuiltValueField(wireName: r'cloudflare_endpoint')
-  String get cloudflareEndpoint;
 
   /// The IP address assigned to the customer side of the IPsec tunnel. Not required, but must be set for proactive traceroutes to work.
   @BuiltValueField(wireName: r'customer_endpoint')
@@ -48,17 +56,9 @@ abstract class MagicIpsecTunnelAddSingleRequest  {
   @BuiltValueField(wireName: r'health_check')
   MagicTunnelHealthCheck? get healthCheck;
 
-  /// A 31-bit prefix (/31 in CIDR notation) supporting two hosts, one for each side of the tunnel. Select the subnet from the following private IP space: 10.0.0.0–10.255.255.255, 172.16.0.0–172.31.255.255, 192.168.0.0–192.168.255.255.
-  @BuiltValueField(wireName: r'interface_address')
-  String get interfaceAddress;
-
   /// A 127 bit IPV6 prefix from within the virtual_subnet6 prefix space with the address being the first IP of the subnet and not same as the address of virtual_subnet6. Eg if virtual_subnet6 is 2606:54c1:7:0:a9fe:12d2::/127 , interface_address6 could be 2606:54c1:7:0:a9fe:12d2:1:200/127
   @BuiltValueField(wireName: r'interface_address6')
   String? get interfaceAddress6;
-
-  /// The name of the IPsec tunnel. The name cannot share a name with other tunnels.
-  @BuiltValueField(wireName: r'name')
-  String get name;
 
   /// A randomly generated or provided string for use in the IPsec tunnel.
   @BuiltValueField(wireName: r'psk')
@@ -84,6 +84,21 @@ class _$MagicIpsecTunnelAddSingleRequestSerializer implements PrimitiveSerialize
     MagicIpsecTunnelAddSingleRequest object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    yield r'cloudflare_endpoint';
+    yield serializers.serialize(
+      object.cloudflareEndpoint,
+      specifiedType: const FullType(String),
+    );
+    yield r'interface_address';
+    yield serializers.serialize(
+      object.interfaceAddress,
+      specifiedType: const FullType(String),
+    );
+    yield r'name';
+    yield serializers.serialize(
+      object.name,
+      specifiedType: const FullType(String),
+    );
     if (object.automaticReturnRouting != null) {
       yield r'automatic_return_routing';
       yield serializers.serialize(
@@ -98,11 +113,6 @@ class _$MagicIpsecTunnelAddSingleRequestSerializer implements PrimitiveSerialize
         specifiedType: const FullType(MagicBgpConfig),
       );
     }
-    yield r'cloudflare_endpoint';
-    yield serializers.serialize(
-      object.cloudflareEndpoint,
-      specifiedType: const FullType(String),
-    );
     if (object.customerEndpoint != null) {
       yield r'customer_endpoint';
       yield serializers.serialize(
@@ -124,11 +134,6 @@ class _$MagicIpsecTunnelAddSingleRequestSerializer implements PrimitiveSerialize
         specifiedType: const FullType(MagicTunnelHealthCheck),
       );
     }
-    yield r'interface_address';
-    yield serializers.serialize(
-      object.interfaceAddress,
-      specifiedType: const FullType(String),
-    );
     if (object.interfaceAddress6 != null) {
       yield r'interface_address6';
       yield serializers.serialize(
@@ -136,11 +141,6 @@ class _$MagicIpsecTunnelAddSingleRequestSerializer implements PrimitiveSerialize
         specifiedType: const FullType(String),
       );
     }
-    yield r'name';
-    yield serializers.serialize(
-      object.name,
-      specifiedType: const FullType(String),
-    );
     if (object.psk != null) {
       yield r'psk';
       yield serializers.serialize(
@@ -218,6 +218,27 @@ class _$$MagicIpsecTunnelAddSingleRequestSerializer implements PrimitiveSerializ
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
+        case r'cloudflare_endpoint':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.cloudflareEndpoint = valueDes;
+          break;
+        case r'interface_address':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.interfaceAddress = valueDes;
+          break;
+        case r'name':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.name = valueDes;
+          break;
         case r'automatic_return_routing':
           final valueDes = serializers.deserialize(
             value,
@@ -231,13 +252,6 @@ class _$$MagicIpsecTunnelAddSingleRequestSerializer implements PrimitiveSerializ
             specifiedType: const FullType(MagicBgpConfig),
           ) as MagicBgpConfig;
           result.bgp.replace(valueDes);
-          break;
-        case r'cloudflare_endpoint':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.cloudflareEndpoint = valueDes;
           break;
         case r'customer_endpoint':
           final valueDes = serializers.deserialize(
@@ -260,26 +274,12 @@ class _$$MagicIpsecTunnelAddSingleRequestSerializer implements PrimitiveSerializ
           ) as MagicTunnelHealthCheck;
           result.healthCheck.replace(valueDes);
           break;
-        case r'interface_address':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.interfaceAddress = valueDes;
-          break;
         case r'interface_address6':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(String),
           ) as String;
           result.interfaceAddress6 = valueDes;
-          break;
-        case r'name':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.name = valueDes;
           break;
         case r'psk':
           final valueDes = serializers.deserialize(

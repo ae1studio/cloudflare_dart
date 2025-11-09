@@ -57,6 +57,10 @@ class _$RulesetsScoreRuleActionEnumSerializer
 
 class _$RulesetsScoreRule extends RulesetsScoreRule {
   @override
+  final DateTime lastUpdated;
+  @override
+  final String version;
+  @override
   final String? action;
   @override
   final JsonObject? actionParameters;
@@ -73,22 +77,20 @@ class _$RulesetsScoreRule extends RulesetsScoreRule {
   @override
   final String? id;
   @override
-  final DateTime lastUpdated;
-  @override
   final RulesetsRuleLogging? logging;
   @override
   final RulesetsRuleRatelimit? ratelimit;
   @override
   final String? ref;
-  @override
-  final String version;
 
   factory _$RulesetsScoreRule(
           [void Function(RulesetsScoreRuleBuilder)? updates]) =>
       (RulesetsScoreRuleBuilder()..update(updates))._build();
 
   _$RulesetsScoreRule._(
-      {this.action,
+      {required this.lastUpdated,
+      required this.version,
+      this.action,
       this.actionParameters,
       this.categories,
       this.description,
@@ -96,11 +98,9 @@ class _$RulesetsScoreRule extends RulesetsScoreRule {
       this.exposedCredentialCheck,
       this.expression,
       this.id,
-      required this.lastUpdated,
       this.logging,
       this.ratelimit,
-      this.ref,
-      required this.version})
+      this.ref})
       : super._();
   @override
   RulesetsScoreRule rebuild(void Function(RulesetsScoreRuleBuilder) updates) =>
@@ -114,6 +114,8 @@ class _$RulesetsScoreRule extends RulesetsScoreRule {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is RulesetsScoreRule &&
+        lastUpdated == other.lastUpdated &&
+        version == other.version &&
         action == other.action &&
         actionParameters == other.actionParameters &&
         categories == other.categories &&
@@ -122,16 +124,16 @@ class _$RulesetsScoreRule extends RulesetsScoreRule {
         exposedCredentialCheck == other.exposedCredentialCheck &&
         expression == other.expression &&
         id == other.id &&
-        lastUpdated == other.lastUpdated &&
         logging == other.logging &&
         ratelimit == other.ratelimit &&
-        ref == other.ref &&
-        version == other.version;
+        ref == other.ref;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
+    _$hash = $jc(_$hash, lastUpdated.hashCode);
+    _$hash = $jc(_$hash, version.hashCode);
     _$hash = $jc(_$hash, action.hashCode);
     _$hash = $jc(_$hash, actionParameters.hashCode);
     _$hash = $jc(_$hash, categories.hashCode);
@@ -140,11 +142,9 @@ class _$RulesetsScoreRule extends RulesetsScoreRule {
     _$hash = $jc(_$hash, exposedCredentialCheck.hashCode);
     _$hash = $jc(_$hash, expression.hashCode);
     _$hash = $jc(_$hash, id.hashCode);
-    _$hash = $jc(_$hash, lastUpdated.hashCode);
     _$hash = $jc(_$hash, logging.hashCode);
     _$hash = $jc(_$hash, ratelimit.hashCode);
     _$hash = $jc(_$hash, ref.hashCode);
-    _$hash = $jc(_$hash, version.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -152,6 +152,8 @@ class _$RulesetsScoreRule extends RulesetsScoreRule {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'RulesetsScoreRule')
+          ..add('lastUpdated', lastUpdated)
+          ..add('version', version)
           ..add('action', action)
           ..add('actionParameters', actionParameters)
           ..add('categories', categories)
@@ -160,11 +162,9 @@ class _$RulesetsScoreRule extends RulesetsScoreRule {
           ..add('exposedCredentialCheck', exposedCredentialCheck)
           ..add('expression', expression)
           ..add('id', id)
-          ..add('lastUpdated', lastUpdated)
           ..add('logging', logging)
           ..add('ratelimit', ratelimit)
-          ..add('ref', ref)
-          ..add('version', version))
+          ..add('ref', ref))
         .toString();
   }
 }
@@ -174,6 +174,15 @@ class RulesetsScoreRuleBuilder
         Builder<RulesetsScoreRule, RulesetsScoreRuleBuilder>,
         RulesetsRuleBuilder {
   _$RulesetsScoreRule? _$v;
+
+  DateTime? _lastUpdated;
+  DateTime? get lastUpdated => _$this._lastUpdated;
+  set lastUpdated(covariant DateTime? lastUpdated) =>
+      _$this._lastUpdated = lastUpdated;
+
+  String? _version;
+  String? get version => _$this._version;
+  set version(covariant String? version) => _$this._version = version;
 
   String? _action;
   String? get action => _$this._action;
@@ -217,11 +226,6 @@ class RulesetsScoreRuleBuilder
   String? get id => _$this._id;
   set id(covariant String? id) => _$this._id = id;
 
-  DateTime? _lastUpdated;
-  DateTime? get lastUpdated => _$this._lastUpdated;
-  set lastUpdated(covariant DateTime? lastUpdated) =>
-      _$this._lastUpdated = lastUpdated;
-
   RulesetsRuleLoggingBuilder? _logging;
   RulesetsRuleLoggingBuilder get logging =>
       _$this._logging ??= RulesetsRuleLoggingBuilder();
@@ -238,10 +242,6 @@ class RulesetsScoreRuleBuilder
   String? get ref => _$this._ref;
   set ref(covariant String? ref) => _$this._ref = ref;
 
-  String? _version;
-  String? get version => _$this._version;
-  set version(covariant String? version) => _$this._version = version;
-
   RulesetsScoreRuleBuilder() {
     RulesetsScoreRule._defaults(this);
   }
@@ -249,6 +249,8 @@ class RulesetsScoreRuleBuilder
   RulesetsScoreRuleBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
+      _lastUpdated = $v.lastUpdated;
+      _version = $v.version;
       _action = $v.action;
       _actionParameters = $v.actionParameters;
       _categories = $v.categories?.toBuilder();
@@ -257,11 +259,9 @@ class RulesetsScoreRuleBuilder
       _exposedCredentialCheck = $v.exposedCredentialCheck?.toBuilder();
       _expression = $v.expression;
       _id = $v.id;
-      _lastUpdated = $v.lastUpdated;
       _logging = $v.logging?.toBuilder();
       _ratelimit = $v.ratelimit?.toBuilder();
       _ref = $v.ref;
-      _version = $v.version;
       _$v = null;
     }
     return this;
@@ -285,6 +285,10 @@ class RulesetsScoreRuleBuilder
     try {
       _$result = _$v ??
           _$RulesetsScoreRule._(
+            lastUpdated: BuiltValueNullFieldError.checkNotNull(
+                lastUpdated, r'RulesetsScoreRule', 'lastUpdated'),
+            version: BuiltValueNullFieldError.checkNotNull(
+                version, r'RulesetsScoreRule', 'version'),
             action: action,
             actionParameters: actionParameters,
             categories: _categories?.build(),
@@ -293,13 +297,9 @@ class RulesetsScoreRuleBuilder
             exposedCredentialCheck: _exposedCredentialCheck?.build(),
             expression: expression,
             id: id,
-            lastUpdated: BuiltValueNullFieldError.checkNotNull(
-                lastUpdated, r'RulesetsScoreRule', 'lastUpdated'),
             logging: _logging?.build(),
             ratelimit: _ratelimit?.build(),
             ref: ref,
-            version: BuiltValueNullFieldError.checkNotNull(
-                version, r'RulesetsScoreRule', 'version'),
           );
     } catch (_) {
       late String _$failedField;

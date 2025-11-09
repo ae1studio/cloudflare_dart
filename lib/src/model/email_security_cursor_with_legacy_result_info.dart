@@ -12,18 +12,15 @@ part 'email_security_cursor_with_legacy_result_info.g.dart';
 ///
 /// Properties:
 /// * [count] 
-/// * [next] 
 /// * [page] - Deprecated: Returns always 0
 /// * [perPage] - number of items per page
-/// * [previous] 
 /// * [totalCount] - Deprecated: Returns always 0
+/// * [next] 
+/// * [previous] 
 @BuiltValue()
 abstract class EmailSecurityCursorWithLegacyResultInfo implements Built<EmailSecurityCursorWithLegacyResultInfo, EmailSecurityCursorWithLegacyResultInfoBuilder> {
   @BuiltValueField(wireName: r'count')
   int get count;
-
-  @BuiltValueField(wireName: r'next')
-  String? get next;
 
   /// Deprecated: Returns always 0
   @Deprecated('page has been deprecated')
@@ -34,13 +31,16 @@ abstract class EmailSecurityCursorWithLegacyResultInfo implements Built<EmailSec
   @BuiltValueField(wireName: r'per_page')
   int get perPage;
 
-  @BuiltValueField(wireName: r'previous')
-  String? get previous;
-
   /// Deprecated: Returns always 0
   @Deprecated('totalCount has been deprecated')
   @BuiltValueField(wireName: r'total_count')
   int get totalCount;
+
+  @BuiltValueField(wireName: r'next')
+  String? get next;
+
+  @BuiltValueField(wireName: r'previous')
+  String? get previous;
 
   EmailSecurityCursorWithLegacyResultInfo._();
 
@@ -70,13 +70,6 @@ class _$EmailSecurityCursorWithLegacyResultInfoSerializer implements PrimitiveSe
       object.count,
       specifiedType: const FullType(int),
     );
-    if (object.next != null) {
-      yield r'next';
-      yield serializers.serialize(
-        object.next,
-        specifiedType: const FullType.nullable(String),
-      );
-    }
     yield r'page';
     yield serializers.serialize(
       object.page,
@@ -87,6 +80,18 @@ class _$EmailSecurityCursorWithLegacyResultInfoSerializer implements PrimitiveSe
       object.perPage,
       specifiedType: const FullType(int),
     );
+    yield r'total_count';
+    yield serializers.serialize(
+      object.totalCount,
+      specifiedType: const FullType(int),
+    );
+    if (object.next != null) {
+      yield r'next';
+      yield serializers.serialize(
+        object.next,
+        specifiedType: const FullType.nullable(String),
+      );
+    }
     if (object.previous != null) {
       yield r'previous';
       yield serializers.serialize(
@@ -94,11 +99,6 @@ class _$EmailSecurityCursorWithLegacyResultInfoSerializer implements PrimitiveSe
         specifiedType: const FullType.nullable(String),
       );
     }
-    yield r'total_count';
-    yield serializers.serialize(
-      object.totalCount,
-      specifiedType: const FullType(int),
-    );
   }
 
   @override
@@ -129,14 +129,6 @@ class _$EmailSecurityCursorWithLegacyResultInfoSerializer implements PrimitiveSe
           ) as int;
           result.count = valueDes;
           break;
-        case r'next':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
-          if (valueDes == null) continue;
-          result.next = valueDes;
-          break;
         case r'page':
           final valueDes = serializers.deserialize(
             value,
@@ -151,6 +143,21 @@ class _$EmailSecurityCursorWithLegacyResultInfoSerializer implements PrimitiveSe
           ) as int;
           result.perPage = valueDes;
           break;
+        case r'total_count':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(int),
+          ) as int;
+          result.totalCount = valueDes;
+          break;
+        case r'next':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType.nullable(String),
+          ) as String?;
+          if (valueDes == null) continue;
+          result.next = valueDes;
+          break;
         case r'previous':
           final valueDes = serializers.deserialize(
             value,
@@ -158,13 +165,6 @@ class _$EmailSecurityCursorWithLegacyResultInfoSerializer implements PrimitiveSe
           ) as String?;
           if (valueDes == null) continue;
           result.previous = valueDes;
-          break;
-        case r'total_count':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
-          result.totalCount = valueDes;
           break;
         default:
           unhandled.add(key);

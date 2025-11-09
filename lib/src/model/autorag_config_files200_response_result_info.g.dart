@@ -13,9 +13,9 @@ class _$AutoragConfigFiles200ResponseResultInfo
   @override
   final int page;
   @override
-  final int? perPage;
-  @override
   final int totalCount;
+  @override
+  final int? perPage;
 
   factory _$AutoragConfigFiles200ResponseResultInfo(
           [void Function(AutoragConfigFiles200ResponseResultInfoBuilder)?
@@ -26,8 +26,8 @@ class _$AutoragConfigFiles200ResponseResultInfo
   _$AutoragConfigFiles200ResponseResultInfo._(
       {required this.count,
       required this.page,
-      this.perPage,
-      required this.totalCount})
+      required this.totalCount,
+      this.perPage})
       : super._();
   @override
   AutoragConfigFiles200ResponseResultInfo rebuild(
@@ -45,8 +45,8 @@ class _$AutoragConfigFiles200ResponseResultInfo
     return other is AutoragConfigFiles200ResponseResultInfo &&
         count == other.count &&
         page == other.page &&
-        perPage == other.perPage &&
-        totalCount == other.totalCount;
+        totalCount == other.totalCount &&
+        perPage == other.perPage;
   }
 
   @override
@@ -54,8 +54,8 @@ class _$AutoragConfigFiles200ResponseResultInfo
     var _$hash = 0;
     _$hash = $jc(_$hash, count.hashCode);
     _$hash = $jc(_$hash, page.hashCode);
-    _$hash = $jc(_$hash, perPage.hashCode);
     _$hash = $jc(_$hash, totalCount.hashCode);
+    _$hash = $jc(_$hash, perPage.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -66,8 +66,8 @@ class _$AutoragConfigFiles200ResponseResultInfo
             r'AutoragConfigFiles200ResponseResultInfo')
           ..add('count', count)
           ..add('page', page)
-          ..add('perPage', perPage)
-          ..add('totalCount', totalCount))
+          ..add('totalCount', totalCount)
+          ..add('perPage', perPage))
         .toString();
   }
 }
@@ -86,13 +86,13 @@ class AutoragConfigFiles200ResponseResultInfoBuilder
   int? get page => _$this._page;
   set page(int? page) => _$this._page = page;
 
-  int? _perPage;
-  int? get perPage => _$this._perPage;
-  set perPage(int? perPage) => _$this._perPage = perPage;
-
   int? _totalCount;
   int? get totalCount => _$this._totalCount;
   set totalCount(int? totalCount) => _$this._totalCount = totalCount;
+
+  int? _perPage;
+  int? get perPage => _$this._perPage;
+  set perPage(int? perPage) => _$this._perPage = perPage;
 
   AutoragConfigFiles200ResponseResultInfoBuilder() {
     AutoragConfigFiles200ResponseResultInfo._defaults(this);
@@ -103,8 +103,8 @@ class AutoragConfigFiles200ResponseResultInfoBuilder
     if ($v != null) {
       _count = $v.count;
       _page = $v.page;
-      _perPage = $v.perPage;
       _totalCount = $v.totalCount;
+      _perPage = $v.perPage;
       _$v = null;
     }
     return this;
@@ -131,9 +131,9 @@ class AutoragConfigFiles200ResponseResultInfoBuilder
               count, r'AutoragConfigFiles200ResponseResultInfo', 'count'),
           page: BuiltValueNullFieldError.checkNotNull(
               page, r'AutoragConfigFiles200ResponseResultInfo', 'page'),
-          perPage: perPage,
           totalCount: BuiltValueNullFieldError.checkNotNull(totalCount,
               r'AutoragConfigFiles200ResponseResultInfo', 'totalCount'),
+          perPage: perPage,
         );
     replace(_$result);
     return _$result;

@@ -8,13 +8,13 @@ part of 'qwen25_coder32_b_instruct_messages.dart';
 
 class _$Qwen25Coder32BInstructMessages extends Qwen25Coder32BInstructMessages {
   @override
+  final BuiltList<MessagesMessagesInner> messages;
+  @override
   final num? frequencyPenalty;
   @override
   final BuiltList<MessagesFunctionsInner>? functions;
   @override
   final int? maxTokens;
-  @override
-  final BuiltList<MessagesMessagesInner> messages;
   @override
   final num? presencePenalty;
   @override
@@ -41,10 +41,10 @@ class _$Qwen25Coder32BInstructMessages extends Qwen25Coder32BInstructMessages {
       (Qwen25Coder32BInstructMessagesBuilder()..update(updates))._build();
 
   _$Qwen25Coder32BInstructMessages._(
-      {this.frequencyPenalty,
+      {required this.messages,
+      this.frequencyPenalty,
       this.functions,
       this.maxTokens,
-      required this.messages,
       this.presencePenalty,
       this.raw,
       this.repetitionPenalty,
@@ -69,10 +69,10 @@ class _$Qwen25Coder32BInstructMessages extends Qwen25Coder32BInstructMessages {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is Qwen25Coder32BInstructMessages &&
+        messages == other.messages &&
         frequencyPenalty == other.frequencyPenalty &&
         functions == other.functions &&
         maxTokens == other.maxTokens &&
-        messages == other.messages &&
         presencePenalty == other.presencePenalty &&
         raw == other.raw &&
         repetitionPenalty == other.repetitionPenalty &&
@@ -88,10 +88,10 @@ class _$Qwen25Coder32BInstructMessages extends Qwen25Coder32BInstructMessages {
   @override
   int get hashCode {
     var _$hash = 0;
+    _$hash = $jc(_$hash, messages.hashCode);
     _$hash = $jc(_$hash, frequencyPenalty.hashCode);
     _$hash = $jc(_$hash, functions.hashCode);
     _$hash = $jc(_$hash, maxTokens.hashCode);
-    _$hash = $jc(_$hash, messages.hashCode);
     _$hash = $jc(_$hash, presencePenalty.hashCode);
     _$hash = $jc(_$hash, raw.hashCode);
     _$hash = $jc(_$hash, repetitionPenalty.hashCode);
@@ -109,10 +109,10 @@ class _$Qwen25Coder32BInstructMessages extends Qwen25Coder32BInstructMessages {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'Qwen25Coder32BInstructMessages')
+          ..add('messages', messages)
           ..add('frequencyPenalty', frequencyPenalty)
           ..add('functions', functions)
           ..add('maxTokens', maxTokens)
-          ..add('messages', messages)
           ..add('presencePenalty', presencePenalty)
           ..add('raw', raw)
           ..add('repetitionPenalty', repetitionPenalty)
@@ -133,6 +133,12 @@ class Qwen25Coder32BInstructMessagesBuilder
             Qwen25Coder32BInstructMessagesBuilder> {
   _$Qwen25Coder32BInstructMessages? _$v;
 
+  ListBuilder<MessagesMessagesInner>? _messages;
+  ListBuilder<MessagesMessagesInner> get messages =>
+      _$this._messages ??= ListBuilder<MessagesMessagesInner>();
+  set messages(ListBuilder<MessagesMessagesInner>? messages) =>
+      _$this._messages = messages;
+
   num? _frequencyPenalty;
   num? get frequencyPenalty => _$this._frequencyPenalty;
   set frequencyPenalty(num? frequencyPenalty) =>
@@ -147,12 +153,6 @@ class Qwen25Coder32BInstructMessagesBuilder
   int? _maxTokens;
   int? get maxTokens => _$this._maxTokens;
   set maxTokens(int? maxTokens) => _$this._maxTokens = maxTokens;
-
-  ListBuilder<MessagesMessagesInner>? _messages;
-  ListBuilder<MessagesMessagesInner> get messages =>
-      _$this._messages ??= ListBuilder<MessagesMessagesInner>();
-  set messages(ListBuilder<MessagesMessagesInner>? messages) =>
-      _$this._messages = messages;
 
   num? _presencePenalty;
   num? get presencePenalty => _$this._presencePenalty;
@@ -206,10 +206,10 @@ class Qwen25Coder32BInstructMessagesBuilder
   Qwen25Coder32BInstructMessagesBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
+      _messages = $v.messages.toBuilder();
       _frequencyPenalty = $v.frequencyPenalty;
       _functions = $v.functions?.toBuilder();
       _maxTokens = $v.maxTokens;
-      _messages = $v.messages.toBuilder();
       _presencePenalty = $v.presencePenalty;
       _raw = $v.raw;
       _repetitionPenalty = $v.repetitionPenalty;
@@ -243,10 +243,10 @@ class Qwen25Coder32BInstructMessagesBuilder
     try {
       _$result = _$v ??
           _$Qwen25Coder32BInstructMessages._(
+            messages: messages.build(),
             frequencyPenalty: frequencyPenalty,
             functions: _functions?.build(),
             maxTokens: maxTokens,
-            messages: messages.build(),
             presencePenalty: presencePenalty,
             raw: raw,
             repetitionPenalty: repetitionPenalty,
@@ -261,11 +261,11 @@ class Qwen25Coder32BInstructMessagesBuilder
     } catch (_) {
       late String _$failedField;
       try {
-        _$failedField = 'functions';
-        _functions?.build();
-
         _$failedField = 'messages';
         messages.build();
+
+        _$failedField = 'functions';
+        _functions?.build();
 
         _$failedField = 'responseFormat';
         _responseFormat?.build();

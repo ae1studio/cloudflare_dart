@@ -8,15 +8,15 @@ part of 'dlp_regex_validation_query.dart';
 
 class _$DlpRegexValidationQuery extends DlpRegexValidationQuery {
   @override
-  final int? maxMatchBytes;
-  @override
   final String regex;
+  @override
+  final int? maxMatchBytes;
 
   factory _$DlpRegexValidationQuery(
           [void Function(DlpRegexValidationQueryBuilder)? updates]) =>
       (DlpRegexValidationQueryBuilder()..update(updates))._build();
 
-  _$DlpRegexValidationQuery._({this.maxMatchBytes, required this.regex})
+  _$DlpRegexValidationQuery._({required this.regex, this.maxMatchBytes})
       : super._();
   @override
   DlpRegexValidationQuery rebuild(
@@ -31,15 +31,15 @@ class _$DlpRegexValidationQuery extends DlpRegexValidationQuery {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is DlpRegexValidationQuery &&
-        maxMatchBytes == other.maxMatchBytes &&
-        regex == other.regex;
+        regex == other.regex &&
+        maxMatchBytes == other.maxMatchBytes;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, maxMatchBytes.hashCode);
     _$hash = $jc(_$hash, regex.hashCode);
+    _$hash = $jc(_$hash, maxMatchBytes.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -47,8 +47,8 @@ class _$DlpRegexValidationQuery extends DlpRegexValidationQuery {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'DlpRegexValidationQuery')
-          ..add('maxMatchBytes', maxMatchBytes)
-          ..add('regex', regex))
+          ..add('regex', regex)
+          ..add('maxMatchBytes', maxMatchBytes))
         .toString();
   }
 }
@@ -58,14 +58,14 @@ class DlpRegexValidationQueryBuilder
         Builder<DlpRegexValidationQuery, DlpRegexValidationQueryBuilder> {
   _$DlpRegexValidationQuery? _$v;
 
+  String? _regex;
+  String? get regex => _$this._regex;
+  set regex(String? regex) => _$this._regex = regex;
+
   int? _maxMatchBytes;
   int? get maxMatchBytes => _$this._maxMatchBytes;
   set maxMatchBytes(int? maxMatchBytes) =>
       _$this._maxMatchBytes = maxMatchBytes;
-
-  String? _regex;
-  String? get regex => _$this._regex;
-  set regex(String? regex) => _$this._regex = regex;
 
   DlpRegexValidationQueryBuilder() {
     DlpRegexValidationQuery._defaults(this);
@@ -74,8 +74,8 @@ class DlpRegexValidationQueryBuilder
   DlpRegexValidationQueryBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _maxMatchBytes = $v.maxMatchBytes;
       _regex = $v.regex;
+      _maxMatchBytes = $v.maxMatchBytes;
       _$v = null;
     }
     return this;
@@ -97,9 +97,9 @@ class DlpRegexValidationQueryBuilder
   _$DlpRegexValidationQuery _build() {
     final _$result = _$v ??
         _$DlpRegexValidationQuery._(
-          maxMatchBytes: maxMatchBytes,
           regex: BuiltValueNullFieldError.checkNotNull(
               regex, r'DlpRegexValidationQuery', 'regex'),
+          maxMatchBytes: maxMatchBytes,
         );
     replace(_$result);
     return _$result;

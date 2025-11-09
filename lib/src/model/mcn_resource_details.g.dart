@@ -20,8 +20,6 @@ class _$McnResourceDetails extends McnResourceDetails {
   @override
   final bool managed;
   @override
-  final BuiltList<McnCloudPlatformClient>? managedBy;
-  @override
   final McnCost monthlyCostEstimate;
   @override
   final String name;
@@ -49,6 +47,8 @@ class _$McnResourceDetails extends McnResourceDetails {
   final String updatedAt;
   @override
   final String url;
+  @override
+  final BuiltList<McnCloudPlatformClient>? managedBy;
 
   factory _$McnResourceDetails(
           [void Function(McnResourceDetailsBuilder)? updates]) =>
@@ -61,7 +61,6 @@ class _$McnResourceDetails extends McnResourceDetails {
       required this.deploymentProvider,
       required this.id,
       required this.managed,
-      this.managedBy,
       required this.monthlyCostEstimate,
       required this.name,
       required this.nativeId,
@@ -75,7 +74,8 @@ class _$McnResourceDetails extends McnResourceDetails {
       required this.state,
       required this.tags,
       required this.updatedAt,
-      required this.url})
+      required this.url,
+      this.managedBy})
       : super._();
   @override
   McnResourceDetails rebuild(
@@ -96,7 +96,6 @@ class _$McnResourceDetails extends McnResourceDetails {
         deploymentProvider == other.deploymentProvider &&
         id == other.id &&
         managed == other.managed &&
-        managedBy == other.managedBy &&
         monthlyCostEstimate == other.monthlyCostEstimate &&
         name == other.name &&
         nativeId == other.nativeId &&
@@ -110,7 +109,8 @@ class _$McnResourceDetails extends McnResourceDetails {
         state == other.state &&
         tags == other.tags &&
         updatedAt == other.updatedAt &&
-        url == other.url;
+        url == other.url &&
+        managedBy == other.managedBy;
   }
 
   @override
@@ -122,7 +122,6 @@ class _$McnResourceDetails extends McnResourceDetails {
     _$hash = $jc(_$hash, deploymentProvider.hashCode);
     _$hash = $jc(_$hash, id.hashCode);
     _$hash = $jc(_$hash, managed.hashCode);
-    _$hash = $jc(_$hash, managedBy.hashCode);
     _$hash = $jc(_$hash, monthlyCostEstimate.hashCode);
     _$hash = $jc(_$hash, name.hashCode);
     _$hash = $jc(_$hash, nativeId.hashCode);
@@ -137,6 +136,7 @@ class _$McnResourceDetails extends McnResourceDetails {
     _$hash = $jc(_$hash, tags.hashCode);
     _$hash = $jc(_$hash, updatedAt.hashCode);
     _$hash = $jc(_$hash, url.hashCode);
+    _$hash = $jc(_$hash, managedBy.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -150,7 +150,6 @@ class _$McnResourceDetails extends McnResourceDetails {
           ..add('deploymentProvider', deploymentProvider)
           ..add('id', id)
           ..add('managed', managed)
-          ..add('managedBy', managedBy)
           ..add('monthlyCostEstimate', monthlyCostEstimate)
           ..add('name', name)
           ..add('nativeId', nativeId)
@@ -164,7 +163,8 @@ class _$McnResourceDetails extends McnResourceDetails {
           ..add('state', state)
           ..add('tags', tags)
           ..add('updatedAt', updatedAt)
-          ..add('url', url))
+          ..add('url', url)
+          ..add('managedBy', managedBy))
         .toString();
   }
 }
@@ -199,12 +199,6 @@ class McnResourceDetailsBuilder
   bool? _managed;
   bool? get managed => _$this._managed;
   set managed(bool? managed) => _$this._managed = managed;
-
-  ListBuilder<McnCloudPlatformClient>? _managedBy;
-  ListBuilder<McnCloudPlatformClient> get managedBy =>
-      _$this._managedBy ??= ListBuilder<McnCloudPlatformClient>();
-  set managedBy(ListBuilder<McnCloudPlatformClient>? managedBy) =>
-      _$this._managedBy = managedBy;
 
   McnCostBuilder? _monthlyCostEstimate;
   McnCostBuilder get monthlyCostEstimate =>
@@ -276,6 +270,12 @@ class McnResourceDetailsBuilder
   String? get url => _$this._url;
   set url(String? url) => _$this._url = url;
 
+  ListBuilder<McnCloudPlatformClient>? _managedBy;
+  ListBuilder<McnCloudPlatformClient> get managedBy =>
+      _$this._managedBy ??= ListBuilder<McnCloudPlatformClient>();
+  set managedBy(ListBuilder<McnCloudPlatformClient>? managedBy) =>
+      _$this._managedBy = managedBy;
+
   McnResourceDetailsBuilder() {
     McnResourceDetails._defaults(this);
   }
@@ -289,7 +289,6 @@ class McnResourceDetailsBuilder
       _deploymentProvider = $v.deploymentProvider;
       _id = $v.id;
       _managed = $v.managed;
-      _managedBy = $v.managedBy?.toBuilder();
       _monthlyCostEstimate = $v.monthlyCostEstimate.toBuilder();
       _name = $v.name;
       _nativeId = $v.nativeId;
@@ -304,6 +303,7 @@ class McnResourceDetailsBuilder
       _tags = $v.tags.toBuilder();
       _updatedAt = $v.updatedAt;
       _url = $v.url;
+      _managedBy = $v.managedBy?.toBuilder();
       _$v = null;
     }
     return this;
@@ -340,7 +340,6 @@ class McnResourceDetailsBuilder
                 id, r'McnResourceDetails', 'id'),
             managed: BuiltValueNullFieldError.checkNotNull(
                 managed, r'McnResourceDetails', 'managed'),
-            managedBy: _managedBy?.build(),
             monthlyCostEstimate: monthlyCostEstimate.build(),
             name: BuiltValueNullFieldError.checkNotNull(
                 name, r'McnResourceDetails', 'name'),
@@ -362,6 +361,7 @@ class McnResourceDetailsBuilder
                 updatedAt, r'McnResourceDetails', 'updatedAt'),
             url: BuiltValueNullFieldError.checkNotNull(
                 url, r'McnResourceDetails', 'url'),
+            managedBy: _managedBy?.build(),
           );
     } catch (_) {
       late String _$failedField;
@@ -369,8 +369,6 @@ class McnResourceDetailsBuilder
         _$failedField = 'config';
         config.build();
 
-        _$failedField = 'managedBy';
-        _managedBy?.build();
         _$failedField = 'monthlyCostEstimate';
         monthlyCostEstimate.build();
 
@@ -387,6 +385,9 @@ class McnResourceDetailsBuilder
         state.build();
         _$failedField = 'tags';
         tags.build();
+
+        _$failedField = 'managedBy';
+        _managedBy?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
             r'McnResourceDetails', _$failedField, e.toString());

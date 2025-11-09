@@ -12,18 +12,18 @@ part 'iam_user_group_member.g.dart';
 /// Member attached to a User Group.
 ///
 /// Properties:
-/// * [email] - The contact email address of the user.
 /// * [id] - Account member identifier.
+/// * [email] - The contact email address of the user.
 /// * [status] - The member's status in the account.
 @BuiltValue()
 abstract class IamUserGroupMember implements Built<IamUserGroupMember, IamUserGroupMemberBuilder> {
-  /// The contact email address of the user.
-  @BuiltValueField(wireName: r'email')
-  String? get email;
-
   /// Account member identifier.
   @BuiltValueField(wireName: r'id')
   String get id;
+
+  /// The contact email address of the user.
+  @BuiltValueField(wireName: r'email')
+  String? get email;
 
   /// The member's status in the account.
   @BuiltValueField(wireName: r'status')
@@ -53,6 +53,11 @@ class _$IamUserGroupMemberSerializer implements PrimitiveSerializer<IamUserGroup
     IamUserGroupMember object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    yield r'id';
+    yield serializers.serialize(
+      object.id,
+      specifiedType: const FullType(String),
+    );
     if (object.email != null) {
       yield r'email';
       yield serializers.serialize(
@@ -60,11 +65,6 @@ class _$IamUserGroupMemberSerializer implements PrimitiveSerializer<IamUserGroup
         specifiedType: const FullType(String),
       );
     }
-    yield r'id';
-    yield serializers.serialize(
-      object.id,
-      specifiedType: const FullType(String),
-    );
     if (object.status != null) {
       yield r'status';
       yield serializers.serialize(
@@ -95,19 +95,19 @@ class _$IamUserGroupMemberSerializer implements PrimitiveSerializer<IamUserGroup
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'email':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.email = valueDes;
-          break;
         case r'id':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(String),
           ) as String;
           result.id = valueDes;
+          break;
+        case r'email':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.email = valueDes;
           break;
         case r'status':
           final valueDes = serializers.deserialize(

@@ -9,17 +9,17 @@ part of 'brapi_post_content_request_all_of_viewport.dart';
 class _$BrapiPostContentRequestAllOfViewport
     extends BrapiPostContentRequestAllOfViewport {
   @override
+  final num height;
+  @override
+  final num width;
+  @override
   final num? deviceScaleFactor;
   @override
   final bool? hasTouch;
   @override
-  final num height;
-  @override
   final bool? isLandscape;
   @override
   final bool? isMobile;
-  @override
-  final num width;
 
   factory _$BrapiPostContentRequestAllOfViewport(
           [void Function(BrapiPostContentRequestAllOfViewportBuilder)?
@@ -27,12 +27,12 @@ class _$BrapiPostContentRequestAllOfViewport
       (BrapiPostContentRequestAllOfViewportBuilder()..update(updates))._build();
 
   _$BrapiPostContentRequestAllOfViewport._(
-      {this.deviceScaleFactor,
+      {required this.height,
+      required this.width,
+      this.deviceScaleFactor,
       this.hasTouch,
-      required this.height,
       this.isLandscape,
-      this.isMobile,
-      required this.width})
+      this.isMobile})
       : super._();
   @override
   BrapiPostContentRequestAllOfViewport rebuild(
@@ -47,23 +47,23 @@ class _$BrapiPostContentRequestAllOfViewport
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is BrapiPostContentRequestAllOfViewport &&
+        height == other.height &&
+        width == other.width &&
         deviceScaleFactor == other.deviceScaleFactor &&
         hasTouch == other.hasTouch &&
-        height == other.height &&
         isLandscape == other.isLandscape &&
-        isMobile == other.isMobile &&
-        width == other.width;
+        isMobile == other.isMobile;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
+    _$hash = $jc(_$hash, height.hashCode);
+    _$hash = $jc(_$hash, width.hashCode);
     _$hash = $jc(_$hash, deviceScaleFactor.hashCode);
     _$hash = $jc(_$hash, hasTouch.hashCode);
-    _$hash = $jc(_$hash, height.hashCode);
     _$hash = $jc(_$hash, isLandscape.hashCode);
     _$hash = $jc(_$hash, isMobile.hashCode);
-    _$hash = $jc(_$hash, width.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -71,12 +71,12 @@ class _$BrapiPostContentRequestAllOfViewport
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'BrapiPostContentRequestAllOfViewport')
+          ..add('height', height)
+          ..add('width', width)
           ..add('deviceScaleFactor', deviceScaleFactor)
           ..add('hasTouch', hasTouch)
-          ..add('height', height)
           ..add('isLandscape', isLandscape)
-          ..add('isMobile', isMobile)
-          ..add('width', width))
+          ..add('isMobile', isMobile))
         .toString();
   }
 }
@@ -87,6 +87,14 @@ class BrapiPostContentRequestAllOfViewportBuilder
             BrapiPostContentRequestAllOfViewportBuilder> {
   _$BrapiPostContentRequestAllOfViewport? _$v;
 
+  num? _height;
+  num? get height => _$this._height;
+  set height(num? height) => _$this._height = height;
+
+  num? _width;
+  num? get width => _$this._width;
+  set width(num? width) => _$this._width = width;
+
   num? _deviceScaleFactor;
   num? get deviceScaleFactor => _$this._deviceScaleFactor;
   set deviceScaleFactor(num? deviceScaleFactor) =>
@@ -96,10 +104,6 @@ class BrapiPostContentRequestAllOfViewportBuilder
   bool? get hasTouch => _$this._hasTouch;
   set hasTouch(bool? hasTouch) => _$this._hasTouch = hasTouch;
 
-  num? _height;
-  num? get height => _$this._height;
-  set height(num? height) => _$this._height = height;
-
   bool? _isLandscape;
   bool? get isLandscape => _$this._isLandscape;
   set isLandscape(bool? isLandscape) => _$this._isLandscape = isLandscape;
@@ -108,10 +112,6 @@ class BrapiPostContentRequestAllOfViewportBuilder
   bool? get isMobile => _$this._isMobile;
   set isMobile(bool? isMobile) => _$this._isMobile = isMobile;
 
-  num? _width;
-  num? get width => _$this._width;
-  set width(num? width) => _$this._width = width;
-
   BrapiPostContentRequestAllOfViewportBuilder() {
     BrapiPostContentRequestAllOfViewport._defaults(this);
   }
@@ -119,12 +119,12 @@ class BrapiPostContentRequestAllOfViewportBuilder
   BrapiPostContentRequestAllOfViewportBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
+      _height = $v.height;
+      _width = $v.width;
       _deviceScaleFactor = $v.deviceScaleFactor;
       _hasTouch = $v.hasTouch;
-      _height = $v.height;
       _isLandscape = $v.isLandscape;
       _isMobile = $v.isMobile;
-      _width = $v.width;
       _$v = null;
     }
     return this;
@@ -147,14 +147,14 @@ class BrapiPostContentRequestAllOfViewportBuilder
   _$BrapiPostContentRequestAllOfViewport _build() {
     final _$result = _$v ??
         _$BrapiPostContentRequestAllOfViewport._(
-          deviceScaleFactor: deviceScaleFactor,
-          hasTouch: hasTouch,
           height: BuiltValueNullFieldError.checkNotNull(
               height, r'BrapiPostContentRequestAllOfViewport', 'height'),
-          isLandscape: isLandscape,
-          isMobile: isMobile,
           width: BuiltValueNullFieldError.checkNotNull(
               width, r'BrapiPostContentRequestAllOfViewport', 'width'),
+          deviceScaleFactor: deviceScaleFactor,
+          hasTouch: hasTouch,
+          isLandscape: isLandscape,
+          isMobile: isMobile,
         );
     replace(_$result);
     return _$result;

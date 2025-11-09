@@ -19,11 +19,12 @@ part 'workers_ai_post_run_cf_mistralai_mistral_small3124b_instruct_request.g.dar
 /// WorkersAiPostRunCfMistralaiMistralSmall3124bInstructRequest
 ///
 /// Properties:
+/// * [prompt] - The input text prompt for the model to generate a response.
+/// * [messages] - An array of message objects representing the conversation history.
 /// * [frequencyPenalty] - Decreases the likelihood of the model repeating the same lines verbatim.
 /// * [guidedJson] - JSON schema that should be fufilled for the response.
 /// * [maxTokens] - The maximum number of tokens to generate in the response.
 /// * [presencePenalty] - Increases the likelihood of the model introducing new topics.
-/// * [prompt] - The input text prompt for the model to generate a response.
 /// * [raw] - If true, a chat template is not applied and you must adhere to the specific model's expected formatting.
 /// * [repetitionPenalty] - Penalty for repeated tokens; higher values discourage repetition.
 /// * [seed] - Random seed for reproducibility of the generation.
@@ -32,7 +33,6 @@ part 'workers_ai_post_run_cf_mistralai_mistral_small3124b_instruct_request.g.dar
 /// * [topK] - Limits the AI to choose from the top 'k' most probable words. Lower values make responses more focused; higher values introduce more variety and potential surprises.
 /// * [topP] - Adjusts the creativity of the AI's responses by controlling how many possible words it considers. Lower values make outputs more predictable; higher values allow for more varied and creative responses.
 /// * [functions] 
-/// * [messages] - An array of message objects representing the conversation history.
 /// * [tools] - A list of tools available for the assistant to use.
 @BuiltValue()
 abstract class WorkersAiPostRunCfMistralaiMistralSmall3124bInstructRequest implements Built<WorkersAiPostRunCfMistralaiMistralSmall3124bInstructRequest, WorkersAiPostRunCfMistralaiMistralSmall3124bInstructRequestBuilder> {

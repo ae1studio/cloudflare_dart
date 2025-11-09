@@ -11,13 +11,17 @@ part 'mconn_snapshot_thermal.g.dart';
 /// Snapshot Thermal
 ///
 /// Properties:
+/// * [label] - Sensor identifier for the component
 /// * [connectorId] - Connector identifier
 /// * [criticalCelcius] - Critical failure temperature of the component (degrees Celsius)
 /// * [currentCelcius] - Current temperature of the component (degrees Celsius)
-/// * [label] - Sensor identifier for the component
 /// * [maxCelcius] - Maximum temperature of the component (degrees Celsius)
 @BuiltValue()
 abstract class MconnSnapshotThermal implements Built<MconnSnapshotThermal, MconnSnapshotThermalBuilder> {
+  /// Sensor identifier for the component
+  @BuiltValueField(wireName: r'label')
+  String get label;
+
   /// Connector identifier
   @BuiltValueField(wireName: r'connector_id')
   String? get connectorId;
@@ -29,10 +33,6 @@ abstract class MconnSnapshotThermal implements Built<MconnSnapshotThermal, Mconn
   /// Current temperature of the component (degrees Celsius)
   @BuiltValueField(wireName: r'current_celcius')
   num? get currentCelcius;
-
-  /// Sensor identifier for the component
-  @BuiltValueField(wireName: r'label')
-  String get label;
 
   /// Maximum temperature of the component (degrees Celsius)
   @BuiltValueField(wireName: r'max_celcius')
@@ -61,6 +61,11 @@ class _$MconnSnapshotThermalSerializer implements PrimitiveSerializer<MconnSnaps
     MconnSnapshotThermal object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    yield r'label';
+    yield serializers.serialize(
+      object.label,
+      specifiedType: const FullType(String),
+    );
     if (object.connectorId != null) {
       yield r'connector_id';
       yield serializers.serialize(
@@ -82,11 +87,6 @@ class _$MconnSnapshotThermalSerializer implements PrimitiveSerializer<MconnSnaps
         specifiedType: const FullType(num),
       );
     }
-    yield r'label';
-    yield serializers.serialize(
-      object.label,
-      specifiedType: const FullType(String),
-    );
     if (object.maxCelcius != null) {
       yield r'max_celcius';
       yield serializers.serialize(
@@ -117,6 +117,13 @@ class _$MconnSnapshotThermalSerializer implements PrimitiveSerializer<MconnSnaps
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
+        case r'label':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.label = valueDes;
+          break;
         case r'connector_id':
           final valueDes = serializers.deserialize(
             value,
@@ -137,13 +144,6 @@ class _$MconnSnapshotThermalSerializer implements PrimitiveSerializer<MconnSnaps
             specifiedType: const FullType(num),
           ) as num;
           result.currentCelcius = valueDes;
-          break;
-        case r'label':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.label = valueDes;
           break;
         case r'max_celcius':
           final valueDes = serializers.deserialize(

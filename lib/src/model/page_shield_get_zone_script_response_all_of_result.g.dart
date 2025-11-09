@@ -13,6 +13,18 @@ class _$PageShieldGetZoneScriptResponseAllOfResult
   @override
   final DateTime addedAt;
   @override
+  final DateTime firstSeenAt;
+  @override
+  final String host;
+  @override
+  final String id;
+  @override
+  final DateTime lastSeenAt;
+  @override
+  final String url;
+  @override
+  final bool urlContainsCdnCgiPath;
+  @override
   final int? cryptominingScore;
   @override
   final int? dataflowScore;
@@ -23,17 +35,9 @@ class _$PageShieldGetZoneScriptResponseAllOfResult
   @override
   final String? firstPageUrl;
   @override
-  final DateTime firstSeenAt;
-  @override
   final String? hash;
   @override
-  final String host;
-  @override
-  final String id;
-  @override
   final int? jsIntegrityScore;
-  @override
-  final DateTime lastSeenAt;
   @override
   final int? magecartScore;
   @override
@@ -47,10 +51,6 @@ class _$PageShieldGetZoneScriptResponseAllOfResult
   @override
   final BuiltList<String>? pageUrls;
   @override
-  final String url;
-  @override
-  final bool urlContainsCdnCgiPath;
-  @override
   final bool? urlReportedMalicious;
 
   factory _$PageShieldGetZoneScriptResponseAllOfResult(
@@ -62,25 +62,25 @@ class _$PageShieldGetZoneScriptResponseAllOfResult
   _$PageShieldGetZoneScriptResponseAllOfResult._(
       {this.versions,
       required this.addedAt,
+      required this.firstSeenAt,
+      required this.host,
+      required this.id,
+      required this.lastSeenAt,
+      required this.url,
+      required this.urlContainsCdnCgiPath,
       this.cryptominingScore,
       this.dataflowScore,
       this.domainReportedMalicious,
       this.fetchedAt,
       this.firstPageUrl,
-      required this.firstSeenAt,
       this.hash,
-      required this.host,
-      required this.id,
       this.jsIntegrityScore,
-      required this.lastSeenAt,
       this.magecartScore,
       this.maliciousDomainCategories,
       this.maliciousUrlCategories,
       this.malwareScore,
       this.obfuscationScore,
       this.pageUrls,
-      required this.url,
-      required this.urlContainsCdnCgiPath,
       this.urlReportedMalicious})
       : super._();
   @override
@@ -99,25 +99,25 @@ class _$PageShieldGetZoneScriptResponseAllOfResult
     return other is PageShieldGetZoneScriptResponseAllOfResult &&
         versions == other.versions &&
         addedAt == other.addedAt &&
+        firstSeenAt == other.firstSeenAt &&
+        host == other.host &&
+        id == other.id &&
+        lastSeenAt == other.lastSeenAt &&
+        url == other.url &&
+        urlContainsCdnCgiPath == other.urlContainsCdnCgiPath &&
         cryptominingScore == other.cryptominingScore &&
         dataflowScore == other.dataflowScore &&
         domainReportedMalicious == other.domainReportedMalicious &&
         fetchedAt == other.fetchedAt &&
         firstPageUrl == other.firstPageUrl &&
-        firstSeenAt == other.firstSeenAt &&
         hash == other.hash &&
-        host == other.host &&
-        id == other.id &&
         jsIntegrityScore == other.jsIntegrityScore &&
-        lastSeenAt == other.lastSeenAt &&
         magecartScore == other.magecartScore &&
         maliciousDomainCategories == other.maliciousDomainCategories &&
         maliciousUrlCategories == other.maliciousUrlCategories &&
         malwareScore == other.malwareScore &&
         obfuscationScore == other.obfuscationScore &&
         pageUrls == other.pageUrls &&
-        url == other.url &&
-        urlContainsCdnCgiPath == other.urlContainsCdnCgiPath &&
         urlReportedMalicious == other.urlReportedMalicious;
   }
 
@@ -126,25 +126,25 @@ class _$PageShieldGetZoneScriptResponseAllOfResult
     var _$hash = 0;
     _$hash = $jc(_$hash, versions.hashCode);
     _$hash = $jc(_$hash, addedAt.hashCode);
+    _$hash = $jc(_$hash, firstSeenAt.hashCode);
+    _$hash = $jc(_$hash, host.hashCode);
+    _$hash = $jc(_$hash, id.hashCode);
+    _$hash = $jc(_$hash, lastSeenAt.hashCode);
+    _$hash = $jc(_$hash, url.hashCode);
+    _$hash = $jc(_$hash, urlContainsCdnCgiPath.hashCode);
     _$hash = $jc(_$hash, cryptominingScore.hashCode);
     _$hash = $jc(_$hash, dataflowScore.hashCode);
     _$hash = $jc(_$hash, domainReportedMalicious.hashCode);
     _$hash = $jc(_$hash, fetchedAt.hashCode);
     _$hash = $jc(_$hash, firstPageUrl.hashCode);
-    _$hash = $jc(_$hash, firstSeenAt.hashCode);
     _$hash = $jc(_$hash, hash.hashCode);
-    _$hash = $jc(_$hash, host.hashCode);
-    _$hash = $jc(_$hash, id.hashCode);
     _$hash = $jc(_$hash, jsIntegrityScore.hashCode);
-    _$hash = $jc(_$hash, lastSeenAt.hashCode);
     _$hash = $jc(_$hash, magecartScore.hashCode);
     _$hash = $jc(_$hash, maliciousDomainCategories.hashCode);
     _$hash = $jc(_$hash, maliciousUrlCategories.hashCode);
     _$hash = $jc(_$hash, malwareScore.hashCode);
     _$hash = $jc(_$hash, obfuscationScore.hashCode);
     _$hash = $jc(_$hash, pageUrls.hashCode);
-    _$hash = $jc(_$hash, url.hashCode);
-    _$hash = $jc(_$hash, urlContainsCdnCgiPath.hashCode);
     _$hash = $jc(_$hash, urlReportedMalicious.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
@@ -156,25 +156,25 @@ class _$PageShieldGetZoneScriptResponseAllOfResult
             r'PageShieldGetZoneScriptResponseAllOfResult')
           ..add('versions', versions)
           ..add('addedAt', addedAt)
+          ..add('firstSeenAt', firstSeenAt)
+          ..add('host', host)
+          ..add('id', id)
+          ..add('lastSeenAt', lastSeenAt)
+          ..add('url', url)
+          ..add('urlContainsCdnCgiPath', urlContainsCdnCgiPath)
           ..add('cryptominingScore', cryptominingScore)
           ..add('dataflowScore', dataflowScore)
           ..add('domainReportedMalicious', domainReportedMalicious)
           ..add('fetchedAt', fetchedAt)
           ..add('firstPageUrl', firstPageUrl)
-          ..add('firstSeenAt', firstSeenAt)
           ..add('hash', hash)
-          ..add('host', host)
-          ..add('id', id)
           ..add('jsIntegrityScore', jsIntegrityScore)
-          ..add('lastSeenAt', lastSeenAt)
           ..add('magecartScore', magecartScore)
           ..add('maliciousDomainCategories', maliciousDomainCategories)
           ..add('maliciousUrlCategories', maliciousUrlCategories)
           ..add('malwareScore', malwareScore)
           ..add('obfuscationScore', obfuscationScore)
           ..add('pageUrls', pageUrls)
-          ..add('url', url)
-          ..add('urlContainsCdnCgiPath', urlContainsCdnCgiPath)
           ..add('urlReportedMalicious', urlReportedMalicious))
         .toString();
   }
@@ -196,6 +196,33 @@ class PageShieldGetZoneScriptResponseAllOfResultBuilder
   DateTime? _addedAt;
   DateTime? get addedAt => _$this._addedAt;
   set addedAt(covariant DateTime? addedAt) => _$this._addedAt = addedAt;
+
+  DateTime? _firstSeenAt;
+  DateTime? get firstSeenAt => _$this._firstSeenAt;
+  set firstSeenAt(covariant DateTime? firstSeenAt) =>
+      _$this._firstSeenAt = firstSeenAt;
+
+  String? _host;
+  String? get host => _$this._host;
+  set host(covariant String? host) => _$this._host = host;
+
+  String? _id;
+  String? get id => _$this._id;
+  set id(covariant String? id) => _$this._id = id;
+
+  DateTime? _lastSeenAt;
+  DateTime? get lastSeenAt => _$this._lastSeenAt;
+  set lastSeenAt(covariant DateTime? lastSeenAt) =>
+      _$this._lastSeenAt = lastSeenAt;
+
+  String? _url;
+  String? get url => _$this._url;
+  set url(covariant String? url) => _$this._url = url;
+
+  bool? _urlContainsCdnCgiPath;
+  bool? get urlContainsCdnCgiPath => _$this._urlContainsCdnCgiPath;
+  set urlContainsCdnCgiPath(covariant bool? urlContainsCdnCgiPath) =>
+      _$this._urlContainsCdnCgiPath = urlContainsCdnCgiPath;
 
   int? _cryptominingScore;
   int? get cryptominingScore => _$this._cryptominingScore;
@@ -221,32 +248,14 @@ class PageShieldGetZoneScriptResponseAllOfResultBuilder
   set firstPageUrl(covariant String? firstPageUrl) =>
       _$this._firstPageUrl = firstPageUrl;
 
-  DateTime? _firstSeenAt;
-  DateTime? get firstSeenAt => _$this._firstSeenAt;
-  set firstSeenAt(covariant DateTime? firstSeenAt) =>
-      _$this._firstSeenAt = firstSeenAt;
-
   String? _hash;
   String? get hash => _$this._hash;
   set hash(covariant String? hash) => _$this._hash = hash;
-
-  String? _host;
-  String? get host => _$this._host;
-  set host(covariant String? host) => _$this._host = host;
-
-  String? _id;
-  String? get id => _$this._id;
-  set id(covariant String? id) => _$this._id = id;
 
   int? _jsIntegrityScore;
   int? get jsIntegrityScore => _$this._jsIntegrityScore;
   set jsIntegrityScore(covariant int? jsIntegrityScore) =>
       _$this._jsIntegrityScore = jsIntegrityScore;
-
-  DateTime? _lastSeenAt;
-  DateTime? get lastSeenAt => _$this._lastSeenAt;
-  set lastSeenAt(covariant DateTime? lastSeenAt) =>
-      _$this._lastSeenAt = lastSeenAt;
 
   int? _magecartScore;
   int? get magecartScore => _$this._magecartScore;
@@ -283,15 +292,6 @@ class PageShieldGetZoneScriptResponseAllOfResultBuilder
   set pageUrls(covariant ListBuilder<String>? pageUrls) =>
       _$this._pageUrls = pageUrls;
 
-  String? _url;
-  String? get url => _$this._url;
-  set url(covariant String? url) => _$this._url = url;
-
-  bool? _urlContainsCdnCgiPath;
-  bool? get urlContainsCdnCgiPath => _$this._urlContainsCdnCgiPath;
-  set urlContainsCdnCgiPath(covariant bool? urlContainsCdnCgiPath) =>
-      _$this._urlContainsCdnCgiPath = urlContainsCdnCgiPath;
-
   bool? _urlReportedMalicious;
   bool? get urlReportedMalicious => _$this._urlReportedMalicious;
   set urlReportedMalicious(covariant bool? urlReportedMalicious) =>
@@ -306,25 +306,25 @@ class PageShieldGetZoneScriptResponseAllOfResultBuilder
     if ($v != null) {
       _versions = $v.versions?.toBuilder();
       _addedAt = $v.addedAt;
+      _firstSeenAt = $v.firstSeenAt;
+      _host = $v.host;
+      _id = $v.id;
+      _lastSeenAt = $v.lastSeenAt;
+      _url = $v.url;
+      _urlContainsCdnCgiPath = $v.urlContainsCdnCgiPath;
       _cryptominingScore = $v.cryptominingScore;
       _dataflowScore = $v.dataflowScore;
       _domainReportedMalicious = $v.domainReportedMalicious;
       _fetchedAt = $v.fetchedAt;
       _firstPageUrl = $v.firstPageUrl;
-      _firstSeenAt = $v.firstSeenAt;
       _hash = $v.hash;
-      _host = $v.host;
-      _id = $v.id;
       _jsIntegrityScore = $v.jsIntegrityScore;
-      _lastSeenAt = $v.lastSeenAt;
       _magecartScore = $v.magecartScore;
       _maliciousDomainCategories = $v.maliciousDomainCategories?.toBuilder();
       _maliciousUrlCategories = $v.maliciousUrlCategories?.toBuilder();
       _malwareScore = $v.malwareScore;
       _obfuscationScore = $v.obfuscationScore;
       _pageUrls = $v.pageUrls?.toBuilder();
-      _url = $v.url;
-      _urlContainsCdnCgiPath = $v.urlContainsCdnCgiPath;
       _urlReportedMalicious = $v.urlReportedMalicious;
       _$v = null;
     }
@@ -354,33 +354,33 @@ class PageShieldGetZoneScriptResponseAllOfResultBuilder
             versions: _versions?.build(),
             addedAt: BuiltValueNullFieldError.checkNotNull(addedAt,
                 r'PageShieldGetZoneScriptResponseAllOfResult', 'addedAt'),
-            cryptominingScore: cryptominingScore,
-            dataflowScore: dataflowScore,
-            domainReportedMalicious: domainReportedMalicious,
-            fetchedAt: fetchedAt,
-            firstPageUrl: firstPageUrl,
             firstSeenAt: BuiltValueNullFieldError.checkNotNull(firstSeenAt,
                 r'PageShieldGetZoneScriptResponseAllOfResult', 'firstSeenAt'),
-            hash: hash,
             host: BuiltValueNullFieldError.checkNotNull(
                 host, r'PageShieldGetZoneScriptResponseAllOfResult', 'host'),
             id: BuiltValueNullFieldError.checkNotNull(
                 id, r'PageShieldGetZoneScriptResponseAllOfResult', 'id'),
-            jsIntegrityScore: jsIntegrityScore,
             lastSeenAt: BuiltValueNullFieldError.checkNotNull(lastSeenAt,
                 r'PageShieldGetZoneScriptResponseAllOfResult', 'lastSeenAt'),
-            magecartScore: magecartScore,
-            maliciousDomainCategories: _maliciousDomainCategories?.build(),
-            maliciousUrlCategories: _maliciousUrlCategories?.build(),
-            malwareScore: malwareScore,
-            obfuscationScore: obfuscationScore,
-            pageUrls: _pageUrls?.build(),
             url: BuiltValueNullFieldError.checkNotNull(
                 url, r'PageShieldGetZoneScriptResponseAllOfResult', 'url'),
             urlContainsCdnCgiPath: BuiltValueNullFieldError.checkNotNull(
                 urlContainsCdnCgiPath,
                 r'PageShieldGetZoneScriptResponseAllOfResult',
                 'urlContainsCdnCgiPath'),
+            cryptominingScore: cryptominingScore,
+            dataflowScore: dataflowScore,
+            domainReportedMalicious: domainReportedMalicious,
+            fetchedAt: fetchedAt,
+            firstPageUrl: firstPageUrl,
+            hash: hash,
+            jsIntegrityScore: jsIntegrityScore,
+            magecartScore: magecartScore,
+            maliciousDomainCategories: _maliciousDomainCategories?.build(),
+            maliciousUrlCategories: _maliciousUrlCategories?.build(),
+            malwareScore: malwareScore,
+            obfuscationScore: obfuscationScore,
+            pageUrls: _pageUrls?.build(),
             urlReportedMalicious: urlReportedMalicious,
           );
     } catch (_) {

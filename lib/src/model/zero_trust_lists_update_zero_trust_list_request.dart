@@ -13,11 +13,15 @@ part 'zero_trust_lists_update_zero_trust_list_request.g.dart';
 /// ZeroTrustListsUpdateZeroTrustListRequest
 ///
 /// Properties:
+/// * [name] - Specify the list name.
 /// * [description] - Provide the list description.
 /// * [items] - Add items to the list.
-/// * [name] - Specify the list name.
 @BuiltValue()
 abstract class ZeroTrustListsUpdateZeroTrustListRequest implements Built<ZeroTrustListsUpdateZeroTrustListRequest, ZeroTrustListsUpdateZeroTrustListRequestBuilder> {
+  /// Specify the list name.
+  @BuiltValueField(wireName: r'name')
+  String get name;
+
   /// Provide the list description.
   @BuiltValueField(wireName: r'description')
   String? get description;
@@ -25,10 +29,6 @@ abstract class ZeroTrustListsUpdateZeroTrustListRequest implements Built<ZeroTru
   /// Add items to the list.
   @BuiltValueField(wireName: r'items')
   BuiltList<ZeroTrustGatewayItemsInputInner>? get items;
-
-  /// Specify the list name.
-  @BuiltValueField(wireName: r'name')
-  String get name;
 
   ZeroTrustListsUpdateZeroTrustListRequest._();
 
@@ -53,6 +53,11 @@ class _$ZeroTrustListsUpdateZeroTrustListRequestSerializer implements PrimitiveS
     ZeroTrustListsUpdateZeroTrustListRequest object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    yield r'name';
+    yield serializers.serialize(
+      object.name,
+      specifiedType: const FullType(String),
+    );
     if (object.description != null) {
       yield r'description';
       yield serializers.serialize(
@@ -67,11 +72,6 @@ class _$ZeroTrustListsUpdateZeroTrustListRequestSerializer implements PrimitiveS
         specifiedType: const FullType(BuiltList, [FullType(ZeroTrustGatewayItemsInputInner)]),
       );
     }
-    yield r'name';
-    yield serializers.serialize(
-      object.name,
-      specifiedType: const FullType(String),
-    );
   }
 
   @override
@@ -95,6 +95,13 @@ class _$ZeroTrustListsUpdateZeroTrustListRequestSerializer implements PrimitiveS
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
+        case r'name':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.name = valueDes;
+          break;
         case r'description':
           final valueDes = serializers.deserialize(
             value,
@@ -108,13 +115,6 @@ class _$ZeroTrustListsUpdateZeroTrustListRequestSerializer implements PrimitiveS
             specifiedType: const FullType(BuiltList, [FullType(ZeroTrustGatewayItemsInputInner)]),
           ) as BuiltList<ZeroTrustGatewayItemsInputInner>;
           result.items.replace(valueDes);
-          break;
-        case r'name':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.name = valueDes;
           break;
         default:
           unhandled.add(key);

@@ -12,17 +12,17 @@ part 'nsc_status_info_one_of1.g.dart';
 /// NscStatusInfoOneOf1
 ///
 /// Properties:
-/// * [reason] - Diagnostic information, if available
 /// * [state] 
+/// * [reason] - Diagnostic information, if available
 @BuiltValue()
 abstract class NscStatusInfoOneOf1 implements Built<NscStatusInfoOneOf1, NscStatusInfoOneOf1Builder> {
-  /// Diagnostic information, if available
-  @BuiltValueField(wireName: r'reason')
-  String? get reason;
-
   @BuiltValueField(wireName: r'state')
   NscStatusInfoOneOf1StateEnum get state;
   // enum stateEnum {  Down,  };
+
+  /// Diagnostic information, if available
+  @BuiltValueField(wireName: r'reason')
+  String? get reason;
 
   NscStatusInfoOneOf1._();
 
@@ -47,6 +47,11 @@ class _$NscStatusInfoOneOf1Serializer implements PrimitiveSerializer<NscStatusIn
     NscStatusInfoOneOf1 object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    yield r'state';
+    yield serializers.serialize(
+      object.state,
+      specifiedType: const FullType(NscStatusInfoOneOf1StateEnum),
+    );
     if (object.reason != null) {
       yield r'reason';
       yield serializers.serialize(
@@ -54,11 +59,6 @@ class _$NscStatusInfoOneOf1Serializer implements PrimitiveSerializer<NscStatusIn
         specifiedType: const FullType.nullable(String),
       );
     }
-    yield r'state';
-    yield serializers.serialize(
-      object.state,
-      specifiedType: const FullType(NscStatusInfoOneOf1StateEnum),
-    );
   }
 
   @override
@@ -82,6 +82,13 @@ class _$NscStatusInfoOneOf1Serializer implements PrimitiveSerializer<NscStatusIn
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
+        case r'state':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(NscStatusInfoOneOf1StateEnum),
+          ) as NscStatusInfoOneOf1StateEnum;
+          result.state = valueDes;
+          break;
         case r'reason':
           final valueDes = serializers.deserialize(
             value,
@@ -89,13 +96,6 @@ class _$NscStatusInfoOneOf1Serializer implements PrimitiveSerializer<NscStatusIn
           ) as String?;
           if (valueDes == null) continue;
           result.reason = valueDes;
-          break;
-        case r'state':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(NscStatusInfoOneOf1StateEnum),
-          ) as NscStatusInfoOneOf1StateEnum;
-          result.state = valueDes;
           break;
         default:
           unhandled.add(key);

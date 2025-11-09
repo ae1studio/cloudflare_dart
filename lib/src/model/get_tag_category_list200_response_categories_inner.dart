@@ -11,27 +11,27 @@ part 'get_tag_category_list200_response_categories_inner.g.dart';
 /// GetTagCategoryList200ResponseCategoriesInner
 ///
 /// Properties:
+/// * [name] 
+/// * [uuid] 
 /// * [createdAt] 
 /// * [description] 
-/// * [name] 
 /// * [updatedAt] 
-/// * [uuid] 
 @BuiltValue()
 abstract class GetTagCategoryList200ResponseCategoriesInner implements Built<GetTagCategoryList200ResponseCategoriesInner, GetTagCategoryList200ResponseCategoriesInnerBuilder> {
+  @BuiltValueField(wireName: r'name')
+  String get name;
+
+  @BuiltValueField(wireName: r'uuid')
+  String get uuid;
+
   @BuiltValueField(wireName: r'createdAt')
   String? get createdAt;
 
   @BuiltValueField(wireName: r'description')
   String? get description;
 
-  @BuiltValueField(wireName: r'name')
-  String get name;
-
   @BuiltValueField(wireName: r'updatedAt')
   String? get updatedAt;
-
-  @BuiltValueField(wireName: r'uuid')
-  String get uuid;
 
   GetTagCategoryList200ResponseCategoriesInner._();
 
@@ -56,6 +56,16 @@ class _$GetTagCategoryList200ResponseCategoriesInnerSerializer implements Primit
     GetTagCategoryList200ResponseCategoriesInner object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    yield r'name';
+    yield serializers.serialize(
+      object.name,
+      specifiedType: const FullType(String),
+    );
+    yield r'uuid';
+    yield serializers.serialize(
+      object.uuid,
+      specifiedType: const FullType(String),
+    );
     if (object.createdAt != null) {
       yield r'createdAt';
       yield serializers.serialize(
@@ -70,11 +80,6 @@ class _$GetTagCategoryList200ResponseCategoriesInnerSerializer implements Primit
         specifiedType: const FullType(String),
       );
     }
-    yield r'name';
-    yield serializers.serialize(
-      object.name,
-      specifiedType: const FullType(String),
-    );
     if (object.updatedAt != null) {
       yield r'updatedAt';
       yield serializers.serialize(
@@ -82,11 +87,6 @@ class _$GetTagCategoryList200ResponseCategoriesInnerSerializer implements Primit
         specifiedType: const FullType(String),
       );
     }
-    yield r'uuid';
-    yield serializers.serialize(
-      object.uuid,
-      specifiedType: const FullType(String),
-    );
   }
 
   @override
@@ -110,6 +110,20 @@ class _$GetTagCategoryList200ResponseCategoriesInnerSerializer implements Primit
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
+        case r'name':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.name = valueDes;
+          break;
+        case r'uuid':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.uuid = valueDes;
+          break;
         case r'createdAt':
           final valueDes = serializers.deserialize(
             value,
@@ -124,26 +138,12 @@ class _$GetTagCategoryList200ResponseCategoriesInnerSerializer implements Primit
           ) as String;
           result.description = valueDes;
           break;
-        case r'name':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.name = valueDes;
-          break;
         case r'updatedAt':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(String),
           ) as String;
           result.updatedAt = valueDes;
-          break;
-        case r'uuid':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.uuid = valueDes;
           break;
         default:
           unhandled.add(key);

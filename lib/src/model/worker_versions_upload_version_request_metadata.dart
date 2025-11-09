@@ -15,15 +15,19 @@ part 'worker_versions_upload_version_request_metadata.g.dart';
 /// JSON-encoded metadata about the uploaded parts and Worker configuration.
 ///
 /// Properties:
+/// * [mainModule] - Name of the uploaded file that contains the main module (e.g. the file exporting a `fetch` handler). Indicates a `module syntax` Worker, which is required for Version Upload.
 /// * [annotations] 
 /// * [bindings] - List of bindings attached to a Worker. You can find more about bindings on our docs: https://developers.cloudflare.com/workers/configuration/multipart-upload-metadata/#bindings.
 /// * [compatibilityDate] - Date indicating targeted support in the Workers runtime. Backwards incompatible fixes to the runtime following this date will not affect this Worker.
 /// * [compatibilityFlags] - Flags that enable or disable certain features in the Workers runtime. Used to enable upcoming features or opt in or out of specific changes not included in a `compatibility_date`.
 /// * [keepBindings] - List of binding types to keep from previous_upload.
-/// * [mainModule] - Name of the uploaded file that contains the main module (e.g. the file exporting a `fetch` handler). Indicates a `module syntax` Worker, which is required for Version Upload.
 /// * [usageModel] 
 @BuiltValue()
 abstract class WorkerVersionsUploadVersionRequestMetadata implements Built<WorkerVersionsUploadVersionRequestMetadata, WorkerVersionsUploadVersionRequestMetadataBuilder> {
+  /// Name of the uploaded file that contains the main module (e.g. the file exporting a `fetch` handler). Indicates a `module syntax` Worker, which is required for Version Upload.
+  @BuiltValueField(wireName: r'main_module')
+  String get mainModule;
+
   @BuiltValueField(wireName: r'annotations')
   WorkerVersionsUploadVersionRequestMetadataAnnotations? get annotations;
 
@@ -42,10 +46,6 @@ abstract class WorkerVersionsUploadVersionRequestMetadata implements Built<Worke
   /// List of binding types to keep from previous_upload.
   @BuiltValueField(wireName: r'keep_bindings')
   BuiltList<String>? get keepBindings;
-
-  /// Name of the uploaded file that contains the main module (e.g. the file exporting a `fetch` handler). Indicates a `module syntax` Worker, which is required for Version Upload.
-  @BuiltValueField(wireName: r'main_module')
-  String get mainModule;
 
   @BuiltValueField(wireName: r'usage_model')
   WorkersUsageModel? get usageModel;
@@ -75,6 +75,11 @@ class _$WorkerVersionsUploadVersionRequestMetadataSerializer implements Primitiv
     WorkerVersionsUploadVersionRequestMetadata object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    yield r'main_module';
+    yield serializers.serialize(
+      object.mainModule,
+      specifiedType: const FullType(String),
+    );
     if (object.annotations != null) {
       yield r'annotations';
       yield serializers.serialize(
@@ -110,11 +115,6 @@ class _$WorkerVersionsUploadVersionRequestMetadataSerializer implements Primitiv
         specifiedType: const FullType(BuiltList, [FullType(String)]),
       );
     }
-    yield r'main_module';
-    yield serializers.serialize(
-      object.mainModule,
-      specifiedType: const FullType(String),
-    );
     if (object.usageModel != null) {
       yield r'usage_model';
       yield serializers.serialize(
@@ -145,6 +145,13 @@ class _$WorkerVersionsUploadVersionRequestMetadataSerializer implements Primitiv
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
+        case r'main_module':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.mainModule = valueDes;
+          break;
         case r'annotations':
           final valueDes = serializers.deserialize(
             value,
@@ -179,13 +186,6 @@ class _$WorkerVersionsUploadVersionRequestMetadataSerializer implements Primitiv
             specifiedType: const FullType(BuiltList, [FullType(String)]),
           ) as BuiltList<String>;
           result.keepBindings.replace(valueDes);
-          break;
-        case r'main_module':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.mainModule = valueDes;
           break;
         case r'usage_model':
           final valueDes = serializers.deserialize(

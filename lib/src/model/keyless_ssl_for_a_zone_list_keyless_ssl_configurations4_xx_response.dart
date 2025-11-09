@@ -20,8 +20,8 @@ part 'keyless_ssl_for_a_zone_list_keyless_ssl_configurations4_xx_response.g.dart
 /// * [errors] 
 /// * [messages] 
 /// * [success] - Whether the API call was successful.
-/// * [resultInfo] 
 /// * [result] 
+/// * [resultInfo] 
 @BuiltValue()
 abstract class KeylessSslForAZoneListKeylessSslConfigurations4XXResponse implements TlsCertificatesAndHostnamesApiResponseCommonFailure, TlsCertificatesAndHostnamesKeylessResponseCollection, Built<KeylessSslForAZoneListKeylessSslConfigurations4XXResponse, KeylessSslForAZoneListKeylessSslConfigurations4XXResponseBuilder> {
   KeylessSslForAZoneListKeylessSslConfigurations4XXResponse._();

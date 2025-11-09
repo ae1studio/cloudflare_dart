@@ -13,18 +13,26 @@ part 'cloudforce_one_requests_request_list.g.dart';
 /// CloudforceOneRequestsRequestList
 ///
 /// Properties:
+/// * [page] - Page number of results.
+/// * [perPage] - Number of results per page.
 /// * [completedAfter] - Retrieve requests completed after this time.
 /// * [completedBefore] - Retrieve requests completed before this time.
 /// * [createdAfter] - Retrieve requests created after this time.
 /// * [createdBefore] - Retrieve requests created before this time.
-/// * [page] - Page number of results.
-/// * [perPage] - Number of results per page.
 /// * [requestType] - Requested information from request.
 /// * [sortBy] - Field to sort results by.
 /// * [sortOrder] - Sort order (asc or desc).
 /// * [status] 
 @BuiltValue()
 abstract class CloudforceOneRequestsRequestList implements Built<CloudforceOneRequestsRequestList, CloudforceOneRequestsRequestListBuilder> {
+  /// Page number of results.
+  @BuiltValueField(wireName: r'page')
+  int get page;
+
+  /// Number of results per page.
+  @BuiltValueField(wireName: r'per_page')
+  int get perPage;
+
   /// Retrieve requests completed after this time.
   @BuiltValueField(wireName: r'completed_after')
   DateTime? get completedAfter;
@@ -40,14 +48,6 @@ abstract class CloudforceOneRequestsRequestList implements Built<CloudforceOneRe
   /// Retrieve requests created before this time.
   @BuiltValueField(wireName: r'created_before')
   DateTime? get createdBefore;
-
-  /// Page number of results.
-  @BuiltValueField(wireName: r'page')
-  int get page;
-
-  /// Number of results per page.
-  @BuiltValueField(wireName: r'per_page')
-  int get perPage;
 
   /// Requested information from request.
   @BuiltValueField(wireName: r'request_type')
@@ -89,6 +89,16 @@ class _$CloudforceOneRequestsRequestListSerializer implements PrimitiveSerialize
     CloudforceOneRequestsRequestList object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    yield r'page';
+    yield serializers.serialize(
+      object.page,
+      specifiedType: const FullType(int),
+    );
+    yield r'per_page';
+    yield serializers.serialize(
+      object.perPage,
+      specifiedType: const FullType(int),
+    );
     if (object.completedAfter != null) {
       yield r'completed_after';
       yield serializers.serialize(
@@ -117,16 +127,6 @@ class _$CloudforceOneRequestsRequestListSerializer implements PrimitiveSerialize
         specifiedType: const FullType(DateTime),
       );
     }
-    yield r'page';
-    yield serializers.serialize(
-      object.page,
-      specifiedType: const FullType(int),
-    );
-    yield r'per_page';
-    yield serializers.serialize(
-      object.perPage,
-      specifiedType: const FullType(int),
-    );
     if (object.requestType != null) {
       yield r'request_type';
       yield serializers.serialize(
@@ -178,6 +178,20 @@ class _$CloudforceOneRequestsRequestListSerializer implements PrimitiveSerialize
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
+        case r'page':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(int),
+          ) as int;
+          result.page = valueDes;
+          break;
+        case r'per_page':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(int),
+          ) as int;
+          result.perPage = valueDes;
+          break;
         case r'completed_after':
           final valueDes = serializers.deserialize(
             value,
@@ -205,20 +219,6 @@ class _$CloudforceOneRequestsRequestListSerializer implements PrimitiveSerialize
             specifiedType: const FullType(DateTime),
           ) as DateTime;
           result.createdBefore = valueDes;
-          break;
-        case r'page':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
-          result.page = valueDes;
-          break;
-        case r'per_page':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
-          result.perPage = valueDes;
           break;
         case r'request_type':
           final valueDes = serializers.deserialize(

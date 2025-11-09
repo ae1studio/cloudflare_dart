@@ -13,20 +13,20 @@ part 'tunnel_origin_request_access.g.dart';
 ///
 /// Properties:
 /// * [audTag] - Access applications that are allowed to reach this hostname for this Tunnel. Audience tags can be identified in the dashboard or via the List Access policies API.
-/// * [required_] - Deny traffic that has not fulfilled Access authorization.
 /// * [teamName] 
+/// * [required_] - Deny traffic that has not fulfilled Access authorization.
 @BuiltValue()
 abstract class TunnelOriginRequestAccess implements Built<TunnelOriginRequestAccess, TunnelOriginRequestAccessBuilder> {
   /// Access applications that are allowed to reach this hostname for this Tunnel. Audience tags can be identified in the dashboard or via the List Access policies API.
   @BuiltValueField(wireName: r'audTag')
   BuiltList<String> get audTag;
 
+  @BuiltValueField(wireName: r'teamName')
+  String get teamName;
+
   /// Deny traffic that has not fulfilled Access authorization.
   @BuiltValueField(wireName: r'required')
   bool? get required_;
-
-  @BuiltValueField(wireName: r'teamName')
-  String get teamName;
 
   TunnelOriginRequestAccess._();
 
@@ -56,6 +56,11 @@ class _$TunnelOriginRequestAccessSerializer implements PrimitiveSerializer<Tunne
       object.audTag,
       specifiedType: const FullType(BuiltList, [FullType(String)]),
     );
+    yield r'teamName';
+    yield serializers.serialize(
+      object.teamName,
+      specifiedType: const FullType(String),
+    );
     if (object.required_ != null) {
       yield r'required';
       yield serializers.serialize(
@@ -63,11 +68,6 @@ class _$TunnelOriginRequestAccessSerializer implements PrimitiveSerializer<Tunne
         specifiedType: const FullType(bool),
       );
     }
-    yield r'teamName';
-    yield serializers.serialize(
-      object.teamName,
-      specifiedType: const FullType(String),
-    );
   }
 
   @override
@@ -98,19 +98,19 @@ class _$TunnelOriginRequestAccessSerializer implements PrimitiveSerializer<Tunne
           ) as BuiltList<String>;
           result.audTag.replace(valueDes);
           break;
-        case r'required':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
-          result.required_ = valueDes;
-          break;
         case r'teamName':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(String),
           ) as String;
           result.teamName = valueDes;
+          break;
+        case r'required':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(bool),
+          ) as bool;
+          result.required_ = valueDes;
           break;
         default:
           unhandled.add(key);

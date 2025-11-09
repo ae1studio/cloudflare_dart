@@ -9,6 +9,7 @@ import 'package:cloudflare_dart/src/model/magic_apps_response_object.dart';
 import 'package:cloudflare_dart/src/model/aaa_messages_inner.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
+import 'package:built_value/json_object.dart';
 
 part 'magic_app_single_response.g.dart';
 

@@ -8,6 +8,8 @@ part of 'dlp_new_custom_profile.dart';
 
 class _$DlpNewCustomProfile extends DlpNewCustomProfile {
   @override
+  final String name;
+  @override
   final bool? aiContextEnabled;
   @override
   final int? allowedMatchCount;
@@ -20,8 +22,6 @@ class _$DlpNewCustomProfile extends DlpNewCustomProfile {
   @override
   final BuiltList<DlpEntryOfNewProfile>? entries;
   @override
-  final String name;
-  @override
   final bool? ocrEnabled;
   @override
   final BuiltList<DlpNewSharedEntry>? sharedEntries;
@@ -31,13 +31,13 @@ class _$DlpNewCustomProfile extends DlpNewCustomProfile {
       (DlpNewCustomProfileBuilder()..update(updates))._build();
 
   _$DlpNewCustomProfile._(
-      {this.aiContextEnabled,
+      {required this.name,
+      this.aiContextEnabled,
       this.allowedMatchCount,
       this.confidenceThreshold,
       this.contextAwareness,
       this.description,
       this.entries,
-      required this.name,
       this.ocrEnabled,
       this.sharedEntries})
       : super._();
@@ -54,13 +54,13 @@ class _$DlpNewCustomProfile extends DlpNewCustomProfile {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is DlpNewCustomProfile &&
+        name == other.name &&
         aiContextEnabled == other.aiContextEnabled &&
         allowedMatchCount == other.allowedMatchCount &&
         confidenceThreshold == other.confidenceThreshold &&
         contextAwareness == other.contextAwareness &&
         description == other.description &&
         entries == other.entries &&
-        name == other.name &&
         ocrEnabled == other.ocrEnabled &&
         sharedEntries == other.sharedEntries;
   }
@@ -68,13 +68,13 @@ class _$DlpNewCustomProfile extends DlpNewCustomProfile {
   @override
   int get hashCode {
     var _$hash = 0;
+    _$hash = $jc(_$hash, name.hashCode);
     _$hash = $jc(_$hash, aiContextEnabled.hashCode);
     _$hash = $jc(_$hash, allowedMatchCount.hashCode);
     _$hash = $jc(_$hash, confidenceThreshold.hashCode);
     _$hash = $jc(_$hash, contextAwareness.hashCode);
     _$hash = $jc(_$hash, description.hashCode);
     _$hash = $jc(_$hash, entries.hashCode);
-    _$hash = $jc(_$hash, name.hashCode);
     _$hash = $jc(_$hash, ocrEnabled.hashCode);
     _$hash = $jc(_$hash, sharedEntries.hashCode);
     _$hash = $jf(_$hash);
@@ -84,13 +84,13 @@ class _$DlpNewCustomProfile extends DlpNewCustomProfile {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'DlpNewCustomProfile')
+          ..add('name', name)
           ..add('aiContextEnabled', aiContextEnabled)
           ..add('allowedMatchCount', allowedMatchCount)
           ..add('confidenceThreshold', confidenceThreshold)
           ..add('contextAwareness', contextAwareness)
           ..add('description', description)
           ..add('entries', entries)
-          ..add('name', name)
           ..add('ocrEnabled', ocrEnabled)
           ..add('sharedEntries', sharedEntries))
         .toString();
@@ -100,6 +100,10 @@ class _$DlpNewCustomProfile extends DlpNewCustomProfile {
 class DlpNewCustomProfileBuilder
     implements Builder<DlpNewCustomProfile, DlpNewCustomProfileBuilder> {
   _$DlpNewCustomProfile? _$v;
+
+  String? _name;
+  String? get name => _$this._name;
+  set name(String? name) => _$this._name = name;
 
   bool? _aiContextEnabled;
   bool? get aiContextEnabled => _$this._aiContextEnabled;
@@ -132,10 +136,6 @@ class DlpNewCustomProfileBuilder
   set entries(ListBuilder<DlpEntryOfNewProfile>? entries) =>
       _$this._entries = entries;
 
-  String? _name;
-  String? get name => _$this._name;
-  set name(String? name) => _$this._name = name;
-
   bool? _ocrEnabled;
   bool? get ocrEnabled => _$this._ocrEnabled;
   set ocrEnabled(bool? ocrEnabled) => _$this._ocrEnabled = ocrEnabled;
@@ -153,13 +153,13 @@ class DlpNewCustomProfileBuilder
   DlpNewCustomProfileBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
+      _name = $v.name;
       _aiContextEnabled = $v.aiContextEnabled;
       _allowedMatchCount = $v.allowedMatchCount;
       _confidenceThreshold = $v.confidenceThreshold;
       _contextAwareness = $v.contextAwareness?.toBuilder();
       _description = $v.description;
       _entries = $v.entries?.toBuilder();
-      _name = $v.name;
       _ocrEnabled = $v.ocrEnabled;
       _sharedEntries = $v.sharedEntries?.toBuilder();
       _$v = null;
@@ -185,14 +185,14 @@ class DlpNewCustomProfileBuilder
     try {
       _$result = _$v ??
           _$DlpNewCustomProfile._(
+            name: BuiltValueNullFieldError.checkNotNull(
+                name, r'DlpNewCustomProfile', 'name'),
             aiContextEnabled: aiContextEnabled,
             allowedMatchCount: allowedMatchCount,
             confidenceThreshold: confidenceThreshold,
             contextAwareness: _contextAwareness?.build(),
             description: description,
             entries: _entries?.build(),
-            name: BuiltValueNullFieldError.checkNotNull(
-                name, r'DlpNewCustomProfile', 'name'),
             ocrEnabled: ocrEnabled,
             sharedEntries: _sharedEntries?.build(),
           );

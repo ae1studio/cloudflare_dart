@@ -15,18 +15,15 @@ part 'builds_build_seed_repo_input.g.dart';
 ///
 /// Properties:
 /// * [branch] 
-/// * [files] 
 /// * [owner] 
 /// * [path] 
 /// * [provider] 
 /// * [repository] 
+/// * [files] 
 @BuiltValue()
 abstract class BuildsBuildSeedRepoInput implements Built<BuildsBuildSeedRepoInput, BuildsBuildSeedRepoInputBuilder> {
   @BuiltValueField(wireName: r'branch')
   String get branch;
-
-  @BuiltValueField(wireName: r'files')
-  BuiltList<BuildsBuildSeedRepoInputFile>? get files;
 
   @BuiltValueField(wireName: r'owner')
   String get owner;
@@ -40,6 +37,9 @@ abstract class BuildsBuildSeedRepoInput implements Built<BuildsBuildSeedRepoInpu
 
   @BuiltValueField(wireName: r'repository')
   String get repository;
+
+  @BuiltValueField(wireName: r'files')
+  BuiltList<BuildsBuildSeedRepoInputFile>? get files;
 
   BuildsBuildSeedRepoInput._();
 
@@ -69,13 +69,6 @@ class _$BuildsBuildSeedRepoInputSerializer implements PrimitiveSerializer<Builds
       object.branch,
       specifiedType: const FullType(String),
     );
-    if (object.files != null) {
-      yield r'files';
-      yield serializers.serialize(
-        object.files,
-        specifiedType: const FullType(BuiltList, [FullType(BuildsBuildSeedRepoInputFile)]),
-      );
-    }
     yield r'owner';
     yield serializers.serialize(
       object.owner,
@@ -96,6 +89,13 @@ class _$BuildsBuildSeedRepoInputSerializer implements PrimitiveSerializer<Builds
       object.repository,
       specifiedType: const FullType(String),
     );
+    if (object.files != null) {
+      yield r'files';
+      yield serializers.serialize(
+        object.files,
+        specifiedType: const FullType(BuiltList, [FullType(BuildsBuildSeedRepoInputFile)]),
+      );
+    }
   }
 
   @override
@@ -126,13 +126,6 @@ class _$BuildsBuildSeedRepoInputSerializer implements PrimitiveSerializer<Builds
           ) as String;
           result.branch = valueDes;
           break;
-        case r'files':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(BuildsBuildSeedRepoInputFile)]),
-          ) as BuiltList<BuildsBuildSeedRepoInputFile>;
-          result.files.replace(valueDes);
-          break;
         case r'owner':
           final valueDes = serializers.deserialize(
             value,
@@ -160,6 +153,13 @@ class _$BuildsBuildSeedRepoInputSerializer implements PrimitiveSerializer<Builds
             specifiedType: const FullType(String),
           ) as String;
           result.repository = valueDes;
+          break;
+        case r'files':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BuiltList, [FullType(BuildsBuildSeedRepoInputFile)]),
+          ) as BuiltList<BuildsBuildSeedRepoInputFile>;
+          result.files.replace(valueDes);
           break;
         default:
           unhandled.add(key);

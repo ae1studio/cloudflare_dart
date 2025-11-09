@@ -72,6 +72,12 @@ class _$WorkersVersionUsageModelEnumSerializer
 
 class _$WorkersVersion extends WorkersVersion {
   @override
+  final DateTime createdOn;
+  @override
+  final String id;
+  @override
+  final int number;
+  @override
   final WorkersVersionAnnotations? annotations;
   @override
   final WorkersVersionAssets? assets;
@@ -82,10 +88,6 @@ class _$WorkersVersion extends WorkersVersion {
   @override
   final BuiltList<String>? compatibilityFlags;
   @override
-  final DateTime createdOn;
-  @override
-  final String id;
-  @override
   final WorkersVersionLimits? limits;
   @override
   final String? mainModule;
@@ -93,8 +95,6 @@ class _$WorkersVersion extends WorkersVersion {
   final WorkersVersionMigrations? migrations;
   @override
   final BuiltList<WorkersVersionModulesInner>? modules;
-  @override
-  final int number;
   @override
   final WorkersVersionPlacement? placement;
   @override
@@ -106,18 +106,18 @@ class _$WorkersVersion extends WorkersVersion {
       (WorkersVersionBuilder()..update(updates))._build();
 
   _$WorkersVersion._(
-      {this.annotations,
+      {required this.createdOn,
+      required this.id,
+      required this.number,
+      this.annotations,
       this.assets,
       this.bindings,
       this.compatibilityDate,
       this.compatibilityFlags,
-      required this.createdOn,
-      required this.id,
       this.limits,
       this.mainModule,
       this.migrations,
       this.modules,
-      required this.number,
       this.placement,
       this.source_,
       this.usageModel})
@@ -133,18 +133,18 @@ class _$WorkersVersion extends WorkersVersion {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is WorkersVersion &&
+        createdOn == other.createdOn &&
+        id == other.id &&
+        number == other.number &&
         annotations == other.annotations &&
         assets == other.assets &&
         bindings == other.bindings &&
         compatibilityDate == other.compatibilityDate &&
         compatibilityFlags == other.compatibilityFlags &&
-        createdOn == other.createdOn &&
-        id == other.id &&
         limits == other.limits &&
         mainModule == other.mainModule &&
         migrations == other.migrations &&
         modules == other.modules &&
-        number == other.number &&
         placement == other.placement &&
         source_ == other.source_ &&
         usageModel == other.usageModel;
@@ -153,18 +153,18 @@ class _$WorkersVersion extends WorkersVersion {
   @override
   int get hashCode {
     var _$hash = 0;
+    _$hash = $jc(_$hash, createdOn.hashCode);
+    _$hash = $jc(_$hash, id.hashCode);
+    _$hash = $jc(_$hash, number.hashCode);
     _$hash = $jc(_$hash, annotations.hashCode);
     _$hash = $jc(_$hash, assets.hashCode);
     _$hash = $jc(_$hash, bindings.hashCode);
     _$hash = $jc(_$hash, compatibilityDate.hashCode);
     _$hash = $jc(_$hash, compatibilityFlags.hashCode);
-    _$hash = $jc(_$hash, createdOn.hashCode);
-    _$hash = $jc(_$hash, id.hashCode);
     _$hash = $jc(_$hash, limits.hashCode);
     _$hash = $jc(_$hash, mainModule.hashCode);
     _$hash = $jc(_$hash, migrations.hashCode);
     _$hash = $jc(_$hash, modules.hashCode);
-    _$hash = $jc(_$hash, number.hashCode);
     _$hash = $jc(_$hash, placement.hashCode);
     _$hash = $jc(_$hash, source_.hashCode);
     _$hash = $jc(_$hash, usageModel.hashCode);
@@ -175,18 +175,18 @@ class _$WorkersVersion extends WorkersVersion {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'WorkersVersion')
+          ..add('createdOn', createdOn)
+          ..add('id', id)
+          ..add('number', number)
           ..add('annotations', annotations)
           ..add('assets', assets)
           ..add('bindings', bindings)
           ..add('compatibilityDate', compatibilityDate)
           ..add('compatibilityFlags', compatibilityFlags)
-          ..add('createdOn', createdOn)
-          ..add('id', id)
           ..add('limits', limits)
           ..add('mainModule', mainModule)
           ..add('migrations', migrations)
           ..add('modules', modules)
-          ..add('number', number)
           ..add('placement', placement)
           ..add('source_', source_)
           ..add('usageModel', usageModel))
@@ -197,6 +197,18 @@ class _$WorkersVersion extends WorkersVersion {
 class WorkersVersionBuilder
     implements Builder<WorkersVersion, WorkersVersionBuilder> {
   _$WorkersVersion? _$v;
+
+  DateTime? _createdOn;
+  DateTime? get createdOn => _$this._createdOn;
+  set createdOn(DateTime? createdOn) => _$this._createdOn = createdOn;
+
+  String? _id;
+  String? get id => _$this._id;
+  set id(String? id) => _$this._id = id;
+
+  int? _number;
+  int? get number => _$this._number;
+  set number(int? number) => _$this._number = number;
 
   WorkersVersionAnnotationsBuilder? _annotations;
   WorkersVersionAnnotationsBuilder get annotations =>
@@ -226,14 +238,6 @@ class WorkersVersionBuilder
   set compatibilityFlags(ListBuilder<String>? compatibilityFlags) =>
       _$this._compatibilityFlags = compatibilityFlags;
 
-  DateTime? _createdOn;
-  DateTime? get createdOn => _$this._createdOn;
-  set createdOn(DateTime? createdOn) => _$this._createdOn = createdOn;
-
-  String? _id;
-  String? get id => _$this._id;
-  set id(String? id) => _$this._id = id;
-
   WorkersVersionLimitsBuilder? _limits;
   WorkersVersionLimitsBuilder get limits =>
       _$this._limits ??= WorkersVersionLimitsBuilder();
@@ -254,10 +258,6 @@ class WorkersVersionBuilder
       _$this._modules ??= ListBuilder<WorkersVersionModulesInner>();
   set modules(ListBuilder<WorkersVersionModulesInner>? modules) =>
       _$this._modules = modules;
-
-  int? _number;
-  int? get number => _$this._number;
-  set number(int? number) => _$this._number = number;
 
   WorkersVersionPlacementBuilder? _placement;
   WorkersVersionPlacementBuilder get placement =>
@@ -281,18 +281,18 @@ class WorkersVersionBuilder
   WorkersVersionBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
+      _createdOn = $v.createdOn;
+      _id = $v.id;
+      _number = $v.number;
       _annotations = $v.annotations?.toBuilder();
       _assets = $v.assets?.toBuilder();
       _bindings = $v.bindings?.toBuilder();
       _compatibilityDate = $v.compatibilityDate;
       _compatibilityFlags = $v.compatibilityFlags?.toBuilder();
-      _createdOn = $v.createdOn;
-      _id = $v.id;
       _limits = $v.limits?.toBuilder();
       _mainModule = $v.mainModule;
       _migrations = $v.migrations?.toBuilder();
       _modules = $v.modules?.toBuilder();
-      _number = $v.number;
       _placement = $v.placement?.toBuilder();
       _source_ = $v.source_;
       _usageModel = $v.usageModel;
@@ -319,21 +319,21 @@ class WorkersVersionBuilder
     try {
       _$result = _$v ??
           _$WorkersVersion._(
+            createdOn: BuiltValueNullFieldError.checkNotNull(
+                createdOn, r'WorkersVersion', 'createdOn'),
+            id: BuiltValueNullFieldError.checkNotNull(
+                id, r'WorkersVersion', 'id'),
+            number: BuiltValueNullFieldError.checkNotNull(
+                number, r'WorkersVersion', 'number'),
             annotations: _annotations?.build(),
             assets: _assets?.build(),
             bindings: _bindings?.build(),
             compatibilityDate: compatibilityDate,
             compatibilityFlags: _compatibilityFlags?.build(),
-            createdOn: BuiltValueNullFieldError.checkNotNull(
-                createdOn, r'WorkersVersion', 'createdOn'),
-            id: BuiltValueNullFieldError.checkNotNull(
-                id, r'WorkersVersion', 'id'),
             limits: _limits?.build(),
             mainModule: mainModule,
             migrations: _migrations?.build(),
             modules: _modules?.build(),
-            number: BuiltValueNullFieldError.checkNotNull(
-                number, r'WorkersVersion', 'number'),
             placement: _placement?.build(),
             source_: source_,
             usageModel: usageModel,
@@ -350,7 +350,6 @@ class WorkersVersionBuilder
 
         _$failedField = 'compatibilityFlags';
         _compatibilityFlags?.build();
-
         _$failedField = 'limits';
         _limits?.build();
 
@@ -358,7 +357,6 @@ class WorkersVersionBuilder
         _migrations?.build();
         _$failedField = 'modules';
         _modules?.build();
-
         _$failedField = 'placement';
         _placement?.build();
       } catch (e) {

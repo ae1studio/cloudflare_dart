@@ -12,14 +12,22 @@ part 'workers_kv_bulk_write_inner.g.dart';
 /// WorkersKvBulkWriteInner
 ///
 /// Properties:
+/// * [key] - A key's name. The name may be at most 512 bytes. All printable, non-whitespace characters are valid.
+/// * [value] - A UTF-8 encoded string to be stored, up to 25 MiB in length.
 /// * [base64] - Indicates whether or not the server should base64 decode the value before storing it. Useful for writing values that wouldn't otherwise be valid JSON strings, such as images.
 /// * [expiration] - Expires the key at a certain time, measured in number of seconds since the UNIX epoch.
 /// * [expirationTtl] - Expires the key after a number of seconds. Must be at least 60.
-/// * [key] - A key's name. The name may be at most 512 bytes. All printable, non-whitespace characters are valid.
 /// * [metadata] 
-/// * [value] - A UTF-8 encoded string to be stored, up to 25 MiB in length.
 @BuiltValue()
 abstract class WorkersKvBulkWriteInner implements Built<WorkersKvBulkWriteInner, WorkersKvBulkWriteInnerBuilder> {
+  /// A key's name. The name may be at most 512 bytes. All printable, non-whitespace characters are valid.
+  @BuiltValueField(wireName: r'key')
+  String get key;
+
+  /// A UTF-8 encoded string to be stored, up to 25 MiB in length.
+  @BuiltValueField(wireName: r'value')
+  String get value;
+
   /// Indicates whether or not the server should base64 decode the value before storing it. Useful for writing values that wouldn't otherwise be valid JSON strings, such as images.
   @BuiltValueField(wireName: r'base64')
   bool? get base64;
@@ -32,16 +40,8 @@ abstract class WorkersKvBulkWriteInner implements Built<WorkersKvBulkWriteInner,
   @BuiltValueField(wireName: r'expiration_ttl')
   num? get expirationTtl;
 
-  /// A key's name. The name may be at most 512 bytes. All printable, non-whitespace characters are valid.
-  @BuiltValueField(wireName: r'key')
-  String get key;
-
   @BuiltValueField(wireName: r'metadata')
   JsonObject? get metadata;
-
-  /// A UTF-8 encoded string to be stored, up to 25 MiB in length.
-  @BuiltValueField(wireName: r'value')
-  String get value;
 
   WorkersKvBulkWriteInner._();
 
@@ -67,6 +67,16 @@ class _$WorkersKvBulkWriteInnerSerializer implements PrimitiveSerializer<Workers
     WorkersKvBulkWriteInner object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    yield r'key';
+    yield serializers.serialize(
+      object.key,
+      specifiedType: const FullType(String),
+    );
+    yield r'value';
+    yield serializers.serialize(
+      object.value,
+      specifiedType: const FullType(String),
+    );
     if (object.base64 != null) {
       yield r'base64';
       yield serializers.serialize(
@@ -88,11 +98,6 @@ class _$WorkersKvBulkWriteInnerSerializer implements PrimitiveSerializer<Workers
         specifiedType: const FullType(num),
       );
     }
-    yield r'key';
-    yield serializers.serialize(
-      object.key,
-      specifiedType: const FullType(String),
-    );
     if (object.metadata != null) {
       yield r'metadata';
       yield serializers.serialize(
@@ -100,11 +105,6 @@ class _$WorkersKvBulkWriteInnerSerializer implements PrimitiveSerializer<Workers
         specifiedType: const FullType(JsonObject),
       );
     }
-    yield r'value';
-    yield serializers.serialize(
-      object.value,
-      specifiedType: const FullType(String),
-    );
   }
 
   @override
@@ -128,6 +128,20 @@ class _$WorkersKvBulkWriteInnerSerializer implements PrimitiveSerializer<Workers
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
+        case r'key':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.key = valueDes;
+          break;
+        case r'value':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.value = valueDes;
+          break;
         case r'base64':
           final valueDes = serializers.deserialize(
             value,
@@ -149,26 +163,12 @@ class _$WorkersKvBulkWriteInnerSerializer implements PrimitiveSerializer<Workers
           ) as num;
           result.expirationTtl = valueDes;
           break;
-        case r'key':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.key = valueDes;
-          break;
         case r'metadata':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(JsonObject),
           ) as JsonObject;
           result.metadata.replace(valueDes);
-          break;
-        case r'value':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.value = valueDes;
           break;
         default:
           unhandled.add(key);

@@ -8,9 +8,9 @@ part of 'api_shield_discovery_operation.dart';
 
 class _$ApiShieldDiscoveryOperation extends ApiShieldDiscoveryOperation {
   @override
-  final ApiShieldTrafficStats? features;
-  @override
   final ApiShieldSchemasTimestamp lastUpdated;
+  @override
+  final ApiShieldTrafficStats? features;
   @override
   final BuiltList<ApiShieldApiDiscoveryOrigin> origin;
   @override
@@ -29,8 +29,8 @@ class _$ApiShieldDiscoveryOperation extends ApiShieldDiscoveryOperation {
       (ApiShieldDiscoveryOperationBuilder()..update(updates))._build();
 
   _$ApiShieldDiscoveryOperation._(
-      {this.features,
-      required this.lastUpdated,
+      {required this.lastUpdated,
+      this.features,
       required this.origin,
       required this.id,
       required this.state,
@@ -51,8 +51,8 @@ class _$ApiShieldDiscoveryOperation extends ApiShieldDiscoveryOperation {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is ApiShieldDiscoveryOperation &&
-        features == other.features &&
         lastUpdated == other.lastUpdated &&
+        features == other.features &&
         origin == other.origin &&
         id == other.id &&
         state == other.state &&
@@ -64,8 +64,8 @@ class _$ApiShieldDiscoveryOperation extends ApiShieldDiscoveryOperation {
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, features.hashCode);
     _$hash = $jc(_$hash, lastUpdated.hashCode);
+    _$hash = $jc(_$hash, features.hashCode);
     _$hash = $jc(_$hash, origin.hashCode);
     _$hash = $jc(_$hash, id.hashCode);
     _$hash = $jc(_$hash, state.hashCode);
@@ -79,8 +79,8 @@ class _$ApiShieldDiscoveryOperation extends ApiShieldDiscoveryOperation {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'ApiShieldDiscoveryOperation')
-          ..add('features', features)
           ..add('lastUpdated', lastUpdated)
+          ..add('features', features)
           ..add('origin', origin)
           ..add('id', id)
           ..add('state', state)
@@ -98,17 +98,17 @@ class ApiShieldDiscoveryOperationBuilder
         ApiShieldBasicOperationBuilder {
   _$ApiShieldDiscoveryOperation? _$v;
 
-  ApiShieldTrafficStatsBuilder? _features;
-  ApiShieldTrafficStatsBuilder get features =>
-      _$this._features ??= ApiShieldTrafficStatsBuilder();
-  set features(covariant ApiShieldTrafficStatsBuilder? features) =>
-      _$this._features = features;
-
   ApiShieldSchemasTimestampBuilder? _lastUpdated;
   ApiShieldSchemasTimestampBuilder get lastUpdated =>
       _$this._lastUpdated ??= ApiShieldSchemasTimestampBuilder();
   set lastUpdated(covariant ApiShieldSchemasTimestampBuilder? lastUpdated) =>
       _$this._lastUpdated = lastUpdated;
+
+  ApiShieldTrafficStatsBuilder? _features;
+  ApiShieldTrafficStatsBuilder get features =>
+      _$this._features ??= ApiShieldTrafficStatsBuilder();
+  set features(covariant ApiShieldTrafficStatsBuilder? features) =>
+      _$this._features = features;
 
   ListBuilder<ApiShieldApiDiscoveryOrigin>? _origin;
   ListBuilder<ApiShieldApiDiscoveryOrigin> get origin =>
@@ -145,8 +145,8 @@ class ApiShieldDiscoveryOperationBuilder
   ApiShieldDiscoveryOperationBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _features = $v.features?.toBuilder();
       _lastUpdated = $v.lastUpdated.toBuilder();
+      _features = $v.features?.toBuilder();
       _origin = $v.origin.toBuilder();
       _id = $v.id.toBuilder();
       _state = $v.state;
@@ -176,8 +176,8 @@ class ApiShieldDiscoveryOperationBuilder
     try {
       _$result = _$v ??
           _$ApiShieldDiscoveryOperation._(
-            features: _features?.build(),
             lastUpdated: lastUpdated.build(),
+            features: _features?.build(),
             origin: origin.build(),
             id: id.build(),
             state: BuiltValueNullFieldError.checkNotNull(
@@ -192,10 +192,10 @@ class ApiShieldDiscoveryOperationBuilder
     } catch (_) {
       late String _$failedField;
       try {
-        _$failedField = 'features';
-        _features?.build();
         _$failedField = 'lastUpdated';
         lastUpdated.build();
+        _$failedField = 'features';
+        _features?.build();
         _$failedField = 'origin';
         origin.build();
         _$failedField = 'id';

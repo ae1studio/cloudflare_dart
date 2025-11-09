@@ -16,8 +16,8 @@ part 'get_event_aggregate200_response.g.dart';
 /// Properties:
 /// * [aggregateBy] - Column(s) that were aggregated by
 /// * [aggregations] - Array of aggregation results with dynamic fields based on aggregateBy columns
-/// * [dateRange] 
 /// * [total] - Total number of events in the aggregation
+/// * [dateRange] 
 @BuiltValue()
 abstract class GetEventAggregate200Response implements Built<GetEventAggregate200Response, GetEventAggregate200ResponseBuilder> {
   /// Column(s) that were aggregated by
@@ -28,12 +28,12 @@ abstract class GetEventAggregate200Response implements Built<GetEventAggregate20
   @BuiltValueField(wireName: r'aggregations')
   BuiltList<GetEventAggregate200ResponseAggregationsInner> get aggregations;
 
-  @BuiltValueField(wireName: r'dateRange')
-  GetEventAggregate200ResponseDateRange? get dateRange;
-
   /// Total number of events in the aggregation
   @BuiltValueField(wireName: r'total')
   num get total;
+
+  @BuiltValueField(wireName: r'dateRange')
+  GetEventAggregate200ResponseDateRange? get dateRange;
 
   GetEventAggregate200Response._();
 
@@ -68,6 +68,11 @@ class _$GetEventAggregate200ResponseSerializer implements PrimitiveSerializer<Ge
       object.aggregations,
       specifiedType: const FullType(BuiltList, [FullType(GetEventAggregate200ResponseAggregationsInner)]),
     );
+    yield r'total';
+    yield serializers.serialize(
+      object.total,
+      specifiedType: const FullType(num),
+    );
     if (object.dateRange != null) {
       yield r'dateRange';
       yield serializers.serialize(
@@ -75,11 +80,6 @@ class _$GetEventAggregate200ResponseSerializer implements PrimitiveSerializer<Ge
         specifiedType: const FullType(GetEventAggregate200ResponseDateRange),
       );
     }
-    yield r'total';
-    yield serializers.serialize(
-      object.total,
-      specifiedType: const FullType(num),
-    );
   }
 
   @override
@@ -117,19 +117,19 @@ class _$GetEventAggregate200ResponseSerializer implements PrimitiveSerializer<Ge
           ) as BuiltList<GetEventAggregate200ResponseAggregationsInner>;
           result.aggregations.replace(valueDes);
           break;
-        case r'dateRange':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(GetEventAggregate200ResponseDateRange),
-          ) as GetEventAggregate200ResponseDateRange;
-          result.dateRange.replace(valueDes);
-          break;
         case r'total':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(num),
           ) as num;
           result.total = valueDes;
+          break;
+        case r'dateRange':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(GetEventAggregate200ResponseDateRange),
+          ) as GetEventAggregate200ResponseDateRange;
+          result.dateRange.replace(valueDes);
           break;
         default:
           unhandled.add(key);

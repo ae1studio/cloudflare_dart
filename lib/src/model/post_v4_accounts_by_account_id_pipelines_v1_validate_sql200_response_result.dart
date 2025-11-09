@@ -14,16 +14,16 @@ part 'post_v4_accounts_by_account_id_pipelines_v1_validate_sql200_response_resul
 /// PostV4AccountsByAccountIdPipelinesV1ValidateSql200ResponseResult
 ///
 /// Properties:
-/// * [graph] 
 /// * [tables] - Indicates tables involved in the processing.
+/// * [graph] 
 @BuiltValue()
 abstract class PostV4AccountsByAccountIdPipelinesV1ValidateSql200ResponseResult implements Built<PostV4AccountsByAccountIdPipelinesV1ValidateSql200ResponseResult, PostV4AccountsByAccountIdPipelinesV1ValidateSql200ResponseResultBuilder> {
-  @BuiltValueField(wireName: r'graph')
-  CloudflarePipelinesPipelineGraph? get graph;
-
   /// Indicates tables involved in the processing.
   @BuiltValueField(wireName: r'tables')
   BuiltMap<String, PostV4AccountsByAccountIdPipelinesV1ValidateSql200ResponseResultTablesValue> get tables;
+
+  @BuiltValueField(wireName: r'graph')
+  CloudflarePipelinesPipelineGraph? get graph;
 
   PostV4AccountsByAccountIdPipelinesV1ValidateSql200ResponseResult._();
 
@@ -48,6 +48,11 @@ class _$PostV4AccountsByAccountIdPipelinesV1ValidateSql200ResponseResultSerializ
     PostV4AccountsByAccountIdPipelinesV1ValidateSql200ResponseResult object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    yield r'tables';
+    yield serializers.serialize(
+      object.tables,
+      specifiedType: const FullType(BuiltMap, [FullType(String), FullType(PostV4AccountsByAccountIdPipelinesV1ValidateSql200ResponseResultTablesValue)]),
+    );
     if (object.graph != null) {
       yield r'graph';
       yield serializers.serialize(
@@ -55,11 +60,6 @@ class _$PostV4AccountsByAccountIdPipelinesV1ValidateSql200ResponseResultSerializ
         specifiedType: const FullType(CloudflarePipelinesPipelineGraph),
       );
     }
-    yield r'tables';
-    yield serializers.serialize(
-      object.tables,
-      specifiedType: const FullType(BuiltMap, [FullType(String), FullType(PostV4AccountsByAccountIdPipelinesV1ValidateSql200ResponseResultTablesValue)]),
-    );
   }
 
   @override
@@ -83,19 +83,19 @@ class _$PostV4AccountsByAccountIdPipelinesV1ValidateSql200ResponseResultSerializ
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'graph':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(CloudflarePipelinesPipelineGraph),
-          ) as CloudflarePipelinesPipelineGraph;
-          result.graph.replace(valueDes);
-          break;
         case r'tables':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(BuiltMap, [FullType(String), FullType(PostV4AccountsByAccountIdPipelinesV1ValidateSql200ResponseResultTablesValue)]),
           ) as BuiltMap<String, PostV4AccountsByAccountIdPipelinesV1ValidateSql200ResponseResultTablesValue>;
           result.tables.replace(valueDes);
+          break;
+        case r'graph':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(CloudflarePipelinesPipelineGraph),
+          ) as CloudflarePipelinesPipelineGraph;
+          result.graph.replace(valueDes);
           break;
         default:
           unhandled.add(key);

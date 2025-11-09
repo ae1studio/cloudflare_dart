@@ -9,6 +9,8 @@ part of 'workers_ai_post_run_cf_bytedance_stable_diffusion_xl_lightning_request.
 class _$WorkersAiPostRunCfBytedanceStableDiffusionXlLightningRequest
     extends WorkersAiPostRunCfBytedanceStableDiffusionXlLightningRequest {
   @override
+  final String prompt;
+  @override
   final num? guidance;
   @override
   final int? height;
@@ -22,8 +24,6 @@ class _$WorkersAiPostRunCfBytedanceStableDiffusionXlLightningRequest
   final String? negativePrompt;
   @override
   final int? numSteps;
-  @override
-  final String prompt;
   @override
   final int? seed;
   @override
@@ -40,14 +40,14 @@ class _$WorkersAiPostRunCfBytedanceStableDiffusionXlLightningRequest
           ._build();
 
   _$WorkersAiPostRunCfBytedanceStableDiffusionXlLightningRequest._(
-      {this.guidance,
+      {required this.prompt,
+      this.guidance,
       this.height,
       this.image,
       this.imageB64,
       this.mask,
       this.negativePrompt,
       this.numSteps,
-      required this.prompt,
       this.seed,
       this.strength,
       this.width})
@@ -70,6 +70,7 @@ class _$WorkersAiPostRunCfBytedanceStableDiffusionXlLightningRequest
     if (identical(other, this)) return true;
     return other
             is WorkersAiPostRunCfBytedanceStableDiffusionXlLightningRequest &&
+        prompt == other.prompt &&
         guidance == other.guidance &&
         height == other.height &&
         image == other.image &&
@@ -77,7 +78,6 @@ class _$WorkersAiPostRunCfBytedanceStableDiffusionXlLightningRequest
         mask == other.mask &&
         negativePrompt == other.negativePrompt &&
         numSteps == other.numSteps &&
-        prompt == other.prompt &&
         seed == other.seed &&
         strength == other.strength &&
         width == other.width;
@@ -86,6 +86,7 @@ class _$WorkersAiPostRunCfBytedanceStableDiffusionXlLightningRequest
   @override
   int get hashCode {
     var _$hash = 0;
+    _$hash = $jc(_$hash, prompt.hashCode);
     _$hash = $jc(_$hash, guidance.hashCode);
     _$hash = $jc(_$hash, height.hashCode);
     _$hash = $jc(_$hash, image.hashCode);
@@ -93,7 +94,6 @@ class _$WorkersAiPostRunCfBytedanceStableDiffusionXlLightningRequest
     _$hash = $jc(_$hash, mask.hashCode);
     _$hash = $jc(_$hash, negativePrompt.hashCode);
     _$hash = $jc(_$hash, numSteps.hashCode);
-    _$hash = $jc(_$hash, prompt.hashCode);
     _$hash = $jc(_$hash, seed.hashCode);
     _$hash = $jc(_$hash, strength.hashCode);
     _$hash = $jc(_$hash, width.hashCode);
@@ -105,6 +105,7 @@ class _$WorkersAiPostRunCfBytedanceStableDiffusionXlLightningRequest
   String toString() {
     return (newBuiltValueToStringHelper(
             r'WorkersAiPostRunCfBytedanceStableDiffusionXlLightningRequest')
+          ..add('prompt', prompt)
           ..add('guidance', guidance)
           ..add('height', height)
           ..add('image', image)
@@ -112,7 +113,6 @@ class _$WorkersAiPostRunCfBytedanceStableDiffusionXlLightningRequest
           ..add('mask', mask)
           ..add('negativePrompt', negativePrompt)
           ..add('numSteps', numSteps)
-          ..add('prompt', prompt)
           ..add('seed', seed)
           ..add('strength', strength)
           ..add('width', width))
@@ -125,6 +125,10 @@ class WorkersAiPostRunCfBytedanceStableDiffusionXlLightningRequestBuilder
         Builder<WorkersAiPostRunCfBytedanceStableDiffusionXlLightningRequest,
             WorkersAiPostRunCfBytedanceStableDiffusionXlLightningRequestBuilder> {
   _$WorkersAiPostRunCfBytedanceStableDiffusionXlLightningRequest? _$v;
+
+  String? _prompt;
+  String? get prompt => _$this._prompt;
+  set prompt(String? prompt) => _$this._prompt = prompt;
 
   num? _guidance;
   num? get guidance => _$this._guidance;
@@ -155,10 +159,6 @@ class WorkersAiPostRunCfBytedanceStableDiffusionXlLightningRequestBuilder
   int? get numSteps => _$this._numSteps;
   set numSteps(int? numSteps) => _$this._numSteps = numSteps;
 
-  String? _prompt;
-  String? get prompt => _$this._prompt;
-  set prompt(String? prompt) => _$this._prompt = prompt;
-
   int? _seed;
   int? get seed => _$this._seed;
   set seed(int? seed) => _$this._seed = seed;
@@ -180,6 +180,7 @@ class WorkersAiPostRunCfBytedanceStableDiffusionXlLightningRequestBuilder
       get _$this {
     final $v = _$v;
     if ($v != null) {
+      _prompt = $v.prompt;
       _guidance = $v.guidance;
       _height = $v.height;
       _image = $v.image?.toBuilder();
@@ -187,7 +188,6 @@ class WorkersAiPostRunCfBytedanceStableDiffusionXlLightningRequestBuilder
       _mask = $v.mask?.toBuilder();
       _negativePrompt = $v.negativePrompt;
       _numSteps = $v.numSteps;
-      _prompt = $v.prompt;
       _seed = $v.seed;
       _strength = $v.strength;
       _width = $v.width;
@@ -220,6 +220,10 @@ class WorkersAiPostRunCfBytedanceStableDiffusionXlLightningRequestBuilder
     try {
       _$result = _$v ??
           _$WorkersAiPostRunCfBytedanceStableDiffusionXlLightningRequest._(
+            prompt: BuiltValueNullFieldError.checkNotNull(
+                prompt,
+                r'WorkersAiPostRunCfBytedanceStableDiffusionXlLightningRequest',
+                'prompt'),
             guidance: guidance,
             height: height,
             image: _image?.build(),
@@ -227,10 +231,6 @@ class WorkersAiPostRunCfBytedanceStableDiffusionXlLightningRequestBuilder
             mask: _mask?.build(),
             negativePrompt: negativePrompt,
             numSteps: numSteps,
-            prompt: BuiltValueNullFieldError.checkNotNull(
-                prompt,
-                r'WorkersAiPostRunCfBytedanceStableDiffusionXlLightningRequest',
-                'prompt'),
             seed: seed,
             strength: strength,
             width: width,

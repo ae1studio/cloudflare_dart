@@ -70,13 +70,13 @@ class _$AccessScimConfigMappingStrictnessEnumSerializer
 
 class _$AccessScimConfigMapping extends AccessScimConfigMapping {
   @override
+  final String schema;
+  @override
   final bool? enabled;
   @override
   final String? filter;
   @override
   final AccessScimConfigMappingOperations? operations;
-  @override
-  final String schema;
   @override
   final AccessScimConfigMappingStrictnessEnum? strictness;
   @override
@@ -87,10 +87,10 @@ class _$AccessScimConfigMapping extends AccessScimConfigMapping {
       (AccessScimConfigMappingBuilder()..update(updates))._build();
 
   _$AccessScimConfigMapping._(
-      {this.enabled,
+      {required this.schema,
+      this.enabled,
       this.filter,
       this.operations,
-      required this.schema,
       this.strictness,
       this.transformJsonata})
       : super._();
@@ -107,10 +107,10 @@ class _$AccessScimConfigMapping extends AccessScimConfigMapping {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is AccessScimConfigMapping &&
+        schema == other.schema &&
         enabled == other.enabled &&
         filter == other.filter &&
         operations == other.operations &&
-        schema == other.schema &&
         strictness == other.strictness &&
         transformJsonata == other.transformJsonata;
   }
@@ -118,10 +118,10 @@ class _$AccessScimConfigMapping extends AccessScimConfigMapping {
   @override
   int get hashCode {
     var _$hash = 0;
+    _$hash = $jc(_$hash, schema.hashCode);
     _$hash = $jc(_$hash, enabled.hashCode);
     _$hash = $jc(_$hash, filter.hashCode);
     _$hash = $jc(_$hash, operations.hashCode);
-    _$hash = $jc(_$hash, schema.hashCode);
     _$hash = $jc(_$hash, strictness.hashCode);
     _$hash = $jc(_$hash, transformJsonata.hashCode);
     _$hash = $jf(_$hash);
@@ -131,10 +131,10 @@ class _$AccessScimConfigMapping extends AccessScimConfigMapping {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'AccessScimConfigMapping')
+          ..add('schema', schema)
           ..add('enabled', enabled)
           ..add('filter', filter)
           ..add('operations', operations)
-          ..add('schema', schema)
           ..add('strictness', strictness)
           ..add('transformJsonata', transformJsonata))
         .toString();
@@ -145,6 +145,10 @@ class AccessScimConfigMappingBuilder
     implements
         Builder<AccessScimConfigMapping, AccessScimConfigMappingBuilder> {
   _$AccessScimConfigMapping? _$v;
+
+  String? _schema;
+  String? get schema => _$this._schema;
+  set schema(String? schema) => _$this._schema = schema;
 
   bool? _enabled;
   bool? get enabled => _$this._enabled;
@@ -159,10 +163,6 @@ class AccessScimConfigMappingBuilder
       _$this._operations ??= AccessScimConfigMappingOperationsBuilder();
   set operations(AccessScimConfigMappingOperationsBuilder? operations) =>
       _$this._operations = operations;
-
-  String? _schema;
-  String? get schema => _$this._schema;
-  set schema(String? schema) => _$this._schema = schema;
 
   AccessScimConfigMappingStrictnessEnum? _strictness;
   AccessScimConfigMappingStrictnessEnum? get strictness => _$this._strictness;
@@ -181,10 +181,10 @@ class AccessScimConfigMappingBuilder
   AccessScimConfigMappingBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
+      _schema = $v.schema;
       _enabled = $v.enabled;
       _filter = $v.filter;
       _operations = $v.operations?.toBuilder();
-      _schema = $v.schema;
       _strictness = $v.strictness;
       _transformJsonata = $v.transformJsonata;
       _$v = null;
@@ -210,11 +210,11 @@ class AccessScimConfigMappingBuilder
     try {
       _$result = _$v ??
           _$AccessScimConfigMapping._(
+            schema: BuiltValueNullFieldError.checkNotNull(
+                schema, r'AccessScimConfigMapping', 'schema'),
             enabled: enabled,
             filter: filter,
             operations: _operations?.build(),
-            schema: BuiltValueNullFieldError.checkNotNull(
-                schema, r'AccessScimConfigMapping', 'schema'),
             strictness: strictness,
             transformJsonata: transformJsonata,
           );

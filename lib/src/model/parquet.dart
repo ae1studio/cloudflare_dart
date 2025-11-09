@@ -14,9 +14,9 @@ part 'parquet.g.dart';
 /// Parquet
 ///
 /// Properties:
+/// * [type] 
 /// * [compression] 
 /// * [rowGroupBytes] 
-/// * [type] 
 @BuiltValue()
 abstract class Parquet implements CloudflarePipelinesParquetFormat, Built<Parquet, ParquetBuilder> {
   @BuiltValueField(wireName: r'type')

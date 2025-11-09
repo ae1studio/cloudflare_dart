@@ -19,8 +19,8 @@ part 'api_shield_multiple_operation_response_paginated.g.dart';
 /// * [errors] 
 /// * [messages] 
 /// * [success] - Whether the API call was successful.
-/// * [resultInfo] 
 /// * [result] 
+/// * [resultInfo] 
 @BuiltValue()
 abstract class ApiShieldMultipleOperationResponsePaginated implements ApiShieldApiResponseCollection, Built<ApiShieldMultipleOperationResponsePaginated, ApiShieldMultipleOperationResponsePaginatedBuilder> {
   @BuiltValueField(wireName: r'result')

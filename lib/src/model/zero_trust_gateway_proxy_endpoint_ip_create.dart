@@ -12,18 +12,18 @@ part 'zero_trust_gateway_proxy_endpoint_ip_create.g.dart';
 /// ZeroTrustGatewayProxyEndpointIpCreate
 ///
 /// Properties:
-/// * [kind] - The proxy endpoint kind
 /// * [name] - Specify the name of the proxy endpoint.
+/// * [kind] - The proxy endpoint kind
 @BuiltValue()
 abstract class ZeroTrustGatewayProxyEndpointIpCreate implements Built<ZeroTrustGatewayProxyEndpointIpCreate, ZeroTrustGatewayProxyEndpointIpCreateBuilder> {
+  /// Specify the name of the proxy endpoint.
+  @BuiltValueField(wireName: r'name')
+  String get name;
+
   /// The proxy endpoint kind
   @BuiltValueField(wireName: r'kind')
   ZeroTrustGatewayProxyEndpointIpCreateKindEnum? get kind;
   // enum kindEnum {  ip,  };
-
-  /// Specify the name of the proxy endpoint.
-  @BuiltValueField(wireName: r'name')
-  String get name;
 
   ZeroTrustGatewayProxyEndpointIpCreate._();
 
@@ -48,6 +48,11 @@ class _$ZeroTrustGatewayProxyEndpointIpCreateSerializer implements PrimitiveSeri
     ZeroTrustGatewayProxyEndpointIpCreate object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    yield r'name';
+    yield serializers.serialize(
+      object.name,
+      specifiedType: const FullType(String),
+    );
     if (object.kind != null) {
       yield r'kind';
       yield serializers.serialize(
@@ -55,11 +60,6 @@ class _$ZeroTrustGatewayProxyEndpointIpCreateSerializer implements PrimitiveSeri
         specifiedType: const FullType(ZeroTrustGatewayProxyEndpointIpCreateKindEnum),
       );
     }
-    yield r'name';
-    yield serializers.serialize(
-      object.name,
-      specifiedType: const FullType(String),
-    );
   }
 
   @override
@@ -83,19 +83,19 @@ class _$ZeroTrustGatewayProxyEndpointIpCreateSerializer implements PrimitiveSeri
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'kind':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(ZeroTrustGatewayProxyEndpointIpCreateKindEnum),
-          ) as ZeroTrustGatewayProxyEndpointIpCreateKindEnum;
-          result.kind = valueDes;
-          break;
         case r'name':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(String),
           ) as String;
           result.name = valueDes;
+          break;
+        case r'kind':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(ZeroTrustGatewayProxyEndpointIpCreateKindEnum),
+          ) as ZeroTrustGatewayProxyEndpointIpCreateKindEnum;
+          result.kind = valueDes;
           break;
         default:
           unhandled.add(key);

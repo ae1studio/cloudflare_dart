@@ -8,13 +8,13 @@ part of 'lists_list_item_ip_full.dart';
 
 class _$ListsListItemIpFull extends ListsListItemIpFull {
   @override
-  final String? comment;
-  @override
   final String createdOn;
   @override
   final String id;
   @override
   final String modifiedOn;
+  @override
+  final String? comment;
   @override
   final String ip;
 
@@ -23,10 +23,10 @@ class _$ListsListItemIpFull extends ListsListItemIpFull {
       (ListsListItemIpFullBuilder()..update(updates))._build();
 
   _$ListsListItemIpFull._(
-      {this.comment,
-      required this.createdOn,
+      {required this.createdOn,
       required this.id,
       required this.modifiedOn,
+      this.comment,
       required this.ip})
       : super._();
   @override
@@ -42,20 +42,20 @@ class _$ListsListItemIpFull extends ListsListItemIpFull {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is ListsListItemIpFull &&
-        comment == other.comment &&
         createdOn == other.createdOn &&
         id == other.id &&
         modifiedOn == other.modifiedOn &&
+        comment == other.comment &&
         ip == other.ip;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, comment.hashCode);
     _$hash = $jc(_$hash, createdOn.hashCode);
     _$hash = $jc(_$hash, id.hashCode);
     _$hash = $jc(_$hash, modifiedOn.hashCode);
+    _$hash = $jc(_$hash, comment.hashCode);
     _$hash = $jc(_$hash, ip.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
@@ -64,10 +64,10 @@ class _$ListsListItemIpFull extends ListsListItemIpFull {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'ListsListItemIpFull')
-          ..add('comment', comment)
           ..add('createdOn', createdOn)
           ..add('id', id)
           ..add('modifiedOn', modifiedOn)
+          ..add('comment', comment)
           ..add('ip', ip))
         .toString();
   }
@@ -79,10 +79,6 @@ class ListsListItemIpFullBuilder
         ListsItemBaseBuilder,
         ListsListItemIpObjectBuilder {
   _$ListsListItemIpFull? _$v;
-
-  String? _comment;
-  String? get comment => _$this._comment;
-  set comment(covariant String? comment) => _$this._comment = comment;
 
   String? _createdOn;
   String? get createdOn => _$this._createdOn;
@@ -97,6 +93,10 @@ class ListsListItemIpFullBuilder
   set modifiedOn(covariant String? modifiedOn) =>
       _$this._modifiedOn = modifiedOn;
 
+  String? _comment;
+  String? get comment => _$this._comment;
+  set comment(covariant String? comment) => _$this._comment = comment;
+
   String? _ip;
   String? get ip => _$this._ip;
   set ip(covariant String? ip) => _$this._ip = ip;
@@ -108,10 +108,10 @@ class ListsListItemIpFullBuilder
   ListsListItemIpFullBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _comment = $v.comment;
       _createdOn = $v.createdOn;
       _id = $v.id;
       _modifiedOn = $v.modifiedOn;
+      _comment = $v.comment;
       _ip = $v.ip;
       _$v = null;
     }
@@ -135,13 +135,13 @@ class ListsListItemIpFullBuilder
   _$ListsListItemIpFull _build() {
     final _$result = _$v ??
         _$ListsListItemIpFull._(
-          comment: comment,
           createdOn: BuiltValueNullFieldError.checkNotNull(
               createdOn, r'ListsListItemIpFull', 'createdOn'),
           id: BuiltValueNullFieldError.checkNotNull(
               id, r'ListsListItemIpFull', 'id'),
           modifiedOn: BuiltValueNullFieldError.checkNotNull(
               modifiedOn, r'ListsListItemIpFull', 'modifiedOn'),
+          comment: comment,
           ip: BuiltValueNullFieldError.checkNotNull(
               ip, r'ListsListItemIpFull', 'ip'),
         );

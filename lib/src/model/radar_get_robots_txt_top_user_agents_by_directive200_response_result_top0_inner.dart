@@ -11,23 +11,23 @@ part 'radar_get_robots_txt_top_user_agents_by_directive200_response_result_top0_
 /// RadarGetRobotsTxtTopUserAgentsByDirective200ResponseResultTop0Inner
 ///
 /// Properties:
-/// * [fully] 
 /// * [name] 
-/// * [partially] 
 /// * [value] 
+/// * [fully] 
+/// * [partially] 
 @BuiltValue()
 abstract class RadarGetRobotsTxtTopUserAgentsByDirective200ResponseResultTop0Inner implements Built<RadarGetRobotsTxtTopUserAgentsByDirective200ResponseResultTop0Inner, RadarGetRobotsTxtTopUserAgentsByDirective200ResponseResultTop0InnerBuilder> {
-  @BuiltValueField(wireName: r'fully')
-  int? get fully;
-
   @BuiltValueField(wireName: r'name')
   String get name;
 
-  @BuiltValueField(wireName: r'partially')
-  int? get partially;
-
   @BuiltValueField(wireName: r'value')
   int get value;
+
+  @BuiltValueField(wireName: r'fully')
+  int? get fully;
+
+  @BuiltValueField(wireName: r'partially')
+  int? get partially;
 
   RadarGetRobotsTxtTopUserAgentsByDirective200ResponseResultTop0Inner._();
 
@@ -52,6 +52,16 @@ class _$RadarGetRobotsTxtTopUserAgentsByDirective200ResponseResultTop0InnerSeria
     RadarGetRobotsTxtTopUserAgentsByDirective200ResponseResultTop0Inner object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    yield r'name';
+    yield serializers.serialize(
+      object.name,
+      specifiedType: const FullType(String),
+    );
+    yield r'value';
+    yield serializers.serialize(
+      object.value,
+      specifiedType: const FullType(int),
+    );
     if (object.fully != null) {
       yield r'fully';
       yield serializers.serialize(
@@ -59,11 +69,6 @@ class _$RadarGetRobotsTxtTopUserAgentsByDirective200ResponseResultTop0InnerSeria
         specifiedType: const FullType(int),
       );
     }
-    yield r'name';
-    yield serializers.serialize(
-      object.name,
-      specifiedType: const FullType(String),
-    );
     if (object.partially != null) {
       yield r'partially';
       yield serializers.serialize(
@@ -71,11 +76,6 @@ class _$RadarGetRobotsTxtTopUserAgentsByDirective200ResponseResultTop0InnerSeria
         specifiedType: const FullType(int),
       );
     }
-    yield r'value';
-    yield serializers.serialize(
-      object.value,
-      specifiedType: const FullType(int),
-    );
   }
 
   @override
@@ -99,13 +99,6 @@ class _$RadarGetRobotsTxtTopUserAgentsByDirective200ResponseResultTop0InnerSeria
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'fully':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
-          result.fully = valueDes;
-          break;
         case r'name':
           final valueDes = serializers.deserialize(
             value,
@@ -113,19 +106,26 @@ class _$RadarGetRobotsTxtTopUserAgentsByDirective200ResponseResultTop0InnerSeria
           ) as String;
           result.name = valueDes;
           break;
-        case r'partially':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
-          result.partially = valueDes;
-          break;
         case r'value':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(int),
           ) as int;
           result.value = valueDes;
+          break;
+        case r'fully':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(int),
+          ) as int;
+          result.fully = valueDes;
+          break;
+        case r'partially':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(int),
+          ) as int;
+          result.partially = valueDes;
           break;
         default:
           unhandled.add(key);

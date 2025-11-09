@@ -12,27 +12,23 @@ part 'registrar_api_contact_properties.g.dart';
 ///
 /// Properties:
 /// * [address] - Address.
-/// * [address2] - Optional address line for unit, floor, suite, etc.
 /// * [city] - City.
 /// * [country] - The country in which the user lives.
-/// * [email] - The contact email address of the user.
-/// * [fax] - Contact fax number.
 /// * [firstName] - User's first name
-/// * [id] - Contact Identifier.
 /// * [lastName] - User's last name
 /// * [organization] - Name of organization.
 /// * [phone] - User's telephone number
 /// * [state] - State.
 /// * [zip] - The zipcode or postal code where the user lives.
+/// * [address2] - Optional address line for unit, floor, suite, etc.
+/// * [email] - The contact email address of the user.
+/// * [fax] - Contact fax number.
+/// * [id] - Contact Identifier.
 @BuiltValue(instantiable: false)
 abstract class RegistrarApiContactProperties  {
   /// Address.
   @BuiltValueField(wireName: r'address')
   String get address;
-
-  /// Optional address line for unit, floor, suite, etc.
-  @BuiltValueField(wireName: r'address2')
-  String? get address2;
 
   /// City.
   @BuiltValueField(wireName: r'city')
@@ -42,21 +38,9 @@ abstract class RegistrarApiContactProperties  {
   @BuiltValueField(wireName: r'country')
   String? get country;
 
-  /// The contact email address of the user.
-  @BuiltValueField(wireName: r'email')
-  String? get email;
-
-  /// Contact fax number.
-  @BuiltValueField(wireName: r'fax')
-  String? get fax;
-
   /// User's first name
   @BuiltValueField(wireName: r'first_name')
   String? get firstName;
-
-  /// Contact Identifier.
-  @BuiltValueField(wireName: r'id')
-  String? get id;
 
   /// User's last name
   @BuiltValueField(wireName: r'last_name')
@@ -77,6 +61,22 @@ abstract class RegistrarApiContactProperties  {
   /// The zipcode or postal code where the user lives.
   @BuiltValueField(wireName: r'zip')
   String? get zip;
+
+  /// Optional address line for unit, floor, suite, etc.
+  @BuiltValueField(wireName: r'address2')
+  String? get address2;
+
+  /// The contact email address of the user.
+  @BuiltValueField(wireName: r'email')
+  String? get email;
+
+  /// Contact fax number.
+  @BuiltValueField(wireName: r'fax')
+  String? get fax;
+
+  /// Contact Identifier.
+  @BuiltValueField(wireName: r'id')
+  String? get id;
 
   @BuiltValueSerializer(custom: true)
   static Serializer<RegistrarApiContactProperties> get serializer => _$RegistrarApiContactPropertiesSerializer();
@@ -99,13 +99,6 @@ class _$RegistrarApiContactPropertiesSerializer implements PrimitiveSerializer<R
       object.address,
       specifiedType: const FullType(String),
     );
-    if (object.address2 != null) {
-      yield r'address2';
-      yield serializers.serialize(
-        object.address2,
-        specifiedType: const FullType(String),
-      );
-    }
     yield r'city';
     yield serializers.serialize(
       object.city,
@@ -116,32 +109,11 @@ class _$RegistrarApiContactPropertiesSerializer implements PrimitiveSerializer<R
       object.country,
       specifiedType: const FullType.nullable(String),
     );
-    if (object.email != null) {
-      yield r'email';
-      yield serializers.serialize(
-        object.email,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.fax != null) {
-      yield r'fax';
-      yield serializers.serialize(
-        object.fax,
-        specifiedType: const FullType(String),
-      );
-    }
     yield r'first_name';
     yield object.firstName == null ? null : serializers.serialize(
       object.firstName,
       specifiedType: const FullType.nullable(String),
     );
-    if (object.id != null) {
-      yield r'id';
-      yield serializers.serialize(
-        object.id,
-        specifiedType: const FullType(String),
-      );
-    }
     yield r'last_name';
     yield object.lastName == null ? null : serializers.serialize(
       object.lastName,
@@ -167,6 +139,34 @@ class _$RegistrarApiContactPropertiesSerializer implements PrimitiveSerializer<R
       object.zip,
       specifiedType: const FullType.nullable(String),
     );
+    if (object.address2 != null) {
+      yield r'address2';
+      yield serializers.serialize(
+        object.address2,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.email != null) {
+      yield r'email';
+      yield serializers.serialize(
+        object.email,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.fax != null) {
+      yield r'fax';
+      yield serializers.serialize(
+        object.fax,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.id != null) {
+      yield r'id';
+      yield serializers.serialize(
+        object.id,
+        specifiedType: const FullType(String),
+      );
+    }
   }
 
   @override
@@ -237,13 +237,6 @@ class _$$RegistrarApiContactPropertiesSerializer implements PrimitiveSerializer<
           ) as String;
           result.address = valueDes;
           break;
-        case r'address2':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.address2 = valueDes;
-          break;
         case r'city':
           final valueDes = serializers.deserialize(
             value,
@@ -259,20 +252,6 @@ class _$$RegistrarApiContactPropertiesSerializer implements PrimitiveSerializer<
           if (valueDes == null) continue;
           result.country = valueDes;
           break;
-        case r'email':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.email = valueDes;
-          break;
-        case r'fax':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.fax = valueDes;
-          break;
         case r'first_name':
           final valueDes = serializers.deserialize(
             value,
@@ -280,13 +259,6 @@ class _$$RegistrarApiContactPropertiesSerializer implements PrimitiveSerializer<
           ) as String?;
           if (valueDes == null) continue;
           result.firstName = valueDes;
-          break;
-        case r'id':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.id = valueDes;
           break;
         case r'last_name':
           final valueDes = serializers.deserialize(
@@ -325,6 +297,34 @@ class _$$RegistrarApiContactPropertiesSerializer implements PrimitiveSerializer<
           ) as String?;
           if (valueDes == null) continue;
           result.zip = valueDes;
+          break;
+        case r'address2':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.address2 = valueDes;
+          break;
+        case r'email':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.email = valueDes;
+          break;
+        case r'fax':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.fax = valueDes;
+          break;
+        case r'id':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.id = valueDes;
           break;
         default:
           unhandled.add(key);

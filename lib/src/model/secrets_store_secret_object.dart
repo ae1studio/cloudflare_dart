@@ -12,19 +12,15 @@ part 'secrets_store_secret_object.g.dart';
 /// SecretsStoreSecretObject
 ///
 /// Properties:
-/// * [comment] - Freeform text describing the secret
 /// * [created] - Whenthe secret was created.
 /// * [id] - Secret identifier tag.
 /// * [modified] - When the secret was modified.
 /// * [name] - The name of the secret
 /// * [status] 
 /// * [storeId] - Store Identifier
+/// * [comment] - Freeform text describing the secret
 @BuiltValue()
 abstract class SecretsStoreSecretObject implements Built<SecretsStoreSecretObject, SecretsStoreSecretObjectBuilder> {
-  /// Freeform text describing the secret
-  @BuiltValueField(wireName: r'comment')
-  String? get comment;
-
   /// Whenthe secret was created.
   @BuiltValueField(wireName: r'created')
   DateTime get created;
@@ -49,6 +45,10 @@ abstract class SecretsStoreSecretObject implements Built<SecretsStoreSecretObjec
   @BuiltValueField(wireName: r'store_id')
   String get storeId;
 
+  /// Freeform text describing the secret
+  @BuiltValueField(wireName: r'comment')
+  String? get comment;
+
   SecretsStoreSecretObject._();
 
   factory SecretsStoreSecretObject([void updates(SecretsStoreSecretObjectBuilder b)]) = _$SecretsStoreSecretObject;
@@ -72,13 +72,6 @@ class _$SecretsStoreSecretObjectSerializer implements PrimitiveSerializer<Secret
     SecretsStoreSecretObject object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
-    if (object.comment != null) {
-      yield r'comment';
-      yield serializers.serialize(
-        object.comment,
-        specifiedType: const FullType(String),
-      );
-    }
     yield r'created';
     yield serializers.serialize(
       object.created,
@@ -109,6 +102,13 @@ class _$SecretsStoreSecretObjectSerializer implements PrimitiveSerializer<Secret
       object.storeId,
       specifiedType: const FullType(String),
     );
+    if (object.comment != null) {
+      yield r'comment';
+      yield serializers.serialize(
+        object.comment,
+        specifiedType: const FullType(String),
+      );
+    }
   }
 
   @override
@@ -132,13 +132,6 @@ class _$SecretsStoreSecretObjectSerializer implements PrimitiveSerializer<Secret
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'comment':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.comment = valueDes;
-          break;
         case r'created':
           final valueDes = serializers.deserialize(
             value,
@@ -180,6 +173,13 @@ class _$SecretsStoreSecretObjectSerializer implements PrimitiveSerializer<Secret
             specifiedType: const FullType(String),
           ) as String;
           result.storeId = valueDes;
+          break;
+        case r'comment':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.comment = valueDes;
           break;
         default:
           unhandled.add(key);

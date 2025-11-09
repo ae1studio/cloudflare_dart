@@ -12,27 +12,27 @@ class _$MconnControllerConnector extends MconnControllerConnector {
   @override
   final bool activated;
   @override
-  final String? cloudflaredTunnelToken;
-  @override
-  final String? cohortDesiredVersion;
-  @override
-  final String? desiredVersion;
-  @override
   final String id;
   @override
   final num interruptWindowDurationHours;
   @override
   final num interruptWindowHourOfDay;
   @override
+  final String timezone;
+  @override
+  final bool upgradeAsap;
+  @override
+  final String? cloudflaredTunnelToken;
+  @override
+  final String? cohortDesiredVersion;
+  @override
+  final String? desiredVersion;
+  @override
   final String? lastHeartbeat;
   @override
   final String? lastSeenVersion;
   @override
   final String? pinnedVersion;
-  @override
-  final String timezone;
-  @override
-  final bool upgradeAsap;
 
   factory _$MconnControllerConnector(
           [void Function(MconnControllerConnectorBuilder)? updates]) =>
@@ -41,17 +41,17 @@ class _$MconnControllerConnector extends MconnControllerConnector {
   _$MconnControllerConnector._(
       {required this.accountId,
       required this.activated,
-      this.cloudflaredTunnelToken,
-      this.cohortDesiredVersion,
-      this.desiredVersion,
       required this.id,
       required this.interruptWindowDurationHours,
       required this.interruptWindowHourOfDay,
+      required this.timezone,
+      required this.upgradeAsap,
+      this.cloudflaredTunnelToken,
+      this.cohortDesiredVersion,
+      this.desiredVersion,
       this.lastHeartbeat,
       this.lastSeenVersion,
-      this.pinnedVersion,
-      required this.timezone,
-      required this.upgradeAsap})
+      this.pinnedVersion})
       : super._();
   @override
   MconnControllerConnector rebuild(
@@ -68,17 +68,17 @@ class _$MconnControllerConnector extends MconnControllerConnector {
     return other is MconnControllerConnector &&
         accountId == other.accountId &&
         activated == other.activated &&
-        cloudflaredTunnelToken == other.cloudflaredTunnelToken &&
-        cohortDesiredVersion == other.cohortDesiredVersion &&
-        desiredVersion == other.desiredVersion &&
         id == other.id &&
         interruptWindowDurationHours == other.interruptWindowDurationHours &&
         interruptWindowHourOfDay == other.interruptWindowHourOfDay &&
+        timezone == other.timezone &&
+        upgradeAsap == other.upgradeAsap &&
+        cloudflaredTunnelToken == other.cloudflaredTunnelToken &&
+        cohortDesiredVersion == other.cohortDesiredVersion &&
+        desiredVersion == other.desiredVersion &&
         lastHeartbeat == other.lastHeartbeat &&
         lastSeenVersion == other.lastSeenVersion &&
-        pinnedVersion == other.pinnedVersion &&
-        timezone == other.timezone &&
-        upgradeAsap == other.upgradeAsap;
+        pinnedVersion == other.pinnedVersion;
   }
 
   @override
@@ -86,17 +86,17 @@ class _$MconnControllerConnector extends MconnControllerConnector {
     var _$hash = 0;
     _$hash = $jc(_$hash, accountId.hashCode);
     _$hash = $jc(_$hash, activated.hashCode);
-    _$hash = $jc(_$hash, cloudflaredTunnelToken.hashCode);
-    _$hash = $jc(_$hash, cohortDesiredVersion.hashCode);
-    _$hash = $jc(_$hash, desiredVersion.hashCode);
     _$hash = $jc(_$hash, id.hashCode);
     _$hash = $jc(_$hash, interruptWindowDurationHours.hashCode);
     _$hash = $jc(_$hash, interruptWindowHourOfDay.hashCode);
+    _$hash = $jc(_$hash, timezone.hashCode);
+    _$hash = $jc(_$hash, upgradeAsap.hashCode);
+    _$hash = $jc(_$hash, cloudflaredTunnelToken.hashCode);
+    _$hash = $jc(_$hash, cohortDesiredVersion.hashCode);
+    _$hash = $jc(_$hash, desiredVersion.hashCode);
     _$hash = $jc(_$hash, lastHeartbeat.hashCode);
     _$hash = $jc(_$hash, lastSeenVersion.hashCode);
     _$hash = $jc(_$hash, pinnedVersion.hashCode);
-    _$hash = $jc(_$hash, timezone.hashCode);
-    _$hash = $jc(_$hash, upgradeAsap.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -106,17 +106,17 @@ class _$MconnControllerConnector extends MconnControllerConnector {
     return (newBuiltValueToStringHelper(r'MconnControllerConnector')
           ..add('accountId', accountId)
           ..add('activated', activated)
-          ..add('cloudflaredTunnelToken', cloudflaredTunnelToken)
-          ..add('cohortDesiredVersion', cohortDesiredVersion)
-          ..add('desiredVersion', desiredVersion)
           ..add('id', id)
           ..add('interruptWindowDurationHours', interruptWindowDurationHours)
           ..add('interruptWindowHourOfDay', interruptWindowHourOfDay)
+          ..add('timezone', timezone)
+          ..add('upgradeAsap', upgradeAsap)
+          ..add('cloudflaredTunnelToken', cloudflaredTunnelToken)
+          ..add('cohortDesiredVersion', cohortDesiredVersion)
+          ..add('desiredVersion', desiredVersion)
           ..add('lastHeartbeat', lastHeartbeat)
           ..add('lastSeenVersion', lastSeenVersion)
-          ..add('pinnedVersion', pinnedVersion)
-          ..add('timezone', timezone)
-          ..add('upgradeAsap', upgradeAsap))
+          ..add('pinnedVersion', pinnedVersion))
         .toString();
   }
 }
@@ -134,6 +134,28 @@ class MconnControllerConnectorBuilder
   bool? get activated => _$this._activated;
   set activated(bool? activated) => _$this._activated = activated;
 
+  String? _id;
+  String? get id => _$this._id;
+  set id(String? id) => _$this._id = id;
+
+  num? _interruptWindowDurationHours;
+  num? get interruptWindowDurationHours => _$this._interruptWindowDurationHours;
+  set interruptWindowDurationHours(num? interruptWindowDurationHours) =>
+      _$this._interruptWindowDurationHours = interruptWindowDurationHours;
+
+  num? _interruptWindowHourOfDay;
+  num? get interruptWindowHourOfDay => _$this._interruptWindowHourOfDay;
+  set interruptWindowHourOfDay(num? interruptWindowHourOfDay) =>
+      _$this._interruptWindowHourOfDay = interruptWindowHourOfDay;
+
+  String? _timezone;
+  String? get timezone => _$this._timezone;
+  set timezone(String? timezone) => _$this._timezone = timezone;
+
+  bool? _upgradeAsap;
+  bool? get upgradeAsap => _$this._upgradeAsap;
+  set upgradeAsap(bool? upgradeAsap) => _$this._upgradeAsap = upgradeAsap;
+
   String? _cloudflaredTunnelToken;
   String? get cloudflaredTunnelToken => _$this._cloudflaredTunnelToken;
   set cloudflaredTunnelToken(String? cloudflaredTunnelToken) =>
@@ -148,20 +170,6 @@ class MconnControllerConnectorBuilder
   String? get desiredVersion => _$this._desiredVersion;
   set desiredVersion(String? desiredVersion) =>
       _$this._desiredVersion = desiredVersion;
-
-  String? _id;
-  String? get id => _$this._id;
-  set id(String? id) => _$this._id = id;
-
-  num? _interruptWindowDurationHours;
-  num? get interruptWindowDurationHours => _$this._interruptWindowDurationHours;
-  set interruptWindowDurationHours(num? interruptWindowDurationHours) =>
-      _$this._interruptWindowDurationHours = interruptWindowDurationHours;
-
-  num? _interruptWindowHourOfDay;
-  num? get interruptWindowHourOfDay => _$this._interruptWindowHourOfDay;
-  set interruptWindowHourOfDay(num? interruptWindowHourOfDay) =>
-      _$this._interruptWindowHourOfDay = interruptWindowHourOfDay;
 
   String? _lastHeartbeat;
   String? get lastHeartbeat => _$this._lastHeartbeat;
@@ -178,14 +186,6 @@ class MconnControllerConnectorBuilder
   set pinnedVersion(String? pinnedVersion) =>
       _$this._pinnedVersion = pinnedVersion;
 
-  String? _timezone;
-  String? get timezone => _$this._timezone;
-  set timezone(String? timezone) => _$this._timezone = timezone;
-
-  bool? _upgradeAsap;
-  bool? get upgradeAsap => _$this._upgradeAsap;
-  set upgradeAsap(bool? upgradeAsap) => _$this._upgradeAsap = upgradeAsap;
-
   MconnControllerConnectorBuilder() {
     MconnControllerConnector._defaults(this);
   }
@@ -195,17 +195,17 @@ class MconnControllerConnectorBuilder
     if ($v != null) {
       _accountId = $v.accountId;
       _activated = $v.activated;
-      _cloudflaredTunnelToken = $v.cloudflaredTunnelToken;
-      _cohortDesiredVersion = $v.cohortDesiredVersion;
-      _desiredVersion = $v.desiredVersion;
       _id = $v.id;
       _interruptWindowDurationHours = $v.interruptWindowDurationHours;
       _interruptWindowHourOfDay = $v.interruptWindowHourOfDay;
+      _timezone = $v.timezone;
+      _upgradeAsap = $v.upgradeAsap;
+      _cloudflaredTunnelToken = $v.cloudflaredTunnelToken;
+      _cohortDesiredVersion = $v.cohortDesiredVersion;
+      _desiredVersion = $v.desiredVersion;
       _lastHeartbeat = $v.lastHeartbeat;
       _lastSeenVersion = $v.lastSeenVersion;
       _pinnedVersion = $v.pinnedVersion;
-      _timezone = $v.timezone;
-      _upgradeAsap = $v.upgradeAsap;
       _$v = null;
     }
     return this;
@@ -231,9 +231,6 @@ class MconnControllerConnectorBuilder
               accountId, r'MconnControllerConnector', 'accountId'),
           activated: BuiltValueNullFieldError.checkNotNull(
               activated, r'MconnControllerConnector', 'activated'),
-          cloudflaredTunnelToken: cloudflaredTunnelToken,
-          cohortDesiredVersion: cohortDesiredVersion,
-          desiredVersion: desiredVersion,
           id: BuiltValueNullFieldError.checkNotNull(
               id, r'MconnControllerConnector', 'id'),
           interruptWindowDurationHours: BuiltValueNullFieldError.checkNotNull(
@@ -244,13 +241,16 @@ class MconnControllerConnectorBuilder
               interruptWindowHourOfDay,
               r'MconnControllerConnector',
               'interruptWindowHourOfDay'),
-          lastHeartbeat: lastHeartbeat,
-          lastSeenVersion: lastSeenVersion,
-          pinnedVersion: pinnedVersion,
           timezone: BuiltValueNullFieldError.checkNotNull(
               timezone, r'MconnControllerConnector', 'timezone'),
           upgradeAsap: BuiltValueNullFieldError.checkNotNull(
               upgradeAsap, r'MconnControllerConnector', 'upgradeAsap'),
+          cloudflaredTunnelToken: cloudflaredTunnelToken,
+          cohortDesiredVersion: cohortDesiredVersion,
+          desiredVersion: desiredVersion,
+          lastHeartbeat: lastHeartbeat,
+          lastSeenVersion: lastSeenVersion,
+          pinnedVersion: pinnedVersion,
         );
     replace(_$result);
     return _$result;

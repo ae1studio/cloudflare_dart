@@ -8,9 +8,9 @@ part of 'spectrum_config_app_config.dart';
 
 class _$SpectrumConfigAppConfig extends SpectrumConfigAppConfig {
   @override
-  final bool? argoSmartRouting;
-  @override
   final String protocol;
+  @override
+  final bool? argoSmartRouting;
   @override
   final SpectrumConfigProxyProtocol? proxyProtocol;
   @override
@@ -41,8 +41,8 @@ class _$SpectrumConfigAppConfig extends SpectrumConfigAppConfig {
       (SpectrumConfigAppConfigBuilder()..update(updates))._build();
 
   _$SpectrumConfigAppConfig._(
-      {this.argoSmartRouting,
-      required this.protocol,
+      {required this.protocol,
+      this.argoSmartRouting,
       this.proxyProtocol,
       required this.dns,
       this.ipFirewall,
@@ -69,8 +69,8 @@ class _$SpectrumConfigAppConfig extends SpectrumConfigAppConfig {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is SpectrumConfigAppConfig &&
-        argoSmartRouting == other.argoSmartRouting &&
         protocol == other.protocol &&
+        argoSmartRouting == other.argoSmartRouting &&
         proxyProtocol == other.proxyProtocol &&
         dns == other.dns &&
         ipFirewall == other.ipFirewall &&
@@ -88,8 +88,8 @@ class _$SpectrumConfigAppConfig extends SpectrumConfigAppConfig {
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, argoSmartRouting.hashCode);
     _$hash = $jc(_$hash, protocol.hashCode);
+    _$hash = $jc(_$hash, argoSmartRouting.hashCode);
     _$hash = $jc(_$hash, proxyProtocol.hashCode);
     _$hash = $jc(_$hash, dns.hashCode);
     _$hash = $jc(_$hash, ipFirewall.hashCode);
@@ -109,8 +109,8 @@ class _$SpectrumConfigAppConfig extends SpectrumConfigAppConfig {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'SpectrumConfigAppConfig')
-          ..add('argoSmartRouting', argoSmartRouting)
           ..add('protocol', protocol)
+          ..add('argoSmartRouting', argoSmartRouting)
           ..add('proxyProtocol', proxyProtocol)
           ..add('dns', dns)
           ..add('ipFirewall', ipFirewall)
@@ -133,14 +133,14 @@ class SpectrumConfigAppConfigBuilder
         SpectrumConfigBaseAppConfigBuilder {
   _$SpectrumConfigAppConfig? _$v;
 
+  String? _protocol;
+  String? get protocol => _$this._protocol;
+  set protocol(covariant String? protocol) => _$this._protocol = protocol;
+
   bool? _argoSmartRouting;
   bool? get argoSmartRouting => _$this._argoSmartRouting;
   set argoSmartRouting(covariant bool? argoSmartRouting) =>
       _$this._argoSmartRouting = argoSmartRouting;
-
-  String? _protocol;
-  String? get protocol => _$this._protocol;
-  set protocol(covariant String? protocol) => _$this._protocol = protocol;
 
   SpectrumConfigProxyProtocol? _proxyProtocol;
   SpectrumConfigProxyProtocol? get proxyProtocol => _$this._proxyProtocol;
@@ -210,8 +210,8 @@ class SpectrumConfigAppConfigBuilder
   SpectrumConfigAppConfigBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _argoSmartRouting = $v.argoSmartRouting;
       _protocol = $v.protocol;
+      _argoSmartRouting = $v.argoSmartRouting;
       _proxyProtocol = $v.proxyProtocol;
       _dns = $v.dns.toBuilder();
       _ipFirewall = $v.ipFirewall;
@@ -247,9 +247,9 @@ class SpectrumConfigAppConfigBuilder
     try {
       _$result = _$v ??
           _$SpectrumConfigAppConfig._(
-            argoSmartRouting: argoSmartRouting,
             protocol: BuiltValueNullFieldError.checkNotNull(
                 protocol, r'SpectrumConfigAppConfig', 'protocol'),
+            argoSmartRouting: argoSmartRouting,
             proxyProtocol: proxyProtocol,
             dns: dns.build(),
             ipFirewall: ipFirewall,

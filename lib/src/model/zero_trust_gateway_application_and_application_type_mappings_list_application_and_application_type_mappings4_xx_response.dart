@@ -20,8 +20,8 @@ part 'zero_trust_gateway_application_and_application_type_mappings_list_applicat
 /// * [errors] 
 /// * [messages] 
 /// * [success] - Indicate whether the API call was successful.
-/// * [resultInfo] 
 /// * [result] 
+/// * [resultInfo] 
 @BuiltValue()
 abstract class ZeroTrustGatewayApplicationAndApplicationTypeMappingsListApplicationAndApplicationTypeMappings4XXResponse implements ZeroTrustGatewayApiResponseCommonFailure, ZeroTrustGatewayAppTypesComponentsSchemasResponseCollection, Built<ZeroTrustGatewayApplicationAndApplicationTypeMappingsListApplicationAndApplicationTypeMappings4XXResponse, ZeroTrustGatewayApplicationAndApplicationTypeMappingsListApplicationAndApplicationTypeMappings4XXResponseBuilder> {
   ZeroTrustGatewayApplicationAndApplicationTypeMappingsListApplicationAndApplicationTypeMappings4XXResponse._();

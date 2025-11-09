@@ -9,9 +9,9 @@ part of 'cloudflare_tunnel_create_a_cloudflare_tunnel_request.dart';
 class _$CloudflareTunnelCreateACloudflareTunnelRequest
     extends CloudflareTunnelCreateACloudflareTunnelRequest {
   @override
-  final TunnelConfigSrc? configSrc;
-  @override
   final String name;
+  @override
+  final TunnelConfigSrc? configSrc;
   @override
   final String? tunnelSecret;
 
@@ -22,7 +22,7 @@ class _$CloudflareTunnelCreateACloudflareTunnelRequest
           ._build();
 
   _$CloudflareTunnelCreateACloudflareTunnelRequest._(
-      {this.configSrc, required this.name, this.tunnelSecret})
+      {required this.name, this.configSrc, this.tunnelSecret})
       : super._();
   @override
   CloudflareTunnelCreateACloudflareTunnelRequest rebuild(
@@ -38,16 +38,16 @@ class _$CloudflareTunnelCreateACloudflareTunnelRequest
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is CloudflareTunnelCreateACloudflareTunnelRequest &&
-        configSrc == other.configSrc &&
         name == other.name &&
+        configSrc == other.configSrc &&
         tunnelSecret == other.tunnelSecret;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, configSrc.hashCode);
     _$hash = $jc(_$hash, name.hashCode);
+    _$hash = $jc(_$hash, configSrc.hashCode);
     _$hash = $jc(_$hash, tunnelSecret.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
@@ -57,8 +57,8 @@ class _$CloudflareTunnelCreateACloudflareTunnelRequest
   String toString() {
     return (newBuiltValueToStringHelper(
             r'CloudflareTunnelCreateACloudflareTunnelRequest')
-          ..add('configSrc', configSrc)
           ..add('name', name)
+          ..add('configSrc', configSrc)
           ..add('tunnelSecret', tunnelSecret))
         .toString();
   }
@@ -70,13 +70,13 @@ class CloudflareTunnelCreateACloudflareTunnelRequestBuilder
             CloudflareTunnelCreateACloudflareTunnelRequestBuilder> {
   _$CloudflareTunnelCreateACloudflareTunnelRequest? _$v;
 
-  TunnelConfigSrc? _configSrc;
-  TunnelConfigSrc? get configSrc => _$this._configSrc;
-  set configSrc(TunnelConfigSrc? configSrc) => _$this._configSrc = configSrc;
-
   String? _name;
   String? get name => _$this._name;
   set name(String? name) => _$this._name = name;
+
+  TunnelConfigSrc? _configSrc;
+  TunnelConfigSrc? get configSrc => _$this._configSrc;
+  set configSrc(TunnelConfigSrc? configSrc) => _$this._configSrc = configSrc;
 
   String? _tunnelSecret;
   String? get tunnelSecret => _$this._tunnelSecret;
@@ -89,8 +89,8 @@ class CloudflareTunnelCreateACloudflareTunnelRequestBuilder
   CloudflareTunnelCreateACloudflareTunnelRequestBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _configSrc = $v.configSrc;
       _name = $v.name;
+      _configSrc = $v.configSrc;
       _tunnelSecret = $v.tunnelSecret;
       _$v = null;
     }
@@ -115,9 +115,9 @@ class CloudflareTunnelCreateACloudflareTunnelRequestBuilder
   _$CloudflareTunnelCreateACloudflareTunnelRequest _build() {
     final _$result = _$v ??
         _$CloudflareTunnelCreateACloudflareTunnelRequest._(
-          configSrc: configSrc,
           name: BuiltValueNullFieldError.checkNotNull(
               name, r'CloudflareTunnelCreateACloudflareTunnelRequest', 'name'),
+          configSrc: configSrc,
           tunnelSecret: tunnelSecret,
         );
     replace(_$result);

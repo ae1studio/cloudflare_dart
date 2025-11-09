@@ -184,9 +184,9 @@ class _$AbuseReportsPhishingReportOwnerNotificationEnumSerializer
 
 class _$AbuseReportsPhishingReport extends AbuseReportsPhishingReport {
   @override
-  final String? originalWork;
-  @override
   final AbuseReportsPhishingReportOwnerNotificationEnum ownerNotification;
+  @override
+  final String? originalWork;
   @override
   final AbuseReportsPhishingReportHostNotificationEnum hostNotification;
   @override
@@ -194,15 +194,17 @@ class _$AbuseReportsPhishingReport extends AbuseReportsPhishingReport {
   @override
   final String act;
   @override
-  final String? comments;
-  @override
-  final String? company;
-  @override
   final String email;
   @override
   final String email2;
   @override
   final String name;
+  @override
+  final String urls;
+  @override
+  final String? comments;
+  @override
+  final String? company;
   @override
   final String? reportedCountry;
   @override
@@ -211,29 +213,27 @@ class _$AbuseReportsPhishingReport extends AbuseReportsPhishingReport {
   final String? tele;
   @override
   final String? title;
-  @override
-  final String urls;
 
   factory _$AbuseReportsPhishingReport(
           [void Function(AbuseReportsPhishingReportBuilder)? updates]) =>
       (AbuseReportsPhishingReportBuilder()..update(updates))._build();
 
   _$AbuseReportsPhishingReport._(
-      {this.originalWork,
-      required this.ownerNotification,
+      {required this.ownerNotification,
+      this.originalWork,
       required this.hostNotification,
       required this.justification,
       required this.act,
-      this.comments,
-      this.company,
       required this.email,
       required this.email2,
       required this.name,
+      required this.urls,
+      this.comments,
+      this.company,
       this.reportedCountry,
       this.reportedUserAgent,
       this.tele,
-      this.title,
-      required this.urls})
+      this.title})
       : super._();
   @override
   AbuseReportsPhishingReport rebuild(
@@ -248,41 +248,41 @@ class _$AbuseReportsPhishingReport extends AbuseReportsPhishingReport {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is AbuseReportsPhishingReport &&
-        originalWork == other.originalWork &&
         ownerNotification == other.ownerNotification &&
+        originalWork == other.originalWork &&
         hostNotification == other.hostNotification &&
         justification == other.justification &&
         act == other.act &&
-        comments == other.comments &&
-        company == other.company &&
         email == other.email &&
         email2 == other.email2 &&
         name == other.name &&
+        urls == other.urls &&
+        comments == other.comments &&
+        company == other.company &&
         reportedCountry == other.reportedCountry &&
         reportedUserAgent == other.reportedUserAgent &&
         tele == other.tele &&
-        title == other.title &&
-        urls == other.urls;
+        title == other.title;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, originalWork.hashCode);
     _$hash = $jc(_$hash, ownerNotification.hashCode);
+    _$hash = $jc(_$hash, originalWork.hashCode);
     _$hash = $jc(_$hash, hostNotification.hashCode);
     _$hash = $jc(_$hash, justification.hashCode);
     _$hash = $jc(_$hash, act.hashCode);
-    _$hash = $jc(_$hash, comments.hashCode);
-    _$hash = $jc(_$hash, company.hashCode);
     _$hash = $jc(_$hash, email.hashCode);
     _$hash = $jc(_$hash, email2.hashCode);
     _$hash = $jc(_$hash, name.hashCode);
+    _$hash = $jc(_$hash, urls.hashCode);
+    _$hash = $jc(_$hash, comments.hashCode);
+    _$hash = $jc(_$hash, company.hashCode);
     _$hash = $jc(_$hash, reportedCountry.hashCode);
     _$hash = $jc(_$hash, reportedUserAgent.hashCode);
     _$hash = $jc(_$hash, tele.hashCode);
     _$hash = $jc(_$hash, title.hashCode);
-    _$hash = $jc(_$hash, urls.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -290,21 +290,21 @@ class _$AbuseReportsPhishingReport extends AbuseReportsPhishingReport {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'AbuseReportsPhishingReport')
-          ..add('originalWork', originalWork)
           ..add('ownerNotification', ownerNotification)
+          ..add('originalWork', originalWork)
           ..add('hostNotification', hostNotification)
           ..add('justification', justification)
           ..add('act', act)
-          ..add('comments', comments)
-          ..add('company', company)
           ..add('email', email)
           ..add('email2', email2)
           ..add('name', name)
+          ..add('urls', urls)
+          ..add('comments', comments)
+          ..add('company', company)
           ..add('reportedCountry', reportedCountry)
           ..add('reportedUserAgent', reportedUserAgent)
           ..add('tele', tele)
-          ..add('title', title)
-          ..add('urls', urls))
+          ..add('title', title))
         .toString();
   }
 }
@@ -315,11 +315,6 @@ class AbuseReportsPhishingReportBuilder
         AbuseReportsBaseReportFieldsBuilder {
   _$AbuseReportsPhishingReport? _$v;
 
-  String? _originalWork;
-  String? get originalWork => _$this._originalWork;
-  set originalWork(covariant String? originalWork) =>
-      _$this._originalWork = originalWork;
-
   AbuseReportsPhishingReportOwnerNotificationEnum? _ownerNotification;
   AbuseReportsPhishingReportOwnerNotificationEnum? get ownerNotification =>
       _$this._ownerNotification;
@@ -327,6 +322,11 @@ class AbuseReportsPhishingReportBuilder
           covariant AbuseReportsPhishingReportOwnerNotificationEnum?
               ownerNotification) =>
       _$this._ownerNotification = ownerNotification;
+
+  String? _originalWork;
+  String? get originalWork => _$this._originalWork;
+  set originalWork(covariant String? originalWork) =>
+      _$this._originalWork = originalWork;
 
   AbuseReportsPhishingReportHostNotificationEnum? _hostNotification;
   AbuseReportsPhishingReportHostNotificationEnum? get hostNotification =>
@@ -345,14 +345,6 @@ class AbuseReportsPhishingReportBuilder
   String? get act => _$this._act;
   set act(covariant String? act) => _$this._act = act;
 
-  String? _comments;
-  String? get comments => _$this._comments;
-  set comments(covariant String? comments) => _$this._comments = comments;
-
-  String? _company;
-  String? get company => _$this._company;
-  set company(covariant String? company) => _$this._company = company;
-
   String? _email;
   String? get email => _$this._email;
   set email(covariant String? email) => _$this._email = email;
@@ -364,6 +356,18 @@ class AbuseReportsPhishingReportBuilder
   String? _name;
   String? get name => _$this._name;
   set name(covariant String? name) => _$this._name = name;
+
+  String? _urls;
+  String? get urls => _$this._urls;
+  set urls(covariant String? urls) => _$this._urls = urls;
+
+  String? _comments;
+  String? get comments => _$this._comments;
+  set comments(covariant String? comments) => _$this._comments = comments;
+
+  String? _company;
+  String? get company => _$this._company;
+  set company(covariant String? company) => _$this._company = company;
 
   String? _reportedCountry;
   String? get reportedCountry => _$this._reportedCountry;
@@ -383,10 +387,6 @@ class AbuseReportsPhishingReportBuilder
   String? get title => _$this._title;
   set title(covariant String? title) => _$this._title = title;
 
-  String? _urls;
-  String? get urls => _$this._urls;
-  set urls(covariant String? urls) => _$this._urls = urls;
-
   AbuseReportsPhishingReportBuilder() {
     AbuseReportsPhishingReport._defaults(this);
   }
@@ -394,21 +394,21 @@ class AbuseReportsPhishingReportBuilder
   AbuseReportsPhishingReportBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _originalWork = $v.originalWork;
       _ownerNotification = $v.ownerNotification;
+      _originalWork = $v.originalWork;
       _hostNotification = $v.hostNotification;
       _justification = $v.justification;
       _act = $v.act;
-      _comments = $v.comments;
-      _company = $v.company;
       _email = $v.email;
       _email2 = $v.email2;
       _name = $v.name;
+      _urls = $v.urls;
+      _comments = $v.comments;
+      _company = $v.company;
       _reportedCountry = $v.reportedCountry;
       _reportedUserAgent = $v.reportedUserAgent;
       _tele = $v.tele;
       _title = $v.title;
-      _urls = $v.urls;
       _$v = null;
     }
     return this;
@@ -430,11 +430,11 @@ class AbuseReportsPhishingReportBuilder
   _$AbuseReportsPhishingReport _build() {
     final _$result = _$v ??
         _$AbuseReportsPhishingReport._(
-          originalWork: originalWork,
           ownerNotification: BuiltValueNullFieldError.checkNotNull(
               ownerNotification,
               r'AbuseReportsPhishingReport',
               'ownerNotification'),
+          originalWork: originalWork,
           hostNotification: BuiltValueNullFieldError.checkNotNull(
               hostNotification,
               r'AbuseReportsPhishingReport',
@@ -443,20 +443,20 @@ class AbuseReportsPhishingReportBuilder
               justification, r'AbuseReportsPhishingReport', 'justification'),
           act: BuiltValueNullFieldError.checkNotNull(
               act, r'AbuseReportsPhishingReport', 'act'),
-          comments: comments,
-          company: company,
           email: BuiltValueNullFieldError.checkNotNull(
               email, r'AbuseReportsPhishingReport', 'email'),
           email2: BuiltValueNullFieldError.checkNotNull(
               email2, r'AbuseReportsPhishingReport', 'email2'),
           name: BuiltValueNullFieldError.checkNotNull(
               name, r'AbuseReportsPhishingReport', 'name'),
+          urls: BuiltValueNullFieldError.checkNotNull(
+              urls, r'AbuseReportsPhishingReport', 'urls'),
+          comments: comments,
+          company: company,
           reportedCountry: reportedCountry,
           reportedUserAgent: reportedUserAgent,
           tele: tele,
           title: title,
-          urls: BuiltValueNullFieldError.checkNotNull(
-              urls, r'AbuseReportsPhishingReport', 'urls'),
         );
     replace(_$result);
     return _$result;

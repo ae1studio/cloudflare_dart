@@ -6,6 +6,33 @@ part of 'aig_config_create_gateway_request.dart';
 // BuiltValueGenerator
 // **************************************************************************
 
+const AigConfigCreateGatewayRequestRateLimitingTechniqueEnum
+    _$aigConfigCreateGatewayRequestRateLimitingTechniqueEnum_fixed =
+    const AigConfigCreateGatewayRequestRateLimitingTechniqueEnum._('fixed');
+const AigConfigCreateGatewayRequestRateLimitingTechniqueEnum
+    _$aigConfigCreateGatewayRequestRateLimitingTechniqueEnum_sliding =
+    const AigConfigCreateGatewayRequestRateLimitingTechniqueEnum._('sliding');
+
+AigConfigCreateGatewayRequestRateLimitingTechniqueEnum
+    _$aigConfigCreateGatewayRequestRateLimitingTechniqueEnumValueOf(
+        String name) {
+  switch (name) {
+    case 'fixed':
+      return _$aigConfigCreateGatewayRequestRateLimitingTechniqueEnum_fixed;
+    case 'sliding':
+      return _$aigConfigCreateGatewayRequestRateLimitingTechniqueEnum_sliding;
+    default:
+      throw ArgumentError(name);
+  }
+}
+
+final BuiltSet<AigConfigCreateGatewayRequestRateLimitingTechniqueEnum>
+    _$aigConfigCreateGatewayRequestRateLimitingTechniqueEnumValues = BuiltSet<
+        AigConfigCreateGatewayRequestRateLimitingTechniqueEnum>(const <AigConfigCreateGatewayRequestRateLimitingTechniqueEnum>[
+  _$aigConfigCreateGatewayRequestRateLimitingTechniqueEnum_fixed,
+  _$aigConfigCreateGatewayRequestRateLimitingTechniqueEnum_sliding,
+]);
+
 const AigConfigCreateGatewayRequestLogManagementStrategyEnum
     _$aigConfigCreateGatewayRequestLogManagementStrategyEnum_STOP_INSERTING =
     const AigConfigCreateGatewayRequestLogManagementStrategyEnum._(
@@ -35,74 +62,12 @@ final BuiltSet<AigConfigCreateGatewayRequestLogManagementStrategyEnum>
   _$aigConfigCreateGatewayRequestLogManagementStrategyEnum_DELETE_OLDEST,
 ]);
 
-const AigConfigCreateGatewayRequestRateLimitingTechniqueEnum
-    _$aigConfigCreateGatewayRequestRateLimitingTechniqueEnum_fixed =
-    const AigConfigCreateGatewayRequestRateLimitingTechniqueEnum._('fixed');
-const AigConfigCreateGatewayRequestRateLimitingTechniqueEnum
-    _$aigConfigCreateGatewayRequestRateLimitingTechniqueEnum_sliding =
-    const AigConfigCreateGatewayRequestRateLimitingTechniqueEnum._('sliding');
-
-AigConfigCreateGatewayRequestRateLimitingTechniqueEnum
-    _$aigConfigCreateGatewayRequestRateLimitingTechniqueEnumValueOf(
-        String name) {
-  switch (name) {
-    case 'fixed':
-      return _$aigConfigCreateGatewayRequestRateLimitingTechniqueEnum_fixed;
-    case 'sliding':
-      return _$aigConfigCreateGatewayRequestRateLimitingTechniqueEnum_sliding;
-    default:
-      throw ArgumentError(name);
-  }
-}
-
-final BuiltSet<AigConfigCreateGatewayRequestRateLimitingTechniqueEnum>
-    _$aigConfigCreateGatewayRequestRateLimitingTechniqueEnumValues = BuiltSet<
-        AigConfigCreateGatewayRequestRateLimitingTechniqueEnum>(const <AigConfigCreateGatewayRequestRateLimitingTechniqueEnum>[
-  _$aigConfigCreateGatewayRequestRateLimitingTechniqueEnum_fixed,
-  _$aigConfigCreateGatewayRequestRateLimitingTechniqueEnum_sliding,
-]);
-
-Serializer<AigConfigCreateGatewayRequestLogManagementStrategyEnum>
-    _$aigConfigCreateGatewayRequestLogManagementStrategyEnumSerializer =
-    _$AigConfigCreateGatewayRequestLogManagementStrategyEnumSerializer();
 Serializer<AigConfigCreateGatewayRequestRateLimitingTechniqueEnum>
     _$aigConfigCreateGatewayRequestRateLimitingTechniqueEnumSerializer =
     _$AigConfigCreateGatewayRequestRateLimitingTechniqueEnumSerializer();
-
-class _$AigConfigCreateGatewayRequestLogManagementStrategyEnumSerializer
-    implements
-        PrimitiveSerializer<
-            AigConfigCreateGatewayRequestLogManagementStrategyEnum> {
-  static const Map<String, Object> _toWire = const <String, Object>{
-    'STOP_INSERTING': 'STOP_INSERTING',
-    'DELETE_OLDEST': 'DELETE_OLDEST',
-  };
-  static const Map<Object, String> _fromWire = const <Object, String>{
-    'STOP_INSERTING': 'STOP_INSERTING',
-    'DELETE_OLDEST': 'DELETE_OLDEST',
-  };
-
-  @override
-  final Iterable<Type> types = const <Type>[
-    AigConfigCreateGatewayRequestLogManagementStrategyEnum
-  ];
-  @override
-  final String wireName =
-      'AigConfigCreateGatewayRequestLogManagementStrategyEnum';
-
-  @override
-  Object serialize(Serializers serializers,
-          AigConfigCreateGatewayRequestLogManagementStrategyEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
-
-  @override
-  AigConfigCreateGatewayRequestLogManagementStrategyEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      AigConfigCreateGatewayRequestLogManagementStrategyEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
-}
+Serializer<AigConfigCreateGatewayRequestLogManagementStrategyEnum>
+    _$aigConfigCreateGatewayRequestLogManagementStrategyEnumSerializer =
+    _$AigConfigCreateGatewayRequestLogManagementStrategyEnumSerializer();
 
 class _$AigConfigCreateGatewayRequestRateLimitingTechniqueEnumSerializer
     implements
@@ -139,9 +104,42 @@ class _$AigConfigCreateGatewayRequestRateLimitingTechniqueEnumSerializer
           _fromWire[serialized] ?? (serialized is String ? serialized : ''));
 }
 
-class _$AigConfigCreateGatewayRequest extends AigConfigCreateGatewayRequest {
+class _$AigConfigCreateGatewayRequestLogManagementStrategyEnumSerializer
+    implements
+        PrimitiveSerializer<
+            AigConfigCreateGatewayRequestLogManagementStrategyEnum> {
+  static const Map<String, Object> _toWire = const <String, Object>{
+    'STOP_INSERTING': 'STOP_INSERTING',
+    'DELETE_OLDEST': 'DELETE_OLDEST',
+  };
+  static const Map<Object, String> _fromWire = const <Object, String>{
+    'STOP_INSERTING': 'STOP_INSERTING',
+    'DELETE_OLDEST': 'DELETE_OLDEST',
+  };
+
   @override
-  final bool? authentication;
+  final Iterable<Type> types = const <Type>[
+    AigConfigCreateGatewayRequestLogManagementStrategyEnum
+  ];
+  @override
+  final String wireName =
+      'AigConfigCreateGatewayRequestLogManagementStrategyEnum';
+
+  @override
+  Object serialize(Serializers serializers,
+          AigConfigCreateGatewayRequestLogManagementStrategyEnum object,
+          {FullType specifiedType = FullType.unspecified}) =>
+      _toWire[object.name] ?? object.name;
+
+  @override
+  AigConfigCreateGatewayRequestLogManagementStrategyEnum deserialize(
+          Serializers serializers, Object serialized,
+          {FullType specifiedType = FullType.unspecified}) =>
+      AigConfigCreateGatewayRequestLogManagementStrategyEnum.valueOf(
+          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+}
+
+class _$AigConfigCreateGatewayRequest extends AigConfigCreateGatewayRequest {
   @override
   final bool cacheInvalidateOnUpdate;
   @override
@@ -151,6 +149,15 @@ class _$AigConfigCreateGatewayRequest extends AigConfigCreateGatewayRequest {
   @override
   final String id;
   @override
+  final int? rateLimitingInterval;
+  @override
+  final int? rateLimitingLimit;
+  @override
+  final AigConfigCreateGatewayRequestRateLimitingTechniqueEnum
+      rateLimitingTechnique;
+  @override
+  final bool? authentication;
+  @override
   final int? logManagement;
   @override
   final AigConfigCreateGatewayRequestLogManagementStrategyEnum?
@@ -159,31 +166,24 @@ class _$AigConfigCreateGatewayRequest extends AigConfigCreateGatewayRequest {
   final bool? logpush;
   @override
   final String? logpushPublicKey;
-  @override
-  final int? rateLimitingInterval;
-  @override
-  final int? rateLimitingLimit;
-  @override
-  final AigConfigCreateGatewayRequestRateLimitingTechniqueEnum
-      rateLimitingTechnique;
 
   factory _$AigConfigCreateGatewayRequest(
           [void Function(AigConfigCreateGatewayRequestBuilder)? updates]) =>
       (AigConfigCreateGatewayRequestBuilder()..update(updates))._build();
 
   _$AigConfigCreateGatewayRequest._(
-      {this.authentication,
-      required this.cacheInvalidateOnUpdate,
+      {required this.cacheInvalidateOnUpdate,
       this.cacheTtl,
       required this.collectLogs,
       required this.id,
+      this.rateLimitingInterval,
+      this.rateLimitingLimit,
+      required this.rateLimitingTechnique,
+      this.authentication,
       this.logManagement,
       this.logManagementStrategy,
       this.logpush,
-      this.logpushPublicKey,
-      this.rateLimitingInterval,
-      this.rateLimitingLimit,
-      required this.rateLimitingTechnique})
+      this.logpushPublicKey})
       : super._();
   @override
   AigConfigCreateGatewayRequest rebuild(
@@ -198,35 +198,35 @@ class _$AigConfigCreateGatewayRequest extends AigConfigCreateGatewayRequest {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is AigConfigCreateGatewayRequest &&
-        authentication == other.authentication &&
         cacheInvalidateOnUpdate == other.cacheInvalidateOnUpdate &&
         cacheTtl == other.cacheTtl &&
         collectLogs == other.collectLogs &&
         id == other.id &&
+        rateLimitingInterval == other.rateLimitingInterval &&
+        rateLimitingLimit == other.rateLimitingLimit &&
+        rateLimitingTechnique == other.rateLimitingTechnique &&
+        authentication == other.authentication &&
         logManagement == other.logManagement &&
         logManagementStrategy == other.logManagementStrategy &&
         logpush == other.logpush &&
-        logpushPublicKey == other.logpushPublicKey &&
-        rateLimitingInterval == other.rateLimitingInterval &&
-        rateLimitingLimit == other.rateLimitingLimit &&
-        rateLimitingTechnique == other.rateLimitingTechnique;
+        logpushPublicKey == other.logpushPublicKey;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, authentication.hashCode);
     _$hash = $jc(_$hash, cacheInvalidateOnUpdate.hashCode);
     _$hash = $jc(_$hash, cacheTtl.hashCode);
     _$hash = $jc(_$hash, collectLogs.hashCode);
     _$hash = $jc(_$hash, id.hashCode);
+    _$hash = $jc(_$hash, rateLimitingInterval.hashCode);
+    _$hash = $jc(_$hash, rateLimitingLimit.hashCode);
+    _$hash = $jc(_$hash, rateLimitingTechnique.hashCode);
+    _$hash = $jc(_$hash, authentication.hashCode);
     _$hash = $jc(_$hash, logManagement.hashCode);
     _$hash = $jc(_$hash, logManagementStrategy.hashCode);
     _$hash = $jc(_$hash, logpush.hashCode);
     _$hash = $jc(_$hash, logpushPublicKey.hashCode);
-    _$hash = $jc(_$hash, rateLimitingInterval.hashCode);
-    _$hash = $jc(_$hash, rateLimitingLimit.hashCode);
-    _$hash = $jc(_$hash, rateLimitingTechnique.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -234,18 +234,18 @@ class _$AigConfigCreateGatewayRequest extends AigConfigCreateGatewayRequest {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'AigConfigCreateGatewayRequest')
-          ..add('authentication', authentication)
           ..add('cacheInvalidateOnUpdate', cacheInvalidateOnUpdate)
           ..add('cacheTtl', cacheTtl)
           ..add('collectLogs', collectLogs)
           ..add('id', id)
+          ..add('rateLimitingInterval', rateLimitingInterval)
+          ..add('rateLimitingLimit', rateLimitingLimit)
+          ..add('rateLimitingTechnique', rateLimitingTechnique)
+          ..add('authentication', authentication)
           ..add('logManagement', logManagement)
           ..add('logManagementStrategy', logManagementStrategy)
           ..add('logpush', logpush)
-          ..add('logpushPublicKey', logpushPublicKey)
-          ..add('rateLimitingInterval', rateLimitingInterval)
-          ..add('rateLimitingLimit', rateLimitingLimit)
-          ..add('rateLimitingTechnique', rateLimitingTechnique))
+          ..add('logpushPublicKey', logpushPublicKey))
         .toString();
   }
 }
@@ -255,11 +255,6 @@ class AigConfigCreateGatewayRequestBuilder
         Builder<AigConfigCreateGatewayRequest,
             AigConfigCreateGatewayRequestBuilder> {
   _$AigConfigCreateGatewayRequest? _$v;
-
-  bool? _authentication;
-  bool? get authentication => _$this._authentication;
-  set authentication(bool? authentication) =>
-      _$this._authentication = authentication;
 
   bool? _cacheInvalidateOnUpdate;
   bool? get cacheInvalidateOnUpdate => _$this._cacheInvalidateOnUpdate;
@@ -277,6 +272,30 @@ class AigConfigCreateGatewayRequestBuilder
   String? _id;
   String? get id => _$this._id;
   set id(String? id) => _$this._id = id;
+
+  int? _rateLimitingInterval;
+  int? get rateLimitingInterval => _$this._rateLimitingInterval;
+  set rateLimitingInterval(int? rateLimitingInterval) =>
+      _$this._rateLimitingInterval = rateLimitingInterval;
+
+  int? _rateLimitingLimit;
+  int? get rateLimitingLimit => _$this._rateLimitingLimit;
+  set rateLimitingLimit(int? rateLimitingLimit) =>
+      _$this._rateLimitingLimit = rateLimitingLimit;
+
+  AigConfigCreateGatewayRequestRateLimitingTechniqueEnum?
+      _rateLimitingTechnique;
+  AigConfigCreateGatewayRequestRateLimitingTechniqueEnum?
+      get rateLimitingTechnique => _$this._rateLimitingTechnique;
+  set rateLimitingTechnique(
+          AigConfigCreateGatewayRequestRateLimitingTechniqueEnum?
+              rateLimitingTechnique) =>
+      _$this._rateLimitingTechnique = rateLimitingTechnique;
+
+  bool? _authentication;
+  bool? get authentication => _$this._authentication;
+  set authentication(bool? authentication) =>
+      _$this._authentication = authentication;
 
   int? _logManagement;
   int? get logManagement => _$this._logManagement;
@@ -301,25 +320,6 @@ class AigConfigCreateGatewayRequestBuilder
   set logpushPublicKey(String? logpushPublicKey) =>
       _$this._logpushPublicKey = logpushPublicKey;
 
-  int? _rateLimitingInterval;
-  int? get rateLimitingInterval => _$this._rateLimitingInterval;
-  set rateLimitingInterval(int? rateLimitingInterval) =>
-      _$this._rateLimitingInterval = rateLimitingInterval;
-
-  int? _rateLimitingLimit;
-  int? get rateLimitingLimit => _$this._rateLimitingLimit;
-  set rateLimitingLimit(int? rateLimitingLimit) =>
-      _$this._rateLimitingLimit = rateLimitingLimit;
-
-  AigConfigCreateGatewayRequestRateLimitingTechniqueEnum?
-      _rateLimitingTechnique;
-  AigConfigCreateGatewayRequestRateLimitingTechniqueEnum?
-      get rateLimitingTechnique => _$this._rateLimitingTechnique;
-  set rateLimitingTechnique(
-          AigConfigCreateGatewayRequestRateLimitingTechniqueEnum?
-              rateLimitingTechnique) =>
-      _$this._rateLimitingTechnique = rateLimitingTechnique;
-
   AigConfigCreateGatewayRequestBuilder() {
     AigConfigCreateGatewayRequest._defaults(this);
   }
@@ -327,18 +327,18 @@ class AigConfigCreateGatewayRequestBuilder
   AigConfigCreateGatewayRequestBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _authentication = $v.authentication;
       _cacheInvalidateOnUpdate = $v.cacheInvalidateOnUpdate;
       _cacheTtl = $v.cacheTtl;
       _collectLogs = $v.collectLogs;
       _id = $v.id;
+      _rateLimitingInterval = $v.rateLimitingInterval;
+      _rateLimitingLimit = $v.rateLimitingLimit;
+      _rateLimitingTechnique = $v.rateLimitingTechnique;
+      _authentication = $v.authentication;
       _logManagement = $v.logManagement;
       _logManagementStrategy = $v.logManagementStrategy;
       _logpush = $v.logpush;
       _logpushPublicKey = $v.logpushPublicKey;
-      _rateLimitingInterval = $v.rateLimitingInterval;
-      _rateLimitingLimit = $v.rateLimitingLimit;
-      _rateLimitingTechnique = $v.rateLimitingTechnique;
       _$v = null;
     }
     return this;
@@ -360,7 +360,6 @@ class AigConfigCreateGatewayRequestBuilder
   _$AigConfigCreateGatewayRequest _build() {
     final _$result = _$v ??
         _$AigConfigCreateGatewayRequest._(
-          authentication: authentication,
           cacheInvalidateOnUpdate: BuiltValueNullFieldError.checkNotNull(
               cacheInvalidateOnUpdate,
               r'AigConfigCreateGatewayRequest',
@@ -370,16 +369,17 @@ class AigConfigCreateGatewayRequestBuilder
               collectLogs, r'AigConfigCreateGatewayRequest', 'collectLogs'),
           id: BuiltValueNullFieldError.checkNotNull(
               id, r'AigConfigCreateGatewayRequest', 'id'),
-          logManagement: logManagement,
-          logManagementStrategy: logManagementStrategy,
-          logpush: logpush,
-          logpushPublicKey: logpushPublicKey,
           rateLimitingInterval: rateLimitingInterval,
           rateLimitingLimit: rateLimitingLimit,
           rateLimitingTechnique: BuiltValueNullFieldError.checkNotNull(
               rateLimitingTechnique,
               r'AigConfigCreateGatewayRequest',
               'rateLimitingTechnique'),
+          authentication: authentication,
+          logManagement: logManagement,
+          logManagementStrategy: logManagementStrategy,
+          logpush: logpush,
+          logpushPublicKey: logpushPublicKey,
         );
     replace(_$result);
     return _$result;

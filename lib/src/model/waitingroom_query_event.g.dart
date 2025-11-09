@@ -8,17 +8,17 @@ part of 'waitingroom_query_event.dart';
 
 class _$WaitingroomQueryEvent extends WaitingroomQueryEvent {
   @override
-  final String? customPageHtml;
-  @override
-  final String? description;
-  @override
-  final bool? disableSessionRenewal;
-  @override
   final String eventEndTime;
   @override
   final String eventStartTime;
   @override
   final String name;
+  @override
+  final String? customPageHtml;
+  @override
+  final String? description;
+  @override
+  final bool? disableSessionRenewal;
   @override
   final int? newUsersPerMinute;
   @override
@@ -43,12 +43,12 @@ class _$WaitingroomQueryEvent extends WaitingroomQueryEvent {
       (WaitingroomQueryEventBuilder()..update(updates))._build();
 
   _$WaitingroomQueryEvent._(
-      {this.customPageHtml,
-      this.description,
-      this.disableSessionRenewal,
-      required this.eventEndTime,
+      {required this.eventEndTime,
       required this.eventStartTime,
       required this.name,
+      this.customPageHtml,
+      this.description,
+      this.disableSessionRenewal,
       this.newUsersPerMinute,
       this.prequeueStartTime,
       this.queueingMethod,
@@ -72,12 +72,12 @@ class _$WaitingroomQueryEvent extends WaitingroomQueryEvent {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is WaitingroomQueryEvent &&
-        customPageHtml == other.customPageHtml &&
-        description == other.description &&
-        disableSessionRenewal == other.disableSessionRenewal &&
         eventEndTime == other.eventEndTime &&
         eventStartTime == other.eventStartTime &&
         name == other.name &&
+        customPageHtml == other.customPageHtml &&
+        description == other.description &&
+        disableSessionRenewal == other.disableSessionRenewal &&
         newUsersPerMinute == other.newUsersPerMinute &&
         prequeueStartTime == other.prequeueStartTime &&
         queueingMethod == other.queueingMethod &&
@@ -92,12 +92,12 @@ class _$WaitingroomQueryEvent extends WaitingroomQueryEvent {
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, customPageHtml.hashCode);
-    _$hash = $jc(_$hash, description.hashCode);
-    _$hash = $jc(_$hash, disableSessionRenewal.hashCode);
     _$hash = $jc(_$hash, eventEndTime.hashCode);
     _$hash = $jc(_$hash, eventStartTime.hashCode);
     _$hash = $jc(_$hash, name.hashCode);
+    _$hash = $jc(_$hash, customPageHtml.hashCode);
+    _$hash = $jc(_$hash, description.hashCode);
+    _$hash = $jc(_$hash, disableSessionRenewal.hashCode);
     _$hash = $jc(_$hash, newUsersPerMinute.hashCode);
     _$hash = $jc(_$hash, prequeueStartTime.hashCode);
     _$hash = $jc(_$hash, queueingMethod.hashCode);
@@ -114,12 +114,12 @@ class _$WaitingroomQueryEvent extends WaitingroomQueryEvent {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'WaitingroomQueryEvent')
-          ..add('customPageHtml', customPageHtml)
-          ..add('description', description)
-          ..add('disableSessionRenewal', disableSessionRenewal)
           ..add('eventEndTime', eventEndTime)
           ..add('eventStartTime', eventStartTime)
           ..add('name', name)
+          ..add('customPageHtml', customPageHtml)
+          ..add('description', description)
+          ..add('disableSessionRenewal', disableSessionRenewal)
           ..add('newUsersPerMinute', newUsersPerMinute)
           ..add('prequeueStartTime', prequeueStartTime)
           ..add('queueingMethod', queueingMethod)
@@ -137,6 +137,19 @@ class WaitingroomQueryEventBuilder
     implements Builder<WaitingroomQueryEvent, WaitingroomQueryEventBuilder> {
   _$WaitingroomQueryEvent? _$v;
 
+  String? _eventEndTime;
+  String? get eventEndTime => _$this._eventEndTime;
+  set eventEndTime(String? eventEndTime) => _$this._eventEndTime = eventEndTime;
+
+  String? _eventStartTime;
+  String? get eventStartTime => _$this._eventStartTime;
+  set eventStartTime(String? eventStartTime) =>
+      _$this._eventStartTime = eventStartTime;
+
+  String? _name;
+  String? get name => _$this._name;
+  set name(String? name) => _$this._name = name;
+
   String? _customPageHtml;
   String? get customPageHtml => _$this._customPageHtml;
   set customPageHtml(String? customPageHtml) =>
@@ -150,19 +163,6 @@ class WaitingroomQueryEventBuilder
   bool? get disableSessionRenewal => _$this._disableSessionRenewal;
   set disableSessionRenewal(bool? disableSessionRenewal) =>
       _$this._disableSessionRenewal = disableSessionRenewal;
-
-  String? _eventEndTime;
-  String? get eventEndTime => _$this._eventEndTime;
-  set eventEndTime(String? eventEndTime) => _$this._eventEndTime = eventEndTime;
-
-  String? _eventStartTime;
-  String? get eventStartTime => _$this._eventStartTime;
-  set eventStartTime(String? eventStartTime) =>
-      _$this._eventStartTime = eventStartTime;
-
-  String? _name;
-  String? get name => _$this._name;
-  set name(String? name) => _$this._name = name;
 
   int? _newUsersPerMinute;
   int? get newUsersPerMinute => _$this._newUsersPerMinute;
@@ -216,12 +216,12 @@ class WaitingroomQueryEventBuilder
   WaitingroomQueryEventBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _customPageHtml = $v.customPageHtml;
-      _description = $v.description;
-      _disableSessionRenewal = $v.disableSessionRenewal;
       _eventEndTime = $v.eventEndTime;
       _eventStartTime = $v.eventStartTime;
       _name = $v.name;
+      _customPageHtml = $v.customPageHtml;
+      _description = $v.description;
+      _disableSessionRenewal = $v.disableSessionRenewal;
       _newUsersPerMinute = $v.newUsersPerMinute;
       _prequeueStartTime = $v.prequeueStartTime;
       _queueingMethod = $v.queueingMethod;
@@ -252,15 +252,15 @@ class WaitingroomQueryEventBuilder
   _$WaitingroomQueryEvent _build() {
     final _$result = _$v ??
         _$WaitingroomQueryEvent._(
-          customPageHtml: customPageHtml,
-          description: description,
-          disableSessionRenewal: disableSessionRenewal,
           eventEndTime: BuiltValueNullFieldError.checkNotNull(
               eventEndTime, r'WaitingroomQueryEvent', 'eventEndTime'),
           eventStartTime: BuiltValueNullFieldError.checkNotNull(
               eventStartTime, r'WaitingroomQueryEvent', 'eventStartTime'),
           name: BuiltValueNullFieldError.checkNotNull(
               name, r'WaitingroomQueryEvent', 'name'),
+          customPageHtml: customPageHtml,
+          description: description,
+          disableSessionRenewal: disableSessionRenewal,
           newUsersPerMinute: newUsersPerMinute,
           prequeueStartTime: prequeueStartTime,
           queueingMethod: queueingMethod,

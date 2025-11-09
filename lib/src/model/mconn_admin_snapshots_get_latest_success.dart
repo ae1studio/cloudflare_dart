@@ -15,10 +15,10 @@ part 'mconn_admin_snapshots_get_latest_success.g.dart';
 /// MconnAdminSnapshotsGetLatestSuccess
 ///
 /// Properties:
-/// * [errors] 
-/// * [messages] 
 /// * [success] 
 /// * [result] 
+/// * [errors] 
+/// * [messages] 
 @BuiltValue()
 abstract class MconnAdminSnapshotsGetLatestSuccess implements MconnEnvelope, Built<MconnAdminSnapshotsGetLatestSuccess, MconnAdminSnapshotsGetLatestSuccessBuilder> {
   @BuiltValueField(wireName: r'result')

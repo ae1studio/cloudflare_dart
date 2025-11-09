@@ -12,18 +12,18 @@ part 'cloudflare_tunnel_create_a_cloudflare_tunnel_request.g.dart';
 /// CloudflareTunnelCreateACloudflareTunnelRequest
 ///
 /// Properties:
-/// * [configSrc] 
 /// * [name] - A user-friendly name for a tunnel.
+/// * [configSrc] 
 /// * [tunnelSecret] - Sets the password required to run a locally-managed tunnel. Must be at least 32 bytes and encoded as a base64 string.
 @BuiltValue()
 abstract class CloudflareTunnelCreateACloudflareTunnelRequest implements Built<CloudflareTunnelCreateACloudflareTunnelRequest, CloudflareTunnelCreateACloudflareTunnelRequestBuilder> {
-  @BuiltValueField(wireName: r'config_src')
-  TunnelConfigSrc? get configSrc;
-  // enum configSrcEnum {  local,  cloudflare,  };
-
   /// A user-friendly name for a tunnel.
   @BuiltValueField(wireName: r'name')
   String get name;
+
+  @BuiltValueField(wireName: r'config_src')
+  TunnelConfigSrc? get configSrc;
+  // enum configSrcEnum {  local,  cloudflare,  };
 
   /// Sets the password required to run a locally-managed tunnel. Must be at least 32 bytes and encoded as a base64 string.
   @BuiltValueField(wireName: r'tunnel_secret')
@@ -52,6 +52,11 @@ class _$CloudflareTunnelCreateACloudflareTunnelRequestSerializer implements Prim
     CloudflareTunnelCreateACloudflareTunnelRequest object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    yield r'name';
+    yield serializers.serialize(
+      object.name,
+      specifiedType: const FullType(String),
+    );
     if (object.configSrc != null) {
       yield r'config_src';
       yield serializers.serialize(
@@ -59,11 +64,6 @@ class _$CloudflareTunnelCreateACloudflareTunnelRequestSerializer implements Prim
         specifiedType: const FullType(TunnelConfigSrc),
       );
     }
-    yield r'name';
-    yield serializers.serialize(
-      object.name,
-      specifiedType: const FullType(String),
-    );
     if (object.tunnelSecret != null) {
       yield r'tunnel_secret';
       yield serializers.serialize(
@@ -94,19 +94,19 @@ class _$CloudflareTunnelCreateACloudflareTunnelRequestSerializer implements Prim
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'config_src':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(TunnelConfigSrc),
-          ) as TunnelConfigSrc;
-          result.configSrc = valueDes;
-          break;
         case r'name':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(String),
           ) as String;
           result.name = valueDes;
+          break;
+        case r'config_src':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(TunnelConfigSrc),
+          ) as TunnelConfigSrc;
+          result.configSrc = valueDes;
           break;
         case r'tunnel_secret':
           final valueDes = serializers.deserialize(

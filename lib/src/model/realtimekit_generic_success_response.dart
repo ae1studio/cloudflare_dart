@@ -12,17 +12,17 @@ part 'realtimekit_generic_success_response.g.dart';
 /// RealtimekitGenericSuccessResponse
 ///
 /// Properties:
-/// * [data] - Data returned by the operation
 /// * [success] - Success status of the operation
+/// * [data] - Data returned by the operation
 @BuiltValue(instantiable: false)
 abstract class RealtimekitGenericSuccessResponse  {
-  /// Data returned by the operation
-  @BuiltValueField(wireName: r'data')
-  JsonObject? get data;
-
   /// Success status of the operation
   @BuiltValueField(wireName: r'success')
   bool get success;
+
+  /// Data returned by the operation
+  @BuiltValueField(wireName: r'data')
+  JsonObject? get data;
 
   @BuiltValueSerializer(custom: true)
   static Serializer<RealtimekitGenericSuccessResponse> get serializer => _$RealtimekitGenericSuccessResponseSerializer();
@@ -40,6 +40,11 @@ class _$RealtimekitGenericSuccessResponseSerializer implements PrimitiveSerializ
     RealtimekitGenericSuccessResponse object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    yield r'success';
+    yield serializers.serialize(
+      object.success,
+      specifiedType: const FullType(bool),
+    );
     if (object.data != null) {
       yield r'data';
       yield serializers.serialize(
@@ -47,11 +52,6 @@ class _$RealtimekitGenericSuccessResponseSerializer implements PrimitiveSerializ
         specifiedType: const FullType(JsonObject),
       );
     }
-    yield r'success';
-    yield serializers.serialize(
-      object.success,
-      specifiedType: const FullType(bool),
-    );
   }
 
   @override
@@ -115,19 +115,19 @@ class _$$RealtimekitGenericSuccessResponseSerializer implements PrimitiveSeriali
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'data':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(JsonObject),
-          ) as JsonObject;
-          result.data = valueDes;
-          break;
         case r'success':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(bool),
           ) as bool;
           result.success = valueDes;
+          break;
+        case r'data':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(JsonObject),
+          ) as JsonObject;
+          result.data = valueDes;
           break;
         default:
           unhandled.add(key);

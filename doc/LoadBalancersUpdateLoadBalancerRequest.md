@@ -8,14 +8,14 @@ import 'package:cloudflare_dart/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**defaultPools** | **BuiltList&lt;String&gt;** | A list of pool IDs ordered by their failover priority. Pools defined here are used by default, or when region_pools are not configured for a given region. | 
+**fallbackPool** | **String** | The pool ID to use when all other pools are detected as unhealthy. | 
+**name** | **String** | The DNS hostname to associate with your Load Balancer. If this hostname already exists as a DNS record in Cloudflare's DNS, the Load Balancer will take precedence and the DNS record will not be used. | 
 **adaptiveRouting** | [**LoadBalancingAdaptiveRouting**](LoadBalancingAdaptiveRouting.md) |  | [optional] 
 **countryPools** | [**BuiltMap&lt;String, BuiltList&lt;String&gt;&gt;**](BuiltList.md) | A mapping of country codes to a list of pool IDs (ordered by their failover priority) for the given country. Any country not explicitly defined will fall back to using the corresponding region_pool mapping if it exists else to default_pools. | [optional] 
-**defaultPools** | **BuiltList&lt;String&gt;** | A list of pool IDs ordered by their failover priority. Pools defined here are used by default, or when region_pools are not configured for a given region. | 
 **description** | **String** | Object description. | [optional] 
 **enabled** | **bool** | Whether to enable (the default) this load balancer. | [optional] [default to true]
-**fallbackPool** | **String** | The pool ID to use when all other pools are detected as unhealthy. | 
 **locationStrategy** | [**LoadBalancingLocationStrategy**](LoadBalancingLocationStrategy.md) |  | [optional] 
-**name** | **String** | The DNS hostname to associate with your Load Balancer. If this hostname already exists as a DNS record in Cloudflare's DNS, the Load Balancer will take precedence and the DNS record will not be used. | 
 **networks** | **BuiltList&lt;String&gt;** | List of networks where Load Balancer or Pool is enabled. | [optional] 
 **popPools** | [**BuiltMap&lt;String, BuiltList&lt;String&gt;&gt;**](BuiltList.md) | Enterprise only: A mapping of Cloudflare PoP identifiers to a list of pool IDs (ordered by their failover priority) for the PoP (datacenter). Any PoPs not explicitly defined will fall back to using the corresponding country_pool, then region_pool mapping if it exists else to default_pools. | [optional] 
 **proxied** | **bool** | Whether the hostname should be gray clouded (false) or orange clouded (true). | [optional] [default to false]

@@ -12,12 +12,12 @@ part 'email_security_batch_trusted_domains_request_puts_inner.g.dart';
 /// EmailSecurityBatchTrustedDomainsRequestPutsInner
 ///
 /// Properties:
-/// * [comments] 
 /// * [isRecent] - Select to prevent recently registered domains from triggering a Suspicious or Malicious disposition.
 /// * [isRegex] 
 /// * [isSimilarity] - Select for partner or other approved domains that have similar spelling to your connected domains. Prevents listed domains from triggering a Spoof disposition.
 /// * [pattern] 
 /// * [id] - The unique identifier for the trusted domain.
+/// * [comments] 
 @BuiltValue()
 abstract class EmailSecurityBatchTrustedDomainsRequestPutsInner implements EmailSecurityCreateTrustedDomain, Built<EmailSecurityBatchTrustedDomainsRequestPutsInner, EmailSecurityBatchTrustedDomainsRequestPutsInnerBuilder> {
   /// The unique identifier for the trusted domain.
@@ -57,6 +57,11 @@ class _$EmailSecurityBatchTrustedDomainsRequestPutsInnerSerializer implements Pr
       object.id,
       specifiedType: const FullType(int),
     );
+    yield r'is_regex';
+    yield serializers.serialize(
+      object.isRegex,
+      specifiedType: const FullType(bool),
+    );
     if (object.comments != null) {
       yield r'comments';
       yield serializers.serialize(
@@ -64,11 +69,6 @@ class _$EmailSecurityBatchTrustedDomainsRequestPutsInnerSerializer implements Pr
         specifiedType: const FullType.nullable(String),
       );
     }
-    yield r'is_regex';
-    yield serializers.serialize(
-      object.isRegex,
-      specifiedType: const FullType(bool),
-    );
     yield r'is_similarity';
     yield serializers.serialize(
       object.isSimilarity,
@@ -116,6 +116,13 @@ class _$EmailSecurityBatchTrustedDomainsRequestPutsInnerSerializer implements Pr
           ) as int;
           result.id = valueDes;
           break;
+        case r'is_regex':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(bool),
+          ) as bool;
+          result.isRegex = valueDes;
+          break;
         case r'comments':
           final valueDes = serializers.deserialize(
             value,
@@ -123,13 +130,6 @@ class _$EmailSecurityBatchTrustedDomainsRequestPutsInnerSerializer implements Pr
           ) as String?;
           if (valueDes == null) continue;
           result.comments = valueDes;
-          break;
-        case r'is_regex':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
-          result.isRegex = valueDes;
           break;
         case r'is_similarity':
           final valueDes = serializers.deserialize(

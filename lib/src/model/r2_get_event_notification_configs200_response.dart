@@ -9,6 +9,7 @@ import 'package:cloudflare_dart/src/model/r2_bucket_config.dart';
 import 'package:cloudflare_dart/src/model/aaa_messages_inner.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
+import 'package:built_value/json_object.dart';
 
 part 'r2_get_event_notification_configs200_response.g.dart';
 

@@ -8,9 +8,9 @@ part of 'magic_wans_add_single_request.dart';
 
 class _$MagicWansAddSingleRequest extends MagicWansAddSingleRequest {
   @override
-  final String? name;
-  @override
   final int physport;
+  @override
+  final String? name;
   @override
   final int? priority;
   @override
@@ -23,8 +23,8 @@ class _$MagicWansAddSingleRequest extends MagicWansAddSingleRequest {
       (MagicWansAddSingleRequestBuilder()..update(updates))._build();
 
   _$MagicWansAddSingleRequest._(
-      {this.name,
-      required this.physport,
+      {required this.physport,
+      this.name,
       this.priority,
       this.staticAddressing,
       this.vlanTag})
@@ -42,8 +42,8 @@ class _$MagicWansAddSingleRequest extends MagicWansAddSingleRequest {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is MagicWansAddSingleRequest &&
-        name == other.name &&
         physport == other.physport &&
+        name == other.name &&
         priority == other.priority &&
         staticAddressing == other.staticAddressing &&
         vlanTag == other.vlanTag;
@@ -52,8 +52,8 @@ class _$MagicWansAddSingleRequest extends MagicWansAddSingleRequest {
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, name.hashCode);
     _$hash = $jc(_$hash, physport.hashCode);
+    _$hash = $jc(_$hash, name.hashCode);
     _$hash = $jc(_$hash, priority.hashCode);
     _$hash = $jc(_$hash, staticAddressing.hashCode);
     _$hash = $jc(_$hash, vlanTag.hashCode);
@@ -64,8 +64,8 @@ class _$MagicWansAddSingleRequest extends MagicWansAddSingleRequest {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'MagicWansAddSingleRequest')
-          ..add('name', name)
           ..add('physport', physport)
+          ..add('name', name)
           ..add('priority', priority)
           ..add('staticAddressing', staticAddressing)
           ..add('vlanTag', vlanTag))
@@ -78,13 +78,13 @@ class MagicWansAddSingleRequestBuilder
         Builder<MagicWansAddSingleRequest, MagicWansAddSingleRequestBuilder> {
   _$MagicWansAddSingleRequest? _$v;
 
-  String? _name;
-  String? get name => _$this._name;
-  set name(String? name) => _$this._name = name;
-
   int? _physport;
   int? get physport => _$this._physport;
   set physport(int? physport) => _$this._physport = physport;
+
+  String? _name;
+  String? get name => _$this._name;
+  set name(String? name) => _$this._name = name;
 
   int? _priority;
   int? get priority => _$this._priority;
@@ -107,8 +107,8 @@ class MagicWansAddSingleRequestBuilder
   MagicWansAddSingleRequestBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _name = $v.name;
       _physport = $v.physport;
+      _name = $v.name;
       _priority = $v.priority;
       _staticAddressing = $v.staticAddressing?.toBuilder();
       _vlanTag = $v.vlanTag;
@@ -135,9 +135,9 @@ class MagicWansAddSingleRequestBuilder
     try {
       _$result = _$v ??
           _$MagicWansAddSingleRequest._(
-            name: name,
             physport: BuiltValueNullFieldError.checkNotNull(
                 physport, r'MagicWansAddSingleRequest', 'physport'),
+            name: name,
             priority: priority,
             staticAddressing: _staticAddressing?.build(),
             vlanTag: vlanTag,

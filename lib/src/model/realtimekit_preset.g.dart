@@ -15,11 +15,11 @@ abstract class RealtimekitPresetBuilder {
   String? get name;
   set name(String? name);
 
-  RealtimekitPresetPermissionsBuilder get permissions;
-  set permissions(RealtimekitPresetPermissionsBuilder? permissions);
-
   RealtimekitPresetUiBuilder get ui;
   set ui(RealtimekitPresetUiBuilder? ui);
+
+  RealtimekitPresetPermissionsBuilder get permissions;
+  set permissions(RealtimekitPresetPermissionsBuilder? permissions);
 }
 
 class _$$RealtimekitPreset extends $RealtimekitPreset {
@@ -28,9 +28,9 @@ class _$$RealtimekitPreset extends $RealtimekitPreset {
   @override
   final String name;
   @override
-  final RealtimekitPresetPermissions? permissions;
-  @override
   final RealtimekitPresetUi ui;
+  @override
+  final RealtimekitPresetPermissions? permissions;
 
   factory _$$RealtimekitPreset(
           [void Function($RealtimekitPresetBuilder)? updates]) =>
@@ -39,8 +39,8 @@ class _$$RealtimekitPreset extends $RealtimekitPreset {
   _$$RealtimekitPreset._(
       {required this.config,
       required this.name,
-      this.permissions,
-      required this.ui})
+      required this.ui,
+      this.permissions})
       : super._();
   @override
   $RealtimekitPreset rebuild(
@@ -57,8 +57,8 @@ class _$$RealtimekitPreset extends $RealtimekitPreset {
     return other is $RealtimekitPreset &&
         config == other.config &&
         name == other.name &&
-        permissions == other.permissions &&
-        ui == other.ui;
+        ui == other.ui &&
+        permissions == other.permissions;
   }
 
   @override
@@ -66,8 +66,8 @@ class _$$RealtimekitPreset extends $RealtimekitPreset {
     var _$hash = 0;
     _$hash = $jc(_$hash, config.hashCode);
     _$hash = $jc(_$hash, name.hashCode);
-    _$hash = $jc(_$hash, permissions.hashCode);
     _$hash = $jc(_$hash, ui.hashCode);
+    _$hash = $jc(_$hash, permissions.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -77,8 +77,8 @@ class _$$RealtimekitPreset extends $RealtimekitPreset {
     return (newBuiltValueToStringHelper(r'$RealtimekitPreset')
           ..add('config', config)
           ..add('name', name)
-          ..add('permissions', permissions)
-          ..add('ui', ui))
+          ..add('ui', ui)
+          ..add('permissions', permissions))
         .toString();
   }
 }
@@ -99,16 +99,16 @@ class $RealtimekitPresetBuilder
   String? get name => _$this._name;
   set name(covariant String? name) => _$this._name = name;
 
+  RealtimekitPresetUiBuilder? _ui;
+  RealtimekitPresetUiBuilder get ui =>
+      _$this._ui ??= RealtimekitPresetUiBuilder();
+  set ui(covariant RealtimekitPresetUiBuilder? ui) => _$this._ui = ui;
+
   RealtimekitPresetPermissionsBuilder? _permissions;
   RealtimekitPresetPermissionsBuilder get permissions =>
       _$this._permissions ??= RealtimekitPresetPermissionsBuilder();
   set permissions(covariant RealtimekitPresetPermissionsBuilder? permissions) =>
       _$this._permissions = permissions;
-
-  RealtimekitPresetUiBuilder? _ui;
-  RealtimekitPresetUiBuilder get ui =>
-      _$this._ui ??= RealtimekitPresetUiBuilder();
-  set ui(covariant RealtimekitPresetUiBuilder? ui) => _$this._ui = ui;
 
   $RealtimekitPresetBuilder() {
     $RealtimekitPreset._defaults(this);
@@ -119,8 +119,8 @@ class $RealtimekitPresetBuilder
     if ($v != null) {
       _config = $v.config.toBuilder();
       _name = $v.name;
-      _permissions = $v.permissions?.toBuilder();
       _ui = $v.ui.toBuilder();
+      _permissions = $v.permissions?.toBuilder();
       _$v = null;
     }
     return this;
@@ -147,8 +147,8 @@ class $RealtimekitPresetBuilder
             config: config.build(),
             name: BuiltValueNullFieldError.checkNotNull(
                 name, r'$RealtimekitPreset', 'name'),
-            permissions: _permissions?.build(),
             ui: ui.build(),
+            permissions: _permissions?.build(),
           );
     } catch (_) {
       late String _$failedField;
@@ -156,10 +156,10 @@ class $RealtimekitPresetBuilder
         _$failedField = 'config';
         config.build();
 
-        _$failedField = 'permissions';
-        _permissions?.build();
         _$failedField = 'ui';
         ui.build();
+        _$failedField = 'permissions';
+        _permissions?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
             r'$RealtimekitPreset', _$failedField, e.toString());

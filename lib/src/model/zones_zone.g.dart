@@ -79,8 +79,6 @@ class _$ZonesZone extends ZonesZone {
   @override
   final DateTime? activatedOn;
   @override
-  final String? cnameSuffix;
-  @override
   final DateTime createdOn;
   @override
   final num developmentMode;
@@ -103,11 +101,13 @@ class _$ZonesZone extends ZonesZone {
   @override
   final ZonesZoneOwner owner;
   @override
+  final ZonesZonePlan plan;
+  @override
+  final String? cnameSuffix;
+  @override
   final bool? paused;
   @override
   final BuiltList<String>? permissions;
-  @override
-  final ZonesZonePlan plan;
   @override
   final ZonesZoneStatusEnum? status;
   @override
@@ -127,7 +127,6 @@ class _$ZonesZone extends ZonesZone {
   _$ZonesZone._(
       {required this.account,
       this.activatedOn,
-      this.cnameSuffix,
       required this.createdOn,
       required this.developmentMode,
       required this.id,
@@ -139,9 +138,10 @@ class _$ZonesZone extends ZonesZone {
       this.originalNameServers,
       this.originalRegistrar,
       required this.owner,
+      required this.plan,
+      this.cnameSuffix,
       this.paused,
       this.permissions,
-      required this.plan,
       this.status,
       this.tenant,
       this.tenantUnit,
@@ -162,7 +162,6 @@ class _$ZonesZone extends ZonesZone {
     return other is ZonesZone &&
         account == other.account &&
         activatedOn == other.activatedOn &&
-        cnameSuffix == other.cnameSuffix &&
         createdOn == other.createdOn &&
         developmentMode == other.developmentMode &&
         id == other.id &&
@@ -174,9 +173,10 @@ class _$ZonesZone extends ZonesZone {
         originalNameServers == other.originalNameServers &&
         originalRegistrar == other.originalRegistrar &&
         owner == other.owner &&
+        plan == other.plan &&
+        cnameSuffix == other.cnameSuffix &&
         paused == other.paused &&
         permissions == other.permissions &&
-        plan == other.plan &&
         status == other.status &&
         tenant == other.tenant &&
         tenantUnit == other.tenantUnit &&
@@ -190,7 +190,6 @@ class _$ZonesZone extends ZonesZone {
     var _$hash = 0;
     _$hash = $jc(_$hash, account.hashCode);
     _$hash = $jc(_$hash, activatedOn.hashCode);
-    _$hash = $jc(_$hash, cnameSuffix.hashCode);
     _$hash = $jc(_$hash, createdOn.hashCode);
     _$hash = $jc(_$hash, developmentMode.hashCode);
     _$hash = $jc(_$hash, id.hashCode);
@@ -202,9 +201,10 @@ class _$ZonesZone extends ZonesZone {
     _$hash = $jc(_$hash, originalNameServers.hashCode);
     _$hash = $jc(_$hash, originalRegistrar.hashCode);
     _$hash = $jc(_$hash, owner.hashCode);
+    _$hash = $jc(_$hash, plan.hashCode);
+    _$hash = $jc(_$hash, cnameSuffix.hashCode);
     _$hash = $jc(_$hash, paused.hashCode);
     _$hash = $jc(_$hash, permissions.hashCode);
-    _$hash = $jc(_$hash, plan.hashCode);
     _$hash = $jc(_$hash, status.hashCode);
     _$hash = $jc(_$hash, tenant.hashCode);
     _$hash = $jc(_$hash, tenantUnit.hashCode);
@@ -220,7 +220,6 @@ class _$ZonesZone extends ZonesZone {
     return (newBuiltValueToStringHelper(r'ZonesZone')
           ..add('account', account)
           ..add('activatedOn', activatedOn)
-          ..add('cnameSuffix', cnameSuffix)
           ..add('createdOn', createdOn)
           ..add('developmentMode', developmentMode)
           ..add('id', id)
@@ -232,9 +231,10 @@ class _$ZonesZone extends ZonesZone {
           ..add('originalNameServers', originalNameServers)
           ..add('originalRegistrar', originalRegistrar)
           ..add('owner', owner)
+          ..add('plan', plan)
+          ..add('cnameSuffix', cnameSuffix)
           ..add('paused', paused)
           ..add('permissions', permissions)
-          ..add('plan', plan)
           ..add('status', status)
           ..add('tenant', tenant)
           ..add('tenantUnit', tenantUnit)
@@ -256,10 +256,6 @@ class ZonesZoneBuilder implements Builder<ZonesZone, ZonesZoneBuilder> {
   DateTime? _activatedOn;
   DateTime? get activatedOn => _$this._activatedOn;
   set activatedOn(DateTime? activatedOn) => _$this._activatedOn = activatedOn;
-
-  String? _cnameSuffix;
-  String? get cnameSuffix => _$this._cnameSuffix;
-  set cnameSuffix(String? cnameSuffix) => _$this._cnameSuffix = cnameSuffix;
 
   DateTime? _createdOn;
   DateTime? get createdOn => _$this._createdOn;
@@ -312,6 +308,14 @@ class ZonesZoneBuilder implements Builder<ZonesZone, ZonesZoneBuilder> {
   ZonesZoneOwnerBuilder get owner => _$this._owner ??= ZonesZoneOwnerBuilder();
   set owner(ZonesZoneOwnerBuilder? owner) => _$this._owner = owner;
 
+  ZonesZonePlanBuilder? _plan;
+  ZonesZonePlanBuilder get plan => _$this._plan ??= ZonesZonePlanBuilder();
+  set plan(ZonesZonePlanBuilder? plan) => _$this._plan = plan;
+
+  String? _cnameSuffix;
+  String? get cnameSuffix => _$this._cnameSuffix;
+  set cnameSuffix(String? cnameSuffix) => _$this._cnameSuffix = cnameSuffix;
+
   bool? _paused;
   bool? get paused => _$this._paused;
   set paused(bool? paused) => _$this._paused = paused;
@@ -321,10 +325,6 @@ class ZonesZoneBuilder implements Builder<ZonesZone, ZonesZoneBuilder> {
       _$this._permissions ??= ListBuilder<String>();
   set permissions(ListBuilder<String>? permissions) =>
       _$this._permissions = permissions;
-
-  ZonesZonePlanBuilder? _plan;
-  ZonesZonePlanBuilder get plan => _$this._plan ??= ZonesZonePlanBuilder();
-  set plan(ZonesZonePlanBuilder? plan) => _$this._plan = plan;
 
   ZonesZoneStatusEnum? _status;
   ZonesZoneStatusEnum? get status => _$this._status;
@@ -365,7 +365,6 @@ class ZonesZoneBuilder implements Builder<ZonesZone, ZonesZoneBuilder> {
     if ($v != null) {
       _account = $v.account.toBuilder();
       _activatedOn = $v.activatedOn;
-      _cnameSuffix = $v.cnameSuffix;
       _createdOn = $v.createdOn;
       _developmentMode = $v.developmentMode;
       _id = $v.id;
@@ -377,9 +376,10 @@ class ZonesZoneBuilder implements Builder<ZonesZone, ZonesZoneBuilder> {
       _originalNameServers = $v.originalNameServers?.toBuilder();
       _originalRegistrar = $v.originalRegistrar;
       _owner = $v.owner.toBuilder();
+      _plan = $v.plan.toBuilder();
+      _cnameSuffix = $v.cnameSuffix;
       _paused = $v.paused;
       _permissions = $v.permissions?.toBuilder();
-      _plan = $v.plan.toBuilder();
       _status = $v.status;
       _tenant = $v.tenant?.toBuilder();
       _tenantUnit = $v.tenantUnit?.toBuilder();
@@ -411,7 +411,6 @@ class ZonesZoneBuilder implements Builder<ZonesZone, ZonesZoneBuilder> {
           _$ZonesZone._(
             account: account.build(),
             activatedOn: activatedOn,
-            cnameSuffix: cnameSuffix,
             createdOn: BuiltValueNullFieldError.checkNotNull(
                 createdOn, r'ZonesZone', 'createdOn'),
             developmentMode: BuiltValueNullFieldError.checkNotNull(
@@ -427,9 +426,10 @@ class ZonesZoneBuilder implements Builder<ZonesZone, ZonesZoneBuilder> {
             originalNameServers: _originalNameServers?.build(),
             originalRegistrar: originalRegistrar,
             owner: owner.build(),
+            plan: plan.build(),
+            cnameSuffix: cnameSuffix,
             paused: paused,
             permissions: _permissions?.build(),
-            plan: plan.build(),
             status: status,
             tenant: _tenant?.build(),
             tenantUnit: _tenantUnit?.build(),
@@ -454,11 +454,11 @@ class ZonesZoneBuilder implements Builder<ZonesZone, ZonesZoneBuilder> {
 
         _$failedField = 'owner';
         owner.build();
+        _$failedField = 'plan';
+        plan.build();
 
         _$failedField = 'permissions';
         _permissions?.build();
-        _$failedField = 'plan';
-        plan.build();
 
         _$failedField = 'tenant';
         _tenant?.build();

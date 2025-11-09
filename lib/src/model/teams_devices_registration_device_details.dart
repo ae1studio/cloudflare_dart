@@ -11,15 +11,11 @@ part 'teams_devices_registration_device_details.g.dart';
 /// Device details embedded inside of a registration.
 ///
 /// Properties:
-/// * [clientVersion] - Version of the WARP client.
 /// * [id] - The ID of the device.
 /// * [name] - The name of the device.
+/// * [clientVersion] - Version of the WARP client.
 @BuiltValue()
 abstract class TeamsDevicesRegistrationDeviceDetails implements Built<TeamsDevicesRegistrationDeviceDetails, TeamsDevicesRegistrationDeviceDetailsBuilder> {
-  /// Version of the WARP client.
-  @BuiltValueField(wireName: r'client_version')
-  String? get clientVersion;
-
   /// The ID of the device.
   @BuiltValueField(wireName: r'id')
   String get id;
@@ -27,6 +23,10 @@ abstract class TeamsDevicesRegistrationDeviceDetails implements Built<TeamsDevic
   /// The name of the device.
   @BuiltValueField(wireName: r'name')
   String get name;
+
+  /// Version of the WARP client.
+  @BuiltValueField(wireName: r'client_version')
+  String? get clientVersion;
 
   TeamsDevicesRegistrationDeviceDetails._();
 
@@ -51,13 +51,6 @@ class _$TeamsDevicesRegistrationDeviceDetailsSerializer implements PrimitiveSeri
     TeamsDevicesRegistrationDeviceDetails object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
-    if (object.clientVersion != null) {
-      yield r'client_version';
-      yield serializers.serialize(
-        object.clientVersion,
-        specifiedType: const FullType(String),
-      );
-    }
     yield r'id';
     yield serializers.serialize(
       object.id,
@@ -68,6 +61,13 @@ class _$TeamsDevicesRegistrationDeviceDetailsSerializer implements PrimitiveSeri
       object.name,
       specifiedType: const FullType(String),
     );
+    if (object.clientVersion != null) {
+      yield r'client_version';
+      yield serializers.serialize(
+        object.clientVersion,
+        specifiedType: const FullType(String),
+      );
+    }
   }
 
   @override
@@ -91,13 +91,6 @@ class _$TeamsDevicesRegistrationDeviceDetailsSerializer implements PrimitiveSeri
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'client_version':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.clientVersion = valueDes;
-          break;
         case r'id':
           final valueDes = serializers.deserialize(
             value,
@@ -111,6 +104,13 @@ class _$TeamsDevicesRegistrationDeviceDetailsSerializer implements PrimitiveSeri
             specifiedType: const FullType(String),
           ) as String;
           result.name = valueDes;
+          break;
+        case r'client_version':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.clientVersion = valueDes;
           break;
         default:
           unhandled.add(key);

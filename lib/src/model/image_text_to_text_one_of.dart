@@ -11,12 +11,12 @@ part 'image_text_to_text_one_of.g.dart';
 /// ImageTextToTextOneOf
 ///
 /// Properties:
+/// * [image] - Image in base64 encoded format.
+/// * [prompt] - The input text prompt for the model to generate a response.
 /// * [frequencyPenalty] - Decreases the likelihood of the model repeating the same lines verbatim.
 /// * [ignoreEos] - Whether to ignore the EOS token and continue generating tokens after the EOS token is generated.
-/// * [image] - Image in base64 encoded format.
 /// * [maxTokens] - The maximum number of tokens to generate in the response.
 /// * [presencePenalty] - Increases the likelihood of the model introducing new topics.
-/// * [prompt] - The input text prompt for the model to generate a response.
 /// * [repetitionPenalty] - Penalty for repeated tokens; higher values discourage repetition.
 /// * [seed] - Random seed for reproducibility of the generation.
 /// * [temperature] - Controls the randomness of the output; higher values produce more random results.
@@ -24,6 +24,14 @@ part 'image_text_to_text_one_of.g.dart';
 /// * [topP] - Controls the creativity of the AI's responses by adjusting how many possible words it considers. Lower values make outputs more predictable; higher values allow for more varied and creative responses.
 @BuiltValue()
 abstract class ImageTextToTextOneOf implements Built<ImageTextToTextOneOf, ImageTextToTextOneOfBuilder> {
+  /// Image in base64 encoded format.
+  @BuiltValueField(wireName: r'image')
+  String get image;
+
+  /// The input text prompt for the model to generate a response.
+  @BuiltValueField(wireName: r'prompt')
+  String get prompt;
+
   /// Decreases the likelihood of the model repeating the same lines verbatim.
   @BuiltValueField(wireName: r'frequency_penalty')
   num? get frequencyPenalty;
@@ -32,10 +40,6 @@ abstract class ImageTextToTextOneOf implements Built<ImageTextToTextOneOf, Image
   @BuiltValueField(wireName: r'ignore_eos')
   bool? get ignoreEos;
 
-  /// Image in base64 encoded format.
-  @BuiltValueField(wireName: r'image')
-  String get image;
-
   /// The maximum number of tokens to generate in the response.
   @BuiltValueField(wireName: r'max_tokens')
   int? get maxTokens;
@@ -43,10 +47,6 @@ abstract class ImageTextToTextOneOf implements Built<ImageTextToTextOneOf, Image
   /// Increases the likelihood of the model introducing new topics.
   @BuiltValueField(wireName: r'presence_penalty')
   num? get presencePenalty;
-
-  /// The input text prompt for the model to generate a response.
-  @BuiltValueField(wireName: r'prompt')
-  String get prompt;
 
   /// Penalty for repeated tokens; higher values discourage repetition.
   @BuiltValueField(wireName: r'repetition_penalty')
@@ -92,6 +92,16 @@ class _$ImageTextToTextOneOfSerializer implements PrimitiveSerializer<ImageTextT
     ImageTextToTextOneOf object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    yield r'image';
+    yield serializers.serialize(
+      object.image,
+      specifiedType: const FullType(String),
+    );
+    yield r'prompt';
+    yield serializers.serialize(
+      object.prompt,
+      specifiedType: const FullType(String),
+    );
     if (object.frequencyPenalty != null) {
       yield r'frequency_penalty';
       yield serializers.serialize(
@@ -106,11 +116,6 @@ class _$ImageTextToTextOneOfSerializer implements PrimitiveSerializer<ImageTextT
         specifiedType: const FullType(bool),
       );
     }
-    yield r'image';
-    yield serializers.serialize(
-      object.image,
-      specifiedType: const FullType(String),
-    );
     if (object.maxTokens != null) {
       yield r'max_tokens';
       yield serializers.serialize(
@@ -125,11 +130,6 @@ class _$ImageTextToTextOneOfSerializer implements PrimitiveSerializer<ImageTextT
         specifiedType: const FullType(num),
       );
     }
-    yield r'prompt';
-    yield serializers.serialize(
-      object.prompt,
-      specifiedType: const FullType(String),
-    );
     if (object.repetitionPenalty != null) {
       yield r'repetition_penalty';
       yield serializers.serialize(
@@ -188,6 +188,20 @@ class _$ImageTextToTextOneOfSerializer implements PrimitiveSerializer<ImageTextT
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
+        case r'image':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.image = valueDes;
+          break;
+        case r'prompt':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.prompt = valueDes;
+          break;
         case r'frequency_penalty':
           final valueDes = serializers.deserialize(
             value,
@@ -202,13 +216,6 @@ class _$ImageTextToTextOneOfSerializer implements PrimitiveSerializer<ImageTextT
           ) as bool;
           result.ignoreEos = valueDes;
           break;
-        case r'image':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.image = valueDes;
-          break;
         case r'max_tokens':
           final valueDes = serializers.deserialize(
             value,
@@ -222,13 +229,6 @@ class _$ImageTextToTextOneOfSerializer implements PrimitiveSerializer<ImageTextT
             specifiedType: const FullType(num),
           ) as num;
           result.presencePenalty = valueDes;
-          break;
-        case r'prompt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.prompt = valueDes;
           break;
         case r'repetition_penalty':
           final valueDes = serializers.deserialize(

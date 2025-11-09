@@ -9,18 +9,18 @@ import 'package:cloudflare_dart/api.dart';
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **cpuTimeMs** | **num** |  | 
+**eventType** | **String** |  | 
+**outcome** | **String** |  | 
+**requestId** | **String** |  | 
+**scriptName** | **String** |  | 
+**wallTimeMs** | **num** |  | 
 **diagnosticsChannelEvents** | [**BuiltList&lt;WorkersObservabilityTelemetryEventWorkersAnyOf1DiagnosticsChannelEventsInner&gt;**](WorkersObservabilityTelemetryEventWorkersAnyOf1DiagnosticsChannelEventsInner.md) |  | [optional] 
 **dispatchNamespace** | **String** |  | [optional] 
 **entrypoint** | **String** |  | [optional] 
 **event** | [**BuiltMap&lt;String, AigConfigListDataset200ResponseResultInnerFiltersInnerValueInner&gt;**](AigConfigListDataset200ResponseResultInnerFiltersInnerValueInner.md) |  | [optional] 
-**eventType** | **String** |  | 
 **executionModel** | **String** |  | [optional] 
-**outcome** | **String** |  | 
-**requestId** | **String** |  | 
-**scriptName** | **String** |  | 
 **scriptVersion** | [**WorkersObservabilityTelemetryEventWorkersAnyOfScriptVersion**](WorkersObservabilityTelemetryEventWorkersAnyOfScriptVersion.md) |  | [optional] 
 **truncated** | **bool** |  | [optional] 
-**wallTimeMs** | **num** |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

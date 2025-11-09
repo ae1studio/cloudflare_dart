@@ -8,7 +8,6 @@ import 'package:cloudflare_dart/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**attackMitigation** | [**DnsFirewallAttackMitigation**](DnsFirewallAttackMitigation.md) |  | [optional] 
 **deprecateAnyRequests** | **bool** | Whether to refuse to answer queries for the ANY type | 
 **ecsFallback** | **bool** | Whether to forward client IP (resolver) subnet if no EDNS Client Subnet is sent | 
 **maximumCacheTtl** | **num** | By default, Cloudflare attempts to cache responses for as long as indicated by the TTL received from upstream nameservers. This setting sets an upper bound on this duration. For caching purposes, higher TTLs will be decreased to the maximum value defined by this setting.  This setting does not affect the TTL value in the DNS response Cloudflare returns to clients. Cloudflare will always forward the TTL value received from upstream nameservers.  | [default to 900]
@@ -21,6 +20,7 @@ Name | Type | Description | Notes
 **dnsFirewallIps** | [**BuiltList&lt;DnsFirewallDnsFirewallIpsInner&gt;**](DnsFirewallDnsFirewallIpsInner.md) |  | 
 **id** | **String** | Identifier. | 
 **modifiedOn** | [**DateTime**](DateTime.md) | Last modification of DNS Firewall cluster | 
+**attackMitigation** | [**DnsFirewallAttackMitigation**](DnsFirewallAttackMitigation.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

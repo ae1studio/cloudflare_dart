@@ -65,9 +65,9 @@ class _$IamUserGroupMemberStatusEnumSerializer
 
 class _$IamUserGroupMember extends IamUserGroupMember {
   @override
-  final String? email;
-  @override
   final String id;
+  @override
+  final String? email;
   @override
   final IamUserGroupMemberStatusEnum? status;
 
@@ -75,7 +75,7 @@ class _$IamUserGroupMember extends IamUserGroupMember {
           [void Function(IamUserGroupMemberBuilder)? updates]) =>
       (IamUserGroupMemberBuilder()..update(updates))._build();
 
-  _$IamUserGroupMember._({this.email, required this.id, this.status})
+  _$IamUserGroupMember._({required this.id, this.email, this.status})
       : super._();
   @override
   IamUserGroupMember rebuild(
@@ -90,16 +90,16 @@ class _$IamUserGroupMember extends IamUserGroupMember {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is IamUserGroupMember &&
-        email == other.email &&
         id == other.id &&
+        email == other.email &&
         status == other.status;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, email.hashCode);
     _$hash = $jc(_$hash, id.hashCode);
+    _$hash = $jc(_$hash, email.hashCode);
     _$hash = $jc(_$hash, status.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
@@ -108,8 +108,8 @@ class _$IamUserGroupMember extends IamUserGroupMember {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'IamUserGroupMember')
-          ..add('email', email)
           ..add('id', id)
+          ..add('email', email)
           ..add('status', status))
         .toString();
   }
@@ -119,13 +119,13 @@ class IamUserGroupMemberBuilder
     implements Builder<IamUserGroupMember, IamUserGroupMemberBuilder> {
   _$IamUserGroupMember? _$v;
 
-  String? _email;
-  String? get email => _$this._email;
-  set email(String? email) => _$this._email = email;
-
   String? _id;
   String? get id => _$this._id;
   set id(String? id) => _$this._id = id;
+
+  String? _email;
+  String? get email => _$this._email;
+  set email(String? email) => _$this._email = email;
 
   IamUserGroupMemberStatusEnum? _status;
   IamUserGroupMemberStatusEnum? get status => _$this._status;
@@ -138,8 +138,8 @@ class IamUserGroupMemberBuilder
   IamUserGroupMemberBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _email = $v.email;
       _id = $v.id;
+      _email = $v.email;
       _status = $v.status;
       _$v = null;
     }
@@ -162,9 +162,9 @@ class IamUserGroupMemberBuilder
   _$IamUserGroupMember _build() {
     final _$result = _$v ??
         _$IamUserGroupMember._(
-          email: email,
           id: BuiltValueNullFieldError.checkNotNull(
               id, r'IamUserGroupMember', 'id'),
+          email: email,
           status: status,
         );
     replace(_$result);

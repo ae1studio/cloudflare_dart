@@ -14,10 +14,10 @@ part 'workers_version_item_full.g.dart';
 /// WorkersVersionItemFull
 ///
 /// Properties:
+/// * [resources] 
 /// * [id] 
 /// * [metadata] 
 /// * [number] 
-/// * [resources] 
 @BuiltValue(instantiable: false)
 abstract class WorkersVersionItemFull implements WorkersVersionItemShort {
   @BuiltValueField(wireName: r'resources')

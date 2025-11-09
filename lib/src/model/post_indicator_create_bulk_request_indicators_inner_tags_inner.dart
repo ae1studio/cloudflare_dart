@@ -14,8 +14,8 @@ part 'post_indicator_create_bulk_request_indicators_inner_tags_inner.g.dart';
 /// PostIndicatorCreateBulkRequestIndicatorsInnerTagsInner
 ///
 /// Properties:
-/// * [categoryName] 
 /// * [value] 
+/// * [categoryName] 
 @BuiltValue()
 abstract class PostIndicatorCreateBulkRequestIndicatorsInnerTagsInner implements Built<PostIndicatorCreateBulkRequestIndicatorsInnerTagsInner, PostIndicatorCreateBulkRequestIndicatorsInnerTagsInnerBuilder> {
   /// Any Of [PostIndicatorCreateBulkRequestIndicatorsInnerTagsInnerAnyOf], [String]

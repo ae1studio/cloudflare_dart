@@ -9,15 +9,16 @@ import 'package:cloudflare_dart/src/model/page_shield_zone_settings_response_sin
 import 'package:cloudflare_dart/src/model/aaa_messages_inner.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
+import 'package:built_value/json_object.dart';
 
 part 'page_shield_update_settings200_response.g.dart';
 
 /// PageShieldUpdateSettings200Response
 ///
 /// Properties:
+/// * [success] - Whether the API call was successful
 /// * [errors] 
 /// * [messages] 
-/// * [success] - Whether the API call was successful
 /// * [result] 
 @BuiltValue()
 abstract class PageShieldUpdateSettings200Response implements PageShieldZoneSettingsResponseSingle, Built<PageShieldUpdateSettings200Response, PageShieldUpdateSettings200ResponseBuilder> {

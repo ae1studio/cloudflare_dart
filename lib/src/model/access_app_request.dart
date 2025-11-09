@@ -32,6 +32,9 @@ part 'access_app_request.g.dart';
 /// AccessAppRequest
 ///
 /// Properties:
+/// * [domain] - The URL or domain of the bookmark.
+/// * [type] 
+/// * [targetCriteria] 
 /// * [allowAuthenticateViaWarp] - When set to true, users can authenticate to this application using their WARP session.  When set to false this application will always require direct IdP authentication. This setting always overrides the organization setting for WARP authentication.
 /// * [allowIframe] - Enables loading application content in an iFrame.
 /// * [allowedIdps] - The identity providers your users can select when connecting to this application. Defaults to all IdPs configured in your account.
@@ -43,7 +46,6 @@ part 'access_app_request.g.dart';
 /// * [customNonIdentityDenyUrl] - The custom URL a user is redirected to when they are denied access to the application when failing non-identity rules.
 /// * [customPages] - The custom pages that will be displayed when applicable for this application
 /// * [destinations] - List of destinations secured by Access. This supersedes `self_hosted_domains` to allow for more flexibility in defining different types of domains. If `destinations` are provided, then `self_hosted_domains` will be ignored. 
-/// * [domain] - The URL or domain of the bookmark.
 /// * [enableBindingCookie] - Enables the binding cookie, which increases security against compromised authorization tokens and CSRF attacks.
 /// * [httpOnlyCookieAttribute] - Enables the HttpOnly cookie attribute, which increases security against XSS attacks.
 /// * [logoUrl] - The image URL for the logo shown in the App Launcher dashboard.
@@ -58,7 +60,6 @@ part 'access_app_request.g.dart';
 /// * [sessionDuration] - The amount of time that tokens issued for this application will be valid. Must be in the format `300ms` or `2h45m`. Valid time units are: ns, us (or µs), ms, s, m, h. Note: unsupported for infrastructure type applications.
 /// * [skipInterstitial] - Enables automatic authentication through cloudflared.
 /// * [tags] - The tags you want assigned to an application. Tags are used to filter applications in the App Launcher dashboard.
-/// * [type] 
 /// * [policies] - The policies that Access applies to the application, in ascending order of precedence. Items can reference existing policies or create new policies exclusive to the application.
 /// * [saasApp] 
 /// * [appLauncherLogoUrl] - The image URL of the logo shown in the App Launcher header.
@@ -67,7 +68,6 @@ part 'access_app_request.g.dart';
 /// * [headerBgColor] - The background color of the App Launcher header.
 /// * [landingPageDesign] 
 /// * [skipAppLauncherLoginPage] - Determines when to skip the App Launcher landing page.
-/// * [targetCriteria] 
 @BuiltValue()
 abstract class AccessAppRequest implements Built<AccessAppRequest, AccessAppRequestBuilder> {
   /// Any Of [AccessBookmarkProps], [AppLauncherApplication], [BrowserIsolationPermissionsApplication], [BrowserRDPApplication], [BrowserSSHApplication], [BrowserVNCApplication], [DeviceEnrollmentPermissionsApplication], [InfrastructureApplication], [SaaSApplication], [SelfHostedApplication]

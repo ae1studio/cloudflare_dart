@@ -12,21 +12,17 @@ part 'mconn_snapshot_dhcp_lease.g.dart';
 ///
 /// Properties:
 /// * [clientId] - Client ID of the device the IP Address was leased to
-/// * [connectorId] - Connector identifier
 /// * [expiryTime] - Expiry time of the DHCP lease (seconds since the Unix epoch)
 /// * [hostname] - Hostname of the device the IP Address was leased to
 /// * [interfaceName] - Name of the network interface
 /// * [ipAddress] - IP Address that was leased
 /// * [macAddress] - MAC Address of the device the IP Address was leased to
+/// * [connectorId] - Connector identifier
 @BuiltValue()
 abstract class MconnSnapshotDhcpLease implements Built<MconnSnapshotDhcpLease, MconnSnapshotDhcpLeaseBuilder> {
   /// Client ID of the device the IP Address was leased to
   @BuiltValueField(wireName: r'client_id')
   String get clientId;
-
-  /// Connector identifier
-  @BuiltValueField(wireName: r'connector_id')
-  String? get connectorId;
 
   /// Expiry time of the DHCP lease (seconds since the Unix epoch)
   @BuiltValueField(wireName: r'expiry_time')
@@ -47,6 +43,10 @@ abstract class MconnSnapshotDhcpLease implements Built<MconnSnapshotDhcpLease, M
   /// MAC Address of the device the IP Address was leased to
   @BuiltValueField(wireName: r'mac_address')
   String get macAddress;
+
+  /// Connector identifier
+  @BuiltValueField(wireName: r'connector_id')
+  String? get connectorId;
 
   MconnSnapshotDhcpLease._();
 
@@ -76,13 +76,6 @@ class _$MconnSnapshotDhcpLeaseSerializer implements PrimitiveSerializer<MconnSna
       object.clientId,
       specifiedType: const FullType(String),
     );
-    if (object.connectorId != null) {
-      yield r'connector_id';
-      yield serializers.serialize(
-        object.connectorId,
-        specifiedType: const FullType(String),
-      );
-    }
     yield r'expiry_time';
     yield serializers.serialize(
       object.expiryTime,
@@ -108,6 +101,13 @@ class _$MconnSnapshotDhcpLeaseSerializer implements PrimitiveSerializer<MconnSna
       object.macAddress,
       specifiedType: const FullType(String),
     );
+    if (object.connectorId != null) {
+      yield r'connector_id';
+      yield serializers.serialize(
+        object.connectorId,
+        specifiedType: const FullType(String),
+      );
+    }
   }
 
   @override
@@ -137,13 +137,6 @@ class _$MconnSnapshotDhcpLeaseSerializer implements PrimitiveSerializer<MconnSna
             specifiedType: const FullType(String),
           ) as String;
           result.clientId = valueDes;
-          break;
-        case r'connector_id':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.connectorId = valueDes;
           break;
         case r'expiry_time':
           final valueDes = serializers.deserialize(
@@ -179,6 +172,13 @@ class _$MconnSnapshotDhcpLeaseSerializer implements PrimitiveSerializer<MconnSna
             specifiedType: const FullType(String),
           ) as String;
           result.macAddress = valueDes;
+          break;
+        case r'connector_id':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.connectorId = valueDes;
           break;
         default:
           unhandled.add(key);

@@ -13,16 +13,16 @@ part 'brapi_post_content400_response.g.dart';
 /// BrapiPostContent400Response
 ///
 /// Properties:
-/// * [errors] 
 /// * [status] - Response status
+/// * [errors] 
 @BuiltValue()
 abstract class BrapiPostContent400Response implements Built<BrapiPostContent400Response, BrapiPostContent400ResponseBuilder> {
-  @BuiltValueField(wireName: r'errors')
-  BuiltList<BrapiPostContent200ResponseErrorsInner>? get errors;
-
   /// Response status
   @BuiltValueField(wireName: r'status')
   bool get status;
+
+  @BuiltValueField(wireName: r'errors')
+  BuiltList<BrapiPostContent200ResponseErrorsInner>? get errors;
 
   BrapiPostContent400Response._();
 
@@ -47,6 +47,11 @@ class _$BrapiPostContent400ResponseSerializer implements PrimitiveSerializer<Bra
     BrapiPostContent400Response object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    yield r'status';
+    yield serializers.serialize(
+      object.status,
+      specifiedType: const FullType(bool),
+    );
     if (object.errors != null) {
       yield r'errors';
       yield serializers.serialize(
@@ -54,11 +59,6 @@ class _$BrapiPostContent400ResponseSerializer implements PrimitiveSerializer<Bra
         specifiedType: const FullType(BuiltList, [FullType(BrapiPostContent200ResponseErrorsInner)]),
       );
     }
-    yield r'status';
-    yield serializers.serialize(
-      object.status,
-      specifiedType: const FullType(bool),
-    );
   }
 
   @override
@@ -82,19 +82,19 @@ class _$BrapiPostContent400ResponseSerializer implements PrimitiveSerializer<Bra
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'errors':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(BrapiPostContent200ResponseErrorsInner)]),
-          ) as BuiltList<BrapiPostContent200ResponseErrorsInner>;
-          result.errors.replace(valueDes);
-          break;
         case r'status':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(bool),
           ) as bool;
           result.status = valueDes;
+          break;
+        case r'errors':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BuiltList, [FullType(BrapiPostContent200ResponseErrorsInner)]),
+          ) as BuiltList<BrapiPostContent200ResponseErrorsInner>;
+          result.errors.replace(valueDes);
           break;
         default:
           unhandled.add(key);

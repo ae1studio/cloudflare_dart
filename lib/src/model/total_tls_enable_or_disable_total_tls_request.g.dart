@@ -9,10 +9,10 @@ part of 'total_tls_enable_or_disable_total_tls_request.dart';
 class _$TotalTlsEnableOrDisableTotalTlsRequest
     extends TotalTlsEnableOrDisableTotalTlsRequest {
   @override
+  final bool enabled;
+  @override
   final TlsCertificatesAndHostnamesComponentsSchemasCertificateAuthority?
       certificateAuthority;
-  @override
-  final bool enabled;
 
   factory _$TotalTlsEnableOrDisableTotalTlsRequest(
           [void Function(TotalTlsEnableOrDisableTotalTlsRequestBuilder)?
@@ -21,7 +21,7 @@ class _$TotalTlsEnableOrDisableTotalTlsRequest
           ._build();
 
   _$TotalTlsEnableOrDisableTotalTlsRequest._(
-      {this.certificateAuthority, required this.enabled})
+      {required this.enabled, this.certificateAuthority})
       : super._();
   @override
   TotalTlsEnableOrDisableTotalTlsRequest rebuild(
@@ -37,15 +37,15 @@ class _$TotalTlsEnableOrDisableTotalTlsRequest
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is TotalTlsEnableOrDisableTotalTlsRequest &&
-        certificateAuthority == other.certificateAuthority &&
-        enabled == other.enabled;
+        enabled == other.enabled &&
+        certificateAuthority == other.certificateAuthority;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, certificateAuthority.hashCode);
     _$hash = $jc(_$hash, enabled.hashCode);
+    _$hash = $jc(_$hash, certificateAuthority.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -54,8 +54,8 @@ class _$TotalTlsEnableOrDisableTotalTlsRequest
   String toString() {
     return (newBuiltValueToStringHelper(
             r'TotalTlsEnableOrDisableTotalTlsRequest')
-          ..add('certificateAuthority', certificateAuthority)
-          ..add('enabled', enabled))
+          ..add('enabled', enabled)
+          ..add('certificateAuthority', certificateAuthority))
         .toString();
   }
 }
@@ -66,6 +66,10 @@ class TotalTlsEnableOrDisableTotalTlsRequestBuilder
             TotalTlsEnableOrDisableTotalTlsRequestBuilder> {
   _$TotalTlsEnableOrDisableTotalTlsRequest? _$v;
 
+  bool? _enabled;
+  bool? get enabled => _$this._enabled;
+  set enabled(bool? enabled) => _$this._enabled = enabled;
+
   TlsCertificatesAndHostnamesComponentsSchemasCertificateAuthority?
       _certificateAuthority;
   TlsCertificatesAndHostnamesComponentsSchemasCertificateAuthority?
@@ -75,10 +79,6 @@ class TotalTlsEnableOrDisableTotalTlsRequestBuilder
               certificateAuthority) =>
       _$this._certificateAuthority = certificateAuthority;
 
-  bool? _enabled;
-  bool? get enabled => _$this._enabled;
-  set enabled(bool? enabled) => _$this._enabled = enabled;
-
   TotalTlsEnableOrDisableTotalTlsRequestBuilder() {
     TotalTlsEnableOrDisableTotalTlsRequest._defaults(this);
   }
@@ -86,8 +86,8 @@ class TotalTlsEnableOrDisableTotalTlsRequestBuilder
   TotalTlsEnableOrDisableTotalTlsRequestBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _certificateAuthority = $v.certificateAuthority;
       _enabled = $v.enabled;
+      _certificateAuthority = $v.certificateAuthority;
       _$v = null;
     }
     return this;
@@ -110,9 +110,9 @@ class TotalTlsEnableOrDisableTotalTlsRequestBuilder
   _$TotalTlsEnableOrDisableTotalTlsRequest _build() {
     final _$result = _$v ??
         _$TotalTlsEnableOrDisableTotalTlsRequest._(
-          certificateAuthority: certificateAuthority,
           enabled: BuiltValueNullFieldError.checkNotNull(
               enabled, r'TotalTlsEnableOrDisableTotalTlsRequest', 'enabled'),
+          certificateAuthority: certificateAuthority,
         );
     replace(_$result);
     return _$result;

@@ -17,9 +17,9 @@ part 'infrastructure_application.g.dart';
 /// InfrastructureApplication
 ///
 /// Properties:
-/// * [name] - The name of the application.
 /// * [type] 
 /// * [targetCriteria] 
+/// * [name] - The name of the application.
 /// * [policies] - The policies that Access applies to the application.
 @BuiltValue()
 abstract class InfrastructureApplication implements AccessInfraAppReqEmbeddedPolicies, AccessInfraProps, Built<InfrastructureApplication, InfrastructureApplicationBuilder> {

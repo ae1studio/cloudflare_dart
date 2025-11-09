@@ -10,8 +10,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **count** | **int** |  | 
 **page** | **int** |  | 
-**perPage** | **int** |  | [optional] [default to 20]
 **totalCount** | **int** |  | 
+**perPage** | **int** |  | [optional] [default to 20]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

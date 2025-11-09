@@ -9,11 +9,11 @@ part of 'r2_data_catalog_namespace_list_response.dart';
 class _$R2DataCatalogNamespaceListResponse
     extends R2DataCatalogNamespaceListResponse {
   @override
+  final BuiltList<BuiltList<String>> namespaces;
+  @override
   final BuiltList<R2DataCatalogNamespaceDetails>? details;
   @override
   final BuiltList<String>? namespaceUuids;
-  @override
-  final BuiltList<BuiltList<String>> namespaces;
   @override
   final String? nextPageToken;
 
@@ -23,9 +23,9 @@ class _$R2DataCatalogNamespaceListResponse
       (R2DataCatalogNamespaceListResponseBuilder()..update(updates))._build();
 
   _$R2DataCatalogNamespaceListResponse._(
-      {this.details,
+      {required this.namespaces,
+      this.details,
       this.namespaceUuids,
-      required this.namespaces,
       this.nextPageToken})
       : super._();
   @override
@@ -41,18 +41,18 @@ class _$R2DataCatalogNamespaceListResponse
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is R2DataCatalogNamespaceListResponse &&
+        namespaces == other.namespaces &&
         details == other.details &&
         namespaceUuids == other.namespaceUuids &&
-        namespaces == other.namespaces &&
         nextPageToken == other.nextPageToken;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
+    _$hash = $jc(_$hash, namespaces.hashCode);
     _$hash = $jc(_$hash, details.hashCode);
     _$hash = $jc(_$hash, namespaceUuids.hashCode);
-    _$hash = $jc(_$hash, namespaces.hashCode);
     _$hash = $jc(_$hash, nextPageToken.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
@@ -61,9 +61,9 @@ class _$R2DataCatalogNamespaceListResponse
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'R2DataCatalogNamespaceListResponse')
+          ..add('namespaces', namespaces)
           ..add('details', details)
           ..add('namespaceUuids', namespaceUuids)
-          ..add('namespaces', namespaces)
           ..add('nextPageToken', nextPageToken))
         .toString();
   }
@@ -74,6 +74,12 @@ class R2DataCatalogNamespaceListResponseBuilder
         Builder<R2DataCatalogNamespaceListResponse,
             R2DataCatalogNamespaceListResponseBuilder> {
   _$R2DataCatalogNamespaceListResponse? _$v;
+
+  ListBuilder<BuiltList<String>>? _namespaces;
+  ListBuilder<BuiltList<String>> get namespaces =>
+      _$this._namespaces ??= ListBuilder<BuiltList<String>>();
+  set namespaces(ListBuilder<BuiltList<String>>? namespaces) =>
+      _$this._namespaces = namespaces;
 
   ListBuilder<R2DataCatalogNamespaceDetails>? _details;
   ListBuilder<R2DataCatalogNamespaceDetails> get details =>
@@ -87,12 +93,6 @@ class R2DataCatalogNamespaceListResponseBuilder
   set namespaceUuids(ListBuilder<String>? namespaceUuids) =>
       _$this._namespaceUuids = namespaceUuids;
 
-  ListBuilder<BuiltList<String>>? _namespaces;
-  ListBuilder<BuiltList<String>> get namespaces =>
-      _$this._namespaces ??= ListBuilder<BuiltList<String>>();
-  set namespaces(ListBuilder<BuiltList<String>>? namespaces) =>
-      _$this._namespaces = namespaces;
-
   String? _nextPageToken;
   String? get nextPageToken => _$this._nextPageToken;
   set nextPageToken(String? nextPageToken) =>
@@ -105,9 +105,9 @@ class R2DataCatalogNamespaceListResponseBuilder
   R2DataCatalogNamespaceListResponseBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
+      _namespaces = $v.namespaces.toBuilder();
       _details = $v.details?.toBuilder();
       _namespaceUuids = $v.namespaceUuids?.toBuilder();
-      _namespaces = $v.namespaces.toBuilder();
       _nextPageToken = $v.nextPageToken;
       _$v = null;
     }
@@ -133,20 +133,20 @@ class R2DataCatalogNamespaceListResponseBuilder
     try {
       _$result = _$v ??
           _$R2DataCatalogNamespaceListResponse._(
+            namespaces: namespaces.build(),
             details: _details?.build(),
             namespaceUuids: _namespaceUuids?.build(),
-            namespaces: namespaces.build(),
             nextPageToken: nextPageToken,
           );
     } catch (_) {
       late String _$failedField;
       try {
+        _$failedField = 'namespaces';
+        namespaces.build();
         _$failedField = 'details';
         _details?.build();
         _$failedField = 'namespaceUuids';
         _namespaceUuids?.build();
-        _$failedField = 'namespaces';
-        namespaces.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
             r'R2DataCatalogNamespaceListResponse', _$failedField, e.toString());

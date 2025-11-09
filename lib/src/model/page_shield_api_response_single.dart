@@ -15,9 +15,9 @@ part 'page_shield_api_response_single.g.dart';
 /// PageShieldApiResponseSingle
 ///
 /// Properties:
+/// * [success] - Whether the API call was successful
 /// * [errors] 
 /// * [messages] 
-/// * [success] - Whether the API call was successful
 /// * [result] 
 @BuiltValue(instantiable: false)
 abstract class PageShieldApiResponseSingle implements PageShieldApiResponseCommon {

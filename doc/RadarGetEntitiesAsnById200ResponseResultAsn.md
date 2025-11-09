@@ -8,7 +8,6 @@ import 'package:cloudflare_dart/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**aka** | **String** |  | [optional] 
 **asn** | **int** |  | 
 **confidenceLevel** | **int** |  | 
 **country** | **String** |  | 
@@ -19,6 +18,7 @@ Name | Type | Description | Notes
 **related** | [**BuiltList&lt;RadarGetEntitiesAsnById200ResponseResultAsnRelatedInner&gt;**](RadarGetEntitiesAsnById200ResponseResultAsnRelatedInner.md) |  | 
 **source_** | **String** | Regional Internet Registry. | 
 **website** | **String** |  | 
+**aka** | **String** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

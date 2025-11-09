@@ -12,8 +12,8 @@ Name | Type | Description | Notes
 **detectionMode** | [**FirewallDetectionMode**](FirewallDetectionMode.md) |  | 
 **id** | **String** | Defines an identifier. | 
 **name** | **String** | The name of the WAF package. | 
-**status** | [**FirewallStatus**](FirewallStatus.md) |  | [optional] 
 **zoneId** | **String** | Defines an identifier. | 
+**status** | [**FirewallStatus**](FirewallStatus.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -8,26 +8,26 @@ part of 'iam_create_payload.dart';
 
 class _$IamCreatePayload extends IamCreatePayload {
   @override
+  final String name;
+  @override
+  final BuiltList<IamPolicyWithPermissionGroupsAndResources> policies;
+  @override
   final IamCondition? condition;
   @override
   final DateTime? expiresOn;
   @override
-  final String name;
-  @override
   final DateTime? notBefore;
-  @override
-  final BuiltList<IamPolicyWithPermissionGroupsAndResources> policies;
 
   factory _$IamCreatePayload(
           [void Function(IamCreatePayloadBuilder)? updates]) =>
       (IamCreatePayloadBuilder()..update(updates))._build();
 
   _$IamCreatePayload._(
-      {this.condition,
+      {required this.name,
+      required this.policies,
+      this.condition,
       this.expiresOn,
-      required this.name,
-      this.notBefore,
-      required this.policies})
+      this.notBefore})
       : super._();
   @override
   IamCreatePayload rebuild(void Function(IamCreatePayloadBuilder) updates) =>
@@ -41,21 +41,21 @@ class _$IamCreatePayload extends IamCreatePayload {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is IamCreatePayload &&
+        name == other.name &&
+        policies == other.policies &&
         condition == other.condition &&
         expiresOn == other.expiresOn &&
-        name == other.name &&
-        notBefore == other.notBefore &&
-        policies == other.policies;
+        notBefore == other.notBefore;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
+    _$hash = $jc(_$hash, name.hashCode);
+    _$hash = $jc(_$hash, policies.hashCode);
     _$hash = $jc(_$hash, condition.hashCode);
     _$hash = $jc(_$hash, expiresOn.hashCode);
-    _$hash = $jc(_$hash, name.hashCode);
     _$hash = $jc(_$hash, notBefore.hashCode);
-    _$hash = $jc(_$hash, policies.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -63,11 +63,11 @@ class _$IamCreatePayload extends IamCreatePayload {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'IamCreatePayload')
+          ..add('name', name)
+          ..add('policies', policies)
           ..add('condition', condition)
           ..add('expiresOn', expiresOn)
-          ..add('name', name)
-          ..add('notBefore', notBefore)
-          ..add('policies', policies))
+          ..add('notBefore', notBefore))
         .toString();
   }
 }
@@ -75,6 +75,18 @@ class _$IamCreatePayload extends IamCreatePayload {
 class IamCreatePayloadBuilder
     implements Builder<IamCreatePayload, IamCreatePayloadBuilder> {
   _$IamCreatePayload? _$v;
+
+  String? _name;
+  String? get name => _$this._name;
+  set name(String? name) => _$this._name = name;
+
+  ListBuilder<IamPolicyWithPermissionGroupsAndResources>? _policies;
+  ListBuilder<IamPolicyWithPermissionGroupsAndResources> get policies =>
+      _$this._policies ??=
+          ListBuilder<IamPolicyWithPermissionGroupsAndResources>();
+  set policies(
+          ListBuilder<IamPolicyWithPermissionGroupsAndResources>? policies) =>
+      _$this._policies = policies;
 
   IamConditionBuilder? _condition;
   IamConditionBuilder get condition =>
@@ -86,21 +98,9 @@ class IamCreatePayloadBuilder
   DateTime? get expiresOn => _$this._expiresOn;
   set expiresOn(DateTime? expiresOn) => _$this._expiresOn = expiresOn;
 
-  String? _name;
-  String? get name => _$this._name;
-  set name(String? name) => _$this._name = name;
-
   DateTime? _notBefore;
   DateTime? get notBefore => _$this._notBefore;
   set notBefore(DateTime? notBefore) => _$this._notBefore = notBefore;
-
-  ListBuilder<IamPolicyWithPermissionGroupsAndResources>? _policies;
-  ListBuilder<IamPolicyWithPermissionGroupsAndResources> get policies =>
-      _$this._policies ??=
-          ListBuilder<IamPolicyWithPermissionGroupsAndResources>();
-  set policies(
-          ListBuilder<IamPolicyWithPermissionGroupsAndResources>? policies) =>
-      _$this._policies = policies;
 
   IamCreatePayloadBuilder() {
     IamCreatePayload._defaults(this);
@@ -109,11 +109,11 @@ class IamCreatePayloadBuilder
   IamCreatePayloadBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
+      _name = $v.name;
+      _policies = $v.policies.toBuilder();
       _condition = $v.condition?.toBuilder();
       _expiresOn = $v.expiresOn;
-      _name = $v.name;
       _notBefore = $v.notBefore;
-      _policies = $v.policies.toBuilder();
       _$v = null;
     }
     return this;
@@ -137,21 +137,20 @@ class IamCreatePayloadBuilder
     try {
       _$result = _$v ??
           _$IamCreatePayload._(
-            condition: _condition?.build(),
-            expiresOn: expiresOn,
             name: BuiltValueNullFieldError.checkNotNull(
                 name, r'IamCreatePayload', 'name'),
-            notBefore: notBefore,
             policies: policies.build(),
+            condition: _condition?.build(),
+            expiresOn: expiresOn,
+            notBefore: notBefore,
           );
     } catch (_) {
       late String _$failedField;
       try {
-        _$failedField = 'condition';
-        _condition?.build();
-
         _$failedField = 'policies';
         policies.build();
+        _$failedField = 'condition';
+        _condition?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
             r'IamCreatePayload', _$failedField, e.toString());

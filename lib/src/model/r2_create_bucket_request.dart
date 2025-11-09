@@ -13,18 +13,18 @@ part 'r2_create_bucket_request.g.dart';
 /// R2CreateBucketRequest
 ///
 /// Properties:
-/// * [locationHint] 
 /// * [name] - Name of the bucket.
+/// * [locationHint] 
 /// * [storageClass] 
 @BuiltValue()
 abstract class R2CreateBucketRequest implements Built<R2CreateBucketRequest, R2CreateBucketRequestBuilder> {
-  @BuiltValueField(wireName: r'locationHint')
-  R2BucketLocation? get locationHint;
-  // enum locationHintEnum {  apac,  eeur,  enam,  weur,  wnam,  oc,  };
-
   /// Name of the bucket.
   @BuiltValueField(wireName: r'name')
   String get name;
+
+  @BuiltValueField(wireName: r'locationHint')
+  R2BucketLocation? get locationHint;
+  // enum locationHintEnum {  apac,  eeur,  enam,  weur,  wnam,  oc,  };
 
   @BuiltValueField(wireName: r'storageClass')
   R2StorageClass? get storageClass;
@@ -53,6 +53,11 @@ class _$R2CreateBucketRequestSerializer implements PrimitiveSerializer<R2CreateB
     R2CreateBucketRequest object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    yield r'name';
+    yield serializers.serialize(
+      object.name,
+      specifiedType: const FullType(String),
+    );
     if (object.locationHint != null) {
       yield r'locationHint';
       yield serializers.serialize(
@@ -60,11 +65,6 @@ class _$R2CreateBucketRequestSerializer implements PrimitiveSerializer<R2CreateB
         specifiedType: const FullType(R2BucketLocation),
       );
     }
-    yield r'name';
-    yield serializers.serialize(
-      object.name,
-      specifiedType: const FullType(String),
-    );
     if (object.storageClass != null) {
       yield r'storageClass';
       yield serializers.serialize(
@@ -95,19 +95,19 @@ class _$R2CreateBucketRequestSerializer implements PrimitiveSerializer<R2CreateB
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'locationHint':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(R2BucketLocation),
-          ) as R2BucketLocation;
-          result.locationHint = valueDes;
-          break;
         case r'name':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(String),
           ) as String;
           result.name = valueDes;
+          break;
+        case r'locationHint':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(R2BucketLocation),
+          ) as R2BucketLocation;
+          result.locationHint = valueDes;
           break;
         case r'storageClass':
           final valueDes = serializers.deserialize(

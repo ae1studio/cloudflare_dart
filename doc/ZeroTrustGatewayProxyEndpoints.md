@@ -8,11 +8,11 @@ import 'package:cloudflare_dart/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**createdAt** | [**DateTime**](DateTime.md) |  | [optional] 
-**id** | **String** |  | [optional] 
 **ips** | **BuiltList&lt;String&gt;** | Specify the list of CIDRs to restrict ingress connections. | 
 **kind** | **String** | The proxy endpoint kind | 
 **name** | **String** | Specify the name of the proxy endpoint. | 
+**createdAt** | [**DateTime**](DateTime.md) |  | [optional] 
+**id** | **String** |  | [optional] 
 **subdomain** | **String** | Specify the subdomain to use as the destination in the proxy client. | [optional] 
 **updatedAt** | [**DateTime**](DateTime.md) |  | [optional] 
 

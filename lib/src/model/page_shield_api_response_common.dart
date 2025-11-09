@@ -13,20 +13,20 @@ part 'page_shield_api_response_common.g.dart';
 /// PageShieldApiResponseCommon
 ///
 /// Properties:
+/// * [success] - Whether the API call was successful
 /// * [errors] 
 /// * [messages] 
-/// * [success] - Whether the API call was successful
 @BuiltValue(instantiable: false)
 abstract class PageShieldApiResponseCommon  {
+  /// Whether the API call was successful
+  @BuiltValueField(wireName: r'success')
+  bool get success;
+
   @BuiltValueField(wireName: r'errors')
   BuiltList<AaaMessagesInner>? get errors;
 
   @BuiltValueField(wireName: r'messages')
   BuiltList<AaaMessagesInner>? get messages;
-
-  /// Whether the API call was successful
-  @BuiltValueField(wireName: r'success')
-  bool get success;
 
   @BuiltValueSerializer(custom: true)
   static Serializer<PageShieldApiResponseCommon> get serializer => _$PageShieldApiResponseCommonSerializer();
@@ -44,6 +44,11 @@ class _$PageShieldApiResponseCommonSerializer implements PrimitiveSerializer<Pag
     PageShieldApiResponseCommon object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    yield r'success';
+    yield serializers.serialize(
+      object.success,
+      specifiedType: const FullType(bool),
+    );
     if (object.errors != null) {
       yield r'errors';
       yield serializers.serialize(
@@ -58,11 +63,6 @@ class _$PageShieldApiResponseCommonSerializer implements PrimitiveSerializer<Pag
         specifiedType: const FullType(BuiltList, [FullType(AaaMessagesInner)]),
       );
     }
-    yield r'success';
-    yield serializers.serialize(
-      object.success,
-      specifiedType: const FullType(bool),
-    );
   }
 
   @override
@@ -126,6 +126,13 @@ class _$$PageShieldApiResponseCommonSerializer implements PrimitiveSerializer<$P
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
+        case r'success':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(bool),
+          ) as bool;
+          result.success = valueDes;
+          break;
         case r'errors':
           final valueDes = serializers.deserialize(
             value,
@@ -139,13 +146,6 @@ class _$$PageShieldApiResponseCommonSerializer implements PrimitiveSerializer<$P
             specifiedType: const FullType(BuiltList, [FullType(AaaMessagesInner)]),
           ) as BuiltList<AaaMessagesInner>;
           result.messages.replace(valueDes);
-          break;
-        case r'success':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
-          result.success = valueDes;
           break;
         default:
           unhandled.add(key);

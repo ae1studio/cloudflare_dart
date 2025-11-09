@@ -12,26 +12,26 @@ part 'wor_list_workflows200_response_result_info.g.dart';
 ///
 /// Properties:
 /// * [count] 
-/// * [cursor] 
-/// * [page] 
 /// * [perPage] 
 /// * [totalCount] 
+/// * [cursor] 
+/// * [page] 
 @BuiltValue()
 abstract class WorListWorkflows200ResponseResultInfo implements Built<WorListWorkflows200ResponseResultInfo, WorListWorkflows200ResponseResultInfoBuilder> {
   @BuiltValueField(wireName: r'count')
   num get count;
-
-  @BuiltValueField(wireName: r'cursor')
-  String? get cursor;
-
-  @BuiltValueField(wireName: r'page')
-  num? get page;
 
   @BuiltValueField(wireName: r'per_page')
   num get perPage;
 
   @BuiltValueField(wireName: r'total_count')
   num get totalCount;
+
+  @BuiltValueField(wireName: r'cursor')
+  String? get cursor;
+
+  @BuiltValueField(wireName: r'page')
+  num? get page;
 
   WorListWorkflows200ResponseResultInfo._();
 
@@ -61,6 +61,16 @@ class _$WorListWorkflows200ResponseResultInfoSerializer implements PrimitiveSeri
       object.count,
       specifiedType: const FullType(num),
     );
+    yield r'per_page';
+    yield serializers.serialize(
+      object.perPage,
+      specifiedType: const FullType(num),
+    );
+    yield r'total_count';
+    yield serializers.serialize(
+      object.totalCount,
+      specifiedType: const FullType(num),
+    );
     if (object.cursor != null) {
       yield r'cursor';
       yield serializers.serialize(
@@ -75,16 +85,6 @@ class _$WorListWorkflows200ResponseResultInfoSerializer implements PrimitiveSeri
         specifiedType: const FullType(num),
       );
     }
-    yield r'per_page';
-    yield serializers.serialize(
-      object.perPage,
-      specifiedType: const FullType(num),
-    );
-    yield r'total_count';
-    yield serializers.serialize(
-      object.totalCount,
-      specifiedType: const FullType(num),
-    );
   }
 
   @override
@@ -115,20 +115,6 @@ class _$WorListWorkflows200ResponseResultInfoSerializer implements PrimitiveSeri
           ) as num;
           result.count = valueDes;
           break;
-        case r'cursor':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.cursor = valueDes;
-          break;
-        case r'page':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(num),
-          ) as num;
-          result.page = valueDes;
-          break;
         case r'per_page':
           final valueDes = serializers.deserialize(
             value,
@@ -142,6 +128,20 @@ class _$WorListWorkflows200ResponseResultInfoSerializer implements PrimitiveSeri
             specifiedType: const FullType(num),
           ) as num;
           result.totalCount = valueDes;
+          break;
+        case r'cursor':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.cursor = valueDes;
+          break;
+        case r'page':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(num),
+          ) as num;
+          result.page = valueDes;
           break;
         default:
           unhandled.add(key);

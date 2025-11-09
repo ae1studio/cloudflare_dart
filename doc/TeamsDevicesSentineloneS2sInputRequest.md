@@ -8,8 +8,8 @@ import 'package:cloudflare_dart/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**activeThreats** | **num** | The Number of active threats. | [optional] 
 **connectionId** | **String** | Posture Integration ID. | 
+**activeThreats** | **num** | The Number of active threats. | [optional] 
 **infected** | **bool** | Whether device is infected. | [optional] 
 **isActive** | **bool** | Whether device is active. | [optional] 
 **networkStatus** | **String** | Network status of device. | [optional] 

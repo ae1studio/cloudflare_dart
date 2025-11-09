@@ -8,11 +8,11 @@ part of 'workers_ai_create_finetune_request.dart';
 
 class _$WorkersAiCreateFinetuneRequest extends WorkersAiCreateFinetuneRequest {
   @override
-  final String? description;
-  @override
   final String model;
   @override
   final String name;
+  @override
+  final String? description;
   @override
   final bool? public;
 
@@ -21,7 +21,7 @@ class _$WorkersAiCreateFinetuneRequest extends WorkersAiCreateFinetuneRequest {
       (WorkersAiCreateFinetuneRequestBuilder()..update(updates))._build();
 
   _$WorkersAiCreateFinetuneRequest._(
-      {this.description, required this.model, required this.name, this.public})
+      {required this.model, required this.name, this.description, this.public})
       : super._();
   @override
   WorkersAiCreateFinetuneRequest rebuild(
@@ -36,18 +36,18 @@ class _$WorkersAiCreateFinetuneRequest extends WorkersAiCreateFinetuneRequest {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is WorkersAiCreateFinetuneRequest &&
-        description == other.description &&
         model == other.model &&
         name == other.name &&
+        description == other.description &&
         public == other.public;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, description.hashCode);
     _$hash = $jc(_$hash, model.hashCode);
     _$hash = $jc(_$hash, name.hashCode);
+    _$hash = $jc(_$hash, description.hashCode);
     _$hash = $jc(_$hash, public.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
@@ -56,9 +56,9 @@ class _$WorkersAiCreateFinetuneRequest extends WorkersAiCreateFinetuneRequest {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'WorkersAiCreateFinetuneRequest')
-          ..add('description', description)
           ..add('model', model)
           ..add('name', name)
+          ..add('description', description)
           ..add('public', public))
         .toString();
   }
@@ -70,10 +70,6 @@ class WorkersAiCreateFinetuneRequestBuilder
             WorkersAiCreateFinetuneRequestBuilder> {
   _$WorkersAiCreateFinetuneRequest? _$v;
 
-  String? _description;
-  String? get description => _$this._description;
-  set description(String? description) => _$this._description = description;
-
   String? _model;
   String? get model => _$this._model;
   set model(String? model) => _$this._model = model;
@@ -81,6 +77,10 @@ class WorkersAiCreateFinetuneRequestBuilder
   String? _name;
   String? get name => _$this._name;
   set name(String? name) => _$this._name = name;
+
+  String? _description;
+  String? get description => _$this._description;
+  set description(String? description) => _$this._description = description;
 
   bool? _public;
   bool? get public => _$this._public;
@@ -93,9 +93,9 @@ class WorkersAiCreateFinetuneRequestBuilder
   WorkersAiCreateFinetuneRequestBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _description = $v.description;
       _model = $v.model;
       _name = $v.name;
+      _description = $v.description;
       _public = $v.public;
       _$v = null;
     }
@@ -118,11 +118,11 @@ class WorkersAiCreateFinetuneRequestBuilder
   _$WorkersAiCreateFinetuneRequest _build() {
     final _$result = _$v ??
         _$WorkersAiCreateFinetuneRequest._(
-          description: description,
           model: BuiltValueNullFieldError.checkNotNull(
               model, r'WorkersAiCreateFinetuneRequest', 'model'),
           name: BuiltValueNullFieldError.checkNotNull(
               name, r'WorkersAiCreateFinetuneRequest', 'name'),
+          description: description,
           public: public,
         );
     replace(_$result);

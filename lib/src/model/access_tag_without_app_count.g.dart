@@ -8,9 +8,9 @@ part of 'access_tag_without_app_count.dart';
 
 class _$AccessTagWithoutAppCount extends AccessTagWithoutAppCount {
   @override
-  final JsonObject? createdAt;
-  @override
   final String name;
+  @override
+  final JsonObject? createdAt;
   @override
   final JsonObject? updatedAt;
 
@@ -19,7 +19,7 @@ class _$AccessTagWithoutAppCount extends AccessTagWithoutAppCount {
       (AccessTagWithoutAppCountBuilder()..update(updates))._build();
 
   _$AccessTagWithoutAppCount._(
-      {this.createdAt, required this.name, this.updatedAt})
+      {required this.name, this.createdAt, this.updatedAt})
       : super._();
   @override
   AccessTagWithoutAppCount rebuild(
@@ -34,16 +34,16 @@ class _$AccessTagWithoutAppCount extends AccessTagWithoutAppCount {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is AccessTagWithoutAppCount &&
-        createdAt == other.createdAt &&
         name == other.name &&
+        createdAt == other.createdAt &&
         updatedAt == other.updatedAt;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, createdAt.hashCode);
     _$hash = $jc(_$hash, name.hashCode);
+    _$hash = $jc(_$hash, createdAt.hashCode);
     _$hash = $jc(_$hash, updatedAt.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
@@ -52,8 +52,8 @@ class _$AccessTagWithoutAppCount extends AccessTagWithoutAppCount {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'AccessTagWithoutAppCount')
-          ..add('createdAt', createdAt)
           ..add('name', name)
+          ..add('createdAt', createdAt)
           ..add('updatedAt', updatedAt))
         .toString();
   }
@@ -64,13 +64,13 @@ class AccessTagWithoutAppCountBuilder
         Builder<AccessTagWithoutAppCount, AccessTagWithoutAppCountBuilder> {
   _$AccessTagWithoutAppCount? _$v;
 
-  JsonObject? _createdAt;
-  JsonObject? get createdAt => _$this._createdAt;
-  set createdAt(JsonObject? createdAt) => _$this._createdAt = createdAt;
-
   String? _name;
   String? get name => _$this._name;
   set name(String? name) => _$this._name = name;
+
+  JsonObject? _createdAt;
+  JsonObject? get createdAt => _$this._createdAt;
+  set createdAt(JsonObject? createdAt) => _$this._createdAt = createdAt;
 
   JsonObject? _updatedAt;
   JsonObject? get updatedAt => _$this._updatedAt;
@@ -83,8 +83,8 @@ class AccessTagWithoutAppCountBuilder
   AccessTagWithoutAppCountBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _createdAt = $v.createdAt;
       _name = $v.name;
+      _createdAt = $v.createdAt;
       _updatedAt = $v.updatedAt;
       _$v = null;
     }
@@ -107,9 +107,9 @@ class AccessTagWithoutAppCountBuilder
   _$AccessTagWithoutAppCount _build() {
     final _$result = _$v ??
         _$AccessTagWithoutAppCount._(
-          createdAt: createdAt,
           name: BuiltValueNullFieldError.checkNotNull(
               name, r'AccessTagWithoutAppCount', 'name'),
+          createdAt: createdAt,
           updatedAt: updatedAt,
         );
     replace(_$result);

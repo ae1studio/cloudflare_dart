@@ -15,19 +15,15 @@ part 'access_base_policy_req.g.dart';
 ///
 /// Properties:
 /// * [decision] 
-/// * [exclude] - Rules evaluated with a NOT logical operator. To match the policy, a user cannot meet any of the Exclude rules.
 /// * [include] - Rules evaluated with an OR logical operator. A user needs to meet only one of the Include rules.
 /// * [name] - The name of the Access policy.
+/// * [exclude] - Rules evaluated with a NOT logical operator. To match the policy, a user cannot meet any of the Exclude rules.
 /// * [require] - Rules evaluated with an AND logical operator. To match the policy, a user must meet all of the Require rules.
 @BuiltValue(instantiable: false)
 abstract class AccessBasePolicyReq  {
   @BuiltValueField(wireName: r'decision')
   AccessDecision get decision;
   // enum decisionEnum {  allow,  deny,  non_identity,  bypass,  };
-
-  /// Rules evaluated with a NOT logical operator. To match the policy, a user cannot meet any of the Exclude rules.
-  @BuiltValueField(wireName: r'exclude')
-  BuiltList<AccessRule>? get exclude;
 
   /// Rules evaluated with an OR logical operator. A user needs to meet only one of the Include rules.
   @BuiltValueField(wireName: r'include')
@@ -36,6 +32,10 @@ abstract class AccessBasePolicyReq  {
   /// The name of the Access policy.
   @BuiltValueField(wireName: r'name')
   String get name;
+
+  /// Rules evaluated with a NOT logical operator. To match the policy, a user cannot meet any of the Exclude rules.
+  @BuiltValueField(wireName: r'exclude')
+  BuiltList<AccessRule>? get exclude;
 
   /// Rules evaluated with an AND logical operator. To match the policy, a user must meet all of the Require rules.
   @BuiltValueField(wireName: r'require')
@@ -62,13 +62,6 @@ class _$AccessBasePolicyReqSerializer implements PrimitiveSerializer<AccessBaseP
       object.decision,
       specifiedType: const FullType(AccessDecision),
     );
-    if (object.exclude != null) {
-      yield r'exclude';
-      yield serializers.serialize(
-        object.exclude,
-        specifiedType: const FullType(BuiltList, [FullType(AccessRule)]),
-      );
-    }
     yield r'include';
     yield serializers.serialize(
       object.include,
@@ -79,6 +72,13 @@ class _$AccessBasePolicyReqSerializer implements PrimitiveSerializer<AccessBaseP
       object.name,
       specifiedType: const FullType(String),
     );
+    if (object.exclude != null) {
+      yield r'exclude';
+      yield serializers.serialize(
+        object.exclude,
+        specifiedType: const FullType(BuiltList, [FullType(AccessRule)]),
+      );
+    }
     if (object.require != null) {
       yield r'require';
       yield serializers.serialize(
@@ -156,13 +156,6 @@ class _$$AccessBasePolicyReqSerializer implements PrimitiveSerializer<$AccessBas
           ) as AccessDecision;
           result.decision = valueDes;
           break;
-        case r'exclude':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(AccessRule)]),
-          ) as BuiltList<AccessRule>;
-          result.exclude.replace(valueDes);
-          break;
         case r'include':
           final valueDes = serializers.deserialize(
             value,
@@ -176,6 +169,13 @@ class _$$AccessBasePolicyReqSerializer implements PrimitiveSerializer<$AccessBas
             specifiedType: const FullType(String),
           ) as String;
           result.name = valueDes;
+          break;
+        case r'exclude':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BuiltList, [FullType(AccessRule)]),
+          ) as BuiltList<AccessRule>;
+          result.exclude.replace(valueDes);
           break;
         case r'require':
           final valueDes = serializers.deserialize(

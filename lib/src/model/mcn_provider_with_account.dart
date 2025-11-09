@@ -16,21 +16,21 @@ part 'mcn_provider_with_account.g.dart';
 /// McnProviderWithAccount
 ///
 /// Properties:
-/// * [awsArn] 
-/// * [azureSubscriptionId] 
-/// * [azureTenantId] 
 /// * [cloudType] 
-/// * [description] 
 /// * [friendlyName] 
-/// * [gcpProjectId] 
-/// * [gcpServiceAccountEmail] 
 /// * [id] 
 /// * [lastUpdated] 
 /// * [lifecycleState] 
 /// * [state] 
 /// * [stateV2] 
-/// * [status] 
 /// * [accountId] 
+/// * [awsArn] 
+/// * [azureSubscriptionId] 
+/// * [azureTenantId] 
+/// * [description] 
+/// * [gcpProjectId] 
+/// * [gcpServiceAccountEmail] 
+/// * [status] 
 @BuiltValue()
 abstract class McnProviderWithAccount implements McnProvider, Built<McnProviderWithAccount, McnProviderWithAccountBuilder> {
   @BuiltValueField(wireName: r'account_id')

@@ -12,17 +12,14 @@ part 'brapi_post_screenshot_request_all_of_screenshot_options_clip.g.dart';
 ///
 /// Properties:
 /// * [height] 
-/// * [scale] 
 /// * [width] 
 /// * [x] 
 /// * [y] 
+/// * [scale] 
 @BuiltValue()
 abstract class BrapiPostScreenshotRequestAllOfScreenshotOptionsClip implements Built<BrapiPostScreenshotRequestAllOfScreenshotOptionsClip, BrapiPostScreenshotRequestAllOfScreenshotOptionsClipBuilder> {
   @BuiltValueField(wireName: r'height')
   num get height;
-
-  @BuiltValueField(wireName: r'scale')
-  num? get scale;
 
   @BuiltValueField(wireName: r'width')
   num get width;
@@ -32,6 +29,9 @@ abstract class BrapiPostScreenshotRequestAllOfScreenshotOptionsClip implements B
 
   @BuiltValueField(wireName: r'y')
   num get y;
+
+  @BuiltValueField(wireName: r'scale')
+  num? get scale;
 
   BrapiPostScreenshotRequestAllOfScreenshotOptionsClip._();
 
@@ -61,13 +61,6 @@ class _$BrapiPostScreenshotRequestAllOfScreenshotOptionsClipSerializer implement
       object.height,
       specifiedType: const FullType(num),
     );
-    if (object.scale != null) {
-      yield r'scale';
-      yield serializers.serialize(
-        object.scale,
-        specifiedType: const FullType(num),
-      );
-    }
     yield r'width';
     yield serializers.serialize(
       object.width,
@@ -83,6 +76,13 @@ class _$BrapiPostScreenshotRequestAllOfScreenshotOptionsClipSerializer implement
       object.y,
       specifiedType: const FullType(num),
     );
+    if (object.scale != null) {
+      yield r'scale';
+      yield serializers.serialize(
+        object.scale,
+        specifiedType: const FullType(num),
+      );
+    }
   }
 
   @override
@@ -113,13 +113,6 @@ class _$BrapiPostScreenshotRequestAllOfScreenshotOptionsClipSerializer implement
           ) as num;
           result.height = valueDes;
           break;
-        case r'scale':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(num),
-          ) as num;
-          result.scale = valueDes;
-          break;
         case r'width':
           final valueDes = serializers.deserialize(
             value,
@@ -140,6 +133,13 @@ class _$BrapiPostScreenshotRequestAllOfScreenshotOptionsClipSerializer implement
             specifiedType: const FullType(num),
           ) as num;
           result.y = valueDes;
+          break;
+        case r'scale':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(num),
+          ) as num;
+          result.scale = valueDes;
           break;
         default:
           unhandled.add(key);

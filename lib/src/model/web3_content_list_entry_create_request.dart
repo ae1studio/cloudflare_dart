@@ -13,21 +13,21 @@ part 'web3_content_list_entry_create_request.g.dart';
 ///
 /// Properties:
 /// * [content] - Specify the CID or content path of content to block.
-/// * [description] - Specify an optional description of the content list entry.
 /// * [type] 
+/// * [description] - Specify an optional description of the content list entry.
 @BuiltValue()
 abstract class Web3ContentListEntryCreateRequest implements Built<Web3ContentListEntryCreateRequest, Web3ContentListEntryCreateRequestBuilder> {
   /// Specify the CID or content path of content to block.
   @BuiltValueField(wireName: r'content')
   String get content;
 
-  /// Specify an optional description of the content list entry.
-  @BuiltValueField(wireName: r'description')
-  String? get description;
-
   @BuiltValueField(wireName: r'type')
   Web3ContentListEntryType get type;
   // enum typeEnum {  cid,  content_path,  };
+
+  /// Specify an optional description of the content list entry.
+  @BuiltValueField(wireName: r'description')
+  String? get description;
 
   Web3ContentListEntryCreateRequest._();
 
@@ -57,6 +57,11 @@ class _$Web3ContentListEntryCreateRequestSerializer implements PrimitiveSerializ
       object.content,
       specifiedType: const FullType(String),
     );
+    yield r'type';
+    yield serializers.serialize(
+      object.type,
+      specifiedType: const FullType(Web3ContentListEntryType),
+    );
     if (object.description != null) {
       yield r'description';
       yield serializers.serialize(
@@ -64,11 +69,6 @@ class _$Web3ContentListEntryCreateRequestSerializer implements PrimitiveSerializ
         specifiedType: const FullType(String),
       );
     }
-    yield r'type';
-    yield serializers.serialize(
-      object.type,
-      specifiedType: const FullType(Web3ContentListEntryType),
-    );
   }
 
   @override
@@ -99,19 +99,19 @@ class _$Web3ContentListEntryCreateRequestSerializer implements PrimitiveSerializ
           ) as String;
           result.content = valueDes;
           break;
-        case r'description':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.description = valueDes;
-          break;
         case r'type':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(Web3ContentListEntryType),
           ) as Web3ContentListEntryType;
           result.type = valueDes;
+          break;
+        case r'description':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.description = valueDes;
           break;
         default:
           unhandled.add(key);

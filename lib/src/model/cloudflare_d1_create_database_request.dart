@@ -13,18 +13,18 @@ part 'cloudflare_d1_create_database_request.g.dart';
 /// CloudflareD1CreateDatabaseRequest
 ///
 /// Properties:
-/// * [jurisdiction] 
 /// * [name] - D1 database name.
+/// * [jurisdiction] 
 /// * [primaryLocationHint] 
 @BuiltValue()
 abstract class CloudflareD1CreateDatabaseRequest implements Built<CloudflareD1CreateDatabaseRequest, CloudflareD1CreateDatabaseRequestBuilder> {
-  @BuiltValueField(wireName: r'jurisdiction')
-  D1Jurisdiction? get jurisdiction;
-  // enum jurisdictionEnum {  eu,  fedramp,  };
-
   /// D1 database name.
   @BuiltValueField(wireName: r'name')
   String get name;
+
+  @BuiltValueField(wireName: r'jurisdiction')
+  D1Jurisdiction? get jurisdiction;
+  // enum jurisdictionEnum {  eu,  fedramp,  };
 
   @BuiltValueField(wireName: r'primary_location_hint')
   D1PrimaryLocationHint? get primaryLocationHint;
@@ -53,6 +53,11 @@ class _$CloudflareD1CreateDatabaseRequestSerializer implements PrimitiveSerializ
     CloudflareD1CreateDatabaseRequest object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    yield r'name';
+    yield serializers.serialize(
+      object.name,
+      specifiedType: const FullType(String),
+    );
     if (object.jurisdiction != null) {
       yield r'jurisdiction';
       yield serializers.serialize(
@@ -60,11 +65,6 @@ class _$CloudflareD1CreateDatabaseRequestSerializer implements PrimitiveSerializ
         specifiedType: const FullType(D1Jurisdiction),
       );
     }
-    yield r'name';
-    yield serializers.serialize(
-      object.name,
-      specifiedType: const FullType(String),
-    );
     if (object.primaryLocationHint != null) {
       yield r'primary_location_hint';
       yield serializers.serialize(
@@ -95,19 +95,19 @@ class _$CloudflareD1CreateDatabaseRequestSerializer implements PrimitiveSerializ
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'jurisdiction':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(D1Jurisdiction),
-          ) as D1Jurisdiction;
-          result.jurisdiction = valueDes;
-          break;
         case r'name':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(String),
           ) as String;
           result.name = valueDes;
+          break;
+        case r'jurisdiction':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(D1Jurisdiction),
+          ) as D1Jurisdiction;
+          result.jurisdiction = valueDes;
           break;
         case r'primary_location_hint':
           final valueDes = serializers.deserialize(

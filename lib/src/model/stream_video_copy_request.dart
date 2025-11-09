@@ -14,16 +14,20 @@ part 'stream_video_copy_request.g.dart';
 /// StreamVideoCopyRequest
 ///
 /// Properties:
+/// * [url] - A video's URL. The server must be publicly routable and support `HTTP HEAD` requests and `HTTP GET` range requests. The server should respond to `HTTP HEAD` requests with a `content-range` header that includes the size of the file.
 /// * [allowedOrigins] - Lists the origins allowed to display the video. Enter allowed origin domains in an array and use `*` for wildcard subdomains. Empty arrays allow the video to be viewed on any origin.
 /// * [creator] - A user-defined identifier for the media creator.
 /// * [meta] - A user modifiable key-value store used to reference other systems of record for managing videos.
 /// * [requireSignedURLs] - Indicates whether the video can be a accessed using the UID. When set to `true`, a signed token must be generated with a signing key to view the video.
 /// * [scheduledDeletion] - Indicates the date and time at which the video will be deleted. Omit the field to indicate no change, or include with a `null` value to remove an existing scheduled deletion. If specified, must be at least 30 days from upload time.
 /// * [thumbnailTimestampPct] - The timestamp for a thumbnail image calculated as a percentage value of the video's duration. To convert from a second-wise timestamp to a percentage, divide the desired timestamp by the total duration of the video.  If this value is not set, the default thumbnail image is taken from 0s of the video.
-/// * [url] - A video's URL. The server must be publicly routable and support `HTTP HEAD` requests and `HTTP GET` range requests. The server should respond to `HTTP HEAD` requests with a `content-range` header that includes the size of the file.
 /// * [watermark] 
 @BuiltValue()
 abstract class StreamVideoCopyRequest implements Built<StreamVideoCopyRequest, StreamVideoCopyRequestBuilder> {
+  /// A video's URL. The server must be publicly routable and support `HTTP HEAD` requests and `HTTP GET` range requests. The server should respond to `HTTP HEAD` requests with a `content-range` header that includes the size of the file.
+  @BuiltValueField(wireName: r'url')
+  String get url;
+
   /// Lists the origins allowed to display the video. Enter allowed origin domains in an array and use `*` for wildcard subdomains. Empty arrays allow the video to be viewed on any origin.
   @BuiltValueField(wireName: r'allowedOrigins')
   BuiltList<String>? get allowedOrigins;
@@ -47,10 +51,6 @@ abstract class StreamVideoCopyRequest implements Built<StreamVideoCopyRequest, S
   /// The timestamp for a thumbnail image calculated as a percentage value of the video's duration. To convert from a second-wise timestamp to a percentage, divide the desired timestamp by the total duration of the video.  If this value is not set, the default thumbnail image is taken from 0s of the video.
   @BuiltValueField(wireName: r'thumbnailTimestampPct')
   num? get thumbnailTimestampPct;
-
-  /// A video's URL. The server must be publicly routable and support `HTTP HEAD` requests and `HTTP GET` range requests. The server should respond to `HTTP HEAD` requests with a `content-range` header that includes the size of the file.
-  @BuiltValueField(wireName: r'url')
-  String get url;
 
   @BuiltValueField(wireName: r'watermark')
   StreamWatermarkAtUpload? get watermark;
@@ -80,6 +80,11 @@ class _$StreamVideoCopyRequestSerializer implements PrimitiveSerializer<StreamVi
     StreamVideoCopyRequest object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    yield r'url';
+    yield serializers.serialize(
+      object.url,
+      specifiedType: const FullType(String),
+    );
     if (object.allowedOrigins != null) {
       yield r'allowedOrigins';
       yield serializers.serialize(
@@ -122,11 +127,6 @@ class _$StreamVideoCopyRequestSerializer implements PrimitiveSerializer<StreamVi
         specifiedType: const FullType(num),
       );
     }
-    yield r'url';
-    yield serializers.serialize(
-      object.url,
-      specifiedType: const FullType(String),
-    );
     if (object.watermark != null) {
       yield r'watermark';
       yield serializers.serialize(
@@ -157,6 +157,13 @@ class _$StreamVideoCopyRequestSerializer implements PrimitiveSerializer<StreamVi
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
+        case r'url':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.url = valueDes;
+          break;
         case r'allowedOrigins':
           final valueDes = serializers.deserialize(
             value,
@@ -198,13 +205,6 @@ class _$StreamVideoCopyRequestSerializer implements PrimitiveSerializer<StreamVi
             specifiedType: const FullType(num),
           ) as num;
           result.thumbnailTimestampPct = valueDes;
-          break;
-        case r'url':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.url = valueDes;
           break;
         case r'watermark':
           final valueDes = serializers.deserialize(

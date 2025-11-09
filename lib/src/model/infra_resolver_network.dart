@@ -12,15 +12,15 @@ part 'infra_resolver_network.g.dart';
 /// InfraResolverNetwork
 ///
 /// Properties:
-/// * [resolverIps] 
 /// * [tunnelId] 
+/// * [resolverIps] 
 @BuiltValue()
 abstract class InfraResolverNetwork implements Built<InfraResolverNetwork, InfraResolverNetworkBuilder> {
-  @BuiltValueField(wireName: r'resolver_ips')
-  BuiltList<String>? get resolverIps;
-
   @BuiltValueField(wireName: r'tunnel_id')
   String get tunnelId;
+
+  @BuiltValueField(wireName: r'resolver_ips')
+  BuiltList<String>? get resolverIps;
 
   InfraResolverNetwork._();
 
@@ -45,6 +45,11 @@ class _$InfraResolverNetworkSerializer implements PrimitiveSerializer<InfraResol
     InfraResolverNetwork object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    yield r'tunnel_id';
+    yield serializers.serialize(
+      object.tunnelId,
+      specifiedType: const FullType(String),
+    );
     if (object.resolverIps != null) {
       yield r'resolver_ips';
       yield serializers.serialize(
@@ -52,11 +57,6 @@ class _$InfraResolverNetworkSerializer implements PrimitiveSerializer<InfraResol
         specifiedType: const FullType.nullable(BuiltList, [FullType(String)]),
       );
     }
-    yield r'tunnel_id';
-    yield serializers.serialize(
-      object.tunnelId,
-      specifiedType: const FullType(String),
-    );
   }
 
   @override
@@ -80,6 +80,13 @@ class _$InfraResolverNetworkSerializer implements PrimitiveSerializer<InfraResol
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
+        case r'tunnel_id':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.tunnelId = valueDes;
+          break;
         case r'resolver_ips':
           final valueDes = serializers.deserialize(
             value,
@@ -87,13 +94,6 @@ class _$InfraResolverNetworkSerializer implements PrimitiveSerializer<InfraResol
           ) as BuiltList<String>?;
           if (valueDes == null) continue;
           result.resolverIps.replace(valueDes);
-          break;
-        case r'tunnel_id':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.tunnelId = valueDes;
           break;
         default:
           unhandled.add(key);

@@ -8,6 +8,8 @@ import 'package:cloudflare_dart/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**uuid** | **String** |  | 
+**value** | **String** |  | 
 **activeDuration** | **String** |  | [optional] 
 **actorCategory** | **String** |  | [optional] 
 **aliasGroupNames** | **BuiltList&lt;String&gt;** |  | [optional] 
@@ -23,8 +25,6 @@ Name | Type | Description | Notes
 **originCountryISO** | **String** |  | [optional] 
 **priority** | **num** |  | [optional] 
 **sophisticationLevel** | **String** |  | [optional] 
-**uuid** | **String** |  | 
-**value** | **String** |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

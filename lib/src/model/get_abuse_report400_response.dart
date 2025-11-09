@@ -16,22 +16,22 @@ part 'get_abuse_report400_response.g.dart';
 ///
 /// Properties:
 /// * [errors] 
+/// * [success] 
 /// * [messages] 
 /// * [result] 
-/// * [success] 
 @BuiltValue()
 abstract class GetAbuseReport400Response implements Built<GetAbuseReport400Response, GetAbuseReport400ResponseBuilder> {
   @BuiltValueField(wireName: r'errors')
   BuiltList<AbuseReportsErrorMessage> get errors;
+
+  @BuiltValueField(wireName: r'success')
+  bool get success;
 
   @BuiltValueField(wireName: r'messages')
   BuiltList<AbuseReportsMessage>? get messages;
 
   @BuiltValueField(wireName: r'result')
   AbuseReportsAbuseReport? get result;
-
-  @BuiltValueField(wireName: r'success')
-  bool get success;
 
   GetAbuseReport400Response._();
 
@@ -61,6 +61,11 @@ class _$GetAbuseReport400ResponseSerializer implements PrimitiveSerializer<GetAb
       object.errors,
       specifiedType: const FullType(BuiltList, [FullType(AbuseReportsErrorMessage)]),
     );
+    yield r'success';
+    yield serializers.serialize(
+      object.success,
+      specifiedType: const FullType(bool),
+    );
     if (object.messages != null) {
       yield r'messages';
       yield serializers.serialize(
@@ -75,11 +80,6 @@ class _$GetAbuseReport400ResponseSerializer implements PrimitiveSerializer<GetAb
         specifiedType: const FullType(AbuseReportsAbuseReport),
       );
     }
-    yield r'success';
-    yield serializers.serialize(
-      object.success,
-      specifiedType: const FullType(bool),
-    );
   }
 
   @override
@@ -110,6 +110,13 @@ class _$GetAbuseReport400ResponseSerializer implements PrimitiveSerializer<GetAb
           ) as BuiltList<AbuseReportsErrorMessage>;
           result.errors.replace(valueDes);
           break;
+        case r'success':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(bool),
+          ) as bool;
+          result.success = valueDes;
+          break;
         case r'messages':
           final valueDes = serializers.deserialize(
             value,
@@ -123,13 +130,6 @@ class _$GetAbuseReport400ResponseSerializer implements PrimitiveSerializer<GetAb
             specifiedType: const FullType(AbuseReportsAbuseReport),
           ) as AbuseReportsAbuseReport;
           result.result.replace(valueDes);
-          break;
-        case r'success':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
-          result.success = valueDes;
           break;
         default:
           unhandled.add(key);

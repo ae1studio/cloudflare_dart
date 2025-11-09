@@ -8,12 +8,12 @@ import 'package:cloudflare_dart/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**ipRestrictions** | **BuiltList&lt;String&gt;** |  | 
 **allowedDeliveryModes** | [**BuiltList&lt;EmailSecurityDeliveryMode&gt;**](EmailSecurityDeliveryMode.md) |  | [optional] 
 **domain** | **String** |  | [optional] 
 **dropDispositions** | [**BuiltList&lt;EmailSecurityDispositionLabel&gt;**](EmailSecurityDispositionLabel.md) |  | [optional] 
 **folder** | [**EmailSecurityScannableFolder**](EmailSecurityScannableFolder.md) |  | [optional] 
 **integrationId** | **String** |  | [optional] 
-**ipRestrictions** | **BuiltList&lt;String&gt;** |  | 
 **lookbackHops** | **int** |  | [optional] 
 **regions** | **BuiltList&lt;String&gt;** |  | [optional] 
 **requireTlsInbound** | **bool** |  | [optional] 

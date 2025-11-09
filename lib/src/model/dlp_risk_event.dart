@@ -13,16 +13,13 @@ part 'dlp_risk_event.g.dart';
 /// DlpRiskEvent
 ///
 /// Properties:
-/// * [eventDetails] 
 /// * [id] 
 /// * [name] 
 /// * [riskLevel] 
 /// * [timestamp] 
+/// * [eventDetails] 
 @BuiltValue()
 abstract class DlpRiskEvent implements Built<DlpRiskEvent, DlpRiskEventBuilder> {
-  @BuiltValueField(wireName: r'event_details')
-  JsonObject? get eventDetails;
-
   @BuiltValueField(wireName: r'id')
   String get id;
 
@@ -35,6 +32,9 @@ abstract class DlpRiskEvent implements Built<DlpRiskEvent, DlpRiskEventBuilder> 
 
   @BuiltValueField(wireName: r'timestamp')
   DateTime get timestamp;
+
+  @BuiltValueField(wireName: r'event_details')
+  JsonObject? get eventDetails;
 
   DlpRiskEvent._();
 
@@ -59,13 +59,6 @@ class _$DlpRiskEventSerializer implements PrimitiveSerializer<DlpRiskEvent> {
     DlpRiskEvent object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
-    if (object.eventDetails != null) {
-      yield r'event_details';
-      yield serializers.serialize(
-        object.eventDetails,
-        specifiedType: const FullType.nullable(JsonObject),
-      );
-    }
     yield r'id';
     yield serializers.serialize(
       object.id,
@@ -86,6 +79,13 @@ class _$DlpRiskEventSerializer implements PrimitiveSerializer<DlpRiskEvent> {
       object.timestamp,
       specifiedType: const FullType(DateTime),
     );
+    if (object.eventDetails != null) {
+      yield r'event_details';
+      yield serializers.serialize(
+        object.eventDetails,
+        specifiedType: const FullType.nullable(JsonObject),
+      );
+    }
   }
 
   @override
@@ -109,14 +109,6 @@ class _$DlpRiskEventSerializer implements PrimitiveSerializer<DlpRiskEvent> {
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'event_details':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(JsonObject),
-          ) as JsonObject?;
-          if (valueDes == null) continue;
-          result.eventDetails = valueDes;
-          break;
         case r'id':
           final valueDes = serializers.deserialize(
             value,
@@ -144,6 +136,14 @@ class _$DlpRiskEventSerializer implements PrimitiveSerializer<DlpRiskEvent> {
             specifiedType: const FullType(DateTime),
           ) as DateTime;
           result.timestamp = valueDes;
+          break;
+        case r'event_details':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType.nullable(JsonObject),
+          ) as JsonObject?;
+          if (valueDes == null) continue;
+          result.eventDetails = valueDes;
           break;
         default:
           unhandled.add(key);

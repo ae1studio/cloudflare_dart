@@ -36,6 +36,8 @@ part 'rulesets_request_rule.g.dart';
 /// RulesetsRequestRule
 ///
 /// Properties:
+/// * [lastUpdated] - The timestamp of when the rule was last modified.
+/// * [version] - The version of the rule.
 /// * [action] 
 /// * [actionParameters] 
 /// * [categories] - The categories of the rule.
@@ -44,11 +46,9 @@ part 'rulesets_request_rule.g.dart';
 /// * [exposedCredentialCheck] 
 /// * [expression] - The expression defining which traffic will match the rule.
 /// * [id] - The unique ID of the rule.
-/// * [lastUpdated] - The timestamp of when the rule was last modified.
 /// * [logging] 
 /// * [ratelimit] 
 /// * [ref] - The reference of the rule (the rule's ID by default).
-/// * [version] - The version of the rule.
 @BuiltValue(instantiable: false)
 abstract class RulesetsRequestRule  {
   /// One Of [RulesetsBlockRule], [RulesetsChallengeRule], [RulesetsCompressResponseRule], [RulesetsDDoSDynamicRule], [RulesetsExecuteRule], [RulesetsForceConnectionCloseRule], [RulesetsJsChallengeRule], [RulesetsLogCustomFieldRule], [RulesetsLogRule], [RulesetsManagedChallengeRule], [RulesetsRedirectRule], [RulesetsRewriteRule], [RulesetsRouteRule], [RulesetsScoreRule], [RulesetsServeErrorRule], [RulesetsSetCacheSettingsRule], [RulesetsSetConfigRule], [RulesetsSkipRule]

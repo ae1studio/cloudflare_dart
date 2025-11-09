@@ -8,9 +8,9 @@ part of 'init_new_sso_connector_request.dart';
 
 class _$InitNewSsoConnectorRequest extends InitNewSsoConnectorRequest {
   @override
-  final bool? beginVerification;
-  @override
   final String emailDomain;
+  @override
+  final bool? beginVerification;
   @override
   final bool? useFedrampLanguage;
 
@@ -19,8 +19,8 @@ class _$InitNewSsoConnectorRequest extends InitNewSsoConnectorRequest {
       (InitNewSsoConnectorRequestBuilder()..update(updates))._build();
 
   _$InitNewSsoConnectorRequest._(
-      {this.beginVerification,
-      required this.emailDomain,
+      {required this.emailDomain,
+      this.beginVerification,
       this.useFedrampLanguage})
       : super._();
   @override
@@ -36,16 +36,16 @@ class _$InitNewSsoConnectorRequest extends InitNewSsoConnectorRequest {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is InitNewSsoConnectorRequest &&
-        beginVerification == other.beginVerification &&
         emailDomain == other.emailDomain &&
+        beginVerification == other.beginVerification &&
         useFedrampLanguage == other.useFedrampLanguage;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, beginVerification.hashCode);
     _$hash = $jc(_$hash, emailDomain.hashCode);
+    _$hash = $jc(_$hash, beginVerification.hashCode);
     _$hash = $jc(_$hash, useFedrampLanguage.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
@@ -54,8 +54,8 @@ class _$InitNewSsoConnectorRequest extends InitNewSsoConnectorRequest {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'InitNewSsoConnectorRequest')
-          ..add('beginVerification', beginVerification)
           ..add('emailDomain', emailDomain)
+          ..add('beginVerification', beginVerification)
           ..add('useFedrampLanguage', useFedrampLanguage))
         .toString();
   }
@@ -66,14 +66,14 @@ class InitNewSsoConnectorRequestBuilder
         Builder<InitNewSsoConnectorRequest, InitNewSsoConnectorRequestBuilder> {
   _$InitNewSsoConnectorRequest? _$v;
 
+  String? _emailDomain;
+  String? get emailDomain => _$this._emailDomain;
+  set emailDomain(String? emailDomain) => _$this._emailDomain = emailDomain;
+
   bool? _beginVerification;
   bool? get beginVerification => _$this._beginVerification;
   set beginVerification(bool? beginVerification) =>
       _$this._beginVerification = beginVerification;
-
-  String? _emailDomain;
-  String? get emailDomain => _$this._emailDomain;
-  set emailDomain(String? emailDomain) => _$this._emailDomain = emailDomain;
 
   bool? _useFedrampLanguage;
   bool? get useFedrampLanguage => _$this._useFedrampLanguage;
@@ -87,8 +87,8 @@ class InitNewSsoConnectorRequestBuilder
   InitNewSsoConnectorRequestBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _beginVerification = $v.beginVerification;
       _emailDomain = $v.emailDomain;
+      _beginVerification = $v.beginVerification;
       _useFedrampLanguage = $v.useFedrampLanguage;
       _$v = null;
     }
@@ -111,9 +111,9 @@ class InitNewSsoConnectorRequestBuilder
   _$InitNewSsoConnectorRequest _build() {
     final _$result = _$v ??
         _$InitNewSsoConnectorRequest._(
-          beginVerification: beginVerification,
           emailDomain: BuiltValueNullFieldError.checkNotNull(
               emailDomain, r'InitNewSsoConnectorRequest', 'emailDomain'),
+          beginVerification: beginVerification,
           useFedrampLanguage: useFedrampLanguage,
         );
     replace(_$result);

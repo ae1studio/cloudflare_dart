@@ -147,23 +147,23 @@ class _$AccessAzureAD extends AccessAzureAD {
   @override
   final JsonObject config;
   @override
-  final String? id;
-  @override
   final String name;
   @override
-  final AccessIdentityProviderScimConfig? scimConfig;
-  @override
   final AccessIdentityProviderTypeEnum type;
+  @override
+  final String? id;
+  @override
+  final AccessIdentityProviderScimConfig? scimConfig;
 
   factory _$AccessAzureAD([void Function(AccessAzureADBuilder)? updates]) =>
       (AccessAzureADBuilder()..update(updates))._build();
 
   _$AccessAzureAD._(
       {required this.config,
-      this.id,
       required this.name,
-      this.scimConfig,
-      required this.type})
+      required this.type,
+      this.id,
+      this.scimConfig})
       : super._();
   @override
   AccessAzureAD rebuild(void Function(AccessAzureADBuilder) updates) =>
@@ -177,20 +177,20 @@ class _$AccessAzureAD extends AccessAzureAD {
     if (identical(other, this)) return true;
     return other is AccessAzureAD &&
         config == other.config &&
-        id == other.id &&
         name == other.name &&
-        scimConfig == other.scimConfig &&
-        type == other.type;
+        type == other.type &&
+        id == other.id &&
+        scimConfig == other.scimConfig;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
     _$hash = $jc(_$hash, config.hashCode);
-    _$hash = $jc(_$hash, id.hashCode);
     _$hash = $jc(_$hash, name.hashCode);
-    _$hash = $jc(_$hash, scimConfig.hashCode);
     _$hash = $jc(_$hash, type.hashCode);
+    _$hash = $jc(_$hash, id.hashCode);
+    _$hash = $jc(_$hash, scimConfig.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -199,10 +199,10 @@ class _$AccessAzureAD extends AccessAzureAD {
   String toString() {
     return (newBuiltValueToStringHelper(r'AccessAzureAD')
           ..add('config', config)
-          ..add('id', id)
           ..add('name', name)
-          ..add('scimConfig', scimConfig)
-          ..add('type', type))
+          ..add('type', type)
+          ..add('id', id)
+          ..add('scimConfig', scimConfig))
         .toString();
   }
 }
@@ -217,13 +217,18 @@ class AccessAzureADBuilder
   JsonObject? get config => _$this._config;
   set config(covariant JsonObject? config) => _$this._config = config;
 
-  String? _id;
-  String? get id => _$this._id;
-  set id(covariant String? id) => _$this._id = id;
-
   String? _name;
   String? get name => _$this._name;
   set name(covariant String? name) => _$this._name = name;
+
+  AccessIdentityProviderTypeEnum? _type;
+  AccessIdentityProviderTypeEnum? get type => _$this._type;
+  set type(covariant AccessIdentityProviderTypeEnum? type) =>
+      _$this._type = type;
+
+  String? _id;
+  String? get id => _$this._id;
+  set id(covariant String? id) => _$this._id = id;
 
   AccessIdentityProviderScimConfigBuilder? _scimConfig;
   AccessIdentityProviderScimConfigBuilder get scimConfig =>
@@ -231,11 +236,6 @@ class AccessAzureADBuilder
   set scimConfig(
           covariant AccessIdentityProviderScimConfigBuilder? scimConfig) =>
       _$this._scimConfig = scimConfig;
-
-  AccessIdentityProviderTypeEnum? _type;
-  AccessIdentityProviderTypeEnum? get type => _$this._type;
-  set type(covariant AccessIdentityProviderTypeEnum? type) =>
-      _$this._type = type;
 
   AccessAzureADBuilder() {
     AccessAzureAD._defaults(this);
@@ -245,10 +245,10 @@ class AccessAzureADBuilder
     final $v = _$v;
     if ($v != null) {
       _config = $v.config;
-      _id = $v.id;
       _name = $v.name;
-      _scimConfig = $v.scimConfig?.toBuilder();
       _type = $v.type;
+      _id = $v.id;
+      _scimConfig = $v.scimConfig?.toBuilder();
       _$v = null;
     }
     return this;
@@ -274,12 +274,12 @@ class AccessAzureADBuilder
           _$AccessAzureAD._(
             config: BuiltValueNullFieldError.checkNotNull(
                 config, r'AccessAzureAD', 'config'),
-            id: id,
             name: BuiltValueNullFieldError.checkNotNull(
                 name, r'AccessAzureAD', 'name'),
-            scimConfig: _scimConfig?.build(),
             type: BuiltValueNullFieldError.checkNotNull(
                 type, r'AccessAzureAD', 'type'),
+            id: id,
+            scimConfig: _scimConfig?.build(),
           );
     } catch (_) {
       late String _$failedField;

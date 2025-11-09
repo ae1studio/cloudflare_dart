@@ -15,30 +15,30 @@ part 'post_v4_accounts_by_account_id_pipelines_v1_sinks_request.g.dart';
 /// PostV4AccountsByAccountIdPipelinesV1SinksRequest
 ///
 /// Properties:
+/// * [name] - Defines the name of the Sink.
+/// * [type] - Specifies the type of sink.
 /// * [config] 
 /// * [format] 
-/// * [name] - Defines the name of the Sink.
 /// * [schema] 
-/// * [type] - Specifies the type of sink.
 @BuiltValue()
 abstract class PostV4AccountsByAccountIdPipelinesV1SinksRequest implements Built<PostV4AccountsByAccountIdPipelinesV1SinksRequest, PostV4AccountsByAccountIdPipelinesV1SinksRequestBuilder> {
+  /// Defines the name of the Sink.
+  @BuiltValueField(wireName: r'name')
+  String get name;
+
+  /// Specifies the type of sink.
+  @BuiltValueField(wireName: r'type')
+  PostV4AccountsByAccountIdPipelinesV1SinksRequestTypeEnum get type;
+  // enum typeEnum {  r2,  r2_data_catalog,  };
+
   @BuiltValueField(wireName: r'config')
   GetV4AccountsByAccountIdPipelinesV1Sinks200ResponseResultInnerConfig? get config;
 
   @BuiltValueField(wireName: r'format')
   CloudflarePipelinesFormat? get format;
 
-  /// Defines the name of the Sink.
-  @BuiltValueField(wireName: r'name')
-  String get name;
-
   @BuiltValueField(wireName: r'schema')
   CloudflarePipelinesConnectionSchema? get schema;
-
-  /// Specifies the type of sink.
-  @BuiltValueField(wireName: r'type')
-  PostV4AccountsByAccountIdPipelinesV1SinksRequestTypeEnum get type;
-  // enum typeEnum {  r2,  r2_data_catalog,  };
 
   PostV4AccountsByAccountIdPipelinesV1SinksRequest._();
 
@@ -63,6 +63,16 @@ class _$PostV4AccountsByAccountIdPipelinesV1SinksRequestSerializer implements Pr
     PostV4AccountsByAccountIdPipelinesV1SinksRequest object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    yield r'name';
+    yield serializers.serialize(
+      object.name,
+      specifiedType: const FullType(String),
+    );
+    yield r'type';
+    yield serializers.serialize(
+      object.type,
+      specifiedType: const FullType(PostV4AccountsByAccountIdPipelinesV1SinksRequestTypeEnum),
+    );
     if (object.config != null) {
       yield r'config';
       yield serializers.serialize(
@@ -77,11 +87,6 @@ class _$PostV4AccountsByAccountIdPipelinesV1SinksRequestSerializer implements Pr
         specifiedType: const FullType(CloudflarePipelinesFormat),
       );
     }
-    yield r'name';
-    yield serializers.serialize(
-      object.name,
-      specifiedType: const FullType(String),
-    );
     if (object.schema != null) {
       yield r'schema';
       yield serializers.serialize(
@@ -89,11 +94,6 @@ class _$PostV4AccountsByAccountIdPipelinesV1SinksRequestSerializer implements Pr
         specifiedType: const FullType(CloudflarePipelinesConnectionSchema),
       );
     }
-    yield r'type';
-    yield serializers.serialize(
-      object.type,
-      specifiedType: const FullType(PostV4AccountsByAccountIdPipelinesV1SinksRequestTypeEnum),
-    );
   }
 
   @override
@@ -117,6 +117,20 @@ class _$PostV4AccountsByAccountIdPipelinesV1SinksRequestSerializer implements Pr
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
+        case r'name':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.name = valueDes;
+          break;
+        case r'type':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(PostV4AccountsByAccountIdPipelinesV1SinksRequestTypeEnum),
+          ) as PostV4AccountsByAccountIdPipelinesV1SinksRequestTypeEnum;
+          result.type = valueDes;
+          break;
         case r'config':
           final valueDes = serializers.deserialize(
             value,
@@ -131,26 +145,12 @@ class _$PostV4AccountsByAccountIdPipelinesV1SinksRequestSerializer implements Pr
           ) as CloudflarePipelinesFormat;
           result.format.replace(valueDes);
           break;
-        case r'name':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.name = valueDes;
-          break;
         case r'schema':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(CloudflarePipelinesConnectionSchema),
           ) as CloudflarePipelinesConnectionSchema;
           result.schema.replace(valueDes);
-          break;
-        case r'type':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(PostV4AccountsByAccountIdPipelinesV1SinksRequestTypeEnum),
-          ) as PostV4AccountsByAccountIdPipelinesV1SinksRequestTypeEnum;
-          result.type = valueDes;
           break;
         default:
           unhandled.add(key);

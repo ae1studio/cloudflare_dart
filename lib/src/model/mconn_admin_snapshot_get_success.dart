@@ -15,10 +15,10 @@ part 'mconn_admin_snapshot_get_success.g.dart';
 /// MconnAdminSnapshotGetSuccess
 ///
 /// Properties:
-/// * [errors] 
-/// * [messages] 
 /// * [success] 
 /// * [result] 
+/// * [errors] 
+/// * [messages] 
 @BuiltValue()
 abstract class MconnAdminSnapshotGetSuccess implements MconnEnvelope, Built<MconnAdminSnapshotGetSuccess, MconnAdminSnapshotGetSuccessBuilder> {
   @BuiltValueField(wireName: r'result')

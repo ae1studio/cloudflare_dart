@@ -8,16 +8,16 @@ part of 'images_image_variant_patch_request.dart';
 
 class _$ImagesImageVariantPatchRequest extends ImagesImageVariantPatchRequest {
   @override
-  final bool? neverRequireSignedURLs;
-  @override
   final ImagesImageVariantOptions options;
+  @override
+  final bool? neverRequireSignedURLs;
 
   factory _$ImagesImageVariantPatchRequest(
           [void Function(ImagesImageVariantPatchRequestBuilder)? updates]) =>
       (ImagesImageVariantPatchRequestBuilder()..update(updates))._build();
 
   _$ImagesImageVariantPatchRequest._(
-      {this.neverRequireSignedURLs, required this.options})
+      {required this.options, this.neverRequireSignedURLs})
       : super._();
   @override
   ImagesImageVariantPatchRequest rebuild(
@@ -32,15 +32,15 @@ class _$ImagesImageVariantPatchRequest extends ImagesImageVariantPatchRequest {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is ImagesImageVariantPatchRequest &&
-        neverRequireSignedURLs == other.neverRequireSignedURLs &&
-        options == other.options;
+        options == other.options &&
+        neverRequireSignedURLs == other.neverRequireSignedURLs;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, neverRequireSignedURLs.hashCode);
     _$hash = $jc(_$hash, options.hashCode);
+    _$hash = $jc(_$hash, neverRequireSignedURLs.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -48,8 +48,8 @@ class _$ImagesImageVariantPatchRequest extends ImagesImageVariantPatchRequest {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'ImagesImageVariantPatchRequest')
-          ..add('neverRequireSignedURLs', neverRequireSignedURLs)
-          ..add('options', options))
+          ..add('options', options)
+          ..add('neverRequireSignedURLs', neverRequireSignedURLs))
         .toString();
   }
 }
@@ -60,16 +60,16 @@ class ImagesImageVariantPatchRequestBuilder
             ImagesImageVariantPatchRequestBuilder> {
   _$ImagesImageVariantPatchRequest? _$v;
 
-  bool? _neverRequireSignedURLs;
-  bool? get neverRequireSignedURLs => _$this._neverRequireSignedURLs;
-  set neverRequireSignedURLs(bool? neverRequireSignedURLs) =>
-      _$this._neverRequireSignedURLs = neverRequireSignedURLs;
-
   ImagesImageVariantOptionsBuilder? _options;
   ImagesImageVariantOptionsBuilder get options =>
       _$this._options ??= ImagesImageVariantOptionsBuilder();
   set options(ImagesImageVariantOptionsBuilder? options) =>
       _$this._options = options;
+
+  bool? _neverRequireSignedURLs;
+  bool? get neverRequireSignedURLs => _$this._neverRequireSignedURLs;
+  set neverRequireSignedURLs(bool? neverRequireSignedURLs) =>
+      _$this._neverRequireSignedURLs = neverRequireSignedURLs;
 
   ImagesImageVariantPatchRequestBuilder() {
     ImagesImageVariantPatchRequest._defaults(this);
@@ -78,8 +78,8 @@ class ImagesImageVariantPatchRequestBuilder
   ImagesImageVariantPatchRequestBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _neverRequireSignedURLs = $v.neverRequireSignedURLs;
       _options = $v.options.toBuilder();
+      _neverRequireSignedURLs = $v.neverRequireSignedURLs;
       _$v = null;
     }
     return this;
@@ -103,8 +103,8 @@ class ImagesImageVariantPatchRequestBuilder
     try {
       _$result = _$v ??
           _$ImagesImageVariantPatchRequest._(
-            neverRequireSignedURLs: neverRequireSignedURLs,
             options: options.build(),
+            neverRequireSignedURLs: neverRequireSignedURLs,
           );
     } catch (_) {
       late String _$failedField;

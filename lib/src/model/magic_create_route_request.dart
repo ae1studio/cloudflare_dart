@@ -12,18 +12,14 @@ part 'magic_create_route_request.g.dart';
 /// MagicCreateRouteRequest
 ///
 /// Properties:
-/// * [description] - An optional human provided description of the static route.
 /// * [nexthop] - The next-hop IP Address for the static route.
 /// * [prefix] - IP Prefix in Classless Inter-Domain Routing format.
 /// * [priority] - Priority of the static route.
+/// * [description] - An optional human provided description of the static route.
 /// * [scope] 
 /// * [weight] - Optional weight of the ECMP scope - if provided.
 @BuiltValue()
 abstract class MagicCreateRouteRequest implements Built<MagicCreateRouteRequest, MagicCreateRouteRequestBuilder> {
-  /// An optional human provided description of the static route.
-  @BuiltValueField(wireName: r'description')
-  String? get description;
-
   /// The next-hop IP Address for the static route.
   @BuiltValueField(wireName: r'nexthop')
   String get nexthop;
@@ -35,6 +31,10 @@ abstract class MagicCreateRouteRequest implements Built<MagicCreateRouteRequest,
   /// Priority of the static route.
   @BuiltValueField(wireName: r'priority')
   int get priority;
+
+  /// An optional human provided description of the static route.
+  @BuiltValueField(wireName: r'description')
+  String? get description;
 
   @BuiltValueField(wireName: r'scope')
   MagicScope? get scope;
@@ -66,13 +66,6 @@ class _$MagicCreateRouteRequestSerializer implements PrimitiveSerializer<MagicCr
     MagicCreateRouteRequest object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
-    if (object.description != null) {
-      yield r'description';
-      yield serializers.serialize(
-        object.description,
-        specifiedType: const FullType(String),
-      );
-    }
     yield r'nexthop';
     yield serializers.serialize(
       object.nexthop,
@@ -88,6 +81,13 @@ class _$MagicCreateRouteRequestSerializer implements PrimitiveSerializer<MagicCr
       object.priority,
       specifiedType: const FullType(int),
     );
+    if (object.description != null) {
+      yield r'description';
+      yield serializers.serialize(
+        object.description,
+        specifiedType: const FullType(String),
+      );
+    }
     if (object.scope != null) {
       yield r'scope';
       yield serializers.serialize(
@@ -125,13 +125,6 @@ class _$MagicCreateRouteRequestSerializer implements PrimitiveSerializer<MagicCr
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'description':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.description = valueDes;
-          break;
         case r'nexthop':
           final valueDes = serializers.deserialize(
             value,
@@ -152,6 +145,13 @@ class _$MagicCreateRouteRequestSerializer implements PrimitiveSerializer<MagicCr
             specifiedType: const FullType(int),
           ) as int;
           result.priority = valueDes;
+          break;
+        case r'description':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.description = valueDes;
           break;
         case r'scope':
           final valueDes = serializers.deserialize(

@@ -72,9 +72,9 @@ class _$AccessScimConfigAuthenticationOauth2
   @override
   final AccessScimConfigAuthenticationOauth2SchemeEnum scheme;
   @override
-  final BuiltList<String>? scopes;
-  @override
   final String tokenUrl;
+  @override
+  final BuiltList<String>? scopes;
 
   factory _$AccessScimConfigAuthenticationOauth2(
           [void Function(AccessScimConfigAuthenticationOauth2Builder)?
@@ -86,8 +86,8 @@ class _$AccessScimConfigAuthenticationOauth2
       required this.clientId,
       required this.clientSecret,
       required this.scheme,
-      this.scopes,
-      required this.tokenUrl})
+      required this.tokenUrl,
+      this.scopes})
       : super._();
   @override
   AccessScimConfigAuthenticationOauth2 rebuild(
@@ -106,8 +106,8 @@ class _$AccessScimConfigAuthenticationOauth2
         clientId == other.clientId &&
         clientSecret == other.clientSecret &&
         scheme == other.scheme &&
-        scopes == other.scopes &&
-        tokenUrl == other.tokenUrl;
+        tokenUrl == other.tokenUrl &&
+        scopes == other.scopes;
   }
 
   @override
@@ -117,8 +117,8 @@ class _$AccessScimConfigAuthenticationOauth2
     _$hash = $jc(_$hash, clientId.hashCode);
     _$hash = $jc(_$hash, clientSecret.hashCode);
     _$hash = $jc(_$hash, scheme.hashCode);
-    _$hash = $jc(_$hash, scopes.hashCode);
     _$hash = $jc(_$hash, tokenUrl.hashCode);
+    _$hash = $jc(_$hash, scopes.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -130,8 +130,8 @@ class _$AccessScimConfigAuthenticationOauth2
           ..add('clientId', clientId)
           ..add('clientSecret', clientSecret)
           ..add('scheme', scheme)
-          ..add('scopes', scopes)
-          ..add('tokenUrl', tokenUrl))
+          ..add('tokenUrl', tokenUrl)
+          ..add('scopes', scopes))
         .toString();
   }
 }
@@ -160,13 +160,13 @@ class AccessScimConfigAuthenticationOauth2Builder
   set scheme(AccessScimConfigAuthenticationOauth2SchemeEnum? scheme) =>
       _$this._scheme = scheme;
 
-  ListBuilder<String>? _scopes;
-  ListBuilder<String> get scopes => _$this._scopes ??= ListBuilder<String>();
-  set scopes(ListBuilder<String>? scopes) => _$this._scopes = scopes;
-
   String? _tokenUrl;
   String? get tokenUrl => _$this._tokenUrl;
   set tokenUrl(String? tokenUrl) => _$this._tokenUrl = tokenUrl;
+
+  ListBuilder<String>? _scopes;
+  ListBuilder<String> get scopes => _$this._scopes ??= ListBuilder<String>();
+  set scopes(ListBuilder<String>? scopes) => _$this._scopes = scopes;
 
   AccessScimConfigAuthenticationOauth2Builder() {
     AccessScimConfigAuthenticationOauth2._defaults(this);
@@ -179,8 +179,8 @@ class AccessScimConfigAuthenticationOauth2Builder
       _clientId = $v.clientId;
       _clientSecret = $v.clientSecret;
       _scheme = $v.scheme;
-      _scopes = $v.scopes?.toBuilder();
       _tokenUrl = $v.tokenUrl;
+      _scopes = $v.scopes?.toBuilder();
       _$v = null;
     }
     return this;
@@ -215,9 +215,9 @@ class AccessScimConfigAuthenticationOauth2Builder
                 r'AccessScimConfigAuthenticationOauth2', 'clientSecret'),
             scheme: BuiltValueNullFieldError.checkNotNull(
                 scheme, r'AccessScimConfigAuthenticationOauth2', 'scheme'),
-            scopes: _scopes?.build(),
             tokenUrl: BuiltValueNullFieldError.checkNotNull(
                 tokenUrl, r'AccessScimConfigAuthenticationOauth2', 'tokenUrl'),
+            scopes: _scopes?.build(),
           );
     } catch (_) {
       late String _$failedField;

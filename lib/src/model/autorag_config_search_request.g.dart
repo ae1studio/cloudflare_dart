@@ -8,11 +8,11 @@ part of 'autorag_config_search_request.dart';
 
 class _$AutoragConfigSearchRequest extends AutoragConfigSearchRequest {
   @override
+  final String query;
+  @override
   final AutoragConfigAiSearchRequestFilters? filters;
   @override
   final int? maxNumResults;
-  @override
-  final String query;
   @override
   final AutoragConfigAiSearchRequestRankingOptions? rankingOptions;
   @override
@@ -25,9 +25,9 @@ class _$AutoragConfigSearchRequest extends AutoragConfigSearchRequest {
       (AutoragConfigSearchRequestBuilder()..update(updates))._build();
 
   _$AutoragConfigSearchRequest._(
-      {this.filters,
+      {required this.query,
+      this.filters,
       this.maxNumResults,
-      required this.query,
       this.rankingOptions,
       this.reranking,
       this.rewriteQuery})
@@ -45,9 +45,9 @@ class _$AutoragConfigSearchRequest extends AutoragConfigSearchRequest {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is AutoragConfigSearchRequest &&
+        query == other.query &&
         filters == other.filters &&
         maxNumResults == other.maxNumResults &&
-        query == other.query &&
         rankingOptions == other.rankingOptions &&
         reranking == other.reranking &&
         rewriteQuery == other.rewriteQuery;
@@ -56,9 +56,9 @@ class _$AutoragConfigSearchRequest extends AutoragConfigSearchRequest {
   @override
   int get hashCode {
     var _$hash = 0;
+    _$hash = $jc(_$hash, query.hashCode);
     _$hash = $jc(_$hash, filters.hashCode);
     _$hash = $jc(_$hash, maxNumResults.hashCode);
-    _$hash = $jc(_$hash, query.hashCode);
     _$hash = $jc(_$hash, rankingOptions.hashCode);
     _$hash = $jc(_$hash, reranking.hashCode);
     _$hash = $jc(_$hash, rewriteQuery.hashCode);
@@ -69,9 +69,9 @@ class _$AutoragConfigSearchRequest extends AutoragConfigSearchRequest {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'AutoragConfigSearchRequest')
+          ..add('query', query)
           ..add('filters', filters)
           ..add('maxNumResults', maxNumResults)
-          ..add('query', query)
           ..add('rankingOptions', rankingOptions)
           ..add('reranking', reranking)
           ..add('rewriteQuery', rewriteQuery))
@@ -84,6 +84,10 @@ class AutoragConfigSearchRequestBuilder
         Builder<AutoragConfigSearchRequest, AutoragConfigSearchRequestBuilder> {
   _$AutoragConfigSearchRequest? _$v;
 
+  String? _query;
+  String? get query => _$this._query;
+  set query(String? query) => _$this._query = query;
+
   AutoragConfigAiSearchRequestFiltersBuilder? _filters;
   AutoragConfigAiSearchRequestFiltersBuilder get filters =>
       _$this._filters ??= AutoragConfigAiSearchRequestFiltersBuilder();
@@ -94,10 +98,6 @@ class AutoragConfigSearchRequestBuilder
   int? get maxNumResults => _$this._maxNumResults;
   set maxNumResults(int? maxNumResults) =>
       _$this._maxNumResults = maxNumResults;
-
-  String? _query;
-  String? get query => _$this._query;
-  set query(String? query) => _$this._query = query;
 
   AutoragConfigAiSearchRequestRankingOptionsBuilder? _rankingOptions;
   AutoragConfigAiSearchRequestRankingOptionsBuilder get rankingOptions =>
@@ -124,9 +124,9 @@ class AutoragConfigSearchRequestBuilder
   AutoragConfigSearchRequestBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
+      _query = $v.query;
       _filters = $v.filters?.toBuilder();
       _maxNumResults = $v.maxNumResults;
-      _query = $v.query;
       _rankingOptions = $v.rankingOptions?.toBuilder();
       _reranking = $v.reranking?.toBuilder();
       _rewriteQuery = $v.rewriteQuery;
@@ -153,10 +153,10 @@ class AutoragConfigSearchRequestBuilder
     try {
       _$result = _$v ??
           _$AutoragConfigSearchRequest._(
-            filters: _filters?.build(),
-            maxNumResults: maxNumResults,
             query: BuiltValueNullFieldError.checkNotNull(
                 query, r'AutoragConfigSearchRequest', 'query'),
+            filters: _filters?.build(),
+            maxNumResults: maxNumResults,
             rankingOptions: _rankingOptions?.build(),
             reranking: _reranking?.build(),
             rewriteQuery: rewriteQuery,

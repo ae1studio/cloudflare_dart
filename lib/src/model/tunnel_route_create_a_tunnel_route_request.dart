@@ -11,16 +11,12 @@ part 'tunnel_route_create_a_tunnel_route_request.g.dart';
 /// TunnelRouteCreateATunnelRouteRequest
 ///
 /// Properties:
-/// * [comment] - Optional remark describing the route.
 /// * [network] - The private IPv4 or IPv6 range connected by the route, in CIDR notation.
 /// * [tunnelId] - UUID of the tunnel.
+/// * [comment] - Optional remark describing the route.
 /// * [virtualNetworkId] - UUID of the virtual network.
 @BuiltValue()
 abstract class TunnelRouteCreateATunnelRouteRequest implements Built<TunnelRouteCreateATunnelRouteRequest, TunnelRouteCreateATunnelRouteRequestBuilder> {
-  /// Optional remark describing the route.
-  @BuiltValueField(wireName: r'comment')
-  String? get comment;
-
   /// The private IPv4 or IPv6 range connected by the route, in CIDR notation.
   @BuiltValueField(wireName: r'network')
   String get network;
@@ -28,6 +24,10 @@ abstract class TunnelRouteCreateATunnelRouteRequest implements Built<TunnelRoute
   /// UUID of the tunnel.
   @BuiltValueField(wireName: r'tunnel_id')
   String get tunnelId;
+
+  /// Optional remark describing the route.
+  @BuiltValueField(wireName: r'comment')
+  String? get comment;
 
   /// UUID of the virtual network.
   @BuiltValueField(wireName: r'virtual_network_id')
@@ -57,13 +57,6 @@ class _$TunnelRouteCreateATunnelRouteRequestSerializer implements PrimitiveSeria
     TunnelRouteCreateATunnelRouteRequest object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
-    if (object.comment != null) {
-      yield r'comment';
-      yield serializers.serialize(
-        object.comment,
-        specifiedType: const FullType(String),
-      );
-    }
     yield r'network';
     yield serializers.serialize(
       object.network,
@@ -74,6 +67,13 @@ class _$TunnelRouteCreateATunnelRouteRequestSerializer implements PrimitiveSeria
       object.tunnelId,
       specifiedType: const FullType(String),
     );
+    if (object.comment != null) {
+      yield r'comment';
+      yield serializers.serialize(
+        object.comment,
+        specifiedType: const FullType(String),
+      );
+    }
     if (object.virtualNetworkId != null) {
       yield r'virtual_network_id';
       yield serializers.serialize(
@@ -104,13 +104,6 @@ class _$TunnelRouteCreateATunnelRouteRequestSerializer implements PrimitiveSeria
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'comment':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.comment = valueDes;
-          break;
         case r'network':
           final valueDes = serializers.deserialize(
             value,
@@ -124,6 +117,13 @@ class _$TunnelRouteCreateATunnelRouteRequestSerializer implements PrimitiveSeria
             specifiedType: const FullType(String),
           ) as String;
           result.tunnelId = valueDes;
+          break;
+        case r'comment':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.comment = valueDes;
           break;
         case r'virtual_network_id':
           final valueDes = serializers.deserialize(

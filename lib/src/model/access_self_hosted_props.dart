@@ -16,6 +16,8 @@ part 'access_self_hosted_props.g.dart';
 /// AccessSelfHostedProps
 ///
 /// Properties:
+/// * [domain] - The primary hostname and path secured by Access. This domain will be displayed if the app is visible in the App Launcher.
+/// * [type] 
 /// * [allowAuthenticateViaWarp] - When set to true, users can authenticate to this application using their WARP session.  When set to false this application will always require direct IdP authentication. This setting always overrides the organization setting for WARP authentication.
 /// * [allowIframe] - Enables loading application content in an iFrame.
 /// * [allowedIdps] - The identity providers your users can select when connecting to this application. Defaults to all IdPs configured in your account.
@@ -27,7 +29,6 @@ part 'access_self_hosted_props.g.dart';
 /// * [customNonIdentityDenyUrl] - The custom URL a user is redirected to when they are denied access to the application when failing non-identity rules.
 /// * [customPages] - The custom pages that will be displayed when applicable for this application
 /// * [destinations] - List of destinations secured by Access. This supersedes `self_hosted_domains` to allow for more flexibility in defining different types of domains. If `destinations` are provided, then `self_hosted_domains` will be ignored. 
-/// * [domain] - The primary hostname and path secured by Access. This domain will be displayed if the app is visible in the App Launcher.
 /// * [enableBindingCookie] - Enables the binding cookie, which increases security against compromised authorization tokens and CSRF attacks.
 /// * [httpOnlyCookieAttribute] - Enables the HttpOnly cookie attribute, which increases security against XSS attacks.
 /// * [logoUrl] - The image URL for the logo shown in the App Launcher dashboard.
@@ -42,9 +43,16 @@ part 'access_self_hosted_props.g.dart';
 /// * [sessionDuration] - The amount of time that tokens issued for this application will be valid. Must be in the format `300ms` or `2h45m`. Valid time units are: ns, us (or µs), ms, s, m, h. Note: unsupported for infrastructure type applications.
 /// * [skipInterstitial] - Enables automatic authentication through cloudflared.
 /// * [tags] - The tags you want assigned to an application. Tags are used to filter applications in the App Launcher dashboard.
-/// * [type] 
 @BuiltValue(instantiable: false)
 abstract class AccessSelfHostedProps  {
+  /// The primary hostname and path secured by Access. This domain will be displayed if the app is visible in the App Launcher.
+  @BuiltValueField(wireName: r'domain')
+  String get domain;
+
+  @BuiltValueField(wireName: r'type')
+  AccessType get type;
+  // enum typeEnum {  self_hosted,  saas,  ssh,  vnc,  app_launcher,  warp,  biso,  bookmark,  dash_sso,  infrastructure,  rdp,  mcp,  mcp_portal,  };
+
   /// When set to true, users can authenticate to this application using their WARP session.  When set to false this application will always require direct IdP authentication. This setting always overrides the organization setting for WARP authentication.
   @BuiltValueField(wireName: r'allow_authenticate_via_warp')
   bool? get allowAuthenticateViaWarp;
@@ -87,10 +95,6 @@ abstract class AccessSelfHostedProps  {
   /// List of destinations secured by Access. This supersedes `self_hosted_domains` to allow for more flexibility in defining different types of domains. If `destinations` are provided, then `self_hosted_domains` will be ignored. 
   @BuiltValueField(wireName: r'destinations')
   BuiltList<AccessDestinationsInner>? get destinations;
-
-  /// The primary hostname and path secured by Access. This domain will be displayed if the app is visible in the App Launcher.
-  @BuiltValueField(wireName: r'domain')
-  String get domain;
 
   /// Enables the binding cookie, which increases security against compromised authorization tokens and CSRF attacks.
   @BuiltValueField(wireName: r'enable_binding_cookie')
@@ -148,10 +152,6 @@ abstract class AccessSelfHostedProps  {
   @BuiltValueField(wireName: r'tags')
   BuiltList<String>? get tags;
 
-  @BuiltValueField(wireName: r'type')
-  AccessType get type;
-  // enum typeEnum {  self_hosted,  saas,  ssh,  vnc,  app_launcher,  warp,  biso,  bookmark,  dash_sso,  infrastructure,  rdp,  mcp,  mcp_portal,  };
-
   @BuiltValueSerializer(custom: true)
   static Serializer<AccessSelfHostedProps> get serializer => _$AccessSelfHostedPropsSerializer();
 }
@@ -168,6 +168,16 @@ class _$AccessSelfHostedPropsSerializer implements PrimitiveSerializer<AccessSel
     AccessSelfHostedProps object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    yield r'domain';
+    yield serializers.serialize(
+      object.domain,
+      specifiedType: const FullType(String),
+    );
+    yield r'type';
+    yield serializers.serialize(
+      object.type,
+      specifiedType: const FullType(AccessType),
+    );
     if (object.allowAuthenticateViaWarp != null) {
       yield r'allow_authenticate_via_warp';
       yield serializers.serialize(
@@ -245,11 +255,6 @@ class _$AccessSelfHostedPropsSerializer implements PrimitiveSerializer<AccessSel
         specifiedType: const FullType(BuiltList, [FullType(AccessDestinationsInner)]),
       );
     }
-    yield r'domain';
-    yield serializers.serialize(
-      object.domain,
-      specifiedType: const FullType(String),
-    );
     if (object.enableBindingCookie != null) {
       yield r'enable_binding_cookie';
       yield serializers.serialize(
@@ -348,11 +353,6 @@ class _$AccessSelfHostedPropsSerializer implements PrimitiveSerializer<AccessSel
         specifiedType: const FullType(BuiltList, [FullType(String)]),
       );
     }
-    yield r'type';
-    yield serializers.serialize(
-      object.type,
-      specifiedType: const FullType(AccessType),
-    );
   }
 
   @override
@@ -416,6 +416,20 @@ class _$$AccessSelfHostedPropsSerializer implements PrimitiveSerializer<$AccessS
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
+        case r'domain':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.domain = valueDes;
+          break;
+        case r'type':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(AccessType),
+          ) as AccessType;
+          result.type = valueDes;
+          break;
         case r'allow_authenticate_via_warp':
           final valueDes = serializers.deserialize(
             value,
@@ -492,13 +506,6 @@ class _$$AccessSelfHostedPropsSerializer implements PrimitiveSerializer<$AccessS
             specifiedType: const FullType(BuiltList, [FullType(AccessDestinationsInner)]),
           ) as BuiltList<AccessDestinationsInner>;
           result.destinations.replace(valueDes);
-          break;
-        case r'domain':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.domain = valueDes;
           break;
         case r'enable_binding_cookie':
           final valueDes = serializers.deserialize(
@@ -597,13 +604,6 @@ class _$$AccessSelfHostedPropsSerializer implements PrimitiveSerializer<$AccessS
             specifiedType: const FullType(BuiltList, [FullType(String)]),
           ) as BuiltList<String>;
           result.tags.replace(valueDes);
-          break;
-        case r'type':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(AccessType),
-          ) as AccessType;
-          result.type = valueDes;
           break;
         default:
           unhandled.add(key);

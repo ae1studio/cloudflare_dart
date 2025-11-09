@@ -14,28 +14,28 @@ part 'post_indicator_create_bulk_request_indicators_inner.g.dart';
 /// PostIndicatorCreateBulkRequestIndicatorsInner
 ///
 /// Properties:
-/// * [autoCreateType] - If true, automatically create the indicator type if it doesn't exist. If false (default), throw an error when the indicator type doesn't exist.
 /// * [indicatorType] 
+/// * [value] 
+/// * [autoCreateType] - If true, automatically create the indicator type if it doesn't exist. If false (default), throw an error when the indicator type doesn't exist.
 /// * [relatedEvents] 
 /// * [tags] 
-/// * [value] 
 @BuiltValue()
 abstract class PostIndicatorCreateBulkRequestIndicatorsInner implements Built<PostIndicatorCreateBulkRequestIndicatorsInner, PostIndicatorCreateBulkRequestIndicatorsInnerBuilder> {
+  @BuiltValueField(wireName: r'indicatorType')
+  String get indicatorType;
+
+  @BuiltValueField(wireName: r'value')
+  String get value;
+
   /// If true, automatically create the indicator type if it doesn't exist. If false (default), throw an error when the indicator type doesn't exist.
   @BuiltValueField(wireName: r'autoCreateType')
   bool? get autoCreateType;
-
-  @BuiltValueField(wireName: r'indicatorType')
-  String get indicatorType;
 
   @BuiltValueField(wireName: r'relatedEvents')
   BuiltList<GetIndicatorListLegacy200ResponseIndicatorsInnerRelatedEventsInner>? get relatedEvents;
 
   @BuiltValueField(wireName: r'tags')
   BuiltList<PostIndicatorCreateBulkRequestIndicatorsInnerTagsInner>? get tags;
-
-  @BuiltValueField(wireName: r'value')
-  String get value;
 
   PostIndicatorCreateBulkRequestIndicatorsInner._();
 
@@ -60,6 +60,16 @@ class _$PostIndicatorCreateBulkRequestIndicatorsInnerSerializer implements Primi
     PostIndicatorCreateBulkRequestIndicatorsInner object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    yield r'indicatorType';
+    yield serializers.serialize(
+      object.indicatorType,
+      specifiedType: const FullType(String),
+    );
+    yield r'value';
+    yield serializers.serialize(
+      object.value,
+      specifiedType: const FullType(String),
+    );
     if (object.autoCreateType != null) {
       yield r'autoCreateType';
       yield serializers.serialize(
@@ -67,11 +77,6 @@ class _$PostIndicatorCreateBulkRequestIndicatorsInnerSerializer implements Primi
         specifiedType: const FullType(bool),
       );
     }
-    yield r'indicatorType';
-    yield serializers.serialize(
-      object.indicatorType,
-      specifiedType: const FullType(String),
-    );
     if (object.relatedEvents != null) {
       yield r'relatedEvents';
       yield serializers.serialize(
@@ -86,11 +91,6 @@ class _$PostIndicatorCreateBulkRequestIndicatorsInnerSerializer implements Primi
         specifiedType: const FullType(BuiltList, [FullType(PostIndicatorCreateBulkRequestIndicatorsInnerTagsInner)]),
       );
     }
-    yield r'value';
-    yield serializers.serialize(
-      object.value,
-      specifiedType: const FullType(String),
-    );
   }
 
   @override
@@ -114,19 +114,26 @@ class _$PostIndicatorCreateBulkRequestIndicatorsInnerSerializer implements Primi
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'autoCreateType':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
-          result.autoCreateType = valueDes;
-          break;
         case r'indicatorType':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(String),
           ) as String;
           result.indicatorType = valueDes;
+          break;
+        case r'value':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.value = valueDes;
+          break;
+        case r'autoCreateType':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(bool),
+          ) as bool;
+          result.autoCreateType = valueDes;
           break;
         case r'relatedEvents':
           final valueDes = serializers.deserialize(
@@ -141,13 +148,6 @@ class _$PostIndicatorCreateBulkRequestIndicatorsInnerSerializer implements Primi
             specifiedType: const FullType(BuiltList, [FullType(PostIndicatorCreateBulkRequestIndicatorsInnerTagsInner)]),
           ) as BuiltList<PostIndicatorCreateBulkRequestIndicatorsInnerTagsInner>;
           result.tags.replace(valueDes);
-          break;
-        case r'value':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.value = valueDes;
           break;
         default:
           unhandled.add(key);

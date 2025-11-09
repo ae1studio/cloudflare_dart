@@ -84,32 +84,32 @@ class _$ListsItemRedirectStatusCodeEnumSerializer
 
 class _$ListsItemRedirect extends ListsItemRedirect {
   @override
+  final String sourceUrl;
+  @override
+  final String targetUrl;
+  @override
   final bool? includeSubdomains;
   @override
   final bool? preservePathSuffix;
   @override
   final bool? preserveQueryString;
   @override
-  final String sourceUrl;
-  @override
   final ListsItemRedirectStatusCodeEnum? statusCode;
   @override
   final bool? subpathMatching;
-  @override
-  final String targetUrl;
 
   factory _$ListsItemRedirect(
           [void Function(ListsItemRedirectBuilder)? updates]) =>
       (ListsItemRedirectBuilder()..update(updates))._build();
 
   _$ListsItemRedirect._(
-      {this.includeSubdomains,
+      {required this.sourceUrl,
+      required this.targetUrl,
+      this.includeSubdomains,
       this.preservePathSuffix,
       this.preserveQueryString,
-      required this.sourceUrl,
       this.statusCode,
-      this.subpathMatching,
-      required this.targetUrl})
+      this.subpathMatching})
       : super._();
   @override
   ListsItemRedirect rebuild(void Function(ListsItemRedirectBuilder) updates) =>
@@ -123,25 +123,25 @@ class _$ListsItemRedirect extends ListsItemRedirect {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is ListsItemRedirect &&
+        sourceUrl == other.sourceUrl &&
+        targetUrl == other.targetUrl &&
         includeSubdomains == other.includeSubdomains &&
         preservePathSuffix == other.preservePathSuffix &&
         preserveQueryString == other.preserveQueryString &&
-        sourceUrl == other.sourceUrl &&
         statusCode == other.statusCode &&
-        subpathMatching == other.subpathMatching &&
-        targetUrl == other.targetUrl;
+        subpathMatching == other.subpathMatching;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
+    _$hash = $jc(_$hash, sourceUrl.hashCode);
+    _$hash = $jc(_$hash, targetUrl.hashCode);
     _$hash = $jc(_$hash, includeSubdomains.hashCode);
     _$hash = $jc(_$hash, preservePathSuffix.hashCode);
     _$hash = $jc(_$hash, preserveQueryString.hashCode);
-    _$hash = $jc(_$hash, sourceUrl.hashCode);
     _$hash = $jc(_$hash, statusCode.hashCode);
     _$hash = $jc(_$hash, subpathMatching.hashCode);
-    _$hash = $jc(_$hash, targetUrl.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -149,13 +149,13 @@ class _$ListsItemRedirect extends ListsItemRedirect {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'ListsItemRedirect')
+          ..add('sourceUrl', sourceUrl)
+          ..add('targetUrl', targetUrl)
           ..add('includeSubdomains', includeSubdomains)
           ..add('preservePathSuffix', preservePathSuffix)
           ..add('preserveQueryString', preserveQueryString)
-          ..add('sourceUrl', sourceUrl)
           ..add('statusCode', statusCode)
-          ..add('subpathMatching', subpathMatching)
-          ..add('targetUrl', targetUrl))
+          ..add('subpathMatching', subpathMatching))
         .toString();
   }
 }
@@ -163,6 +163,14 @@ class _$ListsItemRedirect extends ListsItemRedirect {
 class ListsItemRedirectBuilder
     implements Builder<ListsItemRedirect, ListsItemRedirectBuilder> {
   _$ListsItemRedirect? _$v;
+
+  String? _sourceUrl;
+  String? get sourceUrl => _$this._sourceUrl;
+  set sourceUrl(String? sourceUrl) => _$this._sourceUrl = sourceUrl;
+
+  String? _targetUrl;
+  String? get targetUrl => _$this._targetUrl;
+  set targetUrl(String? targetUrl) => _$this._targetUrl = targetUrl;
 
   bool? _includeSubdomains;
   bool? get includeSubdomains => _$this._includeSubdomains;
@@ -179,10 +187,6 @@ class ListsItemRedirectBuilder
   set preserveQueryString(bool? preserveQueryString) =>
       _$this._preserveQueryString = preserveQueryString;
 
-  String? _sourceUrl;
-  String? get sourceUrl => _$this._sourceUrl;
-  set sourceUrl(String? sourceUrl) => _$this._sourceUrl = sourceUrl;
-
   ListsItemRedirectStatusCodeEnum? _statusCode;
   ListsItemRedirectStatusCodeEnum? get statusCode => _$this._statusCode;
   set statusCode(ListsItemRedirectStatusCodeEnum? statusCode) =>
@@ -193,10 +197,6 @@ class ListsItemRedirectBuilder
   set subpathMatching(bool? subpathMatching) =>
       _$this._subpathMatching = subpathMatching;
 
-  String? _targetUrl;
-  String? get targetUrl => _$this._targetUrl;
-  set targetUrl(String? targetUrl) => _$this._targetUrl = targetUrl;
-
   ListsItemRedirectBuilder() {
     ListsItemRedirect._defaults(this);
   }
@@ -204,13 +204,13 @@ class ListsItemRedirectBuilder
   ListsItemRedirectBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
+      _sourceUrl = $v.sourceUrl;
+      _targetUrl = $v.targetUrl;
       _includeSubdomains = $v.includeSubdomains;
       _preservePathSuffix = $v.preservePathSuffix;
       _preserveQueryString = $v.preserveQueryString;
-      _sourceUrl = $v.sourceUrl;
       _statusCode = $v.statusCode;
       _subpathMatching = $v.subpathMatching;
-      _targetUrl = $v.targetUrl;
       _$v = null;
     }
     return this;
@@ -232,15 +232,15 @@ class ListsItemRedirectBuilder
   _$ListsItemRedirect _build() {
     final _$result = _$v ??
         _$ListsItemRedirect._(
+          sourceUrl: BuiltValueNullFieldError.checkNotNull(
+              sourceUrl, r'ListsItemRedirect', 'sourceUrl'),
+          targetUrl: BuiltValueNullFieldError.checkNotNull(
+              targetUrl, r'ListsItemRedirect', 'targetUrl'),
           includeSubdomains: includeSubdomains,
           preservePathSuffix: preservePathSuffix,
           preserveQueryString: preserveQueryString,
-          sourceUrl: BuiltValueNullFieldError.checkNotNull(
-              sourceUrl, r'ListsItemRedirect', 'sourceUrl'),
           statusCode: statusCode,
           subpathMatching: subpathMatching,
-          targetUrl: BuiltValueNullFieldError.checkNotNull(
-              targetUrl, r'ListsItemRedirect', 'targetUrl'),
         );
     replace(_$result);
     return _$result;

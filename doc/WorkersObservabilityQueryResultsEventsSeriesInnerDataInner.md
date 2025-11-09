@@ -10,10 +10,10 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **aggregates** | [**WorkersObservabilityQueryResultsEventsSeriesInnerDataInnerAggregates**](WorkersObservabilityQueryResultsEventsSeriesInnerDataInnerAggregates.md) |  | 
 **count** | **num** |  | 
-**errors** | **num** |  | [optional] 
-**groups** | [**BuiltMap&lt;String, AigConfigListDataset200ResponseResultInnerFiltersInnerValueInner&gt;**](AigConfigListDataset200ResponseResultInnerFiltersInnerValueInner.md) | Groups in the query results. | [optional] 
 **interval** | **num** |  | 
 **sampleInterval** | **num** |  | 
+**errors** | **num** |  | [optional] 
+**groups** | [**BuiltMap&lt;String, AigConfigListDataset200ResponseResultInnerFiltersInnerValueInner&gt;**](AigConfigListDataset200ResponseResultInnerFiltersInnerValueInner.md) | Groups in the query results. | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

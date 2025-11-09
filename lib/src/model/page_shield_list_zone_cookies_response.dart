@@ -16,11 +16,11 @@ part 'page_shield_list_zone_cookies_response.g.dart';
 /// PageShieldListZoneCookiesResponse
 ///
 /// Properties:
-/// * [errors] 
-/// * [messages] 
 /// * [success] - Whether the API call was successful
 /// * [resultInfo] 
 /// * [result] 
+/// * [errors] 
+/// * [messages] 
 @BuiltValue()
 abstract class PageShieldListZoneCookiesResponse implements PageShieldApiListResponseCollection, Built<PageShieldListZoneCookiesResponse, PageShieldListZoneCookiesResponseBuilder> {
   @BuiltValueField(wireName: r'result')

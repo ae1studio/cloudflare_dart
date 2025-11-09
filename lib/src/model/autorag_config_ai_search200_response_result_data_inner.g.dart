@@ -9,6 +9,8 @@ part of 'autorag_config_ai_search200_response_result_data_inner.dart';
 class _$AutoragConfigAiSearch200ResponseResultDataInner
     extends AutoragConfigAiSearch200ResponseResultDataInner {
   @override
+  final num score;
+  @override
   final JsonObject? attributes;
   @override
   final BuiltList<AutoragConfigAiSearch200ResponseResultDataInnerContentInner>?
@@ -17,8 +19,6 @@ class _$AutoragConfigAiSearch200ResponseResultDataInner
   final String? fileId;
   @override
   final String? filename;
-  @override
-  final num score;
 
   factory _$AutoragConfigAiSearch200ResponseResultDataInner(
           [void Function(
@@ -29,11 +29,11 @@ class _$AutoragConfigAiSearch200ResponseResultDataInner
           ._build();
 
   _$AutoragConfigAiSearch200ResponseResultDataInner._(
-      {this.attributes,
+      {required this.score,
+      this.attributes,
       this.content,
       this.fileId,
-      this.filename,
-      required this.score})
+      this.filename})
       : super._();
   @override
   AutoragConfigAiSearch200ResponseResultDataInner rebuild(
@@ -49,21 +49,21 @@ class _$AutoragConfigAiSearch200ResponseResultDataInner
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is AutoragConfigAiSearch200ResponseResultDataInner &&
+        score == other.score &&
         attributes == other.attributes &&
         content == other.content &&
         fileId == other.fileId &&
-        filename == other.filename &&
-        score == other.score;
+        filename == other.filename;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
+    _$hash = $jc(_$hash, score.hashCode);
     _$hash = $jc(_$hash, attributes.hashCode);
     _$hash = $jc(_$hash, content.hashCode);
     _$hash = $jc(_$hash, fileId.hashCode);
     _$hash = $jc(_$hash, filename.hashCode);
-    _$hash = $jc(_$hash, score.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -72,11 +72,11 @@ class _$AutoragConfigAiSearch200ResponseResultDataInner
   String toString() {
     return (newBuiltValueToStringHelper(
             r'AutoragConfigAiSearch200ResponseResultDataInner')
+          ..add('score', score)
           ..add('attributes', attributes)
           ..add('content', content)
           ..add('fileId', fileId)
-          ..add('filename', filename)
-          ..add('score', score))
+          ..add('filename', filename))
         .toString();
   }
 }
@@ -86,6 +86,10 @@ class AutoragConfigAiSearch200ResponseResultDataInnerBuilder
         Builder<AutoragConfigAiSearch200ResponseResultDataInner,
             AutoragConfigAiSearch200ResponseResultDataInnerBuilder> {
   _$AutoragConfigAiSearch200ResponseResultDataInner? _$v;
+
+  num? _score;
+  num? get score => _$this._score;
+  set score(num? score) => _$this._score = score;
 
   JsonObject? _attributes;
   JsonObject? get attributes => _$this._attributes;
@@ -110,10 +114,6 @@ class AutoragConfigAiSearch200ResponseResultDataInnerBuilder
   String? get filename => _$this._filename;
   set filename(String? filename) => _$this._filename = filename;
 
-  num? _score;
-  num? get score => _$this._score;
-  set score(num? score) => _$this._score = score;
-
   AutoragConfigAiSearch200ResponseResultDataInnerBuilder() {
     AutoragConfigAiSearch200ResponseResultDataInner._defaults(this);
   }
@@ -121,11 +121,11 @@ class AutoragConfigAiSearch200ResponseResultDataInnerBuilder
   AutoragConfigAiSearch200ResponseResultDataInnerBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
+      _score = $v.score;
       _attributes = $v.attributes;
       _content = $v.content?.toBuilder();
       _fileId = $v.fileId;
       _filename = $v.filename;
-      _score = $v.score;
       _$v = null;
     }
     return this;
@@ -151,12 +151,12 @@ class AutoragConfigAiSearch200ResponseResultDataInnerBuilder
     try {
       _$result = _$v ??
           _$AutoragConfigAiSearch200ResponseResultDataInner._(
+            score: BuiltValueNullFieldError.checkNotNull(score,
+                r'AutoragConfigAiSearch200ResponseResultDataInner', 'score'),
             attributes: attributes,
             content: _content?.build(),
             fileId: fileId,
             filename: filename,
-            score: BuiltValueNullFieldError.checkNotNull(score,
-                r'AutoragConfigAiSearch200ResponseResultDataInner', 'score'),
           );
     } catch (_) {
       late String _$failedField;

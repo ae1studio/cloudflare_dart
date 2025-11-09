@@ -10,6 +10,7 @@ import 'package:cloudflare_dart/src/model/r2_result_info.dart';
 import 'package:cloudflare_dart/src/model/aaa_messages_inner.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
+import 'package:built_value/json_object.dart';
 
 part 'r2_list_buckets200_response.g.dart';
 

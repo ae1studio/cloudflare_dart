@@ -8,20 +8,20 @@ part of 'brapi_post_content200_response.dart';
 
 class _$BrapiPostContent200Response extends BrapiPostContent200Response {
   @override
-  final BuiltList<BrapiPostContent200ResponseErrorsInner>? errors;
-  @override
   final BrapiPostContent200ResponseMeta meta;
   @override
-  final String? result;
-  @override
   final bool status;
+  @override
+  final BuiltList<BrapiPostContent200ResponseErrorsInner>? errors;
+  @override
+  final String? result;
 
   factory _$BrapiPostContent200Response(
           [void Function(BrapiPostContent200ResponseBuilder)? updates]) =>
       (BrapiPostContent200ResponseBuilder()..update(updates))._build();
 
   _$BrapiPostContent200Response._(
-      {this.errors, required this.meta, this.result, required this.status})
+      {required this.meta, required this.status, this.errors, this.result})
       : super._();
   @override
   BrapiPostContent200Response rebuild(
@@ -36,19 +36,19 @@ class _$BrapiPostContent200Response extends BrapiPostContent200Response {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is BrapiPostContent200Response &&
-        errors == other.errors &&
         meta == other.meta &&
-        result == other.result &&
-        status == other.status;
+        status == other.status &&
+        errors == other.errors &&
+        result == other.result;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, errors.hashCode);
     _$hash = $jc(_$hash, meta.hashCode);
-    _$hash = $jc(_$hash, result.hashCode);
     _$hash = $jc(_$hash, status.hashCode);
+    _$hash = $jc(_$hash, errors.hashCode);
+    _$hash = $jc(_$hash, result.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -56,10 +56,10 @@ class _$BrapiPostContent200Response extends BrapiPostContent200Response {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'BrapiPostContent200Response')
-          ..add('errors', errors)
           ..add('meta', meta)
-          ..add('result', result)
-          ..add('status', status))
+          ..add('status', status)
+          ..add('errors', errors)
+          ..add('result', result))
         .toString();
   }
 }
@@ -70,24 +70,24 @@ class BrapiPostContent200ResponseBuilder
             BrapiPostContent200ResponseBuilder> {
   _$BrapiPostContent200Response? _$v;
 
+  BrapiPostContent200ResponseMetaBuilder? _meta;
+  BrapiPostContent200ResponseMetaBuilder get meta =>
+      _$this._meta ??= BrapiPostContent200ResponseMetaBuilder();
+  set meta(BrapiPostContent200ResponseMetaBuilder? meta) => _$this._meta = meta;
+
+  bool? _status;
+  bool? get status => _$this._status;
+  set status(bool? status) => _$this._status = status;
+
   ListBuilder<BrapiPostContent200ResponseErrorsInner>? _errors;
   ListBuilder<BrapiPostContent200ResponseErrorsInner> get errors =>
       _$this._errors ??= ListBuilder<BrapiPostContent200ResponseErrorsInner>();
   set errors(ListBuilder<BrapiPostContent200ResponseErrorsInner>? errors) =>
       _$this._errors = errors;
 
-  BrapiPostContent200ResponseMetaBuilder? _meta;
-  BrapiPostContent200ResponseMetaBuilder get meta =>
-      _$this._meta ??= BrapiPostContent200ResponseMetaBuilder();
-  set meta(BrapiPostContent200ResponseMetaBuilder? meta) => _$this._meta = meta;
-
   String? _result;
   String? get result => _$this._result;
   set result(String? result) => _$this._result = result;
-
-  bool? _status;
-  bool? get status => _$this._status;
-  set status(bool? status) => _$this._status = status;
 
   BrapiPostContent200ResponseBuilder() {
     BrapiPostContent200Response._defaults(this);
@@ -96,10 +96,10 @@ class BrapiPostContent200ResponseBuilder
   BrapiPostContent200ResponseBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _errors = $v.errors?.toBuilder();
       _meta = $v.meta.toBuilder();
-      _result = $v.result;
       _status = $v.status;
+      _errors = $v.errors?.toBuilder();
+      _result = $v.result;
       _$v = null;
     }
     return this;
@@ -123,19 +123,20 @@ class BrapiPostContent200ResponseBuilder
     try {
       _$result = _$v ??
           _$BrapiPostContent200Response._(
-            errors: _errors?.build(),
             meta: meta.build(),
-            result: result,
             status: BuiltValueNullFieldError.checkNotNull(
                 status, r'BrapiPostContent200Response', 'status'),
+            errors: _errors?.build(),
+            result: result,
           );
     } catch (_) {
       late String _$failedField;
       try {
-        _$failedField = 'errors';
-        _errors?.build();
         _$failedField = 'meta';
         meta.build();
+
+        _$failedField = 'errors';
+        _errors?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
             r'BrapiPostContent200Response', _$failedField, e.toString());

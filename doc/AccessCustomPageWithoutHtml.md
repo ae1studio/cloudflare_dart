@@ -8,10 +8,10 @@ import 'package:cloudflare_dart/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**appCount** | **int** | Number of apps the custom page is assigned to. | [optional] 
-**createdAt** | [**JsonObject**](JsonObject.md) |  | [optional] 
 **name** | **String** | Custom page name. | 
 **type** | [**AccessSchemasType**](AccessSchemasType.md) |  | 
+**appCount** | **int** | Number of apps the custom page is assigned to. | [optional] 
+**createdAt** | [**JsonObject**](JsonObject.md) |  | [optional] 
 **uid** | **String** | UUID. | [optional] 
 **updatedAt** | [**JsonObject**](JsonObject.md) |  | [optional] 
 

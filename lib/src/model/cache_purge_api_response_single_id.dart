@@ -16,8 +16,8 @@ part 'cache_purge_api_response_single_id.g.dart';
 /// Properties:
 /// * [errors] 
 /// * [messages] 
-/// * [result] 
 /// * [success] - Indicates the API call's success or failure.
+/// * [result] 
 @BuiltValue(instantiable: false)
 abstract class CachePurgeApiResponseSingleId  {
   @BuiltValueField(wireName: r'errors')
@@ -26,12 +26,12 @@ abstract class CachePurgeApiResponseSingleId  {
   @BuiltValueField(wireName: r'messages')
   BuiltList<AaaMessagesInner> get messages;
 
-  @BuiltValueField(wireName: r'result')
-  CachePurgeApiResponseSingleIdResult? get result;
-
   /// Indicates the API call's success or failure.
   @BuiltValueField(wireName: r'success')
   bool get success;
+
+  @BuiltValueField(wireName: r'result')
+  CachePurgeApiResponseSingleIdResult? get result;
 
   @BuiltValueSerializer(custom: true)
   static Serializer<CachePurgeApiResponseSingleId> get serializer => _$CachePurgeApiResponseSingleIdSerializer();
@@ -59,6 +59,11 @@ class _$CachePurgeApiResponseSingleIdSerializer implements PrimitiveSerializer<C
       object.messages,
       specifiedType: const FullType(BuiltList, [FullType(AaaMessagesInner)]),
     );
+    yield r'success';
+    yield serializers.serialize(
+      object.success,
+      specifiedType: const FullType(bool),
+    );
     if (object.result != null) {
       yield r'result';
       yield serializers.serialize(
@@ -66,11 +71,6 @@ class _$CachePurgeApiResponseSingleIdSerializer implements PrimitiveSerializer<C
         specifiedType: const FullType.nullable(CachePurgeApiResponseSingleIdResult),
       );
     }
-    yield r'success';
-    yield serializers.serialize(
-      object.success,
-      specifiedType: const FullType(bool),
-    );
   }
 
   @override
@@ -148,6 +148,13 @@ class _$$CachePurgeApiResponseSingleIdSerializer implements PrimitiveSerializer<
           ) as BuiltList<AaaMessagesInner>;
           result.messages.replace(valueDes);
           break;
+        case r'success':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(bool),
+          ) as bool;
+          result.success = valueDes;
+          break;
         case r'result':
           final valueDes = serializers.deserialize(
             value,
@@ -155,13 +162,6 @@ class _$$CachePurgeApiResponseSingleIdSerializer implements PrimitiveSerializer<
           ) as CachePurgeApiResponseSingleIdResult?;
           if (valueDes == null) continue;
           result.result.replace(valueDes);
-          break;
-        case r'success':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
-          result.success = valueDes;
           break;
         default:
           unhandled.add(key);

@@ -8,8 +8,8 @@ import 'package:cloudflare_dart/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**dataset** | [**LogpushDataset**](LogpushDataset.md) |  | [optional] 
 **destinationConf** | **String** | Uniquely identifies a resource (such as an s3 bucket) where data. will be pushed. Additional configuration parameters supported by the destination may be included. | 
+**dataset** | [**LogpushDataset**](LogpushDataset.md) |  | [optional] 
 **enabled** | **bool** | Flag that indicates if the job is enabled. | [optional] [default to false]
 **filter** | **String** | The filters to select the events to include and/or remove from your logs. For more information, refer to [Filters](https://developers.cloudflare.com/logs/reference/filters/). | [optional] 
 **frequency** | [**LogpushFrequency**](LogpushFrequency.md) |  | [optional] 

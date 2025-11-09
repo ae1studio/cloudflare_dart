@@ -12,17 +12,17 @@ part 'access_tag_without_app_count.g.dart';
 /// A tag
 ///
 /// Properties:
-/// * [createdAt] 
 /// * [name] - The name of the tag
+/// * [createdAt] 
 /// * [updatedAt] 
 @BuiltValue()
 abstract class AccessTagWithoutAppCount implements Built<AccessTagWithoutAppCount, AccessTagWithoutAppCountBuilder> {
-  @BuiltValueField(wireName: r'created_at')
-  JsonObject? get createdAt;
-
   /// The name of the tag
   @BuiltValueField(wireName: r'name')
   String get name;
+
+  @BuiltValueField(wireName: r'created_at')
+  JsonObject? get createdAt;
 
   @BuiltValueField(wireName: r'updated_at')
   JsonObject? get updatedAt;
@@ -50,6 +50,11 @@ class _$AccessTagWithoutAppCountSerializer implements PrimitiveSerializer<Access
     AccessTagWithoutAppCount object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    yield r'name';
+    yield serializers.serialize(
+      object.name,
+      specifiedType: const FullType(String),
+    );
     if (object.createdAt != null) {
       yield r'created_at';
       yield serializers.serialize(
@@ -57,11 +62,6 @@ class _$AccessTagWithoutAppCountSerializer implements PrimitiveSerializer<Access
         specifiedType: const FullType(JsonObject),
       );
     }
-    yield r'name';
-    yield serializers.serialize(
-      object.name,
-      specifiedType: const FullType(String),
-    );
     if (object.updatedAt != null) {
       yield r'updated_at';
       yield serializers.serialize(
@@ -92,19 +92,19 @@ class _$AccessTagWithoutAppCountSerializer implements PrimitiveSerializer<Access
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'created_at':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(JsonObject),
-          ) as JsonObject;
-          result.createdAt.replace(valueDes);
-          break;
         case r'name':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(String),
           ) as String;
           result.name = valueDes;
+          break;
+        case r'created_at':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(JsonObject),
+          ) as JsonObject;
+          result.createdAt.replace(valueDes);
           break;
         case r'updated_at':
           final valueDes = serializers.deserialize(

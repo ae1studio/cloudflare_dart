@@ -13,11 +13,14 @@ part 'rulesets_redirect_from_value.g.dart';
 /// A redirect based on the request properties.
 ///
 /// Properties:
+/// * [targetUrl] 
 /// * [preserveQueryString] - Whether to keep the query string of the original request.
 /// * [statusCode] - The status code to use for the redirect.
-/// * [targetUrl] 
 @BuiltValue()
 abstract class RulesetsRedirectFromValue implements Built<RulesetsRedirectFromValue, RulesetsRedirectFromValueBuilder> {
+  @BuiltValueField(wireName: r'target_url')
+  TargetURL get targetUrl;
+
   /// Whether to keep the query string of the original request.
   @BuiltValueField(wireName: r'preserve_query_string')
   bool? get preserveQueryString;
@@ -26,9 +29,6 @@ abstract class RulesetsRedirectFromValue implements Built<RulesetsRedirectFromVa
   @BuiltValueField(wireName: r'status_code')
   RulesetsRedirectFromValueStatusCodeEnum? get statusCode;
   // enum statusCodeEnum {  301,  302,  303,  307,  308,  };
-
-  @BuiltValueField(wireName: r'target_url')
-  TargetURL get targetUrl;
 
   RulesetsRedirectFromValue._();
 
@@ -54,6 +54,11 @@ class _$RulesetsRedirectFromValueSerializer implements PrimitiveSerializer<Rules
     RulesetsRedirectFromValue object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    yield r'target_url';
+    yield serializers.serialize(
+      object.targetUrl,
+      specifiedType: const FullType(TargetURL),
+    );
     if (object.preserveQueryString != null) {
       yield r'preserve_query_string';
       yield serializers.serialize(
@@ -68,11 +73,6 @@ class _$RulesetsRedirectFromValueSerializer implements PrimitiveSerializer<Rules
         specifiedType: const FullType(RulesetsRedirectFromValueStatusCodeEnum),
       );
     }
-    yield r'target_url';
-    yield serializers.serialize(
-      object.targetUrl,
-      specifiedType: const FullType(TargetURL),
-    );
   }
 
   @override
@@ -96,6 +96,13 @@ class _$RulesetsRedirectFromValueSerializer implements PrimitiveSerializer<Rules
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
+        case r'target_url':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(TargetURL),
+          ) as TargetURL;
+          result.targetUrl.replace(valueDes);
+          break;
         case r'preserve_query_string':
           final valueDes = serializers.deserialize(
             value,
@@ -109,13 +116,6 @@ class _$RulesetsRedirectFromValueSerializer implements PrimitiveSerializer<Rules
             specifiedType: const FullType(RulesetsRedirectFromValueStatusCodeEnum),
           ) as RulesetsRedirectFromValueStatusCodeEnum;
           result.statusCode = valueDes;
-          break;
-        case r'target_url':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(TargetURL),
-          ) as TargetURL;
-          result.targetUrl.replace(valueDes);
           break;
         default:
           unhandled.add(key);

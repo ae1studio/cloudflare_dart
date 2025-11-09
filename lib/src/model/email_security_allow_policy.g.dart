@@ -8,19 +8,11 @@ part of 'email_security_allow_policy.dart';
 
 class _$EmailSecurityAllowPolicy extends EmailSecurityAllowPolicy {
   @override
-  final String? comments;
-  @override
   final bool isAcceptableSender;
   @override
   final bool isExemptRecipient;
   @override
-  final bool? isRecipient;
-  @override
   final bool isRegex;
-  @override
-  final bool? isSender;
-  @override
-  final bool? isSpoof;
   @override
   final bool isTrustedSender;
   @override
@@ -35,26 +27,34 @@ class _$EmailSecurityAllowPolicy extends EmailSecurityAllowPolicy {
   final int id;
   @override
   final DateTime lastModified;
+  @override
+  final String? comments;
+  @override
+  final bool? isRecipient;
+  @override
+  final bool? isSender;
+  @override
+  final bool? isSpoof;
 
   factory _$EmailSecurityAllowPolicy(
           [void Function(EmailSecurityAllowPolicyBuilder)? updates]) =>
       (EmailSecurityAllowPolicyBuilder()..update(updates))._build();
 
   _$EmailSecurityAllowPolicy._(
-      {this.comments,
-      required this.isAcceptableSender,
+      {required this.isAcceptableSender,
       required this.isExemptRecipient,
-      this.isRecipient,
       required this.isRegex,
-      this.isSender,
-      this.isSpoof,
       required this.isTrustedSender,
       required this.pattern,
       required this.patternType,
       required this.verifySender,
       required this.createdAt,
       required this.id,
-      required this.lastModified})
+      required this.lastModified,
+      this.comments,
+      this.isRecipient,
+      this.isSender,
+      this.isSpoof})
       : super._();
   @override
   EmailSecurityAllowPolicy rebuild(
@@ -69,32 +69,28 @@ class _$EmailSecurityAllowPolicy extends EmailSecurityAllowPolicy {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is EmailSecurityAllowPolicy &&
-        comments == other.comments &&
         isAcceptableSender == other.isAcceptableSender &&
         isExemptRecipient == other.isExemptRecipient &&
-        isRecipient == other.isRecipient &&
         isRegex == other.isRegex &&
-        isSender == other.isSender &&
-        isSpoof == other.isSpoof &&
         isTrustedSender == other.isTrustedSender &&
         pattern == other.pattern &&
         patternType == other.patternType &&
         verifySender == other.verifySender &&
         createdAt == other.createdAt &&
         id == other.id &&
-        lastModified == other.lastModified;
+        lastModified == other.lastModified &&
+        comments == other.comments &&
+        isRecipient == other.isRecipient &&
+        isSender == other.isSender &&
+        isSpoof == other.isSpoof;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, comments.hashCode);
     _$hash = $jc(_$hash, isAcceptableSender.hashCode);
     _$hash = $jc(_$hash, isExemptRecipient.hashCode);
-    _$hash = $jc(_$hash, isRecipient.hashCode);
     _$hash = $jc(_$hash, isRegex.hashCode);
-    _$hash = $jc(_$hash, isSender.hashCode);
-    _$hash = $jc(_$hash, isSpoof.hashCode);
     _$hash = $jc(_$hash, isTrustedSender.hashCode);
     _$hash = $jc(_$hash, pattern.hashCode);
     _$hash = $jc(_$hash, patternType.hashCode);
@@ -102,6 +98,10 @@ class _$EmailSecurityAllowPolicy extends EmailSecurityAllowPolicy {
     _$hash = $jc(_$hash, createdAt.hashCode);
     _$hash = $jc(_$hash, id.hashCode);
     _$hash = $jc(_$hash, lastModified.hashCode);
+    _$hash = $jc(_$hash, comments.hashCode);
+    _$hash = $jc(_$hash, isRecipient.hashCode);
+    _$hash = $jc(_$hash, isSender.hashCode);
+    _$hash = $jc(_$hash, isSpoof.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -109,20 +109,20 @@ class _$EmailSecurityAllowPolicy extends EmailSecurityAllowPolicy {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'EmailSecurityAllowPolicy')
-          ..add('comments', comments)
           ..add('isAcceptableSender', isAcceptableSender)
           ..add('isExemptRecipient', isExemptRecipient)
-          ..add('isRecipient', isRecipient)
           ..add('isRegex', isRegex)
-          ..add('isSender', isSender)
-          ..add('isSpoof', isSpoof)
           ..add('isTrustedSender', isTrustedSender)
           ..add('pattern', pattern)
           ..add('patternType', patternType)
           ..add('verifySender', verifySender)
           ..add('createdAt', createdAt)
           ..add('id', id)
-          ..add('lastModified', lastModified))
+          ..add('lastModified', lastModified)
+          ..add('comments', comments)
+          ..add('isRecipient', isRecipient)
+          ..add('isSender', isSender)
+          ..add('isSpoof', isSpoof))
         .toString();
   }
 }
@@ -131,10 +131,6 @@ class EmailSecurityAllowPolicyBuilder
     implements
         Builder<EmailSecurityAllowPolicy, EmailSecurityAllowPolicyBuilder> {
   _$EmailSecurityAllowPolicy? _$v;
-
-  String? _comments;
-  String? get comments => _$this._comments;
-  set comments(String? comments) => _$this._comments = comments;
 
   bool? _isAcceptableSender;
   bool? get isAcceptableSender => _$this._isAcceptableSender;
@@ -146,21 +142,9 @@ class EmailSecurityAllowPolicyBuilder
   set isExemptRecipient(bool? isExemptRecipient) =>
       _$this._isExemptRecipient = isExemptRecipient;
 
-  bool? _isRecipient;
-  bool? get isRecipient => _$this._isRecipient;
-  set isRecipient(bool? isRecipient) => _$this._isRecipient = isRecipient;
-
   bool? _isRegex;
   bool? get isRegex => _$this._isRegex;
   set isRegex(bool? isRegex) => _$this._isRegex = isRegex;
-
-  bool? _isSender;
-  bool? get isSender => _$this._isSender;
-  set isSender(bool? isSender) => _$this._isSender = isSender;
-
-  bool? _isSpoof;
-  bool? get isSpoof => _$this._isSpoof;
-  set isSpoof(bool? isSpoof) => _$this._isSpoof = isSpoof;
 
   bool? _isTrustedSender;
   bool? get isTrustedSender => _$this._isTrustedSender;
@@ -193,6 +177,22 @@ class EmailSecurityAllowPolicyBuilder
   set lastModified(DateTime? lastModified) =>
       _$this._lastModified = lastModified;
 
+  String? _comments;
+  String? get comments => _$this._comments;
+  set comments(String? comments) => _$this._comments = comments;
+
+  bool? _isRecipient;
+  bool? get isRecipient => _$this._isRecipient;
+  set isRecipient(bool? isRecipient) => _$this._isRecipient = isRecipient;
+
+  bool? _isSender;
+  bool? get isSender => _$this._isSender;
+  set isSender(bool? isSender) => _$this._isSender = isSender;
+
+  bool? _isSpoof;
+  bool? get isSpoof => _$this._isSpoof;
+  set isSpoof(bool? isSpoof) => _$this._isSpoof = isSpoof;
+
   EmailSecurityAllowPolicyBuilder() {
     EmailSecurityAllowPolicy._defaults(this);
   }
@@ -200,13 +200,9 @@ class EmailSecurityAllowPolicyBuilder
   EmailSecurityAllowPolicyBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _comments = $v.comments;
       _isAcceptableSender = $v.isAcceptableSender;
       _isExemptRecipient = $v.isExemptRecipient;
-      _isRecipient = $v.isRecipient;
       _isRegex = $v.isRegex;
-      _isSender = $v.isSender;
-      _isSpoof = $v.isSpoof;
       _isTrustedSender = $v.isTrustedSender;
       _pattern = $v.pattern;
       _patternType = $v.patternType;
@@ -214,6 +210,10 @@ class EmailSecurityAllowPolicyBuilder
       _createdAt = $v.createdAt;
       _id = $v.id;
       _lastModified = $v.lastModified;
+      _comments = $v.comments;
+      _isRecipient = $v.isRecipient;
+      _isSender = $v.isSender;
+      _isSpoof = $v.isSpoof;
       _$v = null;
     }
     return this;
@@ -235,7 +235,6 @@ class EmailSecurityAllowPolicyBuilder
   _$EmailSecurityAllowPolicy _build() {
     final _$result = _$v ??
         _$EmailSecurityAllowPolicy._(
-          comments: comments,
           isAcceptableSender: BuiltValueNullFieldError.checkNotNull(
               isAcceptableSender,
               r'EmailSecurityAllowPolicy',
@@ -244,11 +243,8 @@ class EmailSecurityAllowPolicyBuilder
               isExemptRecipient,
               r'EmailSecurityAllowPolicy',
               'isExemptRecipient'),
-          isRecipient: isRecipient,
           isRegex: BuiltValueNullFieldError.checkNotNull(
               isRegex, r'EmailSecurityAllowPolicy', 'isRegex'),
-          isSender: isSender,
-          isSpoof: isSpoof,
           isTrustedSender: BuiltValueNullFieldError.checkNotNull(
               isTrustedSender, r'EmailSecurityAllowPolicy', 'isTrustedSender'),
           pattern: BuiltValueNullFieldError.checkNotNull(
@@ -263,6 +259,10 @@ class EmailSecurityAllowPolicyBuilder
               id, r'EmailSecurityAllowPolicy', 'id'),
           lastModified: BuiltValueNullFieldError.checkNotNull(
               lastModified, r'EmailSecurityAllowPolicy', 'lastModified'),
+          comments: comments,
+          isRecipient: isRecipient,
+          isSender: isSender,
+          isSpoof: isSpoof,
         );
     replace(_$result);
     return _$result;

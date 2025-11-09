@@ -10,6 +10,7 @@ import 'package:cloudflare_dart/src/model/builds_list_tokens_response.dart';
 import 'package:cloudflare_dart/src/model/builds_api_response_errors_inner.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
+import 'package:built_value/json_object.dart';
 
 part 'list_build_tokens200_response.g.dart';
 
@@ -19,8 +20,8 @@ part 'list_build_tokens200_response.g.dart';
 /// * [errors] 
 /// * [messages] 
 /// * [result] 
-/// * [resultInfo] 
 /// * [success] 
+/// * [resultInfo] 
 @BuiltValue()
 abstract class ListBuildTokens200Response implements BuildsAPIResponse, Built<ListBuildTokens200Response, ListBuildTokens200ResponseBuilder> {
   ListBuildTokens200Response._();

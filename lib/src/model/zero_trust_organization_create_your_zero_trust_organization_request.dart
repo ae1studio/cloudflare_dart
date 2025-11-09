@@ -12,25 +12,29 @@ part 'zero_trust_organization_create_your_zero_trust_organization_request.g.dart
 /// ZeroTrustOrganizationCreateYourZeroTrustOrganizationRequest
 ///
 /// Properties:
-/// * [allowAuthenticateViaWarp] - When set to true, users can authenticate via WARP for any application in your organization. Application settings will take precedence over this value.
 /// * [authDomain] - The unique subdomain assigned to your Zero Trust organization.
+/// * [name] - The name of your Zero Trust organization.
+/// * [allowAuthenticateViaWarp] - When set to true, users can authenticate via WARP for any application in your organization. Application settings will take precedence over this value.
 /// * [autoRedirectToIdentity] - When set to `true`, users skip the identity provider selection step during login.
 /// * [isUiReadOnly] - Lock all settings as Read-Only in the Dashboard, regardless of user permission. Updates may only be made via the API or Terraform for this account when enabled.
 /// * [loginDesign] 
-/// * [name] - The name of your Zero Trust organization.
 /// * [sessionDuration] - The amount of time that tokens issued for applications will be valid. Must be in the format `300ms` or `2h45m`. Valid time units are: ns, us (or µs), ms, s, m, h.
 /// * [uiReadOnlyToggleReason] - A description of the reason why the UI read only field is being toggled.
 /// * [userSeatExpirationInactiveTime] - The amount of time a user seat is inactive before it expires. When the user seat exceeds the set time of inactivity, the user is removed as an active seat and no longer counts against your Teams seat count.  Minimum value for this setting is 1 month (730h). Must be in the format `300ms` or `2h45m`. Valid time units are: `ns`, `us` (or `µs`), `ms`, `s`, `m`, `h`.
 /// * [warpAuthSessionDuration] - The amount of time that tokens issued for applications will be valid. Must be in the format `30m` or `2h45m`. Valid time units are: m, h.
 @BuiltValue()
 abstract class ZeroTrustOrganizationCreateYourZeroTrustOrganizationRequest implements Built<ZeroTrustOrganizationCreateYourZeroTrustOrganizationRequest, ZeroTrustOrganizationCreateYourZeroTrustOrganizationRequestBuilder> {
-  /// When set to true, users can authenticate via WARP for any application in your organization. Application settings will take precedence over this value.
-  @BuiltValueField(wireName: r'allow_authenticate_via_warp')
-  bool? get allowAuthenticateViaWarp;
-
   /// The unique subdomain assigned to your Zero Trust organization.
   @BuiltValueField(wireName: r'auth_domain')
   String get authDomain;
+
+  /// The name of your Zero Trust organization.
+  @BuiltValueField(wireName: r'name')
+  String get name;
+
+  /// When set to true, users can authenticate via WARP for any application in your organization. Application settings will take precedence over this value.
+  @BuiltValueField(wireName: r'allow_authenticate_via_warp')
+  bool? get allowAuthenticateViaWarp;
 
   /// When set to `true`, users skip the identity provider selection step during login.
   @BuiltValueField(wireName: r'auto_redirect_to_identity')
@@ -42,10 +46,6 @@ abstract class ZeroTrustOrganizationCreateYourZeroTrustOrganizationRequest imple
 
   @BuiltValueField(wireName: r'login_design')
   AccessLoginDesign? get loginDesign;
-
-  /// The name of your Zero Trust organization.
-  @BuiltValueField(wireName: r'name')
-  String get name;
 
   /// The amount of time that tokens issued for applications will be valid. Must be in the format `300ms` or `2h45m`. Valid time units are: ns, us (or µs), ms, s, m, h.
   @BuiltValueField(wireName: r'session_duration')
@@ -89,6 +89,16 @@ class _$ZeroTrustOrganizationCreateYourZeroTrustOrganizationRequestSerializer im
     ZeroTrustOrganizationCreateYourZeroTrustOrganizationRequest object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    yield r'auth_domain';
+    yield serializers.serialize(
+      object.authDomain,
+      specifiedType: const FullType(String),
+    );
+    yield r'name';
+    yield serializers.serialize(
+      object.name,
+      specifiedType: const FullType(String),
+    );
     if (object.allowAuthenticateViaWarp != null) {
       yield r'allow_authenticate_via_warp';
       yield serializers.serialize(
@@ -96,11 +106,6 @@ class _$ZeroTrustOrganizationCreateYourZeroTrustOrganizationRequestSerializer im
         specifiedType: const FullType(bool),
       );
     }
-    yield r'auth_domain';
-    yield serializers.serialize(
-      object.authDomain,
-      specifiedType: const FullType(String),
-    );
     if (object.autoRedirectToIdentity != null) {
       yield r'auto_redirect_to_identity';
       yield serializers.serialize(
@@ -122,11 +127,6 @@ class _$ZeroTrustOrganizationCreateYourZeroTrustOrganizationRequestSerializer im
         specifiedType: const FullType(AccessLoginDesign),
       );
     }
-    yield r'name';
-    yield serializers.serialize(
-      object.name,
-      specifiedType: const FullType(String),
-    );
     if (object.sessionDuration != null) {
       yield r'session_duration';
       yield serializers.serialize(
@@ -178,19 +178,26 @@ class _$ZeroTrustOrganizationCreateYourZeroTrustOrganizationRequestSerializer im
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'allow_authenticate_via_warp':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
-          result.allowAuthenticateViaWarp = valueDes;
-          break;
         case r'auth_domain':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(String),
           ) as String;
           result.authDomain = valueDes;
+          break;
+        case r'name':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.name = valueDes;
+          break;
+        case r'allow_authenticate_via_warp':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(bool),
+          ) as bool;
+          result.allowAuthenticateViaWarp = valueDes;
           break;
         case r'auto_redirect_to_identity':
           final valueDes = serializers.deserialize(
@@ -212,13 +219,6 @@ class _$ZeroTrustOrganizationCreateYourZeroTrustOrganizationRequestSerializer im
             specifiedType: const FullType(AccessLoginDesign),
           ) as AccessLoginDesign;
           result.loginDesign.replace(valueDes);
-          break;
-        case r'name':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.name = valueDes;
           break;
         case r'session_duration':
           final valueDes = serializers.deserialize(

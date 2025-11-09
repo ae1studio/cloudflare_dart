@@ -13,20 +13,13 @@ part 'cloudflare_pipelines_workers_pipelines_http_source.g.dart';
 /// [DEPRECATED] HTTP source configuration. Use the new streams API instead.
 ///
 /// Properties:
-/// * [authentication] - Specifies whether authentication is required to send to this pipeline via HTTP.
-/// * [cors] 
 /// * [format] - Specifies the format of source data.
 /// * [type] 
+/// * [authentication] - Specifies whether authentication is required to send to this pipeline via HTTP.
+/// * [cors] 
 @Deprecated('CloudflarePipelinesWorkersPipelinesHttpSource has been deprecated')
 @BuiltValue()
 abstract class CloudflarePipelinesWorkersPipelinesHttpSource implements Built<CloudflarePipelinesWorkersPipelinesHttpSource, CloudflarePipelinesWorkersPipelinesHttpSourceBuilder> {
-  /// Specifies whether authentication is required to send to this pipeline via HTTP.
-  @BuiltValueField(wireName: r'authentication')
-  bool? get authentication;
-
-  @BuiltValueField(wireName: r'cors')
-  CloudflarePipelinesWorkersPipelinesHttpSourceCors? get cors;
-
   /// Specifies the format of source data.
   @BuiltValueField(wireName: r'format')
   CloudflarePipelinesWorkersPipelinesHttpSourceFormatEnum get format;
@@ -34,6 +27,13 @@ abstract class CloudflarePipelinesWorkersPipelinesHttpSource implements Built<Cl
 
   @BuiltValueField(wireName: r'type')
   String get type;
+
+  /// Specifies whether authentication is required to send to this pipeline via HTTP.
+  @BuiltValueField(wireName: r'authentication')
+  bool? get authentication;
+
+  @BuiltValueField(wireName: r'cors')
+  CloudflarePipelinesWorkersPipelinesHttpSourceCors? get cors;
 
   CloudflarePipelinesWorkersPipelinesHttpSource._();
 
@@ -58,6 +58,16 @@ class _$CloudflarePipelinesWorkersPipelinesHttpSourceSerializer implements Primi
     CloudflarePipelinesWorkersPipelinesHttpSource object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    yield r'format';
+    yield serializers.serialize(
+      object.format,
+      specifiedType: const FullType(CloudflarePipelinesWorkersPipelinesHttpSourceFormatEnum),
+    );
+    yield r'type';
+    yield serializers.serialize(
+      object.type,
+      specifiedType: const FullType(String),
+    );
     if (object.authentication != null) {
       yield r'authentication';
       yield serializers.serialize(
@@ -72,16 +82,6 @@ class _$CloudflarePipelinesWorkersPipelinesHttpSourceSerializer implements Primi
         specifiedType: const FullType(CloudflarePipelinesWorkersPipelinesHttpSourceCors),
       );
     }
-    yield r'format';
-    yield serializers.serialize(
-      object.format,
-      specifiedType: const FullType(CloudflarePipelinesWorkersPipelinesHttpSourceFormatEnum),
-    );
-    yield r'type';
-    yield serializers.serialize(
-      object.type,
-      specifiedType: const FullType(String),
-    );
   }
 
   @override
@@ -105,20 +105,6 @@ class _$CloudflarePipelinesWorkersPipelinesHttpSourceSerializer implements Primi
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'authentication':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
-          result.authentication = valueDes;
-          break;
-        case r'cors':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(CloudflarePipelinesWorkersPipelinesHttpSourceCors),
-          ) as CloudflarePipelinesWorkersPipelinesHttpSourceCors;
-          result.cors.replace(valueDes);
-          break;
         case r'format':
           final valueDes = serializers.deserialize(
             value,
@@ -132,6 +118,20 @@ class _$CloudflarePipelinesWorkersPipelinesHttpSourceSerializer implements Primi
             specifiedType: const FullType(String),
           ) as String;
           result.type = valueDes;
+          break;
+        case r'authentication':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(bool),
+          ) as bool;
+          result.authentication = valueDes;
+          break;
+        case r'cors':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(CloudflarePipelinesWorkersPipelinesHttpSourceCors),
+          ) as CloudflarePipelinesWorkersPipelinesHttpSourceCors;
+          result.cors.replace(valueDes);
           break;
         default:
           unhandled.add(key);

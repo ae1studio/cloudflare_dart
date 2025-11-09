@@ -11,15 +11,15 @@ class _$WorkersObservabilityQueryResultsCalculationsInnerAggregatesInner
   @override
   final num count;
   @override
-  final BuiltList<
-          WorkersObservabilityQueryResultsCalculationsInnerAggregatesInnerGroupsInner>?
-      groups;
-  @override
   final num interval;
   @override
   final num sampleInterval;
   @override
   final num value;
+  @override
+  final BuiltList<
+          WorkersObservabilityQueryResultsCalculationsInnerAggregatesInnerGroupsInner>?
+      groups;
 
   factory _$WorkersObservabilityQueryResultsCalculationsInnerAggregatesInner(
           [void Function(
@@ -31,10 +31,10 @@ class _$WorkersObservabilityQueryResultsCalculationsInnerAggregatesInner
 
   _$WorkersObservabilityQueryResultsCalculationsInnerAggregatesInner._(
       {required this.count,
-      this.groups,
       required this.interval,
       required this.sampleInterval,
-      required this.value})
+      required this.value,
+      this.groups})
       : super._();
   @override
   WorkersObservabilityQueryResultsCalculationsInnerAggregatesInner rebuild(
@@ -55,20 +55,20 @@ class _$WorkersObservabilityQueryResultsCalculationsInnerAggregatesInner
     return other
             is WorkersObservabilityQueryResultsCalculationsInnerAggregatesInner &&
         count == other.count &&
-        groups == other.groups &&
         interval == other.interval &&
         sampleInterval == other.sampleInterval &&
-        value == other.value;
+        value == other.value &&
+        groups == other.groups;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
     _$hash = $jc(_$hash, count.hashCode);
-    _$hash = $jc(_$hash, groups.hashCode);
     _$hash = $jc(_$hash, interval.hashCode);
     _$hash = $jc(_$hash, sampleInterval.hashCode);
     _$hash = $jc(_$hash, value.hashCode);
+    _$hash = $jc(_$hash, groups.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -78,10 +78,10 @@ class _$WorkersObservabilityQueryResultsCalculationsInnerAggregatesInner
     return (newBuiltValueToStringHelper(
             r'WorkersObservabilityQueryResultsCalculationsInnerAggregatesInner')
           ..add('count', count)
-          ..add('groups', groups)
           ..add('interval', interval)
           ..add('sampleInterval', sampleInterval)
-          ..add('value', value))
+          ..add('value', value)
+          ..add('groups', groups))
         .toString();
   }
 }
@@ -97,19 +97,6 @@ class WorkersObservabilityQueryResultsCalculationsInnerAggregatesInnerBuilder
   num? get count => _$this._count;
   set count(num? count) => _$this._count = count;
 
-  ListBuilder<
-          WorkersObservabilityQueryResultsCalculationsInnerAggregatesInnerGroupsInner>?
-      _groups;
-  ListBuilder<
-          WorkersObservabilityQueryResultsCalculationsInnerAggregatesInnerGroupsInner>
-      get groups => _$this._groups ??= ListBuilder<
-          WorkersObservabilityQueryResultsCalculationsInnerAggregatesInnerGroupsInner>();
-  set groups(
-          ListBuilder<
-                  WorkersObservabilityQueryResultsCalculationsInnerAggregatesInnerGroupsInner>?
-              groups) =>
-      _$this._groups = groups;
-
   num? _interval;
   num? get interval => _$this._interval;
   set interval(num? interval) => _$this._interval = interval;
@@ -123,6 +110,19 @@ class WorkersObservabilityQueryResultsCalculationsInnerAggregatesInnerBuilder
   num? get value => _$this._value;
   set value(num? value) => _$this._value = value;
 
+  ListBuilder<
+          WorkersObservabilityQueryResultsCalculationsInnerAggregatesInnerGroupsInner>?
+      _groups;
+  ListBuilder<
+          WorkersObservabilityQueryResultsCalculationsInnerAggregatesInnerGroupsInner>
+      get groups => _$this._groups ??= ListBuilder<
+          WorkersObservabilityQueryResultsCalculationsInnerAggregatesInnerGroupsInner>();
+  set groups(
+          ListBuilder<
+                  WorkersObservabilityQueryResultsCalculationsInnerAggregatesInnerGroupsInner>?
+              groups) =>
+      _$this._groups = groups;
+
   WorkersObservabilityQueryResultsCalculationsInnerAggregatesInnerBuilder() {
     WorkersObservabilityQueryResultsCalculationsInnerAggregatesInner._defaults(
         this);
@@ -133,10 +133,10 @@ class WorkersObservabilityQueryResultsCalculationsInnerAggregatesInnerBuilder
     final $v = _$v;
     if ($v != null) {
       _count = $v.count;
-      _groups = $v.groups?.toBuilder();
       _interval = $v.interval;
       _sampleInterval = $v.sampleInterval;
       _value = $v.value;
+      _groups = $v.groups?.toBuilder();
       _$v = null;
     }
     return this;
@@ -170,7 +170,6 @@ class WorkersObservabilityQueryResultsCalculationsInnerAggregatesInnerBuilder
                 count,
                 r'WorkersObservabilityQueryResultsCalculationsInnerAggregatesInner',
                 'count'),
-            groups: _groups?.build(),
             interval: BuiltValueNullFieldError.checkNotNull(
                 interval,
                 r'WorkersObservabilityQueryResultsCalculationsInnerAggregatesInner',
@@ -183,6 +182,7 @@ class WorkersObservabilityQueryResultsCalculationsInnerAggregatesInnerBuilder
                 value,
                 r'WorkersObservabilityQueryResultsCalculationsInnerAggregatesInner',
                 'value'),
+            groups: _groups?.build(),
           );
     } catch (_) {
       late String _$failedField;

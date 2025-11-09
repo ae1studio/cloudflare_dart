@@ -20,8 +20,8 @@ part 'account_level_custom_nameservers_list_account_custom_nameservers4_xx_respo
 /// * [errors] 
 /// * [messages] 
 /// * [success] - Whether the API call was successful.
-/// * [resultInfo] 
 /// * [result] 
+/// * [resultInfo] 
 @BuiltValue()
 abstract class AccountLevelCustomNameserversListAccountCustomNameservers4XXResponse implements DnsCustomNameserversAcnsResponseCollection, DnsCustomNameserversApiResponseCommonFailure, Built<AccountLevelCustomNameserversListAccountCustomNameservers4XXResponse, AccountLevelCustomNameserversListAccountCustomNameservers4XXResponseBuilder> {
   AccountLevelCustomNameserversListAccountCustomNameservers4XXResponse._();

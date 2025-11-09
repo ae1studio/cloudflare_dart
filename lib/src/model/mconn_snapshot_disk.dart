@@ -11,45 +11,29 @@ part 'mconn_snapshot_disk.g.dart';
 /// Snapshot Disk
 ///
 /// Properties:
-/// * [connectorId] - Connector identifier
-/// * [discards] - Discards completed successfully
-/// * [discardsMerged] - Discards merged
-/// * [flushes] - Flushes completed successfully
 /// * [inProgress] - I/Os currently in progress
 /// * [major] - Device major number
 /// * [merged] - Reads merged
 /// * [minor] - Device minor number
 /// * [name] - Device name
 /// * [reads] - Reads completed successfully
-/// * [sectorsDiscarded] - Sectors discarded
 /// * [sectorsRead] - Sectors read successfully
 /// * [sectorsWritten] - Sectors written successfully
-/// * [timeDiscardingMs] - Time spent discarding (milliseconds)
-/// * [timeFlushingMs] - Time spent flushing (milliseconds)
 /// * [timeInProgressMs] - Time spent doing I/Os (milliseconds)
 /// * [timeReadingMs] - Time spent reading (milliseconds)
 /// * [timeWritingMs] - Time spent writing (milliseconds)
 /// * [weightedTimeInProgressMs] - Weighted time spent doing I/Os (milliseconds)
 /// * [writes] - Writes completed
 /// * [writesMerged] - Writes merged
+/// * [connectorId] - Connector identifier
+/// * [discards] - Discards completed successfully
+/// * [discardsMerged] - Discards merged
+/// * [flushes] - Flushes completed successfully
+/// * [sectorsDiscarded] - Sectors discarded
+/// * [timeDiscardingMs] - Time spent discarding (milliseconds)
+/// * [timeFlushingMs] - Time spent flushing (milliseconds)
 @BuiltValue()
 abstract class MconnSnapshotDisk implements Built<MconnSnapshotDisk, MconnSnapshotDiskBuilder> {
-  /// Connector identifier
-  @BuiltValueField(wireName: r'connector_id')
-  String? get connectorId;
-
-  /// Discards completed successfully
-  @BuiltValueField(wireName: r'discards')
-  num? get discards;
-
-  /// Discards merged
-  @BuiltValueField(wireName: r'discards_merged')
-  num? get discardsMerged;
-
-  /// Flushes completed successfully
-  @BuiltValueField(wireName: r'flushes')
-  num? get flushes;
-
   /// I/Os currently in progress
   @BuiltValueField(wireName: r'in_progress')
   num get inProgress;
@@ -74,10 +58,6 @@ abstract class MconnSnapshotDisk implements Built<MconnSnapshotDisk, MconnSnapsh
   @BuiltValueField(wireName: r'reads')
   num get reads;
 
-  /// Sectors discarded
-  @BuiltValueField(wireName: r'sectors_discarded')
-  num? get sectorsDiscarded;
-
   /// Sectors read successfully
   @BuiltValueField(wireName: r'sectors_read')
   num get sectorsRead;
@@ -85,14 +65,6 @@ abstract class MconnSnapshotDisk implements Built<MconnSnapshotDisk, MconnSnapsh
   /// Sectors written successfully
   @BuiltValueField(wireName: r'sectors_written')
   num get sectorsWritten;
-
-  /// Time spent discarding (milliseconds)
-  @BuiltValueField(wireName: r'time_discarding_ms')
-  num? get timeDiscardingMs;
-
-  /// Time spent flushing (milliseconds)
-  @BuiltValueField(wireName: r'time_flushing_ms')
-  num? get timeFlushingMs;
 
   /// Time spent doing I/Os (milliseconds)
   @BuiltValueField(wireName: r'time_in_progress_ms')
@@ -118,6 +90,34 @@ abstract class MconnSnapshotDisk implements Built<MconnSnapshotDisk, MconnSnapsh
   @BuiltValueField(wireName: r'writes_merged')
   num get writesMerged;
 
+  /// Connector identifier
+  @BuiltValueField(wireName: r'connector_id')
+  String? get connectorId;
+
+  /// Discards completed successfully
+  @BuiltValueField(wireName: r'discards')
+  num? get discards;
+
+  /// Discards merged
+  @BuiltValueField(wireName: r'discards_merged')
+  num? get discardsMerged;
+
+  /// Flushes completed successfully
+  @BuiltValueField(wireName: r'flushes')
+  num? get flushes;
+
+  /// Sectors discarded
+  @BuiltValueField(wireName: r'sectors_discarded')
+  num? get sectorsDiscarded;
+
+  /// Time spent discarding (milliseconds)
+  @BuiltValueField(wireName: r'time_discarding_ms')
+  num? get timeDiscardingMs;
+
+  /// Time spent flushing (milliseconds)
+  @BuiltValueField(wireName: r'time_flushing_ms')
+  num? get timeFlushingMs;
+
   MconnSnapshotDisk._();
 
   factory MconnSnapshotDisk([void updates(MconnSnapshotDiskBuilder b)]) = _$MconnSnapshotDisk;
@@ -141,34 +141,6 @@ class _$MconnSnapshotDiskSerializer implements PrimitiveSerializer<MconnSnapshot
     MconnSnapshotDisk object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
-    if (object.connectorId != null) {
-      yield r'connector_id';
-      yield serializers.serialize(
-        object.connectorId,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.discards != null) {
-      yield r'discards';
-      yield serializers.serialize(
-        object.discards,
-        specifiedType: const FullType(num),
-      );
-    }
-    if (object.discardsMerged != null) {
-      yield r'discards_merged';
-      yield serializers.serialize(
-        object.discardsMerged,
-        specifiedType: const FullType(num),
-      );
-    }
-    if (object.flushes != null) {
-      yield r'flushes';
-      yield serializers.serialize(
-        object.flushes,
-        specifiedType: const FullType(num),
-      );
-    }
     yield r'in_progress';
     yield serializers.serialize(
       object.inProgress,
@@ -199,13 +171,6 @@ class _$MconnSnapshotDiskSerializer implements PrimitiveSerializer<MconnSnapshot
       object.reads,
       specifiedType: const FullType(num),
     );
-    if (object.sectorsDiscarded != null) {
-      yield r'sectors_discarded';
-      yield serializers.serialize(
-        object.sectorsDiscarded,
-        specifiedType: const FullType(num),
-      );
-    }
     yield r'sectors_read';
     yield serializers.serialize(
       object.sectorsRead,
@@ -216,20 +181,6 @@ class _$MconnSnapshotDiskSerializer implements PrimitiveSerializer<MconnSnapshot
       object.sectorsWritten,
       specifiedType: const FullType(num),
     );
-    if (object.timeDiscardingMs != null) {
-      yield r'time_discarding_ms';
-      yield serializers.serialize(
-        object.timeDiscardingMs,
-        specifiedType: const FullType(num),
-      );
-    }
-    if (object.timeFlushingMs != null) {
-      yield r'time_flushing_ms';
-      yield serializers.serialize(
-        object.timeFlushingMs,
-        specifiedType: const FullType(num),
-      );
-    }
     yield r'time_in_progress_ms';
     yield serializers.serialize(
       object.timeInProgressMs,
@@ -260,6 +211,55 @@ class _$MconnSnapshotDiskSerializer implements PrimitiveSerializer<MconnSnapshot
       object.writesMerged,
       specifiedType: const FullType(num),
     );
+    if (object.connectorId != null) {
+      yield r'connector_id';
+      yield serializers.serialize(
+        object.connectorId,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.discards != null) {
+      yield r'discards';
+      yield serializers.serialize(
+        object.discards,
+        specifiedType: const FullType(num),
+      );
+    }
+    if (object.discardsMerged != null) {
+      yield r'discards_merged';
+      yield serializers.serialize(
+        object.discardsMerged,
+        specifiedType: const FullType(num),
+      );
+    }
+    if (object.flushes != null) {
+      yield r'flushes';
+      yield serializers.serialize(
+        object.flushes,
+        specifiedType: const FullType(num),
+      );
+    }
+    if (object.sectorsDiscarded != null) {
+      yield r'sectors_discarded';
+      yield serializers.serialize(
+        object.sectorsDiscarded,
+        specifiedType: const FullType(num),
+      );
+    }
+    if (object.timeDiscardingMs != null) {
+      yield r'time_discarding_ms';
+      yield serializers.serialize(
+        object.timeDiscardingMs,
+        specifiedType: const FullType(num),
+      );
+    }
+    if (object.timeFlushingMs != null) {
+      yield r'time_flushing_ms';
+      yield serializers.serialize(
+        object.timeFlushingMs,
+        specifiedType: const FullType(num),
+      );
+    }
   }
 
   @override
@@ -283,34 +283,6 @@ class _$MconnSnapshotDiskSerializer implements PrimitiveSerializer<MconnSnapshot
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'connector_id':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.connectorId = valueDes;
-          break;
-        case r'discards':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(num),
-          ) as num;
-          result.discards = valueDes;
-          break;
-        case r'discards_merged':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(num),
-          ) as num;
-          result.discardsMerged = valueDes;
-          break;
-        case r'flushes':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(num),
-          ) as num;
-          result.flushes = valueDes;
-          break;
         case r'in_progress':
           final valueDes = serializers.deserialize(
             value,
@@ -353,13 +325,6 @@ class _$MconnSnapshotDiskSerializer implements PrimitiveSerializer<MconnSnapshot
           ) as num;
           result.reads = valueDes;
           break;
-        case r'sectors_discarded':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(num),
-          ) as num;
-          result.sectorsDiscarded = valueDes;
-          break;
         case r'sectors_read':
           final valueDes = serializers.deserialize(
             value,
@@ -373,20 +338,6 @@ class _$MconnSnapshotDiskSerializer implements PrimitiveSerializer<MconnSnapshot
             specifiedType: const FullType(num),
           ) as num;
           result.sectorsWritten = valueDes;
-          break;
-        case r'time_discarding_ms':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(num),
-          ) as num;
-          result.timeDiscardingMs = valueDes;
-          break;
-        case r'time_flushing_ms':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(num),
-          ) as num;
-          result.timeFlushingMs = valueDes;
           break;
         case r'time_in_progress_ms':
           final valueDes = serializers.deserialize(
@@ -429,6 +380,55 @@ class _$MconnSnapshotDiskSerializer implements PrimitiveSerializer<MconnSnapshot
             specifiedType: const FullType(num),
           ) as num;
           result.writesMerged = valueDes;
+          break;
+        case r'connector_id':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.connectorId = valueDes;
+          break;
+        case r'discards':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(num),
+          ) as num;
+          result.discards = valueDes;
+          break;
+        case r'discards_merged':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(num),
+          ) as num;
+          result.discardsMerged = valueDes;
+          break;
+        case r'flushes':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(num),
+          ) as num;
+          result.flushes = valueDes;
+          break;
+        case r'sectors_discarded':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(num),
+          ) as num;
+          result.sectorsDiscarded = valueDes;
+          break;
+        case r'time_discarding_ms':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(num),
+          ) as num;
+          result.timeDiscardingMs = valueDes;
+          break;
+        case r'time_flushing_ms':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(num),
+          ) as num;
+          result.timeFlushingMs = valueDes;
           break;
         default:
           unhandled.add(key);

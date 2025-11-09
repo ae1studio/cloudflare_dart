@@ -8,9 +8,9 @@ part of 'category_override.dart';
 
 class _$CategoryOverride extends CategoryOverride {
   @override
-  final String? action;
-  @override
   final String category;
+  @override
+  final String? action;
   @override
   final bool? enabled;
   @override
@@ -21,8 +21,8 @@ class _$CategoryOverride extends CategoryOverride {
       (CategoryOverrideBuilder()..update(updates))._build();
 
   _$CategoryOverride._(
-      {this.action,
-      required this.category,
+      {required this.category,
+      this.action,
       this.enabled,
       this.sensitivityLevel})
       : super._();
@@ -38,8 +38,8 @@ class _$CategoryOverride extends CategoryOverride {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is CategoryOverride &&
-        action == other.action &&
         category == other.category &&
+        action == other.action &&
         enabled == other.enabled &&
         sensitivityLevel == other.sensitivityLevel;
   }
@@ -47,8 +47,8 @@ class _$CategoryOverride extends CategoryOverride {
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, action.hashCode);
     _$hash = $jc(_$hash, category.hashCode);
+    _$hash = $jc(_$hash, action.hashCode);
     _$hash = $jc(_$hash, enabled.hashCode);
     _$hash = $jc(_$hash, sensitivityLevel.hashCode);
     _$hash = $jf(_$hash);
@@ -58,8 +58,8 @@ class _$CategoryOverride extends CategoryOverride {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'CategoryOverride')
-          ..add('action', action)
           ..add('category', category)
+          ..add('action', action)
           ..add('enabled', enabled)
           ..add('sensitivityLevel', sensitivityLevel))
         .toString();
@@ -70,13 +70,13 @@ class CategoryOverrideBuilder
     implements Builder<CategoryOverride, CategoryOverrideBuilder> {
   _$CategoryOverride? _$v;
 
-  String? _action;
-  String? get action => _$this._action;
-  set action(String? action) => _$this._action = action;
-
   String? _category;
   String? get category => _$this._category;
   set category(String? category) => _$this._category = category;
+
+  String? _action;
+  String? get action => _$this._action;
+  set action(String? action) => _$this._action = action;
 
   bool? _enabled;
   bool? get enabled => _$this._enabled;
@@ -95,8 +95,8 @@ class CategoryOverrideBuilder
   CategoryOverrideBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _action = $v.action;
       _category = $v.category;
+      _action = $v.action;
       _enabled = $v.enabled;
       _sensitivityLevel = $v.sensitivityLevel;
       _$v = null;
@@ -120,9 +120,9 @@ class CategoryOverrideBuilder
   _$CategoryOverride _build() {
     final _$result = _$v ??
         _$CategoryOverride._(
-          action: action,
           category: BuiltValueNullFieldError.checkNotNull(
               category, r'CategoryOverride', 'category'),
+          action: action,
           enabled: enabled,
           sensitivityLevel: sensitivityLevel,
         );

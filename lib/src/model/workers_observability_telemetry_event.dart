@@ -15,17 +15,14 @@ part 'workers_observability_telemetry_event.g.dart';
 ///
 /// Properties:
 /// * [dollarMetadata] 
-/// * [dollarWorkers] 
 /// * [dataset] 
 /// * [source_] 
 /// * [timestamp] 
+/// * [dollarWorkers] 
 @BuiltValue()
 abstract class WorkersObservabilityTelemetryEvent implements Built<WorkersObservabilityTelemetryEvent, WorkersObservabilityTelemetryEventBuilder> {
   @BuiltValueField(wireName: r'$metadata')
   WorkersObservabilityTelemetryEventMetadata get dollarMetadata;
-
-  @BuiltValueField(wireName: r'$workers')
-  WorkersObservabilityTelemetryEventWorkers? get dollarWorkers;
 
   @BuiltValueField(wireName: r'dataset')
   String get dataset;
@@ -35,6 +32,9 @@ abstract class WorkersObservabilityTelemetryEvent implements Built<WorkersObserv
 
   @BuiltValueField(wireName: r'timestamp')
   int get timestamp;
+
+  @BuiltValueField(wireName: r'$workers')
+  WorkersObservabilityTelemetryEventWorkers? get dollarWorkers;
 
   WorkersObservabilityTelemetryEvent._();
 
@@ -64,13 +64,6 @@ class _$WorkersObservabilityTelemetryEventSerializer implements PrimitiveSeriali
       object.dollarMetadata,
       specifiedType: const FullType(WorkersObservabilityTelemetryEventMetadata),
     );
-    if (object.dollarWorkers != null) {
-      yield r'$workers';
-      yield serializers.serialize(
-        object.dollarWorkers,
-        specifiedType: const FullType(WorkersObservabilityTelemetryEventWorkers),
-      );
-    }
     yield r'dataset';
     yield serializers.serialize(
       object.dataset,
@@ -86,6 +79,13 @@ class _$WorkersObservabilityTelemetryEventSerializer implements PrimitiveSeriali
       object.timestamp,
       specifiedType: const FullType(int),
     );
+    if (object.dollarWorkers != null) {
+      yield r'$workers';
+      yield serializers.serialize(
+        object.dollarWorkers,
+        specifiedType: const FullType(WorkersObservabilityTelemetryEventWorkers),
+      );
+    }
   }
 
   @override
@@ -116,13 +116,6 @@ class _$WorkersObservabilityTelemetryEventSerializer implements PrimitiveSeriali
           ) as WorkersObservabilityTelemetryEventMetadata;
           result.dollarMetadata.replace(valueDes);
           break;
-        case r'$workers':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(WorkersObservabilityTelemetryEventWorkers),
-          ) as WorkersObservabilityTelemetryEventWorkers;
-          result.dollarWorkers.replace(valueDes);
-          break;
         case r'dataset':
           final valueDes = serializers.deserialize(
             value,
@@ -143,6 +136,13 @@ class _$WorkersObservabilityTelemetryEventSerializer implements PrimitiveSeriali
             specifiedType: const FullType(int),
           ) as int;
           result.timestamp = valueDes;
+          break;
+        case r'$workers':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(WorkersObservabilityTelemetryEventWorkers),
+          ) as WorkersObservabilityTelemetryEventWorkers;
+          result.dollarWorkers.replace(valueDes);
           break;
         default:
           unhandled.add(key);

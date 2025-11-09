@@ -9,10 +9,10 @@ import 'package:cloudflare_dart/api.dart';
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **type** | **String** |  | 
-**unit** | [**CloudflarePipelinesTimestampUnit**](CloudflarePipelinesTimestampUnit.md) |  | [optional] 
 **fields** | [**BuiltList&lt;CloudflarePipelinesSourceField&gt;**](CloudflarePipelinesSourceField.md) |  | 
 **name** | **String** |  | 
 **items** | [**CloudflarePipelinesSourceField**](CloudflarePipelinesSourceField.md) |  | 
+**unit** | [**CloudflarePipelinesTimestampUnit**](CloudflarePipelinesTimestampUnit.md) |  | [optional] 
 **metadataKey** | **String** |  | [optional] 
 **required_** | **bool** |  | [optional] 
 **sqlName** | **String** |  | [optional] 

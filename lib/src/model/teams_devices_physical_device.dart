@@ -14,37 +14,53 @@ part 'teams_devices_physical_device.g.dart';
 ///
 /// Properties:
 /// * [activeRegistrations] - The number of active registrations for the device. Active registrations are those which haven't been revoked or deleted.
-/// * [clientVersion] - Version of the WARP client.
 /// * [createdAt] - The RFC3339 timestamp when the device was created.
+/// * [id] - The unique ID of the device.
+/// * [lastSeenAt] - The RFC3339 timestamp when the device was last seen.
+/// * [name] - The name of the device.
+/// * [updatedAt] - The RFC3339 timestamp when the device was last updated.
+/// * [clientVersion] - Version of the WARP client.
 /// * [deletedAt] - The RFC3339 timestamp when the device was deleted.
 /// * [deviceType] - The device operating system.
 /// * [hardwareId] - A string that uniquely identifies the hardware or virtual machine (VM).
-/// * [id] - The unique ID of the device.
-/// * [lastSeenAt] - The RFC3339 timestamp when the device was last seen.
 /// * [lastSeenRegistration] - The last seen registration for the device.
 /// * [lastSeenUser] - The last user to use the WARP device.
 /// * [macAddress] - The device MAC address.
 /// * [manufacturer] - The device manufacturer.
 /// * [model] - The model name of the device.
-/// * [name] - The name of the device.
 /// * [osVersion] - The device operating system version number.
 /// * [osVersionExtra] - Additional operating system version details. For Windows, the UBR (Update Build Revision). For Mac or iOS, the Product Version Extra. For Linux, the distribution name and version.
 /// * [publicIp] - **Deprecated**: IP information is provided by DEX - see https://developers.cloudflare.com/api/resources/zero_trust/subresources/dex/subresources/fleet_status/subresources/devices/methods/list/ 
 /// * [serialNumber] - The device serial number.
-/// * [updatedAt] - The RFC3339 timestamp when the device was last updated.
 @BuiltValue()
 abstract class TeamsDevicesPhysicalDevice implements Built<TeamsDevicesPhysicalDevice, TeamsDevicesPhysicalDeviceBuilder> {
   /// The number of active registrations for the device. Active registrations are those which haven't been revoked or deleted.
   @BuiltValueField(wireName: r'active_registrations')
   int get activeRegistrations;
 
-  /// Version of the WARP client.
-  @BuiltValueField(wireName: r'client_version')
-  String? get clientVersion;
-
   /// The RFC3339 timestamp when the device was created.
   @BuiltValueField(wireName: r'created_at')
   String get createdAt;
+
+  /// The unique ID of the device.
+  @BuiltValueField(wireName: r'id')
+  String get id;
+
+  /// The RFC3339 timestamp when the device was last seen.
+  @BuiltValueField(wireName: r'last_seen_at')
+  String? get lastSeenAt;
+
+  /// The name of the device.
+  @BuiltValueField(wireName: r'name')
+  String get name;
+
+  /// The RFC3339 timestamp when the device was last updated.
+  @BuiltValueField(wireName: r'updated_at')
+  String get updatedAt;
+
+  /// Version of the WARP client.
+  @BuiltValueField(wireName: r'client_version')
+  String? get clientVersion;
 
   /// The RFC3339 timestamp when the device was deleted.
   @BuiltValueField(wireName: r'deleted_at')
@@ -57,14 +73,6 @@ abstract class TeamsDevicesPhysicalDevice implements Built<TeamsDevicesPhysicalD
   /// A string that uniquely identifies the hardware or virtual machine (VM).
   @BuiltValueField(wireName: r'hardware_id')
   String? get hardwareId;
-
-  /// The unique ID of the device.
-  @BuiltValueField(wireName: r'id')
-  String get id;
-
-  /// The RFC3339 timestamp when the device was last seen.
-  @BuiltValueField(wireName: r'last_seen_at')
-  String? get lastSeenAt;
 
   /// The last seen registration for the device.
   @BuiltValueField(wireName: r'last_seen_registration')
@@ -86,10 +94,6 @@ abstract class TeamsDevicesPhysicalDevice implements Built<TeamsDevicesPhysicalD
   @BuiltValueField(wireName: r'model')
   String? get model;
 
-  /// The name of the device.
-  @BuiltValueField(wireName: r'name')
-  String get name;
-
   /// The device operating system version number.
   @BuiltValueField(wireName: r'os_version')
   String? get osVersion;
@@ -106,10 +110,6 @@ abstract class TeamsDevicesPhysicalDevice implements Built<TeamsDevicesPhysicalD
   /// The device serial number.
   @BuiltValueField(wireName: r'serial_number')
   String? get serialNumber;
-
-  /// The RFC3339 timestamp when the device was last updated.
-  @BuiltValueField(wireName: r'updated_at')
-  String get updatedAt;
 
   TeamsDevicesPhysicalDevice._();
 
@@ -139,6 +139,31 @@ class _$TeamsDevicesPhysicalDeviceSerializer implements PrimitiveSerializer<Team
       object.activeRegistrations,
       specifiedType: const FullType(int),
     );
+    yield r'created_at';
+    yield serializers.serialize(
+      object.createdAt,
+      specifiedType: const FullType(String),
+    );
+    yield r'id';
+    yield serializers.serialize(
+      object.id,
+      specifiedType: const FullType(String),
+    );
+    yield r'last_seen_at';
+    yield object.lastSeenAt == null ? null : serializers.serialize(
+      object.lastSeenAt,
+      specifiedType: const FullType.nullable(String),
+    );
+    yield r'name';
+    yield serializers.serialize(
+      object.name,
+      specifiedType: const FullType(String),
+    );
+    yield r'updated_at';
+    yield serializers.serialize(
+      object.updatedAt,
+      specifiedType: const FullType(String),
+    );
     if (object.clientVersion != null) {
       yield r'client_version';
       yield serializers.serialize(
@@ -146,11 +171,6 @@ class _$TeamsDevicesPhysicalDeviceSerializer implements PrimitiveSerializer<Team
         specifiedType: const FullType.nullable(String),
       );
     }
-    yield r'created_at';
-    yield serializers.serialize(
-      object.createdAt,
-      specifiedType: const FullType(String),
-    );
     if (object.deletedAt != null) {
       yield r'deleted_at';
       yield serializers.serialize(
@@ -172,16 +192,6 @@ class _$TeamsDevicesPhysicalDeviceSerializer implements PrimitiveSerializer<Team
         specifiedType: const FullType.nullable(String),
       );
     }
-    yield r'id';
-    yield serializers.serialize(
-      object.id,
-      specifiedType: const FullType(String),
-    );
-    yield r'last_seen_at';
-    yield object.lastSeenAt == null ? null : serializers.serialize(
-      object.lastSeenAt,
-      specifiedType: const FullType.nullable(String),
-    );
     if (object.lastSeenRegistration != null) {
       yield r'last_seen_registration';
       yield serializers.serialize(
@@ -217,11 +227,6 @@ class _$TeamsDevicesPhysicalDeviceSerializer implements PrimitiveSerializer<Team
         specifiedType: const FullType.nullable(String),
       );
     }
-    yield r'name';
-    yield serializers.serialize(
-      object.name,
-      specifiedType: const FullType(String),
-    );
     if (object.osVersion != null) {
       yield r'os_version';
       yield serializers.serialize(
@@ -250,11 +255,6 @@ class _$TeamsDevicesPhysicalDeviceSerializer implements PrimitiveSerializer<Team
         specifiedType: const FullType.nullable(String),
       );
     }
-    yield r'updated_at';
-    yield serializers.serialize(
-      object.updatedAt,
-      specifiedType: const FullType(String),
-    );
   }
 
   @override
@@ -285,6 +285,42 @@ class _$TeamsDevicesPhysicalDeviceSerializer implements PrimitiveSerializer<Team
           ) as int;
           result.activeRegistrations = valueDes;
           break;
+        case r'created_at':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.createdAt = valueDes;
+          break;
+        case r'id':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.id = valueDes;
+          break;
+        case r'last_seen_at':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType.nullable(String),
+          ) as String?;
+          if (valueDes == null) continue;
+          result.lastSeenAt = valueDes;
+          break;
+        case r'name':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.name = valueDes;
+          break;
+        case r'updated_at':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.updatedAt = valueDes;
+          break;
         case r'client_version':
           final valueDes = serializers.deserialize(
             value,
@@ -292,13 +328,6 @@ class _$TeamsDevicesPhysicalDeviceSerializer implements PrimitiveSerializer<Team
           ) as String?;
           if (valueDes == null) continue;
           result.clientVersion = valueDes;
-          break;
-        case r'created_at':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.createdAt = valueDes;
           break;
         case r'deleted_at':
           final valueDes = serializers.deserialize(
@@ -323,21 +352,6 @@ class _$TeamsDevicesPhysicalDeviceSerializer implements PrimitiveSerializer<Team
           ) as String?;
           if (valueDes == null) continue;
           result.hardwareId = valueDes;
-          break;
-        case r'id':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.id = valueDes;
-          break;
-        case r'last_seen_at':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
-          if (valueDes == null) continue;
-          result.lastSeenAt = valueDes;
           break;
         case r'last_seen_registration':
           final valueDes = serializers.deserialize(
@@ -379,13 +393,6 @@ class _$TeamsDevicesPhysicalDeviceSerializer implements PrimitiveSerializer<Team
           if (valueDes == null) continue;
           result.model = valueDes;
           break;
-        case r'name':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.name = valueDes;
-          break;
         case r'os_version':
           final valueDes = serializers.deserialize(
             value,
@@ -417,13 +424,6 @@ class _$TeamsDevicesPhysicalDeviceSerializer implements PrimitiveSerializer<Team
           ) as String?;
           if (valueDes == null) continue;
           result.serialNumber = valueDes;
-          break;
-        case r'updated_at':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.updatedAt = valueDes;
           break;
         default:
           unhandled.add(key);

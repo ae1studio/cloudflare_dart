@@ -9,10 +9,10 @@ import 'package:cloudflare_dart/api.dart';
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **config** | [**AccessOnetimepinAllOfConfig**](AccessOnetimepinAllOfConfig.md) |  | 
-**id** | **String** | UUID. | [optional] 
 **name** | **String** | The name of the identity provider, shown to users on the login page. | 
-**scimConfig** | [**AccessSchemasIdentityProviderScimConfig**](AccessSchemasIdentityProviderScimConfig.md) |  | [optional] 
 **type** | **String** |  | 
+**id** | **String** | UUID. | [optional] 
+**scimConfig** | [**AccessSchemasIdentityProviderScimConfig**](AccessSchemasIdentityProviderScimConfig.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

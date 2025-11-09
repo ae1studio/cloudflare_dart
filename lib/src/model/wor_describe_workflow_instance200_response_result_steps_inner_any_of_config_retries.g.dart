@@ -92,12 +92,12 @@ class _$WorDescribeWorkflowInstance200ResponseResultStepsInnerAnyOfConfigRetries
 class _$WorDescribeWorkflowInstance200ResponseResultStepsInnerAnyOfConfigRetries
     extends WorDescribeWorkflowInstance200ResponseResultStepsInnerAnyOfConfigRetries {
   @override
-  final WorDescribeWorkflowInstance200ResponseResultStepsInnerAnyOfConfigRetriesBackoffEnum?
-      backoff;
-  @override
   final num? delay;
   @override
   final num limit;
+  @override
+  final WorDescribeWorkflowInstance200ResponseResultStepsInnerAnyOfConfigRetriesBackoffEnum?
+      backoff;
 
   factory _$WorDescribeWorkflowInstance200ResponseResultStepsInnerAnyOfConfigRetries(
           [void Function(
@@ -108,7 +108,7 @@ class _$WorDescribeWorkflowInstance200ResponseResultStepsInnerAnyOfConfigRetries
           ._build();
 
   _$WorDescribeWorkflowInstance200ResponseResultStepsInnerAnyOfConfigRetries._(
-      {this.backoff, this.delay, required this.limit})
+      {this.delay, required this.limit, this.backoff})
       : super._();
   @override
   WorDescribeWorkflowInstance200ResponseResultStepsInnerAnyOfConfigRetries rebuild(
@@ -128,17 +128,17 @@ class _$WorDescribeWorkflowInstance200ResponseResultStepsInnerAnyOfConfigRetries
     if (identical(other, this)) return true;
     return other
             is WorDescribeWorkflowInstance200ResponseResultStepsInnerAnyOfConfigRetries &&
-        backoff == other.backoff &&
         delay == other.delay &&
-        limit == other.limit;
+        limit == other.limit &&
+        backoff == other.backoff;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, backoff.hashCode);
     _$hash = $jc(_$hash, delay.hashCode);
     _$hash = $jc(_$hash, limit.hashCode);
+    _$hash = $jc(_$hash, backoff.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -147,9 +147,9 @@ class _$WorDescribeWorkflowInstance200ResponseResultStepsInnerAnyOfConfigRetries
   String toString() {
     return (newBuiltValueToStringHelper(
             r'WorDescribeWorkflowInstance200ResponseResultStepsInnerAnyOfConfigRetries')
-          ..add('backoff', backoff)
           ..add('delay', delay)
-          ..add('limit', limit))
+          ..add('limit', limit)
+          ..add('backoff', backoff))
         .toString();
   }
 }
@@ -162,6 +162,14 @@ class WorDescribeWorkflowInstance200ResponseResultStepsInnerAnyOfConfigRetriesBu
   _$WorDescribeWorkflowInstance200ResponseResultStepsInnerAnyOfConfigRetries?
       _$v;
 
+  num? _delay;
+  num? get delay => _$this._delay;
+  set delay(num? delay) => _$this._delay = delay;
+
+  num? _limit;
+  num? get limit => _$this._limit;
+  set limit(num? limit) => _$this._limit = limit;
+
   WorDescribeWorkflowInstance200ResponseResultStepsInnerAnyOfConfigRetriesBackoffEnum?
       _backoff;
   WorDescribeWorkflowInstance200ResponseResultStepsInnerAnyOfConfigRetriesBackoffEnum?
@@ -170,14 +178,6 @@ class WorDescribeWorkflowInstance200ResponseResultStepsInnerAnyOfConfigRetriesBu
           WorDescribeWorkflowInstance200ResponseResultStepsInnerAnyOfConfigRetriesBackoffEnum?
               backoff) =>
       _$this._backoff = backoff;
-
-  num? _delay;
-  num? get delay => _$this._delay;
-  set delay(num? delay) => _$this._delay = delay;
-
-  num? _limit;
-  num? get limit => _$this._limit;
-  set limit(num? limit) => _$this._limit = limit;
 
   WorDescribeWorkflowInstance200ResponseResultStepsInnerAnyOfConfigRetriesBuilder() {
     WorDescribeWorkflowInstance200ResponseResultStepsInnerAnyOfConfigRetries
@@ -188,9 +188,9 @@ class WorDescribeWorkflowInstance200ResponseResultStepsInnerAnyOfConfigRetriesBu
       get _$this {
     final $v = _$v;
     if ($v != null) {
-      _backoff = $v.backoff;
       _delay = $v.delay;
       _limit = $v.limit;
+      _backoff = $v.backoff;
       _$v = null;
     }
     return this;
@@ -221,12 +221,12 @@ class WorDescribeWorkflowInstance200ResponseResultStepsInnerAnyOfConfigRetriesBu
     final _$result = _$v ??
         _$WorDescribeWorkflowInstance200ResponseResultStepsInnerAnyOfConfigRetries
             ._(
-          backoff: backoff,
           delay: delay,
           limit: BuiltValueNullFieldError.checkNotNull(
               limit,
               r'WorDescribeWorkflowInstance200ResponseResultStepsInnerAnyOfConfigRetries',
               'limit'),
+          backoff: backoff,
         );
     replace(_$result);
     return _$result;

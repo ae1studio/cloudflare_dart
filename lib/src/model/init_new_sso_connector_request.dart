@@ -11,18 +11,18 @@ part 'init_new_sso_connector_request.g.dart';
 /// InitNewSsoConnectorRequest
 ///
 /// Properties:
-/// * [beginVerification] - Begin the verification process after creation
 /// * [emailDomain] - Email domain of the new SSO connector
+/// * [beginVerification] - Begin the verification process after creation
 /// * [useFedrampLanguage] - Controls the display of FedRAMP language to the user during SSO login
 @BuiltValue()
 abstract class InitNewSsoConnectorRequest implements Built<InitNewSsoConnectorRequest, InitNewSsoConnectorRequestBuilder> {
-  /// Begin the verification process after creation
-  @BuiltValueField(wireName: r'begin_verification')
-  bool? get beginVerification;
-
   /// Email domain of the new SSO connector
   @BuiltValueField(wireName: r'email_domain')
   String get emailDomain;
+
+  /// Begin the verification process after creation
+  @BuiltValueField(wireName: r'begin_verification')
+  bool? get beginVerification;
 
   /// Controls the display of FedRAMP language to the user during SSO login
   @BuiltValueField(wireName: r'use_fedramp_language')
@@ -53,6 +53,11 @@ class _$InitNewSsoConnectorRequestSerializer implements PrimitiveSerializer<Init
     InitNewSsoConnectorRequest object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    yield r'email_domain';
+    yield serializers.serialize(
+      object.emailDomain,
+      specifiedType: const FullType(String),
+    );
     if (object.beginVerification != null) {
       yield r'begin_verification';
       yield serializers.serialize(
@@ -60,11 +65,6 @@ class _$InitNewSsoConnectorRequestSerializer implements PrimitiveSerializer<Init
         specifiedType: const FullType(bool),
       );
     }
-    yield r'email_domain';
-    yield serializers.serialize(
-      object.emailDomain,
-      specifiedType: const FullType(String),
-    );
     if (object.useFedrampLanguage != null) {
       yield r'use_fedramp_language';
       yield serializers.serialize(
@@ -95,19 +95,19 @@ class _$InitNewSsoConnectorRequestSerializer implements PrimitiveSerializer<Init
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'begin_verification':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
-          result.beginVerification = valueDes;
-          break;
         case r'email_domain':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(String),
           ) as String;
           result.emailDomain = valueDes;
+          break;
+        case r'begin_verification':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(bool),
+          ) as bool;
+          result.beginVerification = valueDes;
           break;
         case r'use_fedramp_language':
           final valueDes = serializers.deserialize(

@@ -14,7 +14,6 @@ part 'radar_get_entities_asn_by_ip200_response_result_asn.g.dart';
 /// RadarGetEntitiesAsnByIp200ResponseResultAsn
 ///
 /// Properties:
-/// * [aka] 
 /// * [asn] 
 /// * [country] 
 /// * [countryName] 
@@ -24,11 +23,9 @@ part 'radar_get_entities_asn_by_ip200_response_result_asn.g.dart';
 /// * [related] 
 /// * [source_] - Regional Internet Registry.
 /// * [website] 
+/// * [aka] 
 @BuiltValue()
 abstract class RadarGetEntitiesAsnByIp200ResponseResultAsn implements Built<RadarGetEntitiesAsnByIp200ResponseResultAsn, RadarGetEntitiesAsnByIp200ResponseResultAsnBuilder> {
-  @BuiltValueField(wireName: r'aka')
-  String? get aka;
-
   @BuiltValueField(wireName: r'asn')
   int get asn;
 
@@ -57,6 +54,9 @@ abstract class RadarGetEntitiesAsnByIp200ResponseResultAsn implements Built<Rada
   @BuiltValueField(wireName: r'website')
   String get website;
 
+  @BuiltValueField(wireName: r'aka')
+  String? get aka;
+
   RadarGetEntitiesAsnByIp200ResponseResultAsn._();
 
   factory RadarGetEntitiesAsnByIp200ResponseResultAsn([void updates(RadarGetEntitiesAsnByIp200ResponseResultAsnBuilder b)]) = _$RadarGetEntitiesAsnByIp200ResponseResultAsn;
@@ -80,13 +80,6 @@ class _$RadarGetEntitiesAsnByIp200ResponseResultAsnSerializer implements Primiti
     RadarGetEntitiesAsnByIp200ResponseResultAsn object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
-    if (object.aka != null) {
-      yield r'aka';
-      yield serializers.serialize(
-        object.aka,
-        specifiedType: const FullType(String),
-      );
-    }
     yield r'asn';
     yield serializers.serialize(
       object.asn,
@@ -132,6 +125,13 @@ class _$RadarGetEntitiesAsnByIp200ResponseResultAsnSerializer implements Primiti
       object.website,
       specifiedType: const FullType(String),
     );
+    if (object.aka != null) {
+      yield r'aka';
+      yield serializers.serialize(
+        object.aka,
+        specifiedType: const FullType(String),
+      );
+    }
   }
 
   @override
@@ -155,13 +155,6 @@ class _$RadarGetEntitiesAsnByIp200ResponseResultAsnSerializer implements Primiti
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'aka':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.aka = valueDes;
-          break;
         case r'asn':
           final valueDes = serializers.deserialize(
             value,
@@ -224,6 +217,13 @@ class _$RadarGetEntitiesAsnByIp200ResponseResultAsnSerializer implements Primiti
             specifiedType: const FullType(String),
           ) as String;
           result.website = valueDes;
+          break;
+        case r'aka':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.aka = valueDes;
           break;
         default:
           unhandled.add(key);

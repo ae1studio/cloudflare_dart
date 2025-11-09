@@ -14,13 +14,16 @@ part 'autorag_config_ai_search200_response_result_data_inner.g.dart';
 /// AutoragConfigAiSearch200ResponseResultDataInner
 ///
 /// Properties:
+/// * [score] 
 /// * [attributes] 
 /// * [content] 
 /// * [fileId] 
 /// * [filename] 
-/// * [score] 
 @BuiltValue()
 abstract class AutoragConfigAiSearch200ResponseResultDataInner implements Built<AutoragConfigAiSearch200ResponseResultDataInner, AutoragConfigAiSearch200ResponseResultDataInnerBuilder> {
+  @BuiltValueField(wireName: r'score')
+  num get score;
+
   @BuiltValueField(wireName: r'attributes')
   JsonObject? get attributes;
 
@@ -32,9 +35,6 @@ abstract class AutoragConfigAiSearch200ResponseResultDataInner implements Built<
 
   @BuiltValueField(wireName: r'filename')
   String? get filename;
-
-  @BuiltValueField(wireName: r'score')
-  num get score;
 
   AutoragConfigAiSearch200ResponseResultDataInner._();
 
@@ -59,6 +59,11 @@ class _$AutoragConfigAiSearch200ResponseResultDataInnerSerializer implements Pri
     AutoragConfigAiSearch200ResponseResultDataInner object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    yield r'score';
+    yield serializers.serialize(
+      object.score,
+      specifiedType: const FullType(num),
+    );
     if (object.attributes != null) {
       yield r'attributes';
       yield serializers.serialize(
@@ -87,11 +92,6 @@ class _$AutoragConfigAiSearch200ResponseResultDataInnerSerializer implements Pri
         specifiedType: const FullType(String),
       );
     }
-    yield r'score';
-    yield serializers.serialize(
-      object.score,
-      specifiedType: const FullType(num),
-    );
   }
 
   @override
@@ -115,6 +115,13 @@ class _$AutoragConfigAiSearch200ResponseResultDataInnerSerializer implements Pri
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
+        case r'score':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(num),
+          ) as num;
+          result.score = valueDes;
+          break;
         case r'attributes':
           final valueDes = serializers.deserialize(
             value,
@@ -142,13 +149,6 @@ class _$AutoragConfigAiSearch200ResponseResultDataInnerSerializer implements Pri
             specifiedType: const FullType(String),
           ) as String;
           result.filename = valueDes;
-          break;
-        case r'score':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(num),
-          ) as num;
-          result.score = valueDes;
           break;
         default:
           unhandled.add(key);

@@ -9,15 +9,15 @@ part of 'aaa_components_schemas_messages_inner.dart';
 class _$AaaComponentsSchemasMessagesInner
     extends AaaComponentsSchemasMessagesInner {
   @override
-  final int? code;
-  @override
   final String message;
+  @override
+  final int? code;
 
   factory _$AaaComponentsSchemasMessagesInner(
           [void Function(AaaComponentsSchemasMessagesInnerBuilder)? updates]) =>
       (AaaComponentsSchemasMessagesInnerBuilder()..update(updates))._build();
 
-  _$AaaComponentsSchemasMessagesInner._({this.code, required this.message})
+  _$AaaComponentsSchemasMessagesInner._({required this.message, this.code})
       : super._();
   @override
   AaaComponentsSchemasMessagesInner rebuild(
@@ -32,15 +32,15 @@ class _$AaaComponentsSchemasMessagesInner
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is AaaComponentsSchemasMessagesInner &&
-        code == other.code &&
-        message == other.message;
+        message == other.message &&
+        code == other.code;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, code.hashCode);
     _$hash = $jc(_$hash, message.hashCode);
+    _$hash = $jc(_$hash, code.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -48,8 +48,8 @@ class _$AaaComponentsSchemasMessagesInner
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'AaaComponentsSchemasMessagesInner')
-          ..add('code', code)
-          ..add('message', message))
+          ..add('message', message)
+          ..add('code', code))
         .toString();
   }
 }
@@ -60,13 +60,13 @@ class AaaComponentsSchemasMessagesInnerBuilder
             AaaComponentsSchemasMessagesInnerBuilder> {
   _$AaaComponentsSchemasMessagesInner? _$v;
 
-  int? _code;
-  int? get code => _$this._code;
-  set code(int? code) => _$this._code = code;
-
   String? _message;
   String? get message => _$this._message;
   set message(String? message) => _$this._message = message;
+
+  int? _code;
+  int? get code => _$this._code;
+  set code(int? code) => _$this._code = code;
 
   AaaComponentsSchemasMessagesInnerBuilder() {
     AaaComponentsSchemasMessagesInner._defaults(this);
@@ -75,8 +75,8 @@ class AaaComponentsSchemasMessagesInnerBuilder
   AaaComponentsSchemasMessagesInnerBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _code = $v.code;
       _message = $v.message;
+      _code = $v.code;
       _$v = null;
     }
     return this;
@@ -99,9 +99,9 @@ class AaaComponentsSchemasMessagesInnerBuilder
   _$AaaComponentsSchemasMessagesInner _build() {
     final _$result = _$v ??
         _$AaaComponentsSchemasMessagesInner._(
-          code: code,
           message: BuiltValueNullFieldError.checkNotNull(
               message, r'AaaComponentsSchemasMessagesInner', 'message'),
+          code: code,
         );
     replace(_$result);
     return _$result;

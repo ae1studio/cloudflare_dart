@@ -8,11 +8,11 @@ part of 'access_tag.dart';
 
 class _$AccessTag extends AccessTag {
   @override
+  final String name;
+  @override
   final int? appCount;
   @override
   final JsonObject? createdAt;
-  @override
-  final String name;
   @override
   final JsonObject? updatedAt;
 
@@ -20,7 +20,7 @@ class _$AccessTag extends AccessTag {
       (AccessTagBuilder()..update(updates))._build();
 
   _$AccessTag._(
-      {this.appCount, this.createdAt, required this.name, this.updatedAt})
+      {required this.name, this.appCount, this.createdAt, this.updatedAt})
       : super._();
   @override
   AccessTag rebuild(void Function(AccessTagBuilder) updates) =>
@@ -33,18 +33,18 @@ class _$AccessTag extends AccessTag {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is AccessTag &&
+        name == other.name &&
         appCount == other.appCount &&
         createdAt == other.createdAt &&
-        name == other.name &&
         updatedAt == other.updatedAt;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
+    _$hash = $jc(_$hash, name.hashCode);
     _$hash = $jc(_$hash, appCount.hashCode);
     _$hash = $jc(_$hash, createdAt.hashCode);
-    _$hash = $jc(_$hash, name.hashCode);
     _$hash = $jc(_$hash, updatedAt.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
@@ -53,9 +53,9 @@ class _$AccessTag extends AccessTag {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'AccessTag')
+          ..add('name', name)
           ..add('appCount', appCount)
           ..add('createdAt', createdAt)
-          ..add('name', name)
           ..add('updatedAt', updatedAt))
         .toString();
   }
@@ -64,6 +64,10 @@ class _$AccessTag extends AccessTag {
 class AccessTagBuilder implements Builder<AccessTag, AccessTagBuilder> {
   _$AccessTag? _$v;
 
+  String? _name;
+  String? get name => _$this._name;
+  set name(String? name) => _$this._name = name;
+
   int? _appCount;
   int? get appCount => _$this._appCount;
   set appCount(int? appCount) => _$this._appCount = appCount;
@@ -71,10 +75,6 @@ class AccessTagBuilder implements Builder<AccessTag, AccessTagBuilder> {
   JsonObject? _createdAt;
   JsonObject? get createdAt => _$this._createdAt;
   set createdAt(JsonObject? createdAt) => _$this._createdAt = createdAt;
-
-  String? _name;
-  String? get name => _$this._name;
-  set name(String? name) => _$this._name = name;
 
   JsonObject? _updatedAt;
   JsonObject? get updatedAt => _$this._updatedAt;
@@ -87,9 +87,9 @@ class AccessTagBuilder implements Builder<AccessTag, AccessTagBuilder> {
   AccessTagBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
+      _name = $v.name;
       _appCount = $v.appCount;
       _createdAt = $v.createdAt;
-      _name = $v.name;
       _updatedAt = $v.updatedAt;
       _$v = null;
     }
@@ -112,10 +112,10 @@ class AccessTagBuilder implements Builder<AccessTag, AccessTagBuilder> {
   _$AccessTag _build() {
     final _$result = _$v ??
         _$AccessTag._(
-          appCount: appCount,
-          createdAt: createdAt,
           name:
               BuiltValueNullFieldError.checkNotNull(name, r'AccessTag', 'name'),
+          appCount: appCount,
+          createdAt: createdAt,
           updatedAt: updatedAt,
         );
     replace(_$result);

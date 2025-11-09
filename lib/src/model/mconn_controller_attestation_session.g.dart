@@ -11,11 +11,11 @@ class _$MconnControllerAttestationSession
   @override
   final String akPublic;
   @override
-  final MconnControllerConnectorIdentity? connector;
-  @override
   final MconnControllerDeviceIdentity device;
   @override
   final String nonce;
+  @override
+  final MconnControllerConnectorIdentity? connector;
 
   factory _$MconnControllerAttestationSession(
           [void Function(MconnControllerAttestationSessionBuilder)? updates]) =>
@@ -23,9 +23,9 @@ class _$MconnControllerAttestationSession
 
   _$MconnControllerAttestationSession._(
       {required this.akPublic,
-      this.connector,
       required this.device,
-      required this.nonce})
+      required this.nonce,
+      this.connector})
       : super._();
   @override
   MconnControllerAttestationSession rebuild(
@@ -41,18 +41,18 @@ class _$MconnControllerAttestationSession
     if (identical(other, this)) return true;
     return other is MconnControllerAttestationSession &&
         akPublic == other.akPublic &&
-        connector == other.connector &&
         device == other.device &&
-        nonce == other.nonce;
+        nonce == other.nonce &&
+        connector == other.connector;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
     _$hash = $jc(_$hash, akPublic.hashCode);
-    _$hash = $jc(_$hash, connector.hashCode);
     _$hash = $jc(_$hash, device.hashCode);
     _$hash = $jc(_$hash, nonce.hashCode);
+    _$hash = $jc(_$hash, connector.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -61,9 +61,9 @@ class _$MconnControllerAttestationSession
   String toString() {
     return (newBuiltValueToStringHelper(r'MconnControllerAttestationSession')
           ..add('akPublic', akPublic)
-          ..add('connector', connector)
           ..add('device', device)
-          ..add('nonce', nonce))
+          ..add('nonce', nonce)
+          ..add('connector', connector))
         .toString();
   }
 }
@@ -78,12 +78,6 @@ class MconnControllerAttestationSessionBuilder
   String? get akPublic => _$this._akPublic;
   set akPublic(String? akPublic) => _$this._akPublic = akPublic;
 
-  MconnControllerConnectorIdentityBuilder? _connector;
-  MconnControllerConnectorIdentityBuilder get connector =>
-      _$this._connector ??= MconnControllerConnectorIdentityBuilder();
-  set connector(MconnControllerConnectorIdentityBuilder? connector) =>
-      _$this._connector = connector;
-
   MconnControllerDeviceIdentityBuilder? _device;
   MconnControllerDeviceIdentityBuilder get device =>
       _$this._device ??= MconnControllerDeviceIdentityBuilder();
@@ -94,6 +88,12 @@ class MconnControllerAttestationSessionBuilder
   String? get nonce => _$this._nonce;
   set nonce(String? nonce) => _$this._nonce = nonce;
 
+  MconnControllerConnectorIdentityBuilder? _connector;
+  MconnControllerConnectorIdentityBuilder get connector =>
+      _$this._connector ??= MconnControllerConnectorIdentityBuilder();
+  set connector(MconnControllerConnectorIdentityBuilder? connector) =>
+      _$this._connector = connector;
+
   MconnControllerAttestationSessionBuilder() {
     MconnControllerAttestationSession._defaults(this);
   }
@@ -102,9 +102,9 @@ class MconnControllerAttestationSessionBuilder
     final $v = _$v;
     if ($v != null) {
       _akPublic = $v.akPublic;
-      _connector = $v.connector?.toBuilder();
       _device = $v.device.toBuilder();
       _nonce = $v.nonce;
+      _connector = $v.connector?.toBuilder();
       _$v = null;
     }
     return this;
@@ -131,18 +131,19 @@ class MconnControllerAttestationSessionBuilder
           _$MconnControllerAttestationSession._(
             akPublic: BuiltValueNullFieldError.checkNotNull(
                 akPublic, r'MconnControllerAttestationSession', 'akPublic'),
-            connector: _connector?.build(),
             device: device.build(),
             nonce: BuiltValueNullFieldError.checkNotNull(
                 nonce, r'MconnControllerAttestationSession', 'nonce'),
+            connector: _connector?.build(),
           );
     } catch (_) {
       late String _$failedField;
       try {
-        _$failedField = 'connector';
-        _connector?.build();
         _$failedField = 'device';
         device.build();
+
+        _$failedField = 'connector';
+        _connector?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
             r'MconnControllerAttestationSession', _$failedField, e.toString());

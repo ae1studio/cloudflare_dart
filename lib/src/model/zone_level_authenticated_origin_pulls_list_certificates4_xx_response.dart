@@ -20,8 +20,8 @@ part 'zone_level_authenticated_origin_pulls_list_certificates4_xx_response.g.dar
 /// * [errors] 
 /// * [messages] 
 /// * [success] - Whether the API call was successful.
-/// * [resultInfo] 
 /// * [result] 
+/// * [resultInfo] 
 @BuiltValue()
 abstract class ZoneLevelAuthenticatedOriginPullsListCertificates4XXResponse implements TlsCertificatesAndHostnamesApiResponseCommonFailure, TlsCertificatesAndHostnamesComponentsSchemasCertificateResponseCollection, Built<ZoneLevelAuthenticatedOriginPullsListCertificates4XXResponse, ZoneLevelAuthenticatedOriginPullsListCertificates4XXResponseBuilder> {
   ZoneLevelAuthenticatedOriginPullsListCertificates4XXResponse._();

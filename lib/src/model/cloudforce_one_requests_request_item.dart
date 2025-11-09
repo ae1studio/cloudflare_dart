@@ -13,24 +13,21 @@ part 'cloudforce_one_requests_request_item.g.dart';
 /// CloudforceOneRequestsRequestItem
 ///
 /// Properties:
-/// * [completed] 
 /// * [content] - Request content.
 /// * [created] 
 /// * [id] - UUID.
-/// * [messageTokens] - Tokens for the request messages.
 /// * [priority] 
-/// * [readableId] - Readable Request ID.
 /// * [request] - Requested information from request.
-/// * [status] 
 /// * [summary] - Brief description of the request.
 /// * [tlp] 
-/// * [tokens] - Tokens for the request.
 /// * [updated] 
+/// * [completed] 
+/// * [messageTokens] - Tokens for the request messages.
+/// * [readableId] - Readable Request ID.
+/// * [status] 
+/// * [tokens] - Tokens for the request.
 @BuiltValue()
 abstract class CloudforceOneRequestsRequestItem implements Built<CloudforceOneRequestsRequestItem, CloudforceOneRequestsRequestItemBuilder> {
-  @BuiltValueField(wireName: r'completed')
-  DateTime? get completed;
-
   /// Request content.
   @BuiltValueField(wireName: r'content')
   String get content;
@@ -42,24 +39,12 @@ abstract class CloudforceOneRequestsRequestItem implements Built<CloudforceOneRe
   @BuiltValueField(wireName: r'id')
   String get id;
 
-  /// Tokens for the request messages.
-  @BuiltValueField(wireName: r'message_tokens')
-  int? get messageTokens;
-
   @BuiltValueField(wireName: r'priority')
   DateTime get priority;
-
-  /// Readable Request ID.
-  @BuiltValueField(wireName: r'readable_id')
-  String? get readableId;
 
   /// Requested information from request.
   @BuiltValueField(wireName: r'request')
   String get request;
-
-  @BuiltValueField(wireName: r'status')
-  CloudforceOneRequestsRequestStatus? get status;
-  // enum statusEnum {  open,  accepted,  reported,  approved,  completed,  declined,  };
 
   /// Brief description of the request.
   @BuiltValueField(wireName: r'summary')
@@ -69,12 +54,27 @@ abstract class CloudforceOneRequestsRequestItem implements Built<CloudforceOneRe
   CloudforceOneRequestsTlp get tlp;
   // enum tlpEnum {  clear,  amber,  amber-strict,  green,  red,  };
 
+  @BuiltValueField(wireName: r'updated')
+  DateTime get updated;
+
+  @BuiltValueField(wireName: r'completed')
+  DateTime? get completed;
+
+  /// Tokens for the request messages.
+  @BuiltValueField(wireName: r'message_tokens')
+  int? get messageTokens;
+
+  /// Readable Request ID.
+  @BuiltValueField(wireName: r'readable_id')
+  String? get readableId;
+
+  @BuiltValueField(wireName: r'status')
+  CloudforceOneRequestsRequestStatus? get status;
+  // enum statusEnum {  open,  accepted,  reported,  approved,  completed,  declined,  };
+
   /// Tokens for the request.
   @BuiltValueField(wireName: r'tokens')
   int? get tokens;
-
-  @BuiltValueField(wireName: r'updated')
-  DateTime get updated;
 
   CloudforceOneRequestsRequestItem._();
 
@@ -99,13 +99,6 @@ class _$CloudforceOneRequestsRequestItemSerializer implements PrimitiveSerialize
     CloudforceOneRequestsRequestItem object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
-    if (object.completed != null) {
-      yield r'completed';
-      yield serializers.serialize(
-        object.completed,
-        specifiedType: const FullType(DateTime),
-      );
-    }
     yield r'content';
     yield serializers.serialize(
       object.content,
@@ -121,37 +114,16 @@ class _$CloudforceOneRequestsRequestItemSerializer implements PrimitiveSerialize
       object.id,
       specifiedType: const FullType(String),
     );
-    if (object.messageTokens != null) {
-      yield r'message_tokens';
-      yield serializers.serialize(
-        object.messageTokens,
-        specifiedType: const FullType(int),
-      );
-    }
     yield r'priority';
     yield serializers.serialize(
       object.priority,
       specifiedType: const FullType(DateTime),
     );
-    if (object.readableId != null) {
-      yield r'readable_id';
-      yield serializers.serialize(
-        object.readableId,
-        specifiedType: const FullType(String),
-      );
-    }
     yield r'request';
     yield serializers.serialize(
       object.request,
       specifiedType: const FullType(String),
     );
-    if (object.status != null) {
-      yield r'status';
-      yield serializers.serialize(
-        object.status,
-        specifiedType: const FullType(CloudforceOneRequestsRequestStatus),
-      );
-    }
     yield r'summary';
     yield serializers.serialize(
       object.summary,
@@ -162,6 +134,39 @@ class _$CloudforceOneRequestsRequestItemSerializer implements PrimitiveSerialize
       object.tlp,
       specifiedType: const FullType(CloudforceOneRequestsTlp),
     );
+    yield r'updated';
+    yield serializers.serialize(
+      object.updated,
+      specifiedType: const FullType(DateTime),
+    );
+    if (object.completed != null) {
+      yield r'completed';
+      yield serializers.serialize(
+        object.completed,
+        specifiedType: const FullType(DateTime),
+      );
+    }
+    if (object.messageTokens != null) {
+      yield r'message_tokens';
+      yield serializers.serialize(
+        object.messageTokens,
+        specifiedType: const FullType(int),
+      );
+    }
+    if (object.readableId != null) {
+      yield r'readable_id';
+      yield serializers.serialize(
+        object.readableId,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.status != null) {
+      yield r'status';
+      yield serializers.serialize(
+        object.status,
+        specifiedType: const FullType(CloudforceOneRequestsRequestStatus),
+      );
+    }
     if (object.tokens != null) {
       yield r'tokens';
       yield serializers.serialize(
@@ -169,11 +174,6 @@ class _$CloudforceOneRequestsRequestItemSerializer implements PrimitiveSerialize
         specifiedType: const FullType(int),
       );
     }
-    yield r'updated';
-    yield serializers.serialize(
-      object.updated,
-      specifiedType: const FullType(DateTime),
-    );
   }
 
   @override
@@ -197,13 +197,6 @@ class _$CloudforceOneRequestsRequestItemSerializer implements PrimitiveSerialize
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'completed':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
-          result.completed = valueDes;
-          break;
         case r'content':
           final valueDes = serializers.deserialize(
             value,
@@ -225,13 +218,6 @@ class _$CloudforceOneRequestsRequestItemSerializer implements PrimitiveSerialize
           ) as String;
           result.id = valueDes;
           break;
-        case r'message_tokens':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
-          result.messageTokens = valueDes;
-          break;
         case r'priority':
           final valueDes = serializers.deserialize(
             value,
@@ -239,26 +225,12 @@ class _$CloudforceOneRequestsRequestItemSerializer implements PrimitiveSerialize
           ) as DateTime;
           result.priority = valueDes;
           break;
-        case r'readable_id':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.readableId = valueDes;
-          break;
         case r'request':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(String),
           ) as String;
           result.request = valueDes;
-          break;
-        case r'status':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(CloudforceOneRequestsRequestStatus),
-          ) as CloudforceOneRequestsRequestStatus;
-          result.status = valueDes;
           break;
         case r'summary':
           final valueDes = serializers.deserialize(
@@ -274,19 +246,47 @@ class _$CloudforceOneRequestsRequestItemSerializer implements PrimitiveSerialize
           ) as CloudforceOneRequestsTlp;
           result.tlp = valueDes;
           break;
-        case r'tokens':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
-          result.tokens = valueDes;
-          break;
         case r'updated':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(DateTime),
           ) as DateTime;
           result.updated = valueDes;
+          break;
+        case r'completed':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(DateTime),
+          ) as DateTime;
+          result.completed = valueDes;
+          break;
+        case r'message_tokens':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(int),
+          ) as int;
+          result.messageTokens = valueDes;
+          break;
+        case r'readable_id':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.readableId = valueDes;
+          break;
+        case r'status':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(CloudforceOneRequestsRequestStatus),
+          ) as CloudforceOneRequestsRequestStatus;
+          result.status = valueDes;
+          break;
+        case r'tokens':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(int),
+          ) as int;
+          result.tokens = valueDes;
           break;
         default:
           unhandled.add(key);

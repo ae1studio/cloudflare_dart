@@ -14,15 +14,19 @@ part 'waitingroom_patch_rule.g.dart';
 ///
 /// Properties:
 /// * [action] 
+/// * [expression] - Criteria defining when there is a match for the current rule.
 /// * [description] - The description of the rule.
 /// * [enabled] - When set to true, the rule is enabled.
-/// * [expression] - Criteria defining when there is a match for the current rule.
 /// * [position] 
 @BuiltValue()
 abstract class WaitingroomPatchRule implements Built<WaitingroomPatchRule, WaitingroomPatchRuleBuilder> {
   @BuiltValueField(wireName: r'action')
   WaitingroomRuleAction get action;
   // enum actionEnum {  bypass_waiting_room,  };
+
+  /// Criteria defining when there is a match for the current rule.
+  @BuiltValueField(wireName: r'expression')
+  String get expression;
 
   /// The description of the rule.
   @BuiltValueField(wireName: r'description')
@@ -31,10 +35,6 @@ abstract class WaitingroomPatchRule implements Built<WaitingroomPatchRule, Waiti
   /// When set to true, the rule is enabled.
   @BuiltValueField(wireName: r'enabled')
   bool? get enabled;
-
-  /// Criteria defining when there is a match for the current rule.
-  @BuiltValueField(wireName: r'expression')
-  String get expression;
 
   @BuiltValueField(wireName: r'position')
   WaitingroomRulePosition? get position;
@@ -69,6 +69,11 @@ class _$WaitingroomPatchRuleSerializer implements PrimitiveSerializer<Waitingroo
       object.action,
       specifiedType: const FullType(WaitingroomRuleAction),
     );
+    yield r'expression';
+    yield serializers.serialize(
+      object.expression,
+      specifiedType: const FullType(String),
+    );
     if (object.description != null) {
       yield r'description';
       yield serializers.serialize(
@@ -83,11 +88,6 @@ class _$WaitingroomPatchRuleSerializer implements PrimitiveSerializer<Waitingroo
         specifiedType: const FullType(bool),
       );
     }
-    yield r'expression';
-    yield serializers.serialize(
-      object.expression,
-      specifiedType: const FullType(String),
-    );
     if (object.position != null) {
       yield r'position';
       yield serializers.serialize(
@@ -125,6 +125,13 @@ class _$WaitingroomPatchRuleSerializer implements PrimitiveSerializer<Waitingroo
           ) as WaitingroomRuleAction;
           result.action = valueDes;
           break;
+        case r'expression':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.expression = valueDes;
+          break;
         case r'description':
           final valueDes = serializers.deserialize(
             value,
@@ -138,13 +145,6 @@ class _$WaitingroomPatchRuleSerializer implements PrimitiveSerializer<Waitingroo
             specifiedType: const FullType(bool),
           ) as bool;
           result.enabled = valueDes;
-          break;
-        case r'expression':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.expression = valueDes;
           break;
         case r'position':
           final valueDes = serializers.deserialize(

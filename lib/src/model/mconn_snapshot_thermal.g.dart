@@ -8,13 +8,13 @@ part of 'mconn_snapshot_thermal.dart';
 
 class _$MconnSnapshotThermal extends MconnSnapshotThermal {
   @override
+  final String label;
+  @override
   final String? connectorId;
   @override
   final num? criticalCelcius;
   @override
   final num? currentCelcius;
-  @override
-  final String label;
   @override
   final num? maxCelcius;
 
@@ -23,10 +23,10 @@ class _$MconnSnapshotThermal extends MconnSnapshotThermal {
       (MconnSnapshotThermalBuilder()..update(updates))._build();
 
   _$MconnSnapshotThermal._(
-      {this.connectorId,
+      {required this.label,
+      this.connectorId,
       this.criticalCelcius,
       this.currentCelcius,
-      required this.label,
       this.maxCelcius})
       : super._();
   @override
@@ -42,20 +42,20 @@ class _$MconnSnapshotThermal extends MconnSnapshotThermal {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is MconnSnapshotThermal &&
+        label == other.label &&
         connectorId == other.connectorId &&
         criticalCelcius == other.criticalCelcius &&
         currentCelcius == other.currentCelcius &&
-        label == other.label &&
         maxCelcius == other.maxCelcius;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
+    _$hash = $jc(_$hash, label.hashCode);
     _$hash = $jc(_$hash, connectorId.hashCode);
     _$hash = $jc(_$hash, criticalCelcius.hashCode);
     _$hash = $jc(_$hash, currentCelcius.hashCode);
-    _$hash = $jc(_$hash, label.hashCode);
     _$hash = $jc(_$hash, maxCelcius.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
@@ -64,10 +64,10 @@ class _$MconnSnapshotThermal extends MconnSnapshotThermal {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'MconnSnapshotThermal')
+          ..add('label', label)
           ..add('connectorId', connectorId)
           ..add('criticalCelcius', criticalCelcius)
           ..add('currentCelcius', currentCelcius)
-          ..add('label', label)
           ..add('maxCelcius', maxCelcius))
         .toString();
   }
@@ -76,6 +76,10 @@ class _$MconnSnapshotThermal extends MconnSnapshotThermal {
 class MconnSnapshotThermalBuilder
     implements Builder<MconnSnapshotThermal, MconnSnapshotThermalBuilder> {
   _$MconnSnapshotThermal? _$v;
+
+  String? _label;
+  String? get label => _$this._label;
+  set label(String? label) => _$this._label = label;
 
   String? _connectorId;
   String? get connectorId => _$this._connectorId;
@@ -91,10 +95,6 @@ class MconnSnapshotThermalBuilder
   set currentCelcius(num? currentCelcius) =>
       _$this._currentCelcius = currentCelcius;
 
-  String? _label;
-  String? get label => _$this._label;
-  set label(String? label) => _$this._label = label;
-
   num? _maxCelcius;
   num? get maxCelcius => _$this._maxCelcius;
   set maxCelcius(num? maxCelcius) => _$this._maxCelcius = maxCelcius;
@@ -106,10 +106,10 @@ class MconnSnapshotThermalBuilder
   MconnSnapshotThermalBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
+      _label = $v.label;
       _connectorId = $v.connectorId;
       _criticalCelcius = $v.criticalCelcius;
       _currentCelcius = $v.currentCelcius;
-      _label = $v.label;
       _maxCelcius = $v.maxCelcius;
       _$v = null;
     }
@@ -132,11 +132,11 @@ class MconnSnapshotThermalBuilder
   _$MconnSnapshotThermal _build() {
     final _$result = _$v ??
         _$MconnSnapshotThermal._(
+          label: BuiltValueNullFieldError.checkNotNull(
+              label, r'MconnSnapshotThermal', 'label'),
           connectorId: connectorId,
           criticalCelcius: criticalCelcius,
           currentCelcius: currentCelcius,
-          label: BuiltValueNullFieldError.checkNotNull(
-              label, r'MconnSnapshotThermal', 'label'),
           maxCelcius: maxCelcius,
         );
     replace(_$result);

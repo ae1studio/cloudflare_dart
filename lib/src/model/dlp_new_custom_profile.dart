@@ -15,17 +15,20 @@ part 'dlp_new_custom_profile.g.dart';
 /// DlpNewCustomProfile
 ///
 /// Properties:
+/// * [name] 
 /// * [aiContextEnabled] 
 /// * [allowedMatchCount] - Related DLP policies will trigger when the match count exceeds the number set.
 /// * [confidenceThreshold] 
 /// * [contextAwareness] 
 /// * [description] - The description of the profile.
 /// * [entries] 
-/// * [name] 
 /// * [ocrEnabled] 
 /// * [sharedEntries] - Entries from other profiles (e.g. pre-defined Cloudflare profiles, or your Microsoft Information Protection profiles).
 @BuiltValue()
 abstract class DlpNewCustomProfile implements Built<DlpNewCustomProfile, DlpNewCustomProfileBuilder> {
+  @BuiltValueField(wireName: r'name')
+  String get name;
+
   @BuiltValueField(wireName: r'ai_context_enabled')
   bool? get aiContextEnabled;
 
@@ -46,9 +49,6 @@ abstract class DlpNewCustomProfile implements Built<DlpNewCustomProfile, DlpNewC
 
   @BuiltValueField(wireName: r'entries')
   BuiltList<DlpEntryOfNewProfile>? get entries;
-
-  @BuiltValueField(wireName: r'name')
-  String get name;
 
   @BuiltValueField(wireName: r'ocr_enabled')
   bool? get ocrEnabled;
@@ -84,6 +84,11 @@ class _$DlpNewCustomProfileSerializer implements PrimitiveSerializer<DlpNewCusto
     DlpNewCustomProfile object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    yield r'name';
+    yield serializers.serialize(
+      object.name,
+      specifiedType: const FullType(String),
+    );
     if (object.aiContextEnabled != null) {
       yield r'ai_context_enabled';
       yield serializers.serialize(
@@ -126,11 +131,6 @@ class _$DlpNewCustomProfileSerializer implements PrimitiveSerializer<DlpNewCusto
         specifiedType: const FullType(BuiltList, [FullType(DlpEntryOfNewProfile)]),
       );
     }
-    yield r'name';
-    yield serializers.serialize(
-      object.name,
-      specifiedType: const FullType(String),
-    );
     if (object.ocrEnabled != null) {
       yield r'ocr_enabled';
       yield serializers.serialize(
@@ -168,6 +168,13 @@ class _$DlpNewCustomProfileSerializer implements PrimitiveSerializer<DlpNewCusto
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
+        case r'name':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.name = valueDes;
+          break;
         case r'ai_context_enabled':
           final valueDes = serializers.deserialize(
             value,
@@ -211,13 +218,6 @@ class _$DlpNewCustomProfileSerializer implements PrimitiveSerializer<DlpNewCusto
             specifiedType: const FullType(BuiltList, [FullType(DlpEntryOfNewProfile)]),
           ) as BuiltList<DlpEntryOfNewProfile>;
           result.entries.replace(valueDes);
-          break;
-        case r'name':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.name = valueDes;
           break;
         case r'ocr_enabled':
           final valueDes = serializers.deserialize(

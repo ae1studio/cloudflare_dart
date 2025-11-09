@@ -20,8 +20,8 @@ part 'ip_address_management_address_maps_list_address_maps4_xx_response.g.dart';
 /// * [errors] 
 /// * [messages] 
 /// * [success] - Whether the API call was successful.
-/// * [resultInfo] 
 /// * [result] 
+/// * [resultInfo] 
 @BuiltValue()
 abstract class IpAddressManagementAddressMapsListAddressMaps4XXResponse implements AddressingApiResponseCommonFailure, AddressingComponentsSchemasResponseCollection, Built<IpAddressManagementAddressMapsListAddressMaps4XXResponse, IpAddressManagementAddressMapsListAddressMaps4XXResponseBuilder> {
   IpAddressManagementAddressMapsListAddressMaps4XXResponse._();

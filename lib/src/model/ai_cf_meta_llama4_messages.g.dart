@@ -8,6 +8,8 @@ part of 'ai_cf_meta_llama4_messages.dart';
 
 class _$AiCfMetaLlama4Messages extends AiCfMetaLlama4Messages {
   @override
+  final BuiltList<AiCfMetaLlama4MessagesMessagesInner> messages;
+  @override
   final num? frequencyPenalty;
   @override
   final BuiltList<MessagesFunctionsInner>? functions;
@@ -15,8 +17,6 @@ class _$AiCfMetaLlama4Messages extends AiCfMetaLlama4Messages {
   final JsonObject? guidedJson;
   @override
   final int? maxTokens;
-  @override
-  final BuiltList<AiCfMetaLlama4MessagesMessagesInner> messages;
   @override
   final num? presencePenalty;
   @override
@@ -43,11 +43,11 @@ class _$AiCfMetaLlama4Messages extends AiCfMetaLlama4Messages {
       (AiCfMetaLlama4MessagesBuilder()..update(updates))._build();
 
   _$AiCfMetaLlama4Messages._(
-      {this.frequencyPenalty,
+      {required this.messages,
+      this.frequencyPenalty,
       this.functions,
       this.guidedJson,
       this.maxTokens,
-      required this.messages,
       this.presencePenalty,
       this.raw,
       this.repetitionPenalty,
@@ -72,11 +72,11 @@ class _$AiCfMetaLlama4Messages extends AiCfMetaLlama4Messages {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is AiCfMetaLlama4Messages &&
+        messages == other.messages &&
         frequencyPenalty == other.frequencyPenalty &&
         functions == other.functions &&
         guidedJson == other.guidedJson &&
         maxTokens == other.maxTokens &&
-        messages == other.messages &&
         presencePenalty == other.presencePenalty &&
         raw == other.raw &&
         repetitionPenalty == other.repetitionPenalty &&
@@ -92,11 +92,11 @@ class _$AiCfMetaLlama4Messages extends AiCfMetaLlama4Messages {
   @override
   int get hashCode {
     var _$hash = 0;
+    _$hash = $jc(_$hash, messages.hashCode);
     _$hash = $jc(_$hash, frequencyPenalty.hashCode);
     _$hash = $jc(_$hash, functions.hashCode);
     _$hash = $jc(_$hash, guidedJson.hashCode);
     _$hash = $jc(_$hash, maxTokens.hashCode);
-    _$hash = $jc(_$hash, messages.hashCode);
     _$hash = $jc(_$hash, presencePenalty.hashCode);
     _$hash = $jc(_$hash, raw.hashCode);
     _$hash = $jc(_$hash, repetitionPenalty.hashCode);
@@ -114,11 +114,11 @@ class _$AiCfMetaLlama4Messages extends AiCfMetaLlama4Messages {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'AiCfMetaLlama4Messages')
+          ..add('messages', messages)
           ..add('frequencyPenalty', frequencyPenalty)
           ..add('functions', functions)
           ..add('guidedJson', guidedJson)
           ..add('maxTokens', maxTokens)
-          ..add('messages', messages)
           ..add('presencePenalty', presencePenalty)
           ..add('raw', raw)
           ..add('repetitionPenalty', repetitionPenalty)
@@ -136,6 +136,12 @@ class _$AiCfMetaLlama4Messages extends AiCfMetaLlama4Messages {
 class AiCfMetaLlama4MessagesBuilder
     implements Builder<AiCfMetaLlama4Messages, AiCfMetaLlama4MessagesBuilder> {
   _$AiCfMetaLlama4Messages? _$v;
+
+  ListBuilder<AiCfMetaLlama4MessagesMessagesInner>? _messages;
+  ListBuilder<AiCfMetaLlama4MessagesMessagesInner> get messages =>
+      _$this._messages ??= ListBuilder<AiCfMetaLlama4MessagesMessagesInner>();
+  set messages(ListBuilder<AiCfMetaLlama4MessagesMessagesInner>? messages) =>
+      _$this._messages = messages;
 
   num? _frequencyPenalty;
   num? get frequencyPenalty => _$this._frequencyPenalty;
@@ -155,12 +161,6 @@ class AiCfMetaLlama4MessagesBuilder
   int? _maxTokens;
   int? get maxTokens => _$this._maxTokens;
   set maxTokens(int? maxTokens) => _$this._maxTokens = maxTokens;
-
-  ListBuilder<AiCfMetaLlama4MessagesMessagesInner>? _messages;
-  ListBuilder<AiCfMetaLlama4MessagesMessagesInner> get messages =>
-      _$this._messages ??= ListBuilder<AiCfMetaLlama4MessagesMessagesInner>();
-  set messages(ListBuilder<AiCfMetaLlama4MessagesMessagesInner>? messages) =>
-      _$this._messages = messages;
 
   num? _presencePenalty;
   num? get presencePenalty => _$this._presencePenalty;
@@ -214,11 +214,11 @@ class AiCfMetaLlama4MessagesBuilder
   AiCfMetaLlama4MessagesBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
+      _messages = $v.messages.toBuilder();
       _frequencyPenalty = $v.frequencyPenalty;
       _functions = $v.functions?.toBuilder();
       _guidedJson = $v.guidedJson;
       _maxTokens = $v.maxTokens;
-      _messages = $v.messages.toBuilder();
       _presencePenalty = $v.presencePenalty;
       _raw = $v.raw;
       _repetitionPenalty = $v.repetitionPenalty;
@@ -252,11 +252,11 @@ class AiCfMetaLlama4MessagesBuilder
     try {
       _$result = _$v ??
           _$AiCfMetaLlama4Messages._(
+            messages: messages.build(),
             frequencyPenalty: frequencyPenalty,
             functions: _functions?.build(),
             guidedJson: guidedJson,
             maxTokens: maxTokens,
-            messages: messages.build(),
             presencePenalty: presencePenalty,
             raw: raw,
             repetitionPenalty: repetitionPenalty,
@@ -271,11 +271,11 @@ class AiCfMetaLlama4MessagesBuilder
     } catch (_) {
       late String _$failedField;
       try {
-        _$failedField = 'functions';
-        _functions?.build();
-
         _$failedField = 'messages';
         messages.build();
+
+        _$failedField = 'functions';
+        _functions?.build();
 
         _$failedField = 'responseFormat';
         _responseFormat?.build();

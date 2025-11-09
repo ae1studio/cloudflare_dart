@@ -6,12 +6,12 @@ part of 'zones_automatic_https_rewrites_value.dart';
 // BuiltValueGenerator
 // **************************************************************************
 
-const ZonesWafValue _$on_ =
-    const ZonesWafValue._('on_');
-const ZonesWafValue _$off =
-    const ZonesWafValue._('off');
+const ZonesAutomaticHttpsRewritesValue _$on_ =
+    const ZonesAutomaticHttpsRewritesValue._('on_');
+const ZonesAutomaticHttpsRewritesValue _$off =
+    const ZonesAutomaticHttpsRewritesValue._('off');
 
-ZonesWafValue _$valueOf(String name) {
+ZonesAutomaticHttpsRewritesValue _$valueOf(String name) {
   switch (name) {
     case 'on_':
       return _$on_;
@@ -22,32 +22,32 @@ ZonesWafValue _$valueOf(String name) {
   }
 }
 
-final BuiltSet<ZonesWafValue> _$values = BuiltSet<
-    ZonesWafValue>(const <ZonesWafValue>[
+final BuiltSet<ZonesAutomaticHttpsRewritesValue> _$values = BuiltSet<
+    ZonesAutomaticHttpsRewritesValue>(const <ZonesAutomaticHttpsRewritesValue>[
   _$on_,
   _$off,
 ]);
 
 class _$ZonesAutomaticHttpsRewritesValueMeta {
   const _$ZonesAutomaticHttpsRewritesValueMeta();
-  ZonesWafValue get on_ => _$on_;
-  ZonesWafValue get off => _$off;
-  ZonesWafValue valueOf(String name) => _$valueOf(name);
-  BuiltSet<ZonesWafValue> get values => _$values;
+  ZonesAutomaticHttpsRewritesValue get on_ => _$on_;
+  ZonesAutomaticHttpsRewritesValue get off => _$off;
+  ZonesAutomaticHttpsRewritesValue valueOf(String name) => _$valueOf(name);
+  BuiltSet<ZonesAutomaticHttpsRewritesValue> get values => _$values;
 }
 
 abstract class _$ZonesAutomaticHttpsRewritesValueMixin {
   // ignore: non_constant_identifier_names
-  _$ZonesAutomaticHttpsRewritesValueMeta get ZonesWafValue =>
+  _$ZonesAutomaticHttpsRewritesValueMeta get ZonesAutomaticHttpsRewritesValue =>
       const _$ZonesAutomaticHttpsRewritesValueMeta();
 }
 
-Serializer<ZonesWafValue>
+Serializer<ZonesAutomaticHttpsRewritesValue>
     _$zonesAutomaticHttpsRewritesValueSerializer =
     _$ZonesAutomaticHttpsRewritesValueSerializer();
 
 class _$ZonesAutomaticHttpsRewritesValueSerializer
-    implements PrimitiveSerializer<ZonesWafValue> {
+    implements PrimitiveSerializer<ZonesAutomaticHttpsRewritesValue> {
   static const Map<String, Object> _toWire = const <String, Object>{
     'on_': 'on',
     'off': 'off',
@@ -58,21 +58,21 @@ class _$ZonesAutomaticHttpsRewritesValueSerializer
   };
 
   @override
-  final Iterable<Type> types = const <Type>[ZonesWafValue];
+  final Iterable<Type> types = const <Type>[ZonesAutomaticHttpsRewritesValue];
   @override
-  final String wireName = 'ZonesWafValue';
+  final String wireName = 'ZonesAutomaticHttpsRewritesValue';
 
   @override
   Object serialize(
-          Serializers serializers, ZonesWafValue object,
+          Serializers serializers, ZonesAutomaticHttpsRewritesValue object,
           {FullType specifiedType = FullType.unspecified}) =>
       _toWire[object.name] ?? object.name;
 
   @override
-  ZonesWafValue deserialize(
+  ZonesAutomaticHttpsRewritesValue deserialize(
           Serializers serializers, Object serialized,
           {FullType specifiedType = FullType.unspecified}) =>
-      ZonesWafValue.valueOf(
+      ZonesAutomaticHttpsRewritesValue.valueOf(
           _fromWire[serialized] ?? (serialized is String ? serialized : ''));
 }
 

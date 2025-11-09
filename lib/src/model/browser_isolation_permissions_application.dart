@@ -17,6 +17,7 @@ part 'browser_isolation_permissions_application.g.dart';
 /// BrowserIsolationPermissionsApplication
 ///
 /// Properties:
+/// * [type] 
 /// * [allowedIdps] - The identity providers your users can select when connecting to this application. Defaults to all IdPs configured in your account.
 /// * [autoRedirectToIdentity] - When set to `true`, users skip the identity provider selection step during login. You must specify only one identity provider in allowed_idps.
 /// * [customDenyUrl] - The custom URL a user is redirected to when they are denied access to the application when failing identity-based rules.
@@ -25,7 +26,6 @@ part 'browser_isolation_permissions_application.g.dart';
 /// * [domain] 
 /// * [name] 
 /// * [sessionDuration] - The amount of time that tokens issued for this application will be valid. Must be in the format `300ms` or `2h45m`. Valid time units are: ns, us (or µs), ms, s, m, h. Note: unsupported for infrastructure type applications.
-/// * [type] 
 /// * [policies] - The policies that Access applies to the application, in ascending order of precedence. Items can reference existing policies or create new policies exclusive to the application.
 @BuiltValue()
 abstract class BrowserIsolationPermissionsApplication implements AccessAppReqEmbeddedPolicies, AccessBisoProps, Built<BrowserIsolationPermissionsApplication, BrowserIsolationPermissionsApplicationBuilder> {
@@ -111,6 +111,11 @@ class _$BrowserIsolationPermissionsApplicationSerializer implements PrimitiveSer
         specifiedType: const FullType(BuiltList, [FullType(AccessAppReqEmbeddedPoliciesPoliciesInner)]),
       );
     }
+    yield r'type';
+    yield serializers.serialize(
+      object.type,
+      specifiedType: const FullType(AccessType),
+    );
     if (object.sessionDuration != null) {
       yield r'session_duration';
       yield serializers.serialize(
@@ -118,11 +123,6 @@ class _$BrowserIsolationPermissionsApplicationSerializer implements PrimitiveSer
         specifiedType: const FullType(String),
       );
     }
-    yield r'type';
-    yield serializers.serialize(
-      object.type,
-      specifiedType: const FullType(AccessType),
-    );
   }
 
   @override
@@ -204,19 +204,19 @@ class _$BrowserIsolationPermissionsApplicationSerializer implements PrimitiveSer
           ) as BuiltList<AccessAppReqEmbeddedPoliciesPoliciesInner>;
           result.policies.replace(valueDes);
           break;
-        case r'session_duration':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.sessionDuration = valueDes;
-          break;
         case r'type':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(AccessType),
           ) as AccessType;
           result.type = valueDes;
+          break;
+        case r'session_duration':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.sessionDuration = valueDes;
           break;
         default:
           unhandled.add(key);

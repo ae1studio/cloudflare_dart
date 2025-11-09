@@ -10,8 +10,6 @@ class _$DosNewSynProtectionRule extends DosNewSynProtectionRule {
   @override
   final String burstSensitivity;
   @override
-  final String? mitigationType;
-  @override
   final String mode;
   @override
   final String name;
@@ -19,6 +17,8 @@ class _$DosNewSynProtectionRule extends DosNewSynProtectionRule {
   final String rateSensitivity;
   @override
   final String scope;
+  @override
+  final String? mitigationType;
 
   factory _$DosNewSynProtectionRule(
           [void Function(DosNewSynProtectionRuleBuilder)? updates]) =>
@@ -26,11 +26,11 @@ class _$DosNewSynProtectionRule extends DosNewSynProtectionRule {
 
   _$DosNewSynProtectionRule._(
       {required this.burstSensitivity,
-      this.mitigationType,
       required this.mode,
       required this.name,
       required this.rateSensitivity,
-      required this.scope})
+      required this.scope,
+      this.mitigationType})
       : super._();
   @override
   DosNewSynProtectionRule rebuild(
@@ -46,22 +46,22 @@ class _$DosNewSynProtectionRule extends DosNewSynProtectionRule {
     if (identical(other, this)) return true;
     return other is DosNewSynProtectionRule &&
         burstSensitivity == other.burstSensitivity &&
-        mitigationType == other.mitigationType &&
         mode == other.mode &&
         name == other.name &&
         rateSensitivity == other.rateSensitivity &&
-        scope == other.scope;
+        scope == other.scope &&
+        mitigationType == other.mitigationType;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
     _$hash = $jc(_$hash, burstSensitivity.hashCode);
-    _$hash = $jc(_$hash, mitigationType.hashCode);
     _$hash = $jc(_$hash, mode.hashCode);
     _$hash = $jc(_$hash, name.hashCode);
     _$hash = $jc(_$hash, rateSensitivity.hashCode);
     _$hash = $jc(_$hash, scope.hashCode);
+    _$hash = $jc(_$hash, mitigationType.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -70,11 +70,11 @@ class _$DosNewSynProtectionRule extends DosNewSynProtectionRule {
   String toString() {
     return (newBuiltValueToStringHelper(r'DosNewSynProtectionRule')
           ..add('burstSensitivity', burstSensitivity)
-          ..add('mitigationType', mitigationType)
           ..add('mode', mode)
           ..add('name', name)
           ..add('rateSensitivity', rateSensitivity)
-          ..add('scope', scope))
+          ..add('scope', scope)
+          ..add('mitigationType', mitigationType))
         .toString();
   }
 }
@@ -88,11 +88,6 @@ class DosNewSynProtectionRuleBuilder
   String? get burstSensitivity => _$this._burstSensitivity;
   set burstSensitivity(String? burstSensitivity) =>
       _$this._burstSensitivity = burstSensitivity;
-
-  String? _mitigationType;
-  String? get mitigationType => _$this._mitigationType;
-  set mitigationType(String? mitigationType) =>
-      _$this._mitigationType = mitigationType;
 
   String? _mode;
   String? get mode => _$this._mode;
@@ -111,6 +106,11 @@ class DosNewSynProtectionRuleBuilder
   String? get scope => _$this._scope;
   set scope(String? scope) => _$this._scope = scope;
 
+  String? _mitigationType;
+  String? get mitigationType => _$this._mitigationType;
+  set mitigationType(String? mitigationType) =>
+      _$this._mitigationType = mitigationType;
+
   DosNewSynProtectionRuleBuilder() {
     DosNewSynProtectionRule._defaults(this);
   }
@@ -119,11 +119,11 @@ class DosNewSynProtectionRuleBuilder
     final $v = _$v;
     if ($v != null) {
       _burstSensitivity = $v.burstSensitivity;
-      _mitigationType = $v.mitigationType;
       _mode = $v.mode;
       _name = $v.name;
       _rateSensitivity = $v.rateSensitivity;
       _scope = $v.scope;
+      _mitigationType = $v.mitigationType;
       _$v = null;
     }
     return this;
@@ -147,7 +147,6 @@ class DosNewSynProtectionRuleBuilder
         _$DosNewSynProtectionRule._(
           burstSensitivity: BuiltValueNullFieldError.checkNotNull(
               burstSensitivity, r'DosNewSynProtectionRule', 'burstSensitivity'),
-          mitigationType: mitigationType,
           mode: BuiltValueNullFieldError.checkNotNull(
               mode, r'DosNewSynProtectionRule', 'mode'),
           name: BuiltValueNullFieldError.checkNotNull(
@@ -156,6 +155,7 @@ class DosNewSynProtectionRuleBuilder
               rateSensitivity, r'DosNewSynProtectionRule', 'rateSensitivity'),
           scope: BuiltValueNullFieldError.checkNotNull(
               scope, r'DosNewSynProtectionRule', 'scope'),
+          mitigationType: mitigationType,
         );
     replace(_$result);
     return _$result;

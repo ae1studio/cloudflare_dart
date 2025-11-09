@@ -13,17 +13,13 @@ part 'load_balancing_monitor_group.g.dart';
 /// LoadBalancingMonitorGroup
 ///
 /// Properties:
-/// * [createdAt] - The timestamp of when the monitor group was created
 /// * [description] - A short description of the monitor group
 /// * [id] - The ID of the Monitor Group to use for checking the health of origins within this pool.
 /// * [members] - List of monitors in this group
+/// * [createdAt] - The timestamp of when the monitor group was created
 /// * [updatedAt] - The timestamp of when the monitor group was last updated
 @BuiltValue()
 abstract class LoadBalancingMonitorGroup implements Built<LoadBalancingMonitorGroup, LoadBalancingMonitorGroupBuilder> {
-  /// The timestamp of when the monitor group was created
-  @BuiltValueField(wireName: r'created_at')
-  DateTime? get createdAt;
-
   /// A short description of the monitor group
   @BuiltValueField(wireName: r'description')
   String get description;
@@ -35,6 +31,10 @@ abstract class LoadBalancingMonitorGroup implements Built<LoadBalancingMonitorGr
   /// List of monitors in this group
   @BuiltValueField(wireName: r'members')
   BuiltList<LoadBalancingMonitorGroupMember> get members;
+
+  /// The timestamp of when the monitor group was created
+  @BuiltValueField(wireName: r'created_at')
+  DateTime? get createdAt;
 
   /// The timestamp of when the monitor group was last updated
   @BuiltValueField(wireName: r'updated_at')
@@ -63,13 +63,6 @@ class _$LoadBalancingMonitorGroupSerializer implements PrimitiveSerializer<LoadB
     LoadBalancingMonitorGroup object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
-    if (object.createdAt != null) {
-      yield r'created_at';
-      yield serializers.serialize(
-        object.createdAt,
-        specifiedType: const FullType(DateTime),
-      );
-    }
     yield r'description';
     yield serializers.serialize(
       object.description,
@@ -85,6 +78,13 @@ class _$LoadBalancingMonitorGroupSerializer implements PrimitiveSerializer<LoadB
       object.members,
       specifiedType: const FullType(BuiltList, [FullType(LoadBalancingMonitorGroupMember)]),
     );
+    if (object.createdAt != null) {
+      yield r'created_at';
+      yield serializers.serialize(
+        object.createdAt,
+        specifiedType: const FullType(DateTime),
+      );
+    }
     if (object.updatedAt != null) {
       yield r'updated_at';
       yield serializers.serialize(
@@ -115,13 +115,6 @@ class _$LoadBalancingMonitorGroupSerializer implements PrimitiveSerializer<LoadB
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'created_at':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
-          result.createdAt = valueDes;
-          break;
         case r'description':
           final valueDes = serializers.deserialize(
             value,
@@ -142,6 +135,13 @@ class _$LoadBalancingMonitorGroupSerializer implements PrimitiveSerializer<LoadB
             specifiedType: const FullType(BuiltList, [FullType(LoadBalancingMonitorGroupMember)]),
           ) as BuiltList<LoadBalancingMonitorGroupMember>;
           result.members.replace(valueDes);
+          break;
+        case r'created_at':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(DateTime),
+          ) as DateTime;
+          result.createdAt = valueDes;
           break;
         case r'updated_at':
           final valueDes = serializers.deserialize(

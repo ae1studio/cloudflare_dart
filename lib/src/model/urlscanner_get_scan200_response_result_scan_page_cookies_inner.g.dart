@@ -19,8 +19,6 @@ class _$UrlscannerGetScan200ResponseResultScanPageCookiesInner
   @override
   final String path;
   @override
-  final String? priority;
-  @override
   final bool sameParty;
   @override
   final bool secure;
@@ -34,6 +32,8 @@ class _$UrlscannerGetScan200ResponseResultScanPageCookiesInner
   final String sourceScheme;
   @override
   final String value;
+  @override
+  final String? priority;
 
   factory _$UrlscannerGetScan200ResponseResultScanPageCookiesInner(
           [void Function(
@@ -49,14 +49,14 @@ class _$UrlscannerGetScan200ResponseResultScanPageCookiesInner
       required this.httpOnly,
       required this.name,
       required this.path,
-      this.priority,
       required this.sameParty,
       required this.secure,
       required this.session,
       required this.size,
       required this.sourcePort,
       required this.sourceScheme,
-      required this.value})
+      required this.value,
+      this.priority})
       : super._();
   @override
   UrlscannerGetScan200ResponseResultScanPageCookiesInner rebuild(
@@ -79,14 +79,14 @@ class _$UrlscannerGetScan200ResponseResultScanPageCookiesInner
         httpOnly == other.httpOnly &&
         name == other.name &&
         path == other.path &&
-        priority == other.priority &&
         sameParty == other.sameParty &&
         secure == other.secure &&
         session == other.session &&
         size == other.size &&
         sourcePort == other.sourcePort &&
         sourceScheme == other.sourceScheme &&
-        value == other.value;
+        value == other.value &&
+        priority == other.priority;
   }
 
   @override
@@ -97,7 +97,6 @@ class _$UrlscannerGetScan200ResponseResultScanPageCookiesInner
     _$hash = $jc(_$hash, httpOnly.hashCode);
     _$hash = $jc(_$hash, name.hashCode);
     _$hash = $jc(_$hash, path.hashCode);
-    _$hash = $jc(_$hash, priority.hashCode);
     _$hash = $jc(_$hash, sameParty.hashCode);
     _$hash = $jc(_$hash, secure.hashCode);
     _$hash = $jc(_$hash, session.hashCode);
@@ -105,6 +104,7 @@ class _$UrlscannerGetScan200ResponseResultScanPageCookiesInner
     _$hash = $jc(_$hash, sourcePort.hashCode);
     _$hash = $jc(_$hash, sourceScheme.hashCode);
     _$hash = $jc(_$hash, value.hashCode);
+    _$hash = $jc(_$hash, priority.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -118,14 +118,14 @@ class _$UrlscannerGetScan200ResponseResultScanPageCookiesInner
           ..add('httpOnly', httpOnly)
           ..add('name', name)
           ..add('path', path)
-          ..add('priority', priority)
           ..add('sameParty', sameParty)
           ..add('secure', secure)
           ..add('session', session)
           ..add('size', size)
           ..add('sourcePort', sourcePort)
           ..add('sourceScheme', sourceScheme)
-          ..add('value', value))
+          ..add('value', value)
+          ..add('priority', priority))
         .toString();
   }
 }
@@ -156,10 +156,6 @@ class UrlscannerGetScan200ResponseResultScanPageCookiesInnerBuilder
   String? get path => _$this._path;
   set path(String? path) => _$this._path = path;
 
-  String? _priority;
-  String? get priority => _$this._priority;
-  set priority(String? priority) => _$this._priority = priority;
-
   bool? _sameParty;
   bool? get sameParty => _$this._sameParty;
   set sameParty(bool? sameParty) => _$this._sameParty = sameParty;
@@ -188,6 +184,10 @@ class UrlscannerGetScan200ResponseResultScanPageCookiesInnerBuilder
   String? get value => _$this._value;
   set value(String? value) => _$this._value = value;
 
+  String? _priority;
+  String? get priority => _$this._priority;
+  set priority(String? priority) => _$this._priority = priority;
+
   UrlscannerGetScan200ResponseResultScanPageCookiesInnerBuilder() {
     UrlscannerGetScan200ResponseResultScanPageCookiesInner._defaults(this);
   }
@@ -200,7 +200,6 @@ class UrlscannerGetScan200ResponseResultScanPageCookiesInnerBuilder
       _httpOnly = $v.httpOnly;
       _name = $v.name;
       _path = $v.path;
-      _priority = $v.priority;
       _sameParty = $v.sameParty;
       _secure = $v.secure;
       _session = $v.session;
@@ -208,6 +207,7 @@ class UrlscannerGetScan200ResponseResultScanPageCookiesInnerBuilder
       _sourcePort = $v.sourcePort;
       _sourceScheme = $v.sourceScheme;
       _value = $v.value;
+      _priority = $v.priority;
       _$v = null;
     }
     return this;
@@ -252,7 +252,6 @@ class UrlscannerGetScan200ResponseResultScanPageCookiesInnerBuilder
               path,
               r'UrlscannerGetScan200ResponseResultScanPageCookiesInner',
               'path'),
-          priority: priority,
           sameParty: BuiltValueNullFieldError.checkNotNull(
               sameParty,
               r'UrlscannerGetScan200ResponseResultScanPageCookiesInner',
@@ -281,6 +280,7 @@ class UrlscannerGetScan200ResponseResultScanPageCookiesInnerBuilder
               value,
               r'UrlscannerGetScan200ResponseResultScanPageCookiesInner',
               'value'),
+          priority: priority,
         );
     replace(_$result);
     return _$result;

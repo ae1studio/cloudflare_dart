@@ -8,18 +8,18 @@ part of 'mconn_admin_cohort.dart';
 
 class _$MconnAdminCohort extends MconnAdminCohort {
   @override
-  final String? desiredVersion;
-  @override
   final String id;
   @override
   final String name;
+  @override
+  final String? desiredVersion;
 
   factory _$MconnAdminCohort(
           [void Function(MconnAdminCohortBuilder)? updates]) =>
       (MconnAdminCohortBuilder()..update(updates))._build();
 
   _$MconnAdminCohort._(
-      {this.desiredVersion, required this.id, required this.name})
+      {required this.id, required this.name, this.desiredVersion})
       : super._();
   @override
   MconnAdminCohort rebuild(void Function(MconnAdminCohortBuilder) updates) =>
@@ -33,17 +33,17 @@ class _$MconnAdminCohort extends MconnAdminCohort {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is MconnAdminCohort &&
-        desiredVersion == other.desiredVersion &&
         id == other.id &&
-        name == other.name;
+        name == other.name &&
+        desiredVersion == other.desiredVersion;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, desiredVersion.hashCode);
     _$hash = $jc(_$hash, id.hashCode);
     _$hash = $jc(_$hash, name.hashCode);
+    _$hash = $jc(_$hash, desiredVersion.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -51,9 +51,9 @@ class _$MconnAdminCohort extends MconnAdminCohort {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'MconnAdminCohort')
-          ..add('desiredVersion', desiredVersion)
           ..add('id', id)
-          ..add('name', name))
+          ..add('name', name)
+          ..add('desiredVersion', desiredVersion))
         .toString();
   }
 }
@@ -61,11 +61,6 @@ class _$MconnAdminCohort extends MconnAdminCohort {
 class MconnAdminCohortBuilder
     implements Builder<MconnAdminCohort, MconnAdminCohortBuilder> {
   _$MconnAdminCohort? _$v;
-
-  String? _desiredVersion;
-  String? get desiredVersion => _$this._desiredVersion;
-  set desiredVersion(String? desiredVersion) =>
-      _$this._desiredVersion = desiredVersion;
 
   String? _id;
   String? get id => _$this._id;
@@ -75,6 +70,11 @@ class MconnAdminCohortBuilder
   String? get name => _$this._name;
   set name(String? name) => _$this._name = name;
 
+  String? _desiredVersion;
+  String? get desiredVersion => _$this._desiredVersion;
+  set desiredVersion(String? desiredVersion) =>
+      _$this._desiredVersion = desiredVersion;
+
   MconnAdminCohortBuilder() {
     MconnAdminCohort._defaults(this);
   }
@@ -82,9 +82,9 @@ class MconnAdminCohortBuilder
   MconnAdminCohortBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _desiredVersion = $v.desiredVersion;
       _id = $v.id;
       _name = $v.name;
+      _desiredVersion = $v.desiredVersion;
       _$v = null;
     }
     return this;
@@ -106,11 +106,11 @@ class MconnAdminCohortBuilder
   _$MconnAdminCohort _build() {
     final _$result = _$v ??
         _$MconnAdminCohort._(
-          desiredVersion: desiredVersion,
           id: BuiltValueNullFieldError.checkNotNull(
               id, r'MconnAdminCohort', 'id'),
           name: BuiltValueNullFieldError.checkNotNull(
               name, r'MconnAdminCohort', 'name'),
+          desiredVersion: desiredVersion,
         );
     replace(_$result);
     return _$result;

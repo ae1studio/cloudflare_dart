@@ -12,29 +12,21 @@ part 'abuse_reports_base_report_fields.g.dart';
 ///
 /// Properties:
 /// * [act] - The report type for submitted reports.
-/// * [comments] - Any additional comments about the infringement not exceeding 2000 characters
-/// * [company] - Text not exceeding 100 characters. This field may be released by Cloudflare to third parties such as the Lumen Database (https://lumendatabase.org/).
 /// * [email] - A valid email of the abuse reporter. This field may be released by Cloudflare to third parties such as the Lumen Database (https://lumendatabase.org/).
 /// * [email2] - Should match the value provided in `email`
 /// * [name] - Text not exceeding 255 characters. This field may be released by Cloudflare to third parties such as the Lumen Database (https://lumendatabase.org/).
+/// * [urls] - A list of valid URLs separated by ‘\\n’ (new line character). The list of the URLs should not exceed 250 URLs. All URLs should have the same hostname. Each URL should be unique. This field may be released by Cloudflare to third parties such as the Lumen Database (https://lumendatabase.org/).
+/// * [comments] - Any additional comments about the infringement not exceeding 2000 characters
+/// * [company] - Text not exceeding 100 characters. This field may be released by Cloudflare to third parties such as the Lumen Database (https://lumendatabase.org/).
 /// * [reportedCountry] - Text containing 2 characters
 /// * [reportedUserAgent] - Text not exceeding 255 characters
 /// * [tele] - Text not exceeding 20 characters. This field may be released by Cloudflare to third parties such as the Lumen Database (https://lumendatabase.org/).
 /// * [title] - Text not exceeding 255 characters
-/// * [urls] - A list of valid URLs separated by ‘\\n’ (new line character). The list of the URLs should not exceed 250 URLs. All URLs should have the same hostname. Each URL should be unique. This field may be released by Cloudflare to third parties such as the Lumen Database (https://lumendatabase.org/).
 @BuiltValue(instantiable: false)
 abstract class AbuseReportsBaseReportFields  {
   /// The report type for submitted reports.
   @BuiltValueField(wireName: r'act')
   String get act;
-
-  /// Any additional comments about the infringement not exceeding 2000 characters
-  @BuiltValueField(wireName: r'comments')
-  String? get comments;
-
-  /// Text not exceeding 100 characters. This field may be released by Cloudflare to third parties such as the Lumen Database (https://lumendatabase.org/).
-  @BuiltValueField(wireName: r'company')
-  String? get company;
 
   /// A valid email of the abuse reporter. This field may be released by Cloudflare to third parties such as the Lumen Database (https://lumendatabase.org/).
   @BuiltValueField(wireName: r'email')
@@ -47,6 +39,18 @@ abstract class AbuseReportsBaseReportFields  {
   /// Text not exceeding 255 characters. This field may be released by Cloudflare to third parties such as the Lumen Database (https://lumendatabase.org/).
   @BuiltValueField(wireName: r'name')
   String get name;
+
+  /// A list of valid URLs separated by ‘\\n’ (new line character). The list of the URLs should not exceed 250 URLs. All URLs should have the same hostname. Each URL should be unique. This field may be released by Cloudflare to third parties such as the Lumen Database (https://lumendatabase.org/).
+  @BuiltValueField(wireName: r'urls')
+  String get urls;
+
+  /// Any additional comments about the infringement not exceeding 2000 characters
+  @BuiltValueField(wireName: r'comments')
+  String? get comments;
+
+  /// Text not exceeding 100 characters. This field may be released by Cloudflare to third parties such as the Lumen Database (https://lumendatabase.org/).
+  @BuiltValueField(wireName: r'company')
+  String? get company;
 
   /// Text containing 2 characters
   @BuiltValueField(wireName: r'reported_country')
@@ -63,10 +67,6 @@ abstract class AbuseReportsBaseReportFields  {
   /// Text not exceeding 255 characters
   @BuiltValueField(wireName: r'title')
   String? get title;
-
-  /// A list of valid URLs separated by ‘\\n’ (new line character). The list of the URLs should not exceed 250 URLs. All URLs should have the same hostname. Each URL should be unique. This field may be released by Cloudflare to third parties such as the Lumen Database (https://lumendatabase.org/).
-  @BuiltValueField(wireName: r'urls')
-  String get urls;
 
   @BuiltValueSerializer(custom: true)
   static Serializer<AbuseReportsBaseReportFields> get serializer => _$AbuseReportsBaseReportFieldsSerializer();
@@ -89,20 +89,6 @@ class _$AbuseReportsBaseReportFieldsSerializer implements PrimitiveSerializer<Ab
       object.act,
       specifiedType: const FullType(String),
     );
-    if (object.comments != null) {
-      yield r'comments';
-      yield serializers.serialize(
-        object.comments,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.company != null) {
-      yield r'company';
-      yield serializers.serialize(
-        object.company,
-        specifiedType: const FullType(String),
-      );
-    }
     yield r'email';
     yield serializers.serialize(
       object.email,
@@ -118,6 +104,25 @@ class _$AbuseReportsBaseReportFieldsSerializer implements PrimitiveSerializer<Ab
       object.name,
       specifiedType: const FullType(String),
     );
+    yield r'urls';
+    yield serializers.serialize(
+      object.urls,
+      specifiedType: const FullType(String),
+    );
+    if (object.comments != null) {
+      yield r'comments';
+      yield serializers.serialize(
+        object.comments,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.company != null) {
+      yield r'company';
+      yield serializers.serialize(
+        object.company,
+        specifiedType: const FullType(String),
+      );
+    }
     if (object.reportedCountry != null) {
       yield r'reported_country';
       yield serializers.serialize(
@@ -146,11 +151,6 @@ class _$AbuseReportsBaseReportFieldsSerializer implements PrimitiveSerializer<Ab
         specifiedType: const FullType(String),
       );
     }
-    yield r'urls';
-    yield serializers.serialize(
-      object.urls,
-      specifiedType: const FullType(String),
-    );
   }
 
   @override
@@ -221,20 +221,6 @@ class _$$AbuseReportsBaseReportFieldsSerializer implements PrimitiveSerializer<$
           ) as String;
           result.act = valueDes;
           break;
-        case r'comments':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.comments = valueDes;
-          break;
-        case r'company':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.company = valueDes;
-          break;
         case r'email':
           final valueDes = serializers.deserialize(
             value,
@@ -255,6 +241,27 @@ class _$$AbuseReportsBaseReportFieldsSerializer implements PrimitiveSerializer<$
             specifiedType: const FullType(String),
           ) as String;
           result.name = valueDes;
+          break;
+        case r'urls':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.urls = valueDes;
+          break;
+        case r'comments':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.comments = valueDes;
+          break;
+        case r'company':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.company = valueDes;
           break;
         case r'reported_country':
           final valueDes = serializers.deserialize(
@@ -283,13 +290,6 @@ class _$$AbuseReportsBaseReportFieldsSerializer implements PrimitiveSerializer<$
             specifiedType: const FullType(String),
           ) as String;
           result.title = valueDes;
-          break;
-        case r'urls':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.urls = valueDes;
           break;
         default:
           unhandled.add(key);

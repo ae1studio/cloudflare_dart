@@ -15,30 +15,19 @@ part 'dlp_predefined_profile.g.dart';
 /// DlpPredefinedProfile
 ///
 /// Properties:
-/// * [aiContextEnabled] 
 /// * [allowedMatchCount] 
-/// * [confidenceThreshold] 
-/// * [contextAwareness] 
 /// * [entries] 
 /// * [id] - The id of the predefined profile (uuid).
 /// * [name] - The name of the predefined profile.
+/// * [aiContextEnabled] 
+/// * [confidenceThreshold] 
+/// * [contextAwareness] 
 /// * [ocrEnabled] 
 /// * [openAccess] - Whether this profile can be accessed by anyone.
 @BuiltValue(instantiable: false)
 abstract class DlpPredefinedProfile  {
-  @BuiltValueField(wireName: r'ai_context_enabled')
-  bool? get aiContextEnabled;
-
   @BuiltValueField(wireName: r'allowed_match_count')
   int get allowedMatchCount;
-
-  @BuiltValueField(wireName: r'confidence_threshold')
-  DlpConfidence? get confidenceThreshold;
-  // enum confidenceThresholdEnum {  low,  medium,  high,  very_high,  };
-
-  @Deprecated('contextAwareness has been deprecated')
-  @BuiltValueField(wireName: r'context_awareness')
-  DlpContextAwareness? get contextAwareness;
 
   @BuiltValueField(wireName: r'entries')
   BuiltList<DlpEntry> get entries;
@@ -50,6 +39,17 @@ abstract class DlpPredefinedProfile  {
   /// The name of the predefined profile.
   @BuiltValueField(wireName: r'name')
   String get name;
+
+  @BuiltValueField(wireName: r'ai_context_enabled')
+  bool? get aiContextEnabled;
+
+  @BuiltValueField(wireName: r'confidence_threshold')
+  DlpConfidence? get confidenceThreshold;
+  // enum confidenceThresholdEnum {  low,  medium,  high,  very_high,  };
+
+  @Deprecated('contextAwareness has been deprecated')
+  @BuiltValueField(wireName: r'context_awareness')
+  DlpContextAwareness? get contextAwareness;
 
   @BuiltValueField(wireName: r'ocr_enabled')
   bool? get ocrEnabled;
@@ -74,32 +74,11 @@ class _$DlpPredefinedProfileSerializer implements PrimitiveSerializer<DlpPredefi
     DlpPredefinedProfile object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
-    if (object.aiContextEnabled != null) {
-      yield r'ai_context_enabled';
-      yield serializers.serialize(
-        object.aiContextEnabled,
-        specifiedType: const FullType(bool),
-      );
-    }
     yield r'allowed_match_count';
     yield serializers.serialize(
       object.allowedMatchCount,
       specifiedType: const FullType(int),
     );
-    if (object.confidenceThreshold != null) {
-      yield r'confidence_threshold';
-      yield serializers.serialize(
-        object.confidenceThreshold,
-        specifiedType: const FullType(DlpConfidence),
-      );
-    }
-    if (object.contextAwareness != null) {
-      yield r'context_awareness';
-      yield serializers.serialize(
-        object.contextAwareness,
-        specifiedType: const FullType(DlpContextAwareness),
-      );
-    }
     yield r'entries';
     yield serializers.serialize(
       object.entries,
@@ -115,6 +94,27 @@ class _$DlpPredefinedProfileSerializer implements PrimitiveSerializer<DlpPredefi
       object.name,
       specifiedType: const FullType(String),
     );
+    if (object.aiContextEnabled != null) {
+      yield r'ai_context_enabled';
+      yield serializers.serialize(
+        object.aiContextEnabled,
+        specifiedType: const FullType(bool),
+      );
+    }
+    if (object.confidenceThreshold != null) {
+      yield r'confidence_threshold';
+      yield serializers.serialize(
+        object.confidenceThreshold,
+        specifiedType: const FullType(DlpConfidence),
+      );
+    }
+    if (object.contextAwareness != null) {
+      yield r'context_awareness';
+      yield serializers.serialize(
+        object.contextAwareness,
+        specifiedType: const FullType(DlpContextAwareness),
+      );
+    }
     if (object.ocrEnabled != null) {
       yield r'ocr_enabled';
       yield serializers.serialize(
@@ -192,33 +192,12 @@ class _$$DlpPredefinedProfileSerializer implements PrimitiveSerializer<$DlpPrede
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'ai_context_enabled':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
-          result.aiContextEnabled = valueDes;
-          break;
         case r'allowed_match_count':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(int),
           ) as int;
           result.allowedMatchCount = valueDes;
-          break;
-        case r'confidence_threshold':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DlpConfidence),
-          ) as DlpConfidence;
-          result.confidenceThreshold = valueDes;
-          break;
-        case r'context_awareness':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DlpContextAwareness),
-          ) as DlpContextAwareness;
-          result.contextAwareness.replace(valueDes);
           break;
         case r'entries':
           final valueDes = serializers.deserialize(
@@ -240,6 +219,27 @@ class _$$DlpPredefinedProfileSerializer implements PrimitiveSerializer<$DlpPrede
             specifiedType: const FullType(String),
           ) as String;
           result.name = valueDes;
+          break;
+        case r'ai_context_enabled':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(bool),
+          ) as bool;
+          result.aiContextEnabled = valueDes;
+          break;
+        case r'confidence_threshold':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(DlpConfidence),
+          ) as DlpConfidence;
+          result.confidenceThreshold = valueDes;
+          break;
+        case r'context_awareness':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(DlpContextAwareness),
+          ) as DlpContextAwareness;
+          result.contextAwareness.replace(valueDes);
           break;
         case r'ocr_enabled':
           final valueDes = serializers.deserialize(

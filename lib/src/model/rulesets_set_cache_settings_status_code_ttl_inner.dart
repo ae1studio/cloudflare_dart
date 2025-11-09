@@ -12,21 +12,21 @@ part 'rulesets_set_cache_settings_status_code_ttl_inner.g.dart';
 /// RulesetsSetCacheSettingsStatusCodeTTLInner
 ///
 /// Properties:
+/// * [value] - The time to cache the response for (in seconds). A value of 0 is equivalent to setting the cache control header with the value \"no-cache\". A value of -1 is equivalent to setting the cache control header with the value of \"no-store\".
 /// * [statusCode] - A single status code to apply the TTL to.
 /// * [statusCodeRange] 
-/// * [value] - The time to cache the response for (in seconds). A value of 0 is equivalent to setting the cache control header with the value \"no-cache\". A value of -1 is equivalent to setting the cache control header with the value of \"no-store\".
 @BuiltValue()
 abstract class RulesetsSetCacheSettingsStatusCodeTTLInner implements Built<RulesetsSetCacheSettingsStatusCodeTTLInner, RulesetsSetCacheSettingsStatusCodeTTLInnerBuilder> {
+  /// The time to cache the response for (in seconds). A value of 0 is equivalent to setting the cache control header with the value \"no-cache\". A value of -1 is equivalent to setting the cache control header with the value of \"no-store\".
+  @BuiltValueField(wireName: r'value')
+  int get value;
+
   /// A single status code to apply the TTL to.
   @BuiltValueField(wireName: r'status_code')
   int? get statusCode;
 
   @BuiltValueField(wireName: r'status_code_range')
   StatusCodeRange? get statusCodeRange;
-
-  /// The time to cache the response for (in seconds). A value of 0 is equivalent to setting the cache control header with the value \"no-cache\". A value of -1 is equivalent to setting the cache control header with the value of \"no-store\".
-  @BuiltValueField(wireName: r'value')
-  int get value;
 
   RulesetsSetCacheSettingsStatusCodeTTLInner._();
 
@@ -51,6 +51,11 @@ class _$RulesetsSetCacheSettingsStatusCodeTTLInnerSerializer implements Primitiv
     RulesetsSetCacheSettingsStatusCodeTTLInner object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    yield r'value';
+    yield serializers.serialize(
+      object.value,
+      specifiedType: const FullType(int),
+    );
     if (object.statusCode != null) {
       yield r'status_code';
       yield serializers.serialize(
@@ -65,11 +70,6 @@ class _$RulesetsSetCacheSettingsStatusCodeTTLInnerSerializer implements Primitiv
         specifiedType: const FullType(StatusCodeRange),
       );
     }
-    yield r'value';
-    yield serializers.serialize(
-      object.value,
-      specifiedType: const FullType(int),
-    );
   }
 
   @override
@@ -93,6 +93,13 @@ class _$RulesetsSetCacheSettingsStatusCodeTTLInnerSerializer implements Primitiv
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
+        case r'value':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(int),
+          ) as int;
+          result.value = valueDes;
+          break;
         case r'status_code':
           final valueDes = serializers.deserialize(
             value,
@@ -106,13 +113,6 @@ class _$RulesetsSetCacheSettingsStatusCodeTTLInnerSerializer implements Primitiv
             specifiedType: const FullType(StatusCodeRange),
           ) as StatusCodeRange;
           result.statusCodeRange.replace(valueDes);
-          break;
-        case r'value':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
-          result.value = valueDes;
           break;
         default:
           unhandled.add(key);

@@ -20,8 +20,8 @@ part 'secondary_dns_tsig_list_tsi_gs4_xx_response.g.dart';
 /// * [errors] 
 /// * [messages] 
 /// * [success] - Whether the API call was successful.
-/// * [resultInfo] 
 /// * [result] 
+/// * [resultInfo] 
 @BuiltValue()
 abstract class SecondaryDnsTsigListTsiGs4XXResponse implements SecondaryDnsApiResponseCommonFailure, SecondaryDnsResponseCollection, Built<SecondaryDnsTsigListTsiGs4XXResponse, SecondaryDnsTsigListTsiGs4XXResponseBuilder> {
   SecondaryDnsTsigListTsiGs4XXResponse._();

@@ -12,16 +12,16 @@ part 'd1_single_query.g.dart';
 /// A single query with or without parameters
 ///
 /// Properties:
-/// * [params] 
 /// * [sql] - Your SQL query. Supports multiple statements, joined by semicolons, which will be executed as a batch.
+/// * [params] 
 @BuiltValue()
 abstract class D1SingleQuery implements Built<D1SingleQuery, D1SingleQueryBuilder> {
-  @BuiltValueField(wireName: r'params')
-  BuiltList<String>? get params;
-
   /// Your SQL query. Supports multiple statements, joined by semicolons, which will be executed as a batch.
   @BuiltValueField(wireName: r'sql')
   String get sql;
+
+  @BuiltValueField(wireName: r'params')
+  BuiltList<String>? get params;
 
   D1SingleQuery._();
 
@@ -46,6 +46,11 @@ class _$D1SingleQuerySerializer implements PrimitiveSerializer<D1SingleQuery> {
     D1SingleQuery object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    yield r'sql';
+    yield serializers.serialize(
+      object.sql,
+      specifiedType: const FullType(String),
+    );
     if (object.params != null) {
       yield r'params';
       yield serializers.serialize(
@@ -53,11 +58,6 @@ class _$D1SingleQuerySerializer implements PrimitiveSerializer<D1SingleQuery> {
         specifiedType: const FullType(BuiltList, [FullType(String)]),
       );
     }
-    yield r'sql';
-    yield serializers.serialize(
-      object.sql,
-      specifiedType: const FullType(String),
-    );
   }
 
   @override
@@ -81,19 +81,19 @@ class _$D1SingleQuerySerializer implements PrimitiveSerializer<D1SingleQuery> {
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'params':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>;
-          result.params.replace(valueDes);
-          break;
         case r'sql':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(String),
           ) as String;
           result.sql = valueDes;
+          break;
+        case r'params':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BuiltList, [FullType(String)]),
+          ) as BuiltList<String>;
+          result.params.replace(valueDes);
           break;
         default:
           unhandled.add(key);

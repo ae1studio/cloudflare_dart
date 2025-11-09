@@ -13,19 +13,19 @@ part 'vectorize_create_index_request.g.dart';
 ///
 /// Properties:
 /// * [config] 
-/// * [description] - Specifies the description of the index.
 /// * [name] 
+/// * [description] - Specifies the description of the index.
 @BuiltValue()
 abstract class VectorizeCreateIndexRequest implements Built<VectorizeCreateIndexRequest, VectorizeCreateIndexRequestBuilder> {
   @BuiltValueField(wireName: r'config')
   VectorizeIndexConfiguration get config;
 
+  @BuiltValueField(wireName: r'name')
+  String get name;
+
   /// Specifies the description of the index.
   @BuiltValueField(wireName: r'description')
   String? get description;
-
-  @BuiltValueField(wireName: r'name')
-  String get name;
 
   VectorizeCreateIndexRequest._();
 
@@ -55,6 +55,11 @@ class _$VectorizeCreateIndexRequestSerializer implements PrimitiveSerializer<Vec
       object.config,
       specifiedType: const FullType(VectorizeIndexConfiguration),
     );
+    yield r'name';
+    yield serializers.serialize(
+      object.name,
+      specifiedType: const FullType(String),
+    );
     if (object.description != null) {
       yield r'description';
       yield serializers.serialize(
@@ -62,11 +67,6 @@ class _$VectorizeCreateIndexRequestSerializer implements PrimitiveSerializer<Vec
         specifiedType: const FullType(String),
       );
     }
-    yield r'name';
-    yield serializers.serialize(
-      object.name,
-      specifiedType: const FullType(String),
-    );
   }
 
   @override
@@ -97,19 +97,19 @@ class _$VectorizeCreateIndexRequestSerializer implements PrimitiveSerializer<Vec
           ) as VectorizeIndexConfiguration;
           result.config.replace(valueDes);
           break;
-        case r'description':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.description = valueDes;
-          break;
         case r'name':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(String),
           ) as String;
           result.name = valueDes;
+          break;
+        case r'description':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.description = valueDes;
           break;
         default:
           unhandled.add(key);

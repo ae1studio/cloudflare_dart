@@ -15,13 +15,16 @@ part 'list_mitigations200_response.g.dart';
 /// ListMitigations200Response
 ///
 /// Properties:
+/// * [success] 
 /// * [errors] 
 /// * [messages] 
 /// * [result] 
 /// * [resultInfo] 
-/// * [success] 
 @BuiltValue()
 abstract class ListMitigations200Response implements Built<ListMitigations200Response, ListMitigations200ResponseBuilder> {
+  @BuiltValueField(wireName: r'success')
+  bool get success;
+
   @BuiltValueField(wireName: r'errors')
   BuiltList<AbuseReportsMessage>? get errors;
 
@@ -33,9 +36,6 @@ abstract class ListMitigations200Response implements Built<ListMitigations200Res
 
   @BuiltValueField(wireName: r'result_info')
   ListAbuseReports200ResponseResultInfo? get resultInfo;
-
-  @BuiltValueField(wireName: r'success')
-  bool get success;
 
   ListMitigations200Response._();
 
@@ -60,6 +60,11 @@ class _$ListMitigations200ResponseSerializer implements PrimitiveSerializer<List
     ListMitigations200Response object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    yield r'success';
+    yield serializers.serialize(
+      object.success,
+      specifiedType: const FullType(bool),
+    );
     if (object.errors != null) {
       yield r'errors';
       yield serializers.serialize(
@@ -88,11 +93,6 @@ class _$ListMitigations200ResponseSerializer implements PrimitiveSerializer<List
         specifiedType: const FullType(ListAbuseReports200ResponseResultInfo),
       );
     }
-    yield r'success';
-    yield serializers.serialize(
-      object.success,
-      specifiedType: const FullType(bool),
-    );
   }
 
   @override
@@ -116,6 +116,13 @@ class _$ListMitigations200ResponseSerializer implements PrimitiveSerializer<List
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
+        case r'success':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(bool),
+          ) as bool;
+          result.success = valueDes;
+          break;
         case r'errors':
           final valueDes = serializers.deserialize(
             value,
@@ -143,13 +150,6 @@ class _$ListMitigations200ResponseSerializer implements PrimitiveSerializer<List
             specifiedType: const FullType(ListAbuseReports200ResponseResultInfo),
           ) as ListAbuseReports200ResponseResultInfo;
           result.resultInfo.replace(valueDes);
-          break;
-        case r'success':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
-          result.success = valueDes;
           break;
         default:
           unhandled.add(key);

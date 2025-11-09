@@ -30,7 +30,6 @@ part 'realtimekit_preset_permissions.g.dart';
 /// * [disableParticipantScreensharing] 
 /// * [disableParticipantVideo] 
 /// * [hiddenParticipant] - Whether this participant is visible to others or not
-/// * [isRecorder] 
 /// * [kickParticipant] 
 /// * [media] 
 /// * [pinParticipant] 
@@ -39,6 +38,7 @@ part 'realtimekit_preset_permissions.g.dart';
 /// * [recorderType] - Type of the recording peer
 /// * [showParticipantList] 
 /// * [waitingRoomType] - Waiting room type
+/// * [isRecorder] 
 @BuiltValue()
 abstract class RealtimekitPresetPermissions implements Built<RealtimekitPresetPermissions, RealtimekitPresetPermissionsBuilder> {
   /// Whether this participant can accept waiting requests
@@ -82,9 +82,6 @@ abstract class RealtimekitPresetPermissions implements Built<RealtimekitPresetPe
   @BuiltValueField(wireName: r'hidden_participant')
   bool get hiddenParticipant;
 
-  @BuiltValueField(wireName: r'is_recorder')
-  bool? get isRecorder;
-
   @BuiltValueField(wireName: r'kick_participant')
   bool get kickParticipant;
 
@@ -113,14 +110,17 @@ abstract class RealtimekitPresetPermissions implements Built<RealtimekitPresetPe
   RealtimekitPresetPermissionsWaitingRoomTypeEnum get waitingRoomType;
   // enum waitingRoomTypeEnum {  SKIP,  ON_PRIVILEGED_USER_ENTRY,  SKIP_ON_ACCEPT,  };
 
+  @BuiltValueField(wireName: r'is_recorder')
+  bool? get isRecorder;
+
   RealtimekitPresetPermissions._();
 
   factory RealtimekitPresetPermissions([void updates(RealtimekitPresetPermissionsBuilder b)]) = _$RealtimekitPresetPermissions;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(RealtimekitPresetPermissionsBuilder b) => b
-      ..isRecorder = false
-      ..recorderType = RealtimekitPresetPermissionsRecorderTypeEnum.valueOf('NONE');
+      ..recorderType = RealtimekitPresetPermissionsRecorderTypeEnum.valueOf('NONE')
+      ..isRecorder = false;
 
   @BuiltValueSerializer(custom: true)
   static Serializer<RealtimekitPresetPermissions> get serializer => _$RealtimekitPresetPermissionsSerializer();
@@ -203,13 +203,6 @@ class _$RealtimekitPresetPermissionsSerializer implements PrimitiveSerializer<Re
       object.hiddenParticipant,
       specifiedType: const FullType(bool),
     );
-    if (object.isRecorder != null) {
-      yield r'is_recorder';
-      yield serializers.serialize(
-        object.isRecorder,
-        specifiedType: const FullType(bool),
-      );
-    }
     yield r'kick_participant';
     yield serializers.serialize(
       object.kickParticipant,
@@ -250,6 +243,13 @@ class _$RealtimekitPresetPermissionsSerializer implements PrimitiveSerializer<Re
       object.waitingRoomType,
       specifiedType: const FullType(RealtimekitPresetPermissionsWaitingRoomTypeEnum),
     );
+    if (object.isRecorder != null) {
+      yield r'is_recorder';
+      yield serializers.serialize(
+        object.isRecorder,
+        specifiedType: const FullType(bool),
+      );
+    }
   }
 
   @override
@@ -364,13 +364,6 @@ class _$RealtimekitPresetPermissionsSerializer implements PrimitiveSerializer<Re
           ) as bool;
           result.hiddenParticipant = valueDes;
           break;
-        case r'is_recorder':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
-          result.isRecorder = valueDes;
-          break;
         case r'kick_participant':
           final valueDes = serializers.deserialize(
             value,
@@ -426,6 +419,13 @@ class _$RealtimekitPresetPermissionsSerializer implements PrimitiveSerializer<Re
             specifiedType: const FullType(RealtimekitPresetPermissionsWaitingRoomTypeEnum),
           ) as RealtimekitPresetPermissionsWaitingRoomTypeEnum;
           result.waitingRoomType = valueDes;
+          break;
+        case r'is_recorder':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(bool),
+          ) as bool;
+          result.isRecorder = valueDes;
           break;
         default:
           unhandled.add(key);

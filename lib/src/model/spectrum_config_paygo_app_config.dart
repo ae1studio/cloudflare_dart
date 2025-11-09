@@ -19,8 +19,8 @@ part 'spectrum_config_paygo_app_config.g.dart';
 /// * [id] 
 /// * [modifiedOn] 
 /// * [dns] 
-/// * [originDirect] - List of origin IP addresses. Array may contain multiple IP addresses for load balancing.
 /// * [protocol] - The port configuration at Cloudflare's edge. May specify a single port, for example `\"tcp/1000\"`, or a range of ports, for example `\"tcp/1000-2000\"`.
+/// * [originDirect] - List of origin IP addresses. Array may contain multiple IP addresses for load balancing.
 @BuiltValue()
 abstract class SpectrumConfigPaygoAppConfig implements SpectrumConfigBaseAppConfig, Built<SpectrumConfigPaygoAppConfig, SpectrumConfigPaygoAppConfigBuilder> {
   /// The port configuration at Cloudflare's edge. May specify a single port, for example `\"tcp/1000\"`, or a range of ports, for example `\"tcp/1000-2000\"`.

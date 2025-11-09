@@ -20,8 +20,8 @@ part 'waf_rules_list_waf_rules4_xx_response.g.dart';
 /// * [errors] 
 /// * [messages] 
 /// * [success] - Defines whether the API call was successful.
-/// * [resultInfo] 
 /// * [result] 
+/// * [resultInfo] 
 @BuiltValue()
 abstract class WafRulesListWafRules4XXResponse implements WafManagedRulesApiResponseCommonFailure, WafManagedRulesRuleResponseCollection, Built<WafRulesListWafRules4XXResponse, WafRulesListWafRules4XXResponseBuilder> {
   WafRulesListWafRules4XXResponse._();

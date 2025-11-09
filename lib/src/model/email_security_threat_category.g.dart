@@ -8,9 +8,9 @@ part of 'email_security_threat_category.dart';
 
 class _$EmailSecurityThreatCategory extends EmailSecurityThreatCategory {
   @override
-  final String? description;
-  @override
   final int id;
+  @override
+  final String? description;
   @override
   final String? name;
 
@@ -19,7 +19,7 @@ class _$EmailSecurityThreatCategory extends EmailSecurityThreatCategory {
       (EmailSecurityThreatCategoryBuilder()..update(updates))._build();
 
   _$EmailSecurityThreatCategory._(
-      {this.description, required this.id, this.name})
+      {required this.id, this.description, this.name})
       : super._();
   @override
   EmailSecurityThreatCategory rebuild(
@@ -34,16 +34,16 @@ class _$EmailSecurityThreatCategory extends EmailSecurityThreatCategory {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is EmailSecurityThreatCategory &&
-        description == other.description &&
         id == other.id &&
+        description == other.description &&
         name == other.name;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, description.hashCode);
     _$hash = $jc(_$hash, id.hashCode);
+    _$hash = $jc(_$hash, description.hashCode);
     _$hash = $jc(_$hash, name.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
@@ -52,8 +52,8 @@ class _$EmailSecurityThreatCategory extends EmailSecurityThreatCategory {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'EmailSecurityThreatCategory')
-          ..add('description', description)
           ..add('id', id)
+          ..add('description', description)
           ..add('name', name))
         .toString();
   }
@@ -65,13 +65,13 @@ class EmailSecurityThreatCategoryBuilder
             EmailSecurityThreatCategoryBuilder> {
   _$EmailSecurityThreatCategory? _$v;
 
-  String? _description;
-  String? get description => _$this._description;
-  set description(String? description) => _$this._description = description;
-
   int? _id;
   int? get id => _$this._id;
   set id(int? id) => _$this._id = id;
+
+  String? _description;
+  String? get description => _$this._description;
+  set description(String? description) => _$this._description = description;
 
   String? _name;
   String? get name => _$this._name;
@@ -84,8 +84,8 @@ class EmailSecurityThreatCategoryBuilder
   EmailSecurityThreatCategoryBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _description = $v.description;
       _id = $v.id;
+      _description = $v.description;
       _name = $v.name;
       _$v = null;
     }
@@ -108,9 +108,9 @@ class EmailSecurityThreatCategoryBuilder
   _$EmailSecurityThreatCategory _build() {
     final _$result = _$v ??
         _$EmailSecurityThreatCategory._(
-          description: description,
           id: BuiltValueNullFieldError.checkNotNull(
               id, r'EmailSecurityThreatCategory', 'id'),
+          description: description,
           name: name,
         );
     replace(_$result);

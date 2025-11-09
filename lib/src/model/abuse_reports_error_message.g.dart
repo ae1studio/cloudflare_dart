@@ -8,15 +8,15 @@ part of 'abuse_reports_error_message.dart';
 
 class _$AbuseReportsErrorMessage extends AbuseReportsErrorMessage {
   @override
-  final AbuseReportsErrorMessageCode? code;
-  @override
   final String message;
+  @override
+  final AbuseReportsErrorMessageCode? code;
 
   factory _$AbuseReportsErrorMessage(
           [void Function(AbuseReportsErrorMessageBuilder)? updates]) =>
       (AbuseReportsErrorMessageBuilder()..update(updates))._build();
 
-  _$AbuseReportsErrorMessage._({this.code, required this.message}) : super._();
+  _$AbuseReportsErrorMessage._({required this.message, this.code}) : super._();
   @override
   AbuseReportsErrorMessage rebuild(
           void Function(AbuseReportsErrorMessageBuilder) updates) =>
@@ -30,15 +30,15 @@ class _$AbuseReportsErrorMessage extends AbuseReportsErrorMessage {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is AbuseReportsErrorMessage &&
-        code == other.code &&
-        message == other.message;
+        message == other.message &&
+        code == other.code;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, code.hashCode);
     _$hash = $jc(_$hash, message.hashCode);
+    _$hash = $jc(_$hash, code.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -46,8 +46,8 @@ class _$AbuseReportsErrorMessage extends AbuseReportsErrorMessage {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'AbuseReportsErrorMessage')
-          ..add('code', code)
-          ..add('message', message))
+          ..add('message', message)
+          ..add('code', code))
         .toString();
   }
 }
@@ -57,14 +57,14 @@ class AbuseReportsErrorMessageBuilder
         Builder<AbuseReportsErrorMessage, AbuseReportsErrorMessageBuilder> {
   _$AbuseReportsErrorMessage? _$v;
 
+  String? _message;
+  String? get message => _$this._message;
+  set message(String? message) => _$this._message = message;
+
   AbuseReportsErrorMessageCodeBuilder? _code;
   AbuseReportsErrorMessageCodeBuilder get code =>
       _$this._code ??= AbuseReportsErrorMessageCodeBuilder();
   set code(AbuseReportsErrorMessageCodeBuilder? code) => _$this._code = code;
-
-  String? _message;
-  String? get message => _$this._message;
-  set message(String? message) => _$this._message = message;
 
   AbuseReportsErrorMessageBuilder() {
     AbuseReportsErrorMessage._defaults(this);
@@ -73,8 +73,8 @@ class AbuseReportsErrorMessageBuilder
   AbuseReportsErrorMessageBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _code = $v.code?.toBuilder();
       _message = $v.message;
+      _code = $v.code?.toBuilder();
       _$v = null;
     }
     return this;
@@ -98,9 +98,9 @@ class AbuseReportsErrorMessageBuilder
     try {
       _$result = _$v ??
           _$AbuseReportsErrorMessage._(
-            code: _code?.build(),
             message: BuiltValueNullFieldError.checkNotNull(
                 message, r'AbuseReportsErrorMessage', 'message'),
+            code: _code?.build(),
           );
     } catch (_) {
       late String _$failedField;

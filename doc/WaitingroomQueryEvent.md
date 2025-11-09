@@ -8,12 +8,12 @@ import 'package:cloudflare_dart/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**customPageHtml** | **String** | If set, the event will override the waiting room's `custom_page_html` property while it is active. If null, the event will inherit it. | [optional] 
-**description** | **String** | A note that you can use to add more details about the event. | [optional] [default to '']
-**disableSessionRenewal** | **bool** | If set, the event will override the waiting room's `disable_session_renewal` property while it is active. If null, the event will inherit it. | [optional] 
 **eventEndTime** | **String** | An ISO 8601 timestamp that marks the end of the event. | 
 **eventStartTime** | **String** | An ISO 8601 timestamp that marks the start of the event. At this time, queued users will be processed with the event's configuration. The start time must be at least one minute before `event_end_time`. | 
 **name** | **String** | A unique name to identify the event. Only alphanumeric characters, hyphens and underscores are allowed. | 
+**customPageHtml** | **String** | If set, the event will override the waiting room's `custom_page_html` property while it is active. If null, the event will inherit it. | [optional] 
+**description** | **String** | A note that you can use to add more details about the event. | [optional] [default to '']
+**disableSessionRenewal** | **bool** | If set, the event will override the waiting room's `disable_session_renewal` property while it is active. If null, the event will inherit it. | [optional] 
 **newUsersPerMinute** | **int** | If set, the event will override the waiting room's `new_users_per_minute` property while it is active. If null, the event will inherit it. This can only be set if the event's `total_active_users` property is also set. | [optional] 
 **prequeueStartTime** | **String** | An ISO 8601 timestamp that marks when to begin queueing all users before the event starts. The prequeue must start at least five minutes before `event_start_time`. | [optional] 
 **queueingMethod** | **String** | If set, the event will override the waiting room's `queueing_method` property while it is active. If null, the event will inherit it. | [optional] 

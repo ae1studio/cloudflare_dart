@@ -14,36 +14,29 @@ part 'realtimekit_active_session.g.dart';
 ///
 /// Properties:
 /// * [associatedId] - ID of the meeting this session is associated with. In the case of V2 meetings, it is always a UUID. In V1 meetings, it is a room name of the form `abcdef-ghijkl`
-/// * [breakoutRooms] 
 /// * [createdAt] - timestamp when session created
-/// * [endedAt] - timestamp when session ended
 /// * [id] - ID of the session
 /// * [liveParticipants] - number of participants currently in the session
 /// * [maxConcurrentParticipants] - number of maximum participants that were in the session
 /// * [meetingDisplayName] - Title of the meeting this session belongs to
-/// * [meta] - Any meta data about session.
 /// * [minutesConsumed] - number of minutes consumed since the session started
 /// * [organizationId] - App id that hosted this session
 /// * [startedAt] - timestamp when session started
 /// * [status] - current status of session
 /// * [type] - type of session
 /// * [updatedAt] - timestamp when session was last updated
+/// * [breakoutRooms] 
+/// * [endedAt] - timestamp when session ended
+/// * [meta] - Any meta data about session.
 @BuiltValue()
 abstract class RealtimekitActiveSession implements Built<RealtimekitActiveSession, RealtimekitActiveSessionBuilder> {
   /// ID of the meeting this session is associated with. In the case of V2 meetings, it is always a UUID. In V1 meetings, it is a room name of the form `abcdef-ghijkl`
   @BuiltValueField(wireName: r'associated_id')
   String get associatedId;
 
-  @BuiltValueField(wireName: r'breakout_rooms')
-  BuiltList<RealtimekitActiveSession>? get breakoutRooms;
-
   /// timestamp when session created
   @BuiltValueField(wireName: r'created_at')
   String get createdAt;
-
-  /// timestamp when session ended
-  @BuiltValueField(wireName: r'ended_at')
-  String? get endedAt;
 
   /// ID of the session
   @BuiltValueField(wireName: r'id')
@@ -60,10 +53,6 @@ abstract class RealtimekitActiveSession implements Built<RealtimekitActiveSessio
   /// Title of the meeting this session belongs to
   @BuiltValueField(wireName: r'meeting_display_name')
   String get meetingDisplayName;
-
-  /// Any meta data about session.
-  @BuiltValueField(wireName: r'meta')
-  JsonObject? get meta;
 
   /// number of minutes consumed since the session started
   @BuiltValueField(wireName: r'minutes_consumed')
@@ -90,6 +79,17 @@ abstract class RealtimekitActiveSession implements Built<RealtimekitActiveSessio
   /// timestamp when session was last updated
   @BuiltValueField(wireName: r'updated_at')
   String get updatedAt;
+
+  @BuiltValueField(wireName: r'breakout_rooms')
+  BuiltList<RealtimekitActiveSession>? get breakoutRooms;
+
+  /// timestamp when session ended
+  @BuiltValueField(wireName: r'ended_at')
+  String? get endedAt;
+
+  /// Any meta data about session.
+  @BuiltValueField(wireName: r'meta')
+  JsonObject? get meta;
 
   RealtimekitActiveSession._();
 
@@ -119,25 +119,11 @@ class _$RealtimekitActiveSessionSerializer implements PrimitiveSerializer<Realti
       object.associatedId,
       specifiedType: const FullType(String),
     );
-    if (object.breakoutRooms != null) {
-      yield r'breakout_rooms';
-      yield serializers.serialize(
-        object.breakoutRooms,
-        specifiedType: const FullType(BuiltList, [FullType(RealtimekitActiveSession)]),
-      );
-    }
     yield r'created_at';
     yield serializers.serialize(
       object.createdAt,
       specifiedType: const FullType(String),
     );
-    if (object.endedAt != null) {
-      yield r'ended_at';
-      yield serializers.serialize(
-        object.endedAt,
-        specifiedType: const FullType(String),
-      );
-    }
     yield r'id';
     yield serializers.serialize(
       object.id,
@@ -158,13 +144,6 @@ class _$RealtimekitActiveSessionSerializer implements PrimitiveSerializer<Realti
       object.meetingDisplayName,
       specifiedType: const FullType(String),
     );
-    if (object.meta != null) {
-      yield r'meta';
-      yield serializers.serialize(
-        object.meta,
-        specifiedType: const FullType(JsonObject),
-      );
-    }
     yield r'minutes_consumed';
     yield serializers.serialize(
       object.minutesConsumed,
@@ -195,6 +174,27 @@ class _$RealtimekitActiveSessionSerializer implements PrimitiveSerializer<Realti
       object.updatedAt,
       specifiedType: const FullType(String),
     );
+    if (object.breakoutRooms != null) {
+      yield r'breakout_rooms';
+      yield serializers.serialize(
+        object.breakoutRooms,
+        specifiedType: const FullType(BuiltList, [FullType(RealtimekitActiveSession)]),
+      );
+    }
+    if (object.endedAt != null) {
+      yield r'ended_at';
+      yield serializers.serialize(
+        object.endedAt,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.meta != null) {
+      yield r'meta';
+      yield serializers.serialize(
+        object.meta,
+        specifiedType: const FullType(JsonObject),
+      );
+    }
   }
 
   @override
@@ -225,26 +225,12 @@ class _$RealtimekitActiveSessionSerializer implements PrimitiveSerializer<Realti
           ) as String;
           result.associatedId = valueDes;
           break;
-        case r'breakout_rooms':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(RealtimekitActiveSession)]),
-          ) as BuiltList<RealtimekitActiveSession>;
-          result.breakoutRooms.replace(valueDes);
-          break;
         case r'created_at':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(String),
           ) as String;
           result.createdAt = valueDes;
-          break;
-        case r'ended_at':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.endedAt = valueDes;
           break;
         case r'id':
           final valueDes = serializers.deserialize(
@@ -273,13 +259,6 @@ class _$RealtimekitActiveSessionSerializer implements PrimitiveSerializer<Realti
             specifiedType: const FullType(String),
           ) as String;
           result.meetingDisplayName = valueDes;
-          break;
-        case r'meta':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(JsonObject),
-          ) as JsonObject;
-          result.meta = valueDes;
           break;
         case r'minutes_consumed':
           final valueDes = serializers.deserialize(
@@ -322,6 +301,27 @@ class _$RealtimekitActiveSessionSerializer implements PrimitiveSerializer<Realti
             specifiedType: const FullType(String),
           ) as String;
           result.updatedAt = valueDes;
+          break;
+        case r'breakout_rooms':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BuiltList, [FullType(RealtimekitActiveSession)]),
+          ) as BuiltList<RealtimekitActiveSession>;
+          result.breakoutRooms.replace(valueDes);
+          break;
+        case r'ended_at':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.endedAt = valueDes;
+          break;
+        case r'meta':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(JsonObject),
+          ) as JsonObject;
+          result.meta = valueDes;
           break;
         default:
           unhandled.add(key);

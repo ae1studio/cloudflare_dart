@@ -15,28 +15,50 @@ part 'mcp_portals_api_fetch_gateways200_response_result_servers_inner.g.dart';
 ///
 /// Properties:
 /// * [authType] 
+/// * [hostname] 
+/// * [id] - server id
+/// * [name] 
+/// * [prompts] 
+/// * [tools] 
+/// * [updatedPrompts] 
+/// * [updatedTools] 
 /// * [createdAt] 
 /// * [createdBy] 
 /// * [defaultDisabled] 
 /// * [description] 
 /// * [error] 
-/// * [hostname] 
-/// * [id] - server id
 /// * [lastSynced] 
 /// * [modifiedAt] 
 /// * [modifiedBy] 
-/// * [name] 
 /// * [onBehalf] 
-/// * [prompts] 
 /// * [status] 
-/// * [tools] 
-/// * [updatedPrompts] 
-/// * [updatedTools] 
 @BuiltValue()
 abstract class McpPortalsApiFetchGateways200ResponseResultServersInner implements Built<McpPortalsApiFetchGateways200ResponseResultServersInner, McpPortalsApiFetchGateways200ResponseResultServersInnerBuilder> {
   @BuiltValueField(wireName: r'auth_type')
   McpPortalsApiFetchGateways200ResponseResultServersInnerAuthTypeEnum get authType;
   // enum authTypeEnum {  oauth,  bearer,  unauthenticated,  };
+
+  @BuiltValueField(wireName: r'hostname')
+  String get hostname;
+
+  /// server id
+  @BuiltValueField(wireName: r'id')
+  String get id;
+
+  @BuiltValueField(wireName: r'name')
+  String get name;
+
+  @BuiltValueField(wireName: r'prompts')
+  BuiltList<BuiltMap<String, JsonObject?>> get prompts;
+
+  @BuiltValueField(wireName: r'tools')
+  BuiltList<BuiltMap<String, JsonObject?>> get tools;
+
+  @BuiltValueField(wireName: r'updated_prompts')
+  BuiltList<BuiltMap<String, McpPortalsApiFetchGateways200ResponseResultServersInnerUpdatedPromptsInnerValue>> get updatedPrompts;
+
+  @BuiltValueField(wireName: r'updated_tools')
+  BuiltList<BuiltMap<String, McpPortalsApiFetchGateways200ResponseResultServersInnerUpdatedPromptsInnerValue>> get updatedTools;
 
   @BuiltValueField(wireName: r'created_at')
   DateTime? get createdAt;
@@ -53,13 +75,6 @@ abstract class McpPortalsApiFetchGateways200ResponseResultServersInner implement
   @BuiltValueField(wireName: r'error')
   String? get error;
 
-  @BuiltValueField(wireName: r'hostname')
-  String get hostname;
-
-  /// server id
-  @BuiltValueField(wireName: r'id')
-  String get id;
-
   @BuiltValueField(wireName: r'last_synced')
   DateTime? get lastSynced;
 
@@ -69,26 +84,11 @@ abstract class McpPortalsApiFetchGateways200ResponseResultServersInner implement
   @BuiltValueField(wireName: r'modified_by')
   String? get modifiedBy;
 
-  @BuiltValueField(wireName: r'name')
-  String get name;
-
   @BuiltValueField(wireName: r'on_behalf')
   bool? get onBehalf;
 
-  @BuiltValueField(wireName: r'prompts')
-  BuiltList<BuiltMap<String, JsonObject?>> get prompts;
-
   @BuiltValueField(wireName: r'status')
   String? get status;
-
-  @BuiltValueField(wireName: r'tools')
-  BuiltList<BuiltMap<String, JsonObject?>> get tools;
-
-  @BuiltValueField(wireName: r'updated_prompts')
-  BuiltList<BuiltMap<String, McpPortalsApiFetchGateways200ResponseResultServersInnerUpdatedPromptsInnerValue>> get updatedPrompts;
-
-  @BuiltValueField(wireName: r'updated_tools')
-  BuiltList<BuiltMap<String, McpPortalsApiFetchGateways200ResponseResultServersInnerUpdatedPromptsInnerValue>> get updatedTools;
 
   McpPortalsApiFetchGateways200ResponseResultServersInner._();
 
@@ -120,6 +120,41 @@ class _$McpPortalsApiFetchGateways200ResponseResultServersInnerSerializer implem
     yield serializers.serialize(
       object.authType,
       specifiedType: const FullType(McpPortalsApiFetchGateways200ResponseResultServersInnerAuthTypeEnum),
+    );
+    yield r'hostname';
+    yield serializers.serialize(
+      object.hostname,
+      specifiedType: const FullType(String),
+    );
+    yield r'id';
+    yield serializers.serialize(
+      object.id,
+      specifiedType: const FullType(String),
+    );
+    yield r'name';
+    yield serializers.serialize(
+      object.name,
+      specifiedType: const FullType(String),
+    );
+    yield r'prompts';
+    yield serializers.serialize(
+      object.prompts,
+      specifiedType: const FullType(BuiltList, [FullType(BuiltMap, [FullType(String), FullType.nullable(JsonObject)])]),
+    );
+    yield r'tools';
+    yield serializers.serialize(
+      object.tools,
+      specifiedType: const FullType(BuiltList, [FullType(BuiltMap, [FullType(String), FullType.nullable(JsonObject)])]),
+    );
+    yield r'updated_prompts';
+    yield serializers.serialize(
+      object.updatedPrompts,
+      specifiedType: const FullType(BuiltList, [FullType(BuiltMap, [FullType(String), FullType(McpPortalsApiFetchGateways200ResponseResultServersInnerUpdatedPromptsInnerValue)])]),
+    );
+    yield r'updated_tools';
+    yield serializers.serialize(
+      object.updatedTools,
+      specifiedType: const FullType(BuiltList, [FullType(BuiltMap, [FullType(String), FullType(McpPortalsApiFetchGateways200ResponseResultServersInnerUpdatedPromptsInnerValue)])]),
     );
     if (object.createdAt != null) {
       yield r'created_at';
@@ -156,16 +191,6 @@ class _$McpPortalsApiFetchGateways200ResponseResultServersInnerSerializer implem
         specifiedType: const FullType(String),
       );
     }
-    yield r'hostname';
-    yield serializers.serialize(
-      object.hostname,
-      specifiedType: const FullType(String),
-    );
-    yield r'id';
-    yield serializers.serialize(
-      object.id,
-      specifiedType: const FullType(String),
-    );
     if (object.lastSynced != null) {
       yield r'last_synced';
       yield serializers.serialize(
@@ -187,11 +212,6 @@ class _$McpPortalsApiFetchGateways200ResponseResultServersInnerSerializer implem
         specifiedType: const FullType(String),
       );
     }
-    yield r'name';
-    yield serializers.serialize(
-      object.name,
-      specifiedType: const FullType(String),
-    );
     if (object.onBehalf != null) {
       yield r'on_behalf';
       yield serializers.serialize(
@@ -199,11 +219,6 @@ class _$McpPortalsApiFetchGateways200ResponseResultServersInnerSerializer implem
         specifiedType: const FullType(bool),
       );
     }
-    yield r'prompts';
-    yield serializers.serialize(
-      object.prompts,
-      specifiedType: const FullType(BuiltList, [FullType(BuiltMap, [FullType(String), FullType.nullable(JsonObject)])]),
-    );
     if (object.status != null) {
       yield r'status';
       yield serializers.serialize(
@@ -211,21 +226,6 @@ class _$McpPortalsApiFetchGateways200ResponseResultServersInnerSerializer implem
         specifiedType: const FullType(String),
       );
     }
-    yield r'tools';
-    yield serializers.serialize(
-      object.tools,
-      specifiedType: const FullType(BuiltList, [FullType(BuiltMap, [FullType(String), FullType.nullable(JsonObject)])]),
-    );
-    yield r'updated_prompts';
-    yield serializers.serialize(
-      object.updatedPrompts,
-      specifiedType: const FullType(BuiltList, [FullType(BuiltMap, [FullType(String), FullType(McpPortalsApiFetchGateways200ResponseResultServersInnerUpdatedPromptsInnerValue)])]),
-    );
-    yield r'updated_tools';
-    yield serializers.serialize(
-      object.updatedTools,
-      specifiedType: const FullType(BuiltList, [FullType(BuiltMap, [FullType(String), FullType(McpPortalsApiFetchGateways200ResponseResultServersInnerUpdatedPromptsInnerValue)])]),
-    );
   }
 
   @override
@@ -255,6 +255,55 @@ class _$McpPortalsApiFetchGateways200ResponseResultServersInnerSerializer implem
             specifiedType: const FullType(McpPortalsApiFetchGateways200ResponseResultServersInnerAuthTypeEnum),
           ) as McpPortalsApiFetchGateways200ResponseResultServersInnerAuthTypeEnum;
           result.authType = valueDes;
+          break;
+        case r'hostname':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.hostname = valueDes;
+          break;
+        case r'id':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.id = valueDes;
+          break;
+        case r'name':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.name = valueDes;
+          break;
+        case r'prompts':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BuiltList, [FullType(BuiltMap, [FullType(String), FullType.nullable(JsonObject)])]),
+          ) as BuiltList<BuiltMap<String, JsonObject?>>;
+          result.prompts.replace(valueDes);
+          break;
+        case r'tools':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BuiltList, [FullType(BuiltMap, [FullType(String), FullType.nullable(JsonObject)])]),
+          ) as BuiltList<BuiltMap<String, JsonObject?>>;
+          result.tools.replace(valueDes);
+          break;
+        case r'updated_prompts':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BuiltList, [FullType(BuiltMap, [FullType(String), FullType(McpPortalsApiFetchGateways200ResponseResultServersInnerUpdatedPromptsInnerValue)])]),
+          ) as BuiltList<BuiltMap<String, McpPortalsApiFetchGateways200ResponseResultServersInnerUpdatedPromptsInnerValue>>;
+          result.updatedPrompts.replace(valueDes);
+          break;
+        case r'updated_tools':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BuiltList, [FullType(BuiltMap, [FullType(String), FullType(McpPortalsApiFetchGateways200ResponseResultServersInnerUpdatedPromptsInnerValue)])]),
+          ) as BuiltList<BuiltMap<String, McpPortalsApiFetchGateways200ResponseResultServersInnerUpdatedPromptsInnerValue>>;
+          result.updatedTools.replace(valueDes);
           break;
         case r'created_at':
           final valueDes = serializers.deserialize(
@@ -292,20 +341,6 @@ class _$McpPortalsApiFetchGateways200ResponseResultServersInnerSerializer implem
           ) as String;
           result.error = valueDes;
           break;
-        case r'hostname':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.hostname = valueDes;
-          break;
-        case r'id':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.id = valueDes;
-          break;
         case r'last_synced':
           final valueDes = serializers.deserialize(
             value,
@@ -327,13 +362,6 @@ class _$McpPortalsApiFetchGateways200ResponseResultServersInnerSerializer implem
           ) as String;
           result.modifiedBy = valueDes;
           break;
-        case r'name':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.name = valueDes;
-          break;
         case r'on_behalf':
           final valueDes = serializers.deserialize(
             value,
@@ -341,40 +369,12 @@ class _$McpPortalsApiFetchGateways200ResponseResultServersInnerSerializer implem
           ) as bool;
           result.onBehalf = valueDes;
           break;
-        case r'prompts':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(BuiltMap, [FullType(String), FullType.nullable(JsonObject)])]),
-          ) as BuiltList<BuiltMap<String, JsonObject?>>;
-          result.prompts.replace(valueDes);
-          break;
         case r'status':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(String),
           ) as String;
           result.status = valueDes;
-          break;
-        case r'tools':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(BuiltMap, [FullType(String), FullType.nullable(JsonObject)])]),
-          ) as BuiltList<BuiltMap<String, JsonObject?>>;
-          result.tools.replace(valueDes);
-          break;
-        case r'updated_prompts':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(BuiltMap, [FullType(String), FullType(McpPortalsApiFetchGateways200ResponseResultServersInnerUpdatedPromptsInnerValue)])]),
-          ) as BuiltList<BuiltMap<String, McpPortalsApiFetchGateways200ResponseResultServersInnerUpdatedPromptsInnerValue>>;
-          result.updatedPrompts.replace(valueDes);
-          break;
-        case r'updated_tools':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(BuiltMap, [FullType(String), FullType(McpPortalsApiFetchGateways200ResponseResultServersInnerUpdatedPromptsInnerValue)])]),
-          ) as BuiltList<BuiltMap<String, McpPortalsApiFetchGateways200ResponseResultServersInnerUpdatedPromptsInnerValue>>;
-          result.updatedTools.replace(valueDes);
           break;
         default:
           unhandled.add(key);

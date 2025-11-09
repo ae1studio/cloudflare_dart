@@ -128,23 +128,23 @@ class _$RealtimekitWebhookRequestEventsEnumSerializer
 
 class _$RealtimekitWebhookRequest extends RealtimekitWebhookRequest {
   @override
-  final bool? enabled;
-  @override
   final BuiltList<RealtimekitWebhookRequestEventsEnum> events;
   @override
   final String name;
   @override
   final String url;
+  @override
+  final bool? enabled;
 
   factory _$RealtimekitWebhookRequest(
           [void Function(RealtimekitWebhookRequestBuilder)? updates]) =>
       (RealtimekitWebhookRequestBuilder()..update(updates))._build();
 
   _$RealtimekitWebhookRequest._(
-      {this.enabled,
-      required this.events,
+      {required this.events,
       required this.name,
-      required this.url})
+      required this.url,
+      this.enabled})
       : super._();
   @override
   RealtimekitWebhookRequest rebuild(
@@ -159,19 +159,19 @@ class _$RealtimekitWebhookRequest extends RealtimekitWebhookRequest {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is RealtimekitWebhookRequest &&
-        enabled == other.enabled &&
         events == other.events &&
         name == other.name &&
-        url == other.url;
+        url == other.url &&
+        enabled == other.enabled;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, enabled.hashCode);
     _$hash = $jc(_$hash, events.hashCode);
     _$hash = $jc(_$hash, name.hashCode);
     _$hash = $jc(_$hash, url.hashCode);
+    _$hash = $jc(_$hash, enabled.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -179,10 +179,10 @@ class _$RealtimekitWebhookRequest extends RealtimekitWebhookRequest {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'RealtimekitWebhookRequest')
-          ..add('enabled', enabled)
           ..add('events', events)
           ..add('name', name)
-          ..add('url', url))
+          ..add('url', url)
+          ..add('enabled', enabled))
         .toString();
   }
 }
@@ -191,10 +191,6 @@ class RealtimekitWebhookRequestBuilder
     implements
         Builder<RealtimekitWebhookRequest, RealtimekitWebhookRequestBuilder> {
   _$RealtimekitWebhookRequest? _$v;
-
-  bool? _enabled;
-  bool? get enabled => _$this._enabled;
-  set enabled(bool? enabled) => _$this._enabled = enabled;
 
   ListBuilder<RealtimekitWebhookRequestEventsEnum>? _events;
   ListBuilder<RealtimekitWebhookRequestEventsEnum> get events =>
@@ -210,6 +206,10 @@ class RealtimekitWebhookRequestBuilder
   String? get url => _$this._url;
   set url(String? url) => _$this._url = url;
 
+  bool? _enabled;
+  bool? get enabled => _$this._enabled;
+  set enabled(bool? enabled) => _$this._enabled = enabled;
+
   RealtimekitWebhookRequestBuilder() {
     RealtimekitWebhookRequest._defaults(this);
   }
@@ -217,10 +217,10 @@ class RealtimekitWebhookRequestBuilder
   RealtimekitWebhookRequestBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _enabled = $v.enabled;
       _events = $v.events.toBuilder();
       _name = $v.name;
       _url = $v.url;
+      _enabled = $v.enabled;
       _$v = null;
     }
     return this;
@@ -244,12 +244,12 @@ class RealtimekitWebhookRequestBuilder
     try {
       _$result = _$v ??
           _$RealtimekitWebhookRequest._(
-            enabled: enabled,
             events: events.build(),
             name: BuiltValueNullFieldError.checkNotNull(
                 name, r'RealtimekitWebhookRequest', 'name'),
             url: BuiltValueNullFieldError.checkNotNull(
                 url, r'RealtimekitWebhookRequest', 'url'),
+            enabled: enabled,
           );
     } catch (_) {
       late String _$failedField;

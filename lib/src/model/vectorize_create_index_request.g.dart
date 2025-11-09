@@ -10,16 +10,16 @@ class _$VectorizeCreateIndexRequest extends VectorizeCreateIndexRequest {
   @override
   final VectorizeIndexConfiguration config;
   @override
-  final String? description;
-  @override
   final String name;
+  @override
+  final String? description;
 
   factory _$VectorizeCreateIndexRequest(
           [void Function(VectorizeCreateIndexRequestBuilder)? updates]) =>
       (VectorizeCreateIndexRequestBuilder()..update(updates))._build();
 
   _$VectorizeCreateIndexRequest._(
-      {required this.config, this.description, required this.name})
+      {required this.config, required this.name, this.description})
       : super._();
   @override
   VectorizeCreateIndexRequest rebuild(
@@ -35,16 +35,16 @@ class _$VectorizeCreateIndexRequest extends VectorizeCreateIndexRequest {
     if (identical(other, this)) return true;
     return other is VectorizeCreateIndexRequest &&
         config == other.config &&
-        description == other.description &&
-        name == other.name;
+        name == other.name &&
+        description == other.description;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
     _$hash = $jc(_$hash, config.hashCode);
-    _$hash = $jc(_$hash, description.hashCode);
     _$hash = $jc(_$hash, name.hashCode);
+    _$hash = $jc(_$hash, description.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -53,8 +53,8 @@ class _$VectorizeCreateIndexRequest extends VectorizeCreateIndexRequest {
   String toString() {
     return (newBuiltValueToStringHelper(r'VectorizeCreateIndexRequest')
           ..add('config', config)
-          ..add('description', description)
-          ..add('name', name))
+          ..add('name', name)
+          ..add('description', description))
         .toString();
   }
 }
@@ -71,13 +71,13 @@ class VectorizeCreateIndexRequestBuilder
   set config(VectorizeIndexConfigurationBuilder? config) =>
       _$this._config = config;
 
-  String? _description;
-  String? get description => _$this._description;
-  set description(String? description) => _$this._description = description;
-
   String? _name;
   String? get name => _$this._name;
   set name(String? name) => _$this._name = name;
+
+  String? _description;
+  String? get description => _$this._description;
+  set description(String? description) => _$this._description = description;
 
   VectorizeCreateIndexRequestBuilder() {
     VectorizeCreateIndexRequest._defaults(this);
@@ -87,8 +87,8 @@ class VectorizeCreateIndexRequestBuilder
     final $v = _$v;
     if ($v != null) {
       _config = $v.config.toBuilder();
-      _description = $v.description;
       _name = $v.name;
+      _description = $v.description;
       _$v = null;
     }
     return this;
@@ -113,9 +113,9 @@ class VectorizeCreateIndexRequestBuilder
       _$result = _$v ??
           _$VectorizeCreateIndexRequest._(
             config: config.build(),
-            description: description,
             name: BuiltValueNullFieldError.checkNotNull(
                 name, r'VectorizeCreateIndexRequest', 'name'),
+            description: description,
           );
     } catch (_) {
       late String _$failedField;

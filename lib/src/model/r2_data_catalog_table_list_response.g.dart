@@ -8,9 +8,9 @@ part of 'r2_data_catalog_table_list_response.dart';
 
 class _$R2DataCatalogTableListResponse extends R2DataCatalogTableListResponse {
   @override
-  final BuiltList<R2DataCatalogTableDetails>? details;
-  @override
   final BuiltList<R2DataCatalogTableIdentifier> identifiers;
+  @override
+  final BuiltList<R2DataCatalogTableDetails>? details;
   @override
   final String? nextPageToken;
   @override
@@ -21,8 +21,8 @@ class _$R2DataCatalogTableListResponse extends R2DataCatalogTableListResponse {
       (R2DataCatalogTableListResponseBuilder()..update(updates))._build();
 
   _$R2DataCatalogTableListResponse._(
-      {this.details,
-      required this.identifiers,
+      {required this.identifiers,
+      this.details,
       this.nextPageToken,
       this.tableUuids})
       : super._();
@@ -39,8 +39,8 @@ class _$R2DataCatalogTableListResponse extends R2DataCatalogTableListResponse {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is R2DataCatalogTableListResponse &&
-        details == other.details &&
         identifiers == other.identifiers &&
+        details == other.details &&
         nextPageToken == other.nextPageToken &&
         tableUuids == other.tableUuids;
   }
@@ -48,8 +48,8 @@ class _$R2DataCatalogTableListResponse extends R2DataCatalogTableListResponse {
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, details.hashCode);
     _$hash = $jc(_$hash, identifiers.hashCode);
+    _$hash = $jc(_$hash, details.hashCode);
     _$hash = $jc(_$hash, nextPageToken.hashCode);
     _$hash = $jc(_$hash, tableUuids.hashCode);
     _$hash = $jf(_$hash);
@@ -59,8 +59,8 @@ class _$R2DataCatalogTableListResponse extends R2DataCatalogTableListResponse {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'R2DataCatalogTableListResponse')
-          ..add('details', details)
           ..add('identifiers', identifiers)
+          ..add('details', details)
           ..add('nextPageToken', nextPageToken)
           ..add('tableUuids', tableUuids))
         .toString();
@@ -73,17 +73,17 @@ class R2DataCatalogTableListResponseBuilder
             R2DataCatalogTableListResponseBuilder> {
   _$R2DataCatalogTableListResponse? _$v;
 
-  ListBuilder<R2DataCatalogTableDetails>? _details;
-  ListBuilder<R2DataCatalogTableDetails> get details =>
-      _$this._details ??= ListBuilder<R2DataCatalogTableDetails>();
-  set details(ListBuilder<R2DataCatalogTableDetails>? details) =>
-      _$this._details = details;
-
   ListBuilder<R2DataCatalogTableIdentifier>? _identifiers;
   ListBuilder<R2DataCatalogTableIdentifier> get identifiers =>
       _$this._identifiers ??= ListBuilder<R2DataCatalogTableIdentifier>();
   set identifiers(ListBuilder<R2DataCatalogTableIdentifier>? identifiers) =>
       _$this._identifiers = identifiers;
+
+  ListBuilder<R2DataCatalogTableDetails>? _details;
+  ListBuilder<R2DataCatalogTableDetails> get details =>
+      _$this._details ??= ListBuilder<R2DataCatalogTableDetails>();
+  set details(ListBuilder<R2DataCatalogTableDetails>? details) =>
+      _$this._details = details;
 
   String? _nextPageToken;
   String? get nextPageToken => _$this._nextPageToken;
@@ -103,8 +103,8 @@ class R2DataCatalogTableListResponseBuilder
   R2DataCatalogTableListResponseBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _details = $v.details?.toBuilder();
       _identifiers = $v.identifiers.toBuilder();
+      _details = $v.details?.toBuilder();
       _nextPageToken = $v.nextPageToken;
       _tableUuids = $v.tableUuids?.toBuilder();
       _$v = null;
@@ -130,18 +130,18 @@ class R2DataCatalogTableListResponseBuilder
     try {
       _$result = _$v ??
           _$R2DataCatalogTableListResponse._(
-            details: _details?.build(),
             identifiers: identifiers.build(),
+            details: _details?.build(),
             nextPageToken: nextPageToken,
             tableUuids: _tableUuids?.build(),
           );
     } catch (_) {
       late String _$failedField;
       try {
-        _$failedField = 'details';
-        _details?.build();
         _$failedField = 'identifiers';
         identifiers.build();
+        _$failedField = 'details';
+        _details?.build();
 
         _$failedField = 'tableUuids';
         _tableUuids?.build();

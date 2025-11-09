@@ -12,18 +12,18 @@ part 'magic_wans_add_single_request.g.dart';
 /// MagicWansAddSingleRequest
 ///
 /// Properties:
-/// * [name] 
 /// * [physport] 
+/// * [name] 
 /// * [priority] 
 /// * [staticAddressing] 
 /// * [vlanTag] - VLAN ID. Use zero for untagged.
 @BuiltValue()
 abstract class MagicWansAddSingleRequest implements Built<MagicWansAddSingleRequest, MagicWansAddSingleRequestBuilder> {
-  @BuiltValueField(wireName: r'name')
-  String? get name;
-
   @BuiltValueField(wireName: r'physport')
   int get physport;
+
+  @BuiltValueField(wireName: r'name')
+  String? get name;
 
   @BuiltValueField(wireName: r'priority')
   int? get priority;
@@ -58,6 +58,11 @@ class _$MagicWansAddSingleRequestSerializer implements PrimitiveSerializer<Magic
     MagicWansAddSingleRequest object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    yield r'physport';
+    yield serializers.serialize(
+      object.physport,
+      specifiedType: const FullType(int),
+    );
     if (object.name != null) {
       yield r'name';
       yield serializers.serialize(
@@ -65,11 +70,6 @@ class _$MagicWansAddSingleRequestSerializer implements PrimitiveSerializer<Magic
         specifiedType: const FullType(String),
       );
     }
-    yield r'physport';
-    yield serializers.serialize(
-      object.physport,
-      specifiedType: const FullType(int),
-    );
     if (object.priority != null) {
       yield r'priority';
       yield serializers.serialize(
@@ -114,19 +114,19 @@ class _$MagicWansAddSingleRequestSerializer implements PrimitiveSerializer<Magic
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'name':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.name = valueDes;
-          break;
         case r'physport':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(int),
           ) as int;
           result.physport = valueDes;
+          break;
+        case r'name':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.name = valueDes;
           break;
         case r'priority':
           final valueDes = serializers.deserialize(

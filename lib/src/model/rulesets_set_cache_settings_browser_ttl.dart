@@ -12,18 +12,18 @@ part 'rulesets_set_cache_settings_browser_ttl.g.dart';
 /// How long client browsers should cache the response. Cloudflare cache purge will not purge content cached on client browsers, so high browser TTLs may lead to stale content.
 ///
 /// Properties:
-/// * [default_] - The browser TTL (in seconds) if you choose the \"override_origin\" mode.
 /// * [mode] - The browser TTL mode.
+/// * [default_] - The browser TTL (in seconds) if you choose the \"override_origin\" mode.
 @BuiltValue()
 abstract class RulesetsSetCacheSettingsBrowserTTL implements Built<RulesetsSetCacheSettingsBrowserTTL, RulesetsSetCacheSettingsBrowserTTLBuilder> {
-  /// The browser TTL (in seconds) if you choose the \"override_origin\" mode.
-  @BuiltValueField(wireName: r'default')
-  int? get default_;
-
   /// The browser TTL mode.
   @BuiltValueField(wireName: r'mode')
   RulesetsSetCacheSettingsBrowserTTLModeEnum get mode;
   // enum modeEnum {  respect_origin,  bypass_by_default,  override_origin,  bypass,  };
+
+  /// The browser TTL (in seconds) if you choose the \"override_origin\" mode.
+  @BuiltValueField(wireName: r'default')
+  int? get default_;
 
   RulesetsSetCacheSettingsBrowserTTL._();
 
@@ -48,6 +48,11 @@ class _$RulesetsSetCacheSettingsBrowserTTLSerializer implements PrimitiveSeriali
     RulesetsSetCacheSettingsBrowserTTL object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    yield r'mode';
+    yield serializers.serialize(
+      object.mode,
+      specifiedType: const FullType(RulesetsSetCacheSettingsBrowserTTLModeEnum),
+    );
     if (object.default_ != null) {
       yield r'default';
       yield serializers.serialize(
@@ -55,11 +60,6 @@ class _$RulesetsSetCacheSettingsBrowserTTLSerializer implements PrimitiveSeriali
         specifiedType: const FullType(int),
       );
     }
-    yield r'mode';
-    yield serializers.serialize(
-      object.mode,
-      specifiedType: const FullType(RulesetsSetCacheSettingsBrowserTTLModeEnum),
-    );
   }
 
   @override
@@ -83,19 +83,19 @@ class _$RulesetsSetCacheSettingsBrowserTTLSerializer implements PrimitiveSeriali
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'default':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
-          result.default_ = valueDes;
-          break;
         case r'mode':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(RulesetsSetCacheSettingsBrowserTTLModeEnum),
           ) as RulesetsSetCacheSettingsBrowserTTLModeEnum;
           result.mode = valueDes;
+          break;
+        case r'default':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(int),
+          ) as int;
+          result.default_ = valueDes;
           break;
         default:
           unhandled.add(key);

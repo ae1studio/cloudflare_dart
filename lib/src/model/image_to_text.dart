@@ -15,8 +15,8 @@ part 'image_to_text.g.dart';
 /// ImageToText
 ///
 /// Properties:
-/// * [frequencyPenalty] - Decreases the likelihood of the model repeating the same lines verbatim.
 /// * [image] 
+/// * [frequencyPenalty] - Decreases the likelihood of the model repeating the same lines verbatim.
 /// * [maxTokens] - The maximum number of tokens to generate in the response.
 /// * [presencePenalty] - Increases the likelihood of the model introducing new topics.
 /// * [prompt] - The input text prompt for the model to generate a response.

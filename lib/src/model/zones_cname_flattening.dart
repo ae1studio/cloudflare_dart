@@ -8,16 +8,17 @@ import 'package:cloudflare_dart/src/model/zones_cname_flattening_value.dart';
 import 'package:cloudflare_dart/src/model/zones_base.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
+import 'package:built_value/json_object.dart';
 
 part 'zones_cname_flattening.g.dart';
 
 /// Whether or not cname flattening is on.
 ///
 /// Properties:
-/// * [editable] - Whether or not this setting can be modified for this zone (based on your Cloudflare plan level).
 /// * [id] - How to flatten the cname destination.
-/// * [modifiedOn] - last time this setting was modified.
 /// * [value] 
+/// * [editable] - Whether or not this setting can be modified for this zone (based on your Cloudflare plan level).
+/// * [modifiedOn] - last time this setting was modified.
 @Deprecated('ZonesCnameFlattening has been deprecated')
 @BuiltValue()
 abstract class ZonesCnameFlattening implements ZonesBase, Built<ZonesCnameFlattening, ZonesCnameFlatteningBuilder> {

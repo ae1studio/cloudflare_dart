@@ -13,17 +13,13 @@ part 'zaraz_zaraz_config_base_triggers_value.g.dart';
 /// ZarazZarazConfigBaseTriggersValue
 ///
 /// Properties:
-/// * [description] - Trigger description.
 /// * [excludeRules] - Rules defining when the trigger is not fired.
 /// * [loadRules] - Rules defining when the trigger is fired.
 /// * [name] - Trigger name.
+/// * [description] - Trigger description.
 /// * [system] 
 @BuiltValue()
 abstract class ZarazZarazConfigBaseTriggersValue implements Built<ZarazZarazConfigBaseTriggersValue, ZarazZarazConfigBaseTriggersValueBuilder> {
-  /// Trigger description.
-  @BuiltValueField(wireName: r'description')
-  String? get description;
-
   /// Rules defining when the trigger is not fired.
   @BuiltValueField(wireName: r'excludeRules')
   BuiltList<ZarazZarazConfigBaseTriggersValueExcludeRulesInner> get excludeRules;
@@ -35,6 +31,10 @@ abstract class ZarazZarazConfigBaseTriggersValue implements Built<ZarazZarazConf
   /// Trigger name.
   @BuiltValueField(wireName: r'name')
   String get name;
+
+  /// Trigger description.
+  @BuiltValueField(wireName: r'description')
+  String? get description;
 
   @BuiltValueField(wireName: r'system')
   ZarazZarazConfigBaseTriggersValueSystemEnum? get system;
@@ -63,13 +63,6 @@ class _$ZarazZarazConfigBaseTriggersValueSerializer implements PrimitiveSerializ
     ZarazZarazConfigBaseTriggersValue object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
-    if (object.description != null) {
-      yield r'description';
-      yield serializers.serialize(
-        object.description,
-        specifiedType: const FullType(String),
-      );
-    }
     yield r'excludeRules';
     yield serializers.serialize(
       object.excludeRules,
@@ -85,6 +78,13 @@ class _$ZarazZarazConfigBaseTriggersValueSerializer implements PrimitiveSerializ
       object.name,
       specifiedType: const FullType(String),
     );
+    if (object.description != null) {
+      yield r'description';
+      yield serializers.serialize(
+        object.description,
+        specifiedType: const FullType(String),
+      );
+    }
     if (object.system != null) {
       yield r'system';
       yield serializers.serialize(
@@ -115,13 +115,6 @@ class _$ZarazZarazConfigBaseTriggersValueSerializer implements PrimitiveSerializ
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'description':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.description = valueDes;
-          break;
         case r'excludeRules':
           final valueDes = serializers.deserialize(
             value,
@@ -142,6 +135,13 @@ class _$ZarazZarazConfigBaseTriggersValueSerializer implements PrimitiveSerializ
             specifiedType: const FullType(String),
           ) as String;
           result.name = valueDes;
+          break;
+        case r'description':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.description = valueDes;
           break;
         case r'system':
           final valueDes = serializers.deserialize(

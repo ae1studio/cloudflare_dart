@@ -10,6 +10,7 @@ import 'package:cloudflare_dart/src/model/snippets_response.dart';
 import 'package:cloudflare_dart/src/model/snippets_snippet.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
+import 'package:built_value/json_object.dart';
 
 part 'list_zone_snippets200_response.g.dart';
 

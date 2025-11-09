@@ -17,9 +17,9 @@ part 'wor_send_event_workflow_instance200_response.g.dart';
 /// Properties:
 /// * [errors] 
 /// * [messages] 
+/// * [success] 
 /// * [result] 
 /// * [resultInfo] 
-/// * [success] 
 @BuiltValue()
 abstract class WorSendEventWorkflowInstance200Response implements Built<WorSendEventWorkflowInstance200Response, WorSendEventWorkflowInstance200ResponseBuilder> {
   @BuiltValueField(wireName: r'errors')
@@ -28,14 +28,14 @@ abstract class WorSendEventWorkflowInstance200Response implements Built<WorSendE
   @BuiltValueField(wireName: r'messages')
   BuiltList<GetV4AccountsByAccountIdPipelinesDeprecated4XXResponseErrorsInner> get messages;
 
+  @BuiltValueField(wireName: r'success')
+  bool get success;
+
   @BuiltValueField(wireName: r'result')
   JsonObject? get result;
 
   @BuiltValueField(wireName: r'result_info')
   WorListWorkflows200ResponseResultInfo? get resultInfo;
-
-  @BuiltValueField(wireName: r'success')
-  bool get success;
 
   WorSendEventWorkflowInstance200Response._();
 
@@ -70,6 +70,11 @@ class _$WorSendEventWorkflowInstance200ResponseSerializer implements PrimitiveSe
       object.messages,
       specifiedType: const FullType(BuiltList, [FullType(GetV4AccountsByAccountIdPipelinesDeprecated4XXResponseErrorsInner)]),
     );
+    yield r'success';
+    yield serializers.serialize(
+      object.success,
+      specifiedType: const FullType(bool),
+    );
     if (object.result != null) {
       yield r'result';
       yield serializers.serialize(
@@ -84,11 +89,6 @@ class _$WorSendEventWorkflowInstance200ResponseSerializer implements PrimitiveSe
         specifiedType: const FullType(WorListWorkflows200ResponseResultInfo),
       );
     }
-    yield r'success';
-    yield serializers.serialize(
-      object.success,
-      specifiedType: const FullType(bool),
-    );
   }
 
   @override
@@ -126,6 +126,13 @@ class _$WorSendEventWorkflowInstance200ResponseSerializer implements PrimitiveSe
           ) as BuiltList<GetV4AccountsByAccountIdPipelinesDeprecated4XXResponseErrorsInner>;
           result.messages.replace(valueDes);
           break;
+        case r'success':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(bool),
+          ) as bool;
+          result.success = valueDes;
+          break;
         case r'result':
           final valueDes = serializers.deserialize(
             value,
@@ -139,13 +146,6 @@ class _$WorSendEventWorkflowInstance200ResponseSerializer implements PrimitiveSe
             specifiedType: const FullType(WorListWorkflows200ResponseResultInfo),
           ) as WorListWorkflows200ResponseResultInfo;
           result.resultInfo.replace(valueDes);
-          break;
-        case r'success':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
-          result.success = valueDes;
           break;
         default:
           unhandled.add(key);

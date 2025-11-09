@@ -10,11 +10,11 @@ class _$WaitingroomPatchRule extends WaitingroomPatchRule {
   @override
   final WaitingroomRuleAction action;
   @override
+  final String expression;
+  @override
   final String? description;
   @override
   final bool? enabled;
-  @override
-  final String expression;
   @override
   final WaitingroomRulePosition? position;
 
@@ -24,9 +24,9 @@ class _$WaitingroomPatchRule extends WaitingroomPatchRule {
 
   _$WaitingroomPatchRule._(
       {required this.action,
+      required this.expression,
       this.description,
       this.enabled,
-      required this.expression,
       this.position})
       : super._();
   @override
@@ -43,9 +43,9 @@ class _$WaitingroomPatchRule extends WaitingroomPatchRule {
     if (identical(other, this)) return true;
     return other is WaitingroomPatchRule &&
         action == other.action &&
+        expression == other.expression &&
         description == other.description &&
         enabled == other.enabled &&
-        expression == other.expression &&
         position == other.position;
   }
 
@@ -53,9 +53,9 @@ class _$WaitingroomPatchRule extends WaitingroomPatchRule {
   int get hashCode {
     var _$hash = 0;
     _$hash = $jc(_$hash, action.hashCode);
+    _$hash = $jc(_$hash, expression.hashCode);
     _$hash = $jc(_$hash, description.hashCode);
     _$hash = $jc(_$hash, enabled.hashCode);
-    _$hash = $jc(_$hash, expression.hashCode);
     _$hash = $jc(_$hash, position.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
@@ -65,9 +65,9 @@ class _$WaitingroomPatchRule extends WaitingroomPatchRule {
   String toString() {
     return (newBuiltValueToStringHelper(r'WaitingroomPatchRule')
           ..add('action', action)
+          ..add('expression', expression)
           ..add('description', description)
           ..add('enabled', enabled)
-          ..add('expression', expression)
           ..add('position', position))
         .toString();
   }
@@ -81,6 +81,10 @@ class WaitingroomPatchRuleBuilder
   WaitingroomRuleAction? get action => _$this._action;
   set action(WaitingroomRuleAction? action) => _$this._action = action;
 
+  String? _expression;
+  String? get expression => _$this._expression;
+  set expression(String? expression) => _$this._expression = expression;
+
   String? _description;
   String? get description => _$this._description;
   set description(String? description) => _$this._description = description;
@@ -88,10 +92,6 @@ class WaitingroomPatchRuleBuilder
   bool? _enabled;
   bool? get enabled => _$this._enabled;
   set enabled(bool? enabled) => _$this._enabled = enabled;
-
-  String? _expression;
-  String? get expression => _$this._expression;
-  set expression(String? expression) => _$this._expression = expression;
 
   WaitingroomRulePositionBuilder? _position;
   WaitingroomRulePositionBuilder get position =>
@@ -107,9 +107,9 @@ class WaitingroomPatchRuleBuilder
     final $v = _$v;
     if ($v != null) {
       _action = $v.action;
+      _expression = $v.expression;
       _description = $v.description;
       _enabled = $v.enabled;
-      _expression = $v.expression;
       _position = $v.position?.toBuilder();
       _$v = null;
     }
@@ -136,10 +136,10 @@ class WaitingroomPatchRuleBuilder
           _$WaitingroomPatchRule._(
             action: BuiltValueNullFieldError.checkNotNull(
                 action, r'WaitingroomPatchRule', 'action'),
-            description: description,
-            enabled: enabled,
             expression: BuiltValueNullFieldError.checkNotNull(
                 expression, r'WaitingroomPatchRule', 'expression'),
+            description: description,
+            enabled: enabled,
             position: _position?.build(),
           );
     } catch (_) {

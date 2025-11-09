@@ -13,12 +13,12 @@ class _$WorkersObservabilityQueryResultsCalculationsInner
           WorkersObservabilityQueryResultsCalculationsInnerAggregatesInner>
       aggregates;
   @override
-  final String? alias;
-  @override
   final String calculation;
   @override
   final BuiltList<WorkersObservabilityQueryResultsCalculationsInnerSeriesInner>
       series;
+  @override
+  final String? alias;
 
   factory _$WorkersObservabilityQueryResultsCalculationsInner(
           [void Function(
@@ -30,9 +30,9 @@ class _$WorkersObservabilityQueryResultsCalculationsInner
 
   _$WorkersObservabilityQueryResultsCalculationsInner._(
       {required this.aggregates,
-      this.alias,
       required this.calculation,
-      required this.series})
+      required this.series,
+      this.alias})
       : super._();
   @override
   WorkersObservabilityQueryResultsCalculationsInner rebuild(
@@ -50,18 +50,18 @@ class _$WorkersObservabilityQueryResultsCalculationsInner
     if (identical(other, this)) return true;
     return other is WorkersObservabilityQueryResultsCalculationsInner &&
         aggregates == other.aggregates &&
-        alias == other.alias &&
         calculation == other.calculation &&
-        series == other.series;
+        series == other.series &&
+        alias == other.alias;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
     _$hash = $jc(_$hash, aggregates.hashCode);
-    _$hash = $jc(_$hash, alias.hashCode);
     _$hash = $jc(_$hash, calculation.hashCode);
     _$hash = $jc(_$hash, series.hashCode);
+    _$hash = $jc(_$hash, alias.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -71,9 +71,9 @@ class _$WorkersObservabilityQueryResultsCalculationsInner
     return (newBuiltValueToStringHelper(
             r'WorkersObservabilityQueryResultsCalculationsInner')
           ..add('aggregates', aggregates)
-          ..add('alias', alias)
           ..add('calculation', calculation)
-          ..add('series', series))
+          ..add('series', series)
+          ..add('alias', alias))
         .toString();
   }
 }
@@ -95,10 +95,6 @@ class WorkersObservabilityQueryResultsCalculationsInnerBuilder
               aggregates) =>
       _$this._aggregates = aggregates;
 
-  String? _alias;
-  String? get alias => _$this._alias;
-  set alias(String? alias) => _$this._alias = alias;
-
   String? _calculation;
   String? get calculation => _$this._calculation;
   set calculation(String? calculation) => _$this._calculation = calculation;
@@ -114,6 +110,10 @@ class WorkersObservabilityQueryResultsCalculationsInnerBuilder
               series) =>
       _$this._series = series;
 
+  String? _alias;
+  String? get alias => _$this._alias;
+  set alias(String? alias) => _$this._alias = alias;
+
   WorkersObservabilityQueryResultsCalculationsInnerBuilder() {
     WorkersObservabilityQueryResultsCalculationsInner._defaults(this);
   }
@@ -122,9 +122,9 @@ class WorkersObservabilityQueryResultsCalculationsInnerBuilder
     final $v = _$v;
     if ($v != null) {
       _aggregates = $v.aggregates.toBuilder();
-      _alias = $v.alias;
       _calculation = $v.calculation;
       _series = $v.series.toBuilder();
+      _alias = $v.alias;
       _$v = null;
     }
     return this;
@@ -151,12 +151,12 @@ class WorkersObservabilityQueryResultsCalculationsInnerBuilder
       _$result = _$v ??
           _$WorkersObservabilityQueryResultsCalculationsInner._(
             aggregates: aggregates.build(),
-            alias: alias,
             calculation: BuiltValueNullFieldError.checkNotNull(
                 calculation,
                 r'WorkersObservabilityQueryResultsCalculationsInner',
                 'calculation'),
             series: series.build(),
+            alias: alias,
           );
     } catch (_) {
       late String _$failedField;

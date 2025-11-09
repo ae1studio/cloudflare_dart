@@ -18,8 +18,8 @@ part 'list_registrations200_response.g.dart';
 /// * [errors] 
 /// * [messages] 
 /// * [result] 
-/// * [resultInfo] 
 /// * [success] - Whether the API call was successful.
+/// * [resultInfo] 
 @BuiltValue()
 abstract class ListRegistrations200Response implements Built<ListRegistrations200Response, ListRegistrations200ResponseBuilder> {
   @BuiltValueField(wireName: r'errors')
@@ -31,12 +31,12 @@ abstract class ListRegistrations200Response implements Built<ListRegistrations20
   @BuiltValueField(wireName: r'result')
   BuiltList<TeamsDevicesRegistration> get result;
 
-  @BuiltValueField(wireName: r'result_info')
-  TeamsDevicesCursorResultInfo? get resultInfo;
-
   /// Whether the API call was successful.
   @BuiltValueField(wireName: r'success')
   bool get success;
+
+  @BuiltValueField(wireName: r'result_info')
+  TeamsDevicesCursorResultInfo? get resultInfo;
 
   ListRegistrations200Response._();
 
@@ -76,6 +76,11 @@ class _$ListRegistrations200ResponseSerializer implements PrimitiveSerializer<Li
       object.result,
       specifiedType: const FullType(BuiltList, [FullType(TeamsDevicesRegistration)]),
     );
+    yield r'success';
+    yield serializers.serialize(
+      object.success,
+      specifiedType: const FullType(bool),
+    );
     if (object.resultInfo != null) {
       yield r'result_info';
       yield serializers.serialize(
@@ -83,11 +88,6 @@ class _$ListRegistrations200ResponseSerializer implements PrimitiveSerializer<Li
         specifiedType: const FullType(TeamsDevicesCursorResultInfo),
       );
     }
-    yield r'success';
-    yield serializers.serialize(
-      object.success,
-      specifiedType: const FullType(bool),
-    );
   }
 
   @override
@@ -132,19 +132,19 @@ class _$ListRegistrations200ResponseSerializer implements PrimitiveSerializer<Li
           ) as BuiltList<TeamsDevicesRegistration>;
           result.result.replace(valueDes);
           break;
-        case r'result_info':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(TeamsDevicesCursorResultInfo),
-          ) as TeamsDevicesCursorResultInfo;
-          result.resultInfo.replace(valueDes);
-          break;
         case r'success':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(bool),
           ) as bool;
           result.success = valueDes;
+          break;
+        case r'result_info':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(TeamsDevicesCursorResultInfo),
+          ) as TeamsDevicesCursorResultInfo;
+          result.resultInfo.replace(valueDes);
           break;
         default:
           unhandled.add(key);

@@ -20,20 +20,23 @@ part 'mcn_onramp_with_account.g.dart';
 /// McnOnrampWithAccount
 ///
 /// Properties:
-/// * [attachedHubs] 
-/// * [attachedVpcs] 
 /// * [cloudType] 
-/// * [description] 
-/// * [hub] 
 /// * [id] 
 /// * [installRoutesInCloud] 
 /// * [installRoutesInMagicWan] 
+/// * [name] 
+/// * [type] 
+/// * [updatedAt] 
+/// * [accountId] 
+/// * [attachedHubs] 
+/// * [attachedVpcs] 
+/// * [description] 
+/// * [hub] 
 /// * [lastAppliedAt] 
 /// * [lastExportedAt] 
 /// * [lastPlannedAt] 
 /// * [manageHubToHubAttachments] 
 /// * [manageVpcToHubAttachments] 
-/// * [name] 
 /// * [plannedMonthlyCostEstimate] 
 /// * [plannedResources] 
 /// * [plannedResourcesUnavailable] 
@@ -42,12 +45,9 @@ part 'mcn_onramp_with_account.g.dart';
 /// * [postApplyResourcesUnavailable] 
 /// * [region] 
 /// * [status] 
-/// * [type] 
-/// * [updatedAt] 
 /// * [vpc] 
 /// * [vpcsById] 
 /// * [vpcsByIdUnavailable] - The list of vpc IDs for which resource details failed to generate.
-/// * [accountId] 
 @BuiltValue()
 abstract class McnOnrampWithAccount implements McnOnramp, Built<McnOnrampWithAccount, McnOnrampWithAccountBuilder> {
   @BuiltValueField(wireName: r'account_id')

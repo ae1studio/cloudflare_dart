@@ -10,6 +10,7 @@ import 'package:cloudflare_dart/src/model/builds_api_response_errors_inner.dart'
 import 'package:cloudflare_dart/src/model/builds_insert_build_response.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
+import 'package:built_value/json_object.dart';
 
 part 'create_manual_build200_response.g.dart';
 
@@ -19,8 +20,8 @@ part 'create_manual_build200_response.g.dart';
 /// * [errors] 
 /// * [messages] 
 /// * [result] 
-/// * [resultInfo] 
 /// * [success] 
+/// * [resultInfo] 
 @BuiltValue()
 abstract class CreateManualBuild200Response implements BuildsAPIResponse, Built<CreateManualBuild200Response, CreateManualBuild200ResponseBuilder> {
   CreateManualBuild200Response._();

@@ -13,26 +13,26 @@ part 'get_category_list200_response_inner.g.dart';
 ///
 /// Properties:
 /// * [killChain] 
-/// * [mitreAttack] 
 /// * [name] 
-/// * [shortname] 
 /// * [uuid] 
+/// * [mitreAttack] 
+/// * [shortname] 
 @BuiltValue()
 abstract class GetCategoryList200ResponseInner implements Built<GetCategoryList200ResponseInner, GetCategoryList200ResponseInnerBuilder> {
   @BuiltValueField(wireName: r'killChain')
   num get killChain;
 
-  @BuiltValueField(wireName: r'mitreAttack')
-  BuiltList<String>? get mitreAttack;
-
   @BuiltValueField(wireName: r'name')
   String get name;
 
-  @BuiltValueField(wireName: r'shortname')
-  String? get shortname;
-
   @BuiltValueField(wireName: r'uuid')
   String get uuid;
+
+  @BuiltValueField(wireName: r'mitreAttack')
+  BuiltList<String>? get mitreAttack;
+
+  @BuiltValueField(wireName: r'shortname')
+  String? get shortname;
 
   GetCategoryList200ResponseInner._();
 
@@ -62,6 +62,16 @@ class _$GetCategoryList200ResponseInnerSerializer implements PrimitiveSerializer
       object.killChain,
       specifiedType: const FullType(num),
     );
+    yield r'name';
+    yield serializers.serialize(
+      object.name,
+      specifiedType: const FullType(String),
+    );
+    yield r'uuid';
+    yield serializers.serialize(
+      object.uuid,
+      specifiedType: const FullType(String),
+    );
     if (object.mitreAttack != null) {
       yield r'mitreAttack';
       yield serializers.serialize(
@@ -69,11 +79,6 @@ class _$GetCategoryList200ResponseInnerSerializer implements PrimitiveSerializer
         specifiedType: const FullType(BuiltList, [FullType(String)]),
       );
     }
-    yield r'name';
-    yield serializers.serialize(
-      object.name,
-      specifiedType: const FullType(String),
-    );
     if (object.shortname != null) {
       yield r'shortname';
       yield serializers.serialize(
@@ -81,11 +86,6 @@ class _$GetCategoryList200ResponseInnerSerializer implements PrimitiveSerializer
         specifiedType: const FullType(String),
       );
     }
-    yield r'uuid';
-    yield serializers.serialize(
-      object.uuid,
-      specifiedType: const FullType(String),
-    );
   }
 
   @override
@@ -116,13 +116,6 @@ class _$GetCategoryList200ResponseInnerSerializer implements PrimitiveSerializer
           ) as num;
           result.killChain = valueDes;
           break;
-        case r'mitreAttack':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>;
-          result.mitreAttack.replace(valueDes);
-          break;
         case r'name':
           final valueDes = serializers.deserialize(
             value,
@@ -130,19 +123,26 @@ class _$GetCategoryList200ResponseInnerSerializer implements PrimitiveSerializer
           ) as String;
           result.name = valueDes;
           break;
-        case r'shortname':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.shortname = valueDes;
-          break;
         case r'uuid':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(String),
           ) as String;
           result.uuid = valueDes;
+          break;
+        case r'mitreAttack':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BuiltList, [FullType(String)]),
+          ) as BuiltList<String>;
+          result.mitreAttack.replace(valueDes);
+          break;
+        case r'shortname':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.shortname = valueDes;
           break;
         default:
           unhandled.add(key);

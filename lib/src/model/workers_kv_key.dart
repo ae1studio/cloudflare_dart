@@ -12,21 +12,21 @@ part 'workers_kv_key.g.dart';
 /// A name for a value. A value stored under a given key may be retrieved via the same key.
 ///
 /// Properties:
+/// * [name] - A key's name. The name may be at most 512 bytes. All printable, non-whitespace characters are valid. Use percent-encoding to define key names as part of a URL.
 /// * [expiration] - The time, measured in number of seconds since the UNIX epoch, at which the key will expire. This property is omitted for keys that will not expire.
 /// * [metadata] 
-/// * [name] - A key's name. The name may be at most 512 bytes. All printable, non-whitespace characters are valid. Use percent-encoding to define key names as part of a URL.
 @BuiltValue()
 abstract class WorkersKvKey implements Built<WorkersKvKey, WorkersKvKeyBuilder> {
+  /// A key's name. The name may be at most 512 bytes. All printable, non-whitespace characters are valid. Use percent-encoding to define key names as part of a URL.
+  @BuiltValueField(wireName: r'name')
+  String get name;
+
   /// The time, measured in number of seconds since the UNIX epoch, at which the key will expire. This property is omitted for keys that will not expire.
   @BuiltValueField(wireName: r'expiration')
   num? get expiration;
 
   @BuiltValueField(wireName: r'metadata')
   JsonObject? get metadata;
-
-  /// A key's name. The name may be at most 512 bytes. All printable, non-whitespace characters are valid. Use percent-encoding to define key names as part of a URL.
-  @BuiltValueField(wireName: r'name')
-  String get name;
 
   WorkersKvKey._();
 
@@ -51,6 +51,11 @@ class _$WorkersKvKeySerializer implements PrimitiveSerializer<WorkersKvKey> {
     WorkersKvKey object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    yield r'name';
+    yield serializers.serialize(
+      object.name,
+      specifiedType: const FullType(String),
+    );
     if (object.expiration != null) {
       yield r'expiration';
       yield serializers.serialize(
@@ -65,11 +70,6 @@ class _$WorkersKvKeySerializer implements PrimitiveSerializer<WorkersKvKey> {
         specifiedType: const FullType(JsonObject),
       );
     }
-    yield r'name';
-    yield serializers.serialize(
-      object.name,
-      specifiedType: const FullType(String),
-    );
   }
 
   @override
@@ -93,6 +93,13 @@ class _$WorkersKvKeySerializer implements PrimitiveSerializer<WorkersKvKey> {
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
+        case r'name':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.name = valueDes;
+          break;
         case r'expiration':
           final valueDes = serializers.deserialize(
             value,
@@ -106,13 +113,6 @@ class _$WorkersKvKeySerializer implements PrimitiveSerializer<WorkersKvKey> {
             specifiedType: const FullType(JsonObject),
           ) as JsonObject;
           result.metadata.replace(valueDes);
-          break;
-        case r'name':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.name = valueDes;
           break;
         default:
           unhandled.add(key);

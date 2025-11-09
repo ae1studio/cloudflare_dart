@@ -13,20 +13,16 @@ part 'r2_temp_access_creds_request.g.dart';
 ///
 /// Properties:
 /// * [bucket] - Name of the R2 bucket.
-/// * [objects] - Optional object paths to scope the credentials to.
 /// * [parentAccessKeyId] - The parent access key id to use for signing.
 /// * [permission] - Permissions allowed on the credentials.
-/// * [prefixes] - Optional prefix paths to scope the credentials to.
 /// * [ttlSeconds] - How long the credentials will live for in seconds.
+/// * [objects] - Optional object paths to scope the credentials to.
+/// * [prefixes] - Optional prefix paths to scope the credentials to.
 @BuiltValue()
 abstract class R2TempAccessCredsRequest implements Built<R2TempAccessCredsRequest, R2TempAccessCredsRequestBuilder> {
   /// Name of the R2 bucket.
   @BuiltValueField(wireName: r'bucket')
   String get bucket;
-
-  /// Optional object paths to scope the credentials to.
-  @BuiltValueField(wireName: r'objects')
-  BuiltList<String>? get objects;
 
   /// The parent access key id to use for signing.
   @BuiltValueField(wireName: r'parentAccessKeyId')
@@ -37,13 +33,17 @@ abstract class R2TempAccessCredsRequest implements Built<R2TempAccessCredsReques
   R2TempAccessCredsRequestPermissionEnum get permission;
   // enum permissionEnum {  admin-read-write,  admin-read-only,  object-read-write,  object-read-only,  };
 
-  /// Optional prefix paths to scope the credentials to.
-  @BuiltValueField(wireName: r'prefixes')
-  BuiltList<String>? get prefixes;
-
   /// How long the credentials will live for in seconds.
   @BuiltValueField(wireName: r'ttlSeconds')
   num get ttlSeconds;
+
+  /// Optional object paths to scope the credentials to.
+  @BuiltValueField(wireName: r'objects')
+  BuiltList<String>? get objects;
+
+  /// Optional prefix paths to scope the credentials to.
+  @BuiltValueField(wireName: r'prefixes')
+  BuiltList<String>? get prefixes;
 
   R2TempAccessCredsRequest._();
 
@@ -74,13 +74,6 @@ class _$R2TempAccessCredsRequestSerializer implements PrimitiveSerializer<R2Temp
       object.bucket,
       specifiedType: const FullType(String),
     );
-    if (object.objects != null) {
-      yield r'objects';
-      yield serializers.serialize(
-        object.objects,
-        specifiedType: const FullType(BuiltList, [FullType(String)]),
-      );
-    }
     yield r'parentAccessKeyId';
     yield serializers.serialize(
       object.parentAccessKeyId,
@@ -91,6 +84,18 @@ class _$R2TempAccessCredsRequestSerializer implements PrimitiveSerializer<R2Temp
       object.permission,
       specifiedType: const FullType(R2TempAccessCredsRequestPermissionEnum),
     );
+    yield r'ttlSeconds';
+    yield serializers.serialize(
+      object.ttlSeconds,
+      specifiedType: const FullType(num),
+    );
+    if (object.objects != null) {
+      yield r'objects';
+      yield serializers.serialize(
+        object.objects,
+        specifiedType: const FullType(BuiltList, [FullType(String)]),
+      );
+    }
     if (object.prefixes != null) {
       yield r'prefixes';
       yield serializers.serialize(
@@ -98,11 +103,6 @@ class _$R2TempAccessCredsRequestSerializer implements PrimitiveSerializer<R2Temp
         specifiedType: const FullType(BuiltList, [FullType(String)]),
       );
     }
-    yield r'ttlSeconds';
-    yield serializers.serialize(
-      object.ttlSeconds,
-      specifiedType: const FullType(num),
-    );
   }
 
   @override
@@ -133,13 +133,6 @@ class _$R2TempAccessCredsRequestSerializer implements PrimitiveSerializer<R2Temp
           ) as String;
           result.bucket = valueDes;
           break;
-        case r'objects':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>;
-          result.objects.replace(valueDes);
-          break;
         case r'parentAccessKeyId':
           final valueDes = serializers.deserialize(
             value,
@@ -154,19 +147,26 @@ class _$R2TempAccessCredsRequestSerializer implements PrimitiveSerializer<R2Temp
           ) as R2TempAccessCredsRequestPermissionEnum;
           result.permission = valueDes;
           break;
-        case r'prefixes':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>;
-          result.prefixes.replace(valueDes);
-          break;
         case r'ttlSeconds':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(num),
           ) as num;
           result.ttlSeconds = valueDes;
+          break;
+        case r'objects':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BuiltList, [FullType(String)]),
+          ) as BuiltList<String>;
+          result.objects.replace(valueDes);
+          break;
+        case r'prefixes':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BuiltList, [FullType(String)]),
+          ) as BuiltList<String>;
+          result.prefixes.replace(valueDes);
           break;
         default:
           unhandled.add(key);

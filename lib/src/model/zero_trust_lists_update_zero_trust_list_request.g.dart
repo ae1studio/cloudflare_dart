@@ -9,11 +9,11 @@ part of 'zero_trust_lists_update_zero_trust_list_request.dart';
 class _$ZeroTrustListsUpdateZeroTrustListRequest
     extends ZeroTrustListsUpdateZeroTrustListRequest {
   @override
+  final String name;
+  @override
   final String? description;
   @override
   final BuiltList<ZeroTrustGatewayItemsInputInner>? items;
-  @override
-  final String name;
 
   factory _$ZeroTrustListsUpdateZeroTrustListRequest(
           [void Function(ZeroTrustListsUpdateZeroTrustListRequestBuilder)?
@@ -22,7 +22,7 @@ class _$ZeroTrustListsUpdateZeroTrustListRequest
           ._build();
 
   _$ZeroTrustListsUpdateZeroTrustListRequest._(
-      {this.description, this.items, required this.name})
+      {required this.name, this.description, this.items})
       : super._();
   @override
   ZeroTrustListsUpdateZeroTrustListRequest rebuild(
@@ -38,17 +38,17 @@ class _$ZeroTrustListsUpdateZeroTrustListRequest
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is ZeroTrustListsUpdateZeroTrustListRequest &&
+        name == other.name &&
         description == other.description &&
-        items == other.items &&
-        name == other.name;
+        items == other.items;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
+    _$hash = $jc(_$hash, name.hashCode);
     _$hash = $jc(_$hash, description.hashCode);
     _$hash = $jc(_$hash, items.hashCode);
-    _$hash = $jc(_$hash, name.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -57,9 +57,9 @@ class _$ZeroTrustListsUpdateZeroTrustListRequest
   String toString() {
     return (newBuiltValueToStringHelper(
             r'ZeroTrustListsUpdateZeroTrustListRequest')
+          ..add('name', name)
           ..add('description', description)
-          ..add('items', items)
-          ..add('name', name))
+          ..add('items', items))
         .toString();
   }
 }
@@ -69,6 +69,10 @@ class ZeroTrustListsUpdateZeroTrustListRequestBuilder
         Builder<ZeroTrustListsUpdateZeroTrustListRequest,
             ZeroTrustListsUpdateZeroTrustListRequestBuilder> {
   _$ZeroTrustListsUpdateZeroTrustListRequest? _$v;
+
+  String? _name;
+  String? get name => _$this._name;
+  set name(String? name) => _$this._name = name;
 
   String? _description;
   String? get description => _$this._description;
@@ -80,10 +84,6 @@ class ZeroTrustListsUpdateZeroTrustListRequestBuilder
   set items(ListBuilder<ZeroTrustGatewayItemsInputInner>? items) =>
       _$this._items = items;
 
-  String? _name;
-  String? get name => _$this._name;
-  set name(String? name) => _$this._name = name;
-
   ZeroTrustListsUpdateZeroTrustListRequestBuilder() {
     ZeroTrustListsUpdateZeroTrustListRequest._defaults(this);
   }
@@ -91,9 +91,9 @@ class ZeroTrustListsUpdateZeroTrustListRequestBuilder
   ZeroTrustListsUpdateZeroTrustListRequestBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
+      _name = $v.name;
       _description = $v.description;
       _items = $v.items?.toBuilder();
-      _name = $v.name;
       _$v = null;
     }
     return this;
@@ -118,10 +118,10 @@ class ZeroTrustListsUpdateZeroTrustListRequestBuilder
     try {
       _$result = _$v ??
           _$ZeroTrustListsUpdateZeroTrustListRequest._(
-            description: description,
-            items: _items?.build(),
             name: BuiltValueNullFieldError.checkNotNull(
                 name, r'ZeroTrustListsUpdateZeroTrustListRequest', 'name'),
+            description: description,
+            items: _items?.build(),
           );
     } catch (_) {
       late String _$failedField;

@@ -169,6 +169,10 @@ class _$LoadBalancerPoolsUpdatePoolRequestCheckRegionsEnumSerializer
 class _$LoadBalancerPoolsUpdatePoolRequest
     extends LoadBalancerPoolsUpdatePoolRequest {
   @override
+  final String name;
+  @override
+  final BuiltList<LoadBalancingOrigin> origins;
+  @override
   final BuiltList<LoadBalancerPoolsUpdatePoolRequestCheckRegionsEnum>?
       checkRegions;
   @override
@@ -190,8 +194,6 @@ class _$LoadBalancerPoolsUpdatePoolRequest
   @override
   final String? monitorGroup;
   @override
-  final String name;
-  @override
   final BuiltList<String>? networks;
   @override
   final String? notificationEmail;
@@ -199,8 +201,6 @@ class _$LoadBalancerPoolsUpdatePoolRequest
   final LoadBalancingNotificationFilter? notificationFilter;
   @override
   final LoadBalancingOriginSteering? originSteering;
-  @override
-  final BuiltList<LoadBalancingOrigin> origins;
 
   factory _$LoadBalancerPoolsUpdatePoolRequest(
           [void Function(LoadBalancerPoolsUpdatePoolRequestBuilder)?
@@ -208,7 +208,9 @@ class _$LoadBalancerPoolsUpdatePoolRequest
       (LoadBalancerPoolsUpdatePoolRequestBuilder()..update(updates))._build();
 
   _$LoadBalancerPoolsUpdatePoolRequest._(
-      {this.checkRegions,
+      {required this.name,
+      required this.origins,
+      this.checkRegions,
       this.description,
       this.disabledAt,
       this.enabled,
@@ -218,12 +220,10 @@ class _$LoadBalancerPoolsUpdatePoolRequest
       this.minimumOrigins,
       this.monitor,
       this.monitorGroup,
-      required this.name,
       this.networks,
       this.notificationEmail,
       this.notificationFilter,
-      this.originSteering,
-      required this.origins})
+      this.originSteering})
       : super._();
   @override
   LoadBalancerPoolsUpdatePoolRequest rebuild(
@@ -238,6 +238,8 @@ class _$LoadBalancerPoolsUpdatePoolRequest
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is LoadBalancerPoolsUpdatePoolRequest &&
+        name == other.name &&
+        origins == other.origins &&
         checkRegions == other.checkRegions &&
         description == other.description &&
         disabledAt == other.disabledAt &&
@@ -248,17 +250,17 @@ class _$LoadBalancerPoolsUpdatePoolRequest
         minimumOrigins == other.minimumOrigins &&
         monitor == other.monitor &&
         monitorGroup == other.monitorGroup &&
-        name == other.name &&
         networks == other.networks &&
         notificationEmail == other.notificationEmail &&
         notificationFilter == other.notificationFilter &&
-        originSteering == other.originSteering &&
-        origins == other.origins;
+        originSteering == other.originSteering;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
+    _$hash = $jc(_$hash, name.hashCode);
+    _$hash = $jc(_$hash, origins.hashCode);
     _$hash = $jc(_$hash, checkRegions.hashCode);
     _$hash = $jc(_$hash, description.hashCode);
     _$hash = $jc(_$hash, disabledAt.hashCode);
@@ -269,12 +271,10 @@ class _$LoadBalancerPoolsUpdatePoolRequest
     _$hash = $jc(_$hash, minimumOrigins.hashCode);
     _$hash = $jc(_$hash, monitor.hashCode);
     _$hash = $jc(_$hash, monitorGroup.hashCode);
-    _$hash = $jc(_$hash, name.hashCode);
     _$hash = $jc(_$hash, networks.hashCode);
     _$hash = $jc(_$hash, notificationEmail.hashCode);
     _$hash = $jc(_$hash, notificationFilter.hashCode);
     _$hash = $jc(_$hash, originSteering.hashCode);
-    _$hash = $jc(_$hash, origins.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -282,6 +282,8 @@ class _$LoadBalancerPoolsUpdatePoolRequest
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'LoadBalancerPoolsUpdatePoolRequest')
+          ..add('name', name)
+          ..add('origins', origins)
           ..add('checkRegions', checkRegions)
           ..add('description', description)
           ..add('disabledAt', disabledAt)
@@ -292,12 +294,10 @@ class _$LoadBalancerPoolsUpdatePoolRequest
           ..add('minimumOrigins', minimumOrigins)
           ..add('monitor', monitor)
           ..add('monitorGroup', monitorGroup)
-          ..add('name', name)
           ..add('networks', networks)
           ..add('notificationEmail', notificationEmail)
           ..add('notificationFilter', notificationFilter)
-          ..add('originSteering', originSteering)
-          ..add('origins', origins))
+          ..add('originSteering', originSteering))
         .toString();
   }
 }
@@ -307,6 +307,16 @@ class LoadBalancerPoolsUpdatePoolRequestBuilder
         Builder<LoadBalancerPoolsUpdatePoolRequest,
             LoadBalancerPoolsUpdatePoolRequestBuilder> {
   _$LoadBalancerPoolsUpdatePoolRequest? _$v;
+
+  String? _name;
+  String? get name => _$this._name;
+  set name(String? name) => _$this._name = name;
+
+  ListBuilder<LoadBalancingOrigin>? _origins;
+  ListBuilder<LoadBalancingOrigin> get origins =>
+      _$this._origins ??= ListBuilder<LoadBalancingOrigin>();
+  set origins(ListBuilder<LoadBalancingOrigin>? origins) =>
+      _$this._origins = origins;
 
   ListBuilder<LoadBalancerPoolsUpdatePoolRequestCheckRegionsEnum>?
       _checkRegions;
@@ -357,10 +367,6 @@ class LoadBalancerPoolsUpdatePoolRequestBuilder
   String? get monitorGroup => _$this._monitorGroup;
   set monitorGroup(String? monitorGroup) => _$this._monitorGroup = monitorGroup;
 
-  String? _name;
-  String? get name => _$this._name;
-  set name(String? name) => _$this._name = name;
-
   ListBuilder<String>? _networks;
   ListBuilder<String> get networks =>
       _$this._networks ??= ListBuilder<String>();
@@ -384,12 +390,6 @@ class LoadBalancerPoolsUpdatePoolRequestBuilder
   set originSteering(LoadBalancingOriginSteeringBuilder? originSteering) =>
       _$this._originSteering = originSteering;
 
-  ListBuilder<LoadBalancingOrigin>? _origins;
-  ListBuilder<LoadBalancingOrigin> get origins =>
-      _$this._origins ??= ListBuilder<LoadBalancingOrigin>();
-  set origins(ListBuilder<LoadBalancingOrigin>? origins) =>
-      _$this._origins = origins;
-
   LoadBalancerPoolsUpdatePoolRequestBuilder() {
     LoadBalancerPoolsUpdatePoolRequest._defaults(this);
   }
@@ -397,6 +397,8 @@ class LoadBalancerPoolsUpdatePoolRequestBuilder
   LoadBalancerPoolsUpdatePoolRequestBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
+      _name = $v.name;
+      _origins = $v.origins.toBuilder();
       _checkRegions = $v.checkRegions?.toBuilder();
       _description = $v.description;
       _disabledAt = $v.disabledAt;
@@ -407,12 +409,10 @@ class LoadBalancerPoolsUpdatePoolRequestBuilder
       _minimumOrigins = $v.minimumOrigins;
       _monitor = $v.monitor;
       _monitorGroup = $v.monitorGroup;
-      _name = $v.name;
       _networks = $v.networks?.toBuilder();
       _notificationEmail = $v.notificationEmail;
       _notificationFilter = $v.notificationFilter?.toBuilder();
       _originSteering = $v.originSteering?.toBuilder();
-      _origins = $v.origins.toBuilder();
       _$v = null;
     }
     return this;
@@ -437,6 +437,9 @@ class LoadBalancerPoolsUpdatePoolRequestBuilder
     try {
       _$result = _$v ??
           _$LoadBalancerPoolsUpdatePoolRequest._(
+            name: BuiltValueNullFieldError.checkNotNull(
+                name, r'LoadBalancerPoolsUpdatePoolRequest', 'name'),
+            origins: origins.build(),
             checkRegions: _checkRegions?.build(),
             description: description,
             disabledAt: disabledAt,
@@ -447,17 +450,16 @@ class LoadBalancerPoolsUpdatePoolRequestBuilder
             minimumOrigins: minimumOrigins,
             monitor: monitor,
             monitorGroup: monitorGroup,
-            name: BuiltValueNullFieldError.checkNotNull(
-                name, r'LoadBalancerPoolsUpdatePoolRequest', 'name'),
             networks: _networks?.build(),
             notificationEmail: notificationEmail,
             notificationFilter: _notificationFilter?.build(),
             originSteering: _originSteering?.build(),
-            origins: origins.build(),
           );
     } catch (_) {
       late String _$failedField;
       try {
+        _$failedField = 'origins';
+        origins.build();
         _$failedField = 'checkRegions';
         _checkRegions?.build();
 
@@ -471,8 +473,6 @@ class LoadBalancerPoolsUpdatePoolRequestBuilder
         _notificationFilter?.build();
         _$failedField = 'originSteering';
         _originSteering?.build();
-        _$failedField = 'origins';
-        origins.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
             r'LoadBalancerPoolsUpdatePoolRequest', _$failedField, e.toString());

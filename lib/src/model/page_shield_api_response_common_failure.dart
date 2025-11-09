@@ -15,13 +15,17 @@ part 'page_shield_api_response_common_failure.g.dart';
 ///
 /// Properties:
 /// * [errors] 
+/// * [success] - Whether the API call was successful
 /// * [messages] 
 /// * [result] 
-/// * [success] - Whether the API call was successful
 @BuiltValue()
 abstract class PageShieldApiResponseCommonFailure implements Built<PageShieldApiResponseCommonFailure, PageShieldApiResponseCommonFailureBuilder> {
   @BuiltValueField(wireName: r'errors')
   BuiltList<AaaMessagesInner> get errors;
+
+  /// Whether the API call was successful
+  @BuiltValueField(wireName: r'success')
+  bool get success;
 
   @BuiltValueField(wireName: r'messages')
   BuiltList<AaaMessagesInner>? get messages;
@@ -29,10 +33,6 @@ abstract class PageShieldApiResponseCommonFailure implements Built<PageShieldApi
   @BuiltValueField(wireName: r'result')
   PageShieldApiResponseCommonFailureResultEnum? get result;
   // enum resultEnum {  ,  };
-
-  /// Whether the API call was successful
-  @BuiltValueField(wireName: r'success')
-  bool get success;
 
   PageShieldApiResponseCommonFailure._();
 
@@ -62,6 +62,11 @@ class _$PageShieldApiResponseCommonFailureSerializer implements PrimitiveSeriali
       object.errors,
       specifiedType: const FullType(BuiltList, [FullType(AaaMessagesInner)]),
     );
+    yield r'success';
+    yield serializers.serialize(
+      object.success,
+      specifiedType: const FullType(bool),
+    );
     if (object.messages != null) {
       yield r'messages';
       yield serializers.serialize(
@@ -76,11 +81,6 @@ class _$PageShieldApiResponseCommonFailureSerializer implements PrimitiveSeriali
         specifiedType: const FullType.nullable(PageShieldApiResponseCommonFailureResultEnum),
       );
     }
-    yield r'success';
-    yield serializers.serialize(
-      object.success,
-      specifiedType: const FullType(bool),
-    );
   }
 
   @override
@@ -111,6 +111,13 @@ class _$PageShieldApiResponseCommonFailureSerializer implements PrimitiveSeriali
           ) as BuiltList<AaaMessagesInner>;
           result.errors.replace(valueDes);
           break;
+        case r'success':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(bool),
+          ) as bool;
+          result.success = valueDes;
+          break;
         case r'messages':
           final valueDes = serializers.deserialize(
             value,
@@ -125,13 +132,6 @@ class _$PageShieldApiResponseCommonFailureSerializer implements PrimitiveSeriali
           ) as PageShieldApiResponseCommonFailureResultEnum?;
           if (valueDes == null) continue;
           result.result = valueDes;
-          break;
-        case r'success':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
-          result.success = valueDes;
           break;
         default:
           unhandled.add(key);

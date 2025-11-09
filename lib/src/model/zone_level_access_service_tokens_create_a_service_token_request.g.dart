@@ -9,11 +9,11 @@ part of 'zone_level_access_service_tokens_create_a_service_token_request.dart';
 class _$ZoneLevelAccessServiceTokensCreateAServiceTokenRequest
     extends ZoneLevelAccessServiceTokensCreateAServiceTokenRequest {
   @override
+  final String name;
+  @override
   final num? clientSecretVersion;
   @override
   final String? duration;
-  @override
-  final String name;
   @override
   final DateTime? previousClientSecretExpiresAt;
 
@@ -26,9 +26,9 @@ class _$ZoneLevelAccessServiceTokensCreateAServiceTokenRequest
           ._build();
 
   _$ZoneLevelAccessServiceTokensCreateAServiceTokenRequest._(
-      {this.clientSecretVersion,
+      {required this.name,
+      this.clientSecretVersion,
       this.duration,
-      required this.name,
       this.previousClientSecretExpiresAt})
       : super._();
   @override
@@ -47,18 +47,18 @@ class _$ZoneLevelAccessServiceTokensCreateAServiceTokenRequest
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is ZoneLevelAccessServiceTokensCreateAServiceTokenRequest &&
+        name == other.name &&
         clientSecretVersion == other.clientSecretVersion &&
         duration == other.duration &&
-        name == other.name &&
         previousClientSecretExpiresAt == other.previousClientSecretExpiresAt;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
+    _$hash = $jc(_$hash, name.hashCode);
     _$hash = $jc(_$hash, clientSecretVersion.hashCode);
     _$hash = $jc(_$hash, duration.hashCode);
-    _$hash = $jc(_$hash, name.hashCode);
     _$hash = $jc(_$hash, previousClientSecretExpiresAt.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
@@ -68,9 +68,9 @@ class _$ZoneLevelAccessServiceTokensCreateAServiceTokenRequest
   String toString() {
     return (newBuiltValueToStringHelper(
             r'ZoneLevelAccessServiceTokensCreateAServiceTokenRequest')
+          ..add('name', name)
           ..add('clientSecretVersion', clientSecretVersion)
           ..add('duration', duration)
-          ..add('name', name)
           ..add('previousClientSecretExpiresAt', previousClientSecretExpiresAt))
         .toString();
   }
@@ -82,6 +82,10 @@ class ZoneLevelAccessServiceTokensCreateAServiceTokenRequestBuilder
             ZoneLevelAccessServiceTokensCreateAServiceTokenRequestBuilder> {
   _$ZoneLevelAccessServiceTokensCreateAServiceTokenRequest? _$v;
 
+  String? _name;
+  String? get name => _$this._name;
+  set name(String? name) => _$this._name = name;
+
   num? _clientSecretVersion;
   num? get clientSecretVersion => _$this._clientSecretVersion;
   set clientSecretVersion(num? clientSecretVersion) =>
@@ -90,10 +94,6 @@ class ZoneLevelAccessServiceTokensCreateAServiceTokenRequestBuilder
   String? _duration;
   String? get duration => _$this._duration;
   set duration(String? duration) => _$this._duration = duration;
-
-  String? _name;
-  String? get name => _$this._name;
-  set name(String? name) => _$this._name = name;
 
   DateTime? _previousClientSecretExpiresAt;
   DateTime? get previousClientSecretExpiresAt =>
@@ -108,9 +108,9 @@ class ZoneLevelAccessServiceTokensCreateAServiceTokenRequestBuilder
   ZoneLevelAccessServiceTokensCreateAServiceTokenRequestBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
+      _name = $v.name;
       _clientSecretVersion = $v.clientSecretVersion;
       _duration = $v.duration;
-      _name = $v.name;
       _previousClientSecretExpiresAt = $v.previousClientSecretExpiresAt;
       _$v = null;
     }
@@ -136,12 +136,12 @@ class ZoneLevelAccessServiceTokensCreateAServiceTokenRequestBuilder
   _$ZoneLevelAccessServiceTokensCreateAServiceTokenRequest _build() {
     final _$result = _$v ??
         _$ZoneLevelAccessServiceTokensCreateAServiceTokenRequest._(
-          clientSecretVersion: clientSecretVersion,
-          duration: duration,
           name: BuiltValueNullFieldError.checkNotNull(
               name,
               r'ZoneLevelAccessServiceTokensCreateAServiceTokenRequest',
               'name'),
+          clientSecretVersion: clientSecretVersion,
+          duration: duration,
           previousClientSecretExpiresAt: previousClientSecretExpiresAt,
         );
     replace(_$result);

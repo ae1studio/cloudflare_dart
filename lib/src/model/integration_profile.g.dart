@@ -59,8 +59,6 @@ class _$IntegrationProfile extends IntegrationProfile {
   @override
   final DateTime createdAt;
   @override
-  final String? description;
-  @override
   final BuiltList<DlpEntry> entries;
   @override
   final String id;
@@ -68,6 +66,8 @@ class _$IntegrationProfile extends IntegrationProfile {
   final String name;
   @override
   final DateTime updatedAt;
+  @override
+  final String? description;
 
   factory _$IntegrationProfile(
           [void Function(IntegrationProfileBuilder)? updates]) =>
@@ -76,11 +76,11 @@ class _$IntegrationProfile extends IntegrationProfile {
   _$IntegrationProfile._(
       {required this.type,
       required this.createdAt,
-      this.description,
       required this.entries,
       required this.id,
       required this.name,
-      required this.updatedAt})
+      required this.updatedAt,
+      this.description})
       : super._();
   @override
   IntegrationProfile rebuild(
@@ -97,11 +97,11 @@ class _$IntegrationProfile extends IntegrationProfile {
     return other is IntegrationProfile &&
         type == other.type &&
         createdAt == other.createdAt &&
-        description == other.description &&
         entries == other.entries &&
         id == other.id &&
         name == other.name &&
-        updatedAt == other.updatedAt;
+        updatedAt == other.updatedAt &&
+        description == other.description;
   }
 
   @override
@@ -109,11 +109,11 @@ class _$IntegrationProfile extends IntegrationProfile {
     var _$hash = 0;
     _$hash = $jc(_$hash, type.hashCode);
     _$hash = $jc(_$hash, createdAt.hashCode);
-    _$hash = $jc(_$hash, description.hashCode);
     _$hash = $jc(_$hash, entries.hashCode);
     _$hash = $jc(_$hash, id.hashCode);
     _$hash = $jc(_$hash, name.hashCode);
     _$hash = $jc(_$hash, updatedAt.hashCode);
+    _$hash = $jc(_$hash, description.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -123,11 +123,11 @@ class _$IntegrationProfile extends IntegrationProfile {
     return (newBuiltValueToStringHelper(r'IntegrationProfile')
           ..add('type', type)
           ..add('createdAt', createdAt)
-          ..add('description', description)
           ..add('entries', entries)
           ..add('id', id)
           ..add('name', name)
-          ..add('updatedAt', updatedAt))
+          ..add('updatedAt', updatedAt)
+          ..add('description', description))
         .toString();
   }
 }
@@ -145,11 +145,6 @@ class IntegrationProfileBuilder
   DateTime? _createdAt;
   DateTime? get createdAt => _$this._createdAt;
   set createdAt(covariant DateTime? createdAt) => _$this._createdAt = createdAt;
-
-  String? _description;
-  String? get description => _$this._description;
-  set description(covariant String? description) =>
-      _$this._description = description;
 
   ListBuilder<DlpEntry>? _entries;
   ListBuilder<DlpEntry> get entries =>
@@ -169,6 +164,11 @@ class IntegrationProfileBuilder
   DateTime? get updatedAt => _$this._updatedAt;
   set updatedAt(covariant DateTime? updatedAt) => _$this._updatedAt = updatedAt;
 
+  String? _description;
+  String? get description => _$this._description;
+  set description(covariant String? description) =>
+      _$this._description = description;
+
   IntegrationProfileBuilder() {
     IntegrationProfile._defaults(this);
   }
@@ -178,11 +178,11 @@ class IntegrationProfileBuilder
     if ($v != null) {
       _type = $v.type;
       _createdAt = $v.createdAt;
-      _description = $v.description;
       _entries = $v.entries.toBuilder();
       _id = $v.id;
       _name = $v.name;
       _updatedAt = $v.updatedAt;
+      _description = $v.description;
       _$v = null;
     }
     return this;
@@ -210,7 +210,6 @@ class IntegrationProfileBuilder
                 type, r'IntegrationProfile', 'type'),
             createdAt: BuiltValueNullFieldError.checkNotNull(
                 createdAt, r'IntegrationProfile', 'createdAt'),
-            description: description,
             entries: entries.build(),
             id: BuiltValueNullFieldError.checkNotNull(
                 id, r'IntegrationProfile', 'id'),
@@ -218,6 +217,7 @@ class IntegrationProfileBuilder
                 name, r'IntegrationProfile', 'name'),
             updatedAt: BuiltValueNullFieldError.checkNotNull(
                 updatedAt, r'IntegrationProfile', 'updatedAt'),
+            description: description,
           );
     } catch (_) {
       late String _$failedField;

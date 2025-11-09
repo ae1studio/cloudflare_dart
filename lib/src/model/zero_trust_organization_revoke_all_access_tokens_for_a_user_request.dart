@@ -11,19 +11,19 @@ part 'zero_trust_organization_revoke_all_access_tokens_for_a_user_request.g.dart
 /// ZeroTrustOrganizationRevokeAllAccessTokensForAUserRequest
 ///
 /// Properties:
-/// * [devices] - When set to `true`, all devices associated with the user will be revoked.
 /// * [email] - The email of the user to revoke.
+/// * [devices] - When set to `true`, all devices associated with the user will be revoked.
 /// * [userUid] - The uuid of the user to revoke.
 /// * [warpSessionReauth] - When set to `true`, the user will be required to re-authenticate to WARP for all Gateway policies that enforce a WARP client session duration. When `false`, the user’s WARP session will remain active
 @BuiltValue()
 abstract class ZeroTrustOrganizationRevokeAllAccessTokensForAUserRequest implements Built<ZeroTrustOrganizationRevokeAllAccessTokensForAUserRequest, ZeroTrustOrganizationRevokeAllAccessTokensForAUserRequestBuilder> {
-  /// When set to `true`, all devices associated with the user will be revoked.
-  @BuiltValueField(wireName: r'devices')
-  bool? get devices;
-
   /// The email of the user to revoke.
   @BuiltValueField(wireName: r'email')
   String get email;
+
+  /// When set to `true`, all devices associated with the user will be revoked.
+  @BuiltValueField(wireName: r'devices')
+  bool? get devices;
 
   /// The uuid of the user to revoke.
   @BuiltValueField(wireName: r'user_uid')
@@ -56,6 +56,11 @@ class _$ZeroTrustOrganizationRevokeAllAccessTokensForAUserRequestSerializer impl
     ZeroTrustOrganizationRevokeAllAccessTokensForAUserRequest object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    yield r'email';
+    yield serializers.serialize(
+      object.email,
+      specifiedType: const FullType(String),
+    );
     if (object.devices != null) {
       yield r'devices';
       yield serializers.serialize(
@@ -63,11 +68,6 @@ class _$ZeroTrustOrganizationRevokeAllAccessTokensForAUserRequestSerializer impl
         specifiedType: const FullType(bool),
       );
     }
-    yield r'email';
-    yield serializers.serialize(
-      object.email,
-      specifiedType: const FullType(String),
-    );
     if (object.userUid != null) {
       yield r'user_uid';
       yield serializers.serialize(
@@ -105,19 +105,19 @@ class _$ZeroTrustOrganizationRevokeAllAccessTokensForAUserRequestSerializer impl
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'devices':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
-          result.devices = valueDes;
-          break;
         case r'email':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(String),
           ) as String;
           result.email = valueDes;
+          break;
+        case r'devices':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(bool),
+          ) as bool;
+          result.devices = valueDes;
           break;
         case r'user_uid':
           final valueDes = serializers.deserialize(

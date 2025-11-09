@@ -16,11 +16,11 @@ abstract class McnGoodResponseCollectionBuilder
   ListBuilder<McnError> get messages;
   set messages(covariant ListBuilder<McnError>? messages);
 
-  McnResultInfoBuilder get resultInfo;
-  set resultInfo(covariant McnResultInfoBuilder? resultInfo);
-
   bool? get success;
   set success(covariant bool? success);
+
+  McnResultInfoBuilder get resultInfo;
+  set resultInfo(covariant McnResultInfoBuilder? resultInfo);
 }
 
 class _$$McnGoodResponseCollection extends $McnGoodResponseCollection {
@@ -29,9 +29,9 @@ class _$$McnGoodResponseCollection extends $McnGoodResponseCollection {
   @override
   final BuiltList<McnError> messages;
   @override
-  final McnResultInfo? resultInfo;
-  @override
   final bool success;
+  @override
+  final McnResultInfo? resultInfo;
 
   factory _$$McnGoodResponseCollection(
           [void Function($McnGoodResponseCollectionBuilder)? updates]) =>
@@ -40,8 +40,8 @@ class _$$McnGoodResponseCollection extends $McnGoodResponseCollection {
   _$$McnGoodResponseCollection._(
       {required this.errors,
       required this.messages,
-      this.resultInfo,
-      required this.success})
+      required this.success,
+      this.resultInfo})
       : super._();
   @override
   $McnGoodResponseCollection rebuild(
@@ -58,8 +58,8 @@ class _$$McnGoodResponseCollection extends $McnGoodResponseCollection {
     return other is $McnGoodResponseCollection &&
         errors == other.errors &&
         messages == other.messages &&
-        resultInfo == other.resultInfo &&
-        success == other.success;
+        success == other.success &&
+        resultInfo == other.resultInfo;
   }
 
   @override
@@ -67,8 +67,8 @@ class _$$McnGoodResponseCollection extends $McnGoodResponseCollection {
     var _$hash = 0;
     _$hash = $jc(_$hash, errors.hashCode);
     _$hash = $jc(_$hash, messages.hashCode);
-    _$hash = $jc(_$hash, resultInfo.hashCode);
     _$hash = $jc(_$hash, success.hashCode);
+    _$hash = $jc(_$hash, resultInfo.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -78,8 +78,8 @@ class _$$McnGoodResponseCollection extends $McnGoodResponseCollection {
     return (newBuiltValueToStringHelper(r'$McnGoodResponseCollection')
           ..add('errors', errors)
           ..add('messages', messages)
-          ..add('resultInfo', resultInfo)
-          ..add('success', success))
+          ..add('success', success)
+          ..add('resultInfo', resultInfo))
         .toString();
   }
 }
@@ -102,15 +102,15 @@ class $McnGoodResponseCollectionBuilder
   set messages(covariant ListBuilder<McnError>? messages) =>
       _$this._messages = messages;
 
+  bool? _success;
+  bool? get success => _$this._success;
+  set success(covariant bool? success) => _$this._success = success;
+
   McnResultInfoBuilder? _resultInfo;
   McnResultInfoBuilder get resultInfo =>
       _$this._resultInfo ??= McnResultInfoBuilder();
   set resultInfo(covariant McnResultInfoBuilder? resultInfo) =>
       _$this._resultInfo = resultInfo;
-
-  bool? _success;
-  bool? get success => _$this._success;
-  set success(covariant bool? success) => _$this._success = success;
 
   $McnGoodResponseCollectionBuilder() {
     $McnGoodResponseCollection._defaults(this);
@@ -121,8 +121,8 @@ class $McnGoodResponseCollectionBuilder
     if ($v != null) {
       _errors = $v.errors.toBuilder();
       _messages = $v.messages.toBuilder();
-      _resultInfo = $v.resultInfo?.toBuilder();
       _success = $v.success;
+      _resultInfo = $v.resultInfo?.toBuilder();
       _$v = null;
     }
     return this;
@@ -148,9 +148,9 @@ class $McnGoodResponseCollectionBuilder
           _$$McnGoodResponseCollection._(
             errors: errors.build(),
             messages: messages.build(),
-            resultInfo: _resultInfo?.build(),
             success: BuiltValueNullFieldError.checkNotNull(
                 success, r'$McnGoodResponseCollection', 'success'),
+            resultInfo: _resultInfo?.build(),
           );
     } catch (_) {
       late String _$failedField;
@@ -159,6 +159,7 @@ class $McnGoodResponseCollectionBuilder
         errors.build();
         _$failedField = 'messages';
         messages.build();
+
         _$failedField = 'resultInfo';
         _resultInfo?.build();
       } catch (e) {

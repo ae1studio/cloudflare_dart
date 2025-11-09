@@ -88,6 +88,16 @@ class _$McpPortalsApiListServers200ResponseResultInner
   @override
   final McpPortalsApiListServers200ResponseResultInnerAuthTypeEnum authType;
   @override
+  final String hostname;
+  @override
+  final String id;
+  @override
+  final String name;
+  @override
+  final BuiltList<BuiltMap<String, JsonObject?>> prompts;
+  @override
+  final BuiltList<BuiltMap<String, JsonObject?>> tools;
+  @override
   final DateTime? createdAt;
   @override
   final String? createdBy;
@@ -96,23 +106,13 @@ class _$McpPortalsApiListServers200ResponseResultInner
   @override
   final String? error;
   @override
-  final String hostname;
-  @override
-  final String id;
-  @override
   final DateTime? lastSynced;
   @override
   final DateTime? modifiedAt;
   @override
   final String? modifiedBy;
   @override
-  final String name;
-  @override
-  final BuiltList<BuiltMap<String, JsonObject?>> prompts;
-  @override
   final String? status;
-  @override
-  final BuiltList<BuiltMap<String, JsonObject?>> tools;
 
   factory _$McpPortalsApiListServers200ResponseResultInner(
           [void Function(McpPortalsApiListServers200ResponseResultInnerBuilder)?
@@ -122,19 +122,19 @@ class _$McpPortalsApiListServers200ResponseResultInner
 
   _$McpPortalsApiListServers200ResponseResultInner._(
       {required this.authType,
+      required this.hostname,
+      required this.id,
+      required this.name,
+      required this.prompts,
+      required this.tools,
       this.createdAt,
       this.createdBy,
       this.description,
       this.error,
-      required this.hostname,
-      required this.id,
       this.lastSynced,
       this.modifiedAt,
       this.modifiedBy,
-      required this.name,
-      required this.prompts,
-      this.status,
-      required this.tools})
+      this.status})
       : super._();
   @override
   McpPortalsApiListServers200ResponseResultInner rebuild(
@@ -151,38 +151,38 @@ class _$McpPortalsApiListServers200ResponseResultInner
     if (identical(other, this)) return true;
     return other is McpPortalsApiListServers200ResponseResultInner &&
         authType == other.authType &&
+        hostname == other.hostname &&
+        id == other.id &&
+        name == other.name &&
+        prompts == other.prompts &&
+        tools == other.tools &&
         createdAt == other.createdAt &&
         createdBy == other.createdBy &&
         description == other.description &&
         error == other.error &&
-        hostname == other.hostname &&
-        id == other.id &&
         lastSynced == other.lastSynced &&
         modifiedAt == other.modifiedAt &&
         modifiedBy == other.modifiedBy &&
-        name == other.name &&
-        prompts == other.prompts &&
-        status == other.status &&
-        tools == other.tools;
+        status == other.status;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
     _$hash = $jc(_$hash, authType.hashCode);
+    _$hash = $jc(_$hash, hostname.hashCode);
+    _$hash = $jc(_$hash, id.hashCode);
+    _$hash = $jc(_$hash, name.hashCode);
+    _$hash = $jc(_$hash, prompts.hashCode);
+    _$hash = $jc(_$hash, tools.hashCode);
     _$hash = $jc(_$hash, createdAt.hashCode);
     _$hash = $jc(_$hash, createdBy.hashCode);
     _$hash = $jc(_$hash, description.hashCode);
     _$hash = $jc(_$hash, error.hashCode);
-    _$hash = $jc(_$hash, hostname.hashCode);
-    _$hash = $jc(_$hash, id.hashCode);
     _$hash = $jc(_$hash, lastSynced.hashCode);
     _$hash = $jc(_$hash, modifiedAt.hashCode);
     _$hash = $jc(_$hash, modifiedBy.hashCode);
-    _$hash = $jc(_$hash, name.hashCode);
-    _$hash = $jc(_$hash, prompts.hashCode);
     _$hash = $jc(_$hash, status.hashCode);
-    _$hash = $jc(_$hash, tools.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -192,19 +192,19 @@ class _$McpPortalsApiListServers200ResponseResultInner
     return (newBuiltValueToStringHelper(
             r'McpPortalsApiListServers200ResponseResultInner')
           ..add('authType', authType)
+          ..add('hostname', hostname)
+          ..add('id', id)
+          ..add('name', name)
+          ..add('prompts', prompts)
+          ..add('tools', tools)
           ..add('createdAt', createdAt)
           ..add('createdBy', createdBy)
           ..add('description', description)
           ..add('error', error)
-          ..add('hostname', hostname)
-          ..add('id', id)
           ..add('lastSynced', lastSynced)
           ..add('modifiedAt', modifiedAt)
           ..add('modifiedBy', modifiedBy)
-          ..add('name', name)
-          ..add('prompts', prompts)
-          ..add('status', status)
-          ..add('tools', tools))
+          ..add('status', status))
         .toString();
   }
 }
@@ -223,6 +223,30 @@ class McpPortalsApiListServers200ResponseResultInnerBuilder
               authType) =>
       _$this._authType = authType;
 
+  String? _hostname;
+  String? get hostname => _$this._hostname;
+  set hostname(String? hostname) => _$this._hostname = hostname;
+
+  String? _id;
+  String? get id => _$this._id;
+  set id(String? id) => _$this._id = id;
+
+  String? _name;
+  String? get name => _$this._name;
+  set name(String? name) => _$this._name = name;
+
+  ListBuilder<BuiltMap<String, JsonObject?>>? _prompts;
+  ListBuilder<BuiltMap<String, JsonObject?>> get prompts =>
+      _$this._prompts ??= ListBuilder<BuiltMap<String, JsonObject?>>();
+  set prompts(ListBuilder<BuiltMap<String, JsonObject?>>? prompts) =>
+      _$this._prompts = prompts;
+
+  ListBuilder<BuiltMap<String, JsonObject?>>? _tools;
+  ListBuilder<BuiltMap<String, JsonObject?>> get tools =>
+      _$this._tools ??= ListBuilder<BuiltMap<String, JsonObject?>>();
+  set tools(ListBuilder<BuiltMap<String, JsonObject?>>? tools) =>
+      _$this._tools = tools;
+
   DateTime? _createdAt;
   DateTime? get createdAt => _$this._createdAt;
   set createdAt(DateTime? createdAt) => _$this._createdAt = createdAt;
@@ -239,14 +263,6 @@ class McpPortalsApiListServers200ResponseResultInnerBuilder
   String? get error => _$this._error;
   set error(String? error) => _$this._error = error;
 
-  String? _hostname;
-  String? get hostname => _$this._hostname;
-  set hostname(String? hostname) => _$this._hostname = hostname;
-
-  String? _id;
-  String? get id => _$this._id;
-  set id(String? id) => _$this._id = id;
-
   DateTime? _lastSynced;
   DateTime? get lastSynced => _$this._lastSynced;
   set lastSynced(DateTime? lastSynced) => _$this._lastSynced = lastSynced;
@@ -259,25 +275,9 @@ class McpPortalsApiListServers200ResponseResultInnerBuilder
   String? get modifiedBy => _$this._modifiedBy;
   set modifiedBy(String? modifiedBy) => _$this._modifiedBy = modifiedBy;
 
-  String? _name;
-  String? get name => _$this._name;
-  set name(String? name) => _$this._name = name;
-
-  ListBuilder<BuiltMap<String, JsonObject?>>? _prompts;
-  ListBuilder<BuiltMap<String, JsonObject?>> get prompts =>
-      _$this._prompts ??= ListBuilder<BuiltMap<String, JsonObject?>>();
-  set prompts(ListBuilder<BuiltMap<String, JsonObject?>>? prompts) =>
-      _$this._prompts = prompts;
-
   String? _status;
   String? get status => _$this._status;
   set status(String? status) => _$this._status = status;
-
-  ListBuilder<BuiltMap<String, JsonObject?>>? _tools;
-  ListBuilder<BuiltMap<String, JsonObject?>> get tools =>
-      _$this._tools ??= ListBuilder<BuiltMap<String, JsonObject?>>();
-  set tools(ListBuilder<BuiltMap<String, JsonObject?>>? tools) =>
-      _$this._tools = tools;
 
   McpPortalsApiListServers200ResponseResultInnerBuilder() {
     McpPortalsApiListServers200ResponseResultInner._defaults(this);
@@ -287,19 +287,19 @@ class McpPortalsApiListServers200ResponseResultInnerBuilder
     final $v = _$v;
     if ($v != null) {
       _authType = $v.authType;
+      _hostname = $v.hostname;
+      _id = $v.id;
+      _name = $v.name;
+      _prompts = $v.prompts.toBuilder();
+      _tools = $v.tools.toBuilder();
       _createdAt = $v.createdAt;
       _createdBy = $v.createdBy;
       _description = $v.description;
       _error = $v.error;
-      _hostname = $v.hostname;
-      _id = $v.id;
       _lastSynced = $v.lastSynced;
       _modifiedAt = $v.modifiedAt;
       _modifiedBy = $v.modifiedBy;
-      _name = $v.name;
-      _prompts = $v.prompts.toBuilder();
       _status = $v.status;
-      _tools = $v.tools.toBuilder();
       _$v = null;
     }
     return this;
@@ -327,29 +327,28 @@ class McpPortalsApiListServers200ResponseResultInnerBuilder
           _$McpPortalsApiListServers200ResponseResultInner._(
             authType: BuiltValueNullFieldError.checkNotNull(authType,
                 r'McpPortalsApiListServers200ResponseResultInner', 'authType'),
-            createdAt: createdAt,
-            createdBy: createdBy,
-            description: description,
-            error: error,
             hostname: BuiltValueNullFieldError.checkNotNull(hostname,
                 r'McpPortalsApiListServers200ResponseResultInner', 'hostname'),
             id: BuiltValueNullFieldError.checkNotNull(
                 id, r'McpPortalsApiListServers200ResponseResultInner', 'id'),
-            lastSynced: lastSynced,
-            modifiedAt: modifiedAt,
-            modifiedBy: modifiedBy,
             name: BuiltValueNullFieldError.checkNotNull(name,
                 r'McpPortalsApiListServers200ResponseResultInner', 'name'),
             prompts: prompts.build(),
-            status: status,
             tools: tools.build(),
+            createdAt: createdAt,
+            createdBy: createdBy,
+            description: description,
+            error: error,
+            lastSynced: lastSynced,
+            modifiedAt: modifiedAt,
+            modifiedBy: modifiedBy,
+            status: status,
           );
     } catch (_) {
       late String _$failedField;
       try {
         _$failedField = 'prompts';
         prompts.build();
-
         _$failedField = 'tools';
         tools.build();
       } catch (e) {

@@ -16,8 +16,8 @@ part 'realtimekit_preset.g.dart';
 /// Properties:
 /// * [config] 
 /// * [name] - Name of the preset
-/// * [permissions] 
 /// * [ui] 
+/// * [permissions] 
 @BuiltValue(instantiable: false)
 abstract class RealtimekitPreset  {
   @BuiltValueField(wireName: r'config')
@@ -27,11 +27,11 @@ abstract class RealtimekitPreset  {
   @BuiltValueField(wireName: r'name')
   String get name;
 
-  @BuiltValueField(wireName: r'permissions')
-  RealtimekitPresetPermissions? get permissions;
-
   @BuiltValueField(wireName: r'ui')
   RealtimekitPresetUi get ui;
+
+  @BuiltValueField(wireName: r'permissions')
+  RealtimekitPresetPermissions? get permissions;
 
   @BuiltValueSerializer(custom: true)
   static Serializer<RealtimekitPreset> get serializer => _$RealtimekitPresetSerializer();
@@ -59,6 +59,11 @@ class _$RealtimekitPresetSerializer implements PrimitiveSerializer<RealtimekitPr
       object.name,
       specifiedType: const FullType(String),
     );
+    yield r'ui';
+    yield serializers.serialize(
+      object.ui,
+      specifiedType: const FullType(RealtimekitPresetUi),
+    );
     if (object.permissions != null) {
       yield r'permissions';
       yield serializers.serialize(
@@ -66,11 +71,6 @@ class _$RealtimekitPresetSerializer implements PrimitiveSerializer<RealtimekitPr
         specifiedType: const FullType(RealtimekitPresetPermissions),
       );
     }
-    yield r'ui';
-    yield serializers.serialize(
-      object.ui,
-      specifiedType: const FullType(RealtimekitPresetUi),
-    );
   }
 
   @override
@@ -148,19 +148,19 @@ class _$$RealtimekitPresetSerializer implements PrimitiveSerializer<$Realtimekit
           ) as String;
           result.name = valueDes;
           break;
-        case r'permissions':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(RealtimekitPresetPermissions),
-          ) as RealtimekitPresetPermissions;
-          result.permissions.replace(valueDes);
-          break;
         case r'ui':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(RealtimekitPresetUi),
           ) as RealtimekitPresetUi;
           result.ui.replace(valueDes);
+          break;
+        case r'permissions':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(RealtimekitPresetPermissions),
+          ) as RealtimekitPresetPermissions;
+          result.permissions.replace(valueDes);
           break;
         default:
           unhandled.add(key);

@@ -10,7 +10,6 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **accountTag** | **String** |  | 
 **active** | **String** |  | 
-**comment** | **String** |  | [optional] 
 **createdAt** | **String** |  | 
 **data** | **String** |  | 
 **elements** | [**BuiltList&lt;AigConfigListGatewayDynamicRoutes200ResponseDataRoutesInnerElementsInner&gt;**](AigConfigListGatewayDynamicRoutes200ResponseDataRoutesInnerElementsInner.md) |  | 
@@ -19,6 +18,7 @@ Name | Type | Description | Notes
 **modifiedAt** | [**DateTime**](DateTime.md) |  | 
 **name** | **String** |  | 
 **versionId** | **String** |  | 
+**comment** | **String** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

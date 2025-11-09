@@ -15,8 +15,8 @@ part 'magic_transit_endpoint_health_check_response.g.dart';
 /// Properties:
 /// * [checkType] 
 /// * [endpoint] - the IP address of the host to perform checks against
-/// * [name] - Optional name associated with this check
 /// * [id] - UUID.
+/// * [name] - Optional name associated with this check
 @BuiltValue()
 abstract class MagicTransitEndpointHealthCheckResponse implements MagicTransitEndpointHealthCheck, Built<MagicTransitEndpointHealthCheckResponse, MagicTransitEndpointHealthCheckResponseBuilder> {
   /// UUID.

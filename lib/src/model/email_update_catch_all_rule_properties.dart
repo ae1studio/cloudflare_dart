@@ -15,8 +15,8 @@ part 'email_update_catch_all_rule_properties.g.dart';
 ///
 /// Properties:
 /// * [actions] - List actions for the catch-all routing rule.
-/// * [enabled] - Routing rule status.
 /// * [matchers] - List of matchers for the catch-all routing rule.
+/// * [enabled] - Routing rule status.
 /// * [name] - Routing rule name.
 @BuiltValue()
 abstract class EmailUpdateCatchAllRuleProperties implements Built<EmailUpdateCatchAllRuleProperties, EmailUpdateCatchAllRulePropertiesBuilder> {
@@ -24,13 +24,13 @@ abstract class EmailUpdateCatchAllRuleProperties implements Built<EmailUpdateCat
   @BuiltValueField(wireName: r'actions')
   BuiltList<EmailRuleCatchallAction> get actions;
 
-  /// Routing rule status.
-  @BuiltValueField(wireName: r'enabled')
-  bool? get enabled;
-
   /// List of matchers for the catch-all routing rule.
   @BuiltValueField(wireName: r'matchers')
   BuiltList<EmailRuleCatchallMatcher> get matchers;
+
+  /// Routing rule status.
+  @BuiltValueField(wireName: r'enabled')
+  bool? get enabled;
 
   /// Routing rule name.
   @BuiltValueField(wireName: r'name')
@@ -65,6 +65,11 @@ class _$EmailUpdateCatchAllRulePropertiesSerializer implements PrimitiveSerializ
       object.actions,
       specifiedType: const FullType(BuiltList, [FullType(EmailRuleCatchallAction)]),
     );
+    yield r'matchers';
+    yield serializers.serialize(
+      object.matchers,
+      specifiedType: const FullType(BuiltList, [FullType(EmailRuleCatchallMatcher)]),
+    );
     if (object.enabled != null) {
       yield r'enabled';
       yield serializers.serialize(
@@ -72,11 +77,6 @@ class _$EmailUpdateCatchAllRulePropertiesSerializer implements PrimitiveSerializ
         specifiedType: const FullType(bool),
       );
     }
-    yield r'matchers';
-    yield serializers.serialize(
-      object.matchers,
-      specifiedType: const FullType(BuiltList, [FullType(EmailRuleCatchallMatcher)]),
-    );
     if (object.name != null) {
       yield r'name';
       yield serializers.serialize(
@@ -114,19 +114,19 @@ class _$EmailUpdateCatchAllRulePropertiesSerializer implements PrimitiveSerializ
           ) as BuiltList<EmailRuleCatchallAction>;
           result.actions.replace(valueDes);
           break;
-        case r'enabled':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
-          result.enabled = valueDes;
-          break;
         case r'matchers':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(BuiltList, [FullType(EmailRuleCatchallMatcher)]),
           ) as BuiltList<EmailRuleCatchallMatcher>;
           result.matchers.replace(valueDes);
+          break;
+        case r'enabled':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(bool),
+          ) as bool;
+          result.enabled = valueDes;
           break;
         case r'name':
           final valueDes = serializers.deserialize(

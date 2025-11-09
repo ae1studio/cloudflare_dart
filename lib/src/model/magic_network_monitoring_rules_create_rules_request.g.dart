@@ -9,13 +9,13 @@ part of 'magic_network_monitoring_rules_create_rules_request.dart';
 class _$MagicNetworkMonitoringRulesCreateRulesRequest
     extends MagicNetworkMonitoringRulesCreateRulesRequest {
   @override
-  final bool? automaticAdvertisement;
-  @override
-  final num? bandwidth;
-  @override
   final MagicVisibilityMnmMnmRuleDuration duration;
   @override
   final String name;
+  @override
+  final bool? automaticAdvertisement;
+  @override
+  final num? bandwidth;
   @override
   final num? packetThreshold;
   @override
@@ -28,10 +28,10 @@ class _$MagicNetworkMonitoringRulesCreateRulesRequest
           ._build();
 
   _$MagicNetworkMonitoringRulesCreateRulesRequest._(
-      {this.automaticAdvertisement,
-      this.bandwidth,
-      required this.duration,
+      {required this.duration,
       required this.name,
+      this.automaticAdvertisement,
+      this.bandwidth,
       this.packetThreshold,
       this.prefixes})
       : super._();
@@ -49,10 +49,10 @@ class _$MagicNetworkMonitoringRulesCreateRulesRequest
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is MagicNetworkMonitoringRulesCreateRulesRequest &&
-        automaticAdvertisement == other.automaticAdvertisement &&
-        bandwidth == other.bandwidth &&
         duration == other.duration &&
         name == other.name &&
+        automaticAdvertisement == other.automaticAdvertisement &&
+        bandwidth == other.bandwidth &&
         packetThreshold == other.packetThreshold &&
         prefixes == other.prefixes;
   }
@@ -60,10 +60,10 @@ class _$MagicNetworkMonitoringRulesCreateRulesRequest
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, automaticAdvertisement.hashCode);
-    _$hash = $jc(_$hash, bandwidth.hashCode);
     _$hash = $jc(_$hash, duration.hashCode);
     _$hash = $jc(_$hash, name.hashCode);
+    _$hash = $jc(_$hash, automaticAdvertisement.hashCode);
+    _$hash = $jc(_$hash, bandwidth.hashCode);
     _$hash = $jc(_$hash, packetThreshold.hashCode);
     _$hash = $jc(_$hash, prefixes.hashCode);
     _$hash = $jf(_$hash);
@@ -74,10 +74,10 @@ class _$MagicNetworkMonitoringRulesCreateRulesRequest
   String toString() {
     return (newBuiltValueToStringHelper(
             r'MagicNetworkMonitoringRulesCreateRulesRequest')
-          ..add('automaticAdvertisement', automaticAdvertisement)
-          ..add('bandwidth', bandwidth)
           ..add('duration', duration)
           ..add('name', name)
+          ..add('automaticAdvertisement', automaticAdvertisement)
+          ..add('bandwidth', bandwidth)
           ..add('packetThreshold', packetThreshold)
           ..add('prefixes', prefixes))
         .toString();
@@ -90,15 +90,6 @@ class MagicNetworkMonitoringRulesCreateRulesRequestBuilder
             MagicNetworkMonitoringRulesCreateRulesRequestBuilder> {
   _$MagicNetworkMonitoringRulesCreateRulesRequest? _$v;
 
-  bool? _automaticAdvertisement;
-  bool? get automaticAdvertisement => _$this._automaticAdvertisement;
-  set automaticAdvertisement(bool? automaticAdvertisement) =>
-      _$this._automaticAdvertisement = automaticAdvertisement;
-
-  num? _bandwidth;
-  num? get bandwidth => _$this._bandwidth;
-  set bandwidth(num? bandwidth) => _$this._bandwidth = bandwidth;
-
   MagicVisibilityMnmMnmRuleDuration? _duration;
   MagicVisibilityMnmMnmRuleDuration? get duration => _$this._duration;
   set duration(MagicVisibilityMnmMnmRuleDuration? duration) =>
@@ -107,6 +98,15 @@ class MagicNetworkMonitoringRulesCreateRulesRequestBuilder
   String? _name;
   String? get name => _$this._name;
   set name(String? name) => _$this._name = name;
+
+  bool? _automaticAdvertisement;
+  bool? get automaticAdvertisement => _$this._automaticAdvertisement;
+  set automaticAdvertisement(bool? automaticAdvertisement) =>
+      _$this._automaticAdvertisement = automaticAdvertisement;
+
+  num? _bandwidth;
+  num? get bandwidth => _$this._bandwidth;
+  set bandwidth(num? bandwidth) => _$this._bandwidth = bandwidth;
 
   num? _packetThreshold;
   num? get packetThreshold => _$this._packetThreshold;
@@ -125,10 +125,10 @@ class MagicNetworkMonitoringRulesCreateRulesRequestBuilder
   MagicNetworkMonitoringRulesCreateRulesRequestBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _automaticAdvertisement = $v.automaticAdvertisement;
-      _bandwidth = $v.bandwidth;
       _duration = $v.duration;
       _name = $v.name;
+      _automaticAdvertisement = $v.automaticAdvertisement;
+      _bandwidth = $v.bandwidth;
       _packetThreshold = $v.packetThreshold;
       _prefixes = $v.prefixes?.toBuilder();
       _$v = null;
@@ -156,12 +156,12 @@ class MagicNetworkMonitoringRulesCreateRulesRequestBuilder
     try {
       _$result = _$v ??
           _$MagicNetworkMonitoringRulesCreateRulesRequest._(
-            automaticAdvertisement: automaticAdvertisement,
-            bandwidth: bandwidth,
             duration: BuiltValueNullFieldError.checkNotNull(duration,
                 r'MagicNetworkMonitoringRulesCreateRulesRequest', 'duration'),
             name: BuiltValueNullFieldError.checkNotNull(
                 name, r'MagicNetworkMonitoringRulesCreateRulesRequest', 'name'),
+            automaticAdvertisement: automaticAdvertisement,
+            bandwidth: bandwidth,
             packetThreshold: packetThreshold,
             prefixes: _prefixes?.build(),
           );

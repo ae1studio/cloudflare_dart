@@ -9,14 +9,14 @@ part of 'digital_experience_monitoring_test_stat_pct_over_time.dart';
 class _$DigitalExperienceMonitoringTestStatPctOverTime
     extends DigitalExperienceMonitoringTestStatPctOverTime {
   @override
+  final BuiltList<DigitalExperienceMonitoringTestStatPctOverTimeSlotsInner>
+      slots;
+  @override
   final double? avg;
   @override
   final double? max;
   @override
   final double? min;
-  @override
-  final BuiltList<DigitalExperienceMonitoringTestStatPctOverTimeSlotsInner>
-      slots;
 
   factory _$DigitalExperienceMonitoringTestStatPctOverTime(
           [void Function(DigitalExperienceMonitoringTestStatPctOverTimeBuilder)?
@@ -25,7 +25,7 @@ class _$DigitalExperienceMonitoringTestStatPctOverTime
           ._build();
 
   _$DigitalExperienceMonitoringTestStatPctOverTime._(
-      {this.avg, this.max, this.min, required this.slots})
+      {required this.slots, this.avg, this.max, this.min})
       : super._();
   @override
   DigitalExperienceMonitoringTestStatPctOverTime rebuild(
@@ -41,19 +41,19 @@ class _$DigitalExperienceMonitoringTestStatPctOverTime
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is DigitalExperienceMonitoringTestStatPctOverTime &&
+        slots == other.slots &&
         avg == other.avg &&
         max == other.max &&
-        min == other.min &&
-        slots == other.slots;
+        min == other.min;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
+    _$hash = $jc(_$hash, slots.hashCode);
     _$hash = $jc(_$hash, avg.hashCode);
     _$hash = $jc(_$hash, max.hashCode);
     _$hash = $jc(_$hash, min.hashCode);
-    _$hash = $jc(_$hash, slots.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -62,10 +62,10 @@ class _$DigitalExperienceMonitoringTestStatPctOverTime
   String toString() {
     return (newBuiltValueToStringHelper(
             r'DigitalExperienceMonitoringTestStatPctOverTime')
+          ..add('slots', slots)
           ..add('avg', avg)
           ..add('max', max)
-          ..add('min', min)
-          ..add('slots', slots))
+          ..add('min', min))
         .toString();
   }
 }
@@ -75,6 +75,15 @@ class DigitalExperienceMonitoringTestStatPctOverTimeBuilder
         Builder<DigitalExperienceMonitoringTestStatPctOverTime,
             DigitalExperienceMonitoringTestStatPctOverTimeBuilder> {
   _$DigitalExperienceMonitoringTestStatPctOverTime? _$v;
+
+  ListBuilder<DigitalExperienceMonitoringTestStatPctOverTimeSlotsInner>? _slots;
+  ListBuilder<DigitalExperienceMonitoringTestStatPctOverTimeSlotsInner>
+      get slots => _$this._slots ??= ListBuilder<
+          DigitalExperienceMonitoringTestStatPctOverTimeSlotsInner>();
+  set slots(
+          ListBuilder<DigitalExperienceMonitoringTestStatPctOverTimeSlotsInner>?
+              slots) =>
+      _$this._slots = slots;
 
   double? _avg;
   double? get avg => _$this._avg;
@@ -88,15 +97,6 @@ class DigitalExperienceMonitoringTestStatPctOverTimeBuilder
   double? get min => _$this._min;
   set min(double? min) => _$this._min = min;
 
-  ListBuilder<DigitalExperienceMonitoringTestStatPctOverTimeSlotsInner>? _slots;
-  ListBuilder<DigitalExperienceMonitoringTestStatPctOverTimeSlotsInner>
-      get slots => _$this._slots ??= ListBuilder<
-          DigitalExperienceMonitoringTestStatPctOverTimeSlotsInner>();
-  set slots(
-          ListBuilder<DigitalExperienceMonitoringTestStatPctOverTimeSlotsInner>?
-              slots) =>
-      _$this._slots = slots;
-
   DigitalExperienceMonitoringTestStatPctOverTimeBuilder() {
     DigitalExperienceMonitoringTestStatPctOverTime._defaults(this);
   }
@@ -104,10 +104,10 @@ class DigitalExperienceMonitoringTestStatPctOverTimeBuilder
   DigitalExperienceMonitoringTestStatPctOverTimeBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
+      _slots = $v.slots.toBuilder();
       _avg = $v.avg;
       _max = $v.max;
       _min = $v.min;
-      _slots = $v.slots.toBuilder();
       _$v = null;
     }
     return this;
@@ -133,10 +133,10 @@ class DigitalExperienceMonitoringTestStatPctOverTimeBuilder
     try {
       _$result = _$v ??
           _$DigitalExperienceMonitoringTestStatPctOverTime._(
+            slots: slots.build(),
             avg: avg,
             max: max,
             min: min,
-            slots: slots.build(),
           );
     } catch (_) {
       late String _$failedField;

@@ -29,10 +29,10 @@ part 'access_response_collection_all_of_result.g.dart';
 ///
 /// Properties:
 /// * [config] 
-/// * [id] - UUID.
 /// * [name] - The name of the identity provider, shown to users on the login page.
-/// * [scimConfig] 
 /// * [type] - The type of identity provider. To determine the value for a specific provider, refer to our [developer documentation](https://developers.cloudflare.com/cloudflare-one/identity/idp-integration/).
+/// * [id] - UUID.
+/// * [scimConfig] 
 @BuiltValue()
 abstract class AccessResponseCollectionAllOfResult implements Built<AccessResponseCollectionAllOfResult, AccessResponseCollectionAllOfResultBuilder> {
   /// Any Of [AccessAzureAD], [AccessCentrify], [AccessFacebook], [AccessGithub], [AccessGoogle], [AccessGoogleApps], [AccessLinkedin], [AccessOidc], [AccessOkta], [AccessOnelogin], [AccessPingone], [AccessSaml], [AccessYandex]

@@ -16,10 +16,10 @@ part 'workers_ai_post_run_cf_meta_m2m10012b_request.g.dart';
 /// WorkersAiPostRunCfMetaM2m10012bRequest
 ///
 /// Properties:
-/// * [sourceLang] - The language code of the source text (e.g., 'en' for English). Defaults to 'en' if not specified
 /// * [targetLang] - The language code to translate the text into (e.g., 'es' for Spanish)
 /// * [text] - The text to be translated
 /// * [requests] - Batch of the embeddings requests to run using async-queue
+/// * [sourceLang] - The language code of the source text (e.g., 'en' for English). Defaults to 'en' if not specified
 @BuiltValue()
 abstract class WorkersAiPostRunCfMetaM2m10012bRequest implements Built<WorkersAiPostRunCfMetaM2m10012bRequest, WorkersAiPostRunCfMetaM2m10012bRequestBuilder> {
   /// One Of [WorkersAiPostRunCfMetaM2m10012bRequestOneOf], [WorkersAiPostRunCfMetaM2m10012bRequestOneOf1]

@@ -16,9 +16,9 @@ part 'firewall_rule.g.dart';
 /// Properties:
 /// * [allowedModes] - The available actions that a rule can apply to a matched request.
 /// * [configuration] 
-/// * [createdOn] - The timestamp of when the rule was created.
 /// * [id] - The unique identifier of the IP Access rule.
 /// * [mode] 
+/// * [createdOn] - The timestamp of when the rule was created.
 /// * [modifiedOn] - The timestamp of when the rule was last modified.
 /// * [notes] - An informative summary of the rule, typically used as a reminder or explanation.
 @BuiltValue(instantiable: false)
@@ -30,10 +30,6 @@ abstract class FirewallRule  {
   @BuiltValueField(wireName: r'configuration')
   FirewallConfiguration get configuration;
 
-  /// The timestamp of when the rule was created.
-  @BuiltValueField(wireName: r'created_on')
-  DateTime? get createdOn;
-
   /// The unique identifier of the IP Access rule.
   @BuiltValueField(wireName: r'id')
   String get id;
@@ -41,6 +37,10 @@ abstract class FirewallRule  {
   @BuiltValueField(wireName: r'mode')
   FirewallSchemasMode get mode;
   // enum modeEnum {  block,  challenge,  whitelist,  js_challenge,  managed_challenge,  };
+
+  /// The timestamp of when the rule was created.
+  @BuiltValueField(wireName: r'created_on')
+  DateTime? get createdOn;
 
   /// The timestamp of when the rule was last modified.
   @BuiltValueField(wireName: r'modified_on')
@@ -76,13 +76,6 @@ class _$FirewallRuleSerializer implements PrimitiveSerializer<FirewallRule> {
       object.configuration,
       specifiedType: const FullType(FirewallConfiguration),
     );
-    if (object.createdOn != null) {
-      yield r'created_on';
-      yield serializers.serialize(
-        object.createdOn,
-        specifiedType: const FullType(DateTime),
-      );
-    }
     yield r'id';
     yield serializers.serialize(
       object.id,
@@ -93,6 +86,13 @@ class _$FirewallRuleSerializer implements PrimitiveSerializer<FirewallRule> {
       object.mode,
       specifiedType: const FullType(FirewallSchemasMode),
     );
+    if (object.createdOn != null) {
+      yield r'created_on';
+      yield serializers.serialize(
+        object.createdOn,
+        specifiedType: const FullType(DateTime),
+      );
+    }
     if (object.modifiedOn != null) {
       yield r'modified_on';
       yield serializers.serialize(
@@ -184,13 +184,6 @@ class _$$FirewallRuleSerializer implements PrimitiveSerializer<$FirewallRule> {
           ) as FirewallConfiguration;
           result.configuration.replace(valueDes);
           break;
-        case r'created_on':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
-          result.createdOn = valueDes;
-          break;
         case r'id':
           final valueDes = serializers.deserialize(
             value,
@@ -204,6 +197,13 @@ class _$$FirewallRuleSerializer implements PrimitiveSerializer<$FirewallRule> {
             specifiedType: const FullType(FirewallSchemasMode),
           ) as FirewallSchemasMode;
           result.mode = valueDes;
+          break;
+        case r'created_on':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(DateTime),
+          ) as DateTime;
+          result.createdOn = valueDes;
           break;
         case r'modified_on':
           final valueDes = serializers.deserialize(

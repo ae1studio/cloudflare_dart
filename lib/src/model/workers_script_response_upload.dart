@@ -20,6 +20,7 @@ part 'workers_script_response_upload.g.dart';
 /// WorkersScriptResponseUpload
 ///
 /// Properties:
+/// * [startupTimeMs] 
 /// * [compatibilityDate] - Date indicating targeted support in the Workers runtime. Backwards incompatible fixes to the runtime following this date will not affect this Worker.
 /// * [compatibilityFlags] - Flags that enable or disable certain features in the Workers runtime. Used to enable upcoming features or opt in or out of specific changes not included in a `compatibility_date`.
 /// * [createdOn] - When the script was created.
@@ -42,7 +43,6 @@ part 'workers_script_response_upload.g.dart';
 /// * [tailConsumers] - List of Workers that will consume logs from the attached Worker.
 /// * [usageModel] 
 /// * [entryPoint] - The entry point for the script.
-/// * [startupTimeMs] 
 @BuiltValue()
 abstract class WorkersScriptResponseUpload implements WorkersScriptResponse, Built<WorkersScriptResponseUpload, WorkersScriptResponseUploadBuilder> {
   /// The entry point for the script.

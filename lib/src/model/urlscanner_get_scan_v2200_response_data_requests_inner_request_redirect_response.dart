@@ -15,7 +15,6 @@ part 'urlscanner_get_scan_v2200_response_data_requests_inner_request_redirect_re
 ///
 /// Properties:
 /// * [charset] 
-/// * [headers] 
 /// * [mimeType] 
 /// * [protocol] 
 /// * [remoteIPAddress] 
@@ -25,13 +24,11 @@ part 'urlscanner_get_scan_v2200_response_data_requests_inner_request_redirect_re
 /// * [status] 
 /// * [statusText] 
 /// * [url] 
+/// * [headers] 
 @BuiltValue()
 abstract class UrlscannerGetScanV2200ResponseDataRequestsInnerRequestRedirectResponse implements Built<UrlscannerGetScanV2200ResponseDataRequestsInnerRequestRedirectResponse, UrlscannerGetScanV2200ResponseDataRequestsInnerRequestRedirectResponseBuilder> {
   @BuiltValueField(wireName: r'charset')
   String get charset;
-
-  @BuiltValueField(wireName: r'headers')
-  JsonObject? get headers;
 
   @BuiltValueField(wireName: r'mimeType')
   String get mimeType;
@@ -59,6 +56,9 @@ abstract class UrlscannerGetScanV2200ResponseDataRequestsInnerRequestRedirectRes
 
   @BuiltValueField(wireName: r'url')
   String get url;
+
+  @BuiltValueField(wireName: r'headers')
+  JsonObject? get headers;
 
   UrlscannerGetScanV2200ResponseDataRequestsInnerRequestRedirectResponse._();
 
@@ -88,13 +88,6 @@ class _$UrlscannerGetScanV2200ResponseDataRequestsInnerRequestRedirectResponseSe
       object.charset,
       specifiedType: const FullType(String),
     );
-    if (object.headers != null) {
-      yield r'headers';
-      yield serializers.serialize(
-        object.headers,
-        specifiedType: const FullType(JsonObject),
-      );
-    }
     yield r'mimeType';
     yield serializers.serialize(
       object.mimeType,
@@ -140,6 +133,13 @@ class _$UrlscannerGetScanV2200ResponseDataRequestsInnerRequestRedirectResponseSe
       object.url,
       specifiedType: const FullType(String),
     );
+    if (object.headers != null) {
+      yield r'headers';
+      yield serializers.serialize(
+        object.headers,
+        specifiedType: const FullType(JsonObject),
+      );
+    }
   }
 
   @override
@@ -169,13 +169,6 @@ class _$UrlscannerGetScanV2200ResponseDataRequestsInnerRequestRedirectResponseSe
             specifiedType: const FullType(String),
           ) as String;
           result.charset = valueDes;
-          break;
-        case r'headers':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(JsonObject),
-          ) as JsonObject;
-          result.headers = valueDes;
           break;
         case r'mimeType':
           final valueDes = serializers.deserialize(
@@ -239,6 +232,13 @@ class _$UrlscannerGetScanV2200ResponseDataRequestsInnerRequestRedirectResponseSe
             specifiedType: const FullType(String),
           ) as String;
           result.url = valueDes;
+          break;
+        case r'headers':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(JsonObject),
+          ) as JsonObject;
+          result.headers = valueDes;
           break;
         default:
           unhandled.add(key);

@@ -12,15 +12,11 @@ part 'r2_cors_rule_allowed.g.dart';
 /// Object specifying allowed origins, methods and headers for this CORS rule.
 ///
 /// Properties:
-/// * [headers] - Specifies the value for the Access-Control-Allow-Headers header R2 sets when requesting objects in this bucket from a browser. Cross-origin requests that include custom headers (e.g. x-user-id) should specify these headers as AllowedHeaders.
 /// * [methods] - Specifies the value for the Access-Control-Allow-Methods header R2 sets when requesting objects in a bucket from a browser.
 /// * [origins] - Specifies the value for the Access-Control-Allow-Origin header R2 sets when requesting objects in a bucket from a browser.
+/// * [headers] - Specifies the value for the Access-Control-Allow-Headers header R2 sets when requesting objects in this bucket from a browser. Cross-origin requests that include custom headers (e.g. x-user-id) should specify these headers as AllowedHeaders.
 @BuiltValue()
 abstract class R2CorsRuleAllowed implements Built<R2CorsRuleAllowed, R2CorsRuleAllowedBuilder> {
-  /// Specifies the value for the Access-Control-Allow-Headers header R2 sets when requesting objects in this bucket from a browser. Cross-origin requests that include custom headers (e.g. x-user-id) should specify these headers as AllowedHeaders.
-  @BuiltValueField(wireName: r'headers')
-  BuiltList<String>? get headers;
-
   /// Specifies the value for the Access-Control-Allow-Methods header R2 sets when requesting objects in a bucket from a browser.
   @BuiltValueField(wireName: r'methods')
   BuiltList<R2CorsRuleAllowedMethodsEnum> get methods;
@@ -29,6 +25,10 @@ abstract class R2CorsRuleAllowed implements Built<R2CorsRuleAllowed, R2CorsRuleA
   /// Specifies the value for the Access-Control-Allow-Origin header R2 sets when requesting objects in a bucket from a browser.
   @BuiltValueField(wireName: r'origins')
   BuiltList<String> get origins;
+
+  /// Specifies the value for the Access-Control-Allow-Headers header R2 sets when requesting objects in this bucket from a browser. Cross-origin requests that include custom headers (e.g. x-user-id) should specify these headers as AllowedHeaders.
+  @BuiltValueField(wireName: r'headers')
+  BuiltList<String>? get headers;
 
   R2CorsRuleAllowed._();
 
@@ -53,13 +53,6 @@ class _$R2CorsRuleAllowedSerializer implements PrimitiveSerializer<R2CorsRuleAll
     R2CorsRuleAllowed object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
-    if (object.headers != null) {
-      yield r'headers';
-      yield serializers.serialize(
-        object.headers,
-        specifiedType: const FullType(BuiltList, [FullType(String)]),
-      );
-    }
     yield r'methods';
     yield serializers.serialize(
       object.methods,
@@ -70,6 +63,13 @@ class _$R2CorsRuleAllowedSerializer implements PrimitiveSerializer<R2CorsRuleAll
       object.origins,
       specifiedType: const FullType(BuiltList, [FullType(String)]),
     );
+    if (object.headers != null) {
+      yield r'headers';
+      yield serializers.serialize(
+        object.headers,
+        specifiedType: const FullType(BuiltList, [FullType(String)]),
+      );
+    }
   }
 
   @override
@@ -93,13 +93,6 @@ class _$R2CorsRuleAllowedSerializer implements PrimitiveSerializer<R2CorsRuleAll
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'headers':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>;
-          result.headers.replace(valueDes);
-          break;
         case r'methods':
           final valueDes = serializers.deserialize(
             value,
@@ -113,6 +106,13 @@ class _$R2CorsRuleAllowedSerializer implements PrimitiveSerializer<R2CorsRuleAll
             specifiedType: const FullType(BuiltList, [FullType(String)]),
           ) as BuiltList<String>;
           result.origins.replace(valueDes);
+          break;
+        case r'headers':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BuiltList, [FullType(String)]),
+          ) as BuiltList<String>;
+          result.headers.replace(valueDes);
           break;
         default:
           unhandled.add(key);

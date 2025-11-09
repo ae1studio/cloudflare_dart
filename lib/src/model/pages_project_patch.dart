@@ -18,6 +18,9 @@ part 'pages_project_patch.g.dart';
 /// PagesProjectPatch
 ///
 /// Properties:
+/// * [id] - ID of the project.
+/// * [name] - Name of the project.
+/// * [productionBranch] - Production branch of the project. Used to identify production deployments.
 /// * [buildConfig] 
 /// * [canonicalDeployment] 
 /// * [createdOn] - When the project was created.
@@ -25,11 +28,8 @@ part 'pages_project_patch.g.dart';
 /// * [domains] - A list of associated custom domains for the project.
 /// * [framework] - Framework the project is using.
 /// * [frameworkVersion] - Version of the framework the project is using.
-/// * [id] - ID of the project.
 /// * [latestDeployment] 
-/// * [name] - Name of the project.
 /// * [previewScriptName] - Name of the preview script.
-/// * [productionBranch] - Production branch of the project. Used to identify production deployments.
 /// * [productionScriptName] - Name of the production script.
 /// * [source_] 
 /// * [subdomain] - The Cloudflare subdomain associated with the project.

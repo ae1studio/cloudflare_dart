@@ -9,6 +9,12 @@ part of 'access_vnc_props.dart';
 abstract class AccessVncPropsBuilder implements AccessSelfHostedPropsBuilder {
   void replace(covariant AccessVncProps other);
   void update(void Function(AccessVncPropsBuilder) updates);
+  String? get domain;
+  set domain(covariant String? domain);
+
+  AccessType? get type;
+  set type(covariant AccessType? type);
+
   bool? get allowAuthenticateViaWarp;
   set allowAuthenticateViaWarp(covariant bool? allowAuthenticateViaWarp);
 
@@ -42,9 +48,6 @@ abstract class AccessVncPropsBuilder implements AccessSelfHostedPropsBuilder {
   ListBuilder<AccessDestinationsInner> get destinations;
   set destinations(
       covariant ListBuilder<AccessDestinationsInner>? destinations);
-
-  String? get domain;
-  set domain(covariant String? domain);
 
   bool? get enableBindingCookie;
   set enableBindingCookie(covariant bool? enableBindingCookie);
@@ -88,12 +91,13 @@ abstract class AccessVncPropsBuilder implements AccessSelfHostedPropsBuilder {
 
   ListBuilder<String> get tags;
   set tags(covariant ListBuilder<String>? tags);
-
-  AccessType? get type;
-  set type(covariant AccessType? type);
 }
 
 class _$$AccessVncProps extends $AccessVncProps {
+  @override
+  final String domain;
+  @override
+  final AccessType type;
   @override
   final bool? allowAuthenticateViaWarp;
   @override
@@ -116,8 +120,6 @@ class _$$AccessVncProps extends $AccessVncProps {
   final BuiltList<String>? customPages;
   @override
   final BuiltList<AccessDestinationsInner>? destinations;
-  @override
-  final String domain;
   @override
   final bool? enableBindingCookie;
   @override
@@ -146,14 +148,14 @@ class _$$AccessVncProps extends $AccessVncProps {
   final bool? skipInterstitial;
   @override
   final BuiltList<String>? tags;
-  @override
-  final AccessType type;
 
   factory _$$AccessVncProps([void Function($AccessVncPropsBuilder)? updates]) =>
       ($AccessVncPropsBuilder()..update(updates))._build();
 
   _$$AccessVncProps._(
-      {this.allowAuthenticateViaWarp,
+      {required this.domain,
+      required this.type,
+      this.allowAuthenticateViaWarp,
       this.allowIframe,
       this.allowedIdps,
       this.appLauncherVisible,
@@ -164,7 +166,6 @@ class _$$AccessVncProps extends $AccessVncProps {
       this.customNonIdentityDenyUrl,
       this.customPages,
       this.destinations,
-      required this.domain,
       this.enableBindingCookie,
       this.httpOnlyCookieAttribute,
       this.logoUrl,
@@ -178,8 +179,7 @@ class _$$AccessVncProps extends $AccessVncProps {
       this.serviceAuth401Redirect,
       this.sessionDuration,
       this.skipInterstitial,
-      this.tags,
-      required this.type})
+      this.tags})
       : super._();
   @override
   $AccessVncProps rebuild(void Function($AccessVncPropsBuilder) updates) =>
@@ -192,6 +192,8 @@ class _$$AccessVncProps extends $AccessVncProps {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is $AccessVncProps &&
+        domain == other.domain &&
+        type == other.type &&
         allowAuthenticateViaWarp == other.allowAuthenticateViaWarp &&
         allowIframe == other.allowIframe &&
         allowedIdps == other.allowedIdps &&
@@ -203,7 +205,6 @@ class _$$AccessVncProps extends $AccessVncProps {
         customNonIdentityDenyUrl == other.customNonIdentityDenyUrl &&
         customPages == other.customPages &&
         destinations == other.destinations &&
-        domain == other.domain &&
         enableBindingCookie == other.enableBindingCookie &&
         httpOnlyCookieAttribute == other.httpOnlyCookieAttribute &&
         logoUrl == other.logoUrl &&
@@ -217,13 +218,14 @@ class _$$AccessVncProps extends $AccessVncProps {
         serviceAuth401Redirect == other.serviceAuth401Redirect &&
         sessionDuration == other.sessionDuration &&
         skipInterstitial == other.skipInterstitial &&
-        tags == other.tags &&
-        type == other.type;
+        tags == other.tags;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
+    _$hash = $jc(_$hash, domain.hashCode);
+    _$hash = $jc(_$hash, type.hashCode);
     _$hash = $jc(_$hash, allowAuthenticateViaWarp.hashCode);
     _$hash = $jc(_$hash, allowIframe.hashCode);
     _$hash = $jc(_$hash, allowedIdps.hashCode);
@@ -235,7 +237,6 @@ class _$$AccessVncProps extends $AccessVncProps {
     _$hash = $jc(_$hash, customNonIdentityDenyUrl.hashCode);
     _$hash = $jc(_$hash, customPages.hashCode);
     _$hash = $jc(_$hash, destinations.hashCode);
-    _$hash = $jc(_$hash, domain.hashCode);
     _$hash = $jc(_$hash, enableBindingCookie.hashCode);
     _$hash = $jc(_$hash, httpOnlyCookieAttribute.hashCode);
     _$hash = $jc(_$hash, logoUrl.hashCode);
@@ -250,7 +251,6 @@ class _$$AccessVncProps extends $AccessVncProps {
     _$hash = $jc(_$hash, sessionDuration.hashCode);
     _$hash = $jc(_$hash, skipInterstitial.hashCode);
     _$hash = $jc(_$hash, tags.hashCode);
-    _$hash = $jc(_$hash, type.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -258,6 +258,8 @@ class _$$AccessVncProps extends $AccessVncProps {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'$AccessVncProps')
+          ..add('domain', domain)
+          ..add('type', type)
           ..add('allowAuthenticateViaWarp', allowAuthenticateViaWarp)
           ..add('allowIframe', allowIframe)
           ..add('allowedIdps', allowedIdps)
@@ -269,7 +271,6 @@ class _$$AccessVncProps extends $AccessVncProps {
           ..add('customNonIdentityDenyUrl', customNonIdentityDenyUrl)
           ..add('customPages', customPages)
           ..add('destinations', destinations)
-          ..add('domain', domain)
           ..add('enableBindingCookie', enableBindingCookie)
           ..add('httpOnlyCookieAttribute', httpOnlyCookieAttribute)
           ..add('logoUrl', logoUrl)
@@ -283,8 +284,7 @@ class _$$AccessVncProps extends $AccessVncProps {
           ..add('serviceAuth401Redirect', serviceAuth401Redirect)
           ..add('sessionDuration', sessionDuration)
           ..add('skipInterstitial', skipInterstitial)
-          ..add('tags', tags)
-          ..add('type', type))
+          ..add('tags', tags))
         .toString();
   }
 }
@@ -294,6 +294,14 @@ class $AccessVncPropsBuilder
         Builder<$AccessVncProps, $AccessVncPropsBuilder>,
         AccessVncPropsBuilder {
   _$$AccessVncProps? _$v;
+
+  String? _domain;
+  String? get domain => _$this._domain;
+  set domain(covariant String? domain) => _$this._domain = domain;
+
+  AccessType? _type;
+  AccessType? get type => _$this._type;
+  set type(covariant AccessType? type) => _$this._type = type;
 
   bool? _allowAuthenticateViaWarp;
   bool? get allowAuthenticateViaWarp => _$this._allowAuthenticateViaWarp;
@@ -354,10 +362,6 @@ class $AccessVncPropsBuilder
   set destinations(
           covariant ListBuilder<AccessDestinationsInner>? destinations) =>
       _$this._destinations = destinations;
-
-  String? _domain;
-  String? get domain => _$this._domain;
-  set domain(covariant String? domain) => _$this._domain = domain;
 
   bool? _enableBindingCookie;
   bool? get enableBindingCookie => _$this._enableBindingCookie;
@@ -430,10 +434,6 @@ class $AccessVncPropsBuilder
   ListBuilder<String> get tags => _$this._tags ??= ListBuilder<String>();
   set tags(covariant ListBuilder<String>? tags) => _$this._tags = tags;
 
-  AccessType? _type;
-  AccessType? get type => _$this._type;
-  set type(covariant AccessType? type) => _$this._type = type;
-
   $AccessVncPropsBuilder() {
     $AccessVncProps._defaults(this);
   }
@@ -441,6 +441,8 @@ class $AccessVncPropsBuilder
   $AccessVncPropsBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
+      _domain = $v.domain;
+      _type = $v.type;
       _allowAuthenticateViaWarp = $v.allowAuthenticateViaWarp;
       _allowIframe = $v.allowIframe;
       _allowedIdps = $v.allowedIdps?.toBuilder();
@@ -452,7 +454,6 @@ class $AccessVncPropsBuilder
       _customNonIdentityDenyUrl = $v.customNonIdentityDenyUrl;
       _customPages = $v.customPages?.toBuilder();
       _destinations = $v.destinations?.toBuilder();
-      _domain = $v.domain;
       _enableBindingCookie = $v.enableBindingCookie;
       _httpOnlyCookieAttribute = $v.httpOnlyCookieAttribute;
       _logoUrl = $v.logoUrl;
@@ -467,7 +468,6 @@ class $AccessVncPropsBuilder
       _sessionDuration = $v.sessionDuration;
       _skipInterstitial = $v.skipInterstitial;
       _tags = $v.tags?.toBuilder();
-      _type = $v.type;
       _$v = null;
     }
     return this;
@@ -491,6 +491,10 @@ class $AccessVncPropsBuilder
     try {
       _$result = _$v ??
           _$$AccessVncProps._(
+            domain: BuiltValueNullFieldError.checkNotNull(
+                domain, r'$AccessVncProps', 'domain'),
+            type: BuiltValueNullFieldError.checkNotNull(
+                type, r'$AccessVncProps', 'type'),
             allowAuthenticateViaWarp: allowAuthenticateViaWarp,
             allowIframe: allowIframe,
             allowedIdps: _allowedIdps?.build(),
@@ -502,8 +506,6 @@ class $AccessVncPropsBuilder
             customNonIdentityDenyUrl: customNonIdentityDenyUrl,
             customPages: _customPages?.build(),
             destinations: _destinations?.build(),
-            domain: BuiltValueNullFieldError.checkNotNull(
-                domain, r'$AccessVncProps', 'domain'),
             enableBindingCookie: enableBindingCookie,
             httpOnlyCookieAttribute: httpOnlyCookieAttribute,
             logoUrl: logoUrl,
@@ -518,8 +520,6 @@ class $AccessVncPropsBuilder
             sessionDuration: sessionDuration,
             skipInterstitial: skipInterstitial,
             tags: _tags?.build(),
-            type: BuiltValueNullFieldError.checkNotNull(
-                type, r'$AccessVncProps', 'type'),
           );
     } catch (_) {
       late String _$failedField;

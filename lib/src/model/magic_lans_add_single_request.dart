@@ -15,15 +15,18 @@ part 'magic_lans_add_single_request.g.dart';
 /// MagicLansAddSingleRequest
 ///
 /// Properties:
+/// * [physport] 
 /// * [haLink] - mark true to use this LAN for HA probing. only works for site with HA turned on. only one LAN can be set as the ha_link.
 /// * [name] 
 /// * [nat] 
-/// * [physport] 
 /// * [routedSubnets] 
 /// * [staticAddressing] 
 /// * [vlanTag] - VLAN ID. Use zero for untagged.
 @BuiltValue()
 abstract class MagicLansAddSingleRequest implements Built<MagicLansAddSingleRequest, MagicLansAddSingleRequestBuilder> {
+  @BuiltValueField(wireName: r'physport')
+  int get physport;
+
   /// mark true to use this LAN for HA probing. only works for site with HA turned on. only one LAN can be set as the ha_link.
   @BuiltValueField(wireName: r'ha_link')
   bool? get haLink;
@@ -33,9 +36,6 @@ abstract class MagicLansAddSingleRequest implements Built<MagicLansAddSingleRequ
 
   @BuiltValueField(wireName: r'nat')
   MagicNat? get nat;
-
-  @BuiltValueField(wireName: r'physport')
-  int get physport;
 
   @BuiltValueField(wireName: r'routed_subnets')
   BuiltList<MagicRoutedSubnet>? get routedSubnets;
@@ -70,6 +70,11 @@ class _$MagicLansAddSingleRequestSerializer implements PrimitiveSerializer<Magic
     MagicLansAddSingleRequest object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    yield r'physport';
+    yield serializers.serialize(
+      object.physport,
+      specifiedType: const FullType(int),
+    );
     if (object.haLink != null) {
       yield r'ha_link';
       yield serializers.serialize(
@@ -91,11 +96,6 @@ class _$MagicLansAddSingleRequestSerializer implements PrimitiveSerializer<Magic
         specifiedType: const FullType(MagicNat),
       );
     }
-    yield r'physport';
-    yield serializers.serialize(
-      object.physport,
-      specifiedType: const FullType(int),
-    );
     if (object.routedSubnets != null) {
       yield r'routed_subnets';
       yield serializers.serialize(
@@ -140,6 +140,13 @@ class _$MagicLansAddSingleRequestSerializer implements PrimitiveSerializer<Magic
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
+        case r'physport':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(int),
+          ) as int;
+          result.physport = valueDes;
+          break;
         case r'ha_link':
           final valueDes = serializers.deserialize(
             value,
@@ -160,13 +167,6 @@ class _$MagicLansAddSingleRequestSerializer implements PrimitiveSerializer<Magic
             specifiedType: const FullType(MagicNat),
           ) as MagicNat;
           result.nat.replace(valueDes);
-          break;
-        case r'physport':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
-          result.physport = valueDes;
           break;
         case r'routed_subnets':
           final valueDes = serializers.deserialize(

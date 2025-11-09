@@ -16,7 +16,6 @@ part 'urlscanner_get_scan_v2200_response_data_requests_inner_response_response.g
 ///
 /// Properties:
 /// * [charset] 
-/// * [headers] 
 /// * [mimeType] 
 /// * [protocol] 
 /// * [remoteIPAddress] 
@@ -27,13 +26,11 @@ part 'urlscanner_get_scan_v2200_response_data_requests_inner_response_response.g
 /// * [status] 
 /// * [statusText] 
 /// * [url] 
+/// * [headers] 
 @BuiltValue()
 abstract class UrlscannerGetScanV2200ResponseDataRequestsInnerResponseResponse implements Built<UrlscannerGetScanV2200ResponseDataRequestsInnerResponseResponse, UrlscannerGetScanV2200ResponseDataRequestsInnerResponseResponseBuilder> {
   @BuiltValueField(wireName: r'charset')
   String get charset;
-
-  @BuiltValueField(wireName: r'headers')
-  JsonObject? get headers;
 
   @BuiltValueField(wireName: r'mimeType')
   String get mimeType;
@@ -65,6 +62,9 @@ abstract class UrlscannerGetScanV2200ResponseDataRequestsInnerResponseResponse i
   @BuiltValueField(wireName: r'url')
   String get url;
 
+  @BuiltValueField(wireName: r'headers')
+  JsonObject? get headers;
+
   UrlscannerGetScanV2200ResponseDataRequestsInnerResponseResponse._();
 
   factory UrlscannerGetScanV2200ResponseDataRequestsInnerResponseResponse([void updates(UrlscannerGetScanV2200ResponseDataRequestsInnerResponseResponseBuilder b)]) = _$UrlscannerGetScanV2200ResponseDataRequestsInnerResponseResponse;
@@ -93,13 +93,6 @@ class _$UrlscannerGetScanV2200ResponseDataRequestsInnerResponseResponseSerialize
       object.charset,
       specifiedType: const FullType(String),
     );
-    if (object.headers != null) {
-      yield r'headers';
-      yield serializers.serialize(
-        object.headers,
-        specifiedType: const FullType(JsonObject),
-      );
-    }
     yield r'mimeType';
     yield serializers.serialize(
       object.mimeType,
@@ -150,6 +143,13 @@ class _$UrlscannerGetScanV2200ResponseDataRequestsInnerResponseResponseSerialize
       object.url,
       specifiedType: const FullType(String),
     );
+    if (object.headers != null) {
+      yield r'headers';
+      yield serializers.serialize(
+        object.headers,
+        specifiedType: const FullType(JsonObject),
+      );
+    }
   }
 
   @override
@@ -179,13 +179,6 @@ class _$UrlscannerGetScanV2200ResponseDataRequestsInnerResponseResponseSerialize
             specifiedType: const FullType(String),
           ) as String;
           result.charset = valueDes;
-          break;
-        case r'headers':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(JsonObject),
-          ) as JsonObject;
-          result.headers = valueDes;
           break;
         case r'mimeType':
           final valueDes = serializers.deserialize(
@@ -256,6 +249,13 @@ class _$UrlscannerGetScanV2200ResponseDataRequestsInnerResponseResponseSerialize
             specifiedType: const FullType(String),
           ) as String;
           result.url = valueDes;
+          break;
+        case r'headers':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(JsonObject),
+          ) as JsonObject;
+          result.headers = valueDes;
           break;
         default:
           unhandled.add(key);

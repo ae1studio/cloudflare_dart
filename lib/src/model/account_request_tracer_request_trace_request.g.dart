@@ -9,6 +9,10 @@ part of 'account_request_tracer_request_trace_request.dart';
 class _$AccountRequestTracerRequestTraceRequest
     extends AccountRequestTracerRequestTraceRequest {
   @override
+  final String method;
+  @override
+  final String url;
+  @override
   final AccountRequestTracerRequestTraceRequestBody? body;
   @override
   final AccountRequestTracerRequestTraceRequestContext? context;
@@ -17,13 +21,9 @@ class _$AccountRequestTracerRequestTraceRequest
   @override
   final BuiltMap<String, String>? headers;
   @override
-  final String method;
-  @override
   final String? protocol;
   @override
   final bool? skipResponse;
-  @override
-  final String url;
 
   factory _$AccountRequestTracerRequestTraceRequest(
           [void Function(AccountRequestTracerRequestTraceRequestBuilder)?
@@ -32,14 +32,14 @@ class _$AccountRequestTracerRequestTraceRequest
           ._build();
 
   _$AccountRequestTracerRequestTraceRequest._(
-      {this.body,
+      {required this.method,
+      required this.url,
+      this.body,
       this.context,
       this.cookies,
       this.headers,
-      required this.method,
       this.protocol,
-      this.skipResponse,
-      required this.url})
+      this.skipResponse})
       : super._();
   @override
   AccountRequestTracerRequestTraceRequest rebuild(
@@ -55,27 +55,27 @@ class _$AccountRequestTracerRequestTraceRequest
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is AccountRequestTracerRequestTraceRequest &&
+        method == other.method &&
+        url == other.url &&
         body == other.body &&
         context == other.context &&
         cookies == other.cookies &&
         headers == other.headers &&
-        method == other.method &&
         protocol == other.protocol &&
-        skipResponse == other.skipResponse &&
-        url == other.url;
+        skipResponse == other.skipResponse;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
+    _$hash = $jc(_$hash, method.hashCode);
+    _$hash = $jc(_$hash, url.hashCode);
     _$hash = $jc(_$hash, body.hashCode);
     _$hash = $jc(_$hash, context.hashCode);
     _$hash = $jc(_$hash, cookies.hashCode);
     _$hash = $jc(_$hash, headers.hashCode);
-    _$hash = $jc(_$hash, method.hashCode);
     _$hash = $jc(_$hash, protocol.hashCode);
     _$hash = $jc(_$hash, skipResponse.hashCode);
-    _$hash = $jc(_$hash, url.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -84,14 +84,14 @@ class _$AccountRequestTracerRequestTraceRequest
   String toString() {
     return (newBuiltValueToStringHelper(
             r'AccountRequestTracerRequestTraceRequest')
+          ..add('method', method)
+          ..add('url', url)
           ..add('body', body)
           ..add('context', context)
           ..add('cookies', cookies)
           ..add('headers', headers)
-          ..add('method', method)
           ..add('protocol', protocol)
-          ..add('skipResponse', skipResponse)
-          ..add('url', url))
+          ..add('skipResponse', skipResponse))
         .toString();
   }
 }
@@ -101,6 +101,14 @@ class AccountRequestTracerRequestTraceRequestBuilder
         Builder<AccountRequestTracerRequestTraceRequest,
             AccountRequestTracerRequestTraceRequestBuilder> {
   _$AccountRequestTracerRequestTraceRequest? _$v;
+
+  String? _method;
+  String? get method => _$this._method;
+  set method(String? method) => _$this._method = method;
+
+  String? _url;
+  String? get url => _$this._url;
+  set url(String? url) => _$this._url = url;
 
   AccountRequestTracerRequestTraceRequestBodyBuilder? _body;
   AccountRequestTracerRequestTraceRequestBodyBuilder get body =>
@@ -125,10 +133,6 @@ class AccountRequestTracerRequestTraceRequestBuilder
       _$this._headers ??= MapBuilder<String, String>();
   set headers(MapBuilder<String, String>? headers) => _$this._headers = headers;
 
-  String? _method;
-  String? get method => _$this._method;
-  set method(String? method) => _$this._method = method;
-
   String? _protocol;
   String? get protocol => _$this._protocol;
   set protocol(String? protocol) => _$this._protocol = protocol;
@@ -137,10 +141,6 @@ class AccountRequestTracerRequestTraceRequestBuilder
   bool? get skipResponse => _$this._skipResponse;
   set skipResponse(bool? skipResponse) => _$this._skipResponse = skipResponse;
 
-  String? _url;
-  String? get url => _$this._url;
-  set url(String? url) => _$this._url = url;
-
   AccountRequestTracerRequestTraceRequestBuilder() {
     AccountRequestTracerRequestTraceRequest._defaults(this);
   }
@@ -148,14 +148,14 @@ class AccountRequestTracerRequestTraceRequestBuilder
   AccountRequestTracerRequestTraceRequestBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
+      _method = $v.method;
+      _url = $v.url;
       _body = $v.body?.toBuilder();
       _context = $v.context?.toBuilder();
       _cookies = $v.cookies?.toBuilder();
       _headers = $v.headers?.toBuilder();
-      _method = $v.method;
       _protocol = $v.protocol;
       _skipResponse = $v.skipResponse;
-      _url = $v.url;
       _$v = null;
     }
     return this;
@@ -180,16 +180,16 @@ class AccountRequestTracerRequestTraceRequestBuilder
     try {
       _$result = _$v ??
           _$AccountRequestTracerRequestTraceRequest._(
+            method: BuiltValueNullFieldError.checkNotNull(
+                method, r'AccountRequestTracerRequestTraceRequest', 'method'),
+            url: BuiltValueNullFieldError.checkNotNull(
+                url, r'AccountRequestTracerRequestTraceRequest', 'url'),
             body: _body?.build(),
             context: _context?.build(),
             cookies: _cookies?.build(),
             headers: _headers?.build(),
-            method: BuiltValueNullFieldError.checkNotNull(
-                method, r'AccountRequestTracerRequestTraceRequest', 'method'),
             protocol: protocol,
             skipResponse: skipResponse,
-            url: BuiltValueNullFieldError.checkNotNull(
-                url, r'AccountRequestTracerRequestTraceRequest', 'url'),
           );
     } catch (_) {
       late String _$failedField;

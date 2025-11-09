@@ -9,9 +9,9 @@ import 'package:cloudflare_dart/api.dart';
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **decision** | [**AccessDecision**](AccessDecision.md) |  | 
-**exclude** | [**BuiltList&lt;AccessRule&gt;**](AccessRule.md) | Rules evaluated with a NOT logical operator. To match the policy, a user cannot meet any of the Exclude rules. | [optional] [default to ListBuilder()]
 **include** | [**BuiltList&lt;AccessRule&gt;**](AccessRule.md) | Rules evaluated with an OR logical operator. A user needs to meet only one of the Include rules. | [default to ListBuilder()]
 **name** | **String** | The name of the Access policy. | 
+**exclude** | [**BuiltList&lt;AccessRule&gt;**](AccessRule.md) | Rules evaluated with a NOT logical operator. To match the policy, a user cannot meet any of the Exclude rules. | [optional] [default to ListBuilder()]
 **require** | [**BuiltList&lt;AccessRule&gt;**](AccessRule.md) | Rules evaluated with an AND logical operator. To match the policy, a user must meet all of the Require rules. | [optional] [default to ListBuilder()]
 **connectionRules** | [**AccessConnectionRules**](AccessConnectionRules.md) |  | [optional] 
 

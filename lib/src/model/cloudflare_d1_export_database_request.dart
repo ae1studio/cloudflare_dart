@@ -13,22 +13,22 @@ part 'cloudflare_d1_export_database_request.g.dart';
 /// CloudflareD1ExportDatabaseRequest
 ///
 /// Properties:
+/// * [outputFormat] - Specifies that you will poll this endpoint until the export completes
 /// * [currentBookmark] - To poll an in-progress export, provide the current bookmark (returned by your first polling response)
 /// * [dumpOptions] 
-/// * [outputFormat] - Specifies that you will poll this endpoint until the export completes
 @BuiltValue()
 abstract class CloudflareD1ExportDatabaseRequest implements Built<CloudflareD1ExportDatabaseRequest, CloudflareD1ExportDatabaseRequestBuilder> {
+  /// Specifies that you will poll this endpoint until the export completes
+  @BuiltValueField(wireName: r'output_format')
+  CloudflareD1ExportDatabaseRequestOutputFormatEnum get outputFormat;
+  // enum outputFormatEnum {  polling,  };
+
   /// To poll an in-progress export, provide the current bookmark (returned by your first polling response)
   @BuiltValueField(wireName: r'current_bookmark')
   String? get currentBookmark;
 
   @BuiltValueField(wireName: r'dump_options')
   CloudflareD1ExportDatabaseRequestDumpOptions? get dumpOptions;
-
-  /// Specifies that you will poll this endpoint until the export completes
-  @BuiltValueField(wireName: r'output_format')
-  CloudflareD1ExportDatabaseRequestOutputFormatEnum get outputFormat;
-  // enum outputFormatEnum {  polling,  };
 
   CloudflareD1ExportDatabaseRequest._();
 
@@ -53,6 +53,11 @@ class _$CloudflareD1ExportDatabaseRequestSerializer implements PrimitiveSerializ
     CloudflareD1ExportDatabaseRequest object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    yield r'output_format';
+    yield serializers.serialize(
+      object.outputFormat,
+      specifiedType: const FullType(CloudflareD1ExportDatabaseRequestOutputFormatEnum),
+    );
     if (object.currentBookmark != null) {
       yield r'current_bookmark';
       yield serializers.serialize(
@@ -67,11 +72,6 @@ class _$CloudflareD1ExportDatabaseRequestSerializer implements PrimitiveSerializ
         specifiedType: const FullType(CloudflareD1ExportDatabaseRequestDumpOptions),
       );
     }
-    yield r'output_format';
-    yield serializers.serialize(
-      object.outputFormat,
-      specifiedType: const FullType(CloudflareD1ExportDatabaseRequestOutputFormatEnum),
-    );
   }
 
   @override
@@ -95,6 +95,13 @@ class _$CloudflareD1ExportDatabaseRequestSerializer implements PrimitiveSerializ
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
+        case r'output_format':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(CloudflareD1ExportDatabaseRequestOutputFormatEnum),
+          ) as CloudflareD1ExportDatabaseRequestOutputFormatEnum;
+          result.outputFormat = valueDes;
+          break;
         case r'current_bookmark':
           final valueDes = serializers.deserialize(
             value,
@@ -108,13 +115,6 @@ class _$CloudflareD1ExportDatabaseRequestSerializer implements PrimitiveSerializ
             specifiedType: const FullType(CloudflareD1ExportDatabaseRequestDumpOptions),
           ) as CloudflareD1ExportDatabaseRequestDumpOptions;
           result.dumpOptions.replace(valueDes);
-          break;
-        case r'output_format':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(CloudflareD1ExportDatabaseRequestOutputFormatEnum),
-          ) as CloudflareD1ExportDatabaseRequestOutputFormatEnum;
-          result.outputFormat = valueDes;
           break;
         default:
           unhandled.add(key);

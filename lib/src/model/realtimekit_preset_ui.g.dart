@@ -8,15 +8,15 @@ part of 'realtimekit_preset_ui.dart';
 
 class _$RealtimekitPresetUi extends RealtimekitPresetUi {
   @override
-  final JsonObject? configDiff;
-  @override
   final RealtimekitPresetUiDesignTokens designTokens;
+  @override
+  final JsonObject? configDiff;
 
   factory _$RealtimekitPresetUi(
           [void Function(RealtimekitPresetUiBuilder)? updates]) =>
       (RealtimekitPresetUiBuilder()..update(updates))._build();
 
-  _$RealtimekitPresetUi._({this.configDiff, required this.designTokens})
+  _$RealtimekitPresetUi._({required this.designTokens, this.configDiff})
       : super._();
   @override
   RealtimekitPresetUi rebuild(
@@ -31,15 +31,15 @@ class _$RealtimekitPresetUi extends RealtimekitPresetUi {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is RealtimekitPresetUi &&
-        configDiff == other.configDiff &&
-        designTokens == other.designTokens;
+        designTokens == other.designTokens &&
+        configDiff == other.configDiff;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, configDiff.hashCode);
     _$hash = $jc(_$hash, designTokens.hashCode);
+    _$hash = $jc(_$hash, configDiff.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -47,8 +47,8 @@ class _$RealtimekitPresetUi extends RealtimekitPresetUi {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'RealtimekitPresetUi')
-          ..add('configDiff', configDiff)
-          ..add('designTokens', designTokens))
+          ..add('designTokens', designTokens)
+          ..add('configDiff', configDiff))
         .toString();
   }
 }
@@ -57,15 +57,15 @@ class RealtimekitPresetUiBuilder
     implements Builder<RealtimekitPresetUi, RealtimekitPresetUiBuilder> {
   _$RealtimekitPresetUi? _$v;
 
-  JsonObject? _configDiff;
-  JsonObject? get configDiff => _$this._configDiff;
-  set configDiff(JsonObject? configDiff) => _$this._configDiff = configDiff;
-
   RealtimekitPresetUiDesignTokensBuilder? _designTokens;
   RealtimekitPresetUiDesignTokensBuilder get designTokens =>
       _$this._designTokens ??= RealtimekitPresetUiDesignTokensBuilder();
   set designTokens(RealtimekitPresetUiDesignTokensBuilder? designTokens) =>
       _$this._designTokens = designTokens;
+
+  JsonObject? _configDiff;
+  JsonObject? get configDiff => _$this._configDiff;
+  set configDiff(JsonObject? configDiff) => _$this._configDiff = configDiff;
 
   RealtimekitPresetUiBuilder() {
     RealtimekitPresetUi._defaults(this);
@@ -74,8 +74,8 @@ class RealtimekitPresetUiBuilder
   RealtimekitPresetUiBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _configDiff = $v.configDiff;
       _designTokens = $v.designTokens.toBuilder();
+      _configDiff = $v.configDiff;
       _$v = null;
     }
     return this;
@@ -99,8 +99,8 @@ class RealtimekitPresetUiBuilder
     try {
       _$result = _$v ??
           _$RealtimekitPresetUi._(
-            configDiff: configDiff,
             designTokens: designTokens.build(),
+            configDiff: configDiff,
           );
     } catch (_) {
       late String _$failedField;

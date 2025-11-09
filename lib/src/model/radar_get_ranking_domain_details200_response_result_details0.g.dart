@@ -9,11 +9,11 @@ part of 'radar_get_ranking_domain_details200_response_result_details0.dart';
 class _$RadarGetRankingDomainDetails200ResponseResultDetails0
     extends RadarGetRankingDomainDetails200ResponseResultDetails0 {
   @override
-  final String? bucket;
-  @override
   final BuiltList<
           RadarGetRankingDomainDetails200ResponseResultDetails0CategoriesInner>
       categories;
+  @override
+  final String? bucket;
   @override
   final int? rank;
   @override
@@ -30,7 +30,7 @@ class _$RadarGetRankingDomainDetails200ResponseResultDetails0
           ._build();
 
   _$RadarGetRankingDomainDetails200ResponseResultDetails0._(
-      {this.bucket, required this.categories, this.rank, this.topLocations})
+      {required this.categories, this.bucket, this.rank, this.topLocations})
       : super._();
   @override
   RadarGetRankingDomainDetails200ResponseResultDetails0 rebuild(
@@ -48,8 +48,8 @@ class _$RadarGetRankingDomainDetails200ResponseResultDetails0
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is RadarGetRankingDomainDetails200ResponseResultDetails0 &&
-        bucket == other.bucket &&
         categories == other.categories &&
+        bucket == other.bucket &&
         rank == other.rank &&
         topLocations == other.topLocations;
   }
@@ -57,8 +57,8 @@ class _$RadarGetRankingDomainDetails200ResponseResultDetails0
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, bucket.hashCode);
     _$hash = $jc(_$hash, categories.hashCode);
+    _$hash = $jc(_$hash, bucket.hashCode);
     _$hash = $jc(_$hash, rank.hashCode);
     _$hash = $jc(_$hash, topLocations.hashCode);
     _$hash = $jf(_$hash);
@@ -69,8 +69,8 @@ class _$RadarGetRankingDomainDetails200ResponseResultDetails0
   String toString() {
     return (newBuiltValueToStringHelper(
             r'RadarGetRankingDomainDetails200ResponseResultDetails0')
-          ..add('bucket', bucket)
           ..add('categories', categories)
+          ..add('bucket', bucket)
           ..add('rank', rank)
           ..add('topLocations', topLocations))
         .toString();
@@ -82,10 +82,6 @@ class RadarGetRankingDomainDetails200ResponseResultDetails0Builder
         Builder<RadarGetRankingDomainDetails200ResponseResultDetails0,
             RadarGetRankingDomainDetails200ResponseResultDetails0Builder> {
   _$RadarGetRankingDomainDetails200ResponseResultDetails0? _$v;
-
-  String? _bucket;
-  String? get bucket => _$this._bucket;
-  set bucket(String? bucket) => _$this._bucket = bucket;
 
   ListBuilder<
           RadarGetRankingDomainDetails200ResponseResultDetails0CategoriesInner>?
@@ -99,6 +95,10 @@ class RadarGetRankingDomainDetails200ResponseResultDetails0Builder
                   RadarGetRankingDomainDetails200ResponseResultDetails0CategoriesInner>?
               categories) =>
       _$this._categories = categories;
+
+  String? _bucket;
+  String? get bucket => _$this._bucket;
+  set bucket(String? bucket) => _$this._bucket = bucket;
 
   int? _rank;
   int? get rank => _$this._rank;
@@ -124,8 +124,8 @@ class RadarGetRankingDomainDetails200ResponseResultDetails0Builder
   RadarGetRankingDomainDetails200ResponseResultDetails0Builder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _bucket = $v.bucket;
       _categories = $v.categories.toBuilder();
+      _bucket = $v.bucket;
       _rank = $v.rank;
       _topLocations = $v.topLocations?.toBuilder();
       _$v = null;
@@ -154,8 +154,8 @@ class RadarGetRankingDomainDetails200ResponseResultDetails0Builder
     try {
       _$result = _$v ??
           _$RadarGetRankingDomainDetails200ResponseResultDetails0._(
-            bucket: bucket,
             categories: categories.build(),
+            bucket: bucket,
             rank: rank,
             topLocations: _topLocations?.build(),
           );

@@ -12,17 +12,17 @@ part 'total_tls_enable_or_disable_total_tls_request.g.dart';
 /// TotalTlsEnableOrDisableTotalTlsRequest
 ///
 /// Properties:
-/// * [certificateAuthority] 
 /// * [enabled] - If enabled, Total TLS will order a hostname specific TLS certificate for any proxied A, AAAA, or CNAME record in your zone.
+/// * [certificateAuthority] 
 @BuiltValue()
 abstract class TotalTlsEnableOrDisableTotalTlsRequest implements Built<TotalTlsEnableOrDisableTotalTlsRequest, TotalTlsEnableOrDisableTotalTlsRequestBuilder> {
-  @BuiltValueField(wireName: r'certificate_authority')
-  TlsCertificatesAndHostnamesComponentsSchemasCertificateAuthority? get certificateAuthority;
-  // enum certificateAuthorityEnum {  google,  lets_encrypt,  ssl_com,  };
-
   /// If enabled, Total TLS will order a hostname specific TLS certificate for any proxied A, AAAA, or CNAME record in your zone.
   @BuiltValueField(wireName: r'enabled')
   bool get enabled;
+
+  @BuiltValueField(wireName: r'certificate_authority')
+  TlsCertificatesAndHostnamesComponentsSchemasCertificateAuthority? get certificateAuthority;
+  // enum certificateAuthorityEnum {  google,  lets_encrypt,  ssl_com,  };
 
   TotalTlsEnableOrDisableTotalTlsRequest._();
 
@@ -47,6 +47,11 @@ class _$TotalTlsEnableOrDisableTotalTlsRequestSerializer implements PrimitiveSer
     TotalTlsEnableOrDisableTotalTlsRequest object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    yield r'enabled';
+    yield serializers.serialize(
+      object.enabled,
+      specifiedType: const FullType(bool),
+    );
     if (object.certificateAuthority != null) {
       yield r'certificate_authority';
       yield serializers.serialize(
@@ -54,11 +59,6 @@ class _$TotalTlsEnableOrDisableTotalTlsRequestSerializer implements PrimitiveSer
         specifiedType: const FullType(TlsCertificatesAndHostnamesComponentsSchemasCertificateAuthority),
       );
     }
-    yield r'enabled';
-    yield serializers.serialize(
-      object.enabled,
-      specifiedType: const FullType(bool),
-    );
   }
 
   @override
@@ -82,19 +82,19 @@ class _$TotalTlsEnableOrDisableTotalTlsRequestSerializer implements PrimitiveSer
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'certificate_authority':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(TlsCertificatesAndHostnamesComponentsSchemasCertificateAuthority),
-          ) as TlsCertificatesAndHostnamesComponentsSchemasCertificateAuthority;
-          result.certificateAuthority = valueDes;
-          break;
         case r'enabled':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(bool),
           ) as bool;
           result.enabled = valueDes;
+          break;
+        case r'certificate_authority':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(TlsCertificatesAndHostnamesComponentsSchemasCertificateAuthority),
+          ) as TlsCertificatesAndHostnamesComponentsSchemasCertificateAuthority;
+          result.certificateAuthority = valueDes;
           break;
         default:
           unhandled.add(key);

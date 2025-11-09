@@ -15,7 +15,6 @@ part 'urlscanner_get_scan_v2200_response_stats_ip_stats_inner.g.dart';
 ///
 /// Properties:
 /// * [asn] 
-/// * [count] 
 /// * [countries] 
 /// * [domains] 
 /// * [encodedSize] 
@@ -26,13 +25,11 @@ part 'urlscanner_get_scan_v2200_response_stats_ip_stats_inner.g.dart';
 /// * [redirects] 
 /// * [requests] 
 /// * [size] 
+/// * [count] 
 @BuiltValue()
 abstract class UrlscannerGetScanV2200ResponseStatsIpStatsInner implements Built<UrlscannerGetScanV2200ResponseStatsIpStatsInner, UrlscannerGetScanV2200ResponseStatsIpStatsInnerBuilder> {
   @BuiltValueField(wireName: r'asn')
   UrlscannerGetScanV2200ResponseDataRequestsInnerResponseAsn get asn;
-
-  @BuiltValueField(wireName: r'count')
-  num? get count;
 
   @BuiltValueField(wireName: r'countries')
   BuiltList<String> get countries;
@@ -64,6 +61,9 @@ abstract class UrlscannerGetScanV2200ResponseStatsIpStatsInner implements Built<
   @BuiltValueField(wireName: r'size')
   num get size;
 
+  @BuiltValueField(wireName: r'count')
+  num? get count;
+
   UrlscannerGetScanV2200ResponseStatsIpStatsInner._();
 
   factory UrlscannerGetScanV2200ResponseStatsIpStatsInner([void updates(UrlscannerGetScanV2200ResponseStatsIpStatsInnerBuilder b)]) = _$UrlscannerGetScanV2200ResponseStatsIpStatsInner;
@@ -92,13 +92,6 @@ class _$UrlscannerGetScanV2200ResponseStatsIpStatsInnerSerializer implements Pri
       object.asn,
       specifiedType: const FullType(UrlscannerGetScanV2200ResponseDataRequestsInnerResponseAsn),
     );
-    if (object.count != null) {
-      yield r'count';
-      yield serializers.serialize(
-        object.count,
-        specifiedType: const FullType(num),
-      );
-    }
     yield r'countries';
     yield serializers.serialize(
       object.countries,
@@ -149,6 +142,13 @@ class _$UrlscannerGetScanV2200ResponseStatsIpStatsInnerSerializer implements Pri
       object.size,
       specifiedType: const FullType(num),
     );
+    if (object.count != null) {
+      yield r'count';
+      yield serializers.serialize(
+        object.count,
+        specifiedType: const FullType(num),
+      );
+    }
   }
 
   @override
@@ -178,13 +178,6 @@ class _$UrlscannerGetScanV2200ResponseStatsIpStatsInnerSerializer implements Pri
             specifiedType: const FullType(UrlscannerGetScanV2200ResponseDataRequestsInnerResponseAsn),
           ) as UrlscannerGetScanV2200ResponseDataRequestsInnerResponseAsn;
           result.asn.replace(valueDes);
-          break;
-        case r'count':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(num),
-          ) as num;
-          result.count = valueDes;
           break;
         case r'countries':
           final valueDes = serializers.deserialize(
@@ -255,6 +248,13 @@ class _$UrlscannerGetScanV2200ResponseStatsIpStatsInnerSerializer implements Pri
             specifiedType: const FullType(num),
           ) as num;
           result.size = valueDes;
+          break;
+        case r'count':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(num),
+          ) as num;
+          result.count = valueDes;
           break;
         default:
           unhandled.add(key);

@@ -16,11 +16,11 @@ part 'get_indicator_list_legacy200_response_indicators_inner.g.dart';
 /// Properties:
 /// * [createdAt] 
 /// * [indicatorType] 
-/// * [relatedEvents] 
-/// * [tags] 
 /// * [updatedAt] 
 /// * [uuid] 
 /// * [value] 
+/// * [relatedEvents] 
+/// * [tags] 
 @BuiltValue()
 abstract class GetIndicatorListLegacy200ResponseIndicatorsInner implements Built<GetIndicatorListLegacy200ResponseIndicatorsInner, GetIndicatorListLegacy200ResponseIndicatorsInnerBuilder> {
   @BuiltValueField(wireName: r'createdAt')
@@ -28,12 +28,6 @@ abstract class GetIndicatorListLegacy200ResponseIndicatorsInner implements Built
 
   @BuiltValueField(wireName: r'indicatorType')
   String get indicatorType;
-
-  @BuiltValueField(wireName: r'relatedEvents')
-  BuiltList<GetIndicatorListLegacy200ResponseIndicatorsInnerRelatedEventsInner>? get relatedEvents;
-
-  @BuiltValueField(wireName: r'tags')
-  BuiltList<GetIndicatorListLegacy200ResponseIndicatorsInnerTagsInner>? get tags;
 
   @BuiltValueField(wireName: r'updatedAt')
   DateTime get updatedAt;
@@ -43,6 +37,12 @@ abstract class GetIndicatorListLegacy200ResponseIndicatorsInner implements Built
 
   @BuiltValueField(wireName: r'value')
   String get value;
+
+  @BuiltValueField(wireName: r'relatedEvents')
+  BuiltList<GetIndicatorListLegacy200ResponseIndicatorsInnerRelatedEventsInner>? get relatedEvents;
+
+  @BuiltValueField(wireName: r'tags')
+  BuiltList<GetIndicatorListLegacy200ResponseIndicatorsInnerTagsInner>? get tags;
 
   GetIndicatorListLegacy200ResponseIndicatorsInner._();
 
@@ -77,20 +77,6 @@ class _$GetIndicatorListLegacy200ResponseIndicatorsInnerSerializer implements Pr
       object.indicatorType,
       specifiedType: const FullType(String),
     );
-    if (object.relatedEvents != null) {
-      yield r'relatedEvents';
-      yield serializers.serialize(
-        object.relatedEvents,
-        specifiedType: const FullType(BuiltList, [FullType(GetIndicatorListLegacy200ResponseIndicatorsInnerRelatedEventsInner)]),
-      );
-    }
-    if (object.tags != null) {
-      yield r'tags';
-      yield serializers.serialize(
-        object.tags,
-        specifiedType: const FullType(BuiltList, [FullType(GetIndicatorListLegacy200ResponseIndicatorsInnerTagsInner)]),
-      );
-    }
     yield r'updatedAt';
     yield serializers.serialize(
       object.updatedAt,
@@ -106,6 +92,20 @@ class _$GetIndicatorListLegacy200ResponseIndicatorsInnerSerializer implements Pr
       object.value,
       specifiedType: const FullType(String),
     );
+    if (object.relatedEvents != null) {
+      yield r'relatedEvents';
+      yield serializers.serialize(
+        object.relatedEvents,
+        specifiedType: const FullType(BuiltList, [FullType(GetIndicatorListLegacy200ResponseIndicatorsInnerRelatedEventsInner)]),
+      );
+    }
+    if (object.tags != null) {
+      yield r'tags';
+      yield serializers.serialize(
+        object.tags,
+        specifiedType: const FullType(BuiltList, [FullType(GetIndicatorListLegacy200ResponseIndicatorsInnerTagsInner)]),
+      );
+    }
   }
 
   @override
@@ -143,20 +143,6 @@ class _$GetIndicatorListLegacy200ResponseIndicatorsInnerSerializer implements Pr
           ) as String;
           result.indicatorType = valueDes;
           break;
-        case r'relatedEvents':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(GetIndicatorListLegacy200ResponseIndicatorsInnerRelatedEventsInner)]),
-          ) as BuiltList<GetIndicatorListLegacy200ResponseIndicatorsInnerRelatedEventsInner>;
-          result.relatedEvents.replace(valueDes);
-          break;
-        case r'tags':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(GetIndicatorListLegacy200ResponseIndicatorsInnerTagsInner)]),
-          ) as BuiltList<GetIndicatorListLegacy200ResponseIndicatorsInnerTagsInner>;
-          result.tags.replace(valueDes);
-          break;
         case r'updatedAt':
           final valueDes = serializers.deserialize(
             value,
@@ -177,6 +163,20 @@ class _$GetIndicatorListLegacy200ResponseIndicatorsInnerSerializer implements Pr
             specifiedType: const FullType(String),
           ) as String;
           result.value = valueDes;
+          break;
+        case r'relatedEvents':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BuiltList, [FullType(GetIndicatorListLegacy200ResponseIndicatorsInnerRelatedEventsInner)]),
+          ) as BuiltList<GetIndicatorListLegacy200ResponseIndicatorsInnerRelatedEventsInner>;
+          result.relatedEvents.replace(valueDes);
+          break;
+        case r'tags':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BuiltList, [FullType(GetIndicatorListLegacy200ResponseIndicatorsInnerTagsInner)]),
+          ) as BuiltList<GetIndicatorListLegacy200ResponseIndicatorsInnerTagsInner>;
+          result.tags.replace(valueDes);
           break;
         default:
           unhandled.add(key);

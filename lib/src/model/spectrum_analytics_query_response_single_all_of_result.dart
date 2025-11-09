@@ -20,8 +20,8 @@ part 'spectrum_analytics_query_response_single_all_of_result.g.dart';
 /// * [min] - Minimum result for each selected metrics across all data.
 /// * [query] 
 /// * [rows] - Total number of rows in the result.
-/// * [timeIntervals] - List of time interval buckets: [start, end]
 /// * [totals] - Total result for each selected metrics across all data.
+/// * [timeIntervals] - List of time interval buckets: [start, end]
 @BuiltValue()
 abstract class SpectrumAnalyticsQueryResponseSingleAllOfResult implements Built<SpectrumAnalyticsQueryResponseSingleAllOfResult, SpectrumAnalyticsQueryResponseSingleAllOfResultBuilder> {
   /// List of columns returned by the analytics query.
@@ -47,13 +47,13 @@ abstract class SpectrumAnalyticsQueryResponseSingleAllOfResult implements Built<
   @BuiltValueField(wireName: r'rows')
   num get rows;
 
-  /// List of time interval buckets: [start, end]
-  @BuiltValueField(wireName: r'time_intervals')
-  BuiltList<BuiltList<DateTime>>? get timeIntervals;
-
   /// Total result for each selected metrics across all data.
   @BuiltValueField(wireName: r'totals')
   BuiltMap<String, num> get totals;
+
+  /// List of time interval buckets: [start, end]
+  @BuiltValueField(wireName: r'time_intervals')
+  BuiltList<BuiltList<DateTime>>? get timeIntervals;
 
   SpectrumAnalyticsQueryResponseSingleAllOfResult._();
 
@@ -108,6 +108,11 @@ class _$SpectrumAnalyticsQueryResponseSingleAllOfResultSerializer implements Pri
       object.rows,
       specifiedType: const FullType(num),
     );
+    yield r'totals';
+    yield serializers.serialize(
+      object.totals,
+      specifiedType: const FullType(BuiltMap, [FullType(String), FullType(num)]),
+    );
     if (object.timeIntervals != null) {
       yield r'time_intervals';
       yield serializers.serialize(
@@ -115,11 +120,6 @@ class _$SpectrumAnalyticsQueryResponseSingleAllOfResultSerializer implements Pri
         specifiedType: const FullType(BuiltList, [FullType(BuiltList, [FullType(DateTime)])]),
       );
     }
-    yield r'totals';
-    yield serializers.serialize(
-      object.totals,
-      specifiedType: const FullType(BuiltMap, [FullType(String), FullType(num)]),
-    );
   }
 
   @override
@@ -185,19 +185,19 @@ class _$SpectrumAnalyticsQueryResponseSingleAllOfResultSerializer implements Pri
           ) as num;
           result.rows = valueDes;
           break;
-        case r'time_intervals':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(BuiltList, [FullType(DateTime)])]),
-          ) as BuiltList<BuiltList<DateTime>>;
-          result.timeIntervals.replace(valueDes);
-          break;
         case r'totals':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(BuiltMap, [FullType(String), FullType(num)]),
           ) as BuiltMap<String, num>;
           result.totals.replace(valueDes);
+          break;
+        case r'time_intervals':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BuiltList, [FullType(BuiltList, [FullType(DateTime)])]),
+          ) as BuiltList<BuiltList<DateTime>>;
+          result.timeIntervals.replace(valueDes);
           break;
         default:
           unhandled.add(key);

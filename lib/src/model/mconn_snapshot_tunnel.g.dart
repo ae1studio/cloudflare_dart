@@ -8,29 +8,29 @@ part of 'mconn_snapshot_tunnel.dart';
 
 class _$MconnSnapshotTunnel extends MconnSnapshotTunnel {
   @override
-  final String? connectorId;
-  @override
   final String healthState;
   @override
   final num healthValue;
   @override
   final String interfaceName;
   @override
-  final num? probedMtu;
-  @override
   final String tunnelId;
+  @override
+  final String? connectorId;
+  @override
+  final num? probedMtu;
 
   factory _$MconnSnapshotTunnel(
           [void Function(MconnSnapshotTunnelBuilder)? updates]) =>
       (MconnSnapshotTunnelBuilder()..update(updates))._build();
 
   _$MconnSnapshotTunnel._(
-      {this.connectorId,
-      required this.healthState,
+      {required this.healthState,
       required this.healthValue,
       required this.interfaceName,
-      this.probedMtu,
-      required this.tunnelId})
+      required this.tunnelId,
+      this.connectorId,
+      this.probedMtu})
       : super._();
   @override
   MconnSnapshotTunnel rebuild(
@@ -45,23 +45,23 @@ class _$MconnSnapshotTunnel extends MconnSnapshotTunnel {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is MconnSnapshotTunnel &&
-        connectorId == other.connectorId &&
         healthState == other.healthState &&
         healthValue == other.healthValue &&
         interfaceName == other.interfaceName &&
-        probedMtu == other.probedMtu &&
-        tunnelId == other.tunnelId;
+        tunnelId == other.tunnelId &&
+        connectorId == other.connectorId &&
+        probedMtu == other.probedMtu;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, connectorId.hashCode);
     _$hash = $jc(_$hash, healthState.hashCode);
     _$hash = $jc(_$hash, healthValue.hashCode);
     _$hash = $jc(_$hash, interfaceName.hashCode);
-    _$hash = $jc(_$hash, probedMtu.hashCode);
     _$hash = $jc(_$hash, tunnelId.hashCode);
+    _$hash = $jc(_$hash, connectorId.hashCode);
+    _$hash = $jc(_$hash, probedMtu.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -69,12 +69,12 @@ class _$MconnSnapshotTunnel extends MconnSnapshotTunnel {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'MconnSnapshotTunnel')
-          ..add('connectorId', connectorId)
           ..add('healthState', healthState)
           ..add('healthValue', healthValue)
           ..add('interfaceName', interfaceName)
-          ..add('probedMtu', probedMtu)
-          ..add('tunnelId', tunnelId))
+          ..add('tunnelId', tunnelId)
+          ..add('connectorId', connectorId)
+          ..add('probedMtu', probedMtu))
         .toString();
   }
 }
@@ -82,10 +82,6 @@ class _$MconnSnapshotTunnel extends MconnSnapshotTunnel {
 class MconnSnapshotTunnelBuilder
     implements Builder<MconnSnapshotTunnel, MconnSnapshotTunnelBuilder> {
   _$MconnSnapshotTunnel? _$v;
-
-  String? _connectorId;
-  String? get connectorId => _$this._connectorId;
-  set connectorId(String? connectorId) => _$this._connectorId = connectorId;
 
   String? _healthState;
   String? get healthState => _$this._healthState;
@@ -100,13 +96,17 @@ class MconnSnapshotTunnelBuilder
   set interfaceName(String? interfaceName) =>
       _$this._interfaceName = interfaceName;
 
-  num? _probedMtu;
-  num? get probedMtu => _$this._probedMtu;
-  set probedMtu(num? probedMtu) => _$this._probedMtu = probedMtu;
-
   String? _tunnelId;
   String? get tunnelId => _$this._tunnelId;
   set tunnelId(String? tunnelId) => _$this._tunnelId = tunnelId;
+
+  String? _connectorId;
+  String? get connectorId => _$this._connectorId;
+  set connectorId(String? connectorId) => _$this._connectorId = connectorId;
+
+  num? _probedMtu;
+  num? get probedMtu => _$this._probedMtu;
+  set probedMtu(num? probedMtu) => _$this._probedMtu = probedMtu;
 
   MconnSnapshotTunnelBuilder() {
     MconnSnapshotTunnel._defaults(this);
@@ -115,12 +115,12 @@ class MconnSnapshotTunnelBuilder
   MconnSnapshotTunnelBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _connectorId = $v.connectorId;
       _healthState = $v.healthState;
       _healthValue = $v.healthValue;
       _interfaceName = $v.interfaceName;
-      _probedMtu = $v.probedMtu;
       _tunnelId = $v.tunnelId;
+      _connectorId = $v.connectorId;
+      _probedMtu = $v.probedMtu;
       _$v = null;
     }
     return this;
@@ -142,16 +142,16 @@ class MconnSnapshotTunnelBuilder
   _$MconnSnapshotTunnel _build() {
     final _$result = _$v ??
         _$MconnSnapshotTunnel._(
-          connectorId: connectorId,
           healthState: BuiltValueNullFieldError.checkNotNull(
               healthState, r'MconnSnapshotTunnel', 'healthState'),
           healthValue: BuiltValueNullFieldError.checkNotNull(
               healthValue, r'MconnSnapshotTunnel', 'healthValue'),
           interfaceName: BuiltValueNullFieldError.checkNotNull(
               interfaceName, r'MconnSnapshotTunnel', 'interfaceName'),
-          probedMtu: probedMtu,
           tunnelId: BuiltValueNullFieldError.checkNotNull(
               tunnelId, r'MconnSnapshotTunnel', 'tunnelId'),
+          connectorId: connectorId,
+          probedMtu: probedMtu,
         );
     replace(_$result);
     return _$result;

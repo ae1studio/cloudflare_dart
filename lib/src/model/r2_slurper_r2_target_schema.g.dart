@@ -61,11 +61,11 @@ class _$R2SlurperR2TargetSchema extends R2SlurperR2TargetSchema {
   @override
   final String bucket;
   @override
-  final R2SlurperJurisdiction? jurisdiction;
-  @override
   final R2SlurperS3LikeCredsSchema secret;
   @override
   final R2SlurperR2TargetSchemaVendorEnum vendor;
+  @override
+  final R2SlurperJurisdiction? jurisdiction;
 
   factory _$R2SlurperR2TargetSchema(
           [void Function(R2SlurperR2TargetSchemaBuilder)? updates]) =>
@@ -73,9 +73,9 @@ class _$R2SlurperR2TargetSchema extends R2SlurperR2TargetSchema {
 
   _$R2SlurperR2TargetSchema._(
       {required this.bucket,
-      this.jurisdiction,
       required this.secret,
-      required this.vendor})
+      required this.vendor,
+      this.jurisdiction})
       : super._();
   @override
   R2SlurperR2TargetSchema rebuild(
@@ -91,18 +91,18 @@ class _$R2SlurperR2TargetSchema extends R2SlurperR2TargetSchema {
     if (identical(other, this)) return true;
     return other is R2SlurperR2TargetSchema &&
         bucket == other.bucket &&
-        jurisdiction == other.jurisdiction &&
         secret == other.secret &&
-        vendor == other.vendor;
+        vendor == other.vendor &&
+        jurisdiction == other.jurisdiction;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
     _$hash = $jc(_$hash, bucket.hashCode);
-    _$hash = $jc(_$hash, jurisdiction.hashCode);
     _$hash = $jc(_$hash, secret.hashCode);
     _$hash = $jc(_$hash, vendor.hashCode);
+    _$hash = $jc(_$hash, jurisdiction.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -111,9 +111,9 @@ class _$R2SlurperR2TargetSchema extends R2SlurperR2TargetSchema {
   String toString() {
     return (newBuiltValueToStringHelper(r'R2SlurperR2TargetSchema')
           ..add('bucket', bucket)
-          ..add('jurisdiction', jurisdiction)
           ..add('secret', secret)
-          ..add('vendor', vendor))
+          ..add('vendor', vendor)
+          ..add('jurisdiction', jurisdiction))
         .toString();
   }
 }
@@ -127,11 +127,6 @@ class R2SlurperR2TargetSchemaBuilder
   String? get bucket => _$this._bucket;
   set bucket(String? bucket) => _$this._bucket = bucket;
 
-  R2SlurperJurisdiction? _jurisdiction;
-  R2SlurperJurisdiction? get jurisdiction => _$this._jurisdiction;
-  set jurisdiction(R2SlurperJurisdiction? jurisdiction) =>
-      _$this._jurisdiction = jurisdiction;
-
   R2SlurperS3LikeCredsSchemaBuilder? _secret;
   R2SlurperS3LikeCredsSchemaBuilder get secret =>
       _$this._secret ??= R2SlurperS3LikeCredsSchemaBuilder();
@@ -143,6 +138,11 @@ class R2SlurperR2TargetSchemaBuilder
   set vendor(R2SlurperR2TargetSchemaVendorEnum? vendor) =>
       _$this._vendor = vendor;
 
+  R2SlurperJurisdiction? _jurisdiction;
+  R2SlurperJurisdiction? get jurisdiction => _$this._jurisdiction;
+  set jurisdiction(R2SlurperJurisdiction? jurisdiction) =>
+      _$this._jurisdiction = jurisdiction;
+
   R2SlurperR2TargetSchemaBuilder() {
     R2SlurperR2TargetSchema._defaults(this);
   }
@@ -151,9 +151,9 @@ class R2SlurperR2TargetSchemaBuilder
     final $v = _$v;
     if ($v != null) {
       _bucket = $v.bucket;
-      _jurisdiction = $v.jurisdiction;
       _secret = $v.secret.toBuilder();
       _vendor = $v.vendor;
+      _jurisdiction = $v.jurisdiction;
       _$v = null;
     }
     return this;
@@ -179,10 +179,10 @@ class R2SlurperR2TargetSchemaBuilder
           _$R2SlurperR2TargetSchema._(
             bucket: BuiltValueNullFieldError.checkNotNull(
                 bucket, r'R2SlurperR2TargetSchema', 'bucket'),
-            jurisdiction: jurisdiction,
             secret: secret.build(),
             vendor: BuiltValueNullFieldError.checkNotNull(
                 vendor, r'R2SlurperR2TargetSchema', 'vendor'),
+            jurisdiction: jurisdiction,
           );
     } catch (_) {
       late String _$failedField;

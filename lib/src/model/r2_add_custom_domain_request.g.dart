@@ -84,26 +84,26 @@ class _$R2AddCustomDomainRequestMinTLSEnumSerializer
 
 class _$R2AddCustomDomainRequest extends R2AddCustomDomainRequest {
   @override
-  final BuiltList<String>? ciphers;
-  @override
   final String domain;
   @override
   final bool enabled;
   @override
-  final R2AddCustomDomainRequestMinTLSEnum? minTLS;
-  @override
   final String zoneId;
+  @override
+  final BuiltList<String>? ciphers;
+  @override
+  final R2AddCustomDomainRequestMinTLSEnum? minTLS;
 
   factory _$R2AddCustomDomainRequest(
           [void Function(R2AddCustomDomainRequestBuilder)? updates]) =>
       (R2AddCustomDomainRequestBuilder()..update(updates))._build();
 
   _$R2AddCustomDomainRequest._(
-      {this.ciphers,
-      required this.domain,
+      {required this.domain,
       required this.enabled,
-      this.minTLS,
-      required this.zoneId})
+      required this.zoneId,
+      this.ciphers,
+      this.minTLS})
       : super._();
   @override
   R2AddCustomDomainRequest rebuild(
@@ -118,21 +118,21 @@ class _$R2AddCustomDomainRequest extends R2AddCustomDomainRequest {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is R2AddCustomDomainRequest &&
-        ciphers == other.ciphers &&
         domain == other.domain &&
         enabled == other.enabled &&
-        minTLS == other.minTLS &&
-        zoneId == other.zoneId;
+        zoneId == other.zoneId &&
+        ciphers == other.ciphers &&
+        minTLS == other.minTLS;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, ciphers.hashCode);
     _$hash = $jc(_$hash, domain.hashCode);
     _$hash = $jc(_$hash, enabled.hashCode);
-    _$hash = $jc(_$hash, minTLS.hashCode);
     _$hash = $jc(_$hash, zoneId.hashCode);
+    _$hash = $jc(_$hash, ciphers.hashCode);
+    _$hash = $jc(_$hash, minTLS.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -140,11 +140,11 @@ class _$R2AddCustomDomainRequest extends R2AddCustomDomainRequest {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'R2AddCustomDomainRequest')
-          ..add('ciphers', ciphers)
           ..add('domain', domain)
           ..add('enabled', enabled)
-          ..add('minTLS', minTLS)
-          ..add('zoneId', zoneId))
+          ..add('zoneId', zoneId)
+          ..add('ciphers', ciphers)
+          ..add('minTLS', minTLS))
         .toString();
   }
 }
@@ -154,10 +154,6 @@ class R2AddCustomDomainRequestBuilder
         Builder<R2AddCustomDomainRequest, R2AddCustomDomainRequestBuilder> {
   _$R2AddCustomDomainRequest? _$v;
 
-  ListBuilder<String>? _ciphers;
-  ListBuilder<String> get ciphers => _$this._ciphers ??= ListBuilder<String>();
-  set ciphers(ListBuilder<String>? ciphers) => _$this._ciphers = ciphers;
-
   String? _domain;
   String? get domain => _$this._domain;
   set domain(String? domain) => _$this._domain = domain;
@@ -166,14 +162,18 @@ class R2AddCustomDomainRequestBuilder
   bool? get enabled => _$this._enabled;
   set enabled(bool? enabled) => _$this._enabled = enabled;
 
+  String? _zoneId;
+  String? get zoneId => _$this._zoneId;
+  set zoneId(String? zoneId) => _$this._zoneId = zoneId;
+
+  ListBuilder<String>? _ciphers;
+  ListBuilder<String> get ciphers => _$this._ciphers ??= ListBuilder<String>();
+  set ciphers(ListBuilder<String>? ciphers) => _$this._ciphers = ciphers;
+
   R2AddCustomDomainRequestMinTLSEnum? _minTLS;
   R2AddCustomDomainRequestMinTLSEnum? get minTLS => _$this._minTLS;
   set minTLS(R2AddCustomDomainRequestMinTLSEnum? minTLS) =>
       _$this._minTLS = minTLS;
-
-  String? _zoneId;
-  String? get zoneId => _$this._zoneId;
-  set zoneId(String? zoneId) => _$this._zoneId = zoneId;
 
   R2AddCustomDomainRequestBuilder() {
     R2AddCustomDomainRequest._defaults(this);
@@ -182,11 +182,11 @@ class R2AddCustomDomainRequestBuilder
   R2AddCustomDomainRequestBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _ciphers = $v.ciphers?.toBuilder();
       _domain = $v.domain;
       _enabled = $v.enabled;
-      _minTLS = $v.minTLS;
       _zoneId = $v.zoneId;
+      _ciphers = $v.ciphers?.toBuilder();
+      _minTLS = $v.minTLS;
       _$v = null;
     }
     return this;
@@ -210,14 +210,14 @@ class R2AddCustomDomainRequestBuilder
     try {
       _$result = _$v ??
           _$R2AddCustomDomainRequest._(
-            ciphers: _ciphers?.build(),
             domain: BuiltValueNullFieldError.checkNotNull(
                 domain, r'R2AddCustomDomainRequest', 'domain'),
             enabled: BuiltValueNullFieldError.checkNotNull(
                 enabled, r'R2AddCustomDomainRequest', 'enabled'),
-            minTLS: minTLS,
             zoneId: BuiltValueNullFieldError.checkNotNull(
                 zoneId, r'R2AddCustomDomainRequest', 'zoneId'),
+            ciphers: _ciphers?.build(),
+            minTLS: minTLS,
           );
     } catch (_) {
       late String _$failedField;

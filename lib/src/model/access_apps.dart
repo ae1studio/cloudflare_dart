@@ -25,6 +25,8 @@ part 'access_apps.g.dart';
 /// AccessApps
 ///
 /// Properties:
+/// * [domain] - The URL or domain of the bookmark.
+/// * [type] - The application type.
 /// * [aud] - Audience tag.
 /// * [createdAt] 
 /// * [id] - UUID.
@@ -37,7 +39,6 @@ part 'access_apps.g.dart';
 /// * [corsHeaders] 
 /// * [customDenyMessage] - The custom error message shown to a user when they are denied access to the application.
 /// * [customDenyUrl] - The custom URL a user is redirected to when they are denied access to the application.
-/// * [domain] - The URL or domain of the bookmark.
 /// * [enableBindingCookie] - Enables the binding cookie, which increases security against compromised authorization tokens and CSRF attacks.
 /// * [httpOnlyCookieAttribute] - Enables the HttpOnly cookie attribute, which increases security against XSS attacks.
 /// * [logoUrl] - The image URL for the logo shown in the App Launcher dashboard.
@@ -47,7 +48,6 @@ part 'access_apps.g.dart';
 /// * [serviceAuth401Redirect] - Returns a 401 status code when the request is blocked by a Service Auth policy.
 /// * [sessionDuration] - The amount of time that tokens issued for this application will be valid. Must be in the format `300ms` or `2h45m`. Valid time units are: ns, us (or µs), ms, s, m, h.
 /// * [skipInterstitial] - Enables automatic authentication through cloudflared.
-/// * [type] - The application type.
 /// * [saasApp] 
 @BuiltValue()
 abstract class AccessApps implements Built<AccessApps, AccessAppsBuilder> {

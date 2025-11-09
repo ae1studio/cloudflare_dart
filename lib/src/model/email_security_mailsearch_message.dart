@@ -19,45 +19,64 @@ part 'email_security_mailsearch_message.g.dart';
 ///
 /// Properties:
 /// * [actionLog] 
-/// * [alertId] 
 /// * [clientRecipients] 
-/// * [deliveryMode] 
 /// * [detectionReasons] 
+/// * [isPhishSubmission] 
+/// * [isQuarantined] 
+/// * [postfixId] - The identifier of the message.
+/// * [properties] 
+/// * [ts] 
+/// * [id] 
+/// * [alertId] 
+/// * [deliveryMode] 
 /// * [edfHash] 
 /// * [finalDisposition] 
 /// * [findings] 
 /// * [from] 
 /// * [fromName] 
 /// * [htmltextStructureHash] 
-/// * [isPhishSubmission] 
-/// * [isQuarantined] 
 /// * [messageId] 
-/// * [postfixId] - The identifier of the message.
-/// * [properties] 
 /// * [sentDate] 
 /// * [subject] 
 /// * [threatCategories] 
 /// * [to] 
 /// * [toName] 
-/// * [ts] 
 /// * [validation] 
-/// * [id] 
 @BuiltValue()
 abstract class EmailSecurityMailsearchMessage implements Built<EmailSecurityMailsearchMessage, EmailSecurityMailsearchMessageBuilder> {
   @BuiltValueField(wireName: r'action_log')
   JsonObject? get actionLog;
 
-  @BuiltValueField(wireName: r'alert_id')
-  String? get alertId;
-
   @BuiltValueField(wireName: r'client_recipients')
   BuiltList<String> get clientRecipients;
 
-  @BuiltValueField(wireName: r'delivery_mode')
-  EmailSecurityMailsearchMessageAllOfDeliveryMode? get deliveryMode;
-
   @BuiltValueField(wireName: r'detection_reasons')
   BuiltList<String> get detectionReasons;
+
+  @BuiltValueField(wireName: r'is_phish_submission')
+  bool get isPhishSubmission;
+
+  @BuiltValueField(wireName: r'is_quarantined')
+  bool get isQuarantined;
+
+  /// The identifier of the message.
+  @BuiltValueField(wireName: r'postfix_id')
+  String get postfixId;
+
+  @BuiltValueField(wireName: r'properties')
+  EmailSecurityMailsearchMessageAllOfProperties get properties;
+
+  @BuiltValueField(wireName: r'ts')
+  String get ts;
+
+  @BuiltValueField(wireName: r'id')
+  String get id;
+
+  @BuiltValueField(wireName: r'alert_id')
+  String? get alertId;
+
+  @BuiltValueField(wireName: r'delivery_mode')
+  EmailSecurityMailsearchMessageAllOfDeliveryMode? get deliveryMode;
 
   @BuiltValueField(wireName: r'edf_hash')
   String? get edfHash;
@@ -77,21 +96,8 @@ abstract class EmailSecurityMailsearchMessage implements Built<EmailSecurityMail
   @BuiltValueField(wireName: r'htmltext_structure_hash')
   String? get htmltextStructureHash;
 
-  @BuiltValueField(wireName: r'is_phish_submission')
-  bool get isPhishSubmission;
-
-  @BuiltValueField(wireName: r'is_quarantined')
-  bool get isQuarantined;
-
   @BuiltValueField(wireName: r'message_id')
   String? get messageId;
-
-  /// The identifier of the message.
-  @BuiltValueField(wireName: r'postfix_id')
-  String get postfixId;
-
-  @BuiltValueField(wireName: r'properties')
-  EmailSecurityMailsearchMessageAllOfProperties get properties;
 
   @BuiltValueField(wireName: r'sent_date')
   String? get sentDate;
@@ -108,14 +114,8 @@ abstract class EmailSecurityMailsearchMessage implements Built<EmailSecurityMail
   @BuiltValueField(wireName: r'to_name')
   BuiltList<String>? get toName;
 
-  @BuiltValueField(wireName: r'ts')
-  String get ts;
-
   @BuiltValueField(wireName: r'validation')
   EmailSecurityMailsearchMessageAllOfValidation? get validation;
-
-  @BuiltValueField(wireName: r'id')
-  String get id;
 
   EmailSecurityMailsearchMessage._();
 
@@ -145,6 +145,46 @@ class _$EmailSecurityMailsearchMessageSerializer implements PrimitiveSerializer<
       object.actionLog,
       specifiedType: const FullType.nullable(JsonObject),
     );
+    yield r'client_recipients';
+    yield serializers.serialize(
+      object.clientRecipients,
+      specifiedType: const FullType(BuiltList, [FullType(String)]),
+    );
+    yield r'detection_reasons';
+    yield serializers.serialize(
+      object.detectionReasons,
+      specifiedType: const FullType(BuiltList, [FullType(String)]),
+    );
+    yield r'is_phish_submission';
+    yield serializers.serialize(
+      object.isPhishSubmission,
+      specifiedType: const FullType(bool),
+    );
+    yield r'is_quarantined';
+    yield serializers.serialize(
+      object.isQuarantined,
+      specifiedType: const FullType(bool),
+    );
+    yield r'postfix_id';
+    yield serializers.serialize(
+      object.postfixId,
+      specifiedType: const FullType(String),
+    );
+    yield r'properties';
+    yield serializers.serialize(
+      object.properties,
+      specifiedType: const FullType(EmailSecurityMailsearchMessageAllOfProperties),
+    );
+    yield r'ts';
+    yield serializers.serialize(
+      object.ts,
+      specifiedType: const FullType(String),
+    );
+    yield r'id';
+    yield serializers.serialize(
+      object.id,
+      specifiedType: const FullType(String),
+    );
     if (object.alertId != null) {
       yield r'alert_id';
       yield serializers.serialize(
@@ -152,11 +192,6 @@ class _$EmailSecurityMailsearchMessageSerializer implements PrimitiveSerializer<
         specifiedType: const FullType.nullable(String),
       );
     }
-    yield r'client_recipients';
-    yield serializers.serialize(
-      object.clientRecipients,
-      specifiedType: const FullType(BuiltList, [FullType(String)]),
-    );
     if (object.deliveryMode != null) {
       yield r'delivery_mode';
       yield serializers.serialize(
@@ -164,11 +199,6 @@ class _$EmailSecurityMailsearchMessageSerializer implements PrimitiveSerializer<
         specifiedType: const FullType(EmailSecurityMailsearchMessageAllOfDeliveryMode),
       );
     }
-    yield r'detection_reasons';
-    yield serializers.serialize(
-      object.detectionReasons,
-      specifiedType: const FullType(BuiltList, [FullType(String)]),
-    );
     if (object.edfHash != null) {
       yield r'edf_hash';
       yield serializers.serialize(
@@ -211,16 +241,6 @@ class _$EmailSecurityMailsearchMessageSerializer implements PrimitiveSerializer<
         specifiedType: const FullType.nullable(String),
       );
     }
-    yield r'is_phish_submission';
-    yield serializers.serialize(
-      object.isPhishSubmission,
-      specifiedType: const FullType(bool),
-    );
-    yield r'is_quarantined';
-    yield serializers.serialize(
-      object.isQuarantined,
-      specifiedType: const FullType(bool),
-    );
     if (object.messageId != null) {
       yield r'message_id';
       yield serializers.serialize(
@@ -228,16 +248,6 @@ class _$EmailSecurityMailsearchMessageSerializer implements PrimitiveSerializer<
         specifiedType: const FullType.nullable(String),
       );
     }
-    yield r'postfix_id';
-    yield serializers.serialize(
-      object.postfixId,
-      specifiedType: const FullType(String),
-    );
-    yield r'properties';
-    yield serializers.serialize(
-      object.properties,
-      specifiedType: const FullType(EmailSecurityMailsearchMessageAllOfProperties),
-    );
     if (object.sentDate != null) {
       yield r'sent_date';
       yield serializers.serialize(
@@ -273,11 +283,6 @@ class _$EmailSecurityMailsearchMessageSerializer implements PrimitiveSerializer<
         specifiedType: const FullType.nullable(BuiltList, [FullType(String)]),
       );
     }
-    yield r'ts';
-    yield serializers.serialize(
-      object.ts,
-      specifiedType: const FullType(String),
-    );
     if (object.validation != null) {
       yield r'validation';
       yield serializers.serialize(
@@ -285,11 +290,6 @@ class _$EmailSecurityMailsearchMessageSerializer implements PrimitiveSerializer<
         specifiedType: const FullType(EmailSecurityMailsearchMessageAllOfValidation),
       );
     }
-    yield r'id';
-    yield serializers.serialize(
-      object.id,
-      specifiedType: const FullType(String),
-    );
   }
 
   @override
@@ -321,6 +321,62 @@ class _$EmailSecurityMailsearchMessageSerializer implements PrimitiveSerializer<
           if (valueDes == null) continue;
           result.actionLog = valueDes;
           break;
+        case r'client_recipients':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BuiltList, [FullType(String)]),
+          ) as BuiltList<String>;
+          result.clientRecipients.replace(valueDes);
+          break;
+        case r'detection_reasons':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BuiltList, [FullType(String)]),
+          ) as BuiltList<String>;
+          result.detectionReasons.replace(valueDes);
+          break;
+        case r'is_phish_submission':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(bool),
+          ) as bool;
+          result.isPhishSubmission = valueDes;
+          break;
+        case r'is_quarantined':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(bool),
+          ) as bool;
+          result.isQuarantined = valueDes;
+          break;
+        case r'postfix_id':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.postfixId = valueDes;
+          break;
+        case r'properties':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(EmailSecurityMailsearchMessageAllOfProperties),
+          ) as EmailSecurityMailsearchMessageAllOfProperties;
+          result.properties.replace(valueDes);
+          break;
+        case r'ts':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.ts = valueDes;
+          break;
+        case r'id':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.id = valueDes;
+          break;
         case r'alert_id':
           final valueDes = serializers.deserialize(
             value,
@@ -329,26 +385,12 @@ class _$EmailSecurityMailsearchMessageSerializer implements PrimitiveSerializer<
           if (valueDes == null) continue;
           result.alertId = valueDes;
           break;
-        case r'client_recipients':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>;
-          result.clientRecipients.replace(valueDes);
-          break;
         case r'delivery_mode':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(EmailSecurityMailsearchMessageAllOfDeliveryMode),
           ) as EmailSecurityMailsearchMessageAllOfDeliveryMode;
           result.deliveryMode.replace(valueDes);
-          break;
-        case r'detection_reasons':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>;
-          result.detectionReasons.replace(valueDes);
           break;
         case r'edf_hash':
           final valueDes = serializers.deserialize(
@@ -397,20 +439,6 @@ class _$EmailSecurityMailsearchMessageSerializer implements PrimitiveSerializer<
           if (valueDes == null) continue;
           result.htmltextStructureHash = valueDes;
           break;
-        case r'is_phish_submission':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
-          result.isPhishSubmission = valueDes;
-          break;
-        case r'is_quarantined':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
-          result.isQuarantined = valueDes;
-          break;
         case r'message_id':
           final valueDes = serializers.deserialize(
             value,
@@ -418,20 +446,6 @@ class _$EmailSecurityMailsearchMessageSerializer implements PrimitiveSerializer<
           ) as String?;
           if (valueDes == null) continue;
           result.messageId = valueDes;
-          break;
-        case r'postfix_id':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.postfixId = valueDes;
-          break;
-        case r'properties':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(EmailSecurityMailsearchMessageAllOfProperties),
-          ) as EmailSecurityMailsearchMessageAllOfProperties;
-          result.properties.replace(valueDes);
           break;
         case r'sent_date':
           final valueDes = serializers.deserialize(
@@ -473,26 +487,12 @@ class _$EmailSecurityMailsearchMessageSerializer implements PrimitiveSerializer<
           if (valueDes == null) continue;
           result.toName.replace(valueDes);
           break;
-        case r'ts':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.ts = valueDes;
-          break;
         case r'validation':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(EmailSecurityMailsearchMessageAllOfValidation),
           ) as EmailSecurityMailsearchMessageAllOfValidation;
           result.validation.replace(valueDes);
-          break;
-        case r'id':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.id = valueDes;
           break;
         default:
           unhandled.add(key);

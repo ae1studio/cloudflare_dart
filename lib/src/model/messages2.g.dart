@@ -8,6 +8,8 @@ part of 'messages2.dart';
 
 class _$Messages2 extends Messages2 {
   @override
+  final BuiltList<Messages2MessagesInner> messages;
+  @override
   final num? frequencyPenalty;
   @override
   final BuiltList<MessagesFunctionsInner>? functions;
@@ -15,8 +17,6 @@ class _$Messages2 extends Messages2 {
   final Messages2Image? image;
   @override
   final int? maxTokens;
-  @override
-  final BuiltList<Messages2MessagesInner> messages;
   @override
   final num? presencePenalty;
   @override
@@ -38,11 +38,11 @@ class _$Messages2 extends Messages2 {
       (Messages2Builder()..update(updates))._build();
 
   _$Messages2._(
-      {this.frequencyPenalty,
+      {required this.messages,
+      this.frequencyPenalty,
       this.functions,
       this.image,
       this.maxTokens,
-      required this.messages,
       this.presencePenalty,
       this.repetitionPenalty,
       this.seed,
@@ -63,11 +63,11 @@ class _$Messages2 extends Messages2 {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is Messages2 &&
+        messages == other.messages &&
         frequencyPenalty == other.frequencyPenalty &&
         functions == other.functions &&
         image == other.image &&
         maxTokens == other.maxTokens &&
-        messages == other.messages &&
         presencePenalty == other.presencePenalty &&
         repetitionPenalty == other.repetitionPenalty &&
         seed == other.seed &&
@@ -81,11 +81,11 @@ class _$Messages2 extends Messages2 {
   @override
   int get hashCode {
     var _$hash = 0;
+    _$hash = $jc(_$hash, messages.hashCode);
     _$hash = $jc(_$hash, frequencyPenalty.hashCode);
     _$hash = $jc(_$hash, functions.hashCode);
     _$hash = $jc(_$hash, image.hashCode);
     _$hash = $jc(_$hash, maxTokens.hashCode);
-    _$hash = $jc(_$hash, messages.hashCode);
     _$hash = $jc(_$hash, presencePenalty.hashCode);
     _$hash = $jc(_$hash, repetitionPenalty.hashCode);
     _$hash = $jc(_$hash, seed.hashCode);
@@ -101,11 +101,11 @@ class _$Messages2 extends Messages2 {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'Messages2')
+          ..add('messages', messages)
           ..add('frequencyPenalty', frequencyPenalty)
           ..add('functions', functions)
           ..add('image', image)
           ..add('maxTokens', maxTokens)
-          ..add('messages', messages)
           ..add('presencePenalty', presencePenalty)
           ..add('repetitionPenalty', repetitionPenalty)
           ..add('seed', seed)
@@ -120,6 +120,12 @@ class _$Messages2 extends Messages2 {
 
 class Messages2Builder implements Builder<Messages2, Messages2Builder> {
   _$Messages2? _$v;
+
+  ListBuilder<Messages2MessagesInner>? _messages;
+  ListBuilder<Messages2MessagesInner> get messages =>
+      _$this._messages ??= ListBuilder<Messages2MessagesInner>();
+  set messages(ListBuilder<Messages2MessagesInner>? messages) =>
+      _$this._messages = messages;
 
   num? _frequencyPenalty;
   num? get frequencyPenalty => _$this._frequencyPenalty;
@@ -139,12 +145,6 @@ class Messages2Builder implements Builder<Messages2, Messages2Builder> {
   int? _maxTokens;
   int? get maxTokens => _$this._maxTokens;
   set maxTokens(int? maxTokens) => _$this._maxTokens = maxTokens;
-
-  ListBuilder<Messages2MessagesInner>? _messages;
-  ListBuilder<Messages2MessagesInner> get messages =>
-      _$this._messages ??= ListBuilder<Messages2MessagesInner>();
-  set messages(ListBuilder<Messages2MessagesInner>? messages) =>
-      _$this._messages = messages;
 
   num? _presencePenalty;
   num? get presencePenalty => _$this._presencePenalty;
@@ -188,11 +188,11 @@ class Messages2Builder implements Builder<Messages2, Messages2Builder> {
   Messages2Builder get _$this {
     final $v = _$v;
     if ($v != null) {
+      _messages = $v.messages.toBuilder();
       _frequencyPenalty = $v.frequencyPenalty;
       _functions = $v.functions?.toBuilder();
       _image = $v.image?.toBuilder();
       _maxTokens = $v.maxTokens;
-      _messages = $v.messages.toBuilder();
       _presencePenalty = $v.presencePenalty;
       _repetitionPenalty = $v.repetitionPenalty;
       _seed = $v.seed;
@@ -224,11 +224,11 @@ class Messages2Builder implements Builder<Messages2, Messages2Builder> {
     try {
       _$result = _$v ??
           _$Messages2._(
+            messages: messages.build(),
             frequencyPenalty: frequencyPenalty,
             functions: _functions?.build(),
             image: _image?.build(),
             maxTokens: maxTokens,
-            messages: messages.build(),
             presencePenalty: presencePenalty,
             repetitionPenalty: repetitionPenalty,
             seed: seed,
@@ -241,13 +241,13 @@ class Messages2Builder implements Builder<Messages2, Messages2Builder> {
     } catch (_) {
       late String _$failedField;
       try {
+        _$failedField = 'messages';
+        messages.build();
+
         _$failedField = 'functions';
         _functions?.build();
         _$failedField = 'image';
         _image?.build();
-
-        _$failedField = 'messages';
-        messages.build();
 
         _$failedField = 'tools';
         _tools?.build();

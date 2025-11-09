@@ -14,12 +14,12 @@ part 'firewall_filter_rule_response_all_of_filter.g.dart';
 /// FirewallFilterRuleResponseAllOfFilter
 ///
 /// Properties:
+/// * [id] - The unique identifier of the filter.
+/// * [deleted] - When true, indicates that the firewall rule was deleted.
 /// * [description] - An informative summary of the filter.
 /// * [expression] - The filter expression. For more information, refer to [Expressions](https://developers.cloudflare.com/ruleset-engine/rules-language/expressions/).
-/// * [id] - The unique identifier of the filter.
 /// * [paused] - When true, indicates that the filter is currently paused.
 /// * [ref] - A short reference tag. Allows you to select related filters.
-/// * [deleted] - When true, indicates that the firewall rule was deleted.
 @BuiltValue()
 abstract class FirewallFilterRuleResponseAllOfFilter implements Built<FirewallFilterRuleResponseAllOfFilter, FirewallFilterRuleResponseAllOfFilterBuilder> {
   /// One Of [FirewallDeletedFilter], [FirewallFilter]

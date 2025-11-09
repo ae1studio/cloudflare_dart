@@ -9,8 +9,8 @@ import 'package:cloudflare_dart/api.dart';
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **code** | **int** |  | 
-**documentationUrl** | **String** |  | [optional] 
 **message** | **String** |  | 
+**documentationUrl** | **String** |  | [optional] 
 **meta** | [**McnErrorMeta**](McnErrorMeta.md) |  | [optional] 
 **source_** | [**McnErrorSource**](McnErrorSource.md) |  | [optional] 
 

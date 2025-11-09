@@ -123,8 +123,6 @@ class _$GetAllRecordings200ResponseAllOfDataInner
   @override
   final String outputFileName;
   @override
-  final int? recordingDuration;
-  @override
   final String? sessionId;
   @override
   final DateTime? startedTime;
@@ -132,6 +130,8 @@ class _$GetAllRecordings200ResponseAllOfDataInner
   final RealtimekitRecordingStatusEnum status;
   @override
   final DateTime? stoppedTime;
+  @override
+  final int? recordingDuration;
 
   factory _$GetAllRecordings200ResponseAllOfDataInner(
           [void Function(GetAllRecordings200ResponseAllOfDataInnerBuilder)?
@@ -149,11 +149,11 @@ class _$GetAllRecordings200ResponseAllOfDataInner
       required this.id,
       required this.invokedTime,
       required this.outputFileName,
-      this.recordingDuration,
       this.sessionId,
       this.startedTime,
       required this.status,
-      this.stoppedTime})
+      this.stoppedTime,
+      this.recordingDuration})
       : super._();
   @override
   GetAllRecordings200ResponseAllOfDataInner rebuild(
@@ -178,11 +178,11 @@ class _$GetAllRecordings200ResponseAllOfDataInner
         id == other.id &&
         invokedTime == other.invokedTime &&
         outputFileName == other.outputFileName &&
-        recordingDuration == other.recordingDuration &&
         sessionId == other.sessionId &&
         startedTime == other.startedTime &&
         status == other.status &&
-        stoppedTime == other.stoppedTime;
+        stoppedTime == other.stoppedTime &&
+        recordingDuration == other.recordingDuration;
   }
 
   @override
@@ -197,11 +197,11 @@ class _$GetAllRecordings200ResponseAllOfDataInner
     _$hash = $jc(_$hash, id.hashCode);
     _$hash = $jc(_$hash, invokedTime.hashCode);
     _$hash = $jc(_$hash, outputFileName.hashCode);
-    _$hash = $jc(_$hash, recordingDuration.hashCode);
     _$hash = $jc(_$hash, sessionId.hashCode);
     _$hash = $jc(_$hash, startedTime.hashCode);
     _$hash = $jc(_$hash, status.hashCode);
     _$hash = $jc(_$hash, stoppedTime.hashCode);
+    _$hash = $jc(_$hash, recordingDuration.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -219,11 +219,11 @@ class _$GetAllRecordings200ResponseAllOfDataInner
           ..add('id', id)
           ..add('invokedTime', invokedTime)
           ..add('outputFileName', outputFileName)
-          ..add('recordingDuration', recordingDuration)
           ..add('sessionId', sessionId)
           ..add('startedTime', startedTime)
           ..add('status', status)
-          ..add('stoppedTime', stoppedTime))
+          ..add('stoppedTime', stoppedTime)
+          ..add('recordingDuration', recordingDuration))
         .toString();
   }
 }
@@ -280,11 +280,6 @@ class GetAllRecordings200ResponseAllOfDataInnerBuilder
   set outputFileName(covariant String? outputFileName) =>
       _$this._outputFileName = outputFileName;
 
-  int? _recordingDuration;
-  int? get recordingDuration => _$this._recordingDuration;
-  set recordingDuration(covariant int? recordingDuration) =>
-      _$this._recordingDuration = recordingDuration;
-
   String? _sessionId;
   String? get sessionId => _$this._sessionId;
   set sessionId(covariant String? sessionId) => _$this._sessionId = sessionId;
@@ -304,6 +299,11 @@ class GetAllRecordings200ResponseAllOfDataInnerBuilder
   set stoppedTime(covariant DateTime? stoppedTime) =>
       _$this._stoppedTime = stoppedTime;
 
+  int? _recordingDuration;
+  int? get recordingDuration => _$this._recordingDuration;
+  set recordingDuration(covariant int? recordingDuration) =>
+      _$this._recordingDuration = recordingDuration;
+
   GetAllRecordings200ResponseAllOfDataInnerBuilder() {
     GetAllRecordings200ResponseAllOfDataInner._defaults(this);
   }
@@ -320,11 +320,11 @@ class GetAllRecordings200ResponseAllOfDataInnerBuilder
       _id = $v.id;
       _invokedTime = $v.invokedTime;
       _outputFileName = $v.outputFileName;
-      _recordingDuration = $v.recordingDuration;
       _sessionId = $v.sessionId;
       _startedTime = $v.startedTime;
       _status = $v.status;
       _stoppedTime = $v.stoppedTime;
+      _recordingDuration = $v.recordingDuration;
       _$v = null;
     }
     return this;
@@ -364,12 +364,12 @@ class GetAllRecordings200ResponseAllOfDataInnerBuilder
                 outputFileName,
                 r'GetAllRecordings200ResponseAllOfDataInner',
                 'outputFileName'),
-            recordingDuration: recordingDuration,
             sessionId: sessionId,
             startedTime: startedTime,
             status: BuiltValueNullFieldError.checkNotNull(
                 status, r'GetAllRecordings200ResponseAllOfDataInner', 'status'),
             stoppedTime: stoppedTime,
+            recordingDuration: recordingDuration,
           );
     } catch (_) {
       late String _$failedField;

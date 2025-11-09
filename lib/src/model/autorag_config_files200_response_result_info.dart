@@ -13,8 +13,8 @@ part 'autorag_config_files200_response_result_info.g.dart';
 /// Properties:
 /// * [count] 
 /// * [page] 
-/// * [perPage] 
 /// * [totalCount] 
+/// * [perPage] 
 @BuiltValue()
 abstract class AutoragConfigFiles200ResponseResultInfo implements Built<AutoragConfigFiles200ResponseResultInfo, AutoragConfigFiles200ResponseResultInfoBuilder> {
   @BuiltValueField(wireName: r'count')
@@ -23,11 +23,11 @@ abstract class AutoragConfigFiles200ResponseResultInfo implements Built<AutoragC
   @BuiltValueField(wireName: r'page')
   int get page;
 
-  @BuiltValueField(wireName: r'per_page')
-  int? get perPage;
-
   @BuiltValueField(wireName: r'total_count')
   int get totalCount;
+
+  @BuiltValueField(wireName: r'per_page')
+  int? get perPage;
 
   AutoragConfigFiles200ResponseResultInfo._();
 
@@ -63,6 +63,11 @@ class _$AutoragConfigFiles200ResponseResultInfoSerializer implements PrimitiveSe
       object.page,
       specifiedType: const FullType(int),
     );
+    yield r'total_count';
+    yield serializers.serialize(
+      object.totalCount,
+      specifiedType: const FullType(int),
+    );
     if (object.perPage != null) {
       yield r'per_page';
       yield serializers.serialize(
@@ -70,11 +75,6 @@ class _$AutoragConfigFiles200ResponseResultInfoSerializer implements PrimitiveSe
         specifiedType: const FullType(int),
       );
     }
-    yield r'total_count';
-    yield serializers.serialize(
-      object.totalCount,
-      specifiedType: const FullType(int),
-    );
   }
 
   @override
@@ -112,19 +112,19 @@ class _$AutoragConfigFiles200ResponseResultInfoSerializer implements PrimitiveSe
           ) as int;
           result.page = valueDes;
           break;
-        case r'per_page':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
-          result.perPage = valueDes;
-          break;
         case r'total_count':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(int),
           ) as int;
           result.totalCount = valueDes;
+          break;
+        case r'per_page':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(int),
+          ) as int;
+          result.perPage = valueDes;
           break;
         default:
           unhandled.add(key);

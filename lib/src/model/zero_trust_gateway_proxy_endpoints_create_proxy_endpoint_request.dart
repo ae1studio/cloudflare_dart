@@ -15,8 +15,8 @@ part 'zero_trust_gateway_proxy_endpoints_create_proxy_endpoint_request.g.dart';
 /// ZeroTrustGatewayProxyEndpointsCreateProxyEndpointRequest
 ///
 /// Properties:
-/// * [kind] - The proxy endpoint kind.
 /// * [name] - Specify the name of the proxy endpoint.
+/// * [kind] - The proxy endpoint kind.
 @BuiltValue()
 abstract class ZeroTrustGatewayProxyEndpointsCreateProxyEndpointRequest implements Built<ZeroTrustGatewayProxyEndpointsCreateProxyEndpointRequest, ZeroTrustGatewayProxyEndpointsCreateProxyEndpointRequestBuilder> {
   /// One Of [ZeroTrustGatewayProxyEndpointIdentityCreate], [ZeroTrustGatewayProxyEndpointIpCreate]

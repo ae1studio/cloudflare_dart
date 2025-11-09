@@ -14,9 +14,9 @@ class _$DeleteRegistrations200Response extends DeleteRegistrations200Response {
   @override
   final JsonObject? result;
   @override
-  final TeamsDevicesCursorResultInfo? resultInfo;
-  @override
   final bool success;
+  @override
+  final TeamsDevicesCursorResultInfo? resultInfo;
 
   factory _$DeleteRegistrations200Response(
           [void Function(DeleteRegistrations200ResponseBuilder)? updates]) =>
@@ -26,8 +26,8 @@ class _$DeleteRegistrations200Response extends DeleteRegistrations200Response {
       {required this.errors,
       required this.messages,
       this.result,
-      this.resultInfo,
-      required this.success})
+      required this.success,
+      this.resultInfo})
       : super._();
   @override
   DeleteRegistrations200Response rebuild(
@@ -45,8 +45,8 @@ class _$DeleteRegistrations200Response extends DeleteRegistrations200Response {
         errors == other.errors &&
         messages == other.messages &&
         result == other.result &&
-        resultInfo == other.resultInfo &&
-        success == other.success;
+        success == other.success &&
+        resultInfo == other.resultInfo;
   }
 
   @override
@@ -55,8 +55,8 @@ class _$DeleteRegistrations200Response extends DeleteRegistrations200Response {
     _$hash = $jc(_$hash, errors.hashCode);
     _$hash = $jc(_$hash, messages.hashCode);
     _$hash = $jc(_$hash, result.hashCode);
-    _$hash = $jc(_$hash, resultInfo.hashCode);
     _$hash = $jc(_$hash, success.hashCode);
+    _$hash = $jc(_$hash, resultInfo.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -67,8 +67,8 @@ class _$DeleteRegistrations200Response extends DeleteRegistrations200Response {
           ..add('errors', errors)
           ..add('messages', messages)
           ..add('result', result)
-          ..add('resultInfo', resultInfo)
-          ..add('success', success))
+          ..add('success', success)
+          ..add('resultInfo', resultInfo))
         .toString();
   }
 }
@@ -95,15 +95,15 @@ class DeleteRegistrations200ResponseBuilder
   JsonObject? get result => _$this._result;
   set result(JsonObject? result) => _$this._result = result;
 
+  bool? _success;
+  bool? get success => _$this._success;
+  set success(bool? success) => _$this._success = success;
+
   TeamsDevicesCursorResultInfoBuilder? _resultInfo;
   TeamsDevicesCursorResultInfoBuilder get resultInfo =>
       _$this._resultInfo ??= TeamsDevicesCursorResultInfoBuilder();
   set resultInfo(TeamsDevicesCursorResultInfoBuilder? resultInfo) =>
       _$this._resultInfo = resultInfo;
-
-  bool? _success;
-  bool? get success => _$this._success;
-  set success(bool? success) => _$this._success = success;
 
   DeleteRegistrations200ResponseBuilder() {
     DeleteRegistrations200Response._defaults(this);
@@ -115,8 +115,8 @@ class DeleteRegistrations200ResponseBuilder
       _errors = $v.errors.toBuilder();
       _messages = $v.messages.toBuilder();
       _result = $v.result;
-      _resultInfo = $v.resultInfo?.toBuilder();
       _success = $v.success;
+      _resultInfo = $v.resultInfo?.toBuilder();
       _$v = null;
     }
     return this;
@@ -143,9 +143,9 @@ class DeleteRegistrations200ResponseBuilder
             errors: errors.build(),
             messages: messages.build(),
             result: result,
-            resultInfo: _resultInfo?.build(),
             success: BuiltValueNullFieldError.checkNotNull(
                 success, r'DeleteRegistrations200Response', 'success'),
+            resultInfo: _resultInfo?.build(),
           );
     } catch (_) {
       late String _$failedField;

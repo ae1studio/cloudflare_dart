@@ -13,8 +13,8 @@ part 'workers_binding_kind_inherit.g.dart';
 ///
 /// Properties:
 /// * [name] - The name of the inherited binding.
-/// * [oldName] - The old name of the inherited binding. If set, the binding will be renamed from `old_name` to `name` in the new version. If not set, the binding will keep the same name between versions.
 /// * [type] - The kind of resource that the binding provides.
+/// * [oldName] - The old name of the inherited binding. If set, the binding will be renamed from `old_name` to `name` in the new version. If not set, the binding will keep the same name between versions.
 /// * [versionId] - Identifier for the version to inherit the binding from, which can be the version ID or the literal \"latest\" to inherit from the latest version. Defaults to inheriting the binding from the latest version.
 @BuiltValue()
 abstract class WorkersBindingKindInherit implements Built<WorkersBindingKindInherit, WorkersBindingKindInheritBuilder> {
@@ -22,14 +22,14 @@ abstract class WorkersBindingKindInherit implements Built<WorkersBindingKindInhe
   @BuiltValueField(wireName: r'name')
   String get name;
 
-  /// The old name of the inherited binding. If set, the binding will be renamed from `old_name` to `name` in the new version. If not set, the binding will keep the same name between versions.
-  @BuiltValueField(wireName: r'old_name')
-  String? get oldName;
-
   /// The kind of resource that the binding provides.
   @BuiltValueField(wireName: r'type')
   WorkersBindingKindInheritTypeEnum get type;
   // enum typeEnum {  inherit,  };
+
+  /// The old name of the inherited binding. If set, the binding will be renamed from `old_name` to `name` in the new version. If not set, the binding will keep the same name between versions.
+  @BuiltValueField(wireName: r'old_name')
+  String? get oldName;
 
   /// Identifier for the version to inherit the binding from, which can be the version ID or the literal \"latest\" to inherit from the latest version. Defaults to inheriting the binding from the latest version.
   @BuiltValueField(wireName: r'version_id')
@@ -64,6 +64,11 @@ class _$WorkersBindingKindInheritSerializer implements PrimitiveSerializer<Worke
       object.name,
       specifiedType: const FullType(String),
     );
+    yield r'type';
+    yield serializers.serialize(
+      object.type,
+      specifiedType: const FullType(WorkersBindingKindInheritTypeEnum),
+    );
     if (object.oldName != null) {
       yield r'old_name';
       yield serializers.serialize(
@@ -71,11 +76,6 @@ class _$WorkersBindingKindInheritSerializer implements PrimitiveSerializer<Worke
         specifiedType: const FullType(String),
       );
     }
-    yield r'type';
-    yield serializers.serialize(
-      object.type,
-      specifiedType: const FullType(WorkersBindingKindInheritTypeEnum),
-    );
     if (object.versionId != null) {
       yield r'version_id';
       yield serializers.serialize(
@@ -113,19 +113,19 @@ class _$WorkersBindingKindInheritSerializer implements PrimitiveSerializer<Worke
           ) as String;
           result.name = valueDes;
           break;
-        case r'old_name':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.oldName = valueDes;
-          break;
         case r'type':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(WorkersBindingKindInheritTypeEnum),
           ) as WorkersBindingKindInheritTypeEnum;
           result.type = valueDes;
+          break;
+        case r'old_name':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.oldName = valueDes;
           break;
         case r'version_id':
           final valueDes = serializers.deserialize(

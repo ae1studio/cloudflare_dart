@@ -12,37 +12,31 @@ part 'aig_config_list_gateway_logs200_response_result_inner.g.dart';
 ///
 /// Properties:
 /// * [cached] 
-/// * [cost] 
 /// * [createdAt] 
-/// * [customCost] 
 /// * [duration] 
 /// * [id] 
-/// * [metadata] 
 /// * [model] 
-/// * [modelType] 
 /// * [path] 
 /// * [provider] 
+/// * [success] 
+/// * [tokensIn] 
+/// * [tokensOut] 
+/// * [cost] 
+/// * [customCost] 
+/// * [metadata] 
+/// * [modelType] 
 /// * [requestContentType] 
 /// * [requestType] 
 /// * [responseContentType] 
 /// * [statusCode] 
 /// * [step] 
-/// * [success] 
-/// * [tokensIn] 
-/// * [tokensOut] 
 @BuiltValue()
 abstract class AigConfigListGatewayLogs200ResponseResultInner implements Built<AigConfigListGatewayLogs200ResponseResultInner, AigConfigListGatewayLogs200ResponseResultInnerBuilder> {
   @BuiltValueField(wireName: r'cached')
   bool get cached;
 
-  @BuiltValueField(wireName: r'cost')
-  num? get cost;
-
   @BuiltValueField(wireName: r'created_at')
   DateTime get createdAt;
-
-  @BuiltValueField(wireName: r'custom_cost')
-  bool? get customCost;
 
   @BuiltValueField(wireName: r'duration')
   int get duration;
@@ -50,20 +44,35 @@ abstract class AigConfigListGatewayLogs200ResponseResultInner implements Built<A
   @BuiltValueField(wireName: r'id')
   String get id;
 
-  @BuiltValueField(wireName: r'metadata')
-  String? get metadata;
-
   @BuiltValueField(wireName: r'model')
   String get model;
-
-  @BuiltValueField(wireName: r'model_type')
-  String? get modelType;
 
   @BuiltValueField(wireName: r'path')
   String get path;
 
   @BuiltValueField(wireName: r'provider')
   String get provider;
+
+  @BuiltValueField(wireName: r'success')
+  bool get success;
+
+  @BuiltValueField(wireName: r'tokens_in')
+  int? get tokensIn;
+
+  @BuiltValueField(wireName: r'tokens_out')
+  int? get tokensOut;
+
+  @BuiltValueField(wireName: r'cost')
+  num? get cost;
+
+  @BuiltValueField(wireName: r'custom_cost')
+  bool? get customCost;
+
+  @BuiltValueField(wireName: r'metadata')
+  String? get metadata;
+
+  @BuiltValueField(wireName: r'model_type')
+  String? get modelType;
 
   @BuiltValueField(wireName: r'request_content_type')
   String? get requestContentType;
@@ -79,15 +88,6 @@ abstract class AigConfigListGatewayLogs200ResponseResultInner implements Built<A
 
   @BuiltValueField(wireName: r'step')
   int? get step;
-
-  @BuiltValueField(wireName: r'success')
-  bool get success;
-
-  @BuiltValueField(wireName: r'tokens_in')
-  int? get tokensIn;
-
-  @BuiltValueField(wireName: r'tokens_out')
-  int? get tokensOut;
 
   AigConfigListGatewayLogs200ResponseResultInner._();
 
@@ -117,25 +117,11 @@ class _$AigConfigListGatewayLogs200ResponseResultInnerSerializer implements Prim
       object.cached,
       specifiedType: const FullType(bool),
     );
-    if (object.cost != null) {
-      yield r'cost';
-      yield serializers.serialize(
-        object.cost,
-        specifiedType: const FullType(num),
-      );
-    }
     yield r'created_at';
     yield serializers.serialize(
       object.createdAt,
       specifiedType: const FullType(DateTime),
     );
-    if (object.customCost != null) {
-      yield r'custom_cost';
-      yield serializers.serialize(
-        object.customCost,
-        specifiedType: const FullType(bool),
-      );
-    }
     yield r'duration';
     yield serializers.serialize(
       object.duration,
@@ -146,25 +132,11 @@ class _$AigConfigListGatewayLogs200ResponseResultInnerSerializer implements Prim
       object.id,
       specifiedType: const FullType(String),
     );
-    if (object.metadata != null) {
-      yield r'metadata';
-      yield serializers.serialize(
-        object.metadata,
-        specifiedType: const FullType(String),
-      );
-    }
     yield r'model';
     yield serializers.serialize(
       object.model,
       specifiedType: const FullType(String),
     );
-    if (object.modelType != null) {
-      yield r'model_type';
-      yield serializers.serialize(
-        object.modelType,
-        specifiedType: const FullType(String),
-      );
-    }
     yield r'path';
     yield serializers.serialize(
       object.path,
@@ -175,6 +147,49 @@ class _$AigConfigListGatewayLogs200ResponseResultInnerSerializer implements Prim
       object.provider,
       specifiedType: const FullType(String),
     );
+    yield r'success';
+    yield serializers.serialize(
+      object.success,
+      specifiedType: const FullType(bool),
+    );
+    yield r'tokens_in';
+    yield object.tokensIn == null ? null : serializers.serialize(
+      object.tokensIn,
+      specifiedType: const FullType.nullable(int),
+    );
+    yield r'tokens_out';
+    yield object.tokensOut == null ? null : serializers.serialize(
+      object.tokensOut,
+      specifiedType: const FullType.nullable(int),
+    );
+    if (object.cost != null) {
+      yield r'cost';
+      yield serializers.serialize(
+        object.cost,
+        specifiedType: const FullType(num),
+      );
+    }
+    if (object.customCost != null) {
+      yield r'custom_cost';
+      yield serializers.serialize(
+        object.customCost,
+        specifiedType: const FullType(bool),
+      );
+    }
+    if (object.metadata != null) {
+      yield r'metadata';
+      yield serializers.serialize(
+        object.metadata,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.modelType != null) {
+      yield r'model_type';
+      yield serializers.serialize(
+        object.modelType,
+        specifiedType: const FullType(String),
+      );
+    }
     if (object.requestContentType != null) {
       yield r'request_content_type';
       yield serializers.serialize(
@@ -210,21 +225,6 @@ class _$AigConfigListGatewayLogs200ResponseResultInnerSerializer implements Prim
         specifiedType: const FullType(int),
       );
     }
-    yield r'success';
-    yield serializers.serialize(
-      object.success,
-      specifiedType: const FullType(bool),
-    );
-    yield r'tokens_in';
-    yield object.tokensIn == null ? null : serializers.serialize(
-      object.tokensIn,
-      specifiedType: const FullType.nullable(int),
-    );
-    yield r'tokens_out';
-    yield object.tokensOut == null ? null : serializers.serialize(
-      object.tokensOut,
-      specifiedType: const FullType.nullable(int),
-    );
   }
 
   @override
@@ -255,26 +255,12 @@ class _$AigConfigListGatewayLogs200ResponseResultInnerSerializer implements Prim
           ) as bool;
           result.cached = valueDes;
           break;
-        case r'cost':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(num),
-          ) as num;
-          result.cost = valueDes;
-          break;
         case r'created_at':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(DateTime),
           ) as DateTime;
           result.createdAt = valueDes;
-          break;
-        case r'custom_cost':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
-          result.customCost = valueDes;
           break;
         case r'duration':
           final valueDes = serializers.deserialize(
@@ -290,26 +276,12 @@ class _$AigConfigListGatewayLogs200ResponseResultInnerSerializer implements Prim
           ) as String;
           result.id = valueDes;
           break;
-        case r'metadata':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.metadata = valueDes;
-          break;
         case r'model':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(String),
           ) as String;
           result.model = valueDes;
-          break;
-        case r'model_type':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.modelType = valueDes;
           break;
         case r'path':
           final valueDes = serializers.deserialize(
@@ -324,6 +296,57 @@ class _$AigConfigListGatewayLogs200ResponseResultInnerSerializer implements Prim
             specifiedType: const FullType(String),
           ) as String;
           result.provider = valueDes;
+          break;
+        case r'success':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(bool),
+          ) as bool;
+          result.success = valueDes;
+          break;
+        case r'tokens_in':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType.nullable(int),
+          ) as int?;
+          if (valueDes == null) continue;
+          result.tokensIn = valueDes;
+          break;
+        case r'tokens_out':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType.nullable(int),
+          ) as int?;
+          if (valueDes == null) continue;
+          result.tokensOut = valueDes;
+          break;
+        case r'cost':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(num),
+          ) as num;
+          result.cost = valueDes;
+          break;
+        case r'custom_cost':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(bool),
+          ) as bool;
+          result.customCost = valueDes;
+          break;
+        case r'metadata':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.metadata = valueDes;
+          break;
+        case r'model_type':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.modelType = valueDes;
           break;
         case r'request_content_type':
           final valueDes = serializers.deserialize(
@@ -359,29 +382,6 @@ class _$AigConfigListGatewayLogs200ResponseResultInnerSerializer implements Prim
             specifiedType: const FullType(int),
           ) as int;
           result.step = valueDes;
-          break;
-        case r'success':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
-          result.success = valueDes;
-          break;
-        case r'tokens_in':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
-          if (valueDes == null) continue;
-          result.tokensIn = valueDes;
-          break;
-        case r'tokens_out':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
-          if (valueDes == null) continue;
-          result.tokensOut = valueDes;
           break;
         default:
           unhandled.add(key);

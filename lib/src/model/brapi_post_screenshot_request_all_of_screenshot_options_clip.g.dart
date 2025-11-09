@@ -11,13 +11,13 @@ class _$BrapiPostScreenshotRequestAllOfScreenshotOptionsClip
   @override
   final num height;
   @override
-  final num? scale;
-  @override
   final num width;
   @override
   final num x;
   @override
   final num y;
+  @override
+  final num? scale;
 
   factory _$BrapiPostScreenshotRequestAllOfScreenshotOptionsClip(
           [void Function(
@@ -29,10 +29,10 @@ class _$BrapiPostScreenshotRequestAllOfScreenshotOptionsClip
 
   _$BrapiPostScreenshotRequestAllOfScreenshotOptionsClip._(
       {required this.height,
-      this.scale,
       required this.width,
       required this.x,
-      required this.y})
+      required this.y,
+      this.scale})
       : super._();
   @override
   BrapiPostScreenshotRequestAllOfScreenshotOptionsClip rebuild(
@@ -51,20 +51,20 @@ class _$BrapiPostScreenshotRequestAllOfScreenshotOptionsClip
     if (identical(other, this)) return true;
     return other is BrapiPostScreenshotRequestAllOfScreenshotOptionsClip &&
         height == other.height &&
-        scale == other.scale &&
         width == other.width &&
         x == other.x &&
-        y == other.y;
+        y == other.y &&
+        scale == other.scale;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
     _$hash = $jc(_$hash, height.hashCode);
-    _$hash = $jc(_$hash, scale.hashCode);
     _$hash = $jc(_$hash, width.hashCode);
     _$hash = $jc(_$hash, x.hashCode);
     _$hash = $jc(_$hash, y.hashCode);
+    _$hash = $jc(_$hash, scale.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -74,10 +74,10 @@ class _$BrapiPostScreenshotRequestAllOfScreenshotOptionsClip
     return (newBuiltValueToStringHelper(
             r'BrapiPostScreenshotRequestAllOfScreenshotOptionsClip')
           ..add('height', height)
-          ..add('scale', scale)
           ..add('width', width)
           ..add('x', x)
-          ..add('y', y))
+          ..add('y', y)
+          ..add('scale', scale))
         .toString();
   }
 }
@@ -92,10 +92,6 @@ class BrapiPostScreenshotRequestAllOfScreenshotOptionsClipBuilder
   num? get height => _$this._height;
   set height(num? height) => _$this._height = height;
 
-  num? _scale;
-  num? get scale => _$this._scale;
-  set scale(num? scale) => _$this._scale = scale;
-
   num? _width;
   num? get width => _$this._width;
   set width(num? width) => _$this._width = width;
@@ -108,6 +104,10 @@ class BrapiPostScreenshotRequestAllOfScreenshotOptionsClipBuilder
   num? get y => _$this._y;
   set y(num? y) => _$this._y = y;
 
+  num? _scale;
+  num? get scale => _$this._scale;
+  set scale(num? scale) => _$this._scale = scale;
+
   BrapiPostScreenshotRequestAllOfScreenshotOptionsClipBuilder() {
     BrapiPostScreenshotRequestAllOfScreenshotOptionsClip._defaults(this);
   }
@@ -116,10 +116,10 @@ class BrapiPostScreenshotRequestAllOfScreenshotOptionsClipBuilder
     final $v = _$v;
     if ($v != null) {
       _height = $v.height;
-      _scale = $v.scale;
       _width = $v.width;
       _x = $v.x;
       _y = $v.y;
+      _scale = $v.scale;
       _$v = null;
     }
     return this;
@@ -148,13 +148,13 @@ class BrapiPostScreenshotRequestAllOfScreenshotOptionsClipBuilder
               height,
               r'BrapiPostScreenshotRequestAllOfScreenshotOptionsClip',
               'height'),
-          scale: scale,
           width: BuiltValueNullFieldError.checkNotNull(width,
               r'BrapiPostScreenshotRequestAllOfScreenshotOptionsClip', 'width'),
           x: BuiltValueNullFieldError.checkNotNull(
               x, r'BrapiPostScreenshotRequestAllOfScreenshotOptionsClip', 'x'),
           y: BuiltValueNullFieldError.checkNotNull(
               y, r'BrapiPostScreenshotRequestAllOfScreenshotOptionsClip', 'y'),
+          scale: scale,
         );
     replace(_$result);
     return _$result;

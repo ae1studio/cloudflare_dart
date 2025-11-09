@@ -8,15 +8,15 @@ part of 'dlp_payload_log_setting.dart';
 
 class _$DlpPayloadLogSetting extends DlpPayloadLogSetting {
   @override
-  final String? publicKey;
-  @override
   final DateTime updatedAt;
+  @override
+  final String? publicKey;
 
   factory _$DlpPayloadLogSetting(
           [void Function(DlpPayloadLogSettingBuilder)? updates]) =>
       (DlpPayloadLogSettingBuilder()..update(updates))._build();
 
-  _$DlpPayloadLogSetting._({this.publicKey, required this.updatedAt})
+  _$DlpPayloadLogSetting._({required this.updatedAt, this.publicKey})
       : super._();
   @override
   DlpPayloadLogSetting rebuild(
@@ -31,15 +31,15 @@ class _$DlpPayloadLogSetting extends DlpPayloadLogSetting {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is DlpPayloadLogSetting &&
-        publicKey == other.publicKey &&
-        updatedAt == other.updatedAt;
+        updatedAt == other.updatedAt &&
+        publicKey == other.publicKey;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, publicKey.hashCode);
     _$hash = $jc(_$hash, updatedAt.hashCode);
+    _$hash = $jc(_$hash, publicKey.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -47,8 +47,8 @@ class _$DlpPayloadLogSetting extends DlpPayloadLogSetting {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'DlpPayloadLogSetting')
-          ..add('publicKey', publicKey)
-          ..add('updatedAt', updatedAt))
+          ..add('updatedAt', updatedAt)
+          ..add('publicKey', publicKey))
         .toString();
   }
 }
@@ -57,13 +57,13 @@ class DlpPayloadLogSettingBuilder
     implements Builder<DlpPayloadLogSetting, DlpPayloadLogSettingBuilder> {
   _$DlpPayloadLogSetting? _$v;
 
-  String? _publicKey;
-  String? get publicKey => _$this._publicKey;
-  set publicKey(String? publicKey) => _$this._publicKey = publicKey;
-
   DateTime? _updatedAt;
   DateTime? get updatedAt => _$this._updatedAt;
   set updatedAt(DateTime? updatedAt) => _$this._updatedAt = updatedAt;
+
+  String? _publicKey;
+  String? get publicKey => _$this._publicKey;
+  set publicKey(String? publicKey) => _$this._publicKey = publicKey;
 
   DlpPayloadLogSettingBuilder() {
     DlpPayloadLogSetting._defaults(this);
@@ -72,8 +72,8 @@ class DlpPayloadLogSettingBuilder
   DlpPayloadLogSettingBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _publicKey = $v.publicKey;
       _updatedAt = $v.updatedAt;
+      _publicKey = $v.publicKey;
       _$v = null;
     }
     return this;
@@ -95,9 +95,9 @@ class DlpPayloadLogSettingBuilder
   _$DlpPayloadLogSetting _build() {
     final _$result = _$v ??
         _$DlpPayloadLogSetting._(
-          publicKey: publicKey,
           updatedAt: BuiltValueNullFieldError.checkNotNull(
               updatedAt, r'DlpPayloadLogSetting', 'updatedAt'),
+          publicKey: publicKey,
         );
     replace(_$result);
     return _$result;

@@ -12,8 +12,6 @@ class _$CertificatePacksOrderAdvancedCertificateManagerCertificatePackRequest
   final TlsCertificatesAndHostnamesSchemasCertificateAuthority
       certificateAuthority;
   @override
-  final bool? cloudflareBranding;
-  @override
   final BuiltList<String> hosts;
   @override
   final TlsCertificatesAndHostnamesAdvancedType type;
@@ -21,6 +19,8 @@ class _$CertificatePacksOrderAdvancedCertificateManagerCertificatePackRequest
   final TlsCertificatesAndHostnamesValidationMethod validationMethod;
   @override
   final TlsCertificatesAndHostnamesValidityDays validityDays;
+  @override
+  final bool? cloudflareBranding;
 
   factory _$CertificatePacksOrderAdvancedCertificateManagerCertificatePackRequest(
           [void Function(
@@ -32,11 +32,11 @@ class _$CertificatePacksOrderAdvancedCertificateManagerCertificatePackRequest
 
   _$CertificatePacksOrderAdvancedCertificateManagerCertificatePackRequest._(
       {required this.certificateAuthority,
-      this.cloudflareBranding,
       required this.hosts,
       required this.type,
       required this.validationMethod,
-      required this.validityDays})
+      required this.validityDays,
+      this.cloudflareBranding})
       : super._();
   @override
   CertificatePacksOrderAdvancedCertificateManagerCertificatePackRequest rebuild(
@@ -57,22 +57,22 @@ class _$CertificatePacksOrderAdvancedCertificateManagerCertificatePackRequest
     return other
             is CertificatePacksOrderAdvancedCertificateManagerCertificatePackRequest &&
         certificateAuthority == other.certificateAuthority &&
-        cloudflareBranding == other.cloudflareBranding &&
         hosts == other.hosts &&
         type == other.type &&
         validationMethod == other.validationMethod &&
-        validityDays == other.validityDays;
+        validityDays == other.validityDays &&
+        cloudflareBranding == other.cloudflareBranding;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
     _$hash = $jc(_$hash, certificateAuthority.hashCode);
-    _$hash = $jc(_$hash, cloudflareBranding.hashCode);
     _$hash = $jc(_$hash, hosts.hashCode);
     _$hash = $jc(_$hash, type.hashCode);
     _$hash = $jc(_$hash, validationMethod.hashCode);
     _$hash = $jc(_$hash, validityDays.hashCode);
+    _$hash = $jc(_$hash, cloudflareBranding.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -82,11 +82,11 @@ class _$CertificatePacksOrderAdvancedCertificateManagerCertificatePackRequest
     return (newBuiltValueToStringHelper(
             r'CertificatePacksOrderAdvancedCertificateManagerCertificatePackRequest')
           ..add('certificateAuthority', certificateAuthority)
-          ..add('cloudflareBranding', cloudflareBranding)
           ..add('hosts', hosts)
           ..add('type', type)
           ..add('validationMethod', validationMethod)
-          ..add('validityDays', validityDays))
+          ..add('validityDays', validityDays)
+          ..add('cloudflareBranding', cloudflareBranding))
         .toString();
   }
 }
@@ -105,11 +105,6 @@ class CertificatePacksOrderAdvancedCertificateManagerCertificatePackRequestBuild
           TlsCertificatesAndHostnamesSchemasCertificateAuthority?
               certificateAuthority) =>
       _$this._certificateAuthority = certificateAuthority;
-
-  bool? _cloudflareBranding;
-  bool? get cloudflareBranding => _$this._cloudflareBranding;
-  set cloudflareBranding(bool? cloudflareBranding) =>
-      _$this._cloudflareBranding = cloudflareBranding;
 
   ListBuilder<String>? _hosts;
   ListBuilder<String> get hosts => _$this._hosts ??= ListBuilder<String>();
@@ -133,6 +128,11 @@ class CertificatePacksOrderAdvancedCertificateManagerCertificatePackRequestBuild
   set validityDays(TlsCertificatesAndHostnamesValidityDays? validityDays) =>
       _$this._validityDays = validityDays;
 
+  bool? _cloudflareBranding;
+  bool? get cloudflareBranding => _$this._cloudflareBranding;
+  set cloudflareBranding(bool? cloudflareBranding) =>
+      _$this._cloudflareBranding = cloudflareBranding;
+
   CertificatePacksOrderAdvancedCertificateManagerCertificatePackRequestBuilder() {
     CertificatePacksOrderAdvancedCertificateManagerCertificatePackRequest
         ._defaults(this);
@@ -143,11 +143,11 @@ class CertificatePacksOrderAdvancedCertificateManagerCertificatePackRequestBuild
     final $v = _$v;
     if ($v != null) {
       _certificateAuthority = $v.certificateAuthority;
-      _cloudflareBranding = $v.cloudflareBranding;
       _hosts = $v.hosts.toBuilder();
       _type = $v.type;
       _validationMethod = $v.validationMethod;
       _validityDays = $v.validityDays;
+      _cloudflareBranding = $v.cloudflareBranding;
       _$v = null;
     }
     return this;
@@ -185,7 +185,6 @@ class CertificatePacksOrderAdvancedCertificateManagerCertificatePackRequestBuild
                 certificateAuthority,
                 r'CertificatePacksOrderAdvancedCertificateManagerCertificatePackRequest',
                 'certificateAuthority'),
-            cloudflareBranding: cloudflareBranding,
             hosts: hosts.build(),
             type: BuiltValueNullFieldError.checkNotNull(
                 type,
@@ -199,6 +198,7 @@ class CertificatePacksOrderAdvancedCertificateManagerCertificatePackRequestBuild
                 validityDays,
                 r'CertificatePacksOrderAdvancedCertificateManagerCertificatePackRequest',
                 'validityDays'),
+            cloudflareBranding: cloudflareBranding,
           );
     } catch (_) {
       late String _$failedField;

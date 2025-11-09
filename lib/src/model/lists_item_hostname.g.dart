@@ -8,15 +8,15 @@ part of 'lists_item_hostname.dart';
 
 class _$ListsItemHostname extends ListsItemHostname {
   @override
-  final bool? excludeExactHostname;
-  @override
   final String urlHostname;
+  @override
+  final bool? excludeExactHostname;
 
   factory _$ListsItemHostname(
           [void Function(ListsItemHostnameBuilder)? updates]) =>
       (ListsItemHostnameBuilder()..update(updates))._build();
 
-  _$ListsItemHostname._({this.excludeExactHostname, required this.urlHostname})
+  _$ListsItemHostname._({required this.urlHostname, this.excludeExactHostname})
       : super._();
   @override
   ListsItemHostname rebuild(void Function(ListsItemHostnameBuilder) updates) =>
@@ -30,15 +30,15 @@ class _$ListsItemHostname extends ListsItemHostname {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is ListsItemHostname &&
-        excludeExactHostname == other.excludeExactHostname &&
-        urlHostname == other.urlHostname;
+        urlHostname == other.urlHostname &&
+        excludeExactHostname == other.excludeExactHostname;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, excludeExactHostname.hashCode);
     _$hash = $jc(_$hash, urlHostname.hashCode);
+    _$hash = $jc(_$hash, excludeExactHostname.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -46,8 +46,8 @@ class _$ListsItemHostname extends ListsItemHostname {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'ListsItemHostname')
-          ..add('excludeExactHostname', excludeExactHostname)
-          ..add('urlHostname', urlHostname))
+          ..add('urlHostname', urlHostname)
+          ..add('excludeExactHostname', excludeExactHostname))
         .toString();
   }
 }
@@ -56,14 +56,14 @@ class ListsItemHostnameBuilder
     implements Builder<ListsItemHostname, ListsItemHostnameBuilder> {
   _$ListsItemHostname? _$v;
 
+  String? _urlHostname;
+  String? get urlHostname => _$this._urlHostname;
+  set urlHostname(String? urlHostname) => _$this._urlHostname = urlHostname;
+
   bool? _excludeExactHostname;
   bool? get excludeExactHostname => _$this._excludeExactHostname;
   set excludeExactHostname(bool? excludeExactHostname) =>
       _$this._excludeExactHostname = excludeExactHostname;
-
-  String? _urlHostname;
-  String? get urlHostname => _$this._urlHostname;
-  set urlHostname(String? urlHostname) => _$this._urlHostname = urlHostname;
 
   ListsItemHostnameBuilder() {
     ListsItemHostname._defaults(this);
@@ -72,8 +72,8 @@ class ListsItemHostnameBuilder
   ListsItemHostnameBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _excludeExactHostname = $v.excludeExactHostname;
       _urlHostname = $v.urlHostname;
+      _excludeExactHostname = $v.excludeExactHostname;
       _$v = null;
     }
     return this;
@@ -95,9 +95,9 @@ class ListsItemHostnameBuilder
   _$ListsItemHostname _build() {
     final _$result = _$v ??
         _$ListsItemHostname._(
-          excludeExactHostname: excludeExactHostname,
           urlHostname: BuiltValueNullFieldError.checkNotNull(
               urlHostname, r'ListsItemHostname', 'urlHostname'),
+          excludeExactHostname: excludeExactHostname,
         );
     replace(_$result);
     return _$result;

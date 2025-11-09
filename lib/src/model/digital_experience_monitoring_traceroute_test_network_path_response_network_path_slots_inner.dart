@@ -14,9 +14,9 @@ part 'digital_experience_monitoring_traceroute_test_network_path_response_networ
 /// * [clientToAppRttMs] - Round trip time in ms of the client to app mile
 /// * [clientToCfEgressRttMs] - Round trip time in ms of the client to Cloudflare egress mile
 /// * [clientToCfIngressRttMs] - Round trip time in ms of the client to Cloudflare ingress mile
-/// * [clientToIspRttMs] - Round trip time in ms of the client to ISP mile
 /// * [id] - API Resource UUID tag.
 /// * [timestamp] 
+/// * [clientToIspRttMs] - Round trip time in ms of the client to ISP mile
 @BuiltValue()
 abstract class DigitalExperienceMonitoringTracerouteTestNetworkPathResponseNetworkPathSlotsInner implements Built<DigitalExperienceMonitoringTracerouteTestNetworkPathResponseNetworkPathSlotsInner, DigitalExperienceMonitoringTracerouteTestNetworkPathResponseNetworkPathSlotsInnerBuilder> {
   /// Round trip time in ms of the client to app mile
@@ -31,16 +31,16 @@ abstract class DigitalExperienceMonitoringTracerouteTestNetworkPathResponseNetwo
   @BuiltValueField(wireName: r'clientToCfIngressRttMs')
   int? get clientToCfIngressRttMs;
 
-  /// Round trip time in ms of the client to ISP mile
-  @BuiltValueField(wireName: r'clientToIspRttMs')
-  int? get clientToIspRttMs;
-
   /// API Resource UUID tag.
   @BuiltValueField(wireName: r'id')
   String get id;
 
   @BuiltValueField(wireName: r'timestamp')
   String get timestamp;
+
+  /// Round trip time in ms of the client to ISP mile
+  @BuiltValueField(wireName: r'clientToIspRttMs')
+  int? get clientToIspRttMs;
 
   DigitalExperienceMonitoringTracerouteTestNetworkPathResponseNetworkPathSlotsInner._();
 
@@ -80,13 +80,6 @@ class _$DigitalExperienceMonitoringTracerouteTestNetworkPathResponseNetworkPathS
       object.clientToCfIngressRttMs,
       specifiedType: const FullType.nullable(int),
     );
-    if (object.clientToIspRttMs != null) {
-      yield r'clientToIspRttMs';
-      yield serializers.serialize(
-        object.clientToIspRttMs,
-        specifiedType: const FullType.nullable(int),
-      );
-    }
     yield r'id';
     yield serializers.serialize(
       object.id,
@@ -97,6 +90,13 @@ class _$DigitalExperienceMonitoringTracerouteTestNetworkPathResponseNetworkPathS
       object.timestamp,
       specifiedType: const FullType(String),
     );
+    if (object.clientToIspRttMs != null) {
+      yield r'clientToIspRttMs';
+      yield serializers.serialize(
+        object.clientToIspRttMs,
+        specifiedType: const FullType.nullable(int),
+      );
+    }
   }
 
   @override
@@ -144,14 +144,6 @@ class _$DigitalExperienceMonitoringTracerouteTestNetworkPathResponseNetworkPathS
           if (valueDes == null) continue;
           result.clientToCfIngressRttMs = valueDes;
           break;
-        case r'clientToIspRttMs':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
-          if (valueDes == null) continue;
-          result.clientToIspRttMs = valueDes;
-          break;
         case r'id':
           final valueDes = serializers.deserialize(
             value,
@@ -165,6 +157,14 @@ class _$DigitalExperienceMonitoringTracerouteTestNetworkPathResponseNetworkPathS
             specifiedType: const FullType(String),
           ) as String;
           result.timestamp = valueDes;
+          break;
+        case r'clientToIspRttMs':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType.nullable(int),
+          ) as int?;
+          if (valueDes == null) continue;
+          result.clientToIspRttMs = valueDes;
           break;
         default:
           unhandled.add(key);

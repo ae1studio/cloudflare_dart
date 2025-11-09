@@ -11,17 +11,17 @@ part 'snippets_message.g.dart';
 /// A message.
 ///
 /// Properties:
-/// * [code] - A unique code for this message.
 /// * [message] - A text description of this message.
+/// * [code] - A unique code for this message.
 @BuiltValue()
 abstract class SnippetsMessage implements Built<SnippetsMessage, SnippetsMessageBuilder> {
-  /// A unique code for this message.
-  @BuiltValueField(wireName: r'code')
-  int? get code;
-
   /// A text description of this message.
   @BuiltValueField(wireName: r'message')
   String get message;
+
+  /// A unique code for this message.
+  @BuiltValueField(wireName: r'code')
+  int? get code;
 
   SnippetsMessage._();
 
@@ -46,6 +46,11 @@ class _$SnippetsMessageSerializer implements PrimitiveSerializer<SnippetsMessage
     SnippetsMessage object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    yield r'message';
+    yield serializers.serialize(
+      object.message,
+      specifiedType: const FullType(String),
+    );
     if (object.code != null) {
       yield r'code';
       yield serializers.serialize(
@@ -53,11 +58,6 @@ class _$SnippetsMessageSerializer implements PrimitiveSerializer<SnippetsMessage
         specifiedType: const FullType(int),
       );
     }
-    yield r'message';
-    yield serializers.serialize(
-      object.message,
-      specifiedType: const FullType(String),
-    );
   }
 
   @override
@@ -81,19 +81,19 @@ class _$SnippetsMessageSerializer implements PrimitiveSerializer<SnippetsMessage
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'code':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
-          result.code = valueDes;
-          break;
         case r'message':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(String),
           ) as String;
           result.message = valueDes;
+          break;
+        case r'code':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(int),
+          ) as int;
+          result.code = valueDes;
           break;
         default:
           unhandled.add(key);

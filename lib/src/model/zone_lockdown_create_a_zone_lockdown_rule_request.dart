@@ -14,15 +14,19 @@ part 'zone_lockdown_create_a_zone_lockdown_rule_request.g.dart';
 ///
 /// Properties:
 /// * [configurations] - A list of IP addresses or CIDR ranges that will be allowed to access the URLs specified in the Zone Lockdown rule. You can include any number of `ip` or `ip_range` configurations.
+/// * [urls] - The URLs to include in the current WAF override. You can use wildcards. Each entered URL will be escaped before use, which means you can only use simple wildcard patterns.
 /// * [description] - An informative summary of the rule. This value is sanitized and any tags will be removed.
 /// * [paused] - When true, indicates that the rule is currently paused.
 /// * [priority] - The priority of the rule to control the processing order. A lower number indicates higher priority. If not provided, any rules with a configured priority will be processed before rules without a priority.
-/// * [urls] - The URLs to include in the current WAF override. You can use wildcards. Each entered URL will be escaped before use, which means you can only use simple wildcard patterns.
 @BuiltValue()
 abstract class ZoneLockdownCreateAZoneLockdownRuleRequest implements Built<ZoneLockdownCreateAZoneLockdownRuleRequest, ZoneLockdownCreateAZoneLockdownRuleRequestBuilder> {
   /// A list of IP addresses or CIDR ranges that will be allowed to access the URLs specified in the Zone Lockdown rule. You can include any number of `ip` or `ip_range` configurations.
   @BuiltValueField(wireName: r'configurations')
   BuiltList<FirewallConfigurationsInner> get configurations;
+
+  /// The URLs to include in the current WAF override. You can use wildcards. Each entered URL will be escaped before use, which means you can only use simple wildcard patterns.
+  @BuiltValueField(wireName: r'urls')
+  BuiltList<String> get urls;
 
   /// An informative summary of the rule. This value is sanitized and any tags will be removed.
   @BuiltValueField(wireName: r'description')
@@ -35,10 +39,6 @@ abstract class ZoneLockdownCreateAZoneLockdownRuleRequest implements Built<ZoneL
   /// The priority of the rule to control the processing order. A lower number indicates higher priority. If not provided, any rules with a configured priority will be processed before rules without a priority.
   @BuiltValueField(wireName: r'priority')
   num? get priority;
-
-  /// The URLs to include in the current WAF override. You can use wildcards. Each entered URL will be escaped before use, which means you can only use simple wildcard patterns.
-  @BuiltValueField(wireName: r'urls')
-  BuiltList<String> get urls;
 
   ZoneLockdownCreateAZoneLockdownRuleRequest._();
 
@@ -68,6 +68,11 @@ class _$ZoneLockdownCreateAZoneLockdownRuleRequestSerializer implements Primitiv
       object.configurations,
       specifiedType: const FullType(BuiltList, [FullType(FirewallConfigurationsInner)]),
     );
+    yield r'urls';
+    yield serializers.serialize(
+      object.urls,
+      specifiedType: const FullType(BuiltList, [FullType(String)]),
+    );
     if (object.description != null) {
       yield r'description';
       yield serializers.serialize(
@@ -89,11 +94,6 @@ class _$ZoneLockdownCreateAZoneLockdownRuleRequestSerializer implements Primitiv
         specifiedType: const FullType(num),
       );
     }
-    yield r'urls';
-    yield serializers.serialize(
-      object.urls,
-      specifiedType: const FullType(BuiltList, [FullType(String)]),
-    );
   }
 
   @override
@@ -124,6 +124,13 @@ class _$ZoneLockdownCreateAZoneLockdownRuleRequestSerializer implements Primitiv
           ) as BuiltList<FirewallConfigurationsInner>;
           result.configurations.replace(valueDes);
           break;
+        case r'urls':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BuiltList, [FullType(String)]),
+          ) as BuiltList<String>;
+          result.urls.replace(valueDes);
+          break;
         case r'description':
           final valueDes = serializers.deserialize(
             value,
@@ -144,13 +151,6 @@ class _$ZoneLockdownCreateAZoneLockdownRuleRequestSerializer implements Primitiv
             specifiedType: const FullType(num),
           ) as num;
           result.priority = valueDes;
-          break;
-        case r'urls':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>;
-          result.urls.replace(valueDes);
           break;
         default:
           unhandled.add(key);

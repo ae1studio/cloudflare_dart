@@ -12,13 +12,16 @@ part 'email_security_attachment.g.dart';
 /// EmailSecurityAttachment
 ///
 /// Properties:
+/// * [size] 
 /// * [contentType] 
 /// * [detection] 
 /// * [encrypted] 
 /// * [name] 
-/// * [size] 
 @BuiltValue()
 abstract class EmailSecurityAttachment implements Built<EmailSecurityAttachment, EmailSecurityAttachmentBuilder> {
+  @BuiltValueField(wireName: r'size')
+  int get size;
+
   @BuiltValueField(wireName: r'content_type')
   String? get contentType;
 
@@ -30,9 +33,6 @@ abstract class EmailSecurityAttachment implements Built<EmailSecurityAttachment,
 
   @BuiltValueField(wireName: r'name')
   String? get name;
-
-  @BuiltValueField(wireName: r'size')
-  int get size;
 
   EmailSecurityAttachment._();
 
@@ -57,6 +57,11 @@ class _$EmailSecurityAttachmentSerializer implements PrimitiveSerializer<EmailSe
     EmailSecurityAttachment object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    yield r'size';
+    yield serializers.serialize(
+      object.size,
+      specifiedType: const FullType(int),
+    );
     if (object.contentType != null) {
       yield r'content_type';
       yield serializers.serialize(
@@ -85,11 +90,6 @@ class _$EmailSecurityAttachmentSerializer implements PrimitiveSerializer<EmailSe
         specifiedType: const FullType.nullable(String),
       );
     }
-    yield r'size';
-    yield serializers.serialize(
-      object.size,
-      specifiedType: const FullType(int),
-    );
   }
 
   @override
@@ -113,6 +113,13 @@ class _$EmailSecurityAttachmentSerializer implements PrimitiveSerializer<EmailSe
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
+        case r'size':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(int),
+          ) as int;
+          result.size = valueDes;
+          break;
         case r'content_type':
           final valueDes = serializers.deserialize(
             value,
@@ -143,13 +150,6 @@ class _$EmailSecurityAttachmentSerializer implements PrimitiveSerializer<EmailSe
           ) as String?;
           if (valueDes == null) continue;
           result.name = valueDes;
-          break;
-        case r'size':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
-          result.size = valueDes;
           break;
         default:
           unhandled.add(key);

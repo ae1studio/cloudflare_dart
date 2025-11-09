@@ -12,23 +12,17 @@ part 'mcp_portals_api_create_servers_request.g.dart';
 /// McpPortalsApiCreateServersRequest
 ///
 /// Properties:
-/// * [authCredentials] 
 /// * [authType] 
-/// * [description] 
 /// * [hostname] 
 /// * [id] - server id
 /// * [name] 
+/// * [authCredentials] 
+/// * [description] 
 @BuiltValue()
 abstract class McpPortalsApiCreateServersRequest implements Built<McpPortalsApiCreateServersRequest, McpPortalsApiCreateServersRequestBuilder> {
-  @BuiltValueField(wireName: r'auth_credentials')
-  String? get authCredentials;
-
   @BuiltValueField(wireName: r'auth_type')
   McpPortalsApiCreateServersRequestAuthTypeEnum get authType;
   // enum authTypeEnum {  oauth,  bearer,  unauthenticated,  };
-
-  @BuiltValueField(wireName: r'description')
-  String? get description;
 
   @BuiltValueField(wireName: r'hostname')
   String get hostname;
@@ -39,6 +33,12 @@ abstract class McpPortalsApiCreateServersRequest implements Built<McpPortalsApiC
 
   @BuiltValueField(wireName: r'name')
   String get name;
+
+  @BuiltValueField(wireName: r'auth_credentials')
+  String? get authCredentials;
+
+  @BuiltValueField(wireName: r'description')
+  String? get description;
 
   McpPortalsApiCreateServersRequest._();
 
@@ -63,25 +63,11 @@ class _$McpPortalsApiCreateServersRequestSerializer implements PrimitiveSerializ
     McpPortalsApiCreateServersRequest object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
-    if (object.authCredentials != null) {
-      yield r'auth_credentials';
-      yield serializers.serialize(
-        object.authCredentials,
-        specifiedType: const FullType(String),
-      );
-    }
     yield r'auth_type';
     yield serializers.serialize(
       object.authType,
       specifiedType: const FullType(McpPortalsApiCreateServersRequestAuthTypeEnum),
     );
-    if (object.description != null) {
-      yield r'description';
-      yield serializers.serialize(
-        object.description,
-        specifiedType: const FullType.nullable(String),
-      );
-    }
     yield r'hostname';
     yield serializers.serialize(
       object.hostname,
@@ -97,6 +83,20 @@ class _$McpPortalsApiCreateServersRequestSerializer implements PrimitiveSerializ
       object.name,
       specifiedType: const FullType(String),
     );
+    if (object.authCredentials != null) {
+      yield r'auth_credentials';
+      yield serializers.serialize(
+        object.authCredentials,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.description != null) {
+      yield r'description';
+      yield serializers.serialize(
+        object.description,
+        specifiedType: const FullType.nullable(String),
+      );
+    }
   }
 
   @override
@@ -120,27 +120,12 @@ class _$McpPortalsApiCreateServersRequestSerializer implements PrimitiveSerializ
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'auth_credentials':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.authCredentials = valueDes;
-          break;
         case r'auth_type':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(McpPortalsApiCreateServersRequestAuthTypeEnum),
           ) as McpPortalsApiCreateServersRequestAuthTypeEnum;
           result.authType = valueDes;
-          break;
-        case r'description':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
-          if (valueDes == null) continue;
-          result.description = valueDes;
           break;
         case r'hostname':
           final valueDes = serializers.deserialize(
@@ -162,6 +147,21 @@ class _$McpPortalsApiCreateServersRequestSerializer implements PrimitiveSerializ
             specifiedType: const FullType(String),
           ) as String;
           result.name = valueDes;
+          break;
+        case r'auth_credentials':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.authCredentials = valueDes;
+          break;
+        case r'description':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType.nullable(String),
+          ) as String?;
+          if (valueDes == null) continue;
+          result.description = valueDes;
           break;
         default:
           unhandled.add(key);

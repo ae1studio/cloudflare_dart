@@ -10,13 +10,13 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **account** | **String** |  | 
 **name** | **String** |  | 
-**owner** | **String** |  | [optional] 
 **type** | **String** |  | 
 **facility** | [**NscFacilityInfo**](NscFacilityInfo.md) |  | 
 **site** | **String** | A Cloudflare site name. | 
 **slotId** | **String** |  | 
 **speed** | [**NscApiBandwidth**](NscApiBandwidth.md) |  | 
 **region** | **String** |  | 
+**owner** | **String** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

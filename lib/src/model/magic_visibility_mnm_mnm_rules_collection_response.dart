@@ -10,6 +10,7 @@ import 'package:cloudflare_dart/src/model/magic_visibility_mnm_mnm_rule.dart';
 import 'package:cloudflare_dart/src/model/aaa_messages_inner.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
+import 'package:built_value/json_object.dart';
 
 part 'magic_visibility_mnm_mnm_rules_collection_response.g.dart';
 

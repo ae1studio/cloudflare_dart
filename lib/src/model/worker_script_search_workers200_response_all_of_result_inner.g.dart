@@ -11,15 +11,15 @@ class _$WorkerScriptSearchWorkers200ResponseAllOfResultInner
   @override
   final DateTime createdOn;
   @override
-  final bool? environmentIsDefault;
-  @override
-  final String? environmentName;
-  @override
   final DateTime modifiedOn;
   @override
   final String scriptName;
   @override
   final String scriptTag;
+  @override
+  final bool? environmentIsDefault;
+  @override
+  final String? environmentName;
   @override
   final String? serviceName;
 
@@ -33,11 +33,11 @@ class _$WorkerScriptSearchWorkers200ResponseAllOfResultInner
 
   _$WorkerScriptSearchWorkers200ResponseAllOfResultInner._(
       {required this.createdOn,
-      this.environmentIsDefault,
-      this.environmentName,
       required this.modifiedOn,
       required this.scriptName,
       required this.scriptTag,
+      this.environmentIsDefault,
+      this.environmentName,
       this.serviceName})
       : super._();
   @override
@@ -57,11 +57,11 @@ class _$WorkerScriptSearchWorkers200ResponseAllOfResultInner
     if (identical(other, this)) return true;
     return other is WorkerScriptSearchWorkers200ResponseAllOfResultInner &&
         createdOn == other.createdOn &&
-        environmentIsDefault == other.environmentIsDefault &&
-        environmentName == other.environmentName &&
         modifiedOn == other.modifiedOn &&
         scriptName == other.scriptName &&
         scriptTag == other.scriptTag &&
+        environmentIsDefault == other.environmentIsDefault &&
+        environmentName == other.environmentName &&
         serviceName == other.serviceName;
   }
 
@@ -69,11 +69,11 @@ class _$WorkerScriptSearchWorkers200ResponseAllOfResultInner
   int get hashCode {
     var _$hash = 0;
     _$hash = $jc(_$hash, createdOn.hashCode);
-    _$hash = $jc(_$hash, environmentIsDefault.hashCode);
-    _$hash = $jc(_$hash, environmentName.hashCode);
     _$hash = $jc(_$hash, modifiedOn.hashCode);
     _$hash = $jc(_$hash, scriptName.hashCode);
     _$hash = $jc(_$hash, scriptTag.hashCode);
+    _$hash = $jc(_$hash, environmentIsDefault.hashCode);
+    _$hash = $jc(_$hash, environmentName.hashCode);
     _$hash = $jc(_$hash, serviceName.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
@@ -84,11 +84,11 @@ class _$WorkerScriptSearchWorkers200ResponseAllOfResultInner
     return (newBuiltValueToStringHelper(
             r'WorkerScriptSearchWorkers200ResponseAllOfResultInner')
           ..add('createdOn', createdOn)
-          ..add('environmentIsDefault', environmentIsDefault)
-          ..add('environmentName', environmentName)
           ..add('modifiedOn', modifiedOn)
           ..add('scriptName', scriptName)
           ..add('scriptTag', scriptTag)
+          ..add('environmentIsDefault', environmentIsDefault)
+          ..add('environmentName', environmentName)
           ..add('serviceName', serviceName))
         .toString();
   }
@@ -104,16 +104,6 @@ class WorkerScriptSearchWorkers200ResponseAllOfResultInnerBuilder
   DateTime? get createdOn => _$this._createdOn;
   set createdOn(DateTime? createdOn) => _$this._createdOn = createdOn;
 
-  bool? _environmentIsDefault;
-  bool? get environmentIsDefault => _$this._environmentIsDefault;
-  set environmentIsDefault(bool? environmentIsDefault) =>
-      _$this._environmentIsDefault = environmentIsDefault;
-
-  String? _environmentName;
-  String? get environmentName => _$this._environmentName;
-  set environmentName(String? environmentName) =>
-      _$this._environmentName = environmentName;
-
   DateTime? _modifiedOn;
   DateTime? get modifiedOn => _$this._modifiedOn;
   set modifiedOn(DateTime? modifiedOn) => _$this._modifiedOn = modifiedOn;
@@ -125,6 +115,16 @@ class WorkerScriptSearchWorkers200ResponseAllOfResultInnerBuilder
   String? _scriptTag;
   String? get scriptTag => _$this._scriptTag;
   set scriptTag(String? scriptTag) => _$this._scriptTag = scriptTag;
+
+  bool? _environmentIsDefault;
+  bool? get environmentIsDefault => _$this._environmentIsDefault;
+  set environmentIsDefault(bool? environmentIsDefault) =>
+      _$this._environmentIsDefault = environmentIsDefault;
+
+  String? _environmentName;
+  String? get environmentName => _$this._environmentName;
+  set environmentName(String? environmentName) =>
+      _$this._environmentName = environmentName;
 
   String? _serviceName;
   String? get serviceName => _$this._serviceName;
@@ -138,11 +138,11 @@ class WorkerScriptSearchWorkers200ResponseAllOfResultInnerBuilder
     final $v = _$v;
     if ($v != null) {
       _createdOn = $v.createdOn;
-      _environmentIsDefault = $v.environmentIsDefault;
-      _environmentName = $v.environmentName;
       _modifiedOn = $v.modifiedOn;
       _scriptName = $v.scriptName;
       _scriptTag = $v.scriptTag;
+      _environmentIsDefault = $v.environmentIsDefault;
+      _environmentName = $v.environmentName;
       _serviceName = $v.serviceName;
       _$v = null;
     }
@@ -172,8 +172,6 @@ class WorkerScriptSearchWorkers200ResponseAllOfResultInnerBuilder
               createdOn,
               r'WorkerScriptSearchWorkers200ResponseAllOfResultInner',
               'createdOn'),
-          environmentIsDefault: environmentIsDefault,
-          environmentName: environmentName,
           modifiedOn: BuiltValueNullFieldError.checkNotNull(
               modifiedOn,
               r'WorkerScriptSearchWorkers200ResponseAllOfResultInner',
@@ -186,6 +184,8 @@ class WorkerScriptSearchWorkers200ResponseAllOfResultInnerBuilder
               scriptTag,
               r'WorkerScriptSearchWorkers200ResponseAllOfResultInner',
               'scriptTag'),
+          environmentIsDefault: environmentIsDefault,
+          environmentName: environmentName,
           serviceName: serviceName,
         );
     replace(_$result);

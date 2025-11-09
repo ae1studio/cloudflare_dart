@@ -19,13 +19,13 @@ part 'load_balancers_create_load_balancer_request.g.dart';
 /// LoadBalancersCreateLoadBalancerRequest
 ///
 /// Properties:
+/// * [defaultPools] - A list of pool IDs ordered by their failover priority. Pools defined here are used by default, or when region_pools are not configured for a given region.
+/// * [fallbackPool] - The pool ID to use when all other pools are detected as unhealthy.
+/// * [name] - The DNS hostname to associate with your Load Balancer. If this hostname already exists as a DNS record in Cloudflare's DNS, the Load Balancer will take precedence and the DNS record will not be used.
 /// * [adaptiveRouting] 
 /// * [countryPools] - A mapping of country codes to a list of pool IDs (ordered by their failover priority) for the given country. Any country not explicitly defined will fall back to using the corresponding region_pool mapping if it exists else to default_pools.
-/// * [defaultPools] - A list of pool IDs ordered by their failover priority. Pools defined here are used by default, or when region_pools are not configured for a given region.
 /// * [description] - Object description.
-/// * [fallbackPool] - The pool ID to use when all other pools are detected as unhealthy.
 /// * [locationStrategy] 
-/// * [name] - The DNS hostname to associate with your Load Balancer. If this hostname already exists as a DNS record in Cloudflare's DNS, the Load Balancer will take precedence and the DNS record will not be used.
 /// * [networks] - List of networks where Load Balancer or Pool is enabled.
 /// * [popPools] - Enterprise only: A mapping of Cloudflare PoP identifiers to a list of pool IDs (ordered by their failover priority) for the PoP (datacenter). Any PoPs not explicitly defined will fall back to using the corresponding country_pool, then region_pool mapping if it exists else to default_pools.
 /// * [proxied] - Whether the hostname should be gray clouded (false) or orange clouded (true).
@@ -39,6 +39,18 @@ part 'load_balancers_create_load_balancer_request.g.dart';
 /// * [ttl] - Time to live (TTL) of the DNS entry for the IP address returned by this load balancer. This only applies to gray-clouded (unproxied) load balancers.
 @BuiltValue()
 abstract class LoadBalancersCreateLoadBalancerRequest implements Built<LoadBalancersCreateLoadBalancerRequest, LoadBalancersCreateLoadBalancerRequestBuilder> {
+  /// A list of pool IDs ordered by their failover priority. Pools defined here are used by default, or when region_pools are not configured for a given region.
+  @BuiltValueField(wireName: r'default_pools')
+  BuiltList<String> get defaultPools;
+
+  /// The pool ID to use when all other pools are detected as unhealthy.
+  @BuiltValueField(wireName: r'fallback_pool')
+  String get fallbackPool;
+
+  /// The DNS hostname to associate with your Load Balancer. If this hostname already exists as a DNS record in Cloudflare's DNS, the Load Balancer will take precedence and the DNS record will not be used.
+  @BuiltValueField(wireName: r'name')
+  String get name;
+
   @BuiltValueField(wireName: r'adaptive_routing')
   LoadBalancingAdaptiveRouting? get adaptiveRouting;
 
@@ -46,24 +58,12 @@ abstract class LoadBalancersCreateLoadBalancerRequest implements Built<LoadBalan
   @BuiltValueField(wireName: r'country_pools')
   BuiltMap<String, BuiltList<String>>? get countryPools;
 
-  /// A list of pool IDs ordered by their failover priority. Pools defined here are used by default, or when region_pools are not configured for a given region.
-  @BuiltValueField(wireName: r'default_pools')
-  BuiltList<String> get defaultPools;
-
   /// Object description.
   @BuiltValueField(wireName: r'description')
   String? get description;
 
-  /// The pool ID to use when all other pools are detected as unhealthy.
-  @BuiltValueField(wireName: r'fallback_pool')
-  String get fallbackPool;
-
   @BuiltValueField(wireName: r'location_strategy')
   LoadBalancingLocationStrategy? get locationStrategy;
-
-  /// The DNS hostname to associate with your Load Balancer. If this hostname already exists as a DNS record in Cloudflare's DNS, the Load Balancer will take precedence and the DNS record will not be used.
-  @BuiltValueField(wireName: r'name')
-  String get name;
 
   /// List of networks where Load Balancer or Pool is enabled.
   @BuiltValueField(wireName: r'networks')
@@ -131,6 +131,21 @@ class _$LoadBalancersCreateLoadBalancerRequestSerializer implements PrimitiveSer
     LoadBalancersCreateLoadBalancerRequest object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    yield r'default_pools';
+    yield serializers.serialize(
+      object.defaultPools,
+      specifiedType: const FullType(BuiltList, [FullType(String)]),
+    );
+    yield r'fallback_pool';
+    yield serializers.serialize(
+      object.fallbackPool,
+      specifiedType: const FullType(String),
+    );
+    yield r'name';
+    yield serializers.serialize(
+      object.name,
+      specifiedType: const FullType(String),
+    );
     if (object.adaptiveRouting != null) {
       yield r'adaptive_routing';
       yield serializers.serialize(
@@ -145,11 +160,6 @@ class _$LoadBalancersCreateLoadBalancerRequestSerializer implements PrimitiveSer
         specifiedType: const FullType(BuiltMap, [FullType(String), FullType(BuiltList, [FullType(String)])]),
       );
     }
-    yield r'default_pools';
-    yield serializers.serialize(
-      object.defaultPools,
-      specifiedType: const FullType(BuiltList, [FullType(String)]),
-    );
     if (object.description != null) {
       yield r'description';
       yield serializers.serialize(
@@ -157,11 +167,6 @@ class _$LoadBalancersCreateLoadBalancerRequestSerializer implements PrimitiveSer
         specifiedType: const FullType(String),
       );
     }
-    yield r'fallback_pool';
-    yield serializers.serialize(
-      object.fallbackPool,
-      specifiedType: const FullType(String),
-    );
     if (object.locationStrategy != null) {
       yield r'location_strategy';
       yield serializers.serialize(
@@ -169,11 +174,6 @@ class _$LoadBalancersCreateLoadBalancerRequestSerializer implements PrimitiveSer
         specifiedType: const FullType(LoadBalancingLocationStrategy),
       );
     }
-    yield r'name';
-    yield serializers.serialize(
-      object.name,
-      specifiedType: const FullType(String),
-    );
     if (object.networks != null) {
       yield r'networks';
       yield serializers.serialize(
@@ -274,6 +274,27 @@ class _$LoadBalancersCreateLoadBalancerRequestSerializer implements PrimitiveSer
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
+        case r'default_pools':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BuiltList, [FullType(String)]),
+          ) as BuiltList<String>;
+          result.defaultPools.replace(valueDes);
+          break;
+        case r'fallback_pool':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.fallbackPool = valueDes;
+          break;
+        case r'name':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.name = valueDes;
+          break;
         case r'adaptive_routing':
           final valueDes = serializers.deserialize(
             value,
@@ -288,13 +309,6 @@ class _$LoadBalancersCreateLoadBalancerRequestSerializer implements PrimitiveSer
           ) as BuiltMap<String, BuiltList<String>>;
           result.countryPools.replace(valueDes);
           break;
-        case r'default_pools':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>;
-          result.defaultPools.replace(valueDes);
-          break;
         case r'description':
           final valueDes = serializers.deserialize(
             value,
@@ -302,26 +316,12 @@ class _$LoadBalancersCreateLoadBalancerRequestSerializer implements PrimitiveSer
           ) as String;
           result.description = valueDes;
           break;
-        case r'fallback_pool':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.fallbackPool = valueDes;
-          break;
         case r'location_strategy':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(LoadBalancingLocationStrategy),
           ) as LoadBalancingLocationStrategy;
           result.locationStrategy.replace(valueDes);
-          break;
-        case r'name':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.name = valueDes;
           break;
         case r'networks':
           final valueDes = serializers.deserialize(

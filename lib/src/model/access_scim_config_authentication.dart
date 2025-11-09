@@ -21,8 +21,8 @@ part 'access_scim_config_authentication.g.dart';
 /// * [authorizationUrl] - URL used to generate the auth code used during token generation.
 /// * [clientId] - Client ID of the Access service token used to authenticate with the remote service.
 /// * [clientSecret] - Client secret of the Access service token used to authenticate with the remote service.
-/// * [scopes] - The authorization scopes to request when generating the token used to authenticate with the remove SCIM service.
 /// * [tokenUrl] - URL used to generate the token used to authenticate with the remote SCIM service.
+/// * [scopes] - The authorization scopes to request when generating the token used to authenticate with the remove SCIM service.
 @BuiltValue()
 abstract class AccessScimConfigAuthentication implements Built<AccessScimConfigAuthentication, AccessScimConfigAuthenticationBuilder> {
   /// One Of [AccessScimConfigSingleAuthentication], [BuiltList<AccessScimConfigSingleAuthentication>]

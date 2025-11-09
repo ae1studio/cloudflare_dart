@@ -19,8 +19,8 @@ part 'workers_ai_post_run_cf_openai_gpt_oss20b_request.g.dart';
 ///
 /// Properties:
 /// * [input] 
-/// * [reasoning] 
 /// * [requests] 
+/// * [reasoning] 
 @BuiltValue()
 abstract class WorkersAiPostRunCfOpenaiGptOss20bRequest implements Built<WorkersAiPostRunCfOpenaiGptOss20bRequest, WorkersAiPostRunCfOpenaiGptOss20bRequestBuilder> {
   /// One Of [GPTOSS20BResponses], [GPTOSS20BResponsesAsync]

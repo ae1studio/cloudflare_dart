@@ -8,13 +8,13 @@ part of 'magic_lans_add_single_request.dart';
 
 class _$MagicLansAddSingleRequest extends MagicLansAddSingleRequest {
   @override
+  final int physport;
+  @override
   final bool? haLink;
   @override
   final String? name;
   @override
   final MagicNat? nat;
-  @override
-  final int physport;
   @override
   final BuiltList<MagicRoutedSubnet>? routedSubnets;
   @override
@@ -27,10 +27,10 @@ class _$MagicLansAddSingleRequest extends MagicLansAddSingleRequest {
       (MagicLansAddSingleRequestBuilder()..update(updates))._build();
 
   _$MagicLansAddSingleRequest._(
-      {this.haLink,
+      {required this.physport,
+      this.haLink,
       this.name,
       this.nat,
-      required this.physport,
       this.routedSubnets,
       this.staticAddressing,
       this.vlanTag})
@@ -48,10 +48,10 @@ class _$MagicLansAddSingleRequest extends MagicLansAddSingleRequest {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is MagicLansAddSingleRequest &&
+        physport == other.physport &&
         haLink == other.haLink &&
         name == other.name &&
         nat == other.nat &&
-        physport == other.physport &&
         routedSubnets == other.routedSubnets &&
         staticAddressing == other.staticAddressing &&
         vlanTag == other.vlanTag;
@@ -60,10 +60,10 @@ class _$MagicLansAddSingleRequest extends MagicLansAddSingleRequest {
   @override
   int get hashCode {
     var _$hash = 0;
+    _$hash = $jc(_$hash, physport.hashCode);
     _$hash = $jc(_$hash, haLink.hashCode);
     _$hash = $jc(_$hash, name.hashCode);
     _$hash = $jc(_$hash, nat.hashCode);
-    _$hash = $jc(_$hash, physport.hashCode);
     _$hash = $jc(_$hash, routedSubnets.hashCode);
     _$hash = $jc(_$hash, staticAddressing.hashCode);
     _$hash = $jc(_$hash, vlanTag.hashCode);
@@ -74,10 +74,10 @@ class _$MagicLansAddSingleRequest extends MagicLansAddSingleRequest {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'MagicLansAddSingleRequest')
+          ..add('physport', physport)
           ..add('haLink', haLink)
           ..add('name', name)
           ..add('nat', nat)
-          ..add('physport', physport)
           ..add('routedSubnets', routedSubnets)
           ..add('staticAddressing', staticAddressing)
           ..add('vlanTag', vlanTag))
@@ -90,6 +90,10 @@ class MagicLansAddSingleRequestBuilder
         Builder<MagicLansAddSingleRequest, MagicLansAddSingleRequestBuilder> {
   _$MagicLansAddSingleRequest? _$v;
 
+  int? _physport;
+  int? get physport => _$this._physport;
+  set physport(int? physport) => _$this._physport = physport;
+
   bool? _haLink;
   bool? get haLink => _$this._haLink;
   set haLink(bool? haLink) => _$this._haLink = haLink;
@@ -101,10 +105,6 @@ class MagicLansAddSingleRequestBuilder
   MagicNatBuilder? _nat;
   MagicNatBuilder get nat => _$this._nat ??= MagicNatBuilder();
   set nat(MagicNatBuilder? nat) => _$this._nat = nat;
-
-  int? _physport;
-  int? get physport => _$this._physport;
-  set physport(int? physport) => _$this._physport = physport;
 
   ListBuilder<MagicRoutedSubnet>? _routedSubnets;
   ListBuilder<MagicRoutedSubnet> get routedSubnets =>
@@ -129,10 +129,10 @@ class MagicLansAddSingleRequestBuilder
   MagicLansAddSingleRequestBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
+      _physport = $v.physport;
       _haLink = $v.haLink;
       _name = $v.name;
       _nat = $v.nat?.toBuilder();
-      _physport = $v.physport;
       _routedSubnets = $v.routedSubnets?.toBuilder();
       _staticAddressing = $v.staticAddressing?.toBuilder();
       _vlanTag = $v.vlanTag;
@@ -159,11 +159,11 @@ class MagicLansAddSingleRequestBuilder
     try {
       _$result = _$v ??
           _$MagicLansAddSingleRequest._(
+            physport: BuiltValueNullFieldError.checkNotNull(
+                physport, r'MagicLansAddSingleRequest', 'physport'),
             haLink: haLink,
             name: name,
             nat: _nat?.build(),
-            physport: BuiltValueNullFieldError.checkNotNull(
-                physport, r'MagicLansAddSingleRequest', 'physport'),
             routedSubnets: _routedSubnets?.build(),
             staticAddressing: _staticAddressing?.build(),
             vlanTag: vlanTag,
@@ -173,7 +173,6 @@ class MagicLansAddSingleRequestBuilder
       try {
         _$failedField = 'nat';
         _nat?.build();
-
         _$failedField = 'routedSubnets';
         _routedSubnets?.build();
         _$failedField = 'staticAddressing';

@@ -13,8 +13,6 @@ class _$EmailSecurityGetMessageDetections200ResponseAllOfResult
   @override
   final BuiltList<EmailSecurityAttachment> attachments;
   @override
-  final EmailSecurityDispositionLabel? finalDisposition;
-  @override
   final BuiltList<EmailSecurityMessageHeader> headers;
   @override
   final BuiltList<EmailSecurityLink> links;
@@ -26,6 +24,8 @@ class _$EmailSecurityGetMessageDetections200ResponseAllOfResult
   @override
   final EmailSecurityGetMessageDetections200ResponseAllOfResultValidation
       validation;
+  @override
+  final EmailSecurityDispositionLabel? finalDisposition;
 
   factory _$EmailSecurityGetMessageDetections200ResponseAllOfResult(
           [void Function(
@@ -38,12 +38,12 @@ class _$EmailSecurityGetMessageDetections200ResponseAllOfResult
   _$EmailSecurityGetMessageDetections200ResponseAllOfResult._(
       {required this.action,
       required this.attachments,
-      this.finalDisposition,
       required this.headers,
       required this.links,
       required this.senderInfo,
       required this.threatCategories,
-      required this.validation})
+      required this.validation,
+      this.finalDisposition})
       : super._();
   @override
   EmailSecurityGetMessageDetections200ResponseAllOfResult rebuild(
@@ -63,12 +63,12 @@ class _$EmailSecurityGetMessageDetections200ResponseAllOfResult
     return other is EmailSecurityGetMessageDetections200ResponseAllOfResult &&
         action == other.action &&
         attachments == other.attachments &&
-        finalDisposition == other.finalDisposition &&
         headers == other.headers &&
         links == other.links &&
         senderInfo == other.senderInfo &&
         threatCategories == other.threatCategories &&
-        validation == other.validation;
+        validation == other.validation &&
+        finalDisposition == other.finalDisposition;
   }
 
   @override
@@ -76,12 +76,12 @@ class _$EmailSecurityGetMessageDetections200ResponseAllOfResult
     var _$hash = 0;
     _$hash = $jc(_$hash, action.hashCode);
     _$hash = $jc(_$hash, attachments.hashCode);
-    _$hash = $jc(_$hash, finalDisposition.hashCode);
     _$hash = $jc(_$hash, headers.hashCode);
     _$hash = $jc(_$hash, links.hashCode);
     _$hash = $jc(_$hash, senderInfo.hashCode);
     _$hash = $jc(_$hash, threatCategories.hashCode);
     _$hash = $jc(_$hash, validation.hashCode);
+    _$hash = $jc(_$hash, finalDisposition.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -92,12 +92,12 @@ class _$EmailSecurityGetMessageDetections200ResponseAllOfResult
             r'EmailSecurityGetMessageDetections200ResponseAllOfResult')
           ..add('action', action)
           ..add('attachments', attachments)
-          ..add('finalDisposition', finalDisposition)
           ..add('headers', headers)
           ..add('links', links)
           ..add('senderInfo', senderInfo)
           ..add('threatCategories', threatCategories)
-          ..add('validation', validation))
+          ..add('validation', validation)
+          ..add('finalDisposition', finalDisposition))
         .toString();
   }
 }
@@ -117,12 +117,6 @@ class EmailSecurityGetMessageDetections200ResponseAllOfResultBuilder
       _$this._attachments ??= ListBuilder<EmailSecurityAttachment>();
   set attachments(ListBuilder<EmailSecurityAttachment>? attachments) =>
       _$this._attachments = attachments;
-
-  EmailSecurityDispositionLabel? _finalDisposition;
-  EmailSecurityDispositionLabel? get finalDisposition =>
-      _$this._finalDisposition;
-  set finalDisposition(EmailSecurityDispositionLabel? finalDisposition) =>
-      _$this._finalDisposition = finalDisposition;
 
   ListBuilder<EmailSecurityMessageHeader>? _headers;
   ListBuilder<EmailSecurityMessageHeader> get headers =>
@@ -162,6 +156,12 @@ class EmailSecurityGetMessageDetections200ResponseAllOfResultBuilder
               validation) =>
       _$this._validation = validation;
 
+  EmailSecurityDispositionLabel? _finalDisposition;
+  EmailSecurityDispositionLabel? get finalDisposition =>
+      _$this._finalDisposition;
+  set finalDisposition(EmailSecurityDispositionLabel? finalDisposition) =>
+      _$this._finalDisposition = finalDisposition;
+
   EmailSecurityGetMessageDetections200ResponseAllOfResultBuilder() {
     EmailSecurityGetMessageDetections200ResponseAllOfResult._defaults(this);
   }
@@ -171,12 +171,12 @@ class EmailSecurityGetMessageDetections200ResponseAllOfResultBuilder
     if ($v != null) {
       _action = $v.action;
       _attachments = $v.attachments.toBuilder();
-      _finalDisposition = $v.finalDisposition;
       _headers = $v.headers.toBuilder();
       _links = $v.links.toBuilder();
       _senderInfo = $v.senderInfo.toBuilder();
       _threatCategories = $v.threatCategories.toBuilder();
       _validation = $v.validation.toBuilder();
+      _finalDisposition = $v.finalDisposition;
       _$v = null;
     }
     return this;
@@ -208,19 +208,18 @@ class EmailSecurityGetMessageDetections200ResponseAllOfResultBuilder
                 r'EmailSecurityGetMessageDetections200ResponseAllOfResult',
                 'action'),
             attachments: attachments.build(),
-            finalDisposition: finalDisposition,
             headers: headers.build(),
             links: links.build(),
             senderInfo: senderInfo.build(),
             threatCategories: threatCategories.build(),
             validation: validation.build(),
+            finalDisposition: finalDisposition,
           );
     } catch (_) {
       late String _$failedField;
       try {
         _$failedField = 'attachments';
         attachments.build();
-
         _$failedField = 'headers';
         headers.build();
         _$failedField = 'links';

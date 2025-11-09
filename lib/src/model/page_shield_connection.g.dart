@@ -10,10 +10,6 @@ class _$PageShieldConnection extends PageShieldConnection {
   @override
   final DateTime addedAt;
   @override
-  final bool? domainReportedMalicious;
-  @override
-  final String? firstPageUrl;
-  @override
   final DateTime firstSeenAt;
   @override
   final String host;
@@ -22,15 +18,19 @@ class _$PageShieldConnection extends PageShieldConnection {
   @override
   final DateTime lastSeenAt;
   @override
+  final String url;
+  @override
+  final bool urlContainsCdnCgiPath;
+  @override
+  final bool? domainReportedMalicious;
+  @override
+  final String? firstPageUrl;
+  @override
   final BuiltList<String>? maliciousDomainCategories;
   @override
   final BuiltList<String>? maliciousUrlCategories;
   @override
   final BuiltList<String>? pageUrls;
-  @override
-  final String url;
-  @override
-  final bool urlContainsCdnCgiPath;
   @override
   final bool? urlReportedMalicious;
 
@@ -40,17 +40,17 @@ class _$PageShieldConnection extends PageShieldConnection {
 
   _$PageShieldConnection._(
       {required this.addedAt,
-      this.domainReportedMalicious,
-      this.firstPageUrl,
       required this.firstSeenAt,
       required this.host,
       required this.id,
       required this.lastSeenAt,
+      required this.url,
+      required this.urlContainsCdnCgiPath,
+      this.domainReportedMalicious,
+      this.firstPageUrl,
       this.maliciousDomainCategories,
       this.maliciousUrlCategories,
       this.pageUrls,
-      required this.url,
-      required this.urlContainsCdnCgiPath,
       this.urlReportedMalicious})
       : super._();
   @override
@@ -67,17 +67,17 @@ class _$PageShieldConnection extends PageShieldConnection {
     if (identical(other, this)) return true;
     return other is PageShieldConnection &&
         addedAt == other.addedAt &&
-        domainReportedMalicious == other.domainReportedMalicious &&
-        firstPageUrl == other.firstPageUrl &&
         firstSeenAt == other.firstSeenAt &&
         host == other.host &&
         id == other.id &&
         lastSeenAt == other.lastSeenAt &&
+        url == other.url &&
+        urlContainsCdnCgiPath == other.urlContainsCdnCgiPath &&
+        domainReportedMalicious == other.domainReportedMalicious &&
+        firstPageUrl == other.firstPageUrl &&
         maliciousDomainCategories == other.maliciousDomainCategories &&
         maliciousUrlCategories == other.maliciousUrlCategories &&
         pageUrls == other.pageUrls &&
-        url == other.url &&
-        urlContainsCdnCgiPath == other.urlContainsCdnCgiPath &&
         urlReportedMalicious == other.urlReportedMalicious;
   }
 
@@ -85,17 +85,17 @@ class _$PageShieldConnection extends PageShieldConnection {
   int get hashCode {
     var _$hash = 0;
     _$hash = $jc(_$hash, addedAt.hashCode);
-    _$hash = $jc(_$hash, domainReportedMalicious.hashCode);
-    _$hash = $jc(_$hash, firstPageUrl.hashCode);
     _$hash = $jc(_$hash, firstSeenAt.hashCode);
     _$hash = $jc(_$hash, host.hashCode);
     _$hash = $jc(_$hash, id.hashCode);
     _$hash = $jc(_$hash, lastSeenAt.hashCode);
+    _$hash = $jc(_$hash, url.hashCode);
+    _$hash = $jc(_$hash, urlContainsCdnCgiPath.hashCode);
+    _$hash = $jc(_$hash, domainReportedMalicious.hashCode);
+    _$hash = $jc(_$hash, firstPageUrl.hashCode);
     _$hash = $jc(_$hash, maliciousDomainCategories.hashCode);
     _$hash = $jc(_$hash, maliciousUrlCategories.hashCode);
     _$hash = $jc(_$hash, pageUrls.hashCode);
-    _$hash = $jc(_$hash, url.hashCode);
-    _$hash = $jc(_$hash, urlContainsCdnCgiPath.hashCode);
     _$hash = $jc(_$hash, urlReportedMalicious.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
@@ -105,17 +105,17 @@ class _$PageShieldConnection extends PageShieldConnection {
   String toString() {
     return (newBuiltValueToStringHelper(r'PageShieldConnection')
           ..add('addedAt', addedAt)
-          ..add('domainReportedMalicious', domainReportedMalicious)
-          ..add('firstPageUrl', firstPageUrl)
           ..add('firstSeenAt', firstSeenAt)
           ..add('host', host)
           ..add('id', id)
           ..add('lastSeenAt', lastSeenAt)
+          ..add('url', url)
+          ..add('urlContainsCdnCgiPath', urlContainsCdnCgiPath)
+          ..add('domainReportedMalicious', domainReportedMalicious)
+          ..add('firstPageUrl', firstPageUrl)
           ..add('maliciousDomainCategories', maliciousDomainCategories)
           ..add('maliciousUrlCategories', maliciousUrlCategories)
           ..add('pageUrls', pageUrls)
-          ..add('url', url)
-          ..add('urlContainsCdnCgiPath', urlContainsCdnCgiPath)
           ..add('urlReportedMalicious', urlReportedMalicious))
         .toString();
   }
@@ -128,15 +128,6 @@ class PageShieldConnectionBuilder
   DateTime? _addedAt;
   DateTime? get addedAt => _$this._addedAt;
   set addedAt(DateTime? addedAt) => _$this._addedAt = addedAt;
-
-  bool? _domainReportedMalicious;
-  bool? get domainReportedMalicious => _$this._domainReportedMalicious;
-  set domainReportedMalicious(bool? domainReportedMalicious) =>
-      _$this._domainReportedMalicious = domainReportedMalicious;
-
-  String? _firstPageUrl;
-  String? get firstPageUrl => _$this._firstPageUrl;
-  set firstPageUrl(String? firstPageUrl) => _$this._firstPageUrl = firstPageUrl;
 
   DateTime? _firstSeenAt;
   DateTime? get firstSeenAt => _$this._firstSeenAt;
@@ -153,6 +144,24 @@ class PageShieldConnectionBuilder
   DateTime? _lastSeenAt;
   DateTime? get lastSeenAt => _$this._lastSeenAt;
   set lastSeenAt(DateTime? lastSeenAt) => _$this._lastSeenAt = lastSeenAt;
+
+  String? _url;
+  String? get url => _$this._url;
+  set url(String? url) => _$this._url = url;
+
+  bool? _urlContainsCdnCgiPath;
+  bool? get urlContainsCdnCgiPath => _$this._urlContainsCdnCgiPath;
+  set urlContainsCdnCgiPath(bool? urlContainsCdnCgiPath) =>
+      _$this._urlContainsCdnCgiPath = urlContainsCdnCgiPath;
+
+  bool? _domainReportedMalicious;
+  bool? get domainReportedMalicious => _$this._domainReportedMalicious;
+  set domainReportedMalicious(bool? domainReportedMalicious) =>
+      _$this._domainReportedMalicious = domainReportedMalicious;
+
+  String? _firstPageUrl;
+  String? get firstPageUrl => _$this._firstPageUrl;
+  set firstPageUrl(String? firstPageUrl) => _$this._firstPageUrl = firstPageUrl;
 
   ListBuilder<String>? _maliciousDomainCategories;
   ListBuilder<String> get maliciousDomainCategories =>
@@ -172,15 +181,6 @@ class PageShieldConnectionBuilder
       _$this._pageUrls ??= ListBuilder<String>();
   set pageUrls(ListBuilder<String>? pageUrls) => _$this._pageUrls = pageUrls;
 
-  String? _url;
-  String? get url => _$this._url;
-  set url(String? url) => _$this._url = url;
-
-  bool? _urlContainsCdnCgiPath;
-  bool? get urlContainsCdnCgiPath => _$this._urlContainsCdnCgiPath;
-  set urlContainsCdnCgiPath(bool? urlContainsCdnCgiPath) =>
-      _$this._urlContainsCdnCgiPath = urlContainsCdnCgiPath;
-
   bool? _urlReportedMalicious;
   bool? get urlReportedMalicious => _$this._urlReportedMalicious;
   set urlReportedMalicious(bool? urlReportedMalicious) =>
@@ -194,17 +194,17 @@ class PageShieldConnectionBuilder
     final $v = _$v;
     if ($v != null) {
       _addedAt = $v.addedAt;
-      _domainReportedMalicious = $v.domainReportedMalicious;
-      _firstPageUrl = $v.firstPageUrl;
       _firstSeenAt = $v.firstSeenAt;
       _host = $v.host;
       _id = $v.id;
       _lastSeenAt = $v.lastSeenAt;
+      _url = $v.url;
+      _urlContainsCdnCgiPath = $v.urlContainsCdnCgiPath;
+      _domainReportedMalicious = $v.domainReportedMalicious;
+      _firstPageUrl = $v.firstPageUrl;
       _maliciousDomainCategories = $v.maliciousDomainCategories?.toBuilder();
       _maliciousUrlCategories = $v.maliciousUrlCategories?.toBuilder();
       _pageUrls = $v.pageUrls?.toBuilder();
-      _url = $v.url;
-      _urlContainsCdnCgiPath = $v.urlContainsCdnCgiPath;
       _urlReportedMalicious = $v.urlReportedMalicious;
       _$v = null;
     }
@@ -231,8 +231,6 @@ class PageShieldConnectionBuilder
           _$PageShieldConnection._(
             addedAt: BuiltValueNullFieldError.checkNotNull(
                 addedAt, r'PageShieldConnection', 'addedAt'),
-            domainReportedMalicious: domainReportedMalicious,
-            firstPageUrl: firstPageUrl,
             firstSeenAt: BuiltValueNullFieldError.checkNotNull(
                 firstSeenAt, r'PageShieldConnection', 'firstSeenAt'),
             host: BuiltValueNullFieldError.checkNotNull(
@@ -241,15 +239,17 @@ class PageShieldConnectionBuilder
                 id, r'PageShieldConnection', 'id'),
             lastSeenAt: BuiltValueNullFieldError.checkNotNull(
                 lastSeenAt, r'PageShieldConnection', 'lastSeenAt'),
-            maliciousDomainCategories: _maliciousDomainCategories?.build(),
-            maliciousUrlCategories: _maliciousUrlCategories?.build(),
-            pageUrls: _pageUrls?.build(),
             url: BuiltValueNullFieldError.checkNotNull(
                 url, r'PageShieldConnection', 'url'),
             urlContainsCdnCgiPath: BuiltValueNullFieldError.checkNotNull(
                 urlContainsCdnCgiPath,
                 r'PageShieldConnection',
                 'urlContainsCdnCgiPath'),
+            domainReportedMalicious: domainReportedMalicious,
+            firstPageUrl: firstPageUrl,
+            maliciousDomainCategories: _maliciousDomainCategories?.build(),
+            maliciousUrlCategories: _maliciousUrlCategories?.build(),
+            pageUrls: _pageUrls?.build(),
             urlReportedMalicious: urlReportedMalicious,
           );
     } catch (_) {

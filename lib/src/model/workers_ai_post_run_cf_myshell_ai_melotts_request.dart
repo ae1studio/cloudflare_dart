@@ -11,17 +11,17 @@ part 'workers_ai_post_run_cf_myshell_ai_melotts_request.g.dart';
 /// WorkersAiPostRunCfMyshellAiMelottsRequest
 ///
 /// Properties:
-/// * [lang] - The speech language (e.g., 'en' for English, 'fr' for French). Defaults to 'en' if not specified
 /// * [prompt] - A text description of the audio you want to generate
+/// * [lang] - The speech language (e.g., 'en' for English, 'fr' for French). Defaults to 'en' if not specified
 @BuiltValue()
 abstract class WorkersAiPostRunCfMyshellAiMelottsRequest implements Built<WorkersAiPostRunCfMyshellAiMelottsRequest, WorkersAiPostRunCfMyshellAiMelottsRequestBuilder> {
-  /// The speech language (e.g., 'en' for English, 'fr' for French). Defaults to 'en' if not specified
-  @BuiltValueField(wireName: r'lang')
-  String? get lang;
-
   /// A text description of the audio you want to generate
   @BuiltValueField(wireName: r'prompt')
   String get prompt;
+
+  /// The speech language (e.g., 'en' for English, 'fr' for French). Defaults to 'en' if not specified
+  @BuiltValueField(wireName: r'lang')
+  String? get lang;
 
   WorkersAiPostRunCfMyshellAiMelottsRequest._();
 
@@ -47,6 +47,11 @@ class _$WorkersAiPostRunCfMyshellAiMelottsRequestSerializer implements Primitive
     WorkersAiPostRunCfMyshellAiMelottsRequest object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    yield r'prompt';
+    yield serializers.serialize(
+      object.prompt,
+      specifiedType: const FullType(String),
+    );
     if (object.lang != null) {
       yield r'lang';
       yield serializers.serialize(
@@ -54,11 +59,6 @@ class _$WorkersAiPostRunCfMyshellAiMelottsRequestSerializer implements Primitive
         specifiedType: const FullType(String),
       );
     }
-    yield r'prompt';
-    yield serializers.serialize(
-      object.prompt,
-      specifiedType: const FullType(String),
-    );
   }
 
   @override
@@ -82,19 +82,19 @@ class _$WorkersAiPostRunCfMyshellAiMelottsRequestSerializer implements Primitive
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'lang':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.lang = valueDes;
-          break;
         case r'prompt':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(String),
           ) as String;
           result.prompt = valueDes;
+          break;
+        case r'lang':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.lang = valueDes;
           break;
         default:
           unhandled.add(key);

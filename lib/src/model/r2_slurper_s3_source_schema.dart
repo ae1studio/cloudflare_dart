@@ -14,15 +14,22 @@ part 'r2_slurper_s3_source_schema.g.dart';
 ///
 /// Properties:
 /// * [bucket] 
+/// * [secret] 
+/// * [vendor] 
 /// * [endpoint] 
 /// * [pathPrefix] 
 /// * [region] 
-/// * [secret] 
-/// * [vendor] 
 @BuiltValue()
 abstract class R2SlurperS3SourceSchema implements Built<R2SlurperS3SourceSchema, R2SlurperS3SourceSchemaBuilder> {
   @BuiltValueField(wireName: r'bucket')
   String get bucket;
+
+  @BuiltValueField(wireName: r'secret')
+  R2SlurperS3LikeCredsSchema get secret;
+
+  @BuiltValueField(wireName: r'vendor')
+  R2SlurperS3SourceSchemaVendorEnum get vendor;
+  // enum vendorEnum {  s3,  };
 
   @BuiltValueField(wireName: r'endpoint')
   String? get endpoint;
@@ -32,13 +39,6 @@ abstract class R2SlurperS3SourceSchema implements Built<R2SlurperS3SourceSchema,
 
   @BuiltValueField(wireName: r'region')
   String? get region;
-
-  @BuiltValueField(wireName: r'secret')
-  R2SlurperS3LikeCredsSchema get secret;
-
-  @BuiltValueField(wireName: r'vendor')
-  R2SlurperS3SourceSchemaVendorEnum get vendor;
-  // enum vendorEnum {  s3,  };
 
   R2SlurperS3SourceSchema._();
 
@@ -68,6 +68,16 @@ class _$R2SlurperS3SourceSchemaSerializer implements PrimitiveSerializer<R2Slurp
       object.bucket,
       specifiedType: const FullType(String),
     );
+    yield r'secret';
+    yield serializers.serialize(
+      object.secret,
+      specifiedType: const FullType(R2SlurperS3LikeCredsSchema),
+    );
+    yield r'vendor';
+    yield serializers.serialize(
+      object.vendor,
+      specifiedType: const FullType(R2SlurperS3SourceSchemaVendorEnum),
+    );
     if (object.endpoint != null) {
       yield r'endpoint';
       yield serializers.serialize(
@@ -89,16 +99,6 @@ class _$R2SlurperS3SourceSchemaSerializer implements PrimitiveSerializer<R2Slurp
         specifiedType: const FullType.nullable(String),
       );
     }
-    yield r'secret';
-    yield serializers.serialize(
-      object.secret,
-      specifiedType: const FullType(R2SlurperS3LikeCredsSchema),
-    );
-    yield r'vendor';
-    yield serializers.serialize(
-      object.vendor,
-      specifiedType: const FullType(R2SlurperS3SourceSchemaVendorEnum),
-    );
   }
 
   @override
@@ -129,6 +129,20 @@ class _$R2SlurperS3SourceSchemaSerializer implements PrimitiveSerializer<R2Slurp
           ) as String;
           result.bucket = valueDes;
           break;
+        case r'secret':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(R2SlurperS3LikeCredsSchema),
+          ) as R2SlurperS3LikeCredsSchema;
+          result.secret.replace(valueDes);
+          break;
+        case r'vendor':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(R2SlurperS3SourceSchemaVendorEnum),
+          ) as R2SlurperS3SourceSchemaVendorEnum;
+          result.vendor = valueDes;
+          break;
         case r'endpoint':
           final valueDes = serializers.deserialize(
             value,
@@ -152,20 +166,6 @@ class _$R2SlurperS3SourceSchemaSerializer implements PrimitiveSerializer<R2Slurp
           ) as String?;
           if (valueDes == null) continue;
           result.region = valueDes;
-          break;
-        case r'secret':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(R2SlurperS3LikeCredsSchema),
-          ) as R2SlurperS3LikeCredsSchema;
-          result.secret.replace(valueDes);
-          break;
-        case r'vendor':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(R2SlurperS3SourceSchemaVendorEnum),
-          ) as R2SlurperS3SourceSchemaVendorEnum;
-          result.vendor = valueDes;
           break;
         default:
           unhandled.add(key);

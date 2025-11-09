@@ -12,27 +12,27 @@ part 'iam_token_verify_response_single_segment_all_of_result.g.dart';
 /// IamTokenVerifyResponseSingleSegmentAllOfResult
 ///
 /// Properties:
-/// * [expiresOn] - The expiration time on or after which the JWT MUST NOT be accepted for processing.
 /// * [id] - Token identifier tag.
-/// * [notBefore] - The time before which the token MUST NOT be accepted for processing.
 /// * [status] 
+/// * [expiresOn] - The expiration time on or after which the JWT MUST NOT be accepted for processing.
+/// * [notBefore] - The time before which the token MUST NOT be accepted for processing.
 @BuiltValue()
 abstract class IamTokenVerifyResponseSingleSegmentAllOfResult implements Built<IamTokenVerifyResponseSingleSegmentAllOfResult, IamTokenVerifyResponseSingleSegmentAllOfResultBuilder> {
-  /// The expiration time on or after which the JWT MUST NOT be accepted for processing.
-  @BuiltValueField(wireName: r'expires_on')
-  DateTime? get expiresOn;
-
   /// Token identifier tag.
   @BuiltValueField(wireName: r'id')
   String get id;
 
-  /// The time before which the token MUST NOT be accepted for processing.
-  @BuiltValueField(wireName: r'not_before')
-  DateTime? get notBefore;
-
   @BuiltValueField(wireName: r'status')
   IamTokenStatus get status;
   // enum statusEnum {  active,  disabled,  expired,  };
+
+  /// The expiration time on or after which the JWT MUST NOT be accepted for processing.
+  @BuiltValueField(wireName: r'expires_on')
+  DateTime? get expiresOn;
+
+  /// The time before which the token MUST NOT be accepted for processing.
+  @BuiltValueField(wireName: r'not_before')
+  DateTime? get notBefore;
 
   IamTokenVerifyResponseSingleSegmentAllOfResult._();
 
@@ -57,6 +57,16 @@ class _$IamTokenVerifyResponseSingleSegmentAllOfResultSerializer implements Prim
     IamTokenVerifyResponseSingleSegmentAllOfResult object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    yield r'id';
+    yield serializers.serialize(
+      object.id,
+      specifiedType: const FullType(String),
+    );
+    yield r'status';
+    yield serializers.serialize(
+      object.status,
+      specifiedType: const FullType(IamTokenStatus),
+    );
     if (object.expiresOn != null) {
       yield r'expires_on';
       yield serializers.serialize(
@@ -64,11 +74,6 @@ class _$IamTokenVerifyResponseSingleSegmentAllOfResultSerializer implements Prim
         specifiedType: const FullType(DateTime),
       );
     }
-    yield r'id';
-    yield serializers.serialize(
-      object.id,
-      specifiedType: const FullType(String),
-    );
     if (object.notBefore != null) {
       yield r'not_before';
       yield serializers.serialize(
@@ -76,11 +81,6 @@ class _$IamTokenVerifyResponseSingleSegmentAllOfResultSerializer implements Prim
         specifiedType: const FullType(DateTime),
       );
     }
-    yield r'status';
-    yield serializers.serialize(
-      object.status,
-      specifiedType: const FullType(IamTokenStatus),
-    );
   }
 
   @override
@@ -104,13 +104,6 @@ class _$IamTokenVerifyResponseSingleSegmentAllOfResultSerializer implements Prim
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'expires_on':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
-          result.expiresOn = valueDes;
-          break;
         case r'id':
           final valueDes = serializers.deserialize(
             value,
@@ -118,19 +111,26 @@ class _$IamTokenVerifyResponseSingleSegmentAllOfResultSerializer implements Prim
           ) as String;
           result.id = valueDes;
           break;
-        case r'not_before':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
-          result.notBefore = valueDes;
-          break;
         case r'status':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(IamTokenStatus),
           ) as IamTokenStatus;
           result.status = valueDes;
+          break;
+        case r'expires_on':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(DateTime),
+          ) as DateTime;
+          result.expiresOn = valueDes;
+          break;
+        case r'not_before':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(DateTime),
+          ) as DateTime;
+          result.notBefore = valueDes;
           break;
         default:
           unhandled.add(key);

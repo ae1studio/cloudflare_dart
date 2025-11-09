@@ -8,18 +8,18 @@ part of 'brapi_post_scrape200_response.dart';
 
 class _$BrapiPostScrape200Response extends BrapiPostScrape200Response {
   @override
-  final BuiltList<BrapiPostContent200ResponseErrorsInner>? errors;
-  @override
   final BuiltList<BrapiPostScrape200ResponseResultInner> result;
   @override
   final bool status;
+  @override
+  final BuiltList<BrapiPostContent200ResponseErrorsInner>? errors;
 
   factory _$BrapiPostScrape200Response(
           [void Function(BrapiPostScrape200ResponseBuilder)? updates]) =>
       (BrapiPostScrape200ResponseBuilder()..update(updates))._build();
 
   _$BrapiPostScrape200Response._(
-      {this.errors, required this.result, required this.status})
+      {required this.result, required this.status, this.errors})
       : super._();
   @override
   BrapiPostScrape200Response rebuild(
@@ -34,17 +34,17 @@ class _$BrapiPostScrape200Response extends BrapiPostScrape200Response {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is BrapiPostScrape200Response &&
-        errors == other.errors &&
         result == other.result &&
-        status == other.status;
+        status == other.status &&
+        errors == other.errors;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, errors.hashCode);
     _$hash = $jc(_$hash, result.hashCode);
     _$hash = $jc(_$hash, status.hashCode);
+    _$hash = $jc(_$hash, errors.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -52,9 +52,9 @@ class _$BrapiPostScrape200Response extends BrapiPostScrape200Response {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'BrapiPostScrape200Response')
-          ..add('errors', errors)
           ..add('result', result)
-          ..add('status', status))
+          ..add('status', status)
+          ..add('errors', errors))
         .toString();
   }
 }
@@ -63,12 +63,6 @@ class BrapiPostScrape200ResponseBuilder
     implements
         Builder<BrapiPostScrape200Response, BrapiPostScrape200ResponseBuilder> {
   _$BrapiPostScrape200Response? _$v;
-
-  ListBuilder<BrapiPostContent200ResponseErrorsInner>? _errors;
-  ListBuilder<BrapiPostContent200ResponseErrorsInner> get errors =>
-      _$this._errors ??= ListBuilder<BrapiPostContent200ResponseErrorsInner>();
-  set errors(ListBuilder<BrapiPostContent200ResponseErrorsInner>? errors) =>
-      _$this._errors = errors;
 
   ListBuilder<BrapiPostScrape200ResponseResultInner>? _result;
   ListBuilder<BrapiPostScrape200ResponseResultInner> get result =>
@@ -80,6 +74,12 @@ class BrapiPostScrape200ResponseBuilder
   bool? get status => _$this._status;
   set status(bool? status) => _$this._status = status;
 
+  ListBuilder<BrapiPostContent200ResponseErrorsInner>? _errors;
+  ListBuilder<BrapiPostContent200ResponseErrorsInner> get errors =>
+      _$this._errors ??= ListBuilder<BrapiPostContent200ResponseErrorsInner>();
+  set errors(ListBuilder<BrapiPostContent200ResponseErrorsInner>? errors) =>
+      _$this._errors = errors;
+
   BrapiPostScrape200ResponseBuilder() {
     BrapiPostScrape200Response._defaults(this);
   }
@@ -87,9 +87,9 @@ class BrapiPostScrape200ResponseBuilder
   BrapiPostScrape200ResponseBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _errors = $v.errors?.toBuilder();
       _result = $v.result.toBuilder();
       _status = $v.status;
+      _errors = $v.errors?.toBuilder();
       _$v = null;
     }
     return this;
@@ -113,18 +113,19 @@ class BrapiPostScrape200ResponseBuilder
     try {
       _$result = _$v ??
           _$BrapiPostScrape200Response._(
-            errors: _errors?.build(),
             result: result.build(),
             status: BuiltValueNullFieldError.checkNotNull(
                 status, r'BrapiPostScrape200Response', 'status'),
+            errors: _errors?.build(),
           );
     } catch (_) {
       late String _$failedField;
       try {
-        _$failedField = 'errors';
-        _errors?.build();
         _$failedField = 'result';
         result.build();
+
+        _$failedField = 'errors';
+        _errors?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
             r'BrapiPostScrape200Response', _$failedField, e.toString());

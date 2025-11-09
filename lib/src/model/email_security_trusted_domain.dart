@@ -11,7 +11,6 @@ part 'email_security_trusted_domain.g.dart';
 /// EmailSecurityTrustedDomain
 ///
 /// Properties:
-/// * [comments] 
 /// * [isRecent] - Select to prevent recently registered domains from triggering a Suspicious or Malicious disposition.
 /// * [isRegex] 
 /// * [isSimilarity] - Select for partner or other approved domains that have similar spelling to your connected domains. Prevents listed domains from triggering a Spoof disposition.
@@ -19,11 +18,9 @@ part 'email_security_trusted_domain.g.dart';
 /// * [createdAt] 
 /// * [id] - The unique identifier for the trusted domain.
 /// * [lastModified] 
+/// * [comments] 
 @BuiltValue()
 abstract class EmailSecurityTrustedDomain implements Built<EmailSecurityTrustedDomain, EmailSecurityTrustedDomainBuilder> {
-  @BuiltValueField(wireName: r'comments')
-  String? get comments;
-
   /// Select to prevent recently registered domains from triggering a Suspicious or Malicious disposition.
   @BuiltValueField(wireName: r'is_recent')
   bool get isRecent;
@@ -48,6 +45,9 @@ abstract class EmailSecurityTrustedDomain implements Built<EmailSecurityTrustedD
   @BuiltValueField(wireName: r'last_modified')
   DateTime get lastModified;
 
+  @BuiltValueField(wireName: r'comments')
+  String? get comments;
+
   EmailSecurityTrustedDomain._();
 
   factory EmailSecurityTrustedDomain([void updates(EmailSecurityTrustedDomainBuilder b)]) = _$EmailSecurityTrustedDomain;
@@ -71,13 +71,6 @@ class _$EmailSecurityTrustedDomainSerializer implements PrimitiveSerializer<Emai
     EmailSecurityTrustedDomain object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
-    if (object.comments != null) {
-      yield r'comments';
-      yield serializers.serialize(
-        object.comments,
-        specifiedType: const FullType.nullable(String),
-      );
-    }
     yield r'is_recent';
     yield serializers.serialize(
       object.isRecent,
@@ -113,6 +106,13 @@ class _$EmailSecurityTrustedDomainSerializer implements PrimitiveSerializer<Emai
       object.lastModified,
       specifiedType: const FullType(DateTime),
     );
+    if (object.comments != null) {
+      yield r'comments';
+      yield serializers.serialize(
+        object.comments,
+        specifiedType: const FullType.nullable(String),
+      );
+    }
   }
 
   @override
@@ -136,14 +136,6 @@ class _$EmailSecurityTrustedDomainSerializer implements PrimitiveSerializer<Emai
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'comments':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
-          if (valueDes == null) continue;
-          result.comments = valueDes;
-          break;
         case r'is_recent':
           final valueDes = serializers.deserialize(
             value,
@@ -192,6 +184,14 @@ class _$EmailSecurityTrustedDomainSerializer implements PrimitiveSerializer<Emai
             specifiedType: const FullType(DateTime),
           ) as DateTime;
           result.lastModified = valueDes;
+          break;
+        case r'comments':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType.nullable(String),
+          ) as String?;
+          if (valueDes == null) continue;
+          result.comments = valueDes;
           break;
         default:
           unhandled.add(key);

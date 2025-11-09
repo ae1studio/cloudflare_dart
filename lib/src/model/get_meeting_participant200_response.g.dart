@@ -9,15 +9,15 @@ part of 'get_meeting_participant200_response.dart';
 class _$GetMeetingParticipant200Response
     extends GetMeetingParticipant200Response {
   @override
-  final JsonObject? data;
-  @override
   final bool success;
+  @override
+  final JsonObject? data;
 
   factory _$GetMeetingParticipant200Response(
           [void Function(GetMeetingParticipant200ResponseBuilder)? updates]) =>
       (GetMeetingParticipant200ResponseBuilder()..update(updates))._build();
 
-  _$GetMeetingParticipant200Response._({this.data, required this.success})
+  _$GetMeetingParticipant200Response._({required this.success, this.data})
       : super._();
   @override
   GetMeetingParticipant200Response rebuild(
@@ -32,15 +32,15 @@ class _$GetMeetingParticipant200Response
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is GetMeetingParticipant200Response &&
-        data == other.data &&
-        success == other.success;
+        success == other.success &&
+        data == other.data;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, data.hashCode);
     _$hash = $jc(_$hash, success.hashCode);
+    _$hash = $jc(_$hash, data.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -48,8 +48,8 @@ class _$GetMeetingParticipant200Response
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'GetMeetingParticipant200Response')
-          ..add('data', data)
-          ..add('success', success))
+          ..add('success', success)
+          ..add('data', data))
         .toString();
   }
 }
@@ -61,13 +61,13 @@ class GetMeetingParticipant200ResponseBuilder
         RealtimekitGenericSuccessResponseBuilder {
   _$GetMeetingParticipant200Response? _$v;
 
-  JsonObject? _data;
-  JsonObject? get data => _$this._data;
-  set data(covariant JsonObject? data) => _$this._data = data;
-
   bool? _success;
   bool? get success => _$this._success;
   set success(covariant bool? success) => _$this._success = success;
+
+  JsonObject? _data;
+  JsonObject? get data => _$this._data;
+  set data(covariant JsonObject? data) => _$this._data = data;
 
   GetMeetingParticipant200ResponseBuilder() {
     GetMeetingParticipant200Response._defaults(this);
@@ -76,8 +76,8 @@ class GetMeetingParticipant200ResponseBuilder
   GetMeetingParticipant200ResponseBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _data = $v.data;
       _success = $v.success;
+      _data = $v.data;
       _$v = null;
     }
     return this;
@@ -99,9 +99,9 @@ class GetMeetingParticipant200ResponseBuilder
   _$GetMeetingParticipant200Response _build() {
     final _$result = _$v ??
         _$GetMeetingParticipant200Response._(
-          data: data,
           success: BuiltValueNullFieldError.checkNotNull(
               success, r'GetMeetingParticipant200Response', 'success'),
+          data: data,
         );
     replace(_$result);
     return _$result;

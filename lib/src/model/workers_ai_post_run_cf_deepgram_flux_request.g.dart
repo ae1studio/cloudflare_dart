@@ -127,9 +127,11 @@ class _$WorkersAiPostRunCfDeepgramFluxRequestMipOptOutEnumSerializer
 class _$WorkersAiPostRunCfDeepgramFluxRequest
     extends WorkersAiPostRunCfDeepgramFluxRequest {
   @override
-  final String? eagerEotThreshold;
-  @override
   final WorkersAiPostRunCfDeepgramFluxRequestEncodingEnum encoding;
+  @override
+  final String sampleRate;
+  @override
+  final String? eagerEotThreshold;
   @override
   final String? eotThreshold;
   @override
@@ -138,8 +140,6 @@ class _$WorkersAiPostRunCfDeepgramFluxRequest
   final String? keyterm;
   @override
   final WorkersAiPostRunCfDeepgramFluxRequestMipOptOutEnum? mipOptOut;
-  @override
-  final String sampleRate;
   @override
   final String? tag;
 
@@ -150,13 +150,13 @@ class _$WorkersAiPostRunCfDeepgramFluxRequest
           ._build();
 
   _$WorkersAiPostRunCfDeepgramFluxRequest._(
-      {this.eagerEotThreshold,
-      required this.encoding,
+      {required this.encoding,
+      required this.sampleRate,
+      this.eagerEotThreshold,
       this.eotThreshold,
       this.eotTimeoutMs,
       this.keyterm,
       this.mipOptOut,
-      required this.sampleRate,
       this.tag})
       : super._();
   @override
@@ -173,26 +173,26 @@ class _$WorkersAiPostRunCfDeepgramFluxRequest
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is WorkersAiPostRunCfDeepgramFluxRequest &&
-        eagerEotThreshold == other.eagerEotThreshold &&
         encoding == other.encoding &&
+        sampleRate == other.sampleRate &&
+        eagerEotThreshold == other.eagerEotThreshold &&
         eotThreshold == other.eotThreshold &&
         eotTimeoutMs == other.eotTimeoutMs &&
         keyterm == other.keyterm &&
         mipOptOut == other.mipOptOut &&
-        sampleRate == other.sampleRate &&
         tag == other.tag;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, eagerEotThreshold.hashCode);
     _$hash = $jc(_$hash, encoding.hashCode);
+    _$hash = $jc(_$hash, sampleRate.hashCode);
+    _$hash = $jc(_$hash, eagerEotThreshold.hashCode);
     _$hash = $jc(_$hash, eotThreshold.hashCode);
     _$hash = $jc(_$hash, eotTimeoutMs.hashCode);
     _$hash = $jc(_$hash, keyterm.hashCode);
     _$hash = $jc(_$hash, mipOptOut.hashCode);
-    _$hash = $jc(_$hash, sampleRate.hashCode);
     _$hash = $jc(_$hash, tag.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
@@ -202,13 +202,13 @@ class _$WorkersAiPostRunCfDeepgramFluxRequest
   String toString() {
     return (newBuiltValueToStringHelper(
             r'WorkersAiPostRunCfDeepgramFluxRequest')
-          ..add('eagerEotThreshold', eagerEotThreshold)
           ..add('encoding', encoding)
+          ..add('sampleRate', sampleRate)
+          ..add('eagerEotThreshold', eagerEotThreshold)
           ..add('eotThreshold', eotThreshold)
           ..add('eotTimeoutMs', eotTimeoutMs)
           ..add('keyterm', keyterm)
           ..add('mipOptOut', mipOptOut)
-          ..add('sampleRate', sampleRate)
           ..add('tag', tag))
         .toString();
   }
@@ -220,16 +220,20 @@ class WorkersAiPostRunCfDeepgramFluxRequestBuilder
             WorkersAiPostRunCfDeepgramFluxRequestBuilder> {
   _$WorkersAiPostRunCfDeepgramFluxRequest? _$v;
 
-  String? _eagerEotThreshold;
-  String? get eagerEotThreshold => _$this._eagerEotThreshold;
-  set eagerEotThreshold(String? eagerEotThreshold) =>
-      _$this._eagerEotThreshold = eagerEotThreshold;
-
   WorkersAiPostRunCfDeepgramFluxRequestEncodingEnum? _encoding;
   WorkersAiPostRunCfDeepgramFluxRequestEncodingEnum? get encoding =>
       _$this._encoding;
   set encoding(WorkersAiPostRunCfDeepgramFluxRequestEncodingEnum? encoding) =>
       _$this._encoding = encoding;
+
+  String? _sampleRate;
+  String? get sampleRate => _$this._sampleRate;
+  set sampleRate(String? sampleRate) => _$this._sampleRate = sampleRate;
+
+  String? _eagerEotThreshold;
+  String? get eagerEotThreshold => _$this._eagerEotThreshold;
+  set eagerEotThreshold(String? eagerEotThreshold) =>
+      _$this._eagerEotThreshold = eagerEotThreshold;
 
   String? _eotThreshold;
   String? get eotThreshold => _$this._eotThreshold;
@@ -250,10 +254,6 @@ class WorkersAiPostRunCfDeepgramFluxRequestBuilder
           WorkersAiPostRunCfDeepgramFluxRequestMipOptOutEnum? mipOptOut) =>
       _$this._mipOptOut = mipOptOut;
 
-  String? _sampleRate;
-  String? get sampleRate => _$this._sampleRate;
-  set sampleRate(String? sampleRate) => _$this._sampleRate = sampleRate;
-
   String? _tag;
   String? get tag => _$this._tag;
   set tag(String? tag) => _$this._tag = tag;
@@ -265,13 +265,13 @@ class WorkersAiPostRunCfDeepgramFluxRequestBuilder
   WorkersAiPostRunCfDeepgramFluxRequestBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _eagerEotThreshold = $v.eagerEotThreshold;
       _encoding = $v.encoding;
+      _sampleRate = $v.sampleRate;
+      _eagerEotThreshold = $v.eagerEotThreshold;
       _eotThreshold = $v.eotThreshold;
       _eotTimeoutMs = $v.eotTimeoutMs;
       _keyterm = $v.keyterm;
       _mipOptOut = $v.mipOptOut;
-      _sampleRate = $v.sampleRate;
       _tag = $v.tag;
       _$v = null;
     }
@@ -295,15 +295,15 @@ class WorkersAiPostRunCfDeepgramFluxRequestBuilder
   _$WorkersAiPostRunCfDeepgramFluxRequest _build() {
     final _$result = _$v ??
         _$WorkersAiPostRunCfDeepgramFluxRequest._(
-          eagerEotThreshold: eagerEotThreshold,
           encoding: BuiltValueNullFieldError.checkNotNull(
               encoding, r'WorkersAiPostRunCfDeepgramFluxRequest', 'encoding'),
+          sampleRate: BuiltValueNullFieldError.checkNotNull(sampleRate,
+              r'WorkersAiPostRunCfDeepgramFluxRequest', 'sampleRate'),
+          eagerEotThreshold: eagerEotThreshold,
           eotThreshold: eotThreshold,
           eotTimeoutMs: eotTimeoutMs,
           keyterm: keyterm,
           mipOptOut: mipOptOut,
-          sampleRate: BuiltValueNullFieldError.checkNotNull(sampleRate,
-              r'WorkersAiPostRunCfDeepgramFluxRequest', 'sampleRate'),
           tag: tag,
         );
     replace(_$result);

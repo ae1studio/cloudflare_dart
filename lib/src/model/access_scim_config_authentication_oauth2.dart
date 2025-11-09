@@ -16,8 +16,8 @@ part 'access_scim_config_authentication_oauth2.g.dart';
 /// * [clientId] - Client ID used to authenticate when generating a token for authenticating with the remote SCIM service.
 /// * [clientSecret] - Secret used to authenticate when generating a token for authenticating with the remove SCIM service.
 /// * [scheme] - The authentication scheme to use when making SCIM requests to this application.
-/// * [scopes] - The authorization scopes to request when generating the token used to authenticate with the remove SCIM service.
 /// * [tokenUrl] - URL used to generate the token used to authenticate with the remote SCIM service.
+/// * [scopes] - The authorization scopes to request when generating the token used to authenticate with the remove SCIM service.
 @BuiltValue()
 abstract class AccessScimConfigAuthenticationOauth2 implements Built<AccessScimConfigAuthenticationOauth2, AccessScimConfigAuthenticationOauth2Builder> {
   /// URL used to generate the auth code used during token generation.
@@ -37,13 +37,13 @@ abstract class AccessScimConfigAuthenticationOauth2 implements Built<AccessScimC
   AccessScimConfigAuthenticationOauth2SchemeEnum get scheme;
   // enum schemeEnum {  oauth2,  };
 
-  /// The authorization scopes to request when generating the token used to authenticate with the remove SCIM service.
-  @BuiltValueField(wireName: r'scopes')
-  BuiltList<String>? get scopes;
-
   /// URL used to generate the token used to authenticate with the remote SCIM service.
   @BuiltValueField(wireName: r'token_url')
   String get tokenUrl;
+
+  /// The authorization scopes to request when generating the token used to authenticate with the remove SCIM service.
+  @BuiltValueField(wireName: r'scopes')
+  BuiltList<String>? get scopes;
 
   AccessScimConfigAuthenticationOauth2._();
 
@@ -88,6 +88,11 @@ class _$AccessScimConfigAuthenticationOauth2Serializer implements PrimitiveSeria
       object.scheme,
       specifiedType: const FullType(AccessScimConfigAuthenticationOauth2SchemeEnum),
     );
+    yield r'token_url';
+    yield serializers.serialize(
+      object.tokenUrl,
+      specifiedType: const FullType(String),
+    );
     if (object.scopes != null) {
       yield r'scopes';
       yield serializers.serialize(
@@ -95,11 +100,6 @@ class _$AccessScimConfigAuthenticationOauth2Serializer implements PrimitiveSeria
         specifiedType: const FullType(BuiltList, [FullType(String)]),
       );
     }
-    yield r'token_url';
-    yield serializers.serialize(
-      object.tokenUrl,
-      specifiedType: const FullType(String),
-    );
   }
 
   @override
@@ -151,19 +151,19 @@ class _$AccessScimConfigAuthenticationOauth2Serializer implements PrimitiveSeria
           ) as AccessScimConfigAuthenticationOauth2SchemeEnum;
           result.scheme = valueDes;
           break;
-        case r'scopes':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>;
-          result.scopes.replace(valueDes);
-          break;
         case r'token_url':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(String),
           ) as String;
           result.tokenUrl = valueDes;
+          break;
+        case r'scopes':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BuiltList, [FullType(String)]),
+          ) as BuiltList<String>;
+          result.scopes.replace(valueDes);
           break;
         default:
           unhandled.add(key);

@@ -20,8 +20,8 @@ part 'passive_dns_by_ip_get_passive_dns_by_ip4_xx_response.g.dart';
 /// * [errors] 
 /// * [messages] 
 /// * [success] - Whether the API call was successful.
-/// * [resultInfo] 
 /// * [result] 
+/// * [resultInfo] 
 @BuiltValue()
 abstract class PassiveDnsByIpGetPassiveDnsByIp4XXResponse implements IntelApiResponseCommonFailure, IntelComponentsSchemasSingleResponse, Built<PassiveDnsByIpGetPassiveDnsByIp4XXResponse, PassiveDnsByIpGetPassiveDnsByIp4XXResponseBuilder> {
   PassiveDnsByIpGetPassiveDnsByIp4XXResponse._();

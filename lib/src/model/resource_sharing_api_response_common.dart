@@ -15,19 +15,19 @@ part 'resource_sharing_api_response_common.g.dart';
 ///
 /// Properties:
 /// * [errors] 
-/// * [result] 
 /// * [success] - Whether the API call was successful.
+/// * [result] 
 @BuiltValue(instantiable: false)
 abstract class ResourceSharingApiResponseCommon  {
   @BuiltValueField(wireName: r'errors')
   BuiltList<ResourceSharingV4error> get errors;
 
-  @BuiltValueField(wireName: r'result')
-  PageShieldApiResponseSingleAllOfResult? get result;
-
   /// Whether the API call was successful.
   @BuiltValueField(wireName: r'success')
   bool get success;
+
+  @BuiltValueField(wireName: r'result')
+  PageShieldApiResponseSingleAllOfResult? get result;
 
   @BuiltValueSerializer(custom: true)
   static Serializer<ResourceSharingApiResponseCommon> get serializer => _$ResourceSharingApiResponseCommonSerializer();
@@ -50,6 +50,11 @@ class _$ResourceSharingApiResponseCommonSerializer implements PrimitiveSerialize
       object.errors,
       specifiedType: const FullType(BuiltList, [FullType(ResourceSharingV4error)]),
     );
+    yield r'success';
+    yield serializers.serialize(
+      object.success,
+      specifiedType: const FullType(bool),
+    );
     if (object.result != null) {
       yield r'result';
       yield serializers.serialize(
@@ -57,11 +62,6 @@ class _$ResourceSharingApiResponseCommonSerializer implements PrimitiveSerialize
         specifiedType: const FullType(PageShieldApiResponseSingleAllOfResult),
       );
     }
-    yield r'success';
-    yield serializers.serialize(
-      object.success,
-      specifiedType: const FullType(bool),
-    );
   }
 
   @override
@@ -132,19 +132,19 @@ class _$$ResourceSharingApiResponseCommonSerializer implements PrimitiveSerializ
           ) as BuiltList<ResourceSharingV4error>;
           result.errors.replace(valueDes);
           break;
-        case r'result':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(PageShieldApiResponseSingleAllOfResult),
-          ) as PageShieldApiResponseSingleAllOfResult;
-          result.result.replace(valueDes);
-          break;
         case r'success':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(bool),
           ) as bool;
           result.success = valueDes;
+          break;
+        case r'result':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(PageShieldApiResponseSingleAllOfResult),
+          ) as PageShieldApiResponseSingleAllOfResult;
+          result.result.replace(valueDes);
           break;
         default:
           unhandled.add(key);

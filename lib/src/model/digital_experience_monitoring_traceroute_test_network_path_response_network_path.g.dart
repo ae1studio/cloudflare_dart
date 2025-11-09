@@ -9,12 +9,12 @@ part of 'digital_experience_monitoring_traceroute_test_network_path_response_net
 class _$DigitalExperienceMonitoringTracerouteTestNetworkPathResponseNetworkPath
     extends DigitalExperienceMonitoringTracerouteTestNetworkPathResponseNetworkPath {
   @override
-  final DigitalExperienceMonitoringTracerouteTestNetworkPathResponseNetworkPathSampling?
-      sampling;
-  @override
   final BuiltList<
           DigitalExperienceMonitoringTracerouteTestNetworkPathResponseNetworkPathSlotsInner>
       slots;
+  @override
+  final DigitalExperienceMonitoringTracerouteTestNetworkPathResponseNetworkPathSampling?
+      sampling;
 
   factory _$DigitalExperienceMonitoringTracerouteTestNetworkPathResponseNetworkPath(
           [void Function(
@@ -25,7 +25,7 @@ class _$DigitalExperienceMonitoringTracerouteTestNetworkPathResponseNetworkPath
           ._build();
 
   _$DigitalExperienceMonitoringTracerouteTestNetworkPathResponseNetworkPath._(
-      {this.sampling, required this.slots})
+      {required this.slots, this.sampling})
       : super._();
   @override
   DigitalExperienceMonitoringTracerouteTestNetworkPathResponseNetworkPath rebuild(
@@ -45,15 +45,15 @@ class _$DigitalExperienceMonitoringTracerouteTestNetworkPathResponseNetworkPath
     if (identical(other, this)) return true;
     return other
             is DigitalExperienceMonitoringTracerouteTestNetworkPathResponseNetworkPath &&
-        sampling == other.sampling &&
-        slots == other.slots;
+        slots == other.slots &&
+        sampling == other.sampling;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, sampling.hashCode);
     _$hash = $jc(_$hash, slots.hashCode);
+    _$hash = $jc(_$hash, sampling.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -62,8 +62,8 @@ class _$DigitalExperienceMonitoringTracerouteTestNetworkPathResponseNetworkPath
   String toString() {
     return (newBuiltValueToStringHelper(
             r'DigitalExperienceMonitoringTracerouteTestNetworkPathResponseNetworkPath')
-          ..add('sampling', sampling)
-          ..add('slots', slots))
+          ..add('slots', slots)
+          ..add('sampling', sampling))
         .toString();
   }
 }
@@ -75,16 +75,6 @@ class DigitalExperienceMonitoringTracerouteTestNetworkPathResponseNetworkPathBui
             DigitalExperienceMonitoringTracerouteTestNetworkPathResponseNetworkPathBuilder> {
   _$DigitalExperienceMonitoringTracerouteTestNetworkPathResponseNetworkPath?
       _$v;
-
-  DigitalExperienceMonitoringTracerouteTestNetworkPathResponseNetworkPathSamplingBuilder?
-      _sampling;
-  DigitalExperienceMonitoringTracerouteTestNetworkPathResponseNetworkPathSamplingBuilder
-      get sampling => _$this._sampling ??=
-          DigitalExperienceMonitoringTracerouteTestNetworkPathResponseNetworkPathSamplingBuilder();
-  set sampling(
-          DigitalExperienceMonitoringTracerouteTestNetworkPathResponseNetworkPathSamplingBuilder?
-              sampling) =>
-      _$this._sampling = sampling;
 
   ListBuilder<
           DigitalExperienceMonitoringTracerouteTestNetworkPathResponseNetworkPathSlotsInner>?
@@ -99,6 +89,16 @@ class DigitalExperienceMonitoringTracerouteTestNetworkPathResponseNetworkPathBui
               slots) =>
       _$this._slots = slots;
 
+  DigitalExperienceMonitoringTracerouteTestNetworkPathResponseNetworkPathSamplingBuilder?
+      _sampling;
+  DigitalExperienceMonitoringTracerouteTestNetworkPathResponseNetworkPathSamplingBuilder
+      get sampling => _$this._sampling ??=
+          DigitalExperienceMonitoringTracerouteTestNetworkPathResponseNetworkPathSamplingBuilder();
+  set sampling(
+          DigitalExperienceMonitoringTracerouteTestNetworkPathResponseNetworkPathSamplingBuilder?
+              sampling) =>
+      _$this._sampling = sampling;
+
   DigitalExperienceMonitoringTracerouteTestNetworkPathResponseNetworkPathBuilder() {
     DigitalExperienceMonitoringTracerouteTestNetworkPathResponseNetworkPath
         ._defaults(this);
@@ -108,8 +108,8 @@ class DigitalExperienceMonitoringTracerouteTestNetworkPathResponseNetworkPathBui
       get _$this {
     final $v = _$v;
     if ($v != null) {
-      _sampling = $v.sampling?.toBuilder();
       _slots = $v.slots.toBuilder();
+      _sampling = $v.sampling?.toBuilder();
       _$v = null;
     }
     return this;
@@ -143,16 +143,16 @@ class DigitalExperienceMonitoringTracerouteTestNetworkPathResponseNetworkPathBui
       _$result = _$v ??
           _$DigitalExperienceMonitoringTracerouteTestNetworkPathResponseNetworkPath
               ._(
-            sampling: _sampling?.build(),
             slots: slots.build(),
+            sampling: _sampling?.build(),
           );
     } catch (_) {
       late String _$failedField;
       try {
-        _$failedField = 'sampling';
-        _sampling?.build();
         _$failedField = 'slots';
         slots.build();
+        _$failedField = 'sampling';
+        _sampling?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
             r'DigitalExperienceMonitoringTracerouteTestNetworkPathResponseNetworkPath',

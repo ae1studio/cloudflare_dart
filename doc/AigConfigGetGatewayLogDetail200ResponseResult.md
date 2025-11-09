@@ -9,16 +9,19 @@ import 'package:cloudflare_dart/api.dart';
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **cached** | **bool** |  | 
-**cost** | **num** |  | [optional] 
 **createdAt** | [**DateTime**](DateTime.md) |  | 
-**customCost** | **bool** |  | [optional] 
 **duration** | **int** |  | 
 **id** | **String** |  | 
-**metadata** | **String** |  | [optional] 
 **model** | **String** |  | 
-**modelType** | **String** |  | [optional] 
 **path** | **String** |  | 
 **provider** | **String** |  | 
+**success** | **bool** |  | 
+**tokensIn** | **int** |  | 
+**tokensOut** | **int** |  | 
+**cost** | **num** |  | [optional] 
+**customCost** | **bool** |  | [optional] 
+**metadata** | **String** |  | [optional] 
+**modelType** | **String** |  | [optional] 
 **requestContentType** | **String** |  | [optional] 
 **requestHead** | **String** |  | [optional] 
 **requestHeadComplete** | **bool** |  | [optional] 
@@ -30,9 +33,6 @@ Name | Type | Description | Notes
 **responseSize** | **int** |  | [optional] 
 **statusCode** | **int** |  | [optional] 
 **step** | **int** |  | [optional] 
-**success** | **bool** |  | 
-**tokensIn** | **int** |  | 
-**tokensOut** | **int** |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

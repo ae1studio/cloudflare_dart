@@ -12,12 +12,12 @@ part 'email_security_batch_trusted_domains_request_patches_inner.g.dart';
 /// EmailSecurityBatchTrustedDomainsRequestPatchesInner
 ///
 /// Properties:
+/// * [id] - The unique identifier for the trusted domain.
 /// * [comments] 
 /// * [isRecent] - Select to prevent recently registered domains from triggering a Suspicious or Malicious disposition.
 /// * [isRegex] 
 /// * [isSimilarity] - Select for partner or other approved domains that have similar spelling to your connected domains. Prevents listed domains from triggering a Spoof disposition.
 /// * [pattern] 
-/// * [id] - The unique identifier for the trusted domain.
 @BuiltValue()
 abstract class EmailSecurityBatchTrustedDomainsRequestPatchesInner implements EmailSecurityUpdateTrustedDomain, Built<EmailSecurityBatchTrustedDomainsRequestPatchesInner, EmailSecurityBatchTrustedDomainsRequestPatchesInnerBuilder> {
   /// The unique identifier for the trusted domain.

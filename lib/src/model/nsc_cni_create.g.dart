@@ -10,20 +10,20 @@ class _$NscCniCreate extends NscCniCreate {
   @override
   final String account;
   @override
-  final NscBgpControl? bgp;
-  @override
   final String interconnect;
   @override
   final NscMagicSettings magic;
+  @override
+  final NscBgpControl? bgp;
 
   factory _$NscCniCreate([void Function(NscCniCreateBuilder)? updates]) =>
       (NscCniCreateBuilder()..update(updates))._build();
 
   _$NscCniCreate._(
       {required this.account,
-      this.bgp,
       required this.interconnect,
-      required this.magic})
+      required this.magic,
+      this.bgp})
       : super._();
   @override
   NscCniCreate rebuild(void Function(NscCniCreateBuilder) updates) =>
@@ -37,18 +37,18 @@ class _$NscCniCreate extends NscCniCreate {
     if (identical(other, this)) return true;
     return other is NscCniCreate &&
         account == other.account &&
-        bgp == other.bgp &&
         interconnect == other.interconnect &&
-        magic == other.magic;
+        magic == other.magic &&
+        bgp == other.bgp;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
     _$hash = $jc(_$hash, account.hashCode);
-    _$hash = $jc(_$hash, bgp.hashCode);
     _$hash = $jc(_$hash, interconnect.hashCode);
     _$hash = $jc(_$hash, magic.hashCode);
+    _$hash = $jc(_$hash, bgp.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -57,9 +57,9 @@ class _$NscCniCreate extends NscCniCreate {
   String toString() {
     return (newBuiltValueToStringHelper(r'NscCniCreate')
           ..add('account', account)
-          ..add('bgp', bgp)
           ..add('interconnect', interconnect)
-          ..add('magic', magic))
+          ..add('magic', magic)
+          ..add('bgp', bgp))
         .toString();
   }
 }
@@ -72,10 +72,6 @@ class NscCniCreateBuilder
   String? get account => _$this._account;
   set account(String? account) => _$this._account = account;
 
-  NscBgpControlBuilder? _bgp;
-  NscBgpControlBuilder get bgp => _$this._bgp ??= NscBgpControlBuilder();
-  set bgp(NscBgpControlBuilder? bgp) => _$this._bgp = bgp;
-
   String? _interconnect;
   String? get interconnect => _$this._interconnect;
   set interconnect(String? interconnect) => _$this._interconnect = interconnect;
@@ -85,6 +81,10 @@ class NscCniCreateBuilder
       _$this._magic ??= NscMagicSettingsBuilder();
   set magic(NscMagicSettingsBuilder? magic) => _$this._magic = magic;
 
+  NscBgpControlBuilder? _bgp;
+  NscBgpControlBuilder get bgp => _$this._bgp ??= NscBgpControlBuilder();
+  set bgp(NscBgpControlBuilder? bgp) => _$this._bgp = bgp;
+
   NscCniCreateBuilder() {
     NscCniCreate._defaults(this);
   }
@@ -93,9 +93,9 @@ class NscCniCreateBuilder
     final $v = _$v;
     if ($v != null) {
       _account = $v.account;
-      _bgp = $v.bgp?.toBuilder();
       _interconnect = $v.interconnect;
       _magic = $v.magic.toBuilder();
+      _bgp = $v.bgp?.toBuilder();
       _$v = null;
     }
     return this;
@@ -121,19 +121,18 @@ class NscCniCreateBuilder
           _$NscCniCreate._(
             account: BuiltValueNullFieldError.checkNotNull(
                 account, r'NscCniCreate', 'account'),
-            bgp: _bgp?.build(),
             interconnect: BuiltValueNullFieldError.checkNotNull(
                 interconnect, r'NscCniCreate', 'interconnect'),
             magic: magic.build(),
+            bgp: _bgp?.build(),
           );
     } catch (_) {
       late String _$failedField;
       try {
-        _$failedField = 'bgp';
-        _bgp?.build();
-
         _$failedField = 'magic';
         magic.build();
+        _$failedField = 'bgp';
+        _bgp?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
             r'NscCniCreate', _$failedField, e.toString());

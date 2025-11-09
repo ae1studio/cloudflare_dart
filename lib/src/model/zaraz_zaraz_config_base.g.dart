@@ -9,20 +9,11 @@ part of 'zaraz_zaraz_config_base.dart';
 abstract class ZarazZarazConfigBaseBuilder {
   void replace(ZarazZarazConfigBase other);
   void update(void Function(ZarazZarazConfigBaseBuilder) updates);
-  ZarazZarazConfigBaseAnalyticsBuilder get analytics;
-  set analytics(ZarazZarazConfigBaseAnalyticsBuilder? analytics);
-
-  ZarazZarazConfigBaseConsentBuilder get consent;
-  set consent(ZarazZarazConfigBaseConsentBuilder? consent);
-
   bool? get dataLayer;
   set dataLayer(bool? dataLayer);
 
   String? get debugKey;
   set debugKey(String? debugKey);
-
-  bool? get historyChange;
-  set historyChange(bool? historyChange);
 
   ZarazZarazConfigBaseSettingsBuilder get settings;
   set settings(ZarazZarazConfigBaseSettingsBuilder? settings);
@@ -36,19 +27,22 @@ abstract class ZarazZarazConfigBaseBuilder {
 
   int? get zarazVersion;
   set zarazVersion(int? zarazVersion);
+
+  ZarazZarazConfigBaseAnalyticsBuilder get analytics;
+  set analytics(ZarazZarazConfigBaseAnalyticsBuilder? analytics);
+
+  ZarazZarazConfigBaseConsentBuilder get consent;
+  set consent(ZarazZarazConfigBaseConsentBuilder? consent);
+
+  bool? get historyChange;
+  set historyChange(bool? historyChange);
 }
 
 class _$$ZarazZarazConfigBase extends $ZarazZarazConfigBase {
   @override
-  final ZarazZarazConfigBaseAnalytics? analytics;
-  @override
-  final ZarazZarazConfigBaseConsent? consent;
-  @override
   final bool dataLayer;
   @override
   final String debugKey;
-  @override
-  final bool? historyChange;
   @override
   final ZarazZarazConfigBaseSettings settings;
   @override
@@ -57,21 +51,27 @@ class _$$ZarazZarazConfigBase extends $ZarazZarazConfigBase {
   final BuiltMap<String, ZarazZarazConfigBaseVariablesValue> variables;
   @override
   final int zarazVersion;
+  @override
+  final ZarazZarazConfigBaseAnalytics? analytics;
+  @override
+  final ZarazZarazConfigBaseConsent? consent;
+  @override
+  final bool? historyChange;
 
   factory _$$ZarazZarazConfigBase(
           [void Function($ZarazZarazConfigBaseBuilder)? updates]) =>
       ($ZarazZarazConfigBaseBuilder()..update(updates))._build();
 
   _$$ZarazZarazConfigBase._(
-      {this.analytics,
-      this.consent,
-      required this.dataLayer,
+      {required this.dataLayer,
       required this.debugKey,
-      this.historyChange,
       required this.settings,
       required this.triggers,
       required this.variables,
-      required this.zarazVersion})
+      required this.zarazVersion,
+      this.analytics,
+      this.consent,
+      this.historyChange})
       : super._();
   @override
   $ZarazZarazConfigBase rebuild(
@@ -86,29 +86,29 @@ class _$$ZarazZarazConfigBase extends $ZarazZarazConfigBase {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is $ZarazZarazConfigBase &&
-        analytics == other.analytics &&
-        consent == other.consent &&
         dataLayer == other.dataLayer &&
         debugKey == other.debugKey &&
-        historyChange == other.historyChange &&
         settings == other.settings &&
         triggers == other.triggers &&
         variables == other.variables &&
-        zarazVersion == other.zarazVersion;
+        zarazVersion == other.zarazVersion &&
+        analytics == other.analytics &&
+        consent == other.consent &&
+        historyChange == other.historyChange;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, analytics.hashCode);
-    _$hash = $jc(_$hash, consent.hashCode);
     _$hash = $jc(_$hash, dataLayer.hashCode);
     _$hash = $jc(_$hash, debugKey.hashCode);
-    _$hash = $jc(_$hash, historyChange.hashCode);
     _$hash = $jc(_$hash, settings.hashCode);
     _$hash = $jc(_$hash, triggers.hashCode);
     _$hash = $jc(_$hash, variables.hashCode);
     _$hash = $jc(_$hash, zarazVersion.hashCode);
+    _$hash = $jc(_$hash, analytics.hashCode);
+    _$hash = $jc(_$hash, consent.hashCode);
+    _$hash = $jc(_$hash, historyChange.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -116,15 +116,15 @@ class _$$ZarazZarazConfigBase extends $ZarazZarazConfigBase {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'$ZarazZarazConfigBase')
-          ..add('analytics', analytics)
-          ..add('consent', consent)
           ..add('dataLayer', dataLayer)
           ..add('debugKey', debugKey)
-          ..add('historyChange', historyChange)
           ..add('settings', settings)
           ..add('triggers', triggers)
           ..add('variables', variables)
-          ..add('zarazVersion', zarazVersion))
+          ..add('zarazVersion', zarazVersion)
+          ..add('analytics', analytics)
+          ..add('consent', consent)
+          ..add('historyChange', historyChange))
         .toString();
   }
 }
@@ -135,18 +135,6 @@ class $ZarazZarazConfigBaseBuilder
         ZarazZarazConfigBaseBuilder {
   _$$ZarazZarazConfigBase? _$v;
 
-  ZarazZarazConfigBaseAnalyticsBuilder? _analytics;
-  ZarazZarazConfigBaseAnalyticsBuilder get analytics =>
-      _$this._analytics ??= ZarazZarazConfigBaseAnalyticsBuilder();
-  set analytics(covariant ZarazZarazConfigBaseAnalyticsBuilder? analytics) =>
-      _$this._analytics = analytics;
-
-  ZarazZarazConfigBaseConsentBuilder? _consent;
-  ZarazZarazConfigBaseConsentBuilder get consent =>
-      _$this._consent ??= ZarazZarazConfigBaseConsentBuilder();
-  set consent(covariant ZarazZarazConfigBaseConsentBuilder? consent) =>
-      _$this._consent = consent;
-
   bool? _dataLayer;
   bool? get dataLayer => _$this._dataLayer;
   set dataLayer(covariant bool? dataLayer) => _$this._dataLayer = dataLayer;
@@ -154,11 +142,6 @@ class $ZarazZarazConfigBaseBuilder
   String? _debugKey;
   String? get debugKey => _$this._debugKey;
   set debugKey(covariant String? debugKey) => _$this._debugKey = debugKey;
-
-  bool? _historyChange;
-  bool? get historyChange => _$this._historyChange;
-  set historyChange(covariant bool? historyChange) =>
-      _$this._historyChange = historyChange;
 
   ZarazZarazConfigBaseSettingsBuilder? _settings;
   ZarazZarazConfigBaseSettingsBuilder get settings =>
@@ -189,6 +172,23 @@ class $ZarazZarazConfigBaseBuilder
   set zarazVersion(covariant int? zarazVersion) =>
       _$this._zarazVersion = zarazVersion;
 
+  ZarazZarazConfigBaseAnalyticsBuilder? _analytics;
+  ZarazZarazConfigBaseAnalyticsBuilder get analytics =>
+      _$this._analytics ??= ZarazZarazConfigBaseAnalyticsBuilder();
+  set analytics(covariant ZarazZarazConfigBaseAnalyticsBuilder? analytics) =>
+      _$this._analytics = analytics;
+
+  ZarazZarazConfigBaseConsentBuilder? _consent;
+  ZarazZarazConfigBaseConsentBuilder get consent =>
+      _$this._consent ??= ZarazZarazConfigBaseConsentBuilder();
+  set consent(covariant ZarazZarazConfigBaseConsentBuilder? consent) =>
+      _$this._consent = consent;
+
+  bool? _historyChange;
+  bool? get historyChange => _$this._historyChange;
+  set historyChange(covariant bool? historyChange) =>
+      _$this._historyChange = historyChange;
+
   $ZarazZarazConfigBaseBuilder() {
     $ZarazZarazConfigBase._defaults(this);
   }
@@ -196,15 +196,15 @@ class $ZarazZarazConfigBaseBuilder
   $ZarazZarazConfigBaseBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _analytics = $v.analytics?.toBuilder();
-      _consent = $v.consent?.toBuilder();
       _dataLayer = $v.dataLayer;
       _debugKey = $v.debugKey;
-      _historyChange = $v.historyChange;
       _settings = $v.settings.toBuilder();
       _triggers = $v.triggers.toBuilder();
       _variables = $v.variables.toBuilder();
       _zarazVersion = $v.zarazVersion;
+      _analytics = $v.analytics?.toBuilder();
+      _consent = $v.consent?.toBuilder();
+      _historyChange = $v.historyChange;
       _$v = null;
     }
     return this;
@@ -228,33 +228,33 @@ class $ZarazZarazConfigBaseBuilder
     try {
       _$result = _$v ??
           _$$ZarazZarazConfigBase._(
-            analytics: _analytics?.build(),
-            consent: _consent?.build(),
             dataLayer: BuiltValueNullFieldError.checkNotNull(
                 dataLayer, r'$ZarazZarazConfigBase', 'dataLayer'),
             debugKey: BuiltValueNullFieldError.checkNotNull(
                 debugKey, r'$ZarazZarazConfigBase', 'debugKey'),
-            historyChange: historyChange,
             settings: settings.build(),
             triggers: triggers.build(),
             variables: variables.build(),
             zarazVersion: BuiltValueNullFieldError.checkNotNull(
                 zarazVersion, r'$ZarazZarazConfigBase', 'zarazVersion'),
+            analytics: _analytics?.build(),
+            consent: _consent?.build(),
+            historyChange: historyChange,
           );
     } catch (_) {
       late String _$failedField;
       try {
-        _$failedField = 'analytics';
-        _analytics?.build();
-        _$failedField = 'consent';
-        _consent?.build();
-
         _$failedField = 'settings';
         settings.build();
         _$failedField = 'triggers';
         triggers.build();
         _$failedField = 'variables';
         variables.build();
+
+        _$failedField = 'analytics';
+        _analytics?.build();
+        _$failedField = 'consent';
+        _consent?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
             r'$ZarazZarazConfigBase', _$failedField, e.toString());

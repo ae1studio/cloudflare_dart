@@ -13,14 +13,14 @@ part 'hyperdrive_hyperdrive_origin.g.dart';
 /// HyperdriveHyperdriveOrigin
 ///
 /// Properties:
-/// * [database] - Set the name of your origin database.
-/// * [password] - Set the password needed to access your origin database. The API never returns this write-only value.
-/// * [scheme] 
-/// * [user] - Set the user of your origin database.
 /// * [host] - Defines the host (hostname or IP) of your origin database.
 /// * [port] - Defines the port (default: 5432 for Postgres) of your origin database.
 /// * [accessClientId] - Defines the Client ID of the Access token to use when connecting to the origin database.
 /// * [accessClientSecret] - Defines the Client Secret of the Access Token to use when connecting to the origin database. The API never returns this write-only value.
+/// * [database] - Set the name of your origin database.
+/// * [password] - Set the password needed to access your origin database. The API never returns this write-only value.
+/// * [scheme] 
+/// * [user] - Set the user of your origin database.
 @BuiltValue()
 abstract class HyperdriveHyperdriveOrigin implements HyperdriveHyperdriveDatabase, Built<HyperdriveHyperdriveOrigin, HyperdriveHyperdriveOriginBuilder> {
   /// Defines the Client Secret of the Access Token to use when connecting to the origin database. The API never returns this write-only value.

@@ -20,8 +20,8 @@ part 'zero_trust_gateway_proxy_endpoints_list_proxy_endpoints4_xx_response.g.dar
 /// * [errors] 
 /// * [messages] 
 /// * [success] - Indicate whether the API call was successful.
-/// * [resultInfo] 
 /// * [result] 
+/// * [resultInfo] 
 @BuiltValue()
 abstract class ZeroTrustGatewayProxyEndpointsListProxyEndpoints4XXResponse implements ZeroTrustGatewayApiResponseCommonFailure, ZeroTrustGatewayProxyEndpointsComponentsSchemasResponseCollection, Built<ZeroTrustGatewayProxyEndpointsListProxyEndpoints4XXResponse, ZeroTrustGatewayProxyEndpointsListProxyEndpoints4XXResponseBuilder> {
   ZeroTrustGatewayProxyEndpointsListProxyEndpoints4XXResponse._();

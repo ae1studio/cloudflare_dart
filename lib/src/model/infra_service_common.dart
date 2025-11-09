@@ -13,29 +13,29 @@ part 'infra_service_common.g.dart';
 /// InfraServiceCommon
 ///
 /// Properties:
-/// * [createdAt] 
 /// * [host] 
 /// * [name] 
-/// * [serviceId] 
 /// * [type] 
+/// * [createdAt] 
+/// * [serviceId] 
 /// * [updatedAt] 
 @BuiltValue(instantiable: false)
 abstract class InfraServiceCommon  {
-  @BuiltValueField(wireName: r'created_at')
-  DateTime? get createdAt;
-
   @BuiltValueField(wireName: r'host')
   InfraServiceHost get host;
 
   @BuiltValueField(wireName: r'name')
   String get name;
 
-  @BuiltValueField(wireName: r'service_id')
-  String? get serviceId;
-
   @BuiltValueField(wireName: r'type')
   InfraServiceType get type;
   // enum typeEnum {  http,  };
+
+  @BuiltValueField(wireName: r'created_at')
+  DateTime? get createdAt;
+
+  @BuiltValueField(wireName: r'service_id')
+  String? get serviceId;
 
   @BuiltValueField(wireName: r'updated_at')
   DateTime? get updatedAt;
@@ -56,13 +56,6 @@ class _$InfraServiceCommonSerializer implements PrimitiveSerializer<InfraService
     InfraServiceCommon object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
-    if (object.createdAt != null) {
-      yield r'created_at';
-      yield serializers.serialize(
-        object.createdAt,
-        specifiedType: const FullType(DateTime),
-      );
-    }
     yield r'host';
     yield serializers.serialize(
       object.host,
@@ -73,6 +66,18 @@ class _$InfraServiceCommonSerializer implements PrimitiveSerializer<InfraService
       object.name,
       specifiedType: const FullType(String),
     );
+    yield r'type';
+    yield serializers.serialize(
+      object.type,
+      specifiedType: const FullType(InfraServiceType),
+    );
+    if (object.createdAt != null) {
+      yield r'created_at';
+      yield serializers.serialize(
+        object.createdAt,
+        specifiedType: const FullType(DateTime),
+      );
+    }
     if (object.serviceId != null) {
       yield r'service_id';
       yield serializers.serialize(
@@ -80,11 +85,6 @@ class _$InfraServiceCommonSerializer implements PrimitiveSerializer<InfraService
         specifiedType: const FullType(String),
       );
     }
-    yield r'type';
-    yield serializers.serialize(
-      object.type,
-      specifiedType: const FullType(InfraServiceType),
-    );
     if (object.updatedAt != null) {
       yield r'updated_at';
       yield serializers.serialize(
@@ -155,13 +155,6 @@ class _$$InfraServiceCommonSerializer implements PrimitiveSerializer<$InfraServi
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'created_at':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
-          result.createdAt = valueDes;
-          break;
         case r'host':
           final valueDes = serializers.deserialize(
             value,
@@ -176,19 +169,26 @@ class _$$InfraServiceCommonSerializer implements PrimitiveSerializer<$InfraServi
           ) as String;
           result.name = valueDes;
           break;
-        case r'service_id':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.serviceId = valueDes;
-          break;
         case r'type':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(InfraServiceType),
           ) as InfraServiceType;
           result.type = valueDes;
+          break;
+        case r'created_at':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(DateTime),
+          ) as DateTime;
+          result.createdAt = valueDes;
+          break;
+        case r'service_id':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.serviceId = valueDes;
           break;
         case r'updated_at':
           final valueDes = serializers.deserialize(

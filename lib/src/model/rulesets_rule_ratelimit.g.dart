@@ -10,11 +10,11 @@ class _$RulesetsRuleRatelimit extends RulesetsRuleRatelimit {
   @override
   final BuiltSet<String> characteristics;
   @override
+  final int period;
+  @override
   final String? countingExpression;
   @override
   final int? mitigationTimeout;
-  @override
-  final int period;
   @override
   final int? requestsPerPeriod;
   @override
@@ -30,9 +30,9 @@ class _$RulesetsRuleRatelimit extends RulesetsRuleRatelimit {
 
   _$RulesetsRuleRatelimit._(
       {required this.characteristics,
+      required this.period,
       this.countingExpression,
       this.mitigationTimeout,
-      required this.period,
       this.requestsPerPeriod,
       this.requestsToOrigin,
       this.scorePerPeriod,
@@ -52,9 +52,9 @@ class _$RulesetsRuleRatelimit extends RulesetsRuleRatelimit {
     if (identical(other, this)) return true;
     return other is RulesetsRuleRatelimit &&
         characteristics == other.characteristics &&
+        period == other.period &&
         countingExpression == other.countingExpression &&
         mitigationTimeout == other.mitigationTimeout &&
-        period == other.period &&
         requestsPerPeriod == other.requestsPerPeriod &&
         requestsToOrigin == other.requestsToOrigin &&
         scorePerPeriod == other.scorePerPeriod &&
@@ -65,9 +65,9 @@ class _$RulesetsRuleRatelimit extends RulesetsRuleRatelimit {
   int get hashCode {
     var _$hash = 0;
     _$hash = $jc(_$hash, characteristics.hashCode);
+    _$hash = $jc(_$hash, period.hashCode);
     _$hash = $jc(_$hash, countingExpression.hashCode);
     _$hash = $jc(_$hash, mitigationTimeout.hashCode);
-    _$hash = $jc(_$hash, period.hashCode);
     _$hash = $jc(_$hash, requestsPerPeriod.hashCode);
     _$hash = $jc(_$hash, requestsToOrigin.hashCode);
     _$hash = $jc(_$hash, scorePerPeriod.hashCode);
@@ -80,9 +80,9 @@ class _$RulesetsRuleRatelimit extends RulesetsRuleRatelimit {
   String toString() {
     return (newBuiltValueToStringHelper(r'RulesetsRuleRatelimit')
           ..add('characteristics', characteristics)
+          ..add('period', period)
           ..add('countingExpression', countingExpression)
           ..add('mitigationTimeout', mitigationTimeout)
-          ..add('period', period)
           ..add('requestsPerPeriod', requestsPerPeriod)
           ..add('requestsToOrigin', requestsToOrigin)
           ..add('scorePerPeriod', scorePerPeriod)
@@ -101,6 +101,10 @@ class RulesetsRuleRatelimitBuilder
   set characteristics(SetBuilder<String>? characteristics) =>
       _$this._characteristics = characteristics;
 
+  int? _period;
+  int? get period => _$this._period;
+  set period(int? period) => _$this._period = period;
+
   String? _countingExpression;
   String? get countingExpression => _$this._countingExpression;
   set countingExpression(String? countingExpression) =>
@@ -110,10 +114,6 @@ class RulesetsRuleRatelimitBuilder
   int? get mitigationTimeout => _$this._mitigationTimeout;
   set mitigationTimeout(int? mitigationTimeout) =>
       _$this._mitigationTimeout = mitigationTimeout;
-
-  int? _period;
-  int? get period => _$this._period;
-  set period(int? period) => _$this._period = period;
 
   int? _requestsPerPeriod;
   int? get requestsPerPeriod => _$this._requestsPerPeriod;
@@ -143,9 +143,9 @@ class RulesetsRuleRatelimitBuilder
     final $v = _$v;
     if ($v != null) {
       _characteristics = $v.characteristics.toBuilder();
+      _period = $v.period;
       _countingExpression = $v.countingExpression;
       _mitigationTimeout = $v.mitigationTimeout;
-      _period = $v.period;
       _requestsPerPeriod = $v.requestsPerPeriod;
       _requestsToOrigin = $v.requestsToOrigin;
       _scorePerPeriod = $v.scorePerPeriod;
@@ -174,10 +174,10 @@ class RulesetsRuleRatelimitBuilder
       _$result = _$v ??
           _$RulesetsRuleRatelimit._(
             characteristics: characteristics.build(),
-            countingExpression: countingExpression,
-            mitigationTimeout: mitigationTimeout,
             period: BuiltValueNullFieldError.checkNotNull(
                 period, r'RulesetsRuleRatelimit', 'period'),
+            countingExpression: countingExpression,
+            mitigationTimeout: mitigationTimeout,
             requestsPerPeriod: requestsPerPeriod,
             requestsToOrigin: requestsToOrigin,
             scorePerPeriod: scorePerPeriod,

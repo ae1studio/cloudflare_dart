@@ -8,6 +8,8 @@ part of 'prompt.dart';
 
 class _$Prompt extends Prompt {
   @override
+  final String prompt;
+  @override
   final num? frequencyPenalty;
   @override
   final String? lora;
@@ -15,8 +17,6 @@ class _$Prompt extends Prompt {
   final int? maxTokens;
   @override
   final num? presencePenalty;
-  @override
-  final String prompt;
   @override
   final bool? raw;
   @override
@@ -38,11 +38,11 @@ class _$Prompt extends Prompt {
       (PromptBuilder()..update(updates))._build();
 
   _$Prompt._(
-      {this.frequencyPenalty,
+      {required this.prompt,
+      this.frequencyPenalty,
       this.lora,
       this.maxTokens,
       this.presencePenalty,
-      required this.prompt,
       this.raw,
       this.repetitionPenalty,
       this.responseFormat,
@@ -63,11 +63,11 @@ class _$Prompt extends Prompt {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is Prompt &&
+        prompt == other.prompt &&
         frequencyPenalty == other.frequencyPenalty &&
         lora == other.lora &&
         maxTokens == other.maxTokens &&
         presencePenalty == other.presencePenalty &&
-        prompt == other.prompt &&
         raw == other.raw &&
         repetitionPenalty == other.repetitionPenalty &&
         responseFormat == other.responseFormat &&
@@ -81,11 +81,11 @@ class _$Prompt extends Prompt {
   @override
   int get hashCode {
     var _$hash = 0;
+    _$hash = $jc(_$hash, prompt.hashCode);
     _$hash = $jc(_$hash, frequencyPenalty.hashCode);
     _$hash = $jc(_$hash, lora.hashCode);
     _$hash = $jc(_$hash, maxTokens.hashCode);
     _$hash = $jc(_$hash, presencePenalty.hashCode);
-    _$hash = $jc(_$hash, prompt.hashCode);
     _$hash = $jc(_$hash, raw.hashCode);
     _$hash = $jc(_$hash, repetitionPenalty.hashCode);
     _$hash = $jc(_$hash, responseFormat.hashCode);
@@ -101,11 +101,11 @@ class _$Prompt extends Prompt {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'Prompt')
+          ..add('prompt', prompt)
           ..add('frequencyPenalty', frequencyPenalty)
           ..add('lora', lora)
           ..add('maxTokens', maxTokens)
           ..add('presencePenalty', presencePenalty)
-          ..add('prompt', prompt)
           ..add('raw', raw)
           ..add('repetitionPenalty', repetitionPenalty)
           ..add('responseFormat', responseFormat)
@@ -120,6 +120,10 @@ class _$Prompt extends Prompt {
 
 class PromptBuilder implements Builder<Prompt, PromptBuilder> {
   _$Prompt? _$v;
+
+  String? _prompt;
+  String? get prompt => _$this._prompt;
+  set prompt(String? prompt) => _$this._prompt = prompt;
 
   num? _frequencyPenalty;
   num? get frequencyPenalty => _$this._frequencyPenalty;
@@ -138,10 +142,6 @@ class PromptBuilder implements Builder<Prompt, PromptBuilder> {
   num? get presencePenalty => _$this._presencePenalty;
   set presencePenalty(num? presencePenalty) =>
       _$this._presencePenalty = presencePenalty;
-
-  String? _prompt;
-  String? get prompt => _$this._prompt;
-  set prompt(String? prompt) => _$this._prompt = prompt;
 
   bool? _raw;
   bool? get raw => _$this._raw;
@@ -185,11 +185,11 @@ class PromptBuilder implements Builder<Prompt, PromptBuilder> {
   PromptBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
+      _prompt = $v.prompt;
       _frequencyPenalty = $v.frequencyPenalty;
       _lora = $v.lora;
       _maxTokens = $v.maxTokens;
       _presencePenalty = $v.presencePenalty;
-      _prompt = $v.prompt;
       _raw = $v.raw;
       _repetitionPenalty = $v.repetitionPenalty;
       _responseFormat = $v.responseFormat?.toBuilder();
@@ -221,12 +221,12 @@ class PromptBuilder implements Builder<Prompt, PromptBuilder> {
     try {
       _$result = _$v ??
           _$Prompt._(
+            prompt: BuiltValueNullFieldError.checkNotNull(
+                prompt, r'Prompt', 'prompt'),
             frequencyPenalty: frequencyPenalty,
             lora: lora,
             maxTokens: maxTokens,
             presencePenalty: presencePenalty,
-            prompt: BuiltValueNullFieldError.checkNotNull(
-                prompt, r'Prompt', 'prompt'),
             raw: raw,
             repetitionPenalty: repetitionPenalty,
             responseFormat: _responseFormat?.build(),

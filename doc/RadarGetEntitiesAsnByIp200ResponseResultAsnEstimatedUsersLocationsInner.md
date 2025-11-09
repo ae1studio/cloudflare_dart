@@ -8,9 +8,9 @@ import 'package:cloudflare_dart/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**estimatedUsers** | **int** | Estimated users per location. | [optional] 
 **locationAlpha2** | **String** |  | 
 **locationName** | **String** |  | 
+**estimatedUsers** | **int** | Estimated users per location. | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

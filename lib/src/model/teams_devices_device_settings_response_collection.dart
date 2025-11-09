@@ -10,6 +10,7 @@ import 'package:cloudflare_dart/src/model/teams_devices_device_settings_policy.d
 import 'package:cloudflare_dart/src/model/aaa_messages_inner.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
+import 'package:built_value/json_object.dart';
 
 part 'teams_devices_device_settings_response_collection.g.dart';
 

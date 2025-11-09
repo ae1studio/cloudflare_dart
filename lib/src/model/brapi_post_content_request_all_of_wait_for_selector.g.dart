@@ -9,9 +9,9 @@ part of 'brapi_post_content_request_all_of_wait_for_selector.dart';
 class _$BrapiPostContentRequestAllOfWaitForSelector
     extends BrapiPostContentRequestAllOfWaitForSelector {
   @override
-  final bool? hidden;
-  @override
   final String selector;
+  @override
+  final bool? hidden;
   @override
   final num? timeout;
   @override
@@ -24,7 +24,7 @@ class _$BrapiPostContentRequestAllOfWaitForSelector
           ._build();
 
   _$BrapiPostContentRequestAllOfWaitForSelector._(
-      {this.hidden, required this.selector, this.timeout, this.visible})
+      {required this.selector, this.hidden, this.timeout, this.visible})
       : super._();
   @override
   BrapiPostContentRequestAllOfWaitForSelector rebuild(
@@ -40,8 +40,8 @@ class _$BrapiPostContentRequestAllOfWaitForSelector
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is BrapiPostContentRequestAllOfWaitForSelector &&
-        hidden == other.hidden &&
         selector == other.selector &&
+        hidden == other.hidden &&
         timeout == other.timeout &&
         visible == other.visible;
   }
@@ -49,8 +49,8 @@ class _$BrapiPostContentRequestAllOfWaitForSelector
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, hidden.hashCode);
     _$hash = $jc(_$hash, selector.hashCode);
+    _$hash = $jc(_$hash, hidden.hashCode);
     _$hash = $jc(_$hash, timeout.hashCode);
     _$hash = $jc(_$hash, visible.hashCode);
     _$hash = $jf(_$hash);
@@ -61,8 +61,8 @@ class _$BrapiPostContentRequestAllOfWaitForSelector
   String toString() {
     return (newBuiltValueToStringHelper(
             r'BrapiPostContentRequestAllOfWaitForSelector')
-          ..add('hidden', hidden)
           ..add('selector', selector)
+          ..add('hidden', hidden)
           ..add('timeout', timeout)
           ..add('visible', visible))
         .toString();
@@ -75,13 +75,13 @@ class BrapiPostContentRequestAllOfWaitForSelectorBuilder
             BrapiPostContentRequestAllOfWaitForSelectorBuilder> {
   _$BrapiPostContentRequestAllOfWaitForSelector? _$v;
 
-  bool? _hidden;
-  bool? get hidden => _$this._hidden;
-  set hidden(bool? hidden) => _$this._hidden = hidden;
-
   String? _selector;
   String? get selector => _$this._selector;
   set selector(String? selector) => _$this._selector = selector;
+
+  bool? _hidden;
+  bool? get hidden => _$this._hidden;
+  set hidden(bool? hidden) => _$this._hidden = hidden;
 
   num? _timeout;
   num? get timeout => _$this._timeout;
@@ -98,8 +98,8 @@ class BrapiPostContentRequestAllOfWaitForSelectorBuilder
   BrapiPostContentRequestAllOfWaitForSelectorBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _hidden = $v.hidden;
       _selector = $v.selector;
+      _hidden = $v.hidden;
       _timeout = $v.timeout;
       _visible = $v.visible;
       _$v = null;
@@ -125,9 +125,9 @@ class BrapiPostContentRequestAllOfWaitForSelectorBuilder
   _$BrapiPostContentRequestAllOfWaitForSelector _build() {
     final _$result = _$v ??
         _$BrapiPostContentRequestAllOfWaitForSelector._(
-          hidden: hidden,
           selector: BuiltValueNullFieldError.checkNotNull(selector,
               r'BrapiPostContentRequestAllOfWaitForSelector', 'selector'),
+          hidden: hidden,
           timeout: timeout,
           visible: visible,
         );

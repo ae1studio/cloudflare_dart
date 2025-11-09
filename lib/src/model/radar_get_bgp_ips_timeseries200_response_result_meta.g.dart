@@ -237,8 +237,6 @@ class _$RadarGetBgpIpsTimeseries200ResponseResultMeta
           RadarGetAiBotsSummaryByUserAgent200ResponseResultMetaDateRangeInner>
       dateRange;
   @override
-  final RadarGetBgpIpsTimeseries200ResponseResultMetaDelay? delay;
-  @override
   final DateTime lastUpdated;
   @override
   final RadarGetBgpIpsTimeseries200ResponseResultMetaNormalizationEnum
@@ -246,6 +244,8 @@ class _$RadarGetBgpIpsTimeseries200ResponseResultMeta
   @override
   final BuiltList<
       RadarGetAiBotsSummaryByUserAgent200ResponseResultMetaUnitsInner> units;
+  @override
+  final RadarGetBgpIpsTimeseries200ResponseResultMetaDelay? delay;
 
   factory _$RadarGetBgpIpsTimeseries200ResponseResultMeta(
           [void Function(RadarGetBgpIpsTimeseries200ResponseResultMetaBuilder)?
@@ -257,10 +257,10 @@ class _$RadarGetBgpIpsTimeseries200ResponseResultMeta
       {required this.aggInterval,
       required this.confidenceInfo,
       required this.dateRange,
-      this.delay,
       required this.lastUpdated,
       required this.normalization,
-      required this.units})
+      required this.units,
+      this.delay})
       : super._();
   @override
   RadarGetBgpIpsTimeseries200ResponseResultMeta rebuild(
@@ -279,10 +279,10 @@ class _$RadarGetBgpIpsTimeseries200ResponseResultMeta
         aggInterval == other.aggInterval &&
         confidenceInfo == other.confidenceInfo &&
         dateRange == other.dateRange &&
-        delay == other.delay &&
         lastUpdated == other.lastUpdated &&
         normalization == other.normalization &&
-        units == other.units;
+        units == other.units &&
+        delay == other.delay;
   }
 
   @override
@@ -291,10 +291,10 @@ class _$RadarGetBgpIpsTimeseries200ResponseResultMeta
     _$hash = $jc(_$hash, aggInterval.hashCode);
     _$hash = $jc(_$hash, confidenceInfo.hashCode);
     _$hash = $jc(_$hash, dateRange.hashCode);
-    _$hash = $jc(_$hash, delay.hashCode);
     _$hash = $jc(_$hash, lastUpdated.hashCode);
     _$hash = $jc(_$hash, normalization.hashCode);
     _$hash = $jc(_$hash, units.hashCode);
+    _$hash = $jc(_$hash, delay.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -306,10 +306,10 @@ class _$RadarGetBgpIpsTimeseries200ResponseResultMeta
           ..add('aggInterval', aggInterval)
           ..add('confidenceInfo', confidenceInfo)
           ..add('dateRange', dateRange)
-          ..add('delay', delay)
           ..add('lastUpdated', lastUpdated)
           ..add('normalization', normalization)
-          ..add('units', units))
+          ..add('units', units)
+          ..add('delay', delay))
         .toString();
   }
 }
@@ -351,13 +351,6 @@ class RadarGetBgpIpsTimeseries200ResponseResultMetaBuilder
               dateRange) =>
       _$this._dateRange = dateRange;
 
-  RadarGetBgpIpsTimeseries200ResponseResultMetaDelayBuilder? _delay;
-  RadarGetBgpIpsTimeseries200ResponseResultMetaDelayBuilder get delay =>
-      _$this._delay ??=
-          RadarGetBgpIpsTimeseries200ResponseResultMetaDelayBuilder();
-  set delay(RadarGetBgpIpsTimeseries200ResponseResultMetaDelayBuilder? delay) =>
-      _$this._delay = delay;
-
   DateTime? _lastUpdated;
   DateTime? get lastUpdated => _$this._lastUpdated;
   set lastUpdated(DateTime? lastUpdated) => _$this._lastUpdated = lastUpdated;
@@ -382,6 +375,13 @@ class RadarGetBgpIpsTimeseries200ResponseResultMetaBuilder
               units) =>
       _$this._units = units;
 
+  RadarGetBgpIpsTimeseries200ResponseResultMetaDelayBuilder? _delay;
+  RadarGetBgpIpsTimeseries200ResponseResultMetaDelayBuilder get delay =>
+      _$this._delay ??=
+          RadarGetBgpIpsTimeseries200ResponseResultMetaDelayBuilder();
+  set delay(RadarGetBgpIpsTimeseries200ResponseResultMetaDelayBuilder? delay) =>
+      _$this._delay = delay;
+
   RadarGetBgpIpsTimeseries200ResponseResultMetaBuilder() {
     RadarGetBgpIpsTimeseries200ResponseResultMeta._defaults(this);
   }
@@ -392,10 +392,10 @@ class RadarGetBgpIpsTimeseries200ResponseResultMetaBuilder
       _aggInterval = $v.aggInterval;
       _confidenceInfo = $v.confidenceInfo.toBuilder();
       _dateRange = $v.dateRange.toBuilder();
-      _delay = $v.delay?.toBuilder();
       _lastUpdated = $v.lastUpdated;
       _normalization = $v.normalization;
       _units = $v.units.toBuilder();
+      _delay = $v.delay?.toBuilder();
       _$v = null;
     }
     return this;
@@ -427,7 +427,6 @@ class RadarGetBgpIpsTimeseries200ResponseResultMetaBuilder
                 'aggInterval'),
             confidenceInfo: confidenceInfo.build(),
             dateRange: dateRange.build(),
-            delay: _delay?.build(),
             lastUpdated: BuiltValueNullFieldError.checkNotNull(
                 lastUpdated,
                 r'RadarGetBgpIpsTimeseries200ResponseResultMeta',
@@ -437,6 +436,7 @@ class RadarGetBgpIpsTimeseries200ResponseResultMetaBuilder
                 r'RadarGetBgpIpsTimeseries200ResponseResultMeta',
                 'normalization'),
             units: units.build(),
+            delay: _delay?.build(),
           );
     } catch (_) {
       late String _$failedField;
@@ -445,11 +445,11 @@ class RadarGetBgpIpsTimeseries200ResponseResultMetaBuilder
         confidenceInfo.build();
         _$failedField = 'dateRange';
         dateRange.build();
-        _$failedField = 'delay';
-        _delay?.build();
 
         _$failedField = 'units';
         units.build();
+        _$failedField = 'delay';
+        _delay?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
             r'RadarGetBgpIpsTimeseries200ResponseResultMeta',

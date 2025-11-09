@@ -13,23 +13,41 @@ part 'post_event_create_request.g.dart';
 /// PostEventCreateRequest
 ///
 /// Properties:
+/// * [category] 
+/// * [date] 
+/// * [event] 
+/// * [indicatorType] 
+/// * [raw] 
+/// * [tlp] 
 /// * [accountId] 
 /// * [attacker] 
 /// * [attackerCountry] 
-/// * [category] 
 /// * [datasetId] 
-/// * [date] 
-/// * [event] 
 /// * [indicator] 
-/// * [indicatorType] 
 /// * [insight] 
-/// * [raw] 
 /// * [tags] 
 /// * [targetCountry] 
 /// * [targetIndustry] 
-/// * [tlp] 
 @BuiltValue()
 abstract class PostEventCreateRequest implements Built<PostEventCreateRequest, PostEventCreateRequestBuilder> {
+  @BuiltValueField(wireName: r'category')
+  String get category;
+
+  @BuiltValueField(wireName: r'date')
+  DateTime get date;
+
+  @BuiltValueField(wireName: r'event')
+  String get event;
+
+  @BuiltValueField(wireName: r'indicatorType')
+  String get indicatorType;
+
+  @BuiltValueField(wireName: r'raw')
+  PostEventCreateRequestRaw get raw;
+
+  @BuiltValueField(wireName: r'tlp')
+  String get tlp;
+
   @BuiltValueField(wireName: r'accountId')
   num? get accountId;
 
@@ -39,29 +57,14 @@ abstract class PostEventCreateRequest implements Built<PostEventCreateRequest, P
   @BuiltValueField(wireName: r'attackerCountry')
   String? get attackerCountry;
 
-  @BuiltValueField(wireName: r'category')
-  String get category;
-
   @BuiltValueField(wireName: r'datasetId')
   String? get datasetId;
-
-  @BuiltValueField(wireName: r'date')
-  DateTime get date;
-
-  @BuiltValueField(wireName: r'event')
-  String get event;
 
   @BuiltValueField(wireName: r'indicator')
   String? get indicator;
 
-  @BuiltValueField(wireName: r'indicatorType')
-  String get indicatorType;
-
   @BuiltValueField(wireName: r'insight')
   String? get insight;
-
-  @BuiltValueField(wireName: r'raw')
-  PostEventCreateRequestRaw get raw;
 
   @BuiltValueField(wireName: r'tags')
   BuiltList<String>? get tags;
@@ -71,9 +74,6 @@ abstract class PostEventCreateRequest implements Built<PostEventCreateRequest, P
 
   @BuiltValueField(wireName: r'targetIndustry')
   String? get targetIndustry;
-
-  @BuiltValueField(wireName: r'tlp')
-  String get tlp;
 
   PostEventCreateRequest._();
 
@@ -98,6 +98,36 @@ class _$PostEventCreateRequestSerializer implements PrimitiveSerializer<PostEven
     PostEventCreateRequest object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    yield r'category';
+    yield serializers.serialize(
+      object.category,
+      specifiedType: const FullType(String),
+    );
+    yield r'date';
+    yield serializers.serialize(
+      object.date,
+      specifiedType: const FullType(DateTime),
+    );
+    yield r'event';
+    yield serializers.serialize(
+      object.event,
+      specifiedType: const FullType(String),
+    );
+    yield r'indicatorType';
+    yield serializers.serialize(
+      object.indicatorType,
+      specifiedType: const FullType(String),
+    );
+    yield r'raw';
+    yield serializers.serialize(
+      object.raw,
+      specifiedType: const FullType(PostEventCreateRequestRaw),
+    );
+    yield r'tlp';
+    yield serializers.serialize(
+      object.tlp,
+      specifiedType: const FullType(String),
+    );
     if (object.accountId != null) {
       yield r'accountId';
       yield serializers.serialize(
@@ -119,11 +149,6 @@ class _$PostEventCreateRequestSerializer implements PrimitiveSerializer<PostEven
         specifiedType: const FullType(String),
       );
     }
-    yield r'category';
-    yield serializers.serialize(
-      object.category,
-      specifiedType: const FullType(String),
-    );
     if (object.datasetId != null) {
       yield r'datasetId';
       yield serializers.serialize(
@@ -131,16 +156,6 @@ class _$PostEventCreateRequestSerializer implements PrimitiveSerializer<PostEven
         specifiedType: const FullType(String),
       );
     }
-    yield r'date';
-    yield serializers.serialize(
-      object.date,
-      specifiedType: const FullType(DateTime),
-    );
-    yield r'event';
-    yield serializers.serialize(
-      object.event,
-      specifiedType: const FullType(String),
-    );
     if (object.indicator != null) {
       yield r'indicator';
       yield serializers.serialize(
@@ -148,11 +163,6 @@ class _$PostEventCreateRequestSerializer implements PrimitiveSerializer<PostEven
         specifiedType: const FullType(String),
       );
     }
-    yield r'indicatorType';
-    yield serializers.serialize(
-      object.indicatorType,
-      specifiedType: const FullType(String),
-    );
     if (object.insight != null) {
       yield r'insight';
       yield serializers.serialize(
@@ -160,11 +170,6 @@ class _$PostEventCreateRequestSerializer implements PrimitiveSerializer<PostEven
         specifiedType: const FullType(String),
       );
     }
-    yield r'raw';
-    yield serializers.serialize(
-      object.raw,
-      specifiedType: const FullType(PostEventCreateRequestRaw),
-    );
     if (object.tags != null) {
       yield r'tags';
       yield serializers.serialize(
@@ -186,11 +191,6 @@ class _$PostEventCreateRequestSerializer implements PrimitiveSerializer<PostEven
         specifiedType: const FullType(String),
       );
     }
-    yield r'tlp';
-    yield serializers.serialize(
-      object.tlp,
-      specifiedType: const FullType(String),
-    );
   }
 
   @override
@@ -214,6 +214,48 @@ class _$PostEventCreateRequestSerializer implements PrimitiveSerializer<PostEven
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
+        case r'category':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.category = valueDes;
+          break;
+        case r'date':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(DateTime),
+          ) as DateTime;
+          result.date = valueDes;
+          break;
+        case r'event':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.event = valueDes;
+          break;
+        case r'indicatorType':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.indicatorType = valueDes;
+          break;
+        case r'raw':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(PostEventCreateRequestRaw),
+          ) as PostEventCreateRequestRaw;
+          result.raw.replace(valueDes);
+          break;
+        case r'tlp':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.tlp = valueDes;
+          break;
         case r'accountId':
           final valueDes = serializers.deserialize(
             value,
@@ -236,33 +278,12 @@ class _$PostEventCreateRequestSerializer implements PrimitiveSerializer<PostEven
           ) as String;
           result.attackerCountry = valueDes;
           break;
-        case r'category':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.category = valueDes;
-          break;
         case r'datasetId':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(String),
           ) as String;
           result.datasetId = valueDes;
-          break;
-        case r'date':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
-          result.date = valueDes;
-          break;
-        case r'event':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.event = valueDes;
           break;
         case r'indicator':
           final valueDes = serializers.deserialize(
@@ -271,26 +292,12 @@ class _$PostEventCreateRequestSerializer implements PrimitiveSerializer<PostEven
           ) as String;
           result.indicator = valueDes;
           break;
-        case r'indicatorType':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.indicatorType = valueDes;
-          break;
         case r'insight':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(String),
           ) as String;
           result.insight = valueDes;
-          break;
-        case r'raw':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(PostEventCreateRequestRaw),
-          ) as PostEventCreateRequestRaw;
-          result.raw.replace(valueDes);
           break;
         case r'tags':
           final valueDes = serializers.deserialize(
@@ -312,13 +319,6 @@ class _$PostEventCreateRequestSerializer implements PrimitiveSerializer<PostEven
             specifiedType: const FullType(String),
           ) as String;
           result.targetIndustry = valueDes;
-          break;
-        case r'tlp':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.tlp = valueDes;
           break;
         default:
           unhandled.add(key);

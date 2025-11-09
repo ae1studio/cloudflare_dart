@@ -14,8 +14,8 @@ Name | Type | Description | Notes
 **min** | **BuiltMap&lt;String, num&gt;** | Minimum result for each selected metrics across all data. | 
 **query** | [**SpectrumAnalyticsQuery**](SpectrumAnalyticsQuery.md) |  | 
 **rows** | **num** | Total number of rows in the result. | 
-**timeIntervals** | [**BuiltList&lt;BuiltList&lt;DateTime&gt;&gt;**](BuiltList.md) | List of time interval buckets: [start, end] | [optional] 
 **totals** | **BuiltMap&lt;String, num&gt;** | Total result for each selected metrics across all data. | 
+**timeIntervals** | [**BuiltList&lt;BuiltList&lt;DateTime&gt;&gt;**](BuiltList.md) | List of time interval buckets: [start, end] | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

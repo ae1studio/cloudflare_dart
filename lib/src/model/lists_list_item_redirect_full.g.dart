@@ -8,13 +8,13 @@ part of 'lists_list_item_redirect_full.dart';
 
 class _$ListsListItemRedirectFull extends ListsListItemRedirectFull {
   @override
-  final String? comment;
-  @override
   final String createdOn;
   @override
   final String id;
   @override
   final String modifiedOn;
+  @override
+  final String? comment;
   @override
   final ListsItemRedirect redirect;
 
@@ -23,10 +23,10 @@ class _$ListsListItemRedirectFull extends ListsListItemRedirectFull {
       (ListsListItemRedirectFullBuilder()..update(updates))._build();
 
   _$ListsListItemRedirectFull._(
-      {this.comment,
-      required this.createdOn,
+      {required this.createdOn,
       required this.id,
       required this.modifiedOn,
+      this.comment,
       required this.redirect})
       : super._();
   @override
@@ -42,20 +42,20 @@ class _$ListsListItemRedirectFull extends ListsListItemRedirectFull {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is ListsListItemRedirectFull &&
-        comment == other.comment &&
         createdOn == other.createdOn &&
         id == other.id &&
         modifiedOn == other.modifiedOn &&
+        comment == other.comment &&
         redirect == other.redirect;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, comment.hashCode);
     _$hash = $jc(_$hash, createdOn.hashCode);
     _$hash = $jc(_$hash, id.hashCode);
     _$hash = $jc(_$hash, modifiedOn.hashCode);
+    _$hash = $jc(_$hash, comment.hashCode);
     _$hash = $jc(_$hash, redirect.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
@@ -64,10 +64,10 @@ class _$ListsListItemRedirectFull extends ListsListItemRedirectFull {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'ListsListItemRedirectFull')
-          ..add('comment', comment)
           ..add('createdOn', createdOn)
           ..add('id', id)
           ..add('modifiedOn', modifiedOn)
+          ..add('comment', comment)
           ..add('redirect', redirect))
         .toString();
   }
@@ -79,10 +79,6 @@ class ListsListItemRedirectFullBuilder
         ListsItemBaseBuilder,
         ListsListItemRedirectObjectBuilder {
   _$ListsListItemRedirectFull? _$v;
-
-  String? _comment;
-  String? get comment => _$this._comment;
-  set comment(covariant String? comment) => _$this._comment = comment;
 
   String? _createdOn;
   String? get createdOn => _$this._createdOn;
@@ -97,6 +93,10 @@ class ListsListItemRedirectFullBuilder
   set modifiedOn(covariant String? modifiedOn) =>
       _$this._modifiedOn = modifiedOn;
 
+  String? _comment;
+  String? get comment => _$this._comment;
+  set comment(covariant String? comment) => _$this._comment = comment;
+
   ListsItemRedirectBuilder? _redirect;
   ListsItemRedirectBuilder get redirect =>
       _$this._redirect ??= ListsItemRedirectBuilder();
@@ -110,10 +110,10 @@ class ListsListItemRedirectFullBuilder
   ListsListItemRedirectFullBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _comment = $v.comment;
       _createdOn = $v.createdOn;
       _id = $v.id;
       _modifiedOn = $v.modifiedOn;
+      _comment = $v.comment;
       _redirect = $v.redirect.toBuilder();
       _$v = null;
     }
@@ -139,13 +139,13 @@ class ListsListItemRedirectFullBuilder
     try {
       _$result = _$v ??
           _$ListsListItemRedirectFull._(
-            comment: comment,
             createdOn: BuiltValueNullFieldError.checkNotNull(
                 createdOn, r'ListsListItemRedirectFull', 'createdOn'),
             id: BuiltValueNullFieldError.checkNotNull(
                 id, r'ListsListItemRedirectFull', 'id'),
             modifiedOn: BuiltValueNullFieldError.checkNotNull(
                 modifiedOn, r'ListsListItemRedirectFull', 'modifiedOn'),
+            comment: comment,
             redirect: redirect.build(),
           );
     } catch (_) {

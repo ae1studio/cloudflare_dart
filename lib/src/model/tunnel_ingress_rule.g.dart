@@ -10,11 +10,11 @@ class _$TunnelIngressRule extends TunnelIngressRule {
   @override
   final String hostname;
   @override
+  final String service;
+  @override
   final TunnelOriginRequest? originRequest;
   @override
   final String? path;
-  @override
-  final String service;
 
   factory _$TunnelIngressRule(
           [void Function(TunnelIngressRuleBuilder)? updates]) =>
@@ -22,9 +22,9 @@ class _$TunnelIngressRule extends TunnelIngressRule {
 
   _$TunnelIngressRule._(
       {required this.hostname,
+      required this.service,
       this.originRequest,
-      this.path,
-      required this.service})
+      this.path})
       : super._();
   @override
   TunnelIngressRule rebuild(void Function(TunnelIngressRuleBuilder) updates) =>
@@ -39,18 +39,18 @@ class _$TunnelIngressRule extends TunnelIngressRule {
     if (identical(other, this)) return true;
     return other is TunnelIngressRule &&
         hostname == other.hostname &&
+        service == other.service &&
         originRequest == other.originRequest &&
-        path == other.path &&
-        service == other.service;
+        path == other.path;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
     _$hash = $jc(_$hash, hostname.hashCode);
+    _$hash = $jc(_$hash, service.hashCode);
     _$hash = $jc(_$hash, originRequest.hashCode);
     _$hash = $jc(_$hash, path.hashCode);
-    _$hash = $jc(_$hash, service.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -59,9 +59,9 @@ class _$TunnelIngressRule extends TunnelIngressRule {
   String toString() {
     return (newBuiltValueToStringHelper(r'TunnelIngressRule')
           ..add('hostname', hostname)
+          ..add('service', service)
           ..add('originRequest', originRequest)
-          ..add('path', path)
-          ..add('service', service))
+          ..add('path', path))
         .toString();
   }
 }
@@ -74,6 +74,10 @@ class TunnelIngressRuleBuilder
   String? get hostname => _$this._hostname;
   set hostname(String? hostname) => _$this._hostname = hostname;
 
+  String? _service;
+  String? get service => _$this._service;
+  set service(String? service) => _$this._service = service;
+
   TunnelOriginRequestBuilder? _originRequest;
   TunnelOriginRequestBuilder get originRequest =>
       _$this._originRequest ??= TunnelOriginRequestBuilder();
@@ -84,10 +88,6 @@ class TunnelIngressRuleBuilder
   String? get path => _$this._path;
   set path(String? path) => _$this._path = path;
 
-  String? _service;
-  String? get service => _$this._service;
-  set service(String? service) => _$this._service = service;
-
   TunnelIngressRuleBuilder() {
     TunnelIngressRule._defaults(this);
   }
@@ -96,9 +96,9 @@ class TunnelIngressRuleBuilder
     final $v = _$v;
     if ($v != null) {
       _hostname = $v.hostname;
+      _service = $v.service;
       _originRequest = $v.originRequest?.toBuilder();
       _path = $v.path;
-      _service = $v.service;
       _$v = null;
     }
     return this;
@@ -124,10 +124,10 @@ class TunnelIngressRuleBuilder
           _$TunnelIngressRule._(
             hostname: BuiltValueNullFieldError.checkNotNull(
                 hostname, r'TunnelIngressRule', 'hostname'),
-            originRequest: _originRequest?.build(),
-            path: path,
             service: BuiltValueNullFieldError.checkNotNull(
                 service, r'TunnelIngressRule', 'service'),
+            originRequest: _originRequest?.build(),
+            path: path,
           );
     } catch (_) {
       late String _$failedField;

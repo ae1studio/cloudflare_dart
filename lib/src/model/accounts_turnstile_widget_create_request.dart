@@ -15,30 +15,18 @@ part 'accounts_turnstile_widget_create_request.g.dart';
 /// AccountsTurnstileWidgetCreateRequest
 ///
 /// Properties:
-/// * [botFightMode] - If bot_fight_mode is set to `true`, Cloudflare issues computationally expensive challenges in response to malicious bots (ENT only). 
-/// * [clearanceLevel] 
 /// * [domains] 
-/// * [ephemeralId] - Return the Ephemeral ID in /siteverify (ENT only). 
 /// * [mode] 
 /// * [name] - Human readable widget name. Not unique. Cloudflare suggests that you set this to a meaningful string to make it easier to identify your widget, and where it is used. 
+/// * [botFightMode] - If bot_fight_mode is set to `true`, Cloudflare issues computationally expensive challenges in response to malicious bots (ENT only). 
+/// * [clearanceLevel] 
+/// * [ephemeralId] - Return the Ephemeral ID in /siteverify (ENT only). 
 /// * [offlabel] - Do not show any Cloudflare branding on the widget (ENT only). 
 /// * [region] 
 @BuiltValue()
 abstract class AccountsTurnstileWidgetCreateRequest implements Built<AccountsTurnstileWidgetCreateRequest, AccountsTurnstileWidgetCreateRequestBuilder> {
-  /// If bot_fight_mode is set to `true`, Cloudflare issues computationally expensive challenges in response to malicious bots (ENT only). 
-  @BuiltValueField(wireName: r'bot_fight_mode')
-  bool? get botFightMode;
-
-  @BuiltValueField(wireName: r'clearance_level')
-  TurnstileClearanceLevel? get clearanceLevel;
-  // enum clearanceLevelEnum {  no_clearance,  jschallenge,  managed,  interactive,  };
-
   @BuiltValueField(wireName: r'domains')
   BuiltList<String> get domains;
-
-  /// Return the Ephemeral ID in /siteverify (ENT only). 
-  @BuiltValueField(wireName: r'ephemeral_id')
-  bool? get ephemeralId;
 
   @BuiltValueField(wireName: r'mode')
   TurnstileWidgetMode get mode;
@@ -47,6 +35,18 @@ abstract class AccountsTurnstileWidgetCreateRequest implements Built<AccountsTur
   /// Human readable widget name. Not unique. Cloudflare suggests that you set this to a meaningful string to make it easier to identify your widget, and where it is used. 
   @BuiltValueField(wireName: r'name')
   String get name;
+
+  /// If bot_fight_mode is set to `true`, Cloudflare issues computationally expensive challenges in response to malicious bots (ENT only). 
+  @BuiltValueField(wireName: r'bot_fight_mode')
+  bool? get botFightMode;
+
+  @BuiltValueField(wireName: r'clearance_level')
+  TurnstileClearanceLevel? get clearanceLevel;
+  // enum clearanceLevelEnum {  no_clearance,  jschallenge,  managed,  interactive,  };
+
+  /// Return the Ephemeral ID in /siteverify (ENT only). 
+  @BuiltValueField(wireName: r'ephemeral_id')
+  bool? get ephemeralId;
 
   /// Do not show any Cloudflare branding on the widget (ENT only). 
   @BuiltValueField(wireName: r'offlabel')
@@ -79,6 +79,21 @@ class _$AccountsTurnstileWidgetCreateRequestSerializer implements PrimitiveSeria
     AccountsTurnstileWidgetCreateRequest object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    yield r'domains';
+    yield serializers.serialize(
+      object.domains,
+      specifiedType: const FullType(BuiltList, [FullType(String)]),
+    );
+    yield r'mode';
+    yield serializers.serialize(
+      object.mode,
+      specifiedType: const FullType(TurnstileWidgetMode),
+    );
+    yield r'name';
+    yield serializers.serialize(
+      object.name,
+      specifiedType: const FullType(String),
+    );
     if (object.botFightMode != null) {
       yield r'bot_fight_mode';
       yield serializers.serialize(
@@ -93,11 +108,6 @@ class _$AccountsTurnstileWidgetCreateRequestSerializer implements PrimitiveSeria
         specifiedType: const FullType(TurnstileClearanceLevel),
       );
     }
-    yield r'domains';
-    yield serializers.serialize(
-      object.domains,
-      specifiedType: const FullType(BuiltList, [FullType(String)]),
-    );
     if (object.ephemeralId != null) {
       yield r'ephemeral_id';
       yield serializers.serialize(
@@ -105,16 +115,6 @@ class _$AccountsTurnstileWidgetCreateRequestSerializer implements PrimitiveSeria
         specifiedType: const FullType(bool),
       );
     }
-    yield r'mode';
-    yield serializers.serialize(
-      object.mode,
-      specifiedType: const FullType(TurnstileWidgetMode),
-    );
-    yield r'name';
-    yield serializers.serialize(
-      object.name,
-      specifiedType: const FullType(String),
-    );
     if (object.offlabel != null) {
       yield r'offlabel';
       yield serializers.serialize(
@@ -152,33 +152,12 @@ class _$AccountsTurnstileWidgetCreateRequestSerializer implements PrimitiveSeria
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'bot_fight_mode':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
-          result.botFightMode = valueDes;
-          break;
-        case r'clearance_level':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(TurnstileClearanceLevel),
-          ) as TurnstileClearanceLevel;
-          result.clearanceLevel = valueDes;
-          break;
         case r'domains':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(BuiltList, [FullType(String)]),
           ) as BuiltList<String>;
           result.domains.replace(valueDes);
-          break;
-        case r'ephemeral_id':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
-          result.ephemeralId = valueDes;
           break;
         case r'mode':
           final valueDes = serializers.deserialize(
@@ -193,6 +172,27 @@ class _$AccountsTurnstileWidgetCreateRequestSerializer implements PrimitiveSeria
             specifiedType: const FullType(String),
           ) as String;
           result.name = valueDes;
+          break;
+        case r'bot_fight_mode':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(bool),
+          ) as bool;
+          result.botFightMode = valueDes;
+          break;
+        case r'clearance_level':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(TurnstileClearanceLevel),
+          ) as TurnstileClearanceLevel;
+          result.clearanceLevel = valueDes;
+          break;
+        case r'ephemeral_id':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(bool),
+          ) as bool;
+          result.ephemeralId = valueDes;
           break;
         case r'offlabel':
           final valueDes = serializers.deserialize(

@@ -14,8 +14,8 @@ part 'timestamp.g.dart';
 /// Timestamp
 ///
 /// Properties:
-/// * [unit] 
 /// * [type] 
+/// * [unit] 
 @BuiltValue()
 abstract class Timestamp implements CloudflarePipelinesTimestampField, Built<Timestamp, TimestampBuilder> {
   @BuiltValueField(wireName: r'type')

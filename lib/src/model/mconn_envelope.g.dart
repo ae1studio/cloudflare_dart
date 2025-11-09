@@ -9,28 +9,28 @@ part of 'mconn_envelope.dart';
 abstract class MconnEnvelopeBuilder {
   void replace(MconnEnvelope other);
   void update(void Function(MconnEnvelopeBuilder) updates);
+  bool? get success;
+  set success(bool? success);
+
   ListBuilder<MconnCodedMessage> get errors;
   set errors(ListBuilder<MconnCodedMessage>? errors);
 
   ListBuilder<MconnCodedMessage> get messages;
   set messages(ListBuilder<MconnCodedMessage>? messages);
-
-  bool? get success;
-  set success(bool? success);
 }
 
 class _$$MconnEnvelope extends $MconnEnvelope {
   @override
+  final bool success;
+  @override
   final BuiltList<MconnCodedMessage>? errors;
   @override
   final BuiltList<MconnCodedMessage>? messages;
-  @override
-  final bool success;
 
   factory _$$MconnEnvelope([void Function($MconnEnvelopeBuilder)? updates]) =>
       ($MconnEnvelopeBuilder()..update(updates))._build();
 
-  _$$MconnEnvelope._({this.errors, this.messages, required this.success})
+  _$$MconnEnvelope._({required this.success, this.errors, this.messages})
       : super._();
   @override
   $MconnEnvelope rebuild(void Function($MconnEnvelopeBuilder) updates) =>
@@ -43,17 +43,17 @@ class _$$MconnEnvelope extends $MconnEnvelope {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is $MconnEnvelope &&
+        success == other.success &&
         errors == other.errors &&
-        messages == other.messages &&
-        success == other.success;
+        messages == other.messages;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
+    _$hash = $jc(_$hash, success.hashCode);
     _$hash = $jc(_$hash, errors.hashCode);
     _$hash = $jc(_$hash, messages.hashCode);
-    _$hash = $jc(_$hash, success.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -61,9 +61,9 @@ class _$$MconnEnvelope extends $MconnEnvelope {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'$MconnEnvelope')
+          ..add('success', success)
           ..add('errors', errors)
-          ..add('messages', messages)
-          ..add('success', success))
+          ..add('messages', messages))
         .toString();
   }
 }
@@ -73,6 +73,10 @@ class $MconnEnvelopeBuilder
         Builder<$MconnEnvelope, $MconnEnvelopeBuilder>,
         MconnEnvelopeBuilder {
   _$$MconnEnvelope? _$v;
+
+  bool? _success;
+  bool? get success => _$this._success;
+  set success(covariant bool? success) => _$this._success = success;
 
   ListBuilder<MconnCodedMessage>? _errors;
   ListBuilder<MconnCodedMessage> get errors =>
@@ -86,10 +90,6 @@ class $MconnEnvelopeBuilder
   set messages(covariant ListBuilder<MconnCodedMessage>? messages) =>
       _$this._messages = messages;
 
-  bool? _success;
-  bool? get success => _$this._success;
-  set success(covariant bool? success) => _$this._success = success;
-
   $MconnEnvelopeBuilder() {
     $MconnEnvelope._defaults(this);
   }
@@ -97,9 +97,9 @@ class $MconnEnvelopeBuilder
   $MconnEnvelopeBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
+      _success = $v.success;
       _errors = $v.errors?.toBuilder();
       _messages = $v.messages?.toBuilder();
-      _success = $v.success;
       _$v = null;
     }
     return this;
@@ -123,10 +123,10 @@ class $MconnEnvelopeBuilder
     try {
       _$result = _$v ??
           _$$MconnEnvelope._(
-            errors: _errors?.build(),
-            messages: _messages?.build(),
             success: BuiltValueNullFieldError.checkNotNull(
                 success, r'$MconnEnvelope', 'success'),
+            errors: _errors?.build(),
+            messages: _messages?.build(),
           );
     } catch (_) {
       late String _$failedField;

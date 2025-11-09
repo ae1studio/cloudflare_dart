@@ -15,9 +15,9 @@ part 'tunnel_argo_tunnel.g.dart';
 /// Properties:
 /// * [connections] - The tunnel connections between your origin and Cloudflare's edge.
 /// * [createdAt] - Timestamp of when the resource was created.
-/// * [deletedAt] - Timestamp of when the resource was deleted. If `null`, the resource has not been deleted.
 /// * [id] - UUID of the tunnel.
 /// * [name] - A user-friendly name for a tunnel.
+/// * [deletedAt] - Timestamp of when the resource was deleted. If `null`, the resource has not been deleted.
 @BuiltValue()
 abstract class TunnelArgoTunnel implements Built<TunnelArgoTunnel, TunnelArgoTunnelBuilder> {
   /// The tunnel connections between your origin and Cloudflare's edge.
@@ -28,10 +28,6 @@ abstract class TunnelArgoTunnel implements Built<TunnelArgoTunnel, TunnelArgoTun
   @BuiltValueField(wireName: r'created_at')
   DateTime get createdAt;
 
-  /// Timestamp of when the resource was deleted. If `null`, the resource has not been deleted.
-  @BuiltValueField(wireName: r'deleted_at')
-  DateTime? get deletedAt;
-
   /// UUID of the tunnel.
   @BuiltValueField(wireName: r'id')
   String get id;
@@ -39,6 +35,10 @@ abstract class TunnelArgoTunnel implements Built<TunnelArgoTunnel, TunnelArgoTun
   /// A user-friendly name for a tunnel.
   @BuiltValueField(wireName: r'name')
   String get name;
+
+  /// Timestamp of when the resource was deleted. If `null`, the resource has not been deleted.
+  @BuiltValueField(wireName: r'deleted_at')
+  DateTime? get deletedAt;
 
   TunnelArgoTunnel._();
 
@@ -73,13 +73,6 @@ class _$TunnelArgoTunnelSerializer implements PrimitiveSerializer<TunnelArgoTunn
       object.createdAt,
       specifiedType: const FullType(DateTime),
     );
-    if (object.deletedAt != null) {
-      yield r'deleted_at';
-      yield serializers.serialize(
-        object.deletedAt,
-        specifiedType: const FullType(DateTime),
-      );
-    }
     yield r'id';
     yield serializers.serialize(
       object.id,
@@ -90,6 +83,13 @@ class _$TunnelArgoTunnelSerializer implements PrimitiveSerializer<TunnelArgoTunn
       object.name,
       specifiedType: const FullType(String),
     );
+    if (object.deletedAt != null) {
+      yield r'deleted_at';
+      yield serializers.serialize(
+        object.deletedAt,
+        specifiedType: const FullType(DateTime),
+      );
+    }
   }
 
   @override
@@ -127,13 +127,6 @@ class _$TunnelArgoTunnelSerializer implements PrimitiveSerializer<TunnelArgoTunn
           ) as DateTime;
           result.createdAt = valueDes;
           break;
-        case r'deleted_at':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
-          result.deletedAt = valueDes;
-          break;
         case r'id':
           final valueDes = serializers.deserialize(
             value,
@@ -147,6 +140,13 @@ class _$TunnelArgoTunnelSerializer implements PrimitiveSerializer<TunnelArgoTunn
             specifiedType: const FullType(String),
           ) as String;
           result.name = valueDes;
+          break;
+        case r'deleted_at':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(DateTime),
+          ) as DateTime;
+          result.deletedAt = valueDes;
           break;
         default:
           unhandled.add(key);

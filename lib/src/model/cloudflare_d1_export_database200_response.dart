@@ -9,6 +9,7 @@ import 'package:cloudflare_dart/src/model/d1_api_response_common.dart';
 import 'package:cloudflare_dart/src/model/aaa_messages_inner.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
+import 'package:built_value/json_object.dart';
 
 part 'cloudflare_d1_export_database200_response.g.dart';
 

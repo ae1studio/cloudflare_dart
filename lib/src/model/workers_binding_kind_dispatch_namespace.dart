@@ -15,8 +15,8 @@ part 'workers_binding_kind_dispatch_namespace.g.dart';
 /// Properties:
 /// * [name] - A JavaScript variable name for the binding.
 /// * [namespace] - The name of the dispatch namespace.
-/// * [outbound] 
 /// * [type] - The kind of resource that the binding provides.
+/// * [outbound] 
 @BuiltValue()
 abstract class WorkersBindingKindDispatchNamespace implements Built<WorkersBindingKindDispatchNamespace, WorkersBindingKindDispatchNamespaceBuilder> {
   /// A JavaScript variable name for the binding.
@@ -27,13 +27,13 @@ abstract class WorkersBindingKindDispatchNamespace implements Built<WorkersBindi
   @BuiltValueField(wireName: r'namespace')
   String get namespace;
 
-  @BuiltValueField(wireName: r'outbound')
-  WorkersBindingKindDispatchNamespaceOutbound? get outbound;
-
   /// The kind of resource that the binding provides.
   @BuiltValueField(wireName: r'type')
   WorkersBindingKindDispatchNamespaceTypeEnum get type;
   // enum typeEnum {  dispatch_namespace,  };
+
+  @BuiltValueField(wireName: r'outbound')
+  WorkersBindingKindDispatchNamespaceOutbound? get outbound;
 
   WorkersBindingKindDispatchNamespace._();
 
@@ -68,6 +68,11 @@ class _$WorkersBindingKindDispatchNamespaceSerializer implements PrimitiveSerial
       object.namespace,
       specifiedType: const FullType(String),
     );
+    yield r'type';
+    yield serializers.serialize(
+      object.type,
+      specifiedType: const FullType(WorkersBindingKindDispatchNamespaceTypeEnum),
+    );
     if (object.outbound != null) {
       yield r'outbound';
       yield serializers.serialize(
@@ -75,11 +80,6 @@ class _$WorkersBindingKindDispatchNamespaceSerializer implements PrimitiveSerial
         specifiedType: const FullType(WorkersBindingKindDispatchNamespaceOutbound),
       );
     }
-    yield r'type';
-    yield serializers.serialize(
-      object.type,
-      specifiedType: const FullType(WorkersBindingKindDispatchNamespaceTypeEnum),
-    );
   }
 
   @override
@@ -117,19 +117,19 @@ class _$WorkersBindingKindDispatchNamespaceSerializer implements PrimitiveSerial
           ) as String;
           result.namespace = valueDes;
           break;
-        case r'outbound':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(WorkersBindingKindDispatchNamespaceOutbound),
-          ) as WorkersBindingKindDispatchNamespaceOutbound;
-          result.outbound.replace(valueDes);
-          break;
         case r'type':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(WorkersBindingKindDispatchNamespaceTypeEnum),
           ) as WorkersBindingKindDispatchNamespaceTypeEnum;
           result.type = valueDes;
+          break;
+        case r'outbound':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(WorkersBindingKindDispatchNamespaceOutbound),
+          ) as WorkersBindingKindDispatchNamespaceOutbound;
+          result.outbound.replace(valueDes);
           break;
         default:
           unhandled.add(key);

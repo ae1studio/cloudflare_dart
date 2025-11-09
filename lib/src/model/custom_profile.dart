@@ -16,18 +16,18 @@ part 'custom_profile.g.dart';
 /// CustomProfile
 ///
 /// Properties:
-/// * [aiContextEnabled] 
 /// * [allowedMatchCount] - Related DLP policies will trigger when the match count exceeds the number set.
-/// * [confidenceThreshold] 
-/// * [contextAwareness] 
 /// * [createdAt] - When the profile was created.
-/// * [description] - The description of the profile.
-/// * [entries] 
 /// * [id] - The id of the profile (uuid).
 /// * [name] - The name of the profile.
 /// * [ocrEnabled] 
 /// * [updatedAt] - When the profile was lasted updated.
 /// * [type] 
+/// * [aiContextEnabled] 
+/// * [confidenceThreshold] 
+/// * [contextAwareness] 
+/// * [description] - The description of the profile.
+/// * [entries] 
 @BuiltValue()
 abstract class CustomProfile implements DlpCustomProfile, Built<CustomProfile, CustomProfileBuilder> {
   @BuiltValueField(wireName: r'type')

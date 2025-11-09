@@ -12,22 +12,22 @@ part 'access_tag.g.dart';
 /// A tag
 ///
 /// Properties:
+/// * [name] - The name of the tag
 /// * [appCount] - The number of applications that have this tag
 /// * [createdAt] 
-/// * [name] - The name of the tag
 /// * [updatedAt] 
 @BuiltValue()
 abstract class AccessTag implements Built<AccessTag, AccessTagBuilder> {
+  /// The name of the tag
+  @BuiltValueField(wireName: r'name')
+  String get name;
+
   /// The number of applications that have this tag
   @BuiltValueField(wireName: r'app_count')
   int? get appCount;
 
   @BuiltValueField(wireName: r'created_at')
   JsonObject? get createdAt;
-
-  /// The name of the tag
-  @BuiltValueField(wireName: r'name')
-  String get name;
 
   @BuiltValueField(wireName: r'updated_at')
   JsonObject? get updatedAt;
@@ -55,6 +55,11 @@ class _$AccessTagSerializer implements PrimitiveSerializer<AccessTag> {
     AccessTag object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    yield r'name';
+    yield serializers.serialize(
+      object.name,
+      specifiedType: const FullType(String),
+    );
     if (object.appCount != null) {
       yield r'app_count';
       yield serializers.serialize(
@@ -69,11 +74,6 @@ class _$AccessTagSerializer implements PrimitiveSerializer<AccessTag> {
         specifiedType: const FullType(JsonObject),
       );
     }
-    yield r'name';
-    yield serializers.serialize(
-      object.name,
-      specifiedType: const FullType(String),
-    );
     if (object.updatedAt != null) {
       yield r'updated_at';
       yield serializers.serialize(
@@ -104,6 +104,13 @@ class _$AccessTagSerializer implements PrimitiveSerializer<AccessTag> {
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
+        case r'name':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.name = valueDes;
+          break;
         case r'app_count':
           final valueDes = serializers.deserialize(
             value,
@@ -117,13 +124,6 @@ class _$AccessTagSerializer implements PrimitiveSerializer<AccessTag> {
             specifiedType: const FullType(JsonObject),
           ) as JsonObject;
           result.createdAt.replace(valueDes);
-          break;
-        case r'name':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.name = valueDes;
           break;
         case r'updated_at':
           final valueDes = serializers.deserialize(

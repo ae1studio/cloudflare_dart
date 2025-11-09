@@ -12,16 +12,12 @@ part 'r2_data_catalog_namespace_details.g.dart';
 /// Contains namespace with metadata details.
 ///
 /// Properties:
-/// * [createdAt] - Indicates the creation timestamp in ISO 8601 format.
 /// * [namespace] - Specifies the hierarchical namespace parts as an array of strings. For example, [\"bronze\", \"analytics\"] represents the namespace \"bronze.analytics\". 
 /// * [namespaceUuid] - Contains the UUID that persists across renames.
+/// * [createdAt] - Indicates the creation timestamp in ISO 8601 format.
 /// * [updatedAt] - Shows the last update timestamp in ISO 8601 format. Null if never updated.
 @BuiltValue()
 abstract class R2DataCatalogNamespaceDetails implements Built<R2DataCatalogNamespaceDetails, R2DataCatalogNamespaceDetailsBuilder> {
-  /// Indicates the creation timestamp in ISO 8601 format.
-  @BuiltValueField(wireName: r'created_at')
-  DateTime? get createdAt;
-
   /// Specifies the hierarchical namespace parts as an array of strings. For example, [\"bronze\", \"analytics\"] represents the namespace \"bronze.analytics\". 
   @BuiltValueField(wireName: r'namespace')
   BuiltList<String> get namespace;
@@ -29,6 +25,10 @@ abstract class R2DataCatalogNamespaceDetails implements Built<R2DataCatalogNames
   /// Contains the UUID that persists across renames.
   @BuiltValueField(wireName: r'namespace_uuid')
   String get namespaceUuid;
+
+  /// Indicates the creation timestamp in ISO 8601 format.
+  @BuiltValueField(wireName: r'created_at')
+  DateTime? get createdAt;
 
   /// Shows the last update timestamp in ISO 8601 format. Null if never updated.
   @BuiltValueField(wireName: r'updated_at')
@@ -57,13 +57,6 @@ class _$R2DataCatalogNamespaceDetailsSerializer implements PrimitiveSerializer<R
     R2DataCatalogNamespaceDetails object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
-    if (object.createdAt != null) {
-      yield r'created_at';
-      yield serializers.serialize(
-        object.createdAt,
-        specifiedType: const FullType.nullable(DateTime),
-      );
-    }
     yield r'namespace';
     yield serializers.serialize(
       object.namespace,
@@ -74,6 +67,13 @@ class _$R2DataCatalogNamespaceDetailsSerializer implements PrimitiveSerializer<R
       object.namespaceUuid,
       specifiedType: const FullType(String),
     );
+    if (object.createdAt != null) {
+      yield r'created_at';
+      yield serializers.serialize(
+        object.createdAt,
+        specifiedType: const FullType.nullable(DateTime),
+      );
+    }
     if (object.updatedAt != null) {
       yield r'updated_at';
       yield serializers.serialize(
@@ -104,14 +104,6 @@ class _$R2DataCatalogNamespaceDetailsSerializer implements PrimitiveSerializer<R
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'created_at':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(DateTime),
-          ) as DateTime?;
-          if (valueDes == null) continue;
-          result.createdAt = valueDes;
-          break;
         case r'namespace':
           final valueDes = serializers.deserialize(
             value,
@@ -125,6 +117,14 @@ class _$R2DataCatalogNamespaceDetailsSerializer implements PrimitiveSerializer<R
             specifiedType: const FullType(String),
           ) as String;
           result.namespaceUuid = valueDes;
+          break;
+        case r'created_at':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType.nullable(DateTime),
+          ) as DateTime?;
+          if (valueDes == null) continue;
+          result.createdAt = valueDes;
           break;
         case r'updated_at':
           final valueDes = serializers.deserialize(

@@ -16,9 +16,9 @@ part 'mcn_good_response_collection.g.dart';
 ///
 /// Properties:
 /// * [messages] 
-/// * [resultInfo] 
 /// * [success] 
 /// * [errors] 
+/// * [resultInfo] 
 @BuiltValue(instantiable: false)
 abstract class McnGoodResponseCollection implements McnResponseCollection {
   @BuiltValueField(wireName: r'errors')

@@ -15,19 +15,31 @@ part 'zone_level_access_policies_create_an_access_policy_request.g.dart';
 /// ZoneLevelAccessPoliciesCreateAnAccessPolicyRequest
 ///
 /// Properties:
+/// * [decision] 
+/// * [include] - Rules evaluated with an OR logical operator. A user needs to meet only one of the Include rules.
+/// * [name] - The name of the Access policy.
 /// * [approvalGroups] - Administrators who can approve a temporary authentication request.
 /// * [approvalRequired] - Requires the user to request access from an administrator at the start of each session.
-/// * [decision] 
 /// * [exclude] - Rules evaluated with a NOT logical operator. To match the policy, a user cannot meet any of the Exclude rules.
-/// * [include] - Rules evaluated with an OR logical operator. A user needs to meet only one of the Include rules.
 /// * [isolationRequired] - Require this application to be served in an isolated browser for users matching this policy.
-/// * [name] - The name of the Access policy.
 /// * [precedence] - The order of execution for this policy. Must be unique for each policy.
 /// * [purposeJustificationPrompt] - A custom message that will appear on the purpose justification screen.
 /// * [purposeJustificationRequired] - Require users to enter a justification when they log in to the application.
 /// * [require] - Rules evaluated with an AND logical operator. To match the policy, a user must meet all of the Require rules.
 @BuiltValue()
 abstract class ZoneLevelAccessPoliciesCreateAnAccessPolicyRequest implements Built<ZoneLevelAccessPoliciesCreateAnAccessPolicyRequest, ZoneLevelAccessPoliciesCreateAnAccessPolicyRequestBuilder> {
+  @BuiltValueField(wireName: r'decision')
+  AccessSchemasDecision get decision;
+  // enum decisionEnum {  allow,  deny,  non_identity,  bypass,  };
+
+  /// Rules evaluated with an OR logical operator. A user needs to meet only one of the Include rules.
+  @BuiltValueField(wireName: r'include')
+  BuiltList<AccessRule> get include;
+
+  /// The name of the Access policy.
+  @BuiltValueField(wireName: r'name')
+  String get name;
+
   /// Administrators who can approve a temporary authentication request.
   @BuiltValueField(wireName: r'approval_groups')
   BuiltList<AccessSchemasApprovalGroup>? get approvalGroups;
@@ -36,25 +48,13 @@ abstract class ZoneLevelAccessPoliciesCreateAnAccessPolicyRequest implements Bui
   @BuiltValueField(wireName: r'approval_required')
   bool? get approvalRequired;
 
-  @BuiltValueField(wireName: r'decision')
-  AccessSchemasDecision get decision;
-  // enum decisionEnum {  allow,  deny,  non_identity,  bypass,  };
-
   /// Rules evaluated with a NOT logical operator. To match the policy, a user cannot meet any of the Exclude rules.
   @BuiltValueField(wireName: r'exclude')
   BuiltList<AccessRule>? get exclude;
 
-  /// Rules evaluated with an OR logical operator. A user needs to meet only one of the Include rules.
-  @BuiltValueField(wireName: r'include')
-  BuiltList<AccessRule> get include;
-
   /// Require this application to be served in an isolated browser for users matching this policy.
   @BuiltValueField(wireName: r'isolation_required')
   bool? get isolationRequired;
-
-  /// The name of the Access policy.
-  @BuiltValueField(wireName: r'name')
-  String get name;
 
   /// The order of execution for this policy. Must be unique for each policy.
   @BuiltValueField(wireName: r'precedence')
@@ -98,6 +98,21 @@ class _$ZoneLevelAccessPoliciesCreateAnAccessPolicyRequestSerializer implements 
     ZoneLevelAccessPoliciesCreateAnAccessPolicyRequest object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    yield r'decision';
+    yield serializers.serialize(
+      object.decision,
+      specifiedType: const FullType(AccessSchemasDecision),
+    );
+    yield r'include';
+    yield serializers.serialize(
+      object.include,
+      specifiedType: const FullType(BuiltList, [FullType(AccessRule)]),
+    );
+    yield r'name';
+    yield serializers.serialize(
+      object.name,
+      specifiedType: const FullType(String),
+    );
     if (object.approvalGroups != null) {
       yield r'approval_groups';
       yield serializers.serialize(
@@ -112,11 +127,6 @@ class _$ZoneLevelAccessPoliciesCreateAnAccessPolicyRequestSerializer implements 
         specifiedType: const FullType(bool),
       );
     }
-    yield r'decision';
-    yield serializers.serialize(
-      object.decision,
-      specifiedType: const FullType(AccessSchemasDecision),
-    );
     if (object.exclude != null) {
       yield r'exclude';
       yield serializers.serialize(
@@ -124,11 +134,6 @@ class _$ZoneLevelAccessPoliciesCreateAnAccessPolicyRequestSerializer implements 
         specifiedType: const FullType(BuiltList, [FullType(AccessRule)]),
       );
     }
-    yield r'include';
-    yield serializers.serialize(
-      object.include,
-      specifiedType: const FullType(BuiltList, [FullType(AccessRule)]),
-    );
     if (object.isolationRequired != null) {
       yield r'isolation_required';
       yield serializers.serialize(
@@ -136,11 +141,6 @@ class _$ZoneLevelAccessPoliciesCreateAnAccessPolicyRequestSerializer implements 
         specifiedType: const FullType(bool),
       );
     }
-    yield r'name';
-    yield serializers.serialize(
-      object.name,
-      specifiedType: const FullType(String),
-    );
     if (object.precedence != null) {
       yield r'precedence';
       yield serializers.serialize(
@@ -192,6 +192,27 @@ class _$ZoneLevelAccessPoliciesCreateAnAccessPolicyRequestSerializer implements 
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
+        case r'decision':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(AccessSchemasDecision),
+          ) as AccessSchemasDecision;
+          result.decision = valueDes;
+          break;
+        case r'include':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BuiltList, [FullType(AccessRule)]),
+          ) as BuiltList<AccessRule>;
+          result.include.replace(valueDes);
+          break;
+        case r'name':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.name = valueDes;
+          break;
         case r'approval_groups':
           final valueDes = serializers.deserialize(
             value,
@@ -206,13 +227,6 @@ class _$ZoneLevelAccessPoliciesCreateAnAccessPolicyRequestSerializer implements 
           ) as bool;
           result.approvalRequired = valueDes;
           break;
-        case r'decision':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(AccessSchemasDecision),
-          ) as AccessSchemasDecision;
-          result.decision = valueDes;
-          break;
         case r'exclude':
           final valueDes = serializers.deserialize(
             value,
@@ -220,26 +234,12 @@ class _$ZoneLevelAccessPoliciesCreateAnAccessPolicyRequestSerializer implements 
           ) as BuiltList<AccessRule>;
           result.exclude.replace(valueDes);
           break;
-        case r'include':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(AccessRule)]),
-          ) as BuiltList<AccessRule>;
-          result.include.replace(valueDes);
-          break;
         case r'isolation_required':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(bool),
           ) as bool;
           result.isolationRequired = valueDes;
-          break;
-        case r'name':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.name = valueDes;
           break;
         case r'precedence':
           final valueDes = serializers.deserialize(

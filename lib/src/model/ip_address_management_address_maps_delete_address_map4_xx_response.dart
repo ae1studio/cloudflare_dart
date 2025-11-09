@@ -20,8 +20,8 @@ part 'ip_address_management_address_maps_delete_address_map4_xx_response.g.dart'
 /// * [errors] 
 /// * [messages] 
 /// * [success] - Whether the API call was successful.
-/// * [resultInfo] 
 /// * [result] 
+/// * [resultInfo] 
 @BuiltValue()
 abstract class IpAddressManagementAddressMapsDeleteAddressMap4XXResponse implements AddressingApiResponseCollection, AddressingApiResponseCommonFailure, Built<IpAddressManagementAddressMapsDeleteAddressMap4XXResponse, IpAddressManagementAddressMapsDeleteAddressMap4XXResponseBuilder> {
   IpAddressManagementAddressMapsDeleteAddressMap4XXResponse._();

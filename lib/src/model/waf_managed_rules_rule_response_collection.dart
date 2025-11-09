@@ -19,8 +19,8 @@ part 'waf_managed_rules_rule_response_collection.g.dart';
 /// * [errors] 
 /// * [messages] 
 /// * [success] - Defines whether the API call was successful.
-/// * [resultInfo] 
 /// * [result] 
+/// * [resultInfo] 
 @BuiltValue(instantiable: false)
 abstract class WafManagedRulesRuleResponseCollection implements WafManagedRulesApiResponseCollection {
   @BuiltValueField(wireName: r'result')

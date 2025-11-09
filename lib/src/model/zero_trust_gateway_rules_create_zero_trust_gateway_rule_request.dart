@@ -17,13 +17,13 @@ part 'zero_trust_gateway_rules_create_zero_trust_gateway_rule_request.g.dart';
 ///
 /// Properties:
 /// * [action] 
+/// * [name] - Specify the rule name.
 /// * [description] - Specify the rule description.
 /// * [devicePosture] - Specify the wirefilter expression used for device posture check. The API automatically formats and sanitizes expressions before storing them. To prevent Terraform state drift, use the formatted expression returned in the API response.
 /// * [enabled] - Specify whether the rule is enabled.
 /// * [expiration] 
 /// * [filters] - Specify the protocol or layer to evaluate the traffic, identity, and device posture expressions. Can only contain a single value.
 /// * [identity] - Specify the wirefilter expression used for identity matching. The API automatically formats and sanitizes expressions before storing them. To prevent Terraform state drift, use the formatted expression returned in the API response.
-/// * [name] - Specify the rule name.
 /// * [precedence] - Set the order of your rules. Lower values indicate higher precedence. At each processing phase, evaluate applicable rules in ascending order of this value. Refer to [Order of enforcement](http://developers.cloudflare.com/learning-paths/secure-internet-traffic/understand-policies/order-of-enforcement/#manage-precedence-with-terraform) to manage precedence via Terraform.
 /// * [ruleSettings] 
 /// * [schedule] 
@@ -33,6 +33,10 @@ abstract class ZeroTrustGatewayRulesCreateZeroTrustGatewayRuleRequest implements
   @BuiltValueField(wireName: r'action')
   ZeroTrustGatewayAction get action;
   // enum actionEnum {  on,  off,  allow,  block,  scan,  noscan,  safesearch,  ytrestricted,  isolate,  noisolate,  override,  l4_override,  egress,  resolve,  quarantine,  redirect,  };
+
+  /// Specify the rule name.
+  @BuiltValueField(wireName: r'name')
+  String get name;
 
   /// Specify the rule description.
   @BuiltValueField(wireName: r'description')
@@ -57,10 +61,6 @@ abstract class ZeroTrustGatewayRulesCreateZeroTrustGatewayRuleRequest implements
   /// Specify the wirefilter expression used for identity matching. The API automatically formats and sanitizes expressions before storing them. To prevent Terraform state drift, use the formatted expression returned in the API response.
   @BuiltValueField(wireName: r'identity')
   String? get identity;
-
-  /// Specify the rule name.
-  @BuiltValueField(wireName: r'name')
-  String get name;
 
   /// Set the order of your rules. Lower values indicate higher precedence. At each processing phase, evaluate applicable rules in ascending order of this value. Refer to [Order of enforcement](http://developers.cloudflare.com/learning-paths/secure-internet-traffic/understand-policies/order-of-enforcement/#manage-precedence-with-terraform) to manage precedence via Terraform.
   @BuiltValueField(wireName: r'precedence')
@@ -108,6 +108,11 @@ class _$ZeroTrustGatewayRulesCreateZeroTrustGatewayRuleRequestSerializer impleme
       object.action,
       specifiedType: const FullType(ZeroTrustGatewayAction),
     );
+    yield r'name';
+    yield serializers.serialize(
+      object.name,
+      specifiedType: const FullType(String),
+    );
     if (object.description != null) {
       yield r'description';
       yield serializers.serialize(
@@ -150,11 +155,6 @@ class _$ZeroTrustGatewayRulesCreateZeroTrustGatewayRuleRequestSerializer impleme
         specifiedType: const FullType(String),
       );
     }
-    yield r'name';
-    yield serializers.serialize(
-      object.name,
-      specifiedType: const FullType(String),
-    );
     if (object.precedence != null) {
       yield r'precedence';
       yield serializers.serialize(
@@ -213,6 +213,13 @@ class _$ZeroTrustGatewayRulesCreateZeroTrustGatewayRuleRequestSerializer impleme
           ) as ZeroTrustGatewayAction;
           result.action = valueDes;
           break;
+        case r'name':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.name = valueDes;
+          break;
         case r'description':
           final valueDes = serializers.deserialize(
             value,
@@ -255,13 +262,6 @@ class _$ZeroTrustGatewayRulesCreateZeroTrustGatewayRuleRequestSerializer impleme
             specifiedType: const FullType(String),
           ) as String;
           result.identity = valueDes;
-          break;
-        case r'name':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.name = valueDes;
           break;
         case r'precedence':
           final valueDes = serializers.deserialize(

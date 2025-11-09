@@ -16,25 +16,22 @@ part 'workers_observability_query_run.g.dart';
 ///
 /// Properties:
 /// * [accountId] 
-/// * [created] 
 /// * [dry] 
 /// * [environmentId] 
 /// * [granularity] 
 /// * [id] 
 /// * [query] 
-/// * [statistics] 
 /// * [status] 
 /// * [timeframe] 
-/// * [updated] 
 /// * [userId] 
 /// * [workspaceId] 
+/// * [created] 
+/// * [statistics] 
+/// * [updated] 
 @BuiltValue()
 abstract class WorkersObservabilityQueryRun implements Built<WorkersObservabilityQueryRun, WorkersObservabilityQueryRunBuilder> {
   @BuiltValueField(wireName: r'accountId')
   String get accountId;
-
-  @BuiltValueField(wireName: r'created')
-  String? get created;
 
   @BuiltValueField(wireName: r'dry')
   bool get dry;
@@ -52,9 +49,6 @@ abstract class WorkersObservabilityQueryRun implements Built<WorkersObservabilit
   @BuiltValueField(wireName: r'query')
   WorkersObservabilityQuery get query;
 
-  @BuiltValueField(wireName: r'statistics')
-  WorkersObservabilityQueryRunStatistics? get statistics;
-
   @BuiltValueField(wireName: r'status')
   WorkersObservabilityQueryRunStatusEnum get status;
   // enum statusEnum {  STARTED,  COMPLETED,  };
@@ -62,15 +56,21 @@ abstract class WorkersObservabilityQueryRun implements Built<WorkersObservabilit
   @BuiltValueField(wireName: r'timeframe')
   WorkersObservabilityQueryRunTimeframe get timeframe;
 
-  @BuiltValueField(wireName: r'updated')
-  String? get updated;
-
   @BuiltValueField(wireName: r'userId')
   String get userId;
 
   @Deprecated('workspaceId has been deprecated')
   @BuiltValueField(wireName: r'workspaceId')
   String get workspaceId;
+
+  @BuiltValueField(wireName: r'created')
+  String? get created;
+
+  @BuiltValueField(wireName: r'statistics')
+  WorkersObservabilityQueryRunStatistics? get statistics;
+
+  @BuiltValueField(wireName: r'updated')
+  String? get updated;
 
   WorkersObservabilityQueryRun._();
 
@@ -100,13 +100,6 @@ class _$WorkersObservabilityQueryRunSerializer implements PrimitiveSerializer<Wo
       object.accountId,
       specifiedType: const FullType(String),
     );
-    if (object.created != null) {
-      yield r'created';
-      yield serializers.serialize(
-        object.created,
-        specifiedType: const FullType(String),
-      );
-    }
     yield r'dry';
     yield serializers.serialize(
       object.dry,
@@ -132,13 +125,6 @@ class _$WorkersObservabilityQueryRunSerializer implements PrimitiveSerializer<Wo
       object.query,
       specifiedType: const FullType(WorkersObservabilityQuery),
     );
-    if (object.statistics != null) {
-      yield r'statistics';
-      yield serializers.serialize(
-        object.statistics,
-        specifiedType: const FullType(WorkersObservabilityQueryRunStatistics),
-      );
-    }
     yield r'status';
     yield serializers.serialize(
       object.status,
@@ -149,13 +135,6 @@ class _$WorkersObservabilityQueryRunSerializer implements PrimitiveSerializer<Wo
       object.timeframe,
       specifiedType: const FullType(WorkersObservabilityQueryRunTimeframe),
     );
-    if (object.updated != null) {
-      yield r'updated';
-      yield serializers.serialize(
-        object.updated,
-        specifiedType: const FullType(String),
-      );
-    }
     yield r'userId';
     yield serializers.serialize(
       object.userId,
@@ -166,6 +145,27 @@ class _$WorkersObservabilityQueryRunSerializer implements PrimitiveSerializer<Wo
       object.workspaceId,
       specifiedType: const FullType(String),
     );
+    if (object.created != null) {
+      yield r'created';
+      yield serializers.serialize(
+        object.created,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.statistics != null) {
+      yield r'statistics';
+      yield serializers.serialize(
+        object.statistics,
+        specifiedType: const FullType(WorkersObservabilityQueryRunStatistics),
+      );
+    }
+    if (object.updated != null) {
+      yield r'updated';
+      yield serializers.serialize(
+        object.updated,
+        specifiedType: const FullType(String),
+      );
+    }
   }
 
   @override
@@ -195,13 +195,6 @@ class _$WorkersObservabilityQueryRunSerializer implements PrimitiveSerializer<Wo
             specifiedType: const FullType(String),
           ) as String;
           result.accountId = valueDes;
-          break;
-        case r'created':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.created = valueDes;
           break;
         case r'dry':
           final valueDes = serializers.deserialize(
@@ -238,13 +231,6 @@ class _$WorkersObservabilityQueryRunSerializer implements PrimitiveSerializer<Wo
           ) as WorkersObservabilityQuery;
           result.query.replace(valueDes);
           break;
-        case r'statistics':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(WorkersObservabilityQueryRunStatistics),
-          ) as WorkersObservabilityQueryRunStatistics;
-          result.statistics.replace(valueDes);
-          break;
         case r'status':
           final valueDes = serializers.deserialize(
             value,
@@ -259,13 +245,6 @@ class _$WorkersObservabilityQueryRunSerializer implements PrimitiveSerializer<Wo
           ) as WorkersObservabilityQueryRunTimeframe;
           result.timeframe.replace(valueDes);
           break;
-        case r'updated':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.updated = valueDes;
-          break;
         case r'userId':
           final valueDes = serializers.deserialize(
             value,
@@ -279,6 +258,27 @@ class _$WorkersObservabilityQueryRunSerializer implements PrimitiveSerializer<Wo
             specifiedType: const FullType(String),
           ) as String;
           result.workspaceId = valueDes;
+          break;
+        case r'created':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.created = valueDes;
+          break;
+        case r'statistics':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(WorkersObservabilityQueryRunStatistics),
+          ) as WorkersObservabilityQueryRunStatistics;
+          result.statistics.replace(valueDes);
+          break;
+        case r'updated':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.updated = valueDes;
           break;
         default:
           unhandled.add(key);

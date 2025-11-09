@@ -69,12 +69,12 @@ part 'zones_setting_value.g.dart';
 ///
 /// Properties:
 /// * [enabled] - Indicates whether or not Automatic Platform Optimization is enabled.
-/// * [poolId] - Egress pool id which refers to a grouping of dedicated egress IPs through which Cloudflare will connect to origin.
 /// * [cacheByDeviceType] - Indicates whether or not [cache by device type](https://developers.cloudflare.com/automatic-platform-optimization/reference/cache-device-type/) is enabled.
 /// * [cf] - Indicates whether or not Cloudflare proxy is enabled.
 /// * [hostnames] - An array of hostnames where Automatic Platform Optimization for WordPress is activated.
 /// * [wordpress] - Indicates whether or not site is powered by WordPress.
 /// * [wpPlugin] - Indicates whether or not [Cloudflare for WordPress plugin](https://wordpress.org/plugins/cloudflare/) is installed.
+/// * [poolId] - Egress pool id which refers to a grouping of dedicated egress IPs through which Cloudflare will connect to origin.
 /// * [strictTransportSecurity] 
 @BuiltValue()
 abstract class ZonesSettingValue implements Built<ZonesSettingValue, ZonesSettingValueBuilder> {

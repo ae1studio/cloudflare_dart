@@ -9,8 +9,8 @@ import 'package:cloudflare_dart/api.dart';
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **completedTimestamp** | [**DateTime**](DateTime.md) |  | 
-**destination** | **String** |  | [optional] 
 **itemCount** | **int** |  | 
+**destination** | **String** |  | [optional] 
 **messageId** | **String** |  | [optional] 
 **operation** | **String** |  | [optional] 
 **recipient** | **String** |  | [optional] 

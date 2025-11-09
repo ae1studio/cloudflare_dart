@@ -12,32 +12,20 @@ part 'magic_route.g.dart';
 /// MagicRoute
 ///
 /// Properties:
-/// * [createdOn] - When the route was created.
-/// * [description] - An optional human provided description of the static route.
 /// * [id] - Identifier
-/// * [modifiedOn] - When the route was last modified.
 /// * [nexthop] - The next-hop IP Address for the static route.
 /// * [prefix] - IP Prefix in Classless Inter-Domain Routing format.
 /// * [priority] - Priority of the static route.
+/// * [createdOn] - When the route was created.
+/// * [description] - An optional human provided description of the static route.
+/// * [modifiedOn] - When the route was last modified.
 /// * [scope] 
 /// * [weight] - Optional weight of the ECMP scope - if provided.
 @BuiltValue()
 abstract class MagicRoute implements Built<MagicRoute, MagicRouteBuilder> {
-  /// When the route was created.
-  @BuiltValueField(wireName: r'created_on')
-  DateTime? get createdOn;
-
-  /// An optional human provided description of the static route.
-  @BuiltValueField(wireName: r'description')
-  String? get description;
-
   /// Identifier
   @BuiltValueField(wireName: r'id')
   String get id;
-
-  /// When the route was last modified.
-  @BuiltValueField(wireName: r'modified_on')
-  DateTime? get modifiedOn;
 
   /// The next-hop IP Address for the static route.
   @BuiltValueField(wireName: r'nexthop')
@@ -50,6 +38,18 @@ abstract class MagicRoute implements Built<MagicRoute, MagicRouteBuilder> {
   /// Priority of the static route.
   @BuiltValueField(wireName: r'priority')
   int get priority;
+
+  /// When the route was created.
+  @BuiltValueField(wireName: r'created_on')
+  DateTime? get createdOn;
+
+  /// An optional human provided description of the static route.
+  @BuiltValueField(wireName: r'description')
+  String? get description;
+
+  /// When the route was last modified.
+  @BuiltValueField(wireName: r'modified_on')
+  DateTime? get modifiedOn;
 
   @BuiltValueField(wireName: r'scope')
   MagicScope? get scope;
@@ -81,32 +81,11 @@ class _$MagicRouteSerializer implements PrimitiveSerializer<MagicRoute> {
     MagicRoute object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
-    if (object.createdOn != null) {
-      yield r'created_on';
-      yield serializers.serialize(
-        object.createdOn,
-        specifiedType: const FullType(DateTime),
-      );
-    }
-    if (object.description != null) {
-      yield r'description';
-      yield serializers.serialize(
-        object.description,
-        specifiedType: const FullType(String),
-      );
-    }
     yield r'id';
     yield serializers.serialize(
       object.id,
       specifiedType: const FullType(String),
     );
-    if (object.modifiedOn != null) {
-      yield r'modified_on';
-      yield serializers.serialize(
-        object.modifiedOn,
-        specifiedType: const FullType(DateTime),
-      );
-    }
     yield r'nexthop';
     yield serializers.serialize(
       object.nexthop,
@@ -122,6 +101,27 @@ class _$MagicRouteSerializer implements PrimitiveSerializer<MagicRoute> {
       object.priority,
       specifiedType: const FullType(int),
     );
+    if (object.createdOn != null) {
+      yield r'created_on';
+      yield serializers.serialize(
+        object.createdOn,
+        specifiedType: const FullType(DateTime),
+      );
+    }
+    if (object.description != null) {
+      yield r'description';
+      yield serializers.serialize(
+        object.description,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.modifiedOn != null) {
+      yield r'modified_on';
+      yield serializers.serialize(
+        object.modifiedOn,
+        specifiedType: const FullType(DateTime),
+      );
+    }
     if (object.scope != null) {
       yield r'scope';
       yield serializers.serialize(
@@ -159,33 +159,12 @@ class _$MagicRouteSerializer implements PrimitiveSerializer<MagicRoute> {
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'created_on':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
-          result.createdOn = valueDes;
-          break;
-        case r'description':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.description = valueDes;
-          break;
         case r'id':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(String),
           ) as String;
           result.id = valueDes;
-          break;
-        case r'modified_on':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
-          result.modifiedOn = valueDes;
           break;
         case r'nexthop':
           final valueDes = serializers.deserialize(
@@ -207,6 +186,27 @@ class _$MagicRouteSerializer implements PrimitiveSerializer<MagicRoute> {
             specifiedType: const FullType(int),
           ) as int;
           result.priority = valueDes;
+          break;
+        case r'created_on':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(DateTime),
+          ) as DateTime;
+          result.createdOn = valueDes;
+          break;
+        case r'description':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.description = valueDes;
+          break;
+        case r'modified_on':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(DateTime),
+          ) as DateTime;
+          result.modifiedOn = valueDes;
           break;
         case r'scope':
           final valueDes = serializers.deserialize(

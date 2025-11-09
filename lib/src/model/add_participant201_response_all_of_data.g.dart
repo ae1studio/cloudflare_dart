@@ -17,13 +17,13 @@ class _$AddParticipant201ResponseAllOfData
   @override
   final String id;
   @override
-  final String? name;
-  @override
-  final String? picture;
-  @override
   final String presetName;
   @override
   final DateTime updatedAt;
+  @override
+  final String? name;
+  @override
+  final String? picture;
 
   factory _$AddParticipant201ResponseAllOfData(
           [void Function(AddParticipant201ResponseAllOfDataBuilder)?
@@ -35,10 +35,10 @@ class _$AddParticipant201ResponseAllOfData
       required this.createdAt,
       required this.customParticipantId,
       required this.id,
-      this.name,
-      this.picture,
       required this.presetName,
-      required this.updatedAt})
+      required this.updatedAt,
+      this.name,
+      this.picture})
       : super._();
   @override
   AddParticipant201ResponseAllOfData rebuild(
@@ -57,10 +57,10 @@ class _$AddParticipant201ResponseAllOfData
         createdAt == other.createdAt &&
         customParticipantId == other.customParticipantId &&
         id == other.id &&
-        name == other.name &&
-        picture == other.picture &&
         presetName == other.presetName &&
-        updatedAt == other.updatedAt;
+        updatedAt == other.updatedAt &&
+        name == other.name &&
+        picture == other.picture;
   }
 
   @override
@@ -70,10 +70,10 @@ class _$AddParticipant201ResponseAllOfData
     _$hash = $jc(_$hash, createdAt.hashCode);
     _$hash = $jc(_$hash, customParticipantId.hashCode);
     _$hash = $jc(_$hash, id.hashCode);
-    _$hash = $jc(_$hash, name.hashCode);
-    _$hash = $jc(_$hash, picture.hashCode);
     _$hash = $jc(_$hash, presetName.hashCode);
     _$hash = $jc(_$hash, updatedAt.hashCode);
+    _$hash = $jc(_$hash, name.hashCode);
+    _$hash = $jc(_$hash, picture.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -85,10 +85,10 @@ class _$AddParticipant201ResponseAllOfData
           ..add('createdAt', createdAt)
           ..add('customParticipantId', customParticipantId)
           ..add('id', id)
-          ..add('name', name)
-          ..add('picture', picture)
           ..add('presetName', presetName)
-          ..add('updatedAt', updatedAt))
+          ..add('updatedAt', updatedAt)
+          ..add('name', name)
+          ..add('picture', picture))
         .toString();
   }
 }
@@ -117,14 +117,6 @@ class AddParticipant201ResponseAllOfDataBuilder
   String? get id => _$this._id;
   set id(covariant String? id) => _$this._id = id;
 
-  String? _name;
-  String? get name => _$this._name;
-  set name(covariant String? name) => _$this._name = name;
-
-  String? _picture;
-  String? get picture => _$this._picture;
-  set picture(covariant String? picture) => _$this._picture = picture;
-
   String? _presetName;
   String? get presetName => _$this._presetName;
   set presetName(covariant String? presetName) =>
@@ -133,6 +125,14 @@ class AddParticipant201ResponseAllOfDataBuilder
   DateTime? _updatedAt;
   DateTime? get updatedAt => _$this._updatedAt;
   set updatedAt(covariant DateTime? updatedAt) => _$this._updatedAt = updatedAt;
+
+  String? _name;
+  String? get name => _$this._name;
+  set name(covariant String? name) => _$this._name = name;
+
+  String? _picture;
+  String? get picture => _$this._picture;
+  set picture(covariant String? picture) => _$this._picture = picture;
 
   AddParticipant201ResponseAllOfDataBuilder() {
     AddParticipant201ResponseAllOfData._defaults(this);
@@ -145,10 +145,10 @@ class AddParticipant201ResponseAllOfDataBuilder
       _createdAt = $v.createdAt;
       _customParticipantId = $v.customParticipantId;
       _id = $v.id;
-      _name = $v.name;
-      _picture = $v.picture;
       _presetName = $v.presetName;
       _updatedAt = $v.updatedAt;
+      _name = $v.name;
+      _picture = $v.picture;
       _$v = null;
     }
     return this;
@@ -181,12 +181,12 @@ class AddParticipant201ResponseAllOfDataBuilder
               'customParticipantId'),
           id: BuiltValueNullFieldError.checkNotNull(
               id, r'AddParticipant201ResponseAllOfData', 'id'),
-          name: name,
-          picture: picture,
           presetName: BuiltValueNullFieldError.checkNotNull(
               presetName, r'AddParticipant201ResponseAllOfData', 'presetName'),
           updatedAt: BuiltValueNullFieldError.checkNotNull(
               updatedAt, r'AddParticipant201ResponseAllOfData', 'updatedAt'),
+          name: name,
+          picture: picture,
         );
     replace(_$result);
     return _$result;

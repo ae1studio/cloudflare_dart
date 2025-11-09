@@ -19,8 +19,8 @@ part 'list_worker_versions200_response.g.dart';
 /// * [errors] 
 /// * [messages] 
 /// * [success] - Whether the API call was successful.
-/// * [resultInfo] 
 /// * [result] 
+/// * [resultInfo] 
 @BuiltValue()
 abstract class ListWorkerVersions200Response implements WorkersApiResponseCollection, Built<ListWorkerVersions200Response, ListWorkerVersions200ResponseBuilder> {
   @BuiltValueField(wireName: r'result')

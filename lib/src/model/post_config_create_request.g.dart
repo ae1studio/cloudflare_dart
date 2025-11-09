@@ -8,9 +8,9 @@ part of 'post_config_create_request.dart';
 
 class _$PostConfigCreateRequest extends PostConfigCreateRequest {
   @override
-  final num? frequency;
-  @override
   final BuiltList<String> ips;
+  @override
+  final num? frequency;
   @override
   final BuiltList<String>? ports;
 
@@ -18,7 +18,7 @@ class _$PostConfigCreateRequest extends PostConfigCreateRequest {
           [void Function(PostConfigCreateRequestBuilder)? updates]) =>
       (PostConfigCreateRequestBuilder()..update(updates))._build();
 
-  _$PostConfigCreateRequest._({this.frequency, required this.ips, this.ports})
+  _$PostConfigCreateRequest._({required this.ips, this.frequency, this.ports})
       : super._();
   @override
   PostConfigCreateRequest rebuild(
@@ -33,16 +33,16 @@ class _$PostConfigCreateRequest extends PostConfigCreateRequest {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is PostConfigCreateRequest &&
-        frequency == other.frequency &&
         ips == other.ips &&
+        frequency == other.frequency &&
         ports == other.ports;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, frequency.hashCode);
     _$hash = $jc(_$hash, ips.hashCode);
+    _$hash = $jc(_$hash, frequency.hashCode);
     _$hash = $jc(_$hash, ports.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
@@ -51,8 +51,8 @@ class _$PostConfigCreateRequest extends PostConfigCreateRequest {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'PostConfigCreateRequest')
-          ..add('frequency', frequency)
           ..add('ips', ips)
+          ..add('frequency', frequency)
           ..add('ports', ports))
         .toString();
   }
@@ -63,13 +63,13 @@ class PostConfigCreateRequestBuilder
         Builder<PostConfigCreateRequest, PostConfigCreateRequestBuilder> {
   _$PostConfigCreateRequest? _$v;
 
-  num? _frequency;
-  num? get frequency => _$this._frequency;
-  set frequency(num? frequency) => _$this._frequency = frequency;
-
   ListBuilder<String>? _ips;
   ListBuilder<String> get ips => _$this._ips ??= ListBuilder<String>();
   set ips(ListBuilder<String>? ips) => _$this._ips = ips;
+
+  num? _frequency;
+  num? get frequency => _$this._frequency;
+  set frequency(num? frequency) => _$this._frequency = frequency;
 
   ListBuilder<String>? _ports;
   ListBuilder<String> get ports => _$this._ports ??= ListBuilder<String>();
@@ -82,8 +82,8 @@ class PostConfigCreateRequestBuilder
   PostConfigCreateRequestBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _frequency = $v.frequency;
       _ips = $v.ips.toBuilder();
+      _frequency = $v.frequency;
       _ports = $v.ports?.toBuilder();
       _$v = null;
     }
@@ -108,8 +108,8 @@ class PostConfigCreateRequestBuilder
     try {
       _$result = _$v ??
           _$PostConfigCreateRequest._(
-            frequency: frequency,
             ips: ips.build(),
+            frequency: frequency,
             ports: _ports?.build(),
           );
     } catch (_) {
@@ -117,6 +117,7 @@ class PostConfigCreateRequestBuilder
       try {
         _$failedField = 'ips';
         ips.build();
+
         _$failedField = 'ports';
         _ports?.build();
       } catch (e) {

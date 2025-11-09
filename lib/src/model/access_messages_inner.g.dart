@@ -10,9 +10,9 @@ class _$AccessMessagesInner extends AccessMessagesInner {
   @override
   final int code;
   @override
-  final String? documentationUrl;
-  @override
   final String message;
+  @override
+  final String? documentationUrl;
   @override
   final AccessMessagesInnerSource? source_;
 
@@ -22,8 +22,8 @@ class _$AccessMessagesInner extends AccessMessagesInner {
 
   _$AccessMessagesInner._(
       {required this.code,
-      this.documentationUrl,
       required this.message,
+      this.documentationUrl,
       this.source_})
       : super._();
   @override
@@ -40,8 +40,8 @@ class _$AccessMessagesInner extends AccessMessagesInner {
     if (identical(other, this)) return true;
     return other is AccessMessagesInner &&
         code == other.code &&
-        documentationUrl == other.documentationUrl &&
         message == other.message &&
+        documentationUrl == other.documentationUrl &&
         source_ == other.source_;
   }
 
@@ -49,8 +49,8 @@ class _$AccessMessagesInner extends AccessMessagesInner {
   int get hashCode {
     var _$hash = 0;
     _$hash = $jc(_$hash, code.hashCode);
-    _$hash = $jc(_$hash, documentationUrl.hashCode);
     _$hash = $jc(_$hash, message.hashCode);
+    _$hash = $jc(_$hash, documentationUrl.hashCode);
     _$hash = $jc(_$hash, source_.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
@@ -60,8 +60,8 @@ class _$AccessMessagesInner extends AccessMessagesInner {
   String toString() {
     return (newBuiltValueToStringHelper(r'AccessMessagesInner')
           ..add('code', code)
-          ..add('documentationUrl', documentationUrl)
           ..add('message', message)
+          ..add('documentationUrl', documentationUrl)
           ..add('source_', source_))
         .toString();
   }
@@ -75,14 +75,14 @@ class AccessMessagesInnerBuilder
   int? get code => _$this._code;
   set code(int? code) => _$this._code = code;
 
+  String? _message;
+  String? get message => _$this._message;
+  set message(String? message) => _$this._message = message;
+
   String? _documentationUrl;
   String? get documentationUrl => _$this._documentationUrl;
   set documentationUrl(String? documentationUrl) =>
       _$this._documentationUrl = documentationUrl;
-
-  String? _message;
-  String? get message => _$this._message;
-  set message(String? message) => _$this._message = message;
 
   AccessMessagesInnerSourceBuilder? _source_;
   AccessMessagesInnerSourceBuilder get source_ =>
@@ -98,8 +98,8 @@ class AccessMessagesInnerBuilder
     final $v = _$v;
     if ($v != null) {
       _code = $v.code;
-      _documentationUrl = $v.documentationUrl;
       _message = $v.message;
+      _documentationUrl = $v.documentationUrl;
       _source_ = $v.source_?.toBuilder();
       _$v = null;
     }
@@ -126,9 +126,9 @@ class AccessMessagesInnerBuilder
           _$AccessMessagesInner._(
             code: BuiltValueNullFieldError.checkNotNull(
                 code, r'AccessMessagesInner', 'code'),
-            documentationUrl: documentationUrl,
             message: BuiltValueNullFieldError.checkNotNull(
                 message, r'AccessMessagesInner', 'message'),
+            documentationUrl: documentationUrl,
             source_: _source_?.build(),
           );
     } catch (_) {

@@ -131,6 +131,50 @@ final BuiltSet<TeamsDevicesInputComplianceStatusEnum>
   _$teamsDevicesInputComplianceStatusEnum_error,
 ]);
 
+const TeamsDevicesInputCountOperatorEnum
+    _$teamsDevicesInputCountOperatorEnum_lessThan =
+    const TeamsDevicesInputCountOperatorEnum._('lessThan');
+const TeamsDevicesInputCountOperatorEnum
+    _$teamsDevicesInputCountOperatorEnum_lessThanEqual =
+    const TeamsDevicesInputCountOperatorEnum._('lessThanEqual');
+const TeamsDevicesInputCountOperatorEnum
+    _$teamsDevicesInputCountOperatorEnum_greaterThan =
+    const TeamsDevicesInputCountOperatorEnum._('greaterThan');
+const TeamsDevicesInputCountOperatorEnum
+    _$teamsDevicesInputCountOperatorEnum_greaterThanEqual =
+    const TeamsDevicesInputCountOperatorEnum._('greaterThanEqual');
+const TeamsDevicesInputCountOperatorEnum
+    _$teamsDevicesInputCountOperatorEnum_equalEqual =
+    const TeamsDevicesInputCountOperatorEnum._('equalEqual');
+
+TeamsDevicesInputCountOperatorEnum _$teamsDevicesInputCountOperatorEnumValueOf(
+    String name) {
+  switch (name) {
+    case 'lessThan':
+      return _$teamsDevicesInputCountOperatorEnum_lessThan;
+    case 'lessThanEqual':
+      return _$teamsDevicesInputCountOperatorEnum_lessThanEqual;
+    case 'greaterThan':
+      return _$teamsDevicesInputCountOperatorEnum_greaterThan;
+    case 'greaterThanEqual':
+      return _$teamsDevicesInputCountOperatorEnum_greaterThanEqual;
+    case 'equalEqual':
+      return _$teamsDevicesInputCountOperatorEnum_equalEqual;
+    default:
+      throw ArgumentError(name);
+  }
+}
+
+final BuiltSet<TeamsDevicesInputCountOperatorEnum>
+    _$teamsDevicesInputCountOperatorEnumValues = BuiltSet<
+        TeamsDevicesInputCountOperatorEnum>(const <TeamsDevicesInputCountOperatorEnum>[
+  _$teamsDevicesInputCountOperatorEnum_lessThan,
+  _$teamsDevicesInputCountOperatorEnum_lessThanEqual,
+  _$teamsDevicesInputCountOperatorEnum_greaterThan,
+  _$teamsDevicesInputCountOperatorEnum_greaterThanEqual,
+  _$teamsDevicesInputCountOperatorEnum_equalEqual,
+]);
+
 const TeamsDevicesInputStateEnum _$teamsDevicesInputStateEnum_online =
     const TeamsDevicesInputStateEnum._('online');
 const TeamsDevicesInputStateEnum _$teamsDevicesInputStateEnum_offline =
@@ -200,50 +244,6 @@ final BuiltSet<TeamsDevicesInputVersionOperatorEnum>
   _$teamsDevicesInputVersionOperatorEnum_greaterThan,
   _$teamsDevicesInputVersionOperatorEnum_greaterThanEqual,
   _$teamsDevicesInputVersionOperatorEnum_equalEqual,
-]);
-
-const TeamsDevicesInputCountOperatorEnum
-    _$teamsDevicesInputCountOperatorEnum_lessThan =
-    const TeamsDevicesInputCountOperatorEnum._('lessThan');
-const TeamsDevicesInputCountOperatorEnum
-    _$teamsDevicesInputCountOperatorEnum_lessThanEqual =
-    const TeamsDevicesInputCountOperatorEnum._('lessThanEqual');
-const TeamsDevicesInputCountOperatorEnum
-    _$teamsDevicesInputCountOperatorEnum_greaterThan =
-    const TeamsDevicesInputCountOperatorEnum._('greaterThan');
-const TeamsDevicesInputCountOperatorEnum
-    _$teamsDevicesInputCountOperatorEnum_greaterThanEqual =
-    const TeamsDevicesInputCountOperatorEnum._('greaterThanEqual');
-const TeamsDevicesInputCountOperatorEnum
-    _$teamsDevicesInputCountOperatorEnum_equalEqual =
-    const TeamsDevicesInputCountOperatorEnum._('equalEqual');
-
-TeamsDevicesInputCountOperatorEnum _$teamsDevicesInputCountOperatorEnumValueOf(
-    String name) {
-  switch (name) {
-    case 'lessThan':
-      return _$teamsDevicesInputCountOperatorEnum_lessThan;
-    case 'lessThanEqual':
-      return _$teamsDevicesInputCountOperatorEnum_lessThanEqual;
-    case 'greaterThan':
-      return _$teamsDevicesInputCountOperatorEnum_greaterThan;
-    case 'greaterThanEqual':
-      return _$teamsDevicesInputCountOperatorEnum_greaterThanEqual;
-    case 'equalEqual':
-      return _$teamsDevicesInputCountOperatorEnum_equalEqual;
-    default:
-      throw ArgumentError(name);
-  }
-}
-
-final BuiltSet<TeamsDevicesInputCountOperatorEnum>
-    _$teamsDevicesInputCountOperatorEnumValues = BuiltSet<
-        TeamsDevicesInputCountOperatorEnum>(const <TeamsDevicesInputCountOperatorEnum>[
-  _$teamsDevicesInputCountOperatorEnum_lessThan,
-  _$teamsDevicesInputCountOperatorEnum_lessThanEqual,
-  _$teamsDevicesInputCountOperatorEnum_greaterThan,
-  _$teamsDevicesInputCountOperatorEnum_greaterThanEqual,
-  _$teamsDevicesInputCountOperatorEnum_equalEqual,
 ]);
 
 const TeamsDevicesInputRiskLevelEnum _$teamsDevicesInputRiskLevelEnum_low =
@@ -427,14 +427,14 @@ Serializer<TeamsDevicesInputOperator_Enum>
 Serializer<TeamsDevicesInputComplianceStatusEnum>
     _$teamsDevicesInputComplianceStatusEnumSerializer =
     _$TeamsDevicesInputComplianceStatusEnumSerializer();
+Serializer<TeamsDevicesInputCountOperatorEnum>
+    _$teamsDevicesInputCountOperatorEnumSerializer =
+    _$TeamsDevicesInputCountOperatorEnumSerializer();
 Serializer<TeamsDevicesInputStateEnum> _$teamsDevicesInputStateEnumSerializer =
     _$TeamsDevicesInputStateEnumSerializer();
 Serializer<TeamsDevicesInputVersionOperatorEnum>
     _$teamsDevicesInputVersionOperatorEnumSerializer =
     _$TeamsDevicesInputVersionOperatorEnumSerializer();
-Serializer<TeamsDevicesInputCountOperatorEnum>
-    _$teamsDevicesInputCountOperatorEnumSerializer =
-    _$TeamsDevicesInputCountOperatorEnumSerializer();
 Serializer<TeamsDevicesInputRiskLevelEnum>
     _$teamsDevicesInputRiskLevelEnumSerializer =
     _$TeamsDevicesInputRiskLevelEnumSerializer();
@@ -558,6 +558,42 @@ class _$TeamsDevicesInputComplianceStatusEnumSerializer
           _fromWire[serialized] ?? (serialized is String ? serialized : ''));
 }
 
+class _$TeamsDevicesInputCountOperatorEnumSerializer
+    implements PrimitiveSerializer<TeamsDevicesInputCountOperatorEnum> {
+  static const Map<String, Object> _toWire = const <String, Object>{
+    'lessThan': '<',
+    'lessThanEqual': '<=',
+    'greaterThan': '>',
+    'greaterThanEqual': '>=',
+    'equalEqual': '==',
+  };
+  static const Map<Object, String> _fromWire = const <Object, String>{
+    '<': 'lessThan',
+    '<=': 'lessThanEqual',
+    '>': 'greaterThan',
+    '>=': 'greaterThanEqual',
+    '==': 'equalEqual',
+  };
+
+  @override
+  final Iterable<Type> types = const <Type>[TeamsDevicesInputCountOperatorEnum];
+  @override
+  final String wireName = 'TeamsDevicesInputCountOperatorEnum';
+
+  @override
+  Object serialize(
+          Serializers serializers, TeamsDevicesInputCountOperatorEnum object,
+          {FullType specifiedType = FullType.unspecified}) =>
+      _toWire[object.name] ?? object.name;
+
+  @override
+  TeamsDevicesInputCountOperatorEnum deserialize(
+          Serializers serializers, Object serialized,
+          {FullType specifiedType = FullType.unspecified}) =>
+      TeamsDevicesInputCountOperatorEnum.valueOf(
+          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+}
+
 class _$TeamsDevicesInputStateEnumSerializer
     implements PrimitiveSerializer<TeamsDevicesInputStateEnum> {
   static const Map<String, Object> _toWire = const <String, Object>{
@@ -624,42 +660,6 @@ class _$TeamsDevicesInputVersionOperatorEnumSerializer
           Serializers serializers, Object serialized,
           {FullType specifiedType = FullType.unspecified}) =>
       TeamsDevicesInputVersionOperatorEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
-}
-
-class _$TeamsDevicesInputCountOperatorEnumSerializer
-    implements PrimitiveSerializer<TeamsDevicesInputCountOperatorEnum> {
-  static const Map<String, Object> _toWire = const <String, Object>{
-    'lessThan': '<',
-    'lessThanEqual': '<=',
-    'greaterThan': '>',
-    'greaterThanEqual': '>=',
-    'equalEqual': '==',
-  };
-  static const Map<Object, String> _fromWire = const <Object, String>{
-    '<': 'lessThan',
-    '<=': 'lessThanEqual',
-    '>': 'greaterThan',
-    '>=': 'greaterThanEqual',
-    '==': 'equalEqual',
-  };
-
-  @override
-  final Iterable<Type> types = const <Type>[TeamsDevicesInputCountOperatorEnum];
-  @override
-  final String wireName = 'TeamsDevicesInputCountOperatorEnum';
-
-  @override
-  Object serialize(
-          Serializers serializers, TeamsDevicesInputCountOperatorEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
-
-  @override
-  TeamsDevicesInputCountOperatorEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      TeamsDevicesInputCountOperatorEnum.valueOf(
           _fromWire[serialized] ?? (serialized is String ? serialized : ''));
 }
 

@@ -20,8 +20,8 @@ part 'account_level_custom_nameservers_usage_for_a_zone_set_account_custom_names
 /// * [errors] 
 /// * [messages] 
 /// * [success] - Whether the API call was successful.
-/// * [resultInfo] 
 /// * [result] 
+/// * [resultInfo] 
 @BuiltValue()
 abstract class AccountLevelCustomNameserversUsageForAZoneSetAccountCustomNameserverRelatedZoneMetadata4XXResponse implements DnsCustomNameserversApiResponseCommonFailure, DnsCustomNameserversSchemasEmptyResponse, Built<AccountLevelCustomNameserversUsageForAZoneSetAccountCustomNameserverRelatedZoneMetadata4XXResponse, AccountLevelCustomNameserversUsageForAZoneSetAccountCustomNameserverRelatedZoneMetadata4XXResponseBuilder> {
   AccountLevelCustomNameserversUsageForAZoneSetAccountCustomNameserverRelatedZoneMetadata4XXResponse._();

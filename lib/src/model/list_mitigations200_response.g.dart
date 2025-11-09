@@ -8,6 +8,8 @@ part of 'list_mitigations200_response.dart';
 
 class _$ListMitigations200Response extends ListMitigations200Response {
   @override
+  final bool success;
+  @override
   final BuiltList<AbuseReportsMessage>? errors;
   @override
   final BuiltList<AbuseReportsMessage>? messages;
@@ -15,19 +17,17 @@ class _$ListMitigations200Response extends ListMitigations200Response {
   final ListMitigations200ResponseResult? result;
   @override
   final ListAbuseReports200ResponseResultInfo? resultInfo;
-  @override
-  final bool success;
 
   factory _$ListMitigations200Response(
           [void Function(ListMitigations200ResponseBuilder)? updates]) =>
       (ListMitigations200ResponseBuilder()..update(updates))._build();
 
   _$ListMitigations200Response._(
-      {this.errors,
+      {required this.success,
+      this.errors,
       this.messages,
       this.result,
-      this.resultInfo,
-      required this.success})
+      this.resultInfo})
       : super._();
   @override
   ListMitigations200Response rebuild(
@@ -42,21 +42,21 @@ class _$ListMitigations200Response extends ListMitigations200Response {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is ListMitigations200Response &&
+        success == other.success &&
         errors == other.errors &&
         messages == other.messages &&
         result == other.result &&
-        resultInfo == other.resultInfo &&
-        success == other.success;
+        resultInfo == other.resultInfo;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
+    _$hash = $jc(_$hash, success.hashCode);
     _$hash = $jc(_$hash, errors.hashCode);
     _$hash = $jc(_$hash, messages.hashCode);
     _$hash = $jc(_$hash, result.hashCode);
     _$hash = $jc(_$hash, resultInfo.hashCode);
-    _$hash = $jc(_$hash, success.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -64,11 +64,11 @@ class _$ListMitigations200Response extends ListMitigations200Response {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'ListMitigations200Response')
+          ..add('success', success)
           ..add('errors', errors)
           ..add('messages', messages)
           ..add('result', result)
-          ..add('resultInfo', resultInfo)
-          ..add('success', success))
+          ..add('resultInfo', resultInfo))
         .toString();
   }
 }
@@ -77,6 +77,10 @@ class ListMitigations200ResponseBuilder
     implements
         Builder<ListMitigations200Response, ListMitigations200ResponseBuilder> {
   _$ListMitigations200Response? _$v;
+
+  bool? _success;
+  bool? get success => _$this._success;
+  set success(bool? success) => _$this._success = success;
 
   ListBuilder<AbuseReportsMessage>? _errors;
   ListBuilder<AbuseReportsMessage> get errors =>
@@ -102,10 +106,6 @@ class ListMitigations200ResponseBuilder
   set resultInfo(ListAbuseReports200ResponseResultInfoBuilder? resultInfo) =>
       _$this._resultInfo = resultInfo;
 
-  bool? _success;
-  bool? get success => _$this._success;
-  set success(bool? success) => _$this._success = success;
-
   ListMitigations200ResponseBuilder() {
     ListMitigations200Response._defaults(this);
   }
@@ -113,11 +113,11 @@ class ListMitigations200ResponseBuilder
   ListMitigations200ResponseBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
+      _success = $v.success;
       _errors = $v.errors?.toBuilder();
       _messages = $v.messages?.toBuilder();
       _result = $v.result?.toBuilder();
       _resultInfo = $v.resultInfo?.toBuilder();
-      _success = $v.success;
       _$v = null;
     }
     return this;
@@ -141,12 +141,12 @@ class ListMitigations200ResponseBuilder
     try {
       _$result = _$v ??
           _$ListMitigations200Response._(
+            success: BuiltValueNullFieldError.checkNotNull(
+                success, r'ListMitigations200Response', 'success'),
             errors: _errors?.build(),
             messages: _messages?.build(),
             result: _result?.build(),
             resultInfo: _resultInfo?.build(),
-            success: BuiltValueNullFieldError.checkNotNull(
-                success, r'ListMitigations200Response', 'success'),
           );
     } catch (_) {
       late String _$failedField;

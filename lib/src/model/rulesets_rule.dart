@@ -16,6 +16,8 @@ part 'rulesets_rule.g.dart';
 /// RulesetsRule
 ///
 /// Properties:
+/// * [lastUpdated] - The timestamp of when the rule was last modified.
+/// * [version] - The version of the rule.
 /// * [action] - The action to perform when the rule matches.
 /// * [actionParameters] - The parameters configuring the rule's action.
 /// * [categories] - The categories of the rule.
@@ -24,13 +26,19 @@ part 'rulesets_rule.g.dart';
 /// * [exposedCredentialCheck] 
 /// * [expression] - The expression defining which traffic will match the rule.
 /// * [id] - The unique ID of the rule.
-/// * [lastUpdated] - The timestamp of when the rule was last modified.
 /// * [logging] 
 /// * [ratelimit] 
 /// * [ref] - The reference of the rule (the rule's ID by default).
-/// * [version] - The version of the rule.
 @BuiltValue(instantiable: false)
 abstract class RulesetsRule  {
+  /// The timestamp of when the rule was last modified.
+  @BuiltValueField(wireName: r'last_updated')
+  DateTime get lastUpdated;
+
+  /// The version of the rule.
+  @BuiltValueField(wireName: r'version')
+  String get version;
+
   /// The action to perform when the rule matches.
   @BuiltValueField(wireName: r'action')
   String? get action;
@@ -62,10 +70,6 @@ abstract class RulesetsRule  {
   @BuiltValueField(wireName: r'id')
   String? get id;
 
-  /// The timestamp of when the rule was last modified.
-  @BuiltValueField(wireName: r'last_updated')
-  DateTime get lastUpdated;
-
   @BuiltValueField(wireName: r'logging')
   RulesetsRuleLogging? get logging;
 
@@ -75,10 +79,6 @@ abstract class RulesetsRule  {
   /// The reference of the rule (the rule's ID by default).
   @BuiltValueField(wireName: r'ref')
   String? get ref;
-
-  /// The version of the rule.
-  @BuiltValueField(wireName: r'version')
-  String get version;
 
   @BuiltValueSerializer(custom: true)
   static Serializer<RulesetsRule> get serializer => _$RulesetsRuleSerializer();
@@ -96,6 +96,16 @@ class _$RulesetsRuleSerializer implements PrimitiveSerializer<RulesetsRule> {
     RulesetsRule object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    yield r'last_updated';
+    yield serializers.serialize(
+      object.lastUpdated,
+      specifiedType: const FullType(DateTime),
+    );
+    yield r'version';
+    yield serializers.serialize(
+      object.version,
+      specifiedType: const FullType(String),
+    );
     if (object.action != null) {
       yield r'action';
       yield serializers.serialize(
@@ -152,11 +162,6 @@ class _$RulesetsRuleSerializer implements PrimitiveSerializer<RulesetsRule> {
         specifiedType: const FullType(String),
       );
     }
-    yield r'last_updated';
-    yield serializers.serialize(
-      object.lastUpdated,
-      specifiedType: const FullType(DateTime),
-    );
     if (object.logging != null) {
       yield r'logging';
       yield serializers.serialize(
@@ -178,11 +183,6 @@ class _$RulesetsRuleSerializer implements PrimitiveSerializer<RulesetsRule> {
         specifiedType: const FullType(String),
       );
     }
-    yield r'version';
-    yield serializers.serialize(
-      object.version,
-      specifiedType: const FullType(String),
-    );
   }
 
   @override
@@ -246,6 +246,20 @@ class _$$RulesetsRuleSerializer implements PrimitiveSerializer<$RulesetsRule> {
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
+        case r'last_updated':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(DateTime),
+          ) as DateTime;
+          result.lastUpdated = valueDes;
+          break;
+        case r'version':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.version = valueDes;
+          break;
         case r'action':
           final valueDes = serializers.deserialize(
             value,
@@ -302,13 +316,6 @@ class _$$RulesetsRuleSerializer implements PrimitiveSerializer<$RulesetsRule> {
           ) as String;
           result.id = valueDes;
           break;
-        case r'last_updated':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
-          result.lastUpdated = valueDes;
-          break;
         case r'logging':
           final valueDes = serializers.deserialize(
             value,
@@ -329,13 +336,6 @@ class _$$RulesetsRuleSerializer implements PrimitiveSerializer<$RulesetsRule> {
             specifiedType: const FullType(String),
           ) as String;
           result.ref = valueDes;
-          break;
-        case r'version':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.version = valueDes;
           break;
         default:
           unhandled.add(key);

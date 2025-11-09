@@ -18,9 +18,9 @@ class _$WorDescribeWorkflowVersions200Response
   @override
   final WorListWorkflowVersions200ResponseResultInner result;
   @override
-  final WorListWorkflows200ResponseResultInfo? resultInfo;
-  @override
   final bool success;
+  @override
+  final WorListWorkflows200ResponseResultInfo? resultInfo;
 
   factory _$WorDescribeWorkflowVersions200Response(
           [void Function(WorDescribeWorkflowVersions200ResponseBuilder)?
@@ -32,8 +32,8 @@ class _$WorDescribeWorkflowVersions200Response
       {required this.errors,
       required this.messages,
       required this.result,
-      this.resultInfo,
-      required this.success})
+      required this.success,
+      this.resultInfo})
       : super._();
   @override
   WorDescribeWorkflowVersions200Response rebuild(
@@ -52,8 +52,8 @@ class _$WorDescribeWorkflowVersions200Response
         errors == other.errors &&
         messages == other.messages &&
         result == other.result &&
-        resultInfo == other.resultInfo &&
-        success == other.success;
+        success == other.success &&
+        resultInfo == other.resultInfo;
   }
 
   @override
@@ -62,8 +62,8 @@ class _$WorDescribeWorkflowVersions200Response
     _$hash = $jc(_$hash, errors.hashCode);
     _$hash = $jc(_$hash, messages.hashCode);
     _$hash = $jc(_$hash, result.hashCode);
-    _$hash = $jc(_$hash, resultInfo.hashCode);
     _$hash = $jc(_$hash, success.hashCode);
+    _$hash = $jc(_$hash, resultInfo.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -75,8 +75,8 @@ class _$WorDescribeWorkflowVersions200Response
           ..add('errors', errors)
           ..add('messages', messages)
           ..add('result', result)
-          ..add('resultInfo', resultInfo)
-          ..add('success', success))
+          ..add('success', success)
+          ..add('resultInfo', resultInfo))
         .toString();
   }
 }
@@ -117,15 +117,15 @@ class WorDescribeWorkflowVersions200ResponseBuilder
   set result(WorListWorkflowVersions200ResponseResultInnerBuilder? result) =>
       _$this._result = result;
 
+  bool? _success;
+  bool? get success => _$this._success;
+  set success(bool? success) => _$this._success = success;
+
   WorListWorkflows200ResponseResultInfoBuilder? _resultInfo;
   WorListWorkflows200ResponseResultInfoBuilder get resultInfo =>
       _$this._resultInfo ??= WorListWorkflows200ResponseResultInfoBuilder();
   set resultInfo(WorListWorkflows200ResponseResultInfoBuilder? resultInfo) =>
       _$this._resultInfo = resultInfo;
-
-  bool? _success;
-  bool? get success => _$this._success;
-  set success(bool? success) => _$this._success = success;
 
   WorDescribeWorkflowVersions200ResponseBuilder() {
     WorDescribeWorkflowVersions200Response._defaults(this);
@@ -137,8 +137,8 @@ class WorDescribeWorkflowVersions200ResponseBuilder
       _errors = $v.errors.toBuilder();
       _messages = $v.messages.toBuilder();
       _result = $v.result.toBuilder();
-      _resultInfo = $v.resultInfo?.toBuilder();
       _success = $v.success;
+      _resultInfo = $v.resultInfo?.toBuilder();
       _$v = null;
     }
     return this;
@@ -166,9 +166,9 @@ class WorDescribeWorkflowVersions200ResponseBuilder
             errors: errors.build(),
             messages: messages.build(),
             result: result.build(),
-            resultInfo: _resultInfo?.build(),
             success: BuiltValueNullFieldError.checkNotNull(
                 success, r'WorDescribeWorkflowVersions200Response', 'success'),
+            resultInfo: _resultInfo?.build(),
           );
     } catch (_) {
       late String _$failedField;
@@ -179,6 +179,7 @@ class WorDescribeWorkflowVersions200ResponseBuilder
         messages.build();
         _$failedField = 'result';
         result.build();
+
         _$failedField = 'resultInfo';
         _resultInfo?.build();
       } catch (e) {

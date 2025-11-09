@@ -18,9 +18,9 @@ part 'workers_ai_post_run_cf_baai_bge_m3_request_one_of_requests_inner.g.dart';
 ///
 /// Properties:
 /// * [contexts] - List of provided contexts. Note that the index in this array is important, as the response will refer to it.
+/// * [text] 
 /// * [query] - A query you wish to perform against the provided contexts. If no query is provided the model with respond with embeddings for contexts
 /// * [truncateInputs] - When provided with too long context should the model error out or truncate the context to fit?
-/// * [text] 
 @BuiltValue()
 abstract class WorkersAiPostRunCfBaaiBgeM3RequestOneOfRequestsInner implements Built<WorkersAiPostRunCfBaaiBgeM3RequestOneOfRequestsInner, WorkersAiPostRunCfBaaiBgeM3RequestOneOfRequestsInnerBuilder> {
   /// One Of [BGEM3InputEmbedding], [BGEM3InputQueryAndContexts]

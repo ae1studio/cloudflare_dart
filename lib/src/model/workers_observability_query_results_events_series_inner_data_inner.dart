@@ -16,10 +16,10 @@ part 'workers_observability_query_results_events_series_inner_data_inner.g.dart'
 /// Properties:
 /// * [aggregates] 
 /// * [count] 
-/// * [errors] 
-/// * [groups] - Groups in the query results.
 /// * [interval] 
 /// * [sampleInterval] 
+/// * [errors] 
+/// * [groups] - Groups in the query results.
 @BuiltValue()
 abstract class WorkersObservabilityQueryResultsEventsSeriesInnerDataInner implements Built<WorkersObservabilityQueryResultsEventsSeriesInnerDataInner, WorkersObservabilityQueryResultsEventsSeriesInnerDataInnerBuilder> {
   @BuiltValueField(wireName: r'aggregates')
@@ -28,18 +28,18 @@ abstract class WorkersObservabilityQueryResultsEventsSeriesInnerDataInner implem
   @BuiltValueField(wireName: r'count')
   num get count;
 
+  @BuiltValueField(wireName: r'interval')
+  num get interval;
+
+  @BuiltValueField(wireName: r'sampleInterval')
+  num get sampleInterval;
+
   @BuiltValueField(wireName: r'errors')
   num? get errors;
 
   /// Groups in the query results.
   @BuiltValueField(wireName: r'groups')
   BuiltMap<String, AigConfigListDataset200ResponseResultInnerFiltersInnerValueInner>? get groups;
-
-  @BuiltValueField(wireName: r'interval')
-  num get interval;
-
-  @BuiltValueField(wireName: r'sampleInterval')
-  num get sampleInterval;
 
   WorkersObservabilityQueryResultsEventsSeriesInnerDataInner._();
 
@@ -74,6 +74,16 @@ class _$WorkersObservabilityQueryResultsEventsSeriesInnerDataInnerSerializer imp
       object.count,
       specifiedType: const FullType(num),
     );
+    yield r'interval';
+    yield serializers.serialize(
+      object.interval,
+      specifiedType: const FullType(num),
+    );
+    yield r'sampleInterval';
+    yield serializers.serialize(
+      object.sampleInterval,
+      specifiedType: const FullType(num),
+    );
     if (object.errors != null) {
       yield r'errors';
       yield serializers.serialize(
@@ -88,16 +98,6 @@ class _$WorkersObservabilityQueryResultsEventsSeriesInnerDataInnerSerializer imp
         specifiedType: const FullType(BuiltMap, [FullType(String), FullType(AigConfigListDataset200ResponseResultInnerFiltersInnerValueInner)]),
       );
     }
-    yield r'interval';
-    yield serializers.serialize(
-      object.interval,
-      specifiedType: const FullType(num),
-    );
-    yield r'sampleInterval';
-    yield serializers.serialize(
-      object.sampleInterval,
-      specifiedType: const FullType(num),
-    );
   }
 
   @override
@@ -135,20 +135,6 @@ class _$WorkersObservabilityQueryResultsEventsSeriesInnerDataInnerSerializer imp
           ) as num;
           result.count = valueDes;
           break;
-        case r'errors':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(num),
-          ) as num;
-          result.errors = valueDes;
-          break;
-        case r'groups':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltMap, [FullType(String), FullType(AigConfigListDataset200ResponseResultInnerFiltersInnerValueInner)]),
-          ) as BuiltMap<String, AigConfigListDataset200ResponseResultInnerFiltersInnerValueInner>;
-          result.groups.replace(valueDes);
-          break;
         case r'interval':
           final valueDes = serializers.deserialize(
             value,
@@ -162,6 +148,20 @@ class _$WorkersObservabilityQueryResultsEventsSeriesInnerDataInnerSerializer imp
             specifiedType: const FullType(num),
           ) as num;
           result.sampleInterval = valueDes;
+          break;
+        case r'errors':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(num),
+          ) as num;
+          result.errors = valueDes;
+          break;
+        case r'groups':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BuiltMap, [FullType(String), FullType(AigConfigListDataset200ResponseResultInnerFiltersInnerValueInner)]),
+          ) as BuiltMap<String, AigConfigListDataset200ResponseResultInnerFiltersInnerValueInner>;
+          result.groups.replace(valueDes);
           break;
         default:
           unhandled.add(key);

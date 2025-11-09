@@ -13,12 +13,12 @@ part 'mconn_customer_connector_create_request.g.dart';
 /// MconnCustomerConnectorCreateRequest
 ///
 /// Properties:
+/// * [device] 
 /// * [activated] 
 /// * [interruptWindowDurationHours] 
 /// * [interruptWindowHourOfDay] 
 /// * [notes] 
 /// * [timezone] 
-/// * [device] 
 @BuiltValue()
 abstract class MconnCustomerConnectorCreateRequest implements MconnCustomerConnectorFields, Built<MconnCustomerConnectorCreateRequest, MconnCustomerConnectorCreateRequestBuilder> {
   @BuiltValueField(wireName: r'device')

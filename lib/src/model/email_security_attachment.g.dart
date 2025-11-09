@@ -8,6 +8,8 @@ part of 'email_security_attachment.dart';
 
 class _$EmailSecurityAttachment extends EmailSecurityAttachment {
   @override
+  final int size;
+  @override
   final String? contentType;
   @override
   final EmailSecurityDispositionLabel? detection;
@@ -15,19 +17,17 @@ class _$EmailSecurityAttachment extends EmailSecurityAttachment {
   final bool? encrypted;
   @override
   final String? name;
-  @override
-  final int size;
 
   factory _$EmailSecurityAttachment(
           [void Function(EmailSecurityAttachmentBuilder)? updates]) =>
       (EmailSecurityAttachmentBuilder()..update(updates))._build();
 
   _$EmailSecurityAttachment._(
-      {this.contentType,
+      {required this.size,
+      this.contentType,
       this.detection,
       this.encrypted,
-      this.name,
-      required this.size})
+      this.name})
       : super._();
   @override
   EmailSecurityAttachment rebuild(
@@ -42,21 +42,21 @@ class _$EmailSecurityAttachment extends EmailSecurityAttachment {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is EmailSecurityAttachment &&
+        size == other.size &&
         contentType == other.contentType &&
         detection == other.detection &&
         encrypted == other.encrypted &&
-        name == other.name &&
-        size == other.size;
+        name == other.name;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
+    _$hash = $jc(_$hash, size.hashCode);
     _$hash = $jc(_$hash, contentType.hashCode);
     _$hash = $jc(_$hash, detection.hashCode);
     _$hash = $jc(_$hash, encrypted.hashCode);
     _$hash = $jc(_$hash, name.hashCode);
-    _$hash = $jc(_$hash, size.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -64,11 +64,11 @@ class _$EmailSecurityAttachment extends EmailSecurityAttachment {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'EmailSecurityAttachment')
+          ..add('size', size)
           ..add('contentType', contentType)
           ..add('detection', detection)
           ..add('encrypted', encrypted)
-          ..add('name', name)
-          ..add('size', size))
+          ..add('name', name))
         .toString();
   }
 }
@@ -77,6 +77,10 @@ class EmailSecurityAttachmentBuilder
     implements
         Builder<EmailSecurityAttachment, EmailSecurityAttachmentBuilder> {
   _$EmailSecurityAttachment? _$v;
+
+  int? _size;
+  int? get size => _$this._size;
+  set size(int? size) => _$this._size = size;
 
   String? _contentType;
   String? get contentType => _$this._contentType;
@@ -95,10 +99,6 @@ class EmailSecurityAttachmentBuilder
   String? get name => _$this._name;
   set name(String? name) => _$this._name = name;
 
-  int? _size;
-  int? get size => _$this._size;
-  set size(int? size) => _$this._size = size;
-
   EmailSecurityAttachmentBuilder() {
     EmailSecurityAttachment._defaults(this);
   }
@@ -106,11 +106,11 @@ class EmailSecurityAttachmentBuilder
   EmailSecurityAttachmentBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
+      _size = $v.size;
       _contentType = $v.contentType;
       _detection = $v.detection;
       _encrypted = $v.encrypted;
       _name = $v.name;
-      _size = $v.size;
       _$v = null;
     }
     return this;
@@ -132,12 +132,12 @@ class EmailSecurityAttachmentBuilder
   _$EmailSecurityAttachment _build() {
     final _$result = _$v ??
         _$EmailSecurityAttachment._(
+          size: BuiltValueNullFieldError.checkNotNull(
+              size, r'EmailSecurityAttachment', 'size'),
           contentType: contentType,
           detection: detection,
           encrypted: encrypted,
           name: name,
-          size: BuiltValueNullFieldError.checkNotNull(
-              size, r'EmailSecurityAttachment', 'size'),
         );
     replace(_$result);
     return _$result;

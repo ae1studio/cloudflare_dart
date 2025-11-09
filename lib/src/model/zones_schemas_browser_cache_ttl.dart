@@ -7,16 +7,17 @@ import 'package:built_collection/built_collection.dart';
 import 'package:cloudflare_dart/src/model/zones_base.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
+import 'package:built_value/json_object.dart';
 
 part 'zones_schemas_browser_cache_ttl.g.dart';
 
 /// Browser Cache TTL (in seconds) specifies how long Cloudflare-cached resources will remain on your visitors' computers. Cloudflare will honor any larger times specified by your server. (https://support.cloudflare.com/hc/en-us/articles/200168276).
 ///
 /// Properties:
-/// * [editable] - Whether or not this setting can be modified for this zone (based on your Cloudflare plan level).
 /// * [id] - ID of the zone setting.
-/// * [modifiedOn] - last time this setting was modified.
 /// * [value] - Value of the zone setting in seconds. Minimum values by plan: - Free: 1 second - Pro: 1 second - Business: 1 second - Enterprise: 1 second Setting a TTL of 0 is equivalent to selecting `Respect Existing Headers` and is allowed for all plans.
+/// * [editable] - Whether or not this setting can be modified for this zone (based on your Cloudflare plan level).
+/// * [modifiedOn] - last time this setting was modified.
 @BuiltValue()
 abstract class ZonesSchemasBrowserCacheTtl implements ZonesBase, Built<ZonesSchemasBrowserCacheTtl, ZonesSchemasBrowserCacheTtlBuilder> {
   ZonesSchemasBrowserCacheTtl._();

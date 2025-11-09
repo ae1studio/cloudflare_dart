@@ -9,6 +9,20 @@ part of 'digital_experience_monitoring_device.dart';
 class _$DigitalExperienceMonitoringDevice
     extends DigitalExperienceMonitoringDevice {
   @override
+  final String colo;
+  @override
+  final String deviceId;
+  @override
+  final String mode;
+  @override
+  final String platform;
+  @override
+  final String status;
+  @override
+  final String timestamp;
+  @override
+  final String version;
+  @override
   final bool? alwaysOn;
   @override
   final bool? batteryCharging;
@@ -17,16 +31,12 @@ class _$DigitalExperienceMonitoringDevice
   @override
   final double? batteryPct;
   @override
-  final String colo;
-  @override
   final String? connectionType;
   @override
   final double? cpuPct;
   @override
   final BuiltList<BuiltList<DigitalExperienceMonitoringCpuPctByAppInner>>?
       cpuPctByApp;
-  @override
-  final String deviceId;
   @override
   final DigitalExperienceMonitoringIpInfo? deviceIpv4;
   @override
@@ -58,8 +68,6 @@ class _$DigitalExperienceMonitoringDevice
   @override
   final String? metal;
   @override
-  final String mode;
-  @override
   final int? networkRcvdBps;
   @override
   final int? networkSentBps;
@@ -68,8 +76,6 @@ class _$DigitalExperienceMonitoringDevice
   @override
   final String? personEmail;
   @override
-  final String platform;
-  @override
   final int? ramAvailableKb;
   @override
   final double? ramUsedPct;
@@ -77,13 +83,7 @@ class _$DigitalExperienceMonitoringDevice
   final BuiltList<BuiltList<DigitalExperienceMonitoringRamUsedPctByAppInner>>?
       ramUsedPctByApp;
   @override
-  final String status;
-  @override
   final bool? switchLocked;
-  @override
-  final String timestamp;
-  @override
-  final String version;
   @override
   final int? wifiStrengthDbm;
 
@@ -92,15 +92,20 @@ class _$DigitalExperienceMonitoringDevice
       (DigitalExperienceMonitoringDeviceBuilder()..update(updates))._build();
 
   _$DigitalExperienceMonitoringDevice._(
-      {this.alwaysOn,
+      {required this.colo,
+      required this.deviceId,
+      required this.mode,
+      required this.platform,
+      required this.status,
+      required this.timestamp,
+      required this.version,
+      this.alwaysOn,
       this.batteryCharging,
       this.batteryCycles,
       this.batteryPct,
-      required this.colo,
       this.connectionType,
       this.cpuPct,
       this.cpuPctByApp,
-      required this.deviceId,
       this.deviceIpv4,
       this.deviceIpv6,
       this.deviceName,
@@ -116,19 +121,14 @@ class _$DigitalExperienceMonitoringDevice
       this.ispIpv4,
       this.ispIpv6,
       this.metal,
-      required this.mode,
       this.networkRcvdBps,
       this.networkSentBps,
       this.networkSsid,
       this.personEmail,
-      required this.platform,
       this.ramAvailableKb,
       this.ramUsedPct,
       this.ramUsedPctByApp,
-      required this.status,
       this.switchLocked,
-      required this.timestamp,
-      required this.version,
       this.wifiStrengthDbm})
       : super._();
   @override
@@ -144,15 +144,20 @@ class _$DigitalExperienceMonitoringDevice
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is DigitalExperienceMonitoringDevice &&
+        colo == other.colo &&
+        deviceId == other.deviceId &&
+        mode == other.mode &&
+        platform == other.platform &&
+        status == other.status &&
+        timestamp == other.timestamp &&
+        version == other.version &&
         alwaysOn == other.alwaysOn &&
         batteryCharging == other.batteryCharging &&
         batteryCycles == other.batteryCycles &&
         batteryPct == other.batteryPct &&
-        colo == other.colo &&
         connectionType == other.connectionType &&
         cpuPct == other.cpuPct &&
         cpuPctByApp == other.cpuPctByApp &&
-        deviceId == other.deviceId &&
         deviceIpv4 == other.deviceIpv4 &&
         deviceIpv6 == other.deviceIpv6 &&
         deviceName == other.deviceName &&
@@ -168,34 +173,34 @@ class _$DigitalExperienceMonitoringDevice
         ispIpv4 == other.ispIpv4 &&
         ispIpv6 == other.ispIpv6 &&
         metal == other.metal &&
-        mode == other.mode &&
         networkRcvdBps == other.networkRcvdBps &&
         networkSentBps == other.networkSentBps &&
         networkSsid == other.networkSsid &&
         personEmail == other.personEmail &&
-        platform == other.platform &&
         ramAvailableKb == other.ramAvailableKb &&
         ramUsedPct == other.ramUsedPct &&
         ramUsedPctByApp == other.ramUsedPctByApp &&
-        status == other.status &&
         switchLocked == other.switchLocked &&
-        timestamp == other.timestamp &&
-        version == other.version &&
         wifiStrengthDbm == other.wifiStrengthDbm;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
+    _$hash = $jc(_$hash, colo.hashCode);
+    _$hash = $jc(_$hash, deviceId.hashCode);
+    _$hash = $jc(_$hash, mode.hashCode);
+    _$hash = $jc(_$hash, platform.hashCode);
+    _$hash = $jc(_$hash, status.hashCode);
+    _$hash = $jc(_$hash, timestamp.hashCode);
+    _$hash = $jc(_$hash, version.hashCode);
     _$hash = $jc(_$hash, alwaysOn.hashCode);
     _$hash = $jc(_$hash, batteryCharging.hashCode);
     _$hash = $jc(_$hash, batteryCycles.hashCode);
     _$hash = $jc(_$hash, batteryPct.hashCode);
-    _$hash = $jc(_$hash, colo.hashCode);
     _$hash = $jc(_$hash, connectionType.hashCode);
     _$hash = $jc(_$hash, cpuPct.hashCode);
     _$hash = $jc(_$hash, cpuPctByApp.hashCode);
-    _$hash = $jc(_$hash, deviceId.hashCode);
     _$hash = $jc(_$hash, deviceIpv4.hashCode);
     _$hash = $jc(_$hash, deviceIpv6.hashCode);
     _$hash = $jc(_$hash, deviceName.hashCode);
@@ -211,19 +216,14 @@ class _$DigitalExperienceMonitoringDevice
     _$hash = $jc(_$hash, ispIpv4.hashCode);
     _$hash = $jc(_$hash, ispIpv6.hashCode);
     _$hash = $jc(_$hash, metal.hashCode);
-    _$hash = $jc(_$hash, mode.hashCode);
     _$hash = $jc(_$hash, networkRcvdBps.hashCode);
     _$hash = $jc(_$hash, networkSentBps.hashCode);
     _$hash = $jc(_$hash, networkSsid.hashCode);
     _$hash = $jc(_$hash, personEmail.hashCode);
-    _$hash = $jc(_$hash, platform.hashCode);
     _$hash = $jc(_$hash, ramAvailableKb.hashCode);
     _$hash = $jc(_$hash, ramUsedPct.hashCode);
     _$hash = $jc(_$hash, ramUsedPctByApp.hashCode);
-    _$hash = $jc(_$hash, status.hashCode);
     _$hash = $jc(_$hash, switchLocked.hashCode);
-    _$hash = $jc(_$hash, timestamp.hashCode);
-    _$hash = $jc(_$hash, version.hashCode);
     _$hash = $jc(_$hash, wifiStrengthDbm.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
@@ -232,15 +232,20 @@ class _$DigitalExperienceMonitoringDevice
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'DigitalExperienceMonitoringDevice')
+          ..add('colo', colo)
+          ..add('deviceId', deviceId)
+          ..add('mode', mode)
+          ..add('platform', platform)
+          ..add('status', status)
+          ..add('timestamp', timestamp)
+          ..add('version', version)
           ..add('alwaysOn', alwaysOn)
           ..add('batteryCharging', batteryCharging)
           ..add('batteryCycles', batteryCycles)
           ..add('batteryPct', batteryPct)
-          ..add('colo', colo)
           ..add('connectionType', connectionType)
           ..add('cpuPct', cpuPct)
           ..add('cpuPctByApp', cpuPctByApp)
-          ..add('deviceId', deviceId)
           ..add('deviceIpv4', deviceIpv4)
           ..add('deviceIpv6', deviceIpv6)
           ..add('deviceName', deviceName)
@@ -256,19 +261,14 @@ class _$DigitalExperienceMonitoringDevice
           ..add('ispIpv4', ispIpv4)
           ..add('ispIpv6', ispIpv6)
           ..add('metal', metal)
-          ..add('mode', mode)
           ..add('networkRcvdBps', networkRcvdBps)
           ..add('networkSentBps', networkSentBps)
           ..add('networkSsid', networkSsid)
           ..add('personEmail', personEmail)
-          ..add('platform', platform)
           ..add('ramAvailableKb', ramAvailableKb)
           ..add('ramUsedPct', ramUsedPct)
           ..add('ramUsedPctByApp', ramUsedPctByApp)
-          ..add('status', status)
           ..add('switchLocked', switchLocked)
-          ..add('timestamp', timestamp)
-          ..add('version', version)
           ..add('wifiStrengthDbm', wifiStrengthDbm))
         .toString();
   }
@@ -279,6 +279,34 @@ class DigitalExperienceMonitoringDeviceBuilder
         Builder<DigitalExperienceMonitoringDevice,
             DigitalExperienceMonitoringDeviceBuilder> {
   _$DigitalExperienceMonitoringDevice? _$v;
+
+  String? _colo;
+  String? get colo => _$this._colo;
+  set colo(String? colo) => _$this._colo = colo;
+
+  String? _deviceId;
+  String? get deviceId => _$this._deviceId;
+  set deviceId(String? deviceId) => _$this._deviceId = deviceId;
+
+  String? _mode;
+  String? get mode => _$this._mode;
+  set mode(String? mode) => _$this._mode = mode;
+
+  String? _platform;
+  String? get platform => _$this._platform;
+  set platform(String? platform) => _$this._platform = platform;
+
+  String? _status;
+  String? get status => _$this._status;
+  set status(String? status) => _$this._status = status;
+
+  String? _timestamp;
+  String? get timestamp => _$this._timestamp;
+  set timestamp(String? timestamp) => _$this._timestamp = timestamp;
+
+  String? _version;
+  String? get version => _$this._version;
+  set version(String? version) => _$this._version = version;
 
   bool? _alwaysOn;
   bool? get alwaysOn => _$this._alwaysOn;
@@ -298,10 +326,6 @@ class DigitalExperienceMonitoringDeviceBuilder
   double? get batteryPct => _$this._batteryPct;
   set batteryPct(double? batteryPct) => _$this._batteryPct = batteryPct;
 
-  String? _colo;
-  String? get colo => _$this._colo;
-  set colo(String? colo) => _$this._colo = colo;
-
   String? _connectionType;
   String? get connectionType => _$this._connectionType;
   set connectionType(String? connectionType) =>
@@ -320,10 +344,6 @@ class DigitalExperienceMonitoringDeviceBuilder
           ListBuilder<BuiltList<DigitalExperienceMonitoringCpuPctByAppInner>>?
               cpuPctByApp) =>
       _$this._cpuPctByApp = cpuPctByApp;
-
-  String? _deviceId;
-  String? get deviceId => _$this._deviceId;
-  set deviceId(String? deviceId) => _$this._deviceId = deviceId;
 
   DigitalExperienceMonitoringIpInfoBuilder? _deviceIpv4;
   DigitalExperienceMonitoringIpInfoBuilder get deviceIpv4 =>
@@ -400,10 +420,6 @@ class DigitalExperienceMonitoringDeviceBuilder
   String? get metal => _$this._metal;
   set metal(String? metal) => _$this._metal = metal;
 
-  String? _mode;
-  String? get mode => _$this._mode;
-  set mode(String? mode) => _$this._mode = mode;
-
   int? _networkRcvdBps;
   int? get networkRcvdBps => _$this._networkRcvdBps;
   set networkRcvdBps(int? networkRcvdBps) =>
@@ -421,10 +437,6 @@ class DigitalExperienceMonitoringDeviceBuilder
   String? _personEmail;
   String? get personEmail => _$this._personEmail;
   set personEmail(String? personEmail) => _$this._personEmail = personEmail;
-
-  String? _platform;
-  String? get platform => _$this._platform;
-  set platform(String? platform) => _$this._platform = platform;
 
   int? _ramAvailableKb;
   int? get ramAvailableKb => _$this._ramAvailableKb;
@@ -446,21 +458,9 @@ class DigitalExperienceMonitoringDeviceBuilder
               ramUsedPctByApp) =>
       _$this._ramUsedPctByApp = ramUsedPctByApp;
 
-  String? _status;
-  String? get status => _$this._status;
-  set status(String? status) => _$this._status = status;
-
   bool? _switchLocked;
   bool? get switchLocked => _$this._switchLocked;
   set switchLocked(bool? switchLocked) => _$this._switchLocked = switchLocked;
-
-  String? _timestamp;
-  String? get timestamp => _$this._timestamp;
-  set timestamp(String? timestamp) => _$this._timestamp = timestamp;
-
-  String? _version;
-  String? get version => _$this._version;
-  set version(String? version) => _$this._version = version;
 
   int? _wifiStrengthDbm;
   int? get wifiStrengthDbm => _$this._wifiStrengthDbm;
@@ -474,15 +474,20 @@ class DigitalExperienceMonitoringDeviceBuilder
   DigitalExperienceMonitoringDeviceBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
+      _colo = $v.colo;
+      _deviceId = $v.deviceId;
+      _mode = $v.mode;
+      _platform = $v.platform;
+      _status = $v.status;
+      _timestamp = $v.timestamp;
+      _version = $v.version;
       _alwaysOn = $v.alwaysOn;
       _batteryCharging = $v.batteryCharging;
       _batteryCycles = $v.batteryCycles;
       _batteryPct = $v.batteryPct;
-      _colo = $v.colo;
       _connectionType = $v.connectionType;
       _cpuPct = $v.cpuPct;
       _cpuPctByApp = $v.cpuPctByApp?.toBuilder();
-      _deviceId = $v.deviceId;
       _deviceIpv4 = $v.deviceIpv4?.toBuilder();
       _deviceIpv6 = $v.deviceIpv6?.toBuilder();
       _deviceName = $v.deviceName;
@@ -498,19 +503,14 @@ class DigitalExperienceMonitoringDeviceBuilder
       _ispIpv4 = $v.ispIpv4?.toBuilder();
       _ispIpv6 = $v.ispIpv6?.toBuilder();
       _metal = $v.metal;
-      _mode = $v.mode;
       _networkRcvdBps = $v.networkRcvdBps;
       _networkSentBps = $v.networkSentBps;
       _networkSsid = $v.networkSsid;
       _personEmail = $v.personEmail;
-      _platform = $v.platform;
       _ramAvailableKb = $v.ramAvailableKb;
       _ramUsedPct = $v.ramUsedPct;
       _ramUsedPctByApp = $v.ramUsedPctByApp?.toBuilder();
-      _status = $v.status;
       _switchLocked = $v.switchLocked;
-      _timestamp = $v.timestamp;
-      _version = $v.version;
       _wifiStrengthDbm = $v.wifiStrengthDbm;
       _$v = null;
     }
@@ -536,17 +536,27 @@ class DigitalExperienceMonitoringDeviceBuilder
     try {
       _$result = _$v ??
           _$DigitalExperienceMonitoringDevice._(
+            colo: BuiltValueNullFieldError.checkNotNull(
+                colo, r'DigitalExperienceMonitoringDevice', 'colo'),
+            deviceId: BuiltValueNullFieldError.checkNotNull(
+                deviceId, r'DigitalExperienceMonitoringDevice', 'deviceId'),
+            mode: BuiltValueNullFieldError.checkNotNull(
+                mode, r'DigitalExperienceMonitoringDevice', 'mode'),
+            platform: BuiltValueNullFieldError.checkNotNull(
+                platform, r'DigitalExperienceMonitoringDevice', 'platform'),
+            status: BuiltValueNullFieldError.checkNotNull(
+                status, r'DigitalExperienceMonitoringDevice', 'status'),
+            timestamp: BuiltValueNullFieldError.checkNotNull(
+                timestamp, r'DigitalExperienceMonitoringDevice', 'timestamp'),
+            version: BuiltValueNullFieldError.checkNotNull(
+                version, r'DigitalExperienceMonitoringDevice', 'version'),
             alwaysOn: alwaysOn,
             batteryCharging: batteryCharging,
             batteryCycles: batteryCycles,
             batteryPct: batteryPct,
-            colo: BuiltValueNullFieldError.checkNotNull(
-                colo, r'DigitalExperienceMonitoringDevice', 'colo'),
             connectionType: connectionType,
             cpuPct: cpuPct,
             cpuPctByApp: _cpuPctByApp?.build(),
-            deviceId: BuiltValueNullFieldError.checkNotNull(
-                deviceId, r'DigitalExperienceMonitoringDevice', 'deviceId'),
             deviceIpv4: _deviceIpv4?.build(),
             deviceIpv6: _deviceIpv6?.build(),
             deviceName: deviceName,
@@ -562,24 +572,14 @@ class DigitalExperienceMonitoringDeviceBuilder
             ispIpv4: _ispIpv4?.build(),
             ispIpv6: _ispIpv6?.build(),
             metal: metal,
-            mode: BuiltValueNullFieldError.checkNotNull(
-                mode, r'DigitalExperienceMonitoringDevice', 'mode'),
             networkRcvdBps: networkRcvdBps,
             networkSentBps: networkSentBps,
             networkSsid: networkSsid,
             personEmail: personEmail,
-            platform: BuiltValueNullFieldError.checkNotNull(
-                platform, r'DigitalExperienceMonitoringDevice', 'platform'),
             ramAvailableKb: ramAvailableKb,
             ramUsedPct: ramUsedPct,
             ramUsedPctByApp: _ramUsedPctByApp?.build(),
-            status: BuiltValueNullFieldError.checkNotNull(
-                status, r'DigitalExperienceMonitoringDevice', 'status'),
             switchLocked: switchLocked,
-            timestamp: BuiltValueNullFieldError.checkNotNull(
-                timestamp, r'DigitalExperienceMonitoringDevice', 'timestamp'),
-            version: BuiltValueNullFieldError.checkNotNull(
-                version, r'DigitalExperienceMonitoringDevice', 'version'),
             wifiStrengthDbm: wifiStrengthDbm,
           );
     } catch (_) {
@@ -587,7 +587,6 @@ class DigitalExperienceMonitoringDeviceBuilder
       try {
         _$failedField = 'cpuPctByApp';
         _cpuPctByApp?.build();
-
         _$failedField = 'deviceIpv4';
         _deviceIpv4?.build();
         _$failedField = 'deviceIpv6';

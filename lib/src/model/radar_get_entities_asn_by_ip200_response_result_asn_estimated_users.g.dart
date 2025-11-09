@@ -9,11 +9,11 @@ part of 'radar_get_entities_asn_by_ip200_response_result_asn_estimated_users.dar
 class _$RadarGetEntitiesAsnByIp200ResponseResultAsnEstimatedUsers
     extends RadarGetEntitiesAsnByIp200ResponseResultAsnEstimatedUsers {
   @override
-  final int? estimatedUsers;
-  @override
   final BuiltList<
           RadarGetEntitiesAsnByIp200ResponseResultAsnEstimatedUsersLocationsInner>
       locations;
+  @override
+  final int? estimatedUsers;
 
   factory _$RadarGetEntitiesAsnByIp200ResponseResultAsnEstimatedUsers(
           [void Function(
@@ -24,7 +24,7 @@ class _$RadarGetEntitiesAsnByIp200ResponseResultAsnEstimatedUsers
           ._build();
 
   _$RadarGetEntitiesAsnByIp200ResponseResultAsnEstimatedUsers._(
-      {this.estimatedUsers, required this.locations})
+      {required this.locations, this.estimatedUsers})
       : super._();
   @override
   RadarGetEntitiesAsnByIp200ResponseResultAsnEstimatedUsers rebuild(
@@ -43,15 +43,15 @@ class _$RadarGetEntitiesAsnByIp200ResponseResultAsnEstimatedUsers
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is RadarGetEntitiesAsnByIp200ResponseResultAsnEstimatedUsers &&
-        estimatedUsers == other.estimatedUsers &&
-        locations == other.locations;
+        locations == other.locations &&
+        estimatedUsers == other.estimatedUsers;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, estimatedUsers.hashCode);
     _$hash = $jc(_$hash, locations.hashCode);
+    _$hash = $jc(_$hash, estimatedUsers.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -60,8 +60,8 @@ class _$RadarGetEntitiesAsnByIp200ResponseResultAsnEstimatedUsers
   String toString() {
     return (newBuiltValueToStringHelper(
             r'RadarGetEntitiesAsnByIp200ResponseResultAsnEstimatedUsers')
-          ..add('estimatedUsers', estimatedUsers)
-          ..add('locations', locations))
+          ..add('locations', locations)
+          ..add('estimatedUsers', estimatedUsers))
         .toString();
   }
 }
@@ -71,11 +71,6 @@ class RadarGetEntitiesAsnByIp200ResponseResultAsnEstimatedUsersBuilder
         Builder<RadarGetEntitiesAsnByIp200ResponseResultAsnEstimatedUsers,
             RadarGetEntitiesAsnByIp200ResponseResultAsnEstimatedUsersBuilder> {
   _$RadarGetEntitiesAsnByIp200ResponseResultAsnEstimatedUsers? _$v;
-
-  int? _estimatedUsers;
-  int? get estimatedUsers => _$this._estimatedUsers;
-  set estimatedUsers(int? estimatedUsers) =>
-      _$this._estimatedUsers = estimatedUsers;
 
   ListBuilder<
           RadarGetEntitiesAsnByIp200ResponseResultAsnEstimatedUsersLocationsInner>?
@@ -90,6 +85,11 @@ class RadarGetEntitiesAsnByIp200ResponseResultAsnEstimatedUsersBuilder
               locations) =>
       _$this._locations = locations;
 
+  int? _estimatedUsers;
+  int? get estimatedUsers => _$this._estimatedUsers;
+  set estimatedUsers(int? estimatedUsers) =>
+      _$this._estimatedUsers = estimatedUsers;
+
   RadarGetEntitiesAsnByIp200ResponseResultAsnEstimatedUsersBuilder() {
     RadarGetEntitiesAsnByIp200ResponseResultAsnEstimatedUsers._defaults(this);
   }
@@ -97,8 +97,8 @@ class RadarGetEntitiesAsnByIp200ResponseResultAsnEstimatedUsersBuilder
   RadarGetEntitiesAsnByIp200ResponseResultAsnEstimatedUsersBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _estimatedUsers = $v.estimatedUsers;
       _locations = $v.locations.toBuilder();
+      _estimatedUsers = $v.estimatedUsers;
       _$v = null;
     }
     return this;
@@ -126,8 +126,8 @@ class RadarGetEntitiesAsnByIp200ResponseResultAsnEstimatedUsersBuilder
     try {
       _$result = _$v ??
           _$RadarGetEntitiesAsnByIp200ResponseResultAsnEstimatedUsers._(
-            estimatedUsers: estimatedUsers,
             locations: locations.build(),
+            estimatedUsers: estimatedUsers,
           );
     } catch (_) {
       late String _$failedField;

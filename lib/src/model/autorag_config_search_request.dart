@@ -14,22 +14,22 @@ part 'autorag_config_search_request.g.dart';
 /// AutoragConfigSearchRequest
 ///
 /// Properties:
+/// * [query] 
 /// * [filters] 
 /// * [maxNumResults] 
-/// * [query] 
 /// * [rankingOptions] 
 /// * [reranking] 
 /// * [rewriteQuery] 
 @BuiltValue()
 abstract class AutoragConfigSearchRequest implements Built<AutoragConfigSearchRequest, AutoragConfigSearchRequestBuilder> {
+  @BuiltValueField(wireName: r'query')
+  String get query;
+
   @BuiltValueField(wireName: r'filters')
   AutoragConfigAiSearchRequestFilters? get filters;
 
   @BuiltValueField(wireName: r'max_num_results')
   int? get maxNumResults;
-
-  @BuiltValueField(wireName: r'query')
-  String get query;
 
   @BuiltValueField(wireName: r'ranking_options')
   AutoragConfigAiSearchRequestRankingOptions? get rankingOptions;
@@ -65,6 +65,11 @@ class _$AutoragConfigSearchRequestSerializer implements PrimitiveSerializer<Auto
     AutoragConfigSearchRequest object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    yield r'query';
+    yield serializers.serialize(
+      object.query,
+      specifiedType: const FullType(String),
+    );
     if (object.filters != null) {
       yield r'filters';
       yield serializers.serialize(
@@ -79,11 +84,6 @@ class _$AutoragConfigSearchRequestSerializer implements PrimitiveSerializer<Auto
         specifiedType: const FullType(int),
       );
     }
-    yield r'query';
-    yield serializers.serialize(
-      object.query,
-      specifiedType: const FullType(String),
-    );
     if (object.rankingOptions != null) {
       yield r'ranking_options';
       yield serializers.serialize(
@@ -128,6 +128,13 @@ class _$AutoragConfigSearchRequestSerializer implements PrimitiveSerializer<Auto
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
+        case r'query':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.query = valueDes;
+          break;
         case r'filters':
           final valueDes = serializers.deserialize(
             value,
@@ -141,13 +148,6 @@ class _$AutoragConfigSearchRequestSerializer implements PrimitiveSerializer<Auto
             specifiedType: const FullType(int),
           ) as int;
           result.maxNumResults = valueDes;
-          break;
-        case r'query':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.query = valueDes;
           break;
         case r'ranking_options':
           final valueDes = serializers.deserialize(

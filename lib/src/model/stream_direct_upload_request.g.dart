@@ -8,13 +8,13 @@ part of 'stream_direct_upload_request.dart';
 
 class _$StreamDirectUploadRequest extends StreamDirectUploadRequest {
   @override
+  final int maxDurationSeconds;
+  @override
   final BuiltList<String>? allowedOrigins;
   @override
   final String? creator;
   @override
   final DateTime? expiry;
-  @override
-  final int maxDurationSeconds;
   @override
   final JsonObject? meta;
   @override
@@ -31,10 +31,10 @@ class _$StreamDirectUploadRequest extends StreamDirectUploadRequest {
       (StreamDirectUploadRequestBuilder()..update(updates))._build();
 
   _$StreamDirectUploadRequest._(
-      {this.allowedOrigins,
+      {required this.maxDurationSeconds,
+      this.allowedOrigins,
       this.creator,
       this.expiry,
-      required this.maxDurationSeconds,
       this.meta,
       this.requireSignedURLs,
       this.scheduledDeletion,
@@ -54,10 +54,10 @@ class _$StreamDirectUploadRequest extends StreamDirectUploadRequest {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is StreamDirectUploadRequest &&
+        maxDurationSeconds == other.maxDurationSeconds &&
         allowedOrigins == other.allowedOrigins &&
         creator == other.creator &&
         expiry == other.expiry &&
-        maxDurationSeconds == other.maxDurationSeconds &&
         meta == other.meta &&
         requireSignedURLs == other.requireSignedURLs &&
         scheduledDeletion == other.scheduledDeletion &&
@@ -68,10 +68,10 @@ class _$StreamDirectUploadRequest extends StreamDirectUploadRequest {
   @override
   int get hashCode {
     var _$hash = 0;
+    _$hash = $jc(_$hash, maxDurationSeconds.hashCode);
     _$hash = $jc(_$hash, allowedOrigins.hashCode);
     _$hash = $jc(_$hash, creator.hashCode);
     _$hash = $jc(_$hash, expiry.hashCode);
-    _$hash = $jc(_$hash, maxDurationSeconds.hashCode);
     _$hash = $jc(_$hash, meta.hashCode);
     _$hash = $jc(_$hash, requireSignedURLs.hashCode);
     _$hash = $jc(_$hash, scheduledDeletion.hashCode);
@@ -84,10 +84,10 @@ class _$StreamDirectUploadRequest extends StreamDirectUploadRequest {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'StreamDirectUploadRequest')
+          ..add('maxDurationSeconds', maxDurationSeconds)
           ..add('allowedOrigins', allowedOrigins)
           ..add('creator', creator)
           ..add('expiry', expiry)
-          ..add('maxDurationSeconds', maxDurationSeconds)
           ..add('meta', meta)
           ..add('requireSignedURLs', requireSignedURLs)
           ..add('scheduledDeletion', scheduledDeletion)
@@ -102,6 +102,11 @@ class StreamDirectUploadRequestBuilder
         Builder<StreamDirectUploadRequest, StreamDirectUploadRequestBuilder> {
   _$StreamDirectUploadRequest? _$v;
 
+  int? _maxDurationSeconds;
+  int? get maxDurationSeconds => _$this._maxDurationSeconds;
+  set maxDurationSeconds(int? maxDurationSeconds) =>
+      _$this._maxDurationSeconds = maxDurationSeconds;
+
   ListBuilder<String>? _allowedOrigins;
   ListBuilder<String> get allowedOrigins =>
       _$this._allowedOrigins ??= ListBuilder<String>();
@@ -115,11 +120,6 @@ class StreamDirectUploadRequestBuilder
   DateTime? _expiry;
   DateTime? get expiry => _$this._expiry;
   set expiry(DateTime? expiry) => _$this._expiry = expiry;
-
-  int? _maxDurationSeconds;
-  int? get maxDurationSeconds => _$this._maxDurationSeconds;
-  set maxDurationSeconds(int? maxDurationSeconds) =>
-      _$this._maxDurationSeconds = maxDurationSeconds;
 
   JsonObject? _meta;
   JsonObject? get meta => _$this._meta;
@@ -153,10 +153,10 @@ class StreamDirectUploadRequestBuilder
   StreamDirectUploadRequestBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
+      _maxDurationSeconds = $v.maxDurationSeconds;
       _allowedOrigins = $v.allowedOrigins?.toBuilder();
       _creator = $v.creator;
       _expiry = $v.expiry;
-      _maxDurationSeconds = $v.maxDurationSeconds;
       _meta = $v.meta;
       _requireSignedURLs = $v.requireSignedURLs;
       _scheduledDeletion = $v.scheduledDeletion;
@@ -185,13 +185,13 @@ class StreamDirectUploadRequestBuilder
     try {
       _$result = _$v ??
           _$StreamDirectUploadRequest._(
-            allowedOrigins: _allowedOrigins?.build(),
-            creator: creator,
-            expiry: expiry,
             maxDurationSeconds: BuiltValueNullFieldError.checkNotNull(
                 maxDurationSeconds,
                 r'StreamDirectUploadRequest',
                 'maxDurationSeconds'),
+            allowedOrigins: _allowedOrigins?.build(),
+            creator: creator,
+            expiry: expiry,
             meta: meta,
             requireSignedURLs: requireSignedURLs,
             scheduledDeletion: scheduledDeletion,

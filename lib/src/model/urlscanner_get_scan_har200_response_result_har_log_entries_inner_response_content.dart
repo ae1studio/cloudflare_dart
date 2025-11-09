@@ -11,19 +11,19 @@ part 'urlscanner_get_scan_har200_response_result_har_log_entries_inner_response_
 /// UrlscannerGetScanHar200ResponseResultHarLogEntriesInnerResponseContent
 ///
 /// Properties:
-/// * [compression] 
 /// * [mimeType] 
 /// * [size] 
+/// * [compression] 
 @BuiltValue()
 abstract class UrlscannerGetScanHar200ResponseResultHarLogEntriesInnerResponseContent implements Built<UrlscannerGetScanHar200ResponseResultHarLogEntriesInnerResponseContent, UrlscannerGetScanHar200ResponseResultHarLogEntriesInnerResponseContentBuilder> {
-  @BuiltValueField(wireName: r'compression')
-  int? get compression;
-
   @BuiltValueField(wireName: r'mimeType')
   String get mimeType;
 
   @BuiltValueField(wireName: r'size')
   num get size;
+
+  @BuiltValueField(wireName: r'compression')
+  int? get compression;
 
   UrlscannerGetScanHar200ResponseResultHarLogEntriesInnerResponseContent._();
 
@@ -48,13 +48,6 @@ class _$UrlscannerGetScanHar200ResponseResultHarLogEntriesInnerResponseContentSe
     UrlscannerGetScanHar200ResponseResultHarLogEntriesInnerResponseContent object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
-    if (object.compression != null) {
-      yield r'compression';
-      yield serializers.serialize(
-        object.compression,
-        specifiedType: const FullType(int),
-      );
-    }
     yield r'mimeType';
     yield serializers.serialize(
       object.mimeType,
@@ -65,6 +58,13 @@ class _$UrlscannerGetScanHar200ResponseResultHarLogEntriesInnerResponseContentSe
       object.size,
       specifiedType: const FullType(num),
     );
+    if (object.compression != null) {
+      yield r'compression';
+      yield serializers.serialize(
+        object.compression,
+        specifiedType: const FullType(int),
+      );
+    }
   }
 
   @override
@@ -88,13 +88,6 @@ class _$UrlscannerGetScanHar200ResponseResultHarLogEntriesInnerResponseContentSe
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'compression':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
-          result.compression = valueDes;
-          break;
         case r'mimeType':
           final valueDes = serializers.deserialize(
             value,
@@ -108,6 +101,13 @@ class _$UrlscannerGetScanHar200ResponseResultHarLogEntriesInnerResponseContentSe
             specifiedType: const FullType(num),
           ) as num;
           result.size = valueDes;
+          break;
+        case r'compression':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(int),
+          ) as int;
+          result.compression = valueDes;
           break;
         default:
           unhandled.add(key);

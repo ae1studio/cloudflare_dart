@@ -16,11 +16,11 @@ part 'page_shield_list_zone_scripts_response.g.dart';
 /// PageShieldListZoneScriptsResponse
 ///
 /// Properties:
-/// * [errors] 
-/// * [messages] 
 /// * [success] - Whether the API call was successful
 /// * [resultInfo] 
 /// * [result] 
+/// * [errors] 
+/// * [messages] 
 @BuiltValue()
 abstract class PageShieldListZoneScriptsResponse implements PageShieldApiListResponseCollection, Built<PageShieldListZoneScriptsResponse, PageShieldListZoneScriptsResponseBuilder> {
   @BuiltValueField(wireName: r'result')

@@ -9,8 +9,6 @@ part of 'radar_get_entities_asn_by_ip200_response_result_asn.dart';
 class _$RadarGetEntitiesAsnByIp200ResponseResultAsn
     extends RadarGetEntitiesAsnByIp200ResponseResultAsn {
   @override
-  final String? aka;
-  @override
   final int asn;
   @override
   final String country;
@@ -30,6 +28,8 @@ class _$RadarGetEntitiesAsnByIp200ResponseResultAsn
   final String source_;
   @override
   final String website;
+  @override
+  final String? aka;
 
   factory _$RadarGetEntitiesAsnByIp200ResponseResultAsn(
           [void Function(RadarGetEntitiesAsnByIp200ResponseResultAsnBuilder)?
@@ -38,8 +38,7 @@ class _$RadarGetEntitiesAsnByIp200ResponseResultAsn
           ._build();
 
   _$RadarGetEntitiesAsnByIp200ResponseResultAsn._(
-      {this.aka,
-      required this.asn,
+      {required this.asn,
       required this.country,
       required this.countryName,
       required this.estimatedUsers,
@@ -47,7 +46,8 @@ class _$RadarGetEntitiesAsnByIp200ResponseResultAsn
       required this.orgName,
       required this.related,
       required this.source_,
-      required this.website})
+      required this.website,
+      this.aka})
       : super._();
   @override
   RadarGetEntitiesAsnByIp200ResponseResultAsn rebuild(
@@ -63,7 +63,6 @@ class _$RadarGetEntitiesAsnByIp200ResponseResultAsn
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is RadarGetEntitiesAsnByIp200ResponseResultAsn &&
-        aka == other.aka &&
         asn == other.asn &&
         country == other.country &&
         countryName == other.countryName &&
@@ -72,13 +71,13 @@ class _$RadarGetEntitiesAsnByIp200ResponseResultAsn
         orgName == other.orgName &&
         related == other.related &&
         source_ == other.source_ &&
-        website == other.website;
+        website == other.website &&
+        aka == other.aka;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, aka.hashCode);
     _$hash = $jc(_$hash, asn.hashCode);
     _$hash = $jc(_$hash, country.hashCode);
     _$hash = $jc(_$hash, countryName.hashCode);
@@ -88,6 +87,7 @@ class _$RadarGetEntitiesAsnByIp200ResponseResultAsn
     _$hash = $jc(_$hash, related.hashCode);
     _$hash = $jc(_$hash, source_.hashCode);
     _$hash = $jc(_$hash, website.hashCode);
+    _$hash = $jc(_$hash, aka.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -96,7 +96,6 @@ class _$RadarGetEntitiesAsnByIp200ResponseResultAsn
   String toString() {
     return (newBuiltValueToStringHelper(
             r'RadarGetEntitiesAsnByIp200ResponseResultAsn')
-          ..add('aka', aka)
           ..add('asn', asn)
           ..add('country', country)
           ..add('countryName', countryName)
@@ -105,7 +104,8 @@ class _$RadarGetEntitiesAsnByIp200ResponseResultAsn
           ..add('orgName', orgName)
           ..add('related', related)
           ..add('source_', source_)
-          ..add('website', website))
+          ..add('website', website)
+          ..add('aka', aka))
         .toString();
   }
 }
@@ -115,10 +115,6 @@ class RadarGetEntitiesAsnByIp200ResponseResultAsnBuilder
         Builder<RadarGetEntitiesAsnByIp200ResponseResultAsn,
             RadarGetEntitiesAsnByIp200ResponseResultAsnBuilder> {
   _$RadarGetEntitiesAsnByIp200ResponseResultAsn? _$v;
-
-  String? _aka;
-  String? get aka => _$this._aka;
-  set aka(String? aka) => _$this._aka = aka;
 
   int? _asn;
   int? get asn => _$this._asn;
@@ -168,6 +164,10 @@ class RadarGetEntitiesAsnByIp200ResponseResultAsnBuilder
   String? get website => _$this._website;
   set website(String? website) => _$this._website = website;
 
+  String? _aka;
+  String? get aka => _$this._aka;
+  set aka(String? aka) => _$this._aka = aka;
+
   RadarGetEntitiesAsnByIp200ResponseResultAsnBuilder() {
     RadarGetEntitiesAsnByIp200ResponseResultAsn._defaults(this);
   }
@@ -175,7 +175,6 @@ class RadarGetEntitiesAsnByIp200ResponseResultAsnBuilder
   RadarGetEntitiesAsnByIp200ResponseResultAsnBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _aka = $v.aka;
       _asn = $v.asn;
       _country = $v.country;
       _countryName = $v.countryName;
@@ -185,6 +184,7 @@ class RadarGetEntitiesAsnByIp200ResponseResultAsnBuilder
       _related = $v.related.toBuilder();
       _source_ = $v.source_;
       _website = $v.website;
+      _aka = $v.aka;
       _$v = null;
     }
     return this;
@@ -210,7 +210,6 @@ class RadarGetEntitiesAsnByIp200ResponseResultAsnBuilder
     try {
       _$result = _$v ??
           _$RadarGetEntitiesAsnByIp200ResponseResultAsn._(
-            aka: aka,
             asn: BuiltValueNullFieldError.checkNotNull(
                 asn, r'RadarGetEntitiesAsnByIp200ResponseResultAsn', 'asn'),
             country: BuiltValueNullFieldError.checkNotNull(country,
@@ -227,6 +226,7 @@ class RadarGetEntitiesAsnByIp200ResponseResultAsnBuilder
                 r'RadarGetEntitiesAsnByIp200ResponseResultAsn', 'source_'),
             website: BuiltValueNullFieldError.checkNotNull(website,
                 r'RadarGetEntitiesAsnByIp200ResponseResultAsn', 'website'),
+            aka: aka,
           );
     } catch (_) {
       late String _$failedField;

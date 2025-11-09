@@ -65,9 +65,9 @@ class _$TelemetryKeysList401ResponseErrorsInnerMessageEnumSerializer
 class _$TelemetryKeysList401ResponseErrorsInner
     extends TelemetryKeysList401ResponseErrorsInner {
   @override
-  final String? detail;
-  @override
   final TelemetryKeysList401ResponseErrorsInnerMessageEnum message;
+  @override
+  final String? detail;
 
   factory _$TelemetryKeysList401ResponseErrorsInner(
           [void Function(TelemetryKeysList401ResponseErrorsInnerBuilder)?
@@ -76,7 +76,7 @@ class _$TelemetryKeysList401ResponseErrorsInner
           ._build();
 
   _$TelemetryKeysList401ResponseErrorsInner._(
-      {this.detail, required this.message})
+      {required this.message, this.detail})
       : super._();
   @override
   TelemetryKeysList401ResponseErrorsInner rebuild(
@@ -92,15 +92,15 @@ class _$TelemetryKeysList401ResponseErrorsInner
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is TelemetryKeysList401ResponseErrorsInner &&
-        detail == other.detail &&
-        message == other.message;
+        message == other.message &&
+        detail == other.detail;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, detail.hashCode);
     _$hash = $jc(_$hash, message.hashCode);
+    _$hash = $jc(_$hash, detail.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -109,8 +109,8 @@ class _$TelemetryKeysList401ResponseErrorsInner
   String toString() {
     return (newBuiltValueToStringHelper(
             r'TelemetryKeysList401ResponseErrorsInner')
-          ..add('detail', detail)
-          ..add('message', message))
+          ..add('message', message)
+          ..add('detail', detail))
         .toString();
   }
 }
@@ -121,15 +121,15 @@ class TelemetryKeysList401ResponseErrorsInnerBuilder
             TelemetryKeysList401ResponseErrorsInnerBuilder> {
   _$TelemetryKeysList401ResponseErrorsInner? _$v;
 
-  String? _detail;
-  String? get detail => _$this._detail;
-  set detail(String? detail) => _$this._detail = detail;
-
   TelemetryKeysList401ResponseErrorsInnerMessageEnum? _message;
   TelemetryKeysList401ResponseErrorsInnerMessageEnum? get message =>
       _$this._message;
   set message(TelemetryKeysList401ResponseErrorsInnerMessageEnum? message) =>
       _$this._message = message;
+
+  String? _detail;
+  String? get detail => _$this._detail;
+  set detail(String? detail) => _$this._detail = detail;
 
   TelemetryKeysList401ResponseErrorsInnerBuilder() {
     TelemetryKeysList401ResponseErrorsInner._defaults(this);
@@ -138,8 +138,8 @@ class TelemetryKeysList401ResponseErrorsInnerBuilder
   TelemetryKeysList401ResponseErrorsInnerBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _detail = $v.detail;
       _message = $v.message;
+      _detail = $v.detail;
       _$v = null;
     }
     return this;
@@ -162,9 +162,9 @@ class TelemetryKeysList401ResponseErrorsInnerBuilder
   _$TelemetryKeysList401ResponseErrorsInner _build() {
     final _$result = _$v ??
         _$TelemetryKeysList401ResponseErrorsInner._(
-          detail: detail,
           message: BuiltValueNullFieldError.checkNotNull(
               message, r'TelemetryKeysList401ResponseErrorsInner', 'message'),
+          detail: detail,
         );
     replace(_$result);
     return _$result;

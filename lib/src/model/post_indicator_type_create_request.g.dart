@@ -8,16 +8,16 @@ part of 'post_indicator_type_create_request.dart';
 
 class _$PostIndicatorTypeCreateRequest extends PostIndicatorTypeCreateRequest {
   @override
-  final String? description;
-  @override
   final String indicatorType;
+  @override
+  final String? description;
 
   factory _$PostIndicatorTypeCreateRequest(
           [void Function(PostIndicatorTypeCreateRequestBuilder)? updates]) =>
       (PostIndicatorTypeCreateRequestBuilder()..update(updates))._build();
 
   _$PostIndicatorTypeCreateRequest._(
-      {this.description, required this.indicatorType})
+      {required this.indicatorType, this.description})
       : super._();
   @override
   PostIndicatorTypeCreateRequest rebuild(
@@ -32,15 +32,15 @@ class _$PostIndicatorTypeCreateRequest extends PostIndicatorTypeCreateRequest {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is PostIndicatorTypeCreateRequest &&
-        description == other.description &&
-        indicatorType == other.indicatorType;
+        indicatorType == other.indicatorType &&
+        description == other.description;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, description.hashCode);
     _$hash = $jc(_$hash, indicatorType.hashCode);
+    _$hash = $jc(_$hash, description.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -48,8 +48,8 @@ class _$PostIndicatorTypeCreateRequest extends PostIndicatorTypeCreateRequest {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'PostIndicatorTypeCreateRequest')
-          ..add('description', description)
-          ..add('indicatorType', indicatorType))
+          ..add('indicatorType', indicatorType)
+          ..add('description', description))
         .toString();
   }
 }
@@ -60,14 +60,14 @@ class PostIndicatorTypeCreateRequestBuilder
             PostIndicatorTypeCreateRequestBuilder> {
   _$PostIndicatorTypeCreateRequest? _$v;
 
-  String? _description;
-  String? get description => _$this._description;
-  set description(String? description) => _$this._description = description;
-
   String? _indicatorType;
   String? get indicatorType => _$this._indicatorType;
   set indicatorType(String? indicatorType) =>
       _$this._indicatorType = indicatorType;
+
+  String? _description;
+  String? get description => _$this._description;
+  set description(String? description) => _$this._description = description;
 
   PostIndicatorTypeCreateRequestBuilder() {
     PostIndicatorTypeCreateRequest._defaults(this);
@@ -76,8 +76,8 @@ class PostIndicatorTypeCreateRequestBuilder
   PostIndicatorTypeCreateRequestBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _description = $v.description;
       _indicatorType = $v.indicatorType;
+      _description = $v.description;
       _$v = null;
     }
     return this;
@@ -99,9 +99,9 @@ class PostIndicatorTypeCreateRequestBuilder
   _$PostIndicatorTypeCreateRequest _build() {
     final _$result = _$v ??
         _$PostIndicatorTypeCreateRequest._(
-          description: description,
           indicatorType: BuiltValueNullFieldError.checkNotNull(indicatorType,
               r'PostIndicatorTypeCreateRequest', 'indicatorType'),
+          description: description,
         );
     replace(_$result);
     return _$result;

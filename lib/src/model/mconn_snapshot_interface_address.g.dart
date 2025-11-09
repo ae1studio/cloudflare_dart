@@ -8,18 +8,18 @@ part of 'mconn_snapshot_interface_address.dart';
 
 class _$MconnSnapshotInterfaceAddress extends MconnSnapshotInterfaceAddress {
   @override
-  final String? connectorId;
-  @override
   final String interfaceName;
   @override
   final String ipAddress;
+  @override
+  final String? connectorId;
 
   factory _$MconnSnapshotInterfaceAddress(
           [void Function(MconnSnapshotInterfaceAddressBuilder)? updates]) =>
       (MconnSnapshotInterfaceAddressBuilder()..update(updates))._build();
 
   _$MconnSnapshotInterfaceAddress._(
-      {this.connectorId, required this.interfaceName, required this.ipAddress})
+      {required this.interfaceName, required this.ipAddress, this.connectorId})
       : super._();
   @override
   MconnSnapshotInterfaceAddress rebuild(
@@ -34,17 +34,17 @@ class _$MconnSnapshotInterfaceAddress extends MconnSnapshotInterfaceAddress {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is MconnSnapshotInterfaceAddress &&
-        connectorId == other.connectorId &&
         interfaceName == other.interfaceName &&
-        ipAddress == other.ipAddress;
+        ipAddress == other.ipAddress &&
+        connectorId == other.connectorId;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, connectorId.hashCode);
     _$hash = $jc(_$hash, interfaceName.hashCode);
     _$hash = $jc(_$hash, ipAddress.hashCode);
+    _$hash = $jc(_$hash, connectorId.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -52,9 +52,9 @@ class _$MconnSnapshotInterfaceAddress extends MconnSnapshotInterfaceAddress {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'MconnSnapshotInterfaceAddress')
-          ..add('connectorId', connectorId)
           ..add('interfaceName', interfaceName)
-          ..add('ipAddress', ipAddress))
+          ..add('ipAddress', ipAddress)
+          ..add('connectorId', connectorId))
         .toString();
   }
 }
@@ -65,10 +65,6 @@ class MconnSnapshotInterfaceAddressBuilder
             MconnSnapshotInterfaceAddressBuilder> {
   _$MconnSnapshotInterfaceAddress? _$v;
 
-  String? _connectorId;
-  String? get connectorId => _$this._connectorId;
-  set connectorId(String? connectorId) => _$this._connectorId = connectorId;
-
   String? _interfaceName;
   String? get interfaceName => _$this._interfaceName;
   set interfaceName(String? interfaceName) =>
@@ -78,6 +74,10 @@ class MconnSnapshotInterfaceAddressBuilder
   String? get ipAddress => _$this._ipAddress;
   set ipAddress(String? ipAddress) => _$this._ipAddress = ipAddress;
 
+  String? _connectorId;
+  String? get connectorId => _$this._connectorId;
+  set connectorId(String? connectorId) => _$this._connectorId = connectorId;
+
   MconnSnapshotInterfaceAddressBuilder() {
     MconnSnapshotInterfaceAddress._defaults(this);
   }
@@ -85,9 +85,9 @@ class MconnSnapshotInterfaceAddressBuilder
   MconnSnapshotInterfaceAddressBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _connectorId = $v.connectorId;
       _interfaceName = $v.interfaceName;
       _ipAddress = $v.ipAddress;
+      _connectorId = $v.connectorId;
       _$v = null;
     }
     return this;
@@ -109,11 +109,11 @@ class MconnSnapshotInterfaceAddressBuilder
   _$MconnSnapshotInterfaceAddress _build() {
     final _$result = _$v ??
         _$MconnSnapshotInterfaceAddress._(
-          connectorId: connectorId,
           interfaceName: BuiltValueNullFieldError.checkNotNull(
               interfaceName, r'MconnSnapshotInterfaceAddress', 'interfaceName'),
           ipAddress: BuiltValueNullFieldError.checkNotNull(
               ipAddress, r'MconnSnapshotInterfaceAddress', 'ipAddress'),
+          connectorId: connectorId,
         );
     replace(_$result);
     return _$result;

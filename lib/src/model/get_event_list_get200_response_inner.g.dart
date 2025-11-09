@@ -25,8 +25,6 @@ class _$GetEventListGet200ResponseInner
   @override
   final num indicatorTypeId;
   @override
-  final String? insight;
-  @override
   final num killChain;
   @override
   final BuiltList<String> mitreAttack;
@@ -45,8 +43,6 @@ class _$GetEventListGet200ResponseInner
   @override
   final BuiltList<num> referencesIds;
   @override
-  final String? releasabilityId;
-  @override
   final BuiltList<String> tags;
   @override
   final String targetCountry;
@@ -56,6 +52,10 @@ class _$GetEventListGet200ResponseInner
   final String tlp;
   @override
   final String uuid;
+  @override
+  final String? insight;
+  @override
+  final String? releasabilityId;
 
   factory _$GetEventListGet200ResponseInner(
           [void Function(GetEventListGet200ResponseInnerBuilder)? updates]) =>
@@ -70,7 +70,6 @@ class _$GetEventListGet200ResponseInner
       required this.indicator,
       required this.indicatorType,
       required this.indicatorTypeId,
-      this.insight,
       required this.killChain,
       required this.mitreAttack,
       required this.numReferenced,
@@ -80,12 +79,13 @@ class _$GetEventListGet200ResponseInner
       required this.referencedIds,
       required this.references,
       required this.referencesIds,
-      this.releasabilityId,
       required this.tags,
       required this.targetCountry,
       required this.targetIndustry,
       required this.tlp,
-      required this.uuid})
+      required this.uuid,
+      this.insight,
+      this.releasabilityId})
       : super._();
   @override
   GetEventListGet200ResponseInner rebuild(
@@ -108,7 +108,6 @@ class _$GetEventListGet200ResponseInner
         indicator == other.indicator &&
         indicatorType == other.indicatorType &&
         indicatorTypeId == other.indicatorTypeId &&
-        insight == other.insight &&
         killChain == other.killChain &&
         mitreAttack == other.mitreAttack &&
         numReferenced == other.numReferenced &&
@@ -118,12 +117,13 @@ class _$GetEventListGet200ResponseInner
         referencedIds == other.referencedIds &&
         references == other.references &&
         referencesIds == other.referencesIds &&
-        releasabilityId == other.releasabilityId &&
         tags == other.tags &&
         targetCountry == other.targetCountry &&
         targetIndustry == other.targetIndustry &&
         tlp == other.tlp &&
-        uuid == other.uuid;
+        uuid == other.uuid &&
+        insight == other.insight &&
+        releasabilityId == other.releasabilityId;
   }
 
   @override
@@ -137,7 +137,6 @@ class _$GetEventListGet200ResponseInner
     _$hash = $jc(_$hash, indicator.hashCode);
     _$hash = $jc(_$hash, indicatorType.hashCode);
     _$hash = $jc(_$hash, indicatorTypeId.hashCode);
-    _$hash = $jc(_$hash, insight.hashCode);
     _$hash = $jc(_$hash, killChain.hashCode);
     _$hash = $jc(_$hash, mitreAttack.hashCode);
     _$hash = $jc(_$hash, numReferenced.hashCode);
@@ -147,12 +146,13 @@ class _$GetEventListGet200ResponseInner
     _$hash = $jc(_$hash, referencedIds.hashCode);
     _$hash = $jc(_$hash, references.hashCode);
     _$hash = $jc(_$hash, referencesIds.hashCode);
-    _$hash = $jc(_$hash, releasabilityId.hashCode);
     _$hash = $jc(_$hash, tags.hashCode);
     _$hash = $jc(_$hash, targetCountry.hashCode);
     _$hash = $jc(_$hash, targetIndustry.hashCode);
     _$hash = $jc(_$hash, tlp.hashCode);
     _$hash = $jc(_$hash, uuid.hashCode);
+    _$hash = $jc(_$hash, insight.hashCode);
+    _$hash = $jc(_$hash, releasabilityId.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -168,7 +168,6 @@ class _$GetEventListGet200ResponseInner
           ..add('indicator', indicator)
           ..add('indicatorType', indicatorType)
           ..add('indicatorTypeId', indicatorTypeId)
-          ..add('insight', insight)
           ..add('killChain', killChain)
           ..add('mitreAttack', mitreAttack)
           ..add('numReferenced', numReferenced)
@@ -178,12 +177,13 @@ class _$GetEventListGet200ResponseInner
           ..add('referencedIds', referencedIds)
           ..add('references', references)
           ..add('referencesIds', referencesIds)
-          ..add('releasabilityId', releasabilityId)
           ..add('tags', tags)
           ..add('targetCountry', targetCountry)
           ..add('targetIndustry', targetIndustry)
           ..add('tlp', tlp)
-          ..add('uuid', uuid))
+          ..add('uuid', uuid)
+          ..add('insight', insight)
+          ..add('releasabilityId', releasabilityId))
         .toString();
   }
 }
@@ -228,10 +228,6 @@ class GetEventListGet200ResponseInnerBuilder
   num? get indicatorTypeId => _$this._indicatorTypeId;
   set indicatorTypeId(num? indicatorTypeId) =>
       _$this._indicatorTypeId = indicatorTypeId;
-
-  String? _insight;
-  String? get insight => _$this._insight;
-  set insight(String? insight) => _$this._insight = insight;
 
   num? _killChain;
   num? get killChain => _$this._killChain;
@@ -281,11 +277,6 @@ class GetEventListGet200ResponseInnerBuilder
   set referencesIds(ListBuilder<num>? referencesIds) =>
       _$this._referencesIds = referencesIds;
 
-  String? _releasabilityId;
-  String? get releasabilityId => _$this._releasabilityId;
-  set releasabilityId(String? releasabilityId) =>
-      _$this._releasabilityId = releasabilityId;
-
   ListBuilder<String>? _tags;
   ListBuilder<String> get tags => _$this._tags ??= ListBuilder<String>();
   set tags(ListBuilder<String>? tags) => _$this._tags = tags;
@@ -308,6 +299,15 @@ class GetEventListGet200ResponseInnerBuilder
   String? get uuid => _$this._uuid;
   set uuid(String? uuid) => _$this._uuid = uuid;
 
+  String? _insight;
+  String? get insight => _$this._insight;
+  set insight(String? insight) => _$this._insight = insight;
+
+  String? _releasabilityId;
+  String? get releasabilityId => _$this._releasabilityId;
+  set releasabilityId(String? releasabilityId) =>
+      _$this._releasabilityId = releasabilityId;
+
   GetEventListGet200ResponseInnerBuilder() {
     GetEventListGet200ResponseInner._defaults(this);
   }
@@ -323,7 +323,6 @@ class GetEventListGet200ResponseInnerBuilder
       _indicator = $v.indicator;
       _indicatorType = $v.indicatorType;
       _indicatorTypeId = $v.indicatorTypeId;
-      _insight = $v.insight;
       _killChain = $v.killChain;
       _mitreAttack = $v.mitreAttack.toBuilder();
       _numReferenced = $v.numReferenced;
@@ -333,12 +332,13 @@ class GetEventListGet200ResponseInnerBuilder
       _referencedIds = $v.referencedIds.toBuilder();
       _references = $v.references.toBuilder();
       _referencesIds = $v.referencesIds.toBuilder();
-      _releasabilityId = $v.releasabilityId;
       _tags = $v.tags.toBuilder();
       _targetCountry = $v.targetCountry;
       _targetIndustry = $v.targetIndustry;
       _tlp = $v.tlp;
       _uuid = $v.uuid;
+      _insight = $v.insight;
+      _releasabilityId = $v.releasabilityId;
       _$v = null;
     }
     return this;
@@ -382,7 +382,6 @@ class GetEventListGet200ResponseInnerBuilder
                 indicatorTypeId,
                 r'GetEventListGet200ResponseInner',
                 'indicatorTypeId'),
-            insight: insight,
             killChain: BuiltValueNullFieldError.checkNotNull(
                 killChain, r'GetEventListGet200ResponseInner', 'killChain'),
             mitreAttack: mitreAttack.build(),
@@ -396,7 +395,6 @@ class GetEventListGet200ResponseInnerBuilder
             referencedIds: referencedIds.build(),
             references: references.build(),
             referencesIds: referencesIds.build(),
-            releasabilityId: releasabilityId,
             tags: tags.build(),
             targetCountry: BuiltValueNullFieldError.checkNotNull(targetCountry,
                 r'GetEventListGet200ResponseInner', 'targetCountry'),
@@ -408,6 +406,8 @@ class GetEventListGet200ResponseInnerBuilder
                 tlp, r'GetEventListGet200ResponseInner', 'tlp'),
             uuid: BuiltValueNullFieldError.checkNotNull(
                 uuid, r'GetEventListGet200ResponseInner', 'uuid'),
+            insight: insight,
+            releasabilityId: releasabilityId,
           );
     } catch (_) {
       late String _$failedField;
@@ -423,7 +423,6 @@ class GetEventListGet200ResponseInnerBuilder
         references.build();
         _$failedField = 'referencesIds';
         referencesIds.build();
-
         _$failedField = 'tags';
         tags.build();
       } catch (e) {

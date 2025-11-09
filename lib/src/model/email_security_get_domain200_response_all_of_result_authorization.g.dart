@@ -11,9 +11,9 @@ class _$EmailSecurityGetDomain200ResponseAllOfResultAuthorization
   @override
   final bool authorized;
   @override
-  final String? statusMessage;
-  @override
   final DateTime timestamp;
+  @override
+  final String? statusMessage;
 
   factory _$EmailSecurityGetDomain200ResponseAllOfResultAuthorization(
           [void Function(
@@ -24,7 +24,7 @@ class _$EmailSecurityGetDomain200ResponseAllOfResultAuthorization
           ._build();
 
   _$EmailSecurityGetDomain200ResponseAllOfResultAuthorization._(
-      {required this.authorized, this.statusMessage, required this.timestamp})
+      {required this.authorized, required this.timestamp, this.statusMessage})
       : super._();
   @override
   EmailSecurityGetDomain200ResponseAllOfResultAuthorization rebuild(
@@ -44,16 +44,16 @@ class _$EmailSecurityGetDomain200ResponseAllOfResultAuthorization
     if (identical(other, this)) return true;
     return other is EmailSecurityGetDomain200ResponseAllOfResultAuthorization &&
         authorized == other.authorized &&
-        statusMessage == other.statusMessage &&
-        timestamp == other.timestamp;
+        timestamp == other.timestamp &&
+        statusMessage == other.statusMessage;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
     _$hash = $jc(_$hash, authorized.hashCode);
-    _$hash = $jc(_$hash, statusMessage.hashCode);
     _$hash = $jc(_$hash, timestamp.hashCode);
+    _$hash = $jc(_$hash, statusMessage.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -63,8 +63,8 @@ class _$EmailSecurityGetDomain200ResponseAllOfResultAuthorization
     return (newBuiltValueToStringHelper(
             r'EmailSecurityGetDomain200ResponseAllOfResultAuthorization')
           ..add('authorized', authorized)
-          ..add('statusMessage', statusMessage)
-          ..add('timestamp', timestamp))
+          ..add('timestamp', timestamp)
+          ..add('statusMessage', statusMessage))
         .toString();
   }
 }
@@ -79,14 +79,14 @@ class EmailSecurityGetDomain200ResponseAllOfResultAuthorizationBuilder
   bool? get authorized => _$this._authorized;
   set authorized(bool? authorized) => _$this._authorized = authorized;
 
+  DateTime? _timestamp;
+  DateTime? get timestamp => _$this._timestamp;
+  set timestamp(DateTime? timestamp) => _$this._timestamp = timestamp;
+
   String? _statusMessage;
   String? get statusMessage => _$this._statusMessage;
   set statusMessage(String? statusMessage) =>
       _$this._statusMessage = statusMessage;
-
-  DateTime? _timestamp;
-  DateTime? get timestamp => _$this._timestamp;
-  set timestamp(DateTime? timestamp) => _$this._timestamp = timestamp;
 
   EmailSecurityGetDomain200ResponseAllOfResultAuthorizationBuilder() {
     EmailSecurityGetDomain200ResponseAllOfResultAuthorization._defaults(this);
@@ -96,8 +96,8 @@ class EmailSecurityGetDomain200ResponseAllOfResultAuthorizationBuilder
     final $v = _$v;
     if ($v != null) {
       _authorized = $v.authorized;
-      _statusMessage = $v.statusMessage;
       _timestamp = $v.timestamp;
+      _statusMessage = $v.statusMessage;
       _$v = null;
     }
     return this;
@@ -127,11 +127,11 @@ class EmailSecurityGetDomain200ResponseAllOfResultAuthorizationBuilder
               authorized,
               r'EmailSecurityGetDomain200ResponseAllOfResultAuthorization',
               'authorized'),
-          statusMessage: statusMessage,
           timestamp: BuiltValueNullFieldError.checkNotNull(
               timestamp,
               r'EmailSecurityGetDomain200ResponseAllOfResultAuthorization',
               'timestamp'),
+          statusMessage: statusMessage,
         );
     replace(_$result);
     return _$result;

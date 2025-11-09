@@ -10,16 +10,16 @@ class _$McnCreateProviderRequest extends McnCreateProviderRequest {
   @override
   final McnCloudType cloudType;
   @override
-  final String? description;
-  @override
   final String friendlyName;
+  @override
+  final String? description;
 
   factory _$McnCreateProviderRequest(
           [void Function(McnCreateProviderRequestBuilder)? updates]) =>
       (McnCreateProviderRequestBuilder()..update(updates))._build();
 
   _$McnCreateProviderRequest._(
-      {required this.cloudType, this.description, required this.friendlyName})
+      {required this.cloudType, required this.friendlyName, this.description})
       : super._();
   @override
   McnCreateProviderRequest rebuild(
@@ -35,16 +35,16 @@ class _$McnCreateProviderRequest extends McnCreateProviderRequest {
     if (identical(other, this)) return true;
     return other is McnCreateProviderRequest &&
         cloudType == other.cloudType &&
-        description == other.description &&
-        friendlyName == other.friendlyName;
+        friendlyName == other.friendlyName &&
+        description == other.description;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
     _$hash = $jc(_$hash, cloudType.hashCode);
-    _$hash = $jc(_$hash, description.hashCode);
     _$hash = $jc(_$hash, friendlyName.hashCode);
+    _$hash = $jc(_$hash, description.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -53,8 +53,8 @@ class _$McnCreateProviderRequest extends McnCreateProviderRequest {
   String toString() {
     return (newBuiltValueToStringHelper(r'McnCreateProviderRequest')
           ..add('cloudType', cloudType)
-          ..add('description', description)
-          ..add('friendlyName', friendlyName))
+          ..add('friendlyName', friendlyName)
+          ..add('description', description))
         .toString();
   }
 }
@@ -68,13 +68,13 @@ class McnCreateProviderRequestBuilder
   McnCloudType? get cloudType => _$this._cloudType;
   set cloudType(McnCloudType? cloudType) => _$this._cloudType = cloudType;
 
-  String? _description;
-  String? get description => _$this._description;
-  set description(String? description) => _$this._description = description;
-
   String? _friendlyName;
   String? get friendlyName => _$this._friendlyName;
   set friendlyName(String? friendlyName) => _$this._friendlyName = friendlyName;
+
+  String? _description;
+  String? get description => _$this._description;
+  set description(String? description) => _$this._description = description;
 
   McnCreateProviderRequestBuilder() {
     McnCreateProviderRequest._defaults(this);
@@ -84,8 +84,8 @@ class McnCreateProviderRequestBuilder
     final $v = _$v;
     if ($v != null) {
       _cloudType = $v.cloudType;
-      _description = $v.description;
       _friendlyName = $v.friendlyName;
+      _description = $v.description;
       _$v = null;
     }
     return this;
@@ -109,9 +109,9 @@ class McnCreateProviderRequestBuilder
         _$McnCreateProviderRequest._(
           cloudType: BuiltValueNullFieldError.checkNotNull(
               cloudType, r'McnCreateProviderRequest', 'cloudType'),
-          description: description,
           friendlyName: BuiltValueNullFieldError.checkNotNull(
               friendlyName, r'McnCreateProviderRequest', 'friendlyName'),
+          description: description,
         );
     replace(_$result);
     return _$result;

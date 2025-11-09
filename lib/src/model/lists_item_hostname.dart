@@ -11,16 +11,16 @@ part 'lists_item_hostname.g.dart';
 /// Valid characters for hostnames are ASCII(7) letters from a to z, the digits from 0 to 9, wildcards (*), and the hyphen (-).
 ///
 /// Properties:
-/// * [excludeExactHostname] - Only applies to wildcard hostnames (e.g., *.example.com). When true (default), only subdomains are blocked. When false, both the root domain and subdomains are blocked.
 /// * [urlHostname] 
+/// * [excludeExactHostname] - Only applies to wildcard hostnames (e.g., *.example.com). When true (default), only subdomains are blocked. When false, both the root domain and subdomains are blocked.
 @BuiltValue()
 abstract class ListsItemHostname implements Built<ListsItemHostname, ListsItemHostnameBuilder> {
+  @BuiltValueField(wireName: r'url_hostname')
+  String get urlHostname;
+
   /// Only applies to wildcard hostnames (e.g., *.example.com). When true (default), only subdomains are blocked. When false, both the root domain and subdomains are blocked.
   @BuiltValueField(wireName: r'exclude_exact_hostname')
   bool? get excludeExactHostname;
-
-  @BuiltValueField(wireName: r'url_hostname')
-  String get urlHostname;
 
   ListsItemHostname._();
 
@@ -45,6 +45,11 @@ class _$ListsItemHostnameSerializer implements PrimitiveSerializer<ListsItemHost
     ListsItemHostname object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    yield r'url_hostname';
+    yield serializers.serialize(
+      object.urlHostname,
+      specifiedType: const FullType(String),
+    );
     if (object.excludeExactHostname != null) {
       yield r'exclude_exact_hostname';
       yield serializers.serialize(
@@ -52,11 +57,6 @@ class _$ListsItemHostnameSerializer implements PrimitiveSerializer<ListsItemHost
         specifiedType: const FullType(bool),
       );
     }
-    yield r'url_hostname';
-    yield serializers.serialize(
-      object.urlHostname,
-      specifiedType: const FullType(String),
-    );
   }
 
   @override
@@ -80,19 +80,19 @@ class _$ListsItemHostnameSerializer implements PrimitiveSerializer<ListsItemHost
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'exclude_exact_hostname':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
-          result.excludeExactHostname = valueDes;
-          break;
         case r'url_hostname':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(String),
           ) as String;
           result.urlHostname = valueDes;
+          break;
+        case r'exclude_exact_hostname':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(bool),
+          ) as bool;
+          result.excludeExactHostname = valueDes;
           break;
         default:
           unhandled.add(key);

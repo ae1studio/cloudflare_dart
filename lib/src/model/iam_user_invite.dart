@@ -12,19 +12,27 @@ part 'iam_user_invite.g.dart';
 /// IamUserInvite
 ///
 /// Properties:
+/// * [invitedMemberId] - ID of the user to add to the organization.
+/// * [organizationId] - ID of the organization the user will be added to.
 /// * [expiresOn] - When the invite is no longer active.
 /// * [id] - Invite identifier tag.
 /// * [invitedBy] - The email address of the user who created the invite.
 /// * [invitedMemberEmail] - Email address of the user to add to the organization.
-/// * [invitedMemberId] - ID of the user to add to the organization.
 /// * [invitedOn] - When the invite was sent.
-/// * [organizationId] - ID of the organization the user will be added to.
 /// * [organizationIsEnforcingTwofactor] 
 /// * [organizationName] - Organization name.
 /// * [roles] - List of role names the membership has for this account.
 /// * [status] - Current status of the invitation.
 @BuiltValue()
 abstract class IamUserInvite implements Built<IamUserInvite, IamUserInviteBuilder> {
+  /// ID of the user to add to the organization.
+  @BuiltValueField(wireName: r'invited_member_id')
+  String? get invitedMemberId;
+
+  /// ID of the organization the user will be added to.
+  @BuiltValueField(wireName: r'organization_id')
+  String get organizationId;
+
   /// When the invite is no longer active.
   @BuiltValueField(wireName: r'expires_on')
   DateTime? get expiresOn;
@@ -41,17 +49,9 @@ abstract class IamUserInvite implements Built<IamUserInvite, IamUserInviteBuilde
   @BuiltValueField(wireName: r'invited_member_email')
   String? get invitedMemberEmail;
 
-  /// ID of the user to add to the organization.
-  @BuiltValueField(wireName: r'invited_member_id')
-  String? get invitedMemberId;
-
   /// When the invite was sent.
   @BuiltValueField(wireName: r'invited_on')
   DateTime? get invitedOn;
-
-  /// ID of the organization the user will be added to.
-  @BuiltValueField(wireName: r'organization_id')
-  String get organizationId;
 
   @BuiltValueField(wireName: r'organization_is_enforcing_twofactor')
   bool? get organizationIsEnforcingTwofactor;
@@ -92,6 +92,16 @@ class _$IamUserInviteSerializer implements PrimitiveSerializer<IamUserInvite> {
     IamUserInvite object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    yield r'invited_member_id';
+    yield object.invitedMemberId == null ? null : serializers.serialize(
+      object.invitedMemberId,
+      specifiedType: const FullType.nullable(String),
+    );
+    yield r'organization_id';
+    yield serializers.serialize(
+      object.organizationId,
+      specifiedType: const FullType(String),
+    );
     if (object.expiresOn != null) {
       yield r'expires_on';
       yield serializers.serialize(
@@ -120,11 +130,6 @@ class _$IamUserInviteSerializer implements PrimitiveSerializer<IamUserInvite> {
         specifiedType: const FullType(String),
       );
     }
-    yield r'invited_member_id';
-    yield object.invitedMemberId == null ? null : serializers.serialize(
-      object.invitedMemberId,
-      specifiedType: const FullType.nullable(String),
-    );
     if (object.invitedOn != null) {
       yield r'invited_on';
       yield serializers.serialize(
@@ -132,11 +137,6 @@ class _$IamUserInviteSerializer implements PrimitiveSerializer<IamUserInvite> {
         specifiedType: const FullType(DateTime),
       );
     }
-    yield r'organization_id';
-    yield serializers.serialize(
-      object.organizationId,
-      specifiedType: const FullType(String),
-    );
     if (object.organizationIsEnforcingTwofactor != null) {
       yield r'organization_is_enforcing_twofactor';
       yield serializers.serialize(
@@ -188,6 +188,21 @@ class _$IamUserInviteSerializer implements PrimitiveSerializer<IamUserInvite> {
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
+        case r'invited_member_id':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType.nullable(String),
+          ) as String?;
+          if (valueDes == null) continue;
+          result.invitedMemberId = valueDes;
+          break;
+        case r'organization_id':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.organizationId = valueDes;
+          break;
         case r'expires_on':
           final valueDes = serializers.deserialize(
             value,
@@ -216,27 +231,12 @@ class _$IamUserInviteSerializer implements PrimitiveSerializer<IamUserInvite> {
           ) as String;
           result.invitedMemberEmail = valueDes;
           break;
-        case r'invited_member_id':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
-          if (valueDes == null) continue;
-          result.invitedMemberId = valueDes;
-          break;
         case r'invited_on':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(DateTime),
           ) as DateTime;
           result.invitedOn = valueDes;
-          break;
-        case r'organization_id':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.organizationId = valueDes;
           break;
         case r'organization_is_enforcing_twofactor':
           final valueDes = serializers.deserialize(

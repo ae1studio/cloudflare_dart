@@ -8,6 +8,8 @@ part of 'qwen_qwq32_b_prompt.dart';
 
 class _$QwenQwq32BPrompt extends QwenQwq32BPrompt {
   @override
+  final String prompt;
+  @override
   final num? frequencyPenalty;
   @override
   final JsonObject? guidedJson;
@@ -15,8 +17,6 @@ class _$QwenQwq32BPrompt extends QwenQwq32BPrompt {
   final int? maxTokens;
   @override
   final num? presencePenalty;
-  @override
-  final String prompt;
   @override
   final bool? raw;
   @override
@@ -37,11 +37,11 @@ class _$QwenQwq32BPrompt extends QwenQwq32BPrompt {
       (QwenQwq32BPromptBuilder()..update(updates))._build();
 
   _$QwenQwq32BPrompt._(
-      {this.frequencyPenalty,
+      {required this.prompt,
+      this.frequencyPenalty,
       this.guidedJson,
       this.maxTokens,
       this.presencePenalty,
-      required this.prompt,
       this.raw,
       this.repetitionPenalty,
       this.seed,
@@ -62,11 +62,11 @@ class _$QwenQwq32BPrompt extends QwenQwq32BPrompt {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is QwenQwq32BPrompt &&
+        prompt == other.prompt &&
         frequencyPenalty == other.frequencyPenalty &&
         guidedJson == other.guidedJson &&
         maxTokens == other.maxTokens &&
         presencePenalty == other.presencePenalty &&
-        prompt == other.prompt &&
         raw == other.raw &&
         repetitionPenalty == other.repetitionPenalty &&
         seed == other.seed &&
@@ -79,11 +79,11 @@ class _$QwenQwq32BPrompt extends QwenQwq32BPrompt {
   @override
   int get hashCode {
     var _$hash = 0;
+    _$hash = $jc(_$hash, prompt.hashCode);
     _$hash = $jc(_$hash, frequencyPenalty.hashCode);
     _$hash = $jc(_$hash, guidedJson.hashCode);
     _$hash = $jc(_$hash, maxTokens.hashCode);
     _$hash = $jc(_$hash, presencePenalty.hashCode);
-    _$hash = $jc(_$hash, prompt.hashCode);
     _$hash = $jc(_$hash, raw.hashCode);
     _$hash = $jc(_$hash, repetitionPenalty.hashCode);
     _$hash = $jc(_$hash, seed.hashCode);
@@ -98,11 +98,11 @@ class _$QwenQwq32BPrompt extends QwenQwq32BPrompt {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'QwenQwq32BPrompt')
+          ..add('prompt', prompt)
           ..add('frequencyPenalty', frequencyPenalty)
           ..add('guidedJson', guidedJson)
           ..add('maxTokens', maxTokens)
           ..add('presencePenalty', presencePenalty)
-          ..add('prompt', prompt)
           ..add('raw', raw)
           ..add('repetitionPenalty', repetitionPenalty)
           ..add('seed', seed)
@@ -117,6 +117,10 @@ class _$QwenQwq32BPrompt extends QwenQwq32BPrompt {
 class QwenQwq32BPromptBuilder
     implements Builder<QwenQwq32BPrompt, QwenQwq32BPromptBuilder> {
   _$QwenQwq32BPrompt? _$v;
+
+  String? _prompt;
+  String? get prompt => _$this._prompt;
+  set prompt(String? prompt) => _$this._prompt = prompt;
 
   num? _frequencyPenalty;
   num? get frequencyPenalty => _$this._frequencyPenalty;
@@ -135,10 +139,6 @@ class QwenQwq32BPromptBuilder
   num? get presencePenalty => _$this._presencePenalty;
   set presencePenalty(num? presencePenalty) =>
       _$this._presencePenalty = presencePenalty;
-
-  String? _prompt;
-  String? get prompt => _$this._prompt;
-  set prompt(String? prompt) => _$this._prompt = prompt;
 
   bool? _raw;
   bool? get raw => _$this._raw;
@@ -176,11 +176,11 @@ class QwenQwq32BPromptBuilder
   QwenQwq32BPromptBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
+      _prompt = $v.prompt;
       _frequencyPenalty = $v.frequencyPenalty;
       _guidedJson = $v.guidedJson;
       _maxTokens = $v.maxTokens;
       _presencePenalty = $v.presencePenalty;
-      _prompt = $v.prompt;
       _raw = $v.raw;
       _repetitionPenalty = $v.repetitionPenalty;
       _seed = $v.seed;
@@ -209,12 +209,12 @@ class QwenQwq32BPromptBuilder
   _$QwenQwq32BPrompt _build() {
     final _$result = _$v ??
         _$QwenQwq32BPrompt._(
+          prompt: BuiltValueNullFieldError.checkNotNull(
+              prompt, r'QwenQwq32BPrompt', 'prompt'),
           frequencyPenalty: frequencyPenalty,
           guidedJson: guidedJson,
           maxTokens: maxTokens,
           presencePenalty: presencePenalty,
-          prompt: BuiltValueNullFieldError.checkNotNull(
-              prompt, r'QwenQwq32BPrompt', 'prompt'),
           raw: raw,
           repetitionPenalty: repetitionPenalty,
           seed: seed,

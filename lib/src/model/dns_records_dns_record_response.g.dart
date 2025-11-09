@@ -78,11 +78,7 @@ class _$DnsRecordsDnsRecordResponse extends DnsRecordsDnsRecordResponse {
   @override
   final DnsRecordsDnsRecordResponseTypeEnum type;
   @override
-  final num? priority;
-  @override
   final DnsRecordsURIRecordAllOfData data;
-  @override
-  final DateTime? commentModifiedOn;
   @override
   final DateTime createdOn;
   @override
@@ -93,6 +89,10 @@ class _$DnsRecordsDnsRecordResponse extends DnsRecordsDnsRecordResponse {
   final DateTime modifiedOn;
   @override
   final bool proxiable;
+  @override
+  final num? priority;
+  @override
+  final DateTime? commentModifiedOn;
   @override
   final DateTime? tagsModifiedOn;
 
@@ -109,14 +109,14 @@ class _$DnsRecordsDnsRecordResponse extends DnsRecordsDnsRecordResponse {
       required this.ttl,
       required this.content,
       required this.type,
-      this.priority,
       required this.data,
-      this.commentModifiedOn,
       required this.createdOn,
       required this.id,
       required this.meta,
       required this.modifiedOn,
       required this.proxiable,
+      this.priority,
+      this.commentModifiedOn,
       this.tagsModifiedOn})
       : super._();
   @override
@@ -140,14 +140,14 @@ class _$DnsRecordsDnsRecordResponse extends DnsRecordsDnsRecordResponse {
         ttl == other.ttl &&
         content == other.content &&
         type == other.type &&
-        priority == other.priority &&
         data == other.data &&
-        commentModifiedOn == other.commentModifiedOn &&
         createdOn == other.createdOn &&
         id == other.id &&
         meta == other.meta &&
         modifiedOn == other.modifiedOn &&
         proxiable == other.proxiable &&
+        priority == other.priority &&
+        commentModifiedOn == other.commentModifiedOn &&
         tagsModifiedOn == other.tagsModifiedOn;
   }
 
@@ -162,14 +162,14 @@ class _$DnsRecordsDnsRecordResponse extends DnsRecordsDnsRecordResponse {
     _$hash = $jc(_$hash, ttl.hashCode);
     _$hash = $jc(_$hash, content.hashCode);
     _$hash = $jc(_$hash, type.hashCode);
-    _$hash = $jc(_$hash, priority.hashCode);
     _$hash = $jc(_$hash, data.hashCode);
-    _$hash = $jc(_$hash, commentModifiedOn.hashCode);
     _$hash = $jc(_$hash, createdOn.hashCode);
     _$hash = $jc(_$hash, id.hashCode);
     _$hash = $jc(_$hash, meta.hashCode);
     _$hash = $jc(_$hash, modifiedOn.hashCode);
     _$hash = $jc(_$hash, proxiable.hashCode);
+    _$hash = $jc(_$hash, priority.hashCode);
+    _$hash = $jc(_$hash, commentModifiedOn.hashCode);
     _$hash = $jc(_$hash, tagsModifiedOn.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
@@ -186,14 +186,14 @@ class _$DnsRecordsDnsRecordResponse extends DnsRecordsDnsRecordResponse {
           ..add('ttl', ttl)
           ..add('content', content)
           ..add('type', type)
-          ..add('priority', priority)
           ..add('data', data)
-          ..add('commentModifiedOn', commentModifiedOn)
           ..add('createdOn', createdOn)
           ..add('id', id)
           ..add('meta', meta)
           ..add('modifiedOn', modifiedOn)
           ..add('proxiable', proxiable)
+          ..add('priority', priority)
+          ..add('commentModifiedOn', commentModifiedOn)
           ..add('tagsModifiedOn', tagsModifiedOn))
         .toString();
   }
@@ -239,19 +239,10 @@ class DnsRecordsDnsRecordResponseBuilder
   DnsRecordsDnsRecordResponseTypeEnum? get type => _$this._type;
   set type(DnsRecordsDnsRecordResponseTypeEnum? type) => _$this._type = type;
 
-  num? _priority;
-  num? get priority => _$this._priority;
-  set priority(num? priority) => _$this._priority = priority;
-
   DnsRecordsURIRecordAllOfDataBuilder? _data;
   DnsRecordsURIRecordAllOfDataBuilder get data =>
       _$this._data ??= DnsRecordsURIRecordAllOfDataBuilder();
   set data(DnsRecordsURIRecordAllOfDataBuilder? data) => _$this._data = data;
-
-  DateTime? _commentModifiedOn;
-  DateTime? get commentModifiedOn => _$this._commentModifiedOn;
-  set commentModifiedOn(DateTime? commentModifiedOn) =>
-      _$this._commentModifiedOn = commentModifiedOn;
 
   DateTime? _createdOn;
   DateTime? get createdOn => _$this._createdOn;
@@ -273,6 +264,15 @@ class DnsRecordsDnsRecordResponseBuilder
   bool? get proxiable => _$this._proxiable;
   set proxiable(bool? proxiable) => _$this._proxiable = proxiable;
 
+  num? _priority;
+  num? get priority => _$this._priority;
+  set priority(num? priority) => _$this._priority = priority;
+
+  DateTime? _commentModifiedOn;
+  DateTime? get commentModifiedOn => _$this._commentModifiedOn;
+  set commentModifiedOn(DateTime? commentModifiedOn) =>
+      _$this._commentModifiedOn = commentModifiedOn;
+
   DateTime? _tagsModifiedOn;
   DateTime? get tagsModifiedOn => _$this._tagsModifiedOn;
   set tagsModifiedOn(DateTime? tagsModifiedOn) =>
@@ -293,14 +293,14 @@ class DnsRecordsDnsRecordResponseBuilder
       _ttl = $v.ttl.toBuilder();
       _content = $v.content;
       _type = $v.type;
-      _priority = $v.priority;
       _data = $v.data.toBuilder();
-      _commentModifiedOn = $v.commentModifiedOn;
       _createdOn = $v.createdOn;
       _id = $v.id;
       _meta = $v.meta;
       _modifiedOn = $v.modifiedOn;
       _proxiable = $v.proxiable;
+      _priority = $v.priority;
+      _commentModifiedOn = $v.commentModifiedOn;
       _tagsModifiedOn = $v.tagsModifiedOn;
       _$v = null;
     }
@@ -338,9 +338,7 @@ class DnsRecordsDnsRecordResponseBuilder
                 content, r'DnsRecordsDnsRecordResponse', 'content'),
             type: BuiltValueNullFieldError.checkNotNull(
                 type, r'DnsRecordsDnsRecordResponse', 'type'),
-            priority: priority,
             data: data.build(),
-            commentModifiedOn: commentModifiedOn,
             createdOn: BuiltValueNullFieldError.checkNotNull(
                 createdOn, r'DnsRecordsDnsRecordResponse', 'createdOn'),
             id: BuiltValueNullFieldError.checkNotNull(
@@ -351,6 +349,8 @@ class DnsRecordsDnsRecordResponseBuilder
                 modifiedOn, r'DnsRecordsDnsRecordResponse', 'modifiedOn'),
             proxiable: BuiltValueNullFieldError.checkNotNull(
                 proxiable, r'DnsRecordsDnsRecordResponse', 'proxiable'),
+            priority: priority,
+            commentModifiedOn: commentModifiedOn,
             tagsModifiedOn: tagsModifiedOn,
           );
     } catch (_) {

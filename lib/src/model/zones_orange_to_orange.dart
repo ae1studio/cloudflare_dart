@@ -8,16 +8,17 @@ import 'package:cloudflare_dart/src/model/zones_orange_to_orange_value.dart';
 import 'package:cloudflare_dart/src/model/zones_base.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
+import 'package:built_value/json_object.dart';
 
 part 'zones_orange_to_orange.g.dart';
 
 /// Orange to Orange (O2O) allows zones on Cloudflare to CNAME to other zones also on Cloudflare.
 ///
 /// Properties:
-/// * [editable] - Whether or not this setting can be modified for this zone (based on your Cloudflare plan level).
 /// * [id] - ID of the zone setting.
-/// * [modifiedOn] - last time this setting was modified.
 /// * [value] 
+/// * [editable] - Whether or not this setting can be modified for this zone (based on your Cloudflare plan level).
+/// * [modifiedOn] - last time this setting was modified.
 @BuiltValue()
 abstract class ZonesOrangeToOrange implements ZonesBase, Built<ZonesOrangeToOrange, ZonesOrangeToOrangeBuilder> {
   ZonesOrangeToOrange._();

@@ -11,9 +11,9 @@ class _$EmailSecurityRetractionResponseItem
   @override
   final DateTime completedTimestamp;
   @override
-  final String? destination;
-  @override
   final int itemCount;
+  @override
+  final String? destination;
   @override
   final String? messageId;
   @override
@@ -30,8 +30,8 @@ class _$EmailSecurityRetractionResponseItem
 
   _$EmailSecurityRetractionResponseItem._(
       {required this.completedTimestamp,
-      this.destination,
       required this.itemCount,
+      this.destination,
       this.messageId,
       this.operation,
       this.recipient,
@@ -51,8 +51,8 @@ class _$EmailSecurityRetractionResponseItem
     if (identical(other, this)) return true;
     return other is EmailSecurityRetractionResponseItem &&
         completedTimestamp == other.completedTimestamp &&
-        destination == other.destination &&
         itemCount == other.itemCount &&
+        destination == other.destination &&
         messageId == other.messageId &&
         operation == other.operation &&
         recipient == other.recipient &&
@@ -63,8 +63,8 @@ class _$EmailSecurityRetractionResponseItem
   int get hashCode {
     var _$hash = 0;
     _$hash = $jc(_$hash, completedTimestamp.hashCode);
-    _$hash = $jc(_$hash, destination.hashCode);
     _$hash = $jc(_$hash, itemCount.hashCode);
+    _$hash = $jc(_$hash, destination.hashCode);
     _$hash = $jc(_$hash, messageId.hashCode);
     _$hash = $jc(_$hash, operation.hashCode);
     _$hash = $jc(_$hash, recipient.hashCode);
@@ -77,8 +77,8 @@ class _$EmailSecurityRetractionResponseItem
   String toString() {
     return (newBuiltValueToStringHelper(r'EmailSecurityRetractionResponseItem')
           ..add('completedTimestamp', completedTimestamp)
-          ..add('destination', destination)
           ..add('itemCount', itemCount)
+          ..add('destination', destination)
           ..add('messageId', messageId)
           ..add('operation', operation)
           ..add('recipient', recipient)
@@ -98,13 +98,13 @@ class EmailSecurityRetractionResponseItemBuilder
   set completedTimestamp(DateTime? completedTimestamp) =>
       _$this._completedTimestamp = completedTimestamp;
 
-  String? _destination;
-  String? get destination => _$this._destination;
-  set destination(String? destination) => _$this._destination = destination;
-
   int? _itemCount;
   int? get itemCount => _$this._itemCount;
   set itemCount(int? itemCount) => _$this._itemCount = itemCount;
+
+  String? _destination;
+  String? get destination => _$this._destination;
+  set destination(String? destination) => _$this._destination = destination;
 
   String? _messageId;
   String? get messageId => _$this._messageId;
@@ -130,8 +130,8 @@ class EmailSecurityRetractionResponseItemBuilder
     final $v = _$v;
     if ($v != null) {
       _completedTimestamp = $v.completedTimestamp;
-      _destination = $v.destination;
       _itemCount = $v.itemCount;
+      _destination = $v.destination;
       _messageId = $v.messageId;
       _operation = $v.operation;
       _recipient = $v.recipient;
@@ -162,9 +162,9 @@ class EmailSecurityRetractionResponseItemBuilder
               completedTimestamp,
               r'EmailSecurityRetractionResponseItem',
               'completedTimestamp'),
-          destination: destination,
           itemCount: BuiltValueNullFieldError.checkNotNull(
               itemCount, r'EmailSecurityRetractionResponseItem', 'itemCount'),
+          destination: destination,
           messageId: messageId,
           operation: operation,
           recipient: recipient,

@@ -13,18 +13,14 @@ part 'serve_error_rule_action_parameters.g.dart';
 ///
 /// Properties:
 /// * [contentType] 
-/// * [statusCode] - The status code to use for the error.
 /// * [content] - The response content.
 /// * [assetName] - The name of a custom asset to serve as the error response.
+/// * [statusCode] - The status code to use for the error.
 @BuiltValue()
 abstract class ServeErrorRuleActionParameters implements Built<ServeErrorRuleActionParameters, ServeErrorRuleActionParametersBuilder> {
   @BuiltValueField(wireName: r'content_type')
   RulesetsServeErrorContentType get contentType;
   // enum contentTypeEnum {  application/json,  text/html,  text/plain,  text/xml,  };
-
-  /// The status code to use for the error.
-  @BuiltValueField(wireName: r'status_code')
-  int? get statusCode;
 
   /// The response content.
   @BuiltValueField(wireName: r'content')
@@ -33,6 +29,10 @@ abstract class ServeErrorRuleActionParameters implements Built<ServeErrorRuleAct
   /// The name of a custom asset to serve as the error response.
   @BuiltValueField(wireName: r'asset_name')
   String get assetName;
+
+  /// The status code to use for the error.
+  @BuiltValueField(wireName: r'status_code')
+  int? get statusCode;
 
   ServeErrorRuleActionParameters._();
 
@@ -62,13 +62,6 @@ class _$ServeErrorRuleActionParametersSerializer implements PrimitiveSerializer<
       object.contentType,
       specifiedType: const FullType(RulesetsServeErrorContentType),
     );
-    if (object.statusCode != null) {
-      yield r'status_code';
-      yield serializers.serialize(
-        object.statusCode,
-        specifiedType: const FullType(int),
-      );
-    }
     yield r'content';
     yield serializers.serialize(
       object.content,
@@ -79,6 +72,13 @@ class _$ServeErrorRuleActionParametersSerializer implements PrimitiveSerializer<
       object.assetName,
       specifiedType: const FullType(String),
     );
+    if (object.statusCode != null) {
+      yield r'status_code';
+      yield serializers.serialize(
+        object.statusCode,
+        specifiedType: const FullType(int),
+      );
+    }
   }
 
   @override
@@ -109,13 +109,6 @@ class _$ServeErrorRuleActionParametersSerializer implements PrimitiveSerializer<
           ) as RulesetsServeErrorContentType;
           result.contentType = valueDes;
           break;
-        case r'status_code':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
-          result.statusCode = valueDes;
-          break;
         case r'content':
           final valueDes = serializers.deserialize(
             value,
@@ -129,6 +122,13 @@ class _$ServeErrorRuleActionParametersSerializer implements PrimitiveSerializer<
             specifiedType: const FullType(String),
           ) as String;
           result.assetName = valueDes;
+          break;
+        case r'status_code':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(int),
+          ) as int;
+          result.statusCode = valueDes;
           break;
         default:
           unhandled.add(key);

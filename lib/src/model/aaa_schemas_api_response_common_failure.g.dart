@@ -11,9 +11,9 @@ class _$AaaSchemasApiResponseCommonFailure
   @override
   final BuiltList<AaaSchemasApiResponseCommonFailureErrorsInner> errors;
   @override
-  final BuiltList<AaaSchemasApiResponseCommonFailureMessagesInner>? messages;
-  @override
   final bool success;
+  @override
+  final BuiltList<AaaSchemasApiResponseCommonFailureMessagesInner>? messages;
 
   factory _$AaaSchemasApiResponseCommonFailure(
           [void Function(AaaSchemasApiResponseCommonFailureBuilder)?
@@ -21,7 +21,7 @@ class _$AaaSchemasApiResponseCommonFailure
       (AaaSchemasApiResponseCommonFailureBuilder()..update(updates))._build();
 
   _$AaaSchemasApiResponseCommonFailure._(
-      {required this.errors, this.messages, required this.success})
+      {required this.errors, required this.success, this.messages})
       : super._();
   @override
   AaaSchemasApiResponseCommonFailure rebuild(
@@ -37,16 +37,16 @@ class _$AaaSchemasApiResponseCommonFailure
     if (identical(other, this)) return true;
     return other is AaaSchemasApiResponseCommonFailure &&
         errors == other.errors &&
-        messages == other.messages &&
-        success == other.success;
+        success == other.success &&
+        messages == other.messages;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
     _$hash = $jc(_$hash, errors.hashCode);
-    _$hash = $jc(_$hash, messages.hashCode);
     _$hash = $jc(_$hash, success.hashCode);
+    _$hash = $jc(_$hash, messages.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -55,8 +55,8 @@ class _$AaaSchemasApiResponseCommonFailure
   String toString() {
     return (newBuiltValueToStringHelper(r'AaaSchemasApiResponseCommonFailure')
           ..add('errors', errors)
-          ..add('messages', messages)
-          ..add('success', success))
+          ..add('success', success)
+          ..add('messages', messages))
         .toString();
   }
 }
@@ -75,6 +75,10 @@ class AaaSchemasApiResponseCommonFailureBuilder
           ListBuilder<AaaSchemasApiResponseCommonFailureErrorsInner>? errors) =>
       _$this._errors = errors;
 
+  bool? _success;
+  bool? get success => _$this._success;
+  set success(bool? success) => _$this._success = success;
+
   ListBuilder<AaaSchemasApiResponseCommonFailureMessagesInner>? _messages;
   ListBuilder<AaaSchemasApiResponseCommonFailureMessagesInner> get messages =>
       _$this._messages ??=
@@ -84,10 +88,6 @@ class AaaSchemasApiResponseCommonFailureBuilder
               messages) =>
       _$this._messages = messages;
 
-  bool? _success;
-  bool? get success => _$this._success;
-  set success(bool? success) => _$this._success = success;
-
   AaaSchemasApiResponseCommonFailureBuilder() {
     AaaSchemasApiResponseCommonFailure._defaults(this);
   }
@@ -96,8 +96,8 @@ class AaaSchemasApiResponseCommonFailureBuilder
     final $v = _$v;
     if ($v != null) {
       _errors = $v.errors.toBuilder();
-      _messages = $v.messages?.toBuilder();
       _success = $v.success;
+      _messages = $v.messages?.toBuilder();
       _$v = null;
     }
     return this;
@@ -123,15 +123,16 @@ class AaaSchemasApiResponseCommonFailureBuilder
       _$result = _$v ??
           _$AaaSchemasApiResponseCommonFailure._(
             errors: errors.build(),
-            messages: _messages?.build(),
             success: BuiltValueNullFieldError.checkNotNull(
                 success, r'AaaSchemasApiResponseCommonFailure', 'success'),
+            messages: _messages?.build(),
           );
     } catch (_) {
       late String _$failedField;
       try {
         _$failedField = 'errors';
         errors.build();
+
         _$failedField = 'messages';
         _messages?.build();
       } catch (e) {

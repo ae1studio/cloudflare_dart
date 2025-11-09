@@ -20,8 +20,8 @@ part 'pages_project_get_projects4_xx_response.g.dart';
 /// * [errors] 
 /// * [messages] 
 /// * [success] - Whether the API call was successful.
-/// * [resultInfo] 
 /// * [result] 
+/// * [resultInfo] 
 @BuiltValue()
 abstract class PagesProjectGetProjects4XXResponse implements PagesApiResponseCommonFailure, PagesProjectsResponse, Built<PagesProjectGetProjects4XXResponse, PagesProjectGetProjects4XXResponseBuilder> {
   PagesProjectGetProjects4XXResponse._();

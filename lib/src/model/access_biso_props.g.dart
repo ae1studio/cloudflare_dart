@@ -9,6 +9,9 @@ part of 'access_biso_props.dart';
 abstract class AccessBisoPropsBuilder implements AccessFeatureAppPropsBuilder {
   void replace(covariant AccessBisoProps other);
   void update(void Function(AccessBisoPropsBuilder) updates);
+  AccessType? get type;
+  set type(covariant AccessType? type);
+
   ListBuilder<String> get allowedIdps;
   set allowedIdps(covariant ListBuilder<String>? allowedIdps);
 
@@ -32,12 +35,11 @@ abstract class AccessBisoPropsBuilder implements AccessFeatureAppPropsBuilder {
 
   String? get sessionDuration;
   set sessionDuration(covariant String? sessionDuration);
-
-  AccessType? get type;
-  set type(covariant AccessType? type);
 }
 
 class _$$AccessBisoProps extends $AccessBisoProps {
+  @override
+  final AccessType type;
   @override
   final BuiltList<String>? allowedIdps;
   @override
@@ -54,23 +56,21 @@ class _$$AccessBisoProps extends $AccessBisoProps {
   final String? name;
   @override
   final String? sessionDuration;
-  @override
-  final AccessType type;
 
   factory _$$AccessBisoProps(
           [void Function($AccessBisoPropsBuilder)? updates]) =>
       ($AccessBisoPropsBuilder()..update(updates))._build();
 
   _$$AccessBisoProps._(
-      {this.allowedIdps,
+      {required this.type,
+      this.allowedIdps,
       this.autoRedirectToIdentity,
       this.customDenyUrl,
       this.customNonIdentityDenyUrl,
       this.customPages,
       this.domain,
       this.name,
-      this.sessionDuration,
-      required this.type})
+      this.sessionDuration})
       : super._();
   @override
   $AccessBisoProps rebuild(void Function($AccessBisoPropsBuilder) updates) =>
@@ -84,6 +84,7 @@ class _$$AccessBisoProps extends $AccessBisoProps {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is $AccessBisoProps &&
+        type == other.type &&
         allowedIdps == other.allowedIdps &&
         autoRedirectToIdentity == other.autoRedirectToIdentity &&
         customDenyUrl == other.customDenyUrl &&
@@ -91,13 +92,13 @@ class _$$AccessBisoProps extends $AccessBisoProps {
         customPages == other.customPages &&
         domain == other.domain &&
         name == other.name &&
-        sessionDuration == other.sessionDuration &&
-        type == other.type;
+        sessionDuration == other.sessionDuration;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
+    _$hash = $jc(_$hash, type.hashCode);
     _$hash = $jc(_$hash, allowedIdps.hashCode);
     _$hash = $jc(_$hash, autoRedirectToIdentity.hashCode);
     _$hash = $jc(_$hash, customDenyUrl.hashCode);
@@ -106,7 +107,6 @@ class _$$AccessBisoProps extends $AccessBisoProps {
     _$hash = $jc(_$hash, domain.hashCode);
     _$hash = $jc(_$hash, name.hashCode);
     _$hash = $jc(_$hash, sessionDuration.hashCode);
-    _$hash = $jc(_$hash, type.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -114,6 +114,7 @@ class _$$AccessBisoProps extends $AccessBisoProps {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'$AccessBisoProps')
+          ..add('type', type)
           ..add('allowedIdps', allowedIdps)
           ..add('autoRedirectToIdentity', autoRedirectToIdentity)
           ..add('customDenyUrl', customDenyUrl)
@@ -121,8 +122,7 @@ class _$$AccessBisoProps extends $AccessBisoProps {
           ..add('customPages', customPages)
           ..add('domain', domain)
           ..add('name', name)
-          ..add('sessionDuration', sessionDuration)
-          ..add('type', type))
+          ..add('sessionDuration', sessionDuration))
         .toString();
   }
 }
@@ -132,6 +132,10 @@ class $AccessBisoPropsBuilder
         Builder<$AccessBisoProps, $AccessBisoPropsBuilder>,
         AccessBisoPropsBuilder {
   _$$AccessBisoProps? _$v;
+
+  AccessType? _type;
+  AccessType? get type => _$this._type;
+  set type(covariant AccessType? type) => _$this._type = type;
 
   ListBuilder<String>? _allowedIdps;
   ListBuilder<String> get allowedIdps =>
@@ -173,10 +177,6 @@ class $AccessBisoPropsBuilder
   set sessionDuration(covariant String? sessionDuration) =>
       _$this._sessionDuration = sessionDuration;
 
-  AccessType? _type;
-  AccessType? get type => _$this._type;
-  set type(covariant AccessType? type) => _$this._type = type;
-
   $AccessBisoPropsBuilder() {
     $AccessBisoProps._defaults(this);
   }
@@ -184,6 +184,7 @@ class $AccessBisoPropsBuilder
   $AccessBisoPropsBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
+      _type = $v.type;
       _allowedIdps = $v.allowedIdps?.toBuilder();
       _autoRedirectToIdentity = $v.autoRedirectToIdentity;
       _customDenyUrl = $v.customDenyUrl;
@@ -192,7 +193,6 @@ class $AccessBisoPropsBuilder
       _domain = $v.domain;
       _name = $v.name;
       _sessionDuration = $v.sessionDuration;
-      _type = $v.type;
       _$v = null;
     }
     return this;
@@ -216,6 +216,8 @@ class $AccessBisoPropsBuilder
     try {
       _$result = _$v ??
           _$$AccessBisoProps._(
+            type: BuiltValueNullFieldError.checkNotNull(
+                type, r'$AccessBisoProps', 'type'),
             allowedIdps: _allowedIdps?.build(),
             autoRedirectToIdentity: autoRedirectToIdentity,
             customDenyUrl: customDenyUrl,
@@ -224,8 +226,6 @@ class $AccessBisoPropsBuilder
             domain: domain,
             name: name,
             sessionDuration: sessionDuration,
-            type: BuiltValueNullFieldError.checkNotNull(
-                type, r'$AccessBisoProps', 'type'),
           );
     } catch (_) {
       late String _$failedField;

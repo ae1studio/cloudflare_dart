@@ -11,13 +11,13 @@ class _$WorkersObservabilityTelemetryEvent
   @override
   final WorkersObservabilityTelemetryEventMetadata dollarMetadata;
   @override
-  final WorkersObservabilityTelemetryEventWorkers? dollarWorkers;
-  @override
   final String dataset;
   @override
   final WorkersObservabilityTelemetryEventSource source_;
   @override
   final int timestamp;
+  @override
+  final WorkersObservabilityTelemetryEventWorkers? dollarWorkers;
 
   factory _$WorkersObservabilityTelemetryEvent(
           [void Function(WorkersObservabilityTelemetryEventBuilder)?
@@ -26,10 +26,10 @@ class _$WorkersObservabilityTelemetryEvent
 
   _$WorkersObservabilityTelemetryEvent._(
       {required this.dollarMetadata,
-      this.dollarWorkers,
       required this.dataset,
       required this.source_,
-      required this.timestamp})
+      required this.timestamp,
+      this.dollarWorkers})
       : super._();
   @override
   WorkersObservabilityTelemetryEvent rebuild(
@@ -45,20 +45,20 @@ class _$WorkersObservabilityTelemetryEvent
     if (identical(other, this)) return true;
     return other is WorkersObservabilityTelemetryEvent &&
         dollarMetadata == other.dollarMetadata &&
-        dollarWorkers == other.dollarWorkers &&
         dataset == other.dataset &&
         source_ == other.source_ &&
-        timestamp == other.timestamp;
+        timestamp == other.timestamp &&
+        dollarWorkers == other.dollarWorkers;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
     _$hash = $jc(_$hash, dollarMetadata.hashCode);
-    _$hash = $jc(_$hash, dollarWorkers.hashCode);
     _$hash = $jc(_$hash, dataset.hashCode);
     _$hash = $jc(_$hash, source_.hashCode);
     _$hash = $jc(_$hash, timestamp.hashCode);
+    _$hash = $jc(_$hash, dollarWorkers.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -67,10 +67,10 @@ class _$WorkersObservabilityTelemetryEvent
   String toString() {
     return (newBuiltValueToStringHelper(r'WorkersObservabilityTelemetryEvent')
           ..add('dollarMetadata', dollarMetadata)
-          ..add('dollarWorkers', dollarWorkers)
           ..add('dataset', dataset)
           ..add('source_', source_)
-          ..add('timestamp', timestamp))
+          ..add('timestamp', timestamp)
+          ..add('dollarWorkers', dollarWorkers))
         .toString();
   }
 }
@@ -89,14 +89,6 @@ class WorkersObservabilityTelemetryEventBuilder
           WorkersObservabilityTelemetryEventMetadataBuilder? dollarMetadata) =>
       _$this._dollarMetadata = dollarMetadata;
 
-  WorkersObservabilityTelemetryEventWorkersBuilder? _dollarWorkers;
-  WorkersObservabilityTelemetryEventWorkersBuilder get dollarWorkers =>
-      _$this._dollarWorkers ??=
-          WorkersObservabilityTelemetryEventWorkersBuilder();
-  set dollarWorkers(
-          WorkersObservabilityTelemetryEventWorkersBuilder? dollarWorkers) =>
-      _$this._dollarWorkers = dollarWorkers;
-
   String? _dataset;
   String? get dataset => _$this._dataset;
   set dataset(String? dataset) => _$this._dataset = dataset;
@@ -111,6 +103,14 @@ class WorkersObservabilityTelemetryEventBuilder
   int? get timestamp => _$this._timestamp;
   set timestamp(int? timestamp) => _$this._timestamp = timestamp;
 
+  WorkersObservabilityTelemetryEventWorkersBuilder? _dollarWorkers;
+  WorkersObservabilityTelemetryEventWorkersBuilder get dollarWorkers =>
+      _$this._dollarWorkers ??=
+          WorkersObservabilityTelemetryEventWorkersBuilder();
+  set dollarWorkers(
+          WorkersObservabilityTelemetryEventWorkersBuilder? dollarWorkers) =>
+      _$this._dollarWorkers = dollarWorkers;
+
   WorkersObservabilityTelemetryEventBuilder() {
     WorkersObservabilityTelemetryEvent._defaults(this);
   }
@@ -119,10 +119,10 @@ class WorkersObservabilityTelemetryEventBuilder
     final $v = _$v;
     if ($v != null) {
       _dollarMetadata = $v.dollarMetadata.toBuilder();
-      _dollarWorkers = $v.dollarWorkers?.toBuilder();
       _dataset = $v.dataset;
       _source_ = $v.source_.toBuilder();
       _timestamp = $v.timestamp;
+      _dollarWorkers = $v.dollarWorkers?.toBuilder();
       _$v = null;
     }
     return this;
@@ -148,23 +148,24 @@ class WorkersObservabilityTelemetryEventBuilder
       _$result = _$v ??
           _$WorkersObservabilityTelemetryEvent._(
             dollarMetadata: dollarMetadata.build(),
-            dollarWorkers: _dollarWorkers?.build(),
             dataset: BuiltValueNullFieldError.checkNotNull(
                 dataset, r'WorkersObservabilityTelemetryEvent', 'dataset'),
             source_: source_.build(),
             timestamp: BuiltValueNullFieldError.checkNotNull(
                 timestamp, r'WorkersObservabilityTelemetryEvent', 'timestamp'),
+            dollarWorkers: _dollarWorkers?.build(),
           );
     } catch (_) {
       late String _$failedField;
       try {
         _$failedField = 'dollarMetadata';
         dollarMetadata.build();
-        _$failedField = 'dollarWorkers';
-        _dollarWorkers?.build();
 
         _$failedField = 'source_';
         source_.build();
+
+        _$failedField = 'dollarWorkers';
+        _dollarWorkers?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
             r'WorkersObservabilityTelemetryEvent', _$failedField, e.toString());

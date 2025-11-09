@@ -10,11 +10,11 @@ class _$ServeErrorRuleActionParameters extends ServeErrorRuleActionParameters {
   @override
   final RulesetsServeErrorContentType contentType;
   @override
-  final int? statusCode;
-  @override
   final String content;
   @override
   final String assetName;
+  @override
+  final int? statusCode;
 
   factory _$ServeErrorRuleActionParameters(
           [void Function(ServeErrorRuleActionParametersBuilder)? updates]) =>
@@ -22,9 +22,9 @@ class _$ServeErrorRuleActionParameters extends ServeErrorRuleActionParameters {
 
   _$ServeErrorRuleActionParameters._(
       {required this.contentType,
-      this.statusCode,
       required this.content,
-      required this.assetName})
+      required this.assetName,
+      this.statusCode})
       : super._();
   @override
   ServeErrorRuleActionParameters rebuild(
@@ -40,18 +40,18 @@ class _$ServeErrorRuleActionParameters extends ServeErrorRuleActionParameters {
     if (identical(other, this)) return true;
     return other is ServeErrorRuleActionParameters &&
         contentType == other.contentType &&
-        statusCode == other.statusCode &&
         content == other.content &&
-        assetName == other.assetName;
+        assetName == other.assetName &&
+        statusCode == other.statusCode;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
     _$hash = $jc(_$hash, contentType.hashCode);
-    _$hash = $jc(_$hash, statusCode.hashCode);
     _$hash = $jc(_$hash, content.hashCode);
     _$hash = $jc(_$hash, assetName.hashCode);
+    _$hash = $jc(_$hash, statusCode.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -60,9 +60,9 @@ class _$ServeErrorRuleActionParameters extends ServeErrorRuleActionParameters {
   String toString() {
     return (newBuiltValueToStringHelper(r'ServeErrorRuleActionParameters')
           ..add('contentType', contentType)
-          ..add('statusCode', statusCode)
           ..add('content', content)
-          ..add('assetName', assetName))
+          ..add('assetName', assetName)
+          ..add('statusCode', statusCode))
         .toString();
   }
 }
@@ -78,10 +78,6 @@ class ServeErrorRuleActionParametersBuilder
   set contentType(RulesetsServeErrorContentType? contentType) =>
       _$this._contentType = contentType;
 
-  int? _statusCode;
-  int? get statusCode => _$this._statusCode;
-  set statusCode(int? statusCode) => _$this._statusCode = statusCode;
-
   String? _content;
   String? get content => _$this._content;
   set content(String? content) => _$this._content = content;
@@ -89,6 +85,10 @@ class ServeErrorRuleActionParametersBuilder
   String? _assetName;
   String? get assetName => _$this._assetName;
   set assetName(String? assetName) => _$this._assetName = assetName;
+
+  int? _statusCode;
+  int? get statusCode => _$this._statusCode;
+  set statusCode(int? statusCode) => _$this._statusCode = statusCode;
 
   ServeErrorRuleActionParametersBuilder() {
     ServeErrorRuleActionParameters._defaults(this);
@@ -98,9 +98,9 @@ class ServeErrorRuleActionParametersBuilder
     final $v = _$v;
     if ($v != null) {
       _contentType = $v.contentType;
-      _statusCode = $v.statusCode;
       _content = $v.content;
       _assetName = $v.assetName;
+      _statusCode = $v.statusCode;
       _$v = null;
     }
     return this;
@@ -124,11 +124,11 @@ class ServeErrorRuleActionParametersBuilder
         _$ServeErrorRuleActionParameters._(
           contentType: BuiltValueNullFieldError.checkNotNull(
               contentType, r'ServeErrorRuleActionParameters', 'contentType'),
-          statusCode: statusCode,
           content: BuiltValueNullFieldError.checkNotNull(
               content, r'ServeErrorRuleActionParameters', 'content'),
           assetName: BuiltValueNullFieldError.checkNotNull(
               assetName, r'ServeErrorRuleActionParameters', 'assetName'),
+          statusCode: statusCode,
         );
     replace(_$result);
     return _$result;

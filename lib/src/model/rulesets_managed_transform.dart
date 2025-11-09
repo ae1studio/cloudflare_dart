@@ -12,16 +12,12 @@ part 'rulesets_managed_transform.g.dart';
 /// A Managed Transform object.
 ///
 /// Properties:
-/// * [conflictsWith] - The Managed Transforms that this Managed Transform conflicts with.
 /// * [enabled] - Whether the Managed Transform is enabled.
 /// * [hasConflict] - Whether the Managed Transform conflicts with the currently-enabled Managed Transforms.
 /// * [id] - The human-readable identifier of the Managed Transform.
+/// * [conflictsWith] - The Managed Transforms that this Managed Transform conflicts with.
 @BuiltValue(instantiable: false)
 abstract class RulesetsManagedTransform  {
-  /// The Managed Transforms that this Managed Transform conflicts with.
-  @BuiltValueField(wireName: r'conflicts_with')
-  BuiltSet<String>? get conflictsWith;
-
   /// Whether the Managed Transform is enabled.
   @BuiltValueField(wireName: r'enabled')
   bool get enabled;
@@ -33,6 +29,10 @@ abstract class RulesetsManagedTransform  {
   /// The human-readable identifier of the Managed Transform.
   @BuiltValueField(wireName: r'id')
   String get id;
+
+  /// The Managed Transforms that this Managed Transform conflicts with.
+  @BuiltValueField(wireName: r'conflicts_with')
+  BuiltSet<String>? get conflictsWith;
 
   @BuiltValueSerializer(custom: true)
   static Serializer<RulesetsManagedTransform> get serializer => _$RulesetsManagedTransformSerializer();
@@ -50,13 +50,6 @@ class _$RulesetsManagedTransformSerializer implements PrimitiveSerializer<Rulese
     RulesetsManagedTransform object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
-    if (object.conflictsWith != null) {
-      yield r'conflicts_with';
-      yield serializers.serialize(
-        object.conflictsWith,
-        specifiedType: const FullType(BuiltSet, [FullType(String)]),
-      );
-    }
     yield r'enabled';
     yield serializers.serialize(
       object.enabled,
@@ -72,6 +65,13 @@ class _$RulesetsManagedTransformSerializer implements PrimitiveSerializer<Rulese
       object.id,
       specifiedType: const FullType(String),
     );
+    if (object.conflictsWith != null) {
+      yield r'conflicts_with';
+      yield serializers.serialize(
+        object.conflictsWith,
+        specifiedType: const FullType(BuiltSet, [FullType(String)]),
+      );
+    }
   }
 
   @override
@@ -135,13 +135,6 @@ class _$$RulesetsManagedTransformSerializer implements PrimitiveSerializer<$Rule
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'conflicts_with':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltSet, [FullType(String)]),
-          ) as BuiltSet<String>;
-          result.conflictsWith.replace(valueDes);
-          break;
         case r'enabled':
           final valueDes = serializers.deserialize(
             value,
@@ -162,6 +155,13 @@ class _$$RulesetsManagedTransformSerializer implements PrimitiveSerializer<$Rule
             specifiedType: const FullType(String),
           ) as String;
           result.id = valueDes;
+          break;
+        case r'conflicts_with':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BuiltSet, [FullType(String)]),
+          ) as BuiltSet<String>;
+          result.conflictsWith.replace(valueDes);
           break;
         default:
           unhandled.add(key);

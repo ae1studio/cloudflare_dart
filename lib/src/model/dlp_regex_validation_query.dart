@@ -11,16 +11,16 @@ part 'dlp_regex_validation_query.g.dart';
 /// DlpRegexValidationQuery
 ///
 /// Properties:
-/// * [maxMatchBytes] - Maximum number of bytes that the regular expression can match.  If this is `null` then there is no limit on the length. Patterns can use `*` and `+`. Otherwise repeats should use a range `{m,n}` to restrict patterns to the length. If this field is missing, then a default length limit is used.  Note that the length is specified in bytes. Since regular expressions use UTF-8 the pattern `.` can match up to 4 bytes. Hence `.{1,256}` has a maximum length of 1024 bytes.
 /// * [regex] 
+/// * [maxMatchBytes] - Maximum number of bytes that the regular expression can match.  If this is `null` then there is no limit on the length. Patterns can use `*` and `+`. Otherwise repeats should use a range `{m,n}` to restrict patterns to the length. If this field is missing, then a default length limit is used.  Note that the length is specified in bytes. Since regular expressions use UTF-8 the pattern `.` can match up to 4 bytes. Hence `.{1,256}` has a maximum length of 1024 bytes.
 @BuiltValue()
 abstract class DlpRegexValidationQuery implements Built<DlpRegexValidationQuery, DlpRegexValidationQueryBuilder> {
+  @BuiltValueField(wireName: r'regex')
+  String get regex;
+
   /// Maximum number of bytes that the regular expression can match.  If this is `null` then there is no limit on the length. Patterns can use `*` and `+`. Otherwise repeats should use a range `{m,n}` to restrict patterns to the length. If this field is missing, then a default length limit is used.  Note that the length is specified in bytes. Since regular expressions use UTF-8 the pattern `.` can match up to 4 bytes. Hence `.{1,256}` has a maximum length of 1024 bytes.
   @BuiltValueField(wireName: r'max_match_bytes')
   int? get maxMatchBytes;
-
-  @BuiltValueField(wireName: r'regex')
-  String get regex;
 
   DlpRegexValidationQuery._();
 
@@ -45,6 +45,11 @@ class _$DlpRegexValidationQuerySerializer implements PrimitiveSerializer<DlpRege
     DlpRegexValidationQuery object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    yield r'regex';
+    yield serializers.serialize(
+      object.regex,
+      specifiedType: const FullType(String),
+    );
     if (object.maxMatchBytes != null) {
       yield r'max_match_bytes';
       yield serializers.serialize(
@@ -52,11 +57,6 @@ class _$DlpRegexValidationQuerySerializer implements PrimitiveSerializer<DlpRege
         specifiedType: const FullType.nullable(int),
       );
     }
-    yield r'regex';
-    yield serializers.serialize(
-      object.regex,
-      specifiedType: const FullType(String),
-    );
   }
 
   @override
@@ -80,6 +80,13 @@ class _$DlpRegexValidationQuerySerializer implements PrimitiveSerializer<DlpRege
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
+        case r'regex':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.regex = valueDes;
+          break;
         case r'max_match_bytes':
           final valueDes = serializers.deserialize(
             value,
@@ -87,13 +94,6 @@ class _$DlpRegexValidationQuerySerializer implements PrimitiveSerializer<DlpRege
           ) as int?;
           if (valueDes == null) continue;
           result.maxMatchBytes = valueDes;
-          break;
-        case r'regex':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.regex = valueDes;
           break;
         default:
           unhandled.add(key);

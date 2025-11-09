@@ -16,13 +16,13 @@ part 'create_account_ruleset_request.g.dart';
 /// CreateAccountRulesetRequest
 ///
 /// Properties:
-/// * [description] - An informative description of the ruleset.
 /// * [id] - The unique ID of the ruleset.
 /// * [lastUpdated] - The timestamp of when the ruleset was last modified.
 /// * [name] - The human-readable name of the ruleset.
 /// * [version] - The version of the ruleset.
 /// * [kind] 
 /// * [phase] 
+/// * [description] - An informative description of the ruleset.
 /// * [rules] - The list of rules in the ruleset.
 @BuiltValue()
 abstract class CreateAccountRulesetRequest implements RulesetsRuleset, Built<CreateAccountRulesetRequest, CreateAccountRulesetRequestBuilder> {

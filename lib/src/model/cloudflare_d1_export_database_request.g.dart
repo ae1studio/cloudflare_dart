@@ -64,18 +64,18 @@ class _$CloudflareD1ExportDatabaseRequestOutputFormatEnumSerializer
 class _$CloudflareD1ExportDatabaseRequest
     extends CloudflareD1ExportDatabaseRequest {
   @override
+  final CloudflareD1ExportDatabaseRequestOutputFormatEnum outputFormat;
+  @override
   final String? currentBookmark;
   @override
   final CloudflareD1ExportDatabaseRequestDumpOptions? dumpOptions;
-  @override
-  final CloudflareD1ExportDatabaseRequestOutputFormatEnum outputFormat;
 
   factory _$CloudflareD1ExportDatabaseRequest(
           [void Function(CloudflareD1ExportDatabaseRequestBuilder)? updates]) =>
       (CloudflareD1ExportDatabaseRequestBuilder()..update(updates))._build();
 
   _$CloudflareD1ExportDatabaseRequest._(
-      {this.currentBookmark, this.dumpOptions, required this.outputFormat})
+      {required this.outputFormat, this.currentBookmark, this.dumpOptions})
       : super._();
   @override
   CloudflareD1ExportDatabaseRequest rebuild(
@@ -90,17 +90,17 @@ class _$CloudflareD1ExportDatabaseRequest
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is CloudflareD1ExportDatabaseRequest &&
+        outputFormat == other.outputFormat &&
         currentBookmark == other.currentBookmark &&
-        dumpOptions == other.dumpOptions &&
-        outputFormat == other.outputFormat;
+        dumpOptions == other.dumpOptions;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
+    _$hash = $jc(_$hash, outputFormat.hashCode);
     _$hash = $jc(_$hash, currentBookmark.hashCode);
     _$hash = $jc(_$hash, dumpOptions.hashCode);
-    _$hash = $jc(_$hash, outputFormat.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -108,9 +108,9 @@ class _$CloudflareD1ExportDatabaseRequest
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'CloudflareD1ExportDatabaseRequest')
+          ..add('outputFormat', outputFormat)
           ..add('currentBookmark', currentBookmark)
-          ..add('dumpOptions', dumpOptions)
-          ..add('outputFormat', outputFormat))
+          ..add('dumpOptions', dumpOptions))
         .toString();
   }
 }
@@ -120,6 +120,13 @@ class CloudflareD1ExportDatabaseRequestBuilder
         Builder<CloudflareD1ExportDatabaseRequest,
             CloudflareD1ExportDatabaseRequestBuilder> {
   _$CloudflareD1ExportDatabaseRequest? _$v;
+
+  CloudflareD1ExportDatabaseRequestOutputFormatEnum? _outputFormat;
+  CloudflareD1ExportDatabaseRequestOutputFormatEnum? get outputFormat =>
+      _$this._outputFormat;
+  set outputFormat(
+          CloudflareD1ExportDatabaseRequestOutputFormatEnum? outputFormat) =>
+      _$this._outputFormat = outputFormat;
 
   String? _currentBookmark;
   String? get currentBookmark => _$this._currentBookmark;
@@ -134,13 +141,6 @@ class CloudflareD1ExportDatabaseRequestBuilder
           CloudflareD1ExportDatabaseRequestDumpOptionsBuilder? dumpOptions) =>
       _$this._dumpOptions = dumpOptions;
 
-  CloudflareD1ExportDatabaseRequestOutputFormatEnum? _outputFormat;
-  CloudflareD1ExportDatabaseRequestOutputFormatEnum? get outputFormat =>
-      _$this._outputFormat;
-  set outputFormat(
-          CloudflareD1ExportDatabaseRequestOutputFormatEnum? outputFormat) =>
-      _$this._outputFormat = outputFormat;
-
   CloudflareD1ExportDatabaseRequestBuilder() {
     CloudflareD1ExportDatabaseRequest._defaults(this);
   }
@@ -148,9 +148,9 @@ class CloudflareD1ExportDatabaseRequestBuilder
   CloudflareD1ExportDatabaseRequestBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
+      _outputFormat = $v.outputFormat;
       _currentBookmark = $v.currentBookmark;
       _dumpOptions = $v.dumpOptions?.toBuilder();
-      _outputFormat = $v.outputFormat;
       _$v = null;
     }
     return this;
@@ -175,10 +175,10 @@ class CloudflareD1ExportDatabaseRequestBuilder
     try {
       _$result = _$v ??
           _$CloudflareD1ExportDatabaseRequest._(
-            currentBookmark: currentBookmark,
-            dumpOptions: _dumpOptions?.build(),
             outputFormat: BuiltValueNullFieldError.checkNotNull(outputFormat,
                 r'CloudflareD1ExportDatabaseRequest', 'outputFormat'),
+            currentBookmark: currentBookmark,
+            dumpOptions: _dumpOptions?.build(),
           );
     } catch (_) {
       late String _$failedField;

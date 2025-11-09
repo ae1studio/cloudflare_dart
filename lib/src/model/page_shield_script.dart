@@ -13,30 +13,49 @@ part 'page_shield_script.g.dart';
 ///
 /// Properties:
 /// * [addedAt] 
+/// * [firstSeenAt] 
+/// * [host] 
+/// * [id] - Identifier
+/// * [lastSeenAt] 
+/// * [url] 
+/// * [urlContainsCdnCgiPath] 
 /// * [cryptominingScore] - The cryptomining score of the JavaScript content.
 /// * [dataflowScore] - The dataflow score of the JavaScript content.
 /// * [domainReportedMalicious] 
 /// * [fetchedAt] - The timestamp of when the script was last fetched.
 /// * [firstPageUrl] 
-/// * [firstSeenAt] 
 /// * [hash] - The computed hash of the analyzed script.
-/// * [host] 
-/// * [id] - Identifier
 /// * [jsIntegrityScore] - The integrity score of the JavaScript content.
-/// * [lastSeenAt] 
 /// * [magecartScore] - The magecart score of the JavaScript content.
 /// * [maliciousDomainCategories] 
 /// * [maliciousUrlCategories] 
 /// * [malwareScore] - The malware score of the JavaScript content.
 /// * [obfuscationScore] - The obfuscation score of the JavaScript content.
 /// * [pageUrls] 
-/// * [url] 
-/// * [urlContainsCdnCgiPath] 
 /// * [urlReportedMalicious] 
 @BuiltValue(instantiable: false)
 abstract class PageShieldScript  {
   @BuiltValueField(wireName: r'added_at')
   DateTime get addedAt;
+
+  @BuiltValueField(wireName: r'first_seen_at')
+  DateTime get firstSeenAt;
+
+  @BuiltValueField(wireName: r'host')
+  String get host;
+
+  /// Identifier
+  @BuiltValueField(wireName: r'id')
+  String get id;
+
+  @BuiltValueField(wireName: r'last_seen_at')
+  DateTime get lastSeenAt;
+
+  @BuiltValueField(wireName: r'url')
+  String get url;
+
+  @BuiltValueField(wireName: r'url_contains_cdn_cgi_path')
+  bool get urlContainsCdnCgiPath;
 
   /// The cryptomining score of the JavaScript content.
   @BuiltValueField(wireName: r'cryptomining_score')
@@ -56,26 +75,13 @@ abstract class PageShieldScript  {
   @BuiltValueField(wireName: r'first_page_url')
   String? get firstPageUrl;
 
-  @BuiltValueField(wireName: r'first_seen_at')
-  DateTime get firstSeenAt;
-
   /// The computed hash of the analyzed script.
   @BuiltValueField(wireName: r'hash')
   String? get hash;
 
-  @BuiltValueField(wireName: r'host')
-  String get host;
-
-  /// Identifier
-  @BuiltValueField(wireName: r'id')
-  String get id;
-
   /// The integrity score of the JavaScript content.
   @BuiltValueField(wireName: r'js_integrity_score')
   int? get jsIntegrityScore;
-
-  @BuiltValueField(wireName: r'last_seen_at')
-  DateTime get lastSeenAt;
 
   /// The magecart score of the JavaScript content.
   @BuiltValueField(wireName: r'magecart_score')
@@ -97,12 +103,6 @@ abstract class PageShieldScript  {
 
   @BuiltValueField(wireName: r'page_urls')
   BuiltList<String>? get pageUrls;
-
-  @BuiltValueField(wireName: r'url')
-  String get url;
-
-  @BuiltValueField(wireName: r'url_contains_cdn_cgi_path')
-  bool get urlContainsCdnCgiPath;
 
   @BuiltValueField(wireName: r'url_reported_malicious')
   bool? get urlReportedMalicious;
@@ -127,6 +127,36 @@ class _$PageShieldScriptSerializer implements PrimitiveSerializer<PageShieldScri
     yield serializers.serialize(
       object.addedAt,
       specifiedType: const FullType(DateTime),
+    );
+    yield r'first_seen_at';
+    yield serializers.serialize(
+      object.firstSeenAt,
+      specifiedType: const FullType(DateTime),
+    );
+    yield r'host';
+    yield serializers.serialize(
+      object.host,
+      specifiedType: const FullType(String),
+    );
+    yield r'id';
+    yield serializers.serialize(
+      object.id,
+      specifiedType: const FullType(String),
+    );
+    yield r'last_seen_at';
+    yield serializers.serialize(
+      object.lastSeenAt,
+      specifiedType: const FullType(DateTime),
+    );
+    yield r'url';
+    yield serializers.serialize(
+      object.url,
+      specifiedType: const FullType(String),
+    );
+    yield r'url_contains_cdn_cgi_path';
+    yield serializers.serialize(
+      object.urlContainsCdnCgiPath,
+      specifiedType: const FullType(bool),
     );
     if (object.cryptominingScore != null) {
       yield r'cryptomining_score';
@@ -163,11 +193,6 @@ class _$PageShieldScriptSerializer implements PrimitiveSerializer<PageShieldScri
         specifiedType: const FullType(String),
       );
     }
-    yield r'first_seen_at';
-    yield serializers.serialize(
-      object.firstSeenAt,
-      specifiedType: const FullType(DateTime),
-    );
     if (object.hash != null) {
       yield r'hash';
       yield serializers.serialize(
@@ -175,16 +200,6 @@ class _$PageShieldScriptSerializer implements PrimitiveSerializer<PageShieldScri
         specifiedType: const FullType.nullable(String),
       );
     }
-    yield r'host';
-    yield serializers.serialize(
-      object.host,
-      specifiedType: const FullType(String),
-    );
-    yield r'id';
-    yield serializers.serialize(
-      object.id,
-      specifiedType: const FullType(String),
-    );
     if (object.jsIntegrityScore != null) {
       yield r'js_integrity_score';
       yield serializers.serialize(
@@ -192,11 +207,6 @@ class _$PageShieldScriptSerializer implements PrimitiveSerializer<PageShieldScri
         specifiedType: const FullType.nullable(int),
       );
     }
-    yield r'last_seen_at';
-    yield serializers.serialize(
-      object.lastSeenAt,
-      specifiedType: const FullType(DateTime),
-    );
     if (object.magecartScore != null) {
       yield r'magecart_score';
       yield serializers.serialize(
@@ -239,16 +249,6 @@ class _$PageShieldScriptSerializer implements PrimitiveSerializer<PageShieldScri
         specifiedType: const FullType(BuiltList, [FullType(String)]),
       );
     }
-    yield r'url';
-    yield serializers.serialize(
-      object.url,
-      specifiedType: const FullType(String),
-    );
-    yield r'url_contains_cdn_cgi_path';
-    yield serializers.serialize(
-      object.urlContainsCdnCgiPath,
-      specifiedType: const FullType(bool),
-    );
     if (object.urlReportedMalicious != null) {
       yield r'url_reported_malicious';
       yield serializers.serialize(
@@ -326,6 +326,48 @@ class _$$PageShieldScriptSerializer implements PrimitiveSerializer<$PageShieldSc
           ) as DateTime;
           result.addedAt = valueDes;
           break;
+        case r'first_seen_at':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(DateTime),
+          ) as DateTime;
+          result.firstSeenAt = valueDes;
+          break;
+        case r'host':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.host = valueDes;
+          break;
+        case r'id':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.id = valueDes;
+          break;
+        case r'last_seen_at':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(DateTime),
+          ) as DateTime;
+          result.lastSeenAt = valueDes;
+          break;
+        case r'url':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.url = valueDes;
+          break;
+        case r'url_contains_cdn_cgi_path':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(bool),
+          ) as bool;
+          result.urlContainsCdnCgiPath = valueDes;
+          break;
         case r'cryptomining_score':
           final valueDes = serializers.deserialize(
             value,
@@ -364,13 +406,6 @@ class _$$PageShieldScriptSerializer implements PrimitiveSerializer<$PageShieldSc
           ) as String;
           result.firstPageUrl = valueDes;
           break;
-        case r'first_seen_at':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
-          result.firstSeenAt = valueDes;
-          break;
         case r'hash':
           final valueDes = serializers.deserialize(
             value,
@@ -379,20 +414,6 @@ class _$$PageShieldScriptSerializer implements PrimitiveSerializer<$PageShieldSc
           if (valueDes == null) continue;
           result.hash = valueDes;
           break;
-        case r'host':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.host = valueDes;
-          break;
-        case r'id':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.id = valueDes;
-          break;
         case r'js_integrity_score':
           final valueDes = serializers.deserialize(
             value,
@@ -400,13 +421,6 @@ class _$$PageShieldScriptSerializer implements PrimitiveSerializer<$PageShieldSc
           ) as int?;
           if (valueDes == null) continue;
           result.jsIntegrityScore = valueDes;
-          break;
-        case r'last_seen_at':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
-          result.lastSeenAt = valueDes;
           break;
         case r'magecart_score':
           final valueDes = serializers.deserialize(
@@ -452,20 +466,6 @@ class _$$PageShieldScriptSerializer implements PrimitiveSerializer<$PageShieldSc
             specifiedType: const FullType(BuiltList, [FullType(String)]),
           ) as BuiltList<String>;
           result.pageUrls.replace(valueDes);
-          break;
-        case r'url':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.url = valueDes;
-          break;
-        case r'url_contains_cdn_cgi_path':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
-          result.urlContainsCdnCgiPath = valueDes;
           break;
         case r'url_reported_malicious':
           final valueDes = serializers.deserialize(

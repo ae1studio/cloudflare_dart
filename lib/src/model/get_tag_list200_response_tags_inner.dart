@@ -12,6 +12,8 @@ part 'get_tag_list200_response_tags_inner.g.dart';
 /// GetTagList200ResponseTagsInner
 ///
 /// Properties:
+/// * [uuid] 
+/// * [value] 
 /// * [activeDuration] 
 /// * [actorCategory] 
 /// * [aliasGroupNames] 
@@ -27,10 +29,14 @@ part 'get_tag_list200_response_tags_inner.g.dart';
 /// * [originCountryISO] 
 /// * [priority] 
 /// * [sophisticationLevel] 
-/// * [uuid] 
-/// * [value] 
 @BuiltValue()
 abstract class GetTagList200ResponseTagsInner implements Built<GetTagList200ResponseTagsInner, GetTagList200ResponseTagsInnerBuilder> {
+  @BuiltValueField(wireName: r'uuid')
+  String get uuid;
+
+  @BuiltValueField(wireName: r'value')
+  String get value;
+
   @BuiltValueField(wireName: r'activeDuration')
   String? get activeDuration;
 
@@ -76,12 +82,6 @@ abstract class GetTagList200ResponseTagsInner implements Built<GetTagList200Resp
   @BuiltValueField(wireName: r'sophisticationLevel')
   String? get sophisticationLevel;
 
-  @BuiltValueField(wireName: r'uuid')
-  String get uuid;
-
-  @BuiltValueField(wireName: r'value')
-  String get value;
-
   GetTagList200ResponseTagsInner._();
 
   factory GetTagList200ResponseTagsInner([void updates(GetTagList200ResponseTagsInnerBuilder b)]) = _$GetTagList200ResponseTagsInner;
@@ -105,6 +105,16 @@ class _$GetTagList200ResponseTagsInnerSerializer implements PrimitiveSerializer<
     GetTagList200ResponseTagsInner object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    yield r'uuid';
+    yield serializers.serialize(
+      object.uuid,
+      specifiedType: const FullType(String),
+    );
+    yield r'value';
+    yield serializers.serialize(
+      object.value,
+      specifiedType: const FullType(String),
+    );
     if (object.activeDuration != null) {
       yield r'activeDuration';
       yield serializers.serialize(
@@ -210,16 +220,6 @@ class _$GetTagList200ResponseTagsInnerSerializer implements PrimitiveSerializer<
         specifiedType: const FullType(String),
       );
     }
-    yield r'uuid';
-    yield serializers.serialize(
-      object.uuid,
-      specifiedType: const FullType(String),
-    );
-    yield r'value';
-    yield serializers.serialize(
-      object.value,
-      specifiedType: const FullType(String),
-    );
   }
 
   @override
@@ -243,6 +243,20 @@ class _$GetTagList200ResponseTagsInnerSerializer implements PrimitiveSerializer<
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
+        case r'uuid':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.uuid = valueDes;
+          break;
+        case r'value':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.value = valueDes;
+          break;
         case r'activeDuration':
           final valueDes = serializers.deserialize(
             value,
@@ -347,20 +361,6 @@ class _$GetTagList200ResponseTagsInnerSerializer implements PrimitiveSerializer<
             specifiedType: const FullType(String),
           ) as String;
           result.sophisticationLevel = valueDes;
-          break;
-        case r'uuid':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.uuid = valueDes;
-          break;
-        case r'value':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.value = valueDes;
           break;
         default:
           unhandled.add(key);

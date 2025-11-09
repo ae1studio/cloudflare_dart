@@ -12,13 +12,22 @@ part 'workers_binding_kind_send_email.g.dart';
 /// WorkersBindingKindSendEmail
 ///
 /// Properties:
+/// * [name] - A JavaScript variable name for the binding.
+/// * [type] - The kind of resource that the binding provides.
 /// * [allowedDestinationAddresses] - List of allowed destination addresses.
 /// * [allowedSenderAddresses] - List of allowed sender addresses.
 /// * [destinationAddress] - Destination address for the email.
-/// * [name] - A JavaScript variable name for the binding.
-/// * [type] - The kind of resource that the binding provides.
 @BuiltValue()
 abstract class WorkersBindingKindSendEmail implements Built<WorkersBindingKindSendEmail, WorkersBindingKindSendEmailBuilder> {
+  /// A JavaScript variable name for the binding.
+  @BuiltValueField(wireName: r'name')
+  String get name;
+
+  /// The kind of resource that the binding provides.
+  @BuiltValueField(wireName: r'type')
+  WorkersBindingKindSendEmailTypeEnum get type;
+  // enum typeEnum {  send_email,  };
+
   /// List of allowed destination addresses.
   @BuiltValueField(wireName: r'allowed_destination_addresses')
   BuiltList<String>? get allowedDestinationAddresses;
@@ -30,15 +39,6 @@ abstract class WorkersBindingKindSendEmail implements Built<WorkersBindingKindSe
   /// Destination address for the email.
   @BuiltValueField(wireName: r'destination_address')
   String? get destinationAddress;
-
-  /// A JavaScript variable name for the binding.
-  @BuiltValueField(wireName: r'name')
-  String get name;
-
-  /// The kind of resource that the binding provides.
-  @BuiltValueField(wireName: r'type')
-  WorkersBindingKindSendEmailTypeEnum get type;
-  // enum typeEnum {  send_email,  };
 
   WorkersBindingKindSendEmail._();
 
@@ -63,6 +63,16 @@ class _$WorkersBindingKindSendEmailSerializer implements PrimitiveSerializer<Wor
     WorkersBindingKindSendEmail object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    yield r'name';
+    yield serializers.serialize(
+      object.name,
+      specifiedType: const FullType(String),
+    );
+    yield r'type';
+    yield serializers.serialize(
+      object.type,
+      specifiedType: const FullType(WorkersBindingKindSendEmailTypeEnum),
+    );
     if (object.allowedDestinationAddresses != null) {
       yield r'allowed_destination_addresses';
       yield serializers.serialize(
@@ -84,16 +94,6 @@ class _$WorkersBindingKindSendEmailSerializer implements PrimitiveSerializer<Wor
         specifiedType: const FullType(String),
       );
     }
-    yield r'name';
-    yield serializers.serialize(
-      object.name,
-      specifiedType: const FullType(String),
-    );
-    yield r'type';
-    yield serializers.serialize(
-      object.type,
-      specifiedType: const FullType(WorkersBindingKindSendEmailTypeEnum),
-    );
   }
 
   @override
@@ -117,6 +117,20 @@ class _$WorkersBindingKindSendEmailSerializer implements PrimitiveSerializer<Wor
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
+        case r'name':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.name = valueDes;
+          break;
+        case r'type':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(WorkersBindingKindSendEmailTypeEnum),
+          ) as WorkersBindingKindSendEmailTypeEnum;
+          result.type = valueDes;
+          break;
         case r'allowed_destination_addresses':
           final valueDes = serializers.deserialize(
             value,
@@ -137,20 +151,6 @@ class _$WorkersBindingKindSendEmailSerializer implements PrimitiveSerializer<Wor
             specifiedType: const FullType(String),
           ) as String;
           result.destinationAddress = valueDes;
-          break;
-        case r'name':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.name = valueDes;
-          break;
-        case r'type':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(WorkersBindingKindSendEmailTypeEnum),
-          ) as WorkersBindingKindSendEmailTypeEnum;
-          result.type = valueDes;
           break;
         default:
           unhandled.add(key);

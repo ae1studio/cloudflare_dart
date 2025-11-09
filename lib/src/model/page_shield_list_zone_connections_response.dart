@@ -16,10 +16,10 @@ part 'page_shield_list_zone_connections_response.g.dart';
 /// PageShieldListZoneConnectionsResponse
 ///
 /// Properties:
-/// * [errors] 
-/// * [messages] 
 /// * [success] - Whether the API call was successful
 /// * [resultInfo] 
+/// * [errors] 
+/// * [messages] 
 /// * [result] 
 @BuiltValue()
 abstract class PageShieldListZoneConnectionsResponse implements PageShieldApiListResponseCollection, Built<PageShieldListZoneConnectionsResponse, PageShieldListZoneConnectionsResponseBuilder> {

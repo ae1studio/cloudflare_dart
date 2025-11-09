@@ -9,23 +9,23 @@ part of 'teams_devices_tanium_config_request.dart';
 class _$TeamsDevicesTaniumConfigRequest
     extends TeamsDevicesTaniumConfigRequest {
   @override
-  final String? accessClientId;
-  @override
-  final String? accessClientSecret;
-  @override
   final String apiUrl;
   @override
   final String clientSecret;
+  @override
+  final String? accessClientId;
+  @override
+  final String? accessClientSecret;
 
   factory _$TeamsDevicesTaniumConfigRequest(
           [void Function(TeamsDevicesTaniumConfigRequestBuilder)? updates]) =>
       (TeamsDevicesTaniumConfigRequestBuilder()..update(updates))._build();
 
   _$TeamsDevicesTaniumConfigRequest._(
-      {this.accessClientId,
-      this.accessClientSecret,
-      required this.apiUrl,
-      required this.clientSecret})
+      {required this.apiUrl,
+      required this.clientSecret,
+      this.accessClientId,
+      this.accessClientSecret})
       : super._();
   @override
   TeamsDevicesTaniumConfigRequest rebuild(
@@ -40,19 +40,19 @@ class _$TeamsDevicesTaniumConfigRequest
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is TeamsDevicesTaniumConfigRequest &&
-        accessClientId == other.accessClientId &&
-        accessClientSecret == other.accessClientSecret &&
         apiUrl == other.apiUrl &&
-        clientSecret == other.clientSecret;
+        clientSecret == other.clientSecret &&
+        accessClientId == other.accessClientId &&
+        accessClientSecret == other.accessClientSecret;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, accessClientId.hashCode);
-    _$hash = $jc(_$hash, accessClientSecret.hashCode);
     _$hash = $jc(_$hash, apiUrl.hashCode);
     _$hash = $jc(_$hash, clientSecret.hashCode);
+    _$hash = $jc(_$hash, accessClientId.hashCode);
+    _$hash = $jc(_$hash, accessClientSecret.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -60,10 +60,10 @@ class _$TeamsDevicesTaniumConfigRequest
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'TeamsDevicesTaniumConfigRequest')
-          ..add('accessClientId', accessClientId)
-          ..add('accessClientSecret', accessClientSecret)
           ..add('apiUrl', apiUrl)
-          ..add('clientSecret', clientSecret))
+          ..add('clientSecret', clientSecret)
+          ..add('accessClientId', accessClientId)
+          ..add('accessClientSecret', accessClientSecret))
         .toString();
   }
 }
@@ -73,6 +73,14 @@ class TeamsDevicesTaniumConfigRequestBuilder
         Builder<TeamsDevicesTaniumConfigRequest,
             TeamsDevicesTaniumConfigRequestBuilder> {
   _$TeamsDevicesTaniumConfigRequest? _$v;
+
+  String? _apiUrl;
+  String? get apiUrl => _$this._apiUrl;
+  set apiUrl(String? apiUrl) => _$this._apiUrl = apiUrl;
+
+  String? _clientSecret;
+  String? get clientSecret => _$this._clientSecret;
+  set clientSecret(String? clientSecret) => _$this._clientSecret = clientSecret;
 
   String? _accessClientId;
   String? get accessClientId => _$this._accessClientId;
@@ -84,14 +92,6 @@ class TeamsDevicesTaniumConfigRequestBuilder
   set accessClientSecret(String? accessClientSecret) =>
       _$this._accessClientSecret = accessClientSecret;
 
-  String? _apiUrl;
-  String? get apiUrl => _$this._apiUrl;
-  set apiUrl(String? apiUrl) => _$this._apiUrl = apiUrl;
-
-  String? _clientSecret;
-  String? get clientSecret => _$this._clientSecret;
-  set clientSecret(String? clientSecret) => _$this._clientSecret = clientSecret;
-
   TeamsDevicesTaniumConfigRequestBuilder() {
     TeamsDevicesTaniumConfigRequest._defaults(this);
   }
@@ -99,10 +99,10 @@ class TeamsDevicesTaniumConfigRequestBuilder
   TeamsDevicesTaniumConfigRequestBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _accessClientId = $v.accessClientId;
-      _accessClientSecret = $v.accessClientSecret;
       _apiUrl = $v.apiUrl;
       _clientSecret = $v.clientSecret;
+      _accessClientId = $v.accessClientId;
+      _accessClientSecret = $v.accessClientSecret;
       _$v = null;
     }
     return this;
@@ -124,12 +124,12 @@ class TeamsDevicesTaniumConfigRequestBuilder
   _$TeamsDevicesTaniumConfigRequest _build() {
     final _$result = _$v ??
         _$TeamsDevicesTaniumConfigRequest._(
-          accessClientId: accessClientId,
-          accessClientSecret: accessClientSecret,
           apiUrl: BuiltValueNullFieldError.checkNotNull(
               apiUrl, r'TeamsDevicesTaniumConfigRequest', 'apiUrl'),
           clientSecret: BuiltValueNullFieldError.checkNotNull(
               clientSecret, r'TeamsDevicesTaniumConfigRequest', 'clientSecret'),
+          accessClientId: accessClientId,
+          accessClientSecret: accessClientSecret,
         );
     replace(_$result);
     return _$result;

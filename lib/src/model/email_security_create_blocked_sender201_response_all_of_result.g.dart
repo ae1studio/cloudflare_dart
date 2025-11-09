@@ -9,8 +9,6 @@ part of 'email_security_create_blocked_sender201_response_all_of_result.dart';
 class _$EmailSecurityCreateBlockedSender201ResponseAllOfResult
     extends EmailSecurityCreateBlockedSender201ResponseAllOfResult {
   @override
-  final String? comments;
-  @override
   final bool isRegex;
   @override
   final String pattern;
@@ -22,6 +20,8 @@ class _$EmailSecurityCreateBlockedSender201ResponseAllOfResult
   final int id;
   @override
   final DateTime lastModified;
+  @override
+  final String? comments;
 
   factory _$EmailSecurityCreateBlockedSender201ResponseAllOfResult(
           [void Function(
@@ -32,13 +32,13 @@ class _$EmailSecurityCreateBlockedSender201ResponseAllOfResult
           ._build();
 
   _$EmailSecurityCreateBlockedSender201ResponseAllOfResult._(
-      {this.comments,
-      required this.isRegex,
+      {required this.isRegex,
       required this.pattern,
       required this.patternType,
       required this.createdAt,
       required this.id,
-      required this.lastModified})
+      required this.lastModified,
+      this.comments})
       : super._();
   @override
   EmailSecurityCreateBlockedSender201ResponseAllOfResult rebuild(
@@ -56,25 +56,25 @@ class _$EmailSecurityCreateBlockedSender201ResponseAllOfResult
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is EmailSecurityCreateBlockedSender201ResponseAllOfResult &&
-        comments == other.comments &&
         isRegex == other.isRegex &&
         pattern == other.pattern &&
         patternType == other.patternType &&
         createdAt == other.createdAt &&
         id == other.id &&
-        lastModified == other.lastModified;
+        lastModified == other.lastModified &&
+        comments == other.comments;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, comments.hashCode);
     _$hash = $jc(_$hash, isRegex.hashCode);
     _$hash = $jc(_$hash, pattern.hashCode);
     _$hash = $jc(_$hash, patternType.hashCode);
     _$hash = $jc(_$hash, createdAt.hashCode);
     _$hash = $jc(_$hash, id.hashCode);
     _$hash = $jc(_$hash, lastModified.hashCode);
+    _$hash = $jc(_$hash, comments.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -83,13 +83,13 @@ class _$EmailSecurityCreateBlockedSender201ResponseAllOfResult
   String toString() {
     return (newBuiltValueToStringHelper(
             r'EmailSecurityCreateBlockedSender201ResponseAllOfResult')
-          ..add('comments', comments)
           ..add('isRegex', isRegex)
           ..add('pattern', pattern)
           ..add('patternType', patternType)
           ..add('createdAt', createdAt)
           ..add('id', id)
-          ..add('lastModified', lastModified))
+          ..add('lastModified', lastModified)
+          ..add('comments', comments))
         .toString();
   }
 }
@@ -99,10 +99,6 @@ class EmailSecurityCreateBlockedSender201ResponseAllOfResultBuilder
         Builder<EmailSecurityCreateBlockedSender201ResponseAllOfResult,
             EmailSecurityCreateBlockedSender201ResponseAllOfResultBuilder> {
   _$EmailSecurityCreateBlockedSender201ResponseAllOfResult? _$v;
-
-  String? _comments;
-  String? get comments => _$this._comments;
-  set comments(String? comments) => _$this._comments = comments;
 
   bool? _isRegex;
   bool? get isRegex => _$this._isRegex;
@@ -130,6 +126,10 @@ class EmailSecurityCreateBlockedSender201ResponseAllOfResultBuilder
   set lastModified(DateTime? lastModified) =>
       _$this._lastModified = lastModified;
 
+  String? _comments;
+  String? get comments => _$this._comments;
+  set comments(String? comments) => _$this._comments = comments;
+
   EmailSecurityCreateBlockedSender201ResponseAllOfResultBuilder() {
     EmailSecurityCreateBlockedSender201ResponseAllOfResult._defaults(this);
   }
@@ -137,13 +137,13 @@ class EmailSecurityCreateBlockedSender201ResponseAllOfResultBuilder
   EmailSecurityCreateBlockedSender201ResponseAllOfResultBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _comments = $v.comments;
       _isRegex = $v.isRegex;
       _pattern = $v.pattern;
       _patternType = $v.patternType;
       _createdAt = $v.createdAt;
       _id = $v.id;
       _lastModified = $v.lastModified;
+      _comments = $v.comments;
       _$v = null;
     }
     return this;
@@ -168,7 +168,6 @@ class EmailSecurityCreateBlockedSender201ResponseAllOfResultBuilder
   _$EmailSecurityCreateBlockedSender201ResponseAllOfResult _build() {
     final _$result = _$v ??
         _$EmailSecurityCreateBlockedSender201ResponseAllOfResult._(
-          comments: comments,
           isRegex: BuiltValueNullFieldError.checkNotNull(
               isRegex,
               r'EmailSecurityCreateBlockedSender201ResponseAllOfResult',
@@ -191,6 +190,7 @@ class EmailSecurityCreateBlockedSender201ResponseAllOfResultBuilder
               lastModified,
               r'EmailSecurityCreateBlockedSender201ResponseAllOfResult',
               'lastModified'),
+          comments: comments,
         );
     replace(_$result);
     return _$result;

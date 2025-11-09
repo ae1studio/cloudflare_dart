@@ -9,8 +9,8 @@ import 'package:cloudflare_dart/api.dart';
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **config** | [**VectorizeIndexConfiguration**](VectorizeIndexConfiguration.md) |  | 
-**description** | **String** | Specifies the description of the index. | [optional] 
 **name** | **String** |  | 
+**description** | **String** | Specifies the description of the index. | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

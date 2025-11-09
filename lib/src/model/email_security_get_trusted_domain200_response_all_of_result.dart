@@ -11,7 +11,6 @@ part 'email_security_get_trusted_domain200_response_all_of_result.g.dart';
 /// EmailSecurityGetTrustedDomain200ResponseAllOfResult
 ///
 /// Properties:
-/// * [comments] 
 /// * [isRecent] - Select to prevent recently registered domains from triggering a Suspicious or Malicious disposition.
 /// * [isRegex] 
 /// * [isSimilarity] - Select for partner or other approved domains that have similar spelling to your connected domains. Prevents listed domains from triggering a Spoof disposition.
@@ -19,11 +18,9 @@ part 'email_security_get_trusted_domain200_response_all_of_result.g.dart';
 /// * [createdAt] 
 /// * [id] - The unique identifier for the trusted domain.
 /// * [lastModified] 
+/// * [comments] 
 @BuiltValue()
 abstract class EmailSecurityGetTrustedDomain200ResponseAllOfResult implements Built<EmailSecurityGetTrustedDomain200ResponseAllOfResult, EmailSecurityGetTrustedDomain200ResponseAllOfResultBuilder> {
-  @BuiltValueField(wireName: r'comments')
-  String? get comments;
-
   /// Select to prevent recently registered domains from triggering a Suspicious or Malicious disposition.
   @BuiltValueField(wireName: r'is_recent')
   bool get isRecent;
@@ -48,6 +45,9 @@ abstract class EmailSecurityGetTrustedDomain200ResponseAllOfResult implements Bu
   @BuiltValueField(wireName: r'last_modified')
   DateTime get lastModified;
 
+  @BuiltValueField(wireName: r'comments')
+  String? get comments;
+
   EmailSecurityGetTrustedDomain200ResponseAllOfResult._();
 
   factory EmailSecurityGetTrustedDomain200ResponseAllOfResult([void updates(EmailSecurityGetTrustedDomain200ResponseAllOfResultBuilder b)]) = _$EmailSecurityGetTrustedDomain200ResponseAllOfResult;
@@ -71,13 +71,6 @@ class _$EmailSecurityGetTrustedDomain200ResponseAllOfResultSerializer implements
     EmailSecurityGetTrustedDomain200ResponseAllOfResult object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
-    if (object.comments != null) {
-      yield r'comments';
-      yield serializers.serialize(
-        object.comments,
-        specifiedType: const FullType.nullable(String),
-      );
-    }
     yield r'is_recent';
     yield serializers.serialize(
       object.isRecent,
@@ -113,6 +106,13 @@ class _$EmailSecurityGetTrustedDomain200ResponseAllOfResultSerializer implements
       object.lastModified,
       specifiedType: const FullType(DateTime),
     );
+    if (object.comments != null) {
+      yield r'comments';
+      yield serializers.serialize(
+        object.comments,
+        specifiedType: const FullType.nullable(String),
+      );
+    }
   }
 
   @override
@@ -136,14 +136,6 @@ class _$EmailSecurityGetTrustedDomain200ResponseAllOfResultSerializer implements
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'comments':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
-          if (valueDes == null) continue;
-          result.comments = valueDes;
-          break;
         case r'is_recent':
           final valueDes = serializers.deserialize(
             value,
@@ -192,6 +184,14 @@ class _$EmailSecurityGetTrustedDomain200ResponseAllOfResultSerializer implements
             specifiedType: const FullType(DateTime),
           ) as DateTime;
           result.lastModified = valueDes;
+          break;
+        case r'comments':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType.nullable(String),
+          ) as String?;
+          if (valueDes == null) continue;
+          result.comments = valueDes;
           break;
         default:
           unhandled.add(key);

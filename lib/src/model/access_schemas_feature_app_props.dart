@@ -13,14 +13,18 @@ part 'access_schemas_feature_app_props.g.dart';
 /// AccessSchemasFeatureAppProps
 ///
 /// Properties:
+/// * [type] 
 /// * [allowedIdps] - The identity providers your users can select when connecting to this application. Defaults to all IdPs configured in your account.
 /// * [autoRedirectToIdentity] - When set to `true`, users skip the identity provider selection step during login. You must specify only one identity provider in allowed_idps.
 /// * [domain] - The domain and path that Access will secure.
 /// * [name] - The name of the application.
 /// * [sessionDuration] - The amount of time that tokens issued for this application will be valid. Must be in the format `300ms` or `2h45m`. Valid time units are: ns, us (or µs), ms, s, m, h.
-/// * [type] 
 @BuiltValue(instantiable: false)
 abstract class AccessSchemasFeatureAppProps  {
+  @BuiltValueField(wireName: r'type')
+  AccessComponentsSchemasType get type;
+  // enum typeEnum {  self_hosted,  saas,  ssh,  vnc,  app_launcher,  warp,  biso,  bookmark,  dash_sso,  };
+
   /// The identity providers your users can select when connecting to this application. Defaults to all IdPs configured in your account.
   @BuiltValueField(wireName: r'allowed_idps')
   BuiltList<String>? get allowedIdps;
@@ -41,10 +45,6 @@ abstract class AccessSchemasFeatureAppProps  {
   @BuiltValueField(wireName: r'session_duration')
   String? get sessionDuration;
 
-  @BuiltValueField(wireName: r'type')
-  AccessComponentsSchemasType get type;
-  // enum typeEnum {  self_hosted,  saas,  ssh,  vnc,  app_launcher,  warp,  biso,  bookmark,  dash_sso,  };
-
   @BuiltValueSerializer(custom: true)
   static Serializer<AccessSchemasFeatureAppProps> get serializer => _$AccessSchemasFeatureAppPropsSerializer();
 }
@@ -61,6 +61,11 @@ class _$AccessSchemasFeatureAppPropsSerializer implements PrimitiveSerializer<Ac
     AccessSchemasFeatureAppProps object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    yield r'type';
+    yield serializers.serialize(
+      object.type,
+      specifiedType: const FullType(AccessComponentsSchemasType),
+    );
     if (object.allowedIdps != null) {
       yield r'allowed_idps';
       yield serializers.serialize(
@@ -96,11 +101,6 @@ class _$AccessSchemasFeatureAppPropsSerializer implements PrimitiveSerializer<Ac
         specifiedType: const FullType(String),
       );
     }
-    yield r'type';
-    yield serializers.serialize(
-      object.type,
-      specifiedType: const FullType(AccessComponentsSchemasType),
-    );
   }
 
   @override
@@ -164,6 +164,13 @@ class _$$AccessSchemasFeatureAppPropsSerializer implements PrimitiveSerializer<$
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
+        case r'type':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(AccessComponentsSchemasType),
+          ) as AccessComponentsSchemasType;
+          result.type = valueDes;
+          break;
         case r'allowed_idps':
           final valueDes = serializers.deserialize(
             value,
@@ -198,13 +205,6 @@ class _$$AccessSchemasFeatureAppPropsSerializer implements PrimitiveSerializer<$
             specifiedType: const FullType(String),
           ) as String;
           result.sessionDuration = valueDes;
-          break;
-        case r'type':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(AccessComponentsSchemasType),
-          ) as AccessComponentsSchemasType;
-          result.type = valueDes;
           break;
         default:
           unhandled.add(key);

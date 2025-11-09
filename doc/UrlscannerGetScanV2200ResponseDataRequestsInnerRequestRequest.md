@@ -8,13 +8,13 @@ import 'package:cloudflare_dart/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**headers** | [**JsonObject**](.md) |  | [optional] 
 **initialPriority** | **String** |  | 
 **isSameSite** | **bool** |  | 
 **method** | **String** |  | 
 **mixedContentType** | **String** |  | 
 **referrerPolicy** | **String** |  | 
 **url** | **String** |  | 
+**headers** | [**JsonObject**](.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

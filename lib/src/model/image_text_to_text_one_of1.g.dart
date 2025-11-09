@@ -8,15 +8,15 @@ part of 'image_text_to_text_one_of1.dart';
 
 class _$ImageTextToTextOneOf1 extends ImageTextToTextOneOf1 {
   @override
+  final String image;
+  @override
+  final BuiltList<MessagesMessagesInner> messages;
+  @override
   final num? frequencyPenalty;
   @override
   final bool? ignoreEos;
   @override
-  final String image;
-  @override
   final int? maxTokens;
-  @override
-  final BuiltList<MessagesMessagesInner> messages;
   @override
   final num? presencePenalty;
   @override
@@ -35,11 +35,11 @@ class _$ImageTextToTextOneOf1 extends ImageTextToTextOneOf1 {
       (ImageTextToTextOneOf1Builder()..update(updates))._build();
 
   _$ImageTextToTextOneOf1._(
-      {this.frequencyPenalty,
-      this.ignoreEos,
-      required this.image,
-      this.maxTokens,
+      {required this.image,
       required this.messages,
+      this.frequencyPenalty,
+      this.ignoreEos,
+      this.maxTokens,
       this.presencePenalty,
       this.repetitionPenalty,
       this.seed,
@@ -60,11 +60,11 @@ class _$ImageTextToTextOneOf1 extends ImageTextToTextOneOf1 {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is ImageTextToTextOneOf1 &&
+        image == other.image &&
+        messages == other.messages &&
         frequencyPenalty == other.frequencyPenalty &&
         ignoreEos == other.ignoreEos &&
-        image == other.image &&
         maxTokens == other.maxTokens &&
-        messages == other.messages &&
         presencePenalty == other.presencePenalty &&
         repetitionPenalty == other.repetitionPenalty &&
         seed == other.seed &&
@@ -76,11 +76,11 @@ class _$ImageTextToTextOneOf1 extends ImageTextToTextOneOf1 {
   @override
   int get hashCode {
     var _$hash = 0;
+    _$hash = $jc(_$hash, image.hashCode);
+    _$hash = $jc(_$hash, messages.hashCode);
     _$hash = $jc(_$hash, frequencyPenalty.hashCode);
     _$hash = $jc(_$hash, ignoreEos.hashCode);
-    _$hash = $jc(_$hash, image.hashCode);
     _$hash = $jc(_$hash, maxTokens.hashCode);
-    _$hash = $jc(_$hash, messages.hashCode);
     _$hash = $jc(_$hash, presencePenalty.hashCode);
     _$hash = $jc(_$hash, repetitionPenalty.hashCode);
     _$hash = $jc(_$hash, seed.hashCode);
@@ -94,11 +94,11 @@ class _$ImageTextToTextOneOf1 extends ImageTextToTextOneOf1 {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'ImageTextToTextOneOf1')
+          ..add('image', image)
+          ..add('messages', messages)
           ..add('frequencyPenalty', frequencyPenalty)
           ..add('ignoreEos', ignoreEos)
-          ..add('image', image)
           ..add('maxTokens', maxTokens)
-          ..add('messages', messages)
           ..add('presencePenalty', presencePenalty)
           ..add('repetitionPenalty', repetitionPenalty)
           ..add('seed', seed)
@@ -113,6 +113,16 @@ class ImageTextToTextOneOf1Builder
     implements Builder<ImageTextToTextOneOf1, ImageTextToTextOneOf1Builder> {
   _$ImageTextToTextOneOf1? _$v;
 
+  String? _image;
+  String? get image => _$this._image;
+  set image(String? image) => _$this._image = image;
+
+  ListBuilder<MessagesMessagesInner>? _messages;
+  ListBuilder<MessagesMessagesInner> get messages =>
+      _$this._messages ??= ListBuilder<MessagesMessagesInner>();
+  set messages(ListBuilder<MessagesMessagesInner>? messages) =>
+      _$this._messages = messages;
+
   num? _frequencyPenalty;
   num? get frequencyPenalty => _$this._frequencyPenalty;
   set frequencyPenalty(num? frequencyPenalty) =>
@@ -122,19 +132,9 @@ class ImageTextToTextOneOf1Builder
   bool? get ignoreEos => _$this._ignoreEos;
   set ignoreEos(bool? ignoreEos) => _$this._ignoreEos = ignoreEos;
 
-  String? _image;
-  String? get image => _$this._image;
-  set image(String? image) => _$this._image = image;
-
   int? _maxTokens;
   int? get maxTokens => _$this._maxTokens;
   set maxTokens(int? maxTokens) => _$this._maxTokens = maxTokens;
-
-  ListBuilder<MessagesMessagesInner>? _messages;
-  ListBuilder<MessagesMessagesInner> get messages =>
-      _$this._messages ??= ListBuilder<MessagesMessagesInner>();
-  set messages(ListBuilder<MessagesMessagesInner>? messages) =>
-      _$this._messages = messages;
 
   num? _presencePenalty;
   num? get presencePenalty => _$this._presencePenalty;
@@ -169,11 +169,11 @@ class ImageTextToTextOneOf1Builder
   ImageTextToTextOneOf1Builder get _$this {
     final $v = _$v;
     if ($v != null) {
+      _image = $v.image;
+      _messages = $v.messages.toBuilder();
       _frequencyPenalty = $v.frequencyPenalty;
       _ignoreEos = $v.ignoreEos;
-      _image = $v.image;
       _maxTokens = $v.maxTokens;
-      _messages = $v.messages.toBuilder();
       _presencePenalty = $v.presencePenalty;
       _repetitionPenalty = $v.repetitionPenalty;
       _seed = $v.seed;
@@ -203,12 +203,12 @@ class ImageTextToTextOneOf1Builder
     try {
       _$result = _$v ??
           _$ImageTextToTextOneOf1._(
-            frequencyPenalty: frequencyPenalty,
-            ignoreEos: ignoreEos,
             image: BuiltValueNullFieldError.checkNotNull(
                 image, r'ImageTextToTextOneOf1', 'image'),
-            maxTokens: maxTokens,
             messages: messages.build(),
+            frequencyPenalty: frequencyPenalty,
+            ignoreEos: ignoreEos,
+            maxTokens: maxTokens,
             presencePenalty: presencePenalty,
             repetitionPenalty: repetitionPenalty,
             seed: seed,

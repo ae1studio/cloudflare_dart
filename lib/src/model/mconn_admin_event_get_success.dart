@@ -15,10 +15,10 @@ part 'mconn_admin_event_get_success.g.dart';
 /// MconnAdminEventGetSuccess
 ///
 /// Properties:
-/// * [errors] 
-/// * [messages] 
 /// * [success] 
 /// * [result] 
+/// * [errors] 
+/// * [messages] 
 @BuiltValue()
 abstract class MconnAdminEventGetSuccess implements MconnEnvelope, Built<MconnAdminEventGetSuccess, MconnAdminEventGetSuccessBuilder> {
   @BuiltValueField(wireName: r'result')

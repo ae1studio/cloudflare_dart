@@ -11,19 +11,19 @@ part 'dlp_new_document_fingerprint.g.dart';
 /// DlpNewDocumentFingerprint
 ///
 /// Properties:
-/// * [description] 
 /// * [matchPercent] 
 /// * [name] 
+/// * [description] 
 @BuiltValue()
 abstract class DlpNewDocumentFingerprint implements Built<DlpNewDocumentFingerprint, DlpNewDocumentFingerprintBuilder> {
-  @BuiltValueField(wireName: r'description')
-  String? get description;
-
   @BuiltValueField(wireName: r'match_percent')
   int get matchPercent;
 
   @BuiltValueField(wireName: r'name')
   String get name;
+
+  @BuiltValueField(wireName: r'description')
+  String? get description;
 
   DlpNewDocumentFingerprint._();
 
@@ -49,13 +49,6 @@ class _$DlpNewDocumentFingerprintSerializer implements PrimitiveSerializer<DlpNe
     DlpNewDocumentFingerprint object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
-    if (object.description != null) {
-      yield r'description';
-      yield serializers.serialize(
-        object.description,
-        specifiedType: const FullType(String),
-      );
-    }
     yield r'match_percent';
     yield serializers.serialize(
       object.matchPercent,
@@ -66,6 +59,13 @@ class _$DlpNewDocumentFingerprintSerializer implements PrimitiveSerializer<DlpNe
       object.name,
       specifiedType: const FullType(String),
     );
+    if (object.description != null) {
+      yield r'description';
+      yield serializers.serialize(
+        object.description,
+        specifiedType: const FullType(String),
+      );
+    }
   }
 
   @override
@@ -89,13 +89,6 @@ class _$DlpNewDocumentFingerprintSerializer implements PrimitiveSerializer<DlpNe
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'description':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.description = valueDes;
-          break;
         case r'match_percent':
           final valueDes = serializers.deserialize(
             value,
@@ -109,6 +102,13 @@ class _$DlpNewDocumentFingerprintSerializer implements PrimitiveSerializer<DlpNe
             specifiedType: const FullType(String),
           ) as String;
           result.name = valueDes;
+          break;
+        case r'description':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.description = valueDes;
           break;
         default:
           unhandled.add(key);

@@ -6,12 +6,12 @@ part of 'zones_server_side_exclude_value.dart';
 // BuiltValueGenerator
 // **************************************************************************
 
-const ZonesWafValue _$on_ =
-    const ZonesWafValue._('on_');
-const ZonesWafValue _$off =
-    const ZonesWafValue._('off');
+const ZonesServerSideExcludeValue _$on_ =
+    const ZonesServerSideExcludeValue._('on_');
+const ZonesServerSideExcludeValue _$off =
+    const ZonesServerSideExcludeValue._('off');
 
-ZonesWafValue _$valueOf(String name) {
+ZonesServerSideExcludeValue _$valueOf(String name) {
   switch (name) {
     case 'on_':
       return _$on_;
@@ -22,32 +22,32 @@ ZonesWafValue _$valueOf(String name) {
   }
 }
 
-final BuiltSet<ZonesWafValue> _$values =
-    BuiltSet<ZonesWafValue>(const <ZonesWafValue>[
+final BuiltSet<ZonesServerSideExcludeValue> _$values =
+    BuiltSet<ZonesServerSideExcludeValue>(const <ZonesServerSideExcludeValue>[
   _$on_,
   _$off,
 ]);
 
 class _$ZonesServerSideExcludeValueMeta {
   const _$ZonesServerSideExcludeValueMeta();
-  ZonesWafValue get on_ => _$on_;
-  ZonesWafValue get off => _$off;
-  ZonesWafValue valueOf(String name) => _$valueOf(name);
-  BuiltSet<ZonesWafValue> get values => _$values;
+  ZonesServerSideExcludeValue get on_ => _$on_;
+  ZonesServerSideExcludeValue get off => _$off;
+  ZonesServerSideExcludeValue valueOf(String name) => _$valueOf(name);
+  BuiltSet<ZonesServerSideExcludeValue> get values => _$values;
 }
 
 abstract class _$ZonesServerSideExcludeValueMixin {
   // ignore: non_constant_identifier_names
-  _$ZonesServerSideExcludeValueMeta get ZonesWafValue =>
+  _$ZonesServerSideExcludeValueMeta get ZonesServerSideExcludeValue =>
       const _$ZonesServerSideExcludeValueMeta();
 }
 
-Serializer<ZonesWafValue>
+Serializer<ZonesServerSideExcludeValue>
     _$zonesServerSideExcludeValueSerializer =
     _$ZonesServerSideExcludeValueSerializer();
 
 class _$ZonesServerSideExcludeValueSerializer
-    implements PrimitiveSerializer<ZonesWafValue> {
+    implements PrimitiveSerializer<ZonesServerSideExcludeValue> {
   static const Map<String, Object> _toWire = const <String, Object>{
     'on_': 'on',
     'off': 'off',
@@ -58,20 +58,20 @@ class _$ZonesServerSideExcludeValueSerializer
   };
 
   @override
-  final Iterable<Type> types = const <Type>[ZonesWafValue];
+  final Iterable<Type> types = const <Type>[ZonesServerSideExcludeValue];
   @override
-  final String wireName = 'ZonesWafValue';
+  final String wireName = 'ZonesServerSideExcludeValue';
 
   @override
-  Object serialize(Serializers serializers, ZonesWafValue object,
+  Object serialize(Serializers serializers, ZonesServerSideExcludeValue object,
           {FullType specifiedType = FullType.unspecified}) =>
       _toWire[object.name] ?? object.name;
 
   @override
-  ZonesWafValue deserialize(
+  ZonesServerSideExcludeValue deserialize(
           Serializers serializers, Object serialized,
           {FullType specifiedType = FullType.unspecified}) =>
-      ZonesWafValue.valueOf(
+      ZonesServerSideExcludeValue.valueOf(
           _fromWire[serialized] ?? (serialized is String ? serialized : ''));
 }
 

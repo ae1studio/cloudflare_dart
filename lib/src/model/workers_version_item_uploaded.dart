@@ -14,10 +14,10 @@ part 'workers_version_item_uploaded.g.dart';
 /// WorkersVersionItemUploaded
 ///
 /// Properties:
+/// * [resources] 
 /// * [id] 
 /// * [metadata] 
 /// * [number] 
-/// * [resources] 
 /// * [startupTimeMs] 
 @BuiltValue()
 abstract class WorkersVersionItemUploaded implements WorkersVersionItemFull, Built<WorkersVersionItemUploaded, WorkersVersionItemUploadedBuilder> {

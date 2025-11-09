@@ -14,15 +14,15 @@ class _$UpdateAccountRulesetRequest extends UpdateAccountRulesetRequest {
   @override
   final BuiltList<RulesetsRequestRule>? rules;
   @override
-  final String? description;
-  @override
   final String id;
   @override
   final DateTime lastUpdated;
   @override
-  final String? name;
-  @override
   final String version;
+  @override
+  final String? description;
+  @override
+  final String? name;
 
   factory _$UpdateAccountRulesetRequest(
           [void Function(UpdateAccountRulesetRequestBuilder)? updates]) =>
@@ -32,11 +32,11 @@ class _$UpdateAccountRulesetRequest extends UpdateAccountRulesetRequest {
       {this.phase,
       this.kind,
       this.rules,
-      this.description,
       required this.id,
       required this.lastUpdated,
-      this.name,
-      required this.version})
+      required this.version,
+      this.description,
+      this.name})
       : super._();
   @override
   UpdateAccountRulesetRequest rebuild(
@@ -54,11 +54,11 @@ class _$UpdateAccountRulesetRequest extends UpdateAccountRulesetRequest {
         phase == other.phase &&
         kind == other.kind &&
         rules == other.rules &&
-        description == other.description &&
         id == other.id &&
         lastUpdated == other.lastUpdated &&
-        name == other.name &&
-        version == other.version;
+        version == other.version &&
+        description == other.description &&
+        name == other.name;
   }
 
   @override
@@ -67,11 +67,11 @@ class _$UpdateAccountRulesetRequest extends UpdateAccountRulesetRequest {
     _$hash = $jc(_$hash, phase.hashCode);
     _$hash = $jc(_$hash, kind.hashCode);
     _$hash = $jc(_$hash, rules.hashCode);
-    _$hash = $jc(_$hash, description.hashCode);
     _$hash = $jc(_$hash, id.hashCode);
     _$hash = $jc(_$hash, lastUpdated.hashCode);
-    _$hash = $jc(_$hash, name.hashCode);
     _$hash = $jc(_$hash, version.hashCode);
+    _$hash = $jc(_$hash, description.hashCode);
+    _$hash = $jc(_$hash, name.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -82,11 +82,11 @@ class _$UpdateAccountRulesetRequest extends UpdateAccountRulesetRequest {
           ..add('phase', phase)
           ..add('kind', kind)
           ..add('rules', rules)
-          ..add('description', description)
           ..add('id', id)
           ..add('lastUpdated', lastUpdated)
-          ..add('name', name)
-          ..add('version', version))
+          ..add('version', version)
+          ..add('description', description)
+          ..add('name', name))
         .toString();
   }
 }
@@ -112,11 +112,6 @@ class UpdateAccountRulesetRequestBuilder
   set rules(covariant ListBuilder<RulesetsRequestRule>? rules) =>
       _$this._rules = rules;
 
-  String? _description;
-  String? get description => _$this._description;
-  set description(covariant String? description) =>
-      _$this._description = description;
-
   String? _id;
   String? get id => _$this._id;
   set id(covariant String? id) => _$this._id = id;
@@ -126,13 +121,18 @@ class UpdateAccountRulesetRequestBuilder
   set lastUpdated(covariant DateTime? lastUpdated) =>
       _$this._lastUpdated = lastUpdated;
 
-  String? _name;
-  String? get name => _$this._name;
-  set name(covariant String? name) => _$this._name = name;
-
   String? _version;
   String? get version => _$this._version;
   set version(covariant String? version) => _$this._version = version;
+
+  String? _description;
+  String? get description => _$this._description;
+  set description(covariant String? description) =>
+      _$this._description = description;
+
+  String? _name;
+  String? get name => _$this._name;
+  set name(covariant String? name) => _$this._name = name;
 
   UpdateAccountRulesetRequestBuilder() {
     UpdateAccountRulesetRequest._defaults(this);
@@ -144,11 +144,11 @@ class UpdateAccountRulesetRequestBuilder
       _phase = $v.phase;
       _kind = $v.kind;
       _rules = $v.rules?.toBuilder();
-      _description = $v.description;
       _id = $v.id;
       _lastUpdated = $v.lastUpdated;
-      _name = $v.name;
       _version = $v.version;
+      _description = $v.description;
+      _name = $v.name;
       _$v = null;
     }
     return this;
@@ -175,14 +175,14 @@ class UpdateAccountRulesetRequestBuilder
             phase: phase,
             kind: kind,
             rules: _rules?.build(),
-            description: description,
             id: BuiltValueNullFieldError.checkNotNull(
                 id, r'UpdateAccountRulesetRequest', 'id'),
             lastUpdated: BuiltValueNullFieldError.checkNotNull(
                 lastUpdated, r'UpdateAccountRulesetRequest', 'lastUpdated'),
-            name: name,
             version: BuiltValueNullFieldError.checkNotNull(
                 version, r'UpdateAccountRulesetRequest', 'version'),
+            description: description,
+            name: name,
           );
     } catch (_) {
       late String _$failedField;

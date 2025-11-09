@@ -16,9 +16,9 @@ part 'workers_ai_post_run_cf_baai_bge_base_en_v15_request.g.dart';
 /// WorkersAiPostRunCfBaaiBgeBaseEnV15Request
 ///
 /// Properties:
-/// * [pooling] - The pooling method used in the embedding process. `cls` pooling will generate more accurate embeddings on larger inputs - however, embeddings created with cls pooling are not compatible with embeddings generated with mean pooling. The default pooling method is `mean` in order for this to not be a breaking change, but we highly suggest using the new `cls` pooling for better accuracy.
 /// * [text] 
 /// * [requests] - Batch of the embeddings requests to run using async-queue
+/// * [pooling] - The pooling method used in the embedding process. `cls` pooling will generate more accurate embeddings on larger inputs - however, embeddings created with cls pooling are not compatible with embeddings generated with mean pooling. The default pooling method is `mean` in order for this to not be a breaking change, but we highly suggest using the new `cls` pooling for better accuracy.
 @BuiltValue()
 abstract class WorkersAiPostRunCfBaaiBgeBaseEnV15Request implements Built<WorkersAiPostRunCfBaaiBgeBaseEnV15Request, WorkersAiPostRunCfBaaiBgeBaseEnV15RequestBuilder> {
   /// One Of [WorkersAiPostRunCfBaaiBgeBaseEnV15RequestOneOf], [WorkersAiPostRunCfBaaiBgeBaseEnV15RequestOneOf1]

@@ -8,15 +8,15 @@ part of 'builds_error_response_errors_inner.dart';
 
 class _$BuildsErrorResponseErrorsInner extends BuildsErrorResponseErrorsInner {
   @override
-  final int? code;
-  @override
   final String message;
+  @override
+  final int? code;
 
   factory _$BuildsErrorResponseErrorsInner(
           [void Function(BuildsErrorResponseErrorsInnerBuilder)? updates]) =>
       (BuildsErrorResponseErrorsInnerBuilder()..update(updates))._build();
 
-  _$BuildsErrorResponseErrorsInner._({this.code, required this.message})
+  _$BuildsErrorResponseErrorsInner._({required this.message, this.code})
       : super._();
   @override
   BuildsErrorResponseErrorsInner rebuild(
@@ -31,15 +31,15 @@ class _$BuildsErrorResponseErrorsInner extends BuildsErrorResponseErrorsInner {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is BuildsErrorResponseErrorsInner &&
-        code == other.code &&
-        message == other.message;
+        message == other.message &&
+        code == other.code;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, code.hashCode);
     _$hash = $jc(_$hash, message.hashCode);
+    _$hash = $jc(_$hash, code.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -47,8 +47,8 @@ class _$BuildsErrorResponseErrorsInner extends BuildsErrorResponseErrorsInner {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'BuildsErrorResponseErrorsInner')
-          ..add('code', code)
-          ..add('message', message))
+          ..add('message', message)
+          ..add('code', code))
         .toString();
   }
 }
@@ -59,13 +59,13 @@ class BuildsErrorResponseErrorsInnerBuilder
             BuildsErrorResponseErrorsInnerBuilder> {
   _$BuildsErrorResponseErrorsInner? _$v;
 
-  int? _code;
-  int? get code => _$this._code;
-  set code(int? code) => _$this._code = code;
-
   String? _message;
   String? get message => _$this._message;
   set message(String? message) => _$this._message = message;
+
+  int? _code;
+  int? get code => _$this._code;
+  set code(int? code) => _$this._code = code;
 
   BuildsErrorResponseErrorsInnerBuilder() {
     BuildsErrorResponseErrorsInner._defaults(this);
@@ -74,8 +74,8 @@ class BuildsErrorResponseErrorsInnerBuilder
   BuildsErrorResponseErrorsInnerBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _code = $v.code;
       _message = $v.message;
+      _code = $v.code;
       _$v = null;
     }
     return this;
@@ -97,9 +97,9 @@ class BuildsErrorResponseErrorsInnerBuilder
   _$BuildsErrorResponseErrorsInner _build() {
     final _$result = _$v ??
         _$BuildsErrorResponseErrorsInner._(
-          code: code,
           message: BuiltValueNullFieldError.checkNotNull(
               message, r'BuildsErrorResponseErrorsInner', 'message'),
+          code: code,
         );
     replace(_$result);
     return _$result;

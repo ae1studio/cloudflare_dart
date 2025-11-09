@@ -13,11 +13,11 @@ class _$PageShieldListZoneConnectionsResponse
   @override
   final PageShieldResultInfo resultInfo;
   @override
+  final bool success;
+  @override
   final BuiltList<AaaMessagesInner>? errors;
   @override
   final BuiltList<AaaMessagesInner>? messages;
-  @override
-  final bool success;
 
   factory _$PageShieldListZoneConnectionsResponse(
           [void Function(PageShieldListZoneConnectionsResponseBuilder)?
@@ -28,9 +28,9 @@ class _$PageShieldListZoneConnectionsResponse
   _$PageShieldListZoneConnectionsResponse._(
       {this.result,
       required this.resultInfo,
+      required this.success,
       this.errors,
-      this.messages,
-      required this.success})
+      this.messages})
       : super._();
   @override
   PageShieldListZoneConnectionsResponse rebuild(
@@ -48,9 +48,9 @@ class _$PageShieldListZoneConnectionsResponse
     return other is PageShieldListZoneConnectionsResponse &&
         result == other.result &&
         resultInfo == other.resultInfo &&
+        success == other.success &&
         errors == other.errors &&
-        messages == other.messages &&
-        success == other.success;
+        messages == other.messages;
   }
 
   @override
@@ -58,9 +58,9 @@ class _$PageShieldListZoneConnectionsResponse
     var _$hash = 0;
     _$hash = $jc(_$hash, result.hashCode);
     _$hash = $jc(_$hash, resultInfo.hashCode);
+    _$hash = $jc(_$hash, success.hashCode);
     _$hash = $jc(_$hash, errors.hashCode);
     _$hash = $jc(_$hash, messages.hashCode);
-    _$hash = $jc(_$hash, success.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -71,9 +71,9 @@ class _$PageShieldListZoneConnectionsResponse
             r'PageShieldListZoneConnectionsResponse')
           ..add('result', result)
           ..add('resultInfo', resultInfo)
+          ..add('success', success)
           ..add('errors', errors)
-          ..add('messages', messages)
-          ..add('success', success))
+          ..add('messages', messages))
         .toString();
   }
 }
@@ -97,6 +97,10 @@ class PageShieldListZoneConnectionsResponseBuilder
   set resultInfo(covariant PageShieldResultInfoBuilder? resultInfo) =>
       _$this._resultInfo = resultInfo;
 
+  bool? _success;
+  bool? get success => _$this._success;
+  set success(covariant bool? success) => _$this._success = success;
+
   ListBuilder<AaaMessagesInner>? _errors;
   ListBuilder<AaaMessagesInner> get errors =>
       _$this._errors ??= ListBuilder<AaaMessagesInner>();
@@ -109,10 +113,6 @@ class PageShieldListZoneConnectionsResponseBuilder
   set messages(covariant ListBuilder<AaaMessagesInner>? messages) =>
       _$this._messages = messages;
 
-  bool? _success;
-  bool? get success => _$this._success;
-  set success(covariant bool? success) => _$this._success = success;
-
   PageShieldListZoneConnectionsResponseBuilder() {
     PageShieldListZoneConnectionsResponse._defaults(this);
   }
@@ -122,9 +122,9 @@ class PageShieldListZoneConnectionsResponseBuilder
     if ($v != null) {
       _result = $v.result?.toBuilder();
       _resultInfo = $v.resultInfo.toBuilder();
+      _success = $v.success;
       _errors = $v.errors?.toBuilder();
       _messages = $v.messages?.toBuilder();
-      _success = $v.success;
       _$v = null;
     }
     return this;
@@ -151,10 +151,10 @@ class PageShieldListZoneConnectionsResponseBuilder
           _$PageShieldListZoneConnectionsResponse._(
             result: _result?.build(),
             resultInfo: resultInfo.build(),
-            errors: _errors?.build(),
-            messages: _messages?.build(),
             success: BuiltValueNullFieldError.checkNotNull(
                 success, r'PageShieldListZoneConnectionsResponse', 'success'),
+            errors: _errors?.build(),
+            messages: _messages?.build(),
           );
     } catch (_) {
       late String _$failedField;
@@ -163,6 +163,7 @@ class PageShieldListZoneConnectionsResponseBuilder
         _result?.build();
         _$failedField = 'resultInfo';
         resultInfo.build();
+
         _$failedField = 'errors';
         _errors?.build();
         _$failedField = 'messages';

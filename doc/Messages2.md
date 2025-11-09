@@ -8,11 +8,11 @@ import 'package:cloudflare_dart/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**messages** | [**BuiltList&lt;Messages2MessagesInner&gt;**](Messages2MessagesInner.md) | An array of message objects representing the conversation history. | 
 **frequencyPenalty** | **num** | Decreases the likelihood of the model repeating the same lines verbatim. | [optional] 
 **functions** | [**BuiltList&lt;MessagesFunctionsInner&gt;**](MessagesFunctionsInner.md) |  | [optional] 
 **image** | [**Messages2Image**](Messages2Image.md) |  | [optional] 
 **maxTokens** | **int** | The maximum number of tokens to generate in the response. | [optional] [default to 256]
-**messages** | [**BuiltList&lt;Messages2MessagesInner&gt;**](Messages2MessagesInner.md) | An array of message objects representing the conversation history. | 
 **presencePenalty** | **num** | Increases the likelihood of the model introducing new topics. | [optional] 
 **repetitionPenalty** | **num** | Penalty for repeated tokens; higher values discourage repetition. | [optional] 
 **seed** | **int** | Random seed for reproducibility of the generation. | [optional] 

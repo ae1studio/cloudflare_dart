@@ -9,21 +9,21 @@ part of 'load_balancers_update_load_balancer_request.dart';
 class _$LoadBalancersUpdateLoadBalancerRequest
     extends LoadBalancersUpdateLoadBalancerRequest {
   @override
+  final BuiltList<String> defaultPools;
+  @override
+  final String fallbackPool;
+  @override
+  final String name;
+  @override
   final LoadBalancingAdaptiveRouting? adaptiveRouting;
   @override
   final BuiltMap<String, BuiltList<String>>? countryPools;
-  @override
-  final BuiltList<String> defaultPools;
   @override
   final String? description;
   @override
   final bool? enabled;
   @override
-  final String fallbackPool;
-  @override
   final LoadBalancingLocationStrategy? locationStrategy;
-  @override
-  final String name;
   @override
   final BuiltList<String>? networks;
   @override
@@ -54,14 +54,14 @@ class _$LoadBalancersUpdateLoadBalancerRequest
           ._build();
 
   _$LoadBalancersUpdateLoadBalancerRequest._(
-      {this.adaptiveRouting,
+      {required this.defaultPools,
+      required this.fallbackPool,
+      required this.name,
+      this.adaptiveRouting,
       this.countryPools,
-      required this.defaultPools,
       this.description,
       this.enabled,
-      required this.fallbackPool,
       this.locationStrategy,
-      required this.name,
       this.networks,
       this.popPools,
       this.proxied,
@@ -88,14 +88,14 @@ class _$LoadBalancersUpdateLoadBalancerRequest
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is LoadBalancersUpdateLoadBalancerRequest &&
+        defaultPools == other.defaultPools &&
+        fallbackPool == other.fallbackPool &&
+        name == other.name &&
         adaptiveRouting == other.adaptiveRouting &&
         countryPools == other.countryPools &&
-        defaultPools == other.defaultPools &&
         description == other.description &&
         enabled == other.enabled &&
-        fallbackPool == other.fallbackPool &&
         locationStrategy == other.locationStrategy &&
-        name == other.name &&
         networks == other.networks &&
         popPools == other.popPools &&
         proxied == other.proxied &&
@@ -112,14 +112,14 @@ class _$LoadBalancersUpdateLoadBalancerRequest
   @override
   int get hashCode {
     var _$hash = 0;
+    _$hash = $jc(_$hash, defaultPools.hashCode);
+    _$hash = $jc(_$hash, fallbackPool.hashCode);
+    _$hash = $jc(_$hash, name.hashCode);
     _$hash = $jc(_$hash, adaptiveRouting.hashCode);
     _$hash = $jc(_$hash, countryPools.hashCode);
-    _$hash = $jc(_$hash, defaultPools.hashCode);
     _$hash = $jc(_$hash, description.hashCode);
     _$hash = $jc(_$hash, enabled.hashCode);
-    _$hash = $jc(_$hash, fallbackPool.hashCode);
     _$hash = $jc(_$hash, locationStrategy.hashCode);
-    _$hash = $jc(_$hash, name.hashCode);
     _$hash = $jc(_$hash, networks.hashCode);
     _$hash = $jc(_$hash, popPools.hashCode);
     _$hash = $jc(_$hash, proxied.hashCode);
@@ -139,14 +139,14 @@ class _$LoadBalancersUpdateLoadBalancerRequest
   String toString() {
     return (newBuiltValueToStringHelper(
             r'LoadBalancersUpdateLoadBalancerRequest')
+          ..add('defaultPools', defaultPools)
+          ..add('fallbackPool', fallbackPool)
+          ..add('name', name)
           ..add('adaptiveRouting', adaptiveRouting)
           ..add('countryPools', countryPools)
-          ..add('defaultPools', defaultPools)
           ..add('description', description)
           ..add('enabled', enabled)
-          ..add('fallbackPool', fallbackPool)
           ..add('locationStrategy', locationStrategy)
-          ..add('name', name)
           ..add('networks', networks)
           ..add('popPools', popPools)
           ..add('proxied', proxied)
@@ -168,6 +168,20 @@ class LoadBalancersUpdateLoadBalancerRequestBuilder
             LoadBalancersUpdateLoadBalancerRequestBuilder> {
   _$LoadBalancersUpdateLoadBalancerRequest? _$v;
 
+  ListBuilder<String>? _defaultPools;
+  ListBuilder<String> get defaultPools =>
+      _$this._defaultPools ??= ListBuilder<String>();
+  set defaultPools(ListBuilder<String>? defaultPools) =>
+      _$this._defaultPools = defaultPools;
+
+  String? _fallbackPool;
+  String? get fallbackPool => _$this._fallbackPool;
+  set fallbackPool(String? fallbackPool) => _$this._fallbackPool = fallbackPool;
+
+  String? _name;
+  String? get name => _$this._name;
+  set name(String? name) => _$this._name = name;
+
   LoadBalancingAdaptiveRoutingBuilder? _adaptiveRouting;
   LoadBalancingAdaptiveRoutingBuilder get adaptiveRouting =>
       _$this._adaptiveRouting ??= LoadBalancingAdaptiveRoutingBuilder();
@@ -180,12 +194,6 @@ class LoadBalancersUpdateLoadBalancerRequestBuilder
   set countryPools(MapBuilder<String, BuiltList<String>>? countryPools) =>
       _$this._countryPools = countryPools;
 
-  ListBuilder<String>? _defaultPools;
-  ListBuilder<String> get defaultPools =>
-      _$this._defaultPools ??= ListBuilder<String>();
-  set defaultPools(ListBuilder<String>? defaultPools) =>
-      _$this._defaultPools = defaultPools;
-
   String? _description;
   String? get description => _$this._description;
   set description(String? description) => _$this._description = description;
@@ -194,20 +202,12 @@ class LoadBalancersUpdateLoadBalancerRequestBuilder
   bool? get enabled => _$this._enabled;
   set enabled(bool? enabled) => _$this._enabled = enabled;
 
-  String? _fallbackPool;
-  String? get fallbackPool => _$this._fallbackPool;
-  set fallbackPool(String? fallbackPool) => _$this._fallbackPool = fallbackPool;
-
   LoadBalancingLocationStrategyBuilder? _locationStrategy;
   LoadBalancingLocationStrategyBuilder get locationStrategy =>
       _$this._locationStrategy ??= LoadBalancingLocationStrategyBuilder();
   set locationStrategy(
           LoadBalancingLocationStrategyBuilder? locationStrategy) =>
       _$this._locationStrategy = locationStrategy;
-
-  String? _name;
-  String? get name => _$this._name;
-  set name(String? name) => _$this._name = name;
 
   ListBuilder<String>? _networks;
   ListBuilder<String> get networks =>
@@ -277,14 +277,14 @@ class LoadBalancersUpdateLoadBalancerRequestBuilder
   LoadBalancersUpdateLoadBalancerRequestBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
+      _defaultPools = $v.defaultPools.toBuilder();
+      _fallbackPool = $v.fallbackPool;
+      _name = $v.name;
       _adaptiveRouting = $v.adaptiveRouting?.toBuilder();
       _countryPools = $v.countryPools?.toBuilder();
-      _defaultPools = $v.defaultPools.toBuilder();
       _description = $v.description;
       _enabled = $v.enabled;
-      _fallbackPool = $v.fallbackPool;
       _locationStrategy = $v.locationStrategy?.toBuilder();
-      _name = $v.name;
       _networks = $v.networks?.toBuilder();
       _popPools = $v.popPools?.toBuilder();
       _proxied = $v.proxied;
@@ -320,16 +320,16 @@ class LoadBalancersUpdateLoadBalancerRequestBuilder
     try {
       _$result = _$v ??
           _$LoadBalancersUpdateLoadBalancerRequest._(
-            adaptiveRouting: _adaptiveRouting?.build(),
-            countryPools: _countryPools?.build(),
             defaultPools: defaultPools.build(),
-            description: description,
-            enabled: enabled,
             fallbackPool: BuiltValueNullFieldError.checkNotNull(fallbackPool,
                 r'LoadBalancersUpdateLoadBalancerRequest', 'fallbackPool'),
-            locationStrategy: _locationStrategy?.build(),
             name: BuiltValueNullFieldError.checkNotNull(
                 name, r'LoadBalancersUpdateLoadBalancerRequest', 'name'),
+            adaptiveRouting: _adaptiveRouting?.build(),
+            countryPools: _countryPools?.build(),
+            description: description,
+            enabled: enabled,
+            locationStrategy: _locationStrategy?.build(),
             networks: _networks?.build(),
             popPools: _popPools?.build(),
             proxied: proxied,
@@ -345,16 +345,16 @@ class LoadBalancersUpdateLoadBalancerRequestBuilder
     } catch (_) {
       late String _$failedField;
       try {
+        _$failedField = 'defaultPools';
+        defaultPools.build();
+
         _$failedField = 'adaptiveRouting';
         _adaptiveRouting?.build();
         _$failedField = 'countryPools';
         _countryPools?.build();
-        _$failedField = 'defaultPools';
-        defaultPools.build();
 
         _$failedField = 'locationStrategy';
         _locationStrategy?.build();
-
         _$failedField = 'networks';
         _networks?.build();
         _$failedField = 'popPools';

@@ -11,24 +11,24 @@ part 'radar_get_entities_asn_by_id200_response_result_asn_related_inner.g.dart';
 /// RadarGetEntitiesAsnById200ResponseResultAsnRelatedInner
 ///
 /// Properties:
-/// * [aka] 
 /// * [asn] 
-/// * [estimatedUsers] - Total estimated users.
 /// * [name] 
+/// * [aka] 
+/// * [estimatedUsers] - Total estimated users.
 @BuiltValue()
 abstract class RadarGetEntitiesAsnById200ResponseResultAsnRelatedInner implements Built<RadarGetEntitiesAsnById200ResponseResultAsnRelatedInner, RadarGetEntitiesAsnById200ResponseResultAsnRelatedInnerBuilder> {
-  @BuiltValueField(wireName: r'aka')
-  String? get aka;
-
   @BuiltValueField(wireName: r'asn')
   int get asn;
+
+  @BuiltValueField(wireName: r'name')
+  String get name;
+
+  @BuiltValueField(wireName: r'aka')
+  String? get aka;
 
   /// Total estimated users.
   @BuiltValueField(wireName: r'estimatedUsers')
   int? get estimatedUsers;
-
-  @BuiltValueField(wireName: r'name')
-  String get name;
 
   RadarGetEntitiesAsnById200ResponseResultAsnRelatedInner._();
 
@@ -53,6 +53,16 @@ class _$RadarGetEntitiesAsnById200ResponseResultAsnRelatedInnerSerializer implem
     RadarGetEntitiesAsnById200ResponseResultAsnRelatedInner object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    yield r'asn';
+    yield serializers.serialize(
+      object.asn,
+      specifiedType: const FullType(int),
+    );
+    yield r'name';
+    yield serializers.serialize(
+      object.name,
+      specifiedType: const FullType(String),
+    );
     if (object.aka != null) {
       yield r'aka';
       yield serializers.serialize(
@@ -60,11 +70,6 @@ class _$RadarGetEntitiesAsnById200ResponseResultAsnRelatedInnerSerializer implem
         specifiedType: const FullType(String),
       );
     }
-    yield r'asn';
-    yield serializers.serialize(
-      object.asn,
-      specifiedType: const FullType(int),
-    );
     if (object.estimatedUsers != null) {
       yield r'estimatedUsers';
       yield serializers.serialize(
@@ -72,11 +77,6 @@ class _$RadarGetEntitiesAsnById200ResponseResultAsnRelatedInnerSerializer implem
         specifiedType: const FullType(int),
       );
     }
-    yield r'name';
-    yield serializers.serialize(
-      object.name,
-      specifiedType: const FullType(String),
-    );
   }
 
   @override
@@ -100,13 +100,6 @@ class _$RadarGetEntitiesAsnById200ResponseResultAsnRelatedInnerSerializer implem
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'aka':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.aka = valueDes;
-          break;
         case r'asn':
           final valueDes = serializers.deserialize(
             value,
@@ -114,19 +107,26 @@ class _$RadarGetEntitiesAsnById200ResponseResultAsnRelatedInnerSerializer implem
           ) as int;
           result.asn = valueDes;
           break;
-        case r'estimatedUsers':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
-          result.estimatedUsers = valueDes;
-          break;
         case r'name':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(String),
           ) as String;
           result.name = valueDes;
+          break;
+        case r'aka':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.aka = valueDes;
+          break;
+        case r'estimatedUsers':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(int),
+          ) as int;
+          result.estimatedUsers = valueDes;
           break;
         default:
           unhandled.add(key);

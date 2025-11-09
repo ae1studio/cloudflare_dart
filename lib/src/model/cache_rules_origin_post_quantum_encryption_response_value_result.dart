@@ -15,8 +15,8 @@ part 'cache_rules_origin_post_quantum_encryption_response_value_result.g.dart';
 ///
 /// Properties:
 /// * [id] - Value of the zone setting.
-/// * [modifiedOn] - Last time this setting was modified.
 /// * [value] 
+/// * [modifiedOn] - Last time this setting was modified.
 @BuiltValue()
 abstract class CacheRulesOriginPostQuantumEncryptionResponseValueResult implements CacheRulesOriginPostQuantumEncryption, Built<CacheRulesOriginPostQuantumEncryptionResponseValueResult, CacheRulesOriginPostQuantumEncryptionResponseValueResultBuilder> {
   @BuiltValueField(wireName: r'value')

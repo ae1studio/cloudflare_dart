@@ -10,11 +10,11 @@ class _$AddParticipantRequest extends AddParticipantRequest {
   @override
   final String customParticipantId;
   @override
+  final String presetName;
+  @override
   final String? name;
   @override
   final String? picture;
-  @override
-  final String presetName;
 
   factory _$AddParticipantRequest(
           [void Function(AddParticipantRequestBuilder)? updates]) =>
@@ -22,9 +22,9 @@ class _$AddParticipantRequest extends AddParticipantRequest {
 
   _$AddParticipantRequest._(
       {required this.customParticipantId,
+      required this.presetName,
       this.name,
-      this.picture,
-      required this.presetName})
+      this.picture})
       : super._();
   @override
   AddParticipantRequest rebuild(
@@ -40,18 +40,18 @@ class _$AddParticipantRequest extends AddParticipantRequest {
     if (identical(other, this)) return true;
     return other is AddParticipantRequest &&
         customParticipantId == other.customParticipantId &&
+        presetName == other.presetName &&
         name == other.name &&
-        picture == other.picture &&
-        presetName == other.presetName;
+        picture == other.picture;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
     _$hash = $jc(_$hash, customParticipantId.hashCode);
+    _$hash = $jc(_$hash, presetName.hashCode);
     _$hash = $jc(_$hash, name.hashCode);
     _$hash = $jc(_$hash, picture.hashCode);
-    _$hash = $jc(_$hash, presetName.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -60,9 +60,9 @@ class _$AddParticipantRequest extends AddParticipantRequest {
   String toString() {
     return (newBuiltValueToStringHelper(r'AddParticipantRequest')
           ..add('customParticipantId', customParticipantId)
+          ..add('presetName', presetName)
           ..add('name', name)
-          ..add('picture', picture)
-          ..add('presetName', presetName))
+          ..add('picture', picture))
         .toString();
   }
 }
@@ -76,6 +76,10 @@ class AddParticipantRequestBuilder
   set customParticipantId(String? customParticipantId) =>
       _$this._customParticipantId = customParticipantId;
 
+  String? _presetName;
+  String? get presetName => _$this._presetName;
+  set presetName(String? presetName) => _$this._presetName = presetName;
+
   String? _name;
   String? get name => _$this._name;
   set name(String? name) => _$this._name = name;
@@ -83,10 +87,6 @@ class AddParticipantRequestBuilder
   String? _picture;
   String? get picture => _$this._picture;
   set picture(String? picture) => _$this._picture = picture;
-
-  String? _presetName;
-  String? get presetName => _$this._presetName;
-  set presetName(String? presetName) => _$this._presetName = presetName;
 
   AddParticipantRequestBuilder() {
     AddParticipantRequest._defaults(this);
@@ -96,9 +96,9 @@ class AddParticipantRequestBuilder
     final $v = _$v;
     if ($v != null) {
       _customParticipantId = $v.customParticipantId;
+      _presetName = $v.presetName;
       _name = $v.name;
       _picture = $v.picture;
-      _presetName = $v.presetName;
       _$v = null;
     }
     return this;
@@ -124,10 +124,10 @@ class AddParticipantRequestBuilder
               customParticipantId,
               r'AddParticipantRequest',
               'customParticipantId'),
-          name: name,
-          picture: picture,
           presetName: BuiltValueNullFieldError.checkNotNull(
               presetName, r'AddParticipantRequest', 'presetName'),
+          name: name,
+          picture: picture,
         );
     replace(_$result);
     return _$result;

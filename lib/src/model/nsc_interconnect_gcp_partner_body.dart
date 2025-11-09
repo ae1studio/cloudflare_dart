@@ -14,9 +14,9 @@ part 'nsc_interconnect_gcp_partner_body.g.dart';
 /// Properties:
 /// * [account] 
 /// * [name] 
-/// * [owner] 
 /// * [type] 
 /// * [region] 
+/// * [owner] 
 /// * [speed] 
 @BuiltValue()
 abstract class NscInterconnectGcpPartnerBody implements Built<NscInterconnectGcpPartnerBody, NscInterconnectGcpPartnerBodyBuilder> {
@@ -26,14 +26,14 @@ abstract class NscInterconnectGcpPartnerBody implements Built<NscInterconnectGcp
   @BuiltValueField(wireName: r'name')
   String get name;
 
-  @BuiltValueField(wireName: r'owner')
-  String? get owner;
-
   @BuiltValueField(wireName: r'type')
   String get type;
 
   @BuiltValueField(wireName: r'region')
   String get region;
+
+  @BuiltValueField(wireName: r'owner')
+  String? get owner;
 
   @BuiltValueField(wireName: r'speed')
   NscApiBandwidth? get speed;
@@ -72,13 +72,6 @@ class _$NscInterconnectGcpPartnerBodySerializer implements PrimitiveSerializer<N
       object.name,
       specifiedType: const FullType(String),
     );
-    if (object.owner != null) {
-      yield r'owner';
-      yield serializers.serialize(
-        object.owner,
-        specifiedType: const FullType(String),
-      );
-    }
     yield r'type';
     yield serializers.serialize(
       object.type,
@@ -89,6 +82,13 @@ class _$NscInterconnectGcpPartnerBodySerializer implements PrimitiveSerializer<N
       object.region,
       specifiedType: const FullType(String),
     );
+    if (object.owner != null) {
+      yield r'owner';
+      yield serializers.serialize(
+        object.owner,
+        specifiedType: const FullType(String),
+      );
+    }
     if (object.speed != null) {
       yield r'speed';
       yield serializers.serialize(
@@ -133,13 +133,6 @@ class _$NscInterconnectGcpPartnerBodySerializer implements PrimitiveSerializer<N
           ) as String;
           result.name = valueDes;
           break;
-        case r'owner':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.owner = valueDes;
-          break;
         case r'type':
           final valueDes = serializers.deserialize(
             value,
@@ -153,6 +146,13 @@ class _$NscInterconnectGcpPartnerBodySerializer implements PrimitiveSerializer<N
             specifiedType: const FullType(String),
           ) as String;
           result.region = valueDes;
+          break;
+        case r'owner':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.owner = valueDes;
           break;
         case r'speed':
           final valueDes = serializers.deserialize(

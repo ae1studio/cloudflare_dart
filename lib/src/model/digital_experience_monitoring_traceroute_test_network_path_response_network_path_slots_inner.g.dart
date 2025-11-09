@@ -15,11 +15,11 @@ class _$DigitalExperienceMonitoringTracerouteTestNetworkPathResponseNetworkPathS
   @override
   final int? clientToCfIngressRttMs;
   @override
-  final int? clientToIspRttMs;
-  @override
   final String id;
   @override
   final String timestamp;
+  @override
+  final int? clientToIspRttMs;
 
   factory _$DigitalExperienceMonitoringTracerouteTestNetworkPathResponseNetworkPathSlotsInner(
           [void Function(
@@ -33,9 +33,9 @@ class _$DigitalExperienceMonitoringTracerouteTestNetworkPathResponseNetworkPathS
       {this.clientToAppRttMs,
       this.clientToCfEgressRttMs,
       this.clientToCfIngressRttMs,
-      this.clientToIspRttMs,
       required this.id,
-      required this.timestamp})
+      required this.timestamp,
+      this.clientToIspRttMs})
       : super._();
   @override
   DigitalExperienceMonitoringTracerouteTestNetworkPathResponseNetworkPathSlotsInner
@@ -59,9 +59,9 @@ class _$DigitalExperienceMonitoringTracerouteTestNetworkPathResponseNetworkPathS
         clientToAppRttMs == other.clientToAppRttMs &&
         clientToCfEgressRttMs == other.clientToCfEgressRttMs &&
         clientToCfIngressRttMs == other.clientToCfIngressRttMs &&
-        clientToIspRttMs == other.clientToIspRttMs &&
         id == other.id &&
-        timestamp == other.timestamp;
+        timestamp == other.timestamp &&
+        clientToIspRttMs == other.clientToIspRttMs;
   }
 
   @override
@@ -70,9 +70,9 @@ class _$DigitalExperienceMonitoringTracerouteTestNetworkPathResponseNetworkPathS
     _$hash = $jc(_$hash, clientToAppRttMs.hashCode);
     _$hash = $jc(_$hash, clientToCfEgressRttMs.hashCode);
     _$hash = $jc(_$hash, clientToCfIngressRttMs.hashCode);
-    _$hash = $jc(_$hash, clientToIspRttMs.hashCode);
     _$hash = $jc(_$hash, id.hashCode);
     _$hash = $jc(_$hash, timestamp.hashCode);
+    _$hash = $jc(_$hash, clientToIspRttMs.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -84,9 +84,9 @@ class _$DigitalExperienceMonitoringTracerouteTestNetworkPathResponseNetworkPathS
           ..add('clientToAppRttMs', clientToAppRttMs)
           ..add('clientToCfEgressRttMs', clientToCfEgressRttMs)
           ..add('clientToCfIngressRttMs', clientToCfIngressRttMs)
-          ..add('clientToIspRttMs', clientToIspRttMs)
           ..add('id', id)
-          ..add('timestamp', timestamp))
+          ..add('timestamp', timestamp)
+          ..add('clientToIspRttMs', clientToIspRttMs))
         .toString();
   }
 }
@@ -114,11 +114,6 @@ class DigitalExperienceMonitoringTracerouteTestNetworkPathResponseNetworkPathSlo
   set clientToCfIngressRttMs(int? clientToCfIngressRttMs) =>
       _$this._clientToCfIngressRttMs = clientToCfIngressRttMs;
 
-  int? _clientToIspRttMs;
-  int? get clientToIspRttMs => _$this._clientToIspRttMs;
-  set clientToIspRttMs(int? clientToIspRttMs) =>
-      _$this._clientToIspRttMs = clientToIspRttMs;
-
   String? _id;
   String? get id => _$this._id;
   set id(String? id) => _$this._id = id;
@@ -126,6 +121,11 @@ class DigitalExperienceMonitoringTracerouteTestNetworkPathResponseNetworkPathSlo
   String? _timestamp;
   String? get timestamp => _$this._timestamp;
   set timestamp(String? timestamp) => _$this._timestamp = timestamp;
+
+  int? _clientToIspRttMs;
+  int? get clientToIspRttMs => _$this._clientToIspRttMs;
+  set clientToIspRttMs(int? clientToIspRttMs) =>
+      _$this._clientToIspRttMs = clientToIspRttMs;
 
   DigitalExperienceMonitoringTracerouteTestNetworkPathResponseNetworkPathSlotsInnerBuilder() {
     DigitalExperienceMonitoringTracerouteTestNetworkPathResponseNetworkPathSlotsInner
@@ -139,9 +139,9 @@ class DigitalExperienceMonitoringTracerouteTestNetworkPathResponseNetworkPathSlo
       _clientToAppRttMs = $v.clientToAppRttMs;
       _clientToCfEgressRttMs = $v.clientToCfEgressRttMs;
       _clientToCfIngressRttMs = $v.clientToCfIngressRttMs;
-      _clientToIspRttMs = $v.clientToIspRttMs;
       _id = $v.id;
       _timestamp = $v.timestamp;
+      _clientToIspRttMs = $v.clientToIspRttMs;
       _$v = null;
     }
     return this;
@@ -175,7 +175,6 @@ class DigitalExperienceMonitoringTracerouteTestNetworkPathResponseNetworkPathSlo
           clientToAppRttMs: clientToAppRttMs,
           clientToCfEgressRttMs: clientToCfEgressRttMs,
           clientToCfIngressRttMs: clientToCfIngressRttMs,
-          clientToIspRttMs: clientToIspRttMs,
           id: BuiltValueNullFieldError.checkNotNull(
               id,
               r'DigitalExperienceMonitoringTracerouteTestNetworkPathResponseNetworkPathSlotsInner',
@@ -184,6 +183,7 @@ class DigitalExperienceMonitoringTracerouteTestNetworkPathResponseNetworkPathSlo
               timestamp,
               r'DigitalExperienceMonitoringTracerouteTestNetworkPathResponseNetworkPathSlotsInner',
               'timestamp'),
+          clientToIspRttMs: clientToIspRttMs,
         );
     replace(_$result);
     return _$result;

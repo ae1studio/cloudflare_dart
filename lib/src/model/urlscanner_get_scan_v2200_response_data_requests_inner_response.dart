@@ -15,23 +15,20 @@ part 'urlscanner_get_scan_v2200_response_data_requests_inner_response.g.dart';
 ///
 /// Properties:
 /// * [asn] 
-/// * [contentAvailable] 
 /// * [dataLength] 
 /// * [encodedDataLength] 
 /// * [geoip] 
 /// * [hasExtraInfo] 
-/// * [hash] 
 /// * [requestId] 
 /// * [response] 
 /// * [size] 
 /// * [type] 
+/// * [contentAvailable] 
+/// * [hash] 
 @BuiltValue()
 abstract class UrlscannerGetScanV2200ResponseDataRequestsInnerResponse implements Built<UrlscannerGetScanV2200ResponseDataRequestsInnerResponse, UrlscannerGetScanV2200ResponseDataRequestsInnerResponseBuilder> {
   @BuiltValueField(wireName: r'asn')
   UrlscannerGetScanV2200ResponseDataRequestsInnerResponseAsn get asn;
-
-  @BuiltValueField(wireName: r'contentAvailable')
-  bool? get contentAvailable;
 
   @BuiltValueField(wireName: r'dataLength')
   num get dataLength;
@@ -45,9 +42,6 @@ abstract class UrlscannerGetScanV2200ResponseDataRequestsInnerResponse implement
   @BuiltValueField(wireName: r'hasExtraInfo')
   bool get hasExtraInfo;
 
-  @BuiltValueField(wireName: r'hash')
-  String? get hash;
-
   @BuiltValueField(wireName: r'requestId')
   String get requestId;
 
@@ -59,6 +53,12 @@ abstract class UrlscannerGetScanV2200ResponseDataRequestsInnerResponse implement
 
   @BuiltValueField(wireName: r'type')
   String get type;
+
+  @BuiltValueField(wireName: r'contentAvailable')
+  bool? get contentAvailable;
+
+  @BuiltValueField(wireName: r'hash')
+  String? get hash;
 
   UrlscannerGetScanV2200ResponseDataRequestsInnerResponse._();
 
@@ -88,13 +88,6 @@ class _$UrlscannerGetScanV2200ResponseDataRequestsInnerResponseSerializer implem
       object.asn,
       specifiedType: const FullType(UrlscannerGetScanV2200ResponseDataRequestsInnerResponseAsn),
     );
-    if (object.contentAvailable != null) {
-      yield r'contentAvailable';
-      yield serializers.serialize(
-        object.contentAvailable,
-        specifiedType: const FullType(bool),
-      );
-    }
     yield r'dataLength';
     yield serializers.serialize(
       object.dataLength,
@@ -115,13 +108,6 @@ class _$UrlscannerGetScanV2200ResponseDataRequestsInnerResponseSerializer implem
       object.hasExtraInfo,
       specifiedType: const FullType(bool),
     );
-    if (object.hash != null) {
-      yield r'hash';
-      yield serializers.serialize(
-        object.hash,
-        specifiedType: const FullType(String),
-      );
-    }
     yield r'requestId';
     yield serializers.serialize(
       object.requestId,
@@ -142,6 +128,20 @@ class _$UrlscannerGetScanV2200ResponseDataRequestsInnerResponseSerializer implem
       object.type,
       specifiedType: const FullType(String),
     );
+    if (object.contentAvailable != null) {
+      yield r'contentAvailable';
+      yield serializers.serialize(
+        object.contentAvailable,
+        specifiedType: const FullType(bool),
+      );
+    }
+    if (object.hash != null) {
+      yield r'hash';
+      yield serializers.serialize(
+        object.hash,
+        specifiedType: const FullType(String),
+      );
+    }
   }
 
   @override
@@ -172,13 +172,6 @@ class _$UrlscannerGetScanV2200ResponseDataRequestsInnerResponseSerializer implem
           ) as UrlscannerGetScanV2200ResponseDataRequestsInnerResponseAsn;
           result.asn.replace(valueDes);
           break;
-        case r'contentAvailable':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
-          result.contentAvailable = valueDes;
-          break;
         case r'dataLength':
           final valueDes = serializers.deserialize(
             value,
@@ -207,13 +200,6 @@ class _$UrlscannerGetScanV2200ResponseDataRequestsInnerResponseSerializer implem
           ) as bool;
           result.hasExtraInfo = valueDes;
           break;
-        case r'hash':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.hash = valueDes;
-          break;
         case r'requestId':
           final valueDes = serializers.deserialize(
             value,
@@ -241,6 +227,20 @@ class _$UrlscannerGetScanV2200ResponseDataRequestsInnerResponseSerializer implem
             specifiedType: const FullType(String),
           ) as String;
           result.type = valueDes;
+          break;
+        case r'contentAvailable':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(bool),
+          ) as bool;
+          result.contentAvailable = valueDes;
+          break;
+        case r'hash':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.hash = valueDes;
           break;
         default:
           unhandled.add(key);

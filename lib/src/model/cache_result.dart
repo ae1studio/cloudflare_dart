@@ -15,8 +15,8 @@ part 'cache_result.g.dart';
 /// * [editable] - Whether this setting can be updated or not.
 /// * [id] 
 /// * [modifiedOn] - Last time this setting was modified.
-/// * [nextScheduledScan] - Next time this zone will be scanned by the Automatic SSL/TLS.
 /// * [value] - Current setting of the automatic SSL/TLS.
+/// * [nextScheduledScan] - Next time this zone will be scanned by the Automatic SSL/TLS.
 @BuiltValue()
 abstract class CacheResult implements Built<CacheResult, CacheResultBuilder> {
   /// Whether this setting can be updated or not.
@@ -30,14 +30,14 @@ abstract class CacheResult implements Built<CacheResult, CacheResultBuilder> {
   @BuiltValueField(wireName: r'modified_on')
   DateTime get modifiedOn;
 
-  /// Next time this zone will be scanned by the Automatic SSL/TLS.
-  @BuiltValueField(wireName: r'next_scheduled_scan')
-  DateTime? get nextScheduledScan;
-
   /// Current setting of the automatic SSL/TLS.
   @BuiltValueField(wireName: r'value')
   CacheResultValueEnum get value;
   // enum valueEnum {  auto,  custom,  };
+
+  /// Next time this zone will be scanned by the Automatic SSL/TLS.
+  @BuiltValueField(wireName: r'next_scheduled_scan')
+  DateTime? get nextScheduledScan;
 
   CacheResult._();
 
@@ -77,6 +77,11 @@ class _$CacheResultSerializer implements PrimitiveSerializer<CacheResult> {
       object.modifiedOn,
       specifiedType: const FullType(DateTime),
     );
+    yield r'value';
+    yield serializers.serialize(
+      object.value,
+      specifiedType: const FullType(CacheResultValueEnum),
+    );
     if (object.nextScheduledScan != null) {
       yield r'next_scheduled_scan';
       yield serializers.serialize(
@@ -84,11 +89,6 @@ class _$CacheResultSerializer implements PrimitiveSerializer<CacheResult> {
         specifiedType: const FullType.nullable(DateTime),
       );
     }
-    yield r'value';
-    yield serializers.serialize(
-      object.value,
-      specifiedType: const FullType(CacheResultValueEnum),
-    );
   }
 
   @override
@@ -133,6 +133,13 @@ class _$CacheResultSerializer implements PrimitiveSerializer<CacheResult> {
           ) as DateTime;
           result.modifiedOn = valueDes;
           break;
+        case r'value':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(CacheResultValueEnum),
+          ) as CacheResultValueEnum;
+          result.value = valueDes;
+          break;
         case r'next_scheduled_scan':
           final valueDes = serializers.deserialize(
             value,
@@ -140,13 +147,6 @@ class _$CacheResultSerializer implements PrimitiveSerializer<CacheResult> {
           ) as DateTime?;
           if (valueDes == null) continue;
           result.nextScheduledScan = valueDes;
-          break;
-        case r'value':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(CacheResultValueEnum),
-          ) as CacheResultValueEnum;
-          result.value = valueDes;
           break;
         default:
           unhandled.add(key);

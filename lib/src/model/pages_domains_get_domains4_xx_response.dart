@@ -20,8 +20,8 @@ part 'pages_domains_get_domains4_xx_response.g.dart';
 /// * [errors] 
 /// * [messages] 
 /// * [success] - Whether the API call was successful.
-/// * [resultInfo] 
 /// * [result] 
+/// * [resultInfo] 
 @BuiltValue()
 abstract class PagesDomainsGetDomains4XXResponse implements PagesApiResponseCommonFailure, PagesDomainResponseCollection, Built<PagesDomainsGetDomains4XXResponse, PagesDomainsGetDomains4XXResponseBuilder> {
   PagesDomainsGetDomains4XXResponse._();

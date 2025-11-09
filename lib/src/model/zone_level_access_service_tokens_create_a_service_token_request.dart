@@ -11,12 +11,16 @@ part 'zone_level_access_service_tokens_create_a_service_token_request.g.dart';
 /// ZoneLevelAccessServiceTokensCreateAServiceTokenRequest
 ///
 /// Properties:
+/// * [name] - The name of the service token.
 /// * [clientSecretVersion] - A version number identifying the current `client_secret` associated with the service token. Incrementing it triggers a rotation; the previous secret will still be accepted until the time indicated by `previous_client_secret_expires_at`.
 /// * [duration] - The duration for how long the service token will be valid. Must be in the format `300ms` or `2h45m`. Valid time units are: ns, us (or µs), ms, s, m, h. The default is 1 year in hours (8760h).
-/// * [name] - The name of the service token.
 /// * [previousClientSecretExpiresAt] - The expiration of the previous `client_secret`. This can be modified at any point after a rotation. For example, you may extend it further into the future if you need more time to update services with the new secret; or move it into the past to immediately invalidate the previous token in case of compromise.
 @BuiltValue()
 abstract class ZoneLevelAccessServiceTokensCreateAServiceTokenRequest implements Built<ZoneLevelAccessServiceTokensCreateAServiceTokenRequest, ZoneLevelAccessServiceTokensCreateAServiceTokenRequestBuilder> {
+  /// The name of the service token.
+  @BuiltValueField(wireName: r'name')
+  String get name;
+
   /// A version number identifying the current `client_secret` associated with the service token. Incrementing it triggers a rotation; the previous secret will still be accepted until the time indicated by `previous_client_secret_expires_at`.
   @BuiltValueField(wireName: r'client_secret_version')
   num? get clientSecretVersion;
@@ -24,10 +28,6 @@ abstract class ZoneLevelAccessServiceTokensCreateAServiceTokenRequest implements
   /// The duration for how long the service token will be valid. Must be in the format `300ms` or `2h45m`. Valid time units are: ns, us (or µs), ms, s, m, h. The default is 1 year in hours (8760h).
   @BuiltValueField(wireName: r'duration')
   String? get duration;
-
-  /// The name of the service token.
-  @BuiltValueField(wireName: r'name')
-  String get name;
 
   /// The expiration of the previous `client_secret`. This can be modified at any point after a rotation. For example, you may extend it further into the future if you need more time to update services with the new secret; or move it into the past to immediately invalidate the previous token in case of compromise.
   @BuiltValueField(wireName: r'previous_client_secret_expires_at')
@@ -58,6 +58,11 @@ class _$ZoneLevelAccessServiceTokensCreateAServiceTokenRequestSerializer impleme
     ZoneLevelAccessServiceTokensCreateAServiceTokenRequest object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    yield r'name';
+    yield serializers.serialize(
+      object.name,
+      specifiedType: const FullType(String),
+    );
     if (object.clientSecretVersion != null) {
       yield r'client_secret_version';
       yield serializers.serialize(
@@ -72,11 +77,6 @@ class _$ZoneLevelAccessServiceTokensCreateAServiceTokenRequestSerializer impleme
         specifiedType: const FullType(String),
       );
     }
-    yield r'name';
-    yield serializers.serialize(
-      object.name,
-      specifiedType: const FullType(String),
-    );
     if (object.previousClientSecretExpiresAt != null) {
       yield r'previous_client_secret_expires_at';
       yield serializers.serialize(
@@ -107,6 +107,13 @@ class _$ZoneLevelAccessServiceTokensCreateAServiceTokenRequestSerializer impleme
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
+        case r'name':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.name = valueDes;
+          break;
         case r'client_secret_version':
           final valueDes = serializers.deserialize(
             value,
@@ -120,13 +127,6 @@ class _$ZoneLevelAccessServiceTokensCreateAServiceTokenRequestSerializer impleme
             specifiedType: const FullType(String),
           ) as String;
           result.duration = valueDes;
-          break;
-        case r'name':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.name = valueDes;
           break;
         case r'previous_client_secret_expires_at':
           final valueDes = serializers.deserialize(

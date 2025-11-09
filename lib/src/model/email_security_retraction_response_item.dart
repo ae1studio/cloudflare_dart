@@ -12,8 +12,8 @@ part 'email_security_retraction_response_item.g.dart';
 ///
 /// Properties:
 /// * [completedTimestamp] 
-/// * [destination] 
 /// * [itemCount] 
+/// * [destination] 
 /// * [messageId] 
 /// * [operation] 
 /// * [recipient] 
@@ -23,11 +23,11 @@ abstract class EmailSecurityRetractionResponseItem implements Built<EmailSecurit
   @BuiltValueField(wireName: r'completed_timestamp')
   DateTime get completedTimestamp;
 
-  @BuiltValueField(wireName: r'destination')
-  String? get destination;
-
   @BuiltValueField(wireName: r'item_count')
   int get itemCount;
+
+  @BuiltValueField(wireName: r'destination')
+  String? get destination;
 
   @BuiltValueField(wireName: r'message_id')
   String? get messageId;
@@ -69,6 +69,11 @@ class _$EmailSecurityRetractionResponseItemSerializer implements PrimitiveSerial
       object.completedTimestamp,
       specifiedType: const FullType(DateTime),
     );
+    yield r'item_count';
+    yield serializers.serialize(
+      object.itemCount,
+      specifiedType: const FullType(int),
+    );
     if (object.destination != null) {
       yield r'destination';
       yield serializers.serialize(
@@ -76,11 +81,6 @@ class _$EmailSecurityRetractionResponseItemSerializer implements PrimitiveSerial
         specifiedType: const FullType.nullable(String),
       );
     }
-    yield r'item_count';
-    yield serializers.serialize(
-      object.itemCount,
-      specifiedType: const FullType(int),
-    );
     if (object.messageId != null) {
       yield r'message_id';
       yield serializers.serialize(
@@ -139,6 +139,13 @@ class _$EmailSecurityRetractionResponseItemSerializer implements PrimitiveSerial
           ) as DateTime;
           result.completedTimestamp = valueDes;
           break;
+        case r'item_count':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(int),
+          ) as int;
+          result.itemCount = valueDes;
+          break;
         case r'destination':
           final valueDes = serializers.deserialize(
             value,
@@ -146,13 +153,6 @@ class _$EmailSecurityRetractionResponseItemSerializer implements PrimitiveSerial
           ) as String?;
           if (valueDes == null) continue;
           result.destination = valueDes;
-          break;
-        case r'item_count':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
-          result.itemCount = valueDes;
           break;
         case r'message_id':
           final valueDes = serializers.deserialize(

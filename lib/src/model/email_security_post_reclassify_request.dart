@@ -12,21 +12,21 @@ part 'email_security_post_reclassify_request.g.dart';
 /// EmailSecurityPostReclassifyRequest
 ///
 /// Properties:
+/// * [expectedDisposition] 
 /// * [emlContent] - Base64 encoded content of the EML file
 /// * [escalatedSubmissionId] 
-/// * [expectedDisposition] 
 @BuiltValue()
 abstract class EmailSecurityPostReclassifyRequest implements Built<EmailSecurityPostReclassifyRequest, EmailSecurityPostReclassifyRequestBuilder> {
+  @BuiltValueField(wireName: r'expected_disposition')
+  EmailSecurityPostReclassifyRequestExpectedDispositionEnum get expectedDisposition;
+  // enum expectedDispositionEnum {  NONE,  BULK,  MALICIOUS,  SPAM,  SPOOF,  SUSPICIOUS,  };
+
   /// Base64 encoded content of the EML file
   @BuiltValueField(wireName: r'eml_content')
   String? get emlContent;
 
   @BuiltValueField(wireName: r'escalated_submission_id')
   String? get escalatedSubmissionId;
-
-  @BuiltValueField(wireName: r'expected_disposition')
-  EmailSecurityPostReclassifyRequestExpectedDispositionEnum get expectedDisposition;
-  // enum expectedDispositionEnum {  NONE,  BULK,  MALICIOUS,  SPAM,  SPOOF,  SUSPICIOUS,  };
 
   EmailSecurityPostReclassifyRequest._();
 
@@ -51,6 +51,11 @@ class _$EmailSecurityPostReclassifyRequestSerializer implements PrimitiveSeriali
     EmailSecurityPostReclassifyRequest object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    yield r'expected_disposition';
+    yield serializers.serialize(
+      object.expectedDisposition,
+      specifiedType: const FullType(EmailSecurityPostReclassifyRequestExpectedDispositionEnum),
+    );
     if (object.emlContent != null) {
       yield r'eml_content';
       yield serializers.serialize(
@@ -65,11 +70,6 @@ class _$EmailSecurityPostReclassifyRequestSerializer implements PrimitiveSeriali
         specifiedType: const FullType(String),
       );
     }
-    yield r'expected_disposition';
-    yield serializers.serialize(
-      object.expectedDisposition,
-      specifiedType: const FullType(EmailSecurityPostReclassifyRequestExpectedDispositionEnum),
-    );
   }
 
   @override
@@ -93,6 +93,13 @@ class _$EmailSecurityPostReclassifyRequestSerializer implements PrimitiveSeriali
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
+        case r'expected_disposition':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(EmailSecurityPostReclassifyRequestExpectedDispositionEnum),
+          ) as EmailSecurityPostReclassifyRequestExpectedDispositionEnum;
+          result.expectedDisposition = valueDes;
+          break;
         case r'eml_content':
           final valueDes = serializers.deserialize(
             value,
@@ -106,13 +113,6 @@ class _$EmailSecurityPostReclassifyRequestSerializer implements PrimitiveSeriali
             specifiedType: const FullType(String),
           ) as String;
           result.escalatedSubmissionId = valueDes;
-          break;
-        case r'expected_disposition':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(EmailSecurityPostReclassifyRequestExpectedDispositionEnum),
-          ) as EmailSecurityPostReclassifyRequestExpectedDispositionEnum;
-          result.expectedDisposition = valueDes;
           break;
         default:
           unhandled.add(key);

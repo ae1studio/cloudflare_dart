@@ -18,16 +18,16 @@ part 'radar_get_annotations_outages200_response_result_annotations_inner.g.dart'
 /// * [asns] 
 /// * [asnsDetails] 
 /// * [dataSource] 
-/// * [description] 
-/// * [endDate] 
 /// * [eventType] 
 /// * [id] 
-/// * [linkedUrl] 
 /// * [locations] 
 /// * [locationsDetails] 
 /// * [outage] 
-/// * [scope] 
 /// * [startDate] 
+/// * [description] 
+/// * [endDate] 
+/// * [linkedUrl] 
+/// * [scope] 
 @BuiltValue()
 abstract class RadarGetAnnotationsOutages200ResponseResultAnnotationsInner implements Built<RadarGetAnnotationsOutages200ResponseResultAnnotationsInner, RadarGetAnnotationsOutages200ResponseResultAnnotationsInnerBuilder> {
   @BuiltValueField(wireName: r'asns')
@@ -39,20 +39,11 @@ abstract class RadarGetAnnotationsOutages200ResponseResultAnnotationsInner imple
   @BuiltValueField(wireName: r'dataSource')
   String get dataSource;
 
-  @BuiltValueField(wireName: r'description')
-  String? get description;
-
-  @BuiltValueField(wireName: r'endDate')
-  DateTime? get endDate;
-
   @BuiltValueField(wireName: r'eventType')
   String get eventType;
 
   @BuiltValueField(wireName: r'id')
   String get id;
-
-  @BuiltValueField(wireName: r'linkedUrl')
-  String? get linkedUrl;
 
   @BuiltValueField(wireName: r'locations')
   BuiltList<String> get locations;
@@ -63,11 +54,20 @@ abstract class RadarGetAnnotationsOutages200ResponseResultAnnotationsInner imple
   @BuiltValueField(wireName: r'outage')
   RadarGetAnnotations200ResponseResultAnnotationsInnerOutage get outage;
 
-  @BuiltValueField(wireName: r'scope')
-  String? get scope;
-
   @BuiltValueField(wireName: r'startDate')
   DateTime get startDate;
+
+  @BuiltValueField(wireName: r'description')
+  String? get description;
+
+  @BuiltValueField(wireName: r'endDate')
+  DateTime? get endDate;
+
+  @BuiltValueField(wireName: r'linkedUrl')
+  String? get linkedUrl;
+
+  @BuiltValueField(wireName: r'scope')
+  String? get scope;
 
   RadarGetAnnotationsOutages200ResponseResultAnnotationsInner._();
 
@@ -107,20 +107,6 @@ class _$RadarGetAnnotationsOutages200ResponseResultAnnotationsInnerSerializer im
       object.dataSource,
       specifiedType: const FullType(String),
     );
-    if (object.description != null) {
-      yield r'description';
-      yield serializers.serialize(
-        object.description,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.endDate != null) {
-      yield r'endDate';
-      yield serializers.serialize(
-        object.endDate,
-        specifiedType: const FullType(DateTime),
-      );
-    }
     yield r'eventType';
     yield serializers.serialize(
       object.eventType,
@@ -131,13 +117,6 @@ class _$RadarGetAnnotationsOutages200ResponseResultAnnotationsInnerSerializer im
       object.id,
       specifiedType: const FullType(String),
     );
-    if (object.linkedUrl != null) {
-      yield r'linkedUrl';
-      yield serializers.serialize(
-        object.linkedUrl,
-        specifiedType: const FullType(String),
-      );
-    }
     yield r'locations';
     yield serializers.serialize(
       object.locations,
@@ -153,6 +132,32 @@ class _$RadarGetAnnotationsOutages200ResponseResultAnnotationsInnerSerializer im
       object.outage,
       specifiedType: const FullType(RadarGetAnnotations200ResponseResultAnnotationsInnerOutage),
     );
+    yield r'startDate';
+    yield serializers.serialize(
+      object.startDate,
+      specifiedType: const FullType(DateTime),
+    );
+    if (object.description != null) {
+      yield r'description';
+      yield serializers.serialize(
+        object.description,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.endDate != null) {
+      yield r'endDate';
+      yield serializers.serialize(
+        object.endDate,
+        specifiedType: const FullType(DateTime),
+      );
+    }
+    if (object.linkedUrl != null) {
+      yield r'linkedUrl';
+      yield serializers.serialize(
+        object.linkedUrl,
+        specifiedType: const FullType(String),
+      );
+    }
     if (object.scope != null) {
       yield r'scope';
       yield serializers.serialize(
@@ -160,11 +165,6 @@ class _$RadarGetAnnotationsOutages200ResponseResultAnnotationsInnerSerializer im
         specifiedType: const FullType(String),
       );
     }
-    yield r'startDate';
-    yield serializers.serialize(
-      object.startDate,
-      specifiedType: const FullType(DateTime),
-    );
   }
 
   @override
@@ -209,20 +209,6 @@ class _$RadarGetAnnotationsOutages200ResponseResultAnnotationsInnerSerializer im
           ) as String;
           result.dataSource = valueDes;
           break;
-        case r'description':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.description = valueDes;
-          break;
-        case r'endDate':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
-          result.endDate = valueDes;
-          break;
         case r'eventType':
           final valueDes = serializers.deserialize(
             value,
@@ -236,13 +222,6 @@ class _$RadarGetAnnotationsOutages200ResponseResultAnnotationsInnerSerializer im
             specifiedType: const FullType(String),
           ) as String;
           result.id = valueDes;
-          break;
-        case r'linkedUrl':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.linkedUrl = valueDes;
           break;
         case r'locations':
           final valueDes = serializers.deserialize(
@@ -265,19 +244,40 @@ class _$RadarGetAnnotationsOutages200ResponseResultAnnotationsInnerSerializer im
           ) as RadarGetAnnotations200ResponseResultAnnotationsInnerOutage;
           result.outage.replace(valueDes);
           break;
-        case r'scope':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.scope = valueDes;
-          break;
         case r'startDate':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(DateTime),
           ) as DateTime;
           result.startDate = valueDes;
+          break;
+        case r'description':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.description = valueDes;
+          break;
+        case r'endDate':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(DateTime),
+          ) as DateTime;
+          result.endDate = valueDes;
+          break;
+        case r'linkedUrl':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.linkedUrl = valueDes;
+          break;
+        case r'scope':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.scope = valueDes;
           break;
         default:
           unhandled.add(key);

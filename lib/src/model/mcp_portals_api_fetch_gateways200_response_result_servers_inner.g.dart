@@ -94,33 +94,13 @@ class _$McpPortalsApiFetchGateways200ResponseResultServersInner
   final McpPortalsApiFetchGateways200ResponseResultServersInnerAuthTypeEnum
       authType;
   @override
-  final DateTime? createdAt;
-  @override
-  final String? createdBy;
-  @override
-  final bool? defaultDisabled;
-  @override
-  final String? description;
-  @override
-  final String? error;
-  @override
   final String hostname;
   @override
   final String id;
   @override
-  final DateTime? lastSynced;
-  @override
-  final DateTime? modifiedAt;
-  @override
-  final String? modifiedBy;
-  @override
   final String name;
   @override
-  final bool? onBehalf;
-  @override
   final BuiltList<BuiltMap<String, JsonObject?>> prompts;
-  @override
-  final String? status;
   @override
   final BuiltList<BuiltMap<String, JsonObject?>> tools;
   @override
@@ -133,6 +113,26 @@ class _$McpPortalsApiFetchGateways200ResponseResultServersInner
           BuiltMap<String,
               McpPortalsApiFetchGateways200ResponseResultServersInnerUpdatedPromptsInnerValue>>
       updatedTools;
+  @override
+  final DateTime? createdAt;
+  @override
+  final String? createdBy;
+  @override
+  final bool? defaultDisabled;
+  @override
+  final String? description;
+  @override
+  final String? error;
+  @override
+  final DateTime? lastSynced;
+  @override
+  final DateTime? modifiedAt;
+  @override
+  final String? modifiedBy;
+  @override
+  final bool? onBehalf;
+  @override
+  final String? status;
 
   factory _$McpPortalsApiFetchGateways200ResponseResultServersInner(
           [void Function(
@@ -144,23 +144,23 @@ class _$McpPortalsApiFetchGateways200ResponseResultServersInner
 
   _$McpPortalsApiFetchGateways200ResponseResultServersInner._(
       {required this.authType,
+      required this.hostname,
+      required this.id,
+      required this.name,
+      required this.prompts,
+      required this.tools,
+      required this.updatedPrompts,
+      required this.updatedTools,
       this.createdAt,
       this.createdBy,
       this.defaultDisabled,
       this.description,
       this.error,
-      required this.hostname,
-      required this.id,
       this.lastSynced,
       this.modifiedAt,
       this.modifiedBy,
-      required this.name,
       this.onBehalf,
-      required this.prompts,
-      this.status,
-      required this.tools,
-      required this.updatedPrompts,
-      required this.updatedTools})
+      this.status})
       : super._();
   @override
   McpPortalsApiFetchGateways200ResponseResultServersInner rebuild(
@@ -179,46 +179,46 @@ class _$McpPortalsApiFetchGateways200ResponseResultServersInner
     if (identical(other, this)) return true;
     return other is McpPortalsApiFetchGateways200ResponseResultServersInner &&
         authType == other.authType &&
+        hostname == other.hostname &&
+        id == other.id &&
+        name == other.name &&
+        prompts == other.prompts &&
+        tools == other.tools &&
+        updatedPrompts == other.updatedPrompts &&
+        updatedTools == other.updatedTools &&
         createdAt == other.createdAt &&
         createdBy == other.createdBy &&
         defaultDisabled == other.defaultDisabled &&
         description == other.description &&
         error == other.error &&
-        hostname == other.hostname &&
-        id == other.id &&
         lastSynced == other.lastSynced &&
         modifiedAt == other.modifiedAt &&
         modifiedBy == other.modifiedBy &&
-        name == other.name &&
         onBehalf == other.onBehalf &&
-        prompts == other.prompts &&
-        status == other.status &&
-        tools == other.tools &&
-        updatedPrompts == other.updatedPrompts &&
-        updatedTools == other.updatedTools;
+        status == other.status;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
     _$hash = $jc(_$hash, authType.hashCode);
+    _$hash = $jc(_$hash, hostname.hashCode);
+    _$hash = $jc(_$hash, id.hashCode);
+    _$hash = $jc(_$hash, name.hashCode);
+    _$hash = $jc(_$hash, prompts.hashCode);
+    _$hash = $jc(_$hash, tools.hashCode);
+    _$hash = $jc(_$hash, updatedPrompts.hashCode);
+    _$hash = $jc(_$hash, updatedTools.hashCode);
     _$hash = $jc(_$hash, createdAt.hashCode);
     _$hash = $jc(_$hash, createdBy.hashCode);
     _$hash = $jc(_$hash, defaultDisabled.hashCode);
     _$hash = $jc(_$hash, description.hashCode);
     _$hash = $jc(_$hash, error.hashCode);
-    _$hash = $jc(_$hash, hostname.hashCode);
-    _$hash = $jc(_$hash, id.hashCode);
     _$hash = $jc(_$hash, lastSynced.hashCode);
     _$hash = $jc(_$hash, modifiedAt.hashCode);
     _$hash = $jc(_$hash, modifiedBy.hashCode);
-    _$hash = $jc(_$hash, name.hashCode);
     _$hash = $jc(_$hash, onBehalf.hashCode);
-    _$hash = $jc(_$hash, prompts.hashCode);
     _$hash = $jc(_$hash, status.hashCode);
-    _$hash = $jc(_$hash, tools.hashCode);
-    _$hash = $jc(_$hash, updatedPrompts.hashCode);
-    _$hash = $jc(_$hash, updatedTools.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -228,23 +228,23 @@ class _$McpPortalsApiFetchGateways200ResponseResultServersInner
     return (newBuiltValueToStringHelper(
             r'McpPortalsApiFetchGateways200ResponseResultServersInner')
           ..add('authType', authType)
+          ..add('hostname', hostname)
+          ..add('id', id)
+          ..add('name', name)
+          ..add('prompts', prompts)
+          ..add('tools', tools)
+          ..add('updatedPrompts', updatedPrompts)
+          ..add('updatedTools', updatedTools)
           ..add('createdAt', createdAt)
           ..add('createdBy', createdBy)
           ..add('defaultDisabled', defaultDisabled)
           ..add('description', description)
           ..add('error', error)
-          ..add('hostname', hostname)
-          ..add('id', id)
           ..add('lastSynced', lastSynced)
           ..add('modifiedAt', modifiedAt)
           ..add('modifiedBy', modifiedBy)
-          ..add('name', name)
           ..add('onBehalf', onBehalf)
-          ..add('prompts', prompts)
-          ..add('status', status)
-          ..add('tools', tools)
-          ..add('updatedPrompts', updatedPrompts)
-          ..add('updatedTools', updatedTools))
+          ..add('status', status))
         .toString();
   }
 }
@@ -264,27 +264,6 @@ class McpPortalsApiFetchGateways200ResponseResultServersInnerBuilder
               authType) =>
       _$this._authType = authType;
 
-  DateTime? _createdAt;
-  DateTime? get createdAt => _$this._createdAt;
-  set createdAt(DateTime? createdAt) => _$this._createdAt = createdAt;
-
-  String? _createdBy;
-  String? get createdBy => _$this._createdBy;
-  set createdBy(String? createdBy) => _$this._createdBy = createdBy;
-
-  bool? _defaultDisabled;
-  bool? get defaultDisabled => _$this._defaultDisabled;
-  set defaultDisabled(bool? defaultDisabled) =>
-      _$this._defaultDisabled = defaultDisabled;
-
-  String? _description;
-  String? get description => _$this._description;
-  set description(String? description) => _$this._description = description;
-
-  String? _error;
-  String? get error => _$this._error;
-  set error(String? error) => _$this._error = error;
-
   String? _hostname;
   String? get hostname => _$this._hostname;
   set hostname(String? hostname) => _$this._hostname = hostname;
@@ -293,35 +272,15 @@ class McpPortalsApiFetchGateways200ResponseResultServersInnerBuilder
   String? get id => _$this._id;
   set id(String? id) => _$this._id = id;
 
-  DateTime? _lastSynced;
-  DateTime? get lastSynced => _$this._lastSynced;
-  set lastSynced(DateTime? lastSynced) => _$this._lastSynced = lastSynced;
-
-  DateTime? _modifiedAt;
-  DateTime? get modifiedAt => _$this._modifiedAt;
-  set modifiedAt(DateTime? modifiedAt) => _$this._modifiedAt = modifiedAt;
-
-  String? _modifiedBy;
-  String? get modifiedBy => _$this._modifiedBy;
-  set modifiedBy(String? modifiedBy) => _$this._modifiedBy = modifiedBy;
-
   String? _name;
   String? get name => _$this._name;
   set name(String? name) => _$this._name = name;
-
-  bool? _onBehalf;
-  bool? get onBehalf => _$this._onBehalf;
-  set onBehalf(bool? onBehalf) => _$this._onBehalf = onBehalf;
 
   ListBuilder<BuiltMap<String, JsonObject?>>? _prompts;
   ListBuilder<BuiltMap<String, JsonObject?>> get prompts =>
       _$this._prompts ??= ListBuilder<BuiltMap<String, JsonObject?>>();
   set prompts(ListBuilder<BuiltMap<String, JsonObject?>>? prompts) =>
       _$this._prompts = prompts;
-
-  String? _status;
-  String? get status => _$this._status;
-  set status(String? status) => _$this._status = status;
 
   ListBuilder<BuiltMap<String, JsonObject?>>? _tools;
   ListBuilder<BuiltMap<String, JsonObject?>> get tools =>
@@ -363,6 +322,47 @@ class McpPortalsApiFetchGateways200ResponseResultServersInnerBuilder
               updatedTools) =>
       _$this._updatedTools = updatedTools;
 
+  DateTime? _createdAt;
+  DateTime? get createdAt => _$this._createdAt;
+  set createdAt(DateTime? createdAt) => _$this._createdAt = createdAt;
+
+  String? _createdBy;
+  String? get createdBy => _$this._createdBy;
+  set createdBy(String? createdBy) => _$this._createdBy = createdBy;
+
+  bool? _defaultDisabled;
+  bool? get defaultDisabled => _$this._defaultDisabled;
+  set defaultDisabled(bool? defaultDisabled) =>
+      _$this._defaultDisabled = defaultDisabled;
+
+  String? _description;
+  String? get description => _$this._description;
+  set description(String? description) => _$this._description = description;
+
+  String? _error;
+  String? get error => _$this._error;
+  set error(String? error) => _$this._error = error;
+
+  DateTime? _lastSynced;
+  DateTime? get lastSynced => _$this._lastSynced;
+  set lastSynced(DateTime? lastSynced) => _$this._lastSynced = lastSynced;
+
+  DateTime? _modifiedAt;
+  DateTime? get modifiedAt => _$this._modifiedAt;
+  set modifiedAt(DateTime? modifiedAt) => _$this._modifiedAt = modifiedAt;
+
+  String? _modifiedBy;
+  String? get modifiedBy => _$this._modifiedBy;
+  set modifiedBy(String? modifiedBy) => _$this._modifiedBy = modifiedBy;
+
+  bool? _onBehalf;
+  bool? get onBehalf => _$this._onBehalf;
+  set onBehalf(bool? onBehalf) => _$this._onBehalf = onBehalf;
+
+  String? _status;
+  String? get status => _$this._status;
+  set status(String? status) => _$this._status = status;
+
   McpPortalsApiFetchGateways200ResponseResultServersInnerBuilder() {
     McpPortalsApiFetchGateways200ResponseResultServersInner._defaults(this);
   }
@@ -371,23 +371,23 @@ class McpPortalsApiFetchGateways200ResponseResultServersInnerBuilder
     final $v = _$v;
     if ($v != null) {
       _authType = $v.authType;
+      _hostname = $v.hostname;
+      _id = $v.id;
+      _name = $v.name;
+      _prompts = $v.prompts.toBuilder();
+      _tools = $v.tools.toBuilder();
+      _updatedPrompts = $v.updatedPrompts.toBuilder();
+      _updatedTools = $v.updatedTools.toBuilder();
       _createdAt = $v.createdAt;
       _createdBy = $v.createdBy;
       _defaultDisabled = $v.defaultDisabled;
       _description = $v.description;
       _error = $v.error;
-      _hostname = $v.hostname;
-      _id = $v.id;
       _lastSynced = $v.lastSynced;
       _modifiedAt = $v.modifiedAt;
       _modifiedBy = $v.modifiedBy;
-      _name = $v.name;
       _onBehalf = $v.onBehalf;
-      _prompts = $v.prompts.toBuilder();
       _status = $v.status;
-      _tools = $v.tools.toBuilder();
-      _updatedPrompts = $v.updatedPrompts.toBuilder();
-      _updatedTools = $v.updatedTools.toBuilder();
       _$v = null;
     }
     return this;
@@ -418,11 +418,6 @@ class McpPortalsApiFetchGateways200ResponseResultServersInnerBuilder
                 authType,
                 r'McpPortalsApiFetchGateways200ResponseResultServersInner',
                 'authType'),
-            createdAt: createdAt,
-            createdBy: createdBy,
-            defaultDisabled: defaultDisabled,
-            description: description,
-            error: error,
             hostname: BuiltValueNullFieldError.checkNotNull(
                 hostname,
                 r'McpPortalsApiFetchGateways200ResponseResultServersInner',
@@ -431,26 +426,30 @@ class McpPortalsApiFetchGateways200ResponseResultServersInnerBuilder
                 id,
                 r'McpPortalsApiFetchGateways200ResponseResultServersInner',
                 'id'),
-            lastSynced: lastSynced,
-            modifiedAt: modifiedAt,
-            modifiedBy: modifiedBy,
             name: BuiltValueNullFieldError.checkNotNull(
                 name,
                 r'McpPortalsApiFetchGateways200ResponseResultServersInner',
                 'name'),
-            onBehalf: onBehalf,
             prompts: prompts.build(),
-            status: status,
             tools: tools.build(),
             updatedPrompts: updatedPrompts.build(),
             updatedTools: updatedTools.build(),
+            createdAt: createdAt,
+            createdBy: createdBy,
+            defaultDisabled: defaultDisabled,
+            description: description,
+            error: error,
+            lastSynced: lastSynced,
+            modifiedAt: modifiedAt,
+            modifiedBy: modifiedBy,
+            onBehalf: onBehalf,
+            status: status,
           );
     } catch (_) {
       late String _$failedField;
       try {
         _$failedField = 'prompts';
         prompts.build();
-
         _$failedField = 'tools';
         tools.build();
         _$failedField = 'updatedPrompts';

@@ -21,18 +21,18 @@ part 'digital_experience_monitoring_tests_response_tests_inner.g.dart';
 /// * [description] - the test description defined during configuration
 /// * [enabled] - if true, then the test will run on targeted devices. Else, the test will not run.
 /// * [host] 
-/// * [httpResults] 
-/// * [httpResultsByColo] 
 /// * [id] - API Resource UUID tag.
 /// * [interval] - The interval at which the synthetic application test is set to run.
 /// * [kind] - test type, http or traceroute
-/// * [method] - for HTTP, the method to use when running the test
 /// * [name] - name given to this test
+/// * [updated] 
+/// * [httpResults] 
+/// * [httpResultsByColo] 
+/// * [method] - for HTTP, the method to use when running the test
 /// * [targetPolicies] 
 /// * [targeted] 
 /// * [tracerouteResults] 
 /// * [tracerouteResultsByColo] 
-/// * [updated] 
 @BuiltValue()
 abstract class DigitalExperienceMonitoringTestsResponseTestsInner implements Built<DigitalExperienceMonitoringTestsResponseTestsInner, DigitalExperienceMonitoringTestsResponseTestsInnerBuilder> {
   /// date the test was created.
@@ -50,12 +50,6 @@ abstract class DigitalExperienceMonitoringTestsResponseTestsInner implements Bui
   @BuiltValueField(wireName: r'host')
   String get host;
 
-  @BuiltValueField(wireName: r'httpResults')
-  DigitalExperienceMonitoringTestsResponseTestsInnerHttpResults? get httpResults;
-
-  @BuiltValueField(wireName: r'httpResultsByColo')
-  BuiltList<DigitalExperienceMonitoringTestsResponseTestsInnerHttpResultsByColoInner>? get httpResultsByColo;
-
   /// API Resource UUID tag.
   @BuiltValueField(wireName: r'id')
   String get id;
@@ -69,13 +63,22 @@ abstract class DigitalExperienceMonitoringTestsResponseTestsInner implements Bui
   DigitalExperienceMonitoringTestsResponseTestsInnerKindEnum get kind;
   // enum kindEnum {  http,  traceroute,  };
 
-  /// for HTTP, the method to use when running the test
-  @BuiltValueField(wireName: r'method')
-  String? get method;
-
   /// name given to this test
   @BuiltValueField(wireName: r'name')
   String get name;
+
+  @BuiltValueField(wireName: r'updated')
+  String get updated;
+
+  @BuiltValueField(wireName: r'httpResults')
+  DigitalExperienceMonitoringTestsResponseTestsInnerHttpResults? get httpResults;
+
+  @BuiltValueField(wireName: r'httpResultsByColo')
+  BuiltList<DigitalExperienceMonitoringTestsResponseTestsInnerHttpResultsByColoInner>? get httpResultsByColo;
+
+  /// for HTTP, the method to use when running the test
+  @BuiltValueField(wireName: r'method')
+  String? get method;
 
   @BuiltValueField(wireName: r'target_policies')
   BuiltList<DigitalExperienceMonitoringHttpDetailsResponseTargetPoliciesInner>? get targetPolicies;
@@ -88,9 +91,6 @@ abstract class DigitalExperienceMonitoringTestsResponseTestsInner implements Bui
 
   @BuiltValueField(wireName: r'tracerouteResultsByColo')
   BuiltList<DigitalExperienceMonitoringTestsResponseTestsInnerTracerouteResultsByColoInner>? get tracerouteResultsByColo;
-
-  @BuiltValueField(wireName: r'updated')
-  String get updated;
 
   DigitalExperienceMonitoringTestsResponseTestsInner._();
 
@@ -135,20 +135,6 @@ class _$DigitalExperienceMonitoringTestsResponseTestsInnerSerializer implements 
       object.host,
       specifiedType: const FullType(String),
     );
-    if (object.httpResults != null) {
-      yield r'httpResults';
-      yield serializers.serialize(
-        object.httpResults,
-        specifiedType: const FullType.nullable(DigitalExperienceMonitoringTestsResponseTestsInnerHttpResults),
-      );
-    }
-    if (object.httpResultsByColo != null) {
-      yield r'httpResultsByColo';
-      yield serializers.serialize(
-        object.httpResultsByColo,
-        specifiedType: const FullType(BuiltList, [FullType(DigitalExperienceMonitoringTestsResponseTestsInnerHttpResultsByColoInner)]),
-      );
-    }
     yield r'id';
     yield serializers.serialize(
       object.id,
@@ -164,6 +150,30 @@ class _$DigitalExperienceMonitoringTestsResponseTestsInnerSerializer implements 
       object.kind,
       specifiedType: const FullType(DigitalExperienceMonitoringTestsResponseTestsInnerKindEnum),
     );
+    yield r'name';
+    yield serializers.serialize(
+      object.name,
+      specifiedType: const FullType(String),
+    );
+    yield r'updated';
+    yield serializers.serialize(
+      object.updated,
+      specifiedType: const FullType(String),
+    );
+    if (object.httpResults != null) {
+      yield r'httpResults';
+      yield serializers.serialize(
+        object.httpResults,
+        specifiedType: const FullType.nullable(DigitalExperienceMonitoringTestsResponseTestsInnerHttpResults),
+      );
+    }
+    if (object.httpResultsByColo != null) {
+      yield r'httpResultsByColo';
+      yield serializers.serialize(
+        object.httpResultsByColo,
+        specifiedType: const FullType(BuiltList, [FullType(DigitalExperienceMonitoringTestsResponseTestsInnerHttpResultsByColoInner)]),
+      );
+    }
     if (object.method != null) {
       yield r'method';
       yield serializers.serialize(
@@ -171,11 +181,6 @@ class _$DigitalExperienceMonitoringTestsResponseTestsInnerSerializer implements 
         specifiedType: const FullType(String),
       );
     }
-    yield r'name';
-    yield serializers.serialize(
-      object.name,
-      specifiedType: const FullType(String),
-    );
     if (object.targetPolicies != null) {
       yield r'target_policies';
       yield serializers.serialize(
@@ -204,11 +209,6 @@ class _$DigitalExperienceMonitoringTestsResponseTestsInnerSerializer implements 
         specifiedType: const FullType(BuiltList, [FullType(DigitalExperienceMonitoringTestsResponseTestsInnerTracerouteResultsByColoInner)]),
       );
     }
-    yield r'updated';
-    yield serializers.serialize(
-      object.updated,
-      specifiedType: const FullType(String),
-    );
   }
 
   @override
@@ -260,21 +260,6 @@ class _$DigitalExperienceMonitoringTestsResponseTestsInnerSerializer implements 
           ) as String;
           result.host = valueDes;
           break;
-        case r'httpResults':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(DigitalExperienceMonitoringTestsResponseTestsInnerHttpResults),
-          ) as DigitalExperienceMonitoringTestsResponseTestsInnerHttpResults?;
-          if (valueDes == null) continue;
-          result.httpResults.replace(valueDes);
-          break;
-        case r'httpResultsByColo':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(DigitalExperienceMonitoringTestsResponseTestsInnerHttpResultsByColoInner)]),
-          ) as BuiltList<DigitalExperienceMonitoringTestsResponseTestsInnerHttpResultsByColoInner>;
-          result.httpResultsByColo.replace(valueDes);
-          break;
         case r'id':
           final valueDes = serializers.deserialize(
             value,
@@ -296,19 +281,41 @@ class _$DigitalExperienceMonitoringTestsResponseTestsInnerSerializer implements 
           ) as DigitalExperienceMonitoringTestsResponseTestsInnerKindEnum;
           result.kind = valueDes;
           break;
-        case r'method':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.method = valueDes;
-          break;
         case r'name':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(String),
           ) as String;
           result.name = valueDes;
+          break;
+        case r'updated':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.updated = valueDes;
+          break;
+        case r'httpResults':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType.nullable(DigitalExperienceMonitoringTestsResponseTestsInnerHttpResults),
+          ) as DigitalExperienceMonitoringTestsResponseTestsInnerHttpResults?;
+          if (valueDes == null) continue;
+          result.httpResults.replace(valueDes);
+          break;
+        case r'httpResultsByColo':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BuiltList, [FullType(DigitalExperienceMonitoringTestsResponseTestsInnerHttpResultsByColoInner)]),
+          ) as BuiltList<DigitalExperienceMonitoringTestsResponseTestsInnerHttpResultsByColoInner>;
+          result.httpResultsByColo.replace(valueDes);
+          break;
+        case r'method':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.method = valueDes;
           break;
         case r'target_policies':
           final valueDes = serializers.deserialize(
@@ -339,13 +346,6 @@ class _$DigitalExperienceMonitoringTestsResponseTestsInnerSerializer implements 
             specifiedType: const FullType(BuiltList, [FullType(DigitalExperienceMonitoringTestsResponseTestsInnerTracerouteResultsByColoInner)]),
           ) as BuiltList<DigitalExperienceMonitoringTestsResponseTestsInnerTracerouteResultsByColoInner>;
           result.tracerouteResultsByColo.replace(valueDes);
-          break;
-        case r'updated':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.updated = valueDes;
           break;
         default:
           unhandled.add(key);

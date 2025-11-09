@@ -9,9 +9,9 @@ part of 'post_indicator_create_bulk_request_indicators_inner_tags_inner_any_of.d
 class _$PostIndicatorCreateBulkRequestIndicatorsInnerTagsInnerAnyOf
     extends PostIndicatorCreateBulkRequestIndicatorsInnerTagsInnerAnyOf {
   @override
-  final String? categoryName;
-  @override
   final String value;
+  @override
+  final String? categoryName;
 
   factory _$PostIndicatorCreateBulkRequestIndicatorsInnerTagsInnerAnyOf(
           [void Function(
@@ -22,7 +22,7 @@ class _$PostIndicatorCreateBulkRequestIndicatorsInnerTagsInnerAnyOf
           ._build();
 
   _$PostIndicatorCreateBulkRequestIndicatorsInnerTagsInnerAnyOf._(
-      {this.categoryName, required this.value})
+      {required this.value, this.categoryName})
       : super._();
   @override
   PostIndicatorCreateBulkRequestIndicatorsInnerTagsInnerAnyOf rebuild(
@@ -42,15 +42,15 @@ class _$PostIndicatorCreateBulkRequestIndicatorsInnerTagsInnerAnyOf
     if (identical(other, this)) return true;
     return other
             is PostIndicatorCreateBulkRequestIndicatorsInnerTagsInnerAnyOf &&
-        categoryName == other.categoryName &&
-        value == other.value;
+        value == other.value &&
+        categoryName == other.categoryName;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, categoryName.hashCode);
     _$hash = $jc(_$hash, value.hashCode);
+    _$hash = $jc(_$hash, categoryName.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -59,8 +59,8 @@ class _$PostIndicatorCreateBulkRequestIndicatorsInnerTagsInnerAnyOf
   String toString() {
     return (newBuiltValueToStringHelper(
             r'PostIndicatorCreateBulkRequestIndicatorsInnerTagsInnerAnyOf')
-          ..add('categoryName', categoryName)
-          ..add('value', value))
+          ..add('value', value)
+          ..add('categoryName', categoryName))
         .toString();
   }
 }
@@ -71,13 +71,13 @@ class PostIndicatorCreateBulkRequestIndicatorsInnerTagsInnerAnyOfBuilder
             PostIndicatorCreateBulkRequestIndicatorsInnerTagsInnerAnyOfBuilder> {
   _$PostIndicatorCreateBulkRequestIndicatorsInnerTagsInnerAnyOf? _$v;
 
-  String? _categoryName;
-  String? get categoryName => _$this._categoryName;
-  set categoryName(String? categoryName) => _$this._categoryName = categoryName;
-
   String? _value;
   String? get value => _$this._value;
   set value(String? value) => _$this._value = value;
+
+  String? _categoryName;
+  String? get categoryName => _$this._categoryName;
+  set categoryName(String? categoryName) => _$this._categoryName = categoryName;
 
   PostIndicatorCreateBulkRequestIndicatorsInnerTagsInnerAnyOfBuilder() {
     PostIndicatorCreateBulkRequestIndicatorsInnerTagsInnerAnyOf._defaults(this);
@@ -87,8 +87,8 @@ class PostIndicatorCreateBulkRequestIndicatorsInnerTagsInnerAnyOfBuilder
       get _$this {
     final $v = _$v;
     if ($v != null) {
-      _categoryName = $v.categoryName;
       _value = $v.value;
+      _categoryName = $v.categoryName;
       _$v = null;
     }
     return this;
@@ -116,11 +116,11 @@ class PostIndicatorCreateBulkRequestIndicatorsInnerTagsInnerAnyOfBuilder
   _$PostIndicatorCreateBulkRequestIndicatorsInnerTagsInnerAnyOf _build() {
     final _$result = _$v ??
         _$PostIndicatorCreateBulkRequestIndicatorsInnerTagsInnerAnyOf._(
-          categoryName: categoryName,
           value: BuiltValueNullFieldError.checkNotNull(
               value,
               r'PostIndicatorCreateBulkRequestIndicatorsInnerTagsInnerAnyOf',
               'value'),
+          categoryName: categoryName,
         );
     replace(_$result);
     return _$result;

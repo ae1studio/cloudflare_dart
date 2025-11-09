@@ -8,6 +8,8 @@ part of 'google_gemma312_bit_prompt.dart';
 
 class _$GoogleGemma312BItPrompt extends GoogleGemma312BItPrompt {
   @override
+  final String prompt;
+  @override
   final num? frequencyPenalty;
   @override
   final JsonObject? guidedJson;
@@ -15,8 +17,6 @@ class _$GoogleGemma312BItPrompt extends GoogleGemma312BItPrompt {
   final int? maxTokens;
   @override
   final num? presencePenalty;
-  @override
-  final String prompt;
   @override
   final bool? raw;
   @override
@@ -37,11 +37,11 @@ class _$GoogleGemma312BItPrompt extends GoogleGemma312BItPrompt {
       (GoogleGemma312BItPromptBuilder()..update(updates))._build();
 
   _$GoogleGemma312BItPrompt._(
-      {this.frequencyPenalty,
+      {required this.prompt,
+      this.frequencyPenalty,
       this.guidedJson,
       this.maxTokens,
       this.presencePenalty,
-      required this.prompt,
       this.raw,
       this.repetitionPenalty,
       this.seed,
@@ -63,11 +63,11 @@ class _$GoogleGemma312BItPrompt extends GoogleGemma312BItPrompt {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is GoogleGemma312BItPrompt &&
+        prompt == other.prompt &&
         frequencyPenalty == other.frequencyPenalty &&
         guidedJson == other.guidedJson &&
         maxTokens == other.maxTokens &&
         presencePenalty == other.presencePenalty &&
-        prompt == other.prompt &&
         raw == other.raw &&
         repetitionPenalty == other.repetitionPenalty &&
         seed == other.seed &&
@@ -80,11 +80,11 @@ class _$GoogleGemma312BItPrompt extends GoogleGemma312BItPrompt {
   @override
   int get hashCode {
     var _$hash = 0;
+    _$hash = $jc(_$hash, prompt.hashCode);
     _$hash = $jc(_$hash, frequencyPenalty.hashCode);
     _$hash = $jc(_$hash, guidedJson.hashCode);
     _$hash = $jc(_$hash, maxTokens.hashCode);
     _$hash = $jc(_$hash, presencePenalty.hashCode);
-    _$hash = $jc(_$hash, prompt.hashCode);
     _$hash = $jc(_$hash, raw.hashCode);
     _$hash = $jc(_$hash, repetitionPenalty.hashCode);
     _$hash = $jc(_$hash, seed.hashCode);
@@ -99,11 +99,11 @@ class _$GoogleGemma312BItPrompt extends GoogleGemma312BItPrompt {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'GoogleGemma312BItPrompt')
+          ..add('prompt', prompt)
           ..add('frequencyPenalty', frequencyPenalty)
           ..add('guidedJson', guidedJson)
           ..add('maxTokens', maxTokens)
           ..add('presencePenalty', presencePenalty)
-          ..add('prompt', prompt)
           ..add('raw', raw)
           ..add('repetitionPenalty', repetitionPenalty)
           ..add('seed', seed)
@@ -119,6 +119,10 @@ class GoogleGemma312BItPromptBuilder
     implements
         Builder<GoogleGemma312BItPrompt, GoogleGemma312BItPromptBuilder> {
   _$GoogleGemma312BItPrompt? _$v;
+
+  String? _prompt;
+  String? get prompt => _$this._prompt;
+  set prompt(String? prompt) => _$this._prompt = prompt;
 
   num? _frequencyPenalty;
   num? get frequencyPenalty => _$this._frequencyPenalty;
@@ -137,10 +141,6 @@ class GoogleGemma312BItPromptBuilder
   num? get presencePenalty => _$this._presencePenalty;
   set presencePenalty(num? presencePenalty) =>
       _$this._presencePenalty = presencePenalty;
-
-  String? _prompt;
-  String? get prompt => _$this._prompt;
-  set prompt(String? prompt) => _$this._prompt = prompt;
 
   bool? _raw;
   bool? get raw => _$this._raw;
@@ -178,11 +178,11 @@ class GoogleGemma312BItPromptBuilder
   GoogleGemma312BItPromptBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
+      _prompt = $v.prompt;
       _frequencyPenalty = $v.frequencyPenalty;
       _guidedJson = $v.guidedJson;
       _maxTokens = $v.maxTokens;
       _presencePenalty = $v.presencePenalty;
-      _prompt = $v.prompt;
       _raw = $v.raw;
       _repetitionPenalty = $v.repetitionPenalty;
       _seed = $v.seed;
@@ -211,12 +211,12 @@ class GoogleGemma312BItPromptBuilder
   _$GoogleGemma312BItPrompt _build() {
     final _$result = _$v ??
         _$GoogleGemma312BItPrompt._(
+          prompt: BuiltValueNullFieldError.checkNotNull(
+              prompt, r'GoogleGemma312BItPrompt', 'prompt'),
           frequencyPenalty: frequencyPenalty,
           guidedJson: guidedJson,
           maxTokens: maxTokens,
           presencePenalty: presencePenalty,
-          prompt: BuiltValueNullFieldError.checkNotNull(
-              prompt, r'GoogleGemma312BItPrompt', 'prompt'),
           raw: raw,
           repetitionPenalty: repetitionPenalty,
           seed: seed,

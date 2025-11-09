@@ -8,13 +8,13 @@ import 'package:cloudflare_dart/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**invitedMemberId** | **String** | ID of the user to add to the organization. | 
+**organizationId** | **String** | ID of the organization the user will be added to. | 
 **expiresOn** | [**DateTime**](DateTime.md) | When the invite is no longer active. | [optional] 
 **id** | **String** | Invite identifier tag. | [optional] 
 **invitedBy** | **String** | The email address of the user who created the invite. | [optional] 
 **invitedMemberEmail** | **String** | Email address of the user to add to the organization. | [optional] 
-**invitedMemberId** | **String** | ID of the user to add to the organization. | 
 **invitedOn** | [**DateTime**](DateTime.md) | When the invite was sent. | [optional] 
-**organizationId** | **String** | ID of the organization the user will be added to. | 
 **organizationIsEnforcingTwofactor** | **bool** |  | [optional] 
 **organizationName** | **String** | Organization name. | [optional] 
 **roles** | **BuiltList&lt;String&gt;** | List of role names the membership has for this account. | [optional] 

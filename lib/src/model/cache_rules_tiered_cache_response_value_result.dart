@@ -15,8 +15,8 @@ part 'cache_rules_tiered_cache_response_value_result.g.dart';
 ///
 /// Properties:
 /// * [id] - ID of the zone setting.
-/// * [modifiedOn] - Last time this setting was modified.
 /// * [value] 
+/// * [modifiedOn] - Last time this setting was modified.
 @BuiltValue()
 abstract class CacheRulesTieredCacheResponseValueResult implements CacheRulesTieredCache, Built<CacheRulesTieredCacheResponseValueResult, CacheRulesTieredCacheResponseValueResultBuilder> {
   @BuiltValueField(wireName: r'value')

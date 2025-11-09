@@ -11,20 +11,20 @@ part 'magic_netflow_config.g.dart';
 /// NetFlow configuration for a site.
 ///
 /// Properties:
-/// * [activeTimeout] - Timeout in seconds for active flows (defaults to 30).
 /// * [collectorIp] - IPv4 address of the NetFlow collector.
+/// * [activeTimeout] - Timeout in seconds for active flows (defaults to 30).
 /// * [collectorPort] - UDP port of the NetFlow collector (defaults to 2055).
 /// * [inactiveTimeout] - Timeout in seconds for inactive flows (defaults to 15).
 /// * [samplingRate] - Sampling rate for NetFlow records (1 = every packet, 1000 = 1 in 1000 packets). Defaults to 1.
 @BuiltValue()
 abstract class MagicNetflowConfig implements Built<MagicNetflowConfig, MagicNetflowConfigBuilder> {
-  /// Timeout in seconds for active flows (defaults to 30).
-  @BuiltValueField(wireName: r'active_timeout')
-  int? get activeTimeout;
-
   /// IPv4 address of the NetFlow collector.
   @BuiltValueField(wireName: r'collector_ip')
   String get collectorIp;
+
+  /// Timeout in seconds for active flows (defaults to 30).
+  @BuiltValueField(wireName: r'active_timeout')
+  int? get activeTimeout;
 
   /// UDP port of the NetFlow collector (defaults to 2055).
   @BuiltValueField(wireName: r'collector_port')
@@ -61,6 +61,11 @@ class _$MagicNetflowConfigSerializer implements PrimitiveSerializer<MagicNetflow
     MagicNetflowConfig object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    yield r'collector_ip';
+    yield serializers.serialize(
+      object.collectorIp,
+      specifiedType: const FullType(String),
+    );
     if (object.activeTimeout != null) {
       yield r'active_timeout';
       yield serializers.serialize(
@@ -68,11 +73,6 @@ class _$MagicNetflowConfigSerializer implements PrimitiveSerializer<MagicNetflow
         specifiedType: const FullType(int),
       );
     }
-    yield r'collector_ip';
-    yield serializers.serialize(
-      object.collectorIp,
-      specifiedType: const FullType(String),
-    );
     if (object.collectorPort != null) {
       yield r'collector_port';
       yield serializers.serialize(
@@ -117,19 +117,19 @@ class _$MagicNetflowConfigSerializer implements PrimitiveSerializer<MagicNetflow
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'active_timeout':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
-          result.activeTimeout = valueDes;
-          break;
         case r'collector_ip':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(String),
           ) as String;
           result.collectorIp = valueDes;
+          break;
+        case r'active_timeout':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(int),
+          ) as int;
+          result.activeTimeout = valueDes;
           break;
         case r'collector_port':
           final valueDes = serializers.deserialize(

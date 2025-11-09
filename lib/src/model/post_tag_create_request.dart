@@ -12,6 +12,7 @@ part 'post_tag_create_request.g.dart';
 /// PostTagCreateRequest
 ///
 /// Properties:
+/// * [value] 
 /// * [activeDuration] 
 /// * [actorCategory] 
 /// * [aliasGroupNames] 
@@ -27,9 +28,11 @@ part 'post_tag_create_request.g.dart';
 /// * [originCountryISO] 
 /// * [priority] 
 /// * [sophisticationLevel] 
-/// * [value] 
 @BuiltValue()
 abstract class PostTagCreateRequest implements Built<PostTagCreateRequest, PostTagCreateRequestBuilder> {
+  @BuiltValueField(wireName: r'value')
+  String get value;
+
   @BuiltValueField(wireName: r'activeDuration')
   String? get activeDuration;
 
@@ -75,9 +78,6 @@ abstract class PostTagCreateRequest implements Built<PostTagCreateRequest, PostT
   @BuiltValueField(wireName: r'sophisticationLevel')
   String? get sophisticationLevel;
 
-  @BuiltValueField(wireName: r'value')
-  String get value;
-
   PostTagCreateRequest._();
 
   factory PostTagCreateRequest([void updates(PostTagCreateRequestBuilder b)]) = _$PostTagCreateRequest;
@@ -101,6 +101,11 @@ class _$PostTagCreateRequestSerializer implements PrimitiveSerializer<PostTagCre
     PostTagCreateRequest object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    yield r'value';
+    yield serializers.serialize(
+      object.value,
+      specifiedType: const FullType(String),
+    );
     if (object.activeDuration != null) {
       yield r'activeDuration';
       yield serializers.serialize(
@@ -206,11 +211,6 @@ class _$PostTagCreateRequestSerializer implements PrimitiveSerializer<PostTagCre
         specifiedType: const FullType(String),
       );
     }
-    yield r'value';
-    yield serializers.serialize(
-      object.value,
-      specifiedType: const FullType(String),
-    );
   }
 
   @override
@@ -234,6 +234,13 @@ class _$PostTagCreateRequestSerializer implements PrimitiveSerializer<PostTagCre
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
+        case r'value':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.value = valueDes;
+          break;
         case r'activeDuration':
           final valueDes = serializers.deserialize(
             value,
@@ -338,13 +345,6 @@ class _$PostTagCreateRequestSerializer implements PrimitiveSerializer<PostTagCre
             specifiedType: const FullType(String),
           ) as String;
           result.sophisticationLevel = valueDes;
-          break;
-        case r'value':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.value = valueDes;
           break;
         default:
           unhandled.add(key);

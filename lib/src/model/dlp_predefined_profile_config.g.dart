@@ -8,8 +8,6 @@ part of 'dlp_predefined_profile_config.dart';
 
 class _$DlpPredefinedProfileConfig extends DlpPredefinedProfileConfig {
   @override
-  final bool? aiContextEnabled;
-  @override
   final int allowedMatchCount;
   @override
   final String? confidenceThreshold;
@@ -22,6 +20,8 @@ class _$DlpPredefinedProfileConfig extends DlpPredefinedProfileConfig {
   @override
   final String name;
   @override
+  final bool? aiContextEnabled;
+  @override
   final bool? ocrEnabled;
   @override
   final bool? openAccess;
@@ -31,13 +31,13 @@ class _$DlpPredefinedProfileConfig extends DlpPredefinedProfileConfig {
       (DlpPredefinedProfileConfigBuilder()..update(updates))._build();
 
   _$DlpPredefinedProfileConfig._(
-      {this.aiContextEnabled,
-      required this.allowedMatchCount,
+      {required this.allowedMatchCount,
       this.confidenceThreshold,
       required this.enabledEntries,
       required this.entries,
       required this.id,
       required this.name,
+      this.aiContextEnabled,
       this.ocrEnabled,
       this.openAccess})
       : super._();
@@ -54,13 +54,13 @@ class _$DlpPredefinedProfileConfig extends DlpPredefinedProfileConfig {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is DlpPredefinedProfileConfig &&
-        aiContextEnabled == other.aiContextEnabled &&
         allowedMatchCount == other.allowedMatchCount &&
         confidenceThreshold == other.confidenceThreshold &&
         enabledEntries == other.enabledEntries &&
         entries == other.entries &&
         id == other.id &&
         name == other.name &&
+        aiContextEnabled == other.aiContextEnabled &&
         ocrEnabled == other.ocrEnabled &&
         openAccess == other.openAccess;
   }
@@ -68,13 +68,13 @@ class _$DlpPredefinedProfileConfig extends DlpPredefinedProfileConfig {
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, aiContextEnabled.hashCode);
     _$hash = $jc(_$hash, allowedMatchCount.hashCode);
     _$hash = $jc(_$hash, confidenceThreshold.hashCode);
     _$hash = $jc(_$hash, enabledEntries.hashCode);
     _$hash = $jc(_$hash, entries.hashCode);
     _$hash = $jc(_$hash, id.hashCode);
     _$hash = $jc(_$hash, name.hashCode);
+    _$hash = $jc(_$hash, aiContextEnabled.hashCode);
     _$hash = $jc(_$hash, ocrEnabled.hashCode);
     _$hash = $jc(_$hash, openAccess.hashCode);
     _$hash = $jf(_$hash);
@@ -84,13 +84,13 @@ class _$DlpPredefinedProfileConfig extends DlpPredefinedProfileConfig {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'DlpPredefinedProfileConfig')
-          ..add('aiContextEnabled', aiContextEnabled)
           ..add('allowedMatchCount', allowedMatchCount)
           ..add('confidenceThreshold', confidenceThreshold)
           ..add('enabledEntries', enabledEntries)
           ..add('entries', entries)
           ..add('id', id)
           ..add('name', name)
+          ..add('aiContextEnabled', aiContextEnabled)
           ..add('ocrEnabled', ocrEnabled)
           ..add('openAccess', openAccess))
         .toString();
@@ -101,11 +101,6 @@ class DlpPredefinedProfileConfigBuilder
     implements
         Builder<DlpPredefinedProfileConfig, DlpPredefinedProfileConfigBuilder> {
   _$DlpPredefinedProfileConfig? _$v;
-
-  bool? _aiContextEnabled;
-  bool? get aiContextEnabled => _$this._aiContextEnabled;
-  set aiContextEnabled(bool? aiContextEnabled) =>
-      _$this._aiContextEnabled = aiContextEnabled;
 
   int? _allowedMatchCount;
   int? get allowedMatchCount => _$this._allowedMatchCount;
@@ -136,6 +131,11 @@ class DlpPredefinedProfileConfigBuilder
   String? get name => _$this._name;
   set name(String? name) => _$this._name = name;
 
+  bool? _aiContextEnabled;
+  bool? get aiContextEnabled => _$this._aiContextEnabled;
+  set aiContextEnabled(bool? aiContextEnabled) =>
+      _$this._aiContextEnabled = aiContextEnabled;
+
   bool? _ocrEnabled;
   bool? get ocrEnabled => _$this._ocrEnabled;
   set ocrEnabled(bool? ocrEnabled) => _$this._ocrEnabled = ocrEnabled;
@@ -151,13 +151,13 @@ class DlpPredefinedProfileConfigBuilder
   DlpPredefinedProfileConfigBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _aiContextEnabled = $v.aiContextEnabled;
       _allowedMatchCount = $v.allowedMatchCount;
       _confidenceThreshold = $v.confidenceThreshold;
       _enabledEntries = $v.enabledEntries.toBuilder();
       _entries = $v.entries.toBuilder();
       _id = $v.id;
       _name = $v.name;
+      _aiContextEnabled = $v.aiContextEnabled;
       _ocrEnabled = $v.ocrEnabled;
       _openAccess = $v.openAccess;
       _$v = null;
@@ -183,7 +183,6 @@ class DlpPredefinedProfileConfigBuilder
     try {
       _$result = _$v ??
           _$DlpPredefinedProfileConfig._(
-            aiContextEnabled: aiContextEnabled,
             allowedMatchCount: BuiltValueNullFieldError.checkNotNull(
                 allowedMatchCount,
                 r'DlpPredefinedProfileConfig',
@@ -195,6 +194,7 @@ class DlpPredefinedProfileConfigBuilder
                 id, r'DlpPredefinedProfileConfig', 'id'),
             name: BuiltValueNullFieldError.checkNotNull(
                 name, r'DlpPredefinedProfileConfig', 'name'),
+            aiContextEnabled: aiContextEnabled,
             ocrEnabled: ocrEnabled,
             openAccess: openAccess,
           );

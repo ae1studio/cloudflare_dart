@@ -11,13 +11,21 @@ part 'cloudforce_one_requests_request_asset_item.g.dart';
 /// CloudforceOneRequestsRequestAssetItem
 ///
 /// Properties:
+/// * [id] - Asset ID.
+/// * [name] - Asset name.
 /// * [created] - Defines the asset creation time.
 /// * [description] - Asset description.
 /// * [fileType] - Asset file type.
-/// * [id] - Asset ID.
-/// * [name] - Asset name.
 @BuiltValue()
 abstract class CloudforceOneRequestsRequestAssetItem implements Built<CloudforceOneRequestsRequestAssetItem, CloudforceOneRequestsRequestAssetItemBuilder> {
+  /// Asset ID.
+  @BuiltValueField(wireName: r'id')
+  int get id;
+
+  /// Asset name.
+  @BuiltValueField(wireName: r'name')
+  String get name;
+
   /// Defines the asset creation time.
   @BuiltValueField(wireName: r'created')
   DateTime? get created;
@@ -29,14 +37,6 @@ abstract class CloudforceOneRequestsRequestAssetItem implements Built<Cloudforce
   /// Asset file type.
   @BuiltValueField(wireName: r'file_type')
   String? get fileType;
-
-  /// Asset ID.
-  @BuiltValueField(wireName: r'id')
-  int get id;
-
-  /// Asset name.
-  @BuiltValueField(wireName: r'name')
-  String get name;
 
   CloudforceOneRequestsRequestAssetItem._();
 
@@ -61,6 +61,16 @@ class _$CloudforceOneRequestsRequestAssetItemSerializer implements PrimitiveSeri
     CloudforceOneRequestsRequestAssetItem object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    yield r'id';
+    yield serializers.serialize(
+      object.id,
+      specifiedType: const FullType(int),
+    );
+    yield r'name';
+    yield serializers.serialize(
+      object.name,
+      specifiedType: const FullType(String),
+    );
     if (object.created != null) {
       yield r'created';
       yield serializers.serialize(
@@ -82,16 +92,6 @@ class _$CloudforceOneRequestsRequestAssetItemSerializer implements PrimitiveSeri
         specifiedType: const FullType(String),
       );
     }
-    yield r'id';
-    yield serializers.serialize(
-      object.id,
-      specifiedType: const FullType(int),
-    );
-    yield r'name';
-    yield serializers.serialize(
-      object.name,
-      specifiedType: const FullType(String),
-    );
   }
 
   @override
@@ -115,6 +115,20 @@ class _$CloudforceOneRequestsRequestAssetItemSerializer implements PrimitiveSeri
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
+        case r'id':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(int),
+          ) as int;
+          result.id = valueDes;
+          break;
+        case r'name':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.name = valueDes;
+          break;
         case r'created':
           final valueDes = serializers.deserialize(
             value,
@@ -135,20 +149,6 @@ class _$CloudforceOneRequestsRequestAssetItemSerializer implements PrimitiveSeri
             specifiedType: const FullType(String),
           ) as String;
           result.fileType = valueDes;
-          break;
-        case r'id':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
-          result.id = valueDes;
-          break;
-        case r'name':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.name = valueDes;
           break;
         default:
           unhandled.add(key);

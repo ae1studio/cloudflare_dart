@@ -18,18 +18,18 @@ part 'tls_certificates_and_hostnames_custom_certificate.g.dart';
 /// Properties:
 /// * [bundleMethod] 
 /// * [expiresOn] - When the certificate from the authority expires.
-/// * [geoRestrictions] 
 /// * [hosts] 
 /// * [id] - Identifier.
 /// * [issuer] - The certificate authority that issued the certificate.
-/// * [keylessServer] 
 /// * [modifiedOn] - When the certificate was last modified.
-/// * [policy] - Specify the policy that determines the region where your private key will be held locally. HTTPS connections to any excluded data center will still be fully encrypted, but will incur some latency while Keyless SSL is used to complete the handshake with the nearest allowed data center. Any combination of countries, specified by their two letter country code (https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#Officially_assigned_code_elements) can be chosen, such as 'country: IN', as well as 'region: EU' which refers to the EU region. If there are too few data centers satisfying the policy, it will be rejected.
 /// * [priority] - The order/priority in which the certificate will be used in a request. The higher priority will break ties across overlapping 'legacy_custom' certificates, but 'legacy_custom' certificates will always supercede 'sni_custom' certificates.
 /// * [signature] - The type of hash used for the certificate.
 /// * [status] 
 /// * [uploadedOn] - When the certificate was uploaded to Cloudflare.
 /// * [zoneId] - Identifier.
+/// * [geoRestrictions] 
+/// * [keylessServer] 
+/// * [policy] - Specify the policy that determines the region where your private key will be held locally. HTTPS connections to any excluded data center will still be fully encrypted, but will incur some latency while Keyless SSL is used to complete the handshake with the nearest allowed data center. Any combination of countries, specified by their two letter country code (https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#Officially_assigned_code_elements) can be chosen, such as 'country: IN', as well as 'region: EU' which refers to the EU region. If there are too few data centers satisfying the policy, it will be rejected.
 @BuiltValue()
 abstract class TlsCertificatesAndHostnamesCustomCertificate implements Built<TlsCertificatesAndHostnamesCustomCertificate, TlsCertificatesAndHostnamesCustomCertificateBuilder> {
   @BuiltValueField(wireName: r'bundle_method')
@@ -39,9 +39,6 @@ abstract class TlsCertificatesAndHostnamesCustomCertificate implements Built<Tls
   /// When the certificate from the authority expires.
   @BuiltValueField(wireName: r'expires_on')
   DateTime get expiresOn;
-
-  @BuiltValueField(wireName: r'geo_restrictions')
-  TlsCertificatesAndHostnamesGeoRestrictions? get geoRestrictions;
 
   @BuiltValueField(wireName: r'hosts')
   BuiltList<String> get hosts;
@@ -54,16 +51,9 @@ abstract class TlsCertificatesAndHostnamesCustomCertificate implements Built<Tls
   @BuiltValueField(wireName: r'issuer')
   String get issuer;
 
-  @BuiltValueField(wireName: r'keyless_server')
-  TlsCertificatesAndHostnamesKeylessCertificate? get keylessServer;
-
   /// When the certificate was last modified.
   @BuiltValueField(wireName: r'modified_on')
   DateTime get modifiedOn;
-
-  /// Specify the policy that determines the region where your private key will be held locally. HTTPS connections to any excluded data center will still be fully encrypted, but will incur some latency while Keyless SSL is used to complete the handshake with the nearest allowed data center. Any combination of countries, specified by their two letter country code (https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#Officially_assigned_code_elements) can be chosen, such as 'country: IN', as well as 'region: EU' which refers to the EU region. If there are too few data centers satisfying the policy, it will be rejected.
-  @BuiltValueField(wireName: r'policy')
-  String? get policy;
 
   /// The order/priority in which the certificate will be used in a request. The higher priority will break ties across overlapping 'legacy_custom' certificates, but 'legacy_custom' certificates will always supercede 'sni_custom' certificates.
   @BuiltValueField(wireName: r'priority')
@@ -84,6 +74,16 @@ abstract class TlsCertificatesAndHostnamesCustomCertificate implements Built<Tls
   /// Identifier.
   @BuiltValueField(wireName: r'zone_id')
   String get zoneId;
+
+  @BuiltValueField(wireName: r'geo_restrictions')
+  TlsCertificatesAndHostnamesGeoRestrictions? get geoRestrictions;
+
+  @BuiltValueField(wireName: r'keyless_server')
+  TlsCertificatesAndHostnamesKeylessCertificate? get keylessServer;
+
+  /// Specify the policy that determines the region where your private key will be held locally. HTTPS connections to any excluded data center will still be fully encrypted, but will incur some latency while Keyless SSL is used to complete the handshake with the nearest allowed data center. Any combination of countries, specified by their two letter country code (https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#Officially_assigned_code_elements) can be chosen, such as 'country: IN', as well as 'region: EU' which refers to the EU region. If there are too few data centers satisfying the policy, it will be rejected.
+  @BuiltValueField(wireName: r'policy')
+  String? get policy;
 
   TlsCertificatesAndHostnamesCustomCertificate._();
 
@@ -119,13 +119,6 @@ class _$TlsCertificatesAndHostnamesCustomCertificateSerializer implements Primit
       object.expiresOn,
       specifiedType: const FullType(DateTime),
     );
-    if (object.geoRestrictions != null) {
-      yield r'geo_restrictions';
-      yield serializers.serialize(
-        object.geoRestrictions,
-        specifiedType: const FullType(TlsCertificatesAndHostnamesGeoRestrictions),
-      );
-    }
     yield r'hosts';
     yield serializers.serialize(
       object.hosts,
@@ -141,25 +134,11 @@ class _$TlsCertificatesAndHostnamesCustomCertificateSerializer implements Primit
       object.issuer,
       specifiedType: const FullType(String),
     );
-    if (object.keylessServer != null) {
-      yield r'keyless_server';
-      yield serializers.serialize(
-        object.keylessServer,
-        specifiedType: const FullType(TlsCertificatesAndHostnamesKeylessCertificate),
-      );
-    }
     yield r'modified_on';
     yield serializers.serialize(
       object.modifiedOn,
       specifiedType: const FullType(DateTime),
     );
-    if (object.policy != null) {
-      yield r'policy';
-      yield serializers.serialize(
-        object.policy,
-        specifiedType: const FullType(String),
-      );
-    }
     yield r'priority';
     yield serializers.serialize(
       object.priority,
@@ -185,6 +164,27 @@ class _$TlsCertificatesAndHostnamesCustomCertificateSerializer implements Primit
       object.zoneId,
       specifiedType: const FullType(String),
     );
+    if (object.geoRestrictions != null) {
+      yield r'geo_restrictions';
+      yield serializers.serialize(
+        object.geoRestrictions,
+        specifiedType: const FullType(TlsCertificatesAndHostnamesGeoRestrictions),
+      );
+    }
+    if (object.keylessServer != null) {
+      yield r'keyless_server';
+      yield serializers.serialize(
+        object.keylessServer,
+        specifiedType: const FullType(TlsCertificatesAndHostnamesKeylessCertificate),
+      );
+    }
+    if (object.policy != null) {
+      yield r'policy';
+      yield serializers.serialize(
+        object.policy,
+        specifiedType: const FullType(String),
+      );
+    }
   }
 
   @override
@@ -222,13 +222,6 @@ class _$TlsCertificatesAndHostnamesCustomCertificateSerializer implements Primit
           ) as DateTime;
           result.expiresOn = valueDes;
           break;
-        case r'geo_restrictions':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(TlsCertificatesAndHostnamesGeoRestrictions),
-          ) as TlsCertificatesAndHostnamesGeoRestrictions;
-          result.geoRestrictions.replace(valueDes);
-          break;
         case r'hosts':
           final valueDes = serializers.deserialize(
             value,
@@ -250,26 +243,12 @@ class _$TlsCertificatesAndHostnamesCustomCertificateSerializer implements Primit
           ) as String;
           result.issuer = valueDes;
           break;
-        case r'keyless_server':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(TlsCertificatesAndHostnamesKeylessCertificate),
-          ) as TlsCertificatesAndHostnamesKeylessCertificate;
-          result.keylessServer.replace(valueDes);
-          break;
         case r'modified_on':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(DateTime),
           ) as DateTime;
           result.modifiedOn = valueDes;
-          break;
-        case r'policy':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.policy = valueDes;
           break;
         case r'priority':
           final valueDes = serializers.deserialize(
@@ -305,6 +284,27 @@ class _$TlsCertificatesAndHostnamesCustomCertificateSerializer implements Primit
             specifiedType: const FullType(String),
           ) as String;
           result.zoneId = valueDes;
+          break;
+        case r'geo_restrictions':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(TlsCertificatesAndHostnamesGeoRestrictions),
+          ) as TlsCertificatesAndHostnamesGeoRestrictions;
+          result.geoRestrictions.replace(valueDes);
+          break;
+        case r'keyless_server':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(TlsCertificatesAndHostnamesKeylessCertificate),
+          ) as TlsCertificatesAndHostnamesKeylessCertificate;
+          result.keylessServer.replace(valueDes);
+          break;
+        case r'policy':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.policy = valueDes;
           break;
         default:
           unhandled.add(key);

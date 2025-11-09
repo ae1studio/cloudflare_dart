@@ -28,14 +28,14 @@ part 'dlp_entry.g.dart';
 /// * [id] 
 /// * [name] 
 /// * [pattern] 
-/// * [profileId] 
 /// * [updatedAt] 
 /// * [type] 
 /// * [confidence] 
-/// * [variant] 
 /// * [caseSensitive] - Only applies to custom word lists. Determines if the words should be matched in a case-sensitive manner Cannot be set to false if secret is true
 /// * [secret] 
 /// * [wordList] 
+/// * [profileId] 
+/// * [variant] 
 @BuiltValue()
 abstract class DlpEntry implements Built<DlpEntry, DlpEntryBuilder> {
   /// One Of [CustomEntry], [DocumentFingerprintEntry], [ExactDataEntry], [IntegrationEntry], [PredefinedEntry], [WordListEntry]

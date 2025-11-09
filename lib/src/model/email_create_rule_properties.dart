@@ -15,8 +15,8 @@ part 'email_create_rule_properties.g.dart';
 ///
 /// Properties:
 /// * [actions] - List actions patterns.
-/// * [enabled] - Routing rule status.
 /// * [matchers] - Matching patterns to forward to your actions.
+/// * [enabled] - Routing rule status.
 /// * [name] - Routing rule name.
 /// * [priority] - Priority of the routing rule.
 @BuiltValue()
@@ -25,13 +25,13 @@ abstract class EmailCreateRuleProperties implements Built<EmailCreateRulePropert
   @BuiltValueField(wireName: r'actions')
   BuiltList<EmailRuleAction> get actions;
 
-  /// Routing rule status.
-  @BuiltValueField(wireName: r'enabled')
-  bool? get enabled;
-
   /// Matching patterns to forward to your actions.
   @BuiltValueField(wireName: r'matchers')
   BuiltList<EmailRuleMatcher> get matchers;
+
+  /// Routing rule status.
+  @BuiltValueField(wireName: r'enabled')
+  bool? get enabled;
 
   /// Routing rule name.
   @BuiltValueField(wireName: r'name')
@@ -71,6 +71,11 @@ class _$EmailCreateRulePropertiesSerializer implements PrimitiveSerializer<Email
       object.actions,
       specifiedType: const FullType(BuiltList, [FullType(EmailRuleAction)]),
     );
+    yield r'matchers';
+    yield serializers.serialize(
+      object.matchers,
+      specifiedType: const FullType(BuiltList, [FullType(EmailRuleMatcher)]),
+    );
     if (object.enabled != null) {
       yield r'enabled';
       yield serializers.serialize(
@@ -78,11 +83,6 @@ class _$EmailCreateRulePropertiesSerializer implements PrimitiveSerializer<Email
         specifiedType: const FullType(bool),
       );
     }
-    yield r'matchers';
-    yield serializers.serialize(
-      object.matchers,
-      specifiedType: const FullType(BuiltList, [FullType(EmailRuleMatcher)]),
-    );
     if (object.name != null) {
       yield r'name';
       yield serializers.serialize(
@@ -127,19 +127,19 @@ class _$EmailCreateRulePropertiesSerializer implements PrimitiveSerializer<Email
           ) as BuiltList<EmailRuleAction>;
           result.actions.replace(valueDes);
           break;
-        case r'enabled':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
-          result.enabled = valueDes;
-          break;
         case r'matchers':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(BuiltList, [FullType(EmailRuleMatcher)]),
           ) as BuiltList<EmailRuleMatcher>;
           result.matchers.replace(valueDes);
+          break;
+        case r'enabled':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(bool),
+          ) as bool;
+          result.enabled = valueDes;
           break;
         case r'name':
           final valueDes = serializers.deserialize(

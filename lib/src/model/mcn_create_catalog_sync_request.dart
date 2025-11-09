@@ -13,16 +13,13 @@ part 'mcn_create_catalog_sync_request.g.dart';
 /// McnCreateCatalogSyncRequest
 ///
 /// Properties:
-/// * [description] 
 /// * [destinationType] 
 /// * [name] 
-/// * [policy] 
 /// * [updateMode] 
+/// * [description] 
+/// * [policy] 
 @BuiltValue()
 abstract class McnCreateCatalogSyncRequest implements Built<McnCreateCatalogSyncRequest, McnCreateCatalogSyncRequestBuilder> {
-  @BuiltValueField(wireName: r'description')
-  String? get description;
-
   @BuiltValueField(wireName: r'destination_type')
   McnCatalogSyncDestinationType get destinationType;
   // enum destinationTypeEnum {  NONE,  ZERO_TRUST_LIST,  };
@@ -30,12 +27,15 @@ abstract class McnCreateCatalogSyncRequest implements Built<McnCreateCatalogSync
   @BuiltValueField(wireName: r'name')
   String get name;
 
-  @BuiltValueField(wireName: r'policy')
-  String? get policy;
-
   @BuiltValueField(wireName: r'update_mode')
   McnCatalogSyncUpdateMode get updateMode;
   // enum updateModeEnum {  AUTO,  MANUAL,  };
+
+  @BuiltValueField(wireName: r'description')
+  String? get description;
+
+  @BuiltValueField(wireName: r'policy')
+  String? get policy;
 
   McnCreateCatalogSyncRequest._();
 
@@ -60,13 +60,6 @@ class _$McnCreateCatalogSyncRequestSerializer implements PrimitiveSerializer<Mcn
     McnCreateCatalogSyncRequest object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
-    if (object.description != null) {
-      yield r'description';
-      yield serializers.serialize(
-        object.description,
-        specifiedType: const FullType(String),
-      );
-    }
     yield r'destination_type';
     yield serializers.serialize(
       object.destinationType,
@@ -77,6 +70,18 @@ class _$McnCreateCatalogSyncRequestSerializer implements PrimitiveSerializer<Mcn
       object.name,
       specifiedType: const FullType(String),
     );
+    yield r'update_mode';
+    yield serializers.serialize(
+      object.updateMode,
+      specifiedType: const FullType(McnCatalogSyncUpdateMode),
+    );
+    if (object.description != null) {
+      yield r'description';
+      yield serializers.serialize(
+        object.description,
+        specifiedType: const FullType(String),
+      );
+    }
     if (object.policy != null) {
       yield r'policy';
       yield serializers.serialize(
@@ -84,11 +89,6 @@ class _$McnCreateCatalogSyncRequestSerializer implements PrimitiveSerializer<Mcn
         specifiedType: const FullType(String),
       );
     }
-    yield r'update_mode';
-    yield serializers.serialize(
-      object.updateMode,
-      specifiedType: const FullType(McnCatalogSyncUpdateMode),
-    );
   }
 
   @override
@@ -112,13 +112,6 @@ class _$McnCreateCatalogSyncRequestSerializer implements PrimitiveSerializer<Mcn
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'description':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.description = valueDes;
-          break;
         case r'destination_type':
           final valueDes = serializers.deserialize(
             value,
@@ -133,19 +126,26 @@ class _$McnCreateCatalogSyncRequestSerializer implements PrimitiveSerializer<Mcn
           ) as String;
           result.name = valueDes;
           break;
-        case r'policy':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.policy = valueDes;
-          break;
         case r'update_mode':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(McnCatalogSyncUpdateMode),
           ) as McnCatalogSyncUpdateMode;
           result.updateMode = valueDes;
+          break;
+        case r'description':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.description = valueDes;
+          break;
+        case r'policy':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.policy = valueDes;
           break;
         default:
           unhandled.add(key);

@@ -76,6 +76,12 @@ class _$MagicBgpStatusWithStateStateEnumSerializer
 
 class _$MagicBgpStatusWithState extends MagicBgpStatusWithState {
   @override
+  final MagicBgpStatusWithStateStateEnum state;
+  @override
+  final bool tcpEstablished;
+  @override
+  final DateTime updatedAt;
+  @override
   final String? bgpState;
   @override
   final String? cfSpeakerIp;
@@ -85,26 +91,20 @@ class _$MagicBgpStatusWithState extends MagicBgpStatusWithState {
   final String? customerSpeakerIp;
   @override
   final int? customerSpeakerPort;
-  @override
-  final MagicBgpStatusWithStateStateEnum state;
-  @override
-  final bool tcpEstablished;
-  @override
-  final DateTime updatedAt;
 
   factory _$MagicBgpStatusWithState(
           [void Function(MagicBgpStatusWithStateBuilder)? updates]) =>
       (MagicBgpStatusWithStateBuilder()..update(updates))._build();
 
   _$MagicBgpStatusWithState._(
-      {this.bgpState,
+      {required this.state,
+      required this.tcpEstablished,
+      required this.updatedAt,
+      this.bgpState,
       this.cfSpeakerIp,
       this.cfSpeakerPort,
       this.customerSpeakerIp,
-      this.customerSpeakerPort,
-      required this.state,
-      required this.tcpEstablished,
-      required this.updatedAt})
+      this.customerSpeakerPort})
       : super._();
   @override
   MagicBgpStatusWithState rebuild(
@@ -119,27 +119,27 @@ class _$MagicBgpStatusWithState extends MagicBgpStatusWithState {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is MagicBgpStatusWithState &&
+        state == other.state &&
+        tcpEstablished == other.tcpEstablished &&
+        updatedAt == other.updatedAt &&
         bgpState == other.bgpState &&
         cfSpeakerIp == other.cfSpeakerIp &&
         cfSpeakerPort == other.cfSpeakerPort &&
         customerSpeakerIp == other.customerSpeakerIp &&
-        customerSpeakerPort == other.customerSpeakerPort &&
-        state == other.state &&
-        tcpEstablished == other.tcpEstablished &&
-        updatedAt == other.updatedAt;
+        customerSpeakerPort == other.customerSpeakerPort;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
+    _$hash = $jc(_$hash, state.hashCode);
+    _$hash = $jc(_$hash, tcpEstablished.hashCode);
+    _$hash = $jc(_$hash, updatedAt.hashCode);
     _$hash = $jc(_$hash, bgpState.hashCode);
     _$hash = $jc(_$hash, cfSpeakerIp.hashCode);
     _$hash = $jc(_$hash, cfSpeakerPort.hashCode);
     _$hash = $jc(_$hash, customerSpeakerIp.hashCode);
     _$hash = $jc(_$hash, customerSpeakerPort.hashCode);
-    _$hash = $jc(_$hash, state.hashCode);
-    _$hash = $jc(_$hash, tcpEstablished.hashCode);
-    _$hash = $jc(_$hash, updatedAt.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -147,14 +147,14 @@ class _$MagicBgpStatusWithState extends MagicBgpStatusWithState {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'MagicBgpStatusWithState')
+          ..add('state', state)
+          ..add('tcpEstablished', tcpEstablished)
+          ..add('updatedAt', updatedAt)
           ..add('bgpState', bgpState)
           ..add('cfSpeakerIp', cfSpeakerIp)
           ..add('cfSpeakerPort', cfSpeakerPort)
           ..add('customerSpeakerIp', customerSpeakerIp)
-          ..add('customerSpeakerPort', customerSpeakerPort)
-          ..add('state', state)
-          ..add('tcpEstablished', tcpEstablished)
-          ..add('updatedAt', updatedAt))
+          ..add('customerSpeakerPort', customerSpeakerPort))
         .toString();
   }
 }
@@ -163,6 +163,19 @@ class MagicBgpStatusWithStateBuilder
     implements
         Builder<MagicBgpStatusWithState, MagicBgpStatusWithStateBuilder> {
   _$MagicBgpStatusWithState? _$v;
+
+  MagicBgpStatusWithStateStateEnum? _state;
+  MagicBgpStatusWithStateStateEnum? get state => _$this._state;
+  set state(MagicBgpStatusWithStateStateEnum? state) => _$this._state = state;
+
+  bool? _tcpEstablished;
+  bool? get tcpEstablished => _$this._tcpEstablished;
+  set tcpEstablished(bool? tcpEstablished) =>
+      _$this._tcpEstablished = tcpEstablished;
+
+  DateTime? _updatedAt;
+  DateTime? get updatedAt => _$this._updatedAt;
+  set updatedAt(DateTime? updatedAt) => _$this._updatedAt = updatedAt;
 
   String? _bgpState;
   String? get bgpState => _$this._bgpState;
@@ -187,19 +200,6 @@ class MagicBgpStatusWithStateBuilder
   set customerSpeakerPort(int? customerSpeakerPort) =>
       _$this._customerSpeakerPort = customerSpeakerPort;
 
-  MagicBgpStatusWithStateStateEnum? _state;
-  MagicBgpStatusWithStateStateEnum? get state => _$this._state;
-  set state(MagicBgpStatusWithStateStateEnum? state) => _$this._state = state;
-
-  bool? _tcpEstablished;
-  bool? get tcpEstablished => _$this._tcpEstablished;
-  set tcpEstablished(bool? tcpEstablished) =>
-      _$this._tcpEstablished = tcpEstablished;
-
-  DateTime? _updatedAt;
-  DateTime? get updatedAt => _$this._updatedAt;
-  set updatedAt(DateTime? updatedAt) => _$this._updatedAt = updatedAt;
-
   MagicBgpStatusWithStateBuilder() {
     MagicBgpStatusWithState._defaults(this);
   }
@@ -207,14 +207,14 @@ class MagicBgpStatusWithStateBuilder
   MagicBgpStatusWithStateBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
+      _state = $v.state;
+      _tcpEstablished = $v.tcpEstablished;
+      _updatedAt = $v.updatedAt;
       _bgpState = $v.bgpState;
       _cfSpeakerIp = $v.cfSpeakerIp;
       _cfSpeakerPort = $v.cfSpeakerPort;
       _customerSpeakerIp = $v.customerSpeakerIp;
       _customerSpeakerPort = $v.customerSpeakerPort;
-      _state = $v.state;
-      _tcpEstablished = $v.tcpEstablished;
-      _updatedAt = $v.updatedAt;
       _$v = null;
     }
     return this;
@@ -236,17 +236,17 @@ class MagicBgpStatusWithStateBuilder
   _$MagicBgpStatusWithState _build() {
     final _$result = _$v ??
         _$MagicBgpStatusWithState._(
-          bgpState: bgpState,
-          cfSpeakerIp: cfSpeakerIp,
-          cfSpeakerPort: cfSpeakerPort,
-          customerSpeakerIp: customerSpeakerIp,
-          customerSpeakerPort: customerSpeakerPort,
           state: BuiltValueNullFieldError.checkNotNull(
               state, r'MagicBgpStatusWithState', 'state'),
           tcpEstablished: BuiltValueNullFieldError.checkNotNull(
               tcpEstablished, r'MagicBgpStatusWithState', 'tcpEstablished'),
           updatedAt: BuiltValueNullFieldError.checkNotNull(
               updatedAt, r'MagicBgpStatusWithState', 'updatedAt'),
+          bgpState: bgpState,
+          cfSpeakerIp: cfSpeakerIp,
+          cfSpeakerPort: cfSpeakerPort,
+          customerSpeakerIp: customerSpeakerIp,
+          customerSpeakerPort: customerSpeakerPort,
         );
     replace(_$result);
     return _$result;

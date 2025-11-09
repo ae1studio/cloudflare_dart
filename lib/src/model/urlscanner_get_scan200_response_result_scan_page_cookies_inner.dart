@@ -16,7 +16,6 @@ part 'urlscanner_get_scan200_response_result_scan_page_cookies_inner.g.dart';
 /// * [httpOnly] 
 /// * [name] 
 /// * [path] 
-/// * [priority] 
 /// * [sameParty] 
 /// * [secure] 
 /// * [session] 
@@ -24,6 +23,7 @@ part 'urlscanner_get_scan200_response_result_scan_page_cookies_inner.g.dart';
 /// * [sourcePort] 
 /// * [sourceScheme] 
 /// * [value] 
+/// * [priority] 
 @BuiltValue()
 abstract class UrlscannerGetScan200ResponseResultScanPageCookiesInner implements Built<UrlscannerGetScan200ResponseResultScanPageCookiesInner, UrlscannerGetScan200ResponseResultScanPageCookiesInnerBuilder> {
   @BuiltValueField(wireName: r'domain')
@@ -40,9 +40,6 @@ abstract class UrlscannerGetScan200ResponseResultScanPageCookiesInner implements
 
   @BuiltValueField(wireName: r'path')
   String get path;
-
-  @BuiltValueField(wireName: r'priority')
-  String? get priority;
 
   @BuiltValueField(wireName: r'sameParty')
   bool get sameParty;
@@ -64,6 +61,9 @@ abstract class UrlscannerGetScan200ResponseResultScanPageCookiesInner implements
 
   @BuiltValueField(wireName: r'value')
   String get value;
+
+  @BuiltValueField(wireName: r'priority')
+  String? get priority;
 
   UrlscannerGetScan200ResponseResultScanPageCookiesInner._();
 
@@ -113,13 +113,6 @@ class _$UrlscannerGetScan200ResponseResultScanPageCookiesInnerSerializer impleme
       object.path,
       specifiedType: const FullType(String),
     );
-    if (object.priority != null) {
-      yield r'priority';
-      yield serializers.serialize(
-        object.priority,
-        specifiedType: const FullType(String),
-      );
-    }
     yield r'sameParty';
     yield serializers.serialize(
       object.sameParty,
@@ -155,6 +148,13 @@ class _$UrlscannerGetScan200ResponseResultScanPageCookiesInnerSerializer impleme
       object.value,
       specifiedType: const FullType(String),
     );
+    if (object.priority != null) {
+      yield r'priority';
+      yield serializers.serialize(
+        object.priority,
+        specifiedType: const FullType(String),
+      );
+    }
   }
 
   @override
@@ -213,13 +213,6 @@ class _$UrlscannerGetScan200ResponseResultScanPageCookiesInnerSerializer impleme
           ) as String;
           result.path = valueDes;
           break;
-        case r'priority':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.priority = valueDes;
-          break;
         case r'sameParty':
           final valueDes = serializers.deserialize(
             value,
@@ -268,6 +261,13 @@ class _$UrlscannerGetScan200ResponseResultScanPageCookiesInnerSerializer impleme
             specifiedType: const FullType(String),
           ) as String;
           result.value = valueDes;
+          break;
+        case r'priority':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.priority = valueDes;
           break;
         default:
           unhandled.add(key);

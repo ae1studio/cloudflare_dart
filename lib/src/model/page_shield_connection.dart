@@ -13,28 +13,22 @@ part 'page_shield_connection.g.dart';
 ///
 /// Properties:
 /// * [addedAt] 
-/// * [domainReportedMalicious] 
-/// * [firstPageUrl] 
 /// * [firstSeenAt] 
 /// * [host] 
 /// * [id] - Identifier
 /// * [lastSeenAt] 
+/// * [url] 
+/// * [urlContainsCdnCgiPath] 
+/// * [domainReportedMalicious] 
+/// * [firstPageUrl] 
 /// * [maliciousDomainCategories] 
 /// * [maliciousUrlCategories] 
 /// * [pageUrls] 
-/// * [url] 
-/// * [urlContainsCdnCgiPath] 
 /// * [urlReportedMalicious] 
 @BuiltValue()
 abstract class PageShieldConnection implements Built<PageShieldConnection, PageShieldConnectionBuilder> {
   @BuiltValueField(wireName: r'added_at')
   DateTime get addedAt;
-
-  @BuiltValueField(wireName: r'domain_reported_malicious')
-  bool? get domainReportedMalicious;
-
-  @BuiltValueField(wireName: r'first_page_url')
-  String? get firstPageUrl;
 
   @BuiltValueField(wireName: r'first_seen_at')
   DateTime get firstSeenAt;
@@ -49,6 +43,18 @@ abstract class PageShieldConnection implements Built<PageShieldConnection, PageS
   @BuiltValueField(wireName: r'last_seen_at')
   DateTime get lastSeenAt;
 
+  @BuiltValueField(wireName: r'url')
+  String get url;
+
+  @BuiltValueField(wireName: r'url_contains_cdn_cgi_path')
+  bool get urlContainsCdnCgiPath;
+
+  @BuiltValueField(wireName: r'domain_reported_malicious')
+  bool? get domainReportedMalicious;
+
+  @BuiltValueField(wireName: r'first_page_url')
+  String? get firstPageUrl;
+
   @BuiltValueField(wireName: r'malicious_domain_categories')
   BuiltList<String>? get maliciousDomainCategories;
 
@@ -57,12 +63,6 @@ abstract class PageShieldConnection implements Built<PageShieldConnection, PageS
 
   @BuiltValueField(wireName: r'page_urls')
   BuiltList<String>? get pageUrls;
-
-  @BuiltValueField(wireName: r'url')
-  String get url;
-
-  @BuiltValueField(wireName: r'url_contains_cdn_cgi_path')
-  bool get urlContainsCdnCgiPath;
 
   @BuiltValueField(wireName: r'url_reported_malicious')
   bool? get urlReportedMalicious;
@@ -95,20 +95,6 @@ class _$PageShieldConnectionSerializer implements PrimitiveSerializer<PageShield
       object.addedAt,
       specifiedType: const FullType(DateTime),
     );
-    if (object.domainReportedMalicious != null) {
-      yield r'domain_reported_malicious';
-      yield serializers.serialize(
-        object.domainReportedMalicious,
-        specifiedType: const FullType(bool),
-      );
-    }
-    if (object.firstPageUrl != null) {
-      yield r'first_page_url';
-      yield serializers.serialize(
-        object.firstPageUrl,
-        specifiedType: const FullType(String),
-      );
-    }
     yield r'first_seen_at';
     yield serializers.serialize(
       object.firstSeenAt,
@@ -129,6 +115,30 @@ class _$PageShieldConnectionSerializer implements PrimitiveSerializer<PageShield
       object.lastSeenAt,
       specifiedType: const FullType(DateTime),
     );
+    yield r'url';
+    yield serializers.serialize(
+      object.url,
+      specifiedType: const FullType(String),
+    );
+    yield r'url_contains_cdn_cgi_path';
+    yield serializers.serialize(
+      object.urlContainsCdnCgiPath,
+      specifiedType: const FullType(bool),
+    );
+    if (object.domainReportedMalicious != null) {
+      yield r'domain_reported_malicious';
+      yield serializers.serialize(
+        object.domainReportedMalicious,
+        specifiedType: const FullType(bool),
+      );
+    }
+    if (object.firstPageUrl != null) {
+      yield r'first_page_url';
+      yield serializers.serialize(
+        object.firstPageUrl,
+        specifiedType: const FullType(String),
+      );
+    }
     if (object.maliciousDomainCategories != null) {
       yield r'malicious_domain_categories';
       yield serializers.serialize(
@@ -150,16 +160,6 @@ class _$PageShieldConnectionSerializer implements PrimitiveSerializer<PageShield
         specifiedType: const FullType(BuiltList, [FullType(String)]),
       );
     }
-    yield r'url';
-    yield serializers.serialize(
-      object.url,
-      specifiedType: const FullType(String),
-    );
-    yield r'url_contains_cdn_cgi_path';
-    yield serializers.serialize(
-      object.urlContainsCdnCgiPath,
-      specifiedType: const FullType(bool),
-    );
     if (object.urlReportedMalicious != null) {
       yield r'url_reported_malicious';
       yield serializers.serialize(
@@ -197,20 +197,6 @@ class _$PageShieldConnectionSerializer implements PrimitiveSerializer<PageShield
           ) as DateTime;
           result.addedAt = valueDes;
           break;
-        case r'domain_reported_malicious':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
-          result.domainReportedMalicious = valueDes;
-          break;
-        case r'first_page_url':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.firstPageUrl = valueDes;
-          break;
         case r'first_seen_at':
           final valueDes = serializers.deserialize(
             value,
@@ -239,6 +225,34 @@ class _$PageShieldConnectionSerializer implements PrimitiveSerializer<PageShield
           ) as DateTime;
           result.lastSeenAt = valueDes;
           break;
+        case r'url':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.url = valueDes;
+          break;
+        case r'url_contains_cdn_cgi_path':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(bool),
+          ) as bool;
+          result.urlContainsCdnCgiPath = valueDes;
+          break;
+        case r'domain_reported_malicious':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(bool),
+          ) as bool;
+          result.domainReportedMalicious = valueDes;
+          break;
+        case r'first_page_url':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.firstPageUrl = valueDes;
+          break;
         case r'malicious_domain_categories':
           final valueDes = serializers.deserialize(
             value,
@@ -259,20 +273,6 @@ class _$PageShieldConnectionSerializer implements PrimitiveSerializer<PageShield
             specifiedType: const FullType(BuiltList, [FullType(String)]),
           ) as BuiltList<String>;
           result.pageUrls.replace(valueDes);
-          break;
-        case r'url':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.url = valueDes;
-          break;
-        case r'url_contains_cdn_cgi_path':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
-          result.urlContainsCdnCgiPath = valueDes;
           break;
         case r'url_reported_malicious':
           final valueDes = serializers.deserialize(

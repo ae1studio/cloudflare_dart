@@ -20,8 +20,8 @@ part 'dns_firewall_list_dns_firewall_clusters4_xx_response.g.dart';
 /// * [errors] 
 /// * [messages] 
 /// * [success] - Whether the API call was successful.
-/// * [resultInfo] 
 /// * [result] 
+/// * [resultInfo] 
 @BuiltValue()
 abstract class DnsFirewallListDnsFirewallClusters4XXResponse implements DnsFirewallApiResponseCommonFailure, DnsFirewallDnsFirewallResponseCollection, Built<DnsFirewallListDnsFirewallClusters4XXResponse, DnsFirewallListDnsFirewallClusters4XXResponseBuilder> {
   DnsFirewallListDnsFirewallClusters4XXResponse._();

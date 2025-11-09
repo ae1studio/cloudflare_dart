@@ -11,15 +11,19 @@ part 'workers_ai_post_run_cf_leonardo_lucid_origin_request.g.dart';
 /// WorkersAiPostRunCfLeonardoLucidOriginRequest
 ///
 /// Properties:
+/// * [prompt] - A text description of the image you want to generate.
 /// * [guidance] - Controls how closely the generated image should adhere to the prompt; higher values make the image more aligned with the prompt
 /// * [height] - The height of the generated image in pixels
 /// * [numSteps] - The number of diffusion steps; higher values can improve quality but take longer
-/// * [prompt] - A text description of the image you want to generate.
 /// * [seed] - Random seed for reproducibility of the image generation
 /// * [steps] - The number of diffusion steps; higher values can improve quality but take longer
 /// * [width] - The width of the generated image in pixels
 @BuiltValue()
 abstract class WorkersAiPostRunCfLeonardoLucidOriginRequest implements Built<WorkersAiPostRunCfLeonardoLucidOriginRequest, WorkersAiPostRunCfLeonardoLucidOriginRequestBuilder> {
+  /// A text description of the image you want to generate.
+  @BuiltValueField(wireName: r'prompt')
+  String get prompt;
+
   /// Controls how closely the generated image should adhere to the prompt; higher values make the image more aligned with the prompt
   @BuiltValueField(wireName: r'guidance')
   num? get guidance;
@@ -31,10 +35,6 @@ abstract class WorkersAiPostRunCfLeonardoLucidOriginRequest implements Built<Wor
   /// The number of diffusion steps; higher values can improve quality but take longer
   @BuiltValueField(wireName: r'num_steps')
   int? get numSteps;
-
-  /// A text description of the image you want to generate.
-  @BuiltValueField(wireName: r'prompt')
-  String get prompt;
 
   /// Random seed for reproducibility of the image generation
   @BuiltValueField(wireName: r'seed')
@@ -74,6 +74,11 @@ class _$WorkersAiPostRunCfLeonardoLucidOriginRequestSerializer implements Primit
     WorkersAiPostRunCfLeonardoLucidOriginRequest object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    yield r'prompt';
+    yield serializers.serialize(
+      object.prompt,
+      specifiedType: const FullType(String),
+    );
     if (object.guidance != null) {
       yield r'guidance';
       yield serializers.serialize(
@@ -95,11 +100,6 @@ class _$WorkersAiPostRunCfLeonardoLucidOriginRequestSerializer implements Primit
         specifiedType: const FullType(int),
       );
     }
-    yield r'prompt';
-    yield serializers.serialize(
-      object.prompt,
-      specifiedType: const FullType(String),
-    );
     if (object.seed != null) {
       yield r'seed';
       yield serializers.serialize(
@@ -144,6 +144,13 @@ class _$WorkersAiPostRunCfLeonardoLucidOriginRequestSerializer implements Primit
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
+        case r'prompt':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.prompt = valueDes;
+          break;
         case r'guidance':
           final valueDes = serializers.deserialize(
             value,
@@ -164,13 +171,6 @@ class _$WorkersAiPostRunCfLeonardoLucidOriginRequestSerializer implements Primit
             specifiedType: const FullType(int),
           ) as int;
           result.numSteps = valueDes;
-          break;
-        case r'prompt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.prompt = valueDes;
           break;
         case r'seed':
           final valueDes = serializers.deserialize(

@@ -19,9 +19,9 @@ part 'predefined_entry.g.dart';
 /// * [enabled] 
 /// * [id] 
 /// * [name] 
+/// * [type] 
 /// * [profileId] 
 /// * [variant] 
-/// * [type] 
 @BuiltValue()
 abstract class PredefinedEntry implements DlpPredefinedEntry, Built<PredefinedEntry, PredefinedEntryBuilder> {
   @BuiltValueField(wireName: r'type')

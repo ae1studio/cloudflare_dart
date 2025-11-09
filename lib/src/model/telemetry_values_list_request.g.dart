@@ -78,17 +78,17 @@ class _$TelemetryValuesListRequest extends TelemetryValuesListRequest {
   @override
   final BuiltList<String> datasets;
   @override
-  final BuiltList<TelemetryKeysListRequestFiltersInner>? filters;
-  @override
   final String key;
-  @override
-  final num? limit;
-  @override
-  final TelemetryKeysListRequestNeedle? needle;
   @override
   final TelemetryKeysListRequestTimeframe timeframe;
   @override
   final TelemetryValuesListRequestTypeEnum type;
+  @override
+  final BuiltList<TelemetryKeysListRequestFiltersInner>? filters;
+  @override
+  final num? limit;
+  @override
+  final TelemetryKeysListRequestNeedle? needle;
 
   factory _$TelemetryValuesListRequest(
           [void Function(TelemetryValuesListRequestBuilder)? updates]) =>
@@ -96,12 +96,12 @@ class _$TelemetryValuesListRequest extends TelemetryValuesListRequest {
 
   _$TelemetryValuesListRequest._(
       {required this.datasets,
-      this.filters,
       required this.key,
-      this.limit,
-      this.needle,
       required this.timeframe,
-      required this.type})
+      required this.type,
+      this.filters,
+      this.limit,
+      this.needle})
       : super._();
   @override
   TelemetryValuesListRequest rebuild(
@@ -117,24 +117,24 @@ class _$TelemetryValuesListRequest extends TelemetryValuesListRequest {
     if (identical(other, this)) return true;
     return other is TelemetryValuesListRequest &&
         datasets == other.datasets &&
-        filters == other.filters &&
         key == other.key &&
-        limit == other.limit &&
-        needle == other.needle &&
         timeframe == other.timeframe &&
-        type == other.type;
+        type == other.type &&
+        filters == other.filters &&
+        limit == other.limit &&
+        needle == other.needle;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
     _$hash = $jc(_$hash, datasets.hashCode);
-    _$hash = $jc(_$hash, filters.hashCode);
     _$hash = $jc(_$hash, key.hashCode);
-    _$hash = $jc(_$hash, limit.hashCode);
-    _$hash = $jc(_$hash, needle.hashCode);
     _$hash = $jc(_$hash, timeframe.hashCode);
     _$hash = $jc(_$hash, type.hashCode);
+    _$hash = $jc(_$hash, filters.hashCode);
+    _$hash = $jc(_$hash, limit.hashCode);
+    _$hash = $jc(_$hash, needle.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -143,12 +143,12 @@ class _$TelemetryValuesListRequest extends TelemetryValuesListRequest {
   String toString() {
     return (newBuiltValueToStringHelper(r'TelemetryValuesListRequest')
           ..add('datasets', datasets)
-          ..add('filters', filters)
           ..add('key', key)
-          ..add('limit', limit)
-          ..add('needle', needle)
           ..add('timeframe', timeframe)
-          ..add('type', type))
+          ..add('type', type)
+          ..add('filters', filters)
+          ..add('limit', limit)
+          ..add('needle', needle))
         .toString();
   }
 }
@@ -163,25 +163,9 @@ class TelemetryValuesListRequestBuilder
       _$this._datasets ??= ListBuilder<String>();
   set datasets(ListBuilder<String>? datasets) => _$this._datasets = datasets;
 
-  ListBuilder<TelemetryKeysListRequestFiltersInner>? _filters;
-  ListBuilder<TelemetryKeysListRequestFiltersInner> get filters =>
-      _$this._filters ??= ListBuilder<TelemetryKeysListRequestFiltersInner>();
-  set filters(ListBuilder<TelemetryKeysListRequestFiltersInner>? filters) =>
-      _$this._filters = filters;
-
   String? _key;
   String? get key => _$this._key;
   set key(String? key) => _$this._key = key;
-
-  num? _limit;
-  num? get limit => _$this._limit;
-  set limit(num? limit) => _$this._limit = limit;
-
-  TelemetryKeysListRequestNeedleBuilder? _needle;
-  TelemetryKeysListRequestNeedleBuilder get needle =>
-      _$this._needle ??= TelemetryKeysListRequestNeedleBuilder();
-  set needle(TelemetryKeysListRequestNeedleBuilder? needle) =>
-      _$this._needle = needle;
 
   TelemetryKeysListRequestTimeframeBuilder? _timeframe;
   TelemetryKeysListRequestTimeframeBuilder get timeframe =>
@@ -193,6 +177,22 @@ class TelemetryValuesListRequestBuilder
   TelemetryValuesListRequestTypeEnum? get type => _$this._type;
   set type(TelemetryValuesListRequestTypeEnum? type) => _$this._type = type;
 
+  ListBuilder<TelemetryKeysListRequestFiltersInner>? _filters;
+  ListBuilder<TelemetryKeysListRequestFiltersInner> get filters =>
+      _$this._filters ??= ListBuilder<TelemetryKeysListRequestFiltersInner>();
+  set filters(ListBuilder<TelemetryKeysListRequestFiltersInner>? filters) =>
+      _$this._filters = filters;
+
+  num? _limit;
+  num? get limit => _$this._limit;
+  set limit(num? limit) => _$this._limit = limit;
+
+  TelemetryKeysListRequestNeedleBuilder? _needle;
+  TelemetryKeysListRequestNeedleBuilder get needle =>
+      _$this._needle ??= TelemetryKeysListRequestNeedleBuilder();
+  set needle(TelemetryKeysListRequestNeedleBuilder? needle) =>
+      _$this._needle = needle;
+
   TelemetryValuesListRequestBuilder() {
     TelemetryValuesListRequest._defaults(this);
   }
@@ -201,12 +201,12 @@ class TelemetryValuesListRequestBuilder
     final $v = _$v;
     if ($v != null) {
       _datasets = $v.datasets.toBuilder();
-      _filters = $v.filters?.toBuilder();
       _key = $v.key;
-      _limit = $v.limit;
-      _needle = $v.needle?.toBuilder();
       _timeframe = $v.timeframe.toBuilder();
       _type = $v.type;
+      _filters = $v.filters?.toBuilder();
+      _limit = $v.limit;
+      _needle = $v.needle?.toBuilder();
       _$v = null;
     }
     return this;
@@ -231,27 +231,29 @@ class TelemetryValuesListRequestBuilder
       _$result = _$v ??
           _$TelemetryValuesListRequest._(
             datasets: datasets.build(),
-            filters: _filters?.build(),
             key: BuiltValueNullFieldError.checkNotNull(
                 key, r'TelemetryValuesListRequest', 'key'),
-            limit: limit,
-            needle: _needle?.build(),
             timeframe: timeframe.build(),
             type: BuiltValueNullFieldError.checkNotNull(
                 type, r'TelemetryValuesListRequest', 'type'),
+            filters: _filters?.build(),
+            limit: limit,
+            needle: _needle?.build(),
           );
     } catch (_) {
       late String _$failedField;
       try {
         _$failedField = 'datasets';
         datasets.build();
+
+        _$failedField = 'timeframe';
+        timeframe.build();
+
         _$failedField = 'filters';
         _filters?.build();
 
         _$failedField = 'needle';
         _needle?.build();
-        _$failedField = 'timeframe';
-        timeframe.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
             r'TelemetryValuesListRequest', _$failedField, e.toString());

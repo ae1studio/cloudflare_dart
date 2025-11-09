@@ -15,46 +15,28 @@ part 'mcn_provider.g.dart';
 /// McnProvider
 ///
 /// Properties:
-/// * [awsArn] 
-/// * [azureSubscriptionId] 
-/// * [azureTenantId] 
 /// * [cloudType] 
-/// * [description] 
 /// * [friendlyName] 
-/// * [gcpProjectId] 
-/// * [gcpServiceAccountEmail] 
 /// * [id] 
 /// * [lastUpdated] 
 /// * [lifecycleState] 
 /// * [state] 
 /// * [stateV2] 
+/// * [awsArn] 
+/// * [azureSubscriptionId] 
+/// * [azureTenantId] 
+/// * [description] 
+/// * [gcpProjectId] 
+/// * [gcpServiceAccountEmail] 
 /// * [status] 
 @BuiltValue(instantiable: false)
 abstract class McnProvider  {
-  @BuiltValueField(wireName: r'aws_arn')
-  String? get awsArn;
-
-  @BuiltValueField(wireName: r'azure_subscription_id')
-  String? get azureSubscriptionId;
-
-  @BuiltValueField(wireName: r'azure_tenant_id')
-  String? get azureTenantId;
-
   @BuiltValueField(wireName: r'cloud_type')
   McnCloudType get cloudType;
   // enum cloudTypeEnum {  AWS,  AZURE,  GOOGLE,  CLOUDFLARE,  };
 
-  @BuiltValueField(wireName: r'description')
-  String? get description;
-
   @BuiltValueField(wireName: r'friendly_name')
   String get friendlyName;
-
-  @BuiltValueField(wireName: r'gcp_project_id')
-  String? get gcpProjectId;
-
-  @BuiltValueField(wireName: r'gcp_service_account_email')
-  String? get gcpServiceAccountEmail;
 
   @BuiltValueField(wireName: r'id')
   String get id;
@@ -73,6 +55,24 @@ abstract class McnProvider  {
   @BuiltValueField(wireName: r'state_v2')
   McnProviderDiscoveryStatus get stateV2;
   // enum stateV2Enum {  UNSPECIFIED,  PENDING,  DISCOVERING,  FAILED,  SUCCEEDED,  };
+
+  @BuiltValueField(wireName: r'aws_arn')
+  String? get awsArn;
+
+  @BuiltValueField(wireName: r'azure_subscription_id')
+  String? get azureSubscriptionId;
+
+  @BuiltValueField(wireName: r'azure_tenant_id')
+  String? get azureTenantId;
+
+  @BuiltValueField(wireName: r'description')
+  String? get description;
+
+  @BuiltValueField(wireName: r'gcp_project_id')
+  String? get gcpProjectId;
+
+  @BuiltValueField(wireName: r'gcp_service_account_email')
+  String? get gcpServiceAccountEmail;
 
   @BuiltValueField(wireName: r'status')
   McnProviderStatus? get status;
@@ -93,58 +93,16 @@ class _$McnProviderSerializer implements PrimitiveSerializer<McnProvider> {
     McnProvider object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
-    if (object.awsArn != null) {
-      yield r'aws_arn';
-      yield serializers.serialize(
-        object.awsArn,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.azureSubscriptionId != null) {
-      yield r'azure_subscription_id';
-      yield serializers.serialize(
-        object.azureSubscriptionId,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.azureTenantId != null) {
-      yield r'azure_tenant_id';
-      yield serializers.serialize(
-        object.azureTenantId,
-        specifiedType: const FullType(String),
-      );
-    }
     yield r'cloud_type';
     yield serializers.serialize(
       object.cloudType,
       specifiedType: const FullType(McnCloudType),
     );
-    if (object.description != null) {
-      yield r'description';
-      yield serializers.serialize(
-        object.description,
-        specifiedType: const FullType(String),
-      );
-    }
     yield r'friendly_name';
     yield serializers.serialize(
       object.friendlyName,
       specifiedType: const FullType(String),
     );
-    if (object.gcpProjectId != null) {
-      yield r'gcp_project_id';
-      yield serializers.serialize(
-        object.gcpProjectId,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.gcpServiceAccountEmail != null) {
-      yield r'gcp_service_account_email';
-      yield serializers.serialize(
-        object.gcpServiceAccountEmail,
-        specifiedType: const FullType(String),
-      );
-    }
     yield r'id';
     yield serializers.serialize(
       object.id,
@@ -170,6 +128,48 @@ class _$McnProviderSerializer implements PrimitiveSerializer<McnProvider> {
       object.stateV2,
       specifiedType: const FullType(McnProviderDiscoveryStatus),
     );
+    if (object.awsArn != null) {
+      yield r'aws_arn';
+      yield serializers.serialize(
+        object.awsArn,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.azureSubscriptionId != null) {
+      yield r'azure_subscription_id';
+      yield serializers.serialize(
+        object.azureSubscriptionId,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.azureTenantId != null) {
+      yield r'azure_tenant_id';
+      yield serializers.serialize(
+        object.azureTenantId,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.description != null) {
+      yield r'description';
+      yield serializers.serialize(
+        object.description,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.gcpProjectId != null) {
+      yield r'gcp_project_id';
+      yield serializers.serialize(
+        object.gcpProjectId,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.gcpServiceAccountEmail != null) {
+      yield r'gcp_service_account_email';
+      yield serializers.serialize(
+        object.gcpServiceAccountEmail,
+        specifiedType: const FullType(String),
+      );
+    }
     if (object.status != null) {
       yield r'status';
       yield serializers.serialize(
@@ -240,27 +240,6 @@ class _$$McnProviderSerializer implements PrimitiveSerializer<$McnProvider> {
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'aws_arn':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.awsArn = valueDes;
-          break;
-        case r'azure_subscription_id':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.azureSubscriptionId = valueDes;
-          break;
-        case r'azure_tenant_id':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.azureTenantId = valueDes;
-          break;
         case r'cloud_type':
           final valueDes = serializers.deserialize(
             value,
@@ -268,33 +247,12 @@ class _$$McnProviderSerializer implements PrimitiveSerializer<$McnProvider> {
           ) as McnCloudType;
           result.cloudType = valueDes;
           break;
-        case r'description':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.description = valueDes;
-          break;
         case r'friendly_name':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(String),
           ) as String;
           result.friendlyName = valueDes;
-          break;
-        case r'gcp_project_id':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.gcpProjectId = valueDes;
-          break;
-        case r'gcp_service_account_email':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.gcpServiceAccountEmail = valueDes;
           break;
         case r'id':
           final valueDes = serializers.deserialize(
@@ -330,6 +288,48 @@ class _$$McnProviderSerializer implements PrimitiveSerializer<$McnProvider> {
             specifiedType: const FullType(McnProviderDiscoveryStatus),
           ) as McnProviderDiscoveryStatus;
           result.stateV2 = valueDes;
+          break;
+        case r'aws_arn':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.awsArn = valueDes;
+          break;
+        case r'azure_subscription_id':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.azureSubscriptionId = valueDes;
+          break;
+        case r'azure_tenant_id':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.azureTenantId = valueDes;
+          break;
+        case r'description':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.description = valueDes;
+          break;
+        case r'gcp_project_id':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.gcpProjectId = valueDes;
+          break;
+        case r'gcp_service_account_email':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.gcpServiceAccountEmail = valueDes;
           break;
         case r'status':
           final valueDes = serializers.deserialize(

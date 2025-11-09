@@ -12,20 +12,16 @@ part 'email_email_settings_properties.g.dart';
 /// EmailEmailSettingsProperties
 ///
 /// Properties:
-/// * [created] - The date and time the settings have been created.
 /// * [enabled] - State of the zone settings for Email Routing.
 /// * [id] - Email Routing settings identifier.
-/// * [modified] - The date and time the settings have been modified.
 /// * [name] - Domain of your zone.
+/// * [created] - The date and time the settings have been created.
+/// * [modified] - The date and time the settings have been modified.
 /// * [skipWizard] - Flag to check if the user skipped the configuration wizard.
 /// * [status] 
 /// * [tag] - Email Routing settings tag. (Deprecated, replaced by Email Routing settings identifier)
 @BuiltValue(instantiable: false)
 abstract class EmailEmailSettingsProperties  {
-  /// The date and time the settings have been created.
-  @BuiltValueField(wireName: r'created')
-  DateTime? get created;
-
   /// State of the zone settings for Email Routing.
   @BuiltValueField(wireName: r'enabled')
   bool get enabled;
@@ -34,13 +30,17 @@ abstract class EmailEmailSettingsProperties  {
   @BuiltValueField(wireName: r'id')
   String get id;
 
-  /// The date and time the settings have been modified.
-  @BuiltValueField(wireName: r'modified')
-  DateTime? get modified;
-
   /// Domain of your zone.
   @BuiltValueField(wireName: r'name')
   String get name;
+
+  /// The date and time the settings have been created.
+  @BuiltValueField(wireName: r'created')
+  DateTime? get created;
+
+  /// The date and time the settings have been modified.
+  @BuiltValueField(wireName: r'modified')
+  DateTime? get modified;
 
   /// Flag to check if the user skipped the configuration wizard.
   @BuiltValueField(wireName: r'skip_wizard')
@@ -71,13 +71,6 @@ class _$EmailEmailSettingsPropertiesSerializer implements PrimitiveSerializer<Em
     EmailEmailSettingsProperties object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
-    if (object.created != null) {
-      yield r'created';
-      yield serializers.serialize(
-        object.created,
-        specifiedType: const FullType(DateTime),
-      );
-    }
     yield r'enabled';
     yield serializers.serialize(
       object.enabled,
@@ -88,6 +81,18 @@ class _$EmailEmailSettingsPropertiesSerializer implements PrimitiveSerializer<Em
       object.id,
       specifiedType: const FullType(String),
     );
+    yield r'name';
+    yield serializers.serialize(
+      object.name,
+      specifiedType: const FullType(String),
+    );
+    if (object.created != null) {
+      yield r'created';
+      yield serializers.serialize(
+        object.created,
+        specifiedType: const FullType(DateTime),
+      );
+    }
     if (object.modified != null) {
       yield r'modified';
       yield serializers.serialize(
@@ -95,11 +100,6 @@ class _$EmailEmailSettingsPropertiesSerializer implements PrimitiveSerializer<Em
         specifiedType: const FullType(DateTime),
       );
     }
-    yield r'name';
-    yield serializers.serialize(
-      object.name,
-      specifiedType: const FullType(String),
-    );
     if (object.skipWizard != null) {
       yield r'skip_wizard';
       yield serializers.serialize(
@@ -184,13 +184,6 @@ class _$$EmailEmailSettingsPropertiesSerializer implements PrimitiveSerializer<$
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'created':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
-          result.created = valueDes;
-          break;
         case r'enabled':
           final valueDes = serializers.deserialize(
             value,
@@ -205,19 +198,26 @@ class _$$EmailEmailSettingsPropertiesSerializer implements PrimitiveSerializer<$
           ) as String;
           result.id = valueDes;
           break;
-        case r'modified':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
-          result.modified = valueDes;
-          break;
         case r'name':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(String),
           ) as String;
           result.name = valueDes;
+          break;
+        case r'created':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(DateTime),
+          ) as DateTime;
+          result.created = valueDes;
+          break;
+        case r'modified':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(DateTime),
+          ) as DateTime;
+          result.modified = valueDes;
           break;
         case r'skip_wizard':
           final valueDes = serializers.deserialize(

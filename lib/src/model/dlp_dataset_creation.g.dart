@@ -14,9 +14,9 @@ class _$DlpDatasetCreation extends DlpDatasetCreation {
   @override
   final int maxCells;
   @override
-  final String? secret;
-  @override
   final int version;
+  @override
+  final String? secret;
 
   factory _$DlpDatasetCreation(
           [void Function(DlpDatasetCreationBuilder)? updates]) =>
@@ -26,8 +26,8 @@ class _$DlpDatasetCreation extends DlpDatasetCreation {
       {required this.dataset,
       required this.encodingVersion,
       required this.maxCells,
-      this.secret,
-      required this.version})
+      required this.version,
+      this.secret})
       : super._();
   @override
   DlpDatasetCreation rebuild(
@@ -45,8 +45,8 @@ class _$DlpDatasetCreation extends DlpDatasetCreation {
         dataset == other.dataset &&
         encodingVersion == other.encodingVersion &&
         maxCells == other.maxCells &&
-        secret == other.secret &&
-        version == other.version;
+        version == other.version &&
+        secret == other.secret;
   }
 
   @override
@@ -55,8 +55,8 @@ class _$DlpDatasetCreation extends DlpDatasetCreation {
     _$hash = $jc(_$hash, dataset.hashCode);
     _$hash = $jc(_$hash, encodingVersion.hashCode);
     _$hash = $jc(_$hash, maxCells.hashCode);
-    _$hash = $jc(_$hash, secret.hashCode);
     _$hash = $jc(_$hash, version.hashCode);
+    _$hash = $jc(_$hash, secret.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -67,8 +67,8 @@ class _$DlpDatasetCreation extends DlpDatasetCreation {
           ..add('dataset', dataset)
           ..add('encodingVersion', encodingVersion)
           ..add('maxCells', maxCells)
-          ..add('secret', secret)
-          ..add('version', version))
+          ..add('version', version)
+          ..add('secret', secret))
         .toString();
   }
 }
@@ -90,13 +90,13 @@ class DlpDatasetCreationBuilder
   int? get maxCells => _$this._maxCells;
   set maxCells(int? maxCells) => _$this._maxCells = maxCells;
 
-  String? _secret;
-  String? get secret => _$this._secret;
-  set secret(String? secret) => _$this._secret = secret;
-
   int? _version;
   int? get version => _$this._version;
   set version(int? version) => _$this._version = version;
+
+  String? _secret;
+  String? get secret => _$this._secret;
+  set secret(String? secret) => _$this._secret = secret;
 
   DlpDatasetCreationBuilder() {
     DlpDatasetCreation._defaults(this);
@@ -108,8 +108,8 @@ class DlpDatasetCreationBuilder
       _dataset = $v.dataset.toBuilder();
       _encodingVersion = $v.encodingVersion;
       _maxCells = $v.maxCells;
-      _secret = $v.secret;
       _version = $v.version;
+      _secret = $v.secret;
       _$v = null;
     }
     return this;
@@ -138,9 +138,9 @@ class DlpDatasetCreationBuilder
                 encodingVersion, r'DlpDatasetCreation', 'encodingVersion'),
             maxCells: BuiltValueNullFieldError.checkNotNull(
                 maxCells, r'DlpDatasetCreation', 'maxCells'),
-            secret: secret,
             version: BuiltValueNullFieldError.checkNotNull(
                 version, r'DlpDatasetCreation', 'version'),
+            secret: secret,
           );
     } catch (_) {
       late String _$failedField;

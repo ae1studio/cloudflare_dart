@@ -14,14 +14,14 @@ abstract class PageShieldZoneSettingsResponseSingleBuilder
   PageShieldApiResponseSingleAllOfResultBuilder get result;
   set result(covariant PageShieldApiResponseSingleAllOfResultBuilder? result);
 
+  bool? get success;
+  set success(covariant bool? success);
+
   ListBuilder<AaaMessagesInner> get errors;
   set errors(covariant ListBuilder<AaaMessagesInner>? errors);
 
   ListBuilder<AaaMessagesInner> get messages;
   set messages(covariant ListBuilder<AaaMessagesInner>? messages);
-
-  bool? get success;
-  set success(covariant bool? success);
 }
 
 class _$$PageShieldZoneSettingsResponseSingle
@@ -29,11 +29,11 @@ class _$$PageShieldZoneSettingsResponseSingle
   @override
   final PageShieldApiResponseSingleAllOfResult? result;
   @override
+  final bool success;
+  @override
   final BuiltList<AaaMessagesInner>? errors;
   @override
   final BuiltList<AaaMessagesInner>? messages;
-  @override
-  final bool success;
 
   factory _$$PageShieldZoneSettingsResponseSingle(
           [void Function($PageShieldZoneSettingsResponseSingleBuilder)?
@@ -42,7 +42,7 @@ class _$$PageShieldZoneSettingsResponseSingle
           ._build();
 
   _$$PageShieldZoneSettingsResponseSingle._(
-      {this.result, this.errors, this.messages, required this.success})
+      {this.result, required this.success, this.errors, this.messages})
       : super._();
   @override
   $PageShieldZoneSettingsResponseSingle rebuild(
@@ -59,18 +59,18 @@ class _$$PageShieldZoneSettingsResponseSingle
     if (identical(other, this)) return true;
     return other is $PageShieldZoneSettingsResponseSingle &&
         result == other.result &&
+        success == other.success &&
         errors == other.errors &&
-        messages == other.messages &&
-        success == other.success;
+        messages == other.messages;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
     _$hash = $jc(_$hash, result.hashCode);
+    _$hash = $jc(_$hash, success.hashCode);
     _$hash = $jc(_$hash, errors.hashCode);
     _$hash = $jc(_$hash, messages.hashCode);
-    _$hash = $jc(_$hash, success.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -80,9 +80,9 @@ class _$$PageShieldZoneSettingsResponseSingle
     return (newBuiltValueToStringHelper(
             r'$PageShieldZoneSettingsResponseSingle')
           ..add('result', result)
+          ..add('success', success)
           ..add('errors', errors)
-          ..add('messages', messages)
-          ..add('success', success))
+          ..add('messages', messages))
         .toString();
   }
 }
@@ -100,6 +100,10 @@ class $PageShieldZoneSettingsResponseSingleBuilder
   set result(covariant PageShieldApiResponseSingleAllOfResultBuilder? result) =>
       _$this._result = result;
 
+  bool? _success;
+  bool? get success => _$this._success;
+  set success(covariant bool? success) => _$this._success = success;
+
   ListBuilder<AaaMessagesInner>? _errors;
   ListBuilder<AaaMessagesInner> get errors =>
       _$this._errors ??= ListBuilder<AaaMessagesInner>();
@@ -112,10 +116,6 @@ class $PageShieldZoneSettingsResponseSingleBuilder
   set messages(covariant ListBuilder<AaaMessagesInner>? messages) =>
       _$this._messages = messages;
 
-  bool? _success;
-  bool? get success => _$this._success;
-  set success(covariant bool? success) => _$this._success = success;
-
   $PageShieldZoneSettingsResponseSingleBuilder() {
     $PageShieldZoneSettingsResponseSingle._defaults(this);
   }
@@ -124,9 +124,9 @@ class $PageShieldZoneSettingsResponseSingleBuilder
     final $v = _$v;
     if ($v != null) {
       _result = $v.result?.toBuilder();
+      _success = $v.success;
       _errors = $v.errors?.toBuilder();
       _messages = $v.messages?.toBuilder();
-      _success = $v.success;
       _$v = null;
     }
     return this;
@@ -152,16 +152,17 @@ class $PageShieldZoneSettingsResponseSingleBuilder
       _$result = _$v ??
           _$$PageShieldZoneSettingsResponseSingle._(
             result: _result?.build(),
-            errors: _errors?.build(),
-            messages: _messages?.build(),
             success: BuiltValueNullFieldError.checkNotNull(
                 success, r'$PageShieldZoneSettingsResponseSingle', 'success'),
+            errors: _errors?.build(),
+            messages: _messages?.build(),
           );
     } catch (_) {
       late String _$failedField;
       try {
         _$failedField = 'result';
         _result?.build();
+
         _$failedField = 'errors';
         _errors?.build();
         _$failedField = 'messages';

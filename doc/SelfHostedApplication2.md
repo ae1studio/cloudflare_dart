@@ -8,6 +8,8 @@ import 'package:cloudflare_dart/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**domain** | **String** | The domain and path that Access will secure. | 
+**type** | **String** | The application type. | 
 **aud** | **String** | Audience tag. | [optional] 
 **createdAt** | [**DateTime**](DateTime.md) |  | [optional] 
 **id** | **String** | UUID. | [optional] 
@@ -20,7 +22,6 @@ Name | Type | Description | Notes
 **corsHeaders** | [**AccessSchemasCorsHeaders**](AccessSchemasCorsHeaders.md) |  | [optional] 
 **customDenyMessage** | **String** | The custom error message shown to a user when they are denied access to the application. | [optional] 
 **customDenyUrl** | **String** | The custom URL a user is redirected to when they are denied access to the application. | [optional] 
-**domain** | **String** | The domain and path that Access will secure. | 
 **enableBindingCookie** | **bool** | Enables the binding cookie, which increases security against compromised authorization tokens and CSRF attacks. | [optional] [default to false]
 **httpOnlyCookieAttribute** | **bool** | Enables the HttpOnly cookie attribute, which increases security against XSS attacks. | [optional] [default to true]
 **logoUrl** | **String** | The image URL for the logo shown in the App Launcher dashboard. | [optional] 
@@ -30,7 +31,6 @@ Name | Type | Description | Notes
 **serviceAuth401Redirect** | **bool** | Returns a 401 status code when the request is blocked by a Service Auth policy. | [optional] 
 **sessionDuration** | **String** | The amount of time that tokens issued for this application will be valid. Must be in the format `300ms` or `2h45m`. Valid time units are: ns, us (or µs), ms, s, m, h. | [optional] [default to '24h']
 **skipInterstitial** | **bool** | Enables automatic authentication through cloudflared. | [optional] 
-**type** | **String** | The application type. | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

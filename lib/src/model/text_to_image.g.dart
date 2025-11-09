@@ -8,6 +8,8 @@ part of 'text_to_image.dart';
 
 class _$TextToImage extends TextToImage {
   @override
+  final String prompt;
+  @override
   final num? guidance;
   @override
   final int? height;
@@ -22,8 +24,6 @@ class _$TextToImage extends TextToImage {
   @override
   final int? numSteps;
   @override
-  final String prompt;
-  @override
   final int? seed;
   @override
   final num? strength;
@@ -34,14 +34,14 @@ class _$TextToImage extends TextToImage {
       (TextToImageBuilder()..update(updates))._build();
 
   _$TextToImage._(
-      {this.guidance,
+      {required this.prompt,
+      this.guidance,
       this.height,
       this.image,
       this.imageB64,
       this.mask,
       this.negativePrompt,
       this.numSteps,
-      required this.prompt,
       this.seed,
       this.strength,
       this.width})
@@ -57,6 +57,7 @@ class _$TextToImage extends TextToImage {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is TextToImage &&
+        prompt == other.prompt &&
         guidance == other.guidance &&
         height == other.height &&
         image == other.image &&
@@ -64,7 +65,6 @@ class _$TextToImage extends TextToImage {
         mask == other.mask &&
         negativePrompt == other.negativePrompt &&
         numSteps == other.numSteps &&
-        prompt == other.prompt &&
         seed == other.seed &&
         strength == other.strength &&
         width == other.width;
@@ -73,6 +73,7 @@ class _$TextToImage extends TextToImage {
   @override
   int get hashCode {
     var _$hash = 0;
+    _$hash = $jc(_$hash, prompt.hashCode);
     _$hash = $jc(_$hash, guidance.hashCode);
     _$hash = $jc(_$hash, height.hashCode);
     _$hash = $jc(_$hash, image.hashCode);
@@ -80,7 +81,6 @@ class _$TextToImage extends TextToImage {
     _$hash = $jc(_$hash, mask.hashCode);
     _$hash = $jc(_$hash, negativePrompt.hashCode);
     _$hash = $jc(_$hash, numSteps.hashCode);
-    _$hash = $jc(_$hash, prompt.hashCode);
     _$hash = $jc(_$hash, seed.hashCode);
     _$hash = $jc(_$hash, strength.hashCode);
     _$hash = $jc(_$hash, width.hashCode);
@@ -91,6 +91,7 @@ class _$TextToImage extends TextToImage {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'TextToImage')
+          ..add('prompt', prompt)
           ..add('guidance', guidance)
           ..add('height', height)
           ..add('image', image)
@@ -98,7 +99,6 @@ class _$TextToImage extends TextToImage {
           ..add('mask', mask)
           ..add('negativePrompt', negativePrompt)
           ..add('numSteps', numSteps)
-          ..add('prompt', prompt)
           ..add('seed', seed)
           ..add('strength', strength)
           ..add('width', width))
@@ -108,6 +108,10 @@ class _$TextToImage extends TextToImage {
 
 class TextToImageBuilder implements Builder<TextToImage, TextToImageBuilder> {
   _$TextToImage? _$v;
+
+  String? _prompt;
+  String? get prompt => _$this._prompt;
+  set prompt(String? prompt) => _$this._prompt = prompt;
 
   num? _guidance;
   num? get guidance => _$this._guidance;
@@ -138,10 +142,6 @@ class TextToImageBuilder implements Builder<TextToImage, TextToImageBuilder> {
   int? get numSteps => _$this._numSteps;
   set numSteps(int? numSteps) => _$this._numSteps = numSteps;
 
-  String? _prompt;
-  String? get prompt => _$this._prompt;
-  set prompt(String? prompt) => _$this._prompt = prompt;
-
   int? _seed;
   int? get seed => _$this._seed;
   set seed(int? seed) => _$this._seed = seed;
@@ -161,6 +161,7 @@ class TextToImageBuilder implements Builder<TextToImage, TextToImageBuilder> {
   TextToImageBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
+      _prompt = $v.prompt;
       _guidance = $v.guidance;
       _height = $v.height;
       _image = $v.image?.toBuilder();
@@ -168,7 +169,6 @@ class TextToImageBuilder implements Builder<TextToImage, TextToImageBuilder> {
       _mask = $v.mask?.toBuilder();
       _negativePrompt = $v.negativePrompt;
       _numSteps = $v.numSteps;
-      _prompt = $v.prompt;
       _seed = $v.seed;
       _strength = $v.strength;
       _width = $v.width;
@@ -195,6 +195,8 @@ class TextToImageBuilder implements Builder<TextToImage, TextToImageBuilder> {
     try {
       _$result = _$v ??
           _$TextToImage._(
+            prompt: BuiltValueNullFieldError.checkNotNull(
+                prompt, r'TextToImage', 'prompt'),
             guidance: guidance,
             height: height,
             image: _image?.build(),
@@ -202,8 +204,6 @@ class TextToImageBuilder implements Builder<TextToImage, TextToImageBuilder> {
             mask: _mask?.build(),
             negativePrompt: negativePrompt,
             numSteps: numSteps,
-            prompt: BuiltValueNullFieldError.checkNotNull(
-                prompt, r'TextToImage', 'prompt'),
             seed: seed,
             strength: strength,
             width: width,

@@ -9,19 +9,19 @@ part of 'notification_policies_create_a_notification_policy_request.dart';
 class _$NotificationPoliciesCreateANotificationPolicyRequest
     extends NotificationPoliciesCreateANotificationPolicyRequest {
   @override
-  final String? alertInterval;
-  @override
   final AaaAlertType alertType;
   @override
-  final String? description;
-  @override
   final bool enabled;
-  @override
-  final AaaFilters? filters;
   @override
   final AaaMechanisms mechanisms;
   @override
   final String name;
+  @override
+  final String? alertInterval;
+  @override
+  final String? description;
+  @override
+  final AaaFilters? filters;
 
   factory _$NotificationPoliciesCreateANotificationPolicyRequest(
           [void Function(
@@ -32,13 +32,13 @@ class _$NotificationPoliciesCreateANotificationPolicyRequest
           ._build();
 
   _$NotificationPoliciesCreateANotificationPolicyRequest._(
-      {this.alertInterval,
-      required this.alertType,
-      this.description,
+      {required this.alertType,
       required this.enabled,
-      this.filters,
       required this.mechanisms,
-      required this.name})
+      required this.name,
+      this.alertInterval,
+      this.description,
+      this.filters})
       : super._();
   @override
   NotificationPoliciesCreateANotificationPolicyRequest rebuild(
@@ -56,25 +56,25 @@ class _$NotificationPoliciesCreateANotificationPolicyRequest
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is NotificationPoliciesCreateANotificationPolicyRequest &&
-        alertInterval == other.alertInterval &&
         alertType == other.alertType &&
-        description == other.description &&
         enabled == other.enabled &&
-        filters == other.filters &&
         mechanisms == other.mechanisms &&
-        name == other.name;
+        name == other.name &&
+        alertInterval == other.alertInterval &&
+        description == other.description &&
+        filters == other.filters;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, alertInterval.hashCode);
     _$hash = $jc(_$hash, alertType.hashCode);
-    _$hash = $jc(_$hash, description.hashCode);
     _$hash = $jc(_$hash, enabled.hashCode);
-    _$hash = $jc(_$hash, filters.hashCode);
     _$hash = $jc(_$hash, mechanisms.hashCode);
     _$hash = $jc(_$hash, name.hashCode);
+    _$hash = $jc(_$hash, alertInterval.hashCode);
+    _$hash = $jc(_$hash, description.hashCode);
+    _$hash = $jc(_$hash, filters.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -83,13 +83,13 @@ class _$NotificationPoliciesCreateANotificationPolicyRequest
   String toString() {
     return (newBuiltValueToStringHelper(
             r'NotificationPoliciesCreateANotificationPolicyRequest')
-          ..add('alertInterval', alertInterval)
           ..add('alertType', alertType)
-          ..add('description', description)
           ..add('enabled', enabled)
-          ..add('filters', filters)
           ..add('mechanisms', mechanisms)
-          ..add('name', name))
+          ..add('name', name)
+          ..add('alertInterval', alertInterval)
+          ..add('description', description)
+          ..add('filters', filters))
         .toString();
   }
 }
@@ -100,26 +100,13 @@ class NotificationPoliciesCreateANotificationPolicyRequestBuilder
             NotificationPoliciesCreateANotificationPolicyRequestBuilder> {
   _$NotificationPoliciesCreateANotificationPolicyRequest? _$v;
 
-  String? _alertInterval;
-  String? get alertInterval => _$this._alertInterval;
-  set alertInterval(String? alertInterval) =>
-      _$this._alertInterval = alertInterval;
-
   AaaAlertType? _alertType;
   AaaAlertType? get alertType => _$this._alertType;
   set alertType(AaaAlertType? alertType) => _$this._alertType = alertType;
 
-  String? _description;
-  String? get description => _$this._description;
-  set description(String? description) => _$this._description = description;
-
   bool? _enabled;
   bool? get enabled => _$this._enabled;
   set enabled(bool? enabled) => _$this._enabled = enabled;
-
-  AaaFiltersBuilder? _filters;
-  AaaFiltersBuilder get filters => _$this._filters ??= AaaFiltersBuilder();
-  set filters(AaaFiltersBuilder? filters) => _$this._filters = filters;
 
   AaaMechanismsBuilder? _mechanisms;
   AaaMechanismsBuilder get mechanisms =>
@@ -131,6 +118,19 @@ class NotificationPoliciesCreateANotificationPolicyRequestBuilder
   String? get name => _$this._name;
   set name(String? name) => _$this._name = name;
 
+  String? _alertInterval;
+  String? get alertInterval => _$this._alertInterval;
+  set alertInterval(String? alertInterval) =>
+      _$this._alertInterval = alertInterval;
+
+  String? _description;
+  String? get description => _$this._description;
+  set description(String? description) => _$this._description = description;
+
+  AaaFiltersBuilder? _filters;
+  AaaFiltersBuilder get filters => _$this._filters ??= AaaFiltersBuilder();
+  set filters(AaaFiltersBuilder? filters) => _$this._filters = filters;
+
   NotificationPoliciesCreateANotificationPolicyRequestBuilder() {
     NotificationPoliciesCreateANotificationPolicyRequest._defaults(this);
   }
@@ -138,13 +138,13 @@ class NotificationPoliciesCreateANotificationPolicyRequestBuilder
   NotificationPoliciesCreateANotificationPolicyRequestBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _alertInterval = $v.alertInterval;
       _alertType = $v.alertType;
-      _description = $v.description;
       _enabled = $v.enabled;
-      _filters = $v.filters?.toBuilder();
       _mechanisms = $v.mechanisms.toBuilder();
       _name = $v.name;
+      _alertInterval = $v.alertInterval;
+      _description = $v.description;
+      _filters = $v.filters?.toBuilder();
       _$v = null;
     }
     return this;
@@ -171,30 +171,31 @@ class NotificationPoliciesCreateANotificationPolicyRequestBuilder
     try {
       _$result = _$v ??
           _$NotificationPoliciesCreateANotificationPolicyRequest._(
-            alertInterval: alertInterval,
             alertType: BuiltValueNullFieldError.checkNotNull(
                 alertType,
                 r'NotificationPoliciesCreateANotificationPolicyRequest',
                 'alertType'),
-            description: description,
             enabled: BuiltValueNullFieldError.checkNotNull(
                 enabled,
                 r'NotificationPoliciesCreateANotificationPolicyRequest',
                 'enabled'),
-            filters: _filters?.build(),
             mechanisms: mechanisms.build(),
             name: BuiltValueNullFieldError.checkNotNull(
                 name,
                 r'NotificationPoliciesCreateANotificationPolicyRequest',
                 'name'),
+            alertInterval: alertInterval,
+            description: description,
+            filters: _filters?.build(),
           );
     } catch (_) {
       late String _$failedField;
       try {
-        _$failedField = 'filters';
-        _filters?.build();
         _$failedField = 'mechanisms';
         mechanisms.build();
+
+        _$failedField = 'filters';
+        _filters?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
             r'NotificationPoliciesCreateANotificationPolicyRequest',

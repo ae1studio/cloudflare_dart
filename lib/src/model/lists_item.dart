@@ -19,13 +19,13 @@ part 'lists_item.g.dart';
 ///
 /// Properties:
 /// * [ip] - An IPv4 address, an IPv4 CIDR, an IPv6 address, or an IPv6 CIDR.
-/// * [comment] - Defines an informative summary of the list item.
 /// * [createdOn] - The RFC 3339 timestamp of when the list was created.
 /// * [id] - Defines the unique ID of the item in the List.
 /// * [modifiedOn] - The RFC 3339 timestamp of when the list was last modified.
 /// * [hostname] 
 /// * [redirect] 
 /// * [asn] - Defines a non-negative 32 bit integer.
+/// * [comment] - Defines an informative summary of the list item.
 @BuiltValue()
 abstract class ListsItem implements Built<ListsItem, ListsItemBuilder> {
   /// One Of [ListsListItemAsnFull], [ListsListItemHostnameFull], [ListsListItemIpFull], [ListsListItemRedirectFull]

@@ -21,11 +21,11 @@ abstract class FirewallPackageDefinitionBuilder {
   String? get name;
   set name(String? name);
 
-  FirewallStatus? get status;
-  set status(FirewallStatus? status);
-
   String? get zoneId;
   set zoneId(String? zoneId);
+
+  FirewallStatus? get status;
+  set status(FirewallStatus? status);
 }
 
 class _$$FirewallPackageDefinition extends $FirewallPackageDefinition {
@@ -38,9 +38,9 @@ class _$$FirewallPackageDefinition extends $FirewallPackageDefinition {
   @override
   final String name;
   @override
-  final FirewallStatus? status;
-  @override
   final String zoneId;
+  @override
+  final FirewallStatus? status;
 
   factory _$$FirewallPackageDefinition(
           [void Function($FirewallPackageDefinitionBuilder)? updates]) =>
@@ -51,8 +51,8 @@ class _$$FirewallPackageDefinition extends $FirewallPackageDefinition {
       required this.detectionMode,
       required this.id,
       required this.name,
-      this.status,
-      required this.zoneId})
+      required this.zoneId,
+      this.status})
       : super._();
   @override
   $FirewallPackageDefinition rebuild(
@@ -71,8 +71,8 @@ class _$$FirewallPackageDefinition extends $FirewallPackageDefinition {
         detectionMode == other.detectionMode &&
         id == other.id &&
         name == other.name &&
-        status == other.status &&
-        zoneId == other.zoneId;
+        zoneId == other.zoneId &&
+        status == other.status;
   }
 
   @override
@@ -82,8 +82,8 @@ class _$$FirewallPackageDefinition extends $FirewallPackageDefinition {
     _$hash = $jc(_$hash, detectionMode.hashCode);
     _$hash = $jc(_$hash, id.hashCode);
     _$hash = $jc(_$hash, name.hashCode);
-    _$hash = $jc(_$hash, status.hashCode);
     _$hash = $jc(_$hash, zoneId.hashCode);
+    _$hash = $jc(_$hash, status.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -95,8 +95,8 @@ class _$$FirewallPackageDefinition extends $FirewallPackageDefinition {
           ..add('detectionMode', detectionMode)
           ..add('id', id)
           ..add('name', name)
-          ..add('status', status)
-          ..add('zoneId', zoneId))
+          ..add('zoneId', zoneId)
+          ..add('status', status))
         .toString();
   }
 }
@@ -125,13 +125,13 @@ class $FirewallPackageDefinitionBuilder
   String? get name => _$this._name;
   set name(covariant String? name) => _$this._name = name;
 
-  FirewallStatus? _status;
-  FirewallStatus? get status => _$this._status;
-  set status(covariant FirewallStatus? status) => _$this._status = status;
-
   String? _zoneId;
   String? get zoneId => _$this._zoneId;
   set zoneId(covariant String? zoneId) => _$this._zoneId = zoneId;
+
+  FirewallStatus? _status;
+  FirewallStatus? get status => _$this._status;
+  set status(covariant FirewallStatus? status) => _$this._status = status;
 
   $FirewallPackageDefinitionBuilder() {
     $FirewallPackageDefinition._defaults(this);
@@ -144,8 +144,8 @@ class $FirewallPackageDefinitionBuilder
       _detectionMode = $v.detectionMode;
       _id = $v.id;
       _name = $v.name;
-      _status = $v.status;
       _zoneId = $v.zoneId;
+      _status = $v.status;
       _$v = null;
     }
     return this;
@@ -175,9 +175,9 @@ class $FirewallPackageDefinitionBuilder
               id, r'$FirewallPackageDefinition', 'id'),
           name: BuiltValueNullFieldError.checkNotNull(
               name, r'$FirewallPackageDefinition', 'name'),
-          status: status,
           zoneId: BuiltValueNullFieldError.checkNotNull(
               zoneId, r'$FirewallPackageDefinition', 'zoneId'),
+          status: status,
         );
     replace(_$result);
     return _$result;

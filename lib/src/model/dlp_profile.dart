@@ -19,18 +19,18 @@ part 'dlp_profile.g.dart';
 /// DlpProfile
 ///
 /// Properties:
-/// * [aiContextEnabled] 
 /// * [allowedMatchCount] 
-/// * [confidenceThreshold] 
-/// * [contextAwareness] 
 /// * [createdAt] 
-/// * [description] - The description of the profile.
 /// * [entries] 
 /// * [id] 
 /// * [name] 
 /// * [ocrEnabled] 
 /// * [updatedAt] 
 /// * [type] 
+/// * [aiContextEnabled] 
+/// * [confidenceThreshold] 
+/// * [contextAwareness] 
+/// * [description] - The description of the profile.
 /// * [openAccess] - Whether this profile can be accessed by anyone.
 @BuiltValue()
 abstract class DlpProfile implements Built<DlpProfile, DlpProfileBuilder> {

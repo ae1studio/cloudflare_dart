@@ -13,19 +13,19 @@ part 'access_messages_inner.g.dart';
 ///
 /// Properties:
 /// * [code] 
-/// * [documentationUrl] 
 /// * [message] 
+/// * [documentationUrl] 
 /// * [source_] 
 @BuiltValue()
 abstract class AccessMessagesInner implements Built<AccessMessagesInner, AccessMessagesInnerBuilder> {
   @BuiltValueField(wireName: r'code')
   int get code;
 
-  @BuiltValueField(wireName: r'documentation_url')
-  String? get documentationUrl;
-
   @BuiltValueField(wireName: r'message')
   String get message;
+
+  @BuiltValueField(wireName: r'documentation_url')
+  String? get documentationUrl;
 
   @BuiltValueField(wireName: r'source')
   AccessMessagesInnerSource? get source_;
@@ -58,6 +58,11 @@ class _$AccessMessagesInnerSerializer implements PrimitiveSerializer<AccessMessa
       object.code,
       specifiedType: const FullType(int),
     );
+    yield r'message';
+    yield serializers.serialize(
+      object.message,
+      specifiedType: const FullType(String),
+    );
     if (object.documentationUrl != null) {
       yield r'documentation_url';
       yield serializers.serialize(
@@ -65,11 +70,6 @@ class _$AccessMessagesInnerSerializer implements PrimitiveSerializer<AccessMessa
         specifiedType: const FullType(String),
       );
     }
-    yield r'message';
-    yield serializers.serialize(
-      object.message,
-      specifiedType: const FullType(String),
-    );
     if (object.source_ != null) {
       yield r'source';
       yield serializers.serialize(
@@ -107,19 +107,19 @@ class _$AccessMessagesInnerSerializer implements PrimitiveSerializer<AccessMessa
           ) as int;
           result.code = valueDes;
           break;
-        case r'documentation_url':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.documentationUrl = valueDes;
-          break;
         case r'message':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(String),
           ) as String;
           result.message = valueDes;
+          break;
+        case r'documentation_url':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.documentationUrl = valueDes;
           break;
         case r'source':
           final valueDes = serializers.deserialize(

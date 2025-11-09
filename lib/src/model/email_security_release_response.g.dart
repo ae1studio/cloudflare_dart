@@ -8,20 +8,20 @@ part of 'email_security_release_response.dart';
 
 class _$EmailSecurityReleaseResponse extends EmailSecurityReleaseResponse {
   @override
+  final String postfixId;
+  @override
   final BuiltList<String>? delivered;
   @override
   final BuiltList<String>? failed;
   @override
   final BuiltList<String>? undelivered;
-  @override
-  final String postfixId;
 
   factory _$EmailSecurityReleaseResponse(
           [void Function(EmailSecurityReleaseResponseBuilder)? updates]) =>
       (EmailSecurityReleaseResponseBuilder()..update(updates))._build();
 
   _$EmailSecurityReleaseResponse._(
-      {this.delivered, this.failed, this.undelivered, required this.postfixId})
+      {required this.postfixId, this.delivered, this.failed, this.undelivered})
       : super._();
   @override
   EmailSecurityReleaseResponse rebuild(
@@ -36,19 +36,19 @@ class _$EmailSecurityReleaseResponse extends EmailSecurityReleaseResponse {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is EmailSecurityReleaseResponse &&
+        postfixId == other.postfixId &&
         delivered == other.delivered &&
         failed == other.failed &&
-        undelivered == other.undelivered &&
-        postfixId == other.postfixId;
+        undelivered == other.undelivered;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
+    _$hash = $jc(_$hash, postfixId.hashCode);
     _$hash = $jc(_$hash, delivered.hashCode);
     _$hash = $jc(_$hash, failed.hashCode);
     _$hash = $jc(_$hash, undelivered.hashCode);
-    _$hash = $jc(_$hash, postfixId.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -56,10 +56,10 @@ class _$EmailSecurityReleaseResponse extends EmailSecurityReleaseResponse {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'EmailSecurityReleaseResponse')
+          ..add('postfixId', postfixId)
           ..add('delivered', delivered)
           ..add('failed', failed)
-          ..add('undelivered', undelivered)
-          ..add('postfixId', postfixId))
+          ..add('undelivered', undelivered))
         .toString();
   }
 }
@@ -69,6 +69,10 @@ class EmailSecurityReleaseResponseBuilder
         Builder<EmailSecurityReleaseResponse,
             EmailSecurityReleaseResponseBuilder> {
   _$EmailSecurityReleaseResponse? _$v;
+
+  String? _postfixId;
+  String? get postfixId => _$this._postfixId;
+  set postfixId(String? postfixId) => _$this._postfixId = postfixId;
 
   ListBuilder<String>? _delivered;
   ListBuilder<String> get delivered =>
@@ -86,10 +90,6 @@ class EmailSecurityReleaseResponseBuilder
   set undelivered(ListBuilder<String>? undelivered) =>
       _$this._undelivered = undelivered;
 
-  String? _postfixId;
-  String? get postfixId => _$this._postfixId;
-  set postfixId(String? postfixId) => _$this._postfixId = postfixId;
-
   EmailSecurityReleaseResponseBuilder() {
     EmailSecurityReleaseResponse._defaults(this);
   }
@@ -97,10 +97,10 @@ class EmailSecurityReleaseResponseBuilder
   EmailSecurityReleaseResponseBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
+      _postfixId = $v.postfixId;
       _delivered = $v.delivered?.toBuilder();
       _failed = $v.failed?.toBuilder();
       _undelivered = $v.undelivered?.toBuilder();
-      _postfixId = $v.postfixId;
       _$v = null;
     }
     return this;
@@ -124,11 +124,11 @@ class EmailSecurityReleaseResponseBuilder
     try {
       _$result = _$v ??
           _$EmailSecurityReleaseResponse._(
+            postfixId: BuiltValueNullFieldError.checkNotNull(
+                postfixId, r'EmailSecurityReleaseResponse', 'postfixId'),
             delivered: _delivered?.build(),
             failed: _failed?.build(),
             undelivered: _undelivered?.build(),
-            postfixId: BuiltValueNullFieldError.checkNotNull(
-                postfixId, r'EmailSecurityReleaseResponse', 'postfixId'),
           );
     } catch (_) {
       late String _$failedField;

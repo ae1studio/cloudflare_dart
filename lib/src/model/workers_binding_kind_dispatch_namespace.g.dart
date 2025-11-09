@@ -68,9 +68,9 @@ class _$WorkersBindingKindDispatchNamespace
   @override
   final String namespace;
   @override
-  final WorkersBindingKindDispatchNamespaceOutbound? outbound;
-  @override
   final WorkersBindingKindDispatchNamespaceTypeEnum type;
+  @override
+  final WorkersBindingKindDispatchNamespaceOutbound? outbound;
 
   factory _$WorkersBindingKindDispatchNamespace(
           [void Function(WorkersBindingKindDispatchNamespaceBuilder)?
@@ -80,8 +80,8 @@ class _$WorkersBindingKindDispatchNamespace
   _$WorkersBindingKindDispatchNamespace._(
       {required this.name,
       required this.namespace,
-      this.outbound,
-      required this.type})
+      required this.type,
+      this.outbound})
       : super._();
   @override
   WorkersBindingKindDispatchNamespace rebuild(
@@ -98,8 +98,8 @@ class _$WorkersBindingKindDispatchNamespace
     return other is WorkersBindingKindDispatchNamespace &&
         name == other.name &&
         namespace == other.namespace &&
-        outbound == other.outbound &&
-        type == other.type;
+        type == other.type &&
+        outbound == other.outbound;
   }
 
   @override
@@ -107,8 +107,8 @@ class _$WorkersBindingKindDispatchNamespace
     var _$hash = 0;
     _$hash = $jc(_$hash, name.hashCode);
     _$hash = $jc(_$hash, namespace.hashCode);
-    _$hash = $jc(_$hash, outbound.hashCode);
     _$hash = $jc(_$hash, type.hashCode);
+    _$hash = $jc(_$hash, outbound.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -118,8 +118,8 @@ class _$WorkersBindingKindDispatchNamespace
     return (newBuiltValueToStringHelper(r'WorkersBindingKindDispatchNamespace')
           ..add('name', name)
           ..add('namespace', namespace)
-          ..add('outbound', outbound)
-          ..add('type', type))
+          ..add('type', type)
+          ..add('outbound', outbound))
         .toString();
   }
 }
@@ -138,16 +138,16 @@ class WorkersBindingKindDispatchNamespaceBuilder
   String? get namespace => _$this._namespace;
   set namespace(String? namespace) => _$this._namespace = namespace;
 
+  WorkersBindingKindDispatchNamespaceTypeEnum? _type;
+  WorkersBindingKindDispatchNamespaceTypeEnum? get type => _$this._type;
+  set type(WorkersBindingKindDispatchNamespaceTypeEnum? type) =>
+      _$this._type = type;
+
   WorkersBindingKindDispatchNamespaceOutboundBuilder? _outbound;
   WorkersBindingKindDispatchNamespaceOutboundBuilder get outbound =>
       _$this._outbound ??= WorkersBindingKindDispatchNamespaceOutboundBuilder();
   set outbound(WorkersBindingKindDispatchNamespaceOutboundBuilder? outbound) =>
       _$this._outbound = outbound;
-
-  WorkersBindingKindDispatchNamespaceTypeEnum? _type;
-  WorkersBindingKindDispatchNamespaceTypeEnum? get type => _$this._type;
-  set type(WorkersBindingKindDispatchNamespaceTypeEnum? type) =>
-      _$this._type = type;
 
   WorkersBindingKindDispatchNamespaceBuilder() {
     WorkersBindingKindDispatchNamespace._defaults(this);
@@ -158,8 +158,8 @@ class WorkersBindingKindDispatchNamespaceBuilder
     if ($v != null) {
       _name = $v.name;
       _namespace = $v.namespace;
-      _outbound = $v.outbound?.toBuilder();
       _type = $v.type;
+      _outbound = $v.outbound?.toBuilder();
       _$v = null;
     }
     return this;
@@ -188,9 +188,9 @@ class WorkersBindingKindDispatchNamespaceBuilder
                 name, r'WorkersBindingKindDispatchNamespace', 'name'),
             namespace: BuiltValueNullFieldError.checkNotNull(
                 namespace, r'WorkersBindingKindDispatchNamespace', 'namespace'),
-            outbound: _outbound?.build(),
             type: BuiltValueNullFieldError.checkNotNull(
                 type, r'WorkersBindingKindDispatchNamespace', 'type'),
+            outbound: _outbound?.build(),
           );
     } catch (_) {
       late String _$failedField;

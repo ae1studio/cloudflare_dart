@@ -12,14 +12,17 @@ part 'urlscanner_create_scan_bulk_v2_request_inner.g.dart';
 /// UrlscannerCreateScanBulkV2RequestInner
 ///
 /// Properties:
+/// * [url] 
 /// * [customHeaders] - Set custom headers.
 /// * [customagent] 
 /// * [referer] 
 /// * [screenshotsResolutions] - Take multiple screenshots targeting different device types.
-/// * [url] 
 /// * [visibility] - The option `Public` means it will be included in listings like recent scans and search results. `Unlisted` means it will not be included in the aforementioned listings, users will need to have the scan's ID to access it. A a scan will be automatically marked as unlisted if it fails, if it contains potential PII or other sensitive material.
 @BuiltValue()
 abstract class UrlscannerCreateScanBulkV2RequestInner implements Built<UrlscannerCreateScanBulkV2RequestInner, UrlscannerCreateScanBulkV2RequestInnerBuilder> {
+  @BuiltValueField(wireName: r'url')
+  String get url;
+
   /// Set custom headers.
   @BuiltValueField(wireName: r'customHeaders')
   BuiltMap<String, String>? get customHeaders;
@@ -34,9 +37,6 @@ abstract class UrlscannerCreateScanBulkV2RequestInner implements Built<Urlscanne
   @BuiltValueField(wireName: r'screenshotsResolutions')
   BuiltList<UrlscannerCreateScanBulkV2RequestInnerScreenshotsResolutionsEnum>? get screenshotsResolutions;
   // enum screenshotsResolutionsEnum {  desktop,  mobile,  tablet,  };
-
-  @BuiltValueField(wireName: r'url')
-  String get url;
 
   /// The option `Public` means it will be included in listings like recent scans and search results. `Unlisted` means it will not be included in the aforementioned listings, users will need to have the scan's ID to access it. A a scan will be automatically marked as unlisted if it fails, if it contains potential PII or other sensitive material.
   @BuiltValueField(wireName: r'visibility')
@@ -68,6 +68,11 @@ class _$UrlscannerCreateScanBulkV2RequestInnerSerializer implements PrimitiveSer
     UrlscannerCreateScanBulkV2RequestInner object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    yield r'url';
+    yield serializers.serialize(
+      object.url,
+      specifiedType: const FullType(String),
+    );
     if (object.customHeaders != null) {
       yield r'customHeaders';
       yield serializers.serialize(
@@ -96,11 +101,6 @@ class _$UrlscannerCreateScanBulkV2RequestInnerSerializer implements PrimitiveSer
         specifiedType: const FullType(BuiltList, [FullType(UrlscannerCreateScanBulkV2RequestInnerScreenshotsResolutionsEnum)]),
       );
     }
-    yield r'url';
-    yield serializers.serialize(
-      object.url,
-      specifiedType: const FullType(String),
-    );
     if (object.visibility != null) {
       yield r'visibility';
       yield serializers.serialize(
@@ -131,6 +131,13 @@ class _$UrlscannerCreateScanBulkV2RequestInnerSerializer implements PrimitiveSer
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
+        case r'url':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.url = valueDes;
+          break;
         case r'customHeaders':
           final valueDes = serializers.deserialize(
             value,
@@ -158,13 +165,6 @@ class _$UrlscannerCreateScanBulkV2RequestInnerSerializer implements PrimitiveSer
             specifiedType: const FullType(BuiltList, [FullType(UrlscannerCreateScanBulkV2RequestInnerScreenshotsResolutionsEnum)]),
           ) as BuiltList<UrlscannerCreateScanBulkV2RequestInnerScreenshotsResolutionsEnum>;
           result.screenshotsResolutions.replace(valueDes);
-          break;
-        case r'url':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.url = valueDes;
           break;
         case r'visibility':
           final valueDes = serializers.deserialize(

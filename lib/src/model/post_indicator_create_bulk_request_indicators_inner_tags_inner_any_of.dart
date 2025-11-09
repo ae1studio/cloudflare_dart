@@ -11,15 +11,15 @@ part 'post_indicator_create_bulk_request_indicators_inner_tags_inner_any_of.g.da
 /// PostIndicatorCreateBulkRequestIndicatorsInnerTagsInnerAnyOf
 ///
 /// Properties:
-/// * [categoryName] 
 /// * [value] 
+/// * [categoryName] 
 @BuiltValue()
 abstract class PostIndicatorCreateBulkRequestIndicatorsInnerTagsInnerAnyOf implements Built<PostIndicatorCreateBulkRequestIndicatorsInnerTagsInnerAnyOf, PostIndicatorCreateBulkRequestIndicatorsInnerTagsInnerAnyOfBuilder> {
-  @BuiltValueField(wireName: r'categoryName')
-  String? get categoryName;
-
   @BuiltValueField(wireName: r'value')
   String get value;
+
+  @BuiltValueField(wireName: r'categoryName')
+  String? get categoryName;
 
   PostIndicatorCreateBulkRequestIndicatorsInnerTagsInnerAnyOf._();
 
@@ -44,6 +44,11 @@ class _$PostIndicatorCreateBulkRequestIndicatorsInnerTagsInnerAnyOfSerializer im
     PostIndicatorCreateBulkRequestIndicatorsInnerTagsInnerAnyOf object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    yield r'value';
+    yield serializers.serialize(
+      object.value,
+      specifiedType: const FullType(String),
+    );
     if (object.categoryName != null) {
       yield r'categoryName';
       yield serializers.serialize(
@@ -51,11 +56,6 @@ class _$PostIndicatorCreateBulkRequestIndicatorsInnerTagsInnerAnyOfSerializer im
         specifiedType: const FullType(String),
       );
     }
-    yield r'value';
-    yield serializers.serialize(
-      object.value,
-      specifiedType: const FullType(String),
-    );
   }
 
   @override
@@ -79,19 +79,19 @@ class _$PostIndicatorCreateBulkRequestIndicatorsInnerTagsInnerAnyOfSerializer im
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'categoryName':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.categoryName = valueDes;
-          break;
         case r'value':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(String),
           ) as String;
           result.value = valueDes;
+          break;
+        case r'categoryName':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.categoryName = valueDes;
           break;
         default:
           unhandled.add(key);

@@ -11,15 +11,12 @@ part 'aig_config_list_gateway_dynamic_routes200_response_data_routes_inner_deplo
 /// AigConfigListGatewayDynamicRoutes200ResponseDataRoutesInnerDeployment
 ///
 /// Properties:
-/// * [comment] 
 /// * [createdAt] 
 /// * [deploymentId] 
 /// * [versionId] 
+/// * [comment] 
 @BuiltValue()
 abstract class AigConfigListGatewayDynamicRoutes200ResponseDataRoutesInnerDeployment implements Built<AigConfigListGatewayDynamicRoutes200ResponseDataRoutesInnerDeployment, AigConfigListGatewayDynamicRoutes200ResponseDataRoutesInnerDeploymentBuilder> {
-  @BuiltValueField(wireName: r'comment')
-  String? get comment;
-
   @BuiltValueField(wireName: r'created_at')
   String get createdAt;
 
@@ -28,6 +25,9 @@ abstract class AigConfigListGatewayDynamicRoutes200ResponseDataRoutesInnerDeploy
 
   @BuiltValueField(wireName: r'version_id')
   String get versionId;
+
+  @BuiltValueField(wireName: r'comment')
+  String? get comment;
 
   AigConfigListGatewayDynamicRoutes200ResponseDataRoutesInnerDeployment._();
 
@@ -52,13 +52,6 @@ class _$AigConfigListGatewayDynamicRoutes200ResponseDataRoutesInnerDeploymentSer
     AigConfigListGatewayDynamicRoutes200ResponseDataRoutesInnerDeployment object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
-    if (object.comment != null) {
-      yield r'comment';
-      yield serializers.serialize(
-        object.comment,
-        specifiedType: const FullType.nullable(String),
-      );
-    }
     yield r'created_at';
     yield serializers.serialize(
       object.createdAt,
@@ -74,6 +67,13 @@ class _$AigConfigListGatewayDynamicRoutes200ResponseDataRoutesInnerDeploymentSer
       object.versionId,
       specifiedType: const FullType(String),
     );
+    if (object.comment != null) {
+      yield r'comment';
+      yield serializers.serialize(
+        object.comment,
+        specifiedType: const FullType.nullable(String),
+      );
+    }
   }
 
   @override
@@ -97,14 +97,6 @@ class _$AigConfigListGatewayDynamicRoutes200ResponseDataRoutesInnerDeploymentSer
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'comment':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
-          if (valueDes == null) continue;
-          result.comment = valueDes;
-          break;
         case r'created_at':
           final valueDes = serializers.deserialize(
             value,
@@ -125,6 +117,14 @@ class _$AigConfigListGatewayDynamicRoutes200ResponseDataRoutesInnerDeploymentSer
             specifiedType: const FullType(String),
           ) as String;
           result.versionId = valueDes;
+          break;
+        case r'comment':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType.nullable(String),
+          ) as String?;
+          if (valueDes == null) continue;
+          result.comment = valueDes;
           break;
         default:
           unhandled.add(key);

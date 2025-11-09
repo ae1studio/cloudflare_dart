@@ -15,10 +15,10 @@ part 'mconn_customer_events_get_success.g.dart';
 /// MconnCustomerEventsGetSuccess
 ///
 /// Properties:
-/// * [errors] 
-/// * [messages] 
 /// * [success] 
 /// * [result] 
+/// * [errors] 
+/// * [messages] 
 @BuiltValue()
 abstract class MconnCustomerEventsGetSuccess implements MconnEnvelope, Built<MconnCustomerEventsGetSuccess, MconnCustomerEventsGetSuccessBuilder> {
   @BuiltValueField(wireName: r'result')

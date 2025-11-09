@@ -7,6 +7,7 @@ import 'package:cloudflare_dart/src/model/post_presets200_response_all_of_data.d
 import 'package:cloudflare_dart/src/model/realtimekit_generic_success_response.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
+import 'package:built_value/json_object.dart';
 
 part 'post_presets200_response.g.dart';
 

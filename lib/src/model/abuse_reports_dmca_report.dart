@@ -14,15 +14,9 @@ part 'abuse_reports_dmca_report.g.dart';
 ///
 /// Properties:
 /// * [act] 
-/// * [comments] - Any additional comments about the infringement not exceeding 2000 characters
-/// * [company] - Text not exceeding 100 characters. This field may be released by Cloudflare to third parties such as the Lumen Database (https://lumendatabase.org/).
 /// * [email] - A valid email of the abuse reporter. This field may be released by Cloudflare to third parties such as the Lumen Database (https://lumendatabase.org/).
 /// * [email2] - Should match the value provided in `email`
 /// * [name] - Text not exceeding 255 characters. This field may be released by Cloudflare to third parties such as the Lumen Database (https://lumendatabase.org/).
-/// * [reportedCountry] - Text containing 2 characters
-/// * [reportedUserAgent] - Text not exceeding 255 characters
-/// * [tele] - Text not exceeding 20 characters. This field may be released by Cloudflare to third parties such as the Lumen Database (https://lumendatabase.org/).
-/// * [title] - Text not exceeding 255 characters
 /// * [urls] - A list of valid URLs separated by ‘\\n’ (new line character). The list of the URLs should not exceed 250 URLs. All URLs should have the same hostname. Each URL should be unique. This field may be released by Cloudflare to third parties such as the Lumen Database (https://lumendatabase.org/).
 /// * [address1] - Text not exceeding 100 characters. This field may be released by Cloudflare to third parties such as the Lumen Database (https://lumendatabase.org/).
 /// * [agentName] - The name of the copyright holder. Text not exceeding 60 characters. This field may be released by Cloudflare to third parties such as the Lumen Database (https://lumendatabase.org/).
@@ -34,6 +28,12 @@ part 'abuse_reports_dmca_report.g.dart';
 /// * [ownerNotification] - Notification type based on the abuse type. NOTE: Copyright (DMCA) and Trademark reports cannot be anonymous. 
 /// * [signature] - Required for DMCA reports, should be same as Name. An affirmation that all information in the report is true and accurate while agreeing to the policies of Cloudflare's abuse reports
 /// * [state] - Text not exceeding 255 characters. This field may be released by Cloudflare to third parties such as the Lumen Database (https://lumendatabase.org/).
+/// * [comments] - Any additional comments about the infringement not exceeding 2000 characters
+/// * [company] - Text not exceeding 100 characters. This field may be released by Cloudflare to third parties such as the Lumen Database (https://lumendatabase.org/).
+/// * [reportedCountry] - Text containing 2 characters
+/// * [reportedUserAgent] - Text not exceeding 255 characters
+/// * [tele] - Text not exceeding 20 characters. This field may be released by Cloudflare to third parties such as the Lumen Database (https://lumendatabase.org/).
+/// * [title] - Text not exceeding 255 characters
 @BuiltValue()
 abstract class AbuseReportsDMCAReport implements AbuseReportsBaseReportFields, Built<AbuseReportsDMCAReport, AbuseReportsDMCAReportBuilder> {
   /// Text not exceeding 255 characters. This field may be released by Cloudflare to third parties such as the Lumen Database (https://lumendatabase.org/). 

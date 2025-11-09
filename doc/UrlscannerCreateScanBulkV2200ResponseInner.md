@@ -9,11 +9,11 @@ import 'package:cloudflare_dart/api.dart';
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **api** | **String** | URL to api report. | 
-**options** | [**UrlscannerCreateScanBulkV2200ResponseInnerOptions**](UrlscannerCreateScanBulkV2200ResponseInnerOptions.md) |  | [optional] 
 **result** | **String** | URL to report. | 
 **url** | **String** | Submitted URL | 
 **uuid** | **String** | Scan ID. | 
 **visibility** | **String** | Submitted visibility status. | 
+**options** | [**UrlscannerCreateScanBulkV2200ResponseInnerOptions**](UrlscannerCreateScanBulkV2200ResponseInnerOptions.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

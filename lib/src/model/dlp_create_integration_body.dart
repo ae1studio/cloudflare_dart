@@ -13,21 +13,21 @@ part 'dlp_create_integration_body.g.dart';
 ///
 /// Properties:
 /// * [integrationType] 
-/// * [referenceId] - A reference id that can be supplied by the client. Currently this should be set to the Access-Okta IDP ID (a UUIDv4). https://developers.cloudflare.com/api/operations/access-identity-providers-get-an-access-identity-provider
 /// * [tenantUrl] - The base url of the tenant, e.g. \"https://tenant.okta.com\".
+/// * [referenceId] - A reference id that can be supplied by the client. Currently this should be set to the Access-Okta IDP ID (a UUIDv4). https://developers.cloudflare.com/api/operations/access-identity-providers-get-an-access-identity-provider
 @BuiltValue()
 abstract class DlpCreateIntegrationBody implements Built<DlpCreateIntegrationBody, DlpCreateIntegrationBodyBuilder> {
   @BuiltValueField(wireName: r'integration_type')
   DlpRiskScoreIntegrationType get integrationType;
   // enum integrationTypeEnum {  Okta,  };
 
-  /// A reference id that can be supplied by the client. Currently this should be set to the Access-Okta IDP ID (a UUIDv4). https://developers.cloudflare.com/api/operations/access-identity-providers-get-an-access-identity-provider
-  @BuiltValueField(wireName: r'reference_id')
-  String? get referenceId;
-
   /// The base url of the tenant, e.g. \"https://tenant.okta.com\".
   @BuiltValueField(wireName: r'tenant_url')
   String get tenantUrl;
+
+  /// A reference id that can be supplied by the client. Currently this should be set to the Access-Okta IDP ID (a UUIDv4). https://developers.cloudflare.com/api/operations/access-identity-providers-get-an-access-identity-provider
+  @BuiltValueField(wireName: r'reference_id')
+  String? get referenceId;
 
   DlpCreateIntegrationBody._();
 
@@ -57,6 +57,11 @@ class _$DlpCreateIntegrationBodySerializer implements PrimitiveSerializer<DlpCre
       object.integrationType,
       specifiedType: const FullType(DlpRiskScoreIntegrationType),
     );
+    yield r'tenant_url';
+    yield serializers.serialize(
+      object.tenantUrl,
+      specifiedType: const FullType(String),
+    );
     if (object.referenceId != null) {
       yield r'reference_id';
       yield serializers.serialize(
@@ -64,11 +69,6 @@ class _$DlpCreateIntegrationBodySerializer implements PrimitiveSerializer<DlpCre
         specifiedType: const FullType.nullable(String),
       );
     }
-    yield r'tenant_url';
-    yield serializers.serialize(
-      object.tenantUrl,
-      specifiedType: const FullType(String),
-    );
   }
 
   @override
@@ -99,6 +99,13 @@ class _$DlpCreateIntegrationBodySerializer implements PrimitiveSerializer<DlpCre
           ) as DlpRiskScoreIntegrationType;
           result.integrationType = valueDes;
           break;
+        case r'tenant_url':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.tenantUrl = valueDes;
+          break;
         case r'reference_id':
           final valueDes = serializers.deserialize(
             value,
@@ -106,13 +113,6 @@ class _$DlpCreateIntegrationBodySerializer implements PrimitiveSerializer<DlpCre
           ) as String?;
           if (valueDes == null) continue;
           result.referenceId = valueDes;
-          break;
-        case r'tenant_url':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.tenantUrl = valueDes;
           break;
         default:
           unhandled.add(key);

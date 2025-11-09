@@ -176,8 +176,6 @@ class _$RealtimekitPresetPermissions extends RealtimekitPresetPermissions {
   @override
   final bool hiddenParticipant;
   @override
-  final bool? isRecorder;
-  @override
   final bool kickParticipant;
   @override
   final RealtimekitPresetPermissionsMedia media;
@@ -193,6 +191,8 @@ class _$RealtimekitPresetPermissions extends RealtimekitPresetPermissions {
   final bool showParticipantList;
   @override
   final RealtimekitPresetPermissionsWaitingRoomTypeEnum waitingRoomType;
+  @override
+  final bool? isRecorder;
 
   factory _$RealtimekitPresetPermissions(
           [void Function(RealtimekitPresetPermissionsBuilder)? updates]) =>
@@ -212,7 +212,6 @@ class _$RealtimekitPresetPermissions extends RealtimekitPresetPermissions {
       required this.disableParticipantScreensharing,
       required this.disableParticipantVideo,
       required this.hiddenParticipant,
-      this.isRecorder,
       required this.kickParticipant,
       required this.media,
       required this.pinParticipant,
@@ -220,7 +219,8 @@ class _$RealtimekitPresetPermissions extends RealtimekitPresetPermissions {
       required this.polls,
       required this.recorderType,
       required this.showParticipantList,
-      required this.waitingRoomType})
+      required this.waitingRoomType,
+      this.isRecorder})
       : super._();
   @override
   RealtimekitPresetPermissions rebuild(
@@ -250,7 +250,6 @@ class _$RealtimekitPresetPermissions extends RealtimekitPresetPermissions {
             other.disableParticipantScreensharing &&
         disableParticipantVideo == other.disableParticipantVideo &&
         hiddenParticipant == other.hiddenParticipant &&
-        isRecorder == other.isRecorder &&
         kickParticipant == other.kickParticipant &&
         media == other.media &&
         pinParticipant == other.pinParticipant &&
@@ -258,7 +257,8 @@ class _$RealtimekitPresetPermissions extends RealtimekitPresetPermissions {
         polls == other.polls &&
         recorderType == other.recorderType &&
         showParticipantList == other.showParticipantList &&
-        waitingRoomType == other.waitingRoomType;
+        waitingRoomType == other.waitingRoomType &&
+        isRecorder == other.isRecorder;
   }
 
   @override
@@ -277,7 +277,6 @@ class _$RealtimekitPresetPermissions extends RealtimekitPresetPermissions {
     _$hash = $jc(_$hash, disableParticipantScreensharing.hashCode);
     _$hash = $jc(_$hash, disableParticipantVideo.hashCode);
     _$hash = $jc(_$hash, hiddenParticipant.hashCode);
-    _$hash = $jc(_$hash, isRecorder.hashCode);
     _$hash = $jc(_$hash, kickParticipant.hashCode);
     _$hash = $jc(_$hash, media.hashCode);
     _$hash = $jc(_$hash, pinParticipant.hashCode);
@@ -286,6 +285,7 @@ class _$RealtimekitPresetPermissions extends RealtimekitPresetPermissions {
     _$hash = $jc(_$hash, recorderType.hashCode);
     _$hash = $jc(_$hash, showParticipantList.hashCode);
     _$hash = $jc(_$hash, waitingRoomType.hashCode);
+    _$hash = $jc(_$hash, isRecorder.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -308,7 +308,6 @@ class _$RealtimekitPresetPermissions extends RealtimekitPresetPermissions {
               disableParticipantScreensharing)
           ..add('disableParticipantVideo', disableParticipantVideo)
           ..add('hiddenParticipant', hiddenParticipant)
-          ..add('isRecorder', isRecorder)
           ..add('kickParticipant', kickParticipant)
           ..add('media', media)
           ..add('pinParticipant', pinParticipant)
@@ -316,7 +315,8 @@ class _$RealtimekitPresetPermissions extends RealtimekitPresetPermissions {
           ..add('polls', polls)
           ..add('recorderType', recorderType)
           ..add('showParticipantList', showParticipantList)
-          ..add('waitingRoomType', waitingRoomType))
+          ..add('waitingRoomType', waitingRoomType)
+          ..add('isRecorder', isRecorder))
         .toString();
   }
 }
@@ -397,10 +397,6 @@ class RealtimekitPresetPermissionsBuilder
   set hiddenParticipant(bool? hiddenParticipant) =>
       _$this._hiddenParticipant = hiddenParticipant;
 
-  bool? _isRecorder;
-  bool? get isRecorder => _$this._isRecorder;
-  set isRecorder(bool? isRecorder) => _$this._isRecorder = isRecorder;
-
   bool? _kickParticipant;
   bool? get kickParticipant => _$this._kickParticipant;
   set kickParticipant(bool? kickParticipant) =>
@@ -448,6 +444,10 @@ class RealtimekitPresetPermissionsBuilder
           RealtimekitPresetPermissionsWaitingRoomTypeEnum? waitingRoomType) =>
       _$this._waitingRoomType = waitingRoomType;
 
+  bool? _isRecorder;
+  bool? get isRecorder => _$this._isRecorder;
+  set isRecorder(bool? isRecorder) => _$this._isRecorder = isRecorder;
+
   RealtimekitPresetPermissionsBuilder() {
     RealtimekitPresetPermissions._defaults(this);
   }
@@ -468,7 +468,6 @@ class RealtimekitPresetPermissionsBuilder
       _disableParticipantScreensharing = $v.disableParticipantScreensharing;
       _disableParticipantVideo = $v.disableParticipantVideo;
       _hiddenParticipant = $v.hiddenParticipant;
-      _isRecorder = $v.isRecorder;
       _kickParticipant = $v.kickParticipant;
       _media = $v.media.toBuilder();
       _pinParticipant = $v.pinParticipant;
@@ -477,6 +476,7 @@ class RealtimekitPresetPermissionsBuilder
       _recorderType = $v.recorderType;
       _showParticipantList = $v.showParticipantList;
       _waitingRoomType = $v.waitingRoomType;
+      _isRecorder = $v.isRecorder;
       _$v = null;
     }
     return this;
@@ -542,7 +542,6 @@ class RealtimekitPresetPermissionsBuilder
                 hiddenParticipant,
                 r'RealtimekitPresetPermissions',
                 'hiddenParticipant'),
-            isRecorder: isRecorder,
             kickParticipant: BuiltValueNullFieldError.checkNotNull(
                 kickParticipant,
                 r'RealtimekitPresetPermissions',
@@ -564,6 +563,7 @@ class RealtimekitPresetPermissionsBuilder
                 waitingRoomType,
                 r'RealtimekitPresetPermissions',
                 'waitingRoomType'),
+            isRecorder: isRecorder,
           );
     } catch (_) {
       late String _$failedField;

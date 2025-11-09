@@ -13,20 +13,20 @@ part 'mconn_admin_connector.g.dart';
 /// Properties:
 /// * [accountId] - Account identifier
 /// * [activated] 
+/// * [id] 
+/// * [interruptWindowDurationHours] 
+/// * [interruptWindowHourOfDay] 
+/// * [lastUpdated] 
+/// * [notes] 
+/// * [timezone] 
+/// * [upgradeAsap] 
 /// * [cloudflaredTunnelId] 
 /// * [cloudflaredTunnelToken] 
 /// * [cohortId] 
 /// * [desiredVersion] 
 /// * [deviceId] 
-/// * [id] 
-/// * [interruptWindowDurationHours] 
-/// * [interruptWindowHourOfDay] 
 /// * [lastHeartbeat] 
 /// * [lastSeenVersion] 
-/// * [lastUpdated] 
-/// * [notes] 
-/// * [timezone] 
-/// * [upgradeAsap] 
 @BuiltValue()
 abstract class MconnAdminConnector implements Built<MconnAdminConnector, MconnAdminConnectorBuilder> {
   /// Account identifier
@@ -35,6 +35,27 @@ abstract class MconnAdminConnector implements Built<MconnAdminConnector, MconnAd
 
   @BuiltValueField(wireName: r'activated')
   bool get activated;
+
+  @BuiltValueField(wireName: r'id')
+  String get id;
+
+  @BuiltValueField(wireName: r'interrupt_window_duration_hours')
+  num get interruptWindowDurationHours;
+
+  @BuiltValueField(wireName: r'interrupt_window_hour_of_day')
+  num get interruptWindowHourOfDay;
+
+  @BuiltValueField(wireName: r'last_updated')
+  String get lastUpdated;
+
+  @BuiltValueField(wireName: r'notes')
+  String get notes;
+
+  @BuiltValueField(wireName: r'timezone')
+  String get timezone;
+
+  @BuiltValueField(wireName: r'upgrade_asap')
+  bool get upgradeAsap;
 
   @BuiltValueField(wireName: r'cloudflared_tunnel_id')
   String? get cloudflaredTunnelId;
@@ -51,32 +72,11 @@ abstract class MconnAdminConnector implements Built<MconnAdminConnector, MconnAd
   @BuiltValueField(wireName: r'device_id')
   String? get deviceId;
 
-  @BuiltValueField(wireName: r'id')
-  String get id;
-
-  @BuiltValueField(wireName: r'interrupt_window_duration_hours')
-  num get interruptWindowDurationHours;
-
-  @BuiltValueField(wireName: r'interrupt_window_hour_of_day')
-  num get interruptWindowHourOfDay;
-
   @BuiltValueField(wireName: r'last_heartbeat')
   String? get lastHeartbeat;
 
   @BuiltValueField(wireName: r'last_seen_version')
   String? get lastSeenVersion;
-
-  @BuiltValueField(wireName: r'last_updated')
-  String get lastUpdated;
-
-  @BuiltValueField(wireName: r'notes')
-  String get notes;
-
-  @BuiltValueField(wireName: r'timezone')
-  String get timezone;
-
-  @BuiltValueField(wireName: r'upgrade_asap')
-  bool get upgradeAsap;
 
   MconnAdminConnector._();
 
@@ -109,6 +109,41 @@ class _$MconnAdminConnectorSerializer implements PrimitiveSerializer<MconnAdminC
     yield r'activated';
     yield serializers.serialize(
       object.activated,
+      specifiedType: const FullType(bool),
+    );
+    yield r'id';
+    yield serializers.serialize(
+      object.id,
+      specifiedType: const FullType(String),
+    );
+    yield r'interrupt_window_duration_hours';
+    yield serializers.serialize(
+      object.interruptWindowDurationHours,
+      specifiedType: const FullType(num),
+    );
+    yield r'interrupt_window_hour_of_day';
+    yield serializers.serialize(
+      object.interruptWindowHourOfDay,
+      specifiedType: const FullType(num),
+    );
+    yield r'last_updated';
+    yield serializers.serialize(
+      object.lastUpdated,
+      specifiedType: const FullType(String),
+    );
+    yield r'notes';
+    yield serializers.serialize(
+      object.notes,
+      specifiedType: const FullType(String),
+    );
+    yield r'timezone';
+    yield serializers.serialize(
+      object.timezone,
+      specifiedType: const FullType(String),
+    );
+    yield r'upgrade_asap';
+    yield serializers.serialize(
+      object.upgradeAsap,
       specifiedType: const FullType(bool),
     );
     if (object.cloudflaredTunnelId != null) {
@@ -146,21 +181,6 @@ class _$MconnAdminConnectorSerializer implements PrimitiveSerializer<MconnAdminC
         specifiedType: const FullType(String),
       );
     }
-    yield r'id';
-    yield serializers.serialize(
-      object.id,
-      specifiedType: const FullType(String),
-    );
-    yield r'interrupt_window_duration_hours';
-    yield serializers.serialize(
-      object.interruptWindowDurationHours,
-      specifiedType: const FullType(num),
-    );
-    yield r'interrupt_window_hour_of_day';
-    yield serializers.serialize(
-      object.interruptWindowHourOfDay,
-      specifiedType: const FullType(num),
-    );
     if (object.lastHeartbeat != null) {
       yield r'last_heartbeat';
       yield serializers.serialize(
@@ -175,26 +195,6 @@ class _$MconnAdminConnectorSerializer implements PrimitiveSerializer<MconnAdminC
         specifiedType: const FullType(String),
       );
     }
-    yield r'last_updated';
-    yield serializers.serialize(
-      object.lastUpdated,
-      specifiedType: const FullType(String),
-    );
-    yield r'notes';
-    yield serializers.serialize(
-      object.notes,
-      specifiedType: const FullType(String),
-    );
-    yield r'timezone';
-    yield serializers.serialize(
-      object.timezone,
-      specifiedType: const FullType(String),
-    );
-    yield r'upgrade_asap';
-    yield serializers.serialize(
-      object.upgradeAsap,
-      specifiedType: const FullType(bool),
-    );
   }
 
   @override
@@ -232,6 +232,55 @@ class _$MconnAdminConnectorSerializer implements PrimitiveSerializer<MconnAdminC
           ) as bool;
           result.activated = valueDes;
           break;
+        case r'id':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.id = valueDes;
+          break;
+        case r'interrupt_window_duration_hours':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(num),
+          ) as num;
+          result.interruptWindowDurationHours = valueDes;
+          break;
+        case r'interrupt_window_hour_of_day':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(num),
+          ) as num;
+          result.interruptWindowHourOfDay = valueDes;
+          break;
+        case r'last_updated':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.lastUpdated = valueDes;
+          break;
+        case r'notes':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.notes = valueDes;
+          break;
+        case r'timezone':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.timezone = valueDes;
+          break;
+        case r'upgrade_asap':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(bool),
+          ) as bool;
+          result.upgradeAsap = valueDes;
+          break;
         case r'cloudflared_tunnel_id':
           final valueDes = serializers.deserialize(
             value,
@@ -267,27 +316,6 @@ class _$MconnAdminConnectorSerializer implements PrimitiveSerializer<MconnAdminC
           ) as String;
           result.deviceId = valueDes;
           break;
-        case r'id':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.id = valueDes;
-          break;
-        case r'interrupt_window_duration_hours':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(num),
-          ) as num;
-          result.interruptWindowDurationHours = valueDes;
-          break;
-        case r'interrupt_window_hour_of_day':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(num),
-          ) as num;
-          result.interruptWindowHourOfDay = valueDes;
-          break;
         case r'last_heartbeat':
           final valueDes = serializers.deserialize(
             value,
@@ -301,34 +329,6 @@ class _$MconnAdminConnectorSerializer implements PrimitiveSerializer<MconnAdminC
             specifiedType: const FullType(String),
           ) as String;
           result.lastSeenVersion = valueDes;
-          break;
-        case r'last_updated':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.lastUpdated = valueDes;
-          break;
-        case r'notes':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.notes = valueDes;
-          break;
-        case r'timezone':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.timezone = valueDes;
-          break;
-        case r'upgrade_asap':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
-          result.upgradeAsap = valueDes;
           break;
         default:
           unhandled.add(key);

@@ -8,6 +8,7 @@ import 'package:cloudflare_dart/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**startupTimeMs** | **int** |  | 
 **compatibilityDate** | **String** | Date indicating targeted support in the Workers runtime. Backwards incompatible fixes to the runtime following this date will not affect this Worker. | [optional] 
 **compatibilityFlags** | **BuiltList&lt;String&gt;** | Flags that enable or disable certain features in the Workers runtime. Used to enable upcoming features or opt in or out of specific changes not included in a `compatibility_date`. | [optional] [default to ListBuilder()]
 **createdOn** | [**DateTime**](DateTime.md) | When the script was created. | [optional] 
@@ -30,7 +31,6 @@ Name | Type | Description | Notes
 **tailConsumers** | [**BuiltList&lt;WorkersTailConsumersScript&gt;**](WorkersTailConsumersScript.md) | List of Workers that will consume logs from the attached Worker. | [optional] 
 **usageModel** | [**WorkersUsageModel**](WorkersUsageModel.md) |  | [optional] 
 **entryPoint** | **String** | The entry point for the script. | [optional] 
-**startupTimeMs** | **int** |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

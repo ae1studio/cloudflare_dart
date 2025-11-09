@@ -13,12 +13,16 @@ part 'r2_data_catalog_namespace_list_response.g.dart';
 /// Contains the list of namespaces with optional pagination.
 ///
 /// Properties:
+/// * [namespaces] - Lists namespaces in the catalog.
 /// * [details] - Contains detailed metadata for each namespace when return_details is true. Each object includes the namespace, UUID, and timestamps. 
 /// * [namespaceUuids] - Contains UUIDs for each namespace when return_uuids is true. The order corresponds to the namespaces array. 
-/// * [namespaces] - Lists namespaces in the catalog.
 /// * [nextPageToken] - Use this opaque token to fetch the next page of results. A null or absent value indicates the last page. 
 @BuiltValue()
 abstract class R2DataCatalogNamespaceListResponse implements Built<R2DataCatalogNamespaceListResponse, R2DataCatalogNamespaceListResponseBuilder> {
+  /// Lists namespaces in the catalog.
+  @BuiltValueField(wireName: r'namespaces')
+  BuiltList<BuiltList<String>> get namespaces;
+
   /// Contains detailed metadata for each namespace when return_details is true. Each object includes the namespace, UUID, and timestamps. 
   @BuiltValueField(wireName: r'details')
   BuiltList<R2DataCatalogNamespaceDetails>? get details;
@@ -26,10 +30,6 @@ abstract class R2DataCatalogNamespaceListResponse implements Built<R2DataCatalog
   /// Contains UUIDs for each namespace when return_uuids is true. The order corresponds to the namespaces array. 
   @BuiltValueField(wireName: r'namespace_uuids')
   BuiltList<String>? get namespaceUuids;
-
-  /// Lists namespaces in the catalog.
-  @BuiltValueField(wireName: r'namespaces')
-  BuiltList<BuiltList<String>> get namespaces;
 
   /// Use this opaque token to fetch the next page of results. A null or absent value indicates the last page. 
   @BuiltValueField(wireName: r'next_page_token')
@@ -58,6 +58,11 @@ class _$R2DataCatalogNamespaceListResponseSerializer implements PrimitiveSeriali
     R2DataCatalogNamespaceListResponse object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    yield r'namespaces';
+    yield serializers.serialize(
+      object.namespaces,
+      specifiedType: const FullType(BuiltList, [FullType(BuiltList, [FullType(String)])]),
+    );
     if (object.details != null) {
       yield r'details';
       yield serializers.serialize(
@@ -72,11 +77,6 @@ class _$R2DataCatalogNamespaceListResponseSerializer implements PrimitiveSeriali
         specifiedType: const FullType.nullable(BuiltList, [FullType(String)]),
       );
     }
-    yield r'namespaces';
-    yield serializers.serialize(
-      object.namespaces,
-      specifiedType: const FullType(BuiltList, [FullType(BuiltList, [FullType(String)])]),
-    );
     if (object.nextPageToken != null) {
       yield r'next_page_token';
       yield serializers.serialize(
@@ -107,6 +107,13 @@ class _$R2DataCatalogNamespaceListResponseSerializer implements PrimitiveSeriali
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
+        case r'namespaces':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BuiltList, [FullType(BuiltList, [FullType(String)])]),
+          ) as BuiltList<BuiltList<String>>;
+          result.namespaces.replace(valueDes);
+          break;
         case r'details':
           final valueDes = serializers.deserialize(
             value,
@@ -122,13 +129,6 @@ class _$R2DataCatalogNamespaceListResponseSerializer implements PrimitiveSeriali
           ) as BuiltList<String>?;
           if (valueDes == null) continue;
           result.namespaceUuids.replace(valueDes);
-          break;
-        case r'namespaces':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(BuiltList, [FullType(String)])]),
-          ) as BuiltList<BuiltList<String>>;
-          result.namespaces.replace(valueDes);
           break;
         case r'next_page_token':
           final valueDes = serializers.deserialize(

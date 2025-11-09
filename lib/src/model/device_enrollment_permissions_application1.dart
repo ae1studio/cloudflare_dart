@@ -18,6 +18,7 @@ part 'device_enrollment_permissions_application1.g.dart';
 /// DeviceEnrollmentPermissionsApplication1
 ///
 /// Properties:
+/// * [type] 
 /// * [aud] - Audience tag.
 /// * [createdAt] 
 /// * [id] - UUID.
@@ -30,7 +31,6 @@ part 'device_enrollment_permissions_application1.g.dart';
 /// * [domain] 
 /// * [name] 
 /// * [sessionDuration] - The amount of time that tokens issued for this application will be valid. Must be in the format `300ms` or `2h45m`. Valid time units are: ns, us (or µs), ms, s, m, h. Note: unsupported for infrastructure type applications.
-/// * [type] 
 /// * [policies] 
 @BuiltValue()
 abstract class DeviceEnrollmentPermissionsApplication1 implements AccessAppRespEmbeddedPolicies, AccessBasicAppResponseProps, AccessWarpProps, Built<DeviceEnrollmentPermissionsApplication1, DeviceEnrollmentPermissionsApplication1Builder> {
@@ -88,6 +88,11 @@ class _$DeviceEnrollmentPermissionsApplication1Serializer implements PrimitiveSe
         specifiedType: const FullType(BuiltList, [FullType(AccessAppPolicyResponse)]),
       );
     }
+    yield r'type';
+    yield serializers.serialize(
+      object.type,
+      specifiedType: const FullType(AccessType),
+    );
     if (object.sessionDuration != null) {
       yield r'session_duration';
       yield serializers.serialize(
@@ -95,11 +100,6 @@ class _$DeviceEnrollmentPermissionsApplication1Serializer implements PrimitiveSe
         specifiedType: const FullType(String),
       );
     }
-    yield r'type';
-    yield serializers.serialize(
-      object.type,
-      specifiedType: const FullType(AccessType),
-    );
     if (object.customNonIdentityDenyUrl != null) {
       yield r'custom_non_identity_deny_url';
       yield serializers.serialize(
@@ -207,19 +207,19 @@ class _$DeviceEnrollmentPermissionsApplication1Serializer implements PrimitiveSe
           ) as BuiltList<AccessAppPolicyResponse>;
           result.policies.replace(valueDes);
           break;
-        case r'session_duration':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.sessionDuration = valueDes;
-          break;
         case r'type':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(AccessType),
           ) as AccessType;
           result.type = valueDes;
+          break;
+        case r'session_duration':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.sessionDuration = valueDes;
           break;
         case r'custom_non_identity_deny_url':
           final valueDes = serializers.deserialize(

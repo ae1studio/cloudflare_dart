@@ -13,19 +13,15 @@ part 'r2_get_custom_domain_response.g.dart';
 /// R2GetCustomDomainResponse
 ///
 /// Properties:
-/// * [ciphers] - An allowlist of ciphers for TLS termination. These ciphers must be in the BoringSSL format.
 /// * [domain] - Domain name of the custom domain to be added.
 /// * [enabled] - Whether this bucket is publicly accessible at the specified custom domain.
-/// * [minTLS] - Minimum TLS Version the custom domain will accept for incoming connections. If not set, defaults to 1.0.
 /// * [status] 
+/// * [ciphers] - An allowlist of ciphers for TLS termination. These ciphers must be in the BoringSSL format.
+/// * [minTLS] - Minimum TLS Version the custom domain will accept for incoming connections. If not set, defaults to 1.0.
 /// * [zoneId] - Zone ID of the custom domain resides in.
 /// * [zoneName] - Zone that the custom domain resides in.
 @BuiltValue()
 abstract class R2GetCustomDomainResponse implements Built<R2GetCustomDomainResponse, R2GetCustomDomainResponseBuilder> {
-  /// An allowlist of ciphers for TLS termination. These ciphers must be in the BoringSSL format.
-  @BuiltValueField(wireName: r'ciphers')
-  BuiltList<String>? get ciphers;
-
   /// Domain name of the custom domain to be added.
   @BuiltValueField(wireName: r'domain')
   String get domain;
@@ -34,13 +30,17 @@ abstract class R2GetCustomDomainResponse implements Built<R2GetCustomDomainRespo
   @BuiltValueField(wireName: r'enabled')
   bool get enabled;
 
+  @BuiltValueField(wireName: r'status')
+  R2GetCustomDomainResponseStatus get status;
+
+  /// An allowlist of ciphers for TLS termination. These ciphers must be in the BoringSSL format.
+  @BuiltValueField(wireName: r'ciphers')
+  BuiltList<String>? get ciphers;
+
   /// Minimum TLS Version the custom domain will accept for incoming connections. If not set, defaults to 1.0.
   @BuiltValueField(wireName: r'minTLS')
   R2GetCustomDomainResponseMinTLSEnum? get minTLS;
   // enum minTLSEnum {  1.0,  1.1,  1.2,  1.3,  };
-
-  @BuiltValueField(wireName: r'status')
-  R2GetCustomDomainResponseStatus get status;
 
   /// Zone ID of the custom domain resides in.
   @BuiltValueField(wireName: r'zoneId')
@@ -73,13 +73,6 @@ class _$R2GetCustomDomainResponseSerializer implements PrimitiveSerializer<R2Get
     R2GetCustomDomainResponse object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
-    if (object.ciphers != null) {
-      yield r'ciphers';
-      yield serializers.serialize(
-        object.ciphers,
-        specifiedType: const FullType(BuiltList, [FullType(String)]),
-      );
-    }
     yield r'domain';
     yield serializers.serialize(
       object.domain,
@@ -90,6 +83,18 @@ class _$R2GetCustomDomainResponseSerializer implements PrimitiveSerializer<R2Get
       object.enabled,
       specifiedType: const FullType(bool),
     );
+    yield r'status';
+    yield serializers.serialize(
+      object.status,
+      specifiedType: const FullType(R2GetCustomDomainResponseStatus),
+    );
+    if (object.ciphers != null) {
+      yield r'ciphers';
+      yield serializers.serialize(
+        object.ciphers,
+        specifiedType: const FullType(BuiltList, [FullType(String)]),
+      );
+    }
     if (object.minTLS != null) {
       yield r'minTLS';
       yield serializers.serialize(
@@ -97,11 +102,6 @@ class _$R2GetCustomDomainResponseSerializer implements PrimitiveSerializer<R2Get
         specifiedType: const FullType(R2GetCustomDomainResponseMinTLSEnum),
       );
     }
-    yield r'status';
-    yield serializers.serialize(
-      object.status,
-      specifiedType: const FullType(R2GetCustomDomainResponseStatus),
-    );
     if (object.zoneId != null) {
       yield r'zoneId';
       yield serializers.serialize(
@@ -139,13 +139,6 @@ class _$R2GetCustomDomainResponseSerializer implements PrimitiveSerializer<R2Get
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'ciphers':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>;
-          result.ciphers.replace(valueDes);
-          break;
         case r'domain':
           final valueDes = serializers.deserialize(
             value,
@@ -160,19 +153,26 @@ class _$R2GetCustomDomainResponseSerializer implements PrimitiveSerializer<R2Get
           ) as bool;
           result.enabled = valueDes;
           break;
-        case r'minTLS':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(R2GetCustomDomainResponseMinTLSEnum),
-          ) as R2GetCustomDomainResponseMinTLSEnum;
-          result.minTLS = valueDes;
-          break;
         case r'status':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(R2GetCustomDomainResponseStatus),
           ) as R2GetCustomDomainResponseStatus;
           result.status.replace(valueDes);
+          break;
+        case r'ciphers':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BuiltList, [FullType(String)]),
+          ) as BuiltList<String>;
+          result.ciphers.replace(valueDes);
+          break;
+        case r'minTLS':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(R2GetCustomDomainResponseMinTLSEnum),
+          ) as R2GetCustomDomainResponseMinTLSEnum;
+          result.minTLS = valueDes;
           break;
         case r'zoneId':
           final valueDes = serializers.deserialize(

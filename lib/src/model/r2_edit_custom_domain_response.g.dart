@@ -86,9 +86,9 @@ class _$R2EditCustomDomainResponseMinTLSEnumSerializer
 
 class _$R2EditCustomDomainResponse extends R2EditCustomDomainResponse {
   @override
-  final BuiltList<String>? ciphers;
-  @override
   final String domain;
+  @override
+  final BuiltList<String>? ciphers;
   @override
   final bool? enabled;
   @override
@@ -99,7 +99,7 @@ class _$R2EditCustomDomainResponse extends R2EditCustomDomainResponse {
       (R2EditCustomDomainResponseBuilder()..update(updates))._build();
 
   _$R2EditCustomDomainResponse._(
-      {this.ciphers, required this.domain, this.enabled, this.minTLS})
+      {required this.domain, this.ciphers, this.enabled, this.minTLS})
       : super._();
   @override
   R2EditCustomDomainResponse rebuild(
@@ -114,8 +114,8 @@ class _$R2EditCustomDomainResponse extends R2EditCustomDomainResponse {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is R2EditCustomDomainResponse &&
-        ciphers == other.ciphers &&
         domain == other.domain &&
+        ciphers == other.ciphers &&
         enabled == other.enabled &&
         minTLS == other.minTLS;
   }
@@ -123,8 +123,8 @@ class _$R2EditCustomDomainResponse extends R2EditCustomDomainResponse {
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, ciphers.hashCode);
     _$hash = $jc(_$hash, domain.hashCode);
+    _$hash = $jc(_$hash, ciphers.hashCode);
     _$hash = $jc(_$hash, enabled.hashCode);
     _$hash = $jc(_$hash, minTLS.hashCode);
     _$hash = $jf(_$hash);
@@ -134,8 +134,8 @@ class _$R2EditCustomDomainResponse extends R2EditCustomDomainResponse {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'R2EditCustomDomainResponse')
-          ..add('ciphers', ciphers)
           ..add('domain', domain)
+          ..add('ciphers', ciphers)
           ..add('enabled', enabled)
           ..add('minTLS', minTLS))
         .toString();
@@ -147,13 +147,13 @@ class R2EditCustomDomainResponseBuilder
         Builder<R2EditCustomDomainResponse, R2EditCustomDomainResponseBuilder> {
   _$R2EditCustomDomainResponse? _$v;
 
-  ListBuilder<String>? _ciphers;
-  ListBuilder<String> get ciphers => _$this._ciphers ??= ListBuilder<String>();
-  set ciphers(ListBuilder<String>? ciphers) => _$this._ciphers = ciphers;
-
   String? _domain;
   String? get domain => _$this._domain;
   set domain(String? domain) => _$this._domain = domain;
+
+  ListBuilder<String>? _ciphers;
+  ListBuilder<String> get ciphers => _$this._ciphers ??= ListBuilder<String>();
+  set ciphers(ListBuilder<String>? ciphers) => _$this._ciphers = ciphers;
 
   bool? _enabled;
   bool? get enabled => _$this._enabled;
@@ -171,8 +171,8 @@ class R2EditCustomDomainResponseBuilder
   R2EditCustomDomainResponseBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _ciphers = $v.ciphers?.toBuilder();
       _domain = $v.domain;
+      _ciphers = $v.ciphers?.toBuilder();
       _enabled = $v.enabled;
       _minTLS = $v.minTLS;
       _$v = null;
@@ -198,9 +198,9 @@ class R2EditCustomDomainResponseBuilder
     try {
       _$result = _$v ??
           _$R2EditCustomDomainResponse._(
-            ciphers: _ciphers?.build(),
             domain: BuiltValueNullFieldError.checkNotNull(
                 domain, r'R2EditCustomDomainResponse', 'domain'),
+            ciphers: _ciphers?.build(),
             enabled: enabled,
             minTLS: minTLS,
           );

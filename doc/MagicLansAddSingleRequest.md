@@ -8,10 +8,10 @@ import 'package:cloudflare_dart/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**physport** | **int** |  | 
 **haLink** | **bool** | mark true to use this LAN for HA probing. only works for site with HA turned on. only one LAN can be set as the ha_link. | [optional] 
 **name** | **String** |  | [optional] 
 **nat** | [**MagicNat**](MagicNat.md) |  | [optional] 
-**physport** | **int** |  | 
 **routedSubnets** | [**BuiltList&lt;MagicRoutedSubnet&gt;**](MagicRoutedSubnet.md) |  | [optional] 
 **staticAddressing** | [**MagicLanStaticAddressing**](MagicLanStaticAddressing.md) |  | [optional] 
 **vlanTag** | **int** | VLAN ID. Use zero for untagged. | [optional] 

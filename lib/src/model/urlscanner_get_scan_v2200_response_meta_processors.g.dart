@@ -22,10 +22,10 @@ class _$UrlscannerGetScanV2200ResponseMetaProcessors
   @override
   final UrlscannerGetScanV2200ResponseMetaProcessorsRadarRank radarRank;
   @override
+  final UrlscannerGetScanV2200ResponseMetaProcessorsWappa wappa;
+  @override
   final UrlscannerGetScanV2200ResponseMetaProcessorsUrlCategories?
       urlCategories;
-  @override
-  final UrlscannerGetScanV2200ResponseMetaProcessorsWappa wappa;
 
   factory _$UrlscannerGetScanV2200ResponseMetaProcessors(
           [void Function(UrlscannerGetScanV2200ResponseMetaProcessorsBuilder)?
@@ -40,8 +40,8 @@ class _$UrlscannerGetScanV2200ResponseMetaProcessors
       required this.geoip,
       required this.phishing,
       required this.radarRank,
-      this.urlCategories,
-      required this.wappa})
+      required this.wappa,
+      this.urlCategories})
       : super._();
   @override
   UrlscannerGetScanV2200ResponseMetaProcessors rebuild(
@@ -63,8 +63,8 @@ class _$UrlscannerGetScanV2200ResponseMetaProcessors
         geoip == other.geoip &&
         phishing == other.phishing &&
         radarRank == other.radarRank &&
-        urlCategories == other.urlCategories &&
-        wappa == other.wappa;
+        wappa == other.wappa &&
+        urlCategories == other.urlCategories;
   }
 
   @override
@@ -76,8 +76,8 @@ class _$UrlscannerGetScanV2200ResponseMetaProcessors
     _$hash = $jc(_$hash, geoip.hashCode);
     _$hash = $jc(_$hash, phishing.hashCode);
     _$hash = $jc(_$hash, radarRank.hashCode);
-    _$hash = $jc(_$hash, urlCategories.hashCode);
     _$hash = $jc(_$hash, wappa.hashCode);
+    _$hash = $jc(_$hash, urlCategories.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -92,8 +92,8 @@ class _$UrlscannerGetScanV2200ResponseMetaProcessors
           ..add('geoip', geoip)
           ..add('phishing', phishing)
           ..add('radarRank', radarRank)
-          ..add('urlCategories', urlCategories)
-          ..add('wappa', wappa))
+          ..add('wappa', wappa)
+          ..add('urlCategories', urlCategories))
         .toString();
   }
 }
@@ -151,6 +151,13 @@ class UrlscannerGetScanV2200ResponseMetaProcessorsBuilder
               radarRank) =>
       _$this._radarRank = radarRank;
 
+  UrlscannerGetScanV2200ResponseMetaProcessorsWappaBuilder? _wappa;
+  UrlscannerGetScanV2200ResponseMetaProcessorsWappaBuilder get wappa =>
+      _$this._wappa ??=
+          UrlscannerGetScanV2200ResponseMetaProcessorsWappaBuilder();
+  set wappa(UrlscannerGetScanV2200ResponseMetaProcessorsWappaBuilder? wappa) =>
+      _$this._wappa = wappa;
+
   UrlscannerGetScanV2200ResponseMetaProcessorsUrlCategoriesBuilder?
       _urlCategories;
   UrlscannerGetScanV2200ResponseMetaProcessorsUrlCategoriesBuilder
@@ -160,13 +167,6 @@ class UrlscannerGetScanV2200ResponseMetaProcessorsBuilder
           UrlscannerGetScanV2200ResponseMetaProcessorsUrlCategoriesBuilder?
               urlCategories) =>
       _$this._urlCategories = urlCategories;
-
-  UrlscannerGetScanV2200ResponseMetaProcessorsWappaBuilder? _wappa;
-  UrlscannerGetScanV2200ResponseMetaProcessorsWappaBuilder get wappa =>
-      _$this._wappa ??=
-          UrlscannerGetScanV2200ResponseMetaProcessorsWappaBuilder();
-  set wappa(UrlscannerGetScanV2200ResponseMetaProcessorsWappaBuilder? wappa) =>
-      _$this._wappa = wappa;
 
   UrlscannerGetScanV2200ResponseMetaProcessorsBuilder() {
     UrlscannerGetScanV2200ResponseMetaProcessors._defaults(this);
@@ -181,8 +181,8 @@ class UrlscannerGetScanV2200ResponseMetaProcessorsBuilder
       _geoip = $v.geoip.toBuilder();
       _phishing = $v.phishing.toBuilder();
       _radarRank = $v.radarRank.toBuilder();
-      _urlCategories = $v.urlCategories?.toBuilder();
       _wappa = $v.wappa.toBuilder();
+      _urlCategories = $v.urlCategories?.toBuilder();
       _$v = null;
     }
     return this;
@@ -214,8 +214,8 @@ class UrlscannerGetScanV2200ResponseMetaProcessorsBuilder
             geoip: geoip.build(),
             phishing: phishing.build(),
             radarRank: radarRank.build(),
-            urlCategories: _urlCategories?.build(),
             wappa: wappa.build(),
+            urlCategories: _urlCategories?.build(),
           );
     } catch (_) {
       late String _$failedField;
@@ -232,10 +232,10 @@ class UrlscannerGetScanV2200ResponseMetaProcessorsBuilder
         phishing.build();
         _$failedField = 'radarRank';
         radarRank.build();
-        _$failedField = 'urlCategories';
-        _urlCategories?.build();
         _$failedField = 'wappa';
         wappa.build();
+        _$failedField = 'urlCategories';
+        _urlCategories?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
             r'UrlscannerGetScanV2200ResponseMetaProcessors',

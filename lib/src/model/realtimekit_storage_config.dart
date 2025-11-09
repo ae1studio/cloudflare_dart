@@ -12,6 +12,7 @@ part 'realtimekit_storage_config.g.dart';
 /// RealtimekitStorageConfig
 ///
 /// Properties:
+/// * [type] - Type of storage media.
 /// * [accessKey] - Access key of the storage medium. Access key is not required for the `gcs` storage media type.  Note that this field is not readable by clients, only writeable.
 /// * [authMethod] - Authentication method used for \"sftp\" type storage medium 
 /// * [bucket] - Name of the storage medium's bucket.
@@ -22,10 +23,14 @@ part 'realtimekit_storage_config.g.dart';
 /// * [privateKey] - Private key used to login to destination SSH server for SFTP type storage medium, when auth_method used is \"KEY\"
 /// * [region] - Region of the storage medium.
 /// * [secret] - Secret key of the storage medium. Similar to `access_key`, it is only writeable by clients, not readable.
-/// * [type] - Type of storage media.
 /// * [username] - SSH destination server username for SFTP type storage medium
 @BuiltValue()
 abstract class RealtimekitStorageConfig implements Built<RealtimekitStorageConfig, RealtimekitStorageConfigBuilder> {
+  /// Type of storage media.
+  @BuiltValueField(wireName: r'type')
+  RealtimekitStorageConfigTypeEnum get type;
+  // enum typeEnum {  aws,  azure,  digitalocean,  gcs,  sftp,  };
+
   /// Access key of the storage medium. Access key is not required for the `gcs` storage media type.  Note that this field is not readable by clients, only writeable.
   @BuiltValueField(wireName: r'access_key')
   String? get accessKey;
@@ -67,11 +72,6 @@ abstract class RealtimekitStorageConfig implements Built<RealtimekitStorageConfi
   @BuiltValueField(wireName: r'secret')
   String? get secret;
 
-  /// Type of storage media.
-  @BuiltValueField(wireName: r'type')
-  RealtimekitStorageConfigTypeEnum get type;
-  // enum typeEnum {  aws,  azure,  digitalocean,  gcs,  sftp,  };
-
   /// SSH destination server username for SFTP type storage medium
   @BuiltValueField(wireName: r'username')
   String? get username;
@@ -99,6 +99,11 @@ class _$RealtimekitStorageConfigSerializer implements PrimitiveSerializer<Realti
     RealtimekitStorageConfig object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    yield r'type';
+    yield serializers.serialize(
+      object.type,
+      specifiedType: const FullType(RealtimekitStorageConfigTypeEnum),
+    );
     if (object.accessKey != null) {
       yield r'access_key';
       yield serializers.serialize(
@@ -169,11 +174,6 @@ class _$RealtimekitStorageConfigSerializer implements PrimitiveSerializer<Realti
         specifiedType: const FullType(String),
       );
     }
-    yield r'type';
-    yield serializers.serialize(
-      object.type,
-      specifiedType: const FullType(RealtimekitStorageConfigTypeEnum),
-    );
     if (object.username != null) {
       yield r'username';
       yield serializers.serialize(
@@ -204,6 +204,13 @@ class _$RealtimekitStorageConfigSerializer implements PrimitiveSerializer<Realti
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
+        case r'type':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(RealtimekitStorageConfigTypeEnum),
+          ) as RealtimekitStorageConfigTypeEnum;
+          result.type = valueDes;
+          break;
         case r'access_key':
           final valueDes = serializers.deserialize(
             value,
@@ -274,13 +281,6 @@ class _$RealtimekitStorageConfigSerializer implements PrimitiveSerializer<Realti
           ) as String;
           result.secret = valueDes;
           break;
-        case r'type':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(RealtimekitStorageConfigTypeEnum),
-          ) as RealtimekitStorageConfigTypeEnum;
-          result.type = valueDes;
-          break;
         case r'username':
           final valueDes = serializers.deserialize(
             value,
@@ -317,23 +317,6 @@ class _$RealtimekitStorageConfigSerializer implements PrimitiveSerializer<Realti
   }
 }
 
-class RealtimekitStorageConfigAuthMethodEnum extends EnumClass {
-
-  /// Authentication method used for \"sftp\" type storage medium 
-  @BuiltValueEnumConst(wireName: r'KEY')
-  static const RealtimekitStorageConfigAuthMethodEnum KEY = _$realtimekitStorageConfigAuthMethodEnum_KEY;
-  /// Authentication method used for \"sftp\" type storage medium 
-  @BuiltValueEnumConst(wireName: r'PASSWORD')
-  static const RealtimekitStorageConfigAuthMethodEnum PASSWORD = _$realtimekitStorageConfigAuthMethodEnum_PASSWORD;
-
-  static Serializer<RealtimekitStorageConfigAuthMethodEnum> get serializer => _$realtimekitStorageConfigAuthMethodEnumSerializer;
-
-  const RealtimekitStorageConfigAuthMethodEnum._(String name): super(name);
-
-  static BuiltSet<RealtimekitStorageConfigAuthMethodEnum> get values => _$realtimekitStorageConfigAuthMethodEnumValues;
-  static RealtimekitStorageConfigAuthMethodEnum valueOf(String name) => _$realtimekitStorageConfigAuthMethodEnumValueOf(name);
-}
-
 class RealtimekitStorageConfigTypeEnum extends EnumClass {
 
   /// Type of storage media.
@@ -358,5 +341,22 @@ class RealtimekitStorageConfigTypeEnum extends EnumClass {
 
   static BuiltSet<RealtimekitStorageConfigTypeEnum> get values => _$realtimekitStorageConfigTypeEnumValues;
   static RealtimekitStorageConfigTypeEnum valueOf(String name) => _$realtimekitStorageConfigTypeEnumValueOf(name);
+}
+
+class RealtimekitStorageConfigAuthMethodEnum extends EnumClass {
+
+  /// Authentication method used for \"sftp\" type storage medium 
+  @BuiltValueEnumConst(wireName: r'KEY')
+  static const RealtimekitStorageConfigAuthMethodEnum KEY = _$realtimekitStorageConfigAuthMethodEnum_KEY;
+  /// Authentication method used for \"sftp\" type storage medium 
+  @BuiltValueEnumConst(wireName: r'PASSWORD')
+  static const RealtimekitStorageConfigAuthMethodEnum PASSWORD = _$realtimekitStorageConfigAuthMethodEnum_PASSWORD;
+
+  static Serializer<RealtimekitStorageConfigAuthMethodEnum> get serializer => _$realtimekitStorageConfigAuthMethodEnumSerializer;
+
+  const RealtimekitStorageConfigAuthMethodEnum._(String name): super(name);
+
+  static BuiltSet<RealtimekitStorageConfigAuthMethodEnum> get values => _$realtimekitStorageConfigAuthMethodEnumValues;
+  static RealtimekitStorageConfigAuthMethodEnum valueOf(String name) => _$realtimekitStorageConfigAuthMethodEnumValueOf(name);
 }
 

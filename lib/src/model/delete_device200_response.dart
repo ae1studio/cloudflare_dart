@@ -16,8 +16,8 @@ part 'delete_device200_response.g.dart';
 /// Properties:
 /// * [errors] 
 /// * [messages] 
-/// * [result] 
 /// * [success] - Whether the API call was successful.
+/// * [result] 
 @BuiltValue()
 abstract class DeleteDevice200Response implements Built<DeleteDevice200Response, DeleteDevice200ResponseBuilder> {
   @BuiltValueField(wireName: r'errors')
@@ -26,12 +26,12 @@ abstract class DeleteDevice200Response implements Built<DeleteDevice200Response,
   @BuiltValueField(wireName: r'messages')
   BuiltList<TeamsDevicesV4ResponseMessage> get messages;
 
-  @BuiltValueField(wireName: r'result')
-  JsonObject? get result;
-
   /// Whether the API call was successful.
   @BuiltValueField(wireName: r'success')
   bool get success;
+
+  @BuiltValueField(wireName: r'result')
+  JsonObject? get result;
 
   DeleteDevice200Response._();
 
@@ -66,6 +66,11 @@ class _$DeleteDevice200ResponseSerializer implements PrimitiveSerializer<DeleteD
       object.messages,
       specifiedType: const FullType(BuiltList, [FullType(TeamsDevicesV4ResponseMessage)]),
     );
+    yield r'success';
+    yield serializers.serialize(
+      object.success,
+      specifiedType: const FullType(bool),
+    );
     if (object.result != null) {
       yield r'result';
       yield serializers.serialize(
@@ -73,11 +78,6 @@ class _$DeleteDevice200ResponseSerializer implements PrimitiveSerializer<DeleteD
         specifiedType: const FullType.nullable(JsonObject),
       );
     }
-    yield r'success';
-    yield serializers.serialize(
-      object.success,
-      specifiedType: const FullType(bool),
-    );
   }
 
   @override
@@ -115,6 +115,13 @@ class _$DeleteDevice200ResponseSerializer implements PrimitiveSerializer<DeleteD
           ) as BuiltList<TeamsDevicesV4ResponseMessage>;
           result.messages.replace(valueDes);
           break;
+        case r'success':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(bool),
+          ) as bool;
+          result.success = valueDes;
+          break;
         case r'result':
           final valueDes = serializers.deserialize(
             value,
@@ -122,13 +129,6 @@ class _$DeleteDevice200ResponseSerializer implements PrimitiveSerializer<DeleteD
           ) as JsonObject?;
           if (valueDes == null) continue;
           result.result = valueDes;
-          break;
-        case r'success':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
-          result.success = valueDes;
           break;
         default:
           unhandled.add(key);

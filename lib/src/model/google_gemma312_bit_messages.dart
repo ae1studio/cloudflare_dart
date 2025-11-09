@@ -16,11 +16,11 @@ part 'google_gemma312_bit_messages.g.dart';
 /// GoogleGemma312BItMessages
 ///
 /// Properties:
+/// * [messages] - An array of message objects representing the conversation history.
 /// * [frequencyPenalty] - Decreases the likelihood of the model repeating the same lines verbatim.
 /// * [functions] 
 /// * [guidedJson] - JSON schema that should be fufilled for the response.
 /// * [maxTokens] - The maximum number of tokens to generate in the response.
-/// * [messages] - An array of message objects representing the conversation history.
 /// * [presencePenalty] - Increases the likelihood of the model introducing new topics.
 /// * [raw] - If true, a chat template is not applied and you must adhere to the specific model's expected formatting.
 /// * [repetitionPenalty] - Penalty for repeated tokens; higher values discourage repetition.
@@ -32,6 +32,10 @@ part 'google_gemma312_bit_messages.g.dart';
 /// * [topP] - Adjusts the creativity of the AI's responses by controlling how many possible words it considers. Lower values make outputs more predictable; higher values allow for more varied and creative responses.
 @BuiltValue()
 abstract class GoogleGemma312BItMessages implements Built<GoogleGemma312BItMessages, GoogleGemma312BItMessagesBuilder> {
+  /// An array of message objects representing the conversation history.
+  @BuiltValueField(wireName: r'messages')
+  BuiltList<GoogleGemma312BItMessagesMessagesInner> get messages;
+
   /// Decreases the likelihood of the model repeating the same lines verbatim.
   @BuiltValueField(wireName: r'frequency_penalty')
   num? get frequencyPenalty;
@@ -46,10 +50,6 @@ abstract class GoogleGemma312BItMessages implements Built<GoogleGemma312BItMessa
   /// The maximum number of tokens to generate in the response.
   @BuiltValueField(wireName: r'max_tokens')
   int? get maxTokens;
-
-  /// An array of message objects representing the conversation history.
-  @BuiltValueField(wireName: r'messages')
-  BuiltList<GoogleGemma312BItMessagesMessagesInner> get messages;
 
   /// Increases the likelihood of the model introducing new topics.
   @BuiltValueField(wireName: r'presence_penalty')
@@ -114,6 +114,11 @@ class _$GoogleGemma312BItMessagesSerializer implements PrimitiveSerializer<Googl
     GoogleGemma312BItMessages object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    yield r'messages';
+    yield serializers.serialize(
+      object.messages,
+      specifiedType: const FullType(BuiltList, [FullType(GoogleGemma312BItMessagesMessagesInner)]),
+    );
     if (object.frequencyPenalty != null) {
       yield r'frequency_penalty';
       yield serializers.serialize(
@@ -142,11 +147,6 @@ class _$GoogleGemma312BItMessagesSerializer implements PrimitiveSerializer<Googl
         specifiedType: const FullType(int),
       );
     }
-    yield r'messages';
-    yield serializers.serialize(
-      object.messages,
-      specifiedType: const FullType(BuiltList, [FullType(GoogleGemma312BItMessagesMessagesInner)]),
-    );
     if (object.presencePenalty != null) {
       yield r'presence_penalty';
       yield serializers.serialize(
@@ -233,6 +233,13 @@ class _$GoogleGemma312BItMessagesSerializer implements PrimitiveSerializer<Googl
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
+        case r'messages':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BuiltList, [FullType(GoogleGemma312BItMessagesMessagesInner)]),
+          ) as BuiltList<GoogleGemma312BItMessagesMessagesInner>;
+          result.messages.replace(valueDes);
+          break;
         case r'frequency_penalty':
           final valueDes = serializers.deserialize(
             value,
@@ -260,13 +267,6 @@ class _$GoogleGemma312BItMessagesSerializer implements PrimitiveSerializer<Googl
             specifiedType: const FullType(int),
           ) as int;
           result.maxTokens = valueDes;
-          break;
-        case r'messages':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(GoogleGemma312BItMessagesMessagesInner)]),
-          ) as BuiltList<GoogleGemma312BItMessagesMessagesInner>;
-          result.messages.replace(valueDes);
           break;
         case r'presence_penalty':
           final valueDes = serializers.deserialize(

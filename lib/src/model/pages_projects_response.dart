@@ -20,8 +20,8 @@ part 'pages_projects_response.g.dart';
 /// * [errors] 
 /// * [messages] 
 /// * [success] - Whether the API call was successful
-/// * [resultInfo] 
 /// * [result] 
+/// * [resultInfo] 
 @BuiltValue(instantiable: false)
 abstract class PagesProjectsResponse implements PagesApiResponseCommon, PagesApiResponsePagination {
   @BuiltValueField(wireName: r'result')

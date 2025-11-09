@@ -15,10 +15,10 @@ part 'page_shield_api_list_response_collection.g.dart';
 /// PageShieldApiListResponseCollection
 ///
 /// Properties:
-/// * [errors] 
-/// * [messages] 
 /// * [success] - Whether the API call was successful
 /// * [resultInfo] 
+/// * [errors] 
+/// * [messages] 
 @BuiltValue(instantiable: false)
 abstract class PageShieldApiListResponseCollection implements PageShieldApiResponseCommon {
   @BuiltValueField(wireName: r'result_info')

@@ -14,8 +14,6 @@ class _$DlpEmailRule extends DlpEmailRule {
   @override
   final DateTime createdAt;
   @override
-  final String? description;
-  @override
   final bool enabled;
   @override
   final String name;
@@ -25,6 +23,8 @@ class _$DlpEmailRule extends DlpEmailRule {
   final String ruleId;
   @override
   final DateTime updatedAt;
+  @override
+  final String? description;
 
   factory _$DlpEmailRule([void Function(DlpEmailRuleBuilder)? updates]) =>
       (DlpEmailRuleBuilder()..update(updates))._build();
@@ -33,12 +33,12 @@ class _$DlpEmailRule extends DlpEmailRule {
       {required this.action,
       required this.conditions,
       required this.createdAt,
-      this.description,
       required this.enabled,
       required this.name,
       required this.priority,
       required this.ruleId,
-      required this.updatedAt})
+      required this.updatedAt,
+      this.description})
       : super._();
   @override
   DlpEmailRule rebuild(void Function(DlpEmailRuleBuilder) updates) =>
@@ -54,12 +54,12 @@ class _$DlpEmailRule extends DlpEmailRule {
         action == other.action &&
         conditions == other.conditions &&
         createdAt == other.createdAt &&
-        description == other.description &&
         enabled == other.enabled &&
         name == other.name &&
         priority == other.priority &&
         ruleId == other.ruleId &&
-        updatedAt == other.updatedAt;
+        updatedAt == other.updatedAt &&
+        description == other.description;
   }
 
   @override
@@ -68,12 +68,12 @@ class _$DlpEmailRule extends DlpEmailRule {
     _$hash = $jc(_$hash, action.hashCode);
     _$hash = $jc(_$hash, conditions.hashCode);
     _$hash = $jc(_$hash, createdAt.hashCode);
-    _$hash = $jc(_$hash, description.hashCode);
     _$hash = $jc(_$hash, enabled.hashCode);
     _$hash = $jc(_$hash, name.hashCode);
     _$hash = $jc(_$hash, priority.hashCode);
     _$hash = $jc(_$hash, ruleId.hashCode);
     _$hash = $jc(_$hash, updatedAt.hashCode);
+    _$hash = $jc(_$hash, description.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -84,12 +84,12 @@ class _$DlpEmailRule extends DlpEmailRule {
           ..add('action', action)
           ..add('conditions', conditions)
           ..add('createdAt', createdAt)
-          ..add('description', description)
           ..add('enabled', enabled)
           ..add('name', name)
           ..add('priority', priority)
           ..add('ruleId', ruleId)
-          ..add('updatedAt', updatedAt))
+          ..add('updatedAt', updatedAt)
+          ..add('description', description))
         .toString();
   }
 }
@@ -113,10 +113,6 @@ class DlpEmailRuleBuilder
   DateTime? get createdAt => _$this._createdAt;
   set createdAt(DateTime? createdAt) => _$this._createdAt = createdAt;
 
-  String? _description;
-  String? get description => _$this._description;
-  set description(String? description) => _$this._description = description;
-
   bool? _enabled;
   bool? get enabled => _$this._enabled;
   set enabled(bool? enabled) => _$this._enabled = enabled;
@@ -137,6 +133,10 @@ class DlpEmailRuleBuilder
   DateTime? get updatedAt => _$this._updatedAt;
   set updatedAt(DateTime? updatedAt) => _$this._updatedAt = updatedAt;
 
+  String? _description;
+  String? get description => _$this._description;
+  set description(String? description) => _$this._description = description;
+
   DlpEmailRuleBuilder() {
     DlpEmailRule._defaults(this);
   }
@@ -147,12 +147,12 @@ class DlpEmailRuleBuilder
       _action = $v.action.toBuilder();
       _conditions = $v.conditions.toBuilder();
       _createdAt = $v.createdAt;
-      _description = $v.description;
       _enabled = $v.enabled;
       _name = $v.name;
       _priority = $v.priority;
       _ruleId = $v.ruleId;
       _updatedAt = $v.updatedAt;
+      _description = $v.description;
       _$v = null;
     }
     return this;
@@ -180,7 +180,6 @@ class DlpEmailRuleBuilder
             conditions: conditions.build(),
             createdAt: BuiltValueNullFieldError.checkNotNull(
                 createdAt, r'DlpEmailRule', 'createdAt'),
-            description: description,
             enabled: BuiltValueNullFieldError.checkNotNull(
                 enabled, r'DlpEmailRule', 'enabled'),
             name: BuiltValueNullFieldError.checkNotNull(
@@ -191,6 +190,7 @@ class DlpEmailRuleBuilder
                 ruleId, r'DlpEmailRule', 'ruleId'),
             updatedAt: BuiltValueNullFieldError.checkNotNull(
                 updatedAt, r'DlpEmailRule', 'updatedAt'),
+            description: description,
           );
     } catch (_) {
       late String _$failedField;

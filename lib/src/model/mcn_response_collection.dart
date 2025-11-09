@@ -15,18 +15,18 @@ part 'mcn_response_collection.g.dart';
 ///
 /// Properties:
 /// * [messages] 
-/// * [resultInfo] 
 /// * [success] 
+/// * [resultInfo] 
 @BuiltValue(instantiable: false)
 abstract class McnResponseCollection  {
   @BuiltValueField(wireName: r'messages')
   BuiltList<McnError> get messages;
 
-  @BuiltValueField(wireName: r'result_info')
-  McnResultInfo? get resultInfo;
-
   @BuiltValueField(wireName: r'success')
   bool get success;
+
+  @BuiltValueField(wireName: r'result_info')
+  McnResultInfo? get resultInfo;
 
   @BuiltValueSerializer(custom: true)
   static Serializer<McnResponseCollection> get serializer => _$McnResponseCollectionSerializer();
@@ -49,6 +49,11 @@ class _$McnResponseCollectionSerializer implements PrimitiveSerializer<McnRespon
       object.messages,
       specifiedType: const FullType(BuiltList, [FullType(McnError)]),
     );
+    yield r'success';
+    yield serializers.serialize(
+      object.success,
+      specifiedType: const FullType(bool),
+    );
     if (object.resultInfo != null) {
       yield r'result_info';
       yield serializers.serialize(
@@ -56,11 +61,6 @@ class _$McnResponseCollectionSerializer implements PrimitiveSerializer<McnRespon
         specifiedType: const FullType(McnResultInfo),
       );
     }
-    yield r'success';
-    yield serializers.serialize(
-      object.success,
-      specifiedType: const FullType(bool),
-    );
   }
 
   @override
@@ -131,19 +131,19 @@ class _$$McnResponseCollectionSerializer implements PrimitiveSerializer<$McnResp
           ) as BuiltList<McnError>;
           result.messages.replace(valueDes);
           break;
-        case r'result_info':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(McnResultInfo),
-          ) as McnResultInfo;
-          result.resultInfo.replace(valueDes);
-          break;
         case r'success':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(bool),
           ) as bool;
           result.success = valueDes;
+          break;
+        case r'result_info':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(McnResultInfo),
+          ) as McnResultInfo;
+          result.resultInfo.replace(valueDes);
           break;
         default:
           unhandled.add(key);

@@ -13,9 +13,9 @@ class _$ResourceSharingShareResponseCollection
   @override
   final BuiltList<ResourceSharingV4error> errors;
   @override
-  final PageShieldApiResponseSingleAllOfResult? result;
-  @override
   final bool success;
+  @override
+  final PageShieldApiResponseSingleAllOfResult? result;
 
   factory _$ResourceSharingShareResponseCollection(
           [void Function(ResourceSharingShareResponseCollectionBuilder)?
@@ -26,8 +26,8 @@ class _$ResourceSharingShareResponseCollection
   _$ResourceSharingShareResponseCollection._(
       {this.resultInfo,
       required this.errors,
-      this.result,
-      required this.success})
+      required this.success,
+      this.result})
       : super._();
   @override
   ResourceSharingShareResponseCollection rebuild(
@@ -45,8 +45,8 @@ class _$ResourceSharingShareResponseCollection
     return other is ResourceSharingShareResponseCollection &&
         resultInfo == other.resultInfo &&
         errors == other.errors &&
-        result == other.result &&
-        success == other.success;
+        success == other.success &&
+        result == other.result;
   }
 
   @override
@@ -54,8 +54,8 @@ class _$ResourceSharingShareResponseCollection
     var _$hash = 0;
     _$hash = $jc(_$hash, resultInfo.hashCode);
     _$hash = $jc(_$hash, errors.hashCode);
-    _$hash = $jc(_$hash, result.hashCode);
     _$hash = $jc(_$hash, success.hashCode);
+    _$hash = $jc(_$hash, result.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -66,8 +66,8 @@ class _$ResourceSharingShareResponseCollection
             r'ResourceSharingShareResponseCollection')
           ..add('resultInfo', resultInfo)
           ..add('errors', errors)
-          ..add('result', result)
-          ..add('success', success))
+          ..add('success', success)
+          ..add('result', result))
         .toString();
   }
 }
@@ -91,15 +91,15 @@ class ResourceSharingShareResponseCollectionBuilder
   set errors(covariant ListBuilder<ResourceSharingV4error>? errors) =>
       _$this._errors = errors;
 
+  bool? _success;
+  bool? get success => _$this._success;
+  set success(covariant bool? success) => _$this._success = success;
+
   PageShieldApiResponseSingleAllOfResultBuilder? _result;
   PageShieldApiResponseSingleAllOfResultBuilder get result =>
       _$this._result ??= PageShieldApiResponseSingleAllOfResultBuilder();
   set result(covariant PageShieldApiResponseSingleAllOfResultBuilder? result) =>
       _$this._result = result;
-
-  bool? _success;
-  bool? get success => _$this._success;
-  set success(covariant bool? success) => _$this._success = success;
 
   ResourceSharingShareResponseCollectionBuilder() {
     ResourceSharingShareResponseCollection._defaults(this);
@@ -110,8 +110,8 @@ class ResourceSharingShareResponseCollectionBuilder
     if ($v != null) {
       _resultInfo = $v.resultInfo?.toBuilder();
       _errors = $v.errors.toBuilder();
-      _result = $v.result?.toBuilder();
       _success = $v.success;
+      _result = $v.result?.toBuilder();
       _$v = null;
     }
     return this;
@@ -138,9 +138,9 @@ class ResourceSharingShareResponseCollectionBuilder
           _$ResourceSharingShareResponseCollection._(
             resultInfo: _resultInfo?.build(),
             errors: errors.build(),
-            result: _result?.build(),
             success: BuiltValueNullFieldError.checkNotNull(
                 success, r'ResourceSharingShareResponseCollection', 'success'),
+            result: _result?.build(),
           );
     } catch (_) {
       late String _$failedField;
@@ -149,6 +149,7 @@ class ResourceSharingShareResponseCollectionBuilder
         _resultInfo?.build();
         _$failedField = 'errors';
         errors.build();
+
         _$failedField = 'result';
         _result?.build();
       } catch (e) {

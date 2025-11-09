@@ -13,24 +13,15 @@ part 'realtimekit_poll.g.dart';
 /// RealtimekitPoll
 ///
 /// Properties:
-/// * [anonymous] 
-/// * [createdBy] 
-/// * [hideVotes] 
 /// * [id] - ID of the poll
 /// * [options] - Answer options
 /// * [question] - Question asked by the poll
+/// * [anonymous] 
+/// * [createdBy] 
+/// * [hideVotes] 
 /// * [voted] 
 @BuiltValue()
 abstract class RealtimekitPoll implements Built<RealtimekitPoll, RealtimekitPollBuilder> {
-  @BuiltValueField(wireName: r'anonymous')
-  bool? get anonymous;
-
-  @BuiltValueField(wireName: r'created_by')
-  String? get createdBy;
-
-  @BuiltValueField(wireName: r'hide_votes')
-  bool? get hideVotes;
-
   /// ID of the poll
   @BuiltValueField(wireName: r'id')
   String get id;
@@ -42,6 +33,15 @@ abstract class RealtimekitPoll implements Built<RealtimekitPoll, RealtimekitPoll
   /// Question asked by the poll
   @BuiltValueField(wireName: r'question')
   String get question;
+
+  @BuiltValueField(wireName: r'anonymous')
+  bool? get anonymous;
+
+  @BuiltValueField(wireName: r'created_by')
+  String? get createdBy;
+
+  @BuiltValueField(wireName: r'hide_votes')
+  bool? get hideVotes;
 
   @BuiltValueField(wireName: r'voted')
   BuiltList<String>? get voted;
@@ -69,6 +69,21 @@ class _$RealtimekitPollSerializer implements PrimitiveSerializer<RealtimekitPoll
     RealtimekitPoll object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    yield r'id';
+    yield serializers.serialize(
+      object.id,
+      specifiedType: const FullType(String),
+    );
+    yield r'options';
+    yield serializers.serialize(
+      object.options,
+      specifiedType: const FullType(BuiltList, [FullType(RealtimekitPollOptionsInner)]),
+    );
+    yield r'question';
+    yield serializers.serialize(
+      object.question,
+      specifiedType: const FullType(String),
+    );
     if (object.anonymous != null) {
       yield r'anonymous';
       yield serializers.serialize(
@@ -90,21 +105,6 @@ class _$RealtimekitPollSerializer implements PrimitiveSerializer<RealtimekitPoll
         specifiedType: const FullType(bool),
       );
     }
-    yield r'id';
-    yield serializers.serialize(
-      object.id,
-      specifiedType: const FullType(String),
-    );
-    yield r'options';
-    yield serializers.serialize(
-      object.options,
-      specifiedType: const FullType(BuiltList, [FullType(RealtimekitPollOptionsInner)]),
-    );
-    yield r'question';
-    yield serializers.serialize(
-      object.question,
-      specifiedType: const FullType(String),
-    );
     if (object.voted != null) {
       yield r'voted';
       yield serializers.serialize(
@@ -135,27 +135,6 @@ class _$RealtimekitPollSerializer implements PrimitiveSerializer<RealtimekitPoll
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'anonymous':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
-          result.anonymous = valueDes;
-          break;
-        case r'created_by':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.createdBy = valueDes;
-          break;
-        case r'hide_votes':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
-          result.hideVotes = valueDes;
-          break;
         case r'id':
           final valueDes = serializers.deserialize(
             value,
@@ -176,6 +155,27 @@ class _$RealtimekitPollSerializer implements PrimitiveSerializer<RealtimekitPoll
             specifiedType: const FullType(String),
           ) as String;
           result.question = valueDes;
+          break;
+        case r'anonymous':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(bool),
+          ) as bool;
+          result.anonymous = valueDes;
+          break;
+        case r'created_by':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.createdBy = valueDes;
+          break;
+        case r'hide_votes':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(bool),
+          ) as bool;
+          result.hideVotes = valueDes;
           break;
         case r'voted':
           final valueDes = serializers.deserialize(

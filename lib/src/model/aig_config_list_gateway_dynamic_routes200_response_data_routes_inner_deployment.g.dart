@@ -9,13 +9,13 @@ part of 'aig_config_list_gateway_dynamic_routes200_response_data_routes_inner_de
 class _$AigConfigListGatewayDynamicRoutes200ResponseDataRoutesInnerDeployment
     extends AigConfigListGatewayDynamicRoutes200ResponseDataRoutesInnerDeployment {
   @override
-  final String? comment;
-  @override
   final String createdAt;
   @override
   final String deploymentId;
   @override
   final String versionId;
+  @override
+  final String? comment;
 
   factory _$AigConfigListGatewayDynamicRoutes200ResponseDataRoutesInnerDeployment(
           [void Function(
@@ -26,10 +26,10 @@ class _$AigConfigListGatewayDynamicRoutes200ResponseDataRoutesInnerDeployment
           ._build();
 
   _$AigConfigListGatewayDynamicRoutes200ResponseDataRoutesInnerDeployment._(
-      {this.comment,
-      required this.createdAt,
+      {required this.createdAt,
       required this.deploymentId,
-      required this.versionId})
+      required this.versionId,
+      this.comment})
       : super._();
   @override
   AigConfigListGatewayDynamicRoutes200ResponseDataRoutesInnerDeployment rebuild(
@@ -49,19 +49,19 @@ class _$AigConfigListGatewayDynamicRoutes200ResponseDataRoutesInnerDeployment
     if (identical(other, this)) return true;
     return other
             is AigConfigListGatewayDynamicRoutes200ResponseDataRoutesInnerDeployment &&
-        comment == other.comment &&
         createdAt == other.createdAt &&
         deploymentId == other.deploymentId &&
-        versionId == other.versionId;
+        versionId == other.versionId &&
+        comment == other.comment;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, comment.hashCode);
     _$hash = $jc(_$hash, createdAt.hashCode);
     _$hash = $jc(_$hash, deploymentId.hashCode);
     _$hash = $jc(_$hash, versionId.hashCode);
+    _$hash = $jc(_$hash, comment.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -70,10 +70,10 @@ class _$AigConfigListGatewayDynamicRoutes200ResponseDataRoutesInnerDeployment
   String toString() {
     return (newBuiltValueToStringHelper(
             r'AigConfigListGatewayDynamicRoutes200ResponseDataRoutesInnerDeployment')
-          ..add('comment', comment)
           ..add('createdAt', createdAt)
           ..add('deploymentId', deploymentId)
-          ..add('versionId', versionId))
+          ..add('versionId', versionId)
+          ..add('comment', comment))
         .toString();
   }
 }
@@ -84,10 +84,6 @@ class AigConfigListGatewayDynamicRoutes200ResponseDataRoutesInnerDeploymentBuild
             AigConfigListGatewayDynamicRoutes200ResponseDataRoutesInnerDeployment,
             AigConfigListGatewayDynamicRoutes200ResponseDataRoutesInnerDeploymentBuilder> {
   _$AigConfigListGatewayDynamicRoutes200ResponseDataRoutesInnerDeployment? _$v;
-
-  String? _comment;
-  String? get comment => _$this._comment;
-  set comment(String? comment) => _$this._comment = comment;
 
   String? _createdAt;
   String? get createdAt => _$this._createdAt;
@@ -101,6 +97,10 @@ class AigConfigListGatewayDynamicRoutes200ResponseDataRoutesInnerDeploymentBuild
   String? get versionId => _$this._versionId;
   set versionId(String? versionId) => _$this._versionId = versionId;
 
+  String? _comment;
+  String? get comment => _$this._comment;
+  set comment(String? comment) => _$this._comment = comment;
+
   AigConfigListGatewayDynamicRoutes200ResponseDataRoutesInnerDeploymentBuilder() {
     AigConfigListGatewayDynamicRoutes200ResponseDataRoutesInnerDeployment
         ._defaults(this);
@@ -110,10 +110,10 @@ class AigConfigListGatewayDynamicRoutes200ResponseDataRoutesInnerDeploymentBuild
       get _$this {
     final $v = _$v;
     if ($v != null) {
-      _comment = $v.comment;
       _createdAt = $v.createdAt;
       _deploymentId = $v.deploymentId;
       _versionId = $v.versionId;
+      _comment = $v.comment;
       _$v = null;
     }
     return this;
@@ -144,7 +144,6 @@ class AigConfigListGatewayDynamicRoutes200ResponseDataRoutesInnerDeploymentBuild
     final _$result = _$v ??
         _$AigConfigListGatewayDynamicRoutes200ResponseDataRoutesInnerDeployment
             ._(
-          comment: comment,
           createdAt: BuiltValueNullFieldError.checkNotNull(
               createdAt,
               r'AigConfigListGatewayDynamicRoutes200ResponseDataRoutesInnerDeployment',
@@ -157,6 +156,7 @@ class AigConfigListGatewayDynamicRoutes200ResponseDataRoutesInnerDeploymentBuild
               versionId,
               r'AigConfigListGatewayDynamicRoutes200ResponseDataRoutesInnerDeployment',
               'versionId'),
+          comment: comment,
         );
     replace(_$result);
     return _$result;

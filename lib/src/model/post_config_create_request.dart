@@ -12,18 +12,18 @@ part 'post_config_create_request.g.dart';
 /// PostConfigCreateRequest
 ///
 /// Properties:
-/// * [frequency] - Defines the number of days between each scan (0 = One-off scan).
 /// * [ips] - Defines a list of IP addresses or CIDR blocks to scan. The maximum number of total IP addresses allowed is 5000.
+/// * [frequency] - Defines the number of days between each scan (0 = One-off scan).
 /// * [ports] - Defines a list of ports to scan. Valid values are:\"default\", \"all\", or a comma-separated list of ports or range of ports (e.g. [\"1-80\", \"443\"]). \"default\" scans the 100 most commonly open ports.
 @BuiltValue()
 abstract class PostConfigCreateRequest implements Built<PostConfigCreateRequest, PostConfigCreateRequestBuilder> {
-  /// Defines the number of days between each scan (0 = One-off scan).
-  @BuiltValueField(wireName: r'frequency')
-  num? get frequency;
-
   /// Defines a list of IP addresses or CIDR blocks to scan. The maximum number of total IP addresses allowed is 5000.
   @BuiltValueField(wireName: r'ips')
   BuiltList<String> get ips;
+
+  /// Defines the number of days between each scan (0 = One-off scan).
+  @BuiltValueField(wireName: r'frequency')
+  num? get frequency;
 
   /// Defines a list of ports to scan. Valid values are:\"default\", \"all\", or a comma-separated list of ports or range of ports (e.g. [\"1-80\", \"443\"]). \"default\" scans the 100 most commonly open ports.
   @BuiltValueField(wireName: r'ports')
@@ -52,6 +52,11 @@ class _$PostConfigCreateRequestSerializer implements PrimitiveSerializer<PostCon
     PostConfigCreateRequest object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    yield r'ips';
+    yield serializers.serialize(
+      object.ips,
+      specifiedType: const FullType(BuiltList, [FullType(String)]),
+    );
     if (object.frequency != null) {
       yield r'frequency';
       yield serializers.serialize(
@@ -59,11 +64,6 @@ class _$PostConfigCreateRequestSerializer implements PrimitiveSerializer<PostCon
         specifiedType: const FullType(num),
       );
     }
-    yield r'ips';
-    yield serializers.serialize(
-      object.ips,
-      specifiedType: const FullType(BuiltList, [FullType(String)]),
-    );
     if (object.ports != null) {
       yield r'ports';
       yield serializers.serialize(
@@ -94,19 +94,19 @@ class _$PostConfigCreateRequestSerializer implements PrimitiveSerializer<PostCon
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'frequency':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(num),
-          ) as num;
-          result.frequency = valueDes;
-          break;
         case r'ips':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(BuiltList, [FullType(String)]),
           ) as BuiltList<String>;
           result.ips.replace(valueDes);
+          break;
+        case r'frequency':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(num),
+          ) as num;
+          result.frequency = valueDes;
           break;
         case r'ports':
           final valueDes = serializers.deserialize(

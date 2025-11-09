@@ -9,17 +9,17 @@ part of 'zero_trust_organization_create_your_zero_trust_organization_request.dar
 class _$ZeroTrustOrganizationCreateYourZeroTrustOrganizationRequest
     extends ZeroTrustOrganizationCreateYourZeroTrustOrganizationRequest {
   @override
-  final bool? allowAuthenticateViaWarp;
-  @override
   final String authDomain;
+  @override
+  final String name;
+  @override
+  final bool? allowAuthenticateViaWarp;
   @override
   final bool? autoRedirectToIdentity;
   @override
   final bool? isUiReadOnly;
   @override
   final AccessLoginDesign? loginDesign;
-  @override
-  final String name;
   @override
   final String? sessionDuration;
   @override
@@ -38,12 +38,12 @@ class _$ZeroTrustOrganizationCreateYourZeroTrustOrganizationRequest
           ._build();
 
   _$ZeroTrustOrganizationCreateYourZeroTrustOrganizationRequest._(
-      {this.allowAuthenticateViaWarp,
-      required this.authDomain,
+      {required this.authDomain,
+      required this.name,
+      this.allowAuthenticateViaWarp,
       this.autoRedirectToIdentity,
       this.isUiReadOnly,
       this.loginDesign,
-      required this.name,
       this.sessionDuration,
       this.uiReadOnlyToggleReason,
       this.userSeatExpirationInactiveTime,
@@ -67,12 +67,12 @@ class _$ZeroTrustOrganizationCreateYourZeroTrustOrganizationRequest
     if (identical(other, this)) return true;
     return other
             is ZeroTrustOrganizationCreateYourZeroTrustOrganizationRequest &&
-        allowAuthenticateViaWarp == other.allowAuthenticateViaWarp &&
         authDomain == other.authDomain &&
+        name == other.name &&
+        allowAuthenticateViaWarp == other.allowAuthenticateViaWarp &&
         autoRedirectToIdentity == other.autoRedirectToIdentity &&
         isUiReadOnly == other.isUiReadOnly &&
         loginDesign == other.loginDesign &&
-        name == other.name &&
         sessionDuration == other.sessionDuration &&
         uiReadOnlyToggleReason == other.uiReadOnlyToggleReason &&
         userSeatExpirationInactiveTime ==
@@ -83,12 +83,12 @@ class _$ZeroTrustOrganizationCreateYourZeroTrustOrganizationRequest
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, allowAuthenticateViaWarp.hashCode);
     _$hash = $jc(_$hash, authDomain.hashCode);
+    _$hash = $jc(_$hash, name.hashCode);
+    _$hash = $jc(_$hash, allowAuthenticateViaWarp.hashCode);
     _$hash = $jc(_$hash, autoRedirectToIdentity.hashCode);
     _$hash = $jc(_$hash, isUiReadOnly.hashCode);
     _$hash = $jc(_$hash, loginDesign.hashCode);
-    _$hash = $jc(_$hash, name.hashCode);
     _$hash = $jc(_$hash, sessionDuration.hashCode);
     _$hash = $jc(_$hash, uiReadOnlyToggleReason.hashCode);
     _$hash = $jc(_$hash, userSeatExpirationInactiveTime.hashCode);
@@ -101,12 +101,12 @@ class _$ZeroTrustOrganizationCreateYourZeroTrustOrganizationRequest
   String toString() {
     return (newBuiltValueToStringHelper(
             r'ZeroTrustOrganizationCreateYourZeroTrustOrganizationRequest')
-          ..add('allowAuthenticateViaWarp', allowAuthenticateViaWarp)
           ..add('authDomain', authDomain)
+          ..add('name', name)
+          ..add('allowAuthenticateViaWarp', allowAuthenticateViaWarp)
           ..add('autoRedirectToIdentity', autoRedirectToIdentity)
           ..add('isUiReadOnly', isUiReadOnly)
           ..add('loginDesign', loginDesign)
-          ..add('name', name)
           ..add('sessionDuration', sessionDuration)
           ..add('uiReadOnlyToggleReason', uiReadOnlyToggleReason)
           ..add(
@@ -122,14 +122,18 @@ class ZeroTrustOrganizationCreateYourZeroTrustOrganizationRequestBuilder
             ZeroTrustOrganizationCreateYourZeroTrustOrganizationRequestBuilder> {
   _$ZeroTrustOrganizationCreateYourZeroTrustOrganizationRequest? _$v;
 
+  String? _authDomain;
+  String? get authDomain => _$this._authDomain;
+  set authDomain(String? authDomain) => _$this._authDomain = authDomain;
+
+  String? _name;
+  String? get name => _$this._name;
+  set name(String? name) => _$this._name = name;
+
   bool? _allowAuthenticateViaWarp;
   bool? get allowAuthenticateViaWarp => _$this._allowAuthenticateViaWarp;
   set allowAuthenticateViaWarp(bool? allowAuthenticateViaWarp) =>
       _$this._allowAuthenticateViaWarp = allowAuthenticateViaWarp;
-
-  String? _authDomain;
-  String? get authDomain => _$this._authDomain;
-  set authDomain(String? authDomain) => _$this._authDomain = authDomain;
 
   bool? _autoRedirectToIdentity;
   bool? get autoRedirectToIdentity => _$this._autoRedirectToIdentity;
@@ -145,10 +149,6 @@ class ZeroTrustOrganizationCreateYourZeroTrustOrganizationRequestBuilder
       _$this._loginDesign ??= AccessLoginDesignBuilder();
   set loginDesign(AccessLoginDesignBuilder? loginDesign) =>
       _$this._loginDesign = loginDesign;
-
-  String? _name;
-  String? get name => _$this._name;
-  set name(String? name) => _$this._name = name;
 
   String? _sessionDuration;
   String? get sessionDuration => _$this._sessionDuration;
@@ -179,12 +179,12 @@ class ZeroTrustOrganizationCreateYourZeroTrustOrganizationRequestBuilder
       get _$this {
     final $v = _$v;
     if ($v != null) {
-      _allowAuthenticateViaWarp = $v.allowAuthenticateViaWarp;
       _authDomain = $v.authDomain;
+      _name = $v.name;
+      _allowAuthenticateViaWarp = $v.allowAuthenticateViaWarp;
       _autoRedirectToIdentity = $v.autoRedirectToIdentity;
       _isUiReadOnly = $v.isUiReadOnly;
       _loginDesign = $v.loginDesign?.toBuilder();
-      _name = $v.name;
       _sessionDuration = $v.sessionDuration;
       _uiReadOnlyToggleReason = $v.uiReadOnlyToggleReason;
       _userSeatExpirationInactiveTime = $v.userSeatExpirationInactiveTime;
@@ -218,18 +218,18 @@ class ZeroTrustOrganizationCreateYourZeroTrustOrganizationRequestBuilder
     try {
       _$result = _$v ??
           _$ZeroTrustOrganizationCreateYourZeroTrustOrganizationRequest._(
-            allowAuthenticateViaWarp: allowAuthenticateViaWarp,
             authDomain: BuiltValueNullFieldError.checkNotNull(
                 authDomain,
                 r'ZeroTrustOrganizationCreateYourZeroTrustOrganizationRequest',
                 'authDomain'),
-            autoRedirectToIdentity: autoRedirectToIdentity,
-            isUiReadOnly: isUiReadOnly,
-            loginDesign: _loginDesign?.build(),
             name: BuiltValueNullFieldError.checkNotNull(
                 name,
                 r'ZeroTrustOrganizationCreateYourZeroTrustOrganizationRequest',
                 'name'),
+            allowAuthenticateViaWarp: allowAuthenticateViaWarp,
+            autoRedirectToIdentity: autoRedirectToIdentity,
+            isUiReadOnly: isUiReadOnly,
+            loginDesign: _loginDesign?.build(),
             sessionDuration: sessionDuration,
             uiReadOnlyToggleReason: uiReadOnlyToggleReason,
             userSeatExpirationInactiveTime: userSeatExpirationInactiveTime,

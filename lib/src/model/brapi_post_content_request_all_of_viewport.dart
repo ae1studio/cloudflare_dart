@@ -11,31 +11,31 @@ part 'brapi_post_content_request_all_of_viewport.g.dart';
 /// Check [options](https://pptr.dev/api/puppeteer.page.setviewport).
 ///
 /// Properties:
+/// * [height] 
+/// * [width] 
 /// * [deviceScaleFactor] 
 /// * [hasTouch] 
-/// * [height] 
 /// * [isLandscape] 
 /// * [isMobile] 
-/// * [width] 
 @BuiltValue()
 abstract class BrapiPostContentRequestAllOfViewport implements Built<BrapiPostContentRequestAllOfViewport, BrapiPostContentRequestAllOfViewportBuilder> {
+  @BuiltValueField(wireName: r'height')
+  num get height;
+
+  @BuiltValueField(wireName: r'width')
+  num get width;
+
   @BuiltValueField(wireName: r'deviceScaleFactor')
   num? get deviceScaleFactor;
 
   @BuiltValueField(wireName: r'hasTouch')
   bool? get hasTouch;
 
-  @BuiltValueField(wireName: r'height')
-  num get height;
-
   @BuiltValueField(wireName: r'isLandscape')
   bool? get isLandscape;
 
   @BuiltValueField(wireName: r'isMobile')
   bool? get isMobile;
-
-  @BuiltValueField(wireName: r'width')
-  num get width;
 
   BrapiPostContentRequestAllOfViewport._();
 
@@ -60,6 +60,16 @@ class _$BrapiPostContentRequestAllOfViewportSerializer implements PrimitiveSeria
     BrapiPostContentRequestAllOfViewport object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    yield r'height';
+    yield serializers.serialize(
+      object.height,
+      specifiedType: const FullType(num),
+    );
+    yield r'width';
+    yield serializers.serialize(
+      object.width,
+      specifiedType: const FullType(num),
+    );
     if (object.deviceScaleFactor != null) {
       yield r'deviceScaleFactor';
       yield serializers.serialize(
@@ -74,11 +84,6 @@ class _$BrapiPostContentRequestAllOfViewportSerializer implements PrimitiveSeria
         specifiedType: const FullType(bool),
       );
     }
-    yield r'height';
-    yield serializers.serialize(
-      object.height,
-      specifiedType: const FullType(num),
-    );
     if (object.isLandscape != null) {
       yield r'isLandscape';
       yield serializers.serialize(
@@ -93,11 +98,6 @@ class _$BrapiPostContentRequestAllOfViewportSerializer implements PrimitiveSeria
         specifiedType: const FullType(bool),
       );
     }
-    yield r'width';
-    yield serializers.serialize(
-      object.width,
-      specifiedType: const FullType(num),
-    );
   }
 
   @override
@@ -121,6 +121,20 @@ class _$BrapiPostContentRequestAllOfViewportSerializer implements PrimitiveSeria
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
+        case r'height':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(num),
+          ) as num;
+          result.height = valueDes;
+          break;
+        case r'width':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(num),
+          ) as num;
+          result.width = valueDes;
+          break;
         case r'deviceScaleFactor':
           final valueDes = serializers.deserialize(
             value,
@@ -135,13 +149,6 @@ class _$BrapiPostContentRequestAllOfViewportSerializer implements PrimitiveSeria
           ) as bool;
           result.hasTouch = valueDes;
           break;
-        case r'height':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(num),
-          ) as num;
-          result.height = valueDes;
-          break;
         case r'isLandscape':
           final valueDes = serializers.deserialize(
             value,
@@ -155,13 +162,6 @@ class _$BrapiPostContentRequestAllOfViewportSerializer implements PrimitiveSeria
             specifiedType: const FullType(bool),
           ) as bool;
           result.isMobile = valueDes;
-          break;
-        case r'width':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(num),
-          ) as num;
-          result.width = valueDes;
           break;
         default:
           unhandled.add(key);

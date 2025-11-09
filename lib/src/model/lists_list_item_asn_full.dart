@@ -14,10 +14,10 @@ part 'lists_list_item_asn_full.g.dart';
 ///
 /// Properties:
 /// * [asn] - Defines a non-negative 32 bit integer.
-/// * [comment] - Defines an informative summary of the list item.
 /// * [createdOn] - The RFC 3339 timestamp of when the list was created.
 /// * [id] - Defines the unique ID of the item in the List.
 /// * [modifiedOn] - The RFC 3339 timestamp of when the list was last modified.
+/// * [comment] - Defines an informative summary of the list item.
 @BuiltValue()
 abstract class ListsListItemAsnFull implements ListsItemBase, ListsListItemAsnObject, Built<ListsListItemAsnFull, ListsListItemAsnFullBuilder> {
   ListsListItemAsnFull._();

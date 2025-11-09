@@ -11,16 +11,16 @@ part 'email_security_threat_category.g.dart';
 /// EmailSecurityThreatCategory
 ///
 /// Properties:
-/// * [description] 
 /// * [id] 
+/// * [description] 
 /// * [name] 
 @BuiltValue()
 abstract class EmailSecurityThreatCategory implements Built<EmailSecurityThreatCategory, EmailSecurityThreatCategoryBuilder> {
-  @BuiltValueField(wireName: r'description')
-  String? get description;
-
   @BuiltValueField(wireName: r'id')
   int get id;
+
+  @BuiltValueField(wireName: r'description')
+  String? get description;
 
   @BuiltValueField(wireName: r'name')
   String? get name;
@@ -48,6 +48,11 @@ class _$EmailSecurityThreatCategorySerializer implements PrimitiveSerializer<Ema
     EmailSecurityThreatCategory object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    yield r'id';
+    yield serializers.serialize(
+      object.id,
+      specifiedType: const FullType(int),
+    );
     if (object.description != null) {
       yield r'description';
       yield serializers.serialize(
@@ -55,11 +60,6 @@ class _$EmailSecurityThreatCategorySerializer implements PrimitiveSerializer<Ema
         specifiedType: const FullType.nullable(String),
       );
     }
-    yield r'id';
-    yield serializers.serialize(
-      object.id,
-      specifiedType: const FullType(int),
-    );
     if (object.name != null) {
       yield r'name';
       yield serializers.serialize(
@@ -90,6 +90,13 @@ class _$EmailSecurityThreatCategorySerializer implements PrimitiveSerializer<Ema
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
+        case r'id':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(int),
+          ) as int;
+          result.id = valueDes;
+          break;
         case r'description':
           final valueDes = serializers.deserialize(
             value,
@@ -97,13 +104,6 @@ class _$EmailSecurityThreatCategorySerializer implements PrimitiveSerializer<Ema
           ) as String?;
           if (valueDes == null) continue;
           result.description = valueDes;
-          break;
-        case r'id':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
-          result.id = valueDes;
           break;
         case r'name':
           final valueDes = serializers.deserialize(

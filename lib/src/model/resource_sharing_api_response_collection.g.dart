@@ -17,11 +17,11 @@ abstract class ResourceSharingApiResponseCollectionBuilder
   ListBuilder<ResourceSharingV4error> get errors;
   set errors(covariant ListBuilder<ResourceSharingV4error>? errors);
 
-  PageShieldApiResponseSingleAllOfResultBuilder get result;
-  set result(covariant PageShieldApiResponseSingleAllOfResultBuilder? result);
-
   bool? get success;
   set success(covariant bool? success);
+
+  PageShieldApiResponseSingleAllOfResultBuilder get result;
+  set result(covariant PageShieldApiResponseSingleAllOfResultBuilder? result);
 }
 
 class _$$ResourceSharingApiResponseCollection
@@ -31,9 +31,9 @@ class _$$ResourceSharingApiResponseCollection
   @override
   final BuiltList<ResourceSharingV4error> errors;
   @override
-  final PageShieldApiResponseSingleAllOfResult? result;
-  @override
   final bool success;
+  @override
+  final PageShieldApiResponseSingleAllOfResult? result;
 
   factory _$$ResourceSharingApiResponseCollection(
           [void Function($ResourceSharingApiResponseCollectionBuilder)?
@@ -44,8 +44,8 @@ class _$$ResourceSharingApiResponseCollection
   _$$ResourceSharingApiResponseCollection._(
       {this.resultInfo,
       required this.errors,
-      this.result,
-      required this.success})
+      required this.success,
+      this.result})
       : super._();
   @override
   $ResourceSharingApiResponseCollection rebuild(
@@ -63,8 +63,8 @@ class _$$ResourceSharingApiResponseCollection
     return other is $ResourceSharingApiResponseCollection &&
         resultInfo == other.resultInfo &&
         errors == other.errors &&
-        result == other.result &&
-        success == other.success;
+        success == other.success &&
+        result == other.result;
   }
 
   @override
@@ -72,8 +72,8 @@ class _$$ResourceSharingApiResponseCollection
     var _$hash = 0;
     _$hash = $jc(_$hash, resultInfo.hashCode);
     _$hash = $jc(_$hash, errors.hashCode);
-    _$hash = $jc(_$hash, result.hashCode);
     _$hash = $jc(_$hash, success.hashCode);
+    _$hash = $jc(_$hash, result.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -84,8 +84,8 @@ class _$$ResourceSharingApiResponseCollection
             r'$ResourceSharingApiResponseCollection')
           ..add('resultInfo', resultInfo)
           ..add('errors', errors)
-          ..add('result', result)
-          ..add('success', success))
+          ..add('success', success)
+          ..add('result', result))
         .toString();
   }
 }
@@ -109,15 +109,15 @@ class $ResourceSharingApiResponseCollectionBuilder
   set errors(covariant ListBuilder<ResourceSharingV4error>? errors) =>
       _$this._errors = errors;
 
+  bool? _success;
+  bool? get success => _$this._success;
+  set success(covariant bool? success) => _$this._success = success;
+
   PageShieldApiResponseSingleAllOfResultBuilder? _result;
   PageShieldApiResponseSingleAllOfResultBuilder get result =>
       _$this._result ??= PageShieldApiResponseSingleAllOfResultBuilder();
   set result(covariant PageShieldApiResponseSingleAllOfResultBuilder? result) =>
       _$this._result = result;
-
-  bool? _success;
-  bool? get success => _$this._success;
-  set success(covariant bool? success) => _$this._success = success;
 
   $ResourceSharingApiResponseCollectionBuilder() {
     $ResourceSharingApiResponseCollection._defaults(this);
@@ -128,8 +128,8 @@ class $ResourceSharingApiResponseCollectionBuilder
     if ($v != null) {
       _resultInfo = $v.resultInfo?.toBuilder();
       _errors = $v.errors.toBuilder();
-      _result = $v.result?.toBuilder();
       _success = $v.success;
+      _result = $v.result?.toBuilder();
       _$v = null;
     }
     return this;
@@ -156,9 +156,9 @@ class $ResourceSharingApiResponseCollectionBuilder
           _$$ResourceSharingApiResponseCollection._(
             resultInfo: _resultInfo?.build(),
             errors: errors.build(),
-            result: _result?.build(),
             success: BuiltValueNullFieldError.checkNotNull(
                 success, r'$ResourceSharingApiResponseCollection', 'success'),
+            result: _result?.build(),
           );
     } catch (_) {
       late String _$failedField;
@@ -167,6 +167,7 @@ class $ResourceSharingApiResponseCollectionBuilder
         _resultInfo?.build();
         _$failedField = 'errors';
         errors.build();
+
         _$failedField = 'result';
         _result?.build();
       } catch (e) {

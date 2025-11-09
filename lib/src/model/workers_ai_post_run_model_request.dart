@@ -31,21 +31,23 @@ part 'workers_ai_post_run_model_request.g.dart';
 ///
 /// Properties:
 /// * [text] 
+/// * [image] - Image in base64 encoded format.
+/// * [prompt] - The input text prompt for the model to generate a response.
+/// * [audio] - An array of integers that represent the audio data constrained to 8-bit unsigned integer values
+/// * [targetLang] - The language code to translate the text into (e.g., 'es' for Spanish)
+/// * [messages] - An array of message objects representing the conversation history.
+/// * [inputText] - The text that you want the model to summarize
 /// * [guidance] - Controls how closely the generated image should adhere to the prompt; higher values make the image more aligned with the prompt
 /// * [height] - The height of the generated image in pixels
-/// * [image] - Image in base64 encoded format.
 /// * [imageB64] - For use with img2img tasks. A base64-encoded string of the input image
 /// * [mask] - An array representing An array of integers that represent mask image data for inpainting constrained to 8-bit unsigned integer values
 /// * [negativePrompt] - Text describing elements to avoid in the generated image
 /// * [numSteps] - The number of diffusion steps; higher values can improve quality but take longer
-/// * [prompt] - The input text prompt for the model to generate a response.
 /// * [seed] - Random seed for reproducibility of the generation.
 /// * [strength] - A value between 0 and 1 indicating how strongly to apply the transformation during img2img tasks; lower values make the output closer to the input image
 /// * [width] - The width of the generated image in pixels
 /// * [lang] - The speech language (e.g., 'en' for English, 'fr' for French). Defaults to 'en' if not specified
-/// * [audio] - An array of integers that represent the audio data constrained to 8-bit unsigned integer values
 /// * [sourceLang] - The language code of the source text (e.g., 'en' for English). Defaults to 'en' if not specified
-/// * [targetLang] - The language code to translate the text into (e.g., 'es' for Spanish)
 /// * [frequencyPenalty] - Decreases the likelihood of the model repeating the same lines verbatim.
 /// * [lora] - Name of the LoRA (Low-Rank Adaptation) model to fine-tune the base model.
 /// * [maxTokens] - The maximum number of tokens to generate in the response.
@@ -58,9 +60,7 @@ part 'workers_ai_post_run_model_request.g.dart';
 /// * [topK] - Limits the AI to choose from the top 'k' most probable words. Lower values make responses more focused; higher values introduce more variety and potential surprises.
 /// * [topP] - Controls the creativity of the AI's responses by adjusting how many possible words it considers. Lower values make outputs more predictable; higher values allow for more varied and creative responses.
 /// * [functions] 
-/// * [messages] - An array of message objects representing the conversation history.
 /// * [tools] - A list of tools available for the assistant to use.
-/// * [inputText] - The text that you want the model to summarize
 /// * [maxLength] - The maximum length of the generated summary in tokens
 /// * [ignoreEos] - Whether to ignore the EOS token and continue generating tokens after the EOS token is generated.
 @BuiltValue()

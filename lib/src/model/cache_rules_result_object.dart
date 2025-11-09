@@ -13,8 +13,8 @@ part 'cache_rules_result_object.g.dart';
 /// Properties:
 /// * [editable] - Whether the setting is editable.
 /// * [id] - The identifier of the caching setting.
-/// * [modifiedOn] - The time when the setting was last modified.
 /// * [value] - The value of the setting.
+/// * [modifiedOn] - The time when the setting was last modified.
 @BuiltValue()
 abstract class CacheRulesResultObject implements Built<CacheRulesResultObject, CacheRulesResultObjectBuilder> {
   /// Whether the setting is editable.
@@ -25,13 +25,13 @@ abstract class CacheRulesResultObject implements Built<CacheRulesResultObject, C
   @BuiltValueField(wireName: r'id')
   String get id;
 
-  /// The time when the setting was last modified.
-  @BuiltValueField(wireName: r'modified_on')
-  DateTime? get modifiedOn;
-
   /// The value of the setting.
   @BuiltValueField(wireName: r'value')
   String get value;
+
+  /// The time when the setting was last modified.
+  @BuiltValueField(wireName: r'modified_on')
+  DateTime? get modifiedOn;
 
   CacheRulesResultObject._();
 
@@ -66,6 +66,11 @@ class _$CacheRulesResultObjectSerializer implements PrimitiveSerializer<CacheRul
       object.id,
       specifiedType: const FullType(String),
     );
+    yield r'value';
+    yield serializers.serialize(
+      object.value,
+      specifiedType: const FullType(String),
+    );
     if (object.modifiedOn != null) {
       yield r'modified_on';
       yield serializers.serialize(
@@ -73,11 +78,6 @@ class _$CacheRulesResultObjectSerializer implements PrimitiveSerializer<CacheRul
         specifiedType: const FullType(DateTime),
       );
     }
-    yield r'value';
-    yield serializers.serialize(
-      object.value,
-      specifiedType: const FullType(String),
-    );
   }
 
   @override
@@ -115,19 +115,19 @@ class _$CacheRulesResultObjectSerializer implements PrimitiveSerializer<CacheRul
           ) as String;
           result.id = valueDes;
           break;
-        case r'modified_on':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
-          result.modifiedOn = valueDes;
-          break;
         case r'value':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(String),
           ) as String;
           result.value = valueDes;
+          break;
+        case r'modified_on':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(DateTime),
+          ) as DateTime;
+          result.modifiedOn = valueDes;
           break;
         default:
           unhandled.add(key);

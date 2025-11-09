@@ -20,8 +20,8 @@ part 'waiting_room_list_waiting_rooms_account4_xx_response.g.dart';
 /// * [errors] 
 /// * [messages] 
 /// * [success] - Whether the API call was successful.
-/// * [resultInfo] 
 /// * [result] 
+/// * [resultInfo] 
 @BuiltValue()
 abstract class WaitingRoomListWaitingRoomsAccount4XXResponse implements WaitingroomApiResponseCommonFailure, WaitingroomResponseCollection, Built<WaitingRoomListWaitingRoomsAccount4XXResponse, WaitingRoomListWaitingRoomsAccount4XXResponseBuilder> {
   WaitingRoomListWaitingRoomsAccount4XXResponse._();

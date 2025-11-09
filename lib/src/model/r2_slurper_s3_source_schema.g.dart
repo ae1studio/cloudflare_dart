@@ -61,15 +61,15 @@ class _$R2SlurperS3SourceSchema extends R2SlurperS3SourceSchema {
   @override
   final String bucket;
   @override
+  final R2SlurperS3LikeCredsSchema secret;
+  @override
+  final R2SlurperS3SourceSchemaVendorEnum vendor;
+  @override
   final String? endpoint;
   @override
   final String? pathPrefix;
   @override
   final String? region;
-  @override
-  final R2SlurperS3LikeCredsSchema secret;
-  @override
-  final R2SlurperS3SourceSchemaVendorEnum vendor;
 
   factory _$R2SlurperS3SourceSchema(
           [void Function(R2SlurperS3SourceSchemaBuilder)? updates]) =>
@@ -77,11 +77,11 @@ class _$R2SlurperS3SourceSchema extends R2SlurperS3SourceSchema {
 
   _$R2SlurperS3SourceSchema._(
       {required this.bucket,
+      required this.secret,
+      required this.vendor,
       this.endpoint,
       this.pathPrefix,
-      this.region,
-      required this.secret,
-      required this.vendor})
+      this.region})
       : super._();
   @override
   R2SlurperS3SourceSchema rebuild(
@@ -97,22 +97,22 @@ class _$R2SlurperS3SourceSchema extends R2SlurperS3SourceSchema {
     if (identical(other, this)) return true;
     return other is R2SlurperS3SourceSchema &&
         bucket == other.bucket &&
+        secret == other.secret &&
+        vendor == other.vendor &&
         endpoint == other.endpoint &&
         pathPrefix == other.pathPrefix &&
-        region == other.region &&
-        secret == other.secret &&
-        vendor == other.vendor;
+        region == other.region;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
     _$hash = $jc(_$hash, bucket.hashCode);
+    _$hash = $jc(_$hash, secret.hashCode);
+    _$hash = $jc(_$hash, vendor.hashCode);
     _$hash = $jc(_$hash, endpoint.hashCode);
     _$hash = $jc(_$hash, pathPrefix.hashCode);
     _$hash = $jc(_$hash, region.hashCode);
-    _$hash = $jc(_$hash, secret.hashCode);
-    _$hash = $jc(_$hash, vendor.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -121,11 +121,11 @@ class _$R2SlurperS3SourceSchema extends R2SlurperS3SourceSchema {
   String toString() {
     return (newBuiltValueToStringHelper(r'R2SlurperS3SourceSchema')
           ..add('bucket', bucket)
+          ..add('secret', secret)
+          ..add('vendor', vendor)
           ..add('endpoint', endpoint)
           ..add('pathPrefix', pathPrefix)
-          ..add('region', region)
-          ..add('secret', secret)
-          ..add('vendor', vendor))
+          ..add('region', region))
         .toString();
   }
 }
@@ -139,6 +139,17 @@ class R2SlurperS3SourceSchemaBuilder
   String? get bucket => _$this._bucket;
   set bucket(String? bucket) => _$this._bucket = bucket;
 
+  R2SlurperS3LikeCredsSchemaBuilder? _secret;
+  R2SlurperS3LikeCredsSchemaBuilder get secret =>
+      _$this._secret ??= R2SlurperS3LikeCredsSchemaBuilder();
+  set secret(R2SlurperS3LikeCredsSchemaBuilder? secret) =>
+      _$this._secret = secret;
+
+  R2SlurperS3SourceSchemaVendorEnum? _vendor;
+  R2SlurperS3SourceSchemaVendorEnum? get vendor => _$this._vendor;
+  set vendor(R2SlurperS3SourceSchemaVendorEnum? vendor) =>
+      _$this._vendor = vendor;
+
   String? _endpoint;
   String? get endpoint => _$this._endpoint;
   set endpoint(String? endpoint) => _$this._endpoint = endpoint;
@@ -151,17 +162,6 @@ class R2SlurperS3SourceSchemaBuilder
   String? get region => _$this._region;
   set region(String? region) => _$this._region = region;
 
-  R2SlurperS3LikeCredsSchemaBuilder? _secret;
-  R2SlurperS3LikeCredsSchemaBuilder get secret =>
-      _$this._secret ??= R2SlurperS3LikeCredsSchemaBuilder();
-  set secret(R2SlurperS3LikeCredsSchemaBuilder? secret) =>
-      _$this._secret = secret;
-
-  R2SlurperS3SourceSchemaVendorEnum? _vendor;
-  R2SlurperS3SourceSchemaVendorEnum? get vendor => _$this._vendor;
-  set vendor(R2SlurperS3SourceSchemaVendorEnum? vendor) =>
-      _$this._vendor = vendor;
-
   R2SlurperS3SourceSchemaBuilder() {
     R2SlurperS3SourceSchema._defaults(this);
   }
@@ -170,11 +170,11 @@ class R2SlurperS3SourceSchemaBuilder
     final $v = _$v;
     if ($v != null) {
       _bucket = $v.bucket;
+      _secret = $v.secret.toBuilder();
+      _vendor = $v.vendor;
       _endpoint = $v.endpoint;
       _pathPrefix = $v.pathPrefix;
       _region = $v.region;
-      _secret = $v.secret.toBuilder();
-      _vendor = $v.vendor;
       _$v = null;
     }
     return this;
@@ -200,12 +200,12 @@ class R2SlurperS3SourceSchemaBuilder
           _$R2SlurperS3SourceSchema._(
             bucket: BuiltValueNullFieldError.checkNotNull(
                 bucket, r'R2SlurperS3SourceSchema', 'bucket'),
-            endpoint: endpoint,
-            pathPrefix: pathPrefix,
-            region: region,
             secret: secret.build(),
             vendor: BuiltValueNullFieldError.checkNotNull(
                 vendor, r'R2SlurperS3SourceSchema', 'vendor'),
+            endpoint: endpoint,
+            pathPrefix: pathPrefix,
+            region: region,
           );
     } catch (_) {
       late String _$failedField;

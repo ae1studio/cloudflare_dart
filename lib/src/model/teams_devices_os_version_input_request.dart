@@ -14,10 +14,10 @@ part 'teams_devices_os_version_input_request.g.dart';
 /// Properties:
 /// * [operatingSystem] - Operating System.
 /// * [operator_] - Operator.
+/// * [version] - Version of OS.
 /// * [osDistroName] - Operating System Distribution Name (linux only).
 /// * [osDistroRevision] - Version of OS Distribution (linux only).
 /// * [osVersionExtra] - Additional operating system version details. For Windows, the UBR (Update Build Revision). For Mac or iOS, the Product Version Extra. For Linux, the distribution name and version.
-/// * [version] - Version of OS.
 @BuiltValue()
 abstract class TeamsDevicesOsVersionInputRequest implements Built<TeamsDevicesOsVersionInputRequest, TeamsDevicesOsVersionInputRequestBuilder> {
   /// Operating System.
@@ -30,6 +30,10 @@ abstract class TeamsDevicesOsVersionInputRequest implements Built<TeamsDevicesOs
   TeamsDevicesOsVersionInputRequestOperator_Enum get operator_;
   // enum operator_Enum {  <,  <=,  >,  >=,  ==,  };
 
+  /// Version of OS.
+  @BuiltValueField(wireName: r'version')
+  String get version;
+
   /// Operating System Distribution Name (linux only).
   @BuiltValueField(wireName: r'os_distro_name')
   String? get osDistroName;
@@ -41,10 +45,6 @@ abstract class TeamsDevicesOsVersionInputRequest implements Built<TeamsDevicesOs
   /// Additional operating system version details. For Windows, the UBR (Update Build Revision). For Mac or iOS, the Product Version Extra. For Linux, the distribution name and version.
   @BuiltValueField(wireName: r'os_version_extra')
   String? get osVersionExtra;
-
-  /// Version of OS.
-  @BuiltValueField(wireName: r'version')
-  String get version;
 
   TeamsDevicesOsVersionInputRequest._();
 
@@ -79,6 +79,11 @@ class _$TeamsDevicesOsVersionInputRequestSerializer implements PrimitiveSerializ
       object.operator_,
       specifiedType: const FullType(TeamsDevicesOsVersionInputRequestOperator_Enum),
     );
+    yield r'version';
+    yield serializers.serialize(
+      object.version,
+      specifiedType: const FullType(String),
+    );
     if (object.osDistroName != null) {
       yield r'os_distro_name';
       yield serializers.serialize(
@@ -100,11 +105,6 @@ class _$TeamsDevicesOsVersionInputRequestSerializer implements PrimitiveSerializ
         specifiedType: const FullType(String),
       );
     }
-    yield r'version';
-    yield serializers.serialize(
-      object.version,
-      specifiedType: const FullType(String),
-    );
   }
 
   @override
@@ -142,6 +142,13 @@ class _$TeamsDevicesOsVersionInputRequestSerializer implements PrimitiveSerializ
           ) as TeamsDevicesOsVersionInputRequestOperator_Enum;
           result.operator_ = valueDes;
           break;
+        case r'version':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.version = valueDes;
+          break;
         case r'os_distro_name':
           final valueDes = serializers.deserialize(
             value,
@@ -162,13 +169,6 @@ class _$TeamsDevicesOsVersionInputRequestSerializer implements PrimitiveSerializ
             specifiedType: const FullType(String),
           ) as String;
           result.osVersionExtra = valueDes;
-          break;
-        case r'version':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.version = valueDes;
           break;
         default:
           unhandled.add(key);

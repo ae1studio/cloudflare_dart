@@ -19,8 +19,8 @@ part 'token_validation_config_list200_response.g.dart';
 /// * [errors] 
 /// * [messages] 
 /// * [success] - Whether the API call was successful.
-/// * [resultInfo] 
 /// * [result] 
+/// * [resultInfo] 
 @BuiltValue()
 abstract class TokenValidationConfigList200Response implements ApiShieldApiResponseCollection, Built<TokenValidationConfigList200Response, TokenValidationConfigList200ResponseBuilder> {
   @BuiltValueField(wireName: r'result')

@@ -14,9 +14,9 @@ class _$CreateTrigger200Response extends CreateTrigger200Response {
   @override
   final JsonObject? result;
   @override
-  final BuildsPaginationInfo? resultInfo;
-  @override
   final bool success;
+  @override
+  final BuildsPaginationInfo? resultInfo;
 
   factory _$CreateTrigger200Response(
           [void Function(CreateTrigger200ResponseBuilder)? updates]) =>
@@ -26,8 +26,8 @@ class _$CreateTrigger200Response extends CreateTrigger200Response {
       {required this.errors,
       required this.messages,
       this.result,
-      this.resultInfo,
-      required this.success})
+      required this.success,
+      this.resultInfo})
       : super._();
   @override
   CreateTrigger200Response rebuild(
@@ -45,8 +45,8 @@ class _$CreateTrigger200Response extends CreateTrigger200Response {
         errors == other.errors &&
         messages == other.messages &&
         result == other.result &&
-        resultInfo == other.resultInfo &&
-        success == other.success;
+        success == other.success &&
+        resultInfo == other.resultInfo;
   }
 
   @override
@@ -55,8 +55,8 @@ class _$CreateTrigger200Response extends CreateTrigger200Response {
     _$hash = $jc(_$hash, errors.hashCode);
     _$hash = $jc(_$hash, messages.hashCode);
     _$hash = $jc(_$hash, result.hashCode);
-    _$hash = $jc(_$hash, resultInfo.hashCode);
     _$hash = $jc(_$hash, success.hashCode);
+    _$hash = $jc(_$hash, resultInfo.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -67,8 +67,8 @@ class _$CreateTrigger200Response extends CreateTrigger200Response {
           ..add('errors', errors)
           ..add('messages', messages)
           ..add('result', result)
-          ..add('resultInfo', resultInfo)
-          ..add('success', success))
+          ..add('success', success)
+          ..add('resultInfo', resultInfo))
         .toString();
   }
 }
@@ -95,15 +95,15 @@ class CreateTrigger200ResponseBuilder
   JsonObject? get result => _$this._result;
   set result(covariant JsonObject? result) => _$this._result = result;
 
+  bool? _success;
+  bool? get success => _$this._success;
+  set success(covariant bool? success) => _$this._success = success;
+
   BuildsPaginationInfoBuilder? _resultInfo;
   BuildsPaginationInfoBuilder get resultInfo =>
       _$this._resultInfo ??= BuildsPaginationInfoBuilder();
   set resultInfo(covariant BuildsPaginationInfoBuilder? resultInfo) =>
       _$this._resultInfo = resultInfo;
-
-  bool? _success;
-  bool? get success => _$this._success;
-  set success(covariant bool? success) => _$this._success = success;
 
   CreateTrigger200ResponseBuilder() {
     CreateTrigger200Response._defaults(this);
@@ -115,8 +115,8 @@ class CreateTrigger200ResponseBuilder
       _errors = $v.errors.toBuilder();
       _messages = $v.messages.toBuilder();
       _result = $v.result;
-      _resultInfo = $v.resultInfo?.toBuilder();
       _success = $v.success;
+      _resultInfo = $v.resultInfo?.toBuilder();
       _$v = null;
     }
     return this;
@@ -143,9 +143,9 @@ class CreateTrigger200ResponseBuilder
             errors: errors.build(),
             messages: messages.build(),
             result: result,
-            resultInfo: _resultInfo?.build(),
             success: BuiltValueNullFieldError.checkNotNull(
                 success, r'CreateTrigger200Response', 'success'),
+            resultInfo: _resultInfo?.build(),
           );
     } catch (_) {
       late String _$failedField;

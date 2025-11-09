@@ -13,15 +13,12 @@ part 'urlscanner_create_scan_bulk_v2429_response.g.dart';
 /// UrlscannerCreateScanBulkV2429Response
 ///
 /// Properties:
-/// * [description] 
 /// * [errors] 
 /// * [message] 
 /// * [status] 
+/// * [description] 
 @BuiltValue()
 abstract class UrlscannerCreateScanBulkV2429Response implements Built<UrlscannerCreateScanBulkV2429Response, UrlscannerCreateScanBulkV2429ResponseBuilder> {
-  @BuiltValueField(wireName: r'description')
-  String? get description;
-
   @BuiltValueField(wireName: r'errors')
   BuiltList<UrlscannerCreateScanBulkV2429ResponseErrorsInner> get errors;
 
@@ -30,6 +27,9 @@ abstract class UrlscannerCreateScanBulkV2429Response implements Built<Urlscanner
 
   @BuiltValueField(wireName: r'status')
   num get status;
+
+  @BuiltValueField(wireName: r'description')
+  String? get description;
 
   UrlscannerCreateScanBulkV2429Response._();
 
@@ -54,13 +54,6 @@ class _$UrlscannerCreateScanBulkV2429ResponseSerializer implements PrimitiveSeri
     UrlscannerCreateScanBulkV2429Response object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
-    if (object.description != null) {
-      yield r'description';
-      yield serializers.serialize(
-        object.description,
-        specifiedType: const FullType(String),
-      );
-    }
     yield r'errors';
     yield serializers.serialize(
       object.errors,
@@ -76,6 +69,13 @@ class _$UrlscannerCreateScanBulkV2429ResponseSerializer implements PrimitiveSeri
       object.status,
       specifiedType: const FullType(num),
     );
+    if (object.description != null) {
+      yield r'description';
+      yield serializers.serialize(
+        object.description,
+        specifiedType: const FullType(String),
+      );
+    }
   }
 
   @override
@@ -99,13 +99,6 @@ class _$UrlscannerCreateScanBulkV2429ResponseSerializer implements PrimitiveSeri
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'description':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.description = valueDes;
-          break;
         case r'errors':
           final valueDes = serializers.deserialize(
             value,
@@ -126,6 +119,13 @@ class _$UrlscannerCreateScanBulkV2429ResponseSerializer implements PrimitiveSeri
             specifiedType: const FullType(num),
           ) as num;
           result.status = valueDes;
+          break;
+        case r'description':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.description = valueDes;
           break;
         default:
           unhandled.add(key);

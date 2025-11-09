@@ -10,11 +10,11 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **count** | **num** |  | 
 **firstSeen** | **String** |  | 
-**groups** | [**BuiltList&lt;WorkersObservabilityQueryResultsCalculationsInnerAggregatesInnerGroupsInner&gt;**](WorkersObservabilityQueryResultsCalculationsInnerAggregatesInnerGroupsInner.md) |  | [optional] 
 **interval** | **num** |  | 
 **lastSeen** | **String** |  | 
 **sampleInterval** | **num** |  | 
 **value** | **num** |  | 
+**groups** | [**BuiltList&lt;WorkersObservabilityQueryResultsCalculationsInnerAggregatesInnerGroupsInner&gt;**](WorkersObservabilityQueryResultsCalculationsInnerAggregatesInnerGroupsInner.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

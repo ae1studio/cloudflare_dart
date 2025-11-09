@@ -11,15 +11,15 @@ part 'dlp_payload_log_setting.g.dart';
 /// DlpPayloadLogSetting
 ///
 /// Properties:
-/// * [publicKey] 
 /// * [updatedAt] 
+/// * [publicKey] 
 @BuiltValue()
 abstract class DlpPayloadLogSetting implements Built<DlpPayloadLogSetting, DlpPayloadLogSettingBuilder> {
-  @BuiltValueField(wireName: r'public_key')
-  String? get publicKey;
-
   @BuiltValueField(wireName: r'updated_at')
   DateTime get updatedAt;
+
+  @BuiltValueField(wireName: r'public_key')
+  String? get publicKey;
 
   DlpPayloadLogSetting._();
 
@@ -44,6 +44,11 @@ class _$DlpPayloadLogSettingSerializer implements PrimitiveSerializer<DlpPayload
     DlpPayloadLogSetting object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    yield r'updated_at';
+    yield serializers.serialize(
+      object.updatedAt,
+      specifiedType: const FullType(DateTime),
+    );
     if (object.publicKey != null) {
       yield r'public_key';
       yield serializers.serialize(
@@ -51,11 +56,6 @@ class _$DlpPayloadLogSettingSerializer implements PrimitiveSerializer<DlpPayload
         specifiedType: const FullType.nullable(String),
       );
     }
-    yield r'updated_at';
-    yield serializers.serialize(
-      object.updatedAt,
-      specifiedType: const FullType(DateTime),
-    );
   }
 
   @override
@@ -79,6 +79,13 @@ class _$DlpPayloadLogSettingSerializer implements PrimitiveSerializer<DlpPayload
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
+        case r'updated_at':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(DateTime),
+          ) as DateTime;
+          result.updatedAt = valueDes;
+          break;
         case r'public_key':
           final valueDes = serializers.deserialize(
             value,
@@ -86,13 +93,6 @@ class _$DlpPayloadLogSettingSerializer implements PrimitiveSerializer<DlpPayload
           ) as String?;
           if (valueDes == null) continue;
           result.publicKey = valueDes;
-          break;
-        case r'updated_at':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
-          result.updatedAt = valueDes;
           break;
         default:
           unhandled.add(key);

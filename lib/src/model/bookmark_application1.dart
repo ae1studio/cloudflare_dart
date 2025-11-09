@@ -15,16 +15,16 @@ part 'bookmark_application1.g.dart';
 /// BookmarkApplication1
 ///
 /// Properties:
+/// * [domain] - The URL or domain of the bookmark.
+/// * [type] - The application type.
 /// * [aud] - Audience tag.
 /// * [createdAt] 
 /// * [id] - UUID.
 /// * [scimConfig] 
 /// * [updatedAt] 
 /// * [appLauncherVisible] 
-/// * [domain] - The URL or domain of the bookmark.
 /// * [logoUrl] - The image URL for the logo shown in the App Launcher dashboard.
 /// * [name] - The name of the application.
-/// * [type] - The application type.
 @BuiltValue()
 abstract class BookmarkApplication1 implements AccessSchemasBasicAppResponseProps, AccessSchemasBookmarkProps, Built<BookmarkApplication1, BookmarkApplication1Builder> {
   BookmarkApplication1._();

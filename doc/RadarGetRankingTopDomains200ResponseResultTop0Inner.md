@@ -10,8 +10,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **categories** | [**BuiltList&lt;RadarGetRankingTopDomains200ResponseResultTop0InnerCategoriesInner&gt;**](RadarGetRankingTopDomains200ResponseResultTop0InnerCategoriesInner.md) |  | 
 **domain** | **String** |  | 
-**pctRankChange** | **num** | Only available in TRENDING rankings. | [optional] 
 **rank** | **int** |  | 
+**pctRankChange** | **num** | Only available in TRENDING rankings. | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

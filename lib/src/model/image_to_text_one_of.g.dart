@@ -8,9 +8,9 @@ part of 'image_to_text_one_of.dart';
 
 class _$ImageToTextOneOf extends ImageToTextOneOf {
   @override
-  final num? frequencyPenalty;
-  @override
   final ImageToTextOneOfImage image;
+  @override
+  final num? frequencyPenalty;
   @override
   final int? maxTokens;
   @override
@@ -35,8 +35,8 @@ class _$ImageToTextOneOf extends ImageToTextOneOf {
       (ImageToTextOneOfBuilder()..update(updates))._build();
 
   _$ImageToTextOneOf._(
-      {this.frequencyPenalty,
-      required this.image,
+      {required this.image,
+      this.frequencyPenalty,
       this.maxTokens,
       this.presencePenalty,
       this.prompt,
@@ -59,8 +59,8 @@ class _$ImageToTextOneOf extends ImageToTextOneOf {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is ImageToTextOneOf &&
-        frequencyPenalty == other.frequencyPenalty &&
         image == other.image &&
+        frequencyPenalty == other.frequencyPenalty &&
         maxTokens == other.maxTokens &&
         presencePenalty == other.presencePenalty &&
         prompt == other.prompt &&
@@ -75,8 +75,8 @@ class _$ImageToTextOneOf extends ImageToTextOneOf {
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, frequencyPenalty.hashCode);
     _$hash = $jc(_$hash, image.hashCode);
+    _$hash = $jc(_$hash, frequencyPenalty.hashCode);
     _$hash = $jc(_$hash, maxTokens.hashCode);
     _$hash = $jc(_$hash, presencePenalty.hashCode);
     _$hash = $jc(_$hash, prompt.hashCode);
@@ -93,8 +93,8 @@ class _$ImageToTextOneOf extends ImageToTextOneOf {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'ImageToTextOneOf')
-          ..add('frequencyPenalty', frequencyPenalty)
           ..add('image', image)
+          ..add('frequencyPenalty', frequencyPenalty)
           ..add('maxTokens', maxTokens)
           ..add('presencePenalty', presencePenalty)
           ..add('prompt', prompt)
@@ -112,15 +112,15 @@ class ImageToTextOneOfBuilder
     implements Builder<ImageToTextOneOf, ImageToTextOneOfBuilder> {
   _$ImageToTextOneOf? _$v;
 
-  num? _frequencyPenalty;
-  num? get frequencyPenalty => _$this._frequencyPenalty;
-  set frequencyPenalty(num? frequencyPenalty) =>
-      _$this._frequencyPenalty = frequencyPenalty;
-
   ImageToTextOneOfImageBuilder? _image;
   ImageToTextOneOfImageBuilder get image =>
       _$this._image ??= ImageToTextOneOfImageBuilder();
   set image(ImageToTextOneOfImageBuilder? image) => _$this._image = image;
+
+  num? _frequencyPenalty;
+  num? get frequencyPenalty => _$this._frequencyPenalty;
+  set frequencyPenalty(num? frequencyPenalty) =>
+      _$this._frequencyPenalty = frequencyPenalty;
 
   int? _maxTokens;
   int? get maxTokens => _$this._maxTokens;
@@ -167,8 +167,8 @@ class ImageToTextOneOfBuilder
   ImageToTextOneOfBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _frequencyPenalty = $v.frequencyPenalty;
       _image = $v.image.toBuilder();
+      _frequencyPenalty = $v.frequencyPenalty;
       _maxTokens = $v.maxTokens;
       _presencePenalty = $v.presencePenalty;
       _prompt = $v.prompt;
@@ -201,8 +201,8 @@ class ImageToTextOneOfBuilder
     try {
       _$result = _$v ??
           _$ImageToTextOneOf._(
-            frequencyPenalty: frequencyPenalty,
             image: image.build(),
+            frequencyPenalty: frequencyPenalty,
             maxTokens: maxTokens,
             presencePenalty: presencePenalty,
             prompt: prompt,

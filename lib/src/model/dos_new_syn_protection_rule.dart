@@ -12,20 +12,16 @@ part 'dos_new_syn_protection_rule.g.dart';
 ///
 /// Properties:
 /// * [burstSensitivity] - The burst sensitivity. Must be one of 'low', 'medium', 'high'.
-/// * [mitigationType] - The type of mitigation. Must be one of 'challenge' or 'retransmit'. Optional. Defaults to 'challenge'.
 /// * [mode] - The mode for SYN Protection. Must be one of 'enabled', 'disabled', 'monitoring'.
 /// * [name] - The name of the SYN Protection rule. Value is relative to the 'scope' setting. For 'global' scope, name should be 'global'. For either the 'region' or 'datacenter' scope, name should be the actual name of the region or datacenter, e.g., 'wnam' or 'lax'.
 /// * [rateSensitivity] - The rate sensitivity. Must be one of 'low', 'medium', 'high'.
 /// * [scope] - The scope for the SYN Protection rule. Must be one of 'global', 'region', or 'datacenter'.
+/// * [mitigationType] - The type of mitigation. Must be one of 'challenge' or 'retransmit'. Optional. Defaults to 'challenge'.
 @BuiltValue()
 abstract class DosNewSynProtectionRule implements Built<DosNewSynProtectionRule, DosNewSynProtectionRuleBuilder> {
   /// The burst sensitivity. Must be one of 'low', 'medium', 'high'.
   @BuiltValueField(wireName: r'burst_sensitivity')
   String get burstSensitivity;
-
-  /// The type of mitigation. Must be one of 'challenge' or 'retransmit'. Optional. Defaults to 'challenge'.
-  @BuiltValueField(wireName: r'mitigation_type')
-  String? get mitigationType;
 
   /// The mode for SYN Protection. Must be one of 'enabled', 'disabled', 'monitoring'.
   @BuiltValueField(wireName: r'mode')
@@ -42,6 +38,10 @@ abstract class DosNewSynProtectionRule implements Built<DosNewSynProtectionRule,
   /// The scope for the SYN Protection rule. Must be one of 'global', 'region', or 'datacenter'.
   @BuiltValueField(wireName: r'scope')
   String get scope;
+
+  /// The type of mitigation. Must be one of 'challenge' or 'retransmit'. Optional. Defaults to 'challenge'.
+  @BuiltValueField(wireName: r'mitigation_type')
+  String? get mitigationType;
 
   DosNewSynProtectionRule._();
 
@@ -71,13 +71,6 @@ class _$DosNewSynProtectionRuleSerializer implements PrimitiveSerializer<DosNewS
       object.burstSensitivity,
       specifiedType: const FullType(String),
     );
-    if (object.mitigationType != null) {
-      yield r'mitigation_type';
-      yield serializers.serialize(
-        object.mitigationType,
-        specifiedType: const FullType(String),
-      );
-    }
     yield r'mode';
     yield serializers.serialize(
       object.mode,
@@ -98,6 +91,13 @@ class _$DosNewSynProtectionRuleSerializer implements PrimitiveSerializer<DosNewS
       object.scope,
       specifiedType: const FullType(String),
     );
+    if (object.mitigationType != null) {
+      yield r'mitigation_type';
+      yield serializers.serialize(
+        object.mitigationType,
+        specifiedType: const FullType(String),
+      );
+    }
   }
 
   @override
@@ -128,13 +128,6 @@ class _$DosNewSynProtectionRuleSerializer implements PrimitiveSerializer<DosNewS
           ) as String;
           result.burstSensitivity = valueDes;
           break;
-        case r'mitigation_type':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.mitigationType = valueDes;
-          break;
         case r'mode':
           final valueDes = serializers.deserialize(
             value,
@@ -162,6 +155,13 @@ class _$DosNewSynProtectionRuleSerializer implements PrimitiveSerializer<DosNewS
             specifiedType: const FullType(String),
           ) as String;
           result.scope = valueDes;
+          break;
+        case r'mitigation_type':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.mitigationType = valueDes;
           break;
         default:
           unhandled.add(key);

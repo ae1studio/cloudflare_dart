@@ -16,6 +16,7 @@ part 'dns_records_dns_record_batch_patch.g.dart';
 /// DnsRecordsDnsRecordBatchPatch
 ///
 /// Properties:
+/// * [id] - Identifier.
 /// * [comment] - Comments or notes about the DNS record. This field has no effect on DNS responses.
 /// * [name] - Complete DNS record name, including the zone name, in Punycode.
 /// * [proxied] - Whether the record is receiving the performance and security benefits of Cloudflare.
@@ -26,7 +27,6 @@ part 'dns_records_dns_record_batch_patch.g.dart';
 /// * [type] - Record type.
 /// * [priority] - Required for MX, SRV and URI records; unused by other record types. Records with lower priorities are preferred.
 /// * [data] 
-/// * [id] - Identifier.
 @BuiltValue()
 abstract class DnsRecordsDnsRecordBatchPatch implements DnsRecordsDnsRecordPatch, Built<DnsRecordsDnsRecordBatchPatch, DnsRecordsDnsRecordBatchPatchBuilder> {
   /// Identifier.

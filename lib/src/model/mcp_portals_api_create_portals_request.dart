@@ -13,16 +13,13 @@ part 'mcp_portals_api_create_portals_request.g.dart';
 /// McpPortalsApiCreatePortalsRequest
 ///
 /// Properties:
-/// * [description] 
 /// * [hostname] 
 /// * [id] - portal id
 /// * [name] 
+/// * [description] 
 /// * [servers] 
 @BuiltValue()
 abstract class McpPortalsApiCreatePortalsRequest implements Built<McpPortalsApiCreatePortalsRequest, McpPortalsApiCreatePortalsRequestBuilder> {
-  @BuiltValueField(wireName: r'description')
-  String? get description;
-
   @BuiltValueField(wireName: r'hostname')
   String get hostname;
 
@@ -32,6 +29,9 @@ abstract class McpPortalsApiCreatePortalsRequest implements Built<McpPortalsApiC
 
   @BuiltValueField(wireName: r'name')
   String get name;
+
+  @BuiltValueField(wireName: r'description')
+  String? get description;
 
   @BuiltValueField(wireName: r'servers')
   BuiltList<McpPortalsApiCreatePortalsRequestServersInner>? get servers;
@@ -59,13 +59,6 @@ class _$McpPortalsApiCreatePortalsRequestSerializer implements PrimitiveSerializ
     McpPortalsApiCreatePortalsRequest object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
-    if (object.description != null) {
-      yield r'description';
-      yield serializers.serialize(
-        object.description,
-        specifiedType: const FullType(String),
-      );
-    }
     yield r'hostname';
     yield serializers.serialize(
       object.hostname,
@@ -81,6 +74,13 @@ class _$McpPortalsApiCreatePortalsRequestSerializer implements PrimitiveSerializ
       object.name,
       specifiedType: const FullType(String),
     );
+    if (object.description != null) {
+      yield r'description';
+      yield serializers.serialize(
+        object.description,
+        specifiedType: const FullType(String),
+      );
+    }
     if (object.servers != null) {
       yield r'servers';
       yield serializers.serialize(
@@ -111,13 +111,6 @@ class _$McpPortalsApiCreatePortalsRequestSerializer implements PrimitiveSerializ
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'description':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.description = valueDes;
-          break;
         case r'hostname':
           final valueDes = serializers.deserialize(
             value,
@@ -138,6 +131,13 @@ class _$McpPortalsApiCreatePortalsRequestSerializer implements PrimitiveSerializ
             specifiedType: const FullType(String),
           ) as String;
           result.name = valueDes;
+          break;
+        case r'description':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.description = valueDes;
           break;
         case r'servers':
           final valueDes = serializers.deserialize(

@@ -9,9 +9,9 @@ part of 'cloudflare_d1_create_database_request.dart';
 class _$CloudflareD1CreateDatabaseRequest
     extends CloudflareD1CreateDatabaseRequest {
   @override
-  final D1Jurisdiction? jurisdiction;
-  @override
   final String name;
+  @override
+  final D1Jurisdiction? jurisdiction;
   @override
   final D1PrimaryLocationHint? primaryLocationHint;
 
@@ -20,7 +20,7 @@ class _$CloudflareD1CreateDatabaseRequest
       (CloudflareD1CreateDatabaseRequestBuilder()..update(updates))._build();
 
   _$CloudflareD1CreateDatabaseRequest._(
-      {this.jurisdiction, required this.name, this.primaryLocationHint})
+      {required this.name, this.jurisdiction, this.primaryLocationHint})
       : super._();
   @override
   CloudflareD1CreateDatabaseRequest rebuild(
@@ -35,16 +35,16 @@ class _$CloudflareD1CreateDatabaseRequest
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is CloudflareD1CreateDatabaseRequest &&
-        jurisdiction == other.jurisdiction &&
         name == other.name &&
+        jurisdiction == other.jurisdiction &&
         primaryLocationHint == other.primaryLocationHint;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, jurisdiction.hashCode);
     _$hash = $jc(_$hash, name.hashCode);
+    _$hash = $jc(_$hash, jurisdiction.hashCode);
     _$hash = $jc(_$hash, primaryLocationHint.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
@@ -53,8 +53,8 @@ class _$CloudflareD1CreateDatabaseRequest
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'CloudflareD1CreateDatabaseRequest')
-          ..add('jurisdiction', jurisdiction)
           ..add('name', name)
+          ..add('jurisdiction', jurisdiction)
           ..add('primaryLocationHint', primaryLocationHint))
         .toString();
   }
@@ -66,14 +66,14 @@ class CloudflareD1CreateDatabaseRequestBuilder
             CloudflareD1CreateDatabaseRequestBuilder> {
   _$CloudflareD1CreateDatabaseRequest? _$v;
 
+  String? _name;
+  String? get name => _$this._name;
+  set name(String? name) => _$this._name = name;
+
   D1Jurisdiction? _jurisdiction;
   D1Jurisdiction? get jurisdiction => _$this._jurisdiction;
   set jurisdiction(D1Jurisdiction? jurisdiction) =>
       _$this._jurisdiction = jurisdiction;
-
-  String? _name;
-  String? get name => _$this._name;
-  set name(String? name) => _$this._name = name;
 
   D1PrimaryLocationHint? _primaryLocationHint;
   D1PrimaryLocationHint? get primaryLocationHint => _$this._primaryLocationHint;
@@ -87,8 +87,8 @@ class CloudflareD1CreateDatabaseRequestBuilder
   CloudflareD1CreateDatabaseRequestBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _jurisdiction = $v.jurisdiction;
       _name = $v.name;
+      _jurisdiction = $v.jurisdiction;
       _primaryLocationHint = $v.primaryLocationHint;
       _$v = null;
     }
@@ -112,9 +112,9 @@ class CloudflareD1CreateDatabaseRequestBuilder
   _$CloudflareD1CreateDatabaseRequest _build() {
     final _$result = _$v ??
         _$CloudflareD1CreateDatabaseRequest._(
-          jurisdiction: jurisdiction,
           name: BuiltValueNullFieldError.checkNotNull(
               name, r'CloudflareD1CreateDatabaseRequest', 'name'),
+          jurisdiction: jurisdiction,
           primaryLocationHint: primaryLocationHint,
         );
     replace(_$result);

@@ -16,10 +16,10 @@ part 'post_v4_accounts_by_account_id_pipelines_deprecated_request_source_inner.g
 /// PostV4AccountsByAccountIdPipelinesDeprecatedRequestSourceInner
 ///
 /// Properties:
-/// * [authentication] - Specifies whether authentication is required to send to this pipeline via HTTP.
-/// * [cors] 
 /// * [format] - Specifies the format of source data.
 /// * [type] 
+/// * [authentication] - Specifies whether authentication is required to send to this pipeline via HTTP.
+/// * [cors] 
 @BuiltValue()
 abstract class PostV4AccountsByAccountIdPipelinesDeprecatedRequestSourceInner implements Built<PostV4AccountsByAccountIdPipelinesDeprecatedRequestSourceInner, PostV4AccountsByAccountIdPipelinesDeprecatedRequestSourceInnerBuilder> {
   /// One Of [CloudflarePipelinesWorkersPipelinesBindingSource], [CloudflarePipelinesWorkersPipelinesHttpSource]

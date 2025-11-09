@@ -19,8 +19,8 @@ part 'aaa_audit_logs_response_collection.g.dart';
 /// Properties:
 /// * [errors] 
 /// * [messages] 
-/// * [result] 
 /// * [success] - Whether the API call was successful
+/// * [result] 
 @BuiltValue(instantiable: false)
 abstract class AaaAuditLogsResponseCollection  {
   /// One Of [AaaApiResponseCommon], [AaaAuditLogsResponseCollectionOneOf]

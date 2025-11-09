@@ -20,8 +20,8 @@ part 'per_hostname_authenticated_origin_pull_list_certificates4_xx_response.g.da
 /// * [errors] 
 /// * [messages] 
 /// * [success] - Whether the API call was successful.
-/// * [resultInfo] 
 /// * [result] 
+/// * [resultInfo] 
 @BuiltValue()
 abstract class PerHostnameAuthenticatedOriginPullListCertificates4XXResponse implements TlsCertificatesAndHostnamesApiResponseCommonFailure, TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPullComponentsSchemasCertificateResponseCollection, Built<PerHostnameAuthenticatedOriginPullListCertificates4XXResponse, PerHostnameAuthenticatedOriginPullListCertificates4XXResponseBuilder> {
   PerHostnameAuthenticatedOriginPullListCertificates4XXResponse._();

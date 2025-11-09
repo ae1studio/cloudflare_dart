@@ -25,8 +25,8 @@ part 'urlscanner_get_scan_v2200_response_meta_processors.g.dart';
 /// * [geoip] 
 /// * [phishing] 
 /// * [radarRank] 
-/// * [urlCategories] 
 /// * [wappa] 
+/// * [urlCategories] 
 @BuiltValue()
 abstract class UrlscannerGetScanV2200ResponseMetaProcessors implements Built<UrlscannerGetScanV2200ResponseMetaProcessors, UrlscannerGetScanV2200ResponseMetaProcessorsBuilder> {
   @BuiltValueField(wireName: r'asn')
@@ -47,11 +47,11 @@ abstract class UrlscannerGetScanV2200ResponseMetaProcessors implements Built<Url
   @BuiltValueField(wireName: r'radarRank')
   UrlscannerGetScanV2200ResponseMetaProcessorsRadarRank get radarRank;
 
-  @BuiltValueField(wireName: r'urlCategories')
-  UrlscannerGetScanV2200ResponseMetaProcessorsUrlCategories? get urlCategories;
-
   @BuiltValueField(wireName: r'wappa')
   UrlscannerGetScanV2200ResponseMetaProcessorsWappa get wappa;
+
+  @BuiltValueField(wireName: r'urlCategories')
+  UrlscannerGetScanV2200ResponseMetaProcessorsUrlCategories? get urlCategories;
 
   UrlscannerGetScanV2200ResponseMetaProcessors._();
 
@@ -106,6 +106,11 @@ class _$UrlscannerGetScanV2200ResponseMetaProcessorsSerializer implements Primit
       object.radarRank,
       specifiedType: const FullType(UrlscannerGetScanV2200ResponseMetaProcessorsRadarRank),
     );
+    yield r'wappa';
+    yield serializers.serialize(
+      object.wappa,
+      specifiedType: const FullType(UrlscannerGetScanV2200ResponseMetaProcessorsWappa),
+    );
     if (object.urlCategories != null) {
       yield r'urlCategories';
       yield serializers.serialize(
@@ -113,11 +118,6 @@ class _$UrlscannerGetScanV2200ResponseMetaProcessorsSerializer implements Primit
         specifiedType: const FullType(UrlscannerGetScanV2200ResponseMetaProcessorsUrlCategories),
       );
     }
-    yield r'wappa';
-    yield serializers.serialize(
-      object.wappa,
-      specifiedType: const FullType(UrlscannerGetScanV2200ResponseMetaProcessorsWappa),
-    );
   }
 
   @override
@@ -183,19 +183,19 @@ class _$UrlscannerGetScanV2200ResponseMetaProcessorsSerializer implements Primit
           ) as UrlscannerGetScanV2200ResponseMetaProcessorsRadarRank;
           result.radarRank.replace(valueDes);
           break;
-        case r'urlCategories':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(UrlscannerGetScanV2200ResponseMetaProcessorsUrlCategories),
-          ) as UrlscannerGetScanV2200ResponseMetaProcessorsUrlCategories;
-          result.urlCategories.replace(valueDes);
-          break;
         case r'wappa':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(UrlscannerGetScanV2200ResponseMetaProcessorsWappa),
           ) as UrlscannerGetScanV2200ResponseMetaProcessorsWappa;
           result.wappa.replace(valueDes);
+          break;
+        case r'urlCategories':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(UrlscannerGetScanV2200ResponseMetaProcessorsUrlCategories),
+          ) as UrlscannerGetScanV2200ResponseMetaProcessorsUrlCategories;
+          result.urlCategories.replace(valueDes);
           break;
         default:
           unhandled.add(key);

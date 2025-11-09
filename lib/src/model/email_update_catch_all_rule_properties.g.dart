@@ -11,9 +11,9 @@ class _$EmailUpdateCatchAllRuleProperties
   @override
   final BuiltList<EmailRuleCatchallAction> actions;
   @override
-  final bool? enabled;
-  @override
   final BuiltList<EmailRuleCatchallMatcher> matchers;
+  @override
+  final bool? enabled;
   @override
   final String? name;
 
@@ -22,7 +22,7 @@ class _$EmailUpdateCatchAllRuleProperties
       (EmailUpdateCatchAllRulePropertiesBuilder()..update(updates))._build();
 
   _$EmailUpdateCatchAllRuleProperties._(
-      {required this.actions, this.enabled, required this.matchers, this.name})
+      {required this.actions, required this.matchers, this.enabled, this.name})
       : super._();
   @override
   EmailUpdateCatchAllRuleProperties rebuild(
@@ -38,8 +38,8 @@ class _$EmailUpdateCatchAllRuleProperties
     if (identical(other, this)) return true;
     return other is EmailUpdateCatchAllRuleProperties &&
         actions == other.actions &&
-        enabled == other.enabled &&
         matchers == other.matchers &&
+        enabled == other.enabled &&
         name == other.name;
   }
 
@@ -47,8 +47,8 @@ class _$EmailUpdateCatchAllRuleProperties
   int get hashCode {
     var _$hash = 0;
     _$hash = $jc(_$hash, actions.hashCode);
-    _$hash = $jc(_$hash, enabled.hashCode);
     _$hash = $jc(_$hash, matchers.hashCode);
+    _$hash = $jc(_$hash, enabled.hashCode);
     _$hash = $jc(_$hash, name.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
@@ -58,8 +58,8 @@ class _$EmailUpdateCatchAllRuleProperties
   String toString() {
     return (newBuiltValueToStringHelper(r'EmailUpdateCatchAllRuleProperties')
           ..add('actions', actions)
-          ..add('enabled', enabled)
           ..add('matchers', matchers)
+          ..add('enabled', enabled)
           ..add('name', name))
         .toString();
   }
@@ -77,15 +77,15 @@ class EmailUpdateCatchAllRulePropertiesBuilder
   set actions(ListBuilder<EmailRuleCatchallAction>? actions) =>
       _$this._actions = actions;
 
-  bool? _enabled;
-  bool? get enabled => _$this._enabled;
-  set enabled(bool? enabled) => _$this._enabled = enabled;
-
   ListBuilder<EmailRuleCatchallMatcher>? _matchers;
   ListBuilder<EmailRuleCatchallMatcher> get matchers =>
       _$this._matchers ??= ListBuilder<EmailRuleCatchallMatcher>();
   set matchers(ListBuilder<EmailRuleCatchallMatcher>? matchers) =>
       _$this._matchers = matchers;
+
+  bool? _enabled;
+  bool? get enabled => _$this._enabled;
+  set enabled(bool? enabled) => _$this._enabled = enabled;
 
   String? _name;
   String? get name => _$this._name;
@@ -99,8 +99,8 @@ class EmailUpdateCatchAllRulePropertiesBuilder
     final $v = _$v;
     if ($v != null) {
       _actions = $v.actions.toBuilder();
-      _enabled = $v.enabled;
       _matchers = $v.matchers.toBuilder();
+      _enabled = $v.enabled;
       _name = $v.name;
       _$v = null;
     }
@@ -127,8 +127,8 @@ class EmailUpdateCatchAllRulePropertiesBuilder
       _$result = _$v ??
           _$EmailUpdateCatchAllRuleProperties._(
             actions: actions.build(),
-            enabled: enabled,
             matchers: matchers.build(),
+            enabled: enabled,
             name: name,
           );
     } catch (_) {
@@ -136,7 +136,6 @@ class EmailUpdateCatchAllRulePropertiesBuilder
       try {
         _$failedField = 'actions';
         actions.build();
-
         _$failedField = 'matchers';
         matchers.build();
       } catch (e) {

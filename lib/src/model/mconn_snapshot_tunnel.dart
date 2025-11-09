@@ -11,18 +11,14 @@ part 'mconn_snapshot_tunnel.g.dart';
 /// Snapshot Tunnels
 ///
 /// Properties:
-/// * [connectorId] - Connector identifier
 /// * [healthState] - Name of tunnel health state (unknown, healthy, degraded, down)
 /// * [healthValue] - Numeric value associated with tunnel state (0 = unknown, 1 = healthy, 2 = degraded, 3 = down)
 /// * [interfaceName] - The tunnel interface name (i.e. xfrm1, xfrm3.99, etc.)
-/// * [probedMtu] - MTU as measured between the two ends of the tunnel
 /// * [tunnelId] - Tunnel identifier
+/// * [connectorId] - Connector identifier
+/// * [probedMtu] - MTU as measured between the two ends of the tunnel
 @BuiltValue()
 abstract class MconnSnapshotTunnel implements Built<MconnSnapshotTunnel, MconnSnapshotTunnelBuilder> {
-  /// Connector identifier
-  @BuiltValueField(wireName: r'connector_id')
-  String? get connectorId;
-
   /// Name of tunnel health state (unknown, healthy, degraded, down)
   @BuiltValueField(wireName: r'health_state')
   String get healthState;
@@ -35,13 +31,17 @@ abstract class MconnSnapshotTunnel implements Built<MconnSnapshotTunnel, MconnSn
   @BuiltValueField(wireName: r'interface_name')
   String get interfaceName;
 
-  /// MTU as measured between the two ends of the tunnel
-  @BuiltValueField(wireName: r'probed_mtu')
-  num? get probedMtu;
-
   /// Tunnel identifier
   @BuiltValueField(wireName: r'tunnel_id')
   String get tunnelId;
+
+  /// Connector identifier
+  @BuiltValueField(wireName: r'connector_id')
+  String? get connectorId;
+
+  /// MTU as measured between the two ends of the tunnel
+  @BuiltValueField(wireName: r'probed_mtu')
+  num? get probedMtu;
 
   MconnSnapshotTunnel._();
 
@@ -66,13 +66,6 @@ class _$MconnSnapshotTunnelSerializer implements PrimitiveSerializer<MconnSnapsh
     MconnSnapshotTunnel object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
-    if (object.connectorId != null) {
-      yield r'connector_id';
-      yield serializers.serialize(
-        object.connectorId,
-        specifiedType: const FullType(String),
-      );
-    }
     yield r'health_state';
     yield serializers.serialize(
       object.healthState,
@@ -88,6 +81,18 @@ class _$MconnSnapshotTunnelSerializer implements PrimitiveSerializer<MconnSnapsh
       object.interfaceName,
       specifiedType: const FullType(String),
     );
+    yield r'tunnel_id';
+    yield serializers.serialize(
+      object.tunnelId,
+      specifiedType: const FullType(String),
+    );
+    if (object.connectorId != null) {
+      yield r'connector_id';
+      yield serializers.serialize(
+        object.connectorId,
+        specifiedType: const FullType(String),
+      );
+    }
     if (object.probedMtu != null) {
       yield r'probed_mtu';
       yield serializers.serialize(
@@ -95,11 +100,6 @@ class _$MconnSnapshotTunnelSerializer implements PrimitiveSerializer<MconnSnapsh
         specifiedType: const FullType(num),
       );
     }
-    yield r'tunnel_id';
-    yield serializers.serialize(
-      object.tunnelId,
-      specifiedType: const FullType(String),
-    );
   }
 
   @override
@@ -123,13 +123,6 @@ class _$MconnSnapshotTunnelSerializer implements PrimitiveSerializer<MconnSnapsh
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'connector_id':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.connectorId = valueDes;
-          break;
         case r'health_state':
           final valueDes = serializers.deserialize(
             value,
@@ -151,19 +144,26 @@ class _$MconnSnapshotTunnelSerializer implements PrimitiveSerializer<MconnSnapsh
           ) as String;
           result.interfaceName = valueDes;
           break;
-        case r'probed_mtu':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(num),
-          ) as num;
-          result.probedMtu = valueDes;
-          break;
         case r'tunnel_id':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(String),
           ) as String;
           result.tunnelId = valueDes;
+          break;
+        case r'connector_id':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.connectorId = valueDes;
+          break;
+        case r'probed_mtu':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(num),
+          ) as num;
+          result.probedMtu = valueDes;
           break;
         default:
           unhandled.add(key);

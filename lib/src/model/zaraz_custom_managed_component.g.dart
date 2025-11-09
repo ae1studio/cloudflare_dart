@@ -80,11 +80,11 @@ class _$ZarazCustomManagedComponent extends ZarazCustomManagedComponent {
   @override
   final BuiltMap<String, ZarazBaseMcAllOfSettings> defaultFields;
   @override
-  final String? defaultPurpose;
-  @override
   final bool enabled;
   @override
   final String name;
+  @override
+  final String? defaultPurpose;
   @override
   final String? vendorName;
   @override
@@ -104,9 +104,9 @@ class _$ZarazCustomManagedComponent extends ZarazCustomManagedComponent {
       this.neoEvents,
       required this.blockingTriggers,
       required this.defaultFields,
-      this.defaultPurpose,
       required this.enabled,
       required this.name,
+      this.defaultPurpose,
       this.vendorName,
       this.vendorPolicyUrl})
       : super._();
@@ -132,9 +132,9 @@ class _$ZarazCustomManagedComponent extends ZarazCustomManagedComponent {
         neoEvents == other.neoEvents &&
         blockingTriggers == other.blockingTriggers &&
         defaultFields == other.defaultFields &&
-        defaultPurpose == other.defaultPurpose &&
         enabled == other.enabled &&
         name == other.name &&
+        defaultPurpose == other.defaultPurpose &&
         vendorName == other.vendorName &&
         vendorPolicyUrl == other.vendorPolicyUrl;
   }
@@ -151,9 +151,9 @@ class _$ZarazCustomManagedComponent extends ZarazCustomManagedComponent {
     _$hash = $jc(_$hash, neoEvents.hashCode);
     _$hash = $jc(_$hash, blockingTriggers.hashCode);
     _$hash = $jc(_$hash, defaultFields.hashCode);
-    _$hash = $jc(_$hash, defaultPurpose.hashCode);
     _$hash = $jc(_$hash, enabled.hashCode);
     _$hash = $jc(_$hash, name.hashCode);
+    _$hash = $jc(_$hash, defaultPurpose.hashCode);
     _$hash = $jc(_$hash, vendorName.hashCode);
     _$hash = $jc(_$hash, vendorPolicyUrl.hashCode);
     _$hash = $jf(_$hash);
@@ -172,9 +172,9 @@ class _$ZarazCustomManagedComponent extends ZarazCustomManagedComponent {
           ..add('neoEvents', neoEvents)
           ..add('blockingTriggers', blockingTriggers)
           ..add('defaultFields', defaultFields)
-          ..add('defaultPurpose', defaultPurpose)
           ..add('enabled', enabled)
           ..add('name', name)
+          ..add('defaultPurpose', defaultPurpose)
           ..add('vendorName', vendorName)
           ..add('vendorPolicyUrl', vendorPolicyUrl))
         .toString();
@@ -242,11 +242,6 @@ class ZarazCustomManagedComponentBuilder
               defaultFields) =>
       _$this._defaultFields = defaultFields;
 
-  String? _defaultPurpose;
-  String? get defaultPurpose => _$this._defaultPurpose;
-  set defaultPurpose(covariant String? defaultPurpose) =>
-      _$this._defaultPurpose = defaultPurpose;
-
   bool? _enabled;
   bool? get enabled => _$this._enabled;
   set enabled(covariant bool? enabled) => _$this._enabled = enabled;
@@ -254,6 +249,11 @@ class ZarazCustomManagedComponentBuilder
   String? _name;
   String? get name => _$this._name;
   set name(covariant String? name) => _$this._name = name;
+
+  String? _defaultPurpose;
+  String? get defaultPurpose => _$this._defaultPurpose;
+  set defaultPurpose(covariant String? defaultPurpose) =>
+      _$this._defaultPurpose = defaultPurpose;
 
   String? _vendorName;
   String? get vendorName => _$this._vendorName;
@@ -281,9 +281,9 @@ class ZarazCustomManagedComponentBuilder
       _neoEvents = $v.neoEvents?.toBuilder();
       _blockingTriggers = $v.blockingTriggers.toBuilder();
       _defaultFields = $v.defaultFields.toBuilder();
-      _defaultPurpose = $v.defaultPurpose;
       _enabled = $v.enabled;
       _name = $v.name;
+      _defaultPurpose = $v.defaultPurpose;
       _vendorName = $v.vendorName;
       _vendorPolicyUrl = $v.vendorPolicyUrl;
       _$v = null;
@@ -320,11 +320,11 @@ class ZarazCustomManagedComponentBuilder
             neoEvents: _neoEvents?.build(),
             blockingTriggers: blockingTriggers.build(),
             defaultFields: defaultFields.build(),
-            defaultPurpose: defaultPurpose,
             enabled: BuiltValueNullFieldError.checkNotNull(
                 enabled, r'ZarazCustomManagedComponent', 'enabled'),
             name: BuiltValueNullFieldError.checkNotNull(
                 name, r'ZarazCustomManagedComponent', 'name'),
+            defaultPurpose: defaultPurpose,
             vendorName: vendorName,
             vendorPolicyUrl: vendorPolicyUrl,
           );

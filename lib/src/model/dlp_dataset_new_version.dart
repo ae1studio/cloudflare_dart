@@ -13,31 +13,31 @@ part 'dlp_dataset_new_version.g.dart';
 /// DlpDatasetNewVersion
 ///
 /// Properties:
-/// * [caseSensitive] 
-/// * [columns] 
 /// * [encodingVersion] 
 /// * [maxCells] 
-/// * [secret] 
 /// * [version] 
+/// * [caseSensitive] 
+/// * [columns] 
+/// * [secret] 
 @BuiltValue()
 abstract class DlpDatasetNewVersion implements Built<DlpDatasetNewVersion, DlpDatasetNewVersionBuilder> {
-  @BuiltValueField(wireName: r'case_sensitive')
-  bool? get caseSensitive;
-
-  @BuiltValueField(wireName: r'columns')
-  BuiltList<DlpDatasetColumn>? get columns;
-
   @BuiltValueField(wireName: r'encoding_version')
   int get encodingVersion;
 
   @BuiltValueField(wireName: r'max_cells')
   int get maxCells;
 
-  @BuiltValueField(wireName: r'secret')
-  String? get secret;
-
   @BuiltValueField(wireName: r'version')
   int get version;
+
+  @BuiltValueField(wireName: r'case_sensitive')
+  bool? get caseSensitive;
+
+  @BuiltValueField(wireName: r'columns')
+  BuiltList<DlpDatasetColumn>? get columns;
+
+  @BuiltValueField(wireName: r'secret')
+  String? get secret;
 
   DlpDatasetNewVersion._();
 
@@ -62,6 +62,21 @@ class _$DlpDatasetNewVersionSerializer implements PrimitiveSerializer<DlpDataset
     DlpDatasetNewVersion object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    yield r'encoding_version';
+    yield serializers.serialize(
+      object.encodingVersion,
+      specifiedType: const FullType(int),
+    );
+    yield r'max_cells';
+    yield serializers.serialize(
+      object.maxCells,
+      specifiedType: const FullType(int),
+    );
+    yield r'version';
+    yield serializers.serialize(
+      object.version,
+      specifiedType: const FullType(int),
+    );
     if (object.caseSensitive != null) {
       yield r'case_sensitive';
       yield serializers.serialize(
@@ -76,16 +91,6 @@ class _$DlpDatasetNewVersionSerializer implements PrimitiveSerializer<DlpDataset
         specifiedType: const FullType(BuiltList, [FullType(DlpDatasetColumn)]),
       );
     }
-    yield r'encoding_version';
-    yield serializers.serialize(
-      object.encodingVersion,
-      specifiedType: const FullType(int),
-    );
-    yield r'max_cells';
-    yield serializers.serialize(
-      object.maxCells,
-      specifiedType: const FullType(int),
-    );
     if (object.secret != null) {
       yield r'secret';
       yield serializers.serialize(
@@ -93,11 +98,6 @@ class _$DlpDatasetNewVersionSerializer implements PrimitiveSerializer<DlpDataset
         specifiedType: const FullType(String),
       );
     }
-    yield r'version';
-    yield serializers.serialize(
-      object.version,
-      specifiedType: const FullType(int),
-    );
   }
 
   @override
@@ -121,20 +121,6 @@ class _$DlpDatasetNewVersionSerializer implements PrimitiveSerializer<DlpDataset
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'case_sensitive':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
-          result.caseSensitive = valueDes;
-          break;
-        case r'columns':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(DlpDatasetColumn)]),
-          ) as BuiltList<DlpDatasetColumn>;
-          result.columns.replace(valueDes);
-          break;
         case r'encoding_version':
           final valueDes = serializers.deserialize(
             value,
@@ -149,19 +135,33 @@ class _$DlpDatasetNewVersionSerializer implements PrimitiveSerializer<DlpDataset
           ) as int;
           result.maxCells = valueDes;
           break;
-        case r'secret':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.secret = valueDes;
-          break;
         case r'version':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(int),
           ) as int;
           result.version = valueDes;
+          break;
+        case r'case_sensitive':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(bool),
+          ) as bool;
+          result.caseSensitive = valueDes;
+          break;
+        case r'columns':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BuiltList, [FullType(DlpDatasetColumn)]),
+          ) as BuiltList<DlpDatasetColumn>;
+          result.columns.replace(valueDes);
+          break;
+        case r'secret':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.secret = valueDes;
           break;
         default:
           unhandled.add(key);

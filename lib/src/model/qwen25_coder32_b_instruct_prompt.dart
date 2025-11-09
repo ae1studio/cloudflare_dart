@@ -12,11 +12,11 @@ part 'qwen25_coder32_b_instruct_prompt.g.dart';
 /// Qwen25Coder32BInstructPrompt
 ///
 /// Properties:
+/// * [prompt] - The input text prompt for the model to generate a response.
 /// * [frequencyPenalty] - Decreases the likelihood of the model repeating the same lines verbatim.
 /// * [lora] - Name of the LoRA (Low-Rank Adaptation) model to fine-tune the base model.
 /// * [maxTokens] - The maximum number of tokens to generate in the response.
 /// * [presencePenalty] - Increases the likelihood of the model introducing new topics.
-/// * [prompt] - The input text prompt for the model to generate a response.
 /// * [raw] - If true, a chat template is not applied and you must adhere to the specific model's expected formatting.
 /// * [repetitionPenalty] - Penalty for repeated tokens; higher values discourage repetition.
 /// * [responseFormat] 
@@ -27,6 +27,10 @@ part 'qwen25_coder32_b_instruct_prompt.g.dart';
 /// * [topP] - Adjusts the creativity of the AI's responses by controlling how many possible words it considers. Lower values make outputs more predictable; higher values allow for more varied and creative responses.
 @BuiltValue()
 abstract class Qwen25Coder32BInstructPrompt implements Built<Qwen25Coder32BInstructPrompt, Qwen25Coder32BInstructPromptBuilder> {
+  /// The input text prompt for the model to generate a response.
+  @BuiltValueField(wireName: r'prompt')
+  String get prompt;
+
   /// Decreases the likelihood of the model repeating the same lines verbatim.
   @BuiltValueField(wireName: r'frequency_penalty')
   num? get frequencyPenalty;
@@ -42,10 +46,6 @@ abstract class Qwen25Coder32BInstructPrompt implements Built<Qwen25Coder32BInstr
   /// Increases the likelihood of the model introducing new topics.
   @BuiltValueField(wireName: r'presence_penalty')
   num? get presencePenalty;
-
-  /// The input text prompt for the model to generate a response.
-  @BuiltValueField(wireName: r'prompt')
-  String get prompt;
 
   /// If true, a chat template is not applied and you must adhere to the specific model's expected formatting.
   @BuiltValueField(wireName: r'raw')
@@ -105,6 +105,11 @@ class _$Qwen25Coder32BInstructPromptSerializer implements PrimitiveSerializer<Qw
     Qwen25Coder32BInstructPrompt object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    yield r'prompt';
+    yield serializers.serialize(
+      object.prompt,
+      specifiedType: const FullType(String),
+    );
     if (object.frequencyPenalty != null) {
       yield r'frequency_penalty';
       yield serializers.serialize(
@@ -133,11 +138,6 @@ class _$Qwen25Coder32BInstructPromptSerializer implements PrimitiveSerializer<Qw
         specifiedType: const FullType(num),
       );
     }
-    yield r'prompt';
-    yield serializers.serialize(
-      object.prompt,
-      specifiedType: const FullType(String),
-    );
     if (object.raw != null) {
       yield r'raw';
       yield serializers.serialize(
@@ -217,6 +217,13 @@ class _$Qwen25Coder32BInstructPromptSerializer implements PrimitiveSerializer<Qw
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
+        case r'prompt':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.prompt = valueDes;
+          break;
         case r'frequency_penalty':
           final valueDes = serializers.deserialize(
             value,
@@ -244,13 +251,6 @@ class _$Qwen25Coder32BInstructPromptSerializer implements PrimitiveSerializer<Qw
             specifiedType: const FullType(num),
           ) as num;
           result.presencePenalty = valueDes;
-          break;
-        case r'prompt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.prompt = valueDes;
           break;
         case r'raw':
           final valueDes = serializers.deserialize(

@@ -13,7 +13,6 @@ Name | Type | Description | Notes
 **httpOnly** | **bool** |  | 
 **name** | **String** |  | 
 **path** | **String** |  | 
-**priority** | **String** |  | [optional] 
 **sameParty** | **bool** |  | 
 **secure** | **bool** |  | 
 **session** | **bool** |  | 
@@ -21,6 +20,7 @@ Name | Type | Description | Notes
 **sourcePort** | **num** |  | 
 **sourceScheme** | **String** |  | 
 **value** | **String** |  | 
+**priority** | **String** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

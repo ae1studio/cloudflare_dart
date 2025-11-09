@@ -8,13 +8,13 @@ part of 'lists_list_item_asn_full.dart';
 
 class _$ListsListItemAsnFull extends ListsListItemAsnFull {
   @override
-  final String? comment;
-  @override
   final String createdOn;
   @override
   final String id;
   @override
   final String modifiedOn;
+  @override
+  final String? comment;
   @override
   final int asn;
 
@@ -23,10 +23,10 @@ class _$ListsListItemAsnFull extends ListsListItemAsnFull {
       (ListsListItemAsnFullBuilder()..update(updates))._build();
 
   _$ListsListItemAsnFull._(
-      {this.comment,
-      required this.createdOn,
+      {required this.createdOn,
       required this.id,
       required this.modifiedOn,
+      this.comment,
       required this.asn})
       : super._();
   @override
@@ -42,20 +42,20 @@ class _$ListsListItemAsnFull extends ListsListItemAsnFull {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is ListsListItemAsnFull &&
-        comment == other.comment &&
         createdOn == other.createdOn &&
         id == other.id &&
         modifiedOn == other.modifiedOn &&
+        comment == other.comment &&
         asn == other.asn;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, comment.hashCode);
     _$hash = $jc(_$hash, createdOn.hashCode);
     _$hash = $jc(_$hash, id.hashCode);
     _$hash = $jc(_$hash, modifiedOn.hashCode);
+    _$hash = $jc(_$hash, comment.hashCode);
     _$hash = $jc(_$hash, asn.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
@@ -64,10 +64,10 @@ class _$ListsListItemAsnFull extends ListsListItemAsnFull {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'ListsListItemAsnFull')
-          ..add('comment', comment)
           ..add('createdOn', createdOn)
           ..add('id', id)
           ..add('modifiedOn', modifiedOn)
+          ..add('comment', comment)
           ..add('asn', asn))
         .toString();
   }
@@ -79,10 +79,6 @@ class ListsListItemAsnFullBuilder
         ListsItemBaseBuilder,
         ListsListItemAsnObjectBuilder {
   _$ListsListItemAsnFull? _$v;
-
-  String? _comment;
-  String? get comment => _$this._comment;
-  set comment(covariant String? comment) => _$this._comment = comment;
 
   String? _createdOn;
   String? get createdOn => _$this._createdOn;
@@ -97,6 +93,10 @@ class ListsListItemAsnFullBuilder
   set modifiedOn(covariant String? modifiedOn) =>
       _$this._modifiedOn = modifiedOn;
 
+  String? _comment;
+  String? get comment => _$this._comment;
+  set comment(covariant String? comment) => _$this._comment = comment;
+
   int? _asn;
   int? get asn => _$this._asn;
   set asn(covariant int? asn) => _$this._asn = asn;
@@ -108,10 +108,10 @@ class ListsListItemAsnFullBuilder
   ListsListItemAsnFullBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _comment = $v.comment;
       _createdOn = $v.createdOn;
       _id = $v.id;
       _modifiedOn = $v.modifiedOn;
+      _comment = $v.comment;
       _asn = $v.asn;
       _$v = null;
     }
@@ -135,13 +135,13 @@ class ListsListItemAsnFullBuilder
   _$ListsListItemAsnFull _build() {
     final _$result = _$v ??
         _$ListsListItemAsnFull._(
-          comment: comment,
           createdOn: BuiltValueNullFieldError.checkNotNull(
               createdOn, r'ListsListItemAsnFull', 'createdOn'),
           id: BuiltValueNullFieldError.checkNotNull(
               id, r'ListsListItemAsnFull', 'id'),
           modifiedOn: BuiltValueNullFieldError.checkNotNull(
               modifiedOn, r'ListsListItemAsnFull', 'modifiedOn'),
+          comment: comment,
           asn: BuiltValueNullFieldError.checkNotNull(
               asn, r'ListsListItemAsnFull', 'asn'),
         );

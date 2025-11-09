@@ -8,9 +8,9 @@ import 'package:cloudflare_dart/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**errors** | [**BuiltList&lt;BrapiPostContent200ResponseErrorsInner&gt;**](BrapiPostContent200ResponseErrorsInner.md) |  | [optional] 
 **result** | [**BuiltList&lt;BrapiPostScrape200ResponseResultInner&gt;**](BrapiPostScrape200ResponseResultInner.md) |  | 
 **status** | **bool** | Response status | 
+**errors** | [**BuiltList&lt;BrapiPostContent200ResponseErrorsInner&gt;**](BrapiPostContent200ResponseErrorsInner.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

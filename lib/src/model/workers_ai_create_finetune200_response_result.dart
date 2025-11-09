@@ -12,19 +12,16 @@ part 'workers_ai_create_finetune200_response_result.g.dart';
 ///
 /// Properties:
 /// * [createdAt] 
-/// * [description] 
 /// * [id] 
 /// * [model] 
 /// * [modifiedAt] 
 /// * [name] 
 /// * [public] 
+/// * [description] 
 @BuiltValue()
 abstract class WorkersAiCreateFinetune200ResponseResult implements Built<WorkersAiCreateFinetune200ResponseResult, WorkersAiCreateFinetune200ResponseResultBuilder> {
   @BuiltValueField(wireName: r'created_at')
   DateTime get createdAt;
-
-  @BuiltValueField(wireName: r'description')
-  String? get description;
 
   @BuiltValueField(wireName: r'id')
   String get id;
@@ -40,6 +37,9 @@ abstract class WorkersAiCreateFinetune200ResponseResult implements Built<Workers
 
   @BuiltValueField(wireName: r'public')
   bool get public;
+
+  @BuiltValueField(wireName: r'description')
+  String? get description;
 
   WorkersAiCreateFinetune200ResponseResult._();
 
@@ -69,13 +69,6 @@ class _$WorkersAiCreateFinetune200ResponseResultSerializer implements PrimitiveS
       object.createdAt,
       specifiedType: const FullType(DateTime),
     );
-    if (object.description != null) {
-      yield r'description';
-      yield serializers.serialize(
-        object.description,
-        specifiedType: const FullType(String),
-      );
-    }
     yield r'id';
     yield serializers.serialize(
       object.id,
@@ -101,6 +94,13 @@ class _$WorkersAiCreateFinetune200ResponseResultSerializer implements PrimitiveS
       object.public,
       specifiedType: const FullType(bool),
     );
+    if (object.description != null) {
+      yield r'description';
+      yield serializers.serialize(
+        object.description,
+        specifiedType: const FullType(String),
+      );
+    }
   }
 
   @override
@@ -130,13 +130,6 @@ class _$WorkersAiCreateFinetune200ResponseResultSerializer implements PrimitiveS
             specifiedType: const FullType(DateTime),
           ) as DateTime;
           result.createdAt = valueDes;
-          break;
-        case r'description':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.description = valueDes;
           break;
         case r'id':
           final valueDes = serializers.deserialize(
@@ -172,6 +165,13 @@ class _$WorkersAiCreateFinetune200ResponseResultSerializer implements PrimitiveS
             specifiedType: const FullType(bool),
           ) as bool;
           result.public = valueDes;
+          break;
+        case r'description':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.description = valueDes;
           break;
         default:
           unhandled.add(key);

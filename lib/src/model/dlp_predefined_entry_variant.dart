@@ -13,14 +13,11 @@ part 'dlp_predefined_entry_variant.g.dart';
 /// DlpPredefinedEntryVariant
 ///
 /// Properties:
-/// * [description] 
 /// * [topicType] 
 /// * [type] 
+/// * [description] 
 @BuiltValue()
 abstract class DlpPredefinedEntryVariant implements Built<DlpPredefinedEntryVariant, DlpPredefinedEntryVariantBuilder> {
-  @BuiltValueField(wireName: r'description')
-  String? get description;
-
   @BuiltValueField(wireName: r'topic_type')
   DlpPromptTopicType get topicType;
   // enum topicTypeEnum {  Intent,  Content,  };
@@ -28,6 +25,9 @@ abstract class DlpPredefinedEntryVariant implements Built<DlpPredefinedEntryVari
   @BuiltValueField(wireName: r'type')
   DlpPredefinedEntryVariantTypeEnum get type;
   // enum typeEnum {  PromptTopic,  };
+
+  @BuiltValueField(wireName: r'description')
+  String? get description;
 
   DlpPredefinedEntryVariant._();
 
@@ -52,13 +52,6 @@ class _$DlpPredefinedEntryVariantSerializer implements PrimitiveSerializer<DlpPr
     DlpPredefinedEntryVariant object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
-    if (object.description != null) {
-      yield r'description';
-      yield serializers.serialize(
-        object.description,
-        specifiedType: const FullType.nullable(String),
-      );
-    }
     yield r'topic_type';
     yield serializers.serialize(
       object.topicType,
@@ -69,6 +62,13 @@ class _$DlpPredefinedEntryVariantSerializer implements PrimitiveSerializer<DlpPr
       object.type,
       specifiedType: const FullType(DlpPredefinedEntryVariantTypeEnum),
     );
+    if (object.description != null) {
+      yield r'description';
+      yield serializers.serialize(
+        object.description,
+        specifiedType: const FullType.nullable(String),
+      );
+    }
   }
 
   @override
@@ -92,14 +92,6 @@ class _$DlpPredefinedEntryVariantSerializer implements PrimitiveSerializer<DlpPr
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'description':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
-          if (valueDes == null) continue;
-          result.description = valueDes;
-          break;
         case r'topic_type':
           final valueDes = serializers.deserialize(
             value,
@@ -113,6 +105,14 @@ class _$DlpPredefinedEntryVariantSerializer implements PrimitiveSerializer<DlpPr
             specifiedType: const FullType(DlpPredefinedEntryVariantTypeEnum),
           ) as DlpPredefinedEntryVariantTypeEnum;
           result.type = valueDes;
+          break;
+        case r'description':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType.nullable(String),
+          ) as String?;
+          if (valueDes == null) continue;
+          result.description = valueDes;
           break;
         default:
           unhandled.add(key);

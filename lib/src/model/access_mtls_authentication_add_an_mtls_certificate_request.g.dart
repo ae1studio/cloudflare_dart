@@ -9,11 +9,11 @@ part of 'access_mtls_authentication_add_an_mtls_certificate_request.dart';
 class _$AccessMtlsAuthenticationAddAnMtlsCertificateRequest
     extends AccessMtlsAuthenticationAddAnMtlsCertificateRequest {
   @override
-  final BuiltList<String>? associatedHostnames;
-  @override
   final String certificate;
   @override
   final String name;
+  @override
+  final BuiltList<String>? associatedHostnames;
 
   factory _$AccessMtlsAuthenticationAddAnMtlsCertificateRequest(
           [void Function(
@@ -24,7 +24,7 @@ class _$AccessMtlsAuthenticationAddAnMtlsCertificateRequest
           ._build();
 
   _$AccessMtlsAuthenticationAddAnMtlsCertificateRequest._(
-      {this.associatedHostnames, required this.certificate, required this.name})
+      {required this.certificate, required this.name, this.associatedHostnames})
       : super._();
   @override
   AccessMtlsAuthenticationAddAnMtlsCertificateRequest rebuild(
@@ -42,17 +42,17 @@ class _$AccessMtlsAuthenticationAddAnMtlsCertificateRequest
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is AccessMtlsAuthenticationAddAnMtlsCertificateRequest &&
-        associatedHostnames == other.associatedHostnames &&
         certificate == other.certificate &&
-        name == other.name;
+        name == other.name &&
+        associatedHostnames == other.associatedHostnames;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, associatedHostnames.hashCode);
     _$hash = $jc(_$hash, certificate.hashCode);
     _$hash = $jc(_$hash, name.hashCode);
+    _$hash = $jc(_$hash, associatedHostnames.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -61,9 +61,9 @@ class _$AccessMtlsAuthenticationAddAnMtlsCertificateRequest
   String toString() {
     return (newBuiltValueToStringHelper(
             r'AccessMtlsAuthenticationAddAnMtlsCertificateRequest')
-          ..add('associatedHostnames', associatedHostnames)
           ..add('certificate', certificate)
-          ..add('name', name))
+          ..add('name', name)
+          ..add('associatedHostnames', associatedHostnames))
         .toString();
   }
 }
@@ -74,12 +74,6 @@ class AccessMtlsAuthenticationAddAnMtlsCertificateRequestBuilder
             AccessMtlsAuthenticationAddAnMtlsCertificateRequestBuilder> {
   _$AccessMtlsAuthenticationAddAnMtlsCertificateRequest? _$v;
 
-  ListBuilder<String>? _associatedHostnames;
-  ListBuilder<String> get associatedHostnames =>
-      _$this._associatedHostnames ??= ListBuilder<String>();
-  set associatedHostnames(ListBuilder<String>? associatedHostnames) =>
-      _$this._associatedHostnames = associatedHostnames;
-
   String? _certificate;
   String? get certificate => _$this._certificate;
   set certificate(String? certificate) => _$this._certificate = certificate;
@@ -88,6 +82,12 @@ class AccessMtlsAuthenticationAddAnMtlsCertificateRequestBuilder
   String? get name => _$this._name;
   set name(String? name) => _$this._name = name;
 
+  ListBuilder<String>? _associatedHostnames;
+  ListBuilder<String> get associatedHostnames =>
+      _$this._associatedHostnames ??= ListBuilder<String>();
+  set associatedHostnames(ListBuilder<String>? associatedHostnames) =>
+      _$this._associatedHostnames = associatedHostnames;
+
   AccessMtlsAuthenticationAddAnMtlsCertificateRequestBuilder() {
     AccessMtlsAuthenticationAddAnMtlsCertificateRequest._defaults(this);
   }
@@ -95,9 +95,9 @@ class AccessMtlsAuthenticationAddAnMtlsCertificateRequestBuilder
   AccessMtlsAuthenticationAddAnMtlsCertificateRequestBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _associatedHostnames = $v.associatedHostnames?.toBuilder();
       _certificate = $v.certificate;
       _name = $v.name;
+      _associatedHostnames = $v.associatedHostnames?.toBuilder();
       _$v = null;
     }
     return this;
@@ -123,13 +123,13 @@ class AccessMtlsAuthenticationAddAnMtlsCertificateRequestBuilder
     try {
       _$result = _$v ??
           _$AccessMtlsAuthenticationAddAnMtlsCertificateRequest._(
-            associatedHostnames: _associatedHostnames?.build(),
             certificate: BuiltValueNullFieldError.checkNotNull(
                 certificate,
                 r'AccessMtlsAuthenticationAddAnMtlsCertificateRequest',
                 'certificate'),
             name: BuiltValueNullFieldError.checkNotNull(name,
                 r'AccessMtlsAuthenticationAddAnMtlsCertificateRequest', 'name'),
+            associatedHostnames: _associatedHostnames?.build(),
           );
     } catch (_) {
       late String _$failedField;

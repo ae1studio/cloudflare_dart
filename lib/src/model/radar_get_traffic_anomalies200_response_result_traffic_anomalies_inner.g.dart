@@ -9,14 +9,6 @@ part of 'radar_get_traffic_anomalies200_response_result_traffic_anomalies_inner.
 class _$RadarGetTrafficAnomalies200ResponseResultTrafficAnomaliesInner
     extends RadarGetTrafficAnomalies200ResponseResultTrafficAnomaliesInner {
   @override
-  final RadarGetAnnotations200ResponseResultAnnotationsInnerAsnsDetailsInner?
-      asnDetails;
-  @override
-  final DateTime? endDate;
-  @override
-  final RadarGetAnnotations200ResponseResultAnnotationsInnerAsnsDetailsInnerLocations?
-      locationDetails;
-  @override
   final String startDate;
   @override
   final String status;
@@ -24,6 +16,14 @@ class _$RadarGetTrafficAnomalies200ResponseResultTrafficAnomaliesInner
   final String type;
   @override
   final String uuid;
+  @override
+  final RadarGetAnnotations200ResponseResultAnnotationsInnerAsnsDetailsInner?
+      asnDetails;
+  @override
+  final DateTime? endDate;
+  @override
+  final RadarGetAnnotations200ResponseResultAnnotationsInnerAsnsDetailsInnerLocations?
+      locationDetails;
   @override
   final BuiltList<String>? visibleInDataSources;
 
@@ -36,13 +36,13 @@ class _$RadarGetTrafficAnomalies200ResponseResultTrafficAnomaliesInner
           ._build();
 
   _$RadarGetTrafficAnomalies200ResponseResultTrafficAnomaliesInner._(
-      {this.asnDetails,
-      this.endDate,
-      this.locationDetails,
-      required this.startDate,
+      {required this.startDate,
       required this.status,
       required this.type,
       required this.uuid,
+      this.asnDetails,
+      this.endDate,
+      this.locationDetails,
       this.visibleInDataSources})
       : super._();
   @override
@@ -63,26 +63,26 @@ class _$RadarGetTrafficAnomalies200ResponseResultTrafficAnomaliesInner
     if (identical(other, this)) return true;
     return other
             is RadarGetTrafficAnomalies200ResponseResultTrafficAnomaliesInner &&
-        asnDetails == other.asnDetails &&
-        endDate == other.endDate &&
-        locationDetails == other.locationDetails &&
         startDate == other.startDate &&
         status == other.status &&
         type == other.type &&
         uuid == other.uuid &&
+        asnDetails == other.asnDetails &&
+        endDate == other.endDate &&
+        locationDetails == other.locationDetails &&
         visibleInDataSources == other.visibleInDataSources;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, asnDetails.hashCode);
-    _$hash = $jc(_$hash, endDate.hashCode);
-    _$hash = $jc(_$hash, locationDetails.hashCode);
     _$hash = $jc(_$hash, startDate.hashCode);
     _$hash = $jc(_$hash, status.hashCode);
     _$hash = $jc(_$hash, type.hashCode);
     _$hash = $jc(_$hash, uuid.hashCode);
+    _$hash = $jc(_$hash, asnDetails.hashCode);
+    _$hash = $jc(_$hash, endDate.hashCode);
+    _$hash = $jc(_$hash, locationDetails.hashCode);
     _$hash = $jc(_$hash, visibleInDataSources.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
@@ -92,13 +92,13 @@ class _$RadarGetTrafficAnomalies200ResponseResultTrafficAnomaliesInner
   String toString() {
     return (newBuiltValueToStringHelper(
             r'RadarGetTrafficAnomalies200ResponseResultTrafficAnomaliesInner')
-          ..add('asnDetails', asnDetails)
-          ..add('endDate', endDate)
-          ..add('locationDetails', locationDetails)
           ..add('startDate', startDate)
           ..add('status', status)
           ..add('type', type)
           ..add('uuid', uuid)
+          ..add('asnDetails', asnDetails)
+          ..add('endDate', endDate)
+          ..add('locationDetails', locationDetails)
           ..add('visibleInDataSources', visibleInDataSources))
         .toString();
   }
@@ -109,6 +109,22 @@ class RadarGetTrafficAnomalies200ResponseResultTrafficAnomaliesInnerBuilder
         Builder<RadarGetTrafficAnomalies200ResponseResultTrafficAnomaliesInner,
             RadarGetTrafficAnomalies200ResponseResultTrafficAnomaliesInnerBuilder> {
   _$RadarGetTrafficAnomalies200ResponseResultTrafficAnomaliesInner? _$v;
+
+  String? _startDate;
+  String? get startDate => _$this._startDate;
+  set startDate(String? startDate) => _$this._startDate = startDate;
+
+  String? _status;
+  String? get status => _$this._status;
+  set status(String? status) => _$this._status = status;
+
+  String? _type;
+  String? get type => _$this._type;
+  set type(String? type) => _$this._type = type;
+
+  String? _uuid;
+  String? get uuid => _$this._uuid;
+  set uuid(String? uuid) => _$this._uuid = uuid;
 
   RadarGetAnnotations200ResponseResultAnnotationsInnerAsnsDetailsInnerBuilder?
       _asnDetails;
@@ -134,22 +150,6 @@ class RadarGetTrafficAnomalies200ResponseResultTrafficAnomaliesInnerBuilder
               locationDetails) =>
       _$this._locationDetails = locationDetails;
 
-  String? _startDate;
-  String? get startDate => _$this._startDate;
-  set startDate(String? startDate) => _$this._startDate = startDate;
-
-  String? _status;
-  String? get status => _$this._status;
-  set status(String? status) => _$this._status = status;
-
-  String? _type;
-  String? get type => _$this._type;
-  set type(String? type) => _$this._type = type;
-
-  String? _uuid;
-  String? get uuid => _$this._uuid;
-  set uuid(String? uuid) => _$this._uuid = uuid;
-
   ListBuilder<String>? _visibleInDataSources;
   ListBuilder<String> get visibleInDataSources =>
       _$this._visibleInDataSources ??= ListBuilder<String>();
@@ -165,13 +165,13 @@ class RadarGetTrafficAnomalies200ResponseResultTrafficAnomaliesInnerBuilder
       get _$this {
     final $v = _$v;
     if ($v != null) {
-      _asnDetails = $v.asnDetails?.toBuilder();
-      _endDate = $v.endDate;
-      _locationDetails = $v.locationDetails?.toBuilder();
       _startDate = $v.startDate;
       _status = $v.status;
       _type = $v.type;
       _uuid = $v.uuid;
+      _asnDetails = $v.asnDetails?.toBuilder();
+      _endDate = $v.endDate;
+      _locationDetails = $v.locationDetails?.toBuilder();
       _visibleInDataSources = $v.visibleInDataSources?.toBuilder();
       _$v = null;
     }
@@ -202,9 +202,6 @@ class RadarGetTrafficAnomalies200ResponseResultTrafficAnomaliesInnerBuilder
     try {
       _$result = _$v ??
           _$RadarGetTrafficAnomalies200ResponseResultTrafficAnomaliesInner._(
-            asnDetails: _asnDetails?.build(),
-            endDate: endDate,
-            locationDetails: _locationDetails?.build(),
             startDate: BuiltValueNullFieldError.checkNotNull(
                 startDate,
                 r'RadarGetTrafficAnomalies200ResponseResultTrafficAnomaliesInner',
@@ -221,6 +218,9 @@ class RadarGetTrafficAnomalies200ResponseResultTrafficAnomaliesInnerBuilder
                 uuid,
                 r'RadarGetTrafficAnomalies200ResponseResultTrafficAnomaliesInner',
                 'uuid'),
+            asnDetails: _asnDetails?.build(),
+            endDate: endDate,
+            locationDetails: _locationDetails?.build(),
             visibleInDataSources: _visibleInDataSources?.build(),
           );
     } catch (_) {
@@ -231,7 +231,6 @@ class RadarGetTrafficAnomalies200ResponseResultTrafficAnomaliesInnerBuilder
 
         _$failedField = 'locationDetails';
         _locationDetails?.build();
-
         _$failedField = 'visibleInDataSources';
         _visibleInDataSources?.build();
       } catch (e) {

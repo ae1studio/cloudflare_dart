@@ -22,15 +22,9 @@ part 'abuse_reports_submit_report_request.g.dart';
 ///
 /// Properties:
 /// * [act] 
-/// * [comments] - Any additional comments about the infringement not exceeding 2000 characters
-/// * [company] - Text not exceeding 100 characters. This field may be released by Cloudflare to third parties such as the Lumen Database (https://lumendatabase.org/).
 /// * [email] - A valid email of the abuse reporter. This field may be released by Cloudflare to third parties such as the Lumen Database (https://lumendatabase.org/).
 /// * [email2] - Should match the value provided in `email`
 /// * [name] - Text not exceeding 255 characters. This field may be released by Cloudflare to third parties such as the Lumen Database (https://lumendatabase.org/).
-/// * [reportedCountry] - Text containing 2 characters
-/// * [reportedUserAgent] - Text not exceeding 255 characters
-/// * [tele] - Text not exceeding 20 characters. This field may be released by Cloudflare to third parties such as the Lumen Database (https://lumendatabase.org/).
-/// * [title] - Text not exceeding 255 characters
 /// * [urls] - A list of valid URLs separated by ‘\\n’ (new line character). The list of the URLs should not exceed 250 URLs. All URLs should have the same hostname. Each URL should be unique. This field may be released by Cloudflare to third parties such as the Lumen Database (https://lumendatabase.org/).
 /// * [address1] - Text not exceeding 100 characters. This field may be released by Cloudflare to third parties such as the Lumen Database (https://lumendatabase.org/).
 /// * [agentName] - The name of the copyright holder. Text not exceeding 60 characters. This field may be released by Cloudflare to third parties such as the Lumen Database (https://lumendatabase.org/).
@@ -46,11 +40,17 @@ part 'abuse_reports_submit_report_request.g.dart';
 /// * [trademarkNumber] - Text not exceeding 1000 characters
 /// * [trademarkOffice] - Text not exceeding 1000 characters
 /// * [trademarkSymbol] - Text not exceeding 1000 characters
+/// * [ncmecNotification] - Notification type based on the abuse type. NOTE: Copyright (DMCA) and Trademark reports cannot be anonymous. 
+/// * [ncseiSubjectRepresentation] - If the submitter is the target of NCSEI in the URLs of the abuse report.
+/// * [comments] - Any additional comments about the infringement not exceeding 2000 characters
+/// * [company] - Text not exceeding 100 characters. This field may be released by Cloudflare to third parties such as the Lumen Database (https://lumendatabase.org/).
+/// * [reportedCountry] - Text containing 2 characters
+/// * [reportedUserAgent] - Text not exceeding 255 characters
+/// * [tele] - Text not exceeding 20 characters. This field may be released by Cloudflare to third parties such as the Lumen Database (https://lumendatabase.org/).
+/// * [title] - Text not exceeding 255 characters
 /// * [destinationIps] - A list of IP addresses separated by ‘\\n’ (new line character). The list of destination IPs should not exceed 30 IP addresses. Each one of the IP addresses ought to be unique.
 /// * [portsProtocols] - A comma separated list of ports and protocols e.g. 80/TCP, 22/UDP. The total size of the field should not exceed 2000 characters. Each individual port/protocol should not exceed 100 characters. The list should not have more than 30 unique ports and protocols.
 /// * [sourceIps] - A list of IP addresses separated by ‘\\n’ (new line character). The list of source IPs should not exceed 30 IP addresses. Each one of the IP addresses ought to be unique.
-/// * [ncmecNotification] - Notification type based on the abuse type. NOTE: Copyright (DMCA) and Trademark reports cannot be anonymous. 
-/// * [ncseiSubjectRepresentation] - If the submitter is the target of NCSEI in the URLs of the abuse report.
 @BuiltValue()
 abstract class AbuseReportsSubmitReportRequest implements Built<AbuseReportsSubmitReportRequest, AbuseReportsSubmitReportRequestBuilder> {
   /// One Of [AbuseReportsCSAMReport], [AbuseReportsDMCAReport], [AbuseReportsGeneralReport], [AbuseReportsNCSEIReport], [AbuseReportsPhishingReport], [AbuseReportsRegistrarWhoisReport], [AbuseReportsThreatReport], [AbuseReportsTrademarkReport]

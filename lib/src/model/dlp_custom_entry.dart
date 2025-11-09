@@ -17,8 +17,8 @@ part 'dlp_custom_entry.g.dart';
 /// * [id] 
 /// * [name] 
 /// * [pattern] 
-/// * [profileId] 
 /// * [updatedAt] 
+/// * [profileId] 
 @BuiltValue(instantiable: false)
 abstract class DlpCustomEntry  {
   @BuiltValueField(wireName: r'created_at')
@@ -36,11 +36,11 @@ abstract class DlpCustomEntry  {
   @BuiltValueField(wireName: r'pattern')
   DlpPattern get pattern;
 
-  @BuiltValueField(wireName: r'profile_id')
-  String? get profileId;
-
   @BuiltValueField(wireName: r'updated_at')
   DateTime get updatedAt;
+
+  @BuiltValueField(wireName: r'profile_id')
+  String? get profileId;
 
   @BuiltValueSerializer(custom: true)
   static Serializer<DlpCustomEntry> get serializer => _$DlpCustomEntrySerializer();
@@ -83,6 +83,11 @@ class _$DlpCustomEntrySerializer implements PrimitiveSerializer<DlpCustomEntry> 
       object.pattern,
       specifiedType: const FullType(DlpPattern),
     );
+    yield r'updated_at';
+    yield serializers.serialize(
+      object.updatedAt,
+      specifiedType: const FullType(DateTime),
+    );
     if (object.profileId != null) {
       yield r'profile_id';
       yield serializers.serialize(
@@ -90,11 +95,6 @@ class _$DlpCustomEntrySerializer implements PrimitiveSerializer<DlpCustomEntry> 
         specifiedType: const FullType.nullable(String),
       );
     }
-    yield r'updated_at';
-    yield serializers.serialize(
-      object.updatedAt,
-      specifiedType: const FullType(DateTime),
-    );
   }
 
   @override
@@ -193,6 +193,13 @@ class _$$DlpCustomEntrySerializer implements PrimitiveSerializer<$DlpCustomEntry
           ) as DlpPattern;
           result.pattern.replace(valueDes);
           break;
+        case r'updated_at':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(DateTime),
+          ) as DateTime;
+          result.updatedAt = valueDes;
+          break;
         case r'profile_id':
           final valueDes = serializers.deserialize(
             value,
@@ -200,13 +207,6 @@ class _$$DlpCustomEntrySerializer implements PrimitiveSerializer<$DlpCustomEntry
           ) as String?;
           if (valueDes == null) continue;
           result.profileId = valueDes;
-          break;
-        case r'updated_at':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
-          result.updatedAt = valueDes;
           break;
         default:
           unhandled.add(key);

@@ -9,7 +9,6 @@ import 'package:cloudflare_dart/api.dart';
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **charset** | **String** |  | 
-**headers** | [**JsonObject**](.md) |  | [optional] 
 **mimeType** | **String** |  | 
 **protocol** | **String** |  | 
 **remoteIPAddress** | **String** |  | 
@@ -20,6 +19,7 @@ Name | Type | Description | Notes
 **status** | **num** |  | 
 **statusText** | **String** |  | 
 **url** | **String** |  | 
+**headers** | [**JsonObject**](.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

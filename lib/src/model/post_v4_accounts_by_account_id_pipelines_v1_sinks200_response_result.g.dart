@@ -82,12 +82,7 @@ class _$PostV4AccountsByAccountIdPipelinesV1Sinks200ResponseResultTypeEnumSerial
 class _$PostV4AccountsByAccountIdPipelinesV1Sinks200ResponseResult
     extends PostV4AccountsByAccountIdPipelinesV1Sinks200ResponseResult {
   @override
-  final PostV4AccountsByAccountIdPipelinesV1Sinks200ResponseResultConfig?
-      config;
-  @override
   final DateTime createdAt;
-  @override
-  final CloudflarePipelinesFormat? format;
   @override
   final String id;
   @override
@@ -95,9 +90,14 @@ class _$PostV4AccountsByAccountIdPipelinesV1Sinks200ResponseResult
   @override
   final String name;
   @override
-  final CloudflarePipelinesConnectionSchema? schema;
-  @override
   final PostV4AccountsByAccountIdPipelinesV1Sinks200ResponseResultTypeEnum type;
+  @override
+  final PostV4AccountsByAccountIdPipelinesV1Sinks200ResponseResultConfig?
+      config;
+  @override
+  final CloudflarePipelinesFormat? format;
+  @override
+  final CloudflarePipelinesConnectionSchema? schema;
 
   factory _$PostV4AccountsByAccountIdPipelinesV1Sinks200ResponseResult(
           [void Function(
@@ -108,14 +108,14 @@ class _$PostV4AccountsByAccountIdPipelinesV1Sinks200ResponseResult
           ._build();
 
   _$PostV4AccountsByAccountIdPipelinesV1Sinks200ResponseResult._(
-      {this.config,
-      required this.createdAt,
-      this.format,
+      {required this.createdAt,
       required this.id,
       required this.modifiedAt,
       required this.name,
-      this.schema,
-      required this.type})
+      required this.type,
+      this.config,
+      this.format,
+      this.schema})
       : super._();
   @override
   PostV4AccountsByAccountIdPipelinesV1Sinks200ResponseResult rebuild(
@@ -135,27 +135,27 @@ class _$PostV4AccountsByAccountIdPipelinesV1Sinks200ResponseResult
     if (identical(other, this)) return true;
     return other
             is PostV4AccountsByAccountIdPipelinesV1Sinks200ResponseResult &&
-        config == other.config &&
         createdAt == other.createdAt &&
-        format == other.format &&
         id == other.id &&
         modifiedAt == other.modifiedAt &&
         name == other.name &&
-        schema == other.schema &&
-        type == other.type;
+        type == other.type &&
+        config == other.config &&
+        format == other.format &&
+        schema == other.schema;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, config.hashCode);
     _$hash = $jc(_$hash, createdAt.hashCode);
-    _$hash = $jc(_$hash, format.hashCode);
     _$hash = $jc(_$hash, id.hashCode);
     _$hash = $jc(_$hash, modifiedAt.hashCode);
     _$hash = $jc(_$hash, name.hashCode);
-    _$hash = $jc(_$hash, schema.hashCode);
     _$hash = $jc(_$hash, type.hashCode);
+    _$hash = $jc(_$hash, config.hashCode);
+    _$hash = $jc(_$hash, format.hashCode);
+    _$hash = $jc(_$hash, schema.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -164,14 +164,14 @@ class _$PostV4AccountsByAccountIdPipelinesV1Sinks200ResponseResult
   String toString() {
     return (newBuiltValueToStringHelper(
             r'PostV4AccountsByAccountIdPipelinesV1Sinks200ResponseResult')
-          ..add('config', config)
           ..add('createdAt', createdAt)
-          ..add('format', format)
           ..add('id', id)
           ..add('modifiedAt', modifiedAt)
           ..add('name', name)
-          ..add('schema', schema)
-          ..add('type', type))
+          ..add('type', type)
+          ..add('config', config)
+          ..add('format', format)
+          ..add('schema', schema))
         .toString();
   }
 }
@@ -182,25 +182,9 @@ class PostV4AccountsByAccountIdPipelinesV1Sinks200ResponseResultBuilder
             PostV4AccountsByAccountIdPipelinesV1Sinks200ResponseResultBuilder> {
   _$PostV4AccountsByAccountIdPipelinesV1Sinks200ResponseResult? _$v;
 
-  PostV4AccountsByAccountIdPipelinesV1Sinks200ResponseResultConfigBuilder?
-      _config;
-  PostV4AccountsByAccountIdPipelinesV1Sinks200ResponseResultConfigBuilder
-      get config => _$this._config ??=
-          PostV4AccountsByAccountIdPipelinesV1Sinks200ResponseResultConfigBuilder();
-  set config(
-          PostV4AccountsByAccountIdPipelinesV1Sinks200ResponseResultConfigBuilder?
-              config) =>
-      _$this._config = config;
-
   DateTime? _createdAt;
   DateTime? get createdAt => _$this._createdAt;
   set createdAt(DateTime? createdAt) => _$this._createdAt = createdAt;
-
-  CloudflarePipelinesFormatBuilder? _format;
-  CloudflarePipelinesFormatBuilder get format =>
-      _$this._format ??= CloudflarePipelinesFormatBuilder();
-  set format(CloudflarePipelinesFormatBuilder? format) =>
-      _$this._format = format;
 
   String? _id;
   String? get id => _$this._id;
@@ -214,12 +198,6 @@ class PostV4AccountsByAccountIdPipelinesV1Sinks200ResponseResultBuilder
   String? get name => _$this._name;
   set name(String? name) => _$this._name = name;
 
-  CloudflarePipelinesConnectionSchemaBuilder? _schema;
-  CloudflarePipelinesConnectionSchemaBuilder get schema =>
-      _$this._schema ??= CloudflarePipelinesConnectionSchemaBuilder();
-  set schema(CloudflarePipelinesConnectionSchemaBuilder? schema) =>
-      _$this._schema = schema;
-
   PostV4AccountsByAccountIdPipelinesV1Sinks200ResponseResultTypeEnum? _type;
   PostV4AccountsByAccountIdPipelinesV1Sinks200ResponseResultTypeEnum?
       get type => _$this._type;
@@ -228,6 +206,28 @@ class PostV4AccountsByAccountIdPipelinesV1Sinks200ResponseResultBuilder
               type) =>
       _$this._type = type;
 
+  PostV4AccountsByAccountIdPipelinesV1Sinks200ResponseResultConfigBuilder?
+      _config;
+  PostV4AccountsByAccountIdPipelinesV1Sinks200ResponseResultConfigBuilder
+      get config => _$this._config ??=
+          PostV4AccountsByAccountIdPipelinesV1Sinks200ResponseResultConfigBuilder();
+  set config(
+          PostV4AccountsByAccountIdPipelinesV1Sinks200ResponseResultConfigBuilder?
+              config) =>
+      _$this._config = config;
+
+  CloudflarePipelinesFormatBuilder? _format;
+  CloudflarePipelinesFormatBuilder get format =>
+      _$this._format ??= CloudflarePipelinesFormatBuilder();
+  set format(CloudflarePipelinesFormatBuilder? format) =>
+      _$this._format = format;
+
+  CloudflarePipelinesConnectionSchemaBuilder? _schema;
+  CloudflarePipelinesConnectionSchemaBuilder get schema =>
+      _$this._schema ??= CloudflarePipelinesConnectionSchemaBuilder();
+  set schema(CloudflarePipelinesConnectionSchemaBuilder? schema) =>
+      _$this._schema = schema;
+
   PostV4AccountsByAccountIdPipelinesV1Sinks200ResponseResultBuilder() {
     PostV4AccountsByAccountIdPipelinesV1Sinks200ResponseResult._defaults(this);
   }
@@ -235,14 +235,14 @@ class PostV4AccountsByAccountIdPipelinesV1Sinks200ResponseResultBuilder
   PostV4AccountsByAccountIdPipelinesV1Sinks200ResponseResultBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _config = $v.config?.toBuilder();
       _createdAt = $v.createdAt;
-      _format = $v.format?.toBuilder();
       _id = $v.id;
       _modifiedAt = $v.modifiedAt;
       _name = $v.name;
-      _schema = $v.schema?.toBuilder();
       _type = $v.type;
+      _config = $v.config?.toBuilder();
+      _format = $v.format?.toBuilder();
+      _schema = $v.schema?.toBuilder();
       _$v = null;
     }
     return this;
@@ -271,12 +271,10 @@ class PostV4AccountsByAccountIdPipelinesV1Sinks200ResponseResultBuilder
     try {
       _$result = _$v ??
           _$PostV4AccountsByAccountIdPipelinesV1Sinks200ResponseResult._(
-            config: _config?.build(),
             createdAt: BuiltValueNullFieldError.checkNotNull(
                 createdAt,
                 r'PostV4AccountsByAccountIdPipelinesV1Sinks200ResponseResult',
                 'createdAt'),
-            format: _format?.build(),
             id: BuiltValueNullFieldError.checkNotNull(
                 id,
                 r'PostV4AccountsByAccountIdPipelinesV1Sinks200ResponseResult',
@@ -289,21 +287,21 @@ class PostV4AccountsByAccountIdPipelinesV1Sinks200ResponseResultBuilder
                 name,
                 r'PostV4AccountsByAccountIdPipelinesV1Sinks200ResponseResult',
                 'name'),
-            schema: _schema?.build(),
             type: BuiltValueNullFieldError.checkNotNull(
                 type,
                 r'PostV4AccountsByAccountIdPipelinesV1Sinks200ResponseResult',
                 'type'),
+            config: _config?.build(),
+            format: _format?.build(),
+            schema: _schema?.build(),
           );
     } catch (_) {
       late String _$failedField;
       try {
         _$failedField = 'config';
         _config?.build();
-
         _$failedField = 'format';
         _format?.build();
-
         _$failedField = 'schema';
         _schema?.build();
       } catch (e) {

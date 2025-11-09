@@ -18,15 +18,15 @@ class _$BookmarkApplication1 extends BookmarkApplication1 {
   @override
   final DateTime? updatedAt;
   @override
-  final JsonObject? appLauncherVisible;
-  @override
   final JsonObject? domain;
+  @override
+  final String type;
+  @override
+  final JsonObject? appLauncherVisible;
   @override
   final String? logoUrl;
   @override
   final String? name;
-  @override
-  final String type;
 
   factory _$BookmarkApplication1(
           [void Function(BookmarkApplication1Builder)? updates]) =>
@@ -38,11 +38,11 @@ class _$BookmarkApplication1 extends BookmarkApplication1 {
       this.id,
       this.scimConfig,
       this.updatedAt,
-      this.appLauncherVisible,
       this.domain,
+      required this.type,
+      this.appLauncherVisible,
       this.logoUrl,
-      this.name,
-      required this.type})
+      this.name})
       : super._();
   @override
   BookmarkApplication1 rebuild(
@@ -62,11 +62,11 @@ class _$BookmarkApplication1 extends BookmarkApplication1 {
         id == other.id &&
         scimConfig == other.scimConfig &&
         updatedAt == other.updatedAt &&
-        appLauncherVisible == other.appLauncherVisible &&
         domain == other.domain &&
+        type == other.type &&
+        appLauncherVisible == other.appLauncherVisible &&
         logoUrl == other.logoUrl &&
-        name == other.name &&
-        type == other.type;
+        name == other.name;
   }
 
   @override
@@ -77,11 +77,11 @@ class _$BookmarkApplication1 extends BookmarkApplication1 {
     _$hash = $jc(_$hash, id.hashCode);
     _$hash = $jc(_$hash, scimConfig.hashCode);
     _$hash = $jc(_$hash, updatedAt.hashCode);
-    _$hash = $jc(_$hash, appLauncherVisible.hashCode);
     _$hash = $jc(_$hash, domain.hashCode);
+    _$hash = $jc(_$hash, type.hashCode);
+    _$hash = $jc(_$hash, appLauncherVisible.hashCode);
     _$hash = $jc(_$hash, logoUrl.hashCode);
     _$hash = $jc(_$hash, name.hashCode);
-    _$hash = $jc(_$hash, type.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -94,11 +94,11 @@ class _$BookmarkApplication1 extends BookmarkApplication1 {
           ..add('id', id)
           ..add('scimConfig', scimConfig)
           ..add('updatedAt', updatedAt)
-          ..add('appLauncherVisible', appLauncherVisible)
           ..add('domain', domain)
+          ..add('type', type)
+          ..add('appLauncherVisible', appLauncherVisible)
           ..add('logoUrl', logoUrl)
-          ..add('name', name)
-          ..add('type', type))
+          ..add('name', name))
         .toString();
   }
 }
@@ -132,14 +132,18 @@ class BookmarkApplication1Builder
   DateTime? get updatedAt => _$this._updatedAt;
   set updatedAt(covariant DateTime? updatedAt) => _$this._updatedAt = updatedAt;
 
+  JsonObject? _domain;
+  JsonObject? get domain => _$this._domain;
+  set domain(covariant JsonObject? domain) => _$this._domain = domain;
+
+  String? _type;
+  String? get type => _$this._type;
+  set type(covariant String? type) => _$this._type = type;
+
   JsonObject? _appLauncherVisible;
   JsonObject? get appLauncherVisible => _$this._appLauncherVisible;
   set appLauncherVisible(covariant JsonObject? appLauncherVisible) =>
       _$this._appLauncherVisible = appLauncherVisible;
-
-  JsonObject? _domain;
-  JsonObject? get domain => _$this._domain;
-  set domain(covariant JsonObject? domain) => _$this._domain = domain;
 
   String? _logoUrl;
   String? get logoUrl => _$this._logoUrl;
@@ -148,10 +152,6 @@ class BookmarkApplication1Builder
   String? _name;
   String? get name => _$this._name;
   set name(covariant String? name) => _$this._name = name;
-
-  String? _type;
-  String? get type => _$this._type;
-  set type(covariant String? type) => _$this._type = type;
 
   BookmarkApplication1Builder() {
     BookmarkApplication1._defaults(this);
@@ -165,11 +165,11 @@ class BookmarkApplication1Builder
       _id = $v.id;
       _scimConfig = $v.scimConfig?.toBuilder();
       _updatedAt = $v.updatedAt;
-      _appLauncherVisible = $v.appLauncherVisible;
       _domain = $v.domain;
+      _type = $v.type;
+      _appLauncherVisible = $v.appLauncherVisible;
       _logoUrl = $v.logoUrl;
       _name = $v.name;
-      _type = $v.type;
       _$v = null;
     }
     return this;
@@ -199,12 +199,12 @@ class BookmarkApplication1Builder
             id: id,
             scimConfig: _scimConfig?.build(),
             updatedAt: updatedAt,
-            appLauncherVisible: appLauncherVisible,
             domain: domain,
-            logoUrl: logoUrl,
-            name: name,
             type: BuiltValueNullFieldError.checkNotNull(
                 type, r'BookmarkApplication1', 'type'),
+            appLauncherVisible: appLauncherVisible,
+            logoUrl: logoUrl,
+            name: name,
           );
     } catch (_) {
       late String _$failedField;

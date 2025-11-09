@@ -16,25 +16,41 @@ part 'magic_ipsec_tunnel.g.dart';
 /// MagicIpsecTunnel
 ///
 /// Properties:
+/// * [cloudflareEndpoint] - The IP address assigned to the Cloudflare side of the IPsec tunnel.
+/// * [id] - Identifier
+/// * [interfaceAddress] - A 31-bit prefix (/31 in CIDR notation) supporting two hosts, one for each side of the tunnel. Select the subnet from the following private IP space: 10.0.0.0–10.255.255.255, 172.16.0.0–172.31.255.255, 192.168.0.0–192.168.255.255.
+/// * [name] - The name of the IPsec tunnel. The name cannot share a name with other tunnels.
 /// * [allowNullCipher] - When `true`, the tunnel can use a null-cipher (`ENCR_NULL`) in the ESP tunnel (Phase 2).
 /// * [automaticReturnRouting] - True if automatic stateful return routing should be enabled for a tunnel, false otherwise.
 /// * [bgp] 
 /// * [bgpStatus] 
-/// * [cloudflareEndpoint] - The IP address assigned to the Cloudflare side of the IPsec tunnel.
 /// * [createdOn] - The date and time the tunnel was created.
 /// * [customRemoteIdentities] 
 /// * [customerEndpoint] - The IP address assigned to the customer side of the IPsec tunnel. Not required, but must be set for proactive traceroutes to work.
 /// * [description] - An optional description forthe IPsec tunnel.
 /// * [healthCheck] 
-/// * [id] - Identifier
-/// * [interfaceAddress] - A 31-bit prefix (/31 in CIDR notation) supporting two hosts, one for each side of the tunnel. Select the subnet from the following private IP space: 10.0.0.0–10.255.255.255, 172.16.0.0–172.31.255.255, 192.168.0.0–192.168.255.255.
 /// * [interfaceAddress6] - A 127 bit IPV6 prefix from within the virtual_subnet6 prefix space with the address being the first IP of the subnet and not same as the address of virtual_subnet6. Eg if virtual_subnet6 is 2606:54c1:7:0:a9fe:12d2::/127 , interface_address6 could be 2606:54c1:7:0:a9fe:12d2:1:200/127
 /// * [modifiedOn] - The date and time the tunnel was last modified.
-/// * [name] - The name of the IPsec tunnel. The name cannot share a name with other tunnels.
 /// * [pskMetadata] 
 /// * [replayProtection] - If `true`, then IPsec replay protection will be supported in the Cloudflare-to-customer direction.
 @BuiltValue()
 abstract class MagicIpsecTunnel implements Built<MagicIpsecTunnel, MagicIpsecTunnelBuilder> {
+  /// The IP address assigned to the Cloudflare side of the IPsec tunnel.
+  @BuiltValueField(wireName: r'cloudflare_endpoint')
+  String get cloudflareEndpoint;
+
+  /// Identifier
+  @BuiltValueField(wireName: r'id')
+  String get id;
+
+  /// A 31-bit prefix (/31 in CIDR notation) supporting two hosts, one for each side of the tunnel. Select the subnet from the following private IP space: 10.0.0.0–10.255.255.255, 172.16.0.0–172.31.255.255, 192.168.0.0–192.168.255.255.
+  @BuiltValueField(wireName: r'interface_address')
+  String get interfaceAddress;
+
+  /// The name of the IPsec tunnel. The name cannot share a name with other tunnels.
+  @BuiltValueField(wireName: r'name')
+  String get name;
+
   /// When `true`, the tunnel can use a null-cipher (`ENCR_NULL`) in the ESP tunnel (Phase 2).
   @BuiltValueField(wireName: r'allow_null_cipher')
   bool? get allowNullCipher;
@@ -48,10 +64,6 @@ abstract class MagicIpsecTunnel implements Built<MagicIpsecTunnel, MagicIpsecTun
 
   @BuiltValueField(wireName: r'bgp_status')
   MagicBgpStatusWithState? get bgpStatus;
-
-  /// The IP address assigned to the Cloudflare side of the IPsec tunnel.
-  @BuiltValueField(wireName: r'cloudflare_endpoint')
-  String get cloudflareEndpoint;
 
   /// The date and time the tunnel was created.
   @BuiltValueField(wireName: r'created_on')
@@ -71,14 +83,6 @@ abstract class MagicIpsecTunnel implements Built<MagicIpsecTunnel, MagicIpsecTun
   @BuiltValueField(wireName: r'health_check')
   MagicTunnelHealthCheck? get healthCheck;
 
-  /// Identifier
-  @BuiltValueField(wireName: r'id')
-  String get id;
-
-  /// A 31-bit prefix (/31 in CIDR notation) supporting two hosts, one for each side of the tunnel. Select the subnet from the following private IP space: 10.0.0.0–10.255.255.255, 172.16.0.0–172.31.255.255, 192.168.0.0–192.168.255.255.
-  @BuiltValueField(wireName: r'interface_address')
-  String get interfaceAddress;
-
   /// A 127 bit IPV6 prefix from within the virtual_subnet6 prefix space with the address being the first IP of the subnet and not same as the address of virtual_subnet6. Eg if virtual_subnet6 is 2606:54c1:7:0:a9fe:12d2::/127 , interface_address6 could be 2606:54c1:7:0:a9fe:12d2:1:200/127
   @BuiltValueField(wireName: r'interface_address6')
   String? get interfaceAddress6;
@@ -86,10 +90,6 @@ abstract class MagicIpsecTunnel implements Built<MagicIpsecTunnel, MagicIpsecTun
   /// The date and time the tunnel was last modified.
   @BuiltValueField(wireName: r'modified_on')
   DateTime? get modifiedOn;
-
-  /// The name of the IPsec tunnel. The name cannot share a name with other tunnels.
-  @BuiltValueField(wireName: r'name')
-  String get name;
 
   @BuiltValueField(wireName: r'psk_metadata')
   MagicPskMetadata? get pskMetadata;
@@ -123,6 +123,26 @@ class _$MagicIpsecTunnelSerializer implements PrimitiveSerializer<MagicIpsecTunn
     MagicIpsecTunnel object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    yield r'cloudflare_endpoint';
+    yield serializers.serialize(
+      object.cloudflareEndpoint,
+      specifiedType: const FullType(String),
+    );
+    yield r'id';
+    yield serializers.serialize(
+      object.id,
+      specifiedType: const FullType(String),
+    );
+    yield r'interface_address';
+    yield serializers.serialize(
+      object.interfaceAddress,
+      specifiedType: const FullType(String),
+    );
+    yield r'name';
+    yield serializers.serialize(
+      object.name,
+      specifiedType: const FullType(String),
+    );
     if (object.allowNullCipher != null) {
       yield r'allow_null_cipher';
       yield serializers.serialize(
@@ -151,11 +171,6 @@ class _$MagicIpsecTunnelSerializer implements PrimitiveSerializer<MagicIpsecTunn
         specifiedType: const FullType(MagicBgpStatusWithState),
       );
     }
-    yield r'cloudflare_endpoint';
-    yield serializers.serialize(
-      object.cloudflareEndpoint,
-      specifiedType: const FullType(String),
-    );
     if (object.createdOn != null) {
       yield r'created_on';
       yield serializers.serialize(
@@ -191,16 +206,6 @@ class _$MagicIpsecTunnelSerializer implements PrimitiveSerializer<MagicIpsecTunn
         specifiedType: const FullType(MagicTunnelHealthCheck),
       );
     }
-    yield r'id';
-    yield serializers.serialize(
-      object.id,
-      specifiedType: const FullType(String),
-    );
-    yield r'interface_address';
-    yield serializers.serialize(
-      object.interfaceAddress,
-      specifiedType: const FullType(String),
-    );
     if (object.interfaceAddress6 != null) {
       yield r'interface_address6';
       yield serializers.serialize(
@@ -215,11 +220,6 @@ class _$MagicIpsecTunnelSerializer implements PrimitiveSerializer<MagicIpsecTunn
         specifiedType: const FullType(DateTime),
       );
     }
-    yield r'name';
-    yield serializers.serialize(
-      object.name,
-      specifiedType: const FullType(String),
-    );
     if (object.pskMetadata != null) {
       yield r'psk_metadata';
       yield serializers.serialize(
@@ -257,6 +257,34 @@ class _$MagicIpsecTunnelSerializer implements PrimitiveSerializer<MagicIpsecTunn
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
+        case r'cloudflare_endpoint':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.cloudflareEndpoint = valueDes;
+          break;
+        case r'id':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.id = valueDes;
+          break;
+        case r'interface_address':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.interfaceAddress = valueDes;
+          break;
+        case r'name':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.name = valueDes;
+          break;
         case r'allow_null_cipher':
           final valueDes = serializers.deserialize(
             value,
@@ -284,13 +312,6 @@ class _$MagicIpsecTunnelSerializer implements PrimitiveSerializer<MagicIpsecTunn
             specifiedType: const FullType(MagicBgpStatusWithState),
           ) as MagicBgpStatusWithState;
           result.bgpStatus.replace(valueDes);
-          break;
-        case r'cloudflare_endpoint':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.cloudflareEndpoint = valueDes;
           break;
         case r'created_on':
           final valueDes = serializers.deserialize(
@@ -327,20 +348,6 @@ class _$MagicIpsecTunnelSerializer implements PrimitiveSerializer<MagicIpsecTunn
           ) as MagicTunnelHealthCheck;
           result.healthCheck.replace(valueDes);
           break;
-        case r'id':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.id = valueDes;
-          break;
-        case r'interface_address':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.interfaceAddress = valueDes;
-          break;
         case r'interface_address6':
           final valueDes = serializers.deserialize(
             value,
@@ -354,13 +361,6 @@ class _$MagicIpsecTunnelSerializer implements PrimitiveSerializer<MagicIpsecTunn
             specifiedType: const FullType(DateTime),
           ) as DateTime;
           result.modifiedOn = valueDes;
-          break;
-        case r'name':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.name = valueDes;
           break;
         case r'psk_metadata':
           final valueDes = serializers.deserialize(

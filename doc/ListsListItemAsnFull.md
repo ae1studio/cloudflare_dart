@@ -9,10 +9,10 @@ import 'package:cloudflare_dart/api.dart';
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **asn** | **int** | Defines a non-negative 32 bit integer. | 
-**comment** | **String** | Defines an informative summary of the list item. | [optional] 
 **createdOn** | **String** | The RFC 3339 timestamp of when the list was created. | 
 **id** | **String** | Defines the unique ID of the item in the List. | 
 **modifiedOn** | **String** | The RFC 3339 timestamp of when the list was last modified. | 
+**comment** | **String** | Defines an informative summary of the list item. | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -10,8 +10,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **name** | **String** | A JavaScript variable name for the binding. | 
 **namespace** | **String** | The name of the dispatch namespace. | 
-**outbound** | [**WorkersBindingKindDispatchNamespaceOutbound**](WorkersBindingKindDispatchNamespaceOutbound.md) |  | [optional] 
 **type** | **String** | The kind of resource that the binding provides. | 
+**outbound** | [**WorkersBindingKindDispatchNamespaceOutbound**](WorkersBindingKindDispatchNamespaceOutbound.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

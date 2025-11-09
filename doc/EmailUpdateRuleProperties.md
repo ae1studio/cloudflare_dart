@@ -9,8 +9,8 @@ import 'package:cloudflare_dart/api.dart';
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **actions** | [**BuiltList&lt;EmailRuleAction&gt;**](EmailRuleAction.md) | List actions patterns. | 
-**enabled** | **bool** | Routing rule status. | [optional] [default to true]
 **matchers** | [**BuiltList&lt;EmailRuleMatcher&gt;**](EmailRuleMatcher.md) | Matching patterns to forward to your actions. | 
+**enabled** | **bool** | Routing rule status. | [optional] [default to true]
 **name** | **String** | Routing rule name. | [optional] 
 **priority** | **num** | Priority of the routing rule. | [optional] [default to 0]
 

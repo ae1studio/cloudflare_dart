@@ -8,9 +8,9 @@ import 'package:cloudflare_dart/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**serverId** | **String** | server id | 
 **defaultDisabled** | **bool** |  | [optional] [default to false]
 **onBehalf** | **bool** |  | [optional] [default to true]
-**serverId** | **String** | server id | 
 **updatedPrompts** | [**BuiltList&lt;McpPortalsApiCreatePortalsRequestServersInnerUpdatedPromptsInner&gt;**](McpPortalsApiCreatePortalsRequestServersInnerUpdatedPromptsInner.md) |  | [optional] 
 **updatedTools** | [**BuiltList&lt;McpPortalsApiCreatePortalsRequestServersInnerUpdatedPromptsInner&gt;**](McpPortalsApiCreatePortalsRequestServersInnerUpdatedPromptsInner.md) |  | [optional] 
 

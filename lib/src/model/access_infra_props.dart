@@ -16,8 +16,8 @@ part 'access_infra_props.g.dart';
 ///
 /// Properties:
 /// * [targetCriteria] 
-/// * [name] - The name of the application.
 /// * [type] 
+/// * [name] - The name of the application.
 @BuiltValue(instantiable: false)
 abstract class AccessInfraProps implements AccessAppRespEmbeddedTargetCriteriaInfra {
   /// The name of the application.

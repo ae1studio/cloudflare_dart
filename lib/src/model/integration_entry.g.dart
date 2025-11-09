@@ -65,9 +65,9 @@ class _$IntegrationEntry extends IntegrationEntry {
   @override
   final String name;
   @override
-  final String? profileId;
-  @override
   final DateTime updatedAt;
+  @override
+  final String? profileId;
 
   factory _$IntegrationEntry(
           [void Function(IntegrationEntryBuilder)? updates]) =>
@@ -79,8 +79,8 @@ class _$IntegrationEntry extends IntegrationEntry {
       required this.enabled,
       required this.id,
       required this.name,
-      this.profileId,
-      required this.updatedAt})
+      required this.updatedAt,
+      this.profileId})
       : super._();
   @override
   IntegrationEntry rebuild(void Function(IntegrationEntryBuilder) updates) =>
@@ -99,8 +99,8 @@ class _$IntegrationEntry extends IntegrationEntry {
         enabled == other.enabled &&
         id == other.id &&
         name == other.name &&
-        profileId == other.profileId &&
-        updatedAt == other.updatedAt;
+        updatedAt == other.updatedAt &&
+        profileId == other.profileId;
   }
 
   @override
@@ -111,8 +111,8 @@ class _$IntegrationEntry extends IntegrationEntry {
     _$hash = $jc(_$hash, enabled.hashCode);
     _$hash = $jc(_$hash, id.hashCode);
     _$hash = $jc(_$hash, name.hashCode);
-    _$hash = $jc(_$hash, profileId.hashCode);
     _$hash = $jc(_$hash, updatedAt.hashCode);
+    _$hash = $jc(_$hash, profileId.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -125,8 +125,8 @@ class _$IntegrationEntry extends IntegrationEntry {
           ..add('enabled', enabled)
           ..add('id', id)
           ..add('name', name)
-          ..add('profileId', profileId)
-          ..add('updatedAt', updatedAt))
+          ..add('updatedAt', updatedAt)
+          ..add('profileId', profileId))
         .toString();
   }
 }
@@ -157,13 +157,13 @@ class IntegrationEntryBuilder
   String? get name => _$this._name;
   set name(covariant String? name) => _$this._name = name;
 
-  String? _profileId;
-  String? get profileId => _$this._profileId;
-  set profileId(covariant String? profileId) => _$this._profileId = profileId;
-
   DateTime? _updatedAt;
   DateTime? get updatedAt => _$this._updatedAt;
   set updatedAt(covariant DateTime? updatedAt) => _$this._updatedAt = updatedAt;
+
+  String? _profileId;
+  String? get profileId => _$this._profileId;
+  set profileId(covariant String? profileId) => _$this._profileId = profileId;
 
   IntegrationEntryBuilder() {
     IntegrationEntry._defaults(this);
@@ -177,8 +177,8 @@ class IntegrationEntryBuilder
       _enabled = $v.enabled;
       _id = $v.id;
       _name = $v.name;
-      _profileId = $v.profileId;
       _updatedAt = $v.updatedAt;
+      _profileId = $v.profileId;
       _$v = null;
     }
     return this;
@@ -210,9 +210,9 @@ class IntegrationEntryBuilder
               id, r'IntegrationEntry', 'id'),
           name: BuiltValueNullFieldError.checkNotNull(
               name, r'IntegrationEntry', 'name'),
-          profileId: profileId,
           updatedAt: BuiltValueNullFieldError.checkNotNull(
               updatedAt, r'IntegrationEntry', 'updatedAt'),
+          profileId: profileId,
         );
     replace(_$result);
     return _$result;

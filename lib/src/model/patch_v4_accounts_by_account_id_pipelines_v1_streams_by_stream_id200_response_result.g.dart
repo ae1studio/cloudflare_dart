@@ -11,10 +11,6 @@ class _$PatchV4AccountsByAccountIdPipelinesV1StreamsByStreamId200ResponseResult
   @override
   final DateTime createdAt;
   @override
-  final String? endpoint;
-  @override
-  final CloudflarePipelinesFormat? format;
-  @override
   final GetV4AccountsByAccountIdPipelinesV1Streams200ResponseResultInnerHttp
       http;
   @override
@@ -28,6 +24,10 @@ class _$PatchV4AccountsByAccountIdPipelinesV1StreamsByStreamId200ResponseResult
   @override
   final GetV4AccountsByAccountIdPipelinesV1Streams200ResponseResultInnerWorkerBinding
       workerBinding;
+  @override
+  final String? endpoint;
+  @override
+  final CloudflarePipelinesFormat? format;
 
   factory _$PatchV4AccountsByAccountIdPipelinesV1StreamsByStreamId200ResponseResult(
           [void Function(
@@ -39,14 +39,14 @@ class _$PatchV4AccountsByAccountIdPipelinesV1StreamsByStreamId200ResponseResult
 
   _$PatchV4AccountsByAccountIdPipelinesV1StreamsByStreamId200ResponseResult._(
       {required this.createdAt,
-      this.endpoint,
-      this.format,
       required this.http,
       required this.id,
       required this.modifiedAt,
       required this.name,
       required this.version,
-      required this.workerBinding})
+      required this.workerBinding,
+      this.endpoint,
+      this.format})
       : super._();
   @override
   PatchV4AccountsByAccountIdPipelinesV1StreamsByStreamId200ResponseResult rebuild(
@@ -67,28 +67,28 @@ class _$PatchV4AccountsByAccountIdPipelinesV1StreamsByStreamId200ResponseResult
     return other
             is PatchV4AccountsByAccountIdPipelinesV1StreamsByStreamId200ResponseResult &&
         createdAt == other.createdAt &&
-        endpoint == other.endpoint &&
-        format == other.format &&
         http == other.http &&
         id == other.id &&
         modifiedAt == other.modifiedAt &&
         name == other.name &&
         version == other.version &&
-        workerBinding == other.workerBinding;
+        workerBinding == other.workerBinding &&
+        endpoint == other.endpoint &&
+        format == other.format;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
     _$hash = $jc(_$hash, createdAt.hashCode);
-    _$hash = $jc(_$hash, endpoint.hashCode);
-    _$hash = $jc(_$hash, format.hashCode);
     _$hash = $jc(_$hash, http.hashCode);
     _$hash = $jc(_$hash, id.hashCode);
     _$hash = $jc(_$hash, modifiedAt.hashCode);
     _$hash = $jc(_$hash, name.hashCode);
     _$hash = $jc(_$hash, version.hashCode);
     _$hash = $jc(_$hash, workerBinding.hashCode);
+    _$hash = $jc(_$hash, endpoint.hashCode);
+    _$hash = $jc(_$hash, format.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -98,14 +98,14 @@ class _$PatchV4AccountsByAccountIdPipelinesV1StreamsByStreamId200ResponseResult
     return (newBuiltValueToStringHelper(
             r'PatchV4AccountsByAccountIdPipelinesV1StreamsByStreamId200ResponseResult')
           ..add('createdAt', createdAt)
-          ..add('endpoint', endpoint)
-          ..add('format', format)
           ..add('http', http)
           ..add('id', id)
           ..add('modifiedAt', modifiedAt)
           ..add('name', name)
           ..add('version', version)
-          ..add('workerBinding', workerBinding))
+          ..add('workerBinding', workerBinding)
+          ..add('endpoint', endpoint)
+          ..add('format', format))
         .toString();
   }
 }
@@ -121,16 +121,6 @@ class PatchV4AccountsByAccountIdPipelinesV1StreamsByStreamId200ResponseResultBui
   DateTime? _createdAt;
   DateTime? get createdAt => _$this._createdAt;
   set createdAt(DateTime? createdAt) => _$this._createdAt = createdAt;
-
-  String? _endpoint;
-  String? get endpoint => _$this._endpoint;
-  set endpoint(String? endpoint) => _$this._endpoint = endpoint;
-
-  CloudflarePipelinesFormatBuilder? _format;
-  CloudflarePipelinesFormatBuilder get format =>
-      _$this._format ??= CloudflarePipelinesFormatBuilder();
-  set format(CloudflarePipelinesFormatBuilder? format) =>
-      _$this._format = format;
 
   GetV4AccountsByAccountIdPipelinesV1Streams200ResponseResultInnerHttpBuilder?
       _http;
@@ -168,6 +158,16 @@ class PatchV4AccountsByAccountIdPipelinesV1StreamsByStreamId200ResponseResultBui
               workerBinding) =>
       _$this._workerBinding = workerBinding;
 
+  String? _endpoint;
+  String? get endpoint => _$this._endpoint;
+  set endpoint(String? endpoint) => _$this._endpoint = endpoint;
+
+  CloudflarePipelinesFormatBuilder? _format;
+  CloudflarePipelinesFormatBuilder get format =>
+      _$this._format ??= CloudflarePipelinesFormatBuilder();
+  set format(CloudflarePipelinesFormatBuilder? format) =>
+      _$this._format = format;
+
   PatchV4AccountsByAccountIdPipelinesV1StreamsByStreamId200ResponseResultBuilder() {
     PatchV4AccountsByAccountIdPipelinesV1StreamsByStreamId200ResponseResult
         ._defaults(this);
@@ -178,14 +178,14 @@ class PatchV4AccountsByAccountIdPipelinesV1StreamsByStreamId200ResponseResultBui
     final $v = _$v;
     if ($v != null) {
       _createdAt = $v.createdAt;
-      _endpoint = $v.endpoint;
-      _format = $v.format?.toBuilder();
       _http = $v.http.toBuilder();
       _id = $v.id;
       _modifiedAt = $v.modifiedAt;
       _name = $v.name;
       _version = $v.version;
       _workerBinding = $v.workerBinding.toBuilder();
+      _endpoint = $v.endpoint;
+      _format = $v.format?.toBuilder();
       _$v = null;
     }
     return this;
@@ -223,8 +223,6 @@ class PatchV4AccountsByAccountIdPipelinesV1StreamsByStreamId200ResponseResultBui
                 createdAt,
                 r'PatchV4AccountsByAccountIdPipelinesV1StreamsByStreamId200ResponseResult',
                 'createdAt'),
-            endpoint: endpoint,
-            format: _format?.build(),
             http: http.build(),
             id: BuiltValueNullFieldError.checkNotNull(
                 id,
@@ -243,17 +241,20 @@ class PatchV4AccountsByAccountIdPipelinesV1StreamsByStreamId200ResponseResultBui
                 r'PatchV4AccountsByAccountIdPipelinesV1StreamsByStreamId200ResponseResult',
                 'version'),
             workerBinding: workerBinding.build(),
+            endpoint: endpoint,
+            format: _format?.build(),
           );
     } catch (_) {
       late String _$failedField;
       try {
-        _$failedField = 'format';
-        _format?.build();
         _$failedField = 'http';
         http.build();
 
         _$failedField = 'workerBinding';
         workerBinding.build();
+
+        _$failedField = 'format';
+        _format?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
             r'PatchV4AccountsByAccountIdPipelinesV1StreamsByStreamId200ResponseResult',

@@ -14,20 +14,20 @@ part 'abuse_reports_ncsei_report.g.dart';
 ///
 /// Properties:
 /// * [act] 
-/// * [comments] - Any additional comments about the infringement not exceeding 2000 characters
-/// * [company] - Text not exceeding 100 characters. This field may be released by Cloudflare to third parties such as the Lumen Database (https://lumendatabase.org/).
 /// * [email] - A valid email of the abuse reporter. This field may be released by Cloudflare to third parties such as the Lumen Database (https://lumendatabase.org/).
 /// * [email2] - Should match the value provided in `email`
 /// * [name] - Text not exceeding 255 characters. This field may be released by Cloudflare to third parties such as the Lumen Database (https://lumendatabase.org/).
+/// * [urls] - A list of valid URLs separated by ‘\\n’ (new line character). The list of the URLs should not exceed 250 URLs. All URLs should have the same hostname. Each URL should be unique. This field may be released by Cloudflare to third parties such as the Lumen Database (https://lumendatabase.org/).
+/// * [hostNotification] - Notification type based on the abuse type. NOTE: Copyright (DMCA) and Trademark reports cannot be anonymous. 
+/// * [ncseiSubjectRepresentation] - If the submitter is the target of NCSEI in the URLs of the abuse report.
+/// * [ownerNotification] - Notification type based on the abuse type. NOTE: Copyright (DMCA) and Trademark reports cannot be anonymous. 
+/// * [comments] - Any additional comments about the infringement not exceeding 2000 characters
+/// * [company] - Text not exceeding 100 characters. This field may be released by Cloudflare to third parties such as the Lumen Database (https://lumendatabase.org/).
 /// * [reportedCountry] - Text containing 2 characters
 /// * [reportedUserAgent] - Text not exceeding 255 characters
 /// * [tele] - Text not exceeding 20 characters. This field may be released by Cloudflare to third parties such as the Lumen Database (https://lumendatabase.org/).
 /// * [title] - Text not exceeding 255 characters
-/// * [urls] - A list of valid URLs separated by ‘\\n’ (new line character). The list of the URLs should not exceed 250 URLs. All URLs should have the same hostname. Each URL should be unique. This field may be released by Cloudflare to third parties such as the Lumen Database (https://lumendatabase.org/).
 /// * [country] - Text not exceeding 255 characters. This field may be released by Cloudflare to third parties such as the Lumen Database (https://lumendatabase.org/). 
-/// * [hostNotification] - Notification type based on the abuse type. NOTE: Copyright (DMCA) and Trademark reports cannot be anonymous. 
-/// * [ncseiSubjectRepresentation] - If the submitter is the target of NCSEI in the URLs of the abuse report.
-/// * [ownerNotification] - Notification type based on the abuse type. NOTE: Copyright (DMCA) and Trademark reports cannot be anonymous. 
 @BuiltValue()
 abstract class AbuseReportsNCSEIReport implements AbuseReportsBaseReportFields, Built<AbuseReportsNCSEIReport, AbuseReportsNCSEIReportBuilder> {
   /// Text not exceeding 255 characters. This field may be released by Cloudflare to third parties such as the Lumen Database (https://lumendatabase.org/). 

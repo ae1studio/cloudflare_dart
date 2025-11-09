@@ -60,18 +60,18 @@ class _$DlpPredefinedEntryVariantTypeEnumSerializer
 
 class _$DlpPredefinedEntryVariant extends DlpPredefinedEntryVariant {
   @override
-  final String? description;
-  @override
   final DlpPromptTopicType topicType;
   @override
   final DlpPredefinedEntryVariantTypeEnum type;
+  @override
+  final String? description;
 
   factory _$DlpPredefinedEntryVariant(
           [void Function(DlpPredefinedEntryVariantBuilder)? updates]) =>
       (DlpPredefinedEntryVariantBuilder()..update(updates))._build();
 
   _$DlpPredefinedEntryVariant._(
-      {this.description, required this.topicType, required this.type})
+      {required this.topicType, required this.type, this.description})
       : super._();
   @override
   DlpPredefinedEntryVariant rebuild(
@@ -86,17 +86,17 @@ class _$DlpPredefinedEntryVariant extends DlpPredefinedEntryVariant {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is DlpPredefinedEntryVariant &&
-        description == other.description &&
         topicType == other.topicType &&
-        type == other.type;
+        type == other.type &&
+        description == other.description;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, description.hashCode);
     _$hash = $jc(_$hash, topicType.hashCode);
     _$hash = $jc(_$hash, type.hashCode);
+    _$hash = $jc(_$hash, description.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -104,9 +104,9 @@ class _$DlpPredefinedEntryVariant extends DlpPredefinedEntryVariant {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'DlpPredefinedEntryVariant')
-          ..add('description', description)
           ..add('topicType', topicType)
-          ..add('type', type))
+          ..add('type', type)
+          ..add('description', description))
         .toString();
   }
 }
@@ -116,10 +116,6 @@ class DlpPredefinedEntryVariantBuilder
         Builder<DlpPredefinedEntryVariant, DlpPredefinedEntryVariantBuilder> {
   _$DlpPredefinedEntryVariant? _$v;
 
-  String? _description;
-  String? get description => _$this._description;
-  set description(String? description) => _$this._description = description;
-
   DlpPromptTopicType? _topicType;
   DlpPromptTopicType? get topicType => _$this._topicType;
   set topicType(DlpPromptTopicType? topicType) => _$this._topicType = topicType;
@@ -128,6 +124,10 @@ class DlpPredefinedEntryVariantBuilder
   DlpPredefinedEntryVariantTypeEnum? get type => _$this._type;
   set type(DlpPredefinedEntryVariantTypeEnum? type) => _$this._type = type;
 
+  String? _description;
+  String? get description => _$this._description;
+  set description(String? description) => _$this._description = description;
+
   DlpPredefinedEntryVariantBuilder() {
     DlpPredefinedEntryVariant._defaults(this);
   }
@@ -135,9 +135,9 @@ class DlpPredefinedEntryVariantBuilder
   DlpPredefinedEntryVariantBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _description = $v.description;
       _topicType = $v.topicType;
       _type = $v.type;
+      _description = $v.description;
       _$v = null;
     }
     return this;
@@ -159,11 +159,11 @@ class DlpPredefinedEntryVariantBuilder
   _$DlpPredefinedEntryVariant _build() {
     final _$result = _$v ??
         _$DlpPredefinedEntryVariant._(
-          description: description,
           topicType: BuiltValueNullFieldError.checkNotNull(
               topicType, r'DlpPredefinedEntryVariant', 'topicType'),
           type: BuiltValueNullFieldError.checkNotNull(
               type, r'DlpPredefinedEntryVariant', 'type'),
+          description: description,
         );
     replace(_$result);
     return _$result;

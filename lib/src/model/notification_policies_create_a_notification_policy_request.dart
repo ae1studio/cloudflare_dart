@@ -14,33 +14,22 @@ part 'notification_policies_create_a_notification_policy_request.g.dart';
 /// NotificationPoliciesCreateANotificationPolicyRequest
 ///
 /// Properties:
-/// * [alertInterval] - Optional specification of how often to re-alert from the same incident, not support on all alert types.
 /// * [alertType] 
-/// * [description] - Optional description for the Notification policy.
 /// * [enabled] - Whether or not the Notification policy is enabled.
-/// * [filters] 
 /// * [mechanisms] 
 /// * [name] - Name of the policy.
+/// * [alertInterval] - Optional specification of how often to re-alert from the same incident, not support on all alert types.
+/// * [description] - Optional description for the Notification policy.
+/// * [filters] 
 @BuiltValue()
 abstract class NotificationPoliciesCreateANotificationPolicyRequest implements Built<NotificationPoliciesCreateANotificationPolicyRequest, NotificationPoliciesCreateANotificationPolicyRequestBuilder> {
-  /// Optional specification of how often to re-alert from the same incident, not support on all alert types.
-  @BuiltValueField(wireName: r'alert_interval')
-  String? get alertInterval;
-
   @BuiltValueField(wireName: r'alert_type')
   AaaAlertType get alertType;
   // enum alertTypeEnum {  abuse_report_alert,  access_custom_certificate_expiration_type,  advanced_ddos_attack_l4_alert,  advanced_ddos_attack_l7_alert,  advanced_http_alert_error,  bgp_hijack_notification,  billing_usage_alert,  block_notification_block_removed,  block_notification_new_block,  block_notification_review_rejected,  bot_traffic_basic_alert,  brand_protection_alert,  brand_protection_digest,  clickhouse_alert_fw_anomaly,  clickhouse_alert_fw_ent_anomaly,  cloudforce_one_request_notification,  custom_analytics,  custom_bot_detection_alert,  custom_ssl_certificate_event_type,  dedicated_ssl_certificate_event_type,  device_connectivity_anomaly_alert,  dos_attack_l4,  dos_attack_l7,  expiring_service_token_alert,  failing_logpush_job_disabled_alert,  fbm_auto_advertisement,  fbm_dosd_attack,  fbm_volumetric_attack,  health_check_status_notification,  hostname_aop_custom_certificate_expiration_type,  http_alert_edge_error,  http_alert_origin_error,  image_notification,  image_resizing_notification,  incident_alert,  load_balancing_health_alert,  load_balancing_pool_enablement_alert,  logo_match_alert,  magic_tunnel_health_check_event,  magic_wan_tunnel_health,  maintenance_event_notification,  mtls_certificate_store_certificate_expiration_type,  pages_event_alert,  radar_notification,  real_origin_monitoring,  scriptmonitor_alert_new_code_change_detections,  scriptmonitor_alert_new_hosts,  scriptmonitor_alert_new_malicious_hosts,  scriptmonitor_alert_new_malicious_scripts,  scriptmonitor_alert_new_malicious_url,  scriptmonitor_alert_new_max_length_resource_url,  scriptmonitor_alert_new_resources,  secondary_dns_all_primaries_failing,  secondary_dns_primaries_failing,  secondary_dns_warning,  secondary_dns_zone_successfully_updated,  secondary_dns_zone_validation_warning,  security_insights_alert,  sentinel_alert,  stream_live_notifications,  synthetic_test_latency_alert,  synthetic_test_low_availability_alert,  traffic_anomalies_alert,  tunnel_health_event,  tunnel_update_event,  universal_ssl_event_type,  web_analytics_metrics_update,  zone_aop_custom_certificate_expiration_type,  };
 
-  /// Optional description for the Notification policy.
-  @BuiltValueField(wireName: r'description')
-  String? get description;
-
   /// Whether or not the Notification policy is enabled.
   @BuiltValueField(wireName: r'enabled')
   bool get enabled;
-
-  @BuiltValueField(wireName: r'filters')
-  AaaFilters? get filters;
 
   @BuiltValueField(wireName: r'mechanisms')
   AaaMechanisms get mechanisms;
@@ -48,6 +37,17 @@ abstract class NotificationPoliciesCreateANotificationPolicyRequest implements B
   /// Name of the policy.
   @BuiltValueField(wireName: r'name')
   String get name;
+
+  /// Optional specification of how often to re-alert from the same incident, not support on all alert types.
+  @BuiltValueField(wireName: r'alert_interval')
+  String? get alertInterval;
+
+  /// Optional description for the Notification policy.
+  @BuiltValueField(wireName: r'description')
+  String? get description;
+
+  @BuiltValueField(wireName: r'filters')
+  AaaFilters? get filters;
 
   NotificationPoliciesCreateANotificationPolicyRequest._();
 
@@ -73,37 +73,16 @@ class _$NotificationPoliciesCreateANotificationPolicyRequestSerializer implement
     NotificationPoliciesCreateANotificationPolicyRequest object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
-    if (object.alertInterval != null) {
-      yield r'alert_interval';
-      yield serializers.serialize(
-        object.alertInterval,
-        specifiedType: const FullType(String),
-      );
-    }
     yield r'alert_type';
     yield serializers.serialize(
       object.alertType,
       specifiedType: const FullType(AaaAlertType),
     );
-    if (object.description != null) {
-      yield r'description';
-      yield serializers.serialize(
-        object.description,
-        specifiedType: const FullType(String),
-      );
-    }
     yield r'enabled';
     yield serializers.serialize(
       object.enabled,
       specifiedType: const FullType(bool),
     );
-    if (object.filters != null) {
-      yield r'filters';
-      yield serializers.serialize(
-        object.filters,
-        specifiedType: const FullType(AaaFilters),
-      );
-    }
     yield r'mechanisms';
     yield serializers.serialize(
       object.mechanisms,
@@ -114,6 +93,27 @@ class _$NotificationPoliciesCreateANotificationPolicyRequestSerializer implement
       object.name,
       specifiedType: const FullType(String),
     );
+    if (object.alertInterval != null) {
+      yield r'alert_interval';
+      yield serializers.serialize(
+        object.alertInterval,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.description != null) {
+      yield r'description';
+      yield serializers.serialize(
+        object.description,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.filters != null) {
+      yield r'filters';
+      yield serializers.serialize(
+        object.filters,
+        specifiedType: const FullType(AaaFilters),
+      );
+    }
   }
 
   @override
@@ -137,13 +137,6 @@ class _$NotificationPoliciesCreateANotificationPolicyRequestSerializer implement
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'alert_interval':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.alertInterval = valueDes;
-          break;
         case r'alert_type':
           final valueDes = serializers.deserialize(
             value,
@@ -151,26 +144,12 @@ class _$NotificationPoliciesCreateANotificationPolicyRequestSerializer implement
           ) as AaaAlertType;
           result.alertType = valueDes;
           break;
-        case r'description':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.description = valueDes;
-          break;
         case r'enabled':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(bool),
           ) as bool;
           result.enabled = valueDes;
-          break;
-        case r'filters':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(AaaFilters),
-          ) as AaaFilters;
-          result.filters.replace(valueDes);
           break;
         case r'mechanisms':
           final valueDes = serializers.deserialize(
@@ -185,6 +164,27 @@ class _$NotificationPoliciesCreateANotificationPolicyRequestSerializer implement
             specifiedType: const FullType(String),
           ) as String;
           result.name = valueDes;
+          break;
+        case r'alert_interval':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.alertInterval = valueDes;
+          break;
+        case r'description':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.description = valueDes;
+          break;
+        case r'filters':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(AaaFilters),
+          ) as AaaFilters;
+          result.filters.replace(valueDes);
           break;
         default:
           unhandled.add(key);

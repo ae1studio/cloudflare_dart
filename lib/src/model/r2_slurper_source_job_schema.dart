@@ -19,11 +19,11 @@ part 'r2_slurper_source_job_schema.g.dart';
 ///
 /// Properties:
 /// * [bucket] 
+/// * [secret] 
+/// * [vendor] 
 /// * [endpoint] 
 /// * [pathPrefix] 
 /// * [region] 
-/// * [secret] 
-/// * [vendor] 
 /// * [jurisdiction] 
 @BuiltValue()
 abstract class R2SlurperSourceJobSchema implements Built<R2SlurperSourceJobSchema, R2SlurperSourceJobSchemaBuilder> {

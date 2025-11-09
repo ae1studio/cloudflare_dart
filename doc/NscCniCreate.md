@@ -9,9 +9,9 @@ import 'package:cloudflare_dart/api.dart';
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **account** | **String** | Customer account tag | 
-**bgp** | [**NscBgpControl**](NscBgpControl.md) |  | [optional] 
 **interconnect** | **String** |  | 
 **magic** | [**NscMagicSettings**](NscMagicSettings.md) |  | 
+**bgp** | [**NscBgpControl**](NscBgpControl.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

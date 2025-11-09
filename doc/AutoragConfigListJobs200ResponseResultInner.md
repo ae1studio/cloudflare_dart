@@ -8,11 +8,11 @@ import 'package:cloudflare_dart/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**id** | **String** |  | 
+**source_** | **String** |  | 
 **endReason** | **String** |  | [optional] 
 **endedAt** | **String** |  | [optional] 
-**id** | **String** |  | 
 **lastSeenAt** | **String** |  | [optional] 
-**source_** | **String** |  | 
 **startedAt** | **String** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -15,8 +15,8 @@ part 'teams_devices_split_tunnel.g.dart';
 ///
 /// Properties:
 /// * [address] - The address in CIDR format to exclude from the tunnel. If `address` is present, `host` must not be present.
-/// * [description] - A description of the Split Tunnel item, displayed in the client UI.
 /// * [host] - The domain name to exclude from the tunnel. If `host` is present, `address` must not be present.
+/// * [description] - A description of the Split Tunnel item, displayed in the client UI.
 @BuiltValue()
 abstract class TeamsDevicesSplitTunnel implements Built<TeamsDevicesSplitTunnel, TeamsDevicesSplitTunnelBuilder> {
   /// One Of [TeamsDevicesExcludeSplitTunnelWithAddress], [TeamsDevicesExcludeSplitTunnelWithHost]

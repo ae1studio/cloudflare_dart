@@ -18,10 +18,10 @@ part 'cloudflare_pipelines_format.g.dart';
 /// CloudflarePipelinesFormat
 ///
 /// Properties:
+/// * [type] 
 /// * [decimalEncoding] 
 /// * [timestampFormat] 
 /// * [unstructured] 
-/// * [type] 
 /// * [compression] 
 /// * [rowGroupBytes] 
 @BuiltValue()

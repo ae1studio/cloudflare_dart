@@ -9,9 +9,9 @@ part of 'zero_trust_organization_revoke_all_access_tokens_for_a_user_request.dar
 class _$ZeroTrustOrganizationRevokeAllAccessTokensForAUserRequest
     extends ZeroTrustOrganizationRevokeAllAccessTokensForAUserRequest {
   @override
-  final bool? devices;
-  @override
   final String email;
+  @override
+  final bool? devices;
   @override
   final String? userUid;
   @override
@@ -26,7 +26,7 @@ class _$ZeroTrustOrganizationRevokeAllAccessTokensForAUserRequest
           ._build();
 
   _$ZeroTrustOrganizationRevokeAllAccessTokensForAUserRequest._(
-      {this.devices, required this.email, this.userUid, this.warpSessionReauth})
+      {required this.email, this.devices, this.userUid, this.warpSessionReauth})
       : super._();
   @override
   ZeroTrustOrganizationRevokeAllAccessTokensForAUserRequest rebuild(
@@ -45,8 +45,8 @@ class _$ZeroTrustOrganizationRevokeAllAccessTokensForAUserRequest
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is ZeroTrustOrganizationRevokeAllAccessTokensForAUserRequest &&
-        devices == other.devices &&
         email == other.email &&
+        devices == other.devices &&
         userUid == other.userUid &&
         warpSessionReauth == other.warpSessionReauth;
   }
@@ -54,8 +54,8 @@ class _$ZeroTrustOrganizationRevokeAllAccessTokensForAUserRequest
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, devices.hashCode);
     _$hash = $jc(_$hash, email.hashCode);
+    _$hash = $jc(_$hash, devices.hashCode);
     _$hash = $jc(_$hash, userUid.hashCode);
     _$hash = $jc(_$hash, warpSessionReauth.hashCode);
     _$hash = $jf(_$hash);
@@ -66,8 +66,8 @@ class _$ZeroTrustOrganizationRevokeAllAccessTokensForAUserRequest
   String toString() {
     return (newBuiltValueToStringHelper(
             r'ZeroTrustOrganizationRevokeAllAccessTokensForAUserRequest')
-          ..add('devices', devices)
           ..add('email', email)
+          ..add('devices', devices)
           ..add('userUid', userUid)
           ..add('warpSessionReauth', warpSessionReauth))
         .toString();
@@ -80,13 +80,13 @@ class ZeroTrustOrganizationRevokeAllAccessTokensForAUserRequestBuilder
             ZeroTrustOrganizationRevokeAllAccessTokensForAUserRequestBuilder> {
   _$ZeroTrustOrganizationRevokeAllAccessTokensForAUserRequest? _$v;
 
-  bool? _devices;
-  bool? get devices => _$this._devices;
-  set devices(bool? devices) => _$this._devices = devices;
-
   String? _email;
   String? get email => _$this._email;
   set email(String? email) => _$this._email = email;
+
+  bool? _devices;
+  bool? get devices => _$this._devices;
+  set devices(bool? devices) => _$this._devices = devices;
 
   String? _userUid;
   String? get userUid => _$this._userUid;
@@ -104,8 +104,8 @@ class ZeroTrustOrganizationRevokeAllAccessTokensForAUserRequestBuilder
   ZeroTrustOrganizationRevokeAllAccessTokensForAUserRequestBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _devices = $v.devices;
       _email = $v.email;
+      _devices = $v.devices;
       _userUid = $v.userUid;
       _warpSessionReauth = $v.warpSessionReauth;
       _$v = null;
@@ -133,11 +133,11 @@ class ZeroTrustOrganizationRevokeAllAccessTokensForAUserRequestBuilder
   _$ZeroTrustOrganizationRevokeAllAccessTokensForAUserRequest _build() {
     final _$result = _$v ??
         _$ZeroTrustOrganizationRevokeAllAccessTokensForAUserRequest._(
-          devices: devices,
           email: BuiltValueNullFieldError.checkNotNull(
               email,
               r'ZeroTrustOrganizationRevokeAllAccessTokensForAUserRequest',
               'email'),
+          devices: devices,
           userUid: userUid,
           warpSessionReauth: warpSessionReauth,
         );

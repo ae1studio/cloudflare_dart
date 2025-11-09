@@ -18,6 +18,8 @@ part 'rulesets_rewrite_rule.g.dart';
 /// RulesetsRewriteRule
 ///
 /// Properties:
+/// * [lastUpdated] - The timestamp of when the rule was last modified.
+/// * [version] - The version of the rule.
 /// * [action] 
 /// * [actionParameters] 
 /// * [categories] - The categories of the rule.
@@ -26,11 +28,9 @@ part 'rulesets_rewrite_rule.g.dart';
 /// * [exposedCredentialCheck] 
 /// * [expression] - The expression defining which traffic will match the rule.
 /// * [id] - The unique ID of the rule.
-/// * [lastUpdated] - The timestamp of when the rule was last modified.
 /// * [logging] 
 /// * [ratelimit] 
 /// * [ref] - The reference of the rule (the rule's ID by default).
-/// * [version] - The version of the rule.
 @BuiltValue()
 abstract class RulesetsRewriteRule implements RulesetsRule, Built<RulesetsRewriteRule, RulesetsRewriteRuleBuilder> {
   RulesetsRewriteRule._();
@@ -92,6 +92,11 @@ class _$RulesetsRewriteRuleSerializer implements PrimitiveSerializer<RulesetsRew
         specifiedType: const FullType(bool),
       );
     }
+    yield r'last_updated';
+    yield serializers.serialize(
+      object.lastUpdated,
+      specifiedType: const FullType(DateTime),
+    );
     if (object.actionParameters != null) {
       yield r'action_parameters';
       yield serializers.serialize(
@@ -99,11 +104,6 @@ class _$RulesetsRewriteRuleSerializer implements PrimitiveSerializer<RulesetsRew
         specifiedType: const FullType(JsonObject),
       );
     }
-    yield r'last_updated';
-    yield serializers.serialize(
-      object.lastUpdated,
-      specifiedType: const FullType(DateTime),
-    );
     if (object.ref != null) {
       yield r'ref';
       yield serializers.serialize(
@@ -204,19 +204,19 @@ class _$RulesetsRewriteRuleSerializer implements PrimitiveSerializer<RulesetsRew
           ) as bool;
           result.enabled = valueDes;
           break;
-        case r'action_parameters':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(JsonObject),
-          ) as JsonObject;
-          result.actionParameters = valueDes;
-          break;
         case r'last_updated':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(DateTime),
           ) as DateTime;
           result.lastUpdated = valueDes;
+          break;
+        case r'action_parameters':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(JsonObject),
+          ) as JsonObject;
+          result.actionParameters = valueDes;
           break;
         case r'ref':
           final valueDes = serializers.deserialize(

@@ -13,21 +13,21 @@ part 'brapi_post_markdown200_response.g.dart';
 /// BrapiPostMarkdown200Response
 ///
 /// Properties:
+/// * [status] - Response status
 /// * [errors] 
 /// * [result] - Markdown
-/// * [status] - Response status
 @BuiltValue()
 abstract class BrapiPostMarkdown200Response implements Built<BrapiPostMarkdown200Response, BrapiPostMarkdown200ResponseBuilder> {
+  /// Response status
+  @BuiltValueField(wireName: r'status')
+  bool get status;
+
   @BuiltValueField(wireName: r'errors')
   BuiltList<BrapiPostContent200ResponseErrorsInner>? get errors;
 
   /// Markdown
   @BuiltValueField(wireName: r'result')
   String? get result;
-
-  /// Response status
-  @BuiltValueField(wireName: r'status')
-  bool get status;
 
   BrapiPostMarkdown200Response._();
 
@@ -52,6 +52,11 @@ class _$BrapiPostMarkdown200ResponseSerializer implements PrimitiveSerializer<Br
     BrapiPostMarkdown200Response object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    yield r'status';
+    yield serializers.serialize(
+      object.status,
+      specifiedType: const FullType(bool),
+    );
     if (object.errors != null) {
       yield r'errors';
       yield serializers.serialize(
@@ -66,11 +71,6 @@ class _$BrapiPostMarkdown200ResponseSerializer implements PrimitiveSerializer<Br
         specifiedType: const FullType(String),
       );
     }
-    yield r'status';
-    yield serializers.serialize(
-      object.status,
-      specifiedType: const FullType(bool),
-    );
   }
 
   @override
@@ -94,6 +94,13 @@ class _$BrapiPostMarkdown200ResponseSerializer implements PrimitiveSerializer<Br
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
+        case r'status':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(bool),
+          ) as bool;
+          result.status = valueDes;
+          break;
         case r'errors':
           final valueDes = serializers.deserialize(
             value,
@@ -107,13 +114,6 @@ class _$BrapiPostMarkdown200ResponseSerializer implements PrimitiveSerializer<Br
             specifiedType: const FullType(String),
           ) as String;
           result.result = valueDes;
-          break;
-        case r'status':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
-          result.status = valueDes;
           break;
         default:
           unhandled.add(key);

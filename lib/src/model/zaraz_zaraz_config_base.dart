@@ -17,23 +17,17 @@ part 'zaraz_zaraz_config_base.g.dart';
 /// Zaraz configuration
 ///
 /// Properties:
-/// * [analytics] 
-/// * [consent] 
 /// * [dataLayer] - Data layer compatibility mode enabled.
 /// * [debugKey] - The key for Zaraz debug mode.
-/// * [historyChange] - Single Page Application support enabled.
 /// * [settings] 
 /// * [triggers] - Triggers set up under Zaraz configuration, where key is the trigger alpha-numeric ID and value is the trigger configuration.
 /// * [variables] - Variables set up under Zaraz configuration, where key is the variable alpha-numeric ID and value is the variable configuration. Values of variables of type secret are not included.
 /// * [zarazVersion] - Zaraz internal version of the config.
+/// * [analytics] 
+/// * [consent] 
+/// * [historyChange] - Single Page Application support enabled.
 @BuiltValue(instantiable: false)
 abstract class ZarazZarazConfigBase  {
-  @BuiltValueField(wireName: r'analytics')
-  ZarazZarazConfigBaseAnalytics? get analytics;
-
-  @BuiltValueField(wireName: r'consent')
-  ZarazZarazConfigBaseConsent? get consent;
-
   /// Data layer compatibility mode enabled.
   @BuiltValueField(wireName: r'dataLayer')
   bool get dataLayer;
@@ -41,10 +35,6 @@ abstract class ZarazZarazConfigBase  {
   /// The key for Zaraz debug mode.
   @BuiltValueField(wireName: r'debugKey')
   String get debugKey;
-
-  /// Single Page Application support enabled.
-  @BuiltValueField(wireName: r'historyChange')
-  bool? get historyChange;
 
   @BuiltValueField(wireName: r'settings')
   ZarazZarazConfigBaseSettings get settings;
@@ -60,6 +50,16 @@ abstract class ZarazZarazConfigBase  {
   /// Zaraz internal version of the config.
   @BuiltValueField(wireName: r'zarazVersion')
   int get zarazVersion;
+
+  @BuiltValueField(wireName: r'analytics')
+  ZarazZarazConfigBaseAnalytics? get analytics;
+
+  @BuiltValueField(wireName: r'consent')
+  ZarazZarazConfigBaseConsent? get consent;
+
+  /// Single Page Application support enabled.
+  @BuiltValueField(wireName: r'historyChange')
+  bool? get historyChange;
 
   @BuiltValueSerializer(custom: true)
   static Serializer<ZarazZarazConfigBase> get serializer => _$ZarazZarazConfigBaseSerializer();
@@ -77,20 +77,6 @@ class _$ZarazZarazConfigBaseSerializer implements PrimitiveSerializer<ZarazZaraz
     ZarazZarazConfigBase object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
-    if (object.analytics != null) {
-      yield r'analytics';
-      yield serializers.serialize(
-        object.analytics,
-        specifiedType: const FullType(ZarazZarazConfigBaseAnalytics),
-      );
-    }
-    if (object.consent != null) {
-      yield r'consent';
-      yield serializers.serialize(
-        object.consent,
-        specifiedType: const FullType(ZarazZarazConfigBaseConsent),
-      );
-    }
     yield r'dataLayer';
     yield serializers.serialize(
       object.dataLayer,
@@ -101,13 +87,6 @@ class _$ZarazZarazConfigBaseSerializer implements PrimitiveSerializer<ZarazZaraz
       object.debugKey,
       specifiedType: const FullType(String),
     );
-    if (object.historyChange != null) {
-      yield r'historyChange';
-      yield serializers.serialize(
-        object.historyChange,
-        specifiedType: const FullType(bool),
-      );
-    }
     yield r'settings';
     yield serializers.serialize(
       object.settings,
@@ -128,6 +107,27 @@ class _$ZarazZarazConfigBaseSerializer implements PrimitiveSerializer<ZarazZaraz
       object.zarazVersion,
       specifiedType: const FullType(int),
     );
+    if (object.analytics != null) {
+      yield r'analytics';
+      yield serializers.serialize(
+        object.analytics,
+        specifiedType: const FullType(ZarazZarazConfigBaseAnalytics),
+      );
+    }
+    if (object.consent != null) {
+      yield r'consent';
+      yield serializers.serialize(
+        object.consent,
+        specifiedType: const FullType(ZarazZarazConfigBaseConsent),
+      );
+    }
+    if (object.historyChange != null) {
+      yield r'historyChange';
+      yield serializers.serialize(
+        object.historyChange,
+        specifiedType: const FullType(bool),
+      );
+    }
   }
 
   @override
@@ -191,20 +191,6 @@ class _$$ZarazZarazConfigBaseSerializer implements PrimitiveSerializer<$ZarazZar
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'analytics':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(ZarazZarazConfigBaseAnalytics),
-          ) as ZarazZarazConfigBaseAnalytics;
-          result.analytics.replace(valueDes);
-          break;
-        case r'consent':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(ZarazZarazConfigBaseConsent),
-          ) as ZarazZarazConfigBaseConsent;
-          result.consent.replace(valueDes);
-          break;
         case r'dataLayer':
           final valueDes = serializers.deserialize(
             value,
@@ -218,13 +204,6 @@ class _$$ZarazZarazConfigBaseSerializer implements PrimitiveSerializer<$ZarazZar
             specifiedType: const FullType(String),
           ) as String;
           result.debugKey = valueDes;
-          break;
-        case r'historyChange':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
-          result.historyChange = valueDes;
           break;
         case r'settings':
           final valueDes = serializers.deserialize(
@@ -253,6 +232,27 @@ class _$$ZarazZarazConfigBaseSerializer implements PrimitiveSerializer<$ZarazZar
             specifiedType: const FullType(int),
           ) as int;
           result.zarazVersion = valueDes;
+          break;
+        case r'analytics':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(ZarazZarazConfigBaseAnalytics),
+          ) as ZarazZarazConfigBaseAnalytics;
+          result.analytics.replace(valueDes);
+          break;
+        case r'consent':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(ZarazZarazConfigBaseConsent),
+          ) as ZarazZarazConfigBaseConsent;
+          result.consent.replace(valueDes);
+          break;
+        case r'historyChange':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(bool),
+          ) as bool;
+          result.historyChange = valueDes;
           break;
         default:
           unhandled.add(key);

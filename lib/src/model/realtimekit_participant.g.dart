@@ -18,17 +18,17 @@ abstract class RealtimekitParticipantBuilder {
   String? get id;
   set id(String? id);
 
-  String? get name;
-  set name(String? name);
-
-  String? get picture;
-  set picture(String? picture);
-
   String? get presetName;
   set presetName(String? presetName);
 
   DateTime? get updatedAt;
   set updatedAt(DateTime? updatedAt);
+
+  String? get name;
+  set name(String? name);
+
+  String? get picture;
+  set picture(String? picture);
 }
 
 class _$$RealtimekitParticipant extends $RealtimekitParticipant {
@@ -39,13 +39,13 @@ class _$$RealtimekitParticipant extends $RealtimekitParticipant {
   @override
   final String id;
   @override
-  final String? name;
-  @override
-  final String? picture;
-  @override
   final String presetName;
   @override
   final DateTime updatedAt;
+  @override
+  final String? name;
+  @override
+  final String? picture;
 
   factory _$$RealtimekitParticipant(
           [void Function($RealtimekitParticipantBuilder)? updates]) =>
@@ -55,10 +55,10 @@ class _$$RealtimekitParticipant extends $RealtimekitParticipant {
       {required this.createdAt,
       required this.customParticipantId,
       required this.id,
-      this.name,
-      this.picture,
       required this.presetName,
-      required this.updatedAt})
+      required this.updatedAt,
+      this.name,
+      this.picture})
       : super._();
   @override
   $RealtimekitParticipant rebuild(
@@ -76,10 +76,10 @@ class _$$RealtimekitParticipant extends $RealtimekitParticipant {
         createdAt == other.createdAt &&
         customParticipantId == other.customParticipantId &&
         id == other.id &&
-        name == other.name &&
-        picture == other.picture &&
         presetName == other.presetName &&
-        updatedAt == other.updatedAt;
+        updatedAt == other.updatedAt &&
+        name == other.name &&
+        picture == other.picture;
   }
 
   @override
@@ -88,10 +88,10 @@ class _$$RealtimekitParticipant extends $RealtimekitParticipant {
     _$hash = $jc(_$hash, createdAt.hashCode);
     _$hash = $jc(_$hash, customParticipantId.hashCode);
     _$hash = $jc(_$hash, id.hashCode);
-    _$hash = $jc(_$hash, name.hashCode);
-    _$hash = $jc(_$hash, picture.hashCode);
     _$hash = $jc(_$hash, presetName.hashCode);
     _$hash = $jc(_$hash, updatedAt.hashCode);
+    _$hash = $jc(_$hash, name.hashCode);
+    _$hash = $jc(_$hash, picture.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -102,10 +102,10 @@ class _$$RealtimekitParticipant extends $RealtimekitParticipant {
           ..add('createdAt', createdAt)
           ..add('customParticipantId', customParticipantId)
           ..add('id', id)
-          ..add('name', name)
-          ..add('picture', picture)
           ..add('presetName', presetName)
-          ..add('updatedAt', updatedAt))
+          ..add('updatedAt', updatedAt)
+          ..add('name', name)
+          ..add('picture', picture))
         .toString();
   }
 }
@@ -129,14 +129,6 @@ class $RealtimekitParticipantBuilder
   String? get id => _$this._id;
   set id(covariant String? id) => _$this._id = id;
 
-  String? _name;
-  String? get name => _$this._name;
-  set name(covariant String? name) => _$this._name = name;
-
-  String? _picture;
-  String? get picture => _$this._picture;
-  set picture(covariant String? picture) => _$this._picture = picture;
-
   String? _presetName;
   String? get presetName => _$this._presetName;
   set presetName(covariant String? presetName) =>
@@ -145,6 +137,14 @@ class $RealtimekitParticipantBuilder
   DateTime? _updatedAt;
   DateTime? get updatedAt => _$this._updatedAt;
   set updatedAt(covariant DateTime? updatedAt) => _$this._updatedAt = updatedAt;
+
+  String? _name;
+  String? get name => _$this._name;
+  set name(covariant String? name) => _$this._name = name;
+
+  String? _picture;
+  String? get picture => _$this._picture;
+  set picture(covariant String? picture) => _$this._picture = picture;
 
   $RealtimekitParticipantBuilder() {
     $RealtimekitParticipant._defaults(this);
@@ -156,10 +156,10 @@ class $RealtimekitParticipantBuilder
       _createdAt = $v.createdAt;
       _customParticipantId = $v.customParticipantId;
       _id = $v.id;
-      _name = $v.name;
-      _picture = $v.picture;
       _presetName = $v.presetName;
       _updatedAt = $v.updatedAt;
+      _name = $v.name;
+      _picture = $v.picture;
       _$v = null;
     }
     return this;
@@ -189,12 +189,12 @@ class $RealtimekitParticipantBuilder
               'customParticipantId'),
           id: BuiltValueNullFieldError.checkNotNull(
               id, r'$RealtimekitParticipant', 'id'),
-          name: name,
-          picture: picture,
           presetName: BuiltValueNullFieldError.checkNotNull(
               presetName, r'$RealtimekitParticipant', 'presetName'),
           updatedAt: BuiltValueNullFieldError.checkNotNull(
               updatedAt, r'$RealtimekitParticipant', 'updatedAt'),
+          name: name,
+          picture: picture,
         );
     replace(_$result);
     return _$result;

@@ -64,9 +64,9 @@ class _$ZeroTrustGatewayProxyEndpointIpCreateKindEnumSerializer
 class _$ZeroTrustGatewayProxyEndpointIpCreate
     extends ZeroTrustGatewayProxyEndpointIpCreate {
   @override
-  final ZeroTrustGatewayProxyEndpointIpCreateKindEnum? kind;
-  @override
   final String name;
+  @override
+  final ZeroTrustGatewayProxyEndpointIpCreateKindEnum? kind;
 
   factory _$ZeroTrustGatewayProxyEndpointIpCreate(
           [void Function(ZeroTrustGatewayProxyEndpointIpCreateBuilder)?
@@ -74,7 +74,7 @@ class _$ZeroTrustGatewayProxyEndpointIpCreate
       (ZeroTrustGatewayProxyEndpointIpCreateBuilder()..update(updates))
           ._build();
 
-  _$ZeroTrustGatewayProxyEndpointIpCreate._({this.kind, required this.name})
+  _$ZeroTrustGatewayProxyEndpointIpCreate._({required this.name, this.kind})
       : super._();
   @override
   ZeroTrustGatewayProxyEndpointIpCreate rebuild(
@@ -90,15 +90,15 @@ class _$ZeroTrustGatewayProxyEndpointIpCreate
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is ZeroTrustGatewayProxyEndpointIpCreate &&
-        kind == other.kind &&
-        name == other.name;
+        name == other.name &&
+        kind == other.kind;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, kind.hashCode);
     _$hash = $jc(_$hash, name.hashCode);
+    _$hash = $jc(_$hash, kind.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -107,8 +107,8 @@ class _$ZeroTrustGatewayProxyEndpointIpCreate
   String toString() {
     return (newBuiltValueToStringHelper(
             r'ZeroTrustGatewayProxyEndpointIpCreate')
-          ..add('kind', kind)
-          ..add('name', name))
+          ..add('name', name)
+          ..add('kind', kind))
         .toString();
   }
 }
@@ -119,14 +119,14 @@ class ZeroTrustGatewayProxyEndpointIpCreateBuilder
             ZeroTrustGatewayProxyEndpointIpCreateBuilder> {
   _$ZeroTrustGatewayProxyEndpointIpCreate? _$v;
 
+  String? _name;
+  String? get name => _$this._name;
+  set name(String? name) => _$this._name = name;
+
   ZeroTrustGatewayProxyEndpointIpCreateKindEnum? _kind;
   ZeroTrustGatewayProxyEndpointIpCreateKindEnum? get kind => _$this._kind;
   set kind(ZeroTrustGatewayProxyEndpointIpCreateKindEnum? kind) =>
       _$this._kind = kind;
-
-  String? _name;
-  String? get name => _$this._name;
-  set name(String? name) => _$this._name = name;
 
   ZeroTrustGatewayProxyEndpointIpCreateBuilder() {
     ZeroTrustGatewayProxyEndpointIpCreate._defaults(this);
@@ -135,8 +135,8 @@ class ZeroTrustGatewayProxyEndpointIpCreateBuilder
   ZeroTrustGatewayProxyEndpointIpCreateBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _kind = $v.kind;
       _name = $v.name;
+      _kind = $v.kind;
       _$v = null;
     }
     return this;
@@ -159,9 +159,9 @@ class ZeroTrustGatewayProxyEndpointIpCreateBuilder
   _$ZeroTrustGatewayProxyEndpointIpCreate _build() {
     final _$result = _$v ??
         _$ZeroTrustGatewayProxyEndpointIpCreate._(
-          kind: kind,
           name: BuiltValueNullFieldError.checkNotNull(
               name, r'ZeroTrustGatewayProxyEndpointIpCreate', 'name'),
+          kind: kind,
         );
     replace(_$result);
     return _$result;

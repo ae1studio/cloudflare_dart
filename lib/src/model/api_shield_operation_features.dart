@@ -22,8 +22,8 @@ part 'api_shield_operation_features.g.dart';
 /// ApiShieldOperationFeatures
 ///
 /// Properties:
-/// * [thresholds] 
 /// * [parameterSchemas] 
+/// * [thresholds] 
 /// * [apiRouting] 
 /// * [confidenceIntervals] 
 /// * [schemaInfo] 

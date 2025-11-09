@@ -12,19 +12,19 @@ part 'category_override.g.dart';
 /// A category-level override.
 ///
 /// Properties:
-/// * [action] - The action to override rules in the category with.
 /// * [category] - The name of the category to override.
+/// * [action] - The action to override rules in the category with.
 /// * [enabled] - Whether to enable execution of rules in the category.
 /// * [sensitivityLevel] - The sensitivity level to use for rules in the category. This option is only applicable for DDoS phases.
 @BuiltValue()
 abstract class CategoryOverride implements Built<CategoryOverride, CategoryOverrideBuilder> {
-  /// The action to override rules in the category with.
-  @BuiltValueField(wireName: r'action')
-  String? get action;
-
   /// The name of the category to override.
   @BuiltValueField(wireName: r'category')
   String get category;
+
+  /// The action to override rules in the category with.
+  @BuiltValueField(wireName: r'action')
+  String? get action;
 
   /// Whether to enable execution of rules in the category.
   @BuiltValueField(wireName: r'enabled')
@@ -58,6 +58,11 @@ class _$CategoryOverrideSerializer implements PrimitiveSerializer<CategoryOverri
     CategoryOverride object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    yield r'category';
+    yield serializers.serialize(
+      object.category,
+      specifiedType: const FullType(String),
+    );
     if (object.action != null) {
       yield r'action';
       yield serializers.serialize(
@@ -65,11 +70,6 @@ class _$CategoryOverrideSerializer implements PrimitiveSerializer<CategoryOverri
         specifiedType: const FullType(String),
       );
     }
-    yield r'category';
-    yield serializers.serialize(
-      object.category,
-      specifiedType: const FullType(String),
-    );
     if (object.enabled != null) {
       yield r'enabled';
       yield serializers.serialize(
@@ -107,19 +107,19 @@ class _$CategoryOverrideSerializer implements PrimitiveSerializer<CategoryOverri
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'action':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.action = valueDes;
-          break;
         case r'category':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(String),
           ) as String;
           result.category = valueDes;
+          break;
+        case r'action':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.action = valueDes;
           break;
         case r'enabled':
           final valueDes = serializers.deserialize(

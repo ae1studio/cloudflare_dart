@@ -12,14 +12,18 @@ part 'magic_sites_add_single_request.g.dart';
 /// MagicSitesAddSingleRequest
 ///
 /// Properties:
+/// * [name] - The name of the site.
 /// * [connectorId] - Magic Connector identifier tag.
 /// * [description] 
 /// * [haMode] - Site high availability mode. If set to true, the site can have two connectors and runs in high availability mode.
 /// * [location] 
-/// * [name] - The name of the site.
 /// * [secondaryConnectorId] - Magic Connector identifier tag. Used when high availability mode is on.
 @BuiltValue()
 abstract class MagicSitesAddSingleRequest implements Built<MagicSitesAddSingleRequest, MagicSitesAddSingleRequestBuilder> {
+  /// The name of the site.
+  @BuiltValueField(wireName: r'name')
+  String get name;
+
   /// Magic Connector identifier tag.
   @BuiltValueField(wireName: r'connector_id')
   String? get connectorId;
@@ -33,10 +37,6 @@ abstract class MagicSitesAddSingleRequest implements Built<MagicSitesAddSingleRe
 
   @BuiltValueField(wireName: r'location')
   MagicSiteLocation? get location;
-
-  /// The name of the site.
-  @BuiltValueField(wireName: r'name')
-  String get name;
 
   /// Magic Connector identifier tag. Used when high availability mode is on.
   @BuiltValueField(wireName: r'secondary_connector_id')
@@ -65,6 +65,11 @@ class _$MagicSitesAddSingleRequestSerializer implements PrimitiveSerializer<Magi
     MagicSitesAddSingleRequest object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    yield r'name';
+    yield serializers.serialize(
+      object.name,
+      specifiedType: const FullType(String),
+    );
     if (object.connectorId != null) {
       yield r'connector_id';
       yield serializers.serialize(
@@ -93,11 +98,6 @@ class _$MagicSitesAddSingleRequestSerializer implements PrimitiveSerializer<Magi
         specifiedType: const FullType(MagicSiteLocation),
       );
     }
-    yield r'name';
-    yield serializers.serialize(
-      object.name,
-      specifiedType: const FullType(String),
-    );
     if (object.secondaryConnectorId != null) {
       yield r'secondary_connector_id';
       yield serializers.serialize(
@@ -128,6 +128,13 @@ class _$MagicSitesAddSingleRequestSerializer implements PrimitiveSerializer<Magi
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
+        case r'name':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.name = valueDes;
+          break;
         case r'connector_id':
           final valueDes = serializers.deserialize(
             value,
@@ -155,13 +162,6 @@ class _$MagicSitesAddSingleRequestSerializer implements PrimitiveSerializer<Magi
             specifiedType: const FullType(MagicSiteLocation),
           ) as MagicSiteLocation;
           result.location.replace(valueDes);
-          break;
-        case r'name':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.name = valueDes;
           break;
         case r'secondary_connector_id':
           final valueDes = serializers.deserialize(

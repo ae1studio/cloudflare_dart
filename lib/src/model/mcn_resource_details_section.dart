@@ -13,15 +13,12 @@ part 'mcn_resource_details_section.g.dart';
 /// McnResourceDetailsSection
 ///
 /// Properties:
-/// * [helpText] 
 /// * [hiddenItems] 
 /// * [name] 
 /// * [visibleItems] 
+/// * [helpText] 
 @BuiltValue()
 abstract class McnResourceDetailsSection implements Built<McnResourceDetailsSection, McnResourceDetailsSectionBuilder> {
-  @BuiltValueField(wireName: r'help_text')
-  String? get helpText;
-
   @BuiltValueField(wireName: r'hidden_items')
   BuiltList<McnResourceDetailsSectionItem> get hiddenItems;
 
@@ -30,6 +27,9 @@ abstract class McnResourceDetailsSection implements Built<McnResourceDetailsSect
 
   @BuiltValueField(wireName: r'visible_items')
   BuiltList<McnResourceDetailsSectionItem> get visibleItems;
+
+  @BuiltValueField(wireName: r'help_text')
+  String? get helpText;
 
   McnResourceDetailsSection._();
 
@@ -54,13 +54,6 @@ class _$McnResourceDetailsSectionSerializer implements PrimitiveSerializer<McnRe
     McnResourceDetailsSection object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
-    if (object.helpText != null) {
-      yield r'help_text';
-      yield serializers.serialize(
-        object.helpText,
-        specifiedType: const FullType(String),
-      );
-    }
     yield r'hidden_items';
     yield serializers.serialize(
       object.hiddenItems,
@@ -76,6 +69,13 @@ class _$McnResourceDetailsSectionSerializer implements PrimitiveSerializer<McnRe
       object.visibleItems,
       specifiedType: const FullType(BuiltList, [FullType(McnResourceDetailsSectionItem)]),
     );
+    if (object.helpText != null) {
+      yield r'help_text';
+      yield serializers.serialize(
+        object.helpText,
+        specifiedType: const FullType(String),
+      );
+    }
   }
 
   @override
@@ -99,13 +99,6 @@ class _$McnResourceDetailsSectionSerializer implements PrimitiveSerializer<McnRe
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'help_text':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.helpText = valueDes;
-          break;
         case r'hidden_items':
           final valueDes = serializers.deserialize(
             value,
@@ -126,6 +119,13 @@ class _$McnResourceDetailsSectionSerializer implements PrimitiveSerializer<McnRe
             specifiedType: const FullType(BuiltList, [FullType(McnResourceDetailsSectionItem)]),
           ) as BuiltList<McnResourceDetailsSectionItem>;
           result.visibleItems.replace(valueDes);
+          break;
+        case r'help_text':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.helpText = valueDes;
           break;
         default:
           unhandled.add(key);

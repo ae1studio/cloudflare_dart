@@ -16,22 +16,16 @@ part 'r2_lifecycle_rule.g.dart';
 /// R2LifecycleRule
 ///
 /// Properties:
-/// * [abortMultipartUploadsTransition] 
 /// * [conditions] 
-/// * [deleteObjectsTransition] 
 /// * [enabled] - Whether or not this rule is in effect.
 /// * [id] - Unique identifier for this rule.
+/// * [abortMultipartUploadsTransition] 
+/// * [deleteObjectsTransition] 
 /// * [storageClassTransitions] - Transitions to change the storage class of objects.
 @BuiltValue()
 abstract class R2LifecycleRule implements Built<R2LifecycleRule, R2LifecycleRuleBuilder> {
-  @BuiltValueField(wireName: r'abortMultipartUploadsTransition')
-  R2LifecycleRuleAbortMultipartUploadsTransition? get abortMultipartUploadsTransition;
-
   @BuiltValueField(wireName: r'conditions')
   R2LifecycleRuleConditions get conditions;
-
-  @BuiltValueField(wireName: r'deleteObjectsTransition')
-  R2LifecycleRuleDeleteObjectsTransition? get deleteObjectsTransition;
 
   /// Whether or not this rule is in effect.
   @BuiltValueField(wireName: r'enabled')
@@ -40,6 +34,12 @@ abstract class R2LifecycleRule implements Built<R2LifecycleRule, R2LifecycleRule
   /// Unique identifier for this rule.
   @BuiltValueField(wireName: r'id')
   String get id;
+
+  @BuiltValueField(wireName: r'abortMultipartUploadsTransition')
+  R2LifecycleRuleAbortMultipartUploadsTransition? get abortMultipartUploadsTransition;
+
+  @BuiltValueField(wireName: r'deleteObjectsTransition')
+  R2LifecycleRuleDeleteObjectsTransition? get deleteObjectsTransition;
 
   /// Transitions to change the storage class of objects.
   @BuiltValueField(wireName: r'storageClassTransitions')
@@ -68,25 +68,11 @@ class _$R2LifecycleRuleSerializer implements PrimitiveSerializer<R2LifecycleRule
     R2LifecycleRule object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
-    if (object.abortMultipartUploadsTransition != null) {
-      yield r'abortMultipartUploadsTransition';
-      yield serializers.serialize(
-        object.abortMultipartUploadsTransition,
-        specifiedType: const FullType(R2LifecycleRuleAbortMultipartUploadsTransition),
-      );
-    }
     yield r'conditions';
     yield serializers.serialize(
       object.conditions,
       specifiedType: const FullType(R2LifecycleRuleConditions),
     );
-    if (object.deleteObjectsTransition != null) {
-      yield r'deleteObjectsTransition';
-      yield serializers.serialize(
-        object.deleteObjectsTransition,
-        specifiedType: const FullType(R2LifecycleRuleDeleteObjectsTransition),
-      );
-    }
     yield r'enabled';
     yield serializers.serialize(
       object.enabled,
@@ -97,6 +83,20 @@ class _$R2LifecycleRuleSerializer implements PrimitiveSerializer<R2LifecycleRule
       object.id,
       specifiedType: const FullType(String),
     );
+    if (object.abortMultipartUploadsTransition != null) {
+      yield r'abortMultipartUploadsTransition';
+      yield serializers.serialize(
+        object.abortMultipartUploadsTransition,
+        specifiedType: const FullType(R2LifecycleRuleAbortMultipartUploadsTransition),
+      );
+    }
+    if (object.deleteObjectsTransition != null) {
+      yield r'deleteObjectsTransition';
+      yield serializers.serialize(
+        object.deleteObjectsTransition,
+        specifiedType: const FullType(R2LifecycleRuleDeleteObjectsTransition),
+      );
+    }
     if (object.storageClassTransitions != null) {
       yield r'storageClassTransitions';
       yield serializers.serialize(
@@ -127,26 +127,12 @@ class _$R2LifecycleRuleSerializer implements PrimitiveSerializer<R2LifecycleRule
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'abortMultipartUploadsTransition':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(R2LifecycleRuleAbortMultipartUploadsTransition),
-          ) as R2LifecycleRuleAbortMultipartUploadsTransition;
-          result.abortMultipartUploadsTransition.replace(valueDes);
-          break;
         case r'conditions':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(R2LifecycleRuleConditions),
           ) as R2LifecycleRuleConditions;
           result.conditions.replace(valueDes);
-          break;
-        case r'deleteObjectsTransition':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(R2LifecycleRuleDeleteObjectsTransition),
-          ) as R2LifecycleRuleDeleteObjectsTransition;
-          result.deleteObjectsTransition.replace(valueDes);
           break;
         case r'enabled':
           final valueDes = serializers.deserialize(
@@ -161,6 +147,20 @@ class _$R2LifecycleRuleSerializer implements PrimitiveSerializer<R2LifecycleRule
             specifiedType: const FullType(String),
           ) as String;
           result.id = valueDes;
+          break;
+        case r'abortMultipartUploadsTransition':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(R2LifecycleRuleAbortMultipartUploadsTransition),
+          ) as R2LifecycleRuleAbortMultipartUploadsTransition;
+          result.abortMultipartUploadsTransition.replace(valueDes);
+          break;
+        case r'deleteObjectsTransition':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(R2LifecycleRuleDeleteObjectsTransition),
+          ) as R2LifecycleRuleDeleteObjectsTransition;
+          result.deleteObjectsTransition.replace(valueDes);
           break;
         case r'storageClassTransitions':
           final valueDes = serializers.deserialize(

@@ -12,20 +12,20 @@ part 'wor_describe_workflow_instance200_response_result_steps_inner_any_of_confi
 /// WorDescribeWorkflowInstance200ResponseResultStepsInnerAnyOfConfigRetries
 ///
 /// Properties:
-/// * [backoff] 
 /// * [delay] 
 /// * [limit] 
+/// * [backoff] 
 @BuiltValue()
 abstract class WorDescribeWorkflowInstance200ResponseResultStepsInnerAnyOfConfigRetries implements Built<WorDescribeWorkflowInstance200ResponseResultStepsInnerAnyOfConfigRetries, WorDescribeWorkflowInstance200ResponseResultStepsInnerAnyOfConfigRetriesBuilder> {
-  @BuiltValueField(wireName: r'backoff')
-  WorDescribeWorkflowInstance200ResponseResultStepsInnerAnyOfConfigRetriesBackoffEnum? get backoff;
-  // enum backoffEnum {  constant,  linear,  exponential,  };
-
   @BuiltValueField(wireName: r'delay')
   num? get delay;
 
   @BuiltValueField(wireName: r'limit')
   num get limit;
+
+  @BuiltValueField(wireName: r'backoff')
+  WorDescribeWorkflowInstance200ResponseResultStepsInnerAnyOfConfigRetriesBackoffEnum? get backoff;
+  // enum backoffEnum {  constant,  linear,  exponential,  };
 
   WorDescribeWorkflowInstance200ResponseResultStepsInnerAnyOfConfigRetries._();
 
@@ -50,13 +50,6 @@ class _$WorDescribeWorkflowInstance200ResponseResultStepsInnerAnyOfConfigRetries
     WorDescribeWorkflowInstance200ResponseResultStepsInnerAnyOfConfigRetries object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
-    if (object.backoff != null) {
-      yield r'backoff';
-      yield serializers.serialize(
-        object.backoff,
-        specifiedType: const FullType(WorDescribeWorkflowInstance200ResponseResultStepsInnerAnyOfConfigRetriesBackoffEnum),
-      );
-    }
     yield r'delay';
     yield object.delay == null ? null : serializers.serialize(
       object.delay,
@@ -67,6 +60,13 @@ class _$WorDescribeWorkflowInstance200ResponseResultStepsInnerAnyOfConfigRetries
       object.limit,
       specifiedType: const FullType(num),
     );
+    if (object.backoff != null) {
+      yield r'backoff';
+      yield serializers.serialize(
+        object.backoff,
+        specifiedType: const FullType(WorDescribeWorkflowInstance200ResponseResultStepsInnerAnyOfConfigRetriesBackoffEnum),
+      );
+    }
   }
 
   @override
@@ -90,13 +90,6 @@ class _$WorDescribeWorkflowInstance200ResponseResultStepsInnerAnyOfConfigRetries
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'backoff':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(WorDescribeWorkflowInstance200ResponseResultStepsInnerAnyOfConfigRetriesBackoffEnum),
-          ) as WorDescribeWorkflowInstance200ResponseResultStepsInnerAnyOfConfigRetriesBackoffEnum;
-          result.backoff = valueDes;
-          break;
         case r'delay':
           final valueDes = serializers.deserialize(
             value,
@@ -111,6 +104,13 @@ class _$WorDescribeWorkflowInstance200ResponseResultStepsInnerAnyOfConfigRetries
             specifiedType: const FullType(num),
           ) as num;
           result.limit = valueDes;
+          break;
+        case r'backoff':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(WorDescribeWorkflowInstance200ResponseResultStepsInnerAnyOfConfigRetriesBackoffEnum),
+          ) as WorDescribeWorkflowInstance200ResponseResultStepsInnerAnyOfConfigRetriesBackoffEnum;
+          result.backoff = valueDes;
           break;
         default:
           unhandled.add(key);

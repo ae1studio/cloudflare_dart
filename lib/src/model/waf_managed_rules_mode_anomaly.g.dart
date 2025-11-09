@@ -6,12 +6,12 @@ part of 'waf_managed_rules_mode_anomaly.dart';
 // BuiltValueGenerator
 // **************************************************************************
 
-const ZonesWafValue _$on_ =
-    const ZonesWafValue._('on_');
-const ZonesWafValue _$off =
-    const ZonesWafValue._('off');
+const WafManagedRulesModeAnomaly _$on_ =
+    const WafManagedRulesModeAnomaly._('on_');
+const WafManagedRulesModeAnomaly _$off =
+    const WafManagedRulesModeAnomaly._('off');
 
-ZonesWafValue _$valueOf(String name) {
+WafManagedRulesModeAnomaly _$valueOf(String name) {
   switch (name) {
     case 'on_':
       return _$on_;
@@ -22,31 +22,31 @@ ZonesWafValue _$valueOf(String name) {
   }
 }
 
-final BuiltSet<ZonesWafValue> _$values =
-    BuiltSet<ZonesWafValue>(const <ZonesWafValue>[
+final BuiltSet<WafManagedRulesModeAnomaly> _$values =
+    BuiltSet<WafManagedRulesModeAnomaly>(const <WafManagedRulesModeAnomaly>[
   _$on_,
   _$off,
 ]);
 
 class _$WafManagedRulesModeAnomalyMeta {
   const _$WafManagedRulesModeAnomalyMeta();
-  ZonesWafValue get on_ => _$on_;
-  ZonesWafValue get off => _$off;
-  ZonesWafValue valueOf(String name) => _$valueOf(name);
-  BuiltSet<ZonesWafValue> get values => _$values;
+  WafManagedRulesModeAnomaly get on_ => _$on_;
+  WafManagedRulesModeAnomaly get off => _$off;
+  WafManagedRulesModeAnomaly valueOf(String name) => _$valueOf(name);
+  BuiltSet<WafManagedRulesModeAnomaly> get values => _$values;
 }
 
 abstract class _$WafManagedRulesModeAnomalyMixin {
   // ignore: non_constant_identifier_names
-  _$WafManagedRulesModeAnomalyMeta get ZonesWafValue =>
+  _$WafManagedRulesModeAnomalyMeta get WafManagedRulesModeAnomaly =>
       const _$WafManagedRulesModeAnomalyMeta();
 }
 
-Serializer<ZonesWafValue> _$wafManagedRulesModeAnomalySerializer =
+Serializer<WafManagedRulesModeAnomaly> _$wafManagedRulesModeAnomalySerializer =
     _$WafManagedRulesModeAnomalySerializer();
 
 class _$WafManagedRulesModeAnomalySerializer
-    implements PrimitiveSerializer<ZonesWafValue> {
+    implements PrimitiveSerializer<WafManagedRulesModeAnomaly> {
   static const Map<String, Object> _toWire = const <String, Object>{
     'on_': 'on',
     'off': 'off',
@@ -57,20 +57,20 @@ class _$WafManagedRulesModeAnomalySerializer
   };
 
   @override
-  final Iterable<Type> types = const <Type>[ZonesWafValue];
+  final Iterable<Type> types = const <Type>[WafManagedRulesModeAnomaly];
   @override
-  final String wireName = 'ZonesWafValue';
+  final String wireName = 'WafManagedRulesModeAnomaly';
 
   @override
-  Object serialize(Serializers serializers, ZonesWafValue object,
+  Object serialize(Serializers serializers, WafManagedRulesModeAnomaly object,
           {FullType specifiedType = FullType.unspecified}) =>
       _toWire[object.name] ?? object.name;
 
   @override
-  ZonesWafValue deserialize(
+  WafManagedRulesModeAnomaly deserialize(
           Serializers serializers, Object serialized,
           {FullType specifiedType = FullType.unspecified}) =>
-      ZonesWafValue.valueOf(
+      WafManagedRulesModeAnomaly.valueOf(
           _fromWire[serialized] ?? (serialized is String ? serialized : ''));
 }
 

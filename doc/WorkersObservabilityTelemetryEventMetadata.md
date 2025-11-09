@@ -8,6 +8,7 @@ import 'package:cloudflare_dart/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**id** | **String** |  | 
 **account** | **String** |  | [optional] 
 **cloudService** | **String** |  | [optional] 
 **coldStart** | **int** |  | [optional] 
@@ -17,7 +18,6 @@ Name | Type | Description | Notes
 **error** | **String** |  | [optional] 
 **errorTemplate** | **String** |  | [optional] 
 **fingerprint** | **String** |  | [optional] 
-**id** | **String** |  | 
 **level** | **String** |  | [optional] 
 **message** | **String** |  | [optional] 
 **messageTemplate** | **String** |  | [optional] 

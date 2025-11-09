@@ -9,16 +9,17 @@ import 'package:cloudflare_dart/src/model/page_shield_api_get_response_collectio
 import 'package:cloudflare_dart/src/model/aaa_messages_inner.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
+import 'package:built_value/json_object.dart';
 
 part 'page_shield_get_zone_script_response.g.dart';
 
 /// PageShieldGetZoneScriptResponse
 ///
 /// Properties:
-/// * [errors] 
-/// * [messages] 
 /// * [success] - Whether the API call was successful
 /// * [result] 
+/// * [errors] 
+/// * [messages] 
 @BuiltValue()
 abstract class PageShieldGetZoneScriptResponse implements PageShieldApiGetResponseCollection, Built<PageShieldGetZoneScriptResponse, PageShieldGetZoneScriptResponseBuilder> {
   PageShieldGetZoneScriptResponse._();

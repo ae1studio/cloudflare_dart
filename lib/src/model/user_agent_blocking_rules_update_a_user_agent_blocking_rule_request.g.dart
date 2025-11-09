@@ -11,11 +11,11 @@ class _$UserAgentBlockingRulesUpdateAUserAgentBlockingRuleRequest
   @override
   final FirewallConfiguration configuration;
   @override
-  final String? description;
-  @override
   final String id;
   @override
   final FirewallSchemasMode mode;
+  @override
+  final String? description;
   @override
   final bool? paused;
 
@@ -29,9 +29,9 @@ class _$UserAgentBlockingRulesUpdateAUserAgentBlockingRuleRequest
 
   _$UserAgentBlockingRulesUpdateAUserAgentBlockingRuleRequest._(
       {required this.configuration,
-      this.description,
       required this.id,
       required this.mode,
+      this.description,
       this.paused})
       : super._();
   @override
@@ -52,9 +52,9 @@ class _$UserAgentBlockingRulesUpdateAUserAgentBlockingRuleRequest
     if (identical(other, this)) return true;
     return other is UserAgentBlockingRulesUpdateAUserAgentBlockingRuleRequest &&
         configuration == other.configuration &&
-        description == other.description &&
         id == other.id &&
         mode == other.mode &&
+        description == other.description &&
         paused == other.paused;
   }
 
@@ -62,9 +62,9 @@ class _$UserAgentBlockingRulesUpdateAUserAgentBlockingRuleRequest
   int get hashCode {
     var _$hash = 0;
     _$hash = $jc(_$hash, configuration.hashCode);
-    _$hash = $jc(_$hash, description.hashCode);
     _$hash = $jc(_$hash, id.hashCode);
     _$hash = $jc(_$hash, mode.hashCode);
+    _$hash = $jc(_$hash, description.hashCode);
     _$hash = $jc(_$hash, paused.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
@@ -75,9 +75,9 @@ class _$UserAgentBlockingRulesUpdateAUserAgentBlockingRuleRequest
     return (newBuiltValueToStringHelper(
             r'UserAgentBlockingRulesUpdateAUserAgentBlockingRuleRequest')
           ..add('configuration', configuration)
-          ..add('description', description)
           ..add('id', id)
           ..add('mode', mode)
+          ..add('description', description)
           ..add('paused', paused))
         .toString();
   }
@@ -95,10 +95,6 @@ class UserAgentBlockingRulesUpdateAUserAgentBlockingRuleRequestBuilder
   set configuration(FirewallConfigurationBuilder? configuration) =>
       _$this._configuration = configuration;
 
-  String? _description;
-  String? get description => _$this._description;
-  set description(String? description) => _$this._description = description;
-
   String? _id;
   String? get id => _$this._id;
   set id(String? id) => _$this._id = id;
@@ -106,6 +102,10 @@ class UserAgentBlockingRulesUpdateAUserAgentBlockingRuleRequestBuilder
   FirewallSchemasMode? _mode;
   FirewallSchemasMode? get mode => _$this._mode;
   set mode(FirewallSchemasMode? mode) => _$this._mode = mode;
+
+  String? _description;
+  String? get description => _$this._description;
+  set description(String? description) => _$this._description = description;
 
   bool? _paused;
   bool? get paused => _$this._paused;
@@ -119,9 +119,9 @@ class UserAgentBlockingRulesUpdateAUserAgentBlockingRuleRequestBuilder
     final $v = _$v;
     if ($v != null) {
       _configuration = $v.configuration.toBuilder();
-      _description = $v.description;
       _id = $v.id;
       _mode = $v.mode;
+      _description = $v.description;
       _paused = $v.paused;
       _$v = null;
     }
@@ -151,7 +151,6 @@ class UserAgentBlockingRulesUpdateAUserAgentBlockingRuleRequestBuilder
       _$result = _$v ??
           _$UserAgentBlockingRulesUpdateAUserAgentBlockingRuleRequest._(
             configuration: configuration.build(),
-            description: description,
             id: BuiltValueNullFieldError.checkNotNull(
                 id,
                 r'UserAgentBlockingRulesUpdateAUserAgentBlockingRuleRequest',
@@ -160,6 +159,7 @@ class UserAgentBlockingRulesUpdateAUserAgentBlockingRuleRequestBuilder
                 mode,
                 r'UserAgentBlockingRulesUpdateAUserAgentBlockingRuleRequest',
                 'mode'),
+            description: description,
             paused: paused,
           );
     } catch (_) {

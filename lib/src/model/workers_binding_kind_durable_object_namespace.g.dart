@@ -65,17 +65,17 @@ class _$WorkersBindingKindDurableObjectNamespaceTypeEnumSerializer
 class _$WorkersBindingKindDurableObjectNamespace
     extends WorkersBindingKindDurableObjectNamespace {
   @override
+  final String name;
+  @override
+  final WorkersBindingKindDurableObjectNamespaceTypeEnum type;
+  @override
   final String? className;
   @override
   final String? environment;
   @override
-  final String name;
-  @override
   final String? namespaceId;
   @override
   final String? scriptName;
-  @override
-  final WorkersBindingKindDurableObjectNamespaceTypeEnum type;
 
   factory _$WorkersBindingKindDurableObjectNamespace(
           [void Function(WorkersBindingKindDurableObjectNamespaceBuilder)?
@@ -84,12 +84,12 @@ class _$WorkersBindingKindDurableObjectNamespace
           ._build();
 
   _$WorkersBindingKindDurableObjectNamespace._(
-      {this.className,
+      {required this.name,
+      required this.type,
+      this.className,
       this.environment,
-      required this.name,
       this.namespaceId,
-      this.scriptName,
-      required this.type})
+      this.scriptName})
       : super._();
   @override
   WorkersBindingKindDurableObjectNamespace rebuild(
@@ -105,23 +105,23 @@ class _$WorkersBindingKindDurableObjectNamespace
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is WorkersBindingKindDurableObjectNamespace &&
+        name == other.name &&
+        type == other.type &&
         className == other.className &&
         environment == other.environment &&
-        name == other.name &&
         namespaceId == other.namespaceId &&
-        scriptName == other.scriptName &&
-        type == other.type;
+        scriptName == other.scriptName;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
+    _$hash = $jc(_$hash, name.hashCode);
+    _$hash = $jc(_$hash, type.hashCode);
     _$hash = $jc(_$hash, className.hashCode);
     _$hash = $jc(_$hash, environment.hashCode);
-    _$hash = $jc(_$hash, name.hashCode);
     _$hash = $jc(_$hash, namespaceId.hashCode);
     _$hash = $jc(_$hash, scriptName.hashCode);
-    _$hash = $jc(_$hash, type.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -130,12 +130,12 @@ class _$WorkersBindingKindDurableObjectNamespace
   String toString() {
     return (newBuiltValueToStringHelper(
             r'WorkersBindingKindDurableObjectNamespace')
+          ..add('name', name)
+          ..add('type', type)
           ..add('className', className)
           ..add('environment', environment)
-          ..add('name', name)
           ..add('namespaceId', namespaceId)
-          ..add('scriptName', scriptName)
-          ..add('type', type))
+          ..add('scriptName', scriptName))
         .toString();
   }
 }
@@ -146,6 +146,15 @@ class WorkersBindingKindDurableObjectNamespaceBuilder
             WorkersBindingKindDurableObjectNamespaceBuilder> {
   _$WorkersBindingKindDurableObjectNamespace? _$v;
 
+  String? _name;
+  String? get name => _$this._name;
+  set name(String? name) => _$this._name = name;
+
+  WorkersBindingKindDurableObjectNamespaceTypeEnum? _type;
+  WorkersBindingKindDurableObjectNamespaceTypeEnum? get type => _$this._type;
+  set type(WorkersBindingKindDurableObjectNamespaceTypeEnum? type) =>
+      _$this._type = type;
+
   String? _className;
   String? get className => _$this._className;
   set className(String? className) => _$this._className = className;
@@ -153,10 +162,6 @@ class WorkersBindingKindDurableObjectNamespaceBuilder
   String? _environment;
   String? get environment => _$this._environment;
   set environment(String? environment) => _$this._environment = environment;
-
-  String? _name;
-  String? get name => _$this._name;
-  set name(String? name) => _$this._name = name;
 
   String? _namespaceId;
   String? get namespaceId => _$this._namespaceId;
@@ -166,11 +171,6 @@ class WorkersBindingKindDurableObjectNamespaceBuilder
   String? get scriptName => _$this._scriptName;
   set scriptName(String? scriptName) => _$this._scriptName = scriptName;
 
-  WorkersBindingKindDurableObjectNamespaceTypeEnum? _type;
-  WorkersBindingKindDurableObjectNamespaceTypeEnum? get type => _$this._type;
-  set type(WorkersBindingKindDurableObjectNamespaceTypeEnum? type) =>
-      _$this._type = type;
-
   WorkersBindingKindDurableObjectNamespaceBuilder() {
     WorkersBindingKindDurableObjectNamespace._defaults(this);
   }
@@ -178,12 +178,12 @@ class WorkersBindingKindDurableObjectNamespaceBuilder
   WorkersBindingKindDurableObjectNamespaceBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
+      _name = $v.name;
+      _type = $v.type;
       _className = $v.className;
       _environment = $v.environment;
-      _name = $v.name;
       _namespaceId = $v.namespaceId;
       _scriptName = $v.scriptName;
-      _type = $v.type;
       _$v = null;
     }
     return this;
@@ -206,14 +206,14 @@ class WorkersBindingKindDurableObjectNamespaceBuilder
   _$WorkersBindingKindDurableObjectNamespace _build() {
     final _$result = _$v ??
         _$WorkersBindingKindDurableObjectNamespace._(
-          className: className,
-          environment: environment,
           name: BuiltValueNullFieldError.checkNotNull(
               name, r'WorkersBindingKindDurableObjectNamespace', 'name'),
-          namespaceId: namespaceId,
-          scriptName: scriptName,
           type: BuiltValueNullFieldError.checkNotNull(
               type, r'WorkersBindingKindDurableObjectNamespace', 'type'),
+          className: className,
+          environment: environment,
+          namespaceId: namespaceId,
+          scriptName: scriptName,
         );
     replace(_$result);
     return _$result;

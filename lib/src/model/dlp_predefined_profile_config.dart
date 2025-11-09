@@ -13,20 +13,17 @@ part 'dlp_predefined_profile_config.g.dart';
 /// DlpPredefinedProfileConfig
 ///
 /// Properties:
-/// * [aiContextEnabled] 
 /// * [allowedMatchCount] 
 /// * [confidenceThreshold] 
 /// * [enabledEntries] 
 /// * [entries] 
 /// * [id] - The id of the predefined profile (uuid).
 /// * [name] - The name of the predefined profile.
+/// * [aiContextEnabled] 
 /// * [ocrEnabled] 
 /// * [openAccess] - Whether this profile can be accessed by anyone.
 @BuiltValue()
 abstract class DlpPredefinedProfileConfig implements Built<DlpPredefinedProfileConfig, DlpPredefinedProfileConfigBuilder> {
-  @BuiltValueField(wireName: r'ai_context_enabled')
-  bool? get aiContextEnabled;
-
   @BuiltValueField(wireName: r'allowed_match_count')
   int get allowedMatchCount;
 
@@ -48,6 +45,9 @@ abstract class DlpPredefinedProfileConfig implements Built<DlpPredefinedProfileC
   @BuiltValueField(wireName: r'name')
   String get name;
 
+  @BuiltValueField(wireName: r'ai_context_enabled')
+  bool? get aiContextEnabled;
+
   @BuiltValueField(wireName: r'ocr_enabled')
   bool? get ocrEnabled;
 
@@ -61,8 +61,8 @@ abstract class DlpPredefinedProfileConfig implements Built<DlpPredefinedProfileC
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(DlpPredefinedProfileConfigBuilder b) => b
-      ..aiContextEnabled = false
       ..confidenceThreshold = 'low'
+      ..aiContextEnabled = false
       ..ocrEnabled = false;
 
   @BuiltValueSerializer(custom: true)
@@ -81,13 +81,6 @@ class _$DlpPredefinedProfileConfigSerializer implements PrimitiveSerializer<DlpP
     DlpPredefinedProfileConfig object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
-    if (object.aiContextEnabled != null) {
-      yield r'ai_context_enabled';
-      yield serializers.serialize(
-        object.aiContextEnabled,
-        specifiedType: const FullType(bool),
-      );
-    }
     yield r'allowed_match_count';
     yield serializers.serialize(
       object.allowedMatchCount,
@@ -118,6 +111,13 @@ class _$DlpPredefinedProfileConfigSerializer implements PrimitiveSerializer<DlpP
       object.name,
       specifiedType: const FullType(String),
     );
+    if (object.aiContextEnabled != null) {
+      yield r'ai_context_enabled';
+      yield serializers.serialize(
+        object.aiContextEnabled,
+        specifiedType: const FullType(bool),
+      );
+    }
     if (object.ocrEnabled != null) {
       yield r'ocr_enabled';
       yield serializers.serialize(
@@ -155,13 +155,6 @@ class _$DlpPredefinedProfileConfigSerializer implements PrimitiveSerializer<DlpP
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'ai_context_enabled':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
-          result.aiContextEnabled = valueDes;
-          break;
         case r'allowed_match_count':
           final valueDes = serializers.deserialize(
             value,
@@ -204,6 +197,13 @@ class _$DlpPredefinedProfileConfigSerializer implements PrimitiveSerializer<DlpP
             specifiedType: const FullType(String),
           ) as String;
           result.name = valueDes;
+          break;
+        case r'ai_context_enabled':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(bool),
+          ) as bool;
+          result.aiContextEnabled = valueDes;
           break;
         case r'ocr_enabled':
           final valueDes = serializers.deserialize(

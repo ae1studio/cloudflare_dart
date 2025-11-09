@@ -14,20 +14,12 @@ part 'zero_trust_lists_create_zero_trust_list_request.g.dart';
 /// ZeroTrustListsCreateZeroTrustListRequest
 ///
 /// Properties:
-/// * [description] - Provide the list description.
-/// * [items] - Add items to the list.
 /// * [name] - Specify the list name.
 /// * [type] 
+/// * [description] - Provide the list description.
+/// * [items] - Add items to the list.
 @BuiltValue()
 abstract class ZeroTrustListsCreateZeroTrustListRequest implements Built<ZeroTrustListsCreateZeroTrustListRequest, ZeroTrustListsCreateZeroTrustListRequestBuilder> {
-  /// Provide the list description.
-  @BuiltValueField(wireName: r'description')
-  String? get description;
-
-  /// Add items to the list.
-  @BuiltValueField(wireName: r'items')
-  BuiltList<ZeroTrustGatewayItemsInputInner>? get items;
-
   /// Specify the list name.
   @BuiltValueField(wireName: r'name')
   String get name;
@@ -35,6 +27,14 @@ abstract class ZeroTrustListsCreateZeroTrustListRequest implements Built<ZeroTru
   @BuiltValueField(wireName: r'type')
   ZeroTrustGatewaySchemasType get type;
   // enum typeEnum {  SERIAL,  URL,  DOMAIN,  EMAIL,  IP,  };
+
+  /// Provide the list description.
+  @BuiltValueField(wireName: r'description')
+  String? get description;
+
+  /// Add items to the list.
+  @BuiltValueField(wireName: r'items')
+  BuiltList<ZeroTrustGatewayItemsInputInner>? get items;
 
   ZeroTrustListsCreateZeroTrustListRequest._();
 
@@ -59,6 +59,16 @@ class _$ZeroTrustListsCreateZeroTrustListRequestSerializer implements PrimitiveS
     ZeroTrustListsCreateZeroTrustListRequest object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    yield r'name';
+    yield serializers.serialize(
+      object.name,
+      specifiedType: const FullType(String),
+    );
+    yield r'type';
+    yield serializers.serialize(
+      object.type,
+      specifiedType: const FullType(ZeroTrustGatewaySchemasType),
+    );
     if (object.description != null) {
       yield r'description';
       yield serializers.serialize(
@@ -73,16 +83,6 @@ class _$ZeroTrustListsCreateZeroTrustListRequestSerializer implements PrimitiveS
         specifiedType: const FullType(BuiltList, [FullType(ZeroTrustGatewayItemsInputInner)]),
       );
     }
-    yield r'name';
-    yield serializers.serialize(
-      object.name,
-      specifiedType: const FullType(String),
-    );
-    yield r'type';
-    yield serializers.serialize(
-      object.type,
-      specifiedType: const FullType(ZeroTrustGatewaySchemasType),
-    );
   }
 
   @override
@@ -106,20 +106,6 @@ class _$ZeroTrustListsCreateZeroTrustListRequestSerializer implements PrimitiveS
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'description':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.description = valueDes;
-          break;
-        case r'items':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(ZeroTrustGatewayItemsInputInner)]),
-          ) as BuiltList<ZeroTrustGatewayItemsInputInner>;
-          result.items.replace(valueDes);
-          break;
         case r'name':
           final valueDes = serializers.deserialize(
             value,
@@ -133,6 +119,20 @@ class _$ZeroTrustListsCreateZeroTrustListRequestSerializer implements PrimitiveS
             specifiedType: const FullType(ZeroTrustGatewaySchemasType),
           ) as ZeroTrustGatewaySchemasType;
           result.type = valueDes;
+          break;
+        case r'description':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.description = valueDes;
+          break;
+        case r'items':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BuiltList, [FullType(ZeroTrustGatewayItemsInputInner)]),
+          ) as BuiltList<ZeroTrustGatewayItemsInputInner>;
+          result.items.replace(valueDes);
           break;
         default:
           unhandled.add(key);

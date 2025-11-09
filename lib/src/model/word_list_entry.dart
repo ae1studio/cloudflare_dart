@@ -18,10 +18,10 @@ part 'word_list_entry.g.dart';
 /// * [enabled] 
 /// * [id] 
 /// * [name] 
-/// * [profileId] 
 /// * [updatedAt] 
 /// * [wordList] 
 /// * [type] 
+/// * [profileId] 
 @BuiltValue()
 abstract class WordListEntry implements DlpWordListEntry, Built<WordListEntry, WordListEntryBuilder> {
   @BuiltValueField(wireName: r'type')

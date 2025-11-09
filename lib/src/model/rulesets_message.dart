@@ -12,18 +12,18 @@ part 'rulesets_message.g.dart';
 /// A message.
 ///
 /// Properties:
-/// * [code] - A unique code for this message.
 /// * [message] - A text description of this message.
+/// * [code] - A unique code for this message.
 /// * [source_] 
 @BuiltValue()
 abstract class RulesetsMessage implements Built<RulesetsMessage, RulesetsMessageBuilder> {
-  /// A unique code for this message.
-  @BuiltValueField(wireName: r'code')
-  int? get code;
-
   /// A text description of this message.
   @BuiltValueField(wireName: r'message')
   String get message;
+
+  /// A unique code for this message.
+  @BuiltValueField(wireName: r'code')
+  int? get code;
 
   @BuiltValueField(wireName: r'source')
   ModelSource? get source_;
@@ -51,6 +51,11 @@ class _$RulesetsMessageSerializer implements PrimitiveSerializer<RulesetsMessage
     RulesetsMessage object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    yield r'message';
+    yield serializers.serialize(
+      object.message,
+      specifiedType: const FullType(String),
+    );
     if (object.code != null) {
       yield r'code';
       yield serializers.serialize(
@@ -58,11 +63,6 @@ class _$RulesetsMessageSerializer implements PrimitiveSerializer<RulesetsMessage
         specifiedType: const FullType(int),
       );
     }
-    yield r'message';
-    yield serializers.serialize(
-      object.message,
-      specifiedType: const FullType(String),
-    );
     if (object.source_ != null) {
       yield r'source';
       yield serializers.serialize(
@@ -93,19 +93,19 @@ class _$RulesetsMessageSerializer implements PrimitiveSerializer<RulesetsMessage
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'code':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
-          result.code = valueDes;
-          break;
         case r'message':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(String),
           ) as String;
           result.message = valueDes;
+          break;
+        case r'code':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(int),
+          ) as int;
+          result.code = valueDes;
           break;
         case r'source':
           final valueDes = serializers.deserialize(

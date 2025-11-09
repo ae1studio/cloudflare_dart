@@ -9,6 +9,7 @@ import 'package:cloudflare_dart/src/model/waf_rules_update_a_waf_rule200_respons
 import 'package:cloudflare_dart/src/model/aaa_messages_inner.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
+import 'package:built_value/json_object.dart';
 
 part 'waf_rules_update_a_waf_rule200_response.g.dart';
 

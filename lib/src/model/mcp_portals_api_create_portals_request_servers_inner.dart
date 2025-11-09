@@ -13,22 +13,22 @@ part 'mcp_portals_api_create_portals_request_servers_inner.g.dart';
 /// McpPortalsApiCreatePortalsRequestServersInner
 ///
 /// Properties:
+/// * [serverId] - server id
 /// * [defaultDisabled] 
 /// * [onBehalf] 
-/// * [serverId] - server id
 /// * [updatedPrompts] 
 /// * [updatedTools] 
 @BuiltValue()
 abstract class McpPortalsApiCreatePortalsRequestServersInner implements Built<McpPortalsApiCreatePortalsRequestServersInner, McpPortalsApiCreatePortalsRequestServersInnerBuilder> {
+  /// server id
+  @BuiltValueField(wireName: r'server_id')
+  String get serverId;
+
   @BuiltValueField(wireName: r'default_disabled')
   bool? get defaultDisabled;
 
   @BuiltValueField(wireName: r'on_behalf')
   bool? get onBehalf;
-
-  /// server id
-  @BuiltValueField(wireName: r'server_id')
-  String get serverId;
 
   @BuiltValueField(wireName: r'updated_prompts')
   BuiltList<McpPortalsApiCreatePortalsRequestServersInnerUpdatedPromptsInner>? get updatedPrompts;
@@ -61,6 +61,11 @@ class _$McpPortalsApiCreatePortalsRequestServersInnerSerializer implements Primi
     McpPortalsApiCreatePortalsRequestServersInner object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    yield r'server_id';
+    yield serializers.serialize(
+      object.serverId,
+      specifiedType: const FullType(String),
+    );
     if (object.defaultDisabled != null) {
       yield r'default_disabled';
       yield serializers.serialize(
@@ -75,11 +80,6 @@ class _$McpPortalsApiCreatePortalsRequestServersInnerSerializer implements Primi
         specifiedType: const FullType(bool),
       );
     }
-    yield r'server_id';
-    yield serializers.serialize(
-      object.serverId,
-      specifiedType: const FullType(String),
-    );
     if (object.updatedPrompts != null) {
       yield r'updated_prompts';
       yield serializers.serialize(
@@ -117,6 +117,13 @@ class _$McpPortalsApiCreatePortalsRequestServersInnerSerializer implements Primi
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
+        case r'server_id':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.serverId = valueDes;
+          break;
         case r'default_disabled':
           final valueDes = serializers.deserialize(
             value,
@@ -130,13 +137,6 @@ class _$McpPortalsApiCreatePortalsRequestServersInnerSerializer implements Primi
             specifiedType: const FullType(bool),
           ) as bool;
           result.onBehalf = valueDes;
-          break;
-        case r'server_id':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.serverId = valueDes;
           break;
         case r'updated_prompts':
           final valueDes = serializers.deserialize(

@@ -82,11 +82,11 @@ class _$DnsCustomNameserversCustomNS extends DnsCustomNameserversCustomNS {
   @override
   final String nsName;
   @override
-  final num? nsSet;
-  @override
   final DnsCustomNameserversCustomNSStatusEnum status;
   @override
   final String zoneTag;
+  @override
+  final num? nsSet;
 
   factory _$DnsCustomNameserversCustomNS(
           [void Function(DnsCustomNameserversCustomNSBuilder)? updates]) =>
@@ -95,9 +95,9 @@ class _$DnsCustomNameserversCustomNS extends DnsCustomNameserversCustomNS {
   _$DnsCustomNameserversCustomNS._(
       {required this.dnsRecords,
       required this.nsName,
-      this.nsSet,
       required this.status,
-      required this.zoneTag})
+      required this.zoneTag,
+      this.nsSet})
       : super._();
   @override
   DnsCustomNameserversCustomNS rebuild(
@@ -114,9 +114,9 @@ class _$DnsCustomNameserversCustomNS extends DnsCustomNameserversCustomNS {
     return other is DnsCustomNameserversCustomNS &&
         dnsRecords == other.dnsRecords &&
         nsName == other.nsName &&
-        nsSet == other.nsSet &&
         status == other.status &&
-        zoneTag == other.zoneTag;
+        zoneTag == other.zoneTag &&
+        nsSet == other.nsSet;
   }
 
   @override
@@ -124,9 +124,9 @@ class _$DnsCustomNameserversCustomNS extends DnsCustomNameserversCustomNS {
     var _$hash = 0;
     _$hash = $jc(_$hash, dnsRecords.hashCode);
     _$hash = $jc(_$hash, nsName.hashCode);
-    _$hash = $jc(_$hash, nsSet.hashCode);
     _$hash = $jc(_$hash, status.hashCode);
     _$hash = $jc(_$hash, zoneTag.hashCode);
+    _$hash = $jc(_$hash, nsSet.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -136,9 +136,9 @@ class _$DnsCustomNameserversCustomNS extends DnsCustomNameserversCustomNS {
     return (newBuiltValueToStringHelper(r'DnsCustomNameserversCustomNS')
           ..add('dnsRecords', dnsRecords)
           ..add('nsName', nsName)
-          ..add('nsSet', nsSet)
           ..add('status', status)
-          ..add('zoneTag', zoneTag))
+          ..add('zoneTag', zoneTag)
+          ..add('nsSet', nsSet))
         .toString();
   }
 }
@@ -162,10 +162,6 @@ class DnsCustomNameserversCustomNSBuilder
   String? get nsName => _$this._nsName;
   set nsName(String? nsName) => _$this._nsName = nsName;
 
-  num? _nsSet;
-  num? get nsSet => _$this._nsSet;
-  set nsSet(num? nsSet) => _$this._nsSet = nsSet;
-
   DnsCustomNameserversCustomNSStatusEnum? _status;
   DnsCustomNameserversCustomNSStatusEnum? get status => _$this._status;
   set status(DnsCustomNameserversCustomNSStatusEnum? status) =>
@@ -174,6 +170,10 @@ class DnsCustomNameserversCustomNSBuilder
   String? _zoneTag;
   String? get zoneTag => _$this._zoneTag;
   set zoneTag(String? zoneTag) => _$this._zoneTag = zoneTag;
+
+  num? _nsSet;
+  num? get nsSet => _$this._nsSet;
+  set nsSet(num? nsSet) => _$this._nsSet = nsSet;
 
   DnsCustomNameserversCustomNSBuilder() {
     DnsCustomNameserversCustomNS._defaults(this);
@@ -184,9 +184,9 @@ class DnsCustomNameserversCustomNSBuilder
     if ($v != null) {
       _dnsRecords = $v.dnsRecords.toBuilder();
       _nsName = $v.nsName;
-      _nsSet = $v.nsSet;
       _status = $v.status;
       _zoneTag = $v.zoneTag;
+      _nsSet = $v.nsSet;
       _$v = null;
     }
     return this;
@@ -213,11 +213,11 @@ class DnsCustomNameserversCustomNSBuilder
             dnsRecords: dnsRecords.build(),
             nsName: BuiltValueNullFieldError.checkNotNull(
                 nsName, r'DnsCustomNameserversCustomNS', 'nsName'),
-            nsSet: nsSet,
             status: BuiltValueNullFieldError.checkNotNull(
                 status, r'DnsCustomNameserversCustomNS', 'status'),
             zoneTag: BuiltValueNullFieldError.checkNotNull(
                 zoneTag, r'DnsCustomNameserversCustomNS', 'zoneTag'),
+            nsSet: nsSet,
           );
     } catch (_) {
       late String _$failedField;

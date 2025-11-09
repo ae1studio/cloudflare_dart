@@ -15,12 +15,12 @@ part 'integration_profile.g.dart';
 ///
 /// Properties:
 /// * [createdAt] 
-/// * [description] - The description of the profile.
 /// * [entries] 
 /// * [id] 
 /// * [name] 
 /// * [updatedAt] 
 /// * [type] 
+/// * [description] - The description of the profile.
 @BuiltValue()
 abstract class IntegrationProfile implements DlpIntegrationProfile, Built<IntegrationProfile, IntegrationProfileBuilder> {
   @BuiltValueField(wireName: r'type')

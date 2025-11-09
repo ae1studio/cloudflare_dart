@@ -10,6 +10,7 @@ import 'package:cloudflare_dart/src/model/rulesets_inner.dart';
 import 'package:cloudflare_dart/src/model/rulesets_response.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
+import 'package:built_value/json_object.dart';
 
 part 'list_account_rulesets200_response.g.dart';
 

@@ -19,13 +19,13 @@ part 'infrastructure_application1.g.dart';
 /// InfrastructureApplication1
 ///
 /// Properties:
+/// * [type] 
+/// * [targetCriteria] 
 /// * [aud] - Audience tag.
 /// * [createdAt] 
 /// * [id] - UUID.
 /// * [updatedAt] 
 /// * [name] - The name of the application.
-/// * [type] 
-/// * [targetCriteria] 
 /// * [policies] 
 @BuiltValue()
 abstract class InfrastructureApplication1 implements AccessBasicAppResponseProps, AccessInfraAppRespEmbeddedPolicies, AccessInfraProps, Built<InfrastructureApplication1, InfrastructureApplication1Builder> {

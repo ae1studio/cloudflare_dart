@@ -9,13 +9,13 @@ part of 'urlscanner_create_scan_bulk_v2429_response.dart';
 class _$UrlscannerCreateScanBulkV2429Response
     extends UrlscannerCreateScanBulkV2429Response {
   @override
-  final String? description;
-  @override
   final BuiltList<UrlscannerCreateScanBulkV2429ResponseErrorsInner> errors;
   @override
   final String message;
   @override
   final num status;
+  @override
+  final String? description;
 
   factory _$UrlscannerCreateScanBulkV2429Response(
           [void Function(UrlscannerCreateScanBulkV2429ResponseBuilder)?
@@ -24,10 +24,10 @@ class _$UrlscannerCreateScanBulkV2429Response
           ._build();
 
   _$UrlscannerCreateScanBulkV2429Response._(
-      {this.description,
-      required this.errors,
+      {required this.errors,
       required this.message,
-      required this.status})
+      required this.status,
+      this.description})
       : super._();
   @override
   UrlscannerCreateScanBulkV2429Response rebuild(
@@ -43,19 +43,19 @@ class _$UrlscannerCreateScanBulkV2429Response
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is UrlscannerCreateScanBulkV2429Response &&
-        description == other.description &&
         errors == other.errors &&
         message == other.message &&
-        status == other.status;
+        status == other.status &&
+        description == other.description;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, description.hashCode);
     _$hash = $jc(_$hash, errors.hashCode);
     _$hash = $jc(_$hash, message.hashCode);
     _$hash = $jc(_$hash, status.hashCode);
+    _$hash = $jc(_$hash, description.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -64,10 +64,10 @@ class _$UrlscannerCreateScanBulkV2429Response
   String toString() {
     return (newBuiltValueToStringHelper(
             r'UrlscannerCreateScanBulkV2429Response')
-          ..add('description', description)
           ..add('errors', errors)
           ..add('message', message)
-          ..add('status', status))
+          ..add('status', status)
+          ..add('description', description))
         .toString();
   }
 }
@@ -77,10 +77,6 @@ class UrlscannerCreateScanBulkV2429ResponseBuilder
         Builder<UrlscannerCreateScanBulkV2429Response,
             UrlscannerCreateScanBulkV2429ResponseBuilder> {
   _$UrlscannerCreateScanBulkV2429Response? _$v;
-
-  String? _description;
-  String? get description => _$this._description;
-  set description(String? description) => _$this._description = description;
 
   ListBuilder<UrlscannerCreateScanBulkV2429ResponseErrorsInner>? _errors;
   ListBuilder<UrlscannerCreateScanBulkV2429ResponseErrorsInner> get errors =>
@@ -99,6 +95,10 @@ class UrlscannerCreateScanBulkV2429ResponseBuilder
   num? get status => _$this._status;
   set status(num? status) => _$this._status = status;
 
+  String? _description;
+  String? get description => _$this._description;
+  set description(String? description) => _$this._description = description;
+
   UrlscannerCreateScanBulkV2429ResponseBuilder() {
     UrlscannerCreateScanBulkV2429Response._defaults(this);
   }
@@ -106,10 +106,10 @@ class UrlscannerCreateScanBulkV2429ResponseBuilder
   UrlscannerCreateScanBulkV2429ResponseBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _description = $v.description;
       _errors = $v.errors.toBuilder();
       _message = $v.message;
       _status = $v.status;
+      _description = $v.description;
       _$v = null;
     }
     return this;
@@ -134,12 +134,12 @@ class UrlscannerCreateScanBulkV2429ResponseBuilder
     try {
       _$result = _$v ??
           _$UrlscannerCreateScanBulkV2429Response._(
-            description: description,
             errors: errors.build(),
             message: BuiltValueNullFieldError.checkNotNull(
                 message, r'UrlscannerCreateScanBulkV2429Response', 'message'),
             status: BuiltValueNullFieldError.checkNotNull(
                 status, r'UrlscannerCreateScanBulkV2429Response', 'status'),
+            description: description,
           );
     } catch (_) {
       late String _$failedField;

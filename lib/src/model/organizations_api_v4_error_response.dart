@@ -16,8 +16,8 @@ part 'organizations_api_v4_error_response.g.dart';
 /// Properties:
 /// * [errors] 
 /// * [messages] 
-/// * [result] 
 /// * [success] 
+/// * [result] 
 @BuiltValue()
 abstract class OrganizationsApiV4ErrorResponse implements Built<OrganizationsApiV4ErrorResponse, OrganizationsApiV4ErrorResponseBuilder> {
   @BuiltValueField(wireName: r'errors')
@@ -26,11 +26,11 @@ abstract class OrganizationsApiV4ErrorResponse implements Built<OrganizationsApi
   @BuiltValueField(wireName: r'messages')
   BuiltList<OrganizationsApiV4Message> get messages;
 
-  @BuiltValueField(wireName: r'result')
-  JsonObject? get result;
-
   @BuiltValueField(wireName: r'success')
   bool get success;
+
+  @BuiltValueField(wireName: r'result')
+  JsonObject? get result;
 
   OrganizationsApiV4ErrorResponse._();
 
@@ -65,6 +65,11 @@ class _$OrganizationsApiV4ErrorResponseSerializer implements PrimitiveSerializer
       object.messages,
       specifiedType: const FullType(BuiltList, [FullType(OrganizationsApiV4Message)]),
     );
+    yield r'success';
+    yield serializers.serialize(
+      object.success,
+      specifiedType: const FullType(bool),
+    );
     if (object.result != null) {
       yield r'result';
       yield serializers.serialize(
@@ -72,11 +77,6 @@ class _$OrganizationsApiV4ErrorResponseSerializer implements PrimitiveSerializer
         specifiedType: const FullType(JsonObject),
       );
     }
-    yield r'success';
-    yield serializers.serialize(
-      object.success,
-      specifiedType: const FullType(bool),
-    );
   }
 
   @override
@@ -114,19 +114,19 @@ class _$OrganizationsApiV4ErrorResponseSerializer implements PrimitiveSerializer
           ) as BuiltList<OrganizationsApiV4Message>;
           result.messages.replace(valueDes);
           break;
-        case r'result':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(JsonObject),
-          ) as JsonObject;
-          result.result = valueDes;
-          break;
         case r'success':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(bool),
           ) as bool;
           result.success = valueDes;
+          break;
+        case r'result':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(JsonObject),
+          ) as JsonObject;
+          result.result = valueDes;
           break;
         default:
           unhandled.add(key);

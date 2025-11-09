@@ -161,32 +161,6 @@ final BuiltSet<WorkersBindingItemTypeEnum> _$workersBindingItemTypeEnumValues =
   _$workersBindingItemTypeEnum_wasmModule,
 ]);
 
-const WorkersBindingItemJurisdictionEnum
-    _$workersBindingItemJurisdictionEnum_eu =
-    const WorkersBindingItemJurisdictionEnum._('eu');
-const WorkersBindingItemJurisdictionEnum
-    _$workersBindingItemJurisdictionEnum_fedramp =
-    const WorkersBindingItemJurisdictionEnum._('fedramp');
-
-WorkersBindingItemJurisdictionEnum _$workersBindingItemJurisdictionEnumValueOf(
-    String name) {
-  switch (name) {
-    case 'eu':
-      return _$workersBindingItemJurisdictionEnum_eu;
-    case 'fedramp':
-      return _$workersBindingItemJurisdictionEnum_fedramp;
-    default:
-      throw ArgumentError(name);
-  }
-}
-
-final BuiltSet<WorkersBindingItemJurisdictionEnum>
-    _$workersBindingItemJurisdictionEnumValues = BuiltSet<
-        WorkersBindingItemJurisdictionEnum>(const <WorkersBindingItemJurisdictionEnum>[
-  _$workersBindingItemJurisdictionEnum_eu,
-  _$workersBindingItemJurisdictionEnum_fedramp,
-]);
-
 const WorkersBindingItemFormatEnum _$workersBindingItemFormatEnum_raw =
     const WorkersBindingItemFormatEnum._('raw');
 const WorkersBindingItemFormatEnum _$workersBindingItemFormatEnum_pkcs8 =
@@ -275,17 +249,43 @@ final BuiltSet<WorkersBindingItemUsagesEnum>
   _$workersBindingItemUsagesEnum_unwrapKey,
 ]);
 
+const WorkersBindingItemJurisdictionEnum
+    _$workersBindingItemJurisdictionEnum_eu =
+    const WorkersBindingItemJurisdictionEnum._('eu');
+const WorkersBindingItemJurisdictionEnum
+    _$workersBindingItemJurisdictionEnum_fedramp =
+    const WorkersBindingItemJurisdictionEnum._('fedramp');
+
+WorkersBindingItemJurisdictionEnum _$workersBindingItemJurisdictionEnumValueOf(
+    String name) {
+  switch (name) {
+    case 'eu':
+      return _$workersBindingItemJurisdictionEnum_eu;
+    case 'fedramp':
+      return _$workersBindingItemJurisdictionEnum_fedramp;
+    default:
+      throw ArgumentError(name);
+  }
+}
+
+final BuiltSet<WorkersBindingItemJurisdictionEnum>
+    _$workersBindingItemJurisdictionEnumValues = BuiltSet<
+        WorkersBindingItemJurisdictionEnum>(const <WorkersBindingItemJurisdictionEnum>[
+  _$workersBindingItemJurisdictionEnum_eu,
+  _$workersBindingItemJurisdictionEnum_fedramp,
+]);
+
 Serializer<WorkersBindingItemTypeEnum> _$workersBindingItemTypeEnumSerializer =
     _$WorkersBindingItemTypeEnumSerializer();
-Serializer<WorkersBindingItemJurisdictionEnum>
-    _$workersBindingItemJurisdictionEnumSerializer =
-    _$WorkersBindingItemJurisdictionEnumSerializer();
 Serializer<WorkersBindingItemFormatEnum>
     _$workersBindingItemFormatEnumSerializer =
     _$WorkersBindingItemFormatEnumSerializer();
 Serializer<WorkersBindingItemUsagesEnum>
     _$workersBindingItemUsagesEnumSerializer =
     _$WorkersBindingItemUsagesEnumSerializer();
+Serializer<WorkersBindingItemJurisdictionEnum>
+    _$workersBindingItemJurisdictionEnumSerializer =
+    _$WorkersBindingItemJurisdictionEnumSerializer();
 
 class _$WorkersBindingItemTypeEnumSerializer
     implements PrimitiveSerializer<WorkersBindingItemTypeEnum> {
@@ -368,36 +368,6 @@ class _$WorkersBindingItemTypeEnumSerializer
           _fromWire[serialized] ?? (serialized is String ? serialized : ''));
 }
 
-class _$WorkersBindingItemJurisdictionEnumSerializer
-    implements PrimitiveSerializer<WorkersBindingItemJurisdictionEnum> {
-  static const Map<String, Object> _toWire = const <String, Object>{
-    'eu': 'eu',
-    'fedramp': 'fedramp',
-  };
-  static const Map<Object, String> _fromWire = const <Object, String>{
-    'eu': 'eu',
-    'fedramp': 'fedramp',
-  };
-
-  @override
-  final Iterable<Type> types = const <Type>[WorkersBindingItemJurisdictionEnum];
-  @override
-  final String wireName = 'WorkersBindingItemJurisdictionEnum';
-
-  @override
-  Object serialize(
-          Serializers serializers, WorkersBindingItemJurisdictionEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
-
-  @override
-  WorkersBindingItemJurisdictionEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      WorkersBindingItemJurisdictionEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
-}
-
 class _$WorkersBindingItemFormatEnumSerializer
     implements PrimitiveSerializer<WorkersBindingItemFormatEnum> {
   static const Map<String, Object> _toWire = const <String, Object>{
@@ -469,6 +439,36 @@ class _$WorkersBindingItemUsagesEnumSerializer
           Serializers serializers, Object serialized,
           {FullType specifiedType = FullType.unspecified}) =>
       WorkersBindingItemUsagesEnum.valueOf(
+          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+}
+
+class _$WorkersBindingItemJurisdictionEnumSerializer
+    implements PrimitiveSerializer<WorkersBindingItemJurisdictionEnum> {
+  static const Map<String, Object> _toWire = const <String, Object>{
+    'eu': 'eu',
+    'fedramp': 'fedramp',
+  };
+  static const Map<Object, String> _fromWire = const <Object, String>{
+    'eu': 'eu',
+    'fedramp': 'fedramp',
+  };
+
+  @override
+  final Iterable<Type> types = const <Type>[WorkersBindingItemJurisdictionEnum];
+  @override
+  final String wireName = 'WorkersBindingItemJurisdictionEnum';
+
+  @override
+  Object serialize(
+          Serializers serializers, WorkersBindingItemJurisdictionEnum object,
+          {FullType specifiedType = FullType.unspecified}) =>
+      _toWire[object.name] ?? object.name;
+
+  @override
+  WorkersBindingItemJurisdictionEnum deserialize(
+          Serializers serializers, Object serialized,
+          {FullType specifiedType = FullType.unspecified}) =>
+      WorkersBindingItemJurisdictionEnum.valueOf(
           _fromWire[serialized] ?? (serialized is String ? serialized : ''));
 }
 

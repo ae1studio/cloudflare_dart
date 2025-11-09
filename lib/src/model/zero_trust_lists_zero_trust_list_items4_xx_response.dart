@@ -20,8 +20,8 @@ part 'zero_trust_lists_zero_trust_list_items4_xx_response.g.dart';
 /// * [errors] 
 /// * [messages] 
 /// * [success] - Indicate whether the API call was successful.
-/// * [resultInfo] 
 /// * [result] 
+/// * [resultInfo] 
 @BuiltValue()
 abstract class ZeroTrustListsZeroTrustListItems4XXResponse implements ZeroTrustGatewayApiResponseCommonFailure, ZeroTrustGatewayListItemResponseCollection, Built<ZeroTrustListsZeroTrustListItems4XXResponse, ZeroTrustListsZeroTrustListItems4XXResponseBuilder> {
   ZeroTrustListsZeroTrustListItems4XXResponse._();

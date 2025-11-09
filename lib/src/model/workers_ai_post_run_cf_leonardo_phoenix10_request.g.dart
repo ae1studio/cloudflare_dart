@@ -9,6 +9,8 @@ part of 'workers_ai_post_run_cf_leonardo_phoenix10_request.dart';
 class _$WorkersAiPostRunCfLeonardoPhoenix10Request
     extends WorkersAiPostRunCfLeonardoPhoenix10Request {
   @override
+  final String prompt;
+  @override
   final num? guidance;
   @override
   final int? height;
@@ -16,8 +18,6 @@ class _$WorkersAiPostRunCfLeonardoPhoenix10Request
   final String? negativePrompt;
   @override
   final int? numSteps;
-  @override
-  final String prompt;
   @override
   final int? seed;
   @override
@@ -30,11 +30,11 @@ class _$WorkersAiPostRunCfLeonardoPhoenix10Request
           ._build();
 
   _$WorkersAiPostRunCfLeonardoPhoenix10Request._(
-      {this.guidance,
+      {required this.prompt,
+      this.guidance,
       this.height,
       this.negativePrompt,
       this.numSteps,
-      required this.prompt,
       this.seed,
       this.width})
       : super._();
@@ -52,11 +52,11 @@ class _$WorkersAiPostRunCfLeonardoPhoenix10Request
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is WorkersAiPostRunCfLeonardoPhoenix10Request &&
+        prompt == other.prompt &&
         guidance == other.guidance &&
         height == other.height &&
         negativePrompt == other.negativePrompt &&
         numSteps == other.numSteps &&
-        prompt == other.prompt &&
         seed == other.seed &&
         width == other.width;
   }
@@ -64,11 +64,11 @@ class _$WorkersAiPostRunCfLeonardoPhoenix10Request
   @override
   int get hashCode {
     var _$hash = 0;
+    _$hash = $jc(_$hash, prompt.hashCode);
     _$hash = $jc(_$hash, guidance.hashCode);
     _$hash = $jc(_$hash, height.hashCode);
     _$hash = $jc(_$hash, negativePrompt.hashCode);
     _$hash = $jc(_$hash, numSteps.hashCode);
-    _$hash = $jc(_$hash, prompt.hashCode);
     _$hash = $jc(_$hash, seed.hashCode);
     _$hash = $jc(_$hash, width.hashCode);
     _$hash = $jf(_$hash);
@@ -79,11 +79,11 @@ class _$WorkersAiPostRunCfLeonardoPhoenix10Request
   String toString() {
     return (newBuiltValueToStringHelper(
             r'WorkersAiPostRunCfLeonardoPhoenix10Request')
+          ..add('prompt', prompt)
           ..add('guidance', guidance)
           ..add('height', height)
           ..add('negativePrompt', negativePrompt)
           ..add('numSteps', numSteps)
-          ..add('prompt', prompt)
           ..add('seed', seed)
           ..add('width', width))
         .toString();
@@ -95,6 +95,10 @@ class WorkersAiPostRunCfLeonardoPhoenix10RequestBuilder
         Builder<WorkersAiPostRunCfLeonardoPhoenix10Request,
             WorkersAiPostRunCfLeonardoPhoenix10RequestBuilder> {
   _$WorkersAiPostRunCfLeonardoPhoenix10Request? _$v;
+
+  String? _prompt;
+  String? get prompt => _$this._prompt;
+  set prompt(String? prompt) => _$this._prompt = prompt;
 
   num? _guidance;
   num? get guidance => _$this._guidance;
@@ -113,10 +117,6 @@ class WorkersAiPostRunCfLeonardoPhoenix10RequestBuilder
   int? get numSteps => _$this._numSteps;
   set numSteps(int? numSteps) => _$this._numSteps = numSteps;
 
-  String? _prompt;
-  String? get prompt => _$this._prompt;
-  set prompt(String? prompt) => _$this._prompt = prompt;
-
   int? _seed;
   int? get seed => _$this._seed;
   set seed(int? seed) => _$this._seed = seed;
@@ -132,11 +132,11 @@ class WorkersAiPostRunCfLeonardoPhoenix10RequestBuilder
   WorkersAiPostRunCfLeonardoPhoenix10RequestBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
+      _prompt = $v.prompt;
       _guidance = $v.guidance;
       _height = $v.height;
       _negativePrompt = $v.negativePrompt;
       _numSteps = $v.numSteps;
-      _prompt = $v.prompt;
       _seed = $v.seed;
       _width = $v.width;
       _$v = null;
@@ -162,12 +162,12 @@ class WorkersAiPostRunCfLeonardoPhoenix10RequestBuilder
   _$WorkersAiPostRunCfLeonardoPhoenix10Request _build() {
     final _$result = _$v ??
         _$WorkersAiPostRunCfLeonardoPhoenix10Request._(
+          prompt: BuiltValueNullFieldError.checkNotNull(
+              prompt, r'WorkersAiPostRunCfLeonardoPhoenix10Request', 'prompt'),
           guidance: guidance,
           height: height,
           negativePrompt: negativePrompt,
           numSteps: numSteps,
-          prompt: BuiltValueNullFieldError.checkNotNull(
-              prompt, r'WorkersAiPostRunCfLeonardoPhoenix10Request', 'prompt'),
           seed: seed,
           width: width,
         );

@@ -11,7 +11,6 @@ part 'mconn_snapshot_netdev.g.dart';
 /// Snapshot Netdev
 ///
 /// Properties:
-/// * [connectorId] - Connector identifier
 /// * [name] - Name of the network device
 /// * [recvBytes] - Total bytes received
 /// * [recvCompressed] - Compressed packets received
@@ -29,12 +28,9 @@ part 'mconn_snapshot_netdev.g.dart';
 /// * [sentErrs] - Number of transmission errors
 /// * [sentFifo] - FIFO overruns
 /// * [sentPackets] - Total packets transmitted
+/// * [connectorId] - Connector identifier
 @BuiltValue()
 abstract class MconnSnapshotNetdev implements Built<MconnSnapshotNetdev, MconnSnapshotNetdevBuilder> {
-  /// Connector identifier
-  @BuiltValueField(wireName: r'connector_id')
-  String? get connectorId;
-
   /// Name of the network device
   @BuiltValueField(wireName: r'name')
   String get name;
@@ -103,6 +99,10 @@ abstract class MconnSnapshotNetdev implements Built<MconnSnapshotNetdev, MconnSn
   @BuiltValueField(wireName: r'sent_packets')
   num get sentPackets;
 
+  /// Connector identifier
+  @BuiltValueField(wireName: r'connector_id')
+  String? get connectorId;
+
   MconnSnapshotNetdev._();
 
   factory MconnSnapshotNetdev([void updates(MconnSnapshotNetdevBuilder b)]) = _$MconnSnapshotNetdev;
@@ -126,13 +126,6 @@ class _$MconnSnapshotNetdevSerializer implements PrimitiveSerializer<MconnSnapsh
     MconnSnapshotNetdev object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
-    if (object.connectorId != null) {
-      yield r'connector_id';
-      yield serializers.serialize(
-        object.connectorId,
-        specifiedType: const FullType(String),
-      );
-    }
     yield r'name';
     yield serializers.serialize(
       object.name,
@@ -218,6 +211,13 @@ class _$MconnSnapshotNetdevSerializer implements PrimitiveSerializer<MconnSnapsh
       object.sentPackets,
       specifiedType: const FullType(num),
     );
+    if (object.connectorId != null) {
+      yield r'connector_id';
+      yield serializers.serialize(
+        object.connectorId,
+        specifiedType: const FullType(String),
+      );
+    }
   }
 
   @override
@@ -241,13 +241,6 @@ class _$MconnSnapshotNetdevSerializer implements PrimitiveSerializer<MconnSnapsh
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'connector_id':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.connectorId = valueDes;
-          break;
         case r'name':
           final valueDes = serializers.deserialize(
             value,
@@ -366,6 +359,13 @@ class _$MconnSnapshotNetdevSerializer implements PrimitiveSerializer<MconnSnapsh
             specifiedType: const FullType(num),
           ) as num;
           result.sentPackets = valueDes;
+          break;
+        case r'connector_id':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.connectorId = valueDes;
           break;
         default:
           unhandled.add(key);

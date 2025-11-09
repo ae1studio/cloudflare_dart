@@ -217,21 +217,21 @@ class _$WorkersObservabilityTelemetryEventWorkersAnyOfExecutionModelEnumSerializ
 class _$WorkersObservabilityTelemetryEventWorkersAnyOf
     extends WorkersObservabilityTelemetryEventWorkersAnyOf {
   @override
-  final String? entrypoint;
-  @override
-  final BuiltMap<String,
-      WorkersObservabilityTelemetryEventWorkersAnyOfEventValue>? event;
-  @override
   final WorkersObservabilityTelemetryEventWorkersAnyOfEventTypeEnum eventType;
-  @override
-  final WorkersObservabilityTelemetryEventWorkersAnyOfExecutionModelEnum?
-      executionModel;
   @override
   final String outcome;
   @override
   final String requestId;
   @override
   final String scriptName;
+  @override
+  final String? entrypoint;
+  @override
+  final BuiltMap<String,
+      WorkersObservabilityTelemetryEventWorkersAnyOfEventValue>? event;
+  @override
+  final WorkersObservabilityTelemetryEventWorkersAnyOfExecutionModelEnum?
+      executionModel;
   @override
   final WorkersObservabilityTelemetryEventWorkersAnyOfScriptVersion?
       scriptVersion;
@@ -245,13 +245,13 @@ class _$WorkersObservabilityTelemetryEventWorkersAnyOf
           ._build();
 
   _$WorkersObservabilityTelemetryEventWorkersAnyOf._(
-      {this.entrypoint,
-      this.event,
-      required this.eventType,
-      this.executionModel,
+      {required this.eventType,
       required this.outcome,
       required this.requestId,
       required this.scriptName,
+      this.entrypoint,
+      this.event,
+      this.executionModel,
       this.scriptVersion,
       this.truncated})
       : super._();
@@ -269,13 +269,13 @@ class _$WorkersObservabilityTelemetryEventWorkersAnyOf
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is WorkersObservabilityTelemetryEventWorkersAnyOf &&
-        entrypoint == other.entrypoint &&
-        event == other.event &&
         eventType == other.eventType &&
-        executionModel == other.executionModel &&
         outcome == other.outcome &&
         requestId == other.requestId &&
         scriptName == other.scriptName &&
+        entrypoint == other.entrypoint &&
+        event == other.event &&
+        executionModel == other.executionModel &&
         scriptVersion == other.scriptVersion &&
         truncated == other.truncated;
   }
@@ -283,13 +283,13 @@ class _$WorkersObservabilityTelemetryEventWorkersAnyOf
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, entrypoint.hashCode);
-    _$hash = $jc(_$hash, event.hashCode);
     _$hash = $jc(_$hash, eventType.hashCode);
-    _$hash = $jc(_$hash, executionModel.hashCode);
     _$hash = $jc(_$hash, outcome.hashCode);
     _$hash = $jc(_$hash, requestId.hashCode);
     _$hash = $jc(_$hash, scriptName.hashCode);
+    _$hash = $jc(_$hash, entrypoint.hashCode);
+    _$hash = $jc(_$hash, event.hashCode);
+    _$hash = $jc(_$hash, executionModel.hashCode);
     _$hash = $jc(_$hash, scriptVersion.hashCode);
     _$hash = $jc(_$hash, truncated.hashCode);
     _$hash = $jf(_$hash);
@@ -300,13 +300,13 @@ class _$WorkersObservabilityTelemetryEventWorkersAnyOf
   String toString() {
     return (newBuiltValueToStringHelper(
             r'WorkersObservabilityTelemetryEventWorkersAnyOf')
-          ..add('entrypoint', entrypoint)
-          ..add('event', event)
           ..add('eventType', eventType)
-          ..add('executionModel', executionModel)
           ..add('outcome', outcome)
           ..add('requestId', requestId)
           ..add('scriptName', scriptName)
+          ..add('entrypoint', entrypoint)
+          ..add('event', event)
+          ..add('executionModel', executionModel)
           ..add('scriptVersion', scriptVersion)
           ..add('truncated', truncated))
         .toString();
@@ -318,6 +318,26 @@ class WorkersObservabilityTelemetryEventWorkersAnyOfBuilder
         Builder<WorkersObservabilityTelemetryEventWorkersAnyOf,
             WorkersObservabilityTelemetryEventWorkersAnyOfBuilder> {
   _$WorkersObservabilityTelemetryEventWorkersAnyOf? _$v;
+
+  WorkersObservabilityTelemetryEventWorkersAnyOfEventTypeEnum? _eventType;
+  WorkersObservabilityTelemetryEventWorkersAnyOfEventTypeEnum? get eventType =>
+      _$this._eventType;
+  set eventType(
+          WorkersObservabilityTelemetryEventWorkersAnyOfEventTypeEnum?
+              eventType) =>
+      _$this._eventType = eventType;
+
+  String? _outcome;
+  String? get outcome => _$this._outcome;
+  set outcome(String? outcome) => _$this._outcome = outcome;
+
+  String? _requestId;
+  String? get requestId => _$this._requestId;
+  set requestId(String? requestId) => _$this._requestId = requestId;
+
+  String? _scriptName;
+  String? get scriptName => _$this._scriptName;
+  set scriptName(String? scriptName) => _$this._scriptName = scriptName;
 
   String? _entrypoint;
   String? get entrypoint => _$this._entrypoint;
@@ -334,14 +354,6 @@ class WorkersObservabilityTelemetryEventWorkersAnyOfBuilder
               event) =>
       _$this._event = event;
 
-  WorkersObservabilityTelemetryEventWorkersAnyOfEventTypeEnum? _eventType;
-  WorkersObservabilityTelemetryEventWorkersAnyOfEventTypeEnum? get eventType =>
-      _$this._eventType;
-  set eventType(
-          WorkersObservabilityTelemetryEventWorkersAnyOfEventTypeEnum?
-              eventType) =>
-      _$this._eventType = eventType;
-
   WorkersObservabilityTelemetryEventWorkersAnyOfExecutionModelEnum?
       _executionModel;
   WorkersObservabilityTelemetryEventWorkersAnyOfExecutionModelEnum?
@@ -350,18 +362,6 @@ class WorkersObservabilityTelemetryEventWorkersAnyOfBuilder
           WorkersObservabilityTelemetryEventWorkersAnyOfExecutionModelEnum?
               executionModel) =>
       _$this._executionModel = executionModel;
-
-  String? _outcome;
-  String? get outcome => _$this._outcome;
-  set outcome(String? outcome) => _$this._outcome = outcome;
-
-  String? _requestId;
-  String? get requestId => _$this._requestId;
-  set requestId(String? requestId) => _$this._requestId = requestId;
-
-  String? _scriptName;
-  String? get scriptName => _$this._scriptName;
-  set scriptName(String? scriptName) => _$this._scriptName = scriptName;
 
   WorkersObservabilityTelemetryEventWorkersAnyOfScriptVersionBuilder?
       _scriptVersion;
@@ -384,13 +384,13 @@ class WorkersObservabilityTelemetryEventWorkersAnyOfBuilder
   WorkersObservabilityTelemetryEventWorkersAnyOfBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _entrypoint = $v.entrypoint;
-      _event = $v.event?.toBuilder();
       _eventType = $v.eventType;
-      _executionModel = $v.executionModel;
       _outcome = $v.outcome;
       _requestId = $v.requestId;
       _scriptName = $v.scriptName;
+      _entrypoint = $v.entrypoint;
+      _event = $v.event?.toBuilder();
+      _executionModel = $v.executionModel;
       _scriptVersion = $v.scriptVersion?.toBuilder();
       _truncated = $v.truncated;
       _$v = null;
@@ -418,11 +418,8 @@ class WorkersObservabilityTelemetryEventWorkersAnyOfBuilder
     try {
       _$result = _$v ??
           _$WorkersObservabilityTelemetryEventWorkersAnyOf._(
-            entrypoint: entrypoint,
-            event: _event?.build(),
             eventType: BuiltValueNullFieldError.checkNotNull(eventType,
                 r'WorkersObservabilityTelemetryEventWorkersAnyOf', 'eventType'),
-            executionModel: executionModel,
             outcome: BuiltValueNullFieldError.checkNotNull(outcome,
                 r'WorkersObservabilityTelemetryEventWorkersAnyOf', 'outcome'),
             requestId: BuiltValueNullFieldError.checkNotNull(requestId,
@@ -431,6 +428,9 @@ class WorkersObservabilityTelemetryEventWorkersAnyOfBuilder
                 scriptName,
                 r'WorkersObservabilityTelemetryEventWorkersAnyOf',
                 'scriptName'),
+            entrypoint: entrypoint,
+            event: _event?.build(),
+            executionModel: executionModel,
             scriptVersion: _scriptVersion?.build(),
             truncated: truncated,
           );

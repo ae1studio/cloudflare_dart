@@ -60,26 +60,26 @@ class _$WorkersBindingKindWorkflowTypeEnumSerializer
 
 class _$WorkersBindingKindWorkflow extends WorkersBindingKindWorkflow {
   @override
-  final String? className;
-  @override
   final String name;
-  @override
-  final String? scriptName;
   @override
   final WorkersBindingKindWorkflowTypeEnum type;
   @override
   final String workflowName;
+  @override
+  final String? className;
+  @override
+  final String? scriptName;
 
   factory _$WorkersBindingKindWorkflow(
           [void Function(WorkersBindingKindWorkflowBuilder)? updates]) =>
       (WorkersBindingKindWorkflowBuilder()..update(updates))._build();
 
   _$WorkersBindingKindWorkflow._(
-      {this.className,
-      required this.name,
-      this.scriptName,
+      {required this.name,
       required this.type,
-      required this.workflowName})
+      required this.workflowName,
+      this.className,
+      this.scriptName})
       : super._();
   @override
   WorkersBindingKindWorkflow rebuild(
@@ -94,21 +94,21 @@ class _$WorkersBindingKindWorkflow extends WorkersBindingKindWorkflow {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is WorkersBindingKindWorkflow &&
-        className == other.className &&
         name == other.name &&
-        scriptName == other.scriptName &&
         type == other.type &&
-        workflowName == other.workflowName;
+        workflowName == other.workflowName &&
+        className == other.className &&
+        scriptName == other.scriptName;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, className.hashCode);
     _$hash = $jc(_$hash, name.hashCode);
-    _$hash = $jc(_$hash, scriptName.hashCode);
     _$hash = $jc(_$hash, type.hashCode);
     _$hash = $jc(_$hash, workflowName.hashCode);
+    _$hash = $jc(_$hash, className.hashCode);
+    _$hash = $jc(_$hash, scriptName.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -116,11 +116,11 @@ class _$WorkersBindingKindWorkflow extends WorkersBindingKindWorkflow {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'WorkersBindingKindWorkflow')
-          ..add('className', className)
           ..add('name', name)
-          ..add('scriptName', scriptName)
           ..add('type', type)
-          ..add('workflowName', workflowName))
+          ..add('workflowName', workflowName)
+          ..add('className', className)
+          ..add('scriptName', scriptName))
         .toString();
   }
 }
@@ -130,17 +130,9 @@ class WorkersBindingKindWorkflowBuilder
         Builder<WorkersBindingKindWorkflow, WorkersBindingKindWorkflowBuilder> {
   _$WorkersBindingKindWorkflow? _$v;
 
-  String? _className;
-  String? get className => _$this._className;
-  set className(String? className) => _$this._className = className;
-
   String? _name;
   String? get name => _$this._name;
   set name(String? name) => _$this._name = name;
-
-  String? _scriptName;
-  String? get scriptName => _$this._scriptName;
-  set scriptName(String? scriptName) => _$this._scriptName = scriptName;
 
   WorkersBindingKindWorkflowTypeEnum? _type;
   WorkersBindingKindWorkflowTypeEnum? get type => _$this._type;
@@ -150,6 +142,14 @@ class WorkersBindingKindWorkflowBuilder
   String? get workflowName => _$this._workflowName;
   set workflowName(String? workflowName) => _$this._workflowName = workflowName;
 
+  String? _className;
+  String? get className => _$this._className;
+  set className(String? className) => _$this._className = className;
+
+  String? _scriptName;
+  String? get scriptName => _$this._scriptName;
+  set scriptName(String? scriptName) => _$this._scriptName = scriptName;
+
   WorkersBindingKindWorkflowBuilder() {
     WorkersBindingKindWorkflow._defaults(this);
   }
@@ -157,11 +157,11 @@ class WorkersBindingKindWorkflowBuilder
   WorkersBindingKindWorkflowBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _className = $v.className;
       _name = $v.name;
-      _scriptName = $v.scriptName;
       _type = $v.type;
       _workflowName = $v.workflowName;
+      _className = $v.className;
+      _scriptName = $v.scriptName;
       _$v = null;
     }
     return this;
@@ -183,14 +183,14 @@ class WorkersBindingKindWorkflowBuilder
   _$WorkersBindingKindWorkflow _build() {
     final _$result = _$v ??
         _$WorkersBindingKindWorkflow._(
-          className: className,
           name: BuiltValueNullFieldError.checkNotNull(
               name, r'WorkersBindingKindWorkflow', 'name'),
-          scriptName: scriptName,
           type: BuiltValueNullFieldError.checkNotNull(
               type, r'WorkersBindingKindWorkflow', 'type'),
           workflowName: BuiltValueNullFieldError.checkNotNull(
               workflowName, r'WorkersBindingKindWorkflow', 'workflowName'),
+          className: className,
+          scriptName: scriptName,
         );
     replace(_$result);
     return _$result;

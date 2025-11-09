@@ -20,8 +20,8 @@ part 'm_tls_certificate_management_list_m_tls_certificates4_xx_response.g.dart';
 /// * [errors] 
 /// * [messages] 
 /// * [success] - Whether the API call was successful.
-/// * [resultInfo] 
 /// * [result] 
+/// * [resultInfo] 
 @BuiltValue()
 abstract class MTlsCertificateManagementListMTlsCertificates4XXResponse implements TlsCertificatesAndHostnamesApiResponseCommonFailure, TlsCertificatesAndHostnamesMtlsManagementComponentsSchemasCertificateResponseCollection, Built<MTlsCertificateManagementListMTlsCertificates4XXResponse, MTlsCertificateManagementListMTlsCertificates4XXResponseBuilder> {
   MTlsCertificateManagementListMTlsCertificates4XXResponse._();

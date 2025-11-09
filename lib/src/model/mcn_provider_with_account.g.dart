@@ -10,21 +10,9 @@ class _$McnProviderWithAccount extends McnProviderWithAccount {
   @override
   final String accountId;
   @override
-  final String? awsArn;
-  @override
-  final String? azureSubscriptionId;
-  @override
-  final String? azureTenantId;
-  @override
   final McnCloudType cloudType;
   @override
-  final String? description;
-  @override
   final String friendlyName;
-  @override
-  final String? gcpProjectId;
-  @override
-  final String? gcpServiceAccountEmail;
   @override
   final String id;
   @override
@@ -36,6 +24,18 @@ class _$McnProviderWithAccount extends McnProviderWithAccount {
   @override
   final McnProviderDiscoveryStatus stateV2;
   @override
+  final String? awsArn;
+  @override
+  final String? azureSubscriptionId;
+  @override
+  final String? azureTenantId;
+  @override
+  final String? description;
+  @override
+  final String? gcpProjectId;
+  @override
+  final String? gcpServiceAccountEmail;
+  @override
   final McnProviderStatus? status;
 
   factory _$McnProviderWithAccount(
@@ -44,19 +44,19 @@ class _$McnProviderWithAccount extends McnProviderWithAccount {
 
   _$McnProviderWithAccount._(
       {required this.accountId,
-      this.awsArn,
-      this.azureSubscriptionId,
-      this.azureTenantId,
       required this.cloudType,
-      this.description,
       required this.friendlyName,
-      this.gcpProjectId,
-      this.gcpServiceAccountEmail,
       required this.id,
       required this.lastUpdated,
       required this.lifecycleState,
       required this.state,
       required this.stateV2,
+      this.awsArn,
+      this.azureSubscriptionId,
+      this.azureTenantId,
+      this.description,
+      this.gcpProjectId,
+      this.gcpServiceAccountEmail,
       this.status})
       : super._();
   @override
@@ -73,19 +73,19 @@ class _$McnProviderWithAccount extends McnProviderWithAccount {
     if (identical(other, this)) return true;
     return other is McnProviderWithAccount &&
         accountId == other.accountId &&
-        awsArn == other.awsArn &&
-        azureSubscriptionId == other.azureSubscriptionId &&
-        azureTenantId == other.azureTenantId &&
         cloudType == other.cloudType &&
-        description == other.description &&
         friendlyName == other.friendlyName &&
-        gcpProjectId == other.gcpProjectId &&
-        gcpServiceAccountEmail == other.gcpServiceAccountEmail &&
         id == other.id &&
         lastUpdated == other.lastUpdated &&
         lifecycleState == other.lifecycleState &&
         state == other.state &&
         stateV2 == other.stateV2 &&
+        awsArn == other.awsArn &&
+        azureSubscriptionId == other.azureSubscriptionId &&
+        azureTenantId == other.azureTenantId &&
+        description == other.description &&
+        gcpProjectId == other.gcpProjectId &&
+        gcpServiceAccountEmail == other.gcpServiceAccountEmail &&
         status == other.status;
   }
 
@@ -93,19 +93,19 @@ class _$McnProviderWithAccount extends McnProviderWithAccount {
   int get hashCode {
     var _$hash = 0;
     _$hash = $jc(_$hash, accountId.hashCode);
-    _$hash = $jc(_$hash, awsArn.hashCode);
-    _$hash = $jc(_$hash, azureSubscriptionId.hashCode);
-    _$hash = $jc(_$hash, azureTenantId.hashCode);
     _$hash = $jc(_$hash, cloudType.hashCode);
-    _$hash = $jc(_$hash, description.hashCode);
     _$hash = $jc(_$hash, friendlyName.hashCode);
-    _$hash = $jc(_$hash, gcpProjectId.hashCode);
-    _$hash = $jc(_$hash, gcpServiceAccountEmail.hashCode);
     _$hash = $jc(_$hash, id.hashCode);
     _$hash = $jc(_$hash, lastUpdated.hashCode);
     _$hash = $jc(_$hash, lifecycleState.hashCode);
     _$hash = $jc(_$hash, state.hashCode);
     _$hash = $jc(_$hash, stateV2.hashCode);
+    _$hash = $jc(_$hash, awsArn.hashCode);
+    _$hash = $jc(_$hash, azureSubscriptionId.hashCode);
+    _$hash = $jc(_$hash, azureTenantId.hashCode);
+    _$hash = $jc(_$hash, description.hashCode);
+    _$hash = $jc(_$hash, gcpProjectId.hashCode);
+    _$hash = $jc(_$hash, gcpServiceAccountEmail.hashCode);
     _$hash = $jc(_$hash, status.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
@@ -115,19 +115,19 @@ class _$McnProviderWithAccount extends McnProviderWithAccount {
   String toString() {
     return (newBuiltValueToStringHelper(r'McnProviderWithAccount')
           ..add('accountId', accountId)
-          ..add('awsArn', awsArn)
-          ..add('azureSubscriptionId', azureSubscriptionId)
-          ..add('azureTenantId', azureTenantId)
           ..add('cloudType', cloudType)
-          ..add('description', description)
           ..add('friendlyName', friendlyName)
-          ..add('gcpProjectId', gcpProjectId)
-          ..add('gcpServiceAccountEmail', gcpServiceAccountEmail)
           ..add('id', id)
           ..add('lastUpdated', lastUpdated)
           ..add('lifecycleState', lifecycleState)
           ..add('state', state)
           ..add('stateV2', stateV2)
+          ..add('awsArn', awsArn)
+          ..add('azureSubscriptionId', azureSubscriptionId)
+          ..add('azureTenantId', azureTenantId)
+          ..add('description', description)
+          ..add('gcpProjectId', gcpProjectId)
+          ..add('gcpServiceAccountEmail', gcpServiceAccountEmail)
           ..add('status', status))
         .toString();
   }
@@ -143,44 +143,15 @@ class McnProviderWithAccountBuilder
   String? get accountId => _$this._accountId;
   set accountId(covariant String? accountId) => _$this._accountId = accountId;
 
-  String? _awsArn;
-  String? get awsArn => _$this._awsArn;
-  set awsArn(covariant String? awsArn) => _$this._awsArn = awsArn;
-
-  String? _azureSubscriptionId;
-  String? get azureSubscriptionId => _$this._azureSubscriptionId;
-  set azureSubscriptionId(covariant String? azureSubscriptionId) =>
-      _$this._azureSubscriptionId = azureSubscriptionId;
-
-  String? _azureTenantId;
-  String? get azureTenantId => _$this._azureTenantId;
-  set azureTenantId(covariant String? azureTenantId) =>
-      _$this._azureTenantId = azureTenantId;
-
   McnCloudType? _cloudType;
   McnCloudType? get cloudType => _$this._cloudType;
   set cloudType(covariant McnCloudType? cloudType) =>
       _$this._cloudType = cloudType;
 
-  String? _description;
-  String? get description => _$this._description;
-  set description(covariant String? description) =>
-      _$this._description = description;
-
   String? _friendlyName;
   String? get friendlyName => _$this._friendlyName;
   set friendlyName(covariant String? friendlyName) =>
       _$this._friendlyName = friendlyName;
-
-  String? _gcpProjectId;
-  String? get gcpProjectId => _$this._gcpProjectId;
-  set gcpProjectId(covariant String? gcpProjectId) =>
-      _$this._gcpProjectId = gcpProjectId;
-
-  String? _gcpServiceAccountEmail;
-  String? get gcpServiceAccountEmail => _$this._gcpServiceAccountEmail;
-  set gcpServiceAccountEmail(covariant String? gcpServiceAccountEmail) =>
-      _$this._gcpServiceAccountEmail = gcpServiceAccountEmail;
 
   String? _id;
   String? get id => _$this._id;
@@ -206,6 +177,35 @@ class McnProviderWithAccountBuilder
   set stateV2(covariant McnProviderDiscoveryStatus? stateV2) =>
       _$this._stateV2 = stateV2;
 
+  String? _awsArn;
+  String? get awsArn => _$this._awsArn;
+  set awsArn(covariant String? awsArn) => _$this._awsArn = awsArn;
+
+  String? _azureSubscriptionId;
+  String? get azureSubscriptionId => _$this._azureSubscriptionId;
+  set azureSubscriptionId(covariant String? azureSubscriptionId) =>
+      _$this._azureSubscriptionId = azureSubscriptionId;
+
+  String? _azureTenantId;
+  String? get azureTenantId => _$this._azureTenantId;
+  set azureTenantId(covariant String? azureTenantId) =>
+      _$this._azureTenantId = azureTenantId;
+
+  String? _description;
+  String? get description => _$this._description;
+  set description(covariant String? description) =>
+      _$this._description = description;
+
+  String? _gcpProjectId;
+  String? get gcpProjectId => _$this._gcpProjectId;
+  set gcpProjectId(covariant String? gcpProjectId) =>
+      _$this._gcpProjectId = gcpProjectId;
+
+  String? _gcpServiceAccountEmail;
+  String? get gcpServiceAccountEmail => _$this._gcpServiceAccountEmail;
+  set gcpServiceAccountEmail(covariant String? gcpServiceAccountEmail) =>
+      _$this._gcpServiceAccountEmail = gcpServiceAccountEmail;
+
   McnProviderStatusBuilder? _status;
   McnProviderStatusBuilder get status =>
       _$this._status ??= McnProviderStatusBuilder();
@@ -220,19 +220,19 @@ class McnProviderWithAccountBuilder
     final $v = _$v;
     if ($v != null) {
       _accountId = $v.accountId;
-      _awsArn = $v.awsArn;
-      _azureSubscriptionId = $v.azureSubscriptionId;
-      _azureTenantId = $v.azureTenantId;
       _cloudType = $v.cloudType;
-      _description = $v.description;
       _friendlyName = $v.friendlyName;
-      _gcpProjectId = $v.gcpProjectId;
-      _gcpServiceAccountEmail = $v.gcpServiceAccountEmail;
       _id = $v.id;
       _lastUpdated = $v.lastUpdated;
       _lifecycleState = $v.lifecycleState;
       _state = $v.state;
       _stateV2 = $v.stateV2;
+      _awsArn = $v.awsArn;
+      _azureSubscriptionId = $v.azureSubscriptionId;
+      _azureTenantId = $v.azureTenantId;
+      _description = $v.description;
+      _gcpProjectId = $v.gcpProjectId;
+      _gcpServiceAccountEmail = $v.gcpServiceAccountEmail;
       _status = $v.status?.toBuilder();
       _$v = null;
     }
@@ -259,16 +259,10 @@ class McnProviderWithAccountBuilder
           _$McnProviderWithAccount._(
             accountId: BuiltValueNullFieldError.checkNotNull(
                 accountId, r'McnProviderWithAccount', 'accountId'),
-            awsArn: awsArn,
-            azureSubscriptionId: azureSubscriptionId,
-            azureTenantId: azureTenantId,
             cloudType: BuiltValueNullFieldError.checkNotNull(
                 cloudType, r'McnProviderWithAccount', 'cloudType'),
-            description: description,
             friendlyName: BuiltValueNullFieldError.checkNotNull(
                 friendlyName, r'McnProviderWithAccount', 'friendlyName'),
-            gcpProjectId: gcpProjectId,
-            gcpServiceAccountEmail: gcpServiceAccountEmail,
             id: BuiltValueNullFieldError.checkNotNull(
                 id, r'McnProviderWithAccount', 'id'),
             lastUpdated: BuiltValueNullFieldError.checkNotNull(
@@ -279,6 +273,12 @@ class McnProviderWithAccountBuilder
                 state, r'McnProviderWithAccount', 'state'),
             stateV2: BuiltValueNullFieldError.checkNotNull(
                 stateV2, r'McnProviderWithAccount', 'stateV2'),
+            awsArn: awsArn,
+            azureSubscriptionId: azureSubscriptionId,
+            azureTenantId: azureTenantId,
+            description: description,
+            gcpProjectId: gcpProjectId,
+            gcpServiceAccountEmail: gcpServiceAccountEmail,
             status: _status?.build(),
           );
     } catch (_) {

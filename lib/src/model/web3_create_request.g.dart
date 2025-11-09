@@ -8,23 +8,23 @@ part of 'web3_create_request.dart';
 
 class _$Web3CreateRequest extends Web3CreateRequest {
   @override
-  final String? description;
-  @override
-  final String? dnslink;
-  @override
   final String name;
   @override
   final Web3Target target;
+  @override
+  final String? description;
+  @override
+  final String? dnslink;
 
   factory _$Web3CreateRequest(
           [void Function(Web3CreateRequestBuilder)? updates]) =>
       (Web3CreateRequestBuilder()..update(updates))._build();
 
   _$Web3CreateRequest._(
-      {this.description,
-      this.dnslink,
-      required this.name,
-      required this.target})
+      {required this.name,
+      required this.target,
+      this.description,
+      this.dnslink})
       : super._();
   @override
   Web3CreateRequest rebuild(void Function(Web3CreateRequestBuilder) updates) =>
@@ -38,19 +38,19 @@ class _$Web3CreateRequest extends Web3CreateRequest {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is Web3CreateRequest &&
-        description == other.description &&
-        dnslink == other.dnslink &&
         name == other.name &&
-        target == other.target;
+        target == other.target &&
+        description == other.description &&
+        dnslink == other.dnslink;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, description.hashCode);
-    _$hash = $jc(_$hash, dnslink.hashCode);
     _$hash = $jc(_$hash, name.hashCode);
     _$hash = $jc(_$hash, target.hashCode);
+    _$hash = $jc(_$hash, description.hashCode);
+    _$hash = $jc(_$hash, dnslink.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -58,10 +58,10 @@ class _$Web3CreateRequest extends Web3CreateRequest {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'Web3CreateRequest')
-          ..add('description', description)
-          ..add('dnslink', dnslink)
           ..add('name', name)
-          ..add('target', target))
+          ..add('target', target)
+          ..add('description', description)
+          ..add('dnslink', dnslink))
         .toString();
   }
 }
@@ -69,14 +69,6 @@ class _$Web3CreateRequest extends Web3CreateRequest {
 class Web3CreateRequestBuilder
     implements Builder<Web3CreateRequest, Web3CreateRequestBuilder> {
   _$Web3CreateRequest? _$v;
-
-  String? _description;
-  String? get description => _$this._description;
-  set description(String? description) => _$this._description = description;
-
-  String? _dnslink;
-  String? get dnslink => _$this._dnslink;
-  set dnslink(String? dnslink) => _$this._dnslink = dnslink;
 
   String? _name;
   String? get name => _$this._name;
@@ -86,6 +78,14 @@ class Web3CreateRequestBuilder
   Web3Target? get target => _$this._target;
   set target(Web3Target? target) => _$this._target = target;
 
+  String? _description;
+  String? get description => _$this._description;
+  set description(String? description) => _$this._description = description;
+
+  String? _dnslink;
+  String? get dnslink => _$this._dnslink;
+  set dnslink(String? dnslink) => _$this._dnslink = dnslink;
+
   Web3CreateRequestBuilder() {
     Web3CreateRequest._defaults(this);
   }
@@ -93,10 +93,10 @@ class Web3CreateRequestBuilder
   Web3CreateRequestBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _description = $v.description;
-      _dnslink = $v.dnslink;
       _name = $v.name;
       _target = $v.target;
+      _description = $v.description;
+      _dnslink = $v.dnslink;
       _$v = null;
     }
     return this;
@@ -118,12 +118,12 @@ class Web3CreateRequestBuilder
   _$Web3CreateRequest _build() {
     final _$result = _$v ??
         _$Web3CreateRequest._(
-          description: description,
-          dnslink: dnslink,
           name: BuiltValueNullFieldError.checkNotNull(
               name, r'Web3CreateRequest', 'name'),
           target: BuiltValueNullFieldError.checkNotNull(
               target, r'Web3CreateRequest', 'target'),
+          description: description,
+          dnslink: dnslink,
         );
     replace(_$result);
     return _$result;

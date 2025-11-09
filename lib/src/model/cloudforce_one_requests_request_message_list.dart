@@ -12,22 +12,14 @@ part 'cloudforce_one_requests_request_message_list.g.dart';
 /// CloudforceOneRequestsRequestMessageList
 ///
 /// Properties:
-/// * [after] - Retrieve mes  ges created after this time.
-/// * [before] - Retrieve messages created before this time.
 /// * [page] - Page number of results.
 /// * [perPage] - Number of results per page.
+/// * [after] - Retrieve mes  ges created after this time.
+/// * [before] - Retrieve messages created before this time.
 /// * [sortBy] - Field to sort results by.
 /// * [sortOrder] - Sort order (asc or desc).
 @BuiltValue()
 abstract class CloudforceOneRequestsRequestMessageList implements Built<CloudforceOneRequestsRequestMessageList, CloudforceOneRequestsRequestMessageListBuilder> {
-  /// Retrieve mes  ges created after this time.
-  @BuiltValueField(wireName: r'after')
-  DateTime? get after;
-
-  /// Retrieve messages created before this time.
-  @BuiltValueField(wireName: r'before')
-  DateTime? get before;
-
   /// Page number of results.
   @BuiltValueField(wireName: r'page')
   int get page;
@@ -35,6 +27,14 @@ abstract class CloudforceOneRequestsRequestMessageList implements Built<Cloudfor
   /// Number of results per page.
   @BuiltValueField(wireName: r'per_page')
   int get perPage;
+
+  /// Retrieve mes  ges created after this time.
+  @BuiltValueField(wireName: r'after')
+  DateTime? get after;
+
+  /// Retrieve messages created before this time.
+  @BuiltValueField(wireName: r'before')
+  DateTime? get before;
 
   /// Field to sort results by.
   @BuiltValueField(wireName: r'sort_by')
@@ -68,6 +68,16 @@ class _$CloudforceOneRequestsRequestMessageListSerializer implements PrimitiveSe
     CloudforceOneRequestsRequestMessageList object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    yield r'page';
+    yield serializers.serialize(
+      object.page,
+      specifiedType: const FullType(int),
+    );
+    yield r'per_page';
+    yield serializers.serialize(
+      object.perPage,
+      specifiedType: const FullType(int),
+    );
     if (object.after != null) {
       yield r'after';
       yield serializers.serialize(
@@ -82,16 +92,6 @@ class _$CloudforceOneRequestsRequestMessageListSerializer implements PrimitiveSe
         specifiedType: const FullType(DateTime),
       );
     }
-    yield r'page';
-    yield serializers.serialize(
-      object.page,
-      specifiedType: const FullType(int),
-    );
-    yield r'per_page';
-    yield serializers.serialize(
-      object.perPage,
-      specifiedType: const FullType(int),
-    );
     if (object.sortBy != null) {
       yield r'sort_by';
       yield serializers.serialize(
@@ -129,20 +129,6 @@ class _$CloudforceOneRequestsRequestMessageListSerializer implements PrimitiveSe
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'after':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
-          result.after = valueDes;
-          break;
-        case r'before':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
-          result.before = valueDes;
-          break;
         case r'page':
           final valueDes = serializers.deserialize(
             value,
@@ -156,6 +142,20 @@ class _$CloudforceOneRequestsRequestMessageListSerializer implements PrimitiveSe
             specifiedType: const FullType(int),
           ) as int;
           result.perPage = valueDes;
+          break;
+        case r'after':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(DateTime),
+          ) as DateTime;
+          result.after = valueDes;
+          break;
+        case r'before':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(DateTime),
+          ) as DateTime;
+          result.before = valueDes;
           break;
         case r'sort_by':
           final valueDes = serializers.deserialize(

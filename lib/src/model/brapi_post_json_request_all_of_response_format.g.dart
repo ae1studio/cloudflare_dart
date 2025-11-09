@@ -9,10 +9,10 @@ part of 'brapi_post_json_request_all_of_response_format.dart';
 class _$BrapiPostJsonRequestAllOfResponseFormat
     extends BrapiPostJsonRequestAllOfResponseFormat {
   @override
+  final String type;
+  @override
   final BuiltMap<String,
       BrapiPostJsonRequestAllOfResponseFormatJsonSchemaValue>? jsonSchema;
-  @override
-  final String type;
 
   factory _$BrapiPostJsonRequestAllOfResponseFormat(
           [void Function(BrapiPostJsonRequestAllOfResponseFormatBuilder)?
@@ -21,7 +21,7 @@ class _$BrapiPostJsonRequestAllOfResponseFormat
           ._build();
 
   _$BrapiPostJsonRequestAllOfResponseFormat._(
-      {this.jsonSchema, required this.type})
+      {required this.type, this.jsonSchema})
       : super._();
   @override
   BrapiPostJsonRequestAllOfResponseFormat rebuild(
@@ -37,15 +37,15 @@ class _$BrapiPostJsonRequestAllOfResponseFormat
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is BrapiPostJsonRequestAllOfResponseFormat &&
-        jsonSchema == other.jsonSchema &&
-        type == other.type;
+        type == other.type &&
+        jsonSchema == other.jsonSchema;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, jsonSchema.hashCode);
     _$hash = $jc(_$hash, type.hashCode);
+    _$hash = $jc(_$hash, jsonSchema.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -54,8 +54,8 @@ class _$BrapiPostJsonRequestAllOfResponseFormat
   String toString() {
     return (newBuiltValueToStringHelper(
             r'BrapiPostJsonRequestAllOfResponseFormat')
-          ..add('jsonSchema', jsonSchema)
-          ..add('type', type))
+          ..add('type', type)
+          ..add('jsonSchema', jsonSchema))
         .toString();
   }
 }
@@ -65,6 +65,10 @@ class BrapiPostJsonRequestAllOfResponseFormatBuilder
         Builder<BrapiPostJsonRequestAllOfResponseFormat,
             BrapiPostJsonRequestAllOfResponseFormatBuilder> {
   _$BrapiPostJsonRequestAllOfResponseFormat? _$v;
+
+  String? _type;
+  String? get type => _$this._type;
+  set type(String? type) => _$this._type = type;
 
   MapBuilder<String, BrapiPostJsonRequestAllOfResponseFormatJsonSchemaValue>?
       _jsonSchema;
@@ -77,10 +81,6 @@ class BrapiPostJsonRequestAllOfResponseFormatBuilder
               jsonSchema) =>
       _$this._jsonSchema = jsonSchema;
 
-  String? _type;
-  String? get type => _$this._type;
-  set type(String? type) => _$this._type = type;
-
   BrapiPostJsonRequestAllOfResponseFormatBuilder() {
     BrapiPostJsonRequestAllOfResponseFormat._defaults(this);
   }
@@ -88,8 +88,8 @@ class BrapiPostJsonRequestAllOfResponseFormatBuilder
   BrapiPostJsonRequestAllOfResponseFormatBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _jsonSchema = $v.jsonSchema?.toBuilder();
       _type = $v.type;
+      _jsonSchema = $v.jsonSchema?.toBuilder();
       _$v = null;
     }
     return this;
@@ -114,9 +114,9 @@ class BrapiPostJsonRequestAllOfResponseFormatBuilder
     try {
       _$result = _$v ??
           _$BrapiPostJsonRequestAllOfResponseFormat._(
-            jsonSchema: _jsonSchema?.build(),
             type: BuiltValueNullFieldError.checkNotNull(
                 type, r'BrapiPostJsonRequestAllOfResponseFormat', 'type'),
+            jsonSchema: _jsonSchema?.build(),
           );
     } catch (_) {
       late String _$failedField;

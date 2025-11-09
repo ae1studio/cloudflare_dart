@@ -8,6 +8,7 @@ import 'package:cloudflare_dart/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**id** | **String** | Rule ID this patch applies to | 
 **action** | [**ApiShieldAction**](ApiShieldAction.md) |  | [optional] 
 **description** | **String** | A human-readable description that gives more details than `title`. | [optional] 
 **enabled** | **bool** | Toggle rule on or off. | [optional] 
@@ -15,7 +16,6 @@ Name | Type | Description | Notes
 **selector** | [**ApiShieldSelector**](ApiShieldSelector.md) |  | [optional] 
 **title** | **String** | A human-readable name for the rule. | [optional] 
 **position** | [**ApiShieldPosition**](ApiShieldPosition.md) |  | [optional] 
-**id** | **String** | Rule ID this patch applies to | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

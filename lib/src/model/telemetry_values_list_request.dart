@@ -16,28 +16,19 @@ part 'telemetry_values_list_request.g.dart';
 ///
 /// Properties:
 /// * [datasets] 
-/// * [filters] 
 /// * [key] 
-/// * [limit] 
-/// * [needle] 
 /// * [timeframe] 
 /// * [type] 
+/// * [filters] 
+/// * [limit] 
+/// * [needle] 
 @BuiltValue()
 abstract class TelemetryValuesListRequest implements Built<TelemetryValuesListRequest, TelemetryValuesListRequestBuilder> {
   @BuiltValueField(wireName: r'datasets')
   BuiltList<String> get datasets;
 
-  @BuiltValueField(wireName: r'filters')
-  BuiltList<TelemetryKeysListRequestFiltersInner>? get filters;
-
   @BuiltValueField(wireName: r'key')
   String get key;
-
-  @BuiltValueField(wireName: r'limit')
-  num? get limit;
-
-  @BuiltValueField(wireName: r'needle')
-  TelemetryKeysListRequestNeedle? get needle;
 
   @BuiltValueField(wireName: r'timeframe')
   TelemetryKeysListRequestTimeframe get timeframe;
@@ -45,6 +36,15 @@ abstract class TelemetryValuesListRequest implements Built<TelemetryValuesListRe
   @BuiltValueField(wireName: r'type')
   TelemetryValuesListRequestTypeEnum get type;
   // enum typeEnum {  string,  boolean,  number,  };
+
+  @BuiltValueField(wireName: r'filters')
+  BuiltList<TelemetryKeysListRequestFiltersInner>? get filters;
+
+  @BuiltValueField(wireName: r'limit')
+  num? get limit;
+
+  @BuiltValueField(wireName: r'needle')
+  TelemetryKeysListRequestNeedle? get needle;
 
   TelemetryValuesListRequest._();
 
@@ -76,6 +76,21 @@ class _$TelemetryValuesListRequestSerializer implements PrimitiveSerializer<Tele
       object.datasets,
       specifiedType: const FullType(BuiltList, [FullType(String)]),
     );
+    yield r'key';
+    yield serializers.serialize(
+      object.key,
+      specifiedType: const FullType(String),
+    );
+    yield r'timeframe';
+    yield serializers.serialize(
+      object.timeframe,
+      specifiedType: const FullType(TelemetryKeysListRequestTimeframe),
+    );
+    yield r'type';
+    yield serializers.serialize(
+      object.type,
+      specifiedType: const FullType(TelemetryValuesListRequestTypeEnum),
+    );
     if (object.filters != null) {
       yield r'filters';
       yield serializers.serialize(
@@ -83,11 +98,6 @@ class _$TelemetryValuesListRequestSerializer implements PrimitiveSerializer<Tele
         specifiedType: const FullType(BuiltList, [FullType(TelemetryKeysListRequestFiltersInner)]),
       );
     }
-    yield r'key';
-    yield serializers.serialize(
-      object.key,
-      specifiedType: const FullType(String),
-    );
     if (object.limit != null) {
       yield r'limit';
       yield serializers.serialize(
@@ -102,16 +112,6 @@ class _$TelemetryValuesListRequestSerializer implements PrimitiveSerializer<Tele
         specifiedType: const FullType(TelemetryKeysListRequestNeedle),
       );
     }
-    yield r'timeframe';
-    yield serializers.serialize(
-      object.timeframe,
-      specifiedType: const FullType(TelemetryKeysListRequestTimeframe),
-    );
-    yield r'type';
-    yield serializers.serialize(
-      object.type,
-      specifiedType: const FullType(TelemetryValuesListRequestTypeEnum),
-    );
   }
 
   @override
@@ -142,33 +142,12 @@ class _$TelemetryValuesListRequestSerializer implements PrimitiveSerializer<Tele
           ) as BuiltList<String>;
           result.datasets.replace(valueDes);
           break;
-        case r'filters':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(TelemetryKeysListRequestFiltersInner)]),
-          ) as BuiltList<TelemetryKeysListRequestFiltersInner>;
-          result.filters.replace(valueDes);
-          break;
         case r'key':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(String),
           ) as String;
           result.key = valueDes;
-          break;
-        case r'limit':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(num),
-          ) as num;
-          result.limit = valueDes;
-          break;
-        case r'needle':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(TelemetryKeysListRequestNeedle),
-          ) as TelemetryKeysListRequestNeedle;
-          result.needle.replace(valueDes);
           break;
         case r'timeframe':
           final valueDes = serializers.deserialize(
@@ -183,6 +162,27 @@ class _$TelemetryValuesListRequestSerializer implements PrimitiveSerializer<Tele
             specifiedType: const FullType(TelemetryValuesListRequestTypeEnum),
           ) as TelemetryValuesListRequestTypeEnum;
           result.type = valueDes;
+          break;
+        case r'filters':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BuiltList, [FullType(TelemetryKeysListRequestFiltersInner)]),
+          ) as BuiltList<TelemetryKeysListRequestFiltersInner>;
+          result.filters.replace(valueDes);
+          break;
+        case r'limit':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(num),
+          ) as num;
+          result.limit = valueDes;
+          break;
+        case r'needle':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(TelemetryKeysListRequestNeedle),
+          ) as TelemetryKeysListRequestNeedle;
+          result.needle.replace(valueDes);
           break;
         default:
           unhandled.add(key);

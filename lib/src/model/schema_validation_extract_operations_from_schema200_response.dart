@@ -19,8 +19,8 @@ part 'schema_validation_extract_operations_from_schema200_response.g.dart';
 /// * [errors] 
 /// * [messages] 
 /// * [success] - Whether the API call was successful.
-/// * [resultInfo] 
 /// * [result] 
+/// * [resultInfo] 
 @BuiltValue()
 abstract class SchemaValidationExtractOperationsFromSchema200Response implements ApiShieldApiResponseCollection, Built<SchemaValidationExtractOperationsFromSchema200Response, SchemaValidationExtractOperationsFromSchema200ResponseBuilder> {
   @BuiltValueField(wireName: r'result')

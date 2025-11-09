@@ -13,16 +13,16 @@ part 'radar_get_entities_asn_by_ip200_response_result_asn_estimated_users.g.dart
 /// RadarGetEntitiesAsnByIp200ResponseResultAsnEstimatedUsers
 ///
 /// Properties:
-/// * [estimatedUsers] - Total estimated users.
 /// * [locations] 
+/// * [estimatedUsers] - Total estimated users.
 @BuiltValue()
 abstract class RadarGetEntitiesAsnByIp200ResponseResultAsnEstimatedUsers implements Built<RadarGetEntitiesAsnByIp200ResponseResultAsnEstimatedUsers, RadarGetEntitiesAsnByIp200ResponseResultAsnEstimatedUsersBuilder> {
+  @BuiltValueField(wireName: r'locations')
+  BuiltList<RadarGetEntitiesAsnByIp200ResponseResultAsnEstimatedUsersLocationsInner> get locations;
+
   /// Total estimated users.
   @BuiltValueField(wireName: r'estimatedUsers')
   int? get estimatedUsers;
-
-  @BuiltValueField(wireName: r'locations')
-  BuiltList<RadarGetEntitiesAsnByIp200ResponseResultAsnEstimatedUsersLocationsInner> get locations;
 
   RadarGetEntitiesAsnByIp200ResponseResultAsnEstimatedUsers._();
 
@@ -47,6 +47,11 @@ class _$RadarGetEntitiesAsnByIp200ResponseResultAsnEstimatedUsersSerializer impl
     RadarGetEntitiesAsnByIp200ResponseResultAsnEstimatedUsers object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    yield r'locations';
+    yield serializers.serialize(
+      object.locations,
+      specifiedType: const FullType(BuiltList, [FullType(RadarGetEntitiesAsnByIp200ResponseResultAsnEstimatedUsersLocationsInner)]),
+    );
     if (object.estimatedUsers != null) {
       yield r'estimatedUsers';
       yield serializers.serialize(
@@ -54,11 +59,6 @@ class _$RadarGetEntitiesAsnByIp200ResponseResultAsnEstimatedUsersSerializer impl
         specifiedType: const FullType(int),
       );
     }
-    yield r'locations';
-    yield serializers.serialize(
-      object.locations,
-      specifiedType: const FullType(BuiltList, [FullType(RadarGetEntitiesAsnByIp200ResponseResultAsnEstimatedUsersLocationsInner)]),
-    );
   }
 
   @override
@@ -82,19 +82,19 @@ class _$RadarGetEntitiesAsnByIp200ResponseResultAsnEstimatedUsersSerializer impl
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'estimatedUsers':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
-          result.estimatedUsers = valueDes;
-          break;
         case r'locations':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(BuiltList, [FullType(RadarGetEntitiesAsnByIp200ResponseResultAsnEstimatedUsersLocationsInner)]),
           ) as BuiltList<RadarGetEntitiesAsnByIp200ResponseResultAsnEstimatedUsersLocationsInner>;
           result.locations.replace(valueDes);
+          break;
+        case r'estimatedUsers':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(int),
+          ) as int;
+          result.estimatedUsers = valueDes;
           break;
         default:
           unhandled.add(key);

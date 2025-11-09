@@ -15,26 +15,22 @@ part 'teams_devices_registration.g.dart';
 ///
 /// Properties:
 /// * [createdAt] - The RFC3339 timestamp when the registration was created.
-/// * [deletedAt] - The RFC3339 timestamp when the registration was deleted.
 /// * [device] 
 /// * [id] - The ID of the registration.
 /// * [key] - The public key used to connect to the Cloudflare network.
-/// * [keyType] - The type of encryption key used by the WARP client for the active key. Currently 'curve25519' for WireGuard and 'secp256r1' for MASQUE.
 /// * [lastSeenAt] - The RFC3339 timestamp when the registration was last seen.
+/// * [updatedAt] - The RFC3339 timestamp when the registration was last updated.
+/// * [deletedAt] - The RFC3339 timestamp when the registration was deleted.
+/// * [keyType] - The type of encryption key used by the WARP client for the active key. Currently 'curve25519' for WireGuard and 'secp256r1' for MASQUE.
 /// * [policy] 
 /// * [revokedAt] - The RFC3339 timestamp when the registration was revoked.
 /// * [tunnelType] - Type of the tunnel - wireguard or masque.
-/// * [updatedAt] - The RFC3339 timestamp when the registration was last updated.
 /// * [user] 
 @BuiltValue()
 abstract class TeamsDevicesRegistration implements Built<TeamsDevicesRegistration, TeamsDevicesRegistrationBuilder> {
   /// The RFC3339 timestamp when the registration was created.
   @BuiltValueField(wireName: r'created_at')
   String get createdAt;
-
-  /// The RFC3339 timestamp when the registration was deleted.
-  @BuiltValueField(wireName: r'deleted_at')
-  String? get deletedAt;
 
   @BuiltValueField(wireName: r'device')
   TeamsDevicesRegistrationDeviceDetails get device;
@@ -47,13 +43,21 @@ abstract class TeamsDevicesRegistration implements Built<TeamsDevicesRegistratio
   @BuiltValueField(wireName: r'key')
   String get key;
 
-  /// The type of encryption key used by the WARP client for the active key. Currently 'curve25519' for WireGuard and 'secp256r1' for MASQUE.
-  @BuiltValueField(wireName: r'key_type')
-  String? get keyType;
-
   /// The RFC3339 timestamp when the registration was last seen.
   @BuiltValueField(wireName: r'last_seen_at')
   String get lastSeenAt;
+
+  /// The RFC3339 timestamp when the registration was last updated.
+  @BuiltValueField(wireName: r'updated_at')
+  String get updatedAt;
+
+  /// The RFC3339 timestamp when the registration was deleted.
+  @BuiltValueField(wireName: r'deleted_at')
+  String? get deletedAt;
+
+  /// The type of encryption key used by the WARP client for the active key. Currently 'curve25519' for WireGuard and 'secp256r1' for MASQUE.
+  @BuiltValueField(wireName: r'key_type')
+  String? get keyType;
 
   @BuiltValueField(wireName: r'policy')
   TeamsDevicesPolicySummary? get policy;
@@ -65,10 +69,6 @@ abstract class TeamsDevicesRegistration implements Built<TeamsDevicesRegistratio
   /// Type of the tunnel - wireguard or masque.
   @BuiltValueField(wireName: r'tunnel_type')
   String? get tunnelType;
-
-  /// The RFC3339 timestamp when the registration was last updated.
-  @BuiltValueField(wireName: r'updated_at')
-  String get updatedAt;
 
   @BuiltValueField(wireName: r'user')
   TeamsDevicesUser? get user;
@@ -101,13 +101,6 @@ class _$TeamsDevicesRegistrationSerializer implements PrimitiveSerializer<TeamsD
       object.createdAt,
       specifiedType: const FullType(String),
     );
-    if (object.deletedAt != null) {
-      yield r'deleted_at';
-      yield serializers.serialize(
-        object.deletedAt,
-        specifiedType: const FullType.nullable(String),
-      );
-    }
     yield r'device';
     yield serializers.serialize(
       object.device,
@@ -123,6 +116,23 @@ class _$TeamsDevicesRegistrationSerializer implements PrimitiveSerializer<TeamsD
       object.key,
       specifiedType: const FullType(String),
     );
+    yield r'last_seen_at';
+    yield serializers.serialize(
+      object.lastSeenAt,
+      specifiedType: const FullType(String),
+    );
+    yield r'updated_at';
+    yield serializers.serialize(
+      object.updatedAt,
+      specifiedType: const FullType(String),
+    );
+    if (object.deletedAt != null) {
+      yield r'deleted_at';
+      yield serializers.serialize(
+        object.deletedAt,
+        specifiedType: const FullType.nullable(String),
+      );
+    }
     if (object.keyType != null) {
       yield r'key_type';
       yield serializers.serialize(
@@ -130,11 +140,6 @@ class _$TeamsDevicesRegistrationSerializer implements PrimitiveSerializer<TeamsD
         specifiedType: const FullType.nullable(String),
       );
     }
-    yield r'last_seen_at';
-    yield serializers.serialize(
-      object.lastSeenAt,
-      specifiedType: const FullType(String),
-    );
     if (object.policy != null) {
       yield r'policy';
       yield serializers.serialize(
@@ -156,11 +161,6 @@ class _$TeamsDevicesRegistrationSerializer implements PrimitiveSerializer<TeamsD
         specifiedType: const FullType.nullable(String),
       );
     }
-    yield r'updated_at';
-    yield serializers.serialize(
-      object.updatedAt,
-      specifiedType: const FullType(String),
-    );
     if (object.user != null) {
       yield r'user';
       yield serializers.serialize(
@@ -198,14 +198,6 @@ class _$TeamsDevicesRegistrationSerializer implements PrimitiveSerializer<TeamsD
           ) as String;
           result.createdAt = valueDes;
           break;
-        case r'deleted_at':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
-          if (valueDes == null) continue;
-          result.deletedAt = valueDes;
-          break;
         case r'device':
           final valueDes = serializers.deserialize(
             value,
@@ -227,6 +219,28 @@ class _$TeamsDevicesRegistrationSerializer implements PrimitiveSerializer<TeamsD
           ) as String;
           result.key = valueDes;
           break;
+        case r'last_seen_at':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.lastSeenAt = valueDes;
+          break;
+        case r'updated_at':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.updatedAt = valueDes;
+          break;
+        case r'deleted_at':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType.nullable(String),
+          ) as String?;
+          if (valueDes == null) continue;
+          result.deletedAt = valueDes;
+          break;
         case r'key_type':
           final valueDes = serializers.deserialize(
             value,
@@ -234,13 +248,6 @@ class _$TeamsDevicesRegistrationSerializer implements PrimitiveSerializer<TeamsD
           ) as String?;
           if (valueDes == null) continue;
           result.keyType = valueDes;
-          break;
-        case r'last_seen_at':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.lastSeenAt = valueDes;
           break;
         case r'policy':
           final valueDes = serializers.deserialize(
@@ -264,13 +271,6 @@ class _$TeamsDevicesRegistrationSerializer implements PrimitiveSerializer<TeamsD
           ) as String?;
           if (valueDes == null) continue;
           result.tunnelType = valueDes;
-          break;
-        case r'updated_at':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.updatedAt = valueDes;
           break;
         case r'user':
           final valueDes = serializers.deserialize(

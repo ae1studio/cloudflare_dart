@@ -17,9 +17,9 @@ part 'access_policy_req.g.dart';
 ///
 /// Properties:
 /// * [decision] 
-/// * [exclude] - Rules evaluated with a NOT logical operator. To match the policy, a user cannot meet any of the Exclude rules.
 /// * [include] - Rules evaluated with an OR logical operator. A user needs to meet only one of the Include rules.
 /// * [name] - The name of the Access policy.
+/// * [exclude] - Rules evaluated with a NOT logical operator. To match the policy, a user cannot meet any of the Exclude rules.
 /// * [require] - Rules evaluated with an AND logical operator. To match the policy, a user must meet all of the Require rules.
 /// * [approvalGroups] - Administrators who can approve a temporary authentication request.
 /// * [approvalRequired] - Requires the user to request access from an administrator at the start of each session.

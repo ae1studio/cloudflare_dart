@@ -6,32 +6,6 @@ part of 'realtimekit_storage_config.dart';
 // BuiltValueGenerator
 // **************************************************************************
 
-const RealtimekitStorageConfigAuthMethodEnum
-    _$realtimekitStorageConfigAuthMethodEnum_KEY =
-    const RealtimekitStorageConfigAuthMethodEnum._('KEY');
-const RealtimekitStorageConfigAuthMethodEnum
-    _$realtimekitStorageConfigAuthMethodEnum_PASSWORD =
-    const RealtimekitStorageConfigAuthMethodEnum._('PASSWORD');
-
-RealtimekitStorageConfigAuthMethodEnum
-    _$realtimekitStorageConfigAuthMethodEnumValueOf(String name) {
-  switch (name) {
-    case 'KEY':
-      return _$realtimekitStorageConfigAuthMethodEnum_KEY;
-    case 'PASSWORD':
-      return _$realtimekitStorageConfigAuthMethodEnum_PASSWORD;
-    default:
-      throw ArgumentError(name);
-  }
-}
-
-final BuiltSet<RealtimekitStorageConfigAuthMethodEnum>
-    _$realtimekitStorageConfigAuthMethodEnumValues = BuiltSet<
-        RealtimekitStorageConfigAuthMethodEnum>(const <RealtimekitStorageConfigAuthMethodEnum>[
-  _$realtimekitStorageConfigAuthMethodEnum_KEY,
-  _$realtimekitStorageConfigAuthMethodEnum_PASSWORD,
-]);
-
 const RealtimekitStorageConfigTypeEnum _$realtimekitStorageConfigTypeEnum_aws =
     const RealtimekitStorageConfigTypeEnum._('aws');
 const RealtimekitStorageConfigTypeEnum
@@ -73,44 +47,38 @@ final BuiltSet<RealtimekitStorageConfigTypeEnum>
   _$realtimekitStorageConfigTypeEnum_sftp,
 ]);
 
-Serializer<RealtimekitStorageConfigAuthMethodEnum>
-    _$realtimekitStorageConfigAuthMethodEnumSerializer =
-    _$RealtimekitStorageConfigAuthMethodEnumSerializer();
+const RealtimekitStorageConfigAuthMethodEnum
+    _$realtimekitStorageConfigAuthMethodEnum_KEY =
+    const RealtimekitStorageConfigAuthMethodEnum._('KEY');
+const RealtimekitStorageConfigAuthMethodEnum
+    _$realtimekitStorageConfigAuthMethodEnum_PASSWORD =
+    const RealtimekitStorageConfigAuthMethodEnum._('PASSWORD');
+
+RealtimekitStorageConfigAuthMethodEnum
+    _$realtimekitStorageConfigAuthMethodEnumValueOf(String name) {
+  switch (name) {
+    case 'KEY':
+      return _$realtimekitStorageConfigAuthMethodEnum_KEY;
+    case 'PASSWORD':
+      return _$realtimekitStorageConfigAuthMethodEnum_PASSWORD;
+    default:
+      throw ArgumentError(name);
+  }
+}
+
+final BuiltSet<RealtimekitStorageConfigAuthMethodEnum>
+    _$realtimekitStorageConfigAuthMethodEnumValues = BuiltSet<
+        RealtimekitStorageConfigAuthMethodEnum>(const <RealtimekitStorageConfigAuthMethodEnum>[
+  _$realtimekitStorageConfigAuthMethodEnum_KEY,
+  _$realtimekitStorageConfigAuthMethodEnum_PASSWORD,
+]);
+
 Serializer<RealtimekitStorageConfigTypeEnum>
     _$realtimekitStorageConfigTypeEnumSerializer =
     _$RealtimekitStorageConfigTypeEnumSerializer();
-
-class _$RealtimekitStorageConfigAuthMethodEnumSerializer
-    implements PrimitiveSerializer<RealtimekitStorageConfigAuthMethodEnum> {
-  static const Map<String, Object> _toWire = const <String, Object>{
-    'KEY': 'KEY',
-    'PASSWORD': 'PASSWORD',
-  };
-  static const Map<Object, String> _fromWire = const <Object, String>{
-    'KEY': 'KEY',
-    'PASSWORD': 'PASSWORD',
-  };
-
-  @override
-  final Iterable<Type> types = const <Type>[
-    RealtimekitStorageConfigAuthMethodEnum
-  ];
-  @override
-  final String wireName = 'RealtimekitStorageConfigAuthMethodEnum';
-
-  @override
-  Object serialize(Serializers serializers,
-          RealtimekitStorageConfigAuthMethodEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
-
-  @override
-  RealtimekitStorageConfigAuthMethodEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      RealtimekitStorageConfigAuthMethodEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
-}
+Serializer<RealtimekitStorageConfigAuthMethodEnum>
+    _$realtimekitStorageConfigAuthMethodEnumSerializer =
+    _$RealtimekitStorageConfigAuthMethodEnumSerializer();
 
 class _$RealtimekitStorageConfigTypeEnumSerializer
     implements PrimitiveSerializer<RealtimekitStorageConfigTypeEnum> {
@@ -148,7 +116,41 @@ class _$RealtimekitStorageConfigTypeEnumSerializer
           _fromWire[serialized] ?? (serialized is String ? serialized : ''));
 }
 
+class _$RealtimekitStorageConfigAuthMethodEnumSerializer
+    implements PrimitiveSerializer<RealtimekitStorageConfigAuthMethodEnum> {
+  static const Map<String, Object> _toWire = const <String, Object>{
+    'KEY': 'KEY',
+    'PASSWORD': 'PASSWORD',
+  };
+  static const Map<Object, String> _fromWire = const <Object, String>{
+    'KEY': 'KEY',
+    'PASSWORD': 'PASSWORD',
+  };
+
+  @override
+  final Iterable<Type> types = const <Type>[
+    RealtimekitStorageConfigAuthMethodEnum
+  ];
+  @override
+  final String wireName = 'RealtimekitStorageConfigAuthMethodEnum';
+
+  @override
+  Object serialize(Serializers serializers,
+          RealtimekitStorageConfigAuthMethodEnum object,
+          {FullType specifiedType = FullType.unspecified}) =>
+      _toWire[object.name] ?? object.name;
+
+  @override
+  RealtimekitStorageConfigAuthMethodEnum deserialize(
+          Serializers serializers, Object serialized,
+          {FullType specifiedType = FullType.unspecified}) =>
+      RealtimekitStorageConfigAuthMethodEnum.valueOf(
+          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+}
+
 class _$RealtimekitStorageConfig extends RealtimekitStorageConfig {
+  @override
+  final RealtimekitStorageConfigTypeEnum type;
   @override
   final String? accessKey;
   @override
@@ -170,8 +172,6 @@ class _$RealtimekitStorageConfig extends RealtimekitStorageConfig {
   @override
   final String? secret;
   @override
-  final RealtimekitStorageConfigTypeEnum type;
-  @override
   final String? username;
 
   factory _$RealtimekitStorageConfig(
@@ -179,7 +179,8 @@ class _$RealtimekitStorageConfig extends RealtimekitStorageConfig {
       (RealtimekitStorageConfigBuilder()..update(updates))._build();
 
   _$RealtimekitStorageConfig._(
-      {this.accessKey,
+      {required this.type,
+      this.accessKey,
       this.authMethod,
       this.bucket,
       this.host,
@@ -189,7 +190,6 @@ class _$RealtimekitStorageConfig extends RealtimekitStorageConfig {
       this.privateKey,
       this.region,
       this.secret,
-      required this.type,
       this.username})
       : super._();
   @override
@@ -205,6 +205,7 @@ class _$RealtimekitStorageConfig extends RealtimekitStorageConfig {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is RealtimekitStorageConfig &&
+        type == other.type &&
         accessKey == other.accessKey &&
         authMethod == other.authMethod &&
         bucket == other.bucket &&
@@ -215,13 +216,13 @@ class _$RealtimekitStorageConfig extends RealtimekitStorageConfig {
         privateKey == other.privateKey &&
         region == other.region &&
         secret == other.secret &&
-        type == other.type &&
         username == other.username;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
+    _$hash = $jc(_$hash, type.hashCode);
     _$hash = $jc(_$hash, accessKey.hashCode);
     _$hash = $jc(_$hash, authMethod.hashCode);
     _$hash = $jc(_$hash, bucket.hashCode);
@@ -232,7 +233,6 @@ class _$RealtimekitStorageConfig extends RealtimekitStorageConfig {
     _$hash = $jc(_$hash, privateKey.hashCode);
     _$hash = $jc(_$hash, region.hashCode);
     _$hash = $jc(_$hash, secret.hashCode);
-    _$hash = $jc(_$hash, type.hashCode);
     _$hash = $jc(_$hash, username.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
@@ -241,6 +241,7 @@ class _$RealtimekitStorageConfig extends RealtimekitStorageConfig {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'RealtimekitStorageConfig')
+          ..add('type', type)
           ..add('accessKey', accessKey)
           ..add('authMethod', authMethod)
           ..add('bucket', bucket)
@@ -251,7 +252,6 @@ class _$RealtimekitStorageConfig extends RealtimekitStorageConfig {
           ..add('privateKey', privateKey)
           ..add('region', region)
           ..add('secret', secret)
-          ..add('type', type)
           ..add('username', username))
         .toString();
   }
@@ -261,6 +261,10 @@ class RealtimekitStorageConfigBuilder
     implements
         Builder<RealtimekitStorageConfig, RealtimekitStorageConfigBuilder> {
   _$RealtimekitStorageConfig? _$v;
+
+  RealtimekitStorageConfigTypeEnum? _type;
+  RealtimekitStorageConfigTypeEnum? get type => _$this._type;
+  set type(RealtimekitStorageConfigTypeEnum? type) => _$this._type = type;
 
   String? _accessKey;
   String? get accessKey => _$this._accessKey;
@@ -303,10 +307,6 @@ class RealtimekitStorageConfigBuilder
   String? get secret => _$this._secret;
   set secret(String? secret) => _$this._secret = secret;
 
-  RealtimekitStorageConfigTypeEnum? _type;
-  RealtimekitStorageConfigTypeEnum? get type => _$this._type;
-  set type(RealtimekitStorageConfigTypeEnum? type) => _$this._type = type;
-
   String? _username;
   String? get username => _$this._username;
   set username(String? username) => _$this._username = username;
@@ -318,6 +318,7 @@ class RealtimekitStorageConfigBuilder
   RealtimekitStorageConfigBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
+      _type = $v.type;
       _accessKey = $v.accessKey;
       _authMethod = $v.authMethod;
       _bucket = $v.bucket;
@@ -328,7 +329,6 @@ class RealtimekitStorageConfigBuilder
       _privateKey = $v.privateKey;
       _region = $v.region;
       _secret = $v.secret;
-      _type = $v.type;
       _username = $v.username;
       _$v = null;
     }
@@ -351,6 +351,8 @@ class RealtimekitStorageConfigBuilder
   _$RealtimekitStorageConfig _build() {
     final _$result = _$v ??
         _$RealtimekitStorageConfig._(
+          type: BuiltValueNullFieldError.checkNotNull(
+              type, r'RealtimekitStorageConfig', 'type'),
           accessKey: accessKey,
           authMethod: authMethod,
           bucket: bucket,
@@ -361,8 +363,6 @@ class RealtimekitStorageConfigBuilder
           privateKey: privateKey,
           region: region,
           secret: secret,
-          type: BuiltValueNullFieldError.checkNotNull(
-              type, r'RealtimekitStorageConfig', 'type'),
           username: username,
         );
     replace(_$result);

@@ -14,7 +14,6 @@ Name | Type | Description | Notes
 **deploymentProvider** | **String** |  | 
 **id** | **String** |  | 
 **managed** | **bool** |  | 
-**managedBy** | [**BuiltList&lt;McnCloudPlatformClient&gt;**](McnCloudPlatformClient.md) |  | [optional] 
 **monthlyCostEstimate** | [**McnCost**](McnCost.md) |  | 
 **name** | **String** |  | 
 **nativeId** | **String** |  | 
@@ -29,6 +28,7 @@ Name | Type | Description | Notes
 **tags** | **BuiltMap&lt;String, String&gt;** |  | 
 **updatedAt** | **String** |  | 
 **url** | **String** |  | 
+**managedBy** | [**BuiltList&lt;McnCloudPlatformClient&gt;**](McnCloudPlatformClient.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

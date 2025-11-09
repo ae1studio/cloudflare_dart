@@ -96,9 +96,9 @@ class _$DnsSettingsDnsSettingsZoneResponseAllOfNameserversTypeEnumSerializer
 class _$DnsSettingsDnsSettingsZoneResponseAllOfNameservers
     extends DnsSettingsDnsSettingsZoneResponseAllOfNameservers {
   @override
-  final int? nsSet;
-  @override
   final DnsSettingsDnsSettingsZoneResponseAllOfNameserversTypeEnum type;
+  @override
+  final int? nsSet;
 
   factory _$DnsSettingsDnsSettingsZoneResponseAllOfNameservers(
           [void Function(
@@ -109,7 +109,7 @@ class _$DnsSettingsDnsSettingsZoneResponseAllOfNameservers
           ._build();
 
   _$DnsSettingsDnsSettingsZoneResponseAllOfNameservers._(
-      {this.nsSet, required this.type})
+      {required this.type, this.nsSet})
       : super._();
   @override
   DnsSettingsDnsSettingsZoneResponseAllOfNameservers rebuild(
@@ -127,15 +127,15 @@ class _$DnsSettingsDnsSettingsZoneResponseAllOfNameservers
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is DnsSettingsDnsSettingsZoneResponseAllOfNameservers &&
-        nsSet == other.nsSet &&
-        type == other.type;
+        type == other.type &&
+        nsSet == other.nsSet;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, nsSet.hashCode);
     _$hash = $jc(_$hash, type.hashCode);
+    _$hash = $jc(_$hash, nsSet.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -144,8 +144,8 @@ class _$DnsSettingsDnsSettingsZoneResponseAllOfNameservers
   String toString() {
     return (newBuiltValueToStringHelper(
             r'DnsSettingsDnsSettingsZoneResponseAllOfNameservers')
-          ..add('nsSet', nsSet)
-          ..add('type', type))
+          ..add('type', type)
+          ..add('nsSet', nsSet))
         .toString();
   }
 }
@@ -156,15 +156,15 @@ class DnsSettingsDnsSettingsZoneResponseAllOfNameserversBuilder
             DnsSettingsDnsSettingsZoneResponseAllOfNameserversBuilder> {
   _$DnsSettingsDnsSettingsZoneResponseAllOfNameservers? _$v;
 
-  int? _nsSet;
-  int? get nsSet => _$this._nsSet;
-  set nsSet(int? nsSet) => _$this._nsSet = nsSet;
-
   DnsSettingsDnsSettingsZoneResponseAllOfNameserversTypeEnum? _type;
   DnsSettingsDnsSettingsZoneResponseAllOfNameserversTypeEnum? get type =>
       _$this._type;
   set type(DnsSettingsDnsSettingsZoneResponseAllOfNameserversTypeEnum? type) =>
       _$this._type = type;
+
+  int? _nsSet;
+  int? get nsSet => _$this._nsSet;
+  set nsSet(int? nsSet) => _$this._nsSet = nsSet;
 
   DnsSettingsDnsSettingsZoneResponseAllOfNameserversBuilder() {
     DnsSettingsDnsSettingsZoneResponseAllOfNameservers._defaults(this);
@@ -173,8 +173,8 @@ class DnsSettingsDnsSettingsZoneResponseAllOfNameserversBuilder
   DnsSettingsDnsSettingsZoneResponseAllOfNameserversBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _nsSet = $v.nsSet;
       _type = $v.type;
+      _nsSet = $v.nsSet;
       _$v = null;
     }
     return this;
@@ -198,9 +198,9 @@ class DnsSettingsDnsSettingsZoneResponseAllOfNameserversBuilder
   _$DnsSettingsDnsSettingsZoneResponseAllOfNameservers _build() {
     final _$result = _$v ??
         _$DnsSettingsDnsSettingsZoneResponseAllOfNameservers._(
-          nsSet: nsSet,
           type: BuiltValueNullFieldError.checkNotNull(type,
               r'DnsSettingsDnsSettingsZoneResponseAllOfNameservers', 'type'),
+          nsSet: nsSet,
         );
     replace(_$result);
     return _$result;

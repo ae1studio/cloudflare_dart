@@ -12,15 +12,11 @@ part 'lists_create_a_list_request.g.dart';
 /// ListsCreateAListRequest
 ///
 /// Properties:
-/// * [description] - An informative summary of the list.
 /// * [kind] 
 /// * [name] - An informative name for the list. Use this name in filter and rule expressions.
+/// * [description] - An informative summary of the list.
 @BuiltValue()
 abstract class ListsCreateAListRequest implements Built<ListsCreateAListRequest, ListsCreateAListRequestBuilder> {
-  /// An informative summary of the list.
-  @BuiltValueField(wireName: r'description')
-  String? get description;
-
   @BuiltValueField(wireName: r'kind')
   ListsKind get kind;
   // enum kindEnum {  ip,  redirect,  hostname,  asn,  };
@@ -28,6 +24,10 @@ abstract class ListsCreateAListRequest implements Built<ListsCreateAListRequest,
   /// An informative name for the list. Use this name in filter and rule expressions.
   @BuiltValueField(wireName: r'name')
   String get name;
+
+  /// An informative summary of the list.
+  @BuiltValueField(wireName: r'description')
+  String? get description;
 
   ListsCreateAListRequest._();
 
@@ -52,13 +52,6 @@ class _$ListsCreateAListRequestSerializer implements PrimitiveSerializer<ListsCr
     ListsCreateAListRequest object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
-    if (object.description != null) {
-      yield r'description';
-      yield serializers.serialize(
-        object.description,
-        specifiedType: const FullType(String),
-      );
-    }
     yield r'kind';
     yield serializers.serialize(
       object.kind,
@@ -69,6 +62,13 @@ class _$ListsCreateAListRequestSerializer implements PrimitiveSerializer<ListsCr
       object.name,
       specifiedType: const FullType(String),
     );
+    if (object.description != null) {
+      yield r'description';
+      yield serializers.serialize(
+        object.description,
+        specifiedType: const FullType(String),
+      );
+    }
   }
 
   @override
@@ -92,13 +92,6 @@ class _$ListsCreateAListRequestSerializer implements PrimitiveSerializer<ListsCr
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'description':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.description = valueDes;
-          break;
         case r'kind':
           final valueDes = serializers.deserialize(
             value,
@@ -112,6 +105,13 @@ class _$ListsCreateAListRequestSerializer implements PrimitiveSerializer<ListsCr
             specifiedType: const FullType(String),
           ) as String;
           result.name = valueDes;
+          break;
+        case r'description':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.description = valueDes;
           break;
         default:
           unhandled.add(key);

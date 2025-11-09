@@ -13,11 +13,11 @@ part 'email_security_batch_blocked_senders_request_puts_inner.g.dart';
 /// EmailSecurityBatchBlockedSendersRequestPutsInner
 ///
 /// Properties:
-/// * [comments] 
 /// * [isRegex] 
 /// * [pattern] 
 /// * [patternType] 
 /// * [id] - The unique identifier for the allow policy.
+/// * [comments] 
 @BuiltValue()
 abstract class EmailSecurityBatchBlockedSendersRequestPutsInner implements EmailSecurityCreateBlockedSender, Built<EmailSecurityBatchBlockedSendersRequestPutsInner, EmailSecurityBatchBlockedSendersRequestPutsInnerBuilder> {
   /// The unique identifier for the allow policy.
@@ -62,6 +62,11 @@ class _$EmailSecurityBatchBlockedSendersRequestPutsInnerSerializer implements Pr
       object.id,
       specifiedType: const FullType(int),
     );
+    yield r'is_regex';
+    yield serializers.serialize(
+      object.isRegex,
+      specifiedType: const FullType(bool),
+    );
     if (object.comments != null) {
       yield r'comments';
       yield serializers.serialize(
@@ -69,11 +74,6 @@ class _$EmailSecurityBatchBlockedSendersRequestPutsInnerSerializer implements Pr
         specifiedType: const FullType.nullable(String),
       );
     }
-    yield r'is_regex';
-    yield serializers.serialize(
-      object.isRegex,
-      specifiedType: const FullType(bool),
-    );
   }
 
   @override
@@ -118,6 +118,13 @@ class _$EmailSecurityBatchBlockedSendersRequestPutsInnerSerializer implements Pr
           ) as int;
           result.id = valueDes;
           break;
+        case r'is_regex':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(bool),
+          ) as bool;
+          result.isRegex = valueDes;
+          break;
         case r'comments':
           final valueDes = serializers.deserialize(
             value,
@@ -125,13 +132,6 @@ class _$EmailSecurityBatchBlockedSendersRequestPutsInnerSerializer implements Pr
           ) as String?;
           if (valueDes == null) continue;
           result.comments = valueDes;
-          break;
-        case r'is_regex':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
-          result.isRegex = valueDes;
           break;
         default:
           unhandled.add(key);

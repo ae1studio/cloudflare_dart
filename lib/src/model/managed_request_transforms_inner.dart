@@ -14,10 +14,10 @@ part 'managed_request_transforms_inner.g.dart';
 /// ManagedRequestTransformsInner
 ///
 /// Properties:
-/// * [conflictsWith] - The Managed Transforms that this Managed Transform conflicts with.
 /// * [enabled] - Whether the Managed Transform is enabled.
 /// * [hasConflict] - Whether the Managed Transform conflicts with the currently-enabled Managed Transforms.
 /// * [id] 
+/// * [conflictsWith] - The Managed Transforms that this Managed Transform conflicts with.
 @BuiltValue()
 abstract class ManagedRequestTransformsInner implements RulesetsManagedTransform, Built<ManagedRequestTransformsInner, ManagedRequestTransformsInnerBuilder> {
   ManagedRequestTransformsInner._();

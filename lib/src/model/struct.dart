@@ -15,8 +15,8 @@ part 'struct.g.dart';
 ///
 /// Properties:
 /// * [fields] 
-/// * [name] 
 /// * [type] 
+/// * [name] 
 @BuiltValue()
 abstract class Struct implements CloudflarePipelinesStructField, Built<Struct, StructBuilder> {
   @BuiltValueField(wireName: r'type')

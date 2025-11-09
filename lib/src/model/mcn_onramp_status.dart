@@ -17,18 +17,15 @@ part 'mcn_onramp_status.g.dart';
 ///
 /// Properties:
 /// * [applyProgress] 
-/// * [lifecycleErrors] 
 /// * [lifecycleState] 
 /// * [planProgress] 
 /// * [routes] 
 /// * [tunnels] 
+/// * [lifecycleErrors] 
 @BuiltValue()
 abstract class McnOnrampStatus implements Built<McnOnrampStatus, McnOnrampStatusBuilder> {
   @BuiltValueField(wireName: r'apply_progress')
   McnApplyProgress get applyProgress;
-
-  @BuiltValueField(wireName: r'lifecycle_errors')
-  BuiltMap<String, McnError>? get lifecycleErrors;
 
   @BuiltValueField(wireName: r'lifecycle_state')
   McnOnrampLifecycleState get lifecycleState;
@@ -42,6 +39,9 @@ abstract class McnOnrampStatus implements Built<McnOnrampStatus, McnOnrampStatus
 
   @BuiltValueField(wireName: r'tunnels')
   BuiltList<String> get tunnels;
+
+  @BuiltValueField(wireName: r'lifecycle_errors')
+  BuiltMap<String, McnError>? get lifecycleErrors;
 
   McnOnrampStatus._();
 
@@ -71,13 +71,6 @@ class _$McnOnrampStatusSerializer implements PrimitiveSerializer<McnOnrampStatus
       object.applyProgress,
       specifiedType: const FullType(McnApplyProgress),
     );
-    if (object.lifecycleErrors != null) {
-      yield r'lifecycle_errors';
-      yield serializers.serialize(
-        object.lifecycleErrors,
-        specifiedType: const FullType(BuiltMap, [FullType(String), FullType(McnError)]),
-      );
-    }
     yield r'lifecycle_state';
     yield serializers.serialize(
       object.lifecycleState,
@@ -98,6 +91,13 @@ class _$McnOnrampStatusSerializer implements PrimitiveSerializer<McnOnrampStatus
       object.tunnels,
       specifiedType: const FullType(BuiltList, [FullType(String)]),
     );
+    if (object.lifecycleErrors != null) {
+      yield r'lifecycle_errors';
+      yield serializers.serialize(
+        object.lifecycleErrors,
+        specifiedType: const FullType(BuiltMap, [FullType(String), FullType(McnError)]),
+      );
+    }
   }
 
   @override
@@ -128,13 +128,6 @@ class _$McnOnrampStatusSerializer implements PrimitiveSerializer<McnOnrampStatus
           ) as McnApplyProgress;
           result.applyProgress.replace(valueDes);
           break;
-        case r'lifecycle_errors':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltMap, [FullType(String), FullType(McnError)]),
-          ) as BuiltMap<String, McnError>;
-          result.lifecycleErrors.replace(valueDes);
-          break;
         case r'lifecycle_state':
           final valueDes = serializers.deserialize(
             value,
@@ -162,6 +155,13 @@ class _$McnOnrampStatusSerializer implements PrimitiveSerializer<McnOnrampStatus
             specifiedType: const FullType(BuiltList, [FullType(String)]),
           ) as BuiltList<String>;
           result.tunnels.replace(valueDes);
+          break;
+        case r'lifecycle_errors':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BuiltMap, [FullType(String), FullType(McnError)]),
+          ) as BuiltMap<String, McnError>;
+          result.lifecycleErrors.replace(valueDes);
           break;
         default:
           unhandled.add(key);

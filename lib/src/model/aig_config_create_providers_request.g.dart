@@ -15,13 +15,13 @@ class _$AigConfigCreateProvidersRequest
   @override
   final String providerSlug;
   @override
-  final num? rateLimit;
-  @override
-  final num? rateLimitPeriod;
-  @override
   final String secret;
   @override
   final String secretId;
+  @override
+  final num? rateLimit;
+  @override
+  final num? rateLimitPeriod;
 
   factory _$AigConfigCreateProvidersRequest(
           [void Function(AigConfigCreateProvidersRequestBuilder)? updates]) =>
@@ -31,10 +31,10 @@ class _$AigConfigCreateProvidersRequest
       {required this.alias,
       required this.defaultConfig,
       required this.providerSlug,
-      this.rateLimit,
-      this.rateLimitPeriod,
       required this.secret,
-      required this.secretId})
+      required this.secretId,
+      this.rateLimit,
+      this.rateLimitPeriod})
       : super._();
   @override
   AigConfigCreateProvidersRequest rebuild(
@@ -52,10 +52,10 @@ class _$AigConfigCreateProvidersRequest
         alias == other.alias &&
         defaultConfig == other.defaultConfig &&
         providerSlug == other.providerSlug &&
-        rateLimit == other.rateLimit &&
-        rateLimitPeriod == other.rateLimitPeriod &&
         secret == other.secret &&
-        secretId == other.secretId;
+        secretId == other.secretId &&
+        rateLimit == other.rateLimit &&
+        rateLimitPeriod == other.rateLimitPeriod;
   }
 
   @override
@@ -64,10 +64,10 @@ class _$AigConfigCreateProvidersRequest
     _$hash = $jc(_$hash, alias.hashCode);
     _$hash = $jc(_$hash, defaultConfig.hashCode);
     _$hash = $jc(_$hash, providerSlug.hashCode);
-    _$hash = $jc(_$hash, rateLimit.hashCode);
-    _$hash = $jc(_$hash, rateLimitPeriod.hashCode);
     _$hash = $jc(_$hash, secret.hashCode);
     _$hash = $jc(_$hash, secretId.hashCode);
+    _$hash = $jc(_$hash, rateLimit.hashCode);
+    _$hash = $jc(_$hash, rateLimitPeriod.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -78,10 +78,10 @@ class _$AigConfigCreateProvidersRequest
           ..add('alias', alias)
           ..add('defaultConfig', defaultConfig)
           ..add('providerSlug', providerSlug)
-          ..add('rateLimit', rateLimit)
-          ..add('rateLimitPeriod', rateLimitPeriod)
           ..add('secret', secret)
-          ..add('secretId', secretId))
+          ..add('secretId', secretId)
+          ..add('rateLimit', rateLimit)
+          ..add('rateLimitPeriod', rateLimitPeriod))
         .toString();
   }
 }
@@ -105,6 +105,14 @@ class AigConfigCreateProvidersRequestBuilder
   String? get providerSlug => _$this._providerSlug;
   set providerSlug(String? providerSlug) => _$this._providerSlug = providerSlug;
 
+  String? _secret;
+  String? get secret => _$this._secret;
+  set secret(String? secret) => _$this._secret = secret;
+
+  String? _secretId;
+  String? get secretId => _$this._secretId;
+  set secretId(String? secretId) => _$this._secretId = secretId;
+
   num? _rateLimit;
   num? get rateLimit => _$this._rateLimit;
   set rateLimit(num? rateLimit) => _$this._rateLimit = rateLimit;
@@ -113,14 +121,6 @@ class AigConfigCreateProvidersRequestBuilder
   num? get rateLimitPeriod => _$this._rateLimitPeriod;
   set rateLimitPeriod(num? rateLimitPeriod) =>
       _$this._rateLimitPeriod = rateLimitPeriod;
-
-  String? _secret;
-  String? get secret => _$this._secret;
-  set secret(String? secret) => _$this._secret = secret;
-
-  String? _secretId;
-  String? get secretId => _$this._secretId;
-  set secretId(String? secretId) => _$this._secretId = secretId;
 
   AigConfigCreateProvidersRequestBuilder() {
     AigConfigCreateProvidersRequest._defaults(this);
@@ -132,10 +132,10 @@ class AigConfigCreateProvidersRequestBuilder
       _alias = $v.alias;
       _defaultConfig = $v.defaultConfig;
       _providerSlug = $v.providerSlug;
-      _rateLimit = $v.rateLimit;
-      _rateLimitPeriod = $v.rateLimitPeriod;
       _secret = $v.secret;
       _secretId = $v.secretId;
+      _rateLimit = $v.rateLimit;
+      _rateLimitPeriod = $v.rateLimitPeriod;
       _$v = null;
     }
     return this;
@@ -163,12 +163,12 @@ class AigConfigCreateProvidersRequestBuilder
               r'AigConfigCreateProvidersRequest', 'defaultConfig'),
           providerSlug: BuiltValueNullFieldError.checkNotNull(
               providerSlug, r'AigConfigCreateProvidersRequest', 'providerSlug'),
-          rateLimit: rateLimit,
-          rateLimitPeriod: rateLimitPeriod,
           secret: BuiltValueNullFieldError.checkNotNull(
               secret, r'AigConfigCreateProvidersRequest', 'secret'),
           secretId: BuiltValueNullFieldError.checkNotNull(
               secretId, r'AigConfigCreateProvidersRequest', 'secretId'),
+          rateLimit: rateLimit,
+          rateLimitPeriod: rateLimitPeriod,
         );
     replace(_$result);
     return _$result;

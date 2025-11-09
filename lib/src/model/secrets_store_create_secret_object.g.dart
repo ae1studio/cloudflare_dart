@@ -8,23 +8,23 @@ part of 'secrets_store_create_secret_object.dart';
 
 class _$SecretsStoreCreateSecretObject extends SecretsStoreCreateSecretObject {
   @override
-  final String? comment;
-  @override
   final String name;
   @override
   final BuiltList<String> scopes;
   @override
   final String value;
+  @override
+  final String? comment;
 
   factory _$SecretsStoreCreateSecretObject(
           [void Function(SecretsStoreCreateSecretObjectBuilder)? updates]) =>
       (SecretsStoreCreateSecretObjectBuilder()..update(updates))._build();
 
   _$SecretsStoreCreateSecretObject._(
-      {this.comment,
-      required this.name,
+      {required this.name,
       required this.scopes,
-      required this.value})
+      required this.value,
+      this.comment})
       : super._();
   @override
   SecretsStoreCreateSecretObject rebuild(
@@ -39,19 +39,19 @@ class _$SecretsStoreCreateSecretObject extends SecretsStoreCreateSecretObject {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is SecretsStoreCreateSecretObject &&
-        comment == other.comment &&
         name == other.name &&
         scopes == other.scopes &&
-        value == other.value;
+        value == other.value &&
+        comment == other.comment;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, comment.hashCode);
     _$hash = $jc(_$hash, name.hashCode);
     _$hash = $jc(_$hash, scopes.hashCode);
     _$hash = $jc(_$hash, value.hashCode);
+    _$hash = $jc(_$hash, comment.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -59,10 +59,10 @@ class _$SecretsStoreCreateSecretObject extends SecretsStoreCreateSecretObject {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'SecretsStoreCreateSecretObject')
-          ..add('comment', comment)
           ..add('name', name)
           ..add('scopes', scopes)
-          ..add('value', value))
+          ..add('value', value)
+          ..add('comment', comment))
         .toString();
   }
 }
@@ -72,10 +72,6 @@ class SecretsStoreCreateSecretObjectBuilder
         Builder<SecretsStoreCreateSecretObject,
             SecretsStoreCreateSecretObjectBuilder> {
   _$SecretsStoreCreateSecretObject? _$v;
-
-  String? _comment;
-  String? get comment => _$this._comment;
-  set comment(String? comment) => _$this._comment = comment;
 
   String? _name;
   String? get name => _$this._name;
@@ -89,6 +85,10 @@ class SecretsStoreCreateSecretObjectBuilder
   String? get value => _$this._value;
   set value(String? value) => _$this._value = value;
 
+  String? _comment;
+  String? get comment => _$this._comment;
+  set comment(String? comment) => _$this._comment = comment;
+
   SecretsStoreCreateSecretObjectBuilder() {
     SecretsStoreCreateSecretObject._defaults(this);
   }
@@ -96,10 +96,10 @@ class SecretsStoreCreateSecretObjectBuilder
   SecretsStoreCreateSecretObjectBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _comment = $v.comment;
       _name = $v.name;
       _scopes = $v.scopes.toBuilder();
       _value = $v.value;
+      _comment = $v.comment;
       _$v = null;
     }
     return this;
@@ -123,12 +123,12 @@ class SecretsStoreCreateSecretObjectBuilder
     try {
       _$result = _$v ??
           _$SecretsStoreCreateSecretObject._(
-            comment: comment,
             name: BuiltValueNullFieldError.checkNotNull(
                 name, r'SecretsStoreCreateSecretObject', 'name'),
             scopes: scopes.build(),
             value: BuiltValueNullFieldError.checkNotNull(
                 value, r'SecretsStoreCreateSecretObject', 'value'),
+            comment: comment,
           );
     } catch (_) {
       late String _$failedField;

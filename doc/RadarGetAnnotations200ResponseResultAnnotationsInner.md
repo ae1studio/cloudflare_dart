@@ -11,16 +11,16 @@ Name | Type | Description | Notes
 **asns** | **BuiltList&lt;int&gt;** |  | 
 **asnsDetails** | [**BuiltList&lt;RadarGetAnnotations200ResponseResultAnnotationsInnerAsnsDetailsInner&gt;**](RadarGetAnnotations200ResponseResultAnnotationsInnerAsnsDetailsInner.md) |  | 
 **dataSource** | **String** |  | 
-**description** | **String** |  | [optional] 
-**endDate** | **String** |  | [optional] 
 **eventType** | **String** |  | 
 **id** | **String** |  | 
-**linkedUrl** | **String** |  | [optional] 
 **locations** | **BuiltList&lt;String&gt;** |  | 
 **locationsDetails** | [**BuiltList&lt;RadarGetAnnotations200ResponseResultAnnotationsInnerAsnsDetailsInnerLocations&gt;**](RadarGetAnnotations200ResponseResultAnnotationsInnerAsnsDetailsInnerLocations.md) |  | 
 **outage** | [**RadarGetAnnotations200ResponseResultAnnotationsInnerOutage**](RadarGetAnnotations200ResponseResultAnnotationsInnerOutage.md) |  | 
-**scope** | **String** |  | [optional] 
 **startDate** | **String** |  | 
+**description** | **String** |  | [optional] 
+**endDate** | **String** |  | [optional] 
+**linkedUrl** | **String** |  | [optional] 
+**scope** | **String** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

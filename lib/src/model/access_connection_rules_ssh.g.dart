@@ -8,15 +8,15 @@ part of 'access_connection_rules_ssh.dart';
 
 class _$AccessConnectionRulesSsh extends AccessConnectionRulesSsh {
   @override
-  final bool? allowEmailAlias;
-  @override
   final BuiltList<String> usernames;
+  @override
+  final bool? allowEmailAlias;
 
   factory _$AccessConnectionRulesSsh(
           [void Function(AccessConnectionRulesSshBuilder)? updates]) =>
       (AccessConnectionRulesSshBuilder()..update(updates))._build();
 
-  _$AccessConnectionRulesSsh._({this.allowEmailAlias, required this.usernames})
+  _$AccessConnectionRulesSsh._({required this.usernames, this.allowEmailAlias})
       : super._();
   @override
   AccessConnectionRulesSsh rebuild(
@@ -31,15 +31,15 @@ class _$AccessConnectionRulesSsh extends AccessConnectionRulesSsh {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is AccessConnectionRulesSsh &&
-        allowEmailAlias == other.allowEmailAlias &&
-        usernames == other.usernames;
+        usernames == other.usernames &&
+        allowEmailAlias == other.allowEmailAlias;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, allowEmailAlias.hashCode);
     _$hash = $jc(_$hash, usernames.hashCode);
+    _$hash = $jc(_$hash, allowEmailAlias.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -47,8 +47,8 @@ class _$AccessConnectionRulesSsh extends AccessConnectionRulesSsh {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'AccessConnectionRulesSsh')
-          ..add('allowEmailAlias', allowEmailAlias)
-          ..add('usernames', usernames))
+          ..add('usernames', usernames)
+          ..add('allowEmailAlias', allowEmailAlias))
         .toString();
   }
 }
@@ -58,16 +58,16 @@ class AccessConnectionRulesSshBuilder
         Builder<AccessConnectionRulesSsh, AccessConnectionRulesSshBuilder> {
   _$AccessConnectionRulesSsh? _$v;
 
-  bool? _allowEmailAlias;
-  bool? get allowEmailAlias => _$this._allowEmailAlias;
-  set allowEmailAlias(bool? allowEmailAlias) =>
-      _$this._allowEmailAlias = allowEmailAlias;
-
   ListBuilder<String>? _usernames;
   ListBuilder<String> get usernames =>
       _$this._usernames ??= ListBuilder<String>();
   set usernames(ListBuilder<String>? usernames) =>
       _$this._usernames = usernames;
+
+  bool? _allowEmailAlias;
+  bool? get allowEmailAlias => _$this._allowEmailAlias;
+  set allowEmailAlias(bool? allowEmailAlias) =>
+      _$this._allowEmailAlias = allowEmailAlias;
 
   AccessConnectionRulesSshBuilder() {
     AccessConnectionRulesSsh._defaults(this);
@@ -76,8 +76,8 @@ class AccessConnectionRulesSshBuilder
   AccessConnectionRulesSshBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _allowEmailAlias = $v.allowEmailAlias;
       _usernames = $v.usernames.toBuilder();
+      _allowEmailAlias = $v.allowEmailAlias;
       _$v = null;
     }
     return this;
@@ -101,8 +101,8 @@ class AccessConnectionRulesSshBuilder
     try {
       _$result = _$v ??
           _$AccessConnectionRulesSsh._(
-            allowEmailAlias: allowEmailAlias,
             usernames: usernames.build(),
+            allowEmailAlias: allowEmailAlias,
           );
     } catch (_) {
       late String _$failedField;

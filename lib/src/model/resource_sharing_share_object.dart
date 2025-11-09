@@ -18,19 +18,19 @@ part 'resource_sharing_share_object.g.dart';
 /// Properties:
 /// * [accountId] - Account identifier.
 /// * [accountName] - The display name of an account.
-/// * [associatedRecipientCount] - The number of recipients in the 'associated' state. This field is only included when requested via the 'include_recipient_counts' parameter.
-/// * [associatingRecipientCount] - The number of recipients in the 'associating' state. This field is only included when requested via the 'include_recipient_counts' parameter.
 /// * [created] - When the share was created.
-/// * [disassociatedRecipientCount] - The number of recipients in the 'disassociated' state. This field is only included when requested via the 'include_recipient_counts' parameter.
-/// * [disassociatingRecipientCount] - The number of recipients in the 'disassociating' state. This field is only included when requested via the 'include_recipient_counts' parameter.
 /// * [id] - Share identifier tag.
-/// * [kind] 
 /// * [modified] - When the share was modified.
 /// * [name] - The name of the share.
 /// * [organizationId] - Organization identifier.
-/// * [resources] - A list of resources that are part of the share. This field is only included when requested via the 'include_resources' parameter.
 /// * [status] 
 /// * [targetType] 
+/// * [associatedRecipientCount] - The number of recipients in the 'associated' state. This field is only included when requested via the 'include_recipient_counts' parameter.
+/// * [associatingRecipientCount] - The number of recipients in the 'associating' state. This field is only included when requested via the 'include_recipient_counts' parameter.
+/// * [disassociatedRecipientCount] - The number of recipients in the 'disassociated' state. This field is only included when requested via the 'include_recipient_counts' parameter.
+/// * [disassociatingRecipientCount] - The number of recipients in the 'disassociating' state. This field is only included when requested via the 'include_recipient_counts' parameter.
+/// * [kind] 
+/// * [resources] - A list of resources that are part of the share. This field is only included when requested via the 'include_resources' parameter.
 @BuiltValue()
 abstract class ResourceSharingShareObject implements Built<ResourceSharingShareObject, ResourceSharingShareObjectBuilder> {
   /// Account identifier.
@@ -41,33 +41,13 @@ abstract class ResourceSharingShareObject implements Built<ResourceSharingShareO
   @BuiltValueField(wireName: r'account_name')
   String get accountName;
 
-  /// The number of recipients in the 'associated' state. This field is only included when requested via the 'include_recipient_counts' parameter.
-  @BuiltValueField(wireName: r'associated_recipient_count')
-  int? get associatedRecipientCount;
-
-  /// The number of recipients in the 'associating' state. This field is only included when requested via the 'include_recipient_counts' parameter.
-  @BuiltValueField(wireName: r'associating_recipient_count')
-  int? get associatingRecipientCount;
-
   /// When the share was created.
   @BuiltValueField(wireName: r'created')
   DateTime get created;
 
-  /// The number of recipients in the 'disassociated' state. This field is only included when requested via the 'include_recipient_counts' parameter.
-  @BuiltValueField(wireName: r'disassociated_recipient_count')
-  int? get disassociatedRecipientCount;
-
-  /// The number of recipients in the 'disassociating' state. This field is only included when requested via the 'include_recipient_counts' parameter.
-  @BuiltValueField(wireName: r'disassociating_recipient_count')
-  int? get disassociatingRecipientCount;
-
   /// Share identifier tag.
   @BuiltValueField(wireName: r'id')
   String get id;
-
-  @BuiltValueField(wireName: r'kind')
-  ResourceSharingShareKind? get kind;
-  // enum kindEnum {  sent,  received,  };
 
   /// When the share was modified.
   @BuiltValueField(wireName: r'modified')
@@ -81,10 +61,6 @@ abstract class ResourceSharingShareObject implements Built<ResourceSharingShareO
   @BuiltValueField(wireName: r'organization_id')
   String get organizationId;
 
-  /// A list of resources that are part of the share. This field is only included when requested via the 'include_resources' parameter.
-  @BuiltValueField(wireName: r'resources')
-  BuiltList<ResourceSharingShareResourceObject>? get resources;
-
   @BuiltValueField(wireName: r'status')
   ResourceSharingShareStatus get status;
   // enum statusEnum {  active,  deleting,  deleted,  };
@@ -92,6 +68,30 @@ abstract class ResourceSharingShareObject implements Built<ResourceSharingShareO
   @BuiltValueField(wireName: r'target_type')
   ResourceSharingShareTargetType get targetType;
   // enum targetTypeEnum {  account,  organization,  };
+
+  /// The number of recipients in the 'associated' state. This field is only included when requested via the 'include_recipient_counts' parameter.
+  @BuiltValueField(wireName: r'associated_recipient_count')
+  int? get associatedRecipientCount;
+
+  /// The number of recipients in the 'associating' state. This field is only included when requested via the 'include_recipient_counts' parameter.
+  @BuiltValueField(wireName: r'associating_recipient_count')
+  int? get associatingRecipientCount;
+
+  /// The number of recipients in the 'disassociated' state. This field is only included when requested via the 'include_recipient_counts' parameter.
+  @BuiltValueField(wireName: r'disassociated_recipient_count')
+  int? get disassociatedRecipientCount;
+
+  /// The number of recipients in the 'disassociating' state. This field is only included when requested via the 'include_recipient_counts' parameter.
+  @BuiltValueField(wireName: r'disassociating_recipient_count')
+  int? get disassociatingRecipientCount;
+
+  @BuiltValueField(wireName: r'kind')
+  ResourceSharingShareKind? get kind;
+  // enum kindEnum {  sent,  received,  };
+
+  /// A list of resources that are part of the share. This field is only included when requested via the 'include_resources' parameter.
+  @BuiltValueField(wireName: r'resources')
+  BuiltList<ResourceSharingShareResourceObject>? get resources;
 
   ResourceSharingShareObject._();
 
@@ -126,51 +126,16 @@ class _$ResourceSharingShareObjectSerializer implements PrimitiveSerializer<Reso
       object.accountName,
       specifiedType: const FullType(String),
     );
-    if (object.associatedRecipientCount != null) {
-      yield r'associated_recipient_count';
-      yield serializers.serialize(
-        object.associatedRecipientCount,
-        specifiedType: const FullType(int),
-      );
-    }
-    if (object.associatingRecipientCount != null) {
-      yield r'associating_recipient_count';
-      yield serializers.serialize(
-        object.associatingRecipientCount,
-        specifiedType: const FullType(int),
-      );
-    }
     yield r'created';
     yield serializers.serialize(
       object.created,
       specifiedType: const FullType(DateTime),
     );
-    if (object.disassociatedRecipientCount != null) {
-      yield r'disassociated_recipient_count';
-      yield serializers.serialize(
-        object.disassociatedRecipientCount,
-        specifiedType: const FullType(int),
-      );
-    }
-    if (object.disassociatingRecipientCount != null) {
-      yield r'disassociating_recipient_count';
-      yield serializers.serialize(
-        object.disassociatingRecipientCount,
-        specifiedType: const FullType(int),
-      );
-    }
     yield r'id';
     yield serializers.serialize(
       object.id,
       specifiedType: const FullType(String),
     );
-    if (object.kind != null) {
-      yield r'kind';
-      yield serializers.serialize(
-        object.kind,
-        specifiedType: const FullType(ResourceSharingShareKind),
-      );
-    }
     yield r'modified';
     yield serializers.serialize(
       object.modified,
@@ -186,13 +151,6 @@ class _$ResourceSharingShareObjectSerializer implements PrimitiveSerializer<Reso
       object.organizationId,
       specifiedType: const FullType(String),
     );
-    if (object.resources != null) {
-      yield r'resources';
-      yield serializers.serialize(
-        object.resources,
-        specifiedType: const FullType(BuiltList, [FullType(ResourceSharingShareResourceObject)]),
-      );
-    }
     yield r'status';
     yield serializers.serialize(
       object.status,
@@ -203,6 +161,48 @@ class _$ResourceSharingShareObjectSerializer implements PrimitiveSerializer<Reso
       object.targetType,
       specifiedType: const FullType(ResourceSharingShareTargetType),
     );
+    if (object.associatedRecipientCount != null) {
+      yield r'associated_recipient_count';
+      yield serializers.serialize(
+        object.associatedRecipientCount,
+        specifiedType: const FullType(int),
+      );
+    }
+    if (object.associatingRecipientCount != null) {
+      yield r'associating_recipient_count';
+      yield serializers.serialize(
+        object.associatingRecipientCount,
+        specifiedType: const FullType(int),
+      );
+    }
+    if (object.disassociatedRecipientCount != null) {
+      yield r'disassociated_recipient_count';
+      yield serializers.serialize(
+        object.disassociatedRecipientCount,
+        specifiedType: const FullType(int),
+      );
+    }
+    if (object.disassociatingRecipientCount != null) {
+      yield r'disassociating_recipient_count';
+      yield serializers.serialize(
+        object.disassociatingRecipientCount,
+        specifiedType: const FullType(int),
+      );
+    }
+    if (object.kind != null) {
+      yield r'kind';
+      yield serializers.serialize(
+        object.kind,
+        specifiedType: const FullType(ResourceSharingShareKind),
+      );
+    }
+    if (object.resources != null) {
+      yield r'resources';
+      yield serializers.serialize(
+        object.resources,
+        specifiedType: const FullType(BuiltList, [FullType(ResourceSharingShareResourceObject)]),
+      );
+    }
   }
 
   @override
@@ -240,20 +240,6 @@ class _$ResourceSharingShareObjectSerializer implements PrimitiveSerializer<Reso
           ) as String;
           result.accountName = valueDes;
           break;
-        case r'associated_recipient_count':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
-          result.associatedRecipientCount = valueDes;
-          break;
-        case r'associating_recipient_count':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
-          result.associatingRecipientCount = valueDes;
-          break;
         case r'created':
           final valueDes = serializers.deserialize(
             value,
@@ -261,33 +247,12 @@ class _$ResourceSharingShareObjectSerializer implements PrimitiveSerializer<Reso
           ) as DateTime;
           result.created = valueDes;
           break;
-        case r'disassociated_recipient_count':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
-          result.disassociatedRecipientCount = valueDes;
-          break;
-        case r'disassociating_recipient_count':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
-          result.disassociatingRecipientCount = valueDes;
-          break;
         case r'id':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(String),
           ) as String;
           result.id = valueDes;
-          break;
-        case r'kind':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(ResourceSharingShareKind),
-          ) as ResourceSharingShareKind;
-          result.kind = valueDes;
           break;
         case r'modified':
           final valueDes = serializers.deserialize(
@@ -310,13 +275,6 @@ class _$ResourceSharingShareObjectSerializer implements PrimitiveSerializer<Reso
           ) as String;
           result.organizationId = valueDes;
           break;
-        case r'resources':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(ResourceSharingShareResourceObject)]),
-          ) as BuiltList<ResourceSharingShareResourceObject>;
-          result.resources.replace(valueDes);
-          break;
         case r'status':
           final valueDes = serializers.deserialize(
             value,
@@ -330,6 +288,48 @@ class _$ResourceSharingShareObjectSerializer implements PrimitiveSerializer<Reso
             specifiedType: const FullType(ResourceSharingShareTargetType),
           ) as ResourceSharingShareTargetType;
           result.targetType = valueDes;
+          break;
+        case r'associated_recipient_count':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(int),
+          ) as int;
+          result.associatedRecipientCount = valueDes;
+          break;
+        case r'associating_recipient_count':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(int),
+          ) as int;
+          result.associatingRecipientCount = valueDes;
+          break;
+        case r'disassociated_recipient_count':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(int),
+          ) as int;
+          result.disassociatedRecipientCount = valueDes;
+          break;
+        case r'disassociating_recipient_count':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(int),
+          ) as int;
+          result.disassociatingRecipientCount = valueDes;
+          break;
+        case r'kind':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(ResourceSharingShareKind),
+          ) as ResourceSharingShareKind;
+          result.kind = valueDes;
+          break;
+        case r'resources':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BuiltList, [FullType(ResourceSharingShareResourceObject)]),
+          ) as BuiltList<ResourceSharingShareResourceObject>;
+          result.resources.replace(valueDes);
           break;
         default:
           unhandled.add(key);

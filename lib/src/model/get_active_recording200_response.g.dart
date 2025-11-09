@@ -8,15 +8,15 @@ part of 'get_active_recording200_response.dart';
 
 class _$GetActiveRecording200Response extends GetActiveRecording200Response {
   @override
-  final JsonObject? data;
-  @override
   final bool success;
+  @override
+  final JsonObject? data;
 
   factory _$GetActiveRecording200Response(
           [void Function(GetActiveRecording200ResponseBuilder)? updates]) =>
       (GetActiveRecording200ResponseBuilder()..update(updates))._build();
 
-  _$GetActiveRecording200Response._({this.data, required this.success})
+  _$GetActiveRecording200Response._({required this.success, this.data})
       : super._();
   @override
   GetActiveRecording200Response rebuild(
@@ -31,15 +31,15 @@ class _$GetActiveRecording200Response extends GetActiveRecording200Response {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is GetActiveRecording200Response &&
-        data == other.data &&
-        success == other.success;
+        success == other.success &&
+        data == other.data;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, data.hashCode);
     _$hash = $jc(_$hash, success.hashCode);
+    _$hash = $jc(_$hash, data.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -47,8 +47,8 @@ class _$GetActiveRecording200Response extends GetActiveRecording200Response {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'GetActiveRecording200Response')
-          ..add('data', data)
-          ..add('success', success))
+          ..add('success', success)
+          ..add('data', data))
         .toString();
   }
 }
@@ -60,13 +60,13 @@ class GetActiveRecording200ResponseBuilder
         RealtimekitGenericSuccessResponseBuilder {
   _$GetActiveRecording200Response? _$v;
 
-  JsonObject? _data;
-  JsonObject? get data => _$this._data;
-  set data(covariant JsonObject? data) => _$this._data = data;
-
   bool? _success;
   bool? get success => _$this._success;
   set success(covariant bool? success) => _$this._success = success;
+
+  JsonObject? _data;
+  JsonObject? get data => _$this._data;
+  set data(covariant JsonObject? data) => _$this._data = data;
 
   GetActiveRecording200ResponseBuilder() {
     GetActiveRecording200Response._defaults(this);
@@ -75,8 +75,8 @@ class GetActiveRecording200ResponseBuilder
   GetActiveRecording200ResponseBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _data = $v.data;
       _success = $v.success;
+      _data = $v.data;
       _$v = null;
     }
     return this;
@@ -98,9 +98,9 @@ class GetActiveRecording200ResponseBuilder
   _$GetActiveRecording200Response _build() {
     final _$result = _$v ??
         _$GetActiveRecording200Response._(
-          data: data,
           success: BuiltValueNullFieldError.checkNotNull(
               success, r'GetActiveRecording200Response', 'success'),
+          data: data,
         );
     replace(_$result);
     return _$result;

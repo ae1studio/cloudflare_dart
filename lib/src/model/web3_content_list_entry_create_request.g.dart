@@ -11,16 +11,16 @@ class _$Web3ContentListEntryCreateRequest
   @override
   final String content;
   @override
-  final String? description;
-  @override
   final Web3ContentListEntryType type;
+  @override
+  final String? description;
 
   factory _$Web3ContentListEntryCreateRequest(
           [void Function(Web3ContentListEntryCreateRequestBuilder)? updates]) =>
       (Web3ContentListEntryCreateRequestBuilder()..update(updates))._build();
 
   _$Web3ContentListEntryCreateRequest._(
-      {required this.content, this.description, required this.type})
+      {required this.content, required this.type, this.description})
       : super._();
   @override
   Web3ContentListEntryCreateRequest rebuild(
@@ -36,16 +36,16 @@ class _$Web3ContentListEntryCreateRequest
     if (identical(other, this)) return true;
     return other is Web3ContentListEntryCreateRequest &&
         content == other.content &&
-        description == other.description &&
-        type == other.type;
+        type == other.type &&
+        description == other.description;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
     _$hash = $jc(_$hash, content.hashCode);
-    _$hash = $jc(_$hash, description.hashCode);
     _$hash = $jc(_$hash, type.hashCode);
+    _$hash = $jc(_$hash, description.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -54,8 +54,8 @@ class _$Web3ContentListEntryCreateRequest
   String toString() {
     return (newBuiltValueToStringHelper(r'Web3ContentListEntryCreateRequest')
           ..add('content', content)
-          ..add('description', description)
-          ..add('type', type))
+          ..add('type', type)
+          ..add('description', description))
         .toString();
   }
 }
@@ -70,13 +70,13 @@ class Web3ContentListEntryCreateRequestBuilder
   String? get content => _$this._content;
   set content(String? content) => _$this._content = content;
 
-  String? _description;
-  String? get description => _$this._description;
-  set description(String? description) => _$this._description = description;
-
   Web3ContentListEntryType? _type;
   Web3ContentListEntryType? get type => _$this._type;
   set type(Web3ContentListEntryType? type) => _$this._type = type;
+
+  String? _description;
+  String? get description => _$this._description;
+  set description(String? description) => _$this._description = description;
 
   Web3ContentListEntryCreateRequestBuilder() {
     Web3ContentListEntryCreateRequest._defaults(this);
@@ -86,8 +86,8 @@ class Web3ContentListEntryCreateRequestBuilder
     final $v = _$v;
     if ($v != null) {
       _content = $v.content;
-      _description = $v.description;
       _type = $v.type;
+      _description = $v.description;
       _$v = null;
     }
     return this;
@@ -112,9 +112,9 @@ class Web3ContentListEntryCreateRequestBuilder
         _$Web3ContentListEntryCreateRequest._(
           content: BuiltValueNullFieldError.checkNotNull(
               content, r'Web3ContentListEntryCreateRequest', 'content'),
-          description: description,
           type: BuiltValueNullFieldError.checkNotNull(
               type, r'Web3ContentListEntryCreateRequest', 'type'),
+          description: description,
         );
     replace(_$result);
     return _$result;

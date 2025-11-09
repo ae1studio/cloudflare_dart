@@ -15,6 +15,9 @@ part 'devices_create_device_settings_policy_request.g.dart';
 /// DevicesCreateDeviceSettingsPolicyRequest
 ///
 /// Properties:
+/// * [match] - The wirefilter expression to match devices. Available values: \"identity.email\", \"identity.groups.id\", \"identity.groups.name\", \"identity.groups.email\", \"identity.service_token_uuid\", \"identity.saml_attributes\", \"network\", \"os.name\", \"os.version\".
+/// * [name] - The name of the device settings profile.
+/// * [precedence] - The precedence of the policy. Lower values indicate higher precedence. Policies will be evaluated in ascending order of this field.
 /// * [allowModeSwitch] - Whether to allow the user to switch WARP between modes.
 /// * [allowUpdates] - Whether to receive update notifications when a new version of the client is available.
 /// * [allowedToLeave] - Whether to allow devices to leave the organization.
@@ -28,9 +31,6 @@ part 'devices_create_device_settings_policy_request.g.dart';
 /// * [include] - List of routes included in the WARP client's tunnel. Both 'exclude' and 'include' cannot be set in the same request.
 /// * [lanAllowMinutes] - The amount of time in minutes a user is allowed access to their LAN. A value of 0 will allow LAN access until the next WARP reconnection, such as a reboot or a laptop waking from sleep. Note that this field is omitted from the response if null or unset.
 /// * [lanAllowSubnetSize] - The size of the subnet for the local access network. Note that this field is omitted from the response if null or unset.
-/// * [match] - The wirefilter expression to match devices. Available values: \"identity.email\", \"identity.groups.id\", \"identity.groups.name\", \"identity.groups.email\", \"identity.service_token_uuid\", \"identity.saml_attributes\", \"network\", \"os.name\", \"os.version\".
-/// * [name] - The name of the device settings profile.
-/// * [precedence] - The precedence of the policy. Lower values indicate higher precedence. Policies will be evaluated in ascending order of this field.
 /// * [registerInterfaceIpWithDns] - Determines if the operating system will register WARP's local interface IP with your on-premises DNS server.
 /// * [sccmVpnBoundarySupport] - Determines whether the WARP client indicates to SCCM that it is inside a VPN boundary. (Windows only).
 /// * [serviceModeV2] 
@@ -39,6 +39,18 @@ part 'devices_create_device_settings_policy_request.g.dart';
 /// * [tunnelProtocol] - Determines which tunnel protocol to use.
 @BuiltValue()
 abstract class DevicesCreateDeviceSettingsPolicyRequest implements Built<DevicesCreateDeviceSettingsPolicyRequest, DevicesCreateDeviceSettingsPolicyRequestBuilder> {
+  /// The wirefilter expression to match devices. Available values: \"identity.email\", \"identity.groups.id\", \"identity.groups.name\", \"identity.groups.email\", \"identity.service_token_uuid\", \"identity.saml_attributes\", \"network\", \"os.name\", \"os.version\".
+  @BuiltValueField(wireName: r'match')
+  String get match;
+
+  /// The name of the device settings profile.
+  @BuiltValueField(wireName: r'name')
+  String get name;
+
+  /// The precedence of the policy. Lower values indicate higher precedence. Policies will be evaluated in ascending order of this field.
+  @BuiltValueField(wireName: r'precedence')
+  num get precedence;
+
   /// Whether to allow the user to switch WARP between modes.
   @BuiltValueField(wireName: r'allow_mode_switch')
   bool? get allowModeSwitch;
@@ -90,18 +102,6 @@ abstract class DevicesCreateDeviceSettingsPolicyRequest implements Built<Devices
   /// The size of the subnet for the local access network. Note that this field is omitted from the response if null or unset.
   @BuiltValueField(wireName: r'lan_allow_subnet_size')
   num? get lanAllowSubnetSize;
-
-  /// The wirefilter expression to match devices. Available values: \"identity.email\", \"identity.groups.id\", \"identity.groups.name\", \"identity.groups.email\", \"identity.service_token_uuid\", \"identity.saml_attributes\", \"network\", \"os.name\", \"os.version\".
-  @BuiltValueField(wireName: r'match')
-  String get match;
-
-  /// The name of the device settings profile.
-  @BuiltValueField(wireName: r'name')
-  String get name;
-
-  /// The precedence of the policy. Lower values indicate higher precedence. Policies will be evaluated in ascending order of this field.
-  @BuiltValueField(wireName: r'precedence')
-  num get precedence;
 
   /// Determines if the operating system will register WARP's local interface IP with your on-premises DNS server.
   @BuiltValueField(wireName: r'register_interface_ip_with_dns')
@@ -161,6 +161,21 @@ class _$DevicesCreateDeviceSettingsPolicyRequestSerializer implements PrimitiveS
     DevicesCreateDeviceSettingsPolicyRequest object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    yield r'match';
+    yield serializers.serialize(
+      object.match,
+      specifiedType: const FullType(String),
+    );
+    yield r'name';
+    yield serializers.serialize(
+      object.name,
+      specifiedType: const FullType(String),
+    );
+    yield r'precedence';
+    yield serializers.serialize(
+      object.precedence,
+      specifiedType: const FullType(num),
+    );
     if (object.allowModeSwitch != null) {
       yield r'allow_mode_switch';
       yield serializers.serialize(
@@ -252,21 +267,6 @@ class _$DevicesCreateDeviceSettingsPolicyRequestSerializer implements PrimitiveS
         specifiedType: const FullType(num),
       );
     }
-    yield r'match';
-    yield serializers.serialize(
-      object.match,
-      specifiedType: const FullType(String),
-    );
-    yield r'name';
-    yield serializers.serialize(
-      object.name,
-      specifiedType: const FullType(String),
-    );
-    yield r'precedence';
-    yield serializers.serialize(
-      object.precedence,
-      specifiedType: const FullType(num),
-    );
     if (object.registerInterfaceIpWithDns != null) {
       yield r'register_interface_ip_with_dns';
       yield serializers.serialize(
@@ -332,6 +332,27 @@ class _$DevicesCreateDeviceSettingsPolicyRequestSerializer implements PrimitiveS
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
+        case r'match':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.match = valueDes;
+          break;
+        case r'name':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.name = valueDes;
+          break;
+        case r'precedence':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(num),
+          ) as num;
+          result.precedence = valueDes;
+          break;
         case r'allow_mode_switch':
           final valueDes = serializers.deserialize(
             value,
@@ -422,27 +443,6 @@ class _$DevicesCreateDeviceSettingsPolicyRequestSerializer implements PrimitiveS
             specifiedType: const FullType(num),
           ) as num;
           result.lanAllowSubnetSize = valueDes;
-          break;
-        case r'match':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.match = valueDes;
-          break;
-        case r'name':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.name = valueDes;
-          break;
-        case r'precedence':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(num),
-          ) as num;
-          result.precedence = valueDes;
           break;
         case r'register_interface_ip_with_dns':
           final valueDes = serializers.deserialize(

@@ -64,11 +64,11 @@ class _$WordListEntry extends WordListEntry {
   @override
   final String name;
   @override
-  final String? profileId;
-  @override
   final DateTime updatedAt;
   @override
   final JsonObject? wordList;
+  @override
+  final String? profileId;
 
   factory _$WordListEntry([void Function(WordListEntryBuilder)? updates]) =>
       (WordListEntryBuilder()..update(updates))._build();
@@ -79,9 +79,9 @@ class _$WordListEntry extends WordListEntry {
       required this.enabled,
       required this.id,
       required this.name,
-      this.profileId,
       required this.updatedAt,
-      this.wordList})
+      this.wordList,
+      this.profileId})
       : super._();
   @override
   WordListEntry rebuild(void Function(WordListEntryBuilder) updates) =>
@@ -99,9 +99,9 @@ class _$WordListEntry extends WordListEntry {
         enabled == other.enabled &&
         id == other.id &&
         name == other.name &&
-        profileId == other.profileId &&
         updatedAt == other.updatedAt &&
-        wordList == other.wordList;
+        wordList == other.wordList &&
+        profileId == other.profileId;
   }
 
   @override
@@ -112,9 +112,9 @@ class _$WordListEntry extends WordListEntry {
     _$hash = $jc(_$hash, enabled.hashCode);
     _$hash = $jc(_$hash, id.hashCode);
     _$hash = $jc(_$hash, name.hashCode);
-    _$hash = $jc(_$hash, profileId.hashCode);
     _$hash = $jc(_$hash, updatedAt.hashCode);
     _$hash = $jc(_$hash, wordList.hashCode);
+    _$hash = $jc(_$hash, profileId.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -127,9 +127,9 @@ class _$WordListEntry extends WordListEntry {
           ..add('enabled', enabled)
           ..add('id', id)
           ..add('name', name)
-          ..add('profileId', profileId)
           ..add('updatedAt', updatedAt)
-          ..add('wordList', wordList))
+          ..add('wordList', wordList)
+          ..add('profileId', profileId))
         .toString();
   }
 }
@@ -160,10 +160,6 @@ class WordListEntryBuilder
   String? get name => _$this._name;
   set name(covariant String? name) => _$this._name = name;
 
-  String? _profileId;
-  String? get profileId => _$this._profileId;
-  set profileId(covariant String? profileId) => _$this._profileId = profileId;
-
   DateTime? _updatedAt;
   DateTime? get updatedAt => _$this._updatedAt;
   set updatedAt(covariant DateTime? updatedAt) => _$this._updatedAt = updatedAt;
@@ -171,6 +167,10 @@ class WordListEntryBuilder
   JsonObject? _wordList;
   JsonObject? get wordList => _$this._wordList;
   set wordList(covariant JsonObject? wordList) => _$this._wordList = wordList;
+
+  String? _profileId;
+  String? get profileId => _$this._profileId;
+  set profileId(covariant String? profileId) => _$this._profileId = profileId;
 
   WordListEntryBuilder() {
     WordListEntry._defaults(this);
@@ -184,9 +184,9 @@ class WordListEntryBuilder
       _enabled = $v.enabled;
       _id = $v.id;
       _name = $v.name;
-      _profileId = $v.profileId;
       _updatedAt = $v.updatedAt;
       _wordList = $v.wordList;
+      _profileId = $v.profileId;
       _$v = null;
     }
     return this;
@@ -217,10 +217,10 @@ class WordListEntryBuilder
           id: BuiltValueNullFieldError.checkNotNull(id, r'WordListEntry', 'id'),
           name: BuiltValueNullFieldError.checkNotNull(
               name, r'WordListEntry', 'name'),
-          profileId: profileId,
           updatedAt: BuiltValueNullFieldError.checkNotNull(
               updatedAt, r'WordListEntry', 'updatedAt'),
           wordList: wordList,
+          profileId: profileId,
         );
     replace(_$result);
     return _$result;

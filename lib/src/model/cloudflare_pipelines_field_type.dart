@@ -27,10 +27,10 @@ part 'cloudflare_pipelines_field_type.g.dart';
 ///
 /// Properties:
 /// * [type] 
-/// * [unit] 
 /// * [fields] 
-/// * [name] 
 /// * [items] 
+/// * [unit] 
+/// * [name] 
 @BuiltValue(instantiable: false)
 abstract class CloudflarePipelinesFieldType  {
   /// One Of [Binary], [Bool], [Float32], [Float64], [Int32], [Int64], [Json], [ModelList], [ModelString], [Struct], [Timestamp]

@@ -91,6 +91,16 @@ class _$ZeroTrustGatewayRules extends ZeroTrustGatewayRules {
   @override
   final ZeroTrustGatewayAction action;
   @override
+  final bool enabled;
+  @override
+  final BuiltList<ZeroTrustGatewayRulesFiltersEnum> filters;
+  @override
+  final String name;
+  @override
+  final int precedence;
+  @override
+  final String traffic;
+  @override
   final DateTime? createdAt;
   @override
   final DateTime? deletedAt;
@@ -99,19 +109,11 @@ class _$ZeroTrustGatewayRules extends ZeroTrustGatewayRules {
   @override
   final String? devicePosture;
   @override
-  final bool enabled;
-  @override
   final ZeroTrustGatewayExpiration? expiration;
-  @override
-  final BuiltList<ZeroTrustGatewayRulesFiltersEnum> filters;
   @override
   final String? id;
   @override
   final String? identity;
-  @override
-  final String name;
-  @override
-  final int precedence;
   @override
   final bool? readOnly;
   @override
@@ -122,8 +124,6 @@ class _$ZeroTrustGatewayRules extends ZeroTrustGatewayRules {
   final bool? sharable;
   @override
   final String? sourceAccount;
-  @override
-  final String traffic;
   @override
   final DateTime? updatedAt;
   @override
@@ -137,23 +137,23 @@ class _$ZeroTrustGatewayRules extends ZeroTrustGatewayRules {
 
   _$ZeroTrustGatewayRules._(
       {required this.action,
+      required this.enabled,
+      required this.filters,
+      required this.name,
+      required this.precedence,
+      required this.traffic,
       this.createdAt,
       this.deletedAt,
       this.description,
       this.devicePosture,
-      required this.enabled,
       this.expiration,
-      required this.filters,
       this.id,
       this.identity,
-      required this.name,
-      required this.precedence,
       this.readOnly,
       this.ruleSettings,
       this.schedule,
       this.sharable,
       this.sourceAccount,
-      required this.traffic,
       this.updatedAt,
       this.version,
       this.warningStatus})
@@ -172,23 +172,23 @@ class _$ZeroTrustGatewayRules extends ZeroTrustGatewayRules {
     if (identical(other, this)) return true;
     return other is ZeroTrustGatewayRules &&
         action == other.action &&
+        enabled == other.enabled &&
+        filters == other.filters &&
+        name == other.name &&
+        precedence == other.precedence &&
+        traffic == other.traffic &&
         createdAt == other.createdAt &&
         deletedAt == other.deletedAt &&
         description == other.description &&
         devicePosture == other.devicePosture &&
-        enabled == other.enabled &&
         expiration == other.expiration &&
-        filters == other.filters &&
         id == other.id &&
         identity == other.identity &&
-        name == other.name &&
-        precedence == other.precedence &&
         readOnly == other.readOnly &&
         ruleSettings == other.ruleSettings &&
         schedule == other.schedule &&
         sharable == other.sharable &&
         sourceAccount == other.sourceAccount &&
-        traffic == other.traffic &&
         updatedAt == other.updatedAt &&
         version == other.version &&
         warningStatus == other.warningStatus;
@@ -198,23 +198,23 @@ class _$ZeroTrustGatewayRules extends ZeroTrustGatewayRules {
   int get hashCode {
     var _$hash = 0;
     _$hash = $jc(_$hash, action.hashCode);
+    _$hash = $jc(_$hash, enabled.hashCode);
+    _$hash = $jc(_$hash, filters.hashCode);
+    _$hash = $jc(_$hash, name.hashCode);
+    _$hash = $jc(_$hash, precedence.hashCode);
+    _$hash = $jc(_$hash, traffic.hashCode);
     _$hash = $jc(_$hash, createdAt.hashCode);
     _$hash = $jc(_$hash, deletedAt.hashCode);
     _$hash = $jc(_$hash, description.hashCode);
     _$hash = $jc(_$hash, devicePosture.hashCode);
-    _$hash = $jc(_$hash, enabled.hashCode);
     _$hash = $jc(_$hash, expiration.hashCode);
-    _$hash = $jc(_$hash, filters.hashCode);
     _$hash = $jc(_$hash, id.hashCode);
     _$hash = $jc(_$hash, identity.hashCode);
-    _$hash = $jc(_$hash, name.hashCode);
-    _$hash = $jc(_$hash, precedence.hashCode);
     _$hash = $jc(_$hash, readOnly.hashCode);
     _$hash = $jc(_$hash, ruleSettings.hashCode);
     _$hash = $jc(_$hash, schedule.hashCode);
     _$hash = $jc(_$hash, sharable.hashCode);
     _$hash = $jc(_$hash, sourceAccount.hashCode);
-    _$hash = $jc(_$hash, traffic.hashCode);
     _$hash = $jc(_$hash, updatedAt.hashCode);
     _$hash = $jc(_$hash, version.hashCode);
     _$hash = $jc(_$hash, warningStatus.hashCode);
@@ -226,23 +226,23 @@ class _$ZeroTrustGatewayRules extends ZeroTrustGatewayRules {
   String toString() {
     return (newBuiltValueToStringHelper(r'ZeroTrustGatewayRules')
           ..add('action', action)
+          ..add('enabled', enabled)
+          ..add('filters', filters)
+          ..add('name', name)
+          ..add('precedence', precedence)
+          ..add('traffic', traffic)
           ..add('createdAt', createdAt)
           ..add('deletedAt', deletedAt)
           ..add('description', description)
           ..add('devicePosture', devicePosture)
-          ..add('enabled', enabled)
           ..add('expiration', expiration)
-          ..add('filters', filters)
           ..add('id', id)
           ..add('identity', identity)
-          ..add('name', name)
-          ..add('precedence', precedence)
           ..add('readOnly', readOnly)
           ..add('ruleSettings', ruleSettings)
           ..add('schedule', schedule)
           ..add('sharable', sharable)
           ..add('sourceAccount', sourceAccount)
-          ..add('traffic', traffic)
           ..add('updatedAt', updatedAt)
           ..add('version', version)
           ..add('warningStatus', warningStatus))
@@ -257,6 +257,28 @@ class ZeroTrustGatewayRulesBuilder
   ZeroTrustGatewayAction? _action;
   ZeroTrustGatewayAction? get action => _$this._action;
   set action(ZeroTrustGatewayAction? action) => _$this._action = action;
+
+  bool? _enabled;
+  bool? get enabled => _$this._enabled;
+  set enabled(bool? enabled) => _$this._enabled = enabled;
+
+  ListBuilder<ZeroTrustGatewayRulesFiltersEnum>? _filters;
+  ListBuilder<ZeroTrustGatewayRulesFiltersEnum> get filters =>
+      _$this._filters ??= ListBuilder<ZeroTrustGatewayRulesFiltersEnum>();
+  set filters(ListBuilder<ZeroTrustGatewayRulesFiltersEnum>? filters) =>
+      _$this._filters = filters;
+
+  String? _name;
+  String? get name => _$this._name;
+  set name(String? name) => _$this._name = name;
+
+  int? _precedence;
+  int? get precedence => _$this._precedence;
+  set precedence(int? precedence) => _$this._precedence = precedence;
+
+  String? _traffic;
+  String? get traffic => _$this._traffic;
+  set traffic(String? traffic) => _$this._traffic = traffic;
 
   DateTime? _createdAt;
   DateTime? get createdAt => _$this._createdAt;
@@ -275,21 +297,11 @@ class ZeroTrustGatewayRulesBuilder
   set devicePosture(String? devicePosture) =>
       _$this._devicePosture = devicePosture;
 
-  bool? _enabled;
-  bool? get enabled => _$this._enabled;
-  set enabled(bool? enabled) => _$this._enabled = enabled;
-
   ZeroTrustGatewayExpirationBuilder? _expiration;
   ZeroTrustGatewayExpirationBuilder get expiration =>
       _$this._expiration ??= ZeroTrustGatewayExpirationBuilder();
   set expiration(ZeroTrustGatewayExpirationBuilder? expiration) =>
       _$this._expiration = expiration;
-
-  ListBuilder<ZeroTrustGatewayRulesFiltersEnum>? _filters;
-  ListBuilder<ZeroTrustGatewayRulesFiltersEnum> get filters =>
-      _$this._filters ??= ListBuilder<ZeroTrustGatewayRulesFiltersEnum>();
-  set filters(ListBuilder<ZeroTrustGatewayRulesFiltersEnum>? filters) =>
-      _$this._filters = filters;
 
   String? _id;
   String? get id => _$this._id;
@@ -298,14 +310,6 @@ class ZeroTrustGatewayRulesBuilder
   String? _identity;
   String? get identity => _$this._identity;
   set identity(String? identity) => _$this._identity = identity;
-
-  String? _name;
-  String? get name => _$this._name;
-  set name(String? name) => _$this._name = name;
-
-  int? _precedence;
-  int? get precedence => _$this._precedence;
-  set precedence(int? precedence) => _$this._precedence = precedence;
 
   bool? _readOnly;
   bool? get readOnly => _$this._readOnly;
@@ -332,10 +336,6 @@ class ZeroTrustGatewayRulesBuilder
   set sourceAccount(String? sourceAccount) =>
       _$this._sourceAccount = sourceAccount;
 
-  String? _traffic;
-  String? get traffic => _$this._traffic;
-  set traffic(String? traffic) => _$this._traffic = traffic;
-
   DateTime? _updatedAt;
   DateTime? get updatedAt => _$this._updatedAt;
   set updatedAt(DateTime? updatedAt) => _$this._updatedAt = updatedAt;
@@ -357,23 +357,23 @@ class ZeroTrustGatewayRulesBuilder
     final $v = _$v;
     if ($v != null) {
       _action = $v.action;
+      _enabled = $v.enabled;
+      _filters = $v.filters.toBuilder();
+      _name = $v.name;
+      _precedence = $v.precedence;
+      _traffic = $v.traffic;
       _createdAt = $v.createdAt;
       _deletedAt = $v.deletedAt;
       _description = $v.description;
       _devicePosture = $v.devicePosture;
-      _enabled = $v.enabled;
       _expiration = $v.expiration?.toBuilder();
-      _filters = $v.filters.toBuilder();
       _id = $v.id;
       _identity = $v.identity;
-      _name = $v.name;
-      _precedence = $v.precedence;
       _readOnly = $v.readOnly;
       _ruleSettings = $v.ruleSettings?.toBuilder();
       _schedule = $v.schedule?.toBuilder();
       _sharable = $v.sharable;
       _sourceAccount = $v.sourceAccount;
-      _traffic = $v.traffic;
       _updatedAt = $v.updatedAt;
       _version = $v.version;
       _warningStatus = $v.warningStatus;
@@ -402,27 +402,27 @@ class ZeroTrustGatewayRulesBuilder
           _$ZeroTrustGatewayRules._(
             action: BuiltValueNullFieldError.checkNotNull(
                 action, r'ZeroTrustGatewayRules', 'action'),
-            createdAt: createdAt,
-            deletedAt: deletedAt,
-            description: description,
-            devicePosture: devicePosture,
             enabled: BuiltValueNullFieldError.checkNotNull(
                 enabled, r'ZeroTrustGatewayRules', 'enabled'),
-            expiration: _expiration?.build(),
             filters: filters.build(),
-            id: id,
-            identity: identity,
             name: BuiltValueNullFieldError.checkNotNull(
                 name, r'ZeroTrustGatewayRules', 'name'),
             precedence: BuiltValueNullFieldError.checkNotNull(
                 precedence, r'ZeroTrustGatewayRules', 'precedence'),
+            traffic: BuiltValueNullFieldError.checkNotNull(
+                traffic, r'ZeroTrustGatewayRules', 'traffic'),
+            createdAt: createdAt,
+            deletedAt: deletedAt,
+            description: description,
+            devicePosture: devicePosture,
+            expiration: _expiration?.build(),
+            id: id,
+            identity: identity,
             readOnly: readOnly,
             ruleSettings: _ruleSettings?.build(),
             schedule: _schedule?.build(),
             sharable: sharable,
             sourceAccount: sourceAccount,
-            traffic: BuiltValueNullFieldError.checkNotNull(
-                traffic, r'ZeroTrustGatewayRules', 'traffic'),
             updatedAt: updatedAt,
             version: version,
             warningStatus: warningStatus,
@@ -430,10 +430,11 @@ class ZeroTrustGatewayRulesBuilder
     } catch (_) {
       late String _$failedField;
       try {
-        _$failedField = 'expiration';
-        _expiration?.build();
         _$failedField = 'filters';
         filters.build();
+
+        _$failedField = 'expiration';
+        _expiration?.build();
 
         _$failedField = 'ruleSettings';
         _ruleSettings?.build();

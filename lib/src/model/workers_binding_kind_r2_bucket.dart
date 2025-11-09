@@ -13,19 +13,14 @@ part 'workers_binding_kind_r2_bucket.g.dart';
 ///
 /// Properties:
 /// * [bucketName] - R2 bucket to bind to.
-/// * [jurisdiction] - The [jurisdiction](https://developers.cloudflare.com/r2/reference/data-location/#jurisdictional-restrictions) of the R2 bucket.
 /// * [name] - A JavaScript variable name for the binding.
 /// * [type] - The kind of resource that the binding provides.
+/// * [jurisdiction] - The [jurisdiction](https://developers.cloudflare.com/r2/reference/data-location/#jurisdictional-restrictions) of the R2 bucket.
 @BuiltValue()
 abstract class WorkersBindingKindR2Bucket implements Built<WorkersBindingKindR2Bucket, WorkersBindingKindR2BucketBuilder> {
   /// R2 bucket to bind to.
   @BuiltValueField(wireName: r'bucket_name')
   String get bucketName;
-
-  /// The [jurisdiction](https://developers.cloudflare.com/r2/reference/data-location/#jurisdictional-restrictions) of the R2 bucket.
-  @BuiltValueField(wireName: r'jurisdiction')
-  WorkersBindingKindR2BucketJurisdictionEnum? get jurisdiction;
-  // enum jurisdictionEnum {  eu,  fedramp,  };
 
   /// A JavaScript variable name for the binding.
   @BuiltValueField(wireName: r'name')
@@ -35,6 +30,11 @@ abstract class WorkersBindingKindR2Bucket implements Built<WorkersBindingKindR2B
   @BuiltValueField(wireName: r'type')
   WorkersBindingKindR2BucketTypeEnum get type;
   // enum typeEnum {  r2_bucket,  };
+
+  /// The [jurisdiction](https://developers.cloudflare.com/r2/reference/data-location/#jurisdictional-restrictions) of the R2 bucket.
+  @BuiltValueField(wireName: r'jurisdiction')
+  WorkersBindingKindR2BucketJurisdictionEnum? get jurisdiction;
+  // enum jurisdictionEnum {  eu,  fedramp,  };
 
   WorkersBindingKindR2Bucket._();
 
@@ -64,13 +64,6 @@ class _$WorkersBindingKindR2BucketSerializer implements PrimitiveSerializer<Work
       object.bucketName,
       specifiedType: const FullType(String),
     );
-    if (object.jurisdiction != null) {
-      yield r'jurisdiction';
-      yield serializers.serialize(
-        object.jurisdiction,
-        specifiedType: const FullType(WorkersBindingKindR2BucketJurisdictionEnum),
-      );
-    }
     yield r'name';
     yield serializers.serialize(
       object.name,
@@ -81,6 +74,13 @@ class _$WorkersBindingKindR2BucketSerializer implements PrimitiveSerializer<Work
       object.type,
       specifiedType: const FullType(WorkersBindingKindR2BucketTypeEnum),
     );
+    if (object.jurisdiction != null) {
+      yield r'jurisdiction';
+      yield serializers.serialize(
+        object.jurisdiction,
+        specifiedType: const FullType(WorkersBindingKindR2BucketJurisdictionEnum),
+      );
+    }
   }
 
   @override
@@ -111,13 +111,6 @@ class _$WorkersBindingKindR2BucketSerializer implements PrimitiveSerializer<Work
           ) as String;
           result.bucketName = valueDes;
           break;
-        case r'jurisdiction':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(WorkersBindingKindR2BucketJurisdictionEnum),
-          ) as WorkersBindingKindR2BucketJurisdictionEnum;
-          result.jurisdiction = valueDes;
-          break;
         case r'name':
           final valueDes = serializers.deserialize(
             value,
@@ -131,6 +124,13 @@ class _$WorkersBindingKindR2BucketSerializer implements PrimitiveSerializer<Work
             specifiedType: const FullType(WorkersBindingKindR2BucketTypeEnum),
           ) as WorkersBindingKindR2BucketTypeEnum;
           result.type = valueDes;
+          break;
+        case r'jurisdiction':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(WorkersBindingKindR2BucketJurisdictionEnum),
+          ) as WorkersBindingKindR2BucketJurisdictionEnum;
+          result.jurisdiction = valueDes;
           break;
         default:
           unhandled.add(key);
@@ -161,6 +161,20 @@ class _$WorkersBindingKindR2BucketSerializer implements PrimitiveSerializer<Work
   }
 }
 
+class WorkersBindingKindR2BucketTypeEnum extends EnumClass {
+
+  /// The kind of resource that the binding provides.
+  @BuiltValueEnumConst(wireName: r'r2_bucket')
+  static const WorkersBindingKindR2BucketTypeEnum r2Bucket = _$workersBindingKindR2BucketTypeEnum_r2Bucket;
+
+  static Serializer<WorkersBindingKindR2BucketTypeEnum> get serializer => _$workersBindingKindR2BucketTypeEnumSerializer;
+
+  const WorkersBindingKindR2BucketTypeEnum._(String name): super(name);
+
+  static BuiltSet<WorkersBindingKindR2BucketTypeEnum> get values => _$workersBindingKindR2BucketTypeEnumValues;
+  static WorkersBindingKindR2BucketTypeEnum valueOf(String name) => _$workersBindingKindR2BucketTypeEnumValueOf(name);
+}
+
 class WorkersBindingKindR2BucketJurisdictionEnum extends EnumClass {
 
   /// The [jurisdiction](https://developers.cloudflare.com/r2/reference/data-location/#jurisdictional-restrictions) of the R2 bucket.
@@ -176,19 +190,5 @@ class WorkersBindingKindR2BucketJurisdictionEnum extends EnumClass {
 
   static BuiltSet<WorkersBindingKindR2BucketJurisdictionEnum> get values => _$workersBindingKindR2BucketJurisdictionEnumValues;
   static WorkersBindingKindR2BucketJurisdictionEnum valueOf(String name) => _$workersBindingKindR2BucketJurisdictionEnumValueOf(name);
-}
-
-class WorkersBindingKindR2BucketTypeEnum extends EnumClass {
-
-  /// The kind of resource that the binding provides.
-  @BuiltValueEnumConst(wireName: r'r2_bucket')
-  static const WorkersBindingKindR2BucketTypeEnum r2Bucket = _$workersBindingKindR2BucketTypeEnum_r2Bucket;
-
-  static Serializer<WorkersBindingKindR2BucketTypeEnum> get serializer => _$workersBindingKindR2BucketTypeEnumSerializer;
-
-  const WorkersBindingKindR2BucketTypeEnum._(String name): super(name);
-
-  static BuiltSet<WorkersBindingKindR2BucketTypeEnum> get values => _$workersBindingKindR2BucketTypeEnumValues;
-  static WorkersBindingKindR2BucketTypeEnum valueOf(String name) => _$workersBindingKindR2BucketTypeEnumValueOf(name);
 }
 

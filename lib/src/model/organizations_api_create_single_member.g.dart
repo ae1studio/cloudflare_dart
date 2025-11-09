@@ -72,16 +72,16 @@ class _$OrganizationsApiCreateSingleMemberStatusEnumSerializer
 class _$OrganizationsApiCreateSingleMember
     extends OrganizationsApiCreateSingleMember {
   @override
-  final OrganizationsApiCreateSingleMemberStatusEnum? status;
-  @override
   final OrganizationsApiCreateSingleMemberUser user;
+  @override
+  final OrganizationsApiCreateSingleMemberStatusEnum? status;
 
   factory _$OrganizationsApiCreateSingleMember(
           [void Function(OrganizationsApiCreateSingleMemberBuilder)?
               updates]) =>
       (OrganizationsApiCreateSingleMemberBuilder()..update(updates))._build();
 
-  _$OrganizationsApiCreateSingleMember._({this.status, required this.user})
+  _$OrganizationsApiCreateSingleMember._({required this.user, this.status})
       : super._();
   @override
   OrganizationsApiCreateSingleMember rebuild(
@@ -96,15 +96,15 @@ class _$OrganizationsApiCreateSingleMember
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is OrganizationsApiCreateSingleMember &&
-        status == other.status &&
-        user == other.user;
+        user == other.user &&
+        status == other.status;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, status.hashCode);
     _$hash = $jc(_$hash, user.hashCode);
+    _$hash = $jc(_$hash, status.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -112,8 +112,8 @@ class _$OrganizationsApiCreateSingleMember
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'OrganizationsApiCreateSingleMember')
-          ..add('status', status)
-          ..add('user', user))
+          ..add('user', user)
+          ..add('status', status))
         .toString();
   }
 }
@@ -124,16 +124,16 @@ class OrganizationsApiCreateSingleMemberBuilder
             OrganizationsApiCreateSingleMemberBuilder> {
   _$OrganizationsApiCreateSingleMember? _$v;
 
-  OrganizationsApiCreateSingleMemberStatusEnum? _status;
-  OrganizationsApiCreateSingleMemberStatusEnum? get status => _$this._status;
-  set status(OrganizationsApiCreateSingleMemberStatusEnum? status) =>
-      _$this._status = status;
-
   OrganizationsApiCreateSingleMemberUserBuilder? _user;
   OrganizationsApiCreateSingleMemberUserBuilder get user =>
       _$this._user ??= OrganizationsApiCreateSingleMemberUserBuilder();
   set user(OrganizationsApiCreateSingleMemberUserBuilder? user) =>
       _$this._user = user;
+
+  OrganizationsApiCreateSingleMemberStatusEnum? _status;
+  OrganizationsApiCreateSingleMemberStatusEnum? get status => _$this._status;
+  set status(OrganizationsApiCreateSingleMemberStatusEnum? status) =>
+      _$this._status = status;
 
   OrganizationsApiCreateSingleMemberBuilder() {
     OrganizationsApiCreateSingleMember._defaults(this);
@@ -142,8 +142,8 @@ class OrganizationsApiCreateSingleMemberBuilder
   OrganizationsApiCreateSingleMemberBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _status = $v.status;
       _user = $v.user.toBuilder();
+      _status = $v.status;
       _$v = null;
     }
     return this;
@@ -168,8 +168,8 @@ class OrganizationsApiCreateSingleMemberBuilder
     try {
       _$result = _$v ??
           _$OrganizationsApiCreateSingleMember._(
-            status: status,
             user: user.build(),
+            status: status,
           );
     } catch (_) {
       late String _$failedField;

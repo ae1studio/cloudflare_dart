@@ -22,6 +22,7 @@ part 'brapi_post_scrape_request.g.dart';
 /// BrapiPostScrapeRequest
 ///
 /// Properties:
+/// * [elements] 
 /// * [actionTimeout] - The maximum duration allowed for the browser action to complete after the page has loaded (such as taking screenshots, extracting content, or generating PDFs). If this time limit is exceeded, the action stops and returns a timeout error.
 /// * [addScriptTag] - Adds a `<script>` tag into the page with the desired URL or content.
 /// * [addStyleTag] - Adds a `<link rel=\"stylesheet\">` tag into the page with the desired URL or a `<style type=\"text/css\">` tag with the content.
@@ -30,7 +31,6 @@ part 'brapi_post_scrape_request.g.dart';
 /// * [authenticate] 
 /// * [bestAttempt] - Attempt to proceed when 'awaited' events fail or timeout.
 /// * [cookies] - Check [options](https://pptr.dev/api/puppeteer.page.setcookie).
-/// * [elements] 
 /// * [emulateMediaType] 
 /// * [gotoOptions] 
 /// * [html] - Set the content of the page, eg: `<h1>Hello World!!</h1>`. Either `html` or `url` must be set.
@@ -45,6 +45,9 @@ part 'brapi_post_scrape_request.g.dart';
 /// * [waitForTimeout] - Waits for a specified timeout before continuing.
 @BuiltValue()
 abstract class BrapiPostScrapeRequest implements Built<BrapiPostScrapeRequest, BrapiPostScrapeRequestBuilder> {
+  @BuiltValueField(wireName: r'elements')
+  BuiltList<BrapiPostScrapeRequestAllOfElementsInner> get elements;
+
   /// The maximum duration allowed for the browser action to complete after the page has loaded (such as taking screenshots, extracting content, or generating PDFs). If this time limit is exceeded, the action stops and returns a timeout error.
   @BuiltValueField(wireName: r'actionTimeout')
   num? get actionTimeout;
@@ -75,9 +78,6 @@ abstract class BrapiPostScrapeRequest implements Built<BrapiPostScrapeRequest, B
   /// Check [options](https://pptr.dev/api/puppeteer.page.setcookie).
   @BuiltValueField(wireName: r'cookies')
   BuiltList<BrapiPostContentRequestAllOfCookiesInner>? get cookies;
-
-  @BuiltValueField(wireName: r'elements')
-  BuiltList<BrapiPostScrapeRequestAllOfElementsInner> get elements;
 
   @BuiltValueField(wireName: r'emulateMediaType')
   String? get emulateMediaType;
@@ -144,6 +144,11 @@ class _$BrapiPostScrapeRequestSerializer implements PrimitiveSerializer<BrapiPos
     BrapiPostScrapeRequest object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    yield r'elements';
+    yield serializers.serialize(
+      object.elements,
+      specifiedType: const FullType(BuiltList, [FullType(BrapiPostScrapeRequestAllOfElementsInner)]),
+    );
     if (object.actionTimeout != null) {
       yield r'actionTimeout';
       yield serializers.serialize(
@@ -200,11 +205,6 @@ class _$BrapiPostScrapeRequestSerializer implements PrimitiveSerializer<BrapiPos
         specifiedType: const FullType(BuiltList, [FullType(BrapiPostContentRequestAllOfCookiesInner)]),
       );
     }
-    yield r'elements';
-    yield serializers.serialize(
-      object.elements,
-      specifiedType: const FullType(BuiltList, [FullType(BrapiPostScrapeRequestAllOfElementsInner)]),
-    );
     if (object.emulateMediaType != null) {
       yield r'emulateMediaType';
       yield serializers.serialize(
@@ -312,6 +312,13 @@ class _$BrapiPostScrapeRequestSerializer implements PrimitiveSerializer<BrapiPos
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
+        case r'elements':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BuiltList, [FullType(BrapiPostScrapeRequestAllOfElementsInner)]),
+          ) as BuiltList<BrapiPostScrapeRequestAllOfElementsInner>;
+          result.elements.replace(valueDes);
+          break;
         case r'actionTimeout':
           final valueDes = serializers.deserialize(
             value,
@@ -367,13 +374,6 @@ class _$BrapiPostScrapeRequestSerializer implements PrimitiveSerializer<BrapiPos
             specifiedType: const FullType(BuiltList, [FullType(BrapiPostContentRequestAllOfCookiesInner)]),
           ) as BuiltList<BrapiPostContentRequestAllOfCookiesInner>;
           result.cookies.replace(valueDes);
-          break;
-        case r'elements':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(BrapiPostScrapeRequestAllOfElementsInner)]),
-          ) as BuiltList<BrapiPostScrapeRequestAllOfElementsInner>;
-          result.elements.replace(valueDes);
           break;
         case r'emulateMediaType':
           final valueDes = serializers.deserialize(

@@ -66,9 +66,9 @@ class _$ZeroTrustAccountsGetZeroTrustCertificateConfiguration4XXResponse
   @override
   final bool success;
   @override
-  final String? bindingStatus;
-  @override
   final bool? enabled;
+  @override
+  final String? bindingStatus;
   @override
   final String? id;
   @override
@@ -87,8 +87,8 @@ class _$ZeroTrustAccountsGetZeroTrustCertificateConfiguration4XXResponse
       required this.messages,
       this.result,
       required this.success,
-      this.bindingStatus,
       this.enabled,
+      this.bindingStatus,
       this.id,
       this.updatedAt})
       : super._();
@@ -114,8 +114,8 @@ class _$ZeroTrustAccountsGetZeroTrustCertificateConfiguration4XXResponse
         messages == other.messages &&
         result == other.result &&
         success == other.success &&
-        bindingStatus == other.bindingStatus &&
         enabled == other.enabled &&
+        bindingStatus == other.bindingStatus &&
         id == other.id &&
         updatedAt == other.updatedAt;
   }
@@ -127,8 +127,8 @@ class _$ZeroTrustAccountsGetZeroTrustCertificateConfiguration4XXResponse
     _$hash = $jc(_$hash, messages.hashCode);
     _$hash = $jc(_$hash, result.hashCode);
     _$hash = $jc(_$hash, success.hashCode);
-    _$hash = $jc(_$hash, bindingStatus.hashCode);
     _$hash = $jc(_$hash, enabled.hashCode);
+    _$hash = $jc(_$hash, bindingStatus.hashCode);
     _$hash = $jc(_$hash, id.hashCode);
     _$hash = $jc(_$hash, updatedAt.hashCode);
     _$hash = $jf(_$hash);
@@ -143,8 +143,8 @@ class _$ZeroTrustAccountsGetZeroTrustCertificateConfiguration4XXResponse
           ..add('messages', messages)
           ..add('result', result)
           ..add('success', success)
-          ..add('bindingStatus', bindingStatus)
           ..add('enabled', enabled)
+          ..add('bindingStatus', bindingStatus)
           ..add('id', id)
           ..add('updatedAt', updatedAt))
         .toString();
@@ -184,14 +184,14 @@ class ZeroTrustAccountsGetZeroTrustCertificateConfiguration4XXResponseBuilder
   bool? get success => _$this._success;
   set success(covariant bool? success) => _$this._success = success;
 
+  bool? _enabled;
+  bool? get enabled => _$this._enabled;
+  set enabled(covariant bool? enabled) => _$this._enabled = enabled;
+
   String? _bindingStatus;
   String? get bindingStatus => _$this._bindingStatus;
   set bindingStatus(covariant String? bindingStatus) =>
       _$this._bindingStatus = bindingStatus;
-
-  bool? _enabled;
-  bool? get enabled => _$this._enabled;
-  set enabled(covariant bool? enabled) => _$this._enabled = enabled;
 
   String? _id;
   String? get id => _$this._id;
@@ -214,8 +214,8 @@ class ZeroTrustAccountsGetZeroTrustCertificateConfiguration4XXResponseBuilder
       _messages = $v.messages.toBuilder();
       _result = $v.result;
       _success = $v.success;
-      _bindingStatus = $v.bindingStatus;
       _enabled = $v.enabled;
+      _bindingStatus = $v.bindingStatus;
       _id = $v.id;
       _updatedAt = $v.updatedAt;
       _$v = null;
@@ -256,8 +256,8 @@ class ZeroTrustAccountsGetZeroTrustCertificateConfiguration4XXResponseBuilder
                 success,
                 r'ZeroTrustAccountsGetZeroTrustCertificateConfiguration4XXResponse',
                 'success'),
-            bindingStatus: bindingStatus,
             enabled: enabled,
+            bindingStatus: bindingStatus,
             id: id,
             updatedAt: updatedAt,
           );

@@ -11,19 +11,19 @@ part 'organizations_api_batch_account_move_response_statuses.g.dart';
 /// OrganizationsApiBatchAccountMoveResponseStatuses
 ///
 /// Properties:
-/// * [message] 
 /// * [moved] 
 /// * [tag] 
+/// * [message] 
 @BuiltValue()
 abstract class OrganizationsApiBatchAccountMoveResponseStatuses implements Built<OrganizationsApiBatchAccountMoveResponseStatuses, OrganizationsApiBatchAccountMoveResponseStatusesBuilder> {
-  @BuiltValueField(wireName: r'message')
-  String? get message;
-
   @BuiltValueField(wireName: r'moved')
   bool get moved;
 
   @BuiltValueField(wireName: r'tag')
   String get tag;
+
+  @BuiltValueField(wireName: r'message')
+  String? get message;
 
   OrganizationsApiBatchAccountMoveResponseStatuses._();
 
@@ -48,13 +48,6 @@ class _$OrganizationsApiBatchAccountMoveResponseStatusesSerializer implements Pr
     OrganizationsApiBatchAccountMoveResponseStatuses object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
-    if (object.message != null) {
-      yield r'message';
-      yield serializers.serialize(
-        object.message,
-        specifiedType: const FullType(String),
-      );
-    }
     yield r'moved';
     yield serializers.serialize(
       object.moved,
@@ -65,6 +58,13 @@ class _$OrganizationsApiBatchAccountMoveResponseStatusesSerializer implements Pr
       object.tag,
       specifiedType: const FullType(String),
     );
+    if (object.message != null) {
+      yield r'message';
+      yield serializers.serialize(
+        object.message,
+        specifiedType: const FullType(String),
+      );
+    }
   }
 
   @override
@@ -88,13 +88,6 @@ class _$OrganizationsApiBatchAccountMoveResponseStatusesSerializer implements Pr
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'message':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.message = valueDes;
-          break;
         case r'moved':
           final valueDes = serializers.deserialize(
             value,
@@ -108,6 +101,13 @@ class _$OrganizationsApiBatchAccountMoveResponseStatusesSerializer implements Pr
             specifiedType: const FullType(String),
           ) as String;
           result.tag = valueDes;
+          break;
+        case r'message':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.message = valueDes;
           break;
         default:
           unhandled.add(key);

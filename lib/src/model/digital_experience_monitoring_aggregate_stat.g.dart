@@ -9,11 +9,11 @@ part of 'digital_experience_monitoring_aggregate_stat.dart';
 class _$DigitalExperienceMonitoringAggregateStat
     extends DigitalExperienceMonitoringAggregateStat {
   @override
+  final DigitalExperienceMonitoringAggregateTimePeriod timePeriod;
+  @override
   final int? avgMs;
   @override
   final double? deltaPct;
-  @override
-  final DigitalExperienceMonitoringAggregateTimePeriod timePeriod;
 
   factory _$DigitalExperienceMonitoringAggregateStat(
           [void Function(DigitalExperienceMonitoringAggregateStatBuilder)?
@@ -22,7 +22,7 @@ class _$DigitalExperienceMonitoringAggregateStat
           ._build();
 
   _$DigitalExperienceMonitoringAggregateStat._(
-      {this.avgMs, this.deltaPct, required this.timePeriod})
+      {required this.timePeriod, this.avgMs, this.deltaPct})
       : super._();
   @override
   DigitalExperienceMonitoringAggregateStat rebuild(
@@ -38,17 +38,17 @@ class _$DigitalExperienceMonitoringAggregateStat
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is DigitalExperienceMonitoringAggregateStat &&
+        timePeriod == other.timePeriod &&
         avgMs == other.avgMs &&
-        deltaPct == other.deltaPct &&
-        timePeriod == other.timePeriod;
+        deltaPct == other.deltaPct;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
+    _$hash = $jc(_$hash, timePeriod.hashCode);
     _$hash = $jc(_$hash, avgMs.hashCode);
     _$hash = $jc(_$hash, deltaPct.hashCode);
-    _$hash = $jc(_$hash, timePeriod.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -57,9 +57,9 @@ class _$DigitalExperienceMonitoringAggregateStat
   String toString() {
     return (newBuiltValueToStringHelper(
             r'DigitalExperienceMonitoringAggregateStat')
+          ..add('timePeriod', timePeriod)
           ..add('avgMs', avgMs)
-          ..add('deltaPct', deltaPct)
-          ..add('timePeriod', timePeriod))
+          ..add('deltaPct', deltaPct))
         .toString();
   }
 }
@@ -70,14 +70,6 @@ class DigitalExperienceMonitoringAggregateStatBuilder
             DigitalExperienceMonitoringAggregateStatBuilder> {
   _$DigitalExperienceMonitoringAggregateStat? _$v;
 
-  int? _avgMs;
-  int? get avgMs => _$this._avgMs;
-  set avgMs(int? avgMs) => _$this._avgMs = avgMs;
-
-  double? _deltaPct;
-  double? get deltaPct => _$this._deltaPct;
-  set deltaPct(double? deltaPct) => _$this._deltaPct = deltaPct;
-
   DigitalExperienceMonitoringAggregateTimePeriodBuilder? _timePeriod;
   DigitalExperienceMonitoringAggregateTimePeriodBuilder get timePeriod =>
       _$this._timePeriod ??=
@@ -86,6 +78,14 @@ class DigitalExperienceMonitoringAggregateStatBuilder
           DigitalExperienceMonitoringAggregateTimePeriodBuilder? timePeriod) =>
       _$this._timePeriod = timePeriod;
 
+  int? _avgMs;
+  int? get avgMs => _$this._avgMs;
+  set avgMs(int? avgMs) => _$this._avgMs = avgMs;
+
+  double? _deltaPct;
+  double? get deltaPct => _$this._deltaPct;
+  set deltaPct(double? deltaPct) => _$this._deltaPct = deltaPct;
+
   DigitalExperienceMonitoringAggregateStatBuilder() {
     DigitalExperienceMonitoringAggregateStat._defaults(this);
   }
@@ -93,9 +93,9 @@ class DigitalExperienceMonitoringAggregateStatBuilder
   DigitalExperienceMonitoringAggregateStatBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
+      _timePeriod = $v.timePeriod.toBuilder();
       _avgMs = $v.avgMs;
       _deltaPct = $v.deltaPct;
-      _timePeriod = $v.timePeriod.toBuilder();
       _$v = null;
     }
     return this;
@@ -120,9 +120,9 @@ class DigitalExperienceMonitoringAggregateStatBuilder
     try {
       _$result = _$v ??
           _$DigitalExperienceMonitoringAggregateStat._(
+            timePeriod: timePeriod.build(),
             avgMs: avgMs,
             deltaPct: deltaPct,
-            timePeriod: timePeriod.build(),
           );
     } catch (_) {
       late String _$failedField;

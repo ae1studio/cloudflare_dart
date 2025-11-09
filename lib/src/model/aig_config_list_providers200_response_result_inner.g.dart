@@ -25,13 +25,13 @@ class _$AigConfigListProviders200ResponseResultInner
   @override
   final String providerSlug;
   @override
-  final num? rateLimit;
-  @override
-  final num? rateLimitPeriod;
-  @override
   final String secretId;
   @override
   final String secretPreview;
+  @override
+  final num? rateLimit;
+  @override
+  final num? rateLimitPeriod;
 
   factory _$AigConfigListProviders200ResponseResultInner(
           [void Function(AigConfigListProviders200ResponseResultInnerBuilder)?
@@ -48,10 +48,10 @@ class _$AigConfigListProviders200ResponseResultInner
       required this.id,
       required this.modifiedAt,
       required this.providerSlug,
-      this.rateLimit,
-      this.rateLimitPeriod,
       required this.secretId,
-      required this.secretPreview})
+      required this.secretPreview,
+      this.rateLimit,
+      this.rateLimitPeriod})
       : super._();
   @override
   AigConfigListProviders200ResponseResultInner rebuild(
@@ -75,10 +75,10 @@ class _$AigConfigListProviders200ResponseResultInner
         id == other.id &&
         modifiedAt == other.modifiedAt &&
         providerSlug == other.providerSlug &&
-        rateLimit == other.rateLimit &&
-        rateLimitPeriod == other.rateLimitPeriod &&
         secretId == other.secretId &&
-        secretPreview == other.secretPreview;
+        secretPreview == other.secretPreview &&
+        rateLimit == other.rateLimit &&
+        rateLimitPeriod == other.rateLimitPeriod;
   }
 
   @override
@@ -92,10 +92,10 @@ class _$AigConfigListProviders200ResponseResultInner
     _$hash = $jc(_$hash, id.hashCode);
     _$hash = $jc(_$hash, modifiedAt.hashCode);
     _$hash = $jc(_$hash, providerSlug.hashCode);
-    _$hash = $jc(_$hash, rateLimit.hashCode);
-    _$hash = $jc(_$hash, rateLimitPeriod.hashCode);
     _$hash = $jc(_$hash, secretId.hashCode);
     _$hash = $jc(_$hash, secretPreview.hashCode);
+    _$hash = $jc(_$hash, rateLimit.hashCode);
+    _$hash = $jc(_$hash, rateLimitPeriod.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -112,10 +112,10 @@ class _$AigConfigListProviders200ResponseResultInner
           ..add('id', id)
           ..add('modifiedAt', modifiedAt)
           ..add('providerSlug', providerSlug)
-          ..add('rateLimit', rateLimit)
-          ..add('rateLimitPeriod', rateLimitPeriod)
           ..add('secretId', secretId)
-          ..add('secretPreview', secretPreview))
+          ..add('secretPreview', secretPreview)
+          ..add('rateLimit', rateLimit)
+          ..add('rateLimitPeriod', rateLimitPeriod))
         .toString();
   }
 }
@@ -159,15 +159,6 @@ class AigConfigListProviders200ResponseResultInnerBuilder
   String? get providerSlug => _$this._providerSlug;
   set providerSlug(String? providerSlug) => _$this._providerSlug = providerSlug;
 
-  num? _rateLimit;
-  num? get rateLimit => _$this._rateLimit;
-  set rateLimit(num? rateLimit) => _$this._rateLimit = rateLimit;
-
-  num? _rateLimitPeriod;
-  num? get rateLimitPeriod => _$this._rateLimitPeriod;
-  set rateLimitPeriod(num? rateLimitPeriod) =>
-      _$this._rateLimitPeriod = rateLimitPeriod;
-
   String? _secretId;
   String? get secretId => _$this._secretId;
   set secretId(String? secretId) => _$this._secretId = secretId;
@@ -176,6 +167,15 @@ class AigConfigListProviders200ResponseResultInnerBuilder
   String? get secretPreview => _$this._secretPreview;
   set secretPreview(String? secretPreview) =>
       _$this._secretPreview = secretPreview;
+
+  num? _rateLimit;
+  num? get rateLimit => _$this._rateLimit;
+  set rateLimit(num? rateLimit) => _$this._rateLimit = rateLimit;
+
+  num? _rateLimitPeriod;
+  num? get rateLimitPeriod => _$this._rateLimitPeriod;
+  set rateLimitPeriod(num? rateLimitPeriod) =>
+      _$this._rateLimitPeriod = rateLimitPeriod;
 
   AigConfigListProviders200ResponseResultInnerBuilder() {
     AigConfigListProviders200ResponseResultInner._defaults(this);
@@ -192,10 +192,10 @@ class AigConfigListProviders200ResponseResultInnerBuilder
       _id = $v.id;
       _modifiedAt = $v.modifiedAt;
       _providerSlug = $v.providerSlug;
-      _rateLimit = $v.rateLimit;
-      _rateLimitPeriod = $v.rateLimitPeriod;
       _secretId = $v.secretId;
       _secretPreview = $v.secretPreview;
+      _rateLimit = $v.rateLimit;
+      _rateLimitPeriod = $v.rateLimitPeriod;
       _$v = null;
     }
     return this;
@@ -235,12 +235,12 @@ class AigConfigListProviders200ResponseResultInnerBuilder
               r'AigConfigListProviders200ResponseResultInner', 'modifiedAt'),
           providerSlug: BuiltValueNullFieldError.checkNotNull(providerSlug,
               r'AigConfigListProviders200ResponseResultInner', 'providerSlug'),
-          rateLimit: rateLimit,
-          rateLimitPeriod: rateLimitPeriod,
           secretId: BuiltValueNullFieldError.checkNotNull(secretId,
               r'AigConfigListProviders200ResponseResultInner', 'secretId'),
           secretPreview: BuiltValueNullFieldError.checkNotNull(secretPreview,
               r'AigConfigListProviders200ResponseResultInner', 'secretPreview'),
+          rateLimit: rateLimit,
+          rateLimitPeriod: rateLimitPeriod,
         );
     replace(_$result);
     return _$result;

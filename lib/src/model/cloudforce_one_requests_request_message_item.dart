@@ -13,10 +13,10 @@ part 'cloudforce_one_requests_request_message_item.g.dart';
 /// Properties:
 /// * [author] - Author of message.
 /// * [content] - Content of message.
-/// * [created] - Defines the message creation time.
 /// * [id] - Message ID.
 /// * [isFollowOnRequest] - Whether the message is a follow-on request.
 /// * [updated] - Defines the message last updated time.
+/// * [created] - Defines the message creation time.
 @BuiltValue()
 abstract class CloudforceOneRequestsRequestMessageItem implements Built<CloudforceOneRequestsRequestMessageItem, CloudforceOneRequestsRequestMessageItemBuilder> {
   /// Author of message.
@@ -26,10 +26,6 @@ abstract class CloudforceOneRequestsRequestMessageItem implements Built<Cloudfor
   /// Content of message.
   @BuiltValueField(wireName: r'content')
   String get content;
-
-  /// Defines the message creation time.
-  @BuiltValueField(wireName: r'created')
-  DateTime? get created;
 
   /// Message ID.
   @BuiltValueField(wireName: r'id')
@@ -42,6 +38,10 @@ abstract class CloudforceOneRequestsRequestMessageItem implements Built<Cloudfor
   /// Defines the message last updated time.
   @BuiltValueField(wireName: r'updated')
   DateTime get updated;
+
+  /// Defines the message creation time.
+  @BuiltValueField(wireName: r'created')
+  DateTime? get created;
 
   CloudforceOneRequestsRequestMessageItem._();
 
@@ -76,13 +76,6 @@ class _$CloudforceOneRequestsRequestMessageItemSerializer implements PrimitiveSe
       object.content,
       specifiedType: const FullType(String),
     );
-    if (object.created != null) {
-      yield r'created';
-      yield serializers.serialize(
-        object.created,
-        specifiedType: const FullType(DateTime),
-      );
-    }
     yield r'id';
     yield serializers.serialize(
       object.id,
@@ -98,6 +91,13 @@ class _$CloudforceOneRequestsRequestMessageItemSerializer implements PrimitiveSe
       object.updated,
       specifiedType: const FullType(DateTime),
     );
+    if (object.created != null) {
+      yield r'created';
+      yield serializers.serialize(
+        object.created,
+        specifiedType: const FullType(DateTime),
+      );
+    }
   }
 
   @override
@@ -135,13 +135,6 @@ class _$CloudforceOneRequestsRequestMessageItemSerializer implements PrimitiveSe
           ) as String;
           result.content = valueDes;
           break;
-        case r'created':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
-          result.created = valueDes;
-          break;
         case r'id':
           final valueDes = serializers.deserialize(
             value,
@@ -162,6 +155,13 @@ class _$CloudforceOneRequestsRequestMessageItemSerializer implements PrimitiveSe
             specifiedType: const FullType(DateTime),
           ) as DateTime;
           result.updated = valueDes;
+          break;
+        case r'created':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(DateTime),
+          ) as DateTime;
+          result.created = valueDes;
           break;
         default:
           unhandled.add(key);

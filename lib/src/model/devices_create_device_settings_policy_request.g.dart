@@ -9,6 +9,12 @@ part of 'devices_create_device_settings_policy_request.dart';
 class _$DevicesCreateDeviceSettingsPolicyRequest
     extends DevicesCreateDeviceSettingsPolicyRequest {
   @override
+  final String match;
+  @override
+  final String name;
+  @override
+  final num precedence;
+  @override
   final bool? allowModeSwitch;
   @override
   final bool? allowUpdates;
@@ -35,12 +41,6 @@ class _$DevicesCreateDeviceSettingsPolicyRequest
   @override
   final num? lanAllowSubnetSize;
   @override
-  final String match;
-  @override
-  final String name;
-  @override
-  final num precedence;
-  @override
   final bool? registerInterfaceIpWithDns;
   @override
   final bool? sccmVpnBoundarySupport;
@@ -60,7 +60,10 @@ class _$DevicesCreateDeviceSettingsPolicyRequest
           ._build();
 
   _$DevicesCreateDeviceSettingsPolicyRequest._(
-      {this.allowModeSwitch,
+      {required this.match,
+      required this.name,
+      required this.precedence,
+      this.allowModeSwitch,
       this.allowUpdates,
       this.allowedToLeave,
       this.autoConnect,
@@ -73,9 +76,6 @@ class _$DevicesCreateDeviceSettingsPolicyRequest
       this.include,
       this.lanAllowMinutes,
       this.lanAllowSubnetSize,
-      required this.match,
-      required this.name,
-      required this.precedence,
       this.registerInterfaceIpWithDns,
       this.sccmVpnBoundarySupport,
       this.serviceModeV2,
@@ -97,6 +97,9 @@ class _$DevicesCreateDeviceSettingsPolicyRequest
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is DevicesCreateDeviceSettingsPolicyRequest &&
+        match == other.match &&
+        name == other.name &&
+        precedence == other.precedence &&
         allowModeSwitch == other.allowModeSwitch &&
         allowUpdates == other.allowUpdates &&
         allowedToLeave == other.allowedToLeave &&
@@ -110,9 +113,6 @@ class _$DevicesCreateDeviceSettingsPolicyRequest
         include == other.include &&
         lanAllowMinutes == other.lanAllowMinutes &&
         lanAllowSubnetSize == other.lanAllowSubnetSize &&
-        match == other.match &&
-        name == other.name &&
-        precedence == other.precedence &&
         registerInterfaceIpWithDns == other.registerInterfaceIpWithDns &&
         sccmVpnBoundarySupport == other.sccmVpnBoundarySupport &&
         serviceModeV2 == other.serviceModeV2 &&
@@ -124,6 +124,9 @@ class _$DevicesCreateDeviceSettingsPolicyRequest
   @override
   int get hashCode {
     var _$hash = 0;
+    _$hash = $jc(_$hash, match.hashCode);
+    _$hash = $jc(_$hash, name.hashCode);
+    _$hash = $jc(_$hash, precedence.hashCode);
     _$hash = $jc(_$hash, allowModeSwitch.hashCode);
     _$hash = $jc(_$hash, allowUpdates.hashCode);
     _$hash = $jc(_$hash, allowedToLeave.hashCode);
@@ -137,9 +140,6 @@ class _$DevicesCreateDeviceSettingsPolicyRequest
     _$hash = $jc(_$hash, include.hashCode);
     _$hash = $jc(_$hash, lanAllowMinutes.hashCode);
     _$hash = $jc(_$hash, lanAllowSubnetSize.hashCode);
-    _$hash = $jc(_$hash, match.hashCode);
-    _$hash = $jc(_$hash, name.hashCode);
-    _$hash = $jc(_$hash, precedence.hashCode);
     _$hash = $jc(_$hash, registerInterfaceIpWithDns.hashCode);
     _$hash = $jc(_$hash, sccmVpnBoundarySupport.hashCode);
     _$hash = $jc(_$hash, serviceModeV2.hashCode);
@@ -154,6 +154,9 @@ class _$DevicesCreateDeviceSettingsPolicyRequest
   String toString() {
     return (newBuiltValueToStringHelper(
             r'DevicesCreateDeviceSettingsPolicyRequest')
+          ..add('match', match)
+          ..add('name', name)
+          ..add('precedence', precedence)
           ..add('allowModeSwitch', allowModeSwitch)
           ..add('allowUpdates', allowUpdates)
           ..add('allowedToLeave', allowedToLeave)
@@ -167,9 +170,6 @@ class _$DevicesCreateDeviceSettingsPolicyRequest
           ..add('include', include)
           ..add('lanAllowMinutes', lanAllowMinutes)
           ..add('lanAllowSubnetSize', lanAllowSubnetSize)
-          ..add('match', match)
-          ..add('name', name)
-          ..add('precedence', precedence)
           ..add('registerInterfaceIpWithDns', registerInterfaceIpWithDns)
           ..add('sccmVpnBoundarySupport', sccmVpnBoundarySupport)
           ..add('serviceModeV2', serviceModeV2)
@@ -185,6 +185,18 @@ class DevicesCreateDeviceSettingsPolicyRequestBuilder
         Builder<DevicesCreateDeviceSettingsPolicyRequest,
             DevicesCreateDeviceSettingsPolicyRequestBuilder> {
   _$DevicesCreateDeviceSettingsPolicyRequest? _$v;
+
+  String? _match;
+  String? get match => _$this._match;
+  set match(String? match) => _$this._match = match;
+
+  String? _name;
+  String? get name => _$this._name;
+  set name(String? name) => _$this._name = name;
+
+  num? _precedence;
+  num? get precedence => _$this._precedence;
+  set precedence(num? precedence) => _$this._precedence = precedence;
 
   bool? _allowModeSwitch;
   bool? get allowModeSwitch => _$this._allowModeSwitch;
@@ -249,18 +261,6 @@ class DevicesCreateDeviceSettingsPolicyRequestBuilder
   set lanAllowSubnetSize(num? lanAllowSubnetSize) =>
       _$this._lanAllowSubnetSize = lanAllowSubnetSize;
 
-  String? _match;
-  String? get match => _$this._match;
-  set match(String? match) => _$this._match = match;
-
-  String? _name;
-  String? get name => _$this._name;
-  set name(String? name) => _$this._name = name;
-
-  num? _precedence;
-  num? get precedence => _$this._precedence;
-  set precedence(num? precedence) => _$this._precedence = precedence;
-
   bool? _registerInterfaceIpWithDns;
   bool? get registerInterfaceIpWithDns => _$this._registerInterfaceIpWithDns;
   set registerInterfaceIpWithDns(bool? registerInterfaceIpWithDns) =>
@@ -297,6 +297,9 @@ class DevicesCreateDeviceSettingsPolicyRequestBuilder
   DevicesCreateDeviceSettingsPolicyRequestBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
+      _match = $v.match;
+      _name = $v.name;
+      _precedence = $v.precedence;
       _allowModeSwitch = $v.allowModeSwitch;
       _allowUpdates = $v.allowUpdates;
       _allowedToLeave = $v.allowedToLeave;
@@ -310,9 +313,6 @@ class DevicesCreateDeviceSettingsPolicyRequestBuilder
       _include = $v.include?.toBuilder();
       _lanAllowMinutes = $v.lanAllowMinutes;
       _lanAllowSubnetSize = $v.lanAllowSubnetSize;
-      _match = $v.match;
-      _name = $v.name;
-      _precedence = $v.precedence;
       _registerInterfaceIpWithDns = $v.registerInterfaceIpWithDns;
       _sccmVpnBoundarySupport = $v.sccmVpnBoundarySupport;
       _serviceModeV2 = $v.serviceModeV2?.toBuilder();
@@ -343,6 +343,12 @@ class DevicesCreateDeviceSettingsPolicyRequestBuilder
     try {
       _$result = _$v ??
           _$DevicesCreateDeviceSettingsPolicyRequest._(
+            match: BuiltValueNullFieldError.checkNotNull(
+                match, r'DevicesCreateDeviceSettingsPolicyRequest', 'match'),
+            name: BuiltValueNullFieldError.checkNotNull(
+                name, r'DevicesCreateDeviceSettingsPolicyRequest', 'name'),
+            precedence: BuiltValueNullFieldError.checkNotNull(precedence,
+                r'DevicesCreateDeviceSettingsPolicyRequest', 'precedence'),
             allowModeSwitch: allowModeSwitch,
             allowUpdates: allowUpdates,
             allowedToLeave: allowedToLeave,
@@ -356,12 +362,6 @@ class DevicesCreateDeviceSettingsPolicyRequestBuilder
             include: _include?.build(),
             lanAllowMinutes: lanAllowMinutes,
             lanAllowSubnetSize: lanAllowSubnetSize,
-            match: BuiltValueNullFieldError.checkNotNull(
-                match, r'DevicesCreateDeviceSettingsPolicyRequest', 'match'),
-            name: BuiltValueNullFieldError.checkNotNull(
-                name, r'DevicesCreateDeviceSettingsPolicyRequest', 'name'),
-            precedence: BuiltValueNullFieldError.checkNotNull(precedence,
-                r'DevicesCreateDeviceSettingsPolicyRequest', 'precedence'),
             registerInterfaceIpWithDns: registerInterfaceIpWithDns,
             sccmVpnBoundarySupport: sccmVpnBoundarySupport,
             serviceModeV2: _serviceModeV2?.build(),

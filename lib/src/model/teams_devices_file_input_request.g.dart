@@ -79,11 +79,11 @@ class _$TeamsDevicesFileInputRequestOperatingSystemEnumSerializer
 
 class _$TeamsDevicesFileInputRequest extends TeamsDevicesFileInputRequest {
   @override
-  final bool? exists;
-  @override
   final TeamsDevicesFileInputRequestOperatingSystemEnum operatingSystem;
   @override
   final String path;
+  @override
+  final bool? exists;
   @override
   final String? sha256;
   @override
@@ -94,9 +94,9 @@ class _$TeamsDevicesFileInputRequest extends TeamsDevicesFileInputRequest {
       (TeamsDevicesFileInputRequestBuilder()..update(updates))._build();
 
   _$TeamsDevicesFileInputRequest._(
-      {this.exists,
-      required this.operatingSystem,
+      {required this.operatingSystem,
       required this.path,
+      this.exists,
       this.sha256,
       this.thumbprint})
       : super._();
@@ -113,9 +113,9 @@ class _$TeamsDevicesFileInputRequest extends TeamsDevicesFileInputRequest {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is TeamsDevicesFileInputRequest &&
-        exists == other.exists &&
         operatingSystem == other.operatingSystem &&
         path == other.path &&
+        exists == other.exists &&
         sha256 == other.sha256 &&
         thumbprint == other.thumbprint;
   }
@@ -123,9 +123,9 @@ class _$TeamsDevicesFileInputRequest extends TeamsDevicesFileInputRequest {
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, exists.hashCode);
     _$hash = $jc(_$hash, operatingSystem.hashCode);
     _$hash = $jc(_$hash, path.hashCode);
+    _$hash = $jc(_$hash, exists.hashCode);
     _$hash = $jc(_$hash, sha256.hashCode);
     _$hash = $jc(_$hash, thumbprint.hashCode);
     _$hash = $jf(_$hash);
@@ -135,9 +135,9 @@ class _$TeamsDevicesFileInputRequest extends TeamsDevicesFileInputRequest {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'TeamsDevicesFileInputRequest')
-          ..add('exists', exists)
           ..add('operatingSystem', operatingSystem)
           ..add('path', path)
+          ..add('exists', exists)
           ..add('sha256', sha256)
           ..add('thumbprint', thumbprint))
         .toString();
@@ -150,10 +150,6 @@ class TeamsDevicesFileInputRequestBuilder
             TeamsDevicesFileInputRequestBuilder> {
   _$TeamsDevicesFileInputRequest? _$v;
 
-  bool? _exists;
-  bool? get exists => _$this._exists;
-  set exists(bool? exists) => _$this._exists = exists;
-
   TeamsDevicesFileInputRequestOperatingSystemEnum? _operatingSystem;
   TeamsDevicesFileInputRequestOperatingSystemEnum? get operatingSystem =>
       _$this._operatingSystem;
@@ -164,6 +160,10 @@ class TeamsDevicesFileInputRequestBuilder
   String? _path;
   String? get path => _$this._path;
   set path(String? path) => _$this._path = path;
+
+  bool? _exists;
+  bool? get exists => _$this._exists;
+  set exists(bool? exists) => _$this._exists = exists;
 
   String? _sha256;
   String? get sha256 => _$this._sha256;
@@ -180,9 +180,9 @@ class TeamsDevicesFileInputRequestBuilder
   TeamsDevicesFileInputRequestBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _exists = $v.exists;
       _operatingSystem = $v.operatingSystem;
       _path = $v.path;
+      _exists = $v.exists;
       _sha256 = $v.sha256;
       _thumbprint = $v.thumbprint;
       _$v = null;
@@ -206,13 +206,13 @@ class TeamsDevicesFileInputRequestBuilder
   _$TeamsDevicesFileInputRequest _build() {
     final _$result = _$v ??
         _$TeamsDevicesFileInputRequest._(
-          exists: exists,
           operatingSystem: BuiltValueNullFieldError.checkNotNull(
               operatingSystem,
               r'TeamsDevicesFileInputRequest',
               'operatingSystem'),
           path: BuiltValueNullFieldError.checkNotNull(
               path, r'TeamsDevicesFileInputRequest', 'path'),
+          exists: exists,
           sha256: sha256,
           thumbprint: thumbprint,
         );

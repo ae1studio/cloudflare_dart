@@ -11,13 +11,13 @@ class _$WorListWorkflows200ResponseResultInfo
   @override
   final num count;
   @override
-  final String? cursor;
-  @override
-  final num? page;
-  @override
   final num perPage;
   @override
   final num totalCount;
+  @override
+  final String? cursor;
+  @override
+  final num? page;
 
   factory _$WorListWorkflows200ResponseResultInfo(
           [void Function(WorListWorkflows200ResponseResultInfoBuilder)?
@@ -27,10 +27,10 @@ class _$WorListWorkflows200ResponseResultInfo
 
   _$WorListWorkflows200ResponseResultInfo._(
       {required this.count,
-      this.cursor,
-      this.page,
       required this.perPage,
-      required this.totalCount})
+      required this.totalCount,
+      this.cursor,
+      this.page})
       : super._();
   @override
   WorListWorkflows200ResponseResultInfo rebuild(
@@ -47,20 +47,20 @@ class _$WorListWorkflows200ResponseResultInfo
     if (identical(other, this)) return true;
     return other is WorListWorkflows200ResponseResultInfo &&
         count == other.count &&
-        cursor == other.cursor &&
-        page == other.page &&
         perPage == other.perPage &&
-        totalCount == other.totalCount;
+        totalCount == other.totalCount &&
+        cursor == other.cursor &&
+        page == other.page;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
     _$hash = $jc(_$hash, count.hashCode);
-    _$hash = $jc(_$hash, cursor.hashCode);
-    _$hash = $jc(_$hash, page.hashCode);
     _$hash = $jc(_$hash, perPage.hashCode);
     _$hash = $jc(_$hash, totalCount.hashCode);
+    _$hash = $jc(_$hash, cursor.hashCode);
+    _$hash = $jc(_$hash, page.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -70,10 +70,10 @@ class _$WorListWorkflows200ResponseResultInfo
     return (newBuiltValueToStringHelper(
             r'WorListWorkflows200ResponseResultInfo')
           ..add('count', count)
-          ..add('cursor', cursor)
-          ..add('page', page)
           ..add('perPage', perPage)
-          ..add('totalCount', totalCount))
+          ..add('totalCount', totalCount)
+          ..add('cursor', cursor)
+          ..add('page', page))
         .toString();
   }
 }
@@ -88,14 +88,6 @@ class WorListWorkflows200ResponseResultInfoBuilder
   num? get count => _$this._count;
   set count(num? count) => _$this._count = count;
 
-  String? _cursor;
-  String? get cursor => _$this._cursor;
-  set cursor(String? cursor) => _$this._cursor = cursor;
-
-  num? _page;
-  num? get page => _$this._page;
-  set page(num? page) => _$this._page = page;
-
   num? _perPage;
   num? get perPage => _$this._perPage;
   set perPage(num? perPage) => _$this._perPage = perPage;
@@ -103,6 +95,14 @@ class WorListWorkflows200ResponseResultInfoBuilder
   num? _totalCount;
   num? get totalCount => _$this._totalCount;
   set totalCount(num? totalCount) => _$this._totalCount = totalCount;
+
+  String? _cursor;
+  String? get cursor => _$this._cursor;
+  set cursor(String? cursor) => _$this._cursor = cursor;
+
+  num? _page;
+  num? get page => _$this._page;
+  set page(num? page) => _$this._page = page;
 
   WorListWorkflows200ResponseResultInfoBuilder() {
     WorListWorkflows200ResponseResultInfo._defaults(this);
@@ -112,10 +112,10 @@ class WorListWorkflows200ResponseResultInfoBuilder
     final $v = _$v;
     if ($v != null) {
       _count = $v.count;
-      _cursor = $v.cursor;
-      _page = $v.page;
       _perPage = $v.perPage;
       _totalCount = $v.totalCount;
+      _cursor = $v.cursor;
+      _page = $v.page;
       _$v = null;
     }
     return this;
@@ -140,12 +140,12 @@ class WorListWorkflows200ResponseResultInfoBuilder
         _$WorListWorkflows200ResponseResultInfo._(
           count: BuiltValueNullFieldError.checkNotNull(
               count, r'WorListWorkflows200ResponseResultInfo', 'count'),
-          cursor: cursor,
-          page: page,
           perPage: BuiltValueNullFieldError.checkNotNull(
               perPage, r'WorListWorkflows200ResponseResultInfo', 'perPage'),
           totalCount: BuiltValueNullFieldError.checkNotNull(totalCount,
               r'WorListWorkflows200ResponseResultInfo', 'totalCount'),
+          cursor: cursor,
+          page: page,
         );
     replace(_$result);
     return _$result;

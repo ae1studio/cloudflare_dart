@@ -13,22 +13,18 @@ part 'lists_list.g.dart';
 ///
 /// Properties:
 /// * [createdOn] - The RFC 3339 timestamp of when the list was created.
-/// * [description] - An informative summary of the list.
 /// * [id] - The unique ID of the list.
 /// * [kind] 
 /// * [modifiedOn] - The RFC 3339 timestamp of when the list was last modified.
 /// * [name] - An informative name for the list. Use this name in filter and rule expressions.
 /// * [numItems] - The number of items in the list.
 /// * [numReferencingFilters] - The number of [filters](/api/resources/filters/) referencing the list.
+/// * [description] - An informative summary of the list.
 @BuiltValue()
 abstract class ListsList implements Built<ListsList, ListsListBuilder> {
   /// The RFC 3339 timestamp of when the list was created.
   @BuiltValueField(wireName: r'created_on')
   String get createdOn;
-
-  /// An informative summary of the list.
-  @BuiltValueField(wireName: r'description')
-  String? get description;
 
   /// The unique ID of the list.
   @BuiltValueField(wireName: r'id')
@@ -53,6 +49,10 @@ abstract class ListsList implements Built<ListsList, ListsListBuilder> {
   /// The number of [filters](/api/resources/filters/) referencing the list.
   @BuiltValueField(wireName: r'num_referencing_filters')
   num get numReferencingFilters;
+
+  /// An informative summary of the list.
+  @BuiltValueField(wireName: r'description')
+  String? get description;
 
   ListsList._();
 
@@ -82,13 +82,6 @@ class _$ListsListSerializer implements PrimitiveSerializer<ListsList> {
       object.createdOn,
       specifiedType: const FullType(String),
     );
-    if (object.description != null) {
-      yield r'description';
-      yield serializers.serialize(
-        object.description,
-        specifiedType: const FullType(String),
-      );
-    }
     yield r'id';
     yield serializers.serialize(
       object.id,
@@ -119,6 +112,13 @@ class _$ListsListSerializer implements PrimitiveSerializer<ListsList> {
       object.numReferencingFilters,
       specifiedType: const FullType(num),
     );
+    if (object.description != null) {
+      yield r'description';
+      yield serializers.serialize(
+        object.description,
+        specifiedType: const FullType(String),
+      );
+    }
   }
 
   @override
@@ -148,13 +148,6 @@ class _$ListsListSerializer implements PrimitiveSerializer<ListsList> {
             specifiedType: const FullType(String),
           ) as String;
           result.createdOn = valueDes;
-          break;
-        case r'description':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.description = valueDes;
           break;
         case r'id':
           final valueDes = serializers.deserialize(
@@ -197,6 +190,13 @@ class _$ListsListSerializer implements PrimitiveSerializer<ListsList> {
             specifiedType: const FullType(num),
           ) as num;
           result.numReferencingFilters = valueDes;
+          break;
+        case r'description':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.description = valueDes;
           break;
         default:
           unhandled.add(key);

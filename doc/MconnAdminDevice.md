@@ -9,18 +9,18 @@ import 'package:cloudflare_dart/api.dart';
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **cryptKey** | **String** |  | 
+**id** | **String** |  | 
+**lastUpdated** | **String** |  | 
+**metadata** | **String** |  | 
 **cryptKeyRotationFinishedAt** | **String** |  | [optional] 
 **cryptKeyRotationOutput** | **String** |  | [optional] 
 **cryptKeyRotationStartedAt** | **String** |  | [optional] 
 **cryptKeyRotationStatusCode** | **num** |  | [optional] 
 **deviceType** | **String** |  | [optional] 
 **ekCert** | **String** |  | [optional] 
-**id** | **String** |  | 
 **imagedAt** | **String** |  | [optional] 
 **lastCryptKey** | **String** |  | [optional] 
-**lastUpdated** | **String** |  | 
 **licenseKeySha256** | **String** |  | [optional] 
-**metadata** | **String** |  | 
 **pkiRotationFinishedAt** | **String** |  | [optional] 
 **pkiRotationOutput** | **String** |  | [optional] 
 **pkiRotationStartedAt** | **String** |  | [optional] 

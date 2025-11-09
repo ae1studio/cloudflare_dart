@@ -8,14 +8,14 @@ import 'package:cloudflare_dart/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**text** | **String** | The transcription | 
+**response** | **String** | The generated text response from the model | 
 **audio** | **String** | The generated audio in MP3 format, base64-encoded | [optional] 
 **data** | [**BuiltList&lt;BuiltList&lt;num&gt;&gt;**](BuiltList.md) |  | [optional] 
 **shape** | **BuiltList&lt;num&gt;** |  | [optional] 
-**text** | **String** | The transcription | 
 **vtt** | **String** |  | [optional] 
 **wordCount** | **num** |  | [optional] 
 **words** | [**BuiltList&lt;AutomaticSpeechRecognition1WordsInner&gt;**](AutomaticSpeechRecognition1WordsInner.md) |  | [optional] 
-**response** | **String** | The generated text response from the model | 
 **toolCalls** | [**BuiltList&lt;TextGeneration1OneOfToolCallsInner&gt;**](TextGeneration1OneOfToolCallsInner.md) | An array of tool calls requests made during the response generation | [optional] 
 **usage** | [**TextGeneration1OneOfUsage**](TextGeneration1OneOfUsage.md) |  | [optional] 
 **translatedText** | **String** | The translated text in the target language | [optional] 

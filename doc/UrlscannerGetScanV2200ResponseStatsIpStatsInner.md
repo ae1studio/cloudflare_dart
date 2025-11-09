@@ -9,7 +9,6 @@ import 'package:cloudflare_dart/api.dart';
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **asn** | [**UrlscannerGetScanV2200ResponseDataRequestsInnerResponseAsn**](UrlscannerGetScanV2200ResponseDataRequestsInnerResponseAsn.md) |  | 
-**count** | **num** |  | [optional] 
 **countries** | **BuiltList&lt;String&gt;** |  | 
 **domains** | **BuiltList&lt;String&gt;** |  | 
 **encodedSize** | **num** |  | 
@@ -20,6 +19,7 @@ Name | Type | Description | Notes
 **redirects** | **num** |  | 
 **requests** | **num** |  | 
 **size** | **num** |  | 
+**count** | **num** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

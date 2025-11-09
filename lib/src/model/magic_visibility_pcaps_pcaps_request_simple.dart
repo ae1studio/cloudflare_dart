@@ -14,21 +14,14 @@ part 'magic_visibility_pcaps_pcaps_request_simple.g.dart';
 /// MagicVisibilityPcapsPcapsRequestSimple
 ///
 /// Properties:
-/// * [filterV1] 
-/// * [offsetTime] - The RFC 3339 offset timestamp from which to query backwards for packets. Must be within the last 24h. When this field is empty, defaults to time of request.
 /// * [packetLimit] - The limit of packets contained in a packet capture.
 /// * [system] 
 /// * [timeLimit] - The packet capture duration in seconds.
 /// * [type] 
+/// * [filterV1] 
+/// * [offsetTime] - The RFC 3339 offset timestamp from which to query backwards for packets. Must be within the last 24h. When this field is empty, defaults to time of request.
 @BuiltValue()
 abstract class MagicVisibilityPcapsPcapsRequestSimple implements Built<MagicVisibilityPcapsPcapsRequestSimple, MagicVisibilityPcapsPcapsRequestSimpleBuilder> {
-  @BuiltValueField(wireName: r'filter_v1')
-  MagicVisibilityPcapsPcapsFilterV1? get filterV1;
-
-  /// The RFC 3339 offset timestamp from which to query backwards for packets. Must be within the last 24h. When this field is empty, defaults to time of request.
-  @BuiltValueField(wireName: r'offset_time')
-  DateTime? get offsetTime;
-
   /// The limit of packets contained in a packet capture.
   @BuiltValueField(wireName: r'packet_limit')
   num get packetLimit;
@@ -44,6 +37,13 @@ abstract class MagicVisibilityPcapsPcapsRequestSimple implements Built<MagicVisi
   @BuiltValueField(wireName: r'type')
   MagicVisibilityPcapsPcapsType get type;
   // enum typeEnum {  simple,  full,  };
+
+  @BuiltValueField(wireName: r'filter_v1')
+  MagicVisibilityPcapsPcapsFilterV1? get filterV1;
+
+  /// The RFC 3339 offset timestamp from which to query backwards for packets. Must be within the last 24h. When this field is empty, defaults to time of request.
+  @BuiltValueField(wireName: r'offset_time')
+  DateTime? get offsetTime;
 
   MagicVisibilityPcapsPcapsRequestSimple._();
 
@@ -68,20 +68,6 @@ class _$MagicVisibilityPcapsPcapsRequestSimpleSerializer implements PrimitiveSer
     MagicVisibilityPcapsPcapsRequestSimple object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
-    if (object.filterV1 != null) {
-      yield r'filter_v1';
-      yield serializers.serialize(
-        object.filterV1,
-        specifiedType: const FullType(MagicVisibilityPcapsPcapsFilterV1),
-      );
-    }
-    if (object.offsetTime != null) {
-      yield r'offset_time';
-      yield serializers.serialize(
-        object.offsetTime,
-        specifiedType: const FullType(DateTime),
-      );
-    }
     yield r'packet_limit';
     yield serializers.serialize(
       object.packetLimit,
@@ -102,6 +88,20 @@ class _$MagicVisibilityPcapsPcapsRequestSimpleSerializer implements PrimitiveSer
       object.type,
       specifiedType: const FullType(MagicVisibilityPcapsPcapsType),
     );
+    if (object.filterV1 != null) {
+      yield r'filter_v1';
+      yield serializers.serialize(
+        object.filterV1,
+        specifiedType: const FullType(MagicVisibilityPcapsPcapsFilterV1),
+      );
+    }
+    if (object.offsetTime != null) {
+      yield r'offset_time';
+      yield serializers.serialize(
+        object.offsetTime,
+        specifiedType: const FullType(DateTime),
+      );
+    }
   }
 
   @override
@@ -125,20 +125,6 @@ class _$MagicVisibilityPcapsPcapsRequestSimpleSerializer implements PrimitiveSer
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'filter_v1':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(MagicVisibilityPcapsPcapsFilterV1),
-          ) as MagicVisibilityPcapsPcapsFilterV1;
-          result.filterV1.replace(valueDes);
-          break;
-        case r'offset_time':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
-          result.offsetTime = valueDes;
-          break;
         case r'packet_limit':
           final valueDes = serializers.deserialize(
             value,
@@ -166,6 +152,20 @@ class _$MagicVisibilityPcapsPcapsRequestSimpleSerializer implements PrimitiveSer
             specifiedType: const FullType(MagicVisibilityPcapsPcapsType),
           ) as MagicVisibilityPcapsPcapsType;
           result.type = valueDes;
+          break;
+        case r'filter_v1':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(MagicVisibilityPcapsPcapsFilterV1),
+          ) as MagicVisibilityPcapsPcapsFilterV1;
+          result.filterV1.replace(valueDes);
+          break;
+        case r'offset_time':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(DateTime),
+          ) as DateTime;
+          result.offsetTime = valueDes;
           break;
         default:
           unhandled.add(key);

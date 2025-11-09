@@ -12,9 +12,9 @@ class _$DeleteDevice200Response extends DeleteDevice200Response {
   @override
   final BuiltList<TeamsDevicesV4ResponseMessage> messages;
   @override
-  final JsonObject? result;
-  @override
   final bool success;
+  @override
+  final JsonObject? result;
 
   factory _$DeleteDevice200Response(
           [void Function(DeleteDevice200ResponseBuilder)? updates]) =>
@@ -23,8 +23,8 @@ class _$DeleteDevice200Response extends DeleteDevice200Response {
   _$DeleteDevice200Response._(
       {required this.errors,
       required this.messages,
-      this.result,
-      required this.success})
+      required this.success,
+      this.result})
       : super._();
   @override
   DeleteDevice200Response rebuild(
@@ -41,8 +41,8 @@ class _$DeleteDevice200Response extends DeleteDevice200Response {
     return other is DeleteDevice200Response &&
         errors == other.errors &&
         messages == other.messages &&
-        result == other.result &&
-        success == other.success;
+        success == other.success &&
+        result == other.result;
   }
 
   @override
@@ -50,8 +50,8 @@ class _$DeleteDevice200Response extends DeleteDevice200Response {
     var _$hash = 0;
     _$hash = $jc(_$hash, errors.hashCode);
     _$hash = $jc(_$hash, messages.hashCode);
-    _$hash = $jc(_$hash, result.hashCode);
     _$hash = $jc(_$hash, success.hashCode);
+    _$hash = $jc(_$hash, result.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -61,8 +61,8 @@ class _$DeleteDevice200Response extends DeleteDevice200Response {
     return (newBuiltValueToStringHelper(r'DeleteDevice200Response')
           ..add('errors', errors)
           ..add('messages', messages)
-          ..add('result', result)
-          ..add('success', success))
+          ..add('success', success)
+          ..add('result', result))
         .toString();
   }
 }
@@ -84,13 +84,13 @@ class DeleteDevice200ResponseBuilder
   set messages(ListBuilder<TeamsDevicesV4ResponseMessage>? messages) =>
       _$this._messages = messages;
 
-  JsonObject? _result;
-  JsonObject? get result => _$this._result;
-  set result(JsonObject? result) => _$this._result = result;
-
   bool? _success;
   bool? get success => _$this._success;
   set success(bool? success) => _$this._success = success;
+
+  JsonObject? _result;
+  JsonObject? get result => _$this._result;
+  set result(JsonObject? result) => _$this._result = result;
 
   DeleteDevice200ResponseBuilder() {
     DeleteDevice200Response._defaults(this);
@@ -101,8 +101,8 @@ class DeleteDevice200ResponseBuilder
     if ($v != null) {
       _errors = $v.errors.toBuilder();
       _messages = $v.messages.toBuilder();
-      _result = $v.result;
       _success = $v.success;
+      _result = $v.result;
       _$v = null;
     }
     return this;
@@ -128,9 +128,9 @@ class DeleteDevice200ResponseBuilder
           _$DeleteDevice200Response._(
             errors: errors.build(),
             messages: messages.build(),
-            result: result,
             success: BuiltValueNullFieldError.checkNotNull(
                 success, r'DeleteDevice200Response', 'success'),
+            result: result,
           );
     } catch (_) {
       late String _$failedField;

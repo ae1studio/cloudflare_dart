@@ -29,6 +29,9 @@ abstract class AccessAppLauncherPropsBuilder
   String? get appLauncherLogoUrl;
   set appLauncherLogoUrl(covariant String? appLauncherLogoUrl);
 
+  AccessType? get type;
+  set type(covariant AccessType? type);
+
   ListBuilder<String> get allowedIdps;
   set allowedIdps(covariant ListBuilder<String>? allowedIdps);
 
@@ -52,9 +55,6 @@ abstract class AccessAppLauncherPropsBuilder
 
   String? get sessionDuration;
   set sessionDuration(covariant String? sessionDuration);
-
-  AccessType? get type;
-  set type(covariant AccessType? type);
 }
 
 class _$$AccessAppLauncherProps extends $AccessAppLauncherProps {
@@ -71,6 +71,8 @@ class _$$AccessAppLauncherProps extends $AccessAppLauncherProps {
   @override
   final String? appLauncherLogoUrl;
   @override
+  final AccessType type;
+  @override
   final BuiltList<String>? allowedIdps;
   @override
   final bool? autoRedirectToIdentity;
@@ -86,8 +88,6 @@ class _$$AccessAppLauncherProps extends $AccessAppLauncherProps {
   final String? name;
   @override
   final String? sessionDuration;
-  @override
-  final AccessType type;
 
   factory _$$AccessAppLauncherProps(
           [void Function($AccessAppLauncherPropsBuilder)? updates]) =>
@@ -100,6 +100,7 @@ class _$$AccessAppLauncherProps extends $AccessAppLauncherProps {
       this.landingPageDesign,
       this.skipAppLauncherLoginPage,
       this.appLauncherLogoUrl,
+      required this.type,
       this.allowedIdps,
       this.autoRedirectToIdentity,
       this.customDenyUrl,
@@ -107,8 +108,7 @@ class _$$AccessAppLauncherProps extends $AccessAppLauncherProps {
       this.customPages,
       this.domain,
       this.name,
-      this.sessionDuration,
-      required this.type})
+      this.sessionDuration})
       : super._();
   @override
   $AccessAppLauncherProps rebuild(
@@ -129,6 +129,7 @@ class _$$AccessAppLauncherProps extends $AccessAppLauncherProps {
         landingPageDesign == other.landingPageDesign &&
         skipAppLauncherLoginPage == other.skipAppLauncherLoginPage &&
         appLauncherLogoUrl == other.appLauncherLogoUrl &&
+        type == other.type &&
         allowedIdps == other.allowedIdps &&
         autoRedirectToIdentity == other.autoRedirectToIdentity &&
         customDenyUrl == other.customDenyUrl &&
@@ -136,8 +137,7 @@ class _$$AccessAppLauncherProps extends $AccessAppLauncherProps {
         customPages == other.customPages &&
         domain == other.domain &&
         name == other.name &&
-        sessionDuration == other.sessionDuration &&
-        type == other.type;
+        sessionDuration == other.sessionDuration;
   }
 
   @override
@@ -149,6 +149,7 @@ class _$$AccessAppLauncherProps extends $AccessAppLauncherProps {
     _$hash = $jc(_$hash, landingPageDesign.hashCode);
     _$hash = $jc(_$hash, skipAppLauncherLoginPage.hashCode);
     _$hash = $jc(_$hash, appLauncherLogoUrl.hashCode);
+    _$hash = $jc(_$hash, type.hashCode);
     _$hash = $jc(_$hash, allowedIdps.hashCode);
     _$hash = $jc(_$hash, autoRedirectToIdentity.hashCode);
     _$hash = $jc(_$hash, customDenyUrl.hashCode);
@@ -157,7 +158,6 @@ class _$$AccessAppLauncherProps extends $AccessAppLauncherProps {
     _$hash = $jc(_$hash, domain.hashCode);
     _$hash = $jc(_$hash, name.hashCode);
     _$hash = $jc(_$hash, sessionDuration.hashCode);
-    _$hash = $jc(_$hash, type.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -171,6 +171,7 @@ class _$$AccessAppLauncherProps extends $AccessAppLauncherProps {
           ..add('landingPageDesign', landingPageDesign)
           ..add('skipAppLauncherLoginPage', skipAppLauncherLoginPage)
           ..add('appLauncherLogoUrl', appLauncherLogoUrl)
+          ..add('type', type)
           ..add('allowedIdps', allowedIdps)
           ..add('autoRedirectToIdentity', autoRedirectToIdentity)
           ..add('customDenyUrl', customDenyUrl)
@@ -178,8 +179,7 @@ class _$$AccessAppLauncherProps extends $AccessAppLauncherProps {
           ..add('customPages', customPages)
           ..add('domain', domain)
           ..add('name', name)
-          ..add('sessionDuration', sessionDuration)
-          ..add('type', type))
+          ..add('sessionDuration', sessionDuration))
         .toString();
   }
 }
@@ -222,6 +222,10 @@ class $AccessAppLauncherPropsBuilder
   set appLauncherLogoUrl(covariant String? appLauncherLogoUrl) =>
       _$this._appLauncherLogoUrl = appLauncherLogoUrl;
 
+  AccessType? _type;
+  AccessType? get type => _$this._type;
+  set type(covariant AccessType? type) => _$this._type = type;
+
   ListBuilder<String>? _allowedIdps;
   ListBuilder<String> get allowedIdps =>
       _$this._allowedIdps ??= ListBuilder<String>();
@@ -262,10 +266,6 @@ class $AccessAppLauncherPropsBuilder
   set sessionDuration(covariant String? sessionDuration) =>
       _$this._sessionDuration = sessionDuration;
 
-  AccessType? _type;
-  AccessType? get type => _$this._type;
-  set type(covariant AccessType? type) => _$this._type = type;
-
   $AccessAppLauncherPropsBuilder() {
     $AccessAppLauncherProps._defaults(this);
   }
@@ -279,6 +279,7 @@ class $AccessAppLauncherPropsBuilder
       _landingPageDesign = $v.landingPageDesign?.toBuilder();
       _skipAppLauncherLoginPage = $v.skipAppLauncherLoginPage;
       _appLauncherLogoUrl = $v.appLauncherLogoUrl;
+      _type = $v.type;
       _allowedIdps = $v.allowedIdps?.toBuilder();
       _autoRedirectToIdentity = $v.autoRedirectToIdentity;
       _customDenyUrl = $v.customDenyUrl;
@@ -287,7 +288,6 @@ class $AccessAppLauncherPropsBuilder
       _domain = $v.domain;
       _name = $v.name;
       _sessionDuration = $v.sessionDuration;
-      _type = $v.type;
       _$v = null;
     }
     return this;
@@ -317,6 +317,8 @@ class $AccessAppLauncherPropsBuilder
             landingPageDesign: _landingPageDesign?.build(),
             skipAppLauncherLoginPage: skipAppLauncherLoginPage,
             appLauncherLogoUrl: appLauncherLogoUrl,
+            type: BuiltValueNullFieldError.checkNotNull(
+                type, r'$AccessAppLauncherProps', 'type'),
             allowedIdps: _allowedIdps?.build(),
             autoRedirectToIdentity: autoRedirectToIdentity,
             customDenyUrl: customDenyUrl,
@@ -325,8 +327,6 @@ class $AccessAppLauncherPropsBuilder
             domain: domain,
             name: name,
             sessionDuration: sessionDuration,
-            type: BuiltValueNullFieldError.checkNotNull(
-                type, r'$AccessAppLauncherProps', 'type'),
           );
     } catch (_) {
       late String _$failedField;

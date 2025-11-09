@@ -9,9 +9,9 @@ part of 'post_accounts_account_id_logpush_jobs_request.dart';
 class _$PostAccountsAccountIdLogpushJobsRequest
     extends PostAccountsAccountIdLogpushJobsRequest {
   @override
-  final LogpushDataset? dataset;
-  @override
   final String destinationConf;
+  @override
+  final LogpushDataset? dataset;
   @override
   final bool? enabled;
   @override
@@ -42,8 +42,8 @@ class _$PostAccountsAccountIdLogpushJobsRequest
           ._build();
 
   _$PostAccountsAccountIdLogpushJobsRequest._(
-      {this.dataset,
-      required this.destinationConf,
+      {required this.destinationConf,
+      this.dataset,
       this.enabled,
       this.filter,
       this.frequency,
@@ -70,8 +70,8 @@ class _$PostAccountsAccountIdLogpushJobsRequest
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is PostAccountsAccountIdLogpushJobsRequest &&
-        dataset == other.dataset &&
         destinationConf == other.destinationConf &&
+        dataset == other.dataset &&
         enabled == other.enabled &&
         filter == other.filter &&
         frequency == other.frequency &&
@@ -88,8 +88,8 @@ class _$PostAccountsAccountIdLogpushJobsRequest
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, dataset.hashCode);
     _$hash = $jc(_$hash, destinationConf.hashCode);
+    _$hash = $jc(_$hash, dataset.hashCode);
     _$hash = $jc(_$hash, enabled.hashCode);
     _$hash = $jc(_$hash, filter.hashCode);
     _$hash = $jc(_$hash, frequency.hashCode);
@@ -109,8 +109,8 @@ class _$PostAccountsAccountIdLogpushJobsRequest
   String toString() {
     return (newBuiltValueToStringHelper(
             r'PostAccountsAccountIdLogpushJobsRequest')
-          ..add('dataset', dataset)
           ..add('destinationConf', destinationConf)
+          ..add('dataset', dataset)
           ..add('enabled', enabled)
           ..add('filter', filter)
           ..add('frequency', frequency)
@@ -132,14 +132,14 @@ class PostAccountsAccountIdLogpushJobsRequestBuilder
             PostAccountsAccountIdLogpushJobsRequestBuilder> {
   _$PostAccountsAccountIdLogpushJobsRequest? _$v;
 
-  LogpushDataset? _dataset;
-  LogpushDataset? get dataset => _$this._dataset;
-  set dataset(LogpushDataset? dataset) => _$this._dataset = dataset;
-
   String? _destinationConf;
   String? get destinationConf => _$this._destinationConf;
   set destinationConf(String? destinationConf) =>
       _$this._destinationConf = destinationConf;
+
+  LogpushDataset? _dataset;
+  LogpushDataset? get dataset => _$this._dataset;
+  set dataset(LogpushDataset? dataset) => _$this._dataset = dataset;
 
   bool? _enabled;
   bool? get enabled => _$this._enabled;
@@ -204,8 +204,8 @@ class PostAccountsAccountIdLogpushJobsRequestBuilder
   PostAccountsAccountIdLogpushJobsRequestBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _dataset = $v.dataset;
       _destinationConf = $v.destinationConf;
+      _dataset = $v.dataset;
       _enabled = $v.enabled;
       _filter = $v.filter;
       _frequency = $v.frequency;
@@ -241,11 +241,11 @@ class PostAccountsAccountIdLogpushJobsRequestBuilder
     try {
       _$result = _$v ??
           _$PostAccountsAccountIdLogpushJobsRequest._(
-            dataset: dataset,
             destinationConf: BuiltValueNullFieldError.checkNotNull(
                 destinationConf,
                 r'PostAccountsAccountIdLogpushJobsRequest',
                 'destinationConf'),
+            dataset: dataset,
             enabled: enabled,
             filter: filter,
             frequency: frequency,

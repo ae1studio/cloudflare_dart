@@ -12,33 +12,33 @@ part 'zero_trust_gateway_proxy_endpoint_ip.g.dart';
 /// ZeroTrustGatewayProxyEndpointIp
 ///
 /// Properties:
+/// * [ips] - Specify the list of CIDRs to restrict ingress connections.
+/// * [name] - Specify the name of the proxy endpoint.
 /// * [createdAt] 
 /// * [id] 
-/// * [ips] - Specify the list of CIDRs to restrict ingress connections.
 /// * [kind] - The proxy endpoint kind
-/// * [name] - Specify the name of the proxy endpoint.
 /// * [subdomain] - Specify the subdomain to use as the destination in the proxy client.
 /// * [updatedAt] 
 @BuiltValue()
 abstract class ZeroTrustGatewayProxyEndpointIp implements Built<ZeroTrustGatewayProxyEndpointIp, ZeroTrustGatewayProxyEndpointIpBuilder> {
+  /// Specify the list of CIDRs to restrict ingress connections.
+  @BuiltValueField(wireName: r'ips')
+  BuiltList<String> get ips;
+
+  /// Specify the name of the proxy endpoint.
+  @BuiltValueField(wireName: r'name')
+  String get name;
+
   @BuiltValueField(wireName: r'created_at')
   DateTime? get createdAt;
 
   @BuiltValueField(wireName: r'id')
   String? get id;
 
-  /// Specify the list of CIDRs to restrict ingress connections.
-  @BuiltValueField(wireName: r'ips')
-  BuiltList<String> get ips;
-
   /// The proxy endpoint kind
   @BuiltValueField(wireName: r'kind')
   ZeroTrustGatewayProxyEndpointIpKindEnum? get kind;
   // enum kindEnum {  ip,  };
-
-  /// Specify the name of the proxy endpoint.
-  @BuiltValueField(wireName: r'name')
-  String get name;
 
   /// Specify the subdomain to use as the destination in the proxy client.
   @BuiltValueField(wireName: r'subdomain')
@@ -70,6 +70,16 @@ class _$ZeroTrustGatewayProxyEndpointIpSerializer implements PrimitiveSerializer
     ZeroTrustGatewayProxyEndpointIp object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    yield r'ips';
+    yield serializers.serialize(
+      object.ips,
+      specifiedType: const FullType(BuiltList, [FullType(String)]),
+    );
+    yield r'name';
+    yield serializers.serialize(
+      object.name,
+      specifiedType: const FullType(String),
+    );
     if (object.createdAt != null) {
       yield r'created_at';
       yield serializers.serialize(
@@ -84,11 +94,6 @@ class _$ZeroTrustGatewayProxyEndpointIpSerializer implements PrimitiveSerializer
         specifiedType: const FullType(String),
       );
     }
-    yield r'ips';
-    yield serializers.serialize(
-      object.ips,
-      specifiedType: const FullType(BuiltList, [FullType(String)]),
-    );
     if (object.kind != null) {
       yield r'kind';
       yield serializers.serialize(
@@ -96,11 +101,6 @@ class _$ZeroTrustGatewayProxyEndpointIpSerializer implements PrimitiveSerializer
         specifiedType: const FullType(ZeroTrustGatewayProxyEndpointIpKindEnum),
       );
     }
-    yield r'name';
-    yield serializers.serialize(
-      object.name,
-      specifiedType: const FullType(String),
-    );
     if (object.subdomain != null) {
       yield r'subdomain';
       yield serializers.serialize(
@@ -138,6 +138,20 @@ class _$ZeroTrustGatewayProxyEndpointIpSerializer implements PrimitiveSerializer
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
+        case r'ips':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BuiltList, [FullType(String)]),
+          ) as BuiltList<String>;
+          result.ips.replace(valueDes);
+          break;
+        case r'name':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.name = valueDes;
+          break;
         case r'created_at':
           final valueDes = serializers.deserialize(
             value,
@@ -152,26 +166,12 @@ class _$ZeroTrustGatewayProxyEndpointIpSerializer implements PrimitiveSerializer
           ) as String;
           result.id = valueDes;
           break;
-        case r'ips':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>;
-          result.ips.replace(valueDes);
-          break;
         case r'kind':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(ZeroTrustGatewayProxyEndpointIpKindEnum),
           ) as ZeroTrustGatewayProxyEndpointIpKindEnum;
           result.kind = valueDes;
-          break;
-        case r'name':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.name = valueDes;
           break;
         case r'subdomain':
           final valueDes = serializers.deserialize(

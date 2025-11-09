@@ -49,33 +49,33 @@ part 'workers_binding_item.g.dart';
 /// * [id] - Identifier of the Hyperdrive connection to bind to.
 /// * [part_] - The name of the file containing the WebAssembly module content. Only accepted for `service worker syntax` Workers.
 /// * [namespace] - The name of the dispatch namespace.
-/// * [outbound] 
-/// * [className] - Class name of the Workflow. Should only be provided if the Workflow belongs to this script.
-/// * [environment] - Optional environment if the Worker utilizes one.
 /// * [namespaceId] - Namespace identifier tag.
-/// * [scriptName] - Script name that contains the Workflow. If not provided, defaults to this script name.
-/// * [oldName] - The old name of the inherited binding. If set, the binding will be renamed from `old_name` to `name` in the new version. If not set, the binding will keep the same name between versions.
-/// * [versionId] - Identifier for the version to inherit the binding from, which can be the version ID or the literal \"latest\" to inherit from the latest version. Defaults to inheriting the binding from the latest version.
 /// * [json] - JSON data to use.
 /// * [certificateId] - Identifier of the certificate to bind to.
 /// * [text] - The secret value to use.
 /// * [pipeline] - Name of the Pipeline to bind to.
 /// * [queueName] - Name of the Queue to bind to.
 /// * [bucketName] - R2 bucket to bind to.
-/// * [jurisdiction] - The [jurisdiction](https://developers.cloudflare.com/r2/reference/data-location/#jurisdictional-restrictions) of the R2 bucket.
-/// * [allowedDestinationAddresses] - List of allowed destination addresses.
-/// * [allowedSenderAddresses] - List of allowed sender addresses.
-/// * [destinationAddress] - Destination address for the email.
 /// * [service] - Name of Worker to bind to.
 /// * [indexName] - Name of the Vectorize index to bind to.
 /// * [secretName] - Name of the secret in the store.
 /// * [storeId] - ID of the store containing the secret.
 /// * [algorithm] - Algorithm-specific key parameters. [Learn more](https://developer.mozilla.org/en-US/docs/Web/API/SubtleCrypto/importKey#algorithm).
 /// * [format] - Data format of the key. [Learn more](https://developer.mozilla.org/en-US/docs/Web/API/SubtleCrypto/importKey#format).
-/// * [keyBase64] - Base64-encoded key data. Required if `format` is \"raw\", \"pkcs8\", or \"spki\".
-/// * [keyJwk] - Key data in [JSON Web Key](https://developer.mozilla.org/en-US/docs/Web/API/SubtleCrypto/importKey#json_web_key) format. Required if `format` is \"jwk\".
 /// * [usages] - Allowed operations with the key. [Learn more](https://developer.mozilla.org/en-US/docs/Web/API/SubtleCrypto/importKey#keyUsages).
 /// * [workflowName] - Name of the Workflow to bind to.
+/// * [outbound] 
+/// * [className] - Class name of the Workflow. Should only be provided if the Workflow belongs to this script.
+/// * [environment] - Optional environment if the Worker utilizes one.
+/// * [scriptName] - Script name that contains the Workflow. If not provided, defaults to this script name.
+/// * [oldName] - The old name of the inherited binding. If set, the binding will be renamed from `old_name` to `name` in the new version. If not set, the binding will keep the same name between versions.
+/// * [versionId] - Identifier for the version to inherit the binding from, which can be the version ID or the literal \"latest\" to inherit from the latest version. Defaults to inheriting the binding from the latest version.
+/// * [jurisdiction] - The [jurisdiction](https://developers.cloudflare.com/r2/reference/data-location/#jurisdictional-restrictions) of the R2 bucket.
+/// * [allowedDestinationAddresses] - List of allowed destination addresses.
+/// * [allowedSenderAddresses] - List of allowed sender addresses.
+/// * [destinationAddress] - Destination address for the email.
+/// * [keyBase64] - Base64-encoded key data. Required if `format` is \"raw\", \"pkcs8\", or \"spki\".
+/// * [keyJwk] - Key data in [JSON Web Key](https://developer.mozilla.org/en-US/docs/Web/API/SubtleCrypto/importKey#json_web_key) format. Required if `format` is \"jwk\".
 @BuiltValue()
 abstract class WorkersBindingItem implements Built<WorkersBindingItem, WorkersBindingItemBuilder> {
   /// One Of [WorkersBindingKindAi], [WorkersBindingKindAnalyticsEngine], [WorkersBindingKindAssets], [WorkersBindingKindBrowser], [WorkersBindingKindD1], [WorkersBindingKindDataBlob], [WorkersBindingKindDispatchNamespace], [WorkersBindingKindDurableObjectNamespace], [WorkersBindingKindHyperdrive], [WorkersBindingKindImages], [WorkersBindingKindInherit], [WorkersBindingKindJson], [WorkersBindingKindKvNamespace], [WorkersBindingKindMtlsCertificate], [WorkersBindingKindPipelines], [WorkersBindingKindPlainText], [WorkersBindingKindQueue], [WorkersBindingKindR2Bucket], [WorkersBindingKindSecretKey], [WorkersBindingKindSecretText], [WorkersBindingKindSecretsStoreSecret], [WorkersBindingKindSendEmail], [WorkersBindingKindService], [WorkersBindingKindTextBlob], [WorkersBindingKindVectorize], [WorkersBindingKindVersionMetadata], [WorkersBindingKindWasmModule], [WorkersBindingKindWorkflow]
@@ -643,23 +643,6 @@ class WorkersBindingItemTypeEnum extends EnumClass {
   static WorkersBindingItemTypeEnum valueOf(String name) => _$workersBindingItemTypeEnumValueOf(name);
 }
 
-class WorkersBindingItemJurisdictionEnum extends EnumClass {
-
-  /// The [jurisdiction](https://developers.cloudflare.com/r2/reference/data-location/#jurisdictional-restrictions) of the R2 bucket.
-  @BuiltValueEnumConst(wireName: r'eu')
-  static const WorkersBindingItemJurisdictionEnum eu = _$workersBindingItemJurisdictionEnum_eu;
-  /// The [jurisdiction](https://developers.cloudflare.com/r2/reference/data-location/#jurisdictional-restrictions) of the R2 bucket.
-  @BuiltValueEnumConst(wireName: r'fedramp')
-  static const WorkersBindingItemJurisdictionEnum fedramp = _$workersBindingItemJurisdictionEnum_fedramp;
-
-  static Serializer<WorkersBindingItemJurisdictionEnum> get serializer => _$workersBindingItemJurisdictionEnumSerializer;
-
-  const WorkersBindingItemJurisdictionEnum._(String name): super(name);
-
-  static BuiltSet<WorkersBindingItemJurisdictionEnum> get values => _$workersBindingItemJurisdictionEnumValues;
-  static WorkersBindingItemJurisdictionEnum valueOf(String name) => _$workersBindingItemJurisdictionEnumValueOf(name);
-}
-
 class WorkersBindingItemFormatEnum extends EnumClass {
 
   /// Data format of the key. [Learn more](https://developer.mozilla.org/en-US/docs/Web/API/SubtleCrypto/importKey#format).
@@ -708,5 +691,22 @@ class WorkersBindingItemUsagesEnum extends EnumClass {
 
   static BuiltSet<WorkersBindingItemUsagesEnum> get values => _$workersBindingItemUsagesEnumValues;
   static WorkersBindingItemUsagesEnum valueOf(String name) => _$workersBindingItemUsagesEnumValueOf(name);
+}
+
+class WorkersBindingItemJurisdictionEnum extends EnumClass {
+
+  /// The [jurisdiction](https://developers.cloudflare.com/r2/reference/data-location/#jurisdictional-restrictions) of the R2 bucket.
+  @BuiltValueEnumConst(wireName: r'eu')
+  static const WorkersBindingItemJurisdictionEnum eu = _$workersBindingItemJurisdictionEnum_eu;
+  /// The [jurisdiction](https://developers.cloudflare.com/r2/reference/data-location/#jurisdictional-restrictions) of the R2 bucket.
+  @BuiltValueEnumConst(wireName: r'fedramp')
+  static const WorkersBindingItemJurisdictionEnum fedramp = _$workersBindingItemJurisdictionEnum_fedramp;
+
+  static Serializer<WorkersBindingItemJurisdictionEnum> get serializer => _$workersBindingItemJurisdictionEnumSerializer;
+
+  const WorkersBindingItemJurisdictionEnum._(String name): super(name);
+
+  static BuiltSet<WorkersBindingItemJurisdictionEnum> get values => _$workersBindingItemJurisdictionEnumValues;
+  static WorkersBindingItemJurisdictionEnum valueOf(String name) => _$workersBindingItemJurisdictionEnumValueOf(name);
 }
 

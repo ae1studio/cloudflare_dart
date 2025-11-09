@@ -14,35 +14,35 @@ part 'iam_account.g.dart';
 /// IamAccount
 ///
 /// Properties:
-/// * [createdOn] - Timestamp for the creation of the account
 /// * [id] - Identifier
-/// * [managedBy] 
 /// * [name] - Account name
-/// * [settings] 
 /// * [type] 
+/// * [createdOn] - Timestamp for the creation of the account
+/// * [managedBy] 
+/// * [settings] 
 @BuiltValue(instantiable: false)
 abstract class IamAccount  {
-  /// Timestamp for the creation of the account
-  @BuiltValueField(wireName: r'created_on')
-  DateTime? get createdOn;
-
   /// Identifier
   @BuiltValueField(wireName: r'id')
   String get id;
-
-  @BuiltValueField(wireName: r'managed_by')
-  IamAccountManagedBy? get managedBy;
 
   /// Account name
   @BuiltValueField(wireName: r'name')
   String get name;
 
-  @BuiltValueField(wireName: r'settings')
-  IamAccountSettings? get settings;
-
   @BuiltValueField(wireName: r'type')
   IamAccountType get type;
   // enum typeEnum {  standard,  enterprise,  };
+
+  /// Timestamp for the creation of the account
+  @BuiltValueField(wireName: r'created_on')
+  DateTime? get createdOn;
+
+  @BuiltValueField(wireName: r'managed_by')
+  IamAccountManagedBy? get managedBy;
+
+  @BuiltValueField(wireName: r'settings')
+  IamAccountSettings? get settings;
 
   @BuiltValueSerializer(custom: true)
   static Serializer<IamAccount> get serializer => _$IamAccountSerializer();
@@ -60,6 +60,21 @@ class _$IamAccountSerializer implements PrimitiveSerializer<IamAccount> {
     IamAccount object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    yield r'id';
+    yield serializers.serialize(
+      object.id,
+      specifiedType: const FullType(String),
+    );
+    yield r'name';
+    yield serializers.serialize(
+      object.name,
+      specifiedType: const FullType(String),
+    );
+    yield r'type';
+    yield serializers.serialize(
+      object.type,
+      specifiedType: const FullType(IamAccountType),
+    );
     if (object.createdOn != null) {
       yield r'created_on';
       yield serializers.serialize(
@@ -67,11 +82,6 @@ class _$IamAccountSerializer implements PrimitiveSerializer<IamAccount> {
         specifiedType: const FullType(DateTime),
       );
     }
-    yield r'id';
-    yield serializers.serialize(
-      object.id,
-      specifiedType: const FullType(String),
-    );
     if (object.managedBy != null) {
       yield r'managed_by';
       yield serializers.serialize(
@@ -79,11 +89,6 @@ class _$IamAccountSerializer implements PrimitiveSerializer<IamAccount> {
         specifiedType: const FullType(IamAccountManagedBy),
       );
     }
-    yield r'name';
-    yield serializers.serialize(
-      object.name,
-      specifiedType: const FullType(String),
-    );
     if (object.settings != null) {
       yield r'settings';
       yield serializers.serialize(
@@ -91,11 +96,6 @@ class _$IamAccountSerializer implements PrimitiveSerializer<IamAccount> {
         specifiedType: const FullType(IamAccountSettings),
       );
     }
-    yield r'type';
-    yield serializers.serialize(
-      object.type,
-      specifiedType: const FullType(IamAccountType),
-    );
   }
 
   @override
@@ -159,26 +159,12 @@ class _$$IamAccountSerializer implements PrimitiveSerializer<$IamAccount> {
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'created_on':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
-          result.createdOn = valueDes;
-          break;
         case r'id':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(String),
           ) as String;
           result.id = valueDes;
-          break;
-        case r'managed_by':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(IamAccountManagedBy),
-          ) as IamAccountManagedBy;
-          result.managedBy.replace(valueDes);
           break;
         case r'name':
           final valueDes = serializers.deserialize(
@@ -187,19 +173,33 @@ class _$$IamAccountSerializer implements PrimitiveSerializer<$IamAccount> {
           ) as String;
           result.name = valueDes;
           break;
-        case r'settings':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(IamAccountSettings),
-          ) as IamAccountSettings;
-          result.settings.replace(valueDes);
-          break;
         case r'type':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(IamAccountType),
           ) as IamAccountType;
           result.type = valueDes;
+          break;
+        case r'created_on':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(DateTime),
+          ) as DateTime;
+          result.createdOn = valueDes;
+          break;
+        case r'managed_by':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(IamAccountManagedBy),
+          ) as IamAccountManagedBy;
+          result.managedBy.replace(valueDes);
+          break;
+        case r'settings':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(IamAccountSettings),
+          ) as IamAccountSettings;
+          result.settings.replace(valueDes);
           break;
         default:
           unhandled.add(key);

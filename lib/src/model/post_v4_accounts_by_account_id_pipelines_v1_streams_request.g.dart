@@ -9,11 +9,11 @@ part of 'post_v4_accounts_by_account_id_pipelines_v1_streams_request.dart';
 class _$PostV4AccountsByAccountIdPipelinesV1StreamsRequest
     extends PostV4AccountsByAccountIdPipelinesV1StreamsRequest {
   @override
+  final String name;
+  @override
   final CloudflarePipelinesFormat? format;
   @override
   final PostV4AccountsByAccountIdPipelinesV1StreamsRequestHttp? http;
-  @override
-  final String name;
   @override
   final CloudflarePipelinesConnectionSchema? schema;
   @override
@@ -29,9 +29,9 @@ class _$PostV4AccountsByAccountIdPipelinesV1StreamsRequest
           ._build();
 
   _$PostV4AccountsByAccountIdPipelinesV1StreamsRequest._(
-      {this.format,
+      {required this.name,
+      this.format,
       this.http,
-      required this.name,
       this.schema,
       this.workerBinding})
       : super._();
@@ -51,9 +51,9 @@ class _$PostV4AccountsByAccountIdPipelinesV1StreamsRequest
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is PostV4AccountsByAccountIdPipelinesV1StreamsRequest &&
+        name == other.name &&
         format == other.format &&
         http == other.http &&
-        name == other.name &&
         schema == other.schema &&
         workerBinding == other.workerBinding;
   }
@@ -61,9 +61,9 @@ class _$PostV4AccountsByAccountIdPipelinesV1StreamsRequest
   @override
   int get hashCode {
     var _$hash = 0;
+    _$hash = $jc(_$hash, name.hashCode);
     _$hash = $jc(_$hash, format.hashCode);
     _$hash = $jc(_$hash, http.hashCode);
-    _$hash = $jc(_$hash, name.hashCode);
     _$hash = $jc(_$hash, schema.hashCode);
     _$hash = $jc(_$hash, workerBinding.hashCode);
     _$hash = $jf(_$hash);
@@ -74,9 +74,9 @@ class _$PostV4AccountsByAccountIdPipelinesV1StreamsRequest
   String toString() {
     return (newBuiltValueToStringHelper(
             r'PostV4AccountsByAccountIdPipelinesV1StreamsRequest')
+          ..add('name', name)
           ..add('format', format)
           ..add('http', http)
-          ..add('name', name)
           ..add('schema', schema)
           ..add('workerBinding', workerBinding))
         .toString();
@@ -88,6 +88,10 @@ class PostV4AccountsByAccountIdPipelinesV1StreamsRequestBuilder
         Builder<PostV4AccountsByAccountIdPipelinesV1StreamsRequest,
             PostV4AccountsByAccountIdPipelinesV1StreamsRequestBuilder> {
   _$PostV4AccountsByAccountIdPipelinesV1StreamsRequest? _$v;
+
+  String? _name;
+  String? get name => _$this._name;
+  set name(String? name) => _$this._name = name;
 
   CloudflarePipelinesFormatBuilder? _format;
   CloudflarePipelinesFormatBuilder get format =>
@@ -103,10 +107,6 @@ class PostV4AccountsByAccountIdPipelinesV1StreamsRequestBuilder
           PostV4AccountsByAccountIdPipelinesV1StreamsRequestHttpBuilder?
               http) =>
       _$this._http = http;
-
-  String? _name;
-  String? get name => _$this._name;
-  set name(String? name) => _$this._name = name;
 
   CloudflarePipelinesConnectionSchemaBuilder? _schema;
   CloudflarePipelinesConnectionSchemaBuilder get schema =>
@@ -131,9 +131,9 @@ class PostV4AccountsByAccountIdPipelinesV1StreamsRequestBuilder
   PostV4AccountsByAccountIdPipelinesV1StreamsRequestBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
+      _name = $v.name;
       _format = $v.format?.toBuilder();
       _http = $v.http?.toBuilder();
-      _name = $v.name;
       _schema = $v.schema?.toBuilder();
       _workerBinding = $v.workerBinding?.toBuilder();
       _$v = null;
@@ -161,10 +161,10 @@ class PostV4AccountsByAccountIdPipelinesV1StreamsRequestBuilder
     try {
       _$result = _$v ??
           _$PostV4AccountsByAccountIdPipelinesV1StreamsRequest._(
-            format: _format?.build(),
-            http: _http?.build(),
             name: BuiltValueNullFieldError.checkNotNull(name,
                 r'PostV4AccountsByAccountIdPipelinesV1StreamsRequest', 'name'),
+            format: _format?.build(),
+            http: _http?.build(),
             schema: _schema?.build(),
             workerBinding: _workerBinding?.build(),
           );
@@ -175,7 +175,6 @@ class PostV4AccountsByAccountIdPipelinesV1StreamsRequestBuilder
         _format?.build();
         _$failedField = 'http';
         _http?.build();
-
         _$failedField = 'schema';
         _schema?.build();
         _$failedField = 'workerBinding';

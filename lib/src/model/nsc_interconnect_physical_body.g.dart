@@ -12,8 +12,6 @@ class _$NscInterconnectPhysicalBody extends NscInterconnectPhysicalBody {
   @override
   final String name;
   @override
-  final String? owner;
-  @override
   final String type;
   @override
   final NscFacilityInfo facility;
@@ -23,6 +21,8 @@ class _$NscInterconnectPhysicalBody extends NscInterconnectPhysicalBody {
   final String slotId;
   @override
   final String speed;
+  @override
+  final String? owner;
 
   factory _$NscInterconnectPhysicalBody(
           [void Function(NscInterconnectPhysicalBodyBuilder)? updates]) =>
@@ -31,12 +31,12 @@ class _$NscInterconnectPhysicalBody extends NscInterconnectPhysicalBody {
   _$NscInterconnectPhysicalBody._(
       {required this.account,
       required this.name,
-      this.owner,
       required this.type,
       required this.facility,
       required this.site,
       required this.slotId,
-      required this.speed})
+      required this.speed,
+      this.owner})
       : super._();
   @override
   NscInterconnectPhysicalBody rebuild(
@@ -53,12 +53,12 @@ class _$NscInterconnectPhysicalBody extends NscInterconnectPhysicalBody {
     return other is NscInterconnectPhysicalBody &&
         account == other.account &&
         name == other.name &&
-        owner == other.owner &&
         type == other.type &&
         facility == other.facility &&
         site == other.site &&
         slotId == other.slotId &&
-        speed == other.speed;
+        speed == other.speed &&
+        owner == other.owner;
   }
 
   @override
@@ -66,12 +66,12 @@ class _$NscInterconnectPhysicalBody extends NscInterconnectPhysicalBody {
     var _$hash = 0;
     _$hash = $jc(_$hash, account.hashCode);
     _$hash = $jc(_$hash, name.hashCode);
-    _$hash = $jc(_$hash, owner.hashCode);
     _$hash = $jc(_$hash, type.hashCode);
     _$hash = $jc(_$hash, facility.hashCode);
     _$hash = $jc(_$hash, site.hashCode);
     _$hash = $jc(_$hash, slotId.hashCode);
     _$hash = $jc(_$hash, speed.hashCode);
+    _$hash = $jc(_$hash, owner.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -81,12 +81,12 @@ class _$NscInterconnectPhysicalBody extends NscInterconnectPhysicalBody {
     return (newBuiltValueToStringHelper(r'NscInterconnectPhysicalBody')
           ..add('account', account)
           ..add('name', name)
-          ..add('owner', owner)
           ..add('type', type)
           ..add('facility', facility)
           ..add('site', site)
           ..add('slotId', slotId)
-          ..add('speed', speed))
+          ..add('speed', speed)
+          ..add('owner', owner))
         .toString();
   }
 }
@@ -104,10 +104,6 @@ class NscInterconnectPhysicalBodyBuilder
   String? _name;
   String? get name => _$this._name;
   set name(String? name) => _$this._name = name;
-
-  String? _owner;
-  String? get owner => _$this._owner;
-  set owner(String? owner) => _$this._owner = owner;
 
   String? _type;
   String? get type => _$this._type;
@@ -130,6 +126,10 @@ class NscInterconnectPhysicalBodyBuilder
   String? get speed => _$this._speed;
   set speed(String? speed) => _$this._speed = speed;
 
+  String? _owner;
+  String? get owner => _$this._owner;
+  set owner(String? owner) => _$this._owner = owner;
+
   NscInterconnectPhysicalBodyBuilder() {
     NscInterconnectPhysicalBody._defaults(this);
   }
@@ -139,12 +139,12 @@ class NscInterconnectPhysicalBodyBuilder
     if ($v != null) {
       _account = $v.account;
       _name = $v.name;
-      _owner = $v.owner;
       _type = $v.type;
       _facility = $v.facility.toBuilder();
       _site = $v.site;
       _slotId = $v.slotId;
       _speed = $v.speed;
+      _owner = $v.owner;
       _$v = null;
     }
     return this;
@@ -172,7 +172,6 @@ class NscInterconnectPhysicalBodyBuilder
                 account, r'NscInterconnectPhysicalBody', 'account'),
             name: BuiltValueNullFieldError.checkNotNull(
                 name, r'NscInterconnectPhysicalBody', 'name'),
-            owner: owner,
             type: BuiltValueNullFieldError.checkNotNull(
                 type, r'NscInterconnectPhysicalBody', 'type'),
             facility: facility.build(),
@@ -182,6 +181,7 @@ class NscInterconnectPhysicalBodyBuilder
                 slotId, r'NscInterconnectPhysicalBody', 'slotId'),
             speed: BuiltValueNullFieldError.checkNotNull(
                 speed, r'NscInterconnectPhysicalBody', 'speed'),
+            owner: owner,
           );
     } catch (_) {
       late String _$failedField;

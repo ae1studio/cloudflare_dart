@@ -110,12 +110,12 @@ class _$EmailSecurityPostReclassifyRequestExpectedDispositionEnumSerializer
 class _$EmailSecurityPostReclassifyRequest
     extends EmailSecurityPostReclassifyRequest {
   @override
+  final EmailSecurityPostReclassifyRequestExpectedDispositionEnum
+      expectedDisposition;
+  @override
   final String? emlContent;
   @override
   final String? escalatedSubmissionId;
-  @override
-  final EmailSecurityPostReclassifyRequestExpectedDispositionEnum
-      expectedDisposition;
 
   factory _$EmailSecurityPostReclassifyRequest(
           [void Function(EmailSecurityPostReclassifyRequestBuilder)?
@@ -123,9 +123,9 @@ class _$EmailSecurityPostReclassifyRequest
       (EmailSecurityPostReclassifyRequestBuilder()..update(updates))._build();
 
   _$EmailSecurityPostReclassifyRequest._(
-      {this.emlContent,
-      this.escalatedSubmissionId,
-      required this.expectedDisposition})
+      {required this.expectedDisposition,
+      this.emlContent,
+      this.escalatedSubmissionId})
       : super._();
   @override
   EmailSecurityPostReclassifyRequest rebuild(
@@ -140,17 +140,17 @@ class _$EmailSecurityPostReclassifyRequest
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is EmailSecurityPostReclassifyRequest &&
+        expectedDisposition == other.expectedDisposition &&
         emlContent == other.emlContent &&
-        escalatedSubmissionId == other.escalatedSubmissionId &&
-        expectedDisposition == other.expectedDisposition;
+        escalatedSubmissionId == other.escalatedSubmissionId;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
+    _$hash = $jc(_$hash, expectedDisposition.hashCode);
     _$hash = $jc(_$hash, emlContent.hashCode);
     _$hash = $jc(_$hash, escalatedSubmissionId.hashCode);
-    _$hash = $jc(_$hash, expectedDisposition.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -158,9 +158,9 @@ class _$EmailSecurityPostReclassifyRequest
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'EmailSecurityPostReclassifyRequest')
+          ..add('expectedDisposition', expectedDisposition)
           ..add('emlContent', emlContent)
-          ..add('escalatedSubmissionId', escalatedSubmissionId)
-          ..add('expectedDisposition', expectedDisposition))
+          ..add('escalatedSubmissionId', escalatedSubmissionId))
         .toString();
   }
 }
@@ -171,15 +171,6 @@ class EmailSecurityPostReclassifyRequestBuilder
             EmailSecurityPostReclassifyRequestBuilder> {
   _$EmailSecurityPostReclassifyRequest? _$v;
 
-  String? _emlContent;
-  String? get emlContent => _$this._emlContent;
-  set emlContent(String? emlContent) => _$this._emlContent = emlContent;
-
-  String? _escalatedSubmissionId;
-  String? get escalatedSubmissionId => _$this._escalatedSubmissionId;
-  set escalatedSubmissionId(String? escalatedSubmissionId) =>
-      _$this._escalatedSubmissionId = escalatedSubmissionId;
-
   EmailSecurityPostReclassifyRequestExpectedDispositionEnum?
       _expectedDisposition;
   EmailSecurityPostReclassifyRequestExpectedDispositionEnum?
@@ -189,6 +180,15 @@ class EmailSecurityPostReclassifyRequestBuilder
               expectedDisposition) =>
       _$this._expectedDisposition = expectedDisposition;
 
+  String? _emlContent;
+  String? get emlContent => _$this._emlContent;
+  set emlContent(String? emlContent) => _$this._emlContent = emlContent;
+
+  String? _escalatedSubmissionId;
+  String? get escalatedSubmissionId => _$this._escalatedSubmissionId;
+  set escalatedSubmissionId(String? escalatedSubmissionId) =>
+      _$this._escalatedSubmissionId = escalatedSubmissionId;
+
   EmailSecurityPostReclassifyRequestBuilder() {
     EmailSecurityPostReclassifyRequest._defaults(this);
   }
@@ -196,9 +196,9 @@ class EmailSecurityPostReclassifyRequestBuilder
   EmailSecurityPostReclassifyRequestBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
+      _expectedDisposition = $v.expectedDisposition;
       _emlContent = $v.emlContent;
       _escalatedSubmissionId = $v.escalatedSubmissionId;
-      _expectedDisposition = $v.expectedDisposition;
       _$v = null;
     }
     return this;
@@ -221,12 +221,12 @@ class EmailSecurityPostReclassifyRequestBuilder
   _$EmailSecurityPostReclassifyRequest _build() {
     final _$result = _$v ??
         _$EmailSecurityPostReclassifyRequest._(
-          emlContent: emlContent,
-          escalatedSubmissionId: escalatedSubmissionId,
           expectedDisposition: BuiltValueNullFieldError.checkNotNull(
               expectedDisposition,
               r'EmailSecurityPostReclassifyRequest',
               'expectedDisposition'),
+          emlContent: emlContent,
+          escalatedSubmissionId: escalatedSubmissionId,
         );
     replace(_$result);
     return _$result;

@@ -13,17 +13,17 @@ part 'workers_ai_post_run_cf_baai_bge_base_en_v15_request_one_of.g.dart';
 /// WorkersAiPostRunCfBaaiBgeBaseEnV15RequestOneOf
 ///
 /// Properties:
-/// * [pooling] - The pooling method used in the embedding process. `cls` pooling will generate more accurate embeddings on larger inputs - however, embeddings created with cls pooling are not compatible with embeddings generated with mean pooling. The default pooling method is `mean` in order for this to not be a breaking change, but we highly suggest using the new `cls` pooling for better accuracy.
 /// * [text] 
+/// * [pooling] - The pooling method used in the embedding process. `cls` pooling will generate more accurate embeddings on larger inputs - however, embeddings created with cls pooling are not compatible with embeddings generated with mean pooling. The default pooling method is `mean` in order for this to not be a breaking change, but we highly suggest using the new `cls` pooling for better accuracy.
 @BuiltValue()
 abstract class WorkersAiPostRunCfBaaiBgeBaseEnV15RequestOneOf implements Built<WorkersAiPostRunCfBaaiBgeBaseEnV15RequestOneOf, WorkersAiPostRunCfBaaiBgeBaseEnV15RequestOneOfBuilder> {
+  @BuiltValueField(wireName: r'text')
+  WorkersAiPostRunCfBaaiBgeBaseEnV15RequestOneOfText get text;
+
   /// The pooling method used in the embedding process. `cls` pooling will generate more accurate embeddings on larger inputs - however, embeddings created with cls pooling are not compatible with embeddings generated with mean pooling. The default pooling method is `mean` in order for this to not be a breaking change, but we highly suggest using the new `cls` pooling for better accuracy.
   @BuiltValueField(wireName: r'pooling')
   WorkersAiPostRunCfBaaiBgeBaseEnV15RequestOneOfPoolingEnum? get pooling;
   // enum poolingEnum {  mean,  cls,  };
-
-  @BuiltValueField(wireName: r'text')
-  WorkersAiPostRunCfBaaiBgeBaseEnV15RequestOneOfText get text;
 
   WorkersAiPostRunCfBaaiBgeBaseEnV15RequestOneOf._();
 
@@ -49,6 +49,11 @@ class _$WorkersAiPostRunCfBaaiBgeBaseEnV15RequestOneOfSerializer implements Prim
     WorkersAiPostRunCfBaaiBgeBaseEnV15RequestOneOf object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    yield r'text';
+    yield serializers.serialize(
+      object.text,
+      specifiedType: const FullType(WorkersAiPostRunCfBaaiBgeBaseEnV15RequestOneOfText),
+    );
     if (object.pooling != null) {
       yield r'pooling';
       yield serializers.serialize(
@@ -56,11 +61,6 @@ class _$WorkersAiPostRunCfBaaiBgeBaseEnV15RequestOneOfSerializer implements Prim
         specifiedType: const FullType(WorkersAiPostRunCfBaaiBgeBaseEnV15RequestOneOfPoolingEnum),
       );
     }
-    yield r'text';
-    yield serializers.serialize(
-      object.text,
-      specifiedType: const FullType(WorkersAiPostRunCfBaaiBgeBaseEnV15RequestOneOfText),
-    );
   }
 
   @override
@@ -84,19 +84,19 @@ class _$WorkersAiPostRunCfBaaiBgeBaseEnV15RequestOneOfSerializer implements Prim
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'pooling':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(WorkersAiPostRunCfBaaiBgeBaseEnV15RequestOneOfPoolingEnum),
-          ) as WorkersAiPostRunCfBaaiBgeBaseEnV15RequestOneOfPoolingEnum;
-          result.pooling = valueDes;
-          break;
         case r'text':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(WorkersAiPostRunCfBaaiBgeBaseEnV15RequestOneOfText),
           ) as WorkersAiPostRunCfBaaiBgeBaseEnV15RequestOneOfText;
           result.text.replace(valueDes);
+          break;
+        case r'pooling':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(WorkersAiPostRunCfBaaiBgeBaseEnV15RequestOneOfPoolingEnum),
+          ) as WorkersAiPostRunCfBaaiBgeBaseEnV15RequestOneOfPoolingEnum;
+          result.pooling = valueDes;
           break;
         default:
           unhandled.add(key);

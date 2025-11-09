@@ -16,7 +16,6 @@ Name | Type | Description | Notes
 **indicator** | **String** |  | 
 **indicatorType** | **String** |  | 
 **indicatorTypeId** | **num** |  | 
-**insight** | **String** |  | [optional] 
 **killChain** | **num** |  | 
 **mitreAttack** | **BuiltList&lt;String&gt;** |  | 
 **numReferenced** | **num** |  | 
@@ -26,12 +25,13 @@ Name | Type | Description | Notes
 **referencedIds** | **BuiltList&lt;num&gt;** |  | 
 **references** | **BuiltList&lt;String&gt;** |  | 
 **referencesIds** | **BuiltList&lt;num&gt;** |  | 
-**releasabilityId** | **String** |  | [optional] 
 **tags** | **BuiltList&lt;String&gt;** |  | 
 **targetCountry** | **String** |  | 
 **targetIndustry** | **String** |  | 
 **tlp** | **String** |  | 
 **uuid** | **String** |  | 
+**insight** | **String** |  | [optional] 
+**releasabilityId** | **String** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

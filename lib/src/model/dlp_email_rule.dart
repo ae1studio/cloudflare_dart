@@ -17,12 +17,12 @@ part 'dlp_email_rule.g.dart';
 /// * [action] 
 /// * [conditions] - Rule is triggered if all conditions match.
 /// * [createdAt] 
-/// * [description] 
 /// * [enabled] 
 /// * [name] 
 /// * [priority] 
 /// * [ruleId] 
 /// * [updatedAt] 
+/// * [description] 
 @BuiltValue()
 abstract class DlpEmailRule implements Built<DlpEmailRule, DlpEmailRuleBuilder> {
   @BuiltValueField(wireName: r'action')
@@ -34,9 +34,6 @@ abstract class DlpEmailRule implements Built<DlpEmailRule, DlpEmailRuleBuilder> 
 
   @BuiltValueField(wireName: r'created_at')
   DateTime get createdAt;
-
-  @BuiltValueField(wireName: r'description')
-  String? get description;
 
   @BuiltValueField(wireName: r'enabled')
   bool get enabled;
@@ -52,6 +49,9 @@ abstract class DlpEmailRule implements Built<DlpEmailRule, DlpEmailRuleBuilder> 
 
   @BuiltValueField(wireName: r'updated_at')
   DateTime get updatedAt;
+
+  @BuiltValueField(wireName: r'description')
+  String? get description;
 
   DlpEmailRule._();
 
@@ -91,13 +91,6 @@ class _$DlpEmailRuleSerializer implements PrimitiveSerializer<DlpEmailRule> {
       object.createdAt,
       specifiedType: const FullType(DateTime),
     );
-    if (object.description != null) {
-      yield r'description';
-      yield serializers.serialize(
-        object.description,
-        specifiedType: const FullType.nullable(String),
-      );
-    }
     yield r'enabled';
     yield serializers.serialize(
       object.enabled,
@@ -123,6 +116,13 @@ class _$DlpEmailRuleSerializer implements PrimitiveSerializer<DlpEmailRule> {
       object.updatedAt,
       specifiedType: const FullType(DateTime),
     );
+    if (object.description != null) {
+      yield r'description';
+      yield serializers.serialize(
+        object.description,
+        specifiedType: const FullType.nullable(String),
+      );
+    }
   }
 
   @override
@@ -167,14 +167,6 @@ class _$DlpEmailRuleSerializer implements PrimitiveSerializer<DlpEmailRule> {
           ) as DateTime;
           result.createdAt = valueDes;
           break;
-        case r'description':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
-          if (valueDes == null) continue;
-          result.description = valueDes;
-          break;
         case r'enabled':
           final valueDes = serializers.deserialize(
             value,
@@ -209,6 +201,14 @@ class _$DlpEmailRuleSerializer implements PrimitiveSerializer<DlpEmailRule> {
             specifiedType: const FullType(DateTime),
           ) as DateTime;
           result.updatedAt = valueDes;
+          break;
+        case r'description':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType.nullable(String),
+          ) as String?;
+          if (valueDes == null) continue;
+          result.description = valueDes;
           break;
         default:
           unhandled.add(key);

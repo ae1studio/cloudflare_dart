@@ -9,8 +9,8 @@ import 'package:cloudflare_dart/api.dart';
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **asn** | **String** |  | 
-**locations** | [**RadarGetAnnotations200ResponseResultAnnotationsInnerAsnsDetailsInnerLocations**](RadarGetAnnotations200ResponseResultAnnotationsInnerAsnsDetailsInnerLocations.md) |  | [optional] 
 **name** | **String** |  | 
+**locations** | [**RadarGetAnnotations200ResponseResultAnnotationsInnerAsnsDetailsInnerLocations**](RadarGetAnnotations200ResponseResultAnnotationsInnerAsnsDetailsInnerLocations.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -14,20 +14,20 @@ part 'brapi_post_scrape200_response.g.dart';
 /// BrapiPostScrape200Response
 ///
 /// Properties:
-/// * [errors] 
 /// * [result] 
 /// * [status] - Response status
+/// * [errors] 
 @BuiltValue()
 abstract class BrapiPostScrape200Response implements Built<BrapiPostScrape200Response, BrapiPostScrape200ResponseBuilder> {
-  @BuiltValueField(wireName: r'errors')
-  BuiltList<BrapiPostContent200ResponseErrorsInner>? get errors;
-
   @BuiltValueField(wireName: r'result')
   BuiltList<BrapiPostScrape200ResponseResultInner> get result;
 
   /// Response status
   @BuiltValueField(wireName: r'status')
   bool get status;
+
+  @BuiltValueField(wireName: r'errors')
+  BuiltList<BrapiPostContent200ResponseErrorsInner>? get errors;
 
   BrapiPostScrape200Response._();
 
@@ -52,13 +52,6 @@ class _$BrapiPostScrape200ResponseSerializer implements PrimitiveSerializer<Brap
     BrapiPostScrape200Response object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
-    if (object.errors != null) {
-      yield r'errors';
-      yield serializers.serialize(
-        object.errors,
-        specifiedType: const FullType(BuiltList, [FullType(BrapiPostContent200ResponseErrorsInner)]),
-      );
-    }
     yield r'result';
     yield serializers.serialize(
       object.result,
@@ -69,6 +62,13 @@ class _$BrapiPostScrape200ResponseSerializer implements PrimitiveSerializer<Brap
       object.status,
       specifiedType: const FullType(bool),
     );
+    if (object.errors != null) {
+      yield r'errors';
+      yield serializers.serialize(
+        object.errors,
+        specifiedType: const FullType(BuiltList, [FullType(BrapiPostContent200ResponseErrorsInner)]),
+      );
+    }
   }
 
   @override
@@ -92,13 +92,6 @@ class _$BrapiPostScrape200ResponseSerializer implements PrimitiveSerializer<Brap
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'errors':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(BrapiPostContent200ResponseErrorsInner)]),
-          ) as BuiltList<BrapiPostContent200ResponseErrorsInner>;
-          result.errors.replace(valueDes);
-          break;
         case r'result':
           final valueDes = serializers.deserialize(
             value,
@@ -112,6 +105,13 @@ class _$BrapiPostScrape200ResponseSerializer implements PrimitiveSerializer<Brap
             specifiedType: const FullType(bool),
           ) as bool;
           result.status = valueDes;
+          break;
+        case r'errors':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BuiltList, [FullType(BrapiPostContent200ResponseErrorsInner)]),
+          ) as BuiltList<BrapiPostContent200ResponseErrorsInner>;
+          result.errors.replace(valueDes);
           break;
         default:
           unhandled.add(key);

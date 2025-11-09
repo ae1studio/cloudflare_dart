@@ -11,9 +11,9 @@ class _$UserAgentBlockingRulesCreateAUserAgentBlockingRuleRequest
   @override
   final FirewallUaConfiguration configuration;
   @override
-  final String? description;
-  @override
   final FirewallSchemasMode mode;
+  @override
+  final String? description;
   @override
   final bool? paused;
 
@@ -27,8 +27,8 @@ class _$UserAgentBlockingRulesCreateAUserAgentBlockingRuleRequest
 
   _$UserAgentBlockingRulesCreateAUserAgentBlockingRuleRequest._(
       {required this.configuration,
-      this.description,
       required this.mode,
+      this.description,
       this.paused})
       : super._();
   @override
@@ -49,8 +49,8 @@ class _$UserAgentBlockingRulesCreateAUserAgentBlockingRuleRequest
     if (identical(other, this)) return true;
     return other is UserAgentBlockingRulesCreateAUserAgentBlockingRuleRequest &&
         configuration == other.configuration &&
-        description == other.description &&
         mode == other.mode &&
+        description == other.description &&
         paused == other.paused;
   }
 
@@ -58,8 +58,8 @@ class _$UserAgentBlockingRulesCreateAUserAgentBlockingRuleRequest
   int get hashCode {
     var _$hash = 0;
     _$hash = $jc(_$hash, configuration.hashCode);
-    _$hash = $jc(_$hash, description.hashCode);
     _$hash = $jc(_$hash, mode.hashCode);
+    _$hash = $jc(_$hash, description.hashCode);
     _$hash = $jc(_$hash, paused.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
@@ -70,8 +70,8 @@ class _$UserAgentBlockingRulesCreateAUserAgentBlockingRuleRequest
     return (newBuiltValueToStringHelper(
             r'UserAgentBlockingRulesCreateAUserAgentBlockingRuleRequest')
           ..add('configuration', configuration)
-          ..add('description', description)
           ..add('mode', mode)
+          ..add('description', description)
           ..add('paused', paused))
         .toString();
   }
@@ -89,13 +89,13 @@ class UserAgentBlockingRulesCreateAUserAgentBlockingRuleRequestBuilder
   set configuration(FirewallUaConfigurationBuilder? configuration) =>
       _$this._configuration = configuration;
 
-  String? _description;
-  String? get description => _$this._description;
-  set description(String? description) => _$this._description = description;
-
   FirewallSchemasMode? _mode;
   FirewallSchemasMode? get mode => _$this._mode;
   set mode(FirewallSchemasMode? mode) => _$this._mode = mode;
+
+  String? _description;
+  String? get description => _$this._description;
+  set description(String? description) => _$this._description = description;
 
   bool? _paused;
   bool? get paused => _$this._paused;
@@ -109,8 +109,8 @@ class UserAgentBlockingRulesCreateAUserAgentBlockingRuleRequestBuilder
     final $v = _$v;
     if ($v != null) {
       _configuration = $v.configuration.toBuilder();
-      _description = $v.description;
       _mode = $v.mode;
+      _description = $v.description;
       _paused = $v.paused;
       _$v = null;
     }
@@ -140,11 +140,11 @@ class UserAgentBlockingRulesCreateAUserAgentBlockingRuleRequestBuilder
       _$result = _$v ??
           _$UserAgentBlockingRulesCreateAUserAgentBlockingRuleRequest._(
             configuration: configuration.build(),
-            description: description,
             mode: BuiltValueNullFieldError.checkNotNull(
                 mode,
                 r'UserAgentBlockingRulesCreateAUserAgentBlockingRuleRequest',
                 'mode'),
+            description: description,
             paused: paused,
           );
     } catch (_) {

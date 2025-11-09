@@ -18,13 +18,13 @@ part 'nsc_interconnect.g.dart';
 /// Properties:
 /// * [account] 
 /// * [name] 
-/// * [owner] 
 /// * [type] 
 /// * [facility] 
 /// * [site] - A Cloudflare site name.
 /// * [slotId] 
 /// * [speed] 
 /// * [region] 
+/// * [owner] 
 @BuiltValue()
 abstract class NscInterconnect implements Built<NscInterconnect, NscInterconnectBuilder> {
   /// One Of [NscInterconnectGcpPartnerBody], [NscInterconnectPhysicalBody]

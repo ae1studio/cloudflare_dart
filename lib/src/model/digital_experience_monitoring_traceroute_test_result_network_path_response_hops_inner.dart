@@ -13,6 +13,7 @@ part 'digital_experience_monitoring_traceroute_test_result_network_path_response
 /// DigitalExperienceMonitoringTracerouteTestResultNetworkPathResponseHopsInner
 ///
 /// Properties:
+/// * [ttl] 
 /// * [asn] 
 /// * [aso] 
 /// * [ipAddress] 
@@ -21,9 +22,11 @@ part 'digital_experience_monitoring_traceroute_test_result_network_path_response
 /// * [name] 
 /// * [packetLossPct] 
 /// * [rttMs] 
-/// * [ttl] 
 @BuiltValue()
 abstract class DigitalExperienceMonitoringTracerouteTestResultNetworkPathResponseHopsInner implements Built<DigitalExperienceMonitoringTracerouteTestResultNetworkPathResponseHopsInner, DigitalExperienceMonitoringTracerouteTestResultNetworkPathResponseHopsInnerBuilder> {
+  @BuiltValueField(wireName: r'ttl')
+  int get ttl;
+
   @BuiltValueField(wireName: r'asn')
   int? get asn;
 
@@ -49,9 +52,6 @@ abstract class DigitalExperienceMonitoringTracerouteTestResultNetworkPathRespons
   @BuiltValueField(wireName: r'rttMs')
   int? get rttMs;
 
-  @BuiltValueField(wireName: r'ttl')
-  int get ttl;
-
   DigitalExperienceMonitoringTracerouteTestResultNetworkPathResponseHopsInner._();
 
   factory DigitalExperienceMonitoringTracerouteTestResultNetworkPathResponseHopsInner([void updates(DigitalExperienceMonitoringTracerouteTestResultNetworkPathResponseHopsInnerBuilder b)]) = _$DigitalExperienceMonitoringTracerouteTestResultNetworkPathResponseHopsInner;
@@ -75,6 +75,11 @@ class _$DigitalExperienceMonitoringTracerouteTestResultNetworkPathResponseHopsIn
     DigitalExperienceMonitoringTracerouteTestResultNetworkPathResponseHopsInner object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    yield r'ttl';
+    yield serializers.serialize(
+      object.ttl,
+      specifiedType: const FullType(int),
+    );
     if (object.asn != null) {
       yield r'asn';
       yield serializers.serialize(
@@ -131,11 +136,6 @@ class _$DigitalExperienceMonitoringTracerouteTestResultNetworkPathResponseHopsIn
         specifiedType: const FullType.nullable(int),
       );
     }
-    yield r'ttl';
-    yield serializers.serialize(
-      object.ttl,
-      specifiedType: const FullType(int),
-    );
   }
 
   @override
@@ -159,6 +159,13 @@ class _$DigitalExperienceMonitoringTracerouteTestResultNetworkPathResponseHopsIn
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
+        case r'ttl':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(int),
+          ) as int;
+          result.ttl = valueDes;
+          break;
         case r'asn':
           final valueDes = serializers.deserialize(
             value,
@@ -222,13 +229,6 @@ class _$DigitalExperienceMonitoringTracerouteTestResultNetworkPathResponseHopsIn
           ) as int?;
           if (valueDes == null) continue;
           result.rttMs = valueDes;
-          break;
-        case r'ttl':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
-          result.ttl = valueDes;
           break;
         default:
           unhandled.add(key);

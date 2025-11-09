@@ -19,10 +19,10 @@ part 'radar_get_bgp_ips_timeseries200_response_result_meta.g.dart';
 /// * [aggInterval] - Aggregation interval of the results (e.g., in 15 minutes or 1 hour intervals). Refer to [Aggregation intervals](https://developers.cloudflare.com/radar/concepts/aggregation-intervals/).
 /// * [confidenceInfo] 
 /// * [dateRange] 
-/// * [delay] 
 /// * [lastUpdated] - Timestamp of the last dataset update.
 /// * [normalization] - Normalization method applied to the results. Refer to [Normalization methods](https://developers.cloudflare.com/radar/concepts/normalization/).
 /// * [units] - Measurement units for the results.
+/// * [delay] 
 @BuiltValue()
 abstract class RadarGetBgpIpsTimeseries200ResponseResultMeta implements Built<RadarGetBgpIpsTimeseries200ResponseResultMeta, RadarGetBgpIpsTimeseries200ResponseResultMetaBuilder> {
   /// Aggregation interval of the results (e.g., in 15 minutes or 1 hour intervals). Refer to [Aggregation intervals](https://developers.cloudflare.com/radar/concepts/aggregation-intervals/).
@@ -36,9 +36,6 @@ abstract class RadarGetBgpIpsTimeseries200ResponseResultMeta implements Built<Ra
   @BuiltValueField(wireName: r'dateRange')
   BuiltList<RadarGetAiBotsSummaryByUserAgent200ResponseResultMetaDateRangeInner> get dateRange;
 
-  @BuiltValueField(wireName: r'delay')
-  RadarGetBgpIpsTimeseries200ResponseResultMetaDelay? get delay;
-
   /// Timestamp of the last dataset update.
   @BuiltValueField(wireName: r'lastUpdated')
   DateTime get lastUpdated;
@@ -51,6 +48,9 @@ abstract class RadarGetBgpIpsTimeseries200ResponseResultMeta implements Built<Ra
   /// Measurement units for the results.
   @BuiltValueField(wireName: r'units')
   BuiltList<RadarGetAiBotsSummaryByUserAgent200ResponseResultMetaUnitsInner> get units;
+
+  @BuiltValueField(wireName: r'delay')
+  RadarGetBgpIpsTimeseries200ResponseResultMetaDelay? get delay;
 
   RadarGetBgpIpsTimeseries200ResponseResultMeta._();
 
@@ -90,13 +90,6 @@ class _$RadarGetBgpIpsTimeseries200ResponseResultMetaSerializer implements Primi
       object.dateRange,
       specifiedType: const FullType(BuiltList, [FullType(RadarGetAiBotsSummaryByUserAgent200ResponseResultMetaDateRangeInner)]),
     );
-    if (object.delay != null) {
-      yield r'delay';
-      yield serializers.serialize(
-        object.delay,
-        specifiedType: const FullType(RadarGetBgpIpsTimeseries200ResponseResultMetaDelay),
-      );
-    }
     yield r'lastUpdated';
     yield serializers.serialize(
       object.lastUpdated,
@@ -112,6 +105,13 @@ class _$RadarGetBgpIpsTimeseries200ResponseResultMetaSerializer implements Primi
       object.units,
       specifiedType: const FullType(BuiltList, [FullType(RadarGetAiBotsSummaryByUserAgent200ResponseResultMetaUnitsInner)]),
     );
+    if (object.delay != null) {
+      yield r'delay';
+      yield serializers.serialize(
+        object.delay,
+        specifiedType: const FullType(RadarGetBgpIpsTimeseries200ResponseResultMetaDelay),
+      );
+    }
   }
 
   @override
@@ -156,13 +156,6 @@ class _$RadarGetBgpIpsTimeseries200ResponseResultMetaSerializer implements Primi
           ) as BuiltList<RadarGetAiBotsSummaryByUserAgent200ResponseResultMetaDateRangeInner>;
           result.dateRange.replace(valueDes);
           break;
-        case r'delay':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(RadarGetBgpIpsTimeseries200ResponseResultMetaDelay),
-          ) as RadarGetBgpIpsTimeseries200ResponseResultMetaDelay;
-          result.delay.replace(valueDes);
-          break;
         case r'lastUpdated':
           final valueDes = serializers.deserialize(
             value,
@@ -183,6 +176,13 @@ class _$RadarGetBgpIpsTimeseries200ResponseResultMetaSerializer implements Primi
             specifiedType: const FullType(BuiltList, [FullType(RadarGetAiBotsSummaryByUserAgent200ResponseResultMetaUnitsInner)]),
           ) as BuiltList<RadarGetAiBotsSummaryByUserAgent200ResponseResultMetaUnitsInner>;
           result.units.replace(valueDes);
+          break;
+        case r'delay':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(RadarGetBgpIpsTimeseries200ResponseResultMetaDelay),
+          ) as RadarGetBgpIpsTimeseries200ResponseResultMetaDelay;
+          result.delay.replace(valueDes);
           break;
         default:
           unhandled.add(key);

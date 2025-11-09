@@ -9,6 +9,10 @@ part of 'autorag_config_ai_search200_response_result.dart';
 class _$AutoragConfigAiSearch200ResponseResult
     extends AutoragConfigAiSearch200ResponseResult {
   @override
+  final String response;
+  @override
+  final String searchQuery;
+  @override
   final BuiltList<AutoragConfigAiSearch200ResponseResultDataInner>? data;
   @override
   final bool? hasMore;
@@ -16,10 +20,6 @@ class _$AutoragConfigAiSearch200ResponseResult
   final String? nextPage;
   @override
   final String? object;
-  @override
-  final String response;
-  @override
-  final String searchQuery;
 
   factory _$AutoragConfigAiSearch200ResponseResult(
           [void Function(AutoragConfigAiSearch200ResponseResultBuilder)?
@@ -28,12 +28,12 @@ class _$AutoragConfigAiSearch200ResponseResult
           ._build();
 
   _$AutoragConfigAiSearch200ResponseResult._(
-      {this.data,
+      {required this.response,
+      required this.searchQuery,
+      this.data,
       this.hasMore,
       this.nextPage,
-      this.object,
-      required this.response,
-      required this.searchQuery})
+      this.object})
       : super._();
   @override
   AutoragConfigAiSearch200ResponseResult rebuild(
@@ -49,23 +49,23 @@ class _$AutoragConfigAiSearch200ResponseResult
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is AutoragConfigAiSearch200ResponseResult &&
+        response == other.response &&
+        searchQuery == other.searchQuery &&
         data == other.data &&
         hasMore == other.hasMore &&
         nextPage == other.nextPage &&
-        object == other.object &&
-        response == other.response &&
-        searchQuery == other.searchQuery;
+        object == other.object;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
+    _$hash = $jc(_$hash, response.hashCode);
+    _$hash = $jc(_$hash, searchQuery.hashCode);
     _$hash = $jc(_$hash, data.hashCode);
     _$hash = $jc(_$hash, hasMore.hashCode);
     _$hash = $jc(_$hash, nextPage.hashCode);
     _$hash = $jc(_$hash, object.hashCode);
-    _$hash = $jc(_$hash, response.hashCode);
-    _$hash = $jc(_$hash, searchQuery.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -74,12 +74,12 @@ class _$AutoragConfigAiSearch200ResponseResult
   String toString() {
     return (newBuiltValueToStringHelper(
             r'AutoragConfigAiSearch200ResponseResult')
+          ..add('response', response)
+          ..add('searchQuery', searchQuery)
           ..add('data', data)
           ..add('hasMore', hasMore)
           ..add('nextPage', nextPage)
-          ..add('object', object)
-          ..add('response', response)
-          ..add('searchQuery', searchQuery))
+          ..add('object', object))
         .toString();
   }
 }
@@ -89,6 +89,14 @@ class AutoragConfigAiSearch200ResponseResultBuilder
         Builder<AutoragConfigAiSearch200ResponseResult,
             AutoragConfigAiSearch200ResponseResultBuilder> {
   _$AutoragConfigAiSearch200ResponseResult? _$v;
+
+  String? _response;
+  String? get response => _$this._response;
+  set response(String? response) => _$this._response = response;
+
+  String? _searchQuery;
+  String? get searchQuery => _$this._searchQuery;
+  set searchQuery(String? searchQuery) => _$this._searchQuery = searchQuery;
 
   ListBuilder<AutoragConfigAiSearch200ResponseResultDataInner>? _data;
   ListBuilder<AutoragConfigAiSearch200ResponseResultDataInner> get data =>
@@ -110,14 +118,6 @@ class AutoragConfigAiSearch200ResponseResultBuilder
   String? get object => _$this._object;
   set object(String? object) => _$this._object = object;
 
-  String? _response;
-  String? get response => _$this._response;
-  set response(String? response) => _$this._response = response;
-
-  String? _searchQuery;
-  String? get searchQuery => _$this._searchQuery;
-  set searchQuery(String? searchQuery) => _$this._searchQuery = searchQuery;
-
   AutoragConfigAiSearch200ResponseResultBuilder() {
     AutoragConfigAiSearch200ResponseResult._defaults(this);
   }
@@ -125,12 +125,12 @@ class AutoragConfigAiSearch200ResponseResultBuilder
   AutoragConfigAiSearch200ResponseResultBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
+      _response = $v.response;
+      _searchQuery = $v.searchQuery;
       _data = $v.data?.toBuilder();
       _hasMore = $v.hasMore;
       _nextPage = $v.nextPage;
       _object = $v.object;
-      _response = $v.response;
-      _searchQuery = $v.searchQuery;
       _$v = null;
     }
     return this;
@@ -155,14 +155,14 @@ class AutoragConfigAiSearch200ResponseResultBuilder
     try {
       _$result = _$v ??
           _$AutoragConfigAiSearch200ResponseResult._(
-            data: _data?.build(),
-            hasMore: hasMore,
-            nextPage: nextPage,
-            object: object,
             response: BuiltValueNullFieldError.checkNotNull(response,
                 r'AutoragConfigAiSearch200ResponseResult', 'response'),
             searchQuery: BuiltValueNullFieldError.checkNotNull(searchQuery,
                 r'AutoragConfigAiSearch200ResponseResult', 'searchQuery'),
+            data: _data?.build(),
+            hasMore: hasMore,
+            nextPage: nextPage,
+            object: object,
           );
     } catch (_) {
       late String _$failedField;

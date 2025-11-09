@@ -8,8 +8,8 @@ import 'package:cloudflare_dart/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**deviceName** | **String** |  | [optional] 
 **id** | **String** | API Resource UUID tag. | 
+**deviceName** | **String** |  | [optional] 
 **interval** | **String** | The interval at which the Traceroute synthetic application test is set to run. | [optional] 
 **kind** | **String** |  | [optional] 
 **name** | **String** |  | [optional] 

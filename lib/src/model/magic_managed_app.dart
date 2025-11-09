@@ -12,13 +12,17 @@ part 'magic_managed_app.g.dart';
 /// Managed app defined by Cloudflare.
 ///
 /// Properties:
+/// * [managedAppId] - Managed app ID.
 /// * [hostnames] - FQDNs to associate with traffic decisions.
 /// * [ipSubnets] - IPv4 CIDRs to associate with traffic decisions. (IPv6 CIDRs are currently unsupported)
-/// * [managedAppId] - Managed app ID.
 /// * [name] - Display name for the app.
 /// * [type] - Category of the app.
 @BuiltValue()
 abstract class MagicManagedApp implements Built<MagicManagedApp, MagicManagedAppBuilder> {
+  /// Managed app ID.
+  @BuiltValueField(wireName: r'managed_app_id')
+  String get managedAppId;
+
   /// FQDNs to associate with traffic decisions.
   @BuiltValueField(wireName: r'hostnames')
   BuiltList<String>? get hostnames;
@@ -26,10 +30,6 @@ abstract class MagicManagedApp implements Built<MagicManagedApp, MagicManagedApp
   /// IPv4 CIDRs to associate with traffic decisions. (IPv6 CIDRs are currently unsupported)
   @BuiltValueField(wireName: r'ip_subnets')
   BuiltList<String>? get ipSubnets;
-
-  /// Managed app ID.
-  @BuiltValueField(wireName: r'managed_app_id')
-  String get managedAppId;
 
   /// Display name for the app.
   @BuiltValueField(wireName: r'name')
@@ -62,6 +62,11 @@ class _$MagicManagedAppSerializer implements PrimitiveSerializer<MagicManagedApp
     MagicManagedApp object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    yield r'managed_app_id';
+    yield serializers.serialize(
+      object.managedAppId,
+      specifiedType: const FullType(String),
+    );
     if (object.hostnames != null) {
       yield r'hostnames';
       yield serializers.serialize(
@@ -76,11 +81,6 @@ class _$MagicManagedAppSerializer implements PrimitiveSerializer<MagicManagedApp
         specifiedType: const FullType(BuiltList, [FullType(String)]),
       );
     }
-    yield r'managed_app_id';
-    yield serializers.serialize(
-      object.managedAppId,
-      specifiedType: const FullType(String),
-    );
     if (object.name != null) {
       yield r'name';
       yield serializers.serialize(
@@ -118,6 +118,13 @@ class _$MagicManagedAppSerializer implements PrimitiveSerializer<MagicManagedApp
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
+        case r'managed_app_id':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.managedAppId = valueDes;
+          break;
         case r'hostnames':
           final valueDes = serializers.deserialize(
             value,
@@ -131,13 +138,6 @@ class _$MagicManagedAppSerializer implements PrimitiveSerializer<MagicManagedApp
             specifiedType: const FullType(BuiltList, [FullType(String)]),
           ) as BuiltList<String>;
           result.ipSubnets.replace(valueDes);
-          break;
-        case r'managed_app_id':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.managedAppId = valueDes;
           break;
         case r'name':
           final valueDes = serializers.deserialize(

@@ -20,8 +20,8 @@ part 'custom_pages_for_an_account_list_custom_pages4xx_response.g.dart';
 /// * [errors] 
 /// * [messages] 
 /// * [success] - Whether the API call was successful.
-/// * [resultInfo] 
 /// * [result] 
+/// * [resultInfo] 
 @BuiltValue()
 abstract class CustomPagesForAnAccountListCustomPages4xxResponse implements CustomPagesApiResponseCommonFailure, CustomPagesCustomPageResultList, Built<CustomPagesForAnAccountListCustomPages4xxResponse, CustomPagesForAnAccountListCustomPages4xxResponseBuilder> {
   CustomPagesForAnAccountListCustomPages4xxResponse._();

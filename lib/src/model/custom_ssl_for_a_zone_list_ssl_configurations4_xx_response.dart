@@ -20,8 +20,8 @@ part 'custom_ssl_for_a_zone_list_ssl_configurations4_xx_response.g.dart';
 /// * [errors] 
 /// * [messages] 
 /// * [success] - Whether the API call was successful.
-/// * [resultInfo] 
 /// * [result] 
+/// * [resultInfo] 
 @BuiltValue()
 abstract class CustomSslForAZoneListSslConfigurations4XXResponse implements TlsCertificatesAndHostnamesApiResponseCommonFailure, TlsCertificatesAndHostnamesCertificateResponseCollection, Built<CustomSslForAZoneListSslConfigurations4XXResponse, CustomSslForAZoneListSslConfigurations4XXResponseBuilder> {
   CustomSslForAZoneListSslConfigurations4XXResponse._();

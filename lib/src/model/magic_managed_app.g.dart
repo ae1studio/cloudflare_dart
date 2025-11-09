@@ -8,11 +8,11 @@ part of 'magic_managed_app.dart';
 
 class _$MagicManagedApp extends MagicManagedApp {
   @override
+  final String managedAppId;
+  @override
   final BuiltList<String>? hostnames;
   @override
   final BuiltList<String>? ipSubnets;
-  @override
-  final String managedAppId;
   @override
   final String? name;
   @override
@@ -22,9 +22,9 @@ class _$MagicManagedApp extends MagicManagedApp {
       (MagicManagedAppBuilder()..update(updates))._build();
 
   _$MagicManagedApp._(
-      {this.hostnames,
+      {required this.managedAppId,
+      this.hostnames,
       this.ipSubnets,
-      required this.managedAppId,
       this.name,
       this.type})
       : super._();
@@ -39,9 +39,9 @@ class _$MagicManagedApp extends MagicManagedApp {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is MagicManagedApp &&
+        managedAppId == other.managedAppId &&
         hostnames == other.hostnames &&
         ipSubnets == other.ipSubnets &&
-        managedAppId == other.managedAppId &&
         name == other.name &&
         type == other.type;
   }
@@ -49,9 +49,9 @@ class _$MagicManagedApp extends MagicManagedApp {
   @override
   int get hashCode {
     var _$hash = 0;
+    _$hash = $jc(_$hash, managedAppId.hashCode);
     _$hash = $jc(_$hash, hostnames.hashCode);
     _$hash = $jc(_$hash, ipSubnets.hashCode);
-    _$hash = $jc(_$hash, managedAppId.hashCode);
     _$hash = $jc(_$hash, name.hashCode);
     _$hash = $jc(_$hash, type.hashCode);
     _$hash = $jf(_$hash);
@@ -61,9 +61,9 @@ class _$MagicManagedApp extends MagicManagedApp {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'MagicManagedApp')
+          ..add('managedAppId', managedAppId)
           ..add('hostnames', hostnames)
           ..add('ipSubnets', ipSubnets)
-          ..add('managedAppId', managedAppId)
           ..add('name', name)
           ..add('type', type))
         .toString();
@@ -73,6 +73,10 @@ class _$MagicManagedApp extends MagicManagedApp {
 class MagicManagedAppBuilder
     implements Builder<MagicManagedApp, MagicManagedAppBuilder> {
   _$MagicManagedApp? _$v;
+
+  String? _managedAppId;
+  String? get managedAppId => _$this._managedAppId;
+  set managedAppId(String? managedAppId) => _$this._managedAppId = managedAppId;
 
   ListBuilder<String>? _hostnames;
   ListBuilder<String> get hostnames =>
@@ -85,10 +89,6 @@ class MagicManagedAppBuilder
       _$this._ipSubnets ??= ListBuilder<String>();
   set ipSubnets(ListBuilder<String>? ipSubnets) =>
       _$this._ipSubnets = ipSubnets;
-
-  String? _managedAppId;
-  String? get managedAppId => _$this._managedAppId;
-  set managedAppId(String? managedAppId) => _$this._managedAppId = managedAppId;
 
   String? _name;
   String? get name => _$this._name;
@@ -105,9 +105,9 @@ class MagicManagedAppBuilder
   MagicManagedAppBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
+      _managedAppId = $v.managedAppId;
       _hostnames = $v.hostnames?.toBuilder();
       _ipSubnets = $v.ipSubnets?.toBuilder();
-      _managedAppId = $v.managedAppId;
       _name = $v.name;
       _type = $v.type;
       _$v = null;
@@ -133,10 +133,10 @@ class MagicManagedAppBuilder
     try {
       _$result = _$v ??
           _$MagicManagedApp._(
-            hostnames: _hostnames?.build(),
-            ipSubnets: _ipSubnets?.build(),
             managedAppId: BuiltValueNullFieldError.checkNotNull(
                 managedAppId, r'MagicManagedApp', 'managedAppId'),
+            hostnames: _hostnames?.build(),
+            ipSubnets: _ipSubnets?.build(),
             name: name,
             type: type,
           );

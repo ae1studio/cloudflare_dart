@@ -8,18 +8,18 @@ part of 'brapi_post_json200_response.dart';
 
 class _$BrapiPostJson200Response extends BrapiPostJson200Response {
   @override
-  final BuiltList<BrapiPostContent200ResponseErrorsInner>? errors;
-  @override
   final BuiltMap<String, JsonObject?> result;
   @override
   final bool status;
+  @override
+  final BuiltList<BrapiPostContent200ResponseErrorsInner>? errors;
 
   factory _$BrapiPostJson200Response(
           [void Function(BrapiPostJson200ResponseBuilder)? updates]) =>
       (BrapiPostJson200ResponseBuilder()..update(updates))._build();
 
   _$BrapiPostJson200Response._(
-      {this.errors, required this.result, required this.status})
+      {required this.result, required this.status, this.errors})
       : super._();
   @override
   BrapiPostJson200Response rebuild(
@@ -34,17 +34,17 @@ class _$BrapiPostJson200Response extends BrapiPostJson200Response {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is BrapiPostJson200Response &&
-        errors == other.errors &&
         result == other.result &&
-        status == other.status;
+        status == other.status &&
+        errors == other.errors;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, errors.hashCode);
     _$hash = $jc(_$hash, result.hashCode);
     _$hash = $jc(_$hash, status.hashCode);
+    _$hash = $jc(_$hash, errors.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -52,9 +52,9 @@ class _$BrapiPostJson200Response extends BrapiPostJson200Response {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'BrapiPostJson200Response')
-          ..add('errors', errors)
           ..add('result', result)
-          ..add('status', status))
+          ..add('status', status)
+          ..add('errors', errors))
         .toString();
   }
 }
@@ -63,12 +63,6 @@ class BrapiPostJson200ResponseBuilder
     implements
         Builder<BrapiPostJson200Response, BrapiPostJson200ResponseBuilder> {
   _$BrapiPostJson200Response? _$v;
-
-  ListBuilder<BrapiPostContent200ResponseErrorsInner>? _errors;
-  ListBuilder<BrapiPostContent200ResponseErrorsInner> get errors =>
-      _$this._errors ??= ListBuilder<BrapiPostContent200ResponseErrorsInner>();
-  set errors(ListBuilder<BrapiPostContent200ResponseErrorsInner>? errors) =>
-      _$this._errors = errors;
 
   MapBuilder<String, JsonObject?>? _result;
   MapBuilder<String, JsonObject?> get result =>
@@ -80,6 +74,12 @@ class BrapiPostJson200ResponseBuilder
   bool? get status => _$this._status;
   set status(bool? status) => _$this._status = status;
 
+  ListBuilder<BrapiPostContent200ResponseErrorsInner>? _errors;
+  ListBuilder<BrapiPostContent200ResponseErrorsInner> get errors =>
+      _$this._errors ??= ListBuilder<BrapiPostContent200ResponseErrorsInner>();
+  set errors(ListBuilder<BrapiPostContent200ResponseErrorsInner>? errors) =>
+      _$this._errors = errors;
+
   BrapiPostJson200ResponseBuilder() {
     BrapiPostJson200Response._defaults(this);
   }
@@ -87,9 +87,9 @@ class BrapiPostJson200ResponseBuilder
   BrapiPostJson200ResponseBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _errors = $v.errors?.toBuilder();
       _result = $v.result.toBuilder();
       _status = $v.status;
+      _errors = $v.errors?.toBuilder();
       _$v = null;
     }
     return this;
@@ -113,18 +113,19 @@ class BrapiPostJson200ResponseBuilder
     try {
       _$result = _$v ??
           _$BrapiPostJson200Response._(
-            errors: _errors?.build(),
             result: result.build(),
             status: BuiltValueNullFieldError.checkNotNull(
                 status, r'BrapiPostJson200Response', 'status'),
+            errors: _errors?.build(),
           );
     } catch (_) {
       late String _$failedField;
       try {
-        _$failedField = 'errors';
-        _errors?.build();
         _$failedField = 'result';
         result.build();
+
+        _$failedField = 'errors';
+        _errors?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
             r'BrapiPostJson200Response', _$failedField, e.toString());

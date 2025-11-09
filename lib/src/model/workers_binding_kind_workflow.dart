@@ -12,24 +12,16 @@ part 'workers_binding_kind_workflow.g.dart';
 /// WorkersBindingKindWorkflow
 ///
 /// Properties:
-/// * [className] - Class name of the Workflow. Should only be provided if the Workflow belongs to this script.
 /// * [name] - A JavaScript variable name for the binding.
-/// * [scriptName] - Script name that contains the Workflow. If not provided, defaults to this script name.
 /// * [type] - The kind of resource that the binding provides.
 /// * [workflowName] - Name of the Workflow to bind to.
+/// * [className] - Class name of the Workflow. Should only be provided if the Workflow belongs to this script.
+/// * [scriptName] - Script name that contains the Workflow. If not provided, defaults to this script name.
 @BuiltValue()
 abstract class WorkersBindingKindWorkflow implements Built<WorkersBindingKindWorkflow, WorkersBindingKindWorkflowBuilder> {
-  /// Class name of the Workflow. Should only be provided if the Workflow belongs to this script.
-  @BuiltValueField(wireName: r'class_name')
-  String? get className;
-
   /// A JavaScript variable name for the binding.
   @BuiltValueField(wireName: r'name')
   String get name;
-
-  /// Script name that contains the Workflow. If not provided, defaults to this script name.
-  @BuiltValueField(wireName: r'script_name')
-  String? get scriptName;
 
   /// The kind of resource that the binding provides.
   @BuiltValueField(wireName: r'type')
@@ -39,6 +31,14 @@ abstract class WorkersBindingKindWorkflow implements Built<WorkersBindingKindWor
   /// Name of the Workflow to bind to.
   @BuiltValueField(wireName: r'workflow_name')
   String get workflowName;
+
+  /// Class name of the Workflow. Should only be provided if the Workflow belongs to this script.
+  @BuiltValueField(wireName: r'class_name')
+  String? get className;
+
+  /// Script name that contains the Workflow. If not provided, defaults to this script name.
+  @BuiltValueField(wireName: r'script_name')
+  String? get scriptName;
 
   WorkersBindingKindWorkflow._();
 
@@ -63,25 +63,11 @@ class _$WorkersBindingKindWorkflowSerializer implements PrimitiveSerializer<Work
     WorkersBindingKindWorkflow object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
-    if (object.className != null) {
-      yield r'class_name';
-      yield serializers.serialize(
-        object.className,
-        specifiedType: const FullType(String),
-      );
-    }
     yield r'name';
     yield serializers.serialize(
       object.name,
       specifiedType: const FullType(String),
     );
-    if (object.scriptName != null) {
-      yield r'script_name';
-      yield serializers.serialize(
-        object.scriptName,
-        specifiedType: const FullType(String),
-      );
-    }
     yield r'type';
     yield serializers.serialize(
       object.type,
@@ -92,6 +78,20 @@ class _$WorkersBindingKindWorkflowSerializer implements PrimitiveSerializer<Work
       object.workflowName,
       specifiedType: const FullType(String),
     );
+    if (object.className != null) {
+      yield r'class_name';
+      yield serializers.serialize(
+        object.className,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.scriptName != null) {
+      yield r'script_name';
+      yield serializers.serialize(
+        object.scriptName,
+        specifiedType: const FullType(String),
+      );
+    }
   }
 
   @override
@@ -115,26 +115,12 @@ class _$WorkersBindingKindWorkflowSerializer implements PrimitiveSerializer<Work
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'class_name':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.className = valueDes;
-          break;
         case r'name':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(String),
           ) as String;
           result.name = valueDes;
-          break;
-        case r'script_name':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.scriptName = valueDes;
           break;
         case r'type':
           final valueDes = serializers.deserialize(
@@ -149,6 +135,20 @@ class _$WorkersBindingKindWorkflowSerializer implements PrimitiveSerializer<Work
             specifiedType: const FullType(String),
           ) as String;
           result.workflowName = valueDes;
+          break;
+        case r'class_name':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.className = valueDes;
+          break;
+        case r'script_name':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.scriptName = valueDes;
           break;
         default:
           unhandled.add(key);

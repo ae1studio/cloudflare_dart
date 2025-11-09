@@ -8,6 +8,8 @@ part of 'post_tag_create_request.dart';
 
 class _$PostTagCreateRequest extends PostTagCreateRequest {
   @override
+  final String value;
+  @override
   final String? activeDuration;
   @override
   final String? actorCategory;
@@ -37,15 +39,14 @@ class _$PostTagCreateRequest extends PostTagCreateRequest {
   final num? priority;
   @override
   final String? sophisticationLevel;
-  @override
-  final String value;
 
   factory _$PostTagCreateRequest(
           [void Function(PostTagCreateRequestBuilder)? updates]) =>
       (PostTagCreateRequestBuilder()..update(updates))._build();
 
   _$PostTagCreateRequest._(
-      {this.activeDuration,
+      {required this.value,
+      this.activeDuration,
       this.actorCategory,
       this.aliasGroupNames,
       this.aliasGroupNamesInternal,
@@ -59,8 +60,7 @@ class _$PostTagCreateRequest extends PostTagCreateRequest {
       this.opsecLevel,
       this.originCountryISO,
       this.priority,
-      this.sophisticationLevel,
-      required this.value})
+      this.sophisticationLevel})
       : super._();
   @override
   PostTagCreateRequest rebuild(
@@ -75,6 +75,7 @@ class _$PostTagCreateRequest extends PostTagCreateRequest {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is PostTagCreateRequest &&
+        value == other.value &&
         activeDuration == other.activeDuration &&
         actorCategory == other.actorCategory &&
         aliasGroupNames == other.aliasGroupNames &&
@@ -89,13 +90,13 @@ class _$PostTagCreateRequest extends PostTagCreateRequest {
         opsecLevel == other.opsecLevel &&
         originCountryISO == other.originCountryISO &&
         priority == other.priority &&
-        sophisticationLevel == other.sophisticationLevel &&
-        value == other.value;
+        sophisticationLevel == other.sophisticationLevel;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
+    _$hash = $jc(_$hash, value.hashCode);
     _$hash = $jc(_$hash, activeDuration.hashCode);
     _$hash = $jc(_$hash, actorCategory.hashCode);
     _$hash = $jc(_$hash, aliasGroupNames.hashCode);
@@ -111,7 +112,6 @@ class _$PostTagCreateRequest extends PostTagCreateRequest {
     _$hash = $jc(_$hash, originCountryISO.hashCode);
     _$hash = $jc(_$hash, priority.hashCode);
     _$hash = $jc(_$hash, sophisticationLevel.hashCode);
-    _$hash = $jc(_$hash, value.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -119,6 +119,7 @@ class _$PostTagCreateRequest extends PostTagCreateRequest {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'PostTagCreateRequest')
+          ..add('value', value)
           ..add('activeDuration', activeDuration)
           ..add('actorCategory', actorCategory)
           ..add('aliasGroupNames', aliasGroupNames)
@@ -133,8 +134,7 @@ class _$PostTagCreateRequest extends PostTagCreateRequest {
           ..add('opsecLevel', opsecLevel)
           ..add('originCountryISO', originCountryISO)
           ..add('priority', priority)
-          ..add('sophisticationLevel', sophisticationLevel)
-          ..add('value', value))
+          ..add('sophisticationLevel', sophisticationLevel))
         .toString();
   }
 }
@@ -142,6 +142,10 @@ class _$PostTagCreateRequest extends PostTagCreateRequest {
 class PostTagCreateRequestBuilder
     implements Builder<PostTagCreateRequest, PostTagCreateRequestBuilder> {
   _$PostTagCreateRequest? _$v;
+
+  String? _value;
+  String? get value => _$this._value;
+  set value(String? value) => _$this._value = value;
 
   String? _activeDuration;
   String? get activeDuration => _$this._activeDuration;
@@ -217,10 +221,6 @@ class PostTagCreateRequestBuilder
   set sophisticationLevel(String? sophisticationLevel) =>
       _$this._sophisticationLevel = sophisticationLevel;
 
-  String? _value;
-  String? get value => _$this._value;
-  set value(String? value) => _$this._value = value;
-
   PostTagCreateRequestBuilder() {
     PostTagCreateRequest._defaults(this);
   }
@@ -228,6 +228,7 @@ class PostTagCreateRequestBuilder
   PostTagCreateRequestBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
+      _value = $v.value;
       _activeDuration = $v.activeDuration;
       _actorCategory = $v.actorCategory;
       _aliasGroupNames = $v.aliasGroupNames?.toBuilder();
@@ -243,7 +244,6 @@ class PostTagCreateRequestBuilder
       _originCountryISO = $v.originCountryISO;
       _priority = $v.priority;
       _sophisticationLevel = $v.sophisticationLevel;
-      _value = $v.value;
       _$v = null;
     }
     return this;
@@ -267,6 +267,8 @@ class PostTagCreateRequestBuilder
     try {
       _$result = _$v ??
           _$PostTagCreateRequest._(
+            value: BuiltValueNullFieldError.checkNotNull(
+                value, r'PostTagCreateRequest', 'value'),
             activeDuration: activeDuration,
             actorCategory: actorCategory,
             aliasGroupNames: _aliasGroupNames?.build(),
@@ -282,8 +284,6 @@ class PostTagCreateRequestBuilder
             originCountryISO: originCountryISO,
             priority: priority,
             sophisticationLevel: sophisticationLevel,
-            value: BuiltValueNullFieldError.checkNotNull(
-                value, r'PostTagCreateRequest', 'value'),
           );
     } catch (_) {
       late String _$failedField;

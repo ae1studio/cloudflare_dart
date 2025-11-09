@@ -12,23 +12,26 @@ part 'realtimekit_session_participant.g.dart';
 ///
 /// Properties:
 /// * [createdAt] 
-/// * [email] - Email of the session participant.
 /// * [id] - ID of the session participant
+/// * [updatedAt] 
+/// * [email] - Email of the session participant.
 /// * [name] - Name of the session participant.
 /// * [picture] - A URL pointing to a picture of the participant.
-/// * [updatedAt] 
 @BuiltValue()
 abstract class RealtimekitSessionParticipant implements Built<RealtimekitSessionParticipant, RealtimekitSessionParticipantBuilder> {
   @BuiltValueField(wireName: r'created_at')
   String get createdAt;
 
-  /// Email of the session participant.
-  @BuiltValueField(wireName: r'email')
-  String? get email;
-
   /// ID of the session participant
   @BuiltValueField(wireName: r'id')
   String get id;
+
+  @BuiltValueField(wireName: r'updated_at')
+  String get updatedAt;
+
+  /// Email of the session participant.
+  @BuiltValueField(wireName: r'email')
+  String? get email;
 
   /// Name of the session participant.
   @BuiltValueField(wireName: r'name')
@@ -37,9 +40,6 @@ abstract class RealtimekitSessionParticipant implements Built<RealtimekitSession
   /// A URL pointing to a picture of the participant.
   @BuiltValueField(wireName: r'picture')
   String? get picture;
-
-  @BuiltValueField(wireName: r'updated_at')
-  String get updatedAt;
 
   RealtimekitSessionParticipant._();
 
@@ -69,6 +69,16 @@ class _$RealtimekitSessionParticipantSerializer implements PrimitiveSerializer<R
       object.createdAt,
       specifiedType: const FullType(String),
     );
+    yield r'id';
+    yield serializers.serialize(
+      object.id,
+      specifiedType: const FullType(String),
+    );
+    yield r'updated_at';
+    yield serializers.serialize(
+      object.updatedAt,
+      specifiedType: const FullType(String),
+    );
     if (object.email != null) {
       yield r'email';
       yield serializers.serialize(
@@ -76,11 +86,6 @@ class _$RealtimekitSessionParticipantSerializer implements PrimitiveSerializer<R
         specifiedType: const FullType(String),
       );
     }
-    yield r'id';
-    yield serializers.serialize(
-      object.id,
-      specifiedType: const FullType(String),
-    );
     if (object.name != null) {
       yield r'name';
       yield serializers.serialize(
@@ -95,11 +100,6 @@ class _$RealtimekitSessionParticipantSerializer implements PrimitiveSerializer<R
         specifiedType: const FullType(String),
       );
     }
-    yield r'updated_at';
-    yield serializers.serialize(
-      object.updatedAt,
-      specifiedType: const FullType(String),
-    );
   }
 
   @override
@@ -130,19 +130,26 @@ class _$RealtimekitSessionParticipantSerializer implements PrimitiveSerializer<R
           ) as String;
           result.createdAt = valueDes;
           break;
-        case r'email':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.email = valueDes;
-          break;
         case r'id':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(String),
           ) as String;
           result.id = valueDes;
+          break;
+        case r'updated_at':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.updatedAt = valueDes;
+          break;
+        case r'email':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.email = valueDes;
           break;
         case r'name':
           final valueDes = serializers.deserialize(
@@ -157,13 +164,6 @@ class _$RealtimekitSessionParticipantSerializer implements PrimitiveSerializer<R
             specifiedType: const FullType(String),
           ) as String;
           result.picture = valueDes;
-          break;
-        case r'updated_at':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.updatedAt = valueDes;
           break;
         default:
           unhandled.add(key);

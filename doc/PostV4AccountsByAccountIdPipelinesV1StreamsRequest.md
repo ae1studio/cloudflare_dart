@@ -8,9 +8,9 @@ import 'package:cloudflare_dart/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**name** | **String** | Specifies the name of the Stream. | 
 **format** | [**CloudflarePipelinesFormat**](CloudflarePipelinesFormat.md) |  | [optional] 
 **http** | [**PostV4AccountsByAccountIdPipelinesV1StreamsRequestHttp**](PostV4AccountsByAccountIdPipelinesV1StreamsRequestHttp.md) |  | [optional] 
-**name** | **String** | Specifies the name of the Stream. | 
 **schema** | [**CloudflarePipelinesConnectionSchema**](CloudflarePipelinesConnectionSchema.md) |  | [optional] 
 **workerBinding** | [**PostV4AccountsByAccountIdPipelinesV1StreamsRequestWorkerBinding**](PostV4AccountsByAccountIdPipelinesV1StreamsRequestWorkerBinding.md) |  | [optional] 
 

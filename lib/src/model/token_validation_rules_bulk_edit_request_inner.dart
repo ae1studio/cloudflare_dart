@@ -15,6 +15,7 @@ part 'token_validation_rules_bulk_edit_request_inner.g.dart';
 /// TokenValidationRulesBulkEditRequestInner
 ///
 /// Properties:
+/// * [id] - Rule ID this patch applies to
 /// * [action] 
 /// * [description] - A human-readable description that gives more details than `title`.
 /// * [enabled] - Toggle rule on or off.
@@ -22,7 +23,6 @@ part 'token_validation_rules_bulk_edit_request_inner.g.dart';
 /// * [selector] 
 /// * [title] - A human-readable name for the rule.
 /// * [position] 
-/// * [id] - Rule ID this patch applies to
 @BuiltValue()
 abstract class TokenValidationRulesBulkEditRequestInner implements ApiShieldEditSingleRuleRequest, Built<TokenValidationRulesBulkEditRequestInner, TokenValidationRulesBulkEditRequestInnerBuilder> {
   /// Rule ID this patch applies to

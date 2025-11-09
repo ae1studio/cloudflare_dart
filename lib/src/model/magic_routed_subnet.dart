@@ -12,14 +12,11 @@ part 'magic_routed_subnet.g.dart';
 /// MagicRoutedSubnet
 ///
 /// Properties:
-/// * [nat] 
 /// * [nextHop] - A valid IPv4 address.
 /// * [prefix] - A valid CIDR notation representing an IP range.
+/// * [nat] 
 @BuiltValue()
 abstract class MagicRoutedSubnet implements Built<MagicRoutedSubnet, MagicRoutedSubnetBuilder> {
-  @BuiltValueField(wireName: r'nat')
-  MagicNat? get nat;
-
   /// A valid IPv4 address.
   @BuiltValueField(wireName: r'next_hop')
   String get nextHop;
@@ -27,6 +24,9 @@ abstract class MagicRoutedSubnet implements Built<MagicRoutedSubnet, MagicRouted
   /// A valid CIDR notation representing an IP range.
   @BuiltValueField(wireName: r'prefix')
   String get prefix;
+
+  @BuiltValueField(wireName: r'nat')
+  MagicNat? get nat;
 
   MagicRoutedSubnet._();
 
@@ -51,13 +51,6 @@ class _$MagicRoutedSubnetSerializer implements PrimitiveSerializer<MagicRoutedSu
     MagicRoutedSubnet object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
-    if (object.nat != null) {
-      yield r'nat';
-      yield serializers.serialize(
-        object.nat,
-        specifiedType: const FullType(MagicNat),
-      );
-    }
     yield r'next_hop';
     yield serializers.serialize(
       object.nextHop,
@@ -68,6 +61,13 @@ class _$MagicRoutedSubnetSerializer implements PrimitiveSerializer<MagicRoutedSu
       object.prefix,
       specifiedType: const FullType(String),
     );
+    if (object.nat != null) {
+      yield r'nat';
+      yield serializers.serialize(
+        object.nat,
+        specifiedType: const FullType(MagicNat),
+      );
+    }
   }
 
   @override
@@ -91,13 +91,6 @@ class _$MagicRoutedSubnetSerializer implements PrimitiveSerializer<MagicRoutedSu
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'nat':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(MagicNat),
-          ) as MagicNat;
-          result.nat.replace(valueDes);
-          break;
         case r'next_hop':
           final valueDes = serializers.deserialize(
             value,
@@ -111,6 +104,13 @@ class _$MagicRoutedSubnetSerializer implements PrimitiveSerializer<MagicRoutedSu
             specifiedType: const FullType(String),
           ) as String;
           result.prefix = valueDes;
+          break;
+        case r'nat':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(MagicNat),
+          ) as MagicNat;
+          result.nat.replace(valueDes);
           break;
         default:
           unhandled.add(key);

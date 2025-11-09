@@ -54,19 +54,19 @@ class _$ZonesCiphersIdEnumSerializer
 
 class _$ZonesCiphers extends ZonesCiphers {
   @override
-  final bool? editable;
-  @override
   final String id;
   @override
-  final DateTime? modifiedOn;
-  @override
   final JsonObject? value;
+  @override
+  final bool? editable;
+  @override
+  final DateTime? modifiedOn;
 
   factory _$ZonesCiphers([void Function(ZonesCiphersBuilder)? updates]) =>
       (ZonesCiphersBuilder()..update(updates))._build();
 
   _$ZonesCiphers._(
-      {this.editable, required this.id, this.modifiedOn, this.value})
+      {required this.id, this.value, this.editable, this.modifiedOn})
       : super._();
   @override
   ZonesCiphers rebuild(void Function(ZonesCiphersBuilder) updates) =>
@@ -79,19 +79,19 @@ class _$ZonesCiphers extends ZonesCiphers {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is ZonesCiphers &&
-        editable == other.editable &&
         id == other.id &&
-        modifiedOn == other.modifiedOn &&
-        value == other.value;
+        value == other.value &&
+        editable == other.editable &&
+        modifiedOn == other.modifiedOn;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, editable.hashCode);
     _$hash = $jc(_$hash, id.hashCode);
-    _$hash = $jc(_$hash, modifiedOn.hashCode);
     _$hash = $jc(_$hash, value.hashCode);
+    _$hash = $jc(_$hash, editable.hashCode);
+    _$hash = $jc(_$hash, modifiedOn.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -99,10 +99,10 @@ class _$ZonesCiphers extends ZonesCiphers {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'ZonesCiphers')
-          ..add('editable', editable)
           ..add('id', id)
-          ..add('modifiedOn', modifiedOn)
-          ..add('value', value))
+          ..add('value', value)
+          ..add('editable', editable)
+          ..add('modifiedOn', modifiedOn))
         .toString();
   }
 }
@@ -111,22 +111,22 @@ class ZonesCiphersBuilder
     implements Builder<ZonesCiphers, ZonesCiphersBuilder>, ZonesBaseBuilder {
   _$ZonesCiphers? _$v;
 
-  bool? _editable;
-  bool? get editable => _$this._editable;
-  set editable(covariant bool? editable) => _$this._editable = editable;
-
   String? _id;
   String? get id => _$this._id;
   set id(covariant String? id) => _$this._id = id;
+
+  JsonObject? _value;
+  JsonObject? get value => _$this._value;
+  set value(covariant JsonObject? value) => _$this._value = value;
+
+  bool? _editable;
+  bool? get editable => _$this._editable;
+  set editable(covariant bool? editable) => _$this._editable = editable;
 
   DateTime? _modifiedOn;
   DateTime? get modifiedOn => _$this._modifiedOn;
   set modifiedOn(covariant DateTime? modifiedOn) =>
       _$this._modifiedOn = modifiedOn;
-
-  JsonObject? _value;
-  JsonObject? get value => _$this._value;
-  set value(covariant JsonObject? value) => _$this._value = value;
 
   ZonesCiphersBuilder() {
     ZonesCiphers._defaults(this);
@@ -135,10 +135,10 @@ class ZonesCiphersBuilder
   ZonesCiphersBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _editable = $v.editable;
       _id = $v.id;
-      _modifiedOn = $v.modifiedOn;
       _value = $v.value;
+      _editable = $v.editable;
+      _modifiedOn = $v.modifiedOn;
       _$v = null;
     }
     return this;
@@ -160,10 +160,10 @@ class ZonesCiphersBuilder
   _$ZonesCiphers _build() {
     final _$result = _$v ??
         _$ZonesCiphers._(
-          editable: editable,
           id: BuiltValueNullFieldError.checkNotNull(id, r'ZonesCiphers', 'id'),
-          modifiedOn: modifiedOn,
           value: value,
+          editable: editable,
+          modifiedOn: modifiedOn,
         );
     replace(_$result);
     return _$result;

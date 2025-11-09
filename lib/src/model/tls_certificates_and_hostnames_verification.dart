@@ -16,9 +16,9 @@ part 'tls_certificates_and_hostnames_verification.g.dart';
 /// TlsCertificatesAndHostnamesVerification
 ///
 /// Properties:
+/// * [certificateStatus] 
 /// * [brandCheck] - Certificate Authority is manually reviewing the order.
 /// * [certPackUuid] - Certificate Pack UUID.
-/// * [certificateStatus] 
 /// * [signature] 
 /// * [validationMethod] 
 /// * [verificationInfo] 
@@ -26,6 +26,10 @@ part 'tls_certificates_and_hostnames_verification.g.dart';
 /// * [verificationType] 
 @BuiltValue()
 abstract class TlsCertificatesAndHostnamesVerification implements Built<TlsCertificatesAndHostnamesVerification, TlsCertificatesAndHostnamesVerificationBuilder> {
+  @BuiltValueField(wireName: r'certificate_status')
+  TlsCertificatesAndHostnamesCertificateStatus get certificateStatus;
+  // enum certificateStatusEnum {  initializing,  authorizing,  active,  expired,  issuing,  timing_out,  pending_deployment,  };
+
   /// Certificate Authority is manually reviewing the order.
   @BuiltValueField(wireName: r'brand_check')
   bool? get brandCheck;
@@ -33,10 +37,6 @@ abstract class TlsCertificatesAndHostnamesVerification implements Built<TlsCerti
   /// Certificate Pack UUID.
   @BuiltValueField(wireName: r'cert_pack_uuid')
   String? get certPackUuid;
-
-  @BuiltValueField(wireName: r'certificate_status')
-  TlsCertificatesAndHostnamesCertificateStatus get certificateStatus;
-  // enum certificateStatusEnum {  initializing,  authorizing,  active,  expired,  issuing,  timing_out,  pending_deployment,  };
 
   @BuiltValueField(wireName: r'signature')
   TlsCertificatesAndHostnamesSchemasSignature? get signature;
@@ -80,6 +80,11 @@ class _$TlsCertificatesAndHostnamesVerificationSerializer implements PrimitiveSe
     TlsCertificatesAndHostnamesVerification object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    yield r'certificate_status';
+    yield serializers.serialize(
+      object.certificateStatus,
+      specifiedType: const FullType(TlsCertificatesAndHostnamesCertificateStatus),
+    );
     if (object.brandCheck != null) {
       yield r'brand_check';
       yield serializers.serialize(
@@ -94,11 +99,6 @@ class _$TlsCertificatesAndHostnamesVerificationSerializer implements PrimitiveSe
         specifiedType: const FullType(String),
       );
     }
-    yield r'certificate_status';
-    yield serializers.serialize(
-      object.certificateStatus,
-      specifiedType: const FullType(TlsCertificatesAndHostnamesCertificateStatus),
-    );
     if (object.signature != null) {
       yield r'signature';
       yield serializers.serialize(
@@ -157,6 +157,13 @@ class _$TlsCertificatesAndHostnamesVerificationSerializer implements PrimitiveSe
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
+        case r'certificate_status':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(TlsCertificatesAndHostnamesCertificateStatus),
+          ) as TlsCertificatesAndHostnamesCertificateStatus;
+          result.certificateStatus = valueDes;
+          break;
         case r'brand_check':
           final valueDes = serializers.deserialize(
             value,
@@ -170,13 +177,6 @@ class _$TlsCertificatesAndHostnamesVerificationSerializer implements PrimitiveSe
             specifiedType: const FullType(String),
           ) as String;
           result.certPackUuid = valueDes;
-          break;
-        case r'certificate_status':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(TlsCertificatesAndHostnamesCertificateStatus),
-          ) as TlsCertificatesAndHostnamesCertificateStatus;
-          result.certificateStatus = valueDes;
           break;
         case r'signature':
           final valueDes = serializers.deserialize(

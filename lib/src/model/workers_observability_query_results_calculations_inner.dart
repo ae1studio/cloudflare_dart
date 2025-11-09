@@ -15,22 +15,22 @@ part 'workers_observability_query_results_calculations_inner.g.dart';
 ///
 /// Properties:
 /// * [aggregates] 
-/// * [alias] 
 /// * [calculation] 
 /// * [series] 
+/// * [alias] 
 @BuiltValue()
 abstract class WorkersObservabilityQueryResultsCalculationsInner implements Built<WorkersObservabilityQueryResultsCalculationsInner, WorkersObservabilityQueryResultsCalculationsInnerBuilder> {
   @BuiltValueField(wireName: r'aggregates')
   BuiltList<WorkersObservabilityQueryResultsCalculationsInnerAggregatesInner> get aggregates;
-
-  @BuiltValueField(wireName: r'alias')
-  String? get alias;
 
   @BuiltValueField(wireName: r'calculation')
   String get calculation;
 
   @BuiltValueField(wireName: r'series')
   BuiltList<WorkersObservabilityQueryResultsCalculationsInnerSeriesInner> get series;
+
+  @BuiltValueField(wireName: r'alias')
+  String? get alias;
 
   WorkersObservabilityQueryResultsCalculationsInner._();
 
@@ -60,13 +60,6 @@ class _$WorkersObservabilityQueryResultsCalculationsInnerSerializer implements P
       object.aggregates,
       specifiedType: const FullType(BuiltList, [FullType(WorkersObservabilityQueryResultsCalculationsInnerAggregatesInner)]),
     );
-    if (object.alias != null) {
-      yield r'alias';
-      yield serializers.serialize(
-        object.alias,
-        specifiedType: const FullType(String),
-      );
-    }
     yield r'calculation';
     yield serializers.serialize(
       object.calculation,
@@ -77,6 +70,13 @@ class _$WorkersObservabilityQueryResultsCalculationsInnerSerializer implements P
       object.series,
       specifiedType: const FullType(BuiltList, [FullType(WorkersObservabilityQueryResultsCalculationsInnerSeriesInner)]),
     );
+    if (object.alias != null) {
+      yield r'alias';
+      yield serializers.serialize(
+        object.alias,
+        specifiedType: const FullType(String),
+      );
+    }
   }
 
   @override
@@ -107,13 +107,6 @@ class _$WorkersObservabilityQueryResultsCalculationsInnerSerializer implements P
           ) as BuiltList<WorkersObservabilityQueryResultsCalculationsInnerAggregatesInner>;
           result.aggregates.replace(valueDes);
           break;
-        case r'alias':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.alias = valueDes;
-          break;
         case r'calculation':
           final valueDes = serializers.deserialize(
             value,
@@ -127,6 +120,13 @@ class _$WorkersObservabilityQueryResultsCalculationsInnerSerializer implements P
             specifiedType: const FullType(BuiltList, [FullType(WorkersObservabilityQueryResultsCalculationsInnerSeriesInner)]),
           ) as BuiltList<WorkersObservabilityQueryResultsCalculationsInnerSeriesInner>;
           result.series.replace(valueDes);
+          break;
+        case r'alias':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.alias = valueDes;
           break;
         default:
           unhandled.add(key);

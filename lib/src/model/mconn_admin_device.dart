@@ -12,18 +12,18 @@ part 'mconn_admin_device.g.dart';
 ///
 /// Properties:
 /// * [cryptKey] 
+/// * [id] 
+/// * [lastUpdated] 
+/// * [metadata] 
 /// * [cryptKeyRotationFinishedAt] 
 /// * [cryptKeyRotationOutput] 
 /// * [cryptKeyRotationStartedAt] 
 /// * [cryptKeyRotationStatusCode] 
 /// * [deviceType] 
 /// * [ekCert] 
-/// * [id] 
 /// * [imagedAt] 
 /// * [lastCryptKey] 
-/// * [lastUpdated] 
 /// * [licenseKeySha256] 
-/// * [metadata] 
 /// * [pkiRotationFinishedAt] 
 /// * [pkiRotationOutput] 
 /// * [pkiRotationStartedAt] 
@@ -33,6 +33,15 @@ part 'mconn_admin_device.g.dart';
 abstract class MconnAdminDevice implements Built<MconnAdminDevice, MconnAdminDeviceBuilder> {
   @BuiltValueField(wireName: r'crypt_key')
   String get cryptKey;
+
+  @BuiltValueField(wireName: r'id')
+  String get id;
+
+  @BuiltValueField(wireName: r'last_updated')
+  String get lastUpdated;
+
+  @BuiltValueField(wireName: r'metadata')
+  String get metadata;
 
   @BuiltValueField(wireName: r'crypt_key_rotation_finished_at')
   String? get cryptKeyRotationFinishedAt;
@@ -52,23 +61,14 @@ abstract class MconnAdminDevice implements Built<MconnAdminDevice, MconnAdminDev
   @BuiltValueField(wireName: r'ek_cert')
   String? get ekCert;
 
-  @BuiltValueField(wireName: r'id')
-  String get id;
-
   @BuiltValueField(wireName: r'imaged_at')
   String? get imagedAt;
 
   @BuiltValueField(wireName: r'last_crypt_key')
   String? get lastCryptKey;
 
-  @BuiltValueField(wireName: r'last_updated')
-  String get lastUpdated;
-
   @BuiltValueField(wireName: r'license_key_sha256')
   String? get licenseKeySha256;
-
-  @BuiltValueField(wireName: r'metadata')
-  String get metadata;
 
   @BuiltValueField(wireName: r'pki_rotation_finished_at')
   String? get pkiRotationFinishedAt;
@@ -113,6 +113,21 @@ class _$MconnAdminDeviceSerializer implements PrimitiveSerializer<MconnAdminDevi
       object.cryptKey,
       specifiedType: const FullType(String),
     );
+    yield r'id';
+    yield serializers.serialize(
+      object.id,
+      specifiedType: const FullType(String),
+    );
+    yield r'last_updated';
+    yield serializers.serialize(
+      object.lastUpdated,
+      specifiedType: const FullType(String),
+    );
+    yield r'metadata';
+    yield serializers.serialize(
+      object.metadata,
+      specifiedType: const FullType(String),
+    );
     if (object.cryptKeyRotationFinishedAt != null) {
       yield r'crypt_key_rotation_finished_at';
       yield serializers.serialize(
@@ -155,11 +170,6 @@ class _$MconnAdminDeviceSerializer implements PrimitiveSerializer<MconnAdminDevi
         specifiedType: const FullType(String),
       );
     }
-    yield r'id';
-    yield serializers.serialize(
-      object.id,
-      specifiedType: const FullType(String),
-    );
     if (object.imagedAt != null) {
       yield r'imaged_at';
       yield serializers.serialize(
@@ -174,11 +184,6 @@ class _$MconnAdminDeviceSerializer implements PrimitiveSerializer<MconnAdminDevi
         specifiedType: const FullType(String),
       );
     }
-    yield r'last_updated';
-    yield serializers.serialize(
-      object.lastUpdated,
-      specifiedType: const FullType(String),
-    );
     if (object.licenseKeySha256 != null) {
       yield r'license_key_sha256';
       yield serializers.serialize(
@@ -186,11 +191,6 @@ class _$MconnAdminDeviceSerializer implements PrimitiveSerializer<MconnAdminDevi
         specifiedType: const FullType(String),
       );
     }
-    yield r'metadata';
-    yield serializers.serialize(
-      object.metadata,
-      specifiedType: const FullType(String),
-    );
     if (object.pkiRotationFinishedAt != null) {
       yield r'pki_rotation_finished_at';
       yield serializers.serialize(
@@ -256,6 +256,27 @@ class _$MconnAdminDeviceSerializer implements PrimitiveSerializer<MconnAdminDevi
           ) as String;
           result.cryptKey = valueDes;
           break;
+        case r'id':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.id = valueDes;
+          break;
+        case r'last_updated':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.lastUpdated = valueDes;
+          break;
+        case r'metadata':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.metadata = valueDes;
+          break;
         case r'crypt_key_rotation_finished_at':
           final valueDes = serializers.deserialize(
             value,
@@ -298,13 +319,6 @@ class _$MconnAdminDeviceSerializer implements PrimitiveSerializer<MconnAdminDevi
           ) as String;
           result.ekCert = valueDes;
           break;
-        case r'id':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.id = valueDes;
-          break;
         case r'imaged_at':
           final valueDes = serializers.deserialize(
             value,
@@ -319,26 +333,12 @@ class _$MconnAdminDeviceSerializer implements PrimitiveSerializer<MconnAdminDevi
           ) as String;
           result.lastCryptKey = valueDes;
           break;
-        case r'last_updated':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.lastUpdated = valueDes;
-          break;
         case r'license_key_sha256':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(String),
           ) as String;
           result.licenseKeySha256 = valueDes;
-          break;
-        case r'metadata':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.metadata = valueDes;
           break;
         case r'pki_rotation_finished_at':
           final valueDes = serializers.deserialize(

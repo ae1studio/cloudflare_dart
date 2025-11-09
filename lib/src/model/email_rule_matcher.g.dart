@@ -6,23 +6,6 @@ part of 'email_rule_matcher.dart';
 // BuiltValueGenerator
 // **************************************************************************
 
-const EmailRuleMatcherFieldEnum _$emailRuleMatcherFieldEnum_to =
-    const EmailRuleMatcherFieldEnum._('to');
-
-EmailRuleMatcherFieldEnum _$emailRuleMatcherFieldEnumValueOf(String name) {
-  switch (name) {
-    case 'to':
-      return _$emailRuleMatcherFieldEnum_to;
-    default:
-      throw ArgumentError(name);
-  }
-}
-
-final BuiltSet<EmailRuleMatcherFieldEnum> _$emailRuleMatcherFieldEnumValues =
-    BuiltSet<EmailRuleMatcherFieldEnum>(const <EmailRuleMatcherFieldEnum>[
-  _$emailRuleMatcherFieldEnum_to,
-]);
-
 const EmailRuleMatcherTypeEnum _$emailRuleMatcherTypeEnum_all =
     const EmailRuleMatcherTypeEnum._('all');
 const EmailRuleMatcherTypeEnum _$emailRuleMatcherTypeEnum_literal =
@@ -45,37 +28,27 @@ final BuiltSet<EmailRuleMatcherTypeEnum> _$emailRuleMatcherTypeEnumValues =
   _$emailRuleMatcherTypeEnum_literal,
 ]);
 
-Serializer<EmailRuleMatcherFieldEnum> _$emailRuleMatcherFieldEnumSerializer =
-    _$EmailRuleMatcherFieldEnumSerializer();
+const EmailRuleMatcherFieldEnum _$emailRuleMatcherFieldEnum_to =
+    const EmailRuleMatcherFieldEnum._('to');
+
+EmailRuleMatcherFieldEnum _$emailRuleMatcherFieldEnumValueOf(String name) {
+  switch (name) {
+    case 'to':
+      return _$emailRuleMatcherFieldEnum_to;
+    default:
+      throw ArgumentError(name);
+  }
+}
+
+final BuiltSet<EmailRuleMatcherFieldEnum> _$emailRuleMatcherFieldEnumValues =
+    BuiltSet<EmailRuleMatcherFieldEnum>(const <EmailRuleMatcherFieldEnum>[
+  _$emailRuleMatcherFieldEnum_to,
+]);
+
 Serializer<EmailRuleMatcherTypeEnum> _$emailRuleMatcherTypeEnumSerializer =
     _$EmailRuleMatcherTypeEnumSerializer();
-
-class _$EmailRuleMatcherFieldEnumSerializer
-    implements PrimitiveSerializer<EmailRuleMatcherFieldEnum> {
-  static const Map<String, Object> _toWire = const <String, Object>{
-    'to': 'to',
-  };
-  static const Map<Object, String> _fromWire = const <Object, String>{
-    'to': 'to',
-  };
-
-  @override
-  final Iterable<Type> types = const <Type>[EmailRuleMatcherFieldEnum];
-  @override
-  final String wireName = 'EmailRuleMatcherFieldEnum';
-
-  @override
-  Object serialize(Serializers serializers, EmailRuleMatcherFieldEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
-
-  @override
-  EmailRuleMatcherFieldEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      EmailRuleMatcherFieldEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
-}
+Serializer<EmailRuleMatcherFieldEnum> _$emailRuleMatcherFieldEnumSerializer =
+    _$EmailRuleMatcherFieldEnumSerializer();
 
 class _$EmailRuleMatcherTypeEnumSerializer
     implements PrimitiveSerializer<EmailRuleMatcherTypeEnum> {
@@ -106,11 +79,38 @@ class _$EmailRuleMatcherTypeEnumSerializer
           _fromWire[serialized] ?? (serialized is String ? serialized : ''));
 }
 
+class _$EmailRuleMatcherFieldEnumSerializer
+    implements PrimitiveSerializer<EmailRuleMatcherFieldEnum> {
+  static const Map<String, Object> _toWire = const <String, Object>{
+    'to': 'to',
+  };
+  static const Map<Object, String> _fromWire = const <Object, String>{
+    'to': 'to',
+  };
+
+  @override
+  final Iterable<Type> types = const <Type>[EmailRuleMatcherFieldEnum];
+  @override
+  final String wireName = 'EmailRuleMatcherFieldEnum';
+
+  @override
+  Object serialize(Serializers serializers, EmailRuleMatcherFieldEnum object,
+          {FullType specifiedType = FullType.unspecified}) =>
+      _toWire[object.name] ?? object.name;
+
+  @override
+  EmailRuleMatcherFieldEnum deserialize(
+          Serializers serializers, Object serialized,
+          {FullType specifiedType = FullType.unspecified}) =>
+      EmailRuleMatcherFieldEnum.valueOf(
+          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+}
+
 class _$EmailRuleMatcher extends EmailRuleMatcher {
   @override
-  final EmailRuleMatcherFieldEnum? field;
-  @override
   final EmailRuleMatcherTypeEnum type;
+  @override
+  final EmailRuleMatcherFieldEnum? field;
   @override
   final String? value;
 
@@ -118,7 +118,7 @@ class _$EmailRuleMatcher extends EmailRuleMatcher {
           [void Function(EmailRuleMatcherBuilder)? updates]) =>
       (EmailRuleMatcherBuilder()..update(updates))._build();
 
-  _$EmailRuleMatcher._({this.field, required this.type, this.value})
+  _$EmailRuleMatcher._({required this.type, this.field, this.value})
       : super._();
   @override
   EmailRuleMatcher rebuild(void Function(EmailRuleMatcherBuilder) updates) =>
@@ -132,16 +132,16 @@ class _$EmailRuleMatcher extends EmailRuleMatcher {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is EmailRuleMatcher &&
-        field == other.field &&
         type == other.type &&
+        field == other.field &&
         value == other.value;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, field.hashCode);
     _$hash = $jc(_$hash, type.hashCode);
+    _$hash = $jc(_$hash, field.hashCode);
     _$hash = $jc(_$hash, value.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
@@ -150,8 +150,8 @@ class _$EmailRuleMatcher extends EmailRuleMatcher {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'EmailRuleMatcher')
-          ..add('field', field)
           ..add('type', type)
+          ..add('field', field)
           ..add('value', value))
         .toString();
   }
@@ -161,13 +161,13 @@ class EmailRuleMatcherBuilder
     implements Builder<EmailRuleMatcher, EmailRuleMatcherBuilder> {
   _$EmailRuleMatcher? _$v;
 
-  EmailRuleMatcherFieldEnum? _field;
-  EmailRuleMatcherFieldEnum? get field => _$this._field;
-  set field(EmailRuleMatcherFieldEnum? field) => _$this._field = field;
-
   EmailRuleMatcherTypeEnum? _type;
   EmailRuleMatcherTypeEnum? get type => _$this._type;
   set type(EmailRuleMatcherTypeEnum? type) => _$this._type = type;
+
+  EmailRuleMatcherFieldEnum? _field;
+  EmailRuleMatcherFieldEnum? get field => _$this._field;
+  set field(EmailRuleMatcherFieldEnum? field) => _$this._field = field;
 
   String? _value;
   String? get value => _$this._value;
@@ -180,8 +180,8 @@ class EmailRuleMatcherBuilder
   EmailRuleMatcherBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _field = $v.field;
       _type = $v.type;
+      _field = $v.field;
       _value = $v.value;
       _$v = null;
     }
@@ -204,9 +204,9 @@ class EmailRuleMatcherBuilder
   _$EmailRuleMatcher _build() {
     final _$result = _$v ??
         _$EmailRuleMatcher._(
-          field: field,
           type: BuiltValueNullFieldError.checkNotNull(
               type, r'EmailRuleMatcher', 'type'),
+          field: field,
           value: value,
         );
     replace(_$result);

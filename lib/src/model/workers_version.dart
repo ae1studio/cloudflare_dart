@@ -19,23 +19,35 @@ part 'workers_version.g.dart';
 /// WorkersVersion
 ///
 /// Properties:
+/// * [createdOn] - When the version was created.
+/// * [id] - Version identifier.
+/// * [number] - The integer version number, starting from one.
 /// * [annotations] 
 /// * [assets] 
 /// * [bindings] - List of bindings attached to a Worker. You can find more about bindings on our docs: https://developers.cloudflare.com/workers/configuration/multipart-upload-metadata/#bindings.
 /// * [compatibilityDate] - Date indicating targeted support in the Workers runtime. Backwards incompatible fixes to the runtime following this date will not affect this Worker.
 /// * [compatibilityFlags] - Flags that enable or disable certain features in the Workers runtime. Used to enable upcoming features or opt in or out of specific changes not included in a `compatibility_date`.
-/// * [createdOn] - When the version was created.
-/// * [id] - Version identifier.
 /// * [limits] 
 /// * [mainModule] - The name of the main module in the `modules` array (e.g. the name of the module that exports a `fetch` handler).
 /// * [migrations] 
 /// * [modules] - Code, sourcemaps, and other content used at runtime.  This includes [`_headers`](https://developers.cloudflare.com/workers/static-assets/headers/#custom-headers) and [`_redirects`](https://developers.cloudflare.com/workers/static-assets/redirects/) files used to configure  [Static Assets](https://developers.cloudflare.com/workers/static-assets/). `_headers` and `_redirects` files should be  included as modules named `_headers` and `_redirects` with content type `text/plain`. 
-/// * [number] - The integer version number, starting from one.
 /// * [placement] 
 /// * [source_] - The client used to create the version.
 /// * [usageModel] - Usage model for the version.
 @BuiltValue()
 abstract class WorkersVersion implements Built<WorkersVersion, WorkersVersionBuilder> {
+  /// When the version was created.
+  @BuiltValueField(wireName: r'created_on')
+  DateTime get createdOn;
+
+  /// Version identifier.
+  @BuiltValueField(wireName: r'id')
+  String get id;
+
+  /// The integer version number, starting from one.
+  @BuiltValueField(wireName: r'number')
+  int get number;
+
   @BuiltValueField(wireName: r'annotations')
   WorkersVersionAnnotations? get annotations;
 
@@ -54,14 +66,6 @@ abstract class WorkersVersion implements Built<WorkersVersion, WorkersVersionBui
   @BuiltValueField(wireName: r'compatibility_flags')
   BuiltList<String>? get compatibilityFlags;
 
-  /// When the version was created.
-  @BuiltValueField(wireName: r'created_on')
-  DateTime get createdOn;
-
-  /// Version identifier.
-  @BuiltValueField(wireName: r'id')
-  String get id;
-
   @BuiltValueField(wireName: r'limits')
   WorkersVersionLimits? get limits;
 
@@ -75,10 +79,6 @@ abstract class WorkersVersion implements Built<WorkersVersion, WorkersVersionBui
   /// Code, sourcemaps, and other content used at runtime.  This includes [`_headers`](https://developers.cloudflare.com/workers/static-assets/headers/#custom-headers) and [`_redirects`](https://developers.cloudflare.com/workers/static-assets/redirects/) files used to configure  [Static Assets](https://developers.cloudflare.com/workers/static-assets/). `_headers` and `_redirects` files should be  included as modules named `_headers` and `_redirects` with content type `text/plain`. 
   @BuiltValueField(wireName: r'modules')
   BuiltList<WorkersVersionModulesInner>? get modules;
-
-  /// The integer version number, starting from one.
-  @BuiltValueField(wireName: r'number')
-  int get number;
 
   @BuiltValueField(wireName: r'placement')
   WorkersVersionPlacement? get placement;
@@ -118,6 +118,21 @@ class _$WorkersVersionSerializer implements PrimitiveSerializer<WorkersVersion> 
     WorkersVersion object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    yield r'created_on';
+    yield serializers.serialize(
+      object.createdOn,
+      specifiedType: const FullType(DateTime),
+    );
+    yield r'id';
+    yield serializers.serialize(
+      object.id,
+      specifiedType: const FullType(String),
+    );
+    yield r'number';
+    yield serializers.serialize(
+      object.number,
+      specifiedType: const FullType(int),
+    );
     if (object.annotations != null) {
       yield r'annotations';
       yield serializers.serialize(
@@ -153,16 +168,6 @@ class _$WorkersVersionSerializer implements PrimitiveSerializer<WorkersVersion> 
         specifiedType: const FullType(BuiltList, [FullType(String)]),
       );
     }
-    yield r'created_on';
-    yield serializers.serialize(
-      object.createdOn,
-      specifiedType: const FullType(DateTime),
-    );
-    yield r'id';
-    yield serializers.serialize(
-      object.id,
-      specifiedType: const FullType(String),
-    );
     if (object.limits != null) {
       yield r'limits';
       yield serializers.serialize(
@@ -191,11 +196,6 @@ class _$WorkersVersionSerializer implements PrimitiveSerializer<WorkersVersion> 
         specifiedType: const FullType(BuiltList, [FullType(WorkersVersionModulesInner)]),
       );
     }
-    yield r'number';
-    yield serializers.serialize(
-      object.number,
-      specifiedType: const FullType(int),
-    );
     if (object.placement != null) {
       yield r'placement';
       yield serializers.serialize(
@@ -240,6 +240,27 @@ class _$WorkersVersionSerializer implements PrimitiveSerializer<WorkersVersion> 
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
+        case r'created_on':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(DateTime),
+          ) as DateTime;
+          result.createdOn = valueDes;
+          break;
+        case r'id':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.id = valueDes;
+          break;
+        case r'number':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(int),
+          ) as int;
+          result.number = valueDes;
+          break;
         case r'annotations':
           final valueDes = serializers.deserialize(
             value,
@@ -275,20 +296,6 @@ class _$WorkersVersionSerializer implements PrimitiveSerializer<WorkersVersion> 
           ) as BuiltList<String>;
           result.compatibilityFlags.replace(valueDes);
           break;
-        case r'created_on':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
-          result.createdOn = valueDes;
-          break;
-        case r'id':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.id = valueDes;
-          break;
         case r'limits':
           final valueDes = serializers.deserialize(
             value,
@@ -316,13 +323,6 @@ class _$WorkersVersionSerializer implements PrimitiveSerializer<WorkersVersion> 
             specifiedType: const FullType(BuiltList, [FullType(WorkersVersionModulesInner)]),
           ) as BuiltList<WorkersVersionModulesInner>;
           result.modules.replace(valueDes);
-          break;
-        case r'number':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
-          result.number = valueDes;
           break;
         case r'placement':
           final valueDes = serializers.deserialize(

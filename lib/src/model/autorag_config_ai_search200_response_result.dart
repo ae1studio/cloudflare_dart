@@ -13,14 +13,20 @@ part 'autorag_config_ai_search200_response_result.g.dart';
 /// AutoragConfigAiSearch200ResponseResult
 ///
 /// Properties:
+/// * [response] 
+/// * [searchQuery] 
 /// * [data] 
 /// * [hasMore] 
 /// * [nextPage] 
 /// * [object] 
-/// * [response] 
-/// * [searchQuery] 
 @BuiltValue()
 abstract class AutoragConfigAiSearch200ResponseResult implements Built<AutoragConfigAiSearch200ResponseResult, AutoragConfigAiSearch200ResponseResultBuilder> {
+  @BuiltValueField(wireName: r'response')
+  String get response;
+
+  @BuiltValueField(wireName: r'search_query')
+  String get searchQuery;
+
   @BuiltValueField(wireName: r'data')
   BuiltList<AutoragConfigAiSearch200ResponseResultDataInner>? get data;
 
@@ -32,12 +38,6 @@ abstract class AutoragConfigAiSearch200ResponseResult implements Built<AutoragCo
 
   @BuiltValueField(wireName: r'object')
   String? get object;
-
-  @BuiltValueField(wireName: r'response')
-  String get response;
-
-  @BuiltValueField(wireName: r'search_query')
-  String get searchQuery;
 
   AutoragConfigAiSearch200ResponseResult._();
 
@@ -63,6 +63,16 @@ class _$AutoragConfigAiSearch200ResponseResultSerializer implements PrimitiveSer
     AutoragConfigAiSearch200ResponseResult object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    yield r'response';
+    yield serializers.serialize(
+      object.response,
+      specifiedType: const FullType(String),
+    );
+    yield r'search_query';
+    yield serializers.serialize(
+      object.searchQuery,
+      specifiedType: const FullType(String),
+    );
     if (object.data != null) {
       yield r'data';
       yield serializers.serialize(
@@ -91,16 +101,6 @@ class _$AutoragConfigAiSearch200ResponseResultSerializer implements PrimitiveSer
         specifiedType: const FullType(String),
       );
     }
-    yield r'response';
-    yield serializers.serialize(
-      object.response,
-      specifiedType: const FullType(String),
-    );
-    yield r'search_query';
-    yield serializers.serialize(
-      object.searchQuery,
-      specifiedType: const FullType(String),
-    );
   }
 
   @override
@@ -124,6 +124,20 @@ class _$AutoragConfigAiSearch200ResponseResultSerializer implements PrimitiveSer
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
+        case r'response':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.response = valueDes;
+          break;
+        case r'search_query':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.searchQuery = valueDes;
+          break;
         case r'data':
           final valueDes = serializers.deserialize(
             value,
@@ -152,20 +166,6 @@ class _$AutoragConfigAiSearch200ResponseResultSerializer implements PrimitiveSer
             specifiedType: const FullType(String),
           ) as String;
           result.object = valueDes;
-          break;
-        case r'response':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.response = valueDes;
-          break;
-        case r'search_query':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.searchQuery = valueDes;
           break;
         default:
           unhandled.add(key);

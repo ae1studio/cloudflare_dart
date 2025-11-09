@@ -15,14 +15,18 @@ part 'iam_resource_group.g.dart';
 ///
 /// Properties:
 /// * [id] - Identifier of the resource group.
+/// * [scope] - The scope associated to the resource group
 /// * [meta] 
 /// * [name] - Name of the resource group.
-/// * [scope] - The scope associated to the resource group
 @BuiltValue()
 abstract class IamResourceGroup implements Built<IamResourceGroup, IamResourceGroupBuilder> {
   /// Identifier of the resource group.
   @BuiltValueField(wireName: r'id')
   String get id;
+
+  /// The scope associated to the resource group
+  @BuiltValueField(wireName: r'scope')
+  BuiltList<IamScope> get scope;
 
   @BuiltValueField(wireName: r'meta')
   IamResourceGroupMeta? get meta;
@@ -30,10 +34,6 @@ abstract class IamResourceGroup implements Built<IamResourceGroup, IamResourceGr
   /// Name of the resource group.
   @BuiltValueField(wireName: r'name')
   String? get name;
-
-  /// The scope associated to the resource group
-  @BuiltValueField(wireName: r'scope')
-  BuiltList<IamScope> get scope;
 
   IamResourceGroup._();
 
@@ -63,6 +63,11 @@ class _$IamResourceGroupSerializer implements PrimitiveSerializer<IamResourceGro
       object.id,
       specifiedType: const FullType(String),
     );
+    yield r'scope';
+    yield serializers.serialize(
+      object.scope,
+      specifiedType: const FullType(BuiltList, [FullType(IamScope)]),
+    );
     if (object.meta != null) {
       yield r'meta';
       yield serializers.serialize(
@@ -77,11 +82,6 @@ class _$IamResourceGroupSerializer implements PrimitiveSerializer<IamResourceGro
         specifiedType: const FullType(String),
       );
     }
-    yield r'scope';
-    yield serializers.serialize(
-      object.scope,
-      specifiedType: const FullType(BuiltList, [FullType(IamScope)]),
-    );
   }
 
   @override
@@ -112,6 +112,13 @@ class _$IamResourceGroupSerializer implements PrimitiveSerializer<IamResourceGro
           ) as String;
           result.id = valueDes;
           break;
+        case r'scope':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BuiltList, [FullType(IamScope)]),
+          ) as BuiltList<IamScope>;
+          result.scope.replace(valueDes);
+          break;
         case r'meta':
           final valueDes = serializers.deserialize(
             value,
@@ -125,13 +132,6 @@ class _$IamResourceGroupSerializer implements PrimitiveSerializer<IamResourceGro
             specifiedType: const FullType(String),
           ) as String;
           result.name = valueDes;
-          break;
-        case r'scope':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(IamScope)]),
-          ) as BuiltList<IamScope>;
-          result.scope.replace(valueDes);
           break;
         default:
           unhandled.add(key);

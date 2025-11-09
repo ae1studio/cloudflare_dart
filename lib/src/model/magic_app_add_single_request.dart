@@ -12,20 +12,12 @@ part 'magic_app_add_single_request.g.dart';
 /// MagicAppAddSingleRequest
 ///
 /// Properties:
-/// * [hostnames] - FQDNs to associate with traffic decisions.
-/// * [ipSubnets] - IPv4 CIDRs to associate with traffic decisions. (IPv6 CIDRs are currently unsupported)
 /// * [name] - Display name for the app.
 /// * [type] - Category of the app.
+/// * [hostnames] - FQDNs to associate with traffic decisions.
+/// * [ipSubnets] - IPv4 CIDRs to associate with traffic decisions. (IPv6 CIDRs are currently unsupported)
 @BuiltValue()
 abstract class MagicAppAddSingleRequest implements Built<MagicAppAddSingleRequest, MagicAppAddSingleRequestBuilder> {
-  /// FQDNs to associate with traffic decisions.
-  @BuiltValueField(wireName: r'hostnames')
-  BuiltList<String>? get hostnames;
-
-  /// IPv4 CIDRs to associate with traffic decisions. (IPv6 CIDRs are currently unsupported)
-  @BuiltValueField(wireName: r'ip_subnets')
-  BuiltList<String>? get ipSubnets;
-
   /// Display name for the app.
   @BuiltValueField(wireName: r'name')
   String get name;
@@ -33,6 +25,14 @@ abstract class MagicAppAddSingleRequest implements Built<MagicAppAddSingleReques
   /// Category of the app.
   @BuiltValueField(wireName: r'type')
   String get type;
+
+  /// FQDNs to associate with traffic decisions.
+  @BuiltValueField(wireName: r'hostnames')
+  BuiltList<String>? get hostnames;
+
+  /// IPv4 CIDRs to associate with traffic decisions. (IPv6 CIDRs are currently unsupported)
+  @BuiltValueField(wireName: r'ip_subnets')
+  BuiltList<String>? get ipSubnets;
 
   MagicAppAddSingleRequest._();
 
@@ -57,6 +57,16 @@ class _$MagicAppAddSingleRequestSerializer implements PrimitiveSerializer<MagicA
     MagicAppAddSingleRequest object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    yield r'name';
+    yield serializers.serialize(
+      object.name,
+      specifiedType: const FullType(String),
+    );
+    yield r'type';
+    yield serializers.serialize(
+      object.type,
+      specifiedType: const FullType(String),
+    );
     if (object.hostnames != null) {
       yield r'hostnames';
       yield serializers.serialize(
@@ -71,16 +81,6 @@ class _$MagicAppAddSingleRequestSerializer implements PrimitiveSerializer<MagicA
         specifiedType: const FullType(BuiltList, [FullType(String)]),
       );
     }
-    yield r'name';
-    yield serializers.serialize(
-      object.name,
-      specifiedType: const FullType(String),
-    );
-    yield r'type';
-    yield serializers.serialize(
-      object.type,
-      specifiedType: const FullType(String),
-    );
   }
 
   @override
@@ -104,20 +104,6 @@ class _$MagicAppAddSingleRequestSerializer implements PrimitiveSerializer<MagicA
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'hostnames':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>;
-          result.hostnames.replace(valueDes);
-          break;
-        case r'ip_subnets':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>;
-          result.ipSubnets.replace(valueDes);
-          break;
         case r'name':
           final valueDes = serializers.deserialize(
             value,
@@ -131,6 +117,20 @@ class _$MagicAppAddSingleRequestSerializer implements PrimitiveSerializer<MagicA
             specifiedType: const FullType(String),
           ) as String;
           result.type = valueDes;
+          break;
+        case r'hostnames':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BuiltList, [FullType(String)]),
+          ) as BuiltList<String>;
+          result.hostnames.replace(valueDes);
+          break;
+        case r'ip_subnets':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BuiltList, [FullType(String)]),
+          ) as BuiltList<String>;
+          result.ipSubnets.replace(valueDes);
           break;
         default:
           unhandled.add(key);

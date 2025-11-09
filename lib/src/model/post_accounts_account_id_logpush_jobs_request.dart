@@ -18,8 +18,8 @@ part 'post_accounts_account_id_logpush_jobs_request.g.dart';
 /// PostAccountsAccountIdLogpushJobsRequest
 ///
 /// Properties:
-/// * [dataset] 
 /// * [destinationConf] - Uniquely identifies a resource (such as an s3 bucket) where data. will be pushed. Additional configuration parameters supported by the destination may be included.
+/// * [dataset] 
 /// * [enabled] - Flag that indicates if the job is enabled.
 /// * [filter] - The filters to select the events to include and/or remove from your logs. For more information, refer to [Filters](https://developers.cloudflare.com/logs/reference/filters/).
 /// * [frequency] 
@@ -33,13 +33,13 @@ part 'post_accounts_account_id_logpush_jobs_request.g.dart';
 /// * [ownershipChallenge] - Ownership challenge token to prove destination ownership.
 @BuiltValue()
 abstract class PostAccountsAccountIdLogpushJobsRequest implements Built<PostAccountsAccountIdLogpushJobsRequest, PostAccountsAccountIdLogpushJobsRequestBuilder> {
-  @BuiltValueField(wireName: r'dataset')
-  LogpushDataset? get dataset;
-  // enum datasetEnum {  access_requests,  audit_logs,  audit_logs_v2,  biso_user_actions,  casb_findings,  device_posture_results,  dex_application_tests,  dex_device_state_events,  dlp_forensic_copies,  dns_firewall_logs,  dns_logs,  email_security_alerts,  firewall_events,  gateway_dns,  gateway_http,  gateway_network,  http_requests,  ipsec_logs,  magic_ids_detections,  nel_reports,  network_analytics_logs,  page_shield_events,  sinkhole_http_logs,  spectrum_events,  ssh_logs,  warp_config_changes,  warp_toggle_changes,  workers_trace_events,  zaraz_events,  zero_trust_network_sessions,  };
-
   /// Uniquely identifies a resource (such as an s3 bucket) where data. will be pushed. Additional configuration parameters supported by the destination may be included.
   @BuiltValueField(wireName: r'destination_conf')
   String get destinationConf;
+
+  @BuiltValueField(wireName: r'dataset')
+  LogpushDataset? get dataset;
+  // enum datasetEnum {  access_requests,  audit_logs,  audit_logs_v2,  biso_user_actions,  casb_findings,  device_posture_results,  dex_application_tests,  dex_device_state_events,  dlp_forensic_copies,  dns_firewall_logs,  dns_logs,  email_security_alerts,  firewall_events,  gateway_dns,  gateway_http,  gateway_network,  http_requests,  ipsec_logs,  magic_ids_detections,  nel_reports,  network_analytics_logs,  page_shield_events,  sinkhole_http_logs,  spectrum_events,  ssh_logs,  warp_config_changes,  warp_toggle_changes,  workers_trace_events,  zaraz_events,  zero_trust_network_sessions,  };
 
   /// Flag that indicates if the job is enabled.
   @BuiltValueField(wireName: r'enabled')
@@ -107,6 +107,11 @@ class _$PostAccountsAccountIdLogpushJobsRequestSerializer implements PrimitiveSe
     PostAccountsAccountIdLogpushJobsRequest object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    yield r'destination_conf';
+    yield serializers.serialize(
+      object.destinationConf,
+      specifiedType: const FullType(String),
+    );
     if (object.dataset != null) {
       yield r'dataset';
       yield serializers.serialize(
@@ -114,11 +119,6 @@ class _$PostAccountsAccountIdLogpushJobsRequestSerializer implements PrimitiveSe
         specifiedType: const FullType.nullable(LogpushDataset),
       );
     }
-    yield r'destination_conf';
-    yield serializers.serialize(
-      object.destinationConf,
-      specifiedType: const FullType(String),
-    );
     if (object.enabled != null) {
       yield r'enabled';
       yield serializers.serialize(
@@ -219,6 +219,13 @@ class _$PostAccountsAccountIdLogpushJobsRequestSerializer implements PrimitiveSe
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
+        case r'destination_conf':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.destinationConf = valueDes;
+          break;
         case r'dataset':
           final valueDes = serializers.deserialize(
             value,
@@ -226,13 +233,6 @@ class _$PostAccountsAccountIdLogpushJobsRequestSerializer implements PrimitiveSe
           ) as LogpushDataset?;
           if (valueDes == null) continue;
           result.dataset = valueDes;
-          break;
-        case r'destination_conf':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.destinationConf = valueDes;
           break;
         case r'enabled':
           final valueDes = serializers.deserialize(

@@ -8,11 +8,11 @@ import 'package:cloudflare_dart/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**prompt** | **String** | The input text prompt for the model to generate a response. | 
 **frequencyPenalty** | **num** | Decreases the likelihood of the model repeating the same lines verbatim. | [optional] 
 **guidedJson** | [**JsonObject**](.md) | JSON schema that should be fulfilled for the response. | [optional] 
 **maxTokens** | **int** | The maximum number of tokens to generate in the response. | [optional] [default to 256]
 **presencePenalty** | **num** | Increases the likelihood of the model introducing new topics. | [optional] 
-**prompt** | **String** | The input text prompt for the model to generate a response. | 
 **raw** | **bool** | If true, a chat template is not applied and you must adhere to the specific model's expected formatting. | [optional] [default to false]
 **repetitionPenalty** | **num** | Penalty for repeated tokens; higher values discourage repetition. | [optional] 
 **seed** | **int** | Random seed for reproducibility of the generation. | [optional] 

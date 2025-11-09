@@ -13,20 +13,13 @@ part 'mconn_snapshot_interface.g.dart';
 /// Snapshot Interface
 ///
 /// Properties:
-/// * [connectorId] - Connector identifier
-/// * [ipAddresses] 
 /// * [name] - Name of the network interface
 /// * [operstate] - UP/DOWN state of the network interface
+/// * [connectorId] - Connector identifier
+/// * [ipAddresses] 
 /// * [speed] - Speed of the network interface (bits per second)
 @BuiltValue()
 abstract class MconnSnapshotInterface implements Built<MconnSnapshotInterface, MconnSnapshotInterfaceBuilder> {
-  /// Connector identifier
-  @BuiltValueField(wireName: r'connector_id')
-  String? get connectorId;
-
-  @BuiltValueField(wireName: r'ip_addresses')
-  BuiltList<MconnSnapshotInterfaceAddress>? get ipAddresses;
-
   /// Name of the network interface
   @BuiltValueField(wireName: r'name')
   String get name;
@@ -34,6 +27,13 @@ abstract class MconnSnapshotInterface implements Built<MconnSnapshotInterface, M
   /// UP/DOWN state of the network interface
   @BuiltValueField(wireName: r'operstate')
   String get operstate;
+
+  /// Connector identifier
+  @BuiltValueField(wireName: r'connector_id')
+  String? get connectorId;
+
+  @BuiltValueField(wireName: r'ip_addresses')
+  BuiltList<MconnSnapshotInterfaceAddress>? get ipAddresses;
 
   /// Speed of the network interface (bits per second)
   @BuiltValueField(wireName: r'speed')
@@ -62,6 +62,16 @@ class _$MconnSnapshotInterfaceSerializer implements PrimitiveSerializer<MconnSna
     MconnSnapshotInterface object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    yield r'name';
+    yield serializers.serialize(
+      object.name,
+      specifiedType: const FullType(String),
+    );
+    yield r'operstate';
+    yield serializers.serialize(
+      object.operstate,
+      specifiedType: const FullType(String),
+    );
     if (object.connectorId != null) {
       yield r'connector_id';
       yield serializers.serialize(
@@ -76,16 +86,6 @@ class _$MconnSnapshotInterfaceSerializer implements PrimitiveSerializer<MconnSna
         specifiedType: const FullType(BuiltList, [FullType(MconnSnapshotInterfaceAddress)]),
       );
     }
-    yield r'name';
-    yield serializers.serialize(
-      object.name,
-      specifiedType: const FullType(String),
-    );
-    yield r'operstate';
-    yield serializers.serialize(
-      object.operstate,
-      specifiedType: const FullType(String),
-    );
     if (object.speed != null) {
       yield r'speed';
       yield serializers.serialize(
@@ -116,20 +116,6 @@ class _$MconnSnapshotInterfaceSerializer implements PrimitiveSerializer<MconnSna
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'connector_id':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.connectorId = valueDes;
-          break;
-        case r'ip_addresses':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(MconnSnapshotInterfaceAddress)]),
-          ) as BuiltList<MconnSnapshotInterfaceAddress>;
-          result.ipAddresses.replace(valueDes);
-          break;
         case r'name':
           final valueDes = serializers.deserialize(
             value,
@@ -143,6 +129,20 @@ class _$MconnSnapshotInterfaceSerializer implements PrimitiveSerializer<MconnSna
             specifiedType: const FullType(String),
           ) as String;
           result.operstate = valueDes;
+          break;
+        case r'connector_id':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.connectorId = valueDes;
+          break;
+        case r'ip_addresses':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BuiltList, [FullType(MconnSnapshotInterfaceAddress)]),
+          ) as BuiltList<MconnSnapshotInterfaceAddress>;
+          result.ipAddresses.replace(valueDes);
           break;
         case r'speed':
           final valueDes = serializers.deserialize(

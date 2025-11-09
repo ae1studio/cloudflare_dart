@@ -20,6 +20,8 @@ part 'browser_ssh_application.g.dart';
 /// BrowserSSHApplication
 ///
 /// Properties:
+/// * [domain] - The primary hostname and path secured by Access. This domain will be displayed if the app is visible in the App Launcher.
+/// * [type] 
 /// * [allowAuthenticateViaWarp] - When set to true, users can authenticate to this application using their WARP session.  When set to false this application will always require direct IdP authentication. This setting always overrides the organization setting for WARP authentication.
 /// * [allowIframe] - Enables loading application content in an iFrame.
 /// * [allowedIdps] - The identity providers your users can select when connecting to this application. Defaults to all IdPs configured in your account.
@@ -31,7 +33,6 @@ part 'browser_ssh_application.g.dart';
 /// * [customNonIdentityDenyUrl] - The custom URL a user is redirected to when they are denied access to the application when failing non-identity rules.
 /// * [customPages] - The custom pages that will be displayed when applicable for this application
 /// * [destinations] - List of destinations secured by Access. This supersedes `self_hosted_domains` to allow for more flexibility in defining different types of domains. If `destinations` are provided, then `self_hosted_domains` will be ignored. 
-/// * [domain] - The primary hostname and path secured by Access. This domain will be displayed if the app is visible in the App Launcher.
 /// * [enableBindingCookie] - Enables the binding cookie, which increases security against compromised authorization tokens and CSRF attacks.
 /// * [httpOnlyCookieAttribute] - Enables the HttpOnly cookie attribute, which increases security against XSS attacks.
 /// * [logoUrl] - The image URL for the logo shown in the App Launcher dashboard.
@@ -46,7 +47,6 @@ part 'browser_ssh_application.g.dart';
 /// * [sessionDuration] - The amount of time that tokens issued for this application will be valid. Must be in the format `300ms` or `2h45m`. Valid time units are: ns, us (or µs), ms, s, m, h. Note: unsupported for infrastructure type applications.
 /// * [skipInterstitial] - Enables automatic authentication through cloudflared.
 /// * [tags] - The tags you want assigned to an application. Tags are used to filter applications in the App Launcher dashboard.
-/// * [type] 
 /// * [policies] - The policies that Access applies to the application, in ascending order of precedence. Items can reference existing policies or create new policies exclusive to the application.
 @BuiltValue()
 abstract class BrowserSSHApplication implements AccessAppReqEmbeddedPolicies, AccessAppReqEmbeddedScimConfig, AccessSshProps, Built<BrowserSSHApplication, BrowserSSHApplicationBuilder> {
@@ -234,6 +234,11 @@ class _$BrowserSSHApplicationSerializer implements PrimitiveSerializer<BrowserSS
         specifiedType: const FullType(bool),
       );
     }
+    yield r'domain';
+    yield serializers.serialize(
+      object.domain,
+      specifiedType: const FullType(String),
+    );
     if (object.autoRedirectToIdentity != null) {
       yield r'auto_redirect_to_identity';
       yield serializers.serialize(
@@ -241,11 +246,6 @@ class _$BrowserSSHApplicationSerializer implements PrimitiveSerializer<BrowserSS
         specifiedType: const FullType(bool),
       );
     }
-    yield r'domain';
-    yield serializers.serialize(
-      object.domain,
-      specifiedType: const FullType(String),
-    );
     if (object.name != null) {
       yield r'name';
       yield serializers.serialize(
@@ -451,19 +451,19 @@ class _$BrowserSSHApplicationSerializer implements PrimitiveSerializer<BrowserSS
           ) as bool;
           result.appLauncherVisible = valueDes;
           break;
-        case r'auto_redirect_to_identity':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
-          result.autoRedirectToIdentity = valueDes;
-          break;
         case r'domain':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(String),
           ) as String;
           result.domain = valueDes;
+          break;
+        case r'auto_redirect_to_identity':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(bool),
+          ) as bool;
+          result.autoRedirectToIdentity = valueDes;
           break;
         case r'name':
           final valueDes = serializers.deserialize(

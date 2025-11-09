@@ -11,19 +11,19 @@ part 'mcp_portals_api_create_portals_request_servers_inner_updated_prompts_inner
 /// McpPortalsApiCreatePortalsRequestServersInnerUpdatedPromptsInner
 ///
 /// Properties:
+/// * [name] 
 /// * [description] 
 /// * [enabled] 
-/// * [name] 
 @BuiltValue()
 abstract class McpPortalsApiCreatePortalsRequestServersInnerUpdatedPromptsInner implements Built<McpPortalsApiCreatePortalsRequestServersInnerUpdatedPromptsInner, McpPortalsApiCreatePortalsRequestServersInnerUpdatedPromptsInnerBuilder> {
+  @BuiltValueField(wireName: r'name')
+  String get name;
+
   @BuiltValueField(wireName: r'description')
   String? get description;
 
   @BuiltValueField(wireName: r'enabled')
   bool? get enabled;
-
-  @BuiltValueField(wireName: r'name')
-  String get name;
 
   McpPortalsApiCreatePortalsRequestServersInnerUpdatedPromptsInner._();
 
@@ -48,6 +48,11 @@ class _$McpPortalsApiCreatePortalsRequestServersInnerUpdatedPromptsInnerSerializ
     McpPortalsApiCreatePortalsRequestServersInnerUpdatedPromptsInner object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    yield r'name';
+    yield serializers.serialize(
+      object.name,
+      specifiedType: const FullType(String),
+    );
     if (object.description != null) {
       yield r'description';
       yield serializers.serialize(
@@ -62,11 +67,6 @@ class _$McpPortalsApiCreatePortalsRequestServersInnerUpdatedPromptsInnerSerializ
         specifiedType: const FullType(bool),
       );
     }
-    yield r'name';
-    yield serializers.serialize(
-      object.name,
-      specifiedType: const FullType(String),
-    );
   }
 
   @override
@@ -90,6 +90,13 @@ class _$McpPortalsApiCreatePortalsRequestServersInnerUpdatedPromptsInnerSerializ
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
+        case r'name':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.name = valueDes;
+          break;
         case r'description':
           final valueDes = serializers.deserialize(
             value,
@@ -103,13 +110,6 @@ class _$McpPortalsApiCreatePortalsRequestServersInnerUpdatedPromptsInnerSerializ
             specifiedType: const FullType(bool),
           ) as bool;
           result.enabled = valueDes;
-          break;
-        case r'name':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.name = valueDes;
           break;
         default:
           unhandled.add(key);

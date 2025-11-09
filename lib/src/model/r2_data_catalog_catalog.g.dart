@@ -10,15 +10,15 @@ class _$R2DataCatalogCatalog extends R2DataCatalogCatalog {
   @override
   final String bucket;
   @override
-  final R2DataCatalogCredentialStatus? credentialStatus;
-  @override
   final String id;
-  @override
-  final R2DataCatalogCatalogMaintenanceConfig? maintenanceConfig;
   @override
   final String name;
   @override
   final R2DataCatalogCatalogStatus status;
+  @override
+  final R2DataCatalogCredentialStatus? credentialStatus;
+  @override
+  final R2DataCatalogCatalogMaintenanceConfig? maintenanceConfig;
 
   factory _$R2DataCatalogCatalog(
           [void Function(R2DataCatalogCatalogBuilder)? updates]) =>
@@ -26,11 +26,11 @@ class _$R2DataCatalogCatalog extends R2DataCatalogCatalog {
 
   _$R2DataCatalogCatalog._(
       {required this.bucket,
-      this.credentialStatus,
       required this.id,
-      this.maintenanceConfig,
       required this.name,
-      required this.status})
+      required this.status,
+      this.credentialStatus,
+      this.maintenanceConfig})
       : super._();
   @override
   R2DataCatalogCatalog rebuild(
@@ -46,22 +46,22 @@ class _$R2DataCatalogCatalog extends R2DataCatalogCatalog {
     if (identical(other, this)) return true;
     return other is R2DataCatalogCatalog &&
         bucket == other.bucket &&
-        credentialStatus == other.credentialStatus &&
         id == other.id &&
-        maintenanceConfig == other.maintenanceConfig &&
         name == other.name &&
-        status == other.status;
+        status == other.status &&
+        credentialStatus == other.credentialStatus &&
+        maintenanceConfig == other.maintenanceConfig;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
     _$hash = $jc(_$hash, bucket.hashCode);
-    _$hash = $jc(_$hash, credentialStatus.hashCode);
     _$hash = $jc(_$hash, id.hashCode);
-    _$hash = $jc(_$hash, maintenanceConfig.hashCode);
     _$hash = $jc(_$hash, name.hashCode);
     _$hash = $jc(_$hash, status.hashCode);
+    _$hash = $jc(_$hash, credentialStatus.hashCode);
+    _$hash = $jc(_$hash, maintenanceConfig.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -70,11 +70,11 @@ class _$R2DataCatalogCatalog extends R2DataCatalogCatalog {
   String toString() {
     return (newBuiltValueToStringHelper(r'R2DataCatalogCatalog')
           ..add('bucket', bucket)
-          ..add('credentialStatus', credentialStatus)
           ..add('id', id)
-          ..add('maintenanceConfig', maintenanceConfig)
           ..add('name', name)
-          ..add('status', status))
+          ..add('status', status)
+          ..add('credentialStatus', credentialStatus)
+          ..add('maintenanceConfig', maintenanceConfig))
         .toString();
   }
 }
@@ -87,23 +87,9 @@ class R2DataCatalogCatalogBuilder
   String? get bucket => _$this._bucket;
   set bucket(String? bucket) => _$this._bucket = bucket;
 
-  R2DataCatalogCredentialStatus? _credentialStatus;
-  R2DataCatalogCredentialStatus? get credentialStatus =>
-      _$this._credentialStatus;
-  set credentialStatus(R2DataCatalogCredentialStatus? credentialStatus) =>
-      _$this._credentialStatus = credentialStatus;
-
   String? _id;
   String? get id => _$this._id;
   set id(String? id) => _$this._id = id;
-
-  R2DataCatalogCatalogMaintenanceConfigBuilder? _maintenanceConfig;
-  R2DataCatalogCatalogMaintenanceConfigBuilder get maintenanceConfig =>
-      _$this._maintenanceConfig ??=
-          R2DataCatalogCatalogMaintenanceConfigBuilder();
-  set maintenanceConfig(
-          R2DataCatalogCatalogMaintenanceConfigBuilder? maintenanceConfig) =>
-      _$this._maintenanceConfig = maintenanceConfig;
 
   String? _name;
   String? get name => _$this._name;
@@ -113,6 +99,20 @@ class R2DataCatalogCatalogBuilder
   R2DataCatalogCatalogStatus? get status => _$this._status;
   set status(R2DataCatalogCatalogStatus? status) => _$this._status = status;
 
+  R2DataCatalogCredentialStatus? _credentialStatus;
+  R2DataCatalogCredentialStatus? get credentialStatus =>
+      _$this._credentialStatus;
+  set credentialStatus(R2DataCatalogCredentialStatus? credentialStatus) =>
+      _$this._credentialStatus = credentialStatus;
+
+  R2DataCatalogCatalogMaintenanceConfigBuilder? _maintenanceConfig;
+  R2DataCatalogCatalogMaintenanceConfigBuilder get maintenanceConfig =>
+      _$this._maintenanceConfig ??=
+          R2DataCatalogCatalogMaintenanceConfigBuilder();
+  set maintenanceConfig(
+          R2DataCatalogCatalogMaintenanceConfigBuilder? maintenanceConfig) =>
+      _$this._maintenanceConfig = maintenanceConfig;
+
   R2DataCatalogCatalogBuilder() {
     R2DataCatalogCatalog._defaults(this);
   }
@@ -121,11 +121,11 @@ class R2DataCatalogCatalogBuilder
     final $v = _$v;
     if ($v != null) {
       _bucket = $v.bucket;
-      _credentialStatus = $v.credentialStatus;
       _id = $v.id;
-      _maintenanceConfig = $v.maintenanceConfig?.toBuilder();
       _name = $v.name;
       _status = $v.status;
+      _credentialStatus = $v.credentialStatus;
+      _maintenanceConfig = $v.maintenanceConfig?.toBuilder();
       _$v = null;
     }
     return this;
@@ -151,14 +151,14 @@ class R2DataCatalogCatalogBuilder
           _$R2DataCatalogCatalog._(
             bucket: BuiltValueNullFieldError.checkNotNull(
                 bucket, r'R2DataCatalogCatalog', 'bucket'),
-            credentialStatus: credentialStatus,
             id: BuiltValueNullFieldError.checkNotNull(
                 id, r'R2DataCatalogCatalog', 'id'),
-            maintenanceConfig: _maintenanceConfig?.build(),
             name: BuiltValueNullFieldError.checkNotNull(
                 name, r'R2DataCatalogCatalog', 'name'),
             status: BuiltValueNullFieldError.checkNotNull(
                 status, r'R2DataCatalogCatalog', 'status'),
+            credentialStatus: credentialStatus,
+            maintenanceConfig: _maintenanceConfig?.build(),
           );
     } catch (_) {
       late String _$failedField;

@@ -13,18 +13,18 @@ class _$GetIndicatorListLegacy200ResponseIndicatorsInner
   @override
   final String indicatorType;
   @override
+  final DateTime updatedAt;
+  @override
+  final String uuid;
+  @override
+  final String value;
+  @override
   final BuiltList<
           GetIndicatorListLegacy200ResponseIndicatorsInnerRelatedEventsInner>?
       relatedEvents;
   @override
   final BuiltList<GetIndicatorListLegacy200ResponseIndicatorsInnerTagsInner>?
       tags;
-  @override
-  final DateTime updatedAt;
-  @override
-  final String uuid;
-  @override
-  final String value;
 
   factory _$GetIndicatorListLegacy200ResponseIndicatorsInner(
           [void Function(
@@ -37,11 +37,11 @@ class _$GetIndicatorListLegacy200ResponseIndicatorsInner
   _$GetIndicatorListLegacy200ResponseIndicatorsInner._(
       {required this.createdAt,
       required this.indicatorType,
-      this.relatedEvents,
-      this.tags,
       required this.updatedAt,
       required this.uuid,
-      required this.value})
+      required this.value,
+      this.relatedEvents,
+      this.tags})
       : super._();
   @override
   GetIndicatorListLegacy200ResponseIndicatorsInner rebuild(
@@ -59,11 +59,11 @@ class _$GetIndicatorListLegacy200ResponseIndicatorsInner
     return other is GetIndicatorListLegacy200ResponseIndicatorsInner &&
         createdAt == other.createdAt &&
         indicatorType == other.indicatorType &&
-        relatedEvents == other.relatedEvents &&
-        tags == other.tags &&
         updatedAt == other.updatedAt &&
         uuid == other.uuid &&
-        value == other.value;
+        value == other.value &&
+        relatedEvents == other.relatedEvents &&
+        tags == other.tags;
   }
 
   @override
@@ -71,11 +71,11 @@ class _$GetIndicatorListLegacy200ResponseIndicatorsInner
     var _$hash = 0;
     _$hash = $jc(_$hash, createdAt.hashCode);
     _$hash = $jc(_$hash, indicatorType.hashCode);
-    _$hash = $jc(_$hash, relatedEvents.hashCode);
-    _$hash = $jc(_$hash, tags.hashCode);
     _$hash = $jc(_$hash, updatedAt.hashCode);
     _$hash = $jc(_$hash, uuid.hashCode);
     _$hash = $jc(_$hash, value.hashCode);
+    _$hash = $jc(_$hash, relatedEvents.hashCode);
+    _$hash = $jc(_$hash, tags.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -86,11 +86,11 @@ class _$GetIndicatorListLegacy200ResponseIndicatorsInner
             r'GetIndicatorListLegacy200ResponseIndicatorsInner')
           ..add('createdAt', createdAt)
           ..add('indicatorType', indicatorType)
-          ..add('relatedEvents', relatedEvents)
-          ..add('tags', tags)
           ..add('updatedAt', updatedAt)
           ..add('uuid', uuid)
-          ..add('value', value))
+          ..add('value', value)
+          ..add('relatedEvents', relatedEvents)
+          ..add('tags', tags))
         .toString();
   }
 }
@@ -109,6 +109,18 @@ class GetIndicatorListLegacy200ResponseIndicatorsInnerBuilder
   String? get indicatorType => _$this._indicatorType;
   set indicatorType(String? indicatorType) =>
       _$this._indicatorType = indicatorType;
+
+  DateTime? _updatedAt;
+  DateTime? get updatedAt => _$this._updatedAt;
+  set updatedAt(DateTime? updatedAt) => _$this._updatedAt = updatedAt;
+
+  String? _uuid;
+  String? get uuid => _$this._uuid;
+  set uuid(String? uuid) => _$this._uuid = uuid;
+
+  String? _value;
+  String? get value => _$this._value;
+  set value(String? value) => _$this._value = value;
 
   ListBuilder<
           GetIndicatorListLegacy200ResponseIndicatorsInnerRelatedEventsInner>?
@@ -133,18 +145,6 @@ class GetIndicatorListLegacy200ResponseIndicatorsInnerBuilder
               tags) =>
       _$this._tags = tags;
 
-  DateTime? _updatedAt;
-  DateTime? get updatedAt => _$this._updatedAt;
-  set updatedAt(DateTime? updatedAt) => _$this._updatedAt = updatedAt;
-
-  String? _uuid;
-  String? get uuid => _$this._uuid;
-  set uuid(String? uuid) => _$this._uuid = uuid;
-
-  String? _value;
-  String? get value => _$this._value;
-  set value(String? value) => _$this._value = value;
-
   GetIndicatorListLegacy200ResponseIndicatorsInnerBuilder() {
     GetIndicatorListLegacy200ResponseIndicatorsInner._defaults(this);
   }
@@ -154,11 +154,11 @@ class GetIndicatorListLegacy200ResponseIndicatorsInnerBuilder
     if ($v != null) {
       _createdAt = $v.createdAt;
       _indicatorType = $v.indicatorType;
-      _relatedEvents = $v.relatedEvents?.toBuilder();
-      _tags = $v.tags?.toBuilder();
       _updatedAt = $v.updatedAt;
       _uuid = $v.uuid;
       _value = $v.value;
+      _relatedEvents = $v.relatedEvents?.toBuilder();
+      _tags = $v.tags?.toBuilder();
       _$v = null;
     }
     return this;
@@ -192,8 +192,6 @@ class GetIndicatorListLegacy200ResponseIndicatorsInnerBuilder
                 indicatorType,
                 r'GetIndicatorListLegacy200ResponseIndicatorsInner',
                 'indicatorType'),
-            relatedEvents: _relatedEvents?.build(),
-            tags: _tags?.build(),
             updatedAt: BuiltValueNullFieldError.checkNotNull(
                 updatedAt,
                 r'GetIndicatorListLegacy200ResponseIndicatorsInner',
@@ -202,6 +200,8 @@ class GetIndicatorListLegacy200ResponseIndicatorsInnerBuilder
                 r'GetIndicatorListLegacy200ResponseIndicatorsInner', 'uuid'),
             value: BuiltValueNullFieldError.checkNotNull(value,
                 r'GetIndicatorListLegacy200ResponseIndicatorsInner', 'value'),
+            relatedEvents: _relatedEvents?.build(),
+            tags: _tags?.build(),
           );
     } catch (_) {
       late String _$failedField;

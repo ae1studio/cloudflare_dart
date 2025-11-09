@@ -22,18 +22,18 @@ part 'api_shield_discovery_operation.g.dart';
 /// * [endpoint] - The endpoint which can contain path parameter templates in curly braces, each will be replaced from left to right with {varN}, starting with {var1}, during insertion. This will further be Cloudflare-normalized upon insertion. See: https://developers.cloudflare.com/rules/normalization/how-it-works/.
 /// * [host] - RFC3986-compliant host.
 /// * [method] 
-/// * [features] 
 /// * [id] 
 /// * [lastUpdated] 
 /// * [origin] - API discovery engine(s) that discovered this operation
 /// * [state] 
+/// * [features] 
 @BuiltValue()
 abstract class ApiShieldDiscoveryOperation implements ApiShieldBasicOperation, Built<ApiShieldDiscoveryOperation, ApiShieldDiscoveryOperationBuilder> {
-  @BuiltValueField(wireName: r'features')
-  ApiShieldTrafficStats? get features;
-
   @BuiltValueField(wireName: r'last_updated')
   ApiShieldSchemasTimestamp get lastUpdated;
+
+  @BuiltValueField(wireName: r'features')
+  ApiShieldTrafficStats? get features;
 
   /// API discovery engine(s) that discovered this operation
   @BuiltValueField(wireName: r'origin')
@@ -69,6 +69,11 @@ class _$ApiShieldDiscoveryOperationSerializer implements PrimitiveSerializer<Api
     ApiShieldDiscoveryOperation object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    yield r'last_updated';
+    yield serializers.serialize(
+      object.lastUpdated,
+      specifiedType: const FullType(ApiShieldSchemasTimestamp),
+    );
     if (object.features != null) {
       yield r'features';
       yield serializers.serialize(
@@ -76,11 +81,6 @@ class _$ApiShieldDiscoveryOperationSerializer implements PrimitiveSerializer<Api
         specifiedType: const FullType(ApiShieldTrafficStats),
       );
     }
-    yield r'last_updated';
-    yield serializers.serialize(
-      object.lastUpdated,
-      specifiedType: const FullType(ApiShieldSchemasTimestamp),
-    );
     yield r'endpoint';
     yield serializers.serialize(
       object.endpoint,
@@ -134,19 +134,19 @@ class _$ApiShieldDiscoveryOperationSerializer implements PrimitiveSerializer<Api
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'features':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(ApiShieldTrafficStats),
-          ) as ApiShieldTrafficStats;
-          result.features.replace(valueDes);
-          break;
         case r'last_updated':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(ApiShieldSchemasTimestamp),
           ) as ApiShieldSchemasTimestamp;
           result.lastUpdated.replace(valueDes);
+          break;
+        case r'features':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(ApiShieldTrafficStats),
+          ) as ApiShieldTrafficStats;
+          result.features.replace(valueDes);
           break;
         case r'endpoint':
           final valueDes = serializers.deserialize(

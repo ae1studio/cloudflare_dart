@@ -15,9 +15,9 @@ part 'zaraz_base_tool.g.dart';
 /// Properties:
 /// * [blockingTriggers] - List of blocking trigger IDs
 /// * [defaultFields] - Default fields for tool's actions
-/// * [defaultPurpose] - Default consent purpose ID
 /// * [enabled] - Whether tool is enabled
 /// * [name] - Tool's name defined by the user
+/// * [defaultPurpose] - Default consent purpose ID
 /// * [vendorName] - Vendor name for TCF compliant consent modal, required for Custom Managed Components and Custom HTML tool with a defaultPurpose assigned
 /// * [vendorPolicyUrl] - Vendor's Privacy Policy URL for TCF compliant consent modal, required for Custom Managed Components and Custom HTML tool with a defaultPurpose assigned
 @BuiltValue(instantiable: false)
@@ -30,10 +30,6 @@ abstract class ZarazBaseTool  {
   @BuiltValueField(wireName: r'defaultFields')
   BuiltMap<String, ZarazBaseMcAllOfSettings> get defaultFields;
 
-  /// Default consent purpose ID
-  @BuiltValueField(wireName: r'defaultPurpose')
-  String? get defaultPurpose;
-
   /// Whether tool is enabled
   @BuiltValueField(wireName: r'enabled')
   bool get enabled;
@@ -41,6 +37,10 @@ abstract class ZarazBaseTool  {
   /// Tool's name defined by the user
   @BuiltValueField(wireName: r'name')
   String get name;
+
+  /// Default consent purpose ID
+  @BuiltValueField(wireName: r'defaultPurpose')
+  String? get defaultPurpose;
 
   /// Vendor name for TCF compliant consent modal, required for Custom Managed Components and Custom HTML tool with a defaultPurpose assigned
   @BuiltValueField(wireName: r'vendorName')
@@ -76,13 +76,6 @@ class _$ZarazBaseToolSerializer implements PrimitiveSerializer<ZarazBaseTool> {
       object.defaultFields,
       specifiedType: const FullType(BuiltMap, [FullType(String), FullType(ZarazBaseMcAllOfSettings)]),
     );
-    if (object.defaultPurpose != null) {
-      yield r'defaultPurpose';
-      yield serializers.serialize(
-        object.defaultPurpose,
-        specifiedType: const FullType(String),
-      );
-    }
     yield r'enabled';
     yield serializers.serialize(
       object.enabled,
@@ -93,6 +86,13 @@ class _$ZarazBaseToolSerializer implements PrimitiveSerializer<ZarazBaseTool> {
       object.name,
       specifiedType: const FullType(String),
     );
+    if (object.defaultPurpose != null) {
+      yield r'defaultPurpose';
+      yield serializers.serialize(
+        object.defaultPurpose,
+        specifiedType: const FullType(String),
+      );
+    }
     if (object.vendorName != null) {
       yield r'vendorName';
       yield serializers.serialize(
@@ -184,13 +184,6 @@ class _$$ZarazBaseToolSerializer implements PrimitiveSerializer<$ZarazBaseTool> 
           ) as BuiltMap<String, ZarazBaseMcAllOfSettings>;
           result.defaultFields.replace(valueDes);
           break;
-        case r'defaultPurpose':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.defaultPurpose = valueDes;
-          break;
         case r'enabled':
           final valueDes = serializers.deserialize(
             value,
@@ -204,6 +197,13 @@ class _$$ZarazBaseToolSerializer implements PrimitiveSerializer<$ZarazBaseTool> 
             specifiedType: const FullType(String),
           ) as String;
           result.name = valueDes;
+          break;
+        case r'defaultPurpose':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.defaultPurpose = valueDes;
           break;
         case r'vendorName':
           final valueDes = serializers.deserialize(

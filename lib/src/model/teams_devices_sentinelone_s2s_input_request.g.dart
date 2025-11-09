@@ -296,9 +296,9 @@ class _$TeamsDevicesSentineloneS2sInputRequestOperator_EnumSerializer
 class _$TeamsDevicesSentineloneS2sInputRequest
     extends TeamsDevicesSentineloneS2sInputRequest {
   @override
-  final num? activeThreats;
-  @override
   final String connectionId;
+  @override
+  final num? activeThreats;
   @override
   final bool? infected;
   @override
@@ -318,8 +318,8 @@ class _$TeamsDevicesSentineloneS2sInputRequest
           ._build();
 
   _$TeamsDevicesSentineloneS2sInputRequest._(
-      {this.activeThreats,
-      required this.connectionId,
+      {required this.connectionId,
+      this.activeThreats,
       this.infected,
       this.isActive,
       this.networkStatus,
@@ -340,8 +340,8 @@ class _$TeamsDevicesSentineloneS2sInputRequest
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is TeamsDevicesSentineloneS2sInputRequest &&
-        activeThreats == other.activeThreats &&
         connectionId == other.connectionId &&
+        activeThreats == other.activeThreats &&
         infected == other.infected &&
         isActive == other.isActive &&
         networkStatus == other.networkStatus &&
@@ -352,8 +352,8 @@ class _$TeamsDevicesSentineloneS2sInputRequest
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, activeThreats.hashCode);
     _$hash = $jc(_$hash, connectionId.hashCode);
+    _$hash = $jc(_$hash, activeThreats.hashCode);
     _$hash = $jc(_$hash, infected.hashCode);
     _$hash = $jc(_$hash, isActive.hashCode);
     _$hash = $jc(_$hash, networkStatus.hashCode);
@@ -367,8 +367,8 @@ class _$TeamsDevicesSentineloneS2sInputRequest
   String toString() {
     return (newBuiltValueToStringHelper(
             r'TeamsDevicesSentineloneS2sInputRequest')
-          ..add('activeThreats', activeThreats)
           ..add('connectionId', connectionId)
+          ..add('activeThreats', activeThreats)
           ..add('infected', infected)
           ..add('isActive', isActive)
           ..add('networkStatus', networkStatus)
@@ -384,14 +384,14 @@ class TeamsDevicesSentineloneS2sInputRequestBuilder
             TeamsDevicesSentineloneS2sInputRequestBuilder> {
   _$TeamsDevicesSentineloneS2sInputRequest? _$v;
 
+  String? _connectionId;
+  String? get connectionId => _$this._connectionId;
+  set connectionId(String? connectionId) => _$this._connectionId = connectionId;
+
   num? _activeThreats;
   num? get activeThreats => _$this._activeThreats;
   set activeThreats(num? activeThreats) =>
       _$this._activeThreats = activeThreats;
-
-  String? _connectionId;
-  String? get connectionId => _$this._connectionId;
-  set connectionId(String? connectionId) => _$this._connectionId = connectionId;
 
   bool? _infected;
   bool? get infected => _$this._infected;
@@ -431,8 +431,8 @@ class TeamsDevicesSentineloneS2sInputRequestBuilder
   TeamsDevicesSentineloneS2sInputRequestBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _activeThreats = $v.activeThreats;
       _connectionId = $v.connectionId;
+      _activeThreats = $v.activeThreats;
       _infected = $v.infected;
       _isActive = $v.isActive;
       _networkStatus = $v.networkStatus;
@@ -460,9 +460,9 @@ class TeamsDevicesSentineloneS2sInputRequestBuilder
   _$TeamsDevicesSentineloneS2sInputRequest _build() {
     final _$result = _$v ??
         _$TeamsDevicesSentineloneS2sInputRequest._(
-          activeThreats: activeThreats,
           connectionId: BuiltValueNullFieldError.checkNotNull(connectionId,
               r'TeamsDevicesSentineloneS2sInputRequest', 'connectionId'),
+          activeThreats: activeThreats,
           infected: infected,
           isActive: isActive,
           networkStatus: networkStatus,

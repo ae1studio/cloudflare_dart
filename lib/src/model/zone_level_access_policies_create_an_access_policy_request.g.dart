@@ -9,19 +9,19 @@ part of 'zone_level_access_policies_create_an_access_policy_request.dart';
 class _$ZoneLevelAccessPoliciesCreateAnAccessPolicyRequest
     extends ZoneLevelAccessPoliciesCreateAnAccessPolicyRequest {
   @override
+  final AccessSchemasDecision decision;
+  @override
+  final BuiltList<AccessRule> include;
+  @override
+  final String name;
+  @override
   final BuiltList<AccessSchemasApprovalGroup>? approvalGroups;
   @override
   final bool? approvalRequired;
   @override
-  final AccessSchemasDecision decision;
-  @override
   final BuiltList<AccessRule>? exclude;
   @override
-  final BuiltList<AccessRule> include;
-  @override
   final bool? isolationRequired;
-  @override
-  final String name;
   @override
   final int? precedence;
   @override
@@ -40,13 +40,13 @@ class _$ZoneLevelAccessPoliciesCreateAnAccessPolicyRequest
           ._build();
 
   _$ZoneLevelAccessPoliciesCreateAnAccessPolicyRequest._(
-      {this.approvalGroups,
-      this.approvalRequired,
-      required this.decision,
-      this.exclude,
+      {required this.decision,
       required this.include,
-      this.isolationRequired,
       required this.name,
+      this.approvalGroups,
+      this.approvalRequired,
+      this.exclude,
+      this.isolationRequired,
       this.precedence,
       this.purposeJustificationPrompt,
       this.purposeJustificationRequired,
@@ -68,13 +68,13 @@ class _$ZoneLevelAccessPoliciesCreateAnAccessPolicyRequest
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is ZoneLevelAccessPoliciesCreateAnAccessPolicyRequest &&
+        decision == other.decision &&
+        include == other.include &&
+        name == other.name &&
         approvalGroups == other.approvalGroups &&
         approvalRequired == other.approvalRequired &&
-        decision == other.decision &&
         exclude == other.exclude &&
-        include == other.include &&
         isolationRequired == other.isolationRequired &&
-        name == other.name &&
         precedence == other.precedence &&
         purposeJustificationPrompt == other.purposeJustificationPrompt &&
         purposeJustificationRequired == other.purposeJustificationRequired &&
@@ -84,13 +84,13 @@ class _$ZoneLevelAccessPoliciesCreateAnAccessPolicyRequest
   @override
   int get hashCode {
     var _$hash = 0;
+    _$hash = $jc(_$hash, decision.hashCode);
+    _$hash = $jc(_$hash, include.hashCode);
+    _$hash = $jc(_$hash, name.hashCode);
     _$hash = $jc(_$hash, approvalGroups.hashCode);
     _$hash = $jc(_$hash, approvalRequired.hashCode);
-    _$hash = $jc(_$hash, decision.hashCode);
     _$hash = $jc(_$hash, exclude.hashCode);
-    _$hash = $jc(_$hash, include.hashCode);
     _$hash = $jc(_$hash, isolationRequired.hashCode);
-    _$hash = $jc(_$hash, name.hashCode);
     _$hash = $jc(_$hash, precedence.hashCode);
     _$hash = $jc(_$hash, purposeJustificationPrompt.hashCode);
     _$hash = $jc(_$hash, purposeJustificationRequired.hashCode);
@@ -103,13 +103,13 @@ class _$ZoneLevelAccessPoliciesCreateAnAccessPolicyRequest
   String toString() {
     return (newBuiltValueToStringHelper(
             r'ZoneLevelAccessPoliciesCreateAnAccessPolicyRequest')
+          ..add('decision', decision)
+          ..add('include', include)
+          ..add('name', name)
           ..add('approvalGroups', approvalGroups)
           ..add('approvalRequired', approvalRequired)
-          ..add('decision', decision)
           ..add('exclude', exclude)
-          ..add('include', include)
           ..add('isolationRequired', isolationRequired)
-          ..add('name', name)
           ..add('precedence', precedence)
           ..add('purposeJustificationPrompt', purposeJustificationPrompt)
           ..add('purposeJustificationRequired', purposeJustificationRequired)
@@ -124,6 +124,19 @@ class ZoneLevelAccessPoliciesCreateAnAccessPolicyRequestBuilder
             ZoneLevelAccessPoliciesCreateAnAccessPolicyRequestBuilder> {
   _$ZoneLevelAccessPoliciesCreateAnAccessPolicyRequest? _$v;
 
+  AccessSchemasDecision? _decision;
+  AccessSchemasDecision? get decision => _$this._decision;
+  set decision(AccessSchemasDecision? decision) => _$this._decision = decision;
+
+  ListBuilder<AccessRule>? _include;
+  ListBuilder<AccessRule> get include =>
+      _$this._include ??= ListBuilder<AccessRule>();
+  set include(ListBuilder<AccessRule>? include) => _$this._include = include;
+
+  String? _name;
+  String? get name => _$this._name;
+  set name(String? name) => _$this._name = name;
+
   ListBuilder<AccessSchemasApprovalGroup>? _approvalGroups;
   ListBuilder<AccessSchemasApprovalGroup> get approvalGroups =>
       _$this._approvalGroups ??= ListBuilder<AccessSchemasApprovalGroup>();
@@ -135,28 +148,15 @@ class ZoneLevelAccessPoliciesCreateAnAccessPolicyRequestBuilder
   set approvalRequired(bool? approvalRequired) =>
       _$this._approvalRequired = approvalRequired;
 
-  AccessSchemasDecision? _decision;
-  AccessSchemasDecision? get decision => _$this._decision;
-  set decision(AccessSchemasDecision? decision) => _$this._decision = decision;
-
   ListBuilder<AccessRule>? _exclude;
   ListBuilder<AccessRule> get exclude =>
       _$this._exclude ??= ListBuilder<AccessRule>();
   set exclude(ListBuilder<AccessRule>? exclude) => _$this._exclude = exclude;
 
-  ListBuilder<AccessRule>? _include;
-  ListBuilder<AccessRule> get include =>
-      _$this._include ??= ListBuilder<AccessRule>();
-  set include(ListBuilder<AccessRule>? include) => _$this._include = include;
-
   bool? _isolationRequired;
   bool? get isolationRequired => _$this._isolationRequired;
   set isolationRequired(bool? isolationRequired) =>
       _$this._isolationRequired = isolationRequired;
-
-  String? _name;
-  String? get name => _$this._name;
-  set name(String? name) => _$this._name = name;
 
   int? _precedence;
   int? get precedence => _$this._precedence;
@@ -185,13 +185,13 @@ class ZoneLevelAccessPoliciesCreateAnAccessPolicyRequestBuilder
   ZoneLevelAccessPoliciesCreateAnAccessPolicyRequestBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
+      _decision = $v.decision;
+      _include = $v.include.toBuilder();
+      _name = $v.name;
       _approvalGroups = $v.approvalGroups?.toBuilder();
       _approvalRequired = $v.approvalRequired;
-      _decision = $v.decision;
       _exclude = $v.exclude?.toBuilder();
-      _include = $v.include.toBuilder();
       _isolationRequired = $v.isolationRequired;
-      _name = $v.name;
       _precedence = $v.precedence;
       _purposeJustificationPrompt = $v.purposeJustificationPrompt;
       _purposeJustificationRequired = $v.purposeJustificationRequired;
@@ -221,17 +221,17 @@ class ZoneLevelAccessPoliciesCreateAnAccessPolicyRequestBuilder
     try {
       _$result = _$v ??
           _$ZoneLevelAccessPoliciesCreateAnAccessPolicyRequest._(
-            approvalGroups: _approvalGroups?.build(),
-            approvalRequired: approvalRequired,
             decision: BuiltValueNullFieldError.checkNotNull(
                 decision,
                 r'ZoneLevelAccessPoliciesCreateAnAccessPolicyRequest',
                 'decision'),
-            exclude: _exclude?.build(),
             include: include.build(),
-            isolationRequired: isolationRequired,
             name: BuiltValueNullFieldError.checkNotNull(name,
                 r'ZoneLevelAccessPoliciesCreateAnAccessPolicyRequest', 'name'),
+            approvalGroups: _approvalGroups?.build(),
+            approvalRequired: approvalRequired,
+            exclude: _exclude?.build(),
+            isolationRequired: isolationRequired,
             precedence: precedence,
             purposeJustificationPrompt: purposeJustificationPrompt,
             purposeJustificationRequired: purposeJustificationRequired,
@@ -240,13 +240,14 @@ class ZoneLevelAccessPoliciesCreateAnAccessPolicyRequestBuilder
     } catch (_) {
       late String _$failedField;
       try {
+        _$failedField = 'include';
+        include.build();
+
         _$failedField = 'approvalGroups';
         _approvalGroups?.build();
 
         _$failedField = 'exclude';
         _exclude?.build();
-        _$failedField = 'include';
-        include.build();
 
         _$failedField = 'require';
         _require?.build();

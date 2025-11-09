@@ -67,13 +67,13 @@ class _$CloudflarePipelinesWorkersPipelinesHttpSourceFormatEnumSerializer
 class _$CloudflarePipelinesWorkersPipelinesHttpSource
     extends CloudflarePipelinesWorkersPipelinesHttpSource {
   @override
-  final bool? authentication;
-  @override
-  final CloudflarePipelinesWorkersPipelinesHttpSourceCors? cors;
-  @override
   final CloudflarePipelinesWorkersPipelinesHttpSourceFormatEnum format;
   @override
   final String type;
+  @override
+  final bool? authentication;
+  @override
+  final CloudflarePipelinesWorkersPipelinesHttpSourceCors? cors;
 
   factory _$CloudflarePipelinesWorkersPipelinesHttpSource(
           [void Function(CloudflarePipelinesWorkersPipelinesHttpSourceBuilder)?
@@ -82,10 +82,10 @@ class _$CloudflarePipelinesWorkersPipelinesHttpSource
           ._build();
 
   _$CloudflarePipelinesWorkersPipelinesHttpSource._(
-      {this.authentication,
-      this.cors,
-      required this.format,
-      required this.type})
+      {required this.format,
+      required this.type,
+      this.authentication,
+      this.cors})
       : super._();
   @override
   CloudflarePipelinesWorkersPipelinesHttpSource rebuild(
@@ -101,19 +101,19 @@ class _$CloudflarePipelinesWorkersPipelinesHttpSource
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is CloudflarePipelinesWorkersPipelinesHttpSource &&
-        authentication == other.authentication &&
-        cors == other.cors &&
         format == other.format &&
-        type == other.type;
+        type == other.type &&
+        authentication == other.authentication &&
+        cors == other.cors;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, authentication.hashCode);
-    _$hash = $jc(_$hash, cors.hashCode);
     _$hash = $jc(_$hash, format.hashCode);
     _$hash = $jc(_$hash, type.hashCode);
+    _$hash = $jc(_$hash, authentication.hashCode);
+    _$hash = $jc(_$hash, cors.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -122,10 +122,10 @@ class _$CloudflarePipelinesWorkersPipelinesHttpSource
   String toString() {
     return (newBuiltValueToStringHelper(
             r'CloudflarePipelinesWorkersPipelinesHttpSource')
-          ..add('authentication', authentication)
-          ..add('cors', cors)
           ..add('format', format)
-          ..add('type', type))
+          ..add('type', type)
+          ..add('authentication', authentication)
+          ..add('cors', cors))
         .toString();
   }
 }
@@ -135,6 +135,16 @@ class CloudflarePipelinesWorkersPipelinesHttpSourceBuilder
         Builder<CloudflarePipelinesWorkersPipelinesHttpSource,
             CloudflarePipelinesWorkersPipelinesHttpSourceBuilder> {
   _$CloudflarePipelinesWorkersPipelinesHttpSource? _$v;
+
+  CloudflarePipelinesWorkersPipelinesHttpSourceFormatEnum? _format;
+  CloudflarePipelinesWorkersPipelinesHttpSourceFormatEnum? get format =>
+      _$this._format;
+  set format(CloudflarePipelinesWorkersPipelinesHttpSourceFormatEnum? format) =>
+      _$this._format = format;
+
+  String? _type;
+  String? get type => _$this._type;
+  set type(String? type) => _$this._type = type;
 
   bool? _authentication;
   bool? get authentication => _$this._authentication;
@@ -148,16 +158,6 @@ class CloudflarePipelinesWorkersPipelinesHttpSourceBuilder
   set cors(CloudflarePipelinesWorkersPipelinesHttpSourceCorsBuilder? cors) =>
       _$this._cors = cors;
 
-  CloudflarePipelinesWorkersPipelinesHttpSourceFormatEnum? _format;
-  CloudflarePipelinesWorkersPipelinesHttpSourceFormatEnum? get format =>
-      _$this._format;
-  set format(CloudflarePipelinesWorkersPipelinesHttpSourceFormatEnum? format) =>
-      _$this._format = format;
-
-  String? _type;
-  String? get type => _$this._type;
-  set type(String? type) => _$this._type = type;
-
   CloudflarePipelinesWorkersPipelinesHttpSourceBuilder() {
     CloudflarePipelinesWorkersPipelinesHttpSource._defaults(this);
   }
@@ -165,10 +165,10 @@ class CloudflarePipelinesWorkersPipelinesHttpSourceBuilder
   CloudflarePipelinesWorkersPipelinesHttpSourceBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _authentication = $v.authentication;
-      _cors = $v.cors?.toBuilder();
       _format = $v.format;
       _type = $v.type;
+      _authentication = $v.authentication;
+      _cors = $v.cors?.toBuilder();
       _$v = null;
     }
     return this;
@@ -194,12 +194,12 @@ class CloudflarePipelinesWorkersPipelinesHttpSourceBuilder
     try {
       _$result = _$v ??
           _$CloudflarePipelinesWorkersPipelinesHttpSource._(
-            authentication: authentication,
-            cors: _cors?.build(),
             format: BuiltValueNullFieldError.checkNotNull(format,
                 r'CloudflarePipelinesWorkersPipelinesHttpSource', 'format'),
             type: BuiltValueNullFieldError.checkNotNull(
                 type, r'CloudflarePipelinesWorkersPipelinesHttpSource', 'type'),
+            authentication: authentication,
+            cors: _cors?.build(),
           );
     } catch (_) {
       late String _$failedField;

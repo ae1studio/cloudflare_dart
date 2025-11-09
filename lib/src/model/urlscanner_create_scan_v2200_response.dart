@@ -15,11 +15,11 @@ part 'urlscanner_create_scan_v2200_response.g.dart';
 /// Properties:
 /// * [api] - URL to api report.
 /// * [message] 
-/// * [options] 
 /// * [result] - Public URL to report.
 /// * [url] - Canonical form of submitted URL. Use this if you want to later search by URL.
 /// * [uuid] - Scan ID.
 /// * [visibility] - Submitted visibility status.
+/// * [options] 
 @BuiltValue()
 abstract class UrlscannerCreateScanV2200Response implements Built<UrlscannerCreateScanV2200Response, UrlscannerCreateScanV2200ResponseBuilder> {
   /// URL to api report.
@@ -28,9 +28,6 @@ abstract class UrlscannerCreateScanV2200Response implements Built<UrlscannerCrea
 
   @BuiltValueField(wireName: r'message')
   String get message;
-
-  @BuiltValueField(wireName: r'options')
-  UrlscannerCreateScanBulkV2200ResponseInnerOptions? get options;
 
   /// Public URL to report.
   @BuiltValueField(wireName: r'result')
@@ -48,6 +45,9 @@ abstract class UrlscannerCreateScanV2200Response implements Built<UrlscannerCrea
   @BuiltValueField(wireName: r'visibility')
   UrlscannerCreateScanV2200ResponseVisibilityEnum get visibility;
   // enum visibilityEnum {  public,  unlisted,  };
+
+  @BuiltValueField(wireName: r'options')
+  UrlscannerCreateScanBulkV2200ResponseInnerOptions? get options;
 
   UrlscannerCreateScanV2200Response._();
 
@@ -82,13 +82,6 @@ class _$UrlscannerCreateScanV2200ResponseSerializer implements PrimitiveSerializ
       object.message,
       specifiedType: const FullType(String),
     );
-    if (object.options != null) {
-      yield r'options';
-      yield serializers.serialize(
-        object.options,
-        specifiedType: const FullType(UrlscannerCreateScanBulkV2200ResponseInnerOptions),
-      );
-    }
     yield r'result';
     yield serializers.serialize(
       object.result,
@@ -109,6 +102,13 @@ class _$UrlscannerCreateScanV2200ResponseSerializer implements PrimitiveSerializ
       object.visibility,
       specifiedType: const FullType(UrlscannerCreateScanV2200ResponseVisibilityEnum),
     );
+    if (object.options != null) {
+      yield r'options';
+      yield serializers.serialize(
+        object.options,
+        specifiedType: const FullType(UrlscannerCreateScanBulkV2200ResponseInnerOptions),
+      );
+    }
   }
 
   @override
@@ -146,13 +146,6 @@ class _$UrlscannerCreateScanV2200ResponseSerializer implements PrimitiveSerializ
           ) as String;
           result.message = valueDes;
           break;
-        case r'options':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(UrlscannerCreateScanBulkV2200ResponseInnerOptions),
-          ) as UrlscannerCreateScanBulkV2200ResponseInnerOptions;
-          result.options.replace(valueDes);
-          break;
         case r'result':
           final valueDes = serializers.deserialize(
             value,
@@ -180,6 +173,13 @@ class _$UrlscannerCreateScanV2200ResponseSerializer implements PrimitiveSerializ
             specifiedType: const FullType(UrlscannerCreateScanV2200ResponseVisibilityEnum),
           ) as UrlscannerCreateScanV2200ResponseVisibilityEnum;
           result.visibility = valueDes;
+          break;
+        case r'options':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(UrlscannerCreateScanBulkV2200ResponseInnerOptions),
+          ) as UrlscannerCreateScanBulkV2200ResponseInnerOptions;
+          result.options.replace(valueDes);
           break;
         default:
           unhandled.add(key);

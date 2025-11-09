@@ -8,8 +8,6 @@ part of 'mconn_snapshot.dart';
 
 class _$MconnSnapshot extends MconnSnapshot {
   @override
-  final BuiltList<MconnSnapshotBond>? bonds;
-  @override
   final num countReclaimFailures;
   @override
   final num countReclaimedPaths;
@@ -17,6 +15,12 @@ class _$MconnSnapshot extends MconnSnapshot {
   final num countRecordFailed;
   @override
   final num countTransmitFailures;
+  @override
+  final num t;
+  @override
+  final String v;
+  @override
+  final BuiltList<MconnSnapshotBond>? bonds;
   @override
   final num? cpuCount;
   @override
@@ -336,8 +340,6 @@ class _$MconnSnapshot extends MconnSnapshot {
   @override
   final num? systemBootTimeS;
   @override
-  final num t;
-  @override
   final BuiltList<MconnSnapshotThermal>? thermals;
   @override
   final BuiltList<MconnSnapshotTunnel>? tunnels;
@@ -345,18 +347,18 @@ class _$MconnSnapshot extends MconnSnapshot {
   final num? uptimeIdleMs;
   @override
   final num? uptimeTotalMs;
-  @override
-  final String v;
 
   factory _$MconnSnapshot([void Function(MconnSnapshotBuilder)? updates]) =>
       (MconnSnapshotBuilder()..update(updates))._build();
 
   _$MconnSnapshot._(
-      {this.bonds,
-      required this.countReclaimFailures,
+      {required this.countReclaimFailures,
       required this.countReclaimedPaths,
       required this.countRecordFailed,
       required this.countTransmitFailures,
+      required this.t,
+      required this.v,
+      this.bonds,
       this.cpuCount,
       this.cpuPressure10s,
       this.cpuPressure300s,
@@ -516,12 +518,10 @@ class _$MconnSnapshot extends MconnSnapshot {
       this.snmpUdpNoPorts,
       this.snmpUdpOutDatagrams,
       this.systemBootTimeS,
-      required this.t,
       this.thermals,
       this.tunnels,
       this.uptimeIdleMs,
-      this.uptimeTotalMs,
-      required this.v})
+      this.uptimeTotalMs})
       : super._();
   @override
   MconnSnapshot rebuild(void Function(MconnSnapshotBuilder) updates) =>
@@ -534,11 +534,13 @@ class _$MconnSnapshot extends MconnSnapshot {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is MconnSnapshot &&
-        bonds == other.bonds &&
         countReclaimFailures == other.countReclaimFailures &&
         countReclaimedPaths == other.countReclaimedPaths &&
         countRecordFailed == other.countRecordFailed &&
         countTransmitFailures == other.countTransmitFailures &&
+        t == other.t &&
+        v == other.v &&
+        bonds == other.bonds &&
         cpuCount == other.cpuCount &&
         cpuPressure10s == other.cpuPressure10s &&
         cpuPressure300s == other.cpuPressure300s &&
@@ -699,22 +701,22 @@ class _$MconnSnapshot extends MconnSnapshot {
         snmpUdpNoPorts == other.snmpUdpNoPorts &&
         snmpUdpOutDatagrams == other.snmpUdpOutDatagrams &&
         systemBootTimeS == other.systemBootTimeS &&
-        t == other.t &&
         thermals == other.thermals &&
         tunnels == other.tunnels &&
         uptimeIdleMs == other.uptimeIdleMs &&
-        uptimeTotalMs == other.uptimeTotalMs &&
-        v == other.v;
+        uptimeTotalMs == other.uptimeTotalMs;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, bonds.hashCode);
     _$hash = $jc(_$hash, countReclaimFailures.hashCode);
     _$hash = $jc(_$hash, countReclaimedPaths.hashCode);
     _$hash = $jc(_$hash, countRecordFailed.hashCode);
     _$hash = $jc(_$hash, countTransmitFailures.hashCode);
+    _$hash = $jc(_$hash, t.hashCode);
+    _$hash = $jc(_$hash, v.hashCode);
+    _$hash = $jc(_$hash, bonds.hashCode);
     _$hash = $jc(_$hash, cpuCount.hashCode);
     _$hash = $jc(_$hash, cpuPressure10s.hashCode);
     _$hash = $jc(_$hash, cpuPressure300s.hashCode);
@@ -874,12 +876,10 @@ class _$MconnSnapshot extends MconnSnapshot {
     _$hash = $jc(_$hash, snmpUdpNoPorts.hashCode);
     _$hash = $jc(_$hash, snmpUdpOutDatagrams.hashCode);
     _$hash = $jc(_$hash, systemBootTimeS.hashCode);
-    _$hash = $jc(_$hash, t.hashCode);
     _$hash = $jc(_$hash, thermals.hashCode);
     _$hash = $jc(_$hash, tunnels.hashCode);
     _$hash = $jc(_$hash, uptimeIdleMs.hashCode);
     _$hash = $jc(_$hash, uptimeTotalMs.hashCode);
-    _$hash = $jc(_$hash, v.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -887,11 +887,13 @@ class _$MconnSnapshot extends MconnSnapshot {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'MconnSnapshot')
-          ..add('bonds', bonds)
           ..add('countReclaimFailures', countReclaimFailures)
           ..add('countReclaimedPaths', countReclaimedPaths)
           ..add('countRecordFailed', countRecordFailed)
           ..add('countTransmitFailures', countTransmitFailures)
+          ..add('t', t)
+          ..add('v', v)
+          ..add('bonds', bonds)
           ..add('cpuCount', cpuCount)
           ..add('cpuPressure10s', cpuPressure10s)
           ..add('cpuPressure300s', cpuPressure300s)
@@ -1052,12 +1054,10 @@ class _$MconnSnapshot extends MconnSnapshot {
           ..add('snmpUdpNoPorts', snmpUdpNoPorts)
           ..add('snmpUdpOutDatagrams', snmpUdpOutDatagrams)
           ..add('systemBootTimeS', systemBootTimeS)
-          ..add('t', t)
           ..add('thermals', thermals)
           ..add('tunnels', tunnels)
           ..add('uptimeIdleMs', uptimeIdleMs)
-          ..add('uptimeTotalMs', uptimeTotalMs)
-          ..add('v', v))
+          ..add('uptimeTotalMs', uptimeTotalMs))
         .toString();
   }
 }
@@ -1065,11 +1065,6 @@ class _$MconnSnapshot extends MconnSnapshot {
 class MconnSnapshotBuilder
     implements Builder<MconnSnapshot, MconnSnapshotBuilder> {
   _$MconnSnapshot? _$v;
-
-  ListBuilder<MconnSnapshotBond>? _bonds;
-  ListBuilder<MconnSnapshotBond> get bonds =>
-      _$this._bonds ??= ListBuilder<MconnSnapshotBond>();
-  set bonds(ListBuilder<MconnSnapshotBond>? bonds) => _$this._bonds = bonds;
 
   num? _countReclaimFailures;
   num? get countReclaimFailures => _$this._countReclaimFailures;
@@ -1090,6 +1085,19 @@ class MconnSnapshotBuilder
   num? get countTransmitFailures => _$this._countTransmitFailures;
   set countTransmitFailures(num? countTransmitFailures) =>
       _$this._countTransmitFailures = countTransmitFailures;
+
+  num? _t;
+  num? get t => _$this._t;
+  set t(num? t) => _$this._t = t;
+
+  String? _v;
+  String? get v => _$this._v;
+  set v(String? v) => _$this._v = v;
+
+  ListBuilder<MconnSnapshotBond>? _bonds;
+  ListBuilder<MconnSnapshotBond> get bonds =>
+      _$this._bonds ??= ListBuilder<MconnSnapshotBond>();
+  set bonds(ListBuilder<MconnSnapshotBond>? bonds) => _$this._bonds = bonds;
 
   num? _cpuCount;
   num? get cpuCount => _$this._cpuCount;
@@ -1885,10 +1893,6 @@ class MconnSnapshotBuilder
   set systemBootTimeS(num? systemBootTimeS) =>
       _$this._systemBootTimeS = systemBootTimeS;
 
-  num? _t;
-  num? get t => _$this._t;
-  set t(num? t) => _$this._t = t;
-
   ListBuilder<MconnSnapshotThermal>? _thermals;
   ListBuilder<MconnSnapshotThermal> get thermals =>
       _$this._thermals ??= ListBuilder<MconnSnapshotThermal>();
@@ -1910,10 +1914,6 @@ class MconnSnapshotBuilder
   set uptimeTotalMs(num? uptimeTotalMs) =>
       _$this._uptimeTotalMs = uptimeTotalMs;
 
-  String? _v;
-  String? get v => _$this._v;
-  set v(String? v) => _$this._v = v;
-
   MconnSnapshotBuilder() {
     MconnSnapshot._defaults(this);
   }
@@ -1921,11 +1921,13 @@ class MconnSnapshotBuilder
   MconnSnapshotBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _bonds = $v.bonds?.toBuilder();
       _countReclaimFailures = $v.countReclaimFailures;
       _countReclaimedPaths = $v.countReclaimedPaths;
       _countRecordFailed = $v.countRecordFailed;
       _countTransmitFailures = $v.countTransmitFailures;
+      _t = $v.t;
+      _v = $v.v;
+      _bonds = $v.bonds?.toBuilder();
       _cpuCount = $v.cpuCount;
       _cpuPressure10s = $v.cpuPressure10s;
       _cpuPressure300s = $v.cpuPressure300s;
@@ -2085,12 +2087,10 @@ class MconnSnapshotBuilder
       _snmpUdpNoPorts = $v.snmpUdpNoPorts;
       _snmpUdpOutDatagrams = $v.snmpUdpOutDatagrams;
       _systemBootTimeS = $v.systemBootTimeS;
-      _t = $v.t;
       _thermals = $v.thermals?.toBuilder();
       _tunnels = $v.tunnels?.toBuilder();
       _uptimeIdleMs = $v.uptimeIdleMs;
       _uptimeTotalMs = $v.uptimeTotalMs;
-      _v = $v.v;
       _$v = null;
     }
     return this;
@@ -2114,7 +2114,6 @@ class MconnSnapshotBuilder
     try {
       _$result = _$v ??
           _$MconnSnapshot._(
-            bonds: _bonds?.build(),
             countReclaimFailures: BuiltValueNullFieldError.checkNotNull(
                 countReclaimFailures, r'MconnSnapshot', 'countReclaimFailures'),
             countReclaimedPaths: BuiltValueNullFieldError.checkNotNull(
@@ -2125,6 +2124,9 @@ class MconnSnapshotBuilder
                 countTransmitFailures,
                 r'MconnSnapshot',
                 'countTransmitFailures'),
+            t: BuiltValueNullFieldError.checkNotNull(t, r'MconnSnapshot', 't'),
+            v: BuiltValueNullFieldError.checkNotNull(v, r'MconnSnapshot', 'v'),
+            bonds: _bonds?.build(),
             cpuCount: cpuCount,
             cpuPressure10s: cpuPressure10s,
             cpuPressure300s: cpuPressure300s,
@@ -2284,12 +2286,10 @@ class MconnSnapshotBuilder
             snmpUdpNoPorts: snmpUdpNoPorts,
             snmpUdpOutDatagrams: snmpUdpOutDatagrams,
             systemBootTimeS: systemBootTimeS,
-            t: BuiltValueNullFieldError.checkNotNull(t, r'MconnSnapshot', 't'),
             thermals: _thermals?.build(),
             tunnels: _tunnels?.build(),
             uptimeIdleMs: uptimeIdleMs,
             uptimeTotalMs: uptimeTotalMs,
-            v: BuiltValueNullFieldError.checkNotNull(v, r'MconnSnapshot', 'v'),
           );
     } catch (_) {
       late String _$failedField;

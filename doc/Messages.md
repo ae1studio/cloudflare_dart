@@ -8,10 +8,10 @@ import 'package:cloudflare_dart/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**messages** | [**BuiltList&lt;MessagesMessagesInner&gt;**](MessagesMessagesInner.md) | An array of message objects representing the conversation history. | 
 **frequencyPenalty** | **num** | Decreases the likelihood of the model repeating the same lines verbatim. | [optional] 
 **functions** | [**BuiltList&lt;MessagesFunctionsInner&gt;**](MessagesFunctionsInner.md) |  | [optional] 
 **maxTokens** | **int** | The maximum number of tokens to generate in the response. | [optional] [default to 2000]
-**messages** | [**BuiltList&lt;MessagesMessagesInner&gt;**](MessagesMessagesInner.md) | An array of message objects representing the conversation history. | 
 **presencePenalty** | **num** | Increases the likelihood of the model introducing new topics. | [optional] 
 **raw** | **bool** | If true, a chat template is not applied and you must adhere to the specific model's expected formatting. | [optional] [default to false]
 **repetitionPenalty** | **num** | Penalty for repeated tokens; higher values discourage repetition. | [optional] 

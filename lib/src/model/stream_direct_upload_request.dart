@@ -14,10 +14,10 @@ part 'stream_direct_upload_request.g.dart';
 /// StreamDirectUploadRequest
 ///
 /// Properties:
+/// * [maxDurationSeconds] - The maximum duration in seconds for a video upload. Can be set for a video that is not yet uploaded to limit its duration. Uploads that exceed the specified duration will fail during processing. A value of `-1` means the value is unknown.
 /// * [allowedOrigins] - Lists the origins allowed to display the video. Enter allowed origin domains in an array and use `*` for wildcard subdomains. Empty arrays allow the video to be viewed on any origin.
 /// * [creator] - A user-defined identifier for the media creator.
 /// * [expiry] - The date and time after upload when videos will not be accepted.
-/// * [maxDurationSeconds] - The maximum duration in seconds for a video upload. Can be set for a video that is not yet uploaded to limit its duration. Uploads that exceed the specified duration will fail during processing. A value of `-1` means the value is unknown.
 /// * [meta] - A user modifiable key-value store used to reference other systems of record for managing videos.
 /// * [requireSignedURLs] - Indicates whether the video can be a accessed using the UID. When set to `true`, a signed token must be generated with a signing key to view the video.
 /// * [scheduledDeletion] - Indicates the date and time at which the video will be deleted. Omit the field to indicate no change, or include with a `null` value to remove an existing scheduled deletion. If specified, must be at least 30 days from upload time.
@@ -25,6 +25,10 @@ part 'stream_direct_upload_request.g.dart';
 /// * [watermark] 
 @BuiltValue()
 abstract class StreamDirectUploadRequest implements Built<StreamDirectUploadRequest, StreamDirectUploadRequestBuilder> {
+  /// The maximum duration in seconds for a video upload. Can be set for a video that is not yet uploaded to limit its duration. Uploads that exceed the specified duration will fail during processing. A value of `-1` means the value is unknown.
+  @BuiltValueField(wireName: r'maxDurationSeconds')
+  int get maxDurationSeconds;
+
   /// Lists the origins allowed to display the video. Enter allowed origin domains in an array and use `*` for wildcard subdomains. Empty arrays allow the video to be viewed on any origin.
   @BuiltValueField(wireName: r'allowedOrigins')
   BuiltList<String>? get allowedOrigins;
@@ -36,10 +40,6 @@ abstract class StreamDirectUploadRequest implements Built<StreamDirectUploadRequ
   /// The date and time after upload when videos will not be accepted.
   @BuiltValueField(wireName: r'expiry')
   DateTime? get expiry;
-
-  /// The maximum duration in seconds for a video upload. Can be set for a video that is not yet uploaded to limit its duration. Uploads that exceed the specified duration will fail during processing. A value of `-1` means the value is unknown.
-  @BuiltValueField(wireName: r'maxDurationSeconds')
-  int get maxDurationSeconds;
 
   /// A user modifiable key-value store used to reference other systems of record for managing videos.
   @BuiltValueField(wireName: r'meta')
@@ -85,6 +85,11 @@ class _$StreamDirectUploadRequestSerializer implements PrimitiveSerializer<Strea
     StreamDirectUploadRequest object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    yield r'maxDurationSeconds';
+    yield serializers.serialize(
+      object.maxDurationSeconds,
+      specifiedType: const FullType(int),
+    );
     if (object.allowedOrigins != null) {
       yield r'allowedOrigins';
       yield serializers.serialize(
@@ -106,11 +111,6 @@ class _$StreamDirectUploadRequestSerializer implements PrimitiveSerializer<Strea
         specifiedType: const FullType(DateTime),
       );
     }
-    yield r'maxDurationSeconds';
-    yield serializers.serialize(
-      object.maxDurationSeconds,
-      specifiedType: const FullType(int),
-    );
     if (object.meta != null) {
       yield r'meta';
       yield serializers.serialize(
@@ -169,6 +169,13 @@ class _$StreamDirectUploadRequestSerializer implements PrimitiveSerializer<Strea
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
+        case r'maxDurationSeconds':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(int),
+          ) as int;
+          result.maxDurationSeconds = valueDes;
+          break;
         case r'allowedOrigins':
           final valueDes = serializers.deserialize(
             value,
@@ -189,13 +196,6 @@ class _$StreamDirectUploadRequestSerializer implements PrimitiveSerializer<Strea
             specifiedType: const FullType(DateTime),
           ) as DateTime;
           result.expiry = valueDes;
-          break;
-        case r'maxDurationSeconds':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
-          result.maxDurationSeconds = valueDes;
           break;
         case r'meta':
           final valueDes = serializers.deserialize(

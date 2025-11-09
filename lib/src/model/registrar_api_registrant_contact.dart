@@ -13,18 +13,18 @@ part 'registrar_api_registrant_contact.g.dart';
 ///
 /// Properties:
 /// * [address] - Address.
-/// * [address2] - Optional address line for unit, floor, suite, etc.
 /// * [city] - City.
 /// * [country] - The country in which the user lives.
-/// * [email] - The contact email address of the user.
-/// * [fax] - Contact fax number.
 /// * [firstName] - User's first name
-/// * [id] - Contact Identifier.
 /// * [lastName] - User's last name
 /// * [organization] - Name of organization.
 /// * [phone] - User's telephone number
 /// * [state] - State.
 /// * [zip] - The zipcode or postal code where the user lives.
+/// * [address2] - Optional address line for unit, floor, suite, etc.
+/// * [email] - The contact email address of the user.
+/// * [fax] - Contact fax number.
+/// * [id] - Contact Identifier.
 @BuiltValue()
 abstract class RegistrarApiRegistrantContact implements RegistrarApiContacts, Built<RegistrarApiRegistrantContact, RegistrarApiRegistrantContactBuilder> {
   RegistrarApiRegistrantContact._();
@@ -70,6 +70,11 @@ class _$RegistrarApiRegistrantContactSerializer implements PrimitiveSerializer<R
       object.address,
       specifiedType: const FullType(String),
     );
+    yield r'city';
+    yield serializers.serialize(
+      object.city,
+      specifiedType: const FullType(String),
+    );
     if (object.address2 != null) {
       yield r'address2';
       yield serializers.serialize(
@@ -77,11 +82,6 @@ class _$RegistrarApiRegistrantContactSerializer implements PrimitiveSerializer<R
         specifiedType: const FullType(String),
       );
     }
-    yield r'city';
-    yield serializers.serialize(
-      object.city,
-      specifiedType: const FullType(String),
-    );
     yield r'first_name';
     yield object.firstName == null ? null : serializers.serialize(
       object.firstName,
@@ -97,6 +97,11 @@ class _$RegistrarApiRegistrantContactSerializer implements PrimitiveSerializer<R
       object.organization,
       specifiedType: const FullType(String),
     );
+    yield r'state';
+    yield serializers.serialize(
+      object.state,
+      specifiedType: const FullType(String),
+    );
     if (object.id != null) {
       yield r'id';
       yield serializers.serialize(
@@ -104,11 +109,6 @@ class _$RegistrarApiRegistrantContactSerializer implements PrimitiveSerializer<R
         specifiedType: const FullType(String),
       );
     }
-    yield r'state';
-    yield serializers.serialize(
-      object.state,
-      specifiedType: const FullType(String),
-    );
     if (object.fax != null) {
       yield r'fax';
       yield serializers.serialize(
@@ -177,19 +177,19 @@ class _$RegistrarApiRegistrantContactSerializer implements PrimitiveSerializer<R
           ) as String;
           result.address = valueDes;
           break;
-        case r'address2':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.address2 = valueDes;
-          break;
         case r'city':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(String),
           ) as String;
           result.city = valueDes;
+          break;
+        case r'address2':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.address2 = valueDes;
           break;
         case r'first_name':
           final valueDes = serializers.deserialize(
@@ -214,19 +214,19 @@ class _$RegistrarApiRegistrantContactSerializer implements PrimitiveSerializer<R
           ) as String;
           result.organization = valueDes;
           break;
-        case r'id':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.id = valueDes;
-          break;
         case r'state':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(String),
           ) as String;
           result.state = valueDes;
+          break;
+        case r'id':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.id = valueDes;
           break;
         case r'fax':
           final valueDes = serializers.deserialize(

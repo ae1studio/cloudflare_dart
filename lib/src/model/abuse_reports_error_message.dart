@@ -12,15 +12,15 @@ part 'abuse_reports_error_message.g.dart';
 /// AbuseReportsErrorMessage
 ///
 /// Properties:
-/// * [code] 
 /// * [message] 
+/// * [code] 
 @BuiltValue()
 abstract class AbuseReportsErrorMessage implements Built<AbuseReportsErrorMessage, AbuseReportsErrorMessageBuilder> {
-  @BuiltValueField(wireName: r'code')
-  AbuseReportsErrorMessageCode? get code;
-
   @BuiltValueField(wireName: r'message')
   String get message;
+
+  @BuiltValueField(wireName: r'code')
+  AbuseReportsErrorMessageCode? get code;
 
   AbuseReportsErrorMessage._();
 
@@ -45,6 +45,11 @@ class _$AbuseReportsErrorMessageSerializer implements PrimitiveSerializer<AbuseR
     AbuseReportsErrorMessage object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    yield r'message';
+    yield serializers.serialize(
+      object.message,
+      specifiedType: const FullType(String),
+    );
     if (object.code != null) {
       yield r'code';
       yield serializers.serialize(
@@ -52,11 +57,6 @@ class _$AbuseReportsErrorMessageSerializer implements PrimitiveSerializer<AbuseR
         specifiedType: const FullType(AbuseReportsErrorMessageCode),
       );
     }
-    yield r'message';
-    yield serializers.serialize(
-      object.message,
-      specifiedType: const FullType(String),
-    );
   }
 
   @override
@@ -80,19 +80,19 @@ class _$AbuseReportsErrorMessageSerializer implements PrimitiveSerializer<AbuseR
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'code':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(AbuseReportsErrorMessageCode),
-          ) as AbuseReportsErrorMessageCode;
-          result.code.replace(valueDes);
-          break;
         case r'message':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(String),
           ) as String;
           result.message = valueDes;
+          break;
+        case r'code':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(AbuseReportsErrorMessageCode),
+          ) as AbuseReportsErrorMessageCode;
+          result.code.replace(valueDes);
           break;
         default:
           unhandled.add(key);

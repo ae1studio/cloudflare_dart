@@ -9,8 +9,8 @@ import 'package:cloudflare_dart/api.dart';
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **targetCriteria** | [**BuiltList&lt;AccessTargetCriteriaInfraApp&gt;**](AccessTargetCriteriaInfraApp.md) |  | 
-**name** | **String** | The name of the application. | [optional] 
 **type** | [**AccessType**](AccessType.md) |  | 
+**name** | **String** | The name of the application. | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

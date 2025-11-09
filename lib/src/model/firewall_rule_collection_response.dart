@@ -10,6 +10,7 @@ import 'package:cloudflare_dart/src/model/aaa_messages_inner.dart';
 import 'package:cloudflare_dart/src/model/firewall_rule.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
+import 'package:built_value/json_object.dart';
 
 part 'firewall_rule_collection_response.g.dart';
 

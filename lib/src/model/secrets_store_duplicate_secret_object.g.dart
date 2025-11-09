@@ -9,18 +9,18 @@ part of 'secrets_store_duplicate_secret_object.dart';
 class _$SecretsStoreDuplicateSecretObject
     extends SecretsStoreDuplicateSecretObject {
   @override
-  final String? comment;
-  @override
   final String name;
   @override
   final BuiltList<String> scopes;
+  @override
+  final String? comment;
 
   factory _$SecretsStoreDuplicateSecretObject(
           [void Function(SecretsStoreDuplicateSecretObjectBuilder)? updates]) =>
       (SecretsStoreDuplicateSecretObjectBuilder()..update(updates))._build();
 
   _$SecretsStoreDuplicateSecretObject._(
-      {this.comment, required this.name, required this.scopes})
+      {required this.name, required this.scopes, this.comment})
       : super._();
   @override
   SecretsStoreDuplicateSecretObject rebuild(
@@ -35,17 +35,17 @@ class _$SecretsStoreDuplicateSecretObject
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is SecretsStoreDuplicateSecretObject &&
-        comment == other.comment &&
         name == other.name &&
-        scopes == other.scopes;
+        scopes == other.scopes &&
+        comment == other.comment;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, comment.hashCode);
     _$hash = $jc(_$hash, name.hashCode);
     _$hash = $jc(_$hash, scopes.hashCode);
+    _$hash = $jc(_$hash, comment.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -53,9 +53,9 @@ class _$SecretsStoreDuplicateSecretObject
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'SecretsStoreDuplicateSecretObject')
-          ..add('comment', comment)
           ..add('name', name)
-          ..add('scopes', scopes))
+          ..add('scopes', scopes)
+          ..add('comment', comment))
         .toString();
   }
 }
@@ -66,10 +66,6 @@ class SecretsStoreDuplicateSecretObjectBuilder
             SecretsStoreDuplicateSecretObjectBuilder> {
   _$SecretsStoreDuplicateSecretObject? _$v;
 
-  String? _comment;
-  String? get comment => _$this._comment;
-  set comment(String? comment) => _$this._comment = comment;
-
   String? _name;
   String? get name => _$this._name;
   set name(String? name) => _$this._name = name;
@@ -78,6 +74,10 @@ class SecretsStoreDuplicateSecretObjectBuilder
   ListBuilder<String> get scopes => _$this._scopes ??= ListBuilder<String>();
   set scopes(ListBuilder<String>? scopes) => _$this._scopes = scopes;
 
+  String? _comment;
+  String? get comment => _$this._comment;
+  set comment(String? comment) => _$this._comment = comment;
+
   SecretsStoreDuplicateSecretObjectBuilder() {
     SecretsStoreDuplicateSecretObject._defaults(this);
   }
@@ -85,9 +85,9 @@ class SecretsStoreDuplicateSecretObjectBuilder
   SecretsStoreDuplicateSecretObjectBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _comment = $v.comment;
       _name = $v.name;
       _scopes = $v.scopes.toBuilder();
+      _comment = $v.comment;
       _$v = null;
     }
     return this;
@@ -112,10 +112,10 @@ class SecretsStoreDuplicateSecretObjectBuilder
     try {
       _$result = _$v ??
           _$SecretsStoreDuplicateSecretObject._(
-            comment: comment,
             name: BuiltValueNullFieldError.checkNotNull(
                 name, r'SecretsStoreDuplicateSecretObject', 'name'),
             scopes: scopes.build(),
+            comment: comment,
           );
     } catch (_) {
       late String _$failedField;

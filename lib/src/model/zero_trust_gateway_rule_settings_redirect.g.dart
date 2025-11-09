@@ -9,11 +9,11 @@ part of 'zero_trust_gateway_rule_settings_redirect.dart';
 class _$ZeroTrustGatewayRuleSettingsRedirect
     extends ZeroTrustGatewayRuleSettingsRedirect {
   @override
+  final String targetUri;
+  @override
   final bool? includeContext;
   @override
   final bool? preservePathAndQuery;
-  @override
-  final String targetUri;
 
   factory _$ZeroTrustGatewayRuleSettingsRedirect(
           [void Function(ZeroTrustGatewayRuleSettingsRedirectBuilder)?
@@ -21,7 +21,7 @@ class _$ZeroTrustGatewayRuleSettingsRedirect
       (ZeroTrustGatewayRuleSettingsRedirectBuilder()..update(updates))._build();
 
   _$ZeroTrustGatewayRuleSettingsRedirect._(
-      {this.includeContext, this.preservePathAndQuery, required this.targetUri})
+      {required this.targetUri, this.includeContext, this.preservePathAndQuery})
       : super._();
   @override
   ZeroTrustGatewayRuleSettingsRedirect rebuild(
@@ -36,17 +36,17 @@ class _$ZeroTrustGatewayRuleSettingsRedirect
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is ZeroTrustGatewayRuleSettingsRedirect &&
+        targetUri == other.targetUri &&
         includeContext == other.includeContext &&
-        preservePathAndQuery == other.preservePathAndQuery &&
-        targetUri == other.targetUri;
+        preservePathAndQuery == other.preservePathAndQuery;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
+    _$hash = $jc(_$hash, targetUri.hashCode);
     _$hash = $jc(_$hash, includeContext.hashCode);
     _$hash = $jc(_$hash, preservePathAndQuery.hashCode);
-    _$hash = $jc(_$hash, targetUri.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -54,9 +54,9 @@ class _$ZeroTrustGatewayRuleSettingsRedirect
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'ZeroTrustGatewayRuleSettingsRedirect')
+          ..add('targetUri', targetUri)
           ..add('includeContext', includeContext)
-          ..add('preservePathAndQuery', preservePathAndQuery)
-          ..add('targetUri', targetUri))
+          ..add('preservePathAndQuery', preservePathAndQuery))
         .toString();
   }
 }
@@ -66,6 +66,10 @@ class ZeroTrustGatewayRuleSettingsRedirectBuilder
         Builder<ZeroTrustGatewayRuleSettingsRedirect,
             ZeroTrustGatewayRuleSettingsRedirectBuilder> {
   _$ZeroTrustGatewayRuleSettingsRedirect? _$v;
+
+  String? _targetUri;
+  String? get targetUri => _$this._targetUri;
+  set targetUri(String? targetUri) => _$this._targetUri = targetUri;
 
   bool? _includeContext;
   bool? get includeContext => _$this._includeContext;
@@ -77,10 +81,6 @@ class ZeroTrustGatewayRuleSettingsRedirectBuilder
   set preservePathAndQuery(bool? preservePathAndQuery) =>
       _$this._preservePathAndQuery = preservePathAndQuery;
 
-  String? _targetUri;
-  String? get targetUri => _$this._targetUri;
-  set targetUri(String? targetUri) => _$this._targetUri = targetUri;
-
   ZeroTrustGatewayRuleSettingsRedirectBuilder() {
     ZeroTrustGatewayRuleSettingsRedirect._defaults(this);
   }
@@ -88,9 +88,9 @@ class ZeroTrustGatewayRuleSettingsRedirectBuilder
   ZeroTrustGatewayRuleSettingsRedirectBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
+      _targetUri = $v.targetUri;
       _includeContext = $v.includeContext;
       _preservePathAndQuery = $v.preservePathAndQuery;
-      _targetUri = $v.targetUri;
       _$v = null;
     }
     return this;
@@ -113,10 +113,10 @@ class ZeroTrustGatewayRuleSettingsRedirectBuilder
   _$ZeroTrustGatewayRuleSettingsRedirect _build() {
     final _$result = _$v ??
         _$ZeroTrustGatewayRuleSettingsRedirect._(
-          includeContext: includeContext,
-          preservePathAndQuery: preservePathAndQuery,
           targetUri: BuiltValueNullFieldError.checkNotNull(
               targetUri, r'ZeroTrustGatewayRuleSettingsRedirect', 'targetUri'),
+          includeContext: includeContext,
+          preservePathAndQuery: preservePathAndQuery,
         );
     replace(_$result);
     return _$result;

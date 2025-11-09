@@ -72,9 +72,9 @@ class _$TelemetryQueryRequestParametersOrderByOrderEnumSerializer
 class _$TelemetryQueryRequestParametersOrderBy
     extends TelemetryQueryRequestParametersOrderBy {
   @override
-  final TelemetryQueryRequestParametersOrderByOrderEnum? order;
-  @override
   final String value;
+  @override
+  final TelemetryQueryRequestParametersOrderByOrderEnum? order;
 
   factory _$TelemetryQueryRequestParametersOrderBy(
           [void Function(TelemetryQueryRequestParametersOrderByBuilder)?
@@ -82,7 +82,7 @@ class _$TelemetryQueryRequestParametersOrderBy
       (TelemetryQueryRequestParametersOrderByBuilder()..update(updates))
           ._build();
 
-  _$TelemetryQueryRequestParametersOrderBy._({this.order, required this.value})
+  _$TelemetryQueryRequestParametersOrderBy._({required this.value, this.order})
       : super._();
   @override
   TelemetryQueryRequestParametersOrderBy rebuild(
@@ -98,15 +98,15 @@ class _$TelemetryQueryRequestParametersOrderBy
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is TelemetryQueryRequestParametersOrderBy &&
-        order == other.order &&
-        value == other.value;
+        value == other.value &&
+        order == other.order;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, order.hashCode);
     _$hash = $jc(_$hash, value.hashCode);
+    _$hash = $jc(_$hash, order.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -115,8 +115,8 @@ class _$TelemetryQueryRequestParametersOrderBy
   String toString() {
     return (newBuiltValueToStringHelper(
             r'TelemetryQueryRequestParametersOrderBy')
-          ..add('order', order)
-          ..add('value', value))
+          ..add('value', value)
+          ..add('order', order))
         .toString();
   }
 }
@@ -127,14 +127,14 @@ class TelemetryQueryRequestParametersOrderByBuilder
             TelemetryQueryRequestParametersOrderByBuilder> {
   _$TelemetryQueryRequestParametersOrderBy? _$v;
 
+  String? _value;
+  String? get value => _$this._value;
+  set value(String? value) => _$this._value = value;
+
   TelemetryQueryRequestParametersOrderByOrderEnum? _order;
   TelemetryQueryRequestParametersOrderByOrderEnum? get order => _$this._order;
   set order(TelemetryQueryRequestParametersOrderByOrderEnum? order) =>
       _$this._order = order;
-
-  String? _value;
-  String? get value => _$this._value;
-  set value(String? value) => _$this._value = value;
 
   TelemetryQueryRequestParametersOrderByBuilder() {
     TelemetryQueryRequestParametersOrderBy._defaults(this);
@@ -143,8 +143,8 @@ class TelemetryQueryRequestParametersOrderByBuilder
   TelemetryQueryRequestParametersOrderByBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _order = $v.order;
       _value = $v.value;
+      _order = $v.order;
       _$v = null;
     }
     return this;
@@ -167,9 +167,9 @@ class TelemetryQueryRequestParametersOrderByBuilder
   _$TelemetryQueryRequestParametersOrderBy _build() {
     final _$result = _$v ??
         _$TelemetryQueryRequestParametersOrderBy._(
-          order: order,
           value: BuiltValueNullFieldError.checkNotNull(
               value, r'TelemetryQueryRequestParametersOrderBy', 'value'),
+          order: order,
         );
     replace(_$result);
     return _$result;

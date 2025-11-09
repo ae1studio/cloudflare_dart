@@ -10,9 +10,9 @@ class _$DlpCreateIntegrationBody extends DlpCreateIntegrationBody {
   @override
   final DlpRiskScoreIntegrationType integrationType;
   @override
-  final String? referenceId;
-  @override
   final String tenantUrl;
+  @override
+  final String? referenceId;
 
   factory _$DlpCreateIntegrationBody(
           [void Function(DlpCreateIntegrationBodyBuilder)? updates]) =>
@@ -20,8 +20,8 @@ class _$DlpCreateIntegrationBody extends DlpCreateIntegrationBody {
 
   _$DlpCreateIntegrationBody._(
       {required this.integrationType,
-      this.referenceId,
-      required this.tenantUrl})
+      required this.tenantUrl,
+      this.referenceId})
       : super._();
   @override
   DlpCreateIntegrationBody rebuild(
@@ -37,16 +37,16 @@ class _$DlpCreateIntegrationBody extends DlpCreateIntegrationBody {
     if (identical(other, this)) return true;
     return other is DlpCreateIntegrationBody &&
         integrationType == other.integrationType &&
-        referenceId == other.referenceId &&
-        tenantUrl == other.tenantUrl;
+        tenantUrl == other.tenantUrl &&
+        referenceId == other.referenceId;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
     _$hash = $jc(_$hash, integrationType.hashCode);
-    _$hash = $jc(_$hash, referenceId.hashCode);
     _$hash = $jc(_$hash, tenantUrl.hashCode);
+    _$hash = $jc(_$hash, referenceId.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -55,8 +55,8 @@ class _$DlpCreateIntegrationBody extends DlpCreateIntegrationBody {
   String toString() {
     return (newBuiltValueToStringHelper(r'DlpCreateIntegrationBody')
           ..add('integrationType', integrationType)
-          ..add('referenceId', referenceId)
-          ..add('tenantUrl', tenantUrl))
+          ..add('tenantUrl', tenantUrl)
+          ..add('referenceId', referenceId))
         .toString();
   }
 }
@@ -71,13 +71,13 @@ class DlpCreateIntegrationBodyBuilder
   set integrationType(DlpRiskScoreIntegrationType? integrationType) =>
       _$this._integrationType = integrationType;
 
-  String? _referenceId;
-  String? get referenceId => _$this._referenceId;
-  set referenceId(String? referenceId) => _$this._referenceId = referenceId;
-
   String? _tenantUrl;
   String? get tenantUrl => _$this._tenantUrl;
   set tenantUrl(String? tenantUrl) => _$this._tenantUrl = tenantUrl;
+
+  String? _referenceId;
+  String? get referenceId => _$this._referenceId;
+  set referenceId(String? referenceId) => _$this._referenceId = referenceId;
 
   DlpCreateIntegrationBodyBuilder() {
     DlpCreateIntegrationBody._defaults(this);
@@ -87,8 +87,8 @@ class DlpCreateIntegrationBodyBuilder
     final $v = _$v;
     if ($v != null) {
       _integrationType = $v.integrationType;
-      _referenceId = $v.referenceId;
       _tenantUrl = $v.tenantUrl;
+      _referenceId = $v.referenceId;
       _$v = null;
     }
     return this;
@@ -112,9 +112,9 @@ class DlpCreateIntegrationBodyBuilder
         _$DlpCreateIntegrationBody._(
           integrationType: BuiltValueNullFieldError.checkNotNull(
               integrationType, r'DlpCreateIntegrationBody', 'integrationType'),
-          referenceId: referenceId,
           tenantUrl: BuiltValueNullFieldError.checkNotNull(
               tenantUrl, r'DlpCreateIntegrationBody', 'tenantUrl'),
+          referenceId: referenceId,
         );
     replace(_$result);
     return _$result;

@@ -13,12 +13,15 @@ part 'digital_experience_monitoring_test_stat_pct_over_time.g.dart';
 /// DigitalExperienceMonitoringTestStatPctOverTime
 ///
 /// Properties:
+/// * [slots] 
 /// * [avg] - average observed in the time period
 /// * [max] - highest observed in the time period
 /// * [min] - lowest  observed in the time period
-/// * [slots] 
 @BuiltValue()
 abstract class DigitalExperienceMonitoringTestStatPctOverTime implements Built<DigitalExperienceMonitoringTestStatPctOverTime, DigitalExperienceMonitoringTestStatPctOverTimeBuilder> {
+  @BuiltValueField(wireName: r'slots')
+  BuiltList<DigitalExperienceMonitoringTestStatPctOverTimeSlotsInner> get slots;
+
   /// average observed in the time period
   @BuiltValueField(wireName: r'avg')
   double? get avg;
@@ -30,9 +33,6 @@ abstract class DigitalExperienceMonitoringTestStatPctOverTime implements Built<D
   /// lowest  observed in the time period
   @BuiltValueField(wireName: r'min')
   double? get min;
-
-  @BuiltValueField(wireName: r'slots')
-  BuiltList<DigitalExperienceMonitoringTestStatPctOverTimeSlotsInner> get slots;
 
   DigitalExperienceMonitoringTestStatPctOverTime._();
 
@@ -57,6 +57,11 @@ class _$DigitalExperienceMonitoringTestStatPctOverTimeSerializer implements Prim
     DigitalExperienceMonitoringTestStatPctOverTime object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    yield r'slots';
+    yield serializers.serialize(
+      object.slots,
+      specifiedType: const FullType(BuiltList, [FullType(DigitalExperienceMonitoringTestStatPctOverTimeSlotsInner)]),
+    );
     if (object.avg != null) {
       yield r'avg';
       yield serializers.serialize(
@@ -78,11 +83,6 @@ class _$DigitalExperienceMonitoringTestStatPctOverTimeSerializer implements Prim
         specifiedType: const FullType.nullable(double),
       );
     }
-    yield r'slots';
-    yield serializers.serialize(
-      object.slots,
-      specifiedType: const FullType(BuiltList, [FullType(DigitalExperienceMonitoringTestStatPctOverTimeSlotsInner)]),
-    );
   }
 
   @override
@@ -106,6 +106,13 @@ class _$DigitalExperienceMonitoringTestStatPctOverTimeSerializer implements Prim
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
+        case r'slots':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BuiltList, [FullType(DigitalExperienceMonitoringTestStatPctOverTimeSlotsInner)]),
+          ) as BuiltList<DigitalExperienceMonitoringTestStatPctOverTimeSlotsInner>;
+          result.slots.replace(valueDes);
+          break;
         case r'avg':
           final valueDes = serializers.deserialize(
             value,
@@ -129,13 +136,6 @@ class _$DigitalExperienceMonitoringTestStatPctOverTimeSerializer implements Prim
           ) as double?;
           if (valueDes == null) continue;
           result.min = valueDes;
-          break;
-        case r'slots':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(DigitalExperienceMonitoringTestStatPctOverTimeSlotsInner)]),
-          ) as BuiltList<DigitalExperienceMonitoringTestStatPctOverTimeSlotsInner>;
-          result.slots.replace(valueDes);
           break;
         default:
           unhandled.add(key);

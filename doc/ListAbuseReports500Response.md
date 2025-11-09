@@ -8,9 +8,9 @@ import 'package:cloudflare_dart/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**success** | **bool** |  | 
 **errors** | [**BuiltList&lt;AbuseReportsMessage&gt;**](AbuseReportsMessage.md) |  | [optional] 
 **messages** | [**BuiltList&lt;AbuseReportsMessage&gt;**](AbuseReportsMessage.md) |  | [optional] 
-**success** | **bool** |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

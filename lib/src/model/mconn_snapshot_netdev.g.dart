@@ -8,8 +8,6 @@ part of 'mconn_snapshot_netdev.dart';
 
 class _$MconnSnapshotNetdev extends MconnSnapshotNetdev {
   @override
-  final String? connectorId;
-  @override
   final String name;
   @override
   final num recvBytes;
@@ -43,14 +41,15 @@ class _$MconnSnapshotNetdev extends MconnSnapshotNetdev {
   final num sentFifo;
   @override
   final num sentPackets;
+  @override
+  final String? connectorId;
 
   factory _$MconnSnapshotNetdev(
           [void Function(MconnSnapshotNetdevBuilder)? updates]) =>
       (MconnSnapshotNetdevBuilder()..update(updates))._build();
 
   _$MconnSnapshotNetdev._(
-      {this.connectorId,
-      required this.name,
+      {required this.name,
       required this.recvBytes,
       required this.recvCompressed,
       required this.recvDrop,
@@ -66,7 +65,8 @@ class _$MconnSnapshotNetdev extends MconnSnapshotNetdev {
       required this.sentDrop,
       required this.sentErrs,
       required this.sentFifo,
-      required this.sentPackets})
+      required this.sentPackets,
+      this.connectorId})
       : super._();
   @override
   MconnSnapshotNetdev rebuild(
@@ -81,7 +81,6 @@ class _$MconnSnapshotNetdev extends MconnSnapshotNetdev {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is MconnSnapshotNetdev &&
-        connectorId == other.connectorId &&
         name == other.name &&
         recvBytes == other.recvBytes &&
         recvCompressed == other.recvCompressed &&
@@ -98,13 +97,13 @@ class _$MconnSnapshotNetdev extends MconnSnapshotNetdev {
         sentDrop == other.sentDrop &&
         sentErrs == other.sentErrs &&
         sentFifo == other.sentFifo &&
-        sentPackets == other.sentPackets;
+        sentPackets == other.sentPackets &&
+        connectorId == other.connectorId;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, connectorId.hashCode);
     _$hash = $jc(_$hash, name.hashCode);
     _$hash = $jc(_$hash, recvBytes.hashCode);
     _$hash = $jc(_$hash, recvCompressed.hashCode);
@@ -122,6 +121,7 @@ class _$MconnSnapshotNetdev extends MconnSnapshotNetdev {
     _$hash = $jc(_$hash, sentErrs.hashCode);
     _$hash = $jc(_$hash, sentFifo.hashCode);
     _$hash = $jc(_$hash, sentPackets.hashCode);
+    _$hash = $jc(_$hash, connectorId.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -129,7 +129,6 @@ class _$MconnSnapshotNetdev extends MconnSnapshotNetdev {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'MconnSnapshotNetdev')
-          ..add('connectorId', connectorId)
           ..add('name', name)
           ..add('recvBytes', recvBytes)
           ..add('recvCompressed', recvCompressed)
@@ -146,7 +145,8 @@ class _$MconnSnapshotNetdev extends MconnSnapshotNetdev {
           ..add('sentDrop', sentDrop)
           ..add('sentErrs', sentErrs)
           ..add('sentFifo', sentFifo)
-          ..add('sentPackets', sentPackets))
+          ..add('sentPackets', sentPackets)
+          ..add('connectorId', connectorId))
         .toString();
   }
 }
@@ -154,10 +154,6 @@ class _$MconnSnapshotNetdev extends MconnSnapshotNetdev {
 class MconnSnapshotNetdevBuilder
     implements Builder<MconnSnapshotNetdev, MconnSnapshotNetdevBuilder> {
   _$MconnSnapshotNetdev? _$v;
-
-  String? _connectorId;
-  String? get connectorId => _$this._connectorId;
-  set connectorId(String? connectorId) => _$this._connectorId = connectorId;
 
   String? _name;
   String? get name => _$this._name;
@@ -230,6 +226,10 @@ class MconnSnapshotNetdevBuilder
   num? get sentPackets => _$this._sentPackets;
   set sentPackets(num? sentPackets) => _$this._sentPackets = sentPackets;
 
+  String? _connectorId;
+  String? get connectorId => _$this._connectorId;
+  set connectorId(String? connectorId) => _$this._connectorId = connectorId;
+
   MconnSnapshotNetdevBuilder() {
     MconnSnapshotNetdev._defaults(this);
   }
@@ -237,7 +237,6 @@ class MconnSnapshotNetdevBuilder
   MconnSnapshotNetdevBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _connectorId = $v.connectorId;
       _name = $v.name;
       _recvBytes = $v.recvBytes;
       _recvCompressed = $v.recvCompressed;
@@ -255,6 +254,7 @@ class MconnSnapshotNetdevBuilder
       _sentErrs = $v.sentErrs;
       _sentFifo = $v.sentFifo;
       _sentPackets = $v.sentPackets;
+      _connectorId = $v.connectorId;
       _$v = null;
     }
     return this;
@@ -276,7 +276,6 @@ class MconnSnapshotNetdevBuilder
   _$MconnSnapshotNetdev _build() {
     final _$result = _$v ??
         _$MconnSnapshotNetdev._(
-          connectorId: connectorId,
           name: BuiltValueNullFieldError.checkNotNull(
               name, r'MconnSnapshotNetdev', 'name'),
           recvBytes: BuiltValueNullFieldError.checkNotNull(
@@ -311,6 +310,7 @@ class MconnSnapshotNetdevBuilder
               sentFifo, r'MconnSnapshotNetdev', 'sentFifo'),
           sentPackets: BuiltValueNullFieldError.checkNotNull(
               sentPackets, r'MconnSnapshotNetdev', 'sentPackets'),
+          connectorId: connectorId,
         );
     replace(_$result);
     return _$result;

@@ -10,11 +10,11 @@ class _$SecondaryDnsPeer extends SecondaryDnsPeer {
   @override
   final String id;
   @override
+  final String name;
+  @override
   final String? ip;
   @override
   final bool? ixfrEnable;
-  @override
-  final String name;
   @override
   final num? port;
   @override
@@ -26,9 +26,9 @@ class _$SecondaryDnsPeer extends SecondaryDnsPeer {
 
   _$SecondaryDnsPeer._(
       {required this.id,
+      required this.name,
       this.ip,
       this.ixfrEnable,
-      required this.name,
       this.port,
       this.tsigId})
       : super._();
@@ -45,9 +45,9 @@ class _$SecondaryDnsPeer extends SecondaryDnsPeer {
     if (identical(other, this)) return true;
     return other is SecondaryDnsPeer &&
         id == other.id &&
+        name == other.name &&
         ip == other.ip &&
         ixfrEnable == other.ixfrEnable &&
-        name == other.name &&
         port == other.port &&
         tsigId == other.tsigId;
   }
@@ -56,9 +56,9 @@ class _$SecondaryDnsPeer extends SecondaryDnsPeer {
   int get hashCode {
     var _$hash = 0;
     _$hash = $jc(_$hash, id.hashCode);
+    _$hash = $jc(_$hash, name.hashCode);
     _$hash = $jc(_$hash, ip.hashCode);
     _$hash = $jc(_$hash, ixfrEnable.hashCode);
-    _$hash = $jc(_$hash, name.hashCode);
     _$hash = $jc(_$hash, port.hashCode);
     _$hash = $jc(_$hash, tsigId.hashCode);
     _$hash = $jf(_$hash);
@@ -69,9 +69,9 @@ class _$SecondaryDnsPeer extends SecondaryDnsPeer {
   String toString() {
     return (newBuiltValueToStringHelper(r'SecondaryDnsPeer')
           ..add('id', id)
+          ..add('name', name)
           ..add('ip', ip)
           ..add('ixfrEnable', ixfrEnable)
-          ..add('name', name)
           ..add('port', port)
           ..add('tsigId', tsigId))
         .toString();
@@ -86,6 +86,10 @@ class SecondaryDnsPeerBuilder
   String? get id => _$this._id;
   set id(String? id) => _$this._id = id;
 
+  String? _name;
+  String? get name => _$this._name;
+  set name(String? name) => _$this._name = name;
+
   String? _ip;
   String? get ip => _$this._ip;
   set ip(String? ip) => _$this._ip = ip;
@@ -93,10 +97,6 @@ class SecondaryDnsPeerBuilder
   bool? _ixfrEnable;
   bool? get ixfrEnable => _$this._ixfrEnable;
   set ixfrEnable(bool? ixfrEnable) => _$this._ixfrEnable = ixfrEnable;
-
-  String? _name;
-  String? get name => _$this._name;
-  set name(String? name) => _$this._name = name;
 
   num? _port;
   num? get port => _$this._port;
@@ -114,9 +114,9 @@ class SecondaryDnsPeerBuilder
     final $v = _$v;
     if ($v != null) {
       _id = $v.id;
+      _name = $v.name;
       _ip = $v.ip;
       _ixfrEnable = $v.ixfrEnable;
-      _name = $v.name;
       _port = $v.port;
       _tsigId = $v.tsigId;
       _$v = null;
@@ -142,10 +142,10 @@ class SecondaryDnsPeerBuilder
         _$SecondaryDnsPeer._(
           id: BuiltValueNullFieldError.checkNotNull(
               id, r'SecondaryDnsPeer', 'id'),
-          ip: ip,
-          ixfrEnable: ixfrEnable,
           name: BuiltValueNullFieldError.checkNotNull(
               name, r'SecondaryDnsPeer', 'name'),
+          ip: ip,
+          ixfrEnable: ixfrEnable,
           port: port,
           tsigId: tsigId,
         );

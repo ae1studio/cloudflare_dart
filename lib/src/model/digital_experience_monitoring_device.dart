@@ -15,15 +15,20 @@ part 'digital_experience_monitoring_device.g.dart';
 /// DigitalExperienceMonitoringDevice
 ///
 /// Properties:
+/// * [colo] - Cloudflare colo
+/// * [deviceId] - Device identifier (UUID v4)
+/// * [mode] - The mode under which the WARP client is run
+/// * [platform] - Operating system
+/// * [status] - Network status
+/// * [timestamp] - Timestamp in ISO format
+/// * [version] - WARP client version
 /// * [alwaysOn] 
 /// * [batteryCharging] 
 /// * [batteryCycles] 
 /// * [batteryPct] 
-/// * [colo] - Cloudflare colo
 /// * [connectionType] 
 /// * [cpuPct] 
 /// * [cpuPctByApp] 
-/// * [deviceId] - Device identifier (UUID v4)
 /// * [deviceIpv4] 
 /// * [deviceIpv6] 
 /// * [deviceName] - Device identifier (human readable)
@@ -39,22 +44,45 @@ part 'digital_experience_monitoring_device.g.dart';
 /// * [ispIpv4] 
 /// * [ispIpv6] 
 /// * [metal] 
-/// * [mode] - The mode under which the WARP client is run
 /// * [networkRcvdBps] 
 /// * [networkSentBps] 
 /// * [networkSsid] 
 /// * [personEmail] - User contact email address
-/// * [platform] - Operating system
 /// * [ramAvailableKb] 
 /// * [ramUsedPct] 
 /// * [ramUsedPctByApp] 
-/// * [status] - Network status
 /// * [switchLocked] 
-/// * [timestamp] - Timestamp in ISO format
-/// * [version] - WARP client version
 /// * [wifiStrengthDbm] 
 @BuiltValue()
 abstract class DigitalExperienceMonitoringDevice implements Built<DigitalExperienceMonitoringDevice, DigitalExperienceMonitoringDeviceBuilder> {
+  /// Cloudflare colo
+  @BuiltValueField(wireName: r'colo')
+  String get colo;
+
+  /// Device identifier (UUID v4)
+  @BuiltValueField(wireName: r'deviceId')
+  String get deviceId;
+
+  /// The mode under which the WARP client is run
+  @BuiltValueField(wireName: r'mode')
+  String get mode;
+
+  /// Operating system
+  @BuiltValueField(wireName: r'platform')
+  String get platform;
+
+  /// Network status
+  @BuiltValueField(wireName: r'status')
+  String get status;
+
+  /// Timestamp in ISO format
+  @BuiltValueField(wireName: r'timestamp')
+  String get timestamp;
+
+  /// WARP client version
+  @BuiltValueField(wireName: r'version')
+  String get version;
+
   @BuiltValueField(wireName: r'alwaysOn')
   bool? get alwaysOn;
 
@@ -67,10 +95,6 @@ abstract class DigitalExperienceMonitoringDevice implements Built<DigitalExperie
   @BuiltValueField(wireName: r'batteryPct')
   double? get batteryPct;
 
-  /// Cloudflare colo
-  @BuiltValueField(wireName: r'colo')
-  String get colo;
-
   @BuiltValueField(wireName: r'connectionType')
   String? get connectionType;
 
@@ -79,10 +103,6 @@ abstract class DigitalExperienceMonitoringDevice implements Built<DigitalExperie
 
   @BuiltValueField(wireName: r'cpuPctByApp')
   BuiltList<BuiltList<DigitalExperienceMonitoringCpuPctByAppInner>>? get cpuPctByApp;
-
-  /// Device identifier (UUID v4)
-  @BuiltValueField(wireName: r'deviceId')
-  String get deviceId;
 
   @BuiltValueField(wireName: r'deviceIpv4')
   DigitalExperienceMonitoringIpInfo? get deviceIpv4;
@@ -130,10 +150,6 @@ abstract class DigitalExperienceMonitoringDevice implements Built<DigitalExperie
   @BuiltValueField(wireName: r'metal')
   String? get metal;
 
-  /// The mode under which the WARP client is run
-  @BuiltValueField(wireName: r'mode')
-  String get mode;
-
   @BuiltValueField(wireName: r'networkRcvdBps')
   int? get networkRcvdBps;
 
@@ -147,10 +163,6 @@ abstract class DigitalExperienceMonitoringDevice implements Built<DigitalExperie
   @BuiltValueField(wireName: r'personEmail')
   String? get personEmail;
 
-  /// Operating system
-  @BuiltValueField(wireName: r'platform')
-  String get platform;
-
   @BuiltValueField(wireName: r'ramAvailableKb')
   int? get ramAvailableKb;
 
@@ -160,20 +172,8 @@ abstract class DigitalExperienceMonitoringDevice implements Built<DigitalExperie
   @BuiltValueField(wireName: r'ramUsedPctByApp')
   BuiltList<BuiltList<DigitalExperienceMonitoringRamUsedPctByAppInner>>? get ramUsedPctByApp;
 
-  /// Network status
-  @BuiltValueField(wireName: r'status')
-  String get status;
-
   @BuiltValueField(wireName: r'switchLocked')
   bool? get switchLocked;
-
-  /// Timestamp in ISO format
-  @BuiltValueField(wireName: r'timestamp')
-  String get timestamp;
-
-  /// WARP client version
-  @BuiltValueField(wireName: r'version')
-  String get version;
 
   @BuiltValueField(wireName: r'wifiStrengthDbm')
   int? get wifiStrengthDbm;
@@ -201,6 +201,41 @@ class _$DigitalExperienceMonitoringDeviceSerializer implements PrimitiveSerializ
     DigitalExperienceMonitoringDevice object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    yield r'colo';
+    yield serializers.serialize(
+      object.colo,
+      specifiedType: const FullType(String),
+    );
+    yield r'deviceId';
+    yield serializers.serialize(
+      object.deviceId,
+      specifiedType: const FullType(String),
+    );
+    yield r'mode';
+    yield serializers.serialize(
+      object.mode,
+      specifiedType: const FullType(String),
+    );
+    yield r'platform';
+    yield serializers.serialize(
+      object.platform,
+      specifiedType: const FullType(String),
+    );
+    yield r'status';
+    yield serializers.serialize(
+      object.status,
+      specifiedType: const FullType(String),
+    );
+    yield r'timestamp';
+    yield serializers.serialize(
+      object.timestamp,
+      specifiedType: const FullType(String),
+    );
+    yield r'version';
+    yield serializers.serialize(
+      object.version,
+      specifiedType: const FullType(String),
+    );
     if (object.alwaysOn != null) {
       yield r'alwaysOn';
       yield serializers.serialize(
@@ -229,11 +264,6 @@ class _$DigitalExperienceMonitoringDeviceSerializer implements PrimitiveSerializ
         specifiedType: const FullType.nullable(double),
       );
     }
-    yield r'colo';
-    yield serializers.serialize(
-      object.colo,
-      specifiedType: const FullType(String),
-    );
     if (object.connectionType != null) {
       yield r'connectionType';
       yield serializers.serialize(
@@ -255,11 +285,6 @@ class _$DigitalExperienceMonitoringDeviceSerializer implements PrimitiveSerializ
         specifiedType: const FullType.nullable(BuiltList, [FullType(BuiltList, [FullType(DigitalExperienceMonitoringCpuPctByAppInner)])]),
       );
     }
-    yield r'deviceId';
-    yield serializers.serialize(
-      object.deviceId,
-      specifiedType: const FullType(String),
-    );
     if (object.deviceIpv4 != null) {
       yield r'deviceIpv4';
       yield serializers.serialize(
@@ -365,11 +390,6 @@ class _$DigitalExperienceMonitoringDeviceSerializer implements PrimitiveSerializ
         specifiedType: const FullType.nullable(String),
       );
     }
-    yield r'mode';
-    yield serializers.serialize(
-      object.mode,
-      specifiedType: const FullType(String),
-    );
     if (object.networkRcvdBps != null) {
       yield r'networkRcvdBps';
       yield serializers.serialize(
@@ -398,11 +418,6 @@ class _$DigitalExperienceMonitoringDeviceSerializer implements PrimitiveSerializ
         specifiedType: const FullType(String),
       );
     }
-    yield r'platform';
-    yield serializers.serialize(
-      object.platform,
-      specifiedType: const FullType(String),
-    );
     if (object.ramAvailableKb != null) {
       yield r'ramAvailableKb';
       yield serializers.serialize(
@@ -424,11 +439,6 @@ class _$DigitalExperienceMonitoringDeviceSerializer implements PrimitiveSerializ
         specifiedType: const FullType.nullable(BuiltList, [FullType(BuiltList, [FullType(DigitalExperienceMonitoringRamUsedPctByAppInner)])]),
       );
     }
-    yield r'status';
-    yield serializers.serialize(
-      object.status,
-      specifiedType: const FullType(String),
-    );
     if (object.switchLocked != null) {
       yield r'switchLocked';
       yield serializers.serialize(
@@ -436,16 +446,6 @@ class _$DigitalExperienceMonitoringDeviceSerializer implements PrimitiveSerializ
         specifiedType: const FullType.nullable(bool),
       );
     }
-    yield r'timestamp';
-    yield serializers.serialize(
-      object.timestamp,
-      specifiedType: const FullType(String),
-    );
-    yield r'version';
-    yield serializers.serialize(
-      object.version,
-      specifiedType: const FullType(String),
-    );
     if (object.wifiStrengthDbm != null) {
       yield r'wifiStrengthDbm';
       yield serializers.serialize(
@@ -476,6 +476,55 @@ class _$DigitalExperienceMonitoringDeviceSerializer implements PrimitiveSerializ
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
+        case r'colo':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.colo = valueDes;
+          break;
+        case r'deviceId':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.deviceId = valueDes;
+          break;
+        case r'mode':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.mode = valueDes;
+          break;
+        case r'platform':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.platform = valueDes;
+          break;
+        case r'status':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.status = valueDes;
+          break;
+        case r'timestamp':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.timestamp = valueDes;
+          break;
+        case r'version':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.version = valueDes;
+          break;
         case r'alwaysOn':
           final valueDes = serializers.deserialize(
             value,
@@ -508,13 +557,6 @@ class _$DigitalExperienceMonitoringDeviceSerializer implements PrimitiveSerializ
           if (valueDes == null) continue;
           result.batteryPct = valueDes;
           break;
-        case r'colo':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.colo = valueDes;
-          break;
         case r'connectionType':
           final valueDes = serializers.deserialize(
             value,
@@ -538,13 +580,6 @@ class _$DigitalExperienceMonitoringDeviceSerializer implements PrimitiveSerializ
           ) as BuiltList<BuiltList<DigitalExperienceMonitoringCpuPctByAppInner>>?;
           if (valueDes == null) continue;
           result.cpuPctByApp.replace(valueDes);
-          break;
-        case r'deviceId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.deviceId = valueDes;
           break;
         case r'deviceIpv4':
           final valueDes = serializers.deserialize(
@@ -659,13 +694,6 @@ class _$DigitalExperienceMonitoringDeviceSerializer implements PrimitiveSerializ
           if (valueDes == null) continue;
           result.metal = valueDes;
           break;
-        case r'mode':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.mode = valueDes;
-          break;
         case r'networkRcvdBps':
           final valueDes = serializers.deserialize(
             value,
@@ -697,13 +725,6 @@ class _$DigitalExperienceMonitoringDeviceSerializer implements PrimitiveSerializ
           ) as String;
           result.personEmail = valueDes;
           break;
-        case r'platform':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.platform = valueDes;
-          break;
         case r'ramAvailableKb':
           final valueDes = serializers.deserialize(
             value,
@@ -728,13 +749,6 @@ class _$DigitalExperienceMonitoringDeviceSerializer implements PrimitiveSerializ
           if (valueDes == null) continue;
           result.ramUsedPctByApp.replace(valueDes);
           break;
-        case r'status':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.status = valueDes;
-          break;
         case r'switchLocked':
           final valueDes = serializers.deserialize(
             value,
@@ -742,20 +756,6 @@ class _$DigitalExperienceMonitoringDeviceSerializer implements PrimitiveSerializ
           ) as bool?;
           if (valueDes == null) continue;
           result.switchLocked = valueDes;
-          break;
-        case r'timestamp':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.timestamp = valueDes;
-          break;
-        case r'version':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.version = valueDes;
           break;
         case r'wifiStrengthDbm':
           final valueDes = serializers.deserialize(

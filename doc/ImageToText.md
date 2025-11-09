@@ -8,8 +8,8 @@ import 'package:cloudflare_dart/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**frequencyPenalty** | **num** | Decreases the likelihood of the model repeating the same lines verbatim. | [optional] 
 **image** | [**ImageToTextOneOfImage**](ImageToTextOneOfImage.md) |  | 
+**frequencyPenalty** | **num** | Decreases the likelihood of the model repeating the same lines verbatim. | [optional] 
 **maxTokens** | **int** | The maximum number of tokens to generate in the response. | [optional] [default to 512]
 **presencePenalty** | **num** | Increases the likelihood of the model introducing new topics. | [optional] 
 **prompt** | **String** | The input text prompt for the model to generate a response. | [optional] 

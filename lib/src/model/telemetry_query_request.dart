@@ -14,6 +14,8 @@ part 'telemetry_query_request.g.dart';
 /// TelemetryQueryRequest
 ///
 /// Properties:
+/// * [queryId] 
+/// * [timeframe] 
 /// * [chart] 
 /// * [compare] 
 /// * [dry] 
@@ -25,11 +27,15 @@ part 'telemetry_query_request.g.dart';
 /// * [offsetDirection] 
 /// * [parameters] 
 /// * [patternType] 
-/// * [queryId] 
-/// * [timeframe] 
 /// * [view] 
 @BuiltValue()
 abstract class TelemetryQueryRequest implements Built<TelemetryQueryRequest, TelemetryQueryRequestBuilder> {
+  @BuiltValueField(wireName: r'queryId')
+  String get queryId;
+
+  @BuiltValueField(wireName: r'timeframe')
+  TelemetryKeysListRequestTimeframe get timeframe;
+
   @BuiltValueField(wireName: r'chart')
   bool? get chart;
 
@@ -64,12 +70,6 @@ abstract class TelemetryQueryRequest implements Built<TelemetryQueryRequest, Tel
   TelemetryQueryRequestPatternTypeEnum? get patternType;
   // enum patternTypeEnum {  message,  error,  };
 
-  @BuiltValueField(wireName: r'queryId')
-  String get queryId;
-
-  @BuiltValueField(wireName: r'timeframe')
-  TelemetryKeysListRequestTimeframe get timeframe;
-
   @BuiltValueField(wireName: r'view')
   TelemetryQueryRequestViewEnum? get view;
   // enum viewEnum {  traces,  events,  calculations,  invocations,  requests,  patterns,  };
@@ -101,6 +101,16 @@ class _$TelemetryQueryRequestSerializer implements PrimitiveSerializer<Telemetry
     TelemetryQueryRequest object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    yield r'queryId';
+    yield serializers.serialize(
+      object.queryId,
+      specifiedType: const FullType(String),
+    );
+    yield r'timeframe';
+    yield serializers.serialize(
+      object.timeframe,
+      specifiedType: const FullType(TelemetryKeysListRequestTimeframe),
+    );
     if (object.chart != null) {
       yield r'chart';
       yield serializers.serialize(
@@ -178,16 +188,6 @@ class _$TelemetryQueryRequestSerializer implements PrimitiveSerializer<Telemetry
         specifiedType: const FullType(TelemetryQueryRequestPatternTypeEnum),
       );
     }
-    yield r'queryId';
-    yield serializers.serialize(
-      object.queryId,
-      specifiedType: const FullType(String),
-    );
-    yield r'timeframe';
-    yield serializers.serialize(
-      object.timeframe,
-      specifiedType: const FullType(TelemetryKeysListRequestTimeframe),
-    );
     if (object.view != null) {
       yield r'view';
       yield serializers.serialize(
@@ -218,6 +218,20 @@ class _$TelemetryQueryRequestSerializer implements PrimitiveSerializer<Telemetry
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
+        case r'queryId':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.queryId = valueDes;
+          break;
+        case r'timeframe':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(TelemetryKeysListRequestTimeframe),
+          ) as TelemetryKeysListRequestTimeframe;
+          result.timeframe.replace(valueDes);
+          break;
         case r'chart':
           final valueDes = serializers.deserialize(
             value,
@@ -294,20 +308,6 @@ class _$TelemetryQueryRequestSerializer implements PrimitiveSerializer<Telemetry
             specifiedType: const FullType(TelemetryQueryRequestPatternTypeEnum),
           ) as TelemetryQueryRequestPatternTypeEnum;
           result.patternType = valueDes;
-          break;
-        case r'queryId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.queryId = valueDes;
-          break;
-        case r'timeframe':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(TelemetryKeysListRequestTimeframe),
-          ) as TelemetryKeysListRequestTimeframe;
-          result.timeframe.replace(valueDes);
           break;
         case r'view':
           final valueDes = serializers.deserialize(

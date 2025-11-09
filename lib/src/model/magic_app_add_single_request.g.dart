@@ -8,20 +8,20 @@ part of 'magic_app_add_single_request.dart';
 
 class _$MagicAppAddSingleRequest extends MagicAppAddSingleRequest {
   @override
-  final BuiltList<String>? hostnames;
-  @override
-  final BuiltList<String>? ipSubnets;
-  @override
   final String name;
   @override
   final String type;
+  @override
+  final BuiltList<String>? hostnames;
+  @override
+  final BuiltList<String>? ipSubnets;
 
   factory _$MagicAppAddSingleRequest(
           [void Function(MagicAppAddSingleRequestBuilder)? updates]) =>
       (MagicAppAddSingleRequestBuilder()..update(updates))._build();
 
   _$MagicAppAddSingleRequest._(
-      {this.hostnames, this.ipSubnets, required this.name, required this.type})
+      {required this.name, required this.type, this.hostnames, this.ipSubnets})
       : super._();
   @override
   MagicAppAddSingleRequest rebuild(
@@ -36,19 +36,19 @@ class _$MagicAppAddSingleRequest extends MagicAppAddSingleRequest {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is MagicAppAddSingleRequest &&
-        hostnames == other.hostnames &&
-        ipSubnets == other.ipSubnets &&
         name == other.name &&
-        type == other.type;
+        type == other.type &&
+        hostnames == other.hostnames &&
+        ipSubnets == other.ipSubnets;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, hostnames.hashCode);
-    _$hash = $jc(_$hash, ipSubnets.hashCode);
     _$hash = $jc(_$hash, name.hashCode);
     _$hash = $jc(_$hash, type.hashCode);
+    _$hash = $jc(_$hash, hostnames.hashCode);
+    _$hash = $jc(_$hash, ipSubnets.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -56,10 +56,10 @@ class _$MagicAppAddSingleRequest extends MagicAppAddSingleRequest {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'MagicAppAddSingleRequest')
-          ..add('hostnames', hostnames)
-          ..add('ipSubnets', ipSubnets)
           ..add('name', name)
-          ..add('type', type))
+          ..add('type', type)
+          ..add('hostnames', hostnames)
+          ..add('ipSubnets', ipSubnets))
         .toString();
   }
 }
@@ -68,6 +68,14 @@ class MagicAppAddSingleRequestBuilder
     implements
         Builder<MagicAppAddSingleRequest, MagicAppAddSingleRequestBuilder> {
   _$MagicAppAddSingleRequest? _$v;
+
+  String? _name;
+  String? get name => _$this._name;
+  set name(String? name) => _$this._name = name;
+
+  String? _type;
+  String? get type => _$this._type;
+  set type(String? type) => _$this._type = type;
 
   ListBuilder<String>? _hostnames;
   ListBuilder<String> get hostnames =>
@@ -81,14 +89,6 @@ class MagicAppAddSingleRequestBuilder
   set ipSubnets(ListBuilder<String>? ipSubnets) =>
       _$this._ipSubnets = ipSubnets;
 
-  String? _name;
-  String? get name => _$this._name;
-  set name(String? name) => _$this._name = name;
-
-  String? _type;
-  String? get type => _$this._type;
-  set type(String? type) => _$this._type = type;
-
   MagicAppAddSingleRequestBuilder() {
     MagicAppAddSingleRequest._defaults(this);
   }
@@ -96,10 +96,10 @@ class MagicAppAddSingleRequestBuilder
   MagicAppAddSingleRequestBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _hostnames = $v.hostnames?.toBuilder();
-      _ipSubnets = $v.ipSubnets?.toBuilder();
       _name = $v.name;
       _type = $v.type;
+      _hostnames = $v.hostnames?.toBuilder();
+      _ipSubnets = $v.ipSubnets?.toBuilder();
       _$v = null;
     }
     return this;
@@ -123,12 +123,12 @@ class MagicAppAddSingleRequestBuilder
     try {
       _$result = _$v ??
           _$MagicAppAddSingleRequest._(
-            hostnames: _hostnames?.build(),
-            ipSubnets: _ipSubnets?.build(),
             name: BuiltValueNullFieldError.checkNotNull(
                 name, r'MagicAppAddSingleRequest', 'name'),
             type: BuiltValueNullFieldError.checkNotNull(
                 type, r'MagicAppAddSingleRequest', 'type'),
+            hostnames: _hostnames?.build(),
+            ipSubnets: _ipSubnets?.build(),
           );
     } catch (_) {
       late String _$failedField;

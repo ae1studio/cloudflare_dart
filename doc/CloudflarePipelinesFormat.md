@@ -8,10 +8,10 @@ import 'package:cloudflare_dart/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**type** | **String** |  | 
 **decimalEncoding** | [**CloudflarePipelinesDecimalEncoding**](CloudflarePipelinesDecimalEncoding.md) |  | [optional] 
 **timestampFormat** | [**CloudflarePipelinesTimestampFormat**](CloudflarePipelinesTimestampFormat.md) |  | [optional] 
 **unstructured** | **bool** |  | [optional] 
-**type** | **String** |  | 
 **compression** | [**CloudflarePipelinesParquetCompression**](CloudflarePipelinesParquetCompression.md) |  | [optional] 
 **rowGroupBytes** | **int** |  | [optional] 
 

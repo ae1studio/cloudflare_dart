@@ -14,10 +14,10 @@ part 'autorag_config_ai_search_request.g.dart';
 /// AutoragConfigAiSearchRequest
 ///
 /// Properties:
+/// * [query] 
 /// * [filters] 
 /// * [maxNumResults] 
 /// * [model] 
-/// * [query] 
 /// * [rankingOptions] 
 /// * [reranking] 
 /// * [rewriteQuery] 
@@ -25,6 +25,9 @@ part 'autorag_config_ai_search_request.g.dart';
 /// * [systemPrompt] 
 @BuiltValue()
 abstract class AutoragConfigAiSearchRequest implements Built<AutoragConfigAiSearchRequest, AutoragConfigAiSearchRequestBuilder> {
+  @BuiltValueField(wireName: r'query')
+  String get query;
+
   @BuiltValueField(wireName: r'filters')
   AutoragConfigAiSearchRequestFilters? get filters;
 
@@ -34,9 +37,6 @@ abstract class AutoragConfigAiSearchRequest implements Built<AutoragConfigAiSear
   @BuiltValueField(wireName: r'model')
   ModelEnum? get model;
   // enum modelEnum {  @cf/meta/llama-3.3-70b-instruct-fp8-fast,  @cf/meta/llama-3.1-8b-instruct-fast,  @cf/meta/llama-3.1-8b-instruct-fp8,  @cf/meta/llama-4-scout-17b-16e-instruct,  @cf/deepseek-ai/deepseek-r1-distill-qwen-32b,  @cf/qwen/qwen3-30b-a3b-fp8,  @cf/moonshotai/kimi-k2-instruct,  anthropic/claude-3-7-sonnet,  anthropic/claude-sonnet-4,  anthropic/claude-opus-4,  anthropic/claude-3-5-haiku,  cerebras/qwen-3-235b-a22b-instruct,  cerebras/qwen-3-235b-a22b-thinking,  cerebras/llama-3.3-70b,  cerebras/llama-4-maverick-17b-128e-instruct,  cerebras/llama-4-scout-17b-16e-instruct,  cerebras/gpt-oss-120b,  google-ai-studio/gemini-2.5-flash,  google-ai-studio/gemini-2.5-pro,  grok/grok-4,  groq/llama-3.3-70b-versatile,  groq/llama-3.1-8b-instant,  openai/gpt-5,  openai/gpt-5-mini,  openai/gpt-5-nano,  ,  };
-
-  @BuiltValueField(wireName: r'query')
-  String get query;
 
   @BuiltValueField(wireName: r'ranking_options')
   AutoragConfigAiSearchRequestRankingOptions? get rankingOptions;
@@ -79,6 +79,11 @@ class _$AutoragConfigAiSearchRequestSerializer implements PrimitiveSerializer<Au
     AutoragConfigAiSearchRequest object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    yield r'query';
+    yield serializers.serialize(
+      object.query,
+      specifiedType: const FullType(String),
+    );
     if (object.filters != null) {
       yield r'filters';
       yield serializers.serialize(
@@ -100,11 +105,6 @@ class _$AutoragConfigAiSearchRequestSerializer implements PrimitiveSerializer<Au
         specifiedType: const FullType(ModelEnum),
       );
     }
-    yield r'query';
-    yield serializers.serialize(
-      object.query,
-      specifiedType: const FullType(String),
-    );
     if (object.rankingOptions != null) {
       yield r'ranking_options';
       yield serializers.serialize(
@@ -163,6 +163,13 @@ class _$AutoragConfigAiSearchRequestSerializer implements PrimitiveSerializer<Au
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
+        case r'query':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.query = valueDes;
+          break;
         case r'filters':
           final valueDes = serializers.deserialize(
             value,
@@ -183,13 +190,6 @@ class _$AutoragConfigAiSearchRequestSerializer implements PrimitiveSerializer<Au
             specifiedType: const FullType(ModelEnum),
           ) as ModelEnum;
           result.model = valueDes;
-          break;
-        case r'query':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.query = valueDes;
           break;
         case r'ranking_options':
           final valueDes = serializers.deserialize(

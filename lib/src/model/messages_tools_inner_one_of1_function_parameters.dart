@@ -14,21 +14,21 @@ part 'messages_tools_inner_one_of1_function_parameters.g.dart';
 ///
 /// Properties:
 /// * [properties] - Definitions of each parameter.
-/// * [required_] - List of required parameter names.
 /// * [type] - The type of the parameters object (usually 'object').
+/// * [required_] - List of required parameter names.
 @BuiltValue()
 abstract class MessagesToolsInnerOneOf1FunctionParameters implements Built<MessagesToolsInnerOneOf1FunctionParameters, MessagesToolsInnerOneOf1FunctionParametersBuilder> {
   /// Definitions of each parameter.
   @BuiltValueField(wireName: r'properties')
   BuiltMap<String, MessagesToolsInnerOneOfParametersPropertiesValue> get properties;
 
-  /// List of required parameter names.
-  @BuiltValueField(wireName: r'required')
-  BuiltList<String>? get required_;
-
   /// The type of the parameters object (usually 'object').
   @BuiltValueField(wireName: r'type')
   String get type;
+
+  /// List of required parameter names.
+  @BuiltValueField(wireName: r'required')
+  BuiltList<String>? get required_;
 
   MessagesToolsInnerOneOf1FunctionParameters._();
 
@@ -58,6 +58,11 @@ class _$MessagesToolsInnerOneOf1FunctionParametersSerializer implements Primitiv
       object.properties,
       specifiedType: const FullType(BuiltMap, [FullType(String), FullType(MessagesToolsInnerOneOfParametersPropertiesValue)]),
     );
+    yield r'type';
+    yield serializers.serialize(
+      object.type,
+      specifiedType: const FullType(String),
+    );
     if (object.required_ != null) {
       yield r'required';
       yield serializers.serialize(
@@ -65,11 +70,6 @@ class _$MessagesToolsInnerOneOf1FunctionParametersSerializer implements Primitiv
         specifiedType: const FullType(BuiltList, [FullType(String)]),
       );
     }
-    yield r'type';
-    yield serializers.serialize(
-      object.type,
-      specifiedType: const FullType(String),
-    );
   }
 
   @override
@@ -100,19 +100,19 @@ class _$MessagesToolsInnerOneOf1FunctionParametersSerializer implements Primitiv
           ) as BuiltMap<String, MessagesToolsInnerOneOfParametersPropertiesValue>;
           result.properties.replace(valueDes);
           break;
-        case r'required':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>;
-          result.required_.replace(valueDes);
-          break;
         case r'type':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(String),
           ) as String;
           result.type = valueDes;
+          break;
+        case r'required':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BuiltList, [FullType(String)]),
+          ) as BuiltList<String>;
+          result.required_.replace(valueDes);
           break;
         default:
           unhandled.add(key);

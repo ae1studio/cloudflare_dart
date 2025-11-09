@@ -11,11 +11,15 @@ part 'digital_experience_monitoring_tests_response_overview_metrics.g.dart';
 /// DigitalExperienceMonitoringTestsResponseOverviewMetrics
 ///
 /// Properties:
+/// * [testsTotal] - number of  tests.
 /// * [avgHttpAvailabilityPct] - percentage availability for all HTTP test results in response
 /// * [avgTracerouteAvailabilityPct] - percentage availability for all traceroutes results in response
-/// * [testsTotal] - number of  tests.
 @BuiltValue()
 abstract class DigitalExperienceMonitoringTestsResponseOverviewMetrics implements Built<DigitalExperienceMonitoringTestsResponseOverviewMetrics, DigitalExperienceMonitoringTestsResponseOverviewMetricsBuilder> {
+  /// number of  tests.
+  @BuiltValueField(wireName: r'testsTotal')
+  int get testsTotal;
+
   /// percentage availability for all HTTP test results in response
   @BuiltValueField(wireName: r'avgHttpAvailabilityPct')
   double? get avgHttpAvailabilityPct;
@@ -23,10 +27,6 @@ abstract class DigitalExperienceMonitoringTestsResponseOverviewMetrics implement
   /// percentage availability for all traceroutes results in response
   @BuiltValueField(wireName: r'avgTracerouteAvailabilityPct')
   double? get avgTracerouteAvailabilityPct;
-
-  /// number of  tests.
-  @BuiltValueField(wireName: r'testsTotal')
-  int get testsTotal;
 
   DigitalExperienceMonitoringTestsResponseOverviewMetrics._();
 
@@ -51,6 +51,11 @@ class _$DigitalExperienceMonitoringTestsResponseOverviewMetricsSerializer implem
     DigitalExperienceMonitoringTestsResponseOverviewMetrics object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    yield r'testsTotal';
+    yield serializers.serialize(
+      object.testsTotal,
+      specifiedType: const FullType(int),
+    );
     if (object.avgHttpAvailabilityPct != null) {
       yield r'avgHttpAvailabilityPct';
       yield serializers.serialize(
@@ -65,11 +70,6 @@ class _$DigitalExperienceMonitoringTestsResponseOverviewMetricsSerializer implem
         specifiedType: const FullType.nullable(double),
       );
     }
-    yield r'testsTotal';
-    yield serializers.serialize(
-      object.testsTotal,
-      specifiedType: const FullType(int),
-    );
   }
 
   @override
@@ -93,6 +93,13 @@ class _$DigitalExperienceMonitoringTestsResponseOverviewMetricsSerializer implem
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
+        case r'testsTotal':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(int),
+          ) as int;
+          result.testsTotal = valueDes;
+          break;
         case r'avgHttpAvailabilityPct':
           final valueDes = serializers.deserialize(
             value,
@@ -108,13 +115,6 @@ class _$DigitalExperienceMonitoringTestsResponseOverviewMetricsSerializer implem
           ) as double?;
           if (valueDes == null) continue;
           result.avgTracerouteAvailabilityPct = valueDes;
-          break;
-        case r'testsTotal':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
-          result.testsTotal = valueDes;
           break;
         default:
           unhandled.add(key);

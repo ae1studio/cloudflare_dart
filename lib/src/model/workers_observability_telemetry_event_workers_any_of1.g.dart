@@ -222,6 +222,16 @@ class _$WorkersObservabilityTelemetryEventWorkersAnyOf1
   @override
   final num cpuTimeMs;
   @override
+  final WorkersObservabilityTelemetryEventWorkersAnyOf1EventTypeEnum eventType;
+  @override
+  final String outcome;
+  @override
+  final String requestId;
+  @override
+  final String scriptName;
+  @override
+  final num wallTimeMs;
+  @override
   final BuiltList<
           WorkersObservabilityTelemetryEventWorkersAnyOf1DiagnosticsChannelEventsInner>?
       diagnosticsChannelEvents;
@@ -233,23 +243,13 @@ class _$WorkersObservabilityTelemetryEventWorkersAnyOf1
   final BuiltMap<String,
       AigConfigListDataset200ResponseResultInnerFiltersInnerValueInner>? event;
   @override
-  final WorkersObservabilityTelemetryEventWorkersAnyOf1EventTypeEnum eventType;
-  @override
   final WorkersObservabilityTelemetryEventWorkersAnyOf1ExecutionModelEnum?
       executionModel;
-  @override
-  final String outcome;
-  @override
-  final String requestId;
-  @override
-  final String scriptName;
   @override
   final WorkersObservabilityTelemetryEventWorkersAnyOfScriptVersion?
       scriptVersion;
   @override
   final bool? truncated;
-  @override
-  final num wallTimeMs;
 
   factory _$WorkersObservabilityTelemetryEventWorkersAnyOf1(
           [void Function(
@@ -261,18 +261,18 @@ class _$WorkersObservabilityTelemetryEventWorkersAnyOf1
 
   _$WorkersObservabilityTelemetryEventWorkersAnyOf1._(
       {required this.cpuTimeMs,
+      required this.eventType,
+      required this.outcome,
+      required this.requestId,
+      required this.scriptName,
+      required this.wallTimeMs,
       this.diagnosticsChannelEvents,
       this.dispatchNamespace,
       this.entrypoint,
       this.event,
-      required this.eventType,
       this.executionModel,
-      required this.outcome,
-      required this.requestId,
-      required this.scriptName,
       this.scriptVersion,
-      this.truncated,
-      required this.wallTimeMs})
+      this.truncated})
       : super._();
   @override
   WorkersObservabilityTelemetryEventWorkersAnyOf1 rebuild(
@@ -289,36 +289,36 @@ class _$WorkersObservabilityTelemetryEventWorkersAnyOf1
     if (identical(other, this)) return true;
     return other is WorkersObservabilityTelemetryEventWorkersAnyOf1 &&
         cpuTimeMs == other.cpuTimeMs &&
+        eventType == other.eventType &&
+        outcome == other.outcome &&
+        requestId == other.requestId &&
+        scriptName == other.scriptName &&
+        wallTimeMs == other.wallTimeMs &&
         diagnosticsChannelEvents == other.diagnosticsChannelEvents &&
         dispatchNamespace == other.dispatchNamespace &&
         entrypoint == other.entrypoint &&
         event == other.event &&
-        eventType == other.eventType &&
         executionModel == other.executionModel &&
-        outcome == other.outcome &&
-        requestId == other.requestId &&
-        scriptName == other.scriptName &&
         scriptVersion == other.scriptVersion &&
-        truncated == other.truncated &&
-        wallTimeMs == other.wallTimeMs;
+        truncated == other.truncated;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
     _$hash = $jc(_$hash, cpuTimeMs.hashCode);
+    _$hash = $jc(_$hash, eventType.hashCode);
+    _$hash = $jc(_$hash, outcome.hashCode);
+    _$hash = $jc(_$hash, requestId.hashCode);
+    _$hash = $jc(_$hash, scriptName.hashCode);
+    _$hash = $jc(_$hash, wallTimeMs.hashCode);
     _$hash = $jc(_$hash, diagnosticsChannelEvents.hashCode);
     _$hash = $jc(_$hash, dispatchNamespace.hashCode);
     _$hash = $jc(_$hash, entrypoint.hashCode);
     _$hash = $jc(_$hash, event.hashCode);
-    _$hash = $jc(_$hash, eventType.hashCode);
     _$hash = $jc(_$hash, executionModel.hashCode);
-    _$hash = $jc(_$hash, outcome.hashCode);
-    _$hash = $jc(_$hash, requestId.hashCode);
-    _$hash = $jc(_$hash, scriptName.hashCode);
     _$hash = $jc(_$hash, scriptVersion.hashCode);
     _$hash = $jc(_$hash, truncated.hashCode);
-    _$hash = $jc(_$hash, wallTimeMs.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -328,18 +328,18 @@ class _$WorkersObservabilityTelemetryEventWorkersAnyOf1
     return (newBuiltValueToStringHelper(
             r'WorkersObservabilityTelemetryEventWorkersAnyOf1')
           ..add('cpuTimeMs', cpuTimeMs)
+          ..add('eventType', eventType)
+          ..add('outcome', outcome)
+          ..add('requestId', requestId)
+          ..add('scriptName', scriptName)
+          ..add('wallTimeMs', wallTimeMs)
           ..add('diagnosticsChannelEvents', diagnosticsChannelEvents)
           ..add('dispatchNamespace', dispatchNamespace)
           ..add('entrypoint', entrypoint)
           ..add('event', event)
-          ..add('eventType', eventType)
           ..add('executionModel', executionModel)
-          ..add('outcome', outcome)
-          ..add('requestId', requestId)
-          ..add('scriptName', scriptName)
           ..add('scriptVersion', scriptVersion)
-          ..add('truncated', truncated)
-          ..add('wallTimeMs', wallTimeMs))
+          ..add('truncated', truncated))
         .toString();
   }
 }
@@ -353,6 +353,30 @@ class WorkersObservabilityTelemetryEventWorkersAnyOf1Builder
   num? _cpuTimeMs;
   num? get cpuTimeMs => _$this._cpuTimeMs;
   set cpuTimeMs(num? cpuTimeMs) => _$this._cpuTimeMs = cpuTimeMs;
+
+  WorkersObservabilityTelemetryEventWorkersAnyOf1EventTypeEnum? _eventType;
+  WorkersObservabilityTelemetryEventWorkersAnyOf1EventTypeEnum? get eventType =>
+      _$this._eventType;
+  set eventType(
+          WorkersObservabilityTelemetryEventWorkersAnyOf1EventTypeEnum?
+              eventType) =>
+      _$this._eventType = eventType;
+
+  String? _outcome;
+  String? get outcome => _$this._outcome;
+  set outcome(String? outcome) => _$this._outcome = outcome;
+
+  String? _requestId;
+  String? get requestId => _$this._requestId;
+  set requestId(String? requestId) => _$this._requestId = requestId;
+
+  String? _scriptName;
+  String? get scriptName => _$this._scriptName;
+  set scriptName(String? scriptName) => _$this._scriptName = scriptName;
+
+  num? _wallTimeMs;
+  num? get wallTimeMs => _$this._wallTimeMs;
+  set wallTimeMs(num? wallTimeMs) => _$this._wallTimeMs = wallTimeMs;
 
   ListBuilder<
           WorkersObservabilityTelemetryEventWorkersAnyOf1DiagnosticsChannelEventsInner>?
@@ -389,14 +413,6 @@ class WorkersObservabilityTelemetryEventWorkersAnyOf1Builder
               event) =>
       _$this._event = event;
 
-  WorkersObservabilityTelemetryEventWorkersAnyOf1EventTypeEnum? _eventType;
-  WorkersObservabilityTelemetryEventWorkersAnyOf1EventTypeEnum? get eventType =>
-      _$this._eventType;
-  set eventType(
-          WorkersObservabilityTelemetryEventWorkersAnyOf1EventTypeEnum?
-              eventType) =>
-      _$this._eventType = eventType;
-
   WorkersObservabilityTelemetryEventWorkersAnyOf1ExecutionModelEnum?
       _executionModel;
   WorkersObservabilityTelemetryEventWorkersAnyOf1ExecutionModelEnum?
@@ -405,18 +421,6 @@ class WorkersObservabilityTelemetryEventWorkersAnyOf1Builder
           WorkersObservabilityTelemetryEventWorkersAnyOf1ExecutionModelEnum?
               executionModel) =>
       _$this._executionModel = executionModel;
-
-  String? _outcome;
-  String? get outcome => _$this._outcome;
-  set outcome(String? outcome) => _$this._outcome = outcome;
-
-  String? _requestId;
-  String? get requestId => _$this._requestId;
-  set requestId(String? requestId) => _$this._requestId = requestId;
-
-  String? _scriptName;
-  String? get scriptName => _$this._scriptName;
-  set scriptName(String? scriptName) => _$this._scriptName = scriptName;
 
   WorkersObservabilityTelemetryEventWorkersAnyOfScriptVersionBuilder?
       _scriptVersion;
@@ -432,10 +436,6 @@ class WorkersObservabilityTelemetryEventWorkersAnyOf1Builder
   bool? get truncated => _$this._truncated;
   set truncated(bool? truncated) => _$this._truncated = truncated;
 
-  num? _wallTimeMs;
-  num? get wallTimeMs => _$this._wallTimeMs;
-  set wallTimeMs(num? wallTimeMs) => _$this._wallTimeMs = wallTimeMs;
-
   WorkersObservabilityTelemetryEventWorkersAnyOf1Builder() {
     WorkersObservabilityTelemetryEventWorkersAnyOf1._defaults(this);
   }
@@ -444,18 +444,18 @@ class WorkersObservabilityTelemetryEventWorkersAnyOf1Builder
     final $v = _$v;
     if ($v != null) {
       _cpuTimeMs = $v.cpuTimeMs;
+      _eventType = $v.eventType;
+      _outcome = $v.outcome;
+      _requestId = $v.requestId;
+      _scriptName = $v.scriptName;
+      _wallTimeMs = $v.wallTimeMs;
       _diagnosticsChannelEvents = $v.diagnosticsChannelEvents?.toBuilder();
       _dispatchNamespace = $v.dispatchNamespace;
       _entrypoint = $v.entrypoint;
       _event = $v.event?.toBuilder();
-      _eventType = $v.eventType;
       _executionModel = $v.executionModel;
-      _outcome = $v.outcome;
-      _requestId = $v.requestId;
-      _scriptName = $v.scriptName;
       _scriptVersion = $v.scriptVersion?.toBuilder();
       _truncated = $v.truncated;
-      _wallTimeMs = $v.wallTimeMs;
       _$v = null;
     }
     return this;
@@ -485,15 +485,10 @@ class WorkersObservabilityTelemetryEventWorkersAnyOf1Builder
                 cpuTimeMs,
                 r'WorkersObservabilityTelemetryEventWorkersAnyOf1',
                 'cpuTimeMs'),
-            diagnosticsChannelEvents: _diagnosticsChannelEvents?.build(),
-            dispatchNamespace: dispatchNamespace,
-            entrypoint: entrypoint,
-            event: _event?.build(),
             eventType: BuiltValueNullFieldError.checkNotNull(
                 eventType,
                 r'WorkersObservabilityTelemetryEventWorkersAnyOf1',
                 'eventType'),
-            executionModel: executionModel,
             outcome: BuiltValueNullFieldError.checkNotNull(outcome,
                 r'WorkersObservabilityTelemetryEventWorkersAnyOf1', 'outcome'),
             requestId: BuiltValueNullFieldError.checkNotNull(
@@ -504,12 +499,17 @@ class WorkersObservabilityTelemetryEventWorkersAnyOf1Builder
                 scriptName,
                 r'WorkersObservabilityTelemetryEventWorkersAnyOf1',
                 'scriptName'),
-            scriptVersion: _scriptVersion?.build(),
-            truncated: truncated,
             wallTimeMs: BuiltValueNullFieldError.checkNotNull(
                 wallTimeMs,
                 r'WorkersObservabilityTelemetryEventWorkersAnyOf1',
                 'wallTimeMs'),
+            diagnosticsChannelEvents: _diagnosticsChannelEvents?.build(),
+            dispatchNamespace: dispatchNamespace,
+            entrypoint: entrypoint,
+            event: _event?.build(),
+            executionModel: executionModel,
+            scriptVersion: _scriptVersion?.build(),
+            truncated: truncated,
           );
     } catch (_) {
       late String _$failedField;

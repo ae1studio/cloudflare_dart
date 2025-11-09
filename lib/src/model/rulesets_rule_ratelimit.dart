@@ -13,9 +13,9 @@ part 'rulesets_rule_ratelimit.g.dart';
 ///
 /// Properties:
 /// * [characteristics] - Characteristics of the request on which the rate limit counter will be incremented.
+/// * [period] - Period in seconds over which the counter is being incremented.
 /// * [countingExpression] - An expression that defines when the rate limit counter should be incremented. It defaults to the same as the rule's expression.
 /// * [mitigationTimeout] - Period of time in seconds after which the action will be disabled following its first execution.
-/// * [period] - Period in seconds over which the counter is being incremented.
 /// * [requestsPerPeriod] - The threshold of requests per period after which the action will be executed for the first time.
 /// * [requestsToOrigin] - Whether counting is only performed when an origin is reached.
 /// * [scorePerPeriod] - The score threshold per period for which the action will be executed the first time.
@@ -26,6 +26,10 @@ abstract class RulesetsRuleRatelimit implements Built<RulesetsRuleRatelimit, Rul
   @BuiltValueField(wireName: r'characteristics')
   BuiltSet<String> get characteristics;
 
+  /// Period in seconds over which the counter is being incremented.
+  @BuiltValueField(wireName: r'period')
+  int get period;
+
   /// An expression that defines when the rate limit counter should be incremented. It defaults to the same as the rule's expression.
   @BuiltValueField(wireName: r'counting_expression')
   String? get countingExpression;
@@ -33,10 +37,6 @@ abstract class RulesetsRuleRatelimit implements Built<RulesetsRuleRatelimit, Rul
   /// Period of time in seconds after which the action will be disabled following its first execution.
   @BuiltValueField(wireName: r'mitigation_timeout')
   int? get mitigationTimeout;
-
-  /// Period in seconds over which the counter is being incremented.
-  @BuiltValueField(wireName: r'period')
-  int get period;
 
   /// The threshold of requests per period after which the action will be executed for the first time.
   @BuiltValueField(wireName: r'requests_per_period')
@@ -83,6 +83,11 @@ class _$RulesetsRuleRatelimitSerializer implements PrimitiveSerializer<RulesetsR
       object.characteristics,
       specifiedType: const FullType(BuiltSet, [FullType(String)]),
     );
+    yield r'period';
+    yield serializers.serialize(
+      object.period,
+      specifiedType: const FullType(int),
+    );
     if (object.countingExpression != null) {
       yield r'counting_expression';
       yield serializers.serialize(
@@ -97,11 +102,6 @@ class _$RulesetsRuleRatelimitSerializer implements PrimitiveSerializer<RulesetsR
         specifiedType: const FullType(int),
       );
     }
-    yield r'period';
-    yield serializers.serialize(
-      object.period,
-      specifiedType: const FullType(int),
-    );
     if (object.requestsPerPeriod != null) {
       yield r'requests_per_period';
       yield serializers.serialize(
@@ -160,6 +160,13 @@ class _$RulesetsRuleRatelimitSerializer implements PrimitiveSerializer<RulesetsR
           ) as BuiltSet<String>;
           result.characteristics.replace(valueDes);
           break;
+        case r'period':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(int),
+          ) as int;
+          result.period = valueDes;
+          break;
         case r'counting_expression':
           final valueDes = serializers.deserialize(
             value,
@@ -173,13 +180,6 @@ class _$RulesetsRuleRatelimitSerializer implements PrimitiveSerializer<RulesetsR
             specifiedType: const FullType(int),
           ) as int;
           result.mitigationTimeout = valueDes;
-          break;
-        case r'period':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
-          result.period = valueDes;
           break;
         case r'requests_per_period':
           final valueDes = serializers.deserialize(

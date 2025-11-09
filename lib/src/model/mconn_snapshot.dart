@@ -20,11 +20,13 @@ part 'mconn_snapshot.g.dart';
 /// Snapshot
 ///
 /// Properties:
-/// * [bonds] 
 /// * [countReclaimFailures] - Count of failures to reclaim space
 /// * [countReclaimedPaths] - Count of reclaimed paths
 /// * [countRecordFailed] - Count of failed snapshot recordings
 /// * [countTransmitFailures] - Count of failed snapshot transmissions
+/// * [t] - Time the Snapshot was recorded (seconds since the Unix epoch)
+/// * [v] - Version
+/// * [bonds] 
 /// * [cpuCount] - Count of processors/cores
 /// * [cpuPressure10s] - Percentage of time over a 10 second window that tasks were stalled
 /// * [cpuPressure300s] - Percentage of time over a 5 minute window that tasks were stalled
@@ -184,17 +186,12 @@ part 'mconn_snapshot.g.dart';
 /// * [snmpUdpNoPorts] - Number of UDP datagrams received for which there was not application at the destination port
 /// * [snmpUdpOutDatagrams] - Number of UDP datagrams sent
 /// * [systemBootTimeS] - Boottime of the system (seconds since the Unix epoch)
-/// * [t] - Time the Snapshot was recorded (seconds since the Unix epoch)
 /// * [thermals] 
 /// * [tunnels] 
 /// * [uptimeIdleMs] - Sum of how much time each core has spent idle
 /// * [uptimeTotalMs] - Uptime of the system, including time spent in suspend
-/// * [v] - Version
 @BuiltValue()
 abstract class MconnSnapshot implements Built<MconnSnapshot, MconnSnapshotBuilder> {
-  @BuiltValueField(wireName: r'bonds')
-  BuiltList<MconnSnapshotBond>? get bonds;
-
   /// Count of failures to reclaim space
   @BuiltValueField(wireName: r'count_reclaim_failures')
   num get countReclaimFailures;
@@ -210,6 +207,17 @@ abstract class MconnSnapshot implements Built<MconnSnapshot, MconnSnapshotBuilde
   /// Count of failed snapshot transmissions
   @BuiltValueField(wireName: r'count_transmit_failures')
   num get countTransmitFailures;
+
+  /// Time the Snapshot was recorded (seconds since the Unix epoch)
+  @BuiltValueField(wireName: r't')
+  num get t;
+
+  /// Version
+  @BuiltValueField(wireName: r'v')
+  String get v;
+
+  @BuiltValueField(wireName: r'bonds')
+  BuiltList<MconnSnapshotBond>? get bonds;
 
   /// Count of processors/cores
   @BuiltValueField(wireName: r'cpu_count')
@@ -842,10 +850,6 @@ abstract class MconnSnapshot implements Built<MconnSnapshot, MconnSnapshotBuilde
   @BuiltValueField(wireName: r'system_boot_time_s')
   num? get systemBootTimeS;
 
-  /// Time the Snapshot was recorded (seconds since the Unix epoch)
-  @BuiltValueField(wireName: r't')
-  num get t;
-
   @BuiltValueField(wireName: r'thermals')
   BuiltList<MconnSnapshotThermal>? get thermals;
 
@@ -859,10 +863,6 @@ abstract class MconnSnapshot implements Built<MconnSnapshot, MconnSnapshotBuilde
   /// Uptime of the system, including time spent in suspend
   @BuiltValueField(wireName: r'uptime_total_ms')
   num? get uptimeTotalMs;
-
-  /// Version
-  @BuiltValueField(wireName: r'v')
-  String get v;
 
   MconnSnapshot._();
 
@@ -887,13 +887,6 @@ class _$MconnSnapshotSerializer implements PrimitiveSerializer<MconnSnapshot> {
     MconnSnapshot object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
-    if (object.bonds != null) {
-      yield r'bonds';
-      yield serializers.serialize(
-        object.bonds,
-        specifiedType: const FullType(BuiltList, [FullType(MconnSnapshotBond)]),
-      );
-    }
     yield r'count_reclaim_failures';
     yield serializers.serialize(
       object.countReclaimFailures,
@@ -914,6 +907,23 @@ class _$MconnSnapshotSerializer implements PrimitiveSerializer<MconnSnapshot> {
       object.countTransmitFailures,
       specifiedType: const FullType(num),
     );
+    yield r't';
+    yield serializers.serialize(
+      object.t,
+      specifiedType: const FullType(num),
+    );
+    yield r'v';
+    yield serializers.serialize(
+      object.v,
+      specifiedType: const FullType(String),
+    );
+    if (object.bonds != null) {
+      yield r'bonds';
+      yield serializers.serialize(
+        object.bonds,
+        specifiedType: const FullType(BuiltList, [FullType(MconnSnapshotBond)]),
+      );
+    }
     if (object.cpuCount != null) {
       yield r'cpu_count';
       yield serializers.serialize(
@@ -2027,11 +2037,6 @@ class _$MconnSnapshotSerializer implements PrimitiveSerializer<MconnSnapshot> {
         specifiedType: const FullType(num),
       );
     }
-    yield r't';
-    yield serializers.serialize(
-      object.t,
-      specifiedType: const FullType(num),
-    );
     if (object.thermals != null) {
       yield r'thermals';
       yield serializers.serialize(
@@ -2060,11 +2065,6 @@ class _$MconnSnapshotSerializer implements PrimitiveSerializer<MconnSnapshot> {
         specifiedType: const FullType(num),
       );
     }
-    yield r'v';
-    yield serializers.serialize(
-      object.v,
-      specifiedType: const FullType(String),
-    );
   }
 
   @override
@@ -2088,13 +2088,6 @@ class _$MconnSnapshotSerializer implements PrimitiveSerializer<MconnSnapshot> {
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'bonds':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(MconnSnapshotBond)]),
-          ) as BuiltList<MconnSnapshotBond>;
-          result.bonds.replace(valueDes);
-          break;
         case r'count_reclaim_failures':
           final valueDes = serializers.deserialize(
             value,
@@ -2122,6 +2115,27 @@ class _$MconnSnapshotSerializer implements PrimitiveSerializer<MconnSnapshot> {
             specifiedType: const FullType(num),
           ) as num;
           result.countTransmitFailures = valueDes;
+          break;
+        case r't':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(num),
+          ) as num;
+          result.t = valueDes;
+          break;
+        case r'v':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.v = valueDes;
+          break;
+        case r'bonds':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BuiltList, [FullType(MconnSnapshotBond)]),
+          ) as BuiltList<MconnSnapshotBond>;
+          result.bonds.replace(valueDes);
           break;
         case r'cpu_count':
           final valueDes = serializers.deserialize(
@@ -3236,13 +3250,6 @@ class _$MconnSnapshotSerializer implements PrimitiveSerializer<MconnSnapshot> {
           ) as num;
           result.systemBootTimeS = valueDes;
           break;
-        case r't':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(num),
-          ) as num;
-          result.t = valueDes;
-          break;
         case r'thermals':
           final valueDes = serializers.deserialize(
             value,
@@ -3270,13 +3277,6 @@ class _$MconnSnapshotSerializer implements PrimitiveSerializer<MconnSnapshot> {
             specifiedType: const FullType(num),
           ) as num;
           result.uptimeTotalMs = valueDes;
-          break;
-        case r'v':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.v = valueDes;
           break;
         default:
           unhandled.add(key);

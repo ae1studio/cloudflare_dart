@@ -11,16 +11,16 @@ part 'mconn_admin_upgrade_slot.g.dart';
 /// MconnAdminUpgradeSlot
 ///
 /// Properties:
-/// * [connectorId] 
 /// * [id] 
+/// * [connectorId] 
 /// * [startedAt] 
 @BuiltValue()
 abstract class MconnAdminUpgradeSlot implements Built<MconnAdminUpgradeSlot, MconnAdminUpgradeSlotBuilder> {
-  @BuiltValueField(wireName: r'connector_id')
-  String? get connectorId;
-
   @BuiltValueField(wireName: r'id')
   num get id;
+
+  @BuiltValueField(wireName: r'connector_id')
+  String? get connectorId;
 
   @BuiltValueField(wireName: r'started_at')
   String? get startedAt;
@@ -48,6 +48,11 @@ class _$MconnAdminUpgradeSlotSerializer implements PrimitiveSerializer<MconnAdmi
     MconnAdminUpgradeSlot object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    yield r'id';
+    yield serializers.serialize(
+      object.id,
+      specifiedType: const FullType(num),
+    );
     if (object.connectorId != null) {
       yield r'connector_id';
       yield serializers.serialize(
@@ -55,11 +60,6 @@ class _$MconnAdminUpgradeSlotSerializer implements PrimitiveSerializer<MconnAdmi
         specifiedType: const FullType(String),
       );
     }
-    yield r'id';
-    yield serializers.serialize(
-      object.id,
-      specifiedType: const FullType(num),
-    );
     if (object.startedAt != null) {
       yield r'started_at';
       yield serializers.serialize(
@@ -90,19 +90,19 @@ class _$MconnAdminUpgradeSlotSerializer implements PrimitiveSerializer<MconnAdmi
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'connector_id':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.connectorId = valueDes;
-          break;
         case r'id':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(num),
           ) as num;
           result.id = valueDes;
+          break;
+        case r'connector_id':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.connectorId = valueDes;
           break;
         case r'started_at':
           final valueDes = serializers.deserialize(

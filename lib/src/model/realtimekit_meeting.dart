@@ -14,6 +14,7 @@ part 'realtimekit_meeting.g.dart';
 /// Properties:
 /// * [createdAt] - Timestamp the object was created at. The time is returned in ISO format.
 /// * [id] - ID of the meeting.
+/// * [updatedAt] - Timestamp the object was updated at. The time is returned in ISO format.
 /// * [liveStreamOnStart] - Specifies if the meeting should start getting livestreamed on start.
 /// * [persistChat] - Specifies if Chat within a meeting should persist for a week.
 /// * [preferredRegion] - The region in which this meeting should be created.
@@ -22,7 +23,6 @@ part 'realtimekit_meeting.g.dart';
 /// * [status] - Whether the meeting is `ACTIVE` or `INACTIVE`. Users will not be able to join an `INACTIVE` meeting.
 /// * [summarizeOnEnd] - Automatically generate summary of meetings using transcripts. Requires Transcriptions to be enabled, and can be retrieved via Webhooks or summary API.
 /// * [title] - Title of the meeting.
-/// * [updatedAt] - Timestamp the object was updated at. The time is returned in ISO format.
 @BuiltValue()
 abstract class RealtimekitMeeting implements Built<RealtimekitMeeting, RealtimekitMeetingBuilder> {
   /// Timestamp the object was created at. The time is returned in ISO format.
@@ -32,6 +32,10 @@ abstract class RealtimekitMeeting implements Built<RealtimekitMeeting, Realtimek
   /// ID of the meeting.
   @BuiltValueField(wireName: r'id')
   String get id;
+
+  /// Timestamp the object was updated at. The time is returned in ISO format.
+  @BuiltValueField(wireName: r'updated_at')
+  DateTime get updatedAt;
 
   /// Specifies if the meeting should start getting livestreamed on start.
   @BuiltValueField(wireName: r'live_stream_on_start')
@@ -67,10 +71,6 @@ abstract class RealtimekitMeeting implements Built<RealtimekitMeeting, Realtimek
   @BuiltValueField(wireName: r'title')
   String? get title;
 
-  /// Timestamp the object was updated at. The time is returned in ISO format.
-  @BuiltValueField(wireName: r'updated_at')
-  DateTime get updatedAt;
-
   RealtimekitMeeting._();
 
   factory RealtimekitMeeting([void updates(RealtimekitMeetingBuilder b)]) = _$RealtimekitMeeting;
@@ -104,6 +104,11 @@ class _$RealtimekitMeetingSerializer implements PrimitiveSerializer<RealtimekitM
     yield serializers.serialize(
       object.id,
       specifiedType: const FullType(String),
+    );
+    yield r'updated_at';
+    yield serializers.serialize(
+      object.updatedAt,
+      specifiedType: const FullType(DateTime),
     );
     if (object.liveStreamOnStart != null) {
       yield r'live_stream_on_start';
@@ -161,11 +166,6 @@ class _$RealtimekitMeetingSerializer implements PrimitiveSerializer<RealtimekitM
         specifiedType: const FullType(String),
       );
     }
-    yield r'updated_at';
-    yield serializers.serialize(
-      object.updatedAt,
-      specifiedType: const FullType(DateTime),
-    );
   }
 
   @override
@@ -202,6 +202,13 @@ class _$RealtimekitMeetingSerializer implements PrimitiveSerializer<RealtimekitM
             specifiedType: const FullType(String),
           ) as String;
           result.id = valueDes;
+          break;
+        case r'updated_at':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(DateTime),
+          ) as DateTime;
+          result.updatedAt = valueDes;
           break;
         case r'live_stream_on_start':
           final valueDes = serializers.deserialize(
@@ -259,13 +266,6 @@ class _$RealtimekitMeetingSerializer implements PrimitiveSerializer<RealtimekitM
             specifiedType: const FullType(String),
           ) as String;
           result.title = valueDes;
-          break;
-        case r'updated_at':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
-          result.updatedAt = valueDes;
           break;
         default:
           unhandled.add(key);

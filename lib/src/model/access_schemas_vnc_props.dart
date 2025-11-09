@@ -14,6 +14,8 @@ part 'access_schemas_vnc_props.g.dart';
 /// AccessSchemasVncProps
 ///
 /// Properties:
+/// * [domain] - The domain and path that Access will secure.
+/// * [type] - The application type.
 /// * [allowIframe] - Enables loading application content in an iFrame.
 /// * [allowedIdps] - The identity providers your users can select when connecting to this application. Defaults to all IdPs configured in your account.
 /// * [appLauncherVisible] - Displays the application in the App Launcher.
@@ -21,7 +23,6 @@ part 'access_schemas_vnc_props.g.dart';
 /// * [corsHeaders] 
 /// * [customDenyMessage] - The custom error message shown to a user when they are denied access to the application.
 /// * [customDenyUrl] - The custom URL a user is redirected to when they are denied access to the application.
-/// * [domain] - The domain and path that Access will secure.
 /// * [enableBindingCookie] - Enables the binding cookie, which increases security against compromised authorization tokens and CSRF attacks.
 /// * [httpOnlyCookieAttribute] - Enables the HttpOnly cookie attribute, which increases security against XSS attacks.
 /// * [logoUrl] - The image URL for the logo shown in the App Launcher dashboard.
@@ -31,7 +32,6 @@ part 'access_schemas_vnc_props.g.dart';
 /// * [serviceAuth401Redirect] - Returns a 401 status code when the request is blocked by a Service Auth policy.
 /// * [sessionDuration] - The amount of time that tokens issued for this application will be valid. Must be in the format `300ms` or `2h45m`. Valid time units are: ns, us (or µs), ms, s, m, h.
 /// * [skipInterstitial] - Enables automatic authentication through cloudflared.
-/// * [type] - The application type.
 @BuiltValue(instantiable: false)
 abstract class AccessSchemasVncProps implements AccessSchemasSelfHostedProps {
   @BuiltValueSerializer(custom: true)
@@ -92,6 +92,11 @@ class _$AccessSchemasVncPropsSerializer implements PrimitiveSerializer<AccessSch
         specifiedType: const FullType(bool),
       );
     }
+    yield r'type';
+    yield serializers.serialize(
+      object.type,
+      specifiedType: const FullType(String),
+    );
     if (object.sessionDuration != null) {
       yield r'session_duration';
       yield serializers.serialize(
@@ -99,11 +104,6 @@ class _$AccessSchemasVncPropsSerializer implements PrimitiveSerializer<AccessSch
         specifiedType: const FullType(String),
       );
     }
-    yield r'type';
-    yield serializers.serialize(
-      object.type,
-      specifiedType: const FullType(String),
-    );
     if (object.logoUrl != null) {
       yield r'logo_url';
       yield serializers.serialize(
@@ -139,6 +139,11 @@ class _$AccessSchemasVncPropsSerializer implements PrimitiveSerializer<AccessSch
         specifiedType: const FullType(bool),
       );
     }
+    yield r'domain';
+    yield serializers.serialize(
+      object.domain,
+      specifiedType: const FullType(String),
+    );
     if (object.autoRedirectToIdentity != null) {
       yield r'auto_redirect_to_identity';
       yield serializers.serialize(
@@ -146,11 +151,6 @@ class _$AccessSchemasVncPropsSerializer implements PrimitiveSerializer<AccessSch
         specifiedType: const FullType(bool),
       );
     }
-    yield r'domain';
-    yield serializers.serialize(
-      object.domain,
-      specifiedType: const FullType(String),
-    );
     if (object.name != null) {
       yield r'name';
       yield serializers.serialize(
@@ -277,19 +277,19 @@ class _$$AccessSchemasVncPropsSerializer implements PrimitiveSerializer<$AccessS
           ) as bool;
           result.httpOnlyCookieAttribute = valueDes;
           break;
-        case r'session_duration':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.sessionDuration = valueDes;
-          break;
         case r'type':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(String),
           ) as String;
           result.type = valueDes;
+          break;
+        case r'session_duration':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.sessionDuration = valueDes;
           break;
         case r'logo_url':
           final valueDes = serializers.deserialize(
@@ -326,19 +326,19 @@ class _$$AccessSchemasVncPropsSerializer implements PrimitiveSerializer<$AccessS
           ) as bool;
           result.skipInterstitial = valueDes;
           break;
-        case r'auto_redirect_to_identity':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
-          result.autoRedirectToIdentity = valueDes;
-          break;
         case r'domain':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(String),
           ) as String;
           result.domain = valueDes;
+          break;
+        case r'auto_redirect_to_identity':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(bool),
+          ) as bool;
+          result.autoRedirectToIdentity = valueDes;
           break;
         case r'name':
           final valueDes = serializers.deserialize(

@@ -20,8 +20,8 @@ part 'waiting_room_list_events4_xx_response.g.dart';
 /// * [errors] 
 /// * [messages] 
 /// * [success] - Whether the API call was successful.
-/// * [resultInfo] 
 /// * [result] 
+/// * [resultInfo] 
 @BuiltValue()
 abstract class WaitingRoomListEvents4XXResponse implements WaitingroomApiResponseCommonFailure, WaitingroomEventResponseCollection, Built<WaitingRoomListEvents4XXResponse, WaitingRoomListEvents4XXResponseBuilder> {
   WaitingRoomListEvents4XXResponse._();

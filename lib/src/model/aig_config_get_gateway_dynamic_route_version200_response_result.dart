@@ -15,7 +15,6 @@ part 'aig_config_get_gateway_dynamic_route_version200_response_result.g.dart';
 /// Properties:
 /// * [accountTag] 
 /// * [active] 
-/// * [comment] 
 /// * [createdAt] 
 /// * [data] 
 /// * [elements] 
@@ -24,6 +23,7 @@ part 'aig_config_get_gateway_dynamic_route_version200_response_result.g.dart';
 /// * [modifiedAt] 
 /// * [name] 
 /// * [versionId] 
+/// * [comment] 
 @BuiltValue()
 abstract class AigConfigGetGatewayDynamicRouteVersion200ResponseResult implements Built<AigConfigGetGatewayDynamicRouteVersion200ResponseResult, AigConfigGetGatewayDynamicRouteVersion200ResponseResultBuilder> {
   @BuiltValueField(wireName: r'account_tag')
@@ -32,9 +32,6 @@ abstract class AigConfigGetGatewayDynamicRouteVersion200ResponseResult implement
   @BuiltValueField(wireName: r'active')
   AigConfigGetGatewayDynamicRouteVersion200ResponseResultActiveEnum get active;
   // enum activeEnum {  true,  false,  };
-
-  @BuiltValueField(wireName: r'comment')
-  String? get comment;
 
   @BuiltValueField(wireName: r'created_at')
   String get createdAt;
@@ -59,6 +56,9 @@ abstract class AigConfigGetGatewayDynamicRouteVersion200ResponseResult implement
 
   @BuiltValueField(wireName: r'version_id')
   String get versionId;
+
+  @BuiltValueField(wireName: r'comment')
+  String? get comment;
 
   AigConfigGetGatewayDynamicRouteVersion200ResponseResult._();
 
@@ -93,13 +93,6 @@ class _$AigConfigGetGatewayDynamicRouteVersion200ResponseResultSerializer implem
       object.active,
       specifiedType: const FullType(AigConfigGetGatewayDynamicRouteVersion200ResponseResultActiveEnum),
     );
-    if (object.comment != null) {
-      yield r'comment';
-      yield serializers.serialize(
-        object.comment,
-        specifiedType: const FullType.nullable(String),
-      );
-    }
     yield r'created_at';
     yield serializers.serialize(
       object.createdAt,
@@ -140,6 +133,13 @@ class _$AigConfigGetGatewayDynamicRouteVersion200ResponseResultSerializer implem
       object.versionId,
       specifiedType: const FullType(String),
     );
+    if (object.comment != null) {
+      yield r'comment';
+      yield serializers.serialize(
+        object.comment,
+        specifiedType: const FullType.nullable(String),
+      );
+    }
   }
 
   @override
@@ -176,14 +176,6 @@ class _$AigConfigGetGatewayDynamicRouteVersion200ResponseResultSerializer implem
             specifiedType: const FullType(AigConfigGetGatewayDynamicRouteVersion200ResponseResultActiveEnum),
           ) as AigConfigGetGatewayDynamicRouteVersion200ResponseResultActiveEnum;
           result.active = valueDes;
-          break;
-        case r'comment':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
-          if (valueDes == null) continue;
-          result.comment = valueDes;
           break;
         case r'created_at':
           final valueDes = serializers.deserialize(
@@ -240,6 +232,14 @@ class _$AigConfigGetGatewayDynamicRouteVersion200ResponseResultSerializer implem
             specifiedType: const FullType(String),
           ) as String;
           result.versionId = valueDes;
+          break;
+        case r'comment':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType.nullable(String),
+          ) as String?;
+          if (valueDes == null) continue;
+          result.comment = valueDes;
           break;
         default:
           unhandled.add(key);

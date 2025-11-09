@@ -63,15 +63,15 @@ class _$ZeroTrustGatewayProxyEndpointIpKindEnumSerializer
 class _$ZeroTrustGatewayProxyEndpointIp
     extends ZeroTrustGatewayProxyEndpointIp {
   @override
+  final BuiltList<String> ips;
+  @override
+  final String name;
+  @override
   final DateTime? createdAt;
   @override
   final String? id;
   @override
-  final BuiltList<String> ips;
-  @override
   final ZeroTrustGatewayProxyEndpointIpKindEnum? kind;
-  @override
-  final String name;
   @override
   final String? subdomain;
   @override
@@ -82,11 +82,11 @@ class _$ZeroTrustGatewayProxyEndpointIp
       (ZeroTrustGatewayProxyEndpointIpBuilder()..update(updates))._build();
 
   _$ZeroTrustGatewayProxyEndpointIp._(
-      {this.createdAt,
-      this.id,
-      required this.ips,
-      this.kind,
+      {required this.ips,
       required this.name,
+      this.createdAt,
+      this.id,
+      this.kind,
       this.subdomain,
       this.updatedAt})
       : super._();
@@ -103,11 +103,11 @@ class _$ZeroTrustGatewayProxyEndpointIp
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is ZeroTrustGatewayProxyEndpointIp &&
+        ips == other.ips &&
+        name == other.name &&
         createdAt == other.createdAt &&
         id == other.id &&
-        ips == other.ips &&
         kind == other.kind &&
-        name == other.name &&
         subdomain == other.subdomain &&
         updatedAt == other.updatedAt;
   }
@@ -115,11 +115,11 @@ class _$ZeroTrustGatewayProxyEndpointIp
   @override
   int get hashCode {
     var _$hash = 0;
+    _$hash = $jc(_$hash, ips.hashCode);
+    _$hash = $jc(_$hash, name.hashCode);
     _$hash = $jc(_$hash, createdAt.hashCode);
     _$hash = $jc(_$hash, id.hashCode);
-    _$hash = $jc(_$hash, ips.hashCode);
     _$hash = $jc(_$hash, kind.hashCode);
-    _$hash = $jc(_$hash, name.hashCode);
     _$hash = $jc(_$hash, subdomain.hashCode);
     _$hash = $jc(_$hash, updatedAt.hashCode);
     _$hash = $jf(_$hash);
@@ -129,11 +129,11 @@ class _$ZeroTrustGatewayProxyEndpointIp
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'ZeroTrustGatewayProxyEndpointIp')
+          ..add('ips', ips)
+          ..add('name', name)
           ..add('createdAt', createdAt)
           ..add('id', id)
-          ..add('ips', ips)
           ..add('kind', kind)
-          ..add('name', name)
           ..add('subdomain', subdomain)
           ..add('updatedAt', updatedAt))
         .toString();
@@ -146,6 +146,14 @@ class ZeroTrustGatewayProxyEndpointIpBuilder
             ZeroTrustGatewayProxyEndpointIpBuilder> {
   _$ZeroTrustGatewayProxyEndpointIp? _$v;
 
+  ListBuilder<String>? _ips;
+  ListBuilder<String> get ips => _$this._ips ??= ListBuilder<String>();
+  set ips(ListBuilder<String>? ips) => _$this._ips = ips;
+
+  String? _name;
+  String? get name => _$this._name;
+  set name(String? name) => _$this._name = name;
+
   DateTime? _createdAt;
   DateTime? get createdAt => _$this._createdAt;
   set createdAt(DateTime? createdAt) => _$this._createdAt = createdAt;
@@ -154,18 +162,10 @@ class ZeroTrustGatewayProxyEndpointIpBuilder
   String? get id => _$this._id;
   set id(String? id) => _$this._id = id;
 
-  ListBuilder<String>? _ips;
-  ListBuilder<String> get ips => _$this._ips ??= ListBuilder<String>();
-  set ips(ListBuilder<String>? ips) => _$this._ips = ips;
-
   ZeroTrustGatewayProxyEndpointIpKindEnum? _kind;
   ZeroTrustGatewayProxyEndpointIpKindEnum? get kind => _$this._kind;
   set kind(ZeroTrustGatewayProxyEndpointIpKindEnum? kind) =>
       _$this._kind = kind;
-
-  String? _name;
-  String? get name => _$this._name;
-  set name(String? name) => _$this._name = name;
 
   String? _subdomain;
   String? get subdomain => _$this._subdomain;
@@ -182,11 +182,11 @@ class ZeroTrustGatewayProxyEndpointIpBuilder
   ZeroTrustGatewayProxyEndpointIpBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
+      _ips = $v.ips.toBuilder();
+      _name = $v.name;
       _createdAt = $v.createdAt;
       _id = $v.id;
-      _ips = $v.ips.toBuilder();
       _kind = $v.kind;
-      _name = $v.name;
       _subdomain = $v.subdomain;
       _updatedAt = $v.updatedAt;
       _$v = null;
@@ -212,12 +212,12 @@ class ZeroTrustGatewayProxyEndpointIpBuilder
     try {
       _$result = _$v ??
           _$ZeroTrustGatewayProxyEndpointIp._(
-            createdAt: createdAt,
-            id: id,
             ips: ips.build(),
-            kind: kind,
             name: BuiltValueNullFieldError.checkNotNull(
                 name, r'ZeroTrustGatewayProxyEndpointIp', 'name'),
+            createdAt: createdAt,
+            id: id,
+            kind: kind,
             subdomain: subdomain,
             updatedAt: updatedAt,
           );

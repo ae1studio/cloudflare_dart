@@ -18,8 +18,8 @@ part 'account_members_add_member_request.g.dart';
 /// Properties:
 /// * [email] - The contact email address of the user.
 /// * [roles] - Array of roles associated with this member.
-/// * [status] 
 /// * [policies] - Array of policies associated with this member.
+/// * [status] 
 @BuiltValue()
 abstract class AccountMembersAddMemberRequest implements Built<AccountMembersAddMemberRequest, AccountMembersAddMemberRequestBuilder> {
   /// One Of [IamCreateMemberWithPolicies], [IamCreateMemberWithRoles]

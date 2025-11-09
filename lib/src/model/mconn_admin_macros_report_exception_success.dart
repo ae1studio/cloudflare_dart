@@ -15,10 +15,10 @@ part 'mconn_admin_macros_report_exception_success.g.dart';
 /// MconnAdminMacrosReportExceptionSuccess
 ///
 /// Properties:
-/// * [errors] 
-/// * [messages] 
 /// * [success] 
 /// * [result] 
+/// * [errors] 
+/// * [messages] 
 @BuiltValue()
 abstract class MconnAdminMacrosReportExceptionSuccess implements MconnEnvelope, Built<MconnAdminMacrosReportExceptionSuccess, MconnAdminMacrosReportExceptionSuccessBuilder> {
   @BuiltValueField(wireName: r'result')

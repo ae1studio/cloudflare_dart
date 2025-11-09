@@ -8,18 +8,18 @@ part of 'workers_tail_consumers_script.dart';
 
 class _$WorkersTailConsumersScript extends WorkersTailConsumersScript {
   @override
+  final String service;
+  @override
   final String? environment;
   @override
   final String? namespace;
-  @override
-  final String service;
 
   factory _$WorkersTailConsumersScript(
           [void Function(WorkersTailConsumersScriptBuilder)? updates]) =>
       (WorkersTailConsumersScriptBuilder()..update(updates))._build();
 
   _$WorkersTailConsumersScript._(
-      {this.environment, this.namespace, required this.service})
+      {required this.service, this.environment, this.namespace})
       : super._();
   @override
   WorkersTailConsumersScript rebuild(
@@ -34,17 +34,17 @@ class _$WorkersTailConsumersScript extends WorkersTailConsumersScript {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is WorkersTailConsumersScript &&
+        service == other.service &&
         environment == other.environment &&
-        namespace == other.namespace &&
-        service == other.service;
+        namespace == other.namespace;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
+    _$hash = $jc(_$hash, service.hashCode);
     _$hash = $jc(_$hash, environment.hashCode);
     _$hash = $jc(_$hash, namespace.hashCode);
-    _$hash = $jc(_$hash, service.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -52,9 +52,9 @@ class _$WorkersTailConsumersScript extends WorkersTailConsumersScript {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'WorkersTailConsumersScript')
+          ..add('service', service)
           ..add('environment', environment)
-          ..add('namespace', namespace)
-          ..add('service', service))
+          ..add('namespace', namespace))
         .toString();
   }
 }
@@ -64,6 +64,10 @@ class WorkersTailConsumersScriptBuilder
         Builder<WorkersTailConsumersScript, WorkersTailConsumersScriptBuilder> {
   _$WorkersTailConsumersScript? _$v;
 
+  String? _service;
+  String? get service => _$this._service;
+  set service(String? service) => _$this._service = service;
+
   String? _environment;
   String? get environment => _$this._environment;
   set environment(String? environment) => _$this._environment = environment;
@@ -72,10 +76,6 @@ class WorkersTailConsumersScriptBuilder
   String? get namespace => _$this._namespace;
   set namespace(String? namespace) => _$this._namespace = namespace;
 
-  String? _service;
-  String? get service => _$this._service;
-  set service(String? service) => _$this._service = service;
-
   WorkersTailConsumersScriptBuilder() {
     WorkersTailConsumersScript._defaults(this);
   }
@@ -83,9 +83,9 @@ class WorkersTailConsumersScriptBuilder
   WorkersTailConsumersScriptBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
+      _service = $v.service;
       _environment = $v.environment;
       _namespace = $v.namespace;
-      _service = $v.service;
       _$v = null;
     }
     return this;
@@ -107,10 +107,10 @@ class WorkersTailConsumersScriptBuilder
   _$WorkersTailConsumersScript _build() {
     final _$result = _$v ??
         _$WorkersTailConsumersScript._(
-          environment: environment,
-          namespace: namespace,
           service: BuiltValueNullFieldError.checkNotNull(
               service, r'WorkersTailConsumersScript', 'service'),
+          environment: environment,
+          namespace: namespace,
         );
     replace(_$result);
     return _$result;

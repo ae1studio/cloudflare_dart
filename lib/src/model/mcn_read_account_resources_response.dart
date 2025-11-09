@@ -17,10 +17,10 @@ part 'mcn_read_account_resources_response.g.dart';
 ///
 /// Properties:
 /// * [messages] 
-/// * [resultInfo] 
 /// * [success] 
 /// * [errors] 
 /// * [result] 
+/// * [resultInfo] 
 @BuiltValue()
 abstract class McnReadAccountResourcesResponse implements McnGoodResponseCollection, Built<McnReadAccountResourcesResponse, McnReadAccountResourcesResponseBuilder> {
   @BuiltValueField(wireName: r'result')
@@ -64,6 +64,11 @@ class _$McnReadAccountResourcesResponseSerializer implements PrimitiveSerializer
       object.success,
       specifiedType: const FullType(bool),
     );
+    yield r'errors';
+    yield serializers.serialize(
+      object.errors,
+      specifiedType: const FullType(BuiltList, [FullType(McnError)]),
+    );
     if (object.resultInfo != null) {
       yield r'result_info';
       yield serializers.serialize(
@@ -71,11 +76,6 @@ class _$McnReadAccountResourcesResponseSerializer implements PrimitiveSerializer
         specifiedType: const FullType(McnResultInfo),
       );
     }
-    yield r'errors';
-    yield serializers.serialize(
-      object.errors,
-      specifiedType: const FullType(BuiltList, [FullType(McnError)]),
-    );
   }
 
   @override
@@ -120,19 +120,19 @@ class _$McnReadAccountResourcesResponseSerializer implements PrimitiveSerializer
           ) as bool;
           result.success = valueDes;
           break;
-        case r'result_info':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(McnResultInfo),
-          ) as McnResultInfo;
-          result.resultInfo.replace(valueDes);
-          break;
         case r'errors':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(BuiltList, [FullType(McnError)]),
           ) as BuiltList<McnError>;
           result.errors.replace(valueDes);
+          break;
+        case r'result_info':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(McnResultInfo),
+          ) as McnResultInfo;
+          result.resultInfo.replace(valueDes);
           break;
         default:
           unhandled.add(key);

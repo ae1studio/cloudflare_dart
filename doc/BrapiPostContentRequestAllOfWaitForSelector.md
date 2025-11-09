@@ -8,8 +8,8 @@ import 'package:cloudflare_dart/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**hidden** | **bool** |  | [optional] 
 **selector** | **String** |  | 
+**hidden** | **bool** |  | [optional] 
 **timeout** | **num** |  | [optional] 
 **visible** | **bool** |  | [optional] 
 

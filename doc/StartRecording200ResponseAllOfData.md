@@ -15,11 +15,11 @@ Name | Type | Description | Notes
 **id** | **String** | ID of the recording | 
 **invokedTime** | [**DateTime**](DateTime.md) | Timestamp when this recording was invoked. | 
 **outputFileName** | **String** | File name of the recording. | 
-**recordingDuration** | **int** | Total recording time in seconds. | [optional] 
 **sessionId** | **String** | ID of the meeting session this recording is for. | 
 **startedTime** | [**DateTime**](DateTime.md) | Timestamp when this recording actually started after being invoked. Usually a few seconds after `invoked_time`. | 
 **status** | **String** | Current status of the recording. | 
 **stoppedTime** | [**DateTime**](DateTime.md) | Timestamp when this recording was stopped. Optional; is present only when the recording has actually been stopped. | 
+**recordingDuration** | **int** | Total recording time in seconds. | [optional] 
 **startReason** | [**RealtimekitStartReason**](RealtimekitStartReason.md) |  | [optional] 
 **stopReason** | [**RealtimekitStopReason**](RealtimekitStopReason.md) |  | [optional] 
 **storageConfig** | [**RealtimekitStorageConfig**](RealtimekitStorageConfig.md) |  | [optional] 

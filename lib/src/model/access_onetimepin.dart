@@ -9,6 +9,7 @@ import 'package:built_collection/built_collection.dart';
 import 'package:cloudflare_dart/src/model/access_identity_provider.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
+import 'package:built_value/json_object.dart';
 
 part 'access_onetimepin.g.dart';
 
@@ -16,10 +17,10 @@ part 'access_onetimepin.g.dart';
 ///
 /// Properties:
 /// * [config] 
-/// * [id] - UUID.
 /// * [name] - The name of the identity provider, shown to users on the login page.
-/// * [scimConfig] 
 /// * [type] 
+/// * [id] - UUID.
+/// * [scimConfig] 
 @BuiltValue()
 abstract class AccessOnetimepin implements AccessIdentityProvider, Built<AccessOnetimepin, AccessOnetimepinBuilder> {
   AccessOnetimepin._();

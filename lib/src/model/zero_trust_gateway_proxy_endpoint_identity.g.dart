@@ -64,13 +64,13 @@ class _$ZeroTrustGatewayProxyEndpointIdentityKindEnumSerializer
 class _$ZeroTrustGatewayProxyEndpointIdentity
     extends ZeroTrustGatewayProxyEndpointIdentity {
   @override
-  final DateTime? createdAt;
-  @override
-  final String? id;
-  @override
   final ZeroTrustGatewayProxyEndpointIdentityKindEnum kind;
   @override
   final String name;
+  @override
+  final DateTime? createdAt;
+  @override
+  final String? id;
   @override
   final String? subdomain;
   @override
@@ -83,10 +83,10 @@ class _$ZeroTrustGatewayProxyEndpointIdentity
           ._build();
 
   _$ZeroTrustGatewayProxyEndpointIdentity._(
-      {this.createdAt,
-      this.id,
-      required this.kind,
+      {required this.kind,
       required this.name,
+      this.createdAt,
+      this.id,
       this.subdomain,
       this.updatedAt})
       : super._();
@@ -104,10 +104,10 @@ class _$ZeroTrustGatewayProxyEndpointIdentity
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is ZeroTrustGatewayProxyEndpointIdentity &&
-        createdAt == other.createdAt &&
-        id == other.id &&
         kind == other.kind &&
         name == other.name &&
+        createdAt == other.createdAt &&
+        id == other.id &&
         subdomain == other.subdomain &&
         updatedAt == other.updatedAt;
   }
@@ -115,10 +115,10 @@ class _$ZeroTrustGatewayProxyEndpointIdentity
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, createdAt.hashCode);
-    _$hash = $jc(_$hash, id.hashCode);
     _$hash = $jc(_$hash, kind.hashCode);
     _$hash = $jc(_$hash, name.hashCode);
+    _$hash = $jc(_$hash, createdAt.hashCode);
+    _$hash = $jc(_$hash, id.hashCode);
     _$hash = $jc(_$hash, subdomain.hashCode);
     _$hash = $jc(_$hash, updatedAt.hashCode);
     _$hash = $jf(_$hash);
@@ -129,10 +129,10 @@ class _$ZeroTrustGatewayProxyEndpointIdentity
   String toString() {
     return (newBuiltValueToStringHelper(
             r'ZeroTrustGatewayProxyEndpointIdentity')
-          ..add('createdAt', createdAt)
-          ..add('id', id)
           ..add('kind', kind)
           ..add('name', name)
+          ..add('createdAt', createdAt)
+          ..add('id', id)
           ..add('subdomain', subdomain)
           ..add('updatedAt', updatedAt))
         .toString();
@@ -145,14 +145,6 @@ class ZeroTrustGatewayProxyEndpointIdentityBuilder
             ZeroTrustGatewayProxyEndpointIdentityBuilder> {
   _$ZeroTrustGatewayProxyEndpointIdentity? _$v;
 
-  DateTime? _createdAt;
-  DateTime? get createdAt => _$this._createdAt;
-  set createdAt(DateTime? createdAt) => _$this._createdAt = createdAt;
-
-  String? _id;
-  String? get id => _$this._id;
-  set id(String? id) => _$this._id = id;
-
   ZeroTrustGatewayProxyEndpointIdentityKindEnum? _kind;
   ZeroTrustGatewayProxyEndpointIdentityKindEnum? get kind => _$this._kind;
   set kind(ZeroTrustGatewayProxyEndpointIdentityKindEnum? kind) =>
@@ -161,6 +153,14 @@ class ZeroTrustGatewayProxyEndpointIdentityBuilder
   String? _name;
   String? get name => _$this._name;
   set name(String? name) => _$this._name = name;
+
+  DateTime? _createdAt;
+  DateTime? get createdAt => _$this._createdAt;
+  set createdAt(DateTime? createdAt) => _$this._createdAt = createdAt;
+
+  String? _id;
+  String? get id => _$this._id;
+  set id(String? id) => _$this._id = id;
 
   String? _subdomain;
   String? get subdomain => _$this._subdomain;
@@ -177,10 +177,10 @@ class ZeroTrustGatewayProxyEndpointIdentityBuilder
   ZeroTrustGatewayProxyEndpointIdentityBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _createdAt = $v.createdAt;
-      _id = $v.id;
       _kind = $v.kind;
       _name = $v.name;
+      _createdAt = $v.createdAt;
+      _id = $v.id;
       _subdomain = $v.subdomain;
       _updatedAt = $v.updatedAt;
       _$v = null;
@@ -205,12 +205,12 @@ class ZeroTrustGatewayProxyEndpointIdentityBuilder
   _$ZeroTrustGatewayProxyEndpointIdentity _build() {
     final _$result = _$v ??
         _$ZeroTrustGatewayProxyEndpointIdentity._(
-          createdAt: createdAt,
-          id: id,
           kind: BuiltValueNullFieldError.checkNotNull(
               kind, r'ZeroTrustGatewayProxyEndpointIdentity', 'kind'),
           name: BuiltValueNullFieldError.checkNotNull(
               name, r'ZeroTrustGatewayProxyEndpointIdentity', 'name'),
+          createdAt: createdAt,
+          id: id,
           subdomain: subdomain,
           updatedAt: updatedAt,
         );

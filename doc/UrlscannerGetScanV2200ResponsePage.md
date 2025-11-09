@@ -16,7 +16,6 @@ Name | Type | Description | Notes
 **domain** | **String** |  | 
 **ip** | **String** |  | 
 **mimeType** | **String** |  | 
-**screenshot** | [**UrlscannerGetScanV2200ResponsePageScreenshot**](UrlscannerGetScanV2200ResponsePageScreenshot.md) |  | [optional] 
 **server** | **String** |  | 
 **status** | **String** |  | 
 **title** | **String** |  | 
@@ -25,6 +24,7 @@ Name | Type | Description | Notes
 **tlsValidDays** | **num** |  | 
 **tlsValidFrom** | **String** |  | 
 **url** | **String** |  | 
+**screenshot** | [**UrlscannerGetScanV2200ResponsePageScreenshot**](UrlscannerGetScanV2200ResponsePageScreenshot.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

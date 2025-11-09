@@ -12,17 +12,13 @@ part 'r2_add_custom_domain_request.g.dart';
 /// R2AddCustomDomainRequest
 ///
 /// Properties:
-/// * [ciphers] - An allowlist of ciphers for TLS termination. These ciphers must be in the BoringSSL format.
 /// * [domain] - Name of the custom domain to be added.
 /// * [enabled] - Whether to enable public bucket access at the custom domain. If undefined, the domain will be enabled.
-/// * [minTLS] - Minimum TLS Version the custom domain will accept for incoming connections. If not set, defaults to 1.0.
 /// * [zoneId] - Zone ID of the custom domain.
+/// * [ciphers] - An allowlist of ciphers for TLS termination. These ciphers must be in the BoringSSL format.
+/// * [minTLS] - Minimum TLS Version the custom domain will accept for incoming connections. If not set, defaults to 1.0.
 @BuiltValue()
 abstract class R2AddCustomDomainRequest implements Built<R2AddCustomDomainRequest, R2AddCustomDomainRequestBuilder> {
-  /// An allowlist of ciphers for TLS termination. These ciphers must be in the BoringSSL format.
-  @BuiltValueField(wireName: r'ciphers')
-  BuiltList<String>? get ciphers;
-
   /// Name of the custom domain to be added.
   @BuiltValueField(wireName: r'domain')
   String get domain;
@@ -31,14 +27,18 @@ abstract class R2AddCustomDomainRequest implements Built<R2AddCustomDomainReques
   @BuiltValueField(wireName: r'enabled')
   bool get enabled;
 
+  /// Zone ID of the custom domain.
+  @BuiltValueField(wireName: r'zoneId')
+  String get zoneId;
+
+  /// An allowlist of ciphers for TLS termination. These ciphers must be in the BoringSSL format.
+  @BuiltValueField(wireName: r'ciphers')
+  BuiltList<String>? get ciphers;
+
   /// Minimum TLS Version the custom domain will accept for incoming connections. If not set, defaults to 1.0.
   @BuiltValueField(wireName: r'minTLS')
   R2AddCustomDomainRequestMinTLSEnum? get minTLS;
   // enum minTLSEnum {  1.0,  1.1,  1.2,  1.3,  };
-
-  /// Zone ID of the custom domain.
-  @BuiltValueField(wireName: r'zoneId')
-  String get zoneId;
 
   R2AddCustomDomainRequest._();
 
@@ -63,13 +63,6 @@ class _$R2AddCustomDomainRequestSerializer implements PrimitiveSerializer<R2AddC
     R2AddCustomDomainRequest object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
-    if (object.ciphers != null) {
-      yield r'ciphers';
-      yield serializers.serialize(
-        object.ciphers,
-        specifiedType: const FullType(BuiltList, [FullType(String)]),
-      );
-    }
     yield r'domain';
     yield serializers.serialize(
       object.domain,
@@ -80,6 +73,18 @@ class _$R2AddCustomDomainRequestSerializer implements PrimitiveSerializer<R2AddC
       object.enabled,
       specifiedType: const FullType(bool),
     );
+    yield r'zoneId';
+    yield serializers.serialize(
+      object.zoneId,
+      specifiedType: const FullType(String),
+    );
+    if (object.ciphers != null) {
+      yield r'ciphers';
+      yield serializers.serialize(
+        object.ciphers,
+        specifiedType: const FullType(BuiltList, [FullType(String)]),
+      );
+    }
     if (object.minTLS != null) {
       yield r'minTLS';
       yield serializers.serialize(
@@ -87,11 +92,6 @@ class _$R2AddCustomDomainRequestSerializer implements PrimitiveSerializer<R2AddC
         specifiedType: const FullType(R2AddCustomDomainRequestMinTLSEnum),
       );
     }
-    yield r'zoneId';
-    yield serializers.serialize(
-      object.zoneId,
-      specifiedType: const FullType(String),
-    );
   }
 
   @override
@@ -115,13 +115,6 @@ class _$R2AddCustomDomainRequestSerializer implements PrimitiveSerializer<R2AddC
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'ciphers':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>;
-          result.ciphers.replace(valueDes);
-          break;
         case r'domain':
           final valueDes = serializers.deserialize(
             value,
@@ -136,19 +129,26 @@ class _$R2AddCustomDomainRequestSerializer implements PrimitiveSerializer<R2AddC
           ) as bool;
           result.enabled = valueDes;
           break;
-        case r'minTLS':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(R2AddCustomDomainRequestMinTLSEnum),
-          ) as R2AddCustomDomainRequestMinTLSEnum;
-          result.minTLS = valueDes;
-          break;
         case r'zoneId':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(String),
           ) as String;
           result.zoneId = valueDes;
+          break;
+        case r'ciphers':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BuiltList, [FullType(String)]),
+          ) as BuiltList<String>;
+          result.ciphers.replace(valueDes);
+          break;
+        case r'minTLS':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(R2AddCustomDomainRequestMinTLSEnum),
+          ) as R2AddCustomDomainRequestMinTLSEnum;
+          result.minTLS = valueDes;
           break;
         default:
           unhandled.add(key);

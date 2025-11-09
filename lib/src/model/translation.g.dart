@@ -8,17 +8,17 @@ part of 'translation.dart';
 
 class _$Translation extends Translation {
   @override
-  final String? sourceLang;
-  @override
   final String targetLang;
   @override
   final String text;
+  @override
+  final String? sourceLang;
 
   factory _$Translation([void Function(TranslationBuilder)? updates]) =>
       (TranslationBuilder()..update(updates))._build();
 
   _$Translation._(
-      {this.sourceLang, required this.targetLang, required this.text})
+      {required this.targetLang, required this.text, this.sourceLang})
       : super._();
   @override
   Translation rebuild(void Function(TranslationBuilder) updates) =>
@@ -31,17 +31,17 @@ class _$Translation extends Translation {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is Translation &&
-        sourceLang == other.sourceLang &&
         targetLang == other.targetLang &&
-        text == other.text;
+        text == other.text &&
+        sourceLang == other.sourceLang;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, sourceLang.hashCode);
     _$hash = $jc(_$hash, targetLang.hashCode);
     _$hash = $jc(_$hash, text.hashCode);
+    _$hash = $jc(_$hash, sourceLang.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -49,19 +49,15 @@ class _$Translation extends Translation {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'Translation')
-          ..add('sourceLang', sourceLang)
           ..add('targetLang', targetLang)
-          ..add('text', text))
+          ..add('text', text)
+          ..add('sourceLang', sourceLang))
         .toString();
   }
 }
 
 class TranslationBuilder implements Builder<Translation, TranslationBuilder> {
   _$Translation? _$v;
-
-  String? _sourceLang;
-  String? get sourceLang => _$this._sourceLang;
-  set sourceLang(String? sourceLang) => _$this._sourceLang = sourceLang;
 
   String? _targetLang;
   String? get targetLang => _$this._targetLang;
@@ -71,6 +67,10 @@ class TranslationBuilder implements Builder<Translation, TranslationBuilder> {
   String? get text => _$this._text;
   set text(String? text) => _$this._text = text;
 
+  String? _sourceLang;
+  String? get sourceLang => _$this._sourceLang;
+  set sourceLang(String? sourceLang) => _$this._sourceLang = sourceLang;
+
   TranslationBuilder() {
     Translation._defaults(this);
   }
@@ -78,9 +78,9 @@ class TranslationBuilder implements Builder<Translation, TranslationBuilder> {
   TranslationBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _sourceLang = $v.sourceLang;
       _targetLang = $v.targetLang;
       _text = $v.text;
+      _sourceLang = $v.sourceLang;
       _$v = null;
     }
     return this;
@@ -102,11 +102,11 @@ class TranslationBuilder implements Builder<Translation, TranslationBuilder> {
   _$Translation _build() {
     final _$result = _$v ??
         _$Translation._(
-          sourceLang: sourceLang,
           targetLang: BuiltValueNullFieldError.checkNotNull(
               targetLang, r'Translation', 'targetLang'),
           text: BuiltValueNullFieldError.checkNotNull(
               text, r'Translation', 'text'),
+          sourceLang: sourceLang,
         );
     replace(_$result);
     return _$result;

@@ -13,19 +13,19 @@ part 'mconn_envelope.g.dart';
 /// MconnEnvelope
 ///
 /// Properties:
+/// * [success] 
 /// * [errors] 
 /// * [messages] 
-/// * [success] 
 @BuiltValue(instantiable: false)
 abstract class MconnEnvelope  {
+  @BuiltValueField(wireName: r'success')
+  bool get success;
+
   @BuiltValueField(wireName: r'errors')
   BuiltList<MconnCodedMessage>? get errors;
 
   @BuiltValueField(wireName: r'messages')
   BuiltList<MconnCodedMessage>? get messages;
-
-  @BuiltValueField(wireName: r'success')
-  bool get success;
 
   @BuiltValueSerializer(custom: true)
   static Serializer<MconnEnvelope> get serializer => _$MconnEnvelopeSerializer();
@@ -43,6 +43,11 @@ class _$MconnEnvelopeSerializer implements PrimitiveSerializer<MconnEnvelope> {
     MconnEnvelope object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    yield r'success';
+    yield serializers.serialize(
+      object.success,
+      specifiedType: const FullType(bool),
+    );
     if (object.errors != null) {
       yield r'errors';
       yield serializers.serialize(
@@ -57,11 +62,6 @@ class _$MconnEnvelopeSerializer implements PrimitiveSerializer<MconnEnvelope> {
         specifiedType: const FullType(BuiltList, [FullType(MconnCodedMessage)]),
       );
     }
-    yield r'success';
-    yield serializers.serialize(
-      object.success,
-      specifiedType: const FullType(bool),
-    );
   }
 
   @override
@@ -125,6 +125,13 @@ class _$$MconnEnvelopeSerializer implements PrimitiveSerializer<$MconnEnvelope> 
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
+        case r'success':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(bool),
+          ) as bool;
+          result.success = valueDes;
+          break;
         case r'errors':
           final valueDes = serializers.deserialize(
             value,
@@ -138,13 +145,6 @@ class _$$MconnEnvelopeSerializer implements PrimitiveSerializer<$MconnEnvelope> 
             specifiedType: const FullType(BuiltList, [FullType(MconnCodedMessage)]),
           ) as BuiltList<MconnCodedMessage>;
           result.messages.replace(valueDes);
-          break;
-        case r'success':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
-          result.success = valueDes;
           break;
         default:
           unhandled.add(key);

@@ -8,8 +8,8 @@ import 'package:cloudflare_dart/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**maxTokens** | **int** | The maximum number of tokens to generate in the response. | [optional] [default to 256]
 **messages** | [**BuiltList&lt;WorkersAiPostRunCfMetaLlamaGuard38bRequestMessagesInner&gt;**](WorkersAiPostRunCfMetaLlamaGuard38bRequestMessagesInner.md) | An array of message objects representing the conversation history. | 
+**maxTokens** | **int** | The maximum number of tokens to generate in the response. | [optional] [default to 256]
 **responseFormat** | [**WorkersAiPostRunCfMetaLlamaGuard38bRequestResponseFormat**](WorkersAiPostRunCfMetaLlamaGuard38bRequestResponseFormat.md) |  | [optional] 
 **temperature** | **num** | Controls the randomness of the output; higher values produce more random results. | [optional] [default to 0.6]
 

@@ -15,14 +15,14 @@ abstract class FirewallRuleBuilder {
   FirewallConfigurationBuilder get configuration;
   set configuration(FirewallConfigurationBuilder? configuration);
 
-  DateTime? get createdOn;
-  set createdOn(DateTime? createdOn);
-
   String? get id;
   set id(String? id);
 
   FirewallSchemasMode? get mode;
   set mode(FirewallSchemasMode? mode);
+
+  DateTime? get createdOn;
+  set createdOn(DateTime? createdOn);
 
   DateTime? get modifiedOn;
   set modifiedOn(DateTime? modifiedOn);
@@ -37,11 +37,11 @@ class _$$FirewallRule extends $FirewallRule {
   @override
   final FirewallConfiguration configuration;
   @override
-  final DateTime? createdOn;
-  @override
   final String id;
   @override
   final FirewallSchemasMode mode;
+  @override
+  final DateTime? createdOn;
   @override
   final DateTime? modifiedOn;
   @override
@@ -53,9 +53,9 @@ class _$$FirewallRule extends $FirewallRule {
   _$$FirewallRule._(
       {required this.allowedModes,
       required this.configuration,
-      this.createdOn,
       required this.id,
       required this.mode,
+      this.createdOn,
       this.modifiedOn,
       this.notes})
       : super._();
@@ -72,9 +72,9 @@ class _$$FirewallRule extends $FirewallRule {
     return other is $FirewallRule &&
         allowedModes == other.allowedModes &&
         configuration == other.configuration &&
-        createdOn == other.createdOn &&
         id == other.id &&
         mode == other.mode &&
+        createdOn == other.createdOn &&
         modifiedOn == other.modifiedOn &&
         notes == other.notes;
   }
@@ -84,9 +84,9 @@ class _$$FirewallRule extends $FirewallRule {
     var _$hash = 0;
     _$hash = $jc(_$hash, allowedModes.hashCode);
     _$hash = $jc(_$hash, configuration.hashCode);
-    _$hash = $jc(_$hash, createdOn.hashCode);
     _$hash = $jc(_$hash, id.hashCode);
     _$hash = $jc(_$hash, mode.hashCode);
+    _$hash = $jc(_$hash, createdOn.hashCode);
     _$hash = $jc(_$hash, modifiedOn.hashCode);
     _$hash = $jc(_$hash, notes.hashCode);
     _$hash = $jf(_$hash);
@@ -98,9 +98,9 @@ class _$$FirewallRule extends $FirewallRule {
     return (newBuiltValueToStringHelper(r'$FirewallRule')
           ..add('allowedModes', allowedModes)
           ..add('configuration', configuration)
-          ..add('createdOn', createdOn)
           ..add('id', id)
           ..add('mode', mode)
+          ..add('createdOn', createdOn)
           ..add('modifiedOn', modifiedOn)
           ..add('notes', notes))
         .toString();
@@ -125,10 +125,6 @@ class $FirewallRuleBuilder
   set configuration(covariant FirewallConfigurationBuilder? configuration) =>
       _$this._configuration = configuration;
 
-  DateTime? _createdOn;
-  DateTime? get createdOn => _$this._createdOn;
-  set createdOn(covariant DateTime? createdOn) => _$this._createdOn = createdOn;
-
   String? _id;
   String? get id => _$this._id;
   set id(covariant String? id) => _$this._id = id;
@@ -136,6 +132,10 @@ class $FirewallRuleBuilder
   FirewallSchemasMode? _mode;
   FirewallSchemasMode? get mode => _$this._mode;
   set mode(covariant FirewallSchemasMode? mode) => _$this._mode = mode;
+
+  DateTime? _createdOn;
+  DateTime? get createdOn => _$this._createdOn;
+  set createdOn(covariant DateTime? createdOn) => _$this._createdOn = createdOn;
 
   DateTime? _modifiedOn;
   DateTime? get modifiedOn => _$this._modifiedOn;
@@ -155,9 +155,9 @@ class $FirewallRuleBuilder
     if ($v != null) {
       _allowedModes = $v.allowedModes.toBuilder();
       _configuration = $v.configuration.toBuilder();
-      _createdOn = $v.createdOn;
       _id = $v.id;
       _mode = $v.mode;
+      _createdOn = $v.createdOn;
       _modifiedOn = $v.modifiedOn;
       _notes = $v.notes;
       _$v = null;
@@ -185,11 +185,11 @@ class $FirewallRuleBuilder
           _$$FirewallRule._(
             allowedModes: allowedModes.build(),
             configuration: configuration.build(),
-            createdOn: createdOn,
             id: BuiltValueNullFieldError.checkNotNull(
                 id, r'$FirewallRule', 'id'),
             mode: BuiltValueNullFieldError.checkNotNull(
                 mode, r'$FirewallRule', 'mode'),
+            createdOn: createdOn,
             modifiedOn: modifiedOn,
             notes: notes,
           );

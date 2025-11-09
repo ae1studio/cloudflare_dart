@@ -8,16 +8,16 @@ part of 'r2_lifecycle_rule.dart';
 
 class _$R2LifecycleRule extends R2LifecycleRule {
   @override
-  final R2LifecycleRuleAbortMultipartUploadsTransition?
-      abortMultipartUploadsTransition;
-  @override
   final R2LifecycleRuleConditions conditions;
-  @override
-  final R2LifecycleRuleDeleteObjectsTransition? deleteObjectsTransition;
   @override
   final bool enabled;
   @override
   final String id;
+  @override
+  final R2LifecycleRuleAbortMultipartUploadsTransition?
+      abortMultipartUploadsTransition;
+  @override
+  final R2LifecycleRuleDeleteObjectsTransition? deleteObjectsTransition;
   @override
   final BuiltList<R2LifecycleStorageTransition>? storageClassTransitions;
 
@@ -25,11 +25,11 @@ class _$R2LifecycleRule extends R2LifecycleRule {
       (R2LifecycleRuleBuilder()..update(updates))._build();
 
   _$R2LifecycleRule._(
-      {this.abortMultipartUploadsTransition,
-      required this.conditions,
-      this.deleteObjectsTransition,
+      {required this.conditions,
       required this.enabled,
       required this.id,
+      this.abortMultipartUploadsTransition,
+      this.deleteObjectsTransition,
       this.storageClassTransitions})
       : super._();
   @override
@@ -43,23 +43,23 @@ class _$R2LifecycleRule extends R2LifecycleRule {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is R2LifecycleRule &&
-        abortMultipartUploadsTransition ==
-            other.abortMultipartUploadsTransition &&
         conditions == other.conditions &&
-        deleteObjectsTransition == other.deleteObjectsTransition &&
         enabled == other.enabled &&
         id == other.id &&
+        abortMultipartUploadsTransition ==
+            other.abortMultipartUploadsTransition &&
+        deleteObjectsTransition == other.deleteObjectsTransition &&
         storageClassTransitions == other.storageClassTransitions;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, abortMultipartUploadsTransition.hashCode);
     _$hash = $jc(_$hash, conditions.hashCode);
-    _$hash = $jc(_$hash, deleteObjectsTransition.hashCode);
     _$hash = $jc(_$hash, enabled.hashCode);
     _$hash = $jc(_$hash, id.hashCode);
+    _$hash = $jc(_$hash, abortMultipartUploadsTransition.hashCode);
+    _$hash = $jc(_$hash, deleteObjectsTransition.hashCode);
     _$hash = $jc(_$hash, storageClassTransitions.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
@@ -68,12 +68,12 @@ class _$R2LifecycleRule extends R2LifecycleRule {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'R2LifecycleRule')
-          ..add('abortMultipartUploadsTransition',
-              abortMultipartUploadsTransition)
           ..add('conditions', conditions)
-          ..add('deleteObjectsTransition', deleteObjectsTransition)
           ..add('enabled', enabled)
           ..add('id', id)
+          ..add('abortMultipartUploadsTransition',
+              abortMultipartUploadsTransition)
+          ..add('deleteObjectsTransition', deleteObjectsTransition)
           ..add('storageClassTransitions', storageClassTransitions))
         .toString();
   }
@@ -82,6 +82,20 @@ class _$R2LifecycleRule extends R2LifecycleRule {
 class R2LifecycleRuleBuilder
     implements Builder<R2LifecycleRule, R2LifecycleRuleBuilder> {
   _$R2LifecycleRule? _$v;
+
+  R2LifecycleRuleConditionsBuilder? _conditions;
+  R2LifecycleRuleConditionsBuilder get conditions =>
+      _$this._conditions ??= R2LifecycleRuleConditionsBuilder();
+  set conditions(R2LifecycleRuleConditionsBuilder? conditions) =>
+      _$this._conditions = conditions;
+
+  bool? _enabled;
+  bool? get enabled => _$this._enabled;
+  set enabled(bool? enabled) => _$this._enabled = enabled;
+
+  String? _id;
+  String? get id => _$this._id;
+  set id(String? id) => _$this._id = id;
 
   R2LifecycleRuleAbortMultipartUploadsTransitionBuilder?
       _abortMultipartUploadsTransition;
@@ -94,12 +108,6 @@ class R2LifecycleRuleBuilder
               abortMultipartUploadsTransition) =>
       _$this._abortMultipartUploadsTransition = abortMultipartUploadsTransition;
 
-  R2LifecycleRuleConditionsBuilder? _conditions;
-  R2LifecycleRuleConditionsBuilder get conditions =>
-      _$this._conditions ??= R2LifecycleRuleConditionsBuilder();
-  set conditions(R2LifecycleRuleConditionsBuilder? conditions) =>
-      _$this._conditions = conditions;
-
   R2LifecycleRuleDeleteObjectsTransitionBuilder? _deleteObjectsTransition;
   R2LifecycleRuleDeleteObjectsTransitionBuilder get deleteObjectsTransition =>
       _$this._deleteObjectsTransition ??=
@@ -108,14 +116,6 @@ class R2LifecycleRuleBuilder
           R2LifecycleRuleDeleteObjectsTransitionBuilder?
               deleteObjectsTransition) =>
       _$this._deleteObjectsTransition = deleteObjectsTransition;
-
-  bool? _enabled;
-  bool? get enabled => _$this._enabled;
-  set enabled(bool? enabled) => _$this._enabled = enabled;
-
-  String? _id;
-  String? get id => _$this._id;
-  set id(String? id) => _$this._id = id;
 
   ListBuilder<R2LifecycleStorageTransition>? _storageClassTransitions;
   ListBuilder<R2LifecycleStorageTransition> get storageClassTransitions =>
@@ -132,12 +132,12 @@ class R2LifecycleRuleBuilder
   R2LifecycleRuleBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _abortMultipartUploadsTransition =
-          $v.abortMultipartUploadsTransition?.toBuilder();
       _conditions = $v.conditions.toBuilder();
-      _deleteObjectsTransition = $v.deleteObjectsTransition?.toBuilder();
       _enabled = $v.enabled;
       _id = $v.id;
+      _abortMultipartUploadsTransition =
+          $v.abortMultipartUploadsTransition?.toBuilder();
+      _deleteObjectsTransition = $v.deleteObjectsTransition?.toBuilder();
       _storageClassTransitions = $v.storageClassTransitions?.toBuilder();
       _$v = null;
     }
@@ -162,26 +162,26 @@ class R2LifecycleRuleBuilder
     try {
       _$result = _$v ??
           _$R2LifecycleRule._(
-            abortMultipartUploadsTransition:
-                _abortMultipartUploadsTransition?.build(),
             conditions: conditions.build(),
-            deleteObjectsTransition: _deleteObjectsTransition?.build(),
             enabled: BuiltValueNullFieldError.checkNotNull(
                 enabled, r'R2LifecycleRule', 'enabled'),
             id: BuiltValueNullFieldError.checkNotNull(
                 id, r'R2LifecycleRule', 'id'),
+            abortMultipartUploadsTransition:
+                _abortMultipartUploadsTransition?.build(),
+            deleteObjectsTransition: _deleteObjectsTransition?.build(),
             storageClassTransitions: _storageClassTransitions?.build(),
           );
     } catch (_) {
       late String _$failedField;
       try {
-        _$failedField = 'abortMultipartUploadsTransition';
-        _abortMultipartUploadsTransition?.build();
         _$failedField = 'conditions';
         conditions.build();
+
+        _$failedField = 'abortMultipartUploadsTransition';
+        _abortMultipartUploadsTransition?.build();
         _$failedField = 'deleteObjectsTransition';
         _deleteObjectsTransition?.build();
-
         _$failedField = 'storageClassTransitions';
         _storageClassTransitions?.build();
       } catch (e) {

@@ -12,19 +12,19 @@ part 'telemetry_query_request_parameters_needle.g.dart';
 /// Define an expression to search using full-text search.
 ///
 /// Properties:
+/// * [value] 
 /// * [isRegex] 
 /// * [matchCase] 
-/// * [value] 
 @BuiltValue()
 abstract class TelemetryQueryRequestParametersNeedle implements Built<TelemetryQueryRequestParametersNeedle, TelemetryQueryRequestParametersNeedleBuilder> {
+  @BuiltValueField(wireName: r'value')
+  AigConfigListDataset200ResponseResultInnerFiltersInnerValueInner get value;
+
   @BuiltValueField(wireName: r'isRegex')
   bool? get isRegex;
 
   @BuiltValueField(wireName: r'matchCase')
   bool? get matchCase;
-
-  @BuiltValueField(wireName: r'value')
-  AigConfigListDataset200ResponseResultInnerFiltersInnerValueInner get value;
 
   TelemetryQueryRequestParametersNeedle._();
 
@@ -49,6 +49,11 @@ class _$TelemetryQueryRequestParametersNeedleSerializer implements PrimitiveSeri
     TelemetryQueryRequestParametersNeedle object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    yield r'value';
+    yield serializers.serialize(
+      object.value,
+      specifiedType: const FullType(AigConfigListDataset200ResponseResultInnerFiltersInnerValueInner),
+    );
     if (object.isRegex != null) {
       yield r'isRegex';
       yield serializers.serialize(
@@ -63,11 +68,6 @@ class _$TelemetryQueryRequestParametersNeedleSerializer implements PrimitiveSeri
         specifiedType: const FullType(bool),
       );
     }
-    yield r'value';
-    yield serializers.serialize(
-      object.value,
-      specifiedType: const FullType(AigConfigListDataset200ResponseResultInnerFiltersInnerValueInner),
-    );
   }
 
   @override
@@ -91,6 +91,13 @@ class _$TelemetryQueryRequestParametersNeedleSerializer implements PrimitiveSeri
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
+        case r'value':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(AigConfigListDataset200ResponseResultInnerFiltersInnerValueInner),
+          ) as AigConfigListDataset200ResponseResultInnerFiltersInnerValueInner;
+          result.value.replace(valueDes);
+          break;
         case r'isRegex':
           final valueDes = serializers.deserialize(
             value,
@@ -104,13 +111,6 @@ class _$TelemetryQueryRequestParametersNeedleSerializer implements PrimitiveSeri
             specifiedType: const FullType(bool),
           ) as bool;
           result.matchCase = valueDes;
-          break;
-        case r'value':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(AigConfigListDataset200ResponseResultInnerFiltersInnerValueInner),
-          ) as AigConfigListDataset200ResponseResultInnerFiltersInnerValueInner;
-          result.value.replace(valueDes);
           break;
         default:
           unhandled.add(key);

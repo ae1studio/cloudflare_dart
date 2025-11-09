@@ -15,23 +15,23 @@ part 'get_abuse_report200_response.g.dart';
 /// GetAbuseReport200Response
 ///
 /// Properties:
-/// * [errors] 
-/// * [messages] 
 /// * [result] 
 /// * [success] 
+/// * [errors] 
+/// * [messages] 
 @BuiltValue()
 abstract class GetAbuseReport200Response implements Built<GetAbuseReport200Response, GetAbuseReport200ResponseBuilder> {
-  @BuiltValueField(wireName: r'errors')
-  BuiltList<AbuseReportsErrorMessage>? get errors;
-
-  @BuiltValueField(wireName: r'messages')
-  BuiltList<AbuseReportsMessage>? get messages;
-
   @BuiltValueField(wireName: r'result')
   AbuseReportsAbuseReport get result;
 
   @BuiltValueField(wireName: r'success')
   bool get success;
+
+  @BuiltValueField(wireName: r'errors')
+  BuiltList<AbuseReportsErrorMessage>? get errors;
+
+  @BuiltValueField(wireName: r'messages')
+  BuiltList<AbuseReportsMessage>? get messages;
 
   GetAbuseReport200Response._();
 
@@ -56,6 +56,16 @@ class _$GetAbuseReport200ResponseSerializer implements PrimitiveSerializer<GetAb
     GetAbuseReport200Response object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    yield r'result';
+    yield serializers.serialize(
+      object.result,
+      specifiedType: const FullType(AbuseReportsAbuseReport),
+    );
+    yield r'success';
+    yield serializers.serialize(
+      object.success,
+      specifiedType: const FullType(bool),
+    );
     if (object.errors != null) {
       yield r'errors';
       yield serializers.serialize(
@@ -70,16 +80,6 @@ class _$GetAbuseReport200ResponseSerializer implements PrimitiveSerializer<GetAb
         specifiedType: const FullType(BuiltList, [FullType(AbuseReportsMessage)]),
       );
     }
-    yield r'result';
-    yield serializers.serialize(
-      object.result,
-      specifiedType: const FullType(AbuseReportsAbuseReport),
-    );
-    yield r'success';
-    yield serializers.serialize(
-      object.success,
-      specifiedType: const FullType(bool),
-    );
   }
 
   @override
@@ -103,20 +103,6 @@ class _$GetAbuseReport200ResponseSerializer implements PrimitiveSerializer<GetAb
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'errors':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(AbuseReportsErrorMessage)]),
-          ) as BuiltList<AbuseReportsErrorMessage>;
-          result.errors.replace(valueDes);
-          break;
-        case r'messages':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(AbuseReportsMessage)]),
-          ) as BuiltList<AbuseReportsMessage>;
-          result.messages.replace(valueDes);
-          break;
         case r'result':
           final valueDes = serializers.deserialize(
             value,
@@ -130,6 +116,20 @@ class _$GetAbuseReport200ResponseSerializer implements PrimitiveSerializer<GetAb
             specifiedType: const FullType(bool),
           ) as bool;
           result.success = valueDes;
+          break;
+        case r'errors':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BuiltList, [FullType(AbuseReportsErrorMessage)]),
+          ) as BuiltList<AbuseReportsErrorMessage>;
+          result.errors.replace(valueDes);
+          break;
+        case r'messages':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BuiltList, [FullType(AbuseReportsMessage)]),
+          ) as BuiltList<AbuseReportsMessage>;
+          result.messages.replace(valueDes);
           break;
         default:
           unhandled.add(key);

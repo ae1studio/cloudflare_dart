@@ -12,18 +12,18 @@ part 'dns_settings_dns_settings_zone_response_all_of_nameservers.g.dart';
 /// Settings determining the nameservers through which the zone should be available.
 ///
 /// Properties:
-/// * [nsSet] - Configured nameserver set to be used for this zone
 /// * [type] - Nameserver type
+/// * [nsSet] - Configured nameserver set to be used for this zone
 @BuiltValue()
 abstract class DnsSettingsDnsSettingsZoneResponseAllOfNameservers implements Built<DnsSettingsDnsSettingsZoneResponseAllOfNameservers, DnsSettingsDnsSettingsZoneResponseAllOfNameserversBuilder> {
-  /// Configured nameserver set to be used for this zone
-  @BuiltValueField(wireName: r'ns_set')
-  int? get nsSet;
-
   /// Nameserver type
   @BuiltValueField(wireName: r'type')
   DnsSettingsDnsSettingsZoneResponseAllOfNameserversTypeEnum get type;
   // enum typeEnum {  cloudflare.standard,  custom.account,  custom.tenant,  custom.zone,  };
+
+  /// Configured nameserver set to be used for this zone
+  @BuiltValueField(wireName: r'ns_set')
+  int? get nsSet;
 
   DnsSettingsDnsSettingsZoneResponseAllOfNameservers._();
 
@@ -48,6 +48,11 @@ class _$DnsSettingsDnsSettingsZoneResponseAllOfNameserversSerializer implements 
     DnsSettingsDnsSettingsZoneResponseAllOfNameservers object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    yield r'type';
+    yield serializers.serialize(
+      object.type,
+      specifiedType: const FullType(DnsSettingsDnsSettingsZoneResponseAllOfNameserversTypeEnum),
+    );
     if (object.nsSet != null) {
       yield r'ns_set';
       yield serializers.serialize(
@@ -55,11 +60,6 @@ class _$DnsSettingsDnsSettingsZoneResponseAllOfNameserversSerializer implements 
         specifiedType: const FullType(int),
       );
     }
-    yield r'type';
-    yield serializers.serialize(
-      object.type,
-      specifiedType: const FullType(DnsSettingsDnsSettingsZoneResponseAllOfNameserversTypeEnum),
-    );
   }
 
   @override
@@ -83,19 +83,19 @@ class _$DnsSettingsDnsSettingsZoneResponseAllOfNameserversSerializer implements 
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'ns_set':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
-          result.nsSet = valueDes;
-          break;
         case r'type':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(DnsSettingsDnsSettingsZoneResponseAllOfNameserversTypeEnum),
           ) as DnsSettingsDnsSettingsZoneResponseAllOfNameserversTypeEnum;
           result.type = valueDes;
+          break;
+        case r'ns_set':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(int),
+          ) as int;
+          result.nsSet = valueDes;
           break;
         default:
           unhandled.add(key);

@@ -11,16 +11,13 @@ part 'email_security_create_trusted_domain.g.dart';
 /// EmailSecurityCreateTrustedDomain
 ///
 /// Properties:
-/// * [comments] 
 /// * [isRecent] - Select to prevent recently registered domains from triggering a Suspicious or Malicious disposition.
 /// * [isRegex] 
 /// * [isSimilarity] - Select for partner or other approved domains that have similar spelling to your connected domains. Prevents listed domains from triggering a Spoof disposition.
 /// * [pattern] 
+/// * [comments] 
 @BuiltValue(instantiable: false)
 abstract class EmailSecurityCreateTrustedDomain  {
-  @BuiltValueField(wireName: r'comments')
-  String? get comments;
-
   /// Select to prevent recently registered domains from triggering a Suspicious or Malicious disposition.
   @BuiltValueField(wireName: r'is_recent')
   bool get isRecent;
@@ -34,6 +31,9 @@ abstract class EmailSecurityCreateTrustedDomain  {
 
   @BuiltValueField(wireName: r'pattern')
   String get pattern;
+
+  @BuiltValueField(wireName: r'comments')
+  String? get comments;
 
   @BuiltValueSerializer(custom: true)
   static Serializer<EmailSecurityCreateTrustedDomain> get serializer => _$EmailSecurityCreateTrustedDomainSerializer();
@@ -51,13 +51,6 @@ class _$EmailSecurityCreateTrustedDomainSerializer implements PrimitiveSerialize
     EmailSecurityCreateTrustedDomain object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
-    if (object.comments != null) {
-      yield r'comments';
-      yield serializers.serialize(
-        object.comments,
-        specifiedType: const FullType.nullable(String),
-      );
-    }
     yield r'is_recent';
     yield serializers.serialize(
       object.isRecent,
@@ -78,6 +71,13 @@ class _$EmailSecurityCreateTrustedDomainSerializer implements PrimitiveSerialize
       object.pattern,
       specifiedType: const FullType(String),
     );
+    if (object.comments != null) {
+      yield r'comments';
+      yield serializers.serialize(
+        object.comments,
+        specifiedType: const FullType.nullable(String),
+      );
+    }
   }
 
   @override
@@ -141,14 +141,6 @@ class _$$EmailSecurityCreateTrustedDomainSerializer implements PrimitiveSerializ
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'comments':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
-          if (valueDes == null) continue;
-          result.comments = valueDes;
-          break;
         case r'is_recent':
           final valueDes = serializers.deserialize(
             value,
@@ -176,6 +168,14 @@ class _$$EmailSecurityCreateTrustedDomainSerializer implements PrimitiveSerializ
             specifiedType: const FullType(String),
           ) as String;
           result.pattern = valueDes;
+          break;
+        case r'comments':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType.nullable(String),
+          ) as String?;
+          if (valueDes == null) continue;
+          result.comments = valueDes;
           break;
         default:
           unhandled.add(key);

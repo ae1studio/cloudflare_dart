@@ -20,8 +20,8 @@ part 'per_hostname_tls_settings_list4_xx_response.g.dart';
 /// * [errors] 
 /// * [messages] 
 /// * [success] - Whether the API call was successful.
-/// * [resultInfo] 
 /// * [result] 
+/// * [resultInfo] 
 @BuiltValue()
 abstract class PerHostnameTlsSettingsList4XXResponse implements TlsCertificatesAndHostnamesApiResponseCommonFailure, TlsCertificatesAndHostnamesPerHostnameSettingsResponseCollection, Built<PerHostnameTlsSettingsList4XXResponse, PerHostnameTlsSettingsList4XXResponseBuilder> {
   PerHostnameTlsSettingsList4XXResponse._();

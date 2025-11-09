@@ -15,8 +15,8 @@ part 'radar_get_ranking_top_domains200_response_result_top0_inner.g.dart';
 /// Properties:
 /// * [categories] 
 /// * [domain] 
-/// * [pctRankChange] - Only available in TRENDING rankings.
 /// * [rank] 
+/// * [pctRankChange] - Only available in TRENDING rankings.
 @BuiltValue()
 abstract class RadarGetRankingTopDomains200ResponseResultTop0Inner implements Built<RadarGetRankingTopDomains200ResponseResultTop0Inner, RadarGetRankingTopDomains200ResponseResultTop0InnerBuilder> {
   @BuiltValueField(wireName: r'categories')
@@ -25,12 +25,12 @@ abstract class RadarGetRankingTopDomains200ResponseResultTop0Inner implements Bu
   @BuiltValueField(wireName: r'domain')
   String get domain;
 
+  @BuiltValueField(wireName: r'rank')
+  int get rank;
+
   /// Only available in TRENDING rankings.
   @BuiltValueField(wireName: r'pctRankChange')
   num? get pctRankChange;
-
-  @BuiltValueField(wireName: r'rank')
-  int get rank;
 
   RadarGetRankingTopDomains200ResponseResultTop0Inner._();
 
@@ -65,6 +65,11 @@ class _$RadarGetRankingTopDomains200ResponseResultTop0InnerSerializer implements
       object.domain,
       specifiedType: const FullType(String),
     );
+    yield r'rank';
+    yield serializers.serialize(
+      object.rank,
+      specifiedType: const FullType(int),
+    );
     if (object.pctRankChange != null) {
       yield r'pctRankChange';
       yield serializers.serialize(
@@ -72,11 +77,6 @@ class _$RadarGetRankingTopDomains200ResponseResultTop0InnerSerializer implements
         specifiedType: const FullType(num),
       );
     }
-    yield r'rank';
-    yield serializers.serialize(
-      object.rank,
-      specifiedType: const FullType(int),
-    );
   }
 
   @override
@@ -114,19 +114,19 @@ class _$RadarGetRankingTopDomains200ResponseResultTop0InnerSerializer implements
           ) as String;
           result.domain = valueDes;
           break;
-        case r'pctRankChange':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(num),
-          ) as num;
-          result.pctRankChange = valueDes;
-          break;
         case r'rank':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(int),
           ) as int;
           result.rank = valueDes;
+          break;
+        case r'pctRankChange':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(num),
+          ) as num;
+          result.pctRankChange = valueDes;
           break;
         default:
           unhandled.add(key);

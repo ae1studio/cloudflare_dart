@@ -7,6 +7,7 @@ import 'package:cloudflare_dart/src/model/waitingroom_zone_settings_response_all
 import 'package:cloudflare_dart/src/model/waitingroom_api_response_single.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
+import 'package:built_value/json_object.dart';
 
 part 'waitingroom_zone_settings_response.g.dart';
 

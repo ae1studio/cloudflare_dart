@@ -9,8 +9,8 @@ import 'package:cloudflare_dart/api.dart';
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **input** | [**GPTOSS120BResponsesInput**](GPTOSS120BResponsesInput.md) |  | 
-**reasoning** | [**GPTOSS120BResponsesReasoning**](GPTOSS120BResponsesReasoning.md) |  | [optional] 
 **requests** | [**BuiltList&lt;GPTOSS120BResponsesAsyncRequestsInner&gt;**](GPTOSS120BResponsesAsyncRequestsInner.md) |  | 
+**reasoning** | [**GPTOSS120BResponsesReasoning**](GPTOSS120BResponsesReasoning.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

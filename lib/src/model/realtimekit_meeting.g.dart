@@ -146,6 +146,8 @@ class _$RealtimekitMeeting extends RealtimekitMeeting {
   @override
   final String id;
   @override
+  final DateTime updatedAt;
+  @override
   final bool? liveStreamOnStart;
   @override
   final bool? persistChat;
@@ -161,8 +163,6 @@ class _$RealtimekitMeeting extends RealtimekitMeeting {
   final bool? summarizeOnEnd;
   @override
   final String? title;
-  @override
-  final DateTime updatedAt;
 
   factory _$RealtimekitMeeting(
           [void Function(RealtimekitMeetingBuilder)? updates]) =>
@@ -171,6 +171,7 @@ class _$RealtimekitMeeting extends RealtimekitMeeting {
   _$RealtimekitMeeting._(
       {required this.createdAt,
       required this.id,
+      required this.updatedAt,
       this.liveStreamOnStart,
       this.persistChat,
       this.preferredRegion,
@@ -178,8 +179,7 @@ class _$RealtimekitMeeting extends RealtimekitMeeting {
       this.sessionKeepAliveTimeInSecs,
       this.status,
       this.summarizeOnEnd,
-      this.title,
-      required this.updatedAt})
+      this.title})
       : super._();
   @override
   RealtimekitMeeting rebuild(
@@ -196,6 +196,7 @@ class _$RealtimekitMeeting extends RealtimekitMeeting {
     return other is RealtimekitMeeting &&
         createdAt == other.createdAt &&
         id == other.id &&
+        updatedAt == other.updatedAt &&
         liveStreamOnStart == other.liveStreamOnStart &&
         persistChat == other.persistChat &&
         preferredRegion == other.preferredRegion &&
@@ -203,8 +204,7 @@ class _$RealtimekitMeeting extends RealtimekitMeeting {
         sessionKeepAliveTimeInSecs == other.sessionKeepAliveTimeInSecs &&
         status == other.status &&
         summarizeOnEnd == other.summarizeOnEnd &&
-        title == other.title &&
-        updatedAt == other.updatedAt;
+        title == other.title;
   }
 
   @override
@@ -212,6 +212,7 @@ class _$RealtimekitMeeting extends RealtimekitMeeting {
     var _$hash = 0;
     _$hash = $jc(_$hash, createdAt.hashCode);
     _$hash = $jc(_$hash, id.hashCode);
+    _$hash = $jc(_$hash, updatedAt.hashCode);
     _$hash = $jc(_$hash, liveStreamOnStart.hashCode);
     _$hash = $jc(_$hash, persistChat.hashCode);
     _$hash = $jc(_$hash, preferredRegion.hashCode);
@@ -220,7 +221,6 @@ class _$RealtimekitMeeting extends RealtimekitMeeting {
     _$hash = $jc(_$hash, status.hashCode);
     _$hash = $jc(_$hash, summarizeOnEnd.hashCode);
     _$hash = $jc(_$hash, title.hashCode);
-    _$hash = $jc(_$hash, updatedAt.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -230,6 +230,7 @@ class _$RealtimekitMeeting extends RealtimekitMeeting {
     return (newBuiltValueToStringHelper(r'RealtimekitMeeting')
           ..add('createdAt', createdAt)
           ..add('id', id)
+          ..add('updatedAt', updatedAt)
           ..add('liveStreamOnStart', liveStreamOnStart)
           ..add('persistChat', persistChat)
           ..add('preferredRegion', preferredRegion)
@@ -237,8 +238,7 @@ class _$RealtimekitMeeting extends RealtimekitMeeting {
           ..add('sessionKeepAliveTimeInSecs', sessionKeepAliveTimeInSecs)
           ..add('status', status)
           ..add('summarizeOnEnd', summarizeOnEnd)
-          ..add('title', title)
-          ..add('updatedAt', updatedAt))
+          ..add('title', title))
         .toString();
   }
 }
@@ -254,6 +254,10 @@ class RealtimekitMeetingBuilder
   String? _id;
   String? get id => _$this._id;
   set id(String? id) => _$this._id = id;
+
+  DateTime? _updatedAt;
+  DateTime? get updatedAt => _$this._updatedAt;
+  set updatedAt(DateTime? updatedAt) => _$this._updatedAt = updatedAt;
 
   bool? _liveStreamOnStart;
   bool? get liveStreamOnStart => _$this._liveStreamOnStart;
@@ -293,10 +297,6 @@ class RealtimekitMeetingBuilder
   String? get title => _$this._title;
   set title(String? title) => _$this._title = title;
 
-  DateTime? _updatedAt;
-  DateTime? get updatedAt => _$this._updatedAt;
-  set updatedAt(DateTime? updatedAt) => _$this._updatedAt = updatedAt;
-
   RealtimekitMeetingBuilder() {
     RealtimekitMeeting._defaults(this);
   }
@@ -306,6 +306,7 @@ class RealtimekitMeetingBuilder
     if ($v != null) {
       _createdAt = $v.createdAt;
       _id = $v.id;
+      _updatedAt = $v.updatedAt;
       _liveStreamOnStart = $v.liveStreamOnStart;
       _persistChat = $v.persistChat;
       _preferredRegion = $v.preferredRegion;
@@ -314,7 +315,6 @@ class RealtimekitMeetingBuilder
       _status = $v.status;
       _summarizeOnEnd = $v.summarizeOnEnd;
       _title = $v.title;
-      _updatedAt = $v.updatedAt;
       _$v = null;
     }
     return this;
@@ -340,6 +340,8 @@ class RealtimekitMeetingBuilder
               createdAt, r'RealtimekitMeeting', 'createdAt'),
           id: BuiltValueNullFieldError.checkNotNull(
               id, r'RealtimekitMeeting', 'id'),
+          updatedAt: BuiltValueNullFieldError.checkNotNull(
+              updatedAt, r'RealtimekitMeeting', 'updatedAt'),
           liveStreamOnStart: liveStreamOnStart,
           persistChat: persistChat,
           preferredRegion: preferredRegion,
@@ -348,8 +350,6 @@ class RealtimekitMeetingBuilder
           status: status,
           summarizeOnEnd: summarizeOnEnd,
           title: title,
-          updatedAt: BuiltValueNullFieldError.checkNotNull(
-              updatedAt, r'RealtimekitMeeting', 'updatedAt'),
         );
     replace(_$result);
     return _$result;

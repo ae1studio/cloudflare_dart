@@ -11,13 +11,16 @@ part 'dlp_new_dataset.g.dart';
 /// DlpNewDataset
 ///
 /// Properties:
+/// * [name] 
 /// * [caseSensitive] - Only applies to custom word lists. Determines if the words should be matched in a case-sensitive manner Cannot be set to false if `secret` is true or undefined
 /// * [description] - The description of the dataset.
 /// * [encodingVersion] - Dataset encoding version  Non-secret custom word lists with no header are always version 1. Secret EDM lists with no header are version 1. Multicolumn CSV with headers are version 2. Omitting this field provides the default value 0, which is interpreted the same as 1.
-/// * [name] 
 /// * [secret] - Generate a secret dataset.  If true, the response will include a secret to use with the EDM encoder. If false, the response has no secret and the dataset is uploaded in plaintext.
 @BuiltValue()
 abstract class DlpNewDataset implements Built<DlpNewDataset, DlpNewDatasetBuilder> {
+  @BuiltValueField(wireName: r'name')
+  String get name;
+
   /// Only applies to custom word lists. Determines if the words should be matched in a case-sensitive manner Cannot be set to false if `secret` is true or undefined
   @BuiltValueField(wireName: r'case_sensitive')
   bool? get caseSensitive;
@@ -29,9 +32,6 @@ abstract class DlpNewDataset implements Built<DlpNewDataset, DlpNewDatasetBuilde
   /// Dataset encoding version  Non-secret custom word lists with no header are always version 1. Secret EDM lists with no header are version 1. Multicolumn CSV with headers are version 2. Omitting this field provides the default value 0, which is interpreted the same as 1.
   @BuiltValueField(wireName: r'encoding_version')
   int? get encodingVersion;
-
-  @BuiltValueField(wireName: r'name')
-  String get name;
 
   /// Generate a secret dataset.  If true, the response will include a secret to use with the EDM encoder. If false, the response has no secret and the dataset is uploaded in plaintext.
   @BuiltValueField(wireName: r'secret')
@@ -60,6 +60,11 @@ class _$DlpNewDatasetSerializer implements PrimitiveSerializer<DlpNewDataset> {
     DlpNewDataset object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    yield r'name';
+    yield serializers.serialize(
+      object.name,
+      specifiedType: const FullType(String),
+    );
     if (object.caseSensitive != null) {
       yield r'case_sensitive';
       yield serializers.serialize(
@@ -81,11 +86,6 @@ class _$DlpNewDatasetSerializer implements PrimitiveSerializer<DlpNewDataset> {
         specifiedType: const FullType(int),
       );
     }
-    yield r'name';
-    yield serializers.serialize(
-      object.name,
-      specifiedType: const FullType(String),
-    );
     if (object.secret != null) {
       yield r'secret';
       yield serializers.serialize(
@@ -116,6 +116,13 @@ class _$DlpNewDatasetSerializer implements PrimitiveSerializer<DlpNewDataset> {
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
+        case r'name':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.name = valueDes;
+          break;
         case r'case_sensitive':
           final valueDes = serializers.deserialize(
             value,
@@ -137,13 +144,6 @@ class _$DlpNewDatasetSerializer implements PrimitiveSerializer<DlpNewDataset> {
             specifiedType: const FullType(int),
           ) as int;
           result.encodingVersion = valueDes;
-          break;
-        case r'name':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.name = valueDes;
           break;
         case r'secret':
           final valueDes = serializers.deserialize(

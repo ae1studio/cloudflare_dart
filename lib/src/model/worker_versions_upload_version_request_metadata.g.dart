@@ -9,6 +9,8 @@ part of 'worker_versions_upload_version_request_metadata.dart';
 class _$WorkerVersionsUploadVersionRequestMetadata
     extends WorkerVersionsUploadVersionRequestMetadata {
   @override
+  final String mainModule;
+  @override
   final WorkerVersionsUploadVersionRequestMetadataAnnotations? annotations;
   @override
   final BuiltList<WorkersBindingItem>? bindings;
@@ -19,8 +21,6 @@ class _$WorkerVersionsUploadVersionRequestMetadata
   @override
   final BuiltList<String>? keepBindings;
   @override
-  final String mainModule;
-  @override
   final WorkersUsageModel? usageModel;
 
   factory _$WorkerVersionsUploadVersionRequestMetadata(
@@ -30,12 +30,12 @@ class _$WorkerVersionsUploadVersionRequestMetadata
           ._build();
 
   _$WorkerVersionsUploadVersionRequestMetadata._(
-      {this.annotations,
+      {required this.mainModule,
+      this.annotations,
       this.bindings,
       this.compatibilityDate,
       this.compatibilityFlags,
       this.keepBindings,
-      required this.mainModule,
       this.usageModel})
       : super._();
   @override
@@ -52,24 +52,24 @@ class _$WorkerVersionsUploadVersionRequestMetadata
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is WorkerVersionsUploadVersionRequestMetadata &&
+        mainModule == other.mainModule &&
         annotations == other.annotations &&
         bindings == other.bindings &&
         compatibilityDate == other.compatibilityDate &&
         compatibilityFlags == other.compatibilityFlags &&
         keepBindings == other.keepBindings &&
-        mainModule == other.mainModule &&
         usageModel == other.usageModel;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
+    _$hash = $jc(_$hash, mainModule.hashCode);
     _$hash = $jc(_$hash, annotations.hashCode);
     _$hash = $jc(_$hash, bindings.hashCode);
     _$hash = $jc(_$hash, compatibilityDate.hashCode);
     _$hash = $jc(_$hash, compatibilityFlags.hashCode);
     _$hash = $jc(_$hash, keepBindings.hashCode);
-    _$hash = $jc(_$hash, mainModule.hashCode);
     _$hash = $jc(_$hash, usageModel.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
@@ -79,12 +79,12 @@ class _$WorkerVersionsUploadVersionRequestMetadata
   String toString() {
     return (newBuiltValueToStringHelper(
             r'WorkerVersionsUploadVersionRequestMetadata')
+          ..add('mainModule', mainModule)
           ..add('annotations', annotations)
           ..add('bindings', bindings)
           ..add('compatibilityDate', compatibilityDate)
           ..add('compatibilityFlags', compatibilityFlags)
           ..add('keepBindings', keepBindings)
-          ..add('mainModule', mainModule)
           ..add('usageModel', usageModel))
         .toString();
   }
@@ -95,6 +95,10 @@ class WorkerVersionsUploadVersionRequestMetadataBuilder
         Builder<WorkerVersionsUploadVersionRequestMetadata,
             WorkerVersionsUploadVersionRequestMetadataBuilder> {
   _$WorkerVersionsUploadVersionRequestMetadata? _$v;
+
+  String? _mainModule;
+  String? get mainModule => _$this._mainModule;
+  set mainModule(String? mainModule) => _$this._mainModule = mainModule;
 
   WorkerVersionsUploadVersionRequestMetadataAnnotationsBuilder? _annotations;
   WorkerVersionsUploadVersionRequestMetadataAnnotationsBuilder
@@ -128,10 +132,6 @@ class WorkerVersionsUploadVersionRequestMetadataBuilder
   set keepBindings(ListBuilder<String>? keepBindings) =>
       _$this._keepBindings = keepBindings;
 
-  String? _mainModule;
-  String? get mainModule => _$this._mainModule;
-  set mainModule(String? mainModule) => _$this._mainModule = mainModule;
-
   WorkersUsageModel? _usageModel;
   WorkersUsageModel? get usageModel => _$this._usageModel;
   set usageModel(WorkersUsageModel? usageModel) =>
@@ -144,12 +144,12 @@ class WorkerVersionsUploadVersionRequestMetadataBuilder
   WorkerVersionsUploadVersionRequestMetadataBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
+      _mainModule = $v.mainModule;
       _annotations = $v.annotations?.toBuilder();
       _bindings = $v.bindings?.toBuilder();
       _compatibilityDate = $v.compatibilityDate;
       _compatibilityFlags = $v.compatibilityFlags?.toBuilder();
       _keepBindings = $v.keepBindings?.toBuilder();
-      _mainModule = $v.mainModule;
       _usageModel = $v.usageModel;
       _$v = null;
     }
@@ -176,13 +176,13 @@ class WorkerVersionsUploadVersionRequestMetadataBuilder
     try {
       _$result = _$v ??
           _$WorkerVersionsUploadVersionRequestMetadata._(
+            mainModule: BuiltValueNullFieldError.checkNotNull(mainModule,
+                r'WorkerVersionsUploadVersionRequestMetadata', 'mainModule'),
             annotations: _annotations?.build(),
             bindings: _bindings?.build(),
             compatibilityDate: compatibilityDate,
             compatibilityFlags: _compatibilityFlags?.build(),
             keepBindings: _keepBindings?.build(),
-            mainModule: BuiltValueNullFieldError.checkNotNull(mainModule,
-                r'WorkerVersionsUploadVersionRequestMetadata', 'mainModule'),
             usageModel: usageModel,
           );
     } catch (_) {

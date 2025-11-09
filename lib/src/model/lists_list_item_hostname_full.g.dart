@@ -8,13 +8,13 @@ part of 'lists_list_item_hostname_full.dart';
 
 class _$ListsListItemHostnameFull extends ListsListItemHostnameFull {
   @override
-  final String? comment;
-  @override
   final String createdOn;
   @override
   final String id;
   @override
   final String modifiedOn;
+  @override
+  final String? comment;
   @override
   final ListsItemHostname hostname;
 
@@ -23,10 +23,10 @@ class _$ListsListItemHostnameFull extends ListsListItemHostnameFull {
       (ListsListItemHostnameFullBuilder()..update(updates))._build();
 
   _$ListsListItemHostnameFull._(
-      {this.comment,
-      required this.createdOn,
+      {required this.createdOn,
       required this.id,
       required this.modifiedOn,
+      this.comment,
       required this.hostname})
       : super._();
   @override
@@ -42,20 +42,20 @@ class _$ListsListItemHostnameFull extends ListsListItemHostnameFull {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is ListsListItemHostnameFull &&
-        comment == other.comment &&
         createdOn == other.createdOn &&
         id == other.id &&
         modifiedOn == other.modifiedOn &&
+        comment == other.comment &&
         hostname == other.hostname;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, comment.hashCode);
     _$hash = $jc(_$hash, createdOn.hashCode);
     _$hash = $jc(_$hash, id.hashCode);
     _$hash = $jc(_$hash, modifiedOn.hashCode);
+    _$hash = $jc(_$hash, comment.hashCode);
     _$hash = $jc(_$hash, hostname.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
@@ -64,10 +64,10 @@ class _$ListsListItemHostnameFull extends ListsListItemHostnameFull {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'ListsListItemHostnameFull')
-          ..add('comment', comment)
           ..add('createdOn', createdOn)
           ..add('id', id)
           ..add('modifiedOn', modifiedOn)
+          ..add('comment', comment)
           ..add('hostname', hostname))
         .toString();
   }
@@ -79,10 +79,6 @@ class ListsListItemHostnameFullBuilder
         ListsItemBaseBuilder,
         ListsListItemHostnameObjectBuilder {
   _$ListsListItemHostnameFull? _$v;
-
-  String? _comment;
-  String? get comment => _$this._comment;
-  set comment(covariant String? comment) => _$this._comment = comment;
 
   String? _createdOn;
   String? get createdOn => _$this._createdOn;
@@ -97,6 +93,10 @@ class ListsListItemHostnameFullBuilder
   set modifiedOn(covariant String? modifiedOn) =>
       _$this._modifiedOn = modifiedOn;
 
+  String? _comment;
+  String? get comment => _$this._comment;
+  set comment(covariant String? comment) => _$this._comment = comment;
+
   ListsItemHostnameBuilder? _hostname;
   ListsItemHostnameBuilder get hostname =>
       _$this._hostname ??= ListsItemHostnameBuilder();
@@ -110,10 +110,10 @@ class ListsListItemHostnameFullBuilder
   ListsListItemHostnameFullBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _comment = $v.comment;
       _createdOn = $v.createdOn;
       _id = $v.id;
       _modifiedOn = $v.modifiedOn;
+      _comment = $v.comment;
       _hostname = $v.hostname.toBuilder();
       _$v = null;
     }
@@ -139,13 +139,13 @@ class ListsListItemHostnameFullBuilder
     try {
       _$result = _$v ??
           _$ListsListItemHostnameFull._(
-            comment: comment,
             createdOn: BuiltValueNullFieldError.checkNotNull(
                 createdOn, r'ListsListItemHostnameFull', 'createdOn'),
             id: BuiltValueNullFieldError.checkNotNull(
                 id, r'ListsListItemHostnameFull', 'id'),
             modifiedOn: BuiltValueNullFieldError.checkNotNull(
                 modifiedOn, r'ListsListItemHostnameFull', 'modifiedOn'),
+            comment: comment,
             hostname: hostname.build(),
           );
     } catch (_) {

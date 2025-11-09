@@ -9,13 +9,13 @@ part of 'digital_experience_monitoring_traceroute_test_result_network_path_respo
 class _$DigitalExperienceMonitoringTracerouteTestResultNetworkPathResponse
     extends DigitalExperienceMonitoringTracerouteTestResultNetworkPathResponse {
   @override
-  final String? deviceName;
-  @override
   final BuiltList<
           DigitalExperienceMonitoringTracerouteTestResultNetworkPathResponseHopsInner>
       hops;
   @override
   final String resultId;
+  @override
+  final String? deviceName;
   @override
   final String? testId;
   @override
@@ -30,9 +30,9 @@ class _$DigitalExperienceMonitoringTracerouteTestResultNetworkPathResponse
           ._build();
 
   _$DigitalExperienceMonitoringTracerouteTestResultNetworkPathResponse._(
-      {this.deviceName,
-      required this.hops,
+      {required this.hops,
       required this.resultId,
+      this.deviceName,
       this.testId,
       this.testName})
       : super._();
@@ -54,9 +54,9 @@ class _$DigitalExperienceMonitoringTracerouteTestResultNetworkPathResponse
     if (identical(other, this)) return true;
     return other
             is DigitalExperienceMonitoringTracerouteTestResultNetworkPathResponse &&
-        deviceName == other.deviceName &&
         hops == other.hops &&
         resultId == other.resultId &&
+        deviceName == other.deviceName &&
         testId == other.testId &&
         testName == other.testName;
   }
@@ -64,9 +64,9 @@ class _$DigitalExperienceMonitoringTracerouteTestResultNetworkPathResponse
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, deviceName.hashCode);
     _$hash = $jc(_$hash, hops.hashCode);
     _$hash = $jc(_$hash, resultId.hashCode);
+    _$hash = $jc(_$hash, deviceName.hashCode);
     _$hash = $jc(_$hash, testId.hashCode);
     _$hash = $jc(_$hash, testName.hashCode);
     _$hash = $jf(_$hash);
@@ -77,9 +77,9 @@ class _$DigitalExperienceMonitoringTracerouteTestResultNetworkPathResponse
   String toString() {
     return (newBuiltValueToStringHelper(
             r'DigitalExperienceMonitoringTracerouteTestResultNetworkPathResponse')
-          ..add('deviceName', deviceName)
           ..add('hops', hops)
           ..add('resultId', resultId)
+          ..add('deviceName', deviceName)
           ..add('testId', testId)
           ..add('testName', testName))
         .toString();
@@ -92,10 +92,6 @@ class DigitalExperienceMonitoringTracerouteTestResultNetworkPathResponseBuilder
             DigitalExperienceMonitoringTracerouteTestResultNetworkPathResponse,
             DigitalExperienceMonitoringTracerouteTestResultNetworkPathResponseBuilder> {
   _$DigitalExperienceMonitoringTracerouteTestResultNetworkPathResponse? _$v;
-
-  String? _deviceName;
-  String? get deviceName => _$this._deviceName;
-  set deviceName(String? deviceName) => _$this._deviceName = deviceName;
 
   ListBuilder<
           DigitalExperienceMonitoringTracerouteTestResultNetworkPathResponseHopsInner>?
@@ -114,6 +110,10 @@ class DigitalExperienceMonitoringTracerouteTestResultNetworkPathResponseBuilder
   String? get resultId => _$this._resultId;
   set resultId(String? resultId) => _$this._resultId = resultId;
 
+  String? _deviceName;
+  String? get deviceName => _$this._deviceName;
+  set deviceName(String? deviceName) => _$this._deviceName = deviceName;
+
   String? _testId;
   String? get testId => _$this._testId;
   set testId(String? testId) => _$this._testId = testId;
@@ -131,9 +131,9 @@ class DigitalExperienceMonitoringTracerouteTestResultNetworkPathResponseBuilder
       get _$this {
     final $v = _$v;
     if ($v != null) {
-      _deviceName = $v.deviceName;
       _hops = $v.hops.toBuilder();
       _resultId = $v.resultId;
+      _deviceName = $v.deviceName;
       _testId = $v.testId;
       _testName = $v.testName;
       _$v = null;
@@ -169,12 +169,12 @@ class DigitalExperienceMonitoringTracerouteTestResultNetworkPathResponseBuilder
       _$result = _$v ??
           _$DigitalExperienceMonitoringTracerouteTestResultNetworkPathResponse
               ._(
-            deviceName: deviceName,
             hops: hops.build(),
             resultId: BuiltValueNullFieldError.checkNotNull(
                 resultId,
                 r'DigitalExperienceMonitoringTracerouteTestResultNetworkPathResponse',
                 'resultId'),
+            deviceName: deviceName,
             testId: testId,
             testName: testName,
           );

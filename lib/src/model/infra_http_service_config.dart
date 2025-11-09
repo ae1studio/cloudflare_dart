@@ -14,11 +14,11 @@ part 'infra_http_service_config.g.dart';
 /// InfraHttpServiceConfig
 ///
 /// Properties:
-/// * [createdAt] 
 /// * [host] 
 /// * [name] 
-/// * [serviceId] 
 /// * [type] 
+/// * [createdAt] 
+/// * [serviceId] 
 /// * [updatedAt] 
 /// * [httpPort] 
 /// * [httpsPort] 
@@ -77,6 +77,11 @@ class _$InfraHttpServiceConfigSerializer implements PrimitiveSerializer<InfraHtt
       object.name,
       specifiedType: const FullType(String),
     );
+    yield r'type';
+    yield serializers.serialize(
+      object.type,
+      specifiedType: const FullType(InfraServiceType),
+    );
     if (object.serviceId != null) {
       yield r'service_id';
       yield serializers.serialize(
@@ -84,11 +89,6 @@ class _$InfraHttpServiceConfigSerializer implements PrimitiveSerializer<InfraHtt
         specifiedType: const FullType(String),
       );
     }
-    yield r'type';
-    yield serializers.serialize(
-      object.type,
-      specifiedType: const FullType(InfraServiceType),
-    );
     if (object.httpsPort != null) {
       yield r'https_port';
       yield serializers.serialize(
@@ -155,19 +155,19 @@ class _$InfraHttpServiceConfigSerializer implements PrimitiveSerializer<InfraHtt
           ) as String;
           result.name = valueDes;
           break;
-        case r'service_id':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.serviceId = valueDes;
-          break;
         case r'type':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(InfraServiceType),
           ) as InfraServiceType;
           result.type = valueDes;
+          break;
+        case r'service_id':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.serviceId = valueDes;
           break;
         case r'https_port':
           final valueDes = serializers.deserialize(

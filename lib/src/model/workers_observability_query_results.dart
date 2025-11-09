@@ -18,15 +18,21 @@ part 'workers_observability_query_results.g.dart';
 /// WorkersObservabilityQueryResults
 ///
 /// Properties:
+/// * [run] 
+/// * [statistics] 
 /// * [calculations] 
 /// * [compare] 
 /// * [events] 
 /// * [invocations] 
 /// * [patterns] 
-/// * [run] 
-/// * [statistics] 
 @BuiltValue()
 abstract class WorkersObservabilityQueryResults implements Built<WorkersObservabilityQueryResults, WorkersObservabilityQueryResultsBuilder> {
+  @BuiltValueField(wireName: r'run')
+  WorkersObservabilityQueryRun get run;
+
+  @BuiltValueField(wireName: r'statistics')
+  WorkersObservabilityPerformanceInformation get statistics;
+
   @BuiltValueField(wireName: r'calculations')
   BuiltList<WorkersObservabilityQueryResultsCalculationsInner>? get calculations;
 
@@ -41,12 +47,6 @@ abstract class WorkersObservabilityQueryResults implements Built<WorkersObservab
 
   @BuiltValueField(wireName: r'patterns')
   BuiltList<WorkersObservabilityQueryResultsPatternsInner>? get patterns;
-
-  @BuiltValueField(wireName: r'run')
-  WorkersObservabilityQueryRun get run;
-
-  @BuiltValueField(wireName: r'statistics')
-  WorkersObservabilityPerformanceInformation get statistics;
 
   WorkersObservabilityQueryResults._();
 
@@ -71,6 +71,16 @@ class _$WorkersObservabilityQueryResultsSerializer implements PrimitiveSerialize
     WorkersObservabilityQueryResults object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    yield r'run';
+    yield serializers.serialize(
+      object.run,
+      specifiedType: const FullType(WorkersObservabilityQueryRun),
+    );
+    yield r'statistics';
+    yield serializers.serialize(
+      object.statistics,
+      specifiedType: const FullType(WorkersObservabilityPerformanceInformation),
+    );
     if (object.calculations != null) {
       yield r'calculations';
       yield serializers.serialize(
@@ -106,16 +116,6 @@ class _$WorkersObservabilityQueryResultsSerializer implements PrimitiveSerialize
         specifiedType: const FullType(BuiltList, [FullType(WorkersObservabilityQueryResultsPatternsInner)]),
       );
     }
-    yield r'run';
-    yield serializers.serialize(
-      object.run,
-      specifiedType: const FullType(WorkersObservabilityQueryRun),
-    );
-    yield r'statistics';
-    yield serializers.serialize(
-      object.statistics,
-      specifiedType: const FullType(WorkersObservabilityPerformanceInformation),
-    );
   }
 
   @override
@@ -139,6 +139,20 @@ class _$WorkersObservabilityQueryResultsSerializer implements PrimitiveSerialize
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
+        case r'run':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(WorkersObservabilityQueryRun),
+          ) as WorkersObservabilityQueryRun;
+          result.run.replace(valueDes);
+          break;
+        case r'statistics':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(WorkersObservabilityPerformanceInformation),
+          ) as WorkersObservabilityPerformanceInformation;
+          result.statistics.replace(valueDes);
+          break;
         case r'calculations':
           final valueDes = serializers.deserialize(
             value,
@@ -173,20 +187,6 @@ class _$WorkersObservabilityQueryResultsSerializer implements PrimitiveSerialize
             specifiedType: const FullType(BuiltList, [FullType(WorkersObservabilityQueryResultsPatternsInner)]),
           ) as BuiltList<WorkersObservabilityQueryResultsPatternsInner>;
           result.patterns.replace(valueDes);
-          break;
-        case r'run':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(WorkersObservabilityQueryRun),
-          ) as WorkersObservabilityQueryRun;
-          result.run.replace(valueDes);
-          break;
-        case r'statistics':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(WorkersObservabilityPerformanceInformation),
-          ) as WorkersObservabilityPerformanceInformation;
-          result.statistics.replace(valueDes);
           break;
         default:
           unhandled.add(key);

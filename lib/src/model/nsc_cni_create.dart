@@ -14,23 +14,23 @@ part 'nsc_cni_create.g.dart';
 ///
 /// Properties:
 /// * [account] - Customer account tag
-/// * [bgp] 
 /// * [interconnect] 
 /// * [magic] 
+/// * [bgp] 
 @BuiltValue()
 abstract class NscCniCreate implements Built<NscCniCreate, NscCniCreateBuilder> {
   /// Customer account tag
   @BuiltValueField(wireName: r'account')
   String get account;
 
-  @BuiltValueField(wireName: r'bgp')
-  NscBgpControl? get bgp;
-
   @BuiltValueField(wireName: r'interconnect')
   String get interconnect;
 
   @BuiltValueField(wireName: r'magic')
   NscMagicSettings get magic;
+
+  @BuiltValueField(wireName: r'bgp')
+  NscBgpControl? get bgp;
 
   NscCniCreate._();
 
@@ -60,13 +60,6 @@ class _$NscCniCreateSerializer implements PrimitiveSerializer<NscCniCreate> {
       object.account,
       specifiedType: const FullType(String),
     );
-    if (object.bgp != null) {
-      yield r'bgp';
-      yield serializers.serialize(
-        object.bgp,
-        specifiedType: const FullType(NscBgpControl),
-      );
-    }
     yield r'interconnect';
     yield serializers.serialize(
       object.interconnect,
@@ -77,6 +70,13 @@ class _$NscCniCreateSerializer implements PrimitiveSerializer<NscCniCreate> {
       object.magic,
       specifiedType: const FullType(NscMagicSettings),
     );
+    if (object.bgp != null) {
+      yield r'bgp';
+      yield serializers.serialize(
+        object.bgp,
+        specifiedType: const FullType(NscBgpControl),
+      );
+    }
   }
 
   @override
@@ -107,13 +107,6 @@ class _$NscCniCreateSerializer implements PrimitiveSerializer<NscCniCreate> {
           ) as String;
           result.account = valueDes;
           break;
-        case r'bgp':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(NscBgpControl),
-          ) as NscBgpControl;
-          result.bgp.replace(valueDes);
-          break;
         case r'interconnect':
           final valueDes = serializers.deserialize(
             value,
@@ -127,6 +120,13 @@ class _$NscCniCreateSerializer implements PrimitiveSerializer<NscCniCreate> {
             specifiedType: const FullType(NscMagicSettings),
           ) as NscMagicSettings;
           result.magic.replace(valueDes);
+          break;
+        case r'bgp':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(NscBgpControl),
+          ) as NscBgpControl;
+          result.bgp.replace(valueDes);
           break;
         default:
           unhandled.add(key);

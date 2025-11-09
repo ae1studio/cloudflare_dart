@@ -8,17 +8,17 @@ part of 'realtimekit_poll.dart';
 
 class _$RealtimekitPoll extends RealtimekitPoll {
   @override
-  final bool? anonymous;
-  @override
-  final String? createdBy;
-  @override
-  final bool? hideVotes;
-  @override
   final String id;
   @override
   final BuiltList<RealtimekitPollOptionsInner> options;
   @override
   final String question;
+  @override
+  final bool? anonymous;
+  @override
+  final String? createdBy;
+  @override
+  final bool? hideVotes;
   @override
   final BuiltList<String>? voted;
 
@@ -26,12 +26,12 @@ class _$RealtimekitPoll extends RealtimekitPoll {
       (RealtimekitPollBuilder()..update(updates))._build();
 
   _$RealtimekitPoll._(
-      {this.anonymous,
-      this.createdBy,
-      this.hideVotes,
-      required this.id,
+      {required this.id,
       required this.options,
       required this.question,
+      this.anonymous,
+      this.createdBy,
+      this.hideVotes,
       this.voted})
       : super._();
   @override
@@ -45,24 +45,24 @@ class _$RealtimekitPoll extends RealtimekitPoll {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is RealtimekitPoll &&
-        anonymous == other.anonymous &&
-        createdBy == other.createdBy &&
-        hideVotes == other.hideVotes &&
         id == other.id &&
         options == other.options &&
         question == other.question &&
+        anonymous == other.anonymous &&
+        createdBy == other.createdBy &&
+        hideVotes == other.hideVotes &&
         voted == other.voted;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, anonymous.hashCode);
-    _$hash = $jc(_$hash, createdBy.hashCode);
-    _$hash = $jc(_$hash, hideVotes.hashCode);
     _$hash = $jc(_$hash, id.hashCode);
     _$hash = $jc(_$hash, options.hashCode);
     _$hash = $jc(_$hash, question.hashCode);
+    _$hash = $jc(_$hash, anonymous.hashCode);
+    _$hash = $jc(_$hash, createdBy.hashCode);
+    _$hash = $jc(_$hash, hideVotes.hashCode);
     _$hash = $jc(_$hash, voted.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
@@ -71,12 +71,12 @@ class _$RealtimekitPoll extends RealtimekitPoll {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'RealtimekitPoll')
-          ..add('anonymous', anonymous)
-          ..add('createdBy', createdBy)
-          ..add('hideVotes', hideVotes)
           ..add('id', id)
           ..add('options', options)
           ..add('question', question)
+          ..add('anonymous', anonymous)
+          ..add('createdBy', createdBy)
+          ..add('hideVotes', hideVotes)
           ..add('voted', voted))
         .toString();
   }
@@ -85,18 +85,6 @@ class _$RealtimekitPoll extends RealtimekitPoll {
 class RealtimekitPollBuilder
     implements Builder<RealtimekitPoll, RealtimekitPollBuilder> {
   _$RealtimekitPoll? _$v;
-
-  bool? _anonymous;
-  bool? get anonymous => _$this._anonymous;
-  set anonymous(bool? anonymous) => _$this._anonymous = anonymous;
-
-  String? _createdBy;
-  String? get createdBy => _$this._createdBy;
-  set createdBy(String? createdBy) => _$this._createdBy = createdBy;
-
-  bool? _hideVotes;
-  bool? get hideVotes => _$this._hideVotes;
-  set hideVotes(bool? hideVotes) => _$this._hideVotes = hideVotes;
 
   String? _id;
   String? get id => _$this._id;
@@ -112,6 +100,18 @@ class RealtimekitPollBuilder
   String? get question => _$this._question;
   set question(String? question) => _$this._question = question;
 
+  bool? _anonymous;
+  bool? get anonymous => _$this._anonymous;
+  set anonymous(bool? anonymous) => _$this._anonymous = anonymous;
+
+  String? _createdBy;
+  String? get createdBy => _$this._createdBy;
+  set createdBy(String? createdBy) => _$this._createdBy = createdBy;
+
+  bool? _hideVotes;
+  bool? get hideVotes => _$this._hideVotes;
+  set hideVotes(bool? hideVotes) => _$this._hideVotes = hideVotes;
+
   ListBuilder<String>? _voted;
   ListBuilder<String> get voted => _$this._voted ??= ListBuilder<String>();
   set voted(ListBuilder<String>? voted) => _$this._voted = voted;
@@ -123,12 +123,12 @@ class RealtimekitPollBuilder
   RealtimekitPollBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _anonymous = $v.anonymous;
-      _createdBy = $v.createdBy;
-      _hideVotes = $v.hideVotes;
       _id = $v.id;
       _options = $v.options.toBuilder();
       _question = $v.question;
+      _anonymous = $v.anonymous;
+      _createdBy = $v.createdBy;
+      _hideVotes = $v.hideVotes;
       _voted = $v.voted?.toBuilder();
       _$v = null;
     }
@@ -153,14 +153,14 @@ class RealtimekitPollBuilder
     try {
       _$result = _$v ??
           _$RealtimekitPoll._(
-            anonymous: anonymous,
-            createdBy: createdBy,
-            hideVotes: hideVotes,
             id: BuiltValueNullFieldError.checkNotNull(
                 id, r'RealtimekitPoll', 'id'),
             options: options.build(),
             question: BuiltValueNullFieldError.checkNotNull(
                 question, r'RealtimekitPoll', 'question'),
+            anonymous: anonymous,
+            createdBy: createdBy,
+            hideVotes: hideVotes,
             voted: _voted?.build(),
           );
     } catch (_) {

@@ -20,8 +20,8 @@ part 'custom_hostname_for_a_zone_list_custom_hostnames4_xx_response.g.dart';
 /// * [errors] 
 /// * [messages] 
 /// * [success] - Whether the API call was successful.
-/// * [resultInfo] 
 /// * [result] 
+/// * [resultInfo] 
 @BuiltValue()
 abstract class CustomHostnameForAZoneListCustomHostnames4XXResponse implements TlsCertificatesAndHostnamesApiResponseCommonFailure, TlsCertificatesAndHostnamesCustomHostnameResponseCollection, Built<CustomHostnameForAZoneListCustomHostnames4XXResponse, CustomHostnameForAZoneListCustomHostnames4XXResponseBuilder> {
   CustomHostnameForAZoneListCustomHostnames4XXResponse._();

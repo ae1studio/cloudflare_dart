@@ -9,26 +9,26 @@ part of 'realtimekit_generic_success_response.dart';
 abstract class RealtimekitGenericSuccessResponseBuilder {
   void replace(RealtimekitGenericSuccessResponse other);
   void update(void Function(RealtimekitGenericSuccessResponseBuilder) updates);
-  JsonObject? get data;
-  set data(JsonObject? data);
-
   bool? get success;
   set success(bool? success);
+
+  JsonObject? get data;
+  set data(JsonObject? data);
 }
 
 class _$$RealtimekitGenericSuccessResponse
     extends $RealtimekitGenericSuccessResponse {
   @override
-  final JsonObject? data;
-  @override
   final bool success;
+  @override
+  final JsonObject? data;
 
   factory _$$RealtimekitGenericSuccessResponse(
           [void Function($RealtimekitGenericSuccessResponseBuilder)?
               updates]) =>
       ($RealtimekitGenericSuccessResponseBuilder()..update(updates))._build();
 
-  _$$RealtimekitGenericSuccessResponse._({this.data, required this.success})
+  _$$RealtimekitGenericSuccessResponse._({required this.success, this.data})
       : super._();
   @override
   $RealtimekitGenericSuccessResponse rebuild(
@@ -43,15 +43,15 @@ class _$$RealtimekitGenericSuccessResponse
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is $RealtimekitGenericSuccessResponse &&
-        data == other.data &&
-        success == other.success;
+        success == other.success &&
+        data == other.data;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, data.hashCode);
     _$hash = $jc(_$hash, success.hashCode);
+    _$hash = $jc(_$hash, data.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -59,8 +59,8 @@ class _$$RealtimekitGenericSuccessResponse
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'$RealtimekitGenericSuccessResponse')
-          ..add('data', data)
-          ..add('success', success))
+          ..add('success', success)
+          ..add('data', data))
         .toString();
   }
 }
@@ -72,13 +72,13 @@ class $RealtimekitGenericSuccessResponseBuilder
         RealtimekitGenericSuccessResponseBuilder {
   _$$RealtimekitGenericSuccessResponse? _$v;
 
-  JsonObject? _data;
-  JsonObject? get data => _$this._data;
-  set data(covariant JsonObject? data) => _$this._data = data;
-
   bool? _success;
   bool? get success => _$this._success;
   set success(covariant bool? success) => _$this._success = success;
+
+  JsonObject? _data;
+  JsonObject? get data => _$this._data;
+  set data(covariant JsonObject? data) => _$this._data = data;
 
   $RealtimekitGenericSuccessResponseBuilder() {
     $RealtimekitGenericSuccessResponse._defaults(this);
@@ -87,8 +87,8 @@ class $RealtimekitGenericSuccessResponseBuilder
   $RealtimekitGenericSuccessResponseBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _data = $v.data;
       _success = $v.success;
+      _data = $v.data;
       _$v = null;
     }
     return this;
@@ -111,9 +111,9 @@ class $RealtimekitGenericSuccessResponseBuilder
   _$$RealtimekitGenericSuccessResponse _build() {
     final _$result = _$v ??
         _$$RealtimekitGenericSuccessResponse._(
-          data: data,
           success: BuiltValueNullFieldError.checkNotNull(
               success, r'$RealtimekitGenericSuccessResponse', 'success'),
+          data: data,
         );
     replace(_$result);
     return _$result;

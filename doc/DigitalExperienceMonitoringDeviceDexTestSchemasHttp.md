@@ -9,10 +9,10 @@ import 'package:cloudflare_dart/api.dart';
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **data** | [**DigitalExperienceMonitoringDeviceDexTestSchemasData**](DigitalExperienceMonitoringDeviceDexTestSchemasData.md) |  | 
-**description** | **String** | Additional details about the test. | [optional] 
 **enabled** | **bool** | Determines whether or not the test is active. | 
 **interval** | **String** | How often the test will run. | 
 **name** | **String** | The name of the DEX test. Must be unique. | 
+**description** | **String** | Additional details about the test. | [optional] 
 **targetPolicies** | [**BuiltList&lt;DigitalExperienceMonitoringDexTargetPolicy&gt;**](DigitalExperienceMonitoringDexTargetPolicy.md) | DEX rules targeted by this test | [optional] 
 **targeted** | **bool** |  | [optional] 
 **testId** | **String** | The unique identifier for the test. | [optional] 

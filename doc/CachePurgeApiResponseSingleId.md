@@ -10,8 +10,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **errors** | [**BuiltList&lt;AaaMessagesInner&gt;**](AaaMessagesInner.md) |  | 
 **messages** | [**BuiltList&lt;AaaMessagesInner&gt;**](AaaMessagesInner.md) |  | 
-**result** | [**CachePurgeApiResponseSingleIdResult**](CachePurgeApiResponseSingleIdResult.md) |  | [optional] 
 **success** | **bool** | Indicates the API call's success or failure. | 
+**result** | [**CachePurgeApiResponseSingleIdResult**](CachePurgeApiResponseSingleIdResult.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

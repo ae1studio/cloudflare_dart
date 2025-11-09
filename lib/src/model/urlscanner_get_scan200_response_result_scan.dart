@@ -23,36 +23,24 @@ part 'urlscanner_get_scan200_response_result_scan.g.dart';
 /// UrlscannerGetScan200ResponseResultScan
 ///
 /// Properties:
-/// * [asns] 
 /// * [certificates] 
-/// * [domains] 
 /// * [geo] 
-/// * [ips] 
-/// * [links] 
 /// * [meta] 
 /// * [page] 
 /// * [performance] 
 /// * [task] 
 /// * [verdicts] 
+/// * [asns] 
+/// * [domains] 
+/// * [ips] 
+/// * [links] 
 @BuiltValue()
 abstract class UrlscannerGetScan200ResponseResultScan implements Built<UrlscannerGetScan200ResponseResultScan, UrlscannerGetScan200ResponseResultScanBuilder> {
-  @BuiltValueField(wireName: r'asns')
-  UrlscannerGetScan200ResponseResultScanAsns? get asns;
-
   @BuiltValueField(wireName: r'certificates')
   BuiltList<UrlscannerGetScan200ResponseResultScanCertificatesInner> get certificates;
 
-  @BuiltValueField(wireName: r'domains')
-  UrlscannerGetScan200ResponseResultScanDomains? get domains;
-
   @BuiltValueField(wireName: r'geo')
   UrlscannerGetScan200ResponseResultScanGeo get geo;
-
-  @BuiltValueField(wireName: r'ips')
-  UrlscannerGetScan200ResponseResultScanIps? get ips;
-
-  @BuiltValueField(wireName: r'links')
-  UrlscannerGetScan200ResponseResultScanLinks? get links;
 
   @BuiltValueField(wireName: r'meta')
   UrlscannerGetScan200ResponseResultScanMeta get meta;
@@ -68,6 +56,18 @@ abstract class UrlscannerGetScan200ResponseResultScan implements Built<Urlscanne
 
   @BuiltValueField(wireName: r'verdicts')
   UrlscannerGetScan200ResponseResultScanVerdicts get verdicts;
+
+  @BuiltValueField(wireName: r'asns')
+  UrlscannerGetScan200ResponseResultScanAsns? get asns;
+
+  @BuiltValueField(wireName: r'domains')
+  UrlscannerGetScan200ResponseResultScanDomains? get domains;
+
+  @BuiltValueField(wireName: r'ips')
+  UrlscannerGetScan200ResponseResultScanIps? get ips;
+
+  @BuiltValueField(wireName: r'links')
+  UrlscannerGetScan200ResponseResultScanLinks? get links;
 
   UrlscannerGetScan200ResponseResultScan._();
 
@@ -92,44 +92,16 @@ class _$UrlscannerGetScan200ResponseResultScanSerializer implements PrimitiveSer
     UrlscannerGetScan200ResponseResultScan object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
-    if (object.asns != null) {
-      yield r'asns';
-      yield serializers.serialize(
-        object.asns,
-        specifiedType: const FullType(UrlscannerGetScan200ResponseResultScanAsns),
-      );
-    }
     yield r'certificates';
     yield serializers.serialize(
       object.certificates,
       specifiedType: const FullType(BuiltList, [FullType(UrlscannerGetScan200ResponseResultScanCertificatesInner)]),
     );
-    if (object.domains != null) {
-      yield r'domains';
-      yield serializers.serialize(
-        object.domains,
-        specifiedType: const FullType(UrlscannerGetScan200ResponseResultScanDomains),
-      );
-    }
     yield r'geo';
     yield serializers.serialize(
       object.geo,
       specifiedType: const FullType(UrlscannerGetScan200ResponseResultScanGeo),
     );
-    if (object.ips != null) {
-      yield r'ips';
-      yield serializers.serialize(
-        object.ips,
-        specifiedType: const FullType(UrlscannerGetScan200ResponseResultScanIps),
-      );
-    }
-    if (object.links != null) {
-      yield r'links';
-      yield serializers.serialize(
-        object.links,
-        specifiedType: const FullType(UrlscannerGetScan200ResponseResultScanLinks),
-      );
-    }
     yield r'meta';
     yield serializers.serialize(
       object.meta,
@@ -155,6 +127,34 @@ class _$UrlscannerGetScan200ResponseResultScanSerializer implements PrimitiveSer
       object.verdicts,
       specifiedType: const FullType(UrlscannerGetScan200ResponseResultScanVerdicts),
     );
+    if (object.asns != null) {
+      yield r'asns';
+      yield serializers.serialize(
+        object.asns,
+        specifiedType: const FullType(UrlscannerGetScan200ResponseResultScanAsns),
+      );
+    }
+    if (object.domains != null) {
+      yield r'domains';
+      yield serializers.serialize(
+        object.domains,
+        specifiedType: const FullType(UrlscannerGetScan200ResponseResultScanDomains),
+      );
+    }
+    if (object.ips != null) {
+      yield r'ips';
+      yield serializers.serialize(
+        object.ips,
+        specifiedType: const FullType(UrlscannerGetScan200ResponseResultScanIps),
+      );
+    }
+    if (object.links != null) {
+      yield r'links';
+      yield serializers.serialize(
+        object.links,
+        specifiedType: const FullType(UrlscannerGetScan200ResponseResultScanLinks),
+      );
+    }
   }
 
   @override
@@ -178,13 +178,6 @@ class _$UrlscannerGetScan200ResponseResultScanSerializer implements PrimitiveSer
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'asns':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(UrlscannerGetScan200ResponseResultScanAsns),
-          ) as UrlscannerGetScan200ResponseResultScanAsns;
-          result.asns.replace(valueDes);
-          break;
         case r'certificates':
           final valueDes = serializers.deserialize(
             value,
@@ -192,33 +185,12 @@ class _$UrlscannerGetScan200ResponseResultScanSerializer implements PrimitiveSer
           ) as BuiltList<UrlscannerGetScan200ResponseResultScanCertificatesInner>;
           result.certificates.replace(valueDes);
           break;
-        case r'domains':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(UrlscannerGetScan200ResponseResultScanDomains),
-          ) as UrlscannerGetScan200ResponseResultScanDomains;
-          result.domains.replace(valueDes);
-          break;
         case r'geo':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(UrlscannerGetScan200ResponseResultScanGeo),
           ) as UrlscannerGetScan200ResponseResultScanGeo;
           result.geo.replace(valueDes);
-          break;
-        case r'ips':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(UrlscannerGetScan200ResponseResultScanIps),
-          ) as UrlscannerGetScan200ResponseResultScanIps;
-          result.ips.replace(valueDes);
-          break;
-        case r'links':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(UrlscannerGetScan200ResponseResultScanLinks),
-          ) as UrlscannerGetScan200ResponseResultScanLinks;
-          result.links.replace(valueDes);
           break;
         case r'meta':
           final valueDes = serializers.deserialize(
@@ -254,6 +226,34 @@ class _$UrlscannerGetScan200ResponseResultScanSerializer implements PrimitiveSer
             specifiedType: const FullType(UrlscannerGetScan200ResponseResultScanVerdicts),
           ) as UrlscannerGetScan200ResponseResultScanVerdicts;
           result.verdicts.replace(valueDes);
+          break;
+        case r'asns':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(UrlscannerGetScan200ResponseResultScanAsns),
+          ) as UrlscannerGetScan200ResponseResultScanAsns;
+          result.asns.replace(valueDes);
+          break;
+        case r'domains':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(UrlscannerGetScan200ResponseResultScanDomains),
+          ) as UrlscannerGetScan200ResponseResultScanDomains;
+          result.domains.replace(valueDes);
+          break;
+        case r'ips':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(UrlscannerGetScan200ResponseResultScanIps),
+          ) as UrlscannerGetScan200ResponseResultScanIps;
+          result.ips.replace(valueDes);
+          break;
+        case r'links':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(UrlscannerGetScan200ResponseResultScanLinks),
+          ) as UrlscannerGetScan200ResponseResultScanLinks;
+          result.links.replace(valueDes);
           break;
         default:
           unhandled.add(key);

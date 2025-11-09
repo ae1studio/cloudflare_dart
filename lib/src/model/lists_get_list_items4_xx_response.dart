@@ -18,10 +18,10 @@ part 'lists_get_list_items4_xx_response.g.dart';
 ///
 /// Properties:
 /// * [result] 
-/// * [resultInfo] 
 /// * [errors] 
 /// * [messages] 
 /// * [success] - Defines whether the API call was successful.
+/// * [resultInfo] 
 @BuiltValue()
 abstract class ListsGetListItems4XXResponse implements ListsApiResponseCommonFailure, ListsItemsListResponseCollection, Built<ListsGetListItems4XXResponse, ListsGetListItems4XXResponseBuilder> {
   ListsGetListItems4XXResponse._();

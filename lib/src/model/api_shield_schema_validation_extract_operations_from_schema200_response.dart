@@ -19,8 +19,8 @@ part 'api_shield_schema_validation_extract_operations_from_schema200_response.g.
 /// * [errors] 
 /// * [messages] 
 /// * [success] - Whether the API call was successful.
-/// * [resultInfo] 
 /// * [result] 
+/// * [resultInfo] 
 @BuiltValue()
 abstract class ApiShieldSchemaValidationExtractOperationsFromSchema200Response implements ApiShieldApiResponseCollection, Built<ApiShieldSchemaValidationExtractOperationsFromSchema200Response, ApiShieldSchemaValidationExtractOperationsFromSchema200ResponseBuilder> {
   @BuiltValueField(wireName: r'result')

@@ -9,6 +9,7 @@ import 'package:cloudflare_dart/src/model/vectorize_index_upsert_v2_response.dar
 import 'package:cloudflare_dart/src/model/aaa_messages_inner.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
+import 'package:built_value/json_object.dart';
 
 part 'vectorize_upsert_vector200_response.g.dart';
 

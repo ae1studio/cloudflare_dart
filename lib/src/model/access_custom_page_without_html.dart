@@ -13,21 +13,14 @@ part 'access_custom_page_without_html.g.dart';
 /// AccessCustomPageWithoutHtml
 ///
 /// Properties:
-/// * [appCount] - Number of apps the custom page is assigned to.
-/// * [createdAt] 
 /// * [name] - Custom page name.
 /// * [type] 
+/// * [appCount] - Number of apps the custom page is assigned to.
+/// * [createdAt] 
 /// * [uid] - UUID.
 /// * [updatedAt] 
 @BuiltValue()
 abstract class AccessCustomPageWithoutHtml implements Built<AccessCustomPageWithoutHtml, AccessCustomPageWithoutHtmlBuilder> {
-  /// Number of apps the custom page is assigned to.
-  @BuiltValueField(wireName: r'app_count')
-  int? get appCount;
-
-  @BuiltValueField(wireName: r'created_at')
-  JsonObject? get createdAt;
-
   /// Custom page name.
   @BuiltValueField(wireName: r'name')
   String get name;
@@ -35,6 +28,13 @@ abstract class AccessCustomPageWithoutHtml implements Built<AccessCustomPageWith
   @BuiltValueField(wireName: r'type')
   AccessSchemasType get type;
   // enum typeEnum {  identity_denied,  forbidden,  };
+
+  /// Number of apps the custom page is assigned to.
+  @BuiltValueField(wireName: r'app_count')
+  int? get appCount;
+
+  @BuiltValueField(wireName: r'created_at')
+  JsonObject? get createdAt;
 
   /// UUID.
   @BuiltValueField(wireName: r'uid')
@@ -66,6 +66,16 @@ class _$AccessCustomPageWithoutHtmlSerializer implements PrimitiveSerializer<Acc
     AccessCustomPageWithoutHtml object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    yield r'name';
+    yield serializers.serialize(
+      object.name,
+      specifiedType: const FullType(String),
+    );
+    yield r'type';
+    yield serializers.serialize(
+      object.type,
+      specifiedType: const FullType(AccessSchemasType),
+    );
     if (object.appCount != null) {
       yield r'app_count';
       yield serializers.serialize(
@@ -80,16 +90,6 @@ class _$AccessCustomPageWithoutHtmlSerializer implements PrimitiveSerializer<Acc
         specifiedType: const FullType(JsonObject),
       );
     }
-    yield r'name';
-    yield serializers.serialize(
-      object.name,
-      specifiedType: const FullType(String),
-    );
-    yield r'type';
-    yield serializers.serialize(
-      object.type,
-      specifiedType: const FullType(AccessSchemasType),
-    );
     if (object.uid != null) {
       yield r'uid';
       yield serializers.serialize(
@@ -127,20 +127,6 @@ class _$AccessCustomPageWithoutHtmlSerializer implements PrimitiveSerializer<Acc
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'app_count':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
-          result.appCount = valueDes;
-          break;
-        case r'created_at':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(JsonObject),
-          ) as JsonObject;
-          result.createdAt.replace(valueDes);
-          break;
         case r'name':
           final valueDes = serializers.deserialize(
             value,
@@ -154,6 +140,20 @@ class _$AccessCustomPageWithoutHtmlSerializer implements PrimitiveSerializer<Acc
             specifiedType: const FullType(AccessSchemasType),
           ) as AccessSchemasType;
           result.type = valueDes;
+          break;
+        case r'app_count':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(int),
+          ) as int;
+          result.appCount = valueDes;
+          break;
+        case r'created_at':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(JsonObject),
+          ) as JsonObject;
+          result.createdAt.replace(valueDes);
           break;
         case r'uid':
           final valueDes = serializers.deserialize(

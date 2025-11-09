@@ -13,23 +13,15 @@ part 'magic_acls_add_single_request.g.dart';
 /// Bidirectional ACL policy for local network traffic within a site.
 ///
 /// Properties:
-/// * [description] - Description for the ACL.
-/// * [forwardLocally] - The desired forwarding action for this ACL policy. If set to \"false\", the policy will forward traffic to Cloudflare. If set to \"true\", the policy will forward traffic locally on the Magic Connector. If not included in request, will default to false.
 /// * [lan1] 
 /// * [lan2] 
 /// * [name] - The name of the ACL.
+/// * [description] - Description for the ACL.
+/// * [forwardLocally] - The desired forwarding action for this ACL policy. If set to \"false\", the policy will forward traffic to Cloudflare. If set to \"true\", the policy will forward traffic locally on the Magic Connector. If not included in request, will default to false.
 /// * [protocols] 
 /// * [unidirectional] - The desired traffic direction for this ACL policy. If set to \"false\", the policy will allow bidirectional traffic. If set to \"true\", the policy will only allow traffic in one direction. If not included in request, will default to false.
 @BuiltValue()
 abstract class MagicAclsAddSingleRequest implements Built<MagicAclsAddSingleRequest, MagicAclsAddSingleRequestBuilder> {
-  /// Description for the ACL.
-  @BuiltValueField(wireName: r'description')
-  String? get description;
-
-  /// The desired forwarding action for this ACL policy. If set to \"false\", the policy will forward traffic to Cloudflare. If set to \"true\", the policy will forward traffic locally on the Magic Connector. If not included in request, will default to false.
-  @BuiltValueField(wireName: r'forward_locally')
-  bool? get forwardLocally;
-
   @BuiltValueField(wireName: r'lan_1')
   MagicLanAclConfiguration get lan1;
 
@@ -39,6 +31,14 @@ abstract class MagicAclsAddSingleRequest implements Built<MagicAclsAddSingleRequ
   /// The name of the ACL.
   @BuiltValueField(wireName: r'name')
   String get name;
+
+  /// Description for the ACL.
+  @BuiltValueField(wireName: r'description')
+  String? get description;
+
+  /// The desired forwarding action for this ACL policy. If set to \"false\", the policy will forward traffic to Cloudflare. If set to \"true\", the policy will forward traffic locally on the Magic Connector. If not included in request, will default to false.
+  @BuiltValueField(wireName: r'forward_locally')
+  bool? get forwardLocally;
 
   @BuiltValueField(wireName: r'protocols')
   BuiltList<MagicAclsAddSingleRequestProtocolsEnum>? get protocols;
@@ -71,20 +71,6 @@ class _$MagicAclsAddSingleRequestSerializer implements PrimitiveSerializer<Magic
     MagicAclsAddSingleRequest object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
-    if (object.description != null) {
-      yield r'description';
-      yield serializers.serialize(
-        object.description,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.forwardLocally != null) {
-      yield r'forward_locally';
-      yield serializers.serialize(
-        object.forwardLocally,
-        specifiedType: const FullType(bool),
-      );
-    }
     yield r'lan_1';
     yield serializers.serialize(
       object.lan1,
@@ -100,6 +86,20 @@ class _$MagicAclsAddSingleRequestSerializer implements PrimitiveSerializer<Magic
       object.name,
       specifiedType: const FullType(String),
     );
+    if (object.description != null) {
+      yield r'description';
+      yield serializers.serialize(
+        object.description,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.forwardLocally != null) {
+      yield r'forward_locally';
+      yield serializers.serialize(
+        object.forwardLocally,
+        specifiedType: const FullType(bool),
+      );
+    }
     if (object.protocols != null) {
       yield r'protocols';
       yield serializers.serialize(
@@ -137,20 +137,6 @@ class _$MagicAclsAddSingleRequestSerializer implements PrimitiveSerializer<Magic
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'description':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.description = valueDes;
-          break;
-        case r'forward_locally':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
-          result.forwardLocally = valueDes;
-          break;
         case r'lan_1':
           final valueDes = serializers.deserialize(
             value,
@@ -171,6 +157,20 @@ class _$MagicAclsAddSingleRequestSerializer implements PrimitiveSerializer<Magic
             specifiedType: const FullType(String),
           ) as String;
           result.name = valueDes;
+          break;
+        case r'description':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.description = valueDes;
+          break;
+        case r'forward_locally':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(bool),
+          ) as bool;
+          result.forwardLocally = valueDes;
           break;
         case r'protocols':
           final valueDes = serializers.deserialize(

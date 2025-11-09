@@ -13,16 +13,16 @@ part 'brapi_post_json_request_all_of_response_format.g.dart';
 /// BrapiPostJsonRequestAllOfResponseFormat
 ///
 /// Properties:
-/// * [jsonSchema] - Schema for the response format. More information here: https://developers.cloudflare.com/workers-ai/json-mode/
 /// * [type] 
+/// * [jsonSchema] - Schema for the response format. More information here: https://developers.cloudflare.com/workers-ai/json-mode/
 @BuiltValue()
 abstract class BrapiPostJsonRequestAllOfResponseFormat implements Built<BrapiPostJsonRequestAllOfResponseFormat, BrapiPostJsonRequestAllOfResponseFormatBuilder> {
+  @BuiltValueField(wireName: r'type')
+  String get type;
+
   /// Schema for the response format. More information here: https://developers.cloudflare.com/workers-ai/json-mode/
   @BuiltValueField(wireName: r'json_schema')
   BuiltMap<String, BrapiPostJsonRequestAllOfResponseFormatJsonSchemaValue>? get jsonSchema;
-
-  @BuiltValueField(wireName: r'type')
-  String get type;
 
   BrapiPostJsonRequestAllOfResponseFormat._();
 
@@ -47,6 +47,11 @@ class _$BrapiPostJsonRequestAllOfResponseFormatSerializer implements PrimitiveSe
     BrapiPostJsonRequestAllOfResponseFormat object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    yield r'type';
+    yield serializers.serialize(
+      object.type,
+      specifiedType: const FullType(String),
+    );
     if (object.jsonSchema != null) {
       yield r'json_schema';
       yield serializers.serialize(
@@ -54,11 +59,6 @@ class _$BrapiPostJsonRequestAllOfResponseFormatSerializer implements PrimitiveSe
         specifiedType: const FullType.nullable(BuiltMap, [FullType(String), FullType(BrapiPostJsonRequestAllOfResponseFormatJsonSchemaValue)]),
       );
     }
-    yield r'type';
-    yield serializers.serialize(
-      object.type,
-      specifiedType: const FullType(String),
-    );
   }
 
   @override
@@ -82,6 +82,13 @@ class _$BrapiPostJsonRequestAllOfResponseFormatSerializer implements PrimitiveSe
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
+        case r'type':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.type = valueDes;
+          break;
         case r'json_schema':
           final valueDes = serializers.deserialize(
             value,
@@ -89,13 +96,6 @@ class _$BrapiPostJsonRequestAllOfResponseFormatSerializer implements PrimitiveSe
           ) as BuiltMap<String, BrapiPostJsonRequestAllOfResponseFormatJsonSchemaValue>?;
           if (valueDes == null) continue;
           result.jsonSchema.replace(valueDes);
-          break;
-        case r'type':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.type = valueDes;
           break;
         default:
           unhandled.add(key);

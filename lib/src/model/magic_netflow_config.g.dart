@@ -8,9 +8,9 @@ part of 'magic_netflow_config.dart';
 
 class _$MagicNetflowConfig extends MagicNetflowConfig {
   @override
-  final int? activeTimeout;
-  @override
   final String collectorIp;
+  @override
+  final int? activeTimeout;
   @override
   final int? collectorPort;
   @override
@@ -23,8 +23,8 @@ class _$MagicNetflowConfig extends MagicNetflowConfig {
       (MagicNetflowConfigBuilder()..update(updates))._build();
 
   _$MagicNetflowConfig._(
-      {this.activeTimeout,
-      required this.collectorIp,
+      {required this.collectorIp,
+      this.activeTimeout,
       this.collectorPort,
       this.inactiveTimeout,
       this.samplingRate})
@@ -42,8 +42,8 @@ class _$MagicNetflowConfig extends MagicNetflowConfig {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is MagicNetflowConfig &&
-        activeTimeout == other.activeTimeout &&
         collectorIp == other.collectorIp &&
+        activeTimeout == other.activeTimeout &&
         collectorPort == other.collectorPort &&
         inactiveTimeout == other.inactiveTimeout &&
         samplingRate == other.samplingRate;
@@ -52,8 +52,8 @@ class _$MagicNetflowConfig extends MagicNetflowConfig {
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, activeTimeout.hashCode);
     _$hash = $jc(_$hash, collectorIp.hashCode);
+    _$hash = $jc(_$hash, activeTimeout.hashCode);
     _$hash = $jc(_$hash, collectorPort.hashCode);
     _$hash = $jc(_$hash, inactiveTimeout.hashCode);
     _$hash = $jc(_$hash, samplingRate.hashCode);
@@ -64,8 +64,8 @@ class _$MagicNetflowConfig extends MagicNetflowConfig {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'MagicNetflowConfig')
-          ..add('activeTimeout', activeTimeout)
           ..add('collectorIp', collectorIp)
+          ..add('activeTimeout', activeTimeout)
           ..add('collectorPort', collectorPort)
           ..add('inactiveTimeout', inactiveTimeout)
           ..add('samplingRate', samplingRate))
@@ -77,14 +77,14 @@ class MagicNetflowConfigBuilder
     implements Builder<MagicNetflowConfig, MagicNetflowConfigBuilder> {
   _$MagicNetflowConfig? _$v;
 
+  String? _collectorIp;
+  String? get collectorIp => _$this._collectorIp;
+  set collectorIp(String? collectorIp) => _$this._collectorIp = collectorIp;
+
   int? _activeTimeout;
   int? get activeTimeout => _$this._activeTimeout;
   set activeTimeout(int? activeTimeout) =>
       _$this._activeTimeout = activeTimeout;
-
-  String? _collectorIp;
-  String? get collectorIp => _$this._collectorIp;
-  set collectorIp(String? collectorIp) => _$this._collectorIp = collectorIp;
 
   int? _collectorPort;
   int? get collectorPort => _$this._collectorPort;
@@ -107,8 +107,8 @@ class MagicNetflowConfigBuilder
   MagicNetflowConfigBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _activeTimeout = $v.activeTimeout;
       _collectorIp = $v.collectorIp;
+      _activeTimeout = $v.activeTimeout;
       _collectorPort = $v.collectorPort;
       _inactiveTimeout = $v.inactiveTimeout;
       _samplingRate = $v.samplingRate;
@@ -133,9 +133,9 @@ class MagicNetflowConfigBuilder
   _$MagicNetflowConfig _build() {
     final _$result = _$v ??
         _$MagicNetflowConfig._(
-          activeTimeout: activeTimeout,
           collectorIp: BuiltValueNullFieldError.checkNotNull(
               collectorIp, r'MagicNetflowConfig', 'collectorIp'),
+          activeTimeout: activeTimeout,
           collectorPort: collectorPort,
           inactiveTimeout: inactiveTimeout,
           samplingRate: samplingRate,

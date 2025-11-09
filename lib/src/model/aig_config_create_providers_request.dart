@@ -14,10 +14,10 @@ part 'aig_config_create_providers_request.g.dart';
 /// * [alias] 
 /// * [defaultConfig] 
 /// * [providerSlug] 
-/// * [rateLimit] 
-/// * [rateLimitPeriod] 
 /// * [secret] 
 /// * [secretId] 
+/// * [rateLimit] 
+/// * [rateLimitPeriod] 
 @BuiltValue()
 abstract class AigConfigCreateProvidersRequest implements Built<AigConfigCreateProvidersRequest, AigConfigCreateProvidersRequestBuilder> {
   @BuiltValueField(wireName: r'alias')
@@ -29,17 +29,17 @@ abstract class AigConfigCreateProvidersRequest implements Built<AigConfigCreateP
   @BuiltValueField(wireName: r'provider_slug')
   String get providerSlug;
 
-  @BuiltValueField(wireName: r'rate_limit')
-  num? get rateLimit;
-
-  @BuiltValueField(wireName: r'rate_limit_period')
-  num? get rateLimitPeriod;
-
   @BuiltValueField(wireName: r'secret')
   String get secret;
 
   @BuiltValueField(wireName: r'secret_id')
   String get secretId;
+
+  @BuiltValueField(wireName: r'rate_limit')
+  num? get rateLimit;
+
+  @BuiltValueField(wireName: r'rate_limit_period')
+  num? get rateLimitPeriod;
 
   AigConfigCreateProvidersRequest._();
 
@@ -80,6 +80,16 @@ class _$AigConfigCreateProvidersRequestSerializer implements PrimitiveSerializer
       object.providerSlug,
       specifiedType: const FullType(String),
     );
+    yield r'secret';
+    yield serializers.serialize(
+      object.secret,
+      specifiedType: const FullType(String),
+    );
+    yield r'secret_id';
+    yield serializers.serialize(
+      object.secretId,
+      specifiedType: const FullType(String),
+    );
     if (object.rateLimit != null) {
       yield r'rate_limit';
       yield serializers.serialize(
@@ -94,16 +104,6 @@ class _$AigConfigCreateProvidersRequestSerializer implements PrimitiveSerializer
         specifiedType: const FullType(num),
       );
     }
-    yield r'secret';
-    yield serializers.serialize(
-      object.secret,
-      specifiedType: const FullType(String),
-    );
-    yield r'secret_id';
-    yield serializers.serialize(
-      object.secretId,
-      specifiedType: const FullType(String),
-    );
   }
 
   @override
@@ -148,20 +148,6 @@ class _$AigConfigCreateProvidersRequestSerializer implements PrimitiveSerializer
           ) as String;
           result.providerSlug = valueDes;
           break;
-        case r'rate_limit':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(num),
-          ) as num;
-          result.rateLimit = valueDes;
-          break;
-        case r'rate_limit_period':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(num),
-          ) as num;
-          result.rateLimitPeriod = valueDes;
-          break;
         case r'secret':
           final valueDes = serializers.deserialize(
             value,
@@ -175,6 +161,20 @@ class _$AigConfigCreateProvidersRequestSerializer implements PrimitiveSerializer
             specifiedType: const FullType(String),
           ) as String;
           result.secretId = valueDes;
+          break;
+        case r'rate_limit':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(num),
+          ) as num;
+          result.rateLimit = valueDes;
+          break;
+        case r'rate_limit_period':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(num),
+          ) as num;
+          result.rateLimitPeriod = valueDes;
           break;
         default:
           unhandled.add(key);

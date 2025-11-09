@@ -9,8 +9,8 @@ import 'package:cloudflare_dart/api.dart';
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **createdOn** | [**DateTime**](DateTime.md) | The timestamp of when the snippet was created. | 
-**modifiedOn** | [**DateTime**](DateTime.md) | The timestamp of when the snippet was last modified. | [optional] 
 **snippetName** | **String** | The identifying name of the snippet. | 
+**modifiedOn** | [**DateTime**](DateTime.md) | The timestamp of when the snippet was last modified. | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

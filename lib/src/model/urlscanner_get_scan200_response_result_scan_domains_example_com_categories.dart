@@ -14,16 +14,16 @@ part 'urlscanner_get_scan200_response_result_scan_domains_example_com_categories
 /// UrlscannerGetScan200ResponseResultScanDomainsExampleComCategories
 ///
 /// Properties:
-/// * [content] 
 /// * [inherited] 
+/// * [content] 
 /// * [risks] 
 @BuiltValue()
 abstract class UrlscannerGetScan200ResponseResultScanDomainsExampleComCategories implements Built<UrlscannerGetScan200ResponseResultScanDomainsExampleComCategories, UrlscannerGetScan200ResponseResultScanDomainsExampleComCategoriesBuilder> {
-  @BuiltValueField(wireName: r'content')
-  BuiltList<UrlscannerGetScan200ResponseResultScanDomainsExampleComCategoriesContentInner>? get content;
-
   @BuiltValueField(wireName: r'inherited')
   UrlscannerGetScan200ResponseResultScanDomainsExampleComCategoriesInherited get inherited;
+
+  @BuiltValueField(wireName: r'content')
+  BuiltList<UrlscannerGetScan200ResponseResultScanDomainsExampleComCategoriesContentInner>? get content;
 
   @BuiltValueField(wireName: r'risks')
   BuiltList<UrlscannerGetScan200ResponseResultScanDomainsExampleComCategoriesContentInner>? get risks;
@@ -51,6 +51,11 @@ class _$UrlscannerGetScan200ResponseResultScanDomainsExampleComCategoriesSeriali
     UrlscannerGetScan200ResponseResultScanDomainsExampleComCategories object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    yield r'inherited';
+    yield serializers.serialize(
+      object.inherited,
+      specifiedType: const FullType(UrlscannerGetScan200ResponseResultScanDomainsExampleComCategoriesInherited),
+    );
     if (object.content != null) {
       yield r'content';
       yield serializers.serialize(
@@ -58,11 +63,6 @@ class _$UrlscannerGetScan200ResponseResultScanDomainsExampleComCategoriesSeriali
         specifiedType: const FullType(BuiltList, [FullType(UrlscannerGetScan200ResponseResultScanDomainsExampleComCategoriesContentInner)]),
       );
     }
-    yield r'inherited';
-    yield serializers.serialize(
-      object.inherited,
-      specifiedType: const FullType(UrlscannerGetScan200ResponseResultScanDomainsExampleComCategoriesInherited),
-    );
     if (object.risks != null) {
       yield r'risks';
       yield serializers.serialize(
@@ -93,19 +93,19 @@ class _$UrlscannerGetScan200ResponseResultScanDomainsExampleComCategoriesSeriali
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'content':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(UrlscannerGetScan200ResponseResultScanDomainsExampleComCategoriesContentInner)]),
-          ) as BuiltList<UrlscannerGetScan200ResponseResultScanDomainsExampleComCategoriesContentInner>;
-          result.content.replace(valueDes);
-          break;
         case r'inherited':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(UrlscannerGetScan200ResponseResultScanDomainsExampleComCategoriesInherited),
           ) as UrlscannerGetScan200ResponseResultScanDomainsExampleComCategoriesInherited;
           result.inherited.replace(valueDes);
+          break;
+        case r'content':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BuiltList, [FullType(UrlscannerGetScan200ResponseResultScanDomainsExampleComCategoriesContentInner)]),
+          ) as BuiltList<UrlscannerGetScan200ResponseResultScanDomainsExampleComCategoriesContentInner>;
+          result.content.replace(valueDes);
           break;
         case r'risks':
           final valueDes = serializers.deserialize(

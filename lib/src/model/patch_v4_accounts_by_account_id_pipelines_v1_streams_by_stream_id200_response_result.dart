@@ -15,25 +15,18 @@ part 'patch_v4_accounts_by_account_id_pipelines_v1_streams_by_stream_id200_respo
 ///
 /// Properties:
 /// * [createdAt] 
-/// * [endpoint] - Indicates the endpoint URL of this stream.
-/// * [format] 
 /// * [http] 
 /// * [id] - Indicates a unique identifier for this stream.
 /// * [modifiedAt] 
 /// * [name] - Indicates the name of the Stream.
 /// * [version] - Indicates the current version of this stream.
 /// * [workerBinding] 
+/// * [endpoint] - Indicates the endpoint URL of this stream.
+/// * [format] 
 @BuiltValue()
 abstract class PatchV4AccountsByAccountIdPipelinesV1StreamsByStreamId200ResponseResult implements Built<PatchV4AccountsByAccountIdPipelinesV1StreamsByStreamId200ResponseResult, PatchV4AccountsByAccountIdPipelinesV1StreamsByStreamId200ResponseResultBuilder> {
   @BuiltValueField(wireName: r'created_at')
   DateTime get createdAt;
-
-  /// Indicates the endpoint URL of this stream.
-  @BuiltValueField(wireName: r'endpoint')
-  String? get endpoint;
-
-  @BuiltValueField(wireName: r'format')
-  CloudflarePipelinesFormat? get format;
 
   @BuiltValueField(wireName: r'http')
   GetV4AccountsByAccountIdPipelinesV1Streams200ResponseResultInnerHttp get http;
@@ -55,6 +48,13 @@ abstract class PatchV4AccountsByAccountIdPipelinesV1StreamsByStreamId200Response
 
   @BuiltValueField(wireName: r'worker_binding')
   GetV4AccountsByAccountIdPipelinesV1Streams200ResponseResultInnerWorkerBinding get workerBinding;
+
+  /// Indicates the endpoint URL of this stream.
+  @BuiltValueField(wireName: r'endpoint')
+  String? get endpoint;
+
+  @BuiltValueField(wireName: r'format')
+  CloudflarePipelinesFormat? get format;
 
   PatchV4AccountsByAccountIdPipelinesV1StreamsByStreamId200ResponseResult._();
 
@@ -84,20 +84,6 @@ class _$PatchV4AccountsByAccountIdPipelinesV1StreamsByStreamId200ResponseResultS
       object.createdAt,
       specifiedType: const FullType(DateTime),
     );
-    if (object.endpoint != null) {
-      yield r'endpoint';
-      yield serializers.serialize(
-        object.endpoint,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.format != null) {
-      yield r'format';
-      yield serializers.serialize(
-        object.format,
-        specifiedType: const FullType(CloudflarePipelinesFormat),
-      );
-    }
     yield r'http';
     yield serializers.serialize(
       object.http,
@@ -128,6 +114,20 @@ class _$PatchV4AccountsByAccountIdPipelinesV1StreamsByStreamId200ResponseResultS
       object.workerBinding,
       specifiedType: const FullType(GetV4AccountsByAccountIdPipelinesV1Streams200ResponseResultInnerWorkerBinding),
     );
+    if (object.endpoint != null) {
+      yield r'endpoint';
+      yield serializers.serialize(
+        object.endpoint,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.format != null) {
+      yield r'format';
+      yield serializers.serialize(
+        object.format,
+        specifiedType: const FullType(CloudflarePipelinesFormat),
+      );
+    }
   }
 
   @override
@@ -157,20 +157,6 @@ class _$PatchV4AccountsByAccountIdPipelinesV1StreamsByStreamId200ResponseResultS
             specifiedType: const FullType(DateTime),
           ) as DateTime;
           result.createdAt = valueDes;
-          break;
-        case r'endpoint':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.endpoint = valueDes;
-          break;
-        case r'format':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(CloudflarePipelinesFormat),
-          ) as CloudflarePipelinesFormat;
-          result.format.replace(valueDes);
           break;
         case r'http':
           final valueDes = serializers.deserialize(
@@ -213,6 +199,20 @@ class _$PatchV4AccountsByAccountIdPipelinesV1StreamsByStreamId200ResponseResultS
             specifiedType: const FullType(GetV4AccountsByAccountIdPipelinesV1Streams200ResponseResultInnerWorkerBinding),
           ) as GetV4AccountsByAccountIdPipelinesV1Streams200ResponseResultInnerWorkerBinding;
           result.workerBinding.replace(valueDes);
+          break;
+        case r'endpoint':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.endpoint = valueDes;
+          break;
+        case r'format':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(CloudflarePipelinesFormat),
+          ) as CloudflarePipelinesFormat;
+          result.format.replace(valueDes);
           break;
         default:
           unhandled.add(key);

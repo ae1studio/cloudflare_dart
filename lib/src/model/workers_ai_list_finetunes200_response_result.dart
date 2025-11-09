@@ -12,18 +12,15 @@ part 'workers_ai_list_finetunes200_response_result.g.dart';
 ///
 /// Properties:
 /// * [createdAt] 
-/// * [description] 
 /// * [id] 
 /// * [model] 
 /// * [modifiedAt] 
 /// * [name] 
+/// * [description] 
 @BuiltValue()
 abstract class WorkersAiListFinetunes200ResponseResult implements Built<WorkersAiListFinetunes200ResponseResult, WorkersAiListFinetunes200ResponseResultBuilder> {
   @BuiltValueField(wireName: r'created_at')
   DateTime get createdAt;
-
-  @BuiltValueField(wireName: r'description')
-  String? get description;
 
   @BuiltValueField(wireName: r'id')
   String get id;
@@ -36,6 +33,9 @@ abstract class WorkersAiListFinetunes200ResponseResult implements Built<WorkersA
 
   @BuiltValueField(wireName: r'name')
   String get name;
+
+  @BuiltValueField(wireName: r'description')
+  String? get description;
 
   WorkersAiListFinetunes200ResponseResult._();
 
@@ -65,13 +65,6 @@ class _$WorkersAiListFinetunes200ResponseResultSerializer implements PrimitiveSe
       object.createdAt,
       specifiedType: const FullType(DateTime),
     );
-    if (object.description != null) {
-      yield r'description';
-      yield serializers.serialize(
-        object.description,
-        specifiedType: const FullType(String),
-      );
-    }
     yield r'id';
     yield serializers.serialize(
       object.id,
@@ -92,6 +85,13 @@ class _$WorkersAiListFinetunes200ResponseResultSerializer implements PrimitiveSe
       object.name,
       specifiedType: const FullType(String),
     );
+    if (object.description != null) {
+      yield r'description';
+      yield serializers.serialize(
+        object.description,
+        specifiedType: const FullType(String),
+      );
+    }
   }
 
   @override
@@ -122,13 +122,6 @@ class _$WorkersAiListFinetunes200ResponseResultSerializer implements PrimitiveSe
           ) as DateTime;
           result.createdAt = valueDes;
           break;
-        case r'description':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.description = valueDes;
-          break;
         case r'id':
           final valueDes = serializers.deserialize(
             value,
@@ -156,6 +149,13 @@ class _$WorkersAiListFinetunes200ResponseResultSerializer implements PrimitiveSe
             specifiedType: const FullType(String),
           ) as String;
           result.name = valueDes;
+          break;
+        case r'description':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.description = valueDes;
           break;
         default:
           unhandled.add(key);

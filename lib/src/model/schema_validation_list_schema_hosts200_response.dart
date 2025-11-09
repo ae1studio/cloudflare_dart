@@ -19,8 +19,8 @@ part 'schema_validation_list_schema_hosts200_response.g.dart';
 /// * [errors] 
 /// * [messages] 
 /// * [success] - Whether the API call was successful.
-/// * [resultInfo] 
 /// * [result] 
+/// * [resultInfo] 
 @BuiltValue()
 abstract class SchemaValidationListSchemaHosts200Response implements ApiShieldApiResponseCollection, Built<SchemaValidationListSchemaHosts200Response, SchemaValidationListSchemaHosts200ResponseBuilder> {
   @BuiltValueField(wireName: r'result')

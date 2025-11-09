@@ -12,8 +12,8 @@ part 'teams_devices_sentinelone_s2s_input_request.g.dart';
 /// TeamsDevicesSentineloneS2sInputRequest
 ///
 /// Properties:
-/// * [activeThreats] - The Number of active threats.
 /// * [connectionId] - Posture Integration ID.
+/// * [activeThreats] - The Number of active threats.
 /// * [infected] - Whether device is infected.
 /// * [isActive] - Whether device is active.
 /// * [networkStatus] - Network status of device.
@@ -21,13 +21,13 @@ part 'teams_devices_sentinelone_s2s_input_request.g.dart';
 /// * [operator_] - Operator.
 @BuiltValue()
 abstract class TeamsDevicesSentineloneS2sInputRequest implements Built<TeamsDevicesSentineloneS2sInputRequest, TeamsDevicesSentineloneS2sInputRequestBuilder> {
-  /// The Number of active threats.
-  @BuiltValueField(wireName: r'active_threats')
-  num? get activeThreats;
-
   /// Posture Integration ID.
   @BuiltValueField(wireName: r'connection_id')
   String get connectionId;
+
+  /// The Number of active threats.
+  @BuiltValueField(wireName: r'active_threats')
+  num? get activeThreats;
 
   /// Whether device is infected.
   @BuiltValueField(wireName: r'infected')
@@ -75,6 +75,11 @@ class _$TeamsDevicesSentineloneS2sInputRequestSerializer implements PrimitiveSer
     TeamsDevicesSentineloneS2sInputRequest object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    yield r'connection_id';
+    yield serializers.serialize(
+      object.connectionId,
+      specifiedType: const FullType(String),
+    );
     if (object.activeThreats != null) {
       yield r'active_threats';
       yield serializers.serialize(
@@ -82,11 +87,6 @@ class _$TeamsDevicesSentineloneS2sInputRequestSerializer implements PrimitiveSer
         specifiedType: const FullType(num),
       );
     }
-    yield r'connection_id';
-    yield serializers.serialize(
-      object.connectionId,
-      specifiedType: const FullType(String),
-    );
     if (object.infected != null) {
       yield r'infected';
       yield serializers.serialize(
@@ -145,19 +145,19 @@ class _$TeamsDevicesSentineloneS2sInputRequestSerializer implements PrimitiveSer
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'active_threats':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(num),
-          ) as num;
-          result.activeThreats = valueDes;
-          break;
         case r'connection_id':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(String),
           ) as String;
           result.connectionId = valueDes;
+          break;
+        case r'active_threats':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(num),
+          ) as num;
+          result.activeThreats = valueDes;
           break;
         case r'infected':
           final valueDes = serializers.deserialize(

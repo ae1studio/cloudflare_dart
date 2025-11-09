@@ -20,8 +20,8 @@ part 'pages_deployment_get_deployments4_xx_response.g.dart';
 /// * [errors] 
 /// * [messages] 
 /// * [success] - Whether the API call was successful.
-/// * [resultInfo] 
 /// * [result] 
+/// * [resultInfo] 
 @BuiltValue()
 abstract class PagesDeploymentGetDeployments4XXResponse implements PagesApiResponseCommonFailure, PagesDeploymentListResponse, Built<PagesDeploymentGetDeployments4XXResponse, PagesDeploymentGetDeployments4XXResponseBuilder> {
   PagesDeploymentGetDeployments4XXResponse._();

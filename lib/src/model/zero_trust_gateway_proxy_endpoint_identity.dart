@@ -12,20 +12,14 @@ part 'zero_trust_gateway_proxy_endpoint_identity.g.dart';
 /// ZeroTrustGatewayProxyEndpointIdentity
 ///
 /// Properties:
-/// * [createdAt] 
-/// * [id] 
 /// * [kind] - The proxy endpoint kind
 /// * [name] - Specify the name of the proxy endpoint.
+/// * [createdAt] 
+/// * [id] 
 /// * [subdomain] - Specify the subdomain to use as the destination in the proxy client.
 /// * [updatedAt] 
 @BuiltValue()
 abstract class ZeroTrustGatewayProxyEndpointIdentity implements Built<ZeroTrustGatewayProxyEndpointIdentity, ZeroTrustGatewayProxyEndpointIdentityBuilder> {
-  @BuiltValueField(wireName: r'created_at')
-  DateTime? get createdAt;
-
-  @BuiltValueField(wireName: r'id')
-  String? get id;
-
   /// The proxy endpoint kind
   @BuiltValueField(wireName: r'kind')
   ZeroTrustGatewayProxyEndpointIdentityKindEnum get kind;
@@ -34,6 +28,12 @@ abstract class ZeroTrustGatewayProxyEndpointIdentity implements Built<ZeroTrustG
   /// Specify the name of the proxy endpoint.
   @BuiltValueField(wireName: r'name')
   String get name;
+
+  @BuiltValueField(wireName: r'created_at')
+  DateTime? get createdAt;
+
+  @BuiltValueField(wireName: r'id')
+  String? get id;
 
   /// Specify the subdomain to use as the destination in the proxy client.
   @BuiltValueField(wireName: r'subdomain')
@@ -65,6 +65,16 @@ class _$ZeroTrustGatewayProxyEndpointIdentitySerializer implements PrimitiveSeri
     ZeroTrustGatewayProxyEndpointIdentity object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    yield r'kind';
+    yield serializers.serialize(
+      object.kind,
+      specifiedType: const FullType(ZeroTrustGatewayProxyEndpointIdentityKindEnum),
+    );
+    yield r'name';
+    yield serializers.serialize(
+      object.name,
+      specifiedType: const FullType(String),
+    );
     if (object.createdAt != null) {
       yield r'created_at';
       yield serializers.serialize(
@@ -79,16 +89,6 @@ class _$ZeroTrustGatewayProxyEndpointIdentitySerializer implements PrimitiveSeri
         specifiedType: const FullType(String),
       );
     }
-    yield r'kind';
-    yield serializers.serialize(
-      object.kind,
-      specifiedType: const FullType(ZeroTrustGatewayProxyEndpointIdentityKindEnum),
-    );
-    yield r'name';
-    yield serializers.serialize(
-      object.name,
-      specifiedType: const FullType(String),
-    );
     if (object.subdomain != null) {
       yield r'subdomain';
       yield serializers.serialize(
@@ -126,20 +126,6 @@ class _$ZeroTrustGatewayProxyEndpointIdentitySerializer implements PrimitiveSeri
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'created_at':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
-          result.createdAt = valueDes;
-          break;
-        case r'id':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.id = valueDes;
-          break;
         case r'kind':
           final valueDes = serializers.deserialize(
             value,
@@ -153,6 +139,20 @@ class _$ZeroTrustGatewayProxyEndpointIdentitySerializer implements PrimitiveSeri
             specifiedType: const FullType(String),
           ) as String;
           result.name = valueDes;
+          break;
+        case r'created_at':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(DateTime),
+          ) as DateTime;
+          result.createdAt = valueDes;
+          break;
+        case r'id':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.id = valueDes;
           break;
         case r'subdomain':
           final valueDes = serializers.deserialize(

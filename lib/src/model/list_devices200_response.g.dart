@@ -14,9 +14,9 @@ class _$ListDevices200Response extends ListDevices200Response {
   @override
   final BuiltList<TeamsDevicesPhysicalDevice> result;
   @override
-  final TeamsDevicesCursorResultInfo? resultInfo;
-  @override
   final bool success;
+  @override
+  final TeamsDevicesCursorResultInfo? resultInfo;
 
   factory _$ListDevices200Response(
           [void Function(ListDevices200ResponseBuilder)? updates]) =>
@@ -26,8 +26,8 @@ class _$ListDevices200Response extends ListDevices200Response {
       {required this.errors,
       required this.messages,
       required this.result,
-      this.resultInfo,
-      required this.success})
+      required this.success,
+      this.resultInfo})
       : super._();
   @override
   ListDevices200Response rebuild(
@@ -45,8 +45,8 @@ class _$ListDevices200Response extends ListDevices200Response {
         errors == other.errors &&
         messages == other.messages &&
         result == other.result &&
-        resultInfo == other.resultInfo &&
-        success == other.success;
+        success == other.success &&
+        resultInfo == other.resultInfo;
   }
 
   @override
@@ -55,8 +55,8 @@ class _$ListDevices200Response extends ListDevices200Response {
     _$hash = $jc(_$hash, errors.hashCode);
     _$hash = $jc(_$hash, messages.hashCode);
     _$hash = $jc(_$hash, result.hashCode);
-    _$hash = $jc(_$hash, resultInfo.hashCode);
     _$hash = $jc(_$hash, success.hashCode);
+    _$hash = $jc(_$hash, resultInfo.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -67,8 +67,8 @@ class _$ListDevices200Response extends ListDevices200Response {
           ..add('errors', errors)
           ..add('messages', messages)
           ..add('result', result)
-          ..add('resultInfo', resultInfo)
-          ..add('success', success))
+          ..add('success', success)
+          ..add('resultInfo', resultInfo))
         .toString();
   }
 }
@@ -95,15 +95,15 @@ class ListDevices200ResponseBuilder
   set result(ListBuilder<TeamsDevicesPhysicalDevice>? result) =>
       _$this._result = result;
 
+  bool? _success;
+  bool? get success => _$this._success;
+  set success(bool? success) => _$this._success = success;
+
   TeamsDevicesCursorResultInfoBuilder? _resultInfo;
   TeamsDevicesCursorResultInfoBuilder get resultInfo =>
       _$this._resultInfo ??= TeamsDevicesCursorResultInfoBuilder();
   set resultInfo(TeamsDevicesCursorResultInfoBuilder? resultInfo) =>
       _$this._resultInfo = resultInfo;
-
-  bool? _success;
-  bool? get success => _$this._success;
-  set success(bool? success) => _$this._success = success;
 
   ListDevices200ResponseBuilder() {
     ListDevices200Response._defaults(this);
@@ -115,8 +115,8 @@ class ListDevices200ResponseBuilder
       _errors = $v.errors.toBuilder();
       _messages = $v.messages.toBuilder();
       _result = $v.result.toBuilder();
-      _resultInfo = $v.resultInfo?.toBuilder();
       _success = $v.success;
+      _resultInfo = $v.resultInfo?.toBuilder();
       _$v = null;
     }
     return this;
@@ -143,9 +143,9 @@ class ListDevices200ResponseBuilder
             errors: errors.build(),
             messages: messages.build(),
             result: result.build(),
-            resultInfo: _resultInfo?.build(),
             success: BuiltValueNullFieldError.checkNotNull(
                 success, r'ListDevices200Response', 'success'),
+            resultInfo: _resultInfo?.build(),
           );
     } catch (_) {
       late String _$failedField;
@@ -156,6 +156,7 @@ class ListDevices200ResponseBuilder
         messages.build();
         _$failedField = 'result';
         result.build();
+
         _$failedField = 'resultInfo';
         _resultInfo?.build();
       } catch (e) {

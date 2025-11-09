@@ -11,9 +11,9 @@ class _$NotificationWebhooksCreateAWebhookRequest
   @override
   final String name;
   @override
-  final String? secret;
-  @override
   final String url;
+  @override
+  final String? secret;
 
   factory _$NotificationWebhooksCreateAWebhookRequest(
           [void Function(NotificationWebhooksCreateAWebhookRequestBuilder)?
@@ -22,7 +22,7 @@ class _$NotificationWebhooksCreateAWebhookRequest
           ._build();
 
   _$NotificationWebhooksCreateAWebhookRequest._(
-      {required this.name, this.secret, required this.url})
+      {required this.name, required this.url, this.secret})
       : super._();
   @override
   NotificationWebhooksCreateAWebhookRequest rebuild(
@@ -39,16 +39,16 @@ class _$NotificationWebhooksCreateAWebhookRequest
     if (identical(other, this)) return true;
     return other is NotificationWebhooksCreateAWebhookRequest &&
         name == other.name &&
-        secret == other.secret &&
-        url == other.url;
+        url == other.url &&
+        secret == other.secret;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
     _$hash = $jc(_$hash, name.hashCode);
-    _$hash = $jc(_$hash, secret.hashCode);
     _$hash = $jc(_$hash, url.hashCode);
+    _$hash = $jc(_$hash, secret.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -58,8 +58,8 @@ class _$NotificationWebhooksCreateAWebhookRequest
     return (newBuiltValueToStringHelper(
             r'NotificationWebhooksCreateAWebhookRequest')
           ..add('name', name)
-          ..add('secret', secret)
-          ..add('url', url))
+          ..add('url', url)
+          ..add('secret', secret))
         .toString();
   }
 }
@@ -74,13 +74,13 @@ class NotificationWebhooksCreateAWebhookRequestBuilder
   String? get name => _$this._name;
   set name(String? name) => _$this._name = name;
 
-  String? _secret;
-  String? get secret => _$this._secret;
-  set secret(String? secret) => _$this._secret = secret;
-
   String? _url;
   String? get url => _$this._url;
   set url(String? url) => _$this._url = url;
+
+  String? _secret;
+  String? get secret => _$this._secret;
+  set secret(String? secret) => _$this._secret = secret;
 
   NotificationWebhooksCreateAWebhookRequestBuilder() {
     NotificationWebhooksCreateAWebhookRequest._defaults(this);
@@ -90,8 +90,8 @@ class NotificationWebhooksCreateAWebhookRequestBuilder
     final $v = _$v;
     if ($v != null) {
       _name = $v.name;
-      _secret = $v.secret;
       _url = $v.url;
+      _secret = $v.secret;
       _$v = null;
     }
     return this;
@@ -117,9 +117,9 @@ class NotificationWebhooksCreateAWebhookRequestBuilder
         _$NotificationWebhooksCreateAWebhookRequest._(
           name: BuiltValueNullFieldError.checkNotNull(
               name, r'NotificationWebhooksCreateAWebhookRequest', 'name'),
-          secret: secret,
           url: BuiltValueNullFieldError.checkNotNull(
               url, r'NotificationWebhooksCreateAWebhookRequest', 'url'),
+          secret: secret,
         );
     replace(_$result);
     return _$result;

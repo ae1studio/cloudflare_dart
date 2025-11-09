@@ -12,29 +12,29 @@ part 'autorag_config_list_jobs200_response_result_inner.g.dart';
 /// AutoragConfigListJobs200ResponseResultInner
 ///
 /// Properties:
+/// * [id] 
+/// * [source_] 
 /// * [endReason] 
 /// * [endedAt] 
-/// * [id] 
 /// * [lastSeenAt] 
-/// * [source_] 
 /// * [startedAt] 
 @BuiltValue()
 abstract class AutoragConfigListJobs200ResponseResultInner implements Built<AutoragConfigListJobs200ResponseResultInner, AutoragConfigListJobs200ResponseResultInnerBuilder> {
+  @BuiltValueField(wireName: r'id')
+  String get id;
+
+  @BuiltValueField(wireName: r'source')
+  AutoragConfigListJobs200ResponseResultInnerSource_Enum get source_;
+  // enum source_Enum {  user,  schedule,  };
+
   @BuiltValueField(wireName: r'end_reason')
   String? get endReason;
 
   @BuiltValueField(wireName: r'ended_at')
   String? get endedAt;
 
-  @BuiltValueField(wireName: r'id')
-  String get id;
-
   @BuiltValueField(wireName: r'last_seen_at')
   String? get lastSeenAt;
-
-  @BuiltValueField(wireName: r'source')
-  AutoragConfigListJobs200ResponseResultInnerSource_Enum get source_;
-  // enum source_Enum {  user,  schedule,  };
 
   @BuiltValueField(wireName: r'started_at')
   String? get startedAt;
@@ -62,6 +62,16 @@ class _$AutoragConfigListJobs200ResponseResultInnerSerializer implements Primiti
     AutoragConfigListJobs200ResponseResultInner object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    yield r'id';
+    yield serializers.serialize(
+      object.id,
+      specifiedType: const FullType(String),
+    );
+    yield r'source';
+    yield serializers.serialize(
+      object.source_,
+      specifiedType: const FullType(AutoragConfigListJobs200ResponseResultInnerSource_Enum),
+    );
     if (object.endReason != null) {
       yield r'end_reason';
       yield serializers.serialize(
@@ -76,11 +86,6 @@ class _$AutoragConfigListJobs200ResponseResultInnerSerializer implements Primiti
         specifiedType: const FullType(String),
       );
     }
-    yield r'id';
-    yield serializers.serialize(
-      object.id,
-      specifiedType: const FullType(String),
-    );
     if (object.lastSeenAt != null) {
       yield r'last_seen_at';
       yield serializers.serialize(
@@ -88,11 +93,6 @@ class _$AutoragConfigListJobs200ResponseResultInnerSerializer implements Primiti
         specifiedType: const FullType(String),
       );
     }
-    yield r'source';
-    yield serializers.serialize(
-      object.source_,
-      specifiedType: const FullType(AutoragConfigListJobs200ResponseResultInnerSource_Enum),
-    );
     if (object.startedAt != null) {
       yield r'started_at';
       yield serializers.serialize(
@@ -123,6 +123,20 @@ class _$AutoragConfigListJobs200ResponseResultInnerSerializer implements Primiti
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
+        case r'id':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.id = valueDes;
+          break;
+        case r'source':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(AutoragConfigListJobs200ResponseResultInnerSource_Enum),
+          ) as AutoragConfigListJobs200ResponseResultInnerSource_Enum;
+          result.source_ = valueDes;
+          break;
         case r'end_reason':
           final valueDes = serializers.deserialize(
             value,
@@ -137,26 +151,12 @@ class _$AutoragConfigListJobs200ResponseResultInnerSerializer implements Primiti
           ) as String;
           result.endedAt = valueDes;
           break;
-        case r'id':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.id = valueDes;
-          break;
         case r'last_seen_at':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(String),
           ) as String;
           result.lastSeenAt = valueDes;
-          break;
-        case r'source':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(AutoragConfigListJobs200ResponseResultInnerSource_Enum),
-          ) as AutoragConfigListJobs200ResponseResultInnerSource_Enum;
-          result.source_ = valueDes;
           break;
         case r'started_at':
           final valueDes = serializers.deserialize(

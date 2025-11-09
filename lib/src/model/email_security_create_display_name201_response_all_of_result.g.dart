@@ -15,9 +15,13 @@ class _$EmailSecurityCreateDisplayName201ResponseAllOfResult
   @override
   final String name;
   @override
-  final String? comments;
-  @override
   final DateTime createdAt;
+  @override
+  final int id;
+  @override
+  final DateTime lastModified;
+  @override
+  final String? comments;
   @override
   final EmailSecurityCreateDisplayName201ResponseAllOfResultAllOfDirectoryId?
       directoryId;
@@ -26,10 +30,6 @@ class _$EmailSecurityCreateDisplayName201ResponseAllOfResult
       directoryNodeId;
   @override
   final String? externalDirectoryNodeId;
-  @override
-  final int id;
-  @override
-  final DateTime lastModified;
   @override
   final String? provenance;
 
@@ -45,13 +45,13 @@ class _$EmailSecurityCreateDisplayName201ResponseAllOfResult
       {required this.email,
       required this.isEmailRegex,
       required this.name,
-      this.comments,
       required this.createdAt,
+      required this.id,
+      required this.lastModified,
+      this.comments,
       this.directoryId,
       this.directoryNodeId,
       this.externalDirectoryNodeId,
-      required this.id,
-      required this.lastModified,
       this.provenance})
       : super._();
   @override
@@ -73,13 +73,13 @@ class _$EmailSecurityCreateDisplayName201ResponseAllOfResult
         email == other.email &&
         isEmailRegex == other.isEmailRegex &&
         name == other.name &&
-        comments == other.comments &&
         createdAt == other.createdAt &&
+        id == other.id &&
+        lastModified == other.lastModified &&
+        comments == other.comments &&
         directoryId == other.directoryId &&
         directoryNodeId == other.directoryNodeId &&
         externalDirectoryNodeId == other.externalDirectoryNodeId &&
-        id == other.id &&
-        lastModified == other.lastModified &&
         provenance == other.provenance;
   }
 
@@ -89,13 +89,13 @@ class _$EmailSecurityCreateDisplayName201ResponseAllOfResult
     _$hash = $jc(_$hash, email.hashCode);
     _$hash = $jc(_$hash, isEmailRegex.hashCode);
     _$hash = $jc(_$hash, name.hashCode);
-    _$hash = $jc(_$hash, comments.hashCode);
     _$hash = $jc(_$hash, createdAt.hashCode);
+    _$hash = $jc(_$hash, id.hashCode);
+    _$hash = $jc(_$hash, lastModified.hashCode);
+    _$hash = $jc(_$hash, comments.hashCode);
     _$hash = $jc(_$hash, directoryId.hashCode);
     _$hash = $jc(_$hash, directoryNodeId.hashCode);
     _$hash = $jc(_$hash, externalDirectoryNodeId.hashCode);
-    _$hash = $jc(_$hash, id.hashCode);
-    _$hash = $jc(_$hash, lastModified.hashCode);
     _$hash = $jc(_$hash, provenance.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
@@ -108,13 +108,13 @@ class _$EmailSecurityCreateDisplayName201ResponseAllOfResult
           ..add('email', email)
           ..add('isEmailRegex', isEmailRegex)
           ..add('name', name)
-          ..add('comments', comments)
           ..add('createdAt', createdAt)
+          ..add('id', id)
+          ..add('lastModified', lastModified)
+          ..add('comments', comments)
           ..add('directoryId', directoryId)
           ..add('directoryNodeId', directoryNodeId)
           ..add('externalDirectoryNodeId', externalDirectoryNodeId)
-          ..add('id', id)
-          ..add('lastModified', lastModified)
           ..add('provenance', provenance))
         .toString();
   }
@@ -138,13 +138,22 @@ class EmailSecurityCreateDisplayName201ResponseAllOfResultBuilder
   String? get name => _$this._name;
   set name(String? name) => _$this._name = name;
 
-  String? _comments;
-  String? get comments => _$this._comments;
-  set comments(String? comments) => _$this._comments = comments;
-
   DateTime? _createdAt;
   DateTime? get createdAt => _$this._createdAt;
   set createdAt(DateTime? createdAt) => _$this._createdAt = createdAt;
+
+  int? _id;
+  int? get id => _$this._id;
+  set id(int? id) => _$this._id = id;
+
+  DateTime? _lastModified;
+  DateTime? get lastModified => _$this._lastModified;
+  set lastModified(DateTime? lastModified) =>
+      _$this._lastModified = lastModified;
+
+  String? _comments;
+  String? get comments => _$this._comments;
+  set comments(String? comments) => _$this._comments = comments;
 
   EmailSecurityCreateDisplayName201ResponseAllOfResultAllOfDirectoryIdBuilder?
       _directoryId;
@@ -171,15 +180,6 @@ class EmailSecurityCreateDisplayName201ResponseAllOfResultBuilder
   set externalDirectoryNodeId(String? externalDirectoryNodeId) =>
       _$this._externalDirectoryNodeId = externalDirectoryNodeId;
 
-  int? _id;
-  int? get id => _$this._id;
-  set id(int? id) => _$this._id = id;
-
-  DateTime? _lastModified;
-  DateTime? get lastModified => _$this._lastModified;
-  set lastModified(DateTime? lastModified) =>
-      _$this._lastModified = lastModified;
-
   String? _provenance;
   String? get provenance => _$this._provenance;
   set provenance(String? provenance) => _$this._provenance = provenance;
@@ -194,13 +194,13 @@ class EmailSecurityCreateDisplayName201ResponseAllOfResultBuilder
       _email = $v.email;
       _isEmailRegex = $v.isEmailRegex;
       _name = $v.name;
-      _comments = $v.comments;
       _createdAt = $v.createdAt;
+      _id = $v.id;
+      _lastModified = $v.lastModified;
+      _comments = $v.comments;
       _directoryId = $v.directoryId?.toBuilder();
       _directoryNodeId = $v.directoryNodeId?.toBuilder();
       _externalDirectoryNodeId = $v.externalDirectoryNodeId;
-      _id = $v.id;
-      _lastModified = $v.lastModified;
       _provenance = $v.provenance;
       _$v = null;
     }
@@ -240,20 +240,20 @@ class EmailSecurityCreateDisplayName201ResponseAllOfResultBuilder
                 name,
                 r'EmailSecurityCreateDisplayName201ResponseAllOfResult',
                 'name'),
-            comments: comments,
             createdAt: BuiltValueNullFieldError.checkNotNull(
                 createdAt,
                 r'EmailSecurityCreateDisplayName201ResponseAllOfResult',
                 'createdAt'),
-            directoryId: _directoryId?.build(),
-            directoryNodeId: _directoryNodeId?.build(),
-            externalDirectoryNodeId: externalDirectoryNodeId,
             id: BuiltValueNullFieldError.checkNotNull(id,
                 r'EmailSecurityCreateDisplayName201ResponseAllOfResult', 'id'),
             lastModified: BuiltValueNullFieldError.checkNotNull(
                 lastModified,
                 r'EmailSecurityCreateDisplayName201ResponseAllOfResult',
                 'lastModified'),
+            comments: comments,
+            directoryId: _directoryId?.build(),
+            directoryNodeId: _directoryNodeId?.build(),
+            externalDirectoryNodeId: externalDirectoryNodeId,
             provenance: provenance,
           );
     } catch (_) {

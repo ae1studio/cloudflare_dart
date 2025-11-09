@@ -88,15 +88,15 @@ class _$R2TempAccessCredsRequest extends R2TempAccessCredsRequest {
   @override
   final String bucket;
   @override
-  final BuiltList<String>? objects;
-  @override
   final String parentAccessKeyId;
   @override
   final R2TempAccessCredsRequestPermissionEnum permission;
   @override
-  final BuiltList<String>? prefixes;
-  @override
   final num ttlSeconds;
+  @override
+  final BuiltList<String>? objects;
+  @override
+  final BuiltList<String>? prefixes;
 
   factory _$R2TempAccessCredsRequest(
           [void Function(R2TempAccessCredsRequestBuilder)? updates]) =>
@@ -104,11 +104,11 @@ class _$R2TempAccessCredsRequest extends R2TempAccessCredsRequest {
 
   _$R2TempAccessCredsRequest._(
       {required this.bucket,
-      this.objects,
       required this.parentAccessKeyId,
       required this.permission,
-      this.prefixes,
-      required this.ttlSeconds})
+      required this.ttlSeconds,
+      this.objects,
+      this.prefixes})
       : super._();
   @override
   R2TempAccessCredsRequest rebuild(
@@ -124,22 +124,22 @@ class _$R2TempAccessCredsRequest extends R2TempAccessCredsRequest {
     if (identical(other, this)) return true;
     return other is R2TempAccessCredsRequest &&
         bucket == other.bucket &&
-        objects == other.objects &&
         parentAccessKeyId == other.parentAccessKeyId &&
         permission == other.permission &&
-        prefixes == other.prefixes &&
-        ttlSeconds == other.ttlSeconds;
+        ttlSeconds == other.ttlSeconds &&
+        objects == other.objects &&
+        prefixes == other.prefixes;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
     _$hash = $jc(_$hash, bucket.hashCode);
-    _$hash = $jc(_$hash, objects.hashCode);
     _$hash = $jc(_$hash, parentAccessKeyId.hashCode);
     _$hash = $jc(_$hash, permission.hashCode);
-    _$hash = $jc(_$hash, prefixes.hashCode);
     _$hash = $jc(_$hash, ttlSeconds.hashCode);
+    _$hash = $jc(_$hash, objects.hashCode);
+    _$hash = $jc(_$hash, prefixes.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -148,11 +148,11 @@ class _$R2TempAccessCredsRequest extends R2TempAccessCredsRequest {
   String toString() {
     return (newBuiltValueToStringHelper(r'R2TempAccessCredsRequest')
           ..add('bucket', bucket)
-          ..add('objects', objects)
           ..add('parentAccessKeyId', parentAccessKeyId)
           ..add('permission', permission)
-          ..add('prefixes', prefixes)
-          ..add('ttlSeconds', ttlSeconds))
+          ..add('ttlSeconds', ttlSeconds)
+          ..add('objects', objects)
+          ..add('prefixes', prefixes))
         .toString();
   }
 }
@@ -166,10 +166,6 @@ class R2TempAccessCredsRequestBuilder
   String? get bucket => _$this._bucket;
   set bucket(String? bucket) => _$this._bucket = bucket;
 
-  ListBuilder<String>? _objects;
-  ListBuilder<String> get objects => _$this._objects ??= ListBuilder<String>();
-  set objects(ListBuilder<String>? objects) => _$this._objects = objects;
-
   String? _parentAccessKeyId;
   String? get parentAccessKeyId => _$this._parentAccessKeyId;
   set parentAccessKeyId(String? parentAccessKeyId) =>
@@ -180,14 +176,18 @@ class R2TempAccessCredsRequestBuilder
   set permission(R2TempAccessCredsRequestPermissionEnum? permission) =>
       _$this._permission = permission;
 
+  num? _ttlSeconds;
+  num? get ttlSeconds => _$this._ttlSeconds;
+  set ttlSeconds(num? ttlSeconds) => _$this._ttlSeconds = ttlSeconds;
+
+  ListBuilder<String>? _objects;
+  ListBuilder<String> get objects => _$this._objects ??= ListBuilder<String>();
+  set objects(ListBuilder<String>? objects) => _$this._objects = objects;
+
   ListBuilder<String>? _prefixes;
   ListBuilder<String> get prefixes =>
       _$this._prefixes ??= ListBuilder<String>();
   set prefixes(ListBuilder<String>? prefixes) => _$this._prefixes = prefixes;
-
-  num? _ttlSeconds;
-  num? get ttlSeconds => _$this._ttlSeconds;
-  set ttlSeconds(num? ttlSeconds) => _$this._ttlSeconds = ttlSeconds;
 
   R2TempAccessCredsRequestBuilder() {
     R2TempAccessCredsRequest._defaults(this);
@@ -197,11 +197,11 @@ class R2TempAccessCredsRequestBuilder
     final $v = _$v;
     if ($v != null) {
       _bucket = $v.bucket;
-      _objects = $v.objects?.toBuilder();
       _parentAccessKeyId = $v.parentAccessKeyId;
       _permission = $v.permission;
-      _prefixes = $v.prefixes?.toBuilder();
       _ttlSeconds = $v.ttlSeconds;
+      _objects = $v.objects?.toBuilder();
+      _prefixes = $v.prefixes?.toBuilder();
       _$v = null;
     }
     return this;
@@ -227,23 +227,22 @@ class R2TempAccessCredsRequestBuilder
           _$R2TempAccessCredsRequest._(
             bucket: BuiltValueNullFieldError.checkNotNull(
                 bucket, r'R2TempAccessCredsRequest', 'bucket'),
-            objects: _objects?.build(),
             parentAccessKeyId: BuiltValueNullFieldError.checkNotNull(
                 parentAccessKeyId,
                 r'R2TempAccessCredsRequest',
                 'parentAccessKeyId'),
             permission: BuiltValueNullFieldError.checkNotNull(
                 permission, r'R2TempAccessCredsRequest', 'permission'),
-            prefixes: _prefixes?.build(),
             ttlSeconds: BuiltValueNullFieldError.checkNotNull(
                 ttlSeconds, r'R2TempAccessCredsRequest', 'ttlSeconds'),
+            objects: _objects?.build(),
+            prefixes: _prefixes?.build(),
           );
     } catch (_) {
       late String _$failedField;
       try {
         _$failedField = 'objects';
         _objects?.build();
-
         _$failedField = 'prefixes';
         _prefixes?.build();
       } catch (e) {

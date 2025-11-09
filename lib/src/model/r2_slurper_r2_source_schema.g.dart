@@ -61,13 +61,13 @@ class _$R2SlurperR2SourceSchema extends R2SlurperR2SourceSchema {
   @override
   final String bucket;
   @override
-  final R2SlurperJurisdiction? jurisdiction;
-  @override
-  final String? pathPrefix;
-  @override
   final R2SlurperS3LikeCredsSchema secret;
   @override
   final R2SlurperR2SourceSchemaVendorEnum vendor;
+  @override
+  final R2SlurperJurisdiction? jurisdiction;
+  @override
+  final String? pathPrefix;
 
   factory _$R2SlurperR2SourceSchema(
           [void Function(R2SlurperR2SourceSchemaBuilder)? updates]) =>
@@ -75,10 +75,10 @@ class _$R2SlurperR2SourceSchema extends R2SlurperR2SourceSchema {
 
   _$R2SlurperR2SourceSchema._(
       {required this.bucket,
-      this.jurisdiction,
-      this.pathPrefix,
       required this.secret,
-      required this.vendor})
+      required this.vendor,
+      this.jurisdiction,
+      this.pathPrefix})
       : super._();
   @override
   R2SlurperR2SourceSchema rebuild(
@@ -94,20 +94,20 @@ class _$R2SlurperR2SourceSchema extends R2SlurperR2SourceSchema {
     if (identical(other, this)) return true;
     return other is R2SlurperR2SourceSchema &&
         bucket == other.bucket &&
-        jurisdiction == other.jurisdiction &&
-        pathPrefix == other.pathPrefix &&
         secret == other.secret &&
-        vendor == other.vendor;
+        vendor == other.vendor &&
+        jurisdiction == other.jurisdiction &&
+        pathPrefix == other.pathPrefix;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
     _$hash = $jc(_$hash, bucket.hashCode);
-    _$hash = $jc(_$hash, jurisdiction.hashCode);
-    _$hash = $jc(_$hash, pathPrefix.hashCode);
     _$hash = $jc(_$hash, secret.hashCode);
     _$hash = $jc(_$hash, vendor.hashCode);
+    _$hash = $jc(_$hash, jurisdiction.hashCode);
+    _$hash = $jc(_$hash, pathPrefix.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -116,10 +116,10 @@ class _$R2SlurperR2SourceSchema extends R2SlurperR2SourceSchema {
   String toString() {
     return (newBuiltValueToStringHelper(r'R2SlurperR2SourceSchema')
           ..add('bucket', bucket)
-          ..add('jurisdiction', jurisdiction)
-          ..add('pathPrefix', pathPrefix)
           ..add('secret', secret)
-          ..add('vendor', vendor))
+          ..add('vendor', vendor)
+          ..add('jurisdiction', jurisdiction)
+          ..add('pathPrefix', pathPrefix))
         .toString();
   }
 }
@@ -133,15 +133,6 @@ class R2SlurperR2SourceSchemaBuilder
   String? get bucket => _$this._bucket;
   set bucket(String? bucket) => _$this._bucket = bucket;
 
-  R2SlurperJurisdiction? _jurisdiction;
-  R2SlurperJurisdiction? get jurisdiction => _$this._jurisdiction;
-  set jurisdiction(R2SlurperJurisdiction? jurisdiction) =>
-      _$this._jurisdiction = jurisdiction;
-
-  String? _pathPrefix;
-  String? get pathPrefix => _$this._pathPrefix;
-  set pathPrefix(String? pathPrefix) => _$this._pathPrefix = pathPrefix;
-
   R2SlurperS3LikeCredsSchemaBuilder? _secret;
   R2SlurperS3LikeCredsSchemaBuilder get secret =>
       _$this._secret ??= R2SlurperS3LikeCredsSchemaBuilder();
@@ -153,6 +144,15 @@ class R2SlurperR2SourceSchemaBuilder
   set vendor(R2SlurperR2SourceSchemaVendorEnum? vendor) =>
       _$this._vendor = vendor;
 
+  R2SlurperJurisdiction? _jurisdiction;
+  R2SlurperJurisdiction? get jurisdiction => _$this._jurisdiction;
+  set jurisdiction(R2SlurperJurisdiction? jurisdiction) =>
+      _$this._jurisdiction = jurisdiction;
+
+  String? _pathPrefix;
+  String? get pathPrefix => _$this._pathPrefix;
+  set pathPrefix(String? pathPrefix) => _$this._pathPrefix = pathPrefix;
+
   R2SlurperR2SourceSchemaBuilder() {
     R2SlurperR2SourceSchema._defaults(this);
   }
@@ -161,10 +161,10 @@ class R2SlurperR2SourceSchemaBuilder
     final $v = _$v;
     if ($v != null) {
       _bucket = $v.bucket;
-      _jurisdiction = $v.jurisdiction;
-      _pathPrefix = $v.pathPrefix;
       _secret = $v.secret.toBuilder();
       _vendor = $v.vendor;
+      _jurisdiction = $v.jurisdiction;
+      _pathPrefix = $v.pathPrefix;
       _$v = null;
     }
     return this;
@@ -190,11 +190,11 @@ class R2SlurperR2SourceSchemaBuilder
           _$R2SlurperR2SourceSchema._(
             bucket: BuiltValueNullFieldError.checkNotNull(
                 bucket, r'R2SlurperR2SourceSchema', 'bucket'),
-            jurisdiction: jurisdiction,
-            pathPrefix: pathPrefix,
             secret: secret.build(),
             vendor: BuiltValueNullFieldError.checkNotNull(
                 vendor, r'R2SlurperR2SourceSchema', 'vendor'),
+            jurisdiction: jurisdiction,
+            pathPrefix: pathPrefix,
           );
     } catch (_) {
       late String _$failedField;

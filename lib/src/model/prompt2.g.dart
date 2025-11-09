@@ -8,6 +8,8 @@ part of 'prompt2.dart';
 
 class _$Prompt2 extends Prompt2 {
   @override
+  final String prompt;
+  @override
   final num? frequencyPenalty;
   @override
   final Prompt2Image? image;
@@ -17,8 +19,6 @@ class _$Prompt2 extends Prompt2 {
   final int? maxTokens;
   @override
   final num? presencePenalty;
-  @override
-  final String prompt;
   @override
   final bool? raw;
   @override
@@ -38,12 +38,12 @@ class _$Prompt2 extends Prompt2 {
       (Prompt2Builder()..update(updates))._build();
 
   _$Prompt2._(
-      {this.frequencyPenalty,
+      {required this.prompt,
+      this.frequencyPenalty,
       this.image,
       this.lora,
       this.maxTokens,
       this.presencePenalty,
-      required this.prompt,
       this.raw,
       this.repetitionPenalty,
       this.seed,
@@ -63,12 +63,12 @@ class _$Prompt2 extends Prompt2 {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is Prompt2 &&
+        prompt == other.prompt &&
         frequencyPenalty == other.frequencyPenalty &&
         image == other.image &&
         lora == other.lora &&
         maxTokens == other.maxTokens &&
         presencePenalty == other.presencePenalty &&
-        prompt == other.prompt &&
         raw == other.raw &&
         repetitionPenalty == other.repetitionPenalty &&
         seed == other.seed &&
@@ -81,12 +81,12 @@ class _$Prompt2 extends Prompt2 {
   @override
   int get hashCode {
     var _$hash = 0;
+    _$hash = $jc(_$hash, prompt.hashCode);
     _$hash = $jc(_$hash, frequencyPenalty.hashCode);
     _$hash = $jc(_$hash, image.hashCode);
     _$hash = $jc(_$hash, lora.hashCode);
     _$hash = $jc(_$hash, maxTokens.hashCode);
     _$hash = $jc(_$hash, presencePenalty.hashCode);
-    _$hash = $jc(_$hash, prompt.hashCode);
     _$hash = $jc(_$hash, raw.hashCode);
     _$hash = $jc(_$hash, repetitionPenalty.hashCode);
     _$hash = $jc(_$hash, seed.hashCode);
@@ -101,12 +101,12 @@ class _$Prompt2 extends Prompt2 {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'Prompt2')
+          ..add('prompt', prompt)
           ..add('frequencyPenalty', frequencyPenalty)
           ..add('image', image)
           ..add('lora', lora)
           ..add('maxTokens', maxTokens)
           ..add('presencePenalty', presencePenalty)
-          ..add('prompt', prompt)
           ..add('raw', raw)
           ..add('repetitionPenalty', repetitionPenalty)
           ..add('seed', seed)
@@ -120,6 +120,10 @@ class _$Prompt2 extends Prompt2 {
 
 class Prompt2Builder implements Builder<Prompt2, Prompt2Builder> {
   _$Prompt2? _$v;
+
+  String? _prompt;
+  String? get prompt => _$this._prompt;
+  set prompt(String? prompt) => _$this._prompt = prompt;
 
   num? _frequencyPenalty;
   num? get frequencyPenalty => _$this._frequencyPenalty;
@@ -142,10 +146,6 @@ class Prompt2Builder implements Builder<Prompt2, Prompt2Builder> {
   num? get presencePenalty => _$this._presencePenalty;
   set presencePenalty(num? presencePenalty) =>
       _$this._presencePenalty = presencePenalty;
-
-  String? _prompt;
-  String? get prompt => _$this._prompt;
-  set prompt(String? prompt) => _$this._prompt = prompt;
 
   bool? _raw;
   bool? get raw => _$this._raw;
@@ -183,12 +183,12 @@ class Prompt2Builder implements Builder<Prompt2, Prompt2Builder> {
   Prompt2Builder get _$this {
     final $v = _$v;
     if ($v != null) {
+      _prompt = $v.prompt;
       _frequencyPenalty = $v.frequencyPenalty;
       _image = $v.image?.toBuilder();
       _lora = $v.lora;
       _maxTokens = $v.maxTokens;
       _presencePenalty = $v.presencePenalty;
-      _prompt = $v.prompt;
       _raw = $v.raw;
       _repetitionPenalty = $v.repetitionPenalty;
       _seed = $v.seed;
@@ -219,13 +219,13 @@ class Prompt2Builder implements Builder<Prompt2, Prompt2Builder> {
     try {
       _$result = _$v ??
           _$Prompt2._(
+            prompt: BuiltValueNullFieldError.checkNotNull(
+                prompt, r'Prompt2', 'prompt'),
             frequencyPenalty: frequencyPenalty,
             image: _image?.build(),
             lora: lora,
             maxTokens: maxTokens,
             presencePenalty: presencePenalty,
-            prompt: BuiltValueNullFieldError.checkNotNull(
-                prompt, r'Prompt2', 'prompt'),
             raw: raw,
             repetitionPenalty: repetitionPenalty,
             seed: seed,

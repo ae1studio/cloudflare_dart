@@ -12,16 +12,26 @@ part 'magic_bgp_status_with_state.g.dart';
 /// MagicBgpStatusWithState
 ///
 /// Properties:
+/// * [state] 
+/// * [tcpEstablished] 
+/// * [updatedAt] 
 /// * [bgpState] 
 /// * [cfSpeakerIp] 
 /// * [cfSpeakerPort] 
 /// * [customerSpeakerIp] 
 /// * [customerSpeakerPort] 
-/// * [state] 
-/// * [tcpEstablished] 
-/// * [updatedAt] 
 @BuiltValue()
 abstract class MagicBgpStatusWithState implements Built<MagicBgpStatusWithState, MagicBgpStatusWithStateBuilder> {
+  @BuiltValueField(wireName: r'state')
+  MagicBgpStatusWithStateStateEnum get state;
+  // enum stateEnum {  BGP_DOWN,  BGP_UP,  BGP_ESTABLISHING,  };
+
+  @BuiltValueField(wireName: r'tcp_established')
+  bool get tcpEstablished;
+
+  @BuiltValueField(wireName: r'updated_at')
+  DateTime get updatedAt;
+
   @BuiltValueField(wireName: r'bgp_state')
   String? get bgpState;
 
@@ -36,16 +46,6 @@ abstract class MagicBgpStatusWithState implements Built<MagicBgpStatusWithState,
 
   @BuiltValueField(wireName: r'customer_speaker_port')
   int? get customerSpeakerPort;
-
-  @BuiltValueField(wireName: r'state')
-  MagicBgpStatusWithStateStateEnum get state;
-  // enum stateEnum {  BGP_DOWN,  BGP_UP,  BGP_ESTABLISHING,  };
-
-  @BuiltValueField(wireName: r'tcp_established')
-  bool get tcpEstablished;
-
-  @BuiltValueField(wireName: r'updated_at')
-  DateTime get updatedAt;
 
   MagicBgpStatusWithState._();
 
@@ -70,6 +70,21 @@ class _$MagicBgpStatusWithStateSerializer implements PrimitiveSerializer<MagicBg
     MagicBgpStatusWithState object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    yield r'state';
+    yield serializers.serialize(
+      object.state,
+      specifiedType: const FullType(MagicBgpStatusWithStateStateEnum),
+    );
+    yield r'tcp_established';
+    yield serializers.serialize(
+      object.tcpEstablished,
+      specifiedType: const FullType(bool),
+    );
+    yield r'updated_at';
+    yield serializers.serialize(
+      object.updatedAt,
+      specifiedType: const FullType(DateTime),
+    );
     if (object.bgpState != null) {
       yield r'bgp_state';
       yield serializers.serialize(
@@ -105,21 +120,6 @@ class _$MagicBgpStatusWithStateSerializer implements PrimitiveSerializer<MagicBg
         specifiedType: const FullType(int),
       );
     }
-    yield r'state';
-    yield serializers.serialize(
-      object.state,
-      specifiedType: const FullType(MagicBgpStatusWithStateStateEnum),
-    );
-    yield r'tcp_established';
-    yield serializers.serialize(
-      object.tcpEstablished,
-      specifiedType: const FullType(bool),
-    );
-    yield r'updated_at';
-    yield serializers.serialize(
-      object.updatedAt,
-      specifiedType: const FullType(DateTime),
-    );
   }
 
   @override
@@ -143,6 +143,27 @@ class _$MagicBgpStatusWithStateSerializer implements PrimitiveSerializer<MagicBg
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
+        case r'state':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(MagicBgpStatusWithStateStateEnum),
+          ) as MagicBgpStatusWithStateStateEnum;
+          result.state = valueDes;
+          break;
+        case r'tcp_established':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(bool),
+          ) as bool;
+          result.tcpEstablished = valueDes;
+          break;
+        case r'updated_at':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(DateTime),
+          ) as DateTime;
+          result.updatedAt = valueDes;
+          break;
         case r'bgp_state':
           final valueDes = serializers.deserialize(
             value,
@@ -177,27 +198,6 @@ class _$MagicBgpStatusWithStateSerializer implements PrimitiveSerializer<MagicBg
             specifiedType: const FullType(int),
           ) as int;
           result.customerSpeakerPort = valueDes;
-          break;
-        case r'state':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(MagicBgpStatusWithStateStateEnum),
-          ) as MagicBgpStatusWithStateStateEnum;
-          result.state = valueDes;
-          break;
-        case r'tcp_established':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
-          result.tcpEstablished = valueDes;
-          break;
-        case r'updated_at':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
-          result.updatedAt = valueDes;
           break;
         default:
           unhandled.add(key);

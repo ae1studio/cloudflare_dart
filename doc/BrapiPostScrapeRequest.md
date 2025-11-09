@@ -8,6 +8,7 @@ import 'package:cloudflare_dart/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**elements** | [**BuiltList&lt;BrapiPostScrapeRequestAllOfElementsInner&gt;**](BrapiPostScrapeRequestAllOfElementsInner.md) |  | 
 **actionTimeout** | **num** | The maximum duration allowed for the browser action to complete after the page has loaded (such as taking screenshots, extracting content, or generating PDFs). If this time limit is exceeded, the action stops and returns a timeout error. | [optional] 
 **addScriptTag** | [**BuiltList&lt;BrapiPostContentRequestAllOfAddScriptTagInner&gt;**](BrapiPostContentRequestAllOfAddScriptTagInner.md) | Adds a `<script>` tag into the page with the desired URL or content. | [optional] 
 **addStyleTag** | [**BuiltList&lt;BrapiPostContentRequestAllOfAddStyleTagInner&gt;**](BrapiPostContentRequestAllOfAddStyleTagInner.md) | Adds a `<link rel=\"stylesheet\">` tag into the page with the desired URL or a `<style type=\"text/css\">` tag with the content. | [optional] 
@@ -16,7 +17,6 @@ Name | Type | Description | Notes
 **authenticate** | [**BrapiPostContentRequestAllOfAuthenticate**](BrapiPostContentRequestAllOfAuthenticate.md) |  | [optional] 
 **bestAttempt** | **bool** | Attempt to proceed when 'awaited' events fail or timeout. | [optional] 
 **cookies** | [**BuiltList&lt;BrapiPostContentRequestAllOfCookiesInner&gt;**](BrapiPostContentRequestAllOfCookiesInner.md) | Check [options](https://pptr.dev/api/puppeteer.page.setcookie). | [optional] 
-**elements** | [**BuiltList&lt;BrapiPostScrapeRequestAllOfElementsInner&gt;**](BrapiPostScrapeRequestAllOfElementsInner.md) |  | 
 **emulateMediaType** | **String** |  | [optional] 
 **gotoOptions** | [**BrapiPostContentRequestAllOfGotoOptions**](BrapiPostContentRequestAllOfGotoOptions.md) |  | [optional] 
 **html** | **String** | Set the content of the page, eg: `<h1>Hello World!!</h1>`. Either `html` or `url` must be set. | [optional] 

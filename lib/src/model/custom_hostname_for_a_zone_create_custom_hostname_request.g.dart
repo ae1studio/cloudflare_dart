@@ -9,11 +9,11 @@ part of 'custom_hostname_for_a_zone_create_custom_hostname_request.dart';
 class _$CustomHostnameForAZoneCreateCustomHostnameRequest
     extends CustomHostnameForAZoneCreateCustomHostnameRequest {
   @override
-  final BuiltMap<String, String>? customMetadata;
-  @override
   final String hostname;
   @override
   final TlsCertificatesAndHostnamesSslpost ssl;
+  @override
+  final BuiltMap<String, String>? customMetadata;
 
   factory _$CustomHostnameForAZoneCreateCustomHostnameRequest(
           [void Function(
@@ -24,7 +24,7 @@ class _$CustomHostnameForAZoneCreateCustomHostnameRequest
           ._build();
 
   _$CustomHostnameForAZoneCreateCustomHostnameRequest._(
-      {this.customMetadata, required this.hostname, required this.ssl})
+      {required this.hostname, required this.ssl, this.customMetadata})
       : super._();
   @override
   CustomHostnameForAZoneCreateCustomHostnameRequest rebuild(
@@ -41,17 +41,17 @@ class _$CustomHostnameForAZoneCreateCustomHostnameRequest
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is CustomHostnameForAZoneCreateCustomHostnameRequest &&
-        customMetadata == other.customMetadata &&
         hostname == other.hostname &&
-        ssl == other.ssl;
+        ssl == other.ssl &&
+        customMetadata == other.customMetadata;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, customMetadata.hashCode);
     _$hash = $jc(_$hash, hostname.hashCode);
     _$hash = $jc(_$hash, ssl.hashCode);
+    _$hash = $jc(_$hash, customMetadata.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -60,9 +60,9 @@ class _$CustomHostnameForAZoneCreateCustomHostnameRequest
   String toString() {
     return (newBuiltValueToStringHelper(
             r'CustomHostnameForAZoneCreateCustomHostnameRequest')
-          ..add('customMetadata', customMetadata)
           ..add('hostname', hostname)
-          ..add('ssl', ssl))
+          ..add('ssl', ssl)
+          ..add('customMetadata', customMetadata))
         .toString();
   }
 }
@@ -73,12 +73,6 @@ class CustomHostnameForAZoneCreateCustomHostnameRequestBuilder
             CustomHostnameForAZoneCreateCustomHostnameRequestBuilder> {
   _$CustomHostnameForAZoneCreateCustomHostnameRequest? _$v;
 
-  MapBuilder<String, String>? _customMetadata;
-  MapBuilder<String, String> get customMetadata =>
-      _$this._customMetadata ??= MapBuilder<String, String>();
-  set customMetadata(MapBuilder<String, String>? customMetadata) =>
-      _$this._customMetadata = customMetadata;
-
   String? _hostname;
   String? get hostname => _$this._hostname;
   set hostname(String? hostname) => _$this._hostname = hostname;
@@ -88,6 +82,12 @@ class CustomHostnameForAZoneCreateCustomHostnameRequestBuilder
       _$this._ssl ??= TlsCertificatesAndHostnamesSslpostBuilder();
   set ssl(TlsCertificatesAndHostnamesSslpostBuilder? ssl) => _$this._ssl = ssl;
 
+  MapBuilder<String, String>? _customMetadata;
+  MapBuilder<String, String> get customMetadata =>
+      _$this._customMetadata ??= MapBuilder<String, String>();
+  set customMetadata(MapBuilder<String, String>? customMetadata) =>
+      _$this._customMetadata = customMetadata;
+
   CustomHostnameForAZoneCreateCustomHostnameRequestBuilder() {
     CustomHostnameForAZoneCreateCustomHostnameRequest._defaults(this);
   }
@@ -95,9 +95,9 @@ class CustomHostnameForAZoneCreateCustomHostnameRequestBuilder
   CustomHostnameForAZoneCreateCustomHostnameRequestBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _customMetadata = $v.customMetadata?.toBuilder();
       _hostname = $v.hostname;
       _ssl = $v.ssl.toBuilder();
+      _customMetadata = $v.customMetadata?.toBuilder();
       _$v = null;
     }
     return this;
@@ -123,21 +123,20 @@ class CustomHostnameForAZoneCreateCustomHostnameRequestBuilder
     try {
       _$result = _$v ??
           _$CustomHostnameForAZoneCreateCustomHostnameRequest._(
-            customMetadata: _customMetadata?.build(),
             hostname: BuiltValueNullFieldError.checkNotNull(
                 hostname,
                 r'CustomHostnameForAZoneCreateCustomHostnameRequest',
                 'hostname'),
             ssl: ssl.build(),
+            customMetadata: _customMetadata?.build(),
           );
     } catch (_) {
       late String _$failedField;
       try {
-        _$failedField = 'customMetadata';
-        _customMetadata?.build();
-
         _$failedField = 'ssl';
         ssl.build();
+        _$failedField = 'customMetadata';
+        _customMetadata?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
             r'CustomHostnameForAZoneCreateCustomHostnameRequest',

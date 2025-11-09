@@ -18,15 +18,15 @@ part 'mcn_catalog_sync.g.dart';
 /// * [description] 
 /// * [destinationId] 
 /// * [destinationType] 
-/// * [errors] 
 /// * [id] 
-/// * [includesDiscoveriesUntil] 
-/// * [lastAttemptedUpdateAt] 
-/// * [lastSuccessfulUpdateAt] 
 /// * [lastUserUpdateAt] 
 /// * [name] 
 /// * [policy] 
 /// * [updateMode] 
+/// * [errors] 
+/// * [includesDiscoveriesUntil] 
+/// * [lastAttemptedUpdateAt] 
+/// * [lastSuccessfulUpdateAt] 
 @BuiltValue()
 abstract class McnCatalogSync implements Built<McnCatalogSync, McnCatalogSyncBuilder> {
   @BuiltValueField(wireName: r'description')
@@ -39,20 +39,8 @@ abstract class McnCatalogSync implements Built<McnCatalogSync, McnCatalogSyncBui
   McnCatalogSyncDestinationType get destinationType;
   // enum destinationTypeEnum {  NONE,  ZERO_TRUST_LIST,  };
 
-  @BuiltValueField(wireName: r'errors')
-  BuiltMap<String, McnError>? get errors;
-
   @BuiltValueField(wireName: r'id')
   String get id;
-
-  @BuiltValueField(wireName: r'includes_discoveries_until')
-  String? get includesDiscoveriesUntil;
-
-  @BuiltValueField(wireName: r'last_attempted_update_at')
-  String? get lastAttemptedUpdateAt;
-
-  @BuiltValueField(wireName: r'last_successful_update_at')
-  String? get lastSuccessfulUpdateAt;
 
   @BuiltValueField(wireName: r'last_user_update_at')
   String get lastUserUpdateAt;
@@ -66,6 +54,18 @@ abstract class McnCatalogSync implements Built<McnCatalogSync, McnCatalogSyncBui
   @BuiltValueField(wireName: r'update_mode')
   McnCatalogSyncUpdateMode get updateMode;
   // enum updateModeEnum {  AUTO,  MANUAL,  };
+
+  @BuiltValueField(wireName: r'errors')
+  BuiltMap<String, McnError>? get errors;
+
+  @BuiltValueField(wireName: r'includes_discoveries_until')
+  String? get includesDiscoveriesUntil;
+
+  @BuiltValueField(wireName: r'last_attempted_update_at')
+  String? get lastAttemptedUpdateAt;
+
+  @BuiltValueField(wireName: r'last_successful_update_at')
+  String? get lastSuccessfulUpdateAt;
 
   McnCatalogSync._();
 
@@ -105,6 +105,31 @@ class _$McnCatalogSyncSerializer implements PrimitiveSerializer<McnCatalogSync> 
       object.destinationType,
       specifiedType: const FullType(McnCatalogSyncDestinationType),
     );
+    yield r'id';
+    yield serializers.serialize(
+      object.id,
+      specifiedType: const FullType(String),
+    );
+    yield r'last_user_update_at';
+    yield serializers.serialize(
+      object.lastUserUpdateAt,
+      specifiedType: const FullType(String),
+    );
+    yield r'name';
+    yield serializers.serialize(
+      object.name,
+      specifiedType: const FullType(String),
+    );
+    yield r'policy';
+    yield serializers.serialize(
+      object.policy,
+      specifiedType: const FullType(String),
+    );
+    yield r'update_mode';
+    yield serializers.serialize(
+      object.updateMode,
+      specifiedType: const FullType(McnCatalogSyncUpdateMode),
+    );
     if (object.errors != null) {
       yield r'errors';
       yield serializers.serialize(
@@ -112,11 +137,6 @@ class _$McnCatalogSyncSerializer implements PrimitiveSerializer<McnCatalogSync> 
         specifiedType: const FullType(BuiltMap, [FullType(String), FullType(McnError)]),
       );
     }
-    yield r'id';
-    yield serializers.serialize(
-      object.id,
-      specifiedType: const FullType(String),
-    );
     if (object.includesDiscoveriesUntil != null) {
       yield r'includes_discoveries_until';
       yield serializers.serialize(
@@ -138,26 +158,6 @@ class _$McnCatalogSyncSerializer implements PrimitiveSerializer<McnCatalogSync> 
         specifiedType: const FullType(String),
       );
     }
-    yield r'last_user_update_at';
-    yield serializers.serialize(
-      object.lastUserUpdateAt,
-      specifiedType: const FullType(String),
-    );
-    yield r'name';
-    yield serializers.serialize(
-      object.name,
-      specifiedType: const FullType(String),
-    );
-    yield r'policy';
-    yield serializers.serialize(
-      object.policy,
-      specifiedType: const FullType(String),
-    );
-    yield r'update_mode';
-    yield serializers.serialize(
-      object.updateMode,
-      specifiedType: const FullType(McnCatalogSyncUpdateMode),
-    );
   }
 
   @override
@@ -202,40 +202,12 @@ class _$McnCatalogSyncSerializer implements PrimitiveSerializer<McnCatalogSync> 
           ) as McnCatalogSyncDestinationType;
           result.destinationType = valueDes;
           break;
-        case r'errors':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltMap, [FullType(String), FullType(McnError)]),
-          ) as BuiltMap<String, McnError>;
-          result.errors.replace(valueDes);
-          break;
         case r'id':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(String),
           ) as String;
           result.id = valueDes;
-          break;
-        case r'includes_discoveries_until':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.includesDiscoveriesUntil = valueDes;
-          break;
-        case r'last_attempted_update_at':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.lastAttemptedUpdateAt = valueDes;
-          break;
-        case r'last_successful_update_at':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.lastSuccessfulUpdateAt = valueDes;
           break;
         case r'last_user_update_at':
           final valueDes = serializers.deserialize(
@@ -264,6 +236,34 @@ class _$McnCatalogSyncSerializer implements PrimitiveSerializer<McnCatalogSync> 
             specifiedType: const FullType(McnCatalogSyncUpdateMode),
           ) as McnCatalogSyncUpdateMode;
           result.updateMode = valueDes;
+          break;
+        case r'errors':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BuiltMap, [FullType(String), FullType(McnError)]),
+          ) as BuiltMap<String, McnError>;
+          result.errors.replace(valueDes);
+          break;
+        case r'includes_discoveries_until':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.includesDiscoveriesUntil = valueDes;
+          break;
+        case r'last_attempted_update_at':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.lastAttemptedUpdateAt = valueDes;
+          break;
+        case r'last_successful_update_at':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.lastSuccessfulUpdateAt = valueDes;
           break;
         default:
           unhandled.add(key);

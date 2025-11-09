@@ -17,23 +17,23 @@ part 'zero_trust_gateway_rules.g.dart';
 ///
 /// Properties:
 /// * [action] 
+/// * [enabled] - Specify whether the rule is enabled.
+/// * [filters] - Specify the protocol or layer to evaluate the traffic, identity, and device posture expressions. Can only contain a single value.
+/// * [name] - Specify the rule name.
+/// * [precedence] - Set the order of your rules. Lower values indicate higher precedence. At each processing phase, evaluate applicable rules in ascending order of this value. Refer to [Order of enforcement](http://developers.cloudflare.com/learning-paths/secure-internet-traffic/understand-policies/order-of-enforcement/#manage-precedence-with-terraform) to manage precedence via Terraform.
+/// * [traffic] - Specify the wirefilter expression used for traffic matching. The API automatically formats and sanitizes expressions before storing them. To prevent Terraform state drift, use the formatted expression returned in the API response.
 /// * [createdAt] 
 /// * [deletedAt] - Indicate the date of deletion, if any.
 /// * [description] - Specify the rule description.
 /// * [devicePosture] - Specify the wirefilter expression used for device posture check. The API automatically formats and sanitizes expressions before storing them. To prevent Terraform state drift, use the formatted expression returned in the API response.
-/// * [enabled] - Specify whether the rule is enabled.
 /// * [expiration] 
-/// * [filters] - Specify the protocol or layer to evaluate the traffic, identity, and device posture expressions. Can only contain a single value.
 /// * [id] - Identify the API resource with a UUID.
 /// * [identity] - Specify the wirefilter expression used for identity matching. The API automatically formats and sanitizes expressions before storing them. To prevent Terraform state drift, use the formatted expression returned in the API response.
-/// * [name] - Specify the rule name.
-/// * [precedence] - Set the order of your rules. Lower values indicate higher precedence. At each processing phase, evaluate applicable rules in ascending order of this value. Refer to [Order of enforcement](http://developers.cloudflare.com/learning-paths/secure-internet-traffic/understand-policies/order-of-enforcement/#manage-precedence-with-terraform) to manage precedence via Terraform.
 /// * [readOnly] - Indicate that this rule is shared via the Orgs API and read only.
 /// * [ruleSettings] 
 /// * [schedule] 
 /// * [sharable] - Indicate that this rule is sharable via the Orgs API.
 /// * [sourceAccount] - Provide the account tag of the account that created the rule.
-/// * [traffic] - Specify the wirefilter expression used for traffic matching. The API automatically formats and sanitizes expressions before storing them. To prevent Terraform state drift, use the formatted expression returned in the API response.
 /// * [updatedAt] 
 /// * [version] - Indicate the version number of the rule(read-only).
 /// * [warningStatus] - Indicate a warning for a misconfigured rule, if any.
@@ -42,6 +42,27 @@ abstract class ZeroTrustGatewayRules implements Built<ZeroTrustGatewayRules, Zer
   @BuiltValueField(wireName: r'action')
   ZeroTrustGatewayAction get action;
   // enum actionEnum {  on,  off,  allow,  block,  scan,  noscan,  safesearch,  ytrestricted,  isolate,  noisolate,  override,  l4_override,  egress,  resolve,  quarantine,  redirect,  };
+
+  /// Specify whether the rule is enabled.
+  @BuiltValueField(wireName: r'enabled')
+  bool get enabled;
+
+  /// Specify the protocol or layer to evaluate the traffic, identity, and device posture expressions. Can only contain a single value.
+  @BuiltValueField(wireName: r'filters')
+  BuiltList<ZeroTrustGatewayRulesFiltersEnum> get filters;
+  // enum filtersEnum {  http,  dns,  l4,  egress,  dns_resolver,  };
+
+  /// Specify the rule name.
+  @BuiltValueField(wireName: r'name')
+  String get name;
+
+  /// Set the order of your rules. Lower values indicate higher precedence. At each processing phase, evaluate applicable rules in ascending order of this value. Refer to [Order of enforcement](http://developers.cloudflare.com/learning-paths/secure-internet-traffic/understand-policies/order-of-enforcement/#manage-precedence-with-terraform) to manage precedence via Terraform.
+  @BuiltValueField(wireName: r'precedence')
+  int get precedence;
+
+  /// Specify the wirefilter expression used for traffic matching. The API automatically formats and sanitizes expressions before storing them. To prevent Terraform state drift, use the formatted expression returned in the API response.
+  @BuiltValueField(wireName: r'traffic')
+  String get traffic;
 
   @BuiltValueField(wireName: r'created_at')
   DateTime? get createdAt;
@@ -58,17 +79,8 @@ abstract class ZeroTrustGatewayRules implements Built<ZeroTrustGatewayRules, Zer
   @BuiltValueField(wireName: r'device_posture')
   String? get devicePosture;
 
-  /// Specify whether the rule is enabled.
-  @BuiltValueField(wireName: r'enabled')
-  bool get enabled;
-
   @BuiltValueField(wireName: r'expiration')
   ZeroTrustGatewayExpiration? get expiration;
-
-  /// Specify the protocol or layer to evaluate the traffic, identity, and device posture expressions. Can only contain a single value.
-  @BuiltValueField(wireName: r'filters')
-  BuiltList<ZeroTrustGatewayRulesFiltersEnum> get filters;
-  // enum filtersEnum {  http,  dns,  l4,  egress,  dns_resolver,  };
 
   /// Identify the API resource with a UUID.
   @BuiltValueField(wireName: r'id')
@@ -77,14 +89,6 @@ abstract class ZeroTrustGatewayRules implements Built<ZeroTrustGatewayRules, Zer
   /// Specify the wirefilter expression used for identity matching. The API automatically formats and sanitizes expressions before storing them. To prevent Terraform state drift, use the formatted expression returned in the API response.
   @BuiltValueField(wireName: r'identity')
   String? get identity;
-
-  /// Specify the rule name.
-  @BuiltValueField(wireName: r'name')
-  String get name;
-
-  /// Set the order of your rules. Lower values indicate higher precedence. At each processing phase, evaluate applicable rules in ascending order of this value. Refer to [Order of enforcement](http://developers.cloudflare.com/learning-paths/secure-internet-traffic/understand-policies/order-of-enforcement/#manage-precedence-with-terraform) to manage precedence via Terraform.
-  @BuiltValueField(wireName: r'precedence')
-  int get precedence;
 
   /// Indicate that this rule is shared via the Orgs API and read only.
   @BuiltValueField(wireName: r'read_only')
@@ -104,10 +108,6 @@ abstract class ZeroTrustGatewayRules implements Built<ZeroTrustGatewayRules, Zer
   @BuiltValueField(wireName: r'source_account')
   String? get sourceAccount;
 
-  /// Specify the wirefilter expression used for traffic matching. The API automatically formats and sanitizes expressions before storing them. To prevent Terraform state drift, use the formatted expression returned in the API response.
-  @BuiltValueField(wireName: r'traffic')
-  String get traffic;
-
   @BuiltValueField(wireName: r'updated_at')
   DateTime? get updatedAt;
 
@@ -125,10 +125,10 @@ abstract class ZeroTrustGatewayRules implements Built<ZeroTrustGatewayRules, Zer
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(ZeroTrustGatewayRulesBuilder b) => b
-      ..devicePosture = ''
       ..enabled = false
-      ..identity = ''
-      ..traffic = '';
+      ..traffic = ''
+      ..devicePosture = ''
+      ..identity = '';
 
   @BuiltValueSerializer(custom: true)
   static Serializer<ZeroTrustGatewayRules> get serializer => _$ZeroTrustGatewayRulesSerializer();
@@ -150,6 +150,31 @@ class _$ZeroTrustGatewayRulesSerializer implements PrimitiveSerializer<ZeroTrust
     yield serializers.serialize(
       object.action,
       specifiedType: const FullType(ZeroTrustGatewayAction),
+    );
+    yield r'enabled';
+    yield serializers.serialize(
+      object.enabled,
+      specifiedType: const FullType(bool),
+    );
+    yield r'filters';
+    yield serializers.serialize(
+      object.filters,
+      specifiedType: const FullType(BuiltList, [FullType(ZeroTrustGatewayRulesFiltersEnum)]),
+    );
+    yield r'name';
+    yield serializers.serialize(
+      object.name,
+      specifiedType: const FullType(String),
+    );
+    yield r'precedence';
+    yield serializers.serialize(
+      object.precedence,
+      specifiedType: const FullType(int),
+    );
+    yield r'traffic';
+    yield serializers.serialize(
+      object.traffic,
+      specifiedType: const FullType(String),
     );
     if (object.createdAt != null) {
       yield r'created_at';
@@ -179,11 +204,6 @@ class _$ZeroTrustGatewayRulesSerializer implements PrimitiveSerializer<ZeroTrust
         specifiedType: const FullType(String),
       );
     }
-    yield r'enabled';
-    yield serializers.serialize(
-      object.enabled,
-      specifiedType: const FullType(bool),
-    );
     if (object.expiration != null) {
       yield r'expiration';
       yield serializers.serialize(
@@ -191,11 +211,6 @@ class _$ZeroTrustGatewayRulesSerializer implements PrimitiveSerializer<ZeroTrust
         specifiedType: const FullType.nullable(ZeroTrustGatewayExpiration),
       );
     }
-    yield r'filters';
-    yield serializers.serialize(
-      object.filters,
-      specifiedType: const FullType(BuiltList, [FullType(ZeroTrustGatewayRulesFiltersEnum)]),
-    );
     if (object.id != null) {
       yield r'id';
       yield serializers.serialize(
@@ -210,16 +225,6 @@ class _$ZeroTrustGatewayRulesSerializer implements PrimitiveSerializer<ZeroTrust
         specifiedType: const FullType(String),
       );
     }
-    yield r'name';
-    yield serializers.serialize(
-      object.name,
-      specifiedType: const FullType(String),
-    );
-    yield r'precedence';
-    yield serializers.serialize(
-      object.precedence,
-      specifiedType: const FullType(int),
-    );
     if (object.readOnly != null) {
       yield r'read_only';
       yield serializers.serialize(
@@ -255,11 +260,6 @@ class _$ZeroTrustGatewayRulesSerializer implements PrimitiveSerializer<ZeroTrust
         specifiedType: const FullType(String),
       );
     }
-    yield r'traffic';
-    yield serializers.serialize(
-      object.traffic,
-      specifiedType: const FullType(String),
-    );
     if (object.updatedAt != null) {
       yield r'updated_at';
       yield serializers.serialize(
@@ -311,6 +311,41 @@ class _$ZeroTrustGatewayRulesSerializer implements PrimitiveSerializer<ZeroTrust
           ) as ZeroTrustGatewayAction;
           result.action = valueDes;
           break;
+        case r'enabled':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(bool),
+          ) as bool;
+          result.enabled = valueDes;
+          break;
+        case r'filters':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BuiltList, [FullType(ZeroTrustGatewayRulesFiltersEnum)]),
+          ) as BuiltList<ZeroTrustGatewayRulesFiltersEnum>;
+          result.filters.replace(valueDes);
+          break;
+        case r'name':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.name = valueDes;
+          break;
+        case r'precedence':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(int),
+          ) as int;
+          result.precedence = valueDes;
+          break;
+        case r'traffic':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.traffic = valueDes;
+          break;
         case r'created_at':
           final valueDes = serializers.deserialize(
             value,
@@ -340,13 +375,6 @@ class _$ZeroTrustGatewayRulesSerializer implements PrimitiveSerializer<ZeroTrust
           ) as String;
           result.devicePosture = valueDes;
           break;
-        case r'enabled':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
-          result.enabled = valueDes;
-          break;
         case r'expiration':
           final valueDes = serializers.deserialize(
             value,
@@ -354,13 +382,6 @@ class _$ZeroTrustGatewayRulesSerializer implements PrimitiveSerializer<ZeroTrust
           ) as ZeroTrustGatewayExpiration?;
           if (valueDes == null) continue;
           result.expiration.replace(valueDes);
-          break;
-        case r'filters':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(ZeroTrustGatewayRulesFiltersEnum)]),
-          ) as BuiltList<ZeroTrustGatewayRulesFiltersEnum>;
-          result.filters.replace(valueDes);
           break;
         case r'id':
           final valueDes = serializers.deserialize(
@@ -375,20 +396,6 @@ class _$ZeroTrustGatewayRulesSerializer implements PrimitiveSerializer<ZeroTrust
             specifiedType: const FullType(String),
           ) as String;
           result.identity = valueDes;
-          break;
-        case r'name':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.name = valueDes;
-          break;
-        case r'precedence':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
-          result.precedence = valueDes;
           break;
         case r'read_only':
           final valueDes = serializers.deserialize(
@@ -425,13 +432,6 @@ class _$ZeroTrustGatewayRulesSerializer implements PrimitiveSerializer<ZeroTrust
             specifiedType: const FullType(String),
           ) as String;
           result.sourceAccount = valueDes;
-          break;
-        case r'traffic':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.traffic = valueDes;
           break;
         case r'updated_at':
           final valueDes = serializers.deserialize(

@@ -14,11 +14,11 @@ part 'email_security_create_trusted_domain_request.g.dart';
 /// EmailSecurityCreateTrustedDomainRequest
 ///
 /// Properties:
-/// * [comments] 
 /// * [isRecent] - Select to prevent recently registered domains from triggering a Suspicious or Malicious disposition.
 /// * [isRegex] 
 /// * [isSimilarity] - Select for partner or other approved domains that have similar spelling to your connected domains. Prevents listed domains from triggering a Spoof disposition.
 /// * [pattern] 
+/// * [comments] 
 @BuiltValue()
 abstract class EmailSecurityCreateTrustedDomainRequest implements Built<EmailSecurityCreateTrustedDomainRequest, EmailSecurityCreateTrustedDomainRequestBuilder> {
   /// One Of [BuiltList<EmailSecurityCreateTrustedDomain>], [EmailSecurityCreateTrustedDomain]

@@ -12,18 +12,15 @@ part 'email_security_blocked_sender.g.dart';
 /// EmailSecurityBlockedSender
 ///
 /// Properties:
-/// * [comments] 
 /// * [isRegex] 
 /// * [pattern] 
 /// * [patternType] 
 /// * [createdAt] 
 /// * [id] - The unique identifier for the allow policy.
 /// * [lastModified] 
+/// * [comments] 
 @BuiltValue()
 abstract class EmailSecurityBlockedSender implements Built<EmailSecurityBlockedSender, EmailSecurityBlockedSenderBuilder> {
-  @BuiltValueField(wireName: r'comments')
-  String? get comments;
-
   @BuiltValueField(wireName: r'is_regex')
   bool get isRegex;
 
@@ -43,6 +40,9 @@ abstract class EmailSecurityBlockedSender implements Built<EmailSecurityBlockedS
 
   @BuiltValueField(wireName: r'last_modified')
   DateTime get lastModified;
+
+  @BuiltValueField(wireName: r'comments')
+  String? get comments;
 
   EmailSecurityBlockedSender._();
 
@@ -67,13 +67,6 @@ class _$EmailSecurityBlockedSenderSerializer implements PrimitiveSerializer<Emai
     EmailSecurityBlockedSender object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
-    if (object.comments != null) {
-      yield r'comments';
-      yield serializers.serialize(
-        object.comments,
-        specifiedType: const FullType.nullable(String),
-      );
-    }
     yield r'is_regex';
     yield serializers.serialize(
       object.isRegex,
@@ -104,6 +97,13 @@ class _$EmailSecurityBlockedSenderSerializer implements PrimitiveSerializer<Emai
       object.lastModified,
       specifiedType: const FullType(DateTime),
     );
+    if (object.comments != null) {
+      yield r'comments';
+      yield serializers.serialize(
+        object.comments,
+        specifiedType: const FullType.nullable(String),
+      );
+    }
   }
 
   @override
@@ -127,14 +127,6 @@ class _$EmailSecurityBlockedSenderSerializer implements PrimitiveSerializer<Emai
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'comments':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
-          if (valueDes == null) continue;
-          result.comments = valueDes;
-          break;
         case r'is_regex':
           final valueDes = serializers.deserialize(
             value,
@@ -176,6 +168,14 @@ class _$EmailSecurityBlockedSenderSerializer implements PrimitiveSerializer<Emai
             specifiedType: const FullType(DateTime),
           ) as DateTime;
           result.lastModified = valueDes;
+          break;
+        case r'comments':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType.nullable(String),
+          ) as String?;
+          if (valueDes == null) continue;
+          result.comments = valueDes;
           break;
         default:
           unhandled.add(key);

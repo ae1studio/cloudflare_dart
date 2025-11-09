@@ -12,14 +12,18 @@ part 'workers_ai_post_run_cf_deepgram_aura2_es_request.g.dart';
 /// WorkersAiPostRunCfDeepgramAura2EsRequest
 ///
 /// Properties:
+/// * [text] - The text content to be converted to speech
 /// * [bitRate] - The bitrate of the audio in bits per second. Choose from predefined ranges or specific values based on the encoding type.
 /// * [container] - Container specifies the file format wrapper for the output audio. The available options depend on the encoding type..
 /// * [encoding] - Encoding of the output audio.
 /// * [sampleRate] - Sample Rate specifies the sample rate for the output audio. Based on the encoding, different sample rates are supported. For some encodings, the sample rate is not configurable
 /// * [speaker] - Speaker used to produce the audio.
-/// * [text] - The text content to be converted to speech
 @BuiltValue()
 abstract class WorkersAiPostRunCfDeepgramAura2EsRequest implements Built<WorkersAiPostRunCfDeepgramAura2EsRequest, WorkersAiPostRunCfDeepgramAura2EsRequestBuilder> {
+  /// The text content to be converted to speech
+  @BuiltValueField(wireName: r'text')
+  String get text;
+
   /// The bitrate of the audio in bits per second. Choose from predefined ranges or specific values based on the encoding type.
   @BuiltValueField(wireName: r'bit_rate')
   num? get bitRate;
@@ -42,10 +46,6 @@ abstract class WorkersAiPostRunCfDeepgramAura2EsRequest implements Built<Workers
   @BuiltValueField(wireName: r'speaker')
   WorkersAiPostRunCfDeepgramAura2EsRequestSpeakerEnum? get speaker;
   // enum speakerEnum {  sirio,  nestor,  carina,  celeste,  alvaro,  diana,  aquila,  selena,  estrella,  javier,  };
-
-  /// The text content to be converted to speech
-  @BuiltValueField(wireName: r'text')
-  String get text;
 
   WorkersAiPostRunCfDeepgramAura2EsRequest._();
 
@@ -71,6 +71,11 @@ class _$WorkersAiPostRunCfDeepgramAura2EsRequestSerializer implements PrimitiveS
     WorkersAiPostRunCfDeepgramAura2EsRequest object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    yield r'text';
+    yield serializers.serialize(
+      object.text,
+      specifiedType: const FullType(String),
+    );
     if (object.bitRate != null) {
       yield r'bit_rate';
       yield serializers.serialize(
@@ -106,11 +111,6 @@ class _$WorkersAiPostRunCfDeepgramAura2EsRequestSerializer implements PrimitiveS
         specifiedType: const FullType(WorkersAiPostRunCfDeepgramAura2EsRequestSpeakerEnum),
       );
     }
-    yield r'text';
-    yield serializers.serialize(
-      object.text,
-      specifiedType: const FullType(String),
-    );
   }
 
   @override
@@ -134,6 +134,13 @@ class _$WorkersAiPostRunCfDeepgramAura2EsRequestSerializer implements PrimitiveS
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
+        case r'text':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.text = valueDes;
+          break;
         case r'bit_rate':
           final valueDes = serializers.deserialize(
             value,
@@ -168,13 +175,6 @@ class _$WorkersAiPostRunCfDeepgramAura2EsRequestSerializer implements PrimitiveS
             specifiedType: const FullType(WorkersAiPostRunCfDeepgramAura2EsRequestSpeakerEnum),
           ) as WorkersAiPostRunCfDeepgramAura2EsRequestSpeakerEnum;
           result.speaker = valueDes;
-          break;
-        case r'text':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.text = valueDes;
           break;
         default:
           unhandled.add(key);

@@ -9,20 +9,8 @@ part of 'mcn_onramp.dart';
 abstract class McnOnrampBuilder {
   void replace(McnOnramp other);
   void update(void Function(McnOnrampBuilder) updates);
-  ListBuilder<String> get attachedHubs;
-  set attachedHubs(ListBuilder<String>? attachedHubs);
-
-  ListBuilder<String> get attachedVpcs;
-  set attachedVpcs(ListBuilder<String>? attachedVpcs);
-
   McnOnrampCloudType? get cloudType;
   set cloudType(McnOnrampCloudType? cloudType);
-
-  String? get description;
-  set description(String? description);
-
-  String? get hub;
-  set hub(String? hub);
 
   String? get id;
   set id(String? id);
@@ -32,6 +20,27 @@ abstract class McnOnrampBuilder {
 
   bool? get installRoutesInMagicWan;
   set installRoutesInMagicWan(bool? installRoutesInMagicWan);
+
+  String? get name;
+  set name(String? name);
+
+  McnOnrampType? get type;
+  set type(McnOnrampType? type);
+
+  String? get updatedAt;
+  set updatedAt(String? updatedAt);
+
+  ListBuilder<String> get attachedHubs;
+  set attachedHubs(ListBuilder<String>? attachedHubs);
+
+  ListBuilder<String> get attachedVpcs;
+  set attachedVpcs(ListBuilder<String>? attachedVpcs);
+
+  String? get description;
+  set description(String? description);
+
+  String? get hub;
+  set hub(String? hub);
 
   String? get lastAppliedAt;
   set lastAppliedAt(String? lastAppliedAt);
@@ -47,9 +56,6 @@ abstract class McnOnrampBuilder {
 
   bool? get manageVpcToHubAttachments;
   set manageVpcToHubAttachments(bool? manageVpcToHubAttachments);
-
-  String? get name;
-  set name(String? name);
 
   McnCostDiffBuilder get plannedMonthlyCostEstimate;
   set plannedMonthlyCostEstimate(
@@ -78,12 +84,6 @@ abstract class McnOnrampBuilder {
   McnOnrampStatusBuilder get status;
   set status(McnOnrampStatusBuilder? status);
 
-  McnOnrampType? get type;
-  set type(McnOnrampType? type);
-
-  String? get updatedAt;
-  set updatedAt(String? updatedAt);
-
   String? get vpc;
   set vpc(String? vpc);
 
@@ -96,21 +96,27 @@ abstract class McnOnrampBuilder {
 
 class _$$McnOnramp extends $McnOnramp {
   @override
-  final BuiltList<String>? attachedHubs;
-  @override
-  final BuiltList<String>? attachedVpcs;
-  @override
   final McnOnrampCloudType cloudType;
-  @override
-  final String? description;
-  @override
-  final String? hub;
   @override
   final String id;
   @override
   final bool installRoutesInCloud;
   @override
   final bool installRoutesInMagicWan;
+  @override
+  final String name;
+  @override
+  final McnOnrampType type;
+  @override
+  final String updatedAt;
+  @override
+  final BuiltList<String>? attachedHubs;
+  @override
+  final BuiltList<String>? attachedVpcs;
+  @override
+  final String? description;
+  @override
+  final String? hub;
   @override
   final String? lastAppliedAt;
   @override
@@ -121,8 +127,6 @@ class _$$McnOnramp extends $McnOnramp {
   final bool? manageHubToHubAttachments;
   @override
   final bool? manageVpcToHubAttachments;
-  @override
-  final String name;
   @override
   final McnCostDiff? plannedMonthlyCostEstimate;
   @override
@@ -140,10 +144,6 @@ class _$$McnOnramp extends $McnOnramp {
   @override
   final McnOnrampStatus? status;
   @override
-  final McnOnrampType type;
-  @override
-  final String updatedAt;
-  @override
   final String? vpc;
   @override
   final BuiltMap<String, McnResourceDetails>? vpcsById;
@@ -154,20 +154,22 @@ class _$$McnOnramp extends $McnOnramp {
       ($McnOnrampBuilder()..update(updates))._build();
 
   _$$McnOnramp._(
-      {this.attachedHubs,
-      this.attachedVpcs,
-      required this.cloudType,
-      this.description,
-      this.hub,
+      {required this.cloudType,
       required this.id,
       required this.installRoutesInCloud,
       required this.installRoutesInMagicWan,
+      required this.name,
+      required this.type,
+      required this.updatedAt,
+      this.attachedHubs,
+      this.attachedVpcs,
+      this.description,
+      this.hub,
       this.lastAppliedAt,
       this.lastExportedAt,
       this.lastPlannedAt,
       this.manageHubToHubAttachments,
       this.manageVpcToHubAttachments,
-      required this.name,
       this.plannedMonthlyCostEstimate,
       this.plannedResources,
       this.plannedResourcesUnavailable,
@@ -176,8 +178,6 @@ class _$$McnOnramp extends $McnOnramp {
       this.postApplyResourcesUnavailable,
       this.region,
       this.status,
-      required this.type,
-      required this.updatedAt,
       this.vpc,
       this.vpcsById,
       this.vpcsByIdUnavailable})
@@ -193,20 +193,22 @@ class _$$McnOnramp extends $McnOnramp {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is $McnOnramp &&
-        attachedHubs == other.attachedHubs &&
-        attachedVpcs == other.attachedVpcs &&
         cloudType == other.cloudType &&
-        description == other.description &&
-        hub == other.hub &&
         id == other.id &&
         installRoutesInCloud == other.installRoutesInCloud &&
         installRoutesInMagicWan == other.installRoutesInMagicWan &&
+        name == other.name &&
+        type == other.type &&
+        updatedAt == other.updatedAt &&
+        attachedHubs == other.attachedHubs &&
+        attachedVpcs == other.attachedVpcs &&
+        description == other.description &&
+        hub == other.hub &&
         lastAppliedAt == other.lastAppliedAt &&
         lastExportedAt == other.lastExportedAt &&
         lastPlannedAt == other.lastPlannedAt &&
         manageHubToHubAttachments == other.manageHubToHubAttachments &&
         manageVpcToHubAttachments == other.manageVpcToHubAttachments &&
-        name == other.name &&
         plannedMonthlyCostEstimate == other.plannedMonthlyCostEstimate &&
         plannedResources == other.plannedResources &&
         plannedResourcesUnavailable == other.plannedResourcesUnavailable &&
@@ -215,8 +217,6 @@ class _$$McnOnramp extends $McnOnramp {
         postApplyResourcesUnavailable == other.postApplyResourcesUnavailable &&
         region == other.region &&
         status == other.status &&
-        type == other.type &&
-        updatedAt == other.updatedAt &&
         vpc == other.vpc &&
         vpcsById == other.vpcsById &&
         vpcsByIdUnavailable == other.vpcsByIdUnavailable;
@@ -225,20 +225,22 @@ class _$$McnOnramp extends $McnOnramp {
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, attachedHubs.hashCode);
-    _$hash = $jc(_$hash, attachedVpcs.hashCode);
     _$hash = $jc(_$hash, cloudType.hashCode);
-    _$hash = $jc(_$hash, description.hashCode);
-    _$hash = $jc(_$hash, hub.hashCode);
     _$hash = $jc(_$hash, id.hashCode);
     _$hash = $jc(_$hash, installRoutesInCloud.hashCode);
     _$hash = $jc(_$hash, installRoutesInMagicWan.hashCode);
+    _$hash = $jc(_$hash, name.hashCode);
+    _$hash = $jc(_$hash, type.hashCode);
+    _$hash = $jc(_$hash, updatedAt.hashCode);
+    _$hash = $jc(_$hash, attachedHubs.hashCode);
+    _$hash = $jc(_$hash, attachedVpcs.hashCode);
+    _$hash = $jc(_$hash, description.hashCode);
+    _$hash = $jc(_$hash, hub.hashCode);
     _$hash = $jc(_$hash, lastAppliedAt.hashCode);
     _$hash = $jc(_$hash, lastExportedAt.hashCode);
     _$hash = $jc(_$hash, lastPlannedAt.hashCode);
     _$hash = $jc(_$hash, manageHubToHubAttachments.hashCode);
     _$hash = $jc(_$hash, manageVpcToHubAttachments.hashCode);
-    _$hash = $jc(_$hash, name.hashCode);
     _$hash = $jc(_$hash, plannedMonthlyCostEstimate.hashCode);
     _$hash = $jc(_$hash, plannedResources.hashCode);
     _$hash = $jc(_$hash, plannedResourcesUnavailable.hashCode);
@@ -247,8 +249,6 @@ class _$$McnOnramp extends $McnOnramp {
     _$hash = $jc(_$hash, postApplyResourcesUnavailable.hashCode);
     _$hash = $jc(_$hash, region.hashCode);
     _$hash = $jc(_$hash, status.hashCode);
-    _$hash = $jc(_$hash, type.hashCode);
-    _$hash = $jc(_$hash, updatedAt.hashCode);
     _$hash = $jc(_$hash, vpc.hashCode);
     _$hash = $jc(_$hash, vpcsById.hashCode);
     _$hash = $jc(_$hash, vpcsByIdUnavailable.hashCode);
@@ -259,20 +259,22 @@ class _$$McnOnramp extends $McnOnramp {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'$McnOnramp')
-          ..add('attachedHubs', attachedHubs)
-          ..add('attachedVpcs', attachedVpcs)
           ..add('cloudType', cloudType)
-          ..add('description', description)
-          ..add('hub', hub)
           ..add('id', id)
           ..add('installRoutesInCloud', installRoutesInCloud)
           ..add('installRoutesInMagicWan', installRoutesInMagicWan)
+          ..add('name', name)
+          ..add('type', type)
+          ..add('updatedAt', updatedAt)
+          ..add('attachedHubs', attachedHubs)
+          ..add('attachedVpcs', attachedVpcs)
+          ..add('description', description)
+          ..add('hub', hub)
           ..add('lastAppliedAt', lastAppliedAt)
           ..add('lastExportedAt', lastExportedAt)
           ..add('lastPlannedAt', lastPlannedAt)
           ..add('manageHubToHubAttachments', manageHubToHubAttachments)
           ..add('manageVpcToHubAttachments', manageVpcToHubAttachments)
-          ..add('name', name)
           ..add('plannedMonthlyCostEstimate', plannedMonthlyCostEstimate)
           ..add('plannedResources', plannedResources)
           ..add('plannedResourcesUnavailable', plannedResourcesUnavailable)
@@ -281,8 +283,6 @@ class _$$McnOnramp extends $McnOnramp {
           ..add('postApplyResourcesUnavailable', postApplyResourcesUnavailable)
           ..add('region', region)
           ..add('status', status)
-          ..add('type', type)
-          ..add('updatedAt', updatedAt)
           ..add('vpc', vpc)
           ..add('vpcsById', vpcsById)
           ..add('vpcsByIdUnavailable', vpcsByIdUnavailable))
@@ -294,31 +294,10 @@ class $McnOnrampBuilder
     implements Builder<$McnOnramp, $McnOnrampBuilder>, McnOnrampBuilder {
   _$$McnOnramp? _$v;
 
-  ListBuilder<String>? _attachedHubs;
-  ListBuilder<String> get attachedHubs =>
-      _$this._attachedHubs ??= ListBuilder<String>();
-  set attachedHubs(covariant ListBuilder<String>? attachedHubs) =>
-      _$this._attachedHubs = attachedHubs;
-
-  ListBuilder<String>? _attachedVpcs;
-  ListBuilder<String> get attachedVpcs =>
-      _$this._attachedVpcs ??= ListBuilder<String>();
-  set attachedVpcs(covariant ListBuilder<String>? attachedVpcs) =>
-      _$this._attachedVpcs = attachedVpcs;
-
   McnOnrampCloudType? _cloudType;
   McnOnrampCloudType? get cloudType => _$this._cloudType;
   set cloudType(covariant McnOnrampCloudType? cloudType) =>
       _$this._cloudType = cloudType;
-
-  String? _description;
-  String? get description => _$this._description;
-  set description(covariant String? description) =>
-      _$this._description = description;
-
-  String? _hub;
-  String? get hub => _$this._hub;
-  set hub(covariant String? hub) => _$this._hub = hub;
 
   String? _id;
   String? get id => _$this._id;
@@ -333,6 +312,39 @@ class $McnOnrampBuilder
   bool? get installRoutesInMagicWan => _$this._installRoutesInMagicWan;
   set installRoutesInMagicWan(covariant bool? installRoutesInMagicWan) =>
       _$this._installRoutesInMagicWan = installRoutesInMagicWan;
+
+  String? _name;
+  String? get name => _$this._name;
+  set name(covariant String? name) => _$this._name = name;
+
+  McnOnrampType? _type;
+  McnOnrampType? get type => _$this._type;
+  set type(covariant McnOnrampType? type) => _$this._type = type;
+
+  String? _updatedAt;
+  String? get updatedAt => _$this._updatedAt;
+  set updatedAt(covariant String? updatedAt) => _$this._updatedAt = updatedAt;
+
+  ListBuilder<String>? _attachedHubs;
+  ListBuilder<String> get attachedHubs =>
+      _$this._attachedHubs ??= ListBuilder<String>();
+  set attachedHubs(covariant ListBuilder<String>? attachedHubs) =>
+      _$this._attachedHubs = attachedHubs;
+
+  ListBuilder<String>? _attachedVpcs;
+  ListBuilder<String> get attachedVpcs =>
+      _$this._attachedVpcs ??= ListBuilder<String>();
+  set attachedVpcs(covariant ListBuilder<String>? attachedVpcs) =>
+      _$this._attachedVpcs = attachedVpcs;
+
+  String? _description;
+  String? get description => _$this._description;
+  set description(covariant String? description) =>
+      _$this._description = description;
+
+  String? _hub;
+  String? get hub => _$this._hub;
+  set hub(covariant String? hub) => _$this._hub = hub;
 
   String? _lastAppliedAt;
   String? get lastAppliedAt => _$this._lastAppliedAt;
@@ -358,10 +370,6 @@ class $McnOnrampBuilder
   bool? get manageVpcToHubAttachments => _$this._manageVpcToHubAttachments;
   set manageVpcToHubAttachments(covariant bool? manageVpcToHubAttachments) =>
       _$this._manageVpcToHubAttachments = manageVpcToHubAttachments;
-
-  String? _name;
-  String? get name => _$this._name;
-  set name(covariant String? name) => _$this._name = name;
 
   McnCostDiffBuilder? _plannedMonthlyCostEstimate;
   McnCostDiffBuilder get plannedMonthlyCostEstimate =>
@@ -415,14 +423,6 @@ class $McnOnrampBuilder
   set status(covariant McnOnrampStatusBuilder? status) =>
       _$this._status = status;
 
-  McnOnrampType? _type;
-  McnOnrampType? get type => _$this._type;
-  set type(covariant McnOnrampType? type) => _$this._type = type;
-
-  String? _updatedAt;
-  String? get updatedAt => _$this._updatedAt;
-  set updatedAt(covariant String? updatedAt) => _$this._updatedAt = updatedAt;
-
   String? _vpc;
   String? get vpc => _$this._vpc;
   set vpc(covariant String? vpc) => _$this._vpc = vpc;
@@ -446,20 +446,22 @@ class $McnOnrampBuilder
   $McnOnrampBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _attachedHubs = $v.attachedHubs?.toBuilder();
-      _attachedVpcs = $v.attachedVpcs?.toBuilder();
       _cloudType = $v.cloudType;
-      _description = $v.description;
-      _hub = $v.hub;
       _id = $v.id;
       _installRoutesInCloud = $v.installRoutesInCloud;
       _installRoutesInMagicWan = $v.installRoutesInMagicWan;
+      _name = $v.name;
+      _type = $v.type;
+      _updatedAt = $v.updatedAt;
+      _attachedHubs = $v.attachedHubs?.toBuilder();
+      _attachedVpcs = $v.attachedVpcs?.toBuilder();
+      _description = $v.description;
+      _hub = $v.hub;
       _lastAppliedAt = $v.lastAppliedAt;
       _lastExportedAt = $v.lastExportedAt;
       _lastPlannedAt = $v.lastPlannedAt;
       _manageHubToHubAttachments = $v.manageHubToHubAttachments;
       _manageVpcToHubAttachments = $v.manageVpcToHubAttachments;
-      _name = $v.name;
       _plannedMonthlyCostEstimate = $v.plannedMonthlyCostEstimate?.toBuilder();
       _plannedResources = $v.plannedResources?.toBuilder();
       _plannedResourcesUnavailable = $v.plannedResourcesUnavailable;
@@ -469,8 +471,6 @@ class $McnOnrampBuilder
       _postApplyResourcesUnavailable = $v.postApplyResourcesUnavailable;
       _region = $v.region;
       _status = $v.status?.toBuilder();
-      _type = $v.type;
-      _updatedAt = $v.updatedAt;
       _vpc = $v.vpc;
       _vpcsById = $v.vpcsById?.toBuilder();
       _vpcsByIdUnavailable = $v.vpcsByIdUnavailable?.toBuilder();
@@ -497,12 +497,8 @@ class $McnOnrampBuilder
     try {
       _$result = _$v ??
           _$$McnOnramp._(
-            attachedHubs: _attachedHubs?.build(),
-            attachedVpcs: _attachedVpcs?.build(),
             cloudType: BuiltValueNullFieldError.checkNotNull(
                 cloudType, r'$McnOnramp', 'cloudType'),
-            description: description,
-            hub: hub,
             id: BuiltValueNullFieldError.checkNotNull(id, r'$McnOnramp', 'id'),
             installRoutesInCloud: BuiltValueNullFieldError.checkNotNull(
                 installRoutesInCloud, r'$McnOnramp', 'installRoutesInCloud'),
@@ -510,13 +506,21 @@ class $McnOnrampBuilder
                 installRoutesInMagicWan,
                 r'$McnOnramp',
                 'installRoutesInMagicWan'),
+            name: BuiltValueNullFieldError.checkNotNull(
+                name, r'$McnOnramp', 'name'),
+            type: BuiltValueNullFieldError.checkNotNull(
+                type, r'$McnOnramp', 'type'),
+            updatedAt: BuiltValueNullFieldError.checkNotNull(
+                updatedAt, r'$McnOnramp', 'updatedAt'),
+            attachedHubs: _attachedHubs?.build(),
+            attachedVpcs: _attachedVpcs?.build(),
+            description: description,
+            hub: hub,
             lastAppliedAt: lastAppliedAt,
             lastExportedAt: lastExportedAt,
             lastPlannedAt: lastPlannedAt,
             manageHubToHubAttachments: manageHubToHubAttachments,
             manageVpcToHubAttachments: manageVpcToHubAttachments,
-            name: BuiltValueNullFieldError.checkNotNull(
-                name, r'$McnOnramp', 'name'),
             plannedMonthlyCostEstimate: _plannedMonthlyCostEstimate?.build(),
             plannedResources: _plannedResources?.build(),
             plannedResourcesUnavailable: plannedResourcesUnavailable,
@@ -526,10 +530,6 @@ class $McnOnrampBuilder
             postApplyResourcesUnavailable: postApplyResourcesUnavailable,
             region: region,
             status: _status?.build(),
-            type: BuiltValueNullFieldError.checkNotNull(
-                type, r'$McnOnramp', 'type'),
-            updatedAt: BuiltValueNullFieldError.checkNotNull(
-                updatedAt, r'$McnOnramp', 'updatedAt'),
             vpc: vpc,
             vpcsById: _vpcsById?.build(),
             vpcsByIdUnavailable: _vpcsByIdUnavailable?.build(),

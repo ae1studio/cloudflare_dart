@@ -19,8 +19,8 @@ part 'schema_validation_list_per_operation_settings200_response.g.dart';
 /// * [errors] 
 /// * [messages] 
 /// * [success] - Whether the API call was successful.
-/// * [resultInfo] 
 /// * [result] 
+/// * [resultInfo] 
 @BuiltValue()
 abstract class SchemaValidationListPerOperationSettings200Response implements ApiShieldApiResponseCollection, Built<SchemaValidationListPerOperationSettings200Response, SchemaValidationListPerOperationSettings200ResponseBuilder> {
   @BuiltValueField(wireName: r'result')

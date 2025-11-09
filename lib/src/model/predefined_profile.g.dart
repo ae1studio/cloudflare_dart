@@ -57,19 +57,19 @@ class _$PredefinedProfile extends PredefinedProfile {
   @override
   final PredefinedProfileTypeEnum type;
   @override
-  final bool? aiContextEnabled;
-  @override
   final int allowedMatchCount;
-  @override
-  final DlpConfidence? confidenceThreshold;
-  @override
-  final DlpContextAwareness? contextAwareness;
   @override
   final BuiltList<DlpEntry> entries;
   @override
   final String id;
   @override
   final String name;
+  @override
+  final bool? aiContextEnabled;
+  @override
+  final DlpConfidence? confidenceThreshold;
+  @override
+  final DlpContextAwareness? contextAwareness;
   @override
   final bool? ocrEnabled;
   @override
@@ -81,13 +81,13 @@ class _$PredefinedProfile extends PredefinedProfile {
 
   _$PredefinedProfile._(
       {required this.type,
-      this.aiContextEnabled,
       required this.allowedMatchCount,
-      this.confidenceThreshold,
-      this.contextAwareness,
       required this.entries,
       required this.id,
       required this.name,
+      this.aiContextEnabled,
+      this.confidenceThreshold,
+      this.contextAwareness,
       this.ocrEnabled,
       this.openAccess})
       : super._();
@@ -104,13 +104,13 @@ class _$PredefinedProfile extends PredefinedProfile {
     if (identical(other, this)) return true;
     return other is PredefinedProfile &&
         type == other.type &&
-        aiContextEnabled == other.aiContextEnabled &&
         allowedMatchCount == other.allowedMatchCount &&
-        confidenceThreshold == other.confidenceThreshold &&
-        contextAwareness == other.contextAwareness &&
         entries == other.entries &&
         id == other.id &&
         name == other.name &&
+        aiContextEnabled == other.aiContextEnabled &&
+        confidenceThreshold == other.confidenceThreshold &&
+        contextAwareness == other.contextAwareness &&
         ocrEnabled == other.ocrEnabled &&
         openAccess == other.openAccess;
   }
@@ -119,13 +119,13 @@ class _$PredefinedProfile extends PredefinedProfile {
   int get hashCode {
     var _$hash = 0;
     _$hash = $jc(_$hash, type.hashCode);
-    _$hash = $jc(_$hash, aiContextEnabled.hashCode);
     _$hash = $jc(_$hash, allowedMatchCount.hashCode);
-    _$hash = $jc(_$hash, confidenceThreshold.hashCode);
-    _$hash = $jc(_$hash, contextAwareness.hashCode);
     _$hash = $jc(_$hash, entries.hashCode);
     _$hash = $jc(_$hash, id.hashCode);
     _$hash = $jc(_$hash, name.hashCode);
+    _$hash = $jc(_$hash, aiContextEnabled.hashCode);
+    _$hash = $jc(_$hash, confidenceThreshold.hashCode);
+    _$hash = $jc(_$hash, contextAwareness.hashCode);
     _$hash = $jc(_$hash, ocrEnabled.hashCode);
     _$hash = $jc(_$hash, openAccess.hashCode);
     _$hash = $jf(_$hash);
@@ -136,13 +136,13 @@ class _$PredefinedProfile extends PredefinedProfile {
   String toString() {
     return (newBuiltValueToStringHelper(r'PredefinedProfile')
           ..add('type', type)
-          ..add('aiContextEnabled', aiContextEnabled)
           ..add('allowedMatchCount', allowedMatchCount)
-          ..add('confidenceThreshold', confidenceThreshold)
-          ..add('contextAwareness', contextAwareness)
           ..add('entries', entries)
           ..add('id', id)
           ..add('name', name)
+          ..add('aiContextEnabled', aiContextEnabled)
+          ..add('confidenceThreshold', confidenceThreshold)
+          ..add('contextAwareness', contextAwareness)
           ..add('ocrEnabled', ocrEnabled)
           ..add('openAccess', openAccess))
         .toString();
@@ -159,27 +159,10 @@ class PredefinedProfileBuilder
   PredefinedProfileTypeEnum? get type => _$this._type;
   set type(covariant PredefinedProfileTypeEnum? type) => _$this._type = type;
 
-  bool? _aiContextEnabled;
-  bool? get aiContextEnabled => _$this._aiContextEnabled;
-  set aiContextEnabled(covariant bool? aiContextEnabled) =>
-      _$this._aiContextEnabled = aiContextEnabled;
-
   int? _allowedMatchCount;
   int? get allowedMatchCount => _$this._allowedMatchCount;
   set allowedMatchCount(covariant int? allowedMatchCount) =>
       _$this._allowedMatchCount = allowedMatchCount;
-
-  DlpConfidence? _confidenceThreshold;
-  DlpConfidence? get confidenceThreshold => _$this._confidenceThreshold;
-  set confidenceThreshold(covariant DlpConfidence? confidenceThreshold) =>
-      _$this._confidenceThreshold = confidenceThreshold;
-
-  DlpContextAwarenessBuilder? _contextAwareness;
-  DlpContextAwarenessBuilder get contextAwareness =>
-      _$this._contextAwareness ??= DlpContextAwarenessBuilder();
-  set contextAwareness(
-          covariant DlpContextAwarenessBuilder? contextAwareness) =>
-      _$this._contextAwareness = contextAwareness;
 
   ListBuilder<DlpEntry>? _entries;
   ListBuilder<DlpEntry> get entries =>
@@ -194,6 +177,23 @@ class PredefinedProfileBuilder
   String? _name;
   String? get name => _$this._name;
   set name(covariant String? name) => _$this._name = name;
+
+  bool? _aiContextEnabled;
+  bool? get aiContextEnabled => _$this._aiContextEnabled;
+  set aiContextEnabled(covariant bool? aiContextEnabled) =>
+      _$this._aiContextEnabled = aiContextEnabled;
+
+  DlpConfidence? _confidenceThreshold;
+  DlpConfidence? get confidenceThreshold => _$this._confidenceThreshold;
+  set confidenceThreshold(covariant DlpConfidence? confidenceThreshold) =>
+      _$this._confidenceThreshold = confidenceThreshold;
+
+  DlpContextAwarenessBuilder? _contextAwareness;
+  DlpContextAwarenessBuilder get contextAwareness =>
+      _$this._contextAwareness ??= DlpContextAwarenessBuilder();
+  set contextAwareness(
+          covariant DlpContextAwarenessBuilder? contextAwareness) =>
+      _$this._contextAwareness = contextAwareness;
 
   bool? _ocrEnabled;
   bool? get ocrEnabled => _$this._ocrEnabled;
@@ -211,13 +211,13 @@ class PredefinedProfileBuilder
     final $v = _$v;
     if ($v != null) {
       _type = $v.type;
-      _aiContextEnabled = $v.aiContextEnabled;
       _allowedMatchCount = $v.allowedMatchCount;
-      _confidenceThreshold = $v.confidenceThreshold;
-      _contextAwareness = $v.contextAwareness?.toBuilder();
       _entries = $v.entries.toBuilder();
       _id = $v.id;
       _name = $v.name;
+      _aiContextEnabled = $v.aiContextEnabled;
+      _confidenceThreshold = $v.confidenceThreshold;
+      _contextAwareness = $v.contextAwareness?.toBuilder();
       _ocrEnabled = $v.ocrEnabled;
       _openAccess = $v.openAccess;
       _$v = null;
@@ -245,26 +245,27 @@ class PredefinedProfileBuilder
           _$PredefinedProfile._(
             type: BuiltValueNullFieldError.checkNotNull(
                 type, r'PredefinedProfile', 'type'),
-            aiContextEnabled: aiContextEnabled,
             allowedMatchCount: BuiltValueNullFieldError.checkNotNull(
                 allowedMatchCount, r'PredefinedProfile', 'allowedMatchCount'),
-            confidenceThreshold: confidenceThreshold,
-            contextAwareness: _contextAwareness?.build(),
             entries: entries.build(),
             id: BuiltValueNullFieldError.checkNotNull(
                 id, r'PredefinedProfile', 'id'),
             name: BuiltValueNullFieldError.checkNotNull(
                 name, r'PredefinedProfile', 'name'),
+            aiContextEnabled: aiContextEnabled,
+            confidenceThreshold: confidenceThreshold,
+            contextAwareness: _contextAwareness?.build(),
             ocrEnabled: ocrEnabled,
             openAccess: openAccess,
           );
     } catch (_) {
       late String _$failedField;
       try {
-        _$failedField = 'contextAwareness';
-        _contextAwareness?.build();
         _$failedField = 'entries';
         entries.build();
+
+        _$failedField = 'contextAwareness';
+        _contextAwareness?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
             r'PredefinedProfile', _$failedField, e.toString());

@@ -14,30 +14,20 @@ part 'workers_observability_telemetry_event_workers_any_of.g.dart';
 /// WorkersObservabilityTelemetryEventWorkersAnyOf
 ///
 /// Properties:
-/// * [entrypoint] 
-/// * [event] 
 /// * [eventType] 
-/// * [executionModel] 
 /// * [outcome] 
 /// * [requestId] 
 /// * [scriptName] 
+/// * [entrypoint] 
+/// * [event] 
+/// * [executionModel] 
 /// * [scriptVersion] 
 /// * [truncated] 
 @BuiltValue()
 abstract class WorkersObservabilityTelemetryEventWorkersAnyOf implements Built<WorkersObservabilityTelemetryEventWorkersAnyOf, WorkersObservabilityTelemetryEventWorkersAnyOfBuilder> {
-  @BuiltValueField(wireName: r'entrypoint')
-  String? get entrypoint;
-
-  @BuiltValueField(wireName: r'event')
-  BuiltMap<String, WorkersObservabilityTelemetryEventWorkersAnyOfEventValue>? get event;
-
   @BuiltValueField(wireName: r'eventType')
   WorkersObservabilityTelemetryEventWorkersAnyOfEventTypeEnum get eventType;
   // enum eventTypeEnum {  fetch,  scheduled,  alarm,  cron,  queue,  email,  tail,  rpc,  websocket,  unknown,  };
-
-  @BuiltValueField(wireName: r'executionModel')
-  WorkersObservabilityTelemetryEventWorkersAnyOfExecutionModelEnum? get executionModel;
-  // enum executionModelEnum {  durableObject,  stateless,  };
 
   @BuiltValueField(wireName: r'outcome')
   String get outcome;
@@ -47,6 +37,16 @@ abstract class WorkersObservabilityTelemetryEventWorkersAnyOf implements Built<W
 
   @BuiltValueField(wireName: r'scriptName')
   String get scriptName;
+
+  @BuiltValueField(wireName: r'entrypoint')
+  String? get entrypoint;
+
+  @BuiltValueField(wireName: r'event')
+  BuiltMap<String, WorkersObservabilityTelemetryEventWorkersAnyOfEventValue>? get event;
+
+  @BuiltValueField(wireName: r'executionModel')
+  WorkersObservabilityTelemetryEventWorkersAnyOfExecutionModelEnum? get executionModel;
+  // enum executionModelEnum {  durableObject,  stateless,  };
 
   @BuiltValueField(wireName: r'scriptVersion')
   WorkersObservabilityTelemetryEventWorkersAnyOfScriptVersion? get scriptVersion;
@@ -77,32 +77,11 @@ class _$WorkersObservabilityTelemetryEventWorkersAnyOfSerializer implements Prim
     WorkersObservabilityTelemetryEventWorkersAnyOf object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
-    if (object.entrypoint != null) {
-      yield r'entrypoint';
-      yield serializers.serialize(
-        object.entrypoint,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.event != null) {
-      yield r'event';
-      yield serializers.serialize(
-        object.event,
-        specifiedType: const FullType(BuiltMap, [FullType(String), FullType(WorkersObservabilityTelemetryEventWorkersAnyOfEventValue)]),
-      );
-    }
     yield r'eventType';
     yield serializers.serialize(
       object.eventType,
       specifiedType: const FullType(WorkersObservabilityTelemetryEventWorkersAnyOfEventTypeEnum),
     );
-    if (object.executionModel != null) {
-      yield r'executionModel';
-      yield serializers.serialize(
-        object.executionModel,
-        specifiedType: const FullType(WorkersObservabilityTelemetryEventWorkersAnyOfExecutionModelEnum),
-      );
-    }
     yield r'outcome';
     yield serializers.serialize(
       object.outcome,
@@ -118,6 +97,27 @@ class _$WorkersObservabilityTelemetryEventWorkersAnyOfSerializer implements Prim
       object.scriptName,
       specifiedType: const FullType(String),
     );
+    if (object.entrypoint != null) {
+      yield r'entrypoint';
+      yield serializers.serialize(
+        object.entrypoint,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.event != null) {
+      yield r'event';
+      yield serializers.serialize(
+        object.event,
+        specifiedType: const FullType(BuiltMap, [FullType(String), FullType(WorkersObservabilityTelemetryEventWorkersAnyOfEventValue)]),
+      );
+    }
+    if (object.executionModel != null) {
+      yield r'executionModel';
+      yield serializers.serialize(
+        object.executionModel,
+        specifiedType: const FullType(WorkersObservabilityTelemetryEventWorkersAnyOfExecutionModelEnum),
+      );
+    }
     if (object.scriptVersion != null) {
       yield r'scriptVersion';
       yield serializers.serialize(
@@ -155,33 +155,12 @@ class _$WorkersObservabilityTelemetryEventWorkersAnyOfSerializer implements Prim
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'entrypoint':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.entrypoint = valueDes;
-          break;
-        case r'event':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltMap, [FullType(String), FullType(WorkersObservabilityTelemetryEventWorkersAnyOfEventValue)]),
-          ) as BuiltMap<String, WorkersObservabilityTelemetryEventWorkersAnyOfEventValue>;
-          result.event.replace(valueDes);
-          break;
         case r'eventType':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(WorkersObservabilityTelemetryEventWorkersAnyOfEventTypeEnum),
           ) as WorkersObservabilityTelemetryEventWorkersAnyOfEventTypeEnum;
           result.eventType = valueDes;
-          break;
-        case r'executionModel':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(WorkersObservabilityTelemetryEventWorkersAnyOfExecutionModelEnum),
-          ) as WorkersObservabilityTelemetryEventWorkersAnyOfExecutionModelEnum;
-          result.executionModel = valueDes;
           break;
         case r'outcome':
           final valueDes = serializers.deserialize(
@@ -203,6 +182,27 @@ class _$WorkersObservabilityTelemetryEventWorkersAnyOfSerializer implements Prim
             specifiedType: const FullType(String),
           ) as String;
           result.scriptName = valueDes;
+          break;
+        case r'entrypoint':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.entrypoint = valueDes;
+          break;
+        case r'event':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BuiltMap, [FullType(String), FullType(WorkersObservabilityTelemetryEventWorkersAnyOfEventValue)]),
+          ) as BuiltMap<String, WorkersObservabilityTelemetryEventWorkersAnyOfEventValue>;
+          result.event.replace(valueDes);
+          break;
+        case r'executionModel':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(WorkersObservabilityTelemetryEventWorkersAnyOfExecutionModelEnum),
+          ) as WorkersObservabilityTelemetryEventWorkersAnyOfExecutionModelEnum;
+          result.executionModel = valueDes;
           break;
         case r'scriptVersion':
           final valueDes = serializers.deserialize(

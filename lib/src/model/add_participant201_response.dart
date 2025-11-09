@@ -7,14 +7,15 @@ import 'package:cloudflare_dart/src/model/realtimekit_generic_success_response.d
 import 'package:cloudflare_dart/src/model/add_participant201_response_all_of_data.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
+import 'package:built_value/json_object.dart';
 
 part 'add_participant201_response.g.dart';
 
 /// AddParticipant201Response
 ///
 /// Properties:
-/// * [data] 
 /// * [success] - Success status of the operation
+/// * [data] 
 @BuiltValue()
 abstract class AddParticipant201Response implements RealtimekitGenericSuccessResponse, Built<AddParticipant201Response, AddParticipant201ResponseBuilder> {
   AddParticipant201Response._();

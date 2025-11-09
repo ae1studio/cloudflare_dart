@@ -8,14 +8,6 @@ part of 'mconn_snapshot_disk.dart';
 
 class _$MconnSnapshotDisk extends MconnSnapshotDisk {
   @override
-  final String? connectorId;
-  @override
-  final num? discards;
-  @override
-  final num? discardsMerged;
-  @override
-  final num? flushes;
-  @override
   final num inProgress;
   @override
   final num major;
@@ -28,15 +20,9 @@ class _$MconnSnapshotDisk extends MconnSnapshotDisk {
   @override
   final num reads;
   @override
-  final num? sectorsDiscarded;
-  @override
   final num sectorsRead;
   @override
   final num sectorsWritten;
-  @override
-  final num? timeDiscardingMs;
-  @override
-  final num? timeFlushingMs;
   @override
   final num timeInProgressMs;
   @override
@@ -49,33 +35,47 @@ class _$MconnSnapshotDisk extends MconnSnapshotDisk {
   final num writes;
   @override
   final num writesMerged;
+  @override
+  final String? connectorId;
+  @override
+  final num? discards;
+  @override
+  final num? discardsMerged;
+  @override
+  final num? flushes;
+  @override
+  final num? sectorsDiscarded;
+  @override
+  final num? timeDiscardingMs;
+  @override
+  final num? timeFlushingMs;
 
   factory _$MconnSnapshotDisk(
           [void Function(MconnSnapshotDiskBuilder)? updates]) =>
       (MconnSnapshotDiskBuilder()..update(updates))._build();
 
   _$MconnSnapshotDisk._(
-      {this.connectorId,
-      this.discards,
-      this.discardsMerged,
-      this.flushes,
-      required this.inProgress,
+      {required this.inProgress,
       required this.major,
       required this.merged,
       required this.minor,
       required this.name,
       required this.reads,
-      this.sectorsDiscarded,
       required this.sectorsRead,
       required this.sectorsWritten,
-      this.timeDiscardingMs,
-      this.timeFlushingMs,
       required this.timeInProgressMs,
       required this.timeReadingMs,
       required this.timeWritingMs,
       required this.weightedTimeInProgressMs,
       required this.writes,
-      required this.writesMerged})
+      required this.writesMerged,
+      this.connectorId,
+      this.discards,
+      this.discardsMerged,
+      this.flushes,
+      this.sectorsDiscarded,
+      this.timeDiscardingMs,
+      this.timeFlushingMs})
       : super._();
   @override
   MconnSnapshotDisk rebuild(void Function(MconnSnapshotDiskBuilder) updates) =>
@@ -89,53 +89,53 @@ class _$MconnSnapshotDisk extends MconnSnapshotDisk {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is MconnSnapshotDisk &&
-        connectorId == other.connectorId &&
-        discards == other.discards &&
-        discardsMerged == other.discardsMerged &&
-        flushes == other.flushes &&
         inProgress == other.inProgress &&
         major == other.major &&
         merged == other.merged &&
         minor == other.minor &&
         name == other.name &&
         reads == other.reads &&
-        sectorsDiscarded == other.sectorsDiscarded &&
         sectorsRead == other.sectorsRead &&
         sectorsWritten == other.sectorsWritten &&
-        timeDiscardingMs == other.timeDiscardingMs &&
-        timeFlushingMs == other.timeFlushingMs &&
         timeInProgressMs == other.timeInProgressMs &&
         timeReadingMs == other.timeReadingMs &&
         timeWritingMs == other.timeWritingMs &&
         weightedTimeInProgressMs == other.weightedTimeInProgressMs &&
         writes == other.writes &&
-        writesMerged == other.writesMerged;
+        writesMerged == other.writesMerged &&
+        connectorId == other.connectorId &&
+        discards == other.discards &&
+        discardsMerged == other.discardsMerged &&
+        flushes == other.flushes &&
+        sectorsDiscarded == other.sectorsDiscarded &&
+        timeDiscardingMs == other.timeDiscardingMs &&
+        timeFlushingMs == other.timeFlushingMs;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, connectorId.hashCode);
-    _$hash = $jc(_$hash, discards.hashCode);
-    _$hash = $jc(_$hash, discardsMerged.hashCode);
-    _$hash = $jc(_$hash, flushes.hashCode);
     _$hash = $jc(_$hash, inProgress.hashCode);
     _$hash = $jc(_$hash, major.hashCode);
     _$hash = $jc(_$hash, merged.hashCode);
     _$hash = $jc(_$hash, minor.hashCode);
     _$hash = $jc(_$hash, name.hashCode);
     _$hash = $jc(_$hash, reads.hashCode);
-    _$hash = $jc(_$hash, sectorsDiscarded.hashCode);
     _$hash = $jc(_$hash, sectorsRead.hashCode);
     _$hash = $jc(_$hash, sectorsWritten.hashCode);
-    _$hash = $jc(_$hash, timeDiscardingMs.hashCode);
-    _$hash = $jc(_$hash, timeFlushingMs.hashCode);
     _$hash = $jc(_$hash, timeInProgressMs.hashCode);
     _$hash = $jc(_$hash, timeReadingMs.hashCode);
     _$hash = $jc(_$hash, timeWritingMs.hashCode);
     _$hash = $jc(_$hash, weightedTimeInProgressMs.hashCode);
     _$hash = $jc(_$hash, writes.hashCode);
     _$hash = $jc(_$hash, writesMerged.hashCode);
+    _$hash = $jc(_$hash, connectorId.hashCode);
+    _$hash = $jc(_$hash, discards.hashCode);
+    _$hash = $jc(_$hash, discardsMerged.hashCode);
+    _$hash = $jc(_$hash, flushes.hashCode);
+    _$hash = $jc(_$hash, sectorsDiscarded.hashCode);
+    _$hash = $jc(_$hash, timeDiscardingMs.hashCode);
+    _$hash = $jc(_$hash, timeFlushingMs.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -143,27 +143,27 @@ class _$MconnSnapshotDisk extends MconnSnapshotDisk {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'MconnSnapshotDisk')
-          ..add('connectorId', connectorId)
-          ..add('discards', discards)
-          ..add('discardsMerged', discardsMerged)
-          ..add('flushes', flushes)
           ..add('inProgress', inProgress)
           ..add('major', major)
           ..add('merged', merged)
           ..add('minor', minor)
           ..add('name', name)
           ..add('reads', reads)
-          ..add('sectorsDiscarded', sectorsDiscarded)
           ..add('sectorsRead', sectorsRead)
           ..add('sectorsWritten', sectorsWritten)
-          ..add('timeDiscardingMs', timeDiscardingMs)
-          ..add('timeFlushingMs', timeFlushingMs)
           ..add('timeInProgressMs', timeInProgressMs)
           ..add('timeReadingMs', timeReadingMs)
           ..add('timeWritingMs', timeWritingMs)
           ..add('weightedTimeInProgressMs', weightedTimeInProgressMs)
           ..add('writes', writes)
-          ..add('writesMerged', writesMerged))
+          ..add('writesMerged', writesMerged)
+          ..add('connectorId', connectorId)
+          ..add('discards', discards)
+          ..add('discardsMerged', discardsMerged)
+          ..add('flushes', flushes)
+          ..add('sectorsDiscarded', sectorsDiscarded)
+          ..add('timeDiscardingMs', timeDiscardingMs)
+          ..add('timeFlushingMs', timeFlushingMs))
         .toString();
   }
 }
@@ -171,23 +171,6 @@ class _$MconnSnapshotDisk extends MconnSnapshotDisk {
 class MconnSnapshotDiskBuilder
     implements Builder<MconnSnapshotDisk, MconnSnapshotDiskBuilder> {
   _$MconnSnapshotDisk? _$v;
-
-  String? _connectorId;
-  String? get connectorId => _$this._connectorId;
-  set connectorId(String? connectorId) => _$this._connectorId = connectorId;
-
-  num? _discards;
-  num? get discards => _$this._discards;
-  set discards(num? discards) => _$this._discards = discards;
-
-  num? _discardsMerged;
-  num? get discardsMerged => _$this._discardsMerged;
-  set discardsMerged(num? discardsMerged) =>
-      _$this._discardsMerged = discardsMerged;
-
-  num? _flushes;
-  num? get flushes => _$this._flushes;
-  set flushes(num? flushes) => _$this._flushes = flushes;
 
   num? _inProgress;
   num? get inProgress => _$this._inProgress;
@@ -213,11 +196,6 @@ class MconnSnapshotDiskBuilder
   num? get reads => _$this._reads;
   set reads(num? reads) => _$this._reads = reads;
 
-  num? _sectorsDiscarded;
-  num? get sectorsDiscarded => _$this._sectorsDiscarded;
-  set sectorsDiscarded(num? sectorsDiscarded) =>
-      _$this._sectorsDiscarded = sectorsDiscarded;
-
   num? _sectorsRead;
   num? get sectorsRead => _$this._sectorsRead;
   set sectorsRead(num? sectorsRead) => _$this._sectorsRead = sectorsRead;
@@ -226,16 +204,6 @@ class MconnSnapshotDiskBuilder
   num? get sectorsWritten => _$this._sectorsWritten;
   set sectorsWritten(num? sectorsWritten) =>
       _$this._sectorsWritten = sectorsWritten;
-
-  num? _timeDiscardingMs;
-  num? get timeDiscardingMs => _$this._timeDiscardingMs;
-  set timeDiscardingMs(num? timeDiscardingMs) =>
-      _$this._timeDiscardingMs = timeDiscardingMs;
-
-  num? _timeFlushingMs;
-  num? get timeFlushingMs => _$this._timeFlushingMs;
-  set timeFlushingMs(num? timeFlushingMs) =>
-      _$this._timeFlushingMs = timeFlushingMs;
 
   num? _timeInProgressMs;
   num? get timeInProgressMs => _$this._timeInProgressMs;
@@ -265,6 +233,38 @@ class MconnSnapshotDiskBuilder
   num? get writesMerged => _$this._writesMerged;
   set writesMerged(num? writesMerged) => _$this._writesMerged = writesMerged;
 
+  String? _connectorId;
+  String? get connectorId => _$this._connectorId;
+  set connectorId(String? connectorId) => _$this._connectorId = connectorId;
+
+  num? _discards;
+  num? get discards => _$this._discards;
+  set discards(num? discards) => _$this._discards = discards;
+
+  num? _discardsMerged;
+  num? get discardsMerged => _$this._discardsMerged;
+  set discardsMerged(num? discardsMerged) =>
+      _$this._discardsMerged = discardsMerged;
+
+  num? _flushes;
+  num? get flushes => _$this._flushes;
+  set flushes(num? flushes) => _$this._flushes = flushes;
+
+  num? _sectorsDiscarded;
+  num? get sectorsDiscarded => _$this._sectorsDiscarded;
+  set sectorsDiscarded(num? sectorsDiscarded) =>
+      _$this._sectorsDiscarded = sectorsDiscarded;
+
+  num? _timeDiscardingMs;
+  num? get timeDiscardingMs => _$this._timeDiscardingMs;
+  set timeDiscardingMs(num? timeDiscardingMs) =>
+      _$this._timeDiscardingMs = timeDiscardingMs;
+
+  num? _timeFlushingMs;
+  num? get timeFlushingMs => _$this._timeFlushingMs;
+  set timeFlushingMs(num? timeFlushingMs) =>
+      _$this._timeFlushingMs = timeFlushingMs;
+
   MconnSnapshotDiskBuilder() {
     MconnSnapshotDisk._defaults(this);
   }
@@ -272,27 +272,27 @@ class MconnSnapshotDiskBuilder
   MconnSnapshotDiskBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _connectorId = $v.connectorId;
-      _discards = $v.discards;
-      _discardsMerged = $v.discardsMerged;
-      _flushes = $v.flushes;
       _inProgress = $v.inProgress;
       _major = $v.major;
       _merged = $v.merged;
       _minor = $v.minor;
       _name = $v.name;
       _reads = $v.reads;
-      _sectorsDiscarded = $v.sectorsDiscarded;
       _sectorsRead = $v.sectorsRead;
       _sectorsWritten = $v.sectorsWritten;
-      _timeDiscardingMs = $v.timeDiscardingMs;
-      _timeFlushingMs = $v.timeFlushingMs;
       _timeInProgressMs = $v.timeInProgressMs;
       _timeReadingMs = $v.timeReadingMs;
       _timeWritingMs = $v.timeWritingMs;
       _weightedTimeInProgressMs = $v.weightedTimeInProgressMs;
       _writes = $v.writes;
       _writesMerged = $v.writesMerged;
+      _connectorId = $v.connectorId;
+      _discards = $v.discards;
+      _discardsMerged = $v.discardsMerged;
+      _flushes = $v.flushes;
+      _sectorsDiscarded = $v.sectorsDiscarded;
+      _timeDiscardingMs = $v.timeDiscardingMs;
+      _timeFlushingMs = $v.timeFlushingMs;
       _$v = null;
     }
     return this;
@@ -314,10 +314,6 @@ class MconnSnapshotDiskBuilder
   _$MconnSnapshotDisk _build() {
     final _$result = _$v ??
         _$MconnSnapshotDisk._(
-          connectorId: connectorId,
-          discards: discards,
-          discardsMerged: discardsMerged,
-          flushes: flushes,
           inProgress: BuiltValueNullFieldError.checkNotNull(
               inProgress, r'MconnSnapshotDisk', 'inProgress'),
           major: BuiltValueNullFieldError.checkNotNull(
@@ -330,13 +326,10 @@ class MconnSnapshotDiskBuilder
               name, r'MconnSnapshotDisk', 'name'),
           reads: BuiltValueNullFieldError.checkNotNull(
               reads, r'MconnSnapshotDisk', 'reads'),
-          sectorsDiscarded: sectorsDiscarded,
           sectorsRead: BuiltValueNullFieldError.checkNotNull(
               sectorsRead, r'MconnSnapshotDisk', 'sectorsRead'),
           sectorsWritten: BuiltValueNullFieldError.checkNotNull(
               sectorsWritten, r'MconnSnapshotDisk', 'sectorsWritten'),
-          timeDiscardingMs: timeDiscardingMs,
-          timeFlushingMs: timeFlushingMs,
           timeInProgressMs: BuiltValueNullFieldError.checkNotNull(
               timeInProgressMs, r'MconnSnapshotDisk', 'timeInProgressMs'),
           timeReadingMs: BuiltValueNullFieldError.checkNotNull(
@@ -351,6 +344,13 @@ class MconnSnapshotDiskBuilder
               writes, r'MconnSnapshotDisk', 'writes'),
           writesMerged: BuiltValueNullFieldError.checkNotNull(
               writesMerged, r'MconnSnapshotDisk', 'writesMerged'),
+          connectorId: connectorId,
+          discards: discards,
+          discardsMerged: discardsMerged,
+          flushes: flushes,
+          sectorsDiscarded: sectorsDiscarded,
+          timeDiscardingMs: timeDiscardingMs,
+          timeFlushingMs: timeFlushingMs,
         );
     replace(_$result);
     return _$result;

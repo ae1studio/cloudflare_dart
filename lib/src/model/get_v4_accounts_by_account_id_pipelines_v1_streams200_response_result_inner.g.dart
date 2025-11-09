@@ -11,10 +11,6 @@ class _$GetV4AccountsByAccountIdPipelinesV1Streams200ResponseResultInner
   @override
   final DateTime createdAt;
   @override
-  final String? endpoint;
-  @override
-  final CloudflarePipelinesFormat? format;
-  @override
   final GetV4AccountsByAccountIdPipelinesV1Streams200ResponseResultInnerHttp
       http;
   @override
@@ -24,12 +20,16 @@ class _$GetV4AccountsByAccountIdPipelinesV1Streams200ResponseResultInner
   @override
   final String name;
   @override
-  final CloudflarePipelinesConnectionSchema? schema;
-  @override
   final int version;
   @override
   final GetV4AccountsByAccountIdPipelinesV1Streams200ResponseResultInnerWorkerBinding
       workerBinding;
+  @override
+  final String? endpoint;
+  @override
+  final CloudflarePipelinesFormat? format;
+  @override
+  final CloudflarePipelinesConnectionSchema? schema;
 
   factory _$GetV4AccountsByAccountIdPipelinesV1Streams200ResponseResultInner(
           [void Function(
@@ -41,15 +41,15 @@ class _$GetV4AccountsByAccountIdPipelinesV1Streams200ResponseResultInner
 
   _$GetV4AccountsByAccountIdPipelinesV1Streams200ResponseResultInner._(
       {required this.createdAt,
-      this.endpoint,
-      this.format,
       required this.http,
       required this.id,
       required this.modifiedAt,
       required this.name,
-      this.schema,
       required this.version,
-      required this.workerBinding})
+      required this.workerBinding,
+      this.endpoint,
+      this.format,
+      this.schema})
       : super._();
   @override
   GetV4AccountsByAccountIdPipelinesV1Streams200ResponseResultInner rebuild(
@@ -70,30 +70,30 @@ class _$GetV4AccountsByAccountIdPipelinesV1Streams200ResponseResultInner
     return other
             is GetV4AccountsByAccountIdPipelinesV1Streams200ResponseResultInner &&
         createdAt == other.createdAt &&
-        endpoint == other.endpoint &&
-        format == other.format &&
         http == other.http &&
         id == other.id &&
         modifiedAt == other.modifiedAt &&
         name == other.name &&
-        schema == other.schema &&
         version == other.version &&
-        workerBinding == other.workerBinding;
+        workerBinding == other.workerBinding &&
+        endpoint == other.endpoint &&
+        format == other.format &&
+        schema == other.schema;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
     _$hash = $jc(_$hash, createdAt.hashCode);
-    _$hash = $jc(_$hash, endpoint.hashCode);
-    _$hash = $jc(_$hash, format.hashCode);
     _$hash = $jc(_$hash, http.hashCode);
     _$hash = $jc(_$hash, id.hashCode);
     _$hash = $jc(_$hash, modifiedAt.hashCode);
     _$hash = $jc(_$hash, name.hashCode);
-    _$hash = $jc(_$hash, schema.hashCode);
     _$hash = $jc(_$hash, version.hashCode);
     _$hash = $jc(_$hash, workerBinding.hashCode);
+    _$hash = $jc(_$hash, endpoint.hashCode);
+    _$hash = $jc(_$hash, format.hashCode);
+    _$hash = $jc(_$hash, schema.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -103,15 +103,15 @@ class _$GetV4AccountsByAccountIdPipelinesV1Streams200ResponseResultInner
     return (newBuiltValueToStringHelper(
             r'GetV4AccountsByAccountIdPipelinesV1Streams200ResponseResultInner')
           ..add('createdAt', createdAt)
-          ..add('endpoint', endpoint)
-          ..add('format', format)
           ..add('http', http)
           ..add('id', id)
           ..add('modifiedAt', modifiedAt)
           ..add('name', name)
-          ..add('schema', schema)
           ..add('version', version)
-          ..add('workerBinding', workerBinding))
+          ..add('workerBinding', workerBinding)
+          ..add('endpoint', endpoint)
+          ..add('format', format)
+          ..add('schema', schema))
         .toString();
   }
 }
@@ -126,16 +126,6 @@ class GetV4AccountsByAccountIdPipelinesV1Streams200ResponseResultInnerBuilder
   DateTime? _createdAt;
   DateTime? get createdAt => _$this._createdAt;
   set createdAt(DateTime? createdAt) => _$this._createdAt = createdAt;
-
-  String? _endpoint;
-  String? get endpoint => _$this._endpoint;
-  set endpoint(String? endpoint) => _$this._endpoint = endpoint;
-
-  CloudflarePipelinesFormatBuilder? _format;
-  CloudflarePipelinesFormatBuilder get format =>
-      _$this._format ??= CloudflarePipelinesFormatBuilder();
-  set format(CloudflarePipelinesFormatBuilder? format) =>
-      _$this._format = format;
 
   GetV4AccountsByAccountIdPipelinesV1Streams200ResponseResultInnerHttpBuilder?
       _http;
@@ -159,12 +149,6 @@ class GetV4AccountsByAccountIdPipelinesV1Streams200ResponseResultInnerBuilder
   String? get name => _$this._name;
   set name(String? name) => _$this._name = name;
 
-  CloudflarePipelinesConnectionSchemaBuilder? _schema;
-  CloudflarePipelinesConnectionSchemaBuilder get schema =>
-      _$this._schema ??= CloudflarePipelinesConnectionSchemaBuilder();
-  set schema(CloudflarePipelinesConnectionSchemaBuilder? schema) =>
-      _$this._schema = schema;
-
   int? _version;
   int? get version => _$this._version;
   set version(int? version) => _$this._version = version;
@@ -179,6 +163,22 @@ class GetV4AccountsByAccountIdPipelinesV1Streams200ResponseResultInnerBuilder
               workerBinding) =>
       _$this._workerBinding = workerBinding;
 
+  String? _endpoint;
+  String? get endpoint => _$this._endpoint;
+  set endpoint(String? endpoint) => _$this._endpoint = endpoint;
+
+  CloudflarePipelinesFormatBuilder? _format;
+  CloudflarePipelinesFormatBuilder get format =>
+      _$this._format ??= CloudflarePipelinesFormatBuilder();
+  set format(CloudflarePipelinesFormatBuilder? format) =>
+      _$this._format = format;
+
+  CloudflarePipelinesConnectionSchemaBuilder? _schema;
+  CloudflarePipelinesConnectionSchemaBuilder get schema =>
+      _$this._schema ??= CloudflarePipelinesConnectionSchemaBuilder();
+  set schema(CloudflarePipelinesConnectionSchemaBuilder? schema) =>
+      _$this._schema = schema;
+
   GetV4AccountsByAccountIdPipelinesV1Streams200ResponseResultInnerBuilder() {
     GetV4AccountsByAccountIdPipelinesV1Streams200ResponseResultInner._defaults(
         this);
@@ -189,15 +189,15 @@ class GetV4AccountsByAccountIdPipelinesV1Streams200ResponseResultInnerBuilder
     final $v = _$v;
     if ($v != null) {
       _createdAt = $v.createdAt;
-      _endpoint = $v.endpoint;
-      _format = $v.format?.toBuilder();
       _http = $v.http.toBuilder();
       _id = $v.id;
       _modifiedAt = $v.modifiedAt;
       _name = $v.name;
-      _schema = $v.schema?.toBuilder();
       _version = $v.version;
       _workerBinding = $v.workerBinding.toBuilder();
+      _endpoint = $v.endpoint;
+      _format = $v.format?.toBuilder();
+      _schema = $v.schema?.toBuilder();
       _$v = null;
     }
     return this;
@@ -231,8 +231,6 @@ class GetV4AccountsByAccountIdPipelinesV1Streams200ResponseResultInnerBuilder
                 createdAt,
                 r'GetV4AccountsByAccountIdPipelinesV1Streams200ResponseResultInner',
                 'createdAt'),
-            endpoint: endpoint,
-            format: _format?.build(),
             http: http.build(),
             id: BuiltValueNullFieldError.checkNotNull(
                 id,
@@ -246,26 +244,28 @@ class GetV4AccountsByAccountIdPipelinesV1Streams200ResponseResultInnerBuilder
                 name,
                 r'GetV4AccountsByAccountIdPipelinesV1Streams200ResponseResultInner',
                 'name'),
-            schema: _schema?.build(),
             version: BuiltValueNullFieldError.checkNotNull(
                 version,
                 r'GetV4AccountsByAccountIdPipelinesV1Streams200ResponseResultInner',
                 'version'),
             workerBinding: workerBinding.build(),
+            endpoint: endpoint,
+            format: _format?.build(),
+            schema: _schema?.build(),
           );
     } catch (_) {
       late String _$failedField;
       try {
-        _$failedField = 'format';
-        _format?.build();
         _$failedField = 'http';
         http.build();
 
-        _$failedField = 'schema';
-        _schema?.build();
-
         _$failedField = 'workerBinding';
         workerBinding.build();
+
+        _$failedField = 'format';
+        _format?.build();
+        _$failedField = 'schema';
+        _schema?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
             r'GetV4AccountsByAccountIdPipelinesV1Streams200ResponseResultInner',

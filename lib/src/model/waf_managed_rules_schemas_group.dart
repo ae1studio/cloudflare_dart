@@ -16,12 +16,12 @@ part 'waf_managed_rules_schemas_group.g.dart';
 /// Properties:
 /// * [description] - Defines an informative summary of what the rule group does.
 /// * [id] - Defines the unique identifier of the rule group.
-/// * [modifiedRulesCount] - Defines the number of rules within the group that have been modified from their default configuration.
 /// * [name] - Defines the name of the rule group.
-/// * [packageId] - Defines the unique identifier of a WAF package.
 /// * [rulesCount] - Defines the number of rules in the current rule group.
-/// * [allowedModes] - Defines the available states for the rule group.
 /// * [mode] 
+/// * [modifiedRulesCount] - Defines the number of rules within the group that have been modified from their default configuration.
+/// * [packageId] - Defines the unique identifier of a WAF package.
+/// * [allowedModes] - Defines the available states for the rule group.
 @BuiltValue()
 abstract class WafManagedRulesSchemasGroup implements WafManagedRulesGroup, Built<WafManagedRulesSchemasGroup, WafManagedRulesSchemasGroupBuilder> {
   @BuiltValueField(wireName: r'mode')

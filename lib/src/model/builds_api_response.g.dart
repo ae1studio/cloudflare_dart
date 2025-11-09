@@ -18,11 +18,11 @@ abstract class BuildsAPIResponseBuilder {
   JsonObject? get result;
   set result(JsonObject? result);
 
-  BuildsPaginationInfoBuilder get resultInfo;
-  set resultInfo(BuildsPaginationInfoBuilder? resultInfo);
-
   bool? get success;
   set success(bool? success);
+
+  BuildsPaginationInfoBuilder get resultInfo;
+  set resultInfo(BuildsPaginationInfoBuilder? resultInfo);
 }
 
 class _$$BuildsAPIResponse extends $BuildsAPIResponse {
@@ -33,9 +33,9 @@ class _$$BuildsAPIResponse extends $BuildsAPIResponse {
   @override
   final JsonObject? result;
   @override
-  final BuildsPaginationInfo? resultInfo;
-  @override
   final bool success;
+  @override
+  final BuildsPaginationInfo? resultInfo;
 
   factory _$$BuildsAPIResponse(
           [void Function($BuildsAPIResponseBuilder)? updates]) =>
@@ -45,8 +45,8 @@ class _$$BuildsAPIResponse extends $BuildsAPIResponse {
       {required this.errors,
       required this.messages,
       this.result,
-      this.resultInfo,
-      required this.success})
+      required this.success,
+      this.resultInfo})
       : super._();
   @override
   $BuildsAPIResponse rebuild(
@@ -64,8 +64,8 @@ class _$$BuildsAPIResponse extends $BuildsAPIResponse {
         errors == other.errors &&
         messages == other.messages &&
         result == other.result &&
-        resultInfo == other.resultInfo &&
-        success == other.success;
+        success == other.success &&
+        resultInfo == other.resultInfo;
   }
 
   @override
@@ -74,8 +74,8 @@ class _$$BuildsAPIResponse extends $BuildsAPIResponse {
     _$hash = $jc(_$hash, errors.hashCode);
     _$hash = $jc(_$hash, messages.hashCode);
     _$hash = $jc(_$hash, result.hashCode);
-    _$hash = $jc(_$hash, resultInfo.hashCode);
     _$hash = $jc(_$hash, success.hashCode);
+    _$hash = $jc(_$hash, resultInfo.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -86,8 +86,8 @@ class _$$BuildsAPIResponse extends $BuildsAPIResponse {
           ..add('errors', errors)
           ..add('messages', messages)
           ..add('result', result)
-          ..add('resultInfo', resultInfo)
-          ..add('success', success))
+          ..add('success', success)
+          ..add('resultInfo', resultInfo))
         .toString();
   }
 }
@@ -114,15 +114,15 @@ class $BuildsAPIResponseBuilder
   JsonObject? get result => _$this._result;
   set result(covariant JsonObject? result) => _$this._result = result;
 
+  bool? _success;
+  bool? get success => _$this._success;
+  set success(covariant bool? success) => _$this._success = success;
+
   BuildsPaginationInfoBuilder? _resultInfo;
   BuildsPaginationInfoBuilder get resultInfo =>
       _$this._resultInfo ??= BuildsPaginationInfoBuilder();
   set resultInfo(covariant BuildsPaginationInfoBuilder? resultInfo) =>
       _$this._resultInfo = resultInfo;
-
-  bool? _success;
-  bool? get success => _$this._success;
-  set success(covariant bool? success) => _$this._success = success;
 
   $BuildsAPIResponseBuilder() {
     $BuildsAPIResponse._defaults(this);
@@ -134,8 +134,8 @@ class $BuildsAPIResponseBuilder
       _errors = $v.errors.toBuilder();
       _messages = $v.messages.toBuilder();
       _result = $v.result;
-      _resultInfo = $v.resultInfo?.toBuilder();
       _success = $v.success;
+      _resultInfo = $v.resultInfo?.toBuilder();
       _$v = null;
     }
     return this;
@@ -162,9 +162,9 @@ class $BuildsAPIResponseBuilder
             errors: errors.build(),
             messages: messages.build(),
             result: result,
-            resultInfo: _resultInfo?.build(),
             success: BuiltValueNullFieldError.checkNotNull(
                 success, r'$BuildsAPIResponse', 'success'),
+            resultInfo: _resultInfo?.build(),
           );
     } catch (_) {
       late String _$failedField;

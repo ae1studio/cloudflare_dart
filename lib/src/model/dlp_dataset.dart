@@ -15,10 +15,8 @@ part 'dlp_dataset.g.dart';
 /// DlpDataset
 ///
 /// Properties:
-/// * [caseSensitive] 
 /// * [columns] 
 /// * [createdAt] 
-/// * [description] - The description of the dataset.
 /// * [encodingVersion] 
 /// * [id] 
 /// * [name] 
@@ -27,20 +25,15 @@ part 'dlp_dataset.g.dart';
 /// * [status] 
 /// * [updatedAt] - When the dataset was last updated.  This includes name or description changes as well as uploads.
 /// * [uploads] 
+/// * [caseSensitive] 
+/// * [description] - The description of the dataset.
 @BuiltValue()
 abstract class DlpDataset implements Built<DlpDataset, DlpDatasetBuilder> {
-  @BuiltValueField(wireName: r'case_sensitive')
-  bool? get caseSensitive;
-
   @BuiltValueField(wireName: r'columns')
   BuiltList<DlpDatasetColumn> get columns;
 
   @BuiltValueField(wireName: r'created_at')
   DateTime get createdAt;
-
-  /// The description of the dataset.
-  @BuiltValueField(wireName: r'description')
-  String? get description;
 
   @BuiltValueField(wireName: r'encoding_version')
   int get encodingVersion;
@@ -68,6 +61,13 @@ abstract class DlpDataset implements Built<DlpDataset, DlpDatasetBuilder> {
   @BuiltValueField(wireName: r'uploads')
   BuiltList<DlpDatasetUpload> get uploads;
 
+  @BuiltValueField(wireName: r'case_sensitive')
+  bool? get caseSensitive;
+
+  /// The description of the dataset.
+  @BuiltValueField(wireName: r'description')
+  String? get description;
+
   DlpDataset._();
 
   factory DlpDataset([void updates(DlpDatasetBuilder b)]) = _$DlpDataset;
@@ -91,13 +91,6 @@ class _$DlpDatasetSerializer implements PrimitiveSerializer<DlpDataset> {
     DlpDataset object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
-    if (object.caseSensitive != null) {
-      yield r'case_sensitive';
-      yield serializers.serialize(
-        object.caseSensitive,
-        specifiedType: const FullType(bool),
-      );
-    }
     yield r'columns';
     yield serializers.serialize(
       object.columns,
@@ -108,13 +101,6 @@ class _$DlpDatasetSerializer implements PrimitiveSerializer<DlpDataset> {
       object.createdAt,
       specifiedType: const FullType(DateTime),
     );
-    if (object.description != null) {
-      yield r'description';
-      yield serializers.serialize(
-        object.description,
-        specifiedType: const FullType.nullable(String),
-      );
-    }
     yield r'encoding_version';
     yield serializers.serialize(
       object.encodingVersion,
@@ -155,6 +141,20 @@ class _$DlpDatasetSerializer implements PrimitiveSerializer<DlpDataset> {
       object.uploads,
       specifiedType: const FullType(BuiltList, [FullType(DlpDatasetUpload)]),
     );
+    if (object.caseSensitive != null) {
+      yield r'case_sensitive';
+      yield serializers.serialize(
+        object.caseSensitive,
+        specifiedType: const FullType(bool),
+      );
+    }
+    if (object.description != null) {
+      yield r'description';
+      yield serializers.serialize(
+        object.description,
+        specifiedType: const FullType.nullable(String),
+      );
+    }
   }
 
   @override
@@ -178,13 +178,6 @@ class _$DlpDatasetSerializer implements PrimitiveSerializer<DlpDataset> {
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'case_sensitive':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
-          result.caseSensitive = valueDes;
-          break;
         case r'columns':
           final valueDes = serializers.deserialize(
             value,
@@ -198,14 +191,6 @@ class _$DlpDatasetSerializer implements PrimitiveSerializer<DlpDataset> {
             specifiedType: const FullType(DateTime),
           ) as DateTime;
           result.createdAt = valueDes;
-          break;
-        case r'description':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
-          if (valueDes == null) continue;
-          result.description = valueDes;
           break;
         case r'encoding_version':
           final valueDes = serializers.deserialize(
@@ -262,6 +247,21 @@ class _$DlpDatasetSerializer implements PrimitiveSerializer<DlpDataset> {
             specifiedType: const FullType(BuiltList, [FullType(DlpDatasetUpload)]),
           ) as BuiltList<DlpDatasetUpload>;
           result.uploads.replace(valueDes);
+          break;
+        case r'case_sensitive':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(bool),
+          ) as bool;
+          result.caseSensitive = valueDes;
+          break;
+        case r'description':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType.nullable(String),
+          ) as String?;
+          if (valueDes == null) continue;
+          result.description = valueDes;
           break;
         default:
           unhandled.add(key);

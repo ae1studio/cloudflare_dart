@@ -11,11 +11,14 @@ part 'zero_trust_gateway_expiration.g.dart';
 /// Defines the expiration time stamp and default duration of a DNS policy. Takes precedence over the policy's `schedule` configuration, if any. This  does not apply to HTTP or network policies. Settable only for `dns` rules.
 ///
 /// Properties:
+/// * [expiresAt] 
 /// * [duration] - Defines the default duration a policy active in minutes. Must set in order to use the `reset_expiration` endpoint on this rule.
 /// * [expired] - Indicates whether the policy is expired.
-/// * [expiresAt] 
 @BuiltValue()
 abstract class ZeroTrustGatewayExpiration implements Built<ZeroTrustGatewayExpiration, ZeroTrustGatewayExpirationBuilder> {
+  @BuiltValueField(wireName: r'expires_at')
+  DateTime get expiresAt;
+
   /// Defines the default duration a policy active in minutes. Must set in order to use the `reset_expiration` endpoint on this rule.
   @BuiltValueField(wireName: r'duration')
   int? get duration;
@@ -23,9 +26,6 @@ abstract class ZeroTrustGatewayExpiration implements Built<ZeroTrustGatewayExpir
   /// Indicates whether the policy is expired.
   @BuiltValueField(wireName: r'expired')
   bool? get expired;
-
-  @BuiltValueField(wireName: r'expires_at')
-  DateTime get expiresAt;
 
   ZeroTrustGatewayExpiration._();
 
@@ -50,6 +50,11 @@ class _$ZeroTrustGatewayExpirationSerializer implements PrimitiveSerializer<Zero
     ZeroTrustGatewayExpiration object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    yield r'expires_at';
+    yield serializers.serialize(
+      object.expiresAt,
+      specifiedType: const FullType(DateTime),
+    );
     if (object.duration != null) {
       yield r'duration';
       yield serializers.serialize(
@@ -64,11 +69,6 @@ class _$ZeroTrustGatewayExpirationSerializer implements PrimitiveSerializer<Zero
         specifiedType: const FullType(bool),
       );
     }
-    yield r'expires_at';
-    yield serializers.serialize(
-      object.expiresAt,
-      specifiedType: const FullType(DateTime),
-    );
   }
 
   @override
@@ -92,6 +92,13 @@ class _$ZeroTrustGatewayExpirationSerializer implements PrimitiveSerializer<Zero
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
+        case r'expires_at':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(DateTime),
+          ) as DateTime;
+          result.expiresAt.replace(valueDes);
+          break;
         case r'duration':
           final valueDes = serializers.deserialize(
             value,
@@ -105,13 +112,6 @@ class _$ZeroTrustGatewayExpirationSerializer implements PrimitiveSerializer<Zero
             specifiedType: const FullType(bool),
           ) as bool;
           result.expired = valueDes;
-          break;
-        case r'expires_at':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
-          result.expiresAt.replace(valueDes);
           break;
         default:
           unhandled.add(key);

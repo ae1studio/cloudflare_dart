@@ -13,14 +13,18 @@ part 'waitingroom_create_rule.g.dart';
 ///
 /// Properties:
 /// * [action] 
+/// * [expression] - Criteria defining when there is a match for the current rule.
 /// * [description] - The description of the rule.
 /// * [enabled] - When set to true, the rule is enabled.
-/// * [expression] - Criteria defining when there is a match for the current rule.
 @BuiltValue()
 abstract class WaitingroomCreateRule implements Built<WaitingroomCreateRule, WaitingroomCreateRuleBuilder> {
   @BuiltValueField(wireName: r'action')
   WaitingroomRuleAction get action;
   // enum actionEnum {  bypass_waiting_room,  };
+
+  /// Criteria defining when there is a match for the current rule.
+  @BuiltValueField(wireName: r'expression')
+  String get expression;
 
   /// The description of the rule.
   @BuiltValueField(wireName: r'description')
@@ -29,10 +33,6 @@ abstract class WaitingroomCreateRule implements Built<WaitingroomCreateRule, Wai
   /// When set to true, the rule is enabled.
   @BuiltValueField(wireName: r'enabled')
   bool? get enabled;
-
-  /// Criteria defining when there is a match for the current rule.
-  @BuiltValueField(wireName: r'expression')
-  String get expression;
 
   WaitingroomCreateRule._();
 
@@ -64,6 +64,11 @@ class _$WaitingroomCreateRuleSerializer implements PrimitiveSerializer<Waitingro
       object.action,
       specifiedType: const FullType(WaitingroomRuleAction),
     );
+    yield r'expression';
+    yield serializers.serialize(
+      object.expression,
+      specifiedType: const FullType(String),
+    );
     if (object.description != null) {
       yield r'description';
       yield serializers.serialize(
@@ -78,11 +83,6 @@ class _$WaitingroomCreateRuleSerializer implements PrimitiveSerializer<Waitingro
         specifiedType: const FullType(bool),
       );
     }
-    yield r'expression';
-    yield serializers.serialize(
-      object.expression,
-      specifiedType: const FullType(String),
-    );
   }
 
   @override
@@ -113,6 +113,13 @@ class _$WaitingroomCreateRuleSerializer implements PrimitiveSerializer<Waitingro
           ) as WaitingroomRuleAction;
           result.action = valueDes;
           break;
+        case r'expression':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.expression = valueDes;
+          break;
         case r'description':
           final valueDes = serializers.deserialize(
             value,
@@ -126,13 +133,6 @@ class _$WaitingroomCreateRuleSerializer implements PrimitiveSerializer<Waitingro
             specifiedType: const FullType(bool),
           ) as bool;
           result.enabled = valueDes;
-          break;
-        case r'expression':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.expression = valueDes;
           break;
         default:
           unhandled.add(key);

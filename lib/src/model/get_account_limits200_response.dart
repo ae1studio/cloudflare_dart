@@ -10,6 +10,7 @@ import 'package:built_collection/built_collection.dart';
 import 'package:cloudflare_dart/src/model/builds_api_response_errors_inner.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
+import 'package:built_value/json_object.dart';
 
 part 'get_account_limits200_response.g.dart';
 
@@ -19,8 +20,8 @@ part 'get_account_limits200_response.g.dart';
 /// * [errors] 
 /// * [messages] 
 /// * [result] 
-/// * [resultInfo] 
 /// * [success] 
+/// * [resultInfo] 
 @BuiltValue()
 abstract class GetAccountLimits200Response implements BuildsAPIResponse, Built<GetAccountLimits200Response, GetAccountLimits200ResponseBuilder> {
   GetAccountLimits200Response._();

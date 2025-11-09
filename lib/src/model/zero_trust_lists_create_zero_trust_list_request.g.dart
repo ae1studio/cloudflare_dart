@@ -9,13 +9,13 @@ part of 'zero_trust_lists_create_zero_trust_list_request.dart';
 class _$ZeroTrustListsCreateZeroTrustListRequest
     extends ZeroTrustListsCreateZeroTrustListRequest {
   @override
-  final String? description;
-  @override
-  final BuiltList<ZeroTrustGatewayItemsInputInner>? items;
-  @override
   final String name;
   @override
   final ZeroTrustGatewaySchemasType type;
+  @override
+  final String? description;
+  @override
+  final BuiltList<ZeroTrustGatewayItemsInputInner>? items;
 
   factory _$ZeroTrustListsCreateZeroTrustListRequest(
           [void Function(ZeroTrustListsCreateZeroTrustListRequestBuilder)?
@@ -24,7 +24,7 @@ class _$ZeroTrustListsCreateZeroTrustListRequest
           ._build();
 
   _$ZeroTrustListsCreateZeroTrustListRequest._(
-      {this.description, this.items, required this.name, required this.type})
+      {required this.name, required this.type, this.description, this.items})
       : super._();
   @override
   ZeroTrustListsCreateZeroTrustListRequest rebuild(
@@ -40,19 +40,19 @@ class _$ZeroTrustListsCreateZeroTrustListRequest
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is ZeroTrustListsCreateZeroTrustListRequest &&
-        description == other.description &&
-        items == other.items &&
         name == other.name &&
-        type == other.type;
+        type == other.type &&
+        description == other.description &&
+        items == other.items;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, description.hashCode);
-    _$hash = $jc(_$hash, items.hashCode);
     _$hash = $jc(_$hash, name.hashCode);
     _$hash = $jc(_$hash, type.hashCode);
+    _$hash = $jc(_$hash, description.hashCode);
+    _$hash = $jc(_$hash, items.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -61,10 +61,10 @@ class _$ZeroTrustListsCreateZeroTrustListRequest
   String toString() {
     return (newBuiltValueToStringHelper(
             r'ZeroTrustListsCreateZeroTrustListRequest')
-          ..add('description', description)
-          ..add('items', items)
           ..add('name', name)
-          ..add('type', type))
+          ..add('type', type)
+          ..add('description', description)
+          ..add('items', items))
         .toString();
   }
 }
@@ -74,6 +74,14 @@ class ZeroTrustListsCreateZeroTrustListRequestBuilder
         Builder<ZeroTrustListsCreateZeroTrustListRequest,
             ZeroTrustListsCreateZeroTrustListRequestBuilder> {
   _$ZeroTrustListsCreateZeroTrustListRequest? _$v;
+
+  String? _name;
+  String? get name => _$this._name;
+  set name(String? name) => _$this._name = name;
+
+  ZeroTrustGatewaySchemasType? _type;
+  ZeroTrustGatewaySchemasType? get type => _$this._type;
+  set type(ZeroTrustGatewaySchemasType? type) => _$this._type = type;
 
   String? _description;
   String? get description => _$this._description;
@@ -85,14 +93,6 @@ class ZeroTrustListsCreateZeroTrustListRequestBuilder
   set items(ListBuilder<ZeroTrustGatewayItemsInputInner>? items) =>
       _$this._items = items;
 
-  String? _name;
-  String? get name => _$this._name;
-  set name(String? name) => _$this._name = name;
-
-  ZeroTrustGatewaySchemasType? _type;
-  ZeroTrustGatewaySchemasType? get type => _$this._type;
-  set type(ZeroTrustGatewaySchemasType? type) => _$this._type = type;
-
   ZeroTrustListsCreateZeroTrustListRequestBuilder() {
     ZeroTrustListsCreateZeroTrustListRequest._defaults(this);
   }
@@ -100,10 +100,10 @@ class ZeroTrustListsCreateZeroTrustListRequestBuilder
   ZeroTrustListsCreateZeroTrustListRequestBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _description = $v.description;
-      _items = $v.items?.toBuilder();
       _name = $v.name;
       _type = $v.type;
+      _description = $v.description;
+      _items = $v.items?.toBuilder();
       _$v = null;
     }
     return this;
@@ -128,12 +128,12 @@ class ZeroTrustListsCreateZeroTrustListRequestBuilder
     try {
       _$result = _$v ??
           _$ZeroTrustListsCreateZeroTrustListRequest._(
-            description: description,
-            items: _items?.build(),
             name: BuiltValueNullFieldError.checkNotNull(
                 name, r'ZeroTrustListsCreateZeroTrustListRequest', 'name'),
             type: BuiltValueNullFieldError.checkNotNull(
                 type, r'ZeroTrustListsCreateZeroTrustListRequest', 'type'),
+            description: description,
+            items: _items?.build(),
           );
     } catch (_) {
       late String _$failedField;

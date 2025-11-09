@@ -8,11 +8,11 @@ import 'package:cloudflare_dart/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**aka** | **String** |  | [optional] 
 **asn** | **int** |  | 
 **country** | **String** |  | 
 **countryName** | **String** |  | 
 **name** | **String** |  | 
+**aka** | **String** |  | [optional] 
 **orgName** | **String** |  | [optional] 
 **website** | **String** |  | [optional] 
 

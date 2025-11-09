@@ -11,8 +11,6 @@ class _$UrlscannerGetScanV2200ResponseStatsIpStatsInner
   @override
   final UrlscannerGetScanV2200ResponseDataRequestsInnerResponseAsn asn;
   @override
-  final num? count;
-  @override
   final BuiltList<String> countries;
   @override
   final BuiltList<String> domains;
@@ -32,6 +30,8 @@ class _$UrlscannerGetScanV2200ResponseStatsIpStatsInner
   final num requests;
   @override
   final num size;
+  @override
+  final num? count;
 
   factory _$UrlscannerGetScanV2200ResponseStatsIpStatsInner(
           [void Function(
@@ -43,7 +43,6 @@ class _$UrlscannerGetScanV2200ResponseStatsIpStatsInner
 
   _$UrlscannerGetScanV2200ResponseStatsIpStatsInner._(
       {required this.asn,
-      this.count,
       required this.countries,
       required this.domains,
       required this.encodedSize,
@@ -53,7 +52,8 @@ class _$UrlscannerGetScanV2200ResponseStatsIpStatsInner
       required this.ipv6,
       required this.redirects,
       required this.requests,
-      required this.size})
+      required this.size,
+      this.count})
       : super._();
   @override
   UrlscannerGetScanV2200ResponseStatsIpStatsInner rebuild(
@@ -70,7 +70,6 @@ class _$UrlscannerGetScanV2200ResponseStatsIpStatsInner
     if (identical(other, this)) return true;
     return other is UrlscannerGetScanV2200ResponseStatsIpStatsInner &&
         asn == other.asn &&
-        count == other.count &&
         countries == other.countries &&
         domains == other.domains &&
         encodedSize == other.encodedSize &&
@@ -80,14 +79,14 @@ class _$UrlscannerGetScanV2200ResponseStatsIpStatsInner
         ipv6 == other.ipv6 &&
         redirects == other.redirects &&
         requests == other.requests &&
-        size == other.size;
+        size == other.size &&
+        count == other.count;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
     _$hash = $jc(_$hash, asn.hashCode);
-    _$hash = $jc(_$hash, count.hashCode);
     _$hash = $jc(_$hash, countries.hashCode);
     _$hash = $jc(_$hash, domains.hashCode);
     _$hash = $jc(_$hash, encodedSize.hashCode);
@@ -98,6 +97,7 @@ class _$UrlscannerGetScanV2200ResponseStatsIpStatsInner
     _$hash = $jc(_$hash, redirects.hashCode);
     _$hash = $jc(_$hash, requests.hashCode);
     _$hash = $jc(_$hash, size.hashCode);
+    _$hash = $jc(_$hash, count.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -107,7 +107,6 @@ class _$UrlscannerGetScanV2200ResponseStatsIpStatsInner
     return (newBuiltValueToStringHelper(
             r'UrlscannerGetScanV2200ResponseStatsIpStatsInner')
           ..add('asn', asn)
-          ..add('count', count)
           ..add('countries', countries)
           ..add('domains', domains)
           ..add('encodedSize', encodedSize)
@@ -117,7 +116,8 @@ class _$UrlscannerGetScanV2200ResponseStatsIpStatsInner
           ..add('ipv6', ipv6)
           ..add('redirects', redirects)
           ..add('requests', requests)
-          ..add('size', size))
+          ..add('size', size)
+          ..add('count', count))
         .toString();
   }
 }
@@ -136,10 +136,6 @@ class UrlscannerGetScanV2200ResponseStatsIpStatsInnerBuilder
           UrlscannerGetScanV2200ResponseDataRequestsInnerResponseAsnBuilder?
               asn) =>
       _$this._asn = asn;
-
-  num? _count;
-  num? get count => _$this._count;
-  set count(num? count) => _$this._count = count;
 
   ListBuilder<String>? _countries;
   ListBuilder<String> get countries =>
@@ -189,6 +185,10 @@ class UrlscannerGetScanV2200ResponseStatsIpStatsInnerBuilder
   num? get size => _$this._size;
   set size(num? size) => _$this._size = size;
 
+  num? _count;
+  num? get count => _$this._count;
+  set count(num? count) => _$this._count = count;
+
   UrlscannerGetScanV2200ResponseStatsIpStatsInnerBuilder() {
     UrlscannerGetScanV2200ResponseStatsIpStatsInner._defaults(this);
   }
@@ -197,7 +197,6 @@ class UrlscannerGetScanV2200ResponseStatsIpStatsInnerBuilder
     final $v = _$v;
     if ($v != null) {
       _asn = $v.asn.toBuilder();
-      _count = $v.count;
       _countries = $v.countries.toBuilder();
       _domains = $v.domains.toBuilder();
       _encodedSize = $v.encodedSize;
@@ -208,6 +207,7 @@ class UrlscannerGetScanV2200ResponseStatsIpStatsInnerBuilder
       _redirects = $v.redirects;
       _requests = $v.requests;
       _size = $v.size;
+      _count = $v.count;
       _$v = null;
     }
     return this;
@@ -234,7 +234,6 @@ class UrlscannerGetScanV2200ResponseStatsIpStatsInnerBuilder
       _$result = _$v ??
           _$UrlscannerGetScanV2200ResponseStatsIpStatsInner._(
             asn: asn.build(),
-            count: count,
             countries: countries.build(),
             domains: domains.build(),
             encodedSize: BuiltValueNullFieldError.checkNotNull(
@@ -256,13 +255,13 @@ class UrlscannerGetScanV2200ResponseStatsIpStatsInnerBuilder
                 r'UrlscannerGetScanV2200ResponseStatsIpStatsInner', 'requests'),
             size: BuiltValueNullFieldError.checkNotNull(size,
                 r'UrlscannerGetScanV2200ResponseStatsIpStatsInner', 'size'),
+            count: count,
           );
     } catch (_) {
       late String _$failedField;
       try {
         _$failedField = 'asn';
         asn.build();
-
         _$failedField = 'countries';
         countries.build();
         _$failedField = 'domains';

@@ -8,8 +8,8 @@ import 'package:cloudflare_dart/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**thresholds** | [**ApiShieldOperationFeatureThresholdsThresholds**](ApiShieldOperationFeatureThresholdsThresholds.md) |  | [optional] 
 **parameterSchemas** | [**ApiShieldOperationFeatureParameterSchemasParameterSchemas**](ApiShieldOperationFeatureParameterSchemasParameterSchemas.md) |  | 
+**thresholds** | [**ApiShieldOperationFeatureThresholdsThresholds**](ApiShieldOperationFeatureThresholdsThresholds.md) |  | [optional] 
 **apiRouting** | [**ApiShieldOperationFeatureApiRoutingApiRouting**](ApiShieldOperationFeatureApiRoutingApiRouting.md) |  | [optional] 
 **confidenceIntervals** | [**ApiShieldOperationFeatureConfidenceIntervalsConfidenceIntervals**](ApiShieldOperationFeatureConfidenceIntervalsConfidenceIntervals.md) |  | [optional] 
 **schemaInfo** | [**ApiShieldOperationFeatureSchemaInfoSchemaInfo**](ApiShieldOperationFeatureSchemaInfoSchemaInfo.md) |  | [optional] 

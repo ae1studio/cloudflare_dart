@@ -8,6 +8,8 @@ part of 'brapi_post_scrape_request.dart';
 
 class _$BrapiPostScrapeRequest extends BrapiPostScrapeRequest {
   @override
+  final BuiltList<BrapiPostScrapeRequestAllOfElementsInner> elements;
+  @override
   final num? actionTimeout;
   @override
   final BuiltList<BrapiPostContentRequestAllOfAddScriptTagInner>? addScriptTag;
@@ -24,8 +26,6 @@ class _$BrapiPostScrapeRequest extends BrapiPostScrapeRequest {
   final bool? bestAttempt;
   @override
   final BuiltList<BrapiPostContentRequestAllOfCookiesInner>? cookies;
-  @override
-  final BuiltList<BrapiPostScrapeRequestAllOfElementsInner> elements;
   @override
   final String? emulateMediaType;
   @override
@@ -57,7 +57,8 @@ class _$BrapiPostScrapeRequest extends BrapiPostScrapeRequest {
       (BrapiPostScrapeRequestBuilder()..update(updates))._build();
 
   _$BrapiPostScrapeRequest._(
-      {this.actionTimeout,
+      {required this.elements,
+      this.actionTimeout,
       this.addScriptTag,
       this.addStyleTag,
       this.allowRequestPattern,
@@ -65,7 +66,6 @@ class _$BrapiPostScrapeRequest extends BrapiPostScrapeRequest {
       this.authenticate,
       this.bestAttempt,
       this.cookies,
-      required this.elements,
       this.emulateMediaType,
       this.gotoOptions,
       this.html,
@@ -92,6 +92,7 @@ class _$BrapiPostScrapeRequest extends BrapiPostScrapeRequest {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is BrapiPostScrapeRequest &&
+        elements == other.elements &&
         actionTimeout == other.actionTimeout &&
         addScriptTag == other.addScriptTag &&
         addStyleTag == other.addStyleTag &&
@@ -100,7 +101,6 @@ class _$BrapiPostScrapeRequest extends BrapiPostScrapeRequest {
         authenticate == other.authenticate &&
         bestAttempt == other.bestAttempt &&
         cookies == other.cookies &&
-        elements == other.elements &&
         emulateMediaType == other.emulateMediaType &&
         gotoOptions == other.gotoOptions &&
         html == other.html &&
@@ -118,6 +118,7 @@ class _$BrapiPostScrapeRequest extends BrapiPostScrapeRequest {
   @override
   int get hashCode {
     var _$hash = 0;
+    _$hash = $jc(_$hash, elements.hashCode);
     _$hash = $jc(_$hash, actionTimeout.hashCode);
     _$hash = $jc(_$hash, addScriptTag.hashCode);
     _$hash = $jc(_$hash, addStyleTag.hashCode);
@@ -126,7 +127,6 @@ class _$BrapiPostScrapeRequest extends BrapiPostScrapeRequest {
     _$hash = $jc(_$hash, authenticate.hashCode);
     _$hash = $jc(_$hash, bestAttempt.hashCode);
     _$hash = $jc(_$hash, cookies.hashCode);
-    _$hash = $jc(_$hash, elements.hashCode);
     _$hash = $jc(_$hash, emulateMediaType.hashCode);
     _$hash = $jc(_$hash, gotoOptions.hashCode);
     _$hash = $jc(_$hash, html.hashCode);
@@ -146,6 +146,7 @@ class _$BrapiPostScrapeRequest extends BrapiPostScrapeRequest {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'BrapiPostScrapeRequest')
+          ..add('elements', elements)
           ..add('actionTimeout', actionTimeout)
           ..add('addScriptTag', addScriptTag)
           ..add('addStyleTag', addStyleTag)
@@ -154,7 +155,6 @@ class _$BrapiPostScrapeRequest extends BrapiPostScrapeRequest {
           ..add('authenticate', authenticate)
           ..add('bestAttempt', bestAttempt)
           ..add('cookies', cookies)
-          ..add('elements', elements)
           ..add('emulateMediaType', emulateMediaType)
           ..add('gotoOptions', gotoOptions)
           ..add('html', html)
@@ -174,6 +174,14 @@ class _$BrapiPostScrapeRequest extends BrapiPostScrapeRequest {
 class BrapiPostScrapeRequestBuilder
     implements Builder<BrapiPostScrapeRequest, BrapiPostScrapeRequestBuilder> {
   _$BrapiPostScrapeRequest? _$v;
+
+  ListBuilder<BrapiPostScrapeRequestAllOfElementsInner>? _elements;
+  ListBuilder<BrapiPostScrapeRequestAllOfElementsInner> get elements =>
+      _$this._elements ??=
+          ListBuilder<BrapiPostScrapeRequestAllOfElementsInner>();
+  set elements(
+          ListBuilder<BrapiPostScrapeRequestAllOfElementsInner>? elements) =>
+      _$this._elements = elements;
 
   num? _actionTimeout;
   num? get actionTimeout => _$this._actionTimeout;
@@ -232,14 +240,6 @@ class BrapiPostScrapeRequestBuilder
           ListBuilder<BrapiPostContentRequestAllOfCookiesInner>();
   set cookies(ListBuilder<BrapiPostContentRequestAllOfCookiesInner>? cookies) =>
       _$this._cookies = cookies;
-
-  ListBuilder<BrapiPostScrapeRequestAllOfElementsInner>? _elements;
-  ListBuilder<BrapiPostScrapeRequestAllOfElementsInner> get elements =>
-      _$this._elements ??=
-          ListBuilder<BrapiPostScrapeRequestAllOfElementsInner>();
-  set elements(
-          ListBuilder<BrapiPostScrapeRequestAllOfElementsInner>? elements) =>
-      _$this._elements = elements;
 
   String? _emulateMediaType;
   String? get emulateMediaType => _$this._emulateMediaType;
@@ -319,6 +319,7 @@ class BrapiPostScrapeRequestBuilder
   BrapiPostScrapeRequestBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
+      _elements = $v.elements.toBuilder();
       _actionTimeout = $v.actionTimeout;
       _addScriptTag = $v.addScriptTag?.toBuilder();
       _addStyleTag = $v.addStyleTag?.toBuilder();
@@ -327,7 +328,6 @@ class BrapiPostScrapeRequestBuilder
       _authenticate = $v.authenticate?.toBuilder();
       _bestAttempt = $v.bestAttempt;
       _cookies = $v.cookies?.toBuilder();
-      _elements = $v.elements.toBuilder();
       _emulateMediaType = $v.emulateMediaType;
       _gotoOptions = $v.gotoOptions?.toBuilder();
       _html = $v.html;
@@ -363,6 +363,7 @@ class BrapiPostScrapeRequestBuilder
     try {
       _$result = _$v ??
           _$BrapiPostScrapeRequest._(
+            elements: elements.build(),
             actionTimeout: actionTimeout,
             addScriptTag: _addScriptTag?.build(),
             addStyleTag: _addStyleTag?.build(),
@@ -371,7 +372,6 @@ class BrapiPostScrapeRequestBuilder
             authenticate: _authenticate?.build(),
             bestAttempt: bestAttempt,
             cookies: _cookies?.build(),
-            elements: elements.build(),
             emulateMediaType: emulateMediaType,
             gotoOptions: _gotoOptions?.build(),
             html: html,
@@ -388,6 +388,9 @@ class BrapiPostScrapeRequestBuilder
     } catch (_) {
       late String _$failedField;
       try {
+        _$failedField = 'elements';
+        elements.build();
+
         _$failedField = 'addScriptTag';
         _addScriptTag?.build();
         _$failedField = 'addStyleTag';
@@ -401,8 +404,6 @@ class BrapiPostScrapeRequestBuilder
 
         _$failedField = 'cookies';
         _cookies?.build();
-        _$failedField = 'elements';
-        elements.build();
 
         _$failedField = 'gotoOptions';
         _gotoOptions?.build();

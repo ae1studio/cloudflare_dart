@@ -8,15 +8,15 @@ part of 'teams_devices_tls_config_request.dart';
 
 class _$TeamsDevicesTlsConfigRequest extends TeamsDevicesTlsConfigRequest {
   @override
-  final String? sha256;
-  @override
   final String tlsSockaddr;
+  @override
+  final String? sha256;
 
   factory _$TeamsDevicesTlsConfigRequest(
           [void Function(TeamsDevicesTlsConfigRequestBuilder)? updates]) =>
       (TeamsDevicesTlsConfigRequestBuilder()..update(updates))._build();
 
-  _$TeamsDevicesTlsConfigRequest._({this.sha256, required this.tlsSockaddr})
+  _$TeamsDevicesTlsConfigRequest._({required this.tlsSockaddr, this.sha256})
       : super._();
   @override
   TeamsDevicesTlsConfigRequest rebuild(
@@ -31,15 +31,15 @@ class _$TeamsDevicesTlsConfigRequest extends TeamsDevicesTlsConfigRequest {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is TeamsDevicesTlsConfigRequest &&
-        sha256 == other.sha256 &&
-        tlsSockaddr == other.tlsSockaddr;
+        tlsSockaddr == other.tlsSockaddr &&
+        sha256 == other.sha256;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, sha256.hashCode);
     _$hash = $jc(_$hash, tlsSockaddr.hashCode);
+    _$hash = $jc(_$hash, sha256.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -47,8 +47,8 @@ class _$TeamsDevicesTlsConfigRequest extends TeamsDevicesTlsConfigRequest {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'TeamsDevicesTlsConfigRequest')
-          ..add('sha256', sha256)
-          ..add('tlsSockaddr', tlsSockaddr))
+          ..add('tlsSockaddr', tlsSockaddr)
+          ..add('sha256', sha256))
         .toString();
   }
 }
@@ -59,13 +59,13 @@ class TeamsDevicesTlsConfigRequestBuilder
             TeamsDevicesTlsConfigRequestBuilder> {
   _$TeamsDevicesTlsConfigRequest? _$v;
 
-  String? _sha256;
-  String? get sha256 => _$this._sha256;
-  set sha256(String? sha256) => _$this._sha256 = sha256;
-
   String? _tlsSockaddr;
   String? get tlsSockaddr => _$this._tlsSockaddr;
   set tlsSockaddr(String? tlsSockaddr) => _$this._tlsSockaddr = tlsSockaddr;
+
+  String? _sha256;
+  String? get sha256 => _$this._sha256;
+  set sha256(String? sha256) => _$this._sha256 = sha256;
 
   TeamsDevicesTlsConfigRequestBuilder() {
     TeamsDevicesTlsConfigRequest._defaults(this);
@@ -74,8 +74,8 @@ class TeamsDevicesTlsConfigRequestBuilder
   TeamsDevicesTlsConfigRequestBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _sha256 = $v.sha256;
       _tlsSockaddr = $v.tlsSockaddr;
+      _sha256 = $v.sha256;
       _$v = null;
     }
     return this;
@@ -97,9 +97,9 @@ class TeamsDevicesTlsConfigRequestBuilder
   _$TeamsDevicesTlsConfigRequest _build() {
     final _$result = _$v ??
         _$TeamsDevicesTlsConfigRequest._(
-          sha256: sha256,
           tlsSockaddr: BuiltValueNullFieldError.checkNotNull(
               tlsSockaddr, r'TeamsDevicesTlsConfigRequest', 'tlsSockaddr'),
+          sha256: sha256,
         );
     replace(_$result);
     return _$result;

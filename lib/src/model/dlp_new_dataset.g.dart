@@ -8,13 +8,13 @@ part of 'dlp_new_dataset.dart';
 
 class _$DlpNewDataset extends DlpNewDataset {
   @override
+  final String name;
+  @override
   final bool? caseSensitive;
   @override
   final String? description;
   @override
   final int? encodingVersion;
-  @override
-  final String name;
   @override
   final bool? secret;
 
@@ -22,10 +22,10 @@ class _$DlpNewDataset extends DlpNewDataset {
       (DlpNewDatasetBuilder()..update(updates))._build();
 
   _$DlpNewDataset._(
-      {this.caseSensitive,
+      {required this.name,
+      this.caseSensitive,
       this.description,
       this.encodingVersion,
-      required this.name,
       this.secret})
       : super._();
   @override
@@ -39,20 +39,20 @@ class _$DlpNewDataset extends DlpNewDataset {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is DlpNewDataset &&
+        name == other.name &&
         caseSensitive == other.caseSensitive &&
         description == other.description &&
         encodingVersion == other.encodingVersion &&
-        name == other.name &&
         secret == other.secret;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
+    _$hash = $jc(_$hash, name.hashCode);
     _$hash = $jc(_$hash, caseSensitive.hashCode);
     _$hash = $jc(_$hash, description.hashCode);
     _$hash = $jc(_$hash, encodingVersion.hashCode);
-    _$hash = $jc(_$hash, name.hashCode);
     _$hash = $jc(_$hash, secret.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
@@ -61,10 +61,10 @@ class _$DlpNewDataset extends DlpNewDataset {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'DlpNewDataset')
+          ..add('name', name)
           ..add('caseSensitive', caseSensitive)
           ..add('description', description)
           ..add('encodingVersion', encodingVersion)
-          ..add('name', name)
           ..add('secret', secret))
         .toString();
   }
@@ -73,6 +73,10 @@ class _$DlpNewDataset extends DlpNewDataset {
 class DlpNewDatasetBuilder
     implements Builder<DlpNewDataset, DlpNewDatasetBuilder> {
   _$DlpNewDataset? _$v;
+
+  String? _name;
+  String? get name => _$this._name;
+  set name(String? name) => _$this._name = name;
 
   bool? _caseSensitive;
   bool? get caseSensitive => _$this._caseSensitive;
@@ -88,10 +92,6 @@ class DlpNewDatasetBuilder
   set encodingVersion(int? encodingVersion) =>
       _$this._encodingVersion = encodingVersion;
 
-  String? _name;
-  String? get name => _$this._name;
-  set name(String? name) => _$this._name = name;
-
   bool? _secret;
   bool? get secret => _$this._secret;
   set secret(bool? secret) => _$this._secret = secret;
@@ -103,10 +103,10 @@ class DlpNewDatasetBuilder
   DlpNewDatasetBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
+      _name = $v.name;
       _caseSensitive = $v.caseSensitive;
       _description = $v.description;
       _encodingVersion = $v.encodingVersion;
-      _name = $v.name;
       _secret = $v.secret;
       _$v = null;
     }
@@ -129,11 +129,11 @@ class DlpNewDatasetBuilder
   _$DlpNewDataset _build() {
     final _$result = _$v ??
         _$DlpNewDataset._(
+          name: BuiltValueNullFieldError.checkNotNull(
+              name, r'DlpNewDataset', 'name'),
           caseSensitive: caseSensitive,
           description: description,
           encodingVersion: encodingVersion,
-          name: BuiltValueNullFieldError.checkNotNull(
-              name, r'DlpNewDataset', 'name'),
           secret: secret,
         );
     replace(_$result);

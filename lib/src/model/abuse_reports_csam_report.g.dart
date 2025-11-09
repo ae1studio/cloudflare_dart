@@ -265,15 +265,17 @@ class _$AbuseReportsCSAMReport extends AbuseReportsCSAMReport {
   @override
   final String act;
   @override
-  final String? comments;
-  @override
-  final String? company;
-  @override
   final String email;
   @override
   final String email2;
   @override
   final String name;
+  @override
+  final String urls;
+  @override
+  final String? comments;
+  @override
+  final String? company;
   @override
   final String? reportedCountry;
   @override
@@ -282,8 +284,6 @@ class _$AbuseReportsCSAMReport extends AbuseReportsCSAMReport {
   final String? tele;
   @override
   final String? title;
-  @override
-  final String urls;
 
   factory _$AbuseReportsCSAMReport(
           [void Function(AbuseReportsCSAMReportBuilder)? updates]) =>
@@ -296,16 +296,16 @@ class _$AbuseReportsCSAMReport extends AbuseReportsCSAMReport {
       required this.hostNotification,
       required this.justification,
       required this.act,
-      this.comments,
-      this.company,
       required this.email,
       required this.email2,
       required this.name,
+      required this.urls,
+      this.comments,
+      this.company,
       this.reportedCountry,
       this.reportedUserAgent,
       this.tele,
-      this.title,
-      required this.urls})
+      this.title})
       : super._();
   @override
   AbuseReportsCSAMReport rebuild(
@@ -326,16 +326,16 @@ class _$AbuseReportsCSAMReport extends AbuseReportsCSAMReport {
         hostNotification == other.hostNotification &&
         justification == other.justification &&
         act == other.act &&
-        comments == other.comments &&
-        company == other.company &&
         email == other.email &&
         email2 == other.email2 &&
         name == other.name &&
+        urls == other.urls &&
+        comments == other.comments &&
+        company == other.company &&
         reportedCountry == other.reportedCountry &&
         reportedUserAgent == other.reportedUserAgent &&
         tele == other.tele &&
-        title == other.title &&
-        urls == other.urls;
+        title == other.title;
   }
 
   @override
@@ -347,16 +347,16 @@ class _$AbuseReportsCSAMReport extends AbuseReportsCSAMReport {
     _$hash = $jc(_$hash, hostNotification.hashCode);
     _$hash = $jc(_$hash, justification.hashCode);
     _$hash = $jc(_$hash, act.hashCode);
-    _$hash = $jc(_$hash, comments.hashCode);
-    _$hash = $jc(_$hash, company.hashCode);
     _$hash = $jc(_$hash, email.hashCode);
     _$hash = $jc(_$hash, email2.hashCode);
     _$hash = $jc(_$hash, name.hashCode);
+    _$hash = $jc(_$hash, urls.hashCode);
+    _$hash = $jc(_$hash, comments.hashCode);
+    _$hash = $jc(_$hash, company.hashCode);
     _$hash = $jc(_$hash, reportedCountry.hashCode);
     _$hash = $jc(_$hash, reportedUserAgent.hashCode);
     _$hash = $jc(_$hash, tele.hashCode);
     _$hash = $jc(_$hash, title.hashCode);
-    _$hash = $jc(_$hash, urls.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -370,16 +370,16 @@ class _$AbuseReportsCSAMReport extends AbuseReportsCSAMReport {
           ..add('hostNotification', hostNotification)
           ..add('justification', justification)
           ..add('act', act)
-          ..add('comments', comments)
-          ..add('company', company)
           ..add('email', email)
           ..add('email2', email2)
           ..add('name', name)
+          ..add('urls', urls)
+          ..add('comments', comments)
+          ..add('company', company)
           ..add('reportedCountry', reportedCountry)
           ..add('reportedUserAgent', reportedUserAgent)
           ..add('tele', tele)
-          ..add('title', title)
-          ..add('urls', urls))
+          ..add('title', title))
         .toString();
   }
 }
@@ -427,14 +427,6 @@ class AbuseReportsCSAMReportBuilder
   String? get act => _$this._act;
   set act(covariant String? act) => _$this._act = act;
 
-  String? _comments;
-  String? get comments => _$this._comments;
-  set comments(covariant String? comments) => _$this._comments = comments;
-
-  String? _company;
-  String? get company => _$this._company;
-  set company(covariant String? company) => _$this._company = company;
-
   String? _email;
   String? get email => _$this._email;
   set email(covariant String? email) => _$this._email = email;
@@ -446,6 +438,18 @@ class AbuseReportsCSAMReportBuilder
   String? _name;
   String? get name => _$this._name;
   set name(covariant String? name) => _$this._name = name;
+
+  String? _urls;
+  String? get urls => _$this._urls;
+  set urls(covariant String? urls) => _$this._urls = urls;
+
+  String? _comments;
+  String? get comments => _$this._comments;
+  set comments(covariant String? comments) => _$this._comments = comments;
+
+  String? _company;
+  String? get company => _$this._company;
+  set company(covariant String? company) => _$this._company = company;
 
   String? _reportedCountry;
   String? get reportedCountry => _$this._reportedCountry;
@@ -465,10 +469,6 @@ class AbuseReportsCSAMReportBuilder
   String? get title => _$this._title;
   set title(covariant String? title) => _$this._title = title;
 
-  String? _urls;
-  String? get urls => _$this._urls;
-  set urls(covariant String? urls) => _$this._urls = urls;
-
   AbuseReportsCSAMReportBuilder() {
     AbuseReportsCSAMReport._defaults(this);
   }
@@ -482,16 +482,16 @@ class AbuseReportsCSAMReportBuilder
       _hostNotification = $v.hostNotification;
       _justification = $v.justification;
       _act = $v.act;
-      _comments = $v.comments;
-      _company = $v.company;
       _email = $v.email;
       _email2 = $v.email2;
       _name = $v.name;
+      _urls = $v.urls;
+      _comments = $v.comments;
+      _company = $v.company;
       _reportedCountry = $v.reportedCountry;
       _reportedUserAgent = $v.reportedUserAgent;
       _tele = $v.tele;
       _title = $v.title;
-      _urls = $v.urls;
       _$v = null;
     }
     return this;
@@ -528,20 +528,20 @@ class AbuseReportsCSAMReportBuilder
               justification, r'AbuseReportsCSAMReport', 'justification'),
           act: BuiltValueNullFieldError.checkNotNull(
               act, r'AbuseReportsCSAMReport', 'act'),
-          comments: comments,
-          company: company,
           email: BuiltValueNullFieldError.checkNotNull(
               email, r'AbuseReportsCSAMReport', 'email'),
           email2: BuiltValueNullFieldError.checkNotNull(
               email2, r'AbuseReportsCSAMReport', 'email2'),
           name: BuiltValueNullFieldError.checkNotNull(
               name, r'AbuseReportsCSAMReport', 'name'),
+          urls: BuiltValueNullFieldError.checkNotNull(
+              urls, r'AbuseReportsCSAMReport', 'urls'),
+          comments: comments,
+          company: company,
           reportedCountry: reportedCountry,
           reportedUserAgent: reportedUserAgent,
           tele: tele,
           title: title,
-          urls: BuiltValueNullFieldError.checkNotNull(
-              urls, r'AbuseReportsCSAMReport', 'urls'),
         );
     replace(_$result);
     return _$result;

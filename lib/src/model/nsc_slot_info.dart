@@ -12,18 +12,14 @@ part 'nsc_slot_info.g.dart';
 /// NscSlotInfo
 ///
 /// Properties:
-/// * [account] - Customer account tag
 /// * [facility] 
 /// * [id] - Slot ID
 /// * [occupied] - Whether the slot is occupied or not
 /// * [site] 
 /// * [speed] 
+/// * [account] - Customer account tag
 @BuiltValue()
 abstract class NscSlotInfo implements Built<NscSlotInfo, NscSlotInfoBuilder> {
-  /// Customer account tag
-  @BuiltValueField(wireName: r'account')
-  String? get account;
-
   @BuiltValueField(wireName: r'facility')
   NscFacilityInfo get facility;
 
@@ -40,6 +36,10 @@ abstract class NscSlotInfo implements Built<NscSlotInfo, NscSlotInfoBuilder> {
 
   @BuiltValueField(wireName: r'speed')
   String get speed;
+
+  /// Customer account tag
+  @BuiltValueField(wireName: r'account')
+  String? get account;
 
   NscSlotInfo._();
 
@@ -64,13 +64,6 @@ class _$NscSlotInfoSerializer implements PrimitiveSerializer<NscSlotInfo> {
     NscSlotInfo object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
-    if (object.account != null) {
-      yield r'account';
-      yield serializers.serialize(
-        object.account,
-        specifiedType: const FullType(String),
-      );
-    }
     yield r'facility';
     yield serializers.serialize(
       object.facility,
@@ -96,6 +89,13 @@ class _$NscSlotInfoSerializer implements PrimitiveSerializer<NscSlotInfo> {
       object.speed,
       specifiedType: const FullType(String),
     );
+    if (object.account != null) {
+      yield r'account';
+      yield serializers.serialize(
+        object.account,
+        specifiedType: const FullType(String),
+      );
+    }
   }
 
   @override
@@ -119,13 +119,6 @@ class _$NscSlotInfoSerializer implements PrimitiveSerializer<NscSlotInfo> {
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'account':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.account = valueDes;
-          break;
         case r'facility':
           final valueDes = serializers.deserialize(
             value,
@@ -160,6 +153,13 @@ class _$NscSlotInfoSerializer implements PrimitiveSerializer<NscSlotInfo> {
             specifiedType: const FullType(String),
           ) as String;
           result.speed = valueDes;
+          break;
+        case r'account':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.account = valueDes;
           break;
         default:
           unhandled.add(key);

@@ -10,8 +10,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **errors** | [**BuiltList&lt;AaaMessagesInner&gt;**](AaaMessagesInner.md) |  | 
 **messages** | [**BuiltList&lt;AaaMessagesInner&gt;**](AaaMessagesInner.md) |  | 
-**result** | [**BuiltList&lt;AaaAuditLogs&gt;**](AaaAuditLogs.md) |  | [optional] 
 **success** | **bool** | Whether the API call was successful | 
+**result** | [**BuiltList&lt;AaaAuditLogs&gt;**](AaaAuditLogs.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -14,14 +14,14 @@ class _$WorkersObservabilityQueryResultsEventsSeriesInnerDataInner
   @override
   final num count;
   @override
+  final num interval;
+  @override
+  final num sampleInterval;
+  @override
   final num? errors;
   @override
   final BuiltMap<String,
       AigConfigListDataset200ResponseResultInnerFiltersInnerValueInner>? groups;
-  @override
-  final num interval;
-  @override
-  final num sampleInterval;
 
   factory _$WorkersObservabilityQueryResultsEventsSeriesInnerDataInner(
           [void Function(
@@ -34,10 +34,10 @@ class _$WorkersObservabilityQueryResultsEventsSeriesInnerDataInner
   _$WorkersObservabilityQueryResultsEventsSeriesInnerDataInner._(
       {required this.aggregates,
       required this.count,
-      this.errors,
-      this.groups,
       required this.interval,
-      required this.sampleInterval})
+      required this.sampleInterval,
+      this.errors,
+      this.groups})
       : super._();
   @override
   WorkersObservabilityQueryResultsEventsSeriesInnerDataInner rebuild(
@@ -59,10 +59,10 @@ class _$WorkersObservabilityQueryResultsEventsSeriesInnerDataInner
             is WorkersObservabilityQueryResultsEventsSeriesInnerDataInner &&
         aggregates == other.aggregates &&
         count == other.count &&
-        errors == other.errors &&
-        groups == other.groups &&
         interval == other.interval &&
-        sampleInterval == other.sampleInterval;
+        sampleInterval == other.sampleInterval &&
+        errors == other.errors &&
+        groups == other.groups;
   }
 
   @override
@@ -70,10 +70,10 @@ class _$WorkersObservabilityQueryResultsEventsSeriesInnerDataInner
     var _$hash = 0;
     _$hash = $jc(_$hash, aggregates.hashCode);
     _$hash = $jc(_$hash, count.hashCode);
-    _$hash = $jc(_$hash, errors.hashCode);
-    _$hash = $jc(_$hash, groups.hashCode);
     _$hash = $jc(_$hash, interval.hashCode);
     _$hash = $jc(_$hash, sampleInterval.hashCode);
+    _$hash = $jc(_$hash, errors.hashCode);
+    _$hash = $jc(_$hash, groups.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -84,10 +84,10 @@ class _$WorkersObservabilityQueryResultsEventsSeriesInnerDataInner
             r'WorkersObservabilityQueryResultsEventsSeriesInnerDataInner')
           ..add('aggregates', aggregates)
           ..add('count', count)
-          ..add('errors', errors)
-          ..add('groups', groups)
           ..add('interval', interval)
-          ..add('sampleInterval', sampleInterval))
+          ..add('sampleInterval', sampleInterval)
+          ..add('errors', errors)
+          ..add('groups', groups))
         .toString();
   }
 }
@@ -112,6 +112,15 @@ class WorkersObservabilityQueryResultsEventsSeriesInnerDataInnerBuilder
   num? get count => _$this._count;
   set count(num? count) => _$this._count = count;
 
+  num? _interval;
+  num? get interval => _$this._interval;
+  set interval(num? interval) => _$this._interval = interval;
+
+  num? _sampleInterval;
+  num? get sampleInterval => _$this._sampleInterval;
+  set sampleInterval(num? sampleInterval) =>
+      _$this._sampleInterval = sampleInterval;
+
   num? _errors;
   num? get errors => _$this._errors;
   set errors(num? errors) => _$this._errors = errors;
@@ -129,15 +138,6 @@ class WorkersObservabilityQueryResultsEventsSeriesInnerDataInnerBuilder
               groups) =>
       _$this._groups = groups;
 
-  num? _interval;
-  num? get interval => _$this._interval;
-  set interval(num? interval) => _$this._interval = interval;
-
-  num? _sampleInterval;
-  num? get sampleInterval => _$this._sampleInterval;
-  set sampleInterval(num? sampleInterval) =>
-      _$this._sampleInterval = sampleInterval;
-
   WorkersObservabilityQueryResultsEventsSeriesInnerDataInnerBuilder() {
     WorkersObservabilityQueryResultsEventsSeriesInnerDataInner._defaults(this);
   }
@@ -147,10 +147,10 @@ class WorkersObservabilityQueryResultsEventsSeriesInnerDataInnerBuilder
     if ($v != null) {
       _aggregates = $v.aggregates.toBuilder();
       _count = $v.count;
-      _errors = $v.errors;
-      _groups = $v.groups?.toBuilder();
       _interval = $v.interval;
       _sampleInterval = $v.sampleInterval;
+      _errors = $v.errors;
+      _groups = $v.groups?.toBuilder();
       _$v = null;
     }
     return this;
@@ -184,8 +184,6 @@ class WorkersObservabilityQueryResultsEventsSeriesInnerDataInnerBuilder
                 count,
                 r'WorkersObservabilityQueryResultsEventsSeriesInnerDataInner',
                 'count'),
-            errors: errors,
-            groups: _groups?.build(),
             interval: BuiltValueNullFieldError.checkNotNull(
                 interval,
                 r'WorkersObservabilityQueryResultsEventsSeriesInnerDataInner',
@@ -194,6 +192,8 @@ class WorkersObservabilityQueryResultsEventsSeriesInnerDataInnerBuilder
                 sampleInterval,
                 r'WorkersObservabilityQueryResultsEventsSeriesInnerDataInner',
                 'sampleInterval'),
+            errors: errors,
+            groups: _groups?.build(),
           );
     } catch (_) {
       late String _$failedField;

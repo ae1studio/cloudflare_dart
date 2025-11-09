@@ -20,8 +20,8 @@ part 'ip_address_management_prefix_delegation_list_prefix_delegations4_xx_respon
 /// * [errors] 
 /// * [messages] 
 /// * [success] - Whether the API call was successful.
-/// * [resultInfo] 
 /// * [result] 
+/// * [resultInfo] 
 @BuiltValue()
 abstract class IpAddressManagementPrefixDelegationListPrefixDelegations4XXResponse implements AddressingApiResponseCommonFailure, AddressingSchemasResponseCollection, Built<IpAddressManagementPrefixDelegationListPrefixDelegations4XXResponse, IpAddressManagementPrefixDelegationListPrefixDelegations4XXResponseBuilder> {
   IpAddressManagementPrefixDelegationListPrefixDelegations4XXResponse._();

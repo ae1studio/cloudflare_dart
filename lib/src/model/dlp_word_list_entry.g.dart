@@ -21,14 +21,14 @@ abstract class DlpWordListEntryBuilder {
   String? get name;
   set name(String? name);
 
-  String? get profileId;
-  set profileId(String? profileId);
-
   DateTime? get updatedAt;
   set updatedAt(DateTime? updatedAt);
 
   JsonObject? get wordList;
   set wordList(JsonObject? wordList);
+
+  String? get profileId;
+  set profileId(String? profileId);
 }
 
 class _$$DlpWordListEntry extends $DlpWordListEntry {
@@ -41,11 +41,11 @@ class _$$DlpWordListEntry extends $DlpWordListEntry {
   @override
   final String name;
   @override
-  final String? profileId;
-  @override
   final DateTime updatedAt;
   @override
   final JsonObject? wordList;
+  @override
+  final String? profileId;
 
   factory _$$DlpWordListEntry(
           [void Function($DlpWordListEntryBuilder)? updates]) =>
@@ -56,9 +56,9 @@ class _$$DlpWordListEntry extends $DlpWordListEntry {
       required this.enabled,
       required this.id,
       required this.name,
-      this.profileId,
       required this.updatedAt,
-      this.wordList})
+      this.wordList,
+      this.profileId})
       : super._();
   @override
   $DlpWordListEntry rebuild(void Function($DlpWordListEntryBuilder) updates) =>
@@ -76,9 +76,9 @@ class _$$DlpWordListEntry extends $DlpWordListEntry {
         enabled == other.enabled &&
         id == other.id &&
         name == other.name &&
-        profileId == other.profileId &&
         updatedAt == other.updatedAt &&
-        wordList == other.wordList;
+        wordList == other.wordList &&
+        profileId == other.profileId;
   }
 
   @override
@@ -88,9 +88,9 @@ class _$$DlpWordListEntry extends $DlpWordListEntry {
     _$hash = $jc(_$hash, enabled.hashCode);
     _$hash = $jc(_$hash, id.hashCode);
     _$hash = $jc(_$hash, name.hashCode);
-    _$hash = $jc(_$hash, profileId.hashCode);
     _$hash = $jc(_$hash, updatedAt.hashCode);
     _$hash = $jc(_$hash, wordList.hashCode);
+    _$hash = $jc(_$hash, profileId.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -102,9 +102,9 @@ class _$$DlpWordListEntry extends $DlpWordListEntry {
           ..add('enabled', enabled)
           ..add('id', id)
           ..add('name', name)
-          ..add('profileId', profileId)
           ..add('updatedAt', updatedAt)
-          ..add('wordList', wordList))
+          ..add('wordList', wordList)
+          ..add('profileId', profileId))
         .toString();
   }
 }
@@ -131,10 +131,6 @@ class $DlpWordListEntryBuilder
   String? get name => _$this._name;
   set name(covariant String? name) => _$this._name = name;
 
-  String? _profileId;
-  String? get profileId => _$this._profileId;
-  set profileId(covariant String? profileId) => _$this._profileId = profileId;
-
   DateTime? _updatedAt;
   DateTime? get updatedAt => _$this._updatedAt;
   set updatedAt(covariant DateTime? updatedAt) => _$this._updatedAt = updatedAt;
@@ -142,6 +138,10 @@ class $DlpWordListEntryBuilder
   JsonObject? _wordList;
   JsonObject? get wordList => _$this._wordList;
   set wordList(covariant JsonObject? wordList) => _$this._wordList = wordList;
+
+  String? _profileId;
+  String? get profileId => _$this._profileId;
+  set profileId(covariant String? profileId) => _$this._profileId = profileId;
 
   $DlpWordListEntryBuilder() {
     $DlpWordListEntry._defaults(this);
@@ -154,9 +154,9 @@ class $DlpWordListEntryBuilder
       _enabled = $v.enabled;
       _id = $v.id;
       _name = $v.name;
-      _profileId = $v.profileId;
       _updatedAt = $v.updatedAt;
       _wordList = $v.wordList;
+      _profileId = $v.profileId;
       _$v = null;
     }
     return this;
@@ -186,10 +186,10 @@ class $DlpWordListEntryBuilder
               id, r'$DlpWordListEntry', 'id'),
           name: BuiltValueNullFieldError.checkNotNull(
               name, r'$DlpWordListEntry', 'name'),
-          profileId: profileId,
           updatedAt: BuiltValueNullFieldError.checkNotNull(
               updatedAt, r'$DlpWordListEntry', 'updatedAt'),
           wordList: wordList,
+          profileId: profileId,
         );
     replace(_$result);
     return _$result;

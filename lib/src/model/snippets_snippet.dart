@@ -12,21 +12,21 @@ part 'snippets_snippet.g.dart';
 ///
 /// Properties:
 /// * [createdOn] - The timestamp of when the snippet was created.
-/// * [modifiedOn] - The timestamp of when the snippet was last modified.
 /// * [snippetName] - The identifying name of the snippet.
+/// * [modifiedOn] - The timestamp of when the snippet was last modified.
 @BuiltValue()
 abstract class SnippetsSnippet implements Built<SnippetsSnippet, SnippetsSnippetBuilder> {
   /// The timestamp of when the snippet was created.
   @BuiltValueField(wireName: r'created_on')
   DateTime get createdOn;
 
-  /// The timestamp of when the snippet was last modified.
-  @BuiltValueField(wireName: r'modified_on')
-  DateTime? get modifiedOn;
-
   /// The identifying name of the snippet.
   @BuiltValueField(wireName: r'snippet_name')
   String get snippetName;
+
+  /// The timestamp of when the snippet was last modified.
+  @BuiltValueField(wireName: r'modified_on')
+  DateTime? get modifiedOn;
 
   SnippetsSnippet._();
 
@@ -56,6 +56,11 @@ class _$SnippetsSnippetSerializer implements PrimitiveSerializer<SnippetsSnippet
       object.createdOn,
       specifiedType: const FullType(DateTime),
     );
+    yield r'snippet_name';
+    yield serializers.serialize(
+      object.snippetName,
+      specifiedType: const FullType(String),
+    );
     if (object.modifiedOn != null) {
       yield r'modified_on';
       yield serializers.serialize(
@@ -63,11 +68,6 @@ class _$SnippetsSnippetSerializer implements PrimitiveSerializer<SnippetsSnippet
         specifiedType: const FullType(DateTime),
       );
     }
-    yield r'snippet_name';
-    yield serializers.serialize(
-      object.snippetName,
-      specifiedType: const FullType(String),
-    );
   }
 
   @override
@@ -98,19 +98,19 @@ class _$SnippetsSnippetSerializer implements PrimitiveSerializer<SnippetsSnippet
           ) as DateTime;
           result.createdOn = valueDes;
           break;
-        case r'modified_on':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
-          result.modifiedOn = valueDes;
-          break;
         case r'snippet_name':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(String),
           ) as String;
           result.snippetName = valueDes;
+          break;
+        case r'modified_on':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(DateTime),
+          ) as DateTime;
+          result.modifiedOn = valueDes;
           break;
         default:
           unhandled.add(key);

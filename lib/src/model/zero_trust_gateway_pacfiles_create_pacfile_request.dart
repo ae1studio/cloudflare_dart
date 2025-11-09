@@ -12,8 +12,8 @@ part 'zero_trust_gateway_pacfiles_create_pacfile_request.g.dart';
 ///
 /// Properties:
 /// * [contents] - Actual contents of the PAC file
-/// * [description] - Detailed description of the PAC file.
 /// * [name] - Name of the PAC file.
+/// * [description] - Detailed description of the PAC file.
 /// * [slug] - URL-friendly version of the PAC file name. If not provided, it will be auto-generated
 @BuiltValue()
 abstract class ZeroTrustGatewayPacfilesCreatePacfileRequest implements Built<ZeroTrustGatewayPacfilesCreatePacfileRequest, ZeroTrustGatewayPacfilesCreatePacfileRequestBuilder> {
@@ -21,13 +21,13 @@ abstract class ZeroTrustGatewayPacfilesCreatePacfileRequest implements Built<Zer
   @BuiltValueField(wireName: r'contents')
   String get contents;
 
-  /// Detailed description of the PAC file.
-  @BuiltValueField(wireName: r'description')
-  String? get description;
-
   /// Name of the PAC file.
   @BuiltValueField(wireName: r'name')
   String get name;
+
+  /// Detailed description of the PAC file.
+  @BuiltValueField(wireName: r'description')
+  String? get description;
 
   /// URL-friendly version of the PAC file name. If not provided, it will be auto-generated
   @BuiltValueField(wireName: r'slug')
@@ -61,6 +61,11 @@ class _$ZeroTrustGatewayPacfilesCreatePacfileRequestSerializer implements Primit
       object.contents,
       specifiedType: const FullType(String),
     );
+    yield r'name';
+    yield serializers.serialize(
+      object.name,
+      specifiedType: const FullType(String),
+    );
     if (object.description != null) {
       yield r'description';
       yield serializers.serialize(
@@ -68,11 +73,6 @@ class _$ZeroTrustGatewayPacfilesCreatePacfileRequestSerializer implements Primit
         specifiedType: const FullType(String),
       );
     }
-    yield r'name';
-    yield serializers.serialize(
-      object.name,
-      specifiedType: const FullType(String),
-    );
     if (object.slug != null) {
       yield r'slug';
       yield serializers.serialize(
@@ -110,19 +110,19 @@ class _$ZeroTrustGatewayPacfilesCreatePacfileRequestSerializer implements Primit
           ) as String;
           result.contents = valueDes;
           break;
-        case r'description':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.description = valueDes;
-          break;
         case r'name':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(String),
           ) as String;
           result.name = valueDes;
+          break;
+        case r'description':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.description = valueDes;
           break;
         case r'slug':
           final valueDes = serializers.deserialize(

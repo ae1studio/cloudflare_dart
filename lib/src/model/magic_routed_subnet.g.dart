@@ -8,17 +8,17 @@ part of 'magic_routed_subnet.dart';
 
 class _$MagicRoutedSubnet extends MagicRoutedSubnet {
   @override
-  final MagicNat? nat;
-  @override
   final String nextHop;
   @override
   final String prefix;
+  @override
+  final MagicNat? nat;
 
   factory _$MagicRoutedSubnet(
           [void Function(MagicRoutedSubnetBuilder)? updates]) =>
       (MagicRoutedSubnetBuilder()..update(updates))._build();
 
-  _$MagicRoutedSubnet._({this.nat, required this.nextHop, required this.prefix})
+  _$MagicRoutedSubnet._({required this.nextHop, required this.prefix, this.nat})
       : super._();
   @override
   MagicRoutedSubnet rebuild(void Function(MagicRoutedSubnetBuilder) updates) =>
@@ -32,17 +32,17 @@ class _$MagicRoutedSubnet extends MagicRoutedSubnet {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is MagicRoutedSubnet &&
-        nat == other.nat &&
         nextHop == other.nextHop &&
-        prefix == other.prefix;
+        prefix == other.prefix &&
+        nat == other.nat;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, nat.hashCode);
     _$hash = $jc(_$hash, nextHop.hashCode);
     _$hash = $jc(_$hash, prefix.hashCode);
+    _$hash = $jc(_$hash, nat.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -50,9 +50,9 @@ class _$MagicRoutedSubnet extends MagicRoutedSubnet {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'MagicRoutedSubnet')
-          ..add('nat', nat)
           ..add('nextHop', nextHop)
-          ..add('prefix', prefix))
+          ..add('prefix', prefix)
+          ..add('nat', nat))
         .toString();
   }
 }
@@ -60,10 +60,6 @@ class _$MagicRoutedSubnet extends MagicRoutedSubnet {
 class MagicRoutedSubnetBuilder
     implements Builder<MagicRoutedSubnet, MagicRoutedSubnetBuilder> {
   _$MagicRoutedSubnet? _$v;
-
-  MagicNatBuilder? _nat;
-  MagicNatBuilder get nat => _$this._nat ??= MagicNatBuilder();
-  set nat(MagicNatBuilder? nat) => _$this._nat = nat;
 
   String? _nextHop;
   String? get nextHop => _$this._nextHop;
@@ -73,6 +69,10 @@ class MagicRoutedSubnetBuilder
   String? get prefix => _$this._prefix;
   set prefix(String? prefix) => _$this._prefix = prefix;
 
+  MagicNatBuilder? _nat;
+  MagicNatBuilder get nat => _$this._nat ??= MagicNatBuilder();
+  set nat(MagicNatBuilder? nat) => _$this._nat = nat;
+
   MagicRoutedSubnetBuilder() {
     MagicRoutedSubnet._defaults(this);
   }
@@ -80,9 +80,9 @@ class MagicRoutedSubnetBuilder
   MagicRoutedSubnetBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _nat = $v.nat?.toBuilder();
       _nextHop = $v.nextHop;
       _prefix = $v.prefix;
+      _nat = $v.nat?.toBuilder();
       _$v = null;
     }
     return this;
@@ -106,11 +106,11 @@ class MagicRoutedSubnetBuilder
     try {
       _$result = _$v ??
           _$MagicRoutedSubnet._(
-            nat: _nat?.build(),
             nextHop: BuiltValueNullFieldError.checkNotNull(
                 nextHop, r'MagicRoutedSubnet', 'nextHop'),
             prefix: BuiltValueNullFieldError.checkNotNull(
                 prefix, r'MagicRoutedSubnet', 'prefix'),
+            nat: _nat?.build(),
           );
     } catch (_) {
       late String _$failedField;

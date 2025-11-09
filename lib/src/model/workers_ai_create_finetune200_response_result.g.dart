@@ -11,8 +11,6 @@ class _$WorkersAiCreateFinetune200ResponseResult
   @override
   final DateTime createdAt;
   @override
-  final String? description;
-  @override
   final String id;
   @override
   final String model;
@@ -22,6 +20,8 @@ class _$WorkersAiCreateFinetune200ResponseResult
   final String name;
   @override
   final bool public;
+  @override
+  final String? description;
 
   factory _$WorkersAiCreateFinetune200ResponseResult(
           [void Function(WorkersAiCreateFinetune200ResponseResultBuilder)?
@@ -31,12 +31,12 @@ class _$WorkersAiCreateFinetune200ResponseResult
 
   _$WorkersAiCreateFinetune200ResponseResult._(
       {required this.createdAt,
-      this.description,
       required this.id,
       required this.model,
       required this.modifiedAt,
       required this.name,
-      required this.public})
+      required this.public,
+      this.description})
       : super._();
   @override
   WorkersAiCreateFinetune200ResponseResult rebuild(
@@ -53,24 +53,24 @@ class _$WorkersAiCreateFinetune200ResponseResult
     if (identical(other, this)) return true;
     return other is WorkersAiCreateFinetune200ResponseResult &&
         createdAt == other.createdAt &&
-        description == other.description &&
         id == other.id &&
         model == other.model &&
         modifiedAt == other.modifiedAt &&
         name == other.name &&
-        public == other.public;
+        public == other.public &&
+        description == other.description;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
     _$hash = $jc(_$hash, createdAt.hashCode);
-    _$hash = $jc(_$hash, description.hashCode);
     _$hash = $jc(_$hash, id.hashCode);
     _$hash = $jc(_$hash, model.hashCode);
     _$hash = $jc(_$hash, modifiedAt.hashCode);
     _$hash = $jc(_$hash, name.hashCode);
     _$hash = $jc(_$hash, public.hashCode);
+    _$hash = $jc(_$hash, description.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -80,12 +80,12 @@ class _$WorkersAiCreateFinetune200ResponseResult
     return (newBuiltValueToStringHelper(
             r'WorkersAiCreateFinetune200ResponseResult')
           ..add('createdAt', createdAt)
-          ..add('description', description)
           ..add('id', id)
           ..add('model', model)
           ..add('modifiedAt', modifiedAt)
           ..add('name', name)
-          ..add('public', public))
+          ..add('public', public)
+          ..add('description', description))
         .toString();
   }
 }
@@ -99,10 +99,6 @@ class WorkersAiCreateFinetune200ResponseResultBuilder
   DateTime? _createdAt;
   DateTime? get createdAt => _$this._createdAt;
   set createdAt(DateTime? createdAt) => _$this._createdAt = createdAt;
-
-  String? _description;
-  String? get description => _$this._description;
-  set description(String? description) => _$this._description = description;
 
   String? _id;
   String? get id => _$this._id;
@@ -124,6 +120,10 @@ class WorkersAiCreateFinetune200ResponseResultBuilder
   bool? get public => _$this._public;
   set public(bool? public) => _$this._public = public;
 
+  String? _description;
+  String? get description => _$this._description;
+  set description(String? description) => _$this._description = description;
+
   WorkersAiCreateFinetune200ResponseResultBuilder() {
     WorkersAiCreateFinetune200ResponseResult._defaults(this);
   }
@@ -132,12 +132,12 @@ class WorkersAiCreateFinetune200ResponseResultBuilder
     final $v = _$v;
     if ($v != null) {
       _createdAt = $v.createdAt;
-      _description = $v.description;
       _id = $v.id;
       _model = $v.model;
       _modifiedAt = $v.modifiedAt;
       _name = $v.name;
       _public = $v.public;
+      _description = $v.description;
       _$v = null;
     }
     return this;
@@ -162,7 +162,6 @@ class WorkersAiCreateFinetune200ResponseResultBuilder
         _$WorkersAiCreateFinetune200ResponseResult._(
           createdAt: BuiltValueNullFieldError.checkNotNull(createdAt,
               r'WorkersAiCreateFinetune200ResponseResult', 'createdAt'),
-          description: description,
           id: BuiltValueNullFieldError.checkNotNull(
               id, r'WorkersAiCreateFinetune200ResponseResult', 'id'),
           model: BuiltValueNullFieldError.checkNotNull(
@@ -173,6 +172,7 @@ class WorkersAiCreateFinetune200ResponseResultBuilder
               name, r'WorkersAiCreateFinetune200ResponseResult', 'name'),
           public: BuiltValueNullFieldError.checkNotNull(
               public, r'WorkersAiCreateFinetune200ResponseResult', 'public'),
+          description: description,
         );
     replace(_$result);
     return _$result;

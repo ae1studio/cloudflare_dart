@@ -15,24 +15,41 @@ part 'mcn_provider_status.g.dart';
 /// McnProviderStatus
 ///
 /// Properties:
+/// * [discoveryProgress] 
+/// * [discoveryProgressV2] 
+/// * [lastDiscoveryStatus] 
+/// * [lastDiscoveryStatusV2] 
+/// * [regions] 
 /// * [credentialsGoodSince] 
 /// * [credentialsMissingSince] 
 /// * [credentialsRejectedSince] 
 /// * [discoveryMessage] 
 /// * [discoveryMessageV2] 
-/// * [discoveryProgress] 
-/// * [discoveryProgressV2] 
 /// * [inUseBy] 
 /// * [lastDiscoveryCompletedAt] 
 /// * [lastDiscoveryCompletedAtV2] 
 /// * [lastDiscoveryStartedAt] 
 /// * [lastDiscoveryStartedAtV2] 
-/// * [lastDiscoveryStatus] 
-/// * [lastDiscoveryStatusV2] 
 /// * [lastUpdated] 
-/// * [regions] 
 @BuiltValue()
 abstract class McnProviderStatus implements Built<McnProviderStatus, McnProviderStatusBuilder> {
+  @BuiltValueField(wireName: r'discovery_progress')
+  McnProviderDiscoveryProgress get discoveryProgress;
+
+  @BuiltValueField(wireName: r'discovery_progress_v2')
+  McnProviderDiscoveryProgress get discoveryProgressV2;
+
+  @BuiltValueField(wireName: r'last_discovery_status')
+  McnProviderDiscoveryStatus get lastDiscoveryStatus;
+  // enum lastDiscoveryStatusEnum {  UNSPECIFIED,  PENDING,  DISCOVERING,  FAILED,  SUCCEEDED,  };
+
+  @BuiltValueField(wireName: r'last_discovery_status_v2')
+  McnProviderDiscoveryStatus get lastDiscoveryStatusV2;
+  // enum lastDiscoveryStatusV2Enum {  UNSPECIFIED,  PENDING,  DISCOVERING,  FAILED,  SUCCEEDED,  };
+
+  @BuiltValueField(wireName: r'regions')
+  BuiltList<String> get regions;
+
   @BuiltValueField(wireName: r'credentials_good_since')
   String? get credentialsGoodSince;
 
@@ -47,12 +64,6 @@ abstract class McnProviderStatus implements Built<McnProviderStatus, McnProvider
 
   @BuiltValueField(wireName: r'discovery_message_v2')
   String? get discoveryMessageV2;
-
-  @BuiltValueField(wireName: r'discovery_progress')
-  McnProviderDiscoveryProgress get discoveryProgress;
-
-  @BuiltValueField(wireName: r'discovery_progress_v2')
-  McnProviderDiscoveryProgress get discoveryProgressV2;
 
   @BuiltValueField(wireName: r'in_use_by')
   BuiltList<McnCloudPlatformClient>? get inUseBy;
@@ -69,19 +80,8 @@ abstract class McnProviderStatus implements Built<McnProviderStatus, McnProvider
   @BuiltValueField(wireName: r'last_discovery_started_at_v2')
   String? get lastDiscoveryStartedAtV2;
 
-  @BuiltValueField(wireName: r'last_discovery_status')
-  McnProviderDiscoveryStatus get lastDiscoveryStatus;
-  // enum lastDiscoveryStatusEnum {  UNSPECIFIED,  PENDING,  DISCOVERING,  FAILED,  SUCCEEDED,  };
-
-  @BuiltValueField(wireName: r'last_discovery_status_v2')
-  McnProviderDiscoveryStatus get lastDiscoveryStatusV2;
-  // enum lastDiscoveryStatusV2Enum {  UNSPECIFIED,  PENDING,  DISCOVERING,  FAILED,  SUCCEEDED,  };
-
   @BuiltValueField(wireName: r'last_updated')
   String? get lastUpdated;
-
-  @BuiltValueField(wireName: r'regions')
-  BuiltList<String> get regions;
 
   McnProviderStatus._();
 
@@ -106,6 +106,31 @@ class _$McnProviderStatusSerializer implements PrimitiveSerializer<McnProviderSt
     McnProviderStatus object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    yield r'discovery_progress';
+    yield serializers.serialize(
+      object.discoveryProgress,
+      specifiedType: const FullType(McnProviderDiscoveryProgress),
+    );
+    yield r'discovery_progress_v2';
+    yield serializers.serialize(
+      object.discoveryProgressV2,
+      specifiedType: const FullType(McnProviderDiscoveryProgress),
+    );
+    yield r'last_discovery_status';
+    yield serializers.serialize(
+      object.lastDiscoveryStatus,
+      specifiedType: const FullType(McnProviderDiscoveryStatus),
+    );
+    yield r'last_discovery_status_v2';
+    yield serializers.serialize(
+      object.lastDiscoveryStatusV2,
+      specifiedType: const FullType(McnProviderDiscoveryStatus),
+    );
+    yield r'regions';
+    yield serializers.serialize(
+      object.regions,
+      specifiedType: const FullType(BuiltList, [FullType(String)]),
+    );
     if (object.credentialsGoodSince != null) {
       yield r'credentials_good_since';
       yield serializers.serialize(
@@ -141,16 +166,6 @@ class _$McnProviderStatusSerializer implements PrimitiveSerializer<McnProviderSt
         specifiedType: const FullType(String),
       );
     }
-    yield r'discovery_progress';
-    yield serializers.serialize(
-      object.discoveryProgress,
-      specifiedType: const FullType(McnProviderDiscoveryProgress),
-    );
-    yield r'discovery_progress_v2';
-    yield serializers.serialize(
-      object.discoveryProgressV2,
-      specifiedType: const FullType(McnProviderDiscoveryProgress),
-    );
     if (object.inUseBy != null) {
       yield r'in_use_by';
       yield serializers.serialize(
@@ -186,16 +201,6 @@ class _$McnProviderStatusSerializer implements PrimitiveSerializer<McnProviderSt
         specifiedType: const FullType(String),
       );
     }
-    yield r'last_discovery_status';
-    yield serializers.serialize(
-      object.lastDiscoveryStatus,
-      specifiedType: const FullType(McnProviderDiscoveryStatus),
-    );
-    yield r'last_discovery_status_v2';
-    yield serializers.serialize(
-      object.lastDiscoveryStatusV2,
-      specifiedType: const FullType(McnProviderDiscoveryStatus),
-    );
     if (object.lastUpdated != null) {
       yield r'last_updated';
       yield serializers.serialize(
@@ -203,11 +208,6 @@ class _$McnProviderStatusSerializer implements PrimitiveSerializer<McnProviderSt
         specifiedType: const FullType(String),
       );
     }
-    yield r'regions';
-    yield serializers.serialize(
-      object.regions,
-      specifiedType: const FullType(BuiltList, [FullType(String)]),
-    );
   }
 
   @override
@@ -231,6 +231,41 @@ class _$McnProviderStatusSerializer implements PrimitiveSerializer<McnProviderSt
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
+        case r'discovery_progress':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(McnProviderDiscoveryProgress),
+          ) as McnProviderDiscoveryProgress;
+          result.discoveryProgress.replace(valueDes);
+          break;
+        case r'discovery_progress_v2':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(McnProviderDiscoveryProgress),
+          ) as McnProviderDiscoveryProgress;
+          result.discoveryProgressV2.replace(valueDes);
+          break;
+        case r'last_discovery_status':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(McnProviderDiscoveryStatus),
+          ) as McnProviderDiscoveryStatus;
+          result.lastDiscoveryStatus = valueDes;
+          break;
+        case r'last_discovery_status_v2':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(McnProviderDiscoveryStatus),
+          ) as McnProviderDiscoveryStatus;
+          result.lastDiscoveryStatusV2 = valueDes;
+          break;
+        case r'regions':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BuiltList, [FullType(String)]),
+          ) as BuiltList<String>;
+          result.regions.replace(valueDes);
+          break;
         case r'credentials_good_since':
           final valueDes = serializers.deserialize(
             value,
@@ -265,20 +300,6 @@ class _$McnProviderStatusSerializer implements PrimitiveSerializer<McnProviderSt
             specifiedType: const FullType(String),
           ) as String;
           result.discoveryMessageV2 = valueDes;
-          break;
-        case r'discovery_progress':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(McnProviderDiscoveryProgress),
-          ) as McnProviderDiscoveryProgress;
-          result.discoveryProgress.replace(valueDes);
-          break;
-        case r'discovery_progress_v2':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(McnProviderDiscoveryProgress),
-          ) as McnProviderDiscoveryProgress;
-          result.discoveryProgressV2.replace(valueDes);
           break;
         case r'in_use_by':
           final valueDes = serializers.deserialize(
@@ -315,33 +336,12 @@ class _$McnProviderStatusSerializer implements PrimitiveSerializer<McnProviderSt
           ) as String;
           result.lastDiscoveryStartedAtV2 = valueDes;
           break;
-        case r'last_discovery_status':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(McnProviderDiscoveryStatus),
-          ) as McnProviderDiscoveryStatus;
-          result.lastDiscoveryStatus = valueDes;
-          break;
-        case r'last_discovery_status_v2':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(McnProviderDiscoveryStatus),
-          ) as McnProviderDiscoveryStatus;
-          result.lastDiscoveryStatusV2 = valueDes;
-          break;
         case r'last_updated':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(String),
           ) as String;
           result.lastUpdated = valueDes;
-          break;
-        case r'regions':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>;
-          result.regions.replace(valueDes);
           break;
         default:
           unhandled.add(key);

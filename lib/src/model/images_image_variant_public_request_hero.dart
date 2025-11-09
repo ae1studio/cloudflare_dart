@@ -13,19 +13,19 @@ part 'images_image_variant_public_request_hero.g.dart';
 ///
 /// Properties:
 /// * [id] 
-/// * [neverRequireSignedURLs] - Indicates whether the variant can access an image without a signature, regardless of image access control.
 /// * [options] 
+/// * [neverRequireSignedURLs] - Indicates whether the variant can access an image without a signature, regardless of image access control.
 @BuiltValue()
 abstract class ImagesImageVariantPublicRequestHero implements Built<ImagesImageVariantPublicRequestHero, ImagesImageVariantPublicRequestHeroBuilder> {
   @BuiltValueField(wireName: r'id')
   String get id;
 
+  @BuiltValueField(wireName: r'options')
+  ImagesImageVariantOptions get options;
+
   /// Indicates whether the variant can access an image without a signature, regardless of image access control.
   @BuiltValueField(wireName: r'neverRequireSignedURLs')
   bool? get neverRequireSignedURLs;
-
-  @BuiltValueField(wireName: r'options')
-  ImagesImageVariantOptions get options;
 
   ImagesImageVariantPublicRequestHero._();
 
@@ -56,6 +56,11 @@ class _$ImagesImageVariantPublicRequestHeroSerializer implements PrimitiveSerial
       object.id,
       specifiedType: const FullType(String),
     );
+    yield r'options';
+    yield serializers.serialize(
+      object.options,
+      specifiedType: const FullType(ImagesImageVariantOptions),
+    );
     if (object.neverRequireSignedURLs != null) {
       yield r'neverRequireSignedURLs';
       yield serializers.serialize(
@@ -63,11 +68,6 @@ class _$ImagesImageVariantPublicRequestHeroSerializer implements PrimitiveSerial
         specifiedType: const FullType(bool),
       );
     }
-    yield r'options';
-    yield serializers.serialize(
-      object.options,
-      specifiedType: const FullType(ImagesImageVariantOptions),
-    );
   }
 
   @override
@@ -98,19 +98,19 @@ class _$ImagesImageVariantPublicRequestHeroSerializer implements PrimitiveSerial
           ) as String;
           result.id = valueDes;
           break;
-        case r'neverRequireSignedURLs':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
-          result.neverRequireSignedURLs = valueDes;
-          break;
         case r'options':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(ImagesImageVariantOptions),
           ) as ImagesImageVariantOptions;
           result.options.replace(valueDes);
+          break;
+        case r'neverRequireSignedURLs':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(bool),
+          ) as bool;
+          result.neverRequireSignedURLs = valueDes;
           break;
         default:
           unhandled.add(key);

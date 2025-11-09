@@ -7,14 +7,15 @@ import 'package:cloudflare_dart/src/model/create_meeting201_response_all_of_all_
 import 'package:cloudflare_dart/src/model/realtimekit_generic_success_response.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
+import 'package:built_value/json_object.dart';
 
 part 'create_meeting201_response.g.dart';
 
 /// CreateMeeting201Response
 ///
 /// Properties:
-/// * [data] 
 /// * [success] - Success status of the operation
+/// * [data] 
 @BuiltValue()
 abstract class CreateMeeting201Response implements RealtimekitGenericSuccessResponse, Built<CreateMeeting201Response, CreateMeeting201ResponseBuilder> {
   CreateMeeting201Response._();

@@ -13,18 +13,14 @@ part 'keyless_ssl_for_a_zone_create_keyless_ssl_configuration_request.g.dart';
 /// KeylessSslForAZoneCreateKeylessSslConfigurationRequest
 ///
 /// Properties:
-/// * [bundleMethod] 
 /// * [certificate] - The zone's SSL certificate or SSL certificate and intermediate(s).
 /// * [host] - The keyless SSL name.
-/// * [name] - The keyless SSL name.
 /// * [port] - The keyless SSL port used to communicate between Cloudflare and the client's Keyless SSL server.
+/// * [bundleMethod] 
+/// * [name] - The keyless SSL name.
 /// * [tunnel] 
 @BuiltValue()
 abstract class KeylessSslForAZoneCreateKeylessSslConfigurationRequest implements Built<KeylessSslForAZoneCreateKeylessSslConfigurationRequest, KeylessSslForAZoneCreateKeylessSslConfigurationRequestBuilder> {
-  @BuiltValueField(wireName: r'bundle_method')
-  TlsCertificatesAndHostnamesBundleMethod? get bundleMethod;
-  // enum bundleMethodEnum {  ubiquitous,  optimal,  force,  };
-
   /// The zone's SSL certificate or SSL certificate and intermediate(s).
   @BuiltValueField(wireName: r'certificate')
   String get certificate;
@@ -33,13 +29,17 @@ abstract class KeylessSslForAZoneCreateKeylessSslConfigurationRequest implements
   @BuiltValueField(wireName: r'host')
   String get host;
 
-  /// The keyless SSL name.
-  @BuiltValueField(wireName: r'name')
-  String? get name;
-
   /// The keyless SSL port used to communicate between Cloudflare and the client's Keyless SSL server.
   @BuiltValueField(wireName: r'port')
   num get port;
+
+  @BuiltValueField(wireName: r'bundle_method')
+  TlsCertificatesAndHostnamesBundleMethod? get bundleMethod;
+  // enum bundleMethodEnum {  ubiquitous,  optimal,  force,  };
+
+  /// The keyless SSL name.
+  @BuiltValueField(wireName: r'name')
+  String? get name;
 
   @BuiltValueField(wireName: r'tunnel')
   TlsCertificatesAndHostnamesKeylessTunnel? get tunnel;
@@ -68,13 +68,6 @@ class _$KeylessSslForAZoneCreateKeylessSslConfigurationRequestSerializer impleme
     KeylessSslForAZoneCreateKeylessSslConfigurationRequest object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
-    if (object.bundleMethod != null) {
-      yield r'bundle_method';
-      yield serializers.serialize(
-        object.bundleMethod,
-        specifiedType: const FullType(TlsCertificatesAndHostnamesBundleMethod),
-      );
-    }
     yield r'certificate';
     yield serializers.serialize(
       object.certificate,
@@ -85,6 +78,18 @@ class _$KeylessSslForAZoneCreateKeylessSslConfigurationRequestSerializer impleme
       object.host,
       specifiedType: const FullType(String),
     );
+    yield r'port';
+    yield serializers.serialize(
+      object.port,
+      specifiedType: const FullType(num),
+    );
+    if (object.bundleMethod != null) {
+      yield r'bundle_method';
+      yield serializers.serialize(
+        object.bundleMethod,
+        specifiedType: const FullType(TlsCertificatesAndHostnamesBundleMethod),
+      );
+    }
     if (object.name != null) {
       yield r'name';
       yield serializers.serialize(
@@ -92,11 +97,6 @@ class _$KeylessSslForAZoneCreateKeylessSslConfigurationRequestSerializer impleme
         specifiedType: const FullType(String),
       );
     }
-    yield r'port';
-    yield serializers.serialize(
-      object.port,
-      specifiedType: const FullType(num),
-    );
     if (object.tunnel != null) {
       yield r'tunnel';
       yield serializers.serialize(
@@ -127,13 +127,6 @@ class _$KeylessSslForAZoneCreateKeylessSslConfigurationRequestSerializer impleme
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'bundle_method':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(TlsCertificatesAndHostnamesBundleMethod),
-          ) as TlsCertificatesAndHostnamesBundleMethod;
-          result.bundleMethod = valueDes;
-          break;
         case r'certificate':
           final valueDes = serializers.deserialize(
             value,
@@ -148,19 +141,26 @@ class _$KeylessSslForAZoneCreateKeylessSslConfigurationRequestSerializer impleme
           ) as String;
           result.host = valueDes;
           break;
-        case r'name':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.name = valueDes;
-          break;
         case r'port':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(num),
           ) as num;
           result.port = valueDes;
+          break;
+        case r'bundle_method':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(TlsCertificatesAndHostnamesBundleMethod),
+          ) as TlsCertificatesAndHostnamesBundleMethod;
+          result.bundleMethod = valueDes;
+          break;
+        case r'name':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.name = valueDes;
           break;
         case r'tunnel':
           final valueDes = serializers.deserialize(

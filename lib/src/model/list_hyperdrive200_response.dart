@@ -10,6 +10,7 @@ import 'package:cloudflare_dart/src/model/hyperdrive_api_response_collection.dar
 import 'package:cloudflare_dart/src/model/aaa_messages_inner.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
+import 'package:built_value/json_object.dart';
 
 part 'list_hyperdrive200_response.g.dart';
 

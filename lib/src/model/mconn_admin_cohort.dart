@@ -11,19 +11,19 @@ part 'mconn_admin_cohort.g.dart';
 /// MconnAdminCohort
 ///
 /// Properties:
-/// * [desiredVersion] 
 /// * [id] 
 /// * [name] 
+/// * [desiredVersion] 
 @BuiltValue()
 abstract class MconnAdminCohort implements Built<MconnAdminCohort, MconnAdminCohortBuilder> {
-  @BuiltValueField(wireName: r'desired_version')
-  String? get desiredVersion;
-
   @BuiltValueField(wireName: r'id')
   String get id;
 
   @BuiltValueField(wireName: r'name')
   String get name;
+
+  @BuiltValueField(wireName: r'desired_version')
+  String? get desiredVersion;
 
   MconnAdminCohort._();
 
@@ -48,13 +48,6 @@ class _$MconnAdminCohortSerializer implements PrimitiveSerializer<MconnAdminCoho
     MconnAdminCohort object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
-    if (object.desiredVersion != null) {
-      yield r'desired_version';
-      yield serializers.serialize(
-        object.desiredVersion,
-        specifiedType: const FullType(String),
-      );
-    }
     yield r'id';
     yield serializers.serialize(
       object.id,
@@ -65,6 +58,13 @@ class _$MconnAdminCohortSerializer implements PrimitiveSerializer<MconnAdminCoho
       object.name,
       specifiedType: const FullType(String),
     );
+    if (object.desiredVersion != null) {
+      yield r'desired_version';
+      yield serializers.serialize(
+        object.desiredVersion,
+        specifiedType: const FullType(String),
+      );
+    }
   }
 
   @override
@@ -88,13 +88,6 @@ class _$MconnAdminCohortSerializer implements PrimitiveSerializer<MconnAdminCoho
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'desired_version':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.desiredVersion = valueDes;
-          break;
         case r'id':
           final valueDes = serializers.deserialize(
             value,
@@ -108,6 +101,13 @@ class _$MconnAdminCohortSerializer implements PrimitiveSerializer<MconnAdminCoho
             specifiedType: const FullType(String),
           ) as String;
           result.name = valueDes;
+          break;
+        case r'desired_version':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.desiredVersion = valueDes;
           break;
         default:
           unhandled.add(key);

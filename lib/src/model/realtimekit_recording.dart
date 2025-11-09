@@ -19,11 +19,11 @@ part 'realtimekit_recording.g.dart';
 /// * [id] - ID of the recording
 /// * [invokedTime] - Timestamp when this recording was invoked.
 /// * [outputFileName] - File name of the recording.
-/// * [recordingDuration] - Total recording time in seconds.
 /// * [sessionId] - ID of the meeting session this recording is for.
 /// * [startedTime] - Timestamp when this recording actually started after being invoked. Usually a few seconds after `invoked_time`.
 /// * [status] - Current status of the recording.
 /// * [stoppedTime] - Timestamp when this recording was stopped. Optional; is present only when the recording has actually been stopped.
+/// * [recordingDuration] - Total recording time in seconds.
 @BuiltValue(instantiable: false)
 abstract class RealtimekitRecording  {
   /// If the audio_config is passed, the URL for downloading the audio recording is returned.
@@ -54,10 +54,6 @@ abstract class RealtimekitRecording  {
   @BuiltValueField(wireName: r'output_file_name')
   String get outputFileName;
 
-  /// Total recording time in seconds.
-  @BuiltValueField(wireName: r'recording_duration')
-  int? get recordingDuration;
-
   /// ID of the meeting session this recording is for.
   @BuiltValueField(wireName: r'session_id')
   String? get sessionId;
@@ -74,6 +70,10 @@ abstract class RealtimekitRecording  {
   /// Timestamp when this recording was stopped. Optional; is present only when the recording has actually been stopped.
   @BuiltValueField(wireName: r'stopped_time')
   DateTime? get stoppedTime;
+
+  /// Total recording time in seconds.
+  @BuiltValueField(wireName: r'recording_duration')
+  int? get recordingDuration;
 
   @BuiltValueSerializer(custom: true)
   static Serializer<RealtimekitRecording> get serializer => _$RealtimekitRecordingSerializer();
@@ -126,13 +126,6 @@ class _$RealtimekitRecordingSerializer implements PrimitiveSerializer<Realtimeki
       object.outputFileName,
       specifiedType: const FullType(String),
     );
-    if (object.recordingDuration != null) {
-      yield r'recording_duration';
-      yield serializers.serialize(
-        object.recordingDuration,
-        specifiedType: const FullType(int),
-      );
-    }
     yield r'session_id';
     yield object.sessionId == null ? null : serializers.serialize(
       object.sessionId,
@@ -153,6 +146,13 @@ class _$RealtimekitRecordingSerializer implements PrimitiveSerializer<Realtimeki
       object.stoppedTime,
       specifiedType: const FullType.nullable(DateTime),
     );
+    if (object.recordingDuration != null) {
+      yield r'recording_duration';
+      yield serializers.serialize(
+        object.recordingDuration,
+        specifiedType: const FullType(int),
+      );
+    }
   }
 
   @override
@@ -269,13 +269,6 @@ class _$$RealtimekitRecordingSerializer implements PrimitiveSerializer<$Realtime
           ) as String;
           result.outputFileName = valueDes;
           break;
-        case r'recording_duration':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
-          result.recordingDuration = valueDes;
-          break;
         case r'session_id':
           final valueDes = serializers.deserialize(
             value,
@@ -306,6 +299,13 @@ class _$$RealtimekitRecordingSerializer implements PrimitiveSerializer<$Realtime
           ) as DateTime?;
           if (valueDes == null) continue;
           result.stoppedTime = valueDes;
+          break;
+        case r'recording_duration':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(int),
+          ) as int;
+          result.recordingDuration = valueDes;
           break;
         default:
           unhandled.add(key);

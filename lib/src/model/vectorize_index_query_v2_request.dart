@@ -13,13 +13,17 @@ part 'vectorize_index_query_v2_request.g.dart';
 /// VectorizeIndexQueryV2Request
 ///
 /// Properties:
+/// * [vector] - The search vector that will be used to find the nearest neighbors.
 /// * [filter] - A metadata filter expression used to limit nearest neighbor results.
 /// * [returnMetadata] - Whether to return no metadata, indexed metadata or all metadata associated with the closest vectors.
 /// * [returnValues] - Whether to return the values associated with the closest vectors.
 /// * [topK] - The number of nearest neighbors to find.
-/// * [vector] - The search vector that will be used to find the nearest neighbors.
 @BuiltValue()
 abstract class VectorizeIndexQueryV2Request implements Built<VectorizeIndexQueryV2Request, VectorizeIndexQueryV2RequestBuilder> {
+  /// The search vector that will be used to find the nearest neighbors.
+  @BuiltValueField(wireName: r'vector')
+  BuiltList<num> get vector;
+
   /// A metadata filter expression used to limit nearest neighbor results.
   @BuiltValueField(wireName: r'filter')
   JsonObject? get filter;
@@ -36,10 +40,6 @@ abstract class VectorizeIndexQueryV2Request implements Built<VectorizeIndexQuery
   /// The number of nearest neighbors to find.
   @BuiltValueField(wireName: r'topK')
   num? get topK;
-
-  /// The search vector that will be used to find the nearest neighbors.
-  @BuiltValueField(wireName: r'vector')
-  BuiltList<num> get vector;
 
   VectorizeIndexQueryV2Request._();
 
@@ -67,6 +67,11 @@ class _$VectorizeIndexQueryV2RequestSerializer implements PrimitiveSerializer<Ve
     VectorizeIndexQueryV2Request object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    yield r'vector';
+    yield serializers.serialize(
+      object.vector,
+      specifiedType: const FullType(BuiltList, [FullType(num)]),
+    );
     if (object.filter != null) {
       yield r'filter';
       yield serializers.serialize(
@@ -95,11 +100,6 @@ class _$VectorizeIndexQueryV2RequestSerializer implements PrimitiveSerializer<Ve
         specifiedType: const FullType(num),
       );
     }
-    yield r'vector';
-    yield serializers.serialize(
-      object.vector,
-      specifiedType: const FullType(BuiltList, [FullType(num)]),
-    );
   }
 
   @override
@@ -123,6 +123,13 @@ class _$VectorizeIndexQueryV2RequestSerializer implements PrimitiveSerializer<Ve
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
+        case r'vector':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BuiltList, [FullType(num)]),
+          ) as BuiltList<num>;
+          result.vector.replace(valueDes);
+          break;
         case r'filter':
           final valueDes = serializers.deserialize(
             value,
@@ -150,13 +157,6 @@ class _$VectorizeIndexQueryV2RequestSerializer implements PrimitiveSerializer<Ve
             specifiedType: const FullType(num),
           ) as num;
           result.topK = valueDes;
-          break;
-        case r'vector':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(num)]),
-          ) as BuiltList<num>;
-          result.vector.replace(valueDes);
           break;
         default:
           unhandled.add(key);

@@ -11,36 +11,20 @@ part 'mconn_snapshot_mount.g.dart';
 /// Snapshot Mount
 ///
 /// Properties:
-/// * [availableBytes] - Available disk size (bytes)
-/// * [connectorId] - Connector identifier
 /// * [fileSystem] - File system on disk (EXT4, NTFS, etc.)
-/// * [isReadOnly] - Determines whether the disk is read-only
-/// * [isRemovable] - Determines whether the disk is removable
 /// * [kind] - Kind of disk (HDD, SSD, etc.)
 /// * [mountPoint] - Path where disk is mounted
 /// * [name] - Name of the disk mount
+/// * [availableBytes] - Available disk size (bytes)
+/// * [connectorId] - Connector identifier
+/// * [isReadOnly] - Determines whether the disk is read-only
+/// * [isRemovable] - Determines whether the disk is removable
 /// * [totalBytes] - Total disk size (bytes)
 @BuiltValue()
 abstract class MconnSnapshotMount implements Built<MconnSnapshotMount, MconnSnapshotMountBuilder> {
-  /// Available disk size (bytes)
-  @BuiltValueField(wireName: r'available_bytes')
-  num? get availableBytes;
-
-  /// Connector identifier
-  @BuiltValueField(wireName: r'connector_id')
-  String? get connectorId;
-
   /// File system on disk (EXT4, NTFS, etc.)
   @BuiltValueField(wireName: r'file_system')
   String get fileSystem;
-
-  /// Determines whether the disk is read-only
-  @BuiltValueField(wireName: r'is_read_only')
-  bool? get isReadOnly;
-
-  /// Determines whether the disk is removable
-  @BuiltValueField(wireName: r'is_removable')
-  bool? get isRemovable;
 
   /// Kind of disk (HDD, SSD, etc.)
   @BuiltValueField(wireName: r'kind')
@@ -53,6 +37,22 @@ abstract class MconnSnapshotMount implements Built<MconnSnapshotMount, MconnSnap
   /// Name of the disk mount
   @BuiltValueField(wireName: r'name')
   String get name;
+
+  /// Available disk size (bytes)
+  @BuiltValueField(wireName: r'available_bytes')
+  num? get availableBytes;
+
+  /// Connector identifier
+  @BuiltValueField(wireName: r'connector_id')
+  String? get connectorId;
+
+  /// Determines whether the disk is read-only
+  @BuiltValueField(wireName: r'is_read_only')
+  bool? get isReadOnly;
+
+  /// Determines whether the disk is removable
+  @BuiltValueField(wireName: r'is_removable')
+  bool? get isRemovable;
 
   /// Total disk size (bytes)
   @BuiltValueField(wireName: r'total_bytes')
@@ -81,39 +81,11 @@ class _$MconnSnapshotMountSerializer implements PrimitiveSerializer<MconnSnapsho
     MconnSnapshotMount object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
-    if (object.availableBytes != null) {
-      yield r'available_bytes';
-      yield serializers.serialize(
-        object.availableBytes,
-        specifiedType: const FullType(num),
-      );
-    }
-    if (object.connectorId != null) {
-      yield r'connector_id';
-      yield serializers.serialize(
-        object.connectorId,
-        specifiedType: const FullType(String),
-      );
-    }
     yield r'file_system';
     yield serializers.serialize(
       object.fileSystem,
       specifiedType: const FullType(String),
     );
-    if (object.isReadOnly != null) {
-      yield r'is_read_only';
-      yield serializers.serialize(
-        object.isReadOnly,
-        specifiedType: const FullType(bool),
-      );
-    }
-    if (object.isRemovable != null) {
-      yield r'is_removable';
-      yield serializers.serialize(
-        object.isRemovable,
-        specifiedType: const FullType(bool),
-      );
-    }
     yield r'kind';
     yield serializers.serialize(
       object.kind,
@@ -129,6 +101,34 @@ class _$MconnSnapshotMountSerializer implements PrimitiveSerializer<MconnSnapsho
       object.name,
       specifiedType: const FullType(String),
     );
+    if (object.availableBytes != null) {
+      yield r'available_bytes';
+      yield serializers.serialize(
+        object.availableBytes,
+        specifiedType: const FullType(num),
+      );
+    }
+    if (object.connectorId != null) {
+      yield r'connector_id';
+      yield serializers.serialize(
+        object.connectorId,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.isReadOnly != null) {
+      yield r'is_read_only';
+      yield serializers.serialize(
+        object.isReadOnly,
+        specifiedType: const FullType(bool),
+      );
+    }
+    if (object.isRemovable != null) {
+      yield r'is_removable';
+      yield serializers.serialize(
+        object.isRemovable,
+        specifiedType: const FullType(bool),
+      );
+    }
     if (object.totalBytes != null) {
       yield r'total_bytes';
       yield serializers.serialize(
@@ -159,40 +159,12 @@ class _$MconnSnapshotMountSerializer implements PrimitiveSerializer<MconnSnapsho
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'available_bytes':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(num),
-          ) as num;
-          result.availableBytes = valueDes;
-          break;
-        case r'connector_id':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.connectorId = valueDes;
-          break;
         case r'file_system':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(String),
           ) as String;
           result.fileSystem = valueDes;
-          break;
-        case r'is_read_only':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
-          result.isReadOnly = valueDes;
-          break;
-        case r'is_removable':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
-          result.isRemovable = valueDes;
           break;
         case r'kind':
           final valueDes = serializers.deserialize(
@@ -214,6 +186,34 @@ class _$MconnSnapshotMountSerializer implements PrimitiveSerializer<MconnSnapsho
             specifiedType: const FullType(String),
           ) as String;
           result.name = valueDes;
+          break;
+        case r'available_bytes':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(num),
+          ) as num;
+          result.availableBytes = valueDes;
+          break;
+        case r'connector_id':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.connectorId = valueDes;
+          break;
+        case r'is_read_only':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(bool),
+          ) as bool;
+          result.isReadOnly = valueDes;
+          break;
+        case r'is_removable':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(bool),
+          ) as bool;
+          result.isRemovable = valueDes;
           break;
         case r'total_bytes':
           final valueDes = serializers.deserialize(

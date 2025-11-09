@@ -16,7 +16,6 @@ part 'dns_firewall_dns_firewall_cluster_response.g.dart';
 /// DnsFirewallDnsFirewallClusterResponse
 ///
 /// Properties:
-/// * [attackMitigation] 
 /// * [deprecateAnyRequests] - Whether to refuse to answer queries for the ANY type
 /// * [ecsFallback] - Whether to forward client IP (resolver) subnet if no EDNS Client Subnet is sent
 /// * [maximumCacheTtl] - By default, Cloudflare attempts to cache responses for as long as indicated by the TTL received from upstream nameservers. This setting sets an upper bound on this duration. For caching purposes, higher TTLs will be decreased to the maximum value defined by this setting.  This setting does not affect the TTL value in the DNS response Cloudflare returns to clients. Cloudflare will always forward the TTL value received from upstream nameservers. 
@@ -29,6 +28,7 @@ part 'dns_firewall_dns_firewall_cluster_response.g.dart';
 /// * [dnsFirewallIps] 
 /// * [id] - Identifier.
 /// * [modifiedOn] - Last modification of DNS Firewall cluster
+/// * [attackMitigation] 
 @BuiltValue()
 abstract class DnsFirewallDnsFirewallClusterResponse implements DnsFirewallDnsFirewallCluster, Built<DnsFirewallDnsFirewallClusterResponse, DnsFirewallDnsFirewallClusterResponseBuilder> {
   /// Last modification of DNS Firewall cluster

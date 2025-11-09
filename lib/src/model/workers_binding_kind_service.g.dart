@@ -60,23 +60,23 @@ class _$WorkersBindingKindServiceTypeEnumSerializer
 
 class _$WorkersBindingKindService extends WorkersBindingKindService {
   @override
-  final String? environment;
-  @override
   final String name;
   @override
   final String service;
   @override
   final WorkersBindingKindServiceTypeEnum type;
+  @override
+  final String? environment;
 
   factory _$WorkersBindingKindService(
           [void Function(WorkersBindingKindServiceBuilder)? updates]) =>
       (WorkersBindingKindServiceBuilder()..update(updates))._build();
 
   _$WorkersBindingKindService._(
-      {this.environment,
-      required this.name,
+      {required this.name,
       required this.service,
-      required this.type})
+      required this.type,
+      this.environment})
       : super._();
   @override
   WorkersBindingKindService rebuild(
@@ -91,19 +91,19 @@ class _$WorkersBindingKindService extends WorkersBindingKindService {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is WorkersBindingKindService &&
-        environment == other.environment &&
         name == other.name &&
         service == other.service &&
-        type == other.type;
+        type == other.type &&
+        environment == other.environment;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, environment.hashCode);
     _$hash = $jc(_$hash, name.hashCode);
     _$hash = $jc(_$hash, service.hashCode);
     _$hash = $jc(_$hash, type.hashCode);
+    _$hash = $jc(_$hash, environment.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -111,10 +111,10 @@ class _$WorkersBindingKindService extends WorkersBindingKindService {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'WorkersBindingKindService')
-          ..add('environment', environment)
           ..add('name', name)
           ..add('service', service)
-          ..add('type', type))
+          ..add('type', type)
+          ..add('environment', environment))
         .toString();
   }
 }
@@ -123,10 +123,6 @@ class WorkersBindingKindServiceBuilder
     implements
         Builder<WorkersBindingKindService, WorkersBindingKindServiceBuilder> {
   _$WorkersBindingKindService? _$v;
-
-  String? _environment;
-  String? get environment => _$this._environment;
-  set environment(String? environment) => _$this._environment = environment;
 
   String? _name;
   String? get name => _$this._name;
@@ -140,6 +136,10 @@ class WorkersBindingKindServiceBuilder
   WorkersBindingKindServiceTypeEnum? get type => _$this._type;
   set type(WorkersBindingKindServiceTypeEnum? type) => _$this._type = type;
 
+  String? _environment;
+  String? get environment => _$this._environment;
+  set environment(String? environment) => _$this._environment = environment;
+
   WorkersBindingKindServiceBuilder() {
     WorkersBindingKindService._defaults(this);
   }
@@ -147,10 +147,10 @@ class WorkersBindingKindServiceBuilder
   WorkersBindingKindServiceBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _environment = $v.environment;
       _name = $v.name;
       _service = $v.service;
       _type = $v.type;
+      _environment = $v.environment;
       _$v = null;
     }
     return this;
@@ -172,13 +172,13 @@ class WorkersBindingKindServiceBuilder
   _$WorkersBindingKindService _build() {
     final _$result = _$v ??
         _$WorkersBindingKindService._(
-          environment: environment,
           name: BuiltValueNullFieldError.checkNotNull(
               name, r'WorkersBindingKindService', 'name'),
           service: BuiltValueNullFieldError.checkNotNull(
               service, r'WorkersBindingKindService', 'service'),
           type: BuiltValueNullFieldError.checkNotNull(
               type, r'WorkersBindingKindService', 'type'),
+          environment: environment,
         );
     replace(_$result);
     return _$result;

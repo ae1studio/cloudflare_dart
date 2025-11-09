@@ -15,9 +15,9 @@ class _$ListEnvironmentVariables200Response
   @override
   final JsonObject? result;
   @override
-  final BuildsPaginationInfo? resultInfo;
-  @override
   final bool success;
+  @override
+  final BuildsPaginationInfo? resultInfo;
 
   factory _$ListEnvironmentVariables200Response(
           [void Function(ListEnvironmentVariables200ResponseBuilder)?
@@ -28,8 +28,8 @@ class _$ListEnvironmentVariables200Response
       {required this.errors,
       required this.messages,
       this.result,
-      this.resultInfo,
-      required this.success})
+      required this.success,
+      this.resultInfo})
       : super._();
   @override
   ListEnvironmentVariables200Response rebuild(
@@ -47,8 +47,8 @@ class _$ListEnvironmentVariables200Response
         errors == other.errors &&
         messages == other.messages &&
         result == other.result &&
-        resultInfo == other.resultInfo &&
-        success == other.success;
+        success == other.success &&
+        resultInfo == other.resultInfo;
   }
 
   @override
@@ -57,8 +57,8 @@ class _$ListEnvironmentVariables200Response
     _$hash = $jc(_$hash, errors.hashCode);
     _$hash = $jc(_$hash, messages.hashCode);
     _$hash = $jc(_$hash, result.hashCode);
-    _$hash = $jc(_$hash, resultInfo.hashCode);
     _$hash = $jc(_$hash, success.hashCode);
+    _$hash = $jc(_$hash, resultInfo.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -69,8 +69,8 @@ class _$ListEnvironmentVariables200Response
           ..add('errors', errors)
           ..add('messages', messages)
           ..add('result', result)
-          ..add('resultInfo', resultInfo)
-          ..add('success', success))
+          ..add('success', success)
+          ..add('resultInfo', resultInfo))
         .toString();
   }
 }
@@ -98,15 +98,15 @@ class ListEnvironmentVariables200ResponseBuilder
   JsonObject? get result => _$this._result;
   set result(covariant JsonObject? result) => _$this._result = result;
 
+  bool? _success;
+  bool? get success => _$this._success;
+  set success(covariant bool? success) => _$this._success = success;
+
   BuildsPaginationInfoBuilder? _resultInfo;
   BuildsPaginationInfoBuilder get resultInfo =>
       _$this._resultInfo ??= BuildsPaginationInfoBuilder();
   set resultInfo(covariant BuildsPaginationInfoBuilder? resultInfo) =>
       _$this._resultInfo = resultInfo;
-
-  bool? _success;
-  bool? get success => _$this._success;
-  set success(covariant bool? success) => _$this._success = success;
 
   ListEnvironmentVariables200ResponseBuilder() {
     ListEnvironmentVariables200Response._defaults(this);
@@ -118,8 +118,8 @@ class ListEnvironmentVariables200ResponseBuilder
       _errors = $v.errors.toBuilder();
       _messages = $v.messages.toBuilder();
       _result = $v.result;
-      _resultInfo = $v.resultInfo?.toBuilder();
       _success = $v.success;
+      _resultInfo = $v.resultInfo?.toBuilder();
       _$v = null;
     }
     return this;
@@ -147,9 +147,9 @@ class ListEnvironmentVariables200ResponseBuilder
             errors: errors.build(),
             messages: messages.build(),
             result: result,
-            resultInfo: _resultInfo?.build(),
             success: BuiltValueNullFieldError.checkNotNull(
                 success, r'ListEnvironmentVariables200Response', 'success'),
+            resultInfo: _resultInfo?.build(),
           );
     } catch (_) {
       late String _$failedField;

@@ -21,9 +21,9 @@ class _$SpectrumAnalyticsQueryResponseSingleAllOfResult
   @override
   final num rows;
   @override
-  final BuiltList<BuiltList<DateTime>>? timeIntervals;
-  @override
   final BuiltMap<String, num> totals;
+  @override
+  final BuiltList<BuiltList<DateTime>>? timeIntervals;
 
   factory _$SpectrumAnalyticsQueryResponseSingleAllOfResult(
           [void Function(
@@ -40,8 +40,8 @@ class _$SpectrumAnalyticsQueryResponseSingleAllOfResult
       required this.min,
       required this.query,
       required this.rows,
-      this.timeIntervals,
-      required this.totals})
+      required this.totals,
+      this.timeIntervals})
       : super._();
   @override
   SpectrumAnalyticsQueryResponseSingleAllOfResult rebuild(
@@ -63,8 +63,8 @@ class _$SpectrumAnalyticsQueryResponseSingleAllOfResult
         min == other.min &&
         query == other.query &&
         rows == other.rows &&
-        timeIntervals == other.timeIntervals &&
-        totals == other.totals;
+        totals == other.totals &&
+        timeIntervals == other.timeIntervals;
   }
 
   @override
@@ -76,8 +76,8 @@ class _$SpectrumAnalyticsQueryResponseSingleAllOfResult
     _$hash = $jc(_$hash, min.hashCode);
     _$hash = $jc(_$hash, query.hashCode);
     _$hash = $jc(_$hash, rows.hashCode);
-    _$hash = $jc(_$hash, timeIntervals.hashCode);
     _$hash = $jc(_$hash, totals.hashCode);
+    _$hash = $jc(_$hash, timeIntervals.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -92,8 +92,8 @@ class _$SpectrumAnalyticsQueryResponseSingleAllOfResult
           ..add('min', min)
           ..add('query', query)
           ..add('rows', rows)
-          ..add('timeIntervals', timeIntervals)
-          ..add('totals', totals))
+          ..add('totals', totals)
+          ..add('timeIntervals', timeIntervals))
         .toString();
   }
 }
@@ -130,16 +130,16 @@ class SpectrumAnalyticsQueryResponseSingleAllOfResultBuilder
   num? get rows => _$this._rows;
   set rows(num? rows) => _$this._rows = rows;
 
+  MapBuilder<String, num>? _totals;
+  MapBuilder<String, num> get totals =>
+      _$this._totals ??= MapBuilder<String, num>();
+  set totals(MapBuilder<String, num>? totals) => _$this._totals = totals;
+
   ListBuilder<BuiltList<DateTime>>? _timeIntervals;
   ListBuilder<BuiltList<DateTime>> get timeIntervals =>
       _$this._timeIntervals ??= ListBuilder<BuiltList<DateTime>>();
   set timeIntervals(ListBuilder<BuiltList<DateTime>>? timeIntervals) =>
       _$this._timeIntervals = timeIntervals;
-
-  MapBuilder<String, num>? _totals;
-  MapBuilder<String, num> get totals =>
-      _$this._totals ??= MapBuilder<String, num>();
-  set totals(MapBuilder<String, num>? totals) => _$this._totals = totals;
 
   SpectrumAnalyticsQueryResponseSingleAllOfResultBuilder() {
     SpectrumAnalyticsQueryResponseSingleAllOfResult._defaults(this);
@@ -154,8 +154,8 @@ class SpectrumAnalyticsQueryResponseSingleAllOfResultBuilder
       _min = $v.min.toBuilder();
       _query = $v.query.toBuilder();
       _rows = $v.rows;
-      _timeIntervals = $v.timeIntervals?.toBuilder();
       _totals = $v.totals.toBuilder();
+      _timeIntervals = $v.timeIntervals?.toBuilder();
       _$v = null;
     }
     return this;
@@ -189,8 +189,8 @@ class SpectrumAnalyticsQueryResponseSingleAllOfResultBuilder
             query: query.build(),
             rows: BuiltValueNullFieldError.checkNotNull(rows,
                 r'SpectrumAnalyticsQueryResponseSingleAllOfResult', 'rows'),
-            timeIntervals: _timeIntervals?.build(),
             totals: totals.build(),
+            timeIntervals: _timeIntervals?.build(),
           );
     } catch (_) {
       late String _$failedField;
@@ -205,10 +205,10 @@ class SpectrumAnalyticsQueryResponseSingleAllOfResultBuilder
         _$failedField = 'query';
         query.build();
 
-        _$failedField = 'timeIntervals';
-        _timeIntervals?.build();
         _$failedField = 'totals';
         totals.build();
+        _$failedField = 'timeIntervals';
+        _timeIntervals?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
             r'SpectrumAnalyticsQueryResponseSingleAllOfResult',

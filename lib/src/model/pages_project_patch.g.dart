@@ -8,6 +8,12 @@ part of 'pages_project_patch.dart';
 
 class _$PagesProjectPatch extends PagesProjectPatch {
   @override
+  final String id;
+  @override
+  final String name;
+  @override
+  final String productionBranch;
+  @override
   final PagesProjectObjectBuildConfig? buildConfig;
   @override
   final PagesProjectObjectCanonicalDeployment? canonicalDeployment;
@@ -22,15 +28,9 @@ class _$PagesProjectPatch extends PagesProjectPatch {
   @override
   final String? frameworkVersion;
   @override
-  final String id;
-  @override
   final PagesProjectObjectLatestDeployment? latestDeployment;
   @override
-  final String name;
-  @override
   final String? previewScriptName;
-  @override
-  final String productionBranch;
   @override
   final String? productionScriptName;
   @override
@@ -45,18 +45,18 @@ class _$PagesProjectPatch extends PagesProjectPatch {
       (PagesProjectPatchBuilder()..update(updates))._build();
 
   _$PagesProjectPatch._(
-      {this.buildConfig,
+      {required this.id,
+      required this.name,
+      required this.productionBranch,
+      this.buildConfig,
       this.canonicalDeployment,
       this.createdOn,
       this.deploymentConfigs,
       this.domains,
       this.framework,
       this.frameworkVersion,
-      required this.id,
       this.latestDeployment,
-      required this.name,
       this.previewScriptName,
-      required this.productionBranch,
       this.productionScriptName,
       this.source_,
       this.subdomain,
@@ -74,6 +74,9 @@ class _$PagesProjectPatch extends PagesProjectPatch {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is PagesProjectPatch &&
+        id == other.id &&
+        name == other.name &&
+        productionBranch == other.productionBranch &&
         buildConfig == other.buildConfig &&
         canonicalDeployment == other.canonicalDeployment &&
         createdOn == other.createdOn &&
@@ -81,11 +84,8 @@ class _$PagesProjectPatch extends PagesProjectPatch {
         domains == other.domains &&
         framework == other.framework &&
         frameworkVersion == other.frameworkVersion &&
-        id == other.id &&
         latestDeployment == other.latestDeployment &&
-        name == other.name &&
         previewScriptName == other.previewScriptName &&
-        productionBranch == other.productionBranch &&
         productionScriptName == other.productionScriptName &&
         source_ == other.source_ &&
         subdomain == other.subdomain &&
@@ -95,6 +95,9 @@ class _$PagesProjectPatch extends PagesProjectPatch {
   @override
   int get hashCode {
     var _$hash = 0;
+    _$hash = $jc(_$hash, id.hashCode);
+    _$hash = $jc(_$hash, name.hashCode);
+    _$hash = $jc(_$hash, productionBranch.hashCode);
     _$hash = $jc(_$hash, buildConfig.hashCode);
     _$hash = $jc(_$hash, canonicalDeployment.hashCode);
     _$hash = $jc(_$hash, createdOn.hashCode);
@@ -102,11 +105,8 @@ class _$PagesProjectPatch extends PagesProjectPatch {
     _$hash = $jc(_$hash, domains.hashCode);
     _$hash = $jc(_$hash, framework.hashCode);
     _$hash = $jc(_$hash, frameworkVersion.hashCode);
-    _$hash = $jc(_$hash, id.hashCode);
     _$hash = $jc(_$hash, latestDeployment.hashCode);
-    _$hash = $jc(_$hash, name.hashCode);
     _$hash = $jc(_$hash, previewScriptName.hashCode);
-    _$hash = $jc(_$hash, productionBranch.hashCode);
     _$hash = $jc(_$hash, productionScriptName.hashCode);
     _$hash = $jc(_$hash, source_.hashCode);
     _$hash = $jc(_$hash, subdomain.hashCode);
@@ -118,6 +118,9 @@ class _$PagesProjectPatch extends PagesProjectPatch {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'PagesProjectPatch')
+          ..add('id', id)
+          ..add('name', name)
+          ..add('productionBranch', productionBranch)
           ..add('buildConfig', buildConfig)
           ..add('canonicalDeployment', canonicalDeployment)
           ..add('createdOn', createdOn)
@@ -125,11 +128,8 @@ class _$PagesProjectPatch extends PagesProjectPatch {
           ..add('domains', domains)
           ..add('framework', framework)
           ..add('frameworkVersion', frameworkVersion)
-          ..add('id', id)
           ..add('latestDeployment', latestDeployment)
-          ..add('name', name)
           ..add('previewScriptName', previewScriptName)
-          ..add('productionBranch', productionBranch)
           ..add('productionScriptName', productionScriptName)
           ..add('source_', source_)
           ..add('subdomain', subdomain)
@@ -143,6 +143,19 @@ class PagesProjectPatchBuilder
         Builder<PagesProjectPatch, PagesProjectPatchBuilder>,
         PagesProjectObjectBuilder {
   _$PagesProjectPatch? _$v;
+
+  String? _id;
+  String? get id => _$this._id;
+  set id(covariant String? id) => _$this._id = id;
+
+  String? _name;
+  String? get name => _$this._name;
+  set name(covariant String? name) => _$this._name = name;
+
+  String? _productionBranch;
+  String? get productionBranch => _$this._productionBranch;
+  set productionBranch(covariant String? productionBranch) =>
+      _$this._productionBranch = productionBranch;
 
   PagesProjectObjectBuildConfigBuilder? _buildConfig;
   PagesProjectObjectBuildConfigBuilder get buildConfig =>
@@ -185,10 +198,6 @@ class PagesProjectPatchBuilder
   set frameworkVersion(covariant String? frameworkVersion) =>
       _$this._frameworkVersion = frameworkVersion;
 
-  String? _id;
-  String? get id => _$this._id;
-  set id(covariant String? id) => _$this._id = id;
-
   PagesProjectObjectLatestDeploymentBuilder? _latestDeployment;
   PagesProjectObjectLatestDeploymentBuilder get latestDeployment =>
       _$this._latestDeployment ??= PagesProjectObjectLatestDeploymentBuilder();
@@ -197,19 +206,10 @@ class PagesProjectPatchBuilder
               latestDeployment) =>
       _$this._latestDeployment = latestDeployment;
 
-  String? _name;
-  String? get name => _$this._name;
-  set name(covariant String? name) => _$this._name = name;
-
   String? _previewScriptName;
   String? get previewScriptName => _$this._previewScriptName;
   set previewScriptName(covariant String? previewScriptName) =>
       _$this._previewScriptName = previewScriptName;
-
-  String? _productionBranch;
-  String? get productionBranch => _$this._productionBranch;
-  set productionBranch(covariant String? productionBranch) =>
-      _$this._productionBranch = productionBranch;
 
   String? _productionScriptName;
   String? get productionScriptName => _$this._productionScriptName;
@@ -237,6 +237,9 @@ class PagesProjectPatchBuilder
   PagesProjectPatchBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
+      _id = $v.id;
+      _name = $v.name;
+      _productionBranch = $v.productionBranch;
       _buildConfig = $v.buildConfig?.toBuilder();
       _canonicalDeployment = $v.canonicalDeployment?.toBuilder();
       _createdOn = $v.createdOn;
@@ -244,11 +247,8 @@ class PagesProjectPatchBuilder
       _domains = $v.domains?.toBuilder();
       _framework = $v.framework;
       _frameworkVersion = $v.frameworkVersion;
-      _id = $v.id;
       _latestDeployment = $v.latestDeployment?.toBuilder();
-      _name = $v.name;
       _previewScriptName = $v.previewScriptName;
-      _productionBranch = $v.productionBranch;
       _productionScriptName = $v.productionScriptName;
       _source_ = $v.source_?.toBuilder();
       _subdomain = $v.subdomain;
@@ -276,6 +276,12 @@ class PagesProjectPatchBuilder
     try {
       _$result = _$v ??
           _$PagesProjectPatch._(
+            id: BuiltValueNullFieldError.checkNotNull(
+                id, r'PagesProjectPatch', 'id'),
+            name: BuiltValueNullFieldError.checkNotNull(
+                name, r'PagesProjectPatch', 'name'),
+            productionBranch: BuiltValueNullFieldError.checkNotNull(
+                productionBranch, r'PagesProjectPatch', 'productionBranch'),
             buildConfig: _buildConfig?.build(),
             canonicalDeployment: _canonicalDeployment?.build(),
             createdOn: createdOn,
@@ -283,14 +289,8 @@ class PagesProjectPatchBuilder
             domains: _domains?.build(),
             framework: framework,
             frameworkVersion: frameworkVersion,
-            id: BuiltValueNullFieldError.checkNotNull(
-                id, r'PagesProjectPatch', 'id'),
             latestDeployment: _latestDeployment?.build(),
-            name: BuiltValueNullFieldError.checkNotNull(
-                name, r'PagesProjectPatch', 'name'),
             previewScriptName: previewScriptName,
-            productionBranch: BuiltValueNullFieldError.checkNotNull(
-                productionBranch, r'PagesProjectPatch', 'productionBranch'),
             productionScriptName: productionScriptName,
             source_: _source_?.build(),
             subdomain: subdomain,

@@ -13,16 +13,16 @@ part 'organizations_api_create_single_member.g.dart';
 /// OrganizationsApiCreateSingleMember
 ///
 /// Properties:
-/// * [status] 
 /// * [user] 
+/// * [status] 
 @BuiltValue()
 abstract class OrganizationsApiCreateSingleMember implements Built<OrganizationsApiCreateSingleMember, OrganizationsApiCreateSingleMemberBuilder> {
+  @BuiltValueField(wireName: r'user')
+  OrganizationsApiCreateSingleMemberUser get user;
+
   @BuiltValueField(wireName: r'status')
   OrganizationsApiCreateSingleMemberStatusEnum? get status;
   // enum statusEnum {  active,  canceled,  };
-
-  @BuiltValueField(wireName: r'user')
-  OrganizationsApiCreateSingleMemberUser get user;
 
   OrganizationsApiCreateSingleMember._();
 
@@ -47,6 +47,11 @@ class _$OrganizationsApiCreateSingleMemberSerializer implements PrimitiveSeriali
     OrganizationsApiCreateSingleMember object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    yield r'user';
+    yield serializers.serialize(
+      object.user,
+      specifiedType: const FullType(OrganizationsApiCreateSingleMemberUser),
+    );
     if (object.status != null) {
       yield r'status';
       yield serializers.serialize(
@@ -54,11 +59,6 @@ class _$OrganizationsApiCreateSingleMemberSerializer implements PrimitiveSeriali
         specifiedType: const FullType(OrganizationsApiCreateSingleMemberStatusEnum),
       );
     }
-    yield r'user';
-    yield serializers.serialize(
-      object.user,
-      specifiedType: const FullType(OrganizationsApiCreateSingleMemberUser),
-    );
   }
 
   @override
@@ -82,19 +82,19 @@ class _$OrganizationsApiCreateSingleMemberSerializer implements PrimitiveSeriali
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'status':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(OrganizationsApiCreateSingleMemberStatusEnum),
-          ) as OrganizationsApiCreateSingleMemberStatusEnum;
-          result.status = valueDes;
-          break;
         case r'user':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(OrganizationsApiCreateSingleMemberUser),
           ) as OrganizationsApiCreateSingleMemberUser;
           result.user.replace(valueDes);
+          break;
+        case r'status':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(OrganizationsApiCreateSingleMemberStatusEnum),
+          ) as OrganizationsApiCreateSingleMemberStatusEnum;
+          result.status = valueDes;
           break;
         default:
           unhandled.add(key);

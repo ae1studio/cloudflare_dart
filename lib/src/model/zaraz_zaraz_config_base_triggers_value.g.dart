@@ -64,14 +64,14 @@ class _$ZarazZarazConfigBaseTriggersValueSystemEnumSerializer
 class _$ZarazZarazConfigBaseTriggersValue
     extends ZarazZarazConfigBaseTriggersValue {
   @override
-  final String? description;
-  @override
   final BuiltList<ZarazZarazConfigBaseTriggersValueExcludeRulesInner>
       excludeRules;
   @override
   final BuiltList<ZarazZarazConfigBaseTriggersValueExcludeRulesInner> loadRules;
   @override
   final String name;
+  @override
+  final String? description;
   @override
   final ZarazZarazConfigBaseTriggersValueSystemEnum? system;
 
@@ -80,10 +80,10 @@ class _$ZarazZarazConfigBaseTriggersValue
       (ZarazZarazConfigBaseTriggersValueBuilder()..update(updates))._build();
 
   _$ZarazZarazConfigBaseTriggersValue._(
-      {this.description,
-      required this.excludeRules,
+      {required this.excludeRules,
       required this.loadRules,
       required this.name,
+      this.description,
       this.system})
       : super._();
   @override
@@ -99,20 +99,20 @@ class _$ZarazZarazConfigBaseTriggersValue
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is ZarazZarazConfigBaseTriggersValue &&
-        description == other.description &&
         excludeRules == other.excludeRules &&
         loadRules == other.loadRules &&
         name == other.name &&
+        description == other.description &&
         system == other.system;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, description.hashCode);
     _$hash = $jc(_$hash, excludeRules.hashCode);
     _$hash = $jc(_$hash, loadRules.hashCode);
     _$hash = $jc(_$hash, name.hashCode);
+    _$hash = $jc(_$hash, description.hashCode);
     _$hash = $jc(_$hash, system.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
@@ -121,10 +121,10 @@ class _$ZarazZarazConfigBaseTriggersValue
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'ZarazZarazConfigBaseTriggersValue')
-          ..add('description', description)
           ..add('excludeRules', excludeRules)
           ..add('loadRules', loadRules)
           ..add('name', name)
+          ..add('description', description)
           ..add('system', system))
         .toString();
   }
@@ -135,10 +135,6 @@ class ZarazZarazConfigBaseTriggersValueBuilder
         Builder<ZarazZarazConfigBaseTriggersValue,
             ZarazZarazConfigBaseTriggersValueBuilder> {
   _$ZarazZarazConfigBaseTriggersValue? _$v;
-
-  String? _description;
-  String? get description => _$this._description;
-  set description(String? description) => _$this._description = description;
 
   ListBuilder<ZarazZarazConfigBaseTriggersValueExcludeRulesInner>?
       _excludeRules;
@@ -163,6 +159,10 @@ class ZarazZarazConfigBaseTriggersValueBuilder
   String? get name => _$this._name;
   set name(String? name) => _$this._name = name;
 
+  String? _description;
+  String? get description => _$this._description;
+  set description(String? description) => _$this._description = description;
+
   ZarazZarazConfigBaseTriggersValueSystemEnum? _system;
   ZarazZarazConfigBaseTriggersValueSystemEnum? get system => _$this._system;
   set system(ZarazZarazConfigBaseTriggersValueSystemEnum? system) =>
@@ -175,10 +175,10 @@ class ZarazZarazConfigBaseTriggersValueBuilder
   ZarazZarazConfigBaseTriggersValueBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _description = $v.description;
       _excludeRules = $v.excludeRules.toBuilder();
       _loadRules = $v.loadRules.toBuilder();
       _name = $v.name;
+      _description = $v.description;
       _system = $v.system;
       _$v = null;
     }
@@ -204,11 +204,11 @@ class ZarazZarazConfigBaseTriggersValueBuilder
     try {
       _$result = _$v ??
           _$ZarazZarazConfigBaseTriggersValue._(
-            description: description,
             excludeRules: excludeRules.build(),
             loadRules: loadRules.build(),
             name: BuiltValueNullFieldError.checkNotNull(
                 name, r'ZarazZarazConfigBaseTriggersValue', 'name'),
+            description: description,
             system: system,
           );
     } catch (_) {

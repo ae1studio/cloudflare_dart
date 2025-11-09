@@ -9,8 +9,8 @@ import 'package:cloudflare_dart/api.dart';
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **cryptKey** | **String** |  | 
-**cryptKeyRotationFinishedAt** | **String** |  | [optional] 
 **id** | **String** |  | 
+**cryptKeyRotationFinishedAt** | **String** |  | [optional] 
 **imagedAt** | **String** |  | [optional] 
 **lastCryptKey** | **String** |  | [optional] 
 **licenseKeySha256** | **String** |  | [optional] 

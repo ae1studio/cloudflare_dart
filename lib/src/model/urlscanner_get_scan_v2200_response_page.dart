@@ -20,7 +20,6 @@ part 'urlscanner_get_scan_v2200_response_page.g.dart';
 /// * [domain] 
 /// * [ip] 
 /// * [mimeType] 
-/// * [screenshot] 
 /// * [server] 
 /// * [status] 
 /// * [title] 
@@ -29,6 +28,7 @@ part 'urlscanner_get_scan_v2200_response_page.g.dart';
 /// * [tlsValidDays] 
 /// * [tlsValidFrom] 
 /// * [url] 
+/// * [screenshot] 
 @BuiltValue()
 abstract class UrlscannerGetScanV2200ResponsePage implements Built<UrlscannerGetScanV2200ResponsePage, UrlscannerGetScanV2200ResponsePageBuilder> {
   @BuiltValueField(wireName: r'apexDomain')
@@ -55,9 +55,6 @@ abstract class UrlscannerGetScanV2200ResponsePage implements Built<UrlscannerGet
   @BuiltValueField(wireName: r'mimeType')
   String get mimeType;
 
-  @BuiltValueField(wireName: r'screenshot')
-  UrlscannerGetScanV2200ResponsePageScreenshot? get screenshot;
-
   @BuiltValueField(wireName: r'server')
   String get server;
 
@@ -81,6 +78,9 @@ abstract class UrlscannerGetScanV2200ResponsePage implements Built<UrlscannerGet
 
   @BuiltValueField(wireName: r'url')
   String get url;
+
+  @BuiltValueField(wireName: r'screenshot')
+  UrlscannerGetScanV2200ResponsePageScreenshot? get screenshot;
 
   UrlscannerGetScanV2200ResponsePage._();
 
@@ -145,13 +145,6 @@ class _$UrlscannerGetScanV2200ResponsePageSerializer implements PrimitiveSeriali
       object.mimeType,
       specifiedType: const FullType(String),
     );
-    if (object.screenshot != null) {
-      yield r'screenshot';
-      yield serializers.serialize(
-        object.screenshot,
-        specifiedType: const FullType(UrlscannerGetScanV2200ResponsePageScreenshot),
-      );
-    }
     yield r'server';
     yield serializers.serialize(
       object.server,
@@ -192,6 +185,13 @@ class _$UrlscannerGetScanV2200ResponsePageSerializer implements PrimitiveSeriali
       object.url,
       specifiedType: const FullType(String),
     );
+    if (object.screenshot != null) {
+      yield r'screenshot';
+      yield serializers.serialize(
+        object.screenshot,
+        specifiedType: const FullType(UrlscannerGetScanV2200ResponsePageScreenshot),
+      );
+    }
   }
 
   @override
@@ -271,13 +271,6 @@ class _$UrlscannerGetScanV2200ResponsePageSerializer implements PrimitiveSeriali
           ) as String;
           result.mimeType = valueDes;
           break;
-        case r'screenshot':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(UrlscannerGetScanV2200ResponsePageScreenshot),
-          ) as UrlscannerGetScanV2200ResponsePageScreenshot;
-          result.screenshot.replace(valueDes);
-          break;
         case r'server':
           final valueDes = serializers.deserialize(
             value,
@@ -333,6 +326,13 @@ class _$UrlscannerGetScanV2200ResponsePageSerializer implements PrimitiveSeriali
             specifiedType: const FullType(String),
           ) as String;
           result.url = valueDes;
+          break;
+        case r'screenshot':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(UrlscannerGetScanV2200ResponsePageScreenshot),
+          ) as UrlscannerGetScanV2200ResponsePageScreenshot;
+          result.screenshot.replace(valueDes);
           break;
         default:
           unhandled.add(key);

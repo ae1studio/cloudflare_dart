@@ -8,11 +8,11 @@ part of 'rule_override.dart';
 
 class _$RuleOverride extends RuleOverride {
   @override
+  final String id;
+  @override
   final String? action;
   @override
   final bool? enabled;
-  @override
-  final String id;
   @override
   final int? scoreThreshold;
   @override
@@ -22,9 +22,9 @@ class _$RuleOverride extends RuleOverride {
       (RuleOverrideBuilder()..update(updates))._build();
 
   _$RuleOverride._(
-      {this.action,
+      {required this.id,
+      this.action,
       this.enabled,
-      required this.id,
       this.scoreThreshold,
       this.sensitivityLevel})
       : super._();
@@ -39,9 +39,9 @@ class _$RuleOverride extends RuleOverride {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is RuleOverride &&
+        id == other.id &&
         action == other.action &&
         enabled == other.enabled &&
-        id == other.id &&
         scoreThreshold == other.scoreThreshold &&
         sensitivityLevel == other.sensitivityLevel;
   }
@@ -49,9 +49,9 @@ class _$RuleOverride extends RuleOverride {
   @override
   int get hashCode {
     var _$hash = 0;
+    _$hash = $jc(_$hash, id.hashCode);
     _$hash = $jc(_$hash, action.hashCode);
     _$hash = $jc(_$hash, enabled.hashCode);
-    _$hash = $jc(_$hash, id.hashCode);
     _$hash = $jc(_$hash, scoreThreshold.hashCode);
     _$hash = $jc(_$hash, sensitivityLevel.hashCode);
     _$hash = $jf(_$hash);
@@ -61,9 +61,9 @@ class _$RuleOverride extends RuleOverride {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'RuleOverride')
+          ..add('id', id)
           ..add('action', action)
           ..add('enabled', enabled)
-          ..add('id', id)
           ..add('scoreThreshold', scoreThreshold)
           ..add('sensitivityLevel', sensitivityLevel))
         .toString();
@@ -74,6 +74,10 @@ class RuleOverrideBuilder
     implements Builder<RuleOverride, RuleOverrideBuilder> {
   _$RuleOverride? _$v;
 
+  String? _id;
+  String? get id => _$this._id;
+  set id(String? id) => _$this._id = id;
+
   String? _action;
   String? get action => _$this._action;
   set action(String? action) => _$this._action = action;
@@ -81,10 +85,6 @@ class RuleOverrideBuilder
   bool? _enabled;
   bool? get enabled => _$this._enabled;
   set enabled(bool? enabled) => _$this._enabled = enabled;
-
-  String? _id;
-  String? get id => _$this._id;
-  set id(String? id) => _$this._id = id;
 
   int? _scoreThreshold;
   int? get scoreThreshold => _$this._scoreThreshold;
@@ -104,9 +104,9 @@ class RuleOverrideBuilder
   RuleOverrideBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
+      _id = $v.id;
       _action = $v.action;
       _enabled = $v.enabled;
-      _id = $v.id;
       _scoreThreshold = $v.scoreThreshold;
       _sensitivityLevel = $v.sensitivityLevel;
       _$v = null;
@@ -130,9 +130,9 @@ class RuleOverrideBuilder
   _$RuleOverride _build() {
     final _$result = _$v ??
         _$RuleOverride._(
+          id: BuiltValueNullFieldError.checkNotNull(id, r'RuleOverride', 'id'),
           action: action,
           enabled: enabled,
-          id: BuiltValueNullFieldError.checkNotNull(id, r'RuleOverride', 'id'),
           scoreThreshold: scoreThreshold,
           sensitivityLevel: sensitivityLevel,
         );

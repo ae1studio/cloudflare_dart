@@ -13,22 +13,14 @@ part 'magic_network_monitoring_rules_create_rules_request.g.dart';
 /// MagicNetworkMonitoringRulesCreateRulesRequest
 ///
 /// Properties:
-/// * [automaticAdvertisement] - Toggle on if you would like Cloudflare to automatically advertise the IP Prefixes within the rule via Magic Transit when the rule is triggered. Only available for users of Magic Transit.
-/// * [bandwidth] - The number of bits per second for the rule. When this value is exceeded for the set duration, an alert notification is sent. Minimum of 1 and no maximum.
 /// * [duration] 
 /// * [name] - The name of the rule. Must be unique. Supports characters A-Z, a-z, 0-9, underscore (_), dash (-), period (.), and tilde (~). You can’t have a space in the rule name. Max 256 characters.
+/// * [automaticAdvertisement] - Toggle on if you would like Cloudflare to automatically advertise the IP Prefixes within the rule via Magic Transit when the rule is triggered. Only available for users of Magic Transit.
+/// * [bandwidth] - The number of bits per second for the rule. When this value is exceeded for the set duration, an alert notification is sent. Minimum of 1 and no maximum.
 /// * [packetThreshold] - The number of packets per second for the rule. When this value is exceeded for the set duration, an alert notification is sent. Minimum of 1 and no maximum.
 /// * [prefixes] 
 @BuiltValue()
 abstract class MagicNetworkMonitoringRulesCreateRulesRequest implements Built<MagicNetworkMonitoringRulesCreateRulesRequest, MagicNetworkMonitoringRulesCreateRulesRequestBuilder> {
-  /// Toggle on if you would like Cloudflare to automatically advertise the IP Prefixes within the rule via Magic Transit when the rule is triggered. Only available for users of Magic Transit.
-  @BuiltValueField(wireName: r'automatic_advertisement')
-  bool? get automaticAdvertisement;
-
-  /// The number of bits per second for the rule. When this value is exceeded for the set duration, an alert notification is sent. Minimum of 1 and no maximum.
-  @BuiltValueField(wireName: r'bandwidth')
-  num? get bandwidth;
-
   @BuiltValueField(wireName: r'duration')
   MagicVisibilityMnmMnmRuleDuration get duration;
   // enum durationEnum {  1m,  5m,  10m,  15m,  20m,  30m,  45m,  60m,  };
@@ -36,6 +28,14 @@ abstract class MagicNetworkMonitoringRulesCreateRulesRequest implements Built<Ma
   /// The name of the rule. Must be unique. Supports characters A-Z, a-z, 0-9, underscore (_), dash (-), period (.), and tilde (~). You can’t have a space in the rule name. Max 256 characters.
   @BuiltValueField(wireName: r'name')
   String get name;
+
+  /// Toggle on if you would like Cloudflare to automatically advertise the IP Prefixes within the rule via Magic Transit when the rule is triggered. Only available for users of Magic Transit.
+  @BuiltValueField(wireName: r'automatic_advertisement')
+  bool? get automaticAdvertisement;
+
+  /// The number of bits per second for the rule. When this value is exceeded for the set duration, an alert notification is sent. Minimum of 1 and no maximum.
+  @BuiltValueField(wireName: r'bandwidth')
+  num? get bandwidth;
 
   /// The number of packets per second for the rule. When this value is exceeded for the set duration, an alert notification is sent. Minimum of 1 and no maximum.
   @BuiltValueField(wireName: r'packet_threshold')
@@ -67,6 +67,16 @@ class _$MagicNetworkMonitoringRulesCreateRulesRequestSerializer implements Primi
     MagicNetworkMonitoringRulesCreateRulesRequest object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    yield r'duration';
+    yield serializers.serialize(
+      object.duration,
+      specifiedType: const FullType(MagicVisibilityMnmMnmRuleDuration),
+    );
+    yield r'name';
+    yield serializers.serialize(
+      object.name,
+      specifiedType: const FullType(String),
+    );
     if (object.automaticAdvertisement != null) {
       yield r'automatic_advertisement';
       yield serializers.serialize(
@@ -81,16 +91,6 @@ class _$MagicNetworkMonitoringRulesCreateRulesRequestSerializer implements Primi
         specifiedType: const FullType(num),
       );
     }
-    yield r'duration';
-    yield serializers.serialize(
-      object.duration,
-      specifiedType: const FullType(MagicVisibilityMnmMnmRuleDuration),
-    );
-    yield r'name';
-    yield serializers.serialize(
-      object.name,
-      specifiedType: const FullType(String),
-    );
     if (object.packetThreshold != null) {
       yield r'packet_threshold';
       yield serializers.serialize(
@@ -128,6 +128,20 @@ class _$MagicNetworkMonitoringRulesCreateRulesRequestSerializer implements Primi
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
+        case r'duration':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(MagicVisibilityMnmMnmRuleDuration),
+          ) as MagicVisibilityMnmMnmRuleDuration;
+          result.duration = valueDes;
+          break;
+        case r'name':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.name = valueDes;
+          break;
         case r'automatic_advertisement':
           final valueDes = serializers.deserialize(
             value,
@@ -142,20 +156,6 @@ class _$MagicNetworkMonitoringRulesCreateRulesRequestSerializer implements Primi
             specifiedType: const FullType(num),
           ) as num;
           result.bandwidth = valueDes;
-          break;
-        case r'duration':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(MagicVisibilityMnmMnmRuleDuration),
-          ) as MagicVisibilityMnmMnmRuleDuration;
-          result.duration = valueDes;
-          break;
-        case r'name':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.name = valueDes;
           break;
         case r'packet_threshold':
           final valueDes = serializers.deserialize(

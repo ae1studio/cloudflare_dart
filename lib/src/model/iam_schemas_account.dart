@@ -15,12 +15,12 @@ part 'iam_schemas_account.g.dart';
 /// IamSchemasAccount
 ///
 /// Properties:
-/// * [createdOn] - Timestamp for the creation of the account
 /// * [id] - Identifier
-/// * [managedBy] 
 /// * [name] - Account name
-/// * [settings] 
 /// * [type] 
+/// * [createdOn] - Timestamp for the creation of the account
+/// * [managedBy] 
+/// * [settings] 
 @BuiltValue()
 abstract class IamSchemasAccount implements IamAccount, Built<IamSchemasAccount, IamSchemasAccountBuilder> {
   IamSchemasAccount._();

@@ -9,11 +9,11 @@ part of 'tunnel_route_create_a_tunnel_route_request.dart';
 class _$TunnelRouteCreateATunnelRouteRequest
     extends TunnelRouteCreateATunnelRouteRequest {
   @override
-  final String? comment;
-  @override
   final String network;
   @override
   final String tunnelId;
+  @override
+  final String? comment;
   @override
   final String? virtualNetworkId;
 
@@ -23,9 +23,9 @@ class _$TunnelRouteCreateATunnelRouteRequest
       (TunnelRouteCreateATunnelRouteRequestBuilder()..update(updates))._build();
 
   _$TunnelRouteCreateATunnelRouteRequest._(
-      {this.comment,
-      required this.network,
+      {required this.network,
       required this.tunnelId,
+      this.comment,
       this.virtualNetworkId})
       : super._();
   @override
@@ -41,18 +41,18 @@ class _$TunnelRouteCreateATunnelRouteRequest
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is TunnelRouteCreateATunnelRouteRequest &&
-        comment == other.comment &&
         network == other.network &&
         tunnelId == other.tunnelId &&
+        comment == other.comment &&
         virtualNetworkId == other.virtualNetworkId;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, comment.hashCode);
     _$hash = $jc(_$hash, network.hashCode);
     _$hash = $jc(_$hash, tunnelId.hashCode);
+    _$hash = $jc(_$hash, comment.hashCode);
     _$hash = $jc(_$hash, virtualNetworkId.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
@@ -61,9 +61,9 @@ class _$TunnelRouteCreateATunnelRouteRequest
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'TunnelRouteCreateATunnelRouteRequest')
-          ..add('comment', comment)
           ..add('network', network)
           ..add('tunnelId', tunnelId)
+          ..add('comment', comment)
           ..add('virtualNetworkId', virtualNetworkId))
         .toString();
   }
@@ -75,10 +75,6 @@ class TunnelRouteCreateATunnelRouteRequestBuilder
             TunnelRouteCreateATunnelRouteRequestBuilder> {
   _$TunnelRouteCreateATunnelRouteRequest? _$v;
 
-  String? _comment;
-  String? get comment => _$this._comment;
-  set comment(String? comment) => _$this._comment = comment;
-
   String? _network;
   String? get network => _$this._network;
   set network(String? network) => _$this._network = network;
@@ -86,6 +82,10 @@ class TunnelRouteCreateATunnelRouteRequestBuilder
   String? _tunnelId;
   String? get tunnelId => _$this._tunnelId;
   set tunnelId(String? tunnelId) => _$this._tunnelId = tunnelId;
+
+  String? _comment;
+  String? get comment => _$this._comment;
+  set comment(String? comment) => _$this._comment = comment;
 
   String? _virtualNetworkId;
   String? get virtualNetworkId => _$this._virtualNetworkId;
@@ -99,9 +99,9 @@ class TunnelRouteCreateATunnelRouteRequestBuilder
   TunnelRouteCreateATunnelRouteRequestBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _comment = $v.comment;
       _network = $v.network;
       _tunnelId = $v.tunnelId;
+      _comment = $v.comment;
       _virtualNetworkId = $v.virtualNetworkId;
       _$v = null;
     }
@@ -125,11 +125,11 @@ class TunnelRouteCreateATunnelRouteRequestBuilder
   _$TunnelRouteCreateATunnelRouteRequest _build() {
     final _$result = _$v ??
         _$TunnelRouteCreateATunnelRouteRequest._(
-          comment: comment,
           network: BuiltValueNullFieldError.checkNotNull(
               network, r'TunnelRouteCreateATunnelRouteRequest', 'network'),
           tunnelId: BuiltValueNullFieldError.checkNotNull(
               tunnelId, r'TunnelRouteCreateATunnelRouteRequest', 'tunnelId'),
+          comment: comment,
           virtualNetworkId: virtualNetworkId,
         );
     replace(_$result);

@@ -11,16 +11,12 @@ part 'lists_item_base.g.dart';
 /// ListsItemBase
 ///
 /// Properties:
-/// * [comment] - Defines an informative summary of the list item.
 /// * [createdOn] - The RFC 3339 timestamp of when the list was created.
 /// * [id] - Defines the unique ID of the item in the List.
 /// * [modifiedOn] - The RFC 3339 timestamp of when the list was last modified.
+/// * [comment] - Defines an informative summary of the list item.
 @BuiltValue(instantiable: false)
 abstract class ListsItemBase  {
-  /// Defines an informative summary of the list item.
-  @BuiltValueField(wireName: r'comment')
-  String? get comment;
-
   /// The RFC 3339 timestamp of when the list was created.
   @BuiltValueField(wireName: r'created_on')
   String get createdOn;
@@ -32,6 +28,10 @@ abstract class ListsItemBase  {
   /// The RFC 3339 timestamp of when the list was last modified.
   @BuiltValueField(wireName: r'modified_on')
   String get modifiedOn;
+
+  /// Defines an informative summary of the list item.
+  @BuiltValueField(wireName: r'comment')
+  String? get comment;
 
   @BuiltValueSerializer(custom: true)
   static Serializer<ListsItemBase> get serializer => _$ListsItemBaseSerializer();
@@ -49,13 +49,6 @@ class _$ListsItemBaseSerializer implements PrimitiveSerializer<ListsItemBase> {
     ListsItemBase object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
-    if (object.comment != null) {
-      yield r'comment';
-      yield serializers.serialize(
-        object.comment,
-        specifiedType: const FullType(String),
-      );
-    }
     yield r'created_on';
     yield serializers.serialize(
       object.createdOn,
@@ -71,6 +64,13 @@ class _$ListsItemBaseSerializer implements PrimitiveSerializer<ListsItemBase> {
       object.modifiedOn,
       specifiedType: const FullType(String),
     );
+    if (object.comment != null) {
+      yield r'comment';
+      yield serializers.serialize(
+        object.comment,
+        specifiedType: const FullType(String),
+      );
+    }
   }
 
   @override
@@ -134,13 +134,6 @@ class _$$ListsItemBaseSerializer implements PrimitiveSerializer<$ListsItemBase> 
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'comment':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.comment = valueDes;
-          break;
         case r'created_on':
           final valueDes = serializers.deserialize(
             value,
@@ -161,6 +154,13 @@ class _$$ListsItemBaseSerializer implements PrimitiveSerializer<$ListsItemBase> 
             specifiedType: const FullType(String),
           ) as String;
           result.modifiedOn = valueDes;
+          break;
+        case r'comment':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.comment = valueDes;
           break;
         default:
           unhandled.add(key);

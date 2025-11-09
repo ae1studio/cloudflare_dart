@@ -12,16 +12,16 @@ part 'telemetry_keys_list500_response_errors_inner.g.dart';
 /// TelemetryKeysList500ResponseErrorsInner
 ///
 /// Properties:
-/// * [detail] 
 /// * [message] 
+/// * [detail] 
 @BuiltValue()
 abstract class TelemetryKeysList500ResponseErrorsInner implements Built<TelemetryKeysList500ResponseErrorsInner, TelemetryKeysList500ResponseErrorsInnerBuilder> {
-  @BuiltValueField(wireName: r'detail')
-  String? get detail;
-
   @BuiltValueField(wireName: r'message')
   TelemetryKeysList500ResponseErrorsInnerMessageEnum get message;
   // enum messageEnum {  Internal error,  };
+
+  @BuiltValueField(wireName: r'detail')
+  String? get detail;
 
   TelemetryKeysList500ResponseErrorsInner._();
 
@@ -46,6 +46,11 @@ class _$TelemetryKeysList500ResponseErrorsInnerSerializer implements PrimitiveSe
     TelemetryKeysList500ResponseErrorsInner object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    yield r'message';
+    yield serializers.serialize(
+      object.message,
+      specifiedType: const FullType(TelemetryKeysList500ResponseErrorsInnerMessageEnum),
+    );
     if (object.detail != null) {
       yield r'detail';
       yield serializers.serialize(
@@ -53,11 +58,6 @@ class _$TelemetryKeysList500ResponseErrorsInnerSerializer implements PrimitiveSe
         specifiedType: const FullType(String),
       );
     }
-    yield r'message';
-    yield serializers.serialize(
-      object.message,
-      specifiedType: const FullType(TelemetryKeysList500ResponseErrorsInnerMessageEnum),
-    );
   }
 
   @override
@@ -81,19 +81,19 @@ class _$TelemetryKeysList500ResponseErrorsInnerSerializer implements PrimitiveSe
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'detail':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.detail = valueDes;
-          break;
         case r'message':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(TelemetryKeysList500ResponseErrorsInnerMessageEnum),
           ) as TelemetryKeysList500ResponseErrorsInnerMessageEnum;
           result.message = valueDes;
+          break;
+        case r'detail':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.detail = valueDes;
           break;
         default:
           unhandled.add(key);

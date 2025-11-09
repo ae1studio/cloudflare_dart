@@ -8,13 +8,9 @@ part of 'dlp_dataset.dart';
 
 class _$DlpDataset extends DlpDataset {
   @override
-  final bool? caseSensitive;
-  @override
   final BuiltList<DlpDatasetColumn> columns;
   @override
   final DateTime createdAt;
-  @override
-  final String? description;
   @override
   final int encodingVersion;
   @override
@@ -31,15 +27,17 @@ class _$DlpDataset extends DlpDataset {
   final DateTime updatedAt;
   @override
   final BuiltList<DlpDatasetUpload> uploads;
+  @override
+  final bool? caseSensitive;
+  @override
+  final String? description;
 
   factory _$DlpDataset([void Function(DlpDatasetBuilder)? updates]) =>
       (DlpDatasetBuilder()..update(updates))._build();
 
   _$DlpDataset._(
-      {this.caseSensitive,
-      required this.columns,
+      {required this.columns,
       required this.createdAt,
-      this.description,
       required this.encodingVersion,
       required this.id,
       required this.name,
@@ -47,7 +45,9 @@ class _$DlpDataset extends DlpDataset {
       required this.secret,
       required this.status,
       required this.updatedAt,
-      required this.uploads})
+      required this.uploads,
+      this.caseSensitive,
+      this.description})
       : super._();
   @override
   DlpDataset rebuild(void Function(DlpDatasetBuilder) updates) =>
@@ -60,10 +60,8 @@ class _$DlpDataset extends DlpDataset {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is DlpDataset &&
-        caseSensitive == other.caseSensitive &&
         columns == other.columns &&
         createdAt == other.createdAt &&
-        description == other.description &&
         encodingVersion == other.encodingVersion &&
         id == other.id &&
         name == other.name &&
@@ -71,16 +69,16 @@ class _$DlpDataset extends DlpDataset {
         secret == other.secret &&
         status == other.status &&
         updatedAt == other.updatedAt &&
-        uploads == other.uploads;
+        uploads == other.uploads &&
+        caseSensitive == other.caseSensitive &&
+        description == other.description;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, caseSensitive.hashCode);
     _$hash = $jc(_$hash, columns.hashCode);
     _$hash = $jc(_$hash, createdAt.hashCode);
-    _$hash = $jc(_$hash, description.hashCode);
     _$hash = $jc(_$hash, encodingVersion.hashCode);
     _$hash = $jc(_$hash, id.hashCode);
     _$hash = $jc(_$hash, name.hashCode);
@@ -89,6 +87,8 @@ class _$DlpDataset extends DlpDataset {
     _$hash = $jc(_$hash, status.hashCode);
     _$hash = $jc(_$hash, updatedAt.hashCode);
     _$hash = $jc(_$hash, uploads.hashCode);
+    _$hash = $jc(_$hash, caseSensitive.hashCode);
+    _$hash = $jc(_$hash, description.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -96,10 +96,8 @@ class _$DlpDataset extends DlpDataset {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'DlpDataset')
-          ..add('caseSensitive', caseSensitive)
           ..add('columns', columns)
           ..add('createdAt', createdAt)
-          ..add('description', description)
           ..add('encodingVersion', encodingVersion)
           ..add('id', id)
           ..add('name', name)
@@ -107,18 +105,15 @@ class _$DlpDataset extends DlpDataset {
           ..add('secret', secret)
           ..add('status', status)
           ..add('updatedAt', updatedAt)
-          ..add('uploads', uploads))
+          ..add('uploads', uploads)
+          ..add('caseSensitive', caseSensitive)
+          ..add('description', description))
         .toString();
   }
 }
 
 class DlpDatasetBuilder implements Builder<DlpDataset, DlpDatasetBuilder> {
   _$DlpDataset? _$v;
-
-  bool? _caseSensitive;
-  bool? get caseSensitive => _$this._caseSensitive;
-  set caseSensitive(bool? caseSensitive) =>
-      _$this._caseSensitive = caseSensitive;
 
   ListBuilder<DlpDatasetColumn>? _columns;
   ListBuilder<DlpDatasetColumn> get columns =>
@@ -129,10 +124,6 @@ class DlpDatasetBuilder implements Builder<DlpDataset, DlpDatasetBuilder> {
   DateTime? _createdAt;
   DateTime? get createdAt => _$this._createdAt;
   set createdAt(DateTime? createdAt) => _$this._createdAt = createdAt;
-
-  String? _description;
-  String? get description => _$this._description;
-  set description(String? description) => _$this._description = description;
 
   int? _encodingVersion;
   int? get encodingVersion => _$this._encodingVersion;
@@ -169,6 +160,15 @@ class DlpDatasetBuilder implements Builder<DlpDataset, DlpDatasetBuilder> {
   set uploads(ListBuilder<DlpDatasetUpload>? uploads) =>
       _$this._uploads = uploads;
 
+  bool? _caseSensitive;
+  bool? get caseSensitive => _$this._caseSensitive;
+  set caseSensitive(bool? caseSensitive) =>
+      _$this._caseSensitive = caseSensitive;
+
+  String? _description;
+  String? get description => _$this._description;
+  set description(String? description) => _$this._description = description;
+
   DlpDatasetBuilder() {
     DlpDataset._defaults(this);
   }
@@ -176,10 +176,8 @@ class DlpDatasetBuilder implements Builder<DlpDataset, DlpDatasetBuilder> {
   DlpDatasetBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _caseSensitive = $v.caseSensitive;
       _columns = $v.columns.toBuilder();
       _createdAt = $v.createdAt;
-      _description = $v.description;
       _encodingVersion = $v.encodingVersion;
       _id = $v.id;
       _name = $v.name;
@@ -188,6 +186,8 @@ class DlpDatasetBuilder implements Builder<DlpDataset, DlpDatasetBuilder> {
       _status = $v.status;
       _updatedAt = $v.updatedAt;
       _uploads = $v.uploads.toBuilder();
+      _caseSensitive = $v.caseSensitive;
+      _description = $v.description;
       _$v = null;
     }
     return this;
@@ -211,11 +211,9 @@ class DlpDatasetBuilder implements Builder<DlpDataset, DlpDatasetBuilder> {
     try {
       _$result = _$v ??
           _$DlpDataset._(
-            caseSensitive: caseSensitive,
             columns: columns.build(),
             createdAt: BuiltValueNullFieldError.checkNotNull(
                 createdAt, r'DlpDataset', 'createdAt'),
-            description: description,
             encodingVersion: BuiltValueNullFieldError.checkNotNull(
                 encodingVersion, r'DlpDataset', 'encodingVersion'),
             id: BuiltValueNullFieldError.checkNotNull(id, r'DlpDataset', 'id'),
@@ -230,6 +228,8 @@ class DlpDatasetBuilder implements Builder<DlpDataset, DlpDatasetBuilder> {
             updatedAt: BuiltValueNullFieldError.checkNotNull(
                 updatedAt, r'DlpDataset', 'updatedAt'),
             uploads: uploads.build(),
+            caseSensitive: caseSensitive,
+            description: description,
           );
     } catch (_) {
       late String _$failedField;

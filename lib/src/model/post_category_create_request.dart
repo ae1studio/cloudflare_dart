@@ -13,19 +13,19 @@ part 'post_category_create_request.g.dart';
 ///
 /// Properties:
 /// * [killChain] 
-/// * [mitreAttack] 
 /// * [name] 
+/// * [mitreAttack] 
 /// * [shortname] 
 @BuiltValue()
 abstract class PostCategoryCreateRequest implements Built<PostCategoryCreateRequest, PostCategoryCreateRequestBuilder> {
   @BuiltValueField(wireName: r'killChain')
   num get killChain;
 
-  @BuiltValueField(wireName: r'mitreAttack')
-  BuiltList<String>? get mitreAttack;
-
   @BuiltValueField(wireName: r'name')
   String get name;
+
+  @BuiltValueField(wireName: r'mitreAttack')
+  BuiltList<String>? get mitreAttack;
 
   @BuiltValueField(wireName: r'shortname')
   String? get shortname;
@@ -58,6 +58,11 @@ class _$PostCategoryCreateRequestSerializer implements PrimitiveSerializer<PostC
       object.killChain,
       specifiedType: const FullType(num),
     );
+    yield r'name';
+    yield serializers.serialize(
+      object.name,
+      specifiedType: const FullType(String),
+    );
     if (object.mitreAttack != null) {
       yield r'mitreAttack';
       yield serializers.serialize(
@@ -65,11 +70,6 @@ class _$PostCategoryCreateRequestSerializer implements PrimitiveSerializer<PostC
         specifiedType: const FullType(BuiltList, [FullType(String)]),
       );
     }
-    yield r'name';
-    yield serializers.serialize(
-      object.name,
-      specifiedType: const FullType(String),
-    );
     if (object.shortname != null) {
       yield r'shortname';
       yield serializers.serialize(
@@ -107,19 +107,19 @@ class _$PostCategoryCreateRequestSerializer implements PrimitiveSerializer<PostC
           ) as num;
           result.killChain = valueDes;
           break;
-        case r'mitreAttack':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>;
-          result.mitreAttack.replace(valueDes);
-          break;
         case r'name':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(String),
           ) as String;
           result.name = valueDes;
+          break;
+        case r'mitreAttack':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BuiltList, [FullType(String)]),
+          ) as BuiltList<String>;
+          result.mitreAttack.replace(valueDes);
           break;
         case r'shortname':
           final valueDes = serializers.deserialize(

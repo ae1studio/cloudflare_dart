@@ -17,23 +17,23 @@ part 'aig_config_list_gateway200_response_result_inner.g.dart';
 /// Properties:
 /// * [accountId] 
 /// * [accountTag] 
-/// * [authentication] 
 /// * [cacheInvalidateOnUpdate] 
 /// * [cacheTtl] 
 /// * [collectLogs] 
 /// * [createdAt] 
-/// * [dlp] 
 /// * [id] - gateway id
 /// * [internalId] 
+/// * [modifiedAt] 
+/// * [rateLimitingInterval] 
+/// * [rateLimitingLimit] 
+/// * [rateLimitingTechnique] 
+/// * [authentication] 
+/// * [dlp] 
 /// * [logManagement] 
 /// * [logManagementStrategy] 
 /// * [logpush] 
 /// * [logpushPublicKey] 
-/// * [modifiedAt] 
 /// * [otel] 
-/// * [rateLimitingInterval] 
-/// * [rateLimitingLimit] 
-/// * [rateLimitingTechnique] 
 /// * [storeId] 
 /// * [stripe] 
 @BuiltValue()
@@ -43,9 +43,6 @@ abstract class AigConfigListGateway200ResponseResultInner implements Built<AigCo
 
   @BuiltValueField(wireName: r'account_tag')
   String get accountTag;
-
-  @BuiltValueField(wireName: r'authentication')
-  bool? get authentication;
 
   @BuiltValueField(wireName: r'cache_invalidate_on_update')
   bool get cacheInvalidateOnUpdate;
@@ -59,15 +56,31 @@ abstract class AigConfigListGateway200ResponseResultInner implements Built<AigCo
   @BuiltValueField(wireName: r'created_at')
   DateTime get createdAt;
 
-  @BuiltValueField(wireName: r'dlp')
-  AigConfigListGateway200ResponseResultInnerDlp? get dlp;
-
   /// gateway id
   @BuiltValueField(wireName: r'id')
   String get id;
 
   @BuiltValueField(wireName: r'internal_id')
   String get internalId;
+
+  @BuiltValueField(wireName: r'modified_at')
+  DateTime get modifiedAt;
+
+  @BuiltValueField(wireName: r'rate_limiting_interval')
+  int? get rateLimitingInterval;
+
+  @BuiltValueField(wireName: r'rate_limiting_limit')
+  int? get rateLimitingLimit;
+
+  @BuiltValueField(wireName: r'rate_limiting_technique')
+  AigConfigListGateway200ResponseResultInnerRateLimitingTechniqueEnum get rateLimitingTechnique;
+  // enum rateLimitingTechniqueEnum {  fixed,  sliding,  };
+
+  @BuiltValueField(wireName: r'authentication')
+  bool? get authentication;
+
+  @BuiltValueField(wireName: r'dlp')
+  AigConfigListGateway200ResponseResultInnerDlp? get dlp;
 
   @BuiltValueField(wireName: r'log_management')
   int? get logManagement;
@@ -82,21 +95,8 @@ abstract class AigConfigListGateway200ResponseResultInner implements Built<AigCo
   @BuiltValueField(wireName: r'logpush_public_key')
   String? get logpushPublicKey;
 
-  @BuiltValueField(wireName: r'modified_at')
-  DateTime get modifiedAt;
-
   @BuiltValueField(wireName: r'otel')
   BuiltList<AigConfigListGateway200ResponseResultInnerOtelInner>? get otel;
-
-  @BuiltValueField(wireName: r'rate_limiting_interval')
-  int? get rateLimitingInterval;
-
-  @BuiltValueField(wireName: r'rate_limiting_limit')
-  int? get rateLimitingLimit;
-
-  @BuiltValueField(wireName: r'rate_limiting_technique')
-  AigConfigListGateway200ResponseResultInnerRateLimitingTechniqueEnum get rateLimitingTechnique;
-  // enum rateLimitingTechniqueEnum {  fixed,  sliding,  };
 
   @BuiltValueField(wireName: r'store_id')
   String? get storeId;
@@ -137,13 +137,6 @@ class _$AigConfigListGateway200ResponseResultInnerSerializer implements Primitiv
       object.accountTag,
       specifiedType: const FullType(String),
     );
-    if (object.authentication != null) {
-      yield r'authentication';
-      yield serializers.serialize(
-        object.authentication,
-        specifiedType: const FullType(bool),
-      );
-    }
     yield r'cache_invalidate_on_update';
     yield serializers.serialize(
       object.cacheInvalidateOnUpdate,
@@ -164,13 +157,6 @@ class _$AigConfigListGateway200ResponseResultInnerSerializer implements Primitiv
       object.createdAt,
       specifiedType: const FullType(DateTime),
     );
-    if (object.dlp != null) {
-      yield r'dlp';
-      yield serializers.serialize(
-        object.dlp,
-        specifiedType: const FullType(AigConfigListGateway200ResponseResultInnerDlp),
-      );
-    }
     yield r'id';
     yield serializers.serialize(
       object.id,
@@ -181,6 +167,40 @@ class _$AigConfigListGateway200ResponseResultInnerSerializer implements Primitiv
       object.internalId,
       specifiedType: const FullType(String),
     );
+    yield r'modified_at';
+    yield serializers.serialize(
+      object.modifiedAt,
+      specifiedType: const FullType(DateTime),
+    );
+    yield r'rate_limiting_interval';
+    yield object.rateLimitingInterval == null ? null : serializers.serialize(
+      object.rateLimitingInterval,
+      specifiedType: const FullType.nullable(int),
+    );
+    yield r'rate_limiting_limit';
+    yield object.rateLimitingLimit == null ? null : serializers.serialize(
+      object.rateLimitingLimit,
+      specifiedType: const FullType.nullable(int),
+    );
+    yield r'rate_limiting_technique';
+    yield serializers.serialize(
+      object.rateLimitingTechnique,
+      specifiedType: const FullType(AigConfigListGateway200ResponseResultInnerRateLimitingTechniqueEnum),
+    );
+    if (object.authentication != null) {
+      yield r'authentication';
+      yield serializers.serialize(
+        object.authentication,
+        specifiedType: const FullType(bool),
+      );
+    }
+    if (object.dlp != null) {
+      yield r'dlp';
+      yield serializers.serialize(
+        object.dlp,
+        specifiedType: const FullType(AigConfigListGateway200ResponseResultInnerDlp),
+      );
+    }
     if (object.logManagement != null) {
       yield r'log_management';
       yield serializers.serialize(
@@ -209,11 +229,6 @@ class _$AigConfigListGateway200ResponseResultInnerSerializer implements Primitiv
         specifiedType: const FullType.nullable(String),
       );
     }
-    yield r'modified_at';
-    yield serializers.serialize(
-      object.modifiedAt,
-      specifiedType: const FullType(DateTime),
-    );
     if (object.otel != null) {
       yield r'otel';
       yield serializers.serialize(
@@ -221,21 +236,6 @@ class _$AigConfigListGateway200ResponseResultInnerSerializer implements Primitiv
         specifiedType: const FullType.nullable(BuiltList, [FullType(AigConfigListGateway200ResponseResultInnerOtelInner)]),
       );
     }
-    yield r'rate_limiting_interval';
-    yield object.rateLimitingInterval == null ? null : serializers.serialize(
-      object.rateLimitingInterval,
-      specifiedType: const FullType.nullable(int),
-    );
-    yield r'rate_limiting_limit';
-    yield object.rateLimitingLimit == null ? null : serializers.serialize(
-      object.rateLimitingLimit,
-      specifiedType: const FullType.nullable(int),
-    );
-    yield r'rate_limiting_technique';
-    yield serializers.serialize(
-      object.rateLimitingTechnique,
-      specifiedType: const FullType(AigConfigListGateway200ResponseResultInnerRateLimitingTechniqueEnum),
-    );
     if (object.storeId != null) {
       yield r'store_id';
       yield serializers.serialize(
@@ -287,13 +287,6 @@ class _$AigConfigListGateway200ResponseResultInnerSerializer implements Primitiv
           ) as String;
           result.accountTag = valueDes;
           break;
-        case r'authentication':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
-          result.authentication = valueDes;
-          break;
         case r'cache_invalidate_on_update':
           final valueDes = serializers.deserialize(
             value,
@@ -323,13 +316,6 @@ class _$AigConfigListGateway200ResponseResultInnerSerializer implements Primitiv
           ) as DateTime;
           result.createdAt = valueDes;
           break;
-        case r'dlp':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(AigConfigListGateway200ResponseResultInnerDlp),
-          ) as AigConfigListGateway200ResponseResultInnerDlp;
-          result.dlp.replace(valueDes);
-          break;
         case r'id':
           final valueDes = serializers.deserialize(
             value,
@@ -343,6 +329,50 @@ class _$AigConfigListGateway200ResponseResultInnerSerializer implements Primitiv
             specifiedType: const FullType(String),
           ) as String;
           result.internalId = valueDes;
+          break;
+        case r'modified_at':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(DateTime),
+          ) as DateTime;
+          result.modifiedAt = valueDes;
+          break;
+        case r'rate_limiting_interval':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType.nullable(int),
+          ) as int?;
+          if (valueDes == null) continue;
+          result.rateLimitingInterval = valueDes;
+          break;
+        case r'rate_limiting_limit':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType.nullable(int),
+          ) as int?;
+          if (valueDes == null) continue;
+          result.rateLimitingLimit = valueDes;
+          break;
+        case r'rate_limiting_technique':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(AigConfigListGateway200ResponseResultInnerRateLimitingTechniqueEnum),
+          ) as AigConfigListGateway200ResponseResultInnerRateLimitingTechniqueEnum;
+          result.rateLimitingTechnique = valueDes;
+          break;
+        case r'authentication':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(bool),
+          ) as bool;
+          result.authentication = valueDes;
+          break;
+        case r'dlp':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(AigConfigListGateway200ResponseResultInnerDlp),
+          ) as AigConfigListGateway200ResponseResultInnerDlp;
+          result.dlp.replace(valueDes);
           break;
         case r'log_management':
           final valueDes = serializers.deserialize(
@@ -375,13 +405,6 @@ class _$AigConfigListGateway200ResponseResultInnerSerializer implements Primitiv
           if (valueDes == null) continue;
           result.logpushPublicKey = valueDes;
           break;
-        case r'modified_at':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
-          result.modifiedAt = valueDes;
-          break;
         case r'otel':
           final valueDes = serializers.deserialize(
             value,
@@ -389,29 +412,6 @@ class _$AigConfigListGateway200ResponseResultInnerSerializer implements Primitiv
           ) as BuiltList<AigConfigListGateway200ResponseResultInnerOtelInner>?;
           if (valueDes == null) continue;
           result.otel.replace(valueDes);
-          break;
-        case r'rate_limiting_interval':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
-          if (valueDes == null) continue;
-          result.rateLimitingInterval = valueDes;
-          break;
-        case r'rate_limiting_limit':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
-          if (valueDes == null) continue;
-          result.rateLimitingLimit = valueDes;
-          break;
-        case r'rate_limiting_technique':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(AigConfigListGateway200ResponseResultInnerRateLimitingTechniqueEnum),
-          ) as AigConfigListGateway200ResponseResultInnerRateLimitingTechniqueEnum;
-          result.rateLimitingTechnique = valueDes;
           break;
         case r'store_id':
           final valueDes = serializers.deserialize(
@@ -458,21 +458,6 @@ class _$AigConfigListGateway200ResponseResultInnerSerializer implements Primitiv
   }
 }
 
-class AigConfigListGateway200ResponseResultInnerLogManagementStrategyEnum extends EnumClass {
-
-  @BuiltValueEnumConst(wireName: r'STOP_INSERTING')
-  static const AigConfigListGateway200ResponseResultInnerLogManagementStrategyEnum STOP_INSERTING = _$aigConfigListGateway200ResponseResultInnerLogManagementStrategyEnum_STOP_INSERTING;
-  @BuiltValueEnumConst(wireName: r'DELETE_OLDEST')
-  static const AigConfigListGateway200ResponseResultInnerLogManagementStrategyEnum DELETE_OLDEST = _$aigConfigListGateway200ResponseResultInnerLogManagementStrategyEnum_DELETE_OLDEST;
-
-  static Serializer<AigConfigListGateway200ResponseResultInnerLogManagementStrategyEnum> get serializer => _$aigConfigListGateway200ResponseResultInnerLogManagementStrategyEnumSerializer;
-
-  const AigConfigListGateway200ResponseResultInnerLogManagementStrategyEnum._(String name): super(name);
-
-  static BuiltSet<AigConfigListGateway200ResponseResultInnerLogManagementStrategyEnum> get values => _$aigConfigListGateway200ResponseResultInnerLogManagementStrategyEnumValues;
-  static AigConfigListGateway200ResponseResultInnerLogManagementStrategyEnum valueOf(String name) => _$aigConfigListGateway200ResponseResultInnerLogManagementStrategyEnumValueOf(name);
-}
-
 class AigConfigListGateway200ResponseResultInnerRateLimitingTechniqueEnum extends EnumClass {
 
   @BuiltValueEnumConst(wireName: r'fixed')
@@ -486,5 +471,20 @@ class AigConfigListGateway200ResponseResultInnerRateLimitingTechniqueEnum extend
 
   static BuiltSet<AigConfigListGateway200ResponseResultInnerRateLimitingTechniqueEnum> get values => _$aigConfigListGateway200ResponseResultInnerRateLimitingTechniqueEnumValues;
   static AigConfigListGateway200ResponseResultInnerRateLimitingTechniqueEnum valueOf(String name) => _$aigConfigListGateway200ResponseResultInnerRateLimitingTechniqueEnumValueOf(name);
+}
+
+class AigConfigListGateway200ResponseResultInnerLogManagementStrategyEnum extends EnumClass {
+
+  @BuiltValueEnumConst(wireName: r'STOP_INSERTING')
+  static const AigConfigListGateway200ResponseResultInnerLogManagementStrategyEnum STOP_INSERTING = _$aigConfigListGateway200ResponseResultInnerLogManagementStrategyEnum_STOP_INSERTING;
+  @BuiltValueEnumConst(wireName: r'DELETE_OLDEST')
+  static const AigConfigListGateway200ResponseResultInnerLogManagementStrategyEnum DELETE_OLDEST = _$aigConfigListGateway200ResponseResultInnerLogManagementStrategyEnum_DELETE_OLDEST;
+
+  static Serializer<AigConfigListGateway200ResponseResultInnerLogManagementStrategyEnum> get serializer => _$aigConfigListGateway200ResponseResultInnerLogManagementStrategyEnumSerializer;
+
+  const AigConfigListGateway200ResponseResultInnerLogManagementStrategyEnum._(String name): super(name);
+
+  static BuiltSet<AigConfigListGateway200ResponseResultInnerLogManagementStrategyEnum> get values => _$aigConfigListGateway200ResponseResultInnerLogManagementStrategyEnumValues;
+  static AigConfigListGateway200ResponseResultInnerLogManagementStrategyEnum valueOf(String name) => _$aigConfigListGateway200ResponseResultInnerLogManagementStrategyEnumValueOf(name);
 }
 

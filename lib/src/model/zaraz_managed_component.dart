@@ -17,17 +17,17 @@ part 'zaraz_managed_component.g.dart';
 /// Properties:
 /// * [blockingTriggers] - List of blocking trigger IDs
 /// * [defaultFields] - Default fields for tool's actions
-/// * [defaultPurpose] - Default consent purpose ID
 /// * [enabled] - Whether tool is enabled
 /// * [name] - Tool's name defined by the user
-/// * [vendorName] - Vendor name for TCF compliant consent modal, required for Custom Managed Components and Custom HTML tool with a defaultPurpose assigned
-/// * [vendorPolicyUrl] - Vendor's Privacy Policy URL for TCF compliant consent modal, required for Custom Managed Components and Custom HTML tool with a defaultPurpose assigned
-/// * [actions] - Actions configured on a tool. Either this or neoEvents field is required.
 /// * [component] - Tool's internal name
-/// * [neoEvents] - DEPRECATED - List of actions configured on a tool. Either this or actions field is required. If both are present, actions field will take precedence.
 /// * [permissions] - List of permissions granted to the component
 /// * [settings] - Tool's settings
 /// * [type] 
+/// * [defaultPurpose] - Default consent purpose ID
+/// * [vendorName] - Vendor name for TCF compliant consent modal, required for Custom Managed Components and Custom HTML tool with a defaultPurpose assigned
+/// * [vendorPolicyUrl] - Vendor's Privacy Policy URL for TCF compliant consent modal, required for Custom Managed Components and Custom HTML tool with a defaultPurpose assigned
+/// * [actions] - Actions configured on a tool. Either this or neoEvents field is required.
+/// * [neoEvents] - DEPRECATED - List of actions configured on a tool. Either this or actions field is required. If both are present, actions field will take precedence.
 @BuiltValue()
 abstract class ZarazManagedComponent implements ZarazBaseMc, Built<ZarazManagedComponent, ZarazManagedComponentBuilder> {
   @BuiltValueField(wireName: r'type')

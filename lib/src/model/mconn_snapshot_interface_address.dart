@@ -11,15 +11,11 @@ part 'mconn_snapshot_interface_address.g.dart';
 /// Snapshot Interface Address
 ///
 /// Properties:
-/// * [connectorId] - Connector identifier
 /// * [interfaceName] - Name of the network interface
 /// * [ipAddress] - IP address of the network interface
+/// * [connectorId] - Connector identifier
 @BuiltValue()
 abstract class MconnSnapshotInterfaceAddress implements Built<MconnSnapshotInterfaceAddress, MconnSnapshotInterfaceAddressBuilder> {
-  /// Connector identifier
-  @BuiltValueField(wireName: r'connector_id')
-  String? get connectorId;
-
   /// Name of the network interface
   @BuiltValueField(wireName: r'interface_name')
   String get interfaceName;
@@ -27,6 +23,10 @@ abstract class MconnSnapshotInterfaceAddress implements Built<MconnSnapshotInter
   /// IP address of the network interface
   @BuiltValueField(wireName: r'ip_address')
   String get ipAddress;
+
+  /// Connector identifier
+  @BuiltValueField(wireName: r'connector_id')
+  String? get connectorId;
 
   MconnSnapshotInterfaceAddress._();
 
@@ -51,13 +51,6 @@ class _$MconnSnapshotInterfaceAddressSerializer implements PrimitiveSerializer<M
     MconnSnapshotInterfaceAddress object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
-    if (object.connectorId != null) {
-      yield r'connector_id';
-      yield serializers.serialize(
-        object.connectorId,
-        specifiedType: const FullType(String),
-      );
-    }
     yield r'interface_name';
     yield serializers.serialize(
       object.interfaceName,
@@ -68,6 +61,13 @@ class _$MconnSnapshotInterfaceAddressSerializer implements PrimitiveSerializer<M
       object.ipAddress,
       specifiedType: const FullType(String),
     );
+    if (object.connectorId != null) {
+      yield r'connector_id';
+      yield serializers.serialize(
+        object.connectorId,
+        specifiedType: const FullType(String),
+      );
+    }
   }
 
   @override
@@ -91,13 +91,6 @@ class _$MconnSnapshotInterfaceAddressSerializer implements PrimitiveSerializer<M
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'connector_id':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.connectorId = valueDes;
-          break;
         case r'interface_name':
           final valueDes = serializers.deserialize(
             value,
@@ -111,6 +104,13 @@ class _$MconnSnapshotInterfaceAddressSerializer implements PrimitiveSerializer<M
             specifiedType: const FullType(String),
           ) as String;
           result.ipAddress = valueDes;
+          break;
+        case r'connector_id':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.connectorId = valueDes;
           break;
         default:
           unhandled.add(key);

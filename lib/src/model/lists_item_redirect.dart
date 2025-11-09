@@ -12,15 +12,21 @@ part 'lists_item_redirect.g.dart';
 /// The definition of the redirect.
 ///
 /// Properties:
+/// * [sourceUrl] 
+/// * [targetUrl] 
 /// * [includeSubdomains] 
 /// * [preservePathSuffix] 
 /// * [preserveQueryString] 
-/// * [sourceUrl] 
 /// * [statusCode] 
 /// * [subpathMatching] 
-/// * [targetUrl] 
 @BuiltValue()
 abstract class ListsItemRedirect implements Built<ListsItemRedirect, ListsItemRedirectBuilder> {
+  @BuiltValueField(wireName: r'source_url')
+  String get sourceUrl;
+
+  @BuiltValueField(wireName: r'target_url')
+  String get targetUrl;
+
   @BuiltValueField(wireName: r'include_subdomains')
   bool? get includeSubdomains;
 
@@ -30,18 +36,12 @@ abstract class ListsItemRedirect implements Built<ListsItemRedirect, ListsItemRe
   @BuiltValueField(wireName: r'preserve_query_string')
   bool? get preserveQueryString;
 
-  @BuiltValueField(wireName: r'source_url')
-  String get sourceUrl;
-
   @BuiltValueField(wireName: r'status_code')
   ListsItemRedirectStatusCodeEnum? get statusCode;
   // enum statusCodeEnum {  301,  302,  307,  308,  };
 
   @BuiltValueField(wireName: r'subpath_matching')
   bool? get subpathMatching;
-
-  @BuiltValueField(wireName: r'target_url')
-  String get targetUrl;
 
   ListsItemRedirect._();
 
@@ -71,6 +71,16 @@ class _$ListsItemRedirectSerializer implements PrimitiveSerializer<ListsItemRedi
     ListsItemRedirect object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    yield r'source_url';
+    yield serializers.serialize(
+      object.sourceUrl,
+      specifiedType: const FullType(String),
+    );
+    yield r'target_url';
+    yield serializers.serialize(
+      object.targetUrl,
+      specifiedType: const FullType(String),
+    );
     if (object.includeSubdomains != null) {
       yield r'include_subdomains';
       yield serializers.serialize(
@@ -92,11 +102,6 @@ class _$ListsItemRedirectSerializer implements PrimitiveSerializer<ListsItemRedi
         specifiedType: const FullType(bool),
       );
     }
-    yield r'source_url';
-    yield serializers.serialize(
-      object.sourceUrl,
-      specifiedType: const FullType(String),
-    );
     if (object.statusCode != null) {
       yield r'status_code';
       yield serializers.serialize(
@@ -111,11 +116,6 @@ class _$ListsItemRedirectSerializer implements PrimitiveSerializer<ListsItemRedi
         specifiedType: const FullType(bool),
       );
     }
-    yield r'target_url';
-    yield serializers.serialize(
-      object.targetUrl,
-      specifiedType: const FullType(String),
-    );
   }
 
   @override
@@ -139,6 +139,20 @@ class _$ListsItemRedirectSerializer implements PrimitiveSerializer<ListsItemRedi
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
+        case r'source_url':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.sourceUrl = valueDes;
+          break;
+        case r'target_url':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.targetUrl = valueDes;
+          break;
         case r'include_subdomains':
           final valueDes = serializers.deserialize(
             value,
@@ -160,13 +174,6 @@ class _$ListsItemRedirectSerializer implements PrimitiveSerializer<ListsItemRedi
           ) as bool;
           result.preserveQueryString = valueDes;
           break;
-        case r'source_url':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.sourceUrl = valueDes;
-          break;
         case r'status_code':
           final valueDes = serializers.deserialize(
             value,
@@ -180,13 +187,6 @@ class _$ListsItemRedirectSerializer implements PrimitiveSerializer<ListsItemRedi
             specifiedType: const FullType(bool),
           ) as bool;
           result.subpathMatching = valueDes;
-          break;
-        case r'target_url':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.targetUrl = valueDes;
           break;
         default:
           unhandled.add(key);

@@ -55,20 +55,20 @@ class _$ZonesTransformationsIdEnumSerializer
 
 class _$ZonesTransformations extends ZonesTransformations {
   @override
-  final bool? editable;
-  @override
   final String id;
   @override
-  final DateTime? modifiedOn;
-  @override
   final JsonObject? value;
+  @override
+  final bool? editable;
+  @override
+  final DateTime? modifiedOn;
 
   factory _$ZonesTransformations(
           [void Function(ZonesTransformationsBuilder)? updates]) =>
       (ZonesTransformationsBuilder()..update(updates))._build();
 
   _$ZonesTransformations._(
-      {this.editable, required this.id, this.modifiedOn, this.value})
+      {required this.id, this.value, this.editable, this.modifiedOn})
       : super._();
   @override
   ZonesTransformations rebuild(
@@ -83,19 +83,19 @@ class _$ZonesTransformations extends ZonesTransformations {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is ZonesTransformations &&
-        editable == other.editable &&
         id == other.id &&
-        modifiedOn == other.modifiedOn &&
-        value == other.value;
+        value == other.value &&
+        editable == other.editable &&
+        modifiedOn == other.modifiedOn;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, editable.hashCode);
     _$hash = $jc(_$hash, id.hashCode);
-    _$hash = $jc(_$hash, modifiedOn.hashCode);
     _$hash = $jc(_$hash, value.hashCode);
+    _$hash = $jc(_$hash, editable.hashCode);
+    _$hash = $jc(_$hash, modifiedOn.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -103,10 +103,10 @@ class _$ZonesTransformations extends ZonesTransformations {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'ZonesTransformations')
-          ..add('editable', editable)
           ..add('id', id)
-          ..add('modifiedOn', modifiedOn)
-          ..add('value', value))
+          ..add('value', value)
+          ..add('editable', editable)
+          ..add('modifiedOn', modifiedOn))
         .toString();
   }
 }
@@ -117,22 +117,22 @@ class ZonesTransformationsBuilder
         ZonesBaseBuilder {
   _$ZonesTransformations? _$v;
 
-  bool? _editable;
-  bool? get editable => _$this._editable;
-  set editable(covariant bool? editable) => _$this._editable = editable;
-
   String? _id;
   String? get id => _$this._id;
   set id(covariant String? id) => _$this._id = id;
+
+  JsonObject? _value;
+  JsonObject? get value => _$this._value;
+  set value(covariant JsonObject? value) => _$this._value = value;
+
+  bool? _editable;
+  bool? get editable => _$this._editable;
+  set editable(covariant bool? editable) => _$this._editable = editable;
 
   DateTime? _modifiedOn;
   DateTime? get modifiedOn => _$this._modifiedOn;
   set modifiedOn(covariant DateTime? modifiedOn) =>
       _$this._modifiedOn = modifiedOn;
-
-  JsonObject? _value;
-  JsonObject? get value => _$this._value;
-  set value(covariant JsonObject? value) => _$this._value = value;
 
   ZonesTransformationsBuilder() {
     ZonesTransformations._defaults(this);
@@ -141,10 +141,10 @@ class ZonesTransformationsBuilder
   ZonesTransformationsBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _editable = $v.editable;
       _id = $v.id;
-      _modifiedOn = $v.modifiedOn;
       _value = $v.value;
+      _editable = $v.editable;
+      _modifiedOn = $v.modifiedOn;
       _$v = null;
     }
     return this;
@@ -166,11 +166,11 @@ class ZonesTransformationsBuilder
   _$ZonesTransformations _build() {
     final _$result = _$v ??
         _$ZonesTransformations._(
-          editable: editable,
           id: BuiltValueNullFieldError.checkNotNull(
               id, r'ZonesTransformations', 'id'),
-          modifiedOn: modifiedOn,
           value: value,
+          editable: editable,
+          modifiedOn: modifiedOn,
         );
     replace(_$result);
     return _$result;

@@ -13,17 +13,30 @@ part 'mcp_portals_api_fetch_gateways200_response_result.g.dart';
 /// McpPortalsApiFetchGateways200ResponseResult
 ///
 /// Properties:
+/// * [hostname] 
+/// * [id] - portal id
+/// * [name] 
+/// * [servers] 
 /// * [createdAt] 
 /// * [createdBy] 
 /// * [description] 
-/// * [hostname] 
-/// * [id] - portal id
 /// * [modifiedAt] 
 /// * [modifiedBy] 
-/// * [name] 
-/// * [servers] 
 @BuiltValue()
 abstract class McpPortalsApiFetchGateways200ResponseResult implements Built<McpPortalsApiFetchGateways200ResponseResult, McpPortalsApiFetchGateways200ResponseResultBuilder> {
+  @BuiltValueField(wireName: r'hostname')
+  String get hostname;
+
+  /// portal id
+  @BuiltValueField(wireName: r'id')
+  String get id;
+
+  @BuiltValueField(wireName: r'name')
+  String get name;
+
+  @BuiltValueField(wireName: r'servers')
+  BuiltList<McpPortalsApiFetchGateways200ResponseResultServersInner> get servers;
+
   @BuiltValueField(wireName: r'created_at')
   DateTime? get createdAt;
 
@@ -33,24 +46,11 @@ abstract class McpPortalsApiFetchGateways200ResponseResult implements Built<McpP
   @BuiltValueField(wireName: r'description')
   String? get description;
 
-  @BuiltValueField(wireName: r'hostname')
-  String get hostname;
-
-  /// portal id
-  @BuiltValueField(wireName: r'id')
-  String get id;
-
   @BuiltValueField(wireName: r'modified_at')
   DateTime? get modifiedAt;
 
   @BuiltValueField(wireName: r'modified_by')
   String? get modifiedBy;
-
-  @BuiltValueField(wireName: r'name')
-  String get name;
-
-  @BuiltValueField(wireName: r'servers')
-  BuiltList<McpPortalsApiFetchGateways200ResponseResultServersInner> get servers;
 
   McpPortalsApiFetchGateways200ResponseResult._();
 
@@ -75,6 +75,26 @@ class _$McpPortalsApiFetchGateways200ResponseResultSerializer implements Primiti
     McpPortalsApiFetchGateways200ResponseResult object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    yield r'hostname';
+    yield serializers.serialize(
+      object.hostname,
+      specifiedType: const FullType(String),
+    );
+    yield r'id';
+    yield serializers.serialize(
+      object.id,
+      specifiedType: const FullType(String),
+    );
+    yield r'name';
+    yield serializers.serialize(
+      object.name,
+      specifiedType: const FullType(String),
+    );
+    yield r'servers';
+    yield serializers.serialize(
+      object.servers,
+      specifiedType: const FullType(BuiltList, [FullType(McpPortalsApiFetchGateways200ResponseResultServersInner)]),
+    );
     if (object.createdAt != null) {
       yield r'created_at';
       yield serializers.serialize(
@@ -96,16 +116,6 @@ class _$McpPortalsApiFetchGateways200ResponseResultSerializer implements Primiti
         specifiedType: const FullType(String),
       );
     }
-    yield r'hostname';
-    yield serializers.serialize(
-      object.hostname,
-      specifiedType: const FullType(String),
-    );
-    yield r'id';
-    yield serializers.serialize(
-      object.id,
-      specifiedType: const FullType(String),
-    );
     if (object.modifiedAt != null) {
       yield r'modified_at';
       yield serializers.serialize(
@@ -120,16 +130,6 @@ class _$McpPortalsApiFetchGateways200ResponseResultSerializer implements Primiti
         specifiedType: const FullType(String),
       );
     }
-    yield r'name';
-    yield serializers.serialize(
-      object.name,
-      specifiedType: const FullType(String),
-    );
-    yield r'servers';
-    yield serializers.serialize(
-      object.servers,
-      specifiedType: const FullType(BuiltList, [FullType(McpPortalsApiFetchGateways200ResponseResultServersInner)]),
-    );
   }
 
   @override
@@ -153,6 +153,34 @@ class _$McpPortalsApiFetchGateways200ResponseResultSerializer implements Primiti
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
+        case r'hostname':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.hostname = valueDes;
+          break;
+        case r'id':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.id = valueDes;
+          break;
+        case r'name':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.name = valueDes;
+          break;
+        case r'servers':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BuiltList, [FullType(McpPortalsApiFetchGateways200ResponseResultServersInner)]),
+          ) as BuiltList<McpPortalsApiFetchGateways200ResponseResultServersInner>;
+          result.servers.replace(valueDes);
+          break;
         case r'created_at':
           final valueDes = serializers.deserialize(
             value,
@@ -174,20 +202,6 @@ class _$McpPortalsApiFetchGateways200ResponseResultSerializer implements Primiti
           ) as String;
           result.description = valueDes;
           break;
-        case r'hostname':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.hostname = valueDes;
-          break;
-        case r'id':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.id = valueDes;
-          break;
         case r'modified_at':
           final valueDes = serializers.deserialize(
             value,
@@ -201,20 +215,6 @@ class _$McpPortalsApiFetchGateways200ResponseResultSerializer implements Primiti
             specifiedType: const FullType(String),
           ) as String;
           result.modifiedBy = valueDes;
-          break;
-        case r'name':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.name = valueDes;
-          break;
-        case r'servers':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(McpPortalsApiFetchGateways200ResponseResultServersInner)]),
-          ) as BuiltList<McpPortalsApiFetchGateways200ResponseResultServersInner>;
-          result.servers.replace(valueDes);
           break;
         default:
           unhandled.add(key);

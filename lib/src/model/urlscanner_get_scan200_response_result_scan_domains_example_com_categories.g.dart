@@ -9,12 +9,12 @@ part of 'urlscanner_get_scan200_response_result_scan_domains_example_com_categor
 class _$UrlscannerGetScan200ResponseResultScanDomainsExampleComCategories
     extends UrlscannerGetScan200ResponseResultScanDomainsExampleComCategories {
   @override
+  final UrlscannerGetScan200ResponseResultScanDomainsExampleComCategoriesInherited
+      inherited;
+  @override
   final BuiltList<
           UrlscannerGetScan200ResponseResultScanDomainsExampleComCategoriesContentInner>?
       content;
-  @override
-  final UrlscannerGetScan200ResponseResultScanDomainsExampleComCategoriesInherited
-      inherited;
   @override
   final BuiltList<
           UrlscannerGetScan200ResponseResultScanDomainsExampleComCategoriesContentInner>?
@@ -29,7 +29,7 @@ class _$UrlscannerGetScan200ResponseResultScanDomainsExampleComCategories
           ._build();
 
   _$UrlscannerGetScan200ResponseResultScanDomainsExampleComCategories._(
-      {this.content, required this.inherited, this.risks})
+      {required this.inherited, this.content, this.risks})
       : super._();
   @override
   UrlscannerGetScan200ResponseResultScanDomainsExampleComCategories rebuild(
@@ -49,16 +49,16 @@ class _$UrlscannerGetScan200ResponseResultScanDomainsExampleComCategories
     if (identical(other, this)) return true;
     return other
             is UrlscannerGetScan200ResponseResultScanDomainsExampleComCategories &&
-        content == other.content &&
         inherited == other.inherited &&
+        content == other.content &&
         risks == other.risks;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, content.hashCode);
     _$hash = $jc(_$hash, inherited.hashCode);
+    _$hash = $jc(_$hash, content.hashCode);
     _$hash = $jc(_$hash, risks.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
@@ -68,8 +68,8 @@ class _$UrlscannerGetScan200ResponseResultScanDomainsExampleComCategories
   String toString() {
     return (newBuiltValueToStringHelper(
             r'UrlscannerGetScan200ResponseResultScanDomainsExampleComCategories')
-          ..add('content', content)
           ..add('inherited', inherited)
+          ..add('content', content)
           ..add('risks', risks))
         .toString();
   }
@@ -81,6 +81,16 @@ class UrlscannerGetScan200ResponseResultScanDomainsExampleComCategoriesBuilder
             UrlscannerGetScan200ResponseResultScanDomainsExampleComCategories,
             UrlscannerGetScan200ResponseResultScanDomainsExampleComCategoriesBuilder> {
   _$UrlscannerGetScan200ResponseResultScanDomainsExampleComCategories? _$v;
+
+  UrlscannerGetScan200ResponseResultScanDomainsExampleComCategoriesInheritedBuilder?
+      _inherited;
+  UrlscannerGetScan200ResponseResultScanDomainsExampleComCategoriesInheritedBuilder
+      get inherited => _$this._inherited ??=
+          UrlscannerGetScan200ResponseResultScanDomainsExampleComCategoriesInheritedBuilder();
+  set inherited(
+          UrlscannerGetScan200ResponseResultScanDomainsExampleComCategoriesInheritedBuilder?
+              inherited) =>
+      _$this._inherited = inherited;
 
   ListBuilder<
           UrlscannerGetScan200ResponseResultScanDomainsExampleComCategoriesContentInner>?
@@ -94,16 +104,6 @@ class UrlscannerGetScan200ResponseResultScanDomainsExampleComCategoriesBuilder
                   UrlscannerGetScan200ResponseResultScanDomainsExampleComCategoriesContentInner>?
               content) =>
       _$this._content = content;
-
-  UrlscannerGetScan200ResponseResultScanDomainsExampleComCategoriesInheritedBuilder?
-      _inherited;
-  UrlscannerGetScan200ResponseResultScanDomainsExampleComCategoriesInheritedBuilder
-      get inherited => _$this._inherited ??=
-          UrlscannerGetScan200ResponseResultScanDomainsExampleComCategoriesInheritedBuilder();
-  set inherited(
-          UrlscannerGetScan200ResponseResultScanDomainsExampleComCategoriesInheritedBuilder?
-              inherited) =>
-      _$this._inherited = inherited;
 
   ListBuilder<
           UrlscannerGetScan200ResponseResultScanDomainsExampleComCategoriesContentInner>?
@@ -127,8 +127,8 @@ class UrlscannerGetScan200ResponseResultScanDomainsExampleComCategoriesBuilder
       get _$this {
     final $v = _$v;
     if ($v != null) {
-      _content = $v.content?.toBuilder();
       _inherited = $v.inherited.toBuilder();
+      _content = $v.content?.toBuilder();
       _risks = $v.risks?.toBuilder();
       _$v = null;
     }
@@ -160,17 +160,17 @@ class UrlscannerGetScan200ResponseResultScanDomainsExampleComCategoriesBuilder
     try {
       _$result = _$v ??
           _$UrlscannerGetScan200ResponseResultScanDomainsExampleComCategories._(
-            content: _content?.build(),
             inherited: inherited.build(),
+            content: _content?.build(),
             risks: _risks?.build(),
           );
     } catch (_) {
       late String _$failedField;
       try {
-        _$failedField = 'content';
-        _content?.build();
         _$failedField = 'inherited';
         inherited.build();
+        _$failedField = 'content';
+        _content?.build();
         _$failedField = 'risks';
         _risks?.build();
       } catch (e) {
