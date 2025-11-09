@@ -55,8 +55,8 @@ rm -rf "$TEMP_DIR"
 echo "Deduplicating enums..."
 python3 scripts/deduplicate_enums.py
 
-echo "Fixing missing typed_data imports..."
-python3 scripts/fix_typed_data_imports.py
+echo "Fixing missing imports using Dart analyzer..."
+python3 scripts/fix_missing_imports.py
 
 echo "Running build_runner..."
 dart run build_runner build --delete-conflicting-outputs
