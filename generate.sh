@@ -34,6 +34,11 @@ fi
 
 INPUT_FILE="$BUNDLED_FILE"
 
+echo "Adding missing identifier schemas to components.schemas..."
+python3 scripts/add_missing_identifier_schemas.py "$BUNDLED_FILE" || {
+  echo "Warning: Failed to add missing identifier schemas. Continuing with generation..."
+}
+
 echo "Generating Dart code from OpenAPI specification..."
 echo "This may take several minutes due to the large specification..."
 echo "Note: Warnings about renaming models (String->ModelString, List->ModelList, etc.) are normal."
