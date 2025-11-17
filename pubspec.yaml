@@ -17,17 +17,11 @@ dependencies:
   talker_dio_logger: ^5.0.0
   graphql: ^5.2.2
 
-dependency_overrides:
-  freezed_annotation: ^3.1.0
-  json_serializable: ^6.11.1
-  source_gen: ^4.0.1
-  analyzer: ^8.1.1
-
 dev_dependencies:
   flutter_lints: ^5.0.0
   build_runner: ^2.4.12
-  custom_lint: ^0.7.0
+  custom_lint: ^0.8.1
   freezed: ^3.2.3
-  source_gen: ^4.0.1
+  source_gen: ^4.0.2
   json_serializable: ^6.11.1
   flutter_gen: ^5.8.0
