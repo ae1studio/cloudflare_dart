@@ -1,5 +1,5 @@
-name: cloudflare
-description: Cloudflare Web API Dart package
+name: cloudflare_sdk
+description: Cloudflare API Dart package
 version: 0.2.0
 homepage: https://github.com/ae1studio/cloudflare_dart.dart
 

@@ -10,7 +10,7 @@ Add this package to your `pubspec.yaml`:
 
 ```yaml
 dependencies:
-  cloudflare: ^0.2.0
+  cloudflare_sdk: ^0.2.0
 ```
 
 Then run:
@@ -33,7 +33,7 @@ You'll need a Cloudflare API token. You can create one in your [Cloudflare Dashb
 ### Basic Usage
 
 ```dart
-import 'package:cloudflare/cloudflare_base.dart';
+import 'package:cloudflare_sdk/cloudflare_sdk.dart';
 
 void main() async {
   // Initialize the API client
