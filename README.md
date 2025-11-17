@@ -3,7 +3,6 @@
 A Dart package for interacting with the Cloudflare Web API. This package provides a type-safe, easy-to-use interface for managing Cloudflare resources including zones, DNS records, Workers, Pages, Analytics, and more.
 
 > **Note:** Not all endpoints and models have been added currently, so this package does not have feature parity with the full Cloudflare API. Additional endpoints and models are being added over time.
-> **Used by:** This package is used in [Kyno for Cloudflare](https://kyno.app) app.
 
 ## Installation
 
@@ -11,7 +10,7 @@ Add this package to your `pubspec.yaml`:
 
 ```yaml
 dependencies:
-  cloudflare_sdk: ^0.2.0
+  cloudflare_sdk: ^0.2.1
 ```
 
 Then run:
