@@ -1,0 +1,33 @@
+name: cloudflare
+description: Cloudflare Web API Dart package
+version: 0.2.0
+homepage: https://github.com/ae1studio/cloudflare_dart.dart
+
+environment:
+  sdk: ">=3.8.0 <4.0.0"
+  flutter: ">=3.24.0"
+
+dependencies:
+  intl: ^0.20.2
+  json_annotation: ^4.9.0
+  hive_ce_generator: ^1.9.5
+  freezed_annotation: ^3.1.0
+  dio: ^5.9.0
+  talker: ^5.0.0
+  talker_dio_logger: ^5.0.0
+  graphql: ^5.2.2
+
+dependency_overrides:
+  freezed_annotation: ^3.1.0
+  json_serializable: ^6.11.1
+  source_gen: ^4.0.1
+  analyzer: ^8.1.1
+
+dev_dependencies:
+  flutter_lints: ^5.0.0
+  build_runner: ^2.4.12
+  custom_lint: ^0.7.0
+  freezed: ^3.2.3
+  source_gen: ^4.0.1
+  json_serializable: ^6.11.1
+  flutter_gen: ^5.8.0
