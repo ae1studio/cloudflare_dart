@@ -13,7 +13,6 @@ export 'src/models/_models.dart';
 part 'src/cloudflare.dart';
 part 'src/base.dart';
 part 'src/endpoints/endpoint_base.dart';
-part 'src/endpoints/utilitys.dart';
 part 'src/endpoints/user.dart';
 part 'src/endpoints/account.dart';
 part 'src/endpoints/alerting.dart';
