@@ -15,6 +15,8 @@ abstract class EndpointBase {
 
   Talker? get talker => _api._talker;
 
+  List<String> get parentSegments => _parentSegments;
+
   String _buildPath([List<String>? segments]) {
     final all = [
       ..._parentSegments,

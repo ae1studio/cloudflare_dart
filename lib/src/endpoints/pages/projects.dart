@@ -76,6 +76,11 @@ class _ProjectsEndpoint extends EndpointBase {
   }
 
   _DeploymentsEndpoint deployments(String projectName) {
-    return _DeploymentsEndpoint(_api, ['pages', 'projects', projectName]);
+    return _DeploymentsEndpoint(_api, [
+      ...parentSegments,
+      'pages',
+      'projects',
+      projectName,
+    ]);
   }
 }
