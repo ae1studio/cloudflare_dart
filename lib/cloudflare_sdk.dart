@@ -27,5 +27,6 @@ part 'src/endpoints/workers.dart';
 part 'src/endpoints/workers/workers_list.dart';
 part 'src/endpoints/workers/scripts.dart';
 part 'src/endpoints/workers/versions.dart';
+part 'src/endpoints/workers/scripts/versions.dart';
 part 'src/endpoints/alerting/webhooks.dart';
 part 'src/endpoints/status.dart';

@@ -7,6 +7,16 @@ class _ScriptsEndpoint extends EndpointBase {
   _ScriptsEndpoint(CloudflareApiBase api, List<String> parentSegments)
     : super(api, parentSegments);
 
+  _ScriptsVersionsEndpoint versions(String accountId, String scriptName) {
+    return _ScriptsVersionsEndpoint(_api, [
+      'accounts',
+      accountId,
+      'workers',
+      'scripts',
+      scriptName,
+    ]);
+  }
+
   /// ## List Workers
   ///
   /// Fetch a list of uploaded workers.

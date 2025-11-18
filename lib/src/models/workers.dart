@@ -23,6 +23,33 @@ enum WorkerUsageModel {
   }
 }
 
+@JsonEnum(alwaysCreate: true, valueField: 'value')
+enum ScriptSource {
+  unknown('unknown'),
+  api('api'),
+  wrangler('wrangler'),
+  terraform('terraform'),
+  dash('dash'),
+  dashTemplate('dash_template'),
+  integration('integration'),
+  quickEditor('quick_editor'),
+  playground('playground'),
+  workersci('workersci');
+
+  const ScriptSource(this.value);
+
+  final String value;
+
+  static ScriptSource fromString(String source) {
+    for (final scriptSource in ScriptSource.values) {
+      if (scriptSource.value == source) {
+        return scriptSource;
+      }
+    }
+    return ScriptSource.unknown;
+  }
+}
+
 @JsonSerializable(createToJson: true)
 @LocalDateTimeConverter()
 class Worker extends Object {
@@ -242,4 +269,39 @@ abstract class WorkersLimits with _$WorkersLimits {
 
   factory WorkersLimits.fromJson(Map<String, dynamic> json) =>
       _$WorkersLimitsFromJson(json);
+}
+
+@Freezed()
+abstract class ScriptsVersion with _$ScriptsVersion {
+  const factory ScriptsVersion({
+    /// UUID
+    required String id,
+
+    ScriptsVersionMetadata? metadata,
+
+    required int number,
+  }) = _ScriptsVersion;
+
+  factory ScriptsVersion.fromJson(Map<String, dynamic> json) =>
+      _$ScriptsVersionFromJson(json);
+}
+
+@Freezed()
+abstract class ScriptsVersionMetadata with _$ScriptsVersionMetadata {
+  const factory ScriptsVersionMetadata({
+    String? author_email,
+
+    String? author_id,
+
+    required DateTime created_on,
+
+    @Default(false) bool hasPreview,
+
+    required DateTime modified_on,
+
+    required ScriptSource source,
+  }) = _ScriptsVersionMetadata;
+
+  factory ScriptsVersionMetadata.fromJson(Map<String, dynamic> json) =>
+      _$ScriptsVersionMetadataFromJson(json);
 }

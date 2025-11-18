@@ -911,4 +911,577 @@ as int,
 
 }
 
+
+/// @nodoc
+mixin _$ScriptsVersion {
+
+/// UUID
+ String get id; ScriptsVersionMetadata? get metadata; int get number;
+/// Create a copy of ScriptsVersion
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$ScriptsVersionCopyWith<ScriptsVersion> get copyWith => _$ScriptsVersionCopyWithImpl<ScriptsVersion>(this as ScriptsVersion, _$identity);
+
+  /// Serializes this ScriptsVersion to a JSON map.
+  Map<String, dynamic> toJson();
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is ScriptsVersion&&(identical(other.id, id) || other.id == id)&&(identical(other.metadata, metadata) || other.metadata == metadata)&&(identical(other.number, number) || other.number == number));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,id,metadata,number);
+
+@override
+String toString() {
+  return 'ScriptsVersion(id: $id, metadata: $metadata, number: $number)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class $ScriptsVersionCopyWith<$Res>  {
+  factory $ScriptsVersionCopyWith(ScriptsVersion value, $Res Function(ScriptsVersion) _then) = _$ScriptsVersionCopyWithImpl;
+@useResult
+$Res call({
+ String id, ScriptsVersionMetadata? metadata, int number
+});
+
+
+$ScriptsVersionMetadataCopyWith<$Res>? get metadata;
+
+}
+/// @nodoc
+class _$ScriptsVersionCopyWithImpl<$Res>
+    implements $ScriptsVersionCopyWith<$Res> {
+  _$ScriptsVersionCopyWithImpl(this._self, this._then);
+
+  final ScriptsVersion _self;
+  final $Res Function(ScriptsVersion) _then;
+
+/// Create a copy of ScriptsVersion
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? metadata = freezed,Object? number = null,}) {
+  return _then(_self.copyWith(
+id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
+as String,metadata: freezed == metadata ? _self.metadata : metadata // ignore: cast_nullable_to_non_nullable
+as ScriptsVersionMetadata?,number: null == number ? _self.number : number // ignore: cast_nullable_to_non_nullable
+as int,
+  ));
+}
+/// Create a copy of ScriptsVersion
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$ScriptsVersionMetadataCopyWith<$Res>? get metadata {
+    if (_self.metadata == null) {
+    return null;
+  }
+
+  return $ScriptsVersionMetadataCopyWith<$Res>(_self.metadata!, (value) {
+    return _then(_self.copyWith(metadata: value));
+  });
+}
+}
+
+
+/// Adds pattern-matching-related methods to [ScriptsVersion].
+extension ScriptsVersionPatterns on ScriptsVersion {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _ScriptsVersion value)?  $default,{required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _ScriptsVersion() when $default != null:
+return $default(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _ScriptsVersion value)  $default,){
+final _that = this;
+switch (_that) {
+case _ScriptsVersion():
+return $default(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _ScriptsVersion value)?  $default,){
+final _that = this;
+switch (_that) {
+case _ScriptsVersion() when $default != null:
+return $default(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  ScriptsVersionMetadata? metadata,  int number)?  $default,{required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _ScriptsVersion() when $default != null:
+return $default(_that.id,_that.metadata,_that.number);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  ScriptsVersionMetadata? metadata,  int number)  $default,) {final _that = this;
+switch (_that) {
+case _ScriptsVersion():
+return $default(_that.id,_that.metadata,_that.number);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  ScriptsVersionMetadata? metadata,  int number)?  $default,) {final _that = this;
+switch (_that) {
+case _ScriptsVersion() when $default != null:
+return $default(_that.id,_that.metadata,_that.number);case _:
+  return null;
+
+}
+}
+
+}
+
+/// @nodoc
+@JsonSerializable()
+
+class _ScriptsVersion implements ScriptsVersion {
+  const _ScriptsVersion({required this.id, this.metadata, required this.number});
+  factory _ScriptsVersion.fromJson(Map<String, dynamic> json) => _$ScriptsVersionFromJson(json);
+
+/// UUID
+@override final  String id;
+@override final  ScriptsVersionMetadata? metadata;
+@override final  int number;
+
+/// Create a copy of ScriptsVersion
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$ScriptsVersionCopyWith<_ScriptsVersion> get copyWith => __$ScriptsVersionCopyWithImpl<_ScriptsVersion>(this, _$identity);
+
+@override
+Map<String, dynamic> toJson() {
+  return _$ScriptsVersionToJson(this, );
+}
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _ScriptsVersion&&(identical(other.id, id) || other.id == id)&&(identical(other.metadata, metadata) || other.metadata == metadata)&&(identical(other.number, number) || other.number == number));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,id,metadata,number);
+
+@override
+String toString() {
+  return 'ScriptsVersion(id: $id, metadata: $metadata, number: $number)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class _$ScriptsVersionCopyWith<$Res> implements $ScriptsVersionCopyWith<$Res> {
+  factory _$ScriptsVersionCopyWith(_ScriptsVersion value, $Res Function(_ScriptsVersion) _then) = __$ScriptsVersionCopyWithImpl;
+@override @useResult
+$Res call({
+ String id, ScriptsVersionMetadata? metadata, int number
+});
+
+
+@override $ScriptsVersionMetadataCopyWith<$Res>? get metadata;
+
+}
+/// @nodoc
+class __$ScriptsVersionCopyWithImpl<$Res>
+    implements _$ScriptsVersionCopyWith<$Res> {
+  __$ScriptsVersionCopyWithImpl(this._self, this._then);
+
+  final _ScriptsVersion _self;
+  final $Res Function(_ScriptsVersion) _then;
+
+/// Create a copy of ScriptsVersion
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? metadata = freezed,Object? number = null,}) {
+  return _then(_ScriptsVersion(
+id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
+as String,metadata: freezed == metadata ? _self.metadata : metadata // ignore: cast_nullable_to_non_nullable
+as ScriptsVersionMetadata?,number: null == number ? _self.number : number // ignore: cast_nullable_to_non_nullable
+as int,
+  ));
+}
+
+/// Create a copy of ScriptsVersion
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$ScriptsVersionMetadataCopyWith<$Res>? get metadata {
+    if (_self.metadata == null) {
+    return null;
+  }
+
+  return $ScriptsVersionMetadataCopyWith<$Res>(_self.metadata!, (value) {
+    return _then(_self.copyWith(metadata: value));
+  });
+}
+}
+
+
+/// @nodoc
+mixin _$ScriptsVersionMetadata {
+
+ String? get author_email; String? get author_id; DateTime get created_on; bool get hasPreview; DateTime get modified_on; ScriptSource get source;
+/// Create a copy of ScriptsVersionMetadata
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$ScriptsVersionMetadataCopyWith<ScriptsVersionMetadata> get copyWith => _$ScriptsVersionMetadataCopyWithImpl<ScriptsVersionMetadata>(this as ScriptsVersionMetadata, _$identity);
+
+  /// Serializes this ScriptsVersionMetadata to a JSON map.
+  Map<String, dynamic> toJson();
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is ScriptsVersionMetadata&&(identical(other.author_email, author_email) || other.author_email == author_email)&&(identical(other.author_id, author_id) || other.author_id == author_id)&&(identical(other.created_on, created_on) || other.created_on == created_on)&&(identical(other.hasPreview, hasPreview) || other.hasPreview == hasPreview)&&(identical(other.modified_on, modified_on) || other.modified_on == modified_on)&&(identical(other.source, source) || other.source == source));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,author_email,author_id,created_on,hasPreview,modified_on,source);
+
+@override
+String toString() {
+  return 'ScriptsVersionMetadata(author_email: $author_email, author_id: $author_id, created_on: $created_on, hasPreview: $hasPreview, modified_on: $modified_on, source: $source)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class $ScriptsVersionMetadataCopyWith<$Res>  {
+  factory $ScriptsVersionMetadataCopyWith(ScriptsVersionMetadata value, $Res Function(ScriptsVersionMetadata) _then) = _$ScriptsVersionMetadataCopyWithImpl;
+@useResult
+$Res call({
+ String? author_email, String? author_id, DateTime created_on, bool hasPreview, DateTime modified_on, ScriptSource source
+});
+
+
+
+
+}
+/// @nodoc
+class _$ScriptsVersionMetadataCopyWithImpl<$Res>
+    implements $ScriptsVersionMetadataCopyWith<$Res> {
+  _$ScriptsVersionMetadataCopyWithImpl(this._self, this._then);
+
+  final ScriptsVersionMetadata _self;
+  final $Res Function(ScriptsVersionMetadata) _then;
+
+/// Create a copy of ScriptsVersionMetadata
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? author_email = freezed,Object? author_id = freezed,Object? created_on = null,Object? hasPreview = null,Object? modified_on = null,Object? source = null,}) {
+  return _then(_self.copyWith(
+author_email: freezed == author_email ? _self.author_email : author_email // ignore: cast_nullable_to_non_nullable
+as String?,author_id: freezed == author_id ? _self.author_id : author_id // ignore: cast_nullable_to_non_nullable
+as String?,created_on: null == created_on ? _self.created_on : created_on // ignore: cast_nullable_to_non_nullable
+as DateTime,hasPreview: null == hasPreview ? _self.hasPreview : hasPreview // ignore: cast_nullable_to_non_nullable
+as bool,modified_on: null == modified_on ? _self.modified_on : modified_on // ignore: cast_nullable_to_non_nullable
+as DateTime,source: null == source ? _self.source : source // ignore: cast_nullable_to_non_nullable
+as ScriptSource,
+  ));
+}
+
+}
+
+
+/// Adds pattern-matching-related methods to [ScriptsVersionMetadata].
+extension ScriptsVersionMetadataPatterns on ScriptsVersionMetadata {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _ScriptsVersionMetadata value)?  $default,{required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _ScriptsVersionMetadata() when $default != null:
+return $default(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _ScriptsVersionMetadata value)  $default,){
+final _that = this;
+switch (_that) {
+case _ScriptsVersionMetadata():
+return $default(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _ScriptsVersionMetadata value)?  $default,){
+final _that = this;
+switch (_that) {
+case _ScriptsVersionMetadata() when $default != null:
+return $default(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String? author_email,  String? author_id,  DateTime created_on,  bool hasPreview,  DateTime modified_on,  ScriptSource source)?  $default,{required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _ScriptsVersionMetadata() when $default != null:
+return $default(_that.author_email,_that.author_id,_that.created_on,_that.hasPreview,_that.modified_on,_that.source);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String? author_email,  String? author_id,  DateTime created_on,  bool hasPreview,  DateTime modified_on,  ScriptSource source)  $default,) {final _that = this;
+switch (_that) {
+case _ScriptsVersionMetadata():
+return $default(_that.author_email,_that.author_id,_that.created_on,_that.hasPreview,_that.modified_on,_that.source);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String? author_email,  String? author_id,  DateTime created_on,  bool hasPreview,  DateTime modified_on,  ScriptSource source)?  $default,) {final _that = this;
+switch (_that) {
+case _ScriptsVersionMetadata() when $default != null:
+return $default(_that.author_email,_that.author_id,_that.created_on,_that.hasPreview,_that.modified_on,_that.source);case _:
+  return null;
+
+}
+}
+
+}
+
+/// @nodoc
+@JsonSerializable()
+
+class _ScriptsVersionMetadata implements ScriptsVersionMetadata {
+  const _ScriptsVersionMetadata({this.author_email, this.author_id, required this.created_on, this.hasPreview = false, required this.modified_on, required this.source});
+  factory _ScriptsVersionMetadata.fromJson(Map<String, dynamic> json) => _$ScriptsVersionMetadataFromJson(json);
+
+@override final  String? author_email;
+@override final  String? author_id;
+@override final  DateTime created_on;
+@override@JsonKey() final  bool hasPreview;
+@override final  DateTime modified_on;
+@override final  ScriptSource source;
+
+/// Create a copy of ScriptsVersionMetadata
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$ScriptsVersionMetadataCopyWith<_ScriptsVersionMetadata> get copyWith => __$ScriptsVersionMetadataCopyWithImpl<_ScriptsVersionMetadata>(this, _$identity);
+
+@override
+Map<String, dynamic> toJson() {
+  return _$ScriptsVersionMetadataToJson(this, );
+}
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _ScriptsVersionMetadata&&(identical(other.author_email, author_email) || other.author_email == author_email)&&(identical(other.author_id, author_id) || other.author_id == author_id)&&(identical(other.created_on, created_on) || other.created_on == created_on)&&(identical(other.hasPreview, hasPreview) || other.hasPreview == hasPreview)&&(identical(other.modified_on, modified_on) || other.modified_on == modified_on)&&(identical(other.source, source) || other.source == source));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,author_email,author_id,created_on,hasPreview,modified_on,source);
+
+@override
+String toString() {
+  return 'ScriptsVersionMetadata(author_email: $author_email, author_id: $author_id, created_on: $created_on, hasPreview: $hasPreview, modified_on: $modified_on, source: $source)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class _$ScriptsVersionMetadataCopyWith<$Res> implements $ScriptsVersionMetadataCopyWith<$Res> {
+  factory _$ScriptsVersionMetadataCopyWith(_ScriptsVersionMetadata value, $Res Function(_ScriptsVersionMetadata) _then) = __$ScriptsVersionMetadataCopyWithImpl;
+@override @useResult
+$Res call({
+ String? author_email, String? author_id, DateTime created_on, bool hasPreview, DateTime modified_on, ScriptSource source
+});
+
+
+
+
+}
+/// @nodoc
+class __$ScriptsVersionMetadataCopyWithImpl<$Res>
+    implements _$ScriptsVersionMetadataCopyWith<$Res> {
+  __$ScriptsVersionMetadataCopyWithImpl(this._self, this._then);
+
+  final _ScriptsVersionMetadata _self;
+  final $Res Function(_ScriptsVersionMetadata) _then;
+
+/// Create a copy of ScriptsVersionMetadata
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? author_email = freezed,Object? author_id = freezed,Object? created_on = null,Object? hasPreview = null,Object? modified_on = null,Object? source = null,}) {
+  return _then(_ScriptsVersionMetadata(
+author_email: freezed == author_email ? _self.author_email : author_email // ignore: cast_nullable_to_non_nullable
+as String?,author_id: freezed == author_id ? _self.author_id : author_id // ignore: cast_nullable_to_non_nullable
+as String?,created_on: null == created_on ? _self.created_on : created_on // ignore: cast_nullable_to_non_nullable
+as DateTime,hasPreview: null == hasPreview ? _self.hasPreview : hasPreview // ignore: cast_nullable_to_non_nullable
+as bool,modified_on: null == modified_on ? _self.modified_on : modified_on // ignore: cast_nullable_to_non_nullable
+as DateTime,source: null == source ? _self.source : source // ignore: cast_nullable_to_non_nullable
+as ScriptSource,
+  ));
+}
+
+
+}
+
 // dart format on

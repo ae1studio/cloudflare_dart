@@ -64,6 +64,59 @@ _WorkersLimits _$WorkersLimitsFromJson(Map<String, dynamic> json) =>
 Map<String, dynamic> _$WorkersLimitsToJson(_WorkersLimits instance) =>
     <String, dynamic>{'cpu_ms': instance.cpu_ms};
 
+_ScriptsVersion _$ScriptsVersionFromJson(Map<String, dynamic> json) =>
+    _ScriptsVersion(
+      id: json['id'] as String,
+      metadata: json['metadata'] == null
+          ? null
+          : ScriptsVersionMetadata.fromJson(
+              json['metadata'] as Map<String, dynamic>,
+            ),
+      number: (json['number'] as num).toInt(),
+    );
+
+Map<String, dynamic> _$ScriptsVersionToJson(_ScriptsVersion instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'metadata': instance.metadata,
+      'number': instance.number,
+    };
+
+_ScriptsVersionMetadata _$ScriptsVersionMetadataFromJson(
+  Map<String, dynamic> json,
+) => _ScriptsVersionMetadata(
+  author_email: json['author_email'] as String?,
+  author_id: json['author_id'] as String?,
+  created_on: DateTime.parse(json['created_on'] as String),
+  hasPreview: json['hasPreview'] as bool? ?? false,
+  modified_on: DateTime.parse(json['modified_on'] as String),
+  source: $enumDecode(_$ScriptSourceEnumMap, json['source']),
+);
+
+Map<String, dynamic> _$ScriptsVersionMetadataToJson(
+  _ScriptsVersionMetadata instance,
+) => <String, dynamic>{
+  'author_email': instance.author_email,
+  'author_id': instance.author_id,
+  'created_on': instance.created_on.toIso8601String(),
+  'hasPreview': instance.hasPreview,
+  'modified_on': instance.modified_on.toIso8601String(),
+  'source': _$ScriptSourceEnumMap[instance.source]!,
+};
+
+const _$ScriptSourceEnumMap = {
+  ScriptSource.unknown: 'unknown',
+  ScriptSource.api: 'api',
+  ScriptSource.wrangler: 'wrangler',
+  ScriptSource.terraform: 'terraform',
+  ScriptSource.dash: 'dash',
+  ScriptSource.dashTemplate: 'dash_template',
+  ScriptSource.integration: 'integration',
+  ScriptSource.quickEditor: 'quick_editor',
+  ScriptSource.playground: 'playground',
+  ScriptSource.workersci: 'workersci',
+};
+
 Webhooks _$WebhooksFromJson(Map<String, dynamic> json) {
   $checkKeys(json, requiredKeys: const ['id', 'name', 'url', 'created_at']);
   return Webhooks()
