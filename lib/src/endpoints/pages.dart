@@ -6,6 +6,7 @@ class _PagesEndpoint extends EndpointBase {
 
   _PagesEndpoint(CloudflareApiBase api) : super(api);
 
-  late final _ProjectsEndpoint _projects = _ProjectsEndpoint(_api, []);
-  _ProjectsEndpoint get projects => _projects;
+  _ProjectsEndpoint projects(String accountId) {
+    return _ProjectsEndpoint(_api, ['accounts', accountId]);
+  }
 }
