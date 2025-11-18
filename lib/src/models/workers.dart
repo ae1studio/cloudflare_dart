@@ -1,3 +1,5 @@
+// ignore_for_file: invalid_annotation_target
+
 part of cloudflare.models;
 
 @JsonEnum(alwaysCreate: true, valueField: 'value')
@@ -73,7 +75,6 @@ class Worker extends Object {
 }
 
 @JsonSerializable(createToJson: true)
-@LocalDateTimeConverter()
 class WorkerSubdomain extends Object {
   WorkerSubdomain();
 
@@ -178,4 +179,66 @@ class Script extends Object {
   /// Usage model for the Worker invocations.
   @JsonKey(name: 'usage_model', defaultValue: WorkerUsageModel.standard)
   late WorkerUsageModel usage_model;
+}
+
+@Freezed()
+abstract class Version with _$Version {
+  const factory Version({
+    /// Version identifier.
+    required String id,
+
+    /// When the version was created.
+    required DateTime created_on,
+
+    /// The integer version number, starting from one.
+    required int number,
+
+    /// Metadata about the version.
+    Annotations? annotations,
+
+    /// Date indicating targeted support in the Workers runtime. Backwards incompatible fixes to the runtime following this date will not affect this Worker.
+    DateTime? compatibility_date,
+
+    /// Flags that enable or disable certain features in the Workers runtime. Used to enable upcoming features or opt in or out of specific changes not included in a `compatibility_date`.
+    @Default(<String>[]) List<String> compatibility_flags,
+
+    /// Resource limits enforced at runtime.
+    Limits? limits,
+
+    /// The name of the main module in the `modules` array (e.g. the name of the module that exports a `fetch` handler).
+    String? main_module,
+
+    /// The client used to create the version.
+    required String source,
+  }) = _Version;
+
+  factory Version.fromJson(Map<String, dynamic> json) =>
+      _$VersionFromJson(json);
+}
+
+@Freezed()
+abstract class Annotations with _$Annotations {
+  const factory Annotations({
+    /// Human-readable message about the version.
+    @JsonKey(name: "workers/message") String? workers_message,
+
+    /// User-provided identifier for the version.
+    @JsonKey(name: "workers/tag") String? workers_tag,
+
+    /// Operation that triggered the creation of the version.
+    @JsonKey(name: "workers/triggered_by") String? workers_triggered_by,
+  }) = _Annotations;
+
+  factory Annotations.fromJson(Map<String, dynamic> json) =>
+      _$AnnotationsFromJson(json);
+}
+
+@Freezed()
+abstract class Limits with _$Limits {
+  const factory Limits({
+    /// CPU time limit in milliseconds.
+    required int cpu_ms,
+  }) = _Limits;
+
+  factory Limits.fromJson(Map<String, dynamic> json) => _$LimitsFromJson(json);
 }

@@ -13,4 +13,14 @@ class _WorkersEndpoint extends EndpointBase {
   _ScriptsEndpoint scripts(String accountId) {
     return _ScriptsEndpoint(_api, ['accounts', accountId]);
   }
+
+  _WorkersVersionsEndpoint versions(String accountId, String workerId) {
+    return _WorkersVersionsEndpoint(_api, [
+      'accounts',
+      accountId,
+      'workers',
+      'workers',
+      workerId,
+    ]);
+  }
 }

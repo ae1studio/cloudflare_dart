@@ -1,8 +1,9 @@
 library cloudflare.models;
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
 
 part '_models.g.dart';
+part '_models.freezed.dart';
 
 part 'alerting.dart';
 part 'user.dart';
