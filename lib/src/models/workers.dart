@@ -182,8 +182,8 @@ class Script extends Object {
 }
 
 @Freezed()
-abstract class Version with _$Version {
-  const factory Version({
+abstract class WorkersVersion with _$WorkersVersion {
+  const factory WorkersVersion({
     /// Version identifier.
     required String id,
 
@@ -194,7 +194,7 @@ abstract class Version with _$Version {
     required int number,
 
     /// Metadata about the version.
-    Annotations? annotations,
+    WorkersAnnotations? annotations,
 
     /// Date indicating targeted support in the Workers runtime. Backwards incompatible fixes to the runtime following this date will not affect this Worker.
     DateTime? compatibility_date,
@@ -203,22 +203,22 @@ abstract class Version with _$Version {
     @Default(<String>[]) List<String> compatibility_flags,
 
     /// Resource limits enforced at runtime.
-    Limits? limits,
+    WorkersLimits? limits,
 
     /// The name of the main module in the `modules` array (e.g. the name of the module that exports a `fetch` handler).
     String? main_module,
 
     /// The client used to create the version.
     required String source,
-  }) = _Version;
+  }) = _WorkersVersion;
 
-  factory Version.fromJson(Map<String, dynamic> json) =>
-      _$VersionFromJson(json);
+  factory WorkersVersion.fromJson(Map<String, dynamic> json) =>
+      _$WorkersVersionFromJson(json);
 }
 
 @Freezed()
-abstract class Annotations with _$Annotations {
-  const factory Annotations({
+abstract class WorkersAnnotations with _$WorkersAnnotations {
+  const factory WorkersAnnotations({
     /// Human-readable message about the version.
     @JsonKey(name: "workers/message") String? workers_message,
 
@@ -227,18 +227,19 @@ abstract class Annotations with _$Annotations {
 
     /// Operation that triggered the creation of the version.
     @JsonKey(name: "workers/triggered_by") String? workers_triggered_by,
-  }) = _Annotations;
+  }) = _WorkersAnnotations;
 
-  factory Annotations.fromJson(Map<String, dynamic> json) =>
-      _$AnnotationsFromJson(json);
+  factory WorkersAnnotations.fromJson(Map<String, dynamic> json) =>
+      _$WorkersAnnotationsFromJson(json);
 }
 
 @Freezed()
-abstract class Limits with _$Limits {
-  const factory Limits({
+abstract class WorkersLimits with _$WorkersLimits {
+  const factory WorkersLimits({
     /// CPU time limit in milliseconds.
     required int cpu_ms,
-  }) = _Limits;
+  }) = _WorkersLimits;
 
-  factory Limits.fromJson(Map<String, dynamic> json) => _$LimitsFromJson(json);
+  factory WorkersLimits.fromJson(Map<String, dynamic> json) =>
+      _$WorkersLimitsFromJson(json);
 }

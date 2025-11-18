@@ -13,15 +13,15 @@ class _WorkersVersionsEndpoint extends EndpointBase {
   ///
   /// Accepted Permissions (at least one required)
   /// `Workers Tail Read`, `Workers Scripts Write`, `Workers Scripts Read`
-  Future<ResultPagination<Version>> list({
+  Future<ResultPagination<WorkersVersion>> list({
     /// Current page.
     int page = 1,
   }) async {
     final map = (await dio.get(fullPath, queryParameters: {'page': page})).data;
 
-    return ResultPagination<Version>.fromJson(
+    return ResultPagination<WorkersVersion>.fromJson(
       map,
-      (json) => Version.fromJson(json as Map<String, dynamic>),
+      (json) => WorkersVersion.fromJson(json as Map<String, dynamic>),
     );
   }
 }

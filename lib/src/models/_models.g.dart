@@ -6,59 +6,63 @@ part of '_models.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_Version _$VersionFromJson(Map<String, dynamic> json) => _Version(
-  id: json['id'] as String,
-  created_on: DateTime.parse(json['created_on'] as String),
-  number: (json['number'] as num).toInt(),
-  annotations: json['annotations'] == null
-      ? null
-      : Annotations.fromJson(json['annotations'] as Map<String, dynamic>),
-  compatibility_date: json['compatibility_date'] == null
-      ? null
-      : DateTime.parse(json['compatibility_date'] as String),
-  compatibility_flags:
-      (json['compatibility_flags'] as List<dynamic>?)
-          ?.map((e) => e as String)
-          .toList() ??
-      const <String>[],
-  limits: json['limits'] == null
-      ? null
-      : Limits.fromJson(json['limits'] as Map<String, dynamic>),
-  main_module: json['main_module'] as String?,
-  source: json['source'] as String,
-);
+_WorkersVersion _$WorkersVersionFromJson(Map<String, dynamic> json) =>
+    _WorkersVersion(
+      id: json['id'] as String,
+      created_on: DateTime.parse(json['created_on'] as String),
+      number: (json['number'] as num).toInt(),
+      annotations: json['annotations'] == null
+          ? null
+          : WorkersAnnotations.fromJson(
+              json['annotations'] as Map<String, dynamic>,
+            ),
+      compatibility_date: json['compatibility_date'] == null
+          ? null
+          : DateTime.parse(json['compatibility_date'] as String),
+      compatibility_flags:
+          (json['compatibility_flags'] as List<dynamic>?)
+              ?.map((e) => e as String)
+              .toList() ??
+          const <String>[],
+      limits: json['limits'] == null
+          ? null
+          : WorkersLimits.fromJson(json['limits'] as Map<String, dynamic>),
+      main_module: json['main_module'] as String?,
+      source: json['source'] as String,
+    );
 
-Map<String, dynamic> _$VersionToJson(_Version instance) => <String, dynamic>{
-  'id': instance.id,
-  'created_on': instance.created_on.toIso8601String(),
-  'number': instance.number,
-  'annotations': instance.annotations,
-  'compatibility_date': instance.compatibility_date?.toIso8601String(),
-  'compatibility_flags': instance.compatibility_flags,
-  'limits': instance.limits,
-  'main_module': instance.main_module,
-  'source': instance.source,
-};
+Map<String, dynamic> _$WorkersVersionToJson(_WorkersVersion instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'created_on': instance.created_on.toIso8601String(),
+      'number': instance.number,
+      'annotations': instance.annotations,
+      'compatibility_date': instance.compatibility_date?.toIso8601String(),
+      'compatibility_flags': instance.compatibility_flags,
+      'limits': instance.limits,
+      'main_module': instance.main_module,
+      'source': instance.source,
+    };
 
-_Annotations _$AnnotationsFromJson(Map<String, dynamic> json) => _Annotations(
-  workers_message: json['workers/message'] as String?,
-  workers_tag: json['workers/tag'] as String?,
-  workers_triggered_by: json['workers/triggered_by'] as String?,
-);
+_WorkersAnnotations _$WorkersAnnotationsFromJson(Map<String, dynamic> json) =>
+    _WorkersAnnotations(
+      workers_message: json['workers/message'] as String?,
+      workers_tag: json['workers/tag'] as String?,
+      workers_triggered_by: json['workers/triggered_by'] as String?,
+    );
 
-Map<String, dynamic> _$AnnotationsToJson(_Annotations instance) =>
+Map<String, dynamic> _$WorkersAnnotationsToJson(_WorkersAnnotations instance) =>
     <String, dynamic>{
       'workers/message': instance.workers_message,
       'workers/tag': instance.workers_tag,
       'workers/triggered_by': instance.workers_triggered_by,
     };
 
-_Limits _$LimitsFromJson(Map<String, dynamic> json) =>
-    _Limits(cpu_ms: (json['cpu_ms'] as num).toInt());
+_WorkersLimits _$WorkersLimitsFromJson(Map<String, dynamic> json) =>
+    _WorkersLimits(cpu_ms: (json['cpu_ms'] as num).toInt());
 
-Map<String, dynamic> _$LimitsToJson(_Limits instance) => <String, dynamic>{
-  'cpu_ms': instance.cpu_ms,
-};
+Map<String, dynamic> _$WorkersLimitsToJson(_WorkersLimits instance) =>
+    <String, dynamic>{'cpu_ms': instance.cpu_ms};
 
 Webhooks _$WebhooksFromJson(Map<String, dynamic> json) {
   $checkKeys(json, requiredKeys: const ['id', 'name', 'url', 'created_at']);

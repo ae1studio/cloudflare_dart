@@ -13,31 +13,31 @@ part of '_models.dart';
 T _$identity<T>(T value) => value;
 
 /// @nodoc
-mixin _$Version {
+mixin _$WorkersVersion {
 
 /// Version identifier.
  String get id;/// When the version was created.
  DateTime get created_on;/// The integer version number, starting from one.
  int get number;/// Metadata about the version.
- Annotations? get annotations;/// Date indicating targeted support in the Workers runtime. Backwards incompatible fixes to the runtime following this date will not affect this Worker.
+ WorkersAnnotations? get annotations;/// Date indicating targeted support in the Workers runtime. Backwards incompatible fixes to the runtime following this date will not affect this Worker.
  DateTime? get compatibility_date;/// Flags that enable or disable certain features in the Workers runtime. Used to enable upcoming features or opt in or out of specific changes not included in a `compatibility_date`.
  List<String> get compatibility_flags;/// Resource limits enforced at runtime.
- Limits? get limits;/// The name of the main module in the `modules` array (e.g. the name of the module that exports a `fetch` handler).
+ WorkersLimits? get limits;/// The name of the main module in the `modules` array (e.g. the name of the module that exports a `fetch` handler).
  String? get main_module;/// The client used to create the version.
  String get source;
-/// Create a copy of Version
+/// Create a copy of WorkersVersion
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
 @pragma('vm:prefer-inline')
-$VersionCopyWith<Version> get copyWith => _$VersionCopyWithImpl<Version>(this as Version, _$identity);
+$WorkersVersionCopyWith<WorkersVersion> get copyWith => _$WorkersVersionCopyWithImpl<WorkersVersion>(this as WorkersVersion, _$identity);
 
-  /// Serializes this Version to a JSON map.
+  /// Serializes this WorkersVersion to a JSON map.
   Map<String, dynamic> toJson();
 
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is Version&&(identical(other.id, id) || other.id == id)&&(identical(other.created_on, created_on) || other.created_on == created_on)&&(identical(other.number, number) || other.number == number)&&(identical(other.annotations, annotations) || other.annotations == annotations)&&(identical(other.compatibility_date, compatibility_date) || other.compatibility_date == compatibility_date)&&const DeepCollectionEquality().equals(other.compatibility_flags, compatibility_flags)&&(identical(other.limits, limits) || other.limits == limits)&&(identical(other.main_module, main_module) || other.main_module == main_module)&&(identical(other.source, source) || other.source == source));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is WorkersVersion&&(identical(other.id, id) || other.id == id)&&(identical(other.created_on, created_on) || other.created_on == created_on)&&(identical(other.number, number) || other.number == number)&&(identical(other.annotations, annotations) || other.annotations == annotations)&&(identical(other.compatibility_date, compatibility_date) || other.compatibility_date == compatibility_date)&&const DeepCollectionEquality().equals(other.compatibility_flags, compatibility_flags)&&(identical(other.limits, limits) || other.limits == limits)&&(identical(other.main_module, main_module) || other.main_module == main_module)&&(identical(other.source, source) || other.source == source));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -46,33 +46,33 @@ int get hashCode => Object.hash(runtimeType,id,created_on,number,annotations,com
 
 @override
 String toString() {
-  return 'Version(id: $id, created_on: $created_on, number: $number, annotations: $annotations, compatibility_date: $compatibility_date, compatibility_flags: $compatibility_flags, limits: $limits, main_module: $main_module, source: $source)';
+  return 'WorkersVersion(id: $id, created_on: $created_on, number: $number, annotations: $annotations, compatibility_date: $compatibility_date, compatibility_flags: $compatibility_flags, limits: $limits, main_module: $main_module, source: $source)';
 }
 
 
 }
 
 /// @nodoc
-abstract mixin class $VersionCopyWith<$Res>  {
-  factory $VersionCopyWith(Version value, $Res Function(Version) _then) = _$VersionCopyWithImpl;
+abstract mixin class $WorkersVersionCopyWith<$Res>  {
+  factory $WorkersVersionCopyWith(WorkersVersion value, $Res Function(WorkersVersion) _then) = _$WorkersVersionCopyWithImpl;
 @useResult
 $Res call({
- String id, DateTime created_on, int number, Annotations? annotations, DateTime? compatibility_date, List<String> compatibility_flags, Limits? limits, String? main_module, String source
+ String id, DateTime created_on, int number, WorkersAnnotations? annotations, DateTime? compatibility_date, List<String> compatibility_flags, WorkersLimits? limits, String? main_module, String source
 });
 
 
-$AnnotationsCopyWith<$Res>? get annotations;$LimitsCopyWith<$Res>? get limits;
+$WorkersAnnotationsCopyWith<$Res>? get annotations;$WorkersLimitsCopyWith<$Res>? get limits;
 
 }
 /// @nodoc
-class _$VersionCopyWithImpl<$Res>
-    implements $VersionCopyWith<$Res> {
-  _$VersionCopyWithImpl(this._self, this._then);
+class _$WorkersVersionCopyWithImpl<$Res>
+    implements $WorkersVersionCopyWith<$Res> {
+  _$WorkersVersionCopyWithImpl(this._self, this._then);
 
-  final Version _self;
-  final $Res Function(Version) _then;
+  final WorkersVersion _self;
+  final $Res Function(WorkersVersion) _then;
 
-/// Create a copy of Version
+/// Create a copy of WorkersVersion
 /// with the given fields replaced by the non-null parameter values.
 @pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? created_on = null,Object? number = null,Object? annotations = freezed,Object? compatibility_date = freezed,Object? compatibility_flags = null,Object? limits = freezed,Object? main_module = freezed,Object? source = null,}) {
   return _then(_self.copyWith(
@@ -80,44 +80,44 @@ id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String,created_on: null == created_on ? _self.created_on : created_on // ignore: cast_nullable_to_non_nullable
 as DateTime,number: null == number ? _self.number : number // ignore: cast_nullable_to_non_nullable
 as int,annotations: freezed == annotations ? _self.annotations : annotations // ignore: cast_nullable_to_non_nullable
-as Annotations?,compatibility_date: freezed == compatibility_date ? _self.compatibility_date : compatibility_date // ignore: cast_nullable_to_non_nullable
+as WorkersAnnotations?,compatibility_date: freezed == compatibility_date ? _self.compatibility_date : compatibility_date // ignore: cast_nullable_to_non_nullable
 as DateTime?,compatibility_flags: null == compatibility_flags ? _self.compatibility_flags : compatibility_flags // ignore: cast_nullable_to_non_nullable
 as List<String>,limits: freezed == limits ? _self.limits : limits // ignore: cast_nullable_to_non_nullable
-as Limits?,main_module: freezed == main_module ? _self.main_module : main_module // ignore: cast_nullable_to_non_nullable
+as WorkersLimits?,main_module: freezed == main_module ? _self.main_module : main_module // ignore: cast_nullable_to_non_nullable
 as String?,source: null == source ? _self.source : source // ignore: cast_nullable_to_non_nullable
 as String,
   ));
 }
-/// Create a copy of Version
+/// Create a copy of WorkersVersion
 /// with the given fields replaced by the non-null parameter values.
 @override
 @pragma('vm:prefer-inline')
-$AnnotationsCopyWith<$Res>? get annotations {
+$WorkersAnnotationsCopyWith<$Res>? get annotations {
     if (_self.annotations == null) {
     return null;
   }
 
-  return $AnnotationsCopyWith<$Res>(_self.annotations!, (value) {
+  return $WorkersAnnotationsCopyWith<$Res>(_self.annotations!, (value) {
     return _then(_self.copyWith(annotations: value));
   });
-}/// Create a copy of Version
+}/// Create a copy of WorkersVersion
 /// with the given fields replaced by the non-null parameter values.
 @override
 @pragma('vm:prefer-inline')
-$LimitsCopyWith<$Res>? get limits {
+$WorkersLimitsCopyWith<$Res>? get limits {
     if (_self.limits == null) {
     return null;
   }
 
-  return $LimitsCopyWith<$Res>(_self.limits!, (value) {
+  return $WorkersLimitsCopyWith<$Res>(_self.limits!, (value) {
     return _then(_self.copyWith(limits: value));
   });
 }
 }
 
 
-/// Adds pattern-matching-related methods to [Version].
-extension VersionPatterns on Version {
+/// Adds pattern-matching-related methods to [WorkersVersion].
+extension WorkersVersionPatterns on WorkersVersion {
 /// A variant of `map` that fallback to returning `orElse`.
 ///
 /// It is equivalent to doing:
@@ -130,10 +130,10 @@ extension VersionPatterns on Version {
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _Version value)?  $default,{required TResult orElse(),}){
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _WorkersVersion value)?  $default,{required TResult orElse(),}){
 final _that = this;
 switch (_that) {
-case _Version() when $default != null:
+case _WorkersVersion() when $default != null:
 return $default(_that);case _:
   return orElse();
 
@@ -152,10 +152,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _Version value)  $default,){
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _WorkersVersion value)  $default,){
 final _that = this;
 switch (_that) {
-case _Version():
+case _WorkersVersion():
 return $default(_that);case _:
   throw StateError('Unexpected subclass');
 
@@ -173,10 +173,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _Version value)?  $default,){
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _WorkersVersion value)?  $default,){
 final _that = this;
 switch (_that) {
-case _Version() when $default != null:
+case _WorkersVersion() when $default != null:
 return $default(_that);case _:
   return null;
 
@@ -194,9 +194,9 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  DateTime created_on,  int number,  Annotations? annotations,  DateTime? compatibility_date,  List<String> compatibility_flags,  Limits? limits,  String? main_module,  String source)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  DateTime created_on,  int number,  WorkersAnnotations? annotations,  DateTime? compatibility_date,  List<String> compatibility_flags,  WorkersLimits? limits,  String? main_module,  String source)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
-case _Version() when $default != null:
+case _WorkersVersion() when $default != null:
 return $default(_that.id,_that.created_on,_that.number,_that.annotations,_that.compatibility_date,_that.compatibility_flags,_that.limits,_that.main_module,_that.source);case _:
   return orElse();
 
@@ -215,9 +215,9 @@ return $default(_that.id,_that.created_on,_that.number,_that.annotations,_that.c
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  DateTime created_on,  int number,  Annotations? annotations,  DateTime? compatibility_date,  List<String> compatibility_flags,  Limits? limits,  String? main_module,  String source)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  DateTime created_on,  int number,  WorkersAnnotations? annotations,  DateTime? compatibility_date,  List<String> compatibility_flags,  WorkersLimits? limits,  String? main_module,  String source)  $default,) {final _that = this;
 switch (_that) {
-case _Version():
+case _WorkersVersion():
 return $default(_that.id,_that.created_on,_that.number,_that.annotations,_that.compatibility_date,_that.compatibility_flags,_that.limits,_that.main_module,_that.source);case _:
   throw StateError('Unexpected subclass');
 
@@ -235,9 +235,9 @@ return $default(_that.id,_that.created_on,_that.number,_that.annotations,_that.c
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  DateTime created_on,  int number,  Annotations? annotations,  DateTime? compatibility_date,  List<String> compatibility_flags,  Limits? limits,  String? main_module,  String source)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  DateTime created_on,  int number,  WorkersAnnotations? annotations,  DateTime? compatibility_date,  List<String> compatibility_flags,  WorkersLimits? limits,  String? main_module,  String source)?  $default,) {final _that = this;
 switch (_that) {
-case _Version() when $default != null:
+case _WorkersVersion() when $default != null:
 return $default(_that.id,_that.created_on,_that.number,_that.annotations,_that.compatibility_date,_that.compatibility_flags,_that.limits,_that.main_module,_that.source);case _:
   return null;
 
@@ -249,9 +249,9 @@ return $default(_that.id,_that.created_on,_that.number,_that.annotations,_that.c
 /// @nodoc
 @JsonSerializable()
 
-class _Version implements Version {
-  const _Version({required this.id, required this.created_on, required this.number, this.annotations, this.compatibility_date, final  List<String> compatibility_flags = const <String>[], this.limits, this.main_module, required this.source}): _compatibility_flags = compatibility_flags;
-  factory _Version.fromJson(Map<String, dynamic> json) => _$VersionFromJson(json);
+class _WorkersVersion implements WorkersVersion {
+  const _WorkersVersion({required this.id, required this.created_on, required this.number, this.annotations, this.compatibility_date, final  List<String> compatibility_flags = const <String>[], this.limits, this.main_module, required this.source}): _compatibility_flags = compatibility_flags;
+  factory _WorkersVersion.fromJson(Map<String, dynamic> json) => _$WorkersVersionFromJson(json);
 
 /// Version identifier.
 @override final  String id;
@@ -260,7 +260,7 @@ class _Version implements Version {
 /// The integer version number, starting from one.
 @override final  int number;
 /// Metadata about the version.
-@override final  Annotations? annotations;
+@override final  WorkersAnnotations? annotations;
 /// Date indicating targeted support in the Workers runtime. Backwards incompatible fixes to the runtime following this date will not affect this Worker.
 @override final  DateTime? compatibility_date;
 /// Flags that enable or disable certain features in the Workers runtime. Used to enable upcoming features or opt in or out of specific changes not included in a `compatibility_date`.
@@ -273,26 +273,26 @@ class _Version implements Version {
 }
 
 /// Resource limits enforced at runtime.
-@override final  Limits? limits;
+@override final  WorkersLimits? limits;
 /// The name of the main module in the `modules` array (e.g. the name of the module that exports a `fetch` handler).
 @override final  String? main_module;
 /// The client used to create the version.
 @override final  String source;
 
-/// Create a copy of Version
+/// Create a copy of WorkersVersion
 /// with the given fields replaced by the non-null parameter values.
 @override @JsonKey(includeFromJson: false, includeToJson: false)
 @pragma('vm:prefer-inline')
-_$VersionCopyWith<_Version> get copyWith => __$VersionCopyWithImpl<_Version>(this, _$identity);
+_$WorkersVersionCopyWith<_WorkersVersion> get copyWith => __$WorkersVersionCopyWithImpl<_WorkersVersion>(this, _$identity);
 
 @override
 Map<String, dynamic> toJson() {
-  return _$VersionToJson(this, );
+  return _$WorkersVersionToJson(this, );
 }
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Version&&(identical(other.id, id) || other.id == id)&&(identical(other.created_on, created_on) || other.created_on == created_on)&&(identical(other.number, number) || other.number == number)&&(identical(other.annotations, annotations) || other.annotations == annotations)&&(identical(other.compatibility_date, compatibility_date) || other.compatibility_date == compatibility_date)&&const DeepCollectionEquality().equals(other._compatibility_flags, _compatibility_flags)&&(identical(other.limits, limits) || other.limits == limits)&&(identical(other.main_module, main_module) || other.main_module == main_module)&&(identical(other.source, source) || other.source == source));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _WorkersVersion&&(identical(other.id, id) || other.id == id)&&(identical(other.created_on, created_on) || other.created_on == created_on)&&(identical(other.number, number) || other.number == number)&&(identical(other.annotations, annotations) || other.annotations == annotations)&&(identical(other.compatibility_date, compatibility_date) || other.compatibility_date == compatibility_date)&&const DeepCollectionEquality().equals(other._compatibility_flags, _compatibility_flags)&&(identical(other.limits, limits) || other.limits == limits)&&(identical(other.main_module, main_module) || other.main_module == main_module)&&(identical(other.source, source) || other.source == source));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -301,71 +301,71 @@ int get hashCode => Object.hash(runtimeType,id,created_on,number,annotations,com
 
 @override
 String toString() {
-  return 'Version(id: $id, created_on: $created_on, number: $number, annotations: $annotations, compatibility_date: $compatibility_date, compatibility_flags: $compatibility_flags, limits: $limits, main_module: $main_module, source: $source)';
+  return 'WorkersVersion(id: $id, created_on: $created_on, number: $number, annotations: $annotations, compatibility_date: $compatibility_date, compatibility_flags: $compatibility_flags, limits: $limits, main_module: $main_module, source: $source)';
 }
 
 
 }
 
 /// @nodoc
-abstract mixin class _$VersionCopyWith<$Res> implements $VersionCopyWith<$Res> {
-  factory _$VersionCopyWith(_Version value, $Res Function(_Version) _then) = __$VersionCopyWithImpl;
+abstract mixin class _$WorkersVersionCopyWith<$Res> implements $WorkersVersionCopyWith<$Res> {
+  factory _$WorkersVersionCopyWith(_WorkersVersion value, $Res Function(_WorkersVersion) _then) = __$WorkersVersionCopyWithImpl;
 @override @useResult
 $Res call({
- String id, DateTime created_on, int number, Annotations? annotations, DateTime? compatibility_date, List<String> compatibility_flags, Limits? limits, String? main_module, String source
+ String id, DateTime created_on, int number, WorkersAnnotations? annotations, DateTime? compatibility_date, List<String> compatibility_flags, WorkersLimits? limits, String? main_module, String source
 });
 
 
-@override $AnnotationsCopyWith<$Res>? get annotations;@override $LimitsCopyWith<$Res>? get limits;
+@override $WorkersAnnotationsCopyWith<$Res>? get annotations;@override $WorkersLimitsCopyWith<$Res>? get limits;
 
 }
 /// @nodoc
-class __$VersionCopyWithImpl<$Res>
-    implements _$VersionCopyWith<$Res> {
-  __$VersionCopyWithImpl(this._self, this._then);
+class __$WorkersVersionCopyWithImpl<$Res>
+    implements _$WorkersVersionCopyWith<$Res> {
+  __$WorkersVersionCopyWithImpl(this._self, this._then);
 
-  final _Version _self;
-  final $Res Function(_Version) _then;
+  final _WorkersVersion _self;
+  final $Res Function(_WorkersVersion) _then;
 
-/// Create a copy of Version
+/// Create a copy of WorkersVersion
 /// with the given fields replaced by the non-null parameter values.
 @override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? created_on = null,Object? number = null,Object? annotations = freezed,Object? compatibility_date = freezed,Object? compatibility_flags = null,Object? limits = freezed,Object? main_module = freezed,Object? source = null,}) {
-  return _then(_Version(
+  return _then(_WorkersVersion(
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String,created_on: null == created_on ? _self.created_on : created_on // ignore: cast_nullable_to_non_nullable
 as DateTime,number: null == number ? _self.number : number // ignore: cast_nullable_to_non_nullable
 as int,annotations: freezed == annotations ? _self.annotations : annotations // ignore: cast_nullable_to_non_nullable
-as Annotations?,compatibility_date: freezed == compatibility_date ? _self.compatibility_date : compatibility_date // ignore: cast_nullable_to_non_nullable
+as WorkersAnnotations?,compatibility_date: freezed == compatibility_date ? _self.compatibility_date : compatibility_date // ignore: cast_nullable_to_non_nullable
 as DateTime?,compatibility_flags: null == compatibility_flags ? _self._compatibility_flags : compatibility_flags // ignore: cast_nullable_to_non_nullable
 as List<String>,limits: freezed == limits ? _self.limits : limits // ignore: cast_nullable_to_non_nullable
-as Limits?,main_module: freezed == main_module ? _self.main_module : main_module // ignore: cast_nullable_to_non_nullable
+as WorkersLimits?,main_module: freezed == main_module ? _self.main_module : main_module // ignore: cast_nullable_to_non_nullable
 as String?,source: null == source ? _self.source : source // ignore: cast_nullable_to_non_nullable
 as String,
   ));
 }
 
-/// Create a copy of Version
+/// Create a copy of WorkersVersion
 /// with the given fields replaced by the non-null parameter values.
 @override
 @pragma('vm:prefer-inline')
-$AnnotationsCopyWith<$Res>? get annotations {
+$WorkersAnnotationsCopyWith<$Res>? get annotations {
     if (_self.annotations == null) {
     return null;
   }
 
-  return $AnnotationsCopyWith<$Res>(_self.annotations!, (value) {
+  return $WorkersAnnotationsCopyWith<$Res>(_self.annotations!, (value) {
     return _then(_self.copyWith(annotations: value));
   });
-}/// Create a copy of Version
+}/// Create a copy of WorkersVersion
 /// with the given fields replaced by the non-null parameter values.
 @override
 @pragma('vm:prefer-inline')
-$LimitsCopyWith<$Res>? get limits {
+$WorkersLimitsCopyWith<$Res>? get limits {
     if (_self.limits == null) {
     return null;
   }
 
-  return $LimitsCopyWith<$Res>(_self.limits!, (value) {
+  return $WorkersLimitsCopyWith<$Res>(_self.limits!, (value) {
     return _then(_self.copyWith(limits: value));
   });
 }
@@ -373,25 +373,25 @@ $LimitsCopyWith<$Res>? get limits {
 
 
 /// @nodoc
-mixin _$Annotations {
+mixin _$WorkersAnnotations {
 
 /// Human-readable message about the version.
 @JsonKey(name: "workers/message") String? get workers_message;/// User-provided identifier for the version.
 @JsonKey(name: "workers/tag") String? get workers_tag;/// Operation that triggered the creation of the version.
 @JsonKey(name: "workers/triggered_by") String? get workers_triggered_by;
-/// Create a copy of Annotations
+/// Create a copy of WorkersAnnotations
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
 @pragma('vm:prefer-inline')
-$AnnotationsCopyWith<Annotations> get copyWith => _$AnnotationsCopyWithImpl<Annotations>(this as Annotations, _$identity);
+$WorkersAnnotationsCopyWith<WorkersAnnotations> get copyWith => _$WorkersAnnotationsCopyWithImpl<WorkersAnnotations>(this as WorkersAnnotations, _$identity);
 
-  /// Serializes this Annotations to a JSON map.
+  /// Serializes this WorkersAnnotations to a JSON map.
   Map<String, dynamic> toJson();
 
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is Annotations&&(identical(other.workers_message, workers_message) || other.workers_message == workers_message)&&(identical(other.workers_tag, workers_tag) || other.workers_tag == workers_tag)&&(identical(other.workers_triggered_by, workers_triggered_by) || other.workers_triggered_by == workers_triggered_by));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is WorkersAnnotations&&(identical(other.workers_message, workers_message) || other.workers_message == workers_message)&&(identical(other.workers_tag, workers_tag) || other.workers_tag == workers_tag)&&(identical(other.workers_triggered_by, workers_triggered_by) || other.workers_triggered_by == workers_triggered_by));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -400,15 +400,15 @@ int get hashCode => Object.hash(runtimeType,workers_message,workers_tag,workers_
 
 @override
 String toString() {
-  return 'Annotations(workers_message: $workers_message, workers_tag: $workers_tag, workers_triggered_by: $workers_triggered_by)';
+  return 'WorkersAnnotations(workers_message: $workers_message, workers_tag: $workers_tag, workers_triggered_by: $workers_triggered_by)';
 }
 
 
 }
 
 /// @nodoc
-abstract mixin class $AnnotationsCopyWith<$Res>  {
-  factory $AnnotationsCopyWith(Annotations value, $Res Function(Annotations) _then) = _$AnnotationsCopyWithImpl;
+abstract mixin class $WorkersAnnotationsCopyWith<$Res>  {
+  factory $WorkersAnnotationsCopyWith(WorkersAnnotations value, $Res Function(WorkersAnnotations) _then) = _$WorkersAnnotationsCopyWithImpl;
 @useResult
 $Res call({
 @JsonKey(name: "workers/message") String? workers_message,@JsonKey(name: "workers/tag") String? workers_tag,@JsonKey(name: "workers/triggered_by") String? workers_triggered_by
@@ -419,14 +419,14 @@ $Res call({
 
 }
 /// @nodoc
-class _$AnnotationsCopyWithImpl<$Res>
-    implements $AnnotationsCopyWith<$Res> {
-  _$AnnotationsCopyWithImpl(this._self, this._then);
+class _$WorkersAnnotationsCopyWithImpl<$Res>
+    implements $WorkersAnnotationsCopyWith<$Res> {
+  _$WorkersAnnotationsCopyWithImpl(this._self, this._then);
 
-  final Annotations _self;
-  final $Res Function(Annotations) _then;
+  final WorkersAnnotations _self;
+  final $Res Function(WorkersAnnotations) _then;
 
-/// Create a copy of Annotations
+/// Create a copy of WorkersAnnotations
 /// with the given fields replaced by the non-null parameter values.
 @pragma('vm:prefer-inline') @override $Res call({Object? workers_message = freezed,Object? workers_tag = freezed,Object? workers_triggered_by = freezed,}) {
   return _then(_self.copyWith(
@@ -440,8 +440,8 @@ as String?,
 }
 
 
-/// Adds pattern-matching-related methods to [Annotations].
-extension AnnotationsPatterns on Annotations {
+/// Adds pattern-matching-related methods to [WorkersAnnotations].
+extension WorkersAnnotationsPatterns on WorkersAnnotations {
 /// A variant of `map` that fallback to returning `orElse`.
 ///
 /// It is equivalent to doing:
@@ -454,10 +454,10 @@ extension AnnotationsPatterns on Annotations {
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _Annotations value)?  $default,{required TResult orElse(),}){
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _WorkersAnnotations value)?  $default,{required TResult orElse(),}){
 final _that = this;
 switch (_that) {
-case _Annotations() when $default != null:
+case _WorkersAnnotations() when $default != null:
 return $default(_that);case _:
   return orElse();
 
@@ -476,10 +476,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _Annotations value)  $default,){
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _WorkersAnnotations value)  $default,){
 final _that = this;
 switch (_that) {
-case _Annotations():
+case _WorkersAnnotations():
 return $default(_that);case _:
   throw StateError('Unexpected subclass');
 
@@ -497,10 +497,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _Annotations value)?  $default,){
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _WorkersAnnotations value)?  $default,){
 final _that = this;
 switch (_that) {
-case _Annotations() when $default != null:
+case _WorkersAnnotations() when $default != null:
 return $default(_that);case _:
   return null;
 
@@ -520,7 +520,7 @@ return $default(_that);case _:
 
 @optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@JsonKey(name: "workers/message")  String? workers_message, @JsonKey(name: "workers/tag")  String? workers_tag, @JsonKey(name: "workers/triggered_by")  String? workers_triggered_by)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
-case _Annotations() when $default != null:
+case _WorkersAnnotations() when $default != null:
 return $default(_that.workers_message,_that.workers_tag,_that.workers_triggered_by);case _:
   return orElse();
 
@@ -541,7 +541,7 @@ return $default(_that.workers_message,_that.workers_tag,_that.workers_triggered_
 
 @optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@JsonKey(name: "workers/message")  String? workers_message, @JsonKey(name: "workers/tag")  String? workers_tag, @JsonKey(name: "workers/triggered_by")  String? workers_triggered_by)  $default,) {final _that = this;
 switch (_that) {
-case _Annotations():
+case _WorkersAnnotations():
 return $default(_that.workers_message,_that.workers_tag,_that.workers_triggered_by);case _:
   throw StateError('Unexpected subclass');
 
@@ -561,7 +561,7 @@ return $default(_that.workers_message,_that.workers_tag,_that.workers_triggered_
 
 @optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@JsonKey(name: "workers/message")  String? workers_message, @JsonKey(name: "workers/tag")  String? workers_tag, @JsonKey(name: "workers/triggered_by")  String? workers_triggered_by)?  $default,) {final _that = this;
 switch (_that) {
-case _Annotations() when $default != null:
+case _WorkersAnnotations() when $default != null:
 return $default(_that.workers_message,_that.workers_tag,_that.workers_triggered_by);case _:
   return null;
 
@@ -573,9 +573,9 @@ return $default(_that.workers_message,_that.workers_tag,_that.workers_triggered_
 /// @nodoc
 @JsonSerializable()
 
-class _Annotations implements Annotations {
-  const _Annotations({@JsonKey(name: "workers/message") this.workers_message, @JsonKey(name: "workers/tag") this.workers_tag, @JsonKey(name: "workers/triggered_by") this.workers_triggered_by});
-  factory _Annotations.fromJson(Map<String, dynamic> json) => _$AnnotationsFromJson(json);
+class _WorkersAnnotations implements WorkersAnnotations {
+  const _WorkersAnnotations({@JsonKey(name: "workers/message") this.workers_message, @JsonKey(name: "workers/tag") this.workers_tag, @JsonKey(name: "workers/triggered_by") this.workers_triggered_by});
+  factory _WorkersAnnotations.fromJson(Map<String, dynamic> json) => _$WorkersAnnotationsFromJson(json);
 
 /// Human-readable message about the version.
 @override@JsonKey(name: "workers/message") final  String? workers_message;
@@ -584,20 +584,20 @@ class _Annotations implements Annotations {
 /// Operation that triggered the creation of the version.
 @override@JsonKey(name: "workers/triggered_by") final  String? workers_triggered_by;
 
-/// Create a copy of Annotations
+/// Create a copy of WorkersAnnotations
 /// with the given fields replaced by the non-null parameter values.
 @override @JsonKey(includeFromJson: false, includeToJson: false)
 @pragma('vm:prefer-inline')
-_$AnnotationsCopyWith<_Annotations> get copyWith => __$AnnotationsCopyWithImpl<_Annotations>(this, _$identity);
+_$WorkersAnnotationsCopyWith<_WorkersAnnotations> get copyWith => __$WorkersAnnotationsCopyWithImpl<_WorkersAnnotations>(this, _$identity);
 
 @override
 Map<String, dynamic> toJson() {
-  return _$AnnotationsToJson(this, );
+  return _$WorkersAnnotationsToJson(this, );
 }
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Annotations&&(identical(other.workers_message, workers_message) || other.workers_message == workers_message)&&(identical(other.workers_tag, workers_tag) || other.workers_tag == workers_tag)&&(identical(other.workers_triggered_by, workers_triggered_by) || other.workers_triggered_by == workers_triggered_by));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _WorkersAnnotations&&(identical(other.workers_message, workers_message) || other.workers_message == workers_message)&&(identical(other.workers_tag, workers_tag) || other.workers_tag == workers_tag)&&(identical(other.workers_triggered_by, workers_triggered_by) || other.workers_triggered_by == workers_triggered_by));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -606,15 +606,15 @@ int get hashCode => Object.hash(runtimeType,workers_message,workers_tag,workers_
 
 @override
 String toString() {
-  return 'Annotations(workers_message: $workers_message, workers_tag: $workers_tag, workers_triggered_by: $workers_triggered_by)';
+  return 'WorkersAnnotations(workers_message: $workers_message, workers_tag: $workers_tag, workers_triggered_by: $workers_triggered_by)';
 }
 
 
 }
 
 /// @nodoc
-abstract mixin class _$AnnotationsCopyWith<$Res> implements $AnnotationsCopyWith<$Res> {
-  factory _$AnnotationsCopyWith(_Annotations value, $Res Function(_Annotations) _then) = __$AnnotationsCopyWithImpl;
+abstract mixin class _$WorkersAnnotationsCopyWith<$Res> implements $WorkersAnnotationsCopyWith<$Res> {
+  factory _$WorkersAnnotationsCopyWith(_WorkersAnnotations value, $Res Function(_WorkersAnnotations) _then) = __$WorkersAnnotationsCopyWithImpl;
 @override @useResult
 $Res call({
 @JsonKey(name: "workers/message") String? workers_message,@JsonKey(name: "workers/tag") String? workers_tag,@JsonKey(name: "workers/triggered_by") String? workers_triggered_by
@@ -625,17 +625,17 @@ $Res call({
 
 }
 /// @nodoc
-class __$AnnotationsCopyWithImpl<$Res>
-    implements _$AnnotationsCopyWith<$Res> {
-  __$AnnotationsCopyWithImpl(this._self, this._then);
+class __$WorkersAnnotationsCopyWithImpl<$Res>
+    implements _$WorkersAnnotationsCopyWith<$Res> {
+  __$WorkersAnnotationsCopyWithImpl(this._self, this._then);
 
-  final _Annotations _self;
-  final $Res Function(_Annotations) _then;
+  final _WorkersAnnotations _self;
+  final $Res Function(_WorkersAnnotations) _then;
 
-/// Create a copy of Annotations
+/// Create a copy of WorkersAnnotations
 /// with the given fields replaced by the non-null parameter values.
 @override @pragma('vm:prefer-inline') $Res call({Object? workers_message = freezed,Object? workers_tag = freezed,Object? workers_triggered_by = freezed,}) {
-  return _then(_Annotations(
+  return _then(_WorkersAnnotations(
 workers_message: freezed == workers_message ? _self.workers_message : workers_message // ignore: cast_nullable_to_non_nullable
 as String?,workers_tag: freezed == workers_tag ? _self.workers_tag : workers_tag // ignore: cast_nullable_to_non_nullable
 as String?,workers_triggered_by: freezed == workers_triggered_by ? _self.workers_triggered_by : workers_triggered_by // ignore: cast_nullable_to_non_nullable
@@ -648,23 +648,23 @@ as String?,
 
 
 /// @nodoc
-mixin _$Limits {
+mixin _$WorkersLimits {
 
 /// CPU time limit in milliseconds.
  int get cpu_ms;
-/// Create a copy of Limits
+/// Create a copy of WorkersLimits
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
 @pragma('vm:prefer-inline')
-$LimitsCopyWith<Limits> get copyWith => _$LimitsCopyWithImpl<Limits>(this as Limits, _$identity);
+$WorkersLimitsCopyWith<WorkersLimits> get copyWith => _$WorkersLimitsCopyWithImpl<WorkersLimits>(this as WorkersLimits, _$identity);
 
-  /// Serializes this Limits to a JSON map.
+  /// Serializes this WorkersLimits to a JSON map.
   Map<String, dynamic> toJson();
 
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is Limits&&(identical(other.cpu_ms, cpu_ms) || other.cpu_ms == cpu_ms));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is WorkersLimits&&(identical(other.cpu_ms, cpu_ms) || other.cpu_ms == cpu_ms));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -673,15 +673,15 @@ int get hashCode => Object.hash(runtimeType,cpu_ms);
 
 @override
 String toString() {
-  return 'Limits(cpu_ms: $cpu_ms)';
+  return 'WorkersLimits(cpu_ms: $cpu_ms)';
 }
 
 
 }
 
 /// @nodoc
-abstract mixin class $LimitsCopyWith<$Res>  {
-  factory $LimitsCopyWith(Limits value, $Res Function(Limits) _then) = _$LimitsCopyWithImpl;
+abstract mixin class $WorkersLimitsCopyWith<$Res>  {
+  factory $WorkersLimitsCopyWith(WorkersLimits value, $Res Function(WorkersLimits) _then) = _$WorkersLimitsCopyWithImpl;
 @useResult
 $Res call({
  int cpu_ms
@@ -692,14 +692,14 @@ $Res call({
 
 }
 /// @nodoc
-class _$LimitsCopyWithImpl<$Res>
-    implements $LimitsCopyWith<$Res> {
-  _$LimitsCopyWithImpl(this._self, this._then);
+class _$WorkersLimitsCopyWithImpl<$Res>
+    implements $WorkersLimitsCopyWith<$Res> {
+  _$WorkersLimitsCopyWithImpl(this._self, this._then);
 
-  final Limits _self;
-  final $Res Function(Limits) _then;
+  final WorkersLimits _self;
+  final $Res Function(WorkersLimits) _then;
 
-/// Create a copy of Limits
+/// Create a copy of WorkersLimits
 /// with the given fields replaced by the non-null parameter values.
 @pragma('vm:prefer-inline') @override $Res call({Object? cpu_ms = null,}) {
   return _then(_self.copyWith(
@@ -711,8 +711,8 @@ as int,
 }
 
 
-/// Adds pattern-matching-related methods to [Limits].
-extension LimitsPatterns on Limits {
+/// Adds pattern-matching-related methods to [WorkersLimits].
+extension WorkersLimitsPatterns on WorkersLimits {
 /// A variant of `map` that fallback to returning `orElse`.
 ///
 /// It is equivalent to doing:
@@ -725,10 +725,10 @@ extension LimitsPatterns on Limits {
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _Limits value)?  $default,{required TResult orElse(),}){
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _WorkersLimits value)?  $default,{required TResult orElse(),}){
 final _that = this;
 switch (_that) {
-case _Limits() when $default != null:
+case _WorkersLimits() when $default != null:
 return $default(_that);case _:
   return orElse();
 
@@ -747,10 +747,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _Limits value)  $default,){
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _WorkersLimits value)  $default,){
 final _that = this;
 switch (_that) {
-case _Limits():
+case _WorkersLimits():
 return $default(_that);case _:
   throw StateError('Unexpected subclass');
 
@@ -768,10 +768,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _Limits value)?  $default,){
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _WorkersLimits value)?  $default,){
 final _that = this;
 switch (_that) {
-case _Limits() when $default != null:
+case _WorkersLimits() when $default != null:
 return $default(_that);case _:
   return null;
 
@@ -791,7 +791,7 @@ return $default(_that);case _:
 
 @optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( int cpu_ms)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
-case _Limits() when $default != null:
+case _WorkersLimits() when $default != null:
 return $default(_that.cpu_ms);case _:
   return orElse();
 
@@ -812,7 +812,7 @@ return $default(_that.cpu_ms);case _:
 
 @optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( int cpu_ms)  $default,) {final _that = this;
 switch (_that) {
-case _Limits():
+case _WorkersLimits():
 return $default(_that.cpu_ms);case _:
   throw StateError('Unexpected subclass');
 
@@ -832,7 +832,7 @@ return $default(_that.cpu_ms);case _:
 
 @optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( int cpu_ms)?  $default,) {final _that = this;
 switch (_that) {
-case _Limits() when $default != null:
+case _WorkersLimits() when $default != null:
 return $default(_that.cpu_ms);case _:
   return null;
 
@@ -844,27 +844,27 @@ return $default(_that.cpu_ms);case _:
 /// @nodoc
 @JsonSerializable()
 
-class _Limits implements Limits {
-  const _Limits({required this.cpu_ms});
-  factory _Limits.fromJson(Map<String, dynamic> json) => _$LimitsFromJson(json);
+class _WorkersLimits implements WorkersLimits {
+  const _WorkersLimits({required this.cpu_ms});
+  factory _WorkersLimits.fromJson(Map<String, dynamic> json) => _$WorkersLimitsFromJson(json);
 
 /// CPU time limit in milliseconds.
 @override final  int cpu_ms;
 
-/// Create a copy of Limits
+/// Create a copy of WorkersLimits
 /// with the given fields replaced by the non-null parameter values.
 @override @JsonKey(includeFromJson: false, includeToJson: false)
 @pragma('vm:prefer-inline')
-_$LimitsCopyWith<_Limits> get copyWith => __$LimitsCopyWithImpl<_Limits>(this, _$identity);
+_$WorkersLimitsCopyWith<_WorkersLimits> get copyWith => __$WorkersLimitsCopyWithImpl<_WorkersLimits>(this, _$identity);
 
 @override
 Map<String, dynamic> toJson() {
-  return _$LimitsToJson(this, );
+  return _$WorkersLimitsToJson(this, );
 }
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Limits&&(identical(other.cpu_ms, cpu_ms) || other.cpu_ms == cpu_ms));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _WorkersLimits&&(identical(other.cpu_ms, cpu_ms) || other.cpu_ms == cpu_ms));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -873,15 +873,15 @@ int get hashCode => Object.hash(runtimeType,cpu_ms);
 
 @override
 String toString() {
-  return 'Limits(cpu_ms: $cpu_ms)';
+  return 'WorkersLimits(cpu_ms: $cpu_ms)';
 }
 
 
 }
 
 /// @nodoc
-abstract mixin class _$LimitsCopyWith<$Res> implements $LimitsCopyWith<$Res> {
-  factory _$LimitsCopyWith(_Limits value, $Res Function(_Limits) _then) = __$LimitsCopyWithImpl;
+abstract mixin class _$WorkersLimitsCopyWith<$Res> implements $WorkersLimitsCopyWith<$Res> {
+  factory _$WorkersLimitsCopyWith(_WorkersLimits value, $Res Function(_WorkersLimits) _then) = __$WorkersLimitsCopyWithImpl;
 @override @useResult
 $Res call({
  int cpu_ms
@@ -892,17 +892,17 @@ $Res call({
 
 }
 /// @nodoc
-class __$LimitsCopyWithImpl<$Res>
-    implements _$LimitsCopyWith<$Res> {
-  __$LimitsCopyWithImpl(this._self, this._then);
+class __$WorkersLimitsCopyWithImpl<$Res>
+    implements _$WorkersLimitsCopyWith<$Res> {
+  __$WorkersLimitsCopyWithImpl(this._self, this._then);
 
-  final _Limits _self;
-  final $Res Function(_Limits) _then;
+  final _WorkersLimits _self;
+  final $Res Function(_WorkersLimits) _then;
 
-/// Create a copy of Limits
+/// Create a copy of WorkersLimits
 /// with the given fields replaced by the non-null parameter values.
 @override @pragma('vm:prefer-inline') $Res call({Object? cpu_ms = null,}) {
-  return _then(_Limits(
+  return _then(_WorkersLimits(
 cpu_ms: null == cpu_ms ? _self.cpu_ms : cpu_ms // ignore: cast_nullable_to_non_nullable
 as int,
   ));
