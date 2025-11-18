@@ -294,4 +294,118 @@ query GetZoneAnalytics($zoneTag: string, $since: Date, $until: Date) {
 
     return result.data;
   }
+
+  /// Get Worker Analytics
+  Future<Map<String, dynamic>?> getWorkerAnalytics({
+    required String accountTag,
+    required DateTime lookbackTime,
+    required DateTime datetimeStart,
+    required DateTime datetimeEnd,
+    required String scriptName,
+    List<String>? scriptVersions,
+  }) async {
+    if (graphQLClient == null) {
+      throw Exception('GraphQL not setup');
+    }
+
+    String query = r'''
+query getWorkerAnalytics($accountTag: string!, $lookbackTime: Time, $datetimeStart: Time, $datetimeEnd: Time, $scriptName: string, $scriptVersions: [string]) {
+  viewer {
+    accounts(filter: {accountTag: $accountTag}) {
+      workersSubrequestsAdaptiveGroups(limit: 10000, filter: {scriptName: $scriptName, datetime_geq: $datetimeStart, datetime_leq: $datetimeEnd, scriptVersion_in: $scriptVersions}) {
+        sum {
+          subrequests
+          __typename
+        }
+        dimensions {
+          cacheStatus
+          datetimeFifteenMinutes
+          __typename
+        }
+        __typename
+      }
+      workersInvocationsAdaptive(limit: 10000, filter: {scriptName: $scriptName, datetime_geq: $datetimeStart, datetime_leq: $datetimeEnd, scriptVersion_in: $scriptVersions}) {
+        sum {
+          subrequests
+          requests
+          errors
+          duration
+          __typename
+        }
+        quantiles {
+          cpuTimeP50
+          wallTimeP50
+          durationP50
+          requestDurationP50
+          __typename
+        }
+        dimensions {
+          datetimeFifteenMinutes
+          __typename
+        }
+        __typename
+      }
+      previous: workersInvocationsAdaptive(limit: 10000, filter: {scriptName: $scriptName, datetime_geq: $lookbackTime, datetime_leq: $datetimeStart, scriptVersion_in: $scriptVersions}) {
+        sum {
+          subrequests
+          requests
+          errors
+          duration
+          __typename
+        }
+        quantiles {
+          cpuTimeP50
+          wallTimeP50
+          requestDurationP50
+          __typename
+        }
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}
+''';
+
+    String lookbackTimeString = _dateTimeFormat.format(lookbackTime).toString();
+    String datetimeStartString = _dateTimeFormat
+        .format(datetimeStart)
+        .toString();
+    String datetimeEndString = _dateTimeFormat.format(datetimeEnd).toString();
+
+    Map<String, dynamic> variables = <String, dynamic>{
+      'accountTag': accountTag,
+      'lookbackTime': lookbackTimeString,
+      'datetimeStart': datetimeStartString,
+      'datetimeEnd': datetimeEndString,
+      'scriptName': scriptName,
+    };
+
+    if (scriptVersions != null && scriptVersions.isNotEmpty) {
+      variables['scriptVersions'] = scriptVersions;
+    }
+
+    final graph.QueryOptions options = graph.QueryOptions(
+      document: graph.gql(query),
+      variables: variables,
+    );
+
+    graph.QueryResult result = await graphQLClient!.query(options);
+
+    if (talker != null) {
+      talker!.info(
+        'getWorkerAnalytics GraphQL Query: Has data ${result.data?.isNotEmpty} - \n ${variables}',
+      );
+    }
+
+    if (result.hasException) {
+      if (talker != null) {
+        talker!.error(result.exception.toString());
+      }
+      throw Exception(result.exception.toString());
+    }
+
+    return result.data;
+  }
 }
