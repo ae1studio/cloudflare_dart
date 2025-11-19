@@ -6,6 +6,36 @@ part of '_models.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
+_WorkerReferences _$WorkerReferencesFromJson(Map<String, dynamic> json) =>
+    _WorkerReferences(
+      domains: (json['domains'] as List<dynamic>)
+          .map((e) => WorkerDomainReference.fromJson(e as Map<String, dynamic>))
+          .toList(),
+    );
+
+Map<String, dynamic> _$WorkerReferencesToJson(_WorkerReferences instance) =>
+    <String, dynamic>{'domains': instance.domains};
+
+_WorkerDomainReference _$WorkerDomainReferenceFromJson(
+  Map<String, dynamic> json,
+) => _WorkerDomainReference(
+  id: json['id'] as String,
+  certificate_id: json['certificate_id'] as String,
+  hostname: json['hostname'] as String,
+  zone_id: json['zone_id'] as String,
+  zone_name: json['zone_name'] as String,
+);
+
+Map<String, dynamic> _$WorkerDomainReferenceToJson(
+  _WorkerDomainReference instance,
+) => <String, dynamic>{
+  'id': instance.id,
+  'certificate_id': instance.certificate_id,
+  'hostname': instance.hostname,
+  'zone_id': instance.zone_id,
+  'zone_name': instance.zone_name,
+};
+
 _WorkersVersion _$WorkersVersionFromJson(Map<String, dynamic> json) =>
     _WorkersVersion(
       id: json['id'] as String,
@@ -713,6 +743,7 @@ Worker _$WorkerFromJson(Map<String, dynamic> json) {
       'id',
       'name',
       'logpush',
+      'references',
       'subdomain',
       'tags',
       'created_on',
@@ -723,6 +754,9 @@ Worker _$WorkerFromJson(Map<String, dynamic> json) {
     ..id = json['id'] as String
     ..name = json['name'] as String
     ..logpush = json['logpush'] as bool
+    ..references = WorkerReferences.fromJson(
+      json['references'] as Map<String, dynamic>,
+    )
     ..subdomain = WorkerSubdomain.fromJson(
       json['subdomain'] as Map<String, dynamic>,
     )
@@ -739,6 +773,7 @@ Map<String, dynamic> _$WorkerToJson(Worker instance) => <String, dynamic>{
   'id': instance.id,
   'name': instance.name,
   'logpush': instance.logpush,
+  'references': instance.references,
   'subdomain': instance.subdomain,
   'tags': instance.tags,
   'created_on': const LocalDateTimeConverter().toJson(instance.created_on),

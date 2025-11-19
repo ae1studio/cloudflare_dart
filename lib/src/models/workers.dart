@@ -84,6 +84,10 @@ class Worker extends Object {
   @JsonKey(name: 'logpush', required: true)
   late bool logpush;
 
+  /// Other resources that reference the Worker and depend on it existing.
+  @JsonKey(name: 'references', required: true)
+  late WorkerReferences references;
+
   /// Subdomain settings for the Worker.
   @JsonKey(name: 'subdomain', required: true)
   late WorkerSubdomain subdomain;
@@ -125,6 +129,40 @@ class WorkerSubdomain extends Object {
   /// Whether preview URLs are enabled for the Worker. https://developers.cloudflare.com/workers/configuration/previews/
   @JsonKey(name: 'previews_enabled', defaultValue: false)
   late bool previews_enabled;
+}
+
+@Freezed()
+abstract class WorkerReferences with _$WorkerReferences {
+  const factory WorkerReferences({
+    /// Custom domains connected to the Worker.
+    required List<WorkerDomainReference> domains,
+  }) = _WorkerReferences;
+
+  factory WorkerReferences.fromJson(Map<String, dynamic> json) =>
+      _$WorkerReferencesFromJson(json);
+}
+
+@Freezed()
+abstract class WorkerDomainReference with _$WorkerDomainReference {
+  const factory WorkerDomainReference({
+    /// ID of the custom domain.
+    required String id,
+
+    /// ID of the TLS certificate issued for the custom domain.
+    required String certificate_id,
+
+    /// Full hostname of the custom domain, including the zone name.
+    required String hostname,
+
+    /// ID of the zone.
+    required String zone_id,
+
+    /// Name of the zone.
+    required String zone_name,
+  }) = _WorkerDomainReference;
+
+  factory WorkerDomainReference.fromJson(Map<String, dynamic> json) =>
+      _$WorkerDomainReferenceFromJson(json);
 }
 
 @JsonSerializable(createToJson: true)

@@ -13,6 +13,563 @@ part of '_models.dart';
 T _$identity<T>(T value) => value;
 
 /// @nodoc
+mixin _$WorkerReferences {
+
+/// Custom domains connected to the Worker.
+ List<WorkerDomainReference> get domains;
+/// Create a copy of WorkerReferences
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$WorkerReferencesCopyWith<WorkerReferences> get copyWith => _$WorkerReferencesCopyWithImpl<WorkerReferences>(this as WorkerReferences, _$identity);
+
+  /// Serializes this WorkerReferences to a JSON map.
+  Map<String, dynamic> toJson();
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is WorkerReferences&&const DeepCollectionEquality().equals(other.domains, domains));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(domains));
+
+@override
+String toString() {
+  return 'WorkerReferences(domains: $domains)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class $WorkerReferencesCopyWith<$Res>  {
+  factory $WorkerReferencesCopyWith(WorkerReferences value, $Res Function(WorkerReferences) _then) = _$WorkerReferencesCopyWithImpl;
+@useResult
+$Res call({
+ List<WorkerDomainReference> domains
+});
+
+
+
+
+}
+/// @nodoc
+class _$WorkerReferencesCopyWithImpl<$Res>
+    implements $WorkerReferencesCopyWith<$Res> {
+  _$WorkerReferencesCopyWithImpl(this._self, this._then);
+
+  final WorkerReferences _self;
+  final $Res Function(WorkerReferences) _then;
+
+/// Create a copy of WorkerReferences
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? domains = null,}) {
+  return _then(_self.copyWith(
+domains: null == domains ? _self.domains : domains // ignore: cast_nullable_to_non_nullable
+as List<WorkerDomainReference>,
+  ));
+}
+
+}
+
+
+/// Adds pattern-matching-related methods to [WorkerReferences].
+extension WorkerReferencesPatterns on WorkerReferences {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _WorkerReferences value)?  $default,{required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _WorkerReferences() when $default != null:
+return $default(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _WorkerReferences value)  $default,){
+final _that = this;
+switch (_that) {
+case _WorkerReferences():
+return $default(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _WorkerReferences value)?  $default,){
+final _that = this;
+switch (_that) {
+case _WorkerReferences() when $default != null:
+return $default(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( List<WorkerDomainReference> domains)?  $default,{required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _WorkerReferences() when $default != null:
+return $default(_that.domains);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( List<WorkerDomainReference> domains)  $default,) {final _that = this;
+switch (_that) {
+case _WorkerReferences():
+return $default(_that.domains);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( List<WorkerDomainReference> domains)?  $default,) {final _that = this;
+switch (_that) {
+case _WorkerReferences() when $default != null:
+return $default(_that.domains);case _:
+  return null;
+
+}
+}
+
+}
+
+/// @nodoc
+@JsonSerializable()
+
+class _WorkerReferences implements WorkerReferences {
+  const _WorkerReferences({required final  List<WorkerDomainReference> domains}): _domains = domains;
+  factory _WorkerReferences.fromJson(Map<String, dynamic> json) => _$WorkerReferencesFromJson(json);
+
+/// Custom domains connected to the Worker.
+ final  List<WorkerDomainReference> _domains;
+/// Custom domains connected to the Worker.
+@override List<WorkerDomainReference> get domains {
+  if (_domains is EqualUnmodifiableListView) return _domains;
+  // ignore: implicit_dynamic_type
+  return EqualUnmodifiableListView(_domains);
+}
+
+
+/// Create a copy of WorkerReferences
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$WorkerReferencesCopyWith<_WorkerReferences> get copyWith => __$WorkerReferencesCopyWithImpl<_WorkerReferences>(this, _$identity);
+
+@override
+Map<String, dynamic> toJson() {
+  return _$WorkerReferencesToJson(this, );
+}
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _WorkerReferences&&const DeepCollectionEquality().equals(other._domains, _domains));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(_domains));
+
+@override
+String toString() {
+  return 'WorkerReferences(domains: $domains)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class _$WorkerReferencesCopyWith<$Res> implements $WorkerReferencesCopyWith<$Res> {
+  factory _$WorkerReferencesCopyWith(_WorkerReferences value, $Res Function(_WorkerReferences) _then) = __$WorkerReferencesCopyWithImpl;
+@override @useResult
+$Res call({
+ List<WorkerDomainReference> domains
+});
+
+
+
+
+}
+/// @nodoc
+class __$WorkerReferencesCopyWithImpl<$Res>
+    implements _$WorkerReferencesCopyWith<$Res> {
+  __$WorkerReferencesCopyWithImpl(this._self, this._then);
+
+  final _WorkerReferences _self;
+  final $Res Function(_WorkerReferences) _then;
+
+/// Create a copy of WorkerReferences
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? domains = null,}) {
+  return _then(_WorkerReferences(
+domains: null == domains ? _self._domains : domains // ignore: cast_nullable_to_non_nullable
+as List<WorkerDomainReference>,
+  ));
+}
+
+
+}
+
+
+/// @nodoc
+mixin _$WorkerDomainReference {
+
+/// ID of the custom domain.
+ String get id;/// ID of the TLS certificate issued for the custom domain.
+ String get certificate_id;/// Full hostname of the custom domain, including the zone name.
+ String get hostname;/// ID of the zone.
+ String get zone_id;/// Name of the zone.
+ String get zone_name;
+/// Create a copy of WorkerDomainReference
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$WorkerDomainReferenceCopyWith<WorkerDomainReference> get copyWith => _$WorkerDomainReferenceCopyWithImpl<WorkerDomainReference>(this as WorkerDomainReference, _$identity);
+
+  /// Serializes this WorkerDomainReference to a JSON map.
+  Map<String, dynamic> toJson();
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is WorkerDomainReference&&(identical(other.id, id) || other.id == id)&&(identical(other.certificate_id, certificate_id) || other.certificate_id == certificate_id)&&(identical(other.hostname, hostname) || other.hostname == hostname)&&(identical(other.zone_id, zone_id) || other.zone_id == zone_id)&&(identical(other.zone_name, zone_name) || other.zone_name == zone_name));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,id,certificate_id,hostname,zone_id,zone_name);
+
+@override
+String toString() {
+  return 'WorkerDomainReference(id: $id, certificate_id: $certificate_id, hostname: $hostname, zone_id: $zone_id, zone_name: $zone_name)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class $WorkerDomainReferenceCopyWith<$Res>  {
+  factory $WorkerDomainReferenceCopyWith(WorkerDomainReference value, $Res Function(WorkerDomainReference) _then) = _$WorkerDomainReferenceCopyWithImpl;
+@useResult
+$Res call({
+ String id, String certificate_id, String hostname, String zone_id, String zone_name
+});
+
+
+
+
+}
+/// @nodoc
+class _$WorkerDomainReferenceCopyWithImpl<$Res>
+    implements $WorkerDomainReferenceCopyWith<$Res> {
+  _$WorkerDomainReferenceCopyWithImpl(this._self, this._then);
+
+  final WorkerDomainReference _self;
+  final $Res Function(WorkerDomainReference) _then;
+
+/// Create a copy of WorkerDomainReference
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? certificate_id = null,Object? hostname = null,Object? zone_id = null,Object? zone_name = null,}) {
+  return _then(_self.copyWith(
+id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
+as String,certificate_id: null == certificate_id ? _self.certificate_id : certificate_id // ignore: cast_nullable_to_non_nullable
+as String,hostname: null == hostname ? _self.hostname : hostname // ignore: cast_nullable_to_non_nullable
+as String,zone_id: null == zone_id ? _self.zone_id : zone_id // ignore: cast_nullable_to_non_nullable
+as String,zone_name: null == zone_name ? _self.zone_name : zone_name // ignore: cast_nullable_to_non_nullable
+as String,
+  ));
+}
+
+}
+
+
+/// Adds pattern-matching-related methods to [WorkerDomainReference].
+extension WorkerDomainReferencePatterns on WorkerDomainReference {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _WorkerDomainReference value)?  $default,{required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _WorkerDomainReference() when $default != null:
+return $default(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _WorkerDomainReference value)  $default,){
+final _that = this;
+switch (_that) {
+case _WorkerDomainReference():
+return $default(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _WorkerDomainReference value)?  $default,){
+final _that = this;
+switch (_that) {
+case _WorkerDomainReference() when $default != null:
+return $default(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String certificate_id,  String hostname,  String zone_id,  String zone_name)?  $default,{required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _WorkerDomainReference() when $default != null:
+return $default(_that.id,_that.certificate_id,_that.hostname,_that.zone_id,_that.zone_name);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String certificate_id,  String hostname,  String zone_id,  String zone_name)  $default,) {final _that = this;
+switch (_that) {
+case _WorkerDomainReference():
+return $default(_that.id,_that.certificate_id,_that.hostname,_that.zone_id,_that.zone_name);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String certificate_id,  String hostname,  String zone_id,  String zone_name)?  $default,) {final _that = this;
+switch (_that) {
+case _WorkerDomainReference() when $default != null:
+return $default(_that.id,_that.certificate_id,_that.hostname,_that.zone_id,_that.zone_name);case _:
+  return null;
+
+}
+}
+
+}
+
+/// @nodoc
+@JsonSerializable()
+
+class _WorkerDomainReference implements WorkerDomainReference {
+  const _WorkerDomainReference({required this.id, required this.certificate_id, required this.hostname, required this.zone_id, required this.zone_name});
+  factory _WorkerDomainReference.fromJson(Map<String, dynamic> json) => _$WorkerDomainReferenceFromJson(json);
+
+/// ID of the custom domain.
+@override final  String id;
+/// ID of the TLS certificate issued for the custom domain.
+@override final  String certificate_id;
+/// Full hostname of the custom domain, including the zone name.
+@override final  String hostname;
+/// ID of the zone.
+@override final  String zone_id;
+/// Name of the zone.
+@override final  String zone_name;
+
+/// Create a copy of WorkerDomainReference
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$WorkerDomainReferenceCopyWith<_WorkerDomainReference> get copyWith => __$WorkerDomainReferenceCopyWithImpl<_WorkerDomainReference>(this, _$identity);
+
+@override
+Map<String, dynamic> toJson() {
+  return _$WorkerDomainReferenceToJson(this, );
+}
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _WorkerDomainReference&&(identical(other.id, id) || other.id == id)&&(identical(other.certificate_id, certificate_id) || other.certificate_id == certificate_id)&&(identical(other.hostname, hostname) || other.hostname == hostname)&&(identical(other.zone_id, zone_id) || other.zone_id == zone_id)&&(identical(other.zone_name, zone_name) || other.zone_name == zone_name));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,id,certificate_id,hostname,zone_id,zone_name);
+
+@override
+String toString() {
+  return 'WorkerDomainReference(id: $id, certificate_id: $certificate_id, hostname: $hostname, zone_id: $zone_id, zone_name: $zone_name)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class _$WorkerDomainReferenceCopyWith<$Res> implements $WorkerDomainReferenceCopyWith<$Res> {
+  factory _$WorkerDomainReferenceCopyWith(_WorkerDomainReference value, $Res Function(_WorkerDomainReference) _then) = __$WorkerDomainReferenceCopyWithImpl;
+@override @useResult
+$Res call({
+ String id, String certificate_id, String hostname, String zone_id, String zone_name
+});
+
+
+
+
+}
+/// @nodoc
+class __$WorkerDomainReferenceCopyWithImpl<$Res>
+    implements _$WorkerDomainReferenceCopyWith<$Res> {
+  __$WorkerDomainReferenceCopyWithImpl(this._self, this._then);
+
+  final _WorkerDomainReference _self;
+  final $Res Function(_WorkerDomainReference) _then;
+
+/// Create a copy of WorkerDomainReference
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? certificate_id = null,Object? hostname = null,Object? zone_id = null,Object? zone_name = null,}) {
+  return _then(_WorkerDomainReference(
+id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
+as String,certificate_id: null == certificate_id ? _self.certificate_id : certificate_id // ignore: cast_nullable_to_non_nullable
+as String,hostname: null == hostname ? _self.hostname : hostname // ignore: cast_nullable_to_non_nullable
+as String,zone_id: null == zone_id ? _self.zone_id : zone_id // ignore: cast_nullable_to_non_nullable
+as String,zone_name: null == zone_name ? _self.zone_name : zone_name // ignore: cast_nullable_to_non_nullable
+as String,
+  ));
+}
+
+
+}
+
+
+/// @nodoc
 mixin _$WorkersVersion {
 
 /// Version identifier.
