@@ -65,6 +65,7 @@ class Worker extends Object {
     worker.id = '';
     worker.name = 'example-api';
     worker.logpush = false;
+    worker.references = WorkerReferences.empty();
     worker.subdomain = WorkerSubdomain.empty();
     worker.tags = [];
     worker.created_on = DateTime.now();
@@ -140,6 +141,10 @@ abstract class WorkerReferences with _$WorkerReferences {
 
   factory WorkerReferences.fromJson(Map<String, dynamic> json) =>
       _$WorkerReferencesFromJson(json);
+
+  factory WorkerReferences.empty() {
+    return WorkerReferences(domains: [WorkerDomainReference.empty()]);
+  }
 }
 
 @Freezed()
@@ -149,7 +154,7 @@ abstract class WorkerDomainReference with _$WorkerDomainReference {
     required String id,
 
     /// ID of the TLS certificate issued for the custom domain.
-    required String certificate_id,
+    String? certificate_id,
 
     /// Full hostname of the custom domain, including the zone name.
     required String hostname,
@@ -163,6 +168,16 @@ abstract class WorkerDomainReference with _$WorkerDomainReference {
 
   factory WorkerDomainReference.fromJson(Map<String, dynamic> json) =>
       _$WorkerDomainReferenceFromJson(json);
+
+  factory WorkerDomainReference.empty() {
+    return const WorkerDomainReference(
+      id: '123456789',
+      certificate_id: null,
+      hostname: 'api.example.com',
+      zone_id: '123456789',
+      zone_name: 'example.com',
+    );
+  }
 }
 
 @JsonSerializable(createToJson: true)

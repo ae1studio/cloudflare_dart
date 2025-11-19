@@ -289,7 +289,7 @@ mixin _$WorkerDomainReference {
 
 /// ID of the custom domain.
  String get id;/// ID of the TLS certificate issued for the custom domain.
- String get certificate_id;/// Full hostname of the custom domain, including the zone name.
+ String? get certificate_id;/// Full hostname of the custom domain, including the zone name.
  String get hostname;/// ID of the zone.
  String get zone_id;/// Name of the zone.
  String get zone_name;
@@ -325,7 +325,7 @@ abstract mixin class $WorkerDomainReferenceCopyWith<$Res>  {
   factory $WorkerDomainReferenceCopyWith(WorkerDomainReference value, $Res Function(WorkerDomainReference) _then) = _$WorkerDomainReferenceCopyWithImpl;
 @useResult
 $Res call({
- String id, String certificate_id, String hostname, String zone_id, String zone_name
+ String id, String? certificate_id, String hostname, String zone_id, String zone_name
 });
 
 
@@ -342,11 +342,11 @@ class _$WorkerDomainReferenceCopyWithImpl<$Res>
 
 /// Create a copy of WorkerDomainReference
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? certificate_id = null,Object? hostname = null,Object? zone_id = null,Object? zone_name = null,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? certificate_id = freezed,Object? hostname = null,Object? zone_id = null,Object? zone_name = null,}) {
   return _then(_self.copyWith(
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
-as String,certificate_id: null == certificate_id ? _self.certificate_id : certificate_id // ignore: cast_nullable_to_non_nullable
-as String,hostname: null == hostname ? _self.hostname : hostname // ignore: cast_nullable_to_non_nullable
+as String,certificate_id: freezed == certificate_id ? _self.certificate_id : certificate_id // ignore: cast_nullable_to_non_nullable
+as String?,hostname: null == hostname ? _self.hostname : hostname // ignore: cast_nullable_to_non_nullable
 as String,zone_id: null == zone_id ? _self.zone_id : zone_id // ignore: cast_nullable_to_non_nullable
 as String,zone_name: null == zone_name ? _self.zone_name : zone_name // ignore: cast_nullable_to_non_nullable
 as String,
@@ -434,7 +434,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String certificate_id,  String hostname,  String zone_id,  String zone_name)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String? certificate_id,  String hostname,  String zone_id,  String zone_name)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _WorkerDomainReference() when $default != null:
 return $default(_that.id,_that.certificate_id,_that.hostname,_that.zone_id,_that.zone_name);case _:
@@ -455,7 +455,7 @@ return $default(_that.id,_that.certificate_id,_that.hostname,_that.zone_id,_that
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String certificate_id,  String hostname,  String zone_id,  String zone_name)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String? certificate_id,  String hostname,  String zone_id,  String zone_name)  $default,) {final _that = this;
 switch (_that) {
 case _WorkerDomainReference():
 return $default(_that.id,_that.certificate_id,_that.hostname,_that.zone_id,_that.zone_name);case _:
@@ -475,7 +475,7 @@ return $default(_that.id,_that.certificate_id,_that.hostname,_that.zone_id,_that
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String certificate_id,  String hostname,  String zone_id,  String zone_name)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String? certificate_id,  String hostname,  String zone_id,  String zone_name)?  $default,) {final _that = this;
 switch (_that) {
 case _WorkerDomainReference() when $default != null:
 return $default(_that.id,_that.certificate_id,_that.hostname,_that.zone_id,_that.zone_name);case _:
@@ -490,13 +490,13 @@ return $default(_that.id,_that.certificate_id,_that.hostname,_that.zone_id,_that
 @JsonSerializable()
 
 class _WorkerDomainReference implements WorkerDomainReference {
-  const _WorkerDomainReference({required this.id, required this.certificate_id, required this.hostname, required this.zone_id, required this.zone_name});
+  const _WorkerDomainReference({required this.id, this.certificate_id, required this.hostname, required this.zone_id, required this.zone_name});
   factory _WorkerDomainReference.fromJson(Map<String, dynamic> json) => _$WorkerDomainReferenceFromJson(json);
 
 /// ID of the custom domain.
 @override final  String id;
 /// ID of the TLS certificate issued for the custom domain.
-@override final  String certificate_id;
+@override final  String? certificate_id;
 /// Full hostname of the custom domain, including the zone name.
 @override final  String hostname;
 /// ID of the zone.
@@ -537,7 +537,7 @@ abstract mixin class _$WorkerDomainReferenceCopyWith<$Res> implements $WorkerDom
   factory _$WorkerDomainReferenceCopyWith(_WorkerDomainReference value, $Res Function(_WorkerDomainReference) _then) = __$WorkerDomainReferenceCopyWithImpl;
 @override @useResult
 $Res call({
- String id, String certificate_id, String hostname, String zone_id, String zone_name
+ String id, String? certificate_id, String hostname, String zone_id, String zone_name
 });
 
 
@@ -554,11 +554,11 @@ class __$WorkerDomainReferenceCopyWithImpl<$Res>
 
 /// Create a copy of WorkerDomainReference
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? certificate_id = null,Object? hostname = null,Object? zone_id = null,Object? zone_name = null,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? certificate_id = freezed,Object? hostname = null,Object? zone_id = null,Object? zone_name = null,}) {
   return _then(_WorkerDomainReference(
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
-as String,certificate_id: null == certificate_id ? _self.certificate_id : certificate_id // ignore: cast_nullable_to_non_nullable
-as String,hostname: null == hostname ? _self.hostname : hostname // ignore: cast_nullable_to_non_nullable
+as String,certificate_id: freezed == certificate_id ? _self.certificate_id : certificate_id // ignore: cast_nullable_to_non_nullable
+as String?,hostname: null == hostname ? _self.hostname : hostname // ignore: cast_nullable_to_non_nullable
 as String,zone_id: null == zone_id ? _self.zone_id : zone_id // ignore: cast_nullable_to_non_nullable
 as String,zone_name: null == zone_name ? _self.zone_name : zone_name // ignore: cast_nullable_to_non_nullable
 as String,

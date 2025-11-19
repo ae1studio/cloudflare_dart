@@ -20,7 +20,7 @@ _WorkerDomainReference _$WorkerDomainReferenceFromJson(
   Map<String, dynamic> json,
 ) => _WorkerDomainReference(
   id: json['id'] as String,
-  certificate_id: json['certificate_id'] as String,
+  certificate_id: json['certificate_id'] as String?,
   hostname: json['hostname'] as String,
   zone_id: json['zone_id'] as String,
   zone_name: json['zone_name'] as String,
