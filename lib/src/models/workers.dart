@@ -350,8 +350,6 @@ abstract class ScriptsVersionMetadata with _$ScriptsVersionMetadata {
 
     @Default(false) bool hasPreview,
 
-    required DateTime modified_on,
-
     required ScriptSource source,
   }) = _ScriptsVersionMetadata;
 

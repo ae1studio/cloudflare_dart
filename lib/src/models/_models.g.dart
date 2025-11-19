@@ -119,7 +119,6 @@ _ScriptsVersionMetadata _$ScriptsVersionMetadataFromJson(
   author_id: json['author_id'] as String?,
   created_on: DateTime.parse(json['created_on'] as String),
   hasPreview: json['hasPreview'] as bool? ?? false,
-  modified_on: DateTime.parse(json['modified_on'] as String),
   source: $enumDecode(_$ScriptSourceEnumMap, json['source']),
 );
 
@@ -130,7 +129,6 @@ Map<String, dynamic> _$ScriptsVersionMetadataToJson(
   'author_id': instance.author_id,
   'created_on': instance.created_on.toIso8601String(),
   'hasPreview': instance.hasPreview,
-  'modified_on': instance.modified_on.toIso8601String(),
   'source': _$ScriptSourceEnumMap[instance.source]!,
 };
 

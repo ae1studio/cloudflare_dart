@@ -1767,7 +1767,7 @@ $ScriptsVersionMetadataCopyWith<$Res>? get metadata {
 /// @nodoc
 mixin _$ScriptsVersionMetadata {
 
- String? get author_email; String? get author_id; DateTime get created_on; bool get hasPreview; DateTime get modified_on; ScriptSource get source;
+ String? get author_email; String? get author_id; DateTime get created_on; bool get hasPreview; ScriptSource get source;
 /// Create a copy of ScriptsVersionMetadata
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -1780,16 +1780,16 @@ $ScriptsVersionMetadataCopyWith<ScriptsVersionMetadata> get copyWith => _$Script
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is ScriptsVersionMetadata&&(identical(other.author_email, author_email) || other.author_email == author_email)&&(identical(other.author_id, author_id) || other.author_id == author_id)&&(identical(other.created_on, created_on) || other.created_on == created_on)&&(identical(other.hasPreview, hasPreview) || other.hasPreview == hasPreview)&&(identical(other.modified_on, modified_on) || other.modified_on == modified_on)&&(identical(other.source, source) || other.source == source));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is ScriptsVersionMetadata&&(identical(other.author_email, author_email) || other.author_email == author_email)&&(identical(other.author_id, author_id) || other.author_id == author_id)&&(identical(other.created_on, created_on) || other.created_on == created_on)&&(identical(other.hasPreview, hasPreview) || other.hasPreview == hasPreview)&&(identical(other.source, source) || other.source == source));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,author_email,author_id,created_on,hasPreview,modified_on,source);
+int get hashCode => Object.hash(runtimeType,author_email,author_id,created_on,hasPreview,source);
 
 @override
 String toString() {
-  return 'ScriptsVersionMetadata(author_email: $author_email, author_id: $author_id, created_on: $created_on, hasPreview: $hasPreview, modified_on: $modified_on, source: $source)';
+  return 'ScriptsVersionMetadata(author_email: $author_email, author_id: $author_id, created_on: $created_on, hasPreview: $hasPreview, source: $source)';
 }
 
 
@@ -1800,7 +1800,7 @@ abstract mixin class $ScriptsVersionMetadataCopyWith<$Res>  {
   factory $ScriptsVersionMetadataCopyWith(ScriptsVersionMetadata value, $Res Function(ScriptsVersionMetadata) _then) = _$ScriptsVersionMetadataCopyWithImpl;
 @useResult
 $Res call({
- String? author_email, String? author_id, DateTime created_on, bool hasPreview, DateTime modified_on, ScriptSource source
+ String? author_email, String? author_id, DateTime created_on, bool hasPreview, ScriptSource source
 });
 
 
@@ -1817,14 +1817,13 @@ class _$ScriptsVersionMetadataCopyWithImpl<$Res>
 
 /// Create a copy of ScriptsVersionMetadata
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? author_email = freezed,Object? author_id = freezed,Object? created_on = null,Object? hasPreview = null,Object? modified_on = null,Object? source = null,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? author_email = freezed,Object? author_id = freezed,Object? created_on = null,Object? hasPreview = null,Object? source = null,}) {
   return _then(_self.copyWith(
 author_email: freezed == author_email ? _self.author_email : author_email // ignore: cast_nullable_to_non_nullable
 as String?,author_id: freezed == author_id ? _self.author_id : author_id // ignore: cast_nullable_to_non_nullable
 as String?,created_on: null == created_on ? _self.created_on : created_on // ignore: cast_nullable_to_non_nullable
 as DateTime,hasPreview: null == hasPreview ? _self.hasPreview : hasPreview // ignore: cast_nullable_to_non_nullable
-as bool,modified_on: null == modified_on ? _self.modified_on : modified_on // ignore: cast_nullable_to_non_nullable
-as DateTime,source: null == source ? _self.source : source // ignore: cast_nullable_to_non_nullable
+as bool,source: null == source ? _self.source : source // ignore: cast_nullable_to_non_nullable
 as ScriptSource,
   ));
 }
@@ -1910,10 +1909,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String? author_email,  String? author_id,  DateTime created_on,  bool hasPreview,  DateTime modified_on,  ScriptSource source)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String? author_email,  String? author_id,  DateTime created_on,  bool hasPreview,  ScriptSource source)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _ScriptsVersionMetadata() when $default != null:
-return $default(_that.author_email,_that.author_id,_that.created_on,_that.hasPreview,_that.modified_on,_that.source);case _:
+return $default(_that.author_email,_that.author_id,_that.created_on,_that.hasPreview,_that.source);case _:
   return orElse();
 
 }
@@ -1931,10 +1930,10 @@ return $default(_that.author_email,_that.author_id,_that.created_on,_that.hasPre
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String? author_email,  String? author_id,  DateTime created_on,  bool hasPreview,  DateTime modified_on,  ScriptSource source)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String? author_email,  String? author_id,  DateTime created_on,  bool hasPreview,  ScriptSource source)  $default,) {final _that = this;
 switch (_that) {
 case _ScriptsVersionMetadata():
-return $default(_that.author_email,_that.author_id,_that.created_on,_that.hasPreview,_that.modified_on,_that.source);case _:
+return $default(_that.author_email,_that.author_id,_that.created_on,_that.hasPreview,_that.source);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -1951,10 +1950,10 @@ return $default(_that.author_email,_that.author_id,_that.created_on,_that.hasPre
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String? author_email,  String? author_id,  DateTime created_on,  bool hasPreview,  DateTime modified_on,  ScriptSource source)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String? author_email,  String? author_id,  DateTime created_on,  bool hasPreview,  ScriptSource source)?  $default,) {final _that = this;
 switch (_that) {
 case _ScriptsVersionMetadata() when $default != null:
-return $default(_that.author_email,_that.author_id,_that.created_on,_that.hasPreview,_that.modified_on,_that.source);case _:
+return $default(_that.author_email,_that.author_id,_that.created_on,_that.hasPreview,_that.source);case _:
   return null;
 
 }
@@ -1966,14 +1965,13 @@ return $default(_that.author_email,_that.author_id,_that.created_on,_that.hasPre
 @JsonSerializable()
 
 class _ScriptsVersionMetadata implements ScriptsVersionMetadata {
-  const _ScriptsVersionMetadata({this.author_email, this.author_id, required this.created_on, this.hasPreview = false, required this.modified_on, required this.source});
+  const _ScriptsVersionMetadata({this.author_email, this.author_id, required this.created_on, this.hasPreview = false, required this.source});
   factory _ScriptsVersionMetadata.fromJson(Map<String, dynamic> json) => _$ScriptsVersionMetadataFromJson(json);
 
 @override final  String? author_email;
 @override final  String? author_id;
 @override final  DateTime created_on;
 @override@JsonKey() final  bool hasPreview;
-@override final  DateTime modified_on;
 @override final  ScriptSource source;
 
 /// Create a copy of ScriptsVersionMetadata
@@ -1989,16 +1987,16 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _ScriptsVersionMetadata&&(identical(other.author_email, author_email) || other.author_email == author_email)&&(identical(other.author_id, author_id) || other.author_id == author_id)&&(identical(other.created_on, created_on) || other.created_on == created_on)&&(identical(other.hasPreview, hasPreview) || other.hasPreview == hasPreview)&&(identical(other.modified_on, modified_on) || other.modified_on == modified_on)&&(identical(other.source, source) || other.source == source));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _ScriptsVersionMetadata&&(identical(other.author_email, author_email) || other.author_email == author_email)&&(identical(other.author_id, author_id) || other.author_id == author_id)&&(identical(other.created_on, created_on) || other.created_on == created_on)&&(identical(other.hasPreview, hasPreview) || other.hasPreview == hasPreview)&&(identical(other.source, source) || other.source == source));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,author_email,author_id,created_on,hasPreview,modified_on,source);
+int get hashCode => Object.hash(runtimeType,author_email,author_id,created_on,hasPreview,source);
 
 @override
 String toString() {
-  return 'ScriptsVersionMetadata(author_email: $author_email, author_id: $author_id, created_on: $created_on, hasPreview: $hasPreview, modified_on: $modified_on, source: $source)';
+  return 'ScriptsVersionMetadata(author_email: $author_email, author_id: $author_id, created_on: $created_on, hasPreview: $hasPreview, source: $source)';
 }
 
 
@@ -2009,7 +2007,7 @@ abstract mixin class _$ScriptsVersionMetadataCopyWith<$Res> implements $ScriptsV
   factory _$ScriptsVersionMetadataCopyWith(_ScriptsVersionMetadata value, $Res Function(_ScriptsVersionMetadata) _then) = __$ScriptsVersionMetadataCopyWithImpl;
 @override @useResult
 $Res call({
- String? author_email, String? author_id, DateTime created_on, bool hasPreview, DateTime modified_on, ScriptSource source
+ String? author_email, String? author_id, DateTime created_on, bool hasPreview, ScriptSource source
 });
 
 
@@ -2026,14 +2024,13 @@ class __$ScriptsVersionMetadataCopyWithImpl<$Res>
 
 /// Create a copy of ScriptsVersionMetadata
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? author_email = freezed,Object? author_id = freezed,Object? created_on = null,Object? hasPreview = null,Object? modified_on = null,Object? source = null,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? author_email = freezed,Object? author_id = freezed,Object? created_on = null,Object? hasPreview = null,Object? source = null,}) {
   return _then(_ScriptsVersionMetadata(
 author_email: freezed == author_email ? _self.author_email : author_email // ignore: cast_nullable_to_non_nullable
 as String?,author_id: freezed == author_id ? _self.author_id : author_id // ignore: cast_nullable_to_non_nullable
 as String?,created_on: null == created_on ? _self.created_on : created_on // ignore: cast_nullable_to_non_nullable
 as DateTime,hasPreview: null == hasPreview ? _self.hasPreview : hasPreview // ignore: cast_nullable_to_non_nullable
-as bool,modified_on: null == modified_on ? _self.modified_on : modified_on // ignore: cast_nullable_to_non_nullable
-as DateTime,source: null == source ? _self.source : source // ignore: cast_nullable_to_non_nullable
+as bool,source: null == source ? _self.source : source // ignore: cast_nullable_to_non_nullable
 as ScriptSource,
   ));
 }
