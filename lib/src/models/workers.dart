@@ -299,6 +299,20 @@ abstract class WorkersVersion with _$WorkersVersion {
 
   factory WorkersVersion.fromJson(Map<String, dynamic> json) =>
       _$WorkersVersionFromJson(json);
+
+  factory WorkersVersion.empty() {
+    return WorkersVersion(
+      id: '12345678-1234-1234-1234-123456789012',
+      created_on: DateTime.now(),
+      number: 1,
+      annotations: WorkersAnnotations.empty(),
+      compatibility_date: null,
+      compatibility_flags: const [],
+      limits: WorkersLimits.empty(),
+      main_module: null,
+      source: 'api',
+    );
+  }
 }
 
 @Freezed()
@@ -316,6 +330,14 @@ abstract class WorkersAnnotations with _$WorkersAnnotations {
 
   factory WorkersAnnotations.fromJson(Map<String, dynamic> json) =>
       _$WorkersAnnotationsFromJson(json);
+
+  factory WorkersAnnotations.empty() {
+    return const WorkersAnnotations(
+      workers_message: "example",
+      workers_tag: "example",
+      workers_triggered_by: "example",
+    );
+  }
 }
 
 @Freezed()
@@ -327,6 +349,10 @@ abstract class WorkersLimits with _$WorkersLimits {
 
   factory WorkersLimits.fromJson(Map<String, dynamic> json) =>
       _$WorkersLimitsFromJson(json);
+
+  factory WorkersLimits.empty() {
+    return const WorkersLimits(cpu_ms: 0);
+  }
 }
 
 @Freezed()
@@ -342,6 +368,14 @@ abstract class ScriptsVersion with _$ScriptsVersion {
 
   factory ScriptsVersion.fromJson(Map<String, dynamic> json) =>
       _$ScriptsVersionFromJson(json);
+
+  factory ScriptsVersion.empty() {
+    return ScriptsVersion(
+      id: '12345678-1234-1234-1234-123456789012',
+      metadata: ScriptsVersionMetadata.empty(),
+      number: 1,
+    );
+  }
 }
 
 @Freezed()
@@ -365,4 +399,14 @@ abstract class ScriptsVersionMetadata with _$ScriptsVersionMetadata {
 
   factory ScriptsVersionMetadata.fromJson(Map<String, dynamic> json) =>
       _$ScriptsVersionMetadataFromJson(json);
+
+  factory ScriptsVersionMetadata.empty() {
+    return ScriptsVersionMetadata(
+      author_email: "hello@example.com",
+      author_id: "123456789",
+      created_on: DateTime.now(),
+      hasPreview: false,
+      source: ScriptSource.wrangler,
+    );
+  }
 }
