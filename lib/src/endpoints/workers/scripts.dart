@@ -27,7 +27,9 @@ class _ScriptsEndpoint extends EndpointBase {
   /// `tags`:
   ///
   /// Filter scripts by tags. Format: tag:allowed pairs where allowed is 'yes' or 'no'.
-  Future<ResultPagination<Script>> list({
+  ///
+  /// For some reason they don't use ResultPagination<Script> for this endpoint
+  Future<List<Script>> list({
     List<String> tags = const <String>[],
 
     /// Current page.
@@ -41,9 +43,9 @@ class _ScriptsEndpoint extends EndpointBase {
 
     final map = (await dio.get(fullPath, queryParameters: query)).data;
 
-    return ResultPagination<Script>.fromJson(
-      map,
-      (json) => Script.fromJson(json as Map<String, dynamic>),
-    );
+    final resultList = map['result'] as List<dynamic>;
+    return resultList
+        .map((json) => Script.fromJson(json as Map<String, dynamic>))
+        .toList();
   }
 }
