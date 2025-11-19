@@ -39,7 +39,7 @@ Map<String, dynamic> _$WorkerDomainReferenceToJson(
 _WorkersVersion _$WorkersVersionFromJson(Map<String, dynamic> json) =>
     _WorkersVersion(
       id: json['id'] as String,
-      created_on: DateTime.parse(json['created_on'] as String),
+      created_on: _localDateTimeFromJson(json['created_on'] as String),
       number: (json['number'] as num).toInt(),
       annotations: json['annotations'] == null
           ? null
@@ -64,7 +64,7 @@ _WorkersVersion _$WorkersVersionFromJson(Map<String, dynamic> json) =>
 Map<String, dynamic> _$WorkersVersionToJson(_WorkersVersion instance) =>
     <String, dynamic>{
       'id': instance.id,
-      'created_on': instance.created_on.toIso8601String(),
+      'created_on': _localDateTimeToJson(instance.created_on),
       'number': instance.number,
       'annotations': instance.annotations,
       'compatibility_date': instance.compatibility_date?.toIso8601String(),
@@ -117,7 +117,7 @@ _ScriptsVersionMetadata _$ScriptsVersionMetadataFromJson(
 ) => _ScriptsVersionMetadata(
   author_email: json['author_email'] as String?,
   author_id: json['author_id'] as String?,
-  created_on: DateTime.parse(json['created_on'] as String),
+  created_on: _localDateTimeFromJson(json['created_on'] as String),
   hasPreview: json['hasPreview'] as bool? ?? false,
   source: $enumDecode(_$ScriptSourceEnumMap, json['source']),
 );
@@ -127,7 +127,7 @@ Map<String, dynamic> _$ScriptsVersionMetadataToJson(
 ) => <String, dynamic>{
   'author_email': instance.author_email,
   'author_id': instance.author_id,
-  'created_on': instance.created_on.toIso8601String(),
+  'created_on': _localDateTimeToJson(instance.created_on),
   'hasPreview': instance.hasPreview,
   'source': _$ScriptSourceEnumMap[instance.source]!,
 };

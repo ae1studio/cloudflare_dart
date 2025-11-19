@@ -574,7 +574,7 @@ mixin _$WorkersVersion {
 
 /// Version identifier.
  String get id;/// When the version was created.
- DateTime get created_on;/// The integer version number, starting from one.
+@JsonKey(name: 'created_on', fromJson: _localDateTimeFromJson, toJson: _localDateTimeToJson) DateTime get created_on;/// The integer version number, starting from one.
  int get number;/// Metadata about the version.
  WorkersAnnotations? get annotations;/// Date indicating targeted support in the Workers runtime. Backwards incompatible fixes to the runtime following this date will not affect this Worker.
  DateTime? get compatibility_date;/// Flags that enable or disable certain features in the Workers runtime. Used to enable upcoming features or opt in or out of specific changes not included in a `compatibility_date`.
@@ -614,7 +614,7 @@ abstract mixin class $WorkersVersionCopyWith<$Res>  {
   factory $WorkersVersionCopyWith(WorkersVersion value, $Res Function(WorkersVersion) _then) = _$WorkersVersionCopyWithImpl;
 @useResult
 $Res call({
- String id, DateTime created_on, int number, WorkersAnnotations? annotations, DateTime? compatibility_date, List<String> compatibility_flags, WorkersLimits? limits, String? main_module, String source
+ String id,@JsonKey(name: 'created_on', fromJson: _localDateTimeFromJson, toJson: _localDateTimeToJson) DateTime created_on, int number, WorkersAnnotations? annotations, DateTime? compatibility_date, List<String> compatibility_flags, WorkersLimits? limits, String? main_module, String source
 });
 
 
@@ -751,7 +751,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  DateTime created_on,  int number,  WorkersAnnotations? annotations,  DateTime? compatibility_date,  List<String> compatibility_flags,  WorkersLimits? limits,  String? main_module,  String source)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id, @JsonKey(name: 'created_on', fromJson: _localDateTimeFromJson, toJson: _localDateTimeToJson)  DateTime created_on,  int number,  WorkersAnnotations? annotations,  DateTime? compatibility_date,  List<String> compatibility_flags,  WorkersLimits? limits,  String? main_module,  String source)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _WorkersVersion() when $default != null:
 return $default(_that.id,_that.created_on,_that.number,_that.annotations,_that.compatibility_date,_that.compatibility_flags,_that.limits,_that.main_module,_that.source);case _:
@@ -772,7 +772,7 @@ return $default(_that.id,_that.created_on,_that.number,_that.annotations,_that.c
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  DateTime created_on,  int number,  WorkersAnnotations? annotations,  DateTime? compatibility_date,  List<String> compatibility_flags,  WorkersLimits? limits,  String? main_module,  String source)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id, @JsonKey(name: 'created_on', fromJson: _localDateTimeFromJson, toJson: _localDateTimeToJson)  DateTime created_on,  int number,  WorkersAnnotations? annotations,  DateTime? compatibility_date,  List<String> compatibility_flags,  WorkersLimits? limits,  String? main_module,  String source)  $default,) {final _that = this;
 switch (_that) {
 case _WorkersVersion():
 return $default(_that.id,_that.created_on,_that.number,_that.annotations,_that.compatibility_date,_that.compatibility_flags,_that.limits,_that.main_module,_that.source);case _:
@@ -792,7 +792,7 @@ return $default(_that.id,_that.created_on,_that.number,_that.annotations,_that.c
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  DateTime created_on,  int number,  WorkersAnnotations? annotations,  DateTime? compatibility_date,  List<String> compatibility_flags,  WorkersLimits? limits,  String? main_module,  String source)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id, @JsonKey(name: 'created_on', fromJson: _localDateTimeFromJson, toJson: _localDateTimeToJson)  DateTime created_on,  int number,  WorkersAnnotations? annotations,  DateTime? compatibility_date,  List<String> compatibility_flags,  WorkersLimits? limits,  String? main_module,  String source)?  $default,) {final _that = this;
 switch (_that) {
 case _WorkersVersion() when $default != null:
 return $default(_that.id,_that.created_on,_that.number,_that.annotations,_that.compatibility_date,_that.compatibility_flags,_that.limits,_that.main_module,_that.source);case _:
@@ -807,13 +807,13 @@ return $default(_that.id,_that.created_on,_that.number,_that.annotations,_that.c
 @JsonSerializable()
 
 class _WorkersVersion implements WorkersVersion {
-  const _WorkersVersion({required this.id, required this.created_on, required this.number, this.annotations, this.compatibility_date, final  List<String> compatibility_flags = const <String>[], this.limits, this.main_module, required this.source}): _compatibility_flags = compatibility_flags;
+  const _WorkersVersion({required this.id, @JsonKey(name: 'created_on', fromJson: _localDateTimeFromJson, toJson: _localDateTimeToJson) required this.created_on, required this.number, this.annotations, this.compatibility_date, final  List<String> compatibility_flags = const <String>[], this.limits, this.main_module, required this.source}): _compatibility_flags = compatibility_flags;
   factory _WorkersVersion.fromJson(Map<String, dynamic> json) => _$WorkersVersionFromJson(json);
 
 /// Version identifier.
 @override final  String id;
 /// When the version was created.
-@override final  DateTime created_on;
+@override@JsonKey(name: 'created_on', fromJson: _localDateTimeFromJson, toJson: _localDateTimeToJson) final  DateTime created_on;
 /// The integer version number, starting from one.
 @override final  int number;
 /// Metadata about the version.
@@ -869,7 +869,7 @@ abstract mixin class _$WorkersVersionCopyWith<$Res> implements $WorkersVersionCo
   factory _$WorkersVersionCopyWith(_WorkersVersion value, $Res Function(_WorkersVersion) _then) = __$WorkersVersionCopyWithImpl;
 @override @useResult
 $Res call({
- String id, DateTime created_on, int number, WorkersAnnotations? annotations, DateTime? compatibility_date, List<String> compatibility_flags, WorkersLimits? limits, String? main_module, String source
+ String id,@JsonKey(name: 'created_on', fromJson: _localDateTimeFromJson, toJson: _localDateTimeToJson) DateTime created_on, int number, WorkersAnnotations? annotations, DateTime? compatibility_date, List<String> compatibility_flags, WorkersLimits? limits, String? main_module, String source
 });
 
 
@@ -1767,7 +1767,7 @@ $ScriptsVersionMetadataCopyWith<$Res>? get metadata {
 /// @nodoc
 mixin _$ScriptsVersionMetadata {
 
- String? get author_email; String? get author_id; DateTime get created_on; bool get hasPreview; ScriptSource get source;
+ String? get author_email; String? get author_id;@JsonKey(name: 'created_on', fromJson: _localDateTimeFromJson, toJson: _localDateTimeToJson) DateTime get created_on; bool get hasPreview; ScriptSource get source;
 /// Create a copy of ScriptsVersionMetadata
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -1800,7 +1800,7 @@ abstract mixin class $ScriptsVersionMetadataCopyWith<$Res>  {
   factory $ScriptsVersionMetadataCopyWith(ScriptsVersionMetadata value, $Res Function(ScriptsVersionMetadata) _then) = _$ScriptsVersionMetadataCopyWithImpl;
 @useResult
 $Res call({
- String? author_email, String? author_id, DateTime created_on, bool hasPreview, ScriptSource source
+ String? author_email, String? author_id,@JsonKey(name: 'created_on', fromJson: _localDateTimeFromJson, toJson: _localDateTimeToJson) DateTime created_on, bool hasPreview, ScriptSource source
 });
 
 
@@ -1909,7 +1909,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String? author_email,  String? author_id,  DateTime created_on,  bool hasPreview,  ScriptSource source)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String? author_email,  String? author_id, @JsonKey(name: 'created_on', fromJson: _localDateTimeFromJson, toJson: _localDateTimeToJson)  DateTime created_on,  bool hasPreview,  ScriptSource source)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _ScriptsVersionMetadata() when $default != null:
 return $default(_that.author_email,_that.author_id,_that.created_on,_that.hasPreview,_that.source);case _:
@@ -1930,7 +1930,7 @@ return $default(_that.author_email,_that.author_id,_that.created_on,_that.hasPre
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String? author_email,  String? author_id,  DateTime created_on,  bool hasPreview,  ScriptSource source)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String? author_email,  String? author_id, @JsonKey(name: 'created_on', fromJson: _localDateTimeFromJson, toJson: _localDateTimeToJson)  DateTime created_on,  bool hasPreview,  ScriptSource source)  $default,) {final _that = this;
 switch (_that) {
 case _ScriptsVersionMetadata():
 return $default(_that.author_email,_that.author_id,_that.created_on,_that.hasPreview,_that.source);case _:
@@ -1950,7 +1950,7 @@ return $default(_that.author_email,_that.author_id,_that.created_on,_that.hasPre
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String? author_email,  String? author_id,  DateTime created_on,  bool hasPreview,  ScriptSource source)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String? author_email,  String? author_id, @JsonKey(name: 'created_on', fromJson: _localDateTimeFromJson, toJson: _localDateTimeToJson)  DateTime created_on,  bool hasPreview,  ScriptSource source)?  $default,) {final _that = this;
 switch (_that) {
 case _ScriptsVersionMetadata() when $default != null:
 return $default(_that.author_email,_that.author_id,_that.created_on,_that.hasPreview,_that.source);case _:
@@ -1965,12 +1965,12 @@ return $default(_that.author_email,_that.author_id,_that.created_on,_that.hasPre
 @JsonSerializable()
 
 class _ScriptsVersionMetadata implements ScriptsVersionMetadata {
-  const _ScriptsVersionMetadata({this.author_email, this.author_id, required this.created_on, this.hasPreview = false, required this.source});
+  const _ScriptsVersionMetadata({this.author_email, this.author_id, @JsonKey(name: 'created_on', fromJson: _localDateTimeFromJson, toJson: _localDateTimeToJson) required this.created_on, this.hasPreview = false, required this.source});
   factory _ScriptsVersionMetadata.fromJson(Map<String, dynamic> json) => _$ScriptsVersionMetadataFromJson(json);
 
 @override final  String? author_email;
 @override final  String? author_id;
-@override final  DateTime created_on;
+@override@JsonKey(name: 'created_on', fromJson: _localDateTimeFromJson, toJson: _localDateTimeToJson) final  DateTime created_on;
 @override@JsonKey() final  bool hasPreview;
 @override final  ScriptSource source;
 
@@ -2007,7 +2007,7 @@ abstract mixin class _$ScriptsVersionMetadataCopyWith<$Res> implements $ScriptsV
   factory _$ScriptsVersionMetadataCopyWith(_ScriptsVersionMetadata value, $Res Function(_ScriptsVersionMetadata) _then) = __$ScriptsVersionMetadataCopyWithImpl;
 @override @useResult
 $Res call({
- String? author_email, String? author_id, DateTime created_on, bool hasPreview, ScriptSource source
+ String? author_email, String? author_id,@JsonKey(name: 'created_on', fromJson: _localDateTimeFromJson, toJson: _localDateTimeToJson) DateTime created_on, bool hasPreview, ScriptSource source
 });
 
 

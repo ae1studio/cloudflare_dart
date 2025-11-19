@@ -27,3 +27,9 @@ class LocalDateTimeConverter implements JsonConverter<DateTime, String> {
   @override
   String toJson(DateTime json) => json.toIso8601String();
 }
+
+DateTime _localDateTimeFromJson(String json) =>
+    const LocalDateTimeConverter().fromJson(json);
+
+String _localDateTimeToJson(DateTime dateTime) =>
+    const LocalDateTimeConverter().toJson(dateTime);

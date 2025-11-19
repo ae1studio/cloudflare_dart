@@ -268,6 +268,11 @@ abstract class WorkersVersion with _$WorkersVersion {
     required String id,
 
     /// When the version was created.
+    @JsonKey(
+      name: 'created_on',
+      fromJson: _localDateTimeFromJson,
+      toJson: _localDateTimeToJson,
+    )
     required DateTime created_on,
 
     /// The integer version number, starting from one.
@@ -346,6 +351,11 @@ abstract class ScriptsVersionMetadata with _$ScriptsVersionMetadata {
 
     String? author_id,
 
+    @JsonKey(
+      name: 'created_on',
+      fromJson: _localDateTimeFromJson,
+      toJson: _localDateTimeToJson,
+    )
     required DateTime created_on,
 
     @Default(false) bool hasPreview,
