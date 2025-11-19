@@ -1,18 +1,33 @@
 part of cloudflare.models;
 
-@JsonSerializable(
-  createToJson: false,
-  genericArgumentFactories: true,
-)
+@JsonSerializable(createToJson: false, genericArgumentFactories: true)
 class ResultPagination<T> extends Object {
-  ResultPagination(
-    this.result,
-    this.result_info,
-  );
+  ResultPagination(this.result, this.result_info);
 
   factory ResultPagination.fromJson(
-          Map<String, dynamic> json, T Function(Object?) fromJsonT) =>
-      _$ResultPaginationFromJson(json, fromJsonT);
+    Map<String, dynamic> json,
+    T Function(Object?) fromJsonT,
+  ) {
+    final resultValue = json['result'];
+    List<dynamic> resultList;
+
+    // Note: For some reason some endpoints have it in results and some are in results items.
+    if (resultValue is List) {
+      resultList = resultValue;
+    } else if (resultValue is Map<String, dynamic> &&
+        resultValue.containsKey('items')) {
+      resultList = resultValue['items'] as List<dynamic>;
+    } else {
+      throw FormatException(
+        'Expected "result" to be either a List or a Map with "items" key, but got ${resultValue.runtimeType}',
+      );
+    }
+
+    return ResultPagination<T>(
+      resultList.map(fromJsonT).toList(),
+      ResultInfo.fromJson(json['result_info'] as Map<String, dynamic>),
+    );
+  }
 
   @JsonKey(name: 'result', required: true)
   List<T> result;
@@ -22,9 +37,7 @@ class ResultPagination<T> extends Object {
   ResultInfo result_info;
 }
 
-@JsonSerializable(
-  createToJson: false,
-)
+@JsonSerializable(createToJson: false)
 class ResultInfo extends Object {
   ResultInfo(
     this.count,
