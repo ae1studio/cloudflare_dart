@@ -10,6 +10,9 @@ abstract class WorkerAnalyticsResponse with _$WorkerAnalyticsResponse {
 
   factory WorkerAnalyticsResponse.fromJson(Map<String, dynamic> json) =>
       _$WorkerAnalyticsResponseFromJson(json);
+
+  factory WorkerAnalyticsResponse.empty() =>
+      WorkerAnalyticsResponse(viewer: WorkerAnalyticsViewer.empty());
 }
 
 @Freezed()
@@ -21,6 +24,11 @@ abstract class WorkerAnalyticsViewer with _$WorkerAnalyticsViewer {
 
   factory WorkerAnalyticsViewer.fromJson(Map<String, dynamic> json) =>
       _$WorkerAnalyticsViewerFromJson(json);
+
+  factory WorkerAnalyticsViewer.empty() => WorkerAnalyticsViewer(
+    typename: 'viewer',
+    accounts: [WorkerAnalyticsAccount.empty()],
+  );
 }
 
 @Freezed()
@@ -37,6 +45,16 @@ abstract class WorkerAnalyticsAccount with _$WorkerAnalyticsAccount {
 
   factory WorkerAnalyticsAccount.fromJson(Map<String, dynamic> json) =>
       _$WorkerAnalyticsAccountFromJson(json);
+
+  factory WorkerAnalyticsAccount.empty() => WorkerAnalyticsAccount(
+    typename: 'account',
+    workersSubrequestsAdaptiveGroups: [WorkerSubrequestsAdaptiveGroup.empty()],
+    workersInvocationsAdaptive: [
+      WorkerInvocationsAdaptive.empty(),
+      WorkerInvocationsAdaptive.empty(),
+    ],
+    previous: [WorkerInvocationsAdaptive.empty()],
+  );
 }
 
 @Freezed()
@@ -50,6 +68,13 @@ abstract class WorkerSubrequestsAdaptiveGroup
 
   factory WorkerSubrequestsAdaptiveGroup.fromJson(Map<String, dynamic> json) =>
       _$WorkerSubrequestsAdaptiveGroupFromJson(json);
+
+  factory WorkerSubrequestsAdaptiveGroup.empty() =>
+      WorkerSubrequestsAdaptiveGroup(
+        typename: 'AccountWorkersSubrequestsAdaptiveGroup',
+        sum: WorkerSubrequestsAdaptiveGroupSum.empty(),
+        dimensions: WorkerSubrequestsAdaptiveGroupDimensions.empty(),
+      );
 }
 
 @Freezed()
@@ -63,6 +88,12 @@ abstract class WorkerSubrequestsAdaptiveGroupSum
   factory WorkerSubrequestsAdaptiveGroupSum.fromJson(
     Map<String, dynamic> json,
   ) => _$WorkerSubrequestsAdaptiveGroupSumFromJson(json);
+
+  factory WorkerSubrequestsAdaptiveGroupSum.empty() =>
+      WorkerSubrequestsAdaptiveGroupSum(
+        typename: 'AccountWorkersSubrequestsAdaptiveGroupSum',
+        subrequests: 0,
+      );
 }
 
 @Freezed()
@@ -77,6 +108,13 @@ abstract class WorkerSubrequestsAdaptiveGroupDimensions
   factory WorkerSubrequestsAdaptiveGroupDimensions.fromJson(
     Map<String, dynamic> json,
   ) => _$WorkerSubrequestsAdaptiveGroupDimensionsFromJson(json);
+
+  factory WorkerSubrequestsAdaptiveGroupDimensions.empty() =>
+      WorkerSubrequestsAdaptiveGroupDimensions(
+        typename: 'AccountWorkersSubrequestsAdaptiveGroupDimensions',
+        cacheStatus: 0,
+        datetimeFifteenMinutes: DateTime.now().toUtc(),
+      );
 }
 
 @Freezed()
@@ -90,6 +128,13 @@ abstract class WorkerInvocationsAdaptive with _$WorkerInvocationsAdaptive {
 
   factory WorkerInvocationsAdaptive.fromJson(Map<String, dynamic> json) =>
       _$WorkerInvocationsAdaptiveFromJson(json);
+
+  factory WorkerInvocationsAdaptive.empty() => WorkerInvocationsAdaptive(
+    typename: 'AccountWorkersInvocationsAdaptive',
+    sum: WorkerInvocationsAdaptiveSum.empty(),
+    quantiles: WorkerInvocationsAdaptiveQuantiles.empty(),
+    dimensions: WorkerInvocationsAdaptiveDimensions.empty(),
+  );
 }
 
 @Freezed()
@@ -105,6 +150,14 @@ abstract class WorkerInvocationsAdaptiveSum
 
   factory WorkerInvocationsAdaptiveSum.fromJson(Map<String, dynamic> json) =>
       _$WorkerInvocationsAdaptiveSumFromJson(json);
+
+  factory WorkerInvocationsAdaptiveSum.empty() => WorkerInvocationsAdaptiveSum(
+    typename: 'AccountWorkersInvocationsAdaptiveSum',
+    subrequests: 0,
+    requests: 0,
+    errors: 0,
+    duration: 0.0,
+  );
 }
 
 @Freezed()
@@ -121,6 +174,15 @@ abstract class WorkerInvocationsAdaptiveQuantiles
   factory WorkerInvocationsAdaptiveQuantiles.fromJson(
     Map<String, dynamic> json,
   ) => _$WorkerInvocationsAdaptiveQuantilesFromJson(json);
+
+  factory WorkerInvocationsAdaptiveQuantiles.empty() =>
+      WorkerInvocationsAdaptiveQuantiles(
+        typename: 'AccountWorkersInvocationsAdaptiveQuantiles',
+        cpuTimeP50: 1000,
+        wallTimeP50: 1200,
+        durationP50: 0.001,
+        requestDurationP50: 1500,
+      );
 }
 
 @Freezed()
@@ -134,4 +196,10 @@ abstract class WorkerInvocationsAdaptiveDimensions
   factory WorkerInvocationsAdaptiveDimensions.fromJson(
     Map<String, dynamic> json,
   ) => _$WorkerInvocationsAdaptiveDimensionsFromJson(json);
+
+  factory WorkerInvocationsAdaptiveDimensions.empty() =>
+      WorkerInvocationsAdaptiveDimensions(
+        typename: 'AccountWorkersInvocationsAdaptiveDimensions',
+        datetimeFifteenMinutes: DateTime.now().toUtc(),
+      );
 }
