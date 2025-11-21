@@ -296,7 +296,7 @@ query GetZoneAnalytics($zoneTag: string, $since: Date, $until: Date) {
   }
 
   /// Get Worker Analytics
-  Future<Map<String, dynamic>?> getWorkerAnalytics({
+  Future<WorkerAnalyticsResponse?> getWorkerAnalytics({
     required String accountTag,
     required DateTime lookbackTime,
     required DateTime datetimeStart,
@@ -406,6 +406,18 @@ query getWorkerAnalytics($accountTag: string!, $lookbackTime: Time, $datetimeSta
       throw Exception(result.exception.toString());
     }
 
-    return result.data;
+    if (result.data == null) {
+      return null;
+    }
+
+    final Map<String, dynamic>? viewerData =
+        result.data?['viewer'] as Map<String, dynamic>?;
+    if (viewerData == null) {
+      return null;
+    }
+
+    return WorkerAnalyticsResponse.fromJson(<String, dynamic>{
+      'viewer': viewerData,
+    });
   }
 }

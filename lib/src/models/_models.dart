@@ -15,6 +15,7 @@ part 'records.dart';
 part 'registrar.dart';
 part 'workers.dart';
 part 'status.dart';
+part 'analytics.dart';
 
 class LocalDateTimeConverter implements JsonConverter<DateTime, String> {
   const LocalDateTimeConverter();

@@ -162,6 +162,217 @@ const _$ScriptSourceEnumMap = {
   ScriptSource.workersci: 'workersci',
 };
 
+_WorkerAnalyticsResponse _$WorkerAnalyticsResponseFromJson(
+  Map<String, dynamic> json,
+) => _WorkerAnalyticsResponse(
+  viewer: WorkerAnalyticsViewer.fromJson(
+    json['viewer'] as Map<String, dynamic>,
+  ),
+);
+
+Map<String, dynamic> _$WorkerAnalyticsResponseToJson(
+  _WorkerAnalyticsResponse instance,
+) => <String, dynamic>{'viewer': instance.viewer};
+
+_WorkerAnalyticsViewer _$WorkerAnalyticsViewerFromJson(
+  Map<String, dynamic> json,
+) => _WorkerAnalyticsViewer(
+  typename: json['__typename'] as String,
+  accounts: (json['accounts'] as List<dynamic>)
+      .map((e) => WorkerAnalyticsAccount.fromJson(e as Map<String, dynamic>))
+      .toList(),
+);
+
+Map<String, dynamic> _$WorkerAnalyticsViewerToJson(
+  _WorkerAnalyticsViewer instance,
+) => <String, dynamic>{
+  '__typename': instance.typename,
+  'accounts': instance.accounts,
+};
+
+_WorkerAnalyticsAccount _$WorkerAnalyticsAccountFromJson(
+  Map<String, dynamic> json,
+) => _WorkerAnalyticsAccount(
+  typename: json['__typename'] as String,
+  workersSubrequestsAdaptiveGroups:
+      (json['workersSubrequestsAdaptiveGroups'] as List<dynamic>)
+          .map(
+            (e) => WorkerSubrequestsAdaptiveGroup.fromJson(
+              e as Map<String, dynamic>,
+            ),
+          )
+          .toList(),
+  workersInvocationsAdaptive:
+      (json['workersInvocationsAdaptive'] as List<dynamic>)
+          .map(
+            (e) =>
+                WorkerInvocationsAdaptive.fromJson(e as Map<String, dynamic>),
+          )
+          .toList(),
+  previous: (json['previous'] as List<dynamic>)
+      .map((e) => WorkerInvocationsAdaptive.fromJson(e as Map<String, dynamic>))
+      .toList(),
+);
+
+Map<String, dynamic> _$WorkerAnalyticsAccountToJson(
+  _WorkerAnalyticsAccount instance,
+) => <String, dynamic>{
+  '__typename': instance.typename,
+  'workersSubrequestsAdaptiveGroups': instance.workersSubrequestsAdaptiveGroups,
+  'workersInvocationsAdaptive': instance.workersInvocationsAdaptive,
+  'previous': instance.previous,
+};
+
+_WorkerSubrequestsAdaptiveGroup _$WorkerSubrequestsAdaptiveGroupFromJson(
+  Map<String, dynamic> json,
+) => _WorkerSubrequestsAdaptiveGroup(
+  typename: json['__typename'] as String,
+  sum: WorkerSubrequestsAdaptiveGroupSum.fromJson(
+    json['sum'] as Map<String, dynamic>,
+  ),
+  dimensions: WorkerSubrequestsAdaptiveGroupDimensions.fromJson(
+    json['dimensions'] as Map<String, dynamic>,
+  ),
+);
+
+Map<String, dynamic> _$WorkerSubrequestsAdaptiveGroupToJson(
+  _WorkerSubrequestsAdaptiveGroup instance,
+) => <String, dynamic>{
+  '__typename': instance.typename,
+  'sum': instance.sum,
+  'dimensions': instance.dimensions,
+};
+
+_WorkerSubrequestsAdaptiveGroupSum _$WorkerSubrequestsAdaptiveGroupSumFromJson(
+  Map<String, dynamic> json,
+) => _WorkerSubrequestsAdaptiveGroupSum(
+  typename: json['__typename'] as String,
+  subrequests: (json['subrequests'] as num).toInt(),
+);
+
+Map<String, dynamic> _$WorkerSubrequestsAdaptiveGroupSumToJson(
+  _WorkerSubrequestsAdaptiveGroupSum instance,
+) => <String, dynamic>{
+  '__typename': instance.typename,
+  'subrequests': instance.subrequests,
+};
+
+_WorkerSubrequestsAdaptiveGroupDimensions
+_$WorkerSubrequestsAdaptiveGroupDimensionsFromJson(Map<String, dynamic> json) =>
+    _WorkerSubrequestsAdaptiveGroupDimensions(
+      typename: json['__typename'] as String,
+      cacheStatus: json['cacheStatus'] as String?,
+      datetimeFifteenMinutes: _$JsonConverterFromJson<String, DateTime>(
+        json['datetimeFifteenMinutes'],
+        const LocalDateTimeConverter().fromJson,
+      ),
+    );
+
+Map<String, dynamic> _$WorkerSubrequestsAdaptiveGroupDimensionsToJson(
+  _WorkerSubrequestsAdaptiveGroupDimensions instance,
+) => <String, dynamic>{
+  '__typename': instance.typename,
+  'cacheStatus': instance.cacheStatus,
+  'datetimeFifteenMinutes': _$JsonConverterToJson<String, DateTime>(
+    instance.datetimeFifteenMinutes,
+    const LocalDateTimeConverter().toJson,
+  ),
+};
+
+Value? _$JsonConverterFromJson<Json, Value>(
+  Object? json,
+  Value? Function(Json json) fromJson,
+) => json == null ? null : fromJson(json as Json);
+
+Json? _$JsonConverterToJson<Json, Value>(
+  Value? value,
+  Json? Function(Value value) toJson,
+) => value == null ? null : toJson(value);
+
+_WorkerInvocationsAdaptive _$WorkerInvocationsAdaptiveFromJson(
+  Map<String, dynamic> json,
+) => _WorkerInvocationsAdaptive(
+  typename: json['__typename'] as String,
+  sum: WorkerInvocationsAdaptiveSum.fromJson(
+    json['sum'] as Map<String, dynamic>,
+  ),
+  quantiles: WorkerInvocationsAdaptiveQuantiles.fromJson(
+    json['quantiles'] as Map<String, dynamic>,
+  ),
+  dimensions: json['dimensions'] == null
+      ? null
+      : WorkerInvocationsAdaptiveDimensions.fromJson(
+          json['dimensions'] as Map<String, dynamic>,
+        ),
+);
+
+Map<String, dynamic> _$WorkerInvocationsAdaptiveToJson(
+  _WorkerInvocationsAdaptive instance,
+) => <String, dynamic>{
+  '__typename': instance.typename,
+  'sum': instance.sum,
+  'quantiles': instance.quantiles,
+  'dimensions': instance.dimensions,
+};
+
+_WorkerInvocationsAdaptiveSum _$WorkerInvocationsAdaptiveSumFromJson(
+  Map<String, dynamic> json,
+) => _WorkerInvocationsAdaptiveSum(
+  typename: json['__typename'] as String,
+  subrequests: (json['subrequests'] as num).toInt(),
+  requests: (json['requests'] as num).toInt(),
+  errors: (json['errors'] as num).toInt(),
+  duration: (json['duration'] as num).toDouble(),
+);
+
+Map<String, dynamic> _$WorkerInvocationsAdaptiveSumToJson(
+  _WorkerInvocationsAdaptiveSum instance,
+) => <String, dynamic>{
+  '__typename': instance.typename,
+  'subrequests': instance.subrequests,
+  'requests': instance.requests,
+  'errors': instance.errors,
+  'duration': instance.duration,
+};
+
+_WorkerInvocationsAdaptiveQuantiles
+_$WorkerInvocationsAdaptiveQuantilesFromJson(Map<String, dynamic> json) =>
+    _WorkerInvocationsAdaptiveQuantiles(
+      typename: json['__typename'] as String,
+      cpuTimeP50: (json['cpuTimeP50'] as num?)?.toInt(),
+      wallTimeP50: (json['wallTimeP50'] as num?)?.toInt(),
+      durationP50: (json['durationP50'] as num?)?.toDouble(),
+      requestDurationP50: (json['requestDurationP50'] as num?)?.toInt(),
+    );
+
+Map<String, dynamic> _$WorkerInvocationsAdaptiveQuantilesToJson(
+  _WorkerInvocationsAdaptiveQuantiles instance,
+) => <String, dynamic>{
+  '__typename': instance.typename,
+  'cpuTimeP50': instance.cpuTimeP50,
+  'wallTimeP50': instance.wallTimeP50,
+  'durationP50': instance.durationP50,
+  'requestDurationP50': instance.requestDurationP50,
+};
+
+_WorkerInvocationsAdaptiveDimensions
+_$WorkerInvocationsAdaptiveDimensionsFromJson(Map<String, dynamic> json) =>
+    _WorkerInvocationsAdaptiveDimensions(
+      typename: json['__typename'] as String,
+      datetimeFifteenMinutes: const LocalDateTimeConverter().fromJson(
+        json['datetimeFifteenMinutes'] as String,
+      ),
+    );
+
+Map<String, dynamic> _$WorkerInvocationsAdaptiveDimensionsToJson(
+  _WorkerInvocationsAdaptiveDimensions instance,
+) => <String, dynamic>{
+  '__typename': instance.typename,
+  'datetimeFifteenMinutes': const LocalDateTimeConverter().toJson(
+    instance.datetimeFifteenMinutes,
+  ),
+};
+
 Webhooks _$WebhooksFromJson(Map<String, dynamic> json) {
   $checkKeys(json, requiredKeys: const ['id', 'name', 'url', 'created_at']);
   return Webhooks()
@@ -399,16 +610,6 @@ const _$ZoneTypeEnumMap = {
   ZoneType.internal: 'internal',
   ZoneType.unknown: 'unknown',
 };
-
-Value? _$JsonConverterFromJson<Json, Value>(
-  Object? json,
-  Value? Function(Json json) fromJson,
-) => json == null ? null : fromJson(json as Json);
-
-Json? _$JsonConverterToJson<Json, Value>(
-  Value? value,
-  Json? Function(Value value) toJson,
-) => value == null ? null : toJson(value);
 
 ZonePlan _$ZonePlanFromJson(Map<String, dynamic> json) {
   $checkKeys(

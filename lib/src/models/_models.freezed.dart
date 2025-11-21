@@ -2597,4 +2597,2835 @@ as ScriptSource,
 
 }
 
+
+/// @nodoc
+mixin _$WorkerAnalyticsResponse {
+
+ WorkerAnalyticsViewer get viewer;
+/// Create a copy of WorkerAnalyticsResponse
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$WorkerAnalyticsResponseCopyWith<WorkerAnalyticsResponse> get copyWith => _$WorkerAnalyticsResponseCopyWithImpl<WorkerAnalyticsResponse>(this as WorkerAnalyticsResponse, _$identity);
+
+  /// Serializes this WorkerAnalyticsResponse to a JSON map.
+  Map<String, dynamic> toJson();
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is WorkerAnalyticsResponse&&(identical(other.viewer, viewer) || other.viewer == viewer));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,viewer);
+
+@override
+String toString() {
+  return 'WorkerAnalyticsResponse(viewer: $viewer)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class $WorkerAnalyticsResponseCopyWith<$Res>  {
+  factory $WorkerAnalyticsResponseCopyWith(WorkerAnalyticsResponse value, $Res Function(WorkerAnalyticsResponse) _then) = _$WorkerAnalyticsResponseCopyWithImpl;
+@useResult
+$Res call({
+ WorkerAnalyticsViewer viewer
+});
+
+
+$WorkerAnalyticsViewerCopyWith<$Res> get viewer;
+
+}
+/// @nodoc
+class _$WorkerAnalyticsResponseCopyWithImpl<$Res>
+    implements $WorkerAnalyticsResponseCopyWith<$Res> {
+  _$WorkerAnalyticsResponseCopyWithImpl(this._self, this._then);
+
+  final WorkerAnalyticsResponse _self;
+  final $Res Function(WorkerAnalyticsResponse) _then;
+
+/// Create a copy of WorkerAnalyticsResponse
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? viewer = null,}) {
+  return _then(_self.copyWith(
+viewer: null == viewer ? _self.viewer : viewer // ignore: cast_nullable_to_non_nullable
+as WorkerAnalyticsViewer,
+  ));
+}
+/// Create a copy of WorkerAnalyticsResponse
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$WorkerAnalyticsViewerCopyWith<$Res> get viewer {
+  
+  return $WorkerAnalyticsViewerCopyWith<$Res>(_self.viewer, (value) {
+    return _then(_self.copyWith(viewer: value));
+  });
+}
+}
+
+
+/// Adds pattern-matching-related methods to [WorkerAnalyticsResponse].
+extension WorkerAnalyticsResponsePatterns on WorkerAnalyticsResponse {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _WorkerAnalyticsResponse value)?  $default,{required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _WorkerAnalyticsResponse() when $default != null:
+return $default(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _WorkerAnalyticsResponse value)  $default,){
+final _that = this;
+switch (_that) {
+case _WorkerAnalyticsResponse():
+return $default(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _WorkerAnalyticsResponse value)?  $default,){
+final _that = this;
+switch (_that) {
+case _WorkerAnalyticsResponse() when $default != null:
+return $default(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( WorkerAnalyticsViewer viewer)?  $default,{required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _WorkerAnalyticsResponse() when $default != null:
+return $default(_that.viewer);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( WorkerAnalyticsViewer viewer)  $default,) {final _that = this;
+switch (_that) {
+case _WorkerAnalyticsResponse():
+return $default(_that.viewer);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( WorkerAnalyticsViewer viewer)?  $default,) {final _that = this;
+switch (_that) {
+case _WorkerAnalyticsResponse() when $default != null:
+return $default(_that.viewer);case _:
+  return null;
+
+}
+}
+
+}
+
+/// @nodoc
+@JsonSerializable()
+
+class _WorkerAnalyticsResponse implements WorkerAnalyticsResponse {
+  const _WorkerAnalyticsResponse({required this.viewer});
+  factory _WorkerAnalyticsResponse.fromJson(Map<String, dynamic> json) => _$WorkerAnalyticsResponseFromJson(json);
+
+@override final  WorkerAnalyticsViewer viewer;
+
+/// Create a copy of WorkerAnalyticsResponse
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$WorkerAnalyticsResponseCopyWith<_WorkerAnalyticsResponse> get copyWith => __$WorkerAnalyticsResponseCopyWithImpl<_WorkerAnalyticsResponse>(this, _$identity);
+
+@override
+Map<String, dynamic> toJson() {
+  return _$WorkerAnalyticsResponseToJson(this, );
+}
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _WorkerAnalyticsResponse&&(identical(other.viewer, viewer) || other.viewer == viewer));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,viewer);
+
+@override
+String toString() {
+  return 'WorkerAnalyticsResponse(viewer: $viewer)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class _$WorkerAnalyticsResponseCopyWith<$Res> implements $WorkerAnalyticsResponseCopyWith<$Res> {
+  factory _$WorkerAnalyticsResponseCopyWith(_WorkerAnalyticsResponse value, $Res Function(_WorkerAnalyticsResponse) _then) = __$WorkerAnalyticsResponseCopyWithImpl;
+@override @useResult
+$Res call({
+ WorkerAnalyticsViewer viewer
+});
+
+
+@override $WorkerAnalyticsViewerCopyWith<$Res> get viewer;
+
+}
+/// @nodoc
+class __$WorkerAnalyticsResponseCopyWithImpl<$Res>
+    implements _$WorkerAnalyticsResponseCopyWith<$Res> {
+  __$WorkerAnalyticsResponseCopyWithImpl(this._self, this._then);
+
+  final _WorkerAnalyticsResponse _self;
+  final $Res Function(_WorkerAnalyticsResponse) _then;
+
+/// Create a copy of WorkerAnalyticsResponse
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? viewer = null,}) {
+  return _then(_WorkerAnalyticsResponse(
+viewer: null == viewer ? _self.viewer : viewer // ignore: cast_nullable_to_non_nullable
+as WorkerAnalyticsViewer,
+  ));
+}
+
+/// Create a copy of WorkerAnalyticsResponse
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$WorkerAnalyticsViewerCopyWith<$Res> get viewer {
+  
+  return $WorkerAnalyticsViewerCopyWith<$Res>(_self.viewer, (value) {
+    return _then(_self.copyWith(viewer: value));
+  });
+}
+}
+
+
+/// @nodoc
+mixin _$WorkerAnalyticsViewer {
+
+@JsonKey(name: '__typename') String get typename; List<WorkerAnalyticsAccount> get accounts;
+/// Create a copy of WorkerAnalyticsViewer
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$WorkerAnalyticsViewerCopyWith<WorkerAnalyticsViewer> get copyWith => _$WorkerAnalyticsViewerCopyWithImpl<WorkerAnalyticsViewer>(this as WorkerAnalyticsViewer, _$identity);
+
+  /// Serializes this WorkerAnalyticsViewer to a JSON map.
+  Map<String, dynamic> toJson();
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is WorkerAnalyticsViewer&&(identical(other.typename, typename) || other.typename == typename)&&const DeepCollectionEquality().equals(other.accounts, accounts));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,typename,const DeepCollectionEquality().hash(accounts));
+
+@override
+String toString() {
+  return 'WorkerAnalyticsViewer(typename: $typename, accounts: $accounts)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class $WorkerAnalyticsViewerCopyWith<$Res>  {
+  factory $WorkerAnalyticsViewerCopyWith(WorkerAnalyticsViewer value, $Res Function(WorkerAnalyticsViewer) _then) = _$WorkerAnalyticsViewerCopyWithImpl;
+@useResult
+$Res call({
+@JsonKey(name: '__typename') String typename, List<WorkerAnalyticsAccount> accounts
+});
+
+
+
+
+}
+/// @nodoc
+class _$WorkerAnalyticsViewerCopyWithImpl<$Res>
+    implements $WorkerAnalyticsViewerCopyWith<$Res> {
+  _$WorkerAnalyticsViewerCopyWithImpl(this._self, this._then);
+
+  final WorkerAnalyticsViewer _self;
+  final $Res Function(WorkerAnalyticsViewer) _then;
+
+/// Create a copy of WorkerAnalyticsViewer
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? typename = null,Object? accounts = null,}) {
+  return _then(_self.copyWith(
+typename: null == typename ? _self.typename : typename // ignore: cast_nullable_to_non_nullable
+as String,accounts: null == accounts ? _self.accounts : accounts // ignore: cast_nullable_to_non_nullable
+as List<WorkerAnalyticsAccount>,
+  ));
+}
+
+}
+
+
+/// Adds pattern-matching-related methods to [WorkerAnalyticsViewer].
+extension WorkerAnalyticsViewerPatterns on WorkerAnalyticsViewer {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _WorkerAnalyticsViewer value)?  $default,{required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _WorkerAnalyticsViewer() when $default != null:
+return $default(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _WorkerAnalyticsViewer value)  $default,){
+final _that = this;
+switch (_that) {
+case _WorkerAnalyticsViewer():
+return $default(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _WorkerAnalyticsViewer value)?  $default,){
+final _that = this;
+switch (_that) {
+case _WorkerAnalyticsViewer() when $default != null:
+return $default(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@JsonKey(name: '__typename')  String typename,  List<WorkerAnalyticsAccount> accounts)?  $default,{required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _WorkerAnalyticsViewer() when $default != null:
+return $default(_that.typename,_that.accounts);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@JsonKey(name: '__typename')  String typename,  List<WorkerAnalyticsAccount> accounts)  $default,) {final _that = this;
+switch (_that) {
+case _WorkerAnalyticsViewer():
+return $default(_that.typename,_that.accounts);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@JsonKey(name: '__typename')  String typename,  List<WorkerAnalyticsAccount> accounts)?  $default,) {final _that = this;
+switch (_that) {
+case _WorkerAnalyticsViewer() when $default != null:
+return $default(_that.typename,_that.accounts);case _:
+  return null;
+
+}
+}
+
+}
+
+/// @nodoc
+@JsonSerializable()
+
+class _WorkerAnalyticsViewer implements WorkerAnalyticsViewer {
+  const _WorkerAnalyticsViewer({@JsonKey(name: '__typename') required this.typename, required final  List<WorkerAnalyticsAccount> accounts}): _accounts = accounts;
+  factory _WorkerAnalyticsViewer.fromJson(Map<String, dynamic> json) => _$WorkerAnalyticsViewerFromJson(json);
+
+@override@JsonKey(name: '__typename') final  String typename;
+ final  List<WorkerAnalyticsAccount> _accounts;
+@override List<WorkerAnalyticsAccount> get accounts {
+  if (_accounts is EqualUnmodifiableListView) return _accounts;
+  // ignore: implicit_dynamic_type
+  return EqualUnmodifiableListView(_accounts);
+}
+
+
+/// Create a copy of WorkerAnalyticsViewer
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$WorkerAnalyticsViewerCopyWith<_WorkerAnalyticsViewer> get copyWith => __$WorkerAnalyticsViewerCopyWithImpl<_WorkerAnalyticsViewer>(this, _$identity);
+
+@override
+Map<String, dynamic> toJson() {
+  return _$WorkerAnalyticsViewerToJson(this, );
+}
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _WorkerAnalyticsViewer&&(identical(other.typename, typename) || other.typename == typename)&&const DeepCollectionEquality().equals(other._accounts, _accounts));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,typename,const DeepCollectionEquality().hash(_accounts));
+
+@override
+String toString() {
+  return 'WorkerAnalyticsViewer(typename: $typename, accounts: $accounts)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class _$WorkerAnalyticsViewerCopyWith<$Res> implements $WorkerAnalyticsViewerCopyWith<$Res> {
+  factory _$WorkerAnalyticsViewerCopyWith(_WorkerAnalyticsViewer value, $Res Function(_WorkerAnalyticsViewer) _then) = __$WorkerAnalyticsViewerCopyWithImpl;
+@override @useResult
+$Res call({
+@JsonKey(name: '__typename') String typename, List<WorkerAnalyticsAccount> accounts
+});
+
+
+
+
+}
+/// @nodoc
+class __$WorkerAnalyticsViewerCopyWithImpl<$Res>
+    implements _$WorkerAnalyticsViewerCopyWith<$Res> {
+  __$WorkerAnalyticsViewerCopyWithImpl(this._self, this._then);
+
+  final _WorkerAnalyticsViewer _self;
+  final $Res Function(_WorkerAnalyticsViewer) _then;
+
+/// Create a copy of WorkerAnalyticsViewer
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? typename = null,Object? accounts = null,}) {
+  return _then(_WorkerAnalyticsViewer(
+typename: null == typename ? _self.typename : typename // ignore: cast_nullable_to_non_nullable
+as String,accounts: null == accounts ? _self._accounts : accounts // ignore: cast_nullable_to_non_nullable
+as List<WorkerAnalyticsAccount>,
+  ));
+}
+
+
+}
+
+
+/// @nodoc
+mixin _$WorkerAnalyticsAccount {
+
+@JsonKey(name: '__typename') String get typename;@JsonKey(name: 'workersSubrequestsAdaptiveGroups') List<WorkerSubrequestsAdaptiveGroup> get workersSubrequestsAdaptiveGroups;@JsonKey(name: 'workersInvocationsAdaptive') List<WorkerInvocationsAdaptive> get workersInvocationsAdaptive; List<WorkerInvocationsAdaptive> get previous;
+/// Create a copy of WorkerAnalyticsAccount
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$WorkerAnalyticsAccountCopyWith<WorkerAnalyticsAccount> get copyWith => _$WorkerAnalyticsAccountCopyWithImpl<WorkerAnalyticsAccount>(this as WorkerAnalyticsAccount, _$identity);
+
+  /// Serializes this WorkerAnalyticsAccount to a JSON map.
+  Map<String, dynamic> toJson();
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is WorkerAnalyticsAccount&&(identical(other.typename, typename) || other.typename == typename)&&const DeepCollectionEquality().equals(other.workersSubrequestsAdaptiveGroups, workersSubrequestsAdaptiveGroups)&&const DeepCollectionEquality().equals(other.workersInvocationsAdaptive, workersInvocationsAdaptive)&&const DeepCollectionEquality().equals(other.previous, previous));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,typename,const DeepCollectionEquality().hash(workersSubrequestsAdaptiveGroups),const DeepCollectionEquality().hash(workersInvocationsAdaptive),const DeepCollectionEquality().hash(previous));
+
+@override
+String toString() {
+  return 'WorkerAnalyticsAccount(typename: $typename, workersSubrequestsAdaptiveGroups: $workersSubrequestsAdaptiveGroups, workersInvocationsAdaptive: $workersInvocationsAdaptive, previous: $previous)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class $WorkerAnalyticsAccountCopyWith<$Res>  {
+  factory $WorkerAnalyticsAccountCopyWith(WorkerAnalyticsAccount value, $Res Function(WorkerAnalyticsAccount) _then) = _$WorkerAnalyticsAccountCopyWithImpl;
+@useResult
+$Res call({
+@JsonKey(name: '__typename') String typename,@JsonKey(name: 'workersSubrequestsAdaptiveGroups') List<WorkerSubrequestsAdaptiveGroup> workersSubrequestsAdaptiveGroups,@JsonKey(name: 'workersInvocationsAdaptive') List<WorkerInvocationsAdaptive> workersInvocationsAdaptive, List<WorkerInvocationsAdaptive> previous
+});
+
+
+
+
+}
+/// @nodoc
+class _$WorkerAnalyticsAccountCopyWithImpl<$Res>
+    implements $WorkerAnalyticsAccountCopyWith<$Res> {
+  _$WorkerAnalyticsAccountCopyWithImpl(this._self, this._then);
+
+  final WorkerAnalyticsAccount _self;
+  final $Res Function(WorkerAnalyticsAccount) _then;
+
+/// Create a copy of WorkerAnalyticsAccount
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? typename = null,Object? workersSubrequestsAdaptiveGroups = null,Object? workersInvocationsAdaptive = null,Object? previous = null,}) {
+  return _then(_self.copyWith(
+typename: null == typename ? _self.typename : typename // ignore: cast_nullable_to_non_nullable
+as String,workersSubrequestsAdaptiveGroups: null == workersSubrequestsAdaptiveGroups ? _self.workersSubrequestsAdaptiveGroups : workersSubrequestsAdaptiveGroups // ignore: cast_nullable_to_non_nullable
+as List<WorkerSubrequestsAdaptiveGroup>,workersInvocationsAdaptive: null == workersInvocationsAdaptive ? _self.workersInvocationsAdaptive : workersInvocationsAdaptive // ignore: cast_nullable_to_non_nullable
+as List<WorkerInvocationsAdaptive>,previous: null == previous ? _self.previous : previous // ignore: cast_nullable_to_non_nullable
+as List<WorkerInvocationsAdaptive>,
+  ));
+}
+
+}
+
+
+/// Adds pattern-matching-related methods to [WorkerAnalyticsAccount].
+extension WorkerAnalyticsAccountPatterns on WorkerAnalyticsAccount {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _WorkerAnalyticsAccount value)?  $default,{required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _WorkerAnalyticsAccount() when $default != null:
+return $default(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _WorkerAnalyticsAccount value)  $default,){
+final _that = this;
+switch (_that) {
+case _WorkerAnalyticsAccount():
+return $default(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _WorkerAnalyticsAccount value)?  $default,){
+final _that = this;
+switch (_that) {
+case _WorkerAnalyticsAccount() when $default != null:
+return $default(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@JsonKey(name: '__typename')  String typename, @JsonKey(name: 'workersSubrequestsAdaptiveGroups')  List<WorkerSubrequestsAdaptiveGroup> workersSubrequestsAdaptiveGroups, @JsonKey(name: 'workersInvocationsAdaptive')  List<WorkerInvocationsAdaptive> workersInvocationsAdaptive,  List<WorkerInvocationsAdaptive> previous)?  $default,{required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _WorkerAnalyticsAccount() when $default != null:
+return $default(_that.typename,_that.workersSubrequestsAdaptiveGroups,_that.workersInvocationsAdaptive,_that.previous);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@JsonKey(name: '__typename')  String typename, @JsonKey(name: 'workersSubrequestsAdaptiveGroups')  List<WorkerSubrequestsAdaptiveGroup> workersSubrequestsAdaptiveGroups, @JsonKey(name: 'workersInvocationsAdaptive')  List<WorkerInvocationsAdaptive> workersInvocationsAdaptive,  List<WorkerInvocationsAdaptive> previous)  $default,) {final _that = this;
+switch (_that) {
+case _WorkerAnalyticsAccount():
+return $default(_that.typename,_that.workersSubrequestsAdaptiveGroups,_that.workersInvocationsAdaptive,_that.previous);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@JsonKey(name: '__typename')  String typename, @JsonKey(name: 'workersSubrequestsAdaptiveGroups')  List<WorkerSubrequestsAdaptiveGroup> workersSubrequestsAdaptiveGroups, @JsonKey(name: 'workersInvocationsAdaptive')  List<WorkerInvocationsAdaptive> workersInvocationsAdaptive,  List<WorkerInvocationsAdaptive> previous)?  $default,) {final _that = this;
+switch (_that) {
+case _WorkerAnalyticsAccount() when $default != null:
+return $default(_that.typename,_that.workersSubrequestsAdaptiveGroups,_that.workersInvocationsAdaptive,_that.previous);case _:
+  return null;
+
+}
+}
+
+}
+
+/// @nodoc
+@JsonSerializable()
+
+class _WorkerAnalyticsAccount implements WorkerAnalyticsAccount {
+  const _WorkerAnalyticsAccount({@JsonKey(name: '__typename') required this.typename, @JsonKey(name: 'workersSubrequestsAdaptiveGroups') required final  List<WorkerSubrequestsAdaptiveGroup> workersSubrequestsAdaptiveGroups, @JsonKey(name: 'workersInvocationsAdaptive') required final  List<WorkerInvocationsAdaptive> workersInvocationsAdaptive, required final  List<WorkerInvocationsAdaptive> previous}): _workersSubrequestsAdaptiveGroups = workersSubrequestsAdaptiveGroups,_workersInvocationsAdaptive = workersInvocationsAdaptive,_previous = previous;
+  factory _WorkerAnalyticsAccount.fromJson(Map<String, dynamic> json) => _$WorkerAnalyticsAccountFromJson(json);
+
+@override@JsonKey(name: '__typename') final  String typename;
+ final  List<WorkerSubrequestsAdaptiveGroup> _workersSubrequestsAdaptiveGroups;
+@override@JsonKey(name: 'workersSubrequestsAdaptiveGroups') List<WorkerSubrequestsAdaptiveGroup> get workersSubrequestsAdaptiveGroups {
+  if (_workersSubrequestsAdaptiveGroups is EqualUnmodifiableListView) return _workersSubrequestsAdaptiveGroups;
+  // ignore: implicit_dynamic_type
+  return EqualUnmodifiableListView(_workersSubrequestsAdaptiveGroups);
+}
+
+ final  List<WorkerInvocationsAdaptive> _workersInvocationsAdaptive;
+@override@JsonKey(name: 'workersInvocationsAdaptive') List<WorkerInvocationsAdaptive> get workersInvocationsAdaptive {
+  if (_workersInvocationsAdaptive is EqualUnmodifiableListView) return _workersInvocationsAdaptive;
+  // ignore: implicit_dynamic_type
+  return EqualUnmodifiableListView(_workersInvocationsAdaptive);
+}
+
+ final  List<WorkerInvocationsAdaptive> _previous;
+@override List<WorkerInvocationsAdaptive> get previous {
+  if (_previous is EqualUnmodifiableListView) return _previous;
+  // ignore: implicit_dynamic_type
+  return EqualUnmodifiableListView(_previous);
+}
+
+
+/// Create a copy of WorkerAnalyticsAccount
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$WorkerAnalyticsAccountCopyWith<_WorkerAnalyticsAccount> get copyWith => __$WorkerAnalyticsAccountCopyWithImpl<_WorkerAnalyticsAccount>(this, _$identity);
+
+@override
+Map<String, dynamic> toJson() {
+  return _$WorkerAnalyticsAccountToJson(this, );
+}
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _WorkerAnalyticsAccount&&(identical(other.typename, typename) || other.typename == typename)&&const DeepCollectionEquality().equals(other._workersSubrequestsAdaptiveGroups, _workersSubrequestsAdaptiveGroups)&&const DeepCollectionEquality().equals(other._workersInvocationsAdaptive, _workersInvocationsAdaptive)&&const DeepCollectionEquality().equals(other._previous, _previous));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,typename,const DeepCollectionEquality().hash(_workersSubrequestsAdaptiveGroups),const DeepCollectionEquality().hash(_workersInvocationsAdaptive),const DeepCollectionEquality().hash(_previous));
+
+@override
+String toString() {
+  return 'WorkerAnalyticsAccount(typename: $typename, workersSubrequestsAdaptiveGroups: $workersSubrequestsAdaptiveGroups, workersInvocationsAdaptive: $workersInvocationsAdaptive, previous: $previous)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class _$WorkerAnalyticsAccountCopyWith<$Res> implements $WorkerAnalyticsAccountCopyWith<$Res> {
+  factory _$WorkerAnalyticsAccountCopyWith(_WorkerAnalyticsAccount value, $Res Function(_WorkerAnalyticsAccount) _then) = __$WorkerAnalyticsAccountCopyWithImpl;
+@override @useResult
+$Res call({
+@JsonKey(name: '__typename') String typename,@JsonKey(name: 'workersSubrequestsAdaptiveGroups') List<WorkerSubrequestsAdaptiveGroup> workersSubrequestsAdaptiveGroups,@JsonKey(name: 'workersInvocationsAdaptive') List<WorkerInvocationsAdaptive> workersInvocationsAdaptive, List<WorkerInvocationsAdaptive> previous
+});
+
+
+
+
+}
+/// @nodoc
+class __$WorkerAnalyticsAccountCopyWithImpl<$Res>
+    implements _$WorkerAnalyticsAccountCopyWith<$Res> {
+  __$WorkerAnalyticsAccountCopyWithImpl(this._self, this._then);
+
+  final _WorkerAnalyticsAccount _self;
+  final $Res Function(_WorkerAnalyticsAccount) _then;
+
+/// Create a copy of WorkerAnalyticsAccount
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? typename = null,Object? workersSubrequestsAdaptiveGroups = null,Object? workersInvocationsAdaptive = null,Object? previous = null,}) {
+  return _then(_WorkerAnalyticsAccount(
+typename: null == typename ? _self.typename : typename // ignore: cast_nullable_to_non_nullable
+as String,workersSubrequestsAdaptiveGroups: null == workersSubrequestsAdaptiveGroups ? _self._workersSubrequestsAdaptiveGroups : workersSubrequestsAdaptiveGroups // ignore: cast_nullable_to_non_nullable
+as List<WorkerSubrequestsAdaptiveGroup>,workersInvocationsAdaptive: null == workersInvocationsAdaptive ? _self._workersInvocationsAdaptive : workersInvocationsAdaptive // ignore: cast_nullable_to_non_nullable
+as List<WorkerInvocationsAdaptive>,previous: null == previous ? _self._previous : previous // ignore: cast_nullable_to_non_nullable
+as List<WorkerInvocationsAdaptive>,
+  ));
+}
+
+
+}
+
+
+/// @nodoc
+mixin _$WorkerSubrequestsAdaptiveGroup {
+
+@JsonKey(name: '__typename') String get typename; WorkerSubrequestsAdaptiveGroupSum get sum; WorkerSubrequestsAdaptiveGroupDimensions get dimensions;
+/// Create a copy of WorkerSubrequestsAdaptiveGroup
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$WorkerSubrequestsAdaptiveGroupCopyWith<WorkerSubrequestsAdaptiveGroup> get copyWith => _$WorkerSubrequestsAdaptiveGroupCopyWithImpl<WorkerSubrequestsAdaptiveGroup>(this as WorkerSubrequestsAdaptiveGroup, _$identity);
+
+  /// Serializes this WorkerSubrequestsAdaptiveGroup to a JSON map.
+  Map<String, dynamic> toJson();
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is WorkerSubrequestsAdaptiveGroup&&(identical(other.typename, typename) || other.typename == typename)&&(identical(other.sum, sum) || other.sum == sum)&&(identical(other.dimensions, dimensions) || other.dimensions == dimensions));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,typename,sum,dimensions);
+
+@override
+String toString() {
+  return 'WorkerSubrequestsAdaptiveGroup(typename: $typename, sum: $sum, dimensions: $dimensions)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class $WorkerSubrequestsAdaptiveGroupCopyWith<$Res>  {
+  factory $WorkerSubrequestsAdaptiveGroupCopyWith(WorkerSubrequestsAdaptiveGroup value, $Res Function(WorkerSubrequestsAdaptiveGroup) _then) = _$WorkerSubrequestsAdaptiveGroupCopyWithImpl;
+@useResult
+$Res call({
+@JsonKey(name: '__typename') String typename, WorkerSubrequestsAdaptiveGroupSum sum, WorkerSubrequestsAdaptiveGroupDimensions dimensions
+});
+
+
+$WorkerSubrequestsAdaptiveGroupSumCopyWith<$Res> get sum;$WorkerSubrequestsAdaptiveGroupDimensionsCopyWith<$Res> get dimensions;
+
+}
+/// @nodoc
+class _$WorkerSubrequestsAdaptiveGroupCopyWithImpl<$Res>
+    implements $WorkerSubrequestsAdaptiveGroupCopyWith<$Res> {
+  _$WorkerSubrequestsAdaptiveGroupCopyWithImpl(this._self, this._then);
+
+  final WorkerSubrequestsAdaptiveGroup _self;
+  final $Res Function(WorkerSubrequestsAdaptiveGroup) _then;
+
+/// Create a copy of WorkerSubrequestsAdaptiveGroup
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? typename = null,Object? sum = null,Object? dimensions = null,}) {
+  return _then(_self.copyWith(
+typename: null == typename ? _self.typename : typename // ignore: cast_nullable_to_non_nullable
+as String,sum: null == sum ? _self.sum : sum // ignore: cast_nullable_to_non_nullable
+as WorkerSubrequestsAdaptiveGroupSum,dimensions: null == dimensions ? _self.dimensions : dimensions // ignore: cast_nullable_to_non_nullable
+as WorkerSubrequestsAdaptiveGroupDimensions,
+  ));
+}
+/// Create a copy of WorkerSubrequestsAdaptiveGroup
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$WorkerSubrequestsAdaptiveGroupSumCopyWith<$Res> get sum {
+  
+  return $WorkerSubrequestsAdaptiveGroupSumCopyWith<$Res>(_self.sum, (value) {
+    return _then(_self.copyWith(sum: value));
+  });
+}/// Create a copy of WorkerSubrequestsAdaptiveGroup
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$WorkerSubrequestsAdaptiveGroupDimensionsCopyWith<$Res> get dimensions {
+  
+  return $WorkerSubrequestsAdaptiveGroupDimensionsCopyWith<$Res>(_self.dimensions, (value) {
+    return _then(_self.copyWith(dimensions: value));
+  });
+}
+}
+
+
+/// Adds pattern-matching-related methods to [WorkerSubrequestsAdaptiveGroup].
+extension WorkerSubrequestsAdaptiveGroupPatterns on WorkerSubrequestsAdaptiveGroup {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _WorkerSubrequestsAdaptiveGroup value)?  $default,{required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _WorkerSubrequestsAdaptiveGroup() when $default != null:
+return $default(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _WorkerSubrequestsAdaptiveGroup value)  $default,){
+final _that = this;
+switch (_that) {
+case _WorkerSubrequestsAdaptiveGroup():
+return $default(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _WorkerSubrequestsAdaptiveGroup value)?  $default,){
+final _that = this;
+switch (_that) {
+case _WorkerSubrequestsAdaptiveGroup() when $default != null:
+return $default(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@JsonKey(name: '__typename')  String typename,  WorkerSubrequestsAdaptiveGroupSum sum,  WorkerSubrequestsAdaptiveGroupDimensions dimensions)?  $default,{required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _WorkerSubrequestsAdaptiveGroup() when $default != null:
+return $default(_that.typename,_that.sum,_that.dimensions);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@JsonKey(name: '__typename')  String typename,  WorkerSubrequestsAdaptiveGroupSum sum,  WorkerSubrequestsAdaptiveGroupDimensions dimensions)  $default,) {final _that = this;
+switch (_that) {
+case _WorkerSubrequestsAdaptiveGroup():
+return $default(_that.typename,_that.sum,_that.dimensions);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@JsonKey(name: '__typename')  String typename,  WorkerSubrequestsAdaptiveGroupSum sum,  WorkerSubrequestsAdaptiveGroupDimensions dimensions)?  $default,) {final _that = this;
+switch (_that) {
+case _WorkerSubrequestsAdaptiveGroup() when $default != null:
+return $default(_that.typename,_that.sum,_that.dimensions);case _:
+  return null;
+
+}
+}
+
+}
+
+/// @nodoc
+@JsonSerializable()
+
+class _WorkerSubrequestsAdaptiveGroup implements WorkerSubrequestsAdaptiveGroup {
+  const _WorkerSubrequestsAdaptiveGroup({@JsonKey(name: '__typename') required this.typename, required this.sum, required this.dimensions});
+  factory _WorkerSubrequestsAdaptiveGroup.fromJson(Map<String, dynamic> json) => _$WorkerSubrequestsAdaptiveGroupFromJson(json);
+
+@override@JsonKey(name: '__typename') final  String typename;
+@override final  WorkerSubrequestsAdaptiveGroupSum sum;
+@override final  WorkerSubrequestsAdaptiveGroupDimensions dimensions;
+
+/// Create a copy of WorkerSubrequestsAdaptiveGroup
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$WorkerSubrequestsAdaptiveGroupCopyWith<_WorkerSubrequestsAdaptiveGroup> get copyWith => __$WorkerSubrequestsAdaptiveGroupCopyWithImpl<_WorkerSubrequestsAdaptiveGroup>(this, _$identity);
+
+@override
+Map<String, dynamic> toJson() {
+  return _$WorkerSubrequestsAdaptiveGroupToJson(this, );
+}
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _WorkerSubrequestsAdaptiveGroup&&(identical(other.typename, typename) || other.typename == typename)&&(identical(other.sum, sum) || other.sum == sum)&&(identical(other.dimensions, dimensions) || other.dimensions == dimensions));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,typename,sum,dimensions);
+
+@override
+String toString() {
+  return 'WorkerSubrequestsAdaptiveGroup(typename: $typename, sum: $sum, dimensions: $dimensions)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class _$WorkerSubrequestsAdaptiveGroupCopyWith<$Res> implements $WorkerSubrequestsAdaptiveGroupCopyWith<$Res> {
+  factory _$WorkerSubrequestsAdaptiveGroupCopyWith(_WorkerSubrequestsAdaptiveGroup value, $Res Function(_WorkerSubrequestsAdaptiveGroup) _then) = __$WorkerSubrequestsAdaptiveGroupCopyWithImpl;
+@override @useResult
+$Res call({
+@JsonKey(name: '__typename') String typename, WorkerSubrequestsAdaptiveGroupSum sum, WorkerSubrequestsAdaptiveGroupDimensions dimensions
+});
+
+
+@override $WorkerSubrequestsAdaptiveGroupSumCopyWith<$Res> get sum;@override $WorkerSubrequestsAdaptiveGroupDimensionsCopyWith<$Res> get dimensions;
+
+}
+/// @nodoc
+class __$WorkerSubrequestsAdaptiveGroupCopyWithImpl<$Res>
+    implements _$WorkerSubrequestsAdaptiveGroupCopyWith<$Res> {
+  __$WorkerSubrequestsAdaptiveGroupCopyWithImpl(this._self, this._then);
+
+  final _WorkerSubrequestsAdaptiveGroup _self;
+  final $Res Function(_WorkerSubrequestsAdaptiveGroup) _then;
+
+/// Create a copy of WorkerSubrequestsAdaptiveGroup
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? typename = null,Object? sum = null,Object? dimensions = null,}) {
+  return _then(_WorkerSubrequestsAdaptiveGroup(
+typename: null == typename ? _self.typename : typename // ignore: cast_nullable_to_non_nullable
+as String,sum: null == sum ? _self.sum : sum // ignore: cast_nullable_to_non_nullable
+as WorkerSubrequestsAdaptiveGroupSum,dimensions: null == dimensions ? _self.dimensions : dimensions // ignore: cast_nullable_to_non_nullable
+as WorkerSubrequestsAdaptiveGroupDimensions,
+  ));
+}
+
+/// Create a copy of WorkerSubrequestsAdaptiveGroup
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$WorkerSubrequestsAdaptiveGroupSumCopyWith<$Res> get sum {
+  
+  return $WorkerSubrequestsAdaptiveGroupSumCopyWith<$Res>(_self.sum, (value) {
+    return _then(_self.copyWith(sum: value));
+  });
+}/// Create a copy of WorkerSubrequestsAdaptiveGroup
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$WorkerSubrequestsAdaptiveGroupDimensionsCopyWith<$Res> get dimensions {
+  
+  return $WorkerSubrequestsAdaptiveGroupDimensionsCopyWith<$Res>(_self.dimensions, (value) {
+    return _then(_self.copyWith(dimensions: value));
+  });
+}
+}
+
+
+/// @nodoc
+mixin _$WorkerSubrequestsAdaptiveGroupSum {
+
+@JsonKey(name: '__typename') String get typename; int get subrequests;
+/// Create a copy of WorkerSubrequestsAdaptiveGroupSum
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$WorkerSubrequestsAdaptiveGroupSumCopyWith<WorkerSubrequestsAdaptiveGroupSum> get copyWith => _$WorkerSubrequestsAdaptiveGroupSumCopyWithImpl<WorkerSubrequestsAdaptiveGroupSum>(this as WorkerSubrequestsAdaptiveGroupSum, _$identity);
+
+  /// Serializes this WorkerSubrequestsAdaptiveGroupSum to a JSON map.
+  Map<String, dynamic> toJson();
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is WorkerSubrequestsAdaptiveGroupSum&&(identical(other.typename, typename) || other.typename == typename)&&(identical(other.subrequests, subrequests) || other.subrequests == subrequests));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,typename,subrequests);
+
+@override
+String toString() {
+  return 'WorkerSubrequestsAdaptiveGroupSum(typename: $typename, subrequests: $subrequests)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class $WorkerSubrequestsAdaptiveGroupSumCopyWith<$Res>  {
+  factory $WorkerSubrequestsAdaptiveGroupSumCopyWith(WorkerSubrequestsAdaptiveGroupSum value, $Res Function(WorkerSubrequestsAdaptiveGroupSum) _then) = _$WorkerSubrequestsAdaptiveGroupSumCopyWithImpl;
+@useResult
+$Res call({
+@JsonKey(name: '__typename') String typename, int subrequests
+});
+
+
+
+
+}
+/// @nodoc
+class _$WorkerSubrequestsAdaptiveGroupSumCopyWithImpl<$Res>
+    implements $WorkerSubrequestsAdaptiveGroupSumCopyWith<$Res> {
+  _$WorkerSubrequestsAdaptiveGroupSumCopyWithImpl(this._self, this._then);
+
+  final WorkerSubrequestsAdaptiveGroupSum _self;
+  final $Res Function(WorkerSubrequestsAdaptiveGroupSum) _then;
+
+/// Create a copy of WorkerSubrequestsAdaptiveGroupSum
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? typename = null,Object? subrequests = null,}) {
+  return _then(_self.copyWith(
+typename: null == typename ? _self.typename : typename // ignore: cast_nullable_to_non_nullable
+as String,subrequests: null == subrequests ? _self.subrequests : subrequests // ignore: cast_nullable_to_non_nullable
+as int,
+  ));
+}
+
+}
+
+
+/// Adds pattern-matching-related methods to [WorkerSubrequestsAdaptiveGroupSum].
+extension WorkerSubrequestsAdaptiveGroupSumPatterns on WorkerSubrequestsAdaptiveGroupSum {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _WorkerSubrequestsAdaptiveGroupSum value)?  $default,{required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _WorkerSubrequestsAdaptiveGroupSum() when $default != null:
+return $default(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _WorkerSubrequestsAdaptiveGroupSum value)  $default,){
+final _that = this;
+switch (_that) {
+case _WorkerSubrequestsAdaptiveGroupSum():
+return $default(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _WorkerSubrequestsAdaptiveGroupSum value)?  $default,){
+final _that = this;
+switch (_that) {
+case _WorkerSubrequestsAdaptiveGroupSum() when $default != null:
+return $default(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@JsonKey(name: '__typename')  String typename,  int subrequests)?  $default,{required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _WorkerSubrequestsAdaptiveGroupSum() when $default != null:
+return $default(_that.typename,_that.subrequests);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@JsonKey(name: '__typename')  String typename,  int subrequests)  $default,) {final _that = this;
+switch (_that) {
+case _WorkerSubrequestsAdaptiveGroupSum():
+return $default(_that.typename,_that.subrequests);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@JsonKey(name: '__typename')  String typename,  int subrequests)?  $default,) {final _that = this;
+switch (_that) {
+case _WorkerSubrequestsAdaptiveGroupSum() when $default != null:
+return $default(_that.typename,_that.subrequests);case _:
+  return null;
+
+}
+}
+
+}
+
+/// @nodoc
+@JsonSerializable()
+
+class _WorkerSubrequestsAdaptiveGroupSum implements WorkerSubrequestsAdaptiveGroupSum {
+  const _WorkerSubrequestsAdaptiveGroupSum({@JsonKey(name: '__typename') required this.typename, required this.subrequests});
+  factory _WorkerSubrequestsAdaptiveGroupSum.fromJson(Map<String, dynamic> json) => _$WorkerSubrequestsAdaptiveGroupSumFromJson(json);
+
+@override@JsonKey(name: '__typename') final  String typename;
+@override final  int subrequests;
+
+/// Create a copy of WorkerSubrequestsAdaptiveGroupSum
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$WorkerSubrequestsAdaptiveGroupSumCopyWith<_WorkerSubrequestsAdaptiveGroupSum> get copyWith => __$WorkerSubrequestsAdaptiveGroupSumCopyWithImpl<_WorkerSubrequestsAdaptiveGroupSum>(this, _$identity);
+
+@override
+Map<String, dynamic> toJson() {
+  return _$WorkerSubrequestsAdaptiveGroupSumToJson(this, );
+}
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _WorkerSubrequestsAdaptiveGroupSum&&(identical(other.typename, typename) || other.typename == typename)&&(identical(other.subrequests, subrequests) || other.subrequests == subrequests));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,typename,subrequests);
+
+@override
+String toString() {
+  return 'WorkerSubrequestsAdaptiveGroupSum(typename: $typename, subrequests: $subrequests)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class _$WorkerSubrequestsAdaptiveGroupSumCopyWith<$Res> implements $WorkerSubrequestsAdaptiveGroupSumCopyWith<$Res> {
+  factory _$WorkerSubrequestsAdaptiveGroupSumCopyWith(_WorkerSubrequestsAdaptiveGroupSum value, $Res Function(_WorkerSubrequestsAdaptiveGroupSum) _then) = __$WorkerSubrequestsAdaptiveGroupSumCopyWithImpl;
+@override @useResult
+$Res call({
+@JsonKey(name: '__typename') String typename, int subrequests
+});
+
+
+
+
+}
+/// @nodoc
+class __$WorkerSubrequestsAdaptiveGroupSumCopyWithImpl<$Res>
+    implements _$WorkerSubrequestsAdaptiveGroupSumCopyWith<$Res> {
+  __$WorkerSubrequestsAdaptiveGroupSumCopyWithImpl(this._self, this._then);
+
+  final _WorkerSubrequestsAdaptiveGroupSum _self;
+  final $Res Function(_WorkerSubrequestsAdaptiveGroupSum) _then;
+
+/// Create a copy of WorkerSubrequestsAdaptiveGroupSum
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? typename = null,Object? subrequests = null,}) {
+  return _then(_WorkerSubrequestsAdaptiveGroupSum(
+typename: null == typename ? _self.typename : typename // ignore: cast_nullable_to_non_nullable
+as String,subrequests: null == subrequests ? _self.subrequests : subrequests // ignore: cast_nullable_to_non_nullable
+as int,
+  ));
+}
+
+
+}
+
+
+/// @nodoc
+mixin _$WorkerSubrequestsAdaptiveGroupDimensions {
+
+@JsonKey(name: '__typename') String get typename; String? get cacheStatus;@LocalDateTimeConverter() DateTime? get datetimeFifteenMinutes;
+/// Create a copy of WorkerSubrequestsAdaptiveGroupDimensions
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$WorkerSubrequestsAdaptiveGroupDimensionsCopyWith<WorkerSubrequestsAdaptiveGroupDimensions> get copyWith => _$WorkerSubrequestsAdaptiveGroupDimensionsCopyWithImpl<WorkerSubrequestsAdaptiveGroupDimensions>(this as WorkerSubrequestsAdaptiveGroupDimensions, _$identity);
+
+  /// Serializes this WorkerSubrequestsAdaptiveGroupDimensions to a JSON map.
+  Map<String, dynamic> toJson();
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is WorkerSubrequestsAdaptiveGroupDimensions&&(identical(other.typename, typename) || other.typename == typename)&&(identical(other.cacheStatus, cacheStatus) || other.cacheStatus == cacheStatus)&&(identical(other.datetimeFifteenMinutes, datetimeFifteenMinutes) || other.datetimeFifteenMinutes == datetimeFifteenMinutes));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,typename,cacheStatus,datetimeFifteenMinutes);
+
+@override
+String toString() {
+  return 'WorkerSubrequestsAdaptiveGroupDimensions(typename: $typename, cacheStatus: $cacheStatus, datetimeFifteenMinutes: $datetimeFifteenMinutes)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class $WorkerSubrequestsAdaptiveGroupDimensionsCopyWith<$Res>  {
+  factory $WorkerSubrequestsAdaptiveGroupDimensionsCopyWith(WorkerSubrequestsAdaptiveGroupDimensions value, $Res Function(WorkerSubrequestsAdaptiveGroupDimensions) _then) = _$WorkerSubrequestsAdaptiveGroupDimensionsCopyWithImpl;
+@useResult
+$Res call({
+@JsonKey(name: '__typename') String typename, String? cacheStatus,@LocalDateTimeConverter() DateTime? datetimeFifteenMinutes
+});
+
+
+
+
+}
+/// @nodoc
+class _$WorkerSubrequestsAdaptiveGroupDimensionsCopyWithImpl<$Res>
+    implements $WorkerSubrequestsAdaptiveGroupDimensionsCopyWith<$Res> {
+  _$WorkerSubrequestsAdaptiveGroupDimensionsCopyWithImpl(this._self, this._then);
+
+  final WorkerSubrequestsAdaptiveGroupDimensions _self;
+  final $Res Function(WorkerSubrequestsAdaptiveGroupDimensions) _then;
+
+/// Create a copy of WorkerSubrequestsAdaptiveGroupDimensions
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? typename = null,Object? cacheStatus = freezed,Object? datetimeFifteenMinutes = freezed,}) {
+  return _then(_self.copyWith(
+typename: null == typename ? _self.typename : typename // ignore: cast_nullable_to_non_nullable
+as String,cacheStatus: freezed == cacheStatus ? _self.cacheStatus : cacheStatus // ignore: cast_nullable_to_non_nullable
+as String?,datetimeFifteenMinutes: freezed == datetimeFifteenMinutes ? _self.datetimeFifteenMinutes : datetimeFifteenMinutes // ignore: cast_nullable_to_non_nullable
+as DateTime?,
+  ));
+}
+
+}
+
+
+/// Adds pattern-matching-related methods to [WorkerSubrequestsAdaptiveGroupDimensions].
+extension WorkerSubrequestsAdaptiveGroupDimensionsPatterns on WorkerSubrequestsAdaptiveGroupDimensions {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _WorkerSubrequestsAdaptiveGroupDimensions value)?  $default,{required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _WorkerSubrequestsAdaptiveGroupDimensions() when $default != null:
+return $default(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _WorkerSubrequestsAdaptiveGroupDimensions value)  $default,){
+final _that = this;
+switch (_that) {
+case _WorkerSubrequestsAdaptiveGroupDimensions():
+return $default(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _WorkerSubrequestsAdaptiveGroupDimensions value)?  $default,){
+final _that = this;
+switch (_that) {
+case _WorkerSubrequestsAdaptiveGroupDimensions() when $default != null:
+return $default(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@JsonKey(name: '__typename')  String typename,  String? cacheStatus, @LocalDateTimeConverter()  DateTime? datetimeFifteenMinutes)?  $default,{required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _WorkerSubrequestsAdaptiveGroupDimensions() when $default != null:
+return $default(_that.typename,_that.cacheStatus,_that.datetimeFifteenMinutes);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@JsonKey(name: '__typename')  String typename,  String? cacheStatus, @LocalDateTimeConverter()  DateTime? datetimeFifteenMinutes)  $default,) {final _that = this;
+switch (_that) {
+case _WorkerSubrequestsAdaptiveGroupDimensions():
+return $default(_that.typename,_that.cacheStatus,_that.datetimeFifteenMinutes);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@JsonKey(name: '__typename')  String typename,  String? cacheStatus, @LocalDateTimeConverter()  DateTime? datetimeFifteenMinutes)?  $default,) {final _that = this;
+switch (_that) {
+case _WorkerSubrequestsAdaptiveGroupDimensions() when $default != null:
+return $default(_that.typename,_that.cacheStatus,_that.datetimeFifteenMinutes);case _:
+  return null;
+
+}
+}
+
+}
+
+/// @nodoc
+@JsonSerializable()
+
+class _WorkerSubrequestsAdaptiveGroupDimensions implements WorkerSubrequestsAdaptiveGroupDimensions {
+  const _WorkerSubrequestsAdaptiveGroupDimensions({@JsonKey(name: '__typename') required this.typename, required this.cacheStatus, @LocalDateTimeConverter() required this.datetimeFifteenMinutes});
+  factory _WorkerSubrequestsAdaptiveGroupDimensions.fromJson(Map<String, dynamic> json) => _$WorkerSubrequestsAdaptiveGroupDimensionsFromJson(json);
+
+@override@JsonKey(name: '__typename') final  String typename;
+@override final  String? cacheStatus;
+@override@LocalDateTimeConverter() final  DateTime? datetimeFifteenMinutes;
+
+/// Create a copy of WorkerSubrequestsAdaptiveGroupDimensions
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$WorkerSubrequestsAdaptiveGroupDimensionsCopyWith<_WorkerSubrequestsAdaptiveGroupDimensions> get copyWith => __$WorkerSubrequestsAdaptiveGroupDimensionsCopyWithImpl<_WorkerSubrequestsAdaptiveGroupDimensions>(this, _$identity);
+
+@override
+Map<String, dynamic> toJson() {
+  return _$WorkerSubrequestsAdaptiveGroupDimensionsToJson(this, );
+}
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _WorkerSubrequestsAdaptiveGroupDimensions&&(identical(other.typename, typename) || other.typename == typename)&&(identical(other.cacheStatus, cacheStatus) || other.cacheStatus == cacheStatus)&&(identical(other.datetimeFifteenMinutes, datetimeFifteenMinutes) || other.datetimeFifteenMinutes == datetimeFifteenMinutes));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,typename,cacheStatus,datetimeFifteenMinutes);
+
+@override
+String toString() {
+  return 'WorkerSubrequestsAdaptiveGroupDimensions(typename: $typename, cacheStatus: $cacheStatus, datetimeFifteenMinutes: $datetimeFifteenMinutes)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class _$WorkerSubrequestsAdaptiveGroupDimensionsCopyWith<$Res> implements $WorkerSubrequestsAdaptiveGroupDimensionsCopyWith<$Res> {
+  factory _$WorkerSubrequestsAdaptiveGroupDimensionsCopyWith(_WorkerSubrequestsAdaptiveGroupDimensions value, $Res Function(_WorkerSubrequestsAdaptiveGroupDimensions) _then) = __$WorkerSubrequestsAdaptiveGroupDimensionsCopyWithImpl;
+@override @useResult
+$Res call({
+@JsonKey(name: '__typename') String typename, String? cacheStatus,@LocalDateTimeConverter() DateTime? datetimeFifteenMinutes
+});
+
+
+
+
+}
+/// @nodoc
+class __$WorkerSubrequestsAdaptiveGroupDimensionsCopyWithImpl<$Res>
+    implements _$WorkerSubrequestsAdaptiveGroupDimensionsCopyWith<$Res> {
+  __$WorkerSubrequestsAdaptiveGroupDimensionsCopyWithImpl(this._self, this._then);
+
+  final _WorkerSubrequestsAdaptiveGroupDimensions _self;
+  final $Res Function(_WorkerSubrequestsAdaptiveGroupDimensions) _then;
+
+/// Create a copy of WorkerSubrequestsAdaptiveGroupDimensions
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? typename = null,Object? cacheStatus = freezed,Object? datetimeFifteenMinutes = freezed,}) {
+  return _then(_WorkerSubrequestsAdaptiveGroupDimensions(
+typename: null == typename ? _self.typename : typename // ignore: cast_nullable_to_non_nullable
+as String,cacheStatus: freezed == cacheStatus ? _self.cacheStatus : cacheStatus // ignore: cast_nullable_to_non_nullable
+as String?,datetimeFifteenMinutes: freezed == datetimeFifteenMinutes ? _self.datetimeFifteenMinutes : datetimeFifteenMinutes // ignore: cast_nullable_to_non_nullable
+as DateTime?,
+  ));
+}
+
+
+}
+
+
+/// @nodoc
+mixin _$WorkerInvocationsAdaptive {
+
+@JsonKey(name: '__typename') String get typename; WorkerInvocationsAdaptiveSum get sum; WorkerInvocationsAdaptiveQuantiles get quantiles; WorkerInvocationsAdaptiveDimensions? get dimensions;
+/// Create a copy of WorkerInvocationsAdaptive
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$WorkerInvocationsAdaptiveCopyWith<WorkerInvocationsAdaptive> get copyWith => _$WorkerInvocationsAdaptiveCopyWithImpl<WorkerInvocationsAdaptive>(this as WorkerInvocationsAdaptive, _$identity);
+
+  /// Serializes this WorkerInvocationsAdaptive to a JSON map.
+  Map<String, dynamic> toJson();
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is WorkerInvocationsAdaptive&&(identical(other.typename, typename) || other.typename == typename)&&(identical(other.sum, sum) || other.sum == sum)&&(identical(other.quantiles, quantiles) || other.quantiles == quantiles)&&(identical(other.dimensions, dimensions) || other.dimensions == dimensions));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,typename,sum,quantiles,dimensions);
+
+@override
+String toString() {
+  return 'WorkerInvocationsAdaptive(typename: $typename, sum: $sum, quantiles: $quantiles, dimensions: $dimensions)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class $WorkerInvocationsAdaptiveCopyWith<$Res>  {
+  factory $WorkerInvocationsAdaptiveCopyWith(WorkerInvocationsAdaptive value, $Res Function(WorkerInvocationsAdaptive) _then) = _$WorkerInvocationsAdaptiveCopyWithImpl;
+@useResult
+$Res call({
+@JsonKey(name: '__typename') String typename, WorkerInvocationsAdaptiveSum sum, WorkerInvocationsAdaptiveQuantiles quantiles, WorkerInvocationsAdaptiveDimensions? dimensions
+});
+
+
+$WorkerInvocationsAdaptiveSumCopyWith<$Res> get sum;$WorkerInvocationsAdaptiveQuantilesCopyWith<$Res> get quantiles;$WorkerInvocationsAdaptiveDimensionsCopyWith<$Res>? get dimensions;
+
+}
+/// @nodoc
+class _$WorkerInvocationsAdaptiveCopyWithImpl<$Res>
+    implements $WorkerInvocationsAdaptiveCopyWith<$Res> {
+  _$WorkerInvocationsAdaptiveCopyWithImpl(this._self, this._then);
+
+  final WorkerInvocationsAdaptive _self;
+  final $Res Function(WorkerInvocationsAdaptive) _then;
+
+/// Create a copy of WorkerInvocationsAdaptive
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? typename = null,Object? sum = null,Object? quantiles = null,Object? dimensions = freezed,}) {
+  return _then(_self.copyWith(
+typename: null == typename ? _self.typename : typename // ignore: cast_nullable_to_non_nullable
+as String,sum: null == sum ? _self.sum : sum // ignore: cast_nullable_to_non_nullable
+as WorkerInvocationsAdaptiveSum,quantiles: null == quantiles ? _self.quantiles : quantiles // ignore: cast_nullable_to_non_nullable
+as WorkerInvocationsAdaptiveQuantiles,dimensions: freezed == dimensions ? _self.dimensions : dimensions // ignore: cast_nullable_to_non_nullable
+as WorkerInvocationsAdaptiveDimensions?,
+  ));
+}
+/// Create a copy of WorkerInvocationsAdaptive
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$WorkerInvocationsAdaptiveSumCopyWith<$Res> get sum {
+  
+  return $WorkerInvocationsAdaptiveSumCopyWith<$Res>(_self.sum, (value) {
+    return _then(_self.copyWith(sum: value));
+  });
+}/// Create a copy of WorkerInvocationsAdaptive
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$WorkerInvocationsAdaptiveQuantilesCopyWith<$Res> get quantiles {
+  
+  return $WorkerInvocationsAdaptiveQuantilesCopyWith<$Res>(_self.quantiles, (value) {
+    return _then(_self.copyWith(quantiles: value));
+  });
+}/// Create a copy of WorkerInvocationsAdaptive
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$WorkerInvocationsAdaptiveDimensionsCopyWith<$Res>? get dimensions {
+    if (_self.dimensions == null) {
+    return null;
+  }
+
+  return $WorkerInvocationsAdaptiveDimensionsCopyWith<$Res>(_self.dimensions!, (value) {
+    return _then(_self.copyWith(dimensions: value));
+  });
+}
+}
+
+
+/// Adds pattern-matching-related methods to [WorkerInvocationsAdaptive].
+extension WorkerInvocationsAdaptivePatterns on WorkerInvocationsAdaptive {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _WorkerInvocationsAdaptive value)?  $default,{required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _WorkerInvocationsAdaptive() when $default != null:
+return $default(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _WorkerInvocationsAdaptive value)  $default,){
+final _that = this;
+switch (_that) {
+case _WorkerInvocationsAdaptive():
+return $default(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _WorkerInvocationsAdaptive value)?  $default,){
+final _that = this;
+switch (_that) {
+case _WorkerInvocationsAdaptive() when $default != null:
+return $default(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@JsonKey(name: '__typename')  String typename,  WorkerInvocationsAdaptiveSum sum,  WorkerInvocationsAdaptiveQuantiles quantiles,  WorkerInvocationsAdaptiveDimensions? dimensions)?  $default,{required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _WorkerInvocationsAdaptive() when $default != null:
+return $default(_that.typename,_that.sum,_that.quantiles,_that.dimensions);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@JsonKey(name: '__typename')  String typename,  WorkerInvocationsAdaptiveSum sum,  WorkerInvocationsAdaptiveQuantiles quantiles,  WorkerInvocationsAdaptiveDimensions? dimensions)  $default,) {final _that = this;
+switch (_that) {
+case _WorkerInvocationsAdaptive():
+return $default(_that.typename,_that.sum,_that.quantiles,_that.dimensions);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@JsonKey(name: '__typename')  String typename,  WorkerInvocationsAdaptiveSum sum,  WorkerInvocationsAdaptiveQuantiles quantiles,  WorkerInvocationsAdaptiveDimensions? dimensions)?  $default,) {final _that = this;
+switch (_that) {
+case _WorkerInvocationsAdaptive() when $default != null:
+return $default(_that.typename,_that.sum,_that.quantiles,_that.dimensions);case _:
+  return null;
+
+}
+}
+
+}
+
+/// @nodoc
+@JsonSerializable()
+
+class _WorkerInvocationsAdaptive implements WorkerInvocationsAdaptive {
+  const _WorkerInvocationsAdaptive({@JsonKey(name: '__typename') required this.typename, required this.sum, required this.quantiles, this.dimensions});
+  factory _WorkerInvocationsAdaptive.fromJson(Map<String, dynamic> json) => _$WorkerInvocationsAdaptiveFromJson(json);
+
+@override@JsonKey(name: '__typename') final  String typename;
+@override final  WorkerInvocationsAdaptiveSum sum;
+@override final  WorkerInvocationsAdaptiveQuantiles quantiles;
+@override final  WorkerInvocationsAdaptiveDimensions? dimensions;
+
+/// Create a copy of WorkerInvocationsAdaptive
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$WorkerInvocationsAdaptiveCopyWith<_WorkerInvocationsAdaptive> get copyWith => __$WorkerInvocationsAdaptiveCopyWithImpl<_WorkerInvocationsAdaptive>(this, _$identity);
+
+@override
+Map<String, dynamic> toJson() {
+  return _$WorkerInvocationsAdaptiveToJson(this, );
+}
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _WorkerInvocationsAdaptive&&(identical(other.typename, typename) || other.typename == typename)&&(identical(other.sum, sum) || other.sum == sum)&&(identical(other.quantiles, quantiles) || other.quantiles == quantiles)&&(identical(other.dimensions, dimensions) || other.dimensions == dimensions));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,typename,sum,quantiles,dimensions);
+
+@override
+String toString() {
+  return 'WorkerInvocationsAdaptive(typename: $typename, sum: $sum, quantiles: $quantiles, dimensions: $dimensions)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class _$WorkerInvocationsAdaptiveCopyWith<$Res> implements $WorkerInvocationsAdaptiveCopyWith<$Res> {
+  factory _$WorkerInvocationsAdaptiveCopyWith(_WorkerInvocationsAdaptive value, $Res Function(_WorkerInvocationsAdaptive) _then) = __$WorkerInvocationsAdaptiveCopyWithImpl;
+@override @useResult
+$Res call({
+@JsonKey(name: '__typename') String typename, WorkerInvocationsAdaptiveSum sum, WorkerInvocationsAdaptiveQuantiles quantiles, WorkerInvocationsAdaptiveDimensions? dimensions
+});
+
+
+@override $WorkerInvocationsAdaptiveSumCopyWith<$Res> get sum;@override $WorkerInvocationsAdaptiveQuantilesCopyWith<$Res> get quantiles;@override $WorkerInvocationsAdaptiveDimensionsCopyWith<$Res>? get dimensions;
+
+}
+/// @nodoc
+class __$WorkerInvocationsAdaptiveCopyWithImpl<$Res>
+    implements _$WorkerInvocationsAdaptiveCopyWith<$Res> {
+  __$WorkerInvocationsAdaptiveCopyWithImpl(this._self, this._then);
+
+  final _WorkerInvocationsAdaptive _self;
+  final $Res Function(_WorkerInvocationsAdaptive) _then;
+
+/// Create a copy of WorkerInvocationsAdaptive
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? typename = null,Object? sum = null,Object? quantiles = null,Object? dimensions = freezed,}) {
+  return _then(_WorkerInvocationsAdaptive(
+typename: null == typename ? _self.typename : typename // ignore: cast_nullable_to_non_nullable
+as String,sum: null == sum ? _self.sum : sum // ignore: cast_nullable_to_non_nullable
+as WorkerInvocationsAdaptiveSum,quantiles: null == quantiles ? _self.quantiles : quantiles // ignore: cast_nullable_to_non_nullable
+as WorkerInvocationsAdaptiveQuantiles,dimensions: freezed == dimensions ? _self.dimensions : dimensions // ignore: cast_nullable_to_non_nullable
+as WorkerInvocationsAdaptiveDimensions?,
+  ));
+}
+
+/// Create a copy of WorkerInvocationsAdaptive
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$WorkerInvocationsAdaptiveSumCopyWith<$Res> get sum {
+  
+  return $WorkerInvocationsAdaptiveSumCopyWith<$Res>(_self.sum, (value) {
+    return _then(_self.copyWith(sum: value));
+  });
+}/// Create a copy of WorkerInvocationsAdaptive
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$WorkerInvocationsAdaptiveQuantilesCopyWith<$Res> get quantiles {
+  
+  return $WorkerInvocationsAdaptiveQuantilesCopyWith<$Res>(_self.quantiles, (value) {
+    return _then(_self.copyWith(quantiles: value));
+  });
+}/// Create a copy of WorkerInvocationsAdaptive
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$WorkerInvocationsAdaptiveDimensionsCopyWith<$Res>? get dimensions {
+    if (_self.dimensions == null) {
+    return null;
+  }
+
+  return $WorkerInvocationsAdaptiveDimensionsCopyWith<$Res>(_self.dimensions!, (value) {
+    return _then(_self.copyWith(dimensions: value));
+  });
+}
+}
+
+
+/// @nodoc
+mixin _$WorkerInvocationsAdaptiveSum {
+
+@JsonKey(name: '__typename') String get typename; int get subrequests; int get requests; int get errors; double get duration;
+/// Create a copy of WorkerInvocationsAdaptiveSum
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$WorkerInvocationsAdaptiveSumCopyWith<WorkerInvocationsAdaptiveSum> get copyWith => _$WorkerInvocationsAdaptiveSumCopyWithImpl<WorkerInvocationsAdaptiveSum>(this as WorkerInvocationsAdaptiveSum, _$identity);
+
+  /// Serializes this WorkerInvocationsAdaptiveSum to a JSON map.
+  Map<String, dynamic> toJson();
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is WorkerInvocationsAdaptiveSum&&(identical(other.typename, typename) || other.typename == typename)&&(identical(other.subrequests, subrequests) || other.subrequests == subrequests)&&(identical(other.requests, requests) || other.requests == requests)&&(identical(other.errors, errors) || other.errors == errors)&&(identical(other.duration, duration) || other.duration == duration));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,typename,subrequests,requests,errors,duration);
+
+@override
+String toString() {
+  return 'WorkerInvocationsAdaptiveSum(typename: $typename, subrequests: $subrequests, requests: $requests, errors: $errors, duration: $duration)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class $WorkerInvocationsAdaptiveSumCopyWith<$Res>  {
+  factory $WorkerInvocationsAdaptiveSumCopyWith(WorkerInvocationsAdaptiveSum value, $Res Function(WorkerInvocationsAdaptiveSum) _then) = _$WorkerInvocationsAdaptiveSumCopyWithImpl;
+@useResult
+$Res call({
+@JsonKey(name: '__typename') String typename, int subrequests, int requests, int errors, double duration
+});
+
+
+
+
+}
+/// @nodoc
+class _$WorkerInvocationsAdaptiveSumCopyWithImpl<$Res>
+    implements $WorkerInvocationsAdaptiveSumCopyWith<$Res> {
+  _$WorkerInvocationsAdaptiveSumCopyWithImpl(this._self, this._then);
+
+  final WorkerInvocationsAdaptiveSum _self;
+  final $Res Function(WorkerInvocationsAdaptiveSum) _then;
+
+/// Create a copy of WorkerInvocationsAdaptiveSum
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? typename = null,Object? subrequests = null,Object? requests = null,Object? errors = null,Object? duration = null,}) {
+  return _then(_self.copyWith(
+typename: null == typename ? _self.typename : typename // ignore: cast_nullable_to_non_nullable
+as String,subrequests: null == subrequests ? _self.subrequests : subrequests // ignore: cast_nullable_to_non_nullable
+as int,requests: null == requests ? _self.requests : requests // ignore: cast_nullable_to_non_nullable
+as int,errors: null == errors ? _self.errors : errors // ignore: cast_nullable_to_non_nullable
+as int,duration: null == duration ? _self.duration : duration // ignore: cast_nullable_to_non_nullable
+as double,
+  ));
+}
+
+}
+
+
+/// Adds pattern-matching-related methods to [WorkerInvocationsAdaptiveSum].
+extension WorkerInvocationsAdaptiveSumPatterns on WorkerInvocationsAdaptiveSum {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _WorkerInvocationsAdaptiveSum value)?  $default,{required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _WorkerInvocationsAdaptiveSum() when $default != null:
+return $default(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _WorkerInvocationsAdaptiveSum value)  $default,){
+final _that = this;
+switch (_that) {
+case _WorkerInvocationsAdaptiveSum():
+return $default(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _WorkerInvocationsAdaptiveSum value)?  $default,){
+final _that = this;
+switch (_that) {
+case _WorkerInvocationsAdaptiveSum() when $default != null:
+return $default(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@JsonKey(name: '__typename')  String typename,  int subrequests,  int requests,  int errors,  double duration)?  $default,{required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _WorkerInvocationsAdaptiveSum() when $default != null:
+return $default(_that.typename,_that.subrequests,_that.requests,_that.errors,_that.duration);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@JsonKey(name: '__typename')  String typename,  int subrequests,  int requests,  int errors,  double duration)  $default,) {final _that = this;
+switch (_that) {
+case _WorkerInvocationsAdaptiveSum():
+return $default(_that.typename,_that.subrequests,_that.requests,_that.errors,_that.duration);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@JsonKey(name: '__typename')  String typename,  int subrequests,  int requests,  int errors,  double duration)?  $default,) {final _that = this;
+switch (_that) {
+case _WorkerInvocationsAdaptiveSum() when $default != null:
+return $default(_that.typename,_that.subrequests,_that.requests,_that.errors,_that.duration);case _:
+  return null;
+
+}
+}
+
+}
+
+/// @nodoc
+@JsonSerializable()
+
+class _WorkerInvocationsAdaptiveSum implements WorkerInvocationsAdaptiveSum {
+  const _WorkerInvocationsAdaptiveSum({@JsonKey(name: '__typename') required this.typename, required this.subrequests, required this.requests, required this.errors, required this.duration});
+  factory _WorkerInvocationsAdaptiveSum.fromJson(Map<String, dynamic> json) => _$WorkerInvocationsAdaptiveSumFromJson(json);
+
+@override@JsonKey(name: '__typename') final  String typename;
+@override final  int subrequests;
+@override final  int requests;
+@override final  int errors;
+@override final  double duration;
+
+/// Create a copy of WorkerInvocationsAdaptiveSum
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$WorkerInvocationsAdaptiveSumCopyWith<_WorkerInvocationsAdaptiveSum> get copyWith => __$WorkerInvocationsAdaptiveSumCopyWithImpl<_WorkerInvocationsAdaptiveSum>(this, _$identity);
+
+@override
+Map<String, dynamic> toJson() {
+  return _$WorkerInvocationsAdaptiveSumToJson(this, );
+}
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _WorkerInvocationsAdaptiveSum&&(identical(other.typename, typename) || other.typename == typename)&&(identical(other.subrequests, subrequests) || other.subrequests == subrequests)&&(identical(other.requests, requests) || other.requests == requests)&&(identical(other.errors, errors) || other.errors == errors)&&(identical(other.duration, duration) || other.duration == duration));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,typename,subrequests,requests,errors,duration);
+
+@override
+String toString() {
+  return 'WorkerInvocationsAdaptiveSum(typename: $typename, subrequests: $subrequests, requests: $requests, errors: $errors, duration: $duration)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class _$WorkerInvocationsAdaptiveSumCopyWith<$Res> implements $WorkerInvocationsAdaptiveSumCopyWith<$Res> {
+  factory _$WorkerInvocationsAdaptiveSumCopyWith(_WorkerInvocationsAdaptiveSum value, $Res Function(_WorkerInvocationsAdaptiveSum) _then) = __$WorkerInvocationsAdaptiveSumCopyWithImpl;
+@override @useResult
+$Res call({
+@JsonKey(name: '__typename') String typename, int subrequests, int requests, int errors, double duration
+});
+
+
+
+
+}
+/// @nodoc
+class __$WorkerInvocationsAdaptiveSumCopyWithImpl<$Res>
+    implements _$WorkerInvocationsAdaptiveSumCopyWith<$Res> {
+  __$WorkerInvocationsAdaptiveSumCopyWithImpl(this._self, this._then);
+
+  final _WorkerInvocationsAdaptiveSum _self;
+  final $Res Function(_WorkerInvocationsAdaptiveSum) _then;
+
+/// Create a copy of WorkerInvocationsAdaptiveSum
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? typename = null,Object? subrequests = null,Object? requests = null,Object? errors = null,Object? duration = null,}) {
+  return _then(_WorkerInvocationsAdaptiveSum(
+typename: null == typename ? _self.typename : typename // ignore: cast_nullable_to_non_nullable
+as String,subrequests: null == subrequests ? _self.subrequests : subrequests // ignore: cast_nullable_to_non_nullable
+as int,requests: null == requests ? _self.requests : requests // ignore: cast_nullable_to_non_nullable
+as int,errors: null == errors ? _self.errors : errors // ignore: cast_nullable_to_non_nullable
+as int,duration: null == duration ? _self.duration : duration // ignore: cast_nullable_to_non_nullable
+as double,
+  ));
+}
+
+
+}
+
+
+/// @nodoc
+mixin _$WorkerInvocationsAdaptiveQuantiles {
+
+@JsonKey(name: '__typename') String get typename; int? get cpuTimeP50; int? get wallTimeP50; double? get durationP50; int? get requestDurationP50;
+/// Create a copy of WorkerInvocationsAdaptiveQuantiles
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$WorkerInvocationsAdaptiveQuantilesCopyWith<WorkerInvocationsAdaptiveQuantiles> get copyWith => _$WorkerInvocationsAdaptiveQuantilesCopyWithImpl<WorkerInvocationsAdaptiveQuantiles>(this as WorkerInvocationsAdaptiveQuantiles, _$identity);
+
+  /// Serializes this WorkerInvocationsAdaptiveQuantiles to a JSON map.
+  Map<String, dynamic> toJson();
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is WorkerInvocationsAdaptiveQuantiles&&(identical(other.typename, typename) || other.typename == typename)&&(identical(other.cpuTimeP50, cpuTimeP50) || other.cpuTimeP50 == cpuTimeP50)&&(identical(other.wallTimeP50, wallTimeP50) || other.wallTimeP50 == wallTimeP50)&&(identical(other.durationP50, durationP50) || other.durationP50 == durationP50)&&(identical(other.requestDurationP50, requestDurationP50) || other.requestDurationP50 == requestDurationP50));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,typename,cpuTimeP50,wallTimeP50,durationP50,requestDurationP50);
+
+@override
+String toString() {
+  return 'WorkerInvocationsAdaptiveQuantiles(typename: $typename, cpuTimeP50: $cpuTimeP50, wallTimeP50: $wallTimeP50, durationP50: $durationP50, requestDurationP50: $requestDurationP50)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class $WorkerInvocationsAdaptiveQuantilesCopyWith<$Res>  {
+  factory $WorkerInvocationsAdaptiveQuantilesCopyWith(WorkerInvocationsAdaptiveQuantiles value, $Res Function(WorkerInvocationsAdaptiveQuantiles) _then) = _$WorkerInvocationsAdaptiveQuantilesCopyWithImpl;
+@useResult
+$Res call({
+@JsonKey(name: '__typename') String typename, int? cpuTimeP50, int? wallTimeP50, double? durationP50, int? requestDurationP50
+});
+
+
+
+
+}
+/// @nodoc
+class _$WorkerInvocationsAdaptiveQuantilesCopyWithImpl<$Res>
+    implements $WorkerInvocationsAdaptiveQuantilesCopyWith<$Res> {
+  _$WorkerInvocationsAdaptiveQuantilesCopyWithImpl(this._self, this._then);
+
+  final WorkerInvocationsAdaptiveQuantiles _self;
+  final $Res Function(WorkerInvocationsAdaptiveQuantiles) _then;
+
+/// Create a copy of WorkerInvocationsAdaptiveQuantiles
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? typename = null,Object? cpuTimeP50 = freezed,Object? wallTimeP50 = freezed,Object? durationP50 = freezed,Object? requestDurationP50 = freezed,}) {
+  return _then(_self.copyWith(
+typename: null == typename ? _self.typename : typename // ignore: cast_nullable_to_non_nullable
+as String,cpuTimeP50: freezed == cpuTimeP50 ? _self.cpuTimeP50 : cpuTimeP50 // ignore: cast_nullable_to_non_nullable
+as int?,wallTimeP50: freezed == wallTimeP50 ? _self.wallTimeP50 : wallTimeP50 // ignore: cast_nullable_to_non_nullable
+as int?,durationP50: freezed == durationP50 ? _self.durationP50 : durationP50 // ignore: cast_nullable_to_non_nullable
+as double?,requestDurationP50: freezed == requestDurationP50 ? _self.requestDurationP50 : requestDurationP50 // ignore: cast_nullable_to_non_nullable
+as int?,
+  ));
+}
+
+}
+
+
+/// Adds pattern-matching-related methods to [WorkerInvocationsAdaptiveQuantiles].
+extension WorkerInvocationsAdaptiveQuantilesPatterns on WorkerInvocationsAdaptiveQuantiles {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _WorkerInvocationsAdaptiveQuantiles value)?  $default,{required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _WorkerInvocationsAdaptiveQuantiles() when $default != null:
+return $default(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _WorkerInvocationsAdaptiveQuantiles value)  $default,){
+final _that = this;
+switch (_that) {
+case _WorkerInvocationsAdaptiveQuantiles():
+return $default(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _WorkerInvocationsAdaptiveQuantiles value)?  $default,){
+final _that = this;
+switch (_that) {
+case _WorkerInvocationsAdaptiveQuantiles() when $default != null:
+return $default(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@JsonKey(name: '__typename')  String typename,  int? cpuTimeP50,  int? wallTimeP50,  double? durationP50,  int? requestDurationP50)?  $default,{required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _WorkerInvocationsAdaptiveQuantiles() when $default != null:
+return $default(_that.typename,_that.cpuTimeP50,_that.wallTimeP50,_that.durationP50,_that.requestDurationP50);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@JsonKey(name: '__typename')  String typename,  int? cpuTimeP50,  int? wallTimeP50,  double? durationP50,  int? requestDurationP50)  $default,) {final _that = this;
+switch (_that) {
+case _WorkerInvocationsAdaptiveQuantiles():
+return $default(_that.typename,_that.cpuTimeP50,_that.wallTimeP50,_that.durationP50,_that.requestDurationP50);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@JsonKey(name: '__typename')  String typename,  int? cpuTimeP50,  int? wallTimeP50,  double? durationP50,  int? requestDurationP50)?  $default,) {final _that = this;
+switch (_that) {
+case _WorkerInvocationsAdaptiveQuantiles() when $default != null:
+return $default(_that.typename,_that.cpuTimeP50,_that.wallTimeP50,_that.durationP50,_that.requestDurationP50);case _:
+  return null;
+
+}
+}
+
+}
+
+/// @nodoc
+@JsonSerializable()
+
+class _WorkerInvocationsAdaptiveQuantiles implements WorkerInvocationsAdaptiveQuantiles {
+  const _WorkerInvocationsAdaptiveQuantiles({@JsonKey(name: '__typename') required this.typename, required this.cpuTimeP50, required this.wallTimeP50, this.durationP50, required this.requestDurationP50});
+  factory _WorkerInvocationsAdaptiveQuantiles.fromJson(Map<String, dynamic> json) => _$WorkerInvocationsAdaptiveQuantilesFromJson(json);
+
+@override@JsonKey(name: '__typename') final  String typename;
+@override final  int? cpuTimeP50;
+@override final  int? wallTimeP50;
+@override final  double? durationP50;
+@override final  int? requestDurationP50;
+
+/// Create a copy of WorkerInvocationsAdaptiveQuantiles
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$WorkerInvocationsAdaptiveQuantilesCopyWith<_WorkerInvocationsAdaptiveQuantiles> get copyWith => __$WorkerInvocationsAdaptiveQuantilesCopyWithImpl<_WorkerInvocationsAdaptiveQuantiles>(this, _$identity);
+
+@override
+Map<String, dynamic> toJson() {
+  return _$WorkerInvocationsAdaptiveQuantilesToJson(this, );
+}
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _WorkerInvocationsAdaptiveQuantiles&&(identical(other.typename, typename) || other.typename == typename)&&(identical(other.cpuTimeP50, cpuTimeP50) || other.cpuTimeP50 == cpuTimeP50)&&(identical(other.wallTimeP50, wallTimeP50) || other.wallTimeP50 == wallTimeP50)&&(identical(other.durationP50, durationP50) || other.durationP50 == durationP50)&&(identical(other.requestDurationP50, requestDurationP50) || other.requestDurationP50 == requestDurationP50));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,typename,cpuTimeP50,wallTimeP50,durationP50,requestDurationP50);
+
+@override
+String toString() {
+  return 'WorkerInvocationsAdaptiveQuantiles(typename: $typename, cpuTimeP50: $cpuTimeP50, wallTimeP50: $wallTimeP50, durationP50: $durationP50, requestDurationP50: $requestDurationP50)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class _$WorkerInvocationsAdaptiveQuantilesCopyWith<$Res> implements $WorkerInvocationsAdaptiveQuantilesCopyWith<$Res> {
+  factory _$WorkerInvocationsAdaptiveQuantilesCopyWith(_WorkerInvocationsAdaptiveQuantiles value, $Res Function(_WorkerInvocationsAdaptiveQuantiles) _then) = __$WorkerInvocationsAdaptiveQuantilesCopyWithImpl;
+@override @useResult
+$Res call({
+@JsonKey(name: '__typename') String typename, int? cpuTimeP50, int? wallTimeP50, double? durationP50, int? requestDurationP50
+});
+
+
+
+
+}
+/// @nodoc
+class __$WorkerInvocationsAdaptiveQuantilesCopyWithImpl<$Res>
+    implements _$WorkerInvocationsAdaptiveQuantilesCopyWith<$Res> {
+  __$WorkerInvocationsAdaptiveQuantilesCopyWithImpl(this._self, this._then);
+
+  final _WorkerInvocationsAdaptiveQuantiles _self;
+  final $Res Function(_WorkerInvocationsAdaptiveQuantiles) _then;
+
+/// Create a copy of WorkerInvocationsAdaptiveQuantiles
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? typename = null,Object? cpuTimeP50 = freezed,Object? wallTimeP50 = freezed,Object? durationP50 = freezed,Object? requestDurationP50 = freezed,}) {
+  return _then(_WorkerInvocationsAdaptiveQuantiles(
+typename: null == typename ? _self.typename : typename // ignore: cast_nullable_to_non_nullable
+as String,cpuTimeP50: freezed == cpuTimeP50 ? _self.cpuTimeP50 : cpuTimeP50 // ignore: cast_nullable_to_non_nullable
+as int?,wallTimeP50: freezed == wallTimeP50 ? _self.wallTimeP50 : wallTimeP50 // ignore: cast_nullable_to_non_nullable
+as int?,durationP50: freezed == durationP50 ? _self.durationP50 : durationP50 // ignore: cast_nullable_to_non_nullable
+as double?,requestDurationP50: freezed == requestDurationP50 ? _self.requestDurationP50 : requestDurationP50 // ignore: cast_nullable_to_non_nullable
+as int?,
+  ));
+}
+
+
+}
+
+
+/// @nodoc
+mixin _$WorkerInvocationsAdaptiveDimensions {
+
+@JsonKey(name: '__typename') String get typename;@LocalDateTimeConverter() DateTime get datetimeFifteenMinutes;
+/// Create a copy of WorkerInvocationsAdaptiveDimensions
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$WorkerInvocationsAdaptiveDimensionsCopyWith<WorkerInvocationsAdaptiveDimensions> get copyWith => _$WorkerInvocationsAdaptiveDimensionsCopyWithImpl<WorkerInvocationsAdaptiveDimensions>(this as WorkerInvocationsAdaptiveDimensions, _$identity);
+
+  /// Serializes this WorkerInvocationsAdaptiveDimensions to a JSON map.
+  Map<String, dynamic> toJson();
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is WorkerInvocationsAdaptiveDimensions&&(identical(other.typename, typename) || other.typename == typename)&&(identical(other.datetimeFifteenMinutes, datetimeFifteenMinutes) || other.datetimeFifteenMinutes == datetimeFifteenMinutes));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,typename,datetimeFifteenMinutes);
+
+@override
+String toString() {
+  return 'WorkerInvocationsAdaptiveDimensions(typename: $typename, datetimeFifteenMinutes: $datetimeFifteenMinutes)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class $WorkerInvocationsAdaptiveDimensionsCopyWith<$Res>  {
+  factory $WorkerInvocationsAdaptiveDimensionsCopyWith(WorkerInvocationsAdaptiveDimensions value, $Res Function(WorkerInvocationsAdaptiveDimensions) _then) = _$WorkerInvocationsAdaptiveDimensionsCopyWithImpl;
+@useResult
+$Res call({
+@JsonKey(name: '__typename') String typename,@LocalDateTimeConverter() DateTime datetimeFifteenMinutes
+});
+
+
+
+
+}
+/// @nodoc
+class _$WorkerInvocationsAdaptiveDimensionsCopyWithImpl<$Res>
+    implements $WorkerInvocationsAdaptiveDimensionsCopyWith<$Res> {
+  _$WorkerInvocationsAdaptiveDimensionsCopyWithImpl(this._self, this._then);
+
+  final WorkerInvocationsAdaptiveDimensions _self;
+  final $Res Function(WorkerInvocationsAdaptiveDimensions) _then;
+
+/// Create a copy of WorkerInvocationsAdaptiveDimensions
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? typename = null,Object? datetimeFifteenMinutes = null,}) {
+  return _then(_self.copyWith(
+typename: null == typename ? _self.typename : typename // ignore: cast_nullable_to_non_nullable
+as String,datetimeFifteenMinutes: null == datetimeFifteenMinutes ? _self.datetimeFifteenMinutes : datetimeFifteenMinutes // ignore: cast_nullable_to_non_nullable
+as DateTime,
+  ));
+}
+
+}
+
+
+/// Adds pattern-matching-related methods to [WorkerInvocationsAdaptiveDimensions].
+extension WorkerInvocationsAdaptiveDimensionsPatterns on WorkerInvocationsAdaptiveDimensions {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _WorkerInvocationsAdaptiveDimensions value)?  $default,{required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _WorkerInvocationsAdaptiveDimensions() when $default != null:
+return $default(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _WorkerInvocationsAdaptiveDimensions value)  $default,){
+final _that = this;
+switch (_that) {
+case _WorkerInvocationsAdaptiveDimensions():
+return $default(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _WorkerInvocationsAdaptiveDimensions value)?  $default,){
+final _that = this;
+switch (_that) {
+case _WorkerInvocationsAdaptiveDimensions() when $default != null:
+return $default(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@JsonKey(name: '__typename')  String typename, @LocalDateTimeConverter()  DateTime datetimeFifteenMinutes)?  $default,{required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _WorkerInvocationsAdaptiveDimensions() when $default != null:
+return $default(_that.typename,_that.datetimeFifteenMinutes);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@JsonKey(name: '__typename')  String typename, @LocalDateTimeConverter()  DateTime datetimeFifteenMinutes)  $default,) {final _that = this;
+switch (_that) {
+case _WorkerInvocationsAdaptiveDimensions():
+return $default(_that.typename,_that.datetimeFifteenMinutes);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@JsonKey(name: '__typename')  String typename, @LocalDateTimeConverter()  DateTime datetimeFifteenMinutes)?  $default,) {final _that = this;
+switch (_that) {
+case _WorkerInvocationsAdaptiveDimensions() when $default != null:
+return $default(_that.typename,_that.datetimeFifteenMinutes);case _:
+  return null;
+
+}
+}
+
+}
+
+/// @nodoc
+@JsonSerializable()
+
+class _WorkerInvocationsAdaptiveDimensions implements WorkerInvocationsAdaptiveDimensions {
+  const _WorkerInvocationsAdaptiveDimensions({@JsonKey(name: '__typename') required this.typename, @LocalDateTimeConverter() required this.datetimeFifteenMinutes});
+  factory _WorkerInvocationsAdaptiveDimensions.fromJson(Map<String, dynamic> json) => _$WorkerInvocationsAdaptiveDimensionsFromJson(json);
+
+@override@JsonKey(name: '__typename') final  String typename;
+@override@LocalDateTimeConverter() final  DateTime datetimeFifteenMinutes;
+
+/// Create a copy of WorkerInvocationsAdaptiveDimensions
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$WorkerInvocationsAdaptiveDimensionsCopyWith<_WorkerInvocationsAdaptiveDimensions> get copyWith => __$WorkerInvocationsAdaptiveDimensionsCopyWithImpl<_WorkerInvocationsAdaptiveDimensions>(this, _$identity);
+
+@override
+Map<String, dynamic> toJson() {
+  return _$WorkerInvocationsAdaptiveDimensionsToJson(this, );
+}
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _WorkerInvocationsAdaptiveDimensions&&(identical(other.typename, typename) || other.typename == typename)&&(identical(other.datetimeFifteenMinutes, datetimeFifteenMinutes) || other.datetimeFifteenMinutes == datetimeFifteenMinutes));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,typename,datetimeFifteenMinutes);
+
+@override
+String toString() {
+  return 'WorkerInvocationsAdaptiveDimensions(typename: $typename, datetimeFifteenMinutes: $datetimeFifteenMinutes)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class _$WorkerInvocationsAdaptiveDimensionsCopyWith<$Res> implements $WorkerInvocationsAdaptiveDimensionsCopyWith<$Res> {
+  factory _$WorkerInvocationsAdaptiveDimensionsCopyWith(_WorkerInvocationsAdaptiveDimensions value, $Res Function(_WorkerInvocationsAdaptiveDimensions) _then) = __$WorkerInvocationsAdaptiveDimensionsCopyWithImpl;
+@override @useResult
+$Res call({
+@JsonKey(name: '__typename') String typename,@LocalDateTimeConverter() DateTime datetimeFifteenMinutes
+});
+
+
+
+
+}
+/// @nodoc
+class __$WorkerInvocationsAdaptiveDimensionsCopyWithImpl<$Res>
+    implements _$WorkerInvocationsAdaptiveDimensionsCopyWith<$Res> {
+  __$WorkerInvocationsAdaptiveDimensionsCopyWithImpl(this._self, this._then);
+
+  final _WorkerInvocationsAdaptiveDimensions _self;
+  final $Res Function(_WorkerInvocationsAdaptiveDimensions) _then;
+
+/// Create a copy of WorkerInvocationsAdaptiveDimensions
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? typename = null,Object? datetimeFifteenMinutes = null,}) {
+  return _then(_WorkerInvocationsAdaptiveDimensions(
+typename: null == typename ? _self.typename : typename // ignore: cast_nullable_to_non_nullable
+as String,datetimeFifteenMinutes: null == datetimeFifteenMinutes ? _self.datetimeFifteenMinutes : datetimeFifteenMinutes // ignore: cast_nullable_to_non_nullable
+as DateTime,
+  ));
+}
+
+
+}
+
 // dart format on
