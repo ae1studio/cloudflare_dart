@@ -70,7 +70,7 @@ abstract class WorkerSubrequestsAdaptiveGroupDimensions
     with _$WorkerSubrequestsAdaptiveGroupDimensions {
   const factory WorkerSubrequestsAdaptiveGroupDimensions({
     @JsonKey(name: '__typename') required String typename,
-    required String? cacheStatus,
+    required int? cacheStatus,
     @LocalDateTimeConverter() required DateTime? datetimeFifteenMinutes,
   }) = _WorkerSubrequestsAdaptiveGroupDimensions;
 

@@ -261,7 +261,7 @@ _WorkerSubrequestsAdaptiveGroupDimensions
 _$WorkerSubrequestsAdaptiveGroupDimensionsFromJson(Map<String, dynamic> json) =>
     _WorkerSubrequestsAdaptiveGroupDimensions(
       typename: json['__typename'] as String,
-      cacheStatus: json['cacheStatus'] as String?,
+      cacheStatus: (json['cacheStatus'] as num?)?.toInt(),
       datetimeFifteenMinutes: _$JsonConverterFromJson<String, DateTime>(
         json['datetimeFifteenMinutes'],
         const LocalDateTimeConverter().fromJson,

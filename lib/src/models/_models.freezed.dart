@@ -4015,7 +4015,7 @@ as int,
 /// @nodoc
 mixin _$WorkerSubrequestsAdaptiveGroupDimensions {
 
-@JsonKey(name: '__typename') String get typename; String? get cacheStatus;@LocalDateTimeConverter() DateTime? get datetimeFifteenMinutes;
+@JsonKey(name: '__typename') String get typename; int? get cacheStatus;@LocalDateTimeConverter() DateTime? get datetimeFifteenMinutes;
 /// Create a copy of WorkerSubrequestsAdaptiveGroupDimensions
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -4048,7 +4048,7 @@ abstract mixin class $WorkerSubrequestsAdaptiveGroupDimensionsCopyWith<$Res>  {
   factory $WorkerSubrequestsAdaptiveGroupDimensionsCopyWith(WorkerSubrequestsAdaptiveGroupDimensions value, $Res Function(WorkerSubrequestsAdaptiveGroupDimensions) _then) = _$WorkerSubrequestsAdaptiveGroupDimensionsCopyWithImpl;
 @useResult
 $Res call({
-@JsonKey(name: '__typename') String typename, String? cacheStatus,@LocalDateTimeConverter() DateTime? datetimeFifteenMinutes
+@JsonKey(name: '__typename') String typename, int? cacheStatus,@LocalDateTimeConverter() DateTime? datetimeFifteenMinutes
 });
 
 
@@ -4069,7 +4069,7 @@ class _$WorkerSubrequestsAdaptiveGroupDimensionsCopyWithImpl<$Res>
   return _then(_self.copyWith(
 typename: null == typename ? _self.typename : typename // ignore: cast_nullable_to_non_nullable
 as String,cacheStatus: freezed == cacheStatus ? _self.cacheStatus : cacheStatus // ignore: cast_nullable_to_non_nullable
-as String?,datetimeFifteenMinutes: freezed == datetimeFifteenMinutes ? _self.datetimeFifteenMinutes : datetimeFifteenMinutes // ignore: cast_nullable_to_non_nullable
+as int?,datetimeFifteenMinutes: freezed == datetimeFifteenMinutes ? _self.datetimeFifteenMinutes : datetimeFifteenMinutes // ignore: cast_nullable_to_non_nullable
 as DateTime?,
   ));
 }
@@ -4155,7 +4155,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@JsonKey(name: '__typename')  String typename,  String? cacheStatus, @LocalDateTimeConverter()  DateTime? datetimeFifteenMinutes)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@JsonKey(name: '__typename')  String typename,  int? cacheStatus, @LocalDateTimeConverter()  DateTime? datetimeFifteenMinutes)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _WorkerSubrequestsAdaptiveGroupDimensions() when $default != null:
 return $default(_that.typename,_that.cacheStatus,_that.datetimeFifteenMinutes);case _:
@@ -4176,7 +4176,7 @@ return $default(_that.typename,_that.cacheStatus,_that.datetimeFifteenMinutes);c
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@JsonKey(name: '__typename')  String typename,  String? cacheStatus, @LocalDateTimeConverter()  DateTime? datetimeFifteenMinutes)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@JsonKey(name: '__typename')  String typename,  int? cacheStatus, @LocalDateTimeConverter()  DateTime? datetimeFifteenMinutes)  $default,) {final _that = this;
 switch (_that) {
 case _WorkerSubrequestsAdaptiveGroupDimensions():
 return $default(_that.typename,_that.cacheStatus,_that.datetimeFifteenMinutes);case _:
@@ -4196,7 +4196,7 @@ return $default(_that.typename,_that.cacheStatus,_that.datetimeFifteenMinutes);c
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@JsonKey(name: '__typename')  String typename,  String? cacheStatus, @LocalDateTimeConverter()  DateTime? datetimeFifteenMinutes)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@JsonKey(name: '__typename')  String typename,  int? cacheStatus, @LocalDateTimeConverter()  DateTime? datetimeFifteenMinutes)?  $default,) {final _that = this;
 switch (_that) {
 case _WorkerSubrequestsAdaptiveGroupDimensions() when $default != null:
 return $default(_that.typename,_that.cacheStatus,_that.datetimeFifteenMinutes);case _:
@@ -4215,7 +4215,7 @@ class _WorkerSubrequestsAdaptiveGroupDimensions implements WorkerSubrequestsAdap
   factory _WorkerSubrequestsAdaptiveGroupDimensions.fromJson(Map<String, dynamic> json) => _$WorkerSubrequestsAdaptiveGroupDimensionsFromJson(json);
 
 @override@JsonKey(name: '__typename') final  String typename;
-@override final  String? cacheStatus;
+@override final  int? cacheStatus;
 @override@LocalDateTimeConverter() final  DateTime? datetimeFifteenMinutes;
 
 /// Create a copy of WorkerSubrequestsAdaptiveGroupDimensions
@@ -4251,7 +4251,7 @@ abstract mixin class _$WorkerSubrequestsAdaptiveGroupDimensionsCopyWith<$Res> im
   factory _$WorkerSubrequestsAdaptiveGroupDimensionsCopyWith(_WorkerSubrequestsAdaptiveGroupDimensions value, $Res Function(_WorkerSubrequestsAdaptiveGroupDimensions) _then) = __$WorkerSubrequestsAdaptiveGroupDimensionsCopyWithImpl;
 @override @useResult
 $Res call({
-@JsonKey(name: '__typename') String typename, String? cacheStatus,@LocalDateTimeConverter() DateTime? datetimeFifteenMinutes
+@JsonKey(name: '__typename') String typename, int? cacheStatus,@LocalDateTimeConverter() DateTime? datetimeFifteenMinutes
 });
 
 
@@ -4272,7 +4272,7 @@ class __$WorkerSubrequestsAdaptiveGroupDimensionsCopyWithImpl<$Res>
   return _then(_WorkerSubrequestsAdaptiveGroupDimensions(
 typename: null == typename ? _self.typename : typename // ignore: cast_nullable_to_non_nullable
 as String,cacheStatus: freezed == cacheStatus ? _self.cacheStatus : cacheStatus // ignore: cast_nullable_to_non_nullable
-as String?,datetimeFifteenMinutes: freezed == datetimeFifteenMinutes ? _self.datetimeFifteenMinutes : datetimeFifteenMinutes // ignore: cast_nullable_to_non_nullable
+as int?,datetimeFifteenMinutes: freezed == datetimeFifteenMinutes ? _self.datetimeFifteenMinutes : datetimeFifteenMinutes // ignore: cast_nullable_to_non_nullable
 as DateTime?,
   ));
 }
