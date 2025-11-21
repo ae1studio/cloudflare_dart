@@ -6,6 +6,23 @@ part of '_models.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
+_ResultInfo _$ResultInfoFromJson(Map<String, dynamic> json) => _ResultInfo(
+  count: (json['count'] as num).toInt(),
+  page: (json['page'] as num).toInt(),
+  perPage: (json['per_page'] as num).toInt(),
+  totalCount: (json['total_count'] as num).toInt(),
+  totalPages: (json['total_pages'] as num?)?.toInt(),
+);
+
+Map<String, dynamic> _$ResultInfoToJson(_ResultInfo instance) =>
+    <String, dynamic>{
+      'count': instance.count,
+      'page': instance.page,
+      'per_page': instance.perPage,
+      'total_count': instance.totalCount,
+      'total_pages': instance.totalPages,
+    };
+
 _WorkerReferences _$WorkerReferencesFromJson(Map<String, dynamic> json) =>
     _WorkerReferences(
       domains: (json['domains'] as List<dynamic>)
@@ -303,31 +320,6 @@ Map<String, dynamic> _$OrganizationToJson(Organization instance) =>
       'permissions': instance.permissions,
       'roles': instance.roles,
     };
-
-ResultPagination<T> _$ResultPaginationFromJson<T>(
-  Map<String, dynamic> json,
-  T Function(Object? json) fromJsonT,
-) {
-  $checkKeys(json, requiredKeys: const ['result', 'result_info']);
-  return ResultPagination<T>(
-    (json['result'] as List<dynamic>).map(fromJsonT).toList(),
-    ResultInfo.fromJson(json['result_info'] as Map<String, dynamic>),
-  );
-}
-
-ResultInfo _$ResultInfoFromJson(Map<String, dynamic> json) {
-  $checkKeys(
-    json,
-    requiredKeys: const ['count', 'page', 'per_page', 'total_count'],
-  );
-  return ResultInfo(
-    (json['count'] as num).toInt(),
-    (json['page'] as num).toInt(),
-    (json['per_page'] as num).toInt(),
-    (json['total_count'] as num).toInt(),
-    (json['total_pages'] as num?)?.toInt(),
-  );
-}
 
 Zone _$ZoneFromJson(Map<String, dynamic> json) {
   $checkKeys(
