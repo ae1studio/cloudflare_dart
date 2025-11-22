@@ -17,6 +17,16 @@ class _ScriptsEndpoint extends EndpointBase {
     ]);
   }
 
+  _ScriptsDeploymentsEndpoint deployments(String accountId, String scriptName) {
+    return _ScriptsDeploymentsEndpoint(_api, [
+      'accounts',
+      accountId,
+      'workers',
+      'scripts',
+      scriptName,
+    ]);
+  }
+
   /// ## List Workers
   ///
   /// Fetch a list of uploaded workers.

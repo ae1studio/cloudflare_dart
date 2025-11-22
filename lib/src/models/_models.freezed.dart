@@ -2599,6 +2599,1130 @@ as ScriptSource,
 
 
 /// @nodoc
+mixin _$ScriptDeployment {
+
+ String get id;@JsonKey(name: 'created_on', fromJson: _localDateTimeFromJson, toJson: _localDateTimeToJson) DateTime get createdOn; String get source; ScriptDeploymentStrategy get strategy; List<ScriptDeploymentVersion> get versions; ScriptDeploymentAnnotations? get annotations;@JsonKey(name: 'author_email') String? get authorEmail;
+/// Create a copy of ScriptDeployment
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$ScriptDeploymentCopyWith<ScriptDeployment> get copyWith => _$ScriptDeploymentCopyWithImpl<ScriptDeployment>(this as ScriptDeployment, _$identity);
+
+  /// Serializes this ScriptDeployment to a JSON map.
+  Map<String, dynamic> toJson();
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is ScriptDeployment&&(identical(other.id, id) || other.id == id)&&(identical(other.createdOn, createdOn) || other.createdOn == createdOn)&&(identical(other.source, source) || other.source == source)&&(identical(other.strategy, strategy) || other.strategy == strategy)&&const DeepCollectionEquality().equals(other.versions, versions)&&(identical(other.annotations, annotations) || other.annotations == annotations)&&(identical(other.authorEmail, authorEmail) || other.authorEmail == authorEmail));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,id,createdOn,source,strategy,const DeepCollectionEquality().hash(versions),annotations,authorEmail);
+
+@override
+String toString() {
+  return 'ScriptDeployment(id: $id, createdOn: $createdOn, source: $source, strategy: $strategy, versions: $versions, annotations: $annotations, authorEmail: $authorEmail)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class $ScriptDeploymentCopyWith<$Res>  {
+  factory $ScriptDeploymentCopyWith(ScriptDeployment value, $Res Function(ScriptDeployment) _then) = _$ScriptDeploymentCopyWithImpl;
+@useResult
+$Res call({
+ String id,@JsonKey(name: 'created_on', fromJson: _localDateTimeFromJson, toJson: _localDateTimeToJson) DateTime createdOn, String source, ScriptDeploymentStrategy strategy, List<ScriptDeploymentVersion> versions, ScriptDeploymentAnnotations? annotations,@JsonKey(name: 'author_email') String? authorEmail
+});
+
+
+$ScriptDeploymentStrategyCopyWith<$Res> get strategy;$ScriptDeploymentAnnotationsCopyWith<$Res>? get annotations;
+
+}
+/// @nodoc
+class _$ScriptDeploymentCopyWithImpl<$Res>
+    implements $ScriptDeploymentCopyWith<$Res> {
+  _$ScriptDeploymentCopyWithImpl(this._self, this._then);
+
+  final ScriptDeployment _self;
+  final $Res Function(ScriptDeployment) _then;
+
+/// Create a copy of ScriptDeployment
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? createdOn = null,Object? source = null,Object? strategy = null,Object? versions = null,Object? annotations = freezed,Object? authorEmail = freezed,}) {
+  return _then(_self.copyWith(
+id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
+as String,createdOn: null == createdOn ? _self.createdOn : createdOn // ignore: cast_nullable_to_non_nullable
+as DateTime,source: null == source ? _self.source : source // ignore: cast_nullable_to_non_nullable
+as String,strategy: null == strategy ? _self.strategy : strategy // ignore: cast_nullable_to_non_nullable
+as ScriptDeploymentStrategy,versions: null == versions ? _self.versions : versions // ignore: cast_nullable_to_non_nullable
+as List<ScriptDeploymentVersion>,annotations: freezed == annotations ? _self.annotations : annotations // ignore: cast_nullable_to_non_nullable
+as ScriptDeploymentAnnotations?,authorEmail: freezed == authorEmail ? _self.authorEmail : authorEmail // ignore: cast_nullable_to_non_nullable
+as String?,
+  ));
+}
+/// Create a copy of ScriptDeployment
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$ScriptDeploymentStrategyCopyWith<$Res> get strategy {
+  
+  return $ScriptDeploymentStrategyCopyWith<$Res>(_self.strategy, (value) {
+    return _then(_self.copyWith(strategy: value));
+  });
+}/// Create a copy of ScriptDeployment
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$ScriptDeploymentAnnotationsCopyWith<$Res>? get annotations {
+    if (_self.annotations == null) {
+    return null;
+  }
+
+  return $ScriptDeploymentAnnotationsCopyWith<$Res>(_self.annotations!, (value) {
+    return _then(_self.copyWith(annotations: value));
+  });
+}
+}
+
+
+/// Adds pattern-matching-related methods to [ScriptDeployment].
+extension ScriptDeploymentPatterns on ScriptDeployment {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _ScriptDeployment value)?  $default,{required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _ScriptDeployment() when $default != null:
+return $default(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _ScriptDeployment value)  $default,){
+final _that = this;
+switch (_that) {
+case _ScriptDeployment():
+return $default(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _ScriptDeployment value)?  $default,){
+final _that = this;
+switch (_that) {
+case _ScriptDeployment() when $default != null:
+return $default(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id, @JsonKey(name: 'created_on', fromJson: _localDateTimeFromJson, toJson: _localDateTimeToJson)  DateTime createdOn,  String source,  ScriptDeploymentStrategy strategy,  List<ScriptDeploymentVersion> versions,  ScriptDeploymentAnnotations? annotations, @JsonKey(name: 'author_email')  String? authorEmail)?  $default,{required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _ScriptDeployment() when $default != null:
+return $default(_that.id,_that.createdOn,_that.source,_that.strategy,_that.versions,_that.annotations,_that.authorEmail);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id, @JsonKey(name: 'created_on', fromJson: _localDateTimeFromJson, toJson: _localDateTimeToJson)  DateTime createdOn,  String source,  ScriptDeploymentStrategy strategy,  List<ScriptDeploymentVersion> versions,  ScriptDeploymentAnnotations? annotations, @JsonKey(name: 'author_email')  String? authorEmail)  $default,) {final _that = this;
+switch (_that) {
+case _ScriptDeployment():
+return $default(_that.id,_that.createdOn,_that.source,_that.strategy,_that.versions,_that.annotations,_that.authorEmail);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id, @JsonKey(name: 'created_on', fromJson: _localDateTimeFromJson, toJson: _localDateTimeToJson)  DateTime createdOn,  String source,  ScriptDeploymentStrategy strategy,  List<ScriptDeploymentVersion> versions,  ScriptDeploymentAnnotations? annotations, @JsonKey(name: 'author_email')  String? authorEmail)?  $default,) {final _that = this;
+switch (_that) {
+case _ScriptDeployment() when $default != null:
+return $default(_that.id,_that.createdOn,_that.source,_that.strategy,_that.versions,_that.annotations,_that.authorEmail);case _:
+  return null;
+
+}
+}
+
+}
+
+/// @nodoc
+@JsonSerializable()
+
+class _ScriptDeployment implements ScriptDeployment {
+  const _ScriptDeployment({required this.id, @JsonKey(name: 'created_on', fromJson: _localDateTimeFromJson, toJson: _localDateTimeToJson) required this.createdOn, required this.source, required this.strategy, required final  List<ScriptDeploymentVersion> versions, this.annotations, @JsonKey(name: 'author_email') this.authorEmail}): _versions = versions;
+  factory _ScriptDeployment.fromJson(Map<String, dynamic> json) => _$ScriptDeploymentFromJson(json);
+
+@override final  String id;
+@override@JsonKey(name: 'created_on', fromJson: _localDateTimeFromJson, toJson: _localDateTimeToJson) final  DateTime createdOn;
+@override final  String source;
+@override final  ScriptDeploymentStrategy strategy;
+ final  List<ScriptDeploymentVersion> _versions;
+@override List<ScriptDeploymentVersion> get versions {
+  if (_versions is EqualUnmodifiableListView) return _versions;
+  // ignore: implicit_dynamic_type
+  return EqualUnmodifiableListView(_versions);
+}
+
+@override final  ScriptDeploymentAnnotations? annotations;
+@override@JsonKey(name: 'author_email') final  String? authorEmail;
+
+/// Create a copy of ScriptDeployment
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$ScriptDeploymentCopyWith<_ScriptDeployment> get copyWith => __$ScriptDeploymentCopyWithImpl<_ScriptDeployment>(this, _$identity);
+
+@override
+Map<String, dynamic> toJson() {
+  return _$ScriptDeploymentToJson(this, );
+}
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _ScriptDeployment&&(identical(other.id, id) || other.id == id)&&(identical(other.createdOn, createdOn) || other.createdOn == createdOn)&&(identical(other.source, source) || other.source == source)&&(identical(other.strategy, strategy) || other.strategy == strategy)&&const DeepCollectionEquality().equals(other._versions, _versions)&&(identical(other.annotations, annotations) || other.annotations == annotations)&&(identical(other.authorEmail, authorEmail) || other.authorEmail == authorEmail));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,id,createdOn,source,strategy,const DeepCollectionEquality().hash(_versions),annotations,authorEmail);
+
+@override
+String toString() {
+  return 'ScriptDeployment(id: $id, createdOn: $createdOn, source: $source, strategy: $strategy, versions: $versions, annotations: $annotations, authorEmail: $authorEmail)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class _$ScriptDeploymentCopyWith<$Res> implements $ScriptDeploymentCopyWith<$Res> {
+  factory _$ScriptDeploymentCopyWith(_ScriptDeployment value, $Res Function(_ScriptDeployment) _then) = __$ScriptDeploymentCopyWithImpl;
+@override @useResult
+$Res call({
+ String id,@JsonKey(name: 'created_on', fromJson: _localDateTimeFromJson, toJson: _localDateTimeToJson) DateTime createdOn, String source, ScriptDeploymentStrategy strategy, List<ScriptDeploymentVersion> versions, ScriptDeploymentAnnotations? annotations,@JsonKey(name: 'author_email') String? authorEmail
+});
+
+
+@override $ScriptDeploymentStrategyCopyWith<$Res> get strategy;@override $ScriptDeploymentAnnotationsCopyWith<$Res>? get annotations;
+
+}
+/// @nodoc
+class __$ScriptDeploymentCopyWithImpl<$Res>
+    implements _$ScriptDeploymentCopyWith<$Res> {
+  __$ScriptDeploymentCopyWithImpl(this._self, this._then);
+
+  final _ScriptDeployment _self;
+  final $Res Function(_ScriptDeployment) _then;
+
+/// Create a copy of ScriptDeployment
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? createdOn = null,Object? source = null,Object? strategy = null,Object? versions = null,Object? annotations = freezed,Object? authorEmail = freezed,}) {
+  return _then(_ScriptDeployment(
+id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
+as String,createdOn: null == createdOn ? _self.createdOn : createdOn // ignore: cast_nullable_to_non_nullable
+as DateTime,source: null == source ? _self.source : source // ignore: cast_nullable_to_non_nullable
+as String,strategy: null == strategy ? _self.strategy : strategy // ignore: cast_nullable_to_non_nullable
+as ScriptDeploymentStrategy,versions: null == versions ? _self._versions : versions // ignore: cast_nullable_to_non_nullable
+as List<ScriptDeploymentVersion>,annotations: freezed == annotations ? _self.annotations : annotations // ignore: cast_nullable_to_non_nullable
+as ScriptDeploymentAnnotations?,authorEmail: freezed == authorEmail ? _self.authorEmail : authorEmail // ignore: cast_nullable_to_non_nullable
+as String?,
+  ));
+}
+
+/// Create a copy of ScriptDeployment
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$ScriptDeploymentStrategyCopyWith<$Res> get strategy {
+  
+  return $ScriptDeploymentStrategyCopyWith<$Res>(_self.strategy, (value) {
+    return _then(_self.copyWith(strategy: value));
+  });
+}/// Create a copy of ScriptDeployment
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$ScriptDeploymentAnnotationsCopyWith<$Res>? get annotations {
+    if (_self.annotations == null) {
+    return null;
+  }
+
+  return $ScriptDeploymentAnnotationsCopyWith<$Res>(_self.annotations!, (value) {
+    return _then(_self.copyWith(annotations: value));
+  });
+}
+}
+
+
+/// @nodoc
+mixin _$ScriptDeploymentStrategy {
+
+ String get type;
+/// Create a copy of ScriptDeploymentStrategy
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$ScriptDeploymentStrategyCopyWith<ScriptDeploymentStrategy> get copyWith => _$ScriptDeploymentStrategyCopyWithImpl<ScriptDeploymentStrategy>(this as ScriptDeploymentStrategy, _$identity);
+
+  /// Serializes this ScriptDeploymentStrategy to a JSON map.
+  Map<String, dynamic> toJson();
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is ScriptDeploymentStrategy&&(identical(other.type, type) || other.type == type));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,type);
+
+@override
+String toString() {
+  return 'ScriptDeploymentStrategy(type: $type)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class $ScriptDeploymentStrategyCopyWith<$Res>  {
+  factory $ScriptDeploymentStrategyCopyWith(ScriptDeploymentStrategy value, $Res Function(ScriptDeploymentStrategy) _then) = _$ScriptDeploymentStrategyCopyWithImpl;
+@useResult
+$Res call({
+ String type
+});
+
+
+
+
+}
+/// @nodoc
+class _$ScriptDeploymentStrategyCopyWithImpl<$Res>
+    implements $ScriptDeploymentStrategyCopyWith<$Res> {
+  _$ScriptDeploymentStrategyCopyWithImpl(this._self, this._then);
+
+  final ScriptDeploymentStrategy _self;
+  final $Res Function(ScriptDeploymentStrategy) _then;
+
+/// Create a copy of ScriptDeploymentStrategy
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? type = null,}) {
+  return _then(_self.copyWith(
+type: null == type ? _self.type : type // ignore: cast_nullable_to_non_nullable
+as String,
+  ));
+}
+
+}
+
+
+/// Adds pattern-matching-related methods to [ScriptDeploymentStrategy].
+extension ScriptDeploymentStrategyPatterns on ScriptDeploymentStrategy {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _ScriptDeploymentStrategy value)?  $default,{required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _ScriptDeploymentStrategy() when $default != null:
+return $default(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _ScriptDeploymentStrategy value)  $default,){
+final _that = this;
+switch (_that) {
+case _ScriptDeploymentStrategy():
+return $default(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _ScriptDeploymentStrategy value)?  $default,){
+final _that = this;
+switch (_that) {
+case _ScriptDeploymentStrategy() when $default != null:
+return $default(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String type)?  $default,{required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _ScriptDeploymentStrategy() when $default != null:
+return $default(_that.type);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String type)  $default,) {final _that = this;
+switch (_that) {
+case _ScriptDeploymentStrategy():
+return $default(_that.type);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String type)?  $default,) {final _that = this;
+switch (_that) {
+case _ScriptDeploymentStrategy() when $default != null:
+return $default(_that.type);case _:
+  return null;
+
+}
+}
+
+}
+
+/// @nodoc
+@JsonSerializable()
+
+class _ScriptDeploymentStrategy implements ScriptDeploymentStrategy {
+  const _ScriptDeploymentStrategy({this.type = 'percentage'});
+  factory _ScriptDeploymentStrategy.fromJson(Map<String, dynamic> json) => _$ScriptDeploymentStrategyFromJson(json);
+
+@override@JsonKey() final  String type;
+
+/// Create a copy of ScriptDeploymentStrategy
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$ScriptDeploymentStrategyCopyWith<_ScriptDeploymentStrategy> get copyWith => __$ScriptDeploymentStrategyCopyWithImpl<_ScriptDeploymentStrategy>(this, _$identity);
+
+@override
+Map<String, dynamic> toJson() {
+  return _$ScriptDeploymentStrategyToJson(this, );
+}
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _ScriptDeploymentStrategy&&(identical(other.type, type) || other.type == type));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,type);
+
+@override
+String toString() {
+  return 'ScriptDeploymentStrategy(type: $type)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class _$ScriptDeploymentStrategyCopyWith<$Res> implements $ScriptDeploymentStrategyCopyWith<$Res> {
+  factory _$ScriptDeploymentStrategyCopyWith(_ScriptDeploymentStrategy value, $Res Function(_ScriptDeploymentStrategy) _then) = __$ScriptDeploymentStrategyCopyWithImpl;
+@override @useResult
+$Res call({
+ String type
+});
+
+
+
+
+}
+/// @nodoc
+class __$ScriptDeploymentStrategyCopyWithImpl<$Res>
+    implements _$ScriptDeploymentStrategyCopyWith<$Res> {
+  __$ScriptDeploymentStrategyCopyWithImpl(this._self, this._then);
+
+  final _ScriptDeploymentStrategy _self;
+  final $Res Function(_ScriptDeploymentStrategy) _then;
+
+/// Create a copy of ScriptDeploymentStrategy
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? type = null,}) {
+  return _then(_ScriptDeploymentStrategy(
+type: null == type ? _self.type : type // ignore: cast_nullable_to_non_nullable
+as String,
+  ));
+}
+
+
+}
+
+
+/// @nodoc
+mixin _$ScriptDeploymentVersion {
+
+ double get percentage;@JsonKey(name: 'version_id') String get versionId;
+/// Create a copy of ScriptDeploymentVersion
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$ScriptDeploymentVersionCopyWith<ScriptDeploymentVersion> get copyWith => _$ScriptDeploymentVersionCopyWithImpl<ScriptDeploymentVersion>(this as ScriptDeploymentVersion, _$identity);
+
+  /// Serializes this ScriptDeploymentVersion to a JSON map.
+  Map<String, dynamic> toJson();
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is ScriptDeploymentVersion&&(identical(other.percentage, percentage) || other.percentage == percentage)&&(identical(other.versionId, versionId) || other.versionId == versionId));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,percentage,versionId);
+
+@override
+String toString() {
+  return 'ScriptDeploymentVersion(percentage: $percentage, versionId: $versionId)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class $ScriptDeploymentVersionCopyWith<$Res>  {
+  factory $ScriptDeploymentVersionCopyWith(ScriptDeploymentVersion value, $Res Function(ScriptDeploymentVersion) _then) = _$ScriptDeploymentVersionCopyWithImpl;
+@useResult
+$Res call({
+ double percentage,@JsonKey(name: 'version_id') String versionId
+});
+
+
+
+
+}
+/// @nodoc
+class _$ScriptDeploymentVersionCopyWithImpl<$Res>
+    implements $ScriptDeploymentVersionCopyWith<$Res> {
+  _$ScriptDeploymentVersionCopyWithImpl(this._self, this._then);
+
+  final ScriptDeploymentVersion _self;
+  final $Res Function(ScriptDeploymentVersion) _then;
+
+/// Create a copy of ScriptDeploymentVersion
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? percentage = null,Object? versionId = null,}) {
+  return _then(_self.copyWith(
+percentage: null == percentage ? _self.percentage : percentage // ignore: cast_nullable_to_non_nullable
+as double,versionId: null == versionId ? _self.versionId : versionId // ignore: cast_nullable_to_non_nullable
+as String,
+  ));
+}
+
+}
+
+
+/// Adds pattern-matching-related methods to [ScriptDeploymentVersion].
+extension ScriptDeploymentVersionPatterns on ScriptDeploymentVersion {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _ScriptDeploymentVersion value)?  $default,{required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _ScriptDeploymentVersion() when $default != null:
+return $default(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _ScriptDeploymentVersion value)  $default,){
+final _that = this;
+switch (_that) {
+case _ScriptDeploymentVersion():
+return $default(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _ScriptDeploymentVersion value)?  $default,){
+final _that = this;
+switch (_that) {
+case _ScriptDeploymentVersion() when $default != null:
+return $default(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( double percentage, @JsonKey(name: 'version_id')  String versionId)?  $default,{required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _ScriptDeploymentVersion() when $default != null:
+return $default(_that.percentage,_that.versionId);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( double percentage, @JsonKey(name: 'version_id')  String versionId)  $default,) {final _that = this;
+switch (_that) {
+case _ScriptDeploymentVersion():
+return $default(_that.percentage,_that.versionId);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( double percentage, @JsonKey(name: 'version_id')  String versionId)?  $default,) {final _that = this;
+switch (_that) {
+case _ScriptDeploymentVersion() when $default != null:
+return $default(_that.percentage,_that.versionId);case _:
+  return null;
+
+}
+}
+
+}
+
+/// @nodoc
+@JsonSerializable()
+
+class _ScriptDeploymentVersion implements ScriptDeploymentVersion {
+  const _ScriptDeploymentVersion({required this.percentage, @JsonKey(name: 'version_id') required this.versionId});
+  factory _ScriptDeploymentVersion.fromJson(Map<String, dynamic> json) => _$ScriptDeploymentVersionFromJson(json);
+
+@override final  double percentage;
+@override@JsonKey(name: 'version_id') final  String versionId;
+
+/// Create a copy of ScriptDeploymentVersion
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$ScriptDeploymentVersionCopyWith<_ScriptDeploymentVersion> get copyWith => __$ScriptDeploymentVersionCopyWithImpl<_ScriptDeploymentVersion>(this, _$identity);
+
+@override
+Map<String, dynamic> toJson() {
+  return _$ScriptDeploymentVersionToJson(this, );
+}
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _ScriptDeploymentVersion&&(identical(other.percentage, percentage) || other.percentage == percentage)&&(identical(other.versionId, versionId) || other.versionId == versionId));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,percentage,versionId);
+
+@override
+String toString() {
+  return 'ScriptDeploymentVersion(percentage: $percentage, versionId: $versionId)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class _$ScriptDeploymentVersionCopyWith<$Res> implements $ScriptDeploymentVersionCopyWith<$Res> {
+  factory _$ScriptDeploymentVersionCopyWith(_ScriptDeploymentVersion value, $Res Function(_ScriptDeploymentVersion) _then) = __$ScriptDeploymentVersionCopyWithImpl;
+@override @useResult
+$Res call({
+ double percentage,@JsonKey(name: 'version_id') String versionId
+});
+
+
+
+
+}
+/// @nodoc
+class __$ScriptDeploymentVersionCopyWithImpl<$Res>
+    implements _$ScriptDeploymentVersionCopyWith<$Res> {
+  __$ScriptDeploymentVersionCopyWithImpl(this._self, this._then);
+
+  final _ScriptDeploymentVersion _self;
+  final $Res Function(_ScriptDeploymentVersion) _then;
+
+/// Create a copy of ScriptDeploymentVersion
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? percentage = null,Object? versionId = null,}) {
+  return _then(_ScriptDeploymentVersion(
+percentage: null == percentage ? _self.percentage : percentage // ignore: cast_nullable_to_non_nullable
+as double,versionId: null == versionId ? _self.versionId : versionId // ignore: cast_nullable_to_non_nullable
+as String,
+  ));
+}
+
+
+}
+
+
+/// @nodoc
+mixin _$ScriptDeploymentAnnotations {
+
+@JsonKey(name: 'workers/message') String? get workersMessage;@JsonKey(name: 'workers/triggered_by') String? get workersTriggeredBy;
+/// Create a copy of ScriptDeploymentAnnotations
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$ScriptDeploymentAnnotationsCopyWith<ScriptDeploymentAnnotations> get copyWith => _$ScriptDeploymentAnnotationsCopyWithImpl<ScriptDeploymentAnnotations>(this as ScriptDeploymentAnnotations, _$identity);
+
+  /// Serializes this ScriptDeploymentAnnotations to a JSON map.
+  Map<String, dynamic> toJson();
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is ScriptDeploymentAnnotations&&(identical(other.workersMessage, workersMessage) || other.workersMessage == workersMessage)&&(identical(other.workersTriggeredBy, workersTriggeredBy) || other.workersTriggeredBy == workersTriggeredBy));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,workersMessage,workersTriggeredBy);
+
+@override
+String toString() {
+  return 'ScriptDeploymentAnnotations(workersMessage: $workersMessage, workersTriggeredBy: $workersTriggeredBy)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class $ScriptDeploymentAnnotationsCopyWith<$Res>  {
+  factory $ScriptDeploymentAnnotationsCopyWith(ScriptDeploymentAnnotations value, $Res Function(ScriptDeploymentAnnotations) _then) = _$ScriptDeploymentAnnotationsCopyWithImpl;
+@useResult
+$Res call({
+@JsonKey(name: 'workers/message') String? workersMessage,@JsonKey(name: 'workers/triggered_by') String? workersTriggeredBy
+});
+
+
+
+
+}
+/// @nodoc
+class _$ScriptDeploymentAnnotationsCopyWithImpl<$Res>
+    implements $ScriptDeploymentAnnotationsCopyWith<$Res> {
+  _$ScriptDeploymentAnnotationsCopyWithImpl(this._self, this._then);
+
+  final ScriptDeploymentAnnotations _self;
+  final $Res Function(ScriptDeploymentAnnotations) _then;
+
+/// Create a copy of ScriptDeploymentAnnotations
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? workersMessage = freezed,Object? workersTriggeredBy = freezed,}) {
+  return _then(_self.copyWith(
+workersMessage: freezed == workersMessage ? _self.workersMessage : workersMessage // ignore: cast_nullable_to_non_nullable
+as String?,workersTriggeredBy: freezed == workersTriggeredBy ? _self.workersTriggeredBy : workersTriggeredBy // ignore: cast_nullable_to_non_nullable
+as String?,
+  ));
+}
+
+}
+
+
+/// Adds pattern-matching-related methods to [ScriptDeploymentAnnotations].
+extension ScriptDeploymentAnnotationsPatterns on ScriptDeploymentAnnotations {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _ScriptDeploymentAnnotations value)?  $default,{required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _ScriptDeploymentAnnotations() when $default != null:
+return $default(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _ScriptDeploymentAnnotations value)  $default,){
+final _that = this;
+switch (_that) {
+case _ScriptDeploymentAnnotations():
+return $default(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _ScriptDeploymentAnnotations value)?  $default,){
+final _that = this;
+switch (_that) {
+case _ScriptDeploymentAnnotations() when $default != null:
+return $default(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@JsonKey(name: 'workers/message')  String? workersMessage, @JsonKey(name: 'workers/triggered_by')  String? workersTriggeredBy)?  $default,{required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _ScriptDeploymentAnnotations() when $default != null:
+return $default(_that.workersMessage,_that.workersTriggeredBy);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@JsonKey(name: 'workers/message')  String? workersMessage, @JsonKey(name: 'workers/triggered_by')  String? workersTriggeredBy)  $default,) {final _that = this;
+switch (_that) {
+case _ScriptDeploymentAnnotations():
+return $default(_that.workersMessage,_that.workersTriggeredBy);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@JsonKey(name: 'workers/message')  String? workersMessage, @JsonKey(name: 'workers/triggered_by')  String? workersTriggeredBy)?  $default,) {final _that = this;
+switch (_that) {
+case _ScriptDeploymentAnnotations() when $default != null:
+return $default(_that.workersMessage,_that.workersTriggeredBy);case _:
+  return null;
+
+}
+}
+
+}
+
+/// @nodoc
+@JsonSerializable()
+
+class _ScriptDeploymentAnnotations implements ScriptDeploymentAnnotations {
+  const _ScriptDeploymentAnnotations({@JsonKey(name: 'workers/message') this.workersMessage, @JsonKey(name: 'workers/triggered_by') this.workersTriggeredBy});
+  factory _ScriptDeploymentAnnotations.fromJson(Map<String, dynamic> json) => _$ScriptDeploymentAnnotationsFromJson(json);
+
+@override@JsonKey(name: 'workers/message') final  String? workersMessage;
+@override@JsonKey(name: 'workers/triggered_by') final  String? workersTriggeredBy;
+
+/// Create a copy of ScriptDeploymentAnnotations
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$ScriptDeploymentAnnotationsCopyWith<_ScriptDeploymentAnnotations> get copyWith => __$ScriptDeploymentAnnotationsCopyWithImpl<_ScriptDeploymentAnnotations>(this, _$identity);
+
+@override
+Map<String, dynamic> toJson() {
+  return _$ScriptDeploymentAnnotationsToJson(this, );
+}
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _ScriptDeploymentAnnotations&&(identical(other.workersMessage, workersMessage) || other.workersMessage == workersMessage)&&(identical(other.workersTriggeredBy, workersTriggeredBy) || other.workersTriggeredBy == workersTriggeredBy));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,workersMessage,workersTriggeredBy);
+
+@override
+String toString() {
+  return 'ScriptDeploymentAnnotations(workersMessage: $workersMessage, workersTriggeredBy: $workersTriggeredBy)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class _$ScriptDeploymentAnnotationsCopyWith<$Res> implements $ScriptDeploymentAnnotationsCopyWith<$Res> {
+  factory _$ScriptDeploymentAnnotationsCopyWith(_ScriptDeploymentAnnotations value, $Res Function(_ScriptDeploymentAnnotations) _then) = __$ScriptDeploymentAnnotationsCopyWithImpl;
+@override @useResult
+$Res call({
+@JsonKey(name: 'workers/message') String? workersMessage,@JsonKey(name: 'workers/triggered_by') String? workersTriggeredBy
+});
+
+
+
+
+}
+/// @nodoc
+class __$ScriptDeploymentAnnotationsCopyWithImpl<$Res>
+    implements _$ScriptDeploymentAnnotationsCopyWith<$Res> {
+  __$ScriptDeploymentAnnotationsCopyWithImpl(this._self, this._then);
+
+  final _ScriptDeploymentAnnotations _self;
+  final $Res Function(_ScriptDeploymentAnnotations) _then;
+
+/// Create a copy of ScriptDeploymentAnnotations
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? workersMessage = freezed,Object? workersTriggeredBy = freezed,}) {
+  return _then(_ScriptDeploymentAnnotations(
+workersMessage: freezed == workersMessage ? _self.workersMessage : workersMessage // ignore: cast_nullable_to_non_nullable
+as String?,workersTriggeredBy: freezed == workersTriggeredBy ? _self.workersTriggeredBy : workersTriggeredBy // ignore: cast_nullable_to_non_nullable
+as String?,
+  ));
+}
+
+
+}
+
+
+/// @nodoc
 mixin _$WorkerAnalyticsResponse {
 
  WorkerAnalyticsViewer get viewer;

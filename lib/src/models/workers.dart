@@ -410,3 +410,79 @@ abstract class ScriptsVersionMetadata with _$ScriptsVersionMetadata {
     );
   }
 }
+
+@Freezed()
+abstract class ScriptDeployment with _$ScriptDeployment {
+  const factory ScriptDeployment({
+    required String id,
+    @JsonKey(
+      name: 'created_on',
+      fromJson: _localDateTimeFromJson,
+      toJson: _localDateTimeToJson,
+    )
+    required DateTime createdOn,
+    required String source,
+    required ScriptDeploymentStrategy strategy,
+    required List<ScriptDeploymentVersion> versions,
+    ScriptDeploymentAnnotations? annotations,
+    @JsonKey(name: 'author_email') String? authorEmail,
+  }) = _ScriptDeployment;
+
+  factory ScriptDeployment.fromJson(Map<String, dynamic> json) =>
+      _$ScriptDeploymentFromJson(json);
+
+  factory ScriptDeployment.empty() => ScriptDeployment(
+    id: '12345678-1234-1234-1234-123456789012',
+    createdOn: DateTime.now(),
+    source: 'api',
+    strategy: ScriptDeploymentStrategy.empty(),
+    versions: [ScriptDeploymentVersion.empty()],
+    annotations: ScriptDeploymentAnnotations.empty(),
+    authorEmail: 'example@example.com',
+  );
+}
+
+@Freezed()
+abstract class ScriptDeploymentStrategy with _$ScriptDeploymentStrategy {
+  const factory ScriptDeploymentStrategy({@Default('percentage') String type}) =
+      _ScriptDeploymentStrategy;
+
+  factory ScriptDeploymentStrategy.fromJson(Map<String, dynamic> json) =>
+      _$ScriptDeploymentStrategyFromJson(json);
+
+  factory ScriptDeploymentStrategy.empty() =>
+      const ScriptDeploymentStrategy(type: 'percentage');
+}
+
+@Freezed()
+abstract class ScriptDeploymentVersion with _$ScriptDeploymentVersion {
+  const factory ScriptDeploymentVersion({
+    required double percentage,
+    @JsonKey(name: 'version_id') required String versionId,
+  }) = _ScriptDeploymentVersion;
+
+  factory ScriptDeploymentVersion.fromJson(Map<String, dynamic> json) =>
+      _$ScriptDeploymentVersionFromJson(json);
+
+  factory ScriptDeploymentVersion.empty() => ScriptDeploymentVersion(
+    percentage: 100.0,
+    versionId: '12345678-1234-1234-1234-123456789012',
+  );
+}
+
+@Freezed()
+abstract class ScriptDeploymentAnnotations with _$ScriptDeploymentAnnotations {
+  const factory ScriptDeploymentAnnotations({
+    @JsonKey(name: 'workers/message') String? workersMessage,
+    @JsonKey(name: 'workers/triggered_by') String? workersTriggeredBy,
+  }) = _ScriptDeploymentAnnotations;
+
+  factory ScriptDeploymentAnnotations.fromJson(Map<String, dynamic> json) =>
+      _$ScriptDeploymentAnnotationsFromJson(json);
+
+  factory ScriptDeploymentAnnotations.empty() =>
+      const ScriptDeploymentAnnotations(
+        workersMessage: 'Example deployment message',
+        workersTriggeredBy: 'api',
+      );
+}

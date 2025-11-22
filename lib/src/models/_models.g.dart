@@ -162,6 +162,74 @@ const _$ScriptSourceEnumMap = {
   ScriptSource.workersci: 'workersci',
 };
 
+_ScriptDeployment _$ScriptDeploymentFromJson(Map<String, dynamic> json) =>
+    _ScriptDeployment(
+      id: json['id'] as String,
+      createdOn: _localDateTimeFromJson(json['created_on'] as String),
+      source: json['source'] as String,
+      strategy: ScriptDeploymentStrategy.fromJson(
+        json['strategy'] as Map<String, dynamic>,
+      ),
+      versions: (json['versions'] as List<dynamic>)
+          .map(
+            (e) => ScriptDeploymentVersion.fromJson(e as Map<String, dynamic>),
+          )
+          .toList(),
+      annotations: json['annotations'] == null
+          ? null
+          : ScriptDeploymentAnnotations.fromJson(
+              json['annotations'] as Map<String, dynamic>,
+            ),
+      authorEmail: json['author_email'] as String?,
+    );
+
+Map<String, dynamic> _$ScriptDeploymentToJson(_ScriptDeployment instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'created_on': _localDateTimeToJson(instance.createdOn),
+      'source': instance.source,
+      'strategy': instance.strategy,
+      'versions': instance.versions,
+      'annotations': instance.annotations,
+      'author_email': instance.authorEmail,
+    };
+
+_ScriptDeploymentStrategy _$ScriptDeploymentStrategyFromJson(
+  Map<String, dynamic> json,
+) => _ScriptDeploymentStrategy(type: json['type'] as String? ?? 'percentage');
+
+Map<String, dynamic> _$ScriptDeploymentStrategyToJson(
+  _ScriptDeploymentStrategy instance,
+) => <String, dynamic>{'type': instance.type};
+
+_ScriptDeploymentVersion _$ScriptDeploymentVersionFromJson(
+  Map<String, dynamic> json,
+) => _ScriptDeploymentVersion(
+  percentage: (json['percentage'] as num).toDouble(),
+  versionId: json['version_id'] as String,
+);
+
+Map<String, dynamic> _$ScriptDeploymentVersionToJson(
+  _ScriptDeploymentVersion instance,
+) => <String, dynamic>{
+  'percentage': instance.percentage,
+  'version_id': instance.versionId,
+};
+
+_ScriptDeploymentAnnotations _$ScriptDeploymentAnnotationsFromJson(
+  Map<String, dynamic> json,
+) => _ScriptDeploymentAnnotations(
+  workersMessage: json['workers/message'] as String?,
+  workersTriggeredBy: json['workers/triggered_by'] as String?,
+);
+
+Map<String, dynamic> _$ScriptDeploymentAnnotationsToJson(
+  _ScriptDeploymentAnnotations instance,
+) => <String, dynamic>{
+  'workers/message': instance.workersMessage,
+  'workers/triggered_by': instance.workersTriggeredBy,
+};
+
 _WorkerAnalyticsResponse _$WorkerAnalyticsResponseFromJson(
   Map<String, dynamic> json,
 ) => _WorkerAnalyticsResponse(
