@@ -23,6 +23,17 @@ Map<String, dynamic> _$ResultInfoToJson(_ResultInfo instance) =>
       'total_pages': instance.totalPages,
     };
 
+_RecordMeta _$RecordMetaFromJson(Map<String, dynamic> json) => _RecordMeta(
+  originWorkerId: json['origin_worker_id'] as String?,
+  readOnly: json['read_only'] as bool? ?? false,
+);
+
+Map<String, dynamic> _$RecordMetaToJson(_RecordMeta instance) =>
+    <String, dynamic>{
+      'origin_worker_id': instance.originWorkerId,
+      'read_only': instance.readOnly,
+    };
+
 _WorkerReferences _$WorkerReferencesFromJson(Map<String, dynamic> json) =>
     _WorkerReferences(
       domains: (json['domains'] as List<dynamic>)
@@ -931,6 +942,7 @@ Record _$RecordFromJson(Map<String, dynamic> json) {
     ..type = json['type'] as String
     ..comment = json['comment'] as String?
     ..content = json['content'] as String?
+    ..meta = RecordMeta.fromJson(json['meta'] as Map<String, dynamic>)
     ..proxied = json['proxied'] as bool? ?? false
     ..priority = (json['priority'] as num?)?.toInt();
 }
@@ -942,6 +954,7 @@ Map<String, dynamic> _$RecordToJson(Record instance) => <String, dynamic>{
   'type': instance.type,
   'comment': instance.comment,
   'content': instance.content,
+  'meta': instance.meta,
   'proxied': instance.proxied,
   'priority': instance.priority,
 };

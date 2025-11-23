@@ -1,3 +1,5 @@
+// ignore_for_file: invalid_annotation_target
+
 part of cloudflare.models;
 
 @JsonSerializable(createToJson: true)
@@ -46,6 +48,10 @@ class Record extends Object {
   @JsonKey(name: 'content')
   late String? content;
 
+  /// Record metadata
+  @JsonKey(name: 'meta')
+  late RecordMeta meta;
+
   /// Whether the record is receiving the performance and security benefits of Cloudflare.
   @JsonKey(name: 'proxied', defaultValue: false)
   late bool proxied;
@@ -53,4 +59,18 @@ class Record extends Object {
   /// Required for MX, SRV and URI records; unused by other record types. Records with lower priorities are preferred.
   @JsonKey(name: 'priority')
   late int? priority;
+}
+
+@Freezed()
+abstract class RecordMeta with _$RecordMeta {
+  const factory RecordMeta({
+    @JsonKey(name: 'origin_worker_id') String? originWorkerId,
+    @JsonKey(name: 'read_only') @Default(false) bool readOnly,
+  }) = _RecordMeta;
+
+  factory RecordMeta.fromJson(Map<String, dynamic> json) =>
+      _$RecordMetaFromJson(json);
+
+  factory RecordMeta.empty() =>
+      const RecordMeta(originWorkerId: null, readOnly: false);
 }

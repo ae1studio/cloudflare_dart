@@ -572,6 +572,272 @@ as int?,
 
 
 /// @nodoc
+mixin _$RecordMeta {
+
+@JsonKey(name: 'origin_worker_id') String? get originWorkerId;@JsonKey(name: 'read_only') bool get readOnly;
+/// Create a copy of RecordMeta
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$RecordMetaCopyWith<RecordMeta> get copyWith => _$RecordMetaCopyWithImpl<RecordMeta>(this as RecordMeta, _$identity);
+
+  /// Serializes this RecordMeta to a JSON map.
+  Map<String, dynamic> toJson();
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is RecordMeta&&(identical(other.originWorkerId, originWorkerId) || other.originWorkerId == originWorkerId)&&(identical(other.readOnly, readOnly) || other.readOnly == readOnly));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,originWorkerId,readOnly);
+
+@override
+String toString() {
+  return 'RecordMeta(originWorkerId: $originWorkerId, readOnly: $readOnly)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class $RecordMetaCopyWith<$Res>  {
+  factory $RecordMetaCopyWith(RecordMeta value, $Res Function(RecordMeta) _then) = _$RecordMetaCopyWithImpl;
+@useResult
+$Res call({
+@JsonKey(name: 'origin_worker_id') String? originWorkerId,@JsonKey(name: 'read_only') bool readOnly
+});
+
+
+
+
+}
+/// @nodoc
+class _$RecordMetaCopyWithImpl<$Res>
+    implements $RecordMetaCopyWith<$Res> {
+  _$RecordMetaCopyWithImpl(this._self, this._then);
+
+  final RecordMeta _self;
+  final $Res Function(RecordMeta) _then;
+
+/// Create a copy of RecordMeta
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? originWorkerId = freezed,Object? readOnly = null,}) {
+  return _then(_self.copyWith(
+originWorkerId: freezed == originWorkerId ? _self.originWorkerId : originWorkerId // ignore: cast_nullable_to_non_nullable
+as String?,readOnly: null == readOnly ? _self.readOnly : readOnly // ignore: cast_nullable_to_non_nullable
+as bool,
+  ));
+}
+
+}
+
+
+/// Adds pattern-matching-related methods to [RecordMeta].
+extension RecordMetaPatterns on RecordMeta {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _RecordMeta value)?  $default,{required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _RecordMeta() when $default != null:
+return $default(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _RecordMeta value)  $default,){
+final _that = this;
+switch (_that) {
+case _RecordMeta():
+return $default(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _RecordMeta value)?  $default,){
+final _that = this;
+switch (_that) {
+case _RecordMeta() when $default != null:
+return $default(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@JsonKey(name: 'origin_worker_id')  String? originWorkerId, @JsonKey(name: 'read_only')  bool readOnly)?  $default,{required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _RecordMeta() when $default != null:
+return $default(_that.originWorkerId,_that.readOnly);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@JsonKey(name: 'origin_worker_id')  String? originWorkerId, @JsonKey(name: 'read_only')  bool readOnly)  $default,) {final _that = this;
+switch (_that) {
+case _RecordMeta():
+return $default(_that.originWorkerId,_that.readOnly);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@JsonKey(name: 'origin_worker_id')  String? originWorkerId, @JsonKey(name: 'read_only')  bool readOnly)?  $default,) {final _that = this;
+switch (_that) {
+case _RecordMeta() when $default != null:
+return $default(_that.originWorkerId,_that.readOnly);case _:
+  return null;
+
+}
+}
+
+}
+
+/// @nodoc
+@JsonSerializable()
+
+class _RecordMeta implements RecordMeta {
+  const _RecordMeta({@JsonKey(name: 'origin_worker_id') this.originWorkerId, @JsonKey(name: 'read_only') this.readOnly = false});
+  factory _RecordMeta.fromJson(Map<String, dynamic> json) => _$RecordMetaFromJson(json);
+
+@override@JsonKey(name: 'origin_worker_id') final  String? originWorkerId;
+@override@JsonKey(name: 'read_only') final  bool readOnly;
+
+/// Create a copy of RecordMeta
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$RecordMetaCopyWith<_RecordMeta> get copyWith => __$RecordMetaCopyWithImpl<_RecordMeta>(this, _$identity);
+
+@override
+Map<String, dynamic> toJson() {
+  return _$RecordMetaToJson(this, );
+}
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _RecordMeta&&(identical(other.originWorkerId, originWorkerId) || other.originWorkerId == originWorkerId)&&(identical(other.readOnly, readOnly) || other.readOnly == readOnly));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,originWorkerId,readOnly);
+
+@override
+String toString() {
+  return 'RecordMeta(originWorkerId: $originWorkerId, readOnly: $readOnly)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class _$RecordMetaCopyWith<$Res> implements $RecordMetaCopyWith<$Res> {
+  factory _$RecordMetaCopyWith(_RecordMeta value, $Res Function(_RecordMeta) _then) = __$RecordMetaCopyWithImpl;
+@override @useResult
+$Res call({
+@JsonKey(name: 'origin_worker_id') String? originWorkerId,@JsonKey(name: 'read_only') bool readOnly
+});
+
+
+
+
+}
+/// @nodoc
+class __$RecordMetaCopyWithImpl<$Res>
+    implements _$RecordMetaCopyWith<$Res> {
+  __$RecordMetaCopyWithImpl(this._self, this._then);
+
+  final _RecordMeta _self;
+  final $Res Function(_RecordMeta) _then;
+
+/// Create a copy of RecordMeta
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? originWorkerId = freezed,Object? readOnly = null,}) {
+  return _then(_RecordMeta(
+originWorkerId: freezed == originWorkerId ? _self.originWorkerId : originWorkerId // ignore: cast_nullable_to_non_nullable
+as String?,readOnly: null == readOnly ? _self.readOnly : readOnly // ignore: cast_nullable_to_non_nullable
+as bool,
+  ));
+}
+
+
+}
+
+
+/// @nodoc
 mixin _$WorkerReferences {
 
 /// Custom domains connected to the Worker.
