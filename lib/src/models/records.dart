@@ -16,6 +16,7 @@ class Record extends Object {
     record.ttl = 1;
     record.type = 'A';
     record.comment = null;
+    record.meta = RecordMeta.empty();
     record.content = "0.0.0.0.0";
     record.proxied = false;
     record.priority = null;
