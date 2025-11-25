@@ -203,3 +203,273 @@ abstract class WorkerInvocationsAdaptiveDimensions
         datetimeFifteenMinutes: DateTime.now().toUtc(),
       );
 }
+
+@Freezed()
+abstract class WorkersAndPagesOverviewBetaMetricsResponse
+    with _$WorkersAndPagesOverviewBetaMetricsResponse {
+  const factory WorkersAndPagesOverviewBetaMetricsResponse({
+    required WorkersAndPagesOverviewBetaMetricsViewer viewer,
+  }) = _WorkersAndPagesOverviewBetaMetricsResponse;
+
+  factory WorkersAndPagesOverviewBetaMetricsResponse.fromJson(
+    Map<String, dynamic> json,
+  ) => _$WorkersAndPagesOverviewBetaMetricsResponseFromJson(json);
+
+  factory WorkersAndPagesOverviewBetaMetricsResponse.empty() =>
+      WorkersAndPagesOverviewBetaMetricsResponse(
+        viewer: WorkersAndPagesOverviewBetaMetricsViewer.empty(),
+      );
+}
+
+@Freezed()
+abstract class WorkersAndPagesOverviewBetaMetricsViewer
+    with _$WorkersAndPagesOverviewBetaMetricsViewer {
+  const factory WorkersAndPagesOverviewBetaMetricsViewer({
+    @JsonKey(name: '__typename') required String typename,
+    required List<WorkersAndPagesOverviewBetaMetricsAccount> accounts,
+  }) = _WorkersAndPagesOverviewBetaMetricsViewer;
+
+  factory WorkersAndPagesOverviewBetaMetricsViewer.fromJson(
+    Map<String, dynamic> json,
+  ) => _$WorkersAndPagesOverviewBetaMetricsViewerFromJson(json);
+
+  factory WorkersAndPagesOverviewBetaMetricsViewer.empty() =>
+      WorkersAndPagesOverviewBetaMetricsViewer(
+        typename: 'viewer',
+        accounts: [WorkersAndPagesOverviewBetaMetricsAccount.empty()],
+      );
+}
+
+@Freezed()
+abstract class WorkersAndPagesOverviewBetaMetricsAccount
+    with _$WorkersAndPagesOverviewBetaMetricsAccount {
+  const factory WorkersAndPagesOverviewBetaMetricsAccount({
+    @JsonKey(name: '__typename') required String typename,
+    @JsonKey(name: 'monthlyPagesFunctionsInvocationsAdaptiveGroups')
+    required List<PagesFunctionsInvocationsAdaptiveGroup>
+    monthlyPagesFunctionsInvocationsAdaptiveGroups,
+    @JsonKey(name: 'monthlyWorkersInvocationsAdaptive')
+    required List<WorkersInvocationsAdaptiveOverview>
+    monthlyWorkersInvocationsAdaptive,
+    @JsonKey(name: 'monthlyWorkersOverviewRequestsAdaptiveGroups')
+    required List<WorkersOverviewRequestsAdaptiveGroup>
+    monthlyWorkersOverviewRequestsAdaptiveGroups,
+    @JsonKey(name: 'dailyPagesFunctionsInvocationsAdaptiveGroups')
+    required List<PagesFunctionsInvocationsAdaptiveGroup>
+    dailyPagesFunctionsInvocationsAdaptiveGroups,
+    @JsonKey(name: 'dailyWorkersInvocationsAdaptive')
+    required List<WorkersInvocationsAdaptiveOverview>
+    dailyWorkersInvocationsAdaptive,
+    @JsonKey(name: 'dailyWorkersOverviewRequestsAdaptiveGroups')
+    required List<WorkersOverviewRequestsAdaptiveGroup>
+    dailyWorkersOverviewRequestsAdaptiveGroups,
+  }) = _WorkersAndPagesOverviewBetaMetricsAccount;
+
+  factory WorkersAndPagesOverviewBetaMetricsAccount.fromJson(
+    Map<String, dynamic> json,
+  ) => _$WorkersAndPagesOverviewBetaMetricsAccountFromJson(json);
+
+  factory WorkersAndPagesOverviewBetaMetricsAccount.empty() =>
+      WorkersAndPagesOverviewBetaMetricsAccount(
+        typename: 'account',
+        monthlyPagesFunctionsInvocationsAdaptiveGroups: [
+          PagesFunctionsInvocationsAdaptiveGroup.empty(),
+        ],
+        monthlyWorkersInvocationsAdaptive: [
+          WorkersInvocationsAdaptiveOverview.empty(),
+        ],
+        monthlyWorkersOverviewRequestsAdaptiveGroups: [
+          WorkersOverviewRequestsAdaptiveGroup.empty(),
+        ],
+        dailyPagesFunctionsInvocationsAdaptiveGroups: [
+          PagesFunctionsInvocationsAdaptiveGroup.empty(),
+        ],
+        dailyWorkersInvocationsAdaptive: [
+          WorkersInvocationsAdaptiveOverview.empty(),
+        ],
+        dailyWorkersOverviewRequestsAdaptiveGroups: [
+          WorkersOverviewRequestsAdaptiveGroup.empty(),
+        ],
+      );
+}
+
+@Freezed()
+abstract class PagesFunctionsInvocationsAdaptiveGroup
+    with _$PagesFunctionsInvocationsAdaptiveGroup {
+  const factory PagesFunctionsInvocationsAdaptiveGroup({
+    @JsonKey(name: '__typename') required String typename,
+    required PagesFunctionsInvocationsAdaptiveGroupSum sum,
+    required PagesFunctionsInvocationsAdaptiveGroupDimensions dimensions,
+  }) = _PagesFunctionsInvocationsAdaptiveGroup;
+
+  factory PagesFunctionsInvocationsAdaptiveGroup.fromJson(
+    Map<String, dynamic> json,
+  ) => _$PagesFunctionsInvocationsAdaptiveGroupFromJson(json);
+
+  factory PagesFunctionsInvocationsAdaptiveGroup.empty() =>
+      PagesFunctionsInvocationsAdaptiveGroup(
+        typename: 'AccountPagesFunctionsInvocationsAdaptiveGroups',
+        sum: PagesFunctionsInvocationsAdaptiveGroupSum.empty(),
+        dimensions: PagesFunctionsInvocationsAdaptiveGroupDimensions.empty(),
+      );
+}
+
+@Freezed()
+abstract class PagesFunctionsInvocationsAdaptiveGroupSum
+    with _$PagesFunctionsInvocationsAdaptiveGroupSum {
+  const factory PagesFunctionsInvocationsAdaptiveGroupSum({
+    @JsonKey(name: '__typename') required String typename,
+    required double duration,
+    required int requests,
+  }) = _PagesFunctionsInvocationsAdaptiveGroupSum;
+
+  factory PagesFunctionsInvocationsAdaptiveGroupSum.fromJson(
+    Map<String, dynamic> json,
+  ) => _$PagesFunctionsInvocationsAdaptiveGroupSumFromJson(json);
+
+  factory PagesFunctionsInvocationsAdaptiveGroupSum.empty() =>
+      PagesFunctionsInvocationsAdaptiveGroupSum(
+        typename: 'AccountPagesFunctionsInvocationsAdaptiveGroupsSum',
+        duration: 0.0,
+        requests: 0,
+      );
+}
+
+@Freezed()
+abstract class PagesFunctionsInvocationsAdaptiveGroupDimensions
+    with _$PagesFunctionsInvocationsAdaptiveGroupDimensions {
+  const factory PagesFunctionsInvocationsAdaptiveGroupDimensions({
+    @JsonKey(name: '__typename') required String typename,
+    required String usageModel,
+  }) = _PagesFunctionsInvocationsAdaptiveGroupDimensions;
+
+  factory PagesFunctionsInvocationsAdaptiveGroupDimensions.fromJson(
+    Map<String, dynamic> json,
+  ) => _$PagesFunctionsInvocationsAdaptiveGroupDimensionsFromJson(json);
+
+  factory PagesFunctionsInvocationsAdaptiveGroupDimensions.empty() =>
+      PagesFunctionsInvocationsAdaptiveGroupDimensions(
+        typename: 'AccountPagesFunctionsInvocationsAdaptiveGroupsDimensions',
+        usageModel: 'standard',
+      );
+}
+
+@Freezed()
+abstract class WorkersInvocationsAdaptiveOverview
+    with _$WorkersInvocationsAdaptiveOverview {
+  const factory WorkersInvocationsAdaptiveOverview({
+    @JsonKey(name: '__typename') required String typename,
+    required WorkersInvocationsAdaptiveOverviewSum sum,
+    required WorkersInvocationsAdaptiveOverviewDimensions dimensions,
+  }) = _WorkersInvocationsAdaptiveOverview;
+
+  factory WorkersInvocationsAdaptiveOverview.fromJson(
+    Map<String, dynamic> json,
+  ) => _$WorkersInvocationsAdaptiveOverviewFromJson(json);
+
+  factory WorkersInvocationsAdaptiveOverview.empty() =>
+      WorkersInvocationsAdaptiveOverview(
+        typename: 'AccountWorkersInvocationsAdaptive',
+        sum: WorkersInvocationsAdaptiveOverviewSum.empty(),
+        dimensions: WorkersInvocationsAdaptiveOverviewDimensions.empty(),
+      );
+}
+
+@Freezed()
+abstract class WorkersInvocationsAdaptiveOverviewSum
+    with _$WorkersInvocationsAdaptiveOverviewSum {
+  const factory WorkersInvocationsAdaptiveOverviewSum({
+    @JsonKey(name: '__typename') required String typename,
+    required double duration,
+    required int requests,
+  }) = _WorkersInvocationsAdaptiveOverviewSum;
+
+  factory WorkersInvocationsAdaptiveOverviewSum.fromJson(
+    Map<String, dynamic> json,
+  ) => _$WorkersInvocationsAdaptiveOverviewSumFromJson(json);
+
+  factory WorkersInvocationsAdaptiveOverviewSum.empty() =>
+      WorkersInvocationsAdaptiveOverviewSum(
+        typename: 'AccountWorkersInvocationsAdaptiveSum',
+        duration: 0.0,
+        requests: 0,
+      );
+}
+
+@Freezed()
+abstract class WorkersInvocationsAdaptiveOverviewDimensions
+    with _$WorkersInvocationsAdaptiveOverviewDimensions {
+  const factory WorkersInvocationsAdaptiveOverviewDimensions({
+    @JsonKey(name: '__typename') required String typename,
+    required String usageModel,
+  }) = _WorkersInvocationsAdaptiveOverviewDimensions;
+
+  factory WorkersInvocationsAdaptiveOverviewDimensions.fromJson(
+    Map<String, dynamic> json,
+  ) => _$WorkersInvocationsAdaptiveOverviewDimensionsFromJson(json);
+
+  factory WorkersInvocationsAdaptiveOverviewDimensions.empty() =>
+      WorkersInvocationsAdaptiveOverviewDimensions(
+        typename: 'AccountWorkersInvocationsAdaptiveDimensions',
+        usageModel: 'standard',
+      );
+}
+
+@Freezed()
+abstract class WorkersOverviewRequestsAdaptiveGroup
+    with _$WorkersOverviewRequestsAdaptiveGroup {
+  const factory WorkersOverviewRequestsAdaptiveGroup({
+    @JsonKey(name: '__typename') required String typename,
+    required WorkersOverviewRequestsAdaptiveGroupSum sum,
+    required WorkersOverviewRequestsAdaptiveGroupDimensions dimensions,
+  }) = _WorkersOverviewRequestsAdaptiveGroup;
+
+  factory WorkersOverviewRequestsAdaptiveGroup.fromJson(
+    Map<String, dynamic> json,
+  ) => _$WorkersOverviewRequestsAdaptiveGroupFromJson(json);
+
+  factory WorkersOverviewRequestsAdaptiveGroup.empty() =>
+      WorkersOverviewRequestsAdaptiveGroup(
+        typename: 'AccountWorkersOverviewRequestsAdaptiveGroups',
+        sum: WorkersOverviewRequestsAdaptiveGroupSum.empty(),
+        dimensions: WorkersOverviewRequestsAdaptiveGroupDimensions.empty(),
+      );
+}
+
+@Freezed()
+abstract class WorkersOverviewRequestsAdaptiveGroupSum
+    with _$WorkersOverviewRequestsAdaptiveGroupSum {
+  const factory WorkersOverviewRequestsAdaptiveGroupSum({
+    @JsonKey(name: '__typename') required String typename,
+    required int cpuTimeUs,
+  }) = _WorkersOverviewRequestsAdaptiveGroupSum;
+
+  factory WorkersOverviewRequestsAdaptiveGroupSum.fromJson(
+    Map<String, dynamic> json,
+  ) => _$WorkersOverviewRequestsAdaptiveGroupSumFromJson(json);
+
+  factory WorkersOverviewRequestsAdaptiveGroupSum.empty() =>
+      WorkersOverviewRequestsAdaptiveGroupSum(
+        typename: 'AccountWorkersOverviewRequestsAdaptiveGroupsSum',
+        cpuTimeUs: 0,
+      );
+}
+
+@Freezed()
+abstract class WorkersOverviewRequestsAdaptiveGroupDimensions
+    with _$WorkersOverviewRequestsAdaptiveGroupDimensions {
+  const factory WorkersOverviewRequestsAdaptiveGroupDimensions({
+    @JsonKey(name: '__typename') required String typename,
+    required int usageModel,
+  }) = _WorkersOverviewRequestsAdaptiveGroupDimensions;
+
+  factory WorkersOverviewRequestsAdaptiveGroupDimensions.fromJson(
+    Map<String, dynamic> json,
+  ) => _$WorkersOverviewRequestsAdaptiveGroupDimensionsFromJson(json);
+
+  factory WorkersOverviewRequestsAdaptiveGroupDimensions.empty() =>
+      WorkersOverviewRequestsAdaptiveGroupDimensions(
+        typename: 'AccountWorkersOverviewRequestsAdaptiveGroupsDimensions',
+        usageModel: 0,
+      );
+}

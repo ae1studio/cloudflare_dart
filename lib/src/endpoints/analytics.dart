@@ -420,4 +420,191 @@ query getWorkerAnalytics($accountTag: string!, $lookbackTime: Time, $datetimeSta
       'viewer': viewerData,
     });
   }
+
+  /// Get Workers and Pages Overview Beta Metrics
+  Future<WorkersAndPagesOverviewBetaMetricsResponse?>
+  getWorkersAndPagesOverviewBetaMetrics({
+    required String accountTag,
+    required DateTime monthlyDateStart,
+    required DateTime monthlyDateEnd,
+    required DateTime dailyDateStart,
+    required DateTime dailyDateEnd,
+  }) async {
+    if (graphQLClient == null) {
+      throw Exception('GraphQL not setup');
+    }
+
+    String query = r'''
+query getWorkersAndPagesOverviewBetaMetrics($accountTag: string!, $monthlyFilter: AccountWorkersInvocationsAdaptiveFilter_InputObject, $monthlyOverviewFilter: AccountWorkersInvocationsAdaptiveFilter_InputObject, $dailyFilter: AccountWorkersInvocationsAdaptiveFilter_InputObject, $dailyOverviewFilter: AccountWorkersInvocationsAdaptiveFilter_InputObject) {
+  viewer {
+    accounts(filter: {accountTag: $accountTag}) {
+      monthlyPagesFunctionsInvocationsAdaptiveGroups: pagesFunctionsInvocationsAdaptiveGroups(limit: 1000, filter: $monthlyFilter) {
+        sum {
+          duration
+          requests
+          __typename
+        }
+        dimensions {
+          usageModel
+          __typename
+        }
+        __typename
+      }
+      monthlyWorkersInvocationsAdaptive: workersInvocationsAdaptive(limit: 10000, filter: $monthlyFilter) {
+        sum {
+          duration
+          requests
+          __typename
+        }
+        dimensions {
+          usageModel
+          __typename
+        }
+        __typename
+      }
+      monthlyWorkersOverviewRequestsAdaptiveGroups: workersOverviewRequestsAdaptiveGroups(limit: 1000, filter: $monthlyOverviewFilter) {
+        sum {
+          cpuTimeUs
+          __typename
+        }
+        dimensions {
+          usageModel
+          __typename
+        }
+        __typename
+      }
+      dailyPagesFunctionsInvocationsAdaptiveGroups: pagesFunctionsInvocationsAdaptiveGroups(limit: 1000, filter: $dailyFilter) {
+        sum {
+          duration
+          requests
+          __typename
+        }
+        dimensions {
+          usageModel
+          __typename
+        }
+        __typename
+      }
+      dailyWorkersInvocationsAdaptive: workersInvocationsAdaptive(limit: 10000, filter: $dailyFilter) {
+        sum {
+          duration
+          requests
+          __typename
+        }
+        dimensions {
+          usageModel
+          __typename
+        }
+        __typename
+      }
+      dailyWorkersOverviewRequestsAdaptiveGroups: workersOverviewRequestsAdaptiveGroups(limit: 1000, filter: $dailyOverviewFilter) {
+        sum {
+          cpuTimeUs
+          __typename
+        }
+        dimensions {
+          usageModel
+          __typename
+        }
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}
+''';
+
+    Map<String, dynamic> monthlyFilter = <String, dynamic>{
+      'date_geq': _dateFormat.format(monthlyDateStart).toString(),
+      'date_leq': _dateFormat.format(monthlyDateEnd).toString(),
+    };
+
+    final DateTime monthlyOverviewStart = DateTime(
+      monthlyDateStart.year,
+      monthlyDateStart.month,
+      monthlyDateStart.day,
+    );
+    final DateTime monthlyOverviewEnd = DateTime(
+      monthlyDateEnd.year,
+      monthlyDateEnd.month,
+      monthlyDateEnd.day,
+      23,
+      59,
+      59,
+      999,
+    );
+
+    Map<String, dynamic> monthlyOverviewFilter = <String, dynamic>{
+      'datetime_geq': _dateTimeFormat.format(monthlyOverviewStart).toString(),
+      'datetime_leq': _dateTimeFormat.format(monthlyOverviewEnd).toString(),
+    };
+
+    Map<String, dynamic> dailyFilter = <String, dynamic>{
+      'date_geq': _dateFormat.format(dailyDateStart).toString(),
+      'date_leq': _dateFormat.format(dailyDateEnd).toString(),
+    };
+
+    final DateTime dailyOverviewStart = DateTime(
+      dailyDateStart.year,
+      dailyDateStart.month,
+      dailyDateStart.day,
+    );
+    final DateTime dailyOverviewEnd = DateTime(
+      dailyDateEnd.year,
+      dailyDateEnd.month,
+      dailyDateEnd.day,
+      23,
+      59,
+      59,
+      999,
+    );
+
+    Map<String, dynamic> dailyOverviewFilter = <String, dynamic>{
+      'datetime_geq': _dateTimeFormat.format(dailyOverviewStart).toString(),
+      'datetime_leq': _dateTimeFormat.format(dailyOverviewEnd).toString(),
+    };
+
+    Map<String, dynamic> variables = <String, dynamic>{
+      'accountTag': accountTag,
+      'monthlyFilter': monthlyFilter,
+      'monthlyOverviewFilter': monthlyOverviewFilter,
+      'dailyFilter': dailyFilter,
+      'dailyOverviewFilter': dailyOverviewFilter,
+    };
+
+    final graph.QueryOptions options = graph.QueryOptions(
+      document: graph.gql(query),
+      variables: variables,
+    );
+
+    graph.QueryResult result = await graphQLClient!.query(options);
+
+    if (talker != null) {
+      talker!.info(
+        'getWorkersAndPagesOverviewBetaMetrics GraphQL Query: Has data ${result.data?.isNotEmpty} - \n ${variables}',
+      );
+    }
+
+    if (result.hasException) {
+      if (talker != null) {
+        talker!.error(result.exception.toString());
+      }
+      throw Exception(result.exception.toString());
+    }
+
+    if (result.data == null) {
+      return null;
+    }
+
+    final Map<String, dynamic>? viewerData =
+        result.data?['viewer'] as Map<String, dynamic>?;
+    if (viewerData == null) {
+      return null;
+    }
+
+    return WorkersAndPagesOverviewBetaMetricsResponse.fromJson(
+      <String, dynamic>{'viewer': viewerData},
+    );
+  }
 }

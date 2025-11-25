@@ -452,6 +452,263 @@ Map<String, dynamic> _$WorkerInvocationsAdaptiveDimensionsToJson(
   ),
 };
 
+_WorkersAndPagesOverviewBetaMetricsResponse
+_$WorkersAndPagesOverviewBetaMetricsResponseFromJson(
+  Map<String, dynamic> json,
+) => _WorkersAndPagesOverviewBetaMetricsResponse(
+  viewer: WorkersAndPagesOverviewBetaMetricsViewer.fromJson(
+    json['viewer'] as Map<String, dynamic>,
+  ),
+);
+
+Map<String, dynamic> _$WorkersAndPagesOverviewBetaMetricsResponseToJson(
+  _WorkersAndPagesOverviewBetaMetricsResponse instance,
+) => <String, dynamic>{'viewer': instance.viewer};
+
+_WorkersAndPagesOverviewBetaMetricsViewer
+_$WorkersAndPagesOverviewBetaMetricsViewerFromJson(Map<String, dynamic> json) =>
+    _WorkersAndPagesOverviewBetaMetricsViewer(
+      typename: json['__typename'] as String,
+      accounts: (json['accounts'] as List<dynamic>)
+          .map(
+            (e) => WorkersAndPagesOverviewBetaMetricsAccount.fromJson(
+              e as Map<String, dynamic>,
+            ),
+          )
+          .toList(),
+    );
+
+Map<String, dynamic> _$WorkersAndPagesOverviewBetaMetricsViewerToJson(
+  _WorkersAndPagesOverviewBetaMetricsViewer instance,
+) => <String, dynamic>{
+  '__typename': instance.typename,
+  'accounts': instance.accounts,
+};
+
+_WorkersAndPagesOverviewBetaMetricsAccount
+_$WorkersAndPagesOverviewBetaMetricsAccountFromJson(
+  Map<String, dynamic> json,
+) => _WorkersAndPagesOverviewBetaMetricsAccount(
+  typename: json['__typename'] as String,
+  monthlyPagesFunctionsInvocationsAdaptiveGroups:
+      (json['monthlyPagesFunctionsInvocationsAdaptiveGroups'] as List<dynamic>)
+          .map(
+            (e) => PagesFunctionsInvocationsAdaptiveGroup.fromJson(
+              e as Map<String, dynamic>,
+            ),
+          )
+          .toList(),
+  monthlyWorkersInvocationsAdaptive:
+      (json['monthlyWorkersInvocationsAdaptive'] as List<dynamic>)
+          .map(
+            (e) => WorkersInvocationsAdaptiveOverview.fromJson(
+              e as Map<String, dynamic>,
+            ),
+          )
+          .toList(),
+  monthlyWorkersOverviewRequestsAdaptiveGroups:
+      (json['monthlyWorkersOverviewRequestsAdaptiveGroups'] as List<dynamic>)
+          .map(
+            (e) => WorkersOverviewRequestsAdaptiveGroup.fromJson(
+              e as Map<String, dynamic>,
+            ),
+          )
+          .toList(),
+  dailyPagesFunctionsInvocationsAdaptiveGroups:
+      (json['dailyPagesFunctionsInvocationsAdaptiveGroups'] as List<dynamic>)
+          .map(
+            (e) => PagesFunctionsInvocationsAdaptiveGroup.fromJson(
+              e as Map<String, dynamic>,
+            ),
+          )
+          .toList(),
+  dailyWorkersInvocationsAdaptive:
+      (json['dailyWorkersInvocationsAdaptive'] as List<dynamic>)
+          .map(
+            (e) => WorkersInvocationsAdaptiveOverview.fromJson(
+              e as Map<String, dynamic>,
+            ),
+          )
+          .toList(),
+  dailyWorkersOverviewRequestsAdaptiveGroups:
+      (json['dailyWorkersOverviewRequestsAdaptiveGroups'] as List<dynamic>)
+          .map(
+            (e) => WorkersOverviewRequestsAdaptiveGroup.fromJson(
+              e as Map<String, dynamic>,
+            ),
+          )
+          .toList(),
+);
+
+Map<String, dynamic> _$WorkersAndPagesOverviewBetaMetricsAccountToJson(
+  _WorkersAndPagesOverviewBetaMetricsAccount instance,
+) => <String, dynamic>{
+  '__typename': instance.typename,
+  'monthlyPagesFunctionsInvocationsAdaptiveGroups':
+      instance.monthlyPagesFunctionsInvocationsAdaptiveGroups,
+  'monthlyWorkersInvocationsAdaptive':
+      instance.monthlyWorkersInvocationsAdaptive,
+  'monthlyWorkersOverviewRequestsAdaptiveGroups':
+      instance.monthlyWorkersOverviewRequestsAdaptiveGroups,
+  'dailyPagesFunctionsInvocationsAdaptiveGroups':
+      instance.dailyPagesFunctionsInvocationsAdaptiveGroups,
+  'dailyWorkersInvocationsAdaptive': instance.dailyWorkersInvocationsAdaptive,
+  'dailyWorkersOverviewRequestsAdaptiveGroups':
+      instance.dailyWorkersOverviewRequestsAdaptiveGroups,
+};
+
+_PagesFunctionsInvocationsAdaptiveGroup
+_$PagesFunctionsInvocationsAdaptiveGroupFromJson(Map<String, dynamic> json) =>
+    _PagesFunctionsInvocationsAdaptiveGroup(
+      typename: json['__typename'] as String,
+      sum: PagesFunctionsInvocationsAdaptiveGroupSum.fromJson(
+        json['sum'] as Map<String, dynamic>,
+      ),
+      dimensions: PagesFunctionsInvocationsAdaptiveGroupDimensions.fromJson(
+        json['dimensions'] as Map<String, dynamic>,
+      ),
+    );
+
+Map<String, dynamic> _$PagesFunctionsInvocationsAdaptiveGroupToJson(
+  _PagesFunctionsInvocationsAdaptiveGroup instance,
+) => <String, dynamic>{
+  '__typename': instance.typename,
+  'sum': instance.sum,
+  'dimensions': instance.dimensions,
+};
+
+_PagesFunctionsInvocationsAdaptiveGroupSum
+_$PagesFunctionsInvocationsAdaptiveGroupSumFromJson(
+  Map<String, dynamic> json,
+) => _PagesFunctionsInvocationsAdaptiveGroupSum(
+  typename: json['__typename'] as String,
+  duration: (json['duration'] as num).toDouble(),
+  requests: (json['requests'] as num).toInt(),
+);
+
+Map<String, dynamic> _$PagesFunctionsInvocationsAdaptiveGroupSumToJson(
+  _PagesFunctionsInvocationsAdaptiveGroupSum instance,
+) => <String, dynamic>{
+  '__typename': instance.typename,
+  'duration': instance.duration,
+  'requests': instance.requests,
+};
+
+_PagesFunctionsInvocationsAdaptiveGroupDimensions
+_$PagesFunctionsInvocationsAdaptiveGroupDimensionsFromJson(
+  Map<String, dynamic> json,
+) => _PagesFunctionsInvocationsAdaptiveGroupDimensions(
+  typename: json['__typename'] as String,
+  usageModel: json['usageModel'] as String,
+);
+
+Map<String, dynamic> _$PagesFunctionsInvocationsAdaptiveGroupDimensionsToJson(
+  _PagesFunctionsInvocationsAdaptiveGroupDimensions instance,
+) => <String, dynamic>{
+  '__typename': instance.typename,
+  'usageModel': instance.usageModel,
+};
+
+_WorkersInvocationsAdaptiveOverview
+_$WorkersInvocationsAdaptiveOverviewFromJson(Map<String, dynamic> json) =>
+    _WorkersInvocationsAdaptiveOverview(
+      typename: json['__typename'] as String,
+      sum: WorkersInvocationsAdaptiveOverviewSum.fromJson(
+        json['sum'] as Map<String, dynamic>,
+      ),
+      dimensions: WorkersInvocationsAdaptiveOverviewDimensions.fromJson(
+        json['dimensions'] as Map<String, dynamic>,
+      ),
+    );
+
+Map<String, dynamic> _$WorkersInvocationsAdaptiveOverviewToJson(
+  _WorkersInvocationsAdaptiveOverview instance,
+) => <String, dynamic>{
+  '__typename': instance.typename,
+  'sum': instance.sum,
+  'dimensions': instance.dimensions,
+};
+
+_WorkersInvocationsAdaptiveOverviewSum
+_$WorkersInvocationsAdaptiveOverviewSumFromJson(Map<String, dynamic> json) =>
+    _WorkersInvocationsAdaptiveOverviewSum(
+      typename: json['__typename'] as String,
+      duration: (json['duration'] as num).toDouble(),
+      requests: (json['requests'] as num).toInt(),
+    );
+
+Map<String, dynamic> _$WorkersInvocationsAdaptiveOverviewSumToJson(
+  _WorkersInvocationsAdaptiveOverviewSum instance,
+) => <String, dynamic>{
+  '__typename': instance.typename,
+  'duration': instance.duration,
+  'requests': instance.requests,
+};
+
+_WorkersInvocationsAdaptiveOverviewDimensions
+_$WorkersInvocationsAdaptiveOverviewDimensionsFromJson(
+  Map<String, dynamic> json,
+) => _WorkersInvocationsAdaptiveOverviewDimensions(
+  typename: json['__typename'] as String,
+  usageModel: json['usageModel'] as String,
+);
+
+Map<String, dynamic> _$WorkersInvocationsAdaptiveOverviewDimensionsToJson(
+  _WorkersInvocationsAdaptiveOverviewDimensions instance,
+) => <String, dynamic>{
+  '__typename': instance.typename,
+  'usageModel': instance.usageModel,
+};
+
+_WorkersOverviewRequestsAdaptiveGroup
+_$WorkersOverviewRequestsAdaptiveGroupFromJson(Map<String, dynamic> json) =>
+    _WorkersOverviewRequestsAdaptiveGroup(
+      typename: json['__typename'] as String,
+      sum: WorkersOverviewRequestsAdaptiveGroupSum.fromJson(
+        json['sum'] as Map<String, dynamic>,
+      ),
+      dimensions: WorkersOverviewRequestsAdaptiveGroupDimensions.fromJson(
+        json['dimensions'] as Map<String, dynamic>,
+      ),
+    );
+
+Map<String, dynamic> _$WorkersOverviewRequestsAdaptiveGroupToJson(
+  _WorkersOverviewRequestsAdaptiveGroup instance,
+) => <String, dynamic>{
+  '__typename': instance.typename,
+  'sum': instance.sum,
+  'dimensions': instance.dimensions,
+};
+
+_WorkersOverviewRequestsAdaptiveGroupSum
+_$WorkersOverviewRequestsAdaptiveGroupSumFromJson(Map<String, dynamic> json) =>
+    _WorkersOverviewRequestsAdaptiveGroupSum(
+      typename: json['__typename'] as String,
+      cpuTimeUs: (json['cpuTimeUs'] as num).toInt(),
+    );
+
+Map<String, dynamic> _$WorkersOverviewRequestsAdaptiveGroupSumToJson(
+  _WorkersOverviewRequestsAdaptiveGroupSum instance,
+) => <String, dynamic>{
+  '__typename': instance.typename,
+  'cpuTimeUs': instance.cpuTimeUs,
+};
+
+_WorkersOverviewRequestsAdaptiveGroupDimensions
+_$WorkersOverviewRequestsAdaptiveGroupDimensionsFromJson(
+  Map<String, dynamic> json,
+) => _WorkersOverviewRequestsAdaptiveGroupDimensions(
+  typename: json['__typename'] as String,
+  usageModel: (json['usageModel'] as num).toInt(),
+);
+
+Map<String, dynamic> _$WorkersOverviewRequestsAdaptiveGroupDimensionsToJson(
+  _WorkersOverviewRequestsAdaptiveGroupDimensions instance,
+) => <String, dynamic>{
+  '__typename': instance.typename,
+  'usageModel': instance.usageModel,
+};
+
 Webhooks _$WebhooksFromJson(Map<String, dynamic> json) {
   $checkKeys(json, requiredKeys: const ['id', 'name', 'url', 'created_at']);
   return Webhooks()
