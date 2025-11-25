@@ -584,3 +584,319 @@ abstract class UniqueVisitorsZoneTotalUniq with _$UniqueVisitorsZoneTotalUniq {
   factory UniqueVisitorsZoneTotalUniq.empty() =>
       UniqueVisitorsZoneTotalUniq(uniques: 0);
 }
+
+@Freezed()
+abstract class ZoneAnalyticsResponse with _$ZoneAnalyticsResponse {
+  const factory ZoneAnalyticsResponse({required ZoneAnalyticsViewer viewer}) =
+      _ZoneAnalyticsResponse;
+
+  factory ZoneAnalyticsResponse.fromJson(Map<String, dynamic> json) =>
+      _$ZoneAnalyticsResponseFromJson(json);
+
+  factory ZoneAnalyticsResponse.empty() =>
+      ZoneAnalyticsResponse(viewer: ZoneAnalyticsViewer.empty());
+}
+
+@Freezed()
+abstract class ZoneAnalyticsViewer with _$ZoneAnalyticsViewer {
+  const factory ZoneAnalyticsViewer({
+    @JsonKey(name: '__typename') required String typename,
+    required List<ZoneAnalyticsZone> zones,
+  }) = _ZoneAnalyticsViewer;
+
+  factory ZoneAnalyticsViewer.fromJson(Map<String, dynamic> json) =>
+      _$ZoneAnalyticsViewerFromJson(json);
+
+  factory ZoneAnalyticsViewer.empty() => ZoneAnalyticsViewer(
+    typename: 'viewer',
+    zones: [ZoneAnalyticsZone.empty()],
+  );
+}
+
+@Freezed()
+abstract class ZoneAnalyticsZone with _$ZoneAnalyticsZone {
+  const factory ZoneAnalyticsZone({
+    @JsonKey(name: '__typename') required String typename,
+    required List<ZoneAnalyticsTotal> totals,
+    required List<ZoneAnalyticsZoneData> zones,
+  }) = _ZoneAnalyticsZone;
+
+  factory ZoneAnalyticsZone.fromJson(Map<String, dynamic> json) =>
+      _$ZoneAnalyticsZoneFromJson(json);
+
+  factory ZoneAnalyticsZone.empty() => ZoneAnalyticsZone(
+    typename: 'zone',
+    totals: [ZoneAnalyticsTotal.empty()],
+    zones: [ZoneAnalyticsZoneData.empty()],
+  );
+}
+
+@Freezed()
+abstract class ZoneAnalyticsTotal with _$ZoneAnalyticsTotal {
+  const factory ZoneAnalyticsTotal({
+    @JsonKey(name: '__typename') required String typename,
+    required ZoneAnalyticsTotalUniq uniq,
+  }) = _ZoneAnalyticsTotal;
+
+  factory ZoneAnalyticsTotal.fromJson(Map<String, dynamic> json) =>
+      _$ZoneAnalyticsTotalFromJson(json);
+
+  factory ZoneAnalyticsTotal.empty() => ZoneAnalyticsTotal(
+    typename: 'ZoneHttpRequests1dGroups',
+    uniq: ZoneAnalyticsTotalUniq.empty(),
+  );
+}
+
+@Freezed()
+abstract class ZoneAnalyticsTotalUniq with _$ZoneAnalyticsTotalUniq {
+  const factory ZoneAnalyticsTotalUniq({
+    @JsonKey(name: '__typename') required String typename,
+    required int uniques,
+  }) = _ZoneAnalyticsTotalUniq;
+
+  factory ZoneAnalyticsTotalUniq.fromJson(Map<String, dynamic> json) =>
+      _$ZoneAnalyticsTotalUniqFromJson(json);
+
+  factory ZoneAnalyticsTotalUniq.empty() => ZoneAnalyticsTotalUniq(
+    typename: 'ZoneHttpRequests1dGroupsUniq',
+    uniques: 0,
+  );
+}
+
+@Freezed()
+abstract class ZoneAnalyticsZoneData with _$ZoneAnalyticsZoneData {
+  const factory ZoneAnalyticsZoneData({
+    @JsonKey(name: '__typename') required String typename,
+    required ZoneAnalyticsZoneDimensions dimensions,
+    required ZoneAnalyticsZoneSum sum,
+    required ZoneAnalyticsZoneUniq uniq,
+  }) = _ZoneAnalyticsZoneData;
+
+  factory ZoneAnalyticsZoneData.fromJson(Map<String, dynamic> json) =>
+      _$ZoneAnalyticsZoneDataFromJson(json);
+
+  factory ZoneAnalyticsZoneData.empty() => ZoneAnalyticsZoneData(
+    typename: 'ZoneHttpRequests1dGroups',
+    dimensions: ZoneAnalyticsZoneDimensions.empty(),
+    sum: ZoneAnalyticsZoneSum.empty(),
+    uniq: ZoneAnalyticsZoneUniq.empty(),
+  );
+}
+
+@Freezed()
+abstract class ZoneAnalyticsZoneDimensions with _$ZoneAnalyticsZoneDimensions {
+  const factory ZoneAnalyticsZoneDimensions({
+    @JsonKey(name: '__typename') required String typename,
+    required String timeslot,
+  }) = _ZoneAnalyticsZoneDimensions;
+
+  factory ZoneAnalyticsZoneDimensions.fromJson(Map<String, dynamic> json) =>
+      _$ZoneAnalyticsZoneDimensionsFromJson(json);
+
+  factory ZoneAnalyticsZoneDimensions.empty() => ZoneAnalyticsZoneDimensions(
+    typename: 'ZoneHttpRequests1dGroupsDimensions',
+    timeslot: '',
+  );
+}
+
+@Freezed()
+abstract class ZoneAnalyticsZoneSum with _$ZoneAnalyticsZoneSum {
+  const factory ZoneAnalyticsZoneSum({
+    @JsonKey(name: '__typename') required String typename,
+    required List<ZoneAnalyticsBrowserMapElem> browserMap,
+    required int bytes,
+    required int cachedBytes,
+    required int cachedRequests,
+    required List<ZoneAnalyticsClientSSLMapElem> clientSSLMap,
+    required List<ZoneAnalyticsContentTypeMapElem> contentTypeMap,
+    required List<ZoneAnalyticsCountryMapElem> countryMap,
+    required int encryptedBytes,
+    required int encryptedRequests,
+    required List<ZoneAnalyticsIpClassMapElem> ipClassMap,
+    required int pageViews,
+    required int requests,
+    required List<ZoneAnalyticsResponseStatusMapElem> responseStatusMap,
+    required List<ZoneAnalyticsThreatPathingMapElem> threatPathingMap,
+    required int threats,
+  }) = _ZoneAnalyticsZoneSum;
+
+  factory ZoneAnalyticsZoneSum.fromJson(Map<String, dynamic> json) =>
+      _$ZoneAnalyticsZoneSumFromJson(json);
+
+  factory ZoneAnalyticsZoneSum.empty() => ZoneAnalyticsZoneSum(
+    typename: 'ZoneHttpRequests1dGroupsSum',
+    browserMap: [ZoneAnalyticsBrowserMapElem.empty()],
+    bytes: 0,
+    cachedBytes: 0,
+    cachedRequests: 0,
+    clientSSLMap: [ZoneAnalyticsClientSSLMapElem.empty()],
+    contentTypeMap: [ZoneAnalyticsContentTypeMapElem.empty()],
+    countryMap: [ZoneAnalyticsCountryMapElem.empty()],
+    encryptedBytes: 0,
+    encryptedRequests: 0,
+    ipClassMap: [ZoneAnalyticsIpClassMapElem.empty()],
+    pageViews: 0,
+    requests: 0,
+    responseStatusMap: [ZoneAnalyticsResponseStatusMapElem.empty()],
+    threatPathingMap: [],
+    threats: 0,
+  );
+}
+
+@Freezed()
+abstract class ZoneAnalyticsZoneUniq with _$ZoneAnalyticsZoneUniq {
+  const factory ZoneAnalyticsZoneUniq({
+    @JsonKey(name: '__typename') required String typename,
+    required int uniques,
+  }) = _ZoneAnalyticsZoneUniq;
+
+  factory ZoneAnalyticsZoneUniq.fromJson(Map<String, dynamic> json) =>
+      _$ZoneAnalyticsZoneUniqFromJson(json);
+
+  factory ZoneAnalyticsZoneUniq.empty() => ZoneAnalyticsZoneUniq(
+    typename: 'ZoneHttpRequests1dGroupsUniq',
+    uniques: 0,
+  );
+}
+
+@Freezed()
+abstract class ZoneAnalyticsBrowserMapElem with _$ZoneAnalyticsBrowserMapElem {
+  const factory ZoneAnalyticsBrowserMapElem({
+    @JsonKey(name: '__typename') required String typename,
+    required String key,
+    required int pageViews,
+  }) = _ZoneAnalyticsBrowserMapElem;
+
+  factory ZoneAnalyticsBrowserMapElem.fromJson(Map<String, dynamic> json) =>
+      _$ZoneAnalyticsBrowserMapElemFromJson(json);
+
+  factory ZoneAnalyticsBrowserMapElem.empty() => ZoneAnalyticsBrowserMapElem(
+    typename: 'ZoneHttpRequests1dGroupsBrowserMapElem',
+    key: '',
+    pageViews: 0,
+  );
+}
+
+@Freezed()
+abstract class ZoneAnalyticsClientSSLMapElem
+    with _$ZoneAnalyticsClientSSLMapElem {
+  const factory ZoneAnalyticsClientSSLMapElem({
+    @JsonKey(name: '__typename') required String typename,
+    required String key,
+    required int requests,
+  }) = _ZoneAnalyticsClientSSLMapElem;
+
+  factory ZoneAnalyticsClientSSLMapElem.fromJson(Map<String, dynamic> json) =>
+      _$ZoneAnalyticsClientSSLMapElemFromJson(json);
+
+  factory ZoneAnalyticsClientSSLMapElem.empty() =>
+      ZoneAnalyticsClientSSLMapElem(
+        typename: 'ZoneHttpRequests1dGroupsClientSSLMapElem',
+        key: '',
+        requests: 0,
+      );
+}
+
+@Freezed()
+abstract class ZoneAnalyticsContentTypeMapElem
+    with _$ZoneAnalyticsContentTypeMapElem {
+  const factory ZoneAnalyticsContentTypeMapElem({
+    @JsonKey(name: '__typename') required String typename,
+    required int bytes,
+    required String key,
+    required int requests,
+  }) = _ZoneAnalyticsContentTypeMapElem;
+
+  factory ZoneAnalyticsContentTypeMapElem.fromJson(Map<String, dynamic> json) =>
+      _$ZoneAnalyticsContentTypeMapElemFromJson(json);
+
+  factory ZoneAnalyticsContentTypeMapElem.empty() =>
+      ZoneAnalyticsContentTypeMapElem(
+        typename: 'ZoneHttpRequests1dGroupsContentTypeMapElem',
+        bytes: 0,
+        key: '',
+        requests: 0,
+      );
+}
+
+@Freezed()
+abstract class ZoneAnalyticsCountryMapElem with _$ZoneAnalyticsCountryMapElem {
+  const factory ZoneAnalyticsCountryMapElem({
+    @JsonKey(name: '__typename') required String typename,
+    required int bytes,
+    required String key,
+    required int requests,
+    required int threats,
+  }) = _ZoneAnalyticsCountryMapElem;
+
+  factory ZoneAnalyticsCountryMapElem.fromJson(Map<String, dynamic> json) =>
+      _$ZoneAnalyticsCountryMapElemFromJson(json);
+
+  factory ZoneAnalyticsCountryMapElem.empty() => ZoneAnalyticsCountryMapElem(
+    typename: 'ZoneHttpRequests1dGroupsCountryMapElem',
+    bytes: 0,
+    key: '',
+    requests: 0,
+    threats: 0,
+  );
+}
+
+@Freezed()
+abstract class ZoneAnalyticsIpClassMapElem with _$ZoneAnalyticsIpClassMapElem {
+  const factory ZoneAnalyticsIpClassMapElem({
+    @JsonKey(name: '__typename') required String typename,
+    required String key,
+    required int requests,
+  }) = _ZoneAnalyticsIpClassMapElem;
+
+  factory ZoneAnalyticsIpClassMapElem.fromJson(Map<String, dynamic> json) =>
+      _$ZoneAnalyticsIpClassMapElemFromJson(json);
+
+  factory ZoneAnalyticsIpClassMapElem.empty() => ZoneAnalyticsIpClassMapElem(
+    typename: 'ZoneHttpRequests1dGroupsIpClassMapElem',
+    key: '',
+    requests: 0,
+  );
+}
+
+@Freezed()
+abstract class ZoneAnalyticsResponseStatusMapElem
+    with _$ZoneAnalyticsResponseStatusMapElem {
+  const factory ZoneAnalyticsResponseStatusMapElem({
+    @JsonKey(name: '__typename') required String typename,
+    required int key,
+    required int requests,
+  }) = _ZoneAnalyticsResponseStatusMapElem;
+
+  factory ZoneAnalyticsResponseStatusMapElem.fromJson(
+    Map<String, dynamic> json,
+  ) => _$ZoneAnalyticsResponseStatusMapElemFromJson(json);
+
+  factory ZoneAnalyticsResponseStatusMapElem.empty() =>
+      ZoneAnalyticsResponseStatusMapElem(
+        typename: 'ZoneHttpRequests1dGroupsResponseStatusMapElem',
+        key: 200,
+        requests: 0,
+      );
+}
+
+@Freezed()
+abstract class ZoneAnalyticsThreatPathingMapElem
+    with _$ZoneAnalyticsThreatPathingMapElem {
+  const factory ZoneAnalyticsThreatPathingMapElem({
+    @JsonKey(name: '__typename') required String typename,
+    required String key,
+    required int requests,
+  }) = _ZoneAnalyticsThreatPathingMapElem;
+
+  factory ZoneAnalyticsThreatPathingMapElem.fromJson(
+    Map<String, dynamic> json,
+  ) => _$ZoneAnalyticsThreatPathingMapElemFromJson(json);
+
+  factory ZoneAnalyticsThreatPathingMapElem.empty() =>
+      ZoneAnalyticsThreatPathingMapElem(
+        typename: 'ZoneHttpRequests1dGroupsThreatPathingMapElem',
+        key: '',
+        requests: 0,
+      );
+}

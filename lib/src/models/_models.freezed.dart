@@ -12408,4 +12408,4488 @@ as int,
 
 }
 
+
+/// @nodoc
+mixin _$ZoneAnalyticsResponse {
+
+ ZoneAnalyticsViewer get viewer;
+/// Create a copy of ZoneAnalyticsResponse
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$ZoneAnalyticsResponseCopyWith<ZoneAnalyticsResponse> get copyWith => _$ZoneAnalyticsResponseCopyWithImpl<ZoneAnalyticsResponse>(this as ZoneAnalyticsResponse, _$identity);
+
+  /// Serializes this ZoneAnalyticsResponse to a JSON map.
+  Map<String, dynamic> toJson();
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is ZoneAnalyticsResponse&&(identical(other.viewer, viewer) || other.viewer == viewer));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,viewer);
+
+@override
+String toString() {
+  return 'ZoneAnalyticsResponse(viewer: $viewer)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class $ZoneAnalyticsResponseCopyWith<$Res>  {
+  factory $ZoneAnalyticsResponseCopyWith(ZoneAnalyticsResponse value, $Res Function(ZoneAnalyticsResponse) _then) = _$ZoneAnalyticsResponseCopyWithImpl;
+@useResult
+$Res call({
+ ZoneAnalyticsViewer viewer
+});
+
+
+$ZoneAnalyticsViewerCopyWith<$Res> get viewer;
+
+}
+/// @nodoc
+class _$ZoneAnalyticsResponseCopyWithImpl<$Res>
+    implements $ZoneAnalyticsResponseCopyWith<$Res> {
+  _$ZoneAnalyticsResponseCopyWithImpl(this._self, this._then);
+
+  final ZoneAnalyticsResponse _self;
+  final $Res Function(ZoneAnalyticsResponse) _then;
+
+/// Create a copy of ZoneAnalyticsResponse
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? viewer = null,}) {
+  return _then(_self.copyWith(
+viewer: null == viewer ? _self.viewer : viewer // ignore: cast_nullable_to_non_nullable
+as ZoneAnalyticsViewer,
+  ));
+}
+/// Create a copy of ZoneAnalyticsResponse
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$ZoneAnalyticsViewerCopyWith<$Res> get viewer {
+  
+  return $ZoneAnalyticsViewerCopyWith<$Res>(_self.viewer, (value) {
+    return _then(_self.copyWith(viewer: value));
+  });
+}
+}
+
+
+/// Adds pattern-matching-related methods to [ZoneAnalyticsResponse].
+extension ZoneAnalyticsResponsePatterns on ZoneAnalyticsResponse {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _ZoneAnalyticsResponse value)?  $default,{required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _ZoneAnalyticsResponse() when $default != null:
+return $default(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _ZoneAnalyticsResponse value)  $default,){
+final _that = this;
+switch (_that) {
+case _ZoneAnalyticsResponse():
+return $default(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _ZoneAnalyticsResponse value)?  $default,){
+final _that = this;
+switch (_that) {
+case _ZoneAnalyticsResponse() when $default != null:
+return $default(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( ZoneAnalyticsViewer viewer)?  $default,{required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _ZoneAnalyticsResponse() when $default != null:
+return $default(_that.viewer);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( ZoneAnalyticsViewer viewer)  $default,) {final _that = this;
+switch (_that) {
+case _ZoneAnalyticsResponse():
+return $default(_that.viewer);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( ZoneAnalyticsViewer viewer)?  $default,) {final _that = this;
+switch (_that) {
+case _ZoneAnalyticsResponse() when $default != null:
+return $default(_that.viewer);case _:
+  return null;
+
+}
+}
+
+}
+
+/// @nodoc
+@JsonSerializable()
+
+class _ZoneAnalyticsResponse implements ZoneAnalyticsResponse {
+  const _ZoneAnalyticsResponse({required this.viewer});
+  factory _ZoneAnalyticsResponse.fromJson(Map<String, dynamic> json) => _$ZoneAnalyticsResponseFromJson(json);
+
+@override final  ZoneAnalyticsViewer viewer;
+
+/// Create a copy of ZoneAnalyticsResponse
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$ZoneAnalyticsResponseCopyWith<_ZoneAnalyticsResponse> get copyWith => __$ZoneAnalyticsResponseCopyWithImpl<_ZoneAnalyticsResponse>(this, _$identity);
+
+@override
+Map<String, dynamic> toJson() {
+  return _$ZoneAnalyticsResponseToJson(this, );
+}
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _ZoneAnalyticsResponse&&(identical(other.viewer, viewer) || other.viewer == viewer));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,viewer);
+
+@override
+String toString() {
+  return 'ZoneAnalyticsResponse(viewer: $viewer)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class _$ZoneAnalyticsResponseCopyWith<$Res> implements $ZoneAnalyticsResponseCopyWith<$Res> {
+  factory _$ZoneAnalyticsResponseCopyWith(_ZoneAnalyticsResponse value, $Res Function(_ZoneAnalyticsResponse) _then) = __$ZoneAnalyticsResponseCopyWithImpl;
+@override @useResult
+$Res call({
+ ZoneAnalyticsViewer viewer
+});
+
+
+@override $ZoneAnalyticsViewerCopyWith<$Res> get viewer;
+
+}
+/// @nodoc
+class __$ZoneAnalyticsResponseCopyWithImpl<$Res>
+    implements _$ZoneAnalyticsResponseCopyWith<$Res> {
+  __$ZoneAnalyticsResponseCopyWithImpl(this._self, this._then);
+
+  final _ZoneAnalyticsResponse _self;
+  final $Res Function(_ZoneAnalyticsResponse) _then;
+
+/// Create a copy of ZoneAnalyticsResponse
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? viewer = null,}) {
+  return _then(_ZoneAnalyticsResponse(
+viewer: null == viewer ? _self.viewer : viewer // ignore: cast_nullable_to_non_nullable
+as ZoneAnalyticsViewer,
+  ));
+}
+
+/// Create a copy of ZoneAnalyticsResponse
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$ZoneAnalyticsViewerCopyWith<$Res> get viewer {
+  
+  return $ZoneAnalyticsViewerCopyWith<$Res>(_self.viewer, (value) {
+    return _then(_self.copyWith(viewer: value));
+  });
+}
+}
+
+
+/// @nodoc
+mixin _$ZoneAnalyticsViewer {
+
+@JsonKey(name: '__typename') String get typename; List<ZoneAnalyticsZone> get zones;
+/// Create a copy of ZoneAnalyticsViewer
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$ZoneAnalyticsViewerCopyWith<ZoneAnalyticsViewer> get copyWith => _$ZoneAnalyticsViewerCopyWithImpl<ZoneAnalyticsViewer>(this as ZoneAnalyticsViewer, _$identity);
+
+  /// Serializes this ZoneAnalyticsViewer to a JSON map.
+  Map<String, dynamic> toJson();
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is ZoneAnalyticsViewer&&(identical(other.typename, typename) || other.typename == typename)&&const DeepCollectionEquality().equals(other.zones, zones));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,typename,const DeepCollectionEquality().hash(zones));
+
+@override
+String toString() {
+  return 'ZoneAnalyticsViewer(typename: $typename, zones: $zones)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class $ZoneAnalyticsViewerCopyWith<$Res>  {
+  factory $ZoneAnalyticsViewerCopyWith(ZoneAnalyticsViewer value, $Res Function(ZoneAnalyticsViewer) _then) = _$ZoneAnalyticsViewerCopyWithImpl;
+@useResult
+$Res call({
+@JsonKey(name: '__typename') String typename, List<ZoneAnalyticsZone> zones
+});
+
+
+
+
+}
+/// @nodoc
+class _$ZoneAnalyticsViewerCopyWithImpl<$Res>
+    implements $ZoneAnalyticsViewerCopyWith<$Res> {
+  _$ZoneAnalyticsViewerCopyWithImpl(this._self, this._then);
+
+  final ZoneAnalyticsViewer _self;
+  final $Res Function(ZoneAnalyticsViewer) _then;
+
+/// Create a copy of ZoneAnalyticsViewer
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? typename = null,Object? zones = null,}) {
+  return _then(_self.copyWith(
+typename: null == typename ? _self.typename : typename // ignore: cast_nullable_to_non_nullable
+as String,zones: null == zones ? _self.zones : zones // ignore: cast_nullable_to_non_nullable
+as List<ZoneAnalyticsZone>,
+  ));
+}
+
+}
+
+
+/// Adds pattern-matching-related methods to [ZoneAnalyticsViewer].
+extension ZoneAnalyticsViewerPatterns on ZoneAnalyticsViewer {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _ZoneAnalyticsViewer value)?  $default,{required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _ZoneAnalyticsViewer() when $default != null:
+return $default(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _ZoneAnalyticsViewer value)  $default,){
+final _that = this;
+switch (_that) {
+case _ZoneAnalyticsViewer():
+return $default(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _ZoneAnalyticsViewer value)?  $default,){
+final _that = this;
+switch (_that) {
+case _ZoneAnalyticsViewer() when $default != null:
+return $default(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@JsonKey(name: '__typename')  String typename,  List<ZoneAnalyticsZone> zones)?  $default,{required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _ZoneAnalyticsViewer() when $default != null:
+return $default(_that.typename,_that.zones);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@JsonKey(name: '__typename')  String typename,  List<ZoneAnalyticsZone> zones)  $default,) {final _that = this;
+switch (_that) {
+case _ZoneAnalyticsViewer():
+return $default(_that.typename,_that.zones);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@JsonKey(name: '__typename')  String typename,  List<ZoneAnalyticsZone> zones)?  $default,) {final _that = this;
+switch (_that) {
+case _ZoneAnalyticsViewer() when $default != null:
+return $default(_that.typename,_that.zones);case _:
+  return null;
+
+}
+}
+
+}
+
+/// @nodoc
+@JsonSerializable()
+
+class _ZoneAnalyticsViewer implements ZoneAnalyticsViewer {
+  const _ZoneAnalyticsViewer({@JsonKey(name: '__typename') required this.typename, required final  List<ZoneAnalyticsZone> zones}): _zones = zones;
+  factory _ZoneAnalyticsViewer.fromJson(Map<String, dynamic> json) => _$ZoneAnalyticsViewerFromJson(json);
+
+@override@JsonKey(name: '__typename') final  String typename;
+ final  List<ZoneAnalyticsZone> _zones;
+@override List<ZoneAnalyticsZone> get zones {
+  if (_zones is EqualUnmodifiableListView) return _zones;
+  // ignore: implicit_dynamic_type
+  return EqualUnmodifiableListView(_zones);
+}
+
+
+/// Create a copy of ZoneAnalyticsViewer
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$ZoneAnalyticsViewerCopyWith<_ZoneAnalyticsViewer> get copyWith => __$ZoneAnalyticsViewerCopyWithImpl<_ZoneAnalyticsViewer>(this, _$identity);
+
+@override
+Map<String, dynamic> toJson() {
+  return _$ZoneAnalyticsViewerToJson(this, );
+}
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _ZoneAnalyticsViewer&&(identical(other.typename, typename) || other.typename == typename)&&const DeepCollectionEquality().equals(other._zones, _zones));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,typename,const DeepCollectionEquality().hash(_zones));
+
+@override
+String toString() {
+  return 'ZoneAnalyticsViewer(typename: $typename, zones: $zones)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class _$ZoneAnalyticsViewerCopyWith<$Res> implements $ZoneAnalyticsViewerCopyWith<$Res> {
+  factory _$ZoneAnalyticsViewerCopyWith(_ZoneAnalyticsViewer value, $Res Function(_ZoneAnalyticsViewer) _then) = __$ZoneAnalyticsViewerCopyWithImpl;
+@override @useResult
+$Res call({
+@JsonKey(name: '__typename') String typename, List<ZoneAnalyticsZone> zones
+});
+
+
+
+
+}
+/// @nodoc
+class __$ZoneAnalyticsViewerCopyWithImpl<$Res>
+    implements _$ZoneAnalyticsViewerCopyWith<$Res> {
+  __$ZoneAnalyticsViewerCopyWithImpl(this._self, this._then);
+
+  final _ZoneAnalyticsViewer _self;
+  final $Res Function(_ZoneAnalyticsViewer) _then;
+
+/// Create a copy of ZoneAnalyticsViewer
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? typename = null,Object? zones = null,}) {
+  return _then(_ZoneAnalyticsViewer(
+typename: null == typename ? _self.typename : typename // ignore: cast_nullable_to_non_nullable
+as String,zones: null == zones ? _self._zones : zones // ignore: cast_nullable_to_non_nullable
+as List<ZoneAnalyticsZone>,
+  ));
+}
+
+
+}
+
+
+/// @nodoc
+mixin _$ZoneAnalyticsZone {
+
+@JsonKey(name: '__typename') String get typename; List<ZoneAnalyticsTotal> get totals; List<ZoneAnalyticsZoneData> get zones;
+/// Create a copy of ZoneAnalyticsZone
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$ZoneAnalyticsZoneCopyWith<ZoneAnalyticsZone> get copyWith => _$ZoneAnalyticsZoneCopyWithImpl<ZoneAnalyticsZone>(this as ZoneAnalyticsZone, _$identity);
+
+  /// Serializes this ZoneAnalyticsZone to a JSON map.
+  Map<String, dynamic> toJson();
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is ZoneAnalyticsZone&&(identical(other.typename, typename) || other.typename == typename)&&const DeepCollectionEquality().equals(other.totals, totals)&&const DeepCollectionEquality().equals(other.zones, zones));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,typename,const DeepCollectionEquality().hash(totals),const DeepCollectionEquality().hash(zones));
+
+@override
+String toString() {
+  return 'ZoneAnalyticsZone(typename: $typename, totals: $totals, zones: $zones)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class $ZoneAnalyticsZoneCopyWith<$Res>  {
+  factory $ZoneAnalyticsZoneCopyWith(ZoneAnalyticsZone value, $Res Function(ZoneAnalyticsZone) _then) = _$ZoneAnalyticsZoneCopyWithImpl;
+@useResult
+$Res call({
+@JsonKey(name: '__typename') String typename, List<ZoneAnalyticsTotal> totals, List<ZoneAnalyticsZoneData> zones
+});
+
+
+
+
+}
+/// @nodoc
+class _$ZoneAnalyticsZoneCopyWithImpl<$Res>
+    implements $ZoneAnalyticsZoneCopyWith<$Res> {
+  _$ZoneAnalyticsZoneCopyWithImpl(this._self, this._then);
+
+  final ZoneAnalyticsZone _self;
+  final $Res Function(ZoneAnalyticsZone) _then;
+
+/// Create a copy of ZoneAnalyticsZone
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? typename = null,Object? totals = null,Object? zones = null,}) {
+  return _then(_self.copyWith(
+typename: null == typename ? _self.typename : typename // ignore: cast_nullable_to_non_nullable
+as String,totals: null == totals ? _self.totals : totals // ignore: cast_nullable_to_non_nullable
+as List<ZoneAnalyticsTotal>,zones: null == zones ? _self.zones : zones // ignore: cast_nullable_to_non_nullable
+as List<ZoneAnalyticsZoneData>,
+  ));
+}
+
+}
+
+
+/// Adds pattern-matching-related methods to [ZoneAnalyticsZone].
+extension ZoneAnalyticsZonePatterns on ZoneAnalyticsZone {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _ZoneAnalyticsZone value)?  $default,{required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _ZoneAnalyticsZone() when $default != null:
+return $default(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _ZoneAnalyticsZone value)  $default,){
+final _that = this;
+switch (_that) {
+case _ZoneAnalyticsZone():
+return $default(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _ZoneAnalyticsZone value)?  $default,){
+final _that = this;
+switch (_that) {
+case _ZoneAnalyticsZone() when $default != null:
+return $default(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@JsonKey(name: '__typename')  String typename,  List<ZoneAnalyticsTotal> totals,  List<ZoneAnalyticsZoneData> zones)?  $default,{required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _ZoneAnalyticsZone() when $default != null:
+return $default(_that.typename,_that.totals,_that.zones);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@JsonKey(name: '__typename')  String typename,  List<ZoneAnalyticsTotal> totals,  List<ZoneAnalyticsZoneData> zones)  $default,) {final _that = this;
+switch (_that) {
+case _ZoneAnalyticsZone():
+return $default(_that.typename,_that.totals,_that.zones);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@JsonKey(name: '__typename')  String typename,  List<ZoneAnalyticsTotal> totals,  List<ZoneAnalyticsZoneData> zones)?  $default,) {final _that = this;
+switch (_that) {
+case _ZoneAnalyticsZone() when $default != null:
+return $default(_that.typename,_that.totals,_that.zones);case _:
+  return null;
+
+}
+}
+
+}
+
+/// @nodoc
+@JsonSerializable()
+
+class _ZoneAnalyticsZone implements ZoneAnalyticsZone {
+  const _ZoneAnalyticsZone({@JsonKey(name: '__typename') required this.typename, required final  List<ZoneAnalyticsTotal> totals, required final  List<ZoneAnalyticsZoneData> zones}): _totals = totals,_zones = zones;
+  factory _ZoneAnalyticsZone.fromJson(Map<String, dynamic> json) => _$ZoneAnalyticsZoneFromJson(json);
+
+@override@JsonKey(name: '__typename') final  String typename;
+ final  List<ZoneAnalyticsTotal> _totals;
+@override List<ZoneAnalyticsTotal> get totals {
+  if (_totals is EqualUnmodifiableListView) return _totals;
+  // ignore: implicit_dynamic_type
+  return EqualUnmodifiableListView(_totals);
+}
+
+ final  List<ZoneAnalyticsZoneData> _zones;
+@override List<ZoneAnalyticsZoneData> get zones {
+  if (_zones is EqualUnmodifiableListView) return _zones;
+  // ignore: implicit_dynamic_type
+  return EqualUnmodifiableListView(_zones);
+}
+
+
+/// Create a copy of ZoneAnalyticsZone
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$ZoneAnalyticsZoneCopyWith<_ZoneAnalyticsZone> get copyWith => __$ZoneAnalyticsZoneCopyWithImpl<_ZoneAnalyticsZone>(this, _$identity);
+
+@override
+Map<String, dynamic> toJson() {
+  return _$ZoneAnalyticsZoneToJson(this, );
+}
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _ZoneAnalyticsZone&&(identical(other.typename, typename) || other.typename == typename)&&const DeepCollectionEquality().equals(other._totals, _totals)&&const DeepCollectionEquality().equals(other._zones, _zones));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,typename,const DeepCollectionEquality().hash(_totals),const DeepCollectionEquality().hash(_zones));
+
+@override
+String toString() {
+  return 'ZoneAnalyticsZone(typename: $typename, totals: $totals, zones: $zones)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class _$ZoneAnalyticsZoneCopyWith<$Res> implements $ZoneAnalyticsZoneCopyWith<$Res> {
+  factory _$ZoneAnalyticsZoneCopyWith(_ZoneAnalyticsZone value, $Res Function(_ZoneAnalyticsZone) _then) = __$ZoneAnalyticsZoneCopyWithImpl;
+@override @useResult
+$Res call({
+@JsonKey(name: '__typename') String typename, List<ZoneAnalyticsTotal> totals, List<ZoneAnalyticsZoneData> zones
+});
+
+
+
+
+}
+/// @nodoc
+class __$ZoneAnalyticsZoneCopyWithImpl<$Res>
+    implements _$ZoneAnalyticsZoneCopyWith<$Res> {
+  __$ZoneAnalyticsZoneCopyWithImpl(this._self, this._then);
+
+  final _ZoneAnalyticsZone _self;
+  final $Res Function(_ZoneAnalyticsZone) _then;
+
+/// Create a copy of ZoneAnalyticsZone
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? typename = null,Object? totals = null,Object? zones = null,}) {
+  return _then(_ZoneAnalyticsZone(
+typename: null == typename ? _self.typename : typename // ignore: cast_nullable_to_non_nullable
+as String,totals: null == totals ? _self._totals : totals // ignore: cast_nullable_to_non_nullable
+as List<ZoneAnalyticsTotal>,zones: null == zones ? _self._zones : zones // ignore: cast_nullable_to_non_nullable
+as List<ZoneAnalyticsZoneData>,
+  ));
+}
+
+
+}
+
+
+/// @nodoc
+mixin _$ZoneAnalyticsTotal {
+
+@JsonKey(name: '__typename') String get typename; ZoneAnalyticsTotalUniq get uniq;
+/// Create a copy of ZoneAnalyticsTotal
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$ZoneAnalyticsTotalCopyWith<ZoneAnalyticsTotal> get copyWith => _$ZoneAnalyticsTotalCopyWithImpl<ZoneAnalyticsTotal>(this as ZoneAnalyticsTotal, _$identity);
+
+  /// Serializes this ZoneAnalyticsTotal to a JSON map.
+  Map<String, dynamic> toJson();
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is ZoneAnalyticsTotal&&(identical(other.typename, typename) || other.typename == typename)&&(identical(other.uniq, uniq) || other.uniq == uniq));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,typename,uniq);
+
+@override
+String toString() {
+  return 'ZoneAnalyticsTotal(typename: $typename, uniq: $uniq)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class $ZoneAnalyticsTotalCopyWith<$Res>  {
+  factory $ZoneAnalyticsTotalCopyWith(ZoneAnalyticsTotal value, $Res Function(ZoneAnalyticsTotal) _then) = _$ZoneAnalyticsTotalCopyWithImpl;
+@useResult
+$Res call({
+@JsonKey(name: '__typename') String typename, ZoneAnalyticsTotalUniq uniq
+});
+
+
+$ZoneAnalyticsTotalUniqCopyWith<$Res> get uniq;
+
+}
+/// @nodoc
+class _$ZoneAnalyticsTotalCopyWithImpl<$Res>
+    implements $ZoneAnalyticsTotalCopyWith<$Res> {
+  _$ZoneAnalyticsTotalCopyWithImpl(this._self, this._then);
+
+  final ZoneAnalyticsTotal _self;
+  final $Res Function(ZoneAnalyticsTotal) _then;
+
+/// Create a copy of ZoneAnalyticsTotal
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? typename = null,Object? uniq = null,}) {
+  return _then(_self.copyWith(
+typename: null == typename ? _self.typename : typename // ignore: cast_nullable_to_non_nullable
+as String,uniq: null == uniq ? _self.uniq : uniq // ignore: cast_nullable_to_non_nullable
+as ZoneAnalyticsTotalUniq,
+  ));
+}
+/// Create a copy of ZoneAnalyticsTotal
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$ZoneAnalyticsTotalUniqCopyWith<$Res> get uniq {
+  
+  return $ZoneAnalyticsTotalUniqCopyWith<$Res>(_self.uniq, (value) {
+    return _then(_self.copyWith(uniq: value));
+  });
+}
+}
+
+
+/// Adds pattern-matching-related methods to [ZoneAnalyticsTotal].
+extension ZoneAnalyticsTotalPatterns on ZoneAnalyticsTotal {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _ZoneAnalyticsTotal value)?  $default,{required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _ZoneAnalyticsTotal() when $default != null:
+return $default(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _ZoneAnalyticsTotal value)  $default,){
+final _that = this;
+switch (_that) {
+case _ZoneAnalyticsTotal():
+return $default(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _ZoneAnalyticsTotal value)?  $default,){
+final _that = this;
+switch (_that) {
+case _ZoneAnalyticsTotal() when $default != null:
+return $default(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@JsonKey(name: '__typename')  String typename,  ZoneAnalyticsTotalUniq uniq)?  $default,{required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _ZoneAnalyticsTotal() when $default != null:
+return $default(_that.typename,_that.uniq);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@JsonKey(name: '__typename')  String typename,  ZoneAnalyticsTotalUniq uniq)  $default,) {final _that = this;
+switch (_that) {
+case _ZoneAnalyticsTotal():
+return $default(_that.typename,_that.uniq);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@JsonKey(name: '__typename')  String typename,  ZoneAnalyticsTotalUniq uniq)?  $default,) {final _that = this;
+switch (_that) {
+case _ZoneAnalyticsTotal() when $default != null:
+return $default(_that.typename,_that.uniq);case _:
+  return null;
+
+}
+}
+
+}
+
+/// @nodoc
+@JsonSerializable()
+
+class _ZoneAnalyticsTotal implements ZoneAnalyticsTotal {
+  const _ZoneAnalyticsTotal({@JsonKey(name: '__typename') required this.typename, required this.uniq});
+  factory _ZoneAnalyticsTotal.fromJson(Map<String, dynamic> json) => _$ZoneAnalyticsTotalFromJson(json);
+
+@override@JsonKey(name: '__typename') final  String typename;
+@override final  ZoneAnalyticsTotalUniq uniq;
+
+/// Create a copy of ZoneAnalyticsTotal
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$ZoneAnalyticsTotalCopyWith<_ZoneAnalyticsTotal> get copyWith => __$ZoneAnalyticsTotalCopyWithImpl<_ZoneAnalyticsTotal>(this, _$identity);
+
+@override
+Map<String, dynamic> toJson() {
+  return _$ZoneAnalyticsTotalToJson(this, );
+}
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _ZoneAnalyticsTotal&&(identical(other.typename, typename) || other.typename == typename)&&(identical(other.uniq, uniq) || other.uniq == uniq));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,typename,uniq);
+
+@override
+String toString() {
+  return 'ZoneAnalyticsTotal(typename: $typename, uniq: $uniq)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class _$ZoneAnalyticsTotalCopyWith<$Res> implements $ZoneAnalyticsTotalCopyWith<$Res> {
+  factory _$ZoneAnalyticsTotalCopyWith(_ZoneAnalyticsTotal value, $Res Function(_ZoneAnalyticsTotal) _then) = __$ZoneAnalyticsTotalCopyWithImpl;
+@override @useResult
+$Res call({
+@JsonKey(name: '__typename') String typename, ZoneAnalyticsTotalUniq uniq
+});
+
+
+@override $ZoneAnalyticsTotalUniqCopyWith<$Res> get uniq;
+
+}
+/// @nodoc
+class __$ZoneAnalyticsTotalCopyWithImpl<$Res>
+    implements _$ZoneAnalyticsTotalCopyWith<$Res> {
+  __$ZoneAnalyticsTotalCopyWithImpl(this._self, this._then);
+
+  final _ZoneAnalyticsTotal _self;
+  final $Res Function(_ZoneAnalyticsTotal) _then;
+
+/// Create a copy of ZoneAnalyticsTotal
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? typename = null,Object? uniq = null,}) {
+  return _then(_ZoneAnalyticsTotal(
+typename: null == typename ? _self.typename : typename // ignore: cast_nullable_to_non_nullable
+as String,uniq: null == uniq ? _self.uniq : uniq // ignore: cast_nullable_to_non_nullable
+as ZoneAnalyticsTotalUniq,
+  ));
+}
+
+/// Create a copy of ZoneAnalyticsTotal
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$ZoneAnalyticsTotalUniqCopyWith<$Res> get uniq {
+  
+  return $ZoneAnalyticsTotalUniqCopyWith<$Res>(_self.uniq, (value) {
+    return _then(_self.copyWith(uniq: value));
+  });
+}
+}
+
+
+/// @nodoc
+mixin _$ZoneAnalyticsTotalUniq {
+
+@JsonKey(name: '__typename') String get typename; int get uniques;
+/// Create a copy of ZoneAnalyticsTotalUniq
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$ZoneAnalyticsTotalUniqCopyWith<ZoneAnalyticsTotalUniq> get copyWith => _$ZoneAnalyticsTotalUniqCopyWithImpl<ZoneAnalyticsTotalUniq>(this as ZoneAnalyticsTotalUniq, _$identity);
+
+  /// Serializes this ZoneAnalyticsTotalUniq to a JSON map.
+  Map<String, dynamic> toJson();
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is ZoneAnalyticsTotalUniq&&(identical(other.typename, typename) || other.typename == typename)&&(identical(other.uniques, uniques) || other.uniques == uniques));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,typename,uniques);
+
+@override
+String toString() {
+  return 'ZoneAnalyticsTotalUniq(typename: $typename, uniques: $uniques)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class $ZoneAnalyticsTotalUniqCopyWith<$Res>  {
+  factory $ZoneAnalyticsTotalUniqCopyWith(ZoneAnalyticsTotalUniq value, $Res Function(ZoneAnalyticsTotalUniq) _then) = _$ZoneAnalyticsTotalUniqCopyWithImpl;
+@useResult
+$Res call({
+@JsonKey(name: '__typename') String typename, int uniques
+});
+
+
+
+
+}
+/// @nodoc
+class _$ZoneAnalyticsTotalUniqCopyWithImpl<$Res>
+    implements $ZoneAnalyticsTotalUniqCopyWith<$Res> {
+  _$ZoneAnalyticsTotalUniqCopyWithImpl(this._self, this._then);
+
+  final ZoneAnalyticsTotalUniq _self;
+  final $Res Function(ZoneAnalyticsTotalUniq) _then;
+
+/// Create a copy of ZoneAnalyticsTotalUniq
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? typename = null,Object? uniques = null,}) {
+  return _then(_self.copyWith(
+typename: null == typename ? _self.typename : typename // ignore: cast_nullable_to_non_nullable
+as String,uniques: null == uniques ? _self.uniques : uniques // ignore: cast_nullable_to_non_nullable
+as int,
+  ));
+}
+
+}
+
+
+/// Adds pattern-matching-related methods to [ZoneAnalyticsTotalUniq].
+extension ZoneAnalyticsTotalUniqPatterns on ZoneAnalyticsTotalUniq {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _ZoneAnalyticsTotalUniq value)?  $default,{required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _ZoneAnalyticsTotalUniq() when $default != null:
+return $default(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _ZoneAnalyticsTotalUniq value)  $default,){
+final _that = this;
+switch (_that) {
+case _ZoneAnalyticsTotalUniq():
+return $default(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _ZoneAnalyticsTotalUniq value)?  $default,){
+final _that = this;
+switch (_that) {
+case _ZoneAnalyticsTotalUniq() when $default != null:
+return $default(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@JsonKey(name: '__typename')  String typename,  int uniques)?  $default,{required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _ZoneAnalyticsTotalUniq() when $default != null:
+return $default(_that.typename,_that.uniques);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@JsonKey(name: '__typename')  String typename,  int uniques)  $default,) {final _that = this;
+switch (_that) {
+case _ZoneAnalyticsTotalUniq():
+return $default(_that.typename,_that.uniques);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@JsonKey(name: '__typename')  String typename,  int uniques)?  $default,) {final _that = this;
+switch (_that) {
+case _ZoneAnalyticsTotalUniq() when $default != null:
+return $default(_that.typename,_that.uniques);case _:
+  return null;
+
+}
+}
+
+}
+
+/// @nodoc
+@JsonSerializable()
+
+class _ZoneAnalyticsTotalUniq implements ZoneAnalyticsTotalUniq {
+  const _ZoneAnalyticsTotalUniq({@JsonKey(name: '__typename') required this.typename, required this.uniques});
+  factory _ZoneAnalyticsTotalUniq.fromJson(Map<String, dynamic> json) => _$ZoneAnalyticsTotalUniqFromJson(json);
+
+@override@JsonKey(name: '__typename') final  String typename;
+@override final  int uniques;
+
+/// Create a copy of ZoneAnalyticsTotalUniq
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$ZoneAnalyticsTotalUniqCopyWith<_ZoneAnalyticsTotalUniq> get copyWith => __$ZoneAnalyticsTotalUniqCopyWithImpl<_ZoneAnalyticsTotalUniq>(this, _$identity);
+
+@override
+Map<String, dynamic> toJson() {
+  return _$ZoneAnalyticsTotalUniqToJson(this, );
+}
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _ZoneAnalyticsTotalUniq&&(identical(other.typename, typename) || other.typename == typename)&&(identical(other.uniques, uniques) || other.uniques == uniques));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,typename,uniques);
+
+@override
+String toString() {
+  return 'ZoneAnalyticsTotalUniq(typename: $typename, uniques: $uniques)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class _$ZoneAnalyticsTotalUniqCopyWith<$Res> implements $ZoneAnalyticsTotalUniqCopyWith<$Res> {
+  factory _$ZoneAnalyticsTotalUniqCopyWith(_ZoneAnalyticsTotalUniq value, $Res Function(_ZoneAnalyticsTotalUniq) _then) = __$ZoneAnalyticsTotalUniqCopyWithImpl;
+@override @useResult
+$Res call({
+@JsonKey(name: '__typename') String typename, int uniques
+});
+
+
+
+
+}
+/// @nodoc
+class __$ZoneAnalyticsTotalUniqCopyWithImpl<$Res>
+    implements _$ZoneAnalyticsTotalUniqCopyWith<$Res> {
+  __$ZoneAnalyticsTotalUniqCopyWithImpl(this._self, this._then);
+
+  final _ZoneAnalyticsTotalUniq _self;
+  final $Res Function(_ZoneAnalyticsTotalUniq) _then;
+
+/// Create a copy of ZoneAnalyticsTotalUniq
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? typename = null,Object? uniques = null,}) {
+  return _then(_ZoneAnalyticsTotalUniq(
+typename: null == typename ? _self.typename : typename // ignore: cast_nullable_to_non_nullable
+as String,uniques: null == uniques ? _self.uniques : uniques // ignore: cast_nullable_to_non_nullable
+as int,
+  ));
+}
+
+
+}
+
+
+/// @nodoc
+mixin _$ZoneAnalyticsZoneData {
+
+@JsonKey(name: '__typename') String get typename; ZoneAnalyticsZoneDimensions get dimensions; ZoneAnalyticsZoneSum get sum; ZoneAnalyticsZoneUniq get uniq;
+/// Create a copy of ZoneAnalyticsZoneData
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$ZoneAnalyticsZoneDataCopyWith<ZoneAnalyticsZoneData> get copyWith => _$ZoneAnalyticsZoneDataCopyWithImpl<ZoneAnalyticsZoneData>(this as ZoneAnalyticsZoneData, _$identity);
+
+  /// Serializes this ZoneAnalyticsZoneData to a JSON map.
+  Map<String, dynamic> toJson();
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is ZoneAnalyticsZoneData&&(identical(other.typename, typename) || other.typename == typename)&&(identical(other.dimensions, dimensions) || other.dimensions == dimensions)&&(identical(other.sum, sum) || other.sum == sum)&&(identical(other.uniq, uniq) || other.uniq == uniq));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,typename,dimensions,sum,uniq);
+
+@override
+String toString() {
+  return 'ZoneAnalyticsZoneData(typename: $typename, dimensions: $dimensions, sum: $sum, uniq: $uniq)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class $ZoneAnalyticsZoneDataCopyWith<$Res>  {
+  factory $ZoneAnalyticsZoneDataCopyWith(ZoneAnalyticsZoneData value, $Res Function(ZoneAnalyticsZoneData) _then) = _$ZoneAnalyticsZoneDataCopyWithImpl;
+@useResult
+$Res call({
+@JsonKey(name: '__typename') String typename, ZoneAnalyticsZoneDimensions dimensions, ZoneAnalyticsZoneSum sum, ZoneAnalyticsZoneUniq uniq
+});
+
+
+$ZoneAnalyticsZoneDimensionsCopyWith<$Res> get dimensions;$ZoneAnalyticsZoneSumCopyWith<$Res> get sum;$ZoneAnalyticsZoneUniqCopyWith<$Res> get uniq;
+
+}
+/// @nodoc
+class _$ZoneAnalyticsZoneDataCopyWithImpl<$Res>
+    implements $ZoneAnalyticsZoneDataCopyWith<$Res> {
+  _$ZoneAnalyticsZoneDataCopyWithImpl(this._self, this._then);
+
+  final ZoneAnalyticsZoneData _self;
+  final $Res Function(ZoneAnalyticsZoneData) _then;
+
+/// Create a copy of ZoneAnalyticsZoneData
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? typename = null,Object? dimensions = null,Object? sum = null,Object? uniq = null,}) {
+  return _then(_self.copyWith(
+typename: null == typename ? _self.typename : typename // ignore: cast_nullable_to_non_nullable
+as String,dimensions: null == dimensions ? _self.dimensions : dimensions // ignore: cast_nullable_to_non_nullable
+as ZoneAnalyticsZoneDimensions,sum: null == sum ? _self.sum : sum // ignore: cast_nullable_to_non_nullable
+as ZoneAnalyticsZoneSum,uniq: null == uniq ? _self.uniq : uniq // ignore: cast_nullable_to_non_nullable
+as ZoneAnalyticsZoneUniq,
+  ));
+}
+/// Create a copy of ZoneAnalyticsZoneData
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$ZoneAnalyticsZoneDimensionsCopyWith<$Res> get dimensions {
+  
+  return $ZoneAnalyticsZoneDimensionsCopyWith<$Res>(_self.dimensions, (value) {
+    return _then(_self.copyWith(dimensions: value));
+  });
+}/// Create a copy of ZoneAnalyticsZoneData
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$ZoneAnalyticsZoneSumCopyWith<$Res> get sum {
+  
+  return $ZoneAnalyticsZoneSumCopyWith<$Res>(_self.sum, (value) {
+    return _then(_self.copyWith(sum: value));
+  });
+}/// Create a copy of ZoneAnalyticsZoneData
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$ZoneAnalyticsZoneUniqCopyWith<$Res> get uniq {
+  
+  return $ZoneAnalyticsZoneUniqCopyWith<$Res>(_self.uniq, (value) {
+    return _then(_self.copyWith(uniq: value));
+  });
+}
+}
+
+
+/// Adds pattern-matching-related methods to [ZoneAnalyticsZoneData].
+extension ZoneAnalyticsZoneDataPatterns on ZoneAnalyticsZoneData {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _ZoneAnalyticsZoneData value)?  $default,{required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _ZoneAnalyticsZoneData() when $default != null:
+return $default(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _ZoneAnalyticsZoneData value)  $default,){
+final _that = this;
+switch (_that) {
+case _ZoneAnalyticsZoneData():
+return $default(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _ZoneAnalyticsZoneData value)?  $default,){
+final _that = this;
+switch (_that) {
+case _ZoneAnalyticsZoneData() when $default != null:
+return $default(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@JsonKey(name: '__typename')  String typename,  ZoneAnalyticsZoneDimensions dimensions,  ZoneAnalyticsZoneSum sum,  ZoneAnalyticsZoneUniq uniq)?  $default,{required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _ZoneAnalyticsZoneData() when $default != null:
+return $default(_that.typename,_that.dimensions,_that.sum,_that.uniq);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@JsonKey(name: '__typename')  String typename,  ZoneAnalyticsZoneDimensions dimensions,  ZoneAnalyticsZoneSum sum,  ZoneAnalyticsZoneUniq uniq)  $default,) {final _that = this;
+switch (_that) {
+case _ZoneAnalyticsZoneData():
+return $default(_that.typename,_that.dimensions,_that.sum,_that.uniq);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@JsonKey(name: '__typename')  String typename,  ZoneAnalyticsZoneDimensions dimensions,  ZoneAnalyticsZoneSum sum,  ZoneAnalyticsZoneUniq uniq)?  $default,) {final _that = this;
+switch (_that) {
+case _ZoneAnalyticsZoneData() when $default != null:
+return $default(_that.typename,_that.dimensions,_that.sum,_that.uniq);case _:
+  return null;
+
+}
+}
+
+}
+
+/// @nodoc
+@JsonSerializable()
+
+class _ZoneAnalyticsZoneData implements ZoneAnalyticsZoneData {
+  const _ZoneAnalyticsZoneData({@JsonKey(name: '__typename') required this.typename, required this.dimensions, required this.sum, required this.uniq});
+  factory _ZoneAnalyticsZoneData.fromJson(Map<String, dynamic> json) => _$ZoneAnalyticsZoneDataFromJson(json);
+
+@override@JsonKey(name: '__typename') final  String typename;
+@override final  ZoneAnalyticsZoneDimensions dimensions;
+@override final  ZoneAnalyticsZoneSum sum;
+@override final  ZoneAnalyticsZoneUniq uniq;
+
+/// Create a copy of ZoneAnalyticsZoneData
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$ZoneAnalyticsZoneDataCopyWith<_ZoneAnalyticsZoneData> get copyWith => __$ZoneAnalyticsZoneDataCopyWithImpl<_ZoneAnalyticsZoneData>(this, _$identity);
+
+@override
+Map<String, dynamic> toJson() {
+  return _$ZoneAnalyticsZoneDataToJson(this, );
+}
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _ZoneAnalyticsZoneData&&(identical(other.typename, typename) || other.typename == typename)&&(identical(other.dimensions, dimensions) || other.dimensions == dimensions)&&(identical(other.sum, sum) || other.sum == sum)&&(identical(other.uniq, uniq) || other.uniq == uniq));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,typename,dimensions,sum,uniq);
+
+@override
+String toString() {
+  return 'ZoneAnalyticsZoneData(typename: $typename, dimensions: $dimensions, sum: $sum, uniq: $uniq)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class _$ZoneAnalyticsZoneDataCopyWith<$Res> implements $ZoneAnalyticsZoneDataCopyWith<$Res> {
+  factory _$ZoneAnalyticsZoneDataCopyWith(_ZoneAnalyticsZoneData value, $Res Function(_ZoneAnalyticsZoneData) _then) = __$ZoneAnalyticsZoneDataCopyWithImpl;
+@override @useResult
+$Res call({
+@JsonKey(name: '__typename') String typename, ZoneAnalyticsZoneDimensions dimensions, ZoneAnalyticsZoneSum sum, ZoneAnalyticsZoneUniq uniq
+});
+
+
+@override $ZoneAnalyticsZoneDimensionsCopyWith<$Res> get dimensions;@override $ZoneAnalyticsZoneSumCopyWith<$Res> get sum;@override $ZoneAnalyticsZoneUniqCopyWith<$Res> get uniq;
+
+}
+/// @nodoc
+class __$ZoneAnalyticsZoneDataCopyWithImpl<$Res>
+    implements _$ZoneAnalyticsZoneDataCopyWith<$Res> {
+  __$ZoneAnalyticsZoneDataCopyWithImpl(this._self, this._then);
+
+  final _ZoneAnalyticsZoneData _self;
+  final $Res Function(_ZoneAnalyticsZoneData) _then;
+
+/// Create a copy of ZoneAnalyticsZoneData
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? typename = null,Object? dimensions = null,Object? sum = null,Object? uniq = null,}) {
+  return _then(_ZoneAnalyticsZoneData(
+typename: null == typename ? _self.typename : typename // ignore: cast_nullable_to_non_nullable
+as String,dimensions: null == dimensions ? _self.dimensions : dimensions // ignore: cast_nullable_to_non_nullable
+as ZoneAnalyticsZoneDimensions,sum: null == sum ? _self.sum : sum // ignore: cast_nullable_to_non_nullable
+as ZoneAnalyticsZoneSum,uniq: null == uniq ? _self.uniq : uniq // ignore: cast_nullable_to_non_nullable
+as ZoneAnalyticsZoneUniq,
+  ));
+}
+
+/// Create a copy of ZoneAnalyticsZoneData
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$ZoneAnalyticsZoneDimensionsCopyWith<$Res> get dimensions {
+  
+  return $ZoneAnalyticsZoneDimensionsCopyWith<$Res>(_self.dimensions, (value) {
+    return _then(_self.copyWith(dimensions: value));
+  });
+}/// Create a copy of ZoneAnalyticsZoneData
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$ZoneAnalyticsZoneSumCopyWith<$Res> get sum {
+  
+  return $ZoneAnalyticsZoneSumCopyWith<$Res>(_self.sum, (value) {
+    return _then(_self.copyWith(sum: value));
+  });
+}/// Create a copy of ZoneAnalyticsZoneData
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$ZoneAnalyticsZoneUniqCopyWith<$Res> get uniq {
+  
+  return $ZoneAnalyticsZoneUniqCopyWith<$Res>(_self.uniq, (value) {
+    return _then(_self.copyWith(uniq: value));
+  });
+}
+}
+
+
+/// @nodoc
+mixin _$ZoneAnalyticsZoneDimensions {
+
+@JsonKey(name: '__typename') String get typename; String get timeslot;
+/// Create a copy of ZoneAnalyticsZoneDimensions
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$ZoneAnalyticsZoneDimensionsCopyWith<ZoneAnalyticsZoneDimensions> get copyWith => _$ZoneAnalyticsZoneDimensionsCopyWithImpl<ZoneAnalyticsZoneDimensions>(this as ZoneAnalyticsZoneDimensions, _$identity);
+
+  /// Serializes this ZoneAnalyticsZoneDimensions to a JSON map.
+  Map<String, dynamic> toJson();
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is ZoneAnalyticsZoneDimensions&&(identical(other.typename, typename) || other.typename == typename)&&(identical(other.timeslot, timeslot) || other.timeslot == timeslot));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,typename,timeslot);
+
+@override
+String toString() {
+  return 'ZoneAnalyticsZoneDimensions(typename: $typename, timeslot: $timeslot)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class $ZoneAnalyticsZoneDimensionsCopyWith<$Res>  {
+  factory $ZoneAnalyticsZoneDimensionsCopyWith(ZoneAnalyticsZoneDimensions value, $Res Function(ZoneAnalyticsZoneDimensions) _then) = _$ZoneAnalyticsZoneDimensionsCopyWithImpl;
+@useResult
+$Res call({
+@JsonKey(name: '__typename') String typename, String timeslot
+});
+
+
+
+
+}
+/// @nodoc
+class _$ZoneAnalyticsZoneDimensionsCopyWithImpl<$Res>
+    implements $ZoneAnalyticsZoneDimensionsCopyWith<$Res> {
+  _$ZoneAnalyticsZoneDimensionsCopyWithImpl(this._self, this._then);
+
+  final ZoneAnalyticsZoneDimensions _self;
+  final $Res Function(ZoneAnalyticsZoneDimensions) _then;
+
+/// Create a copy of ZoneAnalyticsZoneDimensions
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? typename = null,Object? timeslot = null,}) {
+  return _then(_self.copyWith(
+typename: null == typename ? _self.typename : typename // ignore: cast_nullable_to_non_nullable
+as String,timeslot: null == timeslot ? _self.timeslot : timeslot // ignore: cast_nullable_to_non_nullable
+as String,
+  ));
+}
+
+}
+
+
+/// Adds pattern-matching-related methods to [ZoneAnalyticsZoneDimensions].
+extension ZoneAnalyticsZoneDimensionsPatterns on ZoneAnalyticsZoneDimensions {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _ZoneAnalyticsZoneDimensions value)?  $default,{required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _ZoneAnalyticsZoneDimensions() when $default != null:
+return $default(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _ZoneAnalyticsZoneDimensions value)  $default,){
+final _that = this;
+switch (_that) {
+case _ZoneAnalyticsZoneDimensions():
+return $default(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _ZoneAnalyticsZoneDimensions value)?  $default,){
+final _that = this;
+switch (_that) {
+case _ZoneAnalyticsZoneDimensions() when $default != null:
+return $default(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@JsonKey(name: '__typename')  String typename,  String timeslot)?  $default,{required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _ZoneAnalyticsZoneDimensions() when $default != null:
+return $default(_that.typename,_that.timeslot);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@JsonKey(name: '__typename')  String typename,  String timeslot)  $default,) {final _that = this;
+switch (_that) {
+case _ZoneAnalyticsZoneDimensions():
+return $default(_that.typename,_that.timeslot);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@JsonKey(name: '__typename')  String typename,  String timeslot)?  $default,) {final _that = this;
+switch (_that) {
+case _ZoneAnalyticsZoneDimensions() when $default != null:
+return $default(_that.typename,_that.timeslot);case _:
+  return null;
+
+}
+}
+
+}
+
+/// @nodoc
+@JsonSerializable()
+
+class _ZoneAnalyticsZoneDimensions implements ZoneAnalyticsZoneDimensions {
+  const _ZoneAnalyticsZoneDimensions({@JsonKey(name: '__typename') required this.typename, required this.timeslot});
+  factory _ZoneAnalyticsZoneDimensions.fromJson(Map<String, dynamic> json) => _$ZoneAnalyticsZoneDimensionsFromJson(json);
+
+@override@JsonKey(name: '__typename') final  String typename;
+@override final  String timeslot;
+
+/// Create a copy of ZoneAnalyticsZoneDimensions
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$ZoneAnalyticsZoneDimensionsCopyWith<_ZoneAnalyticsZoneDimensions> get copyWith => __$ZoneAnalyticsZoneDimensionsCopyWithImpl<_ZoneAnalyticsZoneDimensions>(this, _$identity);
+
+@override
+Map<String, dynamic> toJson() {
+  return _$ZoneAnalyticsZoneDimensionsToJson(this, );
+}
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _ZoneAnalyticsZoneDimensions&&(identical(other.typename, typename) || other.typename == typename)&&(identical(other.timeslot, timeslot) || other.timeslot == timeslot));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,typename,timeslot);
+
+@override
+String toString() {
+  return 'ZoneAnalyticsZoneDimensions(typename: $typename, timeslot: $timeslot)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class _$ZoneAnalyticsZoneDimensionsCopyWith<$Res> implements $ZoneAnalyticsZoneDimensionsCopyWith<$Res> {
+  factory _$ZoneAnalyticsZoneDimensionsCopyWith(_ZoneAnalyticsZoneDimensions value, $Res Function(_ZoneAnalyticsZoneDimensions) _then) = __$ZoneAnalyticsZoneDimensionsCopyWithImpl;
+@override @useResult
+$Res call({
+@JsonKey(name: '__typename') String typename, String timeslot
+});
+
+
+
+
+}
+/// @nodoc
+class __$ZoneAnalyticsZoneDimensionsCopyWithImpl<$Res>
+    implements _$ZoneAnalyticsZoneDimensionsCopyWith<$Res> {
+  __$ZoneAnalyticsZoneDimensionsCopyWithImpl(this._self, this._then);
+
+  final _ZoneAnalyticsZoneDimensions _self;
+  final $Res Function(_ZoneAnalyticsZoneDimensions) _then;
+
+/// Create a copy of ZoneAnalyticsZoneDimensions
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? typename = null,Object? timeslot = null,}) {
+  return _then(_ZoneAnalyticsZoneDimensions(
+typename: null == typename ? _self.typename : typename // ignore: cast_nullable_to_non_nullable
+as String,timeslot: null == timeslot ? _self.timeslot : timeslot // ignore: cast_nullable_to_non_nullable
+as String,
+  ));
+}
+
+
+}
+
+
+/// @nodoc
+mixin _$ZoneAnalyticsZoneSum {
+
+@JsonKey(name: '__typename') String get typename; List<ZoneAnalyticsBrowserMapElem> get browserMap; int get bytes; int get cachedBytes; int get cachedRequests; List<ZoneAnalyticsClientSSLMapElem> get clientSSLMap; List<ZoneAnalyticsContentTypeMapElem> get contentTypeMap; List<ZoneAnalyticsCountryMapElem> get countryMap; int get encryptedBytes; int get encryptedRequests; List<ZoneAnalyticsIpClassMapElem> get ipClassMap; int get pageViews; int get requests; List<ZoneAnalyticsResponseStatusMapElem> get responseStatusMap; List<ZoneAnalyticsThreatPathingMapElem> get threatPathingMap; int get threats;
+/// Create a copy of ZoneAnalyticsZoneSum
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$ZoneAnalyticsZoneSumCopyWith<ZoneAnalyticsZoneSum> get copyWith => _$ZoneAnalyticsZoneSumCopyWithImpl<ZoneAnalyticsZoneSum>(this as ZoneAnalyticsZoneSum, _$identity);
+
+  /// Serializes this ZoneAnalyticsZoneSum to a JSON map.
+  Map<String, dynamic> toJson();
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is ZoneAnalyticsZoneSum&&(identical(other.typename, typename) || other.typename == typename)&&const DeepCollectionEquality().equals(other.browserMap, browserMap)&&(identical(other.bytes, bytes) || other.bytes == bytes)&&(identical(other.cachedBytes, cachedBytes) || other.cachedBytes == cachedBytes)&&(identical(other.cachedRequests, cachedRequests) || other.cachedRequests == cachedRequests)&&const DeepCollectionEquality().equals(other.clientSSLMap, clientSSLMap)&&const DeepCollectionEquality().equals(other.contentTypeMap, contentTypeMap)&&const DeepCollectionEquality().equals(other.countryMap, countryMap)&&(identical(other.encryptedBytes, encryptedBytes) || other.encryptedBytes == encryptedBytes)&&(identical(other.encryptedRequests, encryptedRequests) || other.encryptedRequests == encryptedRequests)&&const DeepCollectionEquality().equals(other.ipClassMap, ipClassMap)&&(identical(other.pageViews, pageViews) || other.pageViews == pageViews)&&(identical(other.requests, requests) || other.requests == requests)&&const DeepCollectionEquality().equals(other.responseStatusMap, responseStatusMap)&&const DeepCollectionEquality().equals(other.threatPathingMap, threatPathingMap)&&(identical(other.threats, threats) || other.threats == threats));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,typename,const DeepCollectionEquality().hash(browserMap),bytes,cachedBytes,cachedRequests,const DeepCollectionEquality().hash(clientSSLMap),const DeepCollectionEquality().hash(contentTypeMap),const DeepCollectionEquality().hash(countryMap),encryptedBytes,encryptedRequests,const DeepCollectionEquality().hash(ipClassMap),pageViews,requests,const DeepCollectionEquality().hash(responseStatusMap),const DeepCollectionEquality().hash(threatPathingMap),threats);
+
+@override
+String toString() {
+  return 'ZoneAnalyticsZoneSum(typename: $typename, browserMap: $browserMap, bytes: $bytes, cachedBytes: $cachedBytes, cachedRequests: $cachedRequests, clientSSLMap: $clientSSLMap, contentTypeMap: $contentTypeMap, countryMap: $countryMap, encryptedBytes: $encryptedBytes, encryptedRequests: $encryptedRequests, ipClassMap: $ipClassMap, pageViews: $pageViews, requests: $requests, responseStatusMap: $responseStatusMap, threatPathingMap: $threatPathingMap, threats: $threats)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class $ZoneAnalyticsZoneSumCopyWith<$Res>  {
+  factory $ZoneAnalyticsZoneSumCopyWith(ZoneAnalyticsZoneSum value, $Res Function(ZoneAnalyticsZoneSum) _then) = _$ZoneAnalyticsZoneSumCopyWithImpl;
+@useResult
+$Res call({
+@JsonKey(name: '__typename') String typename, List<ZoneAnalyticsBrowserMapElem> browserMap, int bytes, int cachedBytes, int cachedRequests, List<ZoneAnalyticsClientSSLMapElem> clientSSLMap, List<ZoneAnalyticsContentTypeMapElem> contentTypeMap, List<ZoneAnalyticsCountryMapElem> countryMap, int encryptedBytes, int encryptedRequests, List<ZoneAnalyticsIpClassMapElem> ipClassMap, int pageViews, int requests, List<ZoneAnalyticsResponseStatusMapElem> responseStatusMap, List<ZoneAnalyticsThreatPathingMapElem> threatPathingMap, int threats
+});
+
+
+
+
+}
+/// @nodoc
+class _$ZoneAnalyticsZoneSumCopyWithImpl<$Res>
+    implements $ZoneAnalyticsZoneSumCopyWith<$Res> {
+  _$ZoneAnalyticsZoneSumCopyWithImpl(this._self, this._then);
+
+  final ZoneAnalyticsZoneSum _self;
+  final $Res Function(ZoneAnalyticsZoneSum) _then;
+
+/// Create a copy of ZoneAnalyticsZoneSum
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? typename = null,Object? browserMap = null,Object? bytes = null,Object? cachedBytes = null,Object? cachedRequests = null,Object? clientSSLMap = null,Object? contentTypeMap = null,Object? countryMap = null,Object? encryptedBytes = null,Object? encryptedRequests = null,Object? ipClassMap = null,Object? pageViews = null,Object? requests = null,Object? responseStatusMap = null,Object? threatPathingMap = null,Object? threats = null,}) {
+  return _then(_self.copyWith(
+typename: null == typename ? _self.typename : typename // ignore: cast_nullable_to_non_nullable
+as String,browserMap: null == browserMap ? _self.browserMap : browserMap // ignore: cast_nullable_to_non_nullable
+as List<ZoneAnalyticsBrowserMapElem>,bytes: null == bytes ? _self.bytes : bytes // ignore: cast_nullable_to_non_nullable
+as int,cachedBytes: null == cachedBytes ? _self.cachedBytes : cachedBytes // ignore: cast_nullable_to_non_nullable
+as int,cachedRequests: null == cachedRequests ? _self.cachedRequests : cachedRequests // ignore: cast_nullable_to_non_nullable
+as int,clientSSLMap: null == clientSSLMap ? _self.clientSSLMap : clientSSLMap // ignore: cast_nullable_to_non_nullable
+as List<ZoneAnalyticsClientSSLMapElem>,contentTypeMap: null == contentTypeMap ? _self.contentTypeMap : contentTypeMap // ignore: cast_nullable_to_non_nullable
+as List<ZoneAnalyticsContentTypeMapElem>,countryMap: null == countryMap ? _self.countryMap : countryMap // ignore: cast_nullable_to_non_nullable
+as List<ZoneAnalyticsCountryMapElem>,encryptedBytes: null == encryptedBytes ? _self.encryptedBytes : encryptedBytes // ignore: cast_nullable_to_non_nullable
+as int,encryptedRequests: null == encryptedRequests ? _self.encryptedRequests : encryptedRequests // ignore: cast_nullable_to_non_nullable
+as int,ipClassMap: null == ipClassMap ? _self.ipClassMap : ipClassMap // ignore: cast_nullable_to_non_nullable
+as List<ZoneAnalyticsIpClassMapElem>,pageViews: null == pageViews ? _self.pageViews : pageViews // ignore: cast_nullable_to_non_nullable
+as int,requests: null == requests ? _self.requests : requests // ignore: cast_nullable_to_non_nullable
+as int,responseStatusMap: null == responseStatusMap ? _self.responseStatusMap : responseStatusMap // ignore: cast_nullable_to_non_nullable
+as List<ZoneAnalyticsResponseStatusMapElem>,threatPathingMap: null == threatPathingMap ? _self.threatPathingMap : threatPathingMap // ignore: cast_nullable_to_non_nullable
+as List<ZoneAnalyticsThreatPathingMapElem>,threats: null == threats ? _self.threats : threats // ignore: cast_nullable_to_non_nullable
+as int,
+  ));
+}
+
+}
+
+
+/// Adds pattern-matching-related methods to [ZoneAnalyticsZoneSum].
+extension ZoneAnalyticsZoneSumPatterns on ZoneAnalyticsZoneSum {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _ZoneAnalyticsZoneSum value)?  $default,{required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _ZoneAnalyticsZoneSum() when $default != null:
+return $default(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _ZoneAnalyticsZoneSum value)  $default,){
+final _that = this;
+switch (_that) {
+case _ZoneAnalyticsZoneSum():
+return $default(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _ZoneAnalyticsZoneSum value)?  $default,){
+final _that = this;
+switch (_that) {
+case _ZoneAnalyticsZoneSum() when $default != null:
+return $default(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@JsonKey(name: '__typename')  String typename,  List<ZoneAnalyticsBrowserMapElem> browserMap,  int bytes,  int cachedBytes,  int cachedRequests,  List<ZoneAnalyticsClientSSLMapElem> clientSSLMap,  List<ZoneAnalyticsContentTypeMapElem> contentTypeMap,  List<ZoneAnalyticsCountryMapElem> countryMap,  int encryptedBytes,  int encryptedRequests,  List<ZoneAnalyticsIpClassMapElem> ipClassMap,  int pageViews,  int requests,  List<ZoneAnalyticsResponseStatusMapElem> responseStatusMap,  List<ZoneAnalyticsThreatPathingMapElem> threatPathingMap,  int threats)?  $default,{required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _ZoneAnalyticsZoneSum() when $default != null:
+return $default(_that.typename,_that.browserMap,_that.bytes,_that.cachedBytes,_that.cachedRequests,_that.clientSSLMap,_that.contentTypeMap,_that.countryMap,_that.encryptedBytes,_that.encryptedRequests,_that.ipClassMap,_that.pageViews,_that.requests,_that.responseStatusMap,_that.threatPathingMap,_that.threats);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@JsonKey(name: '__typename')  String typename,  List<ZoneAnalyticsBrowserMapElem> browserMap,  int bytes,  int cachedBytes,  int cachedRequests,  List<ZoneAnalyticsClientSSLMapElem> clientSSLMap,  List<ZoneAnalyticsContentTypeMapElem> contentTypeMap,  List<ZoneAnalyticsCountryMapElem> countryMap,  int encryptedBytes,  int encryptedRequests,  List<ZoneAnalyticsIpClassMapElem> ipClassMap,  int pageViews,  int requests,  List<ZoneAnalyticsResponseStatusMapElem> responseStatusMap,  List<ZoneAnalyticsThreatPathingMapElem> threatPathingMap,  int threats)  $default,) {final _that = this;
+switch (_that) {
+case _ZoneAnalyticsZoneSum():
+return $default(_that.typename,_that.browserMap,_that.bytes,_that.cachedBytes,_that.cachedRequests,_that.clientSSLMap,_that.contentTypeMap,_that.countryMap,_that.encryptedBytes,_that.encryptedRequests,_that.ipClassMap,_that.pageViews,_that.requests,_that.responseStatusMap,_that.threatPathingMap,_that.threats);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@JsonKey(name: '__typename')  String typename,  List<ZoneAnalyticsBrowserMapElem> browserMap,  int bytes,  int cachedBytes,  int cachedRequests,  List<ZoneAnalyticsClientSSLMapElem> clientSSLMap,  List<ZoneAnalyticsContentTypeMapElem> contentTypeMap,  List<ZoneAnalyticsCountryMapElem> countryMap,  int encryptedBytes,  int encryptedRequests,  List<ZoneAnalyticsIpClassMapElem> ipClassMap,  int pageViews,  int requests,  List<ZoneAnalyticsResponseStatusMapElem> responseStatusMap,  List<ZoneAnalyticsThreatPathingMapElem> threatPathingMap,  int threats)?  $default,) {final _that = this;
+switch (_that) {
+case _ZoneAnalyticsZoneSum() when $default != null:
+return $default(_that.typename,_that.browserMap,_that.bytes,_that.cachedBytes,_that.cachedRequests,_that.clientSSLMap,_that.contentTypeMap,_that.countryMap,_that.encryptedBytes,_that.encryptedRequests,_that.ipClassMap,_that.pageViews,_that.requests,_that.responseStatusMap,_that.threatPathingMap,_that.threats);case _:
+  return null;
+
+}
+}
+
+}
+
+/// @nodoc
+@JsonSerializable()
+
+class _ZoneAnalyticsZoneSum implements ZoneAnalyticsZoneSum {
+  const _ZoneAnalyticsZoneSum({@JsonKey(name: '__typename') required this.typename, required final  List<ZoneAnalyticsBrowserMapElem> browserMap, required this.bytes, required this.cachedBytes, required this.cachedRequests, required final  List<ZoneAnalyticsClientSSLMapElem> clientSSLMap, required final  List<ZoneAnalyticsContentTypeMapElem> contentTypeMap, required final  List<ZoneAnalyticsCountryMapElem> countryMap, required this.encryptedBytes, required this.encryptedRequests, required final  List<ZoneAnalyticsIpClassMapElem> ipClassMap, required this.pageViews, required this.requests, required final  List<ZoneAnalyticsResponseStatusMapElem> responseStatusMap, required final  List<ZoneAnalyticsThreatPathingMapElem> threatPathingMap, required this.threats}): _browserMap = browserMap,_clientSSLMap = clientSSLMap,_contentTypeMap = contentTypeMap,_countryMap = countryMap,_ipClassMap = ipClassMap,_responseStatusMap = responseStatusMap,_threatPathingMap = threatPathingMap;
+  factory _ZoneAnalyticsZoneSum.fromJson(Map<String, dynamic> json) => _$ZoneAnalyticsZoneSumFromJson(json);
+
+@override@JsonKey(name: '__typename') final  String typename;
+ final  List<ZoneAnalyticsBrowserMapElem> _browserMap;
+@override List<ZoneAnalyticsBrowserMapElem> get browserMap {
+  if (_browserMap is EqualUnmodifiableListView) return _browserMap;
+  // ignore: implicit_dynamic_type
+  return EqualUnmodifiableListView(_browserMap);
+}
+
+@override final  int bytes;
+@override final  int cachedBytes;
+@override final  int cachedRequests;
+ final  List<ZoneAnalyticsClientSSLMapElem> _clientSSLMap;
+@override List<ZoneAnalyticsClientSSLMapElem> get clientSSLMap {
+  if (_clientSSLMap is EqualUnmodifiableListView) return _clientSSLMap;
+  // ignore: implicit_dynamic_type
+  return EqualUnmodifiableListView(_clientSSLMap);
+}
+
+ final  List<ZoneAnalyticsContentTypeMapElem> _contentTypeMap;
+@override List<ZoneAnalyticsContentTypeMapElem> get contentTypeMap {
+  if (_contentTypeMap is EqualUnmodifiableListView) return _contentTypeMap;
+  // ignore: implicit_dynamic_type
+  return EqualUnmodifiableListView(_contentTypeMap);
+}
+
+ final  List<ZoneAnalyticsCountryMapElem> _countryMap;
+@override List<ZoneAnalyticsCountryMapElem> get countryMap {
+  if (_countryMap is EqualUnmodifiableListView) return _countryMap;
+  // ignore: implicit_dynamic_type
+  return EqualUnmodifiableListView(_countryMap);
+}
+
+@override final  int encryptedBytes;
+@override final  int encryptedRequests;
+ final  List<ZoneAnalyticsIpClassMapElem> _ipClassMap;
+@override List<ZoneAnalyticsIpClassMapElem> get ipClassMap {
+  if (_ipClassMap is EqualUnmodifiableListView) return _ipClassMap;
+  // ignore: implicit_dynamic_type
+  return EqualUnmodifiableListView(_ipClassMap);
+}
+
+@override final  int pageViews;
+@override final  int requests;
+ final  List<ZoneAnalyticsResponseStatusMapElem> _responseStatusMap;
+@override List<ZoneAnalyticsResponseStatusMapElem> get responseStatusMap {
+  if (_responseStatusMap is EqualUnmodifiableListView) return _responseStatusMap;
+  // ignore: implicit_dynamic_type
+  return EqualUnmodifiableListView(_responseStatusMap);
+}
+
+ final  List<ZoneAnalyticsThreatPathingMapElem> _threatPathingMap;
+@override List<ZoneAnalyticsThreatPathingMapElem> get threatPathingMap {
+  if (_threatPathingMap is EqualUnmodifiableListView) return _threatPathingMap;
+  // ignore: implicit_dynamic_type
+  return EqualUnmodifiableListView(_threatPathingMap);
+}
+
+@override final  int threats;
+
+/// Create a copy of ZoneAnalyticsZoneSum
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$ZoneAnalyticsZoneSumCopyWith<_ZoneAnalyticsZoneSum> get copyWith => __$ZoneAnalyticsZoneSumCopyWithImpl<_ZoneAnalyticsZoneSum>(this, _$identity);
+
+@override
+Map<String, dynamic> toJson() {
+  return _$ZoneAnalyticsZoneSumToJson(this, );
+}
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _ZoneAnalyticsZoneSum&&(identical(other.typename, typename) || other.typename == typename)&&const DeepCollectionEquality().equals(other._browserMap, _browserMap)&&(identical(other.bytes, bytes) || other.bytes == bytes)&&(identical(other.cachedBytes, cachedBytes) || other.cachedBytes == cachedBytes)&&(identical(other.cachedRequests, cachedRequests) || other.cachedRequests == cachedRequests)&&const DeepCollectionEquality().equals(other._clientSSLMap, _clientSSLMap)&&const DeepCollectionEquality().equals(other._contentTypeMap, _contentTypeMap)&&const DeepCollectionEquality().equals(other._countryMap, _countryMap)&&(identical(other.encryptedBytes, encryptedBytes) || other.encryptedBytes == encryptedBytes)&&(identical(other.encryptedRequests, encryptedRequests) || other.encryptedRequests == encryptedRequests)&&const DeepCollectionEquality().equals(other._ipClassMap, _ipClassMap)&&(identical(other.pageViews, pageViews) || other.pageViews == pageViews)&&(identical(other.requests, requests) || other.requests == requests)&&const DeepCollectionEquality().equals(other._responseStatusMap, _responseStatusMap)&&const DeepCollectionEquality().equals(other._threatPathingMap, _threatPathingMap)&&(identical(other.threats, threats) || other.threats == threats));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,typename,const DeepCollectionEquality().hash(_browserMap),bytes,cachedBytes,cachedRequests,const DeepCollectionEquality().hash(_clientSSLMap),const DeepCollectionEquality().hash(_contentTypeMap),const DeepCollectionEquality().hash(_countryMap),encryptedBytes,encryptedRequests,const DeepCollectionEquality().hash(_ipClassMap),pageViews,requests,const DeepCollectionEquality().hash(_responseStatusMap),const DeepCollectionEquality().hash(_threatPathingMap),threats);
+
+@override
+String toString() {
+  return 'ZoneAnalyticsZoneSum(typename: $typename, browserMap: $browserMap, bytes: $bytes, cachedBytes: $cachedBytes, cachedRequests: $cachedRequests, clientSSLMap: $clientSSLMap, contentTypeMap: $contentTypeMap, countryMap: $countryMap, encryptedBytes: $encryptedBytes, encryptedRequests: $encryptedRequests, ipClassMap: $ipClassMap, pageViews: $pageViews, requests: $requests, responseStatusMap: $responseStatusMap, threatPathingMap: $threatPathingMap, threats: $threats)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class _$ZoneAnalyticsZoneSumCopyWith<$Res> implements $ZoneAnalyticsZoneSumCopyWith<$Res> {
+  factory _$ZoneAnalyticsZoneSumCopyWith(_ZoneAnalyticsZoneSum value, $Res Function(_ZoneAnalyticsZoneSum) _then) = __$ZoneAnalyticsZoneSumCopyWithImpl;
+@override @useResult
+$Res call({
+@JsonKey(name: '__typename') String typename, List<ZoneAnalyticsBrowserMapElem> browserMap, int bytes, int cachedBytes, int cachedRequests, List<ZoneAnalyticsClientSSLMapElem> clientSSLMap, List<ZoneAnalyticsContentTypeMapElem> contentTypeMap, List<ZoneAnalyticsCountryMapElem> countryMap, int encryptedBytes, int encryptedRequests, List<ZoneAnalyticsIpClassMapElem> ipClassMap, int pageViews, int requests, List<ZoneAnalyticsResponseStatusMapElem> responseStatusMap, List<ZoneAnalyticsThreatPathingMapElem> threatPathingMap, int threats
+});
+
+
+
+
+}
+/// @nodoc
+class __$ZoneAnalyticsZoneSumCopyWithImpl<$Res>
+    implements _$ZoneAnalyticsZoneSumCopyWith<$Res> {
+  __$ZoneAnalyticsZoneSumCopyWithImpl(this._self, this._then);
+
+  final _ZoneAnalyticsZoneSum _self;
+  final $Res Function(_ZoneAnalyticsZoneSum) _then;
+
+/// Create a copy of ZoneAnalyticsZoneSum
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? typename = null,Object? browserMap = null,Object? bytes = null,Object? cachedBytes = null,Object? cachedRequests = null,Object? clientSSLMap = null,Object? contentTypeMap = null,Object? countryMap = null,Object? encryptedBytes = null,Object? encryptedRequests = null,Object? ipClassMap = null,Object? pageViews = null,Object? requests = null,Object? responseStatusMap = null,Object? threatPathingMap = null,Object? threats = null,}) {
+  return _then(_ZoneAnalyticsZoneSum(
+typename: null == typename ? _self.typename : typename // ignore: cast_nullable_to_non_nullable
+as String,browserMap: null == browserMap ? _self._browserMap : browserMap // ignore: cast_nullable_to_non_nullable
+as List<ZoneAnalyticsBrowserMapElem>,bytes: null == bytes ? _self.bytes : bytes // ignore: cast_nullable_to_non_nullable
+as int,cachedBytes: null == cachedBytes ? _self.cachedBytes : cachedBytes // ignore: cast_nullable_to_non_nullable
+as int,cachedRequests: null == cachedRequests ? _self.cachedRequests : cachedRequests // ignore: cast_nullable_to_non_nullable
+as int,clientSSLMap: null == clientSSLMap ? _self._clientSSLMap : clientSSLMap // ignore: cast_nullable_to_non_nullable
+as List<ZoneAnalyticsClientSSLMapElem>,contentTypeMap: null == contentTypeMap ? _self._contentTypeMap : contentTypeMap // ignore: cast_nullable_to_non_nullable
+as List<ZoneAnalyticsContentTypeMapElem>,countryMap: null == countryMap ? _self._countryMap : countryMap // ignore: cast_nullable_to_non_nullable
+as List<ZoneAnalyticsCountryMapElem>,encryptedBytes: null == encryptedBytes ? _self.encryptedBytes : encryptedBytes // ignore: cast_nullable_to_non_nullable
+as int,encryptedRequests: null == encryptedRequests ? _self.encryptedRequests : encryptedRequests // ignore: cast_nullable_to_non_nullable
+as int,ipClassMap: null == ipClassMap ? _self._ipClassMap : ipClassMap // ignore: cast_nullable_to_non_nullable
+as List<ZoneAnalyticsIpClassMapElem>,pageViews: null == pageViews ? _self.pageViews : pageViews // ignore: cast_nullable_to_non_nullable
+as int,requests: null == requests ? _self.requests : requests // ignore: cast_nullable_to_non_nullable
+as int,responseStatusMap: null == responseStatusMap ? _self._responseStatusMap : responseStatusMap // ignore: cast_nullable_to_non_nullable
+as List<ZoneAnalyticsResponseStatusMapElem>,threatPathingMap: null == threatPathingMap ? _self._threatPathingMap : threatPathingMap // ignore: cast_nullable_to_non_nullable
+as List<ZoneAnalyticsThreatPathingMapElem>,threats: null == threats ? _self.threats : threats // ignore: cast_nullable_to_non_nullable
+as int,
+  ));
+}
+
+
+}
+
+
+/// @nodoc
+mixin _$ZoneAnalyticsZoneUniq {
+
+@JsonKey(name: '__typename') String get typename; int get uniques;
+/// Create a copy of ZoneAnalyticsZoneUniq
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$ZoneAnalyticsZoneUniqCopyWith<ZoneAnalyticsZoneUniq> get copyWith => _$ZoneAnalyticsZoneUniqCopyWithImpl<ZoneAnalyticsZoneUniq>(this as ZoneAnalyticsZoneUniq, _$identity);
+
+  /// Serializes this ZoneAnalyticsZoneUniq to a JSON map.
+  Map<String, dynamic> toJson();
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is ZoneAnalyticsZoneUniq&&(identical(other.typename, typename) || other.typename == typename)&&(identical(other.uniques, uniques) || other.uniques == uniques));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,typename,uniques);
+
+@override
+String toString() {
+  return 'ZoneAnalyticsZoneUniq(typename: $typename, uniques: $uniques)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class $ZoneAnalyticsZoneUniqCopyWith<$Res>  {
+  factory $ZoneAnalyticsZoneUniqCopyWith(ZoneAnalyticsZoneUniq value, $Res Function(ZoneAnalyticsZoneUniq) _then) = _$ZoneAnalyticsZoneUniqCopyWithImpl;
+@useResult
+$Res call({
+@JsonKey(name: '__typename') String typename, int uniques
+});
+
+
+
+
+}
+/// @nodoc
+class _$ZoneAnalyticsZoneUniqCopyWithImpl<$Res>
+    implements $ZoneAnalyticsZoneUniqCopyWith<$Res> {
+  _$ZoneAnalyticsZoneUniqCopyWithImpl(this._self, this._then);
+
+  final ZoneAnalyticsZoneUniq _self;
+  final $Res Function(ZoneAnalyticsZoneUniq) _then;
+
+/// Create a copy of ZoneAnalyticsZoneUniq
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? typename = null,Object? uniques = null,}) {
+  return _then(_self.copyWith(
+typename: null == typename ? _self.typename : typename // ignore: cast_nullable_to_non_nullable
+as String,uniques: null == uniques ? _self.uniques : uniques // ignore: cast_nullable_to_non_nullable
+as int,
+  ));
+}
+
+}
+
+
+/// Adds pattern-matching-related methods to [ZoneAnalyticsZoneUniq].
+extension ZoneAnalyticsZoneUniqPatterns on ZoneAnalyticsZoneUniq {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _ZoneAnalyticsZoneUniq value)?  $default,{required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _ZoneAnalyticsZoneUniq() when $default != null:
+return $default(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _ZoneAnalyticsZoneUniq value)  $default,){
+final _that = this;
+switch (_that) {
+case _ZoneAnalyticsZoneUniq():
+return $default(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _ZoneAnalyticsZoneUniq value)?  $default,){
+final _that = this;
+switch (_that) {
+case _ZoneAnalyticsZoneUniq() when $default != null:
+return $default(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@JsonKey(name: '__typename')  String typename,  int uniques)?  $default,{required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _ZoneAnalyticsZoneUniq() when $default != null:
+return $default(_that.typename,_that.uniques);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@JsonKey(name: '__typename')  String typename,  int uniques)  $default,) {final _that = this;
+switch (_that) {
+case _ZoneAnalyticsZoneUniq():
+return $default(_that.typename,_that.uniques);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@JsonKey(name: '__typename')  String typename,  int uniques)?  $default,) {final _that = this;
+switch (_that) {
+case _ZoneAnalyticsZoneUniq() when $default != null:
+return $default(_that.typename,_that.uniques);case _:
+  return null;
+
+}
+}
+
+}
+
+/// @nodoc
+@JsonSerializable()
+
+class _ZoneAnalyticsZoneUniq implements ZoneAnalyticsZoneUniq {
+  const _ZoneAnalyticsZoneUniq({@JsonKey(name: '__typename') required this.typename, required this.uniques});
+  factory _ZoneAnalyticsZoneUniq.fromJson(Map<String, dynamic> json) => _$ZoneAnalyticsZoneUniqFromJson(json);
+
+@override@JsonKey(name: '__typename') final  String typename;
+@override final  int uniques;
+
+/// Create a copy of ZoneAnalyticsZoneUniq
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$ZoneAnalyticsZoneUniqCopyWith<_ZoneAnalyticsZoneUniq> get copyWith => __$ZoneAnalyticsZoneUniqCopyWithImpl<_ZoneAnalyticsZoneUniq>(this, _$identity);
+
+@override
+Map<String, dynamic> toJson() {
+  return _$ZoneAnalyticsZoneUniqToJson(this, );
+}
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _ZoneAnalyticsZoneUniq&&(identical(other.typename, typename) || other.typename == typename)&&(identical(other.uniques, uniques) || other.uniques == uniques));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,typename,uniques);
+
+@override
+String toString() {
+  return 'ZoneAnalyticsZoneUniq(typename: $typename, uniques: $uniques)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class _$ZoneAnalyticsZoneUniqCopyWith<$Res> implements $ZoneAnalyticsZoneUniqCopyWith<$Res> {
+  factory _$ZoneAnalyticsZoneUniqCopyWith(_ZoneAnalyticsZoneUniq value, $Res Function(_ZoneAnalyticsZoneUniq) _then) = __$ZoneAnalyticsZoneUniqCopyWithImpl;
+@override @useResult
+$Res call({
+@JsonKey(name: '__typename') String typename, int uniques
+});
+
+
+
+
+}
+/// @nodoc
+class __$ZoneAnalyticsZoneUniqCopyWithImpl<$Res>
+    implements _$ZoneAnalyticsZoneUniqCopyWith<$Res> {
+  __$ZoneAnalyticsZoneUniqCopyWithImpl(this._self, this._then);
+
+  final _ZoneAnalyticsZoneUniq _self;
+  final $Res Function(_ZoneAnalyticsZoneUniq) _then;
+
+/// Create a copy of ZoneAnalyticsZoneUniq
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? typename = null,Object? uniques = null,}) {
+  return _then(_ZoneAnalyticsZoneUniq(
+typename: null == typename ? _self.typename : typename // ignore: cast_nullable_to_non_nullable
+as String,uniques: null == uniques ? _self.uniques : uniques // ignore: cast_nullable_to_non_nullable
+as int,
+  ));
+}
+
+
+}
+
+
+/// @nodoc
+mixin _$ZoneAnalyticsBrowserMapElem {
+
+@JsonKey(name: '__typename') String get typename; String get key; int get pageViews;
+/// Create a copy of ZoneAnalyticsBrowserMapElem
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$ZoneAnalyticsBrowserMapElemCopyWith<ZoneAnalyticsBrowserMapElem> get copyWith => _$ZoneAnalyticsBrowserMapElemCopyWithImpl<ZoneAnalyticsBrowserMapElem>(this as ZoneAnalyticsBrowserMapElem, _$identity);
+
+  /// Serializes this ZoneAnalyticsBrowserMapElem to a JSON map.
+  Map<String, dynamic> toJson();
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is ZoneAnalyticsBrowserMapElem&&(identical(other.typename, typename) || other.typename == typename)&&(identical(other.key, key) || other.key == key)&&(identical(other.pageViews, pageViews) || other.pageViews == pageViews));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,typename,key,pageViews);
+
+@override
+String toString() {
+  return 'ZoneAnalyticsBrowserMapElem(typename: $typename, key: $key, pageViews: $pageViews)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class $ZoneAnalyticsBrowserMapElemCopyWith<$Res>  {
+  factory $ZoneAnalyticsBrowserMapElemCopyWith(ZoneAnalyticsBrowserMapElem value, $Res Function(ZoneAnalyticsBrowserMapElem) _then) = _$ZoneAnalyticsBrowserMapElemCopyWithImpl;
+@useResult
+$Res call({
+@JsonKey(name: '__typename') String typename, String key, int pageViews
+});
+
+
+
+
+}
+/// @nodoc
+class _$ZoneAnalyticsBrowserMapElemCopyWithImpl<$Res>
+    implements $ZoneAnalyticsBrowserMapElemCopyWith<$Res> {
+  _$ZoneAnalyticsBrowserMapElemCopyWithImpl(this._self, this._then);
+
+  final ZoneAnalyticsBrowserMapElem _self;
+  final $Res Function(ZoneAnalyticsBrowserMapElem) _then;
+
+/// Create a copy of ZoneAnalyticsBrowserMapElem
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? typename = null,Object? key = null,Object? pageViews = null,}) {
+  return _then(_self.copyWith(
+typename: null == typename ? _self.typename : typename // ignore: cast_nullable_to_non_nullable
+as String,key: null == key ? _self.key : key // ignore: cast_nullable_to_non_nullable
+as String,pageViews: null == pageViews ? _self.pageViews : pageViews // ignore: cast_nullable_to_non_nullable
+as int,
+  ));
+}
+
+}
+
+
+/// Adds pattern-matching-related methods to [ZoneAnalyticsBrowserMapElem].
+extension ZoneAnalyticsBrowserMapElemPatterns on ZoneAnalyticsBrowserMapElem {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _ZoneAnalyticsBrowserMapElem value)?  $default,{required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _ZoneAnalyticsBrowserMapElem() when $default != null:
+return $default(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _ZoneAnalyticsBrowserMapElem value)  $default,){
+final _that = this;
+switch (_that) {
+case _ZoneAnalyticsBrowserMapElem():
+return $default(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _ZoneAnalyticsBrowserMapElem value)?  $default,){
+final _that = this;
+switch (_that) {
+case _ZoneAnalyticsBrowserMapElem() when $default != null:
+return $default(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@JsonKey(name: '__typename')  String typename,  String key,  int pageViews)?  $default,{required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _ZoneAnalyticsBrowserMapElem() when $default != null:
+return $default(_that.typename,_that.key,_that.pageViews);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@JsonKey(name: '__typename')  String typename,  String key,  int pageViews)  $default,) {final _that = this;
+switch (_that) {
+case _ZoneAnalyticsBrowserMapElem():
+return $default(_that.typename,_that.key,_that.pageViews);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@JsonKey(name: '__typename')  String typename,  String key,  int pageViews)?  $default,) {final _that = this;
+switch (_that) {
+case _ZoneAnalyticsBrowserMapElem() when $default != null:
+return $default(_that.typename,_that.key,_that.pageViews);case _:
+  return null;
+
+}
+}
+
+}
+
+/// @nodoc
+@JsonSerializable()
+
+class _ZoneAnalyticsBrowserMapElem implements ZoneAnalyticsBrowserMapElem {
+  const _ZoneAnalyticsBrowserMapElem({@JsonKey(name: '__typename') required this.typename, required this.key, required this.pageViews});
+  factory _ZoneAnalyticsBrowserMapElem.fromJson(Map<String, dynamic> json) => _$ZoneAnalyticsBrowserMapElemFromJson(json);
+
+@override@JsonKey(name: '__typename') final  String typename;
+@override final  String key;
+@override final  int pageViews;
+
+/// Create a copy of ZoneAnalyticsBrowserMapElem
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$ZoneAnalyticsBrowserMapElemCopyWith<_ZoneAnalyticsBrowserMapElem> get copyWith => __$ZoneAnalyticsBrowserMapElemCopyWithImpl<_ZoneAnalyticsBrowserMapElem>(this, _$identity);
+
+@override
+Map<String, dynamic> toJson() {
+  return _$ZoneAnalyticsBrowserMapElemToJson(this, );
+}
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _ZoneAnalyticsBrowserMapElem&&(identical(other.typename, typename) || other.typename == typename)&&(identical(other.key, key) || other.key == key)&&(identical(other.pageViews, pageViews) || other.pageViews == pageViews));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,typename,key,pageViews);
+
+@override
+String toString() {
+  return 'ZoneAnalyticsBrowserMapElem(typename: $typename, key: $key, pageViews: $pageViews)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class _$ZoneAnalyticsBrowserMapElemCopyWith<$Res> implements $ZoneAnalyticsBrowserMapElemCopyWith<$Res> {
+  factory _$ZoneAnalyticsBrowserMapElemCopyWith(_ZoneAnalyticsBrowserMapElem value, $Res Function(_ZoneAnalyticsBrowserMapElem) _then) = __$ZoneAnalyticsBrowserMapElemCopyWithImpl;
+@override @useResult
+$Res call({
+@JsonKey(name: '__typename') String typename, String key, int pageViews
+});
+
+
+
+
+}
+/// @nodoc
+class __$ZoneAnalyticsBrowserMapElemCopyWithImpl<$Res>
+    implements _$ZoneAnalyticsBrowserMapElemCopyWith<$Res> {
+  __$ZoneAnalyticsBrowserMapElemCopyWithImpl(this._self, this._then);
+
+  final _ZoneAnalyticsBrowserMapElem _self;
+  final $Res Function(_ZoneAnalyticsBrowserMapElem) _then;
+
+/// Create a copy of ZoneAnalyticsBrowserMapElem
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? typename = null,Object? key = null,Object? pageViews = null,}) {
+  return _then(_ZoneAnalyticsBrowserMapElem(
+typename: null == typename ? _self.typename : typename // ignore: cast_nullable_to_non_nullable
+as String,key: null == key ? _self.key : key // ignore: cast_nullable_to_non_nullable
+as String,pageViews: null == pageViews ? _self.pageViews : pageViews // ignore: cast_nullable_to_non_nullable
+as int,
+  ));
+}
+
+
+}
+
+
+/// @nodoc
+mixin _$ZoneAnalyticsClientSSLMapElem {
+
+@JsonKey(name: '__typename') String get typename; String get key; int get requests;
+/// Create a copy of ZoneAnalyticsClientSSLMapElem
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$ZoneAnalyticsClientSSLMapElemCopyWith<ZoneAnalyticsClientSSLMapElem> get copyWith => _$ZoneAnalyticsClientSSLMapElemCopyWithImpl<ZoneAnalyticsClientSSLMapElem>(this as ZoneAnalyticsClientSSLMapElem, _$identity);
+
+  /// Serializes this ZoneAnalyticsClientSSLMapElem to a JSON map.
+  Map<String, dynamic> toJson();
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is ZoneAnalyticsClientSSLMapElem&&(identical(other.typename, typename) || other.typename == typename)&&(identical(other.key, key) || other.key == key)&&(identical(other.requests, requests) || other.requests == requests));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,typename,key,requests);
+
+@override
+String toString() {
+  return 'ZoneAnalyticsClientSSLMapElem(typename: $typename, key: $key, requests: $requests)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class $ZoneAnalyticsClientSSLMapElemCopyWith<$Res>  {
+  factory $ZoneAnalyticsClientSSLMapElemCopyWith(ZoneAnalyticsClientSSLMapElem value, $Res Function(ZoneAnalyticsClientSSLMapElem) _then) = _$ZoneAnalyticsClientSSLMapElemCopyWithImpl;
+@useResult
+$Res call({
+@JsonKey(name: '__typename') String typename, String key, int requests
+});
+
+
+
+
+}
+/// @nodoc
+class _$ZoneAnalyticsClientSSLMapElemCopyWithImpl<$Res>
+    implements $ZoneAnalyticsClientSSLMapElemCopyWith<$Res> {
+  _$ZoneAnalyticsClientSSLMapElemCopyWithImpl(this._self, this._then);
+
+  final ZoneAnalyticsClientSSLMapElem _self;
+  final $Res Function(ZoneAnalyticsClientSSLMapElem) _then;
+
+/// Create a copy of ZoneAnalyticsClientSSLMapElem
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? typename = null,Object? key = null,Object? requests = null,}) {
+  return _then(_self.copyWith(
+typename: null == typename ? _self.typename : typename // ignore: cast_nullable_to_non_nullable
+as String,key: null == key ? _self.key : key // ignore: cast_nullable_to_non_nullable
+as String,requests: null == requests ? _self.requests : requests // ignore: cast_nullable_to_non_nullable
+as int,
+  ));
+}
+
+}
+
+
+/// Adds pattern-matching-related methods to [ZoneAnalyticsClientSSLMapElem].
+extension ZoneAnalyticsClientSSLMapElemPatterns on ZoneAnalyticsClientSSLMapElem {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _ZoneAnalyticsClientSSLMapElem value)?  $default,{required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _ZoneAnalyticsClientSSLMapElem() when $default != null:
+return $default(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _ZoneAnalyticsClientSSLMapElem value)  $default,){
+final _that = this;
+switch (_that) {
+case _ZoneAnalyticsClientSSLMapElem():
+return $default(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _ZoneAnalyticsClientSSLMapElem value)?  $default,){
+final _that = this;
+switch (_that) {
+case _ZoneAnalyticsClientSSLMapElem() when $default != null:
+return $default(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@JsonKey(name: '__typename')  String typename,  String key,  int requests)?  $default,{required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _ZoneAnalyticsClientSSLMapElem() when $default != null:
+return $default(_that.typename,_that.key,_that.requests);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@JsonKey(name: '__typename')  String typename,  String key,  int requests)  $default,) {final _that = this;
+switch (_that) {
+case _ZoneAnalyticsClientSSLMapElem():
+return $default(_that.typename,_that.key,_that.requests);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@JsonKey(name: '__typename')  String typename,  String key,  int requests)?  $default,) {final _that = this;
+switch (_that) {
+case _ZoneAnalyticsClientSSLMapElem() when $default != null:
+return $default(_that.typename,_that.key,_that.requests);case _:
+  return null;
+
+}
+}
+
+}
+
+/// @nodoc
+@JsonSerializable()
+
+class _ZoneAnalyticsClientSSLMapElem implements ZoneAnalyticsClientSSLMapElem {
+  const _ZoneAnalyticsClientSSLMapElem({@JsonKey(name: '__typename') required this.typename, required this.key, required this.requests});
+  factory _ZoneAnalyticsClientSSLMapElem.fromJson(Map<String, dynamic> json) => _$ZoneAnalyticsClientSSLMapElemFromJson(json);
+
+@override@JsonKey(name: '__typename') final  String typename;
+@override final  String key;
+@override final  int requests;
+
+/// Create a copy of ZoneAnalyticsClientSSLMapElem
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$ZoneAnalyticsClientSSLMapElemCopyWith<_ZoneAnalyticsClientSSLMapElem> get copyWith => __$ZoneAnalyticsClientSSLMapElemCopyWithImpl<_ZoneAnalyticsClientSSLMapElem>(this, _$identity);
+
+@override
+Map<String, dynamic> toJson() {
+  return _$ZoneAnalyticsClientSSLMapElemToJson(this, );
+}
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _ZoneAnalyticsClientSSLMapElem&&(identical(other.typename, typename) || other.typename == typename)&&(identical(other.key, key) || other.key == key)&&(identical(other.requests, requests) || other.requests == requests));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,typename,key,requests);
+
+@override
+String toString() {
+  return 'ZoneAnalyticsClientSSLMapElem(typename: $typename, key: $key, requests: $requests)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class _$ZoneAnalyticsClientSSLMapElemCopyWith<$Res> implements $ZoneAnalyticsClientSSLMapElemCopyWith<$Res> {
+  factory _$ZoneAnalyticsClientSSLMapElemCopyWith(_ZoneAnalyticsClientSSLMapElem value, $Res Function(_ZoneAnalyticsClientSSLMapElem) _then) = __$ZoneAnalyticsClientSSLMapElemCopyWithImpl;
+@override @useResult
+$Res call({
+@JsonKey(name: '__typename') String typename, String key, int requests
+});
+
+
+
+
+}
+/// @nodoc
+class __$ZoneAnalyticsClientSSLMapElemCopyWithImpl<$Res>
+    implements _$ZoneAnalyticsClientSSLMapElemCopyWith<$Res> {
+  __$ZoneAnalyticsClientSSLMapElemCopyWithImpl(this._self, this._then);
+
+  final _ZoneAnalyticsClientSSLMapElem _self;
+  final $Res Function(_ZoneAnalyticsClientSSLMapElem) _then;
+
+/// Create a copy of ZoneAnalyticsClientSSLMapElem
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? typename = null,Object? key = null,Object? requests = null,}) {
+  return _then(_ZoneAnalyticsClientSSLMapElem(
+typename: null == typename ? _self.typename : typename // ignore: cast_nullable_to_non_nullable
+as String,key: null == key ? _self.key : key // ignore: cast_nullable_to_non_nullable
+as String,requests: null == requests ? _self.requests : requests // ignore: cast_nullable_to_non_nullable
+as int,
+  ));
+}
+
+
+}
+
+
+/// @nodoc
+mixin _$ZoneAnalyticsContentTypeMapElem {
+
+@JsonKey(name: '__typename') String get typename; int get bytes; String get key; int get requests;
+/// Create a copy of ZoneAnalyticsContentTypeMapElem
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$ZoneAnalyticsContentTypeMapElemCopyWith<ZoneAnalyticsContentTypeMapElem> get copyWith => _$ZoneAnalyticsContentTypeMapElemCopyWithImpl<ZoneAnalyticsContentTypeMapElem>(this as ZoneAnalyticsContentTypeMapElem, _$identity);
+
+  /// Serializes this ZoneAnalyticsContentTypeMapElem to a JSON map.
+  Map<String, dynamic> toJson();
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is ZoneAnalyticsContentTypeMapElem&&(identical(other.typename, typename) || other.typename == typename)&&(identical(other.bytes, bytes) || other.bytes == bytes)&&(identical(other.key, key) || other.key == key)&&(identical(other.requests, requests) || other.requests == requests));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,typename,bytes,key,requests);
+
+@override
+String toString() {
+  return 'ZoneAnalyticsContentTypeMapElem(typename: $typename, bytes: $bytes, key: $key, requests: $requests)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class $ZoneAnalyticsContentTypeMapElemCopyWith<$Res>  {
+  factory $ZoneAnalyticsContentTypeMapElemCopyWith(ZoneAnalyticsContentTypeMapElem value, $Res Function(ZoneAnalyticsContentTypeMapElem) _then) = _$ZoneAnalyticsContentTypeMapElemCopyWithImpl;
+@useResult
+$Res call({
+@JsonKey(name: '__typename') String typename, int bytes, String key, int requests
+});
+
+
+
+
+}
+/// @nodoc
+class _$ZoneAnalyticsContentTypeMapElemCopyWithImpl<$Res>
+    implements $ZoneAnalyticsContentTypeMapElemCopyWith<$Res> {
+  _$ZoneAnalyticsContentTypeMapElemCopyWithImpl(this._self, this._then);
+
+  final ZoneAnalyticsContentTypeMapElem _self;
+  final $Res Function(ZoneAnalyticsContentTypeMapElem) _then;
+
+/// Create a copy of ZoneAnalyticsContentTypeMapElem
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? typename = null,Object? bytes = null,Object? key = null,Object? requests = null,}) {
+  return _then(_self.copyWith(
+typename: null == typename ? _self.typename : typename // ignore: cast_nullable_to_non_nullable
+as String,bytes: null == bytes ? _self.bytes : bytes // ignore: cast_nullable_to_non_nullable
+as int,key: null == key ? _self.key : key // ignore: cast_nullable_to_non_nullable
+as String,requests: null == requests ? _self.requests : requests // ignore: cast_nullable_to_non_nullable
+as int,
+  ));
+}
+
+}
+
+
+/// Adds pattern-matching-related methods to [ZoneAnalyticsContentTypeMapElem].
+extension ZoneAnalyticsContentTypeMapElemPatterns on ZoneAnalyticsContentTypeMapElem {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _ZoneAnalyticsContentTypeMapElem value)?  $default,{required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _ZoneAnalyticsContentTypeMapElem() when $default != null:
+return $default(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _ZoneAnalyticsContentTypeMapElem value)  $default,){
+final _that = this;
+switch (_that) {
+case _ZoneAnalyticsContentTypeMapElem():
+return $default(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _ZoneAnalyticsContentTypeMapElem value)?  $default,){
+final _that = this;
+switch (_that) {
+case _ZoneAnalyticsContentTypeMapElem() when $default != null:
+return $default(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@JsonKey(name: '__typename')  String typename,  int bytes,  String key,  int requests)?  $default,{required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _ZoneAnalyticsContentTypeMapElem() when $default != null:
+return $default(_that.typename,_that.bytes,_that.key,_that.requests);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@JsonKey(name: '__typename')  String typename,  int bytes,  String key,  int requests)  $default,) {final _that = this;
+switch (_that) {
+case _ZoneAnalyticsContentTypeMapElem():
+return $default(_that.typename,_that.bytes,_that.key,_that.requests);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@JsonKey(name: '__typename')  String typename,  int bytes,  String key,  int requests)?  $default,) {final _that = this;
+switch (_that) {
+case _ZoneAnalyticsContentTypeMapElem() when $default != null:
+return $default(_that.typename,_that.bytes,_that.key,_that.requests);case _:
+  return null;
+
+}
+}
+
+}
+
+/// @nodoc
+@JsonSerializable()
+
+class _ZoneAnalyticsContentTypeMapElem implements ZoneAnalyticsContentTypeMapElem {
+  const _ZoneAnalyticsContentTypeMapElem({@JsonKey(name: '__typename') required this.typename, required this.bytes, required this.key, required this.requests});
+  factory _ZoneAnalyticsContentTypeMapElem.fromJson(Map<String, dynamic> json) => _$ZoneAnalyticsContentTypeMapElemFromJson(json);
+
+@override@JsonKey(name: '__typename') final  String typename;
+@override final  int bytes;
+@override final  String key;
+@override final  int requests;
+
+/// Create a copy of ZoneAnalyticsContentTypeMapElem
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$ZoneAnalyticsContentTypeMapElemCopyWith<_ZoneAnalyticsContentTypeMapElem> get copyWith => __$ZoneAnalyticsContentTypeMapElemCopyWithImpl<_ZoneAnalyticsContentTypeMapElem>(this, _$identity);
+
+@override
+Map<String, dynamic> toJson() {
+  return _$ZoneAnalyticsContentTypeMapElemToJson(this, );
+}
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _ZoneAnalyticsContentTypeMapElem&&(identical(other.typename, typename) || other.typename == typename)&&(identical(other.bytes, bytes) || other.bytes == bytes)&&(identical(other.key, key) || other.key == key)&&(identical(other.requests, requests) || other.requests == requests));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,typename,bytes,key,requests);
+
+@override
+String toString() {
+  return 'ZoneAnalyticsContentTypeMapElem(typename: $typename, bytes: $bytes, key: $key, requests: $requests)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class _$ZoneAnalyticsContentTypeMapElemCopyWith<$Res> implements $ZoneAnalyticsContentTypeMapElemCopyWith<$Res> {
+  factory _$ZoneAnalyticsContentTypeMapElemCopyWith(_ZoneAnalyticsContentTypeMapElem value, $Res Function(_ZoneAnalyticsContentTypeMapElem) _then) = __$ZoneAnalyticsContentTypeMapElemCopyWithImpl;
+@override @useResult
+$Res call({
+@JsonKey(name: '__typename') String typename, int bytes, String key, int requests
+});
+
+
+
+
+}
+/// @nodoc
+class __$ZoneAnalyticsContentTypeMapElemCopyWithImpl<$Res>
+    implements _$ZoneAnalyticsContentTypeMapElemCopyWith<$Res> {
+  __$ZoneAnalyticsContentTypeMapElemCopyWithImpl(this._self, this._then);
+
+  final _ZoneAnalyticsContentTypeMapElem _self;
+  final $Res Function(_ZoneAnalyticsContentTypeMapElem) _then;
+
+/// Create a copy of ZoneAnalyticsContentTypeMapElem
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? typename = null,Object? bytes = null,Object? key = null,Object? requests = null,}) {
+  return _then(_ZoneAnalyticsContentTypeMapElem(
+typename: null == typename ? _self.typename : typename // ignore: cast_nullable_to_non_nullable
+as String,bytes: null == bytes ? _self.bytes : bytes // ignore: cast_nullable_to_non_nullable
+as int,key: null == key ? _self.key : key // ignore: cast_nullable_to_non_nullable
+as String,requests: null == requests ? _self.requests : requests // ignore: cast_nullable_to_non_nullable
+as int,
+  ));
+}
+
+
+}
+
+
+/// @nodoc
+mixin _$ZoneAnalyticsCountryMapElem {
+
+@JsonKey(name: '__typename') String get typename; int get bytes; String get key; int get requests; int get threats;
+/// Create a copy of ZoneAnalyticsCountryMapElem
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$ZoneAnalyticsCountryMapElemCopyWith<ZoneAnalyticsCountryMapElem> get copyWith => _$ZoneAnalyticsCountryMapElemCopyWithImpl<ZoneAnalyticsCountryMapElem>(this as ZoneAnalyticsCountryMapElem, _$identity);
+
+  /// Serializes this ZoneAnalyticsCountryMapElem to a JSON map.
+  Map<String, dynamic> toJson();
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is ZoneAnalyticsCountryMapElem&&(identical(other.typename, typename) || other.typename == typename)&&(identical(other.bytes, bytes) || other.bytes == bytes)&&(identical(other.key, key) || other.key == key)&&(identical(other.requests, requests) || other.requests == requests)&&(identical(other.threats, threats) || other.threats == threats));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,typename,bytes,key,requests,threats);
+
+@override
+String toString() {
+  return 'ZoneAnalyticsCountryMapElem(typename: $typename, bytes: $bytes, key: $key, requests: $requests, threats: $threats)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class $ZoneAnalyticsCountryMapElemCopyWith<$Res>  {
+  factory $ZoneAnalyticsCountryMapElemCopyWith(ZoneAnalyticsCountryMapElem value, $Res Function(ZoneAnalyticsCountryMapElem) _then) = _$ZoneAnalyticsCountryMapElemCopyWithImpl;
+@useResult
+$Res call({
+@JsonKey(name: '__typename') String typename, int bytes, String key, int requests, int threats
+});
+
+
+
+
+}
+/// @nodoc
+class _$ZoneAnalyticsCountryMapElemCopyWithImpl<$Res>
+    implements $ZoneAnalyticsCountryMapElemCopyWith<$Res> {
+  _$ZoneAnalyticsCountryMapElemCopyWithImpl(this._self, this._then);
+
+  final ZoneAnalyticsCountryMapElem _self;
+  final $Res Function(ZoneAnalyticsCountryMapElem) _then;
+
+/// Create a copy of ZoneAnalyticsCountryMapElem
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? typename = null,Object? bytes = null,Object? key = null,Object? requests = null,Object? threats = null,}) {
+  return _then(_self.copyWith(
+typename: null == typename ? _self.typename : typename // ignore: cast_nullable_to_non_nullable
+as String,bytes: null == bytes ? _self.bytes : bytes // ignore: cast_nullable_to_non_nullable
+as int,key: null == key ? _self.key : key // ignore: cast_nullable_to_non_nullable
+as String,requests: null == requests ? _self.requests : requests // ignore: cast_nullable_to_non_nullable
+as int,threats: null == threats ? _self.threats : threats // ignore: cast_nullable_to_non_nullable
+as int,
+  ));
+}
+
+}
+
+
+/// Adds pattern-matching-related methods to [ZoneAnalyticsCountryMapElem].
+extension ZoneAnalyticsCountryMapElemPatterns on ZoneAnalyticsCountryMapElem {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _ZoneAnalyticsCountryMapElem value)?  $default,{required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _ZoneAnalyticsCountryMapElem() when $default != null:
+return $default(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _ZoneAnalyticsCountryMapElem value)  $default,){
+final _that = this;
+switch (_that) {
+case _ZoneAnalyticsCountryMapElem():
+return $default(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _ZoneAnalyticsCountryMapElem value)?  $default,){
+final _that = this;
+switch (_that) {
+case _ZoneAnalyticsCountryMapElem() when $default != null:
+return $default(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@JsonKey(name: '__typename')  String typename,  int bytes,  String key,  int requests,  int threats)?  $default,{required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _ZoneAnalyticsCountryMapElem() when $default != null:
+return $default(_that.typename,_that.bytes,_that.key,_that.requests,_that.threats);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@JsonKey(name: '__typename')  String typename,  int bytes,  String key,  int requests,  int threats)  $default,) {final _that = this;
+switch (_that) {
+case _ZoneAnalyticsCountryMapElem():
+return $default(_that.typename,_that.bytes,_that.key,_that.requests,_that.threats);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@JsonKey(name: '__typename')  String typename,  int bytes,  String key,  int requests,  int threats)?  $default,) {final _that = this;
+switch (_that) {
+case _ZoneAnalyticsCountryMapElem() when $default != null:
+return $default(_that.typename,_that.bytes,_that.key,_that.requests,_that.threats);case _:
+  return null;
+
+}
+}
+
+}
+
+/// @nodoc
+@JsonSerializable()
+
+class _ZoneAnalyticsCountryMapElem implements ZoneAnalyticsCountryMapElem {
+  const _ZoneAnalyticsCountryMapElem({@JsonKey(name: '__typename') required this.typename, required this.bytes, required this.key, required this.requests, required this.threats});
+  factory _ZoneAnalyticsCountryMapElem.fromJson(Map<String, dynamic> json) => _$ZoneAnalyticsCountryMapElemFromJson(json);
+
+@override@JsonKey(name: '__typename') final  String typename;
+@override final  int bytes;
+@override final  String key;
+@override final  int requests;
+@override final  int threats;
+
+/// Create a copy of ZoneAnalyticsCountryMapElem
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$ZoneAnalyticsCountryMapElemCopyWith<_ZoneAnalyticsCountryMapElem> get copyWith => __$ZoneAnalyticsCountryMapElemCopyWithImpl<_ZoneAnalyticsCountryMapElem>(this, _$identity);
+
+@override
+Map<String, dynamic> toJson() {
+  return _$ZoneAnalyticsCountryMapElemToJson(this, );
+}
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _ZoneAnalyticsCountryMapElem&&(identical(other.typename, typename) || other.typename == typename)&&(identical(other.bytes, bytes) || other.bytes == bytes)&&(identical(other.key, key) || other.key == key)&&(identical(other.requests, requests) || other.requests == requests)&&(identical(other.threats, threats) || other.threats == threats));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,typename,bytes,key,requests,threats);
+
+@override
+String toString() {
+  return 'ZoneAnalyticsCountryMapElem(typename: $typename, bytes: $bytes, key: $key, requests: $requests, threats: $threats)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class _$ZoneAnalyticsCountryMapElemCopyWith<$Res> implements $ZoneAnalyticsCountryMapElemCopyWith<$Res> {
+  factory _$ZoneAnalyticsCountryMapElemCopyWith(_ZoneAnalyticsCountryMapElem value, $Res Function(_ZoneAnalyticsCountryMapElem) _then) = __$ZoneAnalyticsCountryMapElemCopyWithImpl;
+@override @useResult
+$Res call({
+@JsonKey(name: '__typename') String typename, int bytes, String key, int requests, int threats
+});
+
+
+
+
+}
+/// @nodoc
+class __$ZoneAnalyticsCountryMapElemCopyWithImpl<$Res>
+    implements _$ZoneAnalyticsCountryMapElemCopyWith<$Res> {
+  __$ZoneAnalyticsCountryMapElemCopyWithImpl(this._self, this._then);
+
+  final _ZoneAnalyticsCountryMapElem _self;
+  final $Res Function(_ZoneAnalyticsCountryMapElem) _then;
+
+/// Create a copy of ZoneAnalyticsCountryMapElem
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? typename = null,Object? bytes = null,Object? key = null,Object? requests = null,Object? threats = null,}) {
+  return _then(_ZoneAnalyticsCountryMapElem(
+typename: null == typename ? _self.typename : typename // ignore: cast_nullable_to_non_nullable
+as String,bytes: null == bytes ? _self.bytes : bytes // ignore: cast_nullable_to_non_nullable
+as int,key: null == key ? _self.key : key // ignore: cast_nullable_to_non_nullable
+as String,requests: null == requests ? _self.requests : requests // ignore: cast_nullable_to_non_nullable
+as int,threats: null == threats ? _self.threats : threats // ignore: cast_nullable_to_non_nullable
+as int,
+  ));
+}
+
+
+}
+
+
+/// @nodoc
+mixin _$ZoneAnalyticsIpClassMapElem {
+
+@JsonKey(name: '__typename') String get typename; String get key; int get requests;
+/// Create a copy of ZoneAnalyticsIpClassMapElem
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$ZoneAnalyticsIpClassMapElemCopyWith<ZoneAnalyticsIpClassMapElem> get copyWith => _$ZoneAnalyticsIpClassMapElemCopyWithImpl<ZoneAnalyticsIpClassMapElem>(this as ZoneAnalyticsIpClassMapElem, _$identity);
+
+  /// Serializes this ZoneAnalyticsIpClassMapElem to a JSON map.
+  Map<String, dynamic> toJson();
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is ZoneAnalyticsIpClassMapElem&&(identical(other.typename, typename) || other.typename == typename)&&(identical(other.key, key) || other.key == key)&&(identical(other.requests, requests) || other.requests == requests));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,typename,key,requests);
+
+@override
+String toString() {
+  return 'ZoneAnalyticsIpClassMapElem(typename: $typename, key: $key, requests: $requests)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class $ZoneAnalyticsIpClassMapElemCopyWith<$Res>  {
+  factory $ZoneAnalyticsIpClassMapElemCopyWith(ZoneAnalyticsIpClassMapElem value, $Res Function(ZoneAnalyticsIpClassMapElem) _then) = _$ZoneAnalyticsIpClassMapElemCopyWithImpl;
+@useResult
+$Res call({
+@JsonKey(name: '__typename') String typename, String key, int requests
+});
+
+
+
+
+}
+/// @nodoc
+class _$ZoneAnalyticsIpClassMapElemCopyWithImpl<$Res>
+    implements $ZoneAnalyticsIpClassMapElemCopyWith<$Res> {
+  _$ZoneAnalyticsIpClassMapElemCopyWithImpl(this._self, this._then);
+
+  final ZoneAnalyticsIpClassMapElem _self;
+  final $Res Function(ZoneAnalyticsIpClassMapElem) _then;
+
+/// Create a copy of ZoneAnalyticsIpClassMapElem
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? typename = null,Object? key = null,Object? requests = null,}) {
+  return _then(_self.copyWith(
+typename: null == typename ? _self.typename : typename // ignore: cast_nullable_to_non_nullable
+as String,key: null == key ? _self.key : key // ignore: cast_nullable_to_non_nullable
+as String,requests: null == requests ? _self.requests : requests // ignore: cast_nullable_to_non_nullable
+as int,
+  ));
+}
+
+}
+
+
+/// Adds pattern-matching-related methods to [ZoneAnalyticsIpClassMapElem].
+extension ZoneAnalyticsIpClassMapElemPatterns on ZoneAnalyticsIpClassMapElem {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _ZoneAnalyticsIpClassMapElem value)?  $default,{required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _ZoneAnalyticsIpClassMapElem() when $default != null:
+return $default(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _ZoneAnalyticsIpClassMapElem value)  $default,){
+final _that = this;
+switch (_that) {
+case _ZoneAnalyticsIpClassMapElem():
+return $default(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _ZoneAnalyticsIpClassMapElem value)?  $default,){
+final _that = this;
+switch (_that) {
+case _ZoneAnalyticsIpClassMapElem() when $default != null:
+return $default(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@JsonKey(name: '__typename')  String typename,  String key,  int requests)?  $default,{required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _ZoneAnalyticsIpClassMapElem() when $default != null:
+return $default(_that.typename,_that.key,_that.requests);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@JsonKey(name: '__typename')  String typename,  String key,  int requests)  $default,) {final _that = this;
+switch (_that) {
+case _ZoneAnalyticsIpClassMapElem():
+return $default(_that.typename,_that.key,_that.requests);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@JsonKey(name: '__typename')  String typename,  String key,  int requests)?  $default,) {final _that = this;
+switch (_that) {
+case _ZoneAnalyticsIpClassMapElem() when $default != null:
+return $default(_that.typename,_that.key,_that.requests);case _:
+  return null;
+
+}
+}
+
+}
+
+/// @nodoc
+@JsonSerializable()
+
+class _ZoneAnalyticsIpClassMapElem implements ZoneAnalyticsIpClassMapElem {
+  const _ZoneAnalyticsIpClassMapElem({@JsonKey(name: '__typename') required this.typename, required this.key, required this.requests});
+  factory _ZoneAnalyticsIpClassMapElem.fromJson(Map<String, dynamic> json) => _$ZoneAnalyticsIpClassMapElemFromJson(json);
+
+@override@JsonKey(name: '__typename') final  String typename;
+@override final  String key;
+@override final  int requests;
+
+/// Create a copy of ZoneAnalyticsIpClassMapElem
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$ZoneAnalyticsIpClassMapElemCopyWith<_ZoneAnalyticsIpClassMapElem> get copyWith => __$ZoneAnalyticsIpClassMapElemCopyWithImpl<_ZoneAnalyticsIpClassMapElem>(this, _$identity);
+
+@override
+Map<String, dynamic> toJson() {
+  return _$ZoneAnalyticsIpClassMapElemToJson(this, );
+}
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _ZoneAnalyticsIpClassMapElem&&(identical(other.typename, typename) || other.typename == typename)&&(identical(other.key, key) || other.key == key)&&(identical(other.requests, requests) || other.requests == requests));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,typename,key,requests);
+
+@override
+String toString() {
+  return 'ZoneAnalyticsIpClassMapElem(typename: $typename, key: $key, requests: $requests)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class _$ZoneAnalyticsIpClassMapElemCopyWith<$Res> implements $ZoneAnalyticsIpClassMapElemCopyWith<$Res> {
+  factory _$ZoneAnalyticsIpClassMapElemCopyWith(_ZoneAnalyticsIpClassMapElem value, $Res Function(_ZoneAnalyticsIpClassMapElem) _then) = __$ZoneAnalyticsIpClassMapElemCopyWithImpl;
+@override @useResult
+$Res call({
+@JsonKey(name: '__typename') String typename, String key, int requests
+});
+
+
+
+
+}
+/// @nodoc
+class __$ZoneAnalyticsIpClassMapElemCopyWithImpl<$Res>
+    implements _$ZoneAnalyticsIpClassMapElemCopyWith<$Res> {
+  __$ZoneAnalyticsIpClassMapElemCopyWithImpl(this._self, this._then);
+
+  final _ZoneAnalyticsIpClassMapElem _self;
+  final $Res Function(_ZoneAnalyticsIpClassMapElem) _then;
+
+/// Create a copy of ZoneAnalyticsIpClassMapElem
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? typename = null,Object? key = null,Object? requests = null,}) {
+  return _then(_ZoneAnalyticsIpClassMapElem(
+typename: null == typename ? _self.typename : typename // ignore: cast_nullable_to_non_nullable
+as String,key: null == key ? _self.key : key // ignore: cast_nullable_to_non_nullable
+as String,requests: null == requests ? _self.requests : requests // ignore: cast_nullable_to_non_nullable
+as int,
+  ));
+}
+
+
+}
+
+
+/// @nodoc
+mixin _$ZoneAnalyticsResponseStatusMapElem {
+
+@JsonKey(name: '__typename') String get typename; int get key; int get requests;
+/// Create a copy of ZoneAnalyticsResponseStatusMapElem
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$ZoneAnalyticsResponseStatusMapElemCopyWith<ZoneAnalyticsResponseStatusMapElem> get copyWith => _$ZoneAnalyticsResponseStatusMapElemCopyWithImpl<ZoneAnalyticsResponseStatusMapElem>(this as ZoneAnalyticsResponseStatusMapElem, _$identity);
+
+  /// Serializes this ZoneAnalyticsResponseStatusMapElem to a JSON map.
+  Map<String, dynamic> toJson();
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is ZoneAnalyticsResponseStatusMapElem&&(identical(other.typename, typename) || other.typename == typename)&&(identical(other.key, key) || other.key == key)&&(identical(other.requests, requests) || other.requests == requests));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,typename,key,requests);
+
+@override
+String toString() {
+  return 'ZoneAnalyticsResponseStatusMapElem(typename: $typename, key: $key, requests: $requests)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class $ZoneAnalyticsResponseStatusMapElemCopyWith<$Res>  {
+  factory $ZoneAnalyticsResponseStatusMapElemCopyWith(ZoneAnalyticsResponseStatusMapElem value, $Res Function(ZoneAnalyticsResponseStatusMapElem) _then) = _$ZoneAnalyticsResponseStatusMapElemCopyWithImpl;
+@useResult
+$Res call({
+@JsonKey(name: '__typename') String typename, int key, int requests
+});
+
+
+
+
+}
+/// @nodoc
+class _$ZoneAnalyticsResponseStatusMapElemCopyWithImpl<$Res>
+    implements $ZoneAnalyticsResponseStatusMapElemCopyWith<$Res> {
+  _$ZoneAnalyticsResponseStatusMapElemCopyWithImpl(this._self, this._then);
+
+  final ZoneAnalyticsResponseStatusMapElem _self;
+  final $Res Function(ZoneAnalyticsResponseStatusMapElem) _then;
+
+/// Create a copy of ZoneAnalyticsResponseStatusMapElem
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? typename = null,Object? key = null,Object? requests = null,}) {
+  return _then(_self.copyWith(
+typename: null == typename ? _self.typename : typename // ignore: cast_nullable_to_non_nullable
+as String,key: null == key ? _self.key : key // ignore: cast_nullable_to_non_nullable
+as int,requests: null == requests ? _self.requests : requests // ignore: cast_nullable_to_non_nullable
+as int,
+  ));
+}
+
+}
+
+
+/// Adds pattern-matching-related methods to [ZoneAnalyticsResponseStatusMapElem].
+extension ZoneAnalyticsResponseStatusMapElemPatterns on ZoneAnalyticsResponseStatusMapElem {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _ZoneAnalyticsResponseStatusMapElem value)?  $default,{required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _ZoneAnalyticsResponseStatusMapElem() when $default != null:
+return $default(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _ZoneAnalyticsResponseStatusMapElem value)  $default,){
+final _that = this;
+switch (_that) {
+case _ZoneAnalyticsResponseStatusMapElem():
+return $default(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _ZoneAnalyticsResponseStatusMapElem value)?  $default,){
+final _that = this;
+switch (_that) {
+case _ZoneAnalyticsResponseStatusMapElem() when $default != null:
+return $default(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@JsonKey(name: '__typename')  String typename,  int key,  int requests)?  $default,{required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _ZoneAnalyticsResponseStatusMapElem() when $default != null:
+return $default(_that.typename,_that.key,_that.requests);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@JsonKey(name: '__typename')  String typename,  int key,  int requests)  $default,) {final _that = this;
+switch (_that) {
+case _ZoneAnalyticsResponseStatusMapElem():
+return $default(_that.typename,_that.key,_that.requests);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@JsonKey(name: '__typename')  String typename,  int key,  int requests)?  $default,) {final _that = this;
+switch (_that) {
+case _ZoneAnalyticsResponseStatusMapElem() when $default != null:
+return $default(_that.typename,_that.key,_that.requests);case _:
+  return null;
+
+}
+}
+
+}
+
+/// @nodoc
+@JsonSerializable()
+
+class _ZoneAnalyticsResponseStatusMapElem implements ZoneAnalyticsResponseStatusMapElem {
+  const _ZoneAnalyticsResponseStatusMapElem({@JsonKey(name: '__typename') required this.typename, required this.key, required this.requests});
+  factory _ZoneAnalyticsResponseStatusMapElem.fromJson(Map<String, dynamic> json) => _$ZoneAnalyticsResponseStatusMapElemFromJson(json);
+
+@override@JsonKey(name: '__typename') final  String typename;
+@override final  int key;
+@override final  int requests;
+
+/// Create a copy of ZoneAnalyticsResponseStatusMapElem
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$ZoneAnalyticsResponseStatusMapElemCopyWith<_ZoneAnalyticsResponseStatusMapElem> get copyWith => __$ZoneAnalyticsResponseStatusMapElemCopyWithImpl<_ZoneAnalyticsResponseStatusMapElem>(this, _$identity);
+
+@override
+Map<String, dynamic> toJson() {
+  return _$ZoneAnalyticsResponseStatusMapElemToJson(this, );
+}
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _ZoneAnalyticsResponseStatusMapElem&&(identical(other.typename, typename) || other.typename == typename)&&(identical(other.key, key) || other.key == key)&&(identical(other.requests, requests) || other.requests == requests));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,typename,key,requests);
+
+@override
+String toString() {
+  return 'ZoneAnalyticsResponseStatusMapElem(typename: $typename, key: $key, requests: $requests)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class _$ZoneAnalyticsResponseStatusMapElemCopyWith<$Res> implements $ZoneAnalyticsResponseStatusMapElemCopyWith<$Res> {
+  factory _$ZoneAnalyticsResponseStatusMapElemCopyWith(_ZoneAnalyticsResponseStatusMapElem value, $Res Function(_ZoneAnalyticsResponseStatusMapElem) _then) = __$ZoneAnalyticsResponseStatusMapElemCopyWithImpl;
+@override @useResult
+$Res call({
+@JsonKey(name: '__typename') String typename, int key, int requests
+});
+
+
+
+
+}
+/// @nodoc
+class __$ZoneAnalyticsResponseStatusMapElemCopyWithImpl<$Res>
+    implements _$ZoneAnalyticsResponseStatusMapElemCopyWith<$Res> {
+  __$ZoneAnalyticsResponseStatusMapElemCopyWithImpl(this._self, this._then);
+
+  final _ZoneAnalyticsResponseStatusMapElem _self;
+  final $Res Function(_ZoneAnalyticsResponseStatusMapElem) _then;
+
+/// Create a copy of ZoneAnalyticsResponseStatusMapElem
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? typename = null,Object? key = null,Object? requests = null,}) {
+  return _then(_ZoneAnalyticsResponseStatusMapElem(
+typename: null == typename ? _self.typename : typename // ignore: cast_nullable_to_non_nullable
+as String,key: null == key ? _self.key : key // ignore: cast_nullable_to_non_nullable
+as int,requests: null == requests ? _self.requests : requests // ignore: cast_nullable_to_non_nullable
+as int,
+  ));
+}
+
+
+}
+
+
+/// @nodoc
+mixin _$ZoneAnalyticsThreatPathingMapElem {
+
+@JsonKey(name: '__typename') String get typename; String get key; int get requests;
+/// Create a copy of ZoneAnalyticsThreatPathingMapElem
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$ZoneAnalyticsThreatPathingMapElemCopyWith<ZoneAnalyticsThreatPathingMapElem> get copyWith => _$ZoneAnalyticsThreatPathingMapElemCopyWithImpl<ZoneAnalyticsThreatPathingMapElem>(this as ZoneAnalyticsThreatPathingMapElem, _$identity);
+
+  /// Serializes this ZoneAnalyticsThreatPathingMapElem to a JSON map.
+  Map<String, dynamic> toJson();
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is ZoneAnalyticsThreatPathingMapElem&&(identical(other.typename, typename) || other.typename == typename)&&(identical(other.key, key) || other.key == key)&&(identical(other.requests, requests) || other.requests == requests));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,typename,key,requests);
+
+@override
+String toString() {
+  return 'ZoneAnalyticsThreatPathingMapElem(typename: $typename, key: $key, requests: $requests)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class $ZoneAnalyticsThreatPathingMapElemCopyWith<$Res>  {
+  factory $ZoneAnalyticsThreatPathingMapElemCopyWith(ZoneAnalyticsThreatPathingMapElem value, $Res Function(ZoneAnalyticsThreatPathingMapElem) _then) = _$ZoneAnalyticsThreatPathingMapElemCopyWithImpl;
+@useResult
+$Res call({
+@JsonKey(name: '__typename') String typename, String key, int requests
+});
+
+
+
+
+}
+/// @nodoc
+class _$ZoneAnalyticsThreatPathingMapElemCopyWithImpl<$Res>
+    implements $ZoneAnalyticsThreatPathingMapElemCopyWith<$Res> {
+  _$ZoneAnalyticsThreatPathingMapElemCopyWithImpl(this._self, this._then);
+
+  final ZoneAnalyticsThreatPathingMapElem _self;
+  final $Res Function(ZoneAnalyticsThreatPathingMapElem) _then;
+
+/// Create a copy of ZoneAnalyticsThreatPathingMapElem
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? typename = null,Object? key = null,Object? requests = null,}) {
+  return _then(_self.copyWith(
+typename: null == typename ? _self.typename : typename // ignore: cast_nullable_to_non_nullable
+as String,key: null == key ? _self.key : key // ignore: cast_nullable_to_non_nullable
+as String,requests: null == requests ? _self.requests : requests // ignore: cast_nullable_to_non_nullable
+as int,
+  ));
+}
+
+}
+
+
+/// Adds pattern-matching-related methods to [ZoneAnalyticsThreatPathingMapElem].
+extension ZoneAnalyticsThreatPathingMapElemPatterns on ZoneAnalyticsThreatPathingMapElem {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _ZoneAnalyticsThreatPathingMapElem value)?  $default,{required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _ZoneAnalyticsThreatPathingMapElem() when $default != null:
+return $default(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _ZoneAnalyticsThreatPathingMapElem value)  $default,){
+final _that = this;
+switch (_that) {
+case _ZoneAnalyticsThreatPathingMapElem():
+return $default(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _ZoneAnalyticsThreatPathingMapElem value)?  $default,){
+final _that = this;
+switch (_that) {
+case _ZoneAnalyticsThreatPathingMapElem() when $default != null:
+return $default(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@JsonKey(name: '__typename')  String typename,  String key,  int requests)?  $default,{required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _ZoneAnalyticsThreatPathingMapElem() when $default != null:
+return $default(_that.typename,_that.key,_that.requests);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@JsonKey(name: '__typename')  String typename,  String key,  int requests)  $default,) {final _that = this;
+switch (_that) {
+case _ZoneAnalyticsThreatPathingMapElem():
+return $default(_that.typename,_that.key,_that.requests);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@JsonKey(name: '__typename')  String typename,  String key,  int requests)?  $default,) {final _that = this;
+switch (_that) {
+case _ZoneAnalyticsThreatPathingMapElem() when $default != null:
+return $default(_that.typename,_that.key,_that.requests);case _:
+  return null;
+
+}
+}
+
+}
+
+/// @nodoc
+@JsonSerializable()
+
+class _ZoneAnalyticsThreatPathingMapElem implements ZoneAnalyticsThreatPathingMapElem {
+  const _ZoneAnalyticsThreatPathingMapElem({@JsonKey(name: '__typename') required this.typename, required this.key, required this.requests});
+  factory _ZoneAnalyticsThreatPathingMapElem.fromJson(Map<String, dynamic> json) => _$ZoneAnalyticsThreatPathingMapElemFromJson(json);
+
+@override@JsonKey(name: '__typename') final  String typename;
+@override final  String key;
+@override final  int requests;
+
+/// Create a copy of ZoneAnalyticsThreatPathingMapElem
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$ZoneAnalyticsThreatPathingMapElemCopyWith<_ZoneAnalyticsThreatPathingMapElem> get copyWith => __$ZoneAnalyticsThreatPathingMapElemCopyWithImpl<_ZoneAnalyticsThreatPathingMapElem>(this, _$identity);
+
+@override
+Map<String, dynamic> toJson() {
+  return _$ZoneAnalyticsThreatPathingMapElemToJson(this, );
+}
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _ZoneAnalyticsThreatPathingMapElem&&(identical(other.typename, typename) || other.typename == typename)&&(identical(other.key, key) || other.key == key)&&(identical(other.requests, requests) || other.requests == requests));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,typename,key,requests);
+
+@override
+String toString() {
+  return 'ZoneAnalyticsThreatPathingMapElem(typename: $typename, key: $key, requests: $requests)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class _$ZoneAnalyticsThreatPathingMapElemCopyWith<$Res> implements $ZoneAnalyticsThreatPathingMapElemCopyWith<$Res> {
+  factory _$ZoneAnalyticsThreatPathingMapElemCopyWith(_ZoneAnalyticsThreatPathingMapElem value, $Res Function(_ZoneAnalyticsThreatPathingMapElem) _then) = __$ZoneAnalyticsThreatPathingMapElemCopyWithImpl;
+@override @useResult
+$Res call({
+@JsonKey(name: '__typename') String typename, String key, int requests
+});
+
+
+
+
+}
+/// @nodoc
+class __$ZoneAnalyticsThreatPathingMapElemCopyWithImpl<$Res>
+    implements _$ZoneAnalyticsThreatPathingMapElemCopyWith<$Res> {
+  __$ZoneAnalyticsThreatPathingMapElemCopyWithImpl(this._self, this._then);
+
+  final _ZoneAnalyticsThreatPathingMapElem _self;
+  final $Res Function(_ZoneAnalyticsThreatPathingMapElem) _then;
+
+/// Create a copy of ZoneAnalyticsThreatPathingMapElem
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? typename = null,Object? key = null,Object? requests = null,}) {
+  return _then(_ZoneAnalyticsThreatPathingMapElem(
+typename: null == typename ? _self.typename : typename // ignore: cast_nullable_to_non_nullable
+as String,key: null == key ? _self.key : key // ignore: cast_nullable_to_non_nullable
+as String,requests: null == requests ? _self.requests : requests // ignore: cast_nullable_to_non_nullable
+as int,
+  ));
+}
+
+
+}
+
 // dart format on

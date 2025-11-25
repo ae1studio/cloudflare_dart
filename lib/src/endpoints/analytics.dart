@@ -84,17 +84,14 @@ query GetUniqueVisitorsZones($zoneTags: [string!], $since: Date, $until: Date) {
   }
 
   /// Get Zone Analytics Data
-  Future<Map<String, dynamic>?> getZone({
+  Future<ZoneAnalyticsResponse?> getZone({
     required DateTime since,
     required DateTime until,
     required String zoneTag,
   }) async {
-    //Check client
     if (graphQLClient == null) {
       throw Exception('GraphQL not setup');
     }
-
-    // Build Query
 
     String query = r'''
 query GetZoneAnalytics($zoneTag: string, $since: Time, $until: Time) {
@@ -176,7 +173,6 @@ query GetZoneAnalytics($zoneTag: string, $since: Time, $until: Time) {
     String sinceString = _dateTimeFormat.format(since).toString();
     String untilString = _dateTimeFormat.format(until).toString();
 
-    //More than 24 hours only return date
     if (until.difference(since).inSeconds >= 259200) {
       query = r'''
 query GetZoneAnalytics($zoneTag: string, $since: Date, $until: Date) {
@@ -265,23 +261,19 @@ query GetZoneAnalytics($zoneTag: string, $since: Date, $until: Date) {
       'zoneTag': zoneTag,
     };
 
-    // Build Options
     final graph.QueryOptions options = graph.QueryOptions(
       document: graph.gql(query),
       variables: variables,
     );
 
-    // Call Query
     graph.QueryResult result = await graphQLClient!.query(options);
 
-    //Log request
     if (talker != null) {
       talker!.info(
         'getZone GraphQL Query: Has data ${result.data?.isNotEmpty} - \n ${variables}',
       );
     }
 
-    //Log Exception
     if (result.hasException) {
       if (talker != null) {
         talker!.error(result.exception.toString());
@@ -289,7 +281,11 @@ query GetZoneAnalytics($zoneTag: string, $since: Date, $until: Date) {
       throw Exception(result.exception.toString());
     }
 
-    return result.data;
+    if (result.data == null) {
+      return null;
+    }
+
+    return ZoneAnalyticsResponse.fromJson(result.data!);
   }
 
   /// Get Worker Analytics

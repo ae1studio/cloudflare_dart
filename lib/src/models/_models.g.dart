@@ -806,6 +806,316 @@ Map<String, dynamic> _$UniqueVisitorsZoneTotalUniqToJson(
   _UniqueVisitorsZoneTotalUniq instance,
 ) => <String, dynamic>{'uniques': instance.uniques};
 
+_ZoneAnalyticsResponse _$ZoneAnalyticsResponseFromJson(
+  Map<String, dynamic> json,
+) => _ZoneAnalyticsResponse(
+  viewer: ZoneAnalyticsViewer.fromJson(json['viewer'] as Map<String, dynamic>),
+);
+
+Map<String, dynamic> _$ZoneAnalyticsResponseToJson(
+  _ZoneAnalyticsResponse instance,
+) => <String, dynamic>{'viewer': instance.viewer};
+
+_ZoneAnalyticsViewer _$ZoneAnalyticsViewerFromJson(Map<String, dynamic> json) =>
+    _ZoneAnalyticsViewer(
+      typename: json['__typename'] as String,
+      zones: (json['zones'] as List<dynamic>)
+          .map((e) => ZoneAnalyticsZone.fromJson(e as Map<String, dynamic>))
+          .toList(),
+    );
+
+Map<String, dynamic> _$ZoneAnalyticsViewerToJson(
+  _ZoneAnalyticsViewer instance,
+) => <String, dynamic>{
+  '__typename': instance.typename,
+  'zones': instance.zones,
+};
+
+_ZoneAnalyticsZone _$ZoneAnalyticsZoneFromJson(Map<String, dynamic> json) =>
+    _ZoneAnalyticsZone(
+      typename: json['__typename'] as String,
+      totals: (json['totals'] as List<dynamic>)
+          .map((e) => ZoneAnalyticsTotal.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      zones: (json['zones'] as List<dynamic>)
+          .map((e) => ZoneAnalyticsZoneData.fromJson(e as Map<String, dynamic>))
+          .toList(),
+    );
+
+Map<String, dynamic> _$ZoneAnalyticsZoneToJson(_ZoneAnalyticsZone instance) =>
+    <String, dynamic>{
+      '__typename': instance.typename,
+      'totals': instance.totals,
+      'zones': instance.zones,
+    };
+
+_ZoneAnalyticsTotal _$ZoneAnalyticsTotalFromJson(Map<String, dynamic> json) =>
+    _ZoneAnalyticsTotal(
+      typename: json['__typename'] as String,
+      uniq: ZoneAnalyticsTotalUniq.fromJson(
+        json['uniq'] as Map<String, dynamic>,
+      ),
+    );
+
+Map<String, dynamic> _$ZoneAnalyticsTotalToJson(_ZoneAnalyticsTotal instance) =>
+    <String, dynamic>{'__typename': instance.typename, 'uniq': instance.uniq};
+
+_ZoneAnalyticsTotalUniq _$ZoneAnalyticsTotalUniqFromJson(
+  Map<String, dynamic> json,
+) => _ZoneAnalyticsTotalUniq(
+  typename: json['__typename'] as String,
+  uniques: (json['uniques'] as num).toInt(),
+);
+
+Map<String, dynamic> _$ZoneAnalyticsTotalUniqToJson(
+  _ZoneAnalyticsTotalUniq instance,
+) => <String, dynamic>{
+  '__typename': instance.typename,
+  'uniques': instance.uniques,
+};
+
+_ZoneAnalyticsZoneData _$ZoneAnalyticsZoneDataFromJson(
+  Map<String, dynamic> json,
+) => _ZoneAnalyticsZoneData(
+  typename: json['__typename'] as String,
+  dimensions: ZoneAnalyticsZoneDimensions.fromJson(
+    json['dimensions'] as Map<String, dynamic>,
+  ),
+  sum: ZoneAnalyticsZoneSum.fromJson(json['sum'] as Map<String, dynamic>),
+  uniq: ZoneAnalyticsZoneUniq.fromJson(json['uniq'] as Map<String, dynamic>),
+);
+
+Map<String, dynamic> _$ZoneAnalyticsZoneDataToJson(
+  _ZoneAnalyticsZoneData instance,
+) => <String, dynamic>{
+  '__typename': instance.typename,
+  'dimensions': instance.dimensions,
+  'sum': instance.sum,
+  'uniq': instance.uniq,
+};
+
+_ZoneAnalyticsZoneDimensions _$ZoneAnalyticsZoneDimensionsFromJson(
+  Map<String, dynamic> json,
+) => _ZoneAnalyticsZoneDimensions(
+  typename: json['__typename'] as String,
+  timeslot: json['timeslot'] as String,
+);
+
+Map<String, dynamic> _$ZoneAnalyticsZoneDimensionsToJson(
+  _ZoneAnalyticsZoneDimensions instance,
+) => <String, dynamic>{
+  '__typename': instance.typename,
+  'timeslot': instance.timeslot,
+};
+
+_ZoneAnalyticsZoneSum _$ZoneAnalyticsZoneSumFromJson(
+  Map<String, dynamic> json,
+) => _ZoneAnalyticsZoneSum(
+  typename: json['__typename'] as String,
+  browserMap: (json['browserMap'] as List<dynamic>)
+      .map(
+        (e) => ZoneAnalyticsBrowserMapElem.fromJson(e as Map<String, dynamic>),
+      )
+      .toList(),
+  bytes: (json['bytes'] as num).toInt(),
+  cachedBytes: (json['cachedBytes'] as num).toInt(),
+  cachedRequests: (json['cachedRequests'] as num).toInt(),
+  clientSSLMap: (json['clientSSLMap'] as List<dynamic>)
+      .map(
+        (e) =>
+            ZoneAnalyticsClientSSLMapElem.fromJson(e as Map<String, dynamic>),
+      )
+      .toList(),
+  contentTypeMap: (json['contentTypeMap'] as List<dynamic>)
+      .map(
+        (e) =>
+            ZoneAnalyticsContentTypeMapElem.fromJson(e as Map<String, dynamic>),
+      )
+      .toList(),
+  countryMap: (json['countryMap'] as List<dynamic>)
+      .map(
+        (e) => ZoneAnalyticsCountryMapElem.fromJson(e as Map<String, dynamic>),
+      )
+      .toList(),
+  encryptedBytes: (json['encryptedBytes'] as num).toInt(),
+  encryptedRequests: (json['encryptedRequests'] as num).toInt(),
+  ipClassMap: (json['ipClassMap'] as List<dynamic>)
+      .map(
+        (e) => ZoneAnalyticsIpClassMapElem.fromJson(e as Map<String, dynamic>),
+      )
+      .toList(),
+  pageViews: (json['pageViews'] as num).toInt(),
+  requests: (json['requests'] as num).toInt(),
+  responseStatusMap: (json['responseStatusMap'] as List<dynamic>)
+      .map(
+        (e) => ZoneAnalyticsResponseStatusMapElem.fromJson(
+          e as Map<String, dynamic>,
+        ),
+      )
+      .toList(),
+  threatPathingMap: (json['threatPathingMap'] as List<dynamic>)
+      .map(
+        (e) => ZoneAnalyticsThreatPathingMapElem.fromJson(
+          e as Map<String, dynamic>,
+        ),
+      )
+      .toList(),
+  threats: (json['threats'] as num).toInt(),
+);
+
+Map<String, dynamic> _$ZoneAnalyticsZoneSumToJson(
+  _ZoneAnalyticsZoneSum instance,
+) => <String, dynamic>{
+  '__typename': instance.typename,
+  'browserMap': instance.browserMap,
+  'bytes': instance.bytes,
+  'cachedBytes': instance.cachedBytes,
+  'cachedRequests': instance.cachedRequests,
+  'clientSSLMap': instance.clientSSLMap,
+  'contentTypeMap': instance.contentTypeMap,
+  'countryMap': instance.countryMap,
+  'encryptedBytes': instance.encryptedBytes,
+  'encryptedRequests': instance.encryptedRequests,
+  'ipClassMap': instance.ipClassMap,
+  'pageViews': instance.pageViews,
+  'requests': instance.requests,
+  'responseStatusMap': instance.responseStatusMap,
+  'threatPathingMap': instance.threatPathingMap,
+  'threats': instance.threats,
+};
+
+_ZoneAnalyticsZoneUniq _$ZoneAnalyticsZoneUniqFromJson(
+  Map<String, dynamic> json,
+) => _ZoneAnalyticsZoneUniq(
+  typename: json['__typename'] as String,
+  uniques: (json['uniques'] as num).toInt(),
+);
+
+Map<String, dynamic> _$ZoneAnalyticsZoneUniqToJson(
+  _ZoneAnalyticsZoneUniq instance,
+) => <String, dynamic>{
+  '__typename': instance.typename,
+  'uniques': instance.uniques,
+};
+
+_ZoneAnalyticsBrowserMapElem _$ZoneAnalyticsBrowserMapElemFromJson(
+  Map<String, dynamic> json,
+) => _ZoneAnalyticsBrowserMapElem(
+  typename: json['__typename'] as String,
+  key: json['key'] as String,
+  pageViews: (json['pageViews'] as num).toInt(),
+);
+
+Map<String, dynamic> _$ZoneAnalyticsBrowserMapElemToJson(
+  _ZoneAnalyticsBrowserMapElem instance,
+) => <String, dynamic>{
+  '__typename': instance.typename,
+  'key': instance.key,
+  'pageViews': instance.pageViews,
+};
+
+_ZoneAnalyticsClientSSLMapElem _$ZoneAnalyticsClientSSLMapElemFromJson(
+  Map<String, dynamic> json,
+) => _ZoneAnalyticsClientSSLMapElem(
+  typename: json['__typename'] as String,
+  key: json['key'] as String,
+  requests: (json['requests'] as num).toInt(),
+);
+
+Map<String, dynamic> _$ZoneAnalyticsClientSSLMapElemToJson(
+  _ZoneAnalyticsClientSSLMapElem instance,
+) => <String, dynamic>{
+  '__typename': instance.typename,
+  'key': instance.key,
+  'requests': instance.requests,
+};
+
+_ZoneAnalyticsContentTypeMapElem _$ZoneAnalyticsContentTypeMapElemFromJson(
+  Map<String, dynamic> json,
+) => _ZoneAnalyticsContentTypeMapElem(
+  typename: json['__typename'] as String,
+  bytes: (json['bytes'] as num).toInt(),
+  key: json['key'] as String,
+  requests: (json['requests'] as num).toInt(),
+);
+
+Map<String, dynamic> _$ZoneAnalyticsContentTypeMapElemToJson(
+  _ZoneAnalyticsContentTypeMapElem instance,
+) => <String, dynamic>{
+  '__typename': instance.typename,
+  'bytes': instance.bytes,
+  'key': instance.key,
+  'requests': instance.requests,
+};
+
+_ZoneAnalyticsCountryMapElem _$ZoneAnalyticsCountryMapElemFromJson(
+  Map<String, dynamic> json,
+) => _ZoneAnalyticsCountryMapElem(
+  typename: json['__typename'] as String,
+  bytes: (json['bytes'] as num).toInt(),
+  key: json['key'] as String,
+  requests: (json['requests'] as num).toInt(),
+  threats: (json['threats'] as num).toInt(),
+);
+
+Map<String, dynamic> _$ZoneAnalyticsCountryMapElemToJson(
+  _ZoneAnalyticsCountryMapElem instance,
+) => <String, dynamic>{
+  '__typename': instance.typename,
+  'bytes': instance.bytes,
+  'key': instance.key,
+  'requests': instance.requests,
+  'threats': instance.threats,
+};
+
+_ZoneAnalyticsIpClassMapElem _$ZoneAnalyticsIpClassMapElemFromJson(
+  Map<String, dynamic> json,
+) => _ZoneAnalyticsIpClassMapElem(
+  typename: json['__typename'] as String,
+  key: json['key'] as String,
+  requests: (json['requests'] as num).toInt(),
+);
+
+Map<String, dynamic> _$ZoneAnalyticsIpClassMapElemToJson(
+  _ZoneAnalyticsIpClassMapElem instance,
+) => <String, dynamic>{
+  '__typename': instance.typename,
+  'key': instance.key,
+  'requests': instance.requests,
+};
+
+_ZoneAnalyticsResponseStatusMapElem
+_$ZoneAnalyticsResponseStatusMapElemFromJson(Map<String, dynamic> json) =>
+    _ZoneAnalyticsResponseStatusMapElem(
+      typename: json['__typename'] as String,
+      key: (json['key'] as num).toInt(),
+      requests: (json['requests'] as num).toInt(),
+    );
+
+Map<String, dynamic> _$ZoneAnalyticsResponseStatusMapElemToJson(
+  _ZoneAnalyticsResponseStatusMapElem instance,
+) => <String, dynamic>{
+  '__typename': instance.typename,
+  'key': instance.key,
+  'requests': instance.requests,
+};
+
+_ZoneAnalyticsThreatPathingMapElem _$ZoneAnalyticsThreatPathingMapElemFromJson(
+  Map<String, dynamic> json,
+) => _ZoneAnalyticsThreatPathingMapElem(
+  typename: json['__typename'] as String,
+  key: json['key'] as String,
+  requests: (json['requests'] as num).toInt(),
+);
+
+Map<String, dynamic> _$ZoneAnalyticsThreatPathingMapElemToJson(
+  _ZoneAnalyticsThreatPathingMapElem instance,
+) => <String, dynamic>{
+  '__typename': instance.typename,
+  'key': instance.key,
+  'requests': instance.requests,
+};
+
 Webhooks _$WebhooksFromJson(Map<String, dynamic> json) {
   $checkKeys(json, requiredKeys: const ['id', 'name', 'url', 'created_at']);
   return Webhooks()
