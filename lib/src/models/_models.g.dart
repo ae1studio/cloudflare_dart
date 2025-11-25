@@ -709,6 +709,103 @@ Map<String, dynamic> _$WorkersOverviewRequestsAdaptiveGroupDimensionsToJson(
   'usageModel': instance.usageModel,
 };
 
+_UniqueVisitorsZonesResponse _$UniqueVisitorsZonesResponseFromJson(
+  Map<String, dynamic> json,
+) => _UniqueVisitorsZonesResponse(
+  viewer: UniqueVisitorsZonesViewer.fromJson(
+    json['viewer'] as Map<String, dynamic>,
+  ),
+);
+
+Map<String, dynamic> _$UniqueVisitorsZonesResponseToJson(
+  _UniqueVisitorsZonesResponse instance,
+) => <String, dynamic>{'viewer': instance.viewer};
+
+_UniqueVisitorsZonesViewer _$UniqueVisitorsZonesViewerFromJson(
+  Map<String, dynamic> json,
+) => _UniqueVisitorsZonesViewer(
+  zones: (json['zones'] as List<dynamic>)
+      .map((e) => UniqueVisitorsZone.fromJson(e as Map<String, dynamic>))
+      .toList(),
+);
+
+Map<String, dynamic> _$UniqueVisitorsZonesViewerToJson(
+  _UniqueVisitorsZonesViewer instance,
+) => <String, dynamic>{'zones': instance.zones};
+
+_UniqueVisitorsZone _$UniqueVisitorsZoneFromJson(
+  Map<String, dynamic> json,
+) => _UniqueVisitorsZone(
+  byDay: (json['byDay'] as List<dynamic>)
+      .map((e) => UniqueVisitorsZoneByDay.fromJson(e as Map<String, dynamic>))
+      .toList(),
+  totals: (json['totals'] as List<dynamic>)
+      .map((e) => UniqueVisitorsZoneTotal.fromJson(e as Map<String, dynamic>))
+      .toList(),
+  zoneTag: json['zoneTag'] as String,
+);
+
+Map<String, dynamic> _$UniqueVisitorsZoneToJson(_UniqueVisitorsZone instance) =>
+    <String, dynamic>{
+      'byDay': instance.byDay,
+      'totals': instance.totals,
+      'zoneTag': instance.zoneTag,
+    };
+
+_UniqueVisitorsZoneByDay _$UniqueVisitorsZoneByDayFromJson(
+  Map<String, dynamic> json,
+) => _UniqueVisitorsZoneByDay(
+  dimensions: UniqueVisitorsZoneByDayDimensions.fromJson(
+    json['dimensions'] as Map<String, dynamic>,
+  ),
+  uniq: UniqueVisitorsZoneByDayUniq.fromJson(
+    json['uniq'] as Map<String, dynamic>,
+  ),
+);
+
+Map<String, dynamic> _$UniqueVisitorsZoneByDayToJson(
+  _UniqueVisitorsZoneByDay instance,
+) => <String, dynamic>{
+  'dimensions': instance.dimensions,
+  'uniq': instance.uniq,
+};
+
+_UniqueVisitorsZoneByDayDimensions _$UniqueVisitorsZoneByDayDimensionsFromJson(
+  Map<String, dynamic> json,
+) => _UniqueVisitorsZoneByDayDimensions(ts: json['ts'] as String);
+
+Map<String, dynamic> _$UniqueVisitorsZoneByDayDimensionsToJson(
+  _UniqueVisitorsZoneByDayDimensions instance,
+) => <String, dynamic>{'ts': instance.ts};
+
+_UniqueVisitorsZoneByDayUniq _$UniqueVisitorsZoneByDayUniqFromJson(
+  Map<String, dynamic> json,
+) => _UniqueVisitorsZoneByDayUniq(uniques: (json['uniques'] as num).toInt());
+
+Map<String, dynamic> _$UniqueVisitorsZoneByDayUniqToJson(
+  _UniqueVisitorsZoneByDayUniq instance,
+) => <String, dynamic>{'uniques': instance.uniques};
+
+_UniqueVisitorsZoneTotal _$UniqueVisitorsZoneTotalFromJson(
+  Map<String, dynamic> json,
+) => _UniqueVisitorsZoneTotal(
+  uniq: UniqueVisitorsZoneTotalUniq.fromJson(
+    json['uniq'] as Map<String, dynamic>,
+  ),
+);
+
+Map<String, dynamic> _$UniqueVisitorsZoneTotalToJson(
+  _UniqueVisitorsZoneTotal instance,
+) => <String, dynamic>{'uniq': instance.uniq};
+
+_UniqueVisitorsZoneTotalUniq _$UniqueVisitorsZoneTotalUniqFromJson(
+  Map<String, dynamic> json,
+) => _UniqueVisitorsZoneTotalUniq(uniques: (json['uniques'] as num).toInt());
+
+Map<String, dynamic> _$UniqueVisitorsZoneTotalUniqToJson(
+  _UniqueVisitorsZoneTotalUniq instance,
+) => <String, dynamic>{'uniques': instance.uniques};
+
 Webhooks _$WebhooksFromJson(Map<String, dynamic> json) {
   $checkKeys(json, requiredKeys: const ['id', 'name', 'url', 'created_at']);
   return Webhooks()

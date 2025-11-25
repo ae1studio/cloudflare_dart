@@ -473,3 +473,114 @@ abstract class WorkersOverviewRequestsAdaptiveGroupDimensions
         usageModel: 0,
       );
 }
+
+@Freezed()
+abstract class UniqueVisitorsZonesResponse with _$UniqueVisitorsZonesResponse {
+  const factory UniqueVisitorsZonesResponse({
+    required UniqueVisitorsZonesViewer viewer,
+  }) = _UniqueVisitorsZonesResponse;
+
+  factory UniqueVisitorsZonesResponse.fromJson(Map<String, dynamic> json) =>
+      _$UniqueVisitorsZonesResponseFromJson(json);
+
+  factory UniqueVisitorsZonesResponse.empty() =>
+      UniqueVisitorsZonesResponse(viewer: UniqueVisitorsZonesViewer.empty());
+}
+
+@Freezed()
+abstract class UniqueVisitorsZonesViewer with _$UniqueVisitorsZonesViewer {
+  const factory UniqueVisitorsZonesViewer({
+    required List<UniqueVisitorsZone> zones,
+  }) = _UniqueVisitorsZonesViewer;
+
+  factory UniqueVisitorsZonesViewer.fromJson(Map<String, dynamic> json) =>
+      _$UniqueVisitorsZonesViewerFromJson(json);
+
+  factory UniqueVisitorsZonesViewer.empty() =>
+      UniqueVisitorsZonesViewer(zones: [UniqueVisitorsZone.empty()]);
+}
+
+@Freezed()
+abstract class UniqueVisitorsZone with _$UniqueVisitorsZone {
+  const factory UniqueVisitorsZone({
+    @JsonKey(name: 'byDay') required List<UniqueVisitorsZoneByDay> byDay,
+    required List<UniqueVisitorsZoneTotal> totals,
+    required String zoneTag,
+  }) = _UniqueVisitorsZone;
+
+  factory UniqueVisitorsZone.fromJson(Map<String, dynamic> json) =>
+      _$UniqueVisitorsZoneFromJson(json);
+
+  factory UniqueVisitorsZone.empty() => UniqueVisitorsZone(
+    byDay: [UniqueVisitorsZoneByDay.empty()],
+    totals: [UniqueVisitorsZoneTotal.empty()],
+    zoneTag: '',
+  );
+}
+
+@Freezed()
+abstract class UniqueVisitorsZoneByDay with _$UniqueVisitorsZoneByDay {
+  const factory UniqueVisitorsZoneByDay({
+    required UniqueVisitorsZoneByDayDimensions dimensions,
+    required UniqueVisitorsZoneByDayUniq uniq,
+  }) = _UniqueVisitorsZoneByDay;
+
+  factory UniqueVisitorsZoneByDay.fromJson(Map<String, dynamic> json) =>
+      _$UniqueVisitorsZoneByDayFromJson(json);
+
+  factory UniqueVisitorsZoneByDay.empty() => UniqueVisitorsZoneByDay(
+    dimensions: UniqueVisitorsZoneByDayDimensions.empty(),
+    uniq: UniqueVisitorsZoneByDayUniq.empty(),
+  );
+}
+
+@Freezed()
+abstract class UniqueVisitorsZoneByDayDimensions
+    with _$UniqueVisitorsZoneByDayDimensions {
+  const factory UniqueVisitorsZoneByDayDimensions({required String ts}) =
+      _UniqueVisitorsZoneByDayDimensions;
+
+  factory UniqueVisitorsZoneByDayDimensions.fromJson(
+    Map<String, dynamic> json,
+  ) => _$UniqueVisitorsZoneByDayDimensionsFromJson(json);
+
+  factory UniqueVisitorsZoneByDayDimensions.empty() =>
+      UniqueVisitorsZoneByDayDimensions(ts: '');
+}
+
+@Freezed()
+abstract class UniqueVisitorsZoneByDayUniq with _$UniqueVisitorsZoneByDayUniq {
+  const factory UniqueVisitorsZoneByDayUniq({required int uniques}) =
+      _UniqueVisitorsZoneByDayUniq;
+
+  factory UniqueVisitorsZoneByDayUniq.fromJson(Map<String, dynamic> json) =>
+      _$UniqueVisitorsZoneByDayUniqFromJson(json);
+
+  factory UniqueVisitorsZoneByDayUniq.empty() =>
+      UniqueVisitorsZoneByDayUniq(uniques: 0);
+}
+
+@Freezed()
+abstract class UniqueVisitorsZoneTotal with _$UniqueVisitorsZoneTotal {
+  const factory UniqueVisitorsZoneTotal({
+    required UniqueVisitorsZoneTotalUniq uniq,
+  }) = _UniqueVisitorsZoneTotal;
+
+  factory UniqueVisitorsZoneTotal.fromJson(Map<String, dynamic> json) =>
+      _$UniqueVisitorsZoneTotalFromJson(json);
+
+  factory UniqueVisitorsZoneTotal.empty() =>
+      UniqueVisitorsZoneTotal(uniq: UniqueVisitorsZoneTotalUniq.empty());
+}
+
+@Freezed()
+abstract class UniqueVisitorsZoneTotalUniq with _$UniqueVisitorsZoneTotalUniq {
+  const factory UniqueVisitorsZoneTotalUniq({required int uniques}) =
+      _UniqueVisitorsZoneTotalUniq;
+
+  factory UniqueVisitorsZoneTotalUniq.fromJson(Map<String, dynamic> json) =>
+      _$UniqueVisitorsZoneTotalUniqFromJson(json);
+
+  factory UniqueVisitorsZoneTotalUniq.empty() =>
+      UniqueVisitorsZoneTotalUniq(uniques: 0);
+}

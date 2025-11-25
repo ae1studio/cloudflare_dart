@@ -11,17 +11,14 @@ class _AnalyticsEndpoint extends EndpointBase {
   final DateFormat _dateTimeFormat = DateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'");
 
   /// Get Unique Visitors Zones
-  Future<Map<String, dynamic>?> getUniqueVisitorsZones({
+  Future<UniqueVisitorsZonesResponse?> getUniqueVisitorsZones({
     required DateTime since,
     required DateTime until,
     required List<String> zoneTags,
   }) async {
-    //Check client
     if (graphQLClient == null) {
       throw Exception('GraphQL not setup');
     }
-
-    // Build Query
 
     String query = r'''
 query GetUniqueVisitorsZones($zoneTags: [string!], $since: Date, $until: Date) {
@@ -59,23 +56,19 @@ query GetUniqueVisitorsZones($zoneTags: [string!], $since: Date, $until: Date) {
       'zoneTags': zoneTags,
     };
 
-    // Build Options
     final graph.QueryOptions options = graph.QueryOptions(
       document: graph.gql(query),
       variables: variables,
     );
 
-    // Call Query
     graph.QueryResult result = await graphQLClient!.query(options);
 
-    //Log request
     if (talker != null) {
       talker!.info(
         'getUniqueVisitorsZones GraphQL Query: Has data ${result.data?.isNotEmpty} - \n ${variables}',
       );
     }
 
-    //Log Exception
     if (result.hasException) {
       if (talker != null) {
         talker!.error(result.exception.toString());
@@ -83,7 +76,11 @@ query GetUniqueVisitorsZones($zoneTags: [string!], $since: Date, $until: Date) {
       throw Exception(result.exception.toString());
     }
 
-    return result.data;
+    if (result.data == null) {
+      return null;
+    }
+
+    return UniqueVisitorsZonesResponse.fromJson(result.data!);
   }
 
   /// Get Zone Analytics Data

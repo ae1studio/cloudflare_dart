@@ -10205,4 +10205,2207 @@ as int,
 
 }
 
+
+/// @nodoc
+mixin _$UniqueVisitorsZonesResponse {
+
+ UniqueVisitorsZonesViewer get viewer;
+/// Create a copy of UniqueVisitorsZonesResponse
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$UniqueVisitorsZonesResponseCopyWith<UniqueVisitorsZonesResponse> get copyWith => _$UniqueVisitorsZonesResponseCopyWithImpl<UniqueVisitorsZonesResponse>(this as UniqueVisitorsZonesResponse, _$identity);
+
+  /// Serializes this UniqueVisitorsZonesResponse to a JSON map.
+  Map<String, dynamic> toJson();
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is UniqueVisitorsZonesResponse&&(identical(other.viewer, viewer) || other.viewer == viewer));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,viewer);
+
+@override
+String toString() {
+  return 'UniqueVisitorsZonesResponse(viewer: $viewer)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class $UniqueVisitorsZonesResponseCopyWith<$Res>  {
+  factory $UniqueVisitorsZonesResponseCopyWith(UniqueVisitorsZonesResponse value, $Res Function(UniqueVisitorsZonesResponse) _then) = _$UniqueVisitorsZonesResponseCopyWithImpl;
+@useResult
+$Res call({
+ UniqueVisitorsZonesViewer viewer
+});
+
+
+$UniqueVisitorsZonesViewerCopyWith<$Res> get viewer;
+
+}
+/// @nodoc
+class _$UniqueVisitorsZonesResponseCopyWithImpl<$Res>
+    implements $UniqueVisitorsZonesResponseCopyWith<$Res> {
+  _$UniqueVisitorsZonesResponseCopyWithImpl(this._self, this._then);
+
+  final UniqueVisitorsZonesResponse _self;
+  final $Res Function(UniqueVisitorsZonesResponse) _then;
+
+/// Create a copy of UniqueVisitorsZonesResponse
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? viewer = null,}) {
+  return _then(_self.copyWith(
+viewer: null == viewer ? _self.viewer : viewer // ignore: cast_nullable_to_non_nullable
+as UniqueVisitorsZonesViewer,
+  ));
+}
+/// Create a copy of UniqueVisitorsZonesResponse
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$UniqueVisitorsZonesViewerCopyWith<$Res> get viewer {
+  
+  return $UniqueVisitorsZonesViewerCopyWith<$Res>(_self.viewer, (value) {
+    return _then(_self.copyWith(viewer: value));
+  });
+}
+}
+
+
+/// Adds pattern-matching-related methods to [UniqueVisitorsZonesResponse].
+extension UniqueVisitorsZonesResponsePatterns on UniqueVisitorsZonesResponse {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _UniqueVisitorsZonesResponse value)?  $default,{required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _UniqueVisitorsZonesResponse() when $default != null:
+return $default(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _UniqueVisitorsZonesResponse value)  $default,){
+final _that = this;
+switch (_that) {
+case _UniqueVisitorsZonesResponse():
+return $default(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _UniqueVisitorsZonesResponse value)?  $default,){
+final _that = this;
+switch (_that) {
+case _UniqueVisitorsZonesResponse() when $default != null:
+return $default(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( UniqueVisitorsZonesViewer viewer)?  $default,{required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _UniqueVisitorsZonesResponse() when $default != null:
+return $default(_that.viewer);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( UniqueVisitorsZonesViewer viewer)  $default,) {final _that = this;
+switch (_that) {
+case _UniqueVisitorsZonesResponse():
+return $default(_that.viewer);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( UniqueVisitorsZonesViewer viewer)?  $default,) {final _that = this;
+switch (_that) {
+case _UniqueVisitorsZonesResponse() when $default != null:
+return $default(_that.viewer);case _:
+  return null;
+
+}
+}
+
+}
+
+/// @nodoc
+@JsonSerializable()
+
+class _UniqueVisitorsZonesResponse implements UniqueVisitorsZonesResponse {
+  const _UniqueVisitorsZonesResponse({required this.viewer});
+  factory _UniqueVisitorsZonesResponse.fromJson(Map<String, dynamic> json) => _$UniqueVisitorsZonesResponseFromJson(json);
+
+@override final  UniqueVisitorsZonesViewer viewer;
+
+/// Create a copy of UniqueVisitorsZonesResponse
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$UniqueVisitorsZonesResponseCopyWith<_UniqueVisitorsZonesResponse> get copyWith => __$UniqueVisitorsZonesResponseCopyWithImpl<_UniqueVisitorsZonesResponse>(this, _$identity);
+
+@override
+Map<String, dynamic> toJson() {
+  return _$UniqueVisitorsZonesResponseToJson(this, );
+}
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _UniqueVisitorsZonesResponse&&(identical(other.viewer, viewer) || other.viewer == viewer));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,viewer);
+
+@override
+String toString() {
+  return 'UniqueVisitorsZonesResponse(viewer: $viewer)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class _$UniqueVisitorsZonesResponseCopyWith<$Res> implements $UniqueVisitorsZonesResponseCopyWith<$Res> {
+  factory _$UniqueVisitorsZonesResponseCopyWith(_UniqueVisitorsZonesResponse value, $Res Function(_UniqueVisitorsZonesResponse) _then) = __$UniqueVisitorsZonesResponseCopyWithImpl;
+@override @useResult
+$Res call({
+ UniqueVisitorsZonesViewer viewer
+});
+
+
+@override $UniqueVisitorsZonesViewerCopyWith<$Res> get viewer;
+
+}
+/// @nodoc
+class __$UniqueVisitorsZonesResponseCopyWithImpl<$Res>
+    implements _$UniqueVisitorsZonesResponseCopyWith<$Res> {
+  __$UniqueVisitorsZonesResponseCopyWithImpl(this._self, this._then);
+
+  final _UniqueVisitorsZonesResponse _self;
+  final $Res Function(_UniqueVisitorsZonesResponse) _then;
+
+/// Create a copy of UniqueVisitorsZonesResponse
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? viewer = null,}) {
+  return _then(_UniqueVisitorsZonesResponse(
+viewer: null == viewer ? _self.viewer : viewer // ignore: cast_nullable_to_non_nullable
+as UniqueVisitorsZonesViewer,
+  ));
+}
+
+/// Create a copy of UniqueVisitorsZonesResponse
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$UniqueVisitorsZonesViewerCopyWith<$Res> get viewer {
+  
+  return $UniqueVisitorsZonesViewerCopyWith<$Res>(_self.viewer, (value) {
+    return _then(_self.copyWith(viewer: value));
+  });
+}
+}
+
+
+/// @nodoc
+mixin _$UniqueVisitorsZonesViewer {
+
+ List<UniqueVisitorsZone> get zones;
+/// Create a copy of UniqueVisitorsZonesViewer
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$UniqueVisitorsZonesViewerCopyWith<UniqueVisitorsZonesViewer> get copyWith => _$UniqueVisitorsZonesViewerCopyWithImpl<UniqueVisitorsZonesViewer>(this as UniqueVisitorsZonesViewer, _$identity);
+
+  /// Serializes this UniqueVisitorsZonesViewer to a JSON map.
+  Map<String, dynamic> toJson();
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is UniqueVisitorsZonesViewer&&const DeepCollectionEquality().equals(other.zones, zones));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(zones));
+
+@override
+String toString() {
+  return 'UniqueVisitorsZonesViewer(zones: $zones)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class $UniqueVisitorsZonesViewerCopyWith<$Res>  {
+  factory $UniqueVisitorsZonesViewerCopyWith(UniqueVisitorsZonesViewer value, $Res Function(UniqueVisitorsZonesViewer) _then) = _$UniqueVisitorsZonesViewerCopyWithImpl;
+@useResult
+$Res call({
+ List<UniqueVisitorsZone> zones
+});
+
+
+
+
+}
+/// @nodoc
+class _$UniqueVisitorsZonesViewerCopyWithImpl<$Res>
+    implements $UniqueVisitorsZonesViewerCopyWith<$Res> {
+  _$UniqueVisitorsZonesViewerCopyWithImpl(this._self, this._then);
+
+  final UniqueVisitorsZonesViewer _self;
+  final $Res Function(UniqueVisitorsZonesViewer) _then;
+
+/// Create a copy of UniqueVisitorsZonesViewer
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? zones = null,}) {
+  return _then(_self.copyWith(
+zones: null == zones ? _self.zones : zones // ignore: cast_nullable_to_non_nullable
+as List<UniqueVisitorsZone>,
+  ));
+}
+
+}
+
+
+/// Adds pattern-matching-related methods to [UniqueVisitorsZonesViewer].
+extension UniqueVisitorsZonesViewerPatterns on UniqueVisitorsZonesViewer {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _UniqueVisitorsZonesViewer value)?  $default,{required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _UniqueVisitorsZonesViewer() when $default != null:
+return $default(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _UniqueVisitorsZonesViewer value)  $default,){
+final _that = this;
+switch (_that) {
+case _UniqueVisitorsZonesViewer():
+return $default(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _UniqueVisitorsZonesViewer value)?  $default,){
+final _that = this;
+switch (_that) {
+case _UniqueVisitorsZonesViewer() when $default != null:
+return $default(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( List<UniqueVisitorsZone> zones)?  $default,{required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _UniqueVisitorsZonesViewer() when $default != null:
+return $default(_that.zones);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( List<UniqueVisitorsZone> zones)  $default,) {final _that = this;
+switch (_that) {
+case _UniqueVisitorsZonesViewer():
+return $default(_that.zones);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( List<UniqueVisitorsZone> zones)?  $default,) {final _that = this;
+switch (_that) {
+case _UniqueVisitorsZonesViewer() when $default != null:
+return $default(_that.zones);case _:
+  return null;
+
+}
+}
+
+}
+
+/// @nodoc
+@JsonSerializable()
+
+class _UniqueVisitorsZonesViewer implements UniqueVisitorsZonesViewer {
+  const _UniqueVisitorsZonesViewer({required final  List<UniqueVisitorsZone> zones}): _zones = zones;
+  factory _UniqueVisitorsZonesViewer.fromJson(Map<String, dynamic> json) => _$UniqueVisitorsZonesViewerFromJson(json);
+
+ final  List<UniqueVisitorsZone> _zones;
+@override List<UniqueVisitorsZone> get zones {
+  if (_zones is EqualUnmodifiableListView) return _zones;
+  // ignore: implicit_dynamic_type
+  return EqualUnmodifiableListView(_zones);
+}
+
+
+/// Create a copy of UniqueVisitorsZonesViewer
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$UniqueVisitorsZonesViewerCopyWith<_UniqueVisitorsZonesViewer> get copyWith => __$UniqueVisitorsZonesViewerCopyWithImpl<_UniqueVisitorsZonesViewer>(this, _$identity);
+
+@override
+Map<String, dynamic> toJson() {
+  return _$UniqueVisitorsZonesViewerToJson(this, );
+}
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _UniqueVisitorsZonesViewer&&const DeepCollectionEquality().equals(other._zones, _zones));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(_zones));
+
+@override
+String toString() {
+  return 'UniqueVisitorsZonesViewer(zones: $zones)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class _$UniqueVisitorsZonesViewerCopyWith<$Res> implements $UniqueVisitorsZonesViewerCopyWith<$Res> {
+  factory _$UniqueVisitorsZonesViewerCopyWith(_UniqueVisitorsZonesViewer value, $Res Function(_UniqueVisitorsZonesViewer) _then) = __$UniqueVisitorsZonesViewerCopyWithImpl;
+@override @useResult
+$Res call({
+ List<UniqueVisitorsZone> zones
+});
+
+
+
+
+}
+/// @nodoc
+class __$UniqueVisitorsZonesViewerCopyWithImpl<$Res>
+    implements _$UniqueVisitorsZonesViewerCopyWith<$Res> {
+  __$UniqueVisitorsZonesViewerCopyWithImpl(this._self, this._then);
+
+  final _UniqueVisitorsZonesViewer _self;
+  final $Res Function(_UniqueVisitorsZonesViewer) _then;
+
+/// Create a copy of UniqueVisitorsZonesViewer
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? zones = null,}) {
+  return _then(_UniqueVisitorsZonesViewer(
+zones: null == zones ? _self._zones : zones // ignore: cast_nullable_to_non_nullable
+as List<UniqueVisitorsZone>,
+  ));
+}
+
+
+}
+
+
+/// @nodoc
+mixin _$UniqueVisitorsZone {
+
+@JsonKey(name: 'byDay') List<UniqueVisitorsZoneByDay> get byDay; List<UniqueVisitorsZoneTotal> get totals; String get zoneTag;
+/// Create a copy of UniqueVisitorsZone
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$UniqueVisitorsZoneCopyWith<UniqueVisitorsZone> get copyWith => _$UniqueVisitorsZoneCopyWithImpl<UniqueVisitorsZone>(this as UniqueVisitorsZone, _$identity);
+
+  /// Serializes this UniqueVisitorsZone to a JSON map.
+  Map<String, dynamic> toJson();
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is UniqueVisitorsZone&&const DeepCollectionEquality().equals(other.byDay, byDay)&&const DeepCollectionEquality().equals(other.totals, totals)&&(identical(other.zoneTag, zoneTag) || other.zoneTag == zoneTag));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(byDay),const DeepCollectionEquality().hash(totals),zoneTag);
+
+@override
+String toString() {
+  return 'UniqueVisitorsZone(byDay: $byDay, totals: $totals, zoneTag: $zoneTag)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class $UniqueVisitorsZoneCopyWith<$Res>  {
+  factory $UniqueVisitorsZoneCopyWith(UniqueVisitorsZone value, $Res Function(UniqueVisitorsZone) _then) = _$UniqueVisitorsZoneCopyWithImpl;
+@useResult
+$Res call({
+@JsonKey(name: 'byDay') List<UniqueVisitorsZoneByDay> byDay, List<UniqueVisitorsZoneTotal> totals, String zoneTag
+});
+
+
+
+
+}
+/// @nodoc
+class _$UniqueVisitorsZoneCopyWithImpl<$Res>
+    implements $UniqueVisitorsZoneCopyWith<$Res> {
+  _$UniqueVisitorsZoneCopyWithImpl(this._self, this._then);
+
+  final UniqueVisitorsZone _self;
+  final $Res Function(UniqueVisitorsZone) _then;
+
+/// Create a copy of UniqueVisitorsZone
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? byDay = null,Object? totals = null,Object? zoneTag = null,}) {
+  return _then(_self.copyWith(
+byDay: null == byDay ? _self.byDay : byDay // ignore: cast_nullable_to_non_nullable
+as List<UniqueVisitorsZoneByDay>,totals: null == totals ? _self.totals : totals // ignore: cast_nullable_to_non_nullable
+as List<UniqueVisitorsZoneTotal>,zoneTag: null == zoneTag ? _self.zoneTag : zoneTag // ignore: cast_nullable_to_non_nullable
+as String,
+  ));
+}
+
+}
+
+
+/// Adds pattern-matching-related methods to [UniqueVisitorsZone].
+extension UniqueVisitorsZonePatterns on UniqueVisitorsZone {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _UniqueVisitorsZone value)?  $default,{required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _UniqueVisitorsZone() when $default != null:
+return $default(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _UniqueVisitorsZone value)  $default,){
+final _that = this;
+switch (_that) {
+case _UniqueVisitorsZone():
+return $default(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _UniqueVisitorsZone value)?  $default,){
+final _that = this;
+switch (_that) {
+case _UniqueVisitorsZone() when $default != null:
+return $default(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@JsonKey(name: 'byDay')  List<UniqueVisitorsZoneByDay> byDay,  List<UniqueVisitorsZoneTotal> totals,  String zoneTag)?  $default,{required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _UniqueVisitorsZone() when $default != null:
+return $default(_that.byDay,_that.totals,_that.zoneTag);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@JsonKey(name: 'byDay')  List<UniqueVisitorsZoneByDay> byDay,  List<UniqueVisitorsZoneTotal> totals,  String zoneTag)  $default,) {final _that = this;
+switch (_that) {
+case _UniqueVisitorsZone():
+return $default(_that.byDay,_that.totals,_that.zoneTag);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@JsonKey(name: 'byDay')  List<UniqueVisitorsZoneByDay> byDay,  List<UniqueVisitorsZoneTotal> totals,  String zoneTag)?  $default,) {final _that = this;
+switch (_that) {
+case _UniqueVisitorsZone() when $default != null:
+return $default(_that.byDay,_that.totals,_that.zoneTag);case _:
+  return null;
+
+}
+}
+
+}
+
+/// @nodoc
+@JsonSerializable()
+
+class _UniqueVisitorsZone implements UniqueVisitorsZone {
+  const _UniqueVisitorsZone({@JsonKey(name: 'byDay') required final  List<UniqueVisitorsZoneByDay> byDay, required final  List<UniqueVisitorsZoneTotal> totals, required this.zoneTag}): _byDay = byDay,_totals = totals;
+  factory _UniqueVisitorsZone.fromJson(Map<String, dynamic> json) => _$UniqueVisitorsZoneFromJson(json);
+
+ final  List<UniqueVisitorsZoneByDay> _byDay;
+@override@JsonKey(name: 'byDay') List<UniqueVisitorsZoneByDay> get byDay {
+  if (_byDay is EqualUnmodifiableListView) return _byDay;
+  // ignore: implicit_dynamic_type
+  return EqualUnmodifiableListView(_byDay);
+}
+
+ final  List<UniqueVisitorsZoneTotal> _totals;
+@override List<UniqueVisitorsZoneTotal> get totals {
+  if (_totals is EqualUnmodifiableListView) return _totals;
+  // ignore: implicit_dynamic_type
+  return EqualUnmodifiableListView(_totals);
+}
+
+@override final  String zoneTag;
+
+/// Create a copy of UniqueVisitorsZone
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$UniqueVisitorsZoneCopyWith<_UniqueVisitorsZone> get copyWith => __$UniqueVisitorsZoneCopyWithImpl<_UniqueVisitorsZone>(this, _$identity);
+
+@override
+Map<String, dynamic> toJson() {
+  return _$UniqueVisitorsZoneToJson(this, );
+}
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _UniqueVisitorsZone&&const DeepCollectionEquality().equals(other._byDay, _byDay)&&const DeepCollectionEquality().equals(other._totals, _totals)&&(identical(other.zoneTag, zoneTag) || other.zoneTag == zoneTag));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(_byDay),const DeepCollectionEquality().hash(_totals),zoneTag);
+
+@override
+String toString() {
+  return 'UniqueVisitorsZone(byDay: $byDay, totals: $totals, zoneTag: $zoneTag)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class _$UniqueVisitorsZoneCopyWith<$Res> implements $UniqueVisitorsZoneCopyWith<$Res> {
+  factory _$UniqueVisitorsZoneCopyWith(_UniqueVisitorsZone value, $Res Function(_UniqueVisitorsZone) _then) = __$UniqueVisitorsZoneCopyWithImpl;
+@override @useResult
+$Res call({
+@JsonKey(name: 'byDay') List<UniqueVisitorsZoneByDay> byDay, List<UniqueVisitorsZoneTotal> totals, String zoneTag
+});
+
+
+
+
+}
+/// @nodoc
+class __$UniqueVisitorsZoneCopyWithImpl<$Res>
+    implements _$UniqueVisitorsZoneCopyWith<$Res> {
+  __$UniqueVisitorsZoneCopyWithImpl(this._self, this._then);
+
+  final _UniqueVisitorsZone _self;
+  final $Res Function(_UniqueVisitorsZone) _then;
+
+/// Create a copy of UniqueVisitorsZone
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? byDay = null,Object? totals = null,Object? zoneTag = null,}) {
+  return _then(_UniqueVisitorsZone(
+byDay: null == byDay ? _self._byDay : byDay // ignore: cast_nullable_to_non_nullable
+as List<UniqueVisitorsZoneByDay>,totals: null == totals ? _self._totals : totals // ignore: cast_nullable_to_non_nullable
+as List<UniqueVisitorsZoneTotal>,zoneTag: null == zoneTag ? _self.zoneTag : zoneTag // ignore: cast_nullable_to_non_nullable
+as String,
+  ));
+}
+
+
+}
+
+
+/// @nodoc
+mixin _$UniqueVisitorsZoneByDay {
+
+ UniqueVisitorsZoneByDayDimensions get dimensions; UniqueVisitorsZoneByDayUniq get uniq;
+/// Create a copy of UniqueVisitorsZoneByDay
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$UniqueVisitorsZoneByDayCopyWith<UniqueVisitorsZoneByDay> get copyWith => _$UniqueVisitorsZoneByDayCopyWithImpl<UniqueVisitorsZoneByDay>(this as UniqueVisitorsZoneByDay, _$identity);
+
+  /// Serializes this UniqueVisitorsZoneByDay to a JSON map.
+  Map<String, dynamic> toJson();
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is UniqueVisitorsZoneByDay&&(identical(other.dimensions, dimensions) || other.dimensions == dimensions)&&(identical(other.uniq, uniq) || other.uniq == uniq));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,dimensions,uniq);
+
+@override
+String toString() {
+  return 'UniqueVisitorsZoneByDay(dimensions: $dimensions, uniq: $uniq)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class $UniqueVisitorsZoneByDayCopyWith<$Res>  {
+  factory $UniqueVisitorsZoneByDayCopyWith(UniqueVisitorsZoneByDay value, $Res Function(UniqueVisitorsZoneByDay) _then) = _$UniqueVisitorsZoneByDayCopyWithImpl;
+@useResult
+$Res call({
+ UniqueVisitorsZoneByDayDimensions dimensions, UniqueVisitorsZoneByDayUniq uniq
+});
+
+
+$UniqueVisitorsZoneByDayDimensionsCopyWith<$Res> get dimensions;$UniqueVisitorsZoneByDayUniqCopyWith<$Res> get uniq;
+
+}
+/// @nodoc
+class _$UniqueVisitorsZoneByDayCopyWithImpl<$Res>
+    implements $UniqueVisitorsZoneByDayCopyWith<$Res> {
+  _$UniqueVisitorsZoneByDayCopyWithImpl(this._self, this._then);
+
+  final UniqueVisitorsZoneByDay _self;
+  final $Res Function(UniqueVisitorsZoneByDay) _then;
+
+/// Create a copy of UniqueVisitorsZoneByDay
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? dimensions = null,Object? uniq = null,}) {
+  return _then(_self.copyWith(
+dimensions: null == dimensions ? _self.dimensions : dimensions // ignore: cast_nullable_to_non_nullable
+as UniqueVisitorsZoneByDayDimensions,uniq: null == uniq ? _self.uniq : uniq // ignore: cast_nullable_to_non_nullable
+as UniqueVisitorsZoneByDayUniq,
+  ));
+}
+/// Create a copy of UniqueVisitorsZoneByDay
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$UniqueVisitorsZoneByDayDimensionsCopyWith<$Res> get dimensions {
+  
+  return $UniqueVisitorsZoneByDayDimensionsCopyWith<$Res>(_self.dimensions, (value) {
+    return _then(_self.copyWith(dimensions: value));
+  });
+}/// Create a copy of UniqueVisitorsZoneByDay
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$UniqueVisitorsZoneByDayUniqCopyWith<$Res> get uniq {
+  
+  return $UniqueVisitorsZoneByDayUniqCopyWith<$Res>(_self.uniq, (value) {
+    return _then(_self.copyWith(uniq: value));
+  });
+}
+}
+
+
+/// Adds pattern-matching-related methods to [UniqueVisitorsZoneByDay].
+extension UniqueVisitorsZoneByDayPatterns on UniqueVisitorsZoneByDay {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _UniqueVisitorsZoneByDay value)?  $default,{required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _UniqueVisitorsZoneByDay() when $default != null:
+return $default(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _UniqueVisitorsZoneByDay value)  $default,){
+final _that = this;
+switch (_that) {
+case _UniqueVisitorsZoneByDay():
+return $default(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _UniqueVisitorsZoneByDay value)?  $default,){
+final _that = this;
+switch (_that) {
+case _UniqueVisitorsZoneByDay() when $default != null:
+return $default(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( UniqueVisitorsZoneByDayDimensions dimensions,  UniqueVisitorsZoneByDayUniq uniq)?  $default,{required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _UniqueVisitorsZoneByDay() when $default != null:
+return $default(_that.dimensions,_that.uniq);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( UniqueVisitorsZoneByDayDimensions dimensions,  UniqueVisitorsZoneByDayUniq uniq)  $default,) {final _that = this;
+switch (_that) {
+case _UniqueVisitorsZoneByDay():
+return $default(_that.dimensions,_that.uniq);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( UniqueVisitorsZoneByDayDimensions dimensions,  UniqueVisitorsZoneByDayUniq uniq)?  $default,) {final _that = this;
+switch (_that) {
+case _UniqueVisitorsZoneByDay() when $default != null:
+return $default(_that.dimensions,_that.uniq);case _:
+  return null;
+
+}
+}
+
+}
+
+/// @nodoc
+@JsonSerializable()
+
+class _UniqueVisitorsZoneByDay implements UniqueVisitorsZoneByDay {
+  const _UniqueVisitorsZoneByDay({required this.dimensions, required this.uniq});
+  factory _UniqueVisitorsZoneByDay.fromJson(Map<String, dynamic> json) => _$UniqueVisitorsZoneByDayFromJson(json);
+
+@override final  UniqueVisitorsZoneByDayDimensions dimensions;
+@override final  UniqueVisitorsZoneByDayUniq uniq;
+
+/// Create a copy of UniqueVisitorsZoneByDay
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$UniqueVisitorsZoneByDayCopyWith<_UniqueVisitorsZoneByDay> get copyWith => __$UniqueVisitorsZoneByDayCopyWithImpl<_UniqueVisitorsZoneByDay>(this, _$identity);
+
+@override
+Map<String, dynamic> toJson() {
+  return _$UniqueVisitorsZoneByDayToJson(this, );
+}
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _UniqueVisitorsZoneByDay&&(identical(other.dimensions, dimensions) || other.dimensions == dimensions)&&(identical(other.uniq, uniq) || other.uniq == uniq));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,dimensions,uniq);
+
+@override
+String toString() {
+  return 'UniqueVisitorsZoneByDay(dimensions: $dimensions, uniq: $uniq)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class _$UniqueVisitorsZoneByDayCopyWith<$Res> implements $UniqueVisitorsZoneByDayCopyWith<$Res> {
+  factory _$UniqueVisitorsZoneByDayCopyWith(_UniqueVisitorsZoneByDay value, $Res Function(_UniqueVisitorsZoneByDay) _then) = __$UniqueVisitorsZoneByDayCopyWithImpl;
+@override @useResult
+$Res call({
+ UniqueVisitorsZoneByDayDimensions dimensions, UniqueVisitorsZoneByDayUniq uniq
+});
+
+
+@override $UniqueVisitorsZoneByDayDimensionsCopyWith<$Res> get dimensions;@override $UniqueVisitorsZoneByDayUniqCopyWith<$Res> get uniq;
+
+}
+/// @nodoc
+class __$UniqueVisitorsZoneByDayCopyWithImpl<$Res>
+    implements _$UniqueVisitorsZoneByDayCopyWith<$Res> {
+  __$UniqueVisitorsZoneByDayCopyWithImpl(this._self, this._then);
+
+  final _UniqueVisitorsZoneByDay _self;
+  final $Res Function(_UniqueVisitorsZoneByDay) _then;
+
+/// Create a copy of UniqueVisitorsZoneByDay
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? dimensions = null,Object? uniq = null,}) {
+  return _then(_UniqueVisitorsZoneByDay(
+dimensions: null == dimensions ? _self.dimensions : dimensions // ignore: cast_nullable_to_non_nullable
+as UniqueVisitorsZoneByDayDimensions,uniq: null == uniq ? _self.uniq : uniq // ignore: cast_nullable_to_non_nullable
+as UniqueVisitorsZoneByDayUniq,
+  ));
+}
+
+/// Create a copy of UniqueVisitorsZoneByDay
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$UniqueVisitorsZoneByDayDimensionsCopyWith<$Res> get dimensions {
+  
+  return $UniqueVisitorsZoneByDayDimensionsCopyWith<$Res>(_self.dimensions, (value) {
+    return _then(_self.copyWith(dimensions: value));
+  });
+}/// Create a copy of UniqueVisitorsZoneByDay
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$UniqueVisitorsZoneByDayUniqCopyWith<$Res> get uniq {
+  
+  return $UniqueVisitorsZoneByDayUniqCopyWith<$Res>(_self.uniq, (value) {
+    return _then(_self.copyWith(uniq: value));
+  });
+}
+}
+
+
+/// @nodoc
+mixin _$UniqueVisitorsZoneByDayDimensions {
+
+ String get ts;
+/// Create a copy of UniqueVisitorsZoneByDayDimensions
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$UniqueVisitorsZoneByDayDimensionsCopyWith<UniqueVisitorsZoneByDayDimensions> get copyWith => _$UniqueVisitorsZoneByDayDimensionsCopyWithImpl<UniqueVisitorsZoneByDayDimensions>(this as UniqueVisitorsZoneByDayDimensions, _$identity);
+
+  /// Serializes this UniqueVisitorsZoneByDayDimensions to a JSON map.
+  Map<String, dynamic> toJson();
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is UniqueVisitorsZoneByDayDimensions&&(identical(other.ts, ts) || other.ts == ts));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,ts);
+
+@override
+String toString() {
+  return 'UniqueVisitorsZoneByDayDimensions(ts: $ts)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class $UniqueVisitorsZoneByDayDimensionsCopyWith<$Res>  {
+  factory $UniqueVisitorsZoneByDayDimensionsCopyWith(UniqueVisitorsZoneByDayDimensions value, $Res Function(UniqueVisitorsZoneByDayDimensions) _then) = _$UniqueVisitorsZoneByDayDimensionsCopyWithImpl;
+@useResult
+$Res call({
+ String ts
+});
+
+
+
+
+}
+/// @nodoc
+class _$UniqueVisitorsZoneByDayDimensionsCopyWithImpl<$Res>
+    implements $UniqueVisitorsZoneByDayDimensionsCopyWith<$Res> {
+  _$UniqueVisitorsZoneByDayDimensionsCopyWithImpl(this._self, this._then);
+
+  final UniqueVisitorsZoneByDayDimensions _self;
+  final $Res Function(UniqueVisitorsZoneByDayDimensions) _then;
+
+/// Create a copy of UniqueVisitorsZoneByDayDimensions
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? ts = null,}) {
+  return _then(_self.copyWith(
+ts: null == ts ? _self.ts : ts // ignore: cast_nullable_to_non_nullable
+as String,
+  ));
+}
+
+}
+
+
+/// Adds pattern-matching-related methods to [UniqueVisitorsZoneByDayDimensions].
+extension UniqueVisitorsZoneByDayDimensionsPatterns on UniqueVisitorsZoneByDayDimensions {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _UniqueVisitorsZoneByDayDimensions value)?  $default,{required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _UniqueVisitorsZoneByDayDimensions() when $default != null:
+return $default(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _UniqueVisitorsZoneByDayDimensions value)  $default,){
+final _that = this;
+switch (_that) {
+case _UniqueVisitorsZoneByDayDimensions():
+return $default(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _UniqueVisitorsZoneByDayDimensions value)?  $default,){
+final _that = this;
+switch (_that) {
+case _UniqueVisitorsZoneByDayDimensions() when $default != null:
+return $default(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String ts)?  $default,{required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _UniqueVisitorsZoneByDayDimensions() when $default != null:
+return $default(_that.ts);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String ts)  $default,) {final _that = this;
+switch (_that) {
+case _UniqueVisitorsZoneByDayDimensions():
+return $default(_that.ts);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String ts)?  $default,) {final _that = this;
+switch (_that) {
+case _UniqueVisitorsZoneByDayDimensions() when $default != null:
+return $default(_that.ts);case _:
+  return null;
+
+}
+}
+
+}
+
+/// @nodoc
+@JsonSerializable()
+
+class _UniqueVisitorsZoneByDayDimensions implements UniqueVisitorsZoneByDayDimensions {
+  const _UniqueVisitorsZoneByDayDimensions({required this.ts});
+  factory _UniqueVisitorsZoneByDayDimensions.fromJson(Map<String, dynamic> json) => _$UniqueVisitorsZoneByDayDimensionsFromJson(json);
+
+@override final  String ts;
+
+/// Create a copy of UniqueVisitorsZoneByDayDimensions
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$UniqueVisitorsZoneByDayDimensionsCopyWith<_UniqueVisitorsZoneByDayDimensions> get copyWith => __$UniqueVisitorsZoneByDayDimensionsCopyWithImpl<_UniqueVisitorsZoneByDayDimensions>(this, _$identity);
+
+@override
+Map<String, dynamic> toJson() {
+  return _$UniqueVisitorsZoneByDayDimensionsToJson(this, );
+}
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _UniqueVisitorsZoneByDayDimensions&&(identical(other.ts, ts) || other.ts == ts));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,ts);
+
+@override
+String toString() {
+  return 'UniqueVisitorsZoneByDayDimensions(ts: $ts)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class _$UniqueVisitorsZoneByDayDimensionsCopyWith<$Res> implements $UniqueVisitorsZoneByDayDimensionsCopyWith<$Res> {
+  factory _$UniqueVisitorsZoneByDayDimensionsCopyWith(_UniqueVisitorsZoneByDayDimensions value, $Res Function(_UniqueVisitorsZoneByDayDimensions) _then) = __$UniqueVisitorsZoneByDayDimensionsCopyWithImpl;
+@override @useResult
+$Res call({
+ String ts
+});
+
+
+
+
+}
+/// @nodoc
+class __$UniqueVisitorsZoneByDayDimensionsCopyWithImpl<$Res>
+    implements _$UniqueVisitorsZoneByDayDimensionsCopyWith<$Res> {
+  __$UniqueVisitorsZoneByDayDimensionsCopyWithImpl(this._self, this._then);
+
+  final _UniqueVisitorsZoneByDayDimensions _self;
+  final $Res Function(_UniqueVisitorsZoneByDayDimensions) _then;
+
+/// Create a copy of UniqueVisitorsZoneByDayDimensions
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? ts = null,}) {
+  return _then(_UniqueVisitorsZoneByDayDimensions(
+ts: null == ts ? _self.ts : ts // ignore: cast_nullable_to_non_nullable
+as String,
+  ));
+}
+
+
+}
+
+
+/// @nodoc
+mixin _$UniqueVisitorsZoneByDayUniq {
+
+ int get uniques;
+/// Create a copy of UniqueVisitorsZoneByDayUniq
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$UniqueVisitorsZoneByDayUniqCopyWith<UniqueVisitorsZoneByDayUniq> get copyWith => _$UniqueVisitorsZoneByDayUniqCopyWithImpl<UniqueVisitorsZoneByDayUniq>(this as UniqueVisitorsZoneByDayUniq, _$identity);
+
+  /// Serializes this UniqueVisitorsZoneByDayUniq to a JSON map.
+  Map<String, dynamic> toJson();
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is UniqueVisitorsZoneByDayUniq&&(identical(other.uniques, uniques) || other.uniques == uniques));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,uniques);
+
+@override
+String toString() {
+  return 'UniqueVisitorsZoneByDayUniq(uniques: $uniques)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class $UniqueVisitorsZoneByDayUniqCopyWith<$Res>  {
+  factory $UniqueVisitorsZoneByDayUniqCopyWith(UniqueVisitorsZoneByDayUniq value, $Res Function(UniqueVisitorsZoneByDayUniq) _then) = _$UniqueVisitorsZoneByDayUniqCopyWithImpl;
+@useResult
+$Res call({
+ int uniques
+});
+
+
+
+
+}
+/// @nodoc
+class _$UniqueVisitorsZoneByDayUniqCopyWithImpl<$Res>
+    implements $UniqueVisitorsZoneByDayUniqCopyWith<$Res> {
+  _$UniqueVisitorsZoneByDayUniqCopyWithImpl(this._self, this._then);
+
+  final UniqueVisitorsZoneByDayUniq _self;
+  final $Res Function(UniqueVisitorsZoneByDayUniq) _then;
+
+/// Create a copy of UniqueVisitorsZoneByDayUniq
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? uniques = null,}) {
+  return _then(_self.copyWith(
+uniques: null == uniques ? _self.uniques : uniques // ignore: cast_nullable_to_non_nullable
+as int,
+  ));
+}
+
+}
+
+
+/// Adds pattern-matching-related methods to [UniqueVisitorsZoneByDayUniq].
+extension UniqueVisitorsZoneByDayUniqPatterns on UniqueVisitorsZoneByDayUniq {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _UniqueVisitorsZoneByDayUniq value)?  $default,{required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _UniqueVisitorsZoneByDayUniq() when $default != null:
+return $default(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _UniqueVisitorsZoneByDayUniq value)  $default,){
+final _that = this;
+switch (_that) {
+case _UniqueVisitorsZoneByDayUniq():
+return $default(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _UniqueVisitorsZoneByDayUniq value)?  $default,){
+final _that = this;
+switch (_that) {
+case _UniqueVisitorsZoneByDayUniq() when $default != null:
+return $default(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( int uniques)?  $default,{required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _UniqueVisitorsZoneByDayUniq() when $default != null:
+return $default(_that.uniques);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( int uniques)  $default,) {final _that = this;
+switch (_that) {
+case _UniqueVisitorsZoneByDayUniq():
+return $default(_that.uniques);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( int uniques)?  $default,) {final _that = this;
+switch (_that) {
+case _UniqueVisitorsZoneByDayUniq() when $default != null:
+return $default(_that.uniques);case _:
+  return null;
+
+}
+}
+
+}
+
+/// @nodoc
+@JsonSerializable()
+
+class _UniqueVisitorsZoneByDayUniq implements UniqueVisitorsZoneByDayUniq {
+  const _UniqueVisitorsZoneByDayUniq({required this.uniques});
+  factory _UniqueVisitorsZoneByDayUniq.fromJson(Map<String, dynamic> json) => _$UniqueVisitorsZoneByDayUniqFromJson(json);
+
+@override final  int uniques;
+
+/// Create a copy of UniqueVisitorsZoneByDayUniq
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$UniqueVisitorsZoneByDayUniqCopyWith<_UniqueVisitorsZoneByDayUniq> get copyWith => __$UniqueVisitorsZoneByDayUniqCopyWithImpl<_UniqueVisitorsZoneByDayUniq>(this, _$identity);
+
+@override
+Map<String, dynamic> toJson() {
+  return _$UniqueVisitorsZoneByDayUniqToJson(this, );
+}
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _UniqueVisitorsZoneByDayUniq&&(identical(other.uniques, uniques) || other.uniques == uniques));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,uniques);
+
+@override
+String toString() {
+  return 'UniqueVisitorsZoneByDayUniq(uniques: $uniques)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class _$UniqueVisitorsZoneByDayUniqCopyWith<$Res> implements $UniqueVisitorsZoneByDayUniqCopyWith<$Res> {
+  factory _$UniqueVisitorsZoneByDayUniqCopyWith(_UniqueVisitorsZoneByDayUniq value, $Res Function(_UniqueVisitorsZoneByDayUniq) _then) = __$UniqueVisitorsZoneByDayUniqCopyWithImpl;
+@override @useResult
+$Res call({
+ int uniques
+});
+
+
+
+
+}
+/// @nodoc
+class __$UniqueVisitorsZoneByDayUniqCopyWithImpl<$Res>
+    implements _$UniqueVisitorsZoneByDayUniqCopyWith<$Res> {
+  __$UniqueVisitorsZoneByDayUniqCopyWithImpl(this._self, this._then);
+
+  final _UniqueVisitorsZoneByDayUniq _self;
+  final $Res Function(_UniqueVisitorsZoneByDayUniq) _then;
+
+/// Create a copy of UniqueVisitorsZoneByDayUniq
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? uniques = null,}) {
+  return _then(_UniqueVisitorsZoneByDayUniq(
+uniques: null == uniques ? _self.uniques : uniques // ignore: cast_nullable_to_non_nullable
+as int,
+  ));
+}
+
+
+}
+
+
+/// @nodoc
+mixin _$UniqueVisitorsZoneTotal {
+
+ UniqueVisitorsZoneTotalUniq get uniq;
+/// Create a copy of UniqueVisitorsZoneTotal
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$UniqueVisitorsZoneTotalCopyWith<UniqueVisitorsZoneTotal> get copyWith => _$UniqueVisitorsZoneTotalCopyWithImpl<UniqueVisitorsZoneTotal>(this as UniqueVisitorsZoneTotal, _$identity);
+
+  /// Serializes this UniqueVisitorsZoneTotal to a JSON map.
+  Map<String, dynamic> toJson();
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is UniqueVisitorsZoneTotal&&(identical(other.uniq, uniq) || other.uniq == uniq));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,uniq);
+
+@override
+String toString() {
+  return 'UniqueVisitorsZoneTotal(uniq: $uniq)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class $UniqueVisitorsZoneTotalCopyWith<$Res>  {
+  factory $UniqueVisitorsZoneTotalCopyWith(UniqueVisitorsZoneTotal value, $Res Function(UniqueVisitorsZoneTotal) _then) = _$UniqueVisitorsZoneTotalCopyWithImpl;
+@useResult
+$Res call({
+ UniqueVisitorsZoneTotalUniq uniq
+});
+
+
+$UniqueVisitorsZoneTotalUniqCopyWith<$Res> get uniq;
+
+}
+/// @nodoc
+class _$UniqueVisitorsZoneTotalCopyWithImpl<$Res>
+    implements $UniqueVisitorsZoneTotalCopyWith<$Res> {
+  _$UniqueVisitorsZoneTotalCopyWithImpl(this._self, this._then);
+
+  final UniqueVisitorsZoneTotal _self;
+  final $Res Function(UniqueVisitorsZoneTotal) _then;
+
+/// Create a copy of UniqueVisitorsZoneTotal
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? uniq = null,}) {
+  return _then(_self.copyWith(
+uniq: null == uniq ? _self.uniq : uniq // ignore: cast_nullable_to_non_nullable
+as UniqueVisitorsZoneTotalUniq,
+  ));
+}
+/// Create a copy of UniqueVisitorsZoneTotal
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$UniqueVisitorsZoneTotalUniqCopyWith<$Res> get uniq {
+  
+  return $UniqueVisitorsZoneTotalUniqCopyWith<$Res>(_self.uniq, (value) {
+    return _then(_self.copyWith(uniq: value));
+  });
+}
+}
+
+
+/// Adds pattern-matching-related methods to [UniqueVisitorsZoneTotal].
+extension UniqueVisitorsZoneTotalPatterns on UniqueVisitorsZoneTotal {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _UniqueVisitorsZoneTotal value)?  $default,{required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _UniqueVisitorsZoneTotal() when $default != null:
+return $default(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _UniqueVisitorsZoneTotal value)  $default,){
+final _that = this;
+switch (_that) {
+case _UniqueVisitorsZoneTotal():
+return $default(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _UniqueVisitorsZoneTotal value)?  $default,){
+final _that = this;
+switch (_that) {
+case _UniqueVisitorsZoneTotal() when $default != null:
+return $default(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( UniqueVisitorsZoneTotalUniq uniq)?  $default,{required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _UniqueVisitorsZoneTotal() when $default != null:
+return $default(_that.uniq);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( UniqueVisitorsZoneTotalUniq uniq)  $default,) {final _that = this;
+switch (_that) {
+case _UniqueVisitorsZoneTotal():
+return $default(_that.uniq);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( UniqueVisitorsZoneTotalUniq uniq)?  $default,) {final _that = this;
+switch (_that) {
+case _UniqueVisitorsZoneTotal() when $default != null:
+return $default(_that.uniq);case _:
+  return null;
+
+}
+}
+
+}
+
+/// @nodoc
+@JsonSerializable()
+
+class _UniqueVisitorsZoneTotal implements UniqueVisitorsZoneTotal {
+  const _UniqueVisitorsZoneTotal({required this.uniq});
+  factory _UniqueVisitorsZoneTotal.fromJson(Map<String, dynamic> json) => _$UniqueVisitorsZoneTotalFromJson(json);
+
+@override final  UniqueVisitorsZoneTotalUniq uniq;
+
+/// Create a copy of UniqueVisitorsZoneTotal
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$UniqueVisitorsZoneTotalCopyWith<_UniqueVisitorsZoneTotal> get copyWith => __$UniqueVisitorsZoneTotalCopyWithImpl<_UniqueVisitorsZoneTotal>(this, _$identity);
+
+@override
+Map<String, dynamic> toJson() {
+  return _$UniqueVisitorsZoneTotalToJson(this, );
+}
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _UniqueVisitorsZoneTotal&&(identical(other.uniq, uniq) || other.uniq == uniq));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,uniq);
+
+@override
+String toString() {
+  return 'UniqueVisitorsZoneTotal(uniq: $uniq)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class _$UniqueVisitorsZoneTotalCopyWith<$Res> implements $UniqueVisitorsZoneTotalCopyWith<$Res> {
+  factory _$UniqueVisitorsZoneTotalCopyWith(_UniqueVisitorsZoneTotal value, $Res Function(_UniqueVisitorsZoneTotal) _then) = __$UniqueVisitorsZoneTotalCopyWithImpl;
+@override @useResult
+$Res call({
+ UniqueVisitorsZoneTotalUniq uniq
+});
+
+
+@override $UniqueVisitorsZoneTotalUniqCopyWith<$Res> get uniq;
+
+}
+/// @nodoc
+class __$UniqueVisitorsZoneTotalCopyWithImpl<$Res>
+    implements _$UniqueVisitorsZoneTotalCopyWith<$Res> {
+  __$UniqueVisitorsZoneTotalCopyWithImpl(this._self, this._then);
+
+  final _UniqueVisitorsZoneTotal _self;
+  final $Res Function(_UniqueVisitorsZoneTotal) _then;
+
+/// Create a copy of UniqueVisitorsZoneTotal
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? uniq = null,}) {
+  return _then(_UniqueVisitorsZoneTotal(
+uniq: null == uniq ? _self.uniq : uniq // ignore: cast_nullable_to_non_nullable
+as UniqueVisitorsZoneTotalUniq,
+  ));
+}
+
+/// Create a copy of UniqueVisitorsZoneTotal
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$UniqueVisitorsZoneTotalUniqCopyWith<$Res> get uniq {
+  
+  return $UniqueVisitorsZoneTotalUniqCopyWith<$Res>(_self.uniq, (value) {
+    return _then(_self.copyWith(uniq: value));
+  });
+}
+}
+
+
+/// @nodoc
+mixin _$UniqueVisitorsZoneTotalUniq {
+
+ int get uniques;
+/// Create a copy of UniqueVisitorsZoneTotalUniq
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$UniqueVisitorsZoneTotalUniqCopyWith<UniqueVisitorsZoneTotalUniq> get copyWith => _$UniqueVisitorsZoneTotalUniqCopyWithImpl<UniqueVisitorsZoneTotalUniq>(this as UniqueVisitorsZoneTotalUniq, _$identity);
+
+  /// Serializes this UniqueVisitorsZoneTotalUniq to a JSON map.
+  Map<String, dynamic> toJson();
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is UniqueVisitorsZoneTotalUniq&&(identical(other.uniques, uniques) || other.uniques == uniques));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,uniques);
+
+@override
+String toString() {
+  return 'UniqueVisitorsZoneTotalUniq(uniques: $uniques)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class $UniqueVisitorsZoneTotalUniqCopyWith<$Res>  {
+  factory $UniqueVisitorsZoneTotalUniqCopyWith(UniqueVisitorsZoneTotalUniq value, $Res Function(UniqueVisitorsZoneTotalUniq) _then) = _$UniqueVisitorsZoneTotalUniqCopyWithImpl;
+@useResult
+$Res call({
+ int uniques
+});
+
+
+
+
+}
+/// @nodoc
+class _$UniqueVisitorsZoneTotalUniqCopyWithImpl<$Res>
+    implements $UniqueVisitorsZoneTotalUniqCopyWith<$Res> {
+  _$UniqueVisitorsZoneTotalUniqCopyWithImpl(this._self, this._then);
+
+  final UniqueVisitorsZoneTotalUniq _self;
+  final $Res Function(UniqueVisitorsZoneTotalUniq) _then;
+
+/// Create a copy of UniqueVisitorsZoneTotalUniq
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? uniques = null,}) {
+  return _then(_self.copyWith(
+uniques: null == uniques ? _self.uniques : uniques // ignore: cast_nullable_to_non_nullable
+as int,
+  ));
+}
+
+}
+
+
+/// Adds pattern-matching-related methods to [UniqueVisitorsZoneTotalUniq].
+extension UniqueVisitorsZoneTotalUniqPatterns on UniqueVisitorsZoneTotalUniq {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _UniqueVisitorsZoneTotalUniq value)?  $default,{required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _UniqueVisitorsZoneTotalUniq() when $default != null:
+return $default(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _UniqueVisitorsZoneTotalUniq value)  $default,){
+final _that = this;
+switch (_that) {
+case _UniqueVisitorsZoneTotalUniq():
+return $default(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _UniqueVisitorsZoneTotalUniq value)?  $default,){
+final _that = this;
+switch (_that) {
+case _UniqueVisitorsZoneTotalUniq() when $default != null:
+return $default(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( int uniques)?  $default,{required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _UniqueVisitorsZoneTotalUniq() when $default != null:
+return $default(_that.uniques);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( int uniques)  $default,) {final _that = this;
+switch (_that) {
+case _UniqueVisitorsZoneTotalUniq():
+return $default(_that.uniques);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( int uniques)?  $default,) {final _that = this;
+switch (_that) {
+case _UniqueVisitorsZoneTotalUniq() when $default != null:
+return $default(_that.uniques);case _:
+  return null;
+
+}
+}
+
+}
+
+/// @nodoc
+@JsonSerializable()
+
+class _UniqueVisitorsZoneTotalUniq implements UniqueVisitorsZoneTotalUniq {
+  const _UniqueVisitorsZoneTotalUniq({required this.uniques});
+  factory _UniqueVisitorsZoneTotalUniq.fromJson(Map<String, dynamic> json) => _$UniqueVisitorsZoneTotalUniqFromJson(json);
+
+@override final  int uniques;
+
+/// Create a copy of UniqueVisitorsZoneTotalUniq
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$UniqueVisitorsZoneTotalUniqCopyWith<_UniqueVisitorsZoneTotalUniq> get copyWith => __$UniqueVisitorsZoneTotalUniqCopyWithImpl<_UniqueVisitorsZoneTotalUniq>(this, _$identity);
+
+@override
+Map<String, dynamic> toJson() {
+  return _$UniqueVisitorsZoneTotalUniqToJson(this, );
+}
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _UniqueVisitorsZoneTotalUniq&&(identical(other.uniques, uniques) || other.uniques == uniques));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,uniques);
+
+@override
+String toString() {
+  return 'UniqueVisitorsZoneTotalUniq(uniques: $uniques)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class _$UniqueVisitorsZoneTotalUniqCopyWith<$Res> implements $UniqueVisitorsZoneTotalUniqCopyWith<$Res> {
+  factory _$UniqueVisitorsZoneTotalUniqCopyWith(_UniqueVisitorsZoneTotalUniq value, $Res Function(_UniqueVisitorsZoneTotalUniq) _then) = __$UniqueVisitorsZoneTotalUniqCopyWithImpl;
+@override @useResult
+$Res call({
+ int uniques
+});
+
+
+
+
+}
+/// @nodoc
+class __$UniqueVisitorsZoneTotalUniqCopyWithImpl<$Res>
+    implements _$UniqueVisitorsZoneTotalUniqCopyWith<$Res> {
+  __$UniqueVisitorsZoneTotalUniqCopyWithImpl(this._self, this._then);
+
+  final _UniqueVisitorsZoneTotalUniq _self;
+  final $Res Function(_UniqueVisitorsZoneTotalUniq) _then;
+
+/// Create a copy of UniqueVisitorsZoneTotalUniq
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? uniques = null,}) {
+  return _then(_UniqueVisitorsZoneTotalUniq(
+uniques: null == uniques ? _self.uniques : uniques // ignore: cast_nullable_to_non_nullable
+as int,
+  ));
+}
+
+
+}
+
 // dart format on
