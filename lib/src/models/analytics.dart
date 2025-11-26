@@ -900,3 +900,135 @@ abstract class ZoneAnalyticsThreatPathingMapElem
         requests: 0,
       );
 }
+
+@Freezed()
+abstract class PagesProjectAnalyticsSummaryResponse
+    with _$PagesProjectAnalyticsSummaryResponse {
+  const factory PagesProjectAnalyticsSummaryResponse({
+    required PagesProjectAnalyticsSummaryViewer viewer,
+  }) = _PagesProjectAnalyticsSummaryResponse;
+
+  factory PagesProjectAnalyticsSummaryResponse.fromJson(
+    Map<String, dynamic> json,
+  ) => _$PagesProjectAnalyticsSummaryResponseFromJson(json);
+
+  factory PagesProjectAnalyticsSummaryResponse.empty() =>
+      PagesProjectAnalyticsSummaryResponse(
+        viewer: PagesProjectAnalyticsSummaryViewer.empty(),
+      );
+}
+
+@Freezed()
+abstract class PagesProjectAnalyticsSummaryViewer
+    with _$PagesProjectAnalyticsSummaryViewer {
+  const factory PagesProjectAnalyticsSummaryViewer({
+    @JsonKey(name: '__typename') required String typename,
+    required List<PagesProjectAnalyticsSummaryAccount> accounts,
+  }) = _PagesProjectAnalyticsSummaryViewer;
+
+  factory PagesProjectAnalyticsSummaryViewer.fromJson(
+    Map<String, dynamic> json,
+  ) => _$PagesProjectAnalyticsSummaryViewerFromJson(json);
+
+  factory PagesProjectAnalyticsSummaryViewer.empty() =>
+      PagesProjectAnalyticsSummaryViewer(
+        typename: 'viewer',
+        accounts: [PagesProjectAnalyticsSummaryAccount.empty()],
+      );
+}
+
+@Freezed()
+abstract class PagesProjectAnalyticsSummaryAccount
+    with _$PagesProjectAnalyticsSummaryAccount {
+  const factory PagesProjectAnalyticsSummaryAccount({
+    @JsonKey(name: '__typename') required String typename,
+    @JsonKey(name: 'summary')
+    required List<PagesProjectAnalyticsSummarySummary> summary,
+  }) = _PagesProjectAnalyticsSummaryAccount;
+
+  factory PagesProjectAnalyticsSummaryAccount.fromJson(
+    Map<String, dynamic> json,
+  ) => _$PagesProjectAnalyticsSummaryAccountFromJson(json);
+
+  factory PagesProjectAnalyticsSummaryAccount.empty() =>
+      PagesProjectAnalyticsSummaryAccount(
+        typename: 'account',
+        summary: [PagesProjectAnalyticsSummarySummary.empty()],
+      );
+}
+
+@Freezed()
+abstract class PagesProjectAnalyticsSummarySummary
+    with _$PagesProjectAnalyticsSummarySummary {
+  const factory PagesProjectAnalyticsSummarySummary({
+    @JsonKey(name: '__typename') required String typename,
+    required PagesProjectAnalyticsSummarySum sum,
+    required PagesProjectAnalyticsSummaryQuantiles quantiles,
+  }) = _PagesProjectAnalyticsSummarySummary;
+
+  factory PagesProjectAnalyticsSummarySummary.fromJson(
+    Map<String, dynamic> json,
+  ) => _$PagesProjectAnalyticsSummarySummaryFromJson(json);
+
+  factory PagesProjectAnalyticsSummarySummary.empty() =>
+      PagesProjectAnalyticsSummarySummary(
+        typename: 'AccountPagesFunctionsInvocationsAdaptiveGroups',
+        sum: PagesProjectAnalyticsSummarySum.empty(),
+        quantiles: PagesProjectAnalyticsSummaryQuantiles.empty(),
+      );
+}
+
+@Freezed()
+abstract class PagesProjectAnalyticsSummarySum
+    with _$PagesProjectAnalyticsSummarySum {
+  const factory PagesProjectAnalyticsSummarySum({
+    @JsonKey(name: '__typename') required String typename,
+    required double duration,
+    required int requests,
+    required int errors,
+  }) = _PagesProjectAnalyticsSummarySum;
+
+  factory PagesProjectAnalyticsSummarySum.fromJson(Map<String, dynamic> json) =>
+      _$PagesProjectAnalyticsSummarySumFromJson(json);
+
+  factory PagesProjectAnalyticsSummarySum.empty() =>
+      PagesProjectAnalyticsSummarySum(
+        typename: 'AccountPagesFunctionsInvocationsAdaptiveGroupsSum',
+        duration: 0.0,
+        requests: 0,
+        errors: 0,
+      );
+}
+
+@Freezed()
+abstract class PagesProjectAnalyticsSummaryQuantiles
+    with _$PagesProjectAnalyticsSummaryQuantiles {
+  const factory PagesProjectAnalyticsSummaryQuantiles({
+    @JsonKey(name: '__typename') required String typename,
+    required int? cpuTimeP50,
+    required int? cpuTimeP75,
+    required int? cpuTimeP99,
+    required int? cpuTimeP999,
+    required double? durationP50,
+    required double? durationP75,
+    required double? durationP99,
+    required double? durationP999,
+  }) = _PagesProjectAnalyticsSummaryQuantiles;
+
+  factory PagesProjectAnalyticsSummaryQuantiles.fromJson(
+    Map<String, dynamic> json,
+  ) => _$PagesProjectAnalyticsSummaryQuantilesFromJson(json);
+
+  factory PagesProjectAnalyticsSummaryQuantiles.empty() =>
+      PagesProjectAnalyticsSummaryQuantiles(
+        typename: 'AccountPagesFunctionsInvocationsAdaptiveGroupsQuantiles',
+        cpuTimeP50: 0,
+        cpuTimeP75: 0,
+        cpuTimeP99: 0,
+        cpuTimeP999: 0,
+        durationP50: 0.0,
+        durationP75: 0.0,
+        durationP99: 0.0,
+        durationP999: 0.0,
+      );
+}

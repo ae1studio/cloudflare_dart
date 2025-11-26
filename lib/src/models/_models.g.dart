@@ -1116,6 +1116,124 @@ Map<String, dynamic> _$ZoneAnalyticsThreatPathingMapElemToJson(
   'requests': instance.requests,
 };
 
+_PagesProjectAnalyticsSummaryResponse
+_$PagesProjectAnalyticsSummaryResponseFromJson(Map<String, dynamic> json) =>
+    _PagesProjectAnalyticsSummaryResponse(
+      viewer: PagesProjectAnalyticsSummaryViewer.fromJson(
+        json['viewer'] as Map<String, dynamic>,
+      ),
+    );
+
+Map<String, dynamic> _$PagesProjectAnalyticsSummaryResponseToJson(
+  _PagesProjectAnalyticsSummaryResponse instance,
+) => <String, dynamic>{'viewer': instance.viewer};
+
+_PagesProjectAnalyticsSummaryViewer
+_$PagesProjectAnalyticsSummaryViewerFromJson(Map<String, dynamic> json) =>
+    _PagesProjectAnalyticsSummaryViewer(
+      typename: json['__typename'] as String,
+      accounts: (json['accounts'] as List<dynamic>)
+          .map(
+            (e) => PagesProjectAnalyticsSummaryAccount.fromJson(
+              e as Map<String, dynamic>,
+            ),
+          )
+          .toList(),
+    );
+
+Map<String, dynamic> _$PagesProjectAnalyticsSummaryViewerToJson(
+  _PagesProjectAnalyticsSummaryViewer instance,
+) => <String, dynamic>{
+  '__typename': instance.typename,
+  'accounts': instance.accounts,
+};
+
+_PagesProjectAnalyticsSummaryAccount
+_$PagesProjectAnalyticsSummaryAccountFromJson(Map<String, dynamic> json) =>
+    _PagesProjectAnalyticsSummaryAccount(
+      typename: json['__typename'] as String,
+      summary: (json['summary'] as List<dynamic>)
+          .map(
+            (e) => PagesProjectAnalyticsSummarySummary.fromJson(
+              e as Map<String, dynamic>,
+            ),
+          )
+          .toList(),
+    );
+
+Map<String, dynamic> _$PagesProjectAnalyticsSummaryAccountToJson(
+  _PagesProjectAnalyticsSummaryAccount instance,
+) => <String, dynamic>{
+  '__typename': instance.typename,
+  'summary': instance.summary,
+};
+
+_PagesProjectAnalyticsSummarySummary
+_$PagesProjectAnalyticsSummarySummaryFromJson(Map<String, dynamic> json) =>
+    _PagesProjectAnalyticsSummarySummary(
+      typename: json['__typename'] as String,
+      sum: PagesProjectAnalyticsSummarySum.fromJson(
+        json['sum'] as Map<String, dynamic>,
+      ),
+      quantiles: PagesProjectAnalyticsSummaryQuantiles.fromJson(
+        json['quantiles'] as Map<String, dynamic>,
+      ),
+    );
+
+Map<String, dynamic> _$PagesProjectAnalyticsSummarySummaryToJson(
+  _PagesProjectAnalyticsSummarySummary instance,
+) => <String, dynamic>{
+  '__typename': instance.typename,
+  'sum': instance.sum,
+  'quantiles': instance.quantiles,
+};
+
+_PagesProjectAnalyticsSummarySum _$PagesProjectAnalyticsSummarySumFromJson(
+  Map<String, dynamic> json,
+) => _PagesProjectAnalyticsSummarySum(
+  typename: json['__typename'] as String,
+  duration: (json['duration'] as num).toDouble(),
+  requests: (json['requests'] as num).toInt(),
+  errors: (json['errors'] as num).toInt(),
+);
+
+Map<String, dynamic> _$PagesProjectAnalyticsSummarySumToJson(
+  _PagesProjectAnalyticsSummarySum instance,
+) => <String, dynamic>{
+  '__typename': instance.typename,
+  'duration': instance.duration,
+  'requests': instance.requests,
+  'errors': instance.errors,
+};
+
+_PagesProjectAnalyticsSummaryQuantiles
+_$PagesProjectAnalyticsSummaryQuantilesFromJson(Map<String, dynamic> json) =>
+    _PagesProjectAnalyticsSummaryQuantiles(
+      typename: json['__typename'] as String,
+      cpuTimeP50: (json['cpuTimeP50'] as num?)?.toInt(),
+      cpuTimeP75: (json['cpuTimeP75'] as num?)?.toInt(),
+      cpuTimeP99: (json['cpuTimeP99'] as num?)?.toInt(),
+      cpuTimeP999: (json['cpuTimeP999'] as num?)?.toInt(),
+      durationP50: (json['durationP50'] as num?)?.toDouble(),
+      durationP75: (json['durationP75'] as num?)?.toDouble(),
+      durationP99: (json['durationP99'] as num?)?.toDouble(),
+      durationP999: (json['durationP999'] as num?)?.toDouble(),
+    );
+
+Map<String, dynamic> _$PagesProjectAnalyticsSummaryQuantilesToJson(
+  _PagesProjectAnalyticsSummaryQuantiles instance,
+) => <String, dynamic>{
+  '__typename': instance.typename,
+  'cpuTimeP50': instance.cpuTimeP50,
+  'cpuTimeP75': instance.cpuTimeP75,
+  'cpuTimeP99': instance.cpuTimeP99,
+  'cpuTimeP999': instance.cpuTimeP999,
+  'durationP50': instance.durationP50,
+  'durationP75': instance.durationP75,
+  'durationP99': instance.durationP99,
+  'durationP999': instance.durationP999,
+};
+
 Webhooks _$WebhooksFromJson(Map<String, dynamic> json) {
   $checkKeys(json, requiredKeys: const ['id', 'name', 'url', 'created_at']);
   return Webhooks()

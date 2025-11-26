@@ -16892,4 +16892,1693 @@ as int,
 
 }
 
+
+/// @nodoc
+mixin _$PagesProjectAnalyticsSummaryResponse {
+
+ PagesProjectAnalyticsSummaryViewer get viewer;
+/// Create a copy of PagesProjectAnalyticsSummaryResponse
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$PagesProjectAnalyticsSummaryResponseCopyWith<PagesProjectAnalyticsSummaryResponse> get copyWith => _$PagesProjectAnalyticsSummaryResponseCopyWithImpl<PagesProjectAnalyticsSummaryResponse>(this as PagesProjectAnalyticsSummaryResponse, _$identity);
+
+  /// Serializes this PagesProjectAnalyticsSummaryResponse to a JSON map.
+  Map<String, dynamic> toJson();
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is PagesProjectAnalyticsSummaryResponse&&(identical(other.viewer, viewer) || other.viewer == viewer));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,viewer);
+
+@override
+String toString() {
+  return 'PagesProjectAnalyticsSummaryResponse(viewer: $viewer)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class $PagesProjectAnalyticsSummaryResponseCopyWith<$Res>  {
+  factory $PagesProjectAnalyticsSummaryResponseCopyWith(PagesProjectAnalyticsSummaryResponse value, $Res Function(PagesProjectAnalyticsSummaryResponse) _then) = _$PagesProjectAnalyticsSummaryResponseCopyWithImpl;
+@useResult
+$Res call({
+ PagesProjectAnalyticsSummaryViewer viewer
+});
+
+
+$PagesProjectAnalyticsSummaryViewerCopyWith<$Res> get viewer;
+
+}
+/// @nodoc
+class _$PagesProjectAnalyticsSummaryResponseCopyWithImpl<$Res>
+    implements $PagesProjectAnalyticsSummaryResponseCopyWith<$Res> {
+  _$PagesProjectAnalyticsSummaryResponseCopyWithImpl(this._self, this._then);
+
+  final PagesProjectAnalyticsSummaryResponse _self;
+  final $Res Function(PagesProjectAnalyticsSummaryResponse) _then;
+
+/// Create a copy of PagesProjectAnalyticsSummaryResponse
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? viewer = null,}) {
+  return _then(_self.copyWith(
+viewer: null == viewer ? _self.viewer : viewer // ignore: cast_nullable_to_non_nullable
+as PagesProjectAnalyticsSummaryViewer,
+  ));
+}
+/// Create a copy of PagesProjectAnalyticsSummaryResponse
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$PagesProjectAnalyticsSummaryViewerCopyWith<$Res> get viewer {
+  
+  return $PagesProjectAnalyticsSummaryViewerCopyWith<$Res>(_self.viewer, (value) {
+    return _then(_self.copyWith(viewer: value));
+  });
+}
+}
+
+
+/// Adds pattern-matching-related methods to [PagesProjectAnalyticsSummaryResponse].
+extension PagesProjectAnalyticsSummaryResponsePatterns on PagesProjectAnalyticsSummaryResponse {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _PagesProjectAnalyticsSummaryResponse value)?  $default,{required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _PagesProjectAnalyticsSummaryResponse() when $default != null:
+return $default(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _PagesProjectAnalyticsSummaryResponse value)  $default,){
+final _that = this;
+switch (_that) {
+case _PagesProjectAnalyticsSummaryResponse():
+return $default(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _PagesProjectAnalyticsSummaryResponse value)?  $default,){
+final _that = this;
+switch (_that) {
+case _PagesProjectAnalyticsSummaryResponse() when $default != null:
+return $default(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( PagesProjectAnalyticsSummaryViewer viewer)?  $default,{required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _PagesProjectAnalyticsSummaryResponse() when $default != null:
+return $default(_that.viewer);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( PagesProjectAnalyticsSummaryViewer viewer)  $default,) {final _that = this;
+switch (_that) {
+case _PagesProjectAnalyticsSummaryResponse():
+return $default(_that.viewer);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( PagesProjectAnalyticsSummaryViewer viewer)?  $default,) {final _that = this;
+switch (_that) {
+case _PagesProjectAnalyticsSummaryResponse() when $default != null:
+return $default(_that.viewer);case _:
+  return null;
+
+}
+}
+
+}
+
+/// @nodoc
+@JsonSerializable()
+
+class _PagesProjectAnalyticsSummaryResponse implements PagesProjectAnalyticsSummaryResponse {
+  const _PagesProjectAnalyticsSummaryResponse({required this.viewer});
+  factory _PagesProjectAnalyticsSummaryResponse.fromJson(Map<String, dynamic> json) => _$PagesProjectAnalyticsSummaryResponseFromJson(json);
+
+@override final  PagesProjectAnalyticsSummaryViewer viewer;
+
+/// Create a copy of PagesProjectAnalyticsSummaryResponse
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$PagesProjectAnalyticsSummaryResponseCopyWith<_PagesProjectAnalyticsSummaryResponse> get copyWith => __$PagesProjectAnalyticsSummaryResponseCopyWithImpl<_PagesProjectAnalyticsSummaryResponse>(this, _$identity);
+
+@override
+Map<String, dynamic> toJson() {
+  return _$PagesProjectAnalyticsSummaryResponseToJson(this, );
+}
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _PagesProjectAnalyticsSummaryResponse&&(identical(other.viewer, viewer) || other.viewer == viewer));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,viewer);
+
+@override
+String toString() {
+  return 'PagesProjectAnalyticsSummaryResponse(viewer: $viewer)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class _$PagesProjectAnalyticsSummaryResponseCopyWith<$Res> implements $PagesProjectAnalyticsSummaryResponseCopyWith<$Res> {
+  factory _$PagesProjectAnalyticsSummaryResponseCopyWith(_PagesProjectAnalyticsSummaryResponse value, $Res Function(_PagesProjectAnalyticsSummaryResponse) _then) = __$PagesProjectAnalyticsSummaryResponseCopyWithImpl;
+@override @useResult
+$Res call({
+ PagesProjectAnalyticsSummaryViewer viewer
+});
+
+
+@override $PagesProjectAnalyticsSummaryViewerCopyWith<$Res> get viewer;
+
+}
+/// @nodoc
+class __$PagesProjectAnalyticsSummaryResponseCopyWithImpl<$Res>
+    implements _$PagesProjectAnalyticsSummaryResponseCopyWith<$Res> {
+  __$PagesProjectAnalyticsSummaryResponseCopyWithImpl(this._self, this._then);
+
+  final _PagesProjectAnalyticsSummaryResponse _self;
+  final $Res Function(_PagesProjectAnalyticsSummaryResponse) _then;
+
+/// Create a copy of PagesProjectAnalyticsSummaryResponse
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? viewer = null,}) {
+  return _then(_PagesProjectAnalyticsSummaryResponse(
+viewer: null == viewer ? _self.viewer : viewer // ignore: cast_nullable_to_non_nullable
+as PagesProjectAnalyticsSummaryViewer,
+  ));
+}
+
+/// Create a copy of PagesProjectAnalyticsSummaryResponse
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$PagesProjectAnalyticsSummaryViewerCopyWith<$Res> get viewer {
+  
+  return $PagesProjectAnalyticsSummaryViewerCopyWith<$Res>(_self.viewer, (value) {
+    return _then(_self.copyWith(viewer: value));
+  });
+}
+}
+
+
+/// @nodoc
+mixin _$PagesProjectAnalyticsSummaryViewer {
+
+@JsonKey(name: '__typename') String get typename; List<PagesProjectAnalyticsSummaryAccount> get accounts;
+/// Create a copy of PagesProjectAnalyticsSummaryViewer
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$PagesProjectAnalyticsSummaryViewerCopyWith<PagesProjectAnalyticsSummaryViewer> get copyWith => _$PagesProjectAnalyticsSummaryViewerCopyWithImpl<PagesProjectAnalyticsSummaryViewer>(this as PagesProjectAnalyticsSummaryViewer, _$identity);
+
+  /// Serializes this PagesProjectAnalyticsSummaryViewer to a JSON map.
+  Map<String, dynamic> toJson();
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is PagesProjectAnalyticsSummaryViewer&&(identical(other.typename, typename) || other.typename == typename)&&const DeepCollectionEquality().equals(other.accounts, accounts));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,typename,const DeepCollectionEquality().hash(accounts));
+
+@override
+String toString() {
+  return 'PagesProjectAnalyticsSummaryViewer(typename: $typename, accounts: $accounts)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class $PagesProjectAnalyticsSummaryViewerCopyWith<$Res>  {
+  factory $PagesProjectAnalyticsSummaryViewerCopyWith(PagesProjectAnalyticsSummaryViewer value, $Res Function(PagesProjectAnalyticsSummaryViewer) _then) = _$PagesProjectAnalyticsSummaryViewerCopyWithImpl;
+@useResult
+$Res call({
+@JsonKey(name: '__typename') String typename, List<PagesProjectAnalyticsSummaryAccount> accounts
+});
+
+
+
+
+}
+/// @nodoc
+class _$PagesProjectAnalyticsSummaryViewerCopyWithImpl<$Res>
+    implements $PagesProjectAnalyticsSummaryViewerCopyWith<$Res> {
+  _$PagesProjectAnalyticsSummaryViewerCopyWithImpl(this._self, this._then);
+
+  final PagesProjectAnalyticsSummaryViewer _self;
+  final $Res Function(PagesProjectAnalyticsSummaryViewer) _then;
+
+/// Create a copy of PagesProjectAnalyticsSummaryViewer
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? typename = null,Object? accounts = null,}) {
+  return _then(_self.copyWith(
+typename: null == typename ? _self.typename : typename // ignore: cast_nullable_to_non_nullable
+as String,accounts: null == accounts ? _self.accounts : accounts // ignore: cast_nullable_to_non_nullable
+as List<PagesProjectAnalyticsSummaryAccount>,
+  ));
+}
+
+}
+
+
+/// Adds pattern-matching-related methods to [PagesProjectAnalyticsSummaryViewer].
+extension PagesProjectAnalyticsSummaryViewerPatterns on PagesProjectAnalyticsSummaryViewer {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _PagesProjectAnalyticsSummaryViewer value)?  $default,{required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _PagesProjectAnalyticsSummaryViewer() when $default != null:
+return $default(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _PagesProjectAnalyticsSummaryViewer value)  $default,){
+final _that = this;
+switch (_that) {
+case _PagesProjectAnalyticsSummaryViewer():
+return $default(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _PagesProjectAnalyticsSummaryViewer value)?  $default,){
+final _that = this;
+switch (_that) {
+case _PagesProjectAnalyticsSummaryViewer() when $default != null:
+return $default(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@JsonKey(name: '__typename')  String typename,  List<PagesProjectAnalyticsSummaryAccount> accounts)?  $default,{required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _PagesProjectAnalyticsSummaryViewer() when $default != null:
+return $default(_that.typename,_that.accounts);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@JsonKey(name: '__typename')  String typename,  List<PagesProjectAnalyticsSummaryAccount> accounts)  $default,) {final _that = this;
+switch (_that) {
+case _PagesProjectAnalyticsSummaryViewer():
+return $default(_that.typename,_that.accounts);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@JsonKey(name: '__typename')  String typename,  List<PagesProjectAnalyticsSummaryAccount> accounts)?  $default,) {final _that = this;
+switch (_that) {
+case _PagesProjectAnalyticsSummaryViewer() when $default != null:
+return $default(_that.typename,_that.accounts);case _:
+  return null;
+
+}
+}
+
+}
+
+/// @nodoc
+@JsonSerializable()
+
+class _PagesProjectAnalyticsSummaryViewer implements PagesProjectAnalyticsSummaryViewer {
+  const _PagesProjectAnalyticsSummaryViewer({@JsonKey(name: '__typename') required this.typename, required final  List<PagesProjectAnalyticsSummaryAccount> accounts}): _accounts = accounts;
+  factory _PagesProjectAnalyticsSummaryViewer.fromJson(Map<String, dynamic> json) => _$PagesProjectAnalyticsSummaryViewerFromJson(json);
+
+@override@JsonKey(name: '__typename') final  String typename;
+ final  List<PagesProjectAnalyticsSummaryAccount> _accounts;
+@override List<PagesProjectAnalyticsSummaryAccount> get accounts {
+  if (_accounts is EqualUnmodifiableListView) return _accounts;
+  // ignore: implicit_dynamic_type
+  return EqualUnmodifiableListView(_accounts);
+}
+
+
+/// Create a copy of PagesProjectAnalyticsSummaryViewer
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$PagesProjectAnalyticsSummaryViewerCopyWith<_PagesProjectAnalyticsSummaryViewer> get copyWith => __$PagesProjectAnalyticsSummaryViewerCopyWithImpl<_PagesProjectAnalyticsSummaryViewer>(this, _$identity);
+
+@override
+Map<String, dynamic> toJson() {
+  return _$PagesProjectAnalyticsSummaryViewerToJson(this, );
+}
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _PagesProjectAnalyticsSummaryViewer&&(identical(other.typename, typename) || other.typename == typename)&&const DeepCollectionEquality().equals(other._accounts, _accounts));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,typename,const DeepCollectionEquality().hash(_accounts));
+
+@override
+String toString() {
+  return 'PagesProjectAnalyticsSummaryViewer(typename: $typename, accounts: $accounts)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class _$PagesProjectAnalyticsSummaryViewerCopyWith<$Res> implements $PagesProjectAnalyticsSummaryViewerCopyWith<$Res> {
+  factory _$PagesProjectAnalyticsSummaryViewerCopyWith(_PagesProjectAnalyticsSummaryViewer value, $Res Function(_PagesProjectAnalyticsSummaryViewer) _then) = __$PagesProjectAnalyticsSummaryViewerCopyWithImpl;
+@override @useResult
+$Res call({
+@JsonKey(name: '__typename') String typename, List<PagesProjectAnalyticsSummaryAccount> accounts
+});
+
+
+
+
+}
+/// @nodoc
+class __$PagesProjectAnalyticsSummaryViewerCopyWithImpl<$Res>
+    implements _$PagesProjectAnalyticsSummaryViewerCopyWith<$Res> {
+  __$PagesProjectAnalyticsSummaryViewerCopyWithImpl(this._self, this._then);
+
+  final _PagesProjectAnalyticsSummaryViewer _self;
+  final $Res Function(_PagesProjectAnalyticsSummaryViewer) _then;
+
+/// Create a copy of PagesProjectAnalyticsSummaryViewer
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? typename = null,Object? accounts = null,}) {
+  return _then(_PagesProjectAnalyticsSummaryViewer(
+typename: null == typename ? _self.typename : typename // ignore: cast_nullable_to_non_nullable
+as String,accounts: null == accounts ? _self._accounts : accounts // ignore: cast_nullable_to_non_nullable
+as List<PagesProjectAnalyticsSummaryAccount>,
+  ));
+}
+
+
+}
+
+
+/// @nodoc
+mixin _$PagesProjectAnalyticsSummaryAccount {
+
+@JsonKey(name: '__typename') String get typename;@JsonKey(name: 'summary') List<PagesProjectAnalyticsSummarySummary> get summary;
+/// Create a copy of PagesProjectAnalyticsSummaryAccount
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$PagesProjectAnalyticsSummaryAccountCopyWith<PagesProjectAnalyticsSummaryAccount> get copyWith => _$PagesProjectAnalyticsSummaryAccountCopyWithImpl<PagesProjectAnalyticsSummaryAccount>(this as PagesProjectAnalyticsSummaryAccount, _$identity);
+
+  /// Serializes this PagesProjectAnalyticsSummaryAccount to a JSON map.
+  Map<String, dynamic> toJson();
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is PagesProjectAnalyticsSummaryAccount&&(identical(other.typename, typename) || other.typename == typename)&&const DeepCollectionEquality().equals(other.summary, summary));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,typename,const DeepCollectionEquality().hash(summary));
+
+@override
+String toString() {
+  return 'PagesProjectAnalyticsSummaryAccount(typename: $typename, summary: $summary)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class $PagesProjectAnalyticsSummaryAccountCopyWith<$Res>  {
+  factory $PagesProjectAnalyticsSummaryAccountCopyWith(PagesProjectAnalyticsSummaryAccount value, $Res Function(PagesProjectAnalyticsSummaryAccount) _then) = _$PagesProjectAnalyticsSummaryAccountCopyWithImpl;
+@useResult
+$Res call({
+@JsonKey(name: '__typename') String typename,@JsonKey(name: 'summary') List<PagesProjectAnalyticsSummarySummary> summary
+});
+
+
+
+
+}
+/// @nodoc
+class _$PagesProjectAnalyticsSummaryAccountCopyWithImpl<$Res>
+    implements $PagesProjectAnalyticsSummaryAccountCopyWith<$Res> {
+  _$PagesProjectAnalyticsSummaryAccountCopyWithImpl(this._self, this._then);
+
+  final PagesProjectAnalyticsSummaryAccount _self;
+  final $Res Function(PagesProjectAnalyticsSummaryAccount) _then;
+
+/// Create a copy of PagesProjectAnalyticsSummaryAccount
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? typename = null,Object? summary = null,}) {
+  return _then(_self.copyWith(
+typename: null == typename ? _self.typename : typename // ignore: cast_nullable_to_non_nullable
+as String,summary: null == summary ? _self.summary : summary // ignore: cast_nullable_to_non_nullable
+as List<PagesProjectAnalyticsSummarySummary>,
+  ));
+}
+
+}
+
+
+/// Adds pattern-matching-related methods to [PagesProjectAnalyticsSummaryAccount].
+extension PagesProjectAnalyticsSummaryAccountPatterns on PagesProjectAnalyticsSummaryAccount {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _PagesProjectAnalyticsSummaryAccount value)?  $default,{required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _PagesProjectAnalyticsSummaryAccount() when $default != null:
+return $default(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _PagesProjectAnalyticsSummaryAccount value)  $default,){
+final _that = this;
+switch (_that) {
+case _PagesProjectAnalyticsSummaryAccount():
+return $default(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _PagesProjectAnalyticsSummaryAccount value)?  $default,){
+final _that = this;
+switch (_that) {
+case _PagesProjectAnalyticsSummaryAccount() when $default != null:
+return $default(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@JsonKey(name: '__typename')  String typename, @JsonKey(name: 'summary')  List<PagesProjectAnalyticsSummarySummary> summary)?  $default,{required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _PagesProjectAnalyticsSummaryAccount() when $default != null:
+return $default(_that.typename,_that.summary);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@JsonKey(name: '__typename')  String typename, @JsonKey(name: 'summary')  List<PagesProjectAnalyticsSummarySummary> summary)  $default,) {final _that = this;
+switch (_that) {
+case _PagesProjectAnalyticsSummaryAccount():
+return $default(_that.typename,_that.summary);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@JsonKey(name: '__typename')  String typename, @JsonKey(name: 'summary')  List<PagesProjectAnalyticsSummarySummary> summary)?  $default,) {final _that = this;
+switch (_that) {
+case _PagesProjectAnalyticsSummaryAccount() when $default != null:
+return $default(_that.typename,_that.summary);case _:
+  return null;
+
+}
+}
+
+}
+
+/// @nodoc
+@JsonSerializable()
+
+class _PagesProjectAnalyticsSummaryAccount implements PagesProjectAnalyticsSummaryAccount {
+  const _PagesProjectAnalyticsSummaryAccount({@JsonKey(name: '__typename') required this.typename, @JsonKey(name: 'summary') required final  List<PagesProjectAnalyticsSummarySummary> summary}): _summary = summary;
+  factory _PagesProjectAnalyticsSummaryAccount.fromJson(Map<String, dynamic> json) => _$PagesProjectAnalyticsSummaryAccountFromJson(json);
+
+@override@JsonKey(name: '__typename') final  String typename;
+ final  List<PagesProjectAnalyticsSummarySummary> _summary;
+@override@JsonKey(name: 'summary') List<PagesProjectAnalyticsSummarySummary> get summary {
+  if (_summary is EqualUnmodifiableListView) return _summary;
+  // ignore: implicit_dynamic_type
+  return EqualUnmodifiableListView(_summary);
+}
+
+
+/// Create a copy of PagesProjectAnalyticsSummaryAccount
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$PagesProjectAnalyticsSummaryAccountCopyWith<_PagesProjectAnalyticsSummaryAccount> get copyWith => __$PagesProjectAnalyticsSummaryAccountCopyWithImpl<_PagesProjectAnalyticsSummaryAccount>(this, _$identity);
+
+@override
+Map<String, dynamic> toJson() {
+  return _$PagesProjectAnalyticsSummaryAccountToJson(this, );
+}
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _PagesProjectAnalyticsSummaryAccount&&(identical(other.typename, typename) || other.typename == typename)&&const DeepCollectionEquality().equals(other._summary, _summary));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,typename,const DeepCollectionEquality().hash(_summary));
+
+@override
+String toString() {
+  return 'PagesProjectAnalyticsSummaryAccount(typename: $typename, summary: $summary)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class _$PagesProjectAnalyticsSummaryAccountCopyWith<$Res> implements $PagesProjectAnalyticsSummaryAccountCopyWith<$Res> {
+  factory _$PagesProjectAnalyticsSummaryAccountCopyWith(_PagesProjectAnalyticsSummaryAccount value, $Res Function(_PagesProjectAnalyticsSummaryAccount) _then) = __$PagesProjectAnalyticsSummaryAccountCopyWithImpl;
+@override @useResult
+$Res call({
+@JsonKey(name: '__typename') String typename,@JsonKey(name: 'summary') List<PagesProjectAnalyticsSummarySummary> summary
+});
+
+
+
+
+}
+/// @nodoc
+class __$PagesProjectAnalyticsSummaryAccountCopyWithImpl<$Res>
+    implements _$PagesProjectAnalyticsSummaryAccountCopyWith<$Res> {
+  __$PagesProjectAnalyticsSummaryAccountCopyWithImpl(this._self, this._then);
+
+  final _PagesProjectAnalyticsSummaryAccount _self;
+  final $Res Function(_PagesProjectAnalyticsSummaryAccount) _then;
+
+/// Create a copy of PagesProjectAnalyticsSummaryAccount
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? typename = null,Object? summary = null,}) {
+  return _then(_PagesProjectAnalyticsSummaryAccount(
+typename: null == typename ? _self.typename : typename // ignore: cast_nullable_to_non_nullable
+as String,summary: null == summary ? _self._summary : summary // ignore: cast_nullable_to_non_nullable
+as List<PagesProjectAnalyticsSummarySummary>,
+  ));
+}
+
+
+}
+
+
+/// @nodoc
+mixin _$PagesProjectAnalyticsSummarySummary {
+
+@JsonKey(name: '__typename') String get typename; PagesProjectAnalyticsSummarySum get sum; PagesProjectAnalyticsSummaryQuantiles get quantiles;
+/// Create a copy of PagesProjectAnalyticsSummarySummary
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$PagesProjectAnalyticsSummarySummaryCopyWith<PagesProjectAnalyticsSummarySummary> get copyWith => _$PagesProjectAnalyticsSummarySummaryCopyWithImpl<PagesProjectAnalyticsSummarySummary>(this as PagesProjectAnalyticsSummarySummary, _$identity);
+
+  /// Serializes this PagesProjectAnalyticsSummarySummary to a JSON map.
+  Map<String, dynamic> toJson();
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is PagesProjectAnalyticsSummarySummary&&(identical(other.typename, typename) || other.typename == typename)&&(identical(other.sum, sum) || other.sum == sum)&&(identical(other.quantiles, quantiles) || other.quantiles == quantiles));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,typename,sum,quantiles);
+
+@override
+String toString() {
+  return 'PagesProjectAnalyticsSummarySummary(typename: $typename, sum: $sum, quantiles: $quantiles)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class $PagesProjectAnalyticsSummarySummaryCopyWith<$Res>  {
+  factory $PagesProjectAnalyticsSummarySummaryCopyWith(PagesProjectAnalyticsSummarySummary value, $Res Function(PagesProjectAnalyticsSummarySummary) _then) = _$PagesProjectAnalyticsSummarySummaryCopyWithImpl;
+@useResult
+$Res call({
+@JsonKey(name: '__typename') String typename, PagesProjectAnalyticsSummarySum sum, PagesProjectAnalyticsSummaryQuantiles quantiles
+});
+
+
+$PagesProjectAnalyticsSummarySumCopyWith<$Res> get sum;$PagesProjectAnalyticsSummaryQuantilesCopyWith<$Res> get quantiles;
+
+}
+/// @nodoc
+class _$PagesProjectAnalyticsSummarySummaryCopyWithImpl<$Res>
+    implements $PagesProjectAnalyticsSummarySummaryCopyWith<$Res> {
+  _$PagesProjectAnalyticsSummarySummaryCopyWithImpl(this._self, this._then);
+
+  final PagesProjectAnalyticsSummarySummary _self;
+  final $Res Function(PagesProjectAnalyticsSummarySummary) _then;
+
+/// Create a copy of PagesProjectAnalyticsSummarySummary
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? typename = null,Object? sum = null,Object? quantiles = null,}) {
+  return _then(_self.copyWith(
+typename: null == typename ? _self.typename : typename // ignore: cast_nullable_to_non_nullable
+as String,sum: null == sum ? _self.sum : sum // ignore: cast_nullable_to_non_nullable
+as PagesProjectAnalyticsSummarySum,quantiles: null == quantiles ? _self.quantiles : quantiles // ignore: cast_nullable_to_non_nullable
+as PagesProjectAnalyticsSummaryQuantiles,
+  ));
+}
+/// Create a copy of PagesProjectAnalyticsSummarySummary
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$PagesProjectAnalyticsSummarySumCopyWith<$Res> get sum {
+  
+  return $PagesProjectAnalyticsSummarySumCopyWith<$Res>(_self.sum, (value) {
+    return _then(_self.copyWith(sum: value));
+  });
+}/// Create a copy of PagesProjectAnalyticsSummarySummary
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$PagesProjectAnalyticsSummaryQuantilesCopyWith<$Res> get quantiles {
+  
+  return $PagesProjectAnalyticsSummaryQuantilesCopyWith<$Res>(_self.quantiles, (value) {
+    return _then(_self.copyWith(quantiles: value));
+  });
+}
+}
+
+
+/// Adds pattern-matching-related methods to [PagesProjectAnalyticsSummarySummary].
+extension PagesProjectAnalyticsSummarySummaryPatterns on PagesProjectAnalyticsSummarySummary {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _PagesProjectAnalyticsSummarySummary value)?  $default,{required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _PagesProjectAnalyticsSummarySummary() when $default != null:
+return $default(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _PagesProjectAnalyticsSummarySummary value)  $default,){
+final _that = this;
+switch (_that) {
+case _PagesProjectAnalyticsSummarySummary():
+return $default(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _PagesProjectAnalyticsSummarySummary value)?  $default,){
+final _that = this;
+switch (_that) {
+case _PagesProjectAnalyticsSummarySummary() when $default != null:
+return $default(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@JsonKey(name: '__typename')  String typename,  PagesProjectAnalyticsSummarySum sum,  PagesProjectAnalyticsSummaryQuantiles quantiles)?  $default,{required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _PagesProjectAnalyticsSummarySummary() when $default != null:
+return $default(_that.typename,_that.sum,_that.quantiles);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@JsonKey(name: '__typename')  String typename,  PagesProjectAnalyticsSummarySum sum,  PagesProjectAnalyticsSummaryQuantiles quantiles)  $default,) {final _that = this;
+switch (_that) {
+case _PagesProjectAnalyticsSummarySummary():
+return $default(_that.typename,_that.sum,_that.quantiles);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@JsonKey(name: '__typename')  String typename,  PagesProjectAnalyticsSummarySum sum,  PagesProjectAnalyticsSummaryQuantiles quantiles)?  $default,) {final _that = this;
+switch (_that) {
+case _PagesProjectAnalyticsSummarySummary() when $default != null:
+return $default(_that.typename,_that.sum,_that.quantiles);case _:
+  return null;
+
+}
+}
+
+}
+
+/// @nodoc
+@JsonSerializable()
+
+class _PagesProjectAnalyticsSummarySummary implements PagesProjectAnalyticsSummarySummary {
+  const _PagesProjectAnalyticsSummarySummary({@JsonKey(name: '__typename') required this.typename, required this.sum, required this.quantiles});
+  factory _PagesProjectAnalyticsSummarySummary.fromJson(Map<String, dynamic> json) => _$PagesProjectAnalyticsSummarySummaryFromJson(json);
+
+@override@JsonKey(name: '__typename') final  String typename;
+@override final  PagesProjectAnalyticsSummarySum sum;
+@override final  PagesProjectAnalyticsSummaryQuantiles quantiles;
+
+/// Create a copy of PagesProjectAnalyticsSummarySummary
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$PagesProjectAnalyticsSummarySummaryCopyWith<_PagesProjectAnalyticsSummarySummary> get copyWith => __$PagesProjectAnalyticsSummarySummaryCopyWithImpl<_PagesProjectAnalyticsSummarySummary>(this, _$identity);
+
+@override
+Map<String, dynamic> toJson() {
+  return _$PagesProjectAnalyticsSummarySummaryToJson(this, );
+}
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _PagesProjectAnalyticsSummarySummary&&(identical(other.typename, typename) || other.typename == typename)&&(identical(other.sum, sum) || other.sum == sum)&&(identical(other.quantiles, quantiles) || other.quantiles == quantiles));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,typename,sum,quantiles);
+
+@override
+String toString() {
+  return 'PagesProjectAnalyticsSummarySummary(typename: $typename, sum: $sum, quantiles: $quantiles)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class _$PagesProjectAnalyticsSummarySummaryCopyWith<$Res> implements $PagesProjectAnalyticsSummarySummaryCopyWith<$Res> {
+  factory _$PagesProjectAnalyticsSummarySummaryCopyWith(_PagesProjectAnalyticsSummarySummary value, $Res Function(_PagesProjectAnalyticsSummarySummary) _then) = __$PagesProjectAnalyticsSummarySummaryCopyWithImpl;
+@override @useResult
+$Res call({
+@JsonKey(name: '__typename') String typename, PagesProjectAnalyticsSummarySum sum, PagesProjectAnalyticsSummaryQuantiles quantiles
+});
+
+
+@override $PagesProjectAnalyticsSummarySumCopyWith<$Res> get sum;@override $PagesProjectAnalyticsSummaryQuantilesCopyWith<$Res> get quantiles;
+
+}
+/// @nodoc
+class __$PagesProjectAnalyticsSummarySummaryCopyWithImpl<$Res>
+    implements _$PagesProjectAnalyticsSummarySummaryCopyWith<$Res> {
+  __$PagesProjectAnalyticsSummarySummaryCopyWithImpl(this._self, this._then);
+
+  final _PagesProjectAnalyticsSummarySummary _self;
+  final $Res Function(_PagesProjectAnalyticsSummarySummary) _then;
+
+/// Create a copy of PagesProjectAnalyticsSummarySummary
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? typename = null,Object? sum = null,Object? quantiles = null,}) {
+  return _then(_PagesProjectAnalyticsSummarySummary(
+typename: null == typename ? _self.typename : typename // ignore: cast_nullable_to_non_nullable
+as String,sum: null == sum ? _self.sum : sum // ignore: cast_nullable_to_non_nullable
+as PagesProjectAnalyticsSummarySum,quantiles: null == quantiles ? _self.quantiles : quantiles // ignore: cast_nullable_to_non_nullable
+as PagesProjectAnalyticsSummaryQuantiles,
+  ));
+}
+
+/// Create a copy of PagesProjectAnalyticsSummarySummary
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$PagesProjectAnalyticsSummarySumCopyWith<$Res> get sum {
+  
+  return $PagesProjectAnalyticsSummarySumCopyWith<$Res>(_self.sum, (value) {
+    return _then(_self.copyWith(sum: value));
+  });
+}/// Create a copy of PagesProjectAnalyticsSummarySummary
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$PagesProjectAnalyticsSummaryQuantilesCopyWith<$Res> get quantiles {
+  
+  return $PagesProjectAnalyticsSummaryQuantilesCopyWith<$Res>(_self.quantiles, (value) {
+    return _then(_self.copyWith(quantiles: value));
+  });
+}
+}
+
+
+/// @nodoc
+mixin _$PagesProjectAnalyticsSummarySum {
+
+@JsonKey(name: '__typename') String get typename; double get duration; int get requests; int get errors;
+/// Create a copy of PagesProjectAnalyticsSummarySum
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$PagesProjectAnalyticsSummarySumCopyWith<PagesProjectAnalyticsSummarySum> get copyWith => _$PagesProjectAnalyticsSummarySumCopyWithImpl<PagesProjectAnalyticsSummarySum>(this as PagesProjectAnalyticsSummarySum, _$identity);
+
+  /// Serializes this PagesProjectAnalyticsSummarySum to a JSON map.
+  Map<String, dynamic> toJson();
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is PagesProjectAnalyticsSummarySum&&(identical(other.typename, typename) || other.typename == typename)&&(identical(other.duration, duration) || other.duration == duration)&&(identical(other.requests, requests) || other.requests == requests)&&(identical(other.errors, errors) || other.errors == errors));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,typename,duration,requests,errors);
+
+@override
+String toString() {
+  return 'PagesProjectAnalyticsSummarySum(typename: $typename, duration: $duration, requests: $requests, errors: $errors)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class $PagesProjectAnalyticsSummarySumCopyWith<$Res>  {
+  factory $PagesProjectAnalyticsSummarySumCopyWith(PagesProjectAnalyticsSummarySum value, $Res Function(PagesProjectAnalyticsSummarySum) _then) = _$PagesProjectAnalyticsSummarySumCopyWithImpl;
+@useResult
+$Res call({
+@JsonKey(name: '__typename') String typename, double duration, int requests, int errors
+});
+
+
+
+
+}
+/// @nodoc
+class _$PagesProjectAnalyticsSummarySumCopyWithImpl<$Res>
+    implements $PagesProjectAnalyticsSummarySumCopyWith<$Res> {
+  _$PagesProjectAnalyticsSummarySumCopyWithImpl(this._self, this._then);
+
+  final PagesProjectAnalyticsSummarySum _self;
+  final $Res Function(PagesProjectAnalyticsSummarySum) _then;
+
+/// Create a copy of PagesProjectAnalyticsSummarySum
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? typename = null,Object? duration = null,Object? requests = null,Object? errors = null,}) {
+  return _then(_self.copyWith(
+typename: null == typename ? _self.typename : typename // ignore: cast_nullable_to_non_nullable
+as String,duration: null == duration ? _self.duration : duration // ignore: cast_nullable_to_non_nullable
+as double,requests: null == requests ? _self.requests : requests // ignore: cast_nullable_to_non_nullable
+as int,errors: null == errors ? _self.errors : errors // ignore: cast_nullable_to_non_nullable
+as int,
+  ));
+}
+
+}
+
+
+/// Adds pattern-matching-related methods to [PagesProjectAnalyticsSummarySum].
+extension PagesProjectAnalyticsSummarySumPatterns on PagesProjectAnalyticsSummarySum {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _PagesProjectAnalyticsSummarySum value)?  $default,{required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _PagesProjectAnalyticsSummarySum() when $default != null:
+return $default(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _PagesProjectAnalyticsSummarySum value)  $default,){
+final _that = this;
+switch (_that) {
+case _PagesProjectAnalyticsSummarySum():
+return $default(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _PagesProjectAnalyticsSummarySum value)?  $default,){
+final _that = this;
+switch (_that) {
+case _PagesProjectAnalyticsSummarySum() when $default != null:
+return $default(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@JsonKey(name: '__typename')  String typename,  double duration,  int requests,  int errors)?  $default,{required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _PagesProjectAnalyticsSummarySum() when $default != null:
+return $default(_that.typename,_that.duration,_that.requests,_that.errors);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@JsonKey(name: '__typename')  String typename,  double duration,  int requests,  int errors)  $default,) {final _that = this;
+switch (_that) {
+case _PagesProjectAnalyticsSummarySum():
+return $default(_that.typename,_that.duration,_that.requests,_that.errors);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@JsonKey(name: '__typename')  String typename,  double duration,  int requests,  int errors)?  $default,) {final _that = this;
+switch (_that) {
+case _PagesProjectAnalyticsSummarySum() when $default != null:
+return $default(_that.typename,_that.duration,_that.requests,_that.errors);case _:
+  return null;
+
+}
+}
+
+}
+
+/// @nodoc
+@JsonSerializable()
+
+class _PagesProjectAnalyticsSummarySum implements PagesProjectAnalyticsSummarySum {
+  const _PagesProjectAnalyticsSummarySum({@JsonKey(name: '__typename') required this.typename, required this.duration, required this.requests, required this.errors});
+  factory _PagesProjectAnalyticsSummarySum.fromJson(Map<String, dynamic> json) => _$PagesProjectAnalyticsSummarySumFromJson(json);
+
+@override@JsonKey(name: '__typename') final  String typename;
+@override final  double duration;
+@override final  int requests;
+@override final  int errors;
+
+/// Create a copy of PagesProjectAnalyticsSummarySum
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$PagesProjectAnalyticsSummarySumCopyWith<_PagesProjectAnalyticsSummarySum> get copyWith => __$PagesProjectAnalyticsSummarySumCopyWithImpl<_PagesProjectAnalyticsSummarySum>(this, _$identity);
+
+@override
+Map<String, dynamic> toJson() {
+  return _$PagesProjectAnalyticsSummarySumToJson(this, );
+}
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _PagesProjectAnalyticsSummarySum&&(identical(other.typename, typename) || other.typename == typename)&&(identical(other.duration, duration) || other.duration == duration)&&(identical(other.requests, requests) || other.requests == requests)&&(identical(other.errors, errors) || other.errors == errors));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,typename,duration,requests,errors);
+
+@override
+String toString() {
+  return 'PagesProjectAnalyticsSummarySum(typename: $typename, duration: $duration, requests: $requests, errors: $errors)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class _$PagesProjectAnalyticsSummarySumCopyWith<$Res> implements $PagesProjectAnalyticsSummarySumCopyWith<$Res> {
+  factory _$PagesProjectAnalyticsSummarySumCopyWith(_PagesProjectAnalyticsSummarySum value, $Res Function(_PagesProjectAnalyticsSummarySum) _then) = __$PagesProjectAnalyticsSummarySumCopyWithImpl;
+@override @useResult
+$Res call({
+@JsonKey(name: '__typename') String typename, double duration, int requests, int errors
+});
+
+
+
+
+}
+/// @nodoc
+class __$PagesProjectAnalyticsSummarySumCopyWithImpl<$Res>
+    implements _$PagesProjectAnalyticsSummarySumCopyWith<$Res> {
+  __$PagesProjectAnalyticsSummarySumCopyWithImpl(this._self, this._then);
+
+  final _PagesProjectAnalyticsSummarySum _self;
+  final $Res Function(_PagesProjectAnalyticsSummarySum) _then;
+
+/// Create a copy of PagesProjectAnalyticsSummarySum
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? typename = null,Object? duration = null,Object? requests = null,Object? errors = null,}) {
+  return _then(_PagesProjectAnalyticsSummarySum(
+typename: null == typename ? _self.typename : typename // ignore: cast_nullable_to_non_nullable
+as String,duration: null == duration ? _self.duration : duration // ignore: cast_nullable_to_non_nullable
+as double,requests: null == requests ? _self.requests : requests // ignore: cast_nullable_to_non_nullable
+as int,errors: null == errors ? _self.errors : errors // ignore: cast_nullable_to_non_nullable
+as int,
+  ));
+}
+
+
+}
+
+
+/// @nodoc
+mixin _$PagesProjectAnalyticsSummaryQuantiles {
+
+@JsonKey(name: '__typename') String get typename; int? get cpuTimeP50; int? get cpuTimeP75; int? get cpuTimeP99; int? get cpuTimeP999; double? get durationP50; double? get durationP75; double? get durationP99; double? get durationP999;
+/// Create a copy of PagesProjectAnalyticsSummaryQuantiles
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$PagesProjectAnalyticsSummaryQuantilesCopyWith<PagesProjectAnalyticsSummaryQuantiles> get copyWith => _$PagesProjectAnalyticsSummaryQuantilesCopyWithImpl<PagesProjectAnalyticsSummaryQuantiles>(this as PagesProjectAnalyticsSummaryQuantiles, _$identity);
+
+  /// Serializes this PagesProjectAnalyticsSummaryQuantiles to a JSON map.
+  Map<String, dynamic> toJson();
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is PagesProjectAnalyticsSummaryQuantiles&&(identical(other.typename, typename) || other.typename == typename)&&(identical(other.cpuTimeP50, cpuTimeP50) || other.cpuTimeP50 == cpuTimeP50)&&(identical(other.cpuTimeP75, cpuTimeP75) || other.cpuTimeP75 == cpuTimeP75)&&(identical(other.cpuTimeP99, cpuTimeP99) || other.cpuTimeP99 == cpuTimeP99)&&(identical(other.cpuTimeP999, cpuTimeP999) || other.cpuTimeP999 == cpuTimeP999)&&(identical(other.durationP50, durationP50) || other.durationP50 == durationP50)&&(identical(other.durationP75, durationP75) || other.durationP75 == durationP75)&&(identical(other.durationP99, durationP99) || other.durationP99 == durationP99)&&(identical(other.durationP999, durationP999) || other.durationP999 == durationP999));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,typename,cpuTimeP50,cpuTimeP75,cpuTimeP99,cpuTimeP999,durationP50,durationP75,durationP99,durationP999);
+
+@override
+String toString() {
+  return 'PagesProjectAnalyticsSummaryQuantiles(typename: $typename, cpuTimeP50: $cpuTimeP50, cpuTimeP75: $cpuTimeP75, cpuTimeP99: $cpuTimeP99, cpuTimeP999: $cpuTimeP999, durationP50: $durationP50, durationP75: $durationP75, durationP99: $durationP99, durationP999: $durationP999)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class $PagesProjectAnalyticsSummaryQuantilesCopyWith<$Res>  {
+  factory $PagesProjectAnalyticsSummaryQuantilesCopyWith(PagesProjectAnalyticsSummaryQuantiles value, $Res Function(PagesProjectAnalyticsSummaryQuantiles) _then) = _$PagesProjectAnalyticsSummaryQuantilesCopyWithImpl;
+@useResult
+$Res call({
+@JsonKey(name: '__typename') String typename, int? cpuTimeP50, int? cpuTimeP75, int? cpuTimeP99, int? cpuTimeP999, double? durationP50, double? durationP75, double? durationP99, double? durationP999
+});
+
+
+
+
+}
+/// @nodoc
+class _$PagesProjectAnalyticsSummaryQuantilesCopyWithImpl<$Res>
+    implements $PagesProjectAnalyticsSummaryQuantilesCopyWith<$Res> {
+  _$PagesProjectAnalyticsSummaryQuantilesCopyWithImpl(this._self, this._then);
+
+  final PagesProjectAnalyticsSummaryQuantiles _self;
+  final $Res Function(PagesProjectAnalyticsSummaryQuantiles) _then;
+
+/// Create a copy of PagesProjectAnalyticsSummaryQuantiles
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? typename = null,Object? cpuTimeP50 = freezed,Object? cpuTimeP75 = freezed,Object? cpuTimeP99 = freezed,Object? cpuTimeP999 = freezed,Object? durationP50 = freezed,Object? durationP75 = freezed,Object? durationP99 = freezed,Object? durationP999 = freezed,}) {
+  return _then(_self.copyWith(
+typename: null == typename ? _self.typename : typename // ignore: cast_nullable_to_non_nullable
+as String,cpuTimeP50: freezed == cpuTimeP50 ? _self.cpuTimeP50 : cpuTimeP50 // ignore: cast_nullable_to_non_nullable
+as int?,cpuTimeP75: freezed == cpuTimeP75 ? _self.cpuTimeP75 : cpuTimeP75 // ignore: cast_nullable_to_non_nullable
+as int?,cpuTimeP99: freezed == cpuTimeP99 ? _self.cpuTimeP99 : cpuTimeP99 // ignore: cast_nullable_to_non_nullable
+as int?,cpuTimeP999: freezed == cpuTimeP999 ? _self.cpuTimeP999 : cpuTimeP999 // ignore: cast_nullable_to_non_nullable
+as int?,durationP50: freezed == durationP50 ? _self.durationP50 : durationP50 // ignore: cast_nullable_to_non_nullable
+as double?,durationP75: freezed == durationP75 ? _self.durationP75 : durationP75 // ignore: cast_nullable_to_non_nullable
+as double?,durationP99: freezed == durationP99 ? _self.durationP99 : durationP99 // ignore: cast_nullable_to_non_nullable
+as double?,durationP999: freezed == durationP999 ? _self.durationP999 : durationP999 // ignore: cast_nullable_to_non_nullable
+as double?,
+  ));
+}
+
+}
+
+
+/// Adds pattern-matching-related methods to [PagesProjectAnalyticsSummaryQuantiles].
+extension PagesProjectAnalyticsSummaryQuantilesPatterns on PagesProjectAnalyticsSummaryQuantiles {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _PagesProjectAnalyticsSummaryQuantiles value)?  $default,{required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _PagesProjectAnalyticsSummaryQuantiles() when $default != null:
+return $default(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _PagesProjectAnalyticsSummaryQuantiles value)  $default,){
+final _that = this;
+switch (_that) {
+case _PagesProjectAnalyticsSummaryQuantiles():
+return $default(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _PagesProjectAnalyticsSummaryQuantiles value)?  $default,){
+final _that = this;
+switch (_that) {
+case _PagesProjectAnalyticsSummaryQuantiles() when $default != null:
+return $default(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@JsonKey(name: '__typename')  String typename,  int? cpuTimeP50,  int? cpuTimeP75,  int? cpuTimeP99,  int? cpuTimeP999,  double? durationP50,  double? durationP75,  double? durationP99,  double? durationP999)?  $default,{required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _PagesProjectAnalyticsSummaryQuantiles() when $default != null:
+return $default(_that.typename,_that.cpuTimeP50,_that.cpuTimeP75,_that.cpuTimeP99,_that.cpuTimeP999,_that.durationP50,_that.durationP75,_that.durationP99,_that.durationP999);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@JsonKey(name: '__typename')  String typename,  int? cpuTimeP50,  int? cpuTimeP75,  int? cpuTimeP99,  int? cpuTimeP999,  double? durationP50,  double? durationP75,  double? durationP99,  double? durationP999)  $default,) {final _that = this;
+switch (_that) {
+case _PagesProjectAnalyticsSummaryQuantiles():
+return $default(_that.typename,_that.cpuTimeP50,_that.cpuTimeP75,_that.cpuTimeP99,_that.cpuTimeP999,_that.durationP50,_that.durationP75,_that.durationP99,_that.durationP999);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@JsonKey(name: '__typename')  String typename,  int? cpuTimeP50,  int? cpuTimeP75,  int? cpuTimeP99,  int? cpuTimeP999,  double? durationP50,  double? durationP75,  double? durationP99,  double? durationP999)?  $default,) {final _that = this;
+switch (_that) {
+case _PagesProjectAnalyticsSummaryQuantiles() when $default != null:
+return $default(_that.typename,_that.cpuTimeP50,_that.cpuTimeP75,_that.cpuTimeP99,_that.cpuTimeP999,_that.durationP50,_that.durationP75,_that.durationP99,_that.durationP999);case _:
+  return null;
+
+}
+}
+
+}
+
+/// @nodoc
+@JsonSerializable()
+
+class _PagesProjectAnalyticsSummaryQuantiles implements PagesProjectAnalyticsSummaryQuantiles {
+  const _PagesProjectAnalyticsSummaryQuantiles({@JsonKey(name: '__typename') required this.typename, required this.cpuTimeP50, required this.cpuTimeP75, required this.cpuTimeP99, required this.cpuTimeP999, required this.durationP50, required this.durationP75, required this.durationP99, required this.durationP999});
+  factory _PagesProjectAnalyticsSummaryQuantiles.fromJson(Map<String, dynamic> json) => _$PagesProjectAnalyticsSummaryQuantilesFromJson(json);
+
+@override@JsonKey(name: '__typename') final  String typename;
+@override final  int? cpuTimeP50;
+@override final  int? cpuTimeP75;
+@override final  int? cpuTimeP99;
+@override final  int? cpuTimeP999;
+@override final  double? durationP50;
+@override final  double? durationP75;
+@override final  double? durationP99;
+@override final  double? durationP999;
+
+/// Create a copy of PagesProjectAnalyticsSummaryQuantiles
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$PagesProjectAnalyticsSummaryQuantilesCopyWith<_PagesProjectAnalyticsSummaryQuantiles> get copyWith => __$PagesProjectAnalyticsSummaryQuantilesCopyWithImpl<_PagesProjectAnalyticsSummaryQuantiles>(this, _$identity);
+
+@override
+Map<String, dynamic> toJson() {
+  return _$PagesProjectAnalyticsSummaryQuantilesToJson(this, );
+}
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _PagesProjectAnalyticsSummaryQuantiles&&(identical(other.typename, typename) || other.typename == typename)&&(identical(other.cpuTimeP50, cpuTimeP50) || other.cpuTimeP50 == cpuTimeP50)&&(identical(other.cpuTimeP75, cpuTimeP75) || other.cpuTimeP75 == cpuTimeP75)&&(identical(other.cpuTimeP99, cpuTimeP99) || other.cpuTimeP99 == cpuTimeP99)&&(identical(other.cpuTimeP999, cpuTimeP999) || other.cpuTimeP999 == cpuTimeP999)&&(identical(other.durationP50, durationP50) || other.durationP50 == durationP50)&&(identical(other.durationP75, durationP75) || other.durationP75 == durationP75)&&(identical(other.durationP99, durationP99) || other.durationP99 == durationP99)&&(identical(other.durationP999, durationP999) || other.durationP999 == durationP999));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,typename,cpuTimeP50,cpuTimeP75,cpuTimeP99,cpuTimeP999,durationP50,durationP75,durationP99,durationP999);
+
+@override
+String toString() {
+  return 'PagesProjectAnalyticsSummaryQuantiles(typename: $typename, cpuTimeP50: $cpuTimeP50, cpuTimeP75: $cpuTimeP75, cpuTimeP99: $cpuTimeP99, cpuTimeP999: $cpuTimeP999, durationP50: $durationP50, durationP75: $durationP75, durationP99: $durationP99, durationP999: $durationP999)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class _$PagesProjectAnalyticsSummaryQuantilesCopyWith<$Res> implements $PagesProjectAnalyticsSummaryQuantilesCopyWith<$Res> {
+  factory _$PagesProjectAnalyticsSummaryQuantilesCopyWith(_PagesProjectAnalyticsSummaryQuantiles value, $Res Function(_PagesProjectAnalyticsSummaryQuantiles) _then) = __$PagesProjectAnalyticsSummaryQuantilesCopyWithImpl;
+@override @useResult
+$Res call({
+@JsonKey(name: '__typename') String typename, int? cpuTimeP50, int? cpuTimeP75, int? cpuTimeP99, int? cpuTimeP999, double? durationP50, double? durationP75, double? durationP99, double? durationP999
+});
+
+
+
+
+}
+/// @nodoc
+class __$PagesProjectAnalyticsSummaryQuantilesCopyWithImpl<$Res>
+    implements _$PagesProjectAnalyticsSummaryQuantilesCopyWith<$Res> {
+  __$PagesProjectAnalyticsSummaryQuantilesCopyWithImpl(this._self, this._then);
+
+  final _PagesProjectAnalyticsSummaryQuantiles _self;
+  final $Res Function(_PagesProjectAnalyticsSummaryQuantiles) _then;
+
+/// Create a copy of PagesProjectAnalyticsSummaryQuantiles
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? typename = null,Object? cpuTimeP50 = freezed,Object? cpuTimeP75 = freezed,Object? cpuTimeP99 = freezed,Object? cpuTimeP999 = freezed,Object? durationP50 = freezed,Object? durationP75 = freezed,Object? durationP99 = freezed,Object? durationP999 = freezed,}) {
+  return _then(_PagesProjectAnalyticsSummaryQuantiles(
+typename: null == typename ? _self.typename : typename // ignore: cast_nullable_to_non_nullable
+as String,cpuTimeP50: freezed == cpuTimeP50 ? _self.cpuTimeP50 : cpuTimeP50 // ignore: cast_nullable_to_non_nullable
+as int?,cpuTimeP75: freezed == cpuTimeP75 ? _self.cpuTimeP75 : cpuTimeP75 // ignore: cast_nullable_to_non_nullable
+as int?,cpuTimeP99: freezed == cpuTimeP99 ? _self.cpuTimeP99 : cpuTimeP99 // ignore: cast_nullable_to_non_nullable
+as int?,cpuTimeP999: freezed == cpuTimeP999 ? _self.cpuTimeP999 : cpuTimeP999 // ignore: cast_nullable_to_non_nullable
+as int?,durationP50: freezed == durationP50 ? _self.durationP50 : durationP50 // ignore: cast_nullable_to_non_nullable
+as double?,durationP75: freezed == durationP75 ? _self.durationP75 : durationP75 // ignore: cast_nullable_to_non_nullable
+as double?,durationP99: freezed == durationP99 ? _self.durationP99 : durationP99 // ignore: cast_nullable_to_non_nullable
+as double?,durationP999: freezed == durationP999 ? _self.durationP999 : durationP999 // ignore: cast_nullable_to_non_nullable
+as double?,
+  ));
+}
+
+
+}
+
 // dart format on

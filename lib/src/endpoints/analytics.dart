@@ -600,4 +600,92 @@ query getWorkersAndPagesOverviewBetaMetrics($accountTag: string!, $monthlyFilter
       <String, dynamic>{'viewer': viewerData},
     );
   }
+
+  /// Get Pages Project Analytics Summary
+  Future<PagesProjectAnalyticsSummaryResponse?>
+  getPagesProjectAnalyticsSummary({
+    required String accountId,
+    required String scriptName,
+    required DateTime startDate,
+    required DateTime endDate,
+  }) async {
+    if (graphQLClient == null) {
+      throw Exception('GraphQL not setup');
+    }
+
+    String query = r'''
+query getPagesProjectAnalyticsSummary($accountId: string, $scriptName: string, $startDate: string, $endDate: string) {
+  viewer {
+    accounts(filter: {accountTag: $accountId}) {
+      summary: pagesFunctionsInvocationsAdaptiveGroups(limit: 1000, filter: {datetime_geq: $startDate, datetime_lt: $endDate, scriptName: $scriptName}) {
+        sum {
+          duration
+          requests
+          errors
+          __typename
+        }
+        quantiles {
+          cpuTimeP50
+          cpuTimeP75
+          cpuTimeP99
+          cpuTimeP999
+          durationP50
+          durationP75
+          durationP99
+          durationP999
+          __typename
+        }
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}
+''';
+
+    String startDateString = _dateTimeFormat.format(startDate).toString();
+    String endDateString = _dateTimeFormat.format(endDate).toString();
+
+    Map<String, dynamic> variables = <String, dynamic>{
+      'accountId': accountId,
+      'scriptName': scriptName,
+      'startDate': startDateString,
+      'endDate': endDateString,
+    };
+
+    final graph.QueryOptions options = graph.QueryOptions(
+      document: graph.gql(query),
+      variables: variables,
+    );
+
+    graph.QueryResult result = await graphQLClient!.query(options);
+
+    if (talker != null) {
+      talker!.info(
+        'getPagesProjectAnalyticsSummary GraphQL Query: Has data ${result.data?.isNotEmpty} - \n ${variables}',
+      );
+    }
+
+    if (result.hasException) {
+      if (talker != null) {
+        talker!.error(result.exception.toString());
+      }
+      throw Exception(result.exception.toString());
+    }
+
+    if (result.data == null) {
+      return null;
+    }
+
+    final Map<String, dynamic>? viewerData =
+        result.data?['viewer'] as Map<String, dynamic>?;
+    if (viewerData == null) {
+      return null;
+    }
+
+    return PagesProjectAnalyticsSummaryResponse.fromJson(<String, dynamic>{
+      'viewer': viewerData,
+    });
+  }
 }
