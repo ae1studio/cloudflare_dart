@@ -14,16 +14,82 @@ class _ZonesEndpoint extends EndpointBase {
   Future<List<Zone>> get({
     /// Only get zones from a specific account
     String? accountId,
+    /// Field to order zones by.
+    /// Options: "name", "status", "account.id", "account.name", "plan.id"
+    String? order,
+    /// Page number of paginated results.
+    /// Minimum: 1
+    int? page,
+    /// Number of zones per page.
+    /// Minimum: 5
+    /// Maximum: 50
+    int? per_page,
+    /// Specify a zone status to filter by.
+    /// Options: "initializing", "pending", "active", "moved"
+    String? status,
+    /// Zone types to filter by.
+    /// Multiple types can be specified.
+    /// Options: "full", "partial", "secondary", "internal"
+    List<String>? type,
   }) async {
+    const List<String> allowedOrderValues = <String>[
+      'name',
+      'status',
+      'account.id',
+      'account.name',
+      'plan.id',
+    ];
+    const List<String> allowedStatusValues = <String>[
+      'initializing',
+      'pending',
+      'active',
+      'moved',
+    ];
+    const List<String> allowedTypeValues = <String>[
+      'full',
+      'partial',
+      'secondary',
+      'internal',
+    ];
+    if (order != null && !allowedOrderValues.contains(order)) {
+      throw ArgumentError.value(order, 'order', 'Unsupported order value.');
+    }
+    if (page != null && page < 1) {
+      throw ArgumentError.value(page, 'page', 'Value must be greater than 0.');
+    }
+    if (per_page != null && (per_page < 5 || per_page > 50)) {
+      throw ArgumentError.value(
+        per_page,
+        'per_page',
+        'Value must be between 5 and 50.',
+      );
+    }
+    if (status != null && !allowedStatusValues.contains(status)) {
+      throw ArgumentError.value(status, 'status', 'Unsupported status value.');
+    }
+    if (type != null && type.any((String zoneType) => !allowedTypeValues.contains(zoneType))) {
+      throw ArgumentError.value(type, 'type', 'Unsupported type value.');
+    }
     Map<String, dynamic> params = {};
-
-    //Get only zones for one account
     if (accountId != null) {
       params.addAll({"account.id": accountId});
     }
-
+    if (order != null) {
+      params.addAll({'order': order});
+    }
+    if (page != null) {
+      params.addAll({'page': page});
+    }
+    if (per_page != null) {
+      params.addAll({'per_page': per_page});
+    }
+    if (status != null) {
+      params.addAll({'status': status});
+    }
+    if (type != null && type.isNotEmpty) {
+      params.addAll({'type': type.join(',')});
+    }
     final map = (await dio.get(_path, queryParameters: params)).data;
-
     var zonesMap = map['result'] as Iterable<dynamic>;
     return zonesMap.map((m) => Zone.fromJson(m)).toList();
   }
